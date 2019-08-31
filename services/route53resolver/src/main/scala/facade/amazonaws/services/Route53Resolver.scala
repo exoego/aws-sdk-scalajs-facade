@@ -159,7 +159,7 @@ package route53resolver {
         IpAddress: IpAddressUpdate,
         ResolverEndpointId: ResourceId
     ): AssociateResolverEndpointIpAddressRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IpAddress"          -> IpAddress.asInstanceOf[js.Any],
         "ResolverEndpointId" -> ResolverEndpointId.asInstanceOf[js.Any]
       )
@@ -177,8 +177,8 @@ package route53resolver {
     def apply(
         ResolverEndpoint: js.UndefOr[ResolverEndpoint] = js.undefined
     ): AssociateResolverEndpointIpAddressResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ResolverEndpoint.foreach(__v => __obj.update("ResolverEndpoint", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ResolverEndpoint.foreach(__v => __obj.updateDynamic("ResolverEndpoint")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateResolverEndpointIpAddressResponse]
     }
   }
@@ -196,12 +196,12 @@ package route53resolver {
         VPCId: ResourceId,
         Name: js.UndefOr[Name] = js.undefined
     ): AssociateResolverRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResolverRuleId" -> ResolverRuleId.asInstanceOf[js.Any],
         "VPCId"          -> VPCId.asInstanceOf[js.Any]
       )
 
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateResolverRuleRequest]
     }
   }
@@ -215,8 +215,8 @@ package route53resolver {
     def apply(
         ResolverRuleAssociation: js.UndefOr[ResolverRuleAssociation] = js.undefined
     ): AssociateResolverRuleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ResolverRuleAssociation.foreach(__v => __obj.update("ResolverRuleAssociation", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ResolverRuleAssociation.foreach(__v => __obj.updateDynamic("ResolverRuleAssociation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateResolverRuleResponse]
     }
   }
@@ -240,15 +240,15 @@ package route53resolver {
         Name: js.UndefOr[Name] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateResolverEndpointRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CreatorRequestId" -> CreatorRequestId.asInstanceOf[js.Any],
         "Direction"        -> Direction.asInstanceOf[js.Any],
         "IpAddresses"      -> IpAddresses.asInstanceOf[js.Any],
         "SecurityGroupIds" -> SecurityGroupIds.asInstanceOf[js.Any]
       )
 
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateResolverEndpointRequest]
     }
   }
@@ -262,8 +262,8 @@ package route53resolver {
     def apply(
         ResolverEndpoint: js.UndefOr[ResolverEndpoint] = js.undefined
     ): CreateResolverEndpointResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ResolverEndpoint.foreach(__v => __obj.update("ResolverEndpoint", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ResolverEndpoint.foreach(__v => __obj.updateDynamic("ResolverEndpoint")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateResolverEndpointResponse]
     }
   }
@@ -289,16 +289,16 @@ package route53resolver {
         Tags: js.UndefOr[TagList] = js.undefined,
         TargetIps: js.UndefOr[TargetList] = js.undefined
     ): CreateResolverRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CreatorRequestId" -> CreatorRequestId.asInstanceOf[js.Any],
         "DomainName"       -> DomainName.asInstanceOf[js.Any],
         "RuleType"         -> RuleType.asInstanceOf[js.Any]
       )
 
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      ResolverEndpointId.foreach(__v => __obj.update("ResolverEndpointId", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      TargetIps.foreach(__v => __obj.update("TargetIps", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ResolverEndpointId.foreach(__v => __obj.updateDynamic("ResolverEndpointId")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TargetIps.foreach(__v => __obj.updateDynamic("TargetIps")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateResolverRuleRequest]
     }
   }
@@ -312,8 +312,8 @@ package route53resolver {
     def apply(
         ResolverRule: js.UndefOr[ResolverRule] = js.undefined
     ): CreateResolverRuleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ResolverRule.foreach(__v => __obj.update("ResolverRule", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ResolverRule.foreach(__v => __obj.updateDynamic("ResolverRule")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateResolverRuleResponse]
     }
   }
@@ -327,7 +327,7 @@ package route53resolver {
     def apply(
         ResolverEndpointId: ResourceId
     ): DeleteResolverEndpointRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResolverEndpointId" -> ResolverEndpointId.asInstanceOf[js.Any]
       )
 
@@ -344,8 +344,8 @@ package route53resolver {
     def apply(
         ResolverEndpoint: js.UndefOr[ResolverEndpoint] = js.undefined
     ): DeleteResolverEndpointResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ResolverEndpoint.foreach(__v => __obj.update("ResolverEndpoint", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ResolverEndpoint.foreach(__v => __obj.updateDynamic("ResolverEndpoint")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteResolverEndpointResponse]
     }
   }
@@ -359,7 +359,7 @@ package route53resolver {
     def apply(
         ResolverRuleId: ResourceId
     ): DeleteResolverRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResolverRuleId" -> ResolverRuleId.asInstanceOf[js.Any]
       )
 
@@ -376,8 +376,8 @@ package route53resolver {
     def apply(
         ResolverRule: js.UndefOr[ResolverRule] = js.undefined
     ): DeleteResolverRuleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ResolverRule.foreach(__v => __obj.update("ResolverRule", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ResolverRule.foreach(__v => __obj.updateDynamic("ResolverRule")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteResolverRuleResponse]
     }
   }
@@ -393,7 +393,7 @@ package route53resolver {
         IpAddress: IpAddressUpdate,
         ResolverEndpointId: ResourceId
     ): DisassociateResolverEndpointIpAddressRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IpAddress"          -> IpAddress.asInstanceOf[js.Any],
         "ResolverEndpointId" -> ResolverEndpointId.asInstanceOf[js.Any]
       )
@@ -411,8 +411,8 @@ package route53resolver {
     def apply(
         ResolverEndpoint: js.UndefOr[ResolverEndpoint] = js.undefined
     ): DisassociateResolverEndpointIpAddressResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ResolverEndpoint.foreach(__v => __obj.update("ResolverEndpoint", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ResolverEndpoint.foreach(__v => __obj.updateDynamic("ResolverEndpoint")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisassociateResolverEndpointIpAddressResponse]
     }
   }
@@ -428,7 +428,7 @@ package route53resolver {
         ResolverRuleId: ResourceId,
         VPCId: ResourceId
     ): DisassociateResolverRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResolverRuleId" -> ResolverRuleId.asInstanceOf[js.Any],
         "VPCId"          -> VPCId.asInstanceOf[js.Any]
       )
@@ -446,8 +446,8 @@ package route53resolver {
     def apply(
         ResolverRuleAssociation: js.UndefOr[ResolverRuleAssociation] = js.undefined
     ): DisassociateResolverRuleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ResolverRuleAssociation.foreach(__v => __obj.update("ResolverRuleAssociation", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ResolverRuleAssociation.foreach(__v => __obj.updateDynamic("ResolverRuleAssociation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisassociateResolverRuleResponse]
     }
   }
@@ -466,9 +466,9 @@ package route53resolver {
         Name: js.UndefOr[FilterName] = js.undefined,
         Values: js.UndefOr[FilterValues] = js.undefined
     ): Filter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Filter]
     }
   }
@@ -482,7 +482,7 @@ package route53resolver {
     def apply(
         ResolverEndpointId: ResourceId
     ): GetResolverEndpointRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResolverEndpointId" -> ResolverEndpointId.asInstanceOf[js.Any]
       )
 
@@ -499,8 +499,8 @@ package route53resolver {
     def apply(
         ResolverEndpoint: js.UndefOr[ResolverEndpoint] = js.undefined
     ): GetResolverEndpointResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ResolverEndpoint.foreach(__v => __obj.update("ResolverEndpoint", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ResolverEndpoint.foreach(__v => __obj.updateDynamic("ResolverEndpoint")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetResolverEndpointResponse]
     }
   }
@@ -514,7 +514,7 @@ package route53resolver {
     def apply(
         ResolverRuleAssociationId: ResourceId
     ): GetResolverRuleAssociationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResolverRuleAssociationId" -> ResolverRuleAssociationId.asInstanceOf[js.Any]
       )
 
@@ -531,8 +531,8 @@ package route53resolver {
     def apply(
         ResolverRuleAssociation: js.UndefOr[ResolverRuleAssociation] = js.undefined
     ): GetResolverRuleAssociationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ResolverRuleAssociation.foreach(__v => __obj.update("ResolverRuleAssociation", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ResolverRuleAssociation.foreach(__v => __obj.updateDynamic("ResolverRuleAssociation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetResolverRuleAssociationResponse]
     }
   }
@@ -546,7 +546,7 @@ package route53resolver {
     def apply(
         Arn: Arn
     ): GetResolverRulePolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
 
@@ -563,8 +563,8 @@ package route53resolver {
     def apply(
         ResolverRulePolicy: js.UndefOr[ResolverRulePolicy] = js.undefined
     ): GetResolverRulePolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ResolverRulePolicy.foreach(__v => __obj.update("ResolverRulePolicy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ResolverRulePolicy.foreach(__v => __obj.updateDynamic("ResolverRulePolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetResolverRulePolicyResponse]
     }
   }
@@ -578,7 +578,7 @@ package route53resolver {
     def apply(
         ResolverRuleId: ResourceId
     ): GetResolverRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResolverRuleId" -> ResolverRuleId.asInstanceOf[js.Any]
       )
 
@@ -595,8 +595,8 @@ package route53resolver {
     def apply(
         ResolverRule: js.UndefOr[ResolverRule] = js.undefined
     ): GetResolverRuleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ResolverRule.foreach(__v => __obj.update("ResolverRule", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ResolverRule.foreach(__v => __obj.updateDynamic("ResolverRule")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetResolverRuleResponse]
     }
   }
@@ -615,11 +615,11 @@ package route53resolver {
         SubnetId: SubnetId,
         Ip: js.UndefOr[Ip] = js.undefined
     ): IpAddressRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SubnetId" -> SubnetId.asInstanceOf[js.Any]
       )
 
-      Ip.foreach(__v => __obj.update("Ip", __v.asInstanceOf[js.Any]))
+      Ip.foreach(__v => __obj.updateDynamic("Ip")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IpAddressRequest]
     }
   }
@@ -648,14 +648,14 @@ package route53resolver {
         StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
         SubnetId: js.UndefOr[SubnetId] = js.undefined
     ): IpAddressResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      Ip.foreach(__v => __obj.update("Ip", __v.asInstanceOf[js.Any]))
-      IpId.foreach(__v => __obj.update("IpId", __v.asInstanceOf[js.Any]))
-      ModificationTime.foreach(__v => __obj.update("ModificationTime", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
-      SubnetId.foreach(__v => __obj.update("SubnetId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Ip.foreach(__v => __obj.updateDynamic("Ip")(__v.asInstanceOf[js.Any]))
+      IpId.foreach(__v => __obj.updateDynamic("IpId")(__v.asInstanceOf[js.Any]))
+      ModificationTime.foreach(__v => __obj.updateDynamic("ModificationTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IpAddressResponse]
     }
   }
@@ -704,10 +704,10 @@ package route53resolver {
         IpId: js.UndefOr[ResourceId] = js.undefined,
         SubnetId: js.UndefOr[SubnetId] = js.undefined
     ): IpAddressUpdate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Ip.foreach(__v => __obj.update("Ip", __v.asInstanceOf[js.Any]))
-      IpId.foreach(__v => __obj.update("IpId", __v.asInstanceOf[js.Any]))
-      SubnetId.foreach(__v => __obj.update("SubnetId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Ip.foreach(__v => __obj.updateDynamic("Ip")(__v.asInstanceOf[js.Any]))
+      IpId.foreach(__v => __obj.updateDynamic("IpId")(__v.asInstanceOf[js.Any]))
+      SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IpAddressUpdate]
     }
   }
@@ -725,12 +725,12 @@ package route53resolver {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListResolverEndpointIpAddressesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResolverEndpointId" -> ResolverEndpointId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResolverEndpointIpAddressesRequest]
     }
   }
@@ -748,10 +748,10 @@ package route53resolver {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListResolverEndpointIpAddressesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IpAddresses.foreach(__v => __obj.update("IpAddresses", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IpAddresses.foreach(__v => __obj.updateDynamic("IpAddresses")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResolverEndpointIpAddressesResponse]
     }
   }
@@ -769,10 +769,10 @@ package route53resolver {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListResolverEndpointsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResolverEndpointsRequest]
     }
   }
@@ -790,10 +790,10 @@ package route53resolver {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ResolverEndpoints: js.UndefOr[ResolverEndpoints] = js.undefined
     ): ListResolverEndpointsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ResolverEndpoints.foreach(__v => __obj.update("ResolverEndpoints", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ResolverEndpoints.foreach(__v => __obj.updateDynamic("ResolverEndpoints")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResolverEndpointsResponse]
     }
   }
@@ -811,10 +811,10 @@ package route53resolver {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListResolverRuleAssociationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResolverRuleAssociationsRequest]
     }
   }
@@ -832,10 +832,10 @@ package route53resolver {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ResolverRuleAssociations: js.UndefOr[ResolverRuleAssociations] = js.undefined
     ): ListResolverRuleAssociationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ResolverRuleAssociations.foreach(__v => __obj.update("ResolverRuleAssociations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ResolverRuleAssociations.foreach(__v => __obj.updateDynamic("ResolverRuleAssociations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResolverRuleAssociationsResponse]
     }
   }
@@ -853,10 +853,10 @@ package route53resolver {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListResolverRulesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResolverRulesRequest]
     }
   }
@@ -874,10 +874,10 @@ package route53resolver {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ResolverRules: js.UndefOr[ResolverRules] = js.undefined
     ): ListResolverRulesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ResolverRules.foreach(__v => __obj.update("ResolverRules", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ResolverRules.foreach(__v => __obj.updateDynamic("ResolverRules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResolverRulesResponse]
     }
   }
@@ -895,12 +895,12 @@ package route53resolver {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListTagsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -916,9 +916,9 @@ package route53resolver {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsForResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
@@ -934,7 +934,7 @@ package route53resolver {
         Arn: Arn,
         ResolverRulePolicy: ResolverRulePolicy
     ): PutResolverRulePolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn"                -> Arn.asInstanceOf[js.Any],
         "ResolverRulePolicy" -> ResolverRulePolicy.asInstanceOf[js.Any]
       )
@@ -955,8 +955,8 @@ package route53resolver {
     def apply(
         ReturnValue: js.UndefOr[Boolean] = js.undefined
     ): PutResolverRulePolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ReturnValue.foreach(__v => __obj.update("ReturnValue", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ReturnValue.foreach(__v => __obj.updateDynamic("ReturnValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutResolverRulePolicyResponse]
     }
   }
@@ -995,19 +995,19 @@ package route53resolver {
         Status: js.UndefOr[ResolverEndpointStatus] = js.undefined,
         StatusMessage: js.UndefOr[StatusMessage] = js.undefined
     ): ResolverEndpoint = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      CreatorRequestId.foreach(__v => __obj.update("CreatorRequestId", __v.asInstanceOf[js.Any]))
-      Direction.foreach(__v => __obj.update("Direction", __v.asInstanceOf[js.Any]))
-      HostVPCId.foreach(__v => __obj.update("HostVPCId", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      IpAddressCount.foreach(__v => __obj.update("IpAddressCount", __v.asInstanceOf[js.Any]))
-      ModificationTime.foreach(__v => __obj.update("ModificationTime", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      SecurityGroupIds.foreach(__v => __obj.update("SecurityGroupIds", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
+      Direction.foreach(__v => __obj.updateDynamic("Direction")(__v.asInstanceOf[js.Any]))
+      HostVPCId.foreach(__v => __obj.updateDynamic("HostVPCId")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      IpAddressCount.foreach(__v => __obj.updateDynamic("IpAddressCount")(__v.asInstanceOf[js.Any]))
+      ModificationTime.foreach(__v => __obj.updateDynamic("ModificationTime")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResolverEndpoint]
     }
   }
@@ -1064,19 +1064,19 @@ package route53resolver {
         StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
         TargetIps: js.UndefOr[TargetList] = js.undefined
     ): ResolverRule = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreatorRequestId.foreach(__v => __obj.update("CreatorRequestId", __v.asInstanceOf[js.Any]))
-      DomainName.foreach(__v => __obj.update("DomainName", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      OwnerId.foreach(__v => __obj.update("OwnerId", __v.asInstanceOf[js.Any]))
-      ResolverEndpointId.foreach(__v => __obj.update("ResolverEndpointId", __v.asInstanceOf[js.Any]))
-      RuleType.foreach(__v => __obj.update("RuleType", __v.asInstanceOf[js.Any]))
-      ShareStatus.foreach(__v => __obj.update("ShareStatus", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
-      TargetIps.foreach(__v => __obj.update("TargetIps", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
+      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
+      ResolverEndpointId.foreach(__v => __obj.updateDynamic("ResolverEndpointId")(__v.asInstanceOf[js.Any]))
+      RuleType.foreach(__v => __obj.updateDynamic("RuleType")(__v.asInstanceOf[js.Any]))
+      ShareStatus.foreach(__v => __obj.updateDynamic("ShareStatus")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      TargetIps.foreach(__v => __obj.updateDynamic("TargetIps")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResolverRule]
     }
   }
@@ -1103,13 +1103,13 @@ package route53resolver {
         StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
         VPCId: js.UndefOr[ResourceId] = js.undefined
     ): ResolverRuleAssociation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      ResolverRuleId.foreach(__v => __obj.update("ResolverRuleId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
-      VPCId.foreach(__v => __obj.update("VPCId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ResolverRuleId.foreach(__v => __obj.updateDynamic("ResolverRuleId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      VPCId.foreach(__v => __obj.updateDynamic("VPCId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResolverRuleAssociation]
     }
   }
@@ -1140,10 +1140,10 @@ package route53resolver {
         ResolverEndpointId: js.UndefOr[ResourceId] = js.undefined,
         TargetIps: js.UndefOr[TargetList] = js.undefined
     ): ResolverRuleConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      ResolverEndpointId.foreach(__v => __obj.update("ResolverEndpointId", __v.asInstanceOf[js.Any]))
-      TargetIps.foreach(__v => __obj.update("TargetIps", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ResolverEndpointId.foreach(__v => __obj.updateDynamic("ResolverEndpointId")(__v.asInstanceOf[js.Any]))
+      TargetIps.foreach(__v => __obj.updateDynamic("TargetIps")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResolverRuleConfig]
     }
   }
@@ -1187,9 +1187,9 @@ package route53resolver {
         Key: js.UndefOr[TagKey] = js.undefined,
         Value: js.UndefOr[TagValue] = js.undefined
     ): Tag = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tag]
     }
   }
@@ -1205,7 +1205,7 @@ package route53resolver {
         ResourceArn: Arn,
         Tags: TagList
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
       )
@@ -1220,7 +1220,7 @@ package route53resolver {
   object TagResourceResponse {
     def apply(
         ): TagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -1240,11 +1240,11 @@ package route53resolver {
         Ip: Ip,
         Port: js.UndefOr[Port] = js.undefined
     ): TargetAddress = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Ip" -> Ip.asInstanceOf[js.Any]
       )
 
-      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TargetAddress]
     }
   }
@@ -1260,7 +1260,7 @@ package route53resolver {
         ResourceArn: Arn,
         TagKeys: TagKeyList
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
       )
@@ -1275,7 +1275,7 @@ package route53resolver {
   object UntagResourceResponse {
     def apply(
         ): UntagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -1292,11 +1292,11 @@ package route53resolver {
         ResolverEndpointId: ResourceId,
         Name: js.UndefOr[Name] = js.undefined
     ): UpdateResolverEndpointRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResolverEndpointId" -> ResolverEndpointId.asInstanceOf[js.Any]
       )
 
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateResolverEndpointRequest]
     }
   }
@@ -1310,8 +1310,8 @@ package route53resolver {
     def apply(
         ResolverEndpoint: js.UndefOr[ResolverEndpoint] = js.undefined
     ): UpdateResolverEndpointResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ResolverEndpoint.foreach(__v => __obj.update("ResolverEndpoint", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ResolverEndpoint.foreach(__v => __obj.updateDynamic("ResolverEndpoint")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateResolverEndpointResponse]
     }
   }
@@ -1327,7 +1327,7 @@ package route53resolver {
         Config: ResolverRuleConfig,
         ResolverRuleId: ResourceId
     ): UpdateResolverRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Config"         -> Config.asInstanceOf[js.Any],
         "ResolverRuleId" -> ResolverRuleId.asInstanceOf[js.Any]
       )
@@ -1345,8 +1345,8 @@ package route53resolver {
     def apply(
         ResolverRule: js.UndefOr[ResolverRule] = js.undefined
     ): UpdateResolverRuleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ResolverRule.foreach(__v => __obj.update("ResolverRule", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ResolverRule.foreach(__v => __obj.updateDynamic("ResolverRule")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateResolverRuleResponse]
     }
   }

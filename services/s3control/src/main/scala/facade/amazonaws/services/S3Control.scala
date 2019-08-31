@@ -123,7 +123,7 @@ package s3control {
         ConfirmationRequired: js.UndefOr[ConfirmationRequired] = js.undefined,
         Description: js.UndefOr[NonEmptyMaxLength256String] = js.undefined
     ): CreateJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId"          -> AccountId.asInstanceOf[js.Any],
         "ClientRequestToken" -> ClientRequestToken.asInstanceOf[js.Any],
         "Manifest"           -> Manifest.asInstanceOf[js.Any],
@@ -133,8 +133,8 @@ package s3control {
         "RoleArn"            -> RoleArn.asInstanceOf[js.Any]
       )
 
-      ConfirmationRequired.foreach(__v => __obj.update("ConfirmationRequired", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      ConfirmationRequired.foreach(__v => __obj.updateDynamic("ConfirmationRequired")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateJobRequest]
     }
   }
@@ -148,8 +148,8 @@ package s3control {
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined
     ): CreateJobResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobId.foreach(__v => __obj.update("JobId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateJobResult]
     }
   }
@@ -163,7 +163,7 @@ package s3control {
     def apply(
         AccountId: AccountId
     ): DeletePublicAccessBlockRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any]
       )
 
@@ -182,7 +182,7 @@ package s3control {
         AccountId: AccountId,
         JobId: JobId
     ): DescribeJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "JobId"     -> JobId.asInstanceOf[js.Any]
       )
@@ -200,8 +200,8 @@ package s3control {
     def apply(
         Job: js.UndefOr[JobDescriptor] = js.undefined
     ): DescribeJobResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Job.foreach(__v => __obj.update("Job", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Job.foreach(__v => __obj.updateDynamic("Job")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeJobResult]
     }
   }
@@ -215,9 +215,9 @@ package s3control {
     def apply(
         PublicAccessBlockConfiguration: js.UndefOr[PublicAccessBlockConfiguration] = js.undefined
     ): GetPublicAccessBlockOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       PublicAccessBlockConfiguration.foreach(
-        __v => __obj.update("PublicAccessBlockConfiguration", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("PublicAccessBlockConfiguration")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetPublicAccessBlockOutput]
     }
@@ -232,7 +232,7 @@ package s3control {
     def apply(
         AccountId: AccountId
     ): GetPublicAccessBlockRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any]
       )
 
@@ -284,24 +284,24 @@ package s3control {
         SuspendedDate: js.UndefOr[SuspendedDate] = js.undefined,
         TerminationDate: js.UndefOr[JobTerminationDate] = js.undefined
     ): JobDescriptor = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConfirmationRequired.foreach(__v => __obj.update("ConfirmationRequired", __v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      FailureReasons.foreach(__v => __obj.update("FailureReasons", __v.asInstanceOf[js.Any]))
-      JobArn.foreach(__v => __obj.update("JobArn", __v.asInstanceOf[js.Any]))
-      JobId.foreach(__v => __obj.update("JobId", __v.asInstanceOf[js.Any]))
-      Manifest.foreach(__v => __obj.update("Manifest", __v.asInstanceOf[js.Any]))
-      Operation.foreach(__v => __obj.update("Operation", __v.asInstanceOf[js.Any]))
-      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
-      ProgressSummary.foreach(__v => __obj.update("ProgressSummary", __v.asInstanceOf[js.Any]))
-      Report.foreach(__v => __obj.update("Report", __v.asInstanceOf[js.Any]))
-      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusUpdateReason.foreach(__v => __obj.update("StatusUpdateReason", __v.asInstanceOf[js.Any]))
-      SuspendedCause.foreach(__v => __obj.update("SuspendedCause", __v.asInstanceOf[js.Any]))
-      SuspendedDate.foreach(__v => __obj.update("SuspendedDate", __v.asInstanceOf[js.Any]))
-      TerminationDate.foreach(__v => __obj.update("TerminationDate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConfirmationRequired.foreach(__v => __obj.updateDynamic("ConfirmationRequired")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      FailureReasons.foreach(__v => __obj.updateDynamic("FailureReasons")(__v.asInstanceOf[js.Any]))
+      JobArn.foreach(__v => __obj.updateDynamic("JobArn")(__v.asInstanceOf[js.Any]))
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      Manifest.foreach(__v => __obj.updateDynamic("Manifest")(__v.asInstanceOf[js.Any]))
+      Operation.foreach(__v => __obj.updateDynamic("Operation")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      ProgressSummary.foreach(__v => __obj.updateDynamic("ProgressSummary")(__v.asInstanceOf[js.Any]))
+      Report.foreach(__v => __obj.updateDynamic("Report")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusUpdateReason.foreach(__v => __obj.updateDynamic("StatusUpdateReason")(__v.asInstanceOf[js.Any]))
+      SuspendedCause.foreach(__v => __obj.updateDynamic("SuspendedCause")(__v.asInstanceOf[js.Any]))
+      SuspendedDate.foreach(__v => __obj.updateDynamic("SuspendedDate")(__v.asInstanceOf[js.Any]))
+      TerminationDate.foreach(__v => __obj.updateDynamic("TerminationDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobDescriptor]
     }
   }
@@ -320,9 +320,9 @@ package s3control {
         FailureCode: js.UndefOr[JobFailureCode] = js.undefined,
         FailureReason: js.UndefOr[JobFailureReason] = js.undefined
     ): JobFailure = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FailureCode.foreach(__v => __obj.update("FailureCode", __v.asInstanceOf[js.Any]))
-      FailureReason.foreach(__v => __obj.update("FailureReason", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FailureCode.foreach(__v => __obj.updateDynamic("FailureCode")(__v.asInstanceOf[js.Any]))
+      FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobFailure]
     }
   }
@@ -353,15 +353,15 @@ package s3control {
         Status: js.UndefOr[JobStatus] = js.undefined,
         TerminationDate: js.UndefOr[JobTerminationDate] = js.undefined
     ): JobListDescriptor = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      JobId.foreach(__v => __obj.update("JobId", __v.asInstanceOf[js.Any]))
-      Operation.foreach(__v => __obj.update("Operation", __v.asInstanceOf[js.Any]))
-      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
-      ProgressSummary.foreach(__v => __obj.update("ProgressSummary", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      TerminationDate.foreach(__v => __obj.update("TerminationDate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      Operation.foreach(__v => __obj.updateDynamic("Operation")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      ProgressSummary.foreach(__v => __obj.updateDynamic("ProgressSummary")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TerminationDate.foreach(__v => __obj.updateDynamic("TerminationDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobListDescriptor]
     }
   }
@@ -380,7 +380,7 @@ package s3control {
         Location: JobManifestLocation,
         Spec: JobManifestSpec
     ): JobManifest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Location" -> Location.asInstanceOf[js.Any],
         "Spec"     -> Spec.asInstanceOf[js.Any]
       )
@@ -421,12 +421,12 @@ package s3control {
         ObjectArn: S3KeyArnString,
         ObjectVersionId: js.UndefOr[S3ObjectVersionId] = js.undefined
     ): JobManifestLocation = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ETag"      -> ETag.asInstanceOf[js.Any],
         "ObjectArn" -> ObjectArn.asInstanceOf[js.Any]
       )
 
-      ObjectVersionId.foreach(__v => __obj.update("ObjectVersionId", __v.asInstanceOf[js.Any]))
+      ObjectVersionId.foreach(__v => __obj.updateDynamic("ObjectVersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobManifestLocation]
     }
   }
@@ -445,11 +445,11 @@ package s3control {
         Format: JobManifestFormat,
         Fields: js.UndefOr[JobManifestFieldList] = js.undefined
     ): JobManifestSpec = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Format" -> Format.asInstanceOf[js.Any]
       )
 
-      Fields.foreach(__v => __obj.update("Fields", __v.asInstanceOf[js.Any]))
+      Fields.foreach(__v => __obj.updateDynamic("Fields")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobManifestSpec]
     }
   }
@@ -474,12 +474,12 @@ package s3control {
         S3PutObjectCopy: js.UndefOr[S3CopyObjectOperation] = js.undefined,
         S3PutObjectTagging: js.UndefOr[S3SetObjectTaggingOperation] = js.undefined
     ): JobOperation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LambdaInvoke.foreach(__v => __obj.update("LambdaInvoke", __v.asInstanceOf[js.Any]))
-      S3InitiateRestoreObject.foreach(__v => __obj.update("S3InitiateRestoreObject", __v.asInstanceOf[js.Any]))
-      S3PutObjectAcl.foreach(__v => __obj.update("S3PutObjectAcl", __v.asInstanceOf[js.Any]))
-      S3PutObjectCopy.foreach(__v => __obj.update("S3PutObjectCopy", __v.asInstanceOf[js.Any]))
-      S3PutObjectTagging.foreach(__v => __obj.update("S3PutObjectTagging", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LambdaInvoke.foreach(__v => __obj.updateDynamic("LambdaInvoke")(__v.asInstanceOf[js.Any]))
+      S3InitiateRestoreObject.foreach(__v => __obj.updateDynamic("S3InitiateRestoreObject")(__v.asInstanceOf[js.Any]))
+      S3PutObjectAcl.foreach(__v => __obj.updateDynamic("S3PutObjectAcl")(__v.asInstanceOf[js.Any]))
+      S3PutObjectCopy.foreach(__v => __obj.updateDynamic("S3PutObjectCopy")(__v.asInstanceOf[js.Any]))
+      S3PutObjectTagging.foreach(__v => __obj.updateDynamic("S3PutObjectTagging")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobOperation]
     }
   }
@@ -500,10 +500,10 @@ package s3control {
         NumberOfTasksSucceeded: js.UndefOr[JobNumberOfTasksSucceeded] = js.undefined,
         TotalNumberOfTasks: js.UndefOr[JobTotalNumberOfTasks] = js.undefined
     ): JobProgressSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NumberOfTasksFailed.foreach(__v => __obj.update("NumberOfTasksFailed", __v.asInstanceOf[js.Any]))
-      NumberOfTasksSucceeded.foreach(__v => __obj.update("NumberOfTasksSucceeded", __v.asInstanceOf[js.Any]))
-      TotalNumberOfTasks.foreach(__v => __obj.update("TotalNumberOfTasks", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NumberOfTasksFailed.foreach(__v => __obj.updateDynamic("NumberOfTasksFailed")(__v.asInstanceOf[js.Any]))
+      NumberOfTasksSucceeded.foreach(__v => __obj.updateDynamic("NumberOfTasksSucceeded")(__v.asInstanceOf[js.Any]))
+      TotalNumberOfTasks.foreach(__v => __obj.updateDynamic("TotalNumberOfTasks")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobProgressSummary]
     }
   }
@@ -528,14 +528,14 @@ package s3control {
         Prefix: js.UndefOr[ReportPrefixString] = js.undefined,
         ReportScope: js.UndefOr[JobReportScope] = js.undefined
     ): JobReport = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Enabled" -> Enabled.asInstanceOf[js.Any]
       )
 
-      Bucket.foreach(__v => __obj.update("Bucket", __v.asInstanceOf[js.Any]))
-      Format.foreach(__v => __obj.update("Format", __v.asInstanceOf[js.Any]))
-      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
-      ReportScope.foreach(__v => __obj.update("ReportScope", __v.asInstanceOf[js.Any]))
+      Bucket.foreach(__v => __obj.updateDynamic("Bucket")(__v.asInstanceOf[js.Any]))
+      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
+      ReportScope.foreach(__v => __obj.updateDynamic("ReportScope")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobReport]
     }
   }
@@ -599,8 +599,8 @@ package s3control {
     def apply(
         FunctionArn: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined
     ): LambdaInvokeOperation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FunctionArn.foreach(__v => __obj.update("FunctionArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FunctionArn.foreach(__v => __obj.updateDynamic("FunctionArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LambdaInvokeOperation]
     }
   }
@@ -620,13 +620,13 @@ package s3control {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined
     ): ListJobsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any]
       )
 
-      JobStatuses.foreach(__v => __obj.update("JobStatuses", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      JobStatuses.foreach(__v => __obj.updateDynamic("JobStatuses")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListJobsRequest]
     }
   }
@@ -642,9 +642,9 @@ package s3control {
         Jobs: js.UndefOr[JobListDescriptorList] = js.undefined,
         NextToken: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined
     ): ListJobsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Jobs.foreach(__v => __obj.update("Jobs", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Jobs.foreach(__v => __obj.updateDynamic("Jobs")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListJobsResult]
     }
   }
@@ -679,11 +679,11 @@ package s3control {
         IgnorePublicAcls: js.UndefOr[Setting] = js.undefined,
         RestrictPublicBuckets: js.UndefOr[Setting] = js.undefined
     ): PublicAccessBlockConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BlockPublicAcls.foreach(__v => __obj.update("BlockPublicAcls", __v.asInstanceOf[js.Any]))
-      BlockPublicPolicy.foreach(__v => __obj.update("BlockPublicPolicy", __v.asInstanceOf[js.Any]))
-      IgnorePublicAcls.foreach(__v => __obj.update("IgnorePublicAcls", __v.asInstanceOf[js.Any]))
-      RestrictPublicBuckets.foreach(__v => __obj.update("RestrictPublicBuckets", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BlockPublicAcls.foreach(__v => __obj.updateDynamic("BlockPublicAcls")(__v.asInstanceOf[js.Any]))
+      BlockPublicPolicy.foreach(__v => __obj.updateDynamic("BlockPublicPolicy")(__v.asInstanceOf[js.Any]))
+      IgnorePublicAcls.foreach(__v => __obj.updateDynamic("IgnorePublicAcls")(__v.asInstanceOf[js.Any]))
+      RestrictPublicBuckets.foreach(__v => __obj.updateDynamic("RestrictPublicBuckets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PublicAccessBlockConfiguration]
     }
   }
@@ -699,7 +699,7 @@ package s3control {
         AccountId: AccountId,
         PublicAccessBlockConfiguration: PublicAccessBlockConfiguration
     ): PutPublicAccessBlockRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId"                      -> AccountId.asInstanceOf[js.Any],
         "PublicAccessBlockConfiguration" -> PublicAccessBlockConfiguration.asInstanceOf[js.Any]
       )
@@ -729,11 +729,11 @@ package s3control {
         Owner: S3ObjectOwner,
         Grants: js.UndefOr[S3GrantList] = js.undefined
     ): S3AccessControlList = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Owner" -> Owner.asInstanceOf[js.Any]
       )
 
-      Grants.foreach(__v => __obj.update("Grants", __v.asInstanceOf[js.Any]))
+      Grants.foreach(__v => __obj.updateDynamic("Grants")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3AccessControlList]
     }
   }
@@ -752,9 +752,9 @@ package s3control {
         AccessControlList: js.UndefOr[S3AccessControlList] = js.undefined,
         CannedAccessControlList: js.UndefOr[S3CannedAccessControlList] = js.undefined
     ): S3AccessControlPolicy = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccessControlList.foreach(__v => __obj.update("AccessControlList", __v.asInstanceOf[js.Any]))
-      CannedAccessControlList.foreach(__v => __obj.update("CannedAccessControlList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccessControlList.foreach(__v => __obj.updateDynamic("AccessControlList")(__v.asInstanceOf[js.Any]))
+      CannedAccessControlList.foreach(__v => __obj.updateDynamic("CannedAccessControlList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3AccessControlPolicy]
     }
   }
@@ -823,23 +823,29 @@ package s3control {
         TargetResource: js.UndefOr[S3BucketArnString] = js.undefined,
         UnModifiedSinceConstraint: js.UndefOr[TimeStamp] = js.undefined
     ): S3CopyObjectOperation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccessControlGrants.foreach(__v => __obj.update("AccessControlGrants", __v.asInstanceOf[js.Any]))
-      CannedAccessControlList.foreach(__v => __obj.update("CannedAccessControlList", __v.asInstanceOf[js.Any]))
-      MetadataDirective.foreach(__v => __obj.update("MetadataDirective", __v.asInstanceOf[js.Any]))
-      ModifiedSinceConstraint.foreach(__v => __obj.update("ModifiedSinceConstraint", __v.asInstanceOf[js.Any]))
-      NewObjectMetadata.foreach(__v => __obj.update("NewObjectMetadata", __v.asInstanceOf[js.Any]))
-      NewObjectTagging.foreach(__v => __obj.update("NewObjectTagging", __v.asInstanceOf[js.Any]))
-      ObjectLockLegalHoldStatus.foreach(__v => __obj.update("ObjectLockLegalHoldStatus", __v.asInstanceOf[js.Any]))
-      ObjectLockMode.foreach(__v => __obj.update("ObjectLockMode", __v.asInstanceOf[js.Any]))
-      ObjectLockRetainUntilDate.foreach(__v => __obj.update("ObjectLockRetainUntilDate", __v.asInstanceOf[js.Any]))
-      RedirectLocation.foreach(__v => __obj.update("RedirectLocation", __v.asInstanceOf[js.Any]))
-      RequesterPays.foreach(__v => __obj.update("RequesterPays", __v.asInstanceOf[js.Any]))
-      SSEAwsKmsKeyId.foreach(__v => __obj.update("SSEAwsKmsKeyId", __v.asInstanceOf[js.Any]))
-      StorageClass.foreach(__v => __obj.update("StorageClass", __v.asInstanceOf[js.Any]))
-      TargetKeyPrefix.foreach(__v => __obj.update("TargetKeyPrefix", __v.asInstanceOf[js.Any]))
-      TargetResource.foreach(__v => __obj.update("TargetResource", __v.asInstanceOf[js.Any]))
-      UnModifiedSinceConstraint.foreach(__v => __obj.update("UnModifiedSinceConstraint", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccessControlGrants.foreach(__v => __obj.updateDynamic("AccessControlGrants")(__v.asInstanceOf[js.Any]))
+      CannedAccessControlList.foreach(__v => __obj.updateDynamic("CannedAccessControlList")(__v.asInstanceOf[js.Any]))
+      MetadataDirective.foreach(__v => __obj.updateDynamic("MetadataDirective")(__v.asInstanceOf[js.Any]))
+      ModifiedSinceConstraint.foreach(__v => __obj.updateDynamic("ModifiedSinceConstraint")(__v.asInstanceOf[js.Any]))
+      NewObjectMetadata.foreach(__v => __obj.updateDynamic("NewObjectMetadata")(__v.asInstanceOf[js.Any]))
+      NewObjectTagging.foreach(__v => __obj.updateDynamic("NewObjectTagging")(__v.asInstanceOf[js.Any]))
+      ObjectLockLegalHoldStatus.foreach(
+        __v => __obj.updateDynamic("ObjectLockLegalHoldStatus")(__v.asInstanceOf[js.Any])
+      )
+      ObjectLockMode.foreach(__v => __obj.updateDynamic("ObjectLockMode")(__v.asInstanceOf[js.Any]))
+      ObjectLockRetainUntilDate.foreach(
+        __v => __obj.updateDynamic("ObjectLockRetainUntilDate")(__v.asInstanceOf[js.Any])
+      )
+      RedirectLocation.foreach(__v => __obj.updateDynamic("RedirectLocation")(__v.asInstanceOf[js.Any]))
+      RequesterPays.foreach(__v => __obj.updateDynamic("RequesterPays")(__v.asInstanceOf[js.Any]))
+      SSEAwsKmsKeyId.foreach(__v => __obj.updateDynamic("SSEAwsKmsKeyId")(__v.asInstanceOf[js.Any]))
+      StorageClass.foreach(__v => __obj.updateDynamic("StorageClass")(__v.asInstanceOf[js.Any]))
+      TargetKeyPrefix.foreach(__v => __obj.updateDynamic("TargetKeyPrefix")(__v.asInstanceOf[js.Any]))
+      TargetResource.foreach(__v => __obj.updateDynamic("TargetResource")(__v.asInstanceOf[js.Any]))
+      UnModifiedSinceConstraint.foreach(
+        __v => __obj.updateDynamic("UnModifiedSinceConstraint")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[S3CopyObjectOperation]
     }
   }
@@ -865,9 +871,9 @@ package s3control {
         Grantee: js.UndefOr[S3Grantee] = js.undefined,
         Permission: js.UndefOr[S3Permission] = js.undefined
     ): S3Grant = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Grantee.foreach(__v => __obj.update("Grantee", __v.asInstanceOf[js.Any]))
-      Permission.foreach(__v => __obj.update("Permission", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Grantee.foreach(__v => __obj.updateDynamic("Grantee")(__v.asInstanceOf[js.Any]))
+      Permission.foreach(__v => __obj.updateDynamic("Permission")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Grant]
     }
   }
@@ -888,10 +894,10 @@ package s3control {
         Identifier: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined,
         TypeIdentifier: js.UndefOr[S3GranteeTypeIdentifier] = js.undefined
     ): S3Grantee = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
-      Identifier.foreach(__v => __obj.update("Identifier", __v.asInstanceOf[js.Any]))
-      TypeIdentifier.foreach(__v => __obj.update("TypeIdentifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
+      Identifier.foreach(__v => __obj.updateDynamic("Identifier")(__v.asInstanceOf[js.Any]))
+      TypeIdentifier.foreach(__v => __obj.updateDynamic("TypeIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Grantee]
     }
   }
@@ -918,9 +924,9 @@ package s3control {
         ExpirationInDays: js.UndefOr[S3ExpirationInDays] = js.undefined,
         GlacierJobTier: js.UndefOr[S3GlacierJobTier] = js.undefined
     ): S3InitiateRestoreObjectOperation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ExpirationInDays.foreach(__v => __obj.update("ExpirationInDays", __v.asInstanceOf[js.Any]))
-      GlacierJobTier.foreach(__v => __obj.update("GlacierJobTier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ExpirationInDays.foreach(__v => __obj.updateDynamic("ExpirationInDays")(__v.asInstanceOf[js.Any]))
+      GlacierJobTier.foreach(__v => __obj.updateDynamic("GlacierJobTier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3InitiateRestoreObjectOperation]
     }
   }
@@ -978,18 +984,18 @@ package s3control {
         SSEAlgorithm: js.UndefOr[S3SSEAlgorithm] = js.undefined,
         UserMetadata: js.UndefOr[S3UserMetadata] = js.undefined
     ): S3ObjectMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CacheControl.foreach(__v => __obj.update("CacheControl", __v.asInstanceOf[js.Any]))
-      ContentDisposition.foreach(__v => __obj.update("ContentDisposition", __v.asInstanceOf[js.Any]))
-      ContentEncoding.foreach(__v => __obj.update("ContentEncoding", __v.asInstanceOf[js.Any]))
-      ContentLanguage.foreach(__v => __obj.update("ContentLanguage", __v.asInstanceOf[js.Any]))
-      ContentLength.foreach(__v => __obj.update("ContentLength", __v.asInstanceOf[js.Any]))
-      ContentMD5.foreach(__v => __obj.update("ContentMD5", __v.asInstanceOf[js.Any]))
-      ContentType.foreach(__v => __obj.update("ContentType", __v.asInstanceOf[js.Any]))
-      HttpExpiresDate.foreach(__v => __obj.update("HttpExpiresDate", __v.asInstanceOf[js.Any]))
-      RequesterCharged.foreach(__v => __obj.update("RequesterCharged", __v.asInstanceOf[js.Any]))
-      SSEAlgorithm.foreach(__v => __obj.update("SSEAlgorithm", __v.asInstanceOf[js.Any]))
-      UserMetadata.foreach(__v => __obj.update("UserMetadata", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CacheControl.foreach(__v => __obj.updateDynamic("CacheControl")(__v.asInstanceOf[js.Any]))
+      ContentDisposition.foreach(__v => __obj.updateDynamic("ContentDisposition")(__v.asInstanceOf[js.Any]))
+      ContentEncoding.foreach(__v => __obj.updateDynamic("ContentEncoding")(__v.asInstanceOf[js.Any]))
+      ContentLanguage.foreach(__v => __obj.updateDynamic("ContentLanguage")(__v.asInstanceOf[js.Any]))
+      ContentLength.foreach(__v => __obj.updateDynamic("ContentLength")(__v.asInstanceOf[js.Any]))
+      ContentMD5.foreach(__v => __obj.updateDynamic("ContentMD5")(__v.asInstanceOf[js.Any]))
+      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
+      HttpExpiresDate.foreach(__v => __obj.updateDynamic("HttpExpiresDate")(__v.asInstanceOf[js.Any]))
+      RequesterCharged.foreach(__v => __obj.updateDynamic("RequesterCharged")(__v.asInstanceOf[js.Any]))
+      SSEAlgorithm.foreach(__v => __obj.updateDynamic("SSEAlgorithm")(__v.asInstanceOf[js.Any]))
+      UserMetadata.foreach(__v => __obj.updateDynamic("UserMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3ObjectMetadata]
     }
   }
@@ -1008,9 +1014,9 @@ package s3control {
         DisplayName: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined,
         ID: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined
     ): S3ObjectOwner = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
-      ID.foreach(__v => __obj.update("ID", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
+      ID.foreach(__v => __obj.updateDynamic("ID")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3ObjectOwner]
     }
   }
@@ -1044,8 +1050,8 @@ package s3control {
     def apply(
         AccessControlPolicy: js.UndefOr[S3AccessControlPolicy] = js.undefined
     ): S3SetObjectAclOperation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccessControlPolicy.foreach(__v => __obj.update("AccessControlPolicy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccessControlPolicy.foreach(__v => __obj.updateDynamic("AccessControlPolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3SetObjectAclOperation]
     }
   }
@@ -1062,8 +1068,8 @@ package s3control {
     def apply(
         TagSet: js.UndefOr[S3TagSet] = js.undefined
     ): S3SetObjectTaggingOperation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TagSet.foreach(__v => __obj.update("TagSet", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TagSet.foreach(__v => __obj.updateDynamic("TagSet")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3SetObjectTaggingOperation]
     }
   }
@@ -1094,7 +1100,7 @@ package s3control {
         Key: NonEmptyMaxLength1024String,
         Value: MaxLength1024String
     ): S3Tag = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"   -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
@@ -1116,7 +1122,7 @@ package s3control {
         JobId: JobId,
         Priority: JobPriority
     ): UpdateJobPriorityRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "JobId"     -> JobId.asInstanceOf[js.Any],
         "Priority"  -> Priority.asInstanceOf[js.Any]
@@ -1137,7 +1143,7 @@ package s3control {
         JobId: JobId,
         Priority: JobPriority
     ): UpdateJobPriorityResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobId"    -> JobId.asInstanceOf[js.Any],
         "Priority" -> Priority.asInstanceOf[js.Any]
       )
@@ -1161,13 +1167,13 @@ package s3control {
         RequestedJobStatus: RequestedJobStatus,
         StatusUpdateReason: js.UndefOr[JobStatusUpdateReason] = js.undefined
     ): UpdateJobStatusRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId"          -> AccountId.asInstanceOf[js.Any],
         "JobId"              -> JobId.asInstanceOf[js.Any],
         "RequestedJobStatus" -> RequestedJobStatus.asInstanceOf[js.Any]
       )
 
-      StatusUpdateReason.foreach(__v => __obj.update("StatusUpdateReason", __v.asInstanceOf[js.Any]))
+      StatusUpdateReason.foreach(__v => __obj.updateDynamic("StatusUpdateReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateJobStatusRequest]
     }
   }
@@ -1185,10 +1191,10 @@ package s3control {
         Status: js.UndefOr[JobStatus] = js.undefined,
         StatusUpdateReason: js.UndefOr[JobStatusUpdateReason] = js.undefined
     ): UpdateJobStatusResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobId.foreach(__v => __obj.update("JobId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusUpdateReason.foreach(__v => __obj.update("StatusUpdateReason", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusUpdateReason.foreach(__v => __obj.updateDynamic("StatusUpdateReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateJobStatusResult]
     }
   }

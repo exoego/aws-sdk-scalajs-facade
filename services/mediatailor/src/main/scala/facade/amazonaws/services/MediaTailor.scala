@@ -72,9 +72,9 @@ package mediatailor {
         AdSegmentUrlPrefix: js.UndefOr[__string] = js.undefined,
         ContentSegmentUrlPrefix: js.UndefOr[__string] = js.undefined
     ): CdnConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AdSegmentUrlPrefix.foreach(__v => __obj.update("AdSegmentUrlPrefix", __v.asInstanceOf[js.Any]))
-      ContentSegmentUrlPrefix.foreach(__v => __obj.update("ContentSegmentUrlPrefix", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AdSegmentUrlPrefix.foreach(__v => __obj.updateDynamic("AdSegmentUrlPrefix")(__v.asInstanceOf[js.Any]))
+      ContentSegmentUrlPrefix.foreach(__v => __obj.updateDynamic("ContentSegmentUrlPrefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CdnConfiguration]
     }
   }
@@ -95,10 +95,10 @@ package mediatailor {
         MpdLocation: js.UndefOr[__string] = js.undefined,
         OriginManifestType: js.UndefOr[OriginManifestType] = js.undefined
     ): DashConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ManifestEndpointPrefix.foreach(__v => __obj.update("ManifestEndpointPrefix", __v.asInstanceOf[js.Any]))
-      MpdLocation.foreach(__v => __obj.update("MpdLocation", __v.asInstanceOf[js.Any]))
-      OriginManifestType.foreach(__v => __obj.update("OriginManifestType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ManifestEndpointPrefix.foreach(__v => __obj.updateDynamic("ManifestEndpointPrefix")(__v.asInstanceOf[js.Any]))
+      MpdLocation.foreach(__v => __obj.updateDynamic("MpdLocation")(__v.asInstanceOf[js.Any]))
+      OriginManifestType.foreach(__v => __obj.updateDynamic("OriginManifestType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DashConfiguration]
     }
   }
@@ -117,9 +117,9 @@ package mediatailor {
         MpdLocation: js.UndefOr[__string] = js.undefined,
         OriginManifestType: js.UndefOr[OriginManifestType] = js.undefined
     ): DashConfigurationForPut = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MpdLocation.foreach(__v => __obj.update("MpdLocation", __v.asInstanceOf[js.Any]))
-      OriginManifestType.foreach(__v => __obj.update("OriginManifestType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MpdLocation.foreach(__v => __obj.updateDynamic("MpdLocation")(__v.asInstanceOf[js.Any]))
+      OriginManifestType.foreach(__v => __obj.updateDynamic("OriginManifestType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DashConfigurationForPut]
     }
   }
@@ -133,7 +133,7 @@ package mediatailor {
     def apply(
         Name: __string
     ): DeletePlaybackConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -147,7 +147,7 @@ package mediatailor {
   object DeletePlaybackConfigurationResponse {
     def apply(
         ): DeletePlaybackConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeletePlaybackConfigurationResponse]
     }
@@ -162,7 +162,7 @@ package mediatailor {
     def apply(
         Name: __string
     ): GetPlaybackConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -201,21 +201,21 @@ package mediatailor {
         TranscodeProfileName: js.UndefOr[__string] = js.undefined,
         VideoContentSourceUrl: js.UndefOr[__string] = js.undefined
     ): GetPlaybackConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AdDecisionServerUrl.foreach(__v => __obj.update("AdDecisionServerUrl", __v.asInstanceOf[js.Any]))
-      CdnConfiguration.foreach(__v => __obj.update("CdnConfiguration", __v.asInstanceOf[js.Any]))
-      DashConfiguration.foreach(__v => __obj.update("DashConfiguration", __v.asInstanceOf[js.Any]))
-      HlsConfiguration.foreach(__v => __obj.update("HlsConfiguration", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      PlaybackConfigurationArn.foreach(__v => __obj.update("PlaybackConfigurationArn", __v.asInstanceOf[js.Any]))
-      PlaybackEndpointPrefix.foreach(__v => __obj.update("PlaybackEndpointPrefix", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AdDecisionServerUrl.foreach(__v => __obj.updateDynamic("AdDecisionServerUrl")(__v.asInstanceOf[js.Any]))
+      CdnConfiguration.foreach(__v => __obj.updateDynamic("CdnConfiguration")(__v.asInstanceOf[js.Any]))
+      DashConfiguration.foreach(__v => __obj.updateDynamic("DashConfiguration")(__v.asInstanceOf[js.Any]))
+      HlsConfiguration.foreach(__v => __obj.updateDynamic("HlsConfiguration")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PlaybackConfigurationArn.foreach(__v => __obj.updateDynamic("PlaybackConfigurationArn")(__v.asInstanceOf[js.Any]))
+      PlaybackEndpointPrefix.foreach(__v => __obj.updateDynamic("PlaybackEndpointPrefix")(__v.asInstanceOf[js.Any]))
       SessionInitializationEndpointPrefix.foreach(
-        __v => __obj.update("SessionInitializationEndpointPrefix", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("SessionInitializationEndpointPrefix")(__v.asInstanceOf[js.Any])
       )
-      SlateAdUrl.foreach(__v => __obj.update("SlateAdUrl", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      TranscodeProfileName.foreach(__v => __obj.update("TranscodeProfileName", __v.asInstanceOf[js.Any]))
-      VideoContentSourceUrl.foreach(__v => __obj.update("VideoContentSourceUrl", __v.asInstanceOf[js.Any]))
+      SlateAdUrl.foreach(__v => __obj.updateDynamic("SlateAdUrl")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TranscodeProfileName.foreach(__v => __obj.updateDynamic("TranscodeProfileName")(__v.asInstanceOf[js.Any]))
+      VideoContentSourceUrl.foreach(__v => __obj.updateDynamic("VideoContentSourceUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPlaybackConfigurationResponse]
     }
   }
@@ -232,8 +232,8 @@ package mediatailor {
     def apply(
         ManifestEndpointPrefix: js.UndefOr[__string] = js.undefined
     ): HlsConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ManifestEndpointPrefix.foreach(__v => __obj.update("ManifestEndpointPrefix", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ManifestEndpointPrefix.foreach(__v => __obj.updateDynamic("ManifestEndpointPrefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HlsConfiguration]
     }
   }
@@ -249,9 +249,9 @@ package mediatailor {
         MaxResults: js.UndefOr[__integerMin1Max100] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListPlaybackConfigurationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPlaybackConfigurationsRequest]
     }
   }
@@ -267,9 +267,9 @@ package mediatailor {
         Items: js.UndefOr[__listOfPlaybackConfigurations] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListPlaybackConfigurationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPlaybackConfigurationsResponse]
     }
   }
@@ -283,7 +283,7 @@ package mediatailor {
     def apply(
         ResourceArn: __string
     ): ListTagsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
@@ -300,8 +300,8 @@ package mediatailor {
     def apply(
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): ListTagsForResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
@@ -347,21 +347,21 @@ package mediatailor {
         TranscodeProfileName: js.UndefOr[__string] = js.undefined,
         VideoContentSourceUrl: js.UndefOr[__string] = js.undefined
     ): PlaybackConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AdDecisionServerUrl.foreach(__v => __obj.update("AdDecisionServerUrl", __v.asInstanceOf[js.Any]))
-      CdnConfiguration.foreach(__v => __obj.update("CdnConfiguration", __v.asInstanceOf[js.Any]))
-      DashConfiguration.foreach(__v => __obj.update("DashConfiguration", __v.asInstanceOf[js.Any]))
-      HlsConfiguration.foreach(__v => __obj.update("HlsConfiguration", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      PlaybackConfigurationArn.foreach(__v => __obj.update("PlaybackConfigurationArn", __v.asInstanceOf[js.Any]))
-      PlaybackEndpointPrefix.foreach(__v => __obj.update("PlaybackEndpointPrefix", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AdDecisionServerUrl.foreach(__v => __obj.updateDynamic("AdDecisionServerUrl")(__v.asInstanceOf[js.Any]))
+      CdnConfiguration.foreach(__v => __obj.updateDynamic("CdnConfiguration")(__v.asInstanceOf[js.Any]))
+      DashConfiguration.foreach(__v => __obj.updateDynamic("DashConfiguration")(__v.asInstanceOf[js.Any]))
+      HlsConfiguration.foreach(__v => __obj.updateDynamic("HlsConfiguration")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PlaybackConfigurationArn.foreach(__v => __obj.updateDynamic("PlaybackConfigurationArn")(__v.asInstanceOf[js.Any]))
+      PlaybackEndpointPrefix.foreach(__v => __obj.updateDynamic("PlaybackEndpointPrefix")(__v.asInstanceOf[js.Any]))
       SessionInitializationEndpointPrefix.foreach(
-        __v => __obj.update("SessionInitializationEndpointPrefix", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("SessionInitializationEndpointPrefix")(__v.asInstanceOf[js.Any])
       )
-      SlateAdUrl.foreach(__v => __obj.update("SlateAdUrl", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      TranscodeProfileName.foreach(__v => __obj.update("TranscodeProfileName", __v.asInstanceOf[js.Any]))
-      VideoContentSourceUrl.foreach(__v => __obj.update("VideoContentSourceUrl", __v.asInstanceOf[js.Any]))
+      SlateAdUrl.foreach(__v => __obj.updateDynamic("SlateAdUrl")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TranscodeProfileName.foreach(__v => __obj.updateDynamic("TranscodeProfileName")(__v.asInstanceOf[js.Any]))
+      VideoContentSourceUrl.foreach(__v => __obj.updateDynamic("VideoContentSourceUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PlaybackConfiguration]
     }
   }
@@ -389,15 +389,15 @@ package mediatailor {
         TranscodeProfileName: js.UndefOr[__string] = js.undefined,
         VideoContentSourceUrl: js.UndefOr[__string] = js.undefined
     ): PutPlaybackConfigurationRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AdDecisionServerUrl.foreach(__v => __obj.update("AdDecisionServerUrl", __v.asInstanceOf[js.Any]))
-      CdnConfiguration.foreach(__v => __obj.update("CdnConfiguration", __v.asInstanceOf[js.Any]))
-      DashConfiguration.foreach(__v => __obj.update("DashConfiguration", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      SlateAdUrl.foreach(__v => __obj.update("SlateAdUrl", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      TranscodeProfileName.foreach(__v => __obj.update("TranscodeProfileName", __v.asInstanceOf[js.Any]))
-      VideoContentSourceUrl.foreach(__v => __obj.update("VideoContentSourceUrl", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AdDecisionServerUrl.foreach(__v => __obj.updateDynamic("AdDecisionServerUrl")(__v.asInstanceOf[js.Any]))
+      CdnConfiguration.foreach(__v => __obj.updateDynamic("CdnConfiguration")(__v.asInstanceOf[js.Any]))
+      DashConfiguration.foreach(__v => __obj.updateDynamic("DashConfiguration")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      SlateAdUrl.foreach(__v => __obj.updateDynamic("SlateAdUrl")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TranscodeProfileName.foreach(__v => __obj.updateDynamic("TranscodeProfileName")(__v.asInstanceOf[js.Any]))
+      VideoContentSourceUrl.foreach(__v => __obj.updateDynamic("VideoContentSourceUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutPlaybackConfigurationRequest]
     }
   }
@@ -433,21 +433,21 @@ package mediatailor {
         TranscodeProfileName: js.UndefOr[__string] = js.undefined,
         VideoContentSourceUrl: js.UndefOr[__string] = js.undefined
     ): PutPlaybackConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AdDecisionServerUrl.foreach(__v => __obj.update("AdDecisionServerUrl", __v.asInstanceOf[js.Any]))
-      CdnConfiguration.foreach(__v => __obj.update("CdnConfiguration", __v.asInstanceOf[js.Any]))
-      DashConfiguration.foreach(__v => __obj.update("DashConfiguration", __v.asInstanceOf[js.Any]))
-      HlsConfiguration.foreach(__v => __obj.update("HlsConfiguration", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      PlaybackConfigurationArn.foreach(__v => __obj.update("PlaybackConfigurationArn", __v.asInstanceOf[js.Any]))
-      PlaybackEndpointPrefix.foreach(__v => __obj.update("PlaybackEndpointPrefix", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AdDecisionServerUrl.foreach(__v => __obj.updateDynamic("AdDecisionServerUrl")(__v.asInstanceOf[js.Any]))
+      CdnConfiguration.foreach(__v => __obj.updateDynamic("CdnConfiguration")(__v.asInstanceOf[js.Any]))
+      DashConfiguration.foreach(__v => __obj.updateDynamic("DashConfiguration")(__v.asInstanceOf[js.Any]))
+      HlsConfiguration.foreach(__v => __obj.updateDynamic("HlsConfiguration")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PlaybackConfigurationArn.foreach(__v => __obj.updateDynamic("PlaybackConfigurationArn")(__v.asInstanceOf[js.Any]))
+      PlaybackEndpointPrefix.foreach(__v => __obj.updateDynamic("PlaybackEndpointPrefix")(__v.asInstanceOf[js.Any]))
       SessionInitializationEndpointPrefix.foreach(
-        __v => __obj.update("SessionInitializationEndpointPrefix", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("SessionInitializationEndpointPrefix")(__v.asInstanceOf[js.Any])
       )
-      SlateAdUrl.foreach(__v => __obj.update("SlateAdUrl", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      TranscodeProfileName.foreach(__v => __obj.update("TranscodeProfileName", __v.asInstanceOf[js.Any]))
-      VideoContentSourceUrl.foreach(__v => __obj.update("VideoContentSourceUrl", __v.asInstanceOf[js.Any]))
+      SlateAdUrl.foreach(__v => __obj.updateDynamic("SlateAdUrl")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TranscodeProfileName.foreach(__v => __obj.updateDynamic("TranscodeProfileName")(__v.asInstanceOf[js.Any]))
+      VideoContentSourceUrl.foreach(__v => __obj.updateDynamic("VideoContentSourceUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutPlaybackConfigurationResponse]
     }
   }
@@ -463,7 +463,7 @@ package mediatailor {
         ResourceArn: __string,
         Tags: __mapOf__string
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
       )
@@ -483,7 +483,7 @@ package mediatailor {
         ResourceArn: __string,
         TagKeys: __listOf__string
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
       )

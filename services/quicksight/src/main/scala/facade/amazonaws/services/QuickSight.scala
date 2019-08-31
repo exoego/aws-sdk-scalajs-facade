@@ -103,7 +103,7 @@ package quicksight {
         MemberName: GroupMemberName,
         Namespace: Namespace
     ): CreateGroupMembershipRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "GroupName"    -> GroupName.asInstanceOf[js.Any],
         "MemberName"   -> MemberName.asInstanceOf[js.Any],
@@ -127,10 +127,10 @@ package quicksight {
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined
     ): CreateGroupMembershipResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GroupMember.foreach(__v => __obj.update("GroupMember", __v.asInstanceOf[js.Any]))
-      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GroupMember.foreach(__v => __obj.updateDynamic("GroupMember")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGroupMembershipResponse]
     }
   }
@@ -153,13 +153,13 @@ package quicksight {
         Namespace: Namespace,
         Description: js.UndefOr[GroupDescription] = js.undefined
     ): CreateGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "GroupName"    -> GroupName.asInstanceOf[js.Any],
         "Namespace"    -> Namespace.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGroupRequest]
     }
   }
@@ -180,10 +180,10 @@ package quicksight {
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined
     ): CreateGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Group.foreach(__v => __obj.update("Group", __v.asInstanceOf[js.Any]))
-      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Group.foreach(__v => __obj.updateDynamic("Group")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGroupResponse]
     }
   }
@@ -203,7 +203,7 @@ package quicksight {
         MemberName: GroupMemberName,
         Namespace: Namespace
     ): DeleteGroupMembershipRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "GroupName"    -> GroupName.asInstanceOf[js.Any],
         "MemberName"   -> MemberName.asInstanceOf[js.Any],
@@ -225,9 +225,9 @@ package quicksight {
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined
     ): DeleteGroupMembershipResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteGroupMembershipResponse]
     }
   }
@@ -245,7 +245,7 @@ package quicksight {
         GroupName: GroupName,
         Namespace: Namespace
     ): DeleteGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "GroupName"    -> GroupName.asInstanceOf[js.Any],
         "Namespace"    -> Namespace.asInstanceOf[js.Any]
@@ -266,9 +266,9 @@ package quicksight {
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined
     ): DeleteGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteGroupResponse]
     }
   }
@@ -289,7 +289,7 @@ package quicksight {
         Namespace: Namespace,
         PrincipalId: String
     ): DeleteUserByPrincipalIdRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "Namespace"    -> Namespace.asInstanceOf[js.Any],
         "PrincipalId"  -> PrincipalId.asInstanceOf[js.Any]
@@ -310,9 +310,9 @@ package quicksight {
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined
     ): DeleteUserByPrincipalIdResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteUserByPrincipalIdResponse]
     }
   }
@@ -330,7 +330,7 @@ package quicksight {
         Namespace: Namespace,
         UserName: UserName
     ): DeleteUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "Namespace"    -> Namespace.asInstanceOf[js.Any],
         "UserName"     -> UserName.asInstanceOf[js.Any]
@@ -351,9 +351,9 @@ package quicksight {
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined
     ): DeleteUserResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteUserResponse]
     }
   }
@@ -371,7 +371,7 @@ package quicksight {
         GroupName: GroupName,
         Namespace: Namespace
     ): DescribeGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "GroupName"    -> GroupName.asInstanceOf[js.Any],
         "Namespace"    -> Namespace.asInstanceOf[js.Any]
@@ -394,10 +394,10 @@ package quicksight {
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined
     ): DescribeGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Group.foreach(__v => __obj.update("Group", __v.asInstanceOf[js.Any]))
-      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Group.foreach(__v => __obj.updateDynamic("Group")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeGroupResponse]
     }
   }
@@ -415,7 +415,7 @@ package quicksight {
         Namespace: Namespace,
         UserName: UserName
     ): DescribeUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "Namespace"    -> Namespace.asInstanceOf[js.Any],
         "UserName"     -> UserName.asInstanceOf[js.Any]
@@ -438,10 +438,10 @@ package quicksight {
         Status: js.UndefOr[StatusCode] = js.undefined,
         User: js.UndefOr[User] = js.undefined
     ): DescribeUserResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      User.foreach(__v => __obj.update("User", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeUserResponse]
     }
   }
@@ -467,16 +467,16 @@ package quicksight {
         UndoRedoDisabled: js.UndefOr[Boolean] = js.undefined,
         UserArn: js.UndefOr[Arn] = js.undefined
     ): GetDashboardEmbedUrlRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "DashboardId"  -> DashboardId.asInstanceOf[js.Any],
         "IdentityType" -> IdentityType.asInstanceOf[js.Any]
       )
 
-      ResetDisabled.foreach(__v => __obj.update("ResetDisabled", __v.asInstanceOf[js.Any]))
-      SessionLifetimeInMinutes.foreach(__v => __obj.update("SessionLifetimeInMinutes", __v.asInstanceOf[js.Any]))
-      UndoRedoDisabled.foreach(__v => __obj.update("UndoRedoDisabled", __v.asInstanceOf[js.Any]))
-      UserArn.foreach(__v => __obj.update("UserArn", __v.asInstanceOf[js.Any]))
+      ResetDisabled.foreach(__v => __obj.updateDynamic("ResetDisabled")(__v.asInstanceOf[js.Any]))
+      SessionLifetimeInMinutes.foreach(__v => __obj.updateDynamic("SessionLifetimeInMinutes")(__v.asInstanceOf[js.Any]))
+      UndoRedoDisabled.foreach(__v => __obj.updateDynamic("UndoRedoDisabled")(__v.asInstanceOf[js.Any]))
+      UserArn.foreach(__v => __obj.updateDynamic("UserArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDashboardEmbedUrlRequest]
     }
   }
@@ -494,10 +494,10 @@ package quicksight {
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined
     ): GetDashboardEmbedUrlResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EmbedUrl.foreach(__v => __obj.update("EmbedUrl", __v.asInstanceOf[js.Any]))
-      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EmbedUrl.foreach(__v => __obj.updateDynamic("EmbedUrl")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDashboardEmbedUrlResponse]
     }
   }
@@ -520,11 +520,11 @@ package quicksight {
         GroupName: js.UndefOr[GroupName] = js.undefined,
         PrincipalId: js.UndefOr[String] = js.undefined
     ): Group = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      GroupName.foreach(__v => __obj.update("GroupName", __v.asInstanceOf[js.Any]))
-      PrincipalId.foreach(__v => __obj.update("PrincipalId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
+      PrincipalId.foreach(__v => __obj.updateDynamic("PrincipalId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Group]
     }
   }
@@ -543,9 +543,9 @@ package quicksight {
         Arn: js.UndefOr[Arn] = js.undefined,
         MemberName: js.UndefOr[GroupMemberName] = js.undefined
     ): GroupMember = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      MemberName.foreach(__v => __obj.update("MemberName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      MemberName.foreach(__v => __obj.updateDynamic("MemberName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GroupMember]
     }
   }
@@ -574,14 +574,14 @@ package quicksight {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListGroupMembershipsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "GroupName"    -> GroupName.asInstanceOf[js.Any],
         "Namespace"    -> Namespace.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGroupMembershipsRequest]
     }
   }
@@ -601,11 +601,11 @@ package quicksight {
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined
     ): ListGroupMembershipsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GroupMemberList.foreach(__v => __obj.update("GroupMemberList", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GroupMemberList.foreach(__v => __obj.updateDynamic("GroupMemberList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGroupMembershipsResponse]
     }
   }
@@ -625,13 +625,13 @@ package quicksight {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListGroupsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "Namespace"    -> Namespace.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGroupsRequest]
     }
   }
@@ -651,11 +651,11 @@ package quicksight {
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined
     ): ListGroupsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GroupList.foreach(__v => __obj.update("GroupList", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GroupList.foreach(__v => __obj.updateDynamic("GroupList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGroupsResponse]
     }
   }
@@ -677,14 +677,14 @@ package quicksight {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListUserGroupsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "Namespace"    -> Namespace.asInstanceOf[js.Any],
         "UserName"     -> UserName.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListUserGroupsRequest]
     }
   }
@@ -704,11 +704,11 @@ package quicksight {
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined
     ): ListUserGroupsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GroupList.foreach(__v => __obj.update("GroupList", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GroupList.foreach(__v => __obj.updateDynamic("GroupList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListUserGroupsResponse]
     }
   }
@@ -728,13 +728,13 @@ package quicksight {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListUsersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "Namespace"    -> Namespace.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListUsersRequest]
     }
   }
@@ -754,11 +754,11 @@ package quicksight {
         Status: js.UndefOr[StatusCode] = js.undefined,
         UserList: js.UndefOr[UserList] = js.undefined
     ): ListUsersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      UserList.foreach(__v => __obj.update("UserList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      UserList.foreach(__v => __obj.updateDynamic("UserList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListUsersResponse]
     }
   }
@@ -786,7 +786,7 @@ package quicksight {
         SessionName: js.UndefOr[RoleSessionName] = js.undefined,
         UserName: js.UndefOr[UserName] = js.undefined
     ): RegisterUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "Email"        -> Email.asInstanceOf[js.Any],
         "IdentityType" -> IdentityType.asInstanceOf[js.Any],
@@ -794,9 +794,9 @@ package quicksight {
         "UserRole"     -> UserRole.asInstanceOf[js.Any]
       )
 
-      IamArn.foreach(__v => __obj.update("IamArn", __v.asInstanceOf[js.Any]))
-      SessionName.foreach(__v => __obj.update("SessionName", __v.asInstanceOf[js.Any]))
-      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      IamArn.foreach(__v => __obj.updateDynamic("IamArn")(__v.asInstanceOf[js.Any]))
+      SessionName.foreach(__v => __obj.updateDynamic("SessionName")(__v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterUserRequest]
     }
   }
@@ -816,11 +816,11 @@ package quicksight {
         User: js.UndefOr[User] = js.undefined,
         UserInvitationUrl: js.UndefOr[String] = js.undefined
     ): RegisterUserResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      User.foreach(__v => __obj.update("User", __v.asInstanceOf[js.Any]))
-      UserInvitationUrl.foreach(__v => __obj.update("UserInvitationUrl", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
+      UserInvitationUrl.foreach(__v => __obj.updateDynamic("UserInvitationUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterUserResponse]
     }
   }
@@ -840,13 +840,13 @@ package quicksight {
         Namespace: Namespace,
         Description: js.UndefOr[GroupDescription] = js.undefined
     ): UpdateGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "GroupName"    -> GroupName.asInstanceOf[js.Any],
         "Namespace"    -> Namespace.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGroupRequest]
     }
   }
@@ -864,10 +864,10 @@ package quicksight {
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined
     ): UpdateGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Group.foreach(__v => __obj.update("Group", __v.asInstanceOf[js.Any]))
-      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Group.foreach(__v => __obj.updateDynamic("Group")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGroupResponse]
     }
   }
@@ -889,7 +889,7 @@ package quicksight {
         Role: UserRole,
         UserName: UserName
     ): UpdateUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "Email"        -> Email.asInstanceOf[js.Any],
         "Namespace"    -> Namespace.asInstanceOf[js.Any],
@@ -914,10 +914,10 @@ package quicksight {
         Status: js.UndefOr[StatusCode] = js.undefined,
         User: js.UndefOr[User] = js.undefined
     ): UpdateUserResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      User.foreach(__v => __obj.update("User", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateUserResponse]
     }
   }
@@ -946,14 +946,14 @@ package quicksight {
         Role: js.UndefOr[UserRole] = js.undefined,
         UserName: js.UndefOr[UserName] = js.undefined
     ): User = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Active.foreach(__v => __obj.update("Active", __v.asInstanceOf[js.Any]))
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Email.foreach(__v => __obj.update("Email", __v.asInstanceOf[js.Any]))
-      IdentityType.foreach(__v => __obj.update("IdentityType", __v.asInstanceOf[js.Any]))
-      PrincipalId.foreach(__v => __obj.update("PrincipalId", __v.asInstanceOf[js.Any]))
-      Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
-      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Active.foreach(__v => __obj.updateDynamic("Active")(__v.asInstanceOf[js.Any]))
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Email.foreach(__v => __obj.updateDynamic("Email")(__v.asInstanceOf[js.Any]))
+      IdentityType.foreach(__v => __obj.updateDynamic("IdentityType")(__v.asInstanceOf[js.Any]))
+      PrincipalId.foreach(__v => __obj.updateDynamic("PrincipalId")(__v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[User]
     }
   }

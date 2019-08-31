@@ -626,12 +626,12 @@ package servicecatalog {
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
         PortfolioShareType: js.UndefOr[PortfolioShareType] = js.undefined
     ): AcceptPortfolioShareInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PortfolioId" -> PortfolioId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      PortfolioShareType.foreach(__v => __obj.update("PortfolioShareType", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      PortfolioShareType.foreach(__v => __obj.updateDynamic("PortfolioShareType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AcceptPortfolioShareInput]
     }
   }
@@ -642,7 +642,7 @@ package servicecatalog {
   object AcceptPortfolioShareOutput {
     def apply(
         ): AcceptPortfolioShareOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AcceptPortfolioShareOutput]
     }
@@ -662,9 +662,9 @@ package servicecatalog {
         Key: js.UndefOr[AccessLevelFilterKey] = js.undefined,
         Value: js.UndefOr[AccessLevelFilterValue] = js.undefined
     ): AccessLevelFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AccessLevelFilter]
     }
   }
@@ -696,7 +696,7 @@ package servicecatalog {
         BudgetName: BudgetName,
         ResourceId: Id
     ): AssociateBudgetWithResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BudgetName" -> BudgetName.asInstanceOf[js.Any],
         "ResourceId" -> ResourceId.asInstanceOf[js.Any]
       )
@@ -711,7 +711,7 @@ package servicecatalog {
   object AssociateBudgetWithResourceOutput {
     def apply(
         ): AssociateBudgetWithResourceOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateBudgetWithResourceOutput]
     }
@@ -732,13 +732,13 @@ package servicecatalog {
         PrincipalType: PrincipalType,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): AssociatePrincipalWithPortfolioInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PortfolioId"   -> PortfolioId.asInstanceOf[js.Any],
         "PrincipalARN"  -> PrincipalARN.asInstanceOf[js.Any],
         "PrincipalType" -> PrincipalType.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociatePrincipalWithPortfolioInput]
     }
   }
@@ -749,7 +749,7 @@ package servicecatalog {
   object AssociatePrincipalWithPortfolioOutput {
     def apply(
         ): AssociatePrincipalWithPortfolioOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociatePrincipalWithPortfolioOutput]
     }
@@ -770,13 +770,13 @@ package servicecatalog {
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
         SourcePortfolioId: js.UndefOr[Id] = js.undefined
     ): AssociateProductWithPortfolioInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PortfolioId" -> PortfolioId.asInstanceOf[js.Any],
         "ProductId"   -> ProductId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      SourcePortfolioId.foreach(__v => __obj.update("SourcePortfolioId", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      SourcePortfolioId.foreach(__v => __obj.updateDynamic("SourcePortfolioId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateProductWithPortfolioInput]
     }
   }
@@ -787,7 +787,7 @@ package servicecatalog {
   object AssociateProductWithPortfolioOutput {
     def apply(
         ): AssociateProductWithPortfolioOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateProductWithPortfolioOutput]
     }
@@ -808,13 +808,13 @@ package servicecatalog {
         ServiceActionId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): AssociateServiceActionWithProvisioningArtifactInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ProductId"              -> ProductId.asInstanceOf[js.Any],
         "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any],
         "ServiceActionId"        -> ServiceActionId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateServiceActionWithProvisioningArtifactInput]
     }
   }
@@ -825,7 +825,7 @@ package servicecatalog {
   object AssociateServiceActionWithProvisioningArtifactOutput {
     def apply(
         ): AssociateServiceActionWithProvisioningArtifactOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateServiceActionWithProvisioningArtifactOutput]
     }
@@ -842,7 +842,7 @@ package servicecatalog {
         ResourceId: ResourceId,
         TagOptionId: TagOptionId
     ): AssociateTagOptionWithResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceId"  -> ResourceId.asInstanceOf[js.Any],
         "TagOptionId" -> TagOptionId.asInstanceOf[js.Any]
       )
@@ -857,7 +857,7 @@ package servicecatalog {
   object AssociateTagOptionWithResourceOutput {
     def apply(
         ): AssociateTagOptionWithResourceOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateTagOptionWithResourceOutput]
     }
@@ -874,11 +874,11 @@ package servicecatalog {
         ServiceActionAssociations: ServiceActionAssociations,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): BatchAssociateServiceActionWithProvisioningArtifactInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServiceActionAssociations" -> ServiceActionAssociations.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchAssociateServiceActionWithProvisioningArtifactInput]
     }
   }
@@ -892,9 +892,9 @@ package servicecatalog {
     def apply(
         FailedServiceActionAssociations: js.UndefOr[FailedServiceActionAssociations] = js.undefined
     ): BatchAssociateServiceActionWithProvisioningArtifactOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       FailedServiceActionAssociations.foreach(
-        __v => __obj.update("FailedServiceActionAssociations", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("FailedServiceActionAssociations")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[BatchAssociateServiceActionWithProvisioningArtifactOutput]
     }
@@ -911,11 +911,11 @@ package servicecatalog {
         ServiceActionAssociations: ServiceActionAssociations,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): BatchDisassociateServiceActionFromProvisioningArtifactInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServiceActionAssociations" -> ServiceActionAssociations.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDisassociateServiceActionFromProvisioningArtifactInput]
     }
   }
@@ -929,9 +929,9 @@ package servicecatalog {
     def apply(
         FailedServiceActionAssociations: js.UndefOr[FailedServiceActionAssociations] = js.undefined
     ): BatchDisassociateServiceActionFromProvisioningArtifactOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       FailedServiceActionAssociations.foreach(
-        __v => __obj.update("FailedServiceActionAssociations", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("FailedServiceActionAssociations")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[BatchDisassociateServiceActionFromProvisioningArtifactOutput]
     }
@@ -949,8 +949,8 @@ package servicecatalog {
     def apply(
         BudgetName: js.UndefOr[BudgetName] = js.undefined
     ): BudgetDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BudgetName.foreach(__v => __obj.update("BudgetName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BudgetName.foreach(__v => __obj.updateDynamic("BudgetName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BudgetDetail]
     }
   }
@@ -975,8 +975,8 @@ package servicecatalog {
     def apply(
         Name: js.UndefOr[CloudWatchDashboardName] = js.undefined
     ): CloudWatchDashboard = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CloudWatchDashboard]
     }
   }
@@ -999,11 +999,11 @@ package servicecatalog {
         Owner: js.UndefOr[AccountId] = js.undefined,
         Type: js.UndefOr[ConstraintType] = js.undefined
     ): ConstraintDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConstraintId.foreach(__v => __obj.update("ConstraintId", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Owner.foreach(__v => __obj.update("Owner", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConstraintId.foreach(__v => __obj.updateDynamic("ConstraintId")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConstraintDetail]
     }
   }
@@ -1022,9 +1022,9 @@ package servicecatalog {
         Description: js.UndefOr[ConstraintDescription] = js.undefined,
         Type: js.UndefOr[ConstraintType] = js.undefined
     ): ConstraintSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConstraintSummary]
     }
   }
@@ -1056,18 +1056,18 @@ package servicecatalog {
         TargetProductId: js.UndefOr[Id] = js.undefined,
         TargetProductName: js.UndefOr[ProductViewName] = js.undefined
     ): CopyProductInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
         "SourceProductArn" -> SourceProductArn.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      CopyOptions.foreach(__v => __obj.update("CopyOptions", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      CopyOptions.foreach(__v => __obj.updateDynamic("CopyOptions")(__v.asInstanceOf[js.Any]))
       SourceProvisioningArtifactIdentifiers.foreach(
-        __v => __obj.update("SourceProvisioningArtifactIdentifiers", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("SourceProvisioningArtifactIdentifiers")(__v.asInstanceOf[js.Any])
       )
-      TargetProductId.foreach(__v => __obj.update("TargetProductId", __v.asInstanceOf[js.Any]))
-      TargetProductName.foreach(__v => __obj.update("TargetProductName", __v.asInstanceOf[js.Any]))
+      TargetProductId.foreach(__v => __obj.updateDynamic("TargetProductId")(__v.asInstanceOf[js.Any]))
+      TargetProductName.foreach(__v => __obj.updateDynamic("TargetProductName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CopyProductInput]
     }
   }
@@ -1081,8 +1081,8 @@ package servicecatalog {
     def apply(
         CopyProductToken: js.UndefOr[Id] = js.undefined
     ): CopyProductOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CopyProductToken.foreach(__v => __obj.update("CopyProductToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CopyProductToken.foreach(__v => __obj.updateDynamic("CopyProductToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CopyProductOutput]
     }
   }
@@ -1116,7 +1116,7 @@ package servicecatalog {
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
         Description: js.UndefOr[ConstraintDescription] = js.undefined
     ): CreateConstraintInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
         "Parameters"       -> Parameters.asInstanceOf[js.Any],
         "PortfolioId"      -> PortfolioId.asInstanceOf[js.Any],
@@ -1124,8 +1124,8 @@ package servicecatalog {
         "Type"             -> Type.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateConstraintInput]
     }
   }
@@ -1143,10 +1143,10 @@ package servicecatalog {
         ConstraintParameters: js.UndefOr[ConstraintParameters] = js.undefined,
         Status: js.UndefOr[Status] = js.undefined
     ): CreateConstraintOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConstraintDetail.foreach(__v => __obj.update("ConstraintDetail", __v.asInstanceOf[js.Any]))
-      ConstraintParameters.foreach(__v => __obj.update("ConstraintParameters", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConstraintDetail.foreach(__v => __obj.updateDynamic("ConstraintDetail")(__v.asInstanceOf[js.Any]))
+      ConstraintParameters.foreach(__v => __obj.updateDynamic("ConstraintParameters")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateConstraintOutput]
     }
   }
@@ -1170,15 +1170,15 @@ package servicecatalog {
         Description: js.UndefOr[PortfolioDescription] = js.undefined,
         Tags: js.UndefOr[AddTags] = js.undefined
     ): CreatePortfolioInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DisplayName"      -> DisplayName.asInstanceOf[js.Any],
         "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
         "ProviderName"     -> ProviderName.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePortfolioInput]
     }
   }
@@ -1194,9 +1194,9 @@ package servicecatalog {
         PortfolioDetail: js.UndefOr[PortfolioDetail] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreatePortfolioOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PortfolioDetail.foreach(__v => __obj.update("PortfolioDetail", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PortfolioDetail.foreach(__v => __obj.updateDynamic("PortfolioDetail")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePortfolioOutput]
     }
   }
@@ -1216,13 +1216,13 @@ package servicecatalog {
         AccountId: js.UndefOr[AccountId] = js.undefined,
         OrganizationNode: js.UndefOr[OrganizationNode] = js.undefined
     ): CreatePortfolioShareInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PortfolioId" -> PortfolioId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      AccountId.foreach(__v => __obj.update("AccountId", __v.asInstanceOf[js.Any]))
-      OrganizationNode.foreach(__v => __obj.update("OrganizationNode", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      OrganizationNode.foreach(__v => __obj.updateDynamic("OrganizationNode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePortfolioShareInput]
     }
   }
@@ -1236,8 +1236,8 @@ package servicecatalog {
     def apply(
         PortfolioShareToken: js.UndefOr[Id] = js.undefined
     ): CreatePortfolioShareOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PortfolioShareToken.foreach(__v => __obj.update("PortfolioShareToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PortfolioShareToken.foreach(__v => __obj.updateDynamic("PortfolioShareToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePortfolioShareOutput]
     }
   }
@@ -1273,7 +1273,7 @@ package servicecatalog {
         SupportUrl: js.UndefOr[SupportUrl] = js.undefined,
         Tags: js.UndefOr[AddTags] = js.undefined
     ): CreateProductInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdempotencyToken"               -> IdempotencyToken.asInstanceOf[js.Any],
         "Name"                           -> Name.asInstanceOf[js.Any],
         "Owner"                          -> Owner.asInstanceOf[js.Any],
@@ -1281,13 +1281,13 @@ package servicecatalog {
         "ProvisioningArtifactParameters" -> ProvisioningArtifactParameters.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Distributor.foreach(__v => __obj.update("Distributor", __v.asInstanceOf[js.Any]))
-      SupportDescription.foreach(__v => __obj.update("SupportDescription", __v.asInstanceOf[js.Any]))
-      SupportEmail.foreach(__v => __obj.update("SupportEmail", __v.asInstanceOf[js.Any]))
-      SupportUrl.foreach(__v => __obj.update("SupportUrl", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Distributor.foreach(__v => __obj.updateDynamic("Distributor")(__v.asInstanceOf[js.Any]))
+      SupportDescription.foreach(__v => __obj.updateDynamic("SupportDescription")(__v.asInstanceOf[js.Any]))
+      SupportEmail.foreach(__v => __obj.updateDynamic("SupportEmail")(__v.asInstanceOf[js.Any]))
+      SupportUrl.foreach(__v => __obj.updateDynamic("SupportUrl")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateProductInput]
     }
   }
@@ -1305,10 +1305,12 @@ package servicecatalog {
         ProvisioningArtifactDetail: js.UndefOr[ProvisioningArtifactDetail] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateProductOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ProductViewDetail.foreach(__v => __obj.update("ProductViewDetail", __v.asInstanceOf[js.Any]))
-      ProvisioningArtifactDetail.foreach(__v => __obj.update("ProvisioningArtifactDetail", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ProductViewDetail.foreach(__v => __obj.updateDynamic("ProductViewDetail")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifactDetail.foreach(
+        __v => __obj.updateDynamic("ProvisioningArtifactDetail")(__v.asInstanceOf[js.Any])
+      )
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateProductOutput]
     }
   }
@@ -1342,7 +1344,7 @@ package servicecatalog {
         ProvisioningParameters: js.UndefOr[UpdateProvisioningParameters] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateProvisionedProductPlanInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdempotencyToken"       -> IdempotencyToken.asInstanceOf[js.Any],
         "PlanName"               -> PlanName.asInstanceOf[js.Any],
         "PlanType"               -> PlanType.asInstanceOf[js.Any],
@@ -1351,11 +1353,11 @@ package servicecatalog {
         "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      NotificationArns.foreach(__v => __obj.update("NotificationArns", __v.asInstanceOf[js.Any]))
-      PathId.foreach(__v => __obj.update("PathId", __v.asInstanceOf[js.Any]))
-      ProvisioningParameters.foreach(__v => __obj.update("ProvisioningParameters", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      NotificationArns.foreach(__v => __obj.updateDynamic("NotificationArns")(__v.asInstanceOf[js.Any]))
+      PathId.foreach(__v => __obj.updateDynamic("PathId")(__v.asInstanceOf[js.Any]))
+      ProvisioningParameters.foreach(__v => __obj.updateDynamic("ProvisioningParameters")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateProvisionedProductPlanInput]
     }
   }
@@ -1377,12 +1379,12 @@ package servicecatalog {
         ProvisionedProductName: js.UndefOr[ProvisionedProductName] = js.undefined,
         ProvisioningArtifactId: js.UndefOr[Id] = js.undefined
     ): CreateProvisionedProductPlanOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PlanId.foreach(__v => __obj.update("PlanId", __v.asInstanceOf[js.Any]))
-      PlanName.foreach(__v => __obj.update("PlanName", __v.asInstanceOf[js.Any]))
-      ProvisionProductId.foreach(__v => __obj.update("ProvisionProductId", __v.asInstanceOf[js.Any]))
-      ProvisionedProductName.foreach(__v => __obj.update("ProvisionedProductName", __v.asInstanceOf[js.Any]))
-      ProvisioningArtifactId.foreach(__v => __obj.update("ProvisioningArtifactId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PlanId.foreach(__v => __obj.updateDynamic("PlanId")(__v.asInstanceOf[js.Any]))
+      PlanName.foreach(__v => __obj.updateDynamic("PlanName")(__v.asInstanceOf[js.Any]))
+      ProvisionProductId.foreach(__v => __obj.updateDynamic("ProvisionProductId")(__v.asInstanceOf[js.Any]))
+      ProvisionedProductName.foreach(__v => __obj.updateDynamic("ProvisionedProductName")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifactId.foreach(__v => __obj.updateDynamic("ProvisioningArtifactId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateProvisionedProductPlanOutput]
     }
   }
@@ -1402,13 +1404,13 @@ package servicecatalog {
         ProductId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): CreateProvisioningArtifactInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
         "Parameters"       -> Parameters.asInstanceOf[js.Any],
         "ProductId"        -> ProductId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateProvisioningArtifactInput]
     }
   }
@@ -1426,10 +1428,12 @@ package servicecatalog {
         ProvisioningArtifactDetail: js.UndefOr[ProvisioningArtifactDetail] = js.undefined,
         Status: js.UndefOr[Status] = js.undefined
     ): CreateProvisioningArtifactOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Info.foreach(__v => __obj.update("Info", __v.asInstanceOf[js.Any]))
-      ProvisioningArtifactDetail.foreach(__v => __obj.update("ProvisioningArtifactDetail", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Info.foreach(__v => __obj.updateDynamic("Info")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifactDetail.foreach(
+        __v => __obj.updateDynamic("ProvisioningArtifactDetail")(__v.asInstanceOf[js.Any])
+      )
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateProvisioningArtifactOutput]
     }
   }
@@ -1453,15 +1457,15 @@ package servicecatalog {
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
         Description: js.UndefOr[ServiceActionDescription] = js.undefined
     ): CreateServiceActionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Definition"       -> Definition.asInstanceOf[js.Any],
         "DefinitionType"   -> DefinitionType.asInstanceOf[js.Any],
         "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
         "Name"             -> Name.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateServiceActionInput]
     }
   }
@@ -1475,8 +1479,8 @@ package servicecatalog {
     def apply(
         ServiceActionDetail: js.UndefOr[ServiceActionDetail] = js.undefined
     ): CreateServiceActionOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ServiceActionDetail.foreach(__v => __obj.update("ServiceActionDetail", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ServiceActionDetail.foreach(__v => __obj.updateDynamic("ServiceActionDetail")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateServiceActionOutput]
     }
   }
@@ -1492,7 +1496,7 @@ package servicecatalog {
         Key: TagOptionKey,
         Value: TagOptionValue
     ): CreateTagOptionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"   -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
@@ -1510,8 +1514,8 @@ package servicecatalog {
     def apply(
         TagOptionDetail: js.UndefOr[TagOptionDetail] = js.undefined
     ): CreateTagOptionOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TagOptionDetail.foreach(__v => __obj.update("TagOptionDetail", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TagOptionDetail.foreach(__v => __obj.updateDynamic("TagOptionDetail")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTagOptionOutput]
     }
   }
@@ -1527,11 +1531,11 @@ package servicecatalog {
         Id: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): DeleteConstraintInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteConstraintInput]
     }
   }
@@ -1542,7 +1546,7 @@ package servicecatalog {
   object DeleteConstraintOutput {
     def apply(
         ): DeleteConstraintOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteConstraintOutput]
     }
@@ -1559,11 +1563,11 @@ package servicecatalog {
         Id: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): DeletePortfolioInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeletePortfolioInput]
     }
   }
@@ -1574,7 +1578,7 @@ package servicecatalog {
   object DeletePortfolioOutput {
     def apply(
         ): DeletePortfolioOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeletePortfolioOutput]
     }
@@ -1595,13 +1599,13 @@ package servicecatalog {
         AccountId: js.UndefOr[AccountId] = js.undefined,
         OrganizationNode: js.UndefOr[OrganizationNode] = js.undefined
     ): DeletePortfolioShareInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PortfolioId" -> PortfolioId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      AccountId.foreach(__v => __obj.update("AccountId", __v.asInstanceOf[js.Any]))
-      OrganizationNode.foreach(__v => __obj.update("OrganizationNode", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      OrganizationNode.foreach(__v => __obj.updateDynamic("OrganizationNode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeletePortfolioShareInput]
     }
   }
@@ -1615,8 +1619,8 @@ package servicecatalog {
     def apply(
         PortfolioShareToken: js.UndefOr[Id] = js.undefined
     ): DeletePortfolioShareOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PortfolioShareToken.foreach(__v => __obj.update("PortfolioShareToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PortfolioShareToken.foreach(__v => __obj.updateDynamic("PortfolioShareToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeletePortfolioShareOutput]
     }
   }
@@ -1632,11 +1636,11 @@ package servicecatalog {
         Id: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): DeleteProductInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteProductInput]
     }
   }
@@ -1647,7 +1651,7 @@ package servicecatalog {
   object DeleteProductOutput {
     def apply(
         ): DeleteProductOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteProductOutput]
     }
@@ -1666,12 +1670,12 @@ package servicecatalog {
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
         IgnoreErrors: js.UndefOr[IgnoreErrors] = js.undefined
     ): DeleteProvisionedProductPlanInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PlanId" -> PlanId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      IgnoreErrors.foreach(__v => __obj.update("IgnoreErrors", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      IgnoreErrors.foreach(__v => __obj.updateDynamic("IgnoreErrors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteProvisionedProductPlanInput]
     }
   }
@@ -1682,7 +1686,7 @@ package servicecatalog {
   object DeleteProvisionedProductPlanOutput {
     def apply(
         ): DeleteProvisionedProductPlanOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteProvisionedProductPlanOutput]
     }
@@ -1701,12 +1705,12 @@ package servicecatalog {
         ProvisioningArtifactId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): DeleteProvisioningArtifactInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ProductId"              -> ProductId.asInstanceOf[js.Any],
         "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteProvisioningArtifactInput]
     }
   }
@@ -1717,7 +1721,7 @@ package servicecatalog {
   object DeleteProvisioningArtifactOutput {
     def apply(
         ): DeleteProvisioningArtifactOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteProvisioningArtifactOutput]
     }
@@ -1734,11 +1738,11 @@ package servicecatalog {
         Id: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): DeleteServiceActionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteServiceActionInput]
     }
   }
@@ -1749,7 +1753,7 @@ package servicecatalog {
   object DeleteServiceActionOutput {
     def apply(
         ): DeleteServiceActionOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteServiceActionOutput]
     }
@@ -1764,7 +1768,7 @@ package servicecatalog {
     def apply(
         Id: TagOptionId
     ): DeleteTagOptionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
@@ -1778,7 +1782,7 @@ package servicecatalog {
   object DeleteTagOptionOutput {
     def apply(
         ): DeleteTagOptionOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteTagOptionOutput]
     }
@@ -1795,11 +1799,11 @@ package servicecatalog {
         Id: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): DescribeConstraintInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeConstraintInput]
     }
   }
@@ -1817,10 +1821,10 @@ package servicecatalog {
         ConstraintParameters: js.UndefOr[ConstraintParameters] = js.undefined,
         Status: js.UndefOr[Status] = js.undefined
     ): DescribeConstraintOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConstraintDetail.foreach(__v => __obj.update("ConstraintDetail", __v.asInstanceOf[js.Any]))
-      ConstraintParameters.foreach(__v => __obj.update("ConstraintParameters", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConstraintDetail.foreach(__v => __obj.updateDynamic("ConstraintDetail")(__v.asInstanceOf[js.Any]))
+      ConstraintParameters.foreach(__v => __obj.updateDynamic("ConstraintParameters")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeConstraintOutput]
     }
   }
@@ -1836,11 +1840,11 @@ package servicecatalog {
         CopyProductToken: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): DescribeCopyProductStatusInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CopyProductToken" -> CopyProductToken.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeCopyProductStatusInput]
     }
   }
@@ -1858,10 +1862,10 @@ package servicecatalog {
         StatusDetail: js.UndefOr[StatusDetail] = js.undefined,
         TargetProductId: js.UndefOr[Id] = js.undefined
     ): DescribeCopyProductStatusOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CopyProductStatus.foreach(__v => __obj.update("CopyProductStatus", __v.asInstanceOf[js.Any]))
-      StatusDetail.foreach(__v => __obj.update("StatusDetail", __v.asInstanceOf[js.Any]))
-      TargetProductId.foreach(__v => __obj.update("TargetProductId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CopyProductStatus.foreach(__v => __obj.updateDynamic("CopyProductStatus")(__v.asInstanceOf[js.Any]))
+      StatusDetail.foreach(__v => __obj.updateDynamic("StatusDetail")(__v.asInstanceOf[js.Any]))
+      TargetProductId.foreach(__v => __obj.updateDynamic("TargetProductId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeCopyProductStatusOutput]
     }
   }
@@ -1877,11 +1881,11 @@ package servicecatalog {
         Id: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): DescribePortfolioInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePortfolioInput]
     }
   }
@@ -1901,11 +1905,11 @@ package servicecatalog {
         TagOptions: js.UndefOr[TagOptionDetails] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): DescribePortfolioOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Budgets.foreach(__v => __obj.update("Budgets", __v.asInstanceOf[js.Any]))
-      PortfolioDetail.foreach(__v => __obj.update("PortfolioDetail", __v.asInstanceOf[js.Any]))
-      TagOptions.foreach(__v => __obj.update("TagOptions", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Budgets.foreach(__v => __obj.updateDynamic("Budgets")(__v.asInstanceOf[js.Any]))
+      PortfolioDetail.foreach(__v => __obj.updateDynamic("PortfolioDetail")(__v.asInstanceOf[js.Any]))
+      TagOptions.foreach(__v => __obj.updateDynamic("TagOptions")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePortfolioOutput]
     }
   }
@@ -1919,7 +1923,7 @@ package servicecatalog {
     def apply(
         PortfolioShareToken: Id
     ): DescribePortfolioShareStatusInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PortfolioShareToken" -> PortfolioShareToken.asInstanceOf[js.Any]
       )
 
@@ -1944,12 +1948,12 @@ package servicecatalog {
         ShareDetails: js.UndefOr[ShareDetails] = js.undefined,
         Status: js.UndefOr[ShareStatus] = js.undefined
     ): DescribePortfolioShareStatusOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      OrganizationNodeValue.foreach(__v => __obj.update("OrganizationNodeValue", __v.asInstanceOf[js.Any]))
-      PortfolioId.foreach(__v => __obj.update("PortfolioId", __v.asInstanceOf[js.Any]))
-      PortfolioShareToken.foreach(__v => __obj.update("PortfolioShareToken", __v.asInstanceOf[js.Any]))
-      ShareDetails.foreach(__v => __obj.update("ShareDetails", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      OrganizationNodeValue.foreach(__v => __obj.updateDynamic("OrganizationNodeValue")(__v.asInstanceOf[js.Any]))
+      PortfolioId.foreach(__v => __obj.updateDynamic("PortfolioId")(__v.asInstanceOf[js.Any]))
+      PortfolioShareToken.foreach(__v => __obj.updateDynamic("PortfolioShareToken")(__v.asInstanceOf[js.Any]))
+      ShareDetails.foreach(__v => __obj.updateDynamic("ShareDetails")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePortfolioShareStatusOutput]
     }
   }
@@ -1965,11 +1969,11 @@ package servicecatalog {
         Id: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): DescribeProductAsAdminInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProductAsAdminInput]
     }
   }
@@ -1991,14 +1995,14 @@ package servicecatalog {
         TagOptions: js.UndefOr[TagOptionDetails] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): DescribeProductAsAdminOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Budgets.foreach(__v => __obj.update("Budgets", __v.asInstanceOf[js.Any]))
-      ProductViewDetail.foreach(__v => __obj.update("ProductViewDetail", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Budgets.foreach(__v => __obj.updateDynamic("Budgets")(__v.asInstanceOf[js.Any]))
+      ProductViewDetail.foreach(__v => __obj.updateDynamic("ProductViewDetail")(__v.asInstanceOf[js.Any]))
       ProvisioningArtifactSummaries.foreach(
-        __v => __obj.update("ProvisioningArtifactSummaries", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ProvisioningArtifactSummaries")(__v.asInstanceOf[js.Any])
       )
-      TagOptions.foreach(__v => __obj.update("TagOptions", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      TagOptions.foreach(__v => __obj.updateDynamic("TagOptions")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProductAsAdminOutput]
     }
   }
@@ -2014,11 +2018,11 @@ package servicecatalog {
         Id: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): DescribeProductInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProductInput]
     }
   }
@@ -2036,10 +2040,10 @@ package servicecatalog {
         ProductViewSummary: js.UndefOr[ProductViewSummary] = js.undefined,
         ProvisioningArtifacts: js.UndefOr[ProvisioningArtifacts] = js.undefined
     ): DescribeProductOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Budgets.foreach(__v => __obj.update("Budgets", __v.asInstanceOf[js.Any]))
-      ProductViewSummary.foreach(__v => __obj.update("ProductViewSummary", __v.asInstanceOf[js.Any]))
-      ProvisioningArtifacts.foreach(__v => __obj.update("ProvisioningArtifacts", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Budgets.foreach(__v => __obj.updateDynamic("Budgets")(__v.asInstanceOf[js.Any]))
+      ProductViewSummary.foreach(__v => __obj.updateDynamic("ProductViewSummary")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifacts.foreach(__v => __obj.updateDynamic("ProvisioningArtifacts")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProductOutput]
     }
   }
@@ -2055,11 +2059,11 @@ package servicecatalog {
         Id: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): DescribeProductViewInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProductViewInput]
     }
   }
@@ -2075,9 +2079,9 @@ package servicecatalog {
         ProductViewSummary: js.UndefOr[ProductViewSummary] = js.undefined,
         ProvisioningArtifacts: js.UndefOr[ProvisioningArtifacts] = js.undefined
     ): DescribeProductViewOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ProductViewSummary.foreach(__v => __obj.update("ProductViewSummary", __v.asInstanceOf[js.Any]))
-      ProvisioningArtifacts.foreach(__v => __obj.update("ProvisioningArtifacts", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ProductViewSummary.foreach(__v => __obj.updateDynamic("ProductViewSummary")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifacts.foreach(__v => __obj.updateDynamic("ProvisioningArtifacts")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProductViewOutput]
     }
   }
@@ -2093,11 +2097,11 @@ package servicecatalog {
         Id: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): DescribeProvisionedProductInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProvisionedProductInput]
     }
   }
@@ -2113,9 +2117,9 @@ package servicecatalog {
         CloudWatchDashboards: js.UndefOr[CloudWatchDashboards] = js.undefined,
         ProvisionedProductDetail: js.UndefOr[ProvisionedProductDetail] = js.undefined
     ): DescribeProvisionedProductOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CloudWatchDashboards.foreach(__v => __obj.update("CloudWatchDashboards", __v.asInstanceOf[js.Any]))
-      ProvisionedProductDetail.foreach(__v => __obj.update("ProvisionedProductDetail", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CloudWatchDashboards.foreach(__v => __obj.updateDynamic("CloudWatchDashboards")(__v.asInstanceOf[js.Any]))
+      ProvisionedProductDetail.foreach(__v => __obj.updateDynamic("ProvisionedProductDetail")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProvisionedProductOutput]
     }
   }
@@ -2135,13 +2139,13 @@ package servicecatalog {
         PageSize: js.UndefOr[PageSize] = js.undefined,
         PageToken: js.UndefOr[PageToken] = js.undefined
     ): DescribeProvisionedProductPlanInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PlanId" -> PlanId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      PageToken.foreach(__v => __obj.update("PageToken", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.updateDynamic("PageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProvisionedProductPlanInput]
     }
   }
@@ -2159,12 +2163,12 @@ package servicecatalog {
         ProvisionedProductPlanDetails: js.UndefOr[ProvisionedProductPlanDetails] = js.undefined,
         ResourceChanges: js.UndefOr[ResourceChanges] = js.undefined
     ): DescribeProvisionedProductPlanOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
       ProvisionedProductPlanDetails.foreach(
-        __v => __obj.update("ProvisionedProductPlanDetails", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ProvisionedProductPlanDetails")(__v.asInstanceOf[js.Any])
       )
-      ResourceChanges.foreach(__v => __obj.update("ResourceChanges", __v.asInstanceOf[js.Any]))
+      ResourceChanges.foreach(__v => __obj.updateDynamic("ResourceChanges")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProvisionedProductPlanOutput]
     }
   }
@@ -2184,13 +2188,13 @@ package servicecatalog {
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
         Verbose: js.UndefOr[Verbose] = js.undefined
     ): DescribeProvisioningArtifactInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ProductId"              -> ProductId.asInstanceOf[js.Any],
         "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      Verbose.foreach(__v => __obj.update("Verbose", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      Verbose.foreach(__v => __obj.updateDynamic("Verbose")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProvisioningArtifactInput]
     }
   }
@@ -2208,10 +2212,12 @@ package servicecatalog {
         ProvisioningArtifactDetail: js.UndefOr[ProvisioningArtifactDetail] = js.undefined,
         Status: js.UndefOr[Status] = js.undefined
     ): DescribeProvisioningArtifactOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Info.foreach(__v => __obj.update("Info", __v.asInstanceOf[js.Any]))
-      ProvisioningArtifactDetail.foreach(__v => __obj.update("ProvisioningArtifactDetail", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Info.foreach(__v => __obj.updateDynamic("Info")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifactDetail.foreach(
+        __v => __obj.updateDynamic("ProvisioningArtifactDetail")(__v.asInstanceOf[js.Any])
+      )
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProvisioningArtifactOutput]
     }
   }
@@ -2231,13 +2237,13 @@ package servicecatalog {
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
         PathId: js.UndefOr[Id] = js.undefined
     ): DescribeProvisioningParametersInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ProductId"              -> ProductId.asInstanceOf[js.Any],
         "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      PathId.foreach(__v => __obj.update("PathId", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      PathId.foreach(__v => __obj.updateDynamic("PathId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProvisioningParametersInput]
     }
   }
@@ -2259,16 +2265,16 @@ package servicecatalog {
         TagOptions: js.UndefOr[TagOptionSummaries] = js.undefined,
         UsageInstructions: js.UndefOr[UsageInstructions] = js.undefined
     ): DescribeProvisioningParametersOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConstraintSummaries.foreach(__v => __obj.update("ConstraintSummaries", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConstraintSummaries.foreach(__v => __obj.updateDynamic("ConstraintSummaries")(__v.asInstanceOf[js.Any]))
       ProvisioningArtifactParameters.foreach(
-        __v => __obj.update("ProvisioningArtifactParameters", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ProvisioningArtifactParameters")(__v.asInstanceOf[js.Any])
       )
       ProvisioningArtifactPreferences.foreach(
-        __v => __obj.update("ProvisioningArtifactPreferences", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ProvisioningArtifactPreferences")(__v.asInstanceOf[js.Any])
       )
-      TagOptions.foreach(__v => __obj.update("TagOptions", __v.asInstanceOf[js.Any]))
-      UsageInstructions.foreach(__v => __obj.update("UsageInstructions", __v.asInstanceOf[js.Any]))
+      TagOptions.foreach(__v => __obj.updateDynamic("TagOptions")(__v.asInstanceOf[js.Any]))
+      UsageInstructions.foreach(__v => __obj.updateDynamic("UsageInstructions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProvisioningParametersOutput]
     }
   }
@@ -2288,13 +2294,13 @@ package servicecatalog {
         PageSize: js.UndefOr[PageSize] = js.undefined,
         PageToken: js.UndefOr[PageToken] = js.undefined
     ): DescribeRecordInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      PageToken.foreach(__v => __obj.update("PageToken", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.updateDynamic("PageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRecordInput]
     }
   }
@@ -2312,10 +2318,10 @@ package servicecatalog {
         RecordDetail: js.UndefOr[RecordDetail] = js.undefined,
         RecordOutputs: js.UndefOr[RecordOutputs] = js.undefined
     ): DescribeRecordOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
-      RecordDetail.foreach(__v => __obj.update("RecordDetail", __v.asInstanceOf[js.Any]))
-      RecordOutputs.foreach(__v => __obj.update("RecordOutputs", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      RecordDetail.foreach(__v => __obj.updateDynamic("RecordDetail")(__v.asInstanceOf[js.Any]))
+      RecordOutputs.foreach(__v => __obj.updateDynamic("RecordOutputs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRecordOutput]
     }
   }
@@ -2333,12 +2339,12 @@ package servicecatalog {
         ServiceActionId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): DescribeServiceActionExecutionParametersInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ProvisionedProductId" -> ProvisionedProductId.asInstanceOf[js.Any],
         "ServiceActionId"      -> ServiceActionId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeServiceActionExecutionParametersInput]
     }
   }
@@ -2352,8 +2358,8 @@ package servicecatalog {
     def apply(
         ServiceActionParameters: js.UndefOr[ExecutionParameters] = js.undefined
     ): DescribeServiceActionExecutionParametersOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ServiceActionParameters.foreach(__v => __obj.update("ServiceActionParameters", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ServiceActionParameters.foreach(__v => __obj.updateDynamic("ServiceActionParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeServiceActionExecutionParametersOutput]
     }
   }
@@ -2369,11 +2375,11 @@ package servicecatalog {
         Id: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): DescribeServiceActionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeServiceActionInput]
     }
   }
@@ -2387,8 +2393,8 @@ package servicecatalog {
     def apply(
         ServiceActionDetail: js.UndefOr[ServiceActionDetail] = js.undefined
     ): DescribeServiceActionOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ServiceActionDetail.foreach(__v => __obj.update("ServiceActionDetail", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ServiceActionDetail.foreach(__v => __obj.updateDynamic("ServiceActionDetail")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeServiceActionOutput]
     }
   }
@@ -2402,7 +2408,7 @@ package servicecatalog {
     def apply(
         Id: TagOptionId
     ): DescribeTagOptionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
@@ -2419,8 +2425,8 @@ package servicecatalog {
     def apply(
         TagOptionDetail: js.UndefOr[TagOptionDetail] = js.undefined
     ): DescribeTagOptionOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TagOptionDetail.foreach(__v => __obj.update("TagOptionDetail", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TagOptionDetail.foreach(__v => __obj.updateDynamic("TagOptionDetail")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTagOptionOutput]
     }
   }
@@ -2431,7 +2437,7 @@ package servicecatalog {
   object DisableAWSOrganizationsAccessInput {
     def apply(
         ): DisableAWSOrganizationsAccessInput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisableAWSOrganizationsAccessInput]
     }
@@ -2443,7 +2449,7 @@ package servicecatalog {
   object DisableAWSOrganizationsAccessOutput {
     def apply(
         ): DisableAWSOrganizationsAccessOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisableAWSOrganizationsAccessOutput]
     }
@@ -2460,7 +2466,7 @@ package servicecatalog {
         BudgetName: BudgetName,
         ResourceId: Id
     ): DisassociateBudgetFromResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BudgetName" -> BudgetName.asInstanceOf[js.Any],
         "ResourceId" -> ResourceId.asInstanceOf[js.Any]
       )
@@ -2475,7 +2481,7 @@ package servicecatalog {
   object DisassociateBudgetFromResourceOutput {
     def apply(
         ): DisassociateBudgetFromResourceOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateBudgetFromResourceOutput]
     }
@@ -2494,12 +2500,12 @@ package servicecatalog {
         PrincipalARN: PrincipalARN,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): DisassociatePrincipalFromPortfolioInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PortfolioId"  -> PortfolioId.asInstanceOf[js.Any],
         "PrincipalARN" -> PrincipalARN.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisassociatePrincipalFromPortfolioInput]
     }
   }
@@ -2510,7 +2516,7 @@ package servicecatalog {
   object DisassociatePrincipalFromPortfolioOutput {
     def apply(
         ): DisassociatePrincipalFromPortfolioOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociatePrincipalFromPortfolioOutput]
     }
@@ -2529,12 +2535,12 @@ package servicecatalog {
         ProductId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): DisassociateProductFromPortfolioInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PortfolioId" -> PortfolioId.asInstanceOf[js.Any],
         "ProductId"   -> ProductId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisassociateProductFromPortfolioInput]
     }
   }
@@ -2545,7 +2551,7 @@ package servicecatalog {
   object DisassociateProductFromPortfolioOutput {
     def apply(
         ): DisassociateProductFromPortfolioOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateProductFromPortfolioOutput]
     }
@@ -2566,13 +2572,13 @@ package servicecatalog {
         ServiceActionId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): DisassociateServiceActionFromProvisioningArtifactInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ProductId"              -> ProductId.asInstanceOf[js.Any],
         "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any],
         "ServiceActionId"        -> ServiceActionId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisassociateServiceActionFromProvisioningArtifactInput]
     }
   }
@@ -2583,7 +2589,7 @@ package servicecatalog {
   object DisassociateServiceActionFromProvisioningArtifactOutput {
     def apply(
         ): DisassociateServiceActionFromProvisioningArtifactOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateServiceActionFromProvisioningArtifactOutput]
     }
@@ -2600,7 +2606,7 @@ package servicecatalog {
         ResourceId: ResourceId,
         TagOptionId: TagOptionId
     ): DisassociateTagOptionFromResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceId"  -> ResourceId.asInstanceOf[js.Any],
         "TagOptionId" -> TagOptionId.asInstanceOf[js.Any]
       )
@@ -2615,7 +2621,7 @@ package servicecatalog {
   object DisassociateTagOptionFromResourceOutput {
     def apply(
         ): DisassociateTagOptionFromResourceOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateTagOptionFromResourceOutput]
     }
@@ -2627,7 +2633,7 @@ package servicecatalog {
   object EnableAWSOrganizationsAccessInput {
     def apply(
         ): EnableAWSOrganizationsAccessInput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[EnableAWSOrganizationsAccessInput]
     }
@@ -2639,7 +2645,7 @@ package servicecatalog {
   object EnableAWSOrganizationsAccessOutput {
     def apply(
         ): EnableAWSOrganizationsAccessOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[EnableAWSOrganizationsAccessOutput]
     }
@@ -2665,12 +2671,12 @@ package servicecatalog {
         PlanId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): ExecuteProvisionedProductPlanInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
         "PlanId"           -> PlanId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExecuteProvisionedProductPlanInput]
     }
   }
@@ -2684,8 +2690,8 @@ package servicecatalog {
     def apply(
         RecordDetail: js.UndefOr[RecordDetail] = js.undefined
     ): ExecuteProvisionedProductPlanOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RecordDetail.foreach(__v => __obj.update("RecordDetail", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RecordDetail.foreach(__v => __obj.updateDynamic("RecordDetail")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExecuteProvisionedProductPlanOutput]
     }
   }
@@ -2707,14 +2713,14 @@ package servicecatalog {
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
         Parameters: js.UndefOr[ExecutionParameterMap] = js.undefined
     ): ExecuteProvisionedProductServiceActionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ExecuteToken"         -> ExecuteToken.asInstanceOf[js.Any],
         "ProvisionedProductId" -> ProvisionedProductId.asInstanceOf[js.Any],
         "ServiceActionId"      -> ServiceActionId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExecuteProvisionedProductServiceActionInput]
     }
   }
@@ -2728,8 +2734,8 @@ package servicecatalog {
     def apply(
         RecordDetail: js.UndefOr[RecordDetail] = js.undefined
     ): ExecuteProvisionedProductServiceActionOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RecordDetail.foreach(__v => __obj.update("RecordDetail", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RecordDetail.foreach(__v => __obj.updateDynamic("RecordDetail")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExecuteProvisionedProductServiceActionOutput]
     }
   }
@@ -2747,10 +2753,10 @@ package servicecatalog {
         Name: js.UndefOr[ExecutionParameterKey] = js.undefined,
         Type: js.UndefOr[ExecutionParameterType] = js.undefined
     ): ExecutionParameter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DefaultValues.foreach(__v => __obj.update("DefaultValues", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DefaultValues.foreach(__v => __obj.updateDynamic("DefaultValues")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExecutionParameter]
     }
   }
@@ -2775,12 +2781,12 @@ package servicecatalog {
         ProvisioningArtifactId: js.UndefOr[Id] = js.undefined,
         ServiceActionId: js.UndefOr[Id] = js.undefined
     ): FailedServiceActionAssociation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
-      ProductId.foreach(__v => __obj.update("ProductId", __v.asInstanceOf[js.Any]))
-      ProvisioningArtifactId.foreach(__v => __obj.update("ProvisioningArtifactId", __v.asInstanceOf[js.Any]))
-      ServiceActionId.foreach(__v => __obj.update("ServiceActionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      ProductId.foreach(__v => __obj.updateDynamic("ProductId")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifactId.foreach(__v => __obj.updateDynamic("ProvisioningArtifactId")(__v.asInstanceOf[js.Any]))
+      ServiceActionId.foreach(__v => __obj.updateDynamic("ServiceActionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FailedServiceActionAssociation]
     }
   }
@@ -2791,7 +2797,7 @@ package servicecatalog {
   object GetAWSOrganizationsAccessStatusInput {
     def apply(
         ): GetAWSOrganizationsAccessStatusInput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetAWSOrganizationsAccessStatusInput]
     }
@@ -2806,8 +2812,8 @@ package servicecatalog {
     def apply(
         AccessStatus: js.UndefOr[AccessStatus] = js.undefined
     ): GetAWSOrganizationsAccessStatusOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccessStatus.foreach(__v => __obj.update("AccessStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccessStatus.foreach(__v => __obj.updateDynamic("AccessStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAWSOrganizationsAccessStatusOutput]
     }
   }
@@ -2830,11 +2836,11 @@ package servicecatalog {
         Name: js.UndefOr[PortfolioName] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): LaunchPathSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConstraintSummaries.foreach(__v => __obj.update("ConstraintSummaries", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConstraintSummaries.foreach(__v => __obj.updateDynamic("ConstraintSummaries")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LaunchPathSummary]
     }
   }
@@ -2854,11 +2860,11 @@ package servicecatalog {
         PageToken: js.UndefOr[PageToken] = js.undefined,
         PortfolioShareType: js.UndefOr[PortfolioShareType] = js.undefined
     ): ListAcceptedPortfolioSharesInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      PageToken.foreach(__v => __obj.update("PageToken", __v.asInstanceOf[js.Any]))
-      PortfolioShareType.foreach(__v => __obj.update("PortfolioShareType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.updateDynamic("PageToken")(__v.asInstanceOf[js.Any]))
+      PortfolioShareType.foreach(__v => __obj.updateDynamic("PortfolioShareType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAcceptedPortfolioSharesInput]
     }
   }
@@ -2874,9 +2880,9 @@ package servicecatalog {
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         PortfolioDetails: js.UndefOr[PortfolioDetails] = js.undefined
     ): ListAcceptedPortfolioSharesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
-      PortfolioDetails.foreach(__v => __obj.update("PortfolioDetails", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      PortfolioDetails.foreach(__v => __obj.updateDynamic("PortfolioDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAcceptedPortfolioSharesOutput]
     }
   }
@@ -2896,13 +2902,13 @@ package servicecatalog {
         PageSize: js.UndefOr[PageSize] = js.undefined,
         PageToken: js.UndefOr[PageToken] = js.undefined
     ): ListBudgetsForResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceId" -> ResourceId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      PageToken.foreach(__v => __obj.update("PageToken", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.updateDynamic("PageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBudgetsForResourceInput]
     }
   }
@@ -2918,9 +2924,9 @@ package servicecatalog {
         Budgets: js.UndefOr[Budgets] = js.undefined,
         NextPageToken: js.UndefOr[PageToken] = js.undefined
     ): ListBudgetsForResourceOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Budgets.foreach(__v => __obj.update("Budgets", __v.asInstanceOf[js.Any]))
-      NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Budgets.foreach(__v => __obj.updateDynamic("Budgets")(__v.asInstanceOf[js.Any]))
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBudgetsForResourceOutput]
     }
   }
@@ -2942,14 +2948,14 @@ package servicecatalog {
         PageToken: js.UndefOr[PageToken] = js.undefined,
         ProductId: js.UndefOr[Id] = js.undefined
     ): ListConstraintsForPortfolioInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PortfolioId" -> PortfolioId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      PageToken.foreach(__v => __obj.update("PageToken", __v.asInstanceOf[js.Any]))
-      ProductId.foreach(__v => __obj.update("ProductId", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.updateDynamic("PageToken")(__v.asInstanceOf[js.Any]))
+      ProductId.foreach(__v => __obj.updateDynamic("ProductId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListConstraintsForPortfolioInput]
     }
   }
@@ -2965,9 +2971,9 @@ package servicecatalog {
         ConstraintDetails: js.UndefOr[ConstraintDetails] = js.undefined,
         NextPageToken: js.UndefOr[PageToken] = js.undefined
     ): ListConstraintsForPortfolioOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConstraintDetails.foreach(__v => __obj.update("ConstraintDetails", __v.asInstanceOf[js.Any]))
-      NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConstraintDetails.foreach(__v => __obj.updateDynamic("ConstraintDetails")(__v.asInstanceOf[js.Any]))
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListConstraintsForPortfolioOutput]
     }
   }
@@ -2987,13 +2993,13 @@ package servicecatalog {
         PageSize: js.UndefOr[PageSize] = js.undefined,
         PageToken: js.UndefOr[PageToken] = js.undefined
     ): ListLaunchPathsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ProductId" -> ProductId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      PageToken.foreach(__v => __obj.update("PageToken", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.updateDynamic("PageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListLaunchPathsInput]
     }
   }
@@ -3009,9 +3015,9 @@ package servicecatalog {
         LaunchPathSummaries: js.UndefOr[LaunchPathSummaries] = js.undefined,
         NextPageToken: js.UndefOr[PageToken] = js.undefined
     ): ListLaunchPathsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LaunchPathSummaries.foreach(__v => __obj.update("LaunchPathSummaries", __v.asInstanceOf[js.Any]))
-      NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LaunchPathSummaries.foreach(__v => __obj.updateDynamic("LaunchPathSummaries")(__v.asInstanceOf[js.Any]))
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListLaunchPathsOutput]
     }
   }
@@ -3033,14 +3039,14 @@ package servicecatalog {
         PageSize: js.UndefOr[PageSize] = js.undefined,
         PageToken: js.UndefOr[PageToken] = js.undefined
     ): ListOrganizationPortfolioAccessInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OrganizationNodeType" -> OrganizationNodeType.asInstanceOf[js.Any],
         "PortfolioId"          -> PortfolioId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      PageToken.foreach(__v => __obj.update("PageToken", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.updateDynamic("PageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListOrganizationPortfolioAccessInput]
     }
   }
@@ -3056,9 +3062,9 @@ package servicecatalog {
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         OrganizationNodes: js.UndefOr[OrganizationNodes] = js.undefined
     ): ListOrganizationPortfolioAccessOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
-      OrganizationNodes.foreach(__v => __obj.update("OrganizationNodes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      OrganizationNodes.foreach(__v => __obj.updateDynamic("OrganizationNodes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListOrganizationPortfolioAccessOutput]
     }
   }
@@ -3074,11 +3080,11 @@ package servicecatalog {
         PortfolioId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): ListPortfolioAccessInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PortfolioId" -> PortfolioId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPortfolioAccessInput]
     }
   }
@@ -3094,9 +3100,9 @@ package servicecatalog {
         AccountIds: js.UndefOr[AccountIds] = js.undefined,
         NextPageToken: js.UndefOr[PageToken] = js.undefined
     ): ListPortfolioAccessOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccountIds.foreach(__v => __obj.update("AccountIds", __v.asInstanceOf[js.Any]))
-      NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccountIds.foreach(__v => __obj.updateDynamic("AccountIds")(__v.asInstanceOf[js.Any]))
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPortfolioAccessOutput]
     }
   }
@@ -3116,13 +3122,13 @@ package servicecatalog {
         PageSize: js.UndefOr[PageSize] = js.undefined,
         PageToken: js.UndefOr[PageToken] = js.undefined
     ): ListPortfoliosForProductInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ProductId" -> ProductId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      PageToken.foreach(__v => __obj.update("PageToken", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.updateDynamic("PageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPortfoliosForProductInput]
     }
   }
@@ -3138,9 +3144,9 @@ package servicecatalog {
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         PortfolioDetails: js.UndefOr[PortfolioDetails] = js.undefined
     ): ListPortfoliosForProductOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
-      PortfolioDetails.foreach(__v => __obj.update("PortfolioDetails", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      PortfolioDetails.foreach(__v => __obj.updateDynamic("PortfolioDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPortfoliosForProductOutput]
     }
   }
@@ -3158,10 +3164,10 @@ package servicecatalog {
         PageSize: js.UndefOr[PageSize] = js.undefined,
         PageToken: js.UndefOr[PageToken] = js.undefined
     ): ListPortfoliosInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      PageToken.foreach(__v => __obj.update("PageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.updateDynamic("PageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPortfoliosInput]
     }
   }
@@ -3177,9 +3183,9 @@ package servicecatalog {
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         PortfolioDetails: js.UndefOr[PortfolioDetails] = js.undefined
     ): ListPortfoliosOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
-      PortfolioDetails.foreach(__v => __obj.update("PortfolioDetails", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      PortfolioDetails.foreach(__v => __obj.updateDynamic("PortfolioDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPortfoliosOutput]
     }
   }
@@ -3199,13 +3205,13 @@ package servicecatalog {
         PageSize: js.UndefOr[PageSize] = js.undefined,
         PageToken: js.UndefOr[PageToken] = js.undefined
     ): ListPrincipalsForPortfolioInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PortfolioId" -> PortfolioId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      PageToken.foreach(__v => __obj.update("PageToken", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.updateDynamic("PageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPrincipalsForPortfolioInput]
     }
   }
@@ -3221,9 +3227,9 @@ package servicecatalog {
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         Principals: js.UndefOr[Principals] = js.undefined
     ): ListPrincipalsForPortfolioOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
-      Principals.foreach(__v => __obj.update("Principals", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      Principals.foreach(__v => __obj.updateDynamic("Principals")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPrincipalsForPortfolioOutput]
     }
   }
@@ -3245,12 +3251,12 @@ package servicecatalog {
         PageToken: js.UndefOr[PageToken] = js.undefined,
         ProvisionProductId: js.UndefOr[Id] = js.undefined
     ): ListProvisionedProductPlansInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      AccessLevelFilter.foreach(__v => __obj.update("AccessLevelFilter", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      PageToken.foreach(__v => __obj.update("PageToken", __v.asInstanceOf[js.Any]))
-      ProvisionProductId.foreach(__v => __obj.update("ProvisionProductId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      AccessLevelFilter.foreach(__v => __obj.updateDynamic("AccessLevelFilter")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.updateDynamic("PageToken")(__v.asInstanceOf[js.Any]))
+      ProvisionProductId.foreach(__v => __obj.updateDynamic("ProvisionProductId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListProvisionedProductPlansInput]
     }
   }
@@ -3266,9 +3272,9 @@ package servicecatalog {
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         ProvisionedProductPlans: js.UndefOr[ProvisionedProductPlans] = js.undefined
     ): ListProvisionedProductPlansOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
-      ProvisionedProductPlans.foreach(__v => __obj.update("ProvisionedProductPlans", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      ProvisionedProductPlans.foreach(__v => __obj.updateDynamic("ProvisionedProductPlans")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListProvisionedProductPlansOutput]
     }
   }
@@ -3288,13 +3294,13 @@ package servicecatalog {
         PageSize: js.UndefOr[PageSize] = js.undefined,
         PageToken: js.UndefOr[PageToken] = js.undefined
     ): ListProvisioningArtifactsForServiceActionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServiceActionId" -> ServiceActionId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      PageToken.foreach(__v => __obj.update("PageToken", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.updateDynamic("PageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListProvisioningArtifactsForServiceActionInput]
     }
   }
@@ -3310,9 +3316,11 @@ package servicecatalog {
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         ProvisioningArtifactViews: js.UndefOr[ProvisioningArtifactViews] = js.undefined
     ): ListProvisioningArtifactsForServiceActionOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
-      ProvisioningArtifactViews.foreach(__v => __obj.update("ProvisioningArtifactViews", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifactViews.foreach(
+        __v => __obj.updateDynamic("ProvisioningArtifactViews")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[ListProvisioningArtifactsForServiceActionOutput]
     }
   }
@@ -3328,11 +3336,11 @@ package servicecatalog {
         ProductId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): ListProvisioningArtifactsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ProductId" -> ProductId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListProvisioningArtifactsInput]
     }
   }
@@ -3348,9 +3356,11 @@ package servicecatalog {
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         ProvisioningArtifactDetails: js.UndefOr[ProvisioningArtifactDetails] = js.undefined
     ): ListProvisioningArtifactsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
-      ProvisioningArtifactDetails.foreach(__v => __obj.update("ProvisioningArtifactDetails", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifactDetails.foreach(
+        __v => __obj.updateDynamic("ProvisioningArtifactDetails")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[ListProvisioningArtifactsOutput]
     }
   }
@@ -3372,12 +3382,12 @@ package servicecatalog {
         PageToken: js.UndefOr[PageToken] = js.undefined,
         SearchFilter: js.UndefOr[ListRecordHistorySearchFilter] = js.undefined
     ): ListRecordHistoryInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      AccessLevelFilter.foreach(__v => __obj.update("AccessLevelFilter", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      PageToken.foreach(__v => __obj.update("PageToken", __v.asInstanceOf[js.Any]))
-      SearchFilter.foreach(__v => __obj.update("SearchFilter", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      AccessLevelFilter.foreach(__v => __obj.updateDynamic("AccessLevelFilter")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.updateDynamic("PageToken")(__v.asInstanceOf[js.Any]))
+      SearchFilter.foreach(__v => __obj.updateDynamic("SearchFilter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRecordHistoryInput]
     }
   }
@@ -3393,9 +3403,9 @@ package servicecatalog {
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         RecordDetails: js.UndefOr[RecordDetails] = js.undefined
     ): ListRecordHistoryOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
-      RecordDetails.foreach(__v => __obj.update("RecordDetails", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      RecordDetails.foreach(__v => __obj.updateDynamic("RecordDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRecordHistoryOutput]
     }
   }
@@ -3414,9 +3424,9 @@ package servicecatalog {
         Key: js.UndefOr[SearchFilterKey] = js.undefined,
         Value: js.UndefOr[SearchFilterValue] = js.undefined
     ): ListRecordHistorySearchFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRecordHistorySearchFilter]
     }
   }
@@ -3436,13 +3446,13 @@ package servicecatalog {
         PageToken: js.UndefOr[PageToken] = js.undefined,
         ResourceType: js.UndefOr[ResourceType] = js.undefined
     ): ListResourcesForTagOptionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TagOptionId" -> TagOptionId.asInstanceOf[js.Any]
       )
 
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      PageToken.foreach(__v => __obj.update("PageToken", __v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.updateDynamic("PageToken")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResourcesForTagOptionInput]
     }
   }
@@ -3458,9 +3468,9 @@ package servicecatalog {
         PageToken: js.UndefOr[PageToken] = js.undefined,
         ResourceDetails: js.UndefOr[ResourceDetails] = js.undefined
     ): ListResourcesForTagOptionOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PageToken.foreach(__v => __obj.update("PageToken", __v.asInstanceOf[js.Any]))
-      ResourceDetails.foreach(__v => __obj.update("ResourceDetails", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PageToken.foreach(__v => __obj.updateDynamic("PageToken")(__v.asInstanceOf[js.Any]))
+      ResourceDetails.foreach(__v => __obj.updateDynamic("ResourceDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResourcesForTagOptionOutput]
     }
   }
@@ -3482,14 +3492,14 @@ package servicecatalog {
         PageSize: js.UndefOr[PageSize] = js.undefined,
         PageToken: js.UndefOr[PageToken] = js.undefined
     ): ListServiceActionsForProvisioningArtifactInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ProductId"              -> ProductId.asInstanceOf[js.Any],
         "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      PageToken.foreach(__v => __obj.update("PageToken", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.updateDynamic("PageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListServiceActionsForProvisioningArtifactInput]
     }
   }
@@ -3505,9 +3515,9 @@ package servicecatalog {
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         ServiceActionSummaries: js.UndefOr[ServiceActionSummaries] = js.undefined
     ): ListServiceActionsForProvisioningArtifactOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
-      ServiceActionSummaries.foreach(__v => __obj.update("ServiceActionSummaries", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      ServiceActionSummaries.foreach(__v => __obj.updateDynamic("ServiceActionSummaries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListServiceActionsForProvisioningArtifactOutput]
     }
   }
@@ -3525,10 +3535,10 @@ package servicecatalog {
         PageSize: js.UndefOr[PageSize] = js.undefined,
         PageToken: js.UndefOr[PageToken] = js.undefined
     ): ListServiceActionsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      PageToken.foreach(__v => __obj.update("PageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.updateDynamic("PageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListServiceActionsInput]
     }
   }
@@ -3544,9 +3554,9 @@ package servicecatalog {
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         ServiceActionSummaries: js.UndefOr[ServiceActionSummaries] = js.undefined
     ): ListServiceActionsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
-      ServiceActionSummaries.foreach(__v => __obj.update("ServiceActionSummaries", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      ServiceActionSummaries.foreach(__v => __obj.updateDynamic("ServiceActionSummaries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListServiceActionsOutput]
     }
   }
@@ -3566,13 +3576,13 @@ package servicecatalog {
         PageSize: js.UndefOr[PageSize] = js.undefined,
         PageToken: js.UndefOr[PageToken] = js.undefined
     ): ListStackInstancesForProvisionedProductInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ProvisionedProductId" -> ProvisionedProductId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      PageToken.foreach(__v => __obj.update("PageToken", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.updateDynamic("PageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListStackInstancesForProvisionedProductInput]
     }
   }
@@ -3588,9 +3598,9 @@ package servicecatalog {
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         StackInstances: js.UndefOr[StackInstances] = js.undefined
     ): ListStackInstancesForProvisionedProductOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
-      StackInstances.foreach(__v => __obj.update("StackInstances", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      StackInstances.foreach(__v => __obj.updateDynamic("StackInstances")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListStackInstancesForProvisionedProductOutput]
     }
   }
@@ -3611,10 +3621,10 @@ package servicecatalog {
         Key: js.UndefOr[TagOptionKey] = js.undefined,
         Value: js.UndefOr[TagOptionValue] = js.undefined
     ): ListTagOptionsFilters = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Active.foreach(__v => __obj.update("Active", __v.asInstanceOf[js.Any]))
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Active.foreach(__v => __obj.updateDynamic("Active")(__v.asInstanceOf[js.Any]))
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagOptionsFilters]
     }
   }
@@ -3632,10 +3642,10 @@ package servicecatalog {
         PageSize: js.UndefOr[PageSize] = js.undefined,
         PageToken: js.UndefOr[PageToken] = js.undefined
     ): ListTagOptionsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      PageToken.foreach(__v => __obj.update("PageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.updateDynamic("PageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagOptionsInput]
     }
   }
@@ -3651,9 +3661,9 @@ package servicecatalog {
         PageToken: js.UndefOr[PageToken] = js.undefined,
         TagOptionDetails: js.UndefOr[TagOptionDetails] = js.undefined
     ): ListTagOptionsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PageToken.foreach(__v => __obj.update("PageToken", __v.asInstanceOf[js.Any]))
-      TagOptionDetails.foreach(__v => __obj.update("TagOptionDetails", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PageToken.foreach(__v => __obj.updateDynamic("PageToken")(__v.asInstanceOf[js.Any]))
+      TagOptionDetails.foreach(__v => __obj.updateDynamic("TagOptionDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagOptionsOutput]
     }
   }
@@ -3672,9 +3682,9 @@ package servicecatalog {
         Type: js.UndefOr[OrganizationNodeType] = js.undefined,
         Value: js.UndefOr[OrganizationNodeValue] = js.undefined
     ): OrganizationNode = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OrganizationNode]
     }
   }
@@ -3699,8 +3709,8 @@ package servicecatalog {
     def apply(
         AllowedValues: js.UndefOr[AllowedValues] = js.undefined
     ): ParameterConstraints = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AllowedValues.foreach(__v => __obj.update("AllowedValues", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AllowedValues.foreach(__v => __obj.updateDynamic("AllowedValues")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ParameterConstraints]
     }
   }
@@ -3727,13 +3737,13 @@ package servicecatalog {
         Id: js.UndefOr[Id] = js.undefined,
         ProviderName: js.UndefOr[ProviderName] = js.undefined
     ): PortfolioDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ARN.foreach(__v => __obj.update("ARN", __v.asInstanceOf[js.Any]))
-      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      ProviderName.foreach(__v => __obj.update("ProviderName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      ProviderName.foreach(__v => __obj.updateDynamic("ProviderName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PortfolioDetail]
     }
   }
@@ -3760,9 +3770,9 @@ package servicecatalog {
         PrincipalARN: js.UndefOr[PrincipalARN] = js.undefined,
         PrincipalType: js.UndefOr[PrincipalType] = js.undefined
     ): Principal = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PrincipalARN.foreach(__v => __obj.update("PrincipalARN", __v.asInstanceOf[js.Any]))
-      PrincipalType.foreach(__v => __obj.update("PrincipalType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PrincipalARN.foreach(__v => __obj.updateDynamic("PrincipalARN")(__v.asInstanceOf[js.Any]))
+      PrincipalType.foreach(__v => __obj.updateDynamic("PrincipalType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Principal]
     }
   }
@@ -3800,9 +3810,9 @@ package servicecatalog {
         ApproximateCount: js.UndefOr[ApproximateCount] = js.undefined,
         Value: js.UndefOr[AttributeValue] = js.undefined
     ): ProductViewAggregationValue = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApproximateCount.foreach(__v => __obj.update("ApproximateCount", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApproximateCount.foreach(__v => __obj.updateDynamic("ApproximateCount")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProductViewAggregationValue]
     }
   }
@@ -3825,11 +3835,11 @@ package servicecatalog {
         ProductViewSummary: js.UndefOr[ProductViewSummary] = js.undefined,
         Status: js.UndefOr[Status] = js.undefined
     ): ProductViewDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
-      ProductARN.foreach(__v => __obj.update("ProductARN", __v.asInstanceOf[js.Any]))
-      ProductViewSummary.foreach(__v => __obj.update("ProductViewSummary", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      ProductARN.foreach(__v => __obj.updateDynamic("ProductARN")(__v.asInstanceOf[js.Any]))
+      ProductViewSummary.foreach(__v => __obj.updateDynamic("ProductViewSummary")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProductViewDetail]
     }
   }
@@ -3883,18 +3893,18 @@ package servicecatalog {
         SupportUrl: js.UndefOr[SupportUrl] = js.undefined,
         Type: js.UndefOr[ProductType] = js.undefined
     ): ProductViewSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Distributor.foreach(__v => __obj.update("Distributor", __v.asInstanceOf[js.Any]))
-      HasDefaultPath.foreach(__v => __obj.update("HasDefaultPath", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Owner.foreach(__v => __obj.update("Owner", __v.asInstanceOf[js.Any]))
-      ProductId.foreach(__v => __obj.update("ProductId", __v.asInstanceOf[js.Any]))
-      ShortDescription.foreach(__v => __obj.update("ShortDescription", __v.asInstanceOf[js.Any]))
-      SupportDescription.foreach(__v => __obj.update("SupportDescription", __v.asInstanceOf[js.Any]))
-      SupportEmail.foreach(__v => __obj.update("SupportEmail", __v.asInstanceOf[js.Any]))
-      SupportUrl.foreach(__v => __obj.update("SupportUrl", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Distributor.foreach(__v => __obj.updateDynamic("Distributor")(__v.asInstanceOf[js.Any]))
+      HasDefaultPath.foreach(__v => __obj.updateDynamic("HasDefaultPath")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
+      ProductId.foreach(__v => __obj.updateDynamic("ProductId")(__v.asInstanceOf[js.Any]))
+      ShortDescription.foreach(__v => __obj.updateDynamic("ShortDescription")(__v.asInstanceOf[js.Any]))
+      SupportDescription.foreach(__v => __obj.updateDynamic("SupportDescription")(__v.asInstanceOf[js.Any]))
+      SupportEmail.foreach(__v => __obj.updateDynamic("SupportEmail")(__v.asInstanceOf[js.Any]))
+      SupportUrl.foreach(__v => __obj.updateDynamic("SupportUrl")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProductViewSummary]
     }
   }
@@ -3932,19 +3942,19 @@ package servicecatalog {
         ProvisioningPreferences: js.UndefOr[ProvisioningPreferences] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): ProvisionProductInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ProductId"              -> ProductId.asInstanceOf[js.Any],
         "ProvisionToken"         -> ProvisionToken.asInstanceOf[js.Any],
         "ProvisionedProductName" -> ProvisionedProductName.asInstanceOf[js.Any],
         "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      NotificationArns.foreach(__v => __obj.update("NotificationArns", __v.asInstanceOf[js.Any]))
-      PathId.foreach(__v => __obj.update("PathId", __v.asInstanceOf[js.Any]))
-      ProvisioningParameters.foreach(__v => __obj.update("ProvisioningParameters", __v.asInstanceOf[js.Any]))
-      ProvisioningPreferences.foreach(__v => __obj.update("ProvisioningPreferences", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      NotificationArns.foreach(__v => __obj.updateDynamic("NotificationArns")(__v.asInstanceOf[js.Any]))
+      PathId.foreach(__v => __obj.updateDynamic("PathId")(__v.asInstanceOf[js.Any]))
+      ProvisioningParameters.foreach(__v => __obj.updateDynamic("ProvisioningParameters")(__v.asInstanceOf[js.Any]))
+      ProvisioningPreferences.foreach(__v => __obj.updateDynamic("ProvisioningPreferences")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisionProductInput]
     }
   }
@@ -3958,8 +3968,8 @@ package servicecatalog {
     def apply(
         RecordDetail: js.UndefOr[RecordDetail] = js.undefined
     ): ProvisionProductOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RecordDetail.foreach(__v => __obj.update("RecordDetail", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RecordDetail.foreach(__v => __obj.updateDynamic("RecordDetail")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisionProductOutput]
     }
   }
@@ -4004,22 +4014,22 @@ package servicecatalog {
         UserArn: js.UndefOr[UserArn] = js.undefined,
         UserArnSession: js.UndefOr[UserArnSession] = js.undefined
     ): ProvisionedProductAttribute = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      IdempotencyToken.foreach(__v => __obj.update("IdempotencyToken", __v.asInstanceOf[js.Any]))
-      LastRecordId.foreach(__v => __obj.update("LastRecordId", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      PhysicalId.foreach(__v => __obj.update("PhysicalId", __v.asInstanceOf[js.Any]))
-      ProductId.foreach(__v => __obj.update("ProductId", __v.asInstanceOf[js.Any]))
-      ProvisioningArtifactId.foreach(__v => __obj.update("ProvisioningArtifactId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
-      UserArn.foreach(__v => __obj.update("UserArn", __v.asInstanceOf[js.Any]))
-      UserArnSession.foreach(__v => __obj.update("UserArnSession", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      IdempotencyToken.foreach(__v => __obj.updateDynamic("IdempotencyToken")(__v.asInstanceOf[js.Any]))
+      LastRecordId.foreach(__v => __obj.updateDynamic("LastRecordId")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PhysicalId.foreach(__v => __obj.updateDynamic("PhysicalId")(__v.asInstanceOf[js.Any]))
+      ProductId.foreach(__v => __obj.updateDynamic("ProductId")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifactId.foreach(__v => __obj.updateDynamic("ProvisioningArtifactId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      UserArn.foreach(__v => __obj.updateDynamic("UserArn")(__v.asInstanceOf[js.Any]))
+      UserArnSession.foreach(__v => __obj.updateDynamic("UserArnSession")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisionedProductAttribute]
     }
   }
@@ -4056,18 +4066,18 @@ package servicecatalog {
         StatusMessage: js.UndefOr[ProvisionedProductStatusMessage] = js.undefined,
         Type: js.UndefOr[ProvisionedProductType] = js.undefined
     ): ProvisionedProductDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      IdempotencyToken.foreach(__v => __obj.update("IdempotencyToken", __v.asInstanceOf[js.Any]))
-      LastRecordId.foreach(__v => __obj.update("LastRecordId", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      ProductId.foreach(__v => __obj.update("ProductId", __v.asInstanceOf[js.Any]))
-      ProvisioningArtifactId.foreach(__v => __obj.update("ProvisioningArtifactId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      IdempotencyToken.foreach(__v => __obj.updateDynamic("IdempotencyToken")(__v.asInstanceOf[js.Any]))
+      LastRecordId.foreach(__v => __obj.updateDynamic("LastRecordId")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ProductId.foreach(__v => __obj.updateDynamic("ProductId")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifactId.foreach(__v => __obj.updateDynamic("ProvisioningArtifactId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisionedProductDetail]
     }
   }
@@ -4112,22 +4122,22 @@ package servicecatalog {
         Tags: js.UndefOr[Tags] = js.undefined,
         UpdatedTime: js.UndefOr[UpdatedTime] = js.undefined
     ): ProvisionedProductPlanDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
-      NotificationArns.foreach(__v => __obj.update("NotificationArns", __v.asInstanceOf[js.Any]))
-      PathId.foreach(__v => __obj.update("PathId", __v.asInstanceOf[js.Any]))
-      PlanId.foreach(__v => __obj.update("PlanId", __v.asInstanceOf[js.Any]))
-      PlanName.foreach(__v => __obj.update("PlanName", __v.asInstanceOf[js.Any]))
-      PlanType.foreach(__v => __obj.update("PlanType", __v.asInstanceOf[js.Any]))
-      ProductId.foreach(__v => __obj.update("ProductId", __v.asInstanceOf[js.Any]))
-      ProvisionProductId.foreach(__v => __obj.update("ProvisionProductId", __v.asInstanceOf[js.Any]))
-      ProvisionProductName.foreach(__v => __obj.update("ProvisionProductName", __v.asInstanceOf[js.Any]))
-      ProvisioningArtifactId.foreach(__v => __obj.update("ProvisioningArtifactId", __v.asInstanceOf[js.Any]))
-      ProvisioningParameters.foreach(__v => __obj.update("ProvisioningParameters", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      UpdatedTime.foreach(__v => __obj.update("UpdatedTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      NotificationArns.foreach(__v => __obj.updateDynamic("NotificationArns")(__v.asInstanceOf[js.Any]))
+      PathId.foreach(__v => __obj.updateDynamic("PathId")(__v.asInstanceOf[js.Any]))
+      PlanId.foreach(__v => __obj.updateDynamic("PlanId")(__v.asInstanceOf[js.Any]))
+      PlanName.foreach(__v => __obj.updateDynamic("PlanName")(__v.asInstanceOf[js.Any]))
+      PlanType.foreach(__v => __obj.updateDynamic("PlanType")(__v.asInstanceOf[js.Any]))
+      ProductId.foreach(__v => __obj.updateDynamic("ProductId")(__v.asInstanceOf[js.Any]))
+      ProvisionProductId.foreach(__v => __obj.updateDynamic("ProvisionProductId")(__v.asInstanceOf[js.Any]))
+      ProvisionProductName.foreach(__v => __obj.updateDynamic("ProvisionProductName")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifactId.foreach(__v => __obj.updateDynamic("ProvisioningArtifactId")(__v.asInstanceOf[js.Any]))
+      ProvisioningParameters.foreach(__v => __obj.updateDynamic("ProvisioningParameters")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      UpdatedTime.foreach(__v => __obj.updateDynamic("UpdatedTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisionedProductPlanDetails]
     }
   }
@@ -4167,13 +4177,13 @@ package servicecatalog {
         ProvisionProductName: js.UndefOr[ProvisionedProductName] = js.undefined,
         ProvisioningArtifactId: js.UndefOr[Id] = js.undefined
     ): ProvisionedProductPlanSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PlanId.foreach(__v => __obj.update("PlanId", __v.asInstanceOf[js.Any]))
-      PlanName.foreach(__v => __obj.update("PlanName", __v.asInstanceOf[js.Any]))
-      PlanType.foreach(__v => __obj.update("PlanType", __v.asInstanceOf[js.Any]))
-      ProvisionProductId.foreach(__v => __obj.update("ProvisionProductId", __v.asInstanceOf[js.Any]))
-      ProvisionProductName.foreach(__v => __obj.update("ProvisionProductName", __v.asInstanceOf[js.Any]))
-      ProvisioningArtifactId.foreach(__v => __obj.update("ProvisioningArtifactId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PlanId.foreach(__v => __obj.updateDynamic("PlanId")(__v.asInstanceOf[js.Any]))
+      PlanName.foreach(__v => __obj.updateDynamic("PlanName")(__v.asInstanceOf[js.Any]))
+      PlanType.foreach(__v => __obj.updateDynamic("PlanType")(__v.asInstanceOf[js.Any]))
+      ProvisionProductId.foreach(__v => __obj.updateDynamic("ProvisionProductId")(__v.asInstanceOf[js.Any]))
+      ProvisionProductName.foreach(__v => __obj.updateDynamic("ProvisionProductName")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifactId.foreach(__v => __obj.updateDynamic("ProvisioningArtifactId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisionedProductPlanSummary]
     }
   }
@@ -4220,12 +4230,12 @@ package servicecatalog {
         Id: js.UndefOr[Id] = js.undefined,
         Name: js.UndefOr[ProvisioningArtifactName] = js.undefined
     ): ProvisioningArtifact = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Guidance.foreach(__v => __obj.update("Guidance", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Guidance.foreach(__v => __obj.updateDynamic("Guidance")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisioningArtifact]
     }
   }
@@ -4254,14 +4264,14 @@ package servicecatalog {
         Name: js.UndefOr[ProvisioningArtifactName] = js.undefined,
         Type: js.UndefOr[ProvisioningArtifactType] = js.undefined
     ): ProvisioningArtifactDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Active.foreach(__v => __obj.update("Active", __v.asInstanceOf[js.Any]))
-      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Guidance.foreach(__v => __obj.update("Guidance", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Active.foreach(__v => __obj.updateDynamic("Active")(__v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Guidance.foreach(__v => __obj.updateDynamic("Guidance")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisioningArtifactDetail]
     }
   }
@@ -4295,13 +4305,13 @@ package servicecatalog {
         ParameterKey: js.UndefOr[ParameterKey] = js.undefined,
         ParameterType: js.UndefOr[ParameterType] = js.undefined
     ): ProvisioningArtifactParameter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DefaultValue.foreach(__v => __obj.update("DefaultValue", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      IsNoEcho.foreach(__v => __obj.update("IsNoEcho", __v.asInstanceOf[js.Any]))
-      ParameterConstraints.foreach(__v => __obj.update("ParameterConstraints", __v.asInstanceOf[js.Any]))
-      ParameterKey.foreach(__v => __obj.update("ParameterKey", __v.asInstanceOf[js.Any]))
-      ParameterType.foreach(__v => __obj.update("ParameterType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DefaultValue.foreach(__v => __obj.updateDynamic("DefaultValue")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      IsNoEcho.foreach(__v => __obj.updateDynamic("IsNoEcho")(__v.asInstanceOf[js.Any]))
+      ParameterConstraints.foreach(__v => __obj.updateDynamic("ParameterConstraints")(__v.asInstanceOf[js.Any]))
+      ParameterKey.foreach(__v => __obj.updateDynamic("ParameterKey")(__v.asInstanceOf[js.Any]))
+      ParameterType.foreach(__v => __obj.updateDynamic("ParameterType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisioningArtifactParameter]
     }
   }
@@ -4321,9 +4331,9 @@ package servicecatalog {
         StackSetAccounts: js.UndefOr[StackSetAccounts] = js.undefined,
         StackSetRegions: js.UndefOr[StackSetRegions] = js.undefined
     ): ProvisioningArtifactPreferences = {
-      val __obj = js.Dictionary.empty[js.Any]
-      StackSetAccounts.foreach(__v => __obj.update("StackSetAccounts", __v.asInstanceOf[js.Any]))
-      StackSetRegions.foreach(__v => __obj.update("StackSetRegions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      StackSetAccounts.foreach(__v => __obj.updateDynamic("StackSetAccounts")(__v.asInstanceOf[js.Any]))
+      StackSetRegions.foreach(__v => __obj.updateDynamic("StackSetRegions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisioningArtifactPreferences]
     }
   }
@@ -4348,14 +4358,16 @@ package servicecatalog {
         Name: js.UndefOr[ProvisioningArtifactName] = js.undefined,
         Type: js.UndefOr[ProvisioningArtifactType] = js.undefined
     ): ProvisioningArtifactProperties = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Info" -> Info.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      DisableTemplateValidation.foreach(__v => __obj.update("DisableTemplateValidation", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DisableTemplateValidation.foreach(
+        __v => __obj.updateDynamic("DisableTemplateValidation")(__v.asInstanceOf[js.Any])
+      )
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisioningArtifactProperties]
     }
   }
@@ -4386,13 +4398,13 @@ package servicecatalog {
         Name: js.UndefOr[ProvisioningArtifactName] = js.undefined,
         ProvisioningArtifactMetadata: js.UndefOr[ProvisioningArtifactInfo] = js.undefined
     ): ProvisioningArtifactSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       ProvisioningArtifactMetadata.foreach(
-        __v => __obj.update("ProvisioningArtifactMetadata", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ProvisioningArtifactMetadata")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ProvisioningArtifactSummary]
     }
@@ -4420,9 +4432,9 @@ package servicecatalog {
         ProductViewSummary: js.UndefOr[ProductViewSummary] = js.undefined,
         ProvisioningArtifact: js.UndefOr[ProvisioningArtifact] = js.undefined
     ): ProvisioningArtifactView = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ProductViewSummary.foreach(__v => __obj.update("ProductViewSummary", __v.asInstanceOf[js.Any]))
-      ProvisioningArtifact.foreach(__v => __obj.update("ProvisioningArtifact", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ProductViewSummary.foreach(__v => __obj.updateDynamic("ProductViewSummary")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifact.foreach(__v => __obj.updateDynamic("ProvisioningArtifact")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisioningArtifactView]
     }
   }
@@ -4441,9 +4453,9 @@ package servicecatalog {
         Key: js.UndefOr[ParameterKey] = js.undefined,
         Value: js.UndefOr[ParameterValue] = js.undefined
     ): ProvisioningParameter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisioningParameter]
     }
   }
@@ -4470,19 +4482,21 @@ package servicecatalog {
         StackSetMaxConcurrencyPercentage: js.UndefOr[StackSetMaxConcurrencyPercentage] = js.undefined,
         StackSetRegions: js.UndefOr[StackSetRegions] = js.undefined
     ): ProvisioningPreferences = {
-      val __obj = js.Dictionary.empty[js.Any]
-      StackSetAccounts.foreach(__v => __obj.update("StackSetAccounts", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      StackSetAccounts.foreach(__v => __obj.updateDynamic("StackSetAccounts")(__v.asInstanceOf[js.Any]))
       StackSetFailureToleranceCount.foreach(
-        __v => __obj.update("StackSetFailureToleranceCount", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("StackSetFailureToleranceCount")(__v.asInstanceOf[js.Any])
       )
       StackSetFailureTolerancePercentage.foreach(
-        __v => __obj.update("StackSetFailureTolerancePercentage", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("StackSetFailureTolerancePercentage")(__v.asInstanceOf[js.Any])
       )
-      StackSetMaxConcurrencyCount.foreach(__v => __obj.update("StackSetMaxConcurrencyCount", __v.asInstanceOf[js.Any]))
+      StackSetMaxConcurrencyCount.foreach(
+        __v => __obj.updateDynamic("StackSetMaxConcurrencyCount")(__v.asInstanceOf[js.Any])
+      )
       StackSetMaxConcurrencyPercentage.foreach(
-        __v => __obj.update("StackSetMaxConcurrencyPercentage", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("StackSetMaxConcurrencyPercentage")(__v.asInstanceOf[js.Any])
       )
-      StackSetRegions.foreach(__v => __obj.update("StackSetRegions", __v.asInstanceOf[js.Any]))
+      StackSetRegions.foreach(__v => __obj.updateDynamic("StackSetRegions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisioningPreferences]
     }
   }
@@ -4523,20 +4537,20 @@ package servicecatalog {
         Status: js.UndefOr[RecordStatus] = js.undefined,
         UpdatedTime: js.UndefOr[UpdatedTime] = js.undefined
     ): RecordDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
-      PathId.foreach(__v => __obj.update("PathId", __v.asInstanceOf[js.Any]))
-      ProductId.foreach(__v => __obj.update("ProductId", __v.asInstanceOf[js.Any]))
-      ProvisionedProductId.foreach(__v => __obj.update("ProvisionedProductId", __v.asInstanceOf[js.Any]))
-      ProvisionedProductName.foreach(__v => __obj.update("ProvisionedProductName", __v.asInstanceOf[js.Any]))
-      ProvisionedProductType.foreach(__v => __obj.update("ProvisionedProductType", __v.asInstanceOf[js.Any]))
-      ProvisioningArtifactId.foreach(__v => __obj.update("ProvisioningArtifactId", __v.asInstanceOf[js.Any]))
-      RecordErrors.foreach(__v => __obj.update("RecordErrors", __v.asInstanceOf[js.Any]))
-      RecordId.foreach(__v => __obj.update("RecordId", __v.asInstanceOf[js.Any]))
-      RecordTags.foreach(__v => __obj.update("RecordTags", __v.asInstanceOf[js.Any]))
-      RecordType.foreach(__v => __obj.update("RecordType", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      UpdatedTime.foreach(__v => __obj.update("UpdatedTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      PathId.foreach(__v => __obj.updateDynamic("PathId")(__v.asInstanceOf[js.Any]))
+      ProductId.foreach(__v => __obj.updateDynamic("ProductId")(__v.asInstanceOf[js.Any]))
+      ProvisionedProductId.foreach(__v => __obj.updateDynamic("ProvisionedProductId")(__v.asInstanceOf[js.Any]))
+      ProvisionedProductName.foreach(__v => __obj.updateDynamic("ProvisionedProductName")(__v.asInstanceOf[js.Any]))
+      ProvisionedProductType.foreach(__v => __obj.updateDynamic("ProvisionedProductType")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifactId.foreach(__v => __obj.updateDynamic("ProvisioningArtifactId")(__v.asInstanceOf[js.Any]))
+      RecordErrors.foreach(__v => __obj.updateDynamic("RecordErrors")(__v.asInstanceOf[js.Any]))
+      RecordId.foreach(__v => __obj.updateDynamic("RecordId")(__v.asInstanceOf[js.Any]))
+      RecordTags.foreach(__v => __obj.updateDynamic("RecordTags")(__v.asInstanceOf[js.Any]))
+      RecordType.foreach(__v => __obj.updateDynamic("RecordType")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      UpdatedTime.foreach(__v => __obj.updateDynamic("UpdatedTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecordDetail]
     }
   }
@@ -4555,9 +4569,9 @@ package servicecatalog {
         Code: js.UndefOr[ErrorCode] = js.undefined,
         Description: js.UndefOr[ErrorDescription] = js.undefined
     ): RecordError = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Code.foreach(__v => __obj.update("Code", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecordError]
     }
   }
@@ -4578,10 +4592,10 @@ package servicecatalog {
         OutputKey: js.UndefOr[OutputKey] = js.undefined,
         OutputValue: js.UndefOr[OutputValue] = js.undefined
     ): RecordOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      OutputKey.foreach(__v => __obj.update("OutputKey", __v.asInstanceOf[js.Any]))
-      OutputValue.foreach(__v => __obj.update("OutputValue", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      OutputKey.foreach(__v => __obj.updateDynamic("OutputKey")(__v.asInstanceOf[js.Any]))
+      OutputValue.foreach(__v => __obj.updateDynamic("OutputValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecordOutput]
     }
   }
@@ -4610,9 +4624,9 @@ package servicecatalog {
         Key: js.UndefOr[RecordTagKey] = js.undefined,
         Value: js.UndefOr[RecordTagValue] = js.undefined
     ): RecordTag = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecordTag]
     }
   }
@@ -4630,12 +4644,12 @@ package servicecatalog {
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
         PortfolioShareType: js.UndefOr[PortfolioShareType] = js.undefined
     ): RejectPortfolioShareInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PortfolioId" -> PortfolioId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      PortfolioShareType.foreach(__v => __obj.update("PortfolioShareType", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      PortfolioShareType.foreach(__v => __obj.updateDynamic("PortfolioShareType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RejectPortfolioShareInput]
     }
   }
@@ -4646,7 +4660,7 @@ package servicecatalog {
   object RejectPortfolioShareOutput {
     def apply(
         ): RejectPortfolioShareOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RejectPortfolioShareOutput]
     }
@@ -4703,14 +4717,14 @@ package servicecatalog {
         ResourceType: js.UndefOr[PlanResourceType] = js.undefined,
         Scope: js.UndefOr[Scope] = js.undefined
     ): ResourceChange = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Action.foreach(__v => __obj.update("Action", __v.asInstanceOf[js.Any]))
-      Details.foreach(__v => __obj.update("Details", __v.asInstanceOf[js.Any]))
-      LogicalResourceId.foreach(__v => __obj.update("LogicalResourceId", __v.asInstanceOf[js.Any]))
-      PhysicalResourceId.foreach(__v => __obj.update("PhysicalResourceId", __v.asInstanceOf[js.Any]))
-      Replacement.foreach(__v => __obj.update("Replacement", __v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
-      Scope.foreach(__v => __obj.update("Scope", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      Details.foreach(__v => __obj.updateDynamic("Details")(__v.asInstanceOf[js.Any]))
+      LogicalResourceId.foreach(__v => __obj.updateDynamic("LogicalResourceId")(__v.asInstanceOf[js.Any]))
+      PhysicalResourceId.foreach(__v => __obj.updateDynamic("PhysicalResourceId")(__v.asInstanceOf[js.Any]))
+      Replacement.foreach(__v => __obj.updateDynamic("Replacement")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      Scope.foreach(__v => __obj.updateDynamic("Scope")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceChange]
     }
   }
@@ -4731,10 +4745,10 @@ package servicecatalog {
         Evaluation: js.UndefOr[EvaluationType] = js.undefined,
         Target: js.UndefOr[ResourceTargetDefinition] = js.undefined
     ): ResourceChangeDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CausingEntity.foreach(__v => __obj.update("CausingEntity", __v.asInstanceOf[js.Any]))
-      Evaluation.foreach(__v => __obj.update("Evaluation", __v.asInstanceOf[js.Any]))
-      Target.foreach(__v => __obj.update("Target", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CausingEntity.foreach(__v => __obj.updateDynamic("CausingEntity")(__v.asInstanceOf[js.Any]))
+      Evaluation.foreach(__v => __obj.updateDynamic("Evaluation")(__v.asInstanceOf[js.Any]))
+      Target.foreach(__v => __obj.updateDynamic("Target")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceChangeDetail]
     }
   }
@@ -4759,12 +4773,12 @@ package servicecatalog {
         Id: js.UndefOr[ResourceDetailId] = js.undefined,
         Name: js.UndefOr[ResourceDetailName] = js.undefined
     ): ResourceDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ARN.foreach(__v => __obj.update("ARN", __v.asInstanceOf[js.Any]))
-      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceDetail]
     }
   }
@@ -4785,10 +4799,10 @@ package servicecatalog {
         Name: js.UndefOr[PropertyName] = js.undefined,
         RequiresRecreation: js.UndefOr[RequiresRecreation] = js.undefined
     ): ResourceTargetDefinition = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attribute.foreach(__v => __obj.update("Attribute", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      RequiresRecreation.foreach(__v => __obj.update("RequiresRecreation", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attribute.foreach(__v => __obj.updateDynamic("Attribute")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RequiresRecreation.foreach(__v => __obj.updateDynamic("RequiresRecreation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceTargetDefinition]
     }
   }
@@ -4808,11 +4822,11 @@ package servicecatalog {
         PageSize: js.UndefOr[PageSize] = js.undefined,
         PageToken: js.UndefOr[PageToken] = js.undefined
     ): ScanProvisionedProductsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      AccessLevelFilter.foreach(__v => __obj.update("AccessLevelFilter", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      PageToken.foreach(__v => __obj.update("PageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      AccessLevelFilter.foreach(__v => __obj.updateDynamic("AccessLevelFilter")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.updateDynamic("PageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScanProvisionedProductsInput]
     }
   }
@@ -4828,9 +4842,9 @@ package servicecatalog {
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         ProvisionedProducts: js.UndefOr[ProvisionedProductDetails] = js.undefined
     ): ScanProvisionedProductsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
-      ProvisionedProducts.foreach(__v => __obj.update("ProvisionedProducts", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      ProvisionedProducts.foreach(__v => __obj.updateDynamic("ProvisionedProducts")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScanProvisionedProductsOutput]
     }
   }
@@ -4858,15 +4872,15 @@ package servicecatalog {
         SortBy: js.UndefOr[ProductViewSortBy] = js.undefined,
         SortOrder: js.UndefOr[SortOrder] = js.undefined
     ): SearchProductsAsAdminInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      PageToken.foreach(__v => __obj.update("PageToken", __v.asInstanceOf[js.Any]))
-      PortfolioId.foreach(__v => __obj.update("PortfolioId", __v.asInstanceOf[js.Any]))
-      ProductSource.foreach(__v => __obj.update("ProductSource", __v.asInstanceOf[js.Any]))
-      SortBy.foreach(__v => __obj.update("SortBy", __v.asInstanceOf[js.Any]))
-      SortOrder.foreach(__v => __obj.update("SortOrder", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.updateDynamic("PageToken")(__v.asInstanceOf[js.Any]))
+      PortfolioId.foreach(__v => __obj.updateDynamic("PortfolioId")(__v.asInstanceOf[js.Any]))
+      ProductSource.foreach(__v => __obj.updateDynamic("ProductSource")(__v.asInstanceOf[js.Any]))
+      SortBy.foreach(__v => __obj.updateDynamic("SortBy")(__v.asInstanceOf[js.Any]))
+      SortOrder.foreach(__v => __obj.updateDynamic("SortOrder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchProductsAsAdminInput]
     }
   }
@@ -4882,9 +4896,9 @@ package servicecatalog {
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         ProductViewDetails: js.UndefOr[ProductViewDetails] = js.undefined
     ): SearchProductsAsAdminOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
-      ProductViewDetails.foreach(__v => __obj.update("ProductViewDetails", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      ProductViewDetails.foreach(__v => __obj.updateDynamic("ProductViewDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchProductsAsAdminOutput]
     }
   }
@@ -4908,13 +4922,13 @@ package servicecatalog {
         SortBy: js.UndefOr[ProductViewSortBy] = js.undefined,
         SortOrder: js.UndefOr[SortOrder] = js.undefined
     ): SearchProductsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      PageToken.foreach(__v => __obj.update("PageToken", __v.asInstanceOf[js.Any]))
-      SortBy.foreach(__v => __obj.update("SortBy", __v.asInstanceOf[js.Any]))
-      SortOrder.foreach(__v => __obj.update("SortOrder", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.updateDynamic("PageToken")(__v.asInstanceOf[js.Any]))
+      SortBy.foreach(__v => __obj.updateDynamic("SortBy")(__v.asInstanceOf[js.Any]))
+      SortOrder.foreach(__v => __obj.updateDynamic("SortOrder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchProductsInput]
     }
   }
@@ -4932,10 +4946,10 @@ package servicecatalog {
         ProductViewAggregations: js.UndefOr[ProductViewAggregations] = js.undefined,
         ProductViewSummaries: js.UndefOr[ProductViewSummaries] = js.undefined
     ): SearchProductsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
-      ProductViewAggregations.foreach(__v => __obj.update("ProductViewAggregations", __v.asInstanceOf[js.Any]))
-      ProductViewSummaries.foreach(__v => __obj.update("ProductViewSummaries", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      ProductViewAggregations.foreach(__v => __obj.updateDynamic("ProductViewAggregations")(__v.asInstanceOf[js.Any]))
+      ProductViewSummaries.foreach(__v => __obj.updateDynamic("ProductViewSummaries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchProductsOutput]
     }
   }
@@ -4961,14 +4975,14 @@ package servicecatalog {
         SortBy: js.UndefOr[SortField] = js.undefined,
         SortOrder: js.UndefOr[SortOrder] = js.undefined
     ): SearchProvisionedProductsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      AccessLevelFilter.foreach(__v => __obj.update("AccessLevelFilter", __v.asInstanceOf[js.Any]))
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      PageToken.foreach(__v => __obj.update("PageToken", __v.asInstanceOf[js.Any]))
-      SortBy.foreach(__v => __obj.update("SortBy", __v.asInstanceOf[js.Any]))
-      SortOrder.foreach(__v => __obj.update("SortOrder", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      AccessLevelFilter.foreach(__v => __obj.updateDynamic("AccessLevelFilter")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      PageToken.foreach(__v => __obj.updateDynamic("PageToken")(__v.asInstanceOf[js.Any]))
+      SortBy.foreach(__v => __obj.updateDynamic("SortBy")(__v.asInstanceOf[js.Any]))
+      SortOrder.foreach(__v => __obj.updateDynamic("SortOrder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchProvisionedProductsInput]
     }
   }
@@ -4986,10 +5000,10 @@ package servicecatalog {
         ProvisionedProducts: js.UndefOr[ProvisionedProductAttributes] = js.undefined,
         TotalResultsCount: js.UndefOr[TotalResultsCount] = js.undefined
     ): SearchProvisionedProductsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextPageToken.foreach(__v => __obj.update("NextPageToken", __v.asInstanceOf[js.Any]))
-      ProvisionedProducts.foreach(__v => __obj.update("ProvisionedProducts", __v.asInstanceOf[js.Any]))
-      TotalResultsCount.foreach(__v => __obj.update("TotalResultsCount", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextPageToken.foreach(__v => __obj.updateDynamic("NextPageToken")(__v.asInstanceOf[js.Any]))
+      ProvisionedProducts.foreach(__v => __obj.updateDynamic("ProvisionedProducts")(__v.asInstanceOf[js.Any]))
+      TotalResultsCount.foreach(__v => __obj.updateDynamic("TotalResultsCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchProvisionedProductsOutput]
     }
   }
@@ -5010,7 +5024,7 @@ package servicecatalog {
         ProvisioningArtifactId: Id,
         ServiceActionId: Id
     ): ServiceActionAssociation = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ProductId"              -> ProductId.asInstanceOf[js.Any],
         "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any],
         "ServiceActionId"        -> ServiceActionId.asInstanceOf[js.Any]
@@ -5060,9 +5074,9 @@ package servicecatalog {
         Definition: js.UndefOr[ServiceActionDefinitionMap] = js.undefined,
         ServiceActionSummary: js.UndefOr[ServiceActionSummary] = js.undefined
     ): ServiceActionDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Definition.foreach(__v => __obj.update("Definition", __v.asInstanceOf[js.Any]))
-      ServiceActionSummary.foreach(__v => __obj.update("ServiceActionSummary", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Definition.foreach(__v => __obj.updateDynamic("Definition")(__v.asInstanceOf[js.Any]))
+      ServiceActionSummary.foreach(__v => __obj.updateDynamic("ServiceActionSummary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServiceActionDetail]
     }
   }
@@ -5085,11 +5099,11 @@ package servicecatalog {
         Id: js.UndefOr[Id] = js.undefined,
         Name: js.UndefOr[ServiceActionName] = js.undefined
     ): ServiceActionSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DefinitionType.foreach(__v => __obj.update("DefinitionType", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DefinitionType.foreach(__v => __obj.updateDynamic("DefinitionType")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServiceActionSummary]
     }
   }
@@ -5108,9 +5122,9 @@ package servicecatalog {
         ShareErrors: js.UndefOr[ShareErrors] = js.undefined,
         SuccessfulShares: js.UndefOr[SuccessfulShares] = js.undefined
     ): ShareDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ShareErrors.foreach(__v => __obj.update("ShareErrors", __v.asInstanceOf[js.Any]))
-      SuccessfulShares.foreach(__v => __obj.update("SuccessfulShares", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ShareErrors.foreach(__v => __obj.updateDynamic("ShareErrors")(__v.asInstanceOf[js.Any]))
+      SuccessfulShares.foreach(__v => __obj.updateDynamic("SuccessfulShares")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ShareDetails]
     }
   }
@@ -5131,10 +5145,10 @@ package servicecatalog {
         Error: js.UndefOr[Error] = js.undefined,
         Message: js.UndefOr[Message] = js.undefined
     ): ShareError = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Accounts.foreach(__v => __obj.update("Accounts", __v.asInstanceOf[js.Any]))
-      Error.foreach(__v => __obj.update("Error", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Accounts.foreach(__v => __obj.updateDynamic("Accounts")(__v.asInstanceOf[js.Any]))
+      Error.foreach(__v => __obj.updateDynamic("Error")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ShareError]
     }
   }
@@ -5172,10 +5186,10 @@ package servicecatalog {
         Region: js.UndefOr[Region] = js.undefined,
         StackInstanceStatus: js.UndefOr[StackInstanceStatus] = js.undefined
     ): StackInstance = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Account.foreach(__v => __obj.update("Account", __v.asInstanceOf[js.Any]))
-      Region.foreach(__v => __obj.update("Region", __v.asInstanceOf[js.Any]))
-      StackInstanceStatus.foreach(__v => __obj.update("StackInstanceStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Account.foreach(__v => __obj.updateDynamic("Account")(__v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
+      StackInstanceStatus.foreach(__v => __obj.updateDynamic("StackInstanceStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StackInstance]
     }
   }
@@ -5218,7 +5232,7 @@ package servicecatalog {
         Key: TagKey,
         Value: TagValue
     ): Tag = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"   -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
@@ -5245,11 +5259,11 @@ package servicecatalog {
         Key: js.UndefOr[TagOptionKey] = js.undefined,
         Value: js.UndefOr[TagOptionValue] = js.undefined
     ): TagOptionDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Active.foreach(__v => __obj.update("Active", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Active.foreach(__v => __obj.updateDynamic("Active")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TagOptionDetail]
     }
   }
@@ -5268,9 +5282,9 @@ package servicecatalog {
         Key: js.UndefOr[TagOptionKey] = js.undefined,
         Values: js.UndefOr[TagOptionValues] = js.undefined
     ): TagOptionSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TagOptionSummary]
     }
   }
@@ -5292,14 +5306,14 @@ package servicecatalog {
         ProvisionedProductId: js.UndefOr[Id] = js.undefined,
         ProvisionedProductName: js.UndefOr[ProvisionedProductNameOrArn] = js.undefined
     ): TerminateProvisionedProductInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TerminateToken" -> TerminateToken.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      IgnoreErrors.foreach(__v => __obj.update("IgnoreErrors", __v.asInstanceOf[js.Any]))
-      ProvisionedProductId.foreach(__v => __obj.update("ProvisionedProductId", __v.asInstanceOf[js.Any]))
-      ProvisionedProductName.foreach(__v => __obj.update("ProvisionedProductName", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      IgnoreErrors.foreach(__v => __obj.updateDynamic("IgnoreErrors")(__v.asInstanceOf[js.Any]))
+      ProvisionedProductId.foreach(__v => __obj.updateDynamic("ProvisionedProductId")(__v.asInstanceOf[js.Any]))
+      ProvisionedProductName.foreach(__v => __obj.updateDynamic("ProvisionedProductName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TerminateProvisionedProductInput]
     }
   }
@@ -5313,8 +5327,8 @@ package servicecatalog {
     def apply(
         RecordDetail: js.UndefOr[RecordDetail] = js.undefined
     ): TerminateProvisionedProductOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RecordDetail.foreach(__v => __obj.update("RecordDetail", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RecordDetail.foreach(__v => __obj.updateDynamic("RecordDetail")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TerminateProvisionedProductOutput]
     }
   }
@@ -5334,13 +5348,13 @@ package servicecatalog {
         Description: js.UndefOr[ConstraintDescription] = js.undefined,
         Parameters: js.UndefOr[ConstraintParameters] = js.undefined
     ): UpdateConstraintInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateConstraintInput]
     }
   }
@@ -5358,10 +5372,10 @@ package servicecatalog {
         ConstraintParameters: js.UndefOr[ConstraintParameters] = js.undefined,
         Status: js.UndefOr[Status] = js.undefined
     ): UpdateConstraintOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConstraintDetail.foreach(__v => __obj.update("ConstraintDetail", __v.asInstanceOf[js.Any]))
-      ConstraintParameters.foreach(__v => __obj.update("ConstraintParameters", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConstraintDetail.foreach(__v => __obj.updateDynamic("ConstraintDetail")(__v.asInstanceOf[js.Any]))
+      ConstraintParameters.foreach(__v => __obj.updateDynamic("ConstraintParameters")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateConstraintOutput]
     }
   }
@@ -5387,16 +5401,16 @@ package servicecatalog {
         ProviderName: js.UndefOr[ProviderName] = js.undefined,
         RemoveTags: js.UndefOr[TagKeys] = js.undefined
     ): UpdatePortfolioInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      AddTags.foreach(__v => __obj.update("AddTags", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
-      ProviderName.foreach(__v => __obj.update("ProviderName", __v.asInstanceOf[js.Any]))
-      RemoveTags.foreach(__v => __obj.update("RemoveTags", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      AddTags.foreach(__v => __obj.updateDynamic("AddTags")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
+      ProviderName.foreach(__v => __obj.updateDynamic("ProviderName")(__v.asInstanceOf[js.Any]))
+      RemoveTags.foreach(__v => __obj.updateDynamic("RemoveTags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdatePortfolioInput]
     }
   }
@@ -5412,9 +5426,9 @@ package servicecatalog {
         PortfolioDetail: js.UndefOr[PortfolioDetail] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): UpdatePortfolioOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PortfolioDetail.foreach(__v => __obj.update("PortfolioDetail", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PortfolioDetail.foreach(__v => __obj.updateDynamic("PortfolioDetail")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdatePortfolioOutput]
     }
   }
@@ -5448,20 +5462,20 @@ package servicecatalog {
         SupportEmail: js.UndefOr[SupportEmail] = js.undefined,
         SupportUrl: js.UndefOr[SupportUrl] = js.undefined
     ): UpdateProductInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      AddTags.foreach(__v => __obj.update("AddTags", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Distributor.foreach(__v => __obj.update("Distributor", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Owner.foreach(__v => __obj.update("Owner", __v.asInstanceOf[js.Any]))
-      RemoveTags.foreach(__v => __obj.update("RemoveTags", __v.asInstanceOf[js.Any]))
-      SupportDescription.foreach(__v => __obj.update("SupportDescription", __v.asInstanceOf[js.Any]))
-      SupportEmail.foreach(__v => __obj.update("SupportEmail", __v.asInstanceOf[js.Any]))
-      SupportUrl.foreach(__v => __obj.update("SupportUrl", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      AddTags.foreach(__v => __obj.updateDynamic("AddTags")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Distributor.foreach(__v => __obj.updateDynamic("Distributor")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
+      RemoveTags.foreach(__v => __obj.updateDynamic("RemoveTags")(__v.asInstanceOf[js.Any]))
+      SupportDescription.foreach(__v => __obj.updateDynamic("SupportDescription")(__v.asInstanceOf[js.Any]))
+      SupportEmail.foreach(__v => __obj.updateDynamic("SupportEmail")(__v.asInstanceOf[js.Any]))
+      SupportUrl.foreach(__v => __obj.updateDynamic("SupportUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateProductInput]
     }
   }
@@ -5477,9 +5491,9 @@ package servicecatalog {
         ProductViewDetail: js.UndefOr[ProductViewDetail] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): UpdateProductOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ProductViewDetail.foreach(__v => __obj.update("ProductViewDetail", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ProductViewDetail.foreach(__v => __obj.updateDynamic("ProductViewDetail")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateProductOutput]
     }
   }
@@ -5511,19 +5525,19 @@ package servicecatalog {
         ProvisioningPreferences: js.UndefOr[UpdateProvisioningPreferences] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): UpdateProvisionedProductInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UpdateToken" -> UpdateToken.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      PathId.foreach(__v => __obj.update("PathId", __v.asInstanceOf[js.Any]))
-      ProductId.foreach(__v => __obj.update("ProductId", __v.asInstanceOf[js.Any]))
-      ProvisionedProductId.foreach(__v => __obj.update("ProvisionedProductId", __v.asInstanceOf[js.Any]))
-      ProvisionedProductName.foreach(__v => __obj.update("ProvisionedProductName", __v.asInstanceOf[js.Any]))
-      ProvisioningArtifactId.foreach(__v => __obj.update("ProvisioningArtifactId", __v.asInstanceOf[js.Any]))
-      ProvisioningParameters.foreach(__v => __obj.update("ProvisioningParameters", __v.asInstanceOf[js.Any]))
-      ProvisioningPreferences.foreach(__v => __obj.update("ProvisioningPreferences", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      PathId.foreach(__v => __obj.updateDynamic("PathId")(__v.asInstanceOf[js.Any]))
+      ProductId.foreach(__v => __obj.updateDynamic("ProductId")(__v.asInstanceOf[js.Any]))
+      ProvisionedProductId.foreach(__v => __obj.updateDynamic("ProvisionedProductId")(__v.asInstanceOf[js.Any]))
+      ProvisionedProductName.foreach(__v => __obj.updateDynamic("ProvisionedProductName")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifactId.foreach(__v => __obj.updateDynamic("ProvisioningArtifactId")(__v.asInstanceOf[js.Any]))
+      ProvisioningParameters.foreach(__v => __obj.updateDynamic("ProvisioningParameters")(__v.asInstanceOf[js.Any]))
+      ProvisioningPreferences.foreach(__v => __obj.updateDynamic("ProvisioningPreferences")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateProvisionedProductInput]
     }
   }
@@ -5537,8 +5551,8 @@ package servicecatalog {
     def apply(
         RecordDetail: js.UndefOr[RecordDetail] = js.undefined
     ): UpdateProvisionedProductOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RecordDetail.foreach(__v => __obj.update("RecordDetail", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RecordDetail.foreach(__v => __obj.updateDynamic("RecordDetail")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateProvisionedProductOutput]
     }
   }
@@ -5558,13 +5572,13 @@ package servicecatalog {
         ProvisionedProductProperties: ProvisionedProductProperties,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
     ): UpdateProvisionedProductPropertiesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdempotencyToken"             -> IdempotencyToken.asInstanceOf[js.Any],
         "ProvisionedProductId"         -> ProvisionedProductId.asInstanceOf[js.Any],
         "ProvisionedProductProperties" -> ProvisionedProductProperties.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateProvisionedProductPropertiesInput]
     }
   }
@@ -5584,13 +5598,13 @@ package servicecatalog {
         RecordId: js.UndefOr[Id] = js.undefined,
         Status: js.UndefOr[RecordStatus] = js.undefined
     ): UpdateProvisionedProductPropertiesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ProvisionedProductId.foreach(__v => __obj.update("ProvisionedProductId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ProvisionedProductId.foreach(__v => __obj.updateDynamic("ProvisionedProductId")(__v.asInstanceOf[js.Any]))
       ProvisionedProductProperties.foreach(
-        __v => __obj.update("ProvisionedProductProperties", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ProvisionedProductProperties")(__v.asInstanceOf[js.Any])
       )
-      RecordId.foreach(__v => __obj.update("RecordId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      RecordId.foreach(__v => __obj.updateDynamic("RecordId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateProvisionedProductPropertiesOutput]
     }
   }
@@ -5616,16 +5630,16 @@ package servicecatalog {
         Guidance: js.UndefOr[ProvisioningArtifactGuidance] = js.undefined,
         Name: js.UndefOr[ProvisioningArtifactName] = js.undefined
     ): UpdateProvisioningArtifactInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ProductId"              -> ProductId.asInstanceOf[js.Any],
         "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      Active.foreach(__v => __obj.update("Active", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Guidance.foreach(__v => __obj.update("Guidance", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      Active.foreach(__v => __obj.updateDynamic("Active")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Guidance.foreach(__v => __obj.updateDynamic("Guidance")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateProvisioningArtifactInput]
     }
   }
@@ -5643,10 +5657,12 @@ package servicecatalog {
         ProvisioningArtifactDetail: js.UndefOr[ProvisioningArtifactDetail] = js.undefined,
         Status: js.UndefOr[Status] = js.undefined
     ): UpdateProvisioningArtifactOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Info.foreach(__v => __obj.update("Info", __v.asInstanceOf[js.Any]))
-      ProvisioningArtifactDetail.foreach(__v => __obj.update("ProvisioningArtifactDetail", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Info.foreach(__v => __obj.updateDynamic("Info")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifactDetail.foreach(
+        __v => __obj.updateDynamic("ProvisioningArtifactDetail")(__v.asInstanceOf[js.Any])
+      )
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateProvisioningArtifactOutput]
     }
   }
@@ -5667,10 +5683,10 @@ package servicecatalog {
         UsePreviousValue: js.UndefOr[UsePreviousValue] = js.undefined,
         Value: js.UndefOr[ParameterValue] = js.undefined
     ): UpdateProvisioningParameter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      UsePreviousValue.foreach(__v => __obj.update("UsePreviousValue", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      UsePreviousValue.foreach(__v => __obj.updateDynamic("UsePreviousValue")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateProvisioningParameter]
     }
   }
@@ -5699,20 +5715,22 @@ package servicecatalog {
         StackSetOperationType: js.UndefOr[StackSetOperationType] = js.undefined,
         StackSetRegions: js.UndefOr[StackSetRegions] = js.undefined
     ): UpdateProvisioningPreferences = {
-      val __obj = js.Dictionary.empty[js.Any]
-      StackSetAccounts.foreach(__v => __obj.update("StackSetAccounts", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      StackSetAccounts.foreach(__v => __obj.updateDynamic("StackSetAccounts")(__v.asInstanceOf[js.Any]))
       StackSetFailureToleranceCount.foreach(
-        __v => __obj.update("StackSetFailureToleranceCount", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("StackSetFailureToleranceCount")(__v.asInstanceOf[js.Any])
       )
       StackSetFailureTolerancePercentage.foreach(
-        __v => __obj.update("StackSetFailureTolerancePercentage", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("StackSetFailureTolerancePercentage")(__v.asInstanceOf[js.Any])
       )
-      StackSetMaxConcurrencyCount.foreach(__v => __obj.update("StackSetMaxConcurrencyCount", __v.asInstanceOf[js.Any]))
+      StackSetMaxConcurrencyCount.foreach(
+        __v => __obj.updateDynamic("StackSetMaxConcurrencyCount")(__v.asInstanceOf[js.Any])
+      )
       StackSetMaxConcurrencyPercentage.foreach(
-        __v => __obj.update("StackSetMaxConcurrencyPercentage", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("StackSetMaxConcurrencyPercentage")(__v.asInstanceOf[js.Any])
       )
-      StackSetOperationType.foreach(__v => __obj.update("StackSetOperationType", __v.asInstanceOf[js.Any]))
-      StackSetRegions.foreach(__v => __obj.update("StackSetRegions", __v.asInstanceOf[js.Any]))
+      StackSetOperationType.foreach(__v => __obj.updateDynamic("StackSetOperationType")(__v.asInstanceOf[js.Any]))
+      StackSetRegions.foreach(__v => __obj.updateDynamic("StackSetRegions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateProvisioningPreferences]
     }
   }
@@ -5734,14 +5752,14 @@ package servicecatalog {
         Description: js.UndefOr[ServiceActionDescription] = js.undefined,
         Name: js.UndefOr[ServiceActionName] = js.undefined
     ): UpdateServiceActionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
-      AcceptLanguage.foreach(__v => __obj.update("AcceptLanguage", __v.asInstanceOf[js.Any]))
-      Definition.foreach(__v => __obj.update("Definition", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      AcceptLanguage.foreach(__v => __obj.updateDynamic("AcceptLanguage")(__v.asInstanceOf[js.Any]))
+      Definition.foreach(__v => __obj.updateDynamic("Definition")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateServiceActionInput]
     }
   }
@@ -5755,8 +5773,8 @@ package servicecatalog {
     def apply(
         ServiceActionDetail: js.UndefOr[ServiceActionDetail] = js.undefined
     ): UpdateServiceActionOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ServiceActionDetail.foreach(__v => __obj.update("ServiceActionDetail", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ServiceActionDetail.foreach(__v => __obj.updateDynamic("ServiceActionDetail")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateServiceActionOutput]
     }
   }
@@ -5774,12 +5792,12 @@ package servicecatalog {
         Active: js.UndefOr[TagOptionActive] = js.undefined,
         Value: js.UndefOr[TagOptionValue] = js.undefined
     ): UpdateTagOptionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
-      Active.foreach(__v => __obj.update("Active", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      Active.foreach(__v => __obj.updateDynamic("Active")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateTagOptionInput]
     }
   }
@@ -5793,8 +5811,8 @@ package servicecatalog {
     def apply(
         TagOptionDetail: js.UndefOr[TagOptionDetail] = js.undefined
     ): UpdateTagOptionOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TagOptionDetail.foreach(__v => __obj.update("TagOptionDetail", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TagOptionDetail.foreach(__v => __obj.updateDynamic("TagOptionDetail")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateTagOptionOutput]
     }
   }
@@ -5813,9 +5831,9 @@ package servicecatalog {
         Type: js.UndefOr[InstructionType] = js.undefined,
         Value: js.UndefOr[InstructionValue] = js.undefined
     ): UsageInstruction = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UsageInstruction]
     }
   }

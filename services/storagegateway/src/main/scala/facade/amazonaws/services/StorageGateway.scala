@@ -426,17 +426,17 @@ package storagegateway {
         Tags: js.UndefOr[Tags] = js.undefined,
         TapeDriveType: js.UndefOr[TapeDriveType] = js.undefined
     ): ActivateGatewayInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ActivationKey"   -> ActivationKey.asInstanceOf[js.Any],
         "GatewayName"     -> GatewayName.asInstanceOf[js.Any],
         "GatewayRegion"   -> GatewayRegion.asInstanceOf[js.Any],
         "GatewayTimezone" -> GatewayTimezone.asInstanceOf[js.Any]
       )
 
-      GatewayType.foreach(__v => __obj.update("GatewayType", __v.asInstanceOf[js.Any]))
-      MediumChangerType.foreach(__v => __obj.update("MediumChangerType", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      TapeDriveType.foreach(__v => __obj.update("TapeDriveType", __v.asInstanceOf[js.Any]))
+      GatewayType.foreach(__v => __obj.updateDynamic("GatewayType")(__v.asInstanceOf[js.Any]))
+      MediumChangerType.foreach(__v => __obj.updateDynamic("MediumChangerType")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TapeDriveType.foreach(__v => __obj.updateDynamic("TapeDriveType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActivateGatewayInput]
     }
   }
@@ -455,8 +455,8 @@ package storagegateway {
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): ActivateGatewayOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActivateGatewayOutput]
     }
   }
@@ -472,7 +472,7 @@ package storagegateway {
         DiskIds: DiskIds,
         GatewayARN: GatewayARN
     ): AddCacheInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DiskIds"    -> DiskIds.asInstanceOf[js.Any],
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
@@ -490,8 +490,8 @@ package storagegateway {
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): AddCacheOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddCacheOutput]
     }
   }
@@ -507,7 +507,7 @@ package storagegateway {
         ResourceARN: ResourceARN,
         Tags: Tags
     ): AddTagsToResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
       )
@@ -525,8 +525,8 @@ package storagegateway {
     def apply(
         ResourceARN: js.UndefOr[ResourceARN] = js.undefined
     ): AddTagsToResourceOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ResourceARN.foreach(__v => __obj.update("ResourceARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ResourceARN.foreach(__v => __obj.updateDynamic("ResourceARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddTagsToResourceOutput]
     }
   }
@@ -542,7 +542,7 @@ package storagegateway {
         DiskIds: DiskIds,
         GatewayARN: GatewayARN
     ): AddUploadBufferInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DiskIds"    -> DiskIds.asInstanceOf[js.Any],
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
@@ -560,8 +560,8 @@ package storagegateway {
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): AddUploadBufferOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddUploadBufferOutput]
     }
   }
@@ -581,7 +581,7 @@ package storagegateway {
         DiskIds: DiskIds,
         GatewayARN: GatewayARN
     ): AddWorkingStorageInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DiskIds"    -> DiskIds.asInstanceOf[js.Any],
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
@@ -602,8 +602,8 @@ package storagegateway {
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): AddWorkingStorageOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddWorkingStorageOutput]
     }
   }
@@ -619,7 +619,7 @@ package storagegateway {
         PoolId: PoolId,
         TapeARN: TapeARN
     ): AssignTapePoolInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PoolId"  -> PoolId.asInstanceOf[js.Any],
         "TapeARN" -> TapeARN.asInstanceOf[js.Any]
       )
@@ -637,8 +637,8 @@ package storagegateway {
     def apply(
         TapeARN: js.UndefOr[TapeARN] = js.undefined
     ): AssignTapePoolOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TapeARN.foreach(__v => __obj.update("TapeARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TapeARN.foreach(__v => __obj.updateDynamic("TapeARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssignTapePoolOutput]
     }
   }
@@ -660,14 +660,14 @@ package storagegateway {
         DiskId: js.UndefOr[DiskId] = js.undefined,
         TargetName: js.UndefOr[TargetName] = js.undefined
     ): AttachVolumeInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN"         -> GatewayARN.asInstanceOf[js.Any],
         "NetworkInterfaceId" -> NetworkInterfaceId.asInstanceOf[js.Any],
         "VolumeARN"          -> VolumeARN.asInstanceOf[js.Any]
       )
 
-      DiskId.foreach(__v => __obj.update("DiskId", __v.asInstanceOf[js.Any]))
-      TargetName.foreach(__v => __obj.update("TargetName", __v.asInstanceOf[js.Any]))
+      DiskId.foreach(__v => __obj.updateDynamic("DiskId")(__v.asInstanceOf[js.Any]))
+      TargetName.foreach(__v => __obj.updateDynamic("TargetName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttachVolumeInput]
     }
   }
@@ -683,9 +683,9 @@ package storagegateway {
         TargetARN: js.UndefOr[TargetARN] = js.undefined,
         VolumeARN: js.UndefOr[VolumeARN] = js.undefined
     ): AttachVolumeOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TargetARN.foreach(__v => __obj.update("TargetARN", __v.asInstanceOf[js.Any]))
-      VolumeARN.foreach(__v => __obj.update("VolumeARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TargetARN.foreach(__v => __obj.updateDynamic("TargetARN")(__v.asInstanceOf[js.Any]))
+      VolumeARN.foreach(__v => __obj.updateDynamic("VolumeARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttachVolumeOutput]
     }
   }
@@ -726,20 +726,20 @@ package storagegateway {
         VolumeUsedInBytes: js.UndefOr[VolumeUsedInBytes] = js.undefined,
         VolumeiSCSIAttributes: js.UndefOr[VolumeiSCSIAttributes] = js.undefined
     ): CachediSCSIVolume = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedDate.foreach(__v => __obj.update("CreatedDate", __v.asInstanceOf[js.Any]))
-      KMSKey.foreach(__v => __obj.update("KMSKey", __v.asInstanceOf[js.Any]))
-      SourceSnapshotId.foreach(__v => __obj.update("SourceSnapshotId", __v.asInstanceOf[js.Any]))
-      TargetName.foreach(__v => __obj.update("TargetName", __v.asInstanceOf[js.Any]))
-      VolumeARN.foreach(__v => __obj.update("VolumeARN", __v.asInstanceOf[js.Any]))
-      VolumeAttachmentStatus.foreach(__v => __obj.update("VolumeAttachmentStatus", __v.asInstanceOf[js.Any]))
-      VolumeId.foreach(__v => __obj.update("VolumeId", __v.asInstanceOf[js.Any]))
-      VolumeProgress.foreach(__v => __obj.update("VolumeProgress", __v.asInstanceOf[js.Any]))
-      VolumeSizeInBytes.foreach(__v => __obj.update("VolumeSizeInBytes", __v.asInstanceOf[js.Any]))
-      VolumeStatus.foreach(__v => __obj.update("VolumeStatus", __v.asInstanceOf[js.Any]))
-      VolumeType.foreach(__v => __obj.update("VolumeType", __v.asInstanceOf[js.Any]))
-      VolumeUsedInBytes.foreach(__v => __obj.update("VolumeUsedInBytes", __v.asInstanceOf[js.Any]))
-      VolumeiSCSIAttributes.foreach(__v => __obj.update("VolumeiSCSIAttributes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      KMSKey.foreach(__v => __obj.updateDynamic("KMSKey")(__v.asInstanceOf[js.Any]))
+      SourceSnapshotId.foreach(__v => __obj.updateDynamic("SourceSnapshotId")(__v.asInstanceOf[js.Any]))
+      TargetName.foreach(__v => __obj.updateDynamic("TargetName")(__v.asInstanceOf[js.Any]))
+      VolumeARN.foreach(__v => __obj.updateDynamic("VolumeARN")(__v.asInstanceOf[js.Any]))
+      VolumeAttachmentStatus.foreach(__v => __obj.updateDynamic("VolumeAttachmentStatus")(__v.asInstanceOf[js.Any]))
+      VolumeId.foreach(__v => __obj.updateDynamic("VolumeId")(__v.asInstanceOf[js.Any]))
+      VolumeProgress.foreach(__v => __obj.updateDynamic("VolumeProgress")(__v.asInstanceOf[js.Any]))
+      VolumeSizeInBytes.foreach(__v => __obj.updateDynamic("VolumeSizeInBytes")(__v.asInstanceOf[js.Any]))
+      VolumeStatus.foreach(__v => __obj.updateDynamic("VolumeStatus")(__v.asInstanceOf[js.Any]))
+      VolumeType.foreach(__v => __obj.updateDynamic("VolumeType")(__v.asInstanceOf[js.Any]))
+      VolumeUsedInBytes.foreach(__v => __obj.updateDynamic("VolumeUsedInBytes")(__v.asInstanceOf[js.Any]))
+      VolumeiSCSIAttributes.foreach(__v => __obj.updateDynamic("VolumeiSCSIAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CachediSCSIVolume]
     }
   }
@@ -755,7 +755,7 @@ package storagegateway {
         GatewayARN: GatewayARN,
         TapeARN: TapeARN
     ): CancelArchivalInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "TapeARN"    -> TapeARN.asInstanceOf[js.Any]
       )
@@ -773,8 +773,8 @@ package storagegateway {
     def apply(
         TapeARN: js.UndefOr[TapeARN] = js.undefined
     ): CancelArchivalOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TapeARN.foreach(__v => __obj.update("TapeARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TapeARN.foreach(__v => __obj.updateDynamic("TapeARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CancelArchivalOutput]
     }
   }
@@ -790,7 +790,7 @@ package storagegateway {
         GatewayARN: GatewayARN,
         TapeARN: TapeARN
     ): CancelRetrievalInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "TapeARN"    -> TapeARN.asInstanceOf[js.Any]
       )
@@ -808,8 +808,8 @@ package storagegateway {
     def apply(
         TapeARN: js.UndefOr[TapeARN] = js.undefined
     ): CancelRetrievalOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TapeARN.foreach(__v => __obj.update("TapeARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TapeARN.foreach(__v => __obj.updateDynamic("TapeARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CancelRetrievalOutput]
     }
   }
@@ -832,13 +832,15 @@ package storagegateway {
         SecretToAuthenticateTarget: js.UndefOr[ChapSecret] = js.undefined,
         TargetARN: js.UndefOr[TargetARN] = js.undefined
     ): ChapInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InitiatorName.foreach(__v => __obj.update("InitiatorName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InitiatorName.foreach(__v => __obj.updateDynamic("InitiatorName")(__v.asInstanceOf[js.Any]))
       SecretToAuthenticateInitiator.foreach(
-        __v => __obj.update("SecretToAuthenticateInitiator", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("SecretToAuthenticateInitiator")(__v.asInstanceOf[js.Any])
       )
-      SecretToAuthenticateTarget.foreach(__v => __obj.update("SecretToAuthenticateTarget", __v.asInstanceOf[js.Any]))
-      TargetARN.foreach(__v => __obj.update("TargetARN", __v.asInstanceOf[js.Any]))
+      SecretToAuthenticateTarget.foreach(
+        __v => __obj.updateDynamic("SecretToAuthenticateTarget")(__v.asInstanceOf[js.Any])
+      )
+      TargetARN.foreach(__v => __obj.updateDynamic("TargetARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChapInfo]
     }
   }
@@ -870,7 +872,7 @@ package storagegateway {
         SourceVolumeARN: js.UndefOr[VolumeARN] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateCachediSCSIVolumeInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClientToken"        -> ClientToken.asInstanceOf[js.Any],
         "GatewayARN"         -> GatewayARN.asInstanceOf[js.Any],
         "NetworkInterfaceId" -> NetworkInterfaceId.asInstanceOf[js.Any],
@@ -878,11 +880,11 @@ package storagegateway {
         "VolumeSizeInBytes"  -> VolumeSizeInBytes.asInstanceOf[js.Any]
       )
 
-      KMSEncrypted.foreach(__v => __obj.update("KMSEncrypted", __v.asInstanceOf[js.Any]))
-      KMSKey.foreach(__v => __obj.update("KMSKey", __v.asInstanceOf[js.Any]))
-      SnapshotId.foreach(__v => __obj.update("SnapshotId", __v.asInstanceOf[js.Any]))
-      SourceVolumeARN.foreach(__v => __obj.update("SourceVolumeARN", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      KMSEncrypted.foreach(__v => __obj.updateDynamic("KMSEncrypted")(__v.asInstanceOf[js.Any]))
+      KMSKey.foreach(__v => __obj.updateDynamic("KMSKey")(__v.asInstanceOf[js.Any]))
+      SnapshotId.foreach(__v => __obj.updateDynamic("SnapshotId")(__v.asInstanceOf[js.Any]))
+      SourceVolumeARN.foreach(__v => __obj.updateDynamic("SourceVolumeARN")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCachediSCSIVolumeInput]
     }
   }
@@ -898,9 +900,9 @@ package storagegateway {
         TargetARN: js.UndefOr[TargetARN] = js.undefined,
         VolumeARN: js.UndefOr[VolumeARN] = js.undefined
     ): CreateCachediSCSIVolumeOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TargetARN.foreach(__v => __obj.update("TargetARN", __v.asInstanceOf[js.Any]))
-      VolumeARN.foreach(__v => __obj.update("VolumeARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TargetARN.foreach(__v => __obj.updateDynamic("TargetARN")(__v.asInstanceOf[js.Any]))
+      VolumeARN.foreach(__v => __obj.updateDynamic("VolumeARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCachediSCSIVolumeOutput]
     }
   }
@@ -942,24 +944,24 @@ package storagegateway {
         Squash: js.UndefOr[Squash] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateNFSFileShareInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClientToken" -> ClientToken.asInstanceOf[js.Any],
         "GatewayARN"  -> GatewayARN.asInstanceOf[js.Any],
         "LocationARN" -> LocationARN.asInstanceOf[js.Any],
         "Role"        -> Role.asInstanceOf[js.Any]
       )
 
-      ClientList.foreach(__v => __obj.update("ClientList", __v.asInstanceOf[js.Any]))
-      DefaultStorageClass.foreach(__v => __obj.update("DefaultStorageClass", __v.asInstanceOf[js.Any]))
-      GuessMIMETypeEnabled.foreach(__v => __obj.update("GuessMIMETypeEnabled", __v.asInstanceOf[js.Any]))
-      KMSEncrypted.foreach(__v => __obj.update("KMSEncrypted", __v.asInstanceOf[js.Any]))
-      KMSKey.foreach(__v => __obj.update("KMSKey", __v.asInstanceOf[js.Any]))
-      NFSFileShareDefaults.foreach(__v => __obj.update("NFSFileShareDefaults", __v.asInstanceOf[js.Any]))
-      ObjectACL.foreach(__v => __obj.update("ObjectACL", __v.asInstanceOf[js.Any]))
-      ReadOnly.foreach(__v => __obj.update("ReadOnly", __v.asInstanceOf[js.Any]))
-      RequesterPays.foreach(__v => __obj.update("RequesterPays", __v.asInstanceOf[js.Any]))
-      Squash.foreach(__v => __obj.update("Squash", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      ClientList.foreach(__v => __obj.updateDynamic("ClientList")(__v.asInstanceOf[js.Any]))
+      DefaultStorageClass.foreach(__v => __obj.updateDynamic("DefaultStorageClass")(__v.asInstanceOf[js.Any]))
+      GuessMIMETypeEnabled.foreach(__v => __obj.updateDynamic("GuessMIMETypeEnabled")(__v.asInstanceOf[js.Any]))
+      KMSEncrypted.foreach(__v => __obj.updateDynamic("KMSEncrypted")(__v.asInstanceOf[js.Any]))
+      KMSKey.foreach(__v => __obj.updateDynamic("KMSKey")(__v.asInstanceOf[js.Any]))
+      NFSFileShareDefaults.foreach(__v => __obj.updateDynamic("NFSFileShareDefaults")(__v.asInstanceOf[js.Any]))
+      ObjectACL.foreach(__v => __obj.updateDynamic("ObjectACL")(__v.asInstanceOf[js.Any]))
+      ReadOnly.foreach(__v => __obj.updateDynamic("ReadOnly")(__v.asInstanceOf[js.Any]))
+      RequesterPays.foreach(__v => __obj.updateDynamic("RequesterPays")(__v.asInstanceOf[js.Any]))
+      Squash.foreach(__v => __obj.updateDynamic("Squash")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateNFSFileShareInput]
     }
   }
@@ -973,8 +975,8 @@ package storagegateway {
     def apply(
         FileShareARN: js.UndefOr[FileShareARN] = js.undefined
     ): CreateNFSFileShareOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FileShareARN.foreach(__v => __obj.update("FileShareARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FileShareARN.foreach(__v => __obj.updateDynamic("FileShareARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateNFSFileShareOutput]
     }
   }
@@ -1020,26 +1022,26 @@ package storagegateway {
         Tags: js.UndefOr[Tags] = js.undefined,
         ValidUserList: js.UndefOr[FileShareUserList] = js.undefined
     ): CreateSMBFileShareInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClientToken" -> ClientToken.asInstanceOf[js.Any],
         "GatewayARN"  -> GatewayARN.asInstanceOf[js.Any],
         "LocationARN" -> LocationARN.asInstanceOf[js.Any],
         "Role"        -> Role.asInstanceOf[js.Any]
       )
 
-      AdminUserList.foreach(__v => __obj.update("AdminUserList", __v.asInstanceOf[js.Any]))
-      Authentication.foreach(__v => __obj.update("Authentication", __v.asInstanceOf[js.Any]))
-      DefaultStorageClass.foreach(__v => __obj.update("DefaultStorageClass", __v.asInstanceOf[js.Any]))
-      GuessMIMETypeEnabled.foreach(__v => __obj.update("GuessMIMETypeEnabled", __v.asInstanceOf[js.Any]))
-      InvalidUserList.foreach(__v => __obj.update("InvalidUserList", __v.asInstanceOf[js.Any]))
-      KMSEncrypted.foreach(__v => __obj.update("KMSEncrypted", __v.asInstanceOf[js.Any]))
-      KMSKey.foreach(__v => __obj.update("KMSKey", __v.asInstanceOf[js.Any]))
-      ObjectACL.foreach(__v => __obj.update("ObjectACL", __v.asInstanceOf[js.Any]))
-      ReadOnly.foreach(__v => __obj.update("ReadOnly", __v.asInstanceOf[js.Any]))
-      RequesterPays.foreach(__v => __obj.update("RequesterPays", __v.asInstanceOf[js.Any]))
-      SMBACLEnabled.foreach(__v => __obj.update("SMBACLEnabled", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      ValidUserList.foreach(__v => __obj.update("ValidUserList", __v.asInstanceOf[js.Any]))
+      AdminUserList.foreach(__v => __obj.updateDynamic("AdminUserList")(__v.asInstanceOf[js.Any]))
+      Authentication.foreach(__v => __obj.updateDynamic("Authentication")(__v.asInstanceOf[js.Any]))
+      DefaultStorageClass.foreach(__v => __obj.updateDynamic("DefaultStorageClass")(__v.asInstanceOf[js.Any]))
+      GuessMIMETypeEnabled.foreach(__v => __obj.updateDynamic("GuessMIMETypeEnabled")(__v.asInstanceOf[js.Any]))
+      InvalidUserList.foreach(__v => __obj.updateDynamic("InvalidUserList")(__v.asInstanceOf[js.Any]))
+      KMSEncrypted.foreach(__v => __obj.updateDynamic("KMSEncrypted")(__v.asInstanceOf[js.Any]))
+      KMSKey.foreach(__v => __obj.updateDynamic("KMSKey")(__v.asInstanceOf[js.Any]))
+      ObjectACL.foreach(__v => __obj.updateDynamic("ObjectACL")(__v.asInstanceOf[js.Any]))
+      ReadOnly.foreach(__v => __obj.updateDynamic("ReadOnly")(__v.asInstanceOf[js.Any]))
+      RequesterPays.foreach(__v => __obj.updateDynamic("RequesterPays")(__v.asInstanceOf[js.Any]))
+      SMBACLEnabled.foreach(__v => __obj.updateDynamic("SMBACLEnabled")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      ValidUserList.foreach(__v => __obj.updateDynamic("ValidUserList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSMBFileShareInput]
     }
   }
@@ -1053,8 +1055,8 @@ package storagegateway {
     def apply(
         FileShareARN: js.UndefOr[FileShareARN] = js.undefined
     ): CreateSMBFileShareOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FileShareARN.foreach(__v => __obj.update("FileShareARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FileShareARN.foreach(__v => __obj.updateDynamic("FileShareARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSMBFileShareOutput]
     }
   }
@@ -1072,12 +1074,12 @@ package storagegateway {
         VolumeARN: VolumeARN,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateSnapshotFromVolumeRecoveryPointInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SnapshotDescription" -> SnapshotDescription.asInstanceOf[js.Any],
         "VolumeARN"           -> VolumeARN.asInstanceOf[js.Any]
       )
 
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSnapshotFromVolumeRecoveryPointInput]
     }
   }
@@ -1095,10 +1097,10 @@ package storagegateway {
         VolumeARN: js.UndefOr[VolumeARN] = js.undefined,
         VolumeRecoveryPointTime: js.UndefOr[String] = js.undefined
     ): CreateSnapshotFromVolumeRecoveryPointOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SnapshotId.foreach(__v => __obj.update("SnapshotId", __v.asInstanceOf[js.Any]))
-      VolumeARN.foreach(__v => __obj.update("VolumeARN", __v.asInstanceOf[js.Any]))
-      VolumeRecoveryPointTime.foreach(__v => __obj.update("VolumeRecoveryPointTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SnapshotId.foreach(__v => __obj.updateDynamic("SnapshotId")(__v.asInstanceOf[js.Any]))
+      VolumeARN.foreach(__v => __obj.updateDynamic("VolumeARN")(__v.asInstanceOf[js.Any]))
+      VolumeRecoveryPointTime.foreach(__v => __obj.updateDynamic("VolumeRecoveryPointTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSnapshotFromVolumeRecoveryPointOutput]
     }
   }
@@ -1121,12 +1123,12 @@ package storagegateway {
         VolumeARN: VolumeARN,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateSnapshotInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SnapshotDescription" -> SnapshotDescription.asInstanceOf[js.Any],
         "VolumeARN"           -> VolumeARN.asInstanceOf[js.Any]
       )
 
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSnapshotInput]
     }
   }
@@ -1145,9 +1147,9 @@ package storagegateway {
         SnapshotId: js.UndefOr[SnapshotId] = js.undefined,
         VolumeARN: js.UndefOr[VolumeARN] = js.undefined
     ): CreateSnapshotOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SnapshotId.foreach(__v => __obj.update("SnapshotId", __v.asInstanceOf[js.Any]))
-      VolumeARN.foreach(__v => __obj.update("VolumeARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SnapshotId.foreach(__v => __obj.updateDynamic("SnapshotId")(__v.asInstanceOf[js.Any]))
+      VolumeARN.foreach(__v => __obj.updateDynamic("VolumeARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSnapshotOutput]
     }
   }
@@ -1185,7 +1187,7 @@ package storagegateway {
         SnapshotId: js.UndefOr[SnapshotId] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateStorediSCSIVolumeInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DiskId"               -> DiskId.asInstanceOf[js.Any],
         "GatewayARN"           -> GatewayARN.asInstanceOf[js.Any],
         "NetworkInterfaceId"   -> NetworkInterfaceId.asInstanceOf[js.Any],
@@ -1193,10 +1195,10 @@ package storagegateway {
         "TargetName"           -> TargetName.asInstanceOf[js.Any]
       )
 
-      KMSEncrypted.foreach(__v => __obj.update("KMSEncrypted", __v.asInstanceOf[js.Any]))
-      KMSKey.foreach(__v => __obj.update("KMSKey", __v.asInstanceOf[js.Any]))
-      SnapshotId.foreach(__v => __obj.update("SnapshotId", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      KMSEncrypted.foreach(__v => __obj.updateDynamic("KMSEncrypted")(__v.asInstanceOf[js.Any]))
+      KMSKey.foreach(__v => __obj.updateDynamic("KMSKey")(__v.asInstanceOf[js.Any]))
+      SnapshotId.foreach(__v => __obj.updateDynamic("SnapshotId")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateStorediSCSIVolumeInput]
     }
   }
@@ -1217,10 +1219,10 @@ package storagegateway {
         VolumeARN: js.UndefOr[VolumeARN] = js.undefined,
         VolumeSizeInBytes: js.UndefOr[Double] = js.undefined
     ): CreateStorediSCSIVolumeOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TargetARN.foreach(__v => __obj.update("TargetARN", __v.asInstanceOf[js.Any]))
-      VolumeARN.foreach(__v => __obj.update("VolumeARN", __v.asInstanceOf[js.Any]))
-      VolumeSizeInBytes.foreach(__v => __obj.update("VolumeSizeInBytes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TargetARN.foreach(__v => __obj.updateDynamic("TargetARN")(__v.asInstanceOf[js.Any]))
+      VolumeARN.foreach(__v => __obj.updateDynamic("VolumeARN")(__v.asInstanceOf[js.Any]))
+      VolumeSizeInBytes.foreach(__v => __obj.updateDynamic("VolumeSizeInBytes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateStorediSCSIVolumeOutput]
     }
   }
@@ -1246,16 +1248,16 @@ package storagegateway {
         PoolId: js.UndefOr[PoolId] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateTapeWithBarcodeInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN"      -> GatewayARN.asInstanceOf[js.Any],
         "TapeBarcode"     -> TapeBarcode.asInstanceOf[js.Any],
         "TapeSizeInBytes" -> TapeSizeInBytes.asInstanceOf[js.Any]
       )
 
-      KMSEncrypted.foreach(__v => __obj.update("KMSEncrypted", __v.asInstanceOf[js.Any]))
-      KMSKey.foreach(__v => __obj.update("KMSKey", __v.asInstanceOf[js.Any]))
-      PoolId.foreach(__v => __obj.update("PoolId", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      KMSEncrypted.foreach(__v => __obj.updateDynamic("KMSEncrypted")(__v.asInstanceOf[js.Any]))
+      KMSKey.foreach(__v => __obj.updateDynamic("KMSKey")(__v.asInstanceOf[js.Any]))
+      PoolId.foreach(__v => __obj.updateDynamic("PoolId")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTapeWithBarcodeInput]
     }
   }
@@ -1272,8 +1274,8 @@ package storagegateway {
     def apply(
         TapeARN: js.UndefOr[TapeARN] = js.undefined
     ): CreateTapeWithBarcodeOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TapeARN.foreach(__v => __obj.update("TapeARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TapeARN.foreach(__v => __obj.updateDynamic("TapeARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTapeWithBarcodeOutput]
     }
   }
@@ -1303,7 +1305,7 @@ package storagegateway {
         PoolId: js.UndefOr[PoolId] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateTapesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClientToken"       -> ClientToken.asInstanceOf[js.Any],
         "GatewayARN"        -> GatewayARN.asInstanceOf[js.Any],
         "NumTapesToCreate"  -> NumTapesToCreate.asInstanceOf[js.Any],
@@ -1311,10 +1313,10 @@ package storagegateway {
         "TapeSizeInBytes"   -> TapeSizeInBytes.asInstanceOf[js.Any]
       )
 
-      KMSEncrypted.foreach(__v => __obj.update("KMSEncrypted", __v.asInstanceOf[js.Any]))
-      KMSKey.foreach(__v => __obj.update("KMSKey", __v.asInstanceOf[js.Any]))
-      PoolId.foreach(__v => __obj.update("PoolId", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      KMSEncrypted.foreach(__v => __obj.updateDynamic("KMSEncrypted")(__v.asInstanceOf[js.Any]))
+      KMSKey.foreach(__v => __obj.updateDynamic("KMSKey")(__v.asInstanceOf[js.Any]))
+      PoolId.foreach(__v => __obj.updateDynamic("PoolId")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTapesInput]
     }
   }
@@ -1331,8 +1333,8 @@ package storagegateway {
     def apply(
         TapeARNs: js.UndefOr[TapeARNs] = js.undefined
     ): CreateTapesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TapeARNs.foreach(__v => __obj.update("TapeARNs", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TapeARNs.foreach(__v => __obj.updateDynamic("TapeARNs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTapesOutput]
     }
   }
@@ -1352,7 +1354,7 @@ package storagegateway {
         BandwidthType: BandwidthType,
         GatewayARN: GatewayARN
     ): DeleteBandwidthRateLimitInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BandwidthType" -> BandwidthType.asInstanceOf[js.Any],
         "GatewayARN"    -> GatewayARN.asInstanceOf[js.Any]
       )
@@ -1373,8 +1375,8 @@ package storagegateway {
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): DeleteBandwidthRateLimitOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteBandwidthRateLimitOutput]
     }
   }
@@ -1395,7 +1397,7 @@ package storagegateway {
         InitiatorName: IqnName,
         TargetARN: TargetARN
     ): DeleteChapCredentialsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InitiatorName" -> InitiatorName.asInstanceOf[js.Any],
         "TargetARN"     -> TargetARN.asInstanceOf[js.Any]
       )
@@ -1418,9 +1420,9 @@ package storagegateway {
         InitiatorName: js.UndefOr[IqnName] = js.undefined,
         TargetARN: js.UndefOr[TargetARN] = js.undefined
     ): DeleteChapCredentialsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InitiatorName.foreach(__v => __obj.update("InitiatorName", __v.asInstanceOf[js.Any]))
-      TargetARN.foreach(__v => __obj.update("TargetARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InitiatorName.foreach(__v => __obj.updateDynamic("InitiatorName")(__v.asInstanceOf[js.Any]))
+      TargetARN.foreach(__v => __obj.updateDynamic("TargetARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteChapCredentialsOutput]
     }
   }
@@ -1436,11 +1438,11 @@ package storagegateway {
         FileShareARN: FileShareARN,
         ForceDelete: js.UndefOr[Boolean] = js.undefined
     ): DeleteFileShareInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FileShareARN" -> FileShareARN.asInstanceOf[js.Any]
       )
 
-      ForceDelete.foreach(__v => __obj.update("ForceDelete", __v.asInstanceOf[js.Any]))
+      ForceDelete.foreach(__v => __obj.updateDynamic("ForceDelete")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteFileShareInput]
     }
   }
@@ -1454,8 +1456,8 @@ package storagegateway {
     def apply(
         FileShareARN: js.UndefOr[FileShareARN] = js.undefined
     ): DeleteFileShareOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FileShareARN.foreach(__v => __obj.update("FileShareARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FileShareARN.foreach(__v => __obj.updateDynamic("FileShareARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteFileShareOutput]
     }
   }
@@ -1472,7 +1474,7 @@ package storagegateway {
     def apply(
         GatewayARN: GatewayARN
     ): DeleteGatewayInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
 
@@ -1492,8 +1494,8 @@ package storagegateway {
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): DeleteGatewayOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteGatewayOutput]
     }
   }
@@ -1507,7 +1509,7 @@ package storagegateway {
     def apply(
         VolumeARN: VolumeARN
     ): DeleteSnapshotScheduleInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VolumeARN" -> VolumeARN.asInstanceOf[js.Any]
       )
 
@@ -1524,8 +1526,8 @@ package storagegateway {
     def apply(
         VolumeARN: js.UndefOr[VolumeARN] = js.undefined
     ): DeleteSnapshotScheduleOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      VolumeARN.foreach(__v => __obj.update("VolumeARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      VolumeARN.foreach(__v => __obj.updateDynamic("VolumeARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteSnapshotScheduleOutput]
     }
   }
@@ -1539,7 +1541,7 @@ package storagegateway {
     def apply(
         TapeARN: TapeARN
     ): DeleteTapeArchiveInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TapeARN" -> TapeARN.asInstanceOf[js.Any]
       )
 
@@ -1556,8 +1558,8 @@ package storagegateway {
     def apply(
         TapeARN: js.UndefOr[TapeARN] = js.undefined
     ): DeleteTapeArchiveOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TapeARN.foreach(__v => __obj.update("TapeARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TapeARN.foreach(__v => __obj.updateDynamic("TapeARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteTapeArchiveOutput]
     }
   }
@@ -1573,7 +1575,7 @@ package storagegateway {
         GatewayARN: GatewayARN,
         TapeARN: TapeARN
     ): DeleteTapeInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "TapeARN"    -> TapeARN.asInstanceOf[js.Any]
       )
@@ -1591,8 +1593,8 @@ package storagegateway {
     def apply(
         TapeARN: js.UndefOr[TapeARN] = js.undefined
     ): DeleteTapeOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TapeARN.foreach(__v => __obj.update("TapeARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TapeARN.foreach(__v => __obj.updateDynamic("TapeARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteTapeOutput]
     }
   }
@@ -1609,7 +1611,7 @@ package storagegateway {
     def apply(
         VolumeARN: VolumeARN
     ): DeleteVolumeInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VolumeARN" -> VolumeARN.asInstanceOf[js.Any]
       )
 
@@ -1629,8 +1631,8 @@ package storagegateway {
     def apply(
         VolumeARN: js.UndefOr[VolumeARN] = js.undefined
     ): DeleteVolumeOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      VolumeARN.foreach(__v => __obj.update("VolumeARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      VolumeARN.foreach(__v => __obj.updateDynamic("VolumeARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteVolumeOutput]
     }
   }
@@ -1647,7 +1649,7 @@ package storagegateway {
     def apply(
         GatewayARN: GatewayARN
     ): DescribeBandwidthRateLimitInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
 
@@ -1671,14 +1673,14 @@ package storagegateway {
         AverageUploadRateLimitInBitsPerSec: js.UndefOr[BandwidthUploadRateLimit] = js.undefined,
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): DescribeBandwidthRateLimitOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       AverageDownloadRateLimitInBitsPerSec.foreach(
-        __v => __obj.update("AverageDownloadRateLimitInBitsPerSec", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("AverageDownloadRateLimitInBitsPerSec")(__v.asInstanceOf[js.Any])
       )
       AverageUploadRateLimitInBitsPerSec.foreach(
-        __v => __obj.update("AverageUploadRateLimitInBitsPerSec", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("AverageUploadRateLimitInBitsPerSec")(__v.asInstanceOf[js.Any])
       )
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeBandwidthRateLimitOutput]
     }
   }
@@ -1692,7 +1694,7 @@ package storagegateway {
     def apply(
         GatewayARN: GatewayARN
     ): DescribeCacheInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
 
@@ -1721,14 +1723,14 @@ package storagegateway {
         DiskIds: js.UndefOr[DiskIds] = js.undefined,
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): DescribeCacheOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CacheAllocatedInBytes.foreach(__v => __obj.update("CacheAllocatedInBytes", __v.asInstanceOf[js.Any]))
-      CacheDirtyPercentage.foreach(__v => __obj.update("CacheDirtyPercentage", __v.asInstanceOf[js.Any]))
-      CacheHitPercentage.foreach(__v => __obj.update("CacheHitPercentage", __v.asInstanceOf[js.Any]))
-      CacheMissPercentage.foreach(__v => __obj.update("CacheMissPercentage", __v.asInstanceOf[js.Any]))
-      CacheUsedPercentage.foreach(__v => __obj.update("CacheUsedPercentage", __v.asInstanceOf[js.Any]))
-      DiskIds.foreach(__v => __obj.update("DiskIds", __v.asInstanceOf[js.Any]))
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CacheAllocatedInBytes.foreach(__v => __obj.updateDynamic("CacheAllocatedInBytes")(__v.asInstanceOf[js.Any]))
+      CacheDirtyPercentage.foreach(__v => __obj.updateDynamic("CacheDirtyPercentage")(__v.asInstanceOf[js.Any]))
+      CacheHitPercentage.foreach(__v => __obj.updateDynamic("CacheHitPercentage")(__v.asInstanceOf[js.Any]))
+      CacheMissPercentage.foreach(__v => __obj.updateDynamic("CacheMissPercentage")(__v.asInstanceOf[js.Any]))
+      CacheUsedPercentage.foreach(__v => __obj.updateDynamic("CacheUsedPercentage")(__v.asInstanceOf[js.Any]))
+      DiskIds.foreach(__v => __obj.updateDynamic("DiskIds")(__v.asInstanceOf[js.Any]))
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeCacheOutput]
     }
   }
@@ -1742,7 +1744,7 @@ package storagegateway {
     def apply(
         VolumeARNs: VolumeARNs
     ): DescribeCachediSCSIVolumesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VolumeARNs" -> VolumeARNs.asInstanceOf[js.Any]
       )
 
@@ -1762,8 +1764,8 @@ package storagegateway {
     def apply(
         CachediSCSIVolumes: js.UndefOr[CachediSCSIVolumes] = js.undefined
     ): DescribeCachediSCSIVolumesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CachediSCSIVolumes.foreach(__v => __obj.update("CachediSCSIVolumes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CachediSCSIVolumes.foreach(__v => __obj.updateDynamic("CachediSCSIVolumes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeCachediSCSIVolumesOutput]
     }
   }
@@ -1780,7 +1782,7 @@ package storagegateway {
     def apply(
         TargetARN: TargetARN
     ): DescribeChapCredentialsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TargetARN" -> TargetARN.asInstanceOf[js.Any]
       )
 
@@ -1800,8 +1802,8 @@ package storagegateway {
     def apply(
         ChapCredentials: js.UndefOr[ChapCredentials] = js.undefined
     ): DescribeChapCredentialsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChapCredentials.foreach(__v => __obj.update("ChapCredentials", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChapCredentials.foreach(__v => __obj.updateDynamic("ChapCredentials")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeChapCredentialsOutput]
     }
   }
@@ -1818,7 +1820,7 @@ package storagegateway {
     def apply(
         GatewayARN: GatewayARN
     ): DescribeGatewayInformationInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
 
@@ -1862,20 +1864,22 @@ package storagegateway {
         Tags: js.UndefOr[Tags] = js.undefined,
         VPCEndpoint: js.UndefOr[String] = js.undefined
     ): DescribeGatewayInformationOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Ec2InstanceId.foreach(__v => __obj.update("Ec2InstanceId", __v.asInstanceOf[js.Any]))
-      Ec2InstanceRegion.foreach(__v => __obj.update("Ec2InstanceRegion", __v.asInstanceOf[js.Any]))
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
-      GatewayId.foreach(__v => __obj.update("GatewayId", __v.asInstanceOf[js.Any]))
-      GatewayName.foreach(__v => __obj.update("GatewayName", __v.asInstanceOf[js.Any]))
-      GatewayNetworkInterfaces.foreach(__v => __obj.update("GatewayNetworkInterfaces", __v.asInstanceOf[js.Any]))
-      GatewayState.foreach(__v => __obj.update("GatewayState", __v.asInstanceOf[js.Any]))
-      GatewayTimezone.foreach(__v => __obj.update("GatewayTimezone", __v.asInstanceOf[js.Any]))
-      GatewayType.foreach(__v => __obj.update("GatewayType", __v.asInstanceOf[js.Any]))
-      LastSoftwareUpdate.foreach(__v => __obj.update("LastSoftwareUpdate", __v.asInstanceOf[js.Any]))
-      NextUpdateAvailabilityDate.foreach(__v => __obj.update("NextUpdateAvailabilityDate", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      VPCEndpoint.foreach(__v => __obj.update("VPCEndpoint", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Ec2InstanceId.foreach(__v => __obj.updateDynamic("Ec2InstanceId")(__v.asInstanceOf[js.Any]))
+      Ec2InstanceRegion.foreach(__v => __obj.updateDynamic("Ec2InstanceRegion")(__v.asInstanceOf[js.Any]))
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
+      GatewayId.foreach(__v => __obj.updateDynamic("GatewayId")(__v.asInstanceOf[js.Any]))
+      GatewayName.foreach(__v => __obj.updateDynamic("GatewayName")(__v.asInstanceOf[js.Any]))
+      GatewayNetworkInterfaces.foreach(__v => __obj.updateDynamic("GatewayNetworkInterfaces")(__v.asInstanceOf[js.Any]))
+      GatewayState.foreach(__v => __obj.updateDynamic("GatewayState")(__v.asInstanceOf[js.Any]))
+      GatewayTimezone.foreach(__v => __obj.updateDynamic("GatewayTimezone")(__v.asInstanceOf[js.Any]))
+      GatewayType.foreach(__v => __obj.updateDynamic("GatewayType")(__v.asInstanceOf[js.Any]))
+      LastSoftwareUpdate.foreach(__v => __obj.updateDynamic("LastSoftwareUpdate")(__v.asInstanceOf[js.Any]))
+      NextUpdateAvailabilityDate.foreach(
+        __v => __obj.updateDynamic("NextUpdateAvailabilityDate")(__v.asInstanceOf[js.Any])
+      )
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      VPCEndpoint.foreach(__v => __obj.updateDynamic("VPCEndpoint")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeGatewayInformationOutput]
     }
   }
@@ -1892,7 +1896,7 @@ package storagegateway {
     def apply(
         GatewayARN: GatewayARN
     ): DescribeMaintenanceStartTimeInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
 
@@ -1927,13 +1931,13 @@ package storagegateway {
         MinuteOfHour: js.UndefOr[MinuteOfHour] = js.undefined,
         Timezone: js.UndefOr[GatewayTimezone] = js.undefined
     ): DescribeMaintenanceStartTimeOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DayOfMonth.foreach(__v => __obj.update("DayOfMonth", __v.asInstanceOf[js.Any]))
-      DayOfWeek.foreach(__v => __obj.update("DayOfWeek", __v.asInstanceOf[js.Any]))
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
-      HourOfDay.foreach(__v => __obj.update("HourOfDay", __v.asInstanceOf[js.Any]))
-      MinuteOfHour.foreach(__v => __obj.update("MinuteOfHour", __v.asInstanceOf[js.Any]))
-      Timezone.foreach(__v => __obj.update("Timezone", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DayOfMonth.foreach(__v => __obj.updateDynamic("DayOfMonth")(__v.asInstanceOf[js.Any]))
+      DayOfWeek.foreach(__v => __obj.updateDynamic("DayOfWeek")(__v.asInstanceOf[js.Any]))
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
+      HourOfDay.foreach(__v => __obj.updateDynamic("HourOfDay")(__v.asInstanceOf[js.Any]))
+      MinuteOfHour.foreach(__v => __obj.updateDynamic("MinuteOfHour")(__v.asInstanceOf[js.Any]))
+      Timezone.foreach(__v => __obj.updateDynamic("Timezone")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMaintenanceStartTimeOutput]
     }
   }
@@ -1947,7 +1951,7 @@ package storagegateway {
     def apply(
         FileShareARNList: FileShareARNList
     ): DescribeNFSFileSharesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FileShareARNList" -> FileShareARNList.asInstanceOf[js.Any]
       )
 
@@ -1964,8 +1968,8 @@ package storagegateway {
     def apply(
         NFSFileShareInfoList: js.UndefOr[NFSFileShareInfoList] = js.undefined
     ): DescribeNFSFileSharesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NFSFileShareInfoList.foreach(__v => __obj.update("NFSFileShareInfoList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NFSFileShareInfoList.foreach(__v => __obj.updateDynamic("NFSFileShareInfoList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeNFSFileSharesOutput]
     }
   }
@@ -1979,7 +1983,7 @@ package storagegateway {
     def apply(
         FileShareARNList: FileShareARNList
     ): DescribeSMBFileSharesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FileShareARNList" -> FileShareARNList.asInstanceOf[js.Any]
       )
 
@@ -1996,8 +2000,8 @@ package storagegateway {
     def apply(
         SMBFileShareInfoList: js.UndefOr[SMBFileShareInfoList] = js.undefined
     ): DescribeSMBFileSharesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SMBFileShareInfoList.foreach(__v => __obj.update("SMBFileShareInfoList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SMBFileShareInfoList.foreach(__v => __obj.updateDynamic("SMBFileShareInfoList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSMBFileSharesOutput]
     }
   }
@@ -2011,7 +2015,7 @@ package storagegateway {
     def apply(
         GatewayARN: GatewayARN
     ): DescribeSMBSettingsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
 
@@ -2034,11 +2038,11 @@ package storagegateway {
         SMBGuestPasswordSet: js.UndefOr[Boolean] = js.undefined,
         SMBSecurityStrategy: js.UndefOr[SMBSecurityStrategy] = js.undefined
     ): DescribeSMBSettingsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DomainName.foreach(__v => __obj.update("DomainName", __v.asInstanceOf[js.Any]))
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
-      SMBGuestPasswordSet.foreach(__v => __obj.update("SMBGuestPasswordSet", __v.asInstanceOf[js.Any]))
-      SMBSecurityStrategy.foreach(__v => __obj.update("SMBSecurityStrategy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
+      SMBGuestPasswordSet.foreach(__v => __obj.updateDynamic("SMBGuestPasswordSet")(__v.asInstanceOf[js.Any]))
+      SMBSecurityStrategy.foreach(__v => __obj.updateDynamic("SMBSecurityStrategy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSMBSettingsOutput]
     }
   }
@@ -2055,7 +2059,7 @@ package storagegateway {
     def apply(
         VolumeARN: VolumeARN
     ): DescribeSnapshotScheduleInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VolumeARN" -> VolumeARN.asInstanceOf[js.Any]
       )
 
@@ -2082,13 +2086,13 @@ package storagegateway {
         Timezone: js.UndefOr[GatewayTimezone] = js.undefined,
         VolumeARN: js.UndefOr[VolumeARN] = js.undefined
     ): DescribeSnapshotScheduleOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      RecurrenceInHours.foreach(__v => __obj.update("RecurrenceInHours", __v.asInstanceOf[js.Any]))
-      StartAt.foreach(__v => __obj.update("StartAt", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      Timezone.foreach(__v => __obj.update("Timezone", __v.asInstanceOf[js.Any]))
-      VolumeARN.foreach(__v => __obj.update("VolumeARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      RecurrenceInHours.foreach(__v => __obj.updateDynamic("RecurrenceInHours")(__v.asInstanceOf[js.Any]))
+      StartAt.foreach(__v => __obj.updateDynamic("StartAt")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      Timezone.foreach(__v => __obj.updateDynamic("Timezone")(__v.asInstanceOf[js.Any]))
+      VolumeARN.foreach(__v => __obj.updateDynamic("VolumeARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSnapshotScheduleOutput]
     }
   }
@@ -2105,7 +2109,7 @@ package storagegateway {
     def apply(
         VolumeARNs: VolumeARNs
     ): DescribeStorediSCSIVolumesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VolumeARNs" -> VolumeARNs.asInstanceOf[js.Any]
       )
 
@@ -2122,8 +2126,8 @@ package storagegateway {
     def apply(
         StorediSCSIVolumes: js.UndefOr[StorediSCSIVolumes] = js.undefined
     ): DescribeStorediSCSIVolumesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      StorediSCSIVolumes.foreach(__v => __obj.update("StorediSCSIVolumes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      StorediSCSIVolumes.foreach(__v => __obj.updateDynamic("StorediSCSIVolumes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeStorediSCSIVolumesOutput]
     }
   }
@@ -2141,10 +2145,10 @@ package storagegateway {
         Marker: js.UndefOr[Marker] = js.undefined,
         TapeARNs: js.UndefOr[TapeARNs] = js.undefined
     ): DescribeTapeArchivesInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      TapeARNs.foreach(__v => __obj.update("TapeARNs", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      TapeARNs.foreach(__v => __obj.updateDynamic("TapeARNs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTapeArchivesInput]
     }
   }
@@ -2160,9 +2164,9 @@ package storagegateway {
         Marker: js.UndefOr[Marker] = js.undefined,
         TapeArchives: js.UndefOr[TapeArchives] = js.undefined
     ): DescribeTapeArchivesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      TapeArchives.foreach(__v => __obj.update("TapeArchives", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      TapeArchives.foreach(__v => __obj.updateDynamic("TapeArchives")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTapeArchivesOutput]
     }
   }
@@ -2180,12 +2184,12 @@ package storagegateway {
         Limit: js.UndefOr[PositiveIntObject] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined
     ): DescribeTapeRecoveryPointsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
 
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTapeRecoveryPointsInput]
     }
   }
@@ -2203,10 +2207,10 @@ package storagegateway {
         Marker: js.UndefOr[Marker] = js.undefined,
         TapeRecoveryPointInfos: js.UndefOr[TapeRecoveryPointInfos] = js.undefined
     ): DescribeTapeRecoveryPointsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      TapeRecoveryPointInfos.foreach(__v => __obj.update("TapeRecoveryPointInfos", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      TapeRecoveryPointInfos.foreach(__v => __obj.updateDynamic("TapeRecoveryPointInfos")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTapeRecoveryPointsOutput]
     }
   }
@@ -2226,13 +2230,13 @@ package storagegateway {
         Marker: js.UndefOr[Marker] = js.undefined,
         TapeARNs: js.UndefOr[TapeARNs] = js.undefined
     ): DescribeTapesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
 
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      TapeARNs.foreach(__v => __obj.update("TapeARNs", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      TapeARNs.foreach(__v => __obj.updateDynamic("TapeARNs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTapesInput]
     }
   }
@@ -2248,9 +2252,9 @@ package storagegateway {
         Marker: js.UndefOr[Marker] = js.undefined,
         Tapes: js.UndefOr[Tapes] = js.undefined
     ): DescribeTapesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      Tapes.foreach(__v => __obj.update("Tapes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      Tapes.foreach(__v => __obj.updateDynamic("Tapes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTapesOutput]
     }
   }
@@ -2264,7 +2268,7 @@ package storagegateway {
     def apply(
         GatewayARN: GatewayARN
     ): DescribeUploadBufferInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
 
@@ -2287,13 +2291,13 @@ package storagegateway {
         UploadBufferAllocatedInBytes: js.UndefOr[Double] = js.undefined,
         UploadBufferUsedInBytes: js.UndefOr[Double] = js.undefined
     ): DescribeUploadBufferOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DiskIds.foreach(__v => __obj.update("DiskIds", __v.asInstanceOf[js.Any]))
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DiskIds.foreach(__v => __obj.updateDynamic("DiskIds")(__v.asInstanceOf[js.Any]))
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       UploadBufferAllocatedInBytes.foreach(
-        __v => __obj.update("UploadBufferAllocatedInBytes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("UploadBufferAllocatedInBytes")(__v.asInstanceOf[js.Any])
       )
-      UploadBufferUsedInBytes.foreach(__v => __obj.update("UploadBufferUsedInBytes", __v.asInstanceOf[js.Any]))
+      UploadBufferUsedInBytes.foreach(__v => __obj.updateDynamic("UploadBufferUsedInBytes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeUploadBufferOutput]
     }
   }
@@ -2313,13 +2317,13 @@ package storagegateway {
         Marker: js.UndefOr[Marker] = js.undefined,
         VTLDeviceARNs: js.UndefOr[VTLDeviceARNs] = js.undefined
     ): DescribeVTLDevicesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
 
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      VTLDeviceARNs.foreach(__v => __obj.update("VTLDeviceARNs", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      VTLDeviceARNs.foreach(__v => __obj.updateDynamic("VTLDeviceARNs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeVTLDevicesInput]
     }
   }
@@ -2337,10 +2341,10 @@ package storagegateway {
         Marker: js.UndefOr[Marker] = js.undefined,
         VTLDevices: js.UndefOr[VTLDevices] = js.undefined
     ): DescribeVTLDevicesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      VTLDevices.foreach(__v => __obj.update("VTLDevices", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      VTLDevices.foreach(__v => __obj.updateDynamic("VTLDevices")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeVTLDevicesOutput]
     }
   }
@@ -2357,7 +2361,7 @@ package storagegateway {
     def apply(
         GatewayARN: GatewayARN
     ): DescribeWorkingStorageInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
 
@@ -2383,13 +2387,15 @@ package storagegateway {
         WorkingStorageAllocatedInBytes: js.UndefOr[Double] = js.undefined,
         WorkingStorageUsedInBytes: js.UndefOr[Double] = js.undefined
     ): DescribeWorkingStorageOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DiskIds.foreach(__v => __obj.update("DiskIds", __v.asInstanceOf[js.Any]))
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DiskIds.foreach(__v => __obj.updateDynamic("DiskIds")(__v.asInstanceOf[js.Any]))
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       WorkingStorageAllocatedInBytes.foreach(
-        __v => __obj.update("WorkingStorageAllocatedInBytes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("WorkingStorageAllocatedInBytes")(__v.asInstanceOf[js.Any])
       )
-      WorkingStorageUsedInBytes.foreach(__v => __obj.update("WorkingStorageUsedInBytes", __v.asInstanceOf[js.Any]))
+      WorkingStorageUsedInBytes.foreach(
+        __v => __obj.updateDynamic("WorkingStorageUsedInBytes")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[DescribeWorkingStorageOutput]
     }
   }
@@ -2408,11 +2414,11 @@ package storagegateway {
         VolumeARN: VolumeARN,
         ForceDetach: js.UndefOr[Boolean] = js.undefined
     ): DetachVolumeInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VolumeARN" -> VolumeARN.asInstanceOf[js.Any]
       )
 
-      ForceDetach.foreach(__v => __obj.update("ForceDetach", __v.asInstanceOf[js.Any]))
+      ForceDetach.foreach(__v => __obj.updateDynamic("ForceDetach")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetachVolumeInput]
     }
   }
@@ -2429,8 +2435,8 @@ package storagegateway {
     def apply(
         VolumeARN: js.UndefOr[VolumeARN] = js.undefined
     ): DetachVolumeOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      VolumeARN.foreach(__v => __obj.update("VolumeARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      VolumeARN.foreach(__v => __obj.updateDynamic("VolumeARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetachVolumeOutput]
     }
   }
@@ -2453,11 +2459,11 @@ package storagegateway {
         NetworkInterfacePort: js.UndefOr[Int] = js.undefined,
         TargetARN: js.UndefOr[TargetARN] = js.undefined
     ): DeviceiSCSIAttributes = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChapEnabled.foreach(__v => __obj.update("ChapEnabled", __v.asInstanceOf[js.Any]))
-      NetworkInterfaceId.foreach(__v => __obj.update("NetworkInterfaceId", __v.asInstanceOf[js.Any]))
-      NetworkInterfacePort.foreach(__v => __obj.update("NetworkInterfacePort", __v.asInstanceOf[js.Any]))
-      TargetARN.foreach(__v => __obj.update("TargetARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChapEnabled.foreach(__v => __obj.updateDynamic("ChapEnabled")(__v.asInstanceOf[js.Any]))
+      NetworkInterfaceId.foreach(__v => __obj.updateDynamic("NetworkInterfaceId")(__v.asInstanceOf[js.Any]))
+      NetworkInterfacePort.foreach(__v => __obj.updateDynamic("NetworkInterfacePort")(__v.asInstanceOf[js.Any]))
+      TargetARN.foreach(__v => __obj.updateDynamic("TargetARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeviceiSCSIAttributes]
     }
   }
@@ -2471,7 +2477,7 @@ package storagegateway {
     def apply(
         GatewayARN: GatewayARN
     ): DisableGatewayInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
 
@@ -2488,8 +2494,8 @@ package storagegateway {
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): DisableGatewayOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisableGatewayOutput]
     }
   }
@@ -2520,15 +2526,15 @@ package storagegateway {
         DiskSizeInBytes: js.UndefOr[Double] = js.undefined,
         DiskStatus: js.UndefOr[String] = js.undefined
     ): Disk = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DiskAllocationResource.foreach(__v => __obj.update("DiskAllocationResource", __v.asInstanceOf[js.Any]))
-      DiskAllocationType.foreach(__v => __obj.update("DiskAllocationType", __v.asInstanceOf[js.Any]))
-      DiskAttributeList.foreach(__v => __obj.update("DiskAttributeList", __v.asInstanceOf[js.Any]))
-      DiskId.foreach(__v => __obj.update("DiskId", __v.asInstanceOf[js.Any]))
-      DiskNode.foreach(__v => __obj.update("DiskNode", __v.asInstanceOf[js.Any]))
-      DiskPath.foreach(__v => __obj.update("DiskPath", __v.asInstanceOf[js.Any]))
-      DiskSizeInBytes.foreach(__v => __obj.update("DiskSizeInBytes", __v.asInstanceOf[js.Any]))
-      DiskStatus.foreach(__v => __obj.update("DiskStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DiskAllocationResource.foreach(__v => __obj.updateDynamic("DiskAllocationResource")(__v.asInstanceOf[js.Any]))
+      DiskAllocationType.foreach(__v => __obj.updateDynamic("DiskAllocationType")(__v.asInstanceOf[js.Any]))
+      DiskAttributeList.foreach(__v => __obj.updateDynamic("DiskAttributeList")(__v.asInstanceOf[js.Any]))
+      DiskId.foreach(__v => __obj.updateDynamic("DiskId")(__v.asInstanceOf[js.Any]))
+      DiskNode.foreach(__v => __obj.updateDynamic("DiskNode")(__v.asInstanceOf[js.Any]))
+      DiskPath.foreach(__v => __obj.updateDynamic("DiskPath")(__v.asInstanceOf[js.Any]))
+      DiskSizeInBytes.foreach(__v => __obj.updateDynamic("DiskSizeInBytes")(__v.asInstanceOf[js.Any]))
+      DiskStatus.foreach(__v => __obj.updateDynamic("DiskStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Disk]
     }
   }
@@ -2553,12 +2559,12 @@ package storagegateway {
         FileShareType: js.UndefOr[FileShareType] = js.undefined,
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): FileShareInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FileShareARN.foreach(__v => __obj.update("FileShareARN", __v.asInstanceOf[js.Any]))
-      FileShareId.foreach(__v => __obj.update("FileShareId", __v.asInstanceOf[js.Any]))
-      FileShareStatus.foreach(__v => __obj.update("FileShareStatus", __v.asInstanceOf[js.Any]))
-      FileShareType.foreach(__v => __obj.update("FileShareType", __v.asInstanceOf[js.Any]))
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FileShareARN.foreach(__v => __obj.updateDynamic("FileShareARN")(__v.asInstanceOf[js.Any]))
+      FileShareId.foreach(__v => __obj.updateDynamic("FileShareId")(__v.asInstanceOf[js.Any]))
+      FileShareStatus.foreach(__v => __obj.updateDynamic("FileShareStatus")(__v.asInstanceOf[js.Any]))
+      FileShareType.foreach(__v => __obj.updateDynamic("FileShareType")(__v.asInstanceOf[js.Any]))
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FileShareInfo]
     }
   }
@@ -2597,14 +2603,14 @@ package storagegateway {
         GatewayOperationalState: js.UndefOr[GatewayOperationalState] = js.undefined,
         GatewayType: js.UndefOr[GatewayType] = js.undefined
     ): GatewayInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Ec2InstanceId.foreach(__v => __obj.update("Ec2InstanceId", __v.asInstanceOf[js.Any]))
-      Ec2InstanceRegion.foreach(__v => __obj.update("Ec2InstanceRegion", __v.asInstanceOf[js.Any]))
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
-      GatewayId.foreach(__v => __obj.update("GatewayId", __v.asInstanceOf[js.Any]))
-      GatewayName.foreach(__v => __obj.update("GatewayName", __v.asInstanceOf[js.Any]))
-      GatewayOperationalState.foreach(__v => __obj.update("GatewayOperationalState", __v.asInstanceOf[js.Any]))
-      GatewayType.foreach(__v => __obj.update("GatewayType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Ec2InstanceId.foreach(__v => __obj.updateDynamic("Ec2InstanceId")(__v.asInstanceOf[js.Any]))
+      Ec2InstanceRegion.foreach(__v => __obj.updateDynamic("Ec2InstanceRegion")(__v.asInstanceOf[js.Any]))
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
+      GatewayId.foreach(__v => __obj.updateDynamic("GatewayId")(__v.asInstanceOf[js.Any]))
+      GatewayName.foreach(__v => __obj.updateDynamic("GatewayName")(__v.asInstanceOf[js.Any]))
+      GatewayOperationalState.foreach(__v => __obj.updateDynamic("GatewayOperationalState")(__v.asInstanceOf[js.Any]))
+      GatewayType.foreach(__v => __obj.updateDynamic("GatewayType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GatewayInfo]
     }
   }
@@ -2628,15 +2634,15 @@ package storagegateway {
         DomainControllers: js.UndefOr[Hosts] = js.undefined,
         OrganizationalUnit: js.UndefOr[OrganizationalUnit] = js.undefined
     ): JoinDomainInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "Password"   -> Password.asInstanceOf[js.Any],
         "UserName"   -> UserName.asInstanceOf[js.Any]
       )
 
-      DomainControllers.foreach(__v => __obj.update("DomainControllers", __v.asInstanceOf[js.Any]))
-      OrganizationalUnit.foreach(__v => __obj.update("OrganizationalUnit", __v.asInstanceOf[js.Any]))
+      DomainControllers.foreach(__v => __obj.updateDynamic("DomainControllers")(__v.asInstanceOf[js.Any]))
+      OrganizationalUnit.foreach(__v => __obj.updateDynamic("OrganizationalUnit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JoinDomainInput]
     }
   }
@@ -2650,8 +2656,8 @@ package storagegateway {
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): JoinDomainOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JoinDomainOutput]
     }
   }
@@ -2672,10 +2678,10 @@ package storagegateway {
         Limit: js.UndefOr[PositiveIntObject] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined
     ): ListFileSharesInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFileSharesInput]
     }
   }
@@ -2696,10 +2702,10 @@ package storagegateway {
         Marker: js.UndefOr[Marker] = js.undefined,
         NextMarker: js.UndefOr[Marker] = js.undefined
     ): ListFileSharesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FileShareInfoList.foreach(__v => __obj.update("FileShareInfoList", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FileShareInfoList.foreach(__v => __obj.updateDynamic("FileShareInfoList")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFileSharesOutput]
     }
   }
@@ -2720,9 +2726,9 @@ package storagegateway {
         Limit: js.UndefOr[PositiveIntObject] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined
     ): ListGatewaysInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGatewaysInput]
     }
   }
@@ -2738,9 +2744,9 @@ package storagegateway {
         Gateways: js.UndefOr[Gateways] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined
     ): ListGatewaysOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Gateways.foreach(__v => __obj.update("Gateways", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Gateways.foreach(__v => __obj.updateDynamic("Gateways")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGatewaysOutput]
     }
   }
@@ -2757,7 +2763,7 @@ package storagegateway {
     def apply(
         GatewayARN: GatewayARN
     ): ListLocalDisksInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
 
@@ -2776,9 +2782,9 @@ package storagegateway {
         Disks: js.UndefOr[Disks] = js.undefined,
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): ListLocalDisksOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Disks.foreach(__v => __obj.update("Disks", __v.asInstanceOf[js.Any]))
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Disks.foreach(__v => __obj.updateDynamic("Disks")(__v.asInstanceOf[js.Any]))
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListLocalDisksOutput]
     }
   }
@@ -2796,12 +2802,12 @@ package storagegateway {
         Limit: js.UndefOr[PositiveIntObject] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined
     ): ListTagsForResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
       )
 
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceInput]
     }
   }
@@ -2819,10 +2825,10 @@ package storagegateway {
         ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): ListTagsForResourceOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      ResourceARN.foreach(__v => __obj.update("ResourceARN", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      ResourceARN.foreach(__v => __obj.updateDynamic("ResourceARN")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceOutput]
     }
   }
@@ -2846,10 +2852,10 @@ package storagegateway {
         Marker: js.UndefOr[Marker] = js.undefined,
         TapeARNs: js.UndefOr[TapeARNs] = js.undefined
     ): ListTapesInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      TapeARNs.foreach(__v => __obj.update("TapeARNs", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      TapeARNs.foreach(__v => __obj.updateDynamic("TapeARNs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTapesInput]
     }
   }
@@ -2870,9 +2876,9 @@ package storagegateway {
         Marker: js.UndefOr[Marker] = js.undefined,
         TapeInfos: js.UndefOr[TapeInfos] = js.undefined
     ): ListTapesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      TapeInfos.foreach(__v => __obj.update("TapeInfos", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      TapeInfos.foreach(__v => __obj.updateDynamic("TapeInfos")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTapesOutput]
     }
   }
@@ -2886,7 +2892,7 @@ package storagegateway {
     def apply(
         VolumeARN: VolumeARN
     ): ListVolumeInitiatorsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VolumeARN" -> VolumeARN.asInstanceOf[js.Any]
       )
 
@@ -2903,8 +2909,8 @@ package storagegateway {
     def apply(
         Initiators: js.UndefOr[Initiators] = js.undefined
     ): ListVolumeInitiatorsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Initiators.foreach(__v => __obj.update("Initiators", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Initiators.foreach(__v => __obj.updateDynamic("Initiators")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListVolumeInitiatorsOutput]
     }
   }
@@ -2918,7 +2924,7 @@ package storagegateway {
     def apply(
         GatewayARN: GatewayARN
     ): ListVolumeRecoveryPointsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
 
@@ -2937,9 +2943,9 @@ package storagegateway {
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
         VolumeRecoveryPointInfos: js.UndefOr[VolumeRecoveryPointInfos] = js.undefined
     ): ListVolumeRecoveryPointsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
-      VolumeRecoveryPointInfos.foreach(__v => __obj.update("VolumeRecoveryPointInfos", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
+      VolumeRecoveryPointInfos.foreach(__v => __obj.updateDynamic("VolumeRecoveryPointInfos")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListVolumeRecoveryPointsOutput]
     }
   }
@@ -2962,10 +2968,10 @@ package storagegateway {
         Limit: js.UndefOr[PositiveIntObject] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined
     ): ListVolumesInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListVolumesInput]
     }
   }
@@ -2988,10 +2994,10 @@ package storagegateway {
         Marker: js.UndefOr[Marker] = js.undefined,
         VolumeInfos: js.UndefOr[VolumeInfos] = js.undefined
     ): ListVolumesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      VolumeInfos.foreach(__v => __obj.update("VolumeInfos", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      VolumeInfos.foreach(__v => __obj.updateDynamic("VolumeInfos")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListVolumesOutput]
     }
   }
@@ -3014,11 +3020,11 @@ package storagegateway {
         GroupId: js.UndefOr[PermissionId] = js.undefined,
         OwnerId: js.UndefOr[PermissionId] = js.undefined
     ): NFSFileShareDefaults = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DirectoryMode.foreach(__v => __obj.update("DirectoryMode", __v.asInstanceOf[js.Any]))
-      FileMode.foreach(__v => __obj.update("FileMode", __v.asInstanceOf[js.Any]))
-      GroupId.foreach(__v => __obj.update("GroupId", __v.asInstanceOf[js.Any]))
-      OwnerId.foreach(__v => __obj.update("OwnerId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DirectoryMode.foreach(__v => __obj.updateDynamic("DirectoryMode")(__v.asInstanceOf[js.Any]))
+      FileMode.foreach(__v => __obj.updateDynamic("FileMode")(__v.asInstanceOf[js.Any]))
+      GroupId.foreach(__v => __obj.updateDynamic("GroupId")(__v.asInstanceOf[js.Any]))
+      OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NFSFileShareDefaults]
     }
   }
@@ -3069,25 +3075,25 @@ package storagegateway {
         Squash: js.UndefOr[Squash] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): NFSFileShareInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClientList.foreach(__v => __obj.update("ClientList", __v.asInstanceOf[js.Any]))
-      DefaultStorageClass.foreach(__v => __obj.update("DefaultStorageClass", __v.asInstanceOf[js.Any]))
-      FileShareARN.foreach(__v => __obj.update("FileShareARN", __v.asInstanceOf[js.Any]))
-      FileShareId.foreach(__v => __obj.update("FileShareId", __v.asInstanceOf[js.Any]))
-      FileShareStatus.foreach(__v => __obj.update("FileShareStatus", __v.asInstanceOf[js.Any]))
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
-      GuessMIMETypeEnabled.foreach(__v => __obj.update("GuessMIMETypeEnabled", __v.asInstanceOf[js.Any]))
-      KMSEncrypted.foreach(__v => __obj.update("KMSEncrypted", __v.asInstanceOf[js.Any]))
-      KMSKey.foreach(__v => __obj.update("KMSKey", __v.asInstanceOf[js.Any]))
-      LocationARN.foreach(__v => __obj.update("LocationARN", __v.asInstanceOf[js.Any]))
-      NFSFileShareDefaults.foreach(__v => __obj.update("NFSFileShareDefaults", __v.asInstanceOf[js.Any]))
-      ObjectACL.foreach(__v => __obj.update("ObjectACL", __v.asInstanceOf[js.Any]))
-      Path.foreach(__v => __obj.update("Path", __v.asInstanceOf[js.Any]))
-      ReadOnly.foreach(__v => __obj.update("ReadOnly", __v.asInstanceOf[js.Any]))
-      RequesterPays.foreach(__v => __obj.update("RequesterPays", __v.asInstanceOf[js.Any]))
-      Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
-      Squash.foreach(__v => __obj.update("Squash", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClientList.foreach(__v => __obj.updateDynamic("ClientList")(__v.asInstanceOf[js.Any]))
+      DefaultStorageClass.foreach(__v => __obj.updateDynamic("DefaultStorageClass")(__v.asInstanceOf[js.Any]))
+      FileShareARN.foreach(__v => __obj.updateDynamic("FileShareARN")(__v.asInstanceOf[js.Any]))
+      FileShareId.foreach(__v => __obj.updateDynamic("FileShareId")(__v.asInstanceOf[js.Any]))
+      FileShareStatus.foreach(__v => __obj.updateDynamic("FileShareStatus")(__v.asInstanceOf[js.Any]))
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
+      GuessMIMETypeEnabled.foreach(__v => __obj.updateDynamic("GuessMIMETypeEnabled")(__v.asInstanceOf[js.Any]))
+      KMSEncrypted.foreach(__v => __obj.updateDynamic("KMSEncrypted")(__v.asInstanceOf[js.Any]))
+      KMSKey.foreach(__v => __obj.updateDynamic("KMSKey")(__v.asInstanceOf[js.Any]))
+      LocationARN.foreach(__v => __obj.updateDynamic("LocationARN")(__v.asInstanceOf[js.Any]))
+      NFSFileShareDefaults.foreach(__v => __obj.updateDynamic("NFSFileShareDefaults")(__v.asInstanceOf[js.Any]))
+      ObjectACL.foreach(__v => __obj.updateDynamic("ObjectACL")(__v.asInstanceOf[js.Any]))
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
+      ReadOnly.foreach(__v => __obj.updateDynamic("ReadOnly")(__v.asInstanceOf[js.Any]))
+      RequesterPays.foreach(__v => __obj.updateDynamic("RequesterPays")(__v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
+      Squash.foreach(__v => __obj.updateDynamic("Squash")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NFSFileShareInfo]
     }
   }
@@ -3108,10 +3114,10 @@ package storagegateway {
         Ipv6Address: js.UndefOr[String] = js.undefined,
         MacAddress: js.UndefOr[String] = js.undefined
     ): NetworkInterface = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Ipv4Address.foreach(__v => __obj.update("Ipv4Address", __v.asInstanceOf[js.Any]))
-      Ipv6Address.foreach(__v => __obj.update("Ipv6Address", __v.asInstanceOf[js.Any]))
-      MacAddress.foreach(__v => __obj.update("MacAddress", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Ipv4Address.foreach(__v => __obj.updateDynamic("Ipv4Address")(__v.asInstanceOf[js.Any]))
+      Ipv6Address.foreach(__v => __obj.updateDynamic("Ipv6Address")(__v.asInstanceOf[js.Any]))
+      MacAddress.foreach(__v => __obj.updateDynamic("MacAddress")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NetworkInterface]
     }
   }
@@ -3125,7 +3131,7 @@ package storagegateway {
     def apply(
         FileShareARN: FileShareARN
     ): NotifyWhenUploadedInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FileShareARN" -> FileShareARN.asInstanceOf[js.Any]
       )
 
@@ -3144,9 +3150,9 @@ package storagegateway {
         FileShareARN: js.UndefOr[FileShareARN] = js.undefined,
         NotificationId: js.UndefOr[NotificationId] = js.undefined
     ): NotifyWhenUploadedOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FileShareARN.foreach(__v => __obj.update("FileShareARN", __v.asInstanceOf[js.Any]))
-      NotificationId.foreach(__v => __obj.update("NotificationId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FileShareARN.foreach(__v => __obj.updateDynamic("FileShareARN")(__v.asInstanceOf[js.Any]))
+      NotificationId.foreach(__v => __obj.updateDynamic("NotificationId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NotifyWhenUploadedOutput]
     }
   }
@@ -3189,12 +3195,12 @@ package storagegateway {
         FolderList: js.UndefOr[FolderList] = js.undefined,
         Recursive: js.UndefOr[Boolean] = js.undefined
     ): RefreshCacheInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FileShareARN" -> FileShareARN.asInstanceOf[js.Any]
       )
 
-      FolderList.foreach(__v => __obj.update("FolderList", __v.asInstanceOf[js.Any]))
-      Recursive.foreach(__v => __obj.update("Recursive", __v.asInstanceOf[js.Any]))
+      FolderList.foreach(__v => __obj.updateDynamic("FolderList")(__v.asInstanceOf[js.Any]))
+      Recursive.foreach(__v => __obj.updateDynamic("Recursive")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RefreshCacheInput]
     }
   }
@@ -3210,9 +3216,9 @@ package storagegateway {
         FileShareARN: js.UndefOr[FileShareARN] = js.undefined,
         NotificationId: js.UndefOr[NotificationId] = js.undefined
     ): RefreshCacheOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FileShareARN.foreach(__v => __obj.update("FileShareARN", __v.asInstanceOf[js.Any]))
-      NotificationId.foreach(__v => __obj.update("NotificationId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FileShareARN.foreach(__v => __obj.updateDynamic("FileShareARN")(__v.asInstanceOf[js.Any]))
+      NotificationId.foreach(__v => __obj.updateDynamic("NotificationId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RefreshCacheOutput]
     }
   }
@@ -3228,7 +3234,7 @@ package storagegateway {
         ResourceARN: ResourceARN,
         TagKeys: TagKeys
     ): RemoveTagsFromResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
       )
@@ -3246,8 +3252,8 @@ package storagegateway {
     def apply(
         ResourceARN: js.UndefOr[ResourceARN] = js.undefined
     ): RemoveTagsFromResourceOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ResourceARN.foreach(__v => __obj.update("ResourceARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ResourceARN.foreach(__v => __obj.updateDynamic("ResourceARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RemoveTagsFromResourceOutput]
     }
   }
@@ -3261,7 +3267,7 @@ package storagegateway {
     def apply(
         GatewayARN: GatewayARN
     ): ResetCacheInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
 
@@ -3278,8 +3284,8 @@ package storagegateway {
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): ResetCacheOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResetCacheOutput]
     }
   }
@@ -3295,7 +3301,7 @@ package storagegateway {
         GatewayARN: GatewayARN,
         TapeARN: TapeARN
     ): RetrieveTapeArchiveInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "TapeARN"    -> TapeARN.asInstanceOf[js.Any]
       )
@@ -3313,8 +3319,8 @@ package storagegateway {
     def apply(
         TapeARN: js.UndefOr[TapeARN] = js.undefined
     ): RetrieveTapeArchiveOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TapeARN.foreach(__v => __obj.update("TapeARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TapeARN.foreach(__v => __obj.updateDynamic("TapeARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RetrieveTapeArchiveOutput]
     }
   }
@@ -3330,7 +3336,7 @@ package storagegateway {
         GatewayARN: GatewayARN,
         TapeARN: TapeARN
     ): RetrieveTapeRecoveryPointInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "TapeARN"    -> TapeARN.asInstanceOf[js.Any]
       )
@@ -3348,8 +3354,8 @@ package storagegateway {
     def apply(
         TapeARN: js.UndefOr[TapeARN] = js.undefined
     ): RetrieveTapeRecoveryPointOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TapeARN.foreach(__v => __obj.update("TapeARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TapeARN.foreach(__v => __obj.updateDynamic("TapeARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RetrieveTapeRecoveryPointOutput]
     }
   }
@@ -3404,27 +3410,27 @@ package storagegateway {
         Tags: js.UndefOr[Tags] = js.undefined,
         ValidUserList: js.UndefOr[FileShareUserList] = js.undefined
     ): SMBFileShareInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AdminUserList.foreach(__v => __obj.update("AdminUserList", __v.asInstanceOf[js.Any]))
-      Authentication.foreach(__v => __obj.update("Authentication", __v.asInstanceOf[js.Any]))
-      DefaultStorageClass.foreach(__v => __obj.update("DefaultStorageClass", __v.asInstanceOf[js.Any]))
-      FileShareARN.foreach(__v => __obj.update("FileShareARN", __v.asInstanceOf[js.Any]))
-      FileShareId.foreach(__v => __obj.update("FileShareId", __v.asInstanceOf[js.Any]))
-      FileShareStatus.foreach(__v => __obj.update("FileShareStatus", __v.asInstanceOf[js.Any]))
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
-      GuessMIMETypeEnabled.foreach(__v => __obj.update("GuessMIMETypeEnabled", __v.asInstanceOf[js.Any]))
-      InvalidUserList.foreach(__v => __obj.update("InvalidUserList", __v.asInstanceOf[js.Any]))
-      KMSEncrypted.foreach(__v => __obj.update("KMSEncrypted", __v.asInstanceOf[js.Any]))
-      KMSKey.foreach(__v => __obj.update("KMSKey", __v.asInstanceOf[js.Any]))
-      LocationARN.foreach(__v => __obj.update("LocationARN", __v.asInstanceOf[js.Any]))
-      ObjectACL.foreach(__v => __obj.update("ObjectACL", __v.asInstanceOf[js.Any]))
-      Path.foreach(__v => __obj.update("Path", __v.asInstanceOf[js.Any]))
-      ReadOnly.foreach(__v => __obj.update("ReadOnly", __v.asInstanceOf[js.Any]))
-      RequesterPays.foreach(__v => __obj.update("RequesterPays", __v.asInstanceOf[js.Any]))
-      Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
-      SMBACLEnabled.foreach(__v => __obj.update("SMBACLEnabled", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      ValidUserList.foreach(__v => __obj.update("ValidUserList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AdminUserList.foreach(__v => __obj.updateDynamic("AdminUserList")(__v.asInstanceOf[js.Any]))
+      Authentication.foreach(__v => __obj.updateDynamic("Authentication")(__v.asInstanceOf[js.Any]))
+      DefaultStorageClass.foreach(__v => __obj.updateDynamic("DefaultStorageClass")(__v.asInstanceOf[js.Any]))
+      FileShareARN.foreach(__v => __obj.updateDynamic("FileShareARN")(__v.asInstanceOf[js.Any]))
+      FileShareId.foreach(__v => __obj.updateDynamic("FileShareId")(__v.asInstanceOf[js.Any]))
+      FileShareStatus.foreach(__v => __obj.updateDynamic("FileShareStatus")(__v.asInstanceOf[js.Any]))
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
+      GuessMIMETypeEnabled.foreach(__v => __obj.updateDynamic("GuessMIMETypeEnabled")(__v.asInstanceOf[js.Any]))
+      InvalidUserList.foreach(__v => __obj.updateDynamic("InvalidUserList")(__v.asInstanceOf[js.Any]))
+      KMSEncrypted.foreach(__v => __obj.updateDynamic("KMSEncrypted")(__v.asInstanceOf[js.Any]))
+      KMSKey.foreach(__v => __obj.updateDynamic("KMSKey")(__v.asInstanceOf[js.Any]))
+      LocationARN.foreach(__v => __obj.updateDynamic("LocationARN")(__v.asInstanceOf[js.Any]))
+      ObjectACL.foreach(__v => __obj.updateDynamic("ObjectACL")(__v.asInstanceOf[js.Any]))
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
+      ReadOnly.foreach(__v => __obj.updateDynamic("ReadOnly")(__v.asInstanceOf[js.Any]))
+      RequesterPays.foreach(__v => __obj.updateDynamic("RequesterPays")(__v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
+      SMBACLEnabled.foreach(__v => __obj.updateDynamic("SMBACLEnabled")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      ValidUserList.foreach(__v => __obj.updateDynamic("ValidUserList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SMBFileShareInfo]
     }
   }
@@ -3448,7 +3454,7 @@ package storagegateway {
         GatewayARN: GatewayARN,
         LocalConsolePassword: LocalConsolePassword
     ): SetLocalConsolePasswordInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN"           -> GatewayARN.asInstanceOf[js.Any],
         "LocalConsolePassword" -> LocalConsolePassword.asInstanceOf[js.Any]
       )
@@ -3466,8 +3472,8 @@ package storagegateway {
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): SetLocalConsolePasswordOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetLocalConsolePasswordOutput]
     }
   }
@@ -3483,7 +3489,7 @@ package storagegateway {
         GatewayARN: GatewayARN,
         Password: SMBGuestPassword
     ): SetSMBGuestPasswordInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
         "Password"   -> Password.asInstanceOf[js.Any]
       )
@@ -3501,8 +3507,8 @@ package storagegateway {
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): SetSMBGuestPasswordOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetSMBGuestPasswordOutput]
     }
   }
@@ -3519,7 +3525,7 @@ package storagegateway {
     def apply(
         GatewayARN: GatewayARN
     ): ShutdownGatewayInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
 
@@ -3539,8 +3545,8 @@ package storagegateway {
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): ShutdownGatewayOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ShutdownGatewayOutput]
     }
   }
@@ -3557,7 +3563,7 @@ package storagegateway {
     def apply(
         GatewayARN: GatewayARN
     ): StartGatewayInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
 
@@ -3577,8 +3583,8 @@ package storagegateway {
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): StartGatewayOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartGatewayOutput]
     }
   }
@@ -3623,22 +3629,22 @@ package storagegateway {
         VolumeUsedInBytes: js.UndefOr[VolumeUsedInBytes] = js.undefined,
         VolumeiSCSIAttributes: js.UndefOr[VolumeiSCSIAttributes] = js.undefined
     ): StorediSCSIVolume = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedDate.foreach(__v => __obj.update("CreatedDate", __v.asInstanceOf[js.Any]))
-      KMSKey.foreach(__v => __obj.update("KMSKey", __v.asInstanceOf[js.Any]))
-      PreservedExistingData.foreach(__v => __obj.update("PreservedExistingData", __v.asInstanceOf[js.Any]))
-      SourceSnapshotId.foreach(__v => __obj.update("SourceSnapshotId", __v.asInstanceOf[js.Any]))
-      TargetName.foreach(__v => __obj.update("TargetName", __v.asInstanceOf[js.Any]))
-      VolumeARN.foreach(__v => __obj.update("VolumeARN", __v.asInstanceOf[js.Any]))
-      VolumeAttachmentStatus.foreach(__v => __obj.update("VolumeAttachmentStatus", __v.asInstanceOf[js.Any]))
-      VolumeDiskId.foreach(__v => __obj.update("VolumeDiskId", __v.asInstanceOf[js.Any]))
-      VolumeId.foreach(__v => __obj.update("VolumeId", __v.asInstanceOf[js.Any]))
-      VolumeProgress.foreach(__v => __obj.update("VolumeProgress", __v.asInstanceOf[js.Any]))
-      VolumeSizeInBytes.foreach(__v => __obj.update("VolumeSizeInBytes", __v.asInstanceOf[js.Any]))
-      VolumeStatus.foreach(__v => __obj.update("VolumeStatus", __v.asInstanceOf[js.Any]))
-      VolumeType.foreach(__v => __obj.update("VolumeType", __v.asInstanceOf[js.Any]))
-      VolumeUsedInBytes.foreach(__v => __obj.update("VolumeUsedInBytes", __v.asInstanceOf[js.Any]))
-      VolumeiSCSIAttributes.foreach(__v => __obj.update("VolumeiSCSIAttributes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      KMSKey.foreach(__v => __obj.updateDynamic("KMSKey")(__v.asInstanceOf[js.Any]))
+      PreservedExistingData.foreach(__v => __obj.updateDynamic("PreservedExistingData")(__v.asInstanceOf[js.Any]))
+      SourceSnapshotId.foreach(__v => __obj.updateDynamic("SourceSnapshotId")(__v.asInstanceOf[js.Any]))
+      TargetName.foreach(__v => __obj.updateDynamic("TargetName")(__v.asInstanceOf[js.Any]))
+      VolumeARN.foreach(__v => __obj.updateDynamic("VolumeARN")(__v.asInstanceOf[js.Any]))
+      VolumeAttachmentStatus.foreach(__v => __obj.updateDynamic("VolumeAttachmentStatus")(__v.asInstanceOf[js.Any]))
+      VolumeDiskId.foreach(__v => __obj.updateDynamic("VolumeDiskId")(__v.asInstanceOf[js.Any]))
+      VolumeId.foreach(__v => __obj.updateDynamic("VolumeId")(__v.asInstanceOf[js.Any]))
+      VolumeProgress.foreach(__v => __obj.updateDynamic("VolumeProgress")(__v.asInstanceOf[js.Any]))
+      VolumeSizeInBytes.foreach(__v => __obj.updateDynamic("VolumeSizeInBytes")(__v.asInstanceOf[js.Any]))
+      VolumeStatus.foreach(__v => __obj.updateDynamic("VolumeStatus")(__v.asInstanceOf[js.Any]))
+      VolumeType.foreach(__v => __obj.updateDynamic("VolumeType")(__v.asInstanceOf[js.Any]))
+      VolumeUsedInBytes.foreach(__v => __obj.updateDynamic("VolumeUsedInBytes")(__v.asInstanceOf[js.Any]))
+      VolumeiSCSIAttributes.foreach(__v => __obj.updateDynamic("VolumeiSCSIAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StorediSCSIVolume]
     }
   }
@@ -3657,7 +3663,7 @@ package storagegateway {
         Key: TagKey,
         Value: TagValue
     ): Tag = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"   -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
@@ -3696,17 +3702,17 @@ package storagegateway {
         TapeUsedInBytes: js.UndefOr[TapeUsage] = js.undefined,
         VTLDevice: js.UndefOr[VTLDeviceARN] = js.undefined
     ): Tape = {
-      val __obj = js.Dictionary.empty[js.Any]
-      KMSKey.foreach(__v => __obj.update("KMSKey", __v.asInstanceOf[js.Any]))
-      PoolId.foreach(__v => __obj.update("PoolId", __v.asInstanceOf[js.Any]))
-      Progress.foreach(__v => __obj.update("Progress", __v.asInstanceOf[js.Any]))
-      TapeARN.foreach(__v => __obj.update("TapeARN", __v.asInstanceOf[js.Any]))
-      TapeBarcode.foreach(__v => __obj.update("TapeBarcode", __v.asInstanceOf[js.Any]))
-      TapeCreatedDate.foreach(__v => __obj.update("TapeCreatedDate", __v.asInstanceOf[js.Any]))
-      TapeSizeInBytes.foreach(__v => __obj.update("TapeSizeInBytes", __v.asInstanceOf[js.Any]))
-      TapeStatus.foreach(__v => __obj.update("TapeStatus", __v.asInstanceOf[js.Any]))
-      TapeUsedInBytes.foreach(__v => __obj.update("TapeUsedInBytes", __v.asInstanceOf[js.Any]))
-      VTLDevice.foreach(__v => __obj.update("VTLDevice", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      KMSKey.foreach(__v => __obj.updateDynamic("KMSKey")(__v.asInstanceOf[js.Any]))
+      PoolId.foreach(__v => __obj.updateDynamic("PoolId")(__v.asInstanceOf[js.Any]))
+      Progress.foreach(__v => __obj.updateDynamic("Progress")(__v.asInstanceOf[js.Any]))
+      TapeARN.foreach(__v => __obj.updateDynamic("TapeARN")(__v.asInstanceOf[js.Any]))
+      TapeBarcode.foreach(__v => __obj.updateDynamic("TapeBarcode")(__v.asInstanceOf[js.Any]))
+      TapeCreatedDate.foreach(__v => __obj.updateDynamic("TapeCreatedDate")(__v.asInstanceOf[js.Any]))
+      TapeSizeInBytes.foreach(__v => __obj.updateDynamic("TapeSizeInBytes")(__v.asInstanceOf[js.Any]))
+      TapeStatus.foreach(__v => __obj.updateDynamic("TapeStatus")(__v.asInstanceOf[js.Any]))
+      TapeUsedInBytes.foreach(__v => __obj.updateDynamic("TapeUsedInBytes")(__v.asInstanceOf[js.Any]))
+      VTLDevice.foreach(__v => __obj.updateDynamic("VTLDevice")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tape]
     }
   }
@@ -3741,17 +3747,17 @@ package storagegateway {
         TapeStatus: js.UndefOr[TapeArchiveStatus] = js.undefined,
         TapeUsedInBytes: js.UndefOr[TapeUsage] = js.undefined
     ): TapeArchive = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CompletionTime.foreach(__v => __obj.update("CompletionTime", __v.asInstanceOf[js.Any]))
-      KMSKey.foreach(__v => __obj.update("KMSKey", __v.asInstanceOf[js.Any]))
-      PoolId.foreach(__v => __obj.update("PoolId", __v.asInstanceOf[js.Any]))
-      RetrievedTo.foreach(__v => __obj.update("RetrievedTo", __v.asInstanceOf[js.Any]))
-      TapeARN.foreach(__v => __obj.update("TapeARN", __v.asInstanceOf[js.Any]))
-      TapeBarcode.foreach(__v => __obj.update("TapeBarcode", __v.asInstanceOf[js.Any]))
-      TapeCreatedDate.foreach(__v => __obj.update("TapeCreatedDate", __v.asInstanceOf[js.Any]))
-      TapeSizeInBytes.foreach(__v => __obj.update("TapeSizeInBytes", __v.asInstanceOf[js.Any]))
-      TapeStatus.foreach(__v => __obj.update("TapeStatus", __v.asInstanceOf[js.Any]))
-      TapeUsedInBytes.foreach(__v => __obj.update("TapeUsedInBytes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CompletionTime.foreach(__v => __obj.updateDynamic("CompletionTime")(__v.asInstanceOf[js.Any]))
+      KMSKey.foreach(__v => __obj.updateDynamic("KMSKey")(__v.asInstanceOf[js.Any]))
+      PoolId.foreach(__v => __obj.updateDynamic("PoolId")(__v.asInstanceOf[js.Any]))
+      RetrievedTo.foreach(__v => __obj.updateDynamic("RetrievedTo")(__v.asInstanceOf[js.Any]))
+      TapeARN.foreach(__v => __obj.updateDynamic("TapeARN")(__v.asInstanceOf[js.Any]))
+      TapeBarcode.foreach(__v => __obj.updateDynamic("TapeBarcode")(__v.asInstanceOf[js.Any]))
+      TapeCreatedDate.foreach(__v => __obj.updateDynamic("TapeCreatedDate")(__v.asInstanceOf[js.Any]))
+      TapeSizeInBytes.foreach(__v => __obj.updateDynamic("TapeSizeInBytes")(__v.asInstanceOf[js.Any]))
+      TapeStatus.foreach(__v => __obj.updateDynamic("TapeStatus")(__v.asInstanceOf[js.Any]))
+      TapeUsedInBytes.foreach(__v => __obj.updateDynamic("TapeUsedInBytes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TapeArchive]
     }
   }
@@ -3778,13 +3784,13 @@ package storagegateway {
         TapeSizeInBytes: js.UndefOr[TapeSize] = js.undefined,
         TapeStatus: js.UndefOr[TapeStatus] = js.undefined
     ): TapeInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
-      PoolId.foreach(__v => __obj.update("PoolId", __v.asInstanceOf[js.Any]))
-      TapeARN.foreach(__v => __obj.update("TapeARN", __v.asInstanceOf[js.Any]))
-      TapeBarcode.foreach(__v => __obj.update("TapeBarcode", __v.asInstanceOf[js.Any]))
-      TapeSizeInBytes.foreach(__v => __obj.update("TapeSizeInBytes", __v.asInstanceOf[js.Any]))
-      TapeStatus.foreach(__v => __obj.update("TapeStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
+      PoolId.foreach(__v => __obj.updateDynamic("PoolId")(__v.asInstanceOf[js.Any]))
+      TapeARN.foreach(__v => __obj.updateDynamic("TapeARN")(__v.asInstanceOf[js.Any]))
+      TapeBarcode.foreach(__v => __obj.updateDynamic("TapeBarcode")(__v.asInstanceOf[js.Any]))
+      TapeSizeInBytes.foreach(__v => __obj.updateDynamic("TapeSizeInBytes")(__v.asInstanceOf[js.Any]))
+      TapeStatus.foreach(__v => __obj.updateDynamic("TapeStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TapeInfo]
     }
   }
@@ -3807,11 +3813,11 @@ package storagegateway {
         TapeSizeInBytes: js.UndefOr[TapeSize] = js.undefined,
         TapeStatus: js.UndefOr[TapeRecoveryPointStatus] = js.undefined
     ): TapeRecoveryPointInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TapeARN.foreach(__v => __obj.update("TapeARN", __v.asInstanceOf[js.Any]))
-      TapeRecoveryPointTime.foreach(__v => __obj.update("TapeRecoveryPointTime", __v.asInstanceOf[js.Any]))
-      TapeSizeInBytes.foreach(__v => __obj.update("TapeSizeInBytes", __v.asInstanceOf[js.Any]))
-      TapeStatus.foreach(__v => __obj.update("TapeStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TapeARN.foreach(__v => __obj.updateDynamic("TapeARN")(__v.asInstanceOf[js.Any]))
+      TapeRecoveryPointTime.foreach(__v => __obj.updateDynamic("TapeRecoveryPointTime")(__v.asInstanceOf[js.Any]))
+      TapeSizeInBytes.foreach(__v => __obj.updateDynamic("TapeSizeInBytes")(__v.asInstanceOf[js.Any]))
+      TapeStatus.foreach(__v => __obj.updateDynamic("TapeStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TapeRecoveryPointInfo]
     }
   }
@@ -3834,15 +3840,15 @@ package storagegateway {
         AverageDownloadRateLimitInBitsPerSec: js.UndefOr[BandwidthDownloadRateLimit] = js.undefined,
         AverageUploadRateLimitInBitsPerSec: js.UndefOr[BandwidthUploadRateLimit] = js.undefined
     ): UpdateBandwidthRateLimitInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
 
       AverageDownloadRateLimitInBitsPerSec.foreach(
-        __v => __obj.update("AverageDownloadRateLimitInBitsPerSec", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("AverageDownloadRateLimitInBitsPerSec")(__v.asInstanceOf[js.Any])
       )
       AverageUploadRateLimitInBitsPerSec.foreach(
-        __v => __obj.update("AverageUploadRateLimitInBitsPerSec", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("AverageUploadRateLimitInBitsPerSec")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateBandwidthRateLimitInput]
     }
@@ -3860,8 +3866,8 @@ package storagegateway {
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): UpdateBandwidthRateLimitOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateBandwidthRateLimitOutput]
     }
   }
@@ -3888,13 +3894,15 @@ package storagegateway {
         TargetARN: TargetARN,
         SecretToAuthenticateTarget: js.UndefOr[ChapSecret] = js.undefined
     ): UpdateChapCredentialsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InitiatorName"                 -> InitiatorName.asInstanceOf[js.Any],
         "SecretToAuthenticateInitiator" -> SecretToAuthenticateInitiator.asInstanceOf[js.Any],
         "TargetARN"                     -> TargetARN.asInstanceOf[js.Any]
       )
 
-      SecretToAuthenticateTarget.foreach(__v => __obj.update("SecretToAuthenticateTarget", __v.asInstanceOf[js.Any]))
+      SecretToAuthenticateTarget.foreach(
+        __v => __obj.updateDynamic("SecretToAuthenticateTarget")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[UpdateChapCredentialsInput]
     }
   }
@@ -3913,9 +3921,9 @@ package storagegateway {
         InitiatorName: js.UndefOr[IqnName] = js.undefined,
         TargetARN: js.UndefOr[TargetARN] = js.undefined
     ): UpdateChapCredentialsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InitiatorName.foreach(__v => __obj.update("InitiatorName", __v.asInstanceOf[js.Any]))
-      TargetARN.foreach(__v => __obj.update("TargetARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InitiatorName.foreach(__v => __obj.updateDynamic("InitiatorName")(__v.asInstanceOf[js.Any]))
+      TargetARN.foreach(__v => __obj.updateDynamic("TargetARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateChapCredentialsOutput]
     }
   }
@@ -3933,12 +3941,12 @@ package storagegateway {
         GatewayName: js.UndefOr[GatewayName] = js.undefined,
         GatewayTimezone: js.UndefOr[GatewayTimezone] = js.undefined
     ): UpdateGatewayInformationInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
 
-      GatewayName.foreach(__v => __obj.update("GatewayName", __v.asInstanceOf[js.Any]))
-      GatewayTimezone.foreach(__v => __obj.update("GatewayTimezone", __v.asInstanceOf[js.Any]))
+      GatewayName.foreach(__v => __obj.updateDynamic("GatewayName")(__v.asInstanceOf[js.Any]))
+      GatewayTimezone.foreach(__v => __obj.updateDynamic("GatewayTimezone")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGatewayInformationInput]
     }
   }
@@ -3957,9 +3965,9 @@ package storagegateway {
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
         GatewayName: js.UndefOr[String] = js.undefined
     ): UpdateGatewayInformationOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
-      GatewayName.foreach(__v => __obj.update("GatewayName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
+      GatewayName.foreach(__v => __obj.updateDynamic("GatewayName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGatewayInformationOutput]
     }
   }
@@ -3976,7 +3984,7 @@ package storagegateway {
     def apply(
         GatewayARN: GatewayARN
     ): UpdateGatewaySoftwareNowInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN" -> GatewayARN.asInstanceOf[js.Any]
       )
 
@@ -3996,8 +4004,8 @@ package storagegateway {
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): UpdateGatewaySoftwareNowOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGatewaySoftwareNowOutput]
     }
   }
@@ -4026,14 +4034,14 @@ package storagegateway {
         DayOfMonth: js.UndefOr[DayOfMonth] = js.undefined,
         DayOfWeek: js.UndefOr[DayOfWeek] = js.undefined
     ): UpdateMaintenanceStartTimeInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN"   -> GatewayARN.asInstanceOf[js.Any],
         "HourOfDay"    -> HourOfDay.asInstanceOf[js.Any],
         "MinuteOfHour" -> MinuteOfHour.asInstanceOf[js.Any]
       )
 
-      DayOfMonth.foreach(__v => __obj.update("DayOfMonth", __v.asInstanceOf[js.Any]))
-      DayOfWeek.foreach(__v => __obj.update("DayOfWeek", __v.asInstanceOf[js.Any]))
+      DayOfMonth.foreach(__v => __obj.updateDynamic("DayOfMonth")(__v.asInstanceOf[js.Any]))
+      DayOfWeek.foreach(__v => __obj.updateDynamic("DayOfWeek")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateMaintenanceStartTimeInput]
     }
   }
@@ -4050,8 +4058,8 @@ package storagegateway {
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): UpdateMaintenanceStartTimeOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateMaintenanceStartTimeOutput]
     }
   }
@@ -4085,20 +4093,20 @@ package storagegateway {
         RequesterPays: js.UndefOr[Boolean] = js.undefined,
         Squash: js.UndefOr[Squash] = js.undefined
     ): UpdateNFSFileShareInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FileShareARN" -> FileShareARN.asInstanceOf[js.Any]
       )
 
-      ClientList.foreach(__v => __obj.update("ClientList", __v.asInstanceOf[js.Any]))
-      DefaultStorageClass.foreach(__v => __obj.update("DefaultStorageClass", __v.asInstanceOf[js.Any]))
-      GuessMIMETypeEnabled.foreach(__v => __obj.update("GuessMIMETypeEnabled", __v.asInstanceOf[js.Any]))
-      KMSEncrypted.foreach(__v => __obj.update("KMSEncrypted", __v.asInstanceOf[js.Any]))
-      KMSKey.foreach(__v => __obj.update("KMSKey", __v.asInstanceOf[js.Any]))
-      NFSFileShareDefaults.foreach(__v => __obj.update("NFSFileShareDefaults", __v.asInstanceOf[js.Any]))
-      ObjectACL.foreach(__v => __obj.update("ObjectACL", __v.asInstanceOf[js.Any]))
-      ReadOnly.foreach(__v => __obj.update("ReadOnly", __v.asInstanceOf[js.Any]))
-      RequesterPays.foreach(__v => __obj.update("RequesterPays", __v.asInstanceOf[js.Any]))
-      Squash.foreach(__v => __obj.update("Squash", __v.asInstanceOf[js.Any]))
+      ClientList.foreach(__v => __obj.updateDynamic("ClientList")(__v.asInstanceOf[js.Any]))
+      DefaultStorageClass.foreach(__v => __obj.updateDynamic("DefaultStorageClass")(__v.asInstanceOf[js.Any]))
+      GuessMIMETypeEnabled.foreach(__v => __obj.updateDynamic("GuessMIMETypeEnabled")(__v.asInstanceOf[js.Any]))
+      KMSEncrypted.foreach(__v => __obj.updateDynamic("KMSEncrypted")(__v.asInstanceOf[js.Any]))
+      KMSKey.foreach(__v => __obj.updateDynamic("KMSKey")(__v.asInstanceOf[js.Any]))
+      NFSFileShareDefaults.foreach(__v => __obj.updateDynamic("NFSFileShareDefaults")(__v.asInstanceOf[js.Any]))
+      ObjectACL.foreach(__v => __obj.updateDynamic("ObjectACL")(__v.asInstanceOf[js.Any]))
+      ReadOnly.foreach(__v => __obj.updateDynamic("ReadOnly")(__v.asInstanceOf[js.Any]))
+      RequesterPays.foreach(__v => __obj.updateDynamic("RequesterPays")(__v.asInstanceOf[js.Any]))
+      Squash.foreach(__v => __obj.updateDynamic("Squash")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateNFSFileShareInput]
     }
   }
@@ -4112,8 +4120,8 @@ package storagegateway {
     def apply(
         FileShareARN: js.UndefOr[FileShareARN] = js.undefined
     ): UpdateNFSFileShareOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FileShareARN.foreach(__v => __obj.update("FileShareARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FileShareARN.foreach(__v => __obj.updateDynamic("FileShareARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateNFSFileShareOutput]
     }
   }
@@ -4149,21 +4157,21 @@ package storagegateway {
         SMBACLEnabled: js.UndefOr[Boolean] = js.undefined,
         ValidUserList: js.UndefOr[FileShareUserList] = js.undefined
     ): UpdateSMBFileShareInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FileShareARN" -> FileShareARN.asInstanceOf[js.Any]
       )
 
-      AdminUserList.foreach(__v => __obj.update("AdminUserList", __v.asInstanceOf[js.Any]))
-      DefaultStorageClass.foreach(__v => __obj.update("DefaultStorageClass", __v.asInstanceOf[js.Any]))
-      GuessMIMETypeEnabled.foreach(__v => __obj.update("GuessMIMETypeEnabled", __v.asInstanceOf[js.Any]))
-      InvalidUserList.foreach(__v => __obj.update("InvalidUserList", __v.asInstanceOf[js.Any]))
-      KMSEncrypted.foreach(__v => __obj.update("KMSEncrypted", __v.asInstanceOf[js.Any]))
-      KMSKey.foreach(__v => __obj.update("KMSKey", __v.asInstanceOf[js.Any]))
-      ObjectACL.foreach(__v => __obj.update("ObjectACL", __v.asInstanceOf[js.Any]))
-      ReadOnly.foreach(__v => __obj.update("ReadOnly", __v.asInstanceOf[js.Any]))
-      RequesterPays.foreach(__v => __obj.update("RequesterPays", __v.asInstanceOf[js.Any]))
-      SMBACLEnabled.foreach(__v => __obj.update("SMBACLEnabled", __v.asInstanceOf[js.Any]))
-      ValidUserList.foreach(__v => __obj.update("ValidUserList", __v.asInstanceOf[js.Any]))
+      AdminUserList.foreach(__v => __obj.updateDynamic("AdminUserList")(__v.asInstanceOf[js.Any]))
+      DefaultStorageClass.foreach(__v => __obj.updateDynamic("DefaultStorageClass")(__v.asInstanceOf[js.Any]))
+      GuessMIMETypeEnabled.foreach(__v => __obj.updateDynamic("GuessMIMETypeEnabled")(__v.asInstanceOf[js.Any]))
+      InvalidUserList.foreach(__v => __obj.updateDynamic("InvalidUserList")(__v.asInstanceOf[js.Any]))
+      KMSEncrypted.foreach(__v => __obj.updateDynamic("KMSEncrypted")(__v.asInstanceOf[js.Any]))
+      KMSKey.foreach(__v => __obj.updateDynamic("KMSKey")(__v.asInstanceOf[js.Any]))
+      ObjectACL.foreach(__v => __obj.updateDynamic("ObjectACL")(__v.asInstanceOf[js.Any]))
+      ReadOnly.foreach(__v => __obj.updateDynamic("ReadOnly")(__v.asInstanceOf[js.Any]))
+      RequesterPays.foreach(__v => __obj.updateDynamic("RequesterPays")(__v.asInstanceOf[js.Any]))
+      SMBACLEnabled.foreach(__v => __obj.updateDynamic("SMBACLEnabled")(__v.asInstanceOf[js.Any]))
+      ValidUserList.foreach(__v => __obj.updateDynamic("ValidUserList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSMBFileShareInput]
     }
   }
@@ -4177,8 +4185,8 @@ package storagegateway {
     def apply(
         FileShareARN: js.UndefOr[FileShareARN] = js.undefined
     ): UpdateSMBFileShareOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FileShareARN.foreach(__v => __obj.update("FileShareARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FileShareARN.foreach(__v => __obj.updateDynamic("FileShareARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSMBFileShareOutput]
     }
   }
@@ -4194,7 +4202,7 @@ package storagegateway {
         GatewayARN: GatewayARN,
         SMBSecurityStrategy: SMBSecurityStrategy
     ): UpdateSMBSecurityStrategyInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GatewayARN"          -> GatewayARN.asInstanceOf[js.Any],
         "SMBSecurityStrategy" -> SMBSecurityStrategy.asInstanceOf[js.Any]
       )
@@ -4212,8 +4220,8 @@ package storagegateway {
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): UpdateSMBSecurityStrategyOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSMBSecurityStrategyOutput]
     }
   }
@@ -4242,14 +4250,14 @@ package storagegateway {
         Description: js.UndefOr[Description] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): UpdateSnapshotScheduleInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RecurrenceInHours" -> RecurrenceInHours.asInstanceOf[js.Any],
         "StartAt"           -> StartAt.asInstanceOf[js.Any],
         "VolumeARN"         -> VolumeARN.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSnapshotScheduleInput]
     }
   }
@@ -4266,8 +4274,8 @@ package storagegateway {
     def apply(
         VolumeARN: js.UndefOr[VolumeARN] = js.undefined
     ): UpdateSnapshotScheduleOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      VolumeARN.foreach(__v => __obj.update("VolumeARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      VolumeARN.foreach(__v => __obj.updateDynamic("VolumeARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSnapshotScheduleOutput]
     }
   }
@@ -4283,7 +4291,7 @@ package storagegateway {
         DeviceType: DeviceType,
         VTLDeviceARN: VTLDeviceARN
     ): UpdateVTLDeviceTypeInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DeviceType"   -> DeviceType.asInstanceOf[js.Any],
         "VTLDeviceARN" -> VTLDeviceARN.asInstanceOf[js.Any]
       )
@@ -4301,8 +4309,8 @@ package storagegateway {
     def apply(
         VTLDeviceARN: js.UndefOr[VTLDeviceARN] = js.undefined
     ): UpdateVTLDeviceTypeOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      VTLDeviceARN.foreach(__v => __obj.update("VTLDeviceARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      VTLDeviceARN.foreach(__v => __obj.updateDynamic("VTLDeviceARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateVTLDeviceTypeOutput]
     }
   }
@@ -4327,12 +4335,14 @@ package storagegateway {
         VTLDeviceType: js.UndefOr[VTLDeviceType] = js.undefined,
         VTLDeviceVendor: js.UndefOr[VTLDeviceVendor] = js.undefined
     ): VTLDevice = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DeviceiSCSIAttributes.foreach(__v => __obj.update("DeviceiSCSIAttributes", __v.asInstanceOf[js.Any]))
-      VTLDeviceARN.foreach(__v => __obj.update("VTLDeviceARN", __v.asInstanceOf[js.Any]))
-      VTLDeviceProductIdentifier.foreach(__v => __obj.update("VTLDeviceProductIdentifier", __v.asInstanceOf[js.Any]))
-      VTLDeviceType.foreach(__v => __obj.update("VTLDeviceType", __v.asInstanceOf[js.Any]))
-      VTLDeviceVendor.foreach(__v => __obj.update("VTLDeviceVendor", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DeviceiSCSIAttributes.foreach(__v => __obj.updateDynamic("DeviceiSCSIAttributes")(__v.asInstanceOf[js.Any]))
+      VTLDeviceARN.foreach(__v => __obj.updateDynamic("VTLDeviceARN")(__v.asInstanceOf[js.Any]))
+      VTLDeviceProductIdentifier.foreach(
+        __v => __obj.updateDynamic("VTLDeviceProductIdentifier")(__v.asInstanceOf[js.Any])
+      )
+      VTLDeviceType.foreach(__v => __obj.updateDynamic("VTLDeviceType")(__v.asInstanceOf[js.Any]))
+      VTLDeviceVendor.foreach(__v => __obj.updateDynamic("VTLDeviceVendor")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VTLDevice]
     }
   }
@@ -4361,14 +4371,14 @@ package storagegateway {
         VolumeSizeInBytes: js.UndefOr[Double] = js.undefined,
         VolumeType: js.UndefOr[VolumeType] = js.undefined
     ): VolumeInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GatewayARN.foreach(__v => __obj.update("GatewayARN", __v.asInstanceOf[js.Any]))
-      GatewayId.foreach(__v => __obj.update("GatewayId", __v.asInstanceOf[js.Any]))
-      VolumeARN.foreach(__v => __obj.update("VolumeARN", __v.asInstanceOf[js.Any]))
-      VolumeAttachmentStatus.foreach(__v => __obj.update("VolumeAttachmentStatus", __v.asInstanceOf[js.Any]))
-      VolumeId.foreach(__v => __obj.update("VolumeId", __v.asInstanceOf[js.Any]))
-      VolumeSizeInBytes.foreach(__v => __obj.update("VolumeSizeInBytes", __v.asInstanceOf[js.Any]))
-      VolumeType.foreach(__v => __obj.update("VolumeType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
+      GatewayId.foreach(__v => __obj.updateDynamic("GatewayId")(__v.asInstanceOf[js.Any]))
+      VolumeARN.foreach(__v => __obj.updateDynamic("VolumeARN")(__v.asInstanceOf[js.Any]))
+      VolumeAttachmentStatus.foreach(__v => __obj.updateDynamic("VolumeAttachmentStatus")(__v.asInstanceOf[js.Any]))
+      VolumeId.foreach(__v => __obj.updateDynamic("VolumeId")(__v.asInstanceOf[js.Any]))
+      VolumeSizeInBytes.foreach(__v => __obj.updateDynamic("VolumeSizeInBytes")(__v.asInstanceOf[js.Any]))
+      VolumeType.foreach(__v => __obj.updateDynamic("VolumeType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VolumeInfo]
     }
   }
@@ -4391,11 +4401,11 @@ package storagegateway {
         VolumeSizeInBytes: js.UndefOr[Double] = js.undefined,
         VolumeUsageInBytes: js.UndefOr[Double] = js.undefined
     ): VolumeRecoveryPointInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      VolumeARN.foreach(__v => __obj.update("VolumeARN", __v.asInstanceOf[js.Any]))
-      VolumeRecoveryPointTime.foreach(__v => __obj.update("VolumeRecoveryPointTime", __v.asInstanceOf[js.Any]))
-      VolumeSizeInBytes.foreach(__v => __obj.update("VolumeSizeInBytes", __v.asInstanceOf[js.Any]))
-      VolumeUsageInBytes.foreach(__v => __obj.update("VolumeUsageInBytes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      VolumeARN.foreach(__v => __obj.updateDynamic("VolumeARN")(__v.asInstanceOf[js.Any]))
+      VolumeRecoveryPointTime.foreach(__v => __obj.updateDynamic("VolumeRecoveryPointTime")(__v.asInstanceOf[js.Any]))
+      VolumeSizeInBytes.foreach(__v => __obj.updateDynamic("VolumeSizeInBytes")(__v.asInstanceOf[js.Any]))
+      VolumeUsageInBytes.foreach(__v => __obj.updateDynamic("VolumeUsageInBytes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VolumeRecoveryPointInfo]
     }
   }
@@ -4420,12 +4430,12 @@ package storagegateway {
         NetworkInterfacePort: js.UndefOr[Int] = js.undefined,
         TargetARN: js.UndefOr[TargetARN] = js.undefined
     ): VolumeiSCSIAttributes = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChapEnabled.foreach(__v => __obj.update("ChapEnabled", __v.asInstanceOf[js.Any]))
-      LunNumber.foreach(__v => __obj.update("LunNumber", __v.asInstanceOf[js.Any]))
-      NetworkInterfaceId.foreach(__v => __obj.update("NetworkInterfaceId", __v.asInstanceOf[js.Any]))
-      NetworkInterfacePort.foreach(__v => __obj.update("NetworkInterfacePort", __v.asInstanceOf[js.Any]))
-      TargetARN.foreach(__v => __obj.update("TargetARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChapEnabled.foreach(__v => __obj.updateDynamic("ChapEnabled")(__v.asInstanceOf[js.Any]))
+      LunNumber.foreach(__v => __obj.updateDynamic("LunNumber")(__v.asInstanceOf[js.Any]))
+      NetworkInterfaceId.foreach(__v => __obj.updateDynamic("NetworkInterfaceId")(__v.asInstanceOf[js.Any]))
+      NetworkInterfacePort.foreach(__v => __obj.updateDynamic("NetworkInterfacePort")(__v.asInstanceOf[js.Any]))
+      TargetARN.foreach(__v => __obj.updateDynamic("TargetARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VolumeiSCSIAttributes]
     }
   }

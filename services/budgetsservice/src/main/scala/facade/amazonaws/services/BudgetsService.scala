@@ -132,19 +132,19 @@ package budgetsservice {
         PlannedBudgetLimits: js.UndefOr[PlannedBudgetLimits] = js.undefined,
         TimePeriod: js.UndefOr[TimePeriod] = js.undefined
     ): Budget = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BudgetName" -> BudgetName.asInstanceOf[js.Any],
         "BudgetType" -> BudgetType.asInstanceOf[js.Any],
         "TimeUnit"   -> TimeUnit.asInstanceOf[js.Any]
       )
 
-      BudgetLimit.foreach(__v => __obj.update("BudgetLimit", __v.asInstanceOf[js.Any]))
-      CalculatedSpend.foreach(__v => __obj.update("CalculatedSpend", __v.asInstanceOf[js.Any]))
-      CostFilters.foreach(__v => __obj.update("CostFilters", __v.asInstanceOf[js.Any]))
-      CostTypes.foreach(__v => __obj.update("CostTypes", __v.asInstanceOf[js.Any]))
-      LastUpdatedTime.foreach(__v => __obj.update("LastUpdatedTime", __v.asInstanceOf[js.Any]))
-      PlannedBudgetLimits.foreach(__v => __obj.update("PlannedBudgetLimits", __v.asInstanceOf[js.Any]))
-      TimePeriod.foreach(__v => __obj.update("TimePeriod", __v.asInstanceOf[js.Any]))
+      BudgetLimit.foreach(__v => __obj.updateDynamic("BudgetLimit")(__v.asInstanceOf[js.Any]))
+      CalculatedSpend.foreach(__v => __obj.updateDynamic("CalculatedSpend")(__v.asInstanceOf[js.Any]))
+      CostFilters.foreach(__v => __obj.updateDynamic("CostFilters")(__v.asInstanceOf[js.Any]))
+      CostTypes.foreach(__v => __obj.updateDynamic("CostTypes")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      PlannedBudgetLimits.foreach(__v => __obj.updateDynamic("PlannedBudgetLimits")(__v.asInstanceOf[js.Any]))
+      TimePeriod.foreach(__v => __obj.updateDynamic("TimePeriod")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Budget]
     }
   }
@@ -171,15 +171,15 @@ package budgetsservice {
         CostTypes: js.UndefOr[CostTypes] = js.undefined,
         TimeUnit: js.UndefOr[TimeUnit] = js.undefined
     ): BudgetPerformanceHistory = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BudgetName.foreach(__v => __obj.update("BudgetName", __v.asInstanceOf[js.Any]))
-      BudgetType.foreach(__v => __obj.update("BudgetType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BudgetName.foreach(__v => __obj.updateDynamic("BudgetName")(__v.asInstanceOf[js.Any]))
+      BudgetType.foreach(__v => __obj.updateDynamic("BudgetType")(__v.asInstanceOf[js.Any]))
       BudgetedAndActualAmountsList.foreach(
-        __v => __obj.update("BudgetedAndActualAmountsList", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("BudgetedAndActualAmountsList")(__v.asInstanceOf[js.Any])
       )
-      CostFilters.foreach(__v => __obj.update("CostFilters", __v.asInstanceOf[js.Any]))
-      CostTypes.foreach(__v => __obj.update("CostTypes", __v.asInstanceOf[js.Any]))
-      TimeUnit.foreach(__v => __obj.update("TimeUnit", __v.asInstanceOf[js.Any]))
+      CostFilters.foreach(__v => __obj.updateDynamic("CostFilters")(__v.asInstanceOf[js.Any]))
+      CostTypes.foreach(__v => __obj.updateDynamic("CostTypes")(__v.asInstanceOf[js.Any]))
+      TimeUnit.foreach(__v => __obj.updateDynamic("TimeUnit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BudgetPerformanceHistory]
     }
   }
@@ -213,10 +213,10 @@ package budgetsservice {
         BudgetedAmount: js.UndefOr[Spend] = js.undefined,
         TimePeriod: js.UndefOr[TimePeriod] = js.undefined
     ): BudgetedAndActualAmounts = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ActualAmount.foreach(__v => __obj.update("ActualAmount", __v.asInstanceOf[js.Any]))
-      BudgetedAmount.foreach(__v => __obj.update("BudgetedAmount", __v.asInstanceOf[js.Any]))
-      TimePeriod.foreach(__v => __obj.update("TimePeriod", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ActualAmount.foreach(__v => __obj.updateDynamic("ActualAmount")(__v.asInstanceOf[js.Any]))
+      BudgetedAmount.foreach(__v => __obj.updateDynamic("BudgetedAmount")(__v.asInstanceOf[js.Any]))
+      TimePeriod.foreach(__v => __obj.updateDynamic("TimePeriod")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BudgetedAndActualAmounts]
     }
   }
@@ -236,11 +236,11 @@ package budgetsservice {
         ActualSpend: Spend,
         ForecastedSpend: js.UndefOr[Spend] = js.undefined
     ): CalculatedSpend = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ActualSpend" -> ActualSpend.asInstanceOf[js.Any]
       )
 
-      ForecastedSpend.foreach(__v => __obj.update("ForecastedSpend", __v.asInstanceOf[js.Any]))
+      ForecastedSpend.foreach(__v => __obj.updateDynamic("ForecastedSpend")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CalculatedSpend]
     }
   }
@@ -290,18 +290,18 @@ package budgetsservice {
         UseAmortized: js.UndefOr[NullableBoolean] = js.undefined,
         UseBlended: js.UndefOr[NullableBoolean] = js.undefined
     ): CostTypes = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IncludeCredit.foreach(__v => __obj.update("IncludeCredit", __v.asInstanceOf[js.Any]))
-      IncludeDiscount.foreach(__v => __obj.update("IncludeDiscount", __v.asInstanceOf[js.Any]))
-      IncludeOtherSubscription.foreach(__v => __obj.update("IncludeOtherSubscription", __v.asInstanceOf[js.Any]))
-      IncludeRecurring.foreach(__v => __obj.update("IncludeRecurring", __v.asInstanceOf[js.Any]))
-      IncludeRefund.foreach(__v => __obj.update("IncludeRefund", __v.asInstanceOf[js.Any]))
-      IncludeSubscription.foreach(__v => __obj.update("IncludeSubscription", __v.asInstanceOf[js.Any]))
-      IncludeSupport.foreach(__v => __obj.update("IncludeSupport", __v.asInstanceOf[js.Any]))
-      IncludeTax.foreach(__v => __obj.update("IncludeTax", __v.asInstanceOf[js.Any]))
-      IncludeUpfront.foreach(__v => __obj.update("IncludeUpfront", __v.asInstanceOf[js.Any]))
-      UseAmortized.foreach(__v => __obj.update("UseAmortized", __v.asInstanceOf[js.Any]))
-      UseBlended.foreach(__v => __obj.update("UseBlended", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IncludeCredit.foreach(__v => __obj.updateDynamic("IncludeCredit")(__v.asInstanceOf[js.Any]))
+      IncludeDiscount.foreach(__v => __obj.updateDynamic("IncludeDiscount")(__v.asInstanceOf[js.Any]))
+      IncludeOtherSubscription.foreach(__v => __obj.updateDynamic("IncludeOtherSubscription")(__v.asInstanceOf[js.Any]))
+      IncludeRecurring.foreach(__v => __obj.updateDynamic("IncludeRecurring")(__v.asInstanceOf[js.Any]))
+      IncludeRefund.foreach(__v => __obj.updateDynamic("IncludeRefund")(__v.asInstanceOf[js.Any]))
+      IncludeSubscription.foreach(__v => __obj.updateDynamic("IncludeSubscription")(__v.asInstanceOf[js.Any]))
+      IncludeSupport.foreach(__v => __obj.updateDynamic("IncludeSupport")(__v.asInstanceOf[js.Any]))
+      IncludeTax.foreach(__v => __obj.updateDynamic("IncludeTax")(__v.asInstanceOf[js.Any]))
+      IncludeUpfront.foreach(__v => __obj.updateDynamic("IncludeUpfront")(__v.asInstanceOf[js.Any]))
+      UseAmortized.foreach(__v => __obj.updateDynamic("UseAmortized")(__v.asInstanceOf[js.Any]))
+      UseBlended.foreach(__v => __obj.updateDynamic("UseBlended")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CostTypes]
     }
   }
@@ -322,13 +322,13 @@ package budgetsservice {
         Budget: Budget,
         NotificationsWithSubscribers: js.UndefOr[NotificationWithSubscribersList] = js.undefined
     ): CreateBudgetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "Budget"    -> Budget.asInstanceOf[js.Any]
       )
 
       NotificationsWithSubscribers.foreach(
-        __v => __obj.update("NotificationsWithSubscribers", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("NotificationsWithSubscribers")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateBudgetRequest]
     }
@@ -343,7 +343,7 @@ package budgetsservice {
   object CreateBudgetResponse {
     def apply(
         ): CreateBudgetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateBudgetResponse]
     }
@@ -367,7 +367,7 @@ package budgetsservice {
         Notification: Notification,
         Subscribers: Subscribers
     ): CreateNotificationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId"    -> AccountId.asInstanceOf[js.Any],
         "BudgetName"   -> BudgetName.asInstanceOf[js.Any],
         "Notification" -> Notification.asInstanceOf[js.Any],
@@ -387,7 +387,7 @@ package budgetsservice {
   object CreateNotificationResponse {
     def apply(
         ): CreateNotificationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateNotificationResponse]
     }
@@ -411,7 +411,7 @@ package budgetsservice {
         Notification: Notification,
         Subscriber: Subscriber
     ): CreateSubscriberRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId"    -> AccountId.asInstanceOf[js.Any],
         "BudgetName"   -> BudgetName.asInstanceOf[js.Any],
         "Notification" -> Notification.asInstanceOf[js.Any],
@@ -431,7 +431,7 @@ package budgetsservice {
   object CreateSubscriberResponse {
     def apply(
         ): CreateSubscriberResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateSubscriberResponse]
     }
@@ -451,7 +451,7 @@ package budgetsservice {
         AccountId: AccountId,
         BudgetName: BudgetName
     ): DeleteBudgetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId"  -> AccountId.asInstanceOf[js.Any],
         "BudgetName" -> BudgetName.asInstanceOf[js.Any]
       )
@@ -469,7 +469,7 @@ package budgetsservice {
   object DeleteBudgetResponse {
     def apply(
         ): DeleteBudgetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteBudgetResponse]
     }
@@ -491,7 +491,7 @@ package budgetsservice {
         BudgetName: BudgetName,
         Notification: Notification
     ): DeleteNotificationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId"    -> AccountId.asInstanceOf[js.Any],
         "BudgetName"   -> BudgetName.asInstanceOf[js.Any],
         "Notification" -> Notification.asInstanceOf[js.Any]
@@ -510,7 +510,7 @@ package budgetsservice {
   object DeleteNotificationResponse {
     def apply(
         ): DeleteNotificationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteNotificationResponse]
     }
@@ -534,7 +534,7 @@ package budgetsservice {
         Notification: Notification,
         Subscriber: Subscriber
     ): DeleteSubscriberRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId"    -> AccountId.asInstanceOf[js.Any],
         "BudgetName"   -> BudgetName.asInstanceOf[js.Any],
         "Notification" -> Notification.asInstanceOf[js.Any],
@@ -554,7 +554,7 @@ package budgetsservice {
   object DeleteSubscriberResponse {
     def apply(
         ): DeleteSubscriberResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteSubscriberResponse]
     }
@@ -577,14 +577,14 @@ package budgetsservice {
         NextToken: js.UndefOr[GenericString] = js.undefined,
         TimePeriod: js.UndefOr[TimePeriod] = js.undefined
     ): DescribeBudgetPerformanceHistoryRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId"  -> AccountId.asInstanceOf[js.Any],
         "BudgetName" -> BudgetName.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      TimePeriod.foreach(__v => __obj.update("TimePeriod", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TimePeriod.foreach(__v => __obj.updateDynamic("TimePeriod")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeBudgetPerformanceHistoryRequest]
     }
   }
@@ -600,9 +600,9 @@ package budgetsservice {
         BudgetPerformanceHistory: js.UndefOr[BudgetPerformanceHistory] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): DescribeBudgetPerformanceHistoryResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BudgetPerformanceHistory.foreach(__v => __obj.update("BudgetPerformanceHistory", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BudgetPerformanceHistory.foreach(__v => __obj.updateDynamic("BudgetPerformanceHistory")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeBudgetPerformanceHistoryResponse]
     }
   }
@@ -621,7 +621,7 @@ package budgetsservice {
         AccountId: AccountId,
         BudgetName: BudgetName
     ): DescribeBudgetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId"  -> AccountId.asInstanceOf[js.Any],
         "BudgetName" -> BudgetName.asInstanceOf[js.Any]
       )
@@ -642,8 +642,8 @@ package budgetsservice {
     def apply(
         Budget: js.UndefOr[Budget] = js.undefined
     ): DescribeBudgetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Budget.foreach(__v => __obj.update("Budget", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Budget.foreach(__v => __obj.updateDynamic("Budget")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeBudgetResponse]
     }
   }
@@ -664,12 +664,12 @@ package budgetsservice {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): DescribeBudgetsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeBudgetsRequest]
     }
   }
@@ -688,9 +688,9 @@ package budgetsservice {
         Budgets: js.UndefOr[Budgets] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): DescribeBudgetsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Budgets.foreach(__v => __obj.update("Budgets", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Budgets.foreach(__v => __obj.updateDynamic("Budgets")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeBudgetsResponse]
     }
   }
@@ -713,13 +713,13 @@ package budgetsservice {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): DescribeNotificationsForBudgetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId"  -> AccountId.asInstanceOf[js.Any],
         "BudgetName" -> BudgetName.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeNotificationsForBudgetRequest]
     }
   }
@@ -738,9 +738,9 @@ package budgetsservice {
         NextToken: js.UndefOr[GenericString] = js.undefined,
         Notifications: js.UndefOr[Notifications] = js.undefined
     ): DescribeNotificationsForBudgetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Notifications.foreach(__v => __obj.update("Notifications", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Notifications.foreach(__v => __obj.updateDynamic("Notifications")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeNotificationsForBudgetResponse]
     }
   }
@@ -765,14 +765,14 @@ package budgetsservice {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): DescribeSubscribersForNotificationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId"    -> AccountId.asInstanceOf[js.Any],
         "BudgetName"   -> BudgetName.asInstanceOf[js.Any],
         "Notification" -> Notification.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSubscribersForNotificationRequest]
     }
   }
@@ -791,9 +791,9 @@ package budgetsservice {
         NextToken: js.UndefOr[GenericString] = js.undefined,
         Subscribers: js.UndefOr[Subscribers] = js.undefined
     ): DescribeSubscribersForNotificationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Subscribers.foreach(__v => __obj.update("Subscribers", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Subscribers.foreach(__v => __obj.updateDynamic("Subscribers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSubscribersForNotificationResponse]
     }
   }
@@ -824,14 +824,14 @@ package budgetsservice {
         NotificationState: js.UndefOr[NotificationState] = js.undefined,
         ThresholdType: js.UndefOr[ThresholdType] = js.undefined
     ): Notification = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ComparisonOperator" -> ComparisonOperator.asInstanceOf[js.Any],
         "NotificationType"   -> NotificationType.asInstanceOf[js.Any],
         "Threshold"          -> Threshold.asInstanceOf[js.Any]
       )
 
-      NotificationState.foreach(__v => __obj.update("NotificationState", __v.asInstanceOf[js.Any]))
-      ThresholdType.foreach(__v => __obj.update("ThresholdType", __v.asInstanceOf[js.Any]))
+      NotificationState.foreach(__v => __obj.updateDynamic("NotificationState")(__v.asInstanceOf[js.Any]))
+      ThresholdType.foreach(__v => __obj.updateDynamic("ThresholdType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Notification]
     }
   }
@@ -867,7 +867,7 @@ package budgetsservice {
         Notification: Notification,
         Subscribers: Subscribers
     ): NotificationWithSubscribers = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Notification" -> Notification.asInstanceOf[js.Any],
         "Subscribers"  -> Subscribers.asInstanceOf[js.Any]
       )
@@ -893,7 +893,7 @@ package budgetsservice {
         Amount: NumericValue,
         Unit: UnitValue
     ): Spend = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Amount" -> Amount.asInstanceOf[js.Any],
         "Unit"   -> Unit.asInstanceOf[js.Any]
       )
@@ -919,7 +919,7 @@ package budgetsservice {
         Address: SubscriberAddress,
         SubscriptionType: SubscriptionType
     ): Subscriber = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Address"          -> Address.asInstanceOf[js.Any],
         "SubscriptionType" -> SubscriptionType.asInstanceOf[js.Any]
       )
@@ -962,9 +962,9 @@ package budgetsservice {
         End: js.UndefOr[GenericTimestamp] = js.undefined,
         Start: js.UndefOr[GenericTimestamp] = js.undefined
     ): TimePeriod = {
-      val __obj = js.Dictionary.empty[js.Any]
-      End.foreach(__v => __obj.update("End", __v.asInstanceOf[js.Any]))
-      Start.foreach(__v => __obj.update("Start", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      End.foreach(__v => __obj.updateDynamic("End")(__v.asInstanceOf[js.Any]))
+      Start.foreach(__v => __obj.updateDynamic("Start")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TimePeriod]
     }
   }
@@ -995,7 +995,7 @@ package budgetsservice {
         AccountId: AccountId,
         NewBudget: Budget
     ): UpdateBudgetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "NewBudget" -> NewBudget.asInstanceOf[js.Any]
       )
@@ -1013,7 +1013,7 @@ package budgetsservice {
   object UpdateBudgetResponse {
     def apply(
         ): UpdateBudgetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateBudgetResponse]
     }
@@ -1037,7 +1037,7 @@ package budgetsservice {
         NewNotification: Notification,
         OldNotification: Notification
     ): UpdateNotificationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId"       -> AccountId.asInstanceOf[js.Any],
         "BudgetName"      -> BudgetName.asInstanceOf[js.Any],
         "NewNotification" -> NewNotification.asInstanceOf[js.Any],
@@ -1057,7 +1057,7 @@ package budgetsservice {
   object UpdateNotificationResponse {
     def apply(
         ): UpdateNotificationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateNotificationResponse]
     }
@@ -1083,7 +1083,7 @@ package budgetsservice {
         Notification: Notification,
         OldSubscriber: Subscriber
     ): UpdateSubscriberRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId"     -> AccountId.asInstanceOf[js.Any],
         "BudgetName"    -> BudgetName.asInstanceOf[js.Any],
         "NewSubscriber" -> NewSubscriber.asInstanceOf[js.Any],
@@ -1104,7 +1104,7 @@ package budgetsservice {
   object UpdateSubscriberResponse {
     def apply(
         ): UpdateSubscriberResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateSubscriberResponse]
     }

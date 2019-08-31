@@ -188,7 +188,7 @@ package connect {
         IdentityInfo: js.UndefOr[UserIdentityInfo] = js.undefined,
         Password: js.UndefOr[Password] = js.undefined
     ): CreateUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId"         -> InstanceId.asInstanceOf[js.Any],
         "PhoneConfig"        -> PhoneConfig.asInstanceOf[js.Any],
         "RoutingProfileId"   -> RoutingProfileId.asInstanceOf[js.Any],
@@ -196,10 +196,10 @@ package connect {
         "Username"           -> Username.asInstanceOf[js.Any]
       )
 
-      DirectoryUserId.foreach(__v => __obj.update("DirectoryUserId", __v.asInstanceOf[js.Any]))
-      HierarchyGroupId.foreach(__v => __obj.update("HierarchyGroupId", __v.asInstanceOf[js.Any]))
-      IdentityInfo.foreach(__v => __obj.update("IdentityInfo", __v.asInstanceOf[js.Any]))
-      Password.foreach(__v => __obj.update("Password", __v.asInstanceOf[js.Any]))
+      DirectoryUserId.foreach(__v => __obj.updateDynamic("DirectoryUserId")(__v.asInstanceOf[js.Any]))
+      HierarchyGroupId.foreach(__v => __obj.updateDynamic("HierarchyGroupId")(__v.asInstanceOf[js.Any]))
+      IdentityInfo.foreach(__v => __obj.updateDynamic("IdentityInfo")(__v.asInstanceOf[js.Any]))
+      Password.foreach(__v => __obj.updateDynamic("Password")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateUserRequest]
     }
   }
@@ -215,9 +215,9 @@ package connect {
         UserArn: js.UndefOr[ARN] = js.undefined,
         UserId: js.UndefOr[UserId] = js.undefined
     ): CreateUserResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      UserArn.foreach(__v => __obj.update("UserArn", __v.asInstanceOf[js.Any]))
-      UserId.foreach(__v => __obj.update("UserId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      UserArn.foreach(__v => __obj.updateDynamic("UserArn")(__v.asInstanceOf[js.Any]))
+      UserId.foreach(__v => __obj.updateDynamic("UserId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateUserResponse]
     }
   }
@@ -240,11 +240,11 @@ package connect {
         RefreshToken: js.UndefOr[SecurityToken] = js.undefined,
         RefreshTokenExpiration: js.UndefOr[timestamp] = js.undefined
     ): Credentials = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccessToken.foreach(__v => __obj.update("AccessToken", __v.asInstanceOf[js.Any]))
-      AccessTokenExpiration.foreach(__v => __obj.update("AccessTokenExpiration", __v.asInstanceOf[js.Any]))
-      RefreshToken.foreach(__v => __obj.update("RefreshToken", __v.asInstanceOf[js.Any]))
-      RefreshTokenExpiration.foreach(__v => __obj.update("RefreshTokenExpiration", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccessToken.foreach(__v => __obj.updateDynamic("AccessToken")(__v.asInstanceOf[js.Any]))
+      AccessTokenExpiration.foreach(__v => __obj.updateDynamic("AccessTokenExpiration")(__v.asInstanceOf[js.Any]))
+      RefreshToken.foreach(__v => __obj.updateDynamic("RefreshToken")(__v.asInstanceOf[js.Any]))
+      RefreshTokenExpiration.foreach(__v => __obj.updateDynamic("RefreshTokenExpiration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Credentials]
     }
   }
@@ -263,9 +263,9 @@ package connect {
         Name: js.UndefOr[CurrentMetricName] = js.undefined,
         Unit: js.UndefOr[Unit] = js.undefined
     ): CurrentMetric = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Unit.foreach(__v => __obj.update("Unit", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CurrentMetric]
     }
   }
@@ -284,9 +284,9 @@ package connect {
         Metric: js.UndefOr[CurrentMetric] = js.undefined,
         Value: js.UndefOr[Value] = js.undefined
     ): CurrentMetricData = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Metric.foreach(__v => __obj.update("Metric", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Metric.foreach(__v => __obj.updateDynamic("Metric")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CurrentMetricData]
     }
   }
@@ -336,9 +336,9 @@ package connect {
         Collections: js.UndefOr[CurrentMetricDataCollections] = js.undefined,
         Dimensions: js.UndefOr[Dimensions] = js.undefined
     ): CurrentMetricResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Collections.foreach(__v => __obj.update("Collections", __v.asInstanceOf[js.Any]))
-      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Collections.foreach(__v => __obj.updateDynamic("Collections")(__v.asInstanceOf[js.Any]))
+      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CurrentMetricResult]
     }
   }
@@ -354,7 +354,7 @@ package connect {
         InstanceId: InstanceId,
         UserId: UserId
     ): DeleteUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "UserId"     -> UserId.asInstanceOf[js.Any]
       )
@@ -374,7 +374,7 @@ package connect {
         HierarchyGroupId: HierarchyGroupId,
         InstanceId: InstanceId
     ): DescribeUserHierarchyGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HierarchyGroupId" -> HierarchyGroupId.asInstanceOf[js.Any],
         "InstanceId"       -> InstanceId.asInstanceOf[js.Any]
       )
@@ -392,8 +392,8 @@ package connect {
     def apply(
         HierarchyGroup: js.UndefOr[HierarchyGroup] = js.undefined
     ): DescribeUserHierarchyGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      HierarchyGroup.foreach(__v => __obj.update("HierarchyGroup", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      HierarchyGroup.foreach(__v => __obj.updateDynamic("HierarchyGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeUserHierarchyGroupResponse]
     }
   }
@@ -407,7 +407,7 @@ package connect {
     def apply(
         InstanceId: InstanceId
     ): DescribeUserHierarchyStructureRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
@@ -424,8 +424,8 @@ package connect {
     def apply(
         HierarchyStructure: js.UndefOr[HierarchyStructure] = js.undefined
     ): DescribeUserHierarchyStructureResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      HierarchyStructure.foreach(__v => __obj.update("HierarchyStructure", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      HierarchyStructure.foreach(__v => __obj.updateDynamic("HierarchyStructure")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeUserHierarchyStructureResponse]
     }
   }
@@ -441,7 +441,7 @@ package connect {
         InstanceId: InstanceId,
         UserId: UserId
     ): DescribeUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "UserId"     -> UserId.asInstanceOf[js.Any]
       )
@@ -459,8 +459,8 @@ package connect {
     def apply(
         User: js.UndefOr[User] = js.undefined
     ): DescribeUserResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      User.foreach(__v => __obj.update("User", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeUserResponse]
     }
   }
@@ -479,9 +479,9 @@ package connect {
         Channel: js.UndefOr[Channel] = js.undefined,
         Queue: js.UndefOr[QueueReference] = js.undefined
     ): Dimensions = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Channel.foreach(__v => __obj.update("Channel", __v.asInstanceOf[js.Any]))
-      Queue.foreach(__v => __obj.update("Queue", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Channel.foreach(__v => __obj.updateDynamic("Channel")(__v.asInstanceOf[js.Any]))
+      Queue.foreach(__v => __obj.updateDynamic("Queue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Dimensions]
     }
   }
@@ -500,9 +500,9 @@ package connect {
         Channels: js.UndefOr[Channels] = js.undefined,
         Queues: js.UndefOr[Queues] = js.undefined
     ): Filters = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Channels.foreach(__v => __obj.update("Channels", __v.asInstanceOf[js.Any]))
-      Queues.foreach(__v => __obj.update("Queues", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Channels.foreach(__v => __obj.updateDynamic("Channels")(__v.asInstanceOf[js.Any]))
+      Queues.foreach(__v => __obj.updateDynamic("Queues")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Filters]
     }
   }
@@ -518,7 +518,7 @@ package connect {
         InitialContactId: ContactId,
         InstanceId: InstanceId
     ): GetContactAttributesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InitialContactId" -> InitialContactId.asInstanceOf[js.Any],
         "InstanceId"       -> InstanceId.asInstanceOf[js.Any]
       )
@@ -536,8 +536,8 @@ package connect {
     def apply(
         Attributes: js.UndefOr[Attributes] = js.undefined
     ): GetContactAttributesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetContactAttributesResponse]
     }
   }
@@ -561,15 +561,15 @@ package connect {
         MaxResults: js.UndefOr[MaxResult100] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetCurrentMetricDataRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CurrentMetrics" -> CurrentMetrics.asInstanceOf[js.Any],
         "Filters"        -> Filters.asInstanceOf[js.Any],
         "InstanceId"     -> InstanceId.asInstanceOf[js.Any]
       )
 
-      Groupings.foreach(__v => __obj.update("Groupings", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Groupings.foreach(__v => __obj.updateDynamic("Groupings")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCurrentMetricDataRequest]
     }
   }
@@ -587,10 +587,10 @@ package connect {
         MetricResults: js.UndefOr[CurrentMetricResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetCurrentMetricDataResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DataSnapshotTime.foreach(__v => __obj.update("DataSnapshotTime", __v.asInstanceOf[js.Any]))
-      MetricResults.foreach(__v => __obj.update("MetricResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DataSnapshotTime.foreach(__v => __obj.updateDynamic("DataSnapshotTime")(__v.asInstanceOf[js.Any]))
+      MetricResults.foreach(__v => __obj.updateDynamic("MetricResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCurrentMetricDataResponse]
     }
   }
@@ -604,7 +604,7 @@ package connect {
     def apply(
         InstanceId: InstanceId
     ): GetFederationTokenRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
@@ -621,8 +621,8 @@ package connect {
     def apply(
         Credentials: js.UndefOr[Credentials] = js.undefined
     ): GetFederationTokenResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Credentials.foreach(__v => __obj.update("Credentials", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Credentials.foreach(__v => __obj.updateDynamic("Credentials")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFederationTokenResponse]
     }
   }
@@ -650,7 +650,7 @@ package connect {
         MaxResults: js.UndefOr[MaxResult100] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetMetricDataRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EndTime"           -> EndTime.asInstanceOf[js.Any],
         "Filters"           -> Filters.asInstanceOf[js.Any],
         "HistoricalMetrics" -> HistoricalMetrics.asInstanceOf[js.Any],
@@ -658,9 +658,9 @@ package connect {
         "StartTime"         -> StartTime.asInstanceOf[js.Any]
       )
 
-      Groupings.foreach(__v => __obj.update("Groupings", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Groupings.foreach(__v => __obj.updateDynamic("Groupings")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMetricDataRequest]
     }
   }
@@ -676,9 +676,9 @@ package connect {
         MetricResults: js.UndefOr[HistoricalMetricResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetMetricDataResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MetricResults.foreach(__v => __obj.update("MetricResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MetricResults.foreach(__v => __obj.updateDynamic("MetricResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMetricDataResponse]
     }
   }
@@ -710,12 +710,12 @@ package connect {
         LevelId: js.UndefOr[HierarchyLevelId] = js.undefined,
         Name: js.UndefOr[HierarchyGroupName] = js.undefined
     ): HierarchyGroup = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      HierarchyPath.foreach(__v => __obj.update("HierarchyPath", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      LevelId.foreach(__v => __obj.update("LevelId", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      HierarchyPath.foreach(__v => __obj.updateDynamic("HierarchyPath")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LevelId.foreach(__v => __obj.updateDynamic("LevelId")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HierarchyGroup]
     }
   }
@@ -736,10 +736,10 @@ package connect {
         Id: js.UndefOr[HierarchyGroupId] = js.undefined,
         Name: js.UndefOr[HierarchyGroupName] = js.undefined
     ): HierarchyGroupSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HierarchyGroupSummary]
     }
   }
@@ -760,10 +760,10 @@ package connect {
         Id: js.UndefOr[HierarchyLevelId] = js.undefined,
         Name: js.UndefOr[HierarchyLevelName] = js.undefined
     ): HierarchyLevel = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HierarchyLevel]
     }
   }
@@ -788,12 +788,12 @@ package connect {
         LevelThree: js.UndefOr[HierarchyGroupSummary] = js.undefined,
         LevelTwo: js.UndefOr[HierarchyGroupSummary] = js.undefined
     ): HierarchyPath = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LevelFive.foreach(__v => __obj.update("LevelFive", __v.asInstanceOf[js.Any]))
-      LevelFour.foreach(__v => __obj.update("LevelFour", __v.asInstanceOf[js.Any]))
-      LevelOne.foreach(__v => __obj.update("LevelOne", __v.asInstanceOf[js.Any]))
-      LevelThree.foreach(__v => __obj.update("LevelThree", __v.asInstanceOf[js.Any]))
-      LevelTwo.foreach(__v => __obj.update("LevelTwo", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LevelFive.foreach(__v => __obj.updateDynamic("LevelFive")(__v.asInstanceOf[js.Any]))
+      LevelFour.foreach(__v => __obj.updateDynamic("LevelFour")(__v.asInstanceOf[js.Any]))
+      LevelOne.foreach(__v => __obj.updateDynamic("LevelOne")(__v.asInstanceOf[js.Any]))
+      LevelThree.foreach(__v => __obj.updateDynamic("LevelThree")(__v.asInstanceOf[js.Any]))
+      LevelTwo.foreach(__v => __obj.updateDynamic("LevelTwo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HierarchyPath]
     }
   }
@@ -818,12 +818,12 @@ package connect {
         LevelThree: js.UndefOr[HierarchyLevel] = js.undefined,
         LevelTwo: js.UndefOr[HierarchyLevel] = js.undefined
     ): HierarchyStructure = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LevelFive.foreach(__v => __obj.update("LevelFive", __v.asInstanceOf[js.Any]))
-      LevelFour.foreach(__v => __obj.update("LevelFour", __v.asInstanceOf[js.Any]))
-      LevelOne.foreach(__v => __obj.update("LevelOne", __v.asInstanceOf[js.Any]))
-      LevelThree.foreach(__v => __obj.update("LevelThree", __v.asInstanceOf[js.Any]))
-      LevelTwo.foreach(__v => __obj.update("LevelTwo", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LevelFive.foreach(__v => __obj.updateDynamic("LevelFive")(__v.asInstanceOf[js.Any]))
+      LevelFour.foreach(__v => __obj.updateDynamic("LevelFour")(__v.asInstanceOf[js.Any]))
+      LevelOne.foreach(__v => __obj.updateDynamic("LevelOne")(__v.asInstanceOf[js.Any]))
+      LevelThree.foreach(__v => __obj.updateDynamic("LevelThree")(__v.asInstanceOf[js.Any]))
+      LevelTwo.foreach(__v => __obj.updateDynamic("LevelTwo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HierarchyStructure]
     }
   }
@@ -846,11 +846,11 @@ package connect {
         Threshold: js.UndefOr[Threshold] = js.undefined,
         Unit: js.UndefOr[Unit] = js.undefined
     ): HistoricalMetric = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Statistic.foreach(__v => __obj.update("Statistic", __v.asInstanceOf[js.Any]))
-      Threshold.foreach(__v => __obj.update("Threshold", __v.asInstanceOf[js.Any]))
-      Unit.foreach(__v => __obj.update("Unit", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Statistic.foreach(__v => __obj.updateDynamic("Statistic")(__v.asInstanceOf[js.Any]))
+      Threshold.foreach(__v => __obj.updateDynamic("Threshold")(__v.asInstanceOf[js.Any]))
+      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HistoricalMetric]
     }
   }
@@ -869,9 +869,9 @@ package connect {
         Metric: js.UndefOr[HistoricalMetric] = js.undefined,
         Value: js.UndefOr[Value] = js.undefined
     ): HistoricalMetricData = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Metric.foreach(__v => __obj.update("Metric", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Metric.foreach(__v => __obj.updateDynamic("Metric")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HistoricalMetricData]
     }
   }
@@ -951,9 +951,9 @@ package connect {
         Collections: js.UndefOr[HistoricalMetricDataCollections] = js.undefined,
         Dimensions: js.UndefOr[Dimensions] = js.undefined
     ): HistoricalMetricResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Collections.foreach(__v => __obj.update("Collections", __v.asInstanceOf[js.Any]))
-      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Collections.foreach(__v => __obj.updateDynamic("Collections")(__v.asInstanceOf[js.Any]))
+      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HistoricalMetricResult]
     }
   }
@@ -971,12 +971,12 @@ package connect {
         MaxResults: js.UndefOr[MaxResult1000] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListRoutingProfilesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRoutingProfilesRequest]
     }
   }
@@ -992,9 +992,11 @@ package connect {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         RoutingProfileSummaryList: js.UndefOr[RoutingProfileSummaryList] = js.undefined
     ): ListRoutingProfilesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      RoutingProfileSummaryList.foreach(__v => __obj.update("RoutingProfileSummaryList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RoutingProfileSummaryList.foreach(
+        __v => __obj.updateDynamic("RoutingProfileSummaryList")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[ListRoutingProfilesResponse]
     }
   }
@@ -1012,12 +1014,12 @@ package connect {
         MaxResults: js.UndefOr[MaxResult1000] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListSecurityProfilesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSecurityProfilesRequest]
     }
   }
@@ -1033,9 +1035,11 @@ package connect {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         SecurityProfileSummaryList: js.UndefOr[SecurityProfileSummaryList] = js.undefined
     ): ListSecurityProfilesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      SecurityProfileSummaryList.foreach(__v => __obj.update("SecurityProfileSummaryList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SecurityProfileSummaryList.foreach(
+        __v => __obj.updateDynamic("SecurityProfileSummaryList")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[ListSecurityProfilesResponse]
     }
   }
@@ -1053,12 +1057,12 @@ package connect {
         MaxResults: js.UndefOr[MaxResult1000] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListUserHierarchyGroupsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListUserHierarchyGroupsRequest]
     }
   }
@@ -1074,10 +1078,10 @@ package connect {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         UserHierarchyGroupSummaryList: js.UndefOr[HierarchyGroupSummaryList] = js.undefined
     ): ListUserHierarchyGroupsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       UserHierarchyGroupSummaryList.foreach(
-        __v => __obj.update("UserHierarchyGroupSummaryList", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("UserHierarchyGroupSummaryList")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListUserHierarchyGroupsResponse]
     }
@@ -1096,12 +1100,12 @@ package connect {
         MaxResults: js.UndefOr[MaxResult1000] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListUsersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListUsersRequest]
     }
   }
@@ -1117,9 +1121,9 @@ package connect {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         UserSummaryList: js.UndefOr[UserSummaryList] = js.undefined
     ): ListUsersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      UserSummaryList.foreach(__v => __obj.update("UserSummaryList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      UserSummaryList.foreach(__v => __obj.updateDynamic("UserSummaryList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListUsersResponse]
     }
   }
@@ -1145,9 +1149,9 @@ package connect {
         Arn: js.UndefOr[ARN] = js.undefined,
         Id: js.UndefOr[QueueId] = js.undefined
     ): QueueReference = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[QueueReference]
     }
   }
@@ -1168,10 +1172,10 @@ package connect {
         Id: js.UndefOr[RoutingProfileId] = js.undefined,
         Name: js.UndefOr[RoutingProfileName] = js.undefined
     ): RoutingProfileSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RoutingProfileSummary]
     }
   }
@@ -1192,10 +1196,10 @@ package connect {
         Id: js.UndefOr[SecurityProfileId] = js.undefined,
         Name: js.UndefOr[SecurityProfileName] = js.undefined
     ): SecurityProfileSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SecurityProfileSummary]
     }
   }
@@ -1221,16 +1225,16 @@ package connect {
         QueueId: js.UndefOr[QueueId] = js.undefined,
         SourcePhoneNumber: js.UndefOr[PhoneNumber] = js.undefined
     ): StartOutboundVoiceContactRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ContactFlowId"          -> ContactFlowId.asInstanceOf[js.Any],
         "DestinationPhoneNumber" -> DestinationPhoneNumber.asInstanceOf[js.Any],
         "InstanceId"             -> InstanceId.asInstanceOf[js.Any]
       )
 
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      ClientToken.foreach(__v => __obj.update("ClientToken", __v.asInstanceOf[js.Any]))
-      QueueId.foreach(__v => __obj.update("QueueId", __v.asInstanceOf[js.Any]))
-      SourcePhoneNumber.foreach(__v => __obj.update("SourcePhoneNumber", __v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      QueueId.foreach(__v => __obj.updateDynamic("QueueId")(__v.asInstanceOf[js.Any]))
+      SourcePhoneNumber.foreach(__v => __obj.updateDynamic("SourcePhoneNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartOutboundVoiceContactRequest]
     }
   }
@@ -1244,8 +1248,8 @@ package connect {
     def apply(
         ContactId: js.UndefOr[ContactId] = js.undefined
     ): StartOutboundVoiceContactResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ContactId.foreach(__v => __obj.update("ContactId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ContactId.foreach(__v => __obj.updateDynamic("ContactId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartOutboundVoiceContactResponse]
     }
   }
@@ -1269,7 +1273,7 @@ package connect {
         ContactId: ContactId,
         InstanceId: InstanceId
     ): StopContactRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ContactId"  -> ContactId.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
@@ -1284,7 +1288,7 @@ package connect {
   object StopContactResponse {
     def apply(
         ): StopContactResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopContactResponse]
     }
@@ -1304,9 +1308,9 @@ package connect {
         Comparison: js.UndefOr[Comparison] = js.undefined,
         ThresholdValue: js.UndefOr[ThresholdValue] = js.undefined
     ): Threshold = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Comparison.foreach(__v => __obj.update("Comparison", __v.asInstanceOf[js.Any]))
-      ThresholdValue.foreach(__v => __obj.update("ThresholdValue", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Comparison.foreach(__v => __obj.updateDynamic("Comparison")(__v.asInstanceOf[js.Any]))
+      ThresholdValue.foreach(__v => __obj.updateDynamic("ThresholdValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Threshold]
     }
   }
@@ -1332,7 +1336,7 @@ package connect {
         InitialContactId: ContactId,
         InstanceId: InstanceId
     ): UpdateContactAttributesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Attributes"       -> Attributes.asInstanceOf[js.Any],
         "InitialContactId" -> InitialContactId.asInstanceOf[js.Any],
         "InstanceId"       -> InstanceId.asInstanceOf[js.Any]
@@ -1348,7 +1352,7 @@ package connect {
   object UpdateContactAttributesResponse {
     def apply(
         ): UpdateContactAttributesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateContactAttributesResponse]
     }
@@ -1367,12 +1371,12 @@ package connect {
         UserId: UserId,
         HierarchyGroupId: js.UndefOr[HierarchyGroupId] = js.undefined
     ): UpdateUserHierarchyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "UserId"     -> UserId.asInstanceOf[js.Any]
       )
 
-      HierarchyGroupId.foreach(__v => __obj.update("HierarchyGroupId", __v.asInstanceOf[js.Any]))
+      HierarchyGroupId.foreach(__v => __obj.updateDynamic("HierarchyGroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateUserHierarchyRequest]
     }
   }
@@ -1390,7 +1394,7 @@ package connect {
         InstanceId: InstanceId,
         UserId: UserId
     ): UpdateUserIdentityInfoRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdentityInfo" -> IdentityInfo.asInstanceOf[js.Any],
         "InstanceId"   -> InstanceId.asInstanceOf[js.Any],
         "UserId"       -> UserId.asInstanceOf[js.Any]
@@ -1413,7 +1417,7 @@ package connect {
         PhoneConfig: UserPhoneConfig,
         UserId: UserId
     ): UpdateUserPhoneConfigRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId"  -> InstanceId.asInstanceOf[js.Any],
         "PhoneConfig" -> PhoneConfig.asInstanceOf[js.Any],
         "UserId"      -> UserId.asInstanceOf[js.Any]
@@ -1436,7 +1440,7 @@ package connect {
         RoutingProfileId: RoutingProfileId,
         UserId: UserId
     ): UpdateUserRoutingProfileRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId"       -> InstanceId.asInstanceOf[js.Any],
         "RoutingProfileId" -> RoutingProfileId.asInstanceOf[js.Any],
         "UserId"           -> UserId.asInstanceOf[js.Any]
@@ -1459,7 +1463,7 @@ package connect {
         SecurityProfileIds: SecurityProfileIds,
         UserId: UserId
     ): UpdateUserSecurityProfilesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId"         -> InstanceId.asInstanceOf[js.Any],
         "SecurityProfileIds" -> SecurityProfileIds.asInstanceOf[js.Any],
         "UserId"             -> UserId.asInstanceOf[js.Any]
@@ -1497,16 +1501,16 @@ package connect {
         SecurityProfileIds: js.UndefOr[SecurityProfileIds] = js.undefined,
         Username: js.UndefOr[AgentUsername] = js.undefined
     ): User = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      DirectoryUserId.foreach(__v => __obj.update("DirectoryUserId", __v.asInstanceOf[js.Any]))
-      HierarchyGroupId.foreach(__v => __obj.update("HierarchyGroupId", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      IdentityInfo.foreach(__v => __obj.update("IdentityInfo", __v.asInstanceOf[js.Any]))
-      PhoneConfig.foreach(__v => __obj.update("PhoneConfig", __v.asInstanceOf[js.Any]))
-      RoutingProfileId.foreach(__v => __obj.update("RoutingProfileId", __v.asInstanceOf[js.Any]))
-      SecurityProfileIds.foreach(__v => __obj.update("SecurityProfileIds", __v.asInstanceOf[js.Any]))
-      Username.foreach(__v => __obj.update("Username", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      DirectoryUserId.foreach(__v => __obj.updateDynamic("DirectoryUserId")(__v.asInstanceOf[js.Any]))
+      HierarchyGroupId.foreach(__v => __obj.updateDynamic("HierarchyGroupId")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      IdentityInfo.foreach(__v => __obj.updateDynamic("IdentityInfo")(__v.asInstanceOf[js.Any]))
+      PhoneConfig.foreach(__v => __obj.updateDynamic("PhoneConfig")(__v.asInstanceOf[js.Any]))
+      RoutingProfileId.foreach(__v => __obj.updateDynamic("RoutingProfileId")(__v.asInstanceOf[js.Any]))
+      SecurityProfileIds.foreach(__v => __obj.updateDynamic("SecurityProfileIds")(__v.asInstanceOf[js.Any]))
+      Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[User]
     }
   }
@@ -1527,10 +1531,10 @@ package connect {
         FirstName: js.UndefOr[AgentFirstName] = js.undefined,
         LastName: js.UndefOr[AgentLastName] = js.undefined
     ): UserIdentityInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Email.foreach(__v => __obj.update("Email", __v.asInstanceOf[js.Any]))
-      FirstName.foreach(__v => __obj.update("FirstName", __v.asInstanceOf[js.Any]))
-      LastName.foreach(__v => __obj.update("LastName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Email.foreach(__v => __obj.updateDynamic("Email")(__v.asInstanceOf[js.Any]))
+      FirstName.foreach(__v => __obj.updateDynamic("FirstName")(__v.asInstanceOf[js.Any]))
+      LastName.foreach(__v => __obj.updateDynamic("LastName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UserIdentityInfo]
     }
   }
@@ -1553,13 +1557,15 @@ package connect {
         AutoAccept: js.UndefOr[AutoAccept] = js.undefined,
         DeskPhoneNumber: js.UndefOr[PhoneNumber] = js.undefined
     ): UserPhoneConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PhoneType" -> PhoneType.asInstanceOf[js.Any]
       )
 
-      AfterContactWorkTimeLimit.foreach(__v => __obj.update("AfterContactWorkTimeLimit", __v.asInstanceOf[js.Any]))
-      AutoAccept.foreach(__v => __obj.update("AutoAccept", __v.asInstanceOf[js.Any]))
-      DeskPhoneNumber.foreach(__v => __obj.update("DeskPhoneNumber", __v.asInstanceOf[js.Any]))
+      AfterContactWorkTimeLimit.foreach(
+        __v => __obj.updateDynamic("AfterContactWorkTimeLimit")(__v.asInstanceOf[js.Any])
+      )
+      AutoAccept.foreach(__v => __obj.updateDynamic("AutoAccept")(__v.asInstanceOf[js.Any]))
+      DeskPhoneNumber.foreach(__v => __obj.updateDynamic("DeskPhoneNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UserPhoneConfig]
     }
   }
@@ -1580,10 +1586,10 @@ package connect {
         Id: js.UndefOr[UserId] = js.undefined,
         Username: js.UndefOr[AgentUsername] = js.undefined
     ): UserSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Username.foreach(__v => __obj.update("Username", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UserSummary]
     }
   }

@@ -62,7 +62,7 @@ package iotdata {
     def apply(
         thingName: ThingName
     ): DeleteThingShadowRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
 
@@ -82,7 +82,7 @@ package iotdata {
     def apply(
         payload: JsonDocument
     ): DeleteThingShadowResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "payload" -> payload.asInstanceOf[js.Any]
       )
 
@@ -102,7 +102,7 @@ package iotdata {
     def apply(
         thingName: ThingName
     ): GetThingShadowRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
 
@@ -122,8 +122,8 @@ package iotdata {
     def apply(
         payload: js.UndefOr[JsonDocument] = js.undefined
     ): GetThingShadowResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      payload.foreach(__v => __obj.update("payload", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      payload.foreach(__v => __obj.updateDynamic("payload")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetThingShadowResponse]
     }
   }
@@ -168,12 +168,12 @@ package iotdata {
         payload: js.UndefOr[Payload] = js.undefined,
         qos: js.UndefOr[Qos] = js.undefined
     ): PublishRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "topic" -> topic.asInstanceOf[js.Any]
       )
 
-      payload.foreach(__v => __obj.update("payload", __v.asInstanceOf[js.Any]))
-      qos.foreach(__v => __obj.update("qos", __v.asInstanceOf[js.Any]))
+      payload.foreach(__v => __obj.updateDynamic("payload")(__v.asInstanceOf[js.Any]))
+      qos.foreach(__v => __obj.updateDynamic("qos")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PublishRequest]
     }
   }
@@ -240,7 +240,7 @@ package iotdata {
         payload: JsonDocument,
         thingName: ThingName
     ): UpdateThingShadowRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "payload"   -> payload.asInstanceOf[js.Any],
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
@@ -261,8 +261,8 @@ package iotdata {
     def apply(
         payload: js.UndefOr[JsonDocument] = js.undefined
     ): UpdateThingShadowResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      payload.foreach(__v => __obj.update("payload", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      payload.foreach(__v => __obj.updateDynamic("payload")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateThingShadowResponse]
     }
   }

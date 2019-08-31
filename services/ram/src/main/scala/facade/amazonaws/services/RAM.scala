@@ -126,11 +126,11 @@ package ram {
         resourceShareInvitationArn: String,
         clientToken: js.UndefOr[String] = js.undefined
     ): AcceptResourceShareInvitationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceShareInvitationArn" -> resourceShareInvitationArn.asInstanceOf[js.Any]
       )
 
-      clientToken.foreach(__v => __obj.update("clientToken", __v.asInstanceOf[js.Any]))
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AcceptResourceShareInvitationRequest]
     }
   }
@@ -146,9 +146,9 @@ package ram {
         clientToken: js.UndefOr[String] = js.undefined,
         resourceShareInvitation: js.UndefOr[ResourceShareInvitation] = js.undefined
     ): AcceptResourceShareInvitationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      clientToken.foreach(__v => __obj.update("clientToken", __v.asInstanceOf[js.Any]))
-      resourceShareInvitation.foreach(__v => __obj.update("resourceShareInvitation", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      resourceShareInvitation.foreach(__v => __obj.updateDynamic("resourceShareInvitation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AcceptResourceShareInvitationResponse]
     }
   }
@@ -168,13 +168,13 @@ package ram {
         principals: js.UndefOr[PrincipalArnOrIdList] = js.undefined,
         resourceArns: js.UndefOr[ResourceArnList] = js.undefined
     ): AssociateResourceShareRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any]
       )
 
-      clientToken.foreach(__v => __obj.update("clientToken", __v.asInstanceOf[js.Any]))
-      principals.foreach(__v => __obj.update("principals", __v.asInstanceOf[js.Any]))
-      resourceArns.foreach(__v => __obj.update("resourceArns", __v.asInstanceOf[js.Any]))
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      principals.foreach(__v => __obj.updateDynamic("principals")(__v.asInstanceOf[js.Any]))
+      resourceArns.foreach(__v => __obj.updateDynamic("resourceArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateResourceShareRequest]
     }
   }
@@ -190,9 +190,11 @@ package ram {
         clientToken: js.UndefOr[String] = js.undefined,
         resourceShareAssociations: js.UndefOr[ResourceShareAssociationList] = js.undefined
     ): AssociateResourceShareResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      clientToken.foreach(__v => __obj.update("clientToken", __v.asInstanceOf[js.Any]))
-      resourceShareAssociations.foreach(__v => __obj.update("resourceShareAssociations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      resourceShareAssociations.foreach(
+        __v => __obj.updateDynamic("resourceShareAssociations")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[AssociateResourceShareResponse]
     }
   }
@@ -216,15 +218,15 @@ package ram {
         resourceArns: js.UndefOr[ResourceArnList] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateResourceShareRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
 
-      allowExternalPrincipals.foreach(__v => __obj.update("allowExternalPrincipals", __v.asInstanceOf[js.Any]))
-      clientToken.foreach(__v => __obj.update("clientToken", __v.asInstanceOf[js.Any]))
-      principals.foreach(__v => __obj.update("principals", __v.asInstanceOf[js.Any]))
-      resourceArns.foreach(__v => __obj.update("resourceArns", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      allowExternalPrincipals.foreach(__v => __obj.updateDynamic("allowExternalPrincipals")(__v.asInstanceOf[js.Any]))
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      principals.foreach(__v => __obj.updateDynamic("principals")(__v.asInstanceOf[js.Any]))
+      resourceArns.foreach(__v => __obj.updateDynamic("resourceArns")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateResourceShareRequest]
     }
   }
@@ -240,9 +242,9 @@ package ram {
         clientToken: js.UndefOr[String] = js.undefined,
         resourceShare: js.UndefOr[ResourceShare] = js.undefined
     ): CreateResourceShareResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      clientToken.foreach(__v => __obj.update("clientToken", __v.asInstanceOf[js.Any]))
-      resourceShare.foreach(__v => __obj.update("resourceShare", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      resourceShare.foreach(__v => __obj.updateDynamic("resourceShare")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateResourceShareResponse]
     }
   }
@@ -258,11 +260,11 @@ package ram {
         resourceShareArn: String,
         clientToken: js.UndefOr[String] = js.undefined
     ): DeleteResourceShareRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any]
       )
 
-      clientToken.foreach(__v => __obj.update("clientToken", __v.asInstanceOf[js.Any]))
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteResourceShareRequest]
     }
   }
@@ -278,9 +280,9 @@ package ram {
         clientToken: js.UndefOr[String] = js.undefined,
         returnValue: js.UndefOr[Boolean] = js.undefined
     ): DeleteResourceShareResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      clientToken.foreach(__v => __obj.update("clientToken", __v.asInstanceOf[js.Any]))
-      returnValue.foreach(__v => __obj.update("returnValue", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      returnValue.foreach(__v => __obj.updateDynamic("returnValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteResourceShareResponse]
     }
   }
@@ -300,13 +302,13 @@ package ram {
         principals: js.UndefOr[PrincipalArnOrIdList] = js.undefined,
         resourceArns: js.UndefOr[ResourceArnList] = js.undefined
     ): DisassociateResourceShareRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any]
       )
 
-      clientToken.foreach(__v => __obj.update("clientToken", __v.asInstanceOf[js.Any]))
-      principals.foreach(__v => __obj.update("principals", __v.asInstanceOf[js.Any]))
-      resourceArns.foreach(__v => __obj.update("resourceArns", __v.asInstanceOf[js.Any]))
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      principals.foreach(__v => __obj.updateDynamic("principals")(__v.asInstanceOf[js.Any]))
+      resourceArns.foreach(__v => __obj.updateDynamic("resourceArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisassociateResourceShareRequest]
     }
   }
@@ -322,9 +324,11 @@ package ram {
         clientToken: js.UndefOr[String] = js.undefined,
         resourceShareAssociations: js.UndefOr[ResourceShareAssociationList] = js.undefined
     ): DisassociateResourceShareResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      clientToken.foreach(__v => __obj.update("clientToken", __v.asInstanceOf[js.Any]))
-      resourceShareAssociations.foreach(__v => __obj.update("resourceShareAssociations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      resourceShareAssociations.foreach(
+        __v => __obj.updateDynamic("resourceShareAssociations")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[DisassociateResourceShareResponse]
     }
   }
@@ -335,7 +339,7 @@ package ram {
   object EnableSharingWithAwsOrganizationRequest {
     def apply(
         ): EnableSharingWithAwsOrganizationRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[EnableSharingWithAwsOrganizationRequest]
     }
@@ -350,8 +354,8 @@ package ram {
     def apply(
         returnValue: js.UndefOr[Boolean] = js.undefined
     ): EnableSharingWithAwsOrganizationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      returnValue.foreach(__v => __obj.update("returnValue", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      returnValue.foreach(__v => __obj.updateDynamic("returnValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnableSharingWithAwsOrganizationResponse]
     }
   }
@@ -371,13 +375,13 @@ package ram {
         nextToken: js.UndefOr[String] = js.undefined,
         principal: js.UndefOr[String] = js.undefined
     ): GetResourcePoliciesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArns" -> resourceArns.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      principal.foreach(__v => __obj.update("principal", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      principal.foreach(__v => __obj.updateDynamic("principal")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetResourcePoliciesRequest]
     }
   }
@@ -393,9 +397,9 @@ package ram {
         nextToken: js.UndefOr[String] = js.undefined,
         policies: js.UndefOr[PolicyList] = js.undefined
     ): GetResourcePoliciesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      policies.foreach(__v => __obj.update("policies", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      policies.foreach(__v => __obj.updateDynamic("policies")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetResourcePoliciesResponse]
     }
   }
@@ -421,16 +425,16 @@ package ram {
         resourceArn: js.UndefOr[String] = js.undefined,
         resourceShareArns: js.UndefOr[ResourceShareArnList] = js.undefined
     ): GetResourceShareAssociationsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "associationType" -> associationType.asInstanceOf[js.Any]
       )
 
-      associationStatus.foreach(__v => __obj.update("associationStatus", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      principal.foreach(__v => __obj.update("principal", __v.asInstanceOf[js.Any]))
-      resourceArn.foreach(__v => __obj.update("resourceArn", __v.asInstanceOf[js.Any]))
-      resourceShareArns.foreach(__v => __obj.update("resourceShareArns", __v.asInstanceOf[js.Any]))
+      associationStatus.foreach(__v => __obj.updateDynamic("associationStatus")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      principal.foreach(__v => __obj.updateDynamic("principal")(__v.asInstanceOf[js.Any]))
+      resourceArn.foreach(__v => __obj.updateDynamic("resourceArn")(__v.asInstanceOf[js.Any]))
+      resourceShareArns.foreach(__v => __obj.updateDynamic("resourceShareArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetResourceShareAssociationsRequest]
     }
   }
@@ -446,9 +450,11 @@ package ram {
         nextToken: js.UndefOr[String] = js.undefined,
         resourceShareAssociations: js.UndefOr[ResourceShareAssociationList] = js.undefined
     ): GetResourceShareAssociationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      resourceShareAssociations.foreach(__v => __obj.update("resourceShareAssociations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      resourceShareAssociations.foreach(
+        __v => __obj.updateDynamic("resourceShareAssociations")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[GetResourceShareAssociationsResponse]
     }
   }
@@ -468,11 +474,13 @@ package ram {
         resourceShareArns: js.UndefOr[ResourceShareArnList] = js.undefined,
         resourceShareInvitationArns: js.UndefOr[ResourceShareInvitationArnList] = js.undefined
     ): GetResourceShareInvitationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      resourceShareArns.foreach(__v => __obj.update("resourceShareArns", __v.asInstanceOf[js.Any]))
-      resourceShareInvitationArns.foreach(__v => __obj.update("resourceShareInvitationArns", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      resourceShareArns.foreach(__v => __obj.updateDynamic("resourceShareArns")(__v.asInstanceOf[js.Any]))
+      resourceShareInvitationArns.foreach(
+        __v => __obj.updateDynamic("resourceShareInvitationArns")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[GetResourceShareInvitationsRequest]
     }
   }
@@ -488,9 +496,9 @@ package ram {
         nextToken: js.UndefOr[String] = js.undefined,
         resourceShareInvitations: js.UndefOr[ResourceShareInvitationList] = js.undefined
     ): GetResourceShareInvitationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      resourceShareInvitations.foreach(__v => __obj.update("resourceShareInvitations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      resourceShareInvitations.foreach(__v => __obj.updateDynamic("resourceShareInvitations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetResourceShareInvitationsResponse]
     }
   }
@@ -516,16 +524,16 @@ package ram {
         resourceShareStatus: js.UndefOr[ResourceShareStatus] = js.undefined,
         tagFilters: js.UndefOr[TagFilters] = js.undefined
     ): GetResourceSharesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceOwner" -> resourceOwner.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      resourceShareArns.foreach(__v => __obj.update("resourceShareArns", __v.asInstanceOf[js.Any]))
-      resourceShareStatus.foreach(__v => __obj.update("resourceShareStatus", __v.asInstanceOf[js.Any]))
-      tagFilters.foreach(__v => __obj.update("tagFilters", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      resourceShareArns.foreach(__v => __obj.updateDynamic("resourceShareArns")(__v.asInstanceOf[js.Any]))
+      resourceShareStatus.foreach(__v => __obj.updateDynamic("resourceShareStatus")(__v.asInstanceOf[js.Any]))
+      tagFilters.foreach(__v => __obj.updateDynamic("tagFilters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetResourceSharesRequest]
     }
   }
@@ -541,9 +549,9 @@ package ram {
         nextToken: js.UndefOr[String] = js.undefined,
         resourceShares: js.UndefOr[ResourceShareList] = js.undefined
     ): GetResourceSharesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      resourceShares.foreach(__v => __obj.update("resourceShares", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      resourceShares.foreach(__v => __obj.updateDynamic("resourceShares")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetResourceSharesResponse]
     }
   }
@@ -569,16 +577,16 @@ package ram {
         resourceShareArns: js.UndefOr[ResourceShareArnList] = js.undefined,
         resourceType: js.UndefOr[String] = js.undefined
     ): ListPrincipalsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceOwner" -> resourceOwner.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      principals.foreach(__v => __obj.update("principals", __v.asInstanceOf[js.Any]))
-      resourceArn.foreach(__v => __obj.update("resourceArn", __v.asInstanceOf[js.Any]))
-      resourceShareArns.foreach(__v => __obj.update("resourceShareArns", __v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.update("resourceType", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      principals.foreach(__v => __obj.updateDynamic("principals")(__v.asInstanceOf[js.Any]))
+      resourceArn.foreach(__v => __obj.updateDynamic("resourceArn")(__v.asInstanceOf[js.Any]))
+      resourceShareArns.foreach(__v => __obj.updateDynamic("resourceShareArns")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPrincipalsRequest]
     }
   }
@@ -594,9 +602,9 @@ package ram {
         nextToken: js.UndefOr[String] = js.undefined,
         principals: js.UndefOr[PrincipalList] = js.undefined
     ): ListPrincipalsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      principals.foreach(__v => __obj.update("principals", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      principals.foreach(__v => __obj.updateDynamic("principals")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPrincipalsResponse]
     }
   }
@@ -622,16 +630,16 @@ package ram {
         resourceShareArns: js.UndefOr[ResourceShareArnList] = js.undefined,
         resourceType: js.UndefOr[String] = js.undefined
     ): ListResourcesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceOwner" -> resourceOwner.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      principal.foreach(__v => __obj.update("principal", __v.asInstanceOf[js.Any]))
-      resourceArns.foreach(__v => __obj.update("resourceArns", __v.asInstanceOf[js.Any]))
-      resourceShareArns.foreach(__v => __obj.update("resourceShareArns", __v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.update("resourceType", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      principal.foreach(__v => __obj.updateDynamic("principal")(__v.asInstanceOf[js.Any]))
+      resourceArns.foreach(__v => __obj.updateDynamic("resourceArns")(__v.asInstanceOf[js.Any]))
+      resourceShareArns.foreach(__v => __obj.updateDynamic("resourceShareArns")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResourcesRequest]
     }
   }
@@ -647,9 +655,9 @@ package ram {
         nextToken: js.UndefOr[String] = js.undefined,
         resources: js.UndefOr[ResourceList] = js.undefined
     ): ListResourcesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      resources.foreach(__v => __obj.update("resources", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      resources.foreach(__v => __obj.updateDynamic("resources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResourcesResponse]
     }
   }
@@ -674,12 +682,12 @@ package ram {
         lastUpdatedTime: js.UndefOr[DateTime] = js.undefined,
         resourceShareArn: js.UndefOr[String] = js.undefined
     ): Principal = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
-      external.foreach(__v => __obj.update("external", __v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
-      lastUpdatedTime.foreach(__v => __obj.update("lastUpdatedTime", __v.asInstanceOf[js.Any]))
-      resourceShareArn.foreach(__v => __obj.update("resourceShareArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      external.foreach(__v => __obj.updateDynamic("external")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      resourceShareArn.foreach(__v => __obj.updateDynamic("resourceShareArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Principal]
     }
   }
@@ -695,11 +703,11 @@ package ram {
         resourceShareInvitationArn: String,
         clientToken: js.UndefOr[String] = js.undefined
     ): RejectResourceShareInvitationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceShareInvitationArn" -> resourceShareInvitationArn.asInstanceOf[js.Any]
       )
 
-      clientToken.foreach(__v => __obj.update("clientToken", __v.asInstanceOf[js.Any]))
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RejectResourceShareInvitationRequest]
     }
   }
@@ -715,9 +723,9 @@ package ram {
         clientToken: js.UndefOr[String] = js.undefined,
         resourceShareInvitation: js.UndefOr[ResourceShareInvitation] = js.undefined
     ): RejectResourceShareInvitationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      clientToken.foreach(__v => __obj.update("clientToken", __v.asInstanceOf[js.Any]))
-      resourceShareInvitation.foreach(__v => __obj.update("resourceShareInvitation", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      resourceShareInvitation.foreach(__v => __obj.updateDynamic("resourceShareInvitation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RejectResourceShareInvitationResponse]
     }
   }
@@ -746,14 +754,14 @@ package ram {
         statusMessage: js.UndefOr[String] = js.undefined,
         `type`: js.UndefOr[String] = js.undefined
     ): Resource = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
-      lastUpdatedTime.foreach(__v => __obj.update("lastUpdatedTime", __v.asInstanceOf[js.Any]))
-      resourceShareArn.foreach(__v => __obj.update("resourceShareArn", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      statusMessage.foreach(__v => __obj.update("statusMessage", __v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      resourceShareArn.foreach(__v => __obj.updateDynamic("resourceShareArn")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      statusMessage.foreach(__v => __obj.updateDynamic("statusMessage")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Resource]
     }
   }
@@ -793,16 +801,16 @@ package ram {
         statusMessage: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): ResourceShare = {
-      val __obj = js.Dictionary.empty[js.Any]
-      allowExternalPrincipals.foreach(__v => __obj.update("allowExternalPrincipals", __v.asInstanceOf[js.Any]))
-      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
-      lastUpdatedTime.foreach(__v => __obj.update("lastUpdatedTime", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      owningAccountId.foreach(__v => __obj.update("owningAccountId", __v.asInstanceOf[js.Any]))
-      resourceShareArn.foreach(__v => __obj.update("resourceShareArn", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      statusMessage.foreach(__v => __obj.update("statusMessage", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      allowExternalPrincipals.foreach(__v => __obj.updateDynamic("allowExternalPrincipals")(__v.asInstanceOf[js.Any]))
+      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      owningAccountId.foreach(__v => __obj.updateDynamic("owningAccountId")(__v.asInstanceOf[js.Any]))
+      resourceShareArn.foreach(__v => __obj.updateDynamic("resourceShareArn")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      statusMessage.foreach(__v => __obj.updateDynamic("statusMessage")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceShare]
     }
   }
@@ -833,15 +841,15 @@ package ram {
         status: js.UndefOr[ResourceShareAssociationStatus] = js.undefined,
         statusMessage: js.UndefOr[String] = js.undefined
     ): ResourceShareAssociation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      associatedEntity.foreach(__v => __obj.update("associatedEntity", __v.asInstanceOf[js.Any]))
-      associationType.foreach(__v => __obj.update("associationType", __v.asInstanceOf[js.Any]))
-      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
-      external.foreach(__v => __obj.update("external", __v.asInstanceOf[js.Any]))
-      lastUpdatedTime.foreach(__v => __obj.update("lastUpdatedTime", __v.asInstanceOf[js.Any]))
-      resourceShareArn.foreach(__v => __obj.update("resourceShareArn", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      statusMessage.foreach(__v => __obj.update("statusMessage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      associatedEntity.foreach(__v => __obj.updateDynamic("associatedEntity")(__v.asInstanceOf[js.Any]))
+      associationType.foreach(__v => __obj.updateDynamic("associationType")(__v.asInstanceOf[js.Any]))
+      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      external.foreach(__v => __obj.updateDynamic("external")(__v.asInstanceOf[js.Any]))
+      lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      resourceShareArn.foreach(__v => __obj.updateDynamic("resourceShareArn")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      statusMessage.foreach(__v => __obj.updateDynamic("statusMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceShareAssociation]
     }
   }
@@ -889,15 +897,19 @@ package ram {
         senderAccountId: js.UndefOr[String] = js.undefined,
         status: js.UndefOr[ResourceShareInvitationStatus] = js.undefined
     ): ResourceShareInvitation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      invitationTimestamp.foreach(__v => __obj.update("invitationTimestamp", __v.asInstanceOf[js.Any]))
-      receiverAccountId.foreach(__v => __obj.update("receiverAccountId", __v.asInstanceOf[js.Any]))
-      resourceShareArn.foreach(__v => __obj.update("resourceShareArn", __v.asInstanceOf[js.Any]))
-      resourceShareAssociations.foreach(__v => __obj.update("resourceShareAssociations", __v.asInstanceOf[js.Any]))
-      resourceShareInvitationArn.foreach(__v => __obj.update("resourceShareInvitationArn", __v.asInstanceOf[js.Any]))
-      resourceShareName.foreach(__v => __obj.update("resourceShareName", __v.asInstanceOf[js.Any]))
-      senderAccountId.foreach(__v => __obj.update("senderAccountId", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      invitationTimestamp.foreach(__v => __obj.updateDynamic("invitationTimestamp")(__v.asInstanceOf[js.Any]))
+      receiverAccountId.foreach(__v => __obj.updateDynamic("receiverAccountId")(__v.asInstanceOf[js.Any]))
+      resourceShareArn.foreach(__v => __obj.updateDynamic("resourceShareArn")(__v.asInstanceOf[js.Any]))
+      resourceShareAssociations.foreach(
+        __v => __obj.updateDynamic("resourceShareAssociations")(__v.asInstanceOf[js.Any])
+      )
+      resourceShareInvitationArn.foreach(
+        __v => __obj.updateDynamic("resourceShareInvitationArn")(__v.asInstanceOf[js.Any])
+      )
+      resourceShareName.foreach(__v => __obj.updateDynamic("resourceShareName")(__v.asInstanceOf[js.Any]))
+      senderAccountId.foreach(__v => __obj.updateDynamic("senderAccountId")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceShareInvitation]
     }
   }
@@ -944,9 +956,9 @@ package ram {
         key: js.UndefOr[TagKey] = js.undefined,
         value: js.UndefOr[TagValue] = js.undefined
     ): Tag = {
-      val __obj = js.Dictionary.empty[js.Any]
-      key.foreach(__v => __obj.update("key", __v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      key.foreach(__v => __obj.updateDynamic("key")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tag]
     }
   }
@@ -965,9 +977,9 @@ package ram {
         tagKey: js.UndefOr[TagKey] = js.undefined,
         tagValues: js.UndefOr[TagValueList] = js.undefined
     ): TagFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      tagKey.foreach(__v => __obj.update("tagKey", __v.asInstanceOf[js.Any]))
-      tagValues.foreach(__v => __obj.update("tagValues", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      tagKey.foreach(__v => __obj.updateDynamic("tagKey")(__v.asInstanceOf[js.Any]))
+      tagValues.foreach(__v => __obj.updateDynamic("tagValues")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TagFilter]
     }
   }
@@ -983,7 +995,7 @@ package ram {
         resourceShareArn: String,
         tags: TagList
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any],
         "tags"             -> tags.asInstanceOf[js.Any]
       )
@@ -998,7 +1010,7 @@ package ram {
   object TagResourceResponse {
     def apply(
         ): TagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -1015,7 +1027,7 @@ package ram {
         resourceShareArn: String,
         tagKeys: TagKeyList
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any],
         "tagKeys"          -> tagKeys.asInstanceOf[js.Any]
       )
@@ -1030,7 +1042,7 @@ package ram {
   object UntagResourceResponse {
     def apply(
         ): UntagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -1051,13 +1063,13 @@ package ram {
         clientToken: js.UndefOr[String] = js.undefined,
         name: js.UndefOr[String] = js.undefined
     ): UpdateResourceShareRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceShareArn" -> resourceShareArn.asInstanceOf[js.Any]
       )
 
-      allowExternalPrincipals.foreach(__v => __obj.update("allowExternalPrincipals", __v.asInstanceOf[js.Any]))
-      clientToken.foreach(__v => __obj.update("clientToken", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      allowExternalPrincipals.foreach(__v => __obj.updateDynamic("allowExternalPrincipals")(__v.asInstanceOf[js.Any]))
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateResourceShareRequest]
     }
   }
@@ -1073,9 +1085,9 @@ package ram {
         clientToken: js.UndefOr[String] = js.undefined,
         resourceShare: js.UndefOr[ResourceShare] = js.undefined
     ): UpdateResourceShareResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      clientToken.foreach(__v => __obj.update("clientToken", __v.asInstanceOf[js.Any]))
-      resourceShare.foreach(__v => __obj.update("resourceShare", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      resourceShare.foreach(__v => __obj.updateDynamic("resourceShare")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateResourceShareResponse]
     }
   }

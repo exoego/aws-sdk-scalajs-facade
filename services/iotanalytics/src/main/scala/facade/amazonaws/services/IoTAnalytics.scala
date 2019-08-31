@@ -235,12 +235,12 @@ package iotanalytics {
         name: ActivityName,
         next: js.UndefOr[ActivityName] = js.undefined
     ): AddAttributesActivity = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "attributes" -> attributes.asInstanceOf[js.Any],
         "name"       -> name.asInstanceOf[js.Any]
       )
 
-      next.foreach(__v => __obj.update("next", __v.asInstanceOf[js.Any]))
+      next.foreach(__v => __obj.updateDynamic("next")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddAttributesActivity]
     }
   }
@@ -261,10 +261,10 @@ package iotanalytics {
         errorMessage: js.UndefOr[ErrorMessage] = js.undefined,
         messageId: js.UndefOr[MessageId] = js.undefined
     ): BatchPutMessageErrorEntry = {
-      val __obj = js.Dictionary.empty[js.Any]
-      errorCode.foreach(__v => __obj.update("errorCode", __v.asInstanceOf[js.Any]))
-      errorMessage.foreach(__v => __obj.update("errorMessage", __v.asInstanceOf[js.Any]))
-      messageId.foreach(__v => __obj.update("messageId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      errorCode.foreach(__v => __obj.updateDynamic("errorCode")(__v.asInstanceOf[js.Any]))
+      errorMessage.foreach(__v => __obj.updateDynamic("errorMessage")(__v.asInstanceOf[js.Any]))
+      messageId.foreach(__v => __obj.updateDynamic("messageId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchPutMessageErrorEntry]
     }
   }
@@ -280,7 +280,7 @@ package iotanalytics {
         channelName: ChannelName,
         messages: Messages
     ): BatchPutMessageRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "channelName" -> channelName.asInstanceOf[js.Any],
         "messages"    -> messages.asInstanceOf[js.Any]
       )
@@ -298,8 +298,10 @@ package iotanalytics {
     def apply(
         batchPutMessageErrorEntries: js.UndefOr[BatchPutMessageErrorEntries] = js.undefined
     ): BatchPutMessageResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      batchPutMessageErrorEntries.foreach(__v => __obj.update("batchPutMessageErrorEntries", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      batchPutMessageErrorEntries.foreach(
+        __v => __obj.updateDynamic("batchPutMessageErrorEntries")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[BatchPutMessageResponse]
     }
   }
@@ -315,7 +317,7 @@ package iotanalytics {
         pipelineName: PipelineName,
         reprocessingId: ReprocessingId
     ): CancelPipelineReprocessingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pipelineName"   -> pipelineName.asInstanceOf[js.Any],
         "reprocessingId" -> reprocessingId.asInstanceOf[js.Any]
       )
@@ -330,7 +332,7 @@ package iotanalytics {
   object CancelPipelineReprocessingResponse {
     def apply(
         ): CancelPipelineReprocessingResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CancelPipelineReprocessingResponse]
     }
@@ -360,14 +362,14 @@ package iotanalytics {
         status: js.UndefOr[ChannelStatus] = js.undefined,
         storage: js.UndefOr[ChannelStorage] = js.undefined
     ): Channel = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
-      lastUpdateTime.foreach(__v => __obj.update("lastUpdateTime", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      retentionPeriod.foreach(__v => __obj.update("retentionPeriod", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      storage.foreach(__v => __obj.update("storage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      lastUpdateTime.foreach(__v => __obj.updateDynamic("lastUpdateTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      retentionPeriod.foreach(__v => __obj.updateDynamic("retentionPeriod")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      storage.foreach(__v => __obj.updateDynamic("storage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Channel]
     }
   }
@@ -388,12 +390,12 @@ package iotanalytics {
         name: ActivityName,
         next: js.UndefOr[ActivityName] = js.undefined
     ): ChannelActivity = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "channelName" -> channelName.asInstanceOf[js.Any],
         "name"        -> name.asInstanceOf[js.Any]
       )
 
-      next.foreach(__v => __obj.update("next", __v.asInstanceOf[js.Any]))
+      next.foreach(__v => __obj.updateDynamic("next")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChannelActivity]
     }
   }
@@ -410,8 +412,8 @@ package iotanalytics {
     def apply(
         size: js.UndefOr[EstimatedResourceSize] = js.undefined
     ): ChannelStatistics = {
-      val __obj = js.Dictionary.empty[js.Any]
-      size.foreach(__v => __obj.update("size", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      size.foreach(__v => __obj.updateDynamic("size")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChannelStatistics]
     }
   }
@@ -438,9 +440,9 @@ package iotanalytics {
         customerManagedS3: js.UndefOr[CustomerManagedChannelS3Storage] = js.undefined,
         serviceManagedS3: js.UndefOr[ServiceManagedChannelS3Storage] = js.undefined
     ): ChannelStorage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      customerManagedS3.foreach(__v => __obj.update("customerManagedS3", __v.asInstanceOf[js.Any]))
-      serviceManagedS3.foreach(__v => __obj.update("serviceManagedS3", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      customerManagedS3.foreach(__v => __obj.updateDynamic("customerManagedS3")(__v.asInstanceOf[js.Any]))
+      serviceManagedS3.foreach(__v => __obj.updateDynamic("serviceManagedS3")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChannelStorage]
     }
   }
@@ -459,9 +461,9 @@ package iotanalytics {
         customerManagedS3: js.UndefOr[CustomerManagedChannelS3StorageSummary] = js.undefined,
         serviceManagedS3: js.UndefOr[ServiceManagedChannelS3StorageSummary] = js.undefined
     ): ChannelStorageSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      customerManagedS3.foreach(__v => __obj.update("customerManagedS3", __v.asInstanceOf[js.Any]))
-      serviceManagedS3.foreach(__v => __obj.update("serviceManagedS3", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      customerManagedS3.foreach(__v => __obj.updateDynamic("customerManagedS3")(__v.asInstanceOf[js.Any]))
+      serviceManagedS3.foreach(__v => __obj.updateDynamic("serviceManagedS3")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChannelStorageSummary]
     }
   }
@@ -486,12 +488,12 @@ package iotanalytics {
         lastUpdateTime: js.UndefOr[Timestamp] = js.undefined,
         status: js.UndefOr[ChannelStatus] = js.undefined
     ): ChannelSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      channelName.foreach(__v => __obj.update("channelName", __v.asInstanceOf[js.Any]))
-      channelStorage.foreach(__v => __obj.update("channelStorage", __v.asInstanceOf[js.Any]))
-      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
-      lastUpdateTime.foreach(__v => __obj.update("lastUpdateTime", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      channelName.foreach(__v => __obj.updateDynamic("channelName")(__v.asInstanceOf[js.Any]))
+      channelStorage.foreach(__v => __obj.updateDynamic("channelStorage")(__v.asInstanceOf[js.Any]))
+      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      lastUpdateTime.foreach(__v => __obj.updateDynamic("lastUpdateTime")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChannelSummary]
     }
   }
@@ -521,13 +523,13 @@ package iotanalytics {
         resourceConfiguration: ResourceConfiguration,
         variables: js.UndefOr[Variables] = js.undefined
     ): ContainerDatasetAction = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "executionRoleArn"      -> executionRoleArn.asInstanceOf[js.Any],
         "image"                 -> image.asInstanceOf[js.Any],
         "resourceConfiguration" -> resourceConfiguration.asInstanceOf[js.Any]
       )
 
-      variables.foreach(__v => __obj.update("variables", __v.asInstanceOf[js.Any]))
+      variables.foreach(__v => __obj.updateDynamic("variables")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContainerDatasetAction]
     }
   }
@@ -547,13 +549,13 @@ package iotanalytics {
         retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "channelName" -> channelName.asInstanceOf[js.Any]
       )
 
-      channelStorage.foreach(__v => __obj.update("channelStorage", __v.asInstanceOf[js.Any]))
-      retentionPeriod.foreach(__v => __obj.update("retentionPeriod", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      channelStorage.foreach(__v => __obj.updateDynamic("channelStorage")(__v.asInstanceOf[js.Any]))
+      retentionPeriod.foreach(__v => __obj.updateDynamic("retentionPeriod")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateChannelRequest]
     }
   }
@@ -571,10 +573,10 @@ package iotanalytics {
         channelName: js.UndefOr[ChannelName] = js.undefined,
         retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined
     ): CreateChannelResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      channelArn.foreach(__v => __obj.update("channelArn", __v.asInstanceOf[js.Any]))
-      channelName.foreach(__v => __obj.update("channelName", __v.asInstanceOf[js.Any]))
-      retentionPeriod.foreach(__v => __obj.update("retentionPeriod", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      channelArn.foreach(__v => __obj.updateDynamic("channelArn")(__v.asInstanceOf[js.Any]))
+      channelName.foreach(__v => __obj.updateDynamic("channelName")(__v.asInstanceOf[js.Any]))
+      retentionPeriod.foreach(__v => __obj.updateDynamic("retentionPeriod")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateChannelResponse]
     }
   }
@@ -588,7 +590,7 @@ package iotanalytics {
     def apply(
         datasetName: DatasetName
     ): CreateDatasetContentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "datasetName" -> datasetName.asInstanceOf[js.Any]
       )
 
@@ -605,8 +607,8 @@ package iotanalytics {
     def apply(
         versionId: js.UndefOr[DatasetContentVersion] = js.undefined
     ): CreateDatasetContentResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      versionId.foreach(__v => __obj.update("versionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      versionId.foreach(__v => __obj.updateDynamic("versionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatasetContentResponse]
     }
   }
@@ -632,16 +634,16 @@ package iotanalytics {
         triggers: js.UndefOr[DatasetTriggers] = js.undefined,
         versioningConfiguration: js.UndefOr[VersioningConfiguration] = js.undefined
     ): CreateDatasetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "actions"     -> actions.asInstanceOf[js.Any],
         "datasetName" -> datasetName.asInstanceOf[js.Any]
       )
 
-      contentDeliveryRules.foreach(__v => __obj.update("contentDeliveryRules", __v.asInstanceOf[js.Any]))
-      retentionPeriod.foreach(__v => __obj.update("retentionPeriod", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
-      triggers.foreach(__v => __obj.update("triggers", __v.asInstanceOf[js.Any]))
-      versioningConfiguration.foreach(__v => __obj.update("versioningConfiguration", __v.asInstanceOf[js.Any]))
+      contentDeliveryRules.foreach(__v => __obj.updateDynamic("contentDeliveryRules")(__v.asInstanceOf[js.Any]))
+      retentionPeriod.foreach(__v => __obj.updateDynamic("retentionPeriod")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      triggers.foreach(__v => __obj.updateDynamic("triggers")(__v.asInstanceOf[js.Any]))
+      versioningConfiguration.foreach(__v => __obj.updateDynamic("versioningConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatasetRequest]
     }
   }
@@ -659,10 +661,10 @@ package iotanalytics {
         datasetName: js.UndefOr[DatasetName] = js.undefined,
         retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined
     ): CreateDatasetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      datasetArn.foreach(__v => __obj.update("datasetArn", __v.asInstanceOf[js.Any]))
-      datasetName.foreach(__v => __obj.update("datasetName", __v.asInstanceOf[js.Any]))
-      retentionPeriod.foreach(__v => __obj.update("retentionPeriod", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      datasetArn.foreach(__v => __obj.updateDynamic("datasetArn")(__v.asInstanceOf[js.Any]))
+      datasetName.foreach(__v => __obj.updateDynamic("datasetName")(__v.asInstanceOf[js.Any]))
+      retentionPeriod.foreach(__v => __obj.updateDynamic("retentionPeriod")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatasetResponse]
     }
   }
@@ -682,13 +684,13 @@ package iotanalytics {
         retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateDatastoreRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "datastoreName" -> datastoreName.asInstanceOf[js.Any]
       )
 
-      datastoreStorage.foreach(__v => __obj.update("datastoreStorage", __v.asInstanceOf[js.Any]))
-      retentionPeriod.foreach(__v => __obj.update("retentionPeriod", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      datastoreStorage.foreach(__v => __obj.updateDynamic("datastoreStorage")(__v.asInstanceOf[js.Any]))
+      retentionPeriod.foreach(__v => __obj.updateDynamic("retentionPeriod")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatastoreRequest]
     }
   }
@@ -706,10 +708,10 @@ package iotanalytics {
         datastoreName: js.UndefOr[DatastoreName] = js.undefined,
         retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined
     ): CreateDatastoreResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      datastoreArn.foreach(__v => __obj.update("datastoreArn", __v.asInstanceOf[js.Any]))
-      datastoreName.foreach(__v => __obj.update("datastoreName", __v.asInstanceOf[js.Any]))
-      retentionPeriod.foreach(__v => __obj.update("retentionPeriod", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      datastoreArn.foreach(__v => __obj.updateDynamic("datastoreArn")(__v.asInstanceOf[js.Any]))
+      datastoreName.foreach(__v => __obj.updateDynamic("datastoreName")(__v.asInstanceOf[js.Any]))
+      retentionPeriod.foreach(__v => __obj.updateDynamic("retentionPeriod")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatastoreResponse]
     }
   }
@@ -727,12 +729,12 @@ package iotanalytics {
         pipelineName: PipelineName,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreatePipelineRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pipelineActivities" -> pipelineActivities.asInstanceOf[js.Any],
         "pipelineName"       -> pipelineName.asInstanceOf[js.Any]
       )
 
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePipelineRequest]
     }
   }
@@ -748,9 +750,9 @@ package iotanalytics {
         pipelineArn: js.UndefOr[PipelineArn] = js.undefined,
         pipelineName: js.UndefOr[PipelineName] = js.undefined
     ): CreatePipelineResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      pipelineArn.foreach(__v => __obj.update("pipelineArn", __v.asInstanceOf[js.Any]))
-      pipelineName.foreach(__v => __obj.update("pipelineName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      pipelineArn.foreach(__v => __obj.updateDynamic("pipelineArn")(__v.asInstanceOf[js.Any]))
+      pipelineName.foreach(__v => __obj.updateDynamic("pipelineName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePipelineResponse]
     }
   }
@@ -771,12 +773,12 @@ package iotanalytics {
         roleArn: RoleArn,
         keyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined
     ): CustomerManagedChannelS3Storage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "bucket"  -> bucket.asInstanceOf[js.Any],
         "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
-      keyPrefix.foreach(__v => __obj.update("keyPrefix", __v.asInstanceOf[js.Any]))
+      keyPrefix.foreach(__v => __obj.updateDynamic("keyPrefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CustomerManagedChannelS3Storage]
     }
   }
@@ -797,10 +799,10 @@ package iotanalytics {
         keyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
         roleArn: js.UndefOr[RoleArn] = js.undefined
     ): CustomerManagedChannelS3StorageSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      bucket.foreach(__v => __obj.update("bucket", __v.asInstanceOf[js.Any]))
-      keyPrefix.foreach(__v => __obj.update("keyPrefix", __v.asInstanceOf[js.Any]))
-      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      bucket.foreach(__v => __obj.updateDynamic("bucket")(__v.asInstanceOf[js.Any]))
+      keyPrefix.foreach(__v => __obj.updateDynamic("keyPrefix")(__v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CustomerManagedChannelS3StorageSummary]
     }
   }
@@ -821,12 +823,12 @@ package iotanalytics {
         roleArn: RoleArn,
         keyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined
     ): CustomerManagedDatastoreS3Storage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "bucket"  -> bucket.asInstanceOf[js.Any],
         "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
-      keyPrefix.foreach(__v => __obj.update("keyPrefix", __v.asInstanceOf[js.Any]))
+      keyPrefix.foreach(__v => __obj.updateDynamic("keyPrefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CustomerManagedDatastoreS3Storage]
     }
   }
@@ -847,10 +849,10 @@ package iotanalytics {
         keyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
         roleArn: js.UndefOr[RoleArn] = js.undefined
     ): CustomerManagedDatastoreS3StorageSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      bucket.foreach(__v => __obj.update("bucket", __v.asInstanceOf[js.Any]))
-      keyPrefix.foreach(__v => __obj.update("keyPrefix", __v.asInstanceOf[js.Any]))
-      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      bucket.foreach(__v => __obj.updateDynamic("bucket")(__v.asInstanceOf[js.Any]))
+      keyPrefix.foreach(__v => __obj.updateDynamic("keyPrefix")(__v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CustomerManagedDatastoreS3StorageSummary]
     }
   }
@@ -885,17 +887,17 @@ package iotanalytics {
         triggers: js.UndefOr[DatasetTriggers] = js.undefined,
         versioningConfiguration: js.UndefOr[VersioningConfiguration] = js.undefined
     ): Dataset = {
-      val __obj = js.Dictionary.empty[js.Any]
-      actions.foreach(__v => __obj.update("actions", __v.asInstanceOf[js.Any]))
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      contentDeliveryRules.foreach(__v => __obj.update("contentDeliveryRules", __v.asInstanceOf[js.Any]))
-      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
-      lastUpdateTime.foreach(__v => __obj.update("lastUpdateTime", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      retentionPeriod.foreach(__v => __obj.update("retentionPeriod", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      triggers.foreach(__v => __obj.update("triggers", __v.asInstanceOf[js.Any]))
-      versioningConfiguration.foreach(__v => __obj.update("versioningConfiguration", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      actions.foreach(__v => __obj.updateDynamic("actions")(__v.asInstanceOf[js.Any]))
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      contentDeliveryRules.foreach(__v => __obj.updateDynamic("contentDeliveryRules")(__v.asInstanceOf[js.Any]))
+      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      lastUpdateTime.foreach(__v => __obj.updateDynamic("lastUpdateTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      retentionPeriod.foreach(__v => __obj.updateDynamic("retentionPeriod")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      triggers.foreach(__v => __obj.updateDynamic("triggers")(__v.asInstanceOf[js.Any]))
+      versioningConfiguration.foreach(__v => __obj.updateDynamic("versioningConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Dataset]
     }
   }
@@ -916,10 +918,10 @@ package iotanalytics {
         containerAction: js.UndefOr[ContainerDatasetAction] = js.undefined,
         queryAction: js.UndefOr[SqlQueryDatasetAction] = js.undefined
     ): DatasetAction = {
-      val __obj = js.Dictionary.empty[js.Any]
-      actionName.foreach(__v => __obj.update("actionName", __v.asInstanceOf[js.Any]))
-      containerAction.foreach(__v => __obj.update("containerAction", __v.asInstanceOf[js.Any]))
-      queryAction.foreach(__v => __obj.update("queryAction", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      actionName.foreach(__v => __obj.updateDynamic("actionName")(__v.asInstanceOf[js.Any]))
+      containerAction.foreach(__v => __obj.updateDynamic("containerAction")(__v.asInstanceOf[js.Any]))
+      queryAction.foreach(__v => __obj.updateDynamic("queryAction")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatasetAction]
     }
   }
@@ -938,9 +940,9 @@ package iotanalytics {
         actionName: js.UndefOr[DatasetActionName] = js.undefined,
         actionType: js.UndefOr[DatasetActionType] = js.undefined
     ): DatasetActionSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      actionName.foreach(__v => __obj.update("actionName", __v.asInstanceOf[js.Any]))
-      actionType.foreach(__v => __obj.update("actionType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      actionName.foreach(__v => __obj.updateDynamic("actionName")(__v.asInstanceOf[js.Any]))
+      actionType.foreach(__v => __obj.updateDynamic("actionType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatasetActionSummary]
     }
   }
@@ -966,11 +968,13 @@ package iotanalytics {
         iotEventsDestinationConfiguration: js.UndefOr[IotEventsDestinationConfiguration] = js.undefined,
         s3DestinationConfiguration: js.UndefOr[S3DestinationConfiguration] = js.undefined
     ): DatasetContentDeliveryDestination = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       iotEventsDestinationConfiguration.foreach(
-        __v => __obj.update("iotEventsDestinationConfiguration", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("iotEventsDestinationConfiguration")(__v.asInstanceOf[js.Any])
       )
-      s3DestinationConfiguration.foreach(__v => __obj.update("s3DestinationConfiguration", __v.asInstanceOf[js.Any]))
+      s3DestinationConfiguration.foreach(
+        __v => __obj.updateDynamic("s3DestinationConfiguration")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[DatasetContentDeliveryDestination]
     }
   }
@@ -989,11 +993,11 @@ package iotanalytics {
         destination: DatasetContentDeliveryDestination,
         entryName: js.UndefOr[EntryName] = js.undefined
     ): DatasetContentDeliveryRule = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "destination" -> destination.asInstanceOf[js.Any]
       )
 
-      entryName.foreach(__v => __obj.update("entryName", __v.asInstanceOf[js.Any]))
+      entryName.foreach(__v => __obj.updateDynamic("entryName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatasetContentDeliveryRule]
     }
   }
@@ -1020,9 +1024,9 @@ package iotanalytics {
         reason: js.UndefOr[Reason] = js.undefined,
         state: js.UndefOr[DatasetContentState] = js.undefined
     ): DatasetContentStatus = {
-      val __obj = js.Dictionary.empty[js.Any]
-      reason.foreach(__v => __obj.update("reason", __v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.update("state", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatasetContentStatus]
     }
   }
@@ -1045,11 +1049,11 @@ package iotanalytics {
         status: js.UndefOr[DatasetContentStatus] = js.undefined,
         version: js.UndefOr[DatasetContentVersion] = js.undefined
     ): DatasetContentSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
-      scheduleTime.foreach(__v => __obj.update("scheduleTime", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      scheduleTime.foreach(__v => __obj.updateDynamic("scheduleTime")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatasetContentSummary]
     }
   }
@@ -1066,7 +1070,7 @@ package iotanalytics {
     def apply(
         datasetName: DatasetName
     ): DatasetContentVersionValue = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "datasetName" -> datasetName.asInstanceOf[js.Any]
       )
 
@@ -1088,9 +1092,9 @@ package iotanalytics {
         dataURI: js.UndefOr[PresignedURI] = js.undefined,
         entryName: js.UndefOr[EntryName] = js.undefined
     ): DatasetEntry = {
-      val __obj = js.Dictionary.empty[js.Any]
-      dataURI.foreach(__v => __obj.update("dataURI", __v.asInstanceOf[js.Any]))
-      entryName.foreach(__v => __obj.update("entryName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      dataURI.foreach(__v => __obj.updateDynamic("dataURI")(__v.asInstanceOf[js.Any]))
+      entryName.foreach(__v => __obj.updateDynamic("entryName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatasetEntry]
     }
   }
@@ -1125,13 +1129,13 @@ package iotanalytics {
         status: js.UndefOr[DatasetStatus] = js.undefined,
         triggers: js.UndefOr[DatasetTriggers] = js.undefined
     ): DatasetSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      actions.foreach(__v => __obj.update("actions", __v.asInstanceOf[js.Any]))
-      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
-      datasetName.foreach(__v => __obj.update("datasetName", __v.asInstanceOf[js.Any]))
-      lastUpdateTime.foreach(__v => __obj.update("lastUpdateTime", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      triggers.foreach(__v => __obj.update("triggers", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      actions.foreach(__v => __obj.updateDynamic("actions")(__v.asInstanceOf[js.Any]))
+      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      datasetName.foreach(__v => __obj.updateDynamic("datasetName")(__v.asInstanceOf[js.Any]))
+      lastUpdateTime.foreach(__v => __obj.updateDynamic("lastUpdateTime")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      triggers.foreach(__v => __obj.updateDynamic("triggers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatasetSummary]
     }
   }
@@ -1150,9 +1154,9 @@ package iotanalytics {
         dataset: js.UndefOr[TriggeringDataset] = js.undefined,
         schedule: js.UndefOr[Schedule] = js.undefined
     ): DatasetTrigger = {
-      val __obj = js.Dictionary.empty[js.Any]
-      dataset.foreach(__v => __obj.update("dataset", __v.asInstanceOf[js.Any]))
-      schedule.foreach(__v => __obj.update("schedule", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      dataset.foreach(__v => __obj.updateDynamic("dataset")(__v.asInstanceOf[js.Any]))
+      schedule.foreach(__v => __obj.updateDynamic("schedule")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatasetTrigger]
     }
   }
@@ -1181,14 +1185,14 @@ package iotanalytics {
         status: js.UndefOr[DatastoreStatus] = js.undefined,
         storage: js.UndefOr[DatastoreStorage] = js.undefined
     ): Datastore = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
-      lastUpdateTime.foreach(__v => __obj.update("lastUpdateTime", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      retentionPeriod.foreach(__v => __obj.update("retentionPeriod", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      storage.foreach(__v => __obj.update("storage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      lastUpdateTime.foreach(__v => __obj.updateDynamic("lastUpdateTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      retentionPeriod.foreach(__v => __obj.updateDynamic("retentionPeriod")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      storage.foreach(__v => __obj.updateDynamic("storage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Datastore]
     }
   }
@@ -1207,7 +1211,7 @@ package iotanalytics {
         datastoreName: DatastoreName,
         name: ActivityName
     ): DatastoreActivity = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "datastoreName" -> datastoreName.asInstanceOf[js.Any],
         "name"          -> name.asInstanceOf[js.Any]
       )
@@ -1228,8 +1232,8 @@ package iotanalytics {
     def apply(
         size: js.UndefOr[EstimatedResourceSize] = js.undefined
     ): DatastoreStatistics = {
-      val __obj = js.Dictionary.empty[js.Any]
-      size.foreach(__v => __obj.update("size", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      size.foreach(__v => __obj.updateDynamic("size")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatastoreStatistics]
     }
   }
@@ -1256,9 +1260,9 @@ package iotanalytics {
         customerManagedS3: js.UndefOr[CustomerManagedDatastoreS3Storage] = js.undefined,
         serviceManagedS3: js.UndefOr[ServiceManagedDatastoreS3Storage] = js.undefined
     ): DatastoreStorage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      customerManagedS3.foreach(__v => __obj.update("customerManagedS3", __v.asInstanceOf[js.Any]))
-      serviceManagedS3.foreach(__v => __obj.update("serviceManagedS3", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      customerManagedS3.foreach(__v => __obj.updateDynamic("customerManagedS3")(__v.asInstanceOf[js.Any]))
+      serviceManagedS3.foreach(__v => __obj.updateDynamic("serviceManagedS3")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatastoreStorage]
     }
   }
@@ -1277,9 +1281,9 @@ package iotanalytics {
         customerManagedS3: js.UndefOr[CustomerManagedDatastoreS3StorageSummary] = js.undefined,
         serviceManagedS3: js.UndefOr[ServiceManagedDatastoreS3StorageSummary] = js.undefined
     ): DatastoreStorageSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      customerManagedS3.foreach(__v => __obj.update("customerManagedS3", __v.asInstanceOf[js.Any]))
-      serviceManagedS3.foreach(__v => __obj.update("serviceManagedS3", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      customerManagedS3.foreach(__v => __obj.updateDynamic("customerManagedS3")(__v.asInstanceOf[js.Any]))
+      serviceManagedS3.foreach(__v => __obj.updateDynamic("serviceManagedS3")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatastoreStorageSummary]
     }
   }
@@ -1304,12 +1308,12 @@ package iotanalytics {
         lastUpdateTime: js.UndefOr[Timestamp] = js.undefined,
         status: js.UndefOr[DatastoreStatus] = js.undefined
     ): DatastoreSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
-      datastoreName.foreach(__v => __obj.update("datastoreName", __v.asInstanceOf[js.Any]))
-      datastoreStorage.foreach(__v => __obj.update("datastoreStorage", __v.asInstanceOf[js.Any]))
-      lastUpdateTime.foreach(__v => __obj.update("lastUpdateTime", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      datastoreName.foreach(__v => __obj.updateDynamic("datastoreName")(__v.asInstanceOf[js.Any]))
+      datastoreStorage.foreach(__v => __obj.updateDynamic("datastoreStorage")(__v.asInstanceOf[js.Any]))
+      lastUpdateTime.foreach(__v => __obj.updateDynamic("lastUpdateTime")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatastoreSummary]
     }
   }
@@ -1323,7 +1327,7 @@ package iotanalytics {
     def apply(
         channelName: ChannelName
     ): DeleteChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "channelName" -> channelName.asInstanceOf[js.Any]
       )
 
@@ -1342,11 +1346,11 @@ package iotanalytics {
         datasetName: DatasetName,
         versionId: js.UndefOr[DatasetContentVersion] = js.undefined
     ): DeleteDatasetContentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "datasetName" -> datasetName.asInstanceOf[js.Any]
       )
 
-      versionId.foreach(__v => __obj.update("versionId", __v.asInstanceOf[js.Any]))
+      versionId.foreach(__v => __obj.updateDynamic("versionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDatasetContentRequest]
     }
   }
@@ -1360,7 +1364,7 @@ package iotanalytics {
     def apply(
         datasetName: DatasetName
     ): DeleteDatasetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "datasetName" -> datasetName.asInstanceOf[js.Any]
       )
 
@@ -1377,7 +1381,7 @@ package iotanalytics {
     def apply(
         datastoreName: DatastoreName
     ): DeleteDatastoreRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "datastoreName" -> datastoreName.asInstanceOf[js.Any]
       )
 
@@ -1394,7 +1398,7 @@ package iotanalytics {
     def apply(
         pipelineName: PipelineName
     ): DeletePipelineRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pipelineName" -> pipelineName.asInstanceOf[js.Any]
       )
 
@@ -1416,7 +1420,7 @@ package iotanalytics {
         offsetSeconds: OffsetSeconds,
         timeExpression: TimeExpression
     ): DeltaTime = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "offsetSeconds"  -> offsetSeconds.asInstanceOf[js.Any],
         "timeExpression" -> timeExpression.asInstanceOf[js.Any]
       )
@@ -1436,11 +1440,11 @@ package iotanalytics {
         channelName: ChannelName,
         includeStatistics: js.UndefOr[IncludeStatisticsFlag] = js.undefined
     ): DescribeChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "channelName" -> channelName.asInstanceOf[js.Any]
       )
 
-      includeStatistics.foreach(__v => __obj.update("includeStatistics", __v.asInstanceOf[js.Any]))
+      includeStatistics.foreach(__v => __obj.updateDynamic("includeStatistics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeChannelRequest]
     }
   }
@@ -1456,9 +1460,9 @@ package iotanalytics {
         channel: js.UndefOr[Channel] = js.undefined,
         statistics: js.UndefOr[ChannelStatistics] = js.undefined
     ): DescribeChannelResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      channel.foreach(__v => __obj.update("channel", __v.asInstanceOf[js.Any]))
-      statistics.foreach(__v => __obj.update("statistics", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      channel.foreach(__v => __obj.updateDynamic("channel")(__v.asInstanceOf[js.Any]))
+      statistics.foreach(__v => __obj.updateDynamic("statistics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeChannelResponse]
     }
   }
@@ -1472,7 +1476,7 @@ package iotanalytics {
     def apply(
         datasetName: DatasetName
     ): DescribeDatasetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "datasetName" -> datasetName.asInstanceOf[js.Any]
       )
 
@@ -1489,8 +1493,8 @@ package iotanalytics {
     def apply(
         dataset: js.UndefOr[Dataset] = js.undefined
     ): DescribeDatasetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      dataset.foreach(__v => __obj.update("dataset", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      dataset.foreach(__v => __obj.updateDynamic("dataset")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDatasetResponse]
     }
   }
@@ -1506,11 +1510,11 @@ package iotanalytics {
         datastoreName: DatastoreName,
         includeStatistics: js.UndefOr[IncludeStatisticsFlag] = js.undefined
     ): DescribeDatastoreRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "datastoreName" -> datastoreName.asInstanceOf[js.Any]
       )
 
-      includeStatistics.foreach(__v => __obj.update("includeStatistics", __v.asInstanceOf[js.Any]))
+      includeStatistics.foreach(__v => __obj.updateDynamic("includeStatistics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDatastoreRequest]
     }
   }
@@ -1526,9 +1530,9 @@ package iotanalytics {
         datastore: js.UndefOr[Datastore] = js.undefined,
         statistics: js.UndefOr[DatastoreStatistics] = js.undefined
     ): DescribeDatastoreResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      datastore.foreach(__v => __obj.update("datastore", __v.asInstanceOf[js.Any]))
-      statistics.foreach(__v => __obj.update("statistics", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      datastore.foreach(__v => __obj.updateDynamic("datastore")(__v.asInstanceOf[js.Any]))
+      statistics.foreach(__v => __obj.updateDynamic("statistics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDatastoreResponse]
     }
   }
@@ -1539,7 +1543,7 @@ package iotanalytics {
   object DescribeLoggingOptionsRequest {
     def apply(
         ): DescribeLoggingOptionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DescribeLoggingOptionsRequest]
     }
@@ -1554,8 +1558,8 @@ package iotanalytics {
     def apply(
         loggingOptions: js.UndefOr[LoggingOptions] = js.undefined
     ): DescribeLoggingOptionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      loggingOptions.foreach(__v => __obj.update("loggingOptions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      loggingOptions.foreach(__v => __obj.updateDynamic("loggingOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLoggingOptionsResponse]
     }
   }
@@ -1569,7 +1573,7 @@ package iotanalytics {
     def apply(
         pipelineName: PipelineName
     ): DescribePipelineRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pipelineName" -> pipelineName.asInstanceOf[js.Any]
       )
 
@@ -1586,8 +1590,8 @@ package iotanalytics {
     def apply(
         pipeline: js.UndefOr[Pipeline] = js.undefined
     ): DescribePipelineResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      pipeline.foreach(__v => __obj.update("pipeline", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      pipeline.foreach(__v => __obj.updateDynamic("pipeline")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePipelineResponse]
     }
   }
@@ -1612,14 +1616,14 @@ package iotanalytics {
         thingName: AttributeName,
         next: js.UndefOr[ActivityName] = js.undefined
     ): DeviceRegistryEnrichActivity = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "attribute" -> attribute.asInstanceOf[js.Any],
         "name"      -> name.asInstanceOf[js.Any],
         "roleArn"   -> roleArn.asInstanceOf[js.Any],
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
 
-      next.foreach(__v => __obj.update("next", __v.asInstanceOf[js.Any]))
+      next.foreach(__v => __obj.updateDynamic("next")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeviceRegistryEnrichActivity]
     }
   }
@@ -1644,14 +1648,14 @@ package iotanalytics {
         thingName: AttributeName,
         next: js.UndefOr[ActivityName] = js.undefined
     ): DeviceShadowEnrichActivity = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "attribute" -> attribute.asInstanceOf[js.Any],
         "name"      -> name.asInstanceOf[js.Any],
         "roleArn"   -> roleArn.asInstanceOf[js.Any],
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
 
-      next.foreach(__v => __obj.update("next", __v.asInstanceOf[js.Any]))
+      next.foreach(__v => __obj.updateDynamic("next")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeviceShadowEnrichActivity]
     }
   }
@@ -1670,9 +1674,9 @@ package iotanalytics {
         estimatedOn: js.UndefOr[Timestamp] = js.undefined,
         estimatedSizeInBytes: js.UndefOr[SizeInBytes] = js.undefined
     ): EstimatedResourceSize = {
-      val __obj = js.Dictionary.empty[js.Any]
-      estimatedOn.foreach(__v => __obj.update("estimatedOn", __v.asInstanceOf[js.Any]))
-      estimatedSizeInBytes.foreach(__v => __obj.update("estimatedSizeInBytes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      estimatedOn.foreach(__v => __obj.updateDynamic("estimatedOn")(__v.asInstanceOf[js.Any]))
+      estimatedSizeInBytes.foreach(__v => __obj.updateDynamic("estimatedSizeInBytes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EstimatedResourceSize]
     }
   }
@@ -1693,12 +1697,12 @@ package iotanalytics {
         name: ActivityName,
         next: js.UndefOr[ActivityName] = js.undefined
     ): FilterActivity = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "filter" -> filter.asInstanceOf[js.Any],
         "name"   -> name.asInstanceOf[js.Any]
       )
 
-      next.foreach(__v => __obj.update("next", __v.asInstanceOf[js.Any]))
+      next.foreach(__v => __obj.updateDynamic("next")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FilterActivity]
     }
   }
@@ -1714,11 +1718,11 @@ package iotanalytics {
         datasetName: DatasetName,
         versionId: js.UndefOr[DatasetContentVersion] = js.undefined
     ): GetDatasetContentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "datasetName" -> datasetName.asInstanceOf[js.Any]
       )
 
-      versionId.foreach(__v => __obj.update("versionId", __v.asInstanceOf[js.Any]))
+      versionId.foreach(__v => __obj.updateDynamic("versionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDatasetContentRequest]
     }
   }
@@ -1736,10 +1740,10 @@ package iotanalytics {
         status: js.UndefOr[DatasetContentStatus] = js.undefined,
         timestamp: js.UndefOr[Timestamp] = js.undefined
     ): GetDatasetContentResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      entries.foreach(__v => __obj.update("entries", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      timestamp.foreach(__v => __obj.update("timestamp", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      entries.foreach(__v => __obj.updateDynamic("entries")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      timestamp.foreach(__v => __obj.updateDynamic("timestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDatasetContentResponse]
     }
   }
@@ -1758,7 +1762,7 @@ package iotanalytics {
         databaseName: GlueDatabaseName,
         tableName: GlueTableName
     ): GlueConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "databaseName" -> databaseName.asInstanceOf[js.Any],
         "tableName"    -> tableName.asInstanceOf[js.Any]
       )
@@ -1781,7 +1785,7 @@ package iotanalytics {
         inputName: IotEventsInputName,
         roleArn: RoleArn
     ): IotEventsDestinationConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "inputName" -> inputName.asInstanceOf[js.Any],
         "roleArn"   -> roleArn.asInstanceOf[js.Any]
       )
@@ -1808,13 +1812,13 @@ package iotanalytics {
         name: ActivityName,
         next: js.UndefOr[ActivityName] = js.undefined
     ): LambdaActivity = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "batchSize"  -> batchSize.asInstanceOf[js.Any],
         "lambdaName" -> lambdaName.asInstanceOf[js.Any],
         "name"       -> name.asInstanceOf[js.Any]
       )
 
-      next.foreach(__v => __obj.update("next", __v.asInstanceOf[js.Any]))
+      next.foreach(__v => __obj.updateDynamic("next")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LambdaActivity]
     }
   }
@@ -1830,9 +1834,9 @@ package iotanalytics {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListChannelsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListChannelsRequest]
     }
   }
@@ -1848,9 +1852,9 @@ package iotanalytics {
         channelSummaries: js.UndefOr[ChannelSummaries] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListChannelsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      channelSummaries.foreach(__v => __obj.update("channelSummaries", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      channelSummaries.foreach(__v => __obj.updateDynamic("channelSummaries")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListChannelsResponse]
     }
   }
@@ -1872,14 +1876,14 @@ package iotanalytics {
         scheduledBefore: js.UndefOr[Timestamp] = js.undefined,
         scheduledOnOrAfter: js.UndefOr[Timestamp] = js.undefined
     ): ListDatasetContentsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "datasetName" -> datasetName.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      scheduledBefore.foreach(__v => __obj.update("scheduledBefore", __v.asInstanceOf[js.Any]))
-      scheduledOnOrAfter.foreach(__v => __obj.update("scheduledOnOrAfter", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      scheduledBefore.foreach(__v => __obj.updateDynamic("scheduledBefore")(__v.asInstanceOf[js.Any]))
+      scheduledOnOrAfter.foreach(__v => __obj.updateDynamic("scheduledOnOrAfter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDatasetContentsRequest]
     }
   }
@@ -1895,9 +1899,9 @@ package iotanalytics {
         datasetContentSummaries: js.UndefOr[DatasetContentSummaries] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDatasetContentsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      datasetContentSummaries.foreach(__v => __obj.update("datasetContentSummaries", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      datasetContentSummaries.foreach(__v => __obj.updateDynamic("datasetContentSummaries")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDatasetContentsResponse]
     }
   }
@@ -1913,9 +1917,9 @@ package iotanalytics {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDatasetsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDatasetsRequest]
     }
   }
@@ -1931,9 +1935,9 @@ package iotanalytics {
         datasetSummaries: js.UndefOr[DatasetSummaries] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDatasetsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      datasetSummaries.foreach(__v => __obj.update("datasetSummaries", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      datasetSummaries.foreach(__v => __obj.updateDynamic("datasetSummaries")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDatasetsResponse]
     }
   }
@@ -1949,9 +1953,9 @@ package iotanalytics {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDatastoresRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDatastoresRequest]
     }
   }
@@ -1967,9 +1971,9 @@ package iotanalytics {
         datastoreSummaries: js.UndefOr[DatastoreSummaries] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDatastoresResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      datastoreSummaries.foreach(__v => __obj.update("datastoreSummaries", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      datastoreSummaries.foreach(__v => __obj.updateDynamic("datastoreSummaries")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDatastoresResponse]
     }
   }
@@ -1985,9 +1989,9 @@ package iotanalytics {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListPipelinesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPipelinesRequest]
     }
   }
@@ -2003,9 +2007,9 @@ package iotanalytics {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         pipelineSummaries: js.UndefOr[PipelineSummaries] = js.undefined
     ): ListPipelinesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      pipelineSummaries.foreach(__v => __obj.update("pipelineSummaries", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      pipelineSummaries.foreach(__v => __obj.updateDynamic("pipelineSummaries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPipelinesResponse]
     }
   }
@@ -2019,7 +2023,7 @@ package iotanalytics {
     def apply(
         resourceArn: ResourceArn
     ): ListTagsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
 
@@ -2036,8 +2040,8 @@ package iotanalytics {
     def apply(
         tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsForResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
@@ -2064,7 +2068,7 @@ package iotanalytics {
         level: LoggingLevel,
         roleArn: RoleArn
     ): LoggingOptions = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "enabled" -> enabled.asInstanceOf[js.Any],
         "level"   -> level.asInstanceOf[js.Any],
         "roleArn" -> roleArn.asInstanceOf[js.Any]
@@ -2092,13 +2096,13 @@ package iotanalytics {
         name: ActivityName,
         next: js.UndefOr[ActivityName] = js.undefined
     ): MathActivity = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "attribute" -> attribute.asInstanceOf[js.Any],
         "math"      -> math.asInstanceOf[js.Any],
         "name"      -> name.asInstanceOf[js.Any]
       )
 
-      next.foreach(__v => __obj.update("next", __v.asInstanceOf[js.Any]))
+      next.foreach(__v => __obj.updateDynamic("next")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MathActivity]
     }
   }
@@ -2117,7 +2121,7 @@ package iotanalytics {
         messageId: MessageId,
         payload: MessagePayload
     ): Message = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "messageId" -> messageId.asInstanceOf[js.Any],
         "payload"   -> payload.asInstanceOf[js.Any]
       )
@@ -2138,7 +2142,7 @@ package iotanalytics {
     def apply(
         fileName: OutputFileName
     ): OutputFileUriValue = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "fileName" -> fileName.asInstanceOf[js.Any]
       )
 
@@ -2168,13 +2172,13 @@ package iotanalytics {
         name: js.UndefOr[PipelineName] = js.undefined,
         reprocessingSummaries: js.UndefOr[ReprocessingSummaries] = js.undefined
     ): Pipeline = {
-      val __obj = js.Dictionary.empty[js.Any]
-      activities.foreach(__v => __obj.update("activities", __v.asInstanceOf[js.Any]))
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
-      lastUpdateTime.foreach(__v => __obj.update("lastUpdateTime", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      reprocessingSummaries.foreach(__v => __obj.update("reprocessingSummaries", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      activities.foreach(__v => __obj.updateDynamic("activities")(__v.asInstanceOf[js.Any]))
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      lastUpdateTime.foreach(__v => __obj.updateDynamic("lastUpdateTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      reprocessingSummaries.foreach(__v => __obj.updateDynamic("reprocessingSummaries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Pipeline]
     }
   }
@@ -2209,17 +2213,17 @@ package iotanalytics {
         removeAttributes: js.UndefOr[RemoveAttributesActivity] = js.undefined,
         selectAttributes: js.UndefOr[SelectAttributesActivity] = js.undefined
     ): PipelineActivity = {
-      val __obj = js.Dictionary.empty[js.Any]
-      addAttributes.foreach(__v => __obj.update("addAttributes", __v.asInstanceOf[js.Any]))
-      channel.foreach(__v => __obj.update("channel", __v.asInstanceOf[js.Any]))
-      datastore.foreach(__v => __obj.update("datastore", __v.asInstanceOf[js.Any]))
-      deviceRegistryEnrich.foreach(__v => __obj.update("deviceRegistryEnrich", __v.asInstanceOf[js.Any]))
-      deviceShadowEnrich.foreach(__v => __obj.update("deviceShadowEnrich", __v.asInstanceOf[js.Any]))
-      filter.foreach(__v => __obj.update("filter", __v.asInstanceOf[js.Any]))
-      lambda.foreach(__v => __obj.update("lambda", __v.asInstanceOf[js.Any]))
-      math.foreach(__v => __obj.update("math", __v.asInstanceOf[js.Any]))
-      removeAttributes.foreach(__v => __obj.update("removeAttributes", __v.asInstanceOf[js.Any]))
-      selectAttributes.foreach(__v => __obj.update("selectAttributes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      addAttributes.foreach(__v => __obj.updateDynamic("addAttributes")(__v.asInstanceOf[js.Any]))
+      channel.foreach(__v => __obj.updateDynamic("channel")(__v.asInstanceOf[js.Any]))
+      datastore.foreach(__v => __obj.updateDynamic("datastore")(__v.asInstanceOf[js.Any]))
+      deviceRegistryEnrich.foreach(__v => __obj.updateDynamic("deviceRegistryEnrich")(__v.asInstanceOf[js.Any]))
+      deviceShadowEnrich.foreach(__v => __obj.updateDynamic("deviceShadowEnrich")(__v.asInstanceOf[js.Any]))
+      filter.foreach(__v => __obj.updateDynamic("filter")(__v.asInstanceOf[js.Any]))
+      lambda.foreach(__v => __obj.updateDynamic("lambda")(__v.asInstanceOf[js.Any]))
+      math.foreach(__v => __obj.updateDynamic("math")(__v.asInstanceOf[js.Any]))
+      removeAttributes.foreach(__v => __obj.updateDynamic("removeAttributes")(__v.asInstanceOf[js.Any]))
+      selectAttributes.foreach(__v => __obj.updateDynamic("selectAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PipelineActivity]
     }
   }
@@ -2242,11 +2246,11 @@ package iotanalytics {
         pipelineName: js.UndefOr[PipelineName] = js.undefined,
         reprocessingSummaries: js.UndefOr[ReprocessingSummaries] = js.undefined
     ): PipelineSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
-      lastUpdateTime.foreach(__v => __obj.update("lastUpdateTime", __v.asInstanceOf[js.Any]))
-      pipelineName.foreach(__v => __obj.update("pipelineName", __v.asInstanceOf[js.Any]))
-      reprocessingSummaries.foreach(__v => __obj.update("reprocessingSummaries", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      lastUpdateTime.foreach(__v => __obj.updateDynamic("lastUpdateTime")(__v.asInstanceOf[js.Any]))
+      pipelineName.foreach(__v => __obj.updateDynamic("pipelineName")(__v.asInstanceOf[js.Any]))
+      reprocessingSummaries.foreach(__v => __obj.updateDynamic("reprocessingSummaries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PipelineSummary]
     }
   }
@@ -2260,7 +2264,7 @@ package iotanalytics {
     def apply(
         loggingOptions: LoggingOptions
     ): PutLoggingOptionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "loggingOptions" -> loggingOptions.asInstanceOf[js.Any]
       )
 
@@ -2280,8 +2284,8 @@ package iotanalytics {
     def apply(
         deltaTime: js.UndefOr[DeltaTime] = js.undefined
     ): QueryFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deltaTime.foreach(__v => __obj.update("deltaTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deltaTime.foreach(__v => __obj.updateDynamic("deltaTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[QueryFilter]
     }
   }
@@ -2302,12 +2306,12 @@ package iotanalytics {
         name: ActivityName,
         next: js.UndefOr[ActivityName] = js.undefined
     ): RemoveAttributesActivity = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "attributes" -> attributes.asInstanceOf[js.Any],
         "name"       -> name.asInstanceOf[js.Any]
       )
 
-      next.foreach(__v => __obj.update("next", __v.asInstanceOf[js.Any]))
+      next.foreach(__v => __obj.updateDynamic("next")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RemoveAttributesActivity]
     }
   }
@@ -2337,10 +2341,10 @@ package iotanalytics {
         id: js.UndefOr[ReprocessingId] = js.undefined,
         status: js.UndefOr[ReprocessingStatus] = js.undefined
     ): ReprocessingSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReprocessingSummary]
     }
   }
@@ -2359,7 +2363,7 @@ package iotanalytics {
         computeType: ComputeType,
         volumeSizeInGB: VolumeSizeInGB
     ): ResourceConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "computeType"    -> computeType.asInstanceOf[js.Any],
         "volumeSizeInGB" -> volumeSizeInGB.asInstanceOf[js.Any]
       )
@@ -2382,9 +2386,9 @@ package iotanalytics {
         numberOfDays: js.UndefOr[RetentionPeriodInDays] = js.undefined,
         unlimited: js.UndefOr[UnlimitedRetentionPeriod] = js.undefined
     ): RetentionPeriod = {
-      val __obj = js.Dictionary.empty[js.Any]
-      numberOfDays.foreach(__v => __obj.update("numberOfDays", __v.asInstanceOf[js.Any]))
-      unlimited.foreach(__v => __obj.update("unlimited", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      numberOfDays.foreach(__v => __obj.updateDynamic("numberOfDays")(__v.asInstanceOf[js.Any]))
+      unlimited.foreach(__v => __obj.updateDynamic("unlimited")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RetentionPeriod]
     }
   }
@@ -2400,7 +2404,7 @@ package iotanalytics {
         payloads: MessagePayloads,
         pipelineActivity: PipelineActivity
     ): RunPipelineActivityRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "payloads"         -> payloads.asInstanceOf[js.Any],
         "pipelineActivity" -> pipelineActivity.asInstanceOf[js.Any]
       )
@@ -2420,9 +2424,9 @@ package iotanalytics {
         logResult: js.UndefOr[LogResult] = js.undefined,
         payloads: js.UndefOr[MessagePayloads] = js.undefined
     ): RunPipelineActivityResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      logResult.foreach(__v => __obj.update("logResult", __v.asInstanceOf[js.Any]))
-      payloads.foreach(__v => __obj.update("payloads", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      logResult.foreach(__v => __obj.updateDynamic("logResult")(__v.asInstanceOf[js.Any]))
+      payloads.foreach(__v => __obj.updateDynamic("payloads")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RunPipelineActivityResponse]
     }
   }
@@ -2445,13 +2449,13 @@ package iotanalytics {
         roleArn: RoleArn,
         glueConfiguration: js.UndefOr[GlueConfiguration] = js.undefined
     ): S3DestinationConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "bucket"  -> bucket.asInstanceOf[js.Any],
         "key"     -> key.asInstanceOf[js.Any],
         "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
-      glueConfiguration.foreach(__v => __obj.update("glueConfiguration", __v.asInstanceOf[js.Any]))
+      glueConfiguration.foreach(__v => __obj.updateDynamic("glueConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3DestinationConfiguration]
     }
   }
@@ -2471,13 +2475,13 @@ package iotanalytics {
         maxMessages: js.UndefOr[MaxMessages] = js.undefined,
         startTime: js.UndefOr[StartTime] = js.undefined
     ): SampleChannelDataRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "channelName" -> channelName.asInstanceOf[js.Any]
       )
 
-      endTime.foreach(__v => __obj.update("endTime", __v.asInstanceOf[js.Any]))
-      maxMessages.foreach(__v => __obj.update("maxMessages", __v.asInstanceOf[js.Any]))
-      startTime.foreach(__v => __obj.update("startTime", __v.asInstanceOf[js.Any]))
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      maxMessages.foreach(__v => __obj.updateDynamic("maxMessages")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SampleChannelDataRequest]
     }
   }
@@ -2491,8 +2495,8 @@ package iotanalytics {
     def apply(
         payloads: js.UndefOr[MessagePayloads] = js.undefined
     ): SampleChannelDataResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      payloads.foreach(__v => __obj.update("payloads", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      payloads.foreach(__v => __obj.updateDynamic("payloads")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SampleChannelDataResponse]
     }
   }
@@ -2509,8 +2513,8 @@ package iotanalytics {
     def apply(
         expression: js.UndefOr[ScheduleExpression] = js.undefined
     ): Schedule = {
-      val __obj = js.Dictionary.empty[js.Any]
-      expression.foreach(__v => __obj.update("expression", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      expression.foreach(__v => __obj.updateDynamic("expression")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Schedule]
     }
   }
@@ -2531,12 +2535,12 @@ package iotanalytics {
         name: ActivityName,
         next: js.UndefOr[ActivityName] = js.undefined
     ): SelectAttributesActivity = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "attributes" -> attributes.asInstanceOf[js.Any],
         "name"       -> name.asInstanceOf[js.Any]
       )
 
-      next.foreach(__v => __obj.update("next", __v.asInstanceOf[js.Any]))
+      next.foreach(__v => __obj.updateDynamic("next")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SelectAttributesActivity]
     }
   }
@@ -2550,7 +2554,7 @@ package iotanalytics {
   object ServiceManagedChannelS3Storage {
     def apply(
         ): ServiceManagedChannelS3Storage = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ServiceManagedChannelS3Storage]
     }
@@ -2565,7 +2569,7 @@ package iotanalytics {
   object ServiceManagedChannelS3StorageSummary {
     def apply(
         ): ServiceManagedChannelS3StorageSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ServiceManagedChannelS3StorageSummary]
     }
@@ -2580,7 +2584,7 @@ package iotanalytics {
   object ServiceManagedDatastoreS3Storage {
     def apply(
         ): ServiceManagedDatastoreS3Storage = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ServiceManagedDatastoreS3Storage]
     }
@@ -2595,7 +2599,7 @@ package iotanalytics {
   object ServiceManagedDatastoreS3StorageSummary {
     def apply(
         ): ServiceManagedDatastoreS3StorageSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ServiceManagedDatastoreS3StorageSummary]
     }
@@ -2615,11 +2619,11 @@ package iotanalytics {
         sqlQuery: SqlQuery,
         filters: js.UndefOr[QueryFilters] = js.undefined
     ): SqlQueryDatasetAction = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "sqlQuery" -> sqlQuery.asInstanceOf[js.Any]
       )
 
-      filters.foreach(__v => __obj.update("filters", __v.asInstanceOf[js.Any]))
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SqlQueryDatasetAction]
     }
   }
@@ -2637,12 +2641,12 @@ package iotanalytics {
         endTime: js.UndefOr[EndTime] = js.undefined,
         startTime: js.UndefOr[StartTime] = js.undefined
     ): StartPipelineReprocessingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pipelineName" -> pipelineName.asInstanceOf[js.Any]
       )
 
-      endTime.foreach(__v => __obj.update("endTime", __v.asInstanceOf[js.Any]))
-      startTime.foreach(__v => __obj.update("startTime", __v.asInstanceOf[js.Any]))
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartPipelineReprocessingRequest]
     }
   }
@@ -2656,8 +2660,8 @@ package iotanalytics {
     def apply(
         reprocessingId: js.UndefOr[ReprocessingId] = js.undefined
     ): StartPipelineReprocessingResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      reprocessingId.foreach(__v => __obj.update("reprocessingId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      reprocessingId.foreach(__v => __obj.updateDynamic("reprocessingId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartPipelineReprocessingResponse]
     }
   }
@@ -2676,7 +2680,7 @@ package iotanalytics {
         key: TagKey,
         value: TagValue
     ): Tag = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "key"   -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
@@ -2696,7 +2700,7 @@ package iotanalytics {
         resourceArn: ResourceArn,
         tags: TagList
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags"        -> tags.asInstanceOf[js.Any]
       )
@@ -2711,7 +2715,7 @@ package iotanalytics {
   object TagResourceResponse {
     def apply(
         ): TagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -2729,7 +2733,7 @@ package iotanalytics {
     def apply(
         name: DatasetName
     ): TriggeringDataset = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
 
@@ -2748,7 +2752,7 @@ package iotanalytics {
         resourceArn: ResourceArn,
         tagKeys: TagKeyList
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
       )
@@ -2763,7 +2767,7 @@ package iotanalytics {
   object UntagResourceResponse {
     def apply(
         ): UntagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -2782,12 +2786,12 @@ package iotanalytics {
         channelStorage: js.UndefOr[ChannelStorage] = js.undefined,
         retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined
     ): UpdateChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "channelName" -> channelName.asInstanceOf[js.Any]
       )
 
-      channelStorage.foreach(__v => __obj.update("channelStorage", __v.asInstanceOf[js.Any]))
-      retentionPeriod.foreach(__v => __obj.update("retentionPeriod", __v.asInstanceOf[js.Any]))
+      channelStorage.foreach(__v => __obj.updateDynamic("channelStorage")(__v.asInstanceOf[js.Any]))
+      retentionPeriod.foreach(__v => __obj.updateDynamic("retentionPeriod")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateChannelRequest]
     }
   }
@@ -2811,15 +2815,15 @@ package iotanalytics {
         triggers: js.UndefOr[DatasetTriggers] = js.undefined,
         versioningConfiguration: js.UndefOr[VersioningConfiguration] = js.undefined
     ): UpdateDatasetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "actions"     -> actions.asInstanceOf[js.Any],
         "datasetName" -> datasetName.asInstanceOf[js.Any]
       )
 
-      contentDeliveryRules.foreach(__v => __obj.update("contentDeliveryRules", __v.asInstanceOf[js.Any]))
-      retentionPeriod.foreach(__v => __obj.update("retentionPeriod", __v.asInstanceOf[js.Any]))
-      triggers.foreach(__v => __obj.update("triggers", __v.asInstanceOf[js.Any]))
-      versioningConfiguration.foreach(__v => __obj.update("versioningConfiguration", __v.asInstanceOf[js.Any]))
+      contentDeliveryRules.foreach(__v => __obj.updateDynamic("contentDeliveryRules")(__v.asInstanceOf[js.Any]))
+      retentionPeriod.foreach(__v => __obj.updateDynamic("retentionPeriod")(__v.asInstanceOf[js.Any]))
+      triggers.foreach(__v => __obj.updateDynamic("triggers")(__v.asInstanceOf[js.Any]))
+      versioningConfiguration.foreach(__v => __obj.updateDynamic("versioningConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDatasetRequest]
     }
   }
@@ -2837,12 +2841,12 @@ package iotanalytics {
         datastoreStorage: js.UndefOr[DatastoreStorage] = js.undefined,
         retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined
     ): UpdateDatastoreRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "datastoreName" -> datastoreName.asInstanceOf[js.Any]
       )
 
-      datastoreStorage.foreach(__v => __obj.update("datastoreStorage", __v.asInstanceOf[js.Any]))
-      retentionPeriod.foreach(__v => __obj.update("retentionPeriod", __v.asInstanceOf[js.Any]))
+      datastoreStorage.foreach(__v => __obj.updateDynamic("datastoreStorage")(__v.asInstanceOf[js.Any]))
+      retentionPeriod.foreach(__v => __obj.updateDynamic("retentionPeriod")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDatastoreRequest]
     }
   }
@@ -2858,7 +2862,7 @@ package iotanalytics {
         pipelineActivities: PipelineActivities,
         pipelineName: PipelineName
     ): UpdatePipelineRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pipelineActivities" -> pipelineActivities.asInstanceOf[js.Any],
         "pipelineName"       -> pipelineName.asInstanceOf[js.Any]
       )
@@ -2887,14 +2891,16 @@ package iotanalytics {
         outputFileUriValue: js.UndefOr[OutputFileUriValue] = js.undefined,
         stringValue: js.UndefOr[StringValue] = js.undefined
     ): Variable = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
 
-      datasetContentVersionValue.foreach(__v => __obj.update("datasetContentVersionValue", __v.asInstanceOf[js.Any]))
-      doubleValue.foreach(__v => __obj.update("doubleValue", __v.asInstanceOf[js.Any]))
-      outputFileUriValue.foreach(__v => __obj.update("outputFileUriValue", __v.asInstanceOf[js.Any]))
-      stringValue.foreach(__v => __obj.update("stringValue", __v.asInstanceOf[js.Any]))
+      datasetContentVersionValue.foreach(
+        __v => __obj.updateDynamic("datasetContentVersionValue")(__v.asInstanceOf[js.Any])
+      )
+      doubleValue.foreach(__v => __obj.updateDynamic("doubleValue")(__v.asInstanceOf[js.Any]))
+      outputFileUriValue.foreach(__v => __obj.updateDynamic("outputFileUriValue")(__v.asInstanceOf[js.Any]))
+      stringValue.foreach(__v => __obj.updateDynamic("stringValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Variable]
     }
   }
@@ -2913,9 +2919,9 @@ package iotanalytics {
         maxVersions: js.UndefOr[MaxVersions] = js.undefined,
         unlimited: js.UndefOr[UnlimitedVersioning] = js.undefined
     ): VersioningConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxVersions.foreach(__v => __obj.update("maxVersions", __v.asInstanceOf[js.Any]))
-      unlimited.foreach(__v => __obj.update("unlimited", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxVersions.foreach(__v => __obj.updateDynamic("maxVersions")(__v.asInstanceOf[js.Any]))
+      unlimited.foreach(__v => __obj.updateDynamic("unlimited")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VersioningConfiguration]
     }
   }

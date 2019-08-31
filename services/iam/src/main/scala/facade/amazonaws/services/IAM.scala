@@ -679,15 +679,17 @@ package iam {
         Region: js.UndefOr[stringType] = js.undefined,
         TotalAuthenticatedEntities: js.UndefOr[integerType] = js.undefined
     ): AccessDetail = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServiceName"      -> ServiceName.asInstanceOf[js.Any],
         "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any]
       )
 
-      EntityPath.foreach(__v => __obj.update("EntityPath", __v.asInstanceOf[js.Any]))
-      LastAuthenticatedTime.foreach(__v => __obj.update("LastAuthenticatedTime", __v.asInstanceOf[js.Any]))
-      Region.foreach(__v => __obj.update("Region", __v.asInstanceOf[js.Any]))
-      TotalAuthenticatedEntities.foreach(__v => __obj.update("TotalAuthenticatedEntities", __v.asInstanceOf[js.Any]))
+      EntityPath.foreach(__v => __obj.updateDynamic("EntityPath")(__v.asInstanceOf[js.Any]))
+      LastAuthenticatedTime.foreach(__v => __obj.updateDynamic("LastAuthenticatedTime")(__v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
+      TotalAuthenticatedEntities.foreach(
+        __v => __obj.updateDynamic("TotalAuthenticatedEntities")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[AccessDetail]
     }
   }
@@ -715,14 +717,14 @@ package iam {
         UserName: userNameType,
         CreateDate: js.UndefOr[dateType] = js.undefined
     ): AccessKey = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccessKeyId"     -> AccessKeyId.asInstanceOf[js.Any],
         "SecretAccessKey" -> SecretAccessKey.asInstanceOf[js.Any],
         "Status"          -> Status.asInstanceOf[js.Any],
         "UserName"        -> UserName.asInstanceOf[js.Any]
       )
 
-      CreateDate.foreach(__v => __obj.update("CreateDate", __v.asInstanceOf[js.Any]))
+      CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AccessKey]
     }
   }
@@ -744,7 +746,7 @@ package iam {
         Region: stringType,
         ServiceName: stringType
     ): AccessKeyLastUsed = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LastUsedDate" -> LastUsedDate.asInstanceOf[js.Any],
         "Region"       -> Region.asInstanceOf[js.Any],
         "ServiceName"  -> ServiceName.asInstanceOf[js.Any]
@@ -773,11 +775,11 @@ package iam {
         Status: js.UndefOr[statusType] = js.undefined,
         UserName: js.UndefOr[userNameType] = js.undefined
     ): AccessKeyMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccessKeyId.foreach(__v => __obj.update("AccessKeyId", __v.asInstanceOf[js.Any]))
-      CreateDate.foreach(__v => __obj.update("CreateDate", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccessKeyId.foreach(__v => __obj.updateDynamic("AccessKeyId")(__v.asInstanceOf[js.Any]))
+      CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AccessKeyMetadata]
     }
   }
@@ -793,7 +795,7 @@ package iam {
         ClientID: clientIDType,
         OpenIDConnectProviderArn: arnType
     ): AddClientIDToOpenIDConnectProviderRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClientID"                 -> ClientID.asInstanceOf[js.Any],
         "OpenIDConnectProviderArn" -> OpenIDConnectProviderArn.asInstanceOf[js.Any]
       )
@@ -813,7 +815,7 @@ package iam {
         InstanceProfileName: instanceProfileNameType,
         RoleName: roleNameType
     ): AddRoleToInstanceProfileRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceProfileName" -> InstanceProfileName.asInstanceOf[js.Any],
         "RoleName"            -> RoleName.asInstanceOf[js.Any]
       )
@@ -833,7 +835,7 @@ package iam {
         GroupName: groupNameType,
         UserName: existingUserNameType
     ): AddUserToGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupName" -> GroupName.asInstanceOf[js.Any],
         "UserName"  -> UserName.asInstanceOf[js.Any]
       )
@@ -853,7 +855,7 @@ package iam {
         GroupName: groupNameType,
         PolicyArn: arnType
     ): AttachGroupPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupName" -> GroupName.asInstanceOf[js.Any],
         "PolicyArn" -> PolicyArn.asInstanceOf[js.Any]
       )
@@ -873,7 +875,7 @@ package iam {
         PolicyArn: arnType,
         RoleName: roleNameType
     ): AttachRolePolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyArn" -> PolicyArn.asInstanceOf[js.Any],
         "RoleName"  -> RoleName.asInstanceOf[js.Any]
       )
@@ -893,7 +895,7 @@ package iam {
         PolicyArn: arnType,
         UserName: userNameType
     ): AttachUserPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyArn" -> PolicyArn.asInstanceOf[js.Any],
         "UserName"  -> UserName.asInstanceOf[js.Any]
       )
@@ -918,9 +920,9 @@ package iam {
         PermissionsBoundaryArn: js.UndefOr[arnType] = js.undefined,
         PermissionsBoundaryType: js.UndefOr[PermissionsBoundaryAttachmentType] = js.undefined
     ): AttachedPermissionsBoundary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PermissionsBoundaryArn.foreach(__v => __obj.update("PermissionsBoundaryArn", __v.asInstanceOf[js.Any]))
-      PermissionsBoundaryType.foreach(__v => __obj.update("PermissionsBoundaryType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PermissionsBoundaryArn.foreach(__v => __obj.updateDynamic("PermissionsBoundaryArn")(__v.asInstanceOf[js.Any]))
+      PermissionsBoundaryType.foreach(__v => __obj.updateDynamic("PermissionsBoundaryType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttachedPermissionsBoundary]
     }
   }
@@ -941,9 +943,9 @@ package iam {
         PolicyArn: js.UndefOr[arnType] = js.undefined,
         PolicyName: js.UndefOr[policyNameType] = js.undefined
     ): AttachedPolicy = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PolicyArn.foreach(__v => __obj.update("PolicyArn", __v.asInstanceOf[js.Any]))
-      PolicyName.foreach(__v => __obj.update("PolicyName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PolicyArn.foreach(__v => __obj.updateDynamic("PolicyArn")(__v.asInstanceOf[js.Any]))
+      PolicyName.foreach(__v => __obj.updateDynamic("PolicyName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttachedPolicy]
     }
   }
@@ -959,7 +961,7 @@ package iam {
         NewPassword: passwordType,
         OldPassword: passwordType
     ): ChangePasswordRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "NewPassword" -> NewPassword.asInstanceOf[js.Any],
         "OldPassword" -> OldPassword.asInstanceOf[js.Any]
       )
@@ -985,10 +987,10 @@ package iam {
         ContextKeyType: js.UndefOr[ContextKeyTypeEnum] = js.undefined,
         ContextKeyValues: js.UndefOr[ContextKeyValueListType] = js.undefined
     ): ContextEntry = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ContextKeyName.foreach(__v => __obj.update("ContextKeyName", __v.asInstanceOf[js.Any]))
-      ContextKeyType.foreach(__v => __obj.update("ContextKeyType", __v.asInstanceOf[js.Any]))
-      ContextKeyValues.foreach(__v => __obj.update("ContextKeyValues", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ContextKeyName.foreach(__v => __obj.updateDynamic("ContextKeyName")(__v.asInstanceOf[js.Any]))
+      ContextKeyType.foreach(__v => __obj.updateDynamic("ContextKeyType")(__v.asInstanceOf[js.Any]))
+      ContextKeyValues.foreach(__v => __obj.updateDynamic("ContextKeyValues")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContextEntry]
     }
   }
@@ -1034,8 +1036,8 @@ package iam {
     def apply(
         UserName: js.UndefOr[existingUserNameType] = js.undefined
     ): CreateAccessKeyRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAccessKeyRequest]
     }
   }
@@ -1052,7 +1054,7 @@ package iam {
     def apply(
         AccessKey: AccessKey
     ): CreateAccessKeyResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccessKey" -> AccessKey.asInstanceOf[js.Any]
       )
 
@@ -1069,7 +1071,7 @@ package iam {
     def apply(
         AccountAlias: accountAliasType
     ): CreateAccountAliasRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountAlias" -> AccountAlias.asInstanceOf[js.Any]
       )
 
@@ -1088,11 +1090,11 @@ package iam {
         GroupName: groupNameType,
         Path: js.UndefOr[pathType] = js.undefined
     ): CreateGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupName" -> GroupName.asInstanceOf[js.Any]
       )
 
-      Path.foreach(__v => __obj.update("Path", __v.asInstanceOf[js.Any]))
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGroupRequest]
     }
   }
@@ -1109,7 +1111,7 @@ package iam {
     def apply(
         Group: Group
     ): CreateGroupResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Group" -> Group.asInstanceOf[js.Any]
       )
 
@@ -1128,11 +1130,11 @@ package iam {
         InstanceProfileName: instanceProfileNameType,
         Path: js.UndefOr[pathType] = js.undefined
     ): CreateInstanceProfileRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceProfileName" -> InstanceProfileName.asInstanceOf[js.Any]
       )
 
-      Path.foreach(__v => __obj.update("Path", __v.asInstanceOf[js.Any]))
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateInstanceProfileRequest]
     }
   }
@@ -1149,7 +1151,7 @@ package iam {
     def apply(
         InstanceProfile: InstanceProfile
     ): CreateInstanceProfileResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceProfile" -> InstanceProfile.asInstanceOf[js.Any]
       )
 
@@ -1170,12 +1172,12 @@ package iam {
         UserName: userNameType,
         PasswordResetRequired: js.UndefOr[booleanType] = js.undefined
     ): CreateLoginProfileRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Password" -> Password.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
-      PasswordResetRequired.foreach(__v => __obj.update("PasswordResetRequired", __v.asInstanceOf[js.Any]))
+      PasswordResetRequired.foreach(__v => __obj.updateDynamic("PasswordResetRequired")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLoginProfileRequest]
     }
   }
@@ -1192,7 +1194,7 @@ package iam {
     def apply(
         LoginProfile: LoginProfile
     ): CreateLoginProfileResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LoginProfile" -> LoginProfile.asInstanceOf[js.Any]
       )
 
@@ -1213,12 +1215,12 @@ package iam {
         Url: OpenIDConnectProviderUrlType,
         ClientIDList: js.UndefOr[clientIDListType] = js.undefined
     ): CreateOpenIDConnectProviderRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ThumbprintList" -> ThumbprintList.asInstanceOf[js.Any],
         "Url"            -> Url.asInstanceOf[js.Any]
       )
 
-      ClientIDList.foreach(__v => __obj.update("ClientIDList", __v.asInstanceOf[js.Any]))
+      ClientIDList.foreach(__v => __obj.updateDynamic("ClientIDList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateOpenIDConnectProviderRequest]
     }
   }
@@ -1235,8 +1237,8 @@ package iam {
     def apply(
         OpenIDConnectProviderArn: js.UndefOr[arnType] = js.undefined
     ): CreateOpenIDConnectProviderResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      OpenIDConnectProviderArn.foreach(__v => __obj.update("OpenIDConnectProviderArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      OpenIDConnectProviderArn.foreach(__v => __obj.updateDynamic("OpenIDConnectProviderArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateOpenIDConnectProviderResponse]
     }
   }
@@ -1256,13 +1258,13 @@ package iam {
         Description: js.UndefOr[policyDescriptionType] = js.undefined,
         Path: js.UndefOr[policyPathType] = js.undefined
     ): CreatePolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyDocument" -> PolicyDocument.asInstanceOf[js.Any],
         "PolicyName"     -> PolicyName.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Path.foreach(__v => __obj.update("Path", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePolicyRequest]
     }
   }
@@ -1279,8 +1281,8 @@ package iam {
     def apply(
         Policy: js.UndefOr[Policy] = js.undefined
     ): CreatePolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePolicyResponse]
     }
   }
@@ -1298,12 +1300,12 @@ package iam {
         PolicyDocument: policyDocumentType,
         SetAsDefault: js.UndefOr[booleanType] = js.undefined
     ): CreatePolicyVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyArn"      -> PolicyArn.asInstanceOf[js.Any],
         "PolicyDocument" -> PolicyDocument.asInstanceOf[js.Any]
       )
 
-      SetAsDefault.foreach(__v => __obj.update("SetAsDefault", __v.asInstanceOf[js.Any]))
+      SetAsDefault.foreach(__v => __obj.updateDynamic("SetAsDefault")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePolicyVersionRequest]
     }
   }
@@ -1320,8 +1322,8 @@ package iam {
     def apply(
         PolicyVersion: js.UndefOr[PolicyVersion] = js.undefined
     ): CreatePolicyVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PolicyVersion.foreach(__v => __obj.update("PolicyVersion", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PolicyVersion.foreach(__v => __obj.updateDynamic("PolicyVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePolicyVersionResponse]
     }
   }
@@ -1347,16 +1349,16 @@ package iam {
         PermissionsBoundary: js.UndefOr[arnType] = js.undefined,
         Tags: js.UndefOr[tagListType] = js.undefined
     ): CreateRoleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AssumeRolePolicyDocument" -> AssumeRolePolicyDocument.asInstanceOf[js.Any],
         "RoleName"                 -> RoleName.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      MaxSessionDuration.foreach(__v => __obj.update("MaxSessionDuration", __v.asInstanceOf[js.Any]))
-      Path.foreach(__v => __obj.update("Path", __v.asInstanceOf[js.Any]))
-      PermissionsBoundary.foreach(__v => __obj.update("PermissionsBoundary", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      MaxSessionDuration.foreach(__v => __obj.updateDynamic("MaxSessionDuration")(__v.asInstanceOf[js.Any]))
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
+      PermissionsBoundary.foreach(__v => __obj.updateDynamic("PermissionsBoundary")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRoleRequest]
     }
   }
@@ -1373,7 +1375,7 @@ package iam {
     def apply(
         Role: Role
     ): CreateRoleResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Role" -> Role.asInstanceOf[js.Any]
       )
 
@@ -1392,7 +1394,7 @@ package iam {
         Name: SAMLProviderNameType,
         SAMLMetadataDocument: SAMLMetadataDocumentType
     ): CreateSAMLProviderRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"                 -> Name.asInstanceOf[js.Any],
         "SAMLMetadataDocument" -> SAMLMetadataDocument.asInstanceOf[js.Any]
       )
@@ -1413,8 +1415,8 @@ package iam {
     def apply(
         SAMLProviderArn: js.UndefOr[arnType] = js.undefined
     ): CreateSAMLProviderResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SAMLProviderArn.foreach(__v => __obj.update("SAMLProviderArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SAMLProviderArn.foreach(__v => __obj.updateDynamic("SAMLProviderArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSAMLProviderResponse]
     }
   }
@@ -1432,12 +1434,12 @@ package iam {
         CustomSuffix: js.UndefOr[customSuffixType] = js.undefined,
         Description: js.UndefOr[roleDescriptionType] = js.undefined
     ): CreateServiceLinkedRoleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AWSServiceName" -> AWSServiceName.asInstanceOf[js.Any]
       )
 
-      CustomSuffix.foreach(__v => __obj.update("CustomSuffix", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      CustomSuffix.foreach(__v => __obj.updateDynamic("CustomSuffix")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateServiceLinkedRoleRequest]
     }
   }
@@ -1451,8 +1453,8 @@ package iam {
     def apply(
         Role: js.UndefOr[Role] = js.undefined
     ): CreateServiceLinkedRoleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateServiceLinkedRoleResponse]
     }
   }
@@ -1468,7 +1470,7 @@ package iam {
         ServiceName: serviceName,
         UserName: userNameType
     ): CreateServiceSpecificCredentialRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServiceName" -> ServiceName.asInstanceOf[js.Any],
         "UserName"    -> UserName.asInstanceOf[js.Any]
       )
@@ -1486,8 +1488,10 @@ package iam {
     def apply(
         ServiceSpecificCredential: js.UndefOr[ServiceSpecificCredential] = js.undefined
     ): CreateServiceSpecificCredentialResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ServiceSpecificCredential.foreach(__v => __obj.update("ServiceSpecificCredential", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ServiceSpecificCredential.foreach(
+        __v => __obj.updateDynamic("ServiceSpecificCredential")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[CreateServiceSpecificCredentialResponse]
     }
   }
@@ -1507,13 +1511,13 @@ package iam {
         PermissionsBoundary: js.UndefOr[arnType] = js.undefined,
         Tags: js.UndefOr[tagListType] = js.undefined
     ): CreateUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
-      Path.foreach(__v => __obj.update("Path", __v.asInstanceOf[js.Any]))
-      PermissionsBoundary.foreach(__v => __obj.update("PermissionsBoundary", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
+      PermissionsBoundary.foreach(__v => __obj.updateDynamic("PermissionsBoundary")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateUserRequest]
     }
   }
@@ -1530,8 +1534,8 @@ package iam {
     def apply(
         User: js.UndefOr[User] = js.undefined
     ): CreateUserResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      User.foreach(__v => __obj.update("User", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateUserResponse]
     }
   }
@@ -1547,11 +1551,11 @@ package iam {
         VirtualMFADeviceName: virtualMFADeviceName,
         Path: js.UndefOr[pathType] = js.undefined
     ): CreateVirtualMFADeviceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VirtualMFADeviceName" -> VirtualMFADeviceName.asInstanceOf[js.Any]
       )
 
-      Path.foreach(__v => __obj.update("Path", __v.asInstanceOf[js.Any]))
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateVirtualMFADeviceRequest]
     }
   }
@@ -1568,7 +1572,7 @@ package iam {
     def apply(
         VirtualMFADevice: VirtualMFADevice
     ): CreateVirtualMFADeviceResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VirtualMFADevice" -> VirtualMFADevice.asInstanceOf[js.Any]
       )
 
@@ -1587,7 +1591,7 @@ package iam {
         SerialNumber: serialNumberType,
         UserName: existingUserNameType
     ): DeactivateMFADeviceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SerialNumber" -> SerialNumber.asInstanceOf[js.Any],
         "UserName"     -> UserName.asInstanceOf[js.Any]
       )
@@ -1607,11 +1611,11 @@ package iam {
         AccessKeyId: accessKeyIdType,
         UserName: js.UndefOr[existingUserNameType] = js.undefined
     ): DeleteAccessKeyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccessKeyId" -> AccessKeyId.asInstanceOf[js.Any]
       )
 
-      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteAccessKeyRequest]
     }
   }
@@ -1625,7 +1629,7 @@ package iam {
     def apply(
         AccountAlias: accountAliasType
     ): DeleteAccountAliasRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountAlias" -> AccountAlias.asInstanceOf[js.Any]
       )
 
@@ -1644,7 +1648,7 @@ package iam {
         GroupName: groupNameType,
         PolicyName: policyNameType
     ): DeleteGroupPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupName"  -> GroupName.asInstanceOf[js.Any],
         "PolicyName" -> PolicyName.asInstanceOf[js.Any]
       )
@@ -1662,7 +1666,7 @@ package iam {
     def apply(
         GroupName: groupNameType
     ): DeleteGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupName" -> GroupName.asInstanceOf[js.Any]
       )
 
@@ -1679,7 +1683,7 @@ package iam {
     def apply(
         InstanceProfileName: instanceProfileNameType
     ): DeleteInstanceProfileRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceProfileName" -> InstanceProfileName.asInstanceOf[js.Any]
       )
 
@@ -1696,7 +1700,7 @@ package iam {
     def apply(
         UserName: userNameType
     ): DeleteLoginProfileRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
@@ -1713,7 +1717,7 @@ package iam {
     def apply(
         OpenIDConnectProviderArn: arnType
     ): DeleteOpenIDConnectProviderRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OpenIDConnectProviderArn" -> OpenIDConnectProviderArn.asInstanceOf[js.Any]
       )
 
@@ -1730,7 +1734,7 @@ package iam {
     def apply(
         PolicyArn: arnType
     ): DeletePolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyArn" -> PolicyArn.asInstanceOf[js.Any]
       )
 
@@ -1749,7 +1753,7 @@ package iam {
         PolicyArn: arnType,
         VersionId: policyVersionIdType
     ): DeletePolicyVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyArn" -> PolicyArn.asInstanceOf[js.Any],
         "VersionId" -> VersionId.asInstanceOf[js.Any]
       )
@@ -1767,7 +1771,7 @@ package iam {
     def apply(
         RoleName: roleNameType
     ): DeleteRolePermissionsBoundaryRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RoleName" -> RoleName.asInstanceOf[js.Any]
       )
 
@@ -1786,7 +1790,7 @@ package iam {
         PolicyName: policyNameType,
         RoleName: roleNameType
     ): DeleteRolePolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyName" -> PolicyName.asInstanceOf[js.Any],
         "RoleName"   -> RoleName.asInstanceOf[js.Any]
       )
@@ -1804,7 +1808,7 @@ package iam {
     def apply(
         RoleName: roleNameType
     ): DeleteRoleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RoleName" -> RoleName.asInstanceOf[js.Any]
       )
 
@@ -1821,7 +1825,7 @@ package iam {
     def apply(
         SAMLProviderArn: arnType
     ): DeleteSAMLProviderRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SAMLProviderArn" -> SAMLProviderArn.asInstanceOf[js.Any]
       )
 
@@ -1840,7 +1844,7 @@ package iam {
         SSHPublicKeyId: publicKeyIdType,
         UserName: userNameType
     ): DeleteSSHPublicKeyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SSHPublicKeyId" -> SSHPublicKeyId.asInstanceOf[js.Any],
         "UserName"       -> UserName.asInstanceOf[js.Any]
       )
@@ -1858,7 +1862,7 @@ package iam {
     def apply(
         ServerCertificateName: serverCertificateNameType
     ): DeleteServerCertificateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServerCertificateName" -> ServerCertificateName.asInstanceOf[js.Any]
       )
 
@@ -1875,7 +1879,7 @@ package iam {
     def apply(
         RoleName: roleNameType
     ): DeleteServiceLinkedRoleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RoleName" -> RoleName.asInstanceOf[js.Any]
       )
 
@@ -1892,7 +1896,7 @@ package iam {
     def apply(
         DeletionTaskId: DeletionTaskIdType
     ): DeleteServiceLinkedRoleResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DeletionTaskId" -> DeletionTaskId.asInstanceOf[js.Any]
       )
 
@@ -1911,11 +1915,11 @@ package iam {
         ServiceSpecificCredentialId: serviceSpecificCredentialId,
         UserName: js.UndefOr[userNameType] = js.undefined
     ): DeleteServiceSpecificCredentialRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServiceSpecificCredentialId" -> ServiceSpecificCredentialId.asInstanceOf[js.Any]
       )
 
-      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteServiceSpecificCredentialRequest]
     }
   }
@@ -1931,11 +1935,11 @@ package iam {
         CertificateId: certificateIdType,
         UserName: js.UndefOr[existingUserNameType] = js.undefined
     ): DeleteSigningCertificateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CertificateId" -> CertificateId.asInstanceOf[js.Any]
       )
 
-      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteSigningCertificateRequest]
     }
   }
@@ -1949,7 +1953,7 @@ package iam {
     def apply(
         UserName: userNameType
     ): DeleteUserPermissionsBoundaryRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
@@ -1968,7 +1972,7 @@ package iam {
         PolicyName: policyNameType,
         UserName: existingUserNameType
     ): DeleteUserPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyName" -> PolicyName.asInstanceOf[js.Any],
         "UserName"   -> UserName.asInstanceOf[js.Any]
       )
@@ -1986,7 +1990,7 @@ package iam {
     def apply(
         UserName: existingUserNameType
     ): DeleteUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
@@ -2003,7 +2007,7 @@ package iam {
     def apply(
         SerialNumber: serialNumberType
     ): DeleteVirtualMFADeviceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SerialNumber" -> SerialNumber.asInstanceOf[js.Any]
       )
 
@@ -2026,9 +2030,9 @@ package iam {
         Reason: js.UndefOr[ReasonType] = js.undefined,
         RoleUsageList: js.UndefOr[RoleUsageListType] = js.undefined
     ): DeletionTaskFailureReasonType = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Reason.foreach(__v => __obj.update("Reason", __v.asInstanceOf[js.Any]))
-      RoleUsageList.foreach(__v => __obj.update("RoleUsageList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Reason.foreach(__v => __obj.updateDynamic("Reason")(__v.asInstanceOf[js.Any]))
+      RoleUsageList.foreach(__v => __obj.updateDynamic("RoleUsageList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeletionTaskFailureReasonType]
     }
   }
@@ -2053,7 +2057,7 @@ package iam {
         GroupName: groupNameType,
         PolicyArn: arnType
     ): DetachGroupPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupName" -> GroupName.asInstanceOf[js.Any],
         "PolicyArn" -> PolicyArn.asInstanceOf[js.Any]
       )
@@ -2073,7 +2077,7 @@ package iam {
         PolicyArn: arnType,
         RoleName: roleNameType
     ): DetachRolePolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyArn" -> PolicyArn.asInstanceOf[js.Any],
         "RoleName"  -> RoleName.asInstanceOf[js.Any]
       )
@@ -2093,7 +2097,7 @@ package iam {
         PolicyArn: arnType,
         UserName: userNameType
     ): DetachUserPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyArn" -> PolicyArn.asInstanceOf[js.Any],
         "UserName"  -> UserName.asInstanceOf[js.Any]
       )
@@ -2117,7 +2121,7 @@ package iam {
         SerialNumber: serialNumberType,
         UserName: existingUserNameType
     ): EnableMFADeviceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AuthenticationCode1" -> AuthenticationCode1.asInstanceOf[js.Any],
         "AuthenticationCode2" -> AuthenticationCode2.asInstanceOf[js.Any],
         "SerialNumber"        -> SerialNumber.asInstanceOf[js.Any],
@@ -2143,11 +2147,11 @@ package iam {
         EntityInfo: EntityInfo,
         LastAuthenticated: js.UndefOr[dateType] = js.undefined
     ): EntityDetails = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EntityInfo" -> EntityInfo.asInstanceOf[js.Any]
       )
 
-      LastAuthenticated.foreach(__v => __obj.update("LastAuthenticated", __v.asInstanceOf[js.Any]))
+      LastAuthenticated.foreach(__v => __obj.updateDynamic("LastAuthenticated")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EntityDetails]
     }
   }
@@ -2173,14 +2177,14 @@ package iam {
         Type: policyOwnerEntityType,
         Path: js.UndefOr[pathType] = js.undefined
     ): EntityInfo = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn"  -> Arn.asInstanceOf[js.Any],
         "Id"   -> Id.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
 
-      Path.foreach(__v => __obj.update("Path", __v.asInstanceOf[js.Any]))
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EntityInfo]
     }
   }
@@ -2210,7 +2214,7 @@ package iam {
         Code: stringType,
         Message: stringType
     ): ErrorDetails = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Code"    -> Code.asInstanceOf[js.Any],
         "Message" -> Message.asInstanceOf[js.Any]
       )
@@ -2246,17 +2250,19 @@ package iam {
         OrganizationsDecisionDetail: js.UndefOr[OrganizationsDecisionDetail] = js.undefined,
         ResourceSpecificResults: js.UndefOr[ResourceSpecificResultListType] = js.undefined
     ): EvaluationResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EvalActionName" -> EvalActionName.asInstanceOf[js.Any],
         "EvalDecision"   -> EvalDecision.asInstanceOf[js.Any]
       )
 
-      EvalDecisionDetails.foreach(__v => __obj.update("EvalDecisionDetails", __v.asInstanceOf[js.Any]))
-      EvalResourceName.foreach(__v => __obj.update("EvalResourceName", __v.asInstanceOf[js.Any]))
-      MatchedStatements.foreach(__v => __obj.update("MatchedStatements", __v.asInstanceOf[js.Any]))
-      MissingContextValues.foreach(__v => __obj.update("MissingContextValues", __v.asInstanceOf[js.Any]))
-      OrganizationsDecisionDetail.foreach(__v => __obj.update("OrganizationsDecisionDetail", __v.asInstanceOf[js.Any]))
-      ResourceSpecificResults.foreach(__v => __obj.update("ResourceSpecificResults", __v.asInstanceOf[js.Any]))
+      EvalDecisionDetails.foreach(__v => __obj.updateDynamic("EvalDecisionDetails")(__v.asInstanceOf[js.Any]))
+      EvalResourceName.foreach(__v => __obj.updateDynamic("EvalResourceName")(__v.asInstanceOf[js.Any]))
+      MatchedStatements.foreach(__v => __obj.updateDynamic("MatchedStatements")(__v.asInstanceOf[js.Any]))
+      MissingContextValues.foreach(__v => __obj.updateDynamic("MissingContextValues")(__v.asInstanceOf[js.Any]))
+      OrganizationsDecisionDetail.foreach(
+        __v => __obj.updateDynamic("OrganizationsDecisionDetail")(__v.asInstanceOf[js.Any])
+      )
+      ResourceSpecificResults.foreach(__v => __obj.updateDynamic("ResourceSpecificResults")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EvaluationResult]
     }
   }
@@ -2275,9 +2281,9 @@ package iam {
         Description: js.UndefOr[ReportStateDescriptionType] = js.undefined,
         State: js.UndefOr[ReportStateType] = js.undefined
     ): GenerateCredentialReportResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GenerateCredentialReportResponse]
     }
   }
@@ -2293,11 +2299,11 @@ package iam {
         EntityPath: organizationsEntityPathType,
         OrganizationsPolicyId: js.UndefOr[organizationsPolicyIdType] = js.undefined
     ): GenerateOrganizationsAccessReportRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EntityPath" -> EntityPath.asInstanceOf[js.Any]
       )
 
-      OrganizationsPolicyId.foreach(__v => __obj.update("OrganizationsPolicyId", __v.asInstanceOf[js.Any]))
+      OrganizationsPolicyId.foreach(__v => __obj.updateDynamic("OrganizationsPolicyId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GenerateOrganizationsAccessReportRequest]
     }
   }
@@ -2311,8 +2317,8 @@ package iam {
     def apply(
         JobId: js.UndefOr[jobIDType] = js.undefined
     ): GenerateOrganizationsAccessReportResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobId.foreach(__v => __obj.update("JobId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GenerateOrganizationsAccessReportResponse]
     }
   }
@@ -2326,7 +2332,7 @@ package iam {
     def apply(
         Arn: arnType
     ): GenerateServiceLastAccessedDetailsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
 
@@ -2343,8 +2349,8 @@ package iam {
     def apply(
         JobId: js.UndefOr[jobIDType] = js.undefined
     ): GenerateServiceLastAccessedDetailsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobId.foreach(__v => __obj.update("JobId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GenerateServiceLastAccessedDetailsResponse]
     }
   }
@@ -2358,7 +2364,7 @@ package iam {
     def apply(
         AccessKeyId: accessKeyIdType
     ): GetAccessKeyLastUsedRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccessKeyId" -> AccessKeyId.asInstanceOf[js.Any]
       )
 
@@ -2380,9 +2386,9 @@ package iam {
         AccessKeyLastUsed: js.UndefOr[AccessKeyLastUsed] = js.undefined,
         UserName: js.UndefOr[existingUserNameType] = js.undefined
     ): GetAccessKeyLastUsedResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccessKeyLastUsed.foreach(__v => __obj.update("AccessKeyLastUsed", __v.asInstanceOf[js.Any]))
-      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccessKeyLastUsed.foreach(__v => __obj.updateDynamic("AccessKeyLastUsed")(__v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAccessKeyLastUsedResponse]
     }
   }
@@ -2400,10 +2406,10 @@ package iam {
         Marker: js.UndefOr[markerType] = js.undefined,
         MaxItems: js.UndefOr[maxItemsType] = js.undefined
     ): GetAccountAuthorizationDetailsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filter.foreach(__v => __obj.update("Filter", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAccountAuthorizationDetailsRequest]
     }
   }
@@ -2430,13 +2436,13 @@ package iam {
         RoleDetailList: js.UndefOr[roleDetailListType] = js.undefined,
         UserDetailList: js.UndefOr[userDetailListType] = js.undefined
     ): GetAccountAuthorizationDetailsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GroupDetailList.foreach(__v => __obj.update("GroupDetailList", __v.asInstanceOf[js.Any]))
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      Policies.foreach(__v => __obj.update("Policies", __v.asInstanceOf[js.Any]))
-      RoleDetailList.foreach(__v => __obj.update("RoleDetailList", __v.asInstanceOf[js.Any]))
-      UserDetailList.foreach(__v => __obj.update("UserDetailList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GroupDetailList.foreach(__v => __obj.updateDynamic("GroupDetailList")(__v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      Policies.foreach(__v => __obj.updateDynamic("Policies")(__v.asInstanceOf[js.Any]))
+      RoleDetailList.foreach(__v => __obj.updateDynamic("RoleDetailList")(__v.asInstanceOf[js.Any]))
+      UserDetailList.foreach(__v => __obj.updateDynamic("UserDetailList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAccountAuthorizationDetailsResponse]
     }
   }
@@ -2453,7 +2459,7 @@ package iam {
     def apply(
         PasswordPolicy: PasswordPolicy
     ): GetAccountPasswordPolicyResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PasswordPolicy" -> PasswordPolicy.asInstanceOf[js.Any]
       )
 
@@ -2473,8 +2479,8 @@ package iam {
     def apply(
         SummaryMap: js.UndefOr[summaryMapType] = js.undefined
     ): GetAccountSummaryResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SummaryMap.foreach(__v => __obj.update("SummaryMap", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SummaryMap.foreach(__v => __obj.updateDynamic("SummaryMap")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAccountSummaryResponse]
     }
   }
@@ -2488,7 +2494,7 @@ package iam {
     def apply(
         PolicyInputList: SimulationPolicyListType
     ): GetContextKeysForCustomPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyInputList" -> PolicyInputList.asInstanceOf[js.Any]
       )
 
@@ -2508,8 +2514,8 @@ package iam {
     def apply(
         ContextKeyNames: js.UndefOr[ContextKeyNamesResultListType] = js.undefined
     ): GetContextKeysForPolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ContextKeyNames.foreach(__v => __obj.update("ContextKeyNames", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ContextKeyNames.foreach(__v => __obj.updateDynamic("ContextKeyNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetContextKeysForPolicyResponse]
     }
   }
@@ -2525,11 +2531,11 @@ package iam {
         PolicySourceArn: arnType,
         PolicyInputList: js.UndefOr[SimulationPolicyListType] = js.undefined
     ): GetContextKeysForPrincipalPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicySourceArn" -> PolicySourceArn.asInstanceOf[js.Any]
       )
 
-      PolicyInputList.foreach(__v => __obj.update("PolicyInputList", __v.asInstanceOf[js.Any]))
+      PolicyInputList.foreach(__v => __obj.updateDynamic("PolicyInputList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetContextKeysForPrincipalPolicyRequest]
     }
   }
@@ -2550,10 +2556,10 @@ package iam {
         GeneratedTime: js.UndefOr[dateType] = js.undefined,
         ReportFormat: js.UndefOr[ReportFormatType] = js.undefined
     ): GetCredentialReportResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Content.foreach(__v => __obj.update("Content", __v.asInstanceOf[js.Any]))
-      GeneratedTime.foreach(__v => __obj.update("GeneratedTime", __v.asInstanceOf[js.Any]))
-      ReportFormat.foreach(__v => __obj.update("ReportFormat", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
+      GeneratedTime.foreach(__v => __obj.updateDynamic("GeneratedTime")(__v.asInstanceOf[js.Any]))
+      ReportFormat.foreach(__v => __obj.updateDynamic("ReportFormat")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCredentialReportResponse]
     }
   }
@@ -2569,7 +2575,7 @@ package iam {
         GroupName: groupNameType,
         PolicyName: policyNameType
     ): GetGroupPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupName"  -> GroupName.asInstanceOf[js.Any],
         "PolicyName" -> PolicyName.asInstanceOf[js.Any]
       )
@@ -2594,7 +2600,7 @@ package iam {
         PolicyDocument: policyDocumentType,
         PolicyName: policyNameType
     ): GetGroupPolicyResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupName"      -> GroupName.asInstanceOf[js.Any],
         "PolicyDocument" -> PolicyDocument.asInstanceOf[js.Any],
         "PolicyName"     -> PolicyName.asInstanceOf[js.Any]
@@ -2617,12 +2623,12 @@ package iam {
         Marker: js.UndefOr[markerType] = js.undefined,
         MaxItems: js.UndefOr[maxItemsType] = js.undefined
     ): GetGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupName" -> GroupName.asInstanceOf[js.Any]
       )
 
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetGroupRequest]
     }
   }
@@ -2645,13 +2651,13 @@ package iam {
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): GetGroupResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Group" -> Group.asInstanceOf[js.Any],
         "Users" -> Users.asInstanceOf[js.Any]
       )
 
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetGroupResponse]
     }
   }
@@ -2665,7 +2671,7 @@ package iam {
     def apply(
         InstanceProfileName: instanceProfileNameType
     ): GetInstanceProfileRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceProfileName" -> InstanceProfileName.asInstanceOf[js.Any]
       )
 
@@ -2685,7 +2691,7 @@ package iam {
     def apply(
         InstanceProfile: InstanceProfile
     ): GetInstanceProfileResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceProfile" -> InstanceProfile.asInstanceOf[js.Any]
       )
 
@@ -2702,7 +2708,7 @@ package iam {
     def apply(
         UserName: userNameType
     ): GetLoginProfileRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
@@ -2722,7 +2728,7 @@ package iam {
     def apply(
         LoginProfile: LoginProfile
     ): GetLoginProfileResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LoginProfile" -> LoginProfile.asInstanceOf[js.Any]
       )
 
@@ -2739,7 +2745,7 @@ package iam {
     def apply(
         OpenIDConnectProviderArn: arnType
     ): GetOpenIDConnectProviderRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OpenIDConnectProviderArn" -> OpenIDConnectProviderArn.asInstanceOf[js.Any]
       )
 
@@ -2765,11 +2771,11 @@ package iam {
         ThumbprintList: js.UndefOr[thumbprintListType] = js.undefined,
         Url: js.UndefOr[OpenIDConnectProviderUrlType] = js.undefined
     ): GetOpenIDConnectProviderResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClientIDList.foreach(__v => __obj.update("ClientIDList", __v.asInstanceOf[js.Any]))
-      CreateDate.foreach(__v => __obj.update("CreateDate", __v.asInstanceOf[js.Any]))
-      ThumbprintList.foreach(__v => __obj.update("ThumbprintList", __v.asInstanceOf[js.Any]))
-      Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClientIDList.foreach(__v => __obj.updateDynamic("ClientIDList")(__v.asInstanceOf[js.Any]))
+      CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
+      ThumbprintList.foreach(__v => __obj.updateDynamic("ThumbprintList")(__v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetOpenIDConnectProviderResponse]
     }
   }
@@ -2789,13 +2795,13 @@ package iam {
         MaxItems: js.UndefOr[maxItemsType] = js.undefined,
         SortKey: js.UndefOr[sortKeyType] = js.undefined
     ): GetOrganizationsAccessReportRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
 
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
-      SortKey.foreach(__v => __obj.update("SortKey", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      SortKey.foreach(__v => __obj.updateDynamic("SortKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetOrganizationsAccessReportRequest]
     }
   }
@@ -2825,18 +2831,22 @@ package iam {
         NumberOfServicesAccessible: js.UndefOr[integerType] = js.undefined,
         NumberOfServicesNotAccessed: js.UndefOr[integerType] = js.undefined
     ): GetOrganizationsAccessReportResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobCreationDate" -> JobCreationDate.asInstanceOf[js.Any],
         "JobStatus"       -> JobStatus.asInstanceOf[js.Any]
       )
 
-      AccessDetails.foreach(__v => __obj.update("AccessDetails", __v.asInstanceOf[js.Any]))
-      ErrorDetails.foreach(__v => __obj.update("ErrorDetails", __v.asInstanceOf[js.Any]))
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      JobCompletionDate.foreach(__v => __obj.update("JobCompletionDate", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      NumberOfServicesAccessible.foreach(__v => __obj.update("NumberOfServicesAccessible", __v.asInstanceOf[js.Any]))
-      NumberOfServicesNotAccessed.foreach(__v => __obj.update("NumberOfServicesNotAccessed", __v.asInstanceOf[js.Any]))
+      AccessDetails.foreach(__v => __obj.updateDynamic("AccessDetails")(__v.asInstanceOf[js.Any]))
+      ErrorDetails.foreach(__v => __obj.updateDynamic("ErrorDetails")(__v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      JobCompletionDate.foreach(__v => __obj.updateDynamic("JobCompletionDate")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      NumberOfServicesAccessible.foreach(
+        __v => __obj.updateDynamic("NumberOfServicesAccessible")(__v.asInstanceOf[js.Any])
+      )
+      NumberOfServicesNotAccessed.foreach(
+        __v => __obj.updateDynamic("NumberOfServicesNotAccessed")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[GetOrganizationsAccessReportResponse]
     }
   }
@@ -2850,7 +2860,7 @@ package iam {
     def apply(
         PolicyArn: arnType
     ): GetPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyArn" -> PolicyArn.asInstanceOf[js.Any]
       )
 
@@ -2870,8 +2880,8 @@ package iam {
     def apply(
         Policy: js.UndefOr[Policy] = js.undefined
     ): GetPolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPolicyResponse]
     }
   }
@@ -2887,7 +2897,7 @@ package iam {
         PolicyArn: arnType,
         VersionId: policyVersionIdType
     ): GetPolicyVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyArn" -> PolicyArn.asInstanceOf[js.Any],
         "VersionId" -> VersionId.asInstanceOf[js.Any]
       )
@@ -2908,8 +2918,8 @@ package iam {
     def apply(
         PolicyVersion: js.UndefOr[PolicyVersion] = js.undefined
     ): GetPolicyVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PolicyVersion.foreach(__v => __obj.update("PolicyVersion", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PolicyVersion.foreach(__v => __obj.updateDynamic("PolicyVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPolicyVersionResponse]
     }
   }
@@ -2925,7 +2935,7 @@ package iam {
         PolicyName: policyNameType,
         RoleName: roleNameType
     ): GetRolePolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyName" -> PolicyName.asInstanceOf[js.Any],
         "RoleName"   -> RoleName.asInstanceOf[js.Any]
       )
@@ -2950,7 +2960,7 @@ package iam {
         PolicyName: policyNameType,
         RoleName: roleNameType
     ): GetRolePolicyResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyDocument" -> PolicyDocument.asInstanceOf[js.Any],
         "PolicyName"     -> PolicyName.asInstanceOf[js.Any],
         "RoleName"       -> RoleName.asInstanceOf[js.Any]
@@ -2969,7 +2979,7 @@ package iam {
     def apply(
         RoleName: roleNameType
     ): GetRoleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RoleName" -> RoleName.asInstanceOf[js.Any]
       )
 
@@ -2989,7 +2999,7 @@ package iam {
     def apply(
         Role: Role
     ): GetRoleResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Role" -> Role.asInstanceOf[js.Any]
       )
 
@@ -3006,7 +3016,7 @@ package iam {
     def apply(
         SAMLProviderArn: arnType
     ): GetSAMLProviderRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SAMLProviderArn" -> SAMLProviderArn.asInstanceOf[js.Any]
       )
 
@@ -3030,10 +3040,10 @@ package iam {
         SAMLMetadataDocument: js.UndefOr[SAMLMetadataDocumentType] = js.undefined,
         ValidUntil: js.UndefOr[dateType] = js.undefined
     ): GetSAMLProviderResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreateDate.foreach(__v => __obj.update("CreateDate", __v.asInstanceOf[js.Any]))
-      SAMLMetadataDocument.foreach(__v => __obj.update("SAMLMetadataDocument", __v.asInstanceOf[js.Any]))
-      ValidUntil.foreach(__v => __obj.update("ValidUntil", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
+      SAMLMetadataDocument.foreach(__v => __obj.updateDynamic("SAMLMetadataDocument")(__v.asInstanceOf[js.Any]))
+      ValidUntil.foreach(__v => __obj.updateDynamic("ValidUntil")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSAMLProviderResponse]
     }
   }
@@ -3051,7 +3061,7 @@ package iam {
         SSHPublicKeyId: publicKeyIdType,
         UserName: userNameType
     ): GetSSHPublicKeyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Encoding"       -> Encoding.asInstanceOf[js.Any],
         "SSHPublicKeyId" -> SSHPublicKeyId.asInstanceOf[js.Any],
         "UserName"       -> UserName.asInstanceOf[js.Any]
@@ -3073,8 +3083,8 @@ package iam {
     def apply(
         SSHPublicKey: js.UndefOr[SSHPublicKey] = js.undefined
     ): GetSSHPublicKeyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SSHPublicKey.foreach(__v => __obj.update("SSHPublicKey", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SSHPublicKey.foreach(__v => __obj.updateDynamic("SSHPublicKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSSHPublicKeyResponse]
     }
   }
@@ -3088,7 +3098,7 @@ package iam {
     def apply(
         ServerCertificateName: serverCertificateNameType
     ): GetServerCertificateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServerCertificateName" -> ServerCertificateName.asInstanceOf[js.Any]
       )
 
@@ -3108,7 +3118,7 @@ package iam {
     def apply(
         ServerCertificate: ServerCertificate
     ): GetServerCertificateResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServerCertificate" -> ServerCertificate.asInstanceOf[js.Any]
       )
 
@@ -3129,12 +3139,12 @@ package iam {
         Marker: js.UndefOr[markerType] = js.undefined,
         MaxItems: js.UndefOr[maxItemsType] = js.undefined
     ): GetServiceLastAccessedDetailsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
 
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetServiceLastAccessedDetailsRequest]
     }
   }
@@ -3160,16 +3170,16 @@ package iam {
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): GetServiceLastAccessedDetailsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobCompletionDate"    -> JobCompletionDate.asInstanceOf[js.Any],
         "JobCreationDate"      -> JobCreationDate.asInstanceOf[js.Any],
         "JobStatus"            -> JobStatus.asInstanceOf[js.Any],
         "ServicesLastAccessed" -> ServicesLastAccessed.asInstanceOf[js.Any]
       )
 
-      Error.foreach(__v => __obj.update("Error", __v.asInstanceOf[js.Any]))
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      Error.foreach(__v => __obj.updateDynamic("Error")(__v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetServiceLastAccessedDetailsResponse]
     }
   }
@@ -3189,13 +3199,13 @@ package iam {
         Marker: js.UndefOr[markerType] = js.undefined,
         MaxItems: js.UndefOr[maxItemsType] = js.undefined
     ): GetServiceLastAccessedDetailsWithEntitiesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobId"            -> JobId.asInstanceOf[js.Any],
         "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any]
       )
 
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetServiceLastAccessedDetailsWithEntitiesRequest]
     }
   }
@@ -3221,16 +3231,16 @@ package iam {
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): GetServiceLastAccessedDetailsWithEntitiesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EntityDetailsList" -> EntityDetailsList.asInstanceOf[js.Any],
         "JobCompletionDate" -> JobCompletionDate.asInstanceOf[js.Any],
         "JobCreationDate"   -> JobCreationDate.asInstanceOf[js.Any],
         "JobStatus"         -> JobStatus.asInstanceOf[js.Any]
       )
 
-      Error.foreach(__v => __obj.update("Error", __v.asInstanceOf[js.Any]))
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      Error.foreach(__v => __obj.updateDynamic("Error")(__v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetServiceLastAccessedDetailsWithEntitiesResponse]
     }
   }
@@ -3244,7 +3254,7 @@ package iam {
     def apply(
         DeletionTaskId: DeletionTaskIdType
     ): GetServiceLinkedRoleDeletionStatusRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DeletionTaskId" -> DeletionTaskId.asInstanceOf[js.Any]
       )
 
@@ -3263,11 +3273,11 @@ package iam {
         Status: DeletionTaskStatusType,
         Reason: js.UndefOr[DeletionTaskFailureReasonType] = js.undefined
     ): GetServiceLinkedRoleDeletionStatusResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Status" -> Status.asInstanceOf[js.Any]
       )
 
-      Reason.foreach(__v => __obj.update("Reason", __v.asInstanceOf[js.Any]))
+      Reason.foreach(__v => __obj.updateDynamic("Reason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetServiceLinkedRoleDeletionStatusResponse]
     }
   }
@@ -3283,7 +3293,7 @@ package iam {
         PolicyName: policyNameType,
         UserName: existingUserNameType
     ): GetUserPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyName" -> PolicyName.asInstanceOf[js.Any],
         "UserName"   -> UserName.asInstanceOf[js.Any]
       )
@@ -3308,7 +3318,7 @@ package iam {
         PolicyName: policyNameType,
         UserName: existingUserNameType
     ): GetUserPolicyResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyDocument" -> PolicyDocument.asInstanceOf[js.Any],
         "PolicyName"     -> PolicyName.asInstanceOf[js.Any],
         "UserName"       -> UserName.asInstanceOf[js.Any]
@@ -3327,8 +3337,8 @@ package iam {
     def apply(
         UserName: js.UndefOr[existingUserNameType] = js.undefined
     ): GetUserRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetUserRequest]
     }
   }
@@ -3345,7 +3355,7 @@ package iam {
     def apply(
         User: User
     ): GetUserResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "User" -> User.asInstanceOf[js.Any]
       )
 
@@ -3377,7 +3387,7 @@ package iam {
         GroupName: groupNameType,
         Path: pathType
     ): Group = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn"        -> Arn.asInstanceOf[js.Any],
         "CreateDate" -> CreateDate.asInstanceOf[js.Any],
         "GroupId"    -> GroupId.asInstanceOf[js.Any],
@@ -3414,14 +3424,14 @@ package iam {
         GroupPolicyList: js.UndefOr[policyDetailListType] = js.undefined,
         Path: js.UndefOr[pathType] = js.undefined
     ): GroupDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      AttachedManagedPolicies.foreach(__v => __obj.update("AttachedManagedPolicies", __v.asInstanceOf[js.Any]))
-      CreateDate.foreach(__v => __obj.update("CreateDate", __v.asInstanceOf[js.Any]))
-      GroupId.foreach(__v => __obj.update("GroupId", __v.asInstanceOf[js.Any]))
-      GroupName.foreach(__v => __obj.update("GroupName", __v.asInstanceOf[js.Any]))
-      GroupPolicyList.foreach(__v => __obj.update("GroupPolicyList", __v.asInstanceOf[js.Any]))
-      Path.foreach(__v => __obj.update("Path", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      AttachedManagedPolicies.foreach(__v => __obj.updateDynamic("AttachedManagedPolicies")(__v.asInstanceOf[js.Any]))
+      CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
+      GroupId.foreach(__v => __obj.updateDynamic("GroupId")(__v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
+      GroupPolicyList.foreach(__v => __obj.updateDynamic("GroupPolicyList")(__v.asInstanceOf[js.Any]))
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GroupDetail]
     }
   }
@@ -3453,7 +3463,7 @@ package iam {
         Path: pathType,
         Roles: roleListType
     ): InstanceProfile = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn"                 -> Arn.asInstanceOf[js.Any],
         "CreateDate"          -> CreateDate.asInstanceOf[js.Any],
         "InstanceProfileId"   -> InstanceProfileId.asInstanceOf[js.Any],
@@ -3479,10 +3489,10 @@ package iam {
         MaxItems: js.UndefOr[maxItemsType] = js.undefined,
         UserName: js.UndefOr[existingUserNameType] = js.undefined
     ): ListAccessKeysRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
-      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAccessKeysRequest]
     }
   }
@@ -3503,12 +3513,12 @@ package iam {
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListAccessKeysResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccessKeyMetadata" -> AccessKeyMetadata.asInstanceOf[js.Any]
       )
 
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAccessKeysResponse]
     }
   }
@@ -3524,9 +3534,9 @@ package iam {
         Marker: js.UndefOr[markerType] = js.undefined,
         MaxItems: js.UndefOr[maxItemsType] = js.undefined
     ): ListAccountAliasesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAccountAliasesRequest]
     }
   }
@@ -3547,12 +3557,12 @@ package iam {
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListAccountAliasesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountAliases" -> AccountAliases.asInstanceOf[js.Any]
       )
 
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAccountAliasesResponse]
     }
   }
@@ -3572,13 +3582,13 @@ package iam {
         MaxItems: js.UndefOr[maxItemsType] = js.undefined,
         PathPrefix: js.UndefOr[policyPathType] = js.undefined
     ): ListAttachedGroupPoliciesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupName" -> GroupName.asInstanceOf[js.Any]
       )
 
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
-      PathPrefix.foreach(__v => __obj.update("PathPrefix", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      PathPrefix.foreach(__v => __obj.updateDynamic("PathPrefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAttachedGroupPoliciesRequest]
     }
   }
@@ -3599,10 +3609,10 @@ package iam {
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListAttachedGroupPoliciesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttachedPolicies.foreach(__v => __obj.update("AttachedPolicies", __v.asInstanceOf[js.Any]))
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttachedPolicies.foreach(__v => __obj.updateDynamic("AttachedPolicies")(__v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAttachedGroupPoliciesResponse]
     }
   }
@@ -3622,13 +3632,13 @@ package iam {
         MaxItems: js.UndefOr[maxItemsType] = js.undefined,
         PathPrefix: js.UndefOr[policyPathType] = js.undefined
     ): ListAttachedRolePoliciesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RoleName" -> RoleName.asInstanceOf[js.Any]
       )
 
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
-      PathPrefix.foreach(__v => __obj.update("PathPrefix", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      PathPrefix.foreach(__v => __obj.updateDynamic("PathPrefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAttachedRolePoliciesRequest]
     }
   }
@@ -3649,10 +3659,10 @@ package iam {
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListAttachedRolePoliciesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttachedPolicies.foreach(__v => __obj.update("AttachedPolicies", __v.asInstanceOf[js.Any]))
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttachedPolicies.foreach(__v => __obj.updateDynamic("AttachedPolicies")(__v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAttachedRolePoliciesResponse]
     }
   }
@@ -3672,13 +3682,13 @@ package iam {
         MaxItems: js.UndefOr[maxItemsType] = js.undefined,
         PathPrefix: js.UndefOr[policyPathType] = js.undefined
     ): ListAttachedUserPoliciesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
-      PathPrefix.foreach(__v => __obj.update("PathPrefix", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      PathPrefix.foreach(__v => __obj.updateDynamic("PathPrefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAttachedUserPoliciesRequest]
     }
   }
@@ -3699,10 +3709,10 @@ package iam {
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListAttachedUserPoliciesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttachedPolicies.foreach(__v => __obj.update("AttachedPolicies", __v.asInstanceOf[js.Any]))
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttachedPolicies.foreach(__v => __obj.updateDynamic("AttachedPolicies")(__v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAttachedUserPoliciesResponse]
     }
   }
@@ -3726,15 +3736,15 @@ package iam {
         PathPrefix: js.UndefOr[pathType] = js.undefined,
         PolicyUsageFilter: js.UndefOr[PolicyUsageType] = js.undefined
     ): ListEntitiesForPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyArn" -> PolicyArn.asInstanceOf[js.Any]
       )
 
-      EntityFilter.foreach(__v => __obj.update("EntityFilter", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
-      PathPrefix.foreach(__v => __obj.update("PathPrefix", __v.asInstanceOf[js.Any]))
-      PolicyUsageFilter.foreach(__v => __obj.update("PolicyUsageFilter", __v.asInstanceOf[js.Any]))
+      EntityFilter.foreach(__v => __obj.updateDynamic("EntityFilter")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      PathPrefix.foreach(__v => __obj.updateDynamic("PathPrefix")(__v.asInstanceOf[js.Any]))
+      PolicyUsageFilter.foreach(__v => __obj.updateDynamic("PolicyUsageFilter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEntitiesForPolicyRequest]
     }
   }
@@ -3759,12 +3769,12 @@ package iam {
         PolicyRoles: js.UndefOr[PolicyRoleListType] = js.undefined,
         PolicyUsers: js.UndefOr[PolicyUserListType] = js.undefined
     ): ListEntitiesForPolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      PolicyGroups.foreach(__v => __obj.update("PolicyGroups", __v.asInstanceOf[js.Any]))
-      PolicyRoles.foreach(__v => __obj.update("PolicyRoles", __v.asInstanceOf[js.Any]))
-      PolicyUsers.foreach(__v => __obj.update("PolicyUsers", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      PolicyGroups.foreach(__v => __obj.updateDynamic("PolicyGroups")(__v.asInstanceOf[js.Any]))
+      PolicyRoles.foreach(__v => __obj.updateDynamic("PolicyRoles")(__v.asInstanceOf[js.Any]))
+      PolicyUsers.foreach(__v => __obj.updateDynamic("PolicyUsers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEntitiesForPolicyResponse]
     }
   }
@@ -3782,12 +3792,12 @@ package iam {
         Marker: js.UndefOr[markerType] = js.undefined,
         MaxItems: js.UndefOr[maxItemsType] = js.undefined
     ): ListGroupPoliciesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupName" -> GroupName.asInstanceOf[js.Any]
       )
 
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGroupPoliciesRequest]
     }
   }
@@ -3808,12 +3818,12 @@ package iam {
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListGroupPoliciesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyNames" -> PolicyNames.asInstanceOf[js.Any]
       )
 
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGroupPoliciesResponse]
     }
   }
@@ -3831,12 +3841,12 @@ package iam {
         Marker: js.UndefOr[markerType] = js.undefined,
         MaxItems: js.UndefOr[maxItemsType] = js.undefined
     ): ListGroupsForUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGroupsForUserRequest]
     }
   }
@@ -3857,12 +3867,12 @@ package iam {
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListGroupsForUserResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Groups" -> Groups.asInstanceOf[js.Any]
       )
 
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGroupsForUserResponse]
     }
   }
@@ -3880,10 +3890,10 @@ package iam {
         MaxItems: js.UndefOr[maxItemsType] = js.undefined,
         PathPrefix: js.UndefOr[pathPrefixType] = js.undefined
     ): ListGroupsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
-      PathPrefix.foreach(__v => __obj.update("PathPrefix", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      PathPrefix.foreach(__v => __obj.updateDynamic("PathPrefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGroupsRequest]
     }
   }
@@ -3904,12 +3914,12 @@ package iam {
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListGroupsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Groups" -> Groups.asInstanceOf[js.Any]
       )
 
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGroupsResponse]
     }
   }
@@ -3927,12 +3937,12 @@ package iam {
         Marker: js.UndefOr[markerType] = js.undefined,
         MaxItems: js.UndefOr[maxItemsType] = js.undefined
     ): ListInstanceProfilesForRoleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RoleName" -> RoleName.asInstanceOf[js.Any]
       )
 
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListInstanceProfilesForRoleRequest]
     }
   }
@@ -3953,12 +3963,12 @@ package iam {
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListInstanceProfilesForRoleResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceProfiles" -> InstanceProfiles.asInstanceOf[js.Any]
       )
 
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListInstanceProfilesForRoleResponse]
     }
   }
@@ -3976,10 +3986,10 @@ package iam {
         MaxItems: js.UndefOr[maxItemsType] = js.undefined,
         PathPrefix: js.UndefOr[pathPrefixType] = js.undefined
     ): ListInstanceProfilesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
-      PathPrefix.foreach(__v => __obj.update("PathPrefix", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      PathPrefix.foreach(__v => __obj.updateDynamic("PathPrefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListInstanceProfilesRequest]
     }
   }
@@ -4000,12 +4010,12 @@ package iam {
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListInstanceProfilesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceProfiles" -> InstanceProfiles.asInstanceOf[js.Any]
       )
 
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListInstanceProfilesResponse]
     }
   }
@@ -4023,10 +4033,10 @@ package iam {
         MaxItems: js.UndefOr[maxItemsType] = js.undefined,
         UserName: js.UndefOr[existingUserNameType] = js.undefined
     ): ListMFADevicesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
-      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListMFADevicesRequest]
     }
   }
@@ -4047,12 +4057,12 @@ package iam {
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListMFADevicesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MFADevices" -> MFADevices.asInstanceOf[js.Any]
       )
 
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListMFADevicesResponse]
     }
   }
@@ -4063,7 +4073,7 @@ package iam {
   object ListOpenIDConnectProvidersRequest {
     def apply(
         ): ListOpenIDConnectProvidersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ListOpenIDConnectProvidersRequest]
     }
@@ -4081,8 +4091,10 @@ package iam {
     def apply(
         OpenIDConnectProviderList: js.UndefOr[OpenIDConnectProviderListType] = js.undefined
     ): ListOpenIDConnectProvidersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      OpenIDConnectProviderList.foreach(__v => __obj.update("OpenIDConnectProviderList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      OpenIDConnectProviderList.foreach(
+        __v => __obj.updateDynamic("OpenIDConnectProviderList")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[ListOpenIDConnectProvidersResponse]
     }
   }
@@ -4102,9 +4114,9 @@ package iam {
         Policies: js.UndefOr[policyGrantingServiceAccessListType] = js.undefined,
         ServiceNamespace: js.UndefOr[serviceNamespaceType] = js.undefined
     ): ListPoliciesGrantingServiceAccessEntry = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Policies.foreach(__v => __obj.update("Policies", __v.asInstanceOf[js.Any]))
-      ServiceNamespace.foreach(__v => __obj.update("ServiceNamespace", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Policies.foreach(__v => __obj.updateDynamic("Policies")(__v.asInstanceOf[js.Any]))
+      ServiceNamespace.foreach(__v => __obj.updateDynamic("ServiceNamespace")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPoliciesGrantingServiceAccessEntry]
     }
   }
@@ -4122,12 +4134,12 @@ package iam {
         ServiceNamespaces: serviceNamespaceListType,
         Marker: js.UndefOr[markerType] = js.undefined
     ): ListPoliciesGrantingServiceAccessRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn"               -> Arn.asInstanceOf[js.Any],
         "ServiceNamespaces" -> ServiceNamespaces.asInstanceOf[js.Any]
       )
 
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPoliciesGrantingServiceAccessRequest]
     }
   }
@@ -4145,12 +4157,12 @@ package iam {
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListPoliciesGrantingServiceAccessResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PoliciesGrantingServiceAccess" -> PoliciesGrantingServiceAccess.asInstanceOf[js.Any]
       )
 
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPoliciesGrantingServiceAccessResponse]
     }
   }
@@ -4174,13 +4186,13 @@ package iam {
         PolicyUsageFilter: js.UndefOr[PolicyUsageType] = js.undefined,
         Scope: js.UndefOr[policyScopeType] = js.undefined
     ): ListPoliciesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
-      OnlyAttached.foreach(__v => __obj.update("OnlyAttached", __v.asInstanceOf[js.Any]))
-      PathPrefix.foreach(__v => __obj.update("PathPrefix", __v.asInstanceOf[js.Any]))
-      PolicyUsageFilter.foreach(__v => __obj.update("PolicyUsageFilter", __v.asInstanceOf[js.Any]))
-      Scope.foreach(__v => __obj.update("Scope", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      OnlyAttached.foreach(__v => __obj.updateDynamic("OnlyAttached")(__v.asInstanceOf[js.Any]))
+      PathPrefix.foreach(__v => __obj.updateDynamic("PathPrefix")(__v.asInstanceOf[js.Any]))
+      PolicyUsageFilter.foreach(__v => __obj.updateDynamic("PolicyUsageFilter")(__v.asInstanceOf[js.Any]))
+      Scope.foreach(__v => __obj.updateDynamic("Scope")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPoliciesRequest]
     }
   }
@@ -4201,10 +4213,10 @@ package iam {
         Marker: js.UndefOr[responseMarkerType] = js.undefined,
         Policies: js.UndefOr[policyListType] = js.undefined
     ): ListPoliciesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      Policies.foreach(__v => __obj.update("Policies", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      Policies.foreach(__v => __obj.updateDynamic("Policies")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPoliciesResponse]
     }
   }
@@ -4222,12 +4234,12 @@ package iam {
         Marker: js.UndefOr[markerType] = js.undefined,
         MaxItems: js.UndefOr[maxItemsType] = js.undefined
     ): ListPolicyVersionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyArn" -> PolicyArn.asInstanceOf[js.Any]
       )
 
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPolicyVersionsRequest]
     }
   }
@@ -4248,10 +4260,10 @@ package iam {
         Marker: js.UndefOr[responseMarkerType] = js.undefined,
         Versions: js.UndefOr[policyDocumentVersionListType] = js.undefined
     ): ListPolicyVersionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      Versions.foreach(__v => __obj.update("Versions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      Versions.foreach(__v => __obj.updateDynamic("Versions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPolicyVersionsResponse]
     }
   }
@@ -4269,12 +4281,12 @@ package iam {
         Marker: js.UndefOr[markerType] = js.undefined,
         MaxItems: js.UndefOr[maxItemsType] = js.undefined
     ): ListRolePoliciesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RoleName" -> RoleName.asInstanceOf[js.Any]
       )
 
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRolePoliciesRequest]
     }
   }
@@ -4295,12 +4307,12 @@ package iam {
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListRolePoliciesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyNames" -> PolicyNames.asInstanceOf[js.Any]
       )
 
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRolePoliciesResponse]
     }
   }
@@ -4318,12 +4330,12 @@ package iam {
         Marker: js.UndefOr[markerType] = js.undefined,
         MaxItems: js.UndefOr[maxItemsType] = js.undefined
     ): ListRoleTagsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RoleName" -> RoleName.asInstanceOf[js.Any]
       )
 
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRoleTagsRequest]
     }
   }
@@ -4341,12 +4353,12 @@ package iam {
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListRoleTagsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRoleTagsResponse]
     }
   }
@@ -4364,10 +4376,10 @@ package iam {
         MaxItems: js.UndefOr[maxItemsType] = js.undefined,
         PathPrefix: js.UndefOr[pathPrefixType] = js.undefined
     ): ListRolesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
-      PathPrefix.foreach(__v => __obj.update("PathPrefix", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      PathPrefix.foreach(__v => __obj.updateDynamic("PathPrefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRolesRequest]
     }
   }
@@ -4388,12 +4400,12 @@ package iam {
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListRolesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Roles" -> Roles.asInstanceOf[js.Any]
       )
 
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRolesResponse]
     }
   }
@@ -4404,7 +4416,7 @@ package iam {
   object ListSAMLProvidersRequest {
     def apply(
         ): ListSAMLProvidersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ListSAMLProvidersRequest]
     }
@@ -4422,8 +4434,8 @@ package iam {
     def apply(
         SAMLProviderList: js.UndefOr[SAMLProviderListType] = js.undefined
     ): ListSAMLProvidersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SAMLProviderList.foreach(__v => __obj.update("SAMLProviderList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SAMLProviderList.foreach(__v => __obj.updateDynamic("SAMLProviderList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSAMLProvidersResponse]
     }
   }
@@ -4441,10 +4453,10 @@ package iam {
         MaxItems: js.UndefOr[maxItemsType] = js.undefined,
         UserName: js.UndefOr[userNameType] = js.undefined
     ): ListSSHPublicKeysRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
-      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSSHPublicKeysRequest]
     }
   }
@@ -4465,10 +4477,10 @@ package iam {
         Marker: js.UndefOr[responseMarkerType] = js.undefined,
         SSHPublicKeys: js.UndefOr[SSHPublicKeyListType] = js.undefined
     ): ListSSHPublicKeysResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      SSHPublicKeys.foreach(__v => __obj.update("SSHPublicKeys", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      SSHPublicKeys.foreach(__v => __obj.updateDynamic("SSHPublicKeys")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSSHPublicKeysResponse]
     }
   }
@@ -4486,10 +4498,10 @@ package iam {
         MaxItems: js.UndefOr[maxItemsType] = js.undefined,
         PathPrefix: js.UndefOr[pathPrefixType] = js.undefined
     ): ListServerCertificatesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
-      PathPrefix.foreach(__v => __obj.update("PathPrefix", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      PathPrefix.foreach(__v => __obj.updateDynamic("PathPrefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListServerCertificatesRequest]
     }
   }
@@ -4510,12 +4522,12 @@ package iam {
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListServerCertificatesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServerCertificateMetadataList" -> ServerCertificateMetadataList.asInstanceOf[js.Any]
       )
 
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListServerCertificatesResponse]
     }
   }
@@ -4531,9 +4543,9 @@ package iam {
         ServiceName: js.UndefOr[serviceName] = js.undefined,
         UserName: js.UndefOr[userNameType] = js.undefined
     ): ListServiceSpecificCredentialsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ServiceName.foreach(__v => __obj.update("ServiceName", __v.asInstanceOf[js.Any]))
-      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ServiceName.foreach(__v => __obj.updateDynamic("ServiceName")(__v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListServiceSpecificCredentialsRequest]
     }
   }
@@ -4547,8 +4559,10 @@ package iam {
     def apply(
         ServiceSpecificCredentials: js.UndefOr[ServiceSpecificCredentialsListType] = js.undefined
     ): ListServiceSpecificCredentialsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ServiceSpecificCredentials.foreach(__v => __obj.update("ServiceSpecificCredentials", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ServiceSpecificCredentials.foreach(
+        __v => __obj.updateDynamic("ServiceSpecificCredentials")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[ListServiceSpecificCredentialsResponse]
     }
   }
@@ -4566,10 +4580,10 @@ package iam {
         MaxItems: js.UndefOr[maxItemsType] = js.undefined,
         UserName: js.UndefOr[existingUserNameType] = js.undefined
     ): ListSigningCertificatesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
-      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSigningCertificatesRequest]
     }
   }
@@ -4590,12 +4604,12 @@ package iam {
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListSigningCertificatesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Certificates" -> Certificates.asInstanceOf[js.Any]
       )
 
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSigningCertificatesResponse]
     }
   }
@@ -4613,12 +4627,12 @@ package iam {
         Marker: js.UndefOr[markerType] = js.undefined,
         MaxItems: js.UndefOr[maxItemsType] = js.undefined
     ): ListUserPoliciesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListUserPoliciesRequest]
     }
   }
@@ -4639,12 +4653,12 @@ package iam {
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListUserPoliciesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyNames" -> PolicyNames.asInstanceOf[js.Any]
       )
 
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListUserPoliciesResponse]
     }
   }
@@ -4662,12 +4676,12 @@ package iam {
         Marker: js.UndefOr[markerType] = js.undefined,
         MaxItems: js.UndefOr[maxItemsType] = js.undefined
     ): ListUserTagsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListUserTagsRequest]
     }
   }
@@ -4685,12 +4699,12 @@ package iam {
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListUserTagsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListUserTagsResponse]
     }
   }
@@ -4708,10 +4722,10 @@ package iam {
         MaxItems: js.UndefOr[maxItemsType] = js.undefined,
         PathPrefix: js.UndefOr[pathPrefixType] = js.undefined
     ): ListUsersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
-      PathPrefix.foreach(__v => __obj.update("PathPrefix", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      PathPrefix.foreach(__v => __obj.updateDynamic("PathPrefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListUsersRequest]
     }
   }
@@ -4732,12 +4746,12 @@ package iam {
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListUsersResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Users" -> Users.asInstanceOf[js.Any]
       )
 
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListUsersResponse]
     }
   }
@@ -4755,10 +4769,10 @@ package iam {
         Marker: js.UndefOr[markerType] = js.undefined,
         MaxItems: js.UndefOr[maxItemsType] = js.undefined
     ): ListVirtualMFADevicesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssignmentStatus.foreach(__v => __obj.update("AssignmentStatus", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssignmentStatus.foreach(__v => __obj.updateDynamic("AssignmentStatus")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListVirtualMFADevicesRequest]
     }
   }
@@ -4779,12 +4793,12 @@ package iam {
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): ListVirtualMFADevicesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VirtualMFADevices" -> VirtualMFADevices.asInstanceOf[js.Any]
       )
 
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListVirtualMFADevicesResponse]
     }
   }
@@ -4806,12 +4820,12 @@ package iam {
         UserName: userNameType,
         PasswordResetRequired: js.UndefOr[booleanType] = js.undefined
     ): LoginProfile = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CreateDate" -> CreateDate.asInstanceOf[js.Any],
         "UserName"   -> UserName.asInstanceOf[js.Any]
       )
 
-      PasswordResetRequired.foreach(__v => __obj.update("PasswordResetRequired", __v.asInstanceOf[js.Any]))
+      PasswordResetRequired.foreach(__v => __obj.updateDynamic("PasswordResetRequired")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoginProfile]
     }
   }
@@ -4833,7 +4847,7 @@ package iam {
         SerialNumber: serialNumberType,
         UserName: userNameType
     ): MFADevice = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EnableDate"   -> EnableDate.asInstanceOf[js.Any],
         "SerialNumber" -> SerialNumber.asInstanceOf[js.Any],
         "UserName"     -> UserName.asInstanceOf[js.Any]
@@ -4879,21 +4893,21 @@ package iam {
         PolicyVersionList: js.UndefOr[policyDocumentVersionListType] = js.undefined,
         UpdateDate: js.UndefOr[dateType] = js.undefined
     ): ManagedPolicyDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      AttachmentCount.foreach(__v => __obj.update("AttachmentCount", __v.asInstanceOf[js.Any]))
-      CreateDate.foreach(__v => __obj.update("CreateDate", __v.asInstanceOf[js.Any]))
-      DefaultVersionId.foreach(__v => __obj.update("DefaultVersionId", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      IsAttachable.foreach(__v => __obj.update("IsAttachable", __v.asInstanceOf[js.Any]))
-      Path.foreach(__v => __obj.update("Path", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      AttachmentCount.foreach(__v => __obj.updateDynamic("AttachmentCount")(__v.asInstanceOf[js.Any]))
+      CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
+      DefaultVersionId.foreach(__v => __obj.updateDynamic("DefaultVersionId")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      IsAttachable.foreach(__v => __obj.updateDynamic("IsAttachable")(__v.asInstanceOf[js.Any]))
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
       PermissionsBoundaryUsageCount.foreach(
-        __v => __obj.update("PermissionsBoundaryUsageCount", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("PermissionsBoundaryUsageCount")(__v.asInstanceOf[js.Any])
       )
-      PolicyId.foreach(__v => __obj.update("PolicyId", __v.asInstanceOf[js.Any]))
-      PolicyName.foreach(__v => __obj.update("PolicyName", __v.asInstanceOf[js.Any]))
-      PolicyVersionList.foreach(__v => __obj.update("PolicyVersionList", __v.asInstanceOf[js.Any]))
-      UpdateDate.foreach(__v => __obj.update("UpdateDate", __v.asInstanceOf[js.Any]))
+      PolicyId.foreach(__v => __obj.updateDynamic("PolicyId")(__v.asInstanceOf[js.Any]))
+      PolicyName.foreach(__v => __obj.updateDynamic("PolicyName")(__v.asInstanceOf[js.Any]))
+      PolicyVersionList.foreach(__v => __obj.updateDynamic("PolicyVersionList")(__v.asInstanceOf[js.Any]))
+      UpdateDate.foreach(__v => __obj.updateDynamic("UpdateDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ManagedPolicyDetail]
     }
   }
@@ -4910,8 +4924,8 @@ package iam {
     def apply(
         Arn: js.UndefOr[arnType] = js.undefined
     ): OpenIDConnectProviderListEntry = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OpenIDConnectProviderListEntry]
     }
   }
@@ -4928,8 +4942,8 @@ package iam {
     def apply(
         AllowedByOrganizations: js.UndefOr[booleanType] = js.undefined
     ): OrganizationsDecisionDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AllowedByOrganizations.foreach(__v => __obj.update("AllowedByOrganizations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AllowedByOrganizations.foreach(__v => __obj.updateDynamic("AllowedByOrganizations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OrganizationsDecisionDetail]
     }
   }
@@ -4965,17 +4979,23 @@ package iam {
         RequireSymbols: js.UndefOr[booleanType] = js.undefined,
         RequireUppercaseCharacters: js.UndefOr[booleanType] = js.undefined
     ): PasswordPolicy = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AllowUsersToChangePassword.foreach(__v => __obj.update("AllowUsersToChangePassword", __v.asInstanceOf[js.Any]))
-      ExpirePasswords.foreach(__v => __obj.update("ExpirePasswords", __v.asInstanceOf[js.Any]))
-      HardExpiry.foreach(__v => __obj.update("HardExpiry", __v.asInstanceOf[js.Any]))
-      MaxPasswordAge.foreach(__v => __obj.update("MaxPasswordAge", __v.asInstanceOf[js.Any]))
-      MinimumPasswordLength.foreach(__v => __obj.update("MinimumPasswordLength", __v.asInstanceOf[js.Any]))
-      PasswordReusePrevention.foreach(__v => __obj.update("PasswordReusePrevention", __v.asInstanceOf[js.Any]))
-      RequireLowercaseCharacters.foreach(__v => __obj.update("RequireLowercaseCharacters", __v.asInstanceOf[js.Any]))
-      RequireNumbers.foreach(__v => __obj.update("RequireNumbers", __v.asInstanceOf[js.Any]))
-      RequireSymbols.foreach(__v => __obj.update("RequireSymbols", __v.asInstanceOf[js.Any]))
-      RequireUppercaseCharacters.foreach(__v => __obj.update("RequireUppercaseCharacters", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AllowUsersToChangePassword.foreach(
+        __v => __obj.updateDynamic("AllowUsersToChangePassword")(__v.asInstanceOf[js.Any])
+      )
+      ExpirePasswords.foreach(__v => __obj.updateDynamic("ExpirePasswords")(__v.asInstanceOf[js.Any]))
+      HardExpiry.foreach(__v => __obj.updateDynamic("HardExpiry")(__v.asInstanceOf[js.Any]))
+      MaxPasswordAge.foreach(__v => __obj.updateDynamic("MaxPasswordAge")(__v.asInstanceOf[js.Any]))
+      MinimumPasswordLength.foreach(__v => __obj.updateDynamic("MinimumPasswordLength")(__v.asInstanceOf[js.Any]))
+      PasswordReusePrevention.foreach(__v => __obj.updateDynamic("PasswordReusePrevention")(__v.asInstanceOf[js.Any]))
+      RequireLowercaseCharacters.foreach(
+        __v => __obj.updateDynamic("RequireLowercaseCharacters")(__v.asInstanceOf[js.Any])
+      )
+      RequireNumbers.foreach(__v => __obj.updateDynamic("RequireNumbers")(__v.asInstanceOf[js.Any]))
+      RequireSymbols.foreach(__v => __obj.updateDynamic("RequireSymbols")(__v.asInstanceOf[js.Any]))
+      RequireUppercaseCharacters.foreach(
+        __v => __obj.updateDynamic("RequireUppercaseCharacters")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[PasswordPolicy]
     }
   }
@@ -5020,20 +5040,20 @@ package iam {
         PolicyName: js.UndefOr[policyNameType] = js.undefined,
         UpdateDate: js.UndefOr[dateType] = js.undefined
     ): Policy = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      AttachmentCount.foreach(__v => __obj.update("AttachmentCount", __v.asInstanceOf[js.Any]))
-      CreateDate.foreach(__v => __obj.update("CreateDate", __v.asInstanceOf[js.Any]))
-      DefaultVersionId.foreach(__v => __obj.update("DefaultVersionId", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      IsAttachable.foreach(__v => __obj.update("IsAttachable", __v.asInstanceOf[js.Any]))
-      Path.foreach(__v => __obj.update("Path", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      AttachmentCount.foreach(__v => __obj.updateDynamic("AttachmentCount")(__v.asInstanceOf[js.Any]))
+      CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
+      DefaultVersionId.foreach(__v => __obj.updateDynamic("DefaultVersionId")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      IsAttachable.foreach(__v => __obj.updateDynamic("IsAttachable")(__v.asInstanceOf[js.Any]))
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
       PermissionsBoundaryUsageCount.foreach(
-        __v => __obj.update("PermissionsBoundaryUsageCount", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("PermissionsBoundaryUsageCount")(__v.asInstanceOf[js.Any])
       )
-      PolicyId.foreach(__v => __obj.update("PolicyId", __v.asInstanceOf[js.Any]))
-      PolicyName.foreach(__v => __obj.update("PolicyName", __v.asInstanceOf[js.Any]))
-      UpdateDate.foreach(__v => __obj.update("UpdateDate", __v.asInstanceOf[js.Any]))
+      PolicyId.foreach(__v => __obj.updateDynamic("PolicyId")(__v.asInstanceOf[js.Any]))
+      PolicyName.foreach(__v => __obj.updateDynamic("PolicyName")(__v.asInstanceOf[js.Any]))
+      UpdateDate.foreach(__v => __obj.updateDynamic("UpdateDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Policy]
     }
   }
@@ -5053,9 +5073,9 @@ package iam {
         PolicyDocument: js.UndefOr[policyDocumentType] = js.undefined,
         PolicyName: js.UndefOr[policyNameType] = js.undefined
     ): PolicyDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PolicyDocument.foreach(__v => __obj.update("PolicyDocument", __v.asInstanceOf[js.Any]))
-      PolicyName.foreach(__v => __obj.update("PolicyName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PolicyDocument.foreach(__v => __obj.updateDynamic("PolicyDocument")(__v.asInstanceOf[js.Any]))
+      PolicyName.foreach(__v => __obj.updateDynamic("PolicyName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PolicyDetail]
     }
   }
@@ -5089,14 +5109,14 @@ package iam {
         EntityType: js.UndefOr[policyOwnerEntityType] = js.undefined,
         PolicyArn: js.UndefOr[arnType] = js.undefined
     ): PolicyGrantingServiceAccess = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyName" -> PolicyName.asInstanceOf[js.Any],
         "PolicyType" -> PolicyType.asInstanceOf[js.Any]
       )
 
-      EntityName.foreach(__v => __obj.update("EntityName", __v.asInstanceOf[js.Any]))
-      EntityType.foreach(__v => __obj.update("EntityType", __v.asInstanceOf[js.Any]))
-      PolicyArn.foreach(__v => __obj.update("PolicyArn", __v.asInstanceOf[js.Any]))
+      EntityName.foreach(__v => __obj.updateDynamic("EntityName")(__v.asInstanceOf[js.Any]))
+      EntityType.foreach(__v => __obj.updateDynamic("EntityType")(__v.asInstanceOf[js.Any]))
+      PolicyArn.foreach(__v => __obj.updateDynamic("PolicyArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PolicyGrantingServiceAccess]
     }
   }
@@ -5117,9 +5137,9 @@ package iam {
         GroupId: js.UndefOr[idType] = js.undefined,
         GroupName: js.UndefOr[groupNameType] = js.undefined
     ): PolicyGroup = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GroupId.foreach(__v => __obj.update("GroupId", __v.asInstanceOf[js.Any]))
-      GroupName.foreach(__v => __obj.update("GroupName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GroupId.foreach(__v => __obj.updateDynamic("GroupId")(__v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PolicyGroup]
     }
   }
@@ -5140,9 +5160,9 @@ package iam {
         RoleId: js.UndefOr[idType] = js.undefined,
         RoleName: js.UndefOr[roleNameType] = js.undefined
     ): PolicyRole = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RoleId.foreach(__v => __obj.update("RoleId", __v.asInstanceOf[js.Any]))
-      RoleName.foreach(__v => __obj.update("RoleName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RoleId.foreach(__v => __obj.updateDynamic("RoleId")(__v.asInstanceOf[js.Any]))
+      RoleName.foreach(__v => __obj.updateDynamic("RoleName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PolicyRole]
     }
   }
@@ -5186,9 +5206,9 @@ package iam {
         UserId: js.UndefOr[idType] = js.undefined,
         UserName: js.UndefOr[userNameType] = js.undefined
     ): PolicyUser = {
-      val __obj = js.Dictionary.empty[js.Any]
-      UserId.foreach(__v => __obj.update("UserId", __v.asInstanceOf[js.Any]))
-      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      UserId.foreach(__v => __obj.updateDynamic("UserId")(__v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PolicyUser]
     }
   }
@@ -5213,11 +5233,11 @@ package iam {
         IsDefaultVersion: js.UndefOr[booleanType] = js.undefined,
         VersionId: js.UndefOr[policyVersionIdType] = js.undefined
     ): PolicyVersion = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreateDate.foreach(__v => __obj.update("CreateDate", __v.asInstanceOf[js.Any]))
-      Document.foreach(__v => __obj.update("Document", __v.asInstanceOf[js.Any]))
-      IsDefaultVersion.foreach(__v => __obj.update("IsDefaultVersion", __v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
+      Document.foreach(__v => __obj.updateDynamic("Document")(__v.asInstanceOf[js.Any]))
+      IsDefaultVersion.foreach(__v => __obj.updateDynamic("IsDefaultVersion")(__v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PolicyVersion]
     }
   }
@@ -5237,9 +5257,9 @@ package iam {
         Column: js.UndefOr[ColumnNumber] = js.undefined,
         Line: js.UndefOr[LineNumber] = js.undefined
     ): Position = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Column.foreach(__v => __obj.update("Column", __v.asInstanceOf[js.Any]))
-      Line.foreach(__v => __obj.update("Line", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Column.foreach(__v => __obj.updateDynamic("Column")(__v.asInstanceOf[js.Any]))
+      Line.foreach(__v => __obj.updateDynamic("Line")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Position]
     }
   }
@@ -5257,7 +5277,7 @@ package iam {
         PolicyDocument: policyDocumentType,
         PolicyName: policyNameType
     ): PutGroupPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupName"      -> GroupName.asInstanceOf[js.Any],
         "PolicyDocument" -> PolicyDocument.asInstanceOf[js.Any],
         "PolicyName"     -> PolicyName.asInstanceOf[js.Any]
@@ -5278,7 +5298,7 @@ package iam {
         PermissionsBoundary: arnType,
         RoleName: roleNameType
     ): PutRolePermissionsBoundaryRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PermissionsBoundary" -> PermissionsBoundary.asInstanceOf[js.Any],
         "RoleName"            -> RoleName.asInstanceOf[js.Any]
       )
@@ -5300,7 +5320,7 @@ package iam {
         PolicyName: policyNameType,
         RoleName: roleNameType
     ): PutRolePolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyDocument" -> PolicyDocument.asInstanceOf[js.Any],
         "PolicyName"     -> PolicyName.asInstanceOf[js.Any],
         "RoleName"       -> RoleName.asInstanceOf[js.Any]
@@ -5321,7 +5341,7 @@ package iam {
         PermissionsBoundary: arnType,
         UserName: userNameType
     ): PutUserPermissionsBoundaryRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PermissionsBoundary" -> PermissionsBoundary.asInstanceOf[js.Any],
         "UserName"            -> UserName.asInstanceOf[js.Any]
       )
@@ -5343,7 +5363,7 @@ package iam {
         PolicyName: policyNameType,
         UserName: existingUserNameType
     ): PutUserPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyDocument" -> PolicyDocument.asInstanceOf[js.Any],
         "PolicyName"     -> PolicyName.asInstanceOf[js.Any],
         "UserName"       -> UserName.asInstanceOf[js.Any]
@@ -5364,7 +5384,7 @@ package iam {
         ClientID: clientIDType,
         OpenIDConnectProviderArn: arnType
     ): RemoveClientIDFromOpenIDConnectProviderRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClientID"                 -> ClientID.asInstanceOf[js.Any],
         "OpenIDConnectProviderArn" -> OpenIDConnectProviderArn.asInstanceOf[js.Any]
       )
@@ -5384,7 +5404,7 @@ package iam {
         InstanceProfileName: instanceProfileNameType,
         RoleName: roleNameType
     ): RemoveRoleFromInstanceProfileRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceProfileName" -> InstanceProfileName.asInstanceOf[js.Any],
         "RoleName"            -> RoleName.asInstanceOf[js.Any]
       )
@@ -5404,7 +5424,7 @@ package iam {
         GroupName: groupNameType,
         UserName: existingUserNameType
     ): RemoveUserFromGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupName" -> GroupName.asInstanceOf[js.Any],
         "UserName"  -> UserName.asInstanceOf[js.Any]
       )
@@ -5438,11 +5458,11 @@ package iam {
         ServiceSpecificCredentialId: serviceSpecificCredentialId,
         UserName: js.UndefOr[userNameType] = js.undefined
     ): ResetServiceSpecificCredentialRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServiceSpecificCredentialId" -> ServiceSpecificCredentialId.asInstanceOf[js.Any]
       )
 
-      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResetServiceSpecificCredentialRequest]
     }
   }
@@ -5456,8 +5476,10 @@ package iam {
     def apply(
         ServiceSpecificCredential: js.UndefOr[ServiceSpecificCredential] = js.undefined
     ): ResetServiceSpecificCredentialResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ServiceSpecificCredential.foreach(__v => __obj.update("ServiceSpecificCredential", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ServiceSpecificCredential.foreach(
+        __v => __obj.updateDynamic("ServiceSpecificCredential")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[ResetServiceSpecificCredentialResponse]
     }
   }
@@ -5483,14 +5505,14 @@ package iam {
         MatchedStatements: js.UndefOr[StatementListType] = js.undefined,
         MissingContextValues: js.UndefOr[ContextKeyNamesResultListType] = js.undefined
     ): ResourceSpecificResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EvalResourceDecision" -> EvalResourceDecision.asInstanceOf[js.Any],
         "EvalResourceName"     -> EvalResourceName.asInstanceOf[js.Any]
       )
 
-      EvalDecisionDetails.foreach(__v => __obj.update("EvalDecisionDetails", __v.asInstanceOf[js.Any]))
-      MatchedStatements.foreach(__v => __obj.update("MatchedStatements", __v.asInstanceOf[js.Any]))
-      MissingContextValues.foreach(__v => __obj.update("MissingContextValues", __v.asInstanceOf[js.Any]))
+      EvalDecisionDetails.foreach(__v => __obj.updateDynamic("EvalDecisionDetails")(__v.asInstanceOf[js.Any]))
+      MatchedStatements.foreach(__v => __obj.updateDynamic("MatchedStatements")(__v.asInstanceOf[js.Any]))
+      MissingContextValues.foreach(__v => __obj.updateDynamic("MissingContextValues")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceSpecificResult]
     }
   }
@@ -5510,7 +5532,7 @@ package iam {
         SerialNumber: serialNumberType,
         UserName: existingUserNameType
     ): ResyncMFADeviceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AuthenticationCode1" -> AuthenticationCode1.asInstanceOf[js.Any],
         "AuthenticationCode2" -> AuthenticationCode2.asInstanceOf[js.Any],
         "SerialNumber"        -> SerialNumber.asInstanceOf[js.Any],
@@ -5551,7 +5573,7 @@ package iam {
         PermissionsBoundary: js.UndefOr[AttachedPermissionsBoundary] = js.undefined,
         Tags: js.UndefOr[tagListType] = js.undefined
     ): Role = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn"        -> Arn.asInstanceOf[js.Any],
         "CreateDate" -> CreateDate.asInstanceOf[js.Any],
         "Path"       -> Path.asInstanceOf[js.Any],
@@ -5559,11 +5581,11 @@ package iam {
         "RoleName"   -> RoleName.asInstanceOf[js.Any]
       )
 
-      AssumeRolePolicyDocument.foreach(__v => __obj.update("AssumeRolePolicyDocument", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      MaxSessionDuration.foreach(__v => __obj.update("MaxSessionDuration", __v.asInstanceOf[js.Any]))
-      PermissionsBoundary.foreach(__v => __obj.update("PermissionsBoundary", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      AssumeRolePolicyDocument.foreach(__v => __obj.updateDynamic("AssumeRolePolicyDocument")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      MaxSessionDuration.foreach(__v => __obj.updateDynamic("MaxSessionDuration")(__v.asInstanceOf[js.Any]))
+      PermissionsBoundary.foreach(__v => __obj.updateDynamic("PermissionsBoundary")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Role]
     }
   }
@@ -5601,18 +5623,18 @@ package iam {
         RolePolicyList: js.UndefOr[policyDetailListType] = js.undefined,
         Tags: js.UndefOr[tagListType] = js.undefined
     ): RoleDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      AssumeRolePolicyDocument.foreach(__v => __obj.update("AssumeRolePolicyDocument", __v.asInstanceOf[js.Any]))
-      AttachedManagedPolicies.foreach(__v => __obj.update("AttachedManagedPolicies", __v.asInstanceOf[js.Any]))
-      CreateDate.foreach(__v => __obj.update("CreateDate", __v.asInstanceOf[js.Any]))
-      InstanceProfileList.foreach(__v => __obj.update("InstanceProfileList", __v.asInstanceOf[js.Any]))
-      Path.foreach(__v => __obj.update("Path", __v.asInstanceOf[js.Any]))
-      PermissionsBoundary.foreach(__v => __obj.update("PermissionsBoundary", __v.asInstanceOf[js.Any]))
-      RoleId.foreach(__v => __obj.update("RoleId", __v.asInstanceOf[js.Any]))
-      RoleName.foreach(__v => __obj.update("RoleName", __v.asInstanceOf[js.Any]))
-      RolePolicyList.foreach(__v => __obj.update("RolePolicyList", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      AssumeRolePolicyDocument.foreach(__v => __obj.updateDynamic("AssumeRolePolicyDocument")(__v.asInstanceOf[js.Any]))
+      AttachedManagedPolicies.foreach(__v => __obj.updateDynamic("AttachedManagedPolicies")(__v.asInstanceOf[js.Any]))
+      CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
+      InstanceProfileList.foreach(__v => __obj.updateDynamic("InstanceProfileList")(__v.asInstanceOf[js.Any]))
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
+      PermissionsBoundary.foreach(__v => __obj.updateDynamic("PermissionsBoundary")(__v.asInstanceOf[js.Any]))
+      RoleId.foreach(__v => __obj.updateDynamic("RoleId")(__v.asInstanceOf[js.Any]))
+      RoleName.foreach(__v => __obj.updateDynamic("RoleName")(__v.asInstanceOf[js.Any]))
+      RolePolicyList.foreach(__v => __obj.updateDynamic("RolePolicyList")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RoleDetail]
     }
   }
@@ -5632,9 +5654,9 @@ package iam {
         Region: js.UndefOr[RegionNameType] = js.undefined,
         Resources: js.UndefOr[ArnListType] = js.undefined
     ): RoleUsageType = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Region.foreach(__v => __obj.update("Region", __v.asInstanceOf[js.Any]))
-      Resources.foreach(__v => __obj.update("Resources", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
+      Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RoleUsageType]
     }
   }
@@ -5655,10 +5677,10 @@ package iam {
         CreateDate: js.UndefOr[dateType] = js.undefined,
         ValidUntil: js.UndefOr[dateType] = js.undefined
     ): SAMLProviderListEntry = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreateDate.foreach(__v => __obj.update("CreateDate", __v.asInstanceOf[js.Any]))
-      ValidUntil.foreach(__v => __obj.update("ValidUntil", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
+      ValidUntil.foreach(__v => __obj.updateDynamic("ValidUntil")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SAMLProviderListEntry]
     }
   }
@@ -5686,7 +5708,7 @@ package iam {
         UserName: userNameType,
         UploadDate: js.UndefOr[dateType] = js.undefined
     ): SSHPublicKey = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Fingerprint"      -> Fingerprint.asInstanceOf[js.Any],
         "SSHPublicKeyBody" -> SSHPublicKeyBody.asInstanceOf[js.Any],
         "SSHPublicKeyId"   -> SSHPublicKeyId.asInstanceOf[js.Any],
@@ -5694,7 +5716,7 @@ package iam {
         "UserName"         -> UserName.asInstanceOf[js.Any]
       )
 
-      UploadDate.foreach(__v => __obj.update("UploadDate", __v.asInstanceOf[js.Any]))
+      UploadDate.foreach(__v => __obj.updateDynamic("UploadDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SSHPublicKey]
     }
   }
@@ -5718,7 +5740,7 @@ package iam {
         UploadDate: dateType,
         UserName: userNameType
     ): SSHPublicKeyMetadata = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SSHPublicKeyId" -> SSHPublicKeyId.asInstanceOf[js.Any],
         "Status"         -> Status.asInstanceOf[js.Any],
         "UploadDate"     -> UploadDate.asInstanceOf[js.Any],
@@ -5746,12 +5768,12 @@ package iam {
         ServerCertificateMetadata: ServerCertificateMetadata,
         CertificateChain: js.UndefOr[certificateChainType] = js.undefined
     ): ServerCertificate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CertificateBody"           -> CertificateBody.asInstanceOf[js.Any],
         "ServerCertificateMetadata" -> ServerCertificateMetadata.asInstanceOf[js.Any]
       )
 
-      CertificateChain.foreach(__v => __obj.update("CertificateChain", __v.asInstanceOf[js.Any]))
+      CertificateChain.foreach(__v => __obj.updateDynamic("CertificateChain")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServerCertificate]
     }
   }
@@ -5779,15 +5801,15 @@ package iam {
         Expiration: js.UndefOr[dateType] = js.undefined,
         UploadDate: js.UndefOr[dateType] = js.undefined
     ): ServerCertificateMetadata = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn"                   -> Arn.asInstanceOf[js.Any],
         "Path"                  -> Path.asInstanceOf[js.Any],
         "ServerCertificateId"   -> ServerCertificateId.asInstanceOf[js.Any],
         "ServerCertificateName" -> ServerCertificateName.asInstanceOf[js.Any]
       )
 
-      Expiration.foreach(__v => __obj.update("Expiration", __v.asInstanceOf[js.Any]))
-      UploadDate.foreach(__v => __obj.update("UploadDate", __v.asInstanceOf[js.Any]))
+      Expiration.foreach(__v => __obj.updateDynamic("Expiration")(__v.asInstanceOf[js.Any]))
+      UploadDate.foreach(__v => __obj.updateDynamic("UploadDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServerCertificateMetadata]
     }
   }
@@ -5813,14 +5835,16 @@ package iam {
         LastAuthenticatedEntity: js.UndefOr[arnType] = js.undefined,
         TotalAuthenticatedEntities: js.UndefOr[integerType] = js.undefined
     ): ServiceLastAccessed = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServiceName"      -> ServiceName.asInstanceOf[js.Any],
         "ServiceNamespace" -> ServiceNamespace.asInstanceOf[js.Any]
       )
 
-      LastAuthenticated.foreach(__v => __obj.update("LastAuthenticated", __v.asInstanceOf[js.Any]))
-      LastAuthenticatedEntity.foreach(__v => __obj.update("LastAuthenticatedEntity", __v.asInstanceOf[js.Any]))
-      TotalAuthenticatedEntities.foreach(__v => __obj.update("TotalAuthenticatedEntities", __v.asInstanceOf[js.Any]))
+      LastAuthenticated.foreach(__v => __obj.updateDynamic("LastAuthenticated")(__v.asInstanceOf[js.Any]))
+      LastAuthenticatedEntity.foreach(__v => __obj.updateDynamic("LastAuthenticatedEntity")(__v.asInstanceOf[js.Any]))
+      TotalAuthenticatedEntities.foreach(
+        __v => __obj.updateDynamic("TotalAuthenticatedEntities")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[ServiceLastAccessed]
     }
   }
@@ -5849,7 +5873,7 @@ package iam {
         Status: statusType,
         UserName: userNameType
     ): ServiceSpecificCredential = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CreateDate"                  -> CreateDate.asInstanceOf[js.Any],
         "ServiceName"                 -> ServiceName.asInstanceOf[js.Any],
         "ServicePassword"             -> ServicePassword.asInstanceOf[js.Any],
@@ -5885,7 +5909,7 @@ package iam {
         Status: statusType,
         UserName: userNameType
     ): ServiceSpecificCredentialMetadata = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CreateDate"                  -> CreateDate.asInstanceOf[js.Any],
         "ServiceName"                 -> ServiceName.asInstanceOf[js.Any],
         "ServiceSpecificCredentialId" -> ServiceSpecificCredentialId.asInstanceOf[js.Any],
@@ -5909,7 +5933,7 @@ package iam {
         PolicyArn: arnType,
         VersionId: policyVersionIdType
     ): SetDefaultPolicyVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyArn" -> PolicyArn.asInstanceOf[js.Any],
         "VersionId" -> VersionId.asInstanceOf[js.Any]
       )
@@ -5927,7 +5951,7 @@ package iam {
     def apply(
         GlobalEndpointTokenVersion: globalEndpointTokenVersion
     ): SetSecurityTokenServicePreferencesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GlobalEndpointTokenVersion" -> GlobalEndpointTokenVersion.asInstanceOf[js.Any]
       )
 
@@ -5956,14 +5980,14 @@ package iam {
         UserName: userNameType,
         UploadDate: js.UndefOr[dateType] = js.undefined
     ): SigningCertificate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CertificateBody" -> CertificateBody.asInstanceOf[js.Any],
         "CertificateId"   -> CertificateId.asInstanceOf[js.Any],
         "Status"          -> Status.asInstanceOf[js.Any],
         "UserName"        -> UserName.asInstanceOf[js.Any]
       )
 
-      UploadDate.foreach(__v => __obj.update("UploadDate", __v.asInstanceOf[js.Any]))
+      UploadDate.foreach(__v => __obj.updateDynamic("UploadDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SigningCertificate]
     }
   }
@@ -5995,19 +6019,19 @@ package iam {
         ResourceOwner: js.UndefOr[ResourceNameType] = js.undefined,
         ResourcePolicy: js.UndefOr[policyDocumentType] = js.undefined
     ): SimulateCustomPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ActionNames"     -> ActionNames.asInstanceOf[js.Any],
         "PolicyInputList" -> PolicyInputList.asInstanceOf[js.Any]
       )
 
-      CallerArn.foreach(__v => __obj.update("CallerArn", __v.asInstanceOf[js.Any]))
-      ContextEntries.foreach(__v => __obj.update("ContextEntries", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
-      ResourceArns.foreach(__v => __obj.update("ResourceArns", __v.asInstanceOf[js.Any]))
-      ResourceHandlingOption.foreach(__v => __obj.update("ResourceHandlingOption", __v.asInstanceOf[js.Any]))
-      ResourceOwner.foreach(__v => __obj.update("ResourceOwner", __v.asInstanceOf[js.Any]))
-      ResourcePolicy.foreach(__v => __obj.update("ResourcePolicy", __v.asInstanceOf[js.Any]))
+      CallerArn.foreach(__v => __obj.updateDynamic("CallerArn")(__v.asInstanceOf[js.Any]))
+      ContextEntries.foreach(__v => __obj.updateDynamic("ContextEntries")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      ResourceArns.foreach(__v => __obj.updateDynamic("ResourceArns")(__v.asInstanceOf[js.Any]))
+      ResourceHandlingOption.foreach(__v => __obj.updateDynamic("ResourceHandlingOption")(__v.asInstanceOf[js.Any]))
+      ResourceOwner.foreach(__v => __obj.updateDynamic("ResourceOwner")(__v.asInstanceOf[js.Any]))
+      ResourcePolicy.foreach(__v => __obj.updateDynamic("ResourcePolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SimulateCustomPolicyRequest]
     }
   }
@@ -6028,10 +6052,10 @@ package iam {
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined
     ): SimulatePolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EvaluationResults.foreach(__v => __obj.update("EvaluationResults", __v.asInstanceOf[js.Any]))
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EvaluationResults.foreach(__v => __obj.updateDynamic("EvaluationResults")(__v.asInstanceOf[js.Any]))
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SimulatePolicyResponse]
     }
   }
@@ -6065,20 +6089,20 @@ package iam {
         ResourceOwner: js.UndefOr[ResourceNameType] = js.undefined,
         ResourcePolicy: js.UndefOr[policyDocumentType] = js.undefined
     ): SimulatePrincipalPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ActionNames"     -> ActionNames.asInstanceOf[js.Any],
         "PolicySourceArn" -> PolicySourceArn.asInstanceOf[js.Any]
       )
 
-      CallerArn.foreach(__v => __obj.update("CallerArn", __v.asInstanceOf[js.Any]))
-      ContextEntries.foreach(__v => __obj.update("ContextEntries", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
-      PolicyInputList.foreach(__v => __obj.update("PolicyInputList", __v.asInstanceOf[js.Any]))
-      ResourceArns.foreach(__v => __obj.update("ResourceArns", __v.asInstanceOf[js.Any]))
-      ResourceHandlingOption.foreach(__v => __obj.update("ResourceHandlingOption", __v.asInstanceOf[js.Any]))
-      ResourceOwner.foreach(__v => __obj.update("ResourceOwner", __v.asInstanceOf[js.Any]))
-      ResourcePolicy.foreach(__v => __obj.update("ResourcePolicy", __v.asInstanceOf[js.Any]))
+      CallerArn.foreach(__v => __obj.updateDynamic("CallerArn")(__v.asInstanceOf[js.Any]))
+      ContextEntries.foreach(__v => __obj.updateDynamic("ContextEntries")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      PolicyInputList.foreach(__v => __obj.updateDynamic("PolicyInputList")(__v.asInstanceOf[js.Any]))
+      ResourceArns.foreach(__v => __obj.updateDynamic("ResourceArns")(__v.asInstanceOf[js.Any]))
+      ResourceHandlingOption.foreach(__v => __obj.updateDynamic("ResourceHandlingOption")(__v.asInstanceOf[js.Any]))
+      ResourceOwner.foreach(__v => __obj.updateDynamic("ResourceOwner")(__v.asInstanceOf[js.Any]))
+      ResourcePolicy.foreach(__v => __obj.updateDynamic("ResourcePolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SimulatePrincipalPolicyRequest]
     }
   }
@@ -6102,11 +6126,11 @@ package iam {
         SourcePolicyType: js.UndefOr[PolicySourceType] = js.undefined,
         StartPosition: js.UndefOr[Position] = js.undefined
     ): Statement = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EndPosition.foreach(__v => __obj.update("EndPosition", __v.asInstanceOf[js.Any]))
-      SourcePolicyId.foreach(__v => __obj.update("SourcePolicyId", __v.asInstanceOf[js.Any]))
-      SourcePolicyType.foreach(__v => __obj.update("SourcePolicyType", __v.asInstanceOf[js.Any]))
-      StartPosition.foreach(__v => __obj.update("StartPosition", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EndPosition.foreach(__v => __obj.updateDynamic("EndPosition")(__v.asInstanceOf[js.Any]))
+      SourcePolicyId.foreach(__v => __obj.updateDynamic("SourcePolicyId")(__v.asInstanceOf[js.Any]))
+      SourcePolicyType.foreach(__v => __obj.updateDynamic("SourcePolicyType")(__v.asInstanceOf[js.Any]))
+      StartPosition.foreach(__v => __obj.updateDynamic("StartPosition")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Statement]
     }
   }
@@ -6125,7 +6149,7 @@ package iam {
         Key: tagKeyType,
         Value: tagValueType
     ): Tag = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"   -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
@@ -6145,7 +6169,7 @@ package iam {
         RoleName: roleNameType,
         Tags: tagListType
     ): TagRoleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RoleName" -> RoleName.asInstanceOf[js.Any],
         "Tags"     -> Tags.asInstanceOf[js.Any]
       )
@@ -6165,7 +6189,7 @@ package iam {
         Tags: tagListType,
         UserName: existingUserNameType
     ): TagUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Tags"     -> Tags.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
@@ -6185,7 +6209,7 @@ package iam {
         RoleName: roleNameType,
         TagKeys: tagKeyListType
     ): UntagRoleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RoleName" -> RoleName.asInstanceOf[js.Any],
         "TagKeys"  -> TagKeys.asInstanceOf[js.Any]
       )
@@ -6205,7 +6229,7 @@ package iam {
         TagKeys: tagKeyListType,
         UserName: existingUserNameType
     ): UntagUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TagKeys"  -> TagKeys.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
@@ -6227,12 +6251,12 @@ package iam {
         Status: statusType,
         UserName: js.UndefOr[existingUserNameType] = js.undefined
     ): UpdateAccessKeyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccessKeyId" -> AccessKeyId.asInstanceOf[js.Any],
         "Status"      -> Status.asInstanceOf[js.Any]
       )
 
-      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAccessKeyRequest]
     }
   }
@@ -6262,16 +6286,22 @@ package iam {
         RequireSymbols: js.UndefOr[booleanType] = js.undefined,
         RequireUppercaseCharacters: js.UndefOr[booleanType] = js.undefined
     ): UpdateAccountPasswordPolicyRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AllowUsersToChangePassword.foreach(__v => __obj.update("AllowUsersToChangePassword", __v.asInstanceOf[js.Any]))
-      HardExpiry.foreach(__v => __obj.update("HardExpiry", __v.asInstanceOf[js.Any]))
-      MaxPasswordAge.foreach(__v => __obj.update("MaxPasswordAge", __v.asInstanceOf[js.Any]))
-      MinimumPasswordLength.foreach(__v => __obj.update("MinimumPasswordLength", __v.asInstanceOf[js.Any]))
-      PasswordReusePrevention.foreach(__v => __obj.update("PasswordReusePrevention", __v.asInstanceOf[js.Any]))
-      RequireLowercaseCharacters.foreach(__v => __obj.update("RequireLowercaseCharacters", __v.asInstanceOf[js.Any]))
-      RequireNumbers.foreach(__v => __obj.update("RequireNumbers", __v.asInstanceOf[js.Any]))
-      RequireSymbols.foreach(__v => __obj.update("RequireSymbols", __v.asInstanceOf[js.Any]))
-      RequireUppercaseCharacters.foreach(__v => __obj.update("RequireUppercaseCharacters", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AllowUsersToChangePassword.foreach(
+        __v => __obj.updateDynamic("AllowUsersToChangePassword")(__v.asInstanceOf[js.Any])
+      )
+      HardExpiry.foreach(__v => __obj.updateDynamic("HardExpiry")(__v.asInstanceOf[js.Any]))
+      MaxPasswordAge.foreach(__v => __obj.updateDynamic("MaxPasswordAge")(__v.asInstanceOf[js.Any]))
+      MinimumPasswordLength.foreach(__v => __obj.updateDynamic("MinimumPasswordLength")(__v.asInstanceOf[js.Any]))
+      PasswordReusePrevention.foreach(__v => __obj.updateDynamic("PasswordReusePrevention")(__v.asInstanceOf[js.Any]))
+      RequireLowercaseCharacters.foreach(
+        __v => __obj.updateDynamic("RequireLowercaseCharacters")(__v.asInstanceOf[js.Any])
+      )
+      RequireNumbers.foreach(__v => __obj.updateDynamic("RequireNumbers")(__v.asInstanceOf[js.Any]))
+      RequireSymbols.foreach(__v => __obj.updateDynamic("RequireSymbols")(__v.asInstanceOf[js.Any]))
+      RequireUppercaseCharacters.foreach(
+        __v => __obj.updateDynamic("RequireUppercaseCharacters")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[UpdateAccountPasswordPolicyRequest]
     }
   }
@@ -6287,7 +6317,7 @@ package iam {
         PolicyDocument: policyDocumentType,
         RoleName: roleNameType
     ): UpdateAssumeRolePolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyDocument" -> PolicyDocument.asInstanceOf[js.Any],
         "RoleName"       -> RoleName.asInstanceOf[js.Any]
       )
@@ -6309,12 +6339,12 @@ package iam {
         NewGroupName: js.UndefOr[groupNameType] = js.undefined,
         NewPath: js.UndefOr[pathType] = js.undefined
     ): UpdateGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupName" -> GroupName.asInstanceOf[js.Any]
       )
 
-      NewGroupName.foreach(__v => __obj.update("NewGroupName", __v.asInstanceOf[js.Any]))
-      NewPath.foreach(__v => __obj.update("NewPath", __v.asInstanceOf[js.Any]))
+      NewGroupName.foreach(__v => __obj.updateDynamic("NewGroupName")(__v.asInstanceOf[js.Any]))
+      NewPath.foreach(__v => __obj.updateDynamic("NewPath")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGroupRequest]
     }
   }
@@ -6332,12 +6362,12 @@ package iam {
         Password: js.UndefOr[passwordType] = js.undefined,
         PasswordResetRequired: js.UndefOr[booleanObjectType] = js.undefined
     ): UpdateLoginProfileRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
-      Password.foreach(__v => __obj.update("Password", __v.asInstanceOf[js.Any]))
-      PasswordResetRequired.foreach(__v => __obj.update("PasswordResetRequired", __v.asInstanceOf[js.Any]))
+      Password.foreach(__v => __obj.updateDynamic("Password")(__v.asInstanceOf[js.Any]))
+      PasswordResetRequired.foreach(__v => __obj.updateDynamic("PasswordResetRequired")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateLoginProfileRequest]
     }
   }
@@ -6353,7 +6383,7 @@ package iam {
         OpenIDConnectProviderArn: arnType,
         ThumbprintList: thumbprintListType
     ): UpdateOpenIDConnectProviderThumbprintRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OpenIDConnectProviderArn" -> OpenIDConnectProviderArn.asInstanceOf[js.Any],
         "ThumbprintList"           -> ThumbprintList.asInstanceOf[js.Any]
       )
@@ -6373,7 +6403,7 @@ package iam {
         Description: roleDescriptionType,
         RoleName: roleNameType
     ): UpdateRoleDescriptionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Description" -> Description.asInstanceOf[js.Any],
         "RoleName"    -> RoleName.asInstanceOf[js.Any]
       )
@@ -6391,8 +6421,8 @@ package iam {
     def apply(
         Role: js.UndefOr[Role] = js.undefined
     ): UpdateRoleDescriptionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRoleDescriptionResponse]
     }
   }
@@ -6410,12 +6440,12 @@ package iam {
         Description: js.UndefOr[roleDescriptionType] = js.undefined,
         MaxSessionDuration: js.UndefOr[roleMaxSessionDurationType] = js.undefined
     ): UpdateRoleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RoleName" -> RoleName.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      MaxSessionDuration.foreach(__v => __obj.update("MaxSessionDuration", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      MaxSessionDuration.foreach(__v => __obj.updateDynamic("MaxSessionDuration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRoleRequest]
     }
   }
@@ -6426,7 +6456,7 @@ package iam {
   object UpdateRoleResponse {
     def apply(
         ): UpdateRoleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateRoleResponse]
     }
@@ -6443,7 +6473,7 @@ package iam {
         SAMLMetadataDocument: SAMLMetadataDocumentType,
         SAMLProviderArn: arnType
     ): UpdateSAMLProviderRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SAMLMetadataDocument" -> SAMLMetadataDocument.asInstanceOf[js.Any],
         "SAMLProviderArn"      -> SAMLProviderArn.asInstanceOf[js.Any]
       )
@@ -6464,8 +6494,8 @@ package iam {
     def apply(
         SAMLProviderArn: js.UndefOr[arnType] = js.undefined
     ): UpdateSAMLProviderResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SAMLProviderArn.foreach(__v => __obj.update("SAMLProviderArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SAMLProviderArn.foreach(__v => __obj.updateDynamic("SAMLProviderArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSAMLProviderResponse]
     }
   }
@@ -6483,7 +6513,7 @@ package iam {
         Status: statusType,
         UserName: userNameType
     ): UpdateSSHPublicKeyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SSHPublicKeyId" -> SSHPublicKeyId.asInstanceOf[js.Any],
         "Status"         -> Status.asInstanceOf[js.Any],
         "UserName"       -> UserName.asInstanceOf[js.Any]
@@ -6506,12 +6536,12 @@ package iam {
         NewPath: js.UndefOr[pathType] = js.undefined,
         NewServerCertificateName: js.UndefOr[serverCertificateNameType] = js.undefined
     ): UpdateServerCertificateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServerCertificateName" -> ServerCertificateName.asInstanceOf[js.Any]
       )
 
-      NewPath.foreach(__v => __obj.update("NewPath", __v.asInstanceOf[js.Any]))
-      NewServerCertificateName.foreach(__v => __obj.update("NewServerCertificateName", __v.asInstanceOf[js.Any]))
+      NewPath.foreach(__v => __obj.updateDynamic("NewPath")(__v.asInstanceOf[js.Any]))
+      NewServerCertificateName.foreach(__v => __obj.updateDynamic("NewServerCertificateName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateServerCertificateRequest]
     }
   }
@@ -6529,12 +6559,12 @@ package iam {
         Status: statusType,
         UserName: js.UndefOr[userNameType] = js.undefined
     ): UpdateServiceSpecificCredentialRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServiceSpecificCredentialId" -> ServiceSpecificCredentialId.asInstanceOf[js.Any],
         "Status"                      -> Status.asInstanceOf[js.Any]
       )
 
-      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateServiceSpecificCredentialRequest]
     }
   }
@@ -6552,12 +6582,12 @@ package iam {
         Status: statusType,
         UserName: js.UndefOr[existingUserNameType] = js.undefined
     ): UpdateSigningCertificateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CertificateId" -> CertificateId.asInstanceOf[js.Any],
         "Status"        -> Status.asInstanceOf[js.Any]
       )
 
-      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSigningCertificateRequest]
     }
   }
@@ -6575,12 +6605,12 @@ package iam {
         NewPath: js.UndefOr[pathType] = js.undefined,
         NewUserName: js.UndefOr[userNameType] = js.undefined
     ): UpdateUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
-      NewPath.foreach(__v => __obj.update("NewPath", __v.asInstanceOf[js.Any]))
-      NewUserName.foreach(__v => __obj.update("NewUserName", __v.asInstanceOf[js.Any]))
+      NewPath.foreach(__v => __obj.updateDynamic("NewPath")(__v.asInstanceOf[js.Any]))
+      NewUserName.foreach(__v => __obj.updateDynamic("NewUserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateUserRequest]
     }
   }
@@ -6596,7 +6626,7 @@ package iam {
         SSHPublicKeyBody: publicKeyMaterialType,
         UserName: userNameType
     ): UploadSSHPublicKeyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SSHPublicKeyBody" -> SSHPublicKeyBody.asInstanceOf[js.Any],
         "UserName"         -> UserName.asInstanceOf[js.Any]
       )
@@ -6617,8 +6647,8 @@ package iam {
     def apply(
         SSHPublicKey: js.UndefOr[SSHPublicKey] = js.undefined
     ): UploadSSHPublicKeyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SSHPublicKey.foreach(__v => __obj.update("SSHPublicKey", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SSHPublicKey.foreach(__v => __obj.updateDynamic("SSHPublicKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UploadSSHPublicKeyResponse]
     }
   }
@@ -6640,14 +6670,14 @@ package iam {
         CertificateChain: js.UndefOr[certificateChainType] = js.undefined,
         Path: js.UndefOr[pathType] = js.undefined
     ): UploadServerCertificateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CertificateBody"       -> CertificateBody.asInstanceOf[js.Any],
         "PrivateKey"            -> PrivateKey.asInstanceOf[js.Any],
         "ServerCertificateName" -> ServerCertificateName.asInstanceOf[js.Any]
       )
 
-      CertificateChain.foreach(__v => __obj.update("CertificateChain", __v.asInstanceOf[js.Any]))
-      Path.foreach(__v => __obj.update("Path", __v.asInstanceOf[js.Any]))
+      CertificateChain.foreach(__v => __obj.updateDynamic("CertificateChain")(__v.asInstanceOf[js.Any]))
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UploadServerCertificateRequest]
     }
   }
@@ -6664,8 +6694,10 @@ package iam {
     def apply(
         ServerCertificateMetadata: js.UndefOr[ServerCertificateMetadata] = js.undefined
     ): UploadServerCertificateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ServerCertificateMetadata.foreach(__v => __obj.update("ServerCertificateMetadata", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ServerCertificateMetadata.foreach(
+        __v => __obj.updateDynamic("ServerCertificateMetadata")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[UploadServerCertificateResponse]
     }
   }
@@ -6681,11 +6713,11 @@ package iam {
         CertificateBody: certificateBodyType,
         UserName: js.UndefOr[existingUserNameType] = js.undefined
     ): UploadSigningCertificateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CertificateBody" -> CertificateBody.asInstanceOf[js.Any]
       )
 
-      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UploadSigningCertificateRequest]
     }
   }
@@ -6702,7 +6734,7 @@ package iam {
     def apply(
         Certificate: SigningCertificate
     ): UploadSigningCertificateResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Certificate" -> Certificate.asInstanceOf[js.Any]
       )
 
@@ -6740,7 +6772,7 @@ package iam {
         PermissionsBoundary: js.UndefOr[AttachedPermissionsBoundary] = js.undefined,
         Tags: js.UndefOr[tagListType] = js.undefined
     ): User = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn"        -> Arn.asInstanceOf[js.Any],
         "CreateDate" -> CreateDate.asInstanceOf[js.Any],
         "Path"       -> Path.asInstanceOf[js.Any],
@@ -6748,9 +6780,9 @@ package iam {
         "UserName"   -> UserName.asInstanceOf[js.Any]
       )
 
-      PasswordLastUsed.foreach(__v => __obj.update("PasswordLastUsed", __v.asInstanceOf[js.Any]))
-      PermissionsBoundary.foreach(__v => __obj.update("PermissionsBoundary", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      PasswordLastUsed.foreach(__v => __obj.updateDynamic("PasswordLastUsed")(__v.asInstanceOf[js.Any]))
+      PermissionsBoundary.foreach(__v => __obj.updateDynamic("PermissionsBoundary")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[User]
     }
   }
@@ -6786,17 +6818,17 @@ package iam {
         UserName: js.UndefOr[userNameType] = js.undefined,
         UserPolicyList: js.UndefOr[policyDetailListType] = js.undefined
     ): UserDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      AttachedManagedPolicies.foreach(__v => __obj.update("AttachedManagedPolicies", __v.asInstanceOf[js.Any]))
-      CreateDate.foreach(__v => __obj.update("CreateDate", __v.asInstanceOf[js.Any]))
-      GroupList.foreach(__v => __obj.update("GroupList", __v.asInstanceOf[js.Any]))
-      Path.foreach(__v => __obj.update("Path", __v.asInstanceOf[js.Any]))
-      PermissionsBoundary.foreach(__v => __obj.update("PermissionsBoundary", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      UserId.foreach(__v => __obj.update("UserId", __v.asInstanceOf[js.Any]))
-      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
-      UserPolicyList.foreach(__v => __obj.update("UserPolicyList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      AttachedManagedPolicies.foreach(__v => __obj.updateDynamic("AttachedManagedPolicies")(__v.asInstanceOf[js.Any]))
+      CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
+      GroupList.foreach(__v => __obj.updateDynamic("GroupList")(__v.asInstanceOf[js.Any]))
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
+      PermissionsBoundary.foreach(__v => __obj.updateDynamic("PermissionsBoundary")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      UserId.foreach(__v => __obj.updateDynamic("UserId")(__v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
+      UserPolicyList.foreach(__v => __obj.updateDynamic("UserPolicyList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UserDetail]
     }
   }
@@ -6821,14 +6853,14 @@ package iam {
         QRCodePNG: js.UndefOr[BootstrapDatum] = js.undefined,
         User: js.UndefOr[User] = js.undefined
     ): VirtualMFADevice = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SerialNumber" -> SerialNumber.asInstanceOf[js.Any]
       )
 
-      Base32StringSeed.foreach(__v => __obj.update("Base32StringSeed", __v.asInstanceOf[js.Any]))
-      EnableDate.foreach(__v => __obj.update("EnableDate", __v.asInstanceOf[js.Any]))
-      QRCodePNG.foreach(__v => __obj.update("QRCodePNG", __v.asInstanceOf[js.Any]))
-      User.foreach(__v => __obj.update("User", __v.asInstanceOf[js.Any]))
+      Base32StringSeed.foreach(__v => __obj.updateDynamic("Base32StringSeed")(__v.asInstanceOf[js.Any]))
+      EnableDate.foreach(__v => __obj.updateDynamic("EnableDate")(__v.asInstanceOf[js.Any]))
+      QRCodePNG.foreach(__v => __obj.updateDynamic("QRCodePNG")(__v.asInstanceOf[js.Any]))
+      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VirtualMFADevice]
     }
   }

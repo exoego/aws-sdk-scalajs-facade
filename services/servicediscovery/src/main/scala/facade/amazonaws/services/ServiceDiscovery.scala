@@ -149,12 +149,12 @@ package servicediscovery {
         CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
         Description: js.UndefOr[ResourceDescription] = js.undefined
     ): CreateHttpNamespaceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      CreatorRequestId.foreach(__v => __obj.update("CreatorRequestId", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateHttpNamespaceRequest]
     }
   }
@@ -168,8 +168,8 @@ package servicediscovery {
     def apply(
         OperationId: js.UndefOr[OperationId] = js.undefined
     ): CreateHttpNamespaceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      OperationId.foreach(__v => __obj.update("OperationId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateHttpNamespaceResponse]
     }
   }
@@ -189,13 +189,13 @@ package servicediscovery {
         CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
         Description: js.UndefOr[ResourceDescription] = js.undefined
     ): CreatePrivateDnsNamespaceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any],
         "Vpc"  -> Vpc.asInstanceOf[js.Any]
       )
 
-      CreatorRequestId.foreach(__v => __obj.update("CreatorRequestId", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePrivateDnsNamespaceRequest]
     }
   }
@@ -209,8 +209,8 @@ package servicediscovery {
     def apply(
         OperationId: js.UndefOr[OperationId] = js.undefined
     ): CreatePrivateDnsNamespaceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      OperationId.foreach(__v => __obj.update("OperationId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePrivateDnsNamespaceResponse]
     }
   }
@@ -228,12 +228,12 @@ package servicediscovery {
         CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
         Description: js.UndefOr[ResourceDescription] = js.undefined
     ): CreatePublicDnsNamespaceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      CreatorRequestId.foreach(__v => __obj.update("CreatorRequestId", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePublicDnsNamespaceRequest]
     }
   }
@@ -247,8 +247,8 @@ package servicediscovery {
     def apply(
         OperationId: js.UndefOr[OperationId] = js.undefined
     ): CreatePublicDnsNamespaceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      OperationId.foreach(__v => __obj.update("OperationId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePublicDnsNamespaceResponse]
     }
   }
@@ -274,16 +274,16 @@ package servicediscovery {
         HealthCheckCustomConfig: js.UndefOr[HealthCheckCustomConfig] = js.undefined,
         NamespaceId: js.UndefOr[ResourceId] = js.undefined
     ): CreateServiceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      CreatorRequestId.foreach(__v => __obj.update("CreatorRequestId", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      DnsConfig.foreach(__v => __obj.update("DnsConfig", __v.asInstanceOf[js.Any]))
-      HealthCheckConfig.foreach(__v => __obj.update("HealthCheckConfig", __v.asInstanceOf[js.Any]))
-      HealthCheckCustomConfig.foreach(__v => __obj.update("HealthCheckCustomConfig", __v.asInstanceOf[js.Any]))
-      NamespaceId.foreach(__v => __obj.update("NamespaceId", __v.asInstanceOf[js.Any]))
+      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DnsConfig.foreach(__v => __obj.updateDynamic("DnsConfig")(__v.asInstanceOf[js.Any]))
+      HealthCheckConfig.foreach(__v => __obj.updateDynamic("HealthCheckConfig")(__v.asInstanceOf[js.Any]))
+      HealthCheckCustomConfig.foreach(__v => __obj.updateDynamic("HealthCheckCustomConfig")(__v.asInstanceOf[js.Any]))
+      NamespaceId.foreach(__v => __obj.updateDynamic("NamespaceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateServiceRequest]
     }
   }
@@ -297,8 +297,8 @@ package servicediscovery {
     def apply(
         Service: js.UndefOr[Service] = js.undefined
     ): CreateServiceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Service.foreach(__v => __obj.update("Service", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Service.foreach(__v => __obj.updateDynamic("Service")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateServiceResponse]
     }
   }
@@ -319,7 +319,7 @@ package servicediscovery {
     def apply(
         Id: ResourceId
     ): DeleteNamespaceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
@@ -336,8 +336,8 @@ package servicediscovery {
     def apply(
         OperationId: js.UndefOr[OperationId] = js.undefined
     ): DeleteNamespaceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      OperationId.foreach(__v => __obj.update("OperationId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteNamespaceResponse]
     }
   }
@@ -351,7 +351,7 @@ package servicediscovery {
     def apply(
         Id: ResourceId
     ): DeleteServiceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
@@ -365,7 +365,7 @@ package servicediscovery {
   object DeleteServiceResponse {
     def apply(
         ): DeleteServiceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteServiceResponse]
     }
@@ -382,7 +382,7 @@ package servicediscovery {
         InstanceId: ResourceId,
         ServiceId: ResourceId
     ): DeregisterInstanceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "ServiceId"  -> ServiceId.asInstanceOf[js.Any]
       )
@@ -400,8 +400,8 @@ package servicediscovery {
     def apply(
         OperationId: js.UndefOr[OperationId] = js.undefined
     ): DeregisterInstanceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      OperationId.foreach(__v => __obj.update("OperationId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeregisterInstanceResponse]
     }
   }
@@ -423,14 +423,14 @@ package servicediscovery {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         QueryParameters: js.UndefOr[Attributes] = js.undefined
     ): DiscoverInstancesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "NamespaceName" -> NamespaceName.asInstanceOf[js.Any],
         "ServiceName"   -> ServiceName.asInstanceOf[js.Any]
       )
 
-      HealthStatus.foreach(__v => __obj.update("HealthStatus", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      QueryParameters.foreach(__v => __obj.update("QueryParameters", __v.asInstanceOf[js.Any]))
+      HealthStatus.foreach(__v => __obj.updateDynamic("HealthStatus")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      QueryParameters.foreach(__v => __obj.updateDynamic("QueryParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DiscoverInstancesRequest]
     }
   }
@@ -444,8 +444,8 @@ package servicediscovery {
     def apply(
         Instances: js.UndefOr[HttpInstanceSummaryList] = js.undefined
     ): DiscoverInstancesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Instances.foreach(__v => __obj.update("Instances", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Instances.foreach(__v => __obj.updateDynamic("Instances")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DiscoverInstancesResponse]
     }
   }
@@ -466,12 +466,12 @@ package servicediscovery {
         NamespaceId: js.UndefOr[ResourceId] = js.undefined,
         RoutingPolicy: js.UndefOr[RoutingPolicy] = js.undefined
     ): DnsConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DnsRecords" -> DnsRecords.asInstanceOf[js.Any]
       )
 
-      NamespaceId.foreach(__v => __obj.update("NamespaceId", __v.asInstanceOf[js.Any]))
-      RoutingPolicy.foreach(__v => __obj.update("RoutingPolicy", __v.asInstanceOf[js.Any]))
+      NamespaceId.foreach(__v => __obj.updateDynamic("NamespaceId")(__v.asInstanceOf[js.Any]))
+      RoutingPolicy.foreach(__v => __obj.updateDynamic("RoutingPolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DnsConfig]
     }
   }
@@ -488,7 +488,7 @@ package servicediscovery {
     def apply(
         DnsRecords: DnsRecordList
     ): DnsConfigChange = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DnsRecords" -> DnsRecords.asInstanceOf[js.Any]
       )
 
@@ -508,8 +508,8 @@ package servicediscovery {
     def apply(
         HostedZoneId: js.UndefOr[ResourceId] = js.undefined
     ): DnsProperties = {
-      val __obj = js.Dictionary.empty[js.Any]
-      HostedZoneId.foreach(__v => __obj.update("HostedZoneId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      HostedZoneId.foreach(__v => __obj.updateDynamic("HostedZoneId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DnsProperties]
     }
   }
@@ -528,7 +528,7 @@ package servicediscovery {
         TTL: RecordTTL,
         Type: RecordType
     ): DnsRecord = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TTL"  -> TTL.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
@@ -556,7 +556,7 @@ package servicediscovery {
         InstanceId: ResourceId,
         ServiceId: ResourceId
     ): GetInstanceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "ServiceId"  -> ServiceId.asInstanceOf[js.Any]
       )
@@ -574,8 +574,8 @@ package servicediscovery {
     def apply(
         Instance: js.UndefOr[Instance] = js.undefined
     ): GetInstanceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Instance.foreach(__v => __obj.update("Instance", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Instance.foreach(__v => __obj.updateDynamic("Instance")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetInstanceResponse]
     }
   }
@@ -595,13 +595,13 @@ package servicediscovery {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetInstancesHealthStatusRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServiceId" -> ServiceId.asInstanceOf[js.Any]
       )
 
-      Instances.foreach(__v => __obj.update("Instances", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Instances.foreach(__v => __obj.updateDynamic("Instances")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetInstancesHealthStatusRequest]
     }
   }
@@ -617,9 +617,9 @@ package servicediscovery {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Status: js.UndefOr[InstanceHealthStatusMap] = js.undefined
     ): GetInstancesHealthStatusResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetInstancesHealthStatusResponse]
     }
   }
@@ -633,7 +633,7 @@ package servicediscovery {
     def apply(
         Id: ResourceId
     ): GetNamespaceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
@@ -650,8 +650,8 @@ package servicediscovery {
     def apply(
         Namespace: js.UndefOr[Namespace] = js.undefined
     ): GetNamespaceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Namespace.foreach(__v => __obj.update("Namespace", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetNamespaceResponse]
     }
   }
@@ -665,7 +665,7 @@ package servicediscovery {
     def apply(
         OperationId: ResourceId
     ): GetOperationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OperationId" -> OperationId.asInstanceOf[js.Any]
       )
 
@@ -682,8 +682,8 @@ package servicediscovery {
     def apply(
         Operation: js.UndefOr[Operation] = js.undefined
     ): GetOperationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Operation.foreach(__v => __obj.update("Operation", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Operation.foreach(__v => __obj.updateDynamic("Operation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetOperationResponse]
     }
   }
@@ -697,7 +697,7 @@ package servicediscovery {
     def apply(
         Id: ResourceId
     ): GetServiceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
@@ -714,8 +714,8 @@ package servicediscovery {
     def apply(
         Service: js.UndefOr[Service] = js.undefined
     ): GetServiceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Service.foreach(__v => __obj.update("Service", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Service.foreach(__v => __obj.updateDynamic("Service")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetServiceResponse]
     }
   }
@@ -753,12 +753,12 @@ package servicediscovery {
         FailureThreshold: js.UndefOr[FailureThreshold] = js.undefined,
         ResourcePath: js.UndefOr[ResourcePath] = js.undefined
     ): HealthCheckConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Type" -> Type.asInstanceOf[js.Any]
       )
 
-      FailureThreshold.foreach(__v => __obj.update("FailureThreshold", __v.asInstanceOf[js.Any]))
-      ResourcePath.foreach(__v => __obj.update("ResourcePath", __v.asInstanceOf[js.Any]))
+      FailureThreshold.foreach(__v => __obj.updateDynamic("FailureThreshold")(__v.asInstanceOf[js.Any]))
+      ResourcePath.foreach(__v => __obj.updateDynamic("ResourcePath")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HealthCheckConfig]
     }
   }
@@ -791,8 +791,8 @@ package servicediscovery {
     def apply(
         FailureThreshold: js.UndefOr[FailureThreshold] = js.undefined
     ): HealthCheckCustomConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FailureThreshold.foreach(__v => __obj.update("FailureThreshold", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FailureThreshold.foreach(__v => __obj.updateDynamic("FailureThreshold")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HealthCheckCustomConfig]
     }
   }
@@ -841,12 +841,12 @@ package servicediscovery {
         NamespaceName: js.UndefOr[NamespaceName] = js.undefined,
         ServiceName: js.UndefOr[ServiceName] = js.undefined
     ): HttpInstanceSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      HealthStatus.foreach(__v => __obj.update("HealthStatus", __v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      NamespaceName.foreach(__v => __obj.update("NamespaceName", __v.asInstanceOf[js.Any]))
-      ServiceName.foreach(__v => __obj.update("ServiceName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      HealthStatus.foreach(__v => __obj.updateDynamic("HealthStatus")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      NamespaceName.foreach(__v => __obj.updateDynamic("NamespaceName")(__v.asInstanceOf[js.Any]))
+      ServiceName.foreach(__v => __obj.updateDynamic("ServiceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HttpInstanceSummary]
     }
   }
@@ -863,8 +863,8 @@ package servicediscovery {
     def apply(
         HttpName: js.UndefOr[NamespaceName] = js.undefined
     ): HttpProperties = {
-      val __obj = js.Dictionary.empty[js.Any]
-      HttpName.foreach(__v => __obj.update("HttpName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      HttpName.foreach(__v => __obj.updateDynamic("HttpName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HttpProperties]
     }
   }
@@ -885,12 +885,12 @@ package servicediscovery {
         Attributes: js.UndefOr[Attributes] = js.undefined,
         CreatorRequestId: js.UndefOr[ResourceId] = js.undefined
     ): Instance = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      CreatorRequestId.foreach(__v => __obj.update("CreatorRequestId", __v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Instance]
     }
   }
@@ -909,9 +909,9 @@ package servicediscovery {
         Attributes: js.UndefOr[Attributes] = js.undefined,
         Id: js.UndefOr[ResourceId] = js.undefined
     ): InstanceSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceSummary]
     }
   }
@@ -929,12 +929,12 @@ package servicediscovery {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListInstancesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServiceId" -> ServiceId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListInstancesRequest]
     }
   }
@@ -950,9 +950,9 @@ package servicediscovery {
         Instances: js.UndefOr[InstanceSummaryList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListInstancesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Instances.foreach(__v => __obj.update("Instances", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Instances.foreach(__v => __obj.updateDynamic("Instances")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListInstancesResponse]
     }
   }
@@ -970,10 +970,10 @@ package servicediscovery {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListNamespacesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListNamespacesRequest]
     }
   }
@@ -989,9 +989,9 @@ package servicediscovery {
         Namespaces: js.UndefOr[NamespaceSummariesList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListNamespacesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Namespaces.foreach(__v => __obj.update("Namespaces", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Namespaces.foreach(__v => __obj.updateDynamic("Namespaces")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListNamespacesResponse]
     }
   }
@@ -1009,10 +1009,10 @@ package servicediscovery {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListOperationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListOperationsRequest]
     }
   }
@@ -1028,9 +1028,9 @@ package servicediscovery {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Operations: js.UndefOr[OperationSummaryList] = js.undefined
     ): ListOperationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Operations.foreach(__v => __obj.update("Operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Operations.foreach(__v => __obj.updateDynamic("Operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListOperationsResponse]
     }
   }
@@ -1048,10 +1048,10 @@ package servicediscovery {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListServicesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListServicesRequest]
     }
   }
@@ -1067,9 +1067,9 @@ package servicediscovery {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Services: js.UndefOr[ServiceSummariesList] = js.undefined
     ): ListServicesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Services.foreach(__v => __obj.update("Services", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Services.foreach(__v => __obj.updateDynamic("Services")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListServicesResponse]
     }
   }
@@ -1102,16 +1102,16 @@ package servicediscovery {
         ServiceCount: js.UndefOr[ResourceCount] = js.undefined,
         Type: js.UndefOr[NamespaceType] = js.undefined
     ): Namespace = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreateDate.foreach(__v => __obj.update("CreateDate", __v.asInstanceOf[js.Any]))
-      CreatorRequestId.foreach(__v => __obj.update("CreatorRequestId", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Properties.foreach(__v => __obj.update("Properties", __v.asInstanceOf[js.Any]))
-      ServiceCount.foreach(__v => __obj.update("ServiceCount", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
+      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Properties.foreach(__v => __obj.updateDynamic("Properties")(__v.asInstanceOf[js.Any]))
+      ServiceCount.foreach(__v => __obj.updateDynamic("ServiceCount")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Namespace]
     }
   }
@@ -1132,12 +1132,12 @@ package servicediscovery {
         Values: FilterValues,
         Condition: js.UndefOr[FilterCondition] = js.undefined
     ): NamespaceFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"   -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
-      Condition.foreach(__v => __obj.update("Condition", __v.asInstanceOf[js.Any]))
+      Condition.foreach(__v => __obj.updateDynamic("Condition")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NamespaceFilter]
     }
   }
@@ -1162,9 +1162,9 @@ package servicediscovery {
         DnsProperties: js.UndefOr[DnsProperties] = js.undefined,
         HttpProperties: js.UndefOr[HttpProperties] = js.undefined
     ): NamespaceProperties = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DnsProperties.foreach(__v => __obj.update("DnsProperties", __v.asInstanceOf[js.Any]))
-      HttpProperties.foreach(__v => __obj.update("HttpProperties", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DnsProperties.foreach(__v => __obj.updateDynamic("DnsProperties")(__v.asInstanceOf[js.Any]))
+      HttpProperties.foreach(__v => __obj.updateDynamic("HttpProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NamespaceProperties]
     }
   }
@@ -1195,15 +1195,15 @@ package servicediscovery {
         ServiceCount: js.UndefOr[ResourceCount] = js.undefined,
         Type: js.UndefOr[NamespaceType] = js.undefined
     ): NamespaceSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreateDate.foreach(__v => __obj.update("CreateDate", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Properties.foreach(__v => __obj.update("Properties", __v.asInstanceOf[js.Any]))
-      ServiceCount.foreach(__v => __obj.update("ServiceCount", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Properties.foreach(__v => __obj.updateDynamic("Properties")(__v.asInstanceOf[js.Any]))
+      ServiceCount.foreach(__v => __obj.updateDynamic("ServiceCount")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NamespaceSummary]
     }
   }
@@ -1242,15 +1242,15 @@ package servicediscovery {
         Type: js.UndefOr[OperationType] = js.undefined,
         UpdateDate: js.UndefOr[Timestamp] = js.undefined
     ): Operation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreateDate.foreach(__v => __obj.update("CreateDate", __v.asInstanceOf[js.Any]))
-      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.update("Targets", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
-      UpdateDate.foreach(__v => __obj.update("UpdateDate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      UpdateDate.foreach(__v => __obj.updateDynamic("UpdateDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Operation]
     }
   }
@@ -1271,12 +1271,12 @@ package servicediscovery {
         Values: FilterValues,
         Condition: js.UndefOr[FilterCondition] = js.undefined
     ): OperationFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"   -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
-      Condition.foreach(__v => __obj.update("Condition", __v.asInstanceOf[js.Any]))
+      Condition.foreach(__v => __obj.updateDynamic("Condition")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OperationFilter]
     }
   }
@@ -1314,9 +1314,9 @@ package servicediscovery {
         Id: js.UndefOr[OperationId] = js.undefined,
         Status: js.UndefOr[OperationStatus] = js.undefined
     ): OperationSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OperationSummary]
     }
   }
@@ -1365,13 +1365,13 @@ package servicediscovery {
         ServiceId: ResourceId,
         CreatorRequestId: js.UndefOr[ResourceId] = js.undefined
     ): RegisterInstanceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Attributes" -> Attributes.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "ServiceId"  -> ServiceId.asInstanceOf[js.Any]
       )
 
-      CreatorRequestId.foreach(__v => __obj.update("CreatorRequestId", __v.asInstanceOf[js.Any]))
+      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterInstanceRequest]
     }
   }
@@ -1385,8 +1385,8 @@ package servicediscovery {
     def apply(
         OperationId: js.UndefOr[OperationId] = js.undefined
     ): RegisterInstanceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      OperationId.foreach(__v => __obj.update("OperationId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterInstanceResponse]
     }
   }
@@ -1430,18 +1430,18 @@ package servicediscovery {
         Name: js.UndefOr[ServiceName] = js.undefined,
         NamespaceId: js.UndefOr[ResourceId] = js.undefined
     ): Service = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreateDate.foreach(__v => __obj.update("CreateDate", __v.asInstanceOf[js.Any]))
-      CreatorRequestId.foreach(__v => __obj.update("CreatorRequestId", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      DnsConfig.foreach(__v => __obj.update("DnsConfig", __v.asInstanceOf[js.Any]))
-      HealthCheckConfig.foreach(__v => __obj.update("HealthCheckConfig", __v.asInstanceOf[js.Any]))
-      HealthCheckCustomConfig.foreach(__v => __obj.update("HealthCheckCustomConfig", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      InstanceCount.foreach(__v => __obj.update("InstanceCount", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      NamespaceId.foreach(__v => __obj.update("NamespaceId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
+      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DnsConfig.foreach(__v => __obj.updateDynamic("DnsConfig")(__v.asInstanceOf[js.Any]))
+      HealthCheckConfig.foreach(__v => __obj.updateDynamic("HealthCheckConfig")(__v.asInstanceOf[js.Any]))
+      HealthCheckCustomConfig.foreach(__v => __obj.updateDynamic("HealthCheckCustomConfig")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      InstanceCount.foreach(__v => __obj.updateDynamic("InstanceCount")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NamespaceId.foreach(__v => __obj.updateDynamic("NamespaceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Service]
     }
   }
@@ -1462,12 +1462,12 @@ package servicediscovery {
         Description: js.UndefOr[ResourceDescription] = js.undefined,
         HealthCheckConfig: js.UndefOr[HealthCheckConfig] = js.undefined
     ): ServiceChange = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DnsConfig" -> DnsConfig.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      HealthCheckConfig.foreach(__v => __obj.update("HealthCheckConfig", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      HealthCheckConfig.foreach(__v => __obj.updateDynamic("HealthCheckConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServiceChange]
     }
   }
@@ -1488,12 +1488,12 @@ package servicediscovery {
         Values: FilterValues,
         Condition: js.UndefOr[FilterCondition] = js.undefined
     ): ServiceFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"   -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
-      Condition.foreach(__v => __obj.update("Condition", __v.asInstanceOf[js.Any]))
+      Condition.foreach(__v => __obj.updateDynamic("Condition")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServiceFilter]
     }
   }
@@ -1532,16 +1532,16 @@ package servicediscovery {
         InstanceCount: js.UndefOr[ResourceCount] = js.undefined,
         Name: js.UndefOr[ServiceName] = js.undefined
     ): ServiceSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreateDate.foreach(__v => __obj.update("CreateDate", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      DnsConfig.foreach(__v => __obj.update("DnsConfig", __v.asInstanceOf[js.Any]))
-      HealthCheckConfig.foreach(__v => __obj.update("HealthCheckConfig", __v.asInstanceOf[js.Any]))
-      HealthCheckCustomConfig.foreach(__v => __obj.update("HealthCheckCustomConfig", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      InstanceCount.foreach(__v => __obj.update("InstanceCount", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DnsConfig.foreach(__v => __obj.updateDynamic("DnsConfig")(__v.asInstanceOf[js.Any]))
+      HealthCheckConfig.foreach(__v => __obj.updateDynamic("HealthCheckConfig")(__v.asInstanceOf[js.Any]))
+      HealthCheckCustomConfig.foreach(__v => __obj.updateDynamic("HealthCheckCustomConfig")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      InstanceCount.foreach(__v => __obj.updateDynamic("InstanceCount")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServiceSummary]
     }
   }
@@ -1559,7 +1559,7 @@ package servicediscovery {
         ServiceId: ResourceId,
         Status: CustomHealthStatus
     ): UpdateInstanceCustomHealthStatusRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "ServiceId"  -> ServiceId.asInstanceOf[js.Any],
         "Status"     -> Status.asInstanceOf[js.Any]
@@ -1580,7 +1580,7 @@ package servicediscovery {
         Id: ResourceId,
         Service: ServiceChange
     ): UpdateServiceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id"      -> Id.asInstanceOf[js.Any],
         "Service" -> Service.asInstanceOf[js.Any]
       )
@@ -1598,8 +1598,8 @@ package servicediscovery {
     def apply(
         OperationId: js.UndefOr[OperationId] = js.undefined
     ): UpdateServiceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      OperationId.foreach(__v => __obj.update("OperationId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateServiceResponse]
     }
   }

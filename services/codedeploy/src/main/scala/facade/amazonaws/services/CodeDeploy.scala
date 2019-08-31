@@ -332,7 +332,7 @@ package codedeploy {
         instanceNames: InstanceNameList,
         tags: TagList
     ): AddTagsToOnPremisesInstancesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "instanceNames" -> instanceNames.asInstanceOf[js.Any],
         "tags"          -> tags.asInstanceOf[js.Any]
       )
@@ -353,8 +353,8 @@ package codedeploy {
     def apply(
         name: js.UndefOr[AlarmName] = js.undefined
     ): Alarm = {
-      val __obj = js.Dictionary.empty[js.Any]
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Alarm]
     }
   }
@@ -375,10 +375,10 @@ package codedeploy {
         enabled: js.UndefOr[Boolean] = js.undefined,
         ignorePollAlarmFailure: js.UndefOr[Boolean] = js.undefined
     ): AlarmConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      alarms.foreach(__v => __obj.update("alarms", __v.asInstanceOf[js.Any]))
-      enabled.foreach(__v => __obj.update("enabled", __v.asInstanceOf[js.Any]))
-      ignorePollAlarmFailure.foreach(__v => __obj.update("ignorePollAlarmFailure", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      alarms.foreach(__v => __obj.updateDynamic("alarms")(__v.asInstanceOf[js.Any]))
+      enabled.foreach(__v => __obj.updateDynamic("enabled")(__v.asInstanceOf[js.Any]))
+      ignorePollAlarmFailure.foreach(__v => __obj.updateDynamic("ignorePollAlarmFailure")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AlarmConfiguration]
     }
   }
@@ -397,9 +397,9 @@ package codedeploy {
         content: js.UndefOr[RawStringContent] = js.undefined,
         sha256: js.UndefOr[RawStringSha256] = js.undefined
     ): AppSpecContent = {
-      val __obj = js.Dictionary.empty[js.Any]
-      content.foreach(__v => __obj.update("content", __v.asInstanceOf[js.Any]))
-      sha256.foreach(__v => __obj.update("sha256", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      content.foreach(__v => __obj.updateDynamic("content")(__v.asInstanceOf[js.Any]))
+      sha256.foreach(__v => __obj.updateDynamic("sha256")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AppSpecContent]
     }
   }
@@ -426,13 +426,13 @@ package codedeploy {
         gitHubAccountName: js.UndefOr[GitHubAccountTokenName] = js.undefined,
         linkedToGitHub: js.UndefOr[Boolean] = js.undefined
     ): ApplicationInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      applicationId.foreach(__v => __obj.update("applicationId", __v.asInstanceOf[js.Any]))
-      applicationName.foreach(__v => __obj.update("applicationName", __v.asInstanceOf[js.Any]))
-      computePlatform.foreach(__v => __obj.update("computePlatform", __v.asInstanceOf[js.Any]))
-      createTime.foreach(__v => __obj.update("createTime", __v.asInstanceOf[js.Any]))
-      gitHubAccountName.foreach(__v => __obj.update("gitHubAccountName", __v.asInstanceOf[js.Any]))
-      linkedToGitHub.foreach(__v => __obj.update("linkedToGitHub", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      applicationId.foreach(__v => __obj.updateDynamic("applicationId")(__v.asInstanceOf[js.Any]))
+      applicationName.foreach(__v => __obj.updateDynamic("applicationName")(__v.asInstanceOf[js.Any]))
+      computePlatform.foreach(__v => __obj.updateDynamic("computePlatform")(__v.asInstanceOf[js.Any]))
+      createTime.foreach(__v => __obj.updateDynamic("createTime")(__v.asInstanceOf[js.Any]))
+      gitHubAccountName.foreach(__v => __obj.updateDynamic("gitHubAccountName")(__v.asInstanceOf[js.Any]))
+      linkedToGitHub.foreach(__v => __obj.updateDynamic("linkedToGitHub")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationInfo]
     }
   }
@@ -459,9 +459,9 @@ package codedeploy {
         enabled: js.UndefOr[Boolean] = js.undefined,
         events: js.UndefOr[AutoRollbackEventsList] = js.undefined
     ): AutoRollbackConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      enabled.foreach(__v => __obj.update("enabled", __v.asInstanceOf[js.Any]))
-      events.foreach(__v => __obj.update("events", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      enabled.foreach(__v => __obj.updateDynamic("enabled")(__v.asInstanceOf[js.Any]))
+      events.foreach(__v => __obj.updateDynamic("events")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoRollbackConfiguration]
     }
   }
@@ -488,9 +488,9 @@ package codedeploy {
         hook: js.UndefOr[AutoScalingGroupHook] = js.undefined,
         name: js.UndefOr[AutoScalingGroupName] = js.undefined
     ): AutoScalingGroup = {
-      val __obj = js.Dictionary.empty[js.Any]
-      hook.foreach(__v => __obj.update("hook", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      hook.foreach(__v => __obj.updateDynamic("hook")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoScalingGroup]
     }
   }
@@ -509,7 +509,7 @@ package codedeploy {
         applicationName: ApplicationName,
         revisions: RevisionLocationList
     ): BatchGetApplicationRevisionsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "applicationName" -> applicationName.asInstanceOf[js.Any],
         "revisions"       -> revisions.asInstanceOf[js.Any]
       )
@@ -534,10 +534,10 @@ package codedeploy {
         errorMessage: js.UndefOr[ErrorMessage] = js.undefined,
         revisions: js.UndefOr[RevisionInfoList] = js.undefined
     ): BatchGetApplicationRevisionsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      applicationName.foreach(__v => __obj.update("applicationName", __v.asInstanceOf[js.Any]))
-      errorMessage.foreach(__v => __obj.update("errorMessage", __v.asInstanceOf[js.Any]))
-      revisions.foreach(__v => __obj.update("revisions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      applicationName.foreach(__v => __obj.updateDynamic("applicationName")(__v.asInstanceOf[js.Any]))
+      errorMessage.foreach(__v => __obj.updateDynamic("errorMessage")(__v.asInstanceOf[js.Any]))
+      revisions.foreach(__v => __obj.updateDynamic("revisions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetApplicationRevisionsOutput]
     }
   }
@@ -554,7 +554,7 @@ package codedeploy {
     def apply(
         applicationNames: ApplicationsList
     ): BatchGetApplicationsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "applicationNames" -> applicationNames.asInstanceOf[js.Any]
       )
 
@@ -574,8 +574,8 @@ package codedeploy {
     def apply(
         applicationsInfo: js.UndefOr[ApplicationsInfoList] = js.undefined
     ): BatchGetApplicationsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      applicationsInfo.foreach(__v => __obj.update("applicationsInfo", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      applicationsInfo.foreach(__v => __obj.updateDynamic("applicationsInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetApplicationsOutput]
     }
   }
@@ -594,7 +594,7 @@ package codedeploy {
         applicationName: ApplicationName,
         deploymentGroupNames: DeploymentGroupsList
     ): BatchGetDeploymentGroupsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "applicationName"      -> applicationName.asInstanceOf[js.Any],
         "deploymentGroupNames" -> deploymentGroupNames.asInstanceOf[js.Any]
       )
@@ -617,9 +617,9 @@ package codedeploy {
         deploymentGroupsInfo: js.UndefOr[DeploymentGroupInfoList] = js.undefined,
         errorMessage: js.UndefOr[ErrorMessage] = js.undefined
     ): BatchGetDeploymentGroupsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deploymentGroupsInfo.foreach(__v => __obj.update("deploymentGroupsInfo", __v.asInstanceOf[js.Any]))
-      errorMessage.foreach(__v => __obj.update("errorMessage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deploymentGroupsInfo.foreach(__v => __obj.updateDynamic("deploymentGroupsInfo")(__v.asInstanceOf[js.Any]))
+      errorMessage.foreach(__v => __obj.updateDynamic("errorMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetDeploymentGroupsOutput]
     }
   }
@@ -638,7 +638,7 @@ package codedeploy {
         deploymentId: DeploymentId,
         instanceIds: InstancesList
     ): BatchGetDeploymentInstancesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "deploymentId" -> deploymentId.asInstanceOf[js.Any],
         "instanceIds"  -> instanceIds.asInstanceOf[js.Any]
       )
@@ -661,9 +661,9 @@ package codedeploy {
         errorMessage: js.UndefOr[ErrorMessage] = js.undefined,
         instancesSummary: js.UndefOr[InstanceSummaryList] = js.undefined
     ): BatchGetDeploymentInstancesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      errorMessage.foreach(__v => __obj.update("errorMessage", __v.asInstanceOf[js.Any]))
-      instancesSummary.foreach(__v => __obj.update("instancesSummary", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      errorMessage.foreach(__v => __obj.updateDynamic("errorMessage")(__v.asInstanceOf[js.Any]))
+      instancesSummary.foreach(__v => __obj.updateDynamic("instancesSummary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetDeploymentInstancesOutput]
     }
   }
@@ -679,9 +679,9 @@ package codedeploy {
         deploymentId: js.UndefOr[DeploymentId] = js.undefined,
         targetIds: js.UndefOr[TargetIdList] = js.undefined
     ): BatchGetDeploymentTargetsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deploymentId.foreach(__v => __obj.update("deploymentId", __v.asInstanceOf[js.Any]))
-      targetIds.foreach(__v => __obj.update("targetIds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deploymentId.foreach(__v => __obj.updateDynamic("deploymentId")(__v.asInstanceOf[js.Any]))
+      targetIds.foreach(__v => __obj.updateDynamic("targetIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetDeploymentTargetsInput]
     }
   }
@@ -695,8 +695,8 @@ package codedeploy {
     def apply(
         deploymentTargets: js.UndefOr[DeploymentTargetList] = js.undefined
     ): BatchGetDeploymentTargetsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deploymentTargets.foreach(__v => __obj.update("deploymentTargets", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deploymentTargets.foreach(__v => __obj.updateDynamic("deploymentTargets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetDeploymentTargetsOutput]
     }
   }
@@ -713,7 +713,7 @@ package codedeploy {
     def apply(
         deploymentIds: DeploymentsList
     ): BatchGetDeploymentsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "deploymentIds" -> deploymentIds.asInstanceOf[js.Any]
       )
 
@@ -733,8 +733,8 @@ package codedeploy {
     def apply(
         deploymentsInfo: js.UndefOr[DeploymentsInfoList] = js.undefined
     ): BatchGetDeploymentsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deploymentsInfo.foreach(__v => __obj.update("deploymentsInfo", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deploymentsInfo.foreach(__v => __obj.updateDynamic("deploymentsInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetDeploymentsOutput]
     }
   }
@@ -751,7 +751,7 @@ package codedeploy {
     def apply(
         instanceNames: InstanceNameList
     ): BatchGetOnPremisesInstancesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "instanceNames" -> instanceNames.asInstanceOf[js.Any]
       )
 
@@ -771,8 +771,8 @@ package codedeploy {
     def apply(
         instanceInfos: js.UndefOr[InstanceInfoList] = js.undefined
     ): BatchGetOnPremisesInstancesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      instanceInfos.foreach(__v => __obj.update("instanceInfos", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      instanceInfos.foreach(__v => __obj.updateDynamic("instanceInfos")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetOnPremisesInstancesOutput]
     }
   }
@@ -793,13 +793,13 @@ package codedeploy {
         greenFleetProvisioningOption: js.UndefOr[GreenFleetProvisioningOption] = js.undefined,
         terminateBlueInstancesOnDeploymentSuccess: js.UndefOr[BlueInstanceTerminationOption] = js.undefined
     ): BlueGreenDeploymentConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deploymentReadyOption.foreach(__v => __obj.update("deploymentReadyOption", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deploymentReadyOption.foreach(__v => __obj.updateDynamic("deploymentReadyOption")(__v.asInstanceOf[js.Any]))
       greenFleetProvisioningOption.foreach(
-        __v => __obj.update("greenFleetProvisioningOption", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("greenFleetProvisioningOption")(__v.asInstanceOf[js.Any])
       )
       terminateBlueInstancesOnDeploymentSuccess.foreach(
-        __v => __obj.update("terminateBlueInstancesOnDeploymentSuccess", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("terminateBlueInstancesOnDeploymentSuccess")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[BlueGreenDeploymentConfiguration]
     }
@@ -819,10 +819,10 @@ package codedeploy {
         action: js.UndefOr[InstanceAction] = js.undefined,
         terminationWaitTimeInMinutes: js.UndefOr[Duration] = js.undefined
     ): BlueInstanceTerminationOption = {
-      val __obj = js.Dictionary.empty[js.Any]
-      action.foreach(__v => __obj.update("action", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      action.foreach(__v => __obj.updateDynamic("action")(__v.asInstanceOf[js.Any]))
       terminationWaitTimeInMinutes.foreach(
-        __v => __obj.update("terminationWaitTimeInMinutes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("terminationWaitTimeInMinutes")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[BlueInstanceTerminationOption]
     }
@@ -857,9 +857,9 @@ package codedeploy {
         deploymentId: js.UndefOr[DeploymentId] = js.undefined,
         deploymentWaitType: js.UndefOr[DeploymentWaitType] = js.undefined
     ): ContinueDeploymentInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deploymentId.foreach(__v => __obj.update("deploymentId", __v.asInstanceOf[js.Any]))
-      deploymentWaitType.foreach(__v => __obj.update("deploymentWaitType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deploymentId.foreach(__v => __obj.updateDynamic("deploymentId")(__v.asInstanceOf[js.Any]))
+      deploymentWaitType.foreach(__v => __obj.updateDynamic("deploymentWaitType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContinueDeploymentInput]
     }
   }
@@ -880,12 +880,12 @@ package codedeploy {
         computePlatform: js.UndefOr[ComputePlatform] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateApplicationInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "applicationName" -> applicationName.asInstanceOf[js.Any]
       )
 
-      computePlatform.foreach(__v => __obj.update("computePlatform", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      computePlatform.foreach(__v => __obj.updateDynamic("computePlatform")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateApplicationInput]
     }
   }
@@ -902,8 +902,8 @@ package codedeploy {
     def apply(
         applicationId: js.UndefOr[ApplicationId] = js.undefined
     ): CreateApplicationOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      applicationId.foreach(__v => __obj.update("applicationId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      applicationId.foreach(__v => __obj.updateDynamic("applicationId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateApplicationOutput]
     }
   }
@@ -926,13 +926,13 @@ package codedeploy {
         minimumHealthyHosts: js.UndefOr[MinimumHealthyHosts] = js.undefined,
         trafficRoutingConfig: js.UndefOr[TrafficRoutingConfig] = js.undefined
     ): CreateDeploymentConfigInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "deploymentConfigName" -> deploymentConfigName.asInstanceOf[js.Any]
       )
 
-      computePlatform.foreach(__v => __obj.update("computePlatform", __v.asInstanceOf[js.Any]))
-      minimumHealthyHosts.foreach(__v => __obj.update("minimumHealthyHosts", __v.asInstanceOf[js.Any]))
-      trafficRoutingConfig.foreach(__v => __obj.update("trafficRoutingConfig", __v.asInstanceOf[js.Any]))
+      computePlatform.foreach(__v => __obj.updateDynamic("computePlatform")(__v.asInstanceOf[js.Any]))
+      minimumHealthyHosts.foreach(__v => __obj.updateDynamic("minimumHealthyHosts")(__v.asInstanceOf[js.Any]))
+      trafficRoutingConfig.foreach(__v => __obj.updateDynamic("trafficRoutingConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDeploymentConfigInput]
     }
   }
@@ -949,8 +949,8 @@ package codedeploy {
     def apply(
         deploymentConfigId: js.UndefOr[DeploymentConfigId] = js.undefined
     ): CreateDeploymentConfigOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deploymentConfigId.foreach(__v => __obj.update("deploymentConfigId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deploymentConfigId.foreach(__v => __obj.updateDynamic("deploymentConfigId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDeploymentConfigOutput]
     }
   }
@@ -999,30 +999,32 @@ package codedeploy {
         tags: js.UndefOr[TagList] = js.undefined,
         triggerConfigurations: js.UndefOr[TriggerConfigList] = js.undefined
     ): CreateDeploymentGroupInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "applicationName"     -> applicationName.asInstanceOf[js.Any],
         "deploymentGroupName" -> deploymentGroupName.asInstanceOf[js.Any],
         "serviceRoleArn"      -> serviceRoleArn.asInstanceOf[js.Any]
       )
 
-      alarmConfiguration.foreach(__v => __obj.update("alarmConfiguration", __v.asInstanceOf[js.Any]))
-      autoRollbackConfiguration.foreach(__v => __obj.update("autoRollbackConfiguration", __v.asInstanceOf[js.Any]))
-      autoScalingGroups.foreach(__v => __obj.update("autoScalingGroups", __v.asInstanceOf[js.Any]))
+      alarmConfiguration.foreach(__v => __obj.updateDynamic("alarmConfiguration")(__v.asInstanceOf[js.Any]))
+      autoRollbackConfiguration.foreach(
+        __v => __obj.updateDynamic("autoRollbackConfiguration")(__v.asInstanceOf[js.Any])
+      )
+      autoScalingGroups.foreach(__v => __obj.updateDynamic("autoScalingGroups")(__v.asInstanceOf[js.Any]))
       blueGreenDeploymentConfiguration.foreach(
-        __v => __obj.update("blueGreenDeploymentConfiguration", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("blueGreenDeploymentConfiguration")(__v.asInstanceOf[js.Any])
       )
-      deploymentConfigName.foreach(__v => __obj.update("deploymentConfigName", __v.asInstanceOf[js.Any]))
-      deploymentStyle.foreach(__v => __obj.update("deploymentStyle", __v.asInstanceOf[js.Any]))
-      ec2TagFilters.foreach(__v => __obj.update("ec2TagFilters", __v.asInstanceOf[js.Any]))
-      ec2TagSet.foreach(__v => __obj.update("ec2TagSet", __v.asInstanceOf[js.Any]))
-      ecsServices.foreach(__v => __obj.update("ecsServices", __v.asInstanceOf[js.Any]))
-      loadBalancerInfo.foreach(__v => __obj.update("loadBalancerInfo", __v.asInstanceOf[js.Any]))
+      deploymentConfigName.foreach(__v => __obj.updateDynamic("deploymentConfigName")(__v.asInstanceOf[js.Any]))
+      deploymentStyle.foreach(__v => __obj.updateDynamic("deploymentStyle")(__v.asInstanceOf[js.Any]))
+      ec2TagFilters.foreach(__v => __obj.updateDynamic("ec2TagFilters")(__v.asInstanceOf[js.Any]))
+      ec2TagSet.foreach(__v => __obj.updateDynamic("ec2TagSet")(__v.asInstanceOf[js.Any]))
+      ecsServices.foreach(__v => __obj.updateDynamic("ecsServices")(__v.asInstanceOf[js.Any]))
+      loadBalancerInfo.foreach(__v => __obj.updateDynamic("loadBalancerInfo")(__v.asInstanceOf[js.Any]))
       onPremisesInstanceTagFilters.foreach(
-        __v => __obj.update("onPremisesInstanceTagFilters", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("onPremisesInstanceTagFilters")(__v.asInstanceOf[js.Any])
       )
-      onPremisesTagSet.foreach(__v => __obj.update("onPremisesTagSet", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
-      triggerConfigurations.foreach(__v => __obj.update("triggerConfigurations", __v.asInstanceOf[js.Any]))
+      onPremisesTagSet.foreach(__v => __obj.updateDynamic("onPremisesTagSet")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      triggerConfigurations.foreach(__v => __obj.updateDynamic("triggerConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDeploymentGroupInput]
     }
   }
@@ -1039,8 +1041,8 @@ package codedeploy {
     def apply(
         deploymentGroupId: js.UndefOr[DeploymentGroupId] = js.undefined
     ): CreateDeploymentGroupOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deploymentGroupId.foreach(__v => __obj.update("deploymentGroupId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deploymentGroupId.foreach(__v => __obj.updateDynamic("deploymentGroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDeploymentGroupOutput]
     }
   }
@@ -1075,21 +1077,25 @@ package codedeploy {
         targetInstances: js.UndefOr[TargetInstances] = js.undefined,
         updateOutdatedInstancesOnly: js.UndefOr[Boolean] = js.undefined
     ): CreateDeploymentInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "applicationName" -> applicationName.asInstanceOf[js.Any]
       )
 
-      autoRollbackConfiguration.foreach(__v => __obj.update("autoRollbackConfiguration", __v.asInstanceOf[js.Any]))
-      deploymentConfigName.foreach(__v => __obj.update("deploymentConfigName", __v.asInstanceOf[js.Any]))
-      deploymentGroupName.foreach(__v => __obj.update("deploymentGroupName", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      fileExistsBehavior.foreach(__v => __obj.update("fileExistsBehavior", __v.asInstanceOf[js.Any]))
-      ignoreApplicationStopFailures.foreach(
-        __v => __obj.update("ignoreApplicationStopFailures", __v.asInstanceOf[js.Any])
+      autoRollbackConfiguration.foreach(
+        __v => __obj.updateDynamic("autoRollbackConfiguration")(__v.asInstanceOf[js.Any])
       )
-      revision.foreach(__v => __obj.update("revision", __v.asInstanceOf[js.Any]))
-      targetInstances.foreach(__v => __obj.update("targetInstances", __v.asInstanceOf[js.Any]))
-      updateOutdatedInstancesOnly.foreach(__v => __obj.update("updateOutdatedInstancesOnly", __v.asInstanceOf[js.Any]))
+      deploymentConfigName.foreach(__v => __obj.updateDynamic("deploymentConfigName")(__v.asInstanceOf[js.Any]))
+      deploymentGroupName.foreach(__v => __obj.updateDynamic("deploymentGroupName")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      fileExistsBehavior.foreach(__v => __obj.updateDynamic("fileExistsBehavior")(__v.asInstanceOf[js.Any]))
+      ignoreApplicationStopFailures.foreach(
+        __v => __obj.updateDynamic("ignoreApplicationStopFailures")(__v.asInstanceOf[js.Any])
+      )
+      revision.foreach(__v => __obj.updateDynamic("revision")(__v.asInstanceOf[js.Any]))
+      targetInstances.foreach(__v => __obj.updateDynamic("targetInstances")(__v.asInstanceOf[js.Any]))
+      updateOutdatedInstancesOnly.foreach(
+        __v => __obj.updateDynamic("updateOutdatedInstancesOnly")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[CreateDeploymentInput]
     }
   }
@@ -1106,8 +1112,8 @@ package codedeploy {
     def apply(
         deploymentId: js.UndefOr[DeploymentId] = js.undefined
     ): CreateDeploymentOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deploymentId.foreach(__v => __obj.update("deploymentId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deploymentId.foreach(__v => __obj.updateDynamic("deploymentId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDeploymentOutput]
     }
   }
@@ -1124,7 +1130,7 @@ package codedeploy {
     def apply(
         applicationName: ApplicationName
     ): DeleteApplicationInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "applicationName" -> applicationName.asInstanceOf[js.Any]
       )
 
@@ -1144,7 +1150,7 @@ package codedeploy {
     def apply(
         deploymentConfigName: DeploymentConfigName
     ): DeleteDeploymentConfigInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "deploymentConfigName" -> deploymentConfigName.asInstanceOf[js.Any]
       )
 
@@ -1166,7 +1172,7 @@ package codedeploy {
         applicationName: ApplicationName,
         deploymentGroupName: DeploymentGroupName
     ): DeleteDeploymentGroupInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "applicationName"     -> applicationName.asInstanceOf[js.Any],
         "deploymentGroupName" -> deploymentGroupName.asInstanceOf[js.Any]
       )
@@ -1187,8 +1193,8 @@ package codedeploy {
     def apply(
         hooksNotCleanedUp: js.UndefOr[AutoScalingGroupList] = js.undefined
     ): DeleteDeploymentGroupOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      hooksNotCleanedUp.foreach(__v => __obj.update("hooksNotCleanedUp", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      hooksNotCleanedUp.foreach(__v => __obj.updateDynamic("hooksNotCleanedUp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDeploymentGroupOutput]
     }
   }
@@ -1205,8 +1211,8 @@ package codedeploy {
     def apply(
         tokenName: js.UndefOr[GitHubAccountTokenName] = js.undefined
     ): DeleteGitHubAccountTokenInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      tokenName.foreach(__v => __obj.update("tokenName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      tokenName.foreach(__v => __obj.updateDynamic("tokenName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteGitHubAccountTokenInput]
     }
   }
@@ -1223,8 +1229,8 @@ package codedeploy {
     def apply(
         tokenName: js.UndefOr[GitHubAccountTokenName] = js.undefined
     ): DeleteGitHubAccountTokenOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      tokenName.foreach(__v => __obj.update("tokenName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      tokenName.foreach(__v => __obj.updateDynamic("tokenName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteGitHubAccountTokenOutput]
     }
   }
@@ -1251,13 +1257,13 @@ package codedeploy {
         minimumHealthyHosts: js.UndefOr[MinimumHealthyHosts] = js.undefined,
         trafficRoutingConfig: js.UndefOr[TrafficRoutingConfig] = js.undefined
     ): DeploymentConfigInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      computePlatform.foreach(__v => __obj.update("computePlatform", __v.asInstanceOf[js.Any]))
-      createTime.foreach(__v => __obj.update("createTime", __v.asInstanceOf[js.Any]))
-      deploymentConfigId.foreach(__v => __obj.update("deploymentConfigId", __v.asInstanceOf[js.Any]))
-      deploymentConfigName.foreach(__v => __obj.update("deploymentConfigName", __v.asInstanceOf[js.Any]))
-      minimumHealthyHosts.foreach(__v => __obj.update("minimumHealthyHosts", __v.asInstanceOf[js.Any]))
-      trafficRoutingConfig.foreach(__v => __obj.update("trafficRoutingConfig", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      computePlatform.foreach(__v => __obj.updateDynamic("computePlatform")(__v.asInstanceOf[js.Any]))
+      createTime.foreach(__v => __obj.updateDynamic("createTime")(__v.asInstanceOf[js.Any]))
+      deploymentConfigId.foreach(__v => __obj.updateDynamic("deploymentConfigId")(__v.asInstanceOf[js.Any]))
+      deploymentConfigName.foreach(__v => __obj.updateDynamic("deploymentConfigName")(__v.asInstanceOf[js.Any]))
+      minimumHealthyHosts.foreach(__v => __obj.updateDynamic("minimumHealthyHosts")(__v.asInstanceOf[js.Any]))
+      trafficRoutingConfig.foreach(__v => __obj.updateDynamic("trafficRoutingConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeploymentConfigInfo]
     }
   }
@@ -1322,32 +1328,34 @@ package codedeploy {
         targetRevision: js.UndefOr[RevisionLocation] = js.undefined,
         triggerConfigurations: js.UndefOr[TriggerConfigList] = js.undefined
     ): DeploymentGroupInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      alarmConfiguration.foreach(__v => __obj.update("alarmConfiguration", __v.asInstanceOf[js.Any]))
-      applicationName.foreach(__v => __obj.update("applicationName", __v.asInstanceOf[js.Any]))
-      autoRollbackConfiguration.foreach(__v => __obj.update("autoRollbackConfiguration", __v.asInstanceOf[js.Any]))
-      autoScalingGroups.foreach(__v => __obj.update("autoScalingGroups", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      alarmConfiguration.foreach(__v => __obj.updateDynamic("alarmConfiguration")(__v.asInstanceOf[js.Any]))
+      applicationName.foreach(__v => __obj.updateDynamic("applicationName")(__v.asInstanceOf[js.Any]))
+      autoRollbackConfiguration.foreach(
+        __v => __obj.updateDynamic("autoRollbackConfiguration")(__v.asInstanceOf[js.Any])
+      )
+      autoScalingGroups.foreach(__v => __obj.updateDynamic("autoScalingGroups")(__v.asInstanceOf[js.Any]))
       blueGreenDeploymentConfiguration.foreach(
-        __v => __obj.update("blueGreenDeploymentConfiguration", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("blueGreenDeploymentConfiguration")(__v.asInstanceOf[js.Any])
       )
-      computePlatform.foreach(__v => __obj.update("computePlatform", __v.asInstanceOf[js.Any]))
-      deploymentConfigName.foreach(__v => __obj.update("deploymentConfigName", __v.asInstanceOf[js.Any]))
-      deploymentGroupId.foreach(__v => __obj.update("deploymentGroupId", __v.asInstanceOf[js.Any]))
-      deploymentGroupName.foreach(__v => __obj.update("deploymentGroupName", __v.asInstanceOf[js.Any]))
-      deploymentStyle.foreach(__v => __obj.update("deploymentStyle", __v.asInstanceOf[js.Any]))
-      ec2TagFilters.foreach(__v => __obj.update("ec2TagFilters", __v.asInstanceOf[js.Any]))
-      ec2TagSet.foreach(__v => __obj.update("ec2TagSet", __v.asInstanceOf[js.Any]))
-      ecsServices.foreach(__v => __obj.update("ecsServices", __v.asInstanceOf[js.Any]))
-      lastAttemptedDeployment.foreach(__v => __obj.update("lastAttemptedDeployment", __v.asInstanceOf[js.Any]))
-      lastSuccessfulDeployment.foreach(__v => __obj.update("lastSuccessfulDeployment", __v.asInstanceOf[js.Any]))
-      loadBalancerInfo.foreach(__v => __obj.update("loadBalancerInfo", __v.asInstanceOf[js.Any]))
+      computePlatform.foreach(__v => __obj.updateDynamic("computePlatform")(__v.asInstanceOf[js.Any]))
+      deploymentConfigName.foreach(__v => __obj.updateDynamic("deploymentConfigName")(__v.asInstanceOf[js.Any]))
+      deploymentGroupId.foreach(__v => __obj.updateDynamic("deploymentGroupId")(__v.asInstanceOf[js.Any]))
+      deploymentGroupName.foreach(__v => __obj.updateDynamic("deploymentGroupName")(__v.asInstanceOf[js.Any]))
+      deploymentStyle.foreach(__v => __obj.updateDynamic("deploymentStyle")(__v.asInstanceOf[js.Any]))
+      ec2TagFilters.foreach(__v => __obj.updateDynamic("ec2TagFilters")(__v.asInstanceOf[js.Any]))
+      ec2TagSet.foreach(__v => __obj.updateDynamic("ec2TagSet")(__v.asInstanceOf[js.Any]))
+      ecsServices.foreach(__v => __obj.updateDynamic("ecsServices")(__v.asInstanceOf[js.Any]))
+      lastAttemptedDeployment.foreach(__v => __obj.updateDynamic("lastAttemptedDeployment")(__v.asInstanceOf[js.Any]))
+      lastSuccessfulDeployment.foreach(__v => __obj.updateDynamic("lastSuccessfulDeployment")(__v.asInstanceOf[js.Any]))
+      loadBalancerInfo.foreach(__v => __obj.updateDynamic("loadBalancerInfo")(__v.asInstanceOf[js.Any]))
       onPremisesInstanceTagFilters.foreach(
-        __v => __obj.update("onPremisesInstanceTagFilters", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("onPremisesInstanceTagFilters")(__v.asInstanceOf[js.Any])
       )
-      onPremisesTagSet.foreach(__v => __obj.update("onPremisesTagSet", __v.asInstanceOf[js.Any]))
-      serviceRoleArn.foreach(__v => __obj.update("serviceRoleArn", __v.asInstanceOf[js.Any]))
-      targetRevision.foreach(__v => __obj.update("targetRevision", __v.asInstanceOf[js.Any]))
-      triggerConfigurations.foreach(__v => __obj.update("triggerConfigurations", __v.asInstanceOf[js.Any]))
+      onPremisesTagSet.foreach(__v => __obj.updateDynamic("onPremisesTagSet")(__v.asInstanceOf[js.Any]))
+      serviceRoleArn.foreach(__v => __obj.updateDynamic("serviceRoleArn")(__v.asInstanceOf[js.Any]))
+      targetRevision.foreach(__v => __obj.updateDynamic("targetRevision")(__v.asInstanceOf[js.Any]))
+      triggerConfigurations.foreach(__v => __obj.updateDynamic("triggerConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeploymentGroupInfo]
     }
   }
@@ -1416,42 +1424,46 @@ package codedeploy {
         targetInstances: js.UndefOr[TargetInstances] = js.undefined,
         updateOutdatedInstancesOnly: js.UndefOr[Boolean] = js.undefined
     ): DeploymentInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       additionalDeploymentStatusInfo.foreach(
-        __v => __obj.update("additionalDeploymentStatusInfo", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("additionalDeploymentStatusInfo")(__v.asInstanceOf[js.Any])
       )
-      applicationName.foreach(__v => __obj.update("applicationName", __v.asInstanceOf[js.Any]))
-      autoRollbackConfiguration.foreach(__v => __obj.update("autoRollbackConfiguration", __v.asInstanceOf[js.Any]))
+      applicationName.foreach(__v => __obj.updateDynamic("applicationName")(__v.asInstanceOf[js.Any]))
+      autoRollbackConfiguration.foreach(
+        __v => __obj.updateDynamic("autoRollbackConfiguration")(__v.asInstanceOf[js.Any])
+      )
       blueGreenDeploymentConfiguration.foreach(
-        __v => __obj.update("blueGreenDeploymentConfiguration", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("blueGreenDeploymentConfiguration")(__v.asInstanceOf[js.Any])
       )
-      completeTime.foreach(__v => __obj.update("completeTime", __v.asInstanceOf[js.Any]))
-      computePlatform.foreach(__v => __obj.update("computePlatform", __v.asInstanceOf[js.Any]))
-      createTime.foreach(__v => __obj.update("createTime", __v.asInstanceOf[js.Any]))
-      creator.foreach(__v => __obj.update("creator", __v.asInstanceOf[js.Any]))
-      deploymentConfigName.foreach(__v => __obj.update("deploymentConfigName", __v.asInstanceOf[js.Any]))
-      deploymentGroupName.foreach(__v => __obj.update("deploymentGroupName", __v.asInstanceOf[js.Any]))
-      deploymentId.foreach(__v => __obj.update("deploymentId", __v.asInstanceOf[js.Any]))
-      deploymentOverview.foreach(__v => __obj.update("deploymentOverview", __v.asInstanceOf[js.Any]))
-      deploymentStatusMessages.foreach(__v => __obj.update("deploymentStatusMessages", __v.asInstanceOf[js.Any]))
-      deploymentStyle.foreach(__v => __obj.update("deploymentStyle", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      errorInformation.foreach(__v => __obj.update("errorInformation", __v.asInstanceOf[js.Any]))
-      fileExistsBehavior.foreach(__v => __obj.update("fileExistsBehavior", __v.asInstanceOf[js.Any]))
+      completeTime.foreach(__v => __obj.updateDynamic("completeTime")(__v.asInstanceOf[js.Any]))
+      computePlatform.foreach(__v => __obj.updateDynamic("computePlatform")(__v.asInstanceOf[js.Any]))
+      createTime.foreach(__v => __obj.updateDynamic("createTime")(__v.asInstanceOf[js.Any]))
+      creator.foreach(__v => __obj.updateDynamic("creator")(__v.asInstanceOf[js.Any]))
+      deploymentConfigName.foreach(__v => __obj.updateDynamic("deploymentConfigName")(__v.asInstanceOf[js.Any]))
+      deploymentGroupName.foreach(__v => __obj.updateDynamic("deploymentGroupName")(__v.asInstanceOf[js.Any]))
+      deploymentId.foreach(__v => __obj.updateDynamic("deploymentId")(__v.asInstanceOf[js.Any]))
+      deploymentOverview.foreach(__v => __obj.updateDynamic("deploymentOverview")(__v.asInstanceOf[js.Any]))
+      deploymentStatusMessages.foreach(__v => __obj.updateDynamic("deploymentStatusMessages")(__v.asInstanceOf[js.Any]))
+      deploymentStyle.foreach(__v => __obj.updateDynamic("deploymentStyle")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      errorInformation.foreach(__v => __obj.updateDynamic("errorInformation")(__v.asInstanceOf[js.Any]))
+      fileExistsBehavior.foreach(__v => __obj.updateDynamic("fileExistsBehavior")(__v.asInstanceOf[js.Any]))
       ignoreApplicationStopFailures.foreach(
-        __v => __obj.update("ignoreApplicationStopFailures", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ignoreApplicationStopFailures")(__v.asInstanceOf[js.Any])
       )
       instanceTerminationWaitTimeStarted.foreach(
-        __v => __obj.update("instanceTerminationWaitTimeStarted", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("instanceTerminationWaitTimeStarted")(__v.asInstanceOf[js.Any])
       )
-      loadBalancerInfo.foreach(__v => __obj.update("loadBalancerInfo", __v.asInstanceOf[js.Any]))
-      previousRevision.foreach(__v => __obj.update("previousRevision", __v.asInstanceOf[js.Any]))
-      revision.foreach(__v => __obj.update("revision", __v.asInstanceOf[js.Any]))
-      rollbackInfo.foreach(__v => __obj.update("rollbackInfo", __v.asInstanceOf[js.Any]))
-      startTime.foreach(__v => __obj.update("startTime", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      targetInstances.foreach(__v => __obj.update("targetInstances", __v.asInstanceOf[js.Any]))
-      updateOutdatedInstancesOnly.foreach(__v => __obj.update("updateOutdatedInstancesOnly", __v.asInstanceOf[js.Any]))
+      loadBalancerInfo.foreach(__v => __obj.updateDynamic("loadBalancerInfo")(__v.asInstanceOf[js.Any]))
+      previousRevision.foreach(__v => __obj.updateDynamic("previousRevision")(__v.asInstanceOf[js.Any]))
+      revision.foreach(__v => __obj.updateDynamic("revision")(__v.asInstanceOf[js.Any]))
+      rollbackInfo.foreach(__v => __obj.updateDynamic("rollbackInfo")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      targetInstances.foreach(__v => __obj.updateDynamic("targetInstances")(__v.asInstanceOf[js.Any]))
+      updateOutdatedInstancesOnly.foreach(
+        __v => __obj.updateDynamic("updateOutdatedInstancesOnly")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[DeploymentInfo]
     }
   }
@@ -1485,13 +1497,13 @@ package codedeploy {
         Skipped: js.UndefOr[InstanceCount] = js.undefined,
         Succeeded: js.UndefOr[InstanceCount] = js.undefined
     ): DeploymentOverview = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Failed.foreach(__v => __obj.update("Failed", __v.asInstanceOf[js.Any]))
-      InProgress.foreach(__v => __obj.update("InProgress", __v.asInstanceOf[js.Any]))
-      Pending.foreach(__v => __obj.update("Pending", __v.asInstanceOf[js.Any]))
-      Ready.foreach(__v => __obj.update("Ready", __v.asInstanceOf[js.Any]))
-      Skipped.foreach(__v => __obj.update("Skipped", __v.asInstanceOf[js.Any]))
-      Succeeded.foreach(__v => __obj.update("Succeeded", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Failed.foreach(__v => __obj.updateDynamic("Failed")(__v.asInstanceOf[js.Any]))
+      InProgress.foreach(__v => __obj.updateDynamic("InProgress")(__v.asInstanceOf[js.Any]))
+      Pending.foreach(__v => __obj.updateDynamic("Pending")(__v.asInstanceOf[js.Any]))
+      Ready.foreach(__v => __obj.updateDynamic("Ready")(__v.asInstanceOf[js.Any]))
+      Skipped.foreach(__v => __obj.updateDynamic("Skipped")(__v.asInstanceOf[js.Any]))
+      Succeeded.foreach(__v => __obj.updateDynamic("Succeeded")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeploymentOverview]
     }
   }
@@ -1517,9 +1529,9 @@ package codedeploy {
         actionOnTimeout: js.UndefOr[DeploymentReadyAction] = js.undefined,
         waitTimeInMinutes: js.UndefOr[Duration] = js.undefined
     ): DeploymentReadyOption = {
-      val __obj = js.Dictionary.empty[js.Any]
-      actionOnTimeout.foreach(__v => __obj.update("actionOnTimeout", __v.asInstanceOf[js.Any]))
-      waitTimeInMinutes.foreach(__v => __obj.update("waitTimeInMinutes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      actionOnTimeout.foreach(__v => __obj.updateDynamic("actionOnTimeout")(__v.asInstanceOf[js.Any]))
+      waitTimeInMinutes.foreach(__v => __obj.updateDynamic("waitTimeInMinutes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeploymentReadyOption]
     }
   }
@@ -1550,9 +1562,9 @@ package codedeploy {
         deploymentOption: js.UndefOr[DeploymentOption] = js.undefined,
         deploymentType: js.UndefOr[DeploymentType] = js.undefined
     ): DeploymentStyle = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deploymentOption.foreach(__v => __obj.update("deploymentOption", __v.asInstanceOf[js.Any]))
-      deploymentType.foreach(__v => __obj.update("deploymentType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deploymentOption.foreach(__v => __obj.updateDynamic("deploymentOption")(__v.asInstanceOf[js.Any]))
+      deploymentType.foreach(__v => __obj.updateDynamic("deploymentType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeploymentStyle]
     }
   }
@@ -1575,11 +1587,11 @@ package codedeploy {
         instanceTarget: js.UndefOr[InstanceTarget] = js.undefined,
         lambdaTarget: js.UndefOr[LambdaTarget] = js.undefined
     ): DeploymentTarget = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deploymentTargetType.foreach(__v => __obj.update("deploymentTargetType", __v.asInstanceOf[js.Any]))
-      ecsTarget.foreach(__v => __obj.update("ecsTarget", __v.asInstanceOf[js.Any]))
-      instanceTarget.foreach(__v => __obj.update("instanceTarget", __v.asInstanceOf[js.Any]))
-      lambdaTarget.foreach(__v => __obj.update("lambdaTarget", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deploymentTargetType.foreach(__v => __obj.updateDynamic("deploymentTargetType")(__v.asInstanceOf[js.Any]))
+      ecsTarget.foreach(__v => __obj.updateDynamic("ecsTarget")(__v.asInstanceOf[js.Any]))
+      instanceTarget.foreach(__v => __obj.updateDynamic("instanceTarget")(__v.asInstanceOf[js.Any]))
+      lambdaTarget.foreach(__v => __obj.updateDynamic("lambdaTarget")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeploymentTarget]
     }
   }
@@ -1618,7 +1630,7 @@ package codedeploy {
     def apply(
         instanceName: InstanceName
     ): DeregisterOnPremisesInstanceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "instanceName" -> instanceName.asInstanceOf[js.Any]
       )
 
@@ -1644,11 +1656,11 @@ package codedeploy {
         message: js.UndefOr[LifecycleMessage] = js.undefined,
         scriptName: js.UndefOr[ScriptName] = js.undefined
     ): Diagnostics = {
-      val __obj = js.Dictionary.empty[js.Any]
-      errorCode.foreach(__v => __obj.update("errorCode", __v.asInstanceOf[js.Any]))
-      logTail.foreach(__v => __obj.update("logTail", __v.asInstanceOf[js.Any]))
-      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
-      scriptName.foreach(__v => __obj.update("scriptName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      errorCode.foreach(__v => __obj.updateDynamic("errorCode")(__v.asInstanceOf[js.Any]))
+      logTail.foreach(__v => __obj.updateDynamic("logTail")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      scriptName.foreach(__v => __obj.updateDynamic("scriptName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Diagnostics]
     }
   }
@@ -1669,10 +1681,10 @@ package codedeploy {
         Type: js.UndefOr[EC2TagFilterType] = js.undefined,
         Value: js.UndefOr[Value] = js.undefined
     ): EC2TagFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EC2TagFilter]
     }
   }
@@ -1697,8 +1709,8 @@ package codedeploy {
     def apply(
         ec2TagSetList: js.UndefOr[EC2TagSetList] = js.undefined
     ): EC2TagSet = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ec2TagSetList.foreach(__v => __obj.update("ec2TagSetList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ec2TagSetList.foreach(__v => __obj.updateDynamic("ec2TagSetList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EC2TagSet]
     }
   }
@@ -1717,9 +1729,9 @@ package codedeploy {
         clusterName: js.UndefOr[ECSClusterName] = js.undefined,
         serviceName: js.UndefOr[ECSServiceName] = js.undefined
     ): ECSService = {
-      val __obj = js.Dictionary.empty[js.Any]
-      clusterName.foreach(__v => __obj.update("clusterName", __v.asInstanceOf[js.Any]))
-      serviceName.foreach(__v => __obj.update("serviceName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      clusterName.foreach(__v => __obj.updateDynamic("clusterName")(__v.asInstanceOf[js.Any]))
+      serviceName.foreach(__v => __obj.updateDynamic("serviceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ECSService]
     }
   }
@@ -1748,14 +1760,14 @@ package codedeploy {
         targetId: js.UndefOr[TargetId] = js.undefined,
         taskSetsInfo: js.UndefOr[ECSTaskSetList] = js.undefined
     ): ECSTarget = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deploymentId.foreach(__v => __obj.update("deploymentId", __v.asInstanceOf[js.Any]))
-      lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
-      lifecycleEvents.foreach(__v => __obj.update("lifecycleEvents", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      targetArn.foreach(__v => __obj.update("targetArn", __v.asInstanceOf[js.Any]))
-      targetId.foreach(__v => __obj.update("targetId", __v.asInstanceOf[js.Any]))
-      taskSetsInfo.foreach(__v => __obj.update("taskSetsInfo", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deploymentId.foreach(__v => __obj.updateDynamic("deploymentId")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      lifecycleEvents.foreach(__v => __obj.updateDynamic("lifecycleEvents")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      targetArn.foreach(__v => __obj.updateDynamic("targetArn")(__v.asInstanceOf[js.Any]))
+      targetId.foreach(__v => __obj.updateDynamic("targetId")(__v.asInstanceOf[js.Any]))
+      taskSetsInfo.foreach(__v => __obj.updateDynamic("taskSetsInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ECSTarget]
     }
   }
@@ -1786,15 +1798,15 @@ package codedeploy {
         taskSetLabel: js.UndefOr[TargetLabel] = js.undefined,
         trafficWeight: js.UndefOr[TrafficWeight] = js.undefined
     ): ECSTaskSet = {
-      val __obj = js.Dictionary.empty[js.Any]
-      desiredCount.foreach(__v => __obj.update("desiredCount", __v.asInstanceOf[js.Any]))
-      identifer.foreach(__v => __obj.update("identifer", __v.asInstanceOf[js.Any]))
-      pendingCount.foreach(__v => __obj.update("pendingCount", __v.asInstanceOf[js.Any]))
-      runningCount.foreach(__v => __obj.update("runningCount", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      targetGroup.foreach(__v => __obj.update("targetGroup", __v.asInstanceOf[js.Any]))
-      taskSetLabel.foreach(__v => __obj.update("taskSetLabel", __v.asInstanceOf[js.Any]))
-      trafficWeight.foreach(__v => __obj.update("trafficWeight", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      desiredCount.foreach(__v => __obj.updateDynamic("desiredCount")(__v.asInstanceOf[js.Any]))
+      identifer.foreach(__v => __obj.updateDynamic("identifer")(__v.asInstanceOf[js.Any]))
+      pendingCount.foreach(__v => __obj.updateDynamic("pendingCount")(__v.asInstanceOf[js.Any]))
+      runningCount.foreach(__v => __obj.updateDynamic("runningCount")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      targetGroup.foreach(__v => __obj.updateDynamic("targetGroup")(__v.asInstanceOf[js.Any]))
+      taskSetLabel.foreach(__v => __obj.updateDynamic("taskSetLabel")(__v.asInstanceOf[js.Any]))
+      trafficWeight.foreach(__v => __obj.updateDynamic("trafficWeight")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ECSTaskSet]
     }
   }
@@ -1811,8 +1823,8 @@ package codedeploy {
     def apply(
         name: js.UndefOr[ELBName] = js.undefined
     ): ELBInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ELBInfo]
     }
   }
@@ -1905,9 +1917,9 @@ package codedeploy {
         code: js.UndefOr[ErrorCode] = js.undefined,
         message: js.UndefOr[ErrorMessage] = js.undefined
     ): ErrorInformation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      code.foreach(__v => __obj.update("code", __v.asInstanceOf[js.Any]))
-      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ErrorInformation]
     }
   }
@@ -1940,12 +1952,12 @@ package codedeploy {
         lastUsedTime: js.UndefOr[Timestamp] = js.undefined,
         registerTime: js.UndefOr[Timestamp] = js.undefined
     ): GenericRevisionInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deploymentGroups.foreach(__v => __obj.update("deploymentGroups", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      firstUsedTime.foreach(__v => __obj.update("firstUsedTime", __v.asInstanceOf[js.Any]))
-      lastUsedTime.foreach(__v => __obj.update("lastUsedTime", __v.asInstanceOf[js.Any]))
-      registerTime.foreach(__v => __obj.update("registerTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deploymentGroups.foreach(__v => __obj.updateDynamic("deploymentGroups")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      firstUsedTime.foreach(__v => __obj.updateDynamic("firstUsedTime")(__v.asInstanceOf[js.Any]))
+      lastUsedTime.foreach(__v => __obj.updateDynamic("lastUsedTime")(__v.asInstanceOf[js.Any]))
+      registerTime.foreach(__v => __obj.updateDynamic("registerTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GenericRevisionInfo]
     }
   }
@@ -1962,7 +1974,7 @@ package codedeploy {
     def apply(
         applicationName: ApplicationName
     ): GetApplicationInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "applicationName" -> applicationName.asInstanceOf[js.Any]
       )
 
@@ -1982,8 +1994,8 @@ package codedeploy {
     def apply(
         application: js.UndefOr[ApplicationInfo] = js.undefined
     ): GetApplicationOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      application.foreach(__v => __obj.update("application", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      application.foreach(__v => __obj.updateDynamic("application")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetApplicationOutput]
     }
   }
@@ -2002,7 +2014,7 @@ package codedeploy {
         applicationName: ApplicationName,
         revision: RevisionLocation
     ): GetApplicationRevisionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "applicationName" -> applicationName.asInstanceOf[js.Any],
         "revision"        -> revision.asInstanceOf[js.Any]
       )
@@ -2027,10 +2039,10 @@ package codedeploy {
         revision: js.UndefOr[RevisionLocation] = js.undefined,
         revisionInfo: js.UndefOr[GenericRevisionInfo] = js.undefined
     ): GetApplicationRevisionOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      applicationName.foreach(__v => __obj.update("applicationName", __v.asInstanceOf[js.Any]))
-      revision.foreach(__v => __obj.update("revision", __v.asInstanceOf[js.Any]))
-      revisionInfo.foreach(__v => __obj.update("revisionInfo", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      applicationName.foreach(__v => __obj.updateDynamic("applicationName")(__v.asInstanceOf[js.Any]))
+      revision.foreach(__v => __obj.updateDynamic("revision")(__v.asInstanceOf[js.Any]))
+      revisionInfo.foreach(__v => __obj.updateDynamic("revisionInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetApplicationRevisionOutput]
     }
   }
@@ -2047,7 +2059,7 @@ package codedeploy {
     def apply(
         deploymentConfigName: DeploymentConfigName
     ): GetDeploymentConfigInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "deploymentConfigName" -> deploymentConfigName.asInstanceOf[js.Any]
       )
 
@@ -2067,8 +2079,8 @@ package codedeploy {
     def apply(
         deploymentConfigInfo: js.UndefOr[DeploymentConfigInfo] = js.undefined
     ): GetDeploymentConfigOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deploymentConfigInfo.foreach(__v => __obj.update("deploymentConfigInfo", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deploymentConfigInfo.foreach(__v => __obj.updateDynamic("deploymentConfigInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDeploymentConfigOutput]
     }
   }
@@ -2087,7 +2099,7 @@ package codedeploy {
         applicationName: ApplicationName,
         deploymentGroupName: DeploymentGroupName
     ): GetDeploymentGroupInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "applicationName"     -> applicationName.asInstanceOf[js.Any],
         "deploymentGroupName" -> deploymentGroupName.asInstanceOf[js.Any]
       )
@@ -2108,8 +2120,8 @@ package codedeploy {
     def apply(
         deploymentGroupInfo: js.UndefOr[DeploymentGroupInfo] = js.undefined
     ): GetDeploymentGroupOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deploymentGroupInfo.foreach(__v => __obj.update("deploymentGroupInfo", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deploymentGroupInfo.foreach(__v => __obj.updateDynamic("deploymentGroupInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDeploymentGroupOutput]
     }
   }
@@ -2126,7 +2138,7 @@ package codedeploy {
     def apply(
         deploymentId: DeploymentId
     ): GetDeploymentInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "deploymentId" -> deploymentId.asInstanceOf[js.Any]
       )
 
@@ -2148,7 +2160,7 @@ package codedeploy {
         deploymentId: DeploymentId,
         instanceId: InstanceId
     ): GetDeploymentInstanceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "deploymentId" -> deploymentId.asInstanceOf[js.Any],
         "instanceId"   -> instanceId.asInstanceOf[js.Any]
       )
@@ -2169,8 +2181,8 @@ package codedeploy {
     def apply(
         instanceSummary: js.UndefOr[InstanceSummary] = js.undefined
     ): GetDeploymentInstanceOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      instanceSummary.foreach(__v => __obj.update("instanceSummary", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      instanceSummary.foreach(__v => __obj.updateDynamic("instanceSummary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDeploymentInstanceOutput]
     }
   }
@@ -2187,8 +2199,8 @@ package codedeploy {
     def apply(
         deploymentInfo: js.UndefOr[DeploymentInfo] = js.undefined
     ): GetDeploymentOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deploymentInfo.foreach(__v => __obj.update("deploymentInfo", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deploymentInfo.foreach(__v => __obj.updateDynamic("deploymentInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDeploymentOutput]
     }
   }
@@ -2204,9 +2216,9 @@ package codedeploy {
         deploymentId: js.UndefOr[DeploymentId] = js.undefined,
         targetId: js.UndefOr[TargetId] = js.undefined
     ): GetDeploymentTargetInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deploymentId.foreach(__v => __obj.update("deploymentId", __v.asInstanceOf[js.Any]))
-      targetId.foreach(__v => __obj.update("targetId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deploymentId.foreach(__v => __obj.updateDynamic("deploymentId")(__v.asInstanceOf[js.Any]))
+      targetId.foreach(__v => __obj.updateDynamic("targetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDeploymentTargetInput]
     }
   }
@@ -2220,8 +2232,8 @@ package codedeploy {
     def apply(
         deploymentTarget: js.UndefOr[DeploymentTarget] = js.undefined
     ): GetDeploymentTargetOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deploymentTarget.foreach(__v => __obj.update("deploymentTarget", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deploymentTarget.foreach(__v => __obj.updateDynamic("deploymentTarget")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDeploymentTargetOutput]
     }
   }
@@ -2238,7 +2250,7 @@ package codedeploy {
     def apply(
         instanceName: InstanceName
     ): GetOnPremisesInstanceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "instanceName" -> instanceName.asInstanceOf[js.Any]
       )
 
@@ -2258,8 +2270,8 @@ package codedeploy {
     def apply(
         instanceInfo: js.UndefOr[InstanceInfo] = js.undefined
     ): GetOnPremisesInstanceOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      instanceInfo.foreach(__v => __obj.update("instanceInfo", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      instanceInfo.foreach(__v => __obj.updateDynamic("instanceInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetOnPremisesInstanceOutput]
     }
   }
@@ -2278,9 +2290,9 @@ package codedeploy {
         commitId: js.UndefOr[CommitId] = js.undefined,
         repository: js.UndefOr[Repository] = js.undefined
     ): GitHubLocation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      commitId.foreach(__v => __obj.update("commitId", __v.asInstanceOf[js.Any]))
-      repository.foreach(__v => __obj.update("repository", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      commitId.foreach(__v => __obj.updateDynamic("commitId")(__v.asInstanceOf[js.Any]))
+      repository.foreach(__v => __obj.updateDynamic("repository")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GitHubLocation]
     }
   }
@@ -2304,8 +2316,8 @@ package codedeploy {
     def apply(
         action: js.UndefOr[GreenFleetProvisioningAction] = js.undefined
     ): GreenFleetProvisioningOption = {
-      val __obj = js.Dictionary.empty[js.Any]
-      action.foreach(__v => __obj.update("action", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      action.foreach(__v => __obj.updateDynamic("action")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GreenFleetProvisioningOption]
     }
   }
@@ -2341,14 +2353,14 @@ package codedeploy {
         registerTime: js.UndefOr[Timestamp] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): InstanceInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deregisterTime.foreach(__v => __obj.update("deregisterTime", __v.asInstanceOf[js.Any]))
-      iamSessionArn.foreach(__v => __obj.update("iamSessionArn", __v.asInstanceOf[js.Any]))
-      iamUserArn.foreach(__v => __obj.update("iamUserArn", __v.asInstanceOf[js.Any]))
-      instanceArn.foreach(__v => __obj.update("instanceArn", __v.asInstanceOf[js.Any]))
-      instanceName.foreach(__v => __obj.update("instanceName", __v.asInstanceOf[js.Any]))
-      registerTime.foreach(__v => __obj.update("registerTime", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deregisterTime.foreach(__v => __obj.updateDynamic("deregisterTime")(__v.asInstanceOf[js.Any]))
+      iamSessionArn.foreach(__v => __obj.updateDynamic("iamSessionArn")(__v.asInstanceOf[js.Any]))
+      iamUserArn.foreach(__v => __obj.updateDynamic("iamUserArn")(__v.asInstanceOf[js.Any]))
+      instanceArn.foreach(__v => __obj.updateDynamic("instanceArn")(__v.asInstanceOf[js.Any]))
+      instanceName.foreach(__v => __obj.updateDynamic("instanceName")(__v.asInstanceOf[js.Any]))
+      registerTime.foreach(__v => __obj.updateDynamic("registerTime")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceInfo]
     }
   }
@@ -2389,13 +2401,13 @@ package codedeploy {
         lifecycleEvents: js.UndefOr[LifecycleEventList] = js.undefined,
         status: js.UndefOr[InstanceStatus] = js.undefined
     ): InstanceSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deploymentId.foreach(__v => __obj.update("deploymentId", __v.asInstanceOf[js.Any]))
-      instanceId.foreach(__v => __obj.update("instanceId", __v.asInstanceOf[js.Any]))
-      instanceType.foreach(__v => __obj.update("instanceType", __v.asInstanceOf[js.Any]))
-      lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
-      lifecycleEvents.foreach(__v => __obj.update("lifecycleEvents", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deploymentId.foreach(__v => __obj.updateDynamic("deploymentId")(__v.asInstanceOf[js.Any]))
+      instanceId.foreach(__v => __obj.updateDynamic("instanceId")(__v.asInstanceOf[js.Any]))
+      instanceType.foreach(__v => __obj.updateDynamic("instanceType")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      lifecycleEvents.foreach(__v => __obj.updateDynamic("lifecycleEvents")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceSummary]
     }
   }
@@ -2424,14 +2436,14 @@ package codedeploy {
         targetArn: js.UndefOr[TargetArn] = js.undefined,
         targetId: js.UndefOr[TargetId] = js.undefined
     ): InstanceTarget = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deploymentId.foreach(__v => __obj.update("deploymentId", __v.asInstanceOf[js.Any]))
-      instanceLabel.foreach(__v => __obj.update("instanceLabel", __v.asInstanceOf[js.Any]))
-      lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
-      lifecycleEvents.foreach(__v => __obj.update("lifecycleEvents", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      targetArn.foreach(__v => __obj.update("targetArn", __v.asInstanceOf[js.Any]))
-      targetId.foreach(__v => __obj.update("targetId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deploymentId.foreach(__v => __obj.updateDynamic("deploymentId")(__v.asInstanceOf[js.Any]))
+      instanceLabel.foreach(__v => __obj.updateDynamic("instanceLabel")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      lifecycleEvents.foreach(__v => __obj.updateDynamic("lifecycleEvents")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      targetArn.foreach(__v => __obj.updateDynamic("targetArn")(__v.asInstanceOf[js.Any]))
+      targetId.foreach(__v => __obj.updateDynamic("targetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceTarget]
     }
   }
@@ -2463,12 +2475,12 @@ package codedeploy {
         targetVersion: js.UndefOr[Version] = js.undefined,
         targetVersionWeight: js.UndefOr[TrafficWeight] = js.undefined
     ): LambdaFunctionInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      currentVersion.foreach(__v => __obj.update("currentVersion", __v.asInstanceOf[js.Any]))
-      functionAlias.foreach(__v => __obj.update("functionAlias", __v.asInstanceOf[js.Any]))
-      functionName.foreach(__v => __obj.update("functionName", __v.asInstanceOf[js.Any]))
-      targetVersion.foreach(__v => __obj.update("targetVersion", __v.asInstanceOf[js.Any]))
-      targetVersionWeight.foreach(__v => __obj.update("targetVersionWeight", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      currentVersion.foreach(__v => __obj.updateDynamic("currentVersion")(__v.asInstanceOf[js.Any]))
+      functionAlias.foreach(__v => __obj.updateDynamic("functionAlias")(__v.asInstanceOf[js.Any]))
+      functionName.foreach(__v => __obj.updateDynamic("functionName")(__v.asInstanceOf[js.Any]))
+      targetVersion.foreach(__v => __obj.updateDynamic("targetVersion")(__v.asInstanceOf[js.Any]))
+      targetVersionWeight.foreach(__v => __obj.updateDynamic("targetVersionWeight")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LambdaFunctionInfo]
     }
   }
@@ -2497,14 +2509,14 @@ package codedeploy {
         targetArn: js.UndefOr[TargetArn] = js.undefined,
         targetId: js.UndefOr[TargetId] = js.undefined
     ): LambdaTarget = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deploymentId.foreach(__v => __obj.update("deploymentId", __v.asInstanceOf[js.Any]))
-      lambdaFunctionInfo.foreach(__v => __obj.update("lambdaFunctionInfo", __v.asInstanceOf[js.Any]))
-      lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
-      lifecycleEvents.foreach(__v => __obj.update("lifecycleEvents", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      targetArn.foreach(__v => __obj.update("targetArn", __v.asInstanceOf[js.Any]))
-      targetId.foreach(__v => __obj.update("targetId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deploymentId.foreach(__v => __obj.updateDynamic("deploymentId")(__v.asInstanceOf[js.Any]))
+      lambdaFunctionInfo.foreach(__v => __obj.updateDynamic("lambdaFunctionInfo")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      lifecycleEvents.foreach(__v => __obj.updateDynamic("lifecycleEvents")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      targetArn.foreach(__v => __obj.updateDynamic("targetArn")(__v.asInstanceOf[js.Any]))
+      targetId.foreach(__v => __obj.updateDynamic("targetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LambdaTarget]
     }
   }
@@ -2527,11 +2539,11 @@ package codedeploy {
         endTime: js.UndefOr[Timestamp] = js.undefined,
         status: js.UndefOr[DeploymentStatus] = js.undefined
     ): LastDeploymentInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      createTime.foreach(__v => __obj.update("createTime", __v.asInstanceOf[js.Any]))
-      deploymentId.foreach(__v => __obj.update("deploymentId", __v.asInstanceOf[js.Any]))
-      endTime.foreach(__v => __obj.update("endTime", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      createTime.foreach(__v => __obj.updateDynamic("createTime")(__v.asInstanceOf[js.Any]))
+      deploymentId.foreach(__v => __obj.updateDynamic("deploymentId")(__v.asInstanceOf[js.Any]))
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LastDeploymentInfo]
     }
   }
@@ -2569,12 +2581,12 @@ package codedeploy {
         startTime: js.UndefOr[Timestamp] = js.undefined,
         status: js.UndefOr[LifecycleEventStatus] = js.undefined
     ): LifecycleEvent = {
-      val __obj = js.Dictionary.empty[js.Any]
-      diagnostics.foreach(__v => __obj.update("diagnostics", __v.asInstanceOf[js.Any]))
-      endTime.foreach(__v => __obj.update("endTime", __v.asInstanceOf[js.Any]))
-      lifecycleEventName.foreach(__v => __obj.update("lifecycleEventName", __v.asInstanceOf[js.Any]))
-      startTime.foreach(__v => __obj.update("startTime", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      diagnostics.foreach(__v => __obj.updateDynamic("diagnostics")(__v.asInstanceOf[js.Any]))
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      lifecycleEventName.foreach(__v => __obj.updateDynamic("lifecycleEventName")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LifecycleEvent]
     }
   }
@@ -2614,16 +2626,16 @@ package codedeploy {
         sortBy: js.UndefOr[ApplicationRevisionSortBy] = js.undefined,
         sortOrder: js.UndefOr[SortOrder] = js.undefined
     ): ListApplicationRevisionsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "applicationName" -> applicationName.asInstanceOf[js.Any]
       )
 
-      deployed.foreach(__v => __obj.update("deployed", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      s3Bucket.foreach(__v => __obj.update("s3Bucket", __v.asInstanceOf[js.Any]))
-      s3KeyPrefix.foreach(__v => __obj.update("s3KeyPrefix", __v.asInstanceOf[js.Any]))
-      sortBy.foreach(__v => __obj.update("sortBy", __v.asInstanceOf[js.Any]))
-      sortOrder.foreach(__v => __obj.update("sortOrder", __v.asInstanceOf[js.Any]))
+      deployed.foreach(__v => __obj.updateDynamic("deployed")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      s3Bucket.foreach(__v => __obj.updateDynamic("s3Bucket")(__v.asInstanceOf[js.Any]))
+      s3KeyPrefix.foreach(__v => __obj.updateDynamic("s3KeyPrefix")(__v.asInstanceOf[js.Any]))
+      sortBy.foreach(__v => __obj.updateDynamic("sortBy")(__v.asInstanceOf[js.Any]))
+      sortOrder.foreach(__v => __obj.updateDynamic("sortOrder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListApplicationRevisionsInput]
     }
   }
@@ -2642,9 +2654,9 @@ package codedeploy {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         revisions: js.UndefOr[RevisionLocationList] = js.undefined
     ): ListApplicationRevisionsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      revisions.foreach(__v => __obj.update("revisions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      revisions.foreach(__v => __obj.updateDynamic("revisions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListApplicationRevisionsOutput]
     }
   }
@@ -2661,8 +2673,8 @@ package codedeploy {
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListApplicationsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListApplicationsInput]
     }
   }
@@ -2681,9 +2693,9 @@ package codedeploy {
         applications: js.UndefOr[ApplicationsList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListApplicationsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      applications.foreach(__v => __obj.update("applications", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      applications.foreach(__v => __obj.updateDynamic("applications")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListApplicationsOutput]
     }
   }
@@ -2700,8 +2712,8 @@ package codedeploy {
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDeploymentConfigsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDeploymentConfigsInput]
     }
   }
@@ -2720,9 +2732,9 @@ package codedeploy {
         deploymentConfigsList: js.UndefOr[DeploymentConfigsList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDeploymentConfigsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deploymentConfigsList.foreach(__v => __obj.update("deploymentConfigsList", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deploymentConfigsList.foreach(__v => __obj.updateDynamic("deploymentConfigsList")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDeploymentConfigsOutput]
     }
   }
@@ -2741,11 +2753,11 @@ package codedeploy {
         applicationName: ApplicationName,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDeploymentGroupsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "applicationName" -> applicationName.asInstanceOf[js.Any]
       )
 
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDeploymentGroupsInput]
     }
   }
@@ -2766,10 +2778,10 @@ package codedeploy {
         deploymentGroups: js.UndefOr[DeploymentGroupsList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDeploymentGroupsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      applicationName.foreach(__v => __obj.update("applicationName", __v.asInstanceOf[js.Any]))
-      deploymentGroups.foreach(__v => __obj.update("deploymentGroups", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      applicationName.foreach(__v => __obj.updateDynamic("applicationName")(__v.asInstanceOf[js.Any]))
+      deploymentGroups.foreach(__v => __obj.updateDynamic("deploymentGroups")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDeploymentGroupsOutput]
     }
   }
@@ -2792,13 +2804,13 @@ package codedeploy {
         instanceTypeFilter: js.UndefOr[InstanceTypeList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDeploymentInstancesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "deploymentId" -> deploymentId.asInstanceOf[js.Any]
       )
 
-      instanceStatusFilter.foreach(__v => __obj.update("instanceStatusFilter", __v.asInstanceOf[js.Any]))
-      instanceTypeFilter.foreach(__v => __obj.update("instanceTypeFilter", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      instanceStatusFilter.foreach(__v => __obj.updateDynamic("instanceStatusFilter")(__v.asInstanceOf[js.Any]))
+      instanceTypeFilter.foreach(__v => __obj.updateDynamic("instanceTypeFilter")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDeploymentInstancesInput]
     }
   }
@@ -2817,9 +2829,9 @@ package codedeploy {
         instancesList: js.UndefOr[InstancesList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDeploymentInstancesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      instancesList.foreach(__v => __obj.update("instancesList", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      instancesList.foreach(__v => __obj.updateDynamic("instancesList")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDeploymentInstancesOutput]
     }
   }
@@ -2837,10 +2849,10 @@ package codedeploy {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         targetFilters: js.UndefOr[TargetFilters] = js.undefined
     ): ListDeploymentTargetsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deploymentId.foreach(__v => __obj.update("deploymentId", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      targetFilters.foreach(__v => __obj.update("targetFilters", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deploymentId.foreach(__v => __obj.updateDynamic("deploymentId")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      targetFilters.foreach(__v => __obj.updateDynamic("targetFilters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDeploymentTargetsInput]
     }
   }
@@ -2856,9 +2868,9 @@ package codedeploy {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         targetIds: js.UndefOr[TargetIdList] = js.undefined
     ): ListDeploymentTargetsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      targetIds.foreach(__v => __obj.update("targetIds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      targetIds.foreach(__v => __obj.updateDynamic("targetIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDeploymentTargetsOutput]
     }
   }
@@ -2883,12 +2895,12 @@ package codedeploy {
         includeOnlyStatuses: js.UndefOr[DeploymentStatusList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDeploymentsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      applicationName.foreach(__v => __obj.update("applicationName", __v.asInstanceOf[js.Any]))
-      createTimeRange.foreach(__v => __obj.update("createTimeRange", __v.asInstanceOf[js.Any]))
-      deploymentGroupName.foreach(__v => __obj.update("deploymentGroupName", __v.asInstanceOf[js.Any]))
-      includeOnlyStatuses.foreach(__v => __obj.update("includeOnlyStatuses", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      applicationName.foreach(__v => __obj.updateDynamic("applicationName")(__v.asInstanceOf[js.Any]))
+      createTimeRange.foreach(__v => __obj.updateDynamic("createTimeRange")(__v.asInstanceOf[js.Any]))
+      deploymentGroupName.foreach(__v => __obj.updateDynamic("deploymentGroupName")(__v.asInstanceOf[js.Any]))
+      includeOnlyStatuses.foreach(__v => __obj.updateDynamic("includeOnlyStatuses")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDeploymentsInput]
     }
   }
@@ -2907,9 +2919,9 @@ package codedeploy {
         deployments: js.UndefOr[DeploymentsList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDeploymentsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deployments.foreach(__v => __obj.update("deployments", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deployments.foreach(__v => __obj.updateDynamic("deployments")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDeploymentsOutput]
     }
   }
@@ -2926,8 +2938,8 @@ package codedeploy {
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListGitHubAccountTokenNamesInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGitHubAccountTokenNamesInput]
     }
   }
@@ -2946,9 +2958,9 @@ package codedeploy {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         tokenNameList: js.UndefOr[GitHubAccountTokenNameList] = js.undefined
     ): ListGitHubAccountTokenNamesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      tokenNameList.foreach(__v => __obj.update("tokenNameList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      tokenNameList.foreach(__v => __obj.updateDynamic("tokenNameList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGitHubAccountTokenNamesOutput]
     }
   }
@@ -2969,10 +2981,10 @@ package codedeploy {
         registrationStatus: js.UndefOr[RegistrationStatus] = js.undefined,
         tagFilters: js.UndefOr[TagFilterList] = js.undefined
     ): ListOnPremisesInstancesInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      registrationStatus.foreach(__v => __obj.update("registrationStatus", __v.asInstanceOf[js.Any]))
-      tagFilters.foreach(__v => __obj.update("tagFilters", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      registrationStatus.foreach(__v => __obj.updateDynamic("registrationStatus")(__v.asInstanceOf[js.Any]))
+      tagFilters.foreach(__v => __obj.updateDynamic("tagFilters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListOnPremisesInstancesInput]
     }
   }
@@ -2991,9 +3003,9 @@ package codedeploy {
         instanceNames: js.UndefOr[InstanceNameList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListOnPremisesInstancesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      instanceNames.foreach(__v => __obj.update("instanceNames", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      instanceNames.foreach(__v => __obj.updateDynamic("instanceNames")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListOnPremisesInstancesOutput]
     }
   }
@@ -3017,11 +3029,11 @@ package codedeploy {
         ResourceArn: Arn,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListTagsForResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceInput]
     }
   }
@@ -3037,9 +3049,9 @@ package codedeploy {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsForResourceOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceOutput]
     }
   }
@@ -3060,10 +3072,10 @@ package codedeploy {
         targetGroupInfoList: js.UndefOr[TargetGroupInfoList] = js.undefined,
         targetGroupPairInfoList: js.UndefOr[TargetGroupPairInfoList] = js.undefined
     ): LoadBalancerInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      elbInfoList.foreach(__v => __obj.update("elbInfoList", __v.asInstanceOf[js.Any]))
-      targetGroupInfoList.foreach(__v => __obj.update("targetGroupInfoList", __v.asInstanceOf[js.Any]))
-      targetGroupPairInfoList.foreach(__v => __obj.update("targetGroupPairInfoList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      elbInfoList.foreach(__v => __obj.updateDynamic("elbInfoList")(__v.asInstanceOf[js.Any]))
+      targetGroupInfoList.foreach(__v => __obj.updateDynamic("targetGroupInfoList")(__v.asInstanceOf[js.Any]))
+      targetGroupPairInfoList.foreach(__v => __obj.updateDynamic("targetGroupPairInfoList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoadBalancerInfo]
     }
   }
@@ -3082,9 +3094,9 @@ package codedeploy {
         `type`: js.UndefOr[MinimumHealthyHostsType] = js.undefined,
         value: js.UndefOr[MinimumHealthyHostsValue] = js.undefined
     ): MinimumHealthyHosts = {
-      val __obj = js.Dictionary.empty[js.Any]
-      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MinimumHealthyHosts]
     }
   }
@@ -3108,8 +3120,8 @@ package codedeploy {
     def apply(
         onPremisesTagSetList: js.UndefOr[OnPremisesTagSetList] = js.undefined
     ): OnPremisesTagSet = {
-      val __obj = js.Dictionary.empty[js.Any]
-      onPremisesTagSetList.foreach(__v => __obj.update("onPremisesTagSetList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      onPremisesTagSetList.foreach(__v => __obj.updateDynamic("onPremisesTagSetList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OnPremisesTagSet]
     }
   }
@@ -3127,12 +3139,12 @@ package codedeploy {
         lifecycleEventHookExecutionId: js.UndefOr[LifecycleEventHookExecutionId] = js.undefined,
         status: js.UndefOr[LifecycleEventStatus] = js.undefined
     ): PutLifecycleEventHookExecutionStatusInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deploymentId.foreach(__v => __obj.update("deploymentId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deploymentId.foreach(__v => __obj.updateDynamic("deploymentId")(__v.asInstanceOf[js.Any]))
       lifecycleEventHookExecutionId.foreach(
-        __v => __obj.update("lifecycleEventHookExecutionId", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("lifecycleEventHookExecutionId")(__v.asInstanceOf[js.Any])
       )
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutLifecycleEventHookExecutionStatusInput]
     }
   }
@@ -3146,9 +3158,9 @@ package codedeploy {
     def apply(
         lifecycleEventHookExecutionId: js.UndefOr[LifecycleEventHookExecutionId] = js.undefined
     ): PutLifecycleEventHookExecutionStatusOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       lifecycleEventHookExecutionId.foreach(
-        __v => __obj.update("lifecycleEventHookExecutionId", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("lifecycleEventHookExecutionId")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[PutLifecycleEventHookExecutionStatusOutput]
     }
@@ -3169,9 +3181,9 @@ package codedeploy {
         content: js.UndefOr[RawStringContent] = js.undefined,
         sha256: js.UndefOr[RawStringSha256] = js.undefined
     ): RawString = {
-      val __obj = js.Dictionary.empty[js.Any]
-      content.foreach(__v => __obj.update("content", __v.asInstanceOf[js.Any]))
-      sha256.foreach(__v => __obj.update("sha256", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      content.foreach(__v => __obj.updateDynamic("content")(__v.asInstanceOf[js.Any]))
+      sha256.foreach(__v => __obj.updateDynamic("sha256")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RawString]
     }
   }
@@ -3192,12 +3204,12 @@ package codedeploy {
         revision: RevisionLocation,
         description: js.UndefOr[Description] = js.undefined
     ): RegisterApplicationRevisionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "applicationName" -> applicationName.asInstanceOf[js.Any],
         "revision"        -> revision.asInstanceOf[js.Any]
       )
 
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterApplicationRevisionInput]
     }
   }
@@ -3218,12 +3230,12 @@ package codedeploy {
         iamSessionArn: js.UndefOr[IamSessionArn] = js.undefined,
         iamUserArn: js.UndefOr[IamUserArn] = js.undefined
     ): RegisterOnPremisesInstanceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "instanceName" -> instanceName.asInstanceOf[js.Any]
       )
 
-      iamSessionArn.foreach(__v => __obj.update("iamSessionArn", __v.asInstanceOf[js.Any]))
-      iamUserArn.foreach(__v => __obj.update("iamUserArn", __v.asInstanceOf[js.Any]))
+      iamSessionArn.foreach(__v => __obj.updateDynamic("iamSessionArn")(__v.asInstanceOf[js.Any]))
+      iamUserArn.foreach(__v => __obj.updateDynamic("iamUserArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterOnPremisesInstanceInput]
     }
   }
@@ -3249,7 +3261,7 @@ package codedeploy {
         instanceNames: InstanceNameList,
         tags: TagList
     ): RemoveTagsFromOnPremisesInstancesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "instanceNames" -> instanceNames.asInstanceOf[js.Any],
         "tags"          -> tags.asInstanceOf[js.Any]
       )
@@ -3272,9 +3284,9 @@ package codedeploy {
         genericRevisionInfo: js.UndefOr[GenericRevisionInfo] = js.undefined,
         revisionLocation: js.UndefOr[RevisionLocation] = js.undefined
     ): RevisionInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      genericRevisionInfo.foreach(__v => __obj.update("genericRevisionInfo", __v.asInstanceOf[js.Any]))
-      revisionLocation.foreach(__v => __obj.update("revisionLocation", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      genericRevisionInfo.foreach(__v => __obj.updateDynamic("genericRevisionInfo")(__v.asInstanceOf[js.Any]))
+      revisionLocation.foreach(__v => __obj.updateDynamic("revisionLocation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RevisionInfo]
     }
   }
@@ -3299,12 +3311,12 @@ package codedeploy {
         s3Location: js.UndefOr[S3Location] = js.undefined,
         string: js.UndefOr[RawString] = js.undefined
     ): RevisionLocation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      appSpecContent.foreach(__v => __obj.update("appSpecContent", __v.asInstanceOf[js.Any]))
-      gitHubLocation.foreach(__v => __obj.update("gitHubLocation", __v.asInstanceOf[js.Any]))
-      revisionType.foreach(__v => __obj.update("revisionType", __v.asInstanceOf[js.Any]))
-      s3Location.foreach(__v => __obj.update("s3Location", __v.asInstanceOf[js.Any]))
-      string.foreach(__v => __obj.update("string", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      appSpecContent.foreach(__v => __obj.updateDynamic("appSpecContent")(__v.asInstanceOf[js.Any]))
+      gitHubLocation.foreach(__v => __obj.updateDynamic("gitHubLocation")(__v.asInstanceOf[js.Any]))
+      revisionType.foreach(__v => __obj.updateDynamic("revisionType")(__v.asInstanceOf[js.Any]))
+      s3Location.foreach(__v => __obj.updateDynamic("s3Location")(__v.asInstanceOf[js.Any]))
+      string.foreach(__v => __obj.updateDynamic("string")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RevisionLocation]
     }
   }
@@ -3334,11 +3346,11 @@ package codedeploy {
         rollbackMessage: js.UndefOr[Description] = js.undefined,
         rollbackTriggeringDeploymentId: js.UndefOr[DeploymentId] = js.undefined
     ): RollbackInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      rollbackDeploymentId.foreach(__v => __obj.update("rollbackDeploymentId", __v.asInstanceOf[js.Any]))
-      rollbackMessage.foreach(__v => __obj.update("rollbackMessage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      rollbackDeploymentId.foreach(__v => __obj.updateDynamic("rollbackDeploymentId")(__v.asInstanceOf[js.Any]))
+      rollbackMessage.foreach(__v => __obj.updateDynamic("rollbackMessage")(__v.asInstanceOf[js.Any]))
       rollbackTriggeringDeploymentId.foreach(
-        __v => __obj.update("rollbackTriggeringDeploymentId", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("rollbackTriggeringDeploymentId")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[RollbackInfo]
     }
@@ -3364,12 +3376,12 @@ package codedeploy {
         key: js.UndefOr[S3Key] = js.undefined,
         version: js.UndefOr[VersionId] = js.undefined
     ): S3Location = {
-      val __obj = js.Dictionary.empty[js.Any]
-      bucket.foreach(__v => __obj.update("bucket", __v.asInstanceOf[js.Any]))
-      bundleType.foreach(__v => __obj.update("bundleType", __v.asInstanceOf[js.Any]))
-      eTag.foreach(__v => __obj.update("eTag", __v.asInstanceOf[js.Any]))
-      key.foreach(__v => __obj.update("key", __v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      bucket.foreach(__v => __obj.updateDynamic("bucket")(__v.asInstanceOf[js.Any]))
+      bundleType.foreach(__v => __obj.updateDynamic("bundleType")(__v.asInstanceOf[js.Any]))
+      eTag.foreach(__v => __obj.updateDynamic("eTag")(__v.asInstanceOf[js.Any]))
+      key.foreach(__v => __obj.updateDynamic("key")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Location]
     }
   }
@@ -3383,8 +3395,8 @@ package codedeploy {
     def apply(
         deploymentId: js.UndefOr[DeploymentId] = js.undefined
     ): SkipWaitTimeForInstanceTerminationInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deploymentId.foreach(__v => __obj.update("deploymentId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deploymentId.foreach(__v => __obj.updateDynamic("deploymentId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SkipWaitTimeForInstanceTerminationInput]
     }
   }
@@ -3410,11 +3422,11 @@ package codedeploy {
         deploymentId: DeploymentId,
         autoRollbackEnabled: js.UndefOr[NullableBoolean] = js.undefined
     ): StopDeploymentInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "deploymentId" -> deploymentId.asInstanceOf[js.Any]
       )
 
-      autoRollbackEnabled.foreach(__v => __obj.update("autoRollbackEnabled", __v.asInstanceOf[js.Any]))
+      autoRollbackEnabled.foreach(__v => __obj.updateDynamic("autoRollbackEnabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopDeploymentInput]
     }
   }
@@ -3433,9 +3445,9 @@ package codedeploy {
         status: js.UndefOr[StopStatus] = js.undefined,
         statusMessage: js.UndefOr[Message] = js.undefined
     ): StopDeploymentOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      statusMessage.foreach(__v => __obj.update("statusMessage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      statusMessage.foreach(__v => __obj.updateDynamic("statusMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopDeploymentOutput]
     }
   }
@@ -3461,9 +3473,9 @@ package codedeploy {
         Key: js.UndefOr[Key] = js.undefined,
         Value: js.UndefOr[Value] = js.undefined
     ): Tag = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tag]
     }
   }
@@ -3484,10 +3496,10 @@ package codedeploy {
         Type: js.UndefOr[TagFilterType] = js.undefined,
         Value: js.UndefOr[Value] = js.undefined
     ): TagFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TagFilter]
     }
   }
@@ -3511,7 +3523,7 @@ package codedeploy {
         ResourceArn: Arn,
         Tags: TagList
     ): TagResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
       )
@@ -3526,7 +3538,7 @@ package codedeploy {
   object TagResourceOutput {
     def apply(
         ): TagResourceOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceOutput]
     }
@@ -3551,8 +3563,8 @@ package codedeploy {
     def apply(
         name: js.UndefOr[TargetGroupName] = js.undefined
     ): TargetGroupInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TargetGroupInfo]
     }
   }
@@ -3573,10 +3585,10 @@ package codedeploy {
         targetGroups: js.UndefOr[TargetGroupInfoList] = js.undefined,
         testTrafficRoute: js.UndefOr[TrafficRoute] = js.undefined
     ): TargetGroupPairInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      prodTrafficRoute.foreach(__v => __obj.update("prodTrafficRoute", __v.asInstanceOf[js.Any]))
-      targetGroups.foreach(__v => __obj.update("targetGroups", __v.asInstanceOf[js.Any]))
-      testTrafficRoute.foreach(__v => __obj.update("testTrafficRoute", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      prodTrafficRoute.foreach(__v => __obj.updateDynamic("prodTrafficRoute")(__v.asInstanceOf[js.Any]))
+      targetGroups.foreach(__v => __obj.updateDynamic("targetGroups")(__v.asInstanceOf[js.Any]))
+      testTrafficRoute.foreach(__v => __obj.updateDynamic("testTrafficRoute")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TargetGroupPairInfo]
     }
   }
@@ -3597,10 +3609,10 @@ package codedeploy {
         ec2TagSet: js.UndefOr[EC2TagSet] = js.undefined,
         tagFilters: js.UndefOr[EC2TagFilterList] = js.undefined
     ): TargetInstances = {
-      val __obj = js.Dictionary.empty[js.Any]
-      autoScalingGroups.foreach(__v => __obj.update("autoScalingGroups", __v.asInstanceOf[js.Any]))
-      ec2TagSet.foreach(__v => __obj.update("ec2TagSet", __v.asInstanceOf[js.Any]))
-      tagFilters.foreach(__v => __obj.update("tagFilters", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      autoScalingGroups.foreach(__v => __obj.updateDynamic("autoScalingGroups")(__v.asInstanceOf[js.Any]))
+      ec2TagSet.foreach(__v => __obj.updateDynamic("ec2TagSet")(__v.asInstanceOf[js.Any]))
+      tagFilters.foreach(__v => __obj.updateDynamic("tagFilters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TargetInstances]
     }
   }
@@ -3638,9 +3650,9 @@ package codedeploy {
         canaryInterval: js.UndefOr[WaitTimeInMins] = js.undefined,
         canaryPercentage: js.UndefOr[Percentage] = js.undefined
     ): TimeBasedCanary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      canaryInterval.foreach(__v => __obj.update("canaryInterval", __v.asInstanceOf[js.Any]))
-      canaryPercentage.foreach(__v => __obj.update("canaryPercentage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      canaryInterval.foreach(__v => __obj.updateDynamic("canaryInterval")(__v.asInstanceOf[js.Any]))
+      canaryPercentage.foreach(__v => __obj.updateDynamic("canaryPercentage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TimeBasedCanary]
     }
   }
@@ -3659,9 +3671,9 @@ package codedeploy {
         linearInterval: js.UndefOr[WaitTimeInMins] = js.undefined,
         linearPercentage: js.UndefOr[Percentage] = js.undefined
     ): TimeBasedLinear = {
-      val __obj = js.Dictionary.empty[js.Any]
-      linearInterval.foreach(__v => __obj.update("linearInterval", __v.asInstanceOf[js.Any]))
-      linearPercentage.foreach(__v => __obj.update("linearPercentage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      linearInterval.foreach(__v => __obj.updateDynamic("linearInterval")(__v.asInstanceOf[js.Any]))
+      linearPercentage.foreach(__v => __obj.updateDynamic("linearPercentage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TimeBasedLinear]
     }
   }
@@ -3680,9 +3692,9 @@ package codedeploy {
         end: js.UndefOr[Timestamp] = js.undefined,
         start: js.UndefOr[Timestamp] = js.undefined
     ): TimeRange = {
-      val __obj = js.Dictionary.empty[js.Any]
-      end.foreach(__v => __obj.update("end", __v.asInstanceOf[js.Any]))
-      start.foreach(__v => __obj.update("start", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      end.foreach(__v => __obj.updateDynamic("end")(__v.asInstanceOf[js.Any]))
+      start.foreach(__v => __obj.updateDynamic("start")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TimeRange]
     }
   }
@@ -3699,8 +3711,8 @@ package codedeploy {
     def apply(
         listenerArns: js.UndefOr[ListenerArnList] = js.undefined
     ): TrafficRoute = {
-      val __obj = js.Dictionary.empty[js.Any]
-      listenerArns.foreach(__v => __obj.update("listenerArns", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      listenerArns.foreach(__v => __obj.updateDynamic("listenerArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TrafficRoute]
     }
   }
@@ -3721,10 +3733,10 @@ package codedeploy {
         timeBasedLinear: js.UndefOr[TimeBasedLinear] = js.undefined,
         `type`: js.UndefOr[TrafficRoutingType] = js.undefined
     ): TrafficRoutingConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      timeBasedCanary.foreach(__v => __obj.update("timeBasedCanary", __v.asInstanceOf[js.Any]))
-      timeBasedLinear.foreach(__v => __obj.update("timeBasedLinear", __v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      timeBasedCanary.foreach(__v => __obj.updateDynamic("timeBasedCanary")(__v.asInstanceOf[js.Any]))
+      timeBasedLinear.foreach(__v => __obj.updateDynamic("timeBasedLinear")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TrafficRoutingConfig]
     }
   }
@@ -3753,10 +3765,10 @@ package codedeploy {
         triggerName: js.UndefOr[TriggerName] = js.undefined,
         triggerTargetArn: js.UndefOr[TriggerTargetArn] = js.undefined
     ): TriggerConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      triggerEvents.foreach(__v => __obj.update("triggerEvents", __v.asInstanceOf[js.Any]))
-      triggerName.foreach(__v => __obj.update("triggerName", __v.asInstanceOf[js.Any]))
-      triggerTargetArn.foreach(__v => __obj.update("triggerTargetArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      triggerEvents.foreach(__v => __obj.updateDynamic("triggerEvents")(__v.asInstanceOf[js.Any]))
+      triggerName.foreach(__v => __obj.updateDynamic("triggerName")(__v.asInstanceOf[js.Any]))
+      triggerTargetArn.foreach(__v => __obj.updateDynamic("triggerTargetArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TriggerConfig]
     }
   }
@@ -3800,7 +3812,7 @@ package codedeploy {
         ResourceArn: Arn,
         TagKeys: TagKeyList
     ): UntagResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
       )
@@ -3815,7 +3827,7 @@ package codedeploy {
   object UntagResourceOutput {
     def apply(
         ): UntagResourceOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceOutput]
     }
@@ -3835,9 +3847,9 @@ package codedeploy {
         applicationName: js.UndefOr[ApplicationName] = js.undefined,
         newApplicationName: js.UndefOr[ApplicationName] = js.undefined
     ): UpdateApplicationInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      applicationName.foreach(__v => __obj.update("applicationName", __v.asInstanceOf[js.Any]))
-      newApplicationName.foreach(__v => __obj.update("newApplicationName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      applicationName.foreach(__v => __obj.updateDynamic("applicationName")(__v.asInstanceOf[js.Any]))
+      newApplicationName.foreach(__v => __obj.updateDynamic("newApplicationName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateApplicationInput]
     }
   }
@@ -3886,30 +3898,32 @@ package codedeploy {
         serviceRoleArn: js.UndefOr[Role] = js.undefined,
         triggerConfigurations: js.UndefOr[TriggerConfigList] = js.undefined
     ): UpdateDeploymentGroupInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "applicationName"            -> applicationName.asInstanceOf[js.Any],
         "currentDeploymentGroupName" -> currentDeploymentGroupName.asInstanceOf[js.Any]
       )
 
-      alarmConfiguration.foreach(__v => __obj.update("alarmConfiguration", __v.asInstanceOf[js.Any]))
-      autoRollbackConfiguration.foreach(__v => __obj.update("autoRollbackConfiguration", __v.asInstanceOf[js.Any]))
-      autoScalingGroups.foreach(__v => __obj.update("autoScalingGroups", __v.asInstanceOf[js.Any]))
+      alarmConfiguration.foreach(__v => __obj.updateDynamic("alarmConfiguration")(__v.asInstanceOf[js.Any]))
+      autoRollbackConfiguration.foreach(
+        __v => __obj.updateDynamic("autoRollbackConfiguration")(__v.asInstanceOf[js.Any])
+      )
+      autoScalingGroups.foreach(__v => __obj.updateDynamic("autoScalingGroups")(__v.asInstanceOf[js.Any]))
       blueGreenDeploymentConfiguration.foreach(
-        __v => __obj.update("blueGreenDeploymentConfiguration", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("blueGreenDeploymentConfiguration")(__v.asInstanceOf[js.Any])
       )
-      deploymentConfigName.foreach(__v => __obj.update("deploymentConfigName", __v.asInstanceOf[js.Any]))
-      deploymentStyle.foreach(__v => __obj.update("deploymentStyle", __v.asInstanceOf[js.Any]))
-      ec2TagFilters.foreach(__v => __obj.update("ec2TagFilters", __v.asInstanceOf[js.Any]))
-      ec2TagSet.foreach(__v => __obj.update("ec2TagSet", __v.asInstanceOf[js.Any]))
-      ecsServices.foreach(__v => __obj.update("ecsServices", __v.asInstanceOf[js.Any]))
-      loadBalancerInfo.foreach(__v => __obj.update("loadBalancerInfo", __v.asInstanceOf[js.Any]))
-      newDeploymentGroupName.foreach(__v => __obj.update("newDeploymentGroupName", __v.asInstanceOf[js.Any]))
+      deploymentConfigName.foreach(__v => __obj.updateDynamic("deploymentConfigName")(__v.asInstanceOf[js.Any]))
+      deploymentStyle.foreach(__v => __obj.updateDynamic("deploymentStyle")(__v.asInstanceOf[js.Any]))
+      ec2TagFilters.foreach(__v => __obj.updateDynamic("ec2TagFilters")(__v.asInstanceOf[js.Any]))
+      ec2TagSet.foreach(__v => __obj.updateDynamic("ec2TagSet")(__v.asInstanceOf[js.Any]))
+      ecsServices.foreach(__v => __obj.updateDynamic("ecsServices")(__v.asInstanceOf[js.Any]))
+      loadBalancerInfo.foreach(__v => __obj.updateDynamic("loadBalancerInfo")(__v.asInstanceOf[js.Any]))
+      newDeploymentGroupName.foreach(__v => __obj.updateDynamic("newDeploymentGroupName")(__v.asInstanceOf[js.Any]))
       onPremisesInstanceTagFilters.foreach(
-        __v => __obj.update("onPremisesInstanceTagFilters", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("onPremisesInstanceTagFilters")(__v.asInstanceOf[js.Any])
       )
-      onPremisesTagSet.foreach(__v => __obj.update("onPremisesTagSet", __v.asInstanceOf[js.Any]))
-      serviceRoleArn.foreach(__v => __obj.update("serviceRoleArn", __v.asInstanceOf[js.Any]))
-      triggerConfigurations.foreach(__v => __obj.update("triggerConfigurations", __v.asInstanceOf[js.Any]))
+      onPremisesTagSet.foreach(__v => __obj.updateDynamic("onPremisesTagSet")(__v.asInstanceOf[js.Any]))
+      serviceRoleArn.foreach(__v => __obj.updateDynamic("serviceRoleArn")(__v.asInstanceOf[js.Any]))
+      triggerConfigurations.foreach(__v => __obj.updateDynamic("triggerConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDeploymentGroupInput]
     }
   }
@@ -3926,8 +3940,8 @@ package codedeploy {
     def apply(
         hooksNotCleanedUp: js.UndefOr[AutoScalingGroupList] = js.undefined
     ): UpdateDeploymentGroupOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      hooksNotCleanedUp.foreach(__v => __obj.update("hooksNotCleanedUp", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      hooksNotCleanedUp.foreach(__v => __obj.updateDynamic("hooksNotCleanedUp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDeploymentGroupOutput]
     }
   }

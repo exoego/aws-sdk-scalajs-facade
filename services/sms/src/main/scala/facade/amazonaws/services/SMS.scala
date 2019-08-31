@@ -335,23 +335,23 @@ package sms {
         totalServerGroups: js.UndefOr[TotalServerGroups] = js.undefined,
         totalServers: js.UndefOr[TotalServers] = js.undefined
     ): AppSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      appId.foreach(__v => __obj.update("appId", __v.asInstanceOf[js.Any]))
-      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      lastModified.foreach(__v => __obj.update("lastModified", __v.asInstanceOf[js.Any]))
-      latestReplicationTime.foreach(__v => __obj.update("latestReplicationTime", __v.asInstanceOf[js.Any]))
-      launchDetails.foreach(__v => __obj.update("launchDetails", __v.asInstanceOf[js.Any]))
-      launchStatus.foreach(__v => __obj.update("launchStatus", __v.asInstanceOf[js.Any]))
-      launchStatusMessage.foreach(__v => __obj.update("launchStatusMessage", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      replicationStatus.foreach(__v => __obj.update("replicationStatus", __v.asInstanceOf[js.Any]))
-      replicationStatusMessage.foreach(__v => __obj.update("replicationStatusMessage", __v.asInstanceOf[js.Any]))
-      roleName.foreach(__v => __obj.update("roleName", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      statusMessage.foreach(__v => __obj.update("statusMessage", __v.asInstanceOf[js.Any]))
-      totalServerGroups.foreach(__v => __obj.update("totalServerGroups", __v.asInstanceOf[js.Any]))
-      totalServers.foreach(__v => __obj.update("totalServers", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      appId.foreach(__v => __obj.updateDynamic("appId")(__v.asInstanceOf[js.Any]))
+      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      lastModified.foreach(__v => __obj.updateDynamic("lastModified")(__v.asInstanceOf[js.Any]))
+      latestReplicationTime.foreach(__v => __obj.updateDynamic("latestReplicationTime")(__v.asInstanceOf[js.Any]))
+      launchDetails.foreach(__v => __obj.updateDynamic("launchDetails")(__v.asInstanceOf[js.Any]))
+      launchStatus.foreach(__v => __obj.updateDynamic("launchStatus")(__v.asInstanceOf[js.Any]))
+      launchStatusMessage.foreach(__v => __obj.updateDynamic("launchStatusMessage")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      replicationStatus.foreach(__v => __obj.updateDynamic("replicationStatus")(__v.asInstanceOf[js.Any]))
+      replicationStatusMessage.foreach(__v => __obj.updateDynamic("replicationStatusMessage")(__v.asInstanceOf[js.Any]))
+      roleName.foreach(__v => __obj.updateDynamic("roleName")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      statusMessage.foreach(__v => __obj.updateDynamic("statusMessage")(__v.asInstanceOf[js.Any]))
+      totalServerGroups.foreach(__v => __obj.updateDynamic("totalServerGroups")(__v.asInstanceOf[js.Any]))
+      totalServers.foreach(__v => __obj.updateDynamic("totalServers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AppSummary]
     }
   }
@@ -386,17 +386,17 @@ package sms {
         vmManagerName: js.UndefOr[VmManagerName] = js.undefined,
         vmManagerType: js.UndefOr[VmManagerType] = js.undefined
     ): Connector = {
-      val __obj = js.Dictionary.empty[js.Any]
-      associatedOn.foreach(__v => __obj.update("associatedOn", __v.asInstanceOf[js.Any]))
-      capabilityList.foreach(__v => __obj.update("capabilityList", __v.asInstanceOf[js.Any]))
-      connectorId.foreach(__v => __obj.update("connectorId", __v.asInstanceOf[js.Any]))
-      ipAddress.foreach(__v => __obj.update("ipAddress", __v.asInstanceOf[js.Any]))
-      macAddress.foreach(__v => __obj.update("macAddress", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
-      vmManagerId.foreach(__v => __obj.update("vmManagerId", __v.asInstanceOf[js.Any]))
-      vmManagerName.foreach(__v => __obj.update("vmManagerName", __v.asInstanceOf[js.Any]))
-      vmManagerType.foreach(__v => __obj.update("vmManagerType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      associatedOn.foreach(__v => __obj.updateDynamic("associatedOn")(__v.asInstanceOf[js.Any]))
+      capabilityList.foreach(__v => __obj.updateDynamic("capabilityList")(__v.asInstanceOf[js.Any]))
+      connectorId.foreach(__v => __obj.updateDynamic("connectorId")(__v.asInstanceOf[js.Any]))
+      ipAddress.foreach(__v => __obj.updateDynamic("ipAddress")(__v.asInstanceOf[js.Any]))
+      macAddress.foreach(__v => __obj.updateDynamic("macAddress")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
+      vmManagerId.foreach(__v => __obj.updateDynamic("vmManagerId")(__v.asInstanceOf[js.Any]))
+      vmManagerName.foreach(__v => __obj.updateDynamic("vmManagerName")(__v.asInstanceOf[js.Any]))
+      vmManagerType.foreach(__v => __obj.updateDynamic("vmManagerType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Connector]
     }
   }
@@ -436,13 +436,13 @@ package sms {
         serverGroups: js.UndefOr[ServerGroups] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): CreateAppRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      clientToken.foreach(__v => __obj.update("clientToken", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      roleName.foreach(__v => __obj.update("roleName", __v.asInstanceOf[js.Any]))
-      serverGroups.foreach(__v => __obj.update("serverGroups", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      roleName.foreach(__v => __obj.updateDynamic("roleName")(__v.asInstanceOf[js.Any]))
+      serverGroups.foreach(__v => __obj.updateDynamic("serverGroups")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAppRequest]
     }
   }
@@ -460,10 +460,10 @@ package sms {
         serverGroups: js.UndefOr[ServerGroups] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): CreateAppResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      appSummary.foreach(__v => __obj.update("appSummary", __v.asInstanceOf[js.Any]))
-      serverGroups.foreach(__v => __obj.update("serverGroups", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      appSummary.foreach(__v => __obj.updateDynamic("appSummary")(__v.asInstanceOf[js.Any]))
+      serverGroups.foreach(__v => __obj.updateDynamic("serverGroups")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAppResponse]
     }
   }
@@ -495,19 +495,19 @@ package sms {
         roleName: js.UndefOr[RoleName] = js.undefined,
         runOnce: js.UndefOr[RunOnce] = js.undefined
     ): CreateReplicationJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "seedReplicationTime" -> seedReplicationTime.asInstanceOf[js.Any],
         "serverId"            -> serverId.asInstanceOf[js.Any]
       )
 
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      encrypted.foreach(__v => __obj.update("encrypted", __v.asInstanceOf[js.Any]))
-      frequency.foreach(__v => __obj.update("frequency", __v.asInstanceOf[js.Any]))
-      kmsKeyId.foreach(__v => __obj.update("kmsKeyId", __v.asInstanceOf[js.Any]))
-      licenseType.foreach(__v => __obj.update("licenseType", __v.asInstanceOf[js.Any]))
-      numberOfRecentAmisToKeep.foreach(__v => __obj.update("numberOfRecentAmisToKeep", __v.asInstanceOf[js.Any]))
-      roleName.foreach(__v => __obj.update("roleName", __v.asInstanceOf[js.Any]))
-      runOnce.foreach(__v => __obj.update("runOnce", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      encrypted.foreach(__v => __obj.updateDynamic("encrypted")(__v.asInstanceOf[js.Any]))
+      frequency.foreach(__v => __obj.updateDynamic("frequency")(__v.asInstanceOf[js.Any]))
+      kmsKeyId.foreach(__v => __obj.updateDynamic("kmsKeyId")(__v.asInstanceOf[js.Any]))
+      licenseType.foreach(__v => __obj.updateDynamic("licenseType")(__v.asInstanceOf[js.Any]))
+      numberOfRecentAmisToKeep.foreach(__v => __obj.updateDynamic("numberOfRecentAmisToKeep")(__v.asInstanceOf[js.Any]))
+      roleName.foreach(__v => __obj.updateDynamic("roleName")(__v.asInstanceOf[js.Any]))
+      runOnce.foreach(__v => __obj.updateDynamic("runOnce")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateReplicationJobRequest]
     }
   }
@@ -521,8 +521,8 @@ package sms {
     def apply(
         replicationJobId: js.UndefOr[ReplicationJobId] = js.undefined
     ): CreateReplicationJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      replicationJobId.foreach(__v => __obj.update("replicationJobId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      replicationJobId.foreach(__v => __obj.updateDynamic("replicationJobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateReplicationJobResponse]
     }
   }
@@ -536,8 +536,8 @@ package sms {
     def apply(
         appId: js.UndefOr[AppId] = js.undefined
     ): DeleteAppLaunchConfigurationRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      appId.foreach(__v => __obj.update("appId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      appId.foreach(__v => __obj.updateDynamic("appId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteAppLaunchConfigurationRequest]
     }
   }
@@ -548,7 +548,7 @@ package sms {
   object DeleteAppLaunchConfigurationResponse {
     def apply(
         ): DeleteAppLaunchConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteAppLaunchConfigurationResponse]
     }
@@ -563,8 +563,8 @@ package sms {
     def apply(
         appId: js.UndefOr[AppId] = js.undefined
     ): DeleteAppReplicationConfigurationRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      appId.foreach(__v => __obj.update("appId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      appId.foreach(__v => __obj.updateDynamic("appId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteAppReplicationConfigurationRequest]
     }
   }
@@ -575,7 +575,7 @@ package sms {
   object DeleteAppReplicationConfigurationResponse {
     def apply(
         ): DeleteAppReplicationConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteAppReplicationConfigurationResponse]
     }
@@ -594,10 +594,10 @@ package sms {
         forceStopAppReplication: js.UndefOr[ForceStopAppReplication] = js.undefined,
         forceTerminateApp: js.UndefOr[ForceTerminateApp] = js.undefined
     ): DeleteAppRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      appId.foreach(__v => __obj.update("appId", __v.asInstanceOf[js.Any]))
-      forceStopAppReplication.foreach(__v => __obj.update("forceStopAppReplication", __v.asInstanceOf[js.Any]))
-      forceTerminateApp.foreach(__v => __obj.update("forceTerminateApp", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      appId.foreach(__v => __obj.updateDynamic("appId")(__v.asInstanceOf[js.Any]))
+      forceStopAppReplication.foreach(__v => __obj.updateDynamic("forceStopAppReplication")(__v.asInstanceOf[js.Any]))
+      forceTerminateApp.foreach(__v => __obj.updateDynamic("forceTerminateApp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteAppRequest]
     }
   }
@@ -608,7 +608,7 @@ package sms {
   object DeleteAppResponse {
     def apply(
         ): DeleteAppResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteAppResponse]
     }
@@ -623,7 +623,7 @@ package sms {
     def apply(
         replicationJobId: ReplicationJobId
     ): DeleteReplicationJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "replicationJobId" -> replicationJobId.asInstanceOf[js.Any]
       )
 
@@ -637,7 +637,7 @@ package sms {
   object DeleteReplicationJobResponse {
     def apply(
         ): DeleteReplicationJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteReplicationJobResponse]
     }
@@ -649,7 +649,7 @@ package sms {
   object DeleteServerCatalogRequest {
     def apply(
         ): DeleteServerCatalogRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteServerCatalogRequest]
     }
@@ -661,7 +661,7 @@ package sms {
   object DeleteServerCatalogResponse {
     def apply(
         ): DeleteServerCatalogResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteServerCatalogResponse]
     }
@@ -676,7 +676,7 @@ package sms {
     def apply(
         connectorId: ConnectorId
     ): DisassociateConnectorRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "connectorId" -> connectorId.asInstanceOf[js.Any]
       )
 
@@ -690,7 +690,7 @@ package sms {
   object DisassociateConnectorResponse {
     def apply(
         ): DisassociateConnectorResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateConnectorResponse]
     }
@@ -707,9 +707,9 @@ package sms {
         appId: js.UndefOr[AppId] = js.undefined,
         changesetFormat: js.UndefOr[OutputFormat] = js.undefined
     ): GenerateChangeSetRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      appId.foreach(__v => __obj.update("appId", __v.asInstanceOf[js.Any]))
-      changesetFormat.foreach(__v => __obj.update("changesetFormat", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      appId.foreach(__v => __obj.updateDynamic("appId")(__v.asInstanceOf[js.Any]))
+      changesetFormat.foreach(__v => __obj.updateDynamic("changesetFormat")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GenerateChangeSetRequest]
     }
   }
@@ -723,8 +723,8 @@ package sms {
     def apply(
         s3Location: js.UndefOr[S3Location] = js.undefined
     ): GenerateChangeSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      s3Location.foreach(__v => __obj.update("s3Location", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      s3Location.foreach(__v => __obj.updateDynamic("s3Location")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GenerateChangeSetResponse]
     }
   }
@@ -740,9 +740,9 @@ package sms {
         appId: js.UndefOr[AppId] = js.undefined,
         templateFormat: js.UndefOr[OutputFormat] = js.undefined
     ): GenerateTemplateRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      appId.foreach(__v => __obj.update("appId", __v.asInstanceOf[js.Any]))
-      templateFormat.foreach(__v => __obj.update("templateFormat", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      appId.foreach(__v => __obj.updateDynamic("appId")(__v.asInstanceOf[js.Any]))
+      templateFormat.foreach(__v => __obj.updateDynamic("templateFormat")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GenerateTemplateRequest]
     }
   }
@@ -756,8 +756,8 @@ package sms {
     def apply(
         s3Location: js.UndefOr[S3Location] = js.undefined
     ): GenerateTemplateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      s3Location.foreach(__v => __obj.update("s3Location", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      s3Location.foreach(__v => __obj.updateDynamic("s3Location")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GenerateTemplateResponse]
     }
   }
@@ -771,8 +771,8 @@ package sms {
     def apply(
         appId: js.UndefOr[AppId] = js.undefined
     ): GetAppLaunchConfigurationRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      appId.foreach(__v => __obj.update("appId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      appId.foreach(__v => __obj.updateDynamic("appId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAppLaunchConfigurationRequest]
     }
   }
@@ -790,11 +790,11 @@ package sms {
         roleName: js.UndefOr[RoleName] = js.undefined,
         serverGroupLaunchConfigurations: js.UndefOr[ServerGroupLaunchConfigurations] = js.undefined
     ): GetAppLaunchConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      appId.foreach(__v => __obj.update("appId", __v.asInstanceOf[js.Any]))
-      roleName.foreach(__v => __obj.update("roleName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      appId.foreach(__v => __obj.updateDynamic("appId")(__v.asInstanceOf[js.Any]))
+      roleName.foreach(__v => __obj.updateDynamic("roleName")(__v.asInstanceOf[js.Any]))
       serverGroupLaunchConfigurations.foreach(
-        __v => __obj.update("serverGroupLaunchConfigurations", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("serverGroupLaunchConfigurations")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetAppLaunchConfigurationResponse]
     }
@@ -809,8 +809,8 @@ package sms {
     def apply(
         appId: js.UndefOr[AppId] = js.undefined
     ): GetAppReplicationConfigurationRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      appId.foreach(__v => __obj.update("appId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      appId.foreach(__v => __obj.updateDynamic("appId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAppReplicationConfigurationRequest]
     }
   }
@@ -824,9 +824,9 @@ package sms {
     def apply(
         serverGroupReplicationConfigurations: js.UndefOr[ServerGroupReplicationConfigurations] = js.undefined
     ): GetAppReplicationConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       serverGroupReplicationConfigurations.foreach(
-        __v => __obj.update("serverGroupReplicationConfigurations", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("serverGroupReplicationConfigurations")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetAppReplicationConfigurationResponse]
     }
@@ -841,8 +841,8 @@ package sms {
     def apply(
         appId: js.UndefOr[AppId] = js.undefined
     ): GetAppRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      appId.foreach(__v => __obj.update("appId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      appId.foreach(__v => __obj.updateDynamic("appId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAppRequest]
     }
   }
@@ -860,10 +860,10 @@ package sms {
         serverGroups: js.UndefOr[ServerGroups] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): GetAppResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      appSummary.foreach(__v => __obj.update("appSummary", __v.asInstanceOf[js.Any]))
-      serverGroups.foreach(__v => __obj.update("serverGroups", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      appSummary.foreach(__v => __obj.updateDynamic("appSummary")(__v.asInstanceOf[js.Any]))
+      serverGroups.foreach(__v => __obj.updateDynamic("serverGroups")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAppResponse]
     }
   }
@@ -879,9 +879,9 @@ package sms {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetConnectorsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetConnectorsRequest]
     }
   }
@@ -897,9 +897,9 @@ package sms {
         connectorList: js.UndefOr[ConnectorList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetConnectorsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      connectorList.foreach(__v => __obj.update("connectorList", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      connectorList.foreach(__v => __obj.updateDynamic("connectorList")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetConnectorsResponse]
     }
   }
@@ -917,10 +917,10 @@ package sms {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         replicationJobId: js.UndefOr[ReplicationJobId] = js.undefined
     ): GetReplicationJobsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      replicationJobId.foreach(__v => __obj.update("replicationJobId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      replicationJobId.foreach(__v => __obj.updateDynamic("replicationJobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetReplicationJobsRequest]
     }
   }
@@ -936,9 +936,9 @@ package sms {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         replicationJobList: js.UndefOr[ReplicationJobList] = js.undefined
     ): GetReplicationJobsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      replicationJobList.foreach(__v => __obj.update("replicationJobList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      replicationJobList.foreach(__v => __obj.updateDynamic("replicationJobList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetReplicationJobsResponse]
     }
   }
@@ -956,12 +956,12 @@ package sms {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetReplicationRunsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "replicationJobId" -> replicationJobId.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetReplicationRunsRequest]
     }
   }
@@ -979,10 +979,10 @@ package sms {
         replicationJob: js.UndefOr[ReplicationJob] = js.undefined,
         replicationRunList: js.UndefOr[ReplicationRunList] = js.undefined
     ): GetReplicationRunsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      replicationJob.foreach(__v => __obj.update("replicationJob", __v.asInstanceOf[js.Any]))
-      replicationRunList.foreach(__v => __obj.update("replicationRunList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      replicationJob.foreach(__v => __obj.updateDynamic("replicationJob")(__v.asInstanceOf[js.Any]))
+      replicationRunList.foreach(__v => __obj.updateDynamic("replicationRunList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetReplicationRunsResponse]
     }
   }
@@ -1000,10 +1000,10 @@ package sms {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         vmServerAddressList: js.UndefOr[VmServerAddressList] = js.undefined
     ): GetServersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      vmServerAddressList.foreach(__v => __obj.update("vmServerAddressList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      vmServerAddressList.foreach(__v => __obj.updateDynamic("vmServerAddressList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetServersRequest]
     }
   }
@@ -1023,11 +1023,11 @@ package sms {
         serverCatalogStatus: js.UndefOr[ServerCatalogStatus] = js.undefined,
         serverList: js.UndefOr[ServerList] = js.undefined
     ): GetServersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      lastModifiedOn.foreach(__v => __obj.update("lastModifiedOn", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      serverCatalogStatus.foreach(__v => __obj.update("serverCatalogStatus", __v.asInstanceOf[js.Any]))
-      serverList.foreach(__v => __obj.update("serverList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      lastModifiedOn.foreach(__v => __obj.updateDynamic("lastModifiedOn")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      serverCatalogStatus.foreach(__v => __obj.updateDynamic("serverCatalogStatus")(__v.asInstanceOf[js.Any]))
+      serverList.foreach(__v => __obj.updateDynamic("serverList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetServersResponse]
     }
   }
@@ -1038,7 +1038,7 @@ package sms {
   object ImportServerCatalogRequest {
     def apply(
         ): ImportServerCatalogRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ImportServerCatalogRequest]
     }
@@ -1050,7 +1050,7 @@ package sms {
   object ImportServerCatalogResponse {
     def apply(
         ): ImportServerCatalogResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ImportServerCatalogResponse]
     }
@@ -1065,8 +1065,8 @@ package sms {
     def apply(
         appId: js.UndefOr[AppId] = js.undefined
     ): LaunchAppRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      appId.foreach(__v => __obj.update("appId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      appId.foreach(__v => __obj.updateDynamic("appId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LaunchAppRequest]
     }
   }
@@ -1077,7 +1077,7 @@ package sms {
   object LaunchAppResponse {
     def apply(
         ): LaunchAppResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[LaunchAppResponse]
     }
@@ -1099,10 +1099,10 @@ package sms {
         stackId: js.UndefOr[StackId] = js.undefined,
         stackName: js.UndefOr[StackName] = js.undefined
     ): LaunchDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      latestLaunchTime.foreach(__v => __obj.update("latestLaunchTime", __v.asInstanceOf[js.Any]))
-      stackId.foreach(__v => __obj.update("stackId", __v.asInstanceOf[js.Any]))
-      stackName.foreach(__v => __obj.update("stackName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      latestLaunchTime.foreach(__v => __obj.updateDynamic("latestLaunchTime")(__v.asInstanceOf[js.Any]))
+      stackId.foreach(__v => __obj.updateDynamic("stackId")(__v.asInstanceOf[js.Any]))
+      stackName.foreach(__v => __obj.updateDynamic("stackName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LaunchDetails]
     }
   }
@@ -1127,10 +1127,10 @@ package sms {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListAppsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      appIds.foreach(__v => __obj.update("appIds", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      appIds.foreach(__v => __obj.updateDynamic("appIds")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAppsRequest]
     }
   }
@@ -1146,9 +1146,9 @@ package sms {
         apps: js.UndefOr[Apps] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListAppsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      apps.foreach(__v => __obj.update("apps", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      apps.foreach(__v => __obj.updateDynamic("apps")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAppsResponse]
     }
   }
@@ -1173,11 +1173,11 @@ package sms {
         roleName: js.UndefOr[RoleName] = js.undefined,
         serverGroupLaunchConfigurations: js.UndefOr[ServerGroupLaunchConfigurations] = js.undefined
     ): PutAppLaunchConfigurationRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      appId.foreach(__v => __obj.update("appId", __v.asInstanceOf[js.Any]))
-      roleName.foreach(__v => __obj.update("roleName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      appId.foreach(__v => __obj.updateDynamic("appId")(__v.asInstanceOf[js.Any]))
+      roleName.foreach(__v => __obj.updateDynamic("roleName")(__v.asInstanceOf[js.Any]))
       serverGroupLaunchConfigurations.foreach(
-        __v => __obj.update("serverGroupLaunchConfigurations", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("serverGroupLaunchConfigurations")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[PutAppLaunchConfigurationRequest]
     }
@@ -1189,7 +1189,7 @@ package sms {
   object PutAppLaunchConfigurationResponse {
     def apply(
         ): PutAppLaunchConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutAppLaunchConfigurationResponse]
     }
@@ -1206,10 +1206,10 @@ package sms {
         appId: js.UndefOr[AppId] = js.undefined,
         serverGroupReplicationConfigurations: js.UndefOr[ServerGroupReplicationConfigurations] = js.undefined
     ): PutAppReplicationConfigurationRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      appId.foreach(__v => __obj.update("appId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      appId.foreach(__v => __obj.updateDynamic("appId")(__v.asInstanceOf[js.Any]))
       serverGroupReplicationConfigurations.foreach(
-        __v => __obj.update("serverGroupReplicationConfigurations", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("serverGroupReplicationConfigurations")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[PutAppReplicationConfigurationRequest]
     }
@@ -1221,7 +1221,7 @@ package sms {
   object PutAppReplicationConfigurationResponse {
     def apply(
         ): PutAppReplicationConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutAppReplicationConfigurationResponse]
     }
@@ -1273,25 +1273,27 @@ package sms {
         statusMessage: js.UndefOr[ReplicationJobStatusMessage] = js.undefined,
         vmServer: js.UndefOr[VmServer] = js.undefined
     ): ReplicationJob = {
-      val __obj = js.Dictionary.empty[js.Any]
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      encrypted.foreach(__v => __obj.update("encrypted", __v.asInstanceOf[js.Any]))
-      frequency.foreach(__v => __obj.update("frequency", __v.asInstanceOf[js.Any]))
-      kmsKeyId.foreach(__v => __obj.update("kmsKeyId", __v.asInstanceOf[js.Any]))
-      latestAmiId.foreach(__v => __obj.update("latestAmiId", __v.asInstanceOf[js.Any]))
-      licenseType.foreach(__v => __obj.update("licenseType", __v.asInstanceOf[js.Any]))
-      nextReplicationRunStartTime.foreach(__v => __obj.update("nextReplicationRunStartTime", __v.asInstanceOf[js.Any]))
-      numberOfRecentAmisToKeep.foreach(__v => __obj.update("numberOfRecentAmisToKeep", __v.asInstanceOf[js.Any]))
-      replicationJobId.foreach(__v => __obj.update("replicationJobId", __v.asInstanceOf[js.Any]))
-      replicationRunList.foreach(__v => __obj.update("replicationRunList", __v.asInstanceOf[js.Any]))
-      roleName.foreach(__v => __obj.update("roleName", __v.asInstanceOf[js.Any]))
-      runOnce.foreach(__v => __obj.update("runOnce", __v.asInstanceOf[js.Any]))
-      seedReplicationTime.foreach(__v => __obj.update("seedReplicationTime", __v.asInstanceOf[js.Any]))
-      serverId.foreach(__v => __obj.update("serverId", __v.asInstanceOf[js.Any]))
-      serverType.foreach(__v => __obj.update("serverType", __v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.update("state", __v.asInstanceOf[js.Any]))
-      statusMessage.foreach(__v => __obj.update("statusMessage", __v.asInstanceOf[js.Any]))
-      vmServer.foreach(__v => __obj.update("vmServer", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      encrypted.foreach(__v => __obj.updateDynamic("encrypted")(__v.asInstanceOf[js.Any]))
+      frequency.foreach(__v => __obj.updateDynamic("frequency")(__v.asInstanceOf[js.Any]))
+      kmsKeyId.foreach(__v => __obj.updateDynamic("kmsKeyId")(__v.asInstanceOf[js.Any]))
+      latestAmiId.foreach(__v => __obj.updateDynamic("latestAmiId")(__v.asInstanceOf[js.Any]))
+      licenseType.foreach(__v => __obj.updateDynamic("licenseType")(__v.asInstanceOf[js.Any]))
+      nextReplicationRunStartTime.foreach(
+        __v => __obj.updateDynamic("nextReplicationRunStartTime")(__v.asInstanceOf[js.Any])
+      )
+      numberOfRecentAmisToKeep.foreach(__v => __obj.updateDynamic("numberOfRecentAmisToKeep")(__v.asInstanceOf[js.Any]))
+      replicationJobId.foreach(__v => __obj.updateDynamic("replicationJobId")(__v.asInstanceOf[js.Any]))
+      replicationRunList.foreach(__v => __obj.updateDynamic("replicationRunList")(__v.asInstanceOf[js.Any]))
+      roleName.foreach(__v => __obj.updateDynamic("roleName")(__v.asInstanceOf[js.Any]))
+      runOnce.foreach(__v => __obj.updateDynamic("runOnce")(__v.asInstanceOf[js.Any]))
+      seedReplicationTime.foreach(__v => __obj.updateDynamic("seedReplicationTime")(__v.asInstanceOf[js.Any]))
+      serverId.foreach(__v => __obj.updateDynamic("serverId")(__v.asInstanceOf[js.Any]))
+      serverType.foreach(__v => __obj.updateDynamic("serverType")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      statusMessage.foreach(__v => __obj.updateDynamic("statusMessage")(__v.asInstanceOf[js.Any]))
+      vmServer.foreach(__v => __obj.updateDynamic("vmServer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicationJob]
     }
   }
@@ -1342,18 +1344,18 @@ package sms {
         statusMessage: js.UndefOr[ReplicationRunStatusMessage] = js.undefined,
         `type`: js.UndefOr[ReplicationRunType] = js.undefined
     ): ReplicationRun = {
-      val __obj = js.Dictionary.empty[js.Any]
-      amiId.foreach(__v => __obj.update("amiId", __v.asInstanceOf[js.Any]))
-      completedTime.foreach(__v => __obj.update("completedTime", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      encrypted.foreach(__v => __obj.update("encrypted", __v.asInstanceOf[js.Any]))
-      kmsKeyId.foreach(__v => __obj.update("kmsKeyId", __v.asInstanceOf[js.Any]))
-      replicationRunId.foreach(__v => __obj.update("replicationRunId", __v.asInstanceOf[js.Any]))
-      scheduledStartTime.foreach(__v => __obj.update("scheduledStartTime", __v.asInstanceOf[js.Any]))
-      stageDetails.foreach(__v => __obj.update("stageDetails", __v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.update("state", __v.asInstanceOf[js.Any]))
-      statusMessage.foreach(__v => __obj.update("statusMessage", __v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      amiId.foreach(__v => __obj.updateDynamic("amiId")(__v.asInstanceOf[js.Any]))
+      completedTime.foreach(__v => __obj.updateDynamic("completedTime")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      encrypted.foreach(__v => __obj.updateDynamic("encrypted")(__v.asInstanceOf[js.Any]))
+      kmsKeyId.foreach(__v => __obj.updateDynamic("kmsKeyId")(__v.asInstanceOf[js.Any]))
+      replicationRunId.foreach(__v => __obj.updateDynamic("replicationRunId")(__v.asInstanceOf[js.Any]))
+      scheduledStartTime.foreach(__v => __obj.updateDynamic("scheduledStartTime")(__v.asInstanceOf[js.Any]))
+      stageDetails.foreach(__v => __obj.updateDynamic("stageDetails")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      statusMessage.foreach(__v => __obj.updateDynamic("statusMessage")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicationRun]
     }
   }
@@ -1372,9 +1374,9 @@ package sms {
         stage: js.UndefOr[ReplicationRunStage] = js.undefined,
         stageProgress: js.UndefOr[ReplicationRunStageProgress] = js.undefined
     ): ReplicationRunStageDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      stage.foreach(__v => __obj.update("stage", __v.asInstanceOf[js.Any]))
-      stageProgress.foreach(__v => __obj.update("stageProgress", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      stage.foreach(__v => __obj.updateDynamic("stage")(__v.asInstanceOf[js.Any]))
+      stageProgress.foreach(__v => __obj.updateDynamic("stageProgress")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicationRunStageDetails]
     }
   }
@@ -1412,9 +1414,9 @@ package sms {
         bucket: js.UndefOr[BucketName] = js.undefined,
         key: js.UndefOr[KeyName] = js.undefined
     ): S3Location = {
-      val __obj = js.Dictionary.empty[js.Any]
-      bucket.foreach(__v => __obj.update("bucket", __v.asInstanceOf[js.Any]))
-      key.foreach(__v => __obj.update("key", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      bucket.foreach(__v => __obj.updateDynamic("bucket")(__v.asInstanceOf[js.Any]))
+      key.foreach(__v => __obj.updateDynamic("key")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Location]
     }
   }
@@ -1439,12 +1441,12 @@ package sms {
         serverType: js.UndefOr[ServerType] = js.undefined,
         vmServer: js.UndefOr[VmServer] = js.undefined
     ): Server = {
-      val __obj = js.Dictionary.empty[js.Any]
-      replicationJobId.foreach(__v => __obj.update("replicationJobId", __v.asInstanceOf[js.Any]))
-      replicationJobTerminated.foreach(__v => __obj.update("replicationJobTerminated", __v.asInstanceOf[js.Any]))
-      serverId.foreach(__v => __obj.update("serverId", __v.asInstanceOf[js.Any]))
-      serverType.foreach(__v => __obj.update("serverType", __v.asInstanceOf[js.Any]))
-      vmServer.foreach(__v => __obj.update("vmServer", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      replicationJobId.foreach(__v => __obj.updateDynamic("replicationJobId")(__v.asInstanceOf[js.Any]))
+      replicationJobTerminated.foreach(__v => __obj.updateDynamic("replicationJobTerminated")(__v.asInstanceOf[js.Any]))
+      serverId.foreach(__v => __obj.updateDynamic("serverId")(__v.asInstanceOf[js.Any]))
+      serverType.foreach(__v => __obj.updateDynamic("serverType")(__v.asInstanceOf[js.Any]))
+      vmServer.foreach(__v => __obj.updateDynamic("vmServer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Server]
     }
   }
@@ -1475,10 +1477,10 @@ package sms {
         serverGroupId: js.UndefOr[ServerGroupId] = js.undefined,
         serverList: js.UndefOr[ServerList] = js.undefined
     ): ServerGroup = {
-      val __obj = js.Dictionary.empty[js.Any]
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      serverGroupId.foreach(__v => __obj.update("serverGroupId", __v.asInstanceOf[js.Any]))
-      serverList.foreach(__v => __obj.update("serverList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      serverGroupId.foreach(__v => __obj.updateDynamic("serverGroupId")(__v.asInstanceOf[js.Any]))
+      serverList.foreach(__v => __obj.updateDynamic("serverList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServerGroup]
     }
   }
@@ -1499,10 +1501,12 @@ package sms {
         serverGroupId: js.UndefOr[ServerGroupId] = js.undefined,
         serverLaunchConfigurations: js.UndefOr[ServerLaunchConfigurations] = js.undefined
     ): ServerGroupLaunchConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      launchOrder.foreach(__v => __obj.update("launchOrder", __v.asInstanceOf[js.Any]))
-      serverGroupId.foreach(__v => __obj.update("serverGroupId", __v.asInstanceOf[js.Any]))
-      serverLaunchConfigurations.foreach(__v => __obj.update("serverLaunchConfigurations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      launchOrder.foreach(__v => __obj.updateDynamic("launchOrder")(__v.asInstanceOf[js.Any]))
+      serverGroupId.foreach(__v => __obj.updateDynamic("serverGroupId")(__v.asInstanceOf[js.Any]))
+      serverLaunchConfigurations.foreach(
+        __v => __obj.updateDynamic("serverLaunchConfigurations")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[ServerGroupLaunchConfiguration]
     }
   }
@@ -1521,10 +1525,10 @@ package sms {
         serverGroupId: js.UndefOr[ServerGroupId] = js.undefined,
         serverReplicationConfigurations: js.UndefOr[ServerReplicationConfigurations] = js.undefined
     ): ServerGroupReplicationConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      serverGroupId.foreach(__v => __obj.update("serverGroupId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      serverGroupId.foreach(__v => __obj.updateDynamic("serverGroupId")(__v.asInstanceOf[js.Any]))
       serverReplicationConfigurations.foreach(
-        __v => __obj.update("serverReplicationConfigurations", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("serverReplicationConfigurations")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ServerGroupReplicationConfiguration]
     }
@@ -1558,16 +1562,16 @@ package sms {
         userData: js.UndefOr[UserData] = js.undefined,
         vpc: js.UndefOr[VPC] = js.undefined
     ): ServerLaunchConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      associatePublicIpAddress.foreach(__v => __obj.update("associatePublicIpAddress", __v.asInstanceOf[js.Any]))
-      ec2KeyName.foreach(__v => __obj.update("ec2KeyName", __v.asInstanceOf[js.Any]))
-      instanceType.foreach(__v => __obj.update("instanceType", __v.asInstanceOf[js.Any]))
-      logicalId.foreach(__v => __obj.update("logicalId", __v.asInstanceOf[js.Any]))
-      securityGroup.foreach(__v => __obj.update("securityGroup", __v.asInstanceOf[js.Any]))
-      server.foreach(__v => __obj.update("server", __v.asInstanceOf[js.Any]))
-      subnet.foreach(__v => __obj.update("subnet", __v.asInstanceOf[js.Any]))
-      userData.foreach(__v => __obj.update("userData", __v.asInstanceOf[js.Any]))
-      vpc.foreach(__v => __obj.update("vpc", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      associatePublicIpAddress.foreach(__v => __obj.updateDynamic("associatePublicIpAddress")(__v.asInstanceOf[js.Any]))
+      ec2KeyName.foreach(__v => __obj.updateDynamic("ec2KeyName")(__v.asInstanceOf[js.Any]))
+      instanceType.foreach(__v => __obj.updateDynamic("instanceType")(__v.asInstanceOf[js.Any]))
+      logicalId.foreach(__v => __obj.updateDynamic("logicalId")(__v.asInstanceOf[js.Any]))
+      securityGroup.foreach(__v => __obj.updateDynamic("securityGroup")(__v.asInstanceOf[js.Any]))
+      server.foreach(__v => __obj.updateDynamic("server")(__v.asInstanceOf[js.Any]))
+      subnet.foreach(__v => __obj.updateDynamic("subnet")(__v.asInstanceOf[js.Any]))
+      userData.foreach(__v => __obj.updateDynamic("userData")(__v.asInstanceOf[js.Any]))
+      vpc.foreach(__v => __obj.updateDynamic("vpc")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServerLaunchConfiguration]
     }
   }
@@ -1586,9 +1590,11 @@ package sms {
         server: js.UndefOr[Server] = js.undefined,
         serverReplicationParameters: js.UndefOr[ServerReplicationParameters] = js.undefined
     ): ServerReplicationConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      server.foreach(__v => __obj.update("server", __v.asInstanceOf[js.Any]))
-      serverReplicationParameters.foreach(__v => __obj.update("serverReplicationParameters", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      server.foreach(__v => __obj.updateDynamic("server")(__v.asInstanceOf[js.Any]))
+      serverReplicationParameters.foreach(
+        __v => __obj.updateDynamic("serverReplicationParameters")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[ServerReplicationConfiguration]
     }
   }
@@ -1617,14 +1623,14 @@ package sms {
         runOnce: js.UndefOr[RunOnce] = js.undefined,
         seedTime: js.UndefOr[Timestamp] = js.undefined
     ): ServerReplicationParameters = {
-      val __obj = js.Dictionary.empty[js.Any]
-      encrypted.foreach(__v => __obj.update("encrypted", __v.asInstanceOf[js.Any]))
-      frequency.foreach(__v => __obj.update("frequency", __v.asInstanceOf[js.Any]))
-      kmsKeyId.foreach(__v => __obj.update("kmsKeyId", __v.asInstanceOf[js.Any]))
-      licenseType.foreach(__v => __obj.update("licenseType", __v.asInstanceOf[js.Any]))
-      numberOfRecentAmisToKeep.foreach(__v => __obj.update("numberOfRecentAmisToKeep", __v.asInstanceOf[js.Any]))
-      runOnce.foreach(__v => __obj.update("runOnce", __v.asInstanceOf[js.Any]))
-      seedTime.foreach(__v => __obj.update("seedTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      encrypted.foreach(__v => __obj.updateDynamic("encrypted")(__v.asInstanceOf[js.Any]))
+      frequency.foreach(__v => __obj.updateDynamic("frequency")(__v.asInstanceOf[js.Any]))
+      kmsKeyId.foreach(__v => __obj.updateDynamic("kmsKeyId")(__v.asInstanceOf[js.Any]))
+      licenseType.foreach(__v => __obj.updateDynamic("licenseType")(__v.asInstanceOf[js.Any]))
+      numberOfRecentAmisToKeep.foreach(__v => __obj.updateDynamic("numberOfRecentAmisToKeep")(__v.asInstanceOf[js.Any]))
+      runOnce.foreach(__v => __obj.updateDynamic("runOnce")(__v.asInstanceOf[js.Any]))
+      seedTime.foreach(__v => __obj.updateDynamic("seedTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServerReplicationParameters]
     }
   }
@@ -1644,8 +1650,8 @@ package sms {
     def apply(
         appId: js.UndefOr[AppId] = js.undefined
     ): StartAppReplicationRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      appId.foreach(__v => __obj.update("appId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      appId.foreach(__v => __obj.updateDynamic("appId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartAppReplicationRequest]
     }
   }
@@ -1656,7 +1662,7 @@ package sms {
   object StartAppReplicationResponse {
     def apply(
         ): StartAppReplicationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartAppReplicationResponse]
     }
@@ -1673,11 +1679,11 @@ package sms {
         replicationJobId: ReplicationJobId,
         description: js.UndefOr[Description] = js.undefined
     ): StartOnDemandReplicationRunRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "replicationJobId" -> replicationJobId.asInstanceOf[js.Any]
       )
 
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartOnDemandReplicationRunRequest]
     }
   }
@@ -1691,8 +1697,8 @@ package sms {
     def apply(
         replicationRunId: js.UndefOr[ReplicationRunId] = js.undefined
     ): StartOnDemandReplicationRunResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      replicationRunId.foreach(__v => __obj.update("replicationRunId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      replicationRunId.foreach(__v => __obj.updateDynamic("replicationRunId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartOnDemandReplicationRunResponse]
     }
   }
@@ -1706,8 +1712,8 @@ package sms {
     def apply(
         appId: js.UndefOr[AppId] = js.undefined
     ): StopAppReplicationRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      appId.foreach(__v => __obj.update("appId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      appId.foreach(__v => __obj.updateDynamic("appId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopAppReplicationRequest]
     }
   }
@@ -1718,7 +1724,7 @@ package sms {
   object StopAppReplicationResponse {
     def apply(
         ): StopAppReplicationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopAppReplicationResponse]
     }
@@ -1738,9 +1744,9 @@ package sms {
         key: js.UndefOr[TagKey] = js.undefined,
         value: js.UndefOr[TagValue] = js.undefined
     ): Tag = {
-      val __obj = js.Dictionary.empty[js.Any]
-      key.foreach(__v => __obj.update("key", __v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      key.foreach(__v => __obj.updateDynamic("key")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tag]
     }
   }
@@ -1754,8 +1760,8 @@ package sms {
     def apply(
         appId: js.UndefOr[AppId] = js.undefined
     ): TerminateAppRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      appId.foreach(__v => __obj.update("appId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      appId.foreach(__v => __obj.updateDynamic("appId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TerminateAppRequest]
     }
   }
@@ -1766,7 +1772,7 @@ package sms {
   object TerminateAppResponse {
     def apply(
         ): TerminateAppResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TerminateAppResponse]
     }
@@ -1791,13 +1797,13 @@ package sms {
         serverGroups: js.UndefOr[ServerGroups] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): UpdateAppRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      appId.foreach(__v => __obj.update("appId", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      roleName.foreach(__v => __obj.update("roleName", __v.asInstanceOf[js.Any]))
-      serverGroups.foreach(__v => __obj.update("serverGroups", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      appId.foreach(__v => __obj.updateDynamic("appId")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      roleName.foreach(__v => __obj.updateDynamic("roleName")(__v.asInstanceOf[js.Any]))
+      serverGroups.foreach(__v => __obj.updateDynamic("serverGroups")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAppRequest]
     }
   }
@@ -1815,10 +1821,10 @@ package sms {
         serverGroups: js.UndefOr[ServerGroups] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): UpdateAppResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      appSummary.foreach(__v => __obj.update("appSummary", __v.asInstanceOf[js.Any]))
-      serverGroups.foreach(__v => __obj.update("serverGroups", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      appSummary.foreach(__v => __obj.updateDynamic("appSummary")(__v.asInstanceOf[js.Any]))
+      serverGroups.foreach(__v => __obj.updateDynamic("serverGroups")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAppResponse]
     }
   }
@@ -1848,18 +1854,20 @@ package sms {
         numberOfRecentAmisToKeep: js.UndefOr[NumberOfRecentAmisToKeep] = js.undefined,
         roleName: js.UndefOr[RoleName] = js.undefined
     ): UpdateReplicationJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "replicationJobId" -> replicationJobId.asInstanceOf[js.Any]
       )
 
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      encrypted.foreach(__v => __obj.update("encrypted", __v.asInstanceOf[js.Any]))
-      frequency.foreach(__v => __obj.update("frequency", __v.asInstanceOf[js.Any]))
-      kmsKeyId.foreach(__v => __obj.update("kmsKeyId", __v.asInstanceOf[js.Any]))
-      licenseType.foreach(__v => __obj.update("licenseType", __v.asInstanceOf[js.Any]))
-      nextReplicationRunStartTime.foreach(__v => __obj.update("nextReplicationRunStartTime", __v.asInstanceOf[js.Any]))
-      numberOfRecentAmisToKeep.foreach(__v => __obj.update("numberOfRecentAmisToKeep", __v.asInstanceOf[js.Any]))
-      roleName.foreach(__v => __obj.update("roleName", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      encrypted.foreach(__v => __obj.updateDynamic("encrypted")(__v.asInstanceOf[js.Any]))
+      frequency.foreach(__v => __obj.updateDynamic("frequency")(__v.asInstanceOf[js.Any]))
+      kmsKeyId.foreach(__v => __obj.updateDynamic("kmsKeyId")(__v.asInstanceOf[js.Any]))
+      licenseType.foreach(__v => __obj.updateDynamic("licenseType")(__v.asInstanceOf[js.Any]))
+      nextReplicationRunStartTime.foreach(
+        __v => __obj.updateDynamic("nextReplicationRunStartTime")(__v.asInstanceOf[js.Any])
+      )
+      numberOfRecentAmisToKeep.foreach(__v => __obj.updateDynamic("numberOfRecentAmisToKeep")(__v.asInstanceOf[js.Any]))
+      roleName.foreach(__v => __obj.updateDynamic("roleName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateReplicationJobRequest]
     }
   }
@@ -1870,7 +1878,7 @@ package sms {
   object UpdateReplicationJobResponse {
     def apply(
         ): UpdateReplicationJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateReplicationJobResponse]
     }
@@ -1888,8 +1896,8 @@ package sms {
     def apply(
         s3Location: js.UndefOr[S3Location] = js.undefined
     ): UserData = {
-      val __obj = js.Dictionary.empty[js.Any]
-      s3Location.foreach(__v => __obj.update("s3Location", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      s3Location.foreach(__v => __obj.updateDynamic("s3Location")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UserData]
     }
   }
@@ -1922,12 +1930,12 @@ package sms {
         vmPath: js.UndefOr[VmPath] = js.undefined,
         vmServerAddress: js.UndefOr[VmServerAddress] = js.undefined
     ): VmServer = {
-      val __obj = js.Dictionary.empty[js.Any]
-      vmManagerName.foreach(__v => __obj.update("vmManagerName", __v.asInstanceOf[js.Any]))
-      vmManagerType.foreach(__v => __obj.update("vmManagerType", __v.asInstanceOf[js.Any]))
-      vmName.foreach(__v => __obj.update("vmName", __v.asInstanceOf[js.Any]))
-      vmPath.foreach(__v => __obj.update("vmPath", __v.asInstanceOf[js.Any]))
-      vmServerAddress.foreach(__v => __obj.update("vmServerAddress", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      vmManagerName.foreach(__v => __obj.updateDynamic("vmManagerName")(__v.asInstanceOf[js.Any]))
+      vmManagerType.foreach(__v => __obj.updateDynamic("vmManagerType")(__v.asInstanceOf[js.Any]))
+      vmName.foreach(__v => __obj.updateDynamic("vmName")(__v.asInstanceOf[js.Any]))
+      vmPath.foreach(__v => __obj.updateDynamic("vmPath")(__v.asInstanceOf[js.Any]))
+      vmServerAddress.foreach(__v => __obj.updateDynamic("vmServerAddress")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VmServer]
     }
   }
@@ -1946,9 +1954,9 @@ package sms {
         vmId: js.UndefOr[VmId] = js.undefined,
         vmManagerId: js.UndefOr[VmManagerId] = js.undefined
     ): VmServerAddress = {
-      val __obj = js.Dictionary.empty[js.Any]
-      vmId.foreach(__v => __obj.update("vmId", __v.asInstanceOf[js.Any]))
-      vmManagerId.foreach(__v => __obj.update("vmManagerId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      vmId.foreach(__v => __obj.updateDynamic("vmId")(__v.asInstanceOf[js.Any]))
+      vmManagerId.foreach(__v => __obj.updateDynamic("vmManagerId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VmServerAddress]
     }
   }

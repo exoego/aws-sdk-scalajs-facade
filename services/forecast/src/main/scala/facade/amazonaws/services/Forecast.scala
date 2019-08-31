@@ -176,7 +176,7 @@ package forecast {
         Name: Name,
         Values: Values
     ): CategoricalParameterRange = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"   -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
@@ -203,13 +203,13 @@ package forecast {
         Name: Name,
         ScalingType: js.UndefOr[ScalingType] = js.undefined
     ): ContinuousParameterRange = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MaxValue" -> MaxValue.asInstanceOf[js.Any],
         "MinValue" -> MinValue.asInstanceOf[js.Any],
         "Name"     -> Name.asInstanceOf[js.Any]
       )
 
-      ScalingType.foreach(__v => __obj.update("ScalingType", __v.asInstanceOf[js.Any]))
+      ScalingType.foreach(__v => __obj.updateDynamic("ScalingType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContinuousParameterRange]
     }
   }
@@ -227,12 +227,12 @@ package forecast {
         Domain: Domain,
         DatasetArns: js.UndefOr[ArnList] = js.undefined
     ): CreateDatasetGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatasetGroupName" -> DatasetGroupName.asInstanceOf[js.Any],
         "Domain"           -> Domain.asInstanceOf[js.Any]
       )
 
-      DatasetArns.foreach(__v => __obj.update("DatasetArns", __v.asInstanceOf[js.Any]))
+      DatasetArns.foreach(__v => __obj.updateDynamic("DatasetArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatasetGroupRequest]
     }
   }
@@ -246,8 +246,8 @@ package forecast {
     def apply(
         DatasetGroupArn: js.UndefOr[Arn] = js.undefined
     ): CreateDatasetGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DatasetGroupArn.foreach(__v => __obj.update("DatasetGroupArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DatasetGroupArn.foreach(__v => __obj.updateDynamic("DatasetGroupArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatasetGroupResponse]
     }
   }
@@ -267,13 +267,13 @@ package forecast {
         DatasetImportJobName: Name,
         TimestampFormat: js.UndefOr[TimestampFormat] = js.undefined
     ): CreateDatasetImportJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DataSource"           -> DataSource.asInstanceOf[js.Any],
         "DatasetArn"           -> DatasetArn.asInstanceOf[js.Any],
         "DatasetImportJobName" -> DatasetImportJobName.asInstanceOf[js.Any]
       )
 
-      TimestampFormat.foreach(__v => __obj.update("TimestampFormat", __v.asInstanceOf[js.Any]))
+      TimestampFormat.foreach(__v => __obj.updateDynamic("TimestampFormat")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatasetImportJobRequest]
     }
   }
@@ -287,8 +287,8 @@ package forecast {
     def apply(
         DatasetImportJobArn: js.UndefOr[Arn] = js.undefined
     ): CreateDatasetImportJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DatasetImportJobArn.foreach(__v => __obj.update("DatasetImportJobArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DatasetImportJobArn.foreach(__v => __obj.updateDynamic("DatasetImportJobArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatasetImportJobResponse]
     }
   }
@@ -312,15 +312,15 @@ package forecast {
         DataFrequency: js.UndefOr[Frequency] = js.undefined,
         EncryptionConfig: js.UndefOr[EncryptionConfig] = js.undefined
     ): CreateDatasetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatasetName" -> DatasetName.asInstanceOf[js.Any],
         "DatasetType" -> DatasetType.asInstanceOf[js.Any],
         "Domain"      -> Domain.asInstanceOf[js.Any],
         "Schema"      -> Schema.asInstanceOf[js.Any]
       )
 
-      DataFrequency.foreach(__v => __obj.update("DataFrequency", __v.asInstanceOf[js.Any]))
-      EncryptionConfig.foreach(__v => __obj.update("EncryptionConfig", __v.asInstanceOf[js.Any]))
+      DataFrequency.foreach(__v => __obj.updateDynamic("DataFrequency")(__v.asInstanceOf[js.Any]))
+      EncryptionConfig.foreach(__v => __obj.updateDynamic("EncryptionConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatasetRequest]
     }
   }
@@ -334,8 +334,8 @@ package forecast {
     def apply(
         DatasetArn: js.UndefOr[Arn] = js.undefined
     ): CreateDatasetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DatasetArn.foreach(__v => __obj.update("DatasetArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DatasetArn.foreach(__v => __obj.updateDynamic("DatasetArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatasetResponse]
     }
   }
@@ -353,7 +353,7 @@ package forecast {
         ForecastArn: Arn,
         ForecastExportJobName: Name
     ): CreateForecastExportJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Destination"           -> Destination.asInstanceOf[js.Any],
         "ForecastArn"           -> ForecastArn.asInstanceOf[js.Any],
         "ForecastExportJobName" -> ForecastExportJobName.asInstanceOf[js.Any]
@@ -372,8 +372,8 @@ package forecast {
     def apply(
         ForecastExportJobArn: js.UndefOr[Arn] = js.undefined
     ): CreateForecastExportJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ForecastExportJobArn.foreach(__v => __obj.update("ForecastExportJobArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ForecastExportJobArn.foreach(__v => __obj.updateDynamic("ForecastExportJobArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateForecastExportJobResponse]
     }
   }
@@ -389,7 +389,7 @@ package forecast {
         ForecastName: Name,
         PredictorArn: Arn
     ): CreateForecastRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ForecastName" -> ForecastName.asInstanceOf[js.Any],
         "PredictorArn" -> PredictorArn.asInstanceOf[js.Any]
       )
@@ -407,8 +407,8 @@ package forecast {
     def apply(
         ForecastArn: js.UndefOr[Arn] = js.undefined
     ): CreateForecastResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ForecastArn.foreach(__v => __obj.update("ForecastArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ForecastArn.foreach(__v => __obj.updateDynamic("ForecastArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateForecastResponse]
     }
   }
@@ -442,20 +442,20 @@ package forecast {
         PerformHPO: js.UndefOr[Boolean] = js.undefined,
         TrainingParameters: js.UndefOr[TrainingParameters] = js.undefined
     ): CreatePredictorRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FeaturizationConfig" -> FeaturizationConfig.asInstanceOf[js.Any],
         "ForecastHorizon"     -> ForecastHorizon.asInstanceOf[js.Any],
         "InputDataConfig"     -> InputDataConfig.asInstanceOf[js.Any],
         "PredictorName"       -> PredictorName.asInstanceOf[js.Any]
       )
 
-      AlgorithmArn.foreach(__v => __obj.update("AlgorithmArn", __v.asInstanceOf[js.Any]))
-      EncryptionConfig.foreach(__v => __obj.update("EncryptionConfig", __v.asInstanceOf[js.Any]))
-      EvaluationParameters.foreach(__v => __obj.update("EvaluationParameters", __v.asInstanceOf[js.Any]))
-      HPOConfig.foreach(__v => __obj.update("HPOConfig", __v.asInstanceOf[js.Any]))
-      PerformAutoML.foreach(__v => __obj.update("PerformAutoML", __v.asInstanceOf[js.Any]))
-      PerformHPO.foreach(__v => __obj.update("PerformHPO", __v.asInstanceOf[js.Any]))
-      TrainingParameters.foreach(__v => __obj.update("TrainingParameters", __v.asInstanceOf[js.Any]))
+      AlgorithmArn.foreach(__v => __obj.updateDynamic("AlgorithmArn")(__v.asInstanceOf[js.Any]))
+      EncryptionConfig.foreach(__v => __obj.updateDynamic("EncryptionConfig")(__v.asInstanceOf[js.Any]))
+      EvaluationParameters.foreach(__v => __obj.updateDynamic("EvaluationParameters")(__v.asInstanceOf[js.Any]))
+      HPOConfig.foreach(__v => __obj.updateDynamic("HPOConfig")(__v.asInstanceOf[js.Any]))
+      PerformAutoML.foreach(__v => __obj.updateDynamic("PerformAutoML")(__v.asInstanceOf[js.Any]))
+      PerformHPO.foreach(__v => __obj.updateDynamic("PerformHPO")(__v.asInstanceOf[js.Any]))
+      TrainingParameters.foreach(__v => __obj.updateDynamic("TrainingParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePredictorRequest]
     }
   }
@@ -469,8 +469,8 @@ package forecast {
     def apply(
         PredictorArn: js.UndefOr[Arn] = js.undefined
     ): CreatePredictorResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PredictorArn.foreach(__v => __obj.update("PredictorArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PredictorArn.foreach(__v => __obj.updateDynamic("PredictorArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePredictorResponse]
     }
   }
@@ -487,7 +487,7 @@ package forecast {
     def apply(
         S3Config: S3Config
     ): DataDestination = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "S3Config" -> S3Config.asInstanceOf[js.Any]
       )
 
@@ -507,7 +507,7 @@ package forecast {
     def apply(
         S3Config: S3Config
     ): DataSource = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "S3Config" -> S3Config.asInstanceOf[js.Any]
       )
 
@@ -533,11 +533,11 @@ package forecast {
         DatasetGroupName: js.UndefOr[Name] = js.undefined,
         LastModificationTime: js.UndefOr[Timestamp] = js.undefined
     ): DatasetGroupSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      DatasetGroupArn.foreach(__v => __obj.update("DatasetGroupArn", __v.asInstanceOf[js.Any]))
-      DatasetGroupName.foreach(__v => __obj.update("DatasetGroupName", __v.asInstanceOf[js.Any]))
-      LastModificationTime.foreach(__v => __obj.update("LastModificationTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      DatasetGroupArn.foreach(__v => __obj.updateDynamic("DatasetGroupArn")(__v.asInstanceOf[js.Any]))
+      DatasetGroupName.foreach(__v => __obj.updateDynamic("DatasetGroupName")(__v.asInstanceOf[js.Any]))
+      LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatasetGroupSummary]
     }
   }
@@ -566,14 +566,14 @@ package forecast {
         Message: js.UndefOr[ErrorMessage] = js.undefined,
         Status: js.UndefOr[Status] = js.undefined
     ): DatasetImportJobSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      DataSource.foreach(__v => __obj.update("DataSource", __v.asInstanceOf[js.Any]))
-      DatasetImportJobArn.foreach(__v => __obj.update("DatasetImportJobArn", __v.asInstanceOf[js.Any]))
-      DatasetImportJobName.foreach(__v => __obj.update("DatasetImportJobName", __v.asInstanceOf[js.Any]))
-      LastModificationTime.foreach(__v => __obj.update("LastModificationTime", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      DataSource.foreach(__v => __obj.updateDynamic("DataSource")(__v.asInstanceOf[js.Any]))
+      DatasetImportJobArn.foreach(__v => __obj.updateDynamic("DatasetImportJobArn")(__v.asInstanceOf[js.Any]))
+      DatasetImportJobName.foreach(__v => __obj.updateDynamic("DatasetImportJobName")(__v.asInstanceOf[js.Any]))
+      LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatasetImportJobSummary]
     }
   }
@@ -600,13 +600,13 @@ package forecast {
         Domain: js.UndefOr[Domain] = js.undefined,
         LastModificationTime: js.UndefOr[Timestamp] = js.undefined
     ): DatasetSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      DatasetArn.foreach(__v => __obj.update("DatasetArn", __v.asInstanceOf[js.Any]))
-      DatasetName.foreach(__v => __obj.update("DatasetName", __v.asInstanceOf[js.Any]))
-      DatasetType.foreach(__v => __obj.update("DatasetType", __v.asInstanceOf[js.Any]))
-      Domain.foreach(__v => __obj.update("Domain", __v.asInstanceOf[js.Any]))
-      LastModificationTime.foreach(__v => __obj.update("LastModificationTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      DatasetArn.foreach(__v => __obj.updateDynamic("DatasetArn")(__v.asInstanceOf[js.Any]))
+      DatasetName.foreach(__v => __obj.updateDynamic("DatasetName")(__v.asInstanceOf[js.Any]))
+      DatasetType.foreach(__v => __obj.updateDynamic("DatasetType")(__v.asInstanceOf[js.Any]))
+      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
+      LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatasetSummary]
     }
   }
@@ -628,7 +628,7 @@ package forecast {
     def apply(
         DatasetGroupArn: Arn
     ): DeleteDatasetGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatasetGroupArn" -> DatasetGroupArn.asInstanceOf[js.Any]
       )
 
@@ -645,7 +645,7 @@ package forecast {
     def apply(
         DatasetImportJobArn: Arn
     ): DeleteDatasetImportJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatasetImportJobArn" -> DatasetImportJobArn.asInstanceOf[js.Any]
       )
 
@@ -662,7 +662,7 @@ package forecast {
     def apply(
         DatasetArn: Arn
     ): DeleteDatasetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatasetArn" -> DatasetArn.asInstanceOf[js.Any]
       )
 
@@ -679,7 +679,7 @@ package forecast {
     def apply(
         ForecastExportJobArn: Arn
     ): DeleteForecastExportJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ForecastExportJobArn" -> ForecastExportJobArn.asInstanceOf[js.Any]
       )
 
@@ -696,7 +696,7 @@ package forecast {
     def apply(
         ForecastArn: Arn
     ): DeleteForecastRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ForecastArn" -> ForecastArn.asInstanceOf[js.Any]
       )
 
@@ -713,7 +713,7 @@ package forecast {
     def apply(
         PredictorArn: Arn
     ): DeletePredictorRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PredictorArn" -> PredictorArn.asInstanceOf[js.Any]
       )
 
@@ -730,7 +730,7 @@ package forecast {
     def apply(
         DatasetGroupArn: Arn
     ): DescribeDatasetGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatasetGroupArn" -> DatasetGroupArn.asInstanceOf[js.Any]
       )
 
@@ -759,14 +759,14 @@ package forecast {
         LastModificationTime: js.UndefOr[Timestamp] = js.undefined,
         Status: js.UndefOr[Status] = js.undefined
     ): DescribeDatasetGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      DatasetArns.foreach(__v => __obj.update("DatasetArns", __v.asInstanceOf[js.Any]))
-      DatasetGroupArn.foreach(__v => __obj.update("DatasetGroupArn", __v.asInstanceOf[js.Any]))
-      DatasetGroupName.foreach(__v => __obj.update("DatasetGroupName", __v.asInstanceOf[js.Any]))
-      Domain.foreach(__v => __obj.update("Domain", __v.asInstanceOf[js.Any]))
-      LastModificationTime.foreach(__v => __obj.update("LastModificationTime", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      DatasetArns.foreach(__v => __obj.updateDynamic("DatasetArns")(__v.asInstanceOf[js.Any]))
+      DatasetGroupArn.foreach(__v => __obj.updateDynamic("DatasetGroupArn")(__v.asInstanceOf[js.Any]))
+      DatasetGroupName.foreach(__v => __obj.updateDynamic("DatasetGroupName")(__v.asInstanceOf[js.Any]))
+      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
+      LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDatasetGroupResponse]
     }
   }
@@ -780,7 +780,7 @@ package forecast {
     def apply(
         DatasetImportJobArn: Arn
     ): DescribeDatasetImportJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatasetImportJobArn" -> DatasetImportJobArn.asInstanceOf[js.Any]
       )
 
@@ -817,18 +817,18 @@ package forecast {
         Status: js.UndefOr[Status] = js.undefined,
         TimestampFormat: js.UndefOr[TimestampFormat] = js.undefined
     ): DescribeDatasetImportJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      DataSize.foreach(__v => __obj.update("DataSize", __v.asInstanceOf[js.Any]))
-      DataSource.foreach(__v => __obj.update("DataSource", __v.asInstanceOf[js.Any]))
-      DatasetArn.foreach(__v => __obj.update("DatasetArn", __v.asInstanceOf[js.Any]))
-      DatasetImportJobArn.foreach(__v => __obj.update("DatasetImportJobArn", __v.asInstanceOf[js.Any]))
-      DatasetImportJobName.foreach(__v => __obj.update("DatasetImportJobName", __v.asInstanceOf[js.Any]))
-      FieldStatistics.foreach(__v => __obj.update("FieldStatistics", __v.asInstanceOf[js.Any]))
-      LastModificationTime.foreach(__v => __obj.update("LastModificationTime", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      TimestampFormat.foreach(__v => __obj.update("TimestampFormat", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      DataSize.foreach(__v => __obj.updateDynamic("DataSize")(__v.asInstanceOf[js.Any]))
+      DataSource.foreach(__v => __obj.updateDynamic("DataSource")(__v.asInstanceOf[js.Any]))
+      DatasetArn.foreach(__v => __obj.updateDynamic("DatasetArn")(__v.asInstanceOf[js.Any]))
+      DatasetImportJobArn.foreach(__v => __obj.updateDynamic("DatasetImportJobArn")(__v.asInstanceOf[js.Any]))
+      DatasetImportJobName.foreach(__v => __obj.updateDynamic("DatasetImportJobName")(__v.asInstanceOf[js.Any]))
+      FieldStatistics.foreach(__v => __obj.updateDynamic("FieldStatistics")(__v.asInstanceOf[js.Any]))
+      LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TimestampFormat.foreach(__v => __obj.updateDynamic("TimestampFormat")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDatasetImportJobResponse]
     }
   }
@@ -842,7 +842,7 @@ package forecast {
     def apply(
         DatasetArn: Arn
     ): DescribeDatasetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatasetArn" -> DatasetArn.asInstanceOf[js.Any]
       )
 
@@ -877,17 +877,17 @@ package forecast {
         Schema: js.UndefOr[Schema] = js.undefined,
         Status: js.UndefOr[Status] = js.undefined
     ): DescribeDatasetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      DataFrequency.foreach(__v => __obj.update("DataFrequency", __v.asInstanceOf[js.Any]))
-      DatasetArn.foreach(__v => __obj.update("DatasetArn", __v.asInstanceOf[js.Any]))
-      DatasetName.foreach(__v => __obj.update("DatasetName", __v.asInstanceOf[js.Any]))
-      DatasetType.foreach(__v => __obj.update("DatasetType", __v.asInstanceOf[js.Any]))
-      Domain.foreach(__v => __obj.update("Domain", __v.asInstanceOf[js.Any]))
-      EncryptionConfig.foreach(__v => __obj.update("EncryptionConfig", __v.asInstanceOf[js.Any]))
-      LastModificationTime.foreach(__v => __obj.update("LastModificationTime", __v.asInstanceOf[js.Any]))
-      Schema.foreach(__v => __obj.update("Schema", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      DataFrequency.foreach(__v => __obj.updateDynamic("DataFrequency")(__v.asInstanceOf[js.Any]))
+      DatasetArn.foreach(__v => __obj.updateDynamic("DatasetArn")(__v.asInstanceOf[js.Any]))
+      DatasetName.foreach(__v => __obj.updateDynamic("DatasetName")(__v.asInstanceOf[js.Any]))
+      DatasetType.foreach(__v => __obj.updateDynamic("DatasetType")(__v.asInstanceOf[js.Any]))
+      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
+      EncryptionConfig.foreach(__v => __obj.updateDynamic("EncryptionConfig")(__v.asInstanceOf[js.Any]))
+      LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
+      Schema.foreach(__v => __obj.updateDynamic("Schema")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDatasetResponse]
     }
   }
@@ -901,7 +901,7 @@ package forecast {
     def apply(
         ForecastExportJobArn: Arn
     ): DescribeForecastExportJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ForecastExportJobArn" -> ForecastExportJobArn.asInstanceOf[js.Any]
       )
 
@@ -932,15 +932,15 @@ package forecast {
         Message: js.UndefOr[Message] = js.undefined,
         Status: js.UndefOr[Status] = js.undefined
     ): DescribeForecastExportJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      Destination.foreach(__v => __obj.update("Destination", __v.asInstanceOf[js.Any]))
-      ForecastArn.foreach(__v => __obj.update("ForecastArn", __v.asInstanceOf[js.Any]))
-      ForecastExportJobArn.foreach(__v => __obj.update("ForecastExportJobArn", __v.asInstanceOf[js.Any]))
-      ForecastExportJobName.foreach(__v => __obj.update("ForecastExportJobName", __v.asInstanceOf[js.Any]))
-      LastModificationTime.foreach(__v => __obj.update("LastModificationTime", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
+      ForecastArn.foreach(__v => __obj.updateDynamic("ForecastArn")(__v.asInstanceOf[js.Any]))
+      ForecastExportJobArn.foreach(__v => __obj.updateDynamic("ForecastExportJobArn")(__v.asInstanceOf[js.Any]))
+      ForecastExportJobName.foreach(__v => __obj.updateDynamic("ForecastExportJobName")(__v.asInstanceOf[js.Any]))
+      LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeForecastExportJobResponse]
     }
   }
@@ -954,7 +954,7 @@ package forecast {
     def apply(
         ForecastArn: Arn
     ): DescribeForecastRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ForecastArn" -> ForecastArn.asInstanceOf[js.Any]
       )
 
@@ -985,15 +985,15 @@ package forecast {
         PredictorArn: js.UndefOr[Arn] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): DescribeForecastResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      DatasetGroupArn.foreach(__v => __obj.update("DatasetGroupArn", __v.asInstanceOf[js.Any]))
-      ForecastArn.foreach(__v => __obj.update("ForecastArn", __v.asInstanceOf[js.Any]))
-      ForecastName.foreach(__v => __obj.update("ForecastName", __v.asInstanceOf[js.Any]))
-      LastModificationTime.foreach(__v => __obj.update("LastModificationTime", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
-      PredictorArn.foreach(__v => __obj.update("PredictorArn", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      DatasetGroupArn.foreach(__v => __obj.updateDynamic("DatasetGroupArn")(__v.asInstanceOf[js.Any]))
+      ForecastArn.foreach(__v => __obj.updateDynamic("ForecastArn")(__v.asInstanceOf[js.Any]))
+      ForecastName.foreach(__v => __obj.updateDynamic("ForecastName")(__v.asInstanceOf[js.Any]))
+      LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      PredictorArn.foreach(__v => __obj.updateDynamic("PredictorArn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeForecastResponse]
     }
   }
@@ -1007,7 +1007,7 @@ package forecast {
     def apply(
         PredictorArn: Arn
     ): DescribePredictorRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PredictorArn" -> PredictorArn.asInstanceOf[js.Any]
       )
 
@@ -1058,25 +1058,25 @@ package forecast {
         Status: js.UndefOr[Status] = js.undefined,
         TrainingParameters: js.UndefOr[TrainingParameters] = js.undefined
     ): DescribePredictorResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AlgorithmArn.foreach(__v => __obj.update("AlgorithmArn", __v.asInstanceOf[js.Any]))
-      AutoMLAlgorithmArns.foreach(__v => __obj.update("AutoMLAlgorithmArns", __v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      DatasetImportJobArns.foreach(__v => __obj.update("DatasetImportJobArns", __v.asInstanceOf[js.Any]))
-      EncryptionConfig.foreach(__v => __obj.update("EncryptionConfig", __v.asInstanceOf[js.Any]))
-      EvaluationParameters.foreach(__v => __obj.update("EvaluationParameters", __v.asInstanceOf[js.Any]))
-      FeaturizationConfig.foreach(__v => __obj.update("FeaturizationConfig", __v.asInstanceOf[js.Any]))
-      ForecastHorizon.foreach(__v => __obj.update("ForecastHorizon", __v.asInstanceOf[js.Any]))
-      HPOConfig.foreach(__v => __obj.update("HPOConfig", __v.asInstanceOf[js.Any]))
-      InputDataConfig.foreach(__v => __obj.update("InputDataConfig", __v.asInstanceOf[js.Any]))
-      LastModificationTime.foreach(__v => __obj.update("LastModificationTime", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
-      PerformAutoML.foreach(__v => __obj.update("PerformAutoML", __v.asInstanceOf[js.Any]))
-      PerformHPO.foreach(__v => __obj.update("PerformHPO", __v.asInstanceOf[js.Any]))
-      PredictorArn.foreach(__v => __obj.update("PredictorArn", __v.asInstanceOf[js.Any]))
-      PredictorName.foreach(__v => __obj.update("PredictorName", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      TrainingParameters.foreach(__v => __obj.update("TrainingParameters", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AlgorithmArn.foreach(__v => __obj.updateDynamic("AlgorithmArn")(__v.asInstanceOf[js.Any]))
+      AutoMLAlgorithmArns.foreach(__v => __obj.updateDynamic("AutoMLAlgorithmArns")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      DatasetImportJobArns.foreach(__v => __obj.updateDynamic("DatasetImportJobArns")(__v.asInstanceOf[js.Any]))
+      EncryptionConfig.foreach(__v => __obj.updateDynamic("EncryptionConfig")(__v.asInstanceOf[js.Any]))
+      EvaluationParameters.foreach(__v => __obj.updateDynamic("EvaluationParameters")(__v.asInstanceOf[js.Any]))
+      FeaturizationConfig.foreach(__v => __obj.updateDynamic("FeaturizationConfig")(__v.asInstanceOf[js.Any]))
+      ForecastHorizon.foreach(__v => __obj.updateDynamic("ForecastHorizon")(__v.asInstanceOf[js.Any]))
+      HPOConfig.foreach(__v => __obj.updateDynamic("HPOConfig")(__v.asInstanceOf[js.Any]))
+      InputDataConfig.foreach(__v => __obj.updateDynamic("InputDataConfig")(__v.asInstanceOf[js.Any]))
+      LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      PerformAutoML.foreach(__v => __obj.updateDynamic("PerformAutoML")(__v.asInstanceOf[js.Any]))
+      PerformHPO.foreach(__v => __obj.updateDynamic("PerformHPO")(__v.asInstanceOf[js.Any]))
+      PredictorArn.foreach(__v => __obj.updateDynamic("PredictorArn")(__v.asInstanceOf[js.Any]))
+      PredictorName.foreach(__v => __obj.updateDynamic("PredictorName")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TrainingParameters.foreach(__v => __obj.updateDynamic("TrainingParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePredictorResponse]
     }
   }
@@ -1108,7 +1108,7 @@ package forecast {
         KMSKeyArn: KMSKeyArn,
         RoleArn: Arn
     ): EncryptionConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "KMSKeyArn" -> KMSKeyArn.asInstanceOf[js.Any],
         "RoleArn"   -> RoleArn.asInstanceOf[js.Any]
       )
@@ -1132,9 +1132,9 @@ package forecast {
         BackTestWindowOffset: js.UndefOr[Int] = js.undefined,
         NumberOfBacktestWindows: js.UndefOr[Int] = js.undefined
     ): EvaluationParameters = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackTestWindowOffset.foreach(__v => __obj.update("BackTestWindowOffset", __v.asInstanceOf[js.Any]))
-      NumberOfBacktestWindows.foreach(__v => __obj.update("NumberOfBacktestWindows", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackTestWindowOffset.foreach(__v => __obj.updateDynamic("BackTestWindowOffset")(__v.asInstanceOf[js.Any]))
+      NumberOfBacktestWindows.foreach(__v => __obj.updateDynamic("NumberOfBacktestWindows")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EvaluationParameters]
     }
   }
@@ -1153,9 +1153,9 @@ package forecast {
         AlgorithmArn: js.UndefOr[Arn] = js.undefined,
         TestWindows: js.UndefOr[TestWindows] = js.undefined
     ): EvaluationResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AlgorithmArn.foreach(__v => __obj.update("AlgorithmArn", __v.asInstanceOf[js.Any]))
-      TestWindows.foreach(__v => __obj.update("TestWindows", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AlgorithmArn.foreach(__v => __obj.updateDynamic("AlgorithmArn")(__v.asInstanceOf[js.Any]))
+      TestWindows.foreach(__v => __obj.updateDynamic("TestWindows")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EvaluationResult]
     }
   }
@@ -1189,11 +1189,11 @@ package forecast {
         AttributeName: Name,
         FeaturizationPipeline: js.UndefOr[FeaturizationPipeline] = js.undefined
     ): Featurization = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AttributeName" -> AttributeName.asInstanceOf[js.Any]
       )
 
-      FeaturizationPipeline.foreach(__v => __obj.update("FeaturizationPipeline", __v.asInstanceOf[js.Any]))
+      FeaturizationPipeline.foreach(__v => __obj.updateDynamic("FeaturizationPipeline")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Featurization]
     }
   }
@@ -1216,12 +1216,12 @@ package forecast {
         Featurizations: js.UndefOr[Featurizations] = js.undefined,
         ForecastDimensions: js.UndefOr[ForecastDimensions] = js.undefined
     ): FeaturizationConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ForecastFrequency" -> ForecastFrequency.asInstanceOf[js.Any]
       )
 
-      Featurizations.foreach(__v => __obj.update("Featurizations", __v.asInstanceOf[js.Any]))
-      ForecastDimensions.foreach(__v => __obj.update("ForecastDimensions", __v.asInstanceOf[js.Any]))
+      Featurizations.foreach(__v => __obj.updateDynamic("Featurizations")(__v.asInstanceOf[js.Any]))
+      ForecastDimensions.foreach(__v => __obj.updateDynamic("ForecastDimensions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FeaturizationConfig]
     }
   }
@@ -1245,12 +1245,12 @@ package forecast {
         FeaturizationMethodName: FeaturizationMethodName,
         FeaturizationMethodParameters: js.UndefOr[FeaturizationMethodParameters] = js.undefined
     ): FeaturizationMethod = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FeaturizationMethodName" -> FeaturizationMethodName.asInstanceOf[js.Any]
       )
 
       FeaturizationMethodParameters.foreach(
-        __v => __obj.update("FeaturizationMethodParameters", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("FeaturizationMethodParameters")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[FeaturizationMethod]
     }
@@ -1278,7 +1278,7 @@ package forecast {
         Key: String,
         Value: Arn
     ): Filter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Condition" -> Condition.asInstanceOf[js.Any],
         "Key"       -> Key.asInstanceOf[js.Any],
         "Value"     -> Value.asInstanceOf[js.Any]
@@ -1319,14 +1319,14 @@ package forecast {
         Message: js.UndefOr[ErrorMessage] = js.undefined,
         Status: js.UndefOr[Status] = js.undefined
     ): ForecastExportJobSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      Destination.foreach(__v => __obj.update("Destination", __v.asInstanceOf[js.Any]))
-      ForecastExportJobArn.foreach(__v => __obj.update("ForecastExportJobArn", __v.asInstanceOf[js.Any]))
-      ForecastExportJobName.foreach(__v => __obj.update("ForecastExportJobName", __v.asInstanceOf[js.Any]))
-      LastModificationTime.foreach(__v => __obj.update("LastModificationTime", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
+      ForecastExportJobArn.foreach(__v => __obj.updateDynamic("ForecastExportJobArn")(__v.asInstanceOf[js.Any]))
+      ForecastExportJobName.foreach(__v => __obj.updateDynamic("ForecastExportJobName")(__v.asInstanceOf[js.Any]))
+      LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ForecastExportJobSummary]
     }
   }
@@ -1357,15 +1357,15 @@ package forecast {
         PredictorArn: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[Status] = js.undefined
     ): ForecastSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      DatasetGroupArn.foreach(__v => __obj.update("DatasetGroupArn", __v.asInstanceOf[js.Any]))
-      ForecastArn.foreach(__v => __obj.update("ForecastArn", __v.asInstanceOf[js.Any]))
-      ForecastName.foreach(__v => __obj.update("ForecastName", __v.asInstanceOf[js.Any]))
-      LastModificationTime.foreach(__v => __obj.update("LastModificationTime", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
-      PredictorArn.foreach(__v => __obj.update("PredictorArn", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      DatasetGroupArn.foreach(__v => __obj.updateDynamic("DatasetGroupArn")(__v.asInstanceOf[js.Any]))
+      ForecastArn.foreach(__v => __obj.updateDynamic("ForecastArn")(__v.asInstanceOf[js.Any]))
+      ForecastName.foreach(__v => __obj.updateDynamic("ForecastName")(__v.asInstanceOf[js.Any]))
+      LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      PredictorArn.foreach(__v => __obj.updateDynamic("PredictorArn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ForecastSummary]
     }
   }
@@ -1379,7 +1379,7 @@ package forecast {
     def apply(
         PredictorArn: Arn
     ): GetAccuracyMetricsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PredictorArn" -> PredictorArn.asInstanceOf[js.Any]
       )
 
@@ -1396,8 +1396,10 @@ package forecast {
     def apply(
         PredictorEvaluationResults: js.UndefOr[PredictorEvaluationResults] = js.undefined
     ): GetAccuracyMetricsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PredictorEvaluationResults.foreach(__v => __obj.update("PredictorEvaluationResults", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PredictorEvaluationResults.foreach(
+        __v => __obj.updateDynamic("PredictorEvaluationResults")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[GetAccuracyMetricsResponse]
     }
   }
@@ -1416,8 +1418,8 @@ package forecast {
     def apply(
         ParameterRanges: js.UndefOr[ParameterRanges] = js.undefined
     ): HyperParameterTuningJobConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ParameterRanges.foreach(__v => __obj.update("ParameterRanges", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ParameterRanges.foreach(__v => __obj.updateDynamic("ParameterRanges")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HyperParameterTuningJobConfig]
     }
   }
@@ -1436,11 +1438,11 @@ package forecast {
         DatasetGroupArn: Arn,
         SupplementaryFeatures: js.UndefOr[SupplementaryFeatures] = js.undefined
     ): InputDataConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatasetGroupArn" -> DatasetGroupArn.asInstanceOf[js.Any]
       )
 
-      SupplementaryFeatures.foreach(__v => __obj.update("SupplementaryFeatures", __v.asInstanceOf[js.Any]))
+      SupplementaryFeatures.foreach(__v => __obj.updateDynamic("SupplementaryFeatures")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InputDataConfig]
     }
   }
@@ -1463,13 +1465,13 @@ package forecast {
         Name: Name,
         ScalingType: js.UndefOr[ScalingType] = js.undefined
     ): IntegerParameterRange = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MaxValue" -> MaxValue.asInstanceOf[js.Any],
         "MinValue" -> MinValue.asInstanceOf[js.Any],
         "Name"     -> Name.asInstanceOf[js.Any]
       )
 
-      ScalingType.foreach(__v => __obj.update("ScalingType", __v.asInstanceOf[js.Any]))
+      ScalingType.foreach(__v => __obj.updateDynamic("ScalingType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IntegerParameterRange]
     }
   }
@@ -1485,9 +1487,9 @@ package forecast {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDatasetGroupsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDatasetGroupsRequest]
     }
   }
@@ -1503,9 +1505,9 @@ package forecast {
         DatasetGroups: js.UndefOr[DatasetGroups] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDatasetGroupsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DatasetGroups.foreach(__v => __obj.update("DatasetGroups", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DatasetGroups.foreach(__v => __obj.updateDynamic("DatasetGroups")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDatasetGroupsResponse]
     }
   }
@@ -1523,10 +1525,10 @@ package forecast {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDatasetImportJobsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDatasetImportJobsRequest]
     }
   }
@@ -1542,9 +1544,9 @@ package forecast {
         DatasetImportJobs: js.UndefOr[DatasetImportJobs] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDatasetImportJobsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DatasetImportJobs.foreach(__v => __obj.update("DatasetImportJobs", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DatasetImportJobs.foreach(__v => __obj.updateDynamic("DatasetImportJobs")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDatasetImportJobsResponse]
     }
   }
@@ -1560,9 +1562,9 @@ package forecast {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDatasetsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDatasetsRequest]
     }
   }
@@ -1578,9 +1580,9 @@ package forecast {
         Datasets: js.UndefOr[Datasets] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDatasetsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Datasets.foreach(__v => __obj.update("Datasets", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Datasets.foreach(__v => __obj.updateDynamic("Datasets")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDatasetsResponse]
     }
   }
@@ -1598,10 +1600,10 @@ package forecast {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListForecastExportJobsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListForecastExportJobsRequest]
     }
   }
@@ -1617,9 +1619,9 @@ package forecast {
         ForecastExportJobs: js.UndefOr[ForecastExportJobs] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListForecastExportJobsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ForecastExportJobs.foreach(__v => __obj.update("ForecastExportJobs", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ForecastExportJobs.foreach(__v => __obj.updateDynamic("ForecastExportJobs")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListForecastExportJobsResponse]
     }
   }
@@ -1637,10 +1639,10 @@ package forecast {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListForecastsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListForecastsRequest]
     }
   }
@@ -1656,9 +1658,9 @@ package forecast {
         Forecasts: js.UndefOr[Forecasts] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListForecastsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Forecasts.foreach(__v => __obj.update("Forecasts", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Forecasts.foreach(__v => __obj.updateDynamic("Forecasts")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListForecastsResponse]
     }
   }
@@ -1676,10 +1678,10 @@ package forecast {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListPredictorsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPredictorsRequest]
     }
   }
@@ -1695,9 +1697,9 @@ package forecast {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Predictors: js.UndefOr[Predictors] = js.undefined
     ): ListPredictorsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Predictors.foreach(__v => __obj.update("Predictors", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Predictors.foreach(__v => __obj.updateDynamic("Predictors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPredictorsResponse]
     }
   }
@@ -1716,9 +1718,9 @@ package forecast {
         RMSE: js.UndefOr[Double] = js.undefined,
         WeightedQuantileLosses: js.UndefOr[WeightedQuantileLosses] = js.undefined
     ): Metrics = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RMSE.foreach(__v => __obj.update("RMSE", __v.asInstanceOf[js.Any]))
-      WeightedQuantileLosses.foreach(__v => __obj.update("WeightedQuantileLosses", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RMSE.foreach(__v => __obj.updateDynamic("RMSE")(__v.asInstanceOf[js.Any]))
+      WeightedQuantileLosses.foreach(__v => __obj.updateDynamic("WeightedQuantileLosses")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Metrics]
     }
   }
@@ -1739,10 +1741,14 @@ package forecast {
         ContinuousParameterRanges: js.UndefOr[ContinuousParameterRanges] = js.undefined,
         IntegerParameterRanges: js.UndefOr[IntegerParameterRanges] = js.undefined
     ): ParameterRanges = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CategoricalParameterRanges.foreach(__v => __obj.update("CategoricalParameterRanges", __v.asInstanceOf[js.Any]))
-      ContinuousParameterRanges.foreach(__v => __obj.update("ContinuousParameterRanges", __v.asInstanceOf[js.Any]))
-      IntegerParameterRanges.foreach(__v => __obj.update("IntegerParameterRanges", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CategoricalParameterRanges.foreach(
+        __v => __obj.updateDynamic("CategoricalParameterRanges")(__v.asInstanceOf[js.Any])
+      )
+      ContinuousParameterRanges.foreach(
+        __v => __obj.updateDynamic("ContinuousParameterRanges")(__v.asInstanceOf[js.Any])
+      )
+      IntegerParameterRanges.foreach(__v => __obj.updateDynamic("IntegerParameterRanges")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ParameterRanges]
     }
   }
@@ -1771,14 +1777,14 @@ package forecast {
         PredictorName: js.UndefOr[Name] = js.undefined,
         Status: js.UndefOr[Status] = js.undefined
     ): PredictorSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      DatasetGroupArn.foreach(__v => __obj.update("DatasetGroupArn", __v.asInstanceOf[js.Any]))
-      LastModificationTime.foreach(__v => __obj.update("LastModificationTime", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
-      PredictorArn.foreach(__v => __obj.update("PredictorArn", __v.asInstanceOf[js.Any]))
-      PredictorName.foreach(__v => __obj.update("PredictorName", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      DatasetGroupArn.foreach(__v => __obj.updateDynamic("DatasetGroupArn")(__v.asInstanceOf[js.Any]))
+      LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      PredictorArn.foreach(__v => __obj.updateDynamic("PredictorArn")(__v.asInstanceOf[js.Any]))
+      PredictorName.foreach(__v => __obj.updateDynamic("PredictorName")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PredictorSummary]
     }
   }
@@ -1799,12 +1805,12 @@ package forecast {
         RoleArn: Arn,
         KMSKeyArn: js.UndefOr[KMSKeyArn] = js.undefined
     ): S3Config = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Path"    -> Path.asInstanceOf[js.Any],
         "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
-      KMSKeyArn.foreach(__v => __obj.update("KMSKeyArn", __v.asInstanceOf[js.Any]))
+      KMSKeyArn.foreach(__v => __obj.updateDynamic("KMSKeyArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Config]
     }
   }
@@ -1830,8 +1836,8 @@ package forecast {
     def apply(
         Attributes: js.UndefOr[SchemaAttributes] = js.undefined
     ): Schema = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Schema]
     }
   }
@@ -1850,9 +1856,9 @@ package forecast {
         AttributeName: js.UndefOr[Name] = js.undefined,
         AttributeType: js.UndefOr[AttributeType] = js.undefined
     ): SchemaAttribute = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttributeName.foreach(__v => __obj.update("AttributeName", __v.asInstanceOf[js.Any]))
-      AttributeType.foreach(__v => __obj.update("AttributeType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttributeName.foreach(__v => __obj.updateDynamic("AttributeName")(__v.asInstanceOf[js.Any]))
+      AttributeType.foreach(__v => __obj.updateDynamic("AttributeType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SchemaAttribute]
     }
   }
@@ -1883,15 +1889,15 @@ package forecast {
         Min: js.UndefOr[String] = js.undefined,
         Stddev: js.UndefOr[Double] = js.undefined
     ): Statistics = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Avg.foreach(__v => __obj.update("Avg", __v.asInstanceOf[js.Any]))
-      Count.foreach(__v => __obj.update("Count", __v.asInstanceOf[js.Any]))
-      CountDistinct.foreach(__v => __obj.update("CountDistinct", __v.asInstanceOf[js.Any]))
-      CountNan.foreach(__v => __obj.update("CountNan", __v.asInstanceOf[js.Any]))
-      CountNull.foreach(__v => __obj.update("CountNull", __v.asInstanceOf[js.Any]))
-      Max.foreach(__v => __obj.update("Max", __v.asInstanceOf[js.Any]))
-      Min.foreach(__v => __obj.update("Min", __v.asInstanceOf[js.Any]))
-      Stddev.foreach(__v => __obj.update("Stddev", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Avg.foreach(__v => __obj.updateDynamic("Avg")(__v.asInstanceOf[js.Any]))
+      Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
+      CountDistinct.foreach(__v => __obj.updateDynamic("CountDistinct")(__v.asInstanceOf[js.Any]))
+      CountNan.foreach(__v => __obj.updateDynamic("CountNan")(__v.asInstanceOf[js.Any]))
+      CountNull.foreach(__v => __obj.updateDynamic("CountNull")(__v.asInstanceOf[js.Any]))
+      Max.foreach(__v => __obj.updateDynamic("Max")(__v.asInstanceOf[js.Any]))
+      Min.foreach(__v => __obj.updateDynamic("Min")(__v.asInstanceOf[js.Any]))
+      Stddev.foreach(__v => __obj.updateDynamic("Stddev")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Statistics]
     }
   }
@@ -1911,7 +1917,7 @@ package forecast {
         Name: Name,
         Value: Value
     ): SupplementaryFeature = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"  -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
@@ -1931,7 +1937,7 @@ package forecast {
         DatasetArns: ArnList,
         DatasetGroupArn: Arn
     ): UpdateDatasetGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatasetArns"     -> DatasetArns.asInstanceOf[js.Any],
         "DatasetGroupArn" -> DatasetGroupArn.asInstanceOf[js.Any]
       )
@@ -1946,7 +1952,7 @@ package forecast {
   object UpdateDatasetGroupResponse {
     def apply(
         ): UpdateDatasetGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateDatasetGroupResponse]
     }
@@ -1966,9 +1972,9 @@ package forecast {
         LossValue: js.UndefOr[Double] = js.undefined,
         Quantile: js.UndefOr[Double] = js.undefined
     ): WeightedQuantileLoss = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LossValue.foreach(__v => __obj.update("LossValue", __v.asInstanceOf[js.Any]))
-      Quantile.foreach(__v => __obj.update("Quantile", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LossValue.foreach(__v => __obj.updateDynamic("LossValue")(__v.asInstanceOf[js.Any]))
+      Quantile.foreach(__v => __obj.updateDynamic("Quantile")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WeightedQuantileLoss]
     }
   }
@@ -1994,12 +2000,12 @@ package forecast {
         TestWindowEnd: js.UndefOr[Timestamp] = js.undefined,
         TestWindowStart: js.UndefOr[Timestamp] = js.undefined
     ): WindowSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EvaluationType.foreach(__v => __obj.update("EvaluationType", __v.asInstanceOf[js.Any]))
-      ItemCount.foreach(__v => __obj.update("ItemCount", __v.asInstanceOf[js.Any]))
-      Metrics.foreach(__v => __obj.update("Metrics", __v.asInstanceOf[js.Any]))
-      TestWindowEnd.foreach(__v => __obj.update("TestWindowEnd", __v.asInstanceOf[js.Any]))
-      TestWindowStart.foreach(__v => __obj.update("TestWindowStart", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EvaluationType.foreach(__v => __obj.updateDynamic("EvaluationType")(__v.asInstanceOf[js.Any]))
+      ItemCount.foreach(__v => __obj.updateDynamic("ItemCount")(__v.asInstanceOf[js.Any]))
+      Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
+      TestWindowEnd.foreach(__v => __obj.updateDynamic("TestWindowEnd")(__v.asInstanceOf[js.Any]))
+      TestWindowStart.foreach(__v => __obj.updateDynamic("TestWindowStart")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WindowSummary]
     }
   }

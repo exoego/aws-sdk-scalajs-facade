@@ -242,7 +242,7 @@ package docdb {
         ResourceName: String,
         Tags: TagList
     ): AddTagsToResourceMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
         "Tags"         -> Tags.asInstanceOf[js.Any]
       )
@@ -274,7 +274,7 @@ package docdb {
         OptInType: String,
         ResourceIdentifier: String
     ): ApplyPendingMaintenanceActionMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplyAction"        -> ApplyAction.asInstanceOf[js.Any],
         "OptInType"          -> OptInType.asInstanceOf[js.Any],
         "ResourceIdentifier" -> ResourceIdentifier.asInstanceOf[js.Any]
@@ -293,9 +293,9 @@ package docdb {
     def apply(
         ResourcePendingMaintenanceActions: js.UndefOr[ResourcePendingMaintenanceActions] = js.undefined
     ): ApplyPendingMaintenanceActionResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       ResourcePendingMaintenanceActions.foreach(
-        __v => __obj.update("ResourcePendingMaintenanceActions", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ResourcePendingMaintenanceActions")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ApplyPendingMaintenanceActionResult]
     }
@@ -313,8 +313,8 @@ package docdb {
     def apply(
         Name: js.UndefOr[String] = js.undefined
     ): AvailabilityZone = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AvailabilityZone]
     }
   }
@@ -334,9 +334,9 @@ package docdb {
         DisableLogTypes: js.UndefOr[LogTypeList] = js.undefined,
         EnableLogTypes: js.UndefOr[LogTypeList] = js.undefined
     ): CloudwatchLogsExportConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DisableLogTypes.foreach(__v => __obj.update("DisableLogTypes", __v.asInstanceOf[js.Any]))
-      EnableLogTypes.foreach(__v => __obj.update("EnableLogTypes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DisableLogTypes.foreach(__v => __obj.updateDynamic("DisableLogTypes")(__v.asInstanceOf[js.Any]))
+      EnableLogTypes.foreach(__v => __obj.updateDynamic("EnableLogTypes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CloudwatchLogsExportConfiguration]
     }
   }
@@ -359,13 +359,13 @@ package docdb {
         TargetDBClusterParameterGroupIdentifier: String,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CopyDBClusterParameterGroupMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SourceDBClusterParameterGroupIdentifier"  -> SourceDBClusterParameterGroupIdentifier.asInstanceOf[js.Any],
         "TargetDBClusterParameterGroupDescription" -> TargetDBClusterParameterGroupDescription.asInstanceOf[js.Any],
         "TargetDBClusterParameterGroupIdentifier"  -> TargetDBClusterParameterGroupIdentifier.asInstanceOf[js.Any]
       )
 
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CopyDBClusterParameterGroupMessage]
     }
   }
@@ -379,8 +379,8 @@ package docdb {
     def apply(
         DBClusterParameterGroup: js.UndefOr[DBClusterParameterGroup] = js.undefined
     ): CopyDBClusterParameterGroupResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBClusterParameterGroup.foreach(__v => __obj.update("DBClusterParameterGroup", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBClusterParameterGroup.foreach(__v => __obj.updateDynamic("DBClusterParameterGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CopyDBClusterParameterGroupResult]
     }
   }
@@ -407,15 +407,15 @@ package docdb {
         PreSignedUrl: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CopyDBClusterSnapshotMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SourceDBClusterSnapshotIdentifier" -> SourceDBClusterSnapshotIdentifier.asInstanceOf[js.Any],
         "TargetDBClusterSnapshotIdentifier" -> TargetDBClusterSnapshotIdentifier.asInstanceOf[js.Any]
       )
 
-      CopyTags.foreach(__v => __obj.update("CopyTags", __v.asInstanceOf[js.Any]))
-      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
-      PreSignedUrl.foreach(__v => __obj.update("PreSignedUrl", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      CopyTags.foreach(__v => __obj.updateDynamic("CopyTags")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      PreSignedUrl.foreach(__v => __obj.updateDynamic("PreSignedUrl")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CopyDBClusterSnapshotMessage]
     }
   }
@@ -429,8 +429,8 @@ package docdb {
     def apply(
         DBClusterSnapshot: js.UndefOr[DBClusterSnapshot] = js.undefined
     ): CopyDBClusterSnapshotResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBClusterSnapshot.foreach(__v => __obj.update("DBClusterSnapshot", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBClusterSnapshot.foreach(__v => __obj.updateDynamic("DBClusterSnapshot")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CopyDBClusterSnapshotResult]
     }
   }
@@ -481,27 +481,33 @@ package docdb {
         Tags: js.UndefOr[TagList] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): CreateDBClusterMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
         "Engine"              -> Engine.asInstanceOf[js.Any],
         "MasterUserPassword"  -> MasterUserPassword.asInstanceOf[js.Any],
         "MasterUsername"      -> MasterUsername.asInstanceOf[js.Any]
       )
 
-      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
-      BackupRetentionPeriod.foreach(__v => __obj.update("BackupRetentionPeriod", __v.asInstanceOf[js.Any]))
-      DBClusterParameterGroupName.foreach(__v => __obj.update("DBClusterParameterGroupName", __v.asInstanceOf[js.Any]))
-      DBSubnetGroupName.foreach(__v => __obj.update("DBSubnetGroupName", __v.asInstanceOf[js.Any]))
-      DeletionProtection.foreach(__v => __obj.update("DeletionProtection", __v.asInstanceOf[js.Any]))
-      EnableCloudwatchLogsExports.foreach(__v => __obj.update("EnableCloudwatchLogsExports", __v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
-      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
-      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
-      PreferredBackupWindow.foreach(__v => __obj.update("PreferredBackupWindow", __v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
-      StorageEncrypted.foreach(__v => __obj.update("StorageEncrypted", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      VpcSecurityGroupIds.foreach(__v => __obj.update("VpcSecurityGroupIds", __v.asInstanceOf[js.Any]))
+      AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
+      BackupRetentionPeriod.foreach(__v => __obj.updateDynamic("BackupRetentionPeriod")(__v.asInstanceOf[js.Any]))
+      DBClusterParameterGroupName.foreach(
+        __v => __obj.updateDynamic("DBClusterParameterGroupName")(__v.asInstanceOf[js.Any])
+      )
+      DBSubnetGroupName.foreach(__v => __obj.updateDynamic("DBSubnetGroupName")(__v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
+      EnableCloudwatchLogsExports.foreach(
+        __v => __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any])
+      )
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(
+        __v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      )
+      StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDBClusterMessage]
     }
   }
@@ -524,13 +530,13 @@ package docdb {
         Description: String,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateDBClusterParameterGroupMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any],
         "DBParameterGroupFamily"      -> DBParameterGroupFamily.asInstanceOf[js.Any],
         "Description"                 -> Description.asInstanceOf[js.Any]
       )
 
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDBClusterParameterGroupMessage]
     }
   }
@@ -544,8 +550,8 @@ package docdb {
     def apply(
         DBClusterParameterGroup: js.UndefOr[DBClusterParameterGroup] = js.undefined
     ): CreateDBClusterParameterGroupResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBClusterParameterGroup.foreach(__v => __obj.update("DBClusterParameterGroup", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBClusterParameterGroup.foreach(__v => __obj.updateDynamic("DBClusterParameterGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDBClusterParameterGroupResult]
     }
   }
@@ -559,8 +565,8 @@ package docdb {
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): CreateDBClusterResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBCluster.foreach(__v => __obj.update("DBCluster", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBCluster.foreach(__v => __obj.updateDynamic("DBCluster")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDBClusterResult]
     }
   }
@@ -581,12 +587,12 @@ package docdb {
         DBClusterSnapshotIdentifier: String,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateDBClusterSnapshotMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DBClusterIdentifier"         -> DBClusterIdentifier.asInstanceOf[js.Any],
         "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any]
       )
 
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDBClusterSnapshotMessage]
     }
   }
@@ -600,8 +606,8 @@ package docdb {
     def apply(
         DBClusterSnapshot: js.UndefOr[DBClusterSnapshot] = js.undefined
     ): CreateDBClusterSnapshotResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBClusterSnapshot.foreach(__v => __obj.update("DBClusterSnapshot", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBClusterSnapshot.foreach(__v => __obj.updateDynamic("DBClusterSnapshot")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDBClusterSnapshotResult]
     }
   }
@@ -634,18 +640,20 @@ package docdb {
         PromotionTier: js.UndefOr[IntegerOptional] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateDBInstanceMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DBClusterIdentifier"  -> DBClusterIdentifier.asInstanceOf[js.Any],
         "DBInstanceClass"      -> DBInstanceClass.asInstanceOf[js.Any],
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any],
         "Engine"               -> Engine.asInstanceOf[js.Any]
       )
 
-      AutoMinorVersionUpgrade.foreach(__v => __obj.update("AutoMinorVersionUpgrade", __v.asInstanceOf[js.Any]))
-      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
-      PromotionTier.foreach(__v => __obj.update("PromotionTier", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(
+        __v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      )
+      PromotionTier.foreach(__v => __obj.updateDynamic("PromotionTier")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDBInstanceMessage]
     }
   }
@@ -659,8 +667,8 @@ package docdb {
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): CreateDBInstanceResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBInstance.foreach(__v => __obj.update("DBInstance", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBInstance.foreach(__v => __obj.updateDynamic("DBInstance")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDBInstanceResult]
     }
   }
@@ -683,13 +691,13 @@ package docdb {
         SubnetIds: SubnetIdentifierList,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateDBSubnetGroupMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DBSubnetGroupDescription" -> DBSubnetGroupDescription.asInstanceOf[js.Any],
         "DBSubnetGroupName"        -> DBSubnetGroupName.asInstanceOf[js.Any],
         "SubnetIds"                -> SubnetIds.asInstanceOf[js.Any]
       )
 
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDBSubnetGroupMessage]
     }
   }
@@ -703,8 +711,8 @@ package docdb {
     def apply(
         DBSubnetGroup: js.UndefOr[DBSubnetGroup] = js.undefined
     ): CreateDBSubnetGroupResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBSubnetGroup.foreach(__v => __obj.update("DBSubnetGroup", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBSubnetGroup.foreach(__v => __obj.updateDynamic("DBSubnetGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDBSubnetGroupResult]
     }
   }
@@ -777,38 +785,40 @@ package docdb {
         StorageEncrypted: js.UndefOr[Boolean] = js.undefined,
         VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined
     ): DBCluster = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssociatedRoles.foreach(__v => __obj.update("AssociatedRoles", __v.asInstanceOf[js.Any]))
-      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
-      BackupRetentionPeriod.foreach(__v => __obj.update("BackupRetentionPeriod", __v.asInstanceOf[js.Any]))
-      ClusterCreateTime.foreach(__v => __obj.update("ClusterCreateTime", __v.asInstanceOf[js.Any]))
-      DBClusterArn.foreach(__v => __obj.update("DBClusterArn", __v.asInstanceOf[js.Any]))
-      DBClusterIdentifier.foreach(__v => __obj.update("DBClusterIdentifier", __v.asInstanceOf[js.Any]))
-      DBClusterMembers.foreach(__v => __obj.update("DBClusterMembers", __v.asInstanceOf[js.Any]))
-      DBClusterParameterGroup.foreach(__v => __obj.update("DBClusterParameterGroup", __v.asInstanceOf[js.Any]))
-      DBSubnetGroup.foreach(__v => __obj.update("DBSubnetGroup", __v.asInstanceOf[js.Any]))
-      DbClusterResourceId.foreach(__v => __obj.update("DbClusterResourceId", __v.asInstanceOf[js.Any]))
-      DeletionProtection.foreach(__v => __obj.update("DeletionProtection", __v.asInstanceOf[js.Any]))
-      EarliestRestorableTime.foreach(__v => __obj.update("EarliestRestorableTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssociatedRoles.foreach(__v => __obj.updateDynamic("AssociatedRoles")(__v.asInstanceOf[js.Any]))
+      AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
+      BackupRetentionPeriod.foreach(__v => __obj.updateDynamic("BackupRetentionPeriod")(__v.asInstanceOf[js.Any]))
+      ClusterCreateTime.foreach(__v => __obj.updateDynamic("ClusterCreateTime")(__v.asInstanceOf[js.Any]))
+      DBClusterArn.foreach(__v => __obj.updateDynamic("DBClusterArn")(__v.asInstanceOf[js.Any]))
+      DBClusterIdentifier.foreach(__v => __obj.updateDynamic("DBClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      DBClusterMembers.foreach(__v => __obj.updateDynamic("DBClusterMembers")(__v.asInstanceOf[js.Any]))
+      DBClusterParameterGroup.foreach(__v => __obj.updateDynamic("DBClusterParameterGroup")(__v.asInstanceOf[js.Any]))
+      DBSubnetGroup.foreach(__v => __obj.updateDynamic("DBSubnetGroup")(__v.asInstanceOf[js.Any]))
+      DbClusterResourceId.foreach(__v => __obj.updateDynamic("DbClusterResourceId")(__v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
+      EarliestRestorableTime.foreach(__v => __obj.updateDynamic("EarliestRestorableTime")(__v.asInstanceOf[js.Any]))
       EnabledCloudwatchLogsExports.foreach(
-        __v => __obj.update("EnabledCloudwatchLogsExports", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("EnabledCloudwatchLogsExports")(__v.asInstanceOf[js.Any])
       )
-      Endpoint.foreach(__v => __obj.update("Endpoint", __v.asInstanceOf[js.Any]))
-      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
-      HostedZoneId.foreach(__v => __obj.update("HostedZoneId", __v.asInstanceOf[js.Any]))
-      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
-      LatestRestorableTime.foreach(__v => __obj.update("LatestRestorableTime", __v.asInstanceOf[js.Any]))
-      MasterUsername.foreach(__v => __obj.update("MasterUsername", __v.asInstanceOf[js.Any]))
-      MultiAZ.foreach(__v => __obj.update("MultiAZ", __v.asInstanceOf[js.Any]))
-      PercentProgress.foreach(__v => __obj.update("PercentProgress", __v.asInstanceOf[js.Any]))
-      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
-      PreferredBackupWindow.foreach(__v => __obj.update("PreferredBackupWindow", __v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
-      ReaderEndpoint.foreach(__v => __obj.update("ReaderEndpoint", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StorageEncrypted.foreach(__v => __obj.update("StorageEncrypted", __v.asInstanceOf[js.Any]))
-      VpcSecurityGroups.foreach(__v => __obj.update("VpcSecurityGroups", __v.asInstanceOf[js.Any]))
+      Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      HostedZoneId.foreach(__v => __obj.updateDynamic("HostedZoneId")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      LatestRestorableTime.foreach(__v => __obj.updateDynamic("LatestRestorableTime")(__v.asInstanceOf[js.Any]))
+      MasterUsername.foreach(__v => __obj.updateDynamic("MasterUsername")(__v.asInstanceOf[js.Any]))
+      MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
+      PercentProgress.foreach(__v => __obj.updateDynamic("PercentProgress")(__v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(
+        __v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      )
+      ReaderEndpoint.foreach(__v => __obj.updateDynamic("ReaderEndpoint")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
+      VpcSecurityGroups.foreach(__v => __obj.updateDynamic("VpcSecurityGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DBCluster]
     }
   }
@@ -831,13 +841,13 @@ package docdb {
         IsClusterWriter: js.UndefOr[Boolean] = js.undefined,
         PromotionTier: js.UndefOr[IntegerOptional] = js.undefined
     ): DBClusterMember = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       DBClusterParameterGroupStatus.foreach(
-        __v => __obj.update("DBClusterParameterGroupStatus", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("DBClusterParameterGroupStatus")(__v.asInstanceOf[js.Any])
       )
-      DBInstanceIdentifier.foreach(__v => __obj.update("DBInstanceIdentifier", __v.asInstanceOf[js.Any]))
-      IsClusterWriter.foreach(__v => __obj.update("IsClusterWriter", __v.asInstanceOf[js.Any]))
-      PromotionTier.foreach(__v => __obj.update("PromotionTier", __v.asInstanceOf[js.Any]))
+      DBInstanceIdentifier.foreach(__v => __obj.updateDynamic("DBInstanceIdentifier")(__v.asInstanceOf[js.Any]))
+      IsClusterWriter.foreach(__v => __obj.updateDynamic("IsClusterWriter")(__v.asInstanceOf[js.Any]))
+      PromotionTier.foreach(__v => __obj.updateDynamic("PromotionTier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DBClusterMember]
     }
   }
@@ -856,9 +866,9 @@ package docdb {
         DBClusters: js.UndefOr[DBClusterList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): DBClusterMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBClusters.foreach(__v => __obj.update("DBClusters", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBClusters.foreach(__v => __obj.updateDynamic("DBClusters")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DBClusterMessage]
     }
   }
@@ -881,11 +891,15 @@ package docdb {
         DBParameterGroupFamily: js.UndefOr[String] = js.undefined,
         Description: js.UndefOr[String] = js.undefined
     ): DBClusterParameterGroup = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBClusterParameterGroupArn.foreach(__v => __obj.update("DBClusterParameterGroupArn", __v.asInstanceOf[js.Any]))
-      DBClusterParameterGroupName.foreach(__v => __obj.update("DBClusterParameterGroupName", __v.asInstanceOf[js.Any]))
-      DBParameterGroupFamily.foreach(__v => __obj.update("DBParameterGroupFamily", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBClusterParameterGroupArn.foreach(
+        __v => __obj.updateDynamic("DBClusterParameterGroupArn")(__v.asInstanceOf[js.Any])
+      )
+      DBClusterParameterGroupName.foreach(
+        __v => __obj.updateDynamic("DBClusterParameterGroupName")(__v.asInstanceOf[js.Any])
+      )
+      DBParameterGroupFamily.foreach(__v => __obj.updateDynamic("DBParameterGroupFamily")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DBClusterParameterGroup]
     }
   }
@@ -904,9 +918,9 @@ package docdb {
         Marker: js.UndefOr[String] = js.undefined,
         Parameters: js.UndefOr[ParametersList] = js.undefined
     ): DBClusterParameterGroupDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DBClusterParameterGroupDetails]
     }
   }
@@ -923,8 +937,10 @@ package docdb {
     def apply(
         DBClusterParameterGroupName: js.UndefOr[String] = js.undefined
     ): DBClusterParameterGroupNameMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBClusterParameterGroupName.foreach(__v => __obj.update("DBClusterParameterGroupName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBClusterParameterGroupName.foreach(
+        __v => __obj.updateDynamic("DBClusterParameterGroupName")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[DBClusterParameterGroupNameMessage]
     }
   }
@@ -943,9 +959,9 @@ package docdb {
         DBClusterParameterGroups: js.UndefOr[DBClusterParameterGroupList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): DBClusterParameterGroupsMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBClusterParameterGroups.foreach(__v => __obj.update("DBClusterParameterGroups", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBClusterParameterGroups.foreach(__v => __obj.updateDynamic("DBClusterParameterGroups")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DBClusterParameterGroupsMessage]
     }
   }
@@ -964,9 +980,9 @@ package docdb {
         RoleArn: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): DBClusterRole = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DBClusterRole]
     }
   }
@@ -1015,24 +1031,28 @@ package docdb {
         StorageEncrypted: js.UndefOr[Boolean] = js.undefined,
         VpcId: js.UndefOr[String] = js.undefined
     ): DBClusterSnapshot = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
-      ClusterCreateTime.foreach(__v => __obj.update("ClusterCreateTime", __v.asInstanceOf[js.Any]))
-      DBClusterIdentifier.foreach(__v => __obj.update("DBClusterIdentifier", __v.asInstanceOf[js.Any]))
-      DBClusterSnapshotArn.foreach(__v => __obj.update("DBClusterSnapshotArn", __v.asInstanceOf[js.Any]))
-      DBClusterSnapshotIdentifier.foreach(__v => __obj.update("DBClusterSnapshotIdentifier", __v.asInstanceOf[js.Any]))
-      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
-      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
-      MasterUsername.foreach(__v => __obj.update("MasterUsername", __v.asInstanceOf[js.Any]))
-      PercentProgress.foreach(__v => __obj.update("PercentProgress", __v.asInstanceOf[js.Any]))
-      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
-      SnapshotCreateTime.foreach(__v => __obj.update("SnapshotCreateTime", __v.asInstanceOf[js.Any]))
-      SnapshotType.foreach(__v => __obj.update("SnapshotType", __v.asInstanceOf[js.Any]))
-      SourceDBClusterSnapshotArn.foreach(__v => __obj.update("SourceDBClusterSnapshotArn", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StorageEncrypted.foreach(__v => __obj.update("StorageEncrypted", __v.asInstanceOf[js.Any]))
-      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
+      ClusterCreateTime.foreach(__v => __obj.updateDynamic("ClusterCreateTime")(__v.asInstanceOf[js.Any]))
+      DBClusterIdentifier.foreach(__v => __obj.updateDynamic("DBClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      DBClusterSnapshotArn.foreach(__v => __obj.updateDynamic("DBClusterSnapshotArn")(__v.asInstanceOf[js.Any]))
+      DBClusterSnapshotIdentifier.foreach(
+        __v => __obj.updateDynamic("DBClusterSnapshotIdentifier")(__v.asInstanceOf[js.Any])
+      )
+      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      MasterUsername.foreach(__v => __obj.updateDynamic("MasterUsername")(__v.asInstanceOf[js.Any]))
+      PercentProgress.foreach(__v => __obj.updateDynamic("PercentProgress")(__v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      SnapshotCreateTime.foreach(__v => __obj.updateDynamic("SnapshotCreateTime")(__v.asInstanceOf[js.Any]))
+      SnapshotType.foreach(__v => __obj.updateDynamic("SnapshotType")(__v.asInstanceOf[js.Any]))
+      SourceDBClusterSnapshotArn.foreach(
+        __v => __obj.updateDynamic("SourceDBClusterSnapshotArn")(__v.asInstanceOf[js.Any])
+      )
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DBClusterSnapshot]
     }
   }
@@ -1052,9 +1072,9 @@ package docdb {
         AttributeName: js.UndefOr[String] = js.undefined,
         AttributeValues: js.UndefOr[AttributeValueList] = js.undefined
     ): DBClusterSnapshotAttribute = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttributeName.foreach(__v => __obj.update("AttributeName", __v.asInstanceOf[js.Any]))
-      AttributeValues.foreach(__v => __obj.update("AttributeValues", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttributeName.foreach(__v => __obj.updateDynamic("AttributeName")(__v.asInstanceOf[js.Any]))
+      AttributeValues.foreach(__v => __obj.updateDynamic("AttributeValues")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DBClusterSnapshotAttribute]
     }
   }
@@ -1073,9 +1093,13 @@ package docdb {
         DBClusterSnapshotAttributes: js.UndefOr[DBClusterSnapshotAttributeList] = js.undefined,
         DBClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined
     ): DBClusterSnapshotAttributesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBClusterSnapshotAttributes.foreach(__v => __obj.update("DBClusterSnapshotAttributes", __v.asInstanceOf[js.Any]))
-      DBClusterSnapshotIdentifier.foreach(__v => __obj.update("DBClusterSnapshotIdentifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBClusterSnapshotAttributes.foreach(
+        __v => __obj.updateDynamic("DBClusterSnapshotAttributes")(__v.asInstanceOf[js.Any])
+      )
+      DBClusterSnapshotIdentifier.foreach(
+        __v => __obj.updateDynamic("DBClusterSnapshotIdentifier")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[DBClusterSnapshotAttributesResult]
     }
   }
@@ -1094,9 +1118,9 @@ package docdb {
         DBClusterSnapshots: js.UndefOr[DBClusterSnapshotList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): DBClusterSnapshotMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBClusterSnapshots.foreach(__v => __obj.update("DBClusterSnapshots", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBClusterSnapshots.foreach(__v => __obj.updateDynamic("DBClusterSnapshots")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DBClusterSnapshotMessage]
     }
   }
@@ -1127,17 +1151,19 @@ package docdb {
         SupportsLogExportsToCloudwatchLogs: js.UndefOr[Boolean] = js.undefined,
         ValidUpgradeTarget: js.UndefOr[ValidUpgradeTargetList] = js.undefined
     ): DBEngineVersion = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBEngineDescription.foreach(__v => __obj.update("DBEngineDescription", __v.asInstanceOf[js.Any]))
-      DBEngineVersionDescription.foreach(__v => __obj.update("DBEngineVersionDescription", __v.asInstanceOf[js.Any]))
-      DBParameterGroupFamily.foreach(__v => __obj.update("DBParameterGroupFamily", __v.asInstanceOf[js.Any]))
-      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
-      ExportableLogTypes.foreach(__v => __obj.update("ExportableLogTypes", __v.asInstanceOf[js.Any]))
-      SupportsLogExportsToCloudwatchLogs.foreach(
-        __v => __obj.update("SupportsLogExportsToCloudwatchLogs", __v.asInstanceOf[js.Any])
+      val __obj = js.Dynamic.literal()
+      DBEngineDescription.foreach(__v => __obj.updateDynamic("DBEngineDescription")(__v.asInstanceOf[js.Any]))
+      DBEngineVersionDescription.foreach(
+        __v => __obj.updateDynamic("DBEngineVersionDescription")(__v.asInstanceOf[js.Any])
       )
-      ValidUpgradeTarget.foreach(__v => __obj.update("ValidUpgradeTarget", __v.asInstanceOf[js.Any]))
+      DBParameterGroupFamily.foreach(__v => __obj.updateDynamic("DBParameterGroupFamily")(__v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      ExportableLogTypes.foreach(__v => __obj.updateDynamic("ExportableLogTypes")(__v.asInstanceOf[js.Any]))
+      SupportsLogExportsToCloudwatchLogs.foreach(
+        __v => __obj.updateDynamic("SupportsLogExportsToCloudwatchLogs")(__v.asInstanceOf[js.Any])
+      )
+      ValidUpgradeTarget.foreach(__v => __obj.updateDynamic("ValidUpgradeTarget")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DBEngineVersion]
     }
   }
@@ -1156,9 +1182,9 @@ package docdb {
         DBEngineVersions: js.UndefOr[DBEngineVersionList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): DBEngineVersionMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBEngineVersions.foreach(__v => __obj.update("DBEngineVersions", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBEngineVersions.foreach(__v => __obj.updateDynamic("DBEngineVersions")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DBEngineVersionMessage]
     }
   }
@@ -1223,34 +1249,36 @@ package docdb {
         StorageEncrypted: js.UndefOr[Boolean] = js.undefined,
         VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined
     ): DBInstance = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AutoMinorVersionUpgrade.foreach(__v => __obj.update("AutoMinorVersionUpgrade", __v.asInstanceOf[js.Any]))
-      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
-      BackupRetentionPeriod.foreach(__v => __obj.update("BackupRetentionPeriod", __v.asInstanceOf[js.Any]))
-      DBClusterIdentifier.foreach(__v => __obj.update("DBClusterIdentifier", __v.asInstanceOf[js.Any]))
-      DBInstanceArn.foreach(__v => __obj.update("DBInstanceArn", __v.asInstanceOf[js.Any]))
-      DBInstanceClass.foreach(__v => __obj.update("DBInstanceClass", __v.asInstanceOf[js.Any]))
-      DBInstanceIdentifier.foreach(__v => __obj.update("DBInstanceIdentifier", __v.asInstanceOf[js.Any]))
-      DBInstanceStatus.foreach(__v => __obj.update("DBInstanceStatus", __v.asInstanceOf[js.Any]))
-      DBSubnetGroup.foreach(__v => __obj.update("DBSubnetGroup", __v.asInstanceOf[js.Any]))
-      DbiResourceId.foreach(__v => __obj.update("DbiResourceId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      BackupRetentionPeriod.foreach(__v => __obj.updateDynamic("BackupRetentionPeriod")(__v.asInstanceOf[js.Any]))
+      DBClusterIdentifier.foreach(__v => __obj.updateDynamic("DBClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      DBInstanceArn.foreach(__v => __obj.updateDynamic("DBInstanceArn")(__v.asInstanceOf[js.Any]))
+      DBInstanceClass.foreach(__v => __obj.updateDynamic("DBInstanceClass")(__v.asInstanceOf[js.Any]))
+      DBInstanceIdentifier.foreach(__v => __obj.updateDynamic("DBInstanceIdentifier")(__v.asInstanceOf[js.Any]))
+      DBInstanceStatus.foreach(__v => __obj.updateDynamic("DBInstanceStatus")(__v.asInstanceOf[js.Any]))
+      DBSubnetGroup.foreach(__v => __obj.updateDynamic("DBSubnetGroup")(__v.asInstanceOf[js.Any]))
+      DbiResourceId.foreach(__v => __obj.updateDynamic("DbiResourceId")(__v.asInstanceOf[js.Any]))
       EnabledCloudwatchLogsExports.foreach(
-        __v => __obj.update("EnabledCloudwatchLogsExports", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("EnabledCloudwatchLogsExports")(__v.asInstanceOf[js.Any])
       )
-      Endpoint.foreach(__v => __obj.update("Endpoint", __v.asInstanceOf[js.Any]))
-      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
-      InstanceCreateTime.foreach(__v => __obj.update("InstanceCreateTime", __v.asInstanceOf[js.Any]))
-      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
-      LatestRestorableTime.foreach(__v => __obj.update("LatestRestorableTime", __v.asInstanceOf[js.Any]))
-      PendingModifiedValues.foreach(__v => __obj.update("PendingModifiedValues", __v.asInstanceOf[js.Any]))
-      PreferredBackupWindow.foreach(__v => __obj.update("PreferredBackupWindow", __v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
-      PromotionTier.foreach(__v => __obj.update("PromotionTier", __v.asInstanceOf[js.Any]))
-      PubliclyAccessible.foreach(__v => __obj.update("PubliclyAccessible", __v.asInstanceOf[js.Any]))
-      StatusInfos.foreach(__v => __obj.update("StatusInfos", __v.asInstanceOf[js.Any]))
-      StorageEncrypted.foreach(__v => __obj.update("StorageEncrypted", __v.asInstanceOf[js.Any]))
-      VpcSecurityGroups.foreach(__v => __obj.update("VpcSecurityGroups", __v.asInstanceOf[js.Any]))
+      Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      InstanceCreateTime.foreach(__v => __obj.updateDynamic("InstanceCreateTime")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      LatestRestorableTime.foreach(__v => __obj.updateDynamic("LatestRestorableTime")(__v.asInstanceOf[js.Any]))
+      PendingModifiedValues.foreach(__v => __obj.updateDynamic("PendingModifiedValues")(__v.asInstanceOf[js.Any]))
+      PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(
+        __v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      )
+      PromotionTier.foreach(__v => __obj.updateDynamic("PromotionTier")(__v.asInstanceOf[js.Any]))
+      PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
+      StatusInfos.foreach(__v => __obj.updateDynamic("StatusInfos")(__v.asInstanceOf[js.Any]))
+      StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
+      VpcSecurityGroups.foreach(__v => __obj.updateDynamic("VpcSecurityGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DBInstance]
     }
   }
@@ -1269,9 +1297,9 @@ package docdb {
         DBInstances: js.UndefOr[DBInstanceList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): DBInstanceMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBInstances.foreach(__v => __obj.update("DBInstances", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBInstances.foreach(__v => __obj.updateDynamic("DBInstances")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DBInstanceMessage]
     }
   }
@@ -1294,11 +1322,11 @@ package docdb {
         Status: js.UndefOr[String] = js.undefined,
         StatusType: js.UndefOr[String] = js.undefined
     ): DBInstanceStatusInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
-      Normal.foreach(__v => __obj.update("Normal", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusType.foreach(__v => __obj.update("StatusType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Normal.foreach(__v => __obj.updateDynamic("Normal")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusType.foreach(__v => __obj.updateDynamic("StatusType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DBInstanceStatusInfo]
     }
   }
@@ -1325,13 +1353,13 @@ package docdb {
         Subnets: js.UndefOr[SubnetList] = js.undefined,
         VpcId: js.UndefOr[String] = js.undefined
     ): DBSubnetGroup = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBSubnetGroupArn.foreach(__v => __obj.update("DBSubnetGroupArn", __v.asInstanceOf[js.Any]))
-      DBSubnetGroupDescription.foreach(__v => __obj.update("DBSubnetGroupDescription", __v.asInstanceOf[js.Any]))
-      DBSubnetGroupName.foreach(__v => __obj.update("DBSubnetGroupName", __v.asInstanceOf[js.Any]))
-      SubnetGroupStatus.foreach(__v => __obj.update("SubnetGroupStatus", __v.asInstanceOf[js.Any]))
-      Subnets.foreach(__v => __obj.update("Subnets", __v.asInstanceOf[js.Any]))
-      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBSubnetGroupArn.foreach(__v => __obj.updateDynamic("DBSubnetGroupArn")(__v.asInstanceOf[js.Any]))
+      DBSubnetGroupDescription.foreach(__v => __obj.updateDynamic("DBSubnetGroupDescription")(__v.asInstanceOf[js.Any]))
+      DBSubnetGroupName.foreach(__v => __obj.updateDynamic("DBSubnetGroupName")(__v.asInstanceOf[js.Any]))
+      SubnetGroupStatus.foreach(__v => __obj.updateDynamic("SubnetGroupStatus")(__v.asInstanceOf[js.Any]))
+      Subnets.foreach(__v => __obj.updateDynamic("Subnets")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DBSubnetGroup]
     }
   }
@@ -1350,9 +1378,9 @@ package docdb {
         DBSubnetGroups: js.UndefOr[DBSubnetGroups] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): DBSubnetGroupMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBSubnetGroups.foreach(__v => __obj.update("DBSubnetGroups", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBSubnetGroups.foreach(__v => __obj.updateDynamic("DBSubnetGroups")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DBSubnetGroupMessage]
     }
   }
@@ -1373,12 +1401,14 @@ package docdb {
         FinalDBSnapshotIdentifier: js.UndefOr[String] = js.undefined,
         SkipFinalSnapshot: js.UndefOr[Boolean] = js.undefined
     ): DeleteDBClusterMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
       )
 
-      FinalDBSnapshotIdentifier.foreach(__v => __obj.update("FinalDBSnapshotIdentifier", __v.asInstanceOf[js.Any]))
-      SkipFinalSnapshot.foreach(__v => __obj.update("SkipFinalSnapshot", __v.asInstanceOf[js.Any]))
+      FinalDBSnapshotIdentifier.foreach(
+        __v => __obj.updateDynamic("FinalDBSnapshotIdentifier")(__v.asInstanceOf[js.Any])
+      )
+      SkipFinalSnapshot.foreach(__v => __obj.updateDynamic("SkipFinalSnapshot")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDBClusterMessage]
     }
   }
@@ -1395,7 +1425,7 @@ package docdb {
     def apply(
         DBClusterParameterGroupName: String
     ): DeleteDBClusterParameterGroupMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any]
       )
 
@@ -1412,8 +1442,8 @@ package docdb {
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): DeleteDBClusterResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBCluster.foreach(__v => __obj.update("DBCluster", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBCluster.foreach(__v => __obj.updateDynamic("DBCluster")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDBClusterResult]
     }
   }
@@ -1430,7 +1460,7 @@ package docdb {
     def apply(
         DBClusterSnapshotIdentifier: String
     ): DeleteDBClusterSnapshotMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any]
       )
 
@@ -1447,8 +1477,8 @@ package docdb {
     def apply(
         DBClusterSnapshot: js.UndefOr[DBClusterSnapshot] = js.undefined
     ): DeleteDBClusterSnapshotResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBClusterSnapshot.foreach(__v => __obj.update("DBClusterSnapshot", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBClusterSnapshot.foreach(__v => __obj.updateDynamic("DBClusterSnapshot")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDBClusterSnapshotResult]
     }
   }
@@ -1465,7 +1495,7 @@ package docdb {
     def apply(
         DBInstanceIdentifier: String
     ): DeleteDBInstanceMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any]
       )
 
@@ -1482,8 +1512,8 @@ package docdb {
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): DeleteDBInstanceResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBInstance.foreach(__v => __obj.update("DBInstance", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBInstance.foreach(__v => __obj.updateDynamic("DBInstance")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDBInstanceResult]
     }
   }
@@ -1500,7 +1530,7 @@ package docdb {
     def apply(
         DBSubnetGroupName: String
     ): DeleteDBSubnetGroupMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DBSubnetGroupName" -> DBSubnetGroupName.asInstanceOf[js.Any]
       )
 
@@ -1526,11 +1556,13 @@ package docdb {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeDBClusterParameterGroupsMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBClusterParameterGroupName.foreach(__v => __obj.update("DBClusterParameterGroupName", __v.asInstanceOf[js.Any]))
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBClusterParameterGroupName.foreach(
+        __v => __obj.updateDynamic("DBClusterParameterGroupName")(__v.asInstanceOf[js.Any])
+      )
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDBClusterParameterGroupsMessage]
     }
   }
@@ -1555,14 +1587,14 @@ package docdb {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
         Source: js.UndefOr[String] = js.undefined
     ): DescribeDBClusterParametersMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any]
       )
 
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
-      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDBClusterParametersMessage]
     }
   }
@@ -1579,7 +1611,7 @@ package docdb {
     def apply(
         DBClusterSnapshotIdentifier: String
     ): DescribeDBClusterSnapshotAttributesMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any]
       )
 
@@ -1596,9 +1628,9 @@ package docdb {
     def apply(
         DBClusterSnapshotAttributesResult: js.UndefOr[DBClusterSnapshotAttributesResult] = js.undefined
     ): DescribeDBClusterSnapshotAttributesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       DBClusterSnapshotAttributesResult.foreach(
-        __v => __obj.update("DBClusterSnapshotAttributesResult", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("DBClusterSnapshotAttributesResult")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeDBClusterSnapshotAttributesResult]
     }
@@ -1630,15 +1662,17 @@ package docdb {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
         SnapshotType: js.UndefOr[String] = js.undefined
     ): DescribeDBClusterSnapshotsMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBClusterIdentifier.foreach(__v => __obj.update("DBClusterIdentifier", __v.asInstanceOf[js.Any]))
-      DBClusterSnapshotIdentifier.foreach(__v => __obj.update("DBClusterSnapshotIdentifier", __v.asInstanceOf[js.Any]))
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      IncludePublic.foreach(__v => __obj.update("IncludePublic", __v.asInstanceOf[js.Any]))
-      IncludeShared.foreach(__v => __obj.update("IncludeShared", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
-      SnapshotType.foreach(__v => __obj.update("SnapshotType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBClusterIdentifier.foreach(__v => __obj.updateDynamic("DBClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      DBClusterSnapshotIdentifier.foreach(
+        __v => __obj.updateDynamic("DBClusterSnapshotIdentifier")(__v.asInstanceOf[js.Any])
+      )
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      IncludePublic.foreach(__v => __obj.updateDynamic("IncludePublic")(__v.asInstanceOf[js.Any]))
+      IncludeShared.foreach(__v => __obj.updateDynamic("IncludeShared")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      SnapshotType.foreach(__v => __obj.updateDynamic("SnapshotType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDBClusterSnapshotsMessage]
     }
   }
@@ -1661,11 +1695,11 @@ package docdb {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeDBClustersMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBClusterIdentifier.foreach(__v => __obj.update("DBClusterIdentifier", __v.asInstanceOf[js.Any]))
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBClusterIdentifier.foreach(__v => __obj.updateDynamic("DBClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDBClustersMessage]
     }
   }
@@ -1698,16 +1732,18 @@ package docdb {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeDBEngineVersionsMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBParameterGroupFamily.foreach(__v => __obj.update("DBParameterGroupFamily", __v.asInstanceOf[js.Any]))
-      DefaultOnly.foreach(__v => __obj.update("DefaultOnly", __v.asInstanceOf[js.Any]))
-      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      ListSupportedCharacterSets.foreach(__v => __obj.update("ListSupportedCharacterSets", __v.asInstanceOf[js.Any]))
-      ListSupportedTimezones.foreach(__v => __obj.update("ListSupportedTimezones", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBParameterGroupFamily.foreach(__v => __obj.updateDynamic("DBParameterGroupFamily")(__v.asInstanceOf[js.Any]))
+      DefaultOnly.foreach(__v => __obj.updateDynamic("DefaultOnly")(__v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      ListSupportedCharacterSets.foreach(
+        __v => __obj.updateDynamic("ListSupportedCharacterSets")(__v.asInstanceOf[js.Any])
+      )
+      ListSupportedTimezones.foreach(__v => __obj.updateDynamic("ListSupportedTimezones")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDBEngineVersionsMessage]
     }
   }
@@ -1730,11 +1766,11 @@ package docdb {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeDBInstancesMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBInstanceIdentifier.foreach(__v => __obj.update("DBInstanceIdentifier", __v.asInstanceOf[js.Any]))
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBInstanceIdentifier.foreach(__v => __obj.updateDynamic("DBInstanceIdentifier")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDBInstancesMessage]
     }
   }
@@ -1757,11 +1793,11 @@ package docdb {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeDBSubnetGroupsMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBSubnetGroupName.foreach(__v => __obj.update("DBSubnetGroupName", __v.asInstanceOf[js.Any]))
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBSubnetGroupName.foreach(__v => __obj.updateDynamic("DBSubnetGroupName")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDBSubnetGroupsMessage]
     }
   }
@@ -1784,13 +1820,13 @@ package docdb {
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
     ): DescribeEngineDefaultClusterParametersMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DBParameterGroupFamily" -> DBParameterGroupFamily.asInstanceOf[js.Any]
       )
 
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEngineDefaultClusterParametersMessage]
     }
   }
@@ -1804,8 +1840,8 @@ package docdb {
     def apply(
         EngineDefaults: js.UndefOr[EngineDefaults] = js.undefined
     ): DescribeEngineDefaultClusterParametersResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EngineDefaults.foreach(__v => __obj.update("EngineDefaults", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EngineDefaults.foreach(__v => __obj.updateDynamic("EngineDefaults")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEngineDefaultClusterParametersResult]
     }
   }
@@ -1824,9 +1860,9 @@ package docdb {
         Filters: js.UndefOr[FilterList] = js.undefined,
         SourceType: js.UndefOr[String] = js.undefined
     ): DescribeEventCategoriesMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.updateDynamic("SourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEventCategoriesMessage]
     }
   }
@@ -1859,16 +1895,16 @@ package docdb {
         SourceType: js.UndefOr[SourceType] = js.undefined,
         StartTime: js.UndefOr[TStamp] = js.undefined
     ): DescribeEventsMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
-      EventCategories.foreach(__v => __obj.update("EventCategories", __v.asInstanceOf[js.Any]))
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
-      SourceIdentifier.foreach(__v => __obj.update("SourceIdentifier", __v.asInstanceOf[js.Any]))
-      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Duration.foreach(__v => __obj.updateDynamic("Duration")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      EventCategories.foreach(__v => __obj.updateDynamic("EventCategories")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      SourceIdentifier.foreach(__v => __obj.updateDynamic("SourceIdentifier")(__v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.updateDynamic("SourceType")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEventsMessage]
     }
   }
@@ -1899,17 +1935,17 @@ package docdb {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
         Vpc: js.UndefOr[BooleanOptional] = js.undefined
     ): DescribeOrderableDBInstanceOptionsMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Engine" -> Engine.asInstanceOf[js.Any]
       )
 
-      DBInstanceClass.foreach(__v => __obj.update("DBInstanceClass", __v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      LicenseModel.foreach(__v => __obj.update("LicenseModel", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
-      Vpc.foreach(__v => __obj.update("Vpc", __v.asInstanceOf[js.Any]))
+      DBInstanceClass.foreach(__v => __obj.updateDynamic("DBInstanceClass")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      LicenseModel.foreach(__v => __obj.updateDynamic("LicenseModel")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      Vpc.foreach(__v => __obj.updateDynamic("Vpc")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeOrderableDBInstanceOptionsMessage]
     }
   }
@@ -1932,11 +1968,11 @@ package docdb {
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
         ResourceIdentifier: js.UndefOr[String] = js.undefined
     ): DescribePendingMaintenanceActionsMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
-      ResourceIdentifier.foreach(__v => __obj.update("ResourceIdentifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      ResourceIdentifier.foreach(__v => __obj.updateDynamic("ResourceIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePendingMaintenanceActionsMessage]
     }
   }
@@ -1957,10 +1993,10 @@ package docdb {
         HostedZoneId: js.UndefOr[String] = js.undefined,
         Port: js.UndefOr[Int] = js.undefined
     ): Endpoint = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Address.foreach(__v => __obj.update("Address", __v.asInstanceOf[js.Any]))
-      HostedZoneId.foreach(__v => __obj.update("HostedZoneId", __v.asInstanceOf[js.Any]))
-      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Address.foreach(__v => __obj.updateDynamic("Address")(__v.asInstanceOf[js.Any]))
+      HostedZoneId.foreach(__v => __obj.updateDynamic("HostedZoneId")(__v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Endpoint]
     }
   }
@@ -1981,10 +2017,10 @@ package docdb {
         Marker: js.UndefOr[String] = js.undefined,
         Parameters: js.UndefOr[ParametersList] = js.undefined
     ): EngineDefaults = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBParameterGroupFamily.foreach(__v => __obj.update("DBParameterGroupFamily", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBParameterGroupFamily.foreach(__v => __obj.updateDynamic("DBParameterGroupFamily")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EngineDefaults]
     }
   }
@@ -2011,13 +2047,13 @@ package docdb {
         SourceIdentifier: js.UndefOr[String] = js.undefined,
         SourceType: js.UndefOr[SourceType] = js.undefined
     ): Event = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Date.foreach(__v => __obj.update("Date", __v.asInstanceOf[js.Any]))
-      EventCategories.foreach(__v => __obj.update("EventCategories", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
-      SourceArn.foreach(__v => __obj.update("SourceArn", __v.asInstanceOf[js.Any]))
-      SourceIdentifier.foreach(__v => __obj.update("SourceIdentifier", __v.asInstanceOf[js.Any]))
-      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Date.foreach(__v => __obj.updateDynamic("Date")(__v.asInstanceOf[js.Any]))
+      EventCategories.foreach(__v => __obj.updateDynamic("EventCategories")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      SourceArn.foreach(__v => __obj.updateDynamic("SourceArn")(__v.asInstanceOf[js.Any]))
+      SourceIdentifier.foreach(__v => __obj.updateDynamic("SourceIdentifier")(__v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.updateDynamic("SourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Event]
     }
   }
@@ -2036,9 +2072,9 @@ package docdb {
         EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
         SourceType: js.UndefOr[String] = js.undefined
     ): EventCategoriesMap = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EventCategories.foreach(__v => __obj.update("EventCategories", __v.asInstanceOf[js.Any]))
-      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EventCategories.foreach(__v => __obj.updateDynamic("EventCategories")(__v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.updateDynamic("SourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventCategoriesMap]
     }
   }
@@ -2055,8 +2091,8 @@ package docdb {
     def apply(
         EventCategoriesMapList: js.UndefOr[EventCategoriesMapList] = js.undefined
     ): EventCategoriesMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EventCategoriesMapList.foreach(__v => __obj.update("EventCategoriesMapList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EventCategoriesMapList.foreach(__v => __obj.updateDynamic("EventCategoriesMapList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventCategoriesMessage]
     }
   }
@@ -2075,9 +2111,9 @@ package docdb {
         Events: js.UndefOr[EventList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): EventsMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Events.foreach(__v => __obj.update("Events", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Events.foreach(__v => __obj.updateDynamic("Events")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventsMessage]
     }
   }
@@ -2096,9 +2132,11 @@ package docdb {
         DBClusterIdentifier: js.UndefOr[String] = js.undefined,
         TargetDBInstanceIdentifier: js.UndefOr[String] = js.undefined
     ): FailoverDBClusterMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBClusterIdentifier.foreach(__v => __obj.update("DBClusterIdentifier", __v.asInstanceOf[js.Any]))
-      TargetDBInstanceIdentifier.foreach(__v => __obj.update("TargetDBInstanceIdentifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBClusterIdentifier.foreach(__v => __obj.updateDynamic("DBClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      TargetDBInstanceIdentifier.foreach(
+        __v => __obj.updateDynamic("TargetDBInstanceIdentifier")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[FailoverDBClusterMessage]
     }
   }
@@ -2112,8 +2150,8 @@ package docdb {
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): FailoverDBClusterResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBCluster.foreach(__v => __obj.update("DBCluster", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBCluster.foreach(__v => __obj.updateDynamic("DBCluster")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FailoverDBClusterResult]
     }
   }
@@ -2133,7 +2171,7 @@ package docdb {
         Name: String,
         Values: FilterValueList
     ): Filter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"   -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
@@ -2156,11 +2194,11 @@ package docdb {
         ResourceName: String,
         Filters: js.UndefOr[FilterList] = js.undefined
     ): ListTagsForResourceMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceName" -> ResourceName.asInstanceOf[js.Any]
       )
 
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceMessage]
     }
   }
@@ -2201,24 +2239,28 @@ package docdb {
         PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): ModifyDBClusterMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
       )
 
-      ApplyImmediately.foreach(__v => __obj.update("ApplyImmediately", __v.asInstanceOf[js.Any]))
-      BackupRetentionPeriod.foreach(__v => __obj.update("BackupRetentionPeriod", __v.asInstanceOf[js.Any]))
+      ApplyImmediately.foreach(__v => __obj.updateDynamic("ApplyImmediately")(__v.asInstanceOf[js.Any]))
+      BackupRetentionPeriod.foreach(__v => __obj.updateDynamic("BackupRetentionPeriod")(__v.asInstanceOf[js.Any]))
       CloudwatchLogsExportConfiguration.foreach(
-        __v => __obj.update("CloudwatchLogsExportConfiguration", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("CloudwatchLogsExportConfiguration")(__v.asInstanceOf[js.Any])
       )
-      DBClusterParameterGroupName.foreach(__v => __obj.update("DBClusterParameterGroupName", __v.asInstanceOf[js.Any]))
-      DeletionProtection.foreach(__v => __obj.update("DeletionProtection", __v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
-      MasterUserPassword.foreach(__v => __obj.update("MasterUserPassword", __v.asInstanceOf[js.Any]))
-      NewDBClusterIdentifier.foreach(__v => __obj.update("NewDBClusterIdentifier", __v.asInstanceOf[js.Any]))
-      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
-      PreferredBackupWindow.foreach(__v => __obj.update("PreferredBackupWindow", __v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
-      VpcSecurityGroupIds.foreach(__v => __obj.update("VpcSecurityGroupIds", __v.asInstanceOf[js.Any]))
+      DBClusterParameterGroupName.foreach(
+        __v => __obj.updateDynamic("DBClusterParameterGroupName")(__v.asInstanceOf[js.Any])
+      )
+      DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      MasterUserPassword.foreach(__v => __obj.updateDynamic("MasterUserPassword")(__v.asInstanceOf[js.Any]))
+      NewDBClusterIdentifier.foreach(__v => __obj.updateDynamic("NewDBClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(
+        __v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      )
+      VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyDBClusterMessage]
     }
   }
@@ -2237,7 +2279,7 @@ package docdb {
         DBClusterParameterGroupName: String,
         Parameters: ParametersList
     ): ModifyDBClusterParameterGroupMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any],
         "Parameters"                  -> Parameters.asInstanceOf[js.Any]
       )
@@ -2255,8 +2297,8 @@ package docdb {
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): ModifyDBClusterResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBCluster.foreach(__v => __obj.update("DBCluster", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBCluster.foreach(__v => __obj.updateDynamic("DBCluster")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyDBClusterResult]
     }
   }
@@ -2279,13 +2321,13 @@ package docdb {
         ValuesToAdd: js.UndefOr[AttributeValueList] = js.undefined,
         ValuesToRemove: js.UndefOr[AttributeValueList] = js.undefined
     ): ModifyDBClusterSnapshotAttributeMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AttributeName"               -> AttributeName.asInstanceOf[js.Any],
         "DBClusterSnapshotIdentifier" -> DBClusterSnapshotIdentifier.asInstanceOf[js.Any]
       )
 
-      ValuesToAdd.foreach(__v => __obj.update("ValuesToAdd", __v.asInstanceOf[js.Any]))
-      ValuesToRemove.foreach(__v => __obj.update("ValuesToRemove", __v.asInstanceOf[js.Any]))
+      ValuesToAdd.foreach(__v => __obj.updateDynamic("ValuesToAdd")(__v.asInstanceOf[js.Any]))
+      ValuesToRemove.foreach(__v => __obj.updateDynamic("ValuesToRemove")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyDBClusterSnapshotAttributeMessage]
     }
   }
@@ -2299,9 +2341,9 @@ package docdb {
     def apply(
         DBClusterSnapshotAttributesResult: js.UndefOr[DBClusterSnapshotAttributesResult] = js.undefined
     ): ModifyDBClusterSnapshotAttributeResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       DBClusterSnapshotAttributesResult.foreach(
-        __v => __obj.update("DBClusterSnapshotAttributesResult", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("DBClusterSnapshotAttributesResult")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ModifyDBClusterSnapshotAttributeResult]
     }
@@ -2331,16 +2373,18 @@ package docdb {
         PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
         PromotionTier: js.UndefOr[IntegerOptional] = js.undefined
     ): ModifyDBInstanceMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any]
       )
 
-      ApplyImmediately.foreach(__v => __obj.update("ApplyImmediately", __v.asInstanceOf[js.Any]))
-      AutoMinorVersionUpgrade.foreach(__v => __obj.update("AutoMinorVersionUpgrade", __v.asInstanceOf[js.Any]))
-      DBInstanceClass.foreach(__v => __obj.update("DBInstanceClass", __v.asInstanceOf[js.Any]))
-      NewDBInstanceIdentifier.foreach(__v => __obj.update("NewDBInstanceIdentifier", __v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
-      PromotionTier.foreach(__v => __obj.update("PromotionTier", __v.asInstanceOf[js.Any]))
+      ApplyImmediately.foreach(__v => __obj.updateDynamic("ApplyImmediately")(__v.asInstanceOf[js.Any]))
+      AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
+      DBInstanceClass.foreach(__v => __obj.updateDynamic("DBInstanceClass")(__v.asInstanceOf[js.Any]))
+      NewDBInstanceIdentifier.foreach(__v => __obj.updateDynamic("NewDBInstanceIdentifier")(__v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(
+        __v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      )
+      PromotionTier.foreach(__v => __obj.updateDynamic("PromotionTier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyDBInstanceMessage]
     }
   }
@@ -2354,8 +2398,8 @@ package docdb {
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): ModifyDBInstanceResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBInstance.foreach(__v => __obj.update("DBInstance", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBInstance.foreach(__v => __obj.updateDynamic("DBInstance")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyDBInstanceResult]
     }
   }
@@ -2376,12 +2420,12 @@ package docdb {
         SubnetIds: SubnetIdentifierList,
         DBSubnetGroupDescription: js.UndefOr[String] = js.undefined
     ): ModifyDBSubnetGroupMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DBSubnetGroupName" -> DBSubnetGroupName.asInstanceOf[js.Any],
         "SubnetIds"         -> SubnetIds.asInstanceOf[js.Any]
       )
 
-      DBSubnetGroupDescription.foreach(__v => __obj.update("DBSubnetGroupDescription", __v.asInstanceOf[js.Any]))
+      DBSubnetGroupDescription.foreach(__v => __obj.updateDynamic("DBSubnetGroupDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyDBSubnetGroupMessage]
     }
   }
@@ -2395,8 +2439,8 @@ package docdb {
     def apply(
         DBSubnetGroup: js.UndefOr[DBSubnetGroup] = js.undefined
     ): ModifyDBSubnetGroupResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBSubnetGroup.foreach(__v => __obj.update("DBSubnetGroup", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBSubnetGroup.foreach(__v => __obj.updateDynamic("DBSubnetGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyDBSubnetGroupResult]
     }
   }
@@ -2423,13 +2467,13 @@ package docdb {
         LicenseModel: js.UndefOr[String] = js.undefined,
         Vpc: js.UndefOr[Boolean] = js.undefined
     ): OrderableDBInstanceOption = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
-      DBInstanceClass.foreach(__v => __obj.update("DBInstanceClass", __v.asInstanceOf[js.Any]))
-      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
-      LicenseModel.foreach(__v => __obj.update("LicenseModel", __v.asInstanceOf[js.Any]))
-      Vpc.foreach(__v => __obj.update("Vpc", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
+      DBInstanceClass.foreach(__v => __obj.updateDynamic("DBInstanceClass")(__v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      LicenseModel.foreach(__v => __obj.updateDynamic("LicenseModel")(__v.asInstanceOf[js.Any]))
+      Vpc.foreach(__v => __obj.updateDynamic("Vpc")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OrderableDBInstanceOption]
     }
   }
@@ -2448,9 +2492,11 @@ package docdb {
         Marker: js.UndefOr[String] = js.undefined,
         OrderableDBInstanceOptions: js.UndefOr[OrderableDBInstanceOptionsList] = js.undefined
     ): OrderableDBInstanceOptionsMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      OrderableDBInstanceOptions.foreach(__v => __obj.update("OrderableDBInstanceOptions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      OrderableDBInstanceOptions.foreach(
+        __v => __obj.updateDynamic("OrderableDBInstanceOptions")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[OrderableDBInstanceOptionsMessage]
     }
   }
@@ -2485,17 +2531,17 @@ package docdb {
         ParameterValue: js.UndefOr[String] = js.undefined,
         Source: js.UndefOr[String] = js.undefined
     ): Parameter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AllowedValues.foreach(__v => __obj.update("AllowedValues", __v.asInstanceOf[js.Any]))
-      ApplyMethod.foreach(__v => __obj.update("ApplyMethod", __v.asInstanceOf[js.Any]))
-      ApplyType.foreach(__v => __obj.update("ApplyType", __v.asInstanceOf[js.Any]))
-      DataType.foreach(__v => __obj.update("DataType", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      IsModifiable.foreach(__v => __obj.update("IsModifiable", __v.asInstanceOf[js.Any]))
-      MinimumEngineVersion.foreach(__v => __obj.update("MinimumEngineVersion", __v.asInstanceOf[js.Any]))
-      ParameterName.foreach(__v => __obj.update("ParameterName", __v.asInstanceOf[js.Any]))
-      ParameterValue.foreach(__v => __obj.update("ParameterValue", __v.asInstanceOf[js.Any]))
-      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AllowedValues.foreach(__v => __obj.updateDynamic("AllowedValues")(__v.asInstanceOf[js.Any]))
+      ApplyMethod.foreach(__v => __obj.updateDynamic("ApplyMethod")(__v.asInstanceOf[js.Any]))
+      ApplyType.foreach(__v => __obj.updateDynamic("ApplyType")(__v.asInstanceOf[js.Any]))
+      DataType.foreach(__v => __obj.updateDynamic("DataType")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      IsModifiable.foreach(__v => __obj.updateDynamic("IsModifiable")(__v.asInstanceOf[js.Any]))
+      MinimumEngineVersion.foreach(__v => __obj.updateDynamic("MinimumEngineVersion")(__v.asInstanceOf[js.Any]))
+      ParameterName.foreach(__v => __obj.updateDynamic("ParameterName")(__v.asInstanceOf[js.Any]))
+      ParameterValue.foreach(__v => __obj.updateDynamic("ParameterValue")(__v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Parameter]
     }
   }
@@ -2514,9 +2560,9 @@ package docdb {
         LogTypesToDisable: js.UndefOr[LogTypeList] = js.undefined,
         LogTypesToEnable: js.UndefOr[LogTypeList] = js.undefined
     ): PendingCloudwatchLogsExports = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LogTypesToDisable.foreach(__v => __obj.update("LogTypesToDisable", __v.asInstanceOf[js.Any]))
-      LogTypesToEnable.foreach(__v => __obj.update("LogTypesToEnable", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LogTypesToDisable.foreach(__v => __obj.updateDynamic("LogTypesToDisable")(__v.asInstanceOf[js.Any]))
+      LogTypesToEnable.foreach(__v => __obj.updateDynamic("LogTypesToEnable")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PendingCloudwatchLogsExports]
     }
   }
@@ -2543,13 +2589,13 @@ package docdb {
         ForcedApplyDate: js.UndefOr[TStamp] = js.undefined,
         OptInStatus: js.UndefOr[String] = js.undefined
     ): PendingMaintenanceAction = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Action.foreach(__v => __obj.update("Action", __v.asInstanceOf[js.Any]))
-      AutoAppliedAfterDate.foreach(__v => __obj.update("AutoAppliedAfterDate", __v.asInstanceOf[js.Any]))
-      CurrentApplyDate.foreach(__v => __obj.update("CurrentApplyDate", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      ForcedApplyDate.foreach(__v => __obj.update("ForcedApplyDate", __v.asInstanceOf[js.Any]))
-      OptInStatus.foreach(__v => __obj.update("OptInStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      AutoAppliedAfterDate.foreach(__v => __obj.updateDynamic("AutoAppliedAfterDate")(__v.asInstanceOf[js.Any]))
+      CurrentApplyDate.foreach(__v => __obj.updateDynamic("CurrentApplyDate")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ForcedApplyDate.foreach(__v => __obj.updateDynamic("ForcedApplyDate")(__v.asInstanceOf[js.Any]))
+      OptInStatus.foreach(__v => __obj.updateDynamic("OptInStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PendingMaintenanceAction]
     }
   }
@@ -2568,9 +2614,11 @@ package docdb {
         Marker: js.UndefOr[String] = js.undefined,
         PendingMaintenanceActions: js.UndefOr[PendingMaintenanceActions] = js.undefined
     ): PendingMaintenanceActionsMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      PendingMaintenanceActions.foreach(__v => __obj.update("PendingMaintenanceActions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      PendingMaintenanceActions.foreach(
+        __v => __obj.updateDynamic("PendingMaintenanceActions")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[PendingMaintenanceActionsMessage]
     }
   }
@@ -2613,23 +2661,23 @@ package docdb {
         Port: js.UndefOr[IntegerOptional] = js.undefined,
         StorageType: js.UndefOr[String] = js.undefined
     ): PendingModifiedValues = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AllocatedStorage.foreach(__v => __obj.update("AllocatedStorage", __v.asInstanceOf[js.Any]))
-      BackupRetentionPeriod.foreach(__v => __obj.update("BackupRetentionPeriod", __v.asInstanceOf[js.Any]))
-      CACertificateIdentifier.foreach(__v => __obj.update("CACertificateIdentifier", __v.asInstanceOf[js.Any]))
-      DBInstanceClass.foreach(__v => __obj.update("DBInstanceClass", __v.asInstanceOf[js.Any]))
-      DBInstanceIdentifier.foreach(__v => __obj.update("DBInstanceIdentifier", __v.asInstanceOf[js.Any]))
-      DBSubnetGroupName.foreach(__v => __obj.update("DBSubnetGroupName", __v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
-      Iops.foreach(__v => __obj.update("Iops", __v.asInstanceOf[js.Any]))
-      LicenseModel.foreach(__v => __obj.update("LicenseModel", __v.asInstanceOf[js.Any]))
-      MasterUserPassword.foreach(__v => __obj.update("MasterUserPassword", __v.asInstanceOf[js.Any]))
-      MultiAZ.foreach(__v => __obj.update("MultiAZ", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AllocatedStorage.foreach(__v => __obj.updateDynamic("AllocatedStorage")(__v.asInstanceOf[js.Any]))
+      BackupRetentionPeriod.foreach(__v => __obj.updateDynamic("BackupRetentionPeriod")(__v.asInstanceOf[js.Any]))
+      CACertificateIdentifier.foreach(__v => __obj.updateDynamic("CACertificateIdentifier")(__v.asInstanceOf[js.Any]))
+      DBInstanceClass.foreach(__v => __obj.updateDynamic("DBInstanceClass")(__v.asInstanceOf[js.Any]))
+      DBInstanceIdentifier.foreach(__v => __obj.updateDynamic("DBInstanceIdentifier")(__v.asInstanceOf[js.Any]))
+      DBSubnetGroupName.foreach(__v => __obj.updateDynamic("DBSubnetGroupName")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
+      LicenseModel.foreach(__v => __obj.updateDynamic("LicenseModel")(__v.asInstanceOf[js.Any]))
+      MasterUserPassword.foreach(__v => __obj.updateDynamic("MasterUserPassword")(__v.asInstanceOf[js.Any]))
+      MultiAZ.foreach(__v => __obj.updateDynamic("MultiAZ")(__v.asInstanceOf[js.Any]))
       PendingCloudwatchLogsExports.foreach(
-        __v => __obj.update("PendingCloudwatchLogsExports", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("PendingCloudwatchLogsExports")(__v.asInstanceOf[js.Any])
       )
-      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
-      StorageType.foreach(__v => __obj.update("StorageType", __v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PendingModifiedValues]
     }
   }
@@ -2648,11 +2696,11 @@ package docdb {
         DBInstanceIdentifier: String,
         ForceFailover: js.UndefOr[BooleanOptional] = js.undefined
     ): RebootDBInstanceMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DBInstanceIdentifier" -> DBInstanceIdentifier.asInstanceOf[js.Any]
       )
 
-      ForceFailover.foreach(__v => __obj.update("ForceFailover", __v.asInstanceOf[js.Any]))
+      ForceFailover.foreach(__v => __obj.updateDynamic("ForceFailover")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RebootDBInstanceMessage]
     }
   }
@@ -2666,8 +2714,8 @@ package docdb {
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): RebootDBInstanceResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBInstance.foreach(__v => __obj.update("DBInstance", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBInstance.foreach(__v => __obj.updateDynamic("DBInstance")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RebootDBInstanceResult]
     }
   }
@@ -2686,7 +2734,7 @@ package docdb {
         ResourceName: String,
         TagKeys: KeyList
     ): RemoveTagsFromResourceMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
         "TagKeys"      -> TagKeys.asInstanceOf[js.Any]
       )
@@ -2711,12 +2759,12 @@ package docdb {
         Parameters: js.UndefOr[ParametersList] = js.undefined,
         ResetAllParameters: js.UndefOr[Boolean] = js.undefined
     ): ResetDBClusterParameterGroupMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DBClusterParameterGroupName" -> DBClusterParameterGroupName.asInstanceOf[js.Any]
       )
 
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
-      ResetAllParameters.foreach(__v => __obj.update("ResetAllParameters", __v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      ResetAllParameters.foreach(__v => __obj.updateDynamic("ResetAllParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResetDBClusterParameterGroupMessage]
     }
   }
@@ -2735,11 +2783,11 @@ package docdb {
         PendingMaintenanceActionDetails: js.UndefOr[PendingMaintenanceActionDetails] = js.undefined,
         ResourceIdentifier: js.UndefOr[String] = js.undefined
     ): ResourcePendingMaintenanceActions = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       PendingMaintenanceActionDetails.foreach(
-        __v => __obj.update("PendingMaintenanceActionDetails", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("PendingMaintenanceActionDetails")(__v.asInstanceOf[js.Any])
       )
-      ResourceIdentifier.foreach(__v => __obj.update("ResourceIdentifier", __v.asInstanceOf[js.Any]))
+      ResourceIdentifier.foreach(__v => __obj.updateDynamic("ResourceIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourcePendingMaintenanceActions]
     }
   }
@@ -2778,21 +2826,23 @@ package docdb {
         Tags: js.UndefOr[TagList] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): RestoreDBClusterFromSnapshotMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
         "Engine"              -> Engine.asInstanceOf[js.Any],
         "SnapshotIdentifier"  -> SnapshotIdentifier.asInstanceOf[js.Any]
       )
 
-      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
-      DBSubnetGroupName.foreach(__v => __obj.update("DBSubnetGroupName", __v.asInstanceOf[js.Any]))
-      DeletionProtection.foreach(__v => __obj.update("DeletionProtection", __v.asInstanceOf[js.Any]))
-      EnableCloudwatchLogsExports.foreach(__v => __obj.update("EnableCloudwatchLogsExports", __v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
-      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
-      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      VpcSecurityGroupIds.foreach(__v => __obj.update("VpcSecurityGroupIds", __v.asInstanceOf[js.Any]))
+      AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
+      DBSubnetGroupName.foreach(__v => __obj.updateDynamic("DBSubnetGroupName")(__v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
+      EnableCloudwatchLogsExports.foreach(
+        __v => __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any])
+      )
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RestoreDBClusterFromSnapshotMessage]
     }
   }
@@ -2806,8 +2856,8 @@ package docdb {
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): RestoreDBClusterFromSnapshotResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBCluster.foreach(__v => __obj.update("DBCluster", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBCluster.foreach(__v => __obj.updateDynamic("DBCluster")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RestoreDBClusterFromSnapshotResult]
     }
   }
@@ -2844,20 +2894,22 @@ package docdb {
         UseLatestRestorableTime: js.UndefOr[Boolean] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): RestoreDBClusterToPointInTimeMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DBClusterIdentifier"       -> DBClusterIdentifier.asInstanceOf[js.Any],
         "SourceDBClusterIdentifier" -> SourceDBClusterIdentifier.asInstanceOf[js.Any]
       )
 
-      DBSubnetGroupName.foreach(__v => __obj.update("DBSubnetGroupName", __v.asInstanceOf[js.Any]))
-      DeletionProtection.foreach(__v => __obj.update("DeletionProtection", __v.asInstanceOf[js.Any]))
-      EnableCloudwatchLogsExports.foreach(__v => __obj.update("EnableCloudwatchLogsExports", __v.asInstanceOf[js.Any]))
-      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
-      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
-      RestoreToTime.foreach(__v => __obj.update("RestoreToTime", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      UseLatestRestorableTime.foreach(__v => __obj.update("UseLatestRestorableTime", __v.asInstanceOf[js.Any]))
-      VpcSecurityGroupIds.foreach(__v => __obj.update("VpcSecurityGroupIds", __v.asInstanceOf[js.Any]))
+      DBSubnetGroupName.foreach(__v => __obj.updateDynamic("DBSubnetGroupName")(__v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
+      EnableCloudwatchLogsExports.foreach(
+        __v => __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any])
+      )
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      RestoreToTime.foreach(__v => __obj.updateDynamic("RestoreToTime")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      UseLatestRestorableTime.foreach(__v => __obj.updateDynamic("UseLatestRestorableTime")(__v.asInstanceOf[js.Any]))
+      VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RestoreDBClusterToPointInTimeMessage]
     }
   }
@@ -2871,8 +2923,8 @@ package docdb {
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): RestoreDBClusterToPointInTimeResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBCluster.foreach(__v => __obj.update("DBCluster", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBCluster.foreach(__v => __obj.updateDynamic("DBCluster")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RestoreDBClusterToPointInTimeResult]
     }
   }
@@ -2906,7 +2958,7 @@ package docdb {
     def apply(
         DBClusterIdentifier: String
     ): StartDBClusterMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
       )
 
@@ -2923,8 +2975,8 @@ package docdb {
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): StartDBClusterResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBCluster.foreach(__v => __obj.update("DBCluster", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBCluster.foreach(__v => __obj.updateDynamic("DBCluster")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartDBClusterResult]
     }
   }
@@ -2938,7 +2990,7 @@ package docdb {
     def apply(
         DBClusterIdentifier: String
     ): StopDBClusterMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
       )
 
@@ -2955,8 +3007,8 @@ package docdb {
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): StopDBClusterResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DBCluster.foreach(__v => __obj.update("DBCluster", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DBCluster.foreach(__v => __obj.updateDynamic("DBCluster")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopDBClusterResult]
     }
   }
@@ -2977,10 +3029,10 @@ package docdb {
         SubnetIdentifier: js.UndefOr[String] = js.undefined,
         SubnetStatus: js.UndefOr[String] = js.undefined
     ): Subnet = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SubnetAvailabilityZone.foreach(__v => __obj.update("SubnetAvailabilityZone", __v.asInstanceOf[js.Any]))
-      SubnetIdentifier.foreach(__v => __obj.update("SubnetIdentifier", __v.asInstanceOf[js.Any]))
-      SubnetStatus.foreach(__v => __obj.update("SubnetStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SubnetAvailabilityZone.foreach(__v => __obj.updateDynamic("SubnetAvailabilityZone")(__v.asInstanceOf[js.Any]))
+      SubnetIdentifier.foreach(__v => __obj.updateDynamic("SubnetIdentifier")(__v.asInstanceOf[js.Any]))
+      SubnetStatus.foreach(__v => __obj.updateDynamic("SubnetStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Subnet]
     }
   }
@@ -2999,9 +3051,9 @@ package docdb {
         Key: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
     ): Tag = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tag]
     }
   }
@@ -3018,8 +3070,8 @@ package docdb {
     def apply(
         TagList: js.UndefOr[TagList] = js.undefined
     ): TagListMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TagList.foreach(__v => __obj.update("TagList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TagListMessage]
     }
   }
@@ -3044,12 +3096,12 @@ package docdb {
         EngineVersion: js.UndefOr[String] = js.undefined,
         IsMajorVersionUpgrade: js.UndefOr[Boolean] = js.undefined
     ): UpgradeTarget = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AutoUpgrade.foreach(__v => __obj.update("AutoUpgrade", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
-      IsMajorVersionUpgrade.foreach(__v => __obj.update("IsMajorVersionUpgrade", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AutoUpgrade.foreach(__v => __obj.updateDynamic("AutoUpgrade")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      IsMajorVersionUpgrade.foreach(__v => __obj.updateDynamic("IsMajorVersionUpgrade")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpgradeTarget]
     }
   }
@@ -3068,9 +3120,9 @@ package docdb {
         Status: js.UndefOr[String] = js.undefined,
         VpcSecurityGroupId: js.UndefOr[String] = js.undefined
     ): VpcSecurityGroupMembership = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      VpcSecurityGroupId.foreach(__v => __obj.update("VpcSecurityGroupId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      VpcSecurityGroupId.foreach(__v => __obj.updateDynamic("VpcSecurityGroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VpcSecurityGroupMembership]
     }
   }

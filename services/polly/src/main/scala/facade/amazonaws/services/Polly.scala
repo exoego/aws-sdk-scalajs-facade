@@ -100,7 +100,7 @@ package polly {
     def apply(
         Name: LexiconName
     ): DeleteLexiconInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -114,7 +114,7 @@ package polly {
   object DeleteLexiconOutput {
     def apply(
         ): DeleteLexiconOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteLexiconOutput]
     }
@@ -135,13 +135,13 @@ package polly {
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeVoicesInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
       IncludeAdditionalLanguageCodes.foreach(
-        __v => __obj.update("IncludeAdditionalLanguageCodes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("IncludeAdditionalLanguageCodes")(__v.asInstanceOf[js.Any])
       )
-      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeVoicesInput]
     }
   }
@@ -157,9 +157,9 @@ package polly {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Voices: js.UndefOr[VoiceList] = js.undefined
     ): DescribeVoicesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Voices.foreach(__v => __obj.update("Voices", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Voices.foreach(__v => __obj.updateDynamic("Voices")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeVoicesOutput]
     }
   }
@@ -187,7 +187,7 @@ package polly {
     def apply(
         Name: LexiconName
     ): GetLexiconInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -206,9 +206,9 @@ package polly {
         Lexicon: js.UndefOr[Lexicon] = js.undefined,
         LexiconAttributes: js.UndefOr[LexiconAttributes] = js.undefined
     ): GetLexiconOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Lexicon.foreach(__v => __obj.update("Lexicon", __v.asInstanceOf[js.Any]))
-      LexiconAttributes.foreach(__v => __obj.update("LexiconAttributes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Lexicon.foreach(__v => __obj.updateDynamic("Lexicon")(__v.asInstanceOf[js.Any]))
+      LexiconAttributes.foreach(__v => __obj.updateDynamic("LexiconAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLexiconOutput]
     }
   }
@@ -222,7 +222,7 @@ package polly {
     def apply(
         TaskId: TaskId
     ): GetSpeechSynthesisTaskInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TaskId" -> TaskId.asInstanceOf[js.Any]
       )
 
@@ -239,8 +239,8 @@ package polly {
     def apply(
         SynthesisTask: js.UndefOr[SynthesisTask] = js.undefined
     ): GetSpeechSynthesisTaskOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SynthesisTask.foreach(__v => __obj.update("SynthesisTask", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SynthesisTask.foreach(__v => __obj.updateDynamic("SynthesisTask")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSpeechSynthesisTaskOutput]
     }
   }
@@ -325,9 +325,9 @@ package polly {
         Content: js.UndefOr[LexiconContent] = js.undefined,
         Name: js.UndefOr[LexiconName] = js.undefined
     ): Lexicon = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Content.foreach(__v => __obj.update("Content", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Lexicon]
     }
   }
@@ -354,13 +354,13 @@ package polly {
         LexiconArn: js.UndefOr[LexiconArn] = js.undefined,
         Size: js.UndefOr[Size] = js.undefined
     ): LexiconAttributes = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Alphabet.foreach(__v => __obj.update("Alphabet", __v.asInstanceOf[js.Any]))
-      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
-      LastModified.foreach(__v => __obj.update("LastModified", __v.asInstanceOf[js.Any]))
-      LexemesCount.foreach(__v => __obj.update("LexemesCount", __v.asInstanceOf[js.Any]))
-      LexiconArn.foreach(__v => __obj.update("LexiconArn", __v.asInstanceOf[js.Any]))
-      Size.foreach(__v => __obj.update("Size", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Alphabet.foreach(__v => __obj.updateDynamic("Alphabet")(__v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
+      LexemesCount.foreach(__v => __obj.updateDynamic("LexemesCount")(__v.asInstanceOf[js.Any]))
+      LexiconArn.foreach(__v => __obj.updateDynamic("LexiconArn")(__v.asInstanceOf[js.Any]))
+      Size.foreach(__v => __obj.updateDynamic("Size")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LexiconAttributes]
     }
   }
@@ -379,9 +379,9 @@ package polly {
         Attributes: js.UndefOr[LexiconAttributes] = js.undefined,
         Name: js.UndefOr[LexiconName] = js.undefined
     ): LexiconDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LexiconDescription]
     }
   }
@@ -395,8 +395,8 @@ package polly {
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListLexiconsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListLexiconsInput]
     }
   }
@@ -412,9 +412,9 @@ package polly {
         Lexicons: js.UndefOr[LexiconDescriptionList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListLexiconsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Lexicons.foreach(__v => __obj.update("Lexicons", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Lexicons.foreach(__v => __obj.updateDynamic("Lexicons")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListLexiconsOutput]
     }
   }
@@ -432,10 +432,10 @@ package polly {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Status: js.UndefOr[TaskStatus] = js.undefined
     ): ListSpeechSynthesisTasksInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSpeechSynthesisTasksInput]
     }
   }
@@ -451,9 +451,9 @@ package polly {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         SynthesisTasks: js.UndefOr[SynthesisTasks] = js.undefined
     ): ListSpeechSynthesisTasksOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      SynthesisTasks.foreach(__v => __obj.update("SynthesisTasks", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SynthesisTasks.foreach(__v => __obj.updateDynamic("SynthesisTasks")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSpeechSynthesisTasksOutput]
     }
   }
@@ -478,7 +478,7 @@ package polly {
         Content: LexiconContent,
         Name: LexiconName
     ): PutLexiconInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Content" -> Content.asInstanceOf[js.Any],
         "Name"    -> Name.asInstanceOf[js.Any]
       )
@@ -493,7 +493,7 @@ package polly {
   object PutLexiconOutput {
     def apply(
         ): PutLexiconOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutLexiconOutput]
     }
@@ -539,21 +539,21 @@ package polly {
         SpeechMarkTypes: js.UndefOr[SpeechMarkTypeList] = js.undefined,
         TextType: js.UndefOr[TextType] = js.undefined
     ): StartSpeechSynthesisTaskInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OutputFormat"       -> OutputFormat.asInstanceOf[js.Any],
         "OutputS3BucketName" -> OutputS3BucketName.asInstanceOf[js.Any],
         "Text"               -> Text.asInstanceOf[js.Any],
         "VoiceId"            -> VoiceId.asInstanceOf[js.Any]
       )
 
-      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
-      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
-      LexiconNames.foreach(__v => __obj.update("LexiconNames", __v.asInstanceOf[js.Any]))
-      OutputS3KeyPrefix.foreach(__v => __obj.update("OutputS3KeyPrefix", __v.asInstanceOf[js.Any]))
-      SampleRate.foreach(__v => __obj.update("SampleRate", __v.asInstanceOf[js.Any]))
-      SnsTopicArn.foreach(__v => __obj.update("SnsTopicArn", __v.asInstanceOf[js.Any]))
-      SpeechMarkTypes.foreach(__v => __obj.update("SpeechMarkTypes", __v.asInstanceOf[js.Any]))
-      TextType.foreach(__v => __obj.update("TextType", __v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      LexiconNames.foreach(__v => __obj.updateDynamic("LexiconNames")(__v.asInstanceOf[js.Any]))
+      OutputS3KeyPrefix.foreach(__v => __obj.updateDynamic("OutputS3KeyPrefix")(__v.asInstanceOf[js.Any]))
+      SampleRate.foreach(__v => __obj.updateDynamic("SampleRate")(__v.asInstanceOf[js.Any]))
+      SnsTopicArn.foreach(__v => __obj.updateDynamic("SnsTopicArn")(__v.asInstanceOf[js.Any]))
+      SpeechMarkTypes.foreach(__v => __obj.updateDynamic("SpeechMarkTypes")(__v.asInstanceOf[js.Any]))
+      TextType.foreach(__v => __obj.updateDynamic("TextType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartSpeechSynthesisTaskInput]
     }
   }
@@ -567,8 +567,8 @@ package polly {
     def apply(
         SynthesisTask: js.UndefOr[SynthesisTask] = js.undefined
     ): StartSpeechSynthesisTaskOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SynthesisTask.foreach(__v => __obj.update("SynthesisTask", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SynthesisTask.foreach(__v => __obj.updateDynamic("SynthesisTask")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartSpeechSynthesisTaskOutput]
     }
   }
@@ -613,22 +613,22 @@ package polly {
         TextType: js.UndefOr[TextType] = js.undefined,
         VoiceId: js.UndefOr[VoiceId] = js.undefined
     ): SynthesisTask = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
-      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
-      LexiconNames.foreach(__v => __obj.update("LexiconNames", __v.asInstanceOf[js.Any]))
-      OutputFormat.foreach(__v => __obj.update("OutputFormat", __v.asInstanceOf[js.Any]))
-      OutputUri.foreach(__v => __obj.update("OutputUri", __v.asInstanceOf[js.Any]))
-      RequestCharacters.foreach(__v => __obj.update("RequestCharacters", __v.asInstanceOf[js.Any]))
-      SampleRate.foreach(__v => __obj.update("SampleRate", __v.asInstanceOf[js.Any]))
-      SnsTopicArn.foreach(__v => __obj.update("SnsTopicArn", __v.asInstanceOf[js.Any]))
-      SpeechMarkTypes.foreach(__v => __obj.update("SpeechMarkTypes", __v.asInstanceOf[js.Any]))
-      TaskId.foreach(__v => __obj.update("TaskId", __v.asInstanceOf[js.Any]))
-      TaskStatus.foreach(__v => __obj.update("TaskStatus", __v.asInstanceOf[js.Any]))
-      TaskStatusReason.foreach(__v => __obj.update("TaskStatusReason", __v.asInstanceOf[js.Any]))
-      TextType.foreach(__v => __obj.update("TextType", __v.asInstanceOf[js.Any]))
-      VoiceId.foreach(__v => __obj.update("VoiceId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      LexiconNames.foreach(__v => __obj.updateDynamic("LexiconNames")(__v.asInstanceOf[js.Any]))
+      OutputFormat.foreach(__v => __obj.updateDynamic("OutputFormat")(__v.asInstanceOf[js.Any]))
+      OutputUri.foreach(__v => __obj.updateDynamic("OutputUri")(__v.asInstanceOf[js.Any]))
+      RequestCharacters.foreach(__v => __obj.updateDynamic("RequestCharacters")(__v.asInstanceOf[js.Any]))
+      SampleRate.foreach(__v => __obj.updateDynamic("SampleRate")(__v.asInstanceOf[js.Any]))
+      SnsTopicArn.foreach(__v => __obj.updateDynamic("SnsTopicArn")(__v.asInstanceOf[js.Any]))
+      SpeechMarkTypes.foreach(__v => __obj.updateDynamic("SpeechMarkTypes")(__v.asInstanceOf[js.Any]))
+      TaskId.foreach(__v => __obj.updateDynamic("TaskId")(__v.asInstanceOf[js.Any]))
+      TaskStatus.foreach(__v => __obj.updateDynamic("TaskStatus")(__v.asInstanceOf[js.Any]))
+      TaskStatusReason.foreach(__v => __obj.updateDynamic("TaskStatusReason")(__v.asInstanceOf[js.Any]))
+      TextType.foreach(__v => __obj.updateDynamic("TextType")(__v.asInstanceOf[js.Any]))
+      VoiceId.foreach(__v => __obj.updateDynamic("VoiceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SynthesisTask]
     }
   }
@@ -658,18 +658,18 @@ package polly {
         SpeechMarkTypes: js.UndefOr[SpeechMarkTypeList] = js.undefined,
         TextType: js.UndefOr[TextType] = js.undefined
     ): SynthesizeSpeechInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OutputFormat" -> OutputFormat.asInstanceOf[js.Any],
         "Text"         -> Text.asInstanceOf[js.Any],
         "VoiceId"      -> VoiceId.asInstanceOf[js.Any]
       )
 
-      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
-      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
-      LexiconNames.foreach(__v => __obj.update("LexiconNames", __v.asInstanceOf[js.Any]))
-      SampleRate.foreach(__v => __obj.update("SampleRate", __v.asInstanceOf[js.Any]))
-      SpeechMarkTypes.foreach(__v => __obj.update("SpeechMarkTypes", __v.asInstanceOf[js.Any]))
-      TextType.foreach(__v => __obj.update("TextType", __v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      LexiconNames.foreach(__v => __obj.updateDynamic("LexiconNames")(__v.asInstanceOf[js.Any]))
+      SampleRate.foreach(__v => __obj.updateDynamic("SampleRate")(__v.asInstanceOf[js.Any]))
+      SpeechMarkTypes.foreach(__v => __obj.updateDynamic("SpeechMarkTypes")(__v.asInstanceOf[js.Any]))
+      TextType.foreach(__v => __obj.updateDynamic("TextType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SynthesizeSpeechInput]
     }
   }
@@ -687,10 +687,10 @@ package polly {
         ContentType: js.UndefOr[ContentType] = js.undefined,
         RequestCharacters: js.UndefOr[RequestCharacters] = js.undefined
     ): SynthesizeSpeechOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AudioStream.foreach(__v => __obj.update("AudioStream", __v.asInstanceOf[js.Any]))
-      ContentType.foreach(__v => __obj.update("ContentType", __v.asInstanceOf[js.Any]))
-      RequestCharacters.foreach(__v => __obj.update("RequestCharacters", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AudioStream.foreach(__v => __obj.updateDynamic("AudioStream")(__v.asInstanceOf[js.Any]))
+      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
+      RequestCharacters.foreach(__v => __obj.updateDynamic("RequestCharacters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SynthesizeSpeechOutput]
     }
   }
@@ -735,14 +735,14 @@ package polly {
         Name: js.UndefOr[VoiceName] = js.undefined,
         SupportedEngines: js.UndefOr[EngineList] = js.undefined
     ): Voice = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AdditionalLanguageCodes.foreach(__v => __obj.update("AdditionalLanguageCodes", __v.asInstanceOf[js.Any]))
-      Gender.foreach(__v => __obj.update("Gender", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
-      LanguageName.foreach(__v => __obj.update("LanguageName", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      SupportedEngines.foreach(__v => __obj.update("SupportedEngines", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AdditionalLanguageCodes.foreach(__v => __obj.updateDynamic("AdditionalLanguageCodes")(__v.asInstanceOf[js.Any]))
+      Gender.foreach(__v => __obj.updateDynamic("Gender")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      LanguageName.foreach(__v => __obj.updateDynamic("LanguageName")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      SupportedEngines.foreach(__v => __obj.updateDynamic("SupportedEngines")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Voice]
     }
   }

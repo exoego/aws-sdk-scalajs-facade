@@ -131,15 +131,15 @@ package globalaccelerator {
         Name: js.UndefOr[GenericString] = js.undefined,
         Status: js.UndefOr[AcceleratorStatus] = js.undefined
     ): Accelerator = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AcceleratorArn.foreach(__v => __obj.update("AcceleratorArn", __v.asInstanceOf[js.Any]))
-      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      IpAddressType.foreach(__v => __obj.update("IpAddressType", __v.asInstanceOf[js.Any]))
-      IpSets.foreach(__v => __obj.update("IpSets", __v.asInstanceOf[js.Any]))
-      LastModifiedTime.foreach(__v => __obj.update("LastModifiedTime", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AcceleratorArn.foreach(__v => __obj.updateDynamic("AcceleratorArn")(__v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      IpAddressType.foreach(__v => __obj.updateDynamic("IpAddressType")(__v.asInstanceOf[js.Any]))
+      IpSets.foreach(__v => __obj.updateDynamic("IpSets")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Accelerator]
     }
   }
@@ -160,10 +160,10 @@ package globalaccelerator {
         FlowLogsS3Bucket: js.UndefOr[GenericString] = js.undefined,
         FlowLogsS3Prefix: js.UndefOr[GenericString] = js.undefined
     ): AcceleratorAttributes = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FlowLogsEnabled.foreach(__v => __obj.update("FlowLogsEnabled", __v.asInstanceOf[js.Any]))
-      FlowLogsS3Bucket.foreach(__v => __obj.update("FlowLogsS3Bucket", __v.asInstanceOf[js.Any]))
-      FlowLogsS3Prefix.foreach(__v => __obj.update("FlowLogsS3Prefix", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FlowLogsEnabled.foreach(__v => __obj.updateDynamic("FlowLogsEnabled")(__v.asInstanceOf[js.Any]))
+      FlowLogsS3Bucket.foreach(__v => __obj.updateDynamic("FlowLogsS3Bucket")(__v.asInstanceOf[js.Any]))
+      FlowLogsS3Prefix.foreach(__v => __obj.updateDynamic("FlowLogsS3Prefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AcceleratorAttributes]
     }
   }
@@ -197,13 +197,13 @@ package globalaccelerator {
         Enabled: js.UndefOr[GenericBoolean] = js.undefined,
         IpAddressType: js.UndefOr[IpAddressType] = js.undefined
     ): CreateAcceleratorRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
         "Name"             -> Name.asInstanceOf[js.Any]
       )
 
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      IpAddressType.foreach(__v => __obj.update("IpAddressType", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      IpAddressType.foreach(__v => __obj.updateDynamic("IpAddressType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAcceleratorRequest]
     }
   }
@@ -217,8 +217,8 @@ package globalaccelerator {
     def apply(
         Accelerator: js.UndefOr[Accelerator] = js.undefined
     ): CreateAcceleratorResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Accelerator.foreach(__v => __obj.update("Accelerator", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Accelerator.foreach(__v => __obj.updateDynamic("Accelerator")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAcceleratorResponse]
     }
   }
@@ -250,19 +250,21 @@ package globalaccelerator {
         ThresholdCount: js.UndefOr[ThresholdCount] = js.undefined,
         TrafficDialPercentage: js.UndefOr[TrafficDialPercentage] = js.undefined
     ): CreateEndpointGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EndpointGroupRegion" -> EndpointGroupRegion.asInstanceOf[js.Any],
         "IdempotencyToken"    -> IdempotencyToken.asInstanceOf[js.Any],
         "ListenerArn"         -> ListenerArn.asInstanceOf[js.Any]
       )
 
-      EndpointConfigurations.foreach(__v => __obj.update("EndpointConfigurations", __v.asInstanceOf[js.Any]))
-      HealthCheckIntervalSeconds.foreach(__v => __obj.update("HealthCheckIntervalSeconds", __v.asInstanceOf[js.Any]))
-      HealthCheckPath.foreach(__v => __obj.update("HealthCheckPath", __v.asInstanceOf[js.Any]))
-      HealthCheckPort.foreach(__v => __obj.update("HealthCheckPort", __v.asInstanceOf[js.Any]))
-      HealthCheckProtocol.foreach(__v => __obj.update("HealthCheckProtocol", __v.asInstanceOf[js.Any]))
-      ThresholdCount.foreach(__v => __obj.update("ThresholdCount", __v.asInstanceOf[js.Any]))
-      TrafficDialPercentage.foreach(__v => __obj.update("TrafficDialPercentage", __v.asInstanceOf[js.Any]))
+      EndpointConfigurations.foreach(__v => __obj.updateDynamic("EndpointConfigurations")(__v.asInstanceOf[js.Any]))
+      HealthCheckIntervalSeconds.foreach(
+        __v => __obj.updateDynamic("HealthCheckIntervalSeconds")(__v.asInstanceOf[js.Any])
+      )
+      HealthCheckPath.foreach(__v => __obj.updateDynamic("HealthCheckPath")(__v.asInstanceOf[js.Any]))
+      HealthCheckPort.foreach(__v => __obj.updateDynamic("HealthCheckPort")(__v.asInstanceOf[js.Any]))
+      HealthCheckProtocol.foreach(__v => __obj.updateDynamic("HealthCheckProtocol")(__v.asInstanceOf[js.Any]))
+      ThresholdCount.foreach(__v => __obj.updateDynamic("ThresholdCount")(__v.asInstanceOf[js.Any]))
+      TrafficDialPercentage.foreach(__v => __obj.updateDynamic("TrafficDialPercentage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateEndpointGroupRequest]
     }
   }
@@ -276,8 +278,8 @@ package globalaccelerator {
     def apply(
         EndpointGroup: js.UndefOr[EndpointGroup] = js.undefined
     ): CreateEndpointGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EndpointGroup.foreach(__v => __obj.update("EndpointGroup", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EndpointGroup.foreach(__v => __obj.updateDynamic("EndpointGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateEndpointGroupResponse]
     }
   }
@@ -299,14 +301,14 @@ package globalaccelerator {
         Protocol: Protocol,
         ClientAffinity: js.UndefOr[ClientAffinity] = js.undefined
     ): CreateListenerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AcceleratorArn"   -> AcceleratorArn.asInstanceOf[js.Any],
         "IdempotencyToken" -> IdempotencyToken.asInstanceOf[js.Any],
         "PortRanges"       -> PortRanges.asInstanceOf[js.Any],
         "Protocol"         -> Protocol.asInstanceOf[js.Any]
       )
 
-      ClientAffinity.foreach(__v => __obj.update("ClientAffinity", __v.asInstanceOf[js.Any]))
+      ClientAffinity.foreach(__v => __obj.updateDynamic("ClientAffinity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateListenerRequest]
     }
   }
@@ -320,8 +322,8 @@ package globalaccelerator {
     def apply(
         Listener: js.UndefOr[Listener] = js.undefined
     ): CreateListenerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Listener.foreach(__v => __obj.update("Listener", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Listener.foreach(__v => __obj.updateDynamic("Listener")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateListenerResponse]
     }
   }
@@ -335,7 +337,7 @@ package globalaccelerator {
     def apply(
         AcceleratorArn: GenericString
     ): DeleteAcceleratorRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AcceleratorArn" -> AcceleratorArn.asInstanceOf[js.Any]
       )
 
@@ -352,7 +354,7 @@ package globalaccelerator {
     def apply(
         EndpointGroupArn: GenericString
     ): DeleteEndpointGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EndpointGroupArn" -> EndpointGroupArn.asInstanceOf[js.Any]
       )
 
@@ -369,7 +371,7 @@ package globalaccelerator {
     def apply(
         ListenerArn: GenericString
     ): DeleteListenerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ListenerArn" -> ListenerArn.asInstanceOf[js.Any]
       )
 
@@ -386,8 +388,8 @@ package globalaccelerator {
     def apply(
         AcceleratorArn: js.UndefOr[GenericString] = js.undefined
     ): DescribeAcceleratorAttributesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AcceleratorArn.foreach(__v => __obj.update("AcceleratorArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AcceleratorArn.foreach(__v => __obj.updateDynamic("AcceleratorArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAcceleratorAttributesRequest]
     }
   }
@@ -401,8 +403,8 @@ package globalaccelerator {
     def apply(
         AcceleratorAttributes: js.UndefOr[AcceleratorAttributes] = js.undefined
     ): DescribeAcceleratorAttributesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AcceleratorAttributes.foreach(__v => __obj.update("AcceleratorAttributes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AcceleratorAttributes.foreach(__v => __obj.updateDynamic("AcceleratorAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAcceleratorAttributesResponse]
     }
   }
@@ -416,7 +418,7 @@ package globalaccelerator {
     def apply(
         AcceleratorArn: GenericString
     ): DescribeAcceleratorRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AcceleratorArn" -> AcceleratorArn.asInstanceOf[js.Any]
       )
 
@@ -433,8 +435,8 @@ package globalaccelerator {
     def apply(
         Accelerator: js.UndefOr[Accelerator] = js.undefined
     ): DescribeAcceleratorResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Accelerator.foreach(__v => __obj.update("Accelerator", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Accelerator.foreach(__v => __obj.updateDynamic("Accelerator")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAcceleratorResponse]
     }
   }
@@ -448,7 +450,7 @@ package globalaccelerator {
     def apply(
         EndpointGroupArn: GenericString
     ): DescribeEndpointGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EndpointGroupArn" -> EndpointGroupArn.asInstanceOf[js.Any]
       )
 
@@ -465,8 +467,8 @@ package globalaccelerator {
     def apply(
         EndpointGroup: js.UndefOr[EndpointGroup] = js.undefined
     ): DescribeEndpointGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EndpointGroup.foreach(__v => __obj.update("EndpointGroup", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EndpointGroup.foreach(__v => __obj.updateDynamic("EndpointGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEndpointGroupResponse]
     }
   }
@@ -480,7 +482,7 @@ package globalaccelerator {
     def apply(
         ListenerArn: GenericString
     ): DescribeListenerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ListenerArn" -> ListenerArn.asInstanceOf[js.Any]
       )
 
@@ -497,8 +499,8 @@ package globalaccelerator {
     def apply(
         Listener: js.UndefOr[Listener] = js.undefined
     ): DescribeListenerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Listener.foreach(__v => __obj.update("Listener", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Listener.foreach(__v => __obj.updateDynamic("Listener")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeListenerResponse]
     }
   }
@@ -517,9 +519,9 @@ package globalaccelerator {
         EndpointId: js.UndefOr[GenericString] = js.undefined,
         Weight: js.UndefOr[EndpointWeight] = js.undefined
     ): EndpointConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EndpointId.foreach(__v => __obj.update("EndpointId", __v.asInstanceOf[js.Any]))
-      Weight.foreach(__v => __obj.update("Weight", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EndpointId.foreach(__v => __obj.updateDynamic("EndpointId")(__v.asInstanceOf[js.Any]))
+      Weight.foreach(__v => __obj.updateDynamic("Weight")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EndpointConfiguration]
     }
   }
@@ -542,11 +544,11 @@ package globalaccelerator {
         HealthState: js.UndefOr[HealthState] = js.undefined,
         Weight: js.UndefOr[EndpointWeight] = js.undefined
     ): EndpointDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EndpointId.foreach(__v => __obj.update("EndpointId", __v.asInstanceOf[js.Any]))
-      HealthReason.foreach(__v => __obj.update("HealthReason", __v.asInstanceOf[js.Any]))
-      HealthState.foreach(__v => __obj.update("HealthState", __v.asInstanceOf[js.Any]))
-      Weight.foreach(__v => __obj.update("Weight", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EndpointId.foreach(__v => __obj.updateDynamic("EndpointId")(__v.asInstanceOf[js.Any]))
+      HealthReason.foreach(__v => __obj.updateDynamic("HealthReason")(__v.asInstanceOf[js.Any]))
+      HealthState.foreach(__v => __obj.updateDynamic("HealthState")(__v.asInstanceOf[js.Any]))
+      Weight.foreach(__v => __obj.updateDynamic("Weight")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EndpointDescription]
     }
   }
@@ -579,16 +581,18 @@ package globalaccelerator {
         ThresholdCount: js.UndefOr[ThresholdCount] = js.undefined,
         TrafficDialPercentage: js.UndefOr[TrafficDialPercentage] = js.undefined
     ): EndpointGroup = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EndpointDescriptions.foreach(__v => __obj.update("EndpointDescriptions", __v.asInstanceOf[js.Any]))
-      EndpointGroupArn.foreach(__v => __obj.update("EndpointGroupArn", __v.asInstanceOf[js.Any]))
-      EndpointGroupRegion.foreach(__v => __obj.update("EndpointGroupRegion", __v.asInstanceOf[js.Any]))
-      HealthCheckIntervalSeconds.foreach(__v => __obj.update("HealthCheckIntervalSeconds", __v.asInstanceOf[js.Any]))
-      HealthCheckPath.foreach(__v => __obj.update("HealthCheckPath", __v.asInstanceOf[js.Any]))
-      HealthCheckPort.foreach(__v => __obj.update("HealthCheckPort", __v.asInstanceOf[js.Any]))
-      HealthCheckProtocol.foreach(__v => __obj.update("HealthCheckProtocol", __v.asInstanceOf[js.Any]))
-      ThresholdCount.foreach(__v => __obj.update("ThresholdCount", __v.asInstanceOf[js.Any]))
-      TrafficDialPercentage.foreach(__v => __obj.update("TrafficDialPercentage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EndpointDescriptions.foreach(__v => __obj.updateDynamic("EndpointDescriptions")(__v.asInstanceOf[js.Any]))
+      EndpointGroupArn.foreach(__v => __obj.updateDynamic("EndpointGroupArn")(__v.asInstanceOf[js.Any]))
+      EndpointGroupRegion.foreach(__v => __obj.updateDynamic("EndpointGroupRegion")(__v.asInstanceOf[js.Any]))
+      HealthCheckIntervalSeconds.foreach(
+        __v => __obj.updateDynamic("HealthCheckIntervalSeconds")(__v.asInstanceOf[js.Any])
+      )
+      HealthCheckPath.foreach(__v => __obj.updateDynamic("HealthCheckPath")(__v.asInstanceOf[js.Any]))
+      HealthCheckPort.foreach(__v => __obj.updateDynamic("HealthCheckPort")(__v.asInstanceOf[js.Any]))
+      HealthCheckProtocol.foreach(__v => __obj.updateDynamic("HealthCheckProtocol")(__v.asInstanceOf[js.Any]))
+      ThresholdCount.foreach(__v => __obj.updateDynamic("ThresholdCount")(__v.asInstanceOf[js.Any]))
+      TrafficDialPercentage.foreach(__v => __obj.updateDynamic("TrafficDialPercentage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EndpointGroup]
     }
   }
@@ -629,9 +633,9 @@ package globalaccelerator {
         IpAddresses: js.UndefOr[IpAddresses] = js.undefined,
         IpFamily: js.UndefOr[GenericString] = js.undefined
     ): IpSet = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IpAddresses.foreach(__v => __obj.update("IpAddresses", __v.asInstanceOf[js.Any]))
-      IpFamily.foreach(__v => __obj.update("IpFamily", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IpAddresses.foreach(__v => __obj.updateDynamic("IpAddresses")(__v.asInstanceOf[js.Any]))
+      IpFamily.foreach(__v => __obj.updateDynamic("IpFamily")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IpSet]
     }
   }
@@ -647,9 +651,9 @@ package globalaccelerator {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): ListAcceleratorsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAcceleratorsRequest]
     }
   }
@@ -665,9 +669,9 @@ package globalaccelerator {
         Accelerators: js.UndefOr[Accelerators] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): ListAcceleratorsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Accelerators.foreach(__v => __obj.update("Accelerators", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Accelerators.foreach(__v => __obj.updateDynamic("Accelerators")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAcceleratorsResponse]
     }
   }
@@ -685,12 +689,12 @@ package globalaccelerator {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): ListEndpointGroupsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ListenerArn" -> ListenerArn.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEndpointGroupsRequest]
     }
   }
@@ -706,9 +710,9 @@ package globalaccelerator {
         EndpointGroups: js.UndefOr[EndpointGroups] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): ListEndpointGroupsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EndpointGroups.foreach(__v => __obj.update("EndpointGroups", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EndpointGroups.foreach(__v => __obj.updateDynamic("EndpointGroups")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEndpointGroupsResponse]
     }
   }
@@ -726,12 +730,12 @@ package globalaccelerator {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): ListListenersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AcceleratorArn" -> AcceleratorArn.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListListenersRequest]
     }
   }
@@ -747,9 +751,9 @@ package globalaccelerator {
         Listeners: js.UndefOr[Listeners] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): ListListenersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Listeners.foreach(__v => __obj.update("Listeners", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Listeners.foreach(__v => __obj.updateDynamic("Listeners")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListListenersResponse]
     }
   }
@@ -772,11 +776,11 @@ package globalaccelerator {
         PortRanges: js.UndefOr[PortRanges] = js.undefined,
         Protocol: js.UndefOr[Protocol] = js.undefined
     ): Listener = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClientAffinity.foreach(__v => __obj.update("ClientAffinity", __v.asInstanceOf[js.Any]))
-      ListenerArn.foreach(__v => __obj.update("ListenerArn", __v.asInstanceOf[js.Any]))
-      PortRanges.foreach(__v => __obj.update("PortRanges", __v.asInstanceOf[js.Any]))
-      Protocol.foreach(__v => __obj.update("Protocol", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClientAffinity.foreach(__v => __obj.updateDynamic("ClientAffinity")(__v.asInstanceOf[js.Any]))
+      ListenerArn.foreach(__v => __obj.updateDynamic("ListenerArn")(__v.asInstanceOf[js.Any]))
+      PortRanges.foreach(__v => __obj.updateDynamic("PortRanges")(__v.asInstanceOf[js.Any]))
+      Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Listener]
     }
   }
@@ -795,9 +799,9 @@ package globalaccelerator {
         FromPort: js.UndefOr[PortNumber] = js.undefined,
         ToPort: js.UndefOr[PortNumber] = js.undefined
     ): PortRange = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FromPort.foreach(__v => __obj.update("FromPort", __v.asInstanceOf[js.Any]))
-      ToPort.foreach(__v => __obj.update("ToPort", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FromPort.foreach(__v => __obj.updateDynamic("FromPort")(__v.asInstanceOf[js.Any]))
+      ToPort.foreach(__v => __obj.updateDynamic("ToPort")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PortRange]
     }
   }
@@ -824,11 +828,11 @@ package globalaccelerator {
         FlowLogsS3Bucket: js.UndefOr[GenericString] = js.undefined,
         FlowLogsS3Prefix: js.UndefOr[GenericString] = js.undefined
     ): UpdateAcceleratorAttributesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AcceleratorArn.foreach(__v => __obj.update("AcceleratorArn", __v.asInstanceOf[js.Any]))
-      FlowLogsEnabled.foreach(__v => __obj.update("FlowLogsEnabled", __v.asInstanceOf[js.Any]))
-      FlowLogsS3Bucket.foreach(__v => __obj.update("FlowLogsS3Bucket", __v.asInstanceOf[js.Any]))
-      FlowLogsS3Prefix.foreach(__v => __obj.update("FlowLogsS3Prefix", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AcceleratorArn.foreach(__v => __obj.updateDynamic("AcceleratorArn")(__v.asInstanceOf[js.Any]))
+      FlowLogsEnabled.foreach(__v => __obj.updateDynamic("FlowLogsEnabled")(__v.asInstanceOf[js.Any]))
+      FlowLogsS3Bucket.foreach(__v => __obj.updateDynamic("FlowLogsS3Bucket")(__v.asInstanceOf[js.Any]))
+      FlowLogsS3Prefix.foreach(__v => __obj.updateDynamic("FlowLogsS3Prefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAcceleratorAttributesRequest]
     }
   }
@@ -842,8 +846,8 @@ package globalaccelerator {
     def apply(
         AcceleratorAttributes: js.UndefOr[AcceleratorAttributes] = js.undefined
     ): UpdateAcceleratorAttributesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AcceleratorAttributes.foreach(__v => __obj.update("AcceleratorAttributes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AcceleratorAttributes.foreach(__v => __obj.updateDynamic("AcceleratorAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAcceleratorAttributesResponse]
     }
   }
@@ -863,13 +867,13 @@ package globalaccelerator {
         IpAddressType: js.UndefOr[IpAddressType] = js.undefined,
         Name: js.UndefOr[GenericString] = js.undefined
     ): UpdateAcceleratorRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AcceleratorArn" -> AcceleratorArn.asInstanceOf[js.Any]
       )
 
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      IpAddressType.foreach(__v => __obj.update("IpAddressType", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      IpAddressType.foreach(__v => __obj.updateDynamic("IpAddressType")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAcceleratorRequest]
     }
   }
@@ -883,8 +887,8 @@ package globalaccelerator {
     def apply(
         Accelerator: js.UndefOr[Accelerator] = js.undefined
     ): UpdateAcceleratorResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Accelerator.foreach(__v => __obj.update("Accelerator", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Accelerator.foreach(__v => __obj.updateDynamic("Accelerator")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAcceleratorResponse]
     }
   }
@@ -912,17 +916,19 @@ package globalaccelerator {
         ThresholdCount: js.UndefOr[ThresholdCount] = js.undefined,
         TrafficDialPercentage: js.UndefOr[TrafficDialPercentage] = js.undefined
     ): UpdateEndpointGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EndpointGroupArn" -> EndpointGroupArn.asInstanceOf[js.Any]
       )
 
-      EndpointConfigurations.foreach(__v => __obj.update("EndpointConfigurations", __v.asInstanceOf[js.Any]))
-      HealthCheckIntervalSeconds.foreach(__v => __obj.update("HealthCheckIntervalSeconds", __v.asInstanceOf[js.Any]))
-      HealthCheckPath.foreach(__v => __obj.update("HealthCheckPath", __v.asInstanceOf[js.Any]))
-      HealthCheckPort.foreach(__v => __obj.update("HealthCheckPort", __v.asInstanceOf[js.Any]))
-      HealthCheckProtocol.foreach(__v => __obj.update("HealthCheckProtocol", __v.asInstanceOf[js.Any]))
-      ThresholdCount.foreach(__v => __obj.update("ThresholdCount", __v.asInstanceOf[js.Any]))
-      TrafficDialPercentage.foreach(__v => __obj.update("TrafficDialPercentage", __v.asInstanceOf[js.Any]))
+      EndpointConfigurations.foreach(__v => __obj.updateDynamic("EndpointConfigurations")(__v.asInstanceOf[js.Any]))
+      HealthCheckIntervalSeconds.foreach(
+        __v => __obj.updateDynamic("HealthCheckIntervalSeconds")(__v.asInstanceOf[js.Any])
+      )
+      HealthCheckPath.foreach(__v => __obj.updateDynamic("HealthCheckPath")(__v.asInstanceOf[js.Any]))
+      HealthCheckPort.foreach(__v => __obj.updateDynamic("HealthCheckPort")(__v.asInstanceOf[js.Any]))
+      HealthCheckProtocol.foreach(__v => __obj.updateDynamic("HealthCheckProtocol")(__v.asInstanceOf[js.Any]))
+      ThresholdCount.foreach(__v => __obj.updateDynamic("ThresholdCount")(__v.asInstanceOf[js.Any]))
+      TrafficDialPercentage.foreach(__v => __obj.updateDynamic("TrafficDialPercentage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateEndpointGroupRequest]
     }
   }
@@ -936,8 +942,8 @@ package globalaccelerator {
     def apply(
         EndpointGroup: js.UndefOr[EndpointGroup] = js.undefined
     ): UpdateEndpointGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EndpointGroup.foreach(__v => __obj.update("EndpointGroup", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EndpointGroup.foreach(__v => __obj.updateDynamic("EndpointGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateEndpointGroupResponse]
     }
   }
@@ -957,13 +963,13 @@ package globalaccelerator {
         PortRanges: js.UndefOr[PortRanges] = js.undefined,
         Protocol: js.UndefOr[Protocol] = js.undefined
     ): UpdateListenerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ListenerArn" -> ListenerArn.asInstanceOf[js.Any]
       )
 
-      ClientAffinity.foreach(__v => __obj.update("ClientAffinity", __v.asInstanceOf[js.Any]))
-      PortRanges.foreach(__v => __obj.update("PortRanges", __v.asInstanceOf[js.Any]))
-      Protocol.foreach(__v => __obj.update("Protocol", __v.asInstanceOf[js.Any]))
+      ClientAffinity.foreach(__v => __obj.updateDynamic("ClientAffinity")(__v.asInstanceOf[js.Any]))
+      PortRanges.foreach(__v => __obj.updateDynamic("PortRanges")(__v.asInstanceOf[js.Any]))
+      Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateListenerRequest]
     }
   }
@@ -977,8 +983,8 @@ package globalaccelerator {
     def apply(
         Listener: js.UndefOr[Listener] = js.undefined
     ): UpdateListenerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Listener.foreach(__v => __obj.update("Listener", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Listener.foreach(__v => __obj.updateDynamic("Listener")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateListenerResponse]
     }
   }

@@ -123,8 +123,8 @@ package cur {
     def apply(
         ReportName: js.UndefOr[ReportName] = js.undefined
     ): DeleteReportDefinitionRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ReportName.foreach(__v => __obj.update("ReportName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ReportName.foreach(__v => __obj.updateDynamic("ReportName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteReportDefinitionRequest]
     }
   }
@@ -141,8 +141,8 @@ package cur {
     def apply(
         ResponseMessage: js.UndefOr[DeleteResponseMessage] = js.undefined
     ): DeleteReportDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ResponseMessage.foreach(__v => __obj.update("ResponseMessage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ResponseMessage.foreach(__v => __obj.updateDynamic("ResponseMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteReportDefinitionResponse]
     }
   }
@@ -161,9 +161,9 @@ package cur {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): DescribeReportDefinitionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeReportDefinitionsRequest]
     }
   }
@@ -182,9 +182,9 @@ package cur {
         NextToken: js.UndefOr[GenericString] = js.undefined,
         ReportDefinitions: js.UndefOr[ReportDefinitionList] = js.undefined
     ): DescribeReportDefinitionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ReportDefinitions.foreach(__v => __obj.update("ReportDefinitions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ReportDefinitions.foreach(__v => __obj.updateDynamic("ReportDefinitions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeReportDefinitionsResponse]
     }
   }
@@ -200,7 +200,7 @@ package cur {
         ReportDefinition: ReportDefinition,
         ReportName: ReportName
     ): ModifyReportDefinitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ReportDefinition" -> ReportDefinition.asInstanceOf[js.Any],
         "ReportName"       -> ReportName.asInstanceOf[js.Any]
       )
@@ -215,7 +215,7 @@ package cur {
   object ModifyReportDefinitionResponse {
     def apply(
         ): ModifyReportDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ModifyReportDefinitionResponse]
     }
@@ -233,7 +233,7 @@ package cur {
     def apply(
         ReportDefinition: ReportDefinition
     ): PutReportDefinitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ReportDefinition" -> ReportDefinition.asInstanceOf[js.Any]
       )
 
@@ -250,7 +250,7 @@ package cur {
   object PutReportDefinitionResponse {
     def apply(
         ): PutReportDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutReportDefinitionResponse]
     }
@@ -288,7 +288,7 @@ package cur {
         RefreshClosedReports: js.UndefOr[RefreshClosedReports] = js.undefined,
         ReportVersioning: js.UndefOr[ReportVersioning] = js.undefined
     ): ReportDefinition = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AdditionalSchemaElements" -> AdditionalSchemaElements.asInstanceOf[js.Any],
         "Compression"              -> Compression.asInstanceOf[js.Any],
         "Format"                   -> Format.asInstanceOf[js.Any],
@@ -299,9 +299,9 @@ package cur {
         "TimeUnit"                 -> TimeUnit.asInstanceOf[js.Any]
       )
 
-      AdditionalArtifacts.foreach(__v => __obj.update("AdditionalArtifacts", __v.asInstanceOf[js.Any]))
-      RefreshClosedReports.foreach(__v => __obj.update("RefreshClosedReports", __v.asInstanceOf[js.Any]))
-      ReportVersioning.foreach(__v => __obj.update("ReportVersioning", __v.asInstanceOf[js.Any]))
+      AdditionalArtifacts.foreach(__v => __obj.updateDynamic("AdditionalArtifacts")(__v.asInstanceOf[js.Any]))
+      RefreshClosedReports.foreach(__v => __obj.updateDynamic("RefreshClosedReports")(__v.asInstanceOf[js.Any]))
+      ReportVersioning.foreach(__v => __obj.updateDynamic("ReportVersioning")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReportDefinition]
     }
   }

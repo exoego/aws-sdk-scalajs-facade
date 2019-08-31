@@ -46,12 +46,12 @@ package kinesisvideomedia {
         StreamARN: js.UndefOr[ResourceARN] = js.undefined,
         StreamName: js.UndefOr[StreamName] = js.undefined
     ): GetMediaInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "StartSelector" -> StartSelector.asInstanceOf[js.Any]
       )
 
-      StreamARN.foreach(__v => __obj.update("StreamARN", __v.asInstanceOf[js.Any]))
-      StreamName.foreach(__v => __obj.update("StreamName", __v.asInstanceOf[js.Any]))
+      StreamARN.foreach(__v => __obj.updateDynamic("StreamARN")(__v.asInstanceOf[js.Any]))
+      StreamName.foreach(__v => __obj.updateDynamic("StreamName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMediaInput]
     }
   }
@@ -67,9 +67,9 @@ package kinesisvideomedia {
         ContentType: js.UndefOr[ContentType] = js.undefined,
         Payload: js.UndefOr[Payload] = js.undefined
     ): GetMediaOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ContentType.foreach(__v => __obj.update("ContentType", __v.asInstanceOf[js.Any]))
-      Payload.foreach(__v => __obj.update("Payload", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
+      Payload.foreach(__v => __obj.updateDynamic("Payload")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMediaOutput]
     }
   }
@@ -95,13 +95,13 @@ package kinesisvideomedia {
         ContinuationToken: js.UndefOr[ContinuationToken] = js.undefined,
         StartTimestamp: js.UndefOr[Timestamp] = js.undefined
     ): StartSelector = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "StartSelectorType" -> StartSelectorType.asInstanceOf[js.Any]
       )
 
-      AfterFragmentNumber.foreach(__v => __obj.update("AfterFragmentNumber", __v.asInstanceOf[js.Any]))
-      ContinuationToken.foreach(__v => __obj.update("ContinuationToken", __v.asInstanceOf[js.Any]))
-      StartTimestamp.foreach(__v => __obj.update("StartTimestamp", __v.asInstanceOf[js.Any]))
+      AfterFragmentNumber.foreach(__v => __obj.updateDynamic("AfterFragmentNumber")(__v.asInstanceOf[js.Any]))
+      ContinuationToken.foreach(__v => __obj.updateDynamic("ContinuationToken")(__v.asInstanceOf[js.Any]))
+      StartTimestamp.foreach(__v => __obj.updateDynamic("StartTimestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartSelector]
     }
   }

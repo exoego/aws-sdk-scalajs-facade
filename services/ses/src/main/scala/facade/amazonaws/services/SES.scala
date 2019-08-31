@@ -450,7 +450,7 @@ package ses {
         HeaderName: HeaderName,
         HeaderValue: HeaderValue
     ): AddHeaderAction = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HeaderName"  -> HeaderName.asInstanceOf[js.Any],
         "HeaderValue" -> HeaderValue.asInstanceOf[js.Any]
       )
@@ -480,9 +480,9 @@ package ses {
         Html: js.UndefOr[Content] = js.undefined,
         Text: js.UndefOr[Content] = js.undefined
     ): Body = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Html.foreach(__v => __obj.update("Html", __v.asInstanceOf[js.Any]))
-      Text.foreach(__v => __obj.update("Text", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Html.foreach(__v => __obj.updateDynamic("Html")(__v.asInstanceOf[js.Any]))
+      Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Body]
     }
   }
@@ -508,14 +508,14 @@ package ses {
         StatusCode: js.UndefOr[BounceStatusCode] = js.undefined,
         TopicArn: js.UndefOr[AmazonResourceName] = js.undefined
     ): BounceAction = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Message"       -> Message.asInstanceOf[js.Any],
         "Sender"        -> Sender.asInstanceOf[js.Any],
         "SmtpReplyCode" -> SmtpReplyCode.asInstanceOf[js.Any]
       )
 
-      StatusCode.foreach(__v => __obj.update("StatusCode", __v.asInstanceOf[js.Any]))
-      TopicArn.foreach(__v => __obj.update("TopicArn", __v.asInstanceOf[js.Any]))
+      StatusCode.foreach(__v => __obj.updateDynamic("StatusCode")(__v.asInstanceOf[js.Any]))
+      TopicArn.foreach(__v => __obj.updateDynamic("TopicArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BounceAction]
     }
   }
@@ -552,13 +552,13 @@ package ses {
         RecipientArn: js.UndefOr[AmazonResourceName] = js.undefined,
         RecipientDsnFields: js.UndefOr[RecipientDsnFields] = js.undefined
     ): BouncedRecipientInfo = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Recipient" -> Recipient.asInstanceOf[js.Any]
       )
 
-      BounceType.foreach(__v => __obj.update("BounceType", __v.asInstanceOf[js.Any]))
-      RecipientArn.foreach(__v => __obj.update("RecipientArn", __v.asInstanceOf[js.Any]))
-      RecipientDsnFields.foreach(__v => __obj.update("RecipientDsnFields", __v.asInstanceOf[js.Any]))
+      BounceType.foreach(__v => __obj.updateDynamic("BounceType")(__v.asInstanceOf[js.Any]))
+      RecipientArn.foreach(__v => __obj.updateDynamic("RecipientArn")(__v.asInstanceOf[js.Any]))
+      RecipientDsnFields.foreach(__v => __obj.updateDynamic("RecipientDsnFields")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BouncedRecipientInfo]
     }
   }
@@ -579,12 +579,12 @@ package ses {
         ReplacementTags: js.UndefOr[MessageTagList] = js.undefined,
         ReplacementTemplateData: js.UndefOr[TemplateData] = js.undefined
     ): BulkEmailDestination = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Destination" -> Destination.asInstanceOf[js.Any]
       )
 
-      ReplacementTags.foreach(__v => __obj.update("ReplacementTags", __v.asInstanceOf[js.Any]))
-      ReplacementTemplateData.foreach(__v => __obj.update("ReplacementTemplateData", __v.asInstanceOf[js.Any]))
+      ReplacementTags.foreach(__v => __obj.updateDynamic("ReplacementTags")(__v.asInstanceOf[js.Any]))
+      ReplacementTemplateData.foreach(__v => __obj.updateDynamic("ReplacementTemplateData")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BulkEmailDestination]
     }
   }
@@ -605,10 +605,10 @@ package ses {
         MessageId: js.UndefOr[MessageId] = js.undefined,
         Status: js.UndefOr[BulkEmailStatus] = js.undefined
     ): BulkEmailDestinationStatus = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Error.foreach(__v => __obj.update("Error", __v.asInstanceOf[js.Any]))
-      MessageId.foreach(__v => __obj.update("MessageId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Error.foreach(__v => __obj.updateDynamic("Error")(__v.asInstanceOf[js.Any]))
+      MessageId.foreach(__v => __obj.updateDynamic("MessageId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BulkEmailDestinationStatus]
     }
   }
@@ -663,7 +663,7 @@ package ses {
         OriginalRuleSetName: ReceiptRuleSetName,
         RuleSetName: ReceiptRuleSetName
     ): CloneReceiptRuleSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OriginalRuleSetName" -> OriginalRuleSetName.asInstanceOf[js.Any],
         "RuleSetName"         -> RuleSetName.asInstanceOf[js.Any]
       )
@@ -681,7 +681,7 @@ package ses {
   object CloneReceiptRuleSetResponse {
     def apply(
         ): CloneReceiptRuleSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CloneReceiptRuleSetResponse]
     }
@@ -700,7 +700,7 @@ package ses {
     def apply(
         DimensionConfigurations: CloudWatchDimensionConfigurations
     ): CloudWatchDestination = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DimensionConfigurations" -> DimensionConfigurations.asInstanceOf[js.Any]
       )
 
@@ -725,7 +725,7 @@ package ses {
         DimensionName: DimensionName,
         DimensionValueSource: DimensionValueSource
     ): CloudWatchDimensionConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DefaultDimensionValue" -> DefaultDimensionValue.asInstanceOf[js.Any],
         "DimensionName"         -> DimensionName.asInstanceOf[js.Any],
         "DimensionValueSource"  -> DimensionValueSource.asInstanceOf[js.Any]
@@ -748,7 +748,7 @@ package ses {
     def apply(
         Name: ConfigurationSetName
     ): ConfigurationSet = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -780,11 +780,11 @@ package ses {
         Data: MessageData,
         Charset: js.UndefOr[Charset] = js.undefined
     ): Content = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Data" -> Data.asInstanceOf[js.Any]
       )
 
-      Charset.foreach(__v => __obj.update("Charset", __v.asInstanceOf[js.Any]))
+      Charset.foreach(__v => __obj.updateDynamic("Charset")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Content]
     }
   }
@@ -803,7 +803,7 @@ package ses {
         ConfigurationSetName: ConfigurationSetName,
         EventDestination: EventDestination
     ): CreateConfigurationSetEventDestinationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
         "EventDestination"     -> EventDestination.asInstanceOf[js.Any]
       )
@@ -821,7 +821,7 @@ package ses {
   object CreateConfigurationSetEventDestinationResponse {
     def apply(
         ): CreateConfigurationSetEventDestinationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateConfigurationSetEventDestinationResponse]
     }
@@ -839,7 +839,7 @@ package ses {
     def apply(
         ConfigurationSet: ConfigurationSet
     ): CreateConfigurationSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationSet" -> ConfigurationSet.asInstanceOf[js.Any]
       )
 
@@ -856,7 +856,7 @@ package ses {
   object CreateConfigurationSetResponse {
     def apply(
         ): CreateConfigurationSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateConfigurationSetResponse]
     }
@@ -876,7 +876,7 @@ package ses {
         ConfigurationSetName: ConfigurationSetName,
         TrackingOptions: TrackingOptions
     ): CreateConfigurationSetTrackingOptionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
         "TrackingOptions"      -> TrackingOptions.asInstanceOf[js.Any]
       )
@@ -894,7 +894,7 @@ package ses {
   object CreateConfigurationSetTrackingOptionsResponse {
     def apply(
         ): CreateConfigurationSetTrackingOptionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateConfigurationSetTrackingOptionsResponse]
     }
@@ -922,7 +922,7 @@ package ses {
         TemplateName: TemplateName,
         TemplateSubject: Subject
     ): CreateCustomVerificationEmailTemplateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FailureRedirectionURL" -> FailureRedirectionURL.asInstanceOf[js.Any],
         "FromEmailAddress"      -> FromEmailAddress.asInstanceOf[js.Any],
         "SuccessRedirectionURL" -> SuccessRedirectionURL.asInstanceOf[js.Any],
@@ -947,7 +947,7 @@ package ses {
     def apply(
         Filter: ReceiptFilter
     ): CreateReceiptFilterRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Filter" -> Filter.asInstanceOf[js.Any]
       )
 
@@ -964,7 +964,7 @@ package ses {
   object CreateReceiptFilterResponse {
     def apply(
         ): CreateReceiptFilterResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateReceiptFilterResponse]
     }
@@ -986,12 +986,12 @@ package ses {
         RuleSetName: ReceiptRuleSetName,
         After: js.UndefOr[ReceiptRuleName] = js.undefined
     ): CreateReceiptRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Rule"        -> Rule.asInstanceOf[js.Any],
         "RuleSetName" -> RuleSetName.asInstanceOf[js.Any]
       )
 
-      After.foreach(__v => __obj.update("After", __v.asInstanceOf[js.Any]))
+      After.foreach(__v => __obj.updateDynamic("After")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateReceiptRuleRequest]
     }
   }
@@ -1005,7 +1005,7 @@ package ses {
   object CreateReceiptRuleResponse {
     def apply(
         ): CreateReceiptRuleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateReceiptRuleResponse]
     }
@@ -1023,7 +1023,7 @@ package ses {
     def apply(
         RuleSetName: ReceiptRuleSetName
     ): CreateReceiptRuleSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RuleSetName" -> RuleSetName.asInstanceOf[js.Any]
       )
 
@@ -1040,7 +1040,7 @@ package ses {
   object CreateReceiptRuleSetResponse {
     def apply(
         ): CreateReceiptRuleSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateReceiptRuleSetResponse]
     }
@@ -1058,7 +1058,7 @@ package ses {
     def apply(
         Template: Template
     ): CreateTemplateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Template" -> Template.asInstanceOf[js.Any]
       )
 
@@ -1072,7 +1072,7 @@ package ses {
   object CreateTemplateResponse {
     def apply(
         ): CreateTemplateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateTemplateResponse]
     }
@@ -1107,12 +1107,12 @@ package ses {
         TemplateName: js.UndefOr[TemplateName] = js.undefined,
         TemplateSubject: js.UndefOr[Subject] = js.undefined
     ): CustomVerificationEmailTemplate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FailureRedirectionURL.foreach(__v => __obj.update("FailureRedirectionURL", __v.asInstanceOf[js.Any]))
-      FromEmailAddress.foreach(__v => __obj.update("FromEmailAddress", __v.asInstanceOf[js.Any]))
-      SuccessRedirectionURL.foreach(__v => __obj.update("SuccessRedirectionURL", __v.asInstanceOf[js.Any]))
-      TemplateName.foreach(__v => __obj.update("TemplateName", __v.asInstanceOf[js.Any]))
-      TemplateSubject.foreach(__v => __obj.update("TemplateSubject", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FailureRedirectionURL.foreach(__v => __obj.updateDynamic("FailureRedirectionURL")(__v.asInstanceOf[js.Any]))
+      FromEmailAddress.foreach(__v => __obj.updateDynamic("FromEmailAddress")(__v.asInstanceOf[js.Any]))
+      SuccessRedirectionURL.foreach(__v => __obj.updateDynamic("SuccessRedirectionURL")(__v.asInstanceOf[js.Any]))
+      TemplateName.foreach(__v => __obj.updateDynamic("TemplateName")(__v.asInstanceOf[js.Any]))
+      TemplateSubject.foreach(__v => __obj.updateDynamic("TemplateSubject")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CustomVerificationEmailTemplate]
     }
   }
@@ -1131,7 +1131,7 @@ package ses {
         ConfigurationSetName: ConfigurationSetName,
         EventDestinationName: EventDestinationName
     ): DeleteConfigurationSetEventDestinationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
         "EventDestinationName" -> EventDestinationName.asInstanceOf[js.Any]
       )
@@ -1149,7 +1149,7 @@ package ses {
   object DeleteConfigurationSetEventDestinationResponse {
     def apply(
         ): DeleteConfigurationSetEventDestinationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteConfigurationSetEventDestinationResponse]
     }
@@ -1167,7 +1167,7 @@ package ses {
     def apply(
         ConfigurationSetName: ConfigurationSetName
     ): DeleteConfigurationSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
       )
 
@@ -1184,7 +1184,7 @@ package ses {
   object DeleteConfigurationSetResponse {
     def apply(
         ): DeleteConfigurationSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteConfigurationSetResponse]
     }
@@ -1202,7 +1202,7 @@ package ses {
     def apply(
         ConfigurationSetName: ConfigurationSetName
     ): DeleteConfigurationSetTrackingOptionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
       )
 
@@ -1219,7 +1219,7 @@ package ses {
   object DeleteConfigurationSetTrackingOptionsResponse {
     def apply(
         ): DeleteConfigurationSetTrackingOptionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteConfigurationSetTrackingOptionsResponse]
     }
@@ -1237,7 +1237,7 @@ package ses {
     def apply(
         TemplateName: TemplateName
     ): DeleteCustomVerificationEmailTemplateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TemplateName" -> TemplateName.asInstanceOf[js.Any]
       )
 
@@ -1259,7 +1259,7 @@ package ses {
         Identity: Identity,
         PolicyName: PolicyName
     ): DeleteIdentityPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Identity"   -> Identity.asInstanceOf[js.Any],
         "PolicyName" -> PolicyName.asInstanceOf[js.Any]
       )
@@ -1277,7 +1277,7 @@ package ses {
   object DeleteIdentityPolicyResponse {
     def apply(
         ): DeleteIdentityPolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteIdentityPolicyResponse]
     }
@@ -1295,7 +1295,7 @@ package ses {
     def apply(
         Identity: Identity
     ): DeleteIdentityRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Identity" -> Identity.asInstanceOf[js.Any]
       )
 
@@ -1312,7 +1312,7 @@ package ses {
   object DeleteIdentityResponse {
     def apply(
         ): DeleteIdentityResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteIdentityResponse]
     }
@@ -1330,7 +1330,7 @@ package ses {
     def apply(
         FilterName: ReceiptFilterName
     ): DeleteReceiptFilterRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FilterName" -> FilterName.asInstanceOf[js.Any]
       )
 
@@ -1347,7 +1347,7 @@ package ses {
   object DeleteReceiptFilterResponse {
     def apply(
         ): DeleteReceiptFilterResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteReceiptFilterResponse]
     }
@@ -1367,7 +1367,7 @@ package ses {
         RuleName: ReceiptRuleName,
         RuleSetName: ReceiptRuleSetName
     ): DeleteReceiptRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RuleName"    -> RuleName.asInstanceOf[js.Any],
         "RuleSetName" -> RuleSetName.asInstanceOf[js.Any]
       )
@@ -1385,7 +1385,7 @@ package ses {
   object DeleteReceiptRuleResponse {
     def apply(
         ): DeleteReceiptRuleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteReceiptRuleResponse]
     }
@@ -1403,7 +1403,7 @@ package ses {
     def apply(
         RuleSetName: ReceiptRuleSetName
     ): DeleteReceiptRuleSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RuleSetName" -> RuleSetName.asInstanceOf[js.Any]
       )
 
@@ -1420,7 +1420,7 @@ package ses {
   object DeleteReceiptRuleSetResponse {
     def apply(
         ): DeleteReceiptRuleSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteReceiptRuleSetResponse]
     }
@@ -1438,7 +1438,7 @@ package ses {
     def apply(
         TemplateName: TemplateName
     ): DeleteTemplateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TemplateName" -> TemplateName.asInstanceOf[js.Any]
       )
 
@@ -1452,7 +1452,7 @@ package ses {
   object DeleteTemplateResponse {
     def apply(
         ): DeleteTemplateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteTemplateResponse]
     }
@@ -1470,7 +1470,7 @@ package ses {
     def apply(
         EmailAddress: Address
     ): DeleteVerifiedEmailAddressRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EmailAddress" -> EmailAddress.asInstanceOf[js.Any]
       )
 
@@ -1490,8 +1490,8 @@ package ses {
     def apply(
         TlsPolicy: js.UndefOr[TlsPolicy] = js.undefined
     ): DeliveryOptions = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TlsPolicy.foreach(__v => __obj.update("TlsPolicy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TlsPolicy.foreach(__v => __obj.updateDynamic("TlsPolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeliveryOptions]
     }
   }
@@ -1505,7 +1505,7 @@ package ses {
   object DescribeActiveReceiptRuleSetRequest {
     def apply(
         ): DescribeActiveReceiptRuleSetRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DescribeActiveReceiptRuleSetRequest]
     }
@@ -1525,9 +1525,9 @@ package ses {
         Metadata: js.UndefOr[ReceiptRuleSetMetadata] = js.undefined,
         Rules: js.UndefOr[ReceiptRulesList] = js.undefined
     ): DescribeActiveReceiptRuleSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Metadata.foreach(__v => __obj.update("Metadata", __v.asInstanceOf[js.Any]))
-      Rules.foreach(__v => __obj.update("Rules", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeActiveReceiptRuleSetResponse]
     }
   }
@@ -1546,12 +1546,12 @@ package ses {
         ConfigurationSetName: ConfigurationSetName,
         ConfigurationSetAttributeNames: js.UndefOr[ConfigurationSetAttributeList] = js.undefined
     ): DescribeConfigurationSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
       )
 
       ConfigurationSetAttributeNames.foreach(
-        __v => __obj.update("ConfigurationSetAttributeNames", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ConfigurationSetAttributeNames")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeConfigurationSetRequest]
     }
@@ -1577,12 +1577,12 @@ package ses {
         ReputationOptions: js.UndefOr[ReputationOptions] = js.undefined,
         TrackingOptions: js.UndefOr[TrackingOptions] = js.undefined
     ): DescribeConfigurationSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConfigurationSet.foreach(__v => __obj.update("ConfigurationSet", __v.asInstanceOf[js.Any]))
-      DeliveryOptions.foreach(__v => __obj.update("DeliveryOptions", __v.asInstanceOf[js.Any]))
-      EventDestinations.foreach(__v => __obj.update("EventDestinations", __v.asInstanceOf[js.Any]))
-      ReputationOptions.foreach(__v => __obj.update("ReputationOptions", __v.asInstanceOf[js.Any]))
-      TrackingOptions.foreach(__v => __obj.update("TrackingOptions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConfigurationSet.foreach(__v => __obj.updateDynamic("ConfigurationSet")(__v.asInstanceOf[js.Any]))
+      DeliveryOptions.foreach(__v => __obj.updateDynamic("DeliveryOptions")(__v.asInstanceOf[js.Any]))
+      EventDestinations.foreach(__v => __obj.updateDynamic("EventDestinations")(__v.asInstanceOf[js.Any]))
+      ReputationOptions.foreach(__v => __obj.updateDynamic("ReputationOptions")(__v.asInstanceOf[js.Any]))
+      TrackingOptions.foreach(__v => __obj.updateDynamic("TrackingOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeConfigurationSetResponse]
     }
   }
@@ -1601,7 +1601,7 @@ package ses {
         RuleName: ReceiptRuleName,
         RuleSetName: ReceiptRuleSetName
     ): DescribeReceiptRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RuleName"    -> RuleName.asInstanceOf[js.Any],
         "RuleSetName" -> RuleSetName.asInstanceOf[js.Any]
       )
@@ -1622,8 +1622,8 @@ package ses {
     def apply(
         Rule: js.UndefOr[ReceiptRule] = js.undefined
     ): DescribeReceiptRuleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Rule.foreach(__v => __obj.update("Rule", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Rule.foreach(__v => __obj.updateDynamic("Rule")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeReceiptRuleResponse]
     }
   }
@@ -1640,7 +1640,7 @@ package ses {
     def apply(
         RuleSetName: ReceiptRuleSetName
     ): DescribeReceiptRuleSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RuleSetName" -> RuleSetName.asInstanceOf[js.Any]
       )
 
@@ -1662,9 +1662,9 @@ package ses {
         Metadata: js.UndefOr[ReceiptRuleSetMetadata] = js.undefined,
         Rules: js.UndefOr[ReceiptRulesList] = js.undefined
     ): DescribeReceiptRuleSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Metadata.foreach(__v => __obj.update("Metadata", __v.asInstanceOf[js.Any]))
-      Rules.foreach(__v => __obj.update("Rules", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeReceiptRuleSetResponse]
     }
   }
@@ -1687,10 +1687,10 @@ package ses {
         CcAddresses: js.UndefOr[AddressList] = js.undefined,
         ToAddresses: js.UndefOr[AddressList] = js.undefined
     ): Destination = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BccAddresses.foreach(__v => __obj.update("BccAddresses", __v.asInstanceOf[js.Any]))
-      CcAddresses.foreach(__v => __obj.update("CcAddresses", __v.asInstanceOf[js.Any]))
-      ToAddresses.foreach(__v => __obj.update("ToAddresses", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BccAddresses.foreach(__v => __obj.updateDynamic("BccAddresses")(__v.asInstanceOf[js.Any]))
+      CcAddresses.foreach(__v => __obj.updateDynamic("CcAddresses")(__v.asInstanceOf[js.Any]))
+      ToAddresses.foreach(__v => __obj.updateDynamic("ToAddresses")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Destination]
     }
   }
@@ -1738,15 +1738,17 @@ package ses {
         KinesisFirehoseDestination: js.UndefOr[KinesisFirehoseDestination] = js.undefined,
         SNSDestination: js.UndefOr[SNSDestination] = js.undefined
     ): EventDestination = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MatchingEventTypes" -> MatchingEventTypes.asInstanceOf[js.Any],
         "Name"               -> Name.asInstanceOf[js.Any]
       )
 
-      CloudWatchDestination.foreach(__v => __obj.update("CloudWatchDestination", __v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      KinesisFirehoseDestination.foreach(__v => __obj.update("KinesisFirehoseDestination", __v.asInstanceOf[js.Any]))
-      SNSDestination.foreach(__v => __obj.update("SNSDestination", __v.asInstanceOf[js.Any]))
+      CloudWatchDestination.foreach(__v => __obj.updateDynamic("CloudWatchDestination")(__v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      KinesisFirehoseDestination.foreach(
+        __v => __obj.updateDynamic("KinesisFirehoseDestination")(__v.asInstanceOf[js.Any])
+      )
+      SNSDestination.foreach(__v => __obj.updateDynamic("SNSDestination")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventDestination]
     }
   }
@@ -1779,7 +1781,7 @@ package ses {
         Name: ExtensionFieldName,
         Value: ExtensionFieldValue
     ): ExtensionField = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"  -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
@@ -1800,8 +1802,8 @@ package ses {
     def apply(
         Enabled: js.UndefOr[Enabled] = js.undefined
     ): GetAccountSendingEnabledResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAccountSendingEnabledResponse]
     }
   }
@@ -1818,7 +1820,7 @@ package ses {
     def apply(
         TemplateName: TemplateName
     ): GetCustomVerificationEmailTemplateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TemplateName" -> TemplateName.asInstanceOf[js.Any]
       )
 
@@ -1848,13 +1850,13 @@ package ses {
         TemplateName: js.UndefOr[TemplateName] = js.undefined,
         TemplateSubject: js.UndefOr[Subject] = js.undefined
     ): GetCustomVerificationEmailTemplateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FailureRedirectionURL.foreach(__v => __obj.update("FailureRedirectionURL", __v.asInstanceOf[js.Any]))
-      FromEmailAddress.foreach(__v => __obj.update("FromEmailAddress", __v.asInstanceOf[js.Any]))
-      SuccessRedirectionURL.foreach(__v => __obj.update("SuccessRedirectionURL", __v.asInstanceOf[js.Any]))
-      TemplateContent.foreach(__v => __obj.update("TemplateContent", __v.asInstanceOf[js.Any]))
-      TemplateName.foreach(__v => __obj.update("TemplateName", __v.asInstanceOf[js.Any]))
-      TemplateSubject.foreach(__v => __obj.update("TemplateSubject", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FailureRedirectionURL.foreach(__v => __obj.updateDynamic("FailureRedirectionURL")(__v.asInstanceOf[js.Any]))
+      FromEmailAddress.foreach(__v => __obj.updateDynamic("FromEmailAddress")(__v.asInstanceOf[js.Any]))
+      SuccessRedirectionURL.foreach(__v => __obj.updateDynamic("SuccessRedirectionURL")(__v.asInstanceOf[js.Any]))
+      TemplateContent.foreach(__v => __obj.updateDynamic("TemplateContent")(__v.asInstanceOf[js.Any]))
+      TemplateName.foreach(__v => __obj.updateDynamic("TemplateName")(__v.asInstanceOf[js.Any]))
+      TemplateSubject.foreach(__v => __obj.updateDynamic("TemplateSubject")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCustomVerificationEmailTemplateResponse]
     }
   }
@@ -1871,7 +1873,7 @@ package ses {
     def apply(
         Identities: IdentityList
     ): GetIdentityDkimAttributesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Identities" -> Identities.asInstanceOf[js.Any]
       )
 
@@ -1891,7 +1893,7 @@ package ses {
     def apply(
         DkimAttributes: DkimAttributes
     ): GetIdentityDkimAttributesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DkimAttributes" -> DkimAttributes.asInstanceOf[js.Any]
       )
 
@@ -1911,7 +1913,7 @@ package ses {
     def apply(
         Identities: IdentityList
     ): GetIdentityMailFromDomainAttributesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Identities" -> Identities.asInstanceOf[js.Any]
       )
 
@@ -1931,7 +1933,7 @@ package ses {
     def apply(
         MailFromDomainAttributes: MailFromDomainAttributes
     ): GetIdentityMailFromDomainAttributesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MailFromDomainAttributes" -> MailFromDomainAttributes.asInstanceOf[js.Any]
       )
 
@@ -1951,7 +1953,7 @@ package ses {
     def apply(
         Identities: IdentityList
     ): GetIdentityNotificationAttributesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Identities" -> Identities.asInstanceOf[js.Any]
       )
 
@@ -1971,7 +1973,7 @@ package ses {
     def apply(
         NotificationAttributes: NotificationAttributes
     ): GetIdentityNotificationAttributesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "NotificationAttributes" -> NotificationAttributes.asInstanceOf[js.Any]
       )
 
@@ -1993,7 +1995,7 @@ package ses {
         Identity: Identity,
         PolicyNames: PolicyNameList
     ): GetIdentityPoliciesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Identity"    -> Identity.asInstanceOf[js.Any],
         "PolicyNames" -> PolicyNames.asInstanceOf[js.Any]
       )
@@ -2014,7 +2016,7 @@ package ses {
     def apply(
         Policies: PolicyMap
     ): GetIdentityPoliciesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Policies" -> Policies.asInstanceOf[js.Any]
       )
 
@@ -2034,7 +2036,7 @@ package ses {
     def apply(
         Identities: IdentityList
     ): GetIdentityVerificationAttributesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Identities" -> Identities.asInstanceOf[js.Any]
       )
 
@@ -2054,7 +2056,7 @@ package ses {
     def apply(
         VerificationAttributes: VerificationAttributes
     ): GetIdentityVerificationAttributesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VerificationAttributes" -> VerificationAttributes.asInstanceOf[js.Any]
       )
 
@@ -2078,10 +2080,10 @@ package ses {
         MaxSendRate: js.UndefOr[MaxSendRate] = js.undefined,
         SentLast24Hours: js.UndefOr[SentLast24Hours] = js.undefined
     ): GetSendQuotaResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Max24HourSend.foreach(__v => __obj.update("Max24HourSend", __v.asInstanceOf[js.Any]))
-      MaxSendRate.foreach(__v => __obj.update("MaxSendRate", __v.asInstanceOf[js.Any]))
-      SentLast24Hours.foreach(__v => __obj.update("SentLast24Hours", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Max24HourSend.foreach(__v => __obj.updateDynamic("Max24HourSend")(__v.asInstanceOf[js.Any]))
+      MaxSendRate.foreach(__v => __obj.updateDynamic("MaxSendRate")(__v.asInstanceOf[js.Any]))
+      SentLast24Hours.foreach(__v => __obj.updateDynamic("SentLast24Hours")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSendQuotaResponse]
     }
   }
@@ -2098,8 +2100,8 @@ package ses {
     def apply(
         SendDataPoints: js.UndefOr[SendDataPointList] = js.undefined
     ): GetSendStatisticsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SendDataPoints.foreach(__v => __obj.update("SendDataPoints", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SendDataPoints.foreach(__v => __obj.updateDynamic("SendDataPoints")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSendStatisticsResponse]
     }
   }
@@ -2113,7 +2115,7 @@ package ses {
     def apply(
         TemplateName: TemplateName
     ): GetTemplateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TemplateName" -> TemplateName.asInstanceOf[js.Any]
       )
 
@@ -2130,8 +2132,8 @@ package ses {
     def apply(
         Template: js.UndefOr[Template] = js.undefined
     ): GetTemplateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Template.foreach(__v => __obj.update("Template", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Template.foreach(__v => __obj.updateDynamic("Template")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTemplateResponse]
     }
   }
@@ -2152,12 +2154,12 @@ package ses {
         DkimVerificationStatus: VerificationStatus,
         DkimTokens: js.UndefOr[VerificationTokenList] = js.undefined
     ): IdentityDkimAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DkimEnabled"            -> DkimEnabled.asInstanceOf[js.Any],
         "DkimVerificationStatus" -> DkimVerificationStatus.asInstanceOf[js.Any]
       )
 
-      DkimTokens.foreach(__v => __obj.update("DkimTokens", __v.asInstanceOf[js.Any]))
+      DkimTokens.foreach(__v => __obj.updateDynamic("DkimTokens")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IdentityDkimAttributes]
     }
   }
@@ -2178,7 +2180,7 @@ package ses {
         MailFromDomain: MailFromDomainName,
         MailFromDomainStatus: CustomMailFromStatus
     ): IdentityMailFromDomainAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BehaviorOnMXFailure"  -> BehaviorOnMXFailure.asInstanceOf[js.Any],
         "MailFromDomain"       -> MailFromDomain.asInstanceOf[js.Any],
         "MailFromDomainStatus" -> MailFromDomainStatus.asInstanceOf[js.Any]
@@ -2212,7 +2214,7 @@ package ses {
         HeadersInComplaintNotificationsEnabled: js.UndefOr[Enabled] = js.undefined,
         HeadersInDeliveryNotificationsEnabled: js.UndefOr[Enabled] = js.undefined
     ): IdentityNotificationAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BounceTopic"       -> BounceTopic.asInstanceOf[js.Any],
         "ComplaintTopic"    -> ComplaintTopic.asInstanceOf[js.Any],
         "DeliveryTopic"     -> DeliveryTopic.asInstanceOf[js.Any],
@@ -2220,13 +2222,13 @@ package ses {
       )
 
       HeadersInBounceNotificationsEnabled.foreach(
-        __v => __obj.update("HeadersInBounceNotificationsEnabled", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("HeadersInBounceNotificationsEnabled")(__v.asInstanceOf[js.Any])
       )
       HeadersInComplaintNotificationsEnabled.foreach(
-        __v => __obj.update("HeadersInComplaintNotificationsEnabled", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("HeadersInComplaintNotificationsEnabled")(__v.asInstanceOf[js.Any])
       )
       HeadersInDeliveryNotificationsEnabled.foreach(
-        __v => __obj.update("HeadersInDeliveryNotificationsEnabled", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("HeadersInDeliveryNotificationsEnabled")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[IdentityNotificationAttributes]
     }
@@ -2253,11 +2255,11 @@ package ses {
         VerificationStatus: VerificationStatus,
         VerificationToken: js.UndefOr[VerificationToken] = js.undefined
     ): IdentityVerificationAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VerificationStatus" -> VerificationStatus.asInstanceOf[js.Any]
       )
 
-      VerificationToken.foreach(__v => __obj.update("VerificationToken", __v.asInstanceOf[js.Any]))
+      VerificationToken.foreach(__v => __obj.updateDynamic("VerificationToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IdentityVerificationAttributes]
     }
   }
@@ -2284,7 +2286,7 @@ package ses {
         DeliveryStreamARN: AmazonResourceName,
         IAMRoleARN: AmazonResourceName
     ): KinesisFirehoseDestination = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DeliveryStreamARN" -> DeliveryStreamARN.asInstanceOf[js.Any],
         "IAMRoleARN"        -> IAMRoleARN.asInstanceOf[js.Any]
       )
@@ -2311,12 +2313,12 @@ package ses {
         InvocationType: js.UndefOr[InvocationType] = js.undefined,
         TopicArn: js.UndefOr[AmazonResourceName] = js.undefined
     ): LambdaAction = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FunctionArn" -> FunctionArn.asInstanceOf[js.Any]
       )
 
-      InvocationType.foreach(__v => __obj.update("InvocationType", __v.asInstanceOf[js.Any]))
-      TopicArn.foreach(__v => __obj.update("TopicArn", __v.asInstanceOf[js.Any]))
+      InvocationType.foreach(__v => __obj.updateDynamic("InvocationType")(__v.asInstanceOf[js.Any]))
+      TopicArn.foreach(__v => __obj.updateDynamic("TopicArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LambdaAction]
     }
   }
@@ -2335,9 +2337,9 @@ package ses {
         MaxItems: js.UndefOr[MaxItems] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListConfigurationSetsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListConfigurationSetsRequest]
     }
   }
@@ -2356,9 +2358,9 @@ package ses {
         ConfigurationSets: js.UndefOr[ConfigurationSets] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListConfigurationSetsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConfigurationSets.foreach(__v => __obj.update("ConfigurationSets", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConfigurationSets.foreach(__v => __obj.updateDynamic("ConfigurationSets")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListConfigurationSetsResponse]
     }
   }
@@ -2378,9 +2380,9 @@ package ses {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListCustomVerificationEmailTemplatesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCustomVerificationEmailTemplatesRequest]
     }
   }
@@ -2399,11 +2401,11 @@ package ses {
         CustomVerificationEmailTemplates: js.UndefOr[CustomVerificationEmailTemplates] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListCustomVerificationEmailTemplatesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       CustomVerificationEmailTemplates.foreach(
-        __v => __obj.update("CustomVerificationEmailTemplates", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("CustomVerificationEmailTemplates")(__v.asInstanceOf[js.Any])
       )
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCustomVerificationEmailTemplatesResponse]
     }
   }
@@ -2424,10 +2426,10 @@ package ses {
         MaxItems: js.UndefOr[MaxItems] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListIdentitiesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IdentityType.foreach(__v => __obj.update("IdentityType", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IdentityType.foreach(__v => __obj.updateDynamic("IdentityType")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListIdentitiesRequest]
     }
   }
@@ -2446,11 +2448,11 @@ package ses {
         Identities: IdentityList,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListIdentitiesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Identities" -> Identities.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListIdentitiesResponse]
     }
   }
@@ -2467,7 +2469,7 @@ package ses {
     def apply(
         Identity: Identity
     ): ListIdentityPoliciesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Identity" -> Identity.asInstanceOf[js.Any]
       )
 
@@ -2487,7 +2489,7 @@ package ses {
     def apply(
         PolicyNames: PolicyNameList
     ): ListIdentityPoliciesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyNames" -> PolicyNames.asInstanceOf[js.Any]
       )
 
@@ -2504,7 +2506,7 @@ package ses {
   object ListReceiptFiltersRequest {
     def apply(
         ): ListReceiptFiltersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ListReceiptFiltersRequest]
     }
@@ -2522,8 +2524,8 @@ package ses {
     def apply(
         Filters: js.UndefOr[ReceiptFilterList] = js.undefined
     ): ListReceiptFiltersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListReceiptFiltersResponse]
     }
   }
@@ -2540,8 +2542,8 @@ package ses {
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListReceiptRuleSetsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListReceiptRuleSetsRequest]
     }
   }
@@ -2560,9 +2562,9 @@ package ses {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         RuleSets: js.UndefOr[ReceiptRuleSetsLists] = js.undefined
     ): ListReceiptRuleSetsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      RuleSets.foreach(__v => __obj.update("RuleSets", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RuleSets.foreach(__v => __obj.updateDynamic("RuleSets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListReceiptRuleSetsResponse]
     }
   }
@@ -2578,9 +2580,9 @@ package ses {
         MaxItems: js.UndefOr[MaxItems] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListTemplatesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTemplatesRequest]
     }
   }
@@ -2596,9 +2598,9 @@ package ses {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         TemplatesMetadata: js.UndefOr[TemplateMetadataList] = js.undefined
     ): ListTemplatesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      TemplatesMetadata.foreach(__v => __obj.update("TemplatesMetadata", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TemplatesMetadata.foreach(__v => __obj.updateDynamic("TemplatesMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTemplatesResponse]
     }
   }
@@ -2615,8 +2617,8 @@ package ses {
     def apply(
         VerifiedEmailAddresses: js.UndefOr[AddressList] = js.undefined
     ): ListVerifiedEmailAddressesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      VerifiedEmailAddresses.foreach(__v => __obj.update("VerifiedEmailAddresses", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      VerifiedEmailAddresses.foreach(__v => __obj.updateDynamic("VerifiedEmailAddresses")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListVerifiedEmailAddressesResponse]
     }
   }
@@ -2635,7 +2637,7 @@ package ses {
         Body: Body,
         Subject: Content
     ): Message = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Body"    -> Body.asInstanceOf[js.Any],
         "Subject" -> Subject.asInstanceOf[js.Any]
       )
@@ -2661,12 +2663,12 @@ package ses {
         ArrivalDate: js.UndefOr[ArrivalDate] = js.undefined,
         ExtensionFields: js.UndefOr[ExtensionFieldList] = js.undefined
     ): MessageDsn = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ReportingMta" -> ReportingMta.asInstanceOf[js.Any]
       )
 
-      ArrivalDate.foreach(__v => __obj.update("ArrivalDate", __v.asInstanceOf[js.Any]))
-      ExtensionFields.foreach(__v => __obj.update("ExtensionFields", __v.asInstanceOf[js.Any]))
+      ArrivalDate.foreach(__v => __obj.updateDynamic("ArrivalDate")(__v.asInstanceOf[js.Any]))
+      ExtensionFields.foreach(__v => __obj.updateDynamic("ExtensionFields")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MessageDsn]
     }
   }
@@ -2686,7 +2688,7 @@ package ses {
         Name: MessageTagName,
         Value: MessageTagValue
     ): MessageTag = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"  -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
@@ -2717,11 +2719,11 @@ package ses {
         ConfigurationSetName: ConfigurationSetName,
         DeliveryOptions: js.UndefOr[DeliveryOptions] = js.undefined
     ): PutConfigurationSetDeliveryOptionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
       )
 
-      DeliveryOptions.foreach(__v => __obj.update("DeliveryOptions", __v.asInstanceOf[js.Any]))
+      DeliveryOptions.foreach(__v => __obj.updateDynamic("DeliveryOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutConfigurationSetDeliveryOptionsRequest]
     }
   }
@@ -2735,7 +2737,7 @@ package ses {
   object PutConfigurationSetDeliveryOptionsResponse {
     def apply(
         ): PutConfigurationSetDeliveryOptionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutConfigurationSetDeliveryOptionsResponse]
     }
@@ -2757,7 +2759,7 @@ package ses {
         Policy: Policy,
         PolicyName: PolicyName
     ): PutIdentityPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Identity"   -> Identity.asInstanceOf[js.Any],
         "Policy"     -> Policy.asInstanceOf[js.Any],
         "PolicyName" -> PolicyName.asInstanceOf[js.Any]
@@ -2776,7 +2778,7 @@ package ses {
   object PutIdentityPolicyResponse {
     def apply(
         ): PutIdentityPolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutIdentityPolicyResponse]
     }
@@ -2794,7 +2796,7 @@ package ses {
     def apply(
         Data: RawMessageData
     ): RawMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Data" -> Data.asInstanceOf[js.Any]
       )
 
@@ -2827,14 +2829,14 @@ package ses {
         StopAction: js.UndefOr[StopAction] = js.undefined,
         WorkmailAction: js.UndefOr[WorkmailAction] = js.undefined
     ): ReceiptAction = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AddHeaderAction.foreach(__v => __obj.update("AddHeaderAction", __v.asInstanceOf[js.Any]))
-      BounceAction.foreach(__v => __obj.update("BounceAction", __v.asInstanceOf[js.Any]))
-      LambdaAction.foreach(__v => __obj.update("LambdaAction", __v.asInstanceOf[js.Any]))
-      S3Action.foreach(__v => __obj.update("S3Action", __v.asInstanceOf[js.Any]))
-      SNSAction.foreach(__v => __obj.update("SNSAction", __v.asInstanceOf[js.Any]))
-      StopAction.foreach(__v => __obj.update("StopAction", __v.asInstanceOf[js.Any]))
-      WorkmailAction.foreach(__v => __obj.update("WorkmailAction", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AddHeaderAction.foreach(__v => __obj.updateDynamic("AddHeaderAction")(__v.asInstanceOf[js.Any]))
+      BounceAction.foreach(__v => __obj.updateDynamic("BounceAction")(__v.asInstanceOf[js.Any]))
+      LambdaAction.foreach(__v => __obj.updateDynamic("LambdaAction")(__v.asInstanceOf[js.Any]))
+      S3Action.foreach(__v => __obj.updateDynamic("S3Action")(__v.asInstanceOf[js.Any]))
+      SNSAction.foreach(__v => __obj.updateDynamic("SNSAction")(__v.asInstanceOf[js.Any]))
+      StopAction.foreach(__v => __obj.updateDynamic("StopAction")(__v.asInstanceOf[js.Any]))
+      WorkmailAction.foreach(__v => __obj.updateDynamic("WorkmailAction")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReceiptAction]
     }
   }
@@ -2854,7 +2856,7 @@ package ses {
         IpFilter: ReceiptIpFilter,
         Name: ReceiptFilterName
     ): ReceiptFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IpFilter" -> IpFilter.asInstanceOf[js.Any],
         "Name"     -> Name.asInstanceOf[js.Any]
       )
@@ -2885,7 +2887,7 @@ package ses {
         Cidr: Cidr,
         Policy: ReceiptFilterPolicy
     ): ReceiptIpFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Cidr"   -> Cidr.asInstanceOf[js.Any],
         "Policy" -> Policy.asInstanceOf[js.Any]
       )
@@ -2918,15 +2920,15 @@ package ses {
         ScanEnabled: js.UndefOr[Enabled] = js.undefined,
         TlsPolicy: js.UndefOr[TlsPolicy] = js.undefined
     ): ReceiptRule = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      Actions.foreach(__v => __obj.update("Actions", __v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      Recipients.foreach(__v => __obj.update("Recipients", __v.asInstanceOf[js.Any]))
-      ScanEnabled.foreach(__v => __obj.update("ScanEnabled", __v.asInstanceOf[js.Any]))
-      TlsPolicy.foreach(__v => __obj.update("TlsPolicy", __v.asInstanceOf[js.Any]))
+      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      Recipients.foreach(__v => __obj.updateDynamic("Recipients")(__v.asInstanceOf[js.Any]))
+      ScanEnabled.foreach(__v => __obj.updateDynamic("ScanEnabled")(__v.asInstanceOf[js.Any]))
+      TlsPolicy.foreach(__v => __obj.updateDynamic("TlsPolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReceiptRule]
     }
   }
@@ -2947,9 +2949,9 @@ package ses {
         CreatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
         Name: js.UndefOr[ReceiptRuleSetName] = js.undefined
     ): ReceiptRuleSetMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedTimestamp.foreach(__v => __obj.update("CreatedTimestamp", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReceiptRuleSetMetadata]
     }
   }
@@ -2979,16 +2981,16 @@ package ses {
         LastAttemptDate: js.UndefOr[LastAttemptDate] = js.undefined,
         RemoteMta: js.UndefOr[RemoteMta] = js.undefined
     ): RecipientDsnFields = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Action" -> Action.asInstanceOf[js.Any],
         "Status" -> Status.asInstanceOf[js.Any]
       )
 
-      DiagnosticCode.foreach(__v => __obj.update("DiagnosticCode", __v.asInstanceOf[js.Any]))
-      ExtensionFields.foreach(__v => __obj.update("ExtensionFields", __v.asInstanceOf[js.Any]))
-      FinalRecipient.foreach(__v => __obj.update("FinalRecipient", __v.asInstanceOf[js.Any]))
-      LastAttemptDate.foreach(__v => __obj.update("LastAttemptDate", __v.asInstanceOf[js.Any]))
-      RemoteMta.foreach(__v => __obj.update("RemoteMta", __v.asInstanceOf[js.Any]))
+      DiagnosticCode.foreach(__v => __obj.updateDynamic("DiagnosticCode")(__v.asInstanceOf[js.Any]))
+      ExtensionFields.foreach(__v => __obj.updateDynamic("ExtensionFields")(__v.asInstanceOf[js.Any]))
+      FinalRecipient.foreach(__v => __obj.updateDynamic("FinalRecipient")(__v.asInstanceOf[js.Any]))
+      LastAttemptDate.foreach(__v => __obj.updateDynamic("LastAttemptDate")(__v.asInstanceOf[js.Any]))
+      RemoteMta.foreach(__v => __obj.updateDynamic("RemoteMta")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecipientDsnFields]
     }
   }
@@ -3007,7 +3009,7 @@ package ses {
         RuleNames: ReceiptRuleNamesList,
         RuleSetName: ReceiptRuleSetName
     ): ReorderReceiptRuleSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RuleNames"   -> RuleNames.asInstanceOf[js.Any],
         "RuleSetName" -> RuleSetName.asInstanceOf[js.Any]
       )
@@ -3025,7 +3027,7 @@ package ses {
   object ReorderReceiptRuleSetResponse {
     def apply(
         ): ReorderReceiptRuleSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ReorderReceiptRuleSetResponse]
     }
@@ -3047,10 +3049,10 @@ package ses {
         ReputationMetricsEnabled: js.UndefOr[Enabled] = js.undefined,
         SendingEnabled: js.UndefOr[Enabled] = js.undefined
     ): ReputationOptions = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LastFreshStart.foreach(__v => __obj.update("LastFreshStart", __v.asInstanceOf[js.Any]))
-      ReputationMetricsEnabled.foreach(__v => __obj.update("ReputationMetricsEnabled", __v.asInstanceOf[js.Any]))
-      SendingEnabled.foreach(__v => __obj.update("SendingEnabled", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LastFreshStart.foreach(__v => __obj.updateDynamic("LastFreshStart")(__v.asInstanceOf[js.Any]))
+      ReputationMetricsEnabled.foreach(__v => __obj.updateDynamic("ReputationMetricsEnabled")(__v.asInstanceOf[js.Any]))
+      SendingEnabled.foreach(__v => __obj.updateDynamic("SendingEnabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReputationOptions]
     }
   }
@@ -3077,13 +3079,13 @@ package ses {
         ObjectKeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
         TopicArn: js.UndefOr[AmazonResourceName] = js.undefined
     ): S3Action = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BucketName" -> BucketName.asInstanceOf[js.Any]
       )
 
-      KmsKeyArn.foreach(__v => __obj.update("KmsKeyArn", __v.asInstanceOf[js.Any]))
-      ObjectKeyPrefix.foreach(__v => __obj.update("ObjectKeyPrefix", __v.asInstanceOf[js.Any]))
-      TopicArn.foreach(__v => __obj.update("TopicArn", __v.asInstanceOf[js.Any]))
+      KmsKeyArn.foreach(__v => __obj.updateDynamic("KmsKeyArn")(__v.asInstanceOf[js.Any]))
+      ObjectKeyPrefix.foreach(__v => __obj.updateDynamic("ObjectKeyPrefix")(__v.asInstanceOf[js.Any]))
+      TopicArn.foreach(__v => __obj.updateDynamic("TopicArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Action]
     }
   }
@@ -3105,11 +3107,11 @@ package ses {
         TopicArn: AmazonResourceName,
         Encoding: js.UndefOr[SNSActionEncoding] = js.undefined
     ): SNSAction = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TopicArn" -> TopicArn.asInstanceOf[js.Any]
       )
 
-      Encoding.foreach(__v => __obj.update("Encoding", __v.asInstanceOf[js.Any]))
+      Encoding.foreach(__v => __obj.updateDynamic("Encoding")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SNSAction]
     }
   }
@@ -3134,7 +3136,7 @@ package ses {
     def apply(
         TopicARN: AmazonResourceName
     ): SNSDestination = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TopicARN" -> TopicARN.asInstanceOf[js.Any]
       )
 
@@ -3164,15 +3166,15 @@ package ses {
         Explanation: js.UndefOr[Explanation] = js.undefined,
         MessageDsn: js.UndefOr[MessageDsn] = js.undefined
     ): SendBounceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BounceSender"             -> BounceSender.asInstanceOf[js.Any],
         "BouncedRecipientInfoList" -> BouncedRecipientInfoList.asInstanceOf[js.Any],
         "OriginalMessageId"        -> OriginalMessageId.asInstanceOf[js.Any]
       )
 
-      BounceSenderArn.foreach(__v => __obj.update("BounceSenderArn", __v.asInstanceOf[js.Any]))
-      Explanation.foreach(__v => __obj.update("Explanation", __v.asInstanceOf[js.Any]))
-      MessageDsn.foreach(__v => __obj.update("MessageDsn", __v.asInstanceOf[js.Any]))
+      BounceSenderArn.foreach(__v => __obj.updateDynamic("BounceSenderArn")(__v.asInstanceOf[js.Any]))
+      Explanation.foreach(__v => __obj.updateDynamic("Explanation")(__v.asInstanceOf[js.Any]))
+      MessageDsn.foreach(__v => __obj.updateDynamic("MessageDsn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendBounceRequest]
     }
   }
@@ -3189,8 +3191,8 @@ package ses {
     def apply(
         MessageId: js.UndefOr[MessageId] = js.undefined
     ): SendBounceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MessageId.foreach(__v => __obj.update("MessageId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MessageId.foreach(__v => __obj.updateDynamic("MessageId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendBounceResponse]
     }
   }
@@ -3227,20 +3229,20 @@ package ses {
         SourceArn: js.UndefOr[AmazonResourceName] = js.undefined,
         TemplateArn: js.UndefOr[AmazonResourceName] = js.undefined
     ): SendBulkTemplatedEmailRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Destinations" -> Destinations.asInstanceOf[js.Any],
         "Source"       -> Source.asInstanceOf[js.Any],
         "Template"     -> Template.asInstanceOf[js.Any]
       )
 
-      ConfigurationSetName.foreach(__v => __obj.update("ConfigurationSetName", __v.asInstanceOf[js.Any]))
-      DefaultTags.foreach(__v => __obj.update("DefaultTags", __v.asInstanceOf[js.Any]))
-      DefaultTemplateData.foreach(__v => __obj.update("DefaultTemplateData", __v.asInstanceOf[js.Any]))
-      ReplyToAddresses.foreach(__v => __obj.update("ReplyToAddresses", __v.asInstanceOf[js.Any]))
-      ReturnPath.foreach(__v => __obj.update("ReturnPath", __v.asInstanceOf[js.Any]))
-      ReturnPathArn.foreach(__v => __obj.update("ReturnPathArn", __v.asInstanceOf[js.Any]))
-      SourceArn.foreach(__v => __obj.update("SourceArn", __v.asInstanceOf[js.Any]))
-      TemplateArn.foreach(__v => __obj.update("TemplateArn", __v.asInstanceOf[js.Any]))
+      ConfigurationSetName.foreach(__v => __obj.updateDynamic("ConfigurationSetName")(__v.asInstanceOf[js.Any]))
+      DefaultTags.foreach(__v => __obj.updateDynamic("DefaultTags")(__v.asInstanceOf[js.Any]))
+      DefaultTemplateData.foreach(__v => __obj.updateDynamic("DefaultTemplateData")(__v.asInstanceOf[js.Any]))
+      ReplyToAddresses.foreach(__v => __obj.updateDynamic("ReplyToAddresses")(__v.asInstanceOf[js.Any]))
+      ReturnPath.foreach(__v => __obj.updateDynamic("ReturnPath")(__v.asInstanceOf[js.Any]))
+      ReturnPathArn.foreach(__v => __obj.updateDynamic("ReturnPathArn")(__v.asInstanceOf[js.Any]))
+      SourceArn.foreach(__v => __obj.updateDynamic("SourceArn")(__v.asInstanceOf[js.Any]))
+      TemplateArn.foreach(__v => __obj.updateDynamic("TemplateArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendBulkTemplatedEmailRequest]
     }
   }
@@ -3254,7 +3256,7 @@ package ses {
     def apply(
         Status: BulkEmailDestinationStatusList
     ): SendBulkTemplatedEmailResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Status" -> Status.asInstanceOf[js.Any]
       )
 
@@ -3278,12 +3280,12 @@ package ses {
         TemplateName: TemplateName,
         ConfigurationSetName: js.UndefOr[ConfigurationSetName] = js.undefined
     ): SendCustomVerificationEmailRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EmailAddress" -> EmailAddress.asInstanceOf[js.Any],
         "TemplateName" -> TemplateName.asInstanceOf[js.Any]
       )
 
-      ConfigurationSetName.foreach(__v => __obj.update("ConfigurationSetName", __v.asInstanceOf[js.Any]))
+      ConfigurationSetName.foreach(__v => __obj.updateDynamic("ConfigurationSetName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendCustomVerificationEmailRequest]
     }
   }
@@ -3300,8 +3302,8 @@ package ses {
     def apply(
         MessageId: js.UndefOr[MessageId] = js.undefined
     ): SendCustomVerificationEmailResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MessageId.foreach(__v => __obj.update("MessageId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MessageId.foreach(__v => __obj.updateDynamic("MessageId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendCustomVerificationEmailResponse]
     }
   }
@@ -3326,12 +3328,12 @@ package ses {
         Rejects: js.UndefOr[Counter] = js.undefined,
         Timestamp: js.UndefOr[Timestamp] = js.undefined
     ): SendDataPoint = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Bounces.foreach(__v => __obj.update("Bounces", __v.asInstanceOf[js.Any]))
-      Complaints.foreach(__v => __obj.update("Complaints", __v.asInstanceOf[js.Any]))
-      DeliveryAttempts.foreach(__v => __obj.update("DeliveryAttempts", __v.asInstanceOf[js.Any]))
-      Rejects.foreach(__v => __obj.update("Rejects", __v.asInstanceOf[js.Any]))
-      Timestamp.foreach(__v => __obj.update("Timestamp", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Bounces.foreach(__v => __obj.updateDynamic("Bounces")(__v.asInstanceOf[js.Any]))
+      Complaints.foreach(__v => __obj.updateDynamic("Complaints")(__v.asInstanceOf[js.Any]))
+      DeliveryAttempts.foreach(__v => __obj.updateDynamic("DeliveryAttempts")(__v.asInstanceOf[js.Any]))
+      Rejects.foreach(__v => __obj.updateDynamic("Rejects")(__v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendDataPoint]
     }
   }
@@ -3364,18 +3366,18 @@ package ses {
         SourceArn: js.UndefOr[AmazonResourceName] = js.undefined,
         Tags: js.UndefOr[MessageTagList] = js.undefined
     ): SendEmailRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Destination" -> Destination.asInstanceOf[js.Any],
         "Message"     -> Message.asInstanceOf[js.Any],
         "Source"      -> Source.asInstanceOf[js.Any]
       )
 
-      ConfigurationSetName.foreach(__v => __obj.update("ConfigurationSetName", __v.asInstanceOf[js.Any]))
-      ReplyToAddresses.foreach(__v => __obj.update("ReplyToAddresses", __v.asInstanceOf[js.Any]))
-      ReturnPath.foreach(__v => __obj.update("ReturnPath", __v.asInstanceOf[js.Any]))
-      ReturnPathArn.foreach(__v => __obj.update("ReturnPathArn", __v.asInstanceOf[js.Any]))
-      SourceArn.foreach(__v => __obj.update("SourceArn", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      ConfigurationSetName.foreach(__v => __obj.updateDynamic("ConfigurationSetName")(__v.asInstanceOf[js.Any]))
+      ReplyToAddresses.foreach(__v => __obj.updateDynamic("ReplyToAddresses")(__v.asInstanceOf[js.Any]))
+      ReturnPath.foreach(__v => __obj.updateDynamic("ReturnPath")(__v.asInstanceOf[js.Any]))
+      ReturnPathArn.foreach(__v => __obj.updateDynamic("ReturnPathArn")(__v.asInstanceOf[js.Any]))
+      SourceArn.foreach(__v => __obj.updateDynamic("SourceArn")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendEmailRequest]
     }
   }
@@ -3392,7 +3394,7 @@ package ses {
     def apply(
         MessageId: MessageId
     ): SendEmailResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MessageId" -> MessageId.asInstanceOf[js.Any]
       )
 
@@ -3426,17 +3428,17 @@ package ses {
         SourceArn: js.UndefOr[AmazonResourceName] = js.undefined,
         Tags: js.UndefOr[MessageTagList] = js.undefined
     ): SendRawEmailRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RawMessage" -> RawMessage.asInstanceOf[js.Any]
       )
 
-      ConfigurationSetName.foreach(__v => __obj.update("ConfigurationSetName", __v.asInstanceOf[js.Any]))
-      Destinations.foreach(__v => __obj.update("Destinations", __v.asInstanceOf[js.Any]))
-      FromArn.foreach(__v => __obj.update("FromArn", __v.asInstanceOf[js.Any]))
-      ReturnPathArn.foreach(__v => __obj.update("ReturnPathArn", __v.asInstanceOf[js.Any]))
-      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
-      SourceArn.foreach(__v => __obj.update("SourceArn", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      ConfigurationSetName.foreach(__v => __obj.updateDynamic("ConfigurationSetName")(__v.asInstanceOf[js.Any]))
+      Destinations.foreach(__v => __obj.updateDynamic("Destinations")(__v.asInstanceOf[js.Any]))
+      FromArn.foreach(__v => __obj.updateDynamic("FromArn")(__v.asInstanceOf[js.Any]))
+      ReturnPathArn.foreach(__v => __obj.updateDynamic("ReturnPathArn")(__v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
+      SourceArn.foreach(__v => __obj.updateDynamic("SourceArn")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendRawEmailRequest]
     }
   }
@@ -3453,7 +3455,7 @@ package ses {
     def apply(
         MessageId: MessageId
     ): SendRawEmailResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MessageId" -> MessageId.asInstanceOf[js.Any]
       )
 
@@ -3493,20 +3495,20 @@ package ses {
         Tags: js.UndefOr[MessageTagList] = js.undefined,
         TemplateArn: js.UndefOr[AmazonResourceName] = js.undefined
     ): SendTemplatedEmailRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Destination"  -> Destination.asInstanceOf[js.Any],
         "Source"       -> Source.asInstanceOf[js.Any],
         "Template"     -> Template.asInstanceOf[js.Any],
         "TemplateData" -> TemplateData.asInstanceOf[js.Any]
       )
 
-      ConfigurationSetName.foreach(__v => __obj.update("ConfigurationSetName", __v.asInstanceOf[js.Any]))
-      ReplyToAddresses.foreach(__v => __obj.update("ReplyToAddresses", __v.asInstanceOf[js.Any]))
-      ReturnPath.foreach(__v => __obj.update("ReturnPath", __v.asInstanceOf[js.Any]))
-      ReturnPathArn.foreach(__v => __obj.update("ReturnPathArn", __v.asInstanceOf[js.Any]))
-      SourceArn.foreach(__v => __obj.update("SourceArn", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      TemplateArn.foreach(__v => __obj.update("TemplateArn", __v.asInstanceOf[js.Any]))
+      ConfigurationSetName.foreach(__v => __obj.updateDynamic("ConfigurationSetName")(__v.asInstanceOf[js.Any]))
+      ReplyToAddresses.foreach(__v => __obj.updateDynamic("ReplyToAddresses")(__v.asInstanceOf[js.Any]))
+      ReturnPath.foreach(__v => __obj.updateDynamic("ReturnPath")(__v.asInstanceOf[js.Any]))
+      ReturnPathArn.foreach(__v => __obj.updateDynamic("ReturnPathArn")(__v.asInstanceOf[js.Any]))
+      SourceArn.foreach(__v => __obj.updateDynamic("SourceArn")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TemplateArn.foreach(__v => __obj.updateDynamic("TemplateArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendTemplatedEmailRequest]
     }
   }
@@ -3520,7 +3522,7 @@ package ses {
     def apply(
         MessageId: MessageId
     ): SendTemplatedEmailResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MessageId" -> MessageId.asInstanceOf[js.Any]
       )
 
@@ -3540,8 +3542,8 @@ package ses {
     def apply(
         RuleSetName: js.UndefOr[ReceiptRuleSetName] = js.undefined
     ): SetActiveReceiptRuleSetRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RuleSetName.foreach(__v => __obj.update("RuleSetName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RuleSetName.foreach(__v => __obj.updateDynamic("RuleSetName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetActiveReceiptRuleSetRequest]
     }
   }
@@ -3555,7 +3557,7 @@ package ses {
   object SetActiveReceiptRuleSetResponse {
     def apply(
         ): SetActiveReceiptRuleSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SetActiveReceiptRuleSetResponse]
     }
@@ -3575,7 +3577,7 @@ package ses {
         DkimEnabled: Enabled,
         Identity: Identity
     ): SetIdentityDkimEnabledRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DkimEnabled" -> DkimEnabled.asInstanceOf[js.Any],
         "Identity"    -> Identity.asInstanceOf[js.Any]
       )
@@ -3593,7 +3595,7 @@ package ses {
   object SetIdentityDkimEnabledResponse {
     def apply(
         ): SetIdentityDkimEnabledResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SetIdentityDkimEnabledResponse]
     }
@@ -3613,7 +3615,7 @@ package ses {
         ForwardingEnabled: Enabled,
         Identity: Identity
     ): SetIdentityFeedbackForwardingEnabledRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ForwardingEnabled" -> ForwardingEnabled.asInstanceOf[js.Any],
         "Identity"          -> Identity.asInstanceOf[js.Any]
       )
@@ -3631,7 +3633,7 @@ package ses {
   object SetIdentityFeedbackForwardingEnabledResponse {
     def apply(
         ): SetIdentityFeedbackForwardingEnabledResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SetIdentityFeedbackForwardingEnabledResponse]
     }
@@ -3653,7 +3655,7 @@ package ses {
         Identity: Identity,
         NotificationType: NotificationType
     ): SetIdentityHeadersInNotificationsEnabledRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Enabled"          -> Enabled.asInstanceOf[js.Any],
         "Identity"         -> Identity.asInstanceOf[js.Any],
         "NotificationType" -> NotificationType.asInstanceOf[js.Any]
@@ -3672,7 +3674,7 @@ package ses {
   object SetIdentityHeadersInNotificationsEnabledResponse {
     def apply(
         ): SetIdentityHeadersInNotificationsEnabledResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SetIdentityHeadersInNotificationsEnabledResponse]
     }
@@ -3694,12 +3696,12 @@ package ses {
         BehaviorOnMXFailure: js.UndefOr[BehaviorOnMXFailure] = js.undefined,
         MailFromDomain: js.UndefOr[MailFromDomainName] = js.undefined
     ): SetIdentityMailFromDomainRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Identity" -> Identity.asInstanceOf[js.Any]
       )
 
-      BehaviorOnMXFailure.foreach(__v => __obj.update("BehaviorOnMXFailure", __v.asInstanceOf[js.Any]))
-      MailFromDomain.foreach(__v => __obj.update("MailFromDomain", __v.asInstanceOf[js.Any]))
+      BehaviorOnMXFailure.foreach(__v => __obj.updateDynamic("BehaviorOnMXFailure")(__v.asInstanceOf[js.Any]))
+      MailFromDomain.foreach(__v => __obj.updateDynamic("MailFromDomain")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetIdentityMailFromDomainRequest]
     }
   }
@@ -3713,7 +3715,7 @@ package ses {
   object SetIdentityMailFromDomainResponse {
     def apply(
         ): SetIdentityMailFromDomainResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SetIdentityMailFromDomainResponse]
     }
@@ -3735,12 +3737,12 @@ package ses {
         NotificationType: NotificationType,
         SnsTopic: js.UndefOr[NotificationTopic] = js.undefined
     ): SetIdentityNotificationTopicRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Identity"         -> Identity.asInstanceOf[js.Any],
         "NotificationType" -> NotificationType.asInstanceOf[js.Any]
       )
 
-      SnsTopic.foreach(__v => __obj.update("SnsTopic", __v.asInstanceOf[js.Any]))
+      SnsTopic.foreach(__v => __obj.updateDynamic("SnsTopic")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetIdentityNotificationTopicRequest]
     }
   }
@@ -3754,7 +3756,7 @@ package ses {
   object SetIdentityNotificationTopicResponse {
     def apply(
         ): SetIdentityNotificationTopicResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SetIdentityNotificationTopicResponse]
     }
@@ -3776,12 +3778,12 @@ package ses {
         RuleSetName: ReceiptRuleSetName,
         After: js.UndefOr[ReceiptRuleName] = js.undefined
     ): SetReceiptRulePositionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RuleName"    -> RuleName.asInstanceOf[js.Any],
         "RuleSetName" -> RuleSetName.asInstanceOf[js.Any]
       )
 
-      After.foreach(__v => __obj.update("After", __v.asInstanceOf[js.Any]))
+      After.foreach(__v => __obj.updateDynamic("After")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetReceiptRulePositionRequest]
     }
   }
@@ -3795,7 +3797,7 @@ package ses {
   object SetReceiptRulePositionResponse {
     def apply(
         ): SetReceiptRulePositionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SetReceiptRulePositionResponse]
     }
@@ -3816,11 +3818,11 @@ package ses {
         Scope: StopScope,
         TopicArn: js.UndefOr[AmazonResourceName] = js.undefined
     ): StopAction = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Scope" -> Scope.asInstanceOf[js.Any]
       )
 
-      TopicArn.foreach(__v => __obj.update("TopicArn", __v.asInstanceOf[js.Any]))
+      TopicArn.foreach(__v => __obj.updateDynamic("TopicArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopAction]
     }
   }
@@ -3849,13 +3851,13 @@ package ses {
         SubjectPart: js.UndefOr[SubjectPart] = js.undefined,
         TextPart: js.UndefOr[TextPart] = js.undefined
     ): Template = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TemplateName" -> TemplateName.asInstanceOf[js.Any]
       )
 
-      HtmlPart.foreach(__v => __obj.update("HtmlPart", __v.asInstanceOf[js.Any]))
-      SubjectPart.foreach(__v => __obj.update("SubjectPart", __v.asInstanceOf[js.Any]))
-      TextPart.foreach(__v => __obj.update("TextPart", __v.asInstanceOf[js.Any]))
+      HtmlPart.foreach(__v => __obj.updateDynamic("HtmlPart")(__v.asInstanceOf[js.Any]))
+      SubjectPart.foreach(__v => __obj.updateDynamic("SubjectPart")(__v.asInstanceOf[js.Any]))
+      TextPart.foreach(__v => __obj.updateDynamic("TextPart")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Template]
     }
   }
@@ -3874,9 +3876,9 @@ package ses {
         CreatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
         Name: js.UndefOr[TemplateName] = js.undefined
     ): TemplateMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedTimestamp.foreach(__v => __obj.update("CreatedTimestamp", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TemplateMetadata]
     }
   }
@@ -3892,7 +3894,7 @@ package ses {
         TemplateData: TemplateData,
         TemplateName: TemplateName
     ): TestRenderTemplateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TemplateData" -> TemplateData.asInstanceOf[js.Any],
         "TemplateName" -> TemplateName.asInstanceOf[js.Any]
       )
@@ -3910,8 +3912,8 @@ package ses {
     def apply(
         RenderedTemplate: js.UndefOr[RenderedTemplate] = js.undefined
     ): TestRenderTemplateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RenderedTemplate.foreach(__v => __obj.update("RenderedTemplate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RenderedTemplate.foreach(__v => __obj.updateDynamic("RenderedTemplate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TestRenderTemplateResponse]
     }
   }
@@ -3936,8 +3938,8 @@ package ses {
     def apply(
         CustomRedirectDomain: js.UndefOr[CustomRedirectDomain] = js.undefined
     ): TrackingOptions = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CustomRedirectDomain.foreach(__v => __obj.update("CustomRedirectDomain", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CustomRedirectDomain.foreach(__v => __obj.updateDynamic("CustomRedirectDomain")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TrackingOptions]
     }
   }
@@ -3954,8 +3956,8 @@ package ses {
     def apply(
         Enabled: js.UndefOr[Enabled] = js.undefined
     ): UpdateAccountSendingEnabledRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAccountSendingEnabledRequest]
     }
   }
@@ -3974,7 +3976,7 @@ package ses {
         ConfigurationSetName: ConfigurationSetName,
         EventDestination: EventDestination
     ): UpdateConfigurationSetEventDestinationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
         "EventDestination"     -> EventDestination.asInstanceOf[js.Any]
       )
@@ -3992,7 +3994,7 @@ package ses {
   object UpdateConfigurationSetEventDestinationResponse {
     def apply(
         ): UpdateConfigurationSetEventDestinationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateConfigurationSetEventDestinationResponse]
     }
@@ -4012,7 +4014,7 @@ package ses {
         ConfigurationSetName: ConfigurationSetName,
         Enabled: Enabled
     ): UpdateConfigurationSetReputationMetricsEnabledRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
         "Enabled"              -> Enabled.asInstanceOf[js.Any]
       )
@@ -4035,7 +4037,7 @@ package ses {
         ConfigurationSetName: ConfigurationSetName,
         Enabled: Enabled
     ): UpdateConfigurationSetSendingEnabledRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
         "Enabled"              -> Enabled.asInstanceOf[js.Any]
       )
@@ -4058,7 +4060,7 @@ package ses {
         ConfigurationSetName: ConfigurationSetName,
         TrackingOptions: TrackingOptions
     ): UpdateConfigurationSetTrackingOptionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
         "TrackingOptions"      -> TrackingOptions.asInstanceOf[js.Any]
       )
@@ -4076,7 +4078,7 @@ package ses {
   object UpdateConfigurationSetTrackingOptionsResponse {
     def apply(
         ): UpdateConfigurationSetTrackingOptionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateConfigurationSetTrackingOptionsResponse]
     }
@@ -4104,15 +4106,15 @@ package ses {
         TemplateContent: js.UndefOr[TemplateContent] = js.undefined,
         TemplateSubject: js.UndefOr[Subject] = js.undefined
     ): UpdateCustomVerificationEmailTemplateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TemplateName" -> TemplateName.asInstanceOf[js.Any]
       )
 
-      FailureRedirectionURL.foreach(__v => __obj.update("FailureRedirectionURL", __v.asInstanceOf[js.Any]))
-      FromEmailAddress.foreach(__v => __obj.update("FromEmailAddress", __v.asInstanceOf[js.Any]))
-      SuccessRedirectionURL.foreach(__v => __obj.update("SuccessRedirectionURL", __v.asInstanceOf[js.Any]))
-      TemplateContent.foreach(__v => __obj.update("TemplateContent", __v.asInstanceOf[js.Any]))
-      TemplateSubject.foreach(__v => __obj.update("TemplateSubject", __v.asInstanceOf[js.Any]))
+      FailureRedirectionURL.foreach(__v => __obj.updateDynamic("FailureRedirectionURL")(__v.asInstanceOf[js.Any]))
+      FromEmailAddress.foreach(__v => __obj.updateDynamic("FromEmailAddress")(__v.asInstanceOf[js.Any]))
+      SuccessRedirectionURL.foreach(__v => __obj.updateDynamic("SuccessRedirectionURL")(__v.asInstanceOf[js.Any]))
+      TemplateContent.foreach(__v => __obj.updateDynamic("TemplateContent")(__v.asInstanceOf[js.Any]))
+      TemplateSubject.foreach(__v => __obj.updateDynamic("TemplateSubject")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateCustomVerificationEmailTemplateRequest]
     }
   }
@@ -4131,7 +4133,7 @@ package ses {
         Rule: ReceiptRule,
         RuleSetName: ReceiptRuleSetName
     ): UpdateReceiptRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Rule"        -> Rule.asInstanceOf[js.Any],
         "RuleSetName" -> RuleSetName.asInstanceOf[js.Any]
       )
@@ -4149,7 +4151,7 @@ package ses {
   object UpdateReceiptRuleResponse {
     def apply(
         ): UpdateReceiptRuleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateReceiptRuleResponse]
     }
@@ -4164,7 +4166,7 @@ package ses {
     def apply(
         Template: Template
     ): UpdateTemplateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Template" -> Template.asInstanceOf[js.Any]
       )
 
@@ -4178,7 +4180,7 @@ package ses {
   object UpdateTemplateResponse {
     def apply(
         ): UpdateTemplateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateTemplateResponse]
     }
@@ -4206,7 +4208,7 @@ package ses {
     def apply(
         Domain: Domain
     ): VerifyDomainDkimRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Domain" -> Domain.asInstanceOf[js.Any]
       )
 
@@ -4226,7 +4228,7 @@ package ses {
     def apply(
         DkimTokens: VerificationTokenList
     ): VerifyDomainDkimResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DkimTokens" -> DkimTokens.asInstanceOf[js.Any]
       )
 
@@ -4246,7 +4248,7 @@ package ses {
     def apply(
         Domain: Domain
     ): VerifyDomainIdentityRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Domain" -> Domain.asInstanceOf[js.Any]
       )
 
@@ -4266,7 +4268,7 @@ package ses {
     def apply(
         VerificationToken: VerificationToken
     ): VerifyDomainIdentityResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VerificationToken" -> VerificationToken.asInstanceOf[js.Any]
       )
 
@@ -4286,7 +4288,7 @@ package ses {
     def apply(
         EmailAddress: Address
     ): VerifyEmailAddressRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EmailAddress" -> EmailAddress.asInstanceOf[js.Any]
       )
 
@@ -4306,7 +4308,7 @@ package ses {
     def apply(
         EmailAddress: Address
     ): VerifyEmailIdentityRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EmailAddress" -> EmailAddress.asInstanceOf[js.Any]
       )
 
@@ -4323,7 +4325,7 @@ package ses {
   object VerifyEmailIdentityResponse {
     def apply(
         ): VerifyEmailIdentityResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[VerifyEmailIdentityResponse]
     }
@@ -4344,11 +4346,11 @@ package ses {
         OrganizationArn: AmazonResourceName,
         TopicArn: js.UndefOr[AmazonResourceName] = js.undefined
     ): WorkmailAction = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OrganizationArn" -> OrganizationArn.asInstanceOf[js.Any]
       )
 
-      TopicArn.foreach(__v => __obj.update("TopicArn", __v.asInstanceOf[js.Any]))
+      TopicArn.foreach(__v => __obj.updateDynamic("TopicArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkmailAction]
     }
   }

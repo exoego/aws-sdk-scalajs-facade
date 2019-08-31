@@ -55,12 +55,12 @@ package marketplaceentitlementservice {
         ProductCode: js.UndefOr[ProductCode] = js.undefined,
         Value: js.UndefOr[EntitlementValue] = js.undefined
     ): Entitlement = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CustomerIdentifier.foreach(__v => __obj.update("CustomerIdentifier", __v.asInstanceOf[js.Any]))
-      Dimension.foreach(__v => __obj.update("Dimension", __v.asInstanceOf[js.Any]))
-      ExpirationDate.foreach(__v => __obj.update("ExpirationDate", __v.asInstanceOf[js.Any]))
-      ProductCode.foreach(__v => __obj.update("ProductCode", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CustomerIdentifier.foreach(__v => __obj.updateDynamic("CustomerIdentifier")(__v.asInstanceOf[js.Any]))
+      Dimension.foreach(__v => __obj.updateDynamic("Dimension")(__v.asInstanceOf[js.Any]))
+      ExpirationDate.foreach(__v => __obj.updateDynamic("ExpirationDate")(__v.asInstanceOf[js.Any]))
+      ProductCode.foreach(__v => __obj.updateDynamic("ProductCode")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Entitlement]
     }
   }
@@ -83,11 +83,11 @@ package marketplaceentitlementservice {
         IntegerValue: js.UndefOr[Int] = js.undefined,
         StringValue: js.UndefOr[String] = js.undefined
     ): EntitlementValue = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BooleanValue.foreach(__v => __obj.update("BooleanValue", __v.asInstanceOf[js.Any]))
-      DoubleValue.foreach(__v => __obj.update("DoubleValue", __v.asInstanceOf[js.Any]))
-      IntegerValue.foreach(__v => __obj.update("IntegerValue", __v.asInstanceOf[js.Any]))
-      StringValue.foreach(__v => __obj.update("StringValue", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BooleanValue.foreach(__v => __obj.updateDynamic("BooleanValue")(__v.asInstanceOf[js.Any]))
+      DoubleValue.foreach(__v => __obj.updateDynamic("DoubleValue")(__v.asInstanceOf[js.Any]))
+      IntegerValue.foreach(__v => __obj.updateDynamic("IntegerValue")(__v.asInstanceOf[js.Any]))
+      StringValue.foreach(__v => __obj.updateDynamic("StringValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EntitlementValue]
     }
   }
@@ -117,13 +117,13 @@ package marketplaceentitlementservice {
         MaxResults: js.UndefOr[Int] = js.undefined,
         NextToken: js.UndefOr[NonEmptyString] = js.undefined
     ): GetEntitlementsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ProductCode" -> ProductCode.asInstanceOf[js.Any]
       )
 
-      Filter.foreach(__v => __obj.update("Filter", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetEntitlementsRequest]
     }
   }
@@ -142,9 +142,9 @@ package marketplaceentitlementservice {
         Entitlements: js.UndefOr[EntitlementList] = js.undefined,
         NextToken: js.UndefOr[NonEmptyString] = js.undefined
     ): GetEntitlementsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Entitlements.foreach(__v => __obj.update("Entitlements", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Entitlements.foreach(__v => __obj.updateDynamic("Entitlements")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetEntitlementsResult]
     }
   }

@@ -137,7 +137,7 @@ package kafka {
         KafkaBrokerNodeId: __string,
         VolumeSizeGB: __integer
     ): BrokerEBSVolumeInfo = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "KafkaBrokerNodeId" -> KafkaBrokerNodeId.asInstanceOf[js.Any],
         "VolumeSizeGB"      -> VolumeSizeGB.asInstanceOf[js.Any]
       )
@@ -167,14 +167,14 @@ package kafka {
         SecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
         StorageInfo: js.UndefOr[StorageInfo] = js.undefined
     ): BrokerNodeGroupInfo = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClientSubnets" -> ClientSubnets.asInstanceOf[js.Any],
         "InstanceType"  -> InstanceType.asInstanceOf[js.Any]
       )
 
-      BrokerAZDistribution.foreach(__v => __obj.update("BrokerAZDistribution", __v.asInstanceOf[js.Any]))
-      SecurityGroups.foreach(__v => __obj.update("SecurityGroups", __v.asInstanceOf[js.Any]))
-      StorageInfo.foreach(__v => __obj.update("StorageInfo", __v.asInstanceOf[js.Any]))
+      BrokerAZDistribution.foreach(__v => __obj.updateDynamic("BrokerAZDistribution")(__v.asInstanceOf[js.Any]))
+      SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
+      StorageInfo.foreach(__v => __obj.updateDynamic("StorageInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BrokerNodeGroupInfo]
     }
   }
@@ -202,13 +202,15 @@ package kafka {
         CurrentBrokerSoftwareInfo: js.UndefOr[BrokerSoftwareInfo] = js.undefined,
         Endpoints: js.UndefOr[__listOf__string] = js.undefined
     ): BrokerNodeInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttachedENIId.foreach(__v => __obj.update("AttachedENIId", __v.asInstanceOf[js.Any]))
-      BrokerId.foreach(__v => __obj.update("BrokerId", __v.asInstanceOf[js.Any]))
-      ClientSubnet.foreach(__v => __obj.update("ClientSubnet", __v.asInstanceOf[js.Any]))
-      ClientVpcIpAddress.foreach(__v => __obj.update("ClientVpcIpAddress", __v.asInstanceOf[js.Any]))
-      CurrentBrokerSoftwareInfo.foreach(__v => __obj.update("CurrentBrokerSoftwareInfo", __v.asInstanceOf[js.Any]))
-      Endpoints.foreach(__v => __obj.update("Endpoints", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttachedENIId.foreach(__v => __obj.updateDynamic("AttachedENIId")(__v.asInstanceOf[js.Any]))
+      BrokerId.foreach(__v => __obj.updateDynamic("BrokerId")(__v.asInstanceOf[js.Any]))
+      ClientSubnet.foreach(__v => __obj.updateDynamic("ClientSubnet")(__v.asInstanceOf[js.Any]))
+      ClientVpcIpAddress.foreach(__v => __obj.updateDynamic("ClientVpcIpAddress")(__v.asInstanceOf[js.Any]))
+      CurrentBrokerSoftwareInfo.foreach(
+        __v => __obj.updateDynamic("CurrentBrokerSoftwareInfo")(__v.asInstanceOf[js.Any])
+      )
+      Endpoints.foreach(__v => __obj.updateDynamic("Endpoints")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BrokerNodeInfo]
     }
   }
@@ -230,10 +232,10 @@ package kafka {
         ConfigurationRevision: js.UndefOr[__long] = js.undefined,
         KafkaVersion: js.UndefOr[__string] = js.undefined
     ): BrokerSoftwareInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConfigurationArn.foreach(__v => __obj.update("ConfigurationArn", __v.asInstanceOf[js.Any]))
-      ConfigurationRevision.foreach(__v => __obj.update("ConfigurationRevision", __v.asInstanceOf[js.Any]))
-      KafkaVersion.foreach(__v => __obj.update("KafkaVersion", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConfigurationArn.foreach(__v => __obj.updateDynamic("ConfigurationArn")(__v.asInstanceOf[js.Any]))
+      ConfigurationRevision.foreach(__v => __obj.updateDynamic("ConfigurationRevision")(__v.asInstanceOf[js.Any]))
+      KafkaVersion.foreach(__v => __obj.updateDynamic("KafkaVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BrokerSoftwareInfo]
     }
   }
@@ -251,8 +253,8 @@ package kafka {
     def apply(
         Tls: js.UndefOr[Tls] = js.undefined
     ): ClientAuthentication = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Tls.foreach(__v => __obj.update("Tls", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Tls.foreach(__v => __obj.updateDynamic("Tls")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClientAuthentication]
     }
   }
@@ -308,21 +310,23 @@ package kafka {
         Tags: js.UndefOr[__mapOf__string] = js.undefined,
         ZookeeperConnectString: js.UndefOr[__string] = js.undefined
     ): ClusterInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ActiveOperationArn.foreach(__v => __obj.update("ActiveOperationArn", __v.asInstanceOf[js.Any]))
-      BrokerNodeGroupInfo.foreach(__v => __obj.update("BrokerNodeGroupInfo", __v.asInstanceOf[js.Any]))
-      ClientAuthentication.foreach(__v => __obj.update("ClientAuthentication", __v.asInstanceOf[js.Any]))
-      ClusterArn.foreach(__v => __obj.update("ClusterArn", __v.asInstanceOf[js.Any]))
-      ClusterName.foreach(__v => __obj.update("ClusterName", __v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      CurrentBrokerSoftwareInfo.foreach(__v => __obj.update("CurrentBrokerSoftwareInfo", __v.asInstanceOf[js.Any]))
-      CurrentVersion.foreach(__v => __obj.update("CurrentVersion", __v.asInstanceOf[js.Any]))
-      EncryptionInfo.foreach(__v => __obj.update("EncryptionInfo", __v.asInstanceOf[js.Any]))
-      EnhancedMonitoring.foreach(__v => __obj.update("EnhancedMonitoring", __v.asInstanceOf[js.Any]))
-      NumberOfBrokerNodes.foreach(__v => __obj.update("NumberOfBrokerNodes", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      ZookeeperConnectString.foreach(__v => __obj.update("ZookeeperConnectString", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ActiveOperationArn.foreach(__v => __obj.updateDynamic("ActiveOperationArn")(__v.asInstanceOf[js.Any]))
+      BrokerNodeGroupInfo.foreach(__v => __obj.updateDynamic("BrokerNodeGroupInfo")(__v.asInstanceOf[js.Any]))
+      ClientAuthentication.foreach(__v => __obj.updateDynamic("ClientAuthentication")(__v.asInstanceOf[js.Any]))
+      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
+      ClusterName.foreach(__v => __obj.updateDynamic("ClusterName")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      CurrentBrokerSoftwareInfo.foreach(
+        __v => __obj.updateDynamic("CurrentBrokerSoftwareInfo")(__v.asInstanceOf[js.Any])
+      )
+      CurrentVersion.foreach(__v => __obj.updateDynamic("CurrentVersion")(__v.asInstanceOf[js.Any]))
+      EncryptionInfo.foreach(__v => __obj.updateDynamic("EncryptionInfo")(__v.asInstanceOf[js.Any]))
+      EnhancedMonitoring.foreach(__v => __obj.updateDynamic("EnhancedMonitoring")(__v.asInstanceOf[js.Any]))
+      NumberOfBrokerNodes.foreach(__v => __obj.updateDynamic("NumberOfBrokerNodes")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      ZookeeperConnectString.foreach(__v => __obj.updateDynamic("ZookeeperConnectString")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClusterInfo]
     }
   }
@@ -358,17 +362,17 @@ package kafka {
         SourceClusterInfo: js.UndefOr[MutableClusterInfo] = js.undefined,
         TargetClusterInfo: js.UndefOr[MutableClusterInfo] = js.undefined
     ): ClusterOperationInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClientRequestId.foreach(__v => __obj.update("ClientRequestId", __v.asInstanceOf[js.Any]))
-      ClusterArn.foreach(__v => __obj.update("ClusterArn", __v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
-      ErrorInfo.foreach(__v => __obj.update("ErrorInfo", __v.asInstanceOf[js.Any]))
-      OperationArn.foreach(__v => __obj.update("OperationArn", __v.asInstanceOf[js.Any]))
-      OperationState.foreach(__v => __obj.update("OperationState", __v.asInstanceOf[js.Any]))
-      OperationType.foreach(__v => __obj.update("OperationType", __v.asInstanceOf[js.Any]))
-      SourceClusterInfo.foreach(__v => __obj.update("SourceClusterInfo", __v.asInstanceOf[js.Any]))
-      TargetClusterInfo.foreach(__v => __obj.update("TargetClusterInfo", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClientRequestId.foreach(__v => __obj.updateDynamic("ClientRequestId")(__v.asInstanceOf[js.Any]))
+      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      ErrorInfo.foreach(__v => __obj.updateDynamic("ErrorInfo")(__v.asInstanceOf[js.Any]))
+      OperationArn.foreach(__v => __obj.updateDynamic("OperationArn")(__v.asInstanceOf[js.Any]))
+      OperationState.foreach(__v => __obj.updateDynamic("OperationState")(__v.asInstanceOf[js.Any]))
+      OperationType.foreach(__v => __obj.updateDynamic("OperationType")(__v.asInstanceOf[js.Any]))
+      SourceClusterInfo.foreach(__v => __obj.updateDynamic("SourceClusterInfo")(__v.asInstanceOf[js.Any]))
+      TargetClusterInfo.foreach(__v => __obj.updateDynamic("TargetClusterInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClusterOperationInfo]
     }
   }
@@ -410,7 +414,7 @@ package kafka {
         LatestRevision: ConfigurationRevision,
         Name: __string
     ): Configuration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn"            -> Arn.asInstanceOf[js.Any],
         "CreationTime"   -> CreationTime.asInstanceOf[js.Any],
         "Description"    -> Description.asInstanceOf[js.Any],
@@ -438,7 +442,7 @@ package kafka {
         Arn: __string,
         Revision: __long
     ): ConfigurationInfo = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn"      -> Arn.asInstanceOf[js.Any],
         "Revision" -> Revision.asInstanceOf[js.Any]
       )
@@ -464,12 +468,12 @@ package kafka {
         Revision: __long,
         Description: js.UndefOr[__string] = js.undefined
     ): ConfigurationRevision = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CreationTime" -> CreationTime.asInstanceOf[js.Any],
         "Revision"     -> Revision.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfigurationRevision]
     }
   }
@@ -499,18 +503,18 @@ package kafka {
         EnhancedMonitoring: js.UndefOr[EnhancedMonitoring] = js.undefined,
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): CreateClusterRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BrokerNodeGroupInfo" -> BrokerNodeGroupInfo.asInstanceOf[js.Any],
         "ClusterName"         -> ClusterName.asInstanceOf[js.Any],
         "KafkaVersion"        -> KafkaVersion.asInstanceOf[js.Any],
         "NumberOfBrokerNodes" -> NumberOfBrokerNodes.asInstanceOf[js.Any]
       )
 
-      ClientAuthentication.foreach(__v => __obj.update("ClientAuthentication", __v.asInstanceOf[js.Any]))
-      ConfigurationInfo.foreach(__v => __obj.update("ConfigurationInfo", __v.asInstanceOf[js.Any]))
-      EncryptionInfo.foreach(__v => __obj.update("EncryptionInfo", __v.asInstanceOf[js.Any]))
-      EnhancedMonitoring.foreach(__v => __obj.update("EnhancedMonitoring", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      ClientAuthentication.foreach(__v => __obj.updateDynamic("ClientAuthentication")(__v.asInstanceOf[js.Any]))
+      ConfigurationInfo.foreach(__v => __obj.updateDynamic("ConfigurationInfo")(__v.asInstanceOf[js.Any]))
+      EncryptionInfo.foreach(__v => __obj.updateDynamic("EncryptionInfo")(__v.asInstanceOf[js.Any]))
+      EnhancedMonitoring.foreach(__v => __obj.updateDynamic("EnhancedMonitoring")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateClusterRequest]
     }
   }
@@ -528,10 +532,10 @@ package kafka {
         ClusterName: js.UndefOr[__string] = js.undefined,
         State: js.UndefOr[ClusterState] = js.undefined
     ): CreateClusterResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClusterArn.foreach(__v => __obj.update("ClusterArn", __v.asInstanceOf[js.Any]))
-      ClusterName.foreach(__v => __obj.update("ClusterName", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
+      ClusterName.foreach(__v => __obj.updateDynamic("ClusterName")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateClusterResponse]
     }
   }
@@ -551,13 +555,13 @@ package kafka {
         ServerProperties: __blob,
         Description: js.UndefOr[__string] = js.undefined
     ): CreateConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "KafkaVersions"    -> KafkaVersions.asInstanceOf[js.Any],
         "Name"             -> Name.asInstanceOf[js.Any],
         "ServerProperties" -> ServerProperties.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateConfigurationRequest]
     }
   }
@@ -577,11 +581,11 @@ package kafka {
         LatestRevision: js.UndefOr[ConfigurationRevision] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined
     ): CreateConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      LatestRevision.foreach(__v => __obj.update("LatestRevision", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      LatestRevision.foreach(__v => __obj.updateDynamic("LatestRevision")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateConfigurationResponse]
     }
   }
@@ -597,11 +601,11 @@ package kafka {
         ClusterArn: __string,
         CurrentVersion: js.UndefOr[__string] = js.undefined
     ): DeleteClusterRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClusterArn" -> ClusterArn.asInstanceOf[js.Any]
       )
 
-      CurrentVersion.foreach(__v => __obj.update("CurrentVersion", __v.asInstanceOf[js.Any]))
+      CurrentVersion.foreach(__v => __obj.updateDynamic("CurrentVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteClusterRequest]
     }
   }
@@ -617,9 +621,9 @@ package kafka {
         ClusterArn: js.UndefOr[__string] = js.undefined,
         State: js.UndefOr[ClusterState] = js.undefined
     ): DeleteClusterResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClusterArn.foreach(__v => __obj.update("ClusterArn", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteClusterResponse]
     }
   }
@@ -633,7 +637,7 @@ package kafka {
     def apply(
         ClusterOperationArn: __string
     ): DescribeClusterOperationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClusterOperationArn" -> ClusterOperationArn.asInstanceOf[js.Any]
       )
 
@@ -650,8 +654,8 @@ package kafka {
     def apply(
         ClusterOperationInfo: js.UndefOr[ClusterOperationInfo] = js.undefined
     ): DescribeClusterOperationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClusterOperationInfo.foreach(__v => __obj.update("ClusterOperationInfo", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClusterOperationInfo.foreach(__v => __obj.updateDynamic("ClusterOperationInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeClusterOperationResponse]
     }
   }
@@ -665,7 +669,7 @@ package kafka {
     def apply(
         ClusterArn: __string
     ): DescribeClusterRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClusterArn" -> ClusterArn.asInstanceOf[js.Any]
       )
 
@@ -682,8 +686,8 @@ package kafka {
     def apply(
         ClusterInfo: js.UndefOr[ClusterInfo] = js.undefined
     ): DescribeClusterResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClusterInfo.foreach(__v => __obj.update("ClusterInfo", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClusterInfo.foreach(__v => __obj.updateDynamic("ClusterInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeClusterResponse]
     }
   }
@@ -697,7 +701,7 @@ package kafka {
     def apply(
         Arn: __string
     ): DescribeConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
 
@@ -724,13 +728,13 @@ package kafka {
         LatestRevision: js.UndefOr[ConfigurationRevision] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined
     ): DescribeConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      KafkaVersions.foreach(__v => __obj.update("KafkaVersions", __v.asInstanceOf[js.Any]))
-      LatestRevision.foreach(__v => __obj.update("LatestRevision", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      KafkaVersions.foreach(__v => __obj.updateDynamic("KafkaVersions")(__v.asInstanceOf[js.Any]))
+      LatestRevision.foreach(__v => __obj.updateDynamic("LatestRevision")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeConfigurationResponse]
     }
   }
@@ -746,7 +750,7 @@ package kafka {
         Arn: __string,
         Revision: __long
     ): DescribeConfigurationRevisionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn"      -> Arn.asInstanceOf[js.Any],
         "Revision" -> Revision.asInstanceOf[js.Any]
       )
@@ -772,12 +776,12 @@ package kafka {
         Revision: js.UndefOr[__long] = js.undefined,
         ServerProperties: js.UndefOr[__blob] = js.undefined
     ): DescribeConfigurationRevisionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Revision.foreach(__v => __obj.update("Revision", __v.asInstanceOf[js.Any]))
-      ServerProperties.foreach(__v => __obj.update("ServerProperties", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Revision.foreach(__v => __obj.updateDynamic("Revision")(__v.asInstanceOf[js.Any]))
+      ServerProperties.foreach(__v => __obj.updateDynamic("ServerProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeConfigurationRevisionResponse]
     }
   }
@@ -795,8 +799,8 @@ package kafka {
     def apply(
         VolumeSize: js.UndefOr[__integerMin1Max16384] = js.undefined
     ): EBSStorageInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      VolumeSize.foreach(__v => __obj.update("VolumeSize", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      VolumeSize.foreach(__v => __obj.updateDynamic("VolumeSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EBSStorageInfo]
     }
   }
@@ -814,7 +818,7 @@ package kafka {
     def apply(
         DataVolumeKMSKeyId: __string
     ): EncryptionAtRest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DataVolumeKMSKeyId" -> DataVolumeKMSKeyId.asInstanceOf[js.Any]
       )
 
@@ -837,9 +841,9 @@ package kafka {
         ClientBroker: js.UndefOr[ClientBroker] = js.undefined,
         InCluster: js.UndefOr[__boolean] = js.undefined
     ): EncryptionInTransit = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClientBroker.foreach(__v => __obj.update("ClientBroker", __v.asInstanceOf[js.Any]))
-      InCluster.foreach(__v => __obj.update("InCluster", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClientBroker.foreach(__v => __obj.updateDynamic("ClientBroker")(__v.asInstanceOf[js.Any]))
+      InCluster.foreach(__v => __obj.updateDynamic("InCluster")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EncryptionInTransit]
     }
   }
@@ -859,9 +863,9 @@ package kafka {
         EncryptionAtRest: js.UndefOr[EncryptionAtRest] = js.undefined,
         EncryptionInTransit: js.UndefOr[EncryptionInTransit] = js.undefined
     ): EncryptionInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EncryptionAtRest.foreach(__v => __obj.update("EncryptionAtRest", __v.asInstanceOf[js.Any]))
-      EncryptionInTransit.foreach(__v => __obj.update("EncryptionInTransit", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EncryptionAtRest.foreach(__v => __obj.updateDynamic("EncryptionAtRest")(__v.asInstanceOf[js.Any]))
+      EncryptionInTransit.foreach(__v => __obj.updateDynamic("EncryptionInTransit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EncryptionInfo]
     }
   }
@@ -893,9 +897,9 @@ package kafka {
         ErrorCode: js.UndefOr[__string] = js.undefined,
         ErrorString: js.UndefOr[__string] = js.undefined
     ): ErrorInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
-      ErrorString.foreach(__v => __obj.update("ErrorString", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ErrorString.foreach(__v => __obj.updateDynamic("ErrorString")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ErrorInfo]
     }
   }
@@ -909,7 +913,7 @@ package kafka {
     def apply(
         ClusterArn: __string
     ): GetBootstrapBrokersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClusterArn" -> ClusterArn.asInstanceOf[js.Any]
       )
 
@@ -928,9 +932,9 @@ package kafka {
         BootstrapBrokerString: js.UndefOr[__string] = js.undefined,
         BootstrapBrokerStringTls: js.UndefOr[__string] = js.undefined
     ): GetBootstrapBrokersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BootstrapBrokerString.foreach(__v => __obj.update("BootstrapBrokerString", __v.asInstanceOf[js.Any]))
-      BootstrapBrokerStringTls.foreach(__v => __obj.update("BootstrapBrokerStringTls", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BootstrapBrokerString.foreach(__v => __obj.updateDynamic("BootstrapBrokerString")(__v.asInstanceOf[js.Any]))
+      BootstrapBrokerStringTls.foreach(__v => __obj.updateDynamic("BootstrapBrokerStringTls")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBootstrapBrokersResponse]
     }
   }
@@ -948,12 +952,12 @@ package kafka {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListClusterOperationsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClusterArn" -> ClusterArn.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListClusterOperationsRequest]
     }
   }
@@ -969,9 +973,9 @@ package kafka {
         ClusterOperationInfoList: js.UndefOr[__listOfClusterOperationInfo] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListClusterOperationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClusterOperationInfoList.foreach(__v => __obj.update("ClusterOperationInfoList", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClusterOperationInfoList.foreach(__v => __obj.updateDynamic("ClusterOperationInfoList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListClusterOperationsResponse]
     }
   }
@@ -989,10 +993,10 @@ package kafka {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListClustersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClusterNameFilter.foreach(__v => __obj.update("ClusterNameFilter", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClusterNameFilter.foreach(__v => __obj.updateDynamic("ClusterNameFilter")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListClustersRequest]
     }
   }
@@ -1008,9 +1012,9 @@ package kafka {
         ClusterInfoList: js.UndefOr[__listOfClusterInfo] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListClustersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClusterInfoList.foreach(__v => __obj.update("ClusterInfoList", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClusterInfoList.foreach(__v => __obj.updateDynamic("ClusterInfoList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListClustersResponse]
     }
   }
@@ -1028,12 +1032,12 @@ package kafka {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListConfigurationRevisionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListConfigurationRevisionsRequest]
     }
   }
@@ -1049,9 +1053,9 @@ package kafka {
         NextToken: js.UndefOr[__string] = js.undefined,
         Revisions: js.UndefOr[__listOfConfigurationRevision] = js.undefined
     ): ListConfigurationRevisionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Revisions.foreach(__v => __obj.update("Revisions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Revisions.foreach(__v => __obj.updateDynamic("Revisions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListConfigurationRevisionsResponse]
     }
   }
@@ -1067,9 +1071,9 @@ package kafka {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListConfigurationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListConfigurationsRequest]
     }
   }
@@ -1085,9 +1089,9 @@ package kafka {
         Configurations: js.UndefOr[__listOfConfiguration] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListConfigurationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Configurations.foreach(__v => __obj.update("Configurations", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListConfigurationsResponse]
     }
   }
@@ -1105,12 +1109,12 @@ package kafka {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListNodesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClusterArn" -> ClusterArn.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListNodesRequest]
     }
   }
@@ -1126,9 +1130,9 @@ package kafka {
         NextToken: js.UndefOr[__string] = js.undefined,
         NodeInfoList: js.UndefOr[__listOfNodeInfo] = js.undefined
     ): ListNodesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      NodeInfoList.foreach(__v => __obj.update("NodeInfoList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      NodeInfoList.foreach(__v => __obj.updateDynamic("NodeInfoList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListNodesResponse]
     }
   }
@@ -1142,7 +1146,7 @@ package kafka {
     def apply(
         ResourceArn: __string
     ): ListTagsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
@@ -1159,8 +1163,8 @@ package kafka {
     def apply(
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): ListTagsForResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
@@ -1182,10 +1186,10 @@ package kafka {
         ConfigurationInfo: js.UndefOr[ConfigurationInfo] = js.undefined,
         NumberOfBrokerNodes: js.UndefOr[__integer] = js.undefined
     ): MutableClusterInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BrokerEBSVolumeInfo.foreach(__v => __obj.update("BrokerEBSVolumeInfo", __v.asInstanceOf[js.Any]))
-      ConfigurationInfo.foreach(__v => __obj.update("ConfigurationInfo", __v.asInstanceOf[js.Any]))
-      NumberOfBrokerNodes.foreach(__v => __obj.update("NumberOfBrokerNodes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BrokerEBSVolumeInfo.foreach(__v => __obj.updateDynamic("BrokerEBSVolumeInfo")(__v.asInstanceOf[js.Any]))
+      ConfigurationInfo.foreach(__v => __obj.updateDynamic("ConfigurationInfo")(__v.asInstanceOf[js.Any]))
+      NumberOfBrokerNodes.foreach(__v => __obj.updateDynamic("NumberOfBrokerNodes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MutableClusterInfo]
     }
   }
@@ -1213,13 +1217,13 @@ package kafka {
         NodeType: js.UndefOr[NodeType] = js.undefined,
         ZookeeperNodeInfo: js.UndefOr[ZookeeperNodeInfo] = js.undefined
     ): NodeInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AddedToClusterTime.foreach(__v => __obj.update("AddedToClusterTime", __v.asInstanceOf[js.Any]))
-      BrokerNodeInfo.foreach(__v => __obj.update("BrokerNodeInfo", __v.asInstanceOf[js.Any]))
-      InstanceType.foreach(__v => __obj.update("InstanceType", __v.asInstanceOf[js.Any]))
-      NodeARN.foreach(__v => __obj.update("NodeARN", __v.asInstanceOf[js.Any]))
-      NodeType.foreach(__v => __obj.update("NodeType", __v.asInstanceOf[js.Any]))
-      ZookeeperNodeInfo.foreach(__v => __obj.update("ZookeeperNodeInfo", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AddedToClusterTime.foreach(__v => __obj.updateDynamic("AddedToClusterTime")(__v.asInstanceOf[js.Any]))
+      BrokerNodeInfo.foreach(__v => __obj.updateDynamic("BrokerNodeInfo")(__v.asInstanceOf[js.Any]))
+      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
+      NodeARN.foreach(__v => __obj.updateDynamic("NodeARN")(__v.asInstanceOf[js.Any]))
+      NodeType.foreach(__v => __obj.updateDynamic("NodeType")(__v.asInstanceOf[js.Any]))
+      ZookeeperNodeInfo.foreach(__v => __obj.updateDynamic("ZookeeperNodeInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NodeInfo]
     }
   }
@@ -1247,8 +1251,8 @@ package kafka {
     def apply(
         EbsStorageInfo: js.UndefOr[EBSStorageInfo] = js.undefined
     ): StorageInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EbsStorageInfo.foreach(__v => __obj.update("EbsStorageInfo", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EbsStorageInfo.foreach(__v => __obj.updateDynamic("EbsStorageInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StorageInfo]
     }
   }
@@ -1264,7 +1268,7 @@ package kafka {
         ResourceArn: __string,
         Tags: __mapOf__string
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
       )
@@ -1286,8 +1290,10 @@ package kafka {
     def apply(
         CertificateAuthorityArnList: js.UndefOr[__listOf__string] = js.undefined
     ): Tls = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CertificateAuthorityArnList.foreach(__v => __obj.update("CertificateAuthorityArnList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CertificateAuthorityArnList.foreach(
+        __v => __obj.updateDynamic("CertificateAuthorityArnList")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[Tls]
     }
   }
@@ -1303,7 +1309,7 @@ package kafka {
         ResourceArn: __string,
         TagKeys: __listOf__string
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
       )
@@ -1325,7 +1331,7 @@ package kafka {
         CurrentVersion: __string,
         TargetBrokerEBSVolumeInfo: __listOfBrokerEBSVolumeInfo
     ): UpdateBrokerStorageRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClusterArn"                -> ClusterArn.asInstanceOf[js.Any],
         "CurrentVersion"            -> CurrentVersion.asInstanceOf[js.Any],
         "TargetBrokerEBSVolumeInfo" -> TargetBrokerEBSVolumeInfo.asInstanceOf[js.Any]
@@ -1346,9 +1352,9 @@ package kafka {
         ClusterArn: js.UndefOr[__string] = js.undefined,
         ClusterOperationArn: js.UndefOr[__string] = js.undefined
     ): UpdateBrokerStorageResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClusterArn.foreach(__v => __obj.update("ClusterArn", __v.asInstanceOf[js.Any]))
-      ClusterOperationArn.foreach(__v => __obj.update("ClusterOperationArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
+      ClusterOperationArn.foreach(__v => __obj.updateDynamic("ClusterOperationArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateBrokerStorageResponse]
     }
   }
@@ -1366,7 +1372,7 @@ package kafka {
         ConfigurationInfo: ConfigurationInfo,
         CurrentVersion: __string
     ): UpdateClusterConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClusterArn"        -> ClusterArn.asInstanceOf[js.Any],
         "ConfigurationInfo" -> ConfigurationInfo.asInstanceOf[js.Any],
         "CurrentVersion"    -> CurrentVersion.asInstanceOf[js.Any]
@@ -1387,9 +1393,9 @@ package kafka {
         ClusterArn: js.UndefOr[__string] = js.undefined,
         ClusterOperationArn: js.UndefOr[__string] = js.undefined
     ): UpdateClusterConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClusterArn.foreach(__v => __obj.update("ClusterArn", __v.asInstanceOf[js.Any]))
-      ClusterOperationArn.foreach(__v => __obj.update("ClusterOperationArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
+      ClusterOperationArn.foreach(__v => __obj.updateDynamic("ClusterOperationArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateClusterConfigurationResponse]
     }
   }
@@ -1415,12 +1421,12 @@ package kafka {
         ZookeeperId: js.UndefOr[__double] = js.undefined,
         ZookeeperVersion: js.UndefOr[__string] = js.undefined
     ): ZookeeperNodeInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttachedENIId.foreach(__v => __obj.update("AttachedENIId", __v.asInstanceOf[js.Any]))
-      ClientVpcIpAddress.foreach(__v => __obj.update("ClientVpcIpAddress", __v.asInstanceOf[js.Any]))
-      Endpoints.foreach(__v => __obj.update("Endpoints", __v.asInstanceOf[js.Any]))
-      ZookeeperId.foreach(__v => __obj.update("ZookeeperId", __v.asInstanceOf[js.Any]))
-      ZookeeperVersion.foreach(__v => __obj.update("ZookeeperVersion", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttachedENIId.foreach(__v => __obj.updateDynamic("AttachedENIId")(__v.asInstanceOf[js.Any]))
+      ClientVpcIpAddress.foreach(__v => __obj.updateDynamic("ClientVpcIpAddress")(__v.asInstanceOf[js.Any]))
+      Endpoints.foreach(__v => __obj.updateDynamic("Endpoints")(__v.asInstanceOf[js.Any]))
+      ZookeeperId.foreach(__v => __obj.updateDynamic("ZookeeperId")(__v.asInstanceOf[js.Any]))
+      ZookeeperVersion.foreach(__v => __obj.updateDynamic("ZookeeperVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ZookeeperNodeInfo]
     }
   }

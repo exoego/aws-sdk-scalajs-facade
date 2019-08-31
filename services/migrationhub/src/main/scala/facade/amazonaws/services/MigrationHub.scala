@@ -153,13 +153,13 @@ package migrationhub {
         ProgressUpdateStream: ProgressUpdateStream,
         DryRun: js.UndefOr[DryRun] = js.undefined
     ): AssociateCreatedArtifactRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CreatedArtifact"      -> CreatedArtifact.asInstanceOf[js.Any],
         "MigrationTaskName"    -> MigrationTaskName.asInstanceOf[js.Any],
         "ProgressUpdateStream" -> ProgressUpdateStream.asInstanceOf[js.Any]
       )
 
-      DryRun.foreach(__v => __obj.update("DryRun", __v.asInstanceOf[js.Any]))
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateCreatedArtifactRequest]
     }
   }
@@ -170,7 +170,7 @@ package migrationhub {
   object AssociateCreatedArtifactResult {
     def apply(
         ): AssociateCreatedArtifactResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateCreatedArtifactResult]
     }
@@ -191,13 +191,13 @@ package migrationhub {
         ProgressUpdateStream: ProgressUpdateStream,
         DryRun: js.UndefOr[DryRun] = js.undefined
     ): AssociateDiscoveredResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DiscoveredResource"   -> DiscoveredResource.asInstanceOf[js.Any],
         "MigrationTaskName"    -> MigrationTaskName.asInstanceOf[js.Any],
         "ProgressUpdateStream" -> ProgressUpdateStream.asInstanceOf[js.Any]
       )
 
-      DryRun.foreach(__v => __obj.update("DryRun", __v.asInstanceOf[js.Any]))
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateDiscoveredResourceRequest]
     }
   }
@@ -208,7 +208,7 @@ package migrationhub {
   object AssociateDiscoveredResourceResult {
     def apply(
         ): AssociateDiscoveredResourceResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateDiscoveredResourceResult]
     }
@@ -225,11 +225,11 @@ package migrationhub {
         ProgressUpdateStreamName: ProgressUpdateStream,
         DryRun: js.UndefOr[DryRun] = js.undefined
     ): CreateProgressUpdateStreamRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ProgressUpdateStreamName" -> ProgressUpdateStreamName.asInstanceOf[js.Any]
       )
 
-      DryRun.foreach(__v => __obj.update("DryRun", __v.asInstanceOf[js.Any]))
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateProgressUpdateStreamRequest]
     }
   }
@@ -240,7 +240,7 @@ package migrationhub {
   object CreateProgressUpdateStreamResult {
     def apply(
         ): CreateProgressUpdateStreamResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateProgressUpdateStreamResult]
     }
@@ -260,11 +260,11 @@ package migrationhub {
         Name: CreatedArtifactName,
         Description: js.UndefOr[CreatedArtifactDescription] = js.undefined
     ): CreatedArtifact = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatedArtifact]
     }
   }
@@ -280,11 +280,11 @@ package migrationhub {
         ProgressUpdateStreamName: ProgressUpdateStream,
         DryRun: js.UndefOr[DryRun] = js.undefined
     ): DeleteProgressUpdateStreamRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ProgressUpdateStreamName" -> ProgressUpdateStreamName.asInstanceOf[js.Any]
       )
 
-      DryRun.foreach(__v => __obj.update("DryRun", __v.asInstanceOf[js.Any]))
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteProgressUpdateStreamRequest]
     }
   }
@@ -295,7 +295,7 @@ package migrationhub {
   object DeleteProgressUpdateStreamResult {
     def apply(
         ): DeleteProgressUpdateStreamResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteProgressUpdateStreamResult]
     }
@@ -310,7 +310,7 @@ package migrationhub {
     def apply(
         ApplicationId: ApplicationId
     ): DescribeApplicationStateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
@@ -329,9 +329,9 @@ package migrationhub {
         ApplicationStatus: js.UndefOr[ApplicationStatus] = js.undefined,
         LastUpdatedTime: js.UndefOr[UpdateDateTime] = js.undefined
     ): DescribeApplicationStateResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationStatus.foreach(__v => __obj.update("ApplicationStatus", __v.asInstanceOf[js.Any]))
-      LastUpdatedTime.foreach(__v => __obj.update("LastUpdatedTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationStatus.foreach(__v => __obj.updateDynamic("ApplicationStatus")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeApplicationStateResult]
     }
   }
@@ -347,7 +347,7 @@ package migrationhub {
         MigrationTaskName: MigrationTaskName,
         ProgressUpdateStream: ProgressUpdateStream
     ): DescribeMigrationTaskRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MigrationTaskName"    -> MigrationTaskName.asInstanceOf[js.Any],
         "ProgressUpdateStream" -> ProgressUpdateStream.asInstanceOf[js.Any]
       )
@@ -365,8 +365,8 @@ package migrationhub {
     def apply(
         MigrationTask: js.UndefOr[MigrationTask] = js.undefined
     ): DescribeMigrationTaskResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MigrationTask.foreach(__v => __obj.update("MigrationTask", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MigrationTask.foreach(__v => __obj.updateDynamic("MigrationTask")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMigrationTaskResult]
     }
   }
@@ -386,13 +386,13 @@ package migrationhub {
         ProgressUpdateStream: ProgressUpdateStream,
         DryRun: js.UndefOr[DryRun] = js.undefined
     ): DisassociateCreatedArtifactRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CreatedArtifactName"  -> CreatedArtifactName.asInstanceOf[js.Any],
         "MigrationTaskName"    -> MigrationTaskName.asInstanceOf[js.Any],
         "ProgressUpdateStream" -> ProgressUpdateStream.asInstanceOf[js.Any]
       )
 
-      DryRun.foreach(__v => __obj.update("DryRun", __v.asInstanceOf[js.Any]))
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisassociateCreatedArtifactRequest]
     }
   }
@@ -403,7 +403,7 @@ package migrationhub {
   object DisassociateCreatedArtifactResult {
     def apply(
         ): DisassociateCreatedArtifactResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateCreatedArtifactResult]
     }
@@ -424,13 +424,13 @@ package migrationhub {
         ProgressUpdateStream: ProgressUpdateStream,
         DryRun: js.UndefOr[DryRun] = js.undefined
     ): DisassociateDiscoveredResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationId"      -> ConfigurationId.asInstanceOf[js.Any],
         "MigrationTaskName"    -> MigrationTaskName.asInstanceOf[js.Any],
         "ProgressUpdateStream" -> ProgressUpdateStream.asInstanceOf[js.Any]
       )
 
-      DryRun.foreach(__v => __obj.update("DryRun", __v.asInstanceOf[js.Any]))
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisassociateDiscoveredResourceRequest]
     }
   }
@@ -441,7 +441,7 @@ package migrationhub {
   object DisassociateDiscoveredResourceResult {
     def apply(
         ): DisassociateDiscoveredResourceResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateDiscoveredResourceResult]
     }
@@ -461,11 +461,11 @@ package migrationhub {
         ConfigurationId: ConfigurationId,
         Description: js.UndefOr[DiscoveredResourceDescription] = js.undefined
     ): DiscoveredResource = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationId" -> ConfigurationId.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DiscoveredResource]
     }
   }
@@ -491,12 +491,12 @@ package migrationhub {
         ProgressUpdateStream: ProgressUpdateStream,
         DryRun: js.UndefOr[DryRun] = js.undefined
     ): ImportMigrationTaskRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MigrationTaskName"    -> MigrationTaskName.asInstanceOf[js.Any],
         "ProgressUpdateStream" -> ProgressUpdateStream.asInstanceOf[js.Any]
       )
 
-      DryRun.foreach(__v => __obj.update("DryRun", __v.asInstanceOf[js.Any]))
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportMigrationTaskRequest]
     }
   }
@@ -507,7 +507,7 @@ package migrationhub {
   object ImportMigrationTaskResult {
     def apply(
         ): ImportMigrationTaskResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ImportMigrationTaskResult]
     }
@@ -544,13 +544,13 @@ package migrationhub {
         MaxResults: js.UndefOr[MaxResultsCreatedArtifacts] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): ListCreatedArtifactsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MigrationTaskName"    -> MigrationTaskName.asInstanceOf[js.Any],
         "ProgressUpdateStream" -> ProgressUpdateStream.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCreatedArtifactsRequest]
     }
   }
@@ -566,9 +566,9 @@ package migrationhub {
         CreatedArtifactList: js.UndefOr[CreatedArtifactList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): ListCreatedArtifactsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedArtifactList.foreach(__v => __obj.update("CreatedArtifactList", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedArtifactList.foreach(__v => __obj.updateDynamic("CreatedArtifactList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCreatedArtifactsResult]
     }
   }
@@ -588,13 +588,13 @@ package migrationhub {
         MaxResults: js.UndefOr[MaxResultsResources] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): ListDiscoveredResourcesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MigrationTaskName"    -> MigrationTaskName.asInstanceOf[js.Any],
         "ProgressUpdateStream" -> ProgressUpdateStream.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDiscoveredResourcesRequest]
     }
   }
@@ -610,9 +610,9 @@ package migrationhub {
         DiscoveredResourceList: js.UndefOr[DiscoveredResourceList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): ListDiscoveredResourcesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DiscoveredResourceList.foreach(__v => __obj.update("DiscoveredResourceList", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DiscoveredResourceList.foreach(__v => __obj.updateDynamic("DiscoveredResourceList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDiscoveredResourcesResult]
     }
   }
@@ -630,10 +630,10 @@ package migrationhub {
         NextToken: js.UndefOr[Token] = js.undefined,
         ResourceName: js.UndefOr[ResourceName] = js.undefined
     ): ListMigrationTasksRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ResourceName.foreach(__v => __obj.update("ResourceName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ResourceName.foreach(__v => __obj.updateDynamic("ResourceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListMigrationTasksRequest]
     }
   }
@@ -649,9 +649,9 @@ package migrationhub {
         MigrationTaskSummaryList: js.UndefOr[MigrationTaskSummaryList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): ListMigrationTasksResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MigrationTaskSummaryList.foreach(__v => __obj.update("MigrationTaskSummaryList", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MigrationTaskSummaryList.foreach(__v => __obj.updateDynamic("MigrationTaskSummaryList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListMigrationTasksResult]
     }
   }
@@ -667,9 +667,9 @@ package migrationhub {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): ListProgressUpdateStreamsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListProgressUpdateStreamsRequest]
     }
   }
@@ -685,10 +685,10 @@ package migrationhub {
         NextToken: js.UndefOr[Token] = js.undefined,
         ProgressUpdateStreamSummaryList: js.UndefOr[ProgressUpdateStreamSummaryList] = js.undefined
     ): ListProgressUpdateStreamsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       ProgressUpdateStreamSummaryList.foreach(
-        __v => __obj.update("ProgressUpdateStreamSummaryList", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ProgressUpdateStreamSummaryList")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListProgressUpdateStreamsResult]
     }
@@ -714,12 +714,12 @@ package migrationhub {
         Task: js.UndefOr[Task] = js.undefined,
         UpdateDateTime: js.UndefOr[UpdateDateTime] = js.undefined
     ): MigrationTask = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MigrationTaskName.foreach(__v => __obj.update("MigrationTaskName", __v.asInstanceOf[js.Any]))
-      ProgressUpdateStream.foreach(__v => __obj.update("ProgressUpdateStream", __v.asInstanceOf[js.Any]))
-      ResourceAttributeList.foreach(__v => __obj.update("ResourceAttributeList", __v.asInstanceOf[js.Any]))
-      Task.foreach(__v => __obj.update("Task", __v.asInstanceOf[js.Any]))
-      UpdateDateTime.foreach(__v => __obj.update("UpdateDateTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MigrationTaskName.foreach(__v => __obj.updateDynamic("MigrationTaskName")(__v.asInstanceOf[js.Any]))
+      ProgressUpdateStream.foreach(__v => __obj.updateDynamic("ProgressUpdateStream")(__v.asInstanceOf[js.Any]))
+      ResourceAttributeList.foreach(__v => __obj.updateDynamic("ResourceAttributeList")(__v.asInstanceOf[js.Any]))
+      Task.foreach(__v => __obj.updateDynamic("Task")(__v.asInstanceOf[js.Any]))
+      UpdateDateTime.foreach(__v => __obj.updateDynamic("UpdateDateTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MigrationTask]
     }
   }
@@ -746,13 +746,13 @@ package migrationhub {
         StatusDetail: js.UndefOr[StatusDetail] = js.undefined,
         UpdateDateTime: js.UndefOr[UpdateDateTime] = js.undefined
     ): MigrationTaskSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MigrationTaskName.foreach(__v => __obj.update("MigrationTaskName", __v.asInstanceOf[js.Any]))
-      ProgressPercent.foreach(__v => __obj.update("ProgressPercent", __v.asInstanceOf[js.Any]))
-      ProgressUpdateStream.foreach(__v => __obj.update("ProgressUpdateStream", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusDetail.foreach(__v => __obj.update("StatusDetail", __v.asInstanceOf[js.Any]))
-      UpdateDateTime.foreach(__v => __obj.update("UpdateDateTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MigrationTaskName.foreach(__v => __obj.updateDynamic("MigrationTaskName")(__v.asInstanceOf[js.Any]))
+      ProgressPercent.foreach(__v => __obj.updateDynamic("ProgressPercent")(__v.asInstanceOf[js.Any]))
+      ProgressUpdateStream.foreach(__v => __obj.updateDynamic("ProgressUpdateStream")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusDetail.foreach(__v => __obj.updateDynamic("StatusDetail")(__v.asInstanceOf[js.Any]))
+      UpdateDateTime.foreach(__v => __obj.updateDynamic("UpdateDateTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MigrationTaskSummary]
     }
   }
@@ -770,12 +770,12 @@ package migrationhub {
         Status: ApplicationStatus,
         DryRun: js.UndefOr[DryRun] = js.undefined
     ): NotifyApplicationStateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "Status"        -> Status.asInstanceOf[js.Any]
       )
 
-      DryRun.foreach(__v => __obj.update("DryRun", __v.asInstanceOf[js.Any]))
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NotifyApplicationStateRequest]
     }
   }
@@ -786,7 +786,7 @@ package migrationhub {
   object NotifyApplicationStateResult {
     def apply(
         ): NotifyApplicationStateResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[NotifyApplicationStateResult]
     }
@@ -811,7 +811,7 @@ package migrationhub {
         UpdateDateTime: UpdateDateTime,
         DryRun: js.UndefOr[DryRun] = js.undefined
     ): NotifyMigrationTaskStateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MigrationTaskName"    -> MigrationTaskName.asInstanceOf[js.Any],
         "NextUpdateSeconds"    -> NextUpdateSeconds.asInstanceOf[js.Any],
         "ProgressUpdateStream" -> ProgressUpdateStream.asInstanceOf[js.Any],
@@ -819,7 +819,7 @@ package migrationhub {
         "UpdateDateTime"       -> UpdateDateTime.asInstanceOf[js.Any]
       )
 
-      DryRun.foreach(__v => __obj.update("DryRun", __v.asInstanceOf[js.Any]))
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NotifyMigrationTaskStateRequest]
     }
   }
@@ -830,7 +830,7 @@ package migrationhub {
   object NotifyMigrationTaskStateResult {
     def apply(
         ): NotifyMigrationTaskStateResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[NotifyMigrationTaskStateResult]
     }
@@ -856,8 +856,8 @@ package migrationhub {
     def apply(
         ProgressUpdateStreamName: js.UndefOr[ProgressUpdateStream] = js.undefined
     ): ProgressUpdateStreamSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ProgressUpdateStreamName.foreach(__v => __obj.update("ProgressUpdateStreamName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ProgressUpdateStreamName.foreach(__v => __obj.updateDynamic("ProgressUpdateStreamName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProgressUpdateStreamSummary]
     }
   }
@@ -877,13 +877,13 @@ package migrationhub {
         ResourceAttributeList: ResourceAttributeList,
         DryRun: js.UndefOr[DryRun] = js.undefined
     ): PutResourceAttributesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MigrationTaskName"     -> MigrationTaskName.asInstanceOf[js.Any],
         "ProgressUpdateStream"  -> ProgressUpdateStream.asInstanceOf[js.Any],
         "ResourceAttributeList" -> ResourceAttributeList.asInstanceOf[js.Any]
       )
 
-      DryRun.foreach(__v => __obj.update("DryRun", __v.asInstanceOf[js.Any]))
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutResourceAttributesRequest]
     }
   }
@@ -894,7 +894,7 @@ package migrationhub {
   object PutResourceAttributesResult {
     def apply(
         ): PutResourceAttributesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutResourceAttributesResult]
     }
@@ -922,7 +922,7 @@ package migrationhub {
         Type: ResourceAttributeType,
         Value: ResourceAttributeValue
     ): ResourceAttribute = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Type"  -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
@@ -1000,12 +1000,12 @@ package migrationhub {
         ProgressPercent: js.UndefOr[ProgressPercent] = js.undefined,
         StatusDetail: js.UndefOr[StatusDetail] = js.undefined
     ): Task = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Status" -> Status.asInstanceOf[js.Any]
       )
 
-      ProgressPercent.foreach(__v => __obj.update("ProgressPercent", __v.asInstanceOf[js.Any]))
-      StatusDetail.foreach(__v => __obj.update("StatusDetail", __v.asInstanceOf[js.Any]))
+      ProgressPercent.foreach(__v => __obj.updateDynamic("ProgressPercent")(__v.asInstanceOf[js.Any]))
+      StatusDetail.foreach(__v => __obj.updateDynamic("StatusDetail")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Task]
     }
   }

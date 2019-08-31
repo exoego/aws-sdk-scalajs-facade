@@ -222,12 +222,12 @@ package iotthingsgraph {
         thingName: ThingName,
         namespaceVersion: js.UndefOr[Version] = js.undefined
     ): AssociateEntityToThingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "entityId"  -> entityId.asInstanceOf[js.Any],
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
 
-      namespaceVersion.foreach(__v => __obj.update("namespaceVersion", __v.asInstanceOf[js.Any]))
+      namespaceVersion.foreach(__v => __obj.updateDynamic("namespaceVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateEntityToThingRequest]
     }
   }
@@ -238,7 +238,7 @@ package iotthingsgraph {
   object AssociateEntityToThingResponse {
     def apply(
         ): AssociateEntityToThingResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateEntityToThingResponse]
     }
@@ -255,11 +255,13 @@ package iotthingsgraph {
         definition: DefinitionDocument,
         compatibleNamespaceVersion: js.UndefOr[Version] = js.undefined
     ): CreateFlowTemplateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "definition" -> definition.asInstanceOf[js.Any]
       )
 
-      compatibleNamespaceVersion.foreach(__v => __obj.update("compatibleNamespaceVersion", __v.asInstanceOf[js.Any]))
+      compatibleNamespaceVersion.foreach(
+        __v => __obj.updateDynamic("compatibleNamespaceVersion")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[CreateFlowTemplateRequest]
     }
   }
@@ -273,8 +275,8 @@ package iotthingsgraph {
     def apply(
         summary: js.UndefOr[FlowTemplateSummary] = js.undefined
     ): CreateFlowTemplateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      summary.foreach(__v => __obj.update("summary", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      summary.foreach(__v => __obj.updateDynamic("summary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFlowTemplateResponse]
     }
   }
@@ -300,16 +302,16 @@ package iotthingsgraph {
         s3BucketName: js.UndefOr[S3BucketName] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateSystemInstanceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "definition" -> definition.asInstanceOf[js.Any],
         "target"     -> target.asInstanceOf[js.Any]
       )
 
-      flowActionsRoleArn.foreach(__v => __obj.update("flowActionsRoleArn", __v.asInstanceOf[js.Any]))
-      greengrassGroupName.foreach(__v => __obj.update("greengrassGroupName", __v.asInstanceOf[js.Any]))
-      metricsConfiguration.foreach(__v => __obj.update("metricsConfiguration", __v.asInstanceOf[js.Any]))
-      s3BucketName.foreach(__v => __obj.update("s3BucketName", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      flowActionsRoleArn.foreach(__v => __obj.updateDynamic("flowActionsRoleArn")(__v.asInstanceOf[js.Any]))
+      greengrassGroupName.foreach(__v => __obj.updateDynamic("greengrassGroupName")(__v.asInstanceOf[js.Any]))
+      metricsConfiguration.foreach(__v => __obj.updateDynamic("metricsConfiguration")(__v.asInstanceOf[js.Any]))
+      s3BucketName.foreach(__v => __obj.updateDynamic("s3BucketName")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSystemInstanceRequest]
     }
   }
@@ -323,8 +325,8 @@ package iotthingsgraph {
     def apply(
         summary: js.UndefOr[SystemInstanceSummary] = js.undefined
     ): CreateSystemInstanceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      summary.foreach(__v => __obj.update("summary", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      summary.foreach(__v => __obj.updateDynamic("summary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSystemInstanceResponse]
     }
   }
@@ -340,11 +342,13 @@ package iotthingsgraph {
         definition: DefinitionDocument,
         compatibleNamespaceVersion: js.UndefOr[Version] = js.undefined
     ): CreateSystemTemplateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "definition" -> definition.asInstanceOf[js.Any]
       )
 
-      compatibleNamespaceVersion.foreach(__v => __obj.update("compatibleNamespaceVersion", __v.asInstanceOf[js.Any]))
+      compatibleNamespaceVersion.foreach(
+        __v => __obj.updateDynamic("compatibleNamespaceVersion")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[CreateSystemTemplateRequest]
     }
   }
@@ -358,8 +362,8 @@ package iotthingsgraph {
     def apply(
         summary: js.UndefOr[SystemTemplateSummary] = js.undefined
     ): CreateSystemTemplateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      summary.foreach(__v => __obj.update("summary", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      summary.foreach(__v => __obj.updateDynamic("summary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSystemTemplateResponse]
     }
   }
@@ -378,7 +382,7 @@ package iotthingsgraph {
         language: DefinitionLanguage,
         text: DefinitionText
     ): DefinitionDocument = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "language" -> language.asInstanceOf[js.Any],
         "text"     -> text.asInstanceOf[js.Any]
       )
@@ -402,7 +406,7 @@ package iotthingsgraph {
     def apply(
         id: Urn
     ): DeleteFlowTemplateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "id" -> id.asInstanceOf[js.Any]
       )
 
@@ -416,7 +420,7 @@ package iotthingsgraph {
   object DeleteFlowTemplateResponse {
     def apply(
         ): DeleteFlowTemplateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteFlowTemplateResponse]
     }
@@ -428,7 +432,7 @@ package iotthingsgraph {
   object DeleteNamespaceRequest {
     def apply(
         ): DeleteNamespaceRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteNamespaceRequest]
     }
@@ -445,9 +449,9 @@ package iotthingsgraph {
         namespaceArn: js.UndefOr[Arn] = js.undefined,
         namespaceName: js.UndefOr[NamespaceName] = js.undefined
     ): DeleteNamespaceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      namespaceArn.foreach(__v => __obj.update("namespaceArn", __v.asInstanceOf[js.Any]))
-      namespaceName.foreach(__v => __obj.update("namespaceName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      namespaceArn.foreach(__v => __obj.updateDynamic("namespaceArn")(__v.asInstanceOf[js.Any]))
+      namespaceName.foreach(__v => __obj.updateDynamic("namespaceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteNamespaceResponse]
     }
   }
@@ -461,8 +465,8 @@ package iotthingsgraph {
     def apply(
         id: js.UndefOr[Urn] = js.undefined
     ): DeleteSystemInstanceRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteSystemInstanceRequest]
     }
   }
@@ -473,7 +477,7 @@ package iotthingsgraph {
   object DeleteSystemInstanceResponse {
     def apply(
         ): DeleteSystemInstanceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteSystemInstanceResponse]
     }
@@ -488,7 +492,7 @@ package iotthingsgraph {
     def apply(
         id: Urn
     ): DeleteSystemTemplateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "id" -> id.asInstanceOf[js.Any]
       )
 
@@ -502,7 +506,7 @@ package iotthingsgraph {
   object DeleteSystemTemplateResponse {
     def apply(
         ): DeleteSystemTemplateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteSystemTemplateResponse]
     }
@@ -522,9 +526,9 @@ package iotthingsgraph {
         id: js.UndefOr[Urn] = js.undefined,
         revisionNumber: js.UndefOr[Version] = js.undefined
     ): DependencyRevision = {
-      val __obj = js.Dictionary.empty[js.Any]
-      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
-      revisionNumber.foreach(__v => __obj.update("revisionNumber", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      revisionNumber.foreach(__v => __obj.updateDynamic("revisionNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DependencyRevision]
     }
   }
@@ -538,8 +542,8 @@ package iotthingsgraph {
     def apply(
         id: js.UndefOr[Urn] = js.undefined
     ): DeploySystemInstanceRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeploySystemInstanceRequest]
     }
   }
@@ -555,11 +559,11 @@ package iotthingsgraph {
         summary: SystemInstanceSummary,
         greengrassDeploymentId: js.UndefOr[GreengrassDeploymentId] = js.undefined
     ): DeploySystemInstanceResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "summary" -> summary.asInstanceOf[js.Any]
       )
 
-      greengrassDeploymentId.foreach(__v => __obj.update("greengrassDeploymentId", __v.asInstanceOf[js.Any]))
+      greengrassDeploymentId.foreach(__v => __obj.updateDynamic("greengrassDeploymentId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeploySystemInstanceResponse]
     }
   }
@@ -580,7 +584,7 @@ package iotthingsgraph {
     def apply(
         id: Urn
     ): DeprecateFlowTemplateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "id" -> id.asInstanceOf[js.Any]
       )
 
@@ -594,7 +598,7 @@ package iotthingsgraph {
   object DeprecateFlowTemplateResponse {
     def apply(
         ): DeprecateFlowTemplateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeprecateFlowTemplateResponse]
     }
@@ -609,7 +613,7 @@ package iotthingsgraph {
     def apply(
         id: Urn
     ): DeprecateSystemTemplateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "id" -> id.asInstanceOf[js.Any]
       )
 
@@ -623,7 +627,7 @@ package iotthingsgraph {
   object DeprecateSystemTemplateResponse {
     def apply(
         ): DeprecateSystemTemplateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeprecateSystemTemplateResponse]
     }
@@ -638,8 +642,8 @@ package iotthingsgraph {
     def apply(
         namespaceName: js.UndefOr[NamespaceName] = js.undefined
     ): DescribeNamespaceRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      namespaceName.foreach(__v => __obj.update("namespaceName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      namespaceName.foreach(__v => __obj.updateDynamic("namespaceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeNamespaceRequest]
     }
   }
@@ -661,12 +665,12 @@ package iotthingsgraph {
         trackingNamespaceName: js.UndefOr[NamespaceName] = js.undefined,
         trackingNamespaceVersion: js.UndefOr[Version] = js.undefined
     ): DescribeNamespaceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      namespaceArn.foreach(__v => __obj.update("namespaceArn", __v.asInstanceOf[js.Any]))
-      namespaceName.foreach(__v => __obj.update("namespaceName", __v.asInstanceOf[js.Any]))
-      namespaceVersion.foreach(__v => __obj.update("namespaceVersion", __v.asInstanceOf[js.Any]))
-      trackingNamespaceName.foreach(__v => __obj.update("trackingNamespaceName", __v.asInstanceOf[js.Any]))
-      trackingNamespaceVersion.foreach(__v => __obj.update("trackingNamespaceVersion", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      namespaceArn.foreach(__v => __obj.updateDynamic("namespaceArn")(__v.asInstanceOf[js.Any]))
+      namespaceName.foreach(__v => __obj.updateDynamic("namespaceName")(__v.asInstanceOf[js.Any]))
+      namespaceVersion.foreach(__v => __obj.updateDynamic("namespaceVersion")(__v.asInstanceOf[js.Any]))
+      trackingNamespaceName.foreach(__v => __obj.updateDynamic("trackingNamespaceName")(__v.asInstanceOf[js.Any]))
+      trackingNamespaceVersion.foreach(__v => __obj.updateDynamic("trackingNamespaceVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeNamespaceResponse]
     }
   }
@@ -682,7 +686,7 @@ package iotthingsgraph {
         entityType: EntityType,
         thingName: ThingName
     ): DissociateEntityFromThingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "entityType" -> entityType.asInstanceOf[js.Any],
         "thingName"  -> thingName.asInstanceOf[js.Any]
       )
@@ -697,7 +701,7 @@ package iotthingsgraph {
   object DissociateEntityFromThingResponse {
     def apply(
         ): DissociateEntityFromThingResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DissociateEntityFromThingResponse]
     }
@@ -723,12 +727,12 @@ package iotthingsgraph {
         id: js.UndefOr[Urn] = js.undefined,
         `type`: js.UndefOr[EntityType] = js.undefined
     ): EntityDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      definition.foreach(__v => __obj.update("definition", __v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      definition.foreach(__v => __obj.updateDynamic("definition")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EntityDescription]
     }
   }
@@ -747,9 +751,9 @@ package iotthingsgraph {
         name: js.UndefOr[EntityFilterName] = js.undefined,
         value: js.UndefOr[EntityFilterValues] = js.undefined
     ): EntityFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EntityFilter]
     }
   }
@@ -840,11 +844,11 @@ package iotthingsgraph {
         payload: js.UndefOr[FlowExecutionMessagePayload] = js.undefined,
         timestamp: js.UndefOr[Timestamp] = js.undefined
     ): FlowExecutionMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      eventType.foreach(__v => __obj.update("eventType", __v.asInstanceOf[js.Any]))
-      messageId.foreach(__v => __obj.update("messageId", __v.asInstanceOf[js.Any]))
-      payload.foreach(__v => __obj.update("payload", __v.asInstanceOf[js.Any]))
-      timestamp.foreach(__v => __obj.update("timestamp", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      eventType.foreach(__v => __obj.updateDynamic("eventType")(__v.asInstanceOf[js.Any]))
+      messageId.foreach(__v => __obj.updateDynamic("messageId")(__v.asInstanceOf[js.Any]))
+      payload.foreach(__v => __obj.updateDynamic("payload")(__v.asInstanceOf[js.Any]))
+      timestamp.foreach(__v => __obj.updateDynamic("timestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FlowExecutionMessage]
     }
   }
@@ -880,13 +884,13 @@ package iotthingsgraph {
         systemInstanceId: js.UndefOr[Urn] = js.undefined,
         updatedAt: js.UndefOr[Timestamp] = js.undefined
     ): FlowExecutionSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      flowExecutionId.foreach(__v => __obj.update("flowExecutionId", __v.asInstanceOf[js.Any]))
-      flowTemplateId.foreach(__v => __obj.update("flowTemplateId", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      systemInstanceId.foreach(__v => __obj.update("systemInstanceId", __v.asInstanceOf[js.Any]))
-      updatedAt.foreach(__v => __obj.update("updatedAt", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      flowExecutionId.foreach(__v => __obj.updateDynamic("flowExecutionId")(__v.asInstanceOf[js.Any]))
+      flowTemplateId.foreach(__v => __obj.updateDynamic("flowTemplateId")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      systemInstanceId.foreach(__v => __obj.updateDynamic("systemInstanceId")(__v.asInstanceOf[js.Any]))
+      updatedAt.foreach(__v => __obj.updateDynamic("updatedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FlowExecutionSummary]
     }
   }
@@ -907,10 +911,12 @@ package iotthingsgraph {
         summary: js.UndefOr[FlowTemplateSummary] = js.undefined,
         validatedNamespaceVersion: js.UndefOr[Version] = js.undefined
     ): FlowTemplateDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      definition.foreach(__v => __obj.update("definition", __v.asInstanceOf[js.Any]))
-      summary.foreach(__v => __obj.update("summary", __v.asInstanceOf[js.Any]))
-      validatedNamespaceVersion.foreach(__v => __obj.update("validatedNamespaceVersion", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      definition.foreach(__v => __obj.updateDynamic("definition")(__v.asInstanceOf[js.Any]))
+      summary.foreach(__v => __obj.updateDynamic("summary")(__v.asInstanceOf[js.Any]))
+      validatedNamespaceVersion.foreach(
+        __v => __obj.updateDynamic("validatedNamespaceVersion")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[FlowTemplateDescription]
     }
   }
@@ -929,7 +935,7 @@ package iotthingsgraph {
         name: FlowTemplateFilterName,
         value: FlowTemplateFilterValues
     ): FlowTemplateFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name"  -> name.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
@@ -962,11 +968,11 @@ package iotthingsgraph {
         id: js.UndefOr[Urn] = js.undefined,
         revisionNumber: js.UndefOr[Version] = js.undefined
     ): FlowTemplateSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
-      revisionNumber.foreach(__v => __obj.update("revisionNumber", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      revisionNumber.foreach(__v => __obj.updateDynamic("revisionNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FlowTemplateSummary]
     }
   }
@@ -982,11 +988,11 @@ package iotthingsgraph {
         ids: Urns,
         namespaceVersion: js.UndefOr[Version] = js.undefined
     ): GetEntitiesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ids" -> ids.asInstanceOf[js.Any]
       )
 
-      namespaceVersion.foreach(__v => __obj.update("namespaceVersion", __v.asInstanceOf[js.Any]))
+      namespaceVersion.foreach(__v => __obj.updateDynamic("namespaceVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetEntitiesRequest]
     }
   }
@@ -1000,8 +1006,8 @@ package iotthingsgraph {
     def apply(
         descriptions: js.UndefOr[EntityDescriptions] = js.undefined
     ): GetEntitiesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      descriptions.foreach(__v => __obj.update("descriptions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      descriptions.foreach(__v => __obj.updateDynamic("descriptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetEntitiesResponse]
     }
   }
@@ -1017,11 +1023,11 @@ package iotthingsgraph {
         id: Urn,
         revisionNumber: js.UndefOr[Version] = js.undefined
     ): GetFlowTemplateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "id" -> id.asInstanceOf[js.Any]
       )
 
-      revisionNumber.foreach(__v => __obj.update("revisionNumber", __v.asInstanceOf[js.Any]))
+      revisionNumber.foreach(__v => __obj.updateDynamic("revisionNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFlowTemplateRequest]
     }
   }
@@ -1035,8 +1041,8 @@ package iotthingsgraph {
     def apply(
         description: js.UndefOr[FlowTemplateDescription] = js.undefined
     ): GetFlowTemplateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFlowTemplateResponse]
     }
   }
@@ -1054,12 +1060,12 @@ package iotthingsgraph {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetFlowTemplateRevisionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "id" -> id.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFlowTemplateRevisionsRequest]
     }
   }
@@ -1075,9 +1081,9 @@ package iotthingsgraph {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         summaries: js.UndefOr[FlowTemplateSummaries] = js.undefined
     ): GetFlowTemplateRevisionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      summaries.foreach(__v => __obj.update("summaries", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      summaries.foreach(__v => __obj.updateDynamic("summaries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFlowTemplateRevisionsResponse]
     }
   }
@@ -1088,7 +1094,7 @@ package iotthingsgraph {
   object GetNamespaceDeletionStatusRequest {
     def apply(
         ): GetNamespaceDeletionStatusRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetNamespaceDeletionStatusRequest]
     }
@@ -1111,12 +1117,12 @@ package iotthingsgraph {
         namespaceName: js.UndefOr[NamespaceName] = js.undefined,
         status: js.UndefOr[NamespaceDeletionStatus] = js.undefined
     ): GetNamespaceDeletionStatusResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      errorCode.foreach(__v => __obj.update("errorCode", __v.asInstanceOf[js.Any]))
-      errorMessage.foreach(__v => __obj.update("errorMessage", __v.asInstanceOf[js.Any]))
-      namespaceArn.foreach(__v => __obj.update("namespaceArn", __v.asInstanceOf[js.Any]))
-      namespaceName.foreach(__v => __obj.update("namespaceName", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      errorCode.foreach(__v => __obj.updateDynamic("errorCode")(__v.asInstanceOf[js.Any]))
+      errorMessage.foreach(__v => __obj.updateDynamic("errorMessage")(__v.asInstanceOf[js.Any]))
+      namespaceArn.foreach(__v => __obj.updateDynamic("namespaceArn")(__v.asInstanceOf[js.Any]))
+      namespaceName.foreach(__v => __obj.updateDynamic("namespaceName")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetNamespaceDeletionStatusResponse]
     }
   }
@@ -1130,7 +1136,7 @@ package iotthingsgraph {
     def apply(
         id: Urn
     ): GetSystemInstanceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "id" -> id.asInstanceOf[js.Any]
       )
 
@@ -1147,8 +1153,8 @@ package iotthingsgraph {
     def apply(
         description: js.UndefOr[SystemInstanceDescription] = js.undefined
     ): GetSystemInstanceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSystemInstanceResponse]
     }
   }
@@ -1164,11 +1170,11 @@ package iotthingsgraph {
         id: Urn,
         revisionNumber: js.UndefOr[Version] = js.undefined
     ): GetSystemTemplateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "id" -> id.asInstanceOf[js.Any]
       )
 
-      revisionNumber.foreach(__v => __obj.update("revisionNumber", __v.asInstanceOf[js.Any]))
+      revisionNumber.foreach(__v => __obj.updateDynamic("revisionNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSystemTemplateRequest]
     }
   }
@@ -1182,8 +1188,8 @@ package iotthingsgraph {
     def apply(
         description: js.UndefOr[SystemTemplateDescription] = js.undefined
     ): GetSystemTemplateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSystemTemplateResponse]
     }
   }
@@ -1201,12 +1207,12 @@ package iotthingsgraph {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetSystemTemplateRevisionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "id" -> id.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSystemTemplateRevisionsRequest]
     }
   }
@@ -1222,9 +1228,9 @@ package iotthingsgraph {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         summaries: js.UndefOr[SystemTemplateSummaries] = js.undefined
     ): GetSystemTemplateRevisionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      summaries.foreach(__v => __obj.update("summaries", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      summaries.foreach(__v => __obj.updateDynamic("summaries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSystemTemplateRevisionsResponse]
     }
   }
@@ -1238,7 +1244,7 @@ package iotthingsgraph {
     def apply(
         uploadId: UploadId
     ): GetUploadStatusRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "uploadId" -> uploadId.asInstanceOf[js.Any]
       )
 
@@ -1267,16 +1273,16 @@ package iotthingsgraph {
         namespaceName: js.UndefOr[NamespaceName] = js.undefined,
         namespaceVersion: js.UndefOr[Version] = js.undefined
     ): GetUploadStatusResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "createdDate"  -> createdDate.asInstanceOf[js.Any],
         "uploadId"     -> uploadId.asInstanceOf[js.Any],
         "uploadStatus" -> uploadStatus.asInstanceOf[js.Any]
       )
 
-      failureReason.foreach(__v => __obj.update("failureReason", __v.asInstanceOf[js.Any]))
-      namespaceArn.foreach(__v => __obj.update("namespaceArn", __v.asInstanceOf[js.Any]))
-      namespaceName.foreach(__v => __obj.update("namespaceName", __v.asInstanceOf[js.Any]))
-      namespaceVersion.foreach(__v => __obj.update("namespaceVersion", __v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      namespaceArn.foreach(__v => __obj.updateDynamic("namespaceArn")(__v.asInstanceOf[js.Any]))
+      namespaceName.foreach(__v => __obj.updateDynamic("namespaceName")(__v.asInstanceOf[js.Any]))
+      namespaceVersion.foreach(__v => __obj.updateDynamic("namespaceVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetUploadStatusResponse]
     }
   }
@@ -1294,12 +1300,12 @@ package iotthingsgraph {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListFlowExecutionMessagesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "flowExecutionId" -> flowExecutionId.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFlowExecutionMessagesRequest]
     }
   }
@@ -1315,9 +1321,9 @@ package iotthingsgraph {
         messages: js.UndefOr[FlowExecutionMessages] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListFlowExecutionMessagesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      messages.foreach(__v => __obj.update("messages", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      messages.foreach(__v => __obj.updateDynamic("messages")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFlowExecutionMessagesResponse]
     }
   }
@@ -1335,12 +1341,12 @@ package iotthingsgraph {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListTagsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -1356,9 +1362,9 @@ package iotthingsgraph {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsForResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
@@ -1377,9 +1383,9 @@ package iotthingsgraph {
         cloudMetricEnabled: js.UndefOr[Enabled] = js.undefined,
         metricRuleRoleArn: js.UndefOr[RoleArn] = js.undefined
     ): MetricsConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      cloudMetricEnabled.foreach(__v => __obj.update("cloudMetricEnabled", __v.asInstanceOf[js.Any]))
-      metricRuleRoleArn.foreach(__v => __obj.update("metricRuleRoleArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      cloudMetricEnabled.foreach(__v => __obj.updateDynamic("cloudMetricEnabled")(__v.asInstanceOf[js.Any]))
+      metricRuleRoleArn.foreach(__v => __obj.updateDynamic("metricRuleRoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MetricsConfiguration]
     }
   }
@@ -1415,14 +1421,14 @@ package iotthingsgraph {
         namespaceVersion: js.UndefOr[Version] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): SearchEntitiesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "entityTypes" -> entityTypes.asInstanceOf[js.Any]
       )
 
-      filters.foreach(__v => __obj.update("filters", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      namespaceVersion.foreach(__v => __obj.update("namespaceVersion", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      namespaceVersion.foreach(__v => __obj.updateDynamic("namespaceVersion")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchEntitiesRequest]
     }
   }
@@ -1438,9 +1444,9 @@ package iotthingsgraph {
         descriptions: js.UndefOr[EntityDescriptions] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): SearchEntitiesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      descriptions.foreach(__v => __obj.update("descriptions", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      descriptions.foreach(__v => __obj.updateDynamic("descriptions")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchEntitiesResponse]
     }
   }
@@ -1464,15 +1470,15 @@ package iotthingsgraph {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         startTime: js.UndefOr[Timestamp] = js.undefined
     ): SearchFlowExecutionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "systemInstanceId" -> systemInstanceId.asInstanceOf[js.Any]
       )
 
-      endTime.foreach(__v => __obj.update("endTime", __v.asInstanceOf[js.Any]))
-      flowExecutionId.foreach(__v => __obj.update("flowExecutionId", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      startTime.foreach(__v => __obj.update("startTime", __v.asInstanceOf[js.Any]))
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      flowExecutionId.foreach(__v => __obj.updateDynamic("flowExecutionId")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchFlowExecutionsRequest]
     }
   }
@@ -1488,9 +1494,9 @@ package iotthingsgraph {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         summaries: js.UndefOr[FlowExecutionSummaries] = js.undefined
     ): SearchFlowExecutionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      summaries.foreach(__v => __obj.update("summaries", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      summaries.foreach(__v => __obj.updateDynamic("summaries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchFlowExecutionsResponse]
     }
   }
@@ -1508,10 +1514,10 @@ package iotthingsgraph {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): SearchFlowTemplatesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      filters.foreach(__v => __obj.update("filters", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchFlowTemplatesRequest]
     }
   }
@@ -1527,9 +1533,9 @@ package iotthingsgraph {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         summaries: js.UndefOr[FlowTemplateSummaries] = js.undefined
     ): SearchFlowTemplatesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      summaries.foreach(__v => __obj.update("summaries", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      summaries.foreach(__v => __obj.updateDynamic("summaries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchFlowTemplatesResponse]
     }
   }
@@ -1547,10 +1553,10 @@ package iotthingsgraph {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): SearchSystemInstancesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      filters.foreach(__v => __obj.update("filters", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchSystemInstancesRequest]
     }
   }
@@ -1566,9 +1572,9 @@ package iotthingsgraph {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         summaries: js.UndefOr[SystemInstanceSummaries] = js.undefined
     ): SearchSystemInstancesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      summaries.foreach(__v => __obj.update("summaries", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      summaries.foreach(__v => __obj.updateDynamic("summaries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchSystemInstancesResponse]
     }
   }
@@ -1586,10 +1592,10 @@ package iotthingsgraph {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): SearchSystemTemplatesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      filters.foreach(__v => __obj.update("filters", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchSystemTemplatesRequest]
     }
   }
@@ -1605,9 +1611,9 @@ package iotthingsgraph {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         summaries: js.UndefOr[SystemTemplateSummaries] = js.undefined
     ): SearchSystemTemplatesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      summaries.foreach(__v => __obj.update("summaries", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      summaries.foreach(__v => __obj.updateDynamic("summaries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchSystemTemplatesResponse]
     }
   }
@@ -1627,13 +1633,13 @@ package iotthingsgraph {
         namespaceVersion: js.UndefOr[Version] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): SearchThingsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "entityId" -> entityId.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      namespaceVersion.foreach(__v => __obj.update("namespaceVersion", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      namespaceVersion.foreach(__v => __obj.updateDynamic("namespaceVersion")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchThingsRequest]
     }
   }
@@ -1649,9 +1655,9 @@ package iotthingsgraph {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         things: js.UndefOr[Things] = js.undefined
     ): SearchThingsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      things.foreach(__v => __obj.update("things", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      things.foreach(__v => __obj.updateDynamic("things")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchThingsResponse]
     }
   }
@@ -1704,16 +1710,18 @@ package iotthingsgraph {
         validatedDependencyRevisions: js.UndefOr[DependencyRevisions] = js.undefined,
         validatedNamespaceVersion: js.UndefOr[Version] = js.undefined
     ): SystemInstanceDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      definition.foreach(__v => __obj.update("definition", __v.asInstanceOf[js.Any]))
-      flowActionsRoleArn.foreach(__v => __obj.update("flowActionsRoleArn", __v.asInstanceOf[js.Any]))
-      metricsConfiguration.foreach(__v => __obj.update("metricsConfiguration", __v.asInstanceOf[js.Any]))
-      s3BucketName.foreach(__v => __obj.update("s3BucketName", __v.asInstanceOf[js.Any]))
-      summary.foreach(__v => __obj.update("summary", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      definition.foreach(__v => __obj.updateDynamic("definition")(__v.asInstanceOf[js.Any]))
+      flowActionsRoleArn.foreach(__v => __obj.updateDynamic("flowActionsRoleArn")(__v.asInstanceOf[js.Any]))
+      metricsConfiguration.foreach(__v => __obj.updateDynamic("metricsConfiguration")(__v.asInstanceOf[js.Any]))
+      s3BucketName.foreach(__v => __obj.updateDynamic("s3BucketName")(__v.asInstanceOf[js.Any]))
+      summary.foreach(__v => __obj.updateDynamic("summary")(__v.asInstanceOf[js.Any]))
       validatedDependencyRevisions.foreach(
-        __v => __obj.update("validatedDependencyRevisions", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("validatedDependencyRevisions")(__v.asInstanceOf[js.Any])
       )
-      validatedNamespaceVersion.foreach(__v => __obj.update("validatedNamespaceVersion", __v.asInstanceOf[js.Any]))
+      validatedNamespaceVersion.foreach(
+        __v => __obj.updateDynamic("validatedNamespaceVersion")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[SystemInstanceDescription]
     }
   }
@@ -1732,9 +1740,9 @@ package iotthingsgraph {
         name: js.UndefOr[SystemInstanceFilterName] = js.undefined,
         value: js.UndefOr[SystemInstanceFilterValues] = js.undefined
     ): SystemInstanceFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SystemInstanceFilter]
     }
   }
@@ -1775,16 +1783,16 @@ package iotthingsgraph {
         target: js.UndefOr[DeploymentTarget] = js.undefined,
         updatedAt: js.UndefOr[Timestamp] = js.undefined
     ): SystemInstanceSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      greengrassGroupId.foreach(__v => __obj.update("greengrassGroupId", __v.asInstanceOf[js.Any]))
-      greengrassGroupName.foreach(__v => __obj.update("greengrassGroupName", __v.asInstanceOf[js.Any]))
-      greengrassGroupVersionId.foreach(__v => __obj.update("greengrassGroupVersionId", __v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      target.foreach(__v => __obj.update("target", __v.asInstanceOf[js.Any]))
-      updatedAt.foreach(__v => __obj.update("updatedAt", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      greengrassGroupId.foreach(__v => __obj.updateDynamic("greengrassGroupId")(__v.asInstanceOf[js.Any]))
+      greengrassGroupName.foreach(__v => __obj.updateDynamic("greengrassGroupName")(__v.asInstanceOf[js.Any]))
+      greengrassGroupVersionId.foreach(__v => __obj.updateDynamic("greengrassGroupVersionId")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      target.foreach(__v => __obj.updateDynamic("target")(__v.asInstanceOf[js.Any]))
+      updatedAt.foreach(__v => __obj.updateDynamic("updatedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SystemInstanceSummary]
     }
   }
@@ -1805,10 +1813,12 @@ package iotthingsgraph {
         summary: js.UndefOr[SystemTemplateSummary] = js.undefined,
         validatedNamespaceVersion: js.UndefOr[Version] = js.undefined
     ): SystemTemplateDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      definition.foreach(__v => __obj.update("definition", __v.asInstanceOf[js.Any]))
-      summary.foreach(__v => __obj.update("summary", __v.asInstanceOf[js.Any]))
-      validatedNamespaceVersion.foreach(__v => __obj.update("validatedNamespaceVersion", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      definition.foreach(__v => __obj.updateDynamic("definition")(__v.asInstanceOf[js.Any]))
+      summary.foreach(__v => __obj.updateDynamic("summary")(__v.asInstanceOf[js.Any]))
+      validatedNamespaceVersion.foreach(
+        __v => __obj.updateDynamic("validatedNamespaceVersion")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[SystemTemplateDescription]
     }
   }
@@ -1827,7 +1837,7 @@ package iotthingsgraph {
         name: SystemTemplateFilterName,
         value: SystemTemplateFilterValues
     ): SystemTemplateFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name"  -> name.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
@@ -1860,11 +1870,11 @@ package iotthingsgraph {
         id: js.UndefOr[Urn] = js.undefined,
         revisionNumber: js.UndefOr[Version] = js.undefined
     ): SystemTemplateSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
-      revisionNumber.foreach(__v => __obj.update("revisionNumber", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      revisionNumber.foreach(__v => __obj.updateDynamic("revisionNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SystemTemplateSummary]
     }
   }
@@ -1883,7 +1893,7 @@ package iotthingsgraph {
         key: TagKey,
         value: TagValue
     ): Tag = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "key"   -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
@@ -1903,7 +1913,7 @@ package iotthingsgraph {
         resourceArn: ResourceArn,
         tags: TagList
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags"        -> tags.asInstanceOf[js.Any]
       )
@@ -1918,7 +1928,7 @@ package iotthingsgraph {
   object TagResourceResponse {
     def apply(
         ): TagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -1938,9 +1948,9 @@ package iotthingsgraph {
         thingArn: js.UndefOr[ThingArn] = js.undefined,
         thingName: js.UndefOr[ThingName] = js.undefined
     ): Thing = {
-      val __obj = js.Dictionary.empty[js.Any]
-      thingArn.foreach(__v => __obj.update("thingArn", __v.asInstanceOf[js.Any]))
-      thingName.foreach(__v => __obj.update("thingName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      thingArn.foreach(__v => __obj.updateDynamic("thingArn")(__v.asInstanceOf[js.Any]))
+      thingName.foreach(__v => __obj.updateDynamic("thingName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Thing]
     }
   }
@@ -1954,8 +1964,8 @@ package iotthingsgraph {
     def apply(
         id: js.UndefOr[Urn] = js.undefined
     ): UndeploySystemInstanceRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UndeploySystemInstanceRequest]
     }
   }
@@ -1969,8 +1979,8 @@ package iotthingsgraph {
     def apply(
         summary: js.UndefOr[SystemInstanceSummary] = js.undefined
     ): UndeploySystemInstanceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      summary.foreach(__v => __obj.update("summary", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      summary.foreach(__v => __obj.updateDynamic("summary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UndeploySystemInstanceResponse]
     }
   }
@@ -1986,7 +1996,7 @@ package iotthingsgraph {
         resourceArn: ResourceArn,
         tagKeys: TagKeyList
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
       )
@@ -2001,7 +2011,7 @@ package iotthingsgraph {
   object UntagResourceResponse {
     def apply(
         ): UntagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -2020,12 +2030,14 @@ package iotthingsgraph {
         id: Urn,
         compatibleNamespaceVersion: js.UndefOr[Version] = js.undefined
     ): UpdateFlowTemplateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "definition" -> definition.asInstanceOf[js.Any],
         "id"         -> id.asInstanceOf[js.Any]
       )
 
-      compatibleNamespaceVersion.foreach(__v => __obj.update("compatibleNamespaceVersion", __v.asInstanceOf[js.Any]))
+      compatibleNamespaceVersion.foreach(
+        __v => __obj.updateDynamic("compatibleNamespaceVersion")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[UpdateFlowTemplateRequest]
     }
   }
@@ -2039,8 +2051,8 @@ package iotthingsgraph {
     def apply(
         summary: js.UndefOr[FlowTemplateSummary] = js.undefined
     ): UpdateFlowTemplateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      summary.foreach(__v => __obj.update("summary", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      summary.foreach(__v => __obj.updateDynamic("summary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFlowTemplateResponse]
     }
   }
@@ -2058,12 +2070,14 @@ package iotthingsgraph {
         id: Urn,
         compatibleNamespaceVersion: js.UndefOr[Version] = js.undefined
     ): UpdateSystemTemplateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "definition" -> definition.asInstanceOf[js.Any],
         "id"         -> id.asInstanceOf[js.Any]
       )
 
-      compatibleNamespaceVersion.foreach(__v => __obj.update("compatibleNamespaceVersion", __v.asInstanceOf[js.Any]))
+      compatibleNamespaceVersion.foreach(
+        __v => __obj.updateDynamic("compatibleNamespaceVersion")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[UpdateSystemTemplateRequest]
     }
   }
@@ -2077,8 +2091,8 @@ package iotthingsgraph {
     def apply(
         summary: js.UndefOr[SystemTemplateSummary] = js.undefined
     ): UpdateSystemTemplateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      summary.foreach(__v => __obj.update("summary", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      summary.foreach(__v => __obj.updateDynamic("summary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSystemTemplateResponse]
     }
   }
@@ -2096,10 +2110,12 @@ package iotthingsgraph {
         document: js.UndefOr[DefinitionDocument] = js.undefined,
         syncWithPublicNamespace: js.UndefOr[SyncWithPublicNamespace] = js.undefined
     ): UploadEntityDefinitionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deprecateExistingEntities.foreach(__v => __obj.update("deprecateExistingEntities", __v.asInstanceOf[js.Any]))
-      document.foreach(__v => __obj.update("document", __v.asInstanceOf[js.Any]))
-      syncWithPublicNamespace.foreach(__v => __obj.update("syncWithPublicNamespace", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deprecateExistingEntities.foreach(
+        __v => __obj.updateDynamic("deprecateExistingEntities")(__v.asInstanceOf[js.Any])
+      )
+      document.foreach(__v => __obj.updateDynamic("document")(__v.asInstanceOf[js.Any]))
+      syncWithPublicNamespace.foreach(__v => __obj.updateDynamic("syncWithPublicNamespace")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UploadEntityDefinitionsRequest]
     }
   }
@@ -2113,7 +2129,7 @@ package iotthingsgraph {
     def apply(
         uploadId: UploadId
     ): UploadEntityDefinitionsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "uploadId" -> uploadId.asInstanceOf[js.Any]
       )
 

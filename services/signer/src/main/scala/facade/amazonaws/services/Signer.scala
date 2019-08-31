@@ -91,7 +91,7 @@ package signer {
     def apply(
         profileName: ProfileName
     ): CancelSigningProfileRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "profileName" -> profileName.asInstanceOf[js.Any]
       )
 
@@ -114,7 +114,7 @@ package signer {
     def apply(
         jobId: JobId
     ): DescribeSigningJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobId" -> jobId.asInstanceOf[js.Any]
       )
 
@@ -155,20 +155,20 @@ package signer {
         status: js.UndefOr[SigningStatus] = js.undefined,
         statusReason: js.UndefOr[StatusReason] = js.undefined
     ): DescribeSigningJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      completedAt.foreach(__v => __obj.update("completedAt", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      jobId.foreach(__v => __obj.update("jobId", __v.asInstanceOf[js.Any]))
-      overrides.foreach(__v => __obj.update("overrides", __v.asInstanceOf[js.Any]))
-      platformId.foreach(__v => __obj.update("platformId", __v.asInstanceOf[js.Any]))
-      profileName.foreach(__v => __obj.update("profileName", __v.asInstanceOf[js.Any]))
-      requestedBy.foreach(__v => __obj.update("requestedBy", __v.asInstanceOf[js.Any]))
-      signedObject.foreach(__v => __obj.update("signedObject", __v.asInstanceOf[js.Any]))
-      signingMaterial.foreach(__v => __obj.update("signingMaterial", __v.asInstanceOf[js.Any]))
-      signingParameters.foreach(__v => __obj.update("signingParameters", __v.asInstanceOf[js.Any]))
-      source.foreach(__v => __obj.update("source", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      statusReason.foreach(__v => __obj.update("statusReason", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      completedAt.foreach(__v => __obj.updateDynamic("completedAt")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
+      overrides.foreach(__v => __obj.updateDynamic("overrides")(__v.asInstanceOf[js.Any]))
+      platformId.foreach(__v => __obj.updateDynamic("platformId")(__v.asInstanceOf[js.Any]))
+      profileName.foreach(__v => __obj.updateDynamic("profileName")(__v.asInstanceOf[js.Any]))
+      requestedBy.foreach(__v => __obj.updateDynamic("requestedBy")(__v.asInstanceOf[js.Any]))
+      signedObject.foreach(__v => __obj.updateDynamic("signedObject")(__v.asInstanceOf[js.Any]))
+      signingMaterial.foreach(__v => __obj.updateDynamic("signingMaterial")(__v.asInstanceOf[js.Any]))
+      signingParameters.foreach(__v => __obj.updateDynamic("signingParameters")(__v.asInstanceOf[js.Any]))
+      source.foreach(__v => __obj.updateDynamic("source")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      statusReason.foreach(__v => __obj.updateDynamic("statusReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSigningJobResponse]
     }
   }
@@ -185,8 +185,8 @@ package signer {
     def apply(
         s3: js.UndefOr[S3Destination] = js.undefined
     ): Destination = {
-      val __obj = js.Dictionary.empty[js.Any]
-      s3.foreach(__v => __obj.update("s3", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      s3.foreach(__v => __obj.updateDynamic("s3")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Destination]
     }
   }
@@ -212,7 +212,7 @@ package signer {
         allowedValues: EncryptionAlgorithms,
         defaultValue: EncryptionAlgorithm
     ): EncryptionAlgorithmOptions = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "allowedValues" -> allowedValues.asInstanceOf[js.Any],
         "defaultValue"  -> defaultValue.asInstanceOf[js.Any]
       )
@@ -230,7 +230,7 @@ package signer {
     def apply(
         platformId: PlatformId
     ): GetSigningPlatformRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "platformId" -> platformId.asInstanceOf[js.Any]
       )
 
@@ -261,15 +261,15 @@ package signer {
         signingImageFormat: js.UndefOr[SigningImageFormat] = js.undefined,
         target: js.UndefOr[String] = js.undefined
     ): GetSigningPlatformResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      category.foreach(__v => __obj.update("category", __v.asInstanceOf[js.Any]))
-      displayName.foreach(__v => __obj.update("displayName", __v.asInstanceOf[js.Any]))
-      maxSizeInMB.foreach(__v => __obj.update("maxSizeInMB", __v.asInstanceOf[js.Any]))
-      partner.foreach(__v => __obj.update("partner", __v.asInstanceOf[js.Any]))
-      platformId.foreach(__v => __obj.update("platformId", __v.asInstanceOf[js.Any]))
-      signingConfiguration.foreach(__v => __obj.update("signingConfiguration", __v.asInstanceOf[js.Any]))
-      signingImageFormat.foreach(__v => __obj.update("signingImageFormat", __v.asInstanceOf[js.Any]))
-      target.foreach(__v => __obj.update("target", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      category.foreach(__v => __obj.updateDynamic("category")(__v.asInstanceOf[js.Any]))
+      displayName.foreach(__v => __obj.updateDynamic("displayName")(__v.asInstanceOf[js.Any]))
+      maxSizeInMB.foreach(__v => __obj.updateDynamic("maxSizeInMB")(__v.asInstanceOf[js.Any]))
+      partner.foreach(__v => __obj.updateDynamic("partner")(__v.asInstanceOf[js.Any]))
+      platformId.foreach(__v => __obj.updateDynamic("platformId")(__v.asInstanceOf[js.Any]))
+      signingConfiguration.foreach(__v => __obj.updateDynamic("signingConfiguration")(__v.asInstanceOf[js.Any]))
+      signingImageFormat.foreach(__v => __obj.updateDynamic("signingImageFormat")(__v.asInstanceOf[js.Any]))
+      target.foreach(__v => __obj.updateDynamic("target")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSigningPlatformResponse]
     }
   }
@@ -283,7 +283,7 @@ package signer {
     def apply(
         profileName: ProfileName
     ): GetSigningProfileRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "profileName" -> profileName.asInstanceOf[js.Any]
       )
 
@@ -310,13 +310,13 @@ package signer {
         signingParameters: js.UndefOr[SigningParameters] = js.undefined,
         status: js.UndefOr[SigningProfileStatus] = js.undefined
     ): GetSigningProfileResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      overrides.foreach(__v => __obj.update("overrides", __v.asInstanceOf[js.Any]))
-      platformId.foreach(__v => __obj.update("platformId", __v.asInstanceOf[js.Any]))
-      profileName.foreach(__v => __obj.update("profileName", __v.asInstanceOf[js.Any]))
-      signingMaterial.foreach(__v => __obj.update("signingMaterial", __v.asInstanceOf[js.Any]))
-      signingParameters.foreach(__v => __obj.update("signingParameters", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      overrides.foreach(__v => __obj.updateDynamic("overrides")(__v.asInstanceOf[js.Any]))
+      platformId.foreach(__v => __obj.updateDynamic("platformId")(__v.asInstanceOf[js.Any]))
+      profileName.foreach(__v => __obj.updateDynamic("profileName")(__v.asInstanceOf[js.Any]))
+      signingMaterial.foreach(__v => __obj.updateDynamic("signingMaterial")(__v.asInstanceOf[js.Any]))
+      signingParameters.foreach(__v => __obj.updateDynamic("signingParameters")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSigningProfileResponse]
     }
   }
@@ -342,7 +342,7 @@ package signer {
         allowedValues: HashAlgorithms,
         defaultValue: HashAlgorithm
     ): HashAlgorithmOptions = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "allowedValues" -> allowedValues.asInstanceOf[js.Any],
         "defaultValue"  -> defaultValue.asInstanceOf[js.Any]
       )
@@ -374,12 +374,12 @@ package signer {
         requestedBy: js.UndefOr[RequestedBy] = js.undefined,
         status: js.UndefOr[SigningStatus] = js.undefined
     ): ListSigningJobsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      platformId.foreach(__v => __obj.update("platformId", __v.asInstanceOf[js.Any]))
-      requestedBy.foreach(__v => __obj.update("requestedBy", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      platformId.foreach(__v => __obj.updateDynamic("platformId")(__v.asInstanceOf[js.Any]))
+      requestedBy.foreach(__v => __obj.updateDynamic("requestedBy")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSigningJobsRequest]
     }
   }
@@ -395,9 +395,9 @@ package signer {
         jobs: js.UndefOr[SigningJobs] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListSigningJobsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      jobs.foreach(__v => __obj.update("jobs", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      jobs.foreach(__v => __obj.updateDynamic("jobs")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSigningJobsResponse]
     }
   }
@@ -419,12 +419,12 @@ package signer {
         partner: js.UndefOr[String] = js.undefined,
         target: js.UndefOr[String] = js.undefined
     ): ListSigningPlatformsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      category.foreach(__v => __obj.update("category", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      partner.foreach(__v => __obj.update("partner", __v.asInstanceOf[js.Any]))
-      target.foreach(__v => __obj.update("target", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      category.foreach(__v => __obj.updateDynamic("category")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      partner.foreach(__v => __obj.updateDynamic("partner")(__v.asInstanceOf[js.Any]))
+      target.foreach(__v => __obj.updateDynamic("target")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSigningPlatformsRequest]
     }
   }
@@ -440,9 +440,9 @@ package signer {
         nextToken: js.UndefOr[String] = js.undefined,
         platforms: js.UndefOr[SigningPlatforms] = js.undefined
     ): ListSigningPlatformsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      platforms.foreach(__v => __obj.update("platforms", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      platforms.foreach(__v => __obj.updateDynamic("platforms")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSigningPlatformsResponse]
     }
   }
@@ -460,10 +460,10 @@ package signer {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListSigningProfilesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      includeCanceled.foreach(__v => __obj.update("includeCanceled", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      includeCanceled.foreach(__v => __obj.updateDynamic("includeCanceled")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSigningProfilesRequest]
     }
   }
@@ -479,9 +479,9 @@ package signer {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         profiles: js.UndefOr[SigningProfiles] = js.undefined
     ): ListSigningProfilesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      profiles.foreach(__v => __obj.update("profiles", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      profiles.foreach(__v => __obj.updateDynamic("profiles")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSigningProfilesResponse]
     }
   }
@@ -503,14 +503,14 @@ package signer {
         overrides: js.UndefOr[SigningPlatformOverrides] = js.undefined,
         signingParameters: js.UndefOr[SigningParameters] = js.undefined
     ): PutSigningProfileRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "platformId"      -> platformId.asInstanceOf[js.Any],
         "profileName"     -> profileName.asInstanceOf[js.Any],
         "signingMaterial" -> signingMaterial.asInstanceOf[js.Any]
       )
 
-      overrides.foreach(__v => __obj.update("overrides", __v.asInstanceOf[js.Any]))
-      signingParameters.foreach(__v => __obj.update("signingParameters", __v.asInstanceOf[js.Any]))
+      overrides.foreach(__v => __obj.updateDynamic("overrides")(__v.asInstanceOf[js.Any]))
+      signingParameters.foreach(__v => __obj.updateDynamic("signingParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutSigningProfileRequest]
     }
   }
@@ -524,8 +524,8 @@ package signer {
     def apply(
         arn: js.UndefOr[String] = js.undefined
     ): PutSigningProfileResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutSigningProfileResponse]
     }
   }
@@ -544,9 +544,9 @@ package signer {
         bucketName: js.UndefOr[BucketName] = js.undefined,
         prefix: js.UndefOr[Prefix] = js.undefined
     ): S3Destination = {
-      val __obj = js.Dictionary.empty[js.Any]
-      bucketName.foreach(__v => __obj.update("bucketName", __v.asInstanceOf[js.Any]))
-      prefix.foreach(__v => __obj.update("prefix", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      bucketName.foreach(__v => __obj.updateDynamic("bucketName")(__v.asInstanceOf[js.Any]))
+      prefix.foreach(__v => __obj.updateDynamic("prefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Destination]
     }
   }
@@ -565,9 +565,9 @@ package signer {
         bucketName: js.UndefOr[BucketName] = js.undefined,
         key: js.UndefOr[key] = js.undefined
     ): S3SignedObject = {
-      val __obj = js.Dictionary.empty[js.Any]
-      bucketName.foreach(__v => __obj.update("bucketName", __v.asInstanceOf[js.Any]))
-      key.foreach(__v => __obj.update("key", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      bucketName.foreach(__v => __obj.updateDynamic("bucketName")(__v.asInstanceOf[js.Any]))
+      key.foreach(__v => __obj.updateDynamic("key")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3SignedObject]
     }
   }
@@ -588,7 +588,7 @@ package signer {
         key: Key,
         version: Version
     ): S3Source = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "bucketName" -> bucketName.asInstanceOf[js.Any],
         "key"        -> key.asInstanceOf[js.Any],
         "version"    -> version.asInstanceOf[js.Any]
@@ -610,8 +610,8 @@ package signer {
     def apply(
         s3: js.UndefOr[S3SignedObject] = js.undefined
     ): SignedObject = {
-      val __obj = js.Dictionary.empty[js.Any]
-      s3.foreach(__v => __obj.update("s3", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      s3.foreach(__v => __obj.updateDynamic("s3")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SignedObject]
     }
   }
@@ -630,7 +630,7 @@ package signer {
         encryptionAlgorithmOptions: EncryptionAlgorithmOptions,
         hashAlgorithmOptions: HashAlgorithmOptions
     ): SigningConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "encryptionAlgorithmOptions" -> encryptionAlgorithmOptions.asInstanceOf[js.Any],
         "hashAlgorithmOptions"       -> hashAlgorithmOptions.asInstanceOf[js.Any]
       )
@@ -653,9 +653,9 @@ package signer {
         encryptionAlgorithm: js.UndefOr[EncryptionAlgorithm] = js.undefined,
         hashAlgorithm: js.UndefOr[HashAlgorithm] = js.undefined
     ): SigningConfigurationOverrides = {
-      val __obj = js.Dictionary.empty[js.Any]
-      encryptionAlgorithm.foreach(__v => __obj.update("encryptionAlgorithm", __v.asInstanceOf[js.Any]))
-      hashAlgorithm.foreach(__v => __obj.update("hashAlgorithm", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      encryptionAlgorithm.foreach(__v => __obj.updateDynamic("encryptionAlgorithm")(__v.asInstanceOf[js.Any]))
+      hashAlgorithm.foreach(__v => __obj.updateDynamic("hashAlgorithm")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SigningConfigurationOverrides]
     }
   }
@@ -674,7 +674,7 @@ package signer {
         defaultFormat: ImageFormat,
         supportedFormats: ImageFormats
     ): SigningImageFormat = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "defaultFormat"    -> defaultFormat.asInstanceOf[js.Any],
         "supportedFormats" -> supportedFormats.asInstanceOf[js.Any]
       )
@@ -705,13 +705,13 @@ package signer {
         source: js.UndefOr[Source] = js.undefined,
         status: js.UndefOr[SigningStatus] = js.undefined
     ): SigningJob = {
-      val __obj = js.Dictionary.empty[js.Any]
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      jobId.foreach(__v => __obj.update("jobId", __v.asInstanceOf[js.Any]))
-      signedObject.foreach(__v => __obj.update("signedObject", __v.asInstanceOf[js.Any]))
-      signingMaterial.foreach(__v => __obj.update("signingMaterial", __v.asInstanceOf[js.Any]))
-      source.foreach(__v => __obj.update("source", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
+      signedObject.foreach(__v => __obj.updateDynamic("signedObject")(__v.asInstanceOf[js.Any]))
+      signingMaterial.foreach(__v => __obj.updateDynamic("signingMaterial")(__v.asInstanceOf[js.Any]))
+      source.foreach(__v => __obj.updateDynamic("source")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SigningJob]
     }
   }
@@ -728,7 +728,7 @@ package signer {
     def apply(
         certificateArn: CertificateArn
     ): SigningMaterial = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "certificateArn" -> certificateArn.asInstanceOf[js.Any]
       )
 
@@ -762,15 +762,15 @@ package signer {
         signingImageFormat: js.UndefOr[SigningImageFormat] = js.undefined,
         target: js.UndefOr[String] = js.undefined
     ): SigningPlatform = {
-      val __obj = js.Dictionary.empty[js.Any]
-      category.foreach(__v => __obj.update("category", __v.asInstanceOf[js.Any]))
-      displayName.foreach(__v => __obj.update("displayName", __v.asInstanceOf[js.Any]))
-      maxSizeInMB.foreach(__v => __obj.update("maxSizeInMB", __v.asInstanceOf[js.Any]))
-      partner.foreach(__v => __obj.update("partner", __v.asInstanceOf[js.Any]))
-      platformId.foreach(__v => __obj.update("platformId", __v.asInstanceOf[js.Any]))
-      signingConfiguration.foreach(__v => __obj.update("signingConfiguration", __v.asInstanceOf[js.Any]))
-      signingImageFormat.foreach(__v => __obj.update("signingImageFormat", __v.asInstanceOf[js.Any]))
-      target.foreach(__v => __obj.update("target", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      category.foreach(__v => __obj.updateDynamic("category")(__v.asInstanceOf[js.Any]))
+      displayName.foreach(__v => __obj.updateDynamic("displayName")(__v.asInstanceOf[js.Any]))
+      maxSizeInMB.foreach(__v => __obj.updateDynamic("maxSizeInMB")(__v.asInstanceOf[js.Any]))
+      partner.foreach(__v => __obj.updateDynamic("partner")(__v.asInstanceOf[js.Any]))
+      platformId.foreach(__v => __obj.updateDynamic("platformId")(__v.asInstanceOf[js.Any]))
+      signingConfiguration.foreach(__v => __obj.updateDynamic("signingConfiguration")(__v.asInstanceOf[js.Any]))
+      signingImageFormat.foreach(__v => __obj.updateDynamic("signingImageFormat")(__v.asInstanceOf[js.Any]))
+      target.foreach(__v => __obj.updateDynamic("target")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SigningPlatform]
     }
   }
@@ -787,8 +787,8 @@ package signer {
     def apply(
         signingConfiguration: js.UndefOr[SigningConfigurationOverrides] = js.undefined
     ): SigningPlatformOverrides = {
-      val __obj = js.Dictionary.empty[js.Any]
-      signingConfiguration.foreach(__v => __obj.update("signingConfiguration", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      signingConfiguration.foreach(__v => __obj.updateDynamic("signingConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SigningPlatformOverrides]
     }
   }
@@ -813,12 +813,12 @@ package signer {
         signingParameters: js.UndefOr[SigningParameters] = js.undefined,
         status: js.UndefOr[SigningProfileStatus] = js.undefined
     ): SigningProfile = {
-      val __obj = js.Dictionary.empty[js.Any]
-      platformId.foreach(__v => __obj.update("platformId", __v.asInstanceOf[js.Any]))
-      profileName.foreach(__v => __obj.update("profileName", __v.asInstanceOf[js.Any]))
-      signingMaterial.foreach(__v => __obj.update("signingMaterial", __v.asInstanceOf[js.Any]))
-      signingParameters.foreach(__v => __obj.update("signingParameters", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      platformId.foreach(__v => __obj.updateDynamic("platformId")(__v.asInstanceOf[js.Any]))
+      profileName.foreach(__v => __obj.updateDynamic("profileName")(__v.asInstanceOf[js.Any]))
+      signingMaterial.foreach(__v => __obj.updateDynamic("signingMaterial")(__v.asInstanceOf[js.Any]))
+      signingParameters.foreach(__v => __obj.updateDynamic("signingParameters")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SigningProfile]
     }
   }
@@ -850,8 +850,8 @@ package signer {
     def apply(
         s3: js.UndefOr[S3Source] = js.undefined
     ): Source = {
-      val __obj = js.Dictionary.empty[js.Any]
-      s3.foreach(__v => __obj.update("s3", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      s3.foreach(__v => __obj.updateDynamic("s3")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Source]
     }
   }
@@ -871,13 +871,13 @@ package signer {
         source: Source,
         profileName: js.UndefOr[ProfileName] = js.undefined
     ): StartSigningJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "clientRequestToken" -> clientRequestToken.asInstanceOf[js.Any],
         "destination"        -> destination.asInstanceOf[js.Any],
         "source"             -> source.asInstanceOf[js.Any]
       )
 
-      profileName.foreach(__v => __obj.update("profileName", __v.asInstanceOf[js.Any]))
+      profileName.foreach(__v => __obj.updateDynamic("profileName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartSigningJobRequest]
     }
   }
@@ -891,8 +891,8 @@ package signer {
     def apply(
         jobId: js.UndefOr[JobId] = js.undefined
     ): StartSigningJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      jobId.foreach(__v => __obj.update("jobId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartSigningJobResponse]
     }
   }

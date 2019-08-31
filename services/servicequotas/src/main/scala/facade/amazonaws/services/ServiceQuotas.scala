@@ -155,7 +155,7 @@ package servicequotas {
   object AssociateServiceQuotaTemplateRequest {
     def apply(
         ): AssociateServiceQuotaTemplateRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateServiceQuotaTemplateRequest]
     }
@@ -167,7 +167,7 @@ package servicequotas {
   object AssociateServiceQuotaTemplateResponse {
     def apply(
         ): AssociateServiceQuotaTemplateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateServiceQuotaTemplateResponse]
     }
@@ -186,7 +186,7 @@ package servicequotas {
         QuotaCode: QuotaCode,
         ServiceCode: ServiceCode
     ): DeleteServiceQuotaIncreaseRequestFromTemplateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AwsRegion"   -> AwsRegion.asInstanceOf[js.Any],
         "QuotaCode"   -> QuotaCode.asInstanceOf[js.Any],
         "ServiceCode" -> ServiceCode.asInstanceOf[js.Any]
@@ -202,7 +202,7 @@ package servicequotas {
   object DeleteServiceQuotaIncreaseRequestFromTemplateResponse {
     def apply(
         ): DeleteServiceQuotaIncreaseRequestFromTemplateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteServiceQuotaIncreaseRequestFromTemplateResponse]
     }
@@ -214,7 +214,7 @@ package servicequotas {
   object DisassociateServiceQuotaTemplateRequest {
     def apply(
         ): DisassociateServiceQuotaTemplateRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateServiceQuotaTemplateRequest]
     }
@@ -226,7 +226,7 @@ package servicequotas {
   object DisassociateServiceQuotaTemplateResponse {
     def apply(
         ): DisassociateServiceQuotaTemplateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateServiceQuotaTemplateResponse]
     }
@@ -262,9 +262,9 @@ package servicequotas {
         ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
         ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined
     ): ErrorReason = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ErrorReason]
     }
   }
@@ -280,7 +280,7 @@ package servicequotas {
         QuotaCode: QuotaCode,
         ServiceCode: ServiceCode
     ): GetAWSDefaultServiceQuotaRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "QuotaCode"   -> QuotaCode.asInstanceOf[js.Any],
         "ServiceCode" -> ServiceCode.asInstanceOf[js.Any]
       )
@@ -298,8 +298,8 @@ package servicequotas {
     def apply(
         Quota: js.UndefOr[ServiceQuota] = js.undefined
     ): GetAWSDefaultServiceQuotaResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Quota.foreach(__v => __obj.update("Quota", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Quota.foreach(__v => __obj.updateDynamic("Quota")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAWSDefaultServiceQuotaResponse]
     }
   }
@@ -310,7 +310,7 @@ package servicequotas {
   object GetAssociationForServiceQuotaTemplateRequest {
     def apply(
         ): GetAssociationForServiceQuotaTemplateRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetAssociationForServiceQuotaTemplateRequest]
     }
@@ -325,9 +325,9 @@ package servicequotas {
     def apply(
         ServiceQuotaTemplateAssociationStatus: js.UndefOr[ServiceQuotaTemplateAssociationStatus] = js.undefined
     ): GetAssociationForServiceQuotaTemplateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       ServiceQuotaTemplateAssociationStatus.foreach(
-        __v => __obj.update("ServiceQuotaTemplateAssociationStatus", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ServiceQuotaTemplateAssociationStatus")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetAssociationForServiceQuotaTemplateResponse]
     }
@@ -342,7 +342,7 @@ package servicequotas {
     def apply(
         RequestId: RequestId
     ): GetRequestedServiceQuotaChangeRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RequestId" -> RequestId.asInstanceOf[js.Any]
       )
 
@@ -359,8 +359,8 @@ package servicequotas {
     def apply(
         RequestedQuota: js.UndefOr[RequestedServiceQuotaChange] = js.undefined
     ): GetRequestedServiceQuotaChangeResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RequestedQuota.foreach(__v => __obj.update("RequestedQuota", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RequestedQuota.foreach(__v => __obj.updateDynamic("RequestedQuota")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRequestedServiceQuotaChangeResponse]
     }
   }
@@ -378,7 +378,7 @@ package servicequotas {
         QuotaCode: QuotaCode,
         ServiceCode: ServiceCode
     ): GetServiceQuotaIncreaseRequestFromTemplateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AwsRegion"   -> AwsRegion.asInstanceOf[js.Any],
         "QuotaCode"   -> QuotaCode.asInstanceOf[js.Any],
         "ServiceCode" -> ServiceCode.asInstanceOf[js.Any]
@@ -397,9 +397,9 @@ package servicequotas {
     def apply(
         ServiceQuotaIncreaseRequestInTemplate: js.UndefOr[ServiceQuotaIncreaseRequestInTemplate] = js.undefined
     ): GetServiceQuotaIncreaseRequestFromTemplateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       ServiceQuotaIncreaseRequestInTemplate.foreach(
-        __v => __obj.update("ServiceQuotaIncreaseRequestInTemplate", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ServiceQuotaIncreaseRequestInTemplate")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetServiceQuotaIncreaseRequestFromTemplateResponse]
     }
@@ -416,7 +416,7 @@ package servicequotas {
         QuotaCode: QuotaCode,
         ServiceCode: ServiceCode
     ): GetServiceQuotaRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "QuotaCode"   -> QuotaCode.asInstanceOf[js.Any],
         "ServiceCode" -> ServiceCode.asInstanceOf[js.Any]
       )
@@ -434,8 +434,8 @@ package servicequotas {
     def apply(
         Quota: js.UndefOr[ServiceQuota] = js.undefined
     ): GetServiceQuotaResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Quota.foreach(__v => __obj.update("Quota", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Quota.foreach(__v => __obj.updateDynamic("Quota")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetServiceQuotaResponse]
     }
   }
@@ -453,12 +453,12 @@ package servicequotas {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListAWSDefaultServiceQuotasRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServiceCode" -> ServiceCode.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAWSDefaultServiceQuotasRequest]
     }
   }
@@ -474,9 +474,9 @@ package servicequotas {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Quotas: js.UndefOr[ServiceQuotaListDefinition] = js.undefined
     ): ListAWSDefaultServiceQuotasResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Quotas.foreach(__v => __obj.update("Quotas", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Quotas.foreach(__v => __obj.updateDynamic("Quotas")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAWSDefaultServiceQuotasResponse]
     }
   }
@@ -498,14 +498,14 @@ package servicequotas {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Status: js.UndefOr[RequestStatus] = js.undefined
     ): ListRequestedServiceQuotaChangeHistoryByQuotaRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "QuotaCode"   -> QuotaCode.asInstanceOf[js.Any],
         "ServiceCode" -> ServiceCode.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRequestedServiceQuotaChangeHistoryByQuotaRequest]
     }
   }
@@ -521,9 +521,9 @@ package servicequotas {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         RequestedQuotas: js.UndefOr[RequestedServiceQuotaChangeHistoryListDefinition] = js.undefined
     ): ListRequestedServiceQuotaChangeHistoryByQuotaResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      RequestedQuotas.foreach(__v => __obj.update("RequestedQuotas", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RequestedQuotas.foreach(__v => __obj.updateDynamic("RequestedQuotas")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRequestedServiceQuotaChangeHistoryByQuotaResponse]
     }
   }
@@ -543,11 +543,11 @@ package servicequotas {
         ServiceCode: js.UndefOr[ServiceCode] = js.undefined,
         Status: js.UndefOr[RequestStatus] = js.undefined
     ): ListRequestedServiceQuotaChangeHistoryRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ServiceCode.foreach(__v => __obj.update("ServiceCode", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ServiceCode.foreach(__v => __obj.updateDynamic("ServiceCode")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRequestedServiceQuotaChangeHistoryRequest]
     }
   }
@@ -563,9 +563,9 @@ package servicequotas {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         RequestedQuotas: js.UndefOr[RequestedServiceQuotaChangeHistoryListDefinition] = js.undefined
     ): ListRequestedServiceQuotaChangeHistoryResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      RequestedQuotas.foreach(__v => __obj.update("RequestedQuotas", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RequestedQuotas.foreach(__v => __obj.updateDynamic("RequestedQuotas")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRequestedServiceQuotaChangeHistoryResponse]
     }
   }
@@ -585,11 +585,11 @@ package servicequotas {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ServiceCode: js.UndefOr[ServiceCode] = js.undefined
     ): ListServiceQuotaIncreaseRequestsInTemplateRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AwsRegion.foreach(__v => __obj.update("AwsRegion", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ServiceCode.foreach(__v => __obj.update("ServiceCode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AwsRegion.foreach(__v => __obj.updateDynamic("AwsRegion")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ServiceCode.foreach(__v => __obj.updateDynamic("ServiceCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListServiceQuotaIncreaseRequestsInTemplateRequest]
     }
   }
@@ -605,10 +605,10 @@ package servicequotas {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ServiceQuotaIncreaseRequestInTemplateList: js.UndefOr[ServiceQuotaIncreaseRequestInTemplateList] = js.undefined
     ): ListServiceQuotaIncreaseRequestsInTemplateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       ServiceQuotaIncreaseRequestInTemplateList.foreach(
-        __v => __obj.update("ServiceQuotaIncreaseRequestInTemplateList", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ServiceQuotaIncreaseRequestInTemplateList")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListServiceQuotaIncreaseRequestsInTemplateResponse]
     }
@@ -627,12 +627,12 @@ package servicequotas {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListServiceQuotasRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServiceCode" -> ServiceCode.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListServiceQuotasRequest]
     }
   }
@@ -648,9 +648,9 @@ package servicequotas {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Quotas: js.UndefOr[ServiceQuotaListDefinition] = js.undefined
     ): ListServiceQuotasResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Quotas.foreach(__v => __obj.update("Quotas", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Quotas.foreach(__v => __obj.updateDynamic("Quotas")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListServiceQuotasResponse]
     }
   }
@@ -666,9 +666,9 @@ package servicequotas {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListServicesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListServicesRequest]
     }
   }
@@ -684,9 +684,9 @@ package servicequotas {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Services: js.UndefOr[ServiceInfoListDefinition] = js.undefined
     ): ListServicesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Services.foreach(__v => __obj.update("Services", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Services.foreach(__v => __obj.updateDynamic("Services")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListServicesResponse]
     }
   }
@@ -709,12 +709,12 @@ package servicequotas {
         MetricNamespace: js.UndefOr[QuotaMetricNamespace] = js.undefined,
         MetricStatisticRecommendation: js.UndefOr[Statistic] = js.undefined
     ): MetricInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MetricDimensions.foreach(__v => __obj.update("MetricDimensions", __v.asInstanceOf[js.Any]))
-      MetricName.foreach(__v => __obj.update("MetricName", __v.asInstanceOf[js.Any]))
-      MetricNamespace.foreach(__v => __obj.update("MetricNamespace", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MetricDimensions.foreach(__v => __obj.updateDynamic("MetricDimensions")(__v.asInstanceOf[js.Any]))
+      MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
+      MetricNamespace.foreach(__v => __obj.updateDynamic("MetricNamespace")(__v.asInstanceOf[js.Any]))
       MetricStatisticRecommendation.foreach(
-        __v => __obj.update("MetricStatisticRecommendation", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("MetricStatisticRecommendation")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[MetricInfo]
     }
@@ -747,7 +747,7 @@ package servicequotas {
         QuotaCode: QuotaCode,
         ServiceCode: ServiceCode
     ): PutServiceQuotaIncreaseRequestIntoTemplateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AwsRegion"    -> AwsRegion.asInstanceOf[js.Any],
         "DesiredValue" -> DesiredValue.asInstanceOf[js.Any],
         "QuotaCode"    -> QuotaCode.asInstanceOf[js.Any],
@@ -767,9 +767,9 @@ package servicequotas {
     def apply(
         ServiceQuotaIncreaseRequestInTemplate: js.UndefOr[ServiceQuotaIncreaseRequestInTemplate] = js.undefined
     ): PutServiceQuotaIncreaseRequestIntoTemplateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       ServiceQuotaIncreaseRequestInTemplate.foreach(
-        __v => __obj.update("ServiceQuotaIncreaseRequestInTemplate", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ServiceQuotaIncreaseRequestInTemplate")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[PutServiceQuotaIncreaseRequestIntoTemplateResponse]
     }
@@ -789,9 +789,9 @@ package servicequotas {
         PeriodUnit: js.UndefOr[PeriodUnit] = js.undefined,
         PeriodValue: js.UndefOr[PeriodValue] = js.undefined
     ): QuotaPeriod = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PeriodUnit.foreach(__v => __obj.update("PeriodUnit", __v.asInstanceOf[js.Any]))
-      PeriodValue.foreach(__v => __obj.update("PeriodValue", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PeriodUnit.foreach(__v => __obj.updateDynamic("PeriodUnit")(__v.asInstanceOf[js.Any]))
+      PeriodValue.foreach(__v => __obj.updateDynamic("PeriodValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[QuotaPeriod]
     }
   }
@@ -809,7 +809,7 @@ package servicequotas {
         QuotaCode: QuotaCode,
         ServiceCode: ServiceCode
     ): RequestServiceQuotaIncreaseRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DesiredValue" -> DesiredValue.asInstanceOf[js.Any],
         "QuotaCode"    -> QuotaCode.asInstanceOf[js.Any],
         "ServiceCode"  -> ServiceCode.asInstanceOf[js.Any]
@@ -828,8 +828,8 @@ package servicequotas {
     def apply(
         RequestedQuota: js.UndefOr[RequestedServiceQuotaChange] = js.undefined
     ): RequestServiceQuotaIncreaseResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RequestedQuota.foreach(__v => __obj.update("RequestedQuota", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RequestedQuota.foreach(__v => __obj.updateDynamic("RequestedQuota")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RequestServiceQuotaIncreaseResponse]
     }
   }
@@ -882,21 +882,21 @@ package servicequotas {
         Status: js.UndefOr[RequestStatus] = js.undefined,
         Unit: js.UndefOr[QuotaUnit] = js.undefined
     ): RequestedServiceQuotaChange = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CaseId.foreach(__v => __obj.update("CaseId", __v.asInstanceOf[js.Any]))
-      Created.foreach(__v => __obj.update("Created", __v.asInstanceOf[js.Any]))
-      DesiredValue.foreach(__v => __obj.update("DesiredValue", __v.asInstanceOf[js.Any]))
-      GlobalQuota.foreach(__v => __obj.update("GlobalQuota", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      LastUpdated.foreach(__v => __obj.update("LastUpdated", __v.asInstanceOf[js.Any]))
-      QuotaArn.foreach(__v => __obj.update("QuotaArn", __v.asInstanceOf[js.Any]))
-      QuotaCode.foreach(__v => __obj.update("QuotaCode", __v.asInstanceOf[js.Any]))
-      QuotaName.foreach(__v => __obj.update("QuotaName", __v.asInstanceOf[js.Any]))
-      Requester.foreach(__v => __obj.update("Requester", __v.asInstanceOf[js.Any]))
-      ServiceCode.foreach(__v => __obj.update("ServiceCode", __v.asInstanceOf[js.Any]))
-      ServiceName.foreach(__v => __obj.update("ServiceName", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      Unit.foreach(__v => __obj.update("Unit", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CaseId.foreach(__v => __obj.updateDynamic("CaseId")(__v.asInstanceOf[js.Any]))
+      Created.foreach(__v => __obj.updateDynamic("Created")(__v.asInstanceOf[js.Any]))
+      DesiredValue.foreach(__v => __obj.updateDynamic("DesiredValue")(__v.asInstanceOf[js.Any]))
+      GlobalQuota.foreach(__v => __obj.updateDynamic("GlobalQuota")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LastUpdated.foreach(__v => __obj.updateDynamic("LastUpdated")(__v.asInstanceOf[js.Any]))
+      QuotaArn.foreach(__v => __obj.updateDynamic("QuotaArn")(__v.asInstanceOf[js.Any]))
+      QuotaCode.foreach(__v => __obj.updateDynamic("QuotaCode")(__v.asInstanceOf[js.Any]))
+      QuotaName.foreach(__v => __obj.updateDynamic("QuotaName")(__v.asInstanceOf[js.Any]))
+      Requester.foreach(__v => __obj.updateDynamic("Requester")(__v.asInstanceOf[js.Any]))
+      ServiceCode.foreach(__v => __obj.updateDynamic("ServiceCode")(__v.asInstanceOf[js.Any]))
+      ServiceName.foreach(__v => __obj.updateDynamic("ServiceName")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RequestedServiceQuotaChange]
     }
   }
@@ -915,9 +915,9 @@ package servicequotas {
         ServiceCode: js.UndefOr[ServiceCode] = js.undefined,
         ServiceName: js.UndefOr[ServiceName] = js.undefined
     ): ServiceInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ServiceCode.foreach(__v => __obj.update("ServiceCode", __v.asInstanceOf[js.Any]))
-      ServiceName.foreach(__v => __obj.update("ServiceName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ServiceCode.foreach(__v => __obj.updateDynamic("ServiceCode")(__v.asInstanceOf[js.Any]))
+      ServiceName.foreach(__v => __obj.updateDynamic("ServiceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServiceInfo]
     }
   }
@@ -956,19 +956,19 @@ package servicequotas {
         UsageMetric: js.UndefOr[MetricInfo] = js.undefined,
         Value: js.UndefOr[QuotaValue] = js.undefined
     ): ServiceQuota = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Adjustable.foreach(__v => __obj.update("Adjustable", __v.asInstanceOf[js.Any]))
-      ErrorReason.foreach(__v => __obj.update("ErrorReason", __v.asInstanceOf[js.Any]))
-      GlobalQuota.foreach(__v => __obj.update("GlobalQuota", __v.asInstanceOf[js.Any]))
-      Period.foreach(__v => __obj.update("Period", __v.asInstanceOf[js.Any]))
-      QuotaArn.foreach(__v => __obj.update("QuotaArn", __v.asInstanceOf[js.Any]))
-      QuotaCode.foreach(__v => __obj.update("QuotaCode", __v.asInstanceOf[js.Any]))
-      QuotaName.foreach(__v => __obj.update("QuotaName", __v.asInstanceOf[js.Any]))
-      ServiceCode.foreach(__v => __obj.update("ServiceCode", __v.asInstanceOf[js.Any]))
-      ServiceName.foreach(__v => __obj.update("ServiceName", __v.asInstanceOf[js.Any]))
-      Unit.foreach(__v => __obj.update("Unit", __v.asInstanceOf[js.Any]))
-      UsageMetric.foreach(__v => __obj.update("UsageMetric", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Adjustable.foreach(__v => __obj.updateDynamic("Adjustable")(__v.asInstanceOf[js.Any]))
+      ErrorReason.foreach(__v => __obj.updateDynamic("ErrorReason")(__v.asInstanceOf[js.Any]))
+      GlobalQuota.foreach(__v => __obj.updateDynamic("GlobalQuota")(__v.asInstanceOf[js.Any]))
+      Period.foreach(__v => __obj.updateDynamic("Period")(__v.asInstanceOf[js.Any]))
+      QuotaArn.foreach(__v => __obj.updateDynamic("QuotaArn")(__v.asInstanceOf[js.Any]))
+      QuotaCode.foreach(__v => __obj.updateDynamic("QuotaCode")(__v.asInstanceOf[js.Any]))
+      QuotaName.foreach(__v => __obj.updateDynamic("QuotaName")(__v.asInstanceOf[js.Any]))
+      ServiceCode.foreach(__v => __obj.updateDynamic("ServiceCode")(__v.asInstanceOf[js.Any]))
+      ServiceName.foreach(__v => __obj.updateDynamic("ServiceName")(__v.asInstanceOf[js.Any]))
+      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
+      UsageMetric.foreach(__v => __obj.updateDynamic("UsageMetric")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServiceQuota]
     }
   }
@@ -999,15 +999,15 @@ package servicequotas {
         ServiceName: js.UndefOr[ServiceName] = js.undefined,
         Unit: js.UndefOr[QuotaUnit] = js.undefined
     ): ServiceQuotaIncreaseRequestInTemplate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AwsRegion.foreach(__v => __obj.update("AwsRegion", __v.asInstanceOf[js.Any]))
-      DesiredValue.foreach(__v => __obj.update("DesiredValue", __v.asInstanceOf[js.Any]))
-      GlobalQuota.foreach(__v => __obj.update("GlobalQuota", __v.asInstanceOf[js.Any]))
-      QuotaCode.foreach(__v => __obj.update("QuotaCode", __v.asInstanceOf[js.Any]))
-      QuotaName.foreach(__v => __obj.update("QuotaName", __v.asInstanceOf[js.Any]))
-      ServiceCode.foreach(__v => __obj.update("ServiceCode", __v.asInstanceOf[js.Any]))
-      ServiceName.foreach(__v => __obj.update("ServiceName", __v.asInstanceOf[js.Any]))
-      Unit.foreach(__v => __obj.update("Unit", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AwsRegion.foreach(__v => __obj.updateDynamic("AwsRegion")(__v.asInstanceOf[js.Any]))
+      DesiredValue.foreach(__v => __obj.updateDynamic("DesiredValue")(__v.asInstanceOf[js.Any]))
+      GlobalQuota.foreach(__v => __obj.updateDynamic("GlobalQuota")(__v.asInstanceOf[js.Any]))
+      QuotaCode.foreach(__v => __obj.updateDynamic("QuotaCode")(__v.asInstanceOf[js.Any]))
+      QuotaName.foreach(__v => __obj.updateDynamic("QuotaName")(__v.asInstanceOf[js.Any]))
+      ServiceCode.foreach(__v => __obj.updateDynamic("ServiceCode")(__v.asInstanceOf[js.Any]))
+      ServiceName.foreach(__v => __obj.updateDynamic("ServiceName")(__v.asInstanceOf[js.Any]))
+      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServiceQuotaIncreaseRequestInTemplate]
     }
   }

@@ -62,15 +62,15 @@ package comprehendmedical {
         Traits: js.UndefOr[TraitList] = js.undefined,
         Type: js.UndefOr[EntitySubType] = js.undefined
     ): Attribute = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BeginOffset.foreach(__v => __obj.update("BeginOffset", __v.asInstanceOf[js.Any]))
-      EndOffset.foreach(__v => __obj.update("EndOffset", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      RelationshipScore.foreach(__v => __obj.update("RelationshipScore", __v.asInstanceOf[js.Any]))
-      Score.foreach(__v => __obj.update("Score", __v.asInstanceOf[js.Any]))
-      Text.foreach(__v => __obj.update("Text", __v.asInstanceOf[js.Any]))
-      Traits.foreach(__v => __obj.update("Traits", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BeginOffset.foreach(__v => __obj.updateDynamic("BeginOffset")(__v.asInstanceOf[js.Any]))
+      EndOffset.foreach(__v => __obj.updateDynamic("EndOffset")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      RelationshipScore.foreach(__v => __obj.updateDynamic("RelationshipScore")(__v.asInstanceOf[js.Any]))
+      Score.foreach(__v => __obj.updateDynamic("Score")(__v.asInstanceOf[js.Any]))
+      Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
+      Traits.foreach(__v => __obj.updateDynamic("Traits")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Attribute]
     }
   }
@@ -93,7 +93,7 @@ package comprehendmedical {
     def apply(
         Text: BoundedLengthString
     ): DetectEntitiesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Text" -> Text.asInstanceOf[js.Any]
       )
 
@@ -114,12 +114,12 @@ package comprehendmedical {
         PaginationToken: js.UndefOr[String] = js.undefined,
         UnmappedAttributes: js.UndefOr[UnmappedAttributeList] = js.undefined
     ): DetectEntitiesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Entities" -> Entities.asInstanceOf[js.Any]
       )
 
-      PaginationToken.foreach(__v => __obj.update("PaginationToken", __v.asInstanceOf[js.Any]))
-      UnmappedAttributes.foreach(__v => __obj.update("UnmappedAttributes", __v.asInstanceOf[js.Any]))
+      PaginationToken.foreach(__v => __obj.updateDynamic("PaginationToken")(__v.asInstanceOf[js.Any]))
+      UnmappedAttributes.foreach(__v => __obj.updateDynamic("UnmappedAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetectEntitiesResponse]
     }
   }
@@ -133,7 +133,7 @@ package comprehendmedical {
     def apply(
         Text: BoundedLengthString
     ): DetectPHIRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Text" -> Text.asInstanceOf[js.Any]
       )
 
@@ -152,11 +152,11 @@ package comprehendmedical {
         Entities: EntityList,
         PaginationToken: js.UndefOr[String] = js.undefined
     ): DetectPHIResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Entities" -> Entities.asInstanceOf[js.Any]
       )
 
-      PaginationToken.foreach(__v => __obj.update("PaginationToken", __v.asInstanceOf[js.Any]))
+      PaginationToken.foreach(__v => __obj.updateDynamic("PaginationToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetectPHIResponse]
     }
   }
@@ -189,16 +189,16 @@ package comprehendmedical {
         Traits: js.UndefOr[TraitList] = js.undefined,
         Type: js.UndefOr[EntitySubType] = js.undefined
     ): Entity = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      BeginOffset.foreach(__v => __obj.update("BeginOffset", __v.asInstanceOf[js.Any]))
-      Category.foreach(__v => __obj.update("Category", __v.asInstanceOf[js.Any]))
-      EndOffset.foreach(__v => __obj.update("EndOffset", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Score.foreach(__v => __obj.update("Score", __v.asInstanceOf[js.Any]))
-      Text.foreach(__v => __obj.update("Text", __v.asInstanceOf[js.Any]))
-      Traits.foreach(__v => __obj.update("Traits", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      BeginOffset.foreach(__v => __obj.updateDynamic("BeginOffset")(__v.asInstanceOf[js.Any]))
+      Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
+      EndOffset.foreach(__v => __obj.updateDynamic("EndOffset")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Score.foreach(__v => __obj.updateDynamic("Score")(__v.asInstanceOf[js.Any]))
+      Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
+      Traits.foreach(__v => __obj.updateDynamic("Traits")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Entity]
     }
   }
@@ -293,9 +293,9 @@ package comprehendmedical {
         Name: js.UndefOr[AttributeName] = js.undefined,
         Score: js.UndefOr[Float] = js.undefined
     ): Trait = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Score.foreach(__v => __obj.update("Score", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Score.foreach(__v => __obj.updateDynamic("Score")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Trait]
     }
   }
@@ -314,9 +314,9 @@ package comprehendmedical {
         Attribute: js.UndefOr[Attribute] = js.undefined,
         Type: js.UndefOr[EntityType] = js.undefined
     ): UnmappedAttribute = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attribute.foreach(__v => __obj.update("Attribute", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attribute.foreach(__v => __obj.updateDynamic("Attribute")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UnmappedAttribute]
     }
   }

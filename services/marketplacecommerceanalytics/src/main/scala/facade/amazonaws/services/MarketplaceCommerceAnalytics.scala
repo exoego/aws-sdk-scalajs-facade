@@ -116,7 +116,7 @@ package marketplacecommerceanalytics {
         customerDefinedValues: js.UndefOr[CustomerDefinedValues] = js.undefined,
         destinationS3Prefix: js.UndefOr[DestinationS3Prefix] = js.undefined
     ): GenerateDataSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "dataSetPublicationDate"  -> dataSetPublicationDate.asInstanceOf[js.Any],
         "dataSetType"             -> dataSetType.asInstanceOf[js.Any],
         "destinationS3BucketName" -> destinationS3BucketName.asInstanceOf[js.Any],
@@ -124,8 +124,8 @@ package marketplacecommerceanalytics {
         "snsTopicArn"             -> snsTopicArn.asInstanceOf[js.Any]
       )
 
-      customerDefinedValues.foreach(__v => __obj.update("customerDefinedValues", __v.asInstanceOf[js.Any]))
-      destinationS3Prefix.foreach(__v => __obj.update("destinationS3Prefix", __v.asInstanceOf[js.Any]))
+      customerDefinedValues.foreach(__v => __obj.updateDynamic("customerDefinedValues")(__v.asInstanceOf[js.Any]))
+      destinationS3Prefix.foreach(__v => __obj.updateDynamic("destinationS3Prefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GenerateDataSetRequest]
     }
   }
@@ -142,8 +142,8 @@ package marketplacecommerceanalytics {
     def apply(
         dataSetRequestId: js.UndefOr[DataSetRequestId] = js.undefined
     ): GenerateDataSetResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      dataSetRequestId.foreach(__v => __obj.update("dataSetRequestId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      dataSetRequestId.foreach(__v => __obj.updateDynamic("dataSetRequestId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GenerateDataSetResult]
     }
   }
@@ -180,7 +180,7 @@ package marketplacecommerceanalytics {
         customerDefinedValues: js.UndefOr[CustomerDefinedValues] = js.undefined,
         destinationS3Prefix: js.UndefOr[DestinationS3Prefix] = js.undefined
     ): StartSupportDataExportRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "dataSetType"             -> dataSetType.asInstanceOf[js.Any],
         "destinationS3BucketName" -> destinationS3BucketName.asInstanceOf[js.Any],
         "fromDate"                -> fromDate.asInstanceOf[js.Any],
@@ -188,8 +188,8 @@ package marketplacecommerceanalytics {
         "snsTopicArn"             -> snsTopicArn.asInstanceOf[js.Any]
       )
 
-      customerDefinedValues.foreach(__v => __obj.update("customerDefinedValues", __v.asInstanceOf[js.Any]))
-      destinationS3Prefix.foreach(__v => __obj.update("destinationS3Prefix", __v.asInstanceOf[js.Any]))
+      customerDefinedValues.foreach(__v => __obj.updateDynamic("customerDefinedValues")(__v.asInstanceOf[js.Any]))
+      destinationS3Prefix.foreach(__v => __obj.updateDynamic("destinationS3Prefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartSupportDataExportRequest]
     }
   }
@@ -206,8 +206,8 @@ package marketplacecommerceanalytics {
     def apply(
         dataSetRequestId: js.UndefOr[DataSetRequestId] = js.undefined
     ): StartSupportDataExportResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      dataSetRequestId.foreach(__v => __obj.update("dataSetRequestId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      dataSetRequestId.foreach(__v => __obj.updateDynamic("dataSetRequestId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartSupportDataExportResult]
     }
   }

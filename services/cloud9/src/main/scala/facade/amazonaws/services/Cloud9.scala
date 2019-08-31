@@ -107,16 +107,16 @@ package cloud9 {
         ownerArn: js.UndefOr[UserArn] = js.undefined,
         subnetId: js.UndefOr[SubnetId] = js.undefined
     ): CreateEnvironmentEC2Request = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "instanceType" -> instanceType.asInstanceOf[js.Any],
         "name"         -> name.asInstanceOf[js.Any]
       )
 
-      automaticStopTimeMinutes.foreach(__v => __obj.update("automaticStopTimeMinutes", __v.asInstanceOf[js.Any]))
-      clientRequestToken.foreach(__v => __obj.update("clientRequestToken", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      ownerArn.foreach(__v => __obj.update("ownerArn", __v.asInstanceOf[js.Any]))
-      subnetId.foreach(__v => __obj.update("subnetId", __v.asInstanceOf[js.Any]))
+      automaticStopTimeMinutes.foreach(__v => __obj.updateDynamic("automaticStopTimeMinutes")(__v.asInstanceOf[js.Any]))
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      ownerArn.foreach(__v => __obj.updateDynamic("ownerArn")(__v.asInstanceOf[js.Any]))
+      subnetId.foreach(__v => __obj.updateDynamic("subnetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateEnvironmentEC2Request]
     }
   }
@@ -130,8 +130,8 @@ package cloud9 {
     def apply(
         environmentId: js.UndefOr[EnvironmentId] = js.undefined
     ): CreateEnvironmentEC2Result = {
-      val __obj = js.Dictionary.empty[js.Any]
-      environmentId.foreach(__v => __obj.update("environmentId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      environmentId.foreach(__v => __obj.updateDynamic("environmentId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateEnvironmentEC2Result]
     }
   }
@@ -149,7 +149,7 @@ package cloud9 {
         permissions: MemberPermissions,
         userArn: UserArn
     ): CreateEnvironmentMembershipRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "environmentId" -> environmentId.asInstanceOf[js.Any],
         "permissions"   -> permissions.asInstanceOf[js.Any],
         "userArn"       -> userArn.asInstanceOf[js.Any]
@@ -168,8 +168,8 @@ package cloud9 {
     def apply(
         membership: js.UndefOr[EnvironmentMember] = js.undefined
     ): CreateEnvironmentMembershipResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      membership.foreach(__v => __obj.update("membership", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      membership.foreach(__v => __obj.updateDynamic("membership")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateEnvironmentMembershipResult]
     }
   }
@@ -185,7 +185,7 @@ package cloud9 {
         environmentId: EnvironmentId,
         userArn: UserArn
     ): DeleteEnvironmentMembershipRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "environmentId" -> environmentId.asInstanceOf[js.Any],
         "userArn"       -> userArn.asInstanceOf[js.Any]
       )
@@ -200,7 +200,7 @@ package cloud9 {
   object DeleteEnvironmentMembershipResult {
     def apply(
         ): DeleteEnvironmentMembershipResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteEnvironmentMembershipResult]
     }
@@ -215,7 +215,7 @@ package cloud9 {
     def apply(
         environmentId: EnvironmentId
     ): DeleteEnvironmentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "environmentId" -> environmentId.asInstanceOf[js.Any]
       )
 
@@ -229,7 +229,7 @@ package cloud9 {
   object DeleteEnvironmentResult {
     def apply(
         ): DeleteEnvironmentResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteEnvironmentResult]
     }
@@ -252,12 +252,12 @@ package cloud9 {
         permissions: js.UndefOr[PermissionsList] = js.undefined,
         userArn: js.UndefOr[UserArn] = js.undefined
     ): DescribeEnvironmentMembershipsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      environmentId.foreach(__v => __obj.update("environmentId", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      permissions.foreach(__v => __obj.update("permissions", __v.asInstanceOf[js.Any]))
-      userArn.foreach(__v => __obj.update("userArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      environmentId.foreach(__v => __obj.updateDynamic("environmentId")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      permissions.foreach(__v => __obj.updateDynamic("permissions")(__v.asInstanceOf[js.Any]))
+      userArn.foreach(__v => __obj.updateDynamic("userArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEnvironmentMembershipsRequest]
     }
   }
@@ -273,9 +273,9 @@ package cloud9 {
         memberships: js.UndefOr[EnvironmentMembersList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): DescribeEnvironmentMembershipsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      memberships.foreach(__v => __obj.update("memberships", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      memberships.foreach(__v => __obj.updateDynamic("memberships")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEnvironmentMembershipsResult]
     }
   }
@@ -289,7 +289,7 @@ package cloud9 {
     def apply(
         environmentId: EnvironmentId
     ): DescribeEnvironmentStatusRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "environmentId" -> environmentId.asInstanceOf[js.Any]
       )
 
@@ -308,9 +308,9 @@ package cloud9 {
         message: js.UndefOr[String] = js.undefined,
         status: js.UndefOr[EnvironmentStatus] = js.undefined
     ): DescribeEnvironmentStatusResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEnvironmentStatusResult]
     }
   }
@@ -324,7 +324,7 @@ package cloud9 {
     def apply(
         environmentIds: BoundedEnvironmentIdList
     ): DescribeEnvironmentsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "environmentIds" -> environmentIds.asInstanceOf[js.Any]
       )
 
@@ -341,8 +341,8 @@ package cloud9 {
     def apply(
         environments: js.UndefOr[EnvironmentList] = js.undefined
     ): DescribeEnvironmentsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      environments.foreach(__v => __obj.update("environments", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      environments.foreach(__v => __obj.updateDynamic("environments")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEnvironmentsResult]
     }
   }
@@ -371,14 +371,14 @@ package cloud9 {
         ownerArn: js.UndefOr[String] = js.undefined,
         `type`: js.UndefOr[EnvironmentType] = js.undefined
     ): Environment = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
-      lifecycle.foreach(__v => __obj.update("lifecycle", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      ownerArn.foreach(__v => __obj.update("ownerArn", __v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      lifecycle.foreach(__v => __obj.updateDynamic("lifecycle")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      ownerArn.foreach(__v => __obj.updateDynamic("ownerArn")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Environment]
     }
   }
@@ -399,10 +399,10 @@ package cloud9 {
         reason: js.UndefOr[String] = js.undefined,
         status: js.UndefOr[EnvironmentLifecycleStatus] = js.undefined
     ): EnvironmentLifecycle = {
-      val __obj = js.Dictionary.empty[js.Any]
-      failureResource.foreach(__v => __obj.update("failureResource", __v.asInstanceOf[js.Any]))
-      reason.foreach(__v => __obj.update("reason", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      failureResource.foreach(__v => __obj.updateDynamic("failureResource")(__v.asInstanceOf[js.Any]))
+      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnvironmentLifecycle]
     }
   }
@@ -435,12 +435,12 @@ package cloud9 {
         userArn: js.UndefOr[UserArn] = js.undefined,
         userId: js.UndefOr[String] = js.undefined
     ): EnvironmentMember = {
-      val __obj = js.Dictionary.empty[js.Any]
-      environmentId.foreach(__v => __obj.update("environmentId", __v.asInstanceOf[js.Any]))
-      lastAccess.foreach(__v => __obj.update("lastAccess", __v.asInstanceOf[js.Any]))
-      permissions.foreach(__v => __obj.update("permissions", __v.asInstanceOf[js.Any]))
-      userArn.foreach(__v => __obj.update("userArn", __v.asInstanceOf[js.Any]))
-      userId.foreach(__v => __obj.update("userId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      environmentId.foreach(__v => __obj.updateDynamic("environmentId")(__v.asInstanceOf[js.Any]))
+      lastAccess.foreach(__v => __obj.updateDynamic("lastAccess")(__v.asInstanceOf[js.Any]))
+      permissions.foreach(__v => __obj.updateDynamic("permissions")(__v.asInstanceOf[js.Any]))
+      userArn.foreach(__v => __obj.updateDynamic("userArn")(__v.asInstanceOf[js.Any]))
+      userId.foreach(__v => __obj.updateDynamic("userId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnvironmentMember]
     }
   }
@@ -475,9 +475,9 @@ package cloud9 {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): ListEnvironmentsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEnvironmentsRequest]
     }
   }
@@ -493,9 +493,9 @@ package cloud9 {
         environmentIds: js.UndefOr[EnvironmentIdList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): ListEnvironmentsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      environmentIds.foreach(__v => __obj.update("environmentIds", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      environmentIds.foreach(__v => __obj.updateDynamic("environmentIds")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEnvironmentsResult]
     }
   }
@@ -528,7 +528,7 @@ package cloud9 {
         permissions: MemberPermissions,
         userArn: UserArn
     ): UpdateEnvironmentMembershipRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "environmentId" -> environmentId.asInstanceOf[js.Any],
         "permissions"   -> permissions.asInstanceOf[js.Any],
         "userArn"       -> userArn.asInstanceOf[js.Any]
@@ -547,8 +547,8 @@ package cloud9 {
     def apply(
         membership: js.UndefOr[EnvironmentMember] = js.undefined
     ): UpdateEnvironmentMembershipResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      membership.foreach(__v => __obj.update("membership", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      membership.foreach(__v => __obj.updateDynamic("membership")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateEnvironmentMembershipResult]
     }
   }
@@ -566,12 +566,12 @@ package cloud9 {
         description: js.UndefOr[EnvironmentDescription] = js.undefined,
         name: js.UndefOr[EnvironmentName] = js.undefined
     ): UpdateEnvironmentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "environmentId" -> environmentId.asInstanceOf[js.Any]
       )
 
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateEnvironmentRequest]
     }
   }
@@ -582,7 +582,7 @@ package cloud9 {
   object UpdateEnvironmentResult {
     def apply(
         ): UpdateEnvironmentResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateEnvironmentResult]
     }

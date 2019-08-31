@@ -1075,7 +1075,7 @@ package iot {
     def apply(
         criteriaList: AbortCriteriaList
     ): AbortConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "criteriaList" -> criteriaList.asInstanceOf[js.Any]
       )
 
@@ -1101,7 +1101,7 @@ package iot {
         minNumberOfExecutedThings: MinimumNumberOfExecutedThings,
         thresholdPercentage: AbortThresholdPercentage
     ): AbortCriteria = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "action"                    -> action.asInstanceOf[js.Any],
         "failureType"               -> failureType.asInstanceOf[js.Any],
         "minNumberOfExecutedThings" -> minNumberOfExecutedThings.asInstanceOf[js.Any],
@@ -1126,11 +1126,11 @@ package iot {
         certificateId: CertificateId,
         setAsActive: js.UndefOr[SetAsActive] = js.undefined
     ): AcceptCertificateTransferRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "certificateId" -> certificateId.asInstanceOf[js.Any]
       )
 
-      setAsActive.foreach(__v => __obj.update("setAsActive", __v.asInstanceOf[js.Any]))
+      setAsActive.foreach(__v => __obj.updateDynamic("setAsActive")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AcceptCertificateTransferRequest]
     }
   }
@@ -1177,23 +1177,23 @@ package iot {
         sqs: js.UndefOr[SqsAction] = js.undefined,
         stepFunctions: js.UndefOr[StepFunctionsAction] = js.undefined
     ): Action = {
-      val __obj = js.Dictionary.empty[js.Any]
-      cloudwatchAlarm.foreach(__v => __obj.update("cloudwatchAlarm", __v.asInstanceOf[js.Any]))
-      cloudwatchMetric.foreach(__v => __obj.update("cloudwatchMetric", __v.asInstanceOf[js.Any]))
-      dynamoDB.foreach(__v => __obj.update("dynamoDB", __v.asInstanceOf[js.Any]))
-      dynamoDBv2.foreach(__v => __obj.update("dynamoDBv2", __v.asInstanceOf[js.Any]))
-      elasticsearch.foreach(__v => __obj.update("elasticsearch", __v.asInstanceOf[js.Any]))
-      firehose.foreach(__v => __obj.update("firehose", __v.asInstanceOf[js.Any]))
-      iotAnalytics.foreach(__v => __obj.update("iotAnalytics", __v.asInstanceOf[js.Any]))
-      iotEvents.foreach(__v => __obj.update("iotEvents", __v.asInstanceOf[js.Any]))
-      kinesis.foreach(__v => __obj.update("kinesis", __v.asInstanceOf[js.Any]))
-      lambda.foreach(__v => __obj.update("lambda", __v.asInstanceOf[js.Any]))
-      republish.foreach(__v => __obj.update("republish", __v.asInstanceOf[js.Any]))
-      s3.foreach(__v => __obj.update("s3", __v.asInstanceOf[js.Any]))
-      salesforce.foreach(__v => __obj.update("salesforce", __v.asInstanceOf[js.Any]))
-      sns.foreach(__v => __obj.update("sns", __v.asInstanceOf[js.Any]))
-      sqs.foreach(__v => __obj.update("sqs", __v.asInstanceOf[js.Any]))
-      stepFunctions.foreach(__v => __obj.update("stepFunctions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      cloudwatchAlarm.foreach(__v => __obj.updateDynamic("cloudwatchAlarm")(__v.asInstanceOf[js.Any]))
+      cloudwatchMetric.foreach(__v => __obj.updateDynamic("cloudwatchMetric")(__v.asInstanceOf[js.Any]))
+      dynamoDB.foreach(__v => __obj.updateDynamic("dynamoDB")(__v.asInstanceOf[js.Any]))
+      dynamoDBv2.foreach(__v => __obj.updateDynamic("dynamoDBv2")(__v.asInstanceOf[js.Any]))
+      elasticsearch.foreach(__v => __obj.updateDynamic("elasticsearch")(__v.asInstanceOf[js.Any]))
+      firehose.foreach(__v => __obj.updateDynamic("firehose")(__v.asInstanceOf[js.Any]))
+      iotAnalytics.foreach(__v => __obj.updateDynamic("iotAnalytics")(__v.asInstanceOf[js.Any]))
+      iotEvents.foreach(__v => __obj.updateDynamic("iotEvents")(__v.asInstanceOf[js.Any]))
+      kinesis.foreach(__v => __obj.updateDynamic("kinesis")(__v.asInstanceOf[js.Any]))
+      lambda.foreach(__v => __obj.updateDynamic("lambda")(__v.asInstanceOf[js.Any]))
+      republish.foreach(__v => __obj.updateDynamic("republish")(__v.asInstanceOf[js.Any]))
+      s3.foreach(__v => __obj.updateDynamic("s3")(__v.asInstanceOf[js.Any]))
+      salesforce.foreach(__v => __obj.updateDynamic("salesforce")(__v.asInstanceOf[js.Any]))
+      sns.foreach(__v => __obj.updateDynamic("sns")(__v.asInstanceOf[js.Any]))
+      sqs.foreach(__v => __obj.updateDynamic("sqs")(__v.asInstanceOf[js.Any]))
+      stepFunctions.foreach(__v => __obj.updateDynamic("stepFunctions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Action]
     }
   }
@@ -1231,14 +1231,14 @@ package iot {
         violationId: js.UndefOr[ViolationId] = js.undefined,
         violationStartTime: js.UndefOr[Timestamp] = js.undefined
     ): ActiveViolation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      behavior.foreach(__v => __obj.update("behavior", __v.asInstanceOf[js.Any]))
-      lastViolationTime.foreach(__v => __obj.update("lastViolationTime", __v.asInstanceOf[js.Any]))
-      lastViolationValue.foreach(__v => __obj.update("lastViolationValue", __v.asInstanceOf[js.Any]))
-      securityProfileName.foreach(__v => __obj.update("securityProfileName", __v.asInstanceOf[js.Any]))
-      thingName.foreach(__v => __obj.update("thingName", __v.asInstanceOf[js.Any]))
-      violationId.foreach(__v => __obj.update("violationId", __v.asInstanceOf[js.Any]))
-      violationStartTime.foreach(__v => __obj.update("violationStartTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      behavior.foreach(__v => __obj.updateDynamic("behavior")(__v.asInstanceOf[js.Any]))
+      lastViolationTime.foreach(__v => __obj.updateDynamic("lastViolationTime")(__v.asInstanceOf[js.Any]))
+      lastViolationValue.foreach(__v => __obj.updateDynamic("lastViolationValue")(__v.asInstanceOf[js.Any]))
+      securityProfileName.foreach(__v => __obj.updateDynamic("securityProfileName")(__v.asInstanceOf[js.Any]))
+      thingName.foreach(__v => __obj.updateDynamic("thingName")(__v.asInstanceOf[js.Any]))
+      violationId.foreach(__v => __obj.updateDynamic("violationId")(__v.asInstanceOf[js.Any]))
+      violationStartTime.foreach(__v => __obj.updateDynamic("violationStartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActiveViolation]
     }
   }
@@ -1258,11 +1258,11 @@ package iot {
         thingArn: js.UndefOr[ThingArn] = js.undefined,
         thingName: js.UndefOr[ThingName] = js.undefined
     ): AddThingToBillingGroupRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      billingGroupArn.foreach(__v => __obj.update("billingGroupArn", __v.asInstanceOf[js.Any]))
-      billingGroupName.foreach(__v => __obj.update("billingGroupName", __v.asInstanceOf[js.Any]))
-      thingArn.foreach(__v => __obj.update("thingArn", __v.asInstanceOf[js.Any]))
-      thingName.foreach(__v => __obj.update("thingName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      billingGroupArn.foreach(__v => __obj.updateDynamic("billingGroupArn")(__v.asInstanceOf[js.Any]))
+      billingGroupName.foreach(__v => __obj.updateDynamic("billingGroupName")(__v.asInstanceOf[js.Any]))
+      thingArn.foreach(__v => __obj.updateDynamic("thingArn")(__v.asInstanceOf[js.Any]))
+      thingName.foreach(__v => __obj.updateDynamic("thingName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddThingToBillingGroupRequest]
     }
   }
@@ -1273,7 +1273,7 @@ package iot {
   object AddThingToBillingGroupResponse {
     def apply(
         ): AddThingToBillingGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AddThingToBillingGroupResponse]
     }
@@ -1296,12 +1296,12 @@ package iot {
         thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
         thingName: js.UndefOr[ThingName] = js.undefined
     ): AddThingToThingGroupRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      overrideDynamicGroups.foreach(__v => __obj.update("overrideDynamicGroups", __v.asInstanceOf[js.Any]))
-      thingArn.foreach(__v => __obj.update("thingArn", __v.asInstanceOf[js.Any]))
-      thingGroupArn.foreach(__v => __obj.update("thingGroupArn", __v.asInstanceOf[js.Any]))
-      thingGroupName.foreach(__v => __obj.update("thingGroupName", __v.asInstanceOf[js.Any]))
-      thingName.foreach(__v => __obj.update("thingName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      overrideDynamicGroups.foreach(__v => __obj.updateDynamic("overrideDynamicGroups")(__v.asInstanceOf[js.Any]))
+      thingArn.foreach(__v => __obj.updateDynamic("thingArn")(__v.asInstanceOf[js.Any]))
+      thingGroupArn.foreach(__v => __obj.updateDynamic("thingGroupArn")(__v.asInstanceOf[js.Any]))
+      thingGroupName.foreach(__v => __obj.updateDynamic("thingGroupName")(__v.asInstanceOf[js.Any]))
+      thingName.foreach(__v => __obj.updateDynamic("thingName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddThingToThingGroupRequest]
     }
   }
@@ -1312,7 +1312,7 @@ package iot {
   object AddThingToThingGroupResponse {
     def apply(
         ): AddThingToThingGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AddThingToThingGroupResponse]
     }
@@ -1332,11 +1332,11 @@ package iot {
         thingGroupNames: ThingGroupNames,
         overrideDynamicGroups: js.UndefOr[OverrideDynamicGroups] = js.undefined
     ): AddThingsToThingGroupParams = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "thingGroupNames" -> thingGroupNames.asInstanceOf[js.Any]
       )
 
-      overrideDynamicGroups.foreach(__v => __obj.update("overrideDynamicGroups", __v.asInstanceOf[js.Any]))
+      overrideDynamicGroups.foreach(__v => __obj.updateDynamic("overrideDynamicGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddThingsToThingGroupParams]
     }
   }
@@ -1355,7 +1355,7 @@ package iot {
         alertTargetArn: AlertTargetArn,
         roleArn: RoleArn
     ): AlertTarget = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "alertTargetArn" -> alertTargetArn.asInstanceOf[js.Any],
         "roleArn"        -> roleArn.asInstanceOf[js.Any]
       )
@@ -1385,8 +1385,8 @@ package iot {
     def apply(
         policies: js.UndefOr[Policies] = js.undefined
     ): Allowed = {
-      val __obj = js.Dictionary.empty[js.Any]
-      policies.foreach(__v => __obj.update("policies", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      policies.foreach(__v => __obj.updateDynamic("policies")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Allowed]
     }
   }
@@ -1404,12 +1404,12 @@ package iot {
         targets: JobTargets,
         comment: js.UndefOr[Comment] = js.undefined
     ): AssociateTargetsWithJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobId"   -> jobId.asInstanceOf[js.Any],
         "targets" -> targets.asInstanceOf[js.Any]
       )
 
-      comment.foreach(__v => __obj.update("comment", __v.asInstanceOf[js.Any]))
+      comment.foreach(__v => __obj.updateDynamic("comment")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateTargetsWithJobRequest]
     }
   }
@@ -1427,10 +1427,10 @@ package iot {
         jobArn: js.UndefOr[JobArn] = js.undefined,
         jobId: js.UndefOr[JobId] = js.undefined
     ): AssociateTargetsWithJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      jobArn.foreach(__v => __obj.update("jobArn", __v.asInstanceOf[js.Any]))
-      jobId.foreach(__v => __obj.update("jobId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      jobArn.foreach(__v => __obj.updateDynamic("jobArn")(__v.asInstanceOf[js.Any]))
+      jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateTargetsWithJobResponse]
     }
   }
@@ -1446,7 +1446,7 @@ package iot {
         policyName: PolicyName,
         target: PolicyTarget
     ): AttachPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "policyName" -> policyName.asInstanceOf[js.Any],
         "target"     -> target.asInstanceOf[js.Any]
       )
@@ -1469,7 +1469,7 @@ package iot {
         policyName: PolicyName,
         principal: Principal
     ): AttachPrincipalPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "policyName" -> policyName.asInstanceOf[js.Any],
         "principal"  -> principal.asInstanceOf[js.Any]
       )
@@ -1489,7 +1489,7 @@ package iot {
         securityProfileName: SecurityProfileName,
         securityProfileTargetArn: SecurityProfileTargetArn
     ): AttachSecurityProfileRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "securityProfileName"      -> securityProfileName.asInstanceOf[js.Any],
         "securityProfileTargetArn" -> securityProfileTargetArn.asInstanceOf[js.Any]
       )
@@ -1504,7 +1504,7 @@ package iot {
   object AttachSecurityProfileResponse {
     def apply(
         ): AttachSecurityProfileResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AttachSecurityProfileResponse]
     }
@@ -1524,7 +1524,7 @@ package iot {
         principal: Principal,
         thingName: ThingName
     ): AttachThingPrincipalRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "principal" -> principal.asInstanceOf[js.Any],
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
@@ -1542,7 +1542,7 @@ package iot {
   object AttachThingPrincipalResponse {
     def apply(
         ): AttachThingPrincipalResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AttachThingPrincipalResponse]
     }
@@ -1562,9 +1562,9 @@ package iot {
         attributes: js.UndefOr[Attributes] = js.undefined,
         merge: js.UndefOr[Flag] = js.undefined
     ): AttributePayload = {
-      val __obj = js.Dictionary.empty[js.Any]
-      attributes.foreach(__v => __obj.update("attributes", __v.asInstanceOf[js.Any]))
-      merge.foreach(__v => __obj.update("merge", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
+      merge.foreach(__v => __obj.updateDynamic("merge")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttributePayload]
     }
   }
@@ -1581,8 +1581,8 @@ package iot {
     def apply(
         enabled: js.UndefOr[Enabled] = js.undefined
     ): AuditCheckConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      enabled.foreach(__v => __obj.update("enabled", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      enabled.foreach(__v => __obj.updateDynamic("enabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AuditCheckConfiguration]
     }
   }
@@ -1609,13 +1609,15 @@ package iot {
         nonCompliantResourcesCount: js.UndefOr[NonCompliantResourcesCount] = js.undefined,
         totalResourcesCount: js.UndefOr[TotalResourcesCount] = js.undefined
     ): AuditCheckDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      checkCompliant.foreach(__v => __obj.update("checkCompliant", __v.asInstanceOf[js.Any]))
-      checkRunStatus.foreach(__v => __obj.update("checkRunStatus", __v.asInstanceOf[js.Any]))
-      errorCode.foreach(__v => __obj.update("errorCode", __v.asInstanceOf[js.Any]))
-      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
-      nonCompliantResourcesCount.foreach(__v => __obj.update("nonCompliantResourcesCount", __v.asInstanceOf[js.Any]))
-      totalResourcesCount.foreach(__v => __obj.update("totalResourcesCount", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      checkCompliant.foreach(__v => __obj.updateDynamic("checkCompliant")(__v.asInstanceOf[js.Any]))
+      checkRunStatus.foreach(__v => __obj.updateDynamic("checkRunStatus")(__v.asInstanceOf[js.Any]))
+      errorCode.foreach(__v => __obj.updateDynamic("errorCode")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      nonCompliantResourcesCount.foreach(
+        __v => __obj.updateDynamic("nonCompliantResourcesCount")(__v.asInstanceOf[js.Any])
+      )
+      totalResourcesCount.foreach(__v => __obj.updateDynamic("totalResourcesCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AuditCheckDetails]
     }
   }
@@ -1663,17 +1665,19 @@ package iot {
         taskId: js.UndefOr[AuditTaskId] = js.undefined,
         taskStartTime: js.UndefOr[Timestamp] = js.undefined
     ): AuditFinding = {
-      val __obj = js.Dictionary.empty[js.Any]
-      checkName.foreach(__v => __obj.update("checkName", __v.asInstanceOf[js.Any]))
-      findingId.foreach(__v => __obj.update("findingId", __v.asInstanceOf[js.Any]))
-      findingTime.foreach(__v => __obj.update("findingTime", __v.asInstanceOf[js.Any]))
-      nonCompliantResource.foreach(__v => __obj.update("nonCompliantResource", __v.asInstanceOf[js.Any]))
-      reasonForNonCompliance.foreach(__v => __obj.update("reasonForNonCompliance", __v.asInstanceOf[js.Any]))
-      reasonForNonComplianceCode.foreach(__v => __obj.update("reasonForNonComplianceCode", __v.asInstanceOf[js.Any]))
-      relatedResources.foreach(__v => __obj.update("relatedResources", __v.asInstanceOf[js.Any]))
-      severity.foreach(__v => __obj.update("severity", __v.asInstanceOf[js.Any]))
-      taskId.foreach(__v => __obj.update("taskId", __v.asInstanceOf[js.Any]))
-      taskStartTime.foreach(__v => __obj.update("taskStartTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      checkName.foreach(__v => __obj.updateDynamic("checkName")(__v.asInstanceOf[js.Any]))
+      findingId.foreach(__v => __obj.updateDynamic("findingId")(__v.asInstanceOf[js.Any]))
+      findingTime.foreach(__v => __obj.updateDynamic("findingTime")(__v.asInstanceOf[js.Any]))
+      nonCompliantResource.foreach(__v => __obj.updateDynamic("nonCompliantResource")(__v.asInstanceOf[js.Any]))
+      reasonForNonCompliance.foreach(__v => __obj.updateDynamic("reasonForNonCompliance")(__v.asInstanceOf[js.Any]))
+      reasonForNonComplianceCode.foreach(
+        __v => __obj.updateDynamic("reasonForNonComplianceCode")(__v.asInstanceOf[js.Any])
+      )
+      relatedResources.foreach(__v => __obj.updateDynamic("relatedResources")(__v.asInstanceOf[js.Any]))
+      severity.foreach(__v => __obj.updateDynamic("severity")(__v.asInstanceOf[js.Any]))
+      taskId.foreach(__v => __obj.updateDynamic("taskId")(__v.asInstanceOf[js.Any]))
+      taskStartTime.foreach(__v => __obj.updateDynamic("taskStartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AuditFinding]
     }
   }
@@ -1724,16 +1728,16 @@ package iot {
         status: js.UndefOr[AuditMitigationActionsExecutionStatus] = js.undefined,
         taskId: js.UndefOr[AuditMitigationActionsTaskId] = js.undefined
     ): AuditMitigationActionExecutionMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      actionId.foreach(__v => __obj.update("actionId", __v.asInstanceOf[js.Any]))
-      actionName.foreach(__v => __obj.update("actionName", __v.asInstanceOf[js.Any]))
-      endTime.foreach(__v => __obj.update("endTime", __v.asInstanceOf[js.Any]))
-      errorCode.foreach(__v => __obj.update("errorCode", __v.asInstanceOf[js.Any]))
-      findingId.foreach(__v => __obj.update("findingId", __v.asInstanceOf[js.Any]))
-      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
-      startTime.foreach(__v => __obj.update("startTime", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      taskId.foreach(__v => __obj.update("taskId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      actionId.foreach(__v => __obj.updateDynamic("actionId")(__v.asInstanceOf[js.Any]))
+      actionName.foreach(__v => __obj.updateDynamic("actionName")(__v.asInstanceOf[js.Any]))
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      errorCode.foreach(__v => __obj.updateDynamic("errorCode")(__v.asInstanceOf[js.Any]))
+      findingId.foreach(__v => __obj.updateDynamic("findingId")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      taskId.foreach(__v => __obj.updateDynamic("taskId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AuditMitigationActionExecutionMetadata]
     }
   }
@@ -1765,10 +1769,10 @@ package iot {
         taskId: js.UndefOr[AuditMitigationActionsTaskId] = js.undefined,
         taskStatus: js.UndefOr[AuditMitigationActionsTaskStatus] = js.undefined
     ): AuditMitigationActionsTaskMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      startTime.foreach(__v => __obj.update("startTime", __v.asInstanceOf[js.Any]))
-      taskId.foreach(__v => __obj.update("taskId", __v.asInstanceOf[js.Any]))
-      taskStatus.foreach(__v => __obj.update("taskStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
+      taskId.foreach(__v => __obj.updateDynamic("taskId")(__v.asInstanceOf[js.Any]))
+      taskStatus.foreach(__v => __obj.updateDynamic("taskStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AuditMitigationActionsTaskMetadata]
     }
   }
@@ -1798,12 +1802,12 @@ package iot {
         auditTaskId: js.UndefOr[AuditTaskId] = js.undefined,
         findingIds: js.UndefOr[FindingIds] = js.undefined
     ): AuditMitigationActionsTaskTarget = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       auditCheckToReasonCodeFilter.foreach(
-        __v => __obj.update("auditCheckToReasonCodeFilter", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("auditCheckToReasonCodeFilter")(__v.asInstanceOf[js.Any])
       )
-      auditTaskId.foreach(__v => __obj.update("auditTaskId", __v.asInstanceOf[js.Any]))
-      findingIds.foreach(__v => __obj.update("findingIds", __v.asInstanceOf[js.Any]))
+      auditTaskId.foreach(__v => __obj.updateDynamic("auditTaskId")(__v.asInstanceOf[js.Any]))
+      findingIds.foreach(__v => __obj.updateDynamic("findingIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AuditMitigationActionsTaskTarget]
     }
   }
@@ -1824,10 +1828,10 @@ package iot {
         roleArn: js.UndefOr[RoleArn] = js.undefined,
         targetArn: js.UndefOr[TargetArn] = js.undefined
     ): AuditNotificationTarget = {
-      val __obj = js.Dictionary.empty[js.Any]
-      enabled.foreach(__v => __obj.update("enabled", __v.asInstanceOf[js.Any]))
-      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
-      targetArn.foreach(__v => __obj.update("targetArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      enabled.foreach(__v => __obj.updateDynamic("enabled")(__v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
+      targetArn.foreach(__v => __obj.updateDynamic("targetArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AuditNotificationTarget]
     }
   }
@@ -1854,10 +1858,10 @@ package iot {
         taskStatus: js.UndefOr[AuditTaskStatus] = js.undefined,
         taskType: js.UndefOr[AuditTaskType] = js.undefined
     ): AuditTaskMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      taskId.foreach(__v => __obj.update("taskId", __v.asInstanceOf[js.Any]))
-      taskStatus.foreach(__v => __obj.update("taskStatus", __v.asInstanceOf[js.Any]))
-      taskType.foreach(__v => __obj.update("taskType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      taskId.foreach(__v => __obj.updateDynamic("taskId")(__v.asInstanceOf[js.Any]))
+      taskStatus.foreach(__v => __obj.updateDynamic("taskStatus")(__v.asInstanceOf[js.Any]))
+      taskType.foreach(__v => __obj.updateDynamic("taskType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AuditTaskMetadata]
     }
   }
@@ -1900,9 +1904,9 @@ package iot {
         actionType: js.UndefOr[ActionType] = js.undefined,
         resources: js.UndefOr[Resources] = js.undefined
     ): AuthInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      actionType.foreach(__v => __obj.update("actionType", __v.asInstanceOf[js.Any]))
-      resources.foreach(__v => __obj.update("resources", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      actionType.foreach(__v => __obj.updateDynamic("actionType")(__v.asInstanceOf[js.Any]))
+      resources.foreach(__v => __obj.updateDynamic("resources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AuthInfo]
     }
   }
@@ -1927,12 +1931,12 @@ package iot {
         denied: js.UndefOr[Denied] = js.undefined,
         missingContextValues: js.UndefOr[MissingContextValues] = js.undefined
     ): AuthResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      allowed.foreach(__v => __obj.update("allowed", __v.asInstanceOf[js.Any]))
-      authDecision.foreach(__v => __obj.update("authDecision", __v.asInstanceOf[js.Any]))
-      authInfo.foreach(__v => __obj.update("authInfo", __v.asInstanceOf[js.Any]))
-      denied.foreach(__v => __obj.update("denied", __v.asInstanceOf[js.Any]))
-      missingContextValues.foreach(__v => __obj.update("missingContextValues", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      allowed.foreach(__v => __obj.updateDynamic("allowed")(__v.asInstanceOf[js.Any]))
+      authDecision.foreach(__v => __obj.updateDynamic("authDecision")(__v.asInstanceOf[js.Any]))
+      authInfo.foreach(__v => __obj.updateDynamic("authInfo")(__v.asInstanceOf[js.Any]))
+      denied.foreach(__v => __obj.updateDynamic("denied")(__v.asInstanceOf[js.Any]))
+      missingContextValues.foreach(__v => __obj.updateDynamic("missingContextValues")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AuthResult]
     }
   }
@@ -1963,15 +1967,15 @@ package iot {
         tokenKeyName: js.UndefOr[TokenKeyName] = js.undefined,
         tokenSigningPublicKeys: js.UndefOr[PublicKeyMap] = js.undefined
     ): AuthorizerDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      authorizerArn.foreach(__v => __obj.update("authorizerArn", __v.asInstanceOf[js.Any]))
-      authorizerFunctionArn.foreach(__v => __obj.update("authorizerFunctionArn", __v.asInstanceOf[js.Any]))
-      authorizerName.foreach(__v => __obj.update("authorizerName", __v.asInstanceOf[js.Any]))
-      creationDate.foreach(__v => __obj.update("creationDate", __v.asInstanceOf[js.Any]))
-      lastModifiedDate.foreach(__v => __obj.update("lastModifiedDate", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      tokenKeyName.foreach(__v => __obj.update("tokenKeyName", __v.asInstanceOf[js.Any]))
-      tokenSigningPublicKeys.foreach(__v => __obj.update("tokenSigningPublicKeys", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      authorizerArn.foreach(__v => __obj.updateDynamic("authorizerArn")(__v.asInstanceOf[js.Any]))
+      authorizerFunctionArn.foreach(__v => __obj.updateDynamic("authorizerFunctionArn")(__v.asInstanceOf[js.Any]))
+      authorizerName.foreach(__v => __obj.updateDynamic("authorizerName")(__v.asInstanceOf[js.Any]))
+      creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
+      lastModifiedDate.foreach(__v => __obj.updateDynamic("lastModifiedDate")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      tokenKeyName.foreach(__v => __obj.updateDynamic("tokenKeyName")(__v.asInstanceOf[js.Any]))
+      tokenSigningPublicKeys.foreach(__v => __obj.updateDynamic("tokenSigningPublicKeys")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AuthorizerDescription]
     }
   }
@@ -1997,9 +2001,9 @@ package iot {
         authorizerArn: js.UndefOr[AuthorizerArn] = js.undefined,
         authorizerName: js.UndefOr[AuthorizerName] = js.undefined
     ): AuthorizerSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      authorizerArn.foreach(__v => __obj.update("authorizerArn", __v.asInstanceOf[js.Any]))
-      authorizerName.foreach(__v => __obj.update("authorizerName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      authorizerArn.foreach(__v => __obj.updateDynamic("authorizerArn")(__v.asInstanceOf[js.Any]))
+      authorizerName.foreach(__v => __obj.updateDynamic("authorizerName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AuthorizerSummary]
     }
   }
@@ -2023,8 +2027,8 @@ package iot {
     def apply(
         maximumPerMinute: js.UndefOr[MaximumPerMinute] = js.undefined
     ): AwsJobExecutionsRolloutConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maximumPerMinute.foreach(__v => __obj.update("maximumPerMinute", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maximumPerMinute.foreach(__v => __obj.updateDynamic("maximumPerMinute")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsJobExecutionsRolloutConfig]
     }
   }
@@ -2045,12 +2049,12 @@ package iot {
         criteria: js.UndefOr[BehaviorCriteria] = js.undefined,
         metric: js.UndefOr[BehaviorMetric] = js.undefined
     ): Behavior = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
 
-      criteria.foreach(__v => __obj.update("criteria", __v.asInstanceOf[js.Any]))
-      metric.foreach(__v => __obj.update("metric", __v.asInstanceOf[js.Any]))
+      criteria.foreach(__v => __obj.updateDynamic("criteria")(__v.asInstanceOf[js.Any]))
+      metric.foreach(__v => __obj.updateDynamic("metric")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Behavior]
     }
   }
@@ -2077,17 +2081,17 @@ package iot {
         statisticalThreshold: js.UndefOr[StatisticalThreshold] = js.undefined,
         value: js.UndefOr[MetricValue] = js.undefined
     ): BehaviorCriteria = {
-      val __obj = js.Dictionary.empty[js.Any]
-      comparisonOperator.foreach(__v => __obj.update("comparisonOperator", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      comparisonOperator.foreach(__v => __obj.updateDynamic("comparisonOperator")(__v.asInstanceOf[js.Any]))
       consecutiveDatapointsToAlarm.foreach(
-        __v => __obj.update("consecutiveDatapointsToAlarm", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("consecutiveDatapointsToAlarm")(__v.asInstanceOf[js.Any])
       )
       consecutiveDatapointsToClear.foreach(
-        __v => __obj.update("consecutiveDatapointsToClear", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("consecutiveDatapointsToClear")(__v.asInstanceOf[js.Any])
       )
-      durationSeconds.foreach(__v => __obj.update("durationSeconds", __v.asInstanceOf[js.Any]))
-      statisticalThreshold.foreach(__v => __obj.update("statisticalThreshold", __v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      durationSeconds.foreach(__v => __obj.updateDynamic("durationSeconds")(__v.asInstanceOf[js.Any]))
+      statisticalThreshold.foreach(__v => __obj.updateDynamic("statisticalThreshold")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BehaviorCriteria]
     }
   }
@@ -2104,8 +2108,8 @@ package iot {
     def apply(
         creationDate: js.UndefOr[CreationDate] = js.undefined
     ): BillingGroupMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationDate.foreach(__v => __obj.update("creationDate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BillingGroupMetadata]
     }
   }
@@ -2122,8 +2126,8 @@ package iot {
     def apply(
         billingGroupDescription: js.UndefOr[BillingGroupDescription] = js.undefined
     ): BillingGroupProperties = {
-      val __obj = js.Dictionary.empty[js.Any]
-      billingGroupDescription.foreach(__v => __obj.update("billingGroupDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      billingGroupDescription.foreach(__v => __obj.updateDynamic("billingGroupDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BillingGroupProperties]
     }
   }
@@ -2146,11 +2150,11 @@ package iot {
         creationDate: js.UndefOr[DateType] = js.undefined,
         status: js.UndefOr[CACertificateStatus] = js.undefined
     ): CACertificate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      certificateArn.foreach(__v => __obj.update("certificateArn", __v.asInstanceOf[js.Any]))
-      certificateId.foreach(__v => __obj.update("certificateId", __v.asInstanceOf[js.Any]))
-      creationDate.foreach(__v => __obj.update("creationDate", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      certificateArn.foreach(__v => __obj.updateDynamic("certificateArn")(__v.asInstanceOf[js.Any]))
+      certificateId.foreach(__v => __obj.updateDynamic("certificateId")(__v.asInstanceOf[js.Any]))
+      creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CACertificate]
     }
   }
@@ -2187,18 +2191,18 @@ package iot {
         status: js.UndefOr[CACertificateStatus] = js.undefined,
         validity: js.UndefOr[CertificateValidity] = js.undefined
     ): CACertificateDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      autoRegistrationStatus.foreach(__v => __obj.update("autoRegistrationStatus", __v.asInstanceOf[js.Any]))
-      certificateArn.foreach(__v => __obj.update("certificateArn", __v.asInstanceOf[js.Any]))
-      certificateId.foreach(__v => __obj.update("certificateId", __v.asInstanceOf[js.Any]))
-      certificatePem.foreach(__v => __obj.update("certificatePem", __v.asInstanceOf[js.Any]))
-      creationDate.foreach(__v => __obj.update("creationDate", __v.asInstanceOf[js.Any]))
-      customerVersion.foreach(__v => __obj.update("customerVersion", __v.asInstanceOf[js.Any]))
-      generationId.foreach(__v => __obj.update("generationId", __v.asInstanceOf[js.Any]))
-      lastModifiedDate.foreach(__v => __obj.update("lastModifiedDate", __v.asInstanceOf[js.Any]))
-      ownedBy.foreach(__v => __obj.update("ownedBy", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      validity.foreach(__v => __obj.update("validity", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      autoRegistrationStatus.foreach(__v => __obj.updateDynamic("autoRegistrationStatus")(__v.asInstanceOf[js.Any]))
+      certificateArn.foreach(__v => __obj.updateDynamic("certificateArn")(__v.asInstanceOf[js.Any]))
+      certificateId.foreach(__v => __obj.updateDynamic("certificateId")(__v.asInstanceOf[js.Any]))
+      certificatePem.foreach(__v => __obj.updateDynamic("certificatePem")(__v.asInstanceOf[js.Any]))
+      creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
+      customerVersion.foreach(__v => __obj.updateDynamic("customerVersion")(__v.asInstanceOf[js.Any]))
+      generationId.foreach(__v => __obj.updateDynamic("generationId")(__v.asInstanceOf[js.Any]))
+      lastModifiedDate.foreach(__v => __obj.updateDynamic("lastModifiedDate")(__v.asInstanceOf[js.Any]))
+      ownedBy.foreach(__v => __obj.updateDynamic("ownedBy")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      validity.foreach(__v => __obj.updateDynamic("validity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CACertificateDescription]
     }
   }
@@ -2225,7 +2229,7 @@ package iot {
     def apply(
         taskId: AuditMitigationActionsTaskId
     ): CancelAuditMitigationActionsTaskRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "taskId" -> taskId.asInstanceOf[js.Any]
       )
 
@@ -2239,7 +2243,7 @@ package iot {
   object CancelAuditMitigationActionsTaskResponse {
     def apply(
         ): CancelAuditMitigationActionsTaskResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CancelAuditMitigationActionsTaskResponse]
     }
@@ -2254,7 +2258,7 @@ package iot {
     def apply(
         taskId: AuditTaskId
     ): CancelAuditTaskRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "taskId" -> taskId.asInstanceOf[js.Any]
       )
 
@@ -2268,7 +2272,7 @@ package iot {
   object CancelAuditTaskResponse {
     def apply(
         ): CancelAuditTaskResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CancelAuditTaskResponse]
     }
@@ -2286,7 +2290,7 @@ package iot {
     def apply(
         certificateId: CertificateId
     ): CancelCertificateTransferRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "certificateId" -> certificateId.asInstanceOf[js.Any]
       )
 
@@ -2311,14 +2315,14 @@ package iot {
         force: js.UndefOr[ForceFlag] = js.undefined,
         statusDetails: js.UndefOr[DetailsMap] = js.undefined
     ): CancelJobExecutionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobId"     -> jobId.asInstanceOf[js.Any],
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
 
-      expectedVersion.foreach(__v => __obj.update("expectedVersion", __v.asInstanceOf[js.Any]))
-      force.foreach(__v => __obj.update("force", __v.asInstanceOf[js.Any]))
-      statusDetails.foreach(__v => __obj.update("statusDetails", __v.asInstanceOf[js.Any]))
+      expectedVersion.foreach(__v => __obj.updateDynamic("expectedVersion")(__v.asInstanceOf[js.Any]))
+      force.foreach(__v => __obj.updateDynamic("force")(__v.asInstanceOf[js.Any]))
+      statusDetails.foreach(__v => __obj.updateDynamic("statusDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CancelJobExecutionRequest]
     }
   }
@@ -2338,13 +2342,13 @@ package iot {
         force: js.UndefOr[ForceFlag] = js.undefined,
         reasonCode: js.UndefOr[ReasonCode] = js.undefined
     ): CancelJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobId" -> jobId.asInstanceOf[js.Any]
       )
 
-      comment.foreach(__v => __obj.update("comment", __v.asInstanceOf[js.Any]))
-      force.foreach(__v => __obj.update("force", __v.asInstanceOf[js.Any]))
-      reasonCode.foreach(__v => __obj.update("reasonCode", __v.asInstanceOf[js.Any]))
+      comment.foreach(__v => __obj.updateDynamic("comment")(__v.asInstanceOf[js.Any]))
+      force.foreach(__v => __obj.updateDynamic("force")(__v.asInstanceOf[js.Any]))
+      reasonCode.foreach(__v => __obj.updateDynamic("reasonCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CancelJobRequest]
     }
   }
@@ -2362,10 +2366,10 @@ package iot {
         jobArn: js.UndefOr[JobArn] = js.undefined,
         jobId: js.UndefOr[JobId] = js.undefined
     ): CancelJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      jobArn.foreach(__v => __obj.update("jobArn", __v.asInstanceOf[js.Any]))
-      jobId.foreach(__v => __obj.update("jobId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      jobArn.foreach(__v => __obj.updateDynamic("jobArn")(__v.asInstanceOf[js.Any]))
+      jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CancelJobResponse]
     }
   }
@@ -2412,11 +2416,11 @@ package iot {
         creationDate: js.UndefOr[DateType] = js.undefined,
         status: js.UndefOr[CertificateStatus] = js.undefined
     ): Certificate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      certificateArn.foreach(__v => __obj.update("certificateArn", __v.asInstanceOf[js.Any]))
-      certificateId.foreach(__v => __obj.update("certificateId", __v.asInstanceOf[js.Any]))
-      creationDate.foreach(__v => __obj.update("creationDate", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      certificateArn.foreach(__v => __obj.updateDynamic("certificateArn")(__v.asInstanceOf[js.Any]))
+      certificateId.foreach(__v => __obj.updateDynamic("certificateId")(__v.asInstanceOf[js.Any]))
+      creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Certificate]
     }
   }
@@ -2457,20 +2461,20 @@ package iot {
         transferData: js.UndefOr[TransferData] = js.undefined,
         validity: js.UndefOr[CertificateValidity] = js.undefined
     ): CertificateDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      caCertificateId.foreach(__v => __obj.update("caCertificateId", __v.asInstanceOf[js.Any]))
-      certificateArn.foreach(__v => __obj.update("certificateArn", __v.asInstanceOf[js.Any]))
-      certificateId.foreach(__v => __obj.update("certificateId", __v.asInstanceOf[js.Any]))
-      certificatePem.foreach(__v => __obj.update("certificatePem", __v.asInstanceOf[js.Any]))
-      creationDate.foreach(__v => __obj.update("creationDate", __v.asInstanceOf[js.Any]))
-      customerVersion.foreach(__v => __obj.update("customerVersion", __v.asInstanceOf[js.Any]))
-      generationId.foreach(__v => __obj.update("generationId", __v.asInstanceOf[js.Any]))
-      lastModifiedDate.foreach(__v => __obj.update("lastModifiedDate", __v.asInstanceOf[js.Any]))
-      ownedBy.foreach(__v => __obj.update("ownedBy", __v.asInstanceOf[js.Any]))
-      previousOwnedBy.foreach(__v => __obj.update("previousOwnedBy", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      transferData.foreach(__v => __obj.update("transferData", __v.asInstanceOf[js.Any]))
-      validity.foreach(__v => __obj.update("validity", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      caCertificateId.foreach(__v => __obj.updateDynamic("caCertificateId")(__v.asInstanceOf[js.Any]))
+      certificateArn.foreach(__v => __obj.updateDynamic("certificateArn")(__v.asInstanceOf[js.Any]))
+      certificateId.foreach(__v => __obj.updateDynamic("certificateId")(__v.asInstanceOf[js.Any]))
+      certificatePem.foreach(__v => __obj.updateDynamic("certificatePem")(__v.asInstanceOf[js.Any]))
+      creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
+      customerVersion.foreach(__v => __obj.updateDynamic("customerVersion")(__v.asInstanceOf[js.Any]))
+      generationId.foreach(__v => __obj.updateDynamic("generationId")(__v.asInstanceOf[js.Any]))
+      lastModifiedDate.foreach(__v => __obj.updateDynamic("lastModifiedDate")(__v.asInstanceOf[js.Any]))
+      ownedBy.foreach(__v => __obj.updateDynamic("ownedBy")(__v.asInstanceOf[js.Any]))
+      previousOwnedBy.foreach(__v => __obj.updateDynamic("previousOwnedBy")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      transferData.foreach(__v => __obj.updateDynamic("transferData")(__v.asInstanceOf[js.Any]))
+      validity.foreach(__v => __obj.updateDynamic("validity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CertificateDescription]
     }
   }
@@ -2501,9 +2505,9 @@ package iot {
         notAfter: js.UndefOr[DateType] = js.undefined,
         notBefore: js.UndefOr[DateType] = js.undefined
     ): CertificateValidity = {
-      val __obj = js.Dictionary.empty[js.Any]
-      notAfter.foreach(__v => __obj.update("notAfter", __v.asInstanceOf[js.Any]))
-      notBefore.foreach(__v => __obj.update("notBefore", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      notAfter.foreach(__v => __obj.updateDynamic("notAfter")(__v.asInstanceOf[js.Any]))
+      notBefore.foreach(__v => __obj.updateDynamic("notBefore")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CertificateValidity]
     }
   }
@@ -2514,7 +2518,7 @@ package iot {
   object ClearDefaultAuthorizerRequest {
     def apply(
         ): ClearDefaultAuthorizerRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ClearDefaultAuthorizerRequest]
     }
@@ -2526,7 +2530,7 @@ package iot {
   object ClearDefaultAuthorizerResponse {
     def apply(
         ): ClearDefaultAuthorizerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ClearDefaultAuthorizerResponse]
     }
@@ -2550,7 +2554,7 @@ package iot {
         stateReason: StateReason,
         stateValue: StateValue
     ): CloudwatchAlarmAction = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "alarmName"   -> alarmName.asInstanceOf[js.Any],
         "roleArn"     -> roleArn.asInstanceOf[js.Any],
         "stateReason" -> stateReason.asInstanceOf[js.Any],
@@ -2583,7 +2587,7 @@ package iot {
         roleArn: AwsArn,
         metricTimestamp: js.UndefOr[String] = js.undefined
     ): CloudwatchMetricAction = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "metricName"      -> metricName.asInstanceOf[js.Any],
         "metricNamespace" -> metricNamespace.asInstanceOf[js.Any],
         "metricUnit"      -> metricUnit.asInstanceOf[js.Any],
@@ -2591,7 +2595,7 @@ package iot {
         "roleArn"         -> roleArn.asInstanceOf[js.Any]
       )
 
-      metricTimestamp.foreach(__v => __obj.update("metricTimestamp", __v.asInstanceOf[js.Any]))
+      metricTimestamp.foreach(__v => __obj.updateDynamic("metricTimestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CloudwatchMetricAction]
     }
   }
@@ -2612,10 +2616,10 @@ package iot {
         customCodeSigning: js.UndefOr[CustomCodeSigning] = js.undefined,
         startSigningJobParameter: js.UndefOr[StartSigningJobParameter] = js.undefined
     ): CodeSigning = {
-      val __obj = js.Dictionary.empty[js.Any]
-      awsSignerJobId.foreach(__v => __obj.update("awsSignerJobId", __v.asInstanceOf[js.Any]))
-      customCodeSigning.foreach(__v => __obj.update("customCodeSigning", __v.asInstanceOf[js.Any]))
-      startSigningJobParameter.foreach(__v => __obj.update("startSigningJobParameter", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      awsSignerJobId.foreach(__v => __obj.updateDynamic("awsSignerJobId")(__v.asInstanceOf[js.Any]))
+      customCodeSigning.foreach(__v => __obj.updateDynamic("customCodeSigning")(__v.asInstanceOf[js.Any]))
+      startSigningJobParameter.foreach(__v => __obj.updateDynamic("startSigningJobParameter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CodeSigning]
     }
   }
@@ -2634,9 +2638,9 @@ package iot {
         certificateName: js.UndefOr[CertificateName] = js.undefined,
         inlineDocument: js.UndefOr[InlineDocument] = js.undefined
     ): CodeSigningCertificateChain = {
-      val __obj = js.Dictionary.empty[js.Any]
-      certificateName.foreach(__v => __obj.update("certificateName", __v.asInstanceOf[js.Any]))
-      inlineDocument.foreach(__v => __obj.update("inlineDocument", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      certificateName.foreach(__v => __obj.updateDynamic("certificateName")(__v.asInstanceOf[js.Any]))
+      inlineDocument.foreach(__v => __obj.updateDynamic("inlineDocument")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CodeSigningCertificateChain]
     }
   }
@@ -2653,8 +2657,8 @@ package iot {
     def apply(
         inlineDocument: js.UndefOr[Signature] = js.undefined
     ): CodeSigningSignature = {
-      val __obj = js.Dictionary.empty[js.Any]
-      inlineDocument.foreach(__v => __obj.update("inlineDocument", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      inlineDocument.foreach(__v => __obj.updateDynamic("inlineDocument")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CodeSigningSignature]
     }
   }
@@ -2695,8 +2699,8 @@ package iot {
     def apply(
         Enabled: js.UndefOr[Enabled] = js.undefined
     ): Configuration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Configuration]
     }
   }
@@ -2718,14 +2722,14 @@ package iot {
         tokenSigningPublicKeys: PublicKeyMap,
         status: js.UndefOr[AuthorizerStatus] = js.undefined
     ): CreateAuthorizerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "authorizerFunctionArn"  -> authorizerFunctionArn.asInstanceOf[js.Any],
         "authorizerName"         -> authorizerName.asInstanceOf[js.Any],
         "tokenKeyName"           -> tokenKeyName.asInstanceOf[js.Any],
         "tokenSigningPublicKeys" -> tokenSigningPublicKeys.asInstanceOf[js.Any]
       )
 
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAuthorizerRequest]
     }
   }
@@ -2741,9 +2745,9 @@ package iot {
         authorizerArn: js.UndefOr[AuthorizerArn] = js.undefined,
         authorizerName: js.UndefOr[AuthorizerName] = js.undefined
     ): CreateAuthorizerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      authorizerArn.foreach(__v => __obj.update("authorizerArn", __v.asInstanceOf[js.Any]))
-      authorizerName.foreach(__v => __obj.update("authorizerName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      authorizerArn.foreach(__v => __obj.updateDynamic("authorizerArn")(__v.asInstanceOf[js.Any]))
+      authorizerName.foreach(__v => __obj.updateDynamic("authorizerName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAuthorizerResponse]
     }
   }
@@ -2761,12 +2765,12 @@ package iot {
         billingGroupProperties: js.UndefOr[BillingGroupProperties] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateBillingGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "billingGroupName" -> billingGroupName.asInstanceOf[js.Any]
       )
 
-      billingGroupProperties.foreach(__v => __obj.update("billingGroupProperties", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      billingGroupProperties.foreach(__v => __obj.updateDynamic("billingGroupProperties")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateBillingGroupRequest]
     }
   }
@@ -2784,10 +2788,10 @@ package iot {
         billingGroupId: js.UndefOr[BillingGroupId] = js.undefined,
         billingGroupName: js.UndefOr[BillingGroupName] = js.undefined
     ): CreateBillingGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      billingGroupArn.foreach(__v => __obj.update("billingGroupArn", __v.asInstanceOf[js.Any]))
-      billingGroupId.foreach(__v => __obj.update("billingGroupId", __v.asInstanceOf[js.Any]))
-      billingGroupName.foreach(__v => __obj.update("billingGroupName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      billingGroupArn.foreach(__v => __obj.updateDynamic("billingGroupArn")(__v.asInstanceOf[js.Any]))
+      billingGroupId.foreach(__v => __obj.updateDynamic("billingGroupId")(__v.asInstanceOf[js.Any]))
+      billingGroupName.foreach(__v => __obj.updateDynamic("billingGroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateBillingGroupResponse]
     }
   }
@@ -2806,11 +2810,11 @@ package iot {
         certificateSigningRequest: CertificateSigningRequest,
         setAsActive: js.UndefOr[SetAsActive] = js.undefined
     ): CreateCertificateFromCsrRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "certificateSigningRequest" -> certificateSigningRequest.asInstanceOf[js.Any]
       )
 
-      setAsActive.foreach(__v => __obj.update("setAsActive", __v.asInstanceOf[js.Any]))
+      setAsActive.foreach(__v => __obj.updateDynamic("setAsActive")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCertificateFromCsrRequest]
     }
   }
@@ -2831,10 +2835,10 @@ package iot {
         certificateId: js.UndefOr[CertificateId] = js.undefined,
         certificatePem: js.UndefOr[CertificatePem] = js.undefined
     ): CreateCertificateFromCsrResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      certificateArn.foreach(__v => __obj.update("certificateArn", __v.asInstanceOf[js.Any]))
-      certificateId.foreach(__v => __obj.update("certificateId", __v.asInstanceOf[js.Any]))
-      certificatePem.foreach(__v => __obj.update("certificatePem", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      certificateArn.foreach(__v => __obj.updateDynamic("certificateArn")(__v.asInstanceOf[js.Any]))
+      certificateId.foreach(__v => __obj.updateDynamic("certificateId")(__v.asInstanceOf[js.Any]))
+      certificatePem.foreach(__v => __obj.updateDynamic("certificatePem")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCertificateFromCsrResponse]
     }
   }
@@ -2858,15 +2862,15 @@ package iot {
         tags: js.UndefOr[TagList] = js.undefined,
         thingGroupProperties: js.UndefOr[ThingGroupProperties] = js.undefined
     ): CreateDynamicThingGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "queryString"    -> queryString.asInstanceOf[js.Any],
         "thingGroupName" -> thingGroupName.asInstanceOf[js.Any]
       )
 
-      indexName.foreach(__v => __obj.update("indexName", __v.asInstanceOf[js.Any]))
-      queryVersion.foreach(__v => __obj.update("queryVersion", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
-      thingGroupProperties.foreach(__v => __obj.update("thingGroupProperties", __v.asInstanceOf[js.Any]))
+      indexName.foreach(__v => __obj.updateDynamic("indexName")(__v.asInstanceOf[js.Any]))
+      queryVersion.foreach(__v => __obj.updateDynamic("queryVersion")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      thingGroupProperties.foreach(__v => __obj.updateDynamic("thingGroupProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDynamicThingGroupRequest]
     }
   }
@@ -2890,13 +2894,13 @@ package iot {
         thingGroupId: js.UndefOr[ThingGroupId] = js.undefined,
         thingGroupName: js.UndefOr[ThingGroupName] = js.undefined
     ): CreateDynamicThingGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      indexName.foreach(__v => __obj.update("indexName", __v.asInstanceOf[js.Any]))
-      queryString.foreach(__v => __obj.update("queryString", __v.asInstanceOf[js.Any]))
-      queryVersion.foreach(__v => __obj.update("queryVersion", __v.asInstanceOf[js.Any]))
-      thingGroupArn.foreach(__v => __obj.update("thingGroupArn", __v.asInstanceOf[js.Any]))
-      thingGroupId.foreach(__v => __obj.update("thingGroupId", __v.asInstanceOf[js.Any]))
-      thingGroupName.foreach(__v => __obj.update("thingGroupName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      indexName.foreach(__v => __obj.updateDynamic("indexName")(__v.asInstanceOf[js.Any]))
+      queryString.foreach(__v => __obj.updateDynamic("queryString")(__v.asInstanceOf[js.Any]))
+      queryVersion.foreach(__v => __obj.updateDynamic("queryVersion")(__v.asInstanceOf[js.Any]))
+      thingGroupArn.foreach(__v => __obj.updateDynamic("thingGroupArn")(__v.asInstanceOf[js.Any]))
+      thingGroupId.foreach(__v => __obj.updateDynamic("thingGroupId")(__v.asInstanceOf[js.Any]))
+      thingGroupName.foreach(__v => __obj.updateDynamic("thingGroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDynamicThingGroupResponse]
     }
   }
@@ -2930,20 +2934,22 @@ package iot {
         targetSelection: js.UndefOr[TargetSelection] = js.undefined,
         timeoutConfig: js.UndefOr[TimeoutConfig] = js.undefined
     ): CreateJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobId"   -> jobId.asInstanceOf[js.Any],
         "targets" -> targets.asInstanceOf[js.Any]
       )
 
-      abortConfig.foreach(__v => __obj.update("abortConfig", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      document.foreach(__v => __obj.update("document", __v.asInstanceOf[js.Any]))
-      documentSource.foreach(__v => __obj.update("documentSource", __v.asInstanceOf[js.Any]))
-      jobExecutionsRolloutConfig.foreach(__v => __obj.update("jobExecutionsRolloutConfig", __v.asInstanceOf[js.Any]))
-      presignedUrlConfig.foreach(__v => __obj.update("presignedUrlConfig", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
-      targetSelection.foreach(__v => __obj.update("targetSelection", __v.asInstanceOf[js.Any]))
-      timeoutConfig.foreach(__v => __obj.update("timeoutConfig", __v.asInstanceOf[js.Any]))
+      abortConfig.foreach(__v => __obj.updateDynamic("abortConfig")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      document.foreach(__v => __obj.updateDynamic("document")(__v.asInstanceOf[js.Any]))
+      documentSource.foreach(__v => __obj.updateDynamic("documentSource")(__v.asInstanceOf[js.Any]))
+      jobExecutionsRolloutConfig.foreach(
+        __v => __obj.updateDynamic("jobExecutionsRolloutConfig")(__v.asInstanceOf[js.Any])
+      )
+      presignedUrlConfig.foreach(__v => __obj.updateDynamic("presignedUrlConfig")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      targetSelection.foreach(__v => __obj.updateDynamic("targetSelection")(__v.asInstanceOf[js.Any]))
+      timeoutConfig.foreach(__v => __obj.updateDynamic("timeoutConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateJobRequest]
     }
   }
@@ -2961,10 +2967,10 @@ package iot {
         jobArn: js.UndefOr[JobArn] = js.undefined,
         jobId: js.UndefOr[JobId] = js.undefined
     ): CreateJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      jobArn.foreach(__v => __obj.update("jobArn", __v.asInstanceOf[js.Any]))
-      jobId.foreach(__v => __obj.update("jobId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      jobArn.foreach(__v => __obj.updateDynamic("jobArn")(__v.asInstanceOf[js.Any]))
+      jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateJobResponse]
     }
   }
@@ -2981,8 +2987,8 @@ package iot {
     def apply(
         setAsActive: js.UndefOr[SetAsActive] = js.undefined
     ): CreateKeysAndCertificateRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      setAsActive.foreach(__v => __obj.update("setAsActive", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      setAsActive.foreach(__v => __obj.updateDynamic("setAsActive")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateKeysAndCertificateRequest]
     }
   }
@@ -3005,11 +3011,11 @@ package iot {
         certificatePem: js.UndefOr[CertificatePem] = js.undefined,
         keyPair: js.UndefOr[KeyPair] = js.undefined
     ): CreateKeysAndCertificateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      certificateArn.foreach(__v => __obj.update("certificateArn", __v.asInstanceOf[js.Any]))
-      certificateId.foreach(__v => __obj.update("certificateId", __v.asInstanceOf[js.Any]))
-      certificatePem.foreach(__v => __obj.update("certificatePem", __v.asInstanceOf[js.Any]))
-      keyPair.foreach(__v => __obj.update("keyPair", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      certificateArn.foreach(__v => __obj.updateDynamic("certificateArn")(__v.asInstanceOf[js.Any]))
+      certificateId.foreach(__v => __obj.updateDynamic("certificateId")(__v.asInstanceOf[js.Any]))
+      certificatePem.foreach(__v => __obj.updateDynamic("certificatePem")(__v.asInstanceOf[js.Any]))
+      keyPair.foreach(__v => __obj.updateDynamic("keyPair")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateKeysAndCertificateResponse]
     }
   }
@@ -3029,13 +3035,13 @@ package iot {
         roleArn: RoleArn,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateMitigationActionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "actionName"   -> actionName.asInstanceOf[js.Any],
         "actionParams" -> actionParams.asInstanceOf[js.Any],
         "roleArn"      -> roleArn.asInstanceOf[js.Any]
       )
 
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateMitigationActionRequest]
     }
   }
@@ -3051,9 +3057,9 @@ package iot {
         actionArn: js.UndefOr[MitigationActionArn] = js.undefined,
         actionId: js.UndefOr[MitigationActionId] = js.undefined
     ): CreateMitigationActionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      actionArn.foreach(__v => __obj.update("actionArn", __v.asInstanceOf[js.Any]))
-      actionId.foreach(__v => __obj.update("actionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      actionArn.foreach(__v => __obj.updateDynamic("actionArn")(__v.asInstanceOf[js.Any]))
+      actionId.foreach(__v => __obj.updateDynamic("actionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateMitigationActionResponse]
     }
   }
@@ -3083,20 +3089,20 @@ package iot {
         tags: js.UndefOr[TagList] = js.undefined,
         targetSelection: js.UndefOr[TargetSelection] = js.undefined
     ): CreateOTAUpdateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "files"       -> files.asInstanceOf[js.Any],
         "otaUpdateId" -> otaUpdateId.asInstanceOf[js.Any],
         "roleArn"     -> roleArn.asInstanceOf[js.Any],
         "targets"     -> targets.asInstanceOf[js.Any]
       )
 
-      additionalParameters.foreach(__v => __obj.update("additionalParameters", __v.asInstanceOf[js.Any]))
+      additionalParameters.foreach(__v => __obj.updateDynamic("additionalParameters")(__v.asInstanceOf[js.Any]))
       awsJobExecutionsRolloutConfig.foreach(
-        __v => __obj.update("awsJobExecutionsRolloutConfig", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("awsJobExecutionsRolloutConfig")(__v.asInstanceOf[js.Any])
       )
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
-      targetSelection.foreach(__v => __obj.update("targetSelection", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      targetSelection.foreach(__v => __obj.updateDynamic("targetSelection")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateOTAUpdateRequest]
     }
   }
@@ -3118,12 +3124,12 @@ package iot {
         otaUpdateId: js.UndefOr[OTAUpdateId] = js.undefined,
         otaUpdateStatus: js.UndefOr[OTAUpdateStatus] = js.undefined
     ): CreateOTAUpdateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      awsIotJobArn.foreach(__v => __obj.update("awsIotJobArn", __v.asInstanceOf[js.Any]))
-      awsIotJobId.foreach(__v => __obj.update("awsIotJobId", __v.asInstanceOf[js.Any]))
-      otaUpdateArn.foreach(__v => __obj.update("otaUpdateArn", __v.asInstanceOf[js.Any]))
-      otaUpdateId.foreach(__v => __obj.update("otaUpdateId", __v.asInstanceOf[js.Any]))
-      otaUpdateStatus.foreach(__v => __obj.update("otaUpdateStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      awsIotJobArn.foreach(__v => __obj.updateDynamic("awsIotJobArn")(__v.asInstanceOf[js.Any]))
+      awsIotJobId.foreach(__v => __obj.updateDynamic("awsIotJobId")(__v.asInstanceOf[js.Any]))
+      otaUpdateArn.foreach(__v => __obj.updateDynamic("otaUpdateArn")(__v.asInstanceOf[js.Any]))
+      otaUpdateId.foreach(__v => __obj.updateDynamic("otaUpdateId")(__v.asInstanceOf[js.Any]))
+      otaUpdateStatus.foreach(__v => __obj.updateDynamic("otaUpdateStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateOTAUpdateResponse]
     }
   }
@@ -3142,7 +3148,7 @@ package iot {
         policyDocument: PolicyDocument,
         policyName: PolicyName
     ): CreatePolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "policyDocument" -> policyDocument.asInstanceOf[js.Any],
         "policyName"     -> policyName.asInstanceOf[js.Any]
       )
@@ -3169,11 +3175,11 @@ package iot {
         policyName: js.UndefOr[PolicyName] = js.undefined,
         policyVersionId: js.UndefOr[PolicyVersionId] = js.undefined
     ): CreatePolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      policyArn.foreach(__v => __obj.update("policyArn", __v.asInstanceOf[js.Any]))
-      policyDocument.foreach(__v => __obj.update("policyDocument", __v.asInstanceOf[js.Any]))
-      policyName.foreach(__v => __obj.update("policyName", __v.asInstanceOf[js.Any]))
-      policyVersionId.foreach(__v => __obj.update("policyVersionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      policyArn.foreach(__v => __obj.updateDynamic("policyArn")(__v.asInstanceOf[js.Any]))
+      policyDocument.foreach(__v => __obj.updateDynamic("policyDocument")(__v.asInstanceOf[js.Any]))
+      policyName.foreach(__v => __obj.updateDynamic("policyName")(__v.asInstanceOf[js.Any]))
+      policyVersionId.foreach(__v => __obj.updateDynamic("policyVersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePolicyResponse]
     }
   }
@@ -3194,12 +3200,12 @@ package iot {
         policyName: PolicyName,
         setAsDefault: js.UndefOr[SetAsDefault] = js.undefined
     ): CreatePolicyVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "policyDocument" -> policyDocument.asInstanceOf[js.Any],
         "policyName"     -> policyName.asInstanceOf[js.Any]
       )
 
-      setAsDefault.foreach(__v => __obj.update("setAsDefault", __v.asInstanceOf[js.Any]))
+      setAsDefault.foreach(__v => __obj.updateDynamic("setAsDefault")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePolicyVersionRequest]
     }
   }
@@ -3222,11 +3228,11 @@ package iot {
         policyDocument: js.UndefOr[PolicyDocument] = js.undefined,
         policyVersionId: js.UndefOr[PolicyVersionId] = js.undefined
     ): CreatePolicyVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      isDefaultVersion.foreach(__v => __obj.update("isDefaultVersion", __v.asInstanceOf[js.Any]))
-      policyArn.foreach(__v => __obj.update("policyArn", __v.asInstanceOf[js.Any]))
-      policyDocument.foreach(__v => __obj.update("policyDocument", __v.asInstanceOf[js.Any]))
-      policyVersionId.foreach(__v => __obj.update("policyVersionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      isDefaultVersion.foreach(__v => __obj.updateDynamic("isDefaultVersion")(__v.asInstanceOf[js.Any]))
+      policyArn.foreach(__v => __obj.updateDynamic("policyArn")(__v.asInstanceOf[js.Any]))
+      policyDocument.foreach(__v => __obj.updateDynamic("policyDocument")(__v.asInstanceOf[js.Any]))
+      policyVersionId.foreach(__v => __obj.updateDynamic("policyVersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePolicyVersionResponse]
     }
   }
@@ -3244,12 +3250,14 @@ package iot {
         roleArn: RoleArn,
         credentialDurationSeconds: js.UndefOr[CredentialDurationSeconds] = js.undefined
     ): CreateRoleAliasRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "roleAlias" -> roleAlias.asInstanceOf[js.Any],
         "roleArn"   -> roleArn.asInstanceOf[js.Any]
       )
 
-      credentialDurationSeconds.foreach(__v => __obj.update("credentialDurationSeconds", __v.asInstanceOf[js.Any]))
+      credentialDurationSeconds.foreach(
+        __v => __obj.updateDynamic("credentialDurationSeconds")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[CreateRoleAliasRequest]
     }
   }
@@ -3265,9 +3273,9 @@ package iot {
         roleAlias: js.UndefOr[RoleAlias] = js.undefined,
         roleAliasArn: js.UndefOr[RoleAliasArn] = js.undefined
     ): CreateRoleAliasResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      roleAlias.foreach(__v => __obj.update("roleAlias", __v.asInstanceOf[js.Any]))
-      roleAliasArn.foreach(__v => __obj.update("roleAliasArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      roleAlias.foreach(__v => __obj.updateDynamic("roleAlias")(__v.asInstanceOf[js.Any]))
+      roleAliasArn.foreach(__v => __obj.updateDynamic("roleAliasArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRoleAliasResponse]
     }
   }
@@ -3291,15 +3299,15 @@ package iot {
         dayOfWeek: js.UndefOr[DayOfWeek] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateScheduledAuditRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "frequency"          -> frequency.asInstanceOf[js.Any],
         "scheduledAuditName" -> scheduledAuditName.asInstanceOf[js.Any],
         "targetCheckNames"   -> targetCheckNames.asInstanceOf[js.Any]
       )
 
-      dayOfMonth.foreach(__v => __obj.update("dayOfMonth", __v.asInstanceOf[js.Any]))
-      dayOfWeek.foreach(__v => __obj.update("dayOfWeek", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      dayOfMonth.foreach(__v => __obj.updateDynamic("dayOfMonth")(__v.asInstanceOf[js.Any]))
+      dayOfWeek.foreach(__v => __obj.updateDynamic("dayOfWeek")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateScheduledAuditRequest]
     }
   }
@@ -3313,8 +3321,8 @@ package iot {
     def apply(
         scheduledAuditArn: js.UndefOr[ScheduledAuditArn] = js.undefined
     ): CreateScheduledAuditResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      scheduledAuditArn.foreach(__v => __obj.update("scheduledAuditArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      scheduledAuditArn.foreach(__v => __obj.updateDynamic("scheduledAuditArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateScheduledAuditResponse]
     }
   }
@@ -3338,15 +3346,19 @@ package iot {
         securityProfileDescription: js.UndefOr[SecurityProfileDescription] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateSecurityProfileRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "securityProfileName" -> securityProfileName.asInstanceOf[js.Any]
       )
 
-      additionalMetricsToRetain.foreach(__v => __obj.update("additionalMetricsToRetain", __v.asInstanceOf[js.Any]))
-      alertTargets.foreach(__v => __obj.update("alertTargets", __v.asInstanceOf[js.Any]))
-      behaviors.foreach(__v => __obj.update("behaviors", __v.asInstanceOf[js.Any]))
-      securityProfileDescription.foreach(__v => __obj.update("securityProfileDescription", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      additionalMetricsToRetain.foreach(
+        __v => __obj.updateDynamic("additionalMetricsToRetain")(__v.asInstanceOf[js.Any])
+      )
+      alertTargets.foreach(__v => __obj.updateDynamic("alertTargets")(__v.asInstanceOf[js.Any]))
+      behaviors.foreach(__v => __obj.updateDynamic("behaviors")(__v.asInstanceOf[js.Any]))
+      securityProfileDescription.foreach(
+        __v => __obj.updateDynamic("securityProfileDescription")(__v.asInstanceOf[js.Any])
+      )
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSecurityProfileRequest]
     }
   }
@@ -3362,9 +3374,9 @@ package iot {
         securityProfileArn: js.UndefOr[SecurityProfileArn] = js.undefined,
         securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined
     ): CreateSecurityProfileResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      securityProfileArn.foreach(__v => __obj.update("securityProfileArn", __v.asInstanceOf[js.Any]))
-      securityProfileName.foreach(__v => __obj.update("securityProfileName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      securityProfileArn.foreach(__v => __obj.updateDynamic("securityProfileArn")(__v.asInstanceOf[js.Any]))
+      securityProfileName.foreach(__v => __obj.updateDynamic("securityProfileName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSecurityProfileResponse]
     }
   }
@@ -3386,14 +3398,14 @@ package iot {
         description: js.UndefOr[StreamDescription] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateStreamRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "files"    -> files.asInstanceOf[js.Any],
         "roleArn"  -> roleArn.asInstanceOf[js.Any],
         "streamId" -> streamId.asInstanceOf[js.Any]
       )
 
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateStreamRequest]
     }
   }
@@ -3413,11 +3425,11 @@ package iot {
         streamId: js.UndefOr[StreamId] = js.undefined,
         streamVersion: js.UndefOr[StreamVersion] = js.undefined
     ): CreateStreamResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      streamArn.foreach(__v => __obj.update("streamArn", __v.asInstanceOf[js.Any]))
-      streamId.foreach(__v => __obj.update("streamId", __v.asInstanceOf[js.Any]))
-      streamVersion.foreach(__v => __obj.update("streamVersion", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      streamArn.foreach(__v => __obj.updateDynamic("streamArn")(__v.asInstanceOf[js.Any]))
+      streamId.foreach(__v => __obj.updateDynamic("streamId")(__v.asInstanceOf[js.Any]))
+      streamVersion.foreach(__v => __obj.updateDynamic("streamVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateStreamResponse]
     }
   }
@@ -3437,13 +3449,13 @@ package iot {
         tags: js.UndefOr[TagList] = js.undefined,
         thingGroupProperties: js.UndefOr[ThingGroupProperties] = js.undefined
     ): CreateThingGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "thingGroupName" -> thingGroupName.asInstanceOf[js.Any]
       )
 
-      parentGroupName.foreach(__v => __obj.update("parentGroupName", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
-      thingGroupProperties.foreach(__v => __obj.update("thingGroupProperties", __v.asInstanceOf[js.Any]))
+      parentGroupName.foreach(__v => __obj.updateDynamic("parentGroupName")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      thingGroupProperties.foreach(__v => __obj.updateDynamic("thingGroupProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateThingGroupRequest]
     }
   }
@@ -3461,10 +3473,10 @@ package iot {
         thingGroupId: js.UndefOr[ThingGroupId] = js.undefined,
         thingGroupName: js.UndefOr[ThingGroupName] = js.undefined
     ): CreateThingGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      thingGroupArn.foreach(__v => __obj.update("thingGroupArn", __v.asInstanceOf[js.Any]))
-      thingGroupId.foreach(__v => __obj.update("thingGroupId", __v.asInstanceOf[js.Any]))
-      thingGroupName.foreach(__v => __obj.update("thingGroupName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      thingGroupArn.foreach(__v => __obj.updateDynamic("thingGroupArn")(__v.asInstanceOf[js.Any]))
+      thingGroupId.foreach(__v => __obj.updateDynamic("thingGroupId")(__v.asInstanceOf[js.Any]))
+      thingGroupName.foreach(__v => __obj.updateDynamic("thingGroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateThingGroupResponse]
     }
   }
@@ -3487,13 +3499,13 @@ package iot {
         billingGroupName: js.UndefOr[BillingGroupName] = js.undefined,
         thingTypeName: js.UndefOr[ThingTypeName] = js.undefined
     ): CreateThingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
 
-      attributePayload.foreach(__v => __obj.update("attributePayload", __v.asInstanceOf[js.Any]))
-      billingGroupName.foreach(__v => __obj.update("billingGroupName", __v.asInstanceOf[js.Any]))
-      thingTypeName.foreach(__v => __obj.update("thingTypeName", __v.asInstanceOf[js.Any]))
+      attributePayload.foreach(__v => __obj.updateDynamic("attributePayload")(__v.asInstanceOf[js.Any]))
+      billingGroupName.foreach(__v => __obj.updateDynamic("billingGroupName")(__v.asInstanceOf[js.Any]))
+      thingTypeName.foreach(__v => __obj.updateDynamic("thingTypeName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateThingRequest]
     }
   }
@@ -3514,10 +3526,10 @@ package iot {
         thingId: js.UndefOr[ThingId] = js.undefined,
         thingName: js.UndefOr[ThingName] = js.undefined
     ): CreateThingResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      thingArn.foreach(__v => __obj.update("thingArn", __v.asInstanceOf[js.Any]))
-      thingId.foreach(__v => __obj.update("thingId", __v.asInstanceOf[js.Any]))
-      thingName.foreach(__v => __obj.update("thingName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      thingArn.foreach(__v => __obj.updateDynamic("thingArn")(__v.asInstanceOf[js.Any]))
+      thingId.foreach(__v => __obj.updateDynamic("thingId")(__v.asInstanceOf[js.Any]))
+      thingName.foreach(__v => __obj.updateDynamic("thingName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateThingResponse]
     }
   }
@@ -3538,12 +3550,12 @@ package iot {
         tags: js.UndefOr[TagList] = js.undefined,
         thingTypeProperties: js.UndefOr[ThingTypeProperties] = js.undefined
     ): CreateThingTypeRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "thingTypeName" -> thingTypeName.asInstanceOf[js.Any]
       )
 
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
-      thingTypeProperties.foreach(__v => __obj.update("thingTypeProperties", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      thingTypeProperties.foreach(__v => __obj.updateDynamic("thingTypeProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateThingTypeRequest]
     }
   }
@@ -3564,10 +3576,10 @@ package iot {
         thingTypeId: js.UndefOr[ThingTypeId] = js.undefined,
         thingTypeName: js.UndefOr[ThingTypeName] = js.undefined
     ): CreateThingTypeResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      thingTypeArn.foreach(__v => __obj.update("thingTypeArn", __v.asInstanceOf[js.Any]))
-      thingTypeId.foreach(__v => __obj.update("thingTypeId", __v.asInstanceOf[js.Any]))
-      thingTypeName.foreach(__v => __obj.update("thingTypeName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      thingTypeArn.foreach(__v => __obj.updateDynamic("thingTypeArn")(__v.asInstanceOf[js.Any]))
+      thingTypeId.foreach(__v => __obj.updateDynamic("thingTypeId")(__v.asInstanceOf[js.Any]))
+      thingTypeName.foreach(__v => __obj.updateDynamic("thingTypeName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateThingTypeResponse]
     }
   }
@@ -3588,12 +3600,12 @@ package iot {
         topicRulePayload: TopicRulePayload,
         tags: js.UndefOr[String] = js.undefined
     ): CreateTopicRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ruleName"         -> ruleName.asInstanceOf[js.Any],
         "topicRulePayload" -> topicRulePayload.asInstanceOf[js.Any]
       )
 
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTopicRuleRequest]
     }
   }
@@ -3616,11 +3628,11 @@ package iot {
         signature: js.UndefOr[CodeSigningSignature] = js.undefined,
         signatureAlgorithm: js.UndefOr[SignatureAlgorithm] = js.undefined
     ): CustomCodeSigning = {
-      val __obj = js.Dictionary.empty[js.Any]
-      certificateChain.foreach(__v => __obj.update("certificateChain", __v.asInstanceOf[js.Any]))
-      hashAlgorithm.foreach(__v => __obj.update("hashAlgorithm", __v.asInstanceOf[js.Any]))
-      signature.foreach(__v => __obj.update("signature", __v.asInstanceOf[js.Any]))
-      signatureAlgorithm.foreach(__v => __obj.update("signatureAlgorithm", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      certificateChain.foreach(__v => __obj.updateDynamic("certificateChain")(__v.asInstanceOf[js.Any]))
+      hashAlgorithm.foreach(__v => __obj.updateDynamic("hashAlgorithm")(__v.asInstanceOf[js.Any]))
+      signature.foreach(__v => __obj.updateDynamic("signature")(__v.asInstanceOf[js.Any]))
+      signatureAlgorithm.foreach(__v => __obj.updateDynamic("signatureAlgorithm")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CustomCodeSigning]
     }
   }
@@ -3646,8 +3658,8 @@ package iot {
     def apply(
         deleteScheduledAudits: js.UndefOr[DeleteScheduledAudits] = js.undefined
     ): DeleteAccountAuditConfigurationRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deleteScheduledAudits.foreach(__v => __obj.update("deleteScheduledAudits", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deleteScheduledAudits.foreach(__v => __obj.updateDynamic("deleteScheduledAudits")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteAccountAuditConfigurationRequest]
     }
   }
@@ -3658,7 +3670,7 @@ package iot {
   object DeleteAccountAuditConfigurationResponse {
     def apply(
         ): DeleteAccountAuditConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteAccountAuditConfigurationResponse]
     }
@@ -3673,7 +3685,7 @@ package iot {
     def apply(
         authorizerName: AuthorizerName
     ): DeleteAuthorizerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "authorizerName" -> authorizerName.asInstanceOf[js.Any]
       )
 
@@ -3687,7 +3699,7 @@ package iot {
   object DeleteAuthorizerResponse {
     def apply(
         ): DeleteAuthorizerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteAuthorizerResponse]
     }
@@ -3704,11 +3716,11 @@ package iot {
         billingGroupName: BillingGroupName,
         expectedVersion: js.UndefOr[OptionalVersion] = js.undefined
     ): DeleteBillingGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "billingGroupName" -> billingGroupName.asInstanceOf[js.Any]
       )
 
-      expectedVersion.foreach(__v => __obj.update("expectedVersion", __v.asInstanceOf[js.Any]))
+      expectedVersion.foreach(__v => __obj.updateDynamic("expectedVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteBillingGroupRequest]
     }
   }
@@ -3719,7 +3731,7 @@ package iot {
   object DeleteBillingGroupResponse {
     def apply(
         ): DeleteBillingGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteBillingGroupResponse]
     }
@@ -3737,7 +3749,7 @@ package iot {
     def apply(
         certificateId: CertificateId
     ): DeleteCACertificateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "certificateId" -> certificateId.asInstanceOf[js.Any]
       )
 
@@ -3754,7 +3766,7 @@ package iot {
   object DeleteCACertificateResponse {
     def apply(
         ): DeleteCACertificateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteCACertificateResponse]
     }
@@ -3774,11 +3786,11 @@ package iot {
         certificateId: CertificateId,
         forceDelete: js.UndefOr[ForceDelete] = js.undefined
     ): DeleteCertificateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "certificateId" -> certificateId.asInstanceOf[js.Any]
       )
 
-      forceDelete.foreach(__v => __obj.update("forceDelete", __v.asInstanceOf[js.Any]))
+      forceDelete.foreach(__v => __obj.updateDynamic("forceDelete")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteCertificateRequest]
     }
   }
@@ -3794,11 +3806,11 @@ package iot {
         thingGroupName: ThingGroupName,
         expectedVersion: js.UndefOr[OptionalVersion] = js.undefined
     ): DeleteDynamicThingGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "thingGroupName" -> thingGroupName.asInstanceOf[js.Any]
       )
 
-      expectedVersion.foreach(__v => __obj.update("expectedVersion", __v.asInstanceOf[js.Any]))
+      expectedVersion.foreach(__v => __obj.updateDynamic("expectedVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDynamicThingGroupRequest]
     }
   }
@@ -3809,7 +3821,7 @@ package iot {
   object DeleteDynamicThingGroupResponse {
     def apply(
         ): DeleteDynamicThingGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteDynamicThingGroupResponse]
     }
@@ -3830,13 +3842,13 @@ package iot {
         thingName: ThingName,
         force: js.UndefOr[ForceFlag] = js.undefined
     ): DeleteJobExecutionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "executionNumber" -> executionNumber.asInstanceOf[js.Any],
         "jobId"           -> jobId.asInstanceOf[js.Any],
         "thingName"       -> thingName.asInstanceOf[js.Any]
       )
 
-      force.foreach(__v => __obj.update("force", __v.asInstanceOf[js.Any]))
+      force.foreach(__v => __obj.updateDynamic("force")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteJobExecutionRequest]
     }
   }
@@ -3852,11 +3864,11 @@ package iot {
         jobId: JobId,
         force: js.UndefOr[ForceFlag] = js.undefined
     ): DeleteJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobId" -> jobId.asInstanceOf[js.Any]
       )
 
-      force.foreach(__v => __obj.update("force", __v.asInstanceOf[js.Any]))
+      force.foreach(__v => __obj.updateDynamic("force")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteJobRequest]
     }
   }
@@ -3870,7 +3882,7 @@ package iot {
     def apply(
         actionName: MitigationActionName
     ): DeleteMitigationActionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "actionName" -> actionName.asInstanceOf[js.Any]
       )
 
@@ -3884,7 +3896,7 @@ package iot {
   object DeleteMitigationActionResponse {
     def apply(
         ): DeleteMitigationActionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteMitigationActionResponse]
     }
@@ -3903,12 +3915,12 @@ package iot {
         deleteStream: js.UndefOr[DeleteStream] = js.undefined,
         forceDeleteAWSJob: js.UndefOr[ForceDeleteAWSJob] = js.undefined
     ): DeleteOTAUpdateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "otaUpdateId" -> otaUpdateId.asInstanceOf[js.Any]
       )
 
-      deleteStream.foreach(__v => __obj.update("deleteStream", __v.asInstanceOf[js.Any]))
-      forceDeleteAWSJob.foreach(__v => __obj.update("forceDeleteAWSJob", __v.asInstanceOf[js.Any]))
+      deleteStream.foreach(__v => __obj.updateDynamic("deleteStream")(__v.asInstanceOf[js.Any]))
+      forceDeleteAWSJob.foreach(__v => __obj.updateDynamic("forceDeleteAWSJob")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteOTAUpdateRequest]
     }
   }
@@ -3919,7 +3931,7 @@ package iot {
   object DeleteOTAUpdateResponse {
     def apply(
         ): DeleteOTAUpdateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteOTAUpdateResponse]
     }
@@ -3937,7 +3949,7 @@ package iot {
     def apply(
         policyName: PolicyName
     ): DeletePolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "policyName" -> policyName.asInstanceOf[js.Any]
       )
 
@@ -3959,7 +3971,7 @@ package iot {
         policyName: PolicyName,
         policyVersionId: PolicyVersionId
     ): DeletePolicyVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "policyName"      -> policyName.asInstanceOf[js.Any],
         "policyVersionId" -> policyVersionId.asInstanceOf[js.Any]
       )
@@ -3977,7 +3989,7 @@ package iot {
   object DeleteRegistrationCodeRequest {
     def apply(
         ): DeleteRegistrationCodeRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteRegistrationCodeRequest]
     }
@@ -3992,7 +4004,7 @@ package iot {
   object DeleteRegistrationCodeResponse {
     def apply(
         ): DeleteRegistrationCodeResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteRegistrationCodeResponse]
     }
@@ -4007,7 +4019,7 @@ package iot {
     def apply(
         roleAlias: RoleAlias
     ): DeleteRoleAliasRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "roleAlias" -> roleAlias.asInstanceOf[js.Any]
       )
 
@@ -4021,7 +4033,7 @@ package iot {
   object DeleteRoleAliasResponse {
     def apply(
         ): DeleteRoleAliasResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteRoleAliasResponse]
     }
@@ -4036,7 +4048,7 @@ package iot {
     def apply(
         scheduledAuditName: ScheduledAuditName
     ): DeleteScheduledAuditRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "scheduledAuditName" -> scheduledAuditName.asInstanceOf[js.Any]
       )
 
@@ -4050,7 +4062,7 @@ package iot {
   object DeleteScheduledAuditResponse {
     def apply(
         ): DeleteScheduledAuditResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteScheduledAuditResponse]
     }
@@ -4067,11 +4079,11 @@ package iot {
         securityProfileName: SecurityProfileName,
         expectedVersion: js.UndefOr[OptionalVersion] = js.undefined
     ): DeleteSecurityProfileRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "securityProfileName" -> securityProfileName.asInstanceOf[js.Any]
       )
 
-      expectedVersion.foreach(__v => __obj.update("expectedVersion", __v.asInstanceOf[js.Any]))
+      expectedVersion.foreach(__v => __obj.updateDynamic("expectedVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteSecurityProfileRequest]
     }
   }
@@ -4082,7 +4094,7 @@ package iot {
   object DeleteSecurityProfileResponse {
     def apply(
         ): DeleteSecurityProfileResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteSecurityProfileResponse]
     }
@@ -4097,7 +4109,7 @@ package iot {
     def apply(
         streamId: StreamId
     ): DeleteStreamRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "streamId" -> streamId.asInstanceOf[js.Any]
       )
 
@@ -4111,7 +4123,7 @@ package iot {
   object DeleteStreamResponse {
     def apply(
         ): DeleteStreamResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteStreamResponse]
     }
@@ -4128,11 +4140,11 @@ package iot {
         thingGroupName: ThingGroupName,
         expectedVersion: js.UndefOr[OptionalVersion] = js.undefined
     ): DeleteThingGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "thingGroupName" -> thingGroupName.asInstanceOf[js.Any]
       )
 
-      expectedVersion.foreach(__v => __obj.update("expectedVersion", __v.asInstanceOf[js.Any]))
+      expectedVersion.foreach(__v => __obj.updateDynamic("expectedVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteThingGroupRequest]
     }
   }
@@ -4143,7 +4155,7 @@ package iot {
   object DeleteThingGroupResponse {
     def apply(
         ): DeleteThingGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteThingGroupResponse]
     }
@@ -4163,11 +4175,11 @@ package iot {
         thingName: ThingName,
         expectedVersion: js.UndefOr[OptionalVersion] = js.undefined
     ): DeleteThingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
 
-      expectedVersion.foreach(__v => __obj.update("expectedVersion", __v.asInstanceOf[js.Any]))
+      expectedVersion.foreach(__v => __obj.updateDynamic("expectedVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteThingRequest]
     }
   }
@@ -4181,7 +4193,7 @@ package iot {
   object DeleteThingResponse {
     def apply(
         ): DeleteThingResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteThingResponse]
     }
@@ -4199,7 +4211,7 @@ package iot {
     def apply(
         thingTypeName: ThingTypeName
     ): DeleteThingTypeRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "thingTypeName" -> thingTypeName.asInstanceOf[js.Any]
       )
 
@@ -4216,7 +4228,7 @@ package iot {
   object DeleteThingTypeResponse {
     def apply(
         ): DeleteThingTypeResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteThingTypeResponse]
     }
@@ -4234,7 +4246,7 @@ package iot {
     def apply(
         ruleName: RuleName
     ): DeleteTopicRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ruleName" -> ruleName.asInstanceOf[js.Any]
       )
 
@@ -4253,7 +4265,7 @@ package iot {
         targetName: LogTargetName,
         targetType: LogTargetType
     ): DeleteV2LoggingLevelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "targetName" -> targetName.asInstanceOf[js.Any],
         "targetType" -> targetType.asInstanceOf[js.Any]
       )
@@ -4276,9 +4288,9 @@ package iot {
         explicitDeny: js.UndefOr[ExplicitDeny] = js.undefined,
         implicitDeny: js.UndefOr[ImplicitDeny] = js.undefined
     ): Denied = {
-      val __obj = js.Dictionary.empty[js.Any]
-      explicitDeny.foreach(__v => __obj.update("explicitDeny", __v.asInstanceOf[js.Any]))
-      implicitDeny.foreach(__v => __obj.update("implicitDeny", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      explicitDeny.foreach(__v => __obj.updateDynamic("explicitDeny")(__v.asInstanceOf[js.Any]))
+      implicitDeny.foreach(__v => __obj.updateDynamic("implicitDeny")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Denied]
     }
   }
@@ -4297,11 +4309,11 @@ package iot {
         thingTypeName: ThingTypeName,
         undoDeprecate: js.UndefOr[UndoDeprecate] = js.undefined
     ): DeprecateThingTypeRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "thingTypeName" -> thingTypeName.asInstanceOf[js.Any]
       )
 
-      undoDeprecate.foreach(__v => __obj.update("undoDeprecate", __v.asInstanceOf[js.Any]))
+      undoDeprecate.foreach(__v => __obj.updateDynamic("undoDeprecate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeprecateThingTypeRequest]
     }
   }
@@ -4315,7 +4327,7 @@ package iot {
   object DeprecateThingTypeResponse {
     def apply(
         ): DeprecateThingTypeResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeprecateThingTypeResponse]
     }
@@ -4327,7 +4339,7 @@ package iot {
   object DescribeAccountAuditConfigurationRequest {
     def apply(
         ): DescribeAccountAuditConfigurationRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DescribeAccountAuditConfigurationRequest]
     }
@@ -4346,12 +4358,12 @@ package iot {
         auditNotificationTargetConfigurations: js.UndefOr[AuditNotificationTargetConfigurations] = js.undefined,
         roleArn: js.UndefOr[RoleArn] = js.undefined
     ): DescribeAccountAuditConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      auditCheckConfigurations.foreach(__v => __obj.update("auditCheckConfigurations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      auditCheckConfigurations.foreach(__v => __obj.updateDynamic("auditCheckConfigurations")(__v.asInstanceOf[js.Any]))
       auditNotificationTargetConfigurations.foreach(
-        __v => __obj.update("auditNotificationTargetConfigurations", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("auditNotificationTargetConfigurations")(__v.asInstanceOf[js.Any])
       )
-      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAccountAuditConfigurationResponse]
     }
   }
@@ -4365,7 +4377,7 @@ package iot {
     def apply(
         findingId: FindingId
     ): DescribeAuditFindingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "findingId" -> findingId.asInstanceOf[js.Any]
       )
 
@@ -4382,8 +4394,8 @@ package iot {
     def apply(
         finding: js.UndefOr[AuditFinding] = js.undefined
     ): DescribeAuditFindingResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      finding.foreach(__v => __obj.update("finding", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      finding.foreach(__v => __obj.updateDynamic("finding")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAuditFindingResponse]
     }
   }
@@ -4397,7 +4409,7 @@ package iot {
     def apply(
         taskId: AuditMitigationActionsTaskId
     ): DescribeAuditMitigationActionsTaskRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "taskId" -> taskId.asInstanceOf[js.Any]
       )
 
@@ -4426,14 +4438,16 @@ package iot {
         taskStatistics: js.UndefOr[AuditMitigationActionsTaskStatistics] = js.undefined,
         taskStatus: js.UndefOr[AuditMitigationActionsTaskStatus] = js.undefined
     ): DescribeAuditMitigationActionsTaskResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      actionsDefinition.foreach(__v => __obj.update("actionsDefinition", __v.asInstanceOf[js.Any]))
-      auditCheckToActionsMapping.foreach(__v => __obj.update("auditCheckToActionsMapping", __v.asInstanceOf[js.Any]))
-      endTime.foreach(__v => __obj.update("endTime", __v.asInstanceOf[js.Any]))
-      startTime.foreach(__v => __obj.update("startTime", __v.asInstanceOf[js.Any]))
-      target.foreach(__v => __obj.update("target", __v.asInstanceOf[js.Any]))
-      taskStatistics.foreach(__v => __obj.update("taskStatistics", __v.asInstanceOf[js.Any]))
-      taskStatus.foreach(__v => __obj.update("taskStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      actionsDefinition.foreach(__v => __obj.updateDynamic("actionsDefinition")(__v.asInstanceOf[js.Any]))
+      auditCheckToActionsMapping.foreach(
+        __v => __obj.updateDynamic("auditCheckToActionsMapping")(__v.asInstanceOf[js.Any])
+      )
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
+      target.foreach(__v => __obj.updateDynamic("target")(__v.asInstanceOf[js.Any]))
+      taskStatistics.foreach(__v => __obj.updateDynamic("taskStatistics")(__v.asInstanceOf[js.Any]))
+      taskStatus.foreach(__v => __obj.updateDynamic("taskStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAuditMitigationActionsTaskResponse]
     }
   }
@@ -4447,7 +4461,7 @@ package iot {
     def apply(
         taskId: AuditTaskId
     ): DescribeAuditTaskRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "taskId" -> taskId.asInstanceOf[js.Any]
       )
 
@@ -4474,13 +4488,13 @@ package iot {
         taskStatus: js.UndefOr[AuditTaskStatus] = js.undefined,
         taskType: js.UndefOr[AuditTaskType] = js.undefined
     ): DescribeAuditTaskResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      auditDetails.foreach(__v => __obj.update("auditDetails", __v.asInstanceOf[js.Any]))
-      scheduledAuditName.foreach(__v => __obj.update("scheduledAuditName", __v.asInstanceOf[js.Any]))
-      taskStartTime.foreach(__v => __obj.update("taskStartTime", __v.asInstanceOf[js.Any]))
-      taskStatistics.foreach(__v => __obj.update("taskStatistics", __v.asInstanceOf[js.Any]))
-      taskStatus.foreach(__v => __obj.update("taskStatus", __v.asInstanceOf[js.Any]))
-      taskType.foreach(__v => __obj.update("taskType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      auditDetails.foreach(__v => __obj.updateDynamic("auditDetails")(__v.asInstanceOf[js.Any]))
+      scheduledAuditName.foreach(__v => __obj.updateDynamic("scheduledAuditName")(__v.asInstanceOf[js.Any]))
+      taskStartTime.foreach(__v => __obj.updateDynamic("taskStartTime")(__v.asInstanceOf[js.Any]))
+      taskStatistics.foreach(__v => __obj.updateDynamic("taskStatistics")(__v.asInstanceOf[js.Any]))
+      taskStatus.foreach(__v => __obj.updateDynamic("taskStatus")(__v.asInstanceOf[js.Any]))
+      taskType.foreach(__v => __obj.updateDynamic("taskType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAuditTaskResponse]
     }
   }
@@ -4494,7 +4508,7 @@ package iot {
     def apply(
         authorizerName: AuthorizerName
     ): DescribeAuthorizerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "authorizerName" -> authorizerName.asInstanceOf[js.Any]
       )
 
@@ -4511,8 +4525,8 @@ package iot {
     def apply(
         authorizerDescription: js.UndefOr[AuthorizerDescription] = js.undefined
     ): DescribeAuthorizerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      authorizerDescription.foreach(__v => __obj.update("authorizerDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      authorizerDescription.foreach(__v => __obj.updateDynamic("authorizerDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAuthorizerResponse]
     }
   }
@@ -4526,7 +4540,7 @@ package iot {
     def apply(
         billingGroupName: BillingGroupName
     ): DescribeBillingGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "billingGroupName" -> billingGroupName.asInstanceOf[js.Any]
       )
 
@@ -4553,13 +4567,13 @@ package iot {
         billingGroupProperties: js.UndefOr[BillingGroupProperties] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): DescribeBillingGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      billingGroupArn.foreach(__v => __obj.update("billingGroupArn", __v.asInstanceOf[js.Any]))
-      billingGroupId.foreach(__v => __obj.update("billingGroupId", __v.asInstanceOf[js.Any]))
-      billingGroupMetadata.foreach(__v => __obj.update("billingGroupMetadata", __v.asInstanceOf[js.Any]))
-      billingGroupName.foreach(__v => __obj.update("billingGroupName", __v.asInstanceOf[js.Any]))
-      billingGroupProperties.foreach(__v => __obj.update("billingGroupProperties", __v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      billingGroupArn.foreach(__v => __obj.updateDynamic("billingGroupArn")(__v.asInstanceOf[js.Any]))
+      billingGroupId.foreach(__v => __obj.updateDynamic("billingGroupId")(__v.asInstanceOf[js.Any]))
+      billingGroupMetadata.foreach(__v => __obj.updateDynamic("billingGroupMetadata")(__v.asInstanceOf[js.Any]))
+      billingGroupName.foreach(__v => __obj.updateDynamic("billingGroupName")(__v.asInstanceOf[js.Any]))
+      billingGroupProperties.foreach(__v => __obj.updateDynamic("billingGroupProperties")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeBillingGroupResponse]
     }
   }
@@ -4576,7 +4590,7 @@ package iot {
     def apply(
         certificateId: CertificateId
     ): DescribeCACertificateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "certificateId" -> certificateId.asInstanceOf[js.Any]
       )
 
@@ -4598,9 +4612,9 @@ package iot {
         certificateDescription: js.UndefOr[CACertificateDescription] = js.undefined,
         registrationConfig: js.UndefOr[RegistrationConfig] = js.undefined
     ): DescribeCACertificateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      certificateDescription.foreach(__v => __obj.update("certificateDescription", __v.asInstanceOf[js.Any]))
-      registrationConfig.foreach(__v => __obj.update("registrationConfig", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      certificateDescription.foreach(__v => __obj.updateDynamic("certificateDescription")(__v.asInstanceOf[js.Any]))
+      registrationConfig.foreach(__v => __obj.updateDynamic("registrationConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeCACertificateResponse]
     }
   }
@@ -4617,7 +4631,7 @@ package iot {
     def apply(
         certificateId: CertificateId
     ): DescribeCertificateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "certificateId" -> certificateId.asInstanceOf[js.Any]
       )
 
@@ -4637,8 +4651,8 @@ package iot {
     def apply(
         certificateDescription: js.UndefOr[CertificateDescription] = js.undefined
     ): DescribeCertificateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      certificateDescription.foreach(__v => __obj.update("certificateDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      certificateDescription.foreach(__v => __obj.updateDynamic("certificateDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeCertificateResponse]
     }
   }
@@ -4649,7 +4663,7 @@ package iot {
   object DescribeDefaultAuthorizerRequest {
     def apply(
         ): DescribeDefaultAuthorizerRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DescribeDefaultAuthorizerRequest]
     }
@@ -4664,8 +4678,8 @@ package iot {
     def apply(
         authorizerDescription: js.UndefOr[AuthorizerDescription] = js.undefined
     ): DescribeDefaultAuthorizerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      authorizerDescription.foreach(__v => __obj.update("authorizerDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      authorizerDescription.foreach(__v => __obj.updateDynamic("authorizerDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDefaultAuthorizerResponse]
     }
   }
@@ -4682,8 +4696,8 @@ package iot {
     def apply(
         endpointType: js.UndefOr[EndpointType] = js.undefined
     ): DescribeEndpointRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      endpointType.foreach(__v => __obj.update("endpointType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      endpointType.foreach(__v => __obj.updateDynamic("endpointType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEndpointRequest]
     }
   }
@@ -4700,8 +4714,8 @@ package iot {
     def apply(
         endpointAddress: js.UndefOr[EndpointAddress] = js.undefined
     ): DescribeEndpointResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      endpointAddress.foreach(__v => __obj.update("endpointAddress", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      endpointAddress.foreach(__v => __obj.updateDynamic("endpointAddress")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEndpointResponse]
     }
   }
@@ -4712,7 +4726,7 @@ package iot {
   object DescribeEventConfigurationsRequest {
     def apply(
         ): DescribeEventConfigurationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DescribeEventConfigurationsRequest]
     }
@@ -4731,10 +4745,10 @@ package iot {
         eventConfigurations: js.UndefOr[EventConfigurations] = js.undefined,
         lastModifiedDate: js.UndefOr[LastModifiedDate] = js.undefined
     ): DescribeEventConfigurationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationDate.foreach(__v => __obj.update("creationDate", __v.asInstanceOf[js.Any]))
-      eventConfigurations.foreach(__v => __obj.update("eventConfigurations", __v.asInstanceOf[js.Any]))
-      lastModifiedDate.foreach(__v => __obj.update("lastModifiedDate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
+      eventConfigurations.foreach(__v => __obj.updateDynamic("eventConfigurations")(__v.asInstanceOf[js.Any]))
+      lastModifiedDate.foreach(__v => __obj.updateDynamic("lastModifiedDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEventConfigurationsResponse]
     }
   }
@@ -4748,7 +4762,7 @@ package iot {
     def apply(
         indexName: IndexName
     ): DescribeIndexRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "indexName" -> indexName.asInstanceOf[js.Any]
       )
 
@@ -4769,10 +4783,10 @@ package iot {
         indexStatus: js.UndefOr[IndexStatus] = js.undefined,
         schema: js.UndefOr[IndexSchema] = js.undefined
     ): DescribeIndexResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      indexName.foreach(__v => __obj.update("indexName", __v.asInstanceOf[js.Any]))
-      indexStatus.foreach(__v => __obj.update("indexStatus", __v.asInstanceOf[js.Any]))
-      schema.foreach(__v => __obj.update("schema", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      indexName.foreach(__v => __obj.updateDynamic("indexName")(__v.asInstanceOf[js.Any]))
+      indexStatus.foreach(__v => __obj.updateDynamic("indexStatus")(__v.asInstanceOf[js.Any]))
+      schema.foreach(__v => __obj.updateDynamic("schema")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeIndexResponse]
     }
   }
@@ -4790,12 +4804,12 @@ package iot {
         thingName: ThingName,
         executionNumber: js.UndefOr[ExecutionNumber] = js.undefined
     ): DescribeJobExecutionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobId"     -> jobId.asInstanceOf[js.Any],
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
 
-      executionNumber.foreach(__v => __obj.update("executionNumber", __v.asInstanceOf[js.Any]))
+      executionNumber.foreach(__v => __obj.updateDynamic("executionNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeJobExecutionRequest]
     }
   }
@@ -4809,8 +4823,8 @@ package iot {
     def apply(
         execution: js.UndefOr[JobExecution] = js.undefined
     ): DescribeJobExecutionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      execution.foreach(__v => __obj.update("execution", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      execution.foreach(__v => __obj.updateDynamic("execution")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeJobExecutionResponse]
     }
   }
@@ -4824,7 +4838,7 @@ package iot {
     def apply(
         jobId: JobId
     ): DescribeJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobId" -> jobId.asInstanceOf[js.Any]
       )
 
@@ -4843,9 +4857,9 @@ package iot {
         documentSource: js.UndefOr[JobDocumentSource] = js.undefined,
         job: js.UndefOr[Job] = js.undefined
     ): DescribeJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      documentSource.foreach(__v => __obj.update("documentSource", __v.asInstanceOf[js.Any]))
-      job.foreach(__v => __obj.update("job", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      documentSource.foreach(__v => __obj.updateDynamic("documentSource")(__v.asInstanceOf[js.Any]))
+      job.foreach(__v => __obj.updateDynamic("job")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeJobResponse]
     }
   }
@@ -4859,7 +4873,7 @@ package iot {
     def apply(
         actionName: MitigationActionName
     ): DescribeMitigationActionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "actionName" -> actionName.asInstanceOf[js.Any]
       )
 
@@ -4890,15 +4904,15 @@ package iot {
         lastModifiedDate: js.UndefOr[Timestamp] = js.undefined,
         roleArn: js.UndefOr[RoleArn] = js.undefined
     ): DescribeMitigationActionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      actionArn.foreach(__v => __obj.update("actionArn", __v.asInstanceOf[js.Any]))
-      actionId.foreach(__v => __obj.update("actionId", __v.asInstanceOf[js.Any]))
-      actionName.foreach(__v => __obj.update("actionName", __v.asInstanceOf[js.Any]))
-      actionParams.foreach(__v => __obj.update("actionParams", __v.asInstanceOf[js.Any]))
-      actionType.foreach(__v => __obj.update("actionType", __v.asInstanceOf[js.Any]))
-      creationDate.foreach(__v => __obj.update("creationDate", __v.asInstanceOf[js.Any]))
-      lastModifiedDate.foreach(__v => __obj.update("lastModifiedDate", __v.asInstanceOf[js.Any]))
-      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      actionArn.foreach(__v => __obj.updateDynamic("actionArn")(__v.asInstanceOf[js.Any]))
+      actionId.foreach(__v => __obj.updateDynamic("actionId")(__v.asInstanceOf[js.Any]))
+      actionName.foreach(__v => __obj.updateDynamic("actionName")(__v.asInstanceOf[js.Any]))
+      actionParams.foreach(__v => __obj.updateDynamic("actionParams")(__v.asInstanceOf[js.Any]))
+      actionType.foreach(__v => __obj.updateDynamic("actionType")(__v.asInstanceOf[js.Any]))
+      creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
+      lastModifiedDate.foreach(__v => __obj.updateDynamic("lastModifiedDate")(__v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMitigationActionResponse]
     }
   }
@@ -4912,7 +4926,7 @@ package iot {
     def apply(
         roleAlias: RoleAlias
     ): DescribeRoleAliasRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "roleAlias" -> roleAlias.asInstanceOf[js.Any]
       )
 
@@ -4929,8 +4943,8 @@ package iot {
     def apply(
         roleAliasDescription: js.UndefOr[RoleAliasDescription] = js.undefined
     ): DescribeRoleAliasResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      roleAliasDescription.foreach(__v => __obj.update("roleAliasDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      roleAliasDescription.foreach(__v => __obj.updateDynamic("roleAliasDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRoleAliasResponse]
     }
   }
@@ -4944,7 +4958,7 @@ package iot {
     def apply(
         scheduledAuditName: ScheduledAuditName
     ): DescribeScheduledAuditRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "scheduledAuditName" -> scheduledAuditName.asInstanceOf[js.Any]
       )
 
@@ -4971,13 +4985,13 @@ package iot {
         scheduledAuditName: js.UndefOr[ScheduledAuditName] = js.undefined,
         targetCheckNames: js.UndefOr[TargetAuditCheckNames] = js.undefined
     ): DescribeScheduledAuditResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      dayOfMonth.foreach(__v => __obj.update("dayOfMonth", __v.asInstanceOf[js.Any]))
-      dayOfWeek.foreach(__v => __obj.update("dayOfWeek", __v.asInstanceOf[js.Any]))
-      frequency.foreach(__v => __obj.update("frequency", __v.asInstanceOf[js.Any]))
-      scheduledAuditArn.foreach(__v => __obj.update("scheduledAuditArn", __v.asInstanceOf[js.Any]))
-      scheduledAuditName.foreach(__v => __obj.update("scheduledAuditName", __v.asInstanceOf[js.Any]))
-      targetCheckNames.foreach(__v => __obj.update("targetCheckNames", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      dayOfMonth.foreach(__v => __obj.updateDynamic("dayOfMonth")(__v.asInstanceOf[js.Any]))
+      dayOfWeek.foreach(__v => __obj.updateDynamic("dayOfWeek")(__v.asInstanceOf[js.Any]))
+      frequency.foreach(__v => __obj.updateDynamic("frequency")(__v.asInstanceOf[js.Any]))
+      scheduledAuditArn.foreach(__v => __obj.updateDynamic("scheduledAuditArn")(__v.asInstanceOf[js.Any]))
+      scheduledAuditName.foreach(__v => __obj.updateDynamic("scheduledAuditName")(__v.asInstanceOf[js.Any]))
+      targetCheckNames.foreach(__v => __obj.updateDynamic("targetCheckNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeScheduledAuditResponse]
     }
   }
@@ -4991,7 +5005,7 @@ package iot {
     def apply(
         securityProfileName: SecurityProfileName
     ): DescribeSecurityProfileRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "securityProfileName" -> securityProfileName.asInstanceOf[js.Any]
       )
 
@@ -5024,16 +5038,20 @@ package iot {
         securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): DescribeSecurityProfileResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      additionalMetricsToRetain.foreach(__v => __obj.update("additionalMetricsToRetain", __v.asInstanceOf[js.Any]))
-      alertTargets.foreach(__v => __obj.update("alertTargets", __v.asInstanceOf[js.Any]))
-      behaviors.foreach(__v => __obj.update("behaviors", __v.asInstanceOf[js.Any]))
-      creationDate.foreach(__v => __obj.update("creationDate", __v.asInstanceOf[js.Any]))
-      lastModifiedDate.foreach(__v => __obj.update("lastModifiedDate", __v.asInstanceOf[js.Any]))
-      securityProfileArn.foreach(__v => __obj.update("securityProfileArn", __v.asInstanceOf[js.Any]))
-      securityProfileDescription.foreach(__v => __obj.update("securityProfileDescription", __v.asInstanceOf[js.Any]))
-      securityProfileName.foreach(__v => __obj.update("securityProfileName", __v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      additionalMetricsToRetain.foreach(
+        __v => __obj.updateDynamic("additionalMetricsToRetain")(__v.asInstanceOf[js.Any])
+      )
+      alertTargets.foreach(__v => __obj.updateDynamic("alertTargets")(__v.asInstanceOf[js.Any]))
+      behaviors.foreach(__v => __obj.updateDynamic("behaviors")(__v.asInstanceOf[js.Any]))
+      creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
+      lastModifiedDate.foreach(__v => __obj.updateDynamic("lastModifiedDate")(__v.asInstanceOf[js.Any]))
+      securityProfileArn.foreach(__v => __obj.updateDynamic("securityProfileArn")(__v.asInstanceOf[js.Any]))
+      securityProfileDescription.foreach(
+        __v => __obj.updateDynamic("securityProfileDescription")(__v.asInstanceOf[js.Any])
+      )
+      securityProfileName.foreach(__v => __obj.updateDynamic("securityProfileName")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSecurityProfileResponse]
     }
   }
@@ -5047,7 +5065,7 @@ package iot {
     def apply(
         streamId: StreamId
     ): DescribeStreamRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "streamId" -> streamId.asInstanceOf[js.Any]
       )
 
@@ -5064,8 +5082,8 @@ package iot {
     def apply(
         streamInfo: js.UndefOr[StreamInfo] = js.undefined
     ): DescribeStreamResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      streamInfo.foreach(__v => __obj.update("streamInfo", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      streamInfo.foreach(__v => __obj.updateDynamic("streamInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeStreamResponse]
     }
   }
@@ -5079,7 +5097,7 @@ package iot {
     def apply(
         thingGroupName: ThingGroupName
     ): DescribeThingGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "thingGroupName" -> thingGroupName.asInstanceOf[js.Any]
       )
 
@@ -5114,17 +5132,17 @@ package iot {
         thingGroupProperties: js.UndefOr[ThingGroupProperties] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): DescribeThingGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      indexName.foreach(__v => __obj.update("indexName", __v.asInstanceOf[js.Any]))
-      queryString.foreach(__v => __obj.update("queryString", __v.asInstanceOf[js.Any]))
-      queryVersion.foreach(__v => __obj.update("queryVersion", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      thingGroupArn.foreach(__v => __obj.update("thingGroupArn", __v.asInstanceOf[js.Any]))
-      thingGroupId.foreach(__v => __obj.update("thingGroupId", __v.asInstanceOf[js.Any]))
-      thingGroupMetadata.foreach(__v => __obj.update("thingGroupMetadata", __v.asInstanceOf[js.Any]))
-      thingGroupName.foreach(__v => __obj.update("thingGroupName", __v.asInstanceOf[js.Any]))
-      thingGroupProperties.foreach(__v => __obj.update("thingGroupProperties", __v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      indexName.foreach(__v => __obj.updateDynamic("indexName")(__v.asInstanceOf[js.Any]))
+      queryString.foreach(__v => __obj.updateDynamic("queryString")(__v.asInstanceOf[js.Any]))
+      queryVersion.foreach(__v => __obj.updateDynamic("queryVersion")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      thingGroupArn.foreach(__v => __obj.updateDynamic("thingGroupArn")(__v.asInstanceOf[js.Any]))
+      thingGroupId.foreach(__v => __obj.updateDynamic("thingGroupId")(__v.asInstanceOf[js.Any]))
+      thingGroupMetadata.foreach(__v => __obj.updateDynamic("thingGroupMetadata")(__v.asInstanceOf[js.Any]))
+      thingGroupName.foreach(__v => __obj.updateDynamic("thingGroupName")(__v.asInstanceOf[js.Any]))
+      thingGroupProperties.foreach(__v => __obj.updateDynamic("thingGroupProperties")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeThingGroupResponse]
     }
   }
@@ -5138,7 +5156,7 @@ package iot {
     def apply(
         taskId: TaskId
     ): DescribeThingRegistrationTaskRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "taskId" -> taskId.asInstanceOf[js.Any]
       )
 
@@ -5177,19 +5195,19 @@ package iot {
         taskId: js.UndefOr[TaskId] = js.undefined,
         templateBody: js.UndefOr[TemplateBody] = js.undefined
     ): DescribeThingRegistrationTaskResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationDate.foreach(__v => __obj.update("creationDate", __v.asInstanceOf[js.Any]))
-      failureCount.foreach(__v => __obj.update("failureCount", __v.asInstanceOf[js.Any]))
-      inputFileBucket.foreach(__v => __obj.update("inputFileBucket", __v.asInstanceOf[js.Any]))
-      inputFileKey.foreach(__v => __obj.update("inputFileKey", __v.asInstanceOf[js.Any]))
-      lastModifiedDate.foreach(__v => __obj.update("lastModifiedDate", __v.asInstanceOf[js.Any]))
-      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
-      percentageProgress.foreach(__v => __obj.update("percentageProgress", __v.asInstanceOf[js.Any]))
-      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      successCount.foreach(__v => __obj.update("successCount", __v.asInstanceOf[js.Any]))
-      taskId.foreach(__v => __obj.update("taskId", __v.asInstanceOf[js.Any]))
-      templateBody.foreach(__v => __obj.update("templateBody", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
+      failureCount.foreach(__v => __obj.updateDynamic("failureCount")(__v.asInstanceOf[js.Any]))
+      inputFileBucket.foreach(__v => __obj.updateDynamic("inputFileBucket")(__v.asInstanceOf[js.Any]))
+      inputFileKey.foreach(__v => __obj.updateDynamic("inputFileKey")(__v.asInstanceOf[js.Any]))
+      lastModifiedDate.foreach(__v => __obj.updateDynamic("lastModifiedDate")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      percentageProgress.foreach(__v => __obj.updateDynamic("percentageProgress")(__v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      successCount.foreach(__v => __obj.updateDynamic("successCount")(__v.asInstanceOf[js.Any]))
+      taskId.foreach(__v => __obj.updateDynamic("taskId")(__v.asInstanceOf[js.Any]))
+      templateBody.foreach(__v => __obj.updateDynamic("templateBody")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeThingRegistrationTaskResponse]
     }
   }
@@ -5206,7 +5224,7 @@ package iot {
     def apply(
         thingName: ThingName
     ): DescribeThingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
 
@@ -5240,15 +5258,15 @@ package iot {
         thingTypeName: js.UndefOr[ThingTypeName] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): DescribeThingResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      attributes.foreach(__v => __obj.update("attributes", __v.asInstanceOf[js.Any]))
-      billingGroupName.foreach(__v => __obj.update("billingGroupName", __v.asInstanceOf[js.Any]))
-      defaultClientId.foreach(__v => __obj.update("defaultClientId", __v.asInstanceOf[js.Any]))
-      thingArn.foreach(__v => __obj.update("thingArn", __v.asInstanceOf[js.Any]))
-      thingId.foreach(__v => __obj.update("thingId", __v.asInstanceOf[js.Any]))
-      thingName.foreach(__v => __obj.update("thingName", __v.asInstanceOf[js.Any]))
-      thingTypeName.foreach(__v => __obj.update("thingTypeName", __v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
+      billingGroupName.foreach(__v => __obj.updateDynamic("billingGroupName")(__v.asInstanceOf[js.Any]))
+      defaultClientId.foreach(__v => __obj.updateDynamic("defaultClientId")(__v.asInstanceOf[js.Any]))
+      thingArn.foreach(__v => __obj.updateDynamic("thingArn")(__v.asInstanceOf[js.Any]))
+      thingId.foreach(__v => __obj.updateDynamic("thingId")(__v.asInstanceOf[js.Any]))
+      thingName.foreach(__v => __obj.updateDynamic("thingName")(__v.asInstanceOf[js.Any]))
+      thingTypeName.foreach(__v => __obj.updateDynamic("thingTypeName")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeThingResponse]
     }
   }
@@ -5265,7 +5283,7 @@ package iot {
     def apply(
         thingTypeName: ThingTypeName
     ): DescribeThingTypeRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "thingTypeName" -> thingTypeName.asInstanceOf[js.Any]
       )
 
@@ -5293,12 +5311,12 @@ package iot {
         thingTypeName: js.UndefOr[ThingTypeName] = js.undefined,
         thingTypeProperties: js.UndefOr[ThingTypeProperties] = js.undefined
     ): DescribeThingTypeResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      thingTypeArn.foreach(__v => __obj.update("thingTypeArn", __v.asInstanceOf[js.Any]))
-      thingTypeId.foreach(__v => __obj.update("thingTypeId", __v.asInstanceOf[js.Any]))
-      thingTypeMetadata.foreach(__v => __obj.update("thingTypeMetadata", __v.asInstanceOf[js.Any]))
-      thingTypeName.foreach(__v => __obj.update("thingTypeName", __v.asInstanceOf[js.Any]))
-      thingTypeProperties.foreach(__v => __obj.update("thingTypeProperties", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      thingTypeArn.foreach(__v => __obj.updateDynamic("thingTypeArn")(__v.asInstanceOf[js.Any]))
+      thingTypeId.foreach(__v => __obj.updateDynamic("thingTypeId")(__v.asInstanceOf[js.Any]))
+      thingTypeMetadata.foreach(__v => __obj.updateDynamic("thingTypeMetadata")(__v.asInstanceOf[js.Any]))
+      thingTypeName.foreach(__v => __obj.updateDynamic("thingTypeName")(__v.asInstanceOf[js.Any]))
+      thingTypeProperties.foreach(__v => __obj.updateDynamic("thingTypeProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeThingTypeResponse]
     }
   }
@@ -5315,8 +5333,8 @@ package iot {
     def apply(
         s3Destination: js.UndefOr[S3Destination] = js.undefined
     ): Destination = {
-      val __obj = js.Dictionary.empty[js.Any]
-      s3Destination.foreach(__v => __obj.update("s3Destination", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      s3Destination.foreach(__v => __obj.updateDynamic("s3Destination")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Destination]
     }
   }
@@ -5332,7 +5350,7 @@ package iot {
         policyName: PolicyName,
         target: PolicyTarget
     ): DetachPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "policyName" -> policyName.asInstanceOf[js.Any],
         "target"     -> target.asInstanceOf[js.Any]
       )
@@ -5355,7 +5373,7 @@ package iot {
         policyName: PolicyName,
         principal: Principal
     ): DetachPrincipalPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "policyName" -> policyName.asInstanceOf[js.Any],
         "principal"  -> principal.asInstanceOf[js.Any]
       )
@@ -5375,7 +5393,7 @@ package iot {
         securityProfileName: SecurityProfileName,
         securityProfileTargetArn: SecurityProfileTargetArn
     ): DetachSecurityProfileRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "securityProfileName"      -> securityProfileName.asInstanceOf[js.Any],
         "securityProfileTargetArn" -> securityProfileTargetArn.asInstanceOf[js.Any]
       )
@@ -5390,7 +5408,7 @@ package iot {
   object DetachSecurityProfileResponse {
     def apply(
         ): DetachSecurityProfileResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DetachSecurityProfileResponse]
     }
@@ -5410,7 +5428,7 @@ package iot {
         principal: Principal,
         thingName: ThingName
     ): DetachThingPrincipalRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "principal" -> principal.asInstanceOf[js.Any],
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
@@ -5428,7 +5446,7 @@ package iot {
   object DetachThingPrincipalResponse {
     def apply(
         ): DetachThingPrincipalResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DetachThingPrincipalResponse]
     }
@@ -5452,7 +5470,7 @@ package iot {
     def apply(
         ruleName: RuleName
     ): DisableTopicRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ruleName" -> ruleName.asInstanceOf[js.Any]
       )
 
@@ -5504,19 +5522,19 @@ package iot {
         rangeKeyType: js.UndefOr[DynamoKeyType] = js.undefined,
         rangeKeyValue: js.UndefOr[RangeKeyValue] = js.undefined
     ): DynamoDBAction = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "hashKeyField" -> hashKeyField.asInstanceOf[js.Any],
         "hashKeyValue" -> hashKeyValue.asInstanceOf[js.Any],
         "roleArn"      -> roleArn.asInstanceOf[js.Any],
         "tableName"    -> tableName.asInstanceOf[js.Any]
       )
 
-      hashKeyType.foreach(__v => __obj.update("hashKeyType", __v.asInstanceOf[js.Any]))
-      operation.foreach(__v => __obj.update("operation", __v.asInstanceOf[js.Any]))
-      payloadField.foreach(__v => __obj.update("payloadField", __v.asInstanceOf[js.Any]))
-      rangeKeyField.foreach(__v => __obj.update("rangeKeyField", __v.asInstanceOf[js.Any]))
-      rangeKeyType.foreach(__v => __obj.update("rangeKeyType", __v.asInstanceOf[js.Any]))
-      rangeKeyValue.foreach(__v => __obj.update("rangeKeyValue", __v.asInstanceOf[js.Any]))
+      hashKeyType.foreach(__v => __obj.updateDynamic("hashKeyType")(__v.asInstanceOf[js.Any]))
+      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
+      payloadField.foreach(__v => __obj.updateDynamic("payloadField")(__v.asInstanceOf[js.Any]))
+      rangeKeyField.foreach(__v => __obj.updateDynamic("rangeKeyField")(__v.asInstanceOf[js.Any]))
+      rangeKeyType.foreach(__v => __obj.updateDynamic("rangeKeyType")(__v.asInstanceOf[js.Any]))
+      rangeKeyValue.foreach(__v => __obj.updateDynamic("rangeKeyValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DynamoDBAction]
     }
   }
@@ -5536,7 +5554,7 @@ package iot {
         putItem: PutItemInput,
         roleArn: AwsArn
     ): DynamoDBv2Action = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "putItem" -> putItem.asInstanceOf[js.Any],
         "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
@@ -5568,10 +5586,10 @@ package iot {
         policyDocument: js.UndefOr[PolicyDocument] = js.undefined,
         policyName: js.UndefOr[PolicyName] = js.undefined
     ): EffectivePolicy = {
-      val __obj = js.Dictionary.empty[js.Any]
-      policyArn.foreach(__v => __obj.update("policyArn", __v.asInstanceOf[js.Any]))
-      policyDocument.foreach(__v => __obj.update("policyDocument", __v.asInstanceOf[js.Any]))
-      policyName.foreach(__v => __obj.update("policyName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      policyArn.foreach(__v => __obj.updateDynamic("policyArn")(__v.asInstanceOf[js.Any]))
+      policyDocument.foreach(__v => __obj.updateDynamic("policyDocument")(__v.asInstanceOf[js.Any]))
+      policyName.foreach(__v => __obj.updateDynamic("policyName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EffectivePolicy]
     }
   }
@@ -5596,7 +5614,7 @@ package iot {
         roleArn: AwsArn,
         `type`: ElasticsearchType
     ): ElasticsearchAction = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "endpoint" -> endpoint.asInstanceOf[js.Any],
         "id"       -> id.asInstanceOf[js.Any],
         "index"    -> index.asInstanceOf[js.Any],
@@ -5622,7 +5640,7 @@ package iot {
         logLevel: LogLevel,
         roleArnForLogging: RoleArn
     ): EnableIoTLoggingParams = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "logLevel"          -> logLevel.asInstanceOf[js.Any],
         "roleArnForLogging" -> roleArnForLogging.asInstanceOf[js.Any]
       )
@@ -5643,7 +5661,7 @@ package iot {
     def apply(
         ruleName: RuleName
     ): EnableTopicRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ruleName" -> ruleName.asInstanceOf[js.Any]
       )
 
@@ -5665,9 +5683,9 @@ package iot {
         code: js.UndefOr[Code] = js.undefined,
         message: js.UndefOr[OTAUpdateErrorMessage] = js.undefined
     ): ErrorInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      code.foreach(__v => __obj.update("code", __v.asInstanceOf[js.Any]))
-      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ErrorInfo]
     }
   }
@@ -5714,8 +5732,8 @@ package iot {
     def apply(
         policies: js.UndefOr[Policies] = js.undefined
     ): ExplicitDeny = {
-      val __obj = js.Dictionary.empty[js.Any]
-      policies.foreach(__v => __obj.update("policies", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      policies.foreach(__v => __obj.updateDynamic("policies")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExplicitDeny]
     }
   }
@@ -5736,7 +5754,7 @@ package iot {
         incrementFactor: IncrementFactor,
         rateIncreaseCriteria: RateIncreaseCriteria
     ): ExponentialRolloutRate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "baseRatePerMinute"    -> baseRatePerMinute.asInstanceOf[js.Any],
         "incrementFactor"      -> incrementFactor.asInstanceOf[js.Any],
         "rateIncreaseCriteria" -> rateIncreaseCriteria.asInstanceOf[js.Any]
@@ -5760,9 +5778,9 @@ package iot {
         s3Location: js.UndefOr[S3Location] = js.undefined,
         stream: js.UndefOr[Stream] = js.undefined
     ): FileLocation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      s3Location.foreach(__v => __obj.update("s3Location", __v.asInstanceOf[js.Any]))
-      stream.foreach(__v => __obj.update("stream", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      s3Location.foreach(__v => __obj.updateDynamic("s3Location")(__v.asInstanceOf[js.Any]))
+      stream.foreach(__v => __obj.updateDynamic("stream")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FileLocation]
     }
   }
@@ -5783,12 +5801,12 @@ package iot {
         roleArn: AwsArn,
         separator: js.UndefOr[FirehoseSeparator] = js.undefined
     ): FirehoseAction = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "deliveryStreamName" -> deliveryStreamName.asInstanceOf[js.Any],
         "roleArn"            -> roleArn.asInstanceOf[js.Any]
       )
 
-      separator.foreach(__v => __obj.update("separator", __v.asInstanceOf[js.Any]))
+      separator.foreach(__v => __obj.updateDynamic("separator")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FirehoseAction]
     }
   }
@@ -5806,10 +5824,10 @@ package iot {
         principal: js.UndefOr[Principal] = js.undefined,
         thingName: js.UndefOr[ThingName] = js.undefined
     ): GetEffectivePoliciesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      cognitoIdentityPoolId.foreach(__v => __obj.update("cognitoIdentityPoolId", __v.asInstanceOf[js.Any]))
-      principal.foreach(__v => __obj.update("principal", __v.asInstanceOf[js.Any]))
-      thingName.foreach(__v => __obj.update("thingName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      cognitoIdentityPoolId.foreach(__v => __obj.updateDynamic("cognitoIdentityPoolId")(__v.asInstanceOf[js.Any]))
+      principal.foreach(__v => __obj.updateDynamic("principal")(__v.asInstanceOf[js.Any]))
+      thingName.foreach(__v => __obj.updateDynamic("thingName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetEffectivePoliciesRequest]
     }
   }
@@ -5823,8 +5841,8 @@ package iot {
     def apply(
         effectivePolicies: js.UndefOr[EffectivePolicies] = js.undefined
     ): GetEffectivePoliciesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      effectivePolicies.foreach(__v => __obj.update("effectivePolicies", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      effectivePolicies.foreach(__v => __obj.updateDynamic("effectivePolicies")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetEffectivePoliciesResponse]
     }
   }
@@ -5835,7 +5853,7 @@ package iot {
   object GetIndexingConfigurationRequest {
     def apply(
         ): GetIndexingConfigurationRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetIndexingConfigurationRequest]
     }
@@ -5852,11 +5870,13 @@ package iot {
         thingGroupIndexingConfiguration: js.UndefOr[ThingGroupIndexingConfiguration] = js.undefined,
         thingIndexingConfiguration: js.UndefOr[ThingIndexingConfiguration] = js.undefined
     ): GetIndexingConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       thingGroupIndexingConfiguration.foreach(
-        __v => __obj.update("thingGroupIndexingConfiguration", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("thingGroupIndexingConfiguration")(__v.asInstanceOf[js.Any])
       )
-      thingIndexingConfiguration.foreach(__v => __obj.update("thingIndexingConfiguration", __v.asInstanceOf[js.Any]))
+      thingIndexingConfiguration.foreach(
+        __v => __obj.updateDynamic("thingIndexingConfiguration")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[GetIndexingConfigurationResponse]
     }
   }
@@ -5870,7 +5890,7 @@ package iot {
     def apply(
         jobId: JobId
     ): GetJobDocumentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobId" -> jobId.asInstanceOf[js.Any]
       )
 
@@ -5887,8 +5907,8 @@ package iot {
     def apply(
         document: js.UndefOr[JobDocument] = js.undefined
     ): GetJobDocumentResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      document.foreach(__v => __obj.update("document", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      document.foreach(__v => __obj.updateDynamic("document")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetJobDocumentResponse]
     }
   }
@@ -5902,7 +5922,7 @@ package iot {
   object GetLoggingOptionsRequest {
     def apply(
         ): GetLoggingOptionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetLoggingOptionsRequest]
     }
@@ -5922,9 +5942,9 @@ package iot {
         logLevel: js.UndefOr[LogLevel] = js.undefined,
         roleArn: js.UndefOr[AwsArn] = js.undefined
     ): GetLoggingOptionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      logLevel.foreach(__v => __obj.update("logLevel", __v.asInstanceOf[js.Any]))
-      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      logLevel.foreach(__v => __obj.updateDynamic("logLevel")(__v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLoggingOptionsResponse]
     }
   }
@@ -5938,7 +5958,7 @@ package iot {
     def apply(
         otaUpdateId: OTAUpdateId
     ): GetOTAUpdateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "otaUpdateId" -> otaUpdateId.asInstanceOf[js.Any]
       )
 
@@ -5955,8 +5975,8 @@ package iot {
     def apply(
         otaUpdateInfo: js.UndefOr[OTAUpdateInfo] = js.undefined
     ): GetOTAUpdateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      otaUpdateInfo.foreach(__v => __obj.update("otaUpdateInfo", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      otaUpdateInfo.foreach(__v => __obj.updateDynamic("otaUpdateInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetOTAUpdateResponse]
     }
   }
@@ -5973,7 +5993,7 @@ package iot {
     def apply(
         policyName: PolicyName
     ): GetPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "policyName" -> policyName.asInstanceOf[js.Any]
       )
 
@@ -6005,14 +6025,14 @@ package iot {
         policyDocument: js.UndefOr[PolicyDocument] = js.undefined,
         policyName: js.UndefOr[PolicyName] = js.undefined
     ): GetPolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationDate.foreach(__v => __obj.update("creationDate", __v.asInstanceOf[js.Any]))
-      defaultVersionId.foreach(__v => __obj.update("defaultVersionId", __v.asInstanceOf[js.Any]))
-      generationId.foreach(__v => __obj.update("generationId", __v.asInstanceOf[js.Any]))
-      lastModifiedDate.foreach(__v => __obj.update("lastModifiedDate", __v.asInstanceOf[js.Any]))
-      policyArn.foreach(__v => __obj.update("policyArn", __v.asInstanceOf[js.Any]))
-      policyDocument.foreach(__v => __obj.update("policyDocument", __v.asInstanceOf[js.Any]))
-      policyName.foreach(__v => __obj.update("policyName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
+      defaultVersionId.foreach(__v => __obj.updateDynamic("defaultVersionId")(__v.asInstanceOf[js.Any]))
+      generationId.foreach(__v => __obj.updateDynamic("generationId")(__v.asInstanceOf[js.Any]))
+      lastModifiedDate.foreach(__v => __obj.updateDynamic("lastModifiedDate")(__v.asInstanceOf[js.Any]))
+      policyArn.foreach(__v => __obj.updateDynamic("policyArn")(__v.asInstanceOf[js.Any]))
+      policyDocument.foreach(__v => __obj.updateDynamic("policyDocument")(__v.asInstanceOf[js.Any]))
+      policyName.foreach(__v => __obj.updateDynamic("policyName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPolicyResponse]
     }
   }
@@ -6031,7 +6051,7 @@ package iot {
         policyName: PolicyName,
         policyVersionId: PolicyVersionId
     ): GetPolicyVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "policyName"      -> policyName.asInstanceOf[js.Any],
         "policyVersionId" -> policyVersionId.asInstanceOf[js.Any]
       )
@@ -6066,15 +6086,15 @@ package iot {
         policyName: js.UndefOr[PolicyName] = js.undefined,
         policyVersionId: js.UndefOr[PolicyVersionId] = js.undefined
     ): GetPolicyVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationDate.foreach(__v => __obj.update("creationDate", __v.asInstanceOf[js.Any]))
-      generationId.foreach(__v => __obj.update("generationId", __v.asInstanceOf[js.Any]))
-      isDefaultVersion.foreach(__v => __obj.update("isDefaultVersion", __v.asInstanceOf[js.Any]))
-      lastModifiedDate.foreach(__v => __obj.update("lastModifiedDate", __v.asInstanceOf[js.Any]))
-      policyArn.foreach(__v => __obj.update("policyArn", __v.asInstanceOf[js.Any]))
-      policyDocument.foreach(__v => __obj.update("policyDocument", __v.asInstanceOf[js.Any]))
-      policyName.foreach(__v => __obj.update("policyName", __v.asInstanceOf[js.Any]))
-      policyVersionId.foreach(__v => __obj.update("policyVersionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
+      generationId.foreach(__v => __obj.updateDynamic("generationId")(__v.asInstanceOf[js.Any]))
+      isDefaultVersion.foreach(__v => __obj.updateDynamic("isDefaultVersion")(__v.asInstanceOf[js.Any]))
+      lastModifiedDate.foreach(__v => __obj.updateDynamic("lastModifiedDate")(__v.asInstanceOf[js.Any]))
+      policyArn.foreach(__v => __obj.updateDynamic("policyArn")(__v.asInstanceOf[js.Any]))
+      policyDocument.foreach(__v => __obj.updateDynamic("policyDocument")(__v.asInstanceOf[js.Any]))
+      policyName.foreach(__v => __obj.updateDynamic("policyName")(__v.asInstanceOf[js.Any]))
+      policyVersionId.foreach(__v => __obj.updateDynamic("policyVersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPolicyVersionResponse]
     }
   }
@@ -6088,7 +6108,7 @@ package iot {
   object GetRegistrationCodeRequest {
     def apply(
         ): GetRegistrationCodeRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetRegistrationCodeRequest]
     }
@@ -6106,8 +6126,8 @@ package iot {
     def apply(
         registrationCode: js.UndefOr[RegistrationCode] = js.undefined
     ): GetRegistrationCodeResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      registrationCode.foreach(__v => __obj.update("registrationCode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      registrationCode.foreach(__v => __obj.updateDynamic("registrationCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRegistrationCodeResponse]
     }
   }
@@ -6127,13 +6147,13 @@ package iot {
         indexName: js.UndefOr[IndexName] = js.undefined,
         queryVersion: js.UndefOr[QueryVersion] = js.undefined
     ): GetStatisticsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "queryString" -> queryString.asInstanceOf[js.Any]
       )
 
-      aggregationField.foreach(__v => __obj.update("aggregationField", __v.asInstanceOf[js.Any]))
-      indexName.foreach(__v => __obj.update("indexName", __v.asInstanceOf[js.Any]))
-      queryVersion.foreach(__v => __obj.update("queryVersion", __v.asInstanceOf[js.Any]))
+      aggregationField.foreach(__v => __obj.updateDynamic("aggregationField")(__v.asInstanceOf[js.Any]))
+      indexName.foreach(__v => __obj.updateDynamic("indexName")(__v.asInstanceOf[js.Any]))
+      queryVersion.foreach(__v => __obj.updateDynamic("queryVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetStatisticsRequest]
     }
   }
@@ -6147,8 +6167,8 @@ package iot {
     def apply(
         statistics: js.UndefOr[Statistics] = js.undefined
     ): GetStatisticsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      statistics.foreach(__v => __obj.update("statistics", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      statistics.foreach(__v => __obj.updateDynamic("statistics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetStatisticsResponse]
     }
   }
@@ -6165,7 +6185,7 @@ package iot {
     def apply(
         ruleName: RuleName
     ): GetTopicRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ruleName" -> ruleName.asInstanceOf[js.Any]
       )
 
@@ -6187,9 +6207,9 @@ package iot {
         rule: js.UndefOr[TopicRule] = js.undefined,
         ruleArn: js.UndefOr[RuleArn] = js.undefined
     ): GetTopicRuleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      rule.foreach(__v => __obj.update("rule", __v.asInstanceOf[js.Any]))
-      ruleArn.foreach(__v => __obj.update("ruleArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      rule.foreach(__v => __obj.updateDynamic("rule")(__v.asInstanceOf[js.Any]))
+      ruleArn.foreach(__v => __obj.updateDynamic("ruleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTopicRuleResponse]
     }
   }
@@ -6200,7 +6220,7 @@ package iot {
   object GetV2LoggingOptionsRequest {
     def apply(
         ): GetV2LoggingOptionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetV2LoggingOptionsRequest]
     }
@@ -6219,10 +6239,10 @@ package iot {
         disableAllLogs: js.UndefOr[DisableAllLogs] = js.undefined,
         roleArn: js.UndefOr[AwsArn] = js.undefined
     ): GetV2LoggingOptionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      defaultLogLevel.foreach(__v => __obj.update("defaultLogLevel", __v.asInstanceOf[js.Any]))
-      disableAllLogs.foreach(__v => __obj.update("disableAllLogs", __v.asInstanceOf[js.Any]))
-      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      defaultLogLevel.foreach(__v => __obj.updateDynamic("defaultLogLevel")(__v.asInstanceOf[js.Any]))
+      disableAllLogs.foreach(__v => __obj.updateDynamic("disableAllLogs")(__v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetV2LoggingOptionsResponse]
     }
   }
@@ -6241,9 +6261,9 @@ package iot {
         groupArn: js.UndefOr[ThingGroupArn] = js.undefined,
         groupName: js.UndefOr[ThingGroupName] = js.undefined
     ): GroupNameAndArn = {
-      val __obj = js.Dictionary.empty[js.Any]
-      groupArn.foreach(__v => __obj.update("groupArn", __v.asInstanceOf[js.Any]))
-      groupName.foreach(__v => __obj.update("groupName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      groupArn.foreach(__v => __obj.updateDynamic("groupArn")(__v.asInstanceOf[js.Any]))
+      groupName.foreach(__v => __obj.updateDynamic("groupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GroupNameAndArn]
     }
   }
@@ -6260,8 +6280,8 @@ package iot {
     def apply(
         policies: js.UndefOr[Policies] = js.undefined
     ): ImplicitDeny = {
-      val __obj = js.Dictionary.empty[js.Any]
-      policies.foreach(__v => __obj.update("policies", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      policies.foreach(__v => __obj.updateDynamic("policies")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImplicitDeny]
     }
   }
@@ -6290,10 +6310,10 @@ package iot {
         channelName: js.UndefOr[ChannelName] = js.undefined,
         roleArn: js.UndefOr[AwsArn] = js.undefined
     ): IotAnalyticsAction = {
-      val __obj = js.Dictionary.empty[js.Any]
-      channelArn.foreach(__v => __obj.update("channelArn", __v.asInstanceOf[js.Any]))
-      channelName.foreach(__v => __obj.update("channelName", __v.asInstanceOf[js.Any]))
-      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      channelArn.foreach(__v => __obj.updateDynamic("channelArn")(__v.asInstanceOf[js.Any]))
+      channelName.foreach(__v => __obj.updateDynamic("channelName")(__v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IotAnalyticsAction]
     }
   }
@@ -6314,12 +6334,12 @@ package iot {
         roleArn: AwsArn,
         messageId: js.UndefOr[MessageId] = js.undefined
     ): IotEventsAction = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "inputName" -> inputName.asInstanceOf[js.Any],
         "roleArn"   -> roleArn.asInstanceOf[js.Any]
       )
 
-      messageId.foreach(__v => __obj.update("messageId", __v.asInstanceOf[js.Any]))
+      messageId.foreach(__v => __obj.updateDynamic("messageId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IotEventsAction]
     }
   }
@@ -6368,24 +6388,26 @@ package iot {
         targets: js.UndefOr[JobTargets] = js.undefined,
         timeoutConfig: js.UndefOr[TimeoutConfig] = js.undefined
     ): Job = {
-      val __obj = js.Dictionary.empty[js.Any]
-      abortConfig.foreach(__v => __obj.update("abortConfig", __v.asInstanceOf[js.Any]))
-      comment.foreach(__v => __obj.update("comment", __v.asInstanceOf[js.Any]))
-      completedAt.foreach(__v => __obj.update("completedAt", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      forceCanceled.foreach(__v => __obj.update("forceCanceled", __v.asInstanceOf[js.Any]))
-      jobArn.foreach(__v => __obj.update("jobArn", __v.asInstanceOf[js.Any]))
-      jobExecutionsRolloutConfig.foreach(__v => __obj.update("jobExecutionsRolloutConfig", __v.asInstanceOf[js.Any]))
-      jobId.foreach(__v => __obj.update("jobId", __v.asInstanceOf[js.Any]))
-      jobProcessDetails.foreach(__v => __obj.update("jobProcessDetails", __v.asInstanceOf[js.Any]))
-      lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
-      presignedUrlConfig.foreach(__v => __obj.update("presignedUrlConfig", __v.asInstanceOf[js.Any]))
-      reasonCode.foreach(__v => __obj.update("reasonCode", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      targetSelection.foreach(__v => __obj.update("targetSelection", __v.asInstanceOf[js.Any]))
-      targets.foreach(__v => __obj.update("targets", __v.asInstanceOf[js.Any]))
-      timeoutConfig.foreach(__v => __obj.update("timeoutConfig", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      abortConfig.foreach(__v => __obj.updateDynamic("abortConfig")(__v.asInstanceOf[js.Any]))
+      comment.foreach(__v => __obj.updateDynamic("comment")(__v.asInstanceOf[js.Any]))
+      completedAt.foreach(__v => __obj.updateDynamic("completedAt")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      forceCanceled.foreach(__v => __obj.updateDynamic("forceCanceled")(__v.asInstanceOf[js.Any]))
+      jobArn.foreach(__v => __obj.updateDynamic("jobArn")(__v.asInstanceOf[js.Any]))
+      jobExecutionsRolloutConfig.foreach(
+        __v => __obj.updateDynamic("jobExecutionsRolloutConfig")(__v.asInstanceOf[js.Any])
+      )
+      jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
+      jobProcessDetails.foreach(__v => __obj.updateDynamic("jobProcessDetails")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      presignedUrlConfig.foreach(__v => __obj.updateDynamic("presignedUrlConfig")(__v.asInstanceOf[js.Any]))
+      reasonCode.foreach(__v => __obj.updateDynamic("reasonCode")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      targetSelection.foreach(__v => __obj.updateDynamic("targetSelection")(__v.asInstanceOf[js.Any]))
+      targets.foreach(__v => __obj.updateDynamic("targets")(__v.asInstanceOf[js.Any]))
+      timeoutConfig.foreach(__v => __obj.updateDynamic("timeoutConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Job]
     }
   }
@@ -6422,20 +6444,20 @@ package iot {
         thingArn: js.UndefOr[ThingArn] = js.undefined,
         versionNumber: js.UndefOr[VersionNumber] = js.undefined
     ): JobExecution = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       approximateSecondsBeforeTimedOut.foreach(
-        __v => __obj.update("approximateSecondsBeforeTimedOut", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("approximateSecondsBeforeTimedOut")(__v.asInstanceOf[js.Any])
       )
-      executionNumber.foreach(__v => __obj.update("executionNumber", __v.asInstanceOf[js.Any]))
-      forceCanceled.foreach(__v => __obj.update("forceCanceled", __v.asInstanceOf[js.Any]))
-      jobId.foreach(__v => __obj.update("jobId", __v.asInstanceOf[js.Any]))
-      lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
-      queuedAt.foreach(__v => __obj.update("queuedAt", __v.asInstanceOf[js.Any]))
-      startedAt.foreach(__v => __obj.update("startedAt", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      statusDetails.foreach(__v => __obj.update("statusDetails", __v.asInstanceOf[js.Any]))
-      thingArn.foreach(__v => __obj.update("thingArn", __v.asInstanceOf[js.Any]))
-      versionNumber.foreach(__v => __obj.update("versionNumber", __v.asInstanceOf[js.Any]))
+      executionNumber.foreach(__v => __obj.updateDynamic("executionNumber")(__v.asInstanceOf[js.Any]))
+      forceCanceled.foreach(__v => __obj.updateDynamic("forceCanceled")(__v.asInstanceOf[js.Any]))
+      jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      queuedAt.foreach(__v => __obj.updateDynamic("queuedAt")(__v.asInstanceOf[js.Any]))
+      startedAt.foreach(__v => __obj.updateDynamic("startedAt")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      statusDetails.foreach(__v => __obj.updateDynamic("statusDetails")(__v.asInstanceOf[js.Any]))
+      thingArn.foreach(__v => __obj.updateDynamic("thingArn")(__v.asInstanceOf[js.Any]))
+      versionNumber.foreach(__v => __obj.updateDynamic("versionNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobExecution]
     }
   }
@@ -6475,8 +6497,8 @@ package iot {
     def apply(
         detailsMap: js.UndefOr[DetailsMap] = js.undefined
     ): JobExecutionStatusDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      detailsMap.foreach(__v => __obj.update("detailsMap", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      detailsMap.foreach(__v => __obj.updateDynamic("detailsMap")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobExecutionStatusDetails]
     }
   }
@@ -6501,12 +6523,12 @@ package iot {
         startedAt: js.UndefOr[DateType] = js.undefined,
         status: js.UndefOr[JobExecutionStatus] = js.undefined
     ): JobExecutionSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      executionNumber.foreach(__v => __obj.update("executionNumber", __v.asInstanceOf[js.Any]))
-      lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
-      queuedAt.foreach(__v => __obj.update("queuedAt", __v.asInstanceOf[js.Any]))
-      startedAt.foreach(__v => __obj.update("startedAt", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      executionNumber.foreach(__v => __obj.updateDynamic("executionNumber")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      queuedAt.foreach(__v => __obj.updateDynamic("queuedAt")(__v.asInstanceOf[js.Any]))
+      startedAt.foreach(__v => __obj.updateDynamic("startedAt")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobExecutionSummary]
     }
   }
@@ -6525,9 +6547,9 @@ package iot {
         jobExecutionSummary: js.UndefOr[JobExecutionSummary] = js.undefined,
         thingArn: js.UndefOr[ThingArn] = js.undefined
     ): JobExecutionSummaryForJob = {
-      val __obj = js.Dictionary.empty[js.Any]
-      jobExecutionSummary.foreach(__v => __obj.update("jobExecutionSummary", __v.asInstanceOf[js.Any]))
-      thingArn.foreach(__v => __obj.update("thingArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      jobExecutionSummary.foreach(__v => __obj.updateDynamic("jobExecutionSummary")(__v.asInstanceOf[js.Any]))
+      thingArn.foreach(__v => __obj.updateDynamic("thingArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobExecutionSummaryForJob]
     }
   }
@@ -6546,9 +6568,9 @@ package iot {
         jobExecutionSummary: js.UndefOr[JobExecutionSummary] = js.undefined,
         jobId: js.UndefOr[JobId] = js.undefined
     ): JobExecutionSummaryForThing = {
-      val __obj = js.Dictionary.empty[js.Any]
-      jobExecutionSummary.foreach(__v => __obj.update("jobExecutionSummary", __v.asInstanceOf[js.Any]))
-      jobId.foreach(__v => __obj.update("jobId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      jobExecutionSummary.foreach(__v => __obj.updateDynamic("jobExecutionSummary")(__v.asInstanceOf[js.Any]))
+      jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobExecutionSummaryForThing]
     }
   }
@@ -6567,9 +6589,9 @@ package iot {
         exponentialRate: js.UndefOr[ExponentialRolloutRate] = js.undefined,
         maximumPerMinute: js.UndefOr[MaxJobExecutionsPerMin] = js.undefined
     ): JobExecutionsRolloutConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      exponentialRate.foreach(__v => __obj.update("exponentialRate", __v.asInstanceOf[js.Any]))
-      maximumPerMinute.foreach(__v => __obj.update("maximumPerMinute", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      exponentialRate.foreach(__v => __obj.updateDynamic("exponentialRate")(__v.asInstanceOf[js.Any]))
+      maximumPerMinute.foreach(__v => __obj.updateDynamic("maximumPerMinute")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobExecutionsRolloutConfig]
     }
   }
@@ -6602,16 +6624,16 @@ package iot {
         numberOfTimedOutThings: js.UndefOr[TimedOutThings] = js.undefined,
         processingTargets: js.UndefOr[ProcessingTargetNameList] = js.undefined
     ): JobProcessDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      numberOfCanceledThings.foreach(__v => __obj.update("numberOfCanceledThings", __v.asInstanceOf[js.Any]))
-      numberOfFailedThings.foreach(__v => __obj.update("numberOfFailedThings", __v.asInstanceOf[js.Any]))
-      numberOfInProgressThings.foreach(__v => __obj.update("numberOfInProgressThings", __v.asInstanceOf[js.Any]))
-      numberOfQueuedThings.foreach(__v => __obj.update("numberOfQueuedThings", __v.asInstanceOf[js.Any]))
-      numberOfRejectedThings.foreach(__v => __obj.update("numberOfRejectedThings", __v.asInstanceOf[js.Any]))
-      numberOfRemovedThings.foreach(__v => __obj.update("numberOfRemovedThings", __v.asInstanceOf[js.Any]))
-      numberOfSucceededThings.foreach(__v => __obj.update("numberOfSucceededThings", __v.asInstanceOf[js.Any]))
-      numberOfTimedOutThings.foreach(__v => __obj.update("numberOfTimedOutThings", __v.asInstanceOf[js.Any]))
-      processingTargets.foreach(__v => __obj.update("processingTargets", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      numberOfCanceledThings.foreach(__v => __obj.updateDynamic("numberOfCanceledThings")(__v.asInstanceOf[js.Any]))
+      numberOfFailedThings.foreach(__v => __obj.updateDynamic("numberOfFailedThings")(__v.asInstanceOf[js.Any]))
+      numberOfInProgressThings.foreach(__v => __obj.updateDynamic("numberOfInProgressThings")(__v.asInstanceOf[js.Any]))
+      numberOfQueuedThings.foreach(__v => __obj.updateDynamic("numberOfQueuedThings")(__v.asInstanceOf[js.Any]))
+      numberOfRejectedThings.foreach(__v => __obj.updateDynamic("numberOfRejectedThings")(__v.asInstanceOf[js.Any]))
+      numberOfRemovedThings.foreach(__v => __obj.updateDynamic("numberOfRemovedThings")(__v.asInstanceOf[js.Any]))
+      numberOfSucceededThings.foreach(__v => __obj.updateDynamic("numberOfSucceededThings")(__v.asInstanceOf[js.Any]))
+      numberOfTimedOutThings.foreach(__v => __obj.updateDynamic("numberOfTimedOutThings")(__v.asInstanceOf[js.Any]))
+      processingTargets.foreach(__v => __obj.updateDynamic("processingTargets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobProcessDetails]
     }
   }
@@ -6651,15 +6673,15 @@ package iot {
         targetSelection: js.UndefOr[TargetSelection] = js.undefined,
         thingGroupId: js.UndefOr[ThingGroupId] = js.undefined
     ): JobSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      completedAt.foreach(__v => __obj.update("completedAt", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      jobArn.foreach(__v => __obj.update("jobArn", __v.asInstanceOf[js.Any]))
-      jobId.foreach(__v => __obj.update("jobId", __v.asInstanceOf[js.Any]))
-      lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      targetSelection.foreach(__v => __obj.update("targetSelection", __v.asInstanceOf[js.Any]))
-      thingGroupId.foreach(__v => __obj.update("thingGroupId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      completedAt.foreach(__v => __obj.updateDynamic("completedAt")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      jobArn.foreach(__v => __obj.updateDynamic("jobArn")(__v.asInstanceOf[js.Any]))
+      jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      targetSelection.foreach(__v => __obj.updateDynamic("targetSelection")(__v.asInstanceOf[js.Any]))
+      thingGroupId.foreach(__v => __obj.updateDynamic("thingGroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobSummary]
     }
   }
@@ -6678,9 +6700,9 @@ package iot {
         PrivateKey: js.UndefOr[PrivateKey] = js.undefined,
         PublicKey: js.UndefOr[PublicKey] = js.undefined
     ): KeyPair = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PrivateKey.foreach(__v => __obj.update("PrivateKey", __v.asInstanceOf[js.Any]))
-      PublicKey.foreach(__v => __obj.update("PublicKey", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PrivateKey.foreach(__v => __obj.updateDynamic("PrivateKey")(__v.asInstanceOf[js.Any]))
+      PublicKey.foreach(__v => __obj.updateDynamic("PublicKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KeyPair]
     }
   }
@@ -6701,12 +6723,12 @@ package iot {
         streamName: StreamName,
         partitionKey: js.UndefOr[PartitionKey] = js.undefined
     ): KinesisAction = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "roleArn"    -> roleArn.asInstanceOf[js.Any],
         "streamName" -> streamName.asInstanceOf[js.Any]
       )
 
-      partitionKey.foreach(__v => __obj.update("partitionKey", __v.asInstanceOf[js.Any]))
+      partitionKey.foreach(__v => __obj.updateDynamic("partitionKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KinesisAction]
     }
   }
@@ -6723,7 +6745,7 @@ package iot {
     def apply(
         functionArn: FunctionArn
     ): LambdaAction = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "functionArn" -> functionArn.asInstanceOf[js.Any]
       )
 
@@ -6746,11 +6768,11 @@ package iot {
         securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
         thingName: js.UndefOr[DeviceDefenderThingName] = js.undefined
     ): ListActiveViolationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      securityProfileName.foreach(__v => __obj.update("securityProfileName", __v.asInstanceOf[js.Any]))
-      thingName.foreach(__v => __obj.update("thingName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      securityProfileName.foreach(__v => __obj.updateDynamic("securityProfileName")(__v.asInstanceOf[js.Any]))
+      thingName.foreach(__v => __obj.updateDynamic("thingName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListActiveViolationsRequest]
     }
   }
@@ -6766,9 +6788,9 @@ package iot {
         activeViolations: js.UndefOr[ActiveViolations] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListActiveViolationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      activeViolations.foreach(__v => __obj.update("activeViolations", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      activeViolations.foreach(__v => __obj.updateDynamic("activeViolations")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListActiveViolationsResponse]
     }
   }
@@ -6788,13 +6810,13 @@ package iot {
         pageSize: js.UndefOr[PageSize] = js.undefined,
         recursive: js.UndefOr[Recursive] = js.undefined
     ): ListAttachedPoliciesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "target" -> target.asInstanceOf[js.Any]
       )
 
-      marker.foreach(__v => __obj.update("marker", __v.asInstanceOf[js.Any]))
-      pageSize.foreach(__v => __obj.update("pageSize", __v.asInstanceOf[js.Any]))
-      recursive.foreach(__v => __obj.update("recursive", __v.asInstanceOf[js.Any]))
+      marker.foreach(__v => __obj.updateDynamic("marker")(__v.asInstanceOf[js.Any]))
+      pageSize.foreach(__v => __obj.updateDynamic("pageSize")(__v.asInstanceOf[js.Any]))
+      recursive.foreach(__v => __obj.updateDynamic("recursive")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAttachedPoliciesRequest]
     }
   }
@@ -6810,9 +6832,9 @@ package iot {
         nextMarker: js.UndefOr[Marker] = js.undefined,
         policies: js.UndefOr[Policies] = js.undefined
     ): ListAttachedPoliciesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextMarker.foreach(__v => __obj.update("nextMarker", __v.asInstanceOf[js.Any]))
-      policies.foreach(__v => __obj.update("policies", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextMarker.foreach(__v => __obj.updateDynamic("nextMarker")(__v.asInstanceOf[js.Any]))
+      policies.foreach(__v => __obj.updateDynamic("policies")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAttachedPoliciesResponse]
     }
   }
@@ -6838,14 +6860,14 @@ package iot {
         startTime: js.UndefOr[Timestamp] = js.undefined,
         taskId: js.UndefOr[AuditTaskId] = js.undefined
     ): ListAuditFindingsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      checkName.foreach(__v => __obj.update("checkName", __v.asInstanceOf[js.Any]))
-      endTime.foreach(__v => __obj.update("endTime", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      resourceIdentifier.foreach(__v => __obj.update("resourceIdentifier", __v.asInstanceOf[js.Any]))
-      startTime.foreach(__v => __obj.update("startTime", __v.asInstanceOf[js.Any]))
-      taskId.foreach(__v => __obj.update("taskId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      checkName.foreach(__v => __obj.updateDynamic("checkName")(__v.asInstanceOf[js.Any]))
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      resourceIdentifier.foreach(__v => __obj.updateDynamic("resourceIdentifier")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
+      taskId.foreach(__v => __obj.updateDynamic("taskId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAuditFindingsRequest]
     }
   }
@@ -6861,9 +6883,9 @@ package iot {
         findings: js.UndefOr[AuditFindings] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListAuditFindingsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      findings.foreach(__v => __obj.update("findings", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      findings.foreach(__v => __obj.updateDynamic("findings")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAuditFindingsResponse]
     }
   }
@@ -6885,14 +6907,14 @@ package iot {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListAuditMitigationActionsExecutionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "findingId" -> findingId.asInstanceOf[js.Any],
         "taskId"    -> taskId.asInstanceOf[js.Any]
       )
 
-      actionStatus.foreach(__v => __obj.update("actionStatus", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      actionStatus.foreach(__v => __obj.updateDynamic("actionStatus")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAuditMitigationActionsExecutionsRequest]
     }
   }
@@ -6908,9 +6930,9 @@ package iot {
         actionsExecutions: js.UndefOr[AuditMitigationActionExecutionMetadataList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListAuditMitigationActionsExecutionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      actionsExecutions.foreach(__v => __obj.update("actionsExecutions", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      actionsExecutions.foreach(__v => __obj.updateDynamic("actionsExecutions")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAuditMitigationActionsExecutionsResponse]
     }
   }
@@ -6936,16 +6958,16 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         taskStatus: js.UndefOr[AuditMitigationActionsTaskStatus] = js.undefined
     ): ListAuditMitigationActionsTasksRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "endTime"   -> endTime.asInstanceOf[js.Any],
         "startTime" -> startTime.asInstanceOf[js.Any]
       )
 
-      auditTaskId.foreach(__v => __obj.update("auditTaskId", __v.asInstanceOf[js.Any]))
-      findingId.foreach(__v => __obj.update("findingId", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      taskStatus.foreach(__v => __obj.update("taskStatus", __v.asInstanceOf[js.Any]))
+      auditTaskId.foreach(__v => __obj.updateDynamic("auditTaskId")(__v.asInstanceOf[js.Any]))
+      findingId.foreach(__v => __obj.updateDynamic("findingId")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      taskStatus.foreach(__v => __obj.updateDynamic("taskStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAuditMitigationActionsTasksRequest]
     }
   }
@@ -6961,9 +6983,9 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         tasks: js.UndefOr[AuditMitigationActionsTaskMetadataList] = js.undefined
     ): ListAuditMitigationActionsTasksResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      tasks.foreach(__v => __obj.update("tasks", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      tasks.foreach(__v => __obj.updateDynamic("tasks")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAuditMitigationActionsTasksResponse]
     }
   }
@@ -6987,15 +7009,15 @@ package iot {
         taskStatus: js.UndefOr[AuditTaskStatus] = js.undefined,
         taskType: js.UndefOr[AuditTaskType] = js.undefined
     ): ListAuditTasksRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "endTime"   -> endTime.asInstanceOf[js.Any],
         "startTime" -> startTime.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      taskStatus.foreach(__v => __obj.update("taskStatus", __v.asInstanceOf[js.Any]))
-      taskType.foreach(__v => __obj.update("taskType", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      taskStatus.foreach(__v => __obj.updateDynamic("taskStatus")(__v.asInstanceOf[js.Any]))
+      taskType.foreach(__v => __obj.updateDynamic("taskType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAuditTasksRequest]
     }
   }
@@ -7011,9 +7033,9 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         tasks: js.UndefOr[AuditTaskMetadataList] = js.undefined
     ): ListAuditTasksResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      tasks.foreach(__v => __obj.update("tasks", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      tasks.foreach(__v => __obj.updateDynamic("tasks")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAuditTasksResponse]
     }
   }
@@ -7033,11 +7055,11 @@ package iot {
         pageSize: js.UndefOr[PageSize] = js.undefined,
         status: js.UndefOr[AuthorizerStatus] = js.undefined
     ): ListAuthorizersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ascendingOrder.foreach(__v => __obj.update("ascendingOrder", __v.asInstanceOf[js.Any]))
-      marker.foreach(__v => __obj.update("marker", __v.asInstanceOf[js.Any]))
-      pageSize.foreach(__v => __obj.update("pageSize", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ascendingOrder.foreach(__v => __obj.updateDynamic("ascendingOrder")(__v.asInstanceOf[js.Any]))
+      marker.foreach(__v => __obj.updateDynamic("marker")(__v.asInstanceOf[js.Any]))
+      pageSize.foreach(__v => __obj.updateDynamic("pageSize")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAuthorizersRequest]
     }
   }
@@ -7053,9 +7075,9 @@ package iot {
         authorizers: js.UndefOr[Authorizers] = js.undefined,
         nextMarker: js.UndefOr[Marker] = js.undefined
     ): ListAuthorizersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      authorizers.foreach(__v => __obj.update("authorizers", __v.asInstanceOf[js.Any]))
-      nextMarker.foreach(__v => __obj.update("nextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      authorizers.foreach(__v => __obj.updateDynamic("authorizers")(__v.asInstanceOf[js.Any]))
+      nextMarker.foreach(__v => __obj.updateDynamic("nextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAuthorizersResponse]
     }
   }
@@ -7073,10 +7095,10 @@ package iot {
         namePrefixFilter: js.UndefOr[BillingGroupName] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListBillingGroupsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      namePrefixFilter.foreach(__v => __obj.update("namePrefixFilter", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      namePrefixFilter.foreach(__v => __obj.updateDynamic("namePrefixFilter")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBillingGroupsRequest]
     }
   }
@@ -7092,9 +7114,9 @@ package iot {
         billingGroups: js.UndefOr[BillingGroupNameAndArnList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListBillingGroupsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      billingGroups.foreach(__v => __obj.update("billingGroups", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      billingGroups.foreach(__v => __obj.updateDynamic("billingGroups")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBillingGroupsResponse]
     }
   }
@@ -7115,10 +7137,10 @@ package iot {
         marker: js.UndefOr[Marker] = js.undefined,
         pageSize: js.UndefOr[PageSize] = js.undefined
     ): ListCACertificatesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ascendingOrder.foreach(__v => __obj.update("ascendingOrder", __v.asInstanceOf[js.Any]))
-      marker.foreach(__v => __obj.update("marker", __v.asInstanceOf[js.Any]))
-      pageSize.foreach(__v => __obj.update("pageSize", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ascendingOrder.foreach(__v => __obj.updateDynamic("ascendingOrder")(__v.asInstanceOf[js.Any]))
+      marker.foreach(__v => __obj.updateDynamic("marker")(__v.asInstanceOf[js.Any]))
+      pageSize.foreach(__v => __obj.updateDynamic("pageSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCACertificatesRequest]
     }
   }
@@ -7137,9 +7159,9 @@ package iot {
         certificates: js.UndefOr[CACertificates] = js.undefined,
         nextMarker: js.UndefOr[Marker] = js.undefined
     ): ListCACertificatesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      certificates.foreach(__v => __obj.update("certificates", __v.asInstanceOf[js.Any]))
-      nextMarker.foreach(__v => __obj.update("nextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      certificates.foreach(__v => __obj.updateDynamic("certificates")(__v.asInstanceOf[js.Any]))
+      nextMarker.foreach(__v => __obj.updateDynamic("nextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCACertificatesResponse]
     }
   }
@@ -7162,13 +7184,13 @@ package iot {
         marker: js.UndefOr[Marker] = js.undefined,
         pageSize: js.UndefOr[PageSize] = js.undefined
     ): ListCertificatesByCARequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "caCertificateId" -> caCertificateId.asInstanceOf[js.Any]
       )
 
-      ascendingOrder.foreach(__v => __obj.update("ascendingOrder", __v.asInstanceOf[js.Any]))
-      marker.foreach(__v => __obj.update("marker", __v.asInstanceOf[js.Any]))
-      pageSize.foreach(__v => __obj.update("pageSize", __v.asInstanceOf[js.Any]))
+      ascendingOrder.foreach(__v => __obj.updateDynamic("ascendingOrder")(__v.asInstanceOf[js.Any]))
+      marker.foreach(__v => __obj.updateDynamic("marker")(__v.asInstanceOf[js.Any]))
+      pageSize.foreach(__v => __obj.updateDynamic("pageSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCertificatesByCARequest]
     }
   }
@@ -7187,9 +7209,9 @@ package iot {
         certificates: js.UndefOr[Certificates] = js.undefined,
         nextMarker: js.UndefOr[Marker] = js.undefined
     ): ListCertificatesByCAResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      certificates.foreach(__v => __obj.update("certificates", __v.asInstanceOf[js.Any]))
-      nextMarker.foreach(__v => __obj.update("nextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      certificates.foreach(__v => __obj.updateDynamic("certificates")(__v.asInstanceOf[js.Any]))
+      nextMarker.foreach(__v => __obj.updateDynamic("nextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCertificatesByCAResponse]
     }
   }
@@ -7210,10 +7232,10 @@ package iot {
         marker: js.UndefOr[Marker] = js.undefined,
         pageSize: js.UndefOr[PageSize] = js.undefined
     ): ListCertificatesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ascendingOrder.foreach(__v => __obj.update("ascendingOrder", __v.asInstanceOf[js.Any]))
-      marker.foreach(__v => __obj.update("marker", __v.asInstanceOf[js.Any]))
-      pageSize.foreach(__v => __obj.update("pageSize", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ascendingOrder.foreach(__v => __obj.updateDynamic("ascendingOrder")(__v.asInstanceOf[js.Any]))
+      marker.foreach(__v => __obj.updateDynamic("marker")(__v.asInstanceOf[js.Any]))
+      pageSize.foreach(__v => __obj.updateDynamic("pageSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCertificatesRequest]
     }
   }
@@ -7232,9 +7254,9 @@ package iot {
         certificates: js.UndefOr[Certificates] = js.undefined,
         nextMarker: js.UndefOr[Marker] = js.undefined
     ): ListCertificatesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      certificates.foreach(__v => __obj.update("certificates", __v.asInstanceOf[js.Any]))
-      nextMarker.foreach(__v => __obj.update("nextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      certificates.foreach(__v => __obj.updateDynamic("certificates")(__v.asInstanceOf[js.Any]))
+      nextMarker.foreach(__v => __obj.updateDynamic("nextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCertificatesResponse]
     }
   }
@@ -7250,9 +7272,9 @@ package iot {
         maxResults: js.UndefOr[QueryMaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListIndicesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListIndicesRequest]
     }
   }
@@ -7268,9 +7290,9 @@ package iot {
         indexNames: js.UndefOr[IndexNamesList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListIndicesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      indexNames.foreach(__v => __obj.update("indexNames", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      indexNames.foreach(__v => __obj.updateDynamic("indexNames")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListIndicesResponse]
     }
   }
@@ -7290,13 +7312,13 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         status: js.UndefOr[JobExecutionStatus] = js.undefined
     ): ListJobExecutionsForJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobId" -> jobId.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListJobExecutionsForJobRequest]
     }
   }
@@ -7312,9 +7334,9 @@ package iot {
         executionSummaries: js.UndefOr[JobExecutionSummaryForJobList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListJobExecutionsForJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      executionSummaries.foreach(__v => __obj.update("executionSummaries", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      executionSummaries.foreach(__v => __obj.updateDynamic("executionSummaries")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListJobExecutionsForJobResponse]
     }
   }
@@ -7334,13 +7356,13 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         status: js.UndefOr[JobExecutionStatus] = js.undefined
     ): ListJobExecutionsForThingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListJobExecutionsForThingRequest]
     }
   }
@@ -7356,9 +7378,9 @@ package iot {
         executionSummaries: js.UndefOr[JobExecutionSummaryForThingList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListJobExecutionsForThingResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      executionSummaries.foreach(__v => __obj.update("executionSummaries", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      executionSummaries.foreach(__v => __obj.updateDynamic("executionSummaries")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListJobExecutionsForThingResponse]
     }
   }
@@ -7382,13 +7404,13 @@ package iot {
         thingGroupId: js.UndefOr[ThingGroupId] = js.undefined,
         thingGroupName: js.UndefOr[ThingGroupName] = js.undefined
     ): ListJobsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      targetSelection.foreach(__v => __obj.update("targetSelection", __v.asInstanceOf[js.Any]))
-      thingGroupId.foreach(__v => __obj.update("thingGroupId", __v.asInstanceOf[js.Any]))
-      thingGroupName.foreach(__v => __obj.update("thingGroupName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      targetSelection.foreach(__v => __obj.updateDynamic("targetSelection")(__v.asInstanceOf[js.Any]))
+      thingGroupId.foreach(__v => __obj.updateDynamic("thingGroupId")(__v.asInstanceOf[js.Any]))
+      thingGroupName.foreach(__v => __obj.updateDynamic("thingGroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListJobsRequest]
     }
   }
@@ -7404,9 +7426,9 @@ package iot {
         jobs: js.UndefOr[JobSummaryList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListJobsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      jobs.foreach(__v => __obj.update("jobs", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      jobs.foreach(__v => __obj.updateDynamic("jobs")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListJobsResponse]
     }
   }
@@ -7424,10 +7446,10 @@ package iot {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListMitigationActionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      actionType.foreach(__v => __obj.update("actionType", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      actionType.foreach(__v => __obj.updateDynamic("actionType")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListMitigationActionsRequest]
     }
   }
@@ -7443,9 +7465,9 @@ package iot {
         actionIdentifiers: js.UndefOr[MitigationActionIdentifierList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListMitigationActionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      actionIdentifiers.foreach(__v => __obj.update("actionIdentifiers", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      actionIdentifiers.foreach(__v => __obj.updateDynamic("actionIdentifiers")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListMitigationActionsResponse]
     }
   }
@@ -7463,10 +7485,10 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         otaUpdateStatus: js.UndefOr[OTAUpdateStatus] = js.undefined
     ): ListOTAUpdatesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      otaUpdateStatus.foreach(__v => __obj.update("otaUpdateStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      otaUpdateStatus.foreach(__v => __obj.updateDynamic("otaUpdateStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListOTAUpdatesRequest]
     }
   }
@@ -7482,9 +7504,9 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         otaUpdates: js.UndefOr[OTAUpdatesSummary] = js.undefined
     ): ListOTAUpdatesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      otaUpdates.foreach(__v => __obj.update("otaUpdates", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      otaUpdates.foreach(__v => __obj.updateDynamic("otaUpdates")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListOTAUpdatesResponse]
     }
   }
@@ -7505,10 +7527,10 @@ package iot {
         marker: js.UndefOr[Marker] = js.undefined,
         pageSize: js.UndefOr[PageSize] = js.undefined
     ): ListOutgoingCertificatesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ascendingOrder.foreach(__v => __obj.update("ascendingOrder", __v.asInstanceOf[js.Any]))
-      marker.foreach(__v => __obj.update("marker", __v.asInstanceOf[js.Any]))
-      pageSize.foreach(__v => __obj.update("pageSize", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ascendingOrder.foreach(__v => __obj.updateDynamic("ascendingOrder")(__v.asInstanceOf[js.Any]))
+      marker.foreach(__v => __obj.updateDynamic("marker")(__v.asInstanceOf[js.Any]))
+      pageSize.foreach(__v => __obj.updateDynamic("pageSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListOutgoingCertificatesRequest]
     }
   }
@@ -7527,9 +7549,9 @@ package iot {
         nextMarker: js.UndefOr[Marker] = js.undefined,
         outgoingCertificates: js.UndefOr[OutgoingCertificates] = js.undefined
     ): ListOutgoingCertificatesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextMarker.foreach(__v => __obj.update("nextMarker", __v.asInstanceOf[js.Any]))
-      outgoingCertificates.foreach(__v => __obj.update("outgoingCertificates", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextMarker.foreach(__v => __obj.updateDynamic("nextMarker")(__v.asInstanceOf[js.Any]))
+      outgoingCertificates.foreach(__v => __obj.updateDynamic("outgoingCertificates")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListOutgoingCertificatesResponse]
     }
   }
@@ -7550,10 +7572,10 @@ package iot {
         marker: js.UndefOr[Marker] = js.undefined,
         pageSize: js.UndefOr[PageSize] = js.undefined
     ): ListPoliciesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ascendingOrder.foreach(__v => __obj.update("ascendingOrder", __v.asInstanceOf[js.Any]))
-      marker.foreach(__v => __obj.update("marker", __v.asInstanceOf[js.Any]))
-      pageSize.foreach(__v => __obj.update("pageSize", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ascendingOrder.foreach(__v => __obj.updateDynamic("ascendingOrder")(__v.asInstanceOf[js.Any]))
+      marker.foreach(__v => __obj.updateDynamic("marker")(__v.asInstanceOf[js.Any]))
+      pageSize.foreach(__v => __obj.updateDynamic("pageSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPoliciesRequest]
     }
   }
@@ -7572,9 +7594,9 @@ package iot {
         nextMarker: js.UndefOr[Marker] = js.undefined,
         policies: js.UndefOr[Policies] = js.undefined
     ): ListPoliciesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextMarker.foreach(__v => __obj.update("nextMarker", __v.asInstanceOf[js.Any]))
-      policies.foreach(__v => __obj.update("policies", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextMarker.foreach(__v => __obj.updateDynamic("nextMarker")(__v.asInstanceOf[js.Any]))
+      policies.foreach(__v => __obj.updateDynamic("policies")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPoliciesResponse]
     }
   }
@@ -7597,13 +7619,13 @@ package iot {
         marker: js.UndefOr[Marker] = js.undefined,
         pageSize: js.UndefOr[PageSize] = js.undefined
     ): ListPolicyPrincipalsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "policyName" -> policyName.asInstanceOf[js.Any]
       )
 
-      ascendingOrder.foreach(__v => __obj.update("ascendingOrder", __v.asInstanceOf[js.Any]))
-      marker.foreach(__v => __obj.update("marker", __v.asInstanceOf[js.Any]))
-      pageSize.foreach(__v => __obj.update("pageSize", __v.asInstanceOf[js.Any]))
+      ascendingOrder.foreach(__v => __obj.updateDynamic("ascendingOrder")(__v.asInstanceOf[js.Any]))
+      marker.foreach(__v => __obj.updateDynamic("marker")(__v.asInstanceOf[js.Any]))
+      pageSize.foreach(__v => __obj.updateDynamic("pageSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPolicyPrincipalsRequest]
     }
   }
@@ -7622,9 +7644,9 @@ package iot {
         nextMarker: js.UndefOr[Marker] = js.undefined,
         principals: js.UndefOr[Principals] = js.undefined
     ): ListPolicyPrincipalsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextMarker.foreach(__v => __obj.update("nextMarker", __v.asInstanceOf[js.Any]))
-      principals.foreach(__v => __obj.update("principals", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextMarker.foreach(__v => __obj.updateDynamic("nextMarker")(__v.asInstanceOf[js.Any]))
+      principals.foreach(__v => __obj.updateDynamic("principals")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPolicyPrincipalsResponse]
     }
   }
@@ -7641,7 +7663,7 @@ package iot {
     def apply(
         policyName: PolicyName
     ): ListPolicyVersionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "policyName" -> policyName.asInstanceOf[js.Any]
       )
 
@@ -7661,8 +7683,8 @@ package iot {
     def apply(
         policyVersions: js.UndefOr[PolicyVersions] = js.undefined
     ): ListPolicyVersionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      policyVersions.foreach(__v => __obj.update("policyVersions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      policyVersions.foreach(__v => __obj.updateDynamic("policyVersions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPolicyVersionsResponse]
     }
   }
@@ -7685,13 +7707,13 @@ package iot {
         marker: js.UndefOr[Marker] = js.undefined,
         pageSize: js.UndefOr[PageSize] = js.undefined
     ): ListPrincipalPoliciesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "principal" -> principal.asInstanceOf[js.Any]
       )
 
-      ascendingOrder.foreach(__v => __obj.update("ascendingOrder", __v.asInstanceOf[js.Any]))
-      marker.foreach(__v => __obj.update("marker", __v.asInstanceOf[js.Any]))
-      pageSize.foreach(__v => __obj.update("pageSize", __v.asInstanceOf[js.Any]))
+      ascendingOrder.foreach(__v => __obj.updateDynamic("ascendingOrder")(__v.asInstanceOf[js.Any]))
+      marker.foreach(__v => __obj.updateDynamic("marker")(__v.asInstanceOf[js.Any]))
+      pageSize.foreach(__v => __obj.updateDynamic("pageSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPrincipalPoliciesRequest]
     }
   }
@@ -7710,9 +7732,9 @@ package iot {
         nextMarker: js.UndefOr[Marker] = js.undefined,
         policies: js.UndefOr[Policies] = js.undefined
     ): ListPrincipalPoliciesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextMarker.foreach(__v => __obj.update("nextMarker", __v.asInstanceOf[js.Any]))
-      policies.foreach(__v => __obj.update("policies", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextMarker.foreach(__v => __obj.updateDynamic("nextMarker")(__v.asInstanceOf[js.Any]))
+      policies.foreach(__v => __obj.updateDynamic("policies")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPrincipalPoliciesResponse]
     }
   }
@@ -7733,12 +7755,12 @@ package iot {
         maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListPrincipalThingsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "principal" -> principal.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPrincipalThingsRequest]
     }
   }
@@ -7757,9 +7779,9 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         things: js.UndefOr[ThingNameList] = js.undefined
     ): ListPrincipalThingsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      things.foreach(__v => __obj.update("things", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      things.foreach(__v => __obj.updateDynamic("things")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPrincipalThingsResponse]
     }
   }
@@ -7777,10 +7799,10 @@ package iot {
         marker: js.UndefOr[Marker] = js.undefined,
         pageSize: js.UndefOr[PageSize] = js.undefined
     ): ListRoleAliasesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ascendingOrder.foreach(__v => __obj.update("ascendingOrder", __v.asInstanceOf[js.Any]))
-      marker.foreach(__v => __obj.update("marker", __v.asInstanceOf[js.Any]))
-      pageSize.foreach(__v => __obj.update("pageSize", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ascendingOrder.foreach(__v => __obj.updateDynamic("ascendingOrder")(__v.asInstanceOf[js.Any]))
+      marker.foreach(__v => __obj.updateDynamic("marker")(__v.asInstanceOf[js.Any]))
+      pageSize.foreach(__v => __obj.updateDynamic("pageSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRoleAliasesRequest]
     }
   }
@@ -7796,9 +7818,9 @@ package iot {
         nextMarker: js.UndefOr[Marker] = js.undefined,
         roleAliases: js.UndefOr[RoleAliases] = js.undefined
     ): ListRoleAliasesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextMarker.foreach(__v => __obj.update("nextMarker", __v.asInstanceOf[js.Any]))
-      roleAliases.foreach(__v => __obj.update("roleAliases", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextMarker.foreach(__v => __obj.updateDynamic("nextMarker")(__v.asInstanceOf[js.Any]))
+      roleAliases.foreach(__v => __obj.updateDynamic("roleAliases")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRoleAliasesResponse]
     }
   }
@@ -7814,9 +7836,9 @@ package iot {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListScheduledAuditsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListScheduledAuditsRequest]
     }
   }
@@ -7832,9 +7854,9 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         scheduledAudits: js.UndefOr[ScheduledAuditMetadataList] = js.undefined
     ): ListScheduledAuditsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      scheduledAudits.foreach(__v => __obj.update("scheduledAudits", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      scheduledAudits.foreach(__v => __obj.updateDynamic("scheduledAudits")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListScheduledAuditsResponse]
     }
   }
@@ -7854,13 +7876,13 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         recursive: js.UndefOr[Recursive] = js.undefined
     ): ListSecurityProfilesForTargetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "securityProfileTargetArn" -> securityProfileTargetArn.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      recursive.foreach(__v => __obj.update("recursive", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      recursive.foreach(__v => __obj.updateDynamic("recursive")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSecurityProfilesForTargetRequest]
     }
   }
@@ -7876,10 +7898,10 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         securityProfileTargetMappings: js.UndefOr[SecurityProfileTargetMappings] = js.undefined
     ): ListSecurityProfilesForTargetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       securityProfileTargetMappings.foreach(
-        __v => __obj.update("securityProfileTargetMappings", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("securityProfileTargetMappings")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListSecurityProfilesForTargetResponse]
     }
@@ -7896,9 +7918,9 @@ package iot {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListSecurityProfilesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSecurityProfilesRequest]
     }
   }
@@ -7914,9 +7936,11 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         securityProfileIdentifiers: js.UndefOr[SecurityProfileIdentifiers] = js.undefined
     ): ListSecurityProfilesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      securityProfileIdentifiers.foreach(__v => __obj.update("securityProfileIdentifiers", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      securityProfileIdentifiers.foreach(
+        __v => __obj.updateDynamic("securityProfileIdentifiers")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[ListSecurityProfilesResponse]
     }
   }
@@ -7934,10 +7958,10 @@ package iot {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListStreamsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ascendingOrder.foreach(__v => __obj.update("ascendingOrder", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ascendingOrder.foreach(__v => __obj.updateDynamic("ascendingOrder")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListStreamsRequest]
     }
   }
@@ -7953,9 +7977,9 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         streams: js.UndefOr[StreamsSummary] = js.undefined
     ): ListStreamsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      streams.foreach(__v => __obj.update("streams", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      streams.foreach(__v => __obj.updateDynamic("streams")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListStreamsResponse]
     }
   }
@@ -7971,11 +7995,11 @@ package iot {
         resourceArn: ResourceArn,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListTagsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
 
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -7991,9 +8015,9 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsForResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
@@ -8011,12 +8035,12 @@ package iot {
         marker: js.UndefOr[Marker] = js.undefined,
         pageSize: js.UndefOr[PageSize] = js.undefined
     ): ListTargetsForPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "policyName" -> policyName.asInstanceOf[js.Any]
       )
 
-      marker.foreach(__v => __obj.update("marker", __v.asInstanceOf[js.Any]))
-      pageSize.foreach(__v => __obj.update("pageSize", __v.asInstanceOf[js.Any]))
+      marker.foreach(__v => __obj.updateDynamic("marker")(__v.asInstanceOf[js.Any]))
+      pageSize.foreach(__v => __obj.updateDynamic("pageSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTargetsForPolicyRequest]
     }
   }
@@ -8032,9 +8056,9 @@ package iot {
         nextMarker: js.UndefOr[Marker] = js.undefined,
         targets: js.UndefOr[PolicyTargets] = js.undefined
     ): ListTargetsForPolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextMarker.foreach(__v => __obj.update("nextMarker", __v.asInstanceOf[js.Any]))
-      targets.foreach(__v => __obj.update("targets", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextMarker.foreach(__v => __obj.updateDynamic("nextMarker")(__v.asInstanceOf[js.Any]))
+      targets.foreach(__v => __obj.updateDynamic("targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTargetsForPolicyResponse]
     }
   }
@@ -8052,12 +8076,12 @@ package iot {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListTargetsForSecurityProfileRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "securityProfileName" -> securityProfileName.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTargetsForSecurityProfileRequest]
     }
   }
@@ -8073,9 +8097,9 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         securityProfileTargets: js.UndefOr[SecurityProfileTargets] = js.undefined
     ): ListTargetsForSecurityProfileResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      securityProfileTargets.foreach(__v => __obj.update("securityProfileTargets", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      securityProfileTargets.foreach(__v => __obj.updateDynamic("securityProfileTargets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTargetsForSecurityProfileResponse]
     }
   }
@@ -8093,12 +8117,12 @@ package iot {
         maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListThingGroupsForThingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListThingGroupsForThingRequest]
     }
   }
@@ -8114,9 +8138,9 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         thingGroups: js.UndefOr[ThingGroupNameAndArnList] = js.undefined
     ): ListThingGroupsForThingResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      thingGroups.foreach(__v => __obj.update("thingGroups", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      thingGroups.foreach(__v => __obj.updateDynamic("thingGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListThingGroupsForThingResponse]
     }
   }
@@ -8138,12 +8162,12 @@ package iot {
         parentGroup: js.UndefOr[ThingGroupName] = js.undefined,
         recursive: js.UndefOr[RecursiveWithoutDefault] = js.undefined
     ): ListThingGroupsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      namePrefixFilter.foreach(__v => __obj.update("namePrefixFilter", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      parentGroup.foreach(__v => __obj.update("parentGroup", __v.asInstanceOf[js.Any]))
-      recursive.foreach(__v => __obj.update("recursive", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      namePrefixFilter.foreach(__v => __obj.updateDynamic("namePrefixFilter")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      parentGroup.foreach(__v => __obj.updateDynamic("parentGroup")(__v.asInstanceOf[js.Any]))
+      recursive.foreach(__v => __obj.updateDynamic("recursive")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListThingGroupsRequest]
     }
   }
@@ -8159,9 +8183,9 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         thingGroups: js.UndefOr[ThingGroupNameAndArnList] = js.undefined
     ): ListThingGroupsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      thingGroups.foreach(__v => __obj.update("thingGroups", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      thingGroups.foreach(__v => __obj.updateDynamic("thingGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListThingGroupsResponse]
     }
   }
@@ -8178,7 +8202,7 @@ package iot {
     def apply(
         thingName: ThingName
     ): ListThingPrincipalsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
 
@@ -8198,8 +8222,8 @@ package iot {
     def apply(
         principals: js.UndefOr[Principals] = js.undefined
     ): ListThingPrincipalsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      principals.foreach(__v => __obj.update("principals", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      principals.foreach(__v => __obj.updateDynamic("principals")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListThingPrincipalsResponse]
     }
   }
@@ -8219,13 +8243,13 @@ package iot {
         maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListThingRegistrationTaskReportsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "reportType" -> reportType.asInstanceOf[js.Any],
         "taskId"     -> taskId.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListThingRegistrationTaskReportsRequest]
     }
   }
@@ -8243,10 +8267,10 @@ package iot {
         reportType: js.UndefOr[ReportType] = js.undefined,
         resourceLinks: js.UndefOr[S3FileUrlList] = js.undefined
     ): ListThingRegistrationTaskReportsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      reportType.foreach(__v => __obj.update("reportType", __v.asInstanceOf[js.Any]))
-      resourceLinks.foreach(__v => __obj.update("resourceLinks", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      reportType.foreach(__v => __obj.updateDynamic("reportType")(__v.asInstanceOf[js.Any]))
+      resourceLinks.foreach(__v => __obj.updateDynamic("resourceLinks")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListThingRegistrationTaskReportsResponse]
     }
   }
@@ -8264,10 +8288,10 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         status: js.UndefOr[Status] = js.undefined
     ): ListThingRegistrationTasksRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListThingRegistrationTasksRequest]
     }
   }
@@ -8283,9 +8307,9 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         taskIds: js.UndefOr[TaskIdList] = js.undefined
     ): ListThingRegistrationTasksResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      taskIds.foreach(__v => __obj.update("taskIds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      taskIds.foreach(__v => __obj.updateDynamic("taskIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListThingRegistrationTasksResponse]
     }
   }
@@ -8306,10 +8330,10 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         thingTypeName: js.UndefOr[ThingTypeName] = js.undefined
     ): ListThingTypesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      thingTypeName.foreach(__v => __obj.update("thingTypeName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      thingTypeName.foreach(__v => __obj.updateDynamic("thingTypeName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListThingTypesRequest]
     }
   }
@@ -8328,9 +8352,9 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         thingTypes: js.UndefOr[ThingTypeList] = js.undefined
     ): ListThingTypesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      thingTypes.foreach(__v => __obj.update("thingTypes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      thingTypes.foreach(__v => __obj.updateDynamic("thingTypes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListThingTypesResponse]
     }
   }
@@ -8348,12 +8372,12 @@ package iot {
         maxResults: js.UndefOr[RegistryMaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListThingsInBillingGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "billingGroupName" -> billingGroupName.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListThingsInBillingGroupRequest]
     }
   }
@@ -8369,9 +8393,9 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         things: js.UndefOr[ThingNameList] = js.undefined
     ): ListThingsInBillingGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      things.foreach(__v => __obj.update("things", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      things.foreach(__v => __obj.updateDynamic("things")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListThingsInBillingGroupResponse]
     }
   }
@@ -8391,13 +8415,13 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         recursive: js.UndefOr[Recursive] = js.undefined
     ): ListThingsInThingGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "thingGroupName" -> thingGroupName.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      recursive.foreach(__v => __obj.update("recursive", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      recursive.foreach(__v => __obj.updateDynamic("recursive")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListThingsInThingGroupRequest]
     }
   }
@@ -8413,9 +8437,9 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         things: js.UndefOr[ThingNameList] = js.undefined
     ): ListThingsInThingGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      things.foreach(__v => __obj.update("things", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      things.foreach(__v => __obj.updateDynamic("things")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListThingsInThingGroupResponse]
     }
   }
@@ -8440,12 +8464,12 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         thingTypeName: js.UndefOr[ThingTypeName] = js.undefined
     ): ListThingsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      attributeName.foreach(__v => __obj.update("attributeName", __v.asInstanceOf[js.Any]))
-      attributeValue.foreach(__v => __obj.update("attributeValue", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      thingTypeName.foreach(__v => __obj.update("thingTypeName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      attributeName.foreach(__v => __obj.updateDynamic("attributeName")(__v.asInstanceOf[js.Any]))
+      attributeValue.foreach(__v => __obj.updateDynamic("attributeValue")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      thingTypeName.foreach(__v => __obj.updateDynamic("thingTypeName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListThingsRequest]
     }
   }
@@ -8464,9 +8488,9 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         things: js.UndefOr[ThingAttributeList] = js.undefined
     ): ListThingsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      things.foreach(__v => __obj.update("things", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      things.foreach(__v => __obj.updateDynamic("things")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListThingsResponse]
     }
   }
@@ -8489,11 +8513,11 @@ package iot {
         ruleDisabled: js.UndefOr[IsDisabled] = js.undefined,
         topic: js.UndefOr[Topic] = js.undefined
     ): ListTopicRulesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      ruleDisabled.foreach(__v => __obj.update("ruleDisabled", __v.asInstanceOf[js.Any]))
-      topic.foreach(__v => __obj.update("topic", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      ruleDisabled.foreach(__v => __obj.updateDynamic("ruleDisabled")(__v.asInstanceOf[js.Any]))
+      topic.foreach(__v => __obj.updateDynamic("topic")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTopicRulesRequest]
     }
   }
@@ -8512,9 +8536,9 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         rules: js.UndefOr[TopicRuleList] = js.undefined
     ): ListTopicRulesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      rules.foreach(__v => __obj.update("rules", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      rules.foreach(__v => __obj.updateDynamic("rules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTopicRulesResponse]
     }
   }
@@ -8532,10 +8556,10 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         targetType: js.UndefOr[LogTargetType] = js.undefined
     ): ListV2LoggingLevelsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      targetType.foreach(__v => __obj.update("targetType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      targetType.foreach(__v => __obj.updateDynamic("targetType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListV2LoggingLevelsRequest]
     }
   }
@@ -8551,9 +8575,9 @@ package iot {
         logTargetConfigurations: js.UndefOr[LogTargetConfigurations] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListV2LoggingLevelsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      logTargetConfigurations.foreach(__v => __obj.update("logTargetConfigurations", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      logTargetConfigurations.foreach(__v => __obj.updateDynamic("logTargetConfigurations")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListV2LoggingLevelsResponse]
     }
   }
@@ -8577,15 +8601,15 @@ package iot {
         securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
         thingName: js.UndefOr[DeviceDefenderThingName] = js.undefined
     ): ListViolationEventsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "endTime"   -> endTime.asInstanceOf[js.Any],
         "startTime" -> startTime.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      securityProfileName.foreach(__v => __obj.update("securityProfileName", __v.asInstanceOf[js.Any]))
-      thingName.foreach(__v => __obj.update("thingName", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      securityProfileName.foreach(__v => __obj.updateDynamic("securityProfileName")(__v.asInstanceOf[js.Any]))
+      thingName.foreach(__v => __obj.updateDynamic("thingName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListViolationEventsRequest]
     }
   }
@@ -8601,9 +8625,9 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         violationEvents: js.UndefOr[ViolationEvents] = js.undefined
     ): ListViolationEventsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      violationEvents.foreach(__v => __obj.update("violationEvents", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      violationEvents.foreach(__v => __obj.updateDynamic("violationEvents")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListViolationEventsResponse]
     }
   }
@@ -8632,11 +8656,11 @@ package iot {
         targetType: LogTargetType,
         targetName: js.UndefOr[LogTargetName] = js.undefined
     ): LogTarget = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "targetType" -> targetType.asInstanceOf[js.Any]
       )
 
-      targetName.foreach(__v => __obj.update("targetName", __v.asInstanceOf[js.Any]))
+      targetName.foreach(__v => __obj.updateDynamic("targetName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LogTarget]
     }
   }
@@ -8655,9 +8679,9 @@ package iot {
         logLevel: js.UndefOr[LogLevel] = js.undefined,
         logTarget: js.UndefOr[LogTarget] = js.undefined
     ): LogTargetConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      logLevel.foreach(__v => __obj.update("logLevel", __v.asInstanceOf[js.Any]))
-      logTarget.foreach(__v => __obj.update("logTarget", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      logLevel.foreach(__v => __obj.updateDynamic("logLevel")(__v.asInstanceOf[js.Any]))
+      logTarget.foreach(__v => __obj.updateDynamic("logTarget")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LogTargetConfiguration]
     }
   }
@@ -8683,11 +8707,11 @@ package iot {
         roleArn: AwsArn,
         logLevel: js.UndefOr[LogLevel] = js.undefined
     ): LoggingOptionsPayload = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
-      logLevel.foreach(__v => __obj.update("logLevel", __v.asInstanceOf[js.Any]))
+      logLevel.foreach(__v => __obj.updateDynamic("logLevel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoggingOptionsPayload]
     }
   }
@@ -8715,10 +8739,10 @@ package iot {
         count: js.UndefOr[UnsignedLong] = js.undefined,
         ports: js.UndefOr[Ports] = js.undefined
     ): MetricValue = {
-      val __obj = js.Dictionary.empty[js.Any]
-      cidrs.foreach(__v => __obj.update("cidrs", __v.asInstanceOf[js.Any]))
-      count.foreach(__v => __obj.update("count", __v.asInstanceOf[js.Any]))
-      ports.foreach(__v => __obj.update("ports", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      cidrs.foreach(__v => __obj.updateDynamic("cidrs")(__v.asInstanceOf[js.Any]))
+      count.foreach(__v => __obj.updateDynamic("count")(__v.asInstanceOf[js.Any]))
+      ports.foreach(__v => __obj.updateDynamic("ports")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MetricValue]
     }
   }
@@ -8741,11 +8765,11 @@ package iot {
         name: js.UndefOr[MitigationActionName] = js.undefined,
         roleArn: js.UndefOr[RoleArn] = js.undefined
     ): MitigationAction = {
-      val __obj = js.Dictionary.empty[js.Any]
-      actionParams.foreach(__v => __obj.update("actionParams", __v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      actionParams.foreach(__v => __obj.updateDynamic("actionParams")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MitigationAction]
     }
   }
@@ -8766,10 +8790,10 @@ package iot {
         actionName: js.UndefOr[MitigationActionName] = js.undefined,
         creationDate: js.UndefOr[Timestamp] = js.undefined
     ): MitigationActionIdentifier = {
-      val __obj = js.Dictionary.empty[js.Any]
-      actionArn.foreach(__v => __obj.update("actionArn", __v.asInstanceOf[js.Any]))
-      actionName.foreach(__v => __obj.update("actionName", __v.asInstanceOf[js.Any]))
-      creationDate.foreach(__v => __obj.update("creationDate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      actionArn.foreach(__v => __obj.updateDynamic("actionArn")(__v.asInstanceOf[js.Any]))
+      actionName.foreach(__v => __obj.updateDynamic("actionName")(__v.asInstanceOf[js.Any]))
+      creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MitigationActionIdentifier]
     }
   }
@@ -8796,16 +8820,22 @@ package iot {
         updateCACertificateParams: js.UndefOr[UpdateCACertificateParams] = js.undefined,
         updateDeviceCertificateParams: js.UndefOr[UpdateDeviceCertificateParams] = js.undefined
     ): MitigationActionParams = {
-      val __obj = js.Dictionary.empty[js.Any]
-      addThingsToThingGroupParams.foreach(__v => __obj.update("addThingsToThingGroupParams", __v.asInstanceOf[js.Any]))
-      enableIoTLoggingParams.foreach(__v => __obj.update("enableIoTLoggingParams", __v.asInstanceOf[js.Any]))
-      publishFindingToSnsParams.foreach(__v => __obj.update("publishFindingToSnsParams", __v.asInstanceOf[js.Any]))
-      replaceDefaultPolicyVersionParams.foreach(
-        __v => __obj.update("replaceDefaultPolicyVersionParams", __v.asInstanceOf[js.Any])
+      val __obj = js.Dynamic.literal()
+      addThingsToThingGroupParams.foreach(
+        __v => __obj.updateDynamic("addThingsToThingGroupParams")(__v.asInstanceOf[js.Any])
       )
-      updateCACertificateParams.foreach(__v => __obj.update("updateCACertificateParams", __v.asInstanceOf[js.Any]))
+      enableIoTLoggingParams.foreach(__v => __obj.updateDynamic("enableIoTLoggingParams")(__v.asInstanceOf[js.Any]))
+      publishFindingToSnsParams.foreach(
+        __v => __obj.updateDynamic("publishFindingToSnsParams")(__v.asInstanceOf[js.Any])
+      )
+      replaceDefaultPolicyVersionParams.foreach(
+        __v => __obj.updateDynamic("replaceDefaultPolicyVersionParams")(__v.asInstanceOf[js.Any])
+      )
+      updateCACertificateParams.foreach(
+        __v => __obj.updateDynamic("updateCACertificateParams")(__v.asInstanceOf[js.Any])
+      )
       updateDeviceCertificateParams.foreach(
-        __v => __obj.update("updateDeviceCertificateParams", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("updateDeviceCertificateParams")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[MitigationActionParams]
     }
@@ -8847,10 +8877,10 @@ package iot {
         resourceIdentifier: js.UndefOr[ResourceIdentifier] = js.undefined,
         resourceType: js.UndefOr[ResourceType] = js.undefined
     ): NonCompliantResource = {
-      val __obj = js.Dictionary.empty[js.Any]
-      additionalInfo.foreach(__v => __obj.update("additionalInfo", __v.asInstanceOf[js.Any]))
-      resourceIdentifier.foreach(__v => __obj.update("resourceIdentifier", __v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.update("resourceType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      additionalInfo.foreach(__v => __obj.updateDynamic("additionalInfo")(__v.asInstanceOf[js.Any]))
+      resourceIdentifier.foreach(__v => __obj.updateDynamic("resourceIdentifier")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NonCompliantResource]
     }
   }
@@ -8875,12 +8905,12 @@ package iot {
         fileName: js.UndefOr[FileName] = js.undefined,
         fileVersion: js.UndefOr[OTAUpdateFileVersion] = js.undefined
     ): OTAUpdateFile = {
-      val __obj = js.Dictionary.empty[js.Any]
-      attributes.foreach(__v => __obj.update("attributes", __v.asInstanceOf[js.Any]))
-      codeSigning.foreach(__v => __obj.update("codeSigning", __v.asInstanceOf[js.Any]))
-      fileLocation.foreach(__v => __obj.update("fileLocation", __v.asInstanceOf[js.Any]))
-      fileName.foreach(__v => __obj.update("fileName", __v.asInstanceOf[js.Any]))
-      fileVersion.foreach(__v => __obj.update("fileVersion", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
+      codeSigning.foreach(__v => __obj.updateDynamic("codeSigning")(__v.asInstanceOf[js.Any]))
+      fileLocation.foreach(__v => __obj.updateDynamic("fileLocation")(__v.asInstanceOf[js.Any]))
+      fileName.foreach(__v => __obj.updateDynamic("fileName")(__v.asInstanceOf[js.Any]))
+      fileVersion.foreach(__v => __obj.updateDynamic("fileVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OTAUpdateFile]
     }
   }
@@ -8923,23 +8953,23 @@ package iot {
         targetSelection: js.UndefOr[TargetSelection] = js.undefined,
         targets: js.UndefOr[Targets] = js.undefined
     ): OTAUpdateInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      additionalParameters.foreach(__v => __obj.update("additionalParameters", __v.asInstanceOf[js.Any]))
-      awsIotJobArn.foreach(__v => __obj.update("awsIotJobArn", __v.asInstanceOf[js.Any]))
-      awsIotJobId.foreach(__v => __obj.update("awsIotJobId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      additionalParameters.foreach(__v => __obj.updateDynamic("additionalParameters")(__v.asInstanceOf[js.Any]))
+      awsIotJobArn.foreach(__v => __obj.updateDynamic("awsIotJobArn")(__v.asInstanceOf[js.Any]))
+      awsIotJobId.foreach(__v => __obj.updateDynamic("awsIotJobId")(__v.asInstanceOf[js.Any]))
       awsJobExecutionsRolloutConfig.foreach(
-        __v => __obj.update("awsJobExecutionsRolloutConfig", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("awsJobExecutionsRolloutConfig")(__v.asInstanceOf[js.Any])
       )
-      creationDate.foreach(__v => __obj.update("creationDate", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      errorInfo.foreach(__v => __obj.update("errorInfo", __v.asInstanceOf[js.Any]))
-      lastModifiedDate.foreach(__v => __obj.update("lastModifiedDate", __v.asInstanceOf[js.Any]))
-      otaUpdateArn.foreach(__v => __obj.update("otaUpdateArn", __v.asInstanceOf[js.Any]))
-      otaUpdateFiles.foreach(__v => __obj.update("otaUpdateFiles", __v.asInstanceOf[js.Any]))
-      otaUpdateId.foreach(__v => __obj.update("otaUpdateId", __v.asInstanceOf[js.Any]))
-      otaUpdateStatus.foreach(__v => __obj.update("otaUpdateStatus", __v.asInstanceOf[js.Any]))
-      targetSelection.foreach(__v => __obj.update("targetSelection", __v.asInstanceOf[js.Any]))
-      targets.foreach(__v => __obj.update("targets", __v.asInstanceOf[js.Any]))
+      creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      errorInfo.foreach(__v => __obj.updateDynamic("errorInfo")(__v.asInstanceOf[js.Any]))
+      lastModifiedDate.foreach(__v => __obj.updateDynamic("lastModifiedDate")(__v.asInstanceOf[js.Any]))
+      otaUpdateArn.foreach(__v => __obj.updateDynamic("otaUpdateArn")(__v.asInstanceOf[js.Any]))
+      otaUpdateFiles.foreach(__v => __obj.updateDynamic("otaUpdateFiles")(__v.asInstanceOf[js.Any]))
+      otaUpdateId.foreach(__v => __obj.updateDynamic("otaUpdateId")(__v.asInstanceOf[js.Any]))
+      otaUpdateStatus.foreach(__v => __obj.updateDynamic("otaUpdateStatus")(__v.asInstanceOf[js.Any]))
+      targetSelection.foreach(__v => __obj.updateDynamic("targetSelection")(__v.asInstanceOf[js.Any]))
+      targets.foreach(__v => __obj.updateDynamic("targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OTAUpdateInfo]
     }
   }
@@ -8969,10 +8999,10 @@ package iot {
         otaUpdateArn: js.UndefOr[OTAUpdateArn] = js.undefined,
         otaUpdateId: js.UndefOr[OTAUpdateId] = js.undefined
     ): OTAUpdateSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationDate.foreach(__v => __obj.update("creationDate", __v.asInstanceOf[js.Any]))
-      otaUpdateArn.foreach(__v => __obj.update("otaUpdateArn", __v.asInstanceOf[js.Any]))
-      otaUpdateId.foreach(__v => __obj.update("otaUpdateId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
+      otaUpdateArn.foreach(__v => __obj.updateDynamic("otaUpdateArn")(__v.asInstanceOf[js.Any]))
+      otaUpdateId.foreach(__v => __obj.updateDynamic("otaUpdateId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OTAUpdateSummary]
     }
   }
@@ -8999,13 +9029,13 @@ package iot {
         transferMessage: js.UndefOr[Message] = js.undefined,
         transferredTo: js.UndefOr[AwsAccountId] = js.undefined
     ): OutgoingCertificate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      certificateArn.foreach(__v => __obj.update("certificateArn", __v.asInstanceOf[js.Any]))
-      certificateId.foreach(__v => __obj.update("certificateId", __v.asInstanceOf[js.Any]))
-      creationDate.foreach(__v => __obj.update("creationDate", __v.asInstanceOf[js.Any]))
-      transferDate.foreach(__v => __obj.update("transferDate", __v.asInstanceOf[js.Any]))
-      transferMessage.foreach(__v => __obj.update("transferMessage", __v.asInstanceOf[js.Any]))
-      transferredTo.foreach(__v => __obj.update("transferredTo", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      certificateArn.foreach(__v => __obj.updateDynamic("certificateArn")(__v.asInstanceOf[js.Any]))
+      certificateId.foreach(__v => __obj.updateDynamic("certificateId")(__v.asInstanceOf[js.Any]))
+      creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
+      transferDate.foreach(__v => __obj.updateDynamic("transferDate")(__v.asInstanceOf[js.Any]))
+      transferMessage.foreach(__v => __obj.updateDynamic("transferMessage")(__v.asInstanceOf[js.Any]))
+      transferredTo.foreach(__v => __obj.updateDynamic("transferredTo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OutgoingCertificate]
     }
   }
@@ -9024,9 +9054,9 @@ package iot {
         policyArn: js.UndefOr[PolicyArn] = js.undefined,
         policyName: js.UndefOr[PolicyName] = js.undefined
     ): Policy = {
-      val __obj = js.Dictionary.empty[js.Any]
-      policyArn.foreach(__v => __obj.update("policyArn", __v.asInstanceOf[js.Any]))
-      policyName.foreach(__v => __obj.update("policyName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      policyArn.foreach(__v => __obj.updateDynamic("policyArn")(__v.asInstanceOf[js.Any]))
+      policyName.foreach(__v => __obj.updateDynamic("policyName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Policy]
     }
   }
@@ -9053,10 +9083,10 @@ package iot {
         isDefaultVersion: js.UndefOr[IsDefaultVersion] = js.undefined,
         versionId: js.UndefOr[PolicyVersionId] = js.undefined
     ): PolicyVersion = {
-      val __obj = js.Dictionary.empty[js.Any]
-      createDate.foreach(__v => __obj.update("createDate", __v.asInstanceOf[js.Any]))
-      isDefaultVersion.foreach(__v => __obj.update("isDefaultVersion", __v.asInstanceOf[js.Any]))
-      versionId.foreach(__v => __obj.update("versionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      createDate.foreach(__v => __obj.updateDynamic("createDate")(__v.asInstanceOf[js.Any]))
+      isDefaultVersion.foreach(__v => __obj.updateDynamic("isDefaultVersion")(__v.asInstanceOf[js.Any]))
+      versionId.foreach(__v => __obj.updateDynamic("versionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PolicyVersion]
     }
   }
@@ -9075,9 +9105,9 @@ package iot {
         policyName: js.UndefOr[PolicyName] = js.undefined,
         policyVersionId: js.UndefOr[PolicyVersionId] = js.undefined
     ): PolicyVersionIdentifier = {
-      val __obj = js.Dictionary.empty[js.Any]
-      policyName.foreach(__v => __obj.update("policyName", __v.asInstanceOf[js.Any]))
-      policyVersionId.foreach(__v => __obj.update("policyVersionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      policyName.foreach(__v => __obj.updateDynamic("policyName")(__v.asInstanceOf[js.Any]))
+      policyVersionId.foreach(__v => __obj.updateDynamic("policyVersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PolicyVersionIdentifier]
     }
   }
@@ -9096,9 +9126,9 @@ package iot {
         expiresInSec: js.UndefOr[ExpiresInSec] = js.undefined,
         roleArn: js.UndefOr[RoleArn] = js.undefined
     ): PresignedUrlConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      expiresInSec.foreach(__v => __obj.update("expiresInSec", __v.asInstanceOf[js.Any]))
-      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      expiresInSec.foreach(__v => __obj.updateDynamic("expiresInSec")(__v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PresignedUrlConfig]
     }
   }
@@ -9115,7 +9145,7 @@ package iot {
     def apply(
         topicArn: SnsTopicArn
     ): PublishFindingToSnsParams = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "topicArn" -> topicArn.asInstanceOf[js.Any]
       )
 
@@ -9135,7 +9165,7 @@ package iot {
     def apply(
         tableName: TableName
     ): PutItemInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "tableName" -> tableName.asInstanceOf[js.Any]
       )
 
@@ -9157,9 +9187,9 @@ package iot {
         numberOfNotifiedThings: js.UndefOr[NumberOfThings] = js.undefined,
         numberOfSucceededThings: js.UndefOr[NumberOfThings] = js.undefined
     ): RateIncreaseCriteria = {
-      val __obj = js.Dictionary.empty[js.Any]
-      numberOfNotifiedThings.foreach(__v => __obj.update("numberOfNotifiedThings", __v.asInstanceOf[js.Any]))
-      numberOfSucceededThings.foreach(__v => __obj.update("numberOfSucceededThings", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      numberOfNotifiedThings.foreach(__v => __obj.updateDynamic("numberOfNotifiedThings")(__v.asInstanceOf[js.Any]))
+      numberOfSucceededThings.foreach(__v => __obj.updateDynamic("numberOfSucceededThings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RateIncreaseCriteria]
     }
   }
@@ -9184,14 +9214,14 @@ package iot {
         registrationConfig: js.UndefOr[RegistrationConfig] = js.undefined,
         setAsActive: js.UndefOr[SetAsActive] = js.undefined
     ): RegisterCACertificateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "caCertificate"           -> caCertificate.asInstanceOf[js.Any],
         "verificationCertificate" -> verificationCertificate.asInstanceOf[js.Any]
       )
 
-      allowAutoRegistration.foreach(__v => __obj.update("allowAutoRegistration", __v.asInstanceOf[js.Any]))
-      registrationConfig.foreach(__v => __obj.update("registrationConfig", __v.asInstanceOf[js.Any]))
-      setAsActive.foreach(__v => __obj.update("setAsActive", __v.asInstanceOf[js.Any]))
+      allowAutoRegistration.foreach(__v => __obj.updateDynamic("allowAutoRegistration")(__v.asInstanceOf[js.Any]))
+      registrationConfig.foreach(__v => __obj.updateDynamic("registrationConfig")(__v.asInstanceOf[js.Any]))
+      setAsActive.foreach(__v => __obj.updateDynamic("setAsActive")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterCACertificateRequest]
     }
   }
@@ -9210,9 +9240,9 @@ package iot {
         certificateArn: js.UndefOr[CertificateArn] = js.undefined,
         certificateId: js.UndefOr[CertificateId] = js.undefined
     ): RegisterCACertificateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      certificateArn.foreach(__v => __obj.update("certificateArn", __v.asInstanceOf[js.Any]))
-      certificateId.foreach(__v => __obj.update("certificateId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      certificateArn.foreach(__v => __obj.updateDynamic("certificateArn")(__v.asInstanceOf[js.Any]))
+      certificateId.foreach(__v => __obj.updateDynamic("certificateId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterCACertificateResponse]
     }
   }
@@ -9235,13 +9265,13 @@ package iot {
         setAsActive: js.UndefOr[SetAsActiveFlag] = js.undefined,
         status: js.UndefOr[CertificateStatus] = js.undefined
     ): RegisterCertificateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "certificatePem" -> certificatePem.asInstanceOf[js.Any]
       )
 
-      caCertificatePem.foreach(__v => __obj.update("caCertificatePem", __v.asInstanceOf[js.Any]))
-      setAsActive.foreach(__v => __obj.update("setAsActive", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      caCertificatePem.foreach(__v => __obj.updateDynamic("caCertificatePem")(__v.asInstanceOf[js.Any]))
+      setAsActive.foreach(__v => __obj.updateDynamic("setAsActive")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterCertificateRequest]
     }
   }
@@ -9260,9 +9290,9 @@ package iot {
         certificateArn: js.UndefOr[CertificateArn] = js.undefined,
         certificateId: js.UndefOr[CertificateId] = js.undefined
     ): RegisterCertificateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      certificateArn.foreach(__v => __obj.update("certificateArn", __v.asInstanceOf[js.Any]))
-      certificateId.foreach(__v => __obj.update("certificateId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      certificateArn.foreach(__v => __obj.updateDynamic("certificateArn")(__v.asInstanceOf[js.Any]))
+      certificateId.foreach(__v => __obj.updateDynamic("certificateId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterCertificateResponse]
     }
   }
@@ -9278,11 +9308,11 @@ package iot {
         templateBody: TemplateBody,
         parameters: js.UndefOr[Parameters] = js.undefined
     ): RegisterThingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "templateBody" -> templateBody.asInstanceOf[js.Any]
       )
 
-      parameters.foreach(__v => __obj.update("parameters", __v.asInstanceOf[js.Any]))
+      parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterThingRequest]
     }
   }
@@ -9298,9 +9328,9 @@ package iot {
         certificatePem: js.UndefOr[CertificatePem] = js.undefined,
         resourceArns: js.UndefOr[ResourceArns] = js.undefined
     ): RegisterThingResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      certificatePem.foreach(__v => __obj.update("certificatePem", __v.asInstanceOf[js.Any]))
-      resourceArns.foreach(__v => __obj.update("resourceArns", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      certificatePem.foreach(__v => __obj.updateDynamic("certificatePem")(__v.asInstanceOf[js.Any]))
+      resourceArns.foreach(__v => __obj.updateDynamic("resourceArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterThingResponse]
     }
   }
@@ -9319,9 +9349,9 @@ package iot {
         roleArn: js.UndefOr[RoleArn] = js.undefined,
         templateBody: js.UndefOr[TemplateBody] = js.undefined
     ): RegistrationConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
-      templateBody.foreach(__v => __obj.update("templateBody", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
+      templateBody.foreach(__v => __obj.updateDynamic("templateBody")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegistrationConfig]
     }
   }
@@ -9340,11 +9370,11 @@ package iot {
         certificateId: CertificateId,
         rejectReason: js.UndefOr[Message] = js.undefined
     ): RejectCertificateTransferRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "certificateId" -> certificateId.asInstanceOf[js.Any]
       )
 
-      rejectReason.foreach(__v => __obj.update("rejectReason", __v.asInstanceOf[js.Any]))
+      rejectReason.foreach(__v => __obj.updateDynamic("rejectReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RejectCertificateTransferRequest]
     }
   }
@@ -9365,10 +9395,10 @@ package iot {
         resourceIdentifier: js.UndefOr[ResourceIdentifier] = js.undefined,
         resourceType: js.UndefOr[ResourceType] = js.undefined
     ): RelatedResource = {
-      val __obj = js.Dictionary.empty[js.Any]
-      additionalInfo.foreach(__v => __obj.update("additionalInfo", __v.asInstanceOf[js.Any]))
-      resourceIdentifier.foreach(__v => __obj.update("resourceIdentifier", __v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.update("resourceType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      additionalInfo.foreach(__v => __obj.updateDynamic("additionalInfo")(__v.asInstanceOf[js.Any]))
+      resourceIdentifier.foreach(__v => __obj.updateDynamic("resourceIdentifier")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RelatedResource]
     }
   }
@@ -9388,11 +9418,11 @@ package iot {
         thingArn: js.UndefOr[ThingArn] = js.undefined,
         thingName: js.UndefOr[ThingName] = js.undefined
     ): RemoveThingFromBillingGroupRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      billingGroupArn.foreach(__v => __obj.update("billingGroupArn", __v.asInstanceOf[js.Any]))
-      billingGroupName.foreach(__v => __obj.update("billingGroupName", __v.asInstanceOf[js.Any]))
-      thingArn.foreach(__v => __obj.update("thingArn", __v.asInstanceOf[js.Any]))
-      thingName.foreach(__v => __obj.update("thingName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      billingGroupArn.foreach(__v => __obj.updateDynamic("billingGroupArn")(__v.asInstanceOf[js.Any]))
+      billingGroupName.foreach(__v => __obj.updateDynamic("billingGroupName")(__v.asInstanceOf[js.Any]))
+      thingArn.foreach(__v => __obj.updateDynamic("thingArn")(__v.asInstanceOf[js.Any]))
+      thingName.foreach(__v => __obj.updateDynamic("thingName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RemoveThingFromBillingGroupRequest]
     }
   }
@@ -9403,7 +9433,7 @@ package iot {
   object RemoveThingFromBillingGroupResponse {
     def apply(
         ): RemoveThingFromBillingGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RemoveThingFromBillingGroupResponse]
     }
@@ -9424,11 +9454,11 @@ package iot {
         thingGroupName: js.UndefOr[ThingGroupName] = js.undefined,
         thingName: js.UndefOr[ThingName] = js.undefined
     ): RemoveThingFromThingGroupRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      thingArn.foreach(__v => __obj.update("thingArn", __v.asInstanceOf[js.Any]))
-      thingGroupArn.foreach(__v => __obj.update("thingGroupArn", __v.asInstanceOf[js.Any]))
-      thingGroupName.foreach(__v => __obj.update("thingGroupName", __v.asInstanceOf[js.Any]))
-      thingName.foreach(__v => __obj.update("thingName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      thingArn.foreach(__v => __obj.updateDynamic("thingArn")(__v.asInstanceOf[js.Any]))
+      thingGroupArn.foreach(__v => __obj.updateDynamic("thingGroupArn")(__v.asInstanceOf[js.Any]))
+      thingGroupName.foreach(__v => __obj.updateDynamic("thingGroupName")(__v.asInstanceOf[js.Any]))
+      thingName.foreach(__v => __obj.updateDynamic("thingName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RemoveThingFromThingGroupRequest]
     }
   }
@@ -9439,7 +9469,7 @@ package iot {
   object RemoveThingFromThingGroupResponse {
     def apply(
         ): RemoveThingFromThingGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RemoveThingFromThingGroupResponse]
     }
@@ -9457,7 +9487,7 @@ package iot {
     def apply(
         templateName: PolicyTemplateName
     ): ReplaceDefaultPolicyVersionParams = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "templateName" -> templateName.asInstanceOf[js.Any]
       )
 
@@ -9479,7 +9509,7 @@ package iot {
         ruleName: RuleName,
         topicRulePayload: TopicRulePayload
     ): ReplaceTopicRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ruleName"         -> ruleName.asInstanceOf[js.Any],
         "topicRulePayload" -> topicRulePayload.asInstanceOf[js.Any]
       )
@@ -9511,12 +9541,12 @@ package iot {
         topic: TopicPattern,
         qos: js.UndefOr[Qos] = js.undefined
     ): RepublishAction = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "roleArn" -> roleArn.asInstanceOf[js.Any],
         "topic"   -> topic.asInstanceOf[js.Any]
       )
 
-      qos.foreach(__v => __obj.update("qos", __v.asInstanceOf[js.Any]))
+      qos.foreach(__v => __obj.updateDynamic("qos")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RepublishAction]
     }
   }
@@ -9543,13 +9573,13 @@ package iot {
         deviceCertificateId: js.UndefOr[CertificateId] = js.undefined,
         policyVersionIdentifier: js.UndefOr[PolicyVersionIdentifier] = js.undefined
     ): ResourceIdentifier = {
-      val __obj = js.Dictionary.empty[js.Any]
-      account.foreach(__v => __obj.update("account", __v.asInstanceOf[js.Any]))
-      caCertificateId.foreach(__v => __obj.update("caCertificateId", __v.asInstanceOf[js.Any]))
-      clientId.foreach(__v => __obj.update("clientId", __v.asInstanceOf[js.Any]))
-      cognitoIdentityPoolId.foreach(__v => __obj.update("cognitoIdentityPoolId", __v.asInstanceOf[js.Any]))
-      deviceCertificateId.foreach(__v => __obj.update("deviceCertificateId", __v.asInstanceOf[js.Any]))
-      policyVersionIdentifier.foreach(__v => __obj.update("policyVersionIdentifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      account.foreach(__v => __obj.updateDynamic("account")(__v.asInstanceOf[js.Any]))
+      caCertificateId.foreach(__v => __obj.updateDynamic("caCertificateId")(__v.asInstanceOf[js.Any]))
+      clientId.foreach(__v => __obj.updateDynamic("clientId")(__v.asInstanceOf[js.Any]))
+      cognitoIdentityPoolId.foreach(__v => __obj.updateDynamic("cognitoIdentityPoolId")(__v.asInstanceOf[js.Any]))
+      deviceCertificateId.foreach(__v => __obj.updateDynamic("deviceCertificateId")(__v.asInstanceOf[js.Any]))
+      policyVersionIdentifier.foreach(__v => __obj.updateDynamic("policyVersionIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceIdentifier]
     }
   }
@@ -9591,14 +9621,16 @@ package iot {
         roleAliasArn: js.UndefOr[RoleAliasArn] = js.undefined,
         roleArn: js.UndefOr[RoleArn] = js.undefined
     ): RoleAliasDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationDate.foreach(__v => __obj.update("creationDate", __v.asInstanceOf[js.Any]))
-      credentialDurationSeconds.foreach(__v => __obj.update("credentialDurationSeconds", __v.asInstanceOf[js.Any]))
-      lastModifiedDate.foreach(__v => __obj.update("lastModifiedDate", __v.asInstanceOf[js.Any]))
-      owner.foreach(__v => __obj.update("owner", __v.asInstanceOf[js.Any]))
-      roleAlias.foreach(__v => __obj.update("roleAlias", __v.asInstanceOf[js.Any]))
-      roleAliasArn.foreach(__v => __obj.update("roleAliasArn", __v.asInstanceOf[js.Any]))
-      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
+      credentialDurationSeconds.foreach(
+        __v => __obj.updateDynamic("credentialDurationSeconds")(__v.asInstanceOf[js.Any])
+      )
+      lastModifiedDate.foreach(__v => __obj.updateDynamic("lastModifiedDate")(__v.asInstanceOf[js.Any]))
+      owner.foreach(__v => __obj.updateDynamic("owner")(__v.asInstanceOf[js.Any]))
+      roleAlias.foreach(__v => __obj.updateDynamic("roleAlias")(__v.asInstanceOf[js.Any]))
+      roleAliasArn.foreach(__v => __obj.updateDynamic("roleAliasArn")(__v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RoleAliasDescription]
     }
   }
@@ -9621,13 +9653,13 @@ package iot {
         roleArn: AwsArn,
         cannedAcl: js.UndefOr[CannedAccessControlList] = js.undefined
     ): S3Action = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "bucketName" -> bucketName.asInstanceOf[js.Any],
         "key"        -> key.asInstanceOf[js.Any],
         "roleArn"    -> roleArn.asInstanceOf[js.Any]
       )
 
-      cannedAcl.foreach(__v => __obj.update("cannedAcl", __v.asInstanceOf[js.Any]))
+      cannedAcl.foreach(__v => __obj.updateDynamic("cannedAcl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Action]
     }
   }
@@ -9646,9 +9678,9 @@ package iot {
         bucket: js.UndefOr[S3Bucket] = js.undefined,
         prefix: js.UndefOr[Prefix] = js.undefined
     ): S3Destination = {
-      val __obj = js.Dictionary.empty[js.Any]
-      bucket.foreach(__v => __obj.update("bucket", __v.asInstanceOf[js.Any]))
-      prefix.foreach(__v => __obj.update("prefix", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      bucket.foreach(__v => __obj.updateDynamic("bucket")(__v.asInstanceOf[js.Any]))
+      prefix.foreach(__v => __obj.updateDynamic("prefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Destination]
     }
   }
@@ -9669,10 +9701,10 @@ package iot {
         key: js.UndefOr[S3Key] = js.undefined,
         version: js.UndefOr[S3Version] = js.undefined
     ): S3Location = {
-      val __obj = js.Dictionary.empty[js.Any]
-      bucket.foreach(__v => __obj.update("bucket", __v.asInstanceOf[js.Any]))
-      key.foreach(__v => __obj.update("key", __v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      bucket.foreach(__v => __obj.updateDynamic("bucket")(__v.asInstanceOf[js.Any]))
+      key.foreach(__v => __obj.updateDynamic("key")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Location]
     }
   }
@@ -9691,7 +9723,7 @@ package iot {
         token: SalesforceToken,
         url: SalesforceEndpoint
     ): SalesforceAction = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "token" -> token.asInstanceOf[js.Any],
         "url"   -> url.asInstanceOf[js.Any]
       )
@@ -9720,12 +9752,12 @@ package iot {
         scheduledAuditArn: js.UndefOr[ScheduledAuditArn] = js.undefined,
         scheduledAuditName: js.UndefOr[ScheduledAuditName] = js.undefined
     ): ScheduledAuditMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      dayOfMonth.foreach(__v => __obj.update("dayOfMonth", __v.asInstanceOf[js.Any]))
-      dayOfWeek.foreach(__v => __obj.update("dayOfWeek", __v.asInstanceOf[js.Any]))
-      frequency.foreach(__v => __obj.update("frequency", __v.asInstanceOf[js.Any]))
-      scheduledAuditArn.foreach(__v => __obj.update("scheduledAuditArn", __v.asInstanceOf[js.Any]))
-      scheduledAuditName.foreach(__v => __obj.update("scheduledAuditName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      dayOfMonth.foreach(__v => __obj.updateDynamic("dayOfMonth")(__v.asInstanceOf[js.Any]))
+      dayOfWeek.foreach(__v => __obj.updateDynamic("dayOfWeek")(__v.asInstanceOf[js.Any]))
+      frequency.foreach(__v => __obj.updateDynamic("frequency")(__v.asInstanceOf[js.Any]))
+      scheduledAuditArn.foreach(__v => __obj.updateDynamic("scheduledAuditArn")(__v.asInstanceOf[js.Any]))
+      scheduledAuditName.foreach(__v => __obj.updateDynamic("scheduledAuditName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScheduledAuditMetadata]
     }
   }
@@ -9747,14 +9779,14 @@ package iot {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         queryVersion: js.UndefOr[QueryVersion] = js.undefined
     ): SearchIndexRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "queryString" -> queryString.asInstanceOf[js.Any]
       )
 
-      indexName.foreach(__v => __obj.update("indexName", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      queryVersion.foreach(__v => __obj.update("queryVersion", __v.asInstanceOf[js.Any]))
+      indexName.foreach(__v => __obj.updateDynamic("indexName")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      queryVersion.foreach(__v => __obj.updateDynamic("queryVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchIndexRequest]
     }
   }
@@ -9772,10 +9804,10 @@ package iot {
         thingGroups: js.UndefOr[ThingGroupDocumentList] = js.undefined,
         things: js.UndefOr[ThingDocumentList] = js.undefined
     ): SearchIndexResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      thingGroups.foreach(__v => __obj.update("thingGroups", __v.asInstanceOf[js.Any]))
-      things.foreach(__v => __obj.update("things", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      thingGroups.foreach(__v => __obj.updateDynamic("thingGroups")(__v.asInstanceOf[js.Any]))
+      things.foreach(__v => __obj.updateDynamic("things")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchIndexResponse]
     }
   }
@@ -9794,7 +9826,7 @@ package iot {
         arn: SecurityProfileArn,
         name: SecurityProfileName
     ): SecurityProfileIdentifier = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "arn"  -> arn.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any]
       )
@@ -9815,7 +9847,7 @@ package iot {
     def apply(
         arn: SecurityProfileTargetArn
     ): SecurityProfileTarget = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
 
@@ -9837,9 +9869,11 @@ package iot {
         securityProfileIdentifier: js.UndefOr[SecurityProfileIdentifier] = js.undefined,
         target: js.UndefOr[SecurityProfileTarget] = js.undefined
     ): SecurityProfileTargetMapping = {
-      val __obj = js.Dictionary.empty[js.Any]
-      securityProfileIdentifier.foreach(__v => __obj.update("securityProfileIdentifier", __v.asInstanceOf[js.Any]))
-      target.foreach(__v => __obj.update("target", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      securityProfileIdentifier.foreach(
+        __v => __obj.updateDynamic("securityProfileIdentifier")(__v.asInstanceOf[js.Any])
+      )
+      target.foreach(__v => __obj.updateDynamic("target")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SecurityProfileTargetMapping]
     }
   }
@@ -9853,7 +9887,7 @@ package iot {
     def apply(
         authorizerName: AuthorizerName
     ): SetDefaultAuthorizerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "authorizerName" -> authorizerName.asInstanceOf[js.Any]
       )
 
@@ -9872,9 +9906,9 @@ package iot {
         authorizerArn: js.UndefOr[AuthorizerArn] = js.undefined,
         authorizerName: js.UndefOr[AuthorizerName] = js.undefined
     ): SetDefaultAuthorizerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      authorizerArn.foreach(__v => __obj.update("authorizerArn", __v.asInstanceOf[js.Any]))
-      authorizerName.foreach(__v => __obj.update("authorizerName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      authorizerArn.foreach(__v => __obj.updateDynamic("authorizerArn")(__v.asInstanceOf[js.Any]))
+      authorizerName.foreach(__v => __obj.updateDynamic("authorizerName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetDefaultAuthorizerResponse]
     }
   }
@@ -9893,7 +9927,7 @@ package iot {
         policyName: PolicyName,
         policyVersionId: PolicyVersionId
     ): SetDefaultPolicyVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "policyName"      -> policyName.asInstanceOf[js.Any],
         "policyVersionId" -> policyVersionId.asInstanceOf[js.Any]
       )
@@ -9914,7 +9948,7 @@ package iot {
     def apply(
         loggingOptionsPayload: LoggingOptionsPayload
     ): SetLoggingOptionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "loggingOptionsPayload" -> loggingOptionsPayload.asInstanceOf[js.Any]
       )
 
@@ -9933,7 +9967,7 @@ package iot {
         logLevel: LogLevel,
         logTarget: LogTarget
     ): SetV2LoggingLevelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "logLevel"  -> logLevel.asInstanceOf[js.Any],
         "logTarget" -> logTarget.asInstanceOf[js.Any]
       )
@@ -9955,10 +9989,10 @@ package iot {
         disableAllLogs: js.UndefOr[DisableAllLogs] = js.undefined,
         roleArn: js.UndefOr[AwsArn] = js.undefined
     ): SetV2LoggingOptionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      defaultLogLevel.foreach(__v => __obj.update("defaultLogLevel", __v.asInstanceOf[js.Any]))
-      disableAllLogs.foreach(__v => __obj.update("disableAllLogs", __v.asInstanceOf[js.Any]))
-      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      defaultLogLevel.foreach(__v => __obj.updateDynamic("defaultLogLevel")(__v.asInstanceOf[js.Any]))
+      disableAllLogs.foreach(__v => __obj.updateDynamic("disableAllLogs")(__v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetV2LoggingOptionsRequest]
     }
   }
@@ -9979,10 +10013,10 @@ package iot {
         certificatePathOnDevice: js.UndefOr[CertificatePathOnDevice] = js.undefined,
         platform: js.UndefOr[Platform] = js.undefined
     ): SigningProfileParameter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      certificateArn.foreach(__v => __obj.update("certificateArn", __v.asInstanceOf[js.Any]))
-      certificatePathOnDevice.foreach(__v => __obj.update("certificatePathOnDevice", __v.asInstanceOf[js.Any]))
-      platform.foreach(__v => __obj.update("platform", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      certificateArn.foreach(__v => __obj.updateDynamic("certificateArn")(__v.asInstanceOf[js.Any]))
+      certificatePathOnDevice.foreach(__v => __obj.updateDynamic("certificatePathOnDevice")(__v.asInstanceOf[js.Any]))
+      platform.foreach(__v => __obj.updateDynamic("platform")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SigningProfileParameter]
     }
   }
@@ -10003,12 +10037,12 @@ package iot {
         targetArn: AwsArn,
         messageFormat: js.UndefOr[MessageFormat] = js.undefined
     ): SnsAction = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "roleArn"   -> roleArn.asInstanceOf[js.Any],
         "targetArn" -> targetArn.asInstanceOf[js.Any]
       )
 
-      messageFormat.foreach(__v => __obj.update("messageFormat", __v.asInstanceOf[js.Any]))
+      messageFormat.foreach(__v => __obj.updateDynamic("messageFormat")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SnsAction]
     }
   }
@@ -10029,12 +10063,12 @@ package iot {
         roleArn: AwsArn,
         useBase64: js.UndefOr[UseBase64] = js.undefined
     ): SqsAction = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "queueUrl" -> queueUrl.asInstanceOf[js.Any],
         "roleArn"  -> roleArn.asInstanceOf[js.Any]
       )
 
-      useBase64.foreach(__v => __obj.update("useBase64", __v.asInstanceOf[js.Any]))
+      useBase64.foreach(__v => __obj.updateDynamic("useBase64")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SqsAction]
     }
   }
@@ -10054,7 +10088,7 @@ package iot {
         target: AuditMitigationActionsTaskTarget,
         taskId: AuditMitigationActionsTaskId
     ): StartAuditMitigationActionsTaskRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "auditCheckToActionsMapping" -> auditCheckToActionsMapping.asInstanceOf[js.Any],
         "clientRequestToken"         -> clientRequestToken.asInstanceOf[js.Any],
         "target"                     -> target.asInstanceOf[js.Any],
@@ -10074,8 +10108,8 @@ package iot {
     def apply(
         taskId: js.UndefOr[AuditMitigationActionsTaskId] = js.undefined
     ): StartAuditMitigationActionsTaskResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      taskId.foreach(__v => __obj.update("taskId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      taskId.foreach(__v => __obj.updateDynamic("taskId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartAuditMitigationActionsTaskResponse]
     }
   }
@@ -10089,7 +10123,7 @@ package iot {
     def apply(
         targetCheckNames: TargetAuditCheckNames
     ): StartOnDemandAuditTaskRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "targetCheckNames" -> targetCheckNames.asInstanceOf[js.Any]
       )
 
@@ -10106,8 +10140,8 @@ package iot {
     def apply(
         taskId: js.UndefOr[AuditTaskId] = js.undefined
     ): StartOnDemandAuditTaskResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      taskId.foreach(__v => __obj.update("taskId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      taskId.foreach(__v => __obj.updateDynamic("taskId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartOnDemandAuditTaskResponse]
     }
   }
@@ -10128,10 +10162,10 @@ package iot {
         signingProfileName: js.UndefOr[SigningProfileName] = js.undefined,
         signingProfileParameter: js.UndefOr[SigningProfileParameter] = js.undefined
     ): StartSigningJobParameter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      destination.foreach(__v => __obj.update("destination", __v.asInstanceOf[js.Any]))
-      signingProfileName.foreach(__v => __obj.update("signingProfileName", __v.asInstanceOf[js.Any]))
-      signingProfileParameter.foreach(__v => __obj.update("signingProfileParameter", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      destination.foreach(__v => __obj.updateDynamic("destination")(__v.asInstanceOf[js.Any]))
+      signingProfileName.foreach(__v => __obj.updateDynamic("signingProfileName")(__v.asInstanceOf[js.Any]))
+      signingProfileParameter.foreach(__v => __obj.updateDynamic("signingProfileParameter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartSigningJobParameter]
     }
   }
@@ -10151,7 +10185,7 @@ package iot {
         roleArn: RoleArn,
         templateBody: TemplateBody
     ): StartThingRegistrationTaskRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "inputFileBucket" -> inputFileBucket.asInstanceOf[js.Any],
         "inputFileKey"    -> inputFileKey.asInstanceOf[js.Any],
         "roleArn"         -> roleArn.asInstanceOf[js.Any],
@@ -10171,8 +10205,8 @@ package iot {
     def apply(
         taskId: js.UndefOr[TaskId] = js.undefined
     ): StartThingRegistrationTaskResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      taskId.foreach(__v => __obj.update("taskId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      taskId.foreach(__v => __obj.updateDynamic("taskId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartThingRegistrationTaskResponse]
     }
   }
@@ -10189,8 +10223,8 @@ package iot {
     def apply(
         statistic: js.UndefOr[EvaluationStatistic] = js.undefined
     ): StatisticalThreshold = {
-      val __obj = js.Dictionary.empty[js.Any]
-      statistic.foreach(__v => __obj.update("statistic", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      statistic.foreach(__v => __obj.updateDynamic("statistic")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StatisticalThreshold]
     }
   }
@@ -10207,8 +10241,8 @@ package iot {
     def apply(
         count: js.UndefOr[Count] = js.undefined
     ): Statistics = {
-      val __obj = js.Dictionary.empty[js.Any]
-      count.foreach(__v => __obj.update("count", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      count.foreach(__v => __obj.updateDynamic("count")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Statistics]
     }
   }
@@ -10239,12 +10273,12 @@ package iot {
         stateMachineName: StateMachineName,
         executionNamePrefix: js.UndefOr[ExecutionNamePrefix] = js.undefined
     ): StepFunctionsAction = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "roleArn"          -> roleArn.asInstanceOf[js.Any],
         "stateMachineName" -> stateMachineName.asInstanceOf[js.Any]
       )
 
-      executionNamePrefix.foreach(__v => __obj.update("executionNamePrefix", __v.asInstanceOf[js.Any]))
+      executionNamePrefix.foreach(__v => __obj.updateDynamic("executionNamePrefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StepFunctionsAction]
     }
   }
@@ -10258,7 +10292,7 @@ package iot {
     def apply(
         taskId: TaskId
     ): StopThingRegistrationTaskRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "taskId" -> taskId.asInstanceOf[js.Any]
       )
 
@@ -10272,7 +10306,7 @@ package iot {
   object StopThingRegistrationTaskResponse {
     def apply(
         ): StopThingRegistrationTaskResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopThingRegistrationTaskResponse]
     }
@@ -10292,9 +10326,9 @@ package iot {
         fileId: js.UndefOr[FileId] = js.undefined,
         streamId: js.UndefOr[StreamId] = js.undefined
     ): Stream = {
-      val __obj = js.Dictionary.empty[js.Any]
-      fileId.foreach(__v => __obj.update("fileId", __v.asInstanceOf[js.Any]))
-      streamId.foreach(__v => __obj.update("streamId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      fileId.foreach(__v => __obj.updateDynamic("fileId")(__v.asInstanceOf[js.Any]))
+      streamId.foreach(__v => __obj.updateDynamic("streamId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Stream]
     }
   }
@@ -10313,9 +10347,9 @@ package iot {
         fileId: js.UndefOr[FileId] = js.undefined,
         s3Location: js.UndefOr[S3Location] = js.undefined
     ): StreamFile = {
-      val __obj = js.Dictionary.empty[js.Any]
-      fileId.foreach(__v => __obj.update("fileId", __v.asInstanceOf[js.Any]))
-      s3Location.foreach(__v => __obj.update("s3Location", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      fileId.foreach(__v => __obj.updateDynamic("fileId")(__v.asInstanceOf[js.Any]))
+      s3Location.foreach(__v => __obj.updateDynamic("s3Location")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StreamFile]
     }
   }
@@ -10346,15 +10380,15 @@ package iot {
         streamId: js.UndefOr[StreamId] = js.undefined,
         streamVersion: js.UndefOr[StreamVersion] = js.undefined
     ): StreamInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      files.foreach(__v => __obj.update("files", __v.asInstanceOf[js.Any]))
-      lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
-      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
-      streamArn.foreach(__v => __obj.update("streamArn", __v.asInstanceOf[js.Any]))
-      streamId.foreach(__v => __obj.update("streamId", __v.asInstanceOf[js.Any]))
-      streamVersion.foreach(__v => __obj.update("streamVersion", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      files.foreach(__v => __obj.updateDynamic("files")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
+      streamArn.foreach(__v => __obj.updateDynamic("streamArn")(__v.asInstanceOf[js.Any]))
+      streamId.foreach(__v => __obj.updateDynamic("streamId")(__v.asInstanceOf[js.Any]))
+      streamVersion.foreach(__v => __obj.updateDynamic("streamVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StreamInfo]
     }
   }
@@ -10377,11 +10411,11 @@ package iot {
         streamId: js.UndefOr[StreamId] = js.undefined,
         streamVersion: js.UndefOr[StreamVersion] = js.undefined
     ): StreamSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      streamArn.foreach(__v => __obj.update("streamArn", __v.asInstanceOf[js.Any]))
-      streamId.foreach(__v => __obj.update("streamId", __v.asInstanceOf[js.Any]))
-      streamVersion.foreach(__v => __obj.update("streamVersion", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      streamArn.foreach(__v => __obj.updateDynamic("streamArn")(__v.asInstanceOf[js.Any]))
+      streamId.foreach(__v => __obj.updateDynamic("streamId")(__v.asInstanceOf[js.Any]))
+      streamVersion.foreach(__v => __obj.updateDynamic("streamVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StreamSummary]
     }
   }
@@ -10400,9 +10434,9 @@ package iot {
         Key: js.UndefOr[TagKey] = js.undefined,
         Value: js.UndefOr[TagValue] = js.undefined
     ): Tag = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tag]
     }
   }
@@ -10418,7 +10452,7 @@ package iot {
         resourceArn: ResourceArn,
         tags: TagList
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags"        -> tags.asInstanceOf[js.Any]
       )
@@ -10433,7 +10467,7 @@ package iot {
   object TagResourceResponse {
     def apply(
         ): TagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -10470,15 +10504,15 @@ package iot {
         totalChecks: js.UndefOr[TotalChecksCount] = js.undefined,
         waitingForDataCollectionChecks: js.UndefOr[WaitingForDataCollectionChecksCount] = js.undefined
     ): TaskStatistics = {
-      val __obj = js.Dictionary.empty[js.Any]
-      canceledChecks.foreach(__v => __obj.update("canceledChecks", __v.asInstanceOf[js.Any]))
-      compliantChecks.foreach(__v => __obj.update("compliantChecks", __v.asInstanceOf[js.Any]))
-      failedChecks.foreach(__v => __obj.update("failedChecks", __v.asInstanceOf[js.Any]))
-      inProgressChecks.foreach(__v => __obj.update("inProgressChecks", __v.asInstanceOf[js.Any]))
-      nonCompliantChecks.foreach(__v => __obj.update("nonCompliantChecks", __v.asInstanceOf[js.Any]))
-      totalChecks.foreach(__v => __obj.update("totalChecks", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      canceledChecks.foreach(__v => __obj.updateDynamic("canceledChecks")(__v.asInstanceOf[js.Any]))
+      compliantChecks.foreach(__v => __obj.updateDynamic("compliantChecks")(__v.asInstanceOf[js.Any]))
+      failedChecks.foreach(__v => __obj.updateDynamic("failedChecks")(__v.asInstanceOf[js.Any]))
+      inProgressChecks.foreach(__v => __obj.updateDynamic("inProgressChecks")(__v.asInstanceOf[js.Any]))
+      nonCompliantChecks.foreach(__v => __obj.updateDynamic("nonCompliantChecks")(__v.asInstanceOf[js.Any]))
+      totalChecks.foreach(__v => __obj.updateDynamic("totalChecks")(__v.asInstanceOf[js.Any]))
       waitingForDataCollectionChecks.foreach(
-        __v => __obj.update("waitingForDataCollectionChecks", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("waitingForDataCollectionChecks")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[TaskStatistics]
     }
@@ -10504,12 +10538,12 @@ package iot {
         succeededFindingsCount: js.UndefOr[SucceededFindingsCount] = js.undefined,
         totalFindingsCount: js.UndefOr[TotalFindingsCount] = js.undefined
     ): TaskStatisticsForAuditCheck = {
-      val __obj = js.Dictionary.empty[js.Any]
-      canceledFindingsCount.foreach(__v => __obj.update("canceledFindingsCount", __v.asInstanceOf[js.Any]))
-      failedFindingsCount.foreach(__v => __obj.update("failedFindingsCount", __v.asInstanceOf[js.Any]))
-      skippedFindingsCount.foreach(__v => __obj.update("skippedFindingsCount", __v.asInstanceOf[js.Any]))
-      succeededFindingsCount.foreach(__v => __obj.update("succeededFindingsCount", __v.asInstanceOf[js.Any]))
-      totalFindingsCount.foreach(__v => __obj.update("totalFindingsCount", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      canceledFindingsCount.foreach(__v => __obj.updateDynamic("canceledFindingsCount")(__v.asInstanceOf[js.Any]))
+      failedFindingsCount.foreach(__v => __obj.updateDynamic("failedFindingsCount")(__v.asInstanceOf[js.Any]))
+      skippedFindingsCount.foreach(__v => __obj.updateDynamic("skippedFindingsCount")(__v.asInstanceOf[js.Any]))
+      succeededFindingsCount.foreach(__v => __obj.updateDynamic("succeededFindingsCount")(__v.asInstanceOf[js.Any]))
+      totalFindingsCount.foreach(__v => __obj.updateDynamic("totalFindingsCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TaskStatisticsForAuditCheck]
     }
   }
@@ -10533,15 +10567,15 @@ package iot {
         policyNamesToSkip: js.UndefOr[PolicyNames] = js.undefined,
         principal: js.UndefOr[Principal] = js.undefined
     ): TestAuthorizationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "authInfos" -> authInfos.asInstanceOf[js.Any]
       )
 
-      clientId.foreach(__v => __obj.update("clientId", __v.asInstanceOf[js.Any]))
-      cognitoIdentityPoolId.foreach(__v => __obj.update("cognitoIdentityPoolId", __v.asInstanceOf[js.Any]))
-      policyNamesToAdd.foreach(__v => __obj.update("policyNamesToAdd", __v.asInstanceOf[js.Any]))
-      policyNamesToSkip.foreach(__v => __obj.update("policyNamesToSkip", __v.asInstanceOf[js.Any]))
-      principal.foreach(__v => __obj.update("principal", __v.asInstanceOf[js.Any]))
+      clientId.foreach(__v => __obj.updateDynamic("clientId")(__v.asInstanceOf[js.Any]))
+      cognitoIdentityPoolId.foreach(__v => __obj.updateDynamic("cognitoIdentityPoolId")(__v.asInstanceOf[js.Any]))
+      policyNamesToAdd.foreach(__v => __obj.updateDynamic("policyNamesToAdd")(__v.asInstanceOf[js.Any]))
+      policyNamesToSkip.foreach(__v => __obj.updateDynamic("policyNamesToSkip")(__v.asInstanceOf[js.Any]))
+      principal.foreach(__v => __obj.updateDynamic("principal")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TestAuthorizationRequest]
     }
   }
@@ -10555,8 +10589,8 @@ package iot {
     def apply(
         authResults: js.UndefOr[AuthResults] = js.undefined
     ): TestAuthorizationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      authResults.foreach(__v => __obj.update("authResults", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      authResults.foreach(__v => __obj.updateDynamic("authResults")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TestAuthorizationResponse]
     }
   }
@@ -10574,7 +10608,7 @@ package iot {
         token: Token,
         tokenSignature: TokenSignature
     ): TestInvokeAuthorizerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "authorizerName" -> authorizerName.asInstanceOf[js.Any],
         "token"          -> token.asInstanceOf[js.Any],
         "tokenSignature" -> tokenSignature.asInstanceOf[js.Any]
@@ -10601,12 +10635,12 @@ package iot {
         principalId: js.UndefOr[PrincipalId] = js.undefined,
         refreshAfterInSeconds: js.UndefOr[Seconds] = js.undefined
     ): TestInvokeAuthorizerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      disconnectAfterInSeconds.foreach(__v => __obj.update("disconnectAfterInSeconds", __v.asInstanceOf[js.Any]))
-      isAuthenticated.foreach(__v => __obj.update("isAuthenticated", __v.asInstanceOf[js.Any]))
-      policyDocuments.foreach(__v => __obj.update("policyDocuments", __v.asInstanceOf[js.Any]))
-      principalId.foreach(__v => __obj.update("principalId", __v.asInstanceOf[js.Any]))
-      refreshAfterInSeconds.foreach(__v => __obj.update("refreshAfterInSeconds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      disconnectAfterInSeconds.foreach(__v => __obj.updateDynamic("disconnectAfterInSeconds")(__v.asInstanceOf[js.Any]))
+      isAuthenticated.foreach(__v => __obj.updateDynamic("isAuthenticated")(__v.asInstanceOf[js.Any]))
+      policyDocuments.foreach(__v => __obj.updateDynamic("policyDocuments")(__v.asInstanceOf[js.Any]))
+      principalId.foreach(__v => __obj.updateDynamic("principalId")(__v.asInstanceOf[js.Any]))
+      refreshAfterInSeconds.foreach(__v => __obj.updateDynamic("refreshAfterInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TestInvokeAuthorizerResponse]
     }
   }
@@ -10631,12 +10665,12 @@ package iot {
         thingTypeName: js.UndefOr[ThingTypeName] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): ThingAttribute = {
-      val __obj = js.Dictionary.empty[js.Any]
-      attributes.foreach(__v => __obj.update("attributes", __v.asInstanceOf[js.Any]))
-      thingArn.foreach(__v => __obj.update("thingArn", __v.asInstanceOf[js.Any]))
-      thingName.foreach(__v => __obj.update("thingName", __v.asInstanceOf[js.Any]))
-      thingTypeName.foreach(__v => __obj.update("thingTypeName", __v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
+      thingArn.foreach(__v => __obj.updateDynamic("thingArn")(__v.asInstanceOf[js.Any]))
+      thingName.foreach(__v => __obj.updateDynamic("thingName")(__v.asInstanceOf[js.Any]))
+      thingTypeName.foreach(__v => __obj.updateDynamic("thingTypeName")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ThingAttribute]
     }
   }
@@ -10655,9 +10689,9 @@ package iot {
         connected: js.UndefOr[Boolean] = js.undefined,
         timestamp: js.UndefOr[ConnectivityTimestamp] = js.undefined
     ): ThingConnectivity = {
-      val __obj = js.Dictionary.empty[js.Any]
-      connected.foreach(__v => __obj.update("connected", __v.asInstanceOf[js.Any]))
-      timestamp.foreach(__v => __obj.update("timestamp", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      connected.foreach(__v => __obj.updateDynamic("connected")(__v.asInstanceOf[js.Any]))
+      timestamp.foreach(__v => __obj.updateDynamic("timestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ThingConnectivity]
     }
   }
@@ -10693,14 +10727,14 @@ package iot {
         thingName: js.UndefOr[ThingName] = js.undefined,
         thingTypeName: js.UndefOr[ThingTypeName] = js.undefined
     ): ThingDocument = {
-      val __obj = js.Dictionary.empty[js.Any]
-      attributes.foreach(__v => __obj.update("attributes", __v.asInstanceOf[js.Any]))
-      connectivity.foreach(__v => __obj.update("connectivity", __v.asInstanceOf[js.Any]))
-      shadow.foreach(__v => __obj.update("shadow", __v.asInstanceOf[js.Any]))
-      thingGroupNames.foreach(__v => __obj.update("thingGroupNames", __v.asInstanceOf[js.Any]))
-      thingId.foreach(__v => __obj.update("thingId", __v.asInstanceOf[js.Any]))
-      thingName.foreach(__v => __obj.update("thingName", __v.asInstanceOf[js.Any]))
-      thingTypeName.foreach(__v => __obj.update("thingTypeName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
+      connectivity.foreach(__v => __obj.updateDynamic("connectivity")(__v.asInstanceOf[js.Any]))
+      shadow.foreach(__v => __obj.updateDynamic("shadow")(__v.asInstanceOf[js.Any]))
+      thingGroupNames.foreach(__v => __obj.updateDynamic("thingGroupNames")(__v.asInstanceOf[js.Any]))
+      thingId.foreach(__v => __obj.updateDynamic("thingId")(__v.asInstanceOf[js.Any]))
+      thingName.foreach(__v => __obj.updateDynamic("thingName")(__v.asInstanceOf[js.Any]))
+      thingTypeName.foreach(__v => __obj.updateDynamic("thingTypeName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ThingDocument]
     }
   }
@@ -10725,12 +10759,12 @@ package iot {
         thingGroupId: js.UndefOr[ThingGroupId] = js.undefined,
         thingGroupName: js.UndefOr[ThingGroupName] = js.undefined
     ): ThingGroupDocument = {
-      val __obj = js.Dictionary.empty[js.Any]
-      attributes.foreach(__v => __obj.update("attributes", __v.asInstanceOf[js.Any]))
-      parentGroupNames.foreach(__v => __obj.update("parentGroupNames", __v.asInstanceOf[js.Any]))
-      thingGroupDescription.foreach(__v => __obj.update("thingGroupDescription", __v.asInstanceOf[js.Any]))
-      thingGroupId.foreach(__v => __obj.update("thingGroupId", __v.asInstanceOf[js.Any]))
-      thingGroupName.foreach(__v => __obj.update("thingGroupName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
+      parentGroupNames.foreach(__v => __obj.updateDynamic("parentGroupNames")(__v.asInstanceOf[js.Any]))
+      thingGroupDescription.foreach(__v => __obj.updateDynamic("thingGroupDescription")(__v.asInstanceOf[js.Any]))
+      thingGroupId.foreach(__v => __obj.updateDynamic("thingGroupId")(__v.asInstanceOf[js.Any]))
+      thingGroupName.foreach(__v => __obj.updateDynamic("thingGroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ThingGroupDocument]
     }
   }
@@ -10747,7 +10781,7 @@ package iot {
     def apply(
         thingGroupIndexingMode: ThingGroupIndexingMode
     ): ThingGroupIndexingConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "thingGroupIndexingMode" -> thingGroupIndexingMode.asInstanceOf[js.Any]
       )
 
@@ -10778,10 +10812,10 @@ package iot {
         parentGroupName: js.UndefOr[ThingGroupName] = js.undefined,
         rootToParentThingGroups: js.UndefOr[ThingGroupNameAndArnList] = js.undefined
     ): ThingGroupMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationDate.foreach(__v => __obj.update("creationDate", __v.asInstanceOf[js.Any]))
-      parentGroupName.foreach(__v => __obj.update("parentGroupName", __v.asInstanceOf[js.Any]))
-      rootToParentThingGroups.foreach(__v => __obj.update("rootToParentThingGroups", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
+      parentGroupName.foreach(__v => __obj.updateDynamic("parentGroupName")(__v.asInstanceOf[js.Any]))
+      rootToParentThingGroups.foreach(__v => __obj.updateDynamic("rootToParentThingGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ThingGroupMetadata]
     }
   }
@@ -10800,9 +10834,9 @@ package iot {
         attributePayload: js.UndefOr[AttributePayload] = js.undefined,
         thingGroupDescription: js.UndefOr[ThingGroupDescription] = js.undefined
     ): ThingGroupProperties = {
-      val __obj = js.Dictionary.empty[js.Any]
-      attributePayload.foreach(__v => __obj.update("attributePayload", __v.asInstanceOf[js.Any]))
-      thingGroupDescription.foreach(__v => __obj.update("thingGroupDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      attributePayload.foreach(__v => __obj.updateDynamic("attributePayload")(__v.asInstanceOf[js.Any]))
+      thingGroupDescription.foreach(__v => __obj.updateDynamic("thingGroupDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ThingGroupProperties]
     }
   }
@@ -10821,12 +10855,12 @@ package iot {
         thingIndexingMode: ThingIndexingMode,
         thingConnectivityIndexingMode: js.UndefOr[ThingConnectivityIndexingMode] = js.undefined
     ): ThingIndexingConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "thingIndexingMode" -> thingIndexingMode.asInstanceOf[js.Any]
       )
 
       thingConnectivityIndexingMode.foreach(
-        __v => __obj.update("thingConnectivityIndexingMode", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("thingConnectivityIndexingMode")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ThingIndexingConfiguration]
     }
@@ -10858,11 +10892,11 @@ package iot {
         thingTypeName: js.UndefOr[ThingTypeName] = js.undefined,
         thingTypeProperties: js.UndefOr[ThingTypeProperties] = js.undefined
     ): ThingTypeDefinition = {
-      val __obj = js.Dictionary.empty[js.Any]
-      thingTypeArn.foreach(__v => __obj.update("thingTypeArn", __v.asInstanceOf[js.Any]))
-      thingTypeMetadata.foreach(__v => __obj.update("thingTypeMetadata", __v.asInstanceOf[js.Any]))
-      thingTypeName.foreach(__v => __obj.update("thingTypeName", __v.asInstanceOf[js.Any]))
-      thingTypeProperties.foreach(__v => __obj.update("thingTypeProperties", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      thingTypeArn.foreach(__v => __obj.updateDynamic("thingTypeArn")(__v.asInstanceOf[js.Any]))
+      thingTypeMetadata.foreach(__v => __obj.updateDynamic("thingTypeMetadata")(__v.asInstanceOf[js.Any]))
+      thingTypeName.foreach(__v => __obj.updateDynamic("thingTypeName")(__v.asInstanceOf[js.Any]))
+      thingTypeProperties.foreach(__v => __obj.updateDynamic("thingTypeProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ThingTypeDefinition]
     }
   }
@@ -10883,10 +10917,10 @@ package iot {
         deprecated: js.UndefOr[Boolean] = js.undefined,
         deprecationDate: js.UndefOr[DeprecationDate] = js.undefined
     ): ThingTypeMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationDate.foreach(__v => __obj.update("creationDate", __v.asInstanceOf[js.Any]))
-      deprecated.foreach(__v => __obj.update("deprecated", __v.asInstanceOf[js.Any]))
-      deprecationDate.foreach(__v => __obj.update("deprecationDate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
+      deprecated.foreach(__v => __obj.updateDynamic("deprecated")(__v.asInstanceOf[js.Any]))
+      deprecationDate.foreach(__v => __obj.updateDynamic("deprecationDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ThingTypeMetadata]
     }
   }
@@ -10905,9 +10939,9 @@ package iot {
         searchableAttributes: js.UndefOr[SearchableAttributes] = js.undefined,
         thingTypeDescription: js.UndefOr[ThingTypeDescription] = js.undefined
     ): ThingTypeProperties = {
-      val __obj = js.Dictionary.empty[js.Any]
-      searchableAttributes.foreach(__v => __obj.update("searchableAttributes", __v.asInstanceOf[js.Any]))
-      thingTypeDescription.foreach(__v => __obj.update("thingTypeDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      searchableAttributes.foreach(__v => __obj.updateDynamic("searchableAttributes")(__v.asInstanceOf[js.Any]))
+      thingTypeDescription.foreach(__v => __obj.updateDynamic("thingTypeDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ThingTypeProperties]
     }
   }
@@ -10924,8 +10958,10 @@ package iot {
     def apply(
         inProgressTimeoutInMinutes: js.UndefOr[InProgressTimeoutInMinutes] = js.undefined
     ): TimeoutConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      inProgressTimeoutInMinutes.foreach(__v => __obj.update("inProgressTimeoutInMinutes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      inProgressTimeoutInMinutes.foreach(
+        __v => __obj.updateDynamic("inProgressTimeoutInMinutes")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[TimeoutConfig]
     }
   }
@@ -10956,15 +10992,15 @@ package iot {
         ruleName: js.UndefOr[RuleName] = js.undefined,
         sql: js.UndefOr[SQL] = js.undefined
     ): TopicRule = {
-      val __obj = js.Dictionary.empty[js.Any]
-      actions.foreach(__v => __obj.update("actions", __v.asInstanceOf[js.Any]))
-      awsIotSqlVersion.foreach(__v => __obj.update("awsIotSqlVersion", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      errorAction.foreach(__v => __obj.update("errorAction", __v.asInstanceOf[js.Any]))
-      ruleDisabled.foreach(__v => __obj.update("ruleDisabled", __v.asInstanceOf[js.Any]))
-      ruleName.foreach(__v => __obj.update("ruleName", __v.asInstanceOf[js.Any]))
-      sql.foreach(__v => __obj.update("sql", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      actions.foreach(__v => __obj.updateDynamic("actions")(__v.asInstanceOf[js.Any]))
+      awsIotSqlVersion.foreach(__v => __obj.updateDynamic("awsIotSqlVersion")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      errorAction.foreach(__v => __obj.updateDynamic("errorAction")(__v.asInstanceOf[js.Any]))
+      ruleDisabled.foreach(__v => __obj.updateDynamic("ruleDisabled")(__v.asInstanceOf[js.Any]))
+      ruleName.foreach(__v => __obj.updateDynamic("ruleName")(__v.asInstanceOf[js.Any]))
+      sql.foreach(__v => __obj.updateDynamic("sql")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TopicRule]
     }
   }
@@ -10989,12 +11025,12 @@ package iot {
         ruleName: js.UndefOr[RuleName] = js.undefined,
         topicPattern: js.UndefOr[TopicPattern] = js.undefined
     ): TopicRuleListItem = {
-      val __obj = js.Dictionary.empty[js.Any]
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      ruleArn.foreach(__v => __obj.update("ruleArn", __v.asInstanceOf[js.Any]))
-      ruleDisabled.foreach(__v => __obj.update("ruleDisabled", __v.asInstanceOf[js.Any]))
-      ruleName.foreach(__v => __obj.update("ruleName", __v.asInstanceOf[js.Any]))
-      topicPattern.foreach(__v => __obj.update("topicPattern", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      ruleArn.foreach(__v => __obj.updateDynamic("ruleArn")(__v.asInstanceOf[js.Any]))
+      ruleDisabled.foreach(__v => __obj.updateDynamic("ruleDisabled")(__v.asInstanceOf[js.Any]))
+      ruleName.foreach(__v => __obj.updateDynamic("ruleName")(__v.asInstanceOf[js.Any]))
+      topicPattern.foreach(__v => __obj.updateDynamic("topicPattern")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TopicRuleListItem]
     }
   }
@@ -11021,15 +11057,15 @@ package iot {
         errorAction: js.UndefOr[Action] = js.undefined,
         ruleDisabled: js.UndefOr[IsDisabled] = js.undefined
     ): TopicRulePayload = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "actions" -> actions.asInstanceOf[js.Any],
         "sql"     -> sql.asInstanceOf[js.Any]
       )
 
-      awsIotSqlVersion.foreach(__v => __obj.update("awsIotSqlVersion", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      errorAction.foreach(__v => __obj.update("errorAction", __v.asInstanceOf[js.Any]))
-      ruleDisabled.foreach(__v => __obj.update("ruleDisabled", __v.asInstanceOf[js.Any]))
+      awsIotSqlVersion.foreach(__v => __obj.updateDynamic("awsIotSqlVersion")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      errorAction.foreach(__v => __obj.updateDynamic("errorAction")(__v.asInstanceOf[js.Any]))
+      ruleDisabled.foreach(__v => __obj.updateDynamic("ruleDisabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TopicRulePayload]
     }
   }
@@ -11050,12 +11086,12 @@ package iot {
         targetAwsAccount: AwsAccountId,
         transferMessage: js.UndefOr[Message] = js.undefined
     ): TransferCertificateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "certificateId"    -> certificateId.asInstanceOf[js.Any],
         "targetAwsAccount" -> targetAwsAccount.asInstanceOf[js.Any]
       )
 
-      transferMessage.foreach(__v => __obj.update("transferMessage", __v.asInstanceOf[js.Any]))
+      transferMessage.foreach(__v => __obj.updateDynamic("transferMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TransferCertificateRequest]
     }
   }
@@ -11072,8 +11108,10 @@ package iot {
     def apply(
         transferredCertificateArn: js.UndefOr[CertificateArn] = js.undefined
     ): TransferCertificateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      transferredCertificateArn.foreach(__v => __obj.update("transferredCertificateArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      transferredCertificateArn.foreach(
+        __v => __obj.updateDynamic("transferredCertificateArn")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[TransferCertificateResponse]
     }
   }
@@ -11098,12 +11136,12 @@ package iot {
         transferDate: js.UndefOr[DateType] = js.undefined,
         transferMessage: js.UndefOr[Message] = js.undefined
     ): TransferData = {
-      val __obj = js.Dictionary.empty[js.Any]
-      acceptDate.foreach(__v => __obj.update("acceptDate", __v.asInstanceOf[js.Any]))
-      rejectDate.foreach(__v => __obj.update("rejectDate", __v.asInstanceOf[js.Any]))
-      rejectReason.foreach(__v => __obj.update("rejectReason", __v.asInstanceOf[js.Any]))
-      transferDate.foreach(__v => __obj.update("transferDate", __v.asInstanceOf[js.Any]))
-      transferMessage.foreach(__v => __obj.update("transferMessage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      acceptDate.foreach(__v => __obj.updateDynamic("acceptDate")(__v.asInstanceOf[js.Any]))
+      rejectDate.foreach(__v => __obj.updateDynamic("rejectDate")(__v.asInstanceOf[js.Any]))
+      rejectReason.foreach(__v => __obj.updateDynamic("rejectReason")(__v.asInstanceOf[js.Any]))
+      transferDate.foreach(__v => __obj.updateDynamic("transferDate")(__v.asInstanceOf[js.Any]))
+      transferMessage.foreach(__v => __obj.updateDynamic("transferMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TransferData]
     }
   }
@@ -11119,7 +11157,7 @@ package iot {
         resourceArn: ResourceArn,
         tagKeys: TagKeyList
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
       )
@@ -11134,7 +11172,7 @@ package iot {
   object UntagResourceResponse {
     def apply(
         ): UntagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -11153,12 +11191,12 @@ package iot {
         auditNotificationTargetConfigurations: js.UndefOr[AuditNotificationTargetConfigurations] = js.undefined,
         roleArn: js.UndefOr[RoleArn] = js.undefined
     ): UpdateAccountAuditConfigurationRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      auditCheckConfigurations.foreach(__v => __obj.update("auditCheckConfigurations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      auditCheckConfigurations.foreach(__v => __obj.updateDynamic("auditCheckConfigurations")(__v.asInstanceOf[js.Any]))
       auditNotificationTargetConfigurations.foreach(
-        __v => __obj.update("auditNotificationTargetConfigurations", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("auditNotificationTargetConfigurations")(__v.asInstanceOf[js.Any])
       )
-      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAccountAuditConfigurationRequest]
     }
   }
@@ -11169,7 +11207,7 @@ package iot {
   object UpdateAccountAuditConfigurationResponse {
     def apply(
         ): UpdateAccountAuditConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateAccountAuditConfigurationResponse]
     }
@@ -11192,14 +11230,14 @@ package iot {
         tokenKeyName: js.UndefOr[TokenKeyName] = js.undefined,
         tokenSigningPublicKeys: js.UndefOr[PublicKeyMap] = js.undefined
     ): UpdateAuthorizerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "authorizerName" -> authorizerName.asInstanceOf[js.Any]
       )
 
-      authorizerFunctionArn.foreach(__v => __obj.update("authorizerFunctionArn", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      tokenKeyName.foreach(__v => __obj.update("tokenKeyName", __v.asInstanceOf[js.Any]))
-      tokenSigningPublicKeys.foreach(__v => __obj.update("tokenSigningPublicKeys", __v.asInstanceOf[js.Any]))
+      authorizerFunctionArn.foreach(__v => __obj.updateDynamic("authorizerFunctionArn")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      tokenKeyName.foreach(__v => __obj.updateDynamic("tokenKeyName")(__v.asInstanceOf[js.Any]))
+      tokenSigningPublicKeys.foreach(__v => __obj.updateDynamic("tokenSigningPublicKeys")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAuthorizerRequest]
     }
   }
@@ -11215,9 +11253,9 @@ package iot {
         authorizerArn: js.UndefOr[AuthorizerArn] = js.undefined,
         authorizerName: js.UndefOr[AuthorizerName] = js.undefined
     ): UpdateAuthorizerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      authorizerArn.foreach(__v => __obj.update("authorizerArn", __v.asInstanceOf[js.Any]))
-      authorizerName.foreach(__v => __obj.update("authorizerName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      authorizerArn.foreach(__v => __obj.updateDynamic("authorizerArn")(__v.asInstanceOf[js.Any]))
+      authorizerName.foreach(__v => __obj.updateDynamic("authorizerName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAuthorizerResponse]
     }
   }
@@ -11235,12 +11273,12 @@ package iot {
         billingGroupProperties: BillingGroupProperties,
         expectedVersion: js.UndefOr[OptionalVersion] = js.undefined
     ): UpdateBillingGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "billingGroupName"       -> billingGroupName.asInstanceOf[js.Any],
         "billingGroupProperties" -> billingGroupProperties.asInstanceOf[js.Any]
       )
 
-      expectedVersion.foreach(__v => __obj.update("expectedVersion", __v.asInstanceOf[js.Any]))
+      expectedVersion.foreach(__v => __obj.updateDynamic("expectedVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateBillingGroupRequest]
     }
   }
@@ -11254,8 +11292,8 @@ package iot {
     def apply(
         version: js.UndefOr[Version] = js.undefined
     ): UpdateBillingGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateBillingGroupResponse]
     }
   }
@@ -11272,7 +11310,7 @@ package iot {
     def apply(
         action: CACertificateUpdateAction
     ): UpdateCACertificateParams = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "action" -> action.asInstanceOf[js.Any]
       )
 
@@ -11300,14 +11338,16 @@ package iot {
         registrationConfig: js.UndefOr[RegistrationConfig] = js.undefined,
         removeAutoRegistration: js.UndefOr[RemoveAutoRegistration] = js.undefined
     ): UpdateCACertificateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "certificateId" -> certificateId.asInstanceOf[js.Any]
       )
 
-      newAutoRegistrationStatus.foreach(__v => __obj.update("newAutoRegistrationStatus", __v.asInstanceOf[js.Any]))
-      newStatus.foreach(__v => __obj.update("newStatus", __v.asInstanceOf[js.Any]))
-      registrationConfig.foreach(__v => __obj.update("registrationConfig", __v.asInstanceOf[js.Any]))
-      removeAutoRegistration.foreach(__v => __obj.update("removeAutoRegistration", __v.asInstanceOf[js.Any]))
+      newAutoRegistrationStatus.foreach(
+        __v => __obj.updateDynamic("newAutoRegistrationStatus")(__v.asInstanceOf[js.Any])
+      )
+      newStatus.foreach(__v => __obj.updateDynamic("newStatus")(__v.asInstanceOf[js.Any]))
+      registrationConfig.foreach(__v => __obj.updateDynamic("registrationConfig")(__v.asInstanceOf[js.Any]))
+      removeAutoRegistration.foreach(__v => __obj.updateDynamic("removeAutoRegistration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateCACertificateRequest]
     }
   }
@@ -11326,7 +11366,7 @@ package iot {
         certificateId: CertificateId,
         newStatus: CertificateStatus
     ): UpdateCertificateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "certificateId" -> certificateId.asInstanceOf[js.Any],
         "newStatus"     -> newStatus.asInstanceOf[js.Any]
       )
@@ -11347,7 +11387,7 @@ package iot {
     def apply(
         action: DeviceCertificateUpdateAction
     ): UpdateDeviceCertificateParams = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "action" -> action.asInstanceOf[js.Any]
       )
 
@@ -11374,15 +11414,15 @@ package iot {
         queryString: js.UndefOr[QueryString] = js.undefined,
         queryVersion: js.UndefOr[QueryVersion] = js.undefined
     ): UpdateDynamicThingGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "thingGroupName"       -> thingGroupName.asInstanceOf[js.Any],
         "thingGroupProperties" -> thingGroupProperties.asInstanceOf[js.Any]
       )
 
-      expectedVersion.foreach(__v => __obj.update("expectedVersion", __v.asInstanceOf[js.Any]))
-      indexName.foreach(__v => __obj.update("indexName", __v.asInstanceOf[js.Any]))
-      queryString.foreach(__v => __obj.update("queryString", __v.asInstanceOf[js.Any]))
-      queryVersion.foreach(__v => __obj.update("queryVersion", __v.asInstanceOf[js.Any]))
+      expectedVersion.foreach(__v => __obj.updateDynamic("expectedVersion")(__v.asInstanceOf[js.Any]))
+      indexName.foreach(__v => __obj.updateDynamic("indexName")(__v.asInstanceOf[js.Any]))
+      queryString.foreach(__v => __obj.updateDynamic("queryString")(__v.asInstanceOf[js.Any]))
+      queryVersion.foreach(__v => __obj.updateDynamic("queryVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDynamicThingGroupRequest]
     }
   }
@@ -11396,8 +11436,8 @@ package iot {
     def apply(
         version: js.UndefOr[Version] = js.undefined
     ): UpdateDynamicThingGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDynamicThingGroupResponse]
     }
   }
@@ -11411,8 +11451,8 @@ package iot {
     def apply(
         eventConfigurations: js.UndefOr[EventConfigurations] = js.undefined
     ): UpdateEventConfigurationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      eventConfigurations.foreach(__v => __obj.update("eventConfigurations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      eventConfigurations.foreach(__v => __obj.updateDynamic("eventConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateEventConfigurationsRequest]
     }
   }
@@ -11423,7 +11463,7 @@ package iot {
   object UpdateEventConfigurationsResponse {
     def apply(
         ): UpdateEventConfigurationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateEventConfigurationsResponse]
     }
@@ -11440,11 +11480,13 @@ package iot {
         thingGroupIndexingConfiguration: js.UndefOr[ThingGroupIndexingConfiguration] = js.undefined,
         thingIndexingConfiguration: js.UndefOr[ThingIndexingConfiguration] = js.undefined
     ): UpdateIndexingConfigurationRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       thingGroupIndexingConfiguration.foreach(
-        __v => __obj.update("thingGroupIndexingConfiguration", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("thingGroupIndexingConfiguration")(__v.asInstanceOf[js.Any])
       )
-      thingIndexingConfiguration.foreach(__v => __obj.update("thingIndexingConfiguration", __v.asInstanceOf[js.Any]))
+      thingIndexingConfiguration.foreach(
+        __v => __obj.updateDynamic("thingIndexingConfiguration")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[UpdateIndexingConfigurationRequest]
     }
   }
@@ -11455,7 +11497,7 @@ package iot {
   object UpdateIndexingConfigurationResponse {
     def apply(
         ): UpdateIndexingConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateIndexingConfigurationResponse]
     }
@@ -11480,15 +11522,17 @@ package iot {
         presignedUrlConfig: js.UndefOr[PresignedUrlConfig] = js.undefined,
         timeoutConfig: js.UndefOr[TimeoutConfig] = js.undefined
     ): UpdateJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobId" -> jobId.asInstanceOf[js.Any]
       )
 
-      abortConfig.foreach(__v => __obj.update("abortConfig", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      jobExecutionsRolloutConfig.foreach(__v => __obj.update("jobExecutionsRolloutConfig", __v.asInstanceOf[js.Any]))
-      presignedUrlConfig.foreach(__v => __obj.update("presignedUrlConfig", __v.asInstanceOf[js.Any]))
-      timeoutConfig.foreach(__v => __obj.update("timeoutConfig", __v.asInstanceOf[js.Any]))
+      abortConfig.foreach(__v => __obj.updateDynamic("abortConfig")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      jobExecutionsRolloutConfig.foreach(
+        __v => __obj.updateDynamic("jobExecutionsRolloutConfig")(__v.asInstanceOf[js.Any])
+      )
+      presignedUrlConfig.foreach(__v => __obj.updateDynamic("presignedUrlConfig")(__v.asInstanceOf[js.Any]))
+      timeoutConfig.foreach(__v => __obj.updateDynamic("timeoutConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateJobRequest]
     }
   }
@@ -11506,12 +11550,12 @@ package iot {
         actionParams: js.UndefOr[MitigationActionParams] = js.undefined,
         roleArn: js.UndefOr[RoleArn] = js.undefined
     ): UpdateMitigationActionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "actionName" -> actionName.asInstanceOf[js.Any]
       )
 
-      actionParams.foreach(__v => __obj.update("actionParams", __v.asInstanceOf[js.Any]))
-      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
+      actionParams.foreach(__v => __obj.updateDynamic("actionParams")(__v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateMitigationActionRequest]
     }
   }
@@ -11527,9 +11571,9 @@ package iot {
         actionArn: js.UndefOr[MitigationActionArn] = js.undefined,
         actionId: js.UndefOr[MitigationActionId] = js.undefined
     ): UpdateMitigationActionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      actionArn.foreach(__v => __obj.update("actionArn", __v.asInstanceOf[js.Any]))
-      actionId.foreach(__v => __obj.update("actionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      actionArn.foreach(__v => __obj.updateDynamic("actionArn")(__v.asInstanceOf[js.Any]))
+      actionId.foreach(__v => __obj.updateDynamic("actionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateMitigationActionResponse]
     }
   }
@@ -11547,12 +11591,14 @@ package iot {
         credentialDurationSeconds: js.UndefOr[CredentialDurationSeconds] = js.undefined,
         roleArn: js.UndefOr[RoleArn] = js.undefined
     ): UpdateRoleAliasRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "roleAlias" -> roleAlias.asInstanceOf[js.Any]
       )
 
-      credentialDurationSeconds.foreach(__v => __obj.update("credentialDurationSeconds", __v.asInstanceOf[js.Any]))
-      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
+      credentialDurationSeconds.foreach(
+        __v => __obj.updateDynamic("credentialDurationSeconds")(__v.asInstanceOf[js.Any])
+      )
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRoleAliasRequest]
     }
   }
@@ -11568,9 +11614,9 @@ package iot {
         roleAlias: js.UndefOr[RoleAlias] = js.undefined,
         roleAliasArn: js.UndefOr[RoleAliasArn] = js.undefined
     ): UpdateRoleAliasResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      roleAlias.foreach(__v => __obj.update("roleAlias", __v.asInstanceOf[js.Any]))
-      roleAliasArn.foreach(__v => __obj.update("roleAliasArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      roleAlias.foreach(__v => __obj.updateDynamic("roleAlias")(__v.asInstanceOf[js.Any]))
+      roleAliasArn.foreach(__v => __obj.updateDynamic("roleAliasArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRoleAliasResponse]
     }
   }
@@ -11592,14 +11638,14 @@ package iot {
         frequency: js.UndefOr[AuditFrequency] = js.undefined,
         targetCheckNames: js.UndefOr[TargetAuditCheckNames] = js.undefined
     ): UpdateScheduledAuditRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "scheduledAuditName" -> scheduledAuditName.asInstanceOf[js.Any]
       )
 
-      dayOfMonth.foreach(__v => __obj.update("dayOfMonth", __v.asInstanceOf[js.Any]))
-      dayOfWeek.foreach(__v => __obj.update("dayOfWeek", __v.asInstanceOf[js.Any]))
-      frequency.foreach(__v => __obj.update("frequency", __v.asInstanceOf[js.Any]))
-      targetCheckNames.foreach(__v => __obj.update("targetCheckNames", __v.asInstanceOf[js.Any]))
+      dayOfMonth.foreach(__v => __obj.updateDynamic("dayOfMonth")(__v.asInstanceOf[js.Any]))
+      dayOfWeek.foreach(__v => __obj.updateDynamic("dayOfWeek")(__v.asInstanceOf[js.Any]))
+      frequency.foreach(__v => __obj.updateDynamic("frequency")(__v.asInstanceOf[js.Any]))
+      targetCheckNames.foreach(__v => __obj.updateDynamic("targetCheckNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateScheduledAuditRequest]
     }
   }
@@ -11613,8 +11659,8 @@ package iot {
     def apply(
         scheduledAuditArn: js.UndefOr[ScheduledAuditArn] = js.undefined
     ): UpdateScheduledAuditResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      scheduledAuditArn.foreach(__v => __obj.update("scheduledAuditArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      scheduledAuditArn.foreach(__v => __obj.updateDynamic("scheduledAuditArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateScheduledAuditResponse]
     }
   }
@@ -11644,20 +11690,24 @@ package iot {
         expectedVersion: js.UndefOr[OptionalVersion] = js.undefined,
         securityProfileDescription: js.UndefOr[SecurityProfileDescription] = js.undefined
     ): UpdateSecurityProfileRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "securityProfileName" -> securityProfileName.asInstanceOf[js.Any]
       )
 
-      additionalMetricsToRetain.foreach(__v => __obj.update("additionalMetricsToRetain", __v.asInstanceOf[js.Any]))
-      alertTargets.foreach(__v => __obj.update("alertTargets", __v.asInstanceOf[js.Any]))
-      behaviors.foreach(__v => __obj.update("behaviors", __v.asInstanceOf[js.Any]))
-      deleteAdditionalMetricsToRetain.foreach(
-        __v => __obj.update("deleteAdditionalMetricsToRetain", __v.asInstanceOf[js.Any])
+      additionalMetricsToRetain.foreach(
+        __v => __obj.updateDynamic("additionalMetricsToRetain")(__v.asInstanceOf[js.Any])
       )
-      deleteAlertTargets.foreach(__v => __obj.update("deleteAlertTargets", __v.asInstanceOf[js.Any]))
-      deleteBehaviors.foreach(__v => __obj.update("deleteBehaviors", __v.asInstanceOf[js.Any]))
-      expectedVersion.foreach(__v => __obj.update("expectedVersion", __v.asInstanceOf[js.Any]))
-      securityProfileDescription.foreach(__v => __obj.update("securityProfileDescription", __v.asInstanceOf[js.Any]))
+      alertTargets.foreach(__v => __obj.updateDynamic("alertTargets")(__v.asInstanceOf[js.Any]))
+      behaviors.foreach(__v => __obj.updateDynamic("behaviors")(__v.asInstanceOf[js.Any]))
+      deleteAdditionalMetricsToRetain.foreach(
+        __v => __obj.updateDynamic("deleteAdditionalMetricsToRetain")(__v.asInstanceOf[js.Any])
+      )
+      deleteAlertTargets.foreach(__v => __obj.updateDynamic("deleteAlertTargets")(__v.asInstanceOf[js.Any]))
+      deleteBehaviors.foreach(__v => __obj.updateDynamic("deleteBehaviors")(__v.asInstanceOf[js.Any]))
+      expectedVersion.foreach(__v => __obj.updateDynamic("expectedVersion")(__v.asInstanceOf[js.Any]))
+      securityProfileDescription.foreach(
+        __v => __obj.updateDynamic("securityProfileDescription")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[UpdateSecurityProfileRequest]
     }
   }
@@ -11687,16 +11737,20 @@ package iot {
         securityProfileName: js.UndefOr[SecurityProfileName] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): UpdateSecurityProfileResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      additionalMetricsToRetain.foreach(__v => __obj.update("additionalMetricsToRetain", __v.asInstanceOf[js.Any]))
-      alertTargets.foreach(__v => __obj.update("alertTargets", __v.asInstanceOf[js.Any]))
-      behaviors.foreach(__v => __obj.update("behaviors", __v.asInstanceOf[js.Any]))
-      creationDate.foreach(__v => __obj.update("creationDate", __v.asInstanceOf[js.Any]))
-      lastModifiedDate.foreach(__v => __obj.update("lastModifiedDate", __v.asInstanceOf[js.Any]))
-      securityProfileArn.foreach(__v => __obj.update("securityProfileArn", __v.asInstanceOf[js.Any]))
-      securityProfileDescription.foreach(__v => __obj.update("securityProfileDescription", __v.asInstanceOf[js.Any]))
-      securityProfileName.foreach(__v => __obj.update("securityProfileName", __v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      additionalMetricsToRetain.foreach(
+        __v => __obj.updateDynamic("additionalMetricsToRetain")(__v.asInstanceOf[js.Any])
+      )
+      alertTargets.foreach(__v => __obj.updateDynamic("alertTargets")(__v.asInstanceOf[js.Any]))
+      behaviors.foreach(__v => __obj.updateDynamic("behaviors")(__v.asInstanceOf[js.Any]))
+      creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
+      lastModifiedDate.foreach(__v => __obj.updateDynamic("lastModifiedDate")(__v.asInstanceOf[js.Any]))
+      securityProfileArn.foreach(__v => __obj.updateDynamic("securityProfileArn")(__v.asInstanceOf[js.Any]))
+      securityProfileDescription.foreach(
+        __v => __obj.updateDynamic("securityProfileDescription")(__v.asInstanceOf[js.Any])
+      )
+      securityProfileName.foreach(__v => __obj.updateDynamic("securityProfileName")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSecurityProfileResponse]
     }
   }
@@ -11716,13 +11770,13 @@ package iot {
         files: js.UndefOr[StreamFiles] = js.undefined,
         roleArn: js.UndefOr[RoleArn] = js.undefined
     ): UpdateStreamRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "streamId" -> streamId.asInstanceOf[js.Any]
       )
 
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      files.foreach(__v => __obj.update("files", __v.asInstanceOf[js.Any]))
-      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      files.foreach(__v => __obj.updateDynamic("files")(__v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateStreamRequest]
     }
   }
@@ -11742,11 +11796,11 @@ package iot {
         streamId: js.UndefOr[StreamId] = js.undefined,
         streamVersion: js.UndefOr[StreamVersion] = js.undefined
     ): UpdateStreamResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      streamArn.foreach(__v => __obj.update("streamArn", __v.asInstanceOf[js.Any]))
-      streamId.foreach(__v => __obj.update("streamId", __v.asInstanceOf[js.Any]))
-      streamVersion.foreach(__v => __obj.update("streamVersion", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      streamArn.foreach(__v => __obj.updateDynamic("streamArn")(__v.asInstanceOf[js.Any]))
+      streamId.foreach(__v => __obj.updateDynamic("streamId")(__v.asInstanceOf[js.Any]))
+      streamVersion.foreach(__v => __obj.updateDynamic("streamVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateStreamResponse]
     }
   }
@@ -11764,12 +11818,12 @@ package iot {
         thingGroupProperties: ThingGroupProperties,
         expectedVersion: js.UndefOr[OptionalVersion] = js.undefined
     ): UpdateThingGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "thingGroupName"       -> thingGroupName.asInstanceOf[js.Any],
         "thingGroupProperties" -> thingGroupProperties.asInstanceOf[js.Any]
       )
 
-      expectedVersion.foreach(__v => __obj.update("expectedVersion", __v.asInstanceOf[js.Any]))
+      expectedVersion.foreach(__v => __obj.updateDynamic("expectedVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateThingGroupRequest]
     }
   }
@@ -11783,8 +11837,8 @@ package iot {
     def apply(
         version: js.UndefOr[Version] = js.undefined
     ): UpdateThingGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateThingGroupResponse]
     }
   }
@@ -11804,11 +11858,11 @@ package iot {
         thingGroupsToRemove: js.UndefOr[ThingGroupList] = js.undefined,
         thingName: js.UndefOr[ThingName] = js.undefined
     ): UpdateThingGroupsForThingRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      overrideDynamicGroups.foreach(__v => __obj.update("overrideDynamicGroups", __v.asInstanceOf[js.Any]))
-      thingGroupsToAdd.foreach(__v => __obj.update("thingGroupsToAdd", __v.asInstanceOf[js.Any]))
-      thingGroupsToRemove.foreach(__v => __obj.update("thingGroupsToRemove", __v.asInstanceOf[js.Any]))
-      thingName.foreach(__v => __obj.update("thingName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      overrideDynamicGroups.foreach(__v => __obj.updateDynamic("overrideDynamicGroups")(__v.asInstanceOf[js.Any]))
+      thingGroupsToAdd.foreach(__v => __obj.updateDynamic("thingGroupsToAdd")(__v.asInstanceOf[js.Any]))
+      thingGroupsToRemove.foreach(__v => __obj.updateDynamic("thingGroupsToRemove")(__v.asInstanceOf[js.Any]))
+      thingName.foreach(__v => __obj.updateDynamic("thingName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateThingGroupsForThingRequest]
     }
   }
@@ -11819,7 +11873,7 @@ package iot {
   object UpdateThingGroupsForThingResponse {
     def apply(
         ): UpdateThingGroupsForThingResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateThingGroupsForThingResponse]
     }
@@ -11845,14 +11899,14 @@ package iot {
         removeThingType: js.UndefOr[RemoveThingType] = js.undefined,
         thingTypeName: js.UndefOr[ThingTypeName] = js.undefined
     ): UpdateThingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "thingName" -> thingName.asInstanceOf[js.Any]
       )
 
-      attributePayload.foreach(__v => __obj.update("attributePayload", __v.asInstanceOf[js.Any]))
-      expectedVersion.foreach(__v => __obj.update("expectedVersion", __v.asInstanceOf[js.Any]))
-      removeThingType.foreach(__v => __obj.update("removeThingType", __v.asInstanceOf[js.Any]))
-      thingTypeName.foreach(__v => __obj.update("thingTypeName", __v.asInstanceOf[js.Any]))
+      attributePayload.foreach(__v => __obj.updateDynamic("attributePayload")(__v.asInstanceOf[js.Any]))
+      expectedVersion.foreach(__v => __obj.updateDynamic("expectedVersion")(__v.asInstanceOf[js.Any]))
+      removeThingType.foreach(__v => __obj.updateDynamic("removeThingType")(__v.asInstanceOf[js.Any]))
+      thingTypeName.foreach(__v => __obj.updateDynamic("thingTypeName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateThingRequest]
     }
   }
@@ -11866,7 +11920,7 @@ package iot {
   object UpdateThingResponse {
     def apply(
         ): UpdateThingResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateThingResponse]
     }
@@ -11881,7 +11935,7 @@ package iot {
     def apply(
         behaviors: Behaviors
     ): ValidateSecurityProfileBehaviorsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "behaviors" -> behaviors.asInstanceOf[js.Any]
       )
 
@@ -11900,9 +11954,9 @@ package iot {
         valid: js.UndefOr[Valid] = js.undefined,
         validationErrors: js.UndefOr[ValidationErrors] = js.undefined
     ): ValidateSecurityProfileBehaviorsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      valid.foreach(__v => __obj.update("valid", __v.asInstanceOf[js.Any]))
-      validationErrors.foreach(__v => __obj.update("validationErrors", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      valid.foreach(__v => __obj.updateDynamic("valid")(__v.asInstanceOf[js.Any]))
+      validationErrors.foreach(__v => __obj.updateDynamic("validationErrors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ValidateSecurityProfileBehaviorsResponse]
     }
   }
@@ -11919,8 +11973,8 @@ package iot {
     def apply(
         errorMessage: js.UndefOr[ErrorMessage] = js.undefined
     ): ValidationError = {
-      val __obj = js.Dictionary.empty[js.Any]
-      errorMessage.foreach(__v => __obj.update("errorMessage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      errorMessage.foreach(__v => __obj.updateDynamic("errorMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ValidationError]
     }
   }
@@ -11949,14 +12003,14 @@ package iot {
         violationEventType: js.UndefOr[ViolationEventType] = js.undefined,
         violationId: js.UndefOr[ViolationId] = js.undefined
     ): ViolationEvent = {
-      val __obj = js.Dictionary.empty[js.Any]
-      behavior.foreach(__v => __obj.update("behavior", __v.asInstanceOf[js.Any]))
-      metricValue.foreach(__v => __obj.update("metricValue", __v.asInstanceOf[js.Any]))
-      securityProfileName.foreach(__v => __obj.update("securityProfileName", __v.asInstanceOf[js.Any]))
-      thingName.foreach(__v => __obj.update("thingName", __v.asInstanceOf[js.Any]))
-      violationEventTime.foreach(__v => __obj.update("violationEventTime", __v.asInstanceOf[js.Any]))
-      violationEventType.foreach(__v => __obj.update("violationEventType", __v.asInstanceOf[js.Any]))
-      violationId.foreach(__v => __obj.update("violationId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      behavior.foreach(__v => __obj.updateDynamic("behavior")(__v.asInstanceOf[js.Any]))
+      metricValue.foreach(__v => __obj.updateDynamic("metricValue")(__v.asInstanceOf[js.Any]))
+      securityProfileName.foreach(__v => __obj.updateDynamic("securityProfileName")(__v.asInstanceOf[js.Any]))
+      thingName.foreach(__v => __obj.updateDynamic("thingName")(__v.asInstanceOf[js.Any]))
+      violationEventTime.foreach(__v => __obj.updateDynamic("violationEventTime")(__v.asInstanceOf[js.Any]))
+      violationEventType.foreach(__v => __obj.updateDynamic("violationEventType")(__v.asInstanceOf[js.Any]))
+      violationId.foreach(__v => __obj.updateDynamic("violationId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ViolationEvent]
     }
   }

@@ -248,7 +248,7 @@ package amplify {
         productionBranch: js.UndefOr[ProductionBranch] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): App = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "appArn"                -> appArn.asInstanceOf[js.Any],
         "appId"                 -> appId.asInstanceOf[js.Any],
         "createTime"            -> createTime.asInstanceOf[js.Any],
@@ -263,15 +263,17 @@ package amplify {
         "updateTime"            -> updateTime.asInstanceOf[js.Any]
       )
 
-      autoBranchCreationConfig.foreach(__v => __obj.update("autoBranchCreationConfig", __v.asInstanceOf[js.Any]))
-      autoBranchCreationPatterns.foreach(__v => __obj.update("autoBranchCreationPatterns", __v.asInstanceOf[js.Any]))
-      basicAuthCredentials.foreach(__v => __obj.update("basicAuthCredentials", __v.asInstanceOf[js.Any]))
-      buildSpec.foreach(__v => __obj.update("buildSpec", __v.asInstanceOf[js.Any]))
-      customRules.foreach(__v => __obj.update("customRules", __v.asInstanceOf[js.Any]))
-      enableAutoBranchCreation.foreach(__v => __obj.update("enableAutoBranchCreation", __v.asInstanceOf[js.Any]))
-      iamServiceRoleArn.foreach(__v => __obj.update("iamServiceRoleArn", __v.asInstanceOf[js.Any]))
-      productionBranch.foreach(__v => __obj.update("productionBranch", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      autoBranchCreationConfig.foreach(__v => __obj.updateDynamic("autoBranchCreationConfig")(__v.asInstanceOf[js.Any]))
+      autoBranchCreationPatterns.foreach(
+        __v => __obj.updateDynamic("autoBranchCreationPatterns")(__v.asInstanceOf[js.Any])
+      )
+      basicAuthCredentials.foreach(__v => __obj.updateDynamic("basicAuthCredentials")(__v.asInstanceOf[js.Any]))
+      buildSpec.foreach(__v => __obj.updateDynamic("buildSpec")(__v.asInstanceOf[js.Any]))
+      customRules.foreach(__v => __obj.updateDynamic("customRules")(__v.asInstanceOf[js.Any]))
+      enableAutoBranchCreation.foreach(__v => __obj.updateDynamic("enableAutoBranchCreation")(__v.asInstanceOf[js.Any]))
+      iamServiceRoleArn.foreach(__v => __obj.updateDynamic("iamServiceRoleArn")(__v.asInstanceOf[js.Any]))
+      productionBranch.foreach(__v => __obj.updateDynamic("productionBranch")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[App]
     }
   }
@@ -300,14 +302,14 @@ package amplify {
         framework: js.UndefOr[Framework] = js.undefined,
         stage: js.UndefOr[Stage] = js.undefined
     ): AutoBranchCreationConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      basicAuthCredentials.foreach(__v => __obj.update("basicAuthCredentials", __v.asInstanceOf[js.Any]))
-      buildSpec.foreach(__v => __obj.update("buildSpec", __v.asInstanceOf[js.Any]))
-      enableAutoBuild.foreach(__v => __obj.update("enableAutoBuild", __v.asInstanceOf[js.Any]))
-      enableBasicAuth.foreach(__v => __obj.update("enableBasicAuth", __v.asInstanceOf[js.Any]))
-      environmentVariables.foreach(__v => __obj.update("environmentVariables", __v.asInstanceOf[js.Any]))
-      framework.foreach(__v => __obj.update("framework", __v.asInstanceOf[js.Any]))
-      stage.foreach(__v => __obj.update("stage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      basicAuthCredentials.foreach(__v => __obj.updateDynamic("basicAuthCredentials")(__v.asInstanceOf[js.Any]))
+      buildSpec.foreach(__v => __obj.updateDynamic("buildSpec")(__v.asInstanceOf[js.Any]))
+      enableAutoBuild.foreach(__v => __obj.updateDynamic("enableAutoBuild")(__v.asInstanceOf[js.Any]))
+      enableBasicAuth.foreach(__v => __obj.updateDynamic("enableBasicAuth")(__v.asInstanceOf[js.Any]))
+      environmentVariables.foreach(__v => __obj.updateDynamic("environmentVariables")(__v.asInstanceOf[js.Any]))
+      framework.foreach(__v => __obj.updateDynamic("framework")(__v.asInstanceOf[js.Any]))
+      stage.foreach(__v => __obj.updateDynamic("stage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoBranchCreationConfig]
     }
   }
@@ -364,7 +366,7 @@ package amplify {
         tags: js.UndefOr[TagMap] = js.undefined,
         thumbnailUrl: js.UndefOr[ThumbnailUrl] = js.undefined
     ): Branch = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "activeJobId"          -> activeJobId.asInstanceOf[js.Any],
         "branchArn"            -> branchArn.asInstanceOf[js.Any],
         "branchName"           -> branchName.asInstanceOf[js.Any],
@@ -383,11 +385,11 @@ package amplify {
         "updateTime"           -> updateTime.asInstanceOf[js.Any]
       )
 
-      associatedResources.foreach(__v => __obj.update("associatedResources", __v.asInstanceOf[js.Any]))
-      basicAuthCredentials.foreach(__v => __obj.update("basicAuthCredentials", __v.asInstanceOf[js.Any]))
-      buildSpec.foreach(__v => __obj.update("buildSpec", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
-      thumbnailUrl.foreach(__v => __obj.update("thumbnailUrl", __v.asInstanceOf[js.Any]))
+      associatedResources.foreach(__v => __obj.updateDynamic("associatedResources")(__v.asInstanceOf[js.Any]))
+      basicAuthCredentials.foreach(__v => __obj.updateDynamic("basicAuthCredentials")(__v.asInstanceOf[js.Any]))
+      buildSpec.foreach(__v => __obj.updateDynamic("buildSpec")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      thumbnailUrl.foreach(__v => __obj.updateDynamic("thumbnailUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Branch]
     }
   }
@@ -436,26 +438,28 @@ package amplify {
         repository: js.UndefOr[Repository] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): CreateAppRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
 
-      accessToken.foreach(__v => __obj.update("accessToken", __v.asInstanceOf[js.Any]))
-      autoBranchCreationConfig.foreach(__v => __obj.update("autoBranchCreationConfig", __v.asInstanceOf[js.Any]))
-      autoBranchCreationPatterns.foreach(__v => __obj.update("autoBranchCreationPatterns", __v.asInstanceOf[js.Any]))
-      basicAuthCredentials.foreach(__v => __obj.update("basicAuthCredentials", __v.asInstanceOf[js.Any]))
-      buildSpec.foreach(__v => __obj.update("buildSpec", __v.asInstanceOf[js.Any]))
-      customRules.foreach(__v => __obj.update("customRules", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      enableAutoBranchCreation.foreach(__v => __obj.update("enableAutoBranchCreation", __v.asInstanceOf[js.Any]))
-      enableBasicAuth.foreach(__v => __obj.update("enableBasicAuth", __v.asInstanceOf[js.Any]))
-      enableBranchAutoBuild.foreach(__v => __obj.update("enableBranchAutoBuild", __v.asInstanceOf[js.Any]))
-      environmentVariables.foreach(__v => __obj.update("environmentVariables", __v.asInstanceOf[js.Any]))
-      iamServiceRoleArn.foreach(__v => __obj.update("iamServiceRoleArn", __v.asInstanceOf[js.Any]))
-      oauthToken.foreach(__v => __obj.update("oauthToken", __v.asInstanceOf[js.Any]))
-      platform.foreach(__v => __obj.update("platform", __v.asInstanceOf[js.Any]))
-      repository.foreach(__v => __obj.update("repository", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      accessToken.foreach(__v => __obj.updateDynamic("accessToken")(__v.asInstanceOf[js.Any]))
+      autoBranchCreationConfig.foreach(__v => __obj.updateDynamic("autoBranchCreationConfig")(__v.asInstanceOf[js.Any]))
+      autoBranchCreationPatterns.foreach(
+        __v => __obj.updateDynamic("autoBranchCreationPatterns")(__v.asInstanceOf[js.Any])
+      )
+      basicAuthCredentials.foreach(__v => __obj.updateDynamic("basicAuthCredentials")(__v.asInstanceOf[js.Any]))
+      buildSpec.foreach(__v => __obj.updateDynamic("buildSpec")(__v.asInstanceOf[js.Any]))
+      customRules.foreach(__v => __obj.updateDynamic("customRules")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      enableAutoBranchCreation.foreach(__v => __obj.updateDynamic("enableAutoBranchCreation")(__v.asInstanceOf[js.Any]))
+      enableBasicAuth.foreach(__v => __obj.updateDynamic("enableBasicAuth")(__v.asInstanceOf[js.Any]))
+      enableBranchAutoBuild.foreach(__v => __obj.updateDynamic("enableBranchAutoBuild")(__v.asInstanceOf[js.Any]))
+      environmentVariables.foreach(__v => __obj.updateDynamic("environmentVariables")(__v.asInstanceOf[js.Any]))
+      iamServiceRoleArn.foreach(__v => __obj.updateDynamic("iamServiceRoleArn")(__v.asInstanceOf[js.Any]))
+      oauthToken.foreach(__v => __obj.updateDynamic("oauthToken")(__v.asInstanceOf[js.Any]))
+      platform.foreach(__v => __obj.updateDynamic("platform")(__v.asInstanceOf[js.Any]))
+      repository.foreach(__v => __obj.updateDynamic("repository")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAppRequest]
     }
   }
@@ -469,7 +473,7 @@ package amplify {
     def apply(
         app: App
     ): CreateAppResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "app" -> app.asInstanceOf[js.Any]
       )
 
@@ -515,23 +519,23 @@ package amplify {
         tags: js.UndefOr[TagMap] = js.undefined,
         ttl: js.UndefOr[TTL] = js.undefined
     ): CreateBranchRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "appId"      -> appId.asInstanceOf[js.Any],
         "branchName" -> branchName.asInstanceOf[js.Any]
       )
 
-      basicAuthCredentials.foreach(__v => __obj.update("basicAuthCredentials", __v.asInstanceOf[js.Any]))
-      buildSpec.foreach(__v => __obj.update("buildSpec", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      displayName.foreach(__v => __obj.update("displayName", __v.asInstanceOf[js.Any]))
-      enableAutoBuild.foreach(__v => __obj.update("enableAutoBuild", __v.asInstanceOf[js.Any]))
-      enableBasicAuth.foreach(__v => __obj.update("enableBasicAuth", __v.asInstanceOf[js.Any]))
-      enableNotification.foreach(__v => __obj.update("enableNotification", __v.asInstanceOf[js.Any]))
-      environmentVariables.foreach(__v => __obj.update("environmentVariables", __v.asInstanceOf[js.Any]))
-      framework.foreach(__v => __obj.update("framework", __v.asInstanceOf[js.Any]))
-      stage.foreach(__v => __obj.update("stage", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
-      ttl.foreach(__v => __obj.update("ttl", __v.asInstanceOf[js.Any]))
+      basicAuthCredentials.foreach(__v => __obj.updateDynamic("basicAuthCredentials")(__v.asInstanceOf[js.Any]))
+      buildSpec.foreach(__v => __obj.updateDynamic("buildSpec")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      displayName.foreach(__v => __obj.updateDynamic("displayName")(__v.asInstanceOf[js.Any]))
+      enableAutoBuild.foreach(__v => __obj.updateDynamic("enableAutoBuild")(__v.asInstanceOf[js.Any]))
+      enableBasicAuth.foreach(__v => __obj.updateDynamic("enableBasicAuth")(__v.asInstanceOf[js.Any]))
+      enableNotification.foreach(__v => __obj.updateDynamic("enableNotification")(__v.asInstanceOf[js.Any]))
+      environmentVariables.foreach(__v => __obj.updateDynamic("environmentVariables")(__v.asInstanceOf[js.Any]))
+      framework.foreach(__v => __obj.updateDynamic("framework")(__v.asInstanceOf[js.Any]))
+      stage.foreach(__v => __obj.updateDynamic("stage")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      ttl.foreach(__v => __obj.updateDynamic("ttl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateBranchRequest]
     }
   }
@@ -548,7 +552,7 @@ package amplify {
     def apply(
         branch: Branch
     ): CreateBranchResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "branch" -> branch.asInstanceOf[js.Any]
       )
 
@@ -572,12 +576,12 @@ package amplify {
         branchName: BranchName,
         fileMap: js.UndefOr[FileMap] = js.undefined
     ): CreateDeploymentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "appId"      -> appId.asInstanceOf[js.Any],
         "branchName" -> branchName.asInstanceOf[js.Any]
       )
 
-      fileMap.foreach(__v => __obj.update("fileMap", __v.asInstanceOf[js.Any]))
+      fileMap.foreach(__v => __obj.updateDynamic("fileMap")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDeploymentRequest]
     }
   }
@@ -598,12 +602,12 @@ package amplify {
         zipUploadUrl: UploadUrl,
         jobId: js.UndefOr[JobId] = js.undefined
     ): CreateDeploymentResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "fileUploadUrls" -> fileUploadUrls.asInstanceOf[js.Any],
         "zipUploadUrl"   -> zipUploadUrl.asInstanceOf[js.Any]
       )
 
-      jobId.foreach(__v => __obj.update("jobId", __v.asInstanceOf[js.Any]))
+      jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDeploymentResult]
     }
   }
@@ -626,13 +630,13 @@ package amplify {
         subDomainSettings: SubDomainSettings,
         enableAutoSubDomain: js.UndefOr[EnableAutoSubDomain] = js.undefined
     ): CreateDomainAssociationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "appId"             -> appId.asInstanceOf[js.Any],
         "domainName"        -> domainName.asInstanceOf[js.Any],
         "subDomainSettings" -> subDomainSettings.asInstanceOf[js.Any]
       )
 
-      enableAutoSubDomain.foreach(__v => __obj.update("enableAutoSubDomain", __v.asInstanceOf[js.Any]))
+      enableAutoSubDomain.foreach(__v => __obj.updateDynamic("enableAutoSubDomain")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDomainAssociationRequest]
     }
   }
@@ -649,7 +653,7 @@ package amplify {
     def apply(
         domainAssociation: DomainAssociation
     ): CreateDomainAssociationResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domainAssociation" -> domainAssociation.asInstanceOf[js.Any]
       )
 
@@ -673,12 +677,12 @@ package amplify {
         branchName: BranchName,
         description: js.UndefOr[Description] = js.undefined
     ): CreateWebhookRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "appId"      -> appId.asInstanceOf[js.Any],
         "branchName" -> branchName.asInstanceOf[js.Any]
       )
 
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateWebhookRequest]
     }
   }
@@ -695,7 +699,7 @@ package amplify {
     def apply(
         webhook: Webhook
     ): CreateWebhookResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "webhook" -> webhook.asInstanceOf[js.Any]
       )
 
@@ -721,13 +725,13 @@ package amplify {
         condition: js.UndefOr[Condition] = js.undefined,
         status: js.UndefOr[Status] = js.undefined
     ): CustomRule = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "source" -> source.asInstanceOf[js.Any],
         "target" -> target.asInstanceOf[js.Any]
       )
 
-      condition.foreach(__v => __obj.update("condition", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      condition.foreach(__v => __obj.updateDynamic("condition")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CustomRule]
     }
   }
@@ -744,7 +748,7 @@ package amplify {
     def apply(
         appId: AppId
     ): DeleteAppRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "appId" -> appId.asInstanceOf[js.Any]
       )
 
@@ -764,7 +768,7 @@ package amplify {
     def apply(
         app: App
     ): DeleteAppResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "app" -> app.asInstanceOf[js.Any]
       )
 
@@ -786,7 +790,7 @@ package amplify {
         appId: AppId,
         branchName: BranchName
     ): DeleteBranchRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "appId"      -> appId.asInstanceOf[js.Any],
         "branchName" -> branchName.asInstanceOf[js.Any]
       )
@@ -807,7 +811,7 @@ package amplify {
     def apply(
         branch: Branch
     ): DeleteBranchResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "branch" -> branch.asInstanceOf[js.Any]
       )
 
@@ -829,7 +833,7 @@ package amplify {
         appId: AppId,
         domainName: DomainName
     ): DeleteDomainAssociationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "appId"      -> appId.asInstanceOf[js.Any],
         "domainName" -> domainName.asInstanceOf[js.Any]
       )
@@ -847,7 +851,7 @@ package amplify {
     def apply(
         domainAssociation: DomainAssociation
     ): DeleteDomainAssociationResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domainAssociation" -> domainAssociation.asInstanceOf[js.Any]
       )
 
@@ -871,7 +875,7 @@ package amplify {
         branchName: BranchName,
         jobId: JobId
     ): DeleteJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "appId"      -> appId.asInstanceOf[js.Any],
         "branchName" -> branchName.asInstanceOf[js.Any],
         "jobId"      -> jobId.asInstanceOf[js.Any]
@@ -893,7 +897,7 @@ package amplify {
     def apply(
         jobSummary: JobSummary
     ): DeleteJobResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobSummary" -> jobSummary.asInstanceOf[js.Any]
       )
 
@@ -913,7 +917,7 @@ package amplify {
     def apply(
         webhookId: WebhookId
     ): DeleteWebhookRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "webhookId" -> webhookId.asInstanceOf[js.Any]
       )
 
@@ -933,7 +937,7 @@ package amplify {
     def apply(
         webhook: Webhook
     ): DeleteWebhookResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "webhook" -> webhook.asInstanceOf[js.Any]
       )
 
@@ -965,7 +969,7 @@ package amplify {
         subDomains: SubDomains,
         certificateVerificationDNSRecord: js.UndefOr[CertificateVerificationDNSRecord] = js.undefined
     ): DomainAssociation = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domainAssociationArn" -> domainAssociationArn.asInstanceOf[js.Any],
         "domainName"           -> domainName.asInstanceOf[js.Any],
         "domainStatus"         -> domainStatus.asInstanceOf[js.Any],
@@ -975,7 +979,7 @@ package amplify {
       )
 
       certificateVerificationDNSRecord.foreach(
-        __v => __obj.update("certificateVerificationDNSRecord", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("certificateVerificationDNSRecord")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DomainAssociation]
     }
@@ -1017,7 +1021,7 @@ package amplify {
     def apply(
         appId: AppId
     ): GetAppRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "appId" -> appId.asInstanceOf[js.Any]
       )
 
@@ -1034,7 +1038,7 @@ package amplify {
     def apply(
         app: App
     ): GetAppResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "app" -> app.asInstanceOf[js.Any]
       )
 
@@ -1056,7 +1060,7 @@ package amplify {
         appId: AppId,
         branchName: BranchName
     ): GetBranchRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "appId"      -> appId.asInstanceOf[js.Any],
         "branchName" -> branchName.asInstanceOf[js.Any]
       )
@@ -1074,7 +1078,7 @@ package amplify {
     def apply(
         branch: Branch
     ): GetBranchResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "branch" -> branch.asInstanceOf[js.Any]
       )
 
@@ -1096,7 +1100,7 @@ package amplify {
         appId: AppId,
         domainName: DomainName
     ): GetDomainAssociationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "appId"      -> appId.asInstanceOf[js.Any],
         "domainName" -> domainName.asInstanceOf[js.Any]
       )
@@ -1117,7 +1121,7 @@ package amplify {
     def apply(
         domainAssociation: DomainAssociation
     ): GetDomainAssociationResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domainAssociation" -> domainAssociation.asInstanceOf[js.Any]
       )
 
@@ -1141,7 +1145,7 @@ package amplify {
         branchName: BranchName,
         jobId: JobId
     ): GetJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "appId"      -> appId.asInstanceOf[js.Any],
         "branchName" -> branchName.asInstanceOf[js.Any],
         "jobId"      -> jobId.asInstanceOf[js.Any]
@@ -1160,7 +1164,7 @@ package amplify {
     def apply(
         job: Job
     ): GetJobResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "job" -> job.asInstanceOf[js.Any]
       )
 
@@ -1180,7 +1184,7 @@ package amplify {
     def apply(
         webhookId: WebhookId
     ): GetWebhookRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "webhookId" -> webhookId.asInstanceOf[js.Any]
       )
 
@@ -1200,7 +1204,7 @@ package amplify {
     def apply(
         webhook: Webhook
     ): GetWebhookResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "webhook" -> webhook.asInstanceOf[js.Any]
       )
 
@@ -1222,7 +1226,7 @@ package amplify {
         steps: Steps,
         summary: JobSummary
     ): Job = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "steps"   -> steps.asInstanceOf[js.Any],
         "summary" -> summary.asInstanceOf[js.Any]
       )
@@ -1271,7 +1275,7 @@ package amplify {
         status: JobStatus,
         endTime: js.UndefOr[EndTime] = js.undefined
     ): JobSummary = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "commitId"      -> commitId.asInstanceOf[js.Any],
         "commitMessage" -> commitMessage.asInstanceOf[js.Any],
         "commitTime"    -> commitTime.asInstanceOf[js.Any],
@@ -1282,7 +1286,7 @@ package amplify {
         "status"        -> status.asInstanceOf[js.Any]
       )
 
-      endTime.foreach(__v => __obj.update("endTime", __v.asInstanceOf[js.Any]))
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobSummary]
     }
   }
@@ -1310,9 +1314,9 @@ package amplify {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListAppsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAppsRequest]
     }
   }
@@ -1331,11 +1335,11 @@ package amplify {
         apps: Apps,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListAppsResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "apps" -> apps.asInstanceOf[js.Any]
       )
 
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAppsResult]
     }
   }
@@ -1356,12 +1360,12 @@ package amplify {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListBranchesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "appId" -> appId.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBranchesRequest]
     }
   }
@@ -1380,11 +1384,11 @@ package amplify {
         branches: Branches,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListBranchesResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "branches" -> branches.asInstanceOf[js.Any]
       )
 
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBranchesResult]
     }
   }
@@ -1405,12 +1409,12 @@ package amplify {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDomainAssociationsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "appId" -> appId.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDomainAssociationsRequest]
     }
   }
@@ -1429,11 +1433,11 @@ package amplify {
         domainAssociations: DomainAssociations,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDomainAssociationsResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domainAssociations" -> domainAssociations.asInstanceOf[js.Any]
       )
 
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDomainAssociationsResult]
     }
   }
@@ -1456,13 +1460,13 @@ package amplify {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListJobsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "appId"      -> appId.asInstanceOf[js.Any],
         "branchName" -> branchName.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListJobsRequest]
     }
   }
@@ -1481,11 +1485,11 @@ package amplify {
         jobSummaries: JobSummaries,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListJobsResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobSummaries" -> jobSummaries.asInstanceOf[js.Any]
       )
 
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListJobsResult]
     }
   }
@@ -1502,7 +1506,7 @@ package amplify {
     def apply(
         resourceArn: ResourceArn
     ): ListTagsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
 
@@ -1522,8 +1526,8 @@ package amplify {
     def apply(
         tags: js.UndefOr[TagMap] = js.undefined
     ): ListTagsForResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
@@ -1544,12 +1548,12 @@ package amplify {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListWebhooksRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "appId" -> appId.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListWebhooksRequest]
     }
   }
@@ -1568,11 +1572,11 @@ package amplify {
         webhooks: Webhooks,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListWebhooksResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "webhooks" -> webhooks.asInstanceOf[js.Any]
       )
 
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListWebhooksResult]
     }
   }
@@ -1601,11 +1605,11 @@ package amplify {
         status: js.UndefOr[Status] = js.undefined,
         thumbnailUrl: js.UndefOr[ThumbnailUrl] = js.undefined
     ): ProductionBranch = {
-      val __obj = js.Dictionary.empty[js.Any]
-      branchName.foreach(__v => __obj.update("branchName", __v.asInstanceOf[js.Any]))
-      lastDeployTime.foreach(__v => __obj.update("lastDeployTime", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      thumbnailUrl.foreach(__v => __obj.update("thumbnailUrl", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      branchName.foreach(__v => __obj.updateDynamic("branchName")(__v.asInstanceOf[js.Any]))
+      lastDeployTime.foreach(__v => __obj.updateDynamic("lastDeployTime")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      thumbnailUrl.foreach(__v => __obj.updateDynamic("thumbnailUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProductionBranch]
     }
   }
@@ -1637,13 +1641,13 @@ package amplify {
         jobId: js.UndefOr[JobId] = js.undefined,
         sourceUrl: js.UndefOr[SourceUrl] = js.undefined
     ): StartDeploymentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "appId"      -> appId.asInstanceOf[js.Any],
         "branchName" -> branchName.asInstanceOf[js.Any]
       )
 
-      jobId.foreach(__v => __obj.update("jobId", __v.asInstanceOf[js.Any]))
-      sourceUrl.foreach(__v => __obj.update("sourceUrl", __v.asInstanceOf[js.Any]))
+      jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
+      sourceUrl.foreach(__v => __obj.updateDynamic("sourceUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartDeploymentRequest]
     }
   }
@@ -1660,7 +1664,7 @@ package amplify {
     def apply(
         jobSummary: JobSummary
     ): StartDeploymentResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobSummary" -> jobSummary.asInstanceOf[js.Any]
       )
 
@@ -1694,17 +1698,17 @@ package amplify {
         jobId: js.UndefOr[JobId] = js.undefined,
         jobReason: js.UndefOr[JobReason] = js.undefined
     ): StartJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "appId"      -> appId.asInstanceOf[js.Any],
         "branchName" -> branchName.asInstanceOf[js.Any],
         "jobType"    -> jobType.asInstanceOf[js.Any]
       )
 
-      commitId.foreach(__v => __obj.update("commitId", __v.asInstanceOf[js.Any]))
-      commitMessage.foreach(__v => __obj.update("commitMessage", __v.asInstanceOf[js.Any]))
-      commitTime.foreach(__v => __obj.update("commitTime", __v.asInstanceOf[js.Any]))
-      jobId.foreach(__v => __obj.update("jobId", __v.asInstanceOf[js.Any]))
-      jobReason.foreach(__v => __obj.update("jobReason", __v.asInstanceOf[js.Any]))
+      commitId.foreach(__v => __obj.updateDynamic("commitId")(__v.asInstanceOf[js.Any]))
+      commitMessage.foreach(__v => __obj.updateDynamic("commitMessage")(__v.asInstanceOf[js.Any]))
+      commitTime.foreach(__v => __obj.updateDynamic("commitTime")(__v.asInstanceOf[js.Any]))
+      jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
+      jobReason.foreach(__v => __obj.updateDynamic("jobReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartJobRequest]
     }
   }
@@ -1721,7 +1725,7 @@ package amplify {
     def apply(
         jobSummary: JobSummary
     ): StartJobResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobSummary" -> jobSummary.asInstanceOf[js.Any]
       )
 
@@ -1757,18 +1761,18 @@ package amplify {
         screenshots: js.UndefOr[Screenshots] = js.undefined,
         statusReason: js.UndefOr[StatusReason] = js.undefined
     ): Step = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "endTime"   -> endTime.asInstanceOf[js.Any],
         "startTime" -> startTime.asInstanceOf[js.Any],
         "status"    -> status.asInstanceOf[js.Any],
         "stepName"  -> stepName.asInstanceOf[js.Any]
       )
 
-      artifactsUrl.foreach(__v => __obj.update("artifactsUrl", __v.asInstanceOf[js.Any]))
-      context.foreach(__v => __obj.update("context", __v.asInstanceOf[js.Any]))
-      logUrl.foreach(__v => __obj.update("logUrl", __v.asInstanceOf[js.Any]))
-      screenshots.foreach(__v => __obj.update("screenshots", __v.asInstanceOf[js.Any]))
-      statusReason.foreach(__v => __obj.update("statusReason", __v.asInstanceOf[js.Any]))
+      artifactsUrl.foreach(__v => __obj.updateDynamic("artifactsUrl")(__v.asInstanceOf[js.Any]))
+      context.foreach(__v => __obj.updateDynamic("context")(__v.asInstanceOf[js.Any]))
+      logUrl.foreach(__v => __obj.updateDynamic("logUrl")(__v.asInstanceOf[js.Any]))
+      screenshots.foreach(__v => __obj.updateDynamic("screenshots")(__v.asInstanceOf[js.Any]))
+      statusReason.foreach(__v => __obj.updateDynamic("statusReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Step]
     }
   }
@@ -1789,7 +1793,7 @@ package amplify {
         branchName: BranchName,
         jobId: JobId
     ): StopJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "appId"      -> appId.asInstanceOf[js.Any],
         "branchName" -> branchName.asInstanceOf[js.Any],
         "jobId"      -> jobId.asInstanceOf[js.Any]
@@ -1811,7 +1815,7 @@ package amplify {
     def apply(
         jobSummary: JobSummary
     ): StopJobResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobSummary" -> jobSummary.asInstanceOf[js.Any]
       )
 
@@ -1835,7 +1839,7 @@ package amplify {
         subDomainSetting: SubDomainSetting,
         verified: Verified
     ): SubDomain = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "dnsRecord"        -> dnsRecord.asInstanceOf[js.Any],
         "subDomainSetting" -> subDomainSetting.asInstanceOf[js.Any],
         "verified"         -> verified.asInstanceOf[js.Any]
@@ -1859,7 +1863,7 @@ package amplify {
         branchName: BranchName,
         prefix: DomainPrefix
     ): SubDomainSetting = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "branchName" -> branchName.asInstanceOf[js.Any],
         "prefix"     -> prefix.asInstanceOf[js.Any]
       )
@@ -1882,7 +1886,7 @@ package amplify {
         resourceArn: ResourceArn,
         tags: TagMap
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags"        -> tags.asInstanceOf[js.Any]
       )
@@ -1900,7 +1904,7 @@ package amplify {
   object TagResourceResponse {
     def apply(
         ): TagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -1920,7 +1924,7 @@ package amplify {
         resourceArn: ResourceArn,
         tagKeys: TagKeyList
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
       )
@@ -1938,7 +1942,7 @@ package amplify {
   object UntagResourceResponse {
     def apply(
         ): UntagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -1982,23 +1986,25 @@ package amplify {
         name: js.UndefOr[Name] = js.undefined,
         platform: js.UndefOr[Platform] = js.undefined
     ): UpdateAppRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "appId" -> appId.asInstanceOf[js.Any]
       )
 
-      autoBranchCreationConfig.foreach(__v => __obj.update("autoBranchCreationConfig", __v.asInstanceOf[js.Any]))
-      autoBranchCreationPatterns.foreach(__v => __obj.update("autoBranchCreationPatterns", __v.asInstanceOf[js.Any]))
-      basicAuthCredentials.foreach(__v => __obj.update("basicAuthCredentials", __v.asInstanceOf[js.Any]))
-      buildSpec.foreach(__v => __obj.update("buildSpec", __v.asInstanceOf[js.Any]))
-      customRules.foreach(__v => __obj.update("customRules", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      enableAutoBranchCreation.foreach(__v => __obj.update("enableAutoBranchCreation", __v.asInstanceOf[js.Any]))
-      enableBasicAuth.foreach(__v => __obj.update("enableBasicAuth", __v.asInstanceOf[js.Any]))
-      enableBranchAutoBuild.foreach(__v => __obj.update("enableBranchAutoBuild", __v.asInstanceOf[js.Any]))
-      environmentVariables.foreach(__v => __obj.update("environmentVariables", __v.asInstanceOf[js.Any]))
-      iamServiceRoleArn.foreach(__v => __obj.update("iamServiceRoleArn", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      platform.foreach(__v => __obj.update("platform", __v.asInstanceOf[js.Any]))
+      autoBranchCreationConfig.foreach(__v => __obj.updateDynamic("autoBranchCreationConfig")(__v.asInstanceOf[js.Any]))
+      autoBranchCreationPatterns.foreach(
+        __v => __obj.updateDynamic("autoBranchCreationPatterns")(__v.asInstanceOf[js.Any])
+      )
+      basicAuthCredentials.foreach(__v => __obj.updateDynamic("basicAuthCredentials")(__v.asInstanceOf[js.Any]))
+      buildSpec.foreach(__v => __obj.updateDynamic("buildSpec")(__v.asInstanceOf[js.Any]))
+      customRules.foreach(__v => __obj.updateDynamic("customRules")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      enableAutoBranchCreation.foreach(__v => __obj.updateDynamic("enableAutoBranchCreation")(__v.asInstanceOf[js.Any]))
+      enableBasicAuth.foreach(__v => __obj.updateDynamic("enableBasicAuth")(__v.asInstanceOf[js.Any]))
+      enableBranchAutoBuild.foreach(__v => __obj.updateDynamic("enableBranchAutoBuild")(__v.asInstanceOf[js.Any]))
+      environmentVariables.foreach(__v => __obj.updateDynamic("environmentVariables")(__v.asInstanceOf[js.Any]))
+      iamServiceRoleArn.foreach(__v => __obj.updateDynamic("iamServiceRoleArn")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      platform.foreach(__v => __obj.updateDynamic("platform")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAppRequest]
     }
   }
@@ -2015,7 +2021,7 @@ package amplify {
     def apply(
         app: App
     ): UpdateAppResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "app" -> app.asInstanceOf[js.Any]
       )
 
@@ -2059,22 +2065,22 @@ package amplify {
         stage: js.UndefOr[Stage] = js.undefined,
         ttl: js.UndefOr[TTL] = js.undefined
     ): UpdateBranchRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "appId"      -> appId.asInstanceOf[js.Any],
         "branchName" -> branchName.asInstanceOf[js.Any]
       )
 
-      basicAuthCredentials.foreach(__v => __obj.update("basicAuthCredentials", __v.asInstanceOf[js.Any]))
-      buildSpec.foreach(__v => __obj.update("buildSpec", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      displayName.foreach(__v => __obj.update("displayName", __v.asInstanceOf[js.Any]))
-      enableAutoBuild.foreach(__v => __obj.update("enableAutoBuild", __v.asInstanceOf[js.Any]))
-      enableBasicAuth.foreach(__v => __obj.update("enableBasicAuth", __v.asInstanceOf[js.Any]))
-      enableNotification.foreach(__v => __obj.update("enableNotification", __v.asInstanceOf[js.Any]))
-      environmentVariables.foreach(__v => __obj.update("environmentVariables", __v.asInstanceOf[js.Any]))
-      framework.foreach(__v => __obj.update("framework", __v.asInstanceOf[js.Any]))
-      stage.foreach(__v => __obj.update("stage", __v.asInstanceOf[js.Any]))
-      ttl.foreach(__v => __obj.update("ttl", __v.asInstanceOf[js.Any]))
+      basicAuthCredentials.foreach(__v => __obj.updateDynamic("basicAuthCredentials")(__v.asInstanceOf[js.Any]))
+      buildSpec.foreach(__v => __obj.updateDynamic("buildSpec")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      displayName.foreach(__v => __obj.updateDynamic("displayName")(__v.asInstanceOf[js.Any]))
+      enableAutoBuild.foreach(__v => __obj.updateDynamic("enableAutoBuild")(__v.asInstanceOf[js.Any]))
+      enableBasicAuth.foreach(__v => __obj.updateDynamic("enableBasicAuth")(__v.asInstanceOf[js.Any]))
+      enableNotification.foreach(__v => __obj.updateDynamic("enableNotification")(__v.asInstanceOf[js.Any]))
+      environmentVariables.foreach(__v => __obj.updateDynamic("environmentVariables")(__v.asInstanceOf[js.Any]))
+      framework.foreach(__v => __obj.updateDynamic("framework")(__v.asInstanceOf[js.Any]))
+      stage.foreach(__v => __obj.updateDynamic("stage")(__v.asInstanceOf[js.Any]))
+      ttl.foreach(__v => __obj.updateDynamic("ttl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateBranchRequest]
     }
   }
@@ -2091,7 +2097,7 @@ package amplify {
     def apply(
         branch: Branch
     ): UpdateBranchResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "branch" -> branch.asInstanceOf[js.Any]
       )
 
@@ -2117,13 +2123,13 @@ package amplify {
         subDomainSettings: SubDomainSettings,
         enableAutoSubDomain: js.UndefOr[EnableAutoSubDomain] = js.undefined
     ): UpdateDomainAssociationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "appId"             -> appId.asInstanceOf[js.Any],
         "domainName"        -> domainName.asInstanceOf[js.Any],
         "subDomainSettings" -> subDomainSettings.asInstanceOf[js.Any]
       )
 
-      enableAutoSubDomain.foreach(__v => __obj.update("enableAutoSubDomain", __v.asInstanceOf[js.Any]))
+      enableAutoSubDomain.foreach(__v => __obj.updateDynamic("enableAutoSubDomain")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDomainAssociationRequest]
     }
   }
@@ -2140,7 +2146,7 @@ package amplify {
     def apply(
         domainAssociation: DomainAssociation
     ): UpdateDomainAssociationResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domainAssociation" -> domainAssociation.asInstanceOf[js.Any]
       )
 
@@ -2164,12 +2170,12 @@ package amplify {
         branchName: js.UndefOr[BranchName] = js.undefined,
         description: js.UndefOr[Description] = js.undefined
     ): UpdateWebhookRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "webhookId" -> webhookId.asInstanceOf[js.Any]
       )
 
-      branchName.foreach(__v => __obj.update("branchName", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      branchName.foreach(__v => __obj.updateDynamic("branchName")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateWebhookRequest]
     }
   }
@@ -2186,7 +2192,7 @@ package amplify {
     def apply(
         webhook: Webhook
     ): UpdateWebhookResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "webhook" -> webhook.asInstanceOf[js.Any]
       )
 
@@ -2218,7 +2224,7 @@ package amplify {
         webhookId: WebhookId,
         webhookUrl: WebhookUrl
     ): Webhook = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "branchName"  -> branchName.asInstanceOf[js.Any],
         "createTime"  -> createTime.asInstanceOf[js.Any],
         "description" -> description.asInstanceOf[js.Any],

@@ -663,13 +663,13 @@ package glue {
         SecurityConfiguration: js.UndefOr[NameString] = js.undefined,
         Timeout: js.UndefOr[Timeout] = js.undefined
     ): Action = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arguments.foreach(__v => __obj.update("Arguments", __v.asInstanceOf[js.Any]))
-      CrawlerName.foreach(__v => __obj.update("CrawlerName", __v.asInstanceOf[js.Any]))
-      JobName.foreach(__v => __obj.update("JobName", __v.asInstanceOf[js.Any]))
-      NotificationProperty.foreach(__v => __obj.update("NotificationProperty", __v.asInstanceOf[js.Any]))
-      SecurityConfiguration.foreach(__v => __obj.update("SecurityConfiguration", __v.asInstanceOf[js.Any]))
-      Timeout.foreach(__v => __obj.update("Timeout", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arguments.foreach(__v => __obj.updateDynamic("Arguments")(__v.asInstanceOf[js.Any]))
+      CrawlerName.foreach(__v => __obj.updateDynamic("CrawlerName")(__v.asInstanceOf[js.Any]))
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      NotificationProperty.foreach(__v => __obj.updateDynamic("NotificationProperty")(__v.asInstanceOf[js.Any]))
+      SecurityConfiguration.foreach(__v => __obj.updateDynamic("SecurityConfiguration")(__v.asInstanceOf[js.Any]))
+      Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Action]
     }
   }
@@ -689,13 +689,13 @@ package glue {
         TableName: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): BatchCreatePartitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatabaseName"       -> DatabaseName.asInstanceOf[js.Any],
         "PartitionInputList" -> PartitionInputList.asInstanceOf[js.Any],
         "TableName"          -> TableName.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchCreatePartitionRequest]
     }
   }
@@ -709,8 +709,8 @@ package glue {
     def apply(
         Errors: js.UndefOr[PartitionErrors] = js.undefined
     ): BatchCreatePartitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Errors.foreach(__v => __obj.update("Errors", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchCreatePartitionResponse]
     }
   }
@@ -726,11 +726,11 @@ package glue {
         ConnectionNameList: DeleteConnectionNameList,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): BatchDeleteConnectionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConnectionNameList" -> ConnectionNameList.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDeleteConnectionRequest]
     }
   }
@@ -746,9 +746,9 @@ package glue {
         Errors: js.UndefOr[ErrorByName] = js.undefined,
         Succeeded: js.UndefOr[NameStringList] = js.undefined
     ): BatchDeleteConnectionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Errors.foreach(__v => __obj.update("Errors", __v.asInstanceOf[js.Any]))
-      Succeeded.foreach(__v => __obj.update("Succeeded", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
+      Succeeded.foreach(__v => __obj.updateDynamic("Succeeded")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDeleteConnectionResponse]
     }
   }
@@ -768,13 +768,13 @@ package glue {
         TableName: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): BatchDeletePartitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatabaseName"       -> DatabaseName.asInstanceOf[js.Any],
         "PartitionsToDelete" -> PartitionsToDelete.asInstanceOf[js.Any],
         "TableName"          -> TableName.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDeletePartitionRequest]
     }
   }
@@ -788,8 +788,8 @@ package glue {
     def apply(
         Errors: js.UndefOr[PartitionErrors] = js.undefined
     ): BatchDeletePartitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Errors.foreach(__v => __obj.update("Errors", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDeletePartitionResponse]
     }
   }
@@ -807,12 +807,12 @@ package glue {
         TablesToDelete: BatchDeleteTableNameList,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): BatchDeleteTableRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatabaseName"   -> DatabaseName.asInstanceOf[js.Any],
         "TablesToDelete" -> TablesToDelete.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDeleteTableRequest]
     }
   }
@@ -826,8 +826,8 @@ package glue {
     def apply(
         Errors: js.UndefOr[TableErrors] = js.undefined
     ): BatchDeleteTableResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Errors.foreach(__v => __obj.update("Errors", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDeleteTableResponse]
     }
   }
@@ -847,13 +847,13 @@ package glue {
         VersionIds: BatchDeleteTableVersionList,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): BatchDeleteTableVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
         "TableName"    -> TableName.asInstanceOf[js.Any],
         "VersionIds"   -> VersionIds.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDeleteTableVersionRequest]
     }
   }
@@ -867,8 +867,8 @@ package glue {
     def apply(
         Errors: js.UndefOr[TableVersionErrors] = js.undefined
     ): BatchDeleteTableVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Errors.foreach(__v => __obj.update("Errors", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDeleteTableVersionResponse]
     }
   }
@@ -882,7 +882,7 @@ package glue {
     def apply(
         CrawlerNames: CrawlerNameList
     ): BatchGetCrawlersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CrawlerNames" -> CrawlerNames.asInstanceOf[js.Any]
       )
 
@@ -901,9 +901,9 @@ package glue {
         Crawlers: js.UndefOr[CrawlerList] = js.undefined,
         CrawlersNotFound: js.UndefOr[CrawlerNameList] = js.undefined
     ): BatchGetCrawlersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Crawlers.foreach(__v => __obj.update("Crawlers", __v.asInstanceOf[js.Any]))
-      CrawlersNotFound.foreach(__v => __obj.update("CrawlersNotFound", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Crawlers.foreach(__v => __obj.updateDynamic("Crawlers")(__v.asInstanceOf[js.Any]))
+      CrawlersNotFound.foreach(__v => __obj.updateDynamic("CrawlersNotFound")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetCrawlersResponse]
     }
   }
@@ -917,7 +917,7 @@ package glue {
     def apply(
         DevEndpointNames: DevEndpointNames
     ): BatchGetDevEndpointsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DevEndpointNames" -> DevEndpointNames.asInstanceOf[js.Any]
       )
 
@@ -936,9 +936,9 @@ package glue {
         DevEndpoints: js.UndefOr[DevEndpointList] = js.undefined,
         DevEndpointsNotFound: js.UndefOr[DevEndpointNames] = js.undefined
     ): BatchGetDevEndpointsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DevEndpoints.foreach(__v => __obj.update("DevEndpoints", __v.asInstanceOf[js.Any]))
-      DevEndpointsNotFound.foreach(__v => __obj.update("DevEndpointsNotFound", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DevEndpoints.foreach(__v => __obj.updateDynamic("DevEndpoints")(__v.asInstanceOf[js.Any]))
+      DevEndpointsNotFound.foreach(__v => __obj.updateDynamic("DevEndpointsNotFound")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetDevEndpointsResponse]
     }
   }
@@ -952,7 +952,7 @@ package glue {
     def apply(
         JobNames: JobNameList
     ): BatchGetJobsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobNames" -> JobNames.asInstanceOf[js.Any]
       )
 
@@ -971,9 +971,9 @@ package glue {
         Jobs: js.UndefOr[JobList] = js.undefined,
         JobsNotFound: js.UndefOr[JobNameList] = js.undefined
     ): BatchGetJobsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Jobs.foreach(__v => __obj.update("Jobs", __v.asInstanceOf[js.Any]))
-      JobsNotFound.foreach(__v => __obj.update("JobsNotFound", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Jobs.foreach(__v => __obj.updateDynamic("Jobs")(__v.asInstanceOf[js.Any]))
+      JobsNotFound.foreach(__v => __obj.updateDynamic("JobsNotFound")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetJobsResponse]
     }
   }
@@ -993,13 +993,13 @@ package glue {
         TableName: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): BatchGetPartitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatabaseName"    -> DatabaseName.asInstanceOf[js.Any],
         "PartitionsToGet" -> PartitionsToGet.asInstanceOf[js.Any],
         "TableName"       -> TableName.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetPartitionRequest]
     }
   }
@@ -1015,9 +1015,9 @@ package glue {
         Partitions: js.UndefOr[PartitionList] = js.undefined,
         UnprocessedKeys: js.UndefOr[BatchGetPartitionValueList] = js.undefined
     ): BatchGetPartitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Partitions.foreach(__v => __obj.update("Partitions", __v.asInstanceOf[js.Any]))
-      UnprocessedKeys.foreach(__v => __obj.update("UnprocessedKeys", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Partitions.foreach(__v => __obj.updateDynamic("Partitions")(__v.asInstanceOf[js.Any]))
+      UnprocessedKeys.foreach(__v => __obj.updateDynamic("UnprocessedKeys")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetPartitionResponse]
     }
   }
@@ -1031,7 +1031,7 @@ package glue {
     def apply(
         TriggerNames: TriggerNameList
     ): BatchGetTriggersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TriggerNames" -> TriggerNames.asInstanceOf[js.Any]
       )
 
@@ -1050,9 +1050,9 @@ package glue {
         Triggers: js.UndefOr[TriggerList] = js.undefined,
         TriggersNotFound: js.UndefOr[TriggerNameList] = js.undefined
     ): BatchGetTriggersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Triggers.foreach(__v => __obj.update("Triggers", __v.asInstanceOf[js.Any]))
-      TriggersNotFound.foreach(__v => __obj.update("TriggersNotFound", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Triggers.foreach(__v => __obj.updateDynamic("Triggers")(__v.asInstanceOf[js.Any]))
+      TriggersNotFound.foreach(__v => __obj.updateDynamic("TriggersNotFound")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetTriggersResponse]
     }
   }
@@ -1068,11 +1068,11 @@ package glue {
         Names: WorkflowNames,
         IncludeGraph: js.UndefOr[NullableBoolean] = js.undefined
     ): BatchGetWorkflowsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Names" -> Names.asInstanceOf[js.Any]
       )
 
-      IncludeGraph.foreach(__v => __obj.update("IncludeGraph", __v.asInstanceOf[js.Any]))
+      IncludeGraph.foreach(__v => __obj.updateDynamic("IncludeGraph")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetWorkflowsRequest]
     }
   }
@@ -1088,9 +1088,9 @@ package glue {
         MissingWorkflows: js.UndefOr[WorkflowNames] = js.undefined,
         Workflows: js.UndefOr[Workflows] = js.undefined
     ): BatchGetWorkflowsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MissingWorkflows.foreach(__v => __obj.update("MissingWorkflows", __v.asInstanceOf[js.Any]))
-      Workflows.foreach(__v => __obj.update("Workflows", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MissingWorkflows.foreach(__v => __obj.updateDynamic("MissingWorkflows")(__v.asInstanceOf[js.Any]))
+      Workflows.foreach(__v => __obj.updateDynamic("Workflows")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetWorkflowsResponse]
     }
   }
@@ -1111,10 +1111,10 @@ package glue {
         JobName: js.UndefOr[NameString] = js.undefined,
         JobRunId: js.UndefOr[IdString] = js.undefined
     ): BatchStopJobRunError = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ErrorDetail.foreach(__v => __obj.update("ErrorDetail", __v.asInstanceOf[js.Any]))
-      JobName.foreach(__v => __obj.update("JobName", __v.asInstanceOf[js.Any]))
-      JobRunId.foreach(__v => __obj.update("JobRunId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ErrorDetail.foreach(__v => __obj.updateDynamic("ErrorDetail")(__v.asInstanceOf[js.Any]))
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      JobRunId.foreach(__v => __obj.updateDynamic("JobRunId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchStopJobRunError]
     }
   }
@@ -1130,7 +1130,7 @@ package glue {
         JobName: NameString,
         JobRunIds: BatchStopJobRunJobRunIdList
     ): BatchStopJobRunRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobName"   -> JobName.asInstanceOf[js.Any],
         "JobRunIds" -> JobRunIds.asInstanceOf[js.Any]
       )
@@ -1150,9 +1150,9 @@ package glue {
         Errors: js.UndefOr[BatchStopJobRunErrorList] = js.undefined,
         SuccessfulSubmissions: js.UndefOr[BatchStopJobRunSuccessfulSubmissionList] = js.undefined
     ): BatchStopJobRunResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Errors.foreach(__v => __obj.update("Errors", __v.asInstanceOf[js.Any]))
-      SuccessfulSubmissions.foreach(__v => __obj.update("SuccessfulSubmissions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
+      SuccessfulSubmissions.foreach(__v => __obj.updateDynamic("SuccessfulSubmissions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchStopJobRunResponse]
     }
   }
@@ -1171,9 +1171,9 @@ package glue {
         JobName: js.UndefOr[NameString] = js.undefined,
         JobRunId: js.UndefOr[IdString] = js.undefined
     ): BatchStopJobRunSuccessfulSubmission = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobName.foreach(__v => __obj.update("JobName", __v.asInstanceOf[js.Any]))
-      JobRunId.foreach(__v => __obj.update("JobRunId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      JobRunId.foreach(__v => __obj.updateDynamic("JobRunId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchStopJobRunSuccessfulSubmission]
     }
   }
@@ -1189,7 +1189,7 @@ package glue {
         TaskRunId: HashString,
         TransformId: HashString
     ): CancelMLTaskRunRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TaskRunId"   -> TaskRunId.asInstanceOf[js.Any],
         "TransformId" -> TransformId.asInstanceOf[js.Any]
       )
@@ -1211,10 +1211,10 @@ package glue {
         TaskRunId: js.UndefOr[HashString] = js.undefined,
         TransformId: js.UndefOr[HashString] = js.undefined
     ): CancelMLTaskRunResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      TaskRunId.foreach(__v => __obj.update("TaskRunId", __v.asInstanceOf[js.Any]))
-      TransformId.foreach(__v => __obj.update("TransformId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TaskRunId.foreach(__v => __obj.updateDynamic("TaskRunId")(__v.asInstanceOf[js.Any]))
+      TransformId.foreach(__v => __obj.updateDynamic("TransformId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CancelMLTaskRunResponse]
     }
   }
@@ -1240,7 +1240,7 @@ package glue {
         DatabaseName: NameString,
         TableName: NameString
     ): CatalogEntry = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
         "TableName"    -> TableName.asInstanceOf[js.Any]
       )
@@ -1265,10 +1265,10 @@ package glue {
         ImportTime: js.UndefOr[Timestamp] = js.undefined,
         ImportedBy: js.UndefOr[NameString] = js.undefined
     ): CatalogImportStatus = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ImportCompleted.foreach(__v => __obj.update("ImportCompleted", __v.asInstanceOf[js.Any]))
-      ImportTime.foreach(__v => __obj.update("ImportTime", __v.asInstanceOf[js.Any]))
-      ImportedBy.foreach(__v => __obj.update("ImportedBy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ImportCompleted.foreach(__v => __obj.updateDynamic("ImportCompleted")(__v.asInstanceOf[js.Any]))
+      ImportTime.foreach(__v => __obj.updateDynamic("ImportTime")(__v.asInstanceOf[js.Any]))
+      ImportedBy.foreach(__v => __obj.updateDynamic("ImportedBy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CatalogImportStatus]
     }
   }
@@ -1287,7 +1287,7 @@ package glue {
         DatabaseName: NameString,
         Tables: CatalogTablesList
     ): CatalogTarget = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
         "Tables"       -> Tables.asInstanceOf[js.Any]
       )
@@ -1315,11 +1315,11 @@ package glue {
         JsonClassifier: js.UndefOr[JsonClassifier] = js.undefined,
         XMLClassifier: js.UndefOr[XMLClassifier] = js.undefined
     ): Classifier = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CsvClassifier.foreach(__v => __obj.update("CsvClassifier", __v.asInstanceOf[js.Any]))
-      GrokClassifier.foreach(__v => __obj.update("GrokClassifier", __v.asInstanceOf[js.Any]))
-      JsonClassifier.foreach(__v => __obj.update("JsonClassifier", __v.asInstanceOf[js.Any]))
-      XMLClassifier.foreach(__v => __obj.update("XMLClassifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CsvClassifier.foreach(__v => __obj.updateDynamic("CsvClassifier")(__v.asInstanceOf[js.Any]))
+      GrokClassifier.foreach(__v => __obj.updateDynamic("GrokClassifier")(__v.asInstanceOf[js.Any]))
+      JsonClassifier.foreach(__v => __obj.updateDynamic("JsonClassifier")(__v.asInstanceOf[js.Any]))
+      XMLClassifier.foreach(__v => __obj.updateDynamic("XMLClassifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Classifier]
     }
   }
@@ -1338,9 +1338,9 @@ package glue {
         CloudWatchEncryptionMode: js.UndefOr[CloudWatchEncryptionMode] = js.undefined,
         KmsKeyArn: js.UndefOr[KmsKeyArn] = js.undefined
     ): CloudWatchEncryption = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CloudWatchEncryptionMode.foreach(__v => __obj.update("CloudWatchEncryptionMode", __v.asInstanceOf[js.Any]))
-      KmsKeyArn.foreach(__v => __obj.update("KmsKeyArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CloudWatchEncryptionMode.foreach(__v => __obj.updateDynamic("CloudWatchEncryptionMode")(__v.asInstanceOf[js.Any]))
+      KmsKeyArn.foreach(__v => __obj.updateDynamic("KmsKeyArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CloudWatchEncryption]
     }
   }
@@ -1368,12 +1368,12 @@ package glue {
         Target: CodeGenIdentifier,
         TargetParameter: js.UndefOr[CodeGenArgName] = js.undefined
     ): CodeGenEdge = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Source" -> Source.asInstanceOf[js.Any],
         "Target" -> Target.asInstanceOf[js.Any]
       )
 
-      TargetParameter.foreach(__v => __obj.update("TargetParameter", __v.asInstanceOf[js.Any]))
+      TargetParameter.foreach(__v => __obj.updateDynamic("TargetParameter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CodeGenEdge]
     }
   }
@@ -1396,13 +1396,13 @@ package glue {
         NodeType: CodeGenNodeType,
         LineNumber: js.UndefOr[Int] = js.undefined
     ): CodeGenNode = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Args"     -> Args.asInstanceOf[js.Any],
         "Id"       -> Id.asInstanceOf[js.Any],
         "NodeType" -> NodeType.asInstanceOf[js.Any]
       )
 
-      LineNumber.foreach(__v => __obj.update("LineNumber", __v.asInstanceOf[js.Any]))
+      LineNumber.foreach(__v => __obj.updateDynamic("LineNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CodeGenNode]
     }
   }
@@ -1423,12 +1423,12 @@ package glue {
         Value: CodeGenArgValue,
         Param: js.UndefOr[Boolean] = js.undefined
     ): CodeGenNodeArg = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"  -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
-      Param.foreach(__v => __obj.update("Param", __v.asInstanceOf[js.Any]))
+      Param.foreach(__v => __obj.updateDynamic("Param")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CodeGenNodeArg]
     }
   }
@@ -1451,13 +1451,13 @@ package glue {
         Parameters: js.UndefOr[ParametersMap] = js.undefined,
         Type: js.UndefOr[ColumnTypeString] = js.undefined
     ): Column = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      Comment.foreach(__v => __obj.update("Comment", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Column]
     }
   }
@@ -1492,12 +1492,12 @@ package glue {
         LogicalOperator: js.UndefOr[LogicalOperator] = js.undefined,
         State: js.UndefOr[JobRunState] = js.undefined
     ): Condition = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CrawlState.foreach(__v => __obj.update("CrawlState", __v.asInstanceOf[js.Any]))
-      CrawlerName.foreach(__v => __obj.update("CrawlerName", __v.asInstanceOf[js.Any]))
-      JobName.foreach(__v => __obj.update("JobName", __v.asInstanceOf[js.Any]))
-      LogicalOperator.foreach(__v => __obj.update("LogicalOperator", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CrawlState.foreach(__v => __obj.updateDynamic("CrawlState")(__v.asInstanceOf[js.Any]))
+      CrawlerName.foreach(__v => __obj.updateDynamic("CrawlerName")(__v.asInstanceOf[js.Any]))
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      LogicalOperator.foreach(__v => __obj.updateDynamic("LogicalOperator")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Condition]
     }
   }
@@ -1521,11 +1521,11 @@ package glue {
         NumTrueNegatives: js.UndefOr[RecordsCount] = js.undefined,
         NumTruePositives: js.UndefOr[RecordsCount] = js.undefined
     ): ConfusionMatrix = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NumFalseNegatives.foreach(__v => __obj.update("NumFalseNegatives", __v.asInstanceOf[js.Any]))
-      NumFalsePositives.foreach(__v => __obj.update("NumFalsePositives", __v.asInstanceOf[js.Any]))
-      NumTrueNegatives.foreach(__v => __obj.update("NumTrueNegatives", __v.asInstanceOf[js.Any]))
-      NumTruePositives.foreach(__v => __obj.update("NumTruePositives", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NumFalseNegatives.foreach(__v => __obj.updateDynamic("NumFalseNegatives")(__v.asInstanceOf[js.Any]))
+      NumFalsePositives.foreach(__v => __obj.updateDynamic("NumFalsePositives")(__v.asInstanceOf[js.Any]))
+      NumTrueNegatives.foreach(__v => __obj.updateDynamic("NumTrueNegatives")(__v.asInstanceOf[js.Any]))
+      NumTruePositives.foreach(__v => __obj.updateDynamic("NumTruePositives")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfusionMatrix]
     }
   }
@@ -1558,17 +1558,17 @@ package glue {
         Name: js.UndefOr[NameString] = js.undefined,
         PhysicalConnectionRequirements: js.UndefOr[PhysicalConnectionRequirements] = js.undefined
     ): Connection = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConnectionProperties.foreach(__v => __obj.update("ConnectionProperties", __v.asInstanceOf[js.Any]))
-      ConnectionType.foreach(__v => __obj.update("ConnectionType", __v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      LastUpdatedBy.foreach(__v => __obj.update("LastUpdatedBy", __v.asInstanceOf[js.Any]))
-      LastUpdatedTime.foreach(__v => __obj.update("LastUpdatedTime", __v.asInstanceOf[js.Any]))
-      MatchCriteria.foreach(__v => __obj.update("MatchCriteria", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConnectionProperties.foreach(__v => __obj.updateDynamic("ConnectionProperties")(__v.asInstanceOf[js.Any]))
+      ConnectionType.foreach(__v => __obj.updateDynamic("ConnectionType")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LastUpdatedBy.foreach(__v => __obj.updateDynamic("LastUpdatedBy")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      MatchCriteria.foreach(__v => __obj.updateDynamic("MatchCriteria")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       PhysicalConnectionRequirements.foreach(
-        __v => __obj.update("PhysicalConnectionRequirements", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("PhysicalConnectionRequirements")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[Connection]
     }
@@ -1596,16 +1596,16 @@ package glue {
         MatchCriteria: js.UndefOr[MatchCriteria] = js.undefined,
         PhysicalConnectionRequirements: js.UndefOr[PhysicalConnectionRequirements] = js.undefined
     ): ConnectionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConnectionProperties" -> ConnectionProperties.asInstanceOf[js.Any],
         "ConnectionType"       -> ConnectionType.asInstanceOf[js.Any],
         "Name"                 -> Name.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      MatchCriteria.foreach(__v => __obj.update("MatchCriteria", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      MatchCriteria.foreach(__v => __obj.updateDynamic("MatchCriteria")(__v.asInstanceOf[js.Any]))
       PhysicalConnectionRequirements.foreach(
-        __v => __obj.update("PhysicalConnectionRequirements", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("PhysicalConnectionRequirements")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ConnectionInput]
     }
@@ -1627,11 +1627,11 @@ package glue {
         ReturnConnectionPasswordEncrypted: Boolean,
         AwsKmsKeyId: js.UndefOr[NameString] = js.undefined
     ): ConnectionPasswordEncryption = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ReturnConnectionPasswordEncrypted" -> ReturnConnectionPasswordEncrypted.asInstanceOf[js.Any]
       )
 
-      AwsKmsKeyId.foreach(__v => __obj.update("AwsKmsKeyId", __v.asInstanceOf[js.Any]))
+      AwsKmsKeyId.foreach(__v => __obj.updateDynamic("AwsKmsKeyId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConnectionPasswordEncryption]
     }
   }
@@ -1689,8 +1689,8 @@ package glue {
     def apply(
         Connections: js.UndefOr[OrchestrationStringList] = js.undefined
     ): ConnectionsList = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Connections.foreach(__v => __obj.update("Connections", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Connections.foreach(__v => __obj.updateDynamic("Connections")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConnectionsList]
     }
   }
@@ -1717,13 +1717,13 @@ package glue {
         StartedOn: js.UndefOr[TimestampValue] = js.undefined,
         State: js.UndefOr[CrawlState] = js.undefined
     ): Crawl = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CompletedOn.foreach(__v => __obj.update("CompletedOn", __v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
-      LogGroup.foreach(__v => __obj.update("LogGroup", __v.asInstanceOf[js.Any]))
-      LogStream.foreach(__v => __obj.update("LogStream", __v.asInstanceOf[js.Any]))
-      StartedOn.foreach(__v => __obj.update("StartedOn", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CompletedOn.foreach(__v => __obj.updateDynamic("CompletedOn")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      LogGroup.foreach(__v => __obj.updateDynamic("LogGroup")(__v.asInstanceOf[js.Any]))
+      LogStream.foreach(__v => __obj.updateDynamic("LogStream")(__v.asInstanceOf[js.Any]))
+      StartedOn.foreach(__v => __obj.updateDynamic("StartedOn")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Crawl]
     }
   }
@@ -1781,26 +1781,26 @@ package glue {
         Targets: js.UndefOr[CrawlerTargets] = js.undefined,
         Version: js.UndefOr[VersionId] = js.undefined
     ): Crawler = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Classifiers.foreach(__v => __obj.update("Classifiers", __v.asInstanceOf[js.Any]))
-      Configuration.foreach(__v => __obj.update("Configuration", __v.asInstanceOf[js.Any]))
-      CrawlElapsedTime.foreach(__v => __obj.update("CrawlElapsedTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Classifiers.foreach(__v => __obj.updateDynamic("Classifiers")(__v.asInstanceOf[js.Any]))
+      Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
+      CrawlElapsedTime.foreach(__v => __obj.updateDynamic("CrawlElapsedTime")(__v.asInstanceOf[js.Any]))
       CrawlerSecurityConfiguration.foreach(
-        __v => __obj.update("CrawlerSecurityConfiguration", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("CrawlerSecurityConfiguration")(__v.asInstanceOf[js.Any])
       )
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      DatabaseName.foreach(__v => __obj.update("DatabaseName", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      LastCrawl.foreach(__v => __obj.update("LastCrawl", __v.asInstanceOf[js.Any]))
-      LastUpdated.foreach(__v => __obj.update("LastUpdated", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
-      Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
-      SchemaChangePolicy.foreach(__v => __obj.update("SchemaChangePolicy", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
-      TablePrefix.foreach(__v => __obj.update("TablePrefix", __v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.update("Targets", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LastCrawl.foreach(__v => __obj.updateDynamic("LastCrawl")(__v.asInstanceOf[js.Any]))
+      LastUpdated.foreach(__v => __obj.updateDynamic("LastUpdated")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
+      SchemaChangePolicy.foreach(__v => __obj.updateDynamic("SchemaChangePolicy")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      TablePrefix.foreach(__v => __obj.updateDynamic("TablePrefix")(__v.asInstanceOf[js.Any]))
+      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Crawler]
     }
   }
@@ -1831,15 +1831,15 @@ package glue {
         TablesUpdated: js.UndefOr[NonNegativeInteger] = js.undefined,
         TimeLeftSeconds: js.UndefOr[NonNegativeDouble] = js.undefined
     ): CrawlerMetrics = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CrawlerName.foreach(__v => __obj.update("CrawlerName", __v.asInstanceOf[js.Any]))
-      LastRuntimeSeconds.foreach(__v => __obj.update("LastRuntimeSeconds", __v.asInstanceOf[js.Any]))
-      MedianRuntimeSeconds.foreach(__v => __obj.update("MedianRuntimeSeconds", __v.asInstanceOf[js.Any]))
-      StillEstimating.foreach(__v => __obj.update("StillEstimating", __v.asInstanceOf[js.Any]))
-      TablesCreated.foreach(__v => __obj.update("TablesCreated", __v.asInstanceOf[js.Any]))
-      TablesDeleted.foreach(__v => __obj.update("TablesDeleted", __v.asInstanceOf[js.Any]))
-      TablesUpdated.foreach(__v => __obj.update("TablesUpdated", __v.asInstanceOf[js.Any]))
-      TimeLeftSeconds.foreach(__v => __obj.update("TimeLeftSeconds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CrawlerName.foreach(__v => __obj.updateDynamic("CrawlerName")(__v.asInstanceOf[js.Any]))
+      LastRuntimeSeconds.foreach(__v => __obj.updateDynamic("LastRuntimeSeconds")(__v.asInstanceOf[js.Any]))
+      MedianRuntimeSeconds.foreach(__v => __obj.updateDynamic("MedianRuntimeSeconds")(__v.asInstanceOf[js.Any]))
+      StillEstimating.foreach(__v => __obj.updateDynamic("StillEstimating")(__v.asInstanceOf[js.Any]))
+      TablesCreated.foreach(__v => __obj.updateDynamic("TablesCreated")(__v.asInstanceOf[js.Any]))
+      TablesDeleted.foreach(__v => __obj.updateDynamic("TablesDeleted")(__v.asInstanceOf[js.Any]))
+      TablesUpdated.foreach(__v => __obj.updateDynamic("TablesUpdated")(__v.asInstanceOf[js.Any]))
+      TimeLeftSeconds.foreach(__v => __obj.updateDynamic("TimeLeftSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CrawlerMetrics]
     }
   }
@@ -1856,8 +1856,8 @@ package glue {
     def apply(
         Crawls: js.UndefOr[CrawlList] = js.undefined
     ): CrawlerNodeDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Crawls.foreach(__v => __obj.update("Crawls", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Crawls.foreach(__v => __obj.updateDynamic("Crawls")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CrawlerNodeDetails]
     }
   }
@@ -1888,11 +1888,11 @@ package glue {
         JdbcTargets: js.UndefOr[JdbcTargetList] = js.undefined,
         S3Targets: js.UndefOr[S3TargetList] = js.undefined
     ): CrawlerTargets = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CatalogTargets.foreach(__v => __obj.update("CatalogTargets", __v.asInstanceOf[js.Any]))
-      DynamoDBTargets.foreach(__v => __obj.update("DynamoDBTargets", __v.asInstanceOf[js.Any]))
-      JdbcTargets.foreach(__v => __obj.update("JdbcTargets", __v.asInstanceOf[js.Any]))
-      S3Targets.foreach(__v => __obj.update("S3Targets", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CatalogTargets.foreach(__v => __obj.updateDynamic("CatalogTargets")(__v.asInstanceOf[js.Any]))
+      DynamoDBTargets.foreach(__v => __obj.updateDynamic("DynamoDBTargets")(__v.asInstanceOf[js.Any]))
+      JdbcTargets.foreach(__v => __obj.updateDynamic("JdbcTargets")(__v.asInstanceOf[js.Any]))
+      S3Targets.foreach(__v => __obj.updateDynamic("S3Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CrawlerTargets]
     }
   }
@@ -1912,11 +1912,11 @@ package glue {
         JsonClassifier: js.UndefOr[CreateJsonClassifierRequest] = js.undefined,
         XMLClassifier: js.UndefOr[CreateXMLClassifierRequest] = js.undefined
     ): CreateClassifierRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CsvClassifier.foreach(__v => __obj.update("CsvClassifier", __v.asInstanceOf[js.Any]))
-      GrokClassifier.foreach(__v => __obj.update("GrokClassifier", __v.asInstanceOf[js.Any]))
-      JsonClassifier.foreach(__v => __obj.update("JsonClassifier", __v.asInstanceOf[js.Any]))
-      XMLClassifier.foreach(__v => __obj.update("XMLClassifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CsvClassifier.foreach(__v => __obj.updateDynamic("CsvClassifier")(__v.asInstanceOf[js.Any]))
+      GrokClassifier.foreach(__v => __obj.updateDynamic("GrokClassifier")(__v.asInstanceOf[js.Any]))
+      JsonClassifier.foreach(__v => __obj.updateDynamic("JsonClassifier")(__v.asInstanceOf[js.Any]))
+      XMLClassifier.foreach(__v => __obj.updateDynamic("XMLClassifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateClassifierRequest]
     }
   }
@@ -1927,7 +1927,7 @@ package glue {
   object CreateClassifierResponse {
     def apply(
         ): CreateClassifierResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateClassifierResponse]
     }
@@ -1944,11 +1944,11 @@ package glue {
         ConnectionInput: ConnectionInput,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): CreateConnectionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConnectionInput" -> ConnectionInput.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateConnectionRequest]
     }
   }
@@ -1959,7 +1959,7 @@ package glue {
   object CreateConnectionResponse {
     def apply(
         ): CreateConnectionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateConnectionResponse]
     }
@@ -1996,23 +1996,23 @@ package glue {
         TablePrefix: js.UndefOr[TablePrefix] = js.undefined,
         Tags: js.UndefOr[TagsMap] = js.undefined
     ): CreateCrawlerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"    -> Name.asInstanceOf[js.Any],
         "Role"    -> Role.asInstanceOf[js.Any],
         "Targets" -> Targets.asInstanceOf[js.Any]
       )
 
-      Classifiers.foreach(__v => __obj.update("Classifiers", __v.asInstanceOf[js.Any]))
-      Configuration.foreach(__v => __obj.update("Configuration", __v.asInstanceOf[js.Any]))
+      Classifiers.foreach(__v => __obj.updateDynamic("Classifiers")(__v.asInstanceOf[js.Any]))
+      Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
       CrawlerSecurityConfiguration.foreach(
-        __v => __obj.update("CrawlerSecurityConfiguration", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("CrawlerSecurityConfiguration")(__v.asInstanceOf[js.Any])
       )
-      DatabaseName.foreach(__v => __obj.update("DatabaseName", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
-      SchemaChangePolicy.foreach(__v => __obj.update("SchemaChangePolicy", __v.asInstanceOf[js.Any]))
-      TablePrefix.foreach(__v => __obj.update("TablePrefix", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
+      SchemaChangePolicy.foreach(__v => __obj.updateDynamic("SchemaChangePolicy")(__v.asInstanceOf[js.Any]))
+      TablePrefix.foreach(__v => __obj.updateDynamic("TablePrefix")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCrawlerRequest]
     }
   }
@@ -2023,7 +2023,7 @@ package glue {
   object CreateCrawlerResponse {
     def apply(
         ): CreateCrawlerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateCrawlerResponse]
     }
@@ -2053,16 +2053,16 @@ package glue {
         Header: js.UndefOr[CsvHeader] = js.undefined,
         QuoteSymbol: js.UndefOr[CsvQuoteSymbol] = js.undefined
     ): CreateCsvClassifierRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      AllowSingleColumn.foreach(__v => __obj.update("AllowSingleColumn", __v.asInstanceOf[js.Any]))
-      ContainsHeader.foreach(__v => __obj.update("ContainsHeader", __v.asInstanceOf[js.Any]))
-      Delimiter.foreach(__v => __obj.update("Delimiter", __v.asInstanceOf[js.Any]))
-      DisableValueTrimming.foreach(__v => __obj.update("DisableValueTrimming", __v.asInstanceOf[js.Any]))
-      Header.foreach(__v => __obj.update("Header", __v.asInstanceOf[js.Any]))
-      QuoteSymbol.foreach(__v => __obj.update("QuoteSymbol", __v.asInstanceOf[js.Any]))
+      AllowSingleColumn.foreach(__v => __obj.updateDynamic("AllowSingleColumn")(__v.asInstanceOf[js.Any]))
+      ContainsHeader.foreach(__v => __obj.updateDynamic("ContainsHeader")(__v.asInstanceOf[js.Any]))
+      Delimiter.foreach(__v => __obj.updateDynamic("Delimiter")(__v.asInstanceOf[js.Any]))
+      DisableValueTrimming.foreach(__v => __obj.updateDynamic("DisableValueTrimming")(__v.asInstanceOf[js.Any]))
+      Header.foreach(__v => __obj.updateDynamic("Header")(__v.asInstanceOf[js.Any]))
+      QuoteSymbol.foreach(__v => __obj.updateDynamic("QuoteSymbol")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCsvClassifierRequest]
     }
   }
@@ -2078,11 +2078,11 @@ package glue {
         DatabaseInput: DatabaseInput,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): CreateDatabaseRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatabaseInput" -> DatabaseInput.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatabaseRequest]
     }
   }
@@ -2093,7 +2093,7 @@ package glue {
   object CreateDatabaseResponse {
     def apply(
         ): CreateDatabaseResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateDatabaseResponse]
     }
@@ -2134,23 +2134,23 @@ package glue {
         Tags: js.UndefOr[TagsMap] = js.undefined,
         WorkerType: js.UndefOr[WorkerType] = js.undefined
     ): CreateDevEndpointRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EndpointName" -> EndpointName.asInstanceOf[js.Any],
         "RoleArn"      -> RoleArn.asInstanceOf[js.Any]
       )
 
-      Arguments.foreach(__v => __obj.update("Arguments", __v.asInstanceOf[js.Any]))
-      ExtraJarsS3Path.foreach(__v => __obj.update("ExtraJarsS3Path", __v.asInstanceOf[js.Any]))
-      ExtraPythonLibsS3Path.foreach(__v => __obj.update("ExtraPythonLibsS3Path", __v.asInstanceOf[js.Any]))
-      NumberOfNodes.foreach(__v => __obj.update("NumberOfNodes", __v.asInstanceOf[js.Any]))
-      NumberOfWorkers.foreach(__v => __obj.update("NumberOfWorkers", __v.asInstanceOf[js.Any]))
-      PublicKey.foreach(__v => __obj.update("PublicKey", __v.asInstanceOf[js.Any]))
-      PublicKeys.foreach(__v => __obj.update("PublicKeys", __v.asInstanceOf[js.Any]))
-      SecurityConfiguration.foreach(__v => __obj.update("SecurityConfiguration", __v.asInstanceOf[js.Any]))
-      SecurityGroupIds.foreach(__v => __obj.update("SecurityGroupIds", __v.asInstanceOf[js.Any]))
-      SubnetId.foreach(__v => __obj.update("SubnetId", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      WorkerType.foreach(__v => __obj.update("WorkerType", __v.asInstanceOf[js.Any]))
+      Arguments.foreach(__v => __obj.updateDynamic("Arguments")(__v.asInstanceOf[js.Any]))
+      ExtraJarsS3Path.foreach(__v => __obj.updateDynamic("ExtraJarsS3Path")(__v.asInstanceOf[js.Any]))
+      ExtraPythonLibsS3Path.foreach(__v => __obj.updateDynamic("ExtraPythonLibsS3Path")(__v.asInstanceOf[js.Any]))
+      NumberOfNodes.foreach(__v => __obj.updateDynamic("NumberOfNodes")(__v.asInstanceOf[js.Any]))
+      NumberOfWorkers.foreach(__v => __obj.updateDynamic("NumberOfWorkers")(__v.asInstanceOf[js.Any]))
+      PublicKey.foreach(__v => __obj.updateDynamic("PublicKey")(__v.asInstanceOf[js.Any]))
+      PublicKeys.foreach(__v => __obj.updateDynamic("PublicKeys")(__v.asInstanceOf[js.Any]))
+      SecurityConfiguration.foreach(__v => __obj.updateDynamic("SecurityConfiguration")(__v.asInstanceOf[js.Any]))
+      SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      WorkerType.foreach(__v => __obj.updateDynamic("WorkerType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDevEndpointRequest]
     }
   }
@@ -2198,26 +2198,26 @@ package glue {
         YarnEndpointAddress: js.UndefOr[GenericString] = js.undefined,
         ZeppelinRemoteSparkInterpreterPort: js.UndefOr[IntegerValue] = js.undefined
     ): CreateDevEndpointResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arguments.foreach(__v => __obj.update("Arguments", __v.asInstanceOf[js.Any]))
-      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
-      CreatedTimestamp.foreach(__v => __obj.update("CreatedTimestamp", __v.asInstanceOf[js.Any]))
-      EndpointName.foreach(__v => __obj.update("EndpointName", __v.asInstanceOf[js.Any]))
-      ExtraJarsS3Path.foreach(__v => __obj.update("ExtraJarsS3Path", __v.asInstanceOf[js.Any]))
-      ExtraPythonLibsS3Path.foreach(__v => __obj.update("ExtraPythonLibsS3Path", __v.asInstanceOf[js.Any]))
-      FailureReason.foreach(__v => __obj.update("FailureReason", __v.asInstanceOf[js.Any]))
-      NumberOfNodes.foreach(__v => __obj.update("NumberOfNodes", __v.asInstanceOf[js.Any]))
-      NumberOfWorkers.foreach(__v => __obj.update("NumberOfWorkers", __v.asInstanceOf[js.Any]))
-      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
-      SecurityConfiguration.foreach(__v => __obj.update("SecurityConfiguration", __v.asInstanceOf[js.Any]))
-      SecurityGroupIds.foreach(__v => __obj.update("SecurityGroupIds", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      SubnetId.foreach(__v => __obj.update("SubnetId", __v.asInstanceOf[js.Any]))
-      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
-      WorkerType.foreach(__v => __obj.update("WorkerType", __v.asInstanceOf[js.Any]))
-      YarnEndpointAddress.foreach(__v => __obj.update("YarnEndpointAddress", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arguments.foreach(__v => __obj.updateDynamic("Arguments")(__v.asInstanceOf[js.Any]))
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      EndpointName.foreach(__v => __obj.updateDynamic("EndpointName")(__v.asInstanceOf[js.Any]))
+      ExtraJarsS3Path.foreach(__v => __obj.updateDynamic("ExtraJarsS3Path")(__v.asInstanceOf[js.Any]))
+      ExtraPythonLibsS3Path.foreach(__v => __obj.updateDynamic("ExtraPythonLibsS3Path")(__v.asInstanceOf[js.Any]))
+      FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
+      NumberOfNodes.foreach(__v => __obj.updateDynamic("NumberOfNodes")(__v.asInstanceOf[js.Any]))
+      NumberOfWorkers.foreach(__v => __obj.updateDynamic("NumberOfWorkers")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      SecurityConfiguration.foreach(__v => __obj.updateDynamic("SecurityConfiguration")(__v.asInstanceOf[js.Any]))
+      SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
+      WorkerType.foreach(__v => __obj.updateDynamic("WorkerType")(__v.asInstanceOf[js.Any]))
+      YarnEndpointAddress.foreach(__v => __obj.updateDynamic("YarnEndpointAddress")(__v.asInstanceOf[js.Any]))
       ZeppelinRemoteSparkInterpreterPort.foreach(
-        __v => __obj.update("ZeppelinRemoteSparkInterpreterPort", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ZeppelinRemoteSparkInterpreterPort")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateDevEndpointResponse]
     }
@@ -2241,13 +2241,13 @@ package glue {
         Name: NameString,
         CustomPatterns: js.UndefOr[CustomPatterns] = js.undefined
     ): CreateGrokClassifierRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Classification" -> Classification.asInstanceOf[js.Any],
         "GrokPattern"    -> GrokPattern.asInstanceOf[js.Any],
         "Name"           -> Name.asInstanceOf[js.Any]
       )
 
-      CustomPatterns.foreach(__v => __obj.update("CustomPatterns", __v.asInstanceOf[js.Any]))
+      CustomPatterns.foreach(__v => __obj.updateDynamic("CustomPatterns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGrokClassifierRequest]
     }
   }
@@ -2295,27 +2295,27 @@ package glue {
         Timeout: js.UndefOr[Timeout] = js.undefined,
         WorkerType: js.UndefOr[WorkerType] = js.undefined
     ): CreateJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Command" -> Command.asInstanceOf[js.Any],
         "Name"    -> Name.asInstanceOf[js.Any],
         "Role"    -> Role.asInstanceOf[js.Any]
       )
 
-      AllocatedCapacity.foreach(__v => __obj.update("AllocatedCapacity", __v.asInstanceOf[js.Any]))
-      Connections.foreach(__v => __obj.update("Connections", __v.asInstanceOf[js.Any]))
-      DefaultArguments.foreach(__v => __obj.update("DefaultArguments", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      ExecutionProperty.foreach(__v => __obj.update("ExecutionProperty", __v.asInstanceOf[js.Any]))
-      GlueVersion.foreach(__v => __obj.update("GlueVersion", __v.asInstanceOf[js.Any]))
-      LogUri.foreach(__v => __obj.update("LogUri", __v.asInstanceOf[js.Any]))
-      MaxCapacity.foreach(__v => __obj.update("MaxCapacity", __v.asInstanceOf[js.Any]))
-      MaxRetries.foreach(__v => __obj.update("MaxRetries", __v.asInstanceOf[js.Any]))
-      NotificationProperty.foreach(__v => __obj.update("NotificationProperty", __v.asInstanceOf[js.Any]))
-      NumberOfWorkers.foreach(__v => __obj.update("NumberOfWorkers", __v.asInstanceOf[js.Any]))
-      SecurityConfiguration.foreach(__v => __obj.update("SecurityConfiguration", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      Timeout.foreach(__v => __obj.update("Timeout", __v.asInstanceOf[js.Any]))
-      WorkerType.foreach(__v => __obj.update("WorkerType", __v.asInstanceOf[js.Any]))
+      AllocatedCapacity.foreach(__v => __obj.updateDynamic("AllocatedCapacity")(__v.asInstanceOf[js.Any]))
+      Connections.foreach(__v => __obj.updateDynamic("Connections")(__v.asInstanceOf[js.Any]))
+      DefaultArguments.foreach(__v => __obj.updateDynamic("DefaultArguments")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ExecutionProperty.foreach(__v => __obj.updateDynamic("ExecutionProperty")(__v.asInstanceOf[js.Any]))
+      GlueVersion.foreach(__v => __obj.updateDynamic("GlueVersion")(__v.asInstanceOf[js.Any]))
+      LogUri.foreach(__v => __obj.updateDynamic("LogUri")(__v.asInstanceOf[js.Any]))
+      MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
+      MaxRetries.foreach(__v => __obj.updateDynamic("MaxRetries")(__v.asInstanceOf[js.Any]))
+      NotificationProperty.foreach(__v => __obj.updateDynamic("NotificationProperty")(__v.asInstanceOf[js.Any]))
+      NumberOfWorkers.foreach(__v => __obj.updateDynamic("NumberOfWorkers")(__v.asInstanceOf[js.Any]))
+      SecurityConfiguration.foreach(__v => __obj.updateDynamic("SecurityConfiguration")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
+      WorkerType.foreach(__v => __obj.updateDynamic("WorkerType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateJobRequest]
     }
   }
@@ -2329,8 +2329,8 @@ package glue {
     def apply(
         Name: js.UndefOr[NameString] = js.undefined
     ): CreateJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateJobResponse]
     }
   }
@@ -2349,7 +2349,7 @@ package glue {
         JsonPath: JsonPath,
         Name: NameString
     ): CreateJsonClassifierRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JsonPath" -> JsonPath.asInstanceOf[js.Any],
         "Name"     -> Name.asInstanceOf[js.Any]
       )
@@ -2385,19 +2385,19 @@ package glue {
         Timeout: js.UndefOr[Timeout] = js.undefined,
         WorkerType: js.UndefOr[WorkerType] = js.undefined
     ): CreateMLTransformRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InputRecordTables" -> InputRecordTables.asInstanceOf[js.Any],
         "Name"              -> Name.asInstanceOf[js.Any],
         "Parameters"        -> Parameters.asInstanceOf[js.Any],
         "Role"              -> Role.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      MaxCapacity.foreach(__v => __obj.update("MaxCapacity", __v.asInstanceOf[js.Any]))
-      MaxRetries.foreach(__v => __obj.update("MaxRetries", __v.asInstanceOf[js.Any]))
-      NumberOfWorkers.foreach(__v => __obj.update("NumberOfWorkers", __v.asInstanceOf[js.Any]))
-      Timeout.foreach(__v => __obj.update("Timeout", __v.asInstanceOf[js.Any]))
-      WorkerType.foreach(__v => __obj.update("WorkerType", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
+      MaxRetries.foreach(__v => __obj.updateDynamic("MaxRetries")(__v.asInstanceOf[js.Any]))
+      NumberOfWorkers.foreach(__v => __obj.updateDynamic("NumberOfWorkers")(__v.asInstanceOf[js.Any]))
+      Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
+      WorkerType.foreach(__v => __obj.updateDynamic("WorkerType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateMLTransformRequest]
     }
   }
@@ -2411,8 +2411,8 @@ package glue {
     def apply(
         TransformId: js.UndefOr[HashString] = js.undefined
     ): CreateMLTransformResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TransformId.foreach(__v => __obj.update("TransformId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TransformId.foreach(__v => __obj.updateDynamic("TransformId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateMLTransformResponse]
     }
   }
@@ -2432,13 +2432,13 @@ package glue {
         TableName: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): CreatePartitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatabaseName"   -> DatabaseName.asInstanceOf[js.Any],
         "PartitionInput" -> PartitionInput.asInstanceOf[js.Any],
         "TableName"      -> TableName.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePartitionRequest]
     }
   }
@@ -2449,7 +2449,7 @@ package glue {
   object CreatePartitionResponse {
     def apply(
         ): CreatePartitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreatePartitionResponse]
     }
@@ -2468,10 +2468,10 @@ package glue {
         DagNodes: js.UndefOr[DagNodes] = js.undefined,
         Language: js.UndefOr[Language] = js.undefined
     ): CreateScriptRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DagEdges.foreach(__v => __obj.update("DagEdges", __v.asInstanceOf[js.Any]))
-      DagNodes.foreach(__v => __obj.update("DagNodes", __v.asInstanceOf[js.Any]))
-      Language.foreach(__v => __obj.update("Language", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DagEdges.foreach(__v => __obj.updateDynamic("DagEdges")(__v.asInstanceOf[js.Any]))
+      DagNodes.foreach(__v => __obj.updateDynamic("DagNodes")(__v.asInstanceOf[js.Any]))
+      Language.foreach(__v => __obj.updateDynamic("Language")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateScriptRequest]
     }
   }
@@ -2487,9 +2487,9 @@ package glue {
         PythonScript: js.UndefOr[PythonScript] = js.undefined,
         ScalaCode: js.UndefOr[ScalaCode] = js.undefined
     ): CreateScriptResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PythonScript.foreach(__v => __obj.update("PythonScript", __v.asInstanceOf[js.Any]))
-      ScalaCode.foreach(__v => __obj.update("ScalaCode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PythonScript.foreach(__v => __obj.updateDynamic("PythonScript")(__v.asInstanceOf[js.Any]))
+      ScalaCode.foreach(__v => __obj.updateDynamic("ScalaCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateScriptResponse]
     }
   }
@@ -2505,7 +2505,7 @@ package glue {
         EncryptionConfiguration: EncryptionConfiguration,
         Name: NameString
     ): CreateSecurityConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EncryptionConfiguration" -> EncryptionConfiguration.asInstanceOf[js.Any],
         "Name"                    -> Name.asInstanceOf[js.Any]
       )
@@ -2525,9 +2525,9 @@ package glue {
         CreatedTimestamp: js.UndefOr[TimestampValue] = js.undefined,
         Name: js.UndefOr[NameString] = js.undefined
     ): CreateSecurityConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedTimestamp.foreach(__v => __obj.update("CreatedTimestamp", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSecurityConfigurationResponse]
     }
   }
@@ -2545,12 +2545,12 @@ package glue {
         TableInput: TableInput,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): CreateTableRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
         "TableInput"   -> TableInput.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTableRequest]
     }
   }
@@ -2561,7 +2561,7 @@ package glue {
   object CreateTableResponse {
     def apply(
         ): CreateTableResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateTableResponse]
     }
@@ -2592,18 +2592,18 @@ package glue {
         Tags: js.UndefOr[TagsMap] = js.undefined,
         WorkflowName: js.UndefOr[NameString] = js.undefined
     ): CreateTriggerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Actions" -> Actions.asInstanceOf[js.Any],
         "Name"    -> Name.asInstanceOf[js.Any],
         "Type"    -> Type.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Predicate.foreach(__v => __obj.update("Predicate", __v.asInstanceOf[js.Any]))
-      Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
-      StartOnCreation.foreach(__v => __obj.update("StartOnCreation", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      WorkflowName.foreach(__v => __obj.update("WorkflowName", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Predicate.foreach(__v => __obj.updateDynamic("Predicate")(__v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
+      StartOnCreation.foreach(__v => __obj.updateDynamic("StartOnCreation")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      WorkflowName.foreach(__v => __obj.updateDynamic("WorkflowName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTriggerRequest]
     }
   }
@@ -2617,8 +2617,8 @@ package glue {
     def apply(
         Name: js.UndefOr[NameString] = js.undefined
     ): CreateTriggerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTriggerResponse]
     }
   }
@@ -2636,12 +2636,12 @@ package glue {
         FunctionInput: UserDefinedFunctionInput,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): CreateUserDefinedFunctionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatabaseName"  -> DatabaseName.asInstanceOf[js.Any],
         "FunctionInput" -> FunctionInput.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateUserDefinedFunctionRequest]
     }
   }
@@ -2652,7 +2652,7 @@ package glue {
   object CreateUserDefinedFunctionResponse {
     def apply(
         ): CreateUserDefinedFunctionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateUserDefinedFunctionResponse]
     }
@@ -2673,13 +2673,13 @@ package glue {
         Description: js.UndefOr[GenericString] = js.undefined,
         Tags: js.UndefOr[TagsMap] = js.undefined
     ): CreateWorkflowRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      DefaultRunProperties.foreach(__v => __obj.update("DefaultRunProperties", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      DefaultRunProperties.foreach(__v => __obj.updateDynamic("DefaultRunProperties")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateWorkflowRequest]
     }
   }
@@ -2693,8 +2693,8 @@ package glue {
     def apply(
         Name: js.UndefOr[NameString] = js.undefined
     ): CreateWorkflowResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateWorkflowResponse]
     }
   }
@@ -2715,12 +2715,12 @@ package glue {
         Name: NameString,
         RowTag: js.UndefOr[RowTag] = js.undefined
     ): CreateXMLClassifierRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Classification" -> Classification.asInstanceOf[js.Any],
         "Name"           -> Name.asInstanceOf[js.Any]
       )
 
-      RowTag.foreach(__v => __obj.update("RowTag", __v.asInstanceOf[js.Any]))
+      RowTag.foreach(__v => __obj.updateDynamic("RowTag")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateXMLClassifierRequest]
     }
   }
@@ -2755,19 +2755,19 @@ package glue {
         QuoteSymbol: js.UndefOr[CsvQuoteSymbol] = js.undefined,
         Version: js.UndefOr[VersionId] = js.undefined
     ): CsvClassifier = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      AllowSingleColumn.foreach(__v => __obj.update("AllowSingleColumn", __v.asInstanceOf[js.Any]))
-      ContainsHeader.foreach(__v => __obj.update("ContainsHeader", __v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      Delimiter.foreach(__v => __obj.update("Delimiter", __v.asInstanceOf[js.Any]))
-      DisableValueTrimming.foreach(__v => __obj.update("DisableValueTrimming", __v.asInstanceOf[js.Any]))
-      Header.foreach(__v => __obj.update("Header", __v.asInstanceOf[js.Any]))
-      LastUpdated.foreach(__v => __obj.update("LastUpdated", __v.asInstanceOf[js.Any]))
-      QuoteSymbol.foreach(__v => __obj.update("QuoteSymbol", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      AllowSingleColumn.foreach(__v => __obj.updateDynamic("AllowSingleColumn")(__v.asInstanceOf[js.Any]))
+      ContainsHeader.foreach(__v => __obj.updateDynamic("ContainsHeader")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Delimiter.foreach(__v => __obj.updateDynamic("Delimiter")(__v.asInstanceOf[js.Any]))
+      DisableValueTrimming.foreach(__v => __obj.updateDynamic("DisableValueTrimming")(__v.asInstanceOf[js.Any]))
+      Header.foreach(__v => __obj.updateDynamic("Header")(__v.asInstanceOf[js.Any]))
+      LastUpdated.foreach(__v => __obj.updateDynamic("LastUpdated")(__v.asInstanceOf[js.Any]))
+      QuoteSymbol.foreach(__v => __obj.updateDynamic("QuoteSymbol")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CsvClassifier]
     }
   }
@@ -2794,11 +2794,11 @@ package glue {
         ConnectionPasswordEncryption: js.UndefOr[ConnectionPasswordEncryption] = js.undefined,
         EncryptionAtRest: js.UndefOr[EncryptionAtRest] = js.undefined
     ): DataCatalogEncryptionSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       ConnectionPasswordEncryption.foreach(
-        __v => __obj.update("ConnectionPasswordEncryption", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ConnectionPasswordEncryption")(__v.asInstanceOf[js.Any])
       )
-      EncryptionAtRest.foreach(__v => __obj.update("EncryptionAtRest", __v.asInstanceOf[js.Any]))
+      EncryptionAtRest.foreach(__v => __obj.updateDynamic("EncryptionAtRest")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataCatalogEncryptionSettings]
     }
   }
@@ -2815,8 +2815,10 @@ package glue {
     def apply(
         DataLakePrincipalIdentifier: js.UndefOr[DataLakePrincipalString] = js.undefined
     ): DataLakePrincipal = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DataLakePrincipalIdentifier.foreach(__v => __obj.update("DataLakePrincipalIdentifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DataLakePrincipalIdentifier.foreach(
+        __v => __obj.updateDynamic("DataLakePrincipalIdentifier")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[DataLakePrincipal]
     }
   }
@@ -2843,17 +2845,17 @@ package glue {
         LocationUri: js.UndefOr[URI] = js.undefined,
         Parameters: js.UndefOr[ParametersMap] = js.undefined
     ): Database = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
       CreateTableDefaultPermissions.foreach(
-        __v => __obj.update("CreateTableDefaultPermissions", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("CreateTableDefaultPermissions")(__v.asInstanceOf[js.Any])
       )
-      CreateTime.foreach(__v => __obj.update("CreateTime", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      LocationUri.foreach(__v => __obj.update("LocationUri", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      CreateTime.foreach(__v => __obj.updateDynamic("CreateTime")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LocationUri.foreach(__v => __obj.updateDynamic("LocationUri")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Database]
     }
   }
@@ -2878,16 +2880,16 @@ package glue {
         LocationUri: js.UndefOr[URI] = js.undefined,
         Parameters: js.UndefOr[ParametersMap] = js.undefined
     ): DatabaseInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
       CreateTableDefaultPermissions.foreach(
-        __v => __obj.update("CreateTableDefaultPermissions", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("CreateTableDefaultPermissions")(__v.asInstanceOf[js.Any])
       )
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      LocationUri.foreach(__v => __obj.update("LocationUri", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LocationUri.foreach(__v => __obj.updateDynamic("LocationUri")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatabaseInput]
     }
   }
@@ -2909,7 +2911,7 @@ package glue {
     def apply(
         Name: NameString
     ): DeleteClassifierRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -2923,7 +2925,7 @@ package glue {
   object DeleteClassifierResponse {
     def apply(
         ): DeleteClassifierResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteClassifierResponse]
     }
@@ -2940,11 +2942,11 @@ package glue {
         ConnectionName: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): DeleteConnectionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConnectionName" -> ConnectionName.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteConnectionRequest]
     }
   }
@@ -2955,7 +2957,7 @@ package glue {
   object DeleteConnectionResponse {
     def apply(
         ): DeleteConnectionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteConnectionResponse]
     }
@@ -2970,7 +2972,7 @@ package glue {
     def apply(
         Name: NameString
     ): DeleteCrawlerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -2984,7 +2986,7 @@ package glue {
   object DeleteCrawlerResponse {
     def apply(
         ): DeleteCrawlerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteCrawlerResponse]
     }
@@ -3001,11 +3003,11 @@ package glue {
         Name: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): DeleteDatabaseRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDatabaseRequest]
     }
   }
@@ -3016,7 +3018,7 @@ package glue {
   object DeleteDatabaseResponse {
     def apply(
         ): DeleteDatabaseResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteDatabaseResponse]
     }
@@ -3031,7 +3033,7 @@ package glue {
     def apply(
         EndpointName: GenericString
     ): DeleteDevEndpointRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EndpointName" -> EndpointName.asInstanceOf[js.Any]
       )
 
@@ -3045,7 +3047,7 @@ package glue {
   object DeleteDevEndpointResponse {
     def apply(
         ): DeleteDevEndpointResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteDevEndpointResponse]
     }
@@ -3060,7 +3062,7 @@ package glue {
     def apply(
         JobName: NameString
     ): DeleteJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobName" -> JobName.asInstanceOf[js.Any]
       )
 
@@ -3077,8 +3079,8 @@ package glue {
     def apply(
         JobName: js.UndefOr[NameString] = js.undefined
     ): DeleteJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobName.foreach(__v => __obj.update("JobName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteJobResponse]
     }
   }
@@ -3092,7 +3094,7 @@ package glue {
     def apply(
         TransformId: HashString
     ): DeleteMLTransformRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TransformId" -> TransformId.asInstanceOf[js.Any]
       )
 
@@ -3109,8 +3111,8 @@ package glue {
     def apply(
         TransformId: js.UndefOr[HashString] = js.undefined
     ): DeleteMLTransformResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TransformId.foreach(__v => __obj.update("TransformId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TransformId.foreach(__v => __obj.updateDynamic("TransformId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteMLTransformResponse]
     }
   }
@@ -3130,13 +3132,13 @@ package glue {
         TableName: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): DeletePartitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatabaseName"    -> DatabaseName.asInstanceOf[js.Any],
         "PartitionValues" -> PartitionValues.asInstanceOf[js.Any],
         "TableName"       -> TableName.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeletePartitionRequest]
     }
   }
@@ -3147,7 +3149,7 @@ package glue {
   object DeletePartitionResponse {
     def apply(
         ): DeletePartitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeletePartitionResponse]
     }
@@ -3162,8 +3164,8 @@ package glue {
     def apply(
         PolicyHashCondition: js.UndefOr[HashString] = js.undefined
     ): DeleteResourcePolicyRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PolicyHashCondition.foreach(__v => __obj.update("PolicyHashCondition", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PolicyHashCondition.foreach(__v => __obj.updateDynamic("PolicyHashCondition")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteResourcePolicyRequest]
     }
   }
@@ -3174,7 +3176,7 @@ package glue {
   object DeleteResourcePolicyResponse {
     def apply(
         ): DeleteResourcePolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteResourcePolicyResponse]
     }
@@ -3189,7 +3191,7 @@ package glue {
     def apply(
         Name: NameString
     ): DeleteSecurityConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -3203,7 +3205,7 @@ package glue {
   object DeleteSecurityConfigurationResponse {
     def apply(
         ): DeleteSecurityConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteSecurityConfigurationResponse]
     }
@@ -3222,12 +3224,12 @@ package glue {
         Name: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): DeleteTableRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
         "Name"         -> Name.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteTableRequest]
     }
   }
@@ -3238,7 +3240,7 @@ package glue {
   object DeleteTableResponse {
     def apply(
         ): DeleteTableResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteTableResponse]
     }
@@ -3259,13 +3261,13 @@ package glue {
         VersionId: VersionString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): DeleteTableVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
         "TableName"    -> TableName.asInstanceOf[js.Any],
         "VersionId"    -> VersionId.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteTableVersionRequest]
     }
   }
@@ -3276,7 +3278,7 @@ package glue {
   object DeleteTableVersionResponse {
     def apply(
         ): DeleteTableVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteTableVersionResponse]
     }
@@ -3291,7 +3293,7 @@ package glue {
     def apply(
         Name: NameString
     ): DeleteTriggerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -3308,8 +3310,8 @@ package glue {
     def apply(
         Name: js.UndefOr[NameString] = js.undefined
     ): DeleteTriggerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteTriggerResponse]
     }
   }
@@ -3327,12 +3329,12 @@ package glue {
         FunctionName: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): DeleteUserDefinedFunctionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
         "FunctionName" -> FunctionName.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteUserDefinedFunctionRequest]
     }
   }
@@ -3343,7 +3345,7 @@ package glue {
   object DeleteUserDefinedFunctionResponse {
     def apply(
         ): DeleteUserDefinedFunctionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteUserDefinedFunctionResponse]
     }
@@ -3358,7 +3360,7 @@ package glue {
     def apply(
         Name: NameString
     ): DeleteWorkflowRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -3375,8 +3377,8 @@ package glue {
     def apply(
         Name: js.UndefOr[NameString] = js.undefined
     ): DeleteWorkflowResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteWorkflowResponse]
     }
   }
@@ -3439,32 +3441,32 @@ package glue {
         YarnEndpointAddress: js.UndefOr[GenericString] = js.undefined,
         ZeppelinRemoteSparkInterpreterPort: js.UndefOr[IntegerValue] = js.undefined
     ): DevEndpoint = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arguments.foreach(__v => __obj.update("Arguments", __v.asInstanceOf[js.Any]))
-      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
-      CreatedTimestamp.foreach(__v => __obj.update("CreatedTimestamp", __v.asInstanceOf[js.Any]))
-      EndpointName.foreach(__v => __obj.update("EndpointName", __v.asInstanceOf[js.Any]))
-      ExtraJarsS3Path.foreach(__v => __obj.update("ExtraJarsS3Path", __v.asInstanceOf[js.Any]))
-      ExtraPythonLibsS3Path.foreach(__v => __obj.update("ExtraPythonLibsS3Path", __v.asInstanceOf[js.Any]))
-      FailureReason.foreach(__v => __obj.update("FailureReason", __v.asInstanceOf[js.Any]))
-      LastModifiedTimestamp.foreach(__v => __obj.update("LastModifiedTimestamp", __v.asInstanceOf[js.Any]))
-      LastUpdateStatus.foreach(__v => __obj.update("LastUpdateStatus", __v.asInstanceOf[js.Any]))
-      NumberOfNodes.foreach(__v => __obj.update("NumberOfNodes", __v.asInstanceOf[js.Any]))
-      NumberOfWorkers.foreach(__v => __obj.update("NumberOfWorkers", __v.asInstanceOf[js.Any]))
-      PrivateAddress.foreach(__v => __obj.update("PrivateAddress", __v.asInstanceOf[js.Any]))
-      PublicAddress.foreach(__v => __obj.update("PublicAddress", __v.asInstanceOf[js.Any]))
-      PublicKey.foreach(__v => __obj.update("PublicKey", __v.asInstanceOf[js.Any]))
-      PublicKeys.foreach(__v => __obj.update("PublicKeys", __v.asInstanceOf[js.Any]))
-      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
-      SecurityConfiguration.foreach(__v => __obj.update("SecurityConfiguration", __v.asInstanceOf[js.Any]))
-      SecurityGroupIds.foreach(__v => __obj.update("SecurityGroupIds", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      SubnetId.foreach(__v => __obj.update("SubnetId", __v.asInstanceOf[js.Any]))
-      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
-      WorkerType.foreach(__v => __obj.update("WorkerType", __v.asInstanceOf[js.Any]))
-      YarnEndpointAddress.foreach(__v => __obj.update("YarnEndpointAddress", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arguments.foreach(__v => __obj.updateDynamic("Arguments")(__v.asInstanceOf[js.Any]))
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      EndpointName.foreach(__v => __obj.updateDynamic("EndpointName")(__v.asInstanceOf[js.Any]))
+      ExtraJarsS3Path.foreach(__v => __obj.updateDynamic("ExtraJarsS3Path")(__v.asInstanceOf[js.Any]))
+      ExtraPythonLibsS3Path.foreach(__v => __obj.updateDynamic("ExtraPythonLibsS3Path")(__v.asInstanceOf[js.Any]))
+      FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
+      LastModifiedTimestamp.foreach(__v => __obj.updateDynamic("LastModifiedTimestamp")(__v.asInstanceOf[js.Any]))
+      LastUpdateStatus.foreach(__v => __obj.updateDynamic("LastUpdateStatus")(__v.asInstanceOf[js.Any]))
+      NumberOfNodes.foreach(__v => __obj.updateDynamic("NumberOfNodes")(__v.asInstanceOf[js.Any]))
+      NumberOfWorkers.foreach(__v => __obj.updateDynamic("NumberOfWorkers")(__v.asInstanceOf[js.Any]))
+      PrivateAddress.foreach(__v => __obj.updateDynamic("PrivateAddress")(__v.asInstanceOf[js.Any]))
+      PublicAddress.foreach(__v => __obj.updateDynamic("PublicAddress")(__v.asInstanceOf[js.Any]))
+      PublicKey.foreach(__v => __obj.updateDynamic("PublicKey")(__v.asInstanceOf[js.Any]))
+      PublicKeys.foreach(__v => __obj.updateDynamic("PublicKeys")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      SecurityConfiguration.foreach(__v => __obj.updateDynamic("SecurityConfiguration")(__v.asInstanceOf[js.Any]))
+      SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
+      WorkerType.foreach(__v => __obj.updateDynamic("WorkerType")(__v.asInstanceOf[js.Any]))
+      YarnEndpointAddress.foreach(__v => __obj.updateDynamic("YarnEndpointAddress")(__v.asInstanceOf[js.Any]))
       ZeppelinRemoteSparkInterpreterPort.foreach(
-        __v => __obj.update("ZeppelinRemoteSparkInterpreterPort", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ZeppelinRemoteSparkInterpreterPort")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DevEndpoint]
     }
@@ -3484,9 +3486,9 @@ package glue {
         ExtraJarsS3Path: js.UndefOr[GenericString] = js.undefined,
         ExtraPythonLibsS3Path: js.UndefOr[GenericString] = js.undefined
     ): DevEndpointCustomLibraries = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ExtraJarsS3Path.foreach(__v => __obj.update("ExtraJarsS3Path", __v.asInstanceOf[js.Any]))
-      ExtraPythonLibsS3Path.foreach(__v => __obj.update("ExtraPythonLibsS3Path", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ExtraJarsS3Path.foreach(__v => __obj.updateDynamic("ExtraJarsS3Path")(__v.asInstanceOf[js.Any]))
+      ExtraPythonLibsS3Path.foreach(__v => __obj.updateDynamic("ExtraPythonLibsS3Path")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DevEndpointCustomLibraries]
     }
   }
@@ -3503,8 +3505,8 @@ package glue {
     def apply(
         Path: js.UndefOr[Path] = js.undefined
     ): DynamoDBTarget = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Path.foreach(__v => __obj.update("Path", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DynamoDBTarget]
     }
   }
@@ -3523,9 +3525,9 @@ package glue {
         DestinationId: js.UndefOr[NameString] = js.undefined,
         SourceId: js.UndefOr[NameString] = js.undefined
     ): Edge = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DestinationId.foreach(__v => __obj.update("DestinationId", __v.asInstanceOf[js.Any]))
-      SourceId.foreach(__v => __obj.update("SourceId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DestinationId.foreach(__v => __obj.updateDynamic("DestinationId")(__v.asInstanceOf[js.Any]))
+      SourceId.foreach(__v => __obj.updateDynamic("SourceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Edge]
     }
   }
@@ -3544,11 +3546,11 @@ package glue {
         CatalogEncryptionMode: CatalogEncryptionMode,
         SseAwsKmsKeyId: js.UndefOr[NameString] = js.undefined
     ): EncryptionAtRest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CatalogEncryptionMode" -> CatalogEncryptionMode.asInstanceOf[js.Any]
       )
 
-      SseAwsKmsKeyId.foreach(__v => __obj.update("SseAwsKmsKeyId", __v.asInstanceOf[js.Any]))
+      SseAwsKmsKeyId.foreach(__v => __obj.updateDynamic("SseAwsKmsKeyId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EncryptionAtRest]
     }
   }
@@ -3569,10 +3571,10 @@ package glue {
         JobBookmarksEncryption: js.UndefOr[JobBookmarksEncryption] = js.undefined,
         S3Encryption: js.UndefOr[S3EncryptionList] = js.undefined
     ): EncryptionConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CloudWatchEncryption.foreach(__v => __obj.update("CloudWatchEncryption", __v.asInstanceOf[js.Any]))
-      JobBookmarksEncryption.foreach(__v => __obj.update("JobBookmarksEncryption", __v.asInstanceOf[js.Any]))
-      S3Encryption.foreach(__v => __obj.update("S3Encryption", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CloudWatchEncryption.foreach(__v => __obj.updateDynamic("CloudWatchEncryption")(__v.asInstanceOf[js.Any]))
+      JobBookmarksEncryption.foreach(__v => __obj.updateDynamic("JobBookmarksEncryption")(__v.asInstanceOf[js.Any]))
+      S3Encryption.foreach(__v => __obj.updateDynamic("S3Encryption")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EncryptionConfiguration]
     }
   }
@@ -3591,9 +3593,9 @@ package glue {
         ErrorCode: js.UndefOr[NameString] = js.undefined,
         ErrorMessage: js.UndefOr[DescriptionString] = js.undefined
     ): ErrorDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ErrorDetail]
     }
   }
@@ -3612,11 +3614,11 @@ package glue {
         TransformType: TransformType,
         FindMatchesMetrics: js.UndefOr[FindMatchesMetrics] = js.undefined
     ): EvaluationMetrics = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TransformType" -> TransformType.asInstanceOf[js.Any]
       )
 
-      FindMatchesMetrics.foreach(__v => __obj.update("FindMatchesMetrics", __v.asInstanceOf[js.Any]))
+      FindMatchesMetrics.foreach(__v => __obj.updateDynamic("FindMatchesMetrics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EvaluationMetrics]
     }
   }
@@ -3633,8 +3635,8 @@ package glue {
     def apply(
         MaxConcurrentRuns: js.UndefOr[MaxConcurrentRuns] = js.undefined
     ): ExecutionProperty = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxConcurrentRuns.foreach(__v => __obj.update("MaxConcurrentRuns", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxConcurrentRuns.foreach(__v => __obj.updateDynamic("MaxConcurrentRuns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExecutionProperty]
     }
   }
@@ -3659,8 +3661,8 @@ package glue {
     def apply(
         OutputS3Path: js.UndefOr[UriString] = js.undefined
     ): ExportLabelsTaskRunProperties = {
-      val __obj = js.Dictionary.empty[js.Any]
-      OutputS3Path.foreach(__v => __obj.update("OutputS3Path", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      OutputS3Path.foreach(__v => __obj.updateDynamic("OutputS3Path")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportLabelsTaskRunProperties]
     }
   }
@@ -3685,12 +3687,12 @@ package glue {
         Precision: js.UndefOr[GenericBoundedDouble] = js.undefined,
         Recall: js.UndefOr[GenericBoundedDouble] = js.undefined
     ): FindMatchesMetrics = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AreaUnderPRCurve.foreach(__v => __obj.update("AreaUnderPRCurve", __v.asInstanceOf[js.Any]))
-      ConfusionMatrix.foreach(__v => __obj.update("ConfusionMatrix", __v.asInstanceOf[js.Any]))
-      F1.foreach(__v => __obj.update("F1", __v.asInstanceOf[js.Any]))
-      Precision.foreach(__v => __obj.update("Precision", __v.asInstanceOf[js.Any]))
-      Recall.foreach(__v => __obj.update("Recall", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AreaUnderPRCurve.foreach(__v => __obj.updateDynamic("AreaUnderPRCurve")(__v.asInstanceOf[js.Any]))
+      ConfusionMatrix.foreach(__v => __obj.updateDynamic("ConfusionMatrix")(__v.asInstanceOf[js.Any]))
+      F1.foreach(__v => __obj.updateDynamic("F1")(__v.asInstanceOf[js.Any]))
+      Precision.foreach(__v => __obj.updateDynamic("Precision")(__v.asInstanceOf[js.Any]))
+      Recall.foreach(__v => __obj.updateDynamic("Recall")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FindMatchesMetrics]
     }
   }
@@ -3713,11 +3715,11 @@ package glue {
         PrecisionRecallTradeoff: js.UndefOr[GenericBoundedDouble] = js.undefined,
         PrimaryKeyColumnName: js.UndefOr[ColumnNameString] = js.undefined
     ): FindMatchesParameters = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccuracyCostTradeoff.foreach(__v => __obj.update("AccuracyCostTradeoff", __v.asInstanceOf[js.Any]))
-      EnforceProvidedLabels.foreach(__v => __obj.update("EnforceProvidedLabels", __v.asInstanceOf[js.Any]))
-      PrecisionRecallTradeoff.foreach(__v => __obj.update("PrecisionRecallTradeoff", __v.asInstanceOf[js.Any]))
-      PrimaryKeyColumnName.foreach(__v => __obj.update("PrimaryKeyColumnName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccuracyCostTradeoff.foreach(__v => __obj.updateDynamic("AccuracyCostTradeoff")(__v.asInstanceOf[js.Any]))
+      EnforceProvidedLabels.foreach(__v => __obj.updateDynamic("EnforceProvidedLabels")(__v.asInstanceOf[js.Any]))
+      PrecisionRecallTradeoff.foreach(__v => __obj.updateDynamic("PrecisionRecallTradeoff")(__v.asInstanceOf[js.Any]))
+      PrimaryKeyColumnName.foreach(__v => __obj.updateDynamic("PrimaryKeyColumnName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FindMatchesParameters]
     }
   }
@@ -3738,10 +3740,10 @@ package glue {
         JobName: js.UndefOr[NameString] = js.undefined,
         JobRunId: js.UndefOr[HashString] = js.undefined
     ): FindMatchesTaskRunProperties = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobId.foreach(__v => __obj.update("JobId", __v.asInstanceOf[js.Any]))
-      JobName.foreach(__v => __obj.update("JobName", __v.asInstanceOf[js.Any]))
-      JobRunId.foreach(__v => __obj.update("JobRunId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      JobRunId.foreach(__v => __obj.updateDynamic("JobRunId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FindMatchesTaskRunProperties]
     }
   }
@@ -3755,8 +3757,8 @@ package glue {
     def apply(
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): GetCatalogImportStatusRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCatalogImportStatusRequest]
     }
   }
@@ -3770,8 +3772,8 @@ package glue {
     def apply(
         ImportStatus: js.UndefOr[CatalogImportStatus] = js.undefined
     ): GetCatalogImportStatusResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ImportStatus.foreach(__v => __obj.update("ImportStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ImportStatus.foreach(__v => __obj.updateDynamic("ImportStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCatalogImportStatusResponse]
     }
   }
@@ -3785,7 +3787,7 @@ package glue {
     def apply(
         Name: NameString
     ): GetClassifierRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -3802,8 +3804,8 @@ package glue {
     def apply(
         Classifier: js.UndefOr[Classifier] = js.undefined
     ): GetClassifierResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Classifier.foreach(__v => __obj.update("Classifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Classifier.foreach(__v => __obj.updateDynamic("Classifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetClassifierResponse]
     }
   }
@@ -3819,9 +3821,9 @@ package glue {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetClassifiersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetClassifiersRequest]
     }
   }
@@ -3837,9 +3839,9 @@ package glue {
         Classifiers: js.UndefOr[ClassifierList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetClassifiersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Classifiers.foreach(__v => __obj.update("Classifiers", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Classifiers.foreach(__v => __obj.updateDynamic("Classifiers")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetClassifiersResponse]
     }
   }
@@ -3857,12 +3859,12 @@ package glue {
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
         HidePassword: js.UndefOr[Boolean] = js.undefined
     ): GetConnectionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
-      HidePassword.foreach(__v => __obj.update("HidePassword", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      HidePassword.foreach(__v => __obj.updateDynamic("HidePassword")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetConnectionRequest]
     }
   }
@@ -3876,8 +3878,8 @@ package glue {
     def apply(
         Connection: js.UndefOr[Connection] = js.undefined
     ): GetConnectionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Connection.foreach(__v => __obj.update("Connection", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Connection.foreach(__v => __obj.updateDynamic("Connection")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetConnectionResponse]
     }
   }
@@ -3896,9 +3898,9 @@ package glue {
         ConnectionType: js.UndefOr[ConnectionType] = js.undefined,
         MatchCriteria: js.UndefOr[MatchCriteria] = js.undefined
     ): GetConnectionsFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConnectionType.foreach(__v => __obj.update("ConnectionType", __v.asInstanceOf[js.Any]))
-      MatchCriteria.foreach(__v => __obj.update("MatchCriteria", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConnectionType.foreach(__v => __obj.updateDynamic("ConnectionType")(__v.asInstanceOf[js.Any]))
+      MatchCriteria.foreach(__v => __obj.updateDynamic("MatchCriteria")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetConnectionsFilter]
     }
   }
@@ -3920,12 +3922,12 @@ package glue {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetConnectionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
-      Filter.foreach(__v => __obj.update("Filter", __v.asInstanceOf[js.Any]))
-      HidePassword.foreach(__v => __obj.update("HidePassword", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
+      HidePassword.foreach(__v => __obj.updateDynamic("HidePassword")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetConnectionsRequest]
     }
   }
@@ -3941,9 +3943,9 @@ package glue {
         ConnectionList: js.UndefOr[ConnectionList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetConnectionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConnectionList.foreach(__v => __obj.update("ConnectionList", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConnectionList.foreach(__v => __obj.updateDynamic("ConnectionList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetConnectionsResponse]
     }
   }
@@ -3961,10 +3963,10 @@ package glue {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetCrawlerMetricsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CrawlerNameList.foreach(__v => __obj.update("CrawlerNameList", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CrawlerNameList.foreach(__v => __obj.updateDynamic("CrawlerNameList")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCrawlerMetricsRequest]
     }
   }
@@ -3980,9 +3982,9 @@ package glue {
         CrawlerMetricsList: js.UndefOr[CrawlerMetricsList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetCrawlerMetricsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CrawlerMetricsList.foreach(__v => __obj.update("CrawlerMetricsList", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CrawlerMetricsList.foreach(__v => __obj.updateDynamic("CrawlerMetricsList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCrawlerMetricsResponse]
     }
   }
@@ -3996,7 +3998,7 @@ package glue {
     def apply(
         Name: NameString
     ): GetCrawlerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -4013,8 +4015,8 @@ package glue {
     def apply(
         Crawler: js.UndefOr[Crawler] = js.undefined
     ): GetCrawlerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Crawler.foreach(__v => __obj.update("Crawler", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Crawler.foreach(__v => __obj.updateDynamic("Crawler")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCrawlerResponse]
     }
   }
@@ -4030,9 +4032,9 @@ package glue {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetCrawlersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCrawlersRequest]
     }
   }
@@ -4048,9 +4050,9 @@ package glue {
         Crawlers: js.UndefOr[CrawlerList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetCrawlersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Crawlers.foreach(__v => __obj.update("Crawlers", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Crawlers.foreach(__v => __obj.updateDynamic("Crawlers")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCrawlersResponse]
     }
   }
@@ -4064,8 +4066,8 @@ package glue {
     def apply(
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): GetDataCatalogEncryptionSettingsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDataCatalogEncryptionSettingsRequest]
     }
   }
@@ -4079,9 +4081,9 @@ package glue {
     def apply(
         DataCatalogEncryptionSettings: js.UndefOr[DataCatalogEncryptionSettings] = js.undefined
     ): GetDataCatalogEncryptionSettingsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       DataCatalogEncryptionSettings.foreach(
-        __v => __obj.update("DataCatalogEncryptionSettings", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("DataCatalogEncryptionSettings")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetDataCatalogEncryptionSettingsResponse]
     }
@@ -4098,11 +4100,11 @@ package glue {
         Name: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): GetDatabaseRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDatabaseRequest]
     }
   }
@@ -4116,8 +4118,8 @@ package glue {
     def apply(
         Database: js.UndefOr[Database] = js.undefined
     ): GetDatabaseResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Database.foreach(__v => __obj.update("Database", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Database.foreach(__v => __obj.updateDynamic("Database")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDatabaseResponse]
     }
   }
@@ -4135,10 +4137,10 @@ package glue {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetDatabasesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDatabasesRequest]
     }
   }
@@ -4154,11 +4156,11 @@ package glue {
         DatabaseList: DatabaseList,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetDatabasesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatabaseList" -> DatabaseList.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDatabasesResponse]
     }
   }
@@ -4172,8 +4174,8 @@ package glue {
     def apply(
         PythonScript: js.UndefOr[PythonScript] = js.undefined
     ): GetDataflowGraphRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PythonScript.foreach(__v => __obj.update("PythonScript", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PythonScript.foreach(__v => __obj.updateDynamic("PythonScript")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDataflowGraphRequest]
     }
   }
@@ -4189,9 +4191,9 @@ package glue {
         DagEdges: js.UndefOr[DagEdges] = js.undefined,
         DagNodes: js.UndefOr[DagNodes] = js.undefined
     ): GetDataflowGraphResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DagEdges.foreach(__v => __obj.update("DagEdges", __v.asInstanceOf[js.Any]))
-      DagNodes.foreach(__v => __obj.update("DagNodes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DagEdges.foreach(__v => __obj.updateDynamic("DagEdges")(__v.asInstanceOf[js.Any]))
+      DagNodes.foreach(__v => __obj.updateDynamic("DagNodes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDataflowGraphResponse]
     }
   }
@@ -4205,7 +4207,7 @@ package glue {
     def apply(
         EndpointName: GenericString
     ): GetDevEndpointRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EndpointName" -> EndpointName.asInstanceOf[js.Any]
       )
 
@@ -4222,8 +4224,8 @@ package glue {
     def apply(
         DevEndpoint: js.UndefOr[DevEndpoint] = js.undefined
     ): GetDevEndpointResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DevEndpoint.foreach(__v => __obj.update("DevEndpoint", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DevEndpoint.foreach(__v => __obj.updateDynamic("DevEndpoint")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDevEndpointResponse]
     }
   }
@@ -4239,9 +4241,9 @@ package glue {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): GetDevEndpointsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDevEndpointsRequest]
     }
   }
@@ -4257,9 +4259,9 @@ package glue {
         DevEndpoints: js.UndefOr[DevEndpointList] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): GetDevEndpointsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DevEndpoints.foreach(__v => __obj.update("DevEndpoints", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DevEndpoints.foreach(__v => __obj.updateDynamic("DevEndpoints")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDevEndpointsResponse]
     }
   }
@@ -4275,11 +4277,11 @@ package glue {
         JobName: JobName,
         RunId: js.UndefOr[RunId] = js.undefined
     ): GetJobBookmarkRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobName" -> JobName.asInstanceOf[js.Any]
       )
 
-      RunId.foreach(__v => __obj.update("RunId", __v.asInstanceOf[js.Any]))
+      RunId.foreach(__v => __obj.updateDynamic("RunId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetJobBookmarkRequest]
     }
   }
@@ -4293,8 +4295,8 @@ package glue {
     def apply(
         JobBookmarkEntry: js.UndefOr[JobBookmarkEntry] = js.undefined
     ): GetJobBookmarkResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobBookmarkEntry.foreach(__v => __obj.update("JobBookmarkEntry", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobBookmarkEntry.foreach(__v => __obj.updateDynamic("JobBookmarkEntry")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetJobBookmarkResponse]
     }
   }
@@ -4308,7 +4310,7 @@ package glue {
     def apply(
         JobName: NameString
     ): GetJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobName" -> JobName.asInstanceOf[js.Any]
       )
 
@@ -4325,8 +4327,8 @@ package glue {
     def apply(
         Job: js.UndefOr[Job] = js.undefined
     ): GetJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Job.foreach(__v => __obj.update("Job", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Job.foreach(__v => __obj.updateDynamic("Job")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetJobResponse]
     }
   }
@@ -4344,12 +4346,12 @@ package glue {
         RunId: IdString,
         PredecessorsIncluded: js.UndefOr[BooleanValue] = js.undefined
     ): GetJobRunRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobName" -> JobName.asInstanceOf[js.Any],
         "RunId"   -> RunId.asInstanceOf[js.Any]
       )
 
-      PredecessorsIncluded.foreach(__v => __obj.update("PredecessorsIncluded", __v.asInstanceOf[js.Any]))
+      PredecessorsIncluded.foreach(__v => __obj.updateDynamic("PredecessorsIncluded")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetJobRunRequest]
     }
   }
@@ -4363,8 +4365,8 @@ package glue {
     def apply(
         JobRun: js.UndefOr[JobRun] = js.undefined
     ): GetJobRunResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobRun.foreach(__v => __obj.update("JobRun", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobRun.foreach(__v => __obj.updateDynamic("JobRun")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetJobRunResponse]
     }
   }
@@ -4382,12 +4384,12 @@ package glue {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): GetJobRunsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobName" -> JobName.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetJobRunsRequest]
     }
   }
@@ -4403,9 +4405,9 @@ package glue {
         JobRuns: js.UndefOr[JobRunList] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): GetJobRunsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobRuns.foreach(__v => __obj.update("JobRuns", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobRuns.foreach(__v => __obj.updateDynamic("JobRuns")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetJobRunsResponse]
     }
   }
@@ -4421,9 +4423,9 @@ package glue {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): GetJobsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetJobsRequest]
     }
   }
@@ -4439,9 +4441,9 @@ package glue {
         Jobs: js.UndefOr[JobList] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): GetJobsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Jobs.foreach(__v => __obj.update("Jobs", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Jobs.foreach(__v => __obj.updateDynamic("Jobs")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetJobsResponse]
     }
   }
@@ -4457,7 +4459,7 @@ package glue {
         TaskRunId: HashString,
         TransformId: HashString
     ): GetMLTaskRunRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TaskRunId"   -> TaskRunId.asInstanceOf[js.Any],
         "TransformId" -> TransformId.asInstanceOf[js.Any]
       )
@@ -4493,17 +4495,17 @@ package glue {
         TaskRunId: js.UndefOr[HashString] = js.undefined,
         TransformId: js.UndefOr[HashString] = js.undefined
     ): GetMLTaskRunResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CompletedOn.foreach(__v => __obj.update("CompletedOn", __v.asInstanceOf[js.Any]))
-      ErrorString.foreach(__v => __obj.update("ErrorString", __v.asInstanceOf[js.Any]))
-      ExecutionTime.foreach(__v => __obj.update("ExecutionTime", __v.asInstanceOf[js.Any]))
-      LastModifiedOn.foreach(__v => __obj.update("LastModifiedOn", __v.asInstanceOf[js.Any]))
-      LogGroupName.foreach(__v => __obj.update("LogGroupName", __v.asInstanceOf[js.Any]))
-      Properties.foreach(__v => __obj.update("Properties", __v.asInstanceOf[js.Any]))
-      StartedOn.foreach(__v => __obj.update("StartedOn", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      TaskRunId.foreach(__v => __obj.update("TaskRunId", __v.asInstanceOf[js.Any]))
-      TransformId.foreach(__v => __obj.update("TransformId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CompletedOn.foreach(__v => __obj.updateDynamic("CompletedOn")(__v.asInstanceOf[js.Any]))
+      ErrorString.foreach(__v => __obj.updateDynamic("ErrorString")(__v.asInstanceOf[js.Any]))
+      ExecutionTime.foreach(__v => __obj.updateDynamic("ExecutionTime")(__v.asInstanceOf[js.Any]))
+      LastModifiedOn.foreach(__v => __obj.updateDynamic("LastModifiedOn")(__v.asInstanceOf[js.Any]))
+      LogGroupName.foreach(__v => __obj.updateDynamic("LogGroupName")(__v.asInstanceOf[js.Any]))
+      Properties.foreach(__v => __obj.updateDynamic("Properties")(__v.asInstanceOf[js.Any]))
+      StartedOn.foreach(__v => __obj.updateDynamic("StartedOn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TaskRunId.foreach(__v => __obj.updateDynamic("TaskRunId")(__v.asInstanceOf[js.Any]))
+      TransformId.foreach(__v => __obj.updateDynamic("TransformId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMLTaskRunResponse]
     }
   }
@@ -4525,14 +4527,14 @@ package glue {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         Sort: js.UndefOr[TaskRunSortCriteria] = js.undefined
     ): GetMLTaskRunsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TransformId" -> TransformId.asInstanceOf[js.Any]
       )
 
-      Filter.foreach(__v => __obj.update("Filter", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Sort.foreach(__v => __obj.update("Sort", __v.asInstanceOf[js.Any]))
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Sort.foreach(__v => __obj.updateDynamic("Sort")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMLTaskRunsRequest]
     }
   }
@@ -4548,9 +4550,9 @@ package glue {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         TaskRuns: js.UndefOr[TaskRunList] = js.undefined
     ): GetMLTaskRunsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      TaskRuns.foreach(__v => __obj.update("TaskRuns", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TaskRuns.foreach(__v => __obj.updateDynamic("TaskRuns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMLTaskRunsResponse]
     }
   }
@@ -4564,7 +4566,7 @@ package glue {
     def apply(
         TransformId: HashString
     ): GetMLTransformRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TransformId" -> TransformId.asInstanceOf[js.Any]
       )
 
@@ -4613,24 +4615,24 @@ package glue {
         TransformId: js.UndefOr[HashString] = js.undefined,
         WorkerType: js.UndefOr[WorkerType] = js.undefined
     ): GetMLTransformResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedOn.foreach(__v => __obj.update("CreatedOn", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      EvaluationMetrics.foreach(__v => __obj.update("EvaluationMetrics", __v.asInstanceOf[js.Any]))
-      InputRecordTables.foreach(__v => __obj.update("InputRecordTables", __v.asInstanceOf[js.Any]))
-      LabelCount.foreach(__v => __obj.update("LabelCount", __v.asInstanceOf[js.Any]))
-      LastModifiedOn.foreach(__v => __obj.update("LastModifiedOn", __v.asInstanceOf[js.Any]))
-      MaxCapacity.foreach(__v => __obj.update("MaxCapacity", __v.asInstanceOf[js.Any]))
-      MaxRetries.foreach(__v => __obj.update("MaxRetries", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      NumberOfWorkers.foreach(__v => __obj.update("NumberOfWorkers", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
-      Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
-      Schema.foreach(__v => __obj.update("Schema", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      Timeout.foreach(__v => __obj.update("Timeout", __v.asInstanceOf[js.Any]))
-      TransformId.foreach(__v => __obj.update("TransformId", __v.asInstanceOf[js.Any]))
-      WorkerType.foreach(__v => __obj.update("WorkerType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedOn.foreach(__v => __obj.updateDynamic("CreatedOn")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EvaluationMetrics.foreach(__v => __obj.updateDynamic("EvaluationMetrics")(__v.asInstanceOf[js.Any]))
+      InputRecordTables.foreach(__v => __obj.updateDynamic("InputRecordTables")(__v.asInstanceOf[js.Any]))
+      LabelCount.foreach(__v => __obj.updateDynamic("LabelCount")(__v.asInstanceOf[js.Any]))
+      LastModifiedOn.foreach(__v => __obj.updateDynamic("LastModifiedOn")(__v.asInstanceOf[js.Any]))
+      MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
+      MaxRetries.foreach(__v => __obj.updateDynamic("MaxRetries")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NumberOfWorkers.foreach(__v => __obj.updateDynamic("NumberOfWorkers")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
+      Schema.foreach(__v => __obj.updateDynamic("Schema")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
+      TransformId.foreach(__v => __obj.updateDynamic("TransformId")(__v.asInstanceOf[js.Any]))
+      WorkerType.foreach(__v => __obj.updateDynamic("WorkerType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMLTransformResponse]
     }
   }
@@ -4650,11 +4652,11 @@ package glue {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         Sort: js.UndefOr[TransformSortCriteria] = js.undefined
     ): GetMLTransformsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filter.foreach(__v => __obj.update("Filter", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Sort.foreach(__v => __obj.update("Sort", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Sort.foreach(__v => __obj.updateDynamic("Sort")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMLTransformsRequest]
     }
   }
@@ -4670,11 +4672,11 @@ package glue {
         Transforms: TransformList,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): GetMLTransformsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Transforms" -> Transforms.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMLTransformsResponse]
     }
   }
@@ -4692,12 +4694,12 @@ package glue {
         Location: js.UndefOr[Location] = js.undefined,
         Sinks: js.UndefOr[CatalogEntries] = js.undefined
     ): GetMappingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Source" -> Source.asInstanceOf[js.Any]
       )
 
-      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
-      Sinks.foreach(__v => __obj.update("Sinks", __v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
+      Sinks.foreach(__v => __obj.updateDynamic("Sinks")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMappingRequest]
     }
   }
@@ -4711,7 +4713,7 @@ package glue {
     def apply(
         Mapping: MappingList
     ): GetMappingResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Mapping" -> Mapping.asInstanceOf[js.Any]
       )
 
@@ -4734,13 +4736,13 @@ package glue {
         TableName: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): GetPartitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatabaseName"    -> DatabaseName.asInstanceOf[js.Any],
         "PartitionValues" -> PartitionValues.asInstanceOf[js.Any],
         "TableName"       -> TableName.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPartitionRequest]
     }
   }
@@ -4754,8 +4756,8 @@ package glue {
     def apply(
         Partition: js.UndefOr[Partition] = js.undefined
     ): GetPartitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Partition.foreach(__v => __obj.update("Partition", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Partition.foreach(__v => __obj.updateDynamic("Partition")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPartitionResponse]
     }
   }
@@ -4781,16 +4783,16 @@ package glue {
         NextToken: js.UndefOr[Token] = js.undefined,
         Segment: js.UndefOr[Segment] = js.undefined
     ): GetPartitionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
         "TableName"    -> TableName.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
-      Expression.foreach(__v => __obj.update("Expression", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Segment.foreach(__v => __obj.update("Segment", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      Expression.foreach(__v => __obj.updateDynamic("Expression")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Segment.foreach(__v => __obj.updateDynamic("Segment")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPartitionsRequest]
     }
   }
@@ -4806,9 +4808,9 @@ package glue {
         NextToken: js.UndefOr[Token] = js.undefined,
         Partitions: js.UndefOr[PartitionList] = js.undefined
     ): GetPartitionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Partitions.foreach(__v => __obj.update("Partitions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Partitions.foreach(__v => __obj.updateDynamic("Partitions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPartitionsResponse]
     }
   }
@@ -4830,14 +4832,14 @@ package glue {
         Location: js.UndefOr[Location] = js.undefined,
         Sinks: js.UndefOr[CatalogEntries] = js.undefined
     ): GetPlanRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Mapping" -> Mapping.asInstanceOf[js.Any],
         "Source"  -> Source.asInstanceOf[js.Any]
       )
 
-      Language.foreach(__v => __obj.update("Language", __v.asInstanceOf[js.Any]))
-      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
-      Sinks.foreach(__v => __obj.update("Sinks", __v.asInstanceOf[js.Any]))
+      Language.foreach(__v => __obj.updateDynamic("Language")(__v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
+      Sinks.foreach(__v => __obj.updateDynamic("Sinks")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPlanRequest]
     }
   }
@@ -4853,9 +4855,9 @@ package glue {
         PythonScript: js.UndefOr[PythonScript] = js.undefined,
         ScalaCode: js.UndefOr[ScalaCode] = js.undefined
     ): GetPlanResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PythonScript.foreach(__v => __obj.update("PythonScript", __v.asInstanceOf[js.Any]))
-      ScalaCode.foreach(__v => __obj.update("ScalaCode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PythonScript.foreach(__v => __obj.updateDynamic("PythonScript")(__v.asInstanceOf[js.Any]))
+      ScalaCode.foreach(__v => __obj.updateDynamic("ScalaCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPlanResponse]
     }
   }
@@ -4866,7 +4868,7 @@ package glue {
   object GetResourcePolicyRequest {
     def apply(
         ): GetResourcePolicyRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetResourcePolicyRequest]
     }
@@ -4887,11 +4889,11 @@ package glue {
         PolicyInJson: js.UndefOr[PolicyJsonString] = js.undefined,
         UpdateTime: js.UndefOr[Timestamp] = js.undefined
     ): GetResourcePolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreateTime.foreach(__v => __obj.update("CreateTime", __v.asInstanceOf[js.Any]))
-      PolicyHash.foreach(__v => __obj.update("PolicyHash", __v.asInstanceOf[js.Any]))
-      PolicyInJson.foreach(__v => __obj.update("PolicyInJson", __v.asInstanceOf[js.Any]))
-      UpdateTime.foreach(__v => __obj.update("UpdateTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreateTime.foreach(__v => __obj.updateDynamic("CreateTime")(__v.asInstanceOf[js.Any]))
+      PolicyHash.foreach(__v => __obj.updateDynamic("PolicyHash")(__v.asInstanceOf[js.Any]))
+      PolicyInJson.foreach(__v => __obj.updateDynamic("PolicyInJson")(__v.asInstanceOf[js.Any]))
+      UpdateTime.foreach(__v => __obj.updateDynamic("UpdateTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetResourcePolicyResponse]
     }
   }
@@ -4905,7 +4907,7 @@ package glue {
     def apply(
         Name: NameString
     ): GetSecurityConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -4922,8 +4924,8 @@ package glue {
     def apply(
         SecurityConfiguration: js.UndefOr[SecurityConfiguration] = js.undefined
     ): GetSecurityConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SecurityConfiguration.foreach(__v => __obj.update("SecurityConfiguration", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SecurityConfiguration.foreach(__v => __obj.updateDynamic("SecurityConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSecurityConfigurationResponse]
     }
   }
@@ -4939,9 +4941,9 @@ package glue {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): GetSecurityConfigurationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSecurityConfigurationsRequest]
     }
   }
@@ -4957,9 +4959,9 @@ package glue {
         NextToken: js.UndefOr[GenericString] = js.undefined,
         SecurityConfigurations: js.UndefOr[SecurityConfigurationList] = js.undefined
     ): GetSecurityConfigurationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      SecurityConfigurations.foreach(__v => __obj.update("SecurityConfigurations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SecurityConfigurations.foreach(__v => __obj.updateDynamic("SecurityConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSecurityConfigurationsResponse]
     }
   }
@@ -4977,12 +4979,12 @@ package glue {
         Name: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): GetTableRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
         "Name"         -> Name.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTableRequest]
     }
   }
@@ -4996,8 +4998,8 @@ package glue {
     def apply(
         Table: js.UndefOr[Table] = js.undefined
     ): GetTableResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Table.foreach(__v => __obj.update("Table", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Table.foreach(__v => __obj.updateDynamic("Table")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTableResponse]
     }
   }
@@ -5017,13 +5019,13 @@ package glue {
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
         VersionId: js.UndefOr[VersionString] = js.undefined
     ): GetTableVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
         "TableName"    -> TableName.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTableVersionRequest]
     }
   }
@@ -5037,8 +5039,8 @@ package glue {
     def apply(
         TableVersion: js.UndefOr[TableVersion] = js.undefined
     ): GetTableVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TableVersion.foreach(__v => __obj.update("TableVersion", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TableVersion.foreach(__v => __obj.updateDynamic("TableVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTableVersionResponse]
     }
   }
@@ -5060,14 +5062,14 @@ package glue {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetTableVersionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
         "TableName"    -> TableName.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTableVersionsRequest]
     }
   }
@@ -5083,9 +5085,9 @@ package glue {
         NextToken: js.UndefOr[Token] = js.undefined,
         TableVersions: js.UndefOr[GetTableVersionsList] = js.undefined
     ): GetTableVersionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      TableVersions.foreach(__v => __obj.update("TableVersions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TableVersions.foreach(__v => __obj.updateDynamic("TableVersions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTableVersionsResponse]
     }
   }
@@ -5107,14 +5109,14 @@ package glue {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetTablesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
-      Expression.foreach(__v => __obj.update("Expression", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      Expression.foreach(__v => __obj.updateDynamic("Expression")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTablesRequest]
     }
   }
@@ -5130,9 +5132,9 @@ package glue {
         NextToken: js.UndefOr[Token] = js.undefined,
         TableList: js.UndefOr[TableList] = js.undefined
     ): GetTablesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      TableList.foreach(__v => __obj.update("TableList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TableList.foreach(__v => __obj.updateDynamic("TableList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTablesResponse]
     }
   }
@@ -5146,7 +5148,7 @@ package glue {
     def apply(
         ResourceArn: GlueResourceArn
     ): GetTagsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
@@ -5163,8 +5165,8 @@ package glue {
     def apply(
         Tags: js.UndefOr[TagsMap] = js.undefined
     ): GetTagsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTagsResponse]
     }
   }
@@ -5178,7 +5180,7 @@ package glue {
     def apply(
         Name: NameString
     ): GetTriggerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -5195,8 +5197,8 @@ package glue {
     def apply(
         Trigger: js.UndefOr[Trigger] = js.undefined
     ): GetTriggerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Trigger.foreach(__v => __obj.update("Trigger", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Trigger.foreach(__v => __obj.updateDynamic("Trigger")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTriggerResponse]
     }
   }
@@ -5214,10 +5216,10 @@ package glue {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): GetTriggersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DependentJobName.foreach(__v => __obj.update("DependentJobName", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DependentJobName.foreach(__v => __obj.updateDynamic("DependentJobName")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTriggersRequest]
     }
   }
@@ -5233,9 +5235,9 @@ package glue {
         NextToken: js.UndefOr[GenericString] = js.undefined,
         Triggers: js.UndefOr[TriggerList] = js.undefined
     ): GetTriggersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Triggers.foreach(__v => __obj.update("Triggers", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Triggers.foreach(__v => __obj.updateDynamic("Triggers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTriggersResponse]
     }
   }
@@ -5253,12 +5255,12 @@ package glue {
         FunctionName: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): GetUserDefinedFunctionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
         "FunctionName" -> FunctionName.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetUserDefinedFunctionRequest]
     }
   }
@@ -5272,8 +5274,8 @@ package glue {
     def apply(
         UserDefinedFunction: js.UndefOr[UserDefinedFunction] = js.undefined
     ): GetUserDefinedFunctionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      UserDefinedFunction.foreach(__v => __obj.update("UserDefinedFunction", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      UserDefinedFunction.foreach(__v => __obj.updateDynamic("UserDefinedFunction")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetUserDefinedFunctionResponse]
     }
   }
@@ -5295,14 +5297,14 @@ package glue {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetUserDefinedFunctionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
         "Pattern"      -> Pattern.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetUserDefinedFunctionsRequest]
     }
   }
@@ -5318,9 +5320,9 @@ package glue {
         NextToken: js.UndefOr[Token] = js.undefined,
         UserDefinedFunctions: js.UndefOr[UserDefinedFunctionList] = js.undefined
     ): GetUserDefinedFunctionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      UserDefinedFunctions.foreach(__v => __obj.update("UserDefinedFunctions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      UserDefinedFunctions.foreach(__v => __obj.updateDynamic("UserDefinedFunctions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetUserDefinedFunctionsResponse]
     }
   }
@@ -5336,11 +5338,11 @@ package glue {
         Name: NameString,
         IncludeGraph: js.UndefOr[NullableBoolean] = js.undefined
     ): GetWorkflowRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      IncludeGraph.foreach(__v => __obj.update("IncludeGraph", __v.asInstanceOf[js.Any]))
+      IncludeGraph.foreach(__v => __obj.updateDynamic("IncludeGraph")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetWorkflowRequest]
     }
   }
@@ -5354,8 +5356,8 @@ package glue {
     def apply(
         Workflow: js.UndefOr[Workflow] = js.undefined
     ): GetWorkflowResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Workflow.foreach(__v => __obj.update("Workflow", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Workflow.foreach(__v => __obj.updateDynamic("Workflow")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetWorkflowResponse]
     }
   }
@@ -5371,7 +5373,7 @@ package glue {
         Name: NameString,
         RunId: IdString
     ): GetWorkflowRunPropertiesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"  -> Name.asInstanceOf[js.Any],
         "RunId" -> RunId.asInstanceOf[js.Any]
       )
@@ -5389,8 +5391,8 @@ package glue {
     def apply(
         RunProperties: js.UndefOr[WorkflowRunProperties] = js.undefined
     ): GetWorkflowRunPropertiesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RunProperties.foreach(__v => __obj.update("RunProperties", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RunProperties.foreach(__v => __obj.updateDynamic("RunProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetWorkflowRunPropertiesResponse]
     }
   }
@@ -5408,12 +5410,12 @@ package glue {
         RunId: IdString,
         IncludeGraph: js.UndefOr[NullableBoolean] = js.undefined
     ): GetWorkflowRunRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"  -> Name.asInstanceOf[js.Any],
         "RunId" -> RunId.asInstanceOf[js.Any]
       )
 
-      IncludeGraph.foreach(__v => __obj.update("IncludeGraph", __v.asInstanceOf[js.Any]))
+      IncludeGraph.foreach(__v => __obj.updateDynamic("IncludeGraph")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetWorkflowRunRequest]
     }
   }
@@ -5427,8 +5429,8 @@ package glue {
     def apply(
         Run: js.UndefOr[WorkflowRun] = js.undefined
     ): GetWorkflowRunResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Run.foreach(__v => __obj.update("Run", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Run.foreach(__v => __obj.updateDynamic("Run")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetWorkflowRunResponse]
     }
   }
@@ -5448,13 +5450,13 @@ package glue {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): GetWorkflowRunsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      IncludeGraph.foreach(__v => __obj.update("IncludeGraph", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      IncludeGraph.foreach(__v => __obj.updateDynamic("IncludeGraph")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetWorkflowRunsRequest]
     }
   }
@@ -5470,9 +5472,9 @@ package glue {
         NextToken: js.UndefOr[GenericString] = js.undefined,
         Runs: js.UndefOr[WorkflowRuns] = js.undefined
     ): GetWorkflowRunsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Runs.foreach(__v => __obj.update("Runs", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Runs.foreach(__v => __obj.updateDynamic("Runs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetWorkflowRunsResponse]
     }
   }
@@ -5495,13 +5497,13 @@ package glue {
         CatalogId: js.UndefOr[NameString] = js.undefined,
         ConnectionName: js.UndefOr[NameString] = js.undefined
     ): GlueTable = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
         "TableName"    -> TableName.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
-      ConnectionName.foreach(__v => __obj.update("ConnectionName", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      ConnectionName.foreach(__v => __obj.updateDynamic("ConnectionName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GlueTable]
     }
   }
@@ -5530,16 +5532,16 @@ package glue {
         LastUpdated: js.UndefOr[Timestamp] = js.undefined,
         Version: js.UndefOr[VersionId] = js.undefined
     ): GrokClassifier = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Classification" -> Classification.asInstanceOf[js.Any],
         "GrokPattern"    -> GrokPattern.asInstanceOf[js.Any],
         "Name"           -> Name.asInstanceOf[js.Any]
       )
 
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      CustomPatterns.foreach(__v => __obj.update("CustomPatterns", __v.asInstanceOf[js.Any]))
-      LastUpdated.foreach(__v => __obj.update("LastUpdated", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      CustomPatterns.foreach(__v => __obj.updateDynamic("CustomPatterns")(__v.asInstanceOf[js.Any]))
+      LastUpdated.foreach(__v => __obj.updateDynamic("LastUpdated")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GrokClassifier]
     }
   }
@@ -5553,8 +5555,8 @@ package glue {
     def apply(
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): ImportCatalogToGlueRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportCatalogToGlueRequest]
     }
   }
@@ -5565,7 +5567,7 @@ package glue {
   object ImportCatalogToGlueResponse {
     def apply(
         ): ImportCatalogToGlueResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ImportCatalogToGlueResponse]
     }
@@ -5585,9 +5587,9 @@ package glue {
         InputS3Path: js.UndefOr[UriString] = js.undefined,
         Replace: js.UndefOr[ReplaceBoolean] = js.undefined
     ): ImportLabelsTaskRunProperties = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InputS3Path.foreach(__v => __obj.update("InputS3Path", __v.asInstanceOf[js.Any]))
-      Replace.foreach(__v => __obj.update("Replace", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InputS3Path.foreach(__v => __obj.updateDynamic("InputS3Path")(__v.asInstanceOf[js.Any]))
+      Replace.foreach(__v => __obj.updateDynamic("Replace")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportLabelsTaskRunProperties]
     }
   }
@@ -5608,10 +5610,10 @@ package glue {
         Exclusions: js.UndefOr[PathList] = js.undefined,
         Path: js.UndefOr[Path] = js.undefined
     ): JdbcTarget = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConnectionName.foreach(__v => __obj.update("ConnectionName", __v.asInstanceOf[js.Any]))
-      Exclusions.foreach(__v => __obj.update("Exclusions", __v.asInstanceOf[js.Any]))
-      Path.foreach(__v => __obj.update("Path", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConnectionName.foreach(__v => __obj.updateDynamic("ConnectionName")(__v.asInstanceOf[js.Any]))
+      Exclusions.foreach(__v => __obj.updateDynamic("Exclusions")(__v.asInstanceOf[js.Any]))
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JdbcTarget]
     }
   }
@@ -5664,26 +5666,26 @@ package glue {
         Timeout: js.UndefOr[Timeout] = js.undefined,
         WorkerType: js.UndefOr[WorkerType] = js.undefined
     ): Job = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AllocatedCapacity.foreach(__v => __obj.update("AllocatedCapacity", __v.asInstanceOf[js.Any]))
-      Command.foreach(__v => __obj.update("Command", __v.asInstanceOf[js.Any]))
-      Connections.foreach(__v => __obj.update("Connections", __v.asInstanceOf[js.Any]))
-      CreatedOn.foreach(__v => __obj.update("CreatedOn", __v.asInstanceOf[js.Any]))
-      DefaultArguments.foreach(__v => __obj.update("DefaultArguments", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      ExecutionProperty.foreach(__v => __obj.update("ExecutionProperty", __v.asInstanceOf[js.Any]))
-      GlueVersion.foreach(__v => __obj.update("GlueVersion", __v.asInstanceOf[js.Any]))
-      LastModifiedOn.foreach(__v => __obj.update("LastModifiedOn", __v.asInstanceOf[js.Any]))
-      LogUri.foreach(__v => __obj.update("LogUri", __v.asInstanceOf[js.Any]))
-      MaxCapacity.foreach(__v => __obj.update("MaxCapacity", __v.asInstanceOf[js.Any]))
-      MaxRetries.foreach(__v => __obj.update("MaxRetries", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      NotificationProperty.foreach(__v => __obj.update("NotificationProperty", __v.asInstanceOf[js.Any]))
-      NumberOfWorkers.foreach(__v => __obj.update("NumberOfWorkers", __v.asInstanceOf[js.Any]))
-      Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
-      SecurityConfiguration.foreach(__v => __obj.update("SecurityConfiguration", __v.asInstanceOf[js.Any]))
-      Timeout.foreach(__v => __obj.update("Timeout", __v.asInstanceOf[js.Any]))
-      WorkerType.foreach(__v => __obj.update("WorkerType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AllocatedCapacity.foreach(__v => __obj.updateDynamic("AllocatedCapacity")(__v.asInstanceOf[js.Any]))
+      Command.foreach(__v => __obj.updateDynamic("Command")(__v.asInstanceOf[js.Any]))
+      Connections.foreach(__v => __obj.updateDynamic("Connections")(__v.asInstanceOf[js.Any]))
+      CreatedOn.foreach(__v => __obj.updateDynamic("CreatedOn")(__v.asInstanceOf[js.Any]))
+      DefaultArguments.foreach(__v => __obj.updateDynamic("DefaultArguments")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ExecutionProperty.foreach(__v => __obj.updateDynamic("ExecutionProperty")(__v.asInstanceOf[js.Any]))
+      GlueVersion.foreach(__v => __obj.updateDynamic("GlueVersion")(__v.asInstanceOf[js.Any]))
+      LastModifiedOn.foreach(__v => __obj.updateDynamic("LastModifiedOn")(__v.asInstanceOf[js.Any]))
+      LogUri.foreach(__v => __obj.updateDynamic("LogUri")(__v.asInstanceOf[js.Any]))
+      MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
+      MaxRetries.foreach(__v => __obj.updateDynamic("MaxRetries")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NotificationProperty.foreach(__v => __obj.updateDynamic("NotificationProperty")(__v.asInstanceOf[js.Any]))
+      NumberOfWorkers.foreach(__v => __obj.updateDynamic("NumberOfWorkers")(__v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
+      SecurityConfiguration.foreach(__v => __obj.updateDynamic("SecurityConfiguration")(__v.asInstanceOf[js.Any]))
+      Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
+      WorkerType.foreach(__v => __obj.updateDynamic("WorkerType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Job]
     }
   }
@@ -5712,14 +5714,14 @@ package glue {
         RunId: js.UndefOr[RunId] = js.undefined,
         Version: js.UndefOr[IntegerValue] = js.undefined
     ): JobBookmarkEntry = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attempt.foreach(__v => __obj.update("Attempt", __v.asInstanceOf[js.Any]))
-      JobBookmark.foreach(__v => __obj.update("JobBookmark", __v.asInstanceOf[js.Any]))
-      JobName.foreach(__v => __obj.update("JobName", __v.asInstanceOf[js.Any]))
-      PreviousRunId.foreach(__v => __obj.update("PreviousRunId", __v.asInstanceOf[js.Any]))
-      Run.foreach(__v => __obj.update("Run", __v.asInstanceOf[js.Any]))
-      RunId.foreach(__v => __obj.update("RunId", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attempt.foreach(__v => __obj.updateDynamic("Attempt")(__v.asInstanceOf[js.Any]))
+      JobBookmark.foreach(__v => __obj.updateDynamic("JobBookmark")(__v.asInstanceOf[js.Any]))
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      PreviousRunId.foreach(__v => __obj.updateDynamic("PreviousRunId")(__v.asInstanceOf[js.Any]))
+      Run.foreach(__v => __obj.updateDynamic("Run")(__v.asInstanceOf[js.Any]))
+      RunId.foreach(__v => __obj.updateDynamic("RunId")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobBookmarkEntry]
     }
   }
@@ -5738,9 +5740,11 @@ package glue {
         JobBookmarksEncryptionMode: js.UndefOr[JobBookmarksEncryptionMode] = js.undefined,
         KmsKeyArn: js.UndefOr[KmsKeyArn] = js.undefined
     ): JobBookmarksEncryption = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobBookmarksEncryptionMode.foreach(__v => __obj.update("JobBookmarksEncryptionMode", __v.asInstanceOf[js.Any]))
-      KmsKeyArn.foreach(__v => __obj.update("KmsKeyArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobBookmarksEncryptionMode.foreach(
+        __v => __obj.updateDynamic("JobBookmarksEncryptionMode")(__v.asInstanceOf[js.Any])
+      )
+      KmsKeyArn.foreach(__v => __obj.updateDynamic("KmsKeyArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobBookmarksEncryption]
     }
   }
@@ -5768,10 +5772,10 @@ package glue {
         PythonVersion: js.UndefOr[PythonVersionString] = js.undefined,
         ScriptLocation: js.UndefOr[ScriptLocationString] = js.undefined
     ): JobCommand = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      PythonVersion.foreach(__v => __obj.update("PythonVersion", __v.asInstanceOf[js.Any]))
-      ScriptLocation.foreach(__v => __obj.update("ScriptLocation", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PythonVersion.foreach(__v => __obj.updateDynamic("PythonVersion")(__v.asInstanceOf[js.Any]))
+      ScriptLocation.foreach(__v => __obj.updateDynamic("ScriptLocation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobCommand]
     }
   }
@@ -5788,8 +5792,8 @@ package glue {
     def apply(
         JobRuns: js.UndefOr[JobRunList] = js.undefined
     ): JobNodeDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobRuns.foreach(__v => __obj.update("JobRuns", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobRuns.foreach(__v => __obj.updateDynamic("JobRuns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobNodeDetails]
     }
   }
@@ -5848,29 +5852,29 @@ package glue {
         TriggerName: js.UndefOr[NameString] = js.undefined,
         WorkerType: js.UndefOr[WorkerType] = js.undefined
     ): JobRun = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AllocatedCapacity.foreach(__v => __obj.update("AllocatedCapacity", __v.asInstanceOf[js.Any]))
-      Arguments.foreach(__v => __obj.update("Arguments", __v.asInstanceOf[js.Any]))
-      Attempt.foreach(__v => __obj.update("Attempt", __v.asInstanceOf[js.Any]))
-      CompletedOn.foreach(__v => __obj.update("CompletedOn", __v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
-      ExecutionTime.foreach(__v => __obj.update("ExecutionTime", __v.asInstanceOf[js.Any]))
-      GlueVersion.foreach(__v => __obj.update("GlueVersion", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      JobName.foreach(__v => __obj.update("JobName", __v.asInstanceOf[js.Any]))
-      JobRunState.foreach(__v => __obj.update("JobRunState", __v.asInstanceOf[js.Any]))
-      LastModifiedOn.foreach(__v => __obj.update("LastModifiedOn", __v.asInstanceOf[js.Any]))
-      LogGroupName.foreach(__v => __obj.update("LogGroupName", __v.asInstanceOf[js.Any]))
-      MaxCapacity.foreach(__v => __obj.update("MaxCapacity", __v.asInstanceOf[js.Any]))
-      NotificationProperty.foreach(__v => __obj.update("NotificationProperty", __v.asInstanceOf[js.Any]))
-      NumberOfWorkers.foreach(__v => __obj.update("NumberOfWorkers", __v.asInstanceOf[js.Any]))
-      PredecessorRuns.foreach(__v => __obj.update("PredecessorRuns", __v.asInstanceOf[js.Any]))
-      PreviousRunId.foreach(__v => __obj.update("PreviousRunId", __v.asInstanceOf[js.Any]))
-      SecurityConfiguration.foreach(__v => __obj.update("SecurityConfiguration", __v.asInstanceOf[js.Any]))
-      StartedOn.foreach(__v => __obj.update("StartedOn", __v.asInstanceOf[js.Any]))
-      Timeout.foreach(__v => __obj.update("Timeout", __v.asInstanceOf[js.Any]))
-      TriggerName.foreach(__v => __obj.update("TriggerName", __v.asInstanceOf[js.Any]))
-      WorkerType.foreach(__v => __obj.update("WorkerType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AllocatedCapacity.foreach(__v => __obj.updateDynamic("AllocatedCapacity")(__v.asInstanceOf[js.Any]))
+      Arguments.foreach(__v => __obj.updateDynamic("Arguments")(__v.asInstanceOf[js.Any]))
+      Attempt.foreach(__v => __obj.updateDynamic("Attempt")(__v.asInstanceOf[js.Any]))
+      CompletedOn.foreach(__v => __obj.updateDynamic("CompletedOn")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      ExecutionTime.foreach(__v => __obj.updateDynamic("ExecutionTime")(__v.asInstanceOf[js.Any]))
+      GlueVersion.foreach(__v => __obj.updateDynamic("GlueVersion")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      JobRunState.foreach(__v => __obj.updateDynamic("JobRunState")(__v.asInstanceOf[js.Any]))
+      LastModifiedOn.foreach(__v => __obj.updateDynamic("LastModifiedOn")(__v.asInstanceOf[js.Any]))
+      LogGroupName.foreach(__v => __obj.updateDynamic("LogGroupName")(__v.asInstanceOf[js.Any]))
+      MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
+      NotificationProperty.foreach(__v => __obj.updateDynamic("NotificationProperty")(__v.asInstanceOf[js.Any]))
+      NumberOfWorkers.foreach(__v => __obj.updateDynamic("NumberOfWorkers")(__v.asInstanceOf[js.Any]))
+      PredecessorRuns.foreach(__v => __obj.updateDynamic("PredecessorRuns")(__v.asInstanceOf[js.Any]))
+      PreviousRunId.foreach(__v => __obj.updateDynamic("PreviousRunId")(__v.asInstanceOf[js.Any]))
+      SecurityConfiguration.foreach(__v => __obj.updateDynamic("SecurityConfiguration")(__v.asInstanceOf[js.Any]))
+      StartedOn.foreach(__v => __obj.updateDynamic("StartedOn")(__v.asInstanceOf[js.Any]))
+      Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
+      TriggerName.foreach(__v => __obj.updateDynamic("TriggerName")(__v.asInstanceOf[js.Any]))
+      WorkerType.foreach(__v => __obj.updateDynamic("WorkerType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobRun]
     }
   }
@@ -5929,23 +5933,23 @@ package glue {
         Timeout: js.UndefOr[Timeout] = js.undefined,
         WorkerType: js.UndefOr[WorkerType] = js.undefined
     ): JobUpdate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AllocatedCapacity.foreach(__v => __obj.update("AllocatedCapacity", __v.asInstanceOf[js.Any]))
-      Command.foreach(__v => __obj.update("Command", __v.asInstanceOf[js.Any]))
-      Connections.foreach(__v => __obj.update("Connections", __v.asInstanceOf[js.Any]))
-      DefaultArguments.foreach(__v => __obj.update("DefaultArguments", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      ExecutionProperty.foreach(__v => __obj.update("ExecutionProperty", __v.asInstanceOf[js.Any]))
-      GlueVersion.foreach(__v => __obj.update("GlueVersion", __v.asInstanceOf[js.Any]))
-      LogUri.foreach(__v => __obj.update("LogUri", __v.asInstanceOf[js.Any]))
-      MaxCapacity.foreach(__v => __obj.update("MaxCapacity", __v.asInstanceOf[js.Any]))
-      MaxRetries.foreach(__v => __obj.update("MaxRetries", __v.asInstanceOf[js.Any]))
-      NotificationProperty.foreach(__v => __obj.update("NotificationProperty", __v.asInstanceOf[js.Any]))
-      NumberOfWorkers.foreach(__v => __obj.update("NumberOfWorkers", __v.asInstanceOf[js.Any]))
-      Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
-      SecurityConfiguration.foreach(__v => __obj.update("SecurityConfiguration", __v.asInstanceOf[js.Any]))
-      Timeout.foreach(__v => __obj.update("Timeout", __v.asInstanceOf[js.Any]))
-      WorkerType.foreach(__v => __obj.update("WorkerType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AllocatedCapacity.foreach(__v => __obj.updateDynamic("AllocatedCapacity")(__v.asInstanceOf[js.Any]))
+      Command.foreach(__v => __obj.updateDynamic("Command")(__v.asInstanceOf[js.Any]))
+      Connections.foreach(__v => __obj.updateDynamic("Connections")(__v.asInstanceOf[js.Any]))
+      DefaultArguments.foreach(__v => __obj.updateDynamic("DefaultArguments")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ExecutionProperty.foreach(__v => __obj.updateDynamic("ExecutionProperty")(__v.asInstanceOf[js.Any]))
+      GlueVersion.foreach(__v => __obj.updateDynamic("GlueVersion")(__v.asInstanceOf[js.Any]))
+      LogUri.foreach(__v => __obj.updateDynamic("LogUri")(__v.asInstanceOf[js.Any]))
+      MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
+      MaxRetries.foreach(__v => __obj.updateDynamic("MaxRetries")(__v.asInstanceOf[js.Any]))
+      NotificationProperty.foreach(__v => __obj.updateDynamic("NotificationProperty")(__v.asInstanceOf[js.Any]))
+      NumberOfWorkers.foreach(__v => __obj.updateDynamic("NumberOfWorkers")(__v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
+      SecurityConfiguration.foreach(__v => __obj.updateDynamic("SecurityConfiguration")(__v.asInstanceOf[js.Any]))
+      Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
+      WorkerType.foreach(__v => __obj.updateDynamic("WorkerType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobUpdate]
     }
   }
@@ -5970,14 +5974,14 @@ package glue {
         LastUpdated: js.UndefOr[Timestamp] = js.undefined,
         Version: js.UndefOr[VersionId] = js.undefined
     ): JsonClassifier = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JsonPath" -> JsonPath.asInstanceOf[js.Any],
         "Name"     -> Name.asInstanceOf[js.Any]
       )
 
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      LastUpdated.foreach(__v => __obj.update("LastUpdated", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      LastUpdated.foreach(__v => __obj.updateDynamic("LastUpdated")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JsonClassifier]
     }
   }
@@ -5994,8 +5998,8 @@ package glue {
     def apply(
         OutputS3Path: js.UndefOr[UriString] = js.undefined
     ): LabelingSetGenerationTaskRunProperties = {
-      val __obj = js.Dictionary.empty[js.Any]
-      OutputS3Path.foreach(__v => __obj.update("OutputS3Path", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      OutputS3Path.foreach(__v => __obj.updateDynamic("OutputS3Path")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LabelingSetGenerationTaskRunProperties]
     }
   }
@@ -6029,13 +6033,13 @@ package glue {
         StartTime: js.UndefOr[Timestamp] = js.undefined,
         Status: js.UndefOr[LastCrawlStatus] = js.undefined
     ): LastCrawlInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
-      LogGroup.foreach(__v => __obj.update("LogGroup", __v.asInstanceOf[js.Any]))
-      LogStream.foreach(__v => __obj.update("LogStream", __v.asInstanceOf[js.Any]))
-      MessagePrefix.foreach(__v => __obj.update("MessagePrefix", __v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      LogGroup.foreach(__v => __obj.updateDynamic("LogGroup")(__v.asInstanceOf[js.Any]))
+      LogStream.foreach(__v => __obj.updateDynamic("LogStream")(__v.asInstanceOf[js.Any]))
+      MessagePrefix.foreach(__v => __obj.updateDynamic("MessagePrefix")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LastCrawlInfo]
     }
   }
@@ -6061,10 +6065,10 @@ package glue {
         NextToken: js.UndefOr[Token] = js.undefined,
         Tags: js.UndefOr[TagsMap] = js.undefined
     ): ListCrawlersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCrawlersRequest]
     }
   }
@@ -6080,9 +6084,9 @@ package glue {
         CrawlerNames: js.UndefOr[CrawlerNameList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): ListCrawlersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CrawlerNames.foreach(__v => __obj.update("CrawlerNames", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CrawlerNames.foreach(__v => __obj.updateDynamic("CrawlerNames")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCrawlersResponse]
     }
   }
@@ -6100,10 +6104,10 @@ package glue {
         NextToken: js.UndefOr[GenericString] = js.undefined,
         Tags: js.UndefOr[TagsMap] = js.undefined
     ): ListDevEndpointsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDevEndpointsRequest]
     }
   }
@@ -6119,9 +6123,9 @@ package glue {
         DevEndpointNames: js.UndefOr[DevEndpointNameList] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): ListDevEndpointsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DevEndpointNames.foreach(__v => __obj.update("DevEndpointNames", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DevEndpointNames.foreach(__v => __obj.updateDynamic("DevEndpointNames")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDevEndpointsResponse]
     }
   }
@@ -6139,10 +6143,10 @@ package glue {
         NextToken: js.UndefOr[GenericString] = js.undefined,
         Tags: js.UndefOr[TagsMap] = js.undefined
     ): ListJobsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListJobsRequest]
     }
   }
@@ -6158,9 +6162,9 @@ package glue {
         JobNames: js.UndefOr[JobNameList] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): ListJobsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobNames.foreach(__v => __obj.update("JobNames", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobNames.foreach(__v => __obj.updateDynamic("JobNames")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListJobsResponse]
     }
   }
@@ -6180,11 +6184,11 @@ package glue {
         NextToken: js.UndefOr[GenericString] = js.undefined,
         Tags: js.UndefOr[TagsMap] = js.undefined
     ): ListTriggersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DependentJobName.foreach(__v => __obj.update("DependentJobName", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DependentJobName.foreach(__v => __obj.updateDynamic("DependentJobName")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTriggersRequest]
     }
   }
@@ -6200,9 +6204,9 @@ package glue {
         NextToken: js.UndefOr[GenericString] = js.undefined,
         TriggerNames: js.UndefOr[TriggerNameList] = js.undefined
     ): ListTriggersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      TriggerNames.foreach(__v => __obj.update("TriggerNames", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TriggerNames.foreach(__v => __obj.updateDynamic("TriggerNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTriggersResponse]
     }
   }
@@ -6218,9 +6222,9 @@ package glue {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
     ): ListWorkflowsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListWorkflowsRequest]
     }
   }
@@ -6236,9 +6240,9 @@ package glue {
         NextToken: js.UndefOr[GenericString] = js.undefined,
         Workflows: js.UndefOr[WorkflowNames] = js.undefined
     ): ListWorkflowsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Workflows.foreach(__v => __obj.update("Workflows", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Workflows.foreach(__v => __obj.updateDynamic("Workflows")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListWorkflowsResponse]
     }
   }
@@ -6259,10 +6263,10 @@ package glue {
         Jdbc: js.UndefOr[CodeGenNodeArgs] = js.undefined,
         S3: js.UndefOr[CodeGenNodeArgs] = js.undefined
     ): Location = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DynamoDB.foreach(__v => __obj.update("DynamoDB", __v.asInstanceOf[js.Any]))
-      Jdbc.foreach(__v => __obj.update("Jdbc", __v.asInstanceOf[js.Any]))
-      S3.foreach(__v => __obj.update("S3", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DynamoDB.foreach(__v => __obj.updateDynamic("DynamoDB")(__v.asInstanceOf[js.Any]))
+      Jdbc.foreach(__v => __obj.updateDynamic("Jdbc")(__v.asInstanceOf[js.Any]))
+      S3.foreach(__v => __obj.updateDynamic("S3")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Location]
     }
   }
@@ -6324,24 +6328,24 @@ package glue {
         TransformId: js.UndefOr[HashString] = js.undefined,
         WorkerType: js.UndefOr[WorkerType] = js.undefined
     ): MLTransform = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedOn.foreach(__v => __obj.update("CreatedOn", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      EvaluationMetrics.foreach(__v => __obj.update("EvaluationMetrics", __v.asInstanceOf[js.Any]))
-      InputRecordTables.foreach(__v => __obj.update("InputRecordTables", __v.asInstanceOf[js.Any]))
-      LabelCount.foreach(__v => __obj.update("LabelCount", __v.asInstanceOf[js.Any]))
-      LastModifiedOn.foreach(__v => __obj.update("LastModifiedOn", __v.asInstanceOf[js.Any]))
-      MaxCapacity.foreach(__v => __obj.update("MaxCapacity", __v.asInstanceOf[js.Any]))
-      MaxRetries.foreach(__v => __obj.update("MaxRetries", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      NumberOfWorkers.foreach(__v => __obj.update("NumberOfWorkers", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
-      Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
-      Schema.foreach(__v => __obj.update("Schema", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      Timeout.foreach(__v => __obj.update("Timeout", __v.asInstanceOf[js.Any]))
-      TransformId.foreach(__v => __obj.update("TransformId", __v.asInstanceOf[js.Any]))
-      WorkerType.foreach(__v => __obj.update("WorkerType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedOn.foreach(__v => __obj.updateDynamic("CreatedOn")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EvaluationMetrics.foreach(__v => __obj.updateDynamic("EvaluationMetrics")(__v.asInstanceOf[js.Any]))
+      InputRecordTables.foreach(__v => __obj.updateDynamic("InputRecordTables")(__v.asInstanceOf[js.Any]))
+      LabelCount.foreach(__v => __obj.updateDynamic("LabelCount")(__v.asInstanceOf[js.Any]))
+      LastModifiedOn.foreach(__v => __obj.updateDynamic("LastModifiedOn")(__v.asInstanceOf[js.Any]))
+      MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
+      MaxRetries.foreach(__v => __obj.updateDynamic("MaxRetries")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NumberOfWorkers.foreach(__v => __obj.updateDynamic("NumberOfWorkers")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
+      Schema.foreach(__v => __obj.updateDynamic("Schema")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
+      TransformId.foreach(__v => __obj.updateDynamic("TransformId")(__v.asInstanceOf[js.Any]))
+      WorkerType.foreach(__v => __obj.updateDynamic("WorkerType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MLTransform]
     }
   }
@@ -6368,13 +6372,13 @@ package glue {
         TargetTable: js.UndefOr[TableName] = js.undefined,
         TargetType: js.UndefOr[FieldType] = js.undefined
     ): MappingEntry = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SourcePath.foreach(__v => __obj.update("SourcePath", __v.asInstanceOf[js.Any]))
-      SourceTable.foreach(__v => __obj.update("SourceTable", __v.asInstanceOf[js.Any]))
-      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
-      TargetPath.foreach(__v => __obj.update("TargetPath", __v.asInstanceOf[js.Any]))
-      TargetTable.foreach(__v => __obj.update("TargetTable", __v.asInstanceOf[js.Any]))
-      TargetType.foreach(__v => __obj.update("TargetType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SourcePath.foreach(__v => __obj.updateDynamic("SourcePath")(__v.asInstanceOf[js.Any]))
+      SourceTable.foreach(__v => __obj.updateDynamic("SourceTable")(__v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.updateDynamic("SourceType")(__v.asInstanceOf[js.Any]))
+      TargetPath.foreach(__v => __obj.updateDynamic("TargetPath")(__v.asInstanceOf[js.Any]))
+      TargetTable.foreach(__v => __obj.updateDynamic("TargetTable")(__v.asInstanceOf[js.Any]))
+      TargetType.foreach(__v => __obj.updateDynamic("TargetType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MappingEntry]
     }
   }
@@ -6401,13 +6405,13 @@ package glue {
         Type: js.UndefOr[NodeType] = js.undefined,
         UniqueId: js.UndefOr[NameString] = js.undefined
     ): Node = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CrawlerDetails.foreach(__v => __obj.update("CrawlerDetails", __v.asInstanceOf[js.Any]))
-      JobDetails.foreach(__v => __obj.update("JobDetails", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      TriggerDetails.foreach(__v => __obj.update("TriggerDetails", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
-      UniqueId.foreach(__v => __obj.update("UniqueId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CrawlerDetails.foreach(__v => __obj.updateDynamic("CrawlerDetails")(__v.asInstanceOf[js.Any]))
+      JobDetails.foreach(__v => __obj.updateDynamic("JobDetails")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      TriggerDetails.foreach(__v => __obj.updateDynamic("TriggerDetails")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      UniqueId.foreach(__v => __obj.updateDynamic("UniqueId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Node]
     }
   }
@@ -6432,8 +6436,8 @@ package glue {
     def apply(
         NotifyDelayAfter: js.UndefOr[NotifyDelayAfter] = js.undefined
     ): NotificationProperty = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NotifyDelayAfter.foreach(__v => __obj.update("NotifyDelayAfter", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NotifyDelayAfter.foreach(__v => __obj.updateDynamic("NotifyDelayAfter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NotificationProperty]
     }
   }
@@ -6452,7 +6456,7 @@ package glue {
         Column: NameString,
         SortOrder: IntegerFlag
     ): Order = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Column"    -> Column.asInstanceOf[js.Any],
         "SortOrder" -> SortOrder.asInstanceOf[js.Any]
       )
@@ -6487,15 +6491,15 @@ package glue {
         TableName: js.UndefOr[NameString] = js.undefined,
         Values: js.UndefOr[ValueStringList] = js.undefined
     ): Partition = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      DatabaseName.foreach(__v => __obj.update("DatabaseName", __v.asInstanceOf[js.Any]))
-      LastAccessTime.foreach(__v => __obj.update("LastAccessTime", __v.asInstanceOf[js.Any]))
-      LastAnalyzedTime.foreach(__v => __obj.update("LastAnalyzedTime", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
-      StorageDescriptor.foreach(__v => __obj.update("StorageDescriptor", __v.asInstanceOf[js.Any]))
-      TableName.foreach(__v => __obj.update("TableName", __v.asInstanceOf[js.Any]))
-      Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
+      LastAccessTime.foreach(__v => __obj.updateDynamic("LastAccessTime")(__v.asInstanceOf[js.Any]))
+      LastAnalyzedTime.foreach(__v => __obj.updateDynamic("LastAnalyzedTime")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      StorageDescriptor.foreach(__v => __obj.updateDynamic("StorageDescriptor")(__v.asInstanceOf[js.Any]))
+      TableName.foreach(__v => __obj.updateDynamic("TableName")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Partition]
     }
   }
@@ -6514,9 +6518,9 @@ package glue {
         ErrorDetail: js.UndefOr[ErrorDetail] = js.undefined,
         PartitionValues: js.UndefOr[ValueStringList] = js.undefined
     ): PartitionError = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ErrorDetail.foreach(__v => __obj.update("ErrorDetail", __v.asInstanceOf[js.Any]))
-      PartitionValues.foreach(__v => __obj.update("PartitionValues", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ErrorDetail.foreach(__v => __obj.updateDynamic("ErrorDetail")(__v.asInstanceOf[js.Any]))
+      PartitionValues.foreach(__v => __obj.updateDynamic("PartitionValues")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PartitionError]
     }
   }
@@ -6541,12 +6545,12 @@ package glue {
         StorageDescriptor: js.UndefOr[StorageDescriptor] = js.undefined,
         Values: js.UndefOr[ValueStringList] = js.undefined
     ): PartitionInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LastAccessTime.foreach(__v => __obj.update("LastAccessTime", __v.asInstanceOf[js.Any]))
-      LastAnalyzedTime.foreach(__v => __obj.update("LastAnalyzedTime", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
-      StorageDescriptor.foreach(__v => __obj.update("StorageDescriptor", __v.asInstanceOf[js.Any]))
-      Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LastAccessTime.foreach(__v => __obj.updateDynamic("LastAccessTime")(__v.asInstanceOf[js.Any]))
+      LastAnalyzedTime.foreach(__v => __obj.updateDynamic("LastAnalyzedTime")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      StorageDescriptor.foreach(__v => __obj.updateDynamic("StorageDescriptor")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PartitionInput]
     }
   }
@@ -6563,7 +6567,7 @@ package glue {
     def apply(
         Values: ValueStringList
     ): PartitionValueList = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
@@ -6603,10 +6607,10 @@ package glue {
         SecurityGroupIdList: js.UndefOr[SecurityGroupIdList] = js.undefined,
         SubnetId: js.UndefOr[NameString] = js.undefined
     ): PhysicalConnectionRequirements = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
-      SecurityGroupIdList.foreach(__v => __obj.update("SecurityGroupIdList", __v.asInstanceOf[js.Any]))
-      SubnetId.foreach(__v => __obj.update("SubnetId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      SecurityGroupIdList.foreach(__v => __obj.updateDynamic("SecurityGroupIdList")(__v.asInstanceOf[js.Any]))
+      SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PhysicalConnectionRequirements]
     }
   }
@@ -6625,9 +6629,9 @@ package glue {
         JobName: js.UndefOr[NameString] = js.undefined,
         RunId: js.UndefOr[IdString] = js.undefined
     ): Predecessor = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobName.foreach(__v => __obj.update("JobName", __v.asInstanceOf[js.Any]))
-      RunId.foreach(__v => __obj.update("RunId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      RunId.foreach(__v => __obj.updateDynamic("RunId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Predecessor]
     }
   }
@@ -6646,9 +6650,9 @@ package glue {
         Conditions: js.UndefOr[ConditionList] = js.undefined,
         Logical: js.UndefOr[Logical] = js.undefined
     ): Predicate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Conditions.foreach(__v => __obj.update("Conditions", __v.asInstanceOf[js.Any]))
-      Logical.foreach(__v => __obj.update("Logical", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Conditions.foreach(__v => __obj.updateDynamic("Conditions")(__v.asInstanceOf[js.Any]))
+      Logical.foreach(__v => __obj.updateDynamic("Logical")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Predicate]
     }
   }
@@ -6667,9 +6671,9 @@ package glue {
         Permissions: js.UndefOr[PermissionList] = js.undefined,
         Principal: js.UndefOr[DataLakePrincipal] = js.undefined
     ): PrincipalPermissions = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Permissions.foreach(__v => __obj.update("Permissions", __v.asInstanceOf[js.Any]))
-      Principal.foreach(__v => __obj.update("Principal", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
+      Principal.foreach(__v => __obj.updateDynamic("Principal")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PrincipalPermissions]
     }
   }
@@ -6698,10 +6702,10 @@ package glue {
         Key: js.UndefOr[ValueString] = js.undefined,
         Value: js.UndefOr[ValueString] = js.undefined
     ): PropertyPredicate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Comparator.foreach(__v => __obj.update("Comparator", __v.asInstanceOf[js.Any]))
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Comparator.foreach(__v => __obj.updateDynamic("Comparator")(__v.asInstanceOf[js.Any]))
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PropertyPredicate]
     }
   }
@@ -6717,11 +6721,11 @@ package glue {
         DataCatalogEncryptionSettings: DataCatalogEncryptionSettings,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): PutDataCatalogEncryptionSettingsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DataCatalogEncryptionSettings" -> DataCatalogEncryptionSettings.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutDataCatalogEncryptionSettingsRequest]
     }
   }
@@ -6732,7 +6736,7 @@ package glue {
   object PutDataCatalogEncryptionSettingsResponse {
     def apply(
         ): PutDataCatalogEncryptionSettingsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutDataCatalogEncryptionSettingsResponse]
     }
@@ -6751,12 +6755,12 @@ package glue {
         PolicyExistsCondition: js.UndefOr[ExistCondition] = js.undefined,
         PolicyHashCondition: js.UndefOr[HashString] = js.undefined
     ): PutResourcePolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyInJson" -> PolicyInJson.asInstanceOf[js.Any]
       )
 
-      PolicyExistsCondition.foreach(__v => __obj.update("PolicyExistsCondition", __v.asInstanceOf[js.Any]))
-      PolicyHashCondition.foreach(__v => __obj.update("PolicyHashCondition", __v.asInstanceOf[js.Any]))
+      PolicyExistsCondition.foreach(__v => __obj.updateDynamic("PolicyExistsCondition")(__v.asInstanceOf[js.Any]))
+      PolicyHashCondition.foreach(__v => __obj.updateDynamic("PolicyHashCondition")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutResourcePolicyRequest]
     }
   }
@@ -6770,8 +6774,8 @@ package glue {
     def apply(
         PolicyHash: js.UndefOr[HashString] = js.undefined
     ): PutResourcePolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PolicyHash.foreach(__v => __obj.update("PolicyHash", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PolicyHash.foreach(__v => __obj.updateDynamic("PolicyHash")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutResourcePolicyResponse]
     }
   }
@@ -6789,7 +6793,7 @@ package glue {
         RunId: IdString,
         RunProperties: WorkflowRunProperties
     ): PutWorkflowRunPropertiesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"          -> Name.asInstanceOf[js.Any],
         "RunId"         -> RunId.asInstanceOf[js.Any],
         "RunProperties" -> RunProperties.asInstanceOf[js.Any]
@@ -6805,7 +6809,7 @@ package glue {
   object PutWorkflowRunPropertiesResponse {
     def apply(
         ): PutWorkflowRunPropertiesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutWorkflowRunPropertiesResponse]
     }
@@ -6822,11 +6826,11 @@ package glue {
         JobName: JobName,
         RunId: js.UndefOr[RunId] = js.undefined
     ): ResetJobBookmarkRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobName" -> JobName.asInstanceOf[js.Any]
       )
 
-      RunId.foreach(__v => __obj.update("RunId", __v.asInstanceOf[js.Any]))
+      RunId.foreach(__v => __obj.updateDynamic("RunId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResetJobBookmarkRequest]
     }
   }
@@ -6840,8 +6844,8 @@ package glue {
     def apply(
         JobBookmarkEntry: js.UndefOr[JobBookmarkEntry] = js.undefined
     ): ResetJobBookmarkResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobBookmarkEntry.foreach(__v => __obj.update("JobBookmarkEntry", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobBookmarkEntry.foreach(__v => __obj.updateDynamic("JobBookmarkEntry")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResetJobBookmarkResponse]
     }
   }
@@ -6868,9 +6872,9 @@ package glue {
         ResourceType: js.UndefOr[ResourceType] = js.undefined,
         Uri: js.UndefOr[URI] = js.undefined
     ): ResourceUri = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
-      Uri.foreach(__v => __obj.update("Uri", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      Uri.foreach(__v => __obj.updateDynamic("Uri")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceUri]
     }
   }
@@ -6889,9 +6893,9 @@ package glue {
         KmsKeyArn: js.UndefOr[KmsKeyArn] = js.undefined,
         S3EncryptionMode: js.UndefOr[S3EncryptionMode] = js.undefined
     ): S3Encryption = {
-      val __obj = js.Dictionary.empty[js.Any]
-      KmsKeyArn.foreach(__v => __obj.update("KmsKeyArn", __v.asInstanceOf[js.Any]))
-      S3EncryptionMode.foreach(__v => __obj.update("S3EncryptionMode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      KmsKeyArn.foreach(__v => __obj.updateDynamic("KmsKeyArn")(__v.asInstanceOf[js.Any]))
+      S3EncryptionMode.foreach(__v => __obj.updateDynamic("S3EncryptionMode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Encryption]
     }
   }
@@ -6918,9 +6922,9 @@ package glue {
         Exclusions: js.UndefOr[PathList] = js.undefined,
         Path: js.UndefOr[Path] = js.undefined
     ): S3Target = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Exclusions.foreach(__v => __obj.update("Exclusions", __v.asInstanceOf[js.Any]))
-      Path.foreach(__v => __obj.update("Path", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Exclusions.foreach(__v => __obj.updateDynamic("Exclusions")(__v.asInstanceOf[js.Any]))
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Target]
     }
   }
@@ -6939,9 +6943,9 @@ package glue {
         ScheduleExpression: js.UndefOr[CronExpression] = js.undefined,
         State: js.UndefOr[ScheduleState] = js.undefined
     ): Schedule = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ScheduleExpression.foreach(__v => __obj.update("ScheduleExpression", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Schedule]
     }
   }
@@ -6968,9 +6972,9 @@ package glue {
         DeleteBehavior: js.UndefOr[DeleteBehavior] = js.undefined,
         UpdateBehavior: js.UndefOr[UpdateBehavior] = js.undefined
     ): SchemaChangePolicy = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DeleteBehavior.foreach(__v => __obj.update("DeleteBehavior", __v.asInstanceOf[js.Any]))
-      UpdateBehavior.foreach(__v => __obj.update("UpdateBehavior", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DeleteBehavior.foreach(__v => __obj.updateDynamic("DeleteBehavior")(__v.asInstanceOf[js.Any]))
+      UpdateBehavior.foreach(__v => __obj.updateDynamic("UpdateBehavior")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SchemaChangePolicy]
     }
   }
@@ -6989,9 +6993,9 @@ package glue {
         DataType: js.UndefOr[ColumnTypeString] = js.undefined,
         Name: js.UndefOr[ColumnNameString] = js.undefined
     ): SchemaColumn = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DataType.foreach(__v => __obj.update("DataType", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DataType.foreach(__v => __obj.updateDynamic("DataType")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SchemaColumn]
     }
   }
@@ -7015,13 +7019,13 @@ package glue {
         SearchText: js.UndefOr[ValueString] = js.undefined,
         SortCriteria: js.UndefOr[SortCriteria] = js.undefined
     ): SearchTablesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      SearchText.foreach(__v => __obj.update("SearchText", __v.asInstanceOf[js.Any]))
-      SortCriteria.foreach(__v => __obj.update("SortCriteria", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SearchText.foreach(__v => __obj.updateDynamic("SearchText")(__v.asInstanceOf[js.Any]))
+      SortCriteria.foreach(__v => __obj.updateDynamic("SortCriteria")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchTablesRequest]
     }
   }
@@ -7037,9 +7041,9 @@ package glue {
         NextToken: js.UndefOr[Token] = js.undefined,
         TableList: js.UndefOr[TableList] = js.undefined
     ): SearchTablesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      TableList.foreach(__v => __obj.update("TableList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TableList.foreach(__v => __obj.updateDynamic("TableList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchTablesResponse]
     }
   }
@@ -7060,10 +7064,10 @@ package glue {
         EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
         Name: js.UndefOr[NameString] = js.undefined
     ): SecurityConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedTimeStamp.foreach(__v => __obj.update("CreatedTimeStamp", __v.asInstanceOf[js.Any]))
-      EncryptionConfiguration.foreach(__v => __obj.update("EncryptionConfiguration", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedTimeStamp.foreach(__v => __obj.updateDynamic("CreatedTimeStamp")(__v.asInstanceOf[js.Any]))
+      EncryptionConfiguration.foreach(__v => __obj.updateDynamic("EncryptionConfiguration")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SecurityConfiguration]
     }
   }
@@ -7082,7 +7086,7 @@ package glue {
         SegmentNumber: NonNegativeInteger,
         TotalSegments: TotalSegmentsInteger
     ): Segment = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SegmentNumber" -> SegmentNumber.asInstanceOf[js.Any],
         "TotalSegments" -> TotalSegments.asInstanceOf[js.Any]
       )
@@ -7107,10 +7111,10 @@ package glue {
         Parameters: js.UndefOr[ParametersMap] = js.undefined,
         SerializationLibrary: js.UndefOr[NameString] = js.undefined
     ): SerDeInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
-      SerializationLibrary.foreach(__v => __obj.update("SerializationLibrary", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      SerializationLibrary.foreach(__v => __obj.updateDynamic("SerializationLibrary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SerDeInfo]
     }
   }
@@ -7131,12 +7135,12 @@ package glue {
         SkewedColumnValueLocationMaps: js.UndefOr[LocationMap] = js.undefined,
         SkewedColumnValues: js.UndefOr[ColumnValueStringList] = js.undefined
     ): SkewedInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SkewedColumnNames.foreach(__v => __obj.update("SkewedColumnNames", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SkewedColumnNames.foreach(__v => __obj.updateDynamic("SkewedColumnNames")(__v.asInstanceOf[js.Any]))
       SkewedColumnValueLocationMaps.foreach(
-        __v => __obj.update("SkewedColumnValueLocationMaps", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("SkewedColumnValueLocationMaps")(__v.asInstanceOf[js.Any])
       )
-      SkewedColumnValues.foreach(__v => __obj.update("SkewedColumnValues", __v.asInstanceOf[js.Any]))
+      SkewedColumnValues.foreach(__v => __obj.updateDynamic("SkewedColumnValues")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SkewedInfo]
     }
   }
@@ -7159,9 +7163,9 @@ package glue {
         FieldName: js.UndefOr[ValueString] = js.undefined,
         Sort: js.UndefOr[Sort] = js.undefined
     ): SortCriterion = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FieldName.foreach(__v => __obj.update("FieldName", __v.asInstanceOf[js.Any]))
-      Sort.foreach(__v => __obj.update("Sort", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FieldName.foreach(__v => __obj.updateDynamic("FieldName")(__v.asInstanceOf[js.Any]))
+      Sort.foreach(__v => __obj.updateDynamic("Sort")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SortCriterion]
     }
   }
@@ -7182,7 +7186,7 @@ package glue {
     def apply(
         Name: NameString
     ): StartCrawlerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -7196,7 +7200,7 @@ package glue {
   object StartCrawlerResponse {
     def apply(
         ): StartCrawlerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartCrawlerResponse]
     }
@@ -7211,7 +7215,7 @@ package glue {
     def apply(
         CrawlerName: NameString
     ): StartCrawlerScheduleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CrawlerName" -> CrawlerName.asInstanceOf[js.Any]
       )
 
@@ -7225,7 +7229,7 @@ package glue {
   object StartCrawlerScheduleResponse {
     def apply(
         ): StartCrawlerScheduleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartCrawlerScheduleResponse]
     }
@@ -7242,7 +7246,7 @@ package glue {
         OutputS3Path: UriString,
         TransformId: HashString
     ): StartExportLabelsTaskRunRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OutputS3Path" -> OutputS3Path.asInstanceOf[js.Any],
         "TransformId"  -> TransformId.asInstanceOf[js.Any]
       )
@@ -7260,8 +7264,8 @@ package glue {
     def apply(
         TaskRunId: js.UndefOr[HashString] = js.undefined
     ): StartExportLabelsTaskRunResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TaskRunId.foreach(__v => __obj.update("TaskRunId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TaskRunId.foreach(__v => __obj.updateDynamic("TaskRunId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartExportLabelsTaskRunResponse]
     }
   }
@@ -7279,12 +7283,12 @@ package glue {
         TransformId: HashString,
         ReplaceAllLabels: js.UndefOr[ReplaceBoolean] = js.undefined
     ): StartImportLabelsTaskRunRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InputS3Path" -> InputS3Path.asInstanceOf[js.Any],
         "TransformId" -> TransformId.asInstanceOf[js.Any]
       )
 
-      ReplaceAllLabels.foreach(__v => __obj.update("ReplaceAllLabels", __v.asInstanceOf[js.Any]))
+      ReplaceAllLabels.foreach(__v => __obj.updateDynamic("ReplaceAllLabels")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartImportLabelsTaskRunRequest]
     }
   }
@@ -7298,8 +7302,8 @@ package glue {
     def apply(
         TaskRunId: js.UndefOr[HashString] = js.undefined
     ): StartImportLabelsTaskRunResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TaskRunId.foreach(__v => __obj.update("TaskRunId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TaskRunId.foreach(__v => __obj.updateDynamic("TaskRunId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartImportLabelsTaskRunResponse]
     }
   }
@@ -7331,19 +7335,19 @@ package glue {
         Timeout: js.UndefOr[Timeout] = js.undefined,
         WorkerType: js.UndefOr[WorkerType] = js.undefined
     ): StartJobRunRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobName" -> JobName.asInstanceOf[js.Any]
       )
 
-      AllocatedCapacity.foreach(__v => __obj.update("AllocatedCapacity", __v.asInstanceOf[js.Any]))
-      Arguments.foreach(__v => __obj.update("Arguments", __v.asInstanceOf[js.Any]))
-      JobRunId.foreach(__v => __obj.update("JobRunId", __v.asInstanceOf[js.Any]))
-      MaxCapacity.foreach(__v => __obj.update("MaxCapacity", __v.asInstanceOf[js.Any]))
-      NotificationProperty.foreach(__v => __obj.update("NotificationProperty", __v.asInstanceOf[js.Any]))
-      NumberOfWorkers.foreach(__v => __obj.update("NumberOfWorkers", __v.asInstanceOf[js.Any]))
-      SecurityConfiguration.foreach(__v => __obj.update("SecurityConfiguration", __v.asInstanceOf[js.Any]))
-      Timeout.foreach(__v => __obj.update("Timeout", __v.asInstanceOf[js.Any]))
-      WorkerType.foreach(__v => __obj.update("WorkerType", __v.asInstanceOf[js.Any]))
+      AllocatedCapacity.foreach(__v => __obj.updateDynamic("AllocatedCapacity")(__v.asInstanceOf[js.Any]))
+      Arguments.foreach(__v => __obj.updateDynamic("Arguments")(__v.asInstanceOf[js.Any]))
+      JobRunId.foreach(__v => __obj.updateDynamic("JobRunId")(__v.asInstanceOf[js.Any]))
+      MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
+      NotificationProperty.foreach(__v => __obj.updateDynamic("NotificationProperty")(__v.asInstanceOf[js.Any]))
+      NumberOfWorkers.foreach(__v => __obj.updateDynamic("NumberOfWorkers")(__v.asInstanceOf[js.Any]))
+      SecurityConfiguration.foreach(__v => __obj.updateDynamic("SecurityConfiguration")(__v.asInstanceOf[js.Any]))
+      Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
+      WorkerType.foreach(__v => __obj.updateDynamic("WorkerType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartJobRunRequest]
     }
   }
@@ -7357,8 +7361,8 @@ package glue {
     def apply(
         JobRunId: js.UndefOr[IdString] = js.undefined
     ): StartJobRunResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobRunId.foreach(__v => __obj.update("JobRunId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobRunId.foreach(__v => __obj.updateDynamic("JobRunId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartJobRunResponse]
     }
   }
@@ -7372,7 +7376,7 @@ package glue {
     def apply(
         TransformId: HashString
     ): StartMLEvaluationTaskRunRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TransformId" -> TransformId.asInstanceOf[js.Any]
       )
 
@@ -7389,8 +7393,8 @@ package glue {
     def apply(
         TaskRunId: js.UndefOr[HashString] = js.undefined
     ): StartMLEvaluationTaskRunResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TaskRunId.foreach(__v => __obj.update("TaskRunId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TaskRunId.foreach(__v => __obj.updateDynamic("TaskRunId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartMLEvaluationTaskRunResponse]
     }
   }
@@ -7406,7 +7410,7 @@ package glue {
         OutputS3Path: UriString,
         TransformId: HashString
     ): StartMLLabelingSetGenerationTaskRunRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OutputS3Path" -> OutputS3Path.asInstanceOf[js.Any],
         "TransformId"  -> TransformId.asInstanceOf[js.Any]
       )
@@ -7424,8 +7428,8 @@ package glue {
     def apply(
         TaskRunId: js.UndefOr[HashString] = js.undefined
     ): StartMLLabelingSetGenerationTaskRunResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TaskRunId.foreach(__v => __obj.update("TaskRunId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TaskRunId.foreach(__v => __obj.updateDynamic("TaskRunId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartMLLabelingSetGenerationTaskRunResponse]
     }
   }
@@ -7439,7 +7443,7 @@ package glue {
     def apply(
         Name: NameString
     ): StartTriggerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -7456,8 +7460,8 @@ package glue {
     def apply(
         Name: js.UndefOr[NameString] = js.undefined
     ): StartTriggerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartTriggerResponse]
     }
   }
@@ -7471,7 +7475,7 @@ package glue {
     def apply(
         Name: NameString
     ): StartWorkflowRunRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -7488,8 +7492,8 @@ package glue {
     def apply(
         RunId: js.UndefOr[IdString] = js.undefined
     ): StartWorkflowRunResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RunId.foreach(__v => __obj.update("RunId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RunId.foreach(__v => __obj.updateDynamic("RunId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartWorkflowRunResponse]
     }
   }
@@ -7503,7 +7507,7 @@ package glue {
     def apply(
         Name: NameString
     ): StopCrawlerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -7517,7 +7521,7 @@ package glue {
   object StopCrawlerResponse {
     def apply(
         ): StopCrawlerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopCrawlerResponse]
     }
@@ -7532,7 +7536,7 @@ package glue {
     def apply(
         CrawlerName: NameString
     ): StopCrawlerScheduleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CrawlerName" -> CrawlerName.asInstanceOf[js.Any]
       )
 
@@ -7546,7 +7550,7 @@ package glue {
   object StopCrawlerScheduleResponse {
     def apply(
         ): StopCrawlerScheduleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopCrawlerScheduleResponse]
     }
@@ -7561,7 +7565,7 @@ package glue {
     def apply(
         Name: NameString
     ): StopTriggerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -7578,8 +7582,8 @@ package glue {
     def apply(
         Name: js.UndefOr[NameString] = js.undefined
     ): StopTriggerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopTriggerResponse]
     }
   }
@@ -7618,19 +7622,19 @@ package glue {
         SortColumns: js.UndefOr[OrderList] = js.undefined,
         StoredAsSubDirectories: js.UndefOr[Boolean] = js.undefined
     ): StorageDescriptor = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BucketColumns.foreach(__v => __obj.update("BucketColumns", __v.asInstanceOf[js.Any]))
-      Columns.foreach(__v => __obj.update("Columns", __v.asInstanceOf[js.Any]))
-      Compressed.foreach(__v => __obj.update("Compressed", __v.asInstanceOf[js.Any]))
-      InputFormat.foreach(__v => __obj.update("InputFormat", __v.asInstanceOf[js.Any]))
-      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
-      NumberOfBuckets.foreach(__v => __obj.update("NumberOfBuckets", __v.asInstanceOf[js.Any]))
-      OutputFormat.foreach(__v => __obj.update("OutputFormat", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
-      SerdeInfo.foreach(__v => __obj.update("SerdeInfo", __v.asInstanceOf[js.Any]))
-      SkewedInfo.foreach(__v => __obj.update("SkewedInfo", __v.asInstanceOf[js.Any]))
-      SortColumns.foreach(__v => __obj.update("SortColumns", __v.asInstanceOf[js.Any]))
-      StoredAsSubDirectories.foreach(__v => __obj.update("StoredAsSubDirectories", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BucketColumns.foreach(__v => __obj.updateDynamic("BucketColumns")(__v.asInstanceOf[js.Any]))
+      Columns.foreach(__v => __obj.updateDynamic("Columns")(__v.asInstanceOf[js.Any]))
+      Compressed.foreach(__v => __obj.updateDynamic("Compressed")(__v.asInstanceOf[js.Any]))
+      InputFormat.foreach(__v => __obj.updateDynamic("InputFormat")(__v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
+      NumberOfBuckets.foreach(__v => __obj.updateDynamic("NumberOfBuckets")(__v.asInstanceOf[js.Any]))
+      OutputFormat.foreach(__v => __obj.updateDynamic("OutputFormat")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      SerdeInfo.foreach(__v => __obj.updateDynamic("SerdeInfo")(__v.asInstanceOf[js.Any]))
+      SkewedInfo.foreach(__v => __obj.updateDynamic("SkewedInfo")(__v.asInstanceOf[js.Any]))
+      SortColumns.foreach(__v => __obj.updateDynamic("SortColumns")(__v.asInstanceOf[js.Any]))
+      StoredAsSubDirectories.foreach(__v => __obj.updateDynamic("StoredAsSubDirectories")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StorageDescriptor]
     }
   }
@@ -7679,28 +7683,28 @@ package glue {
         ViewExpandedText: js.UndefOr[ViewTextString] = js.undefined,
         ViewOriginalText: js.UndefOr[ViewTextString] = js.undefined
     ): Table = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      CreateTime.foreach(__v => __obj.update("CreateTime", __v.asInstanceOf[js.Any]))
-      CreatedBy.foreach(__v => __obj.update("CreatedBy", __v.asInstanceOf[js.Any]))
-      DatabaseName.foreach(__v => __obj.update("DatabaseName", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      CreateTime.foreach(__v => __obj.updateDynamic("CreateTime")(__v.asInstanceOf[js.Any]))
+      CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
+      DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       IsRegisteredWithLakeFormation.foreach(
-        __v => __obj.update("IsRegisteredWithLakeFormation", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("IsRegisteredWithLakeFormation")(__v.asInstanceOf[js.Any])
       )
-      LastAccessTime.foreach(__v => __obj.update("LastAccessTime", __v.asInstanceOf[js.Any]))
-      LastAnalyzedTime.foreach(__v => __obj.update("LastAnalyzedTime", __v.asInstanceOf[js.Any]))
-      Owner.foreach(__v => __obj.update("Owner", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
-      PartitionKeys.foreach(__v => __obj.update("PartitionKeys", __v.asInstanceOf[js.Any]))
-      Retention.foreach(__v => __obj.update("Retention", __v.asInstanceOf[js.Any]))
-      StorageDescriptor.foreach(__v => __obj.update("StorageDescriptor", __v.asInstanceOf[js.Any]))
-      TableType.foreach(__v => __obj.update("TableType", __v.asInstanceOf[js.Any]))
-      UpdateTime.foreach(__v => __obj.update("UpdateTime", __v.asInstanceOf[js.Any]))
-      ViewExpandedText.foreach(__v => __obj.update("ViewExpandedText", __v.asInstanceOf[js.Any]))
-      ViewOriginalText.foreach(__v => __obj.update("ViewOriginalText", __v.asInstanceOf[js.Any]))
+      LastAccessTime.foreach(__v => __obj.updateDynamic("LastAccessTime")(__v.asInstanceOf[js.Any]))
+      LastAnalyzedTime.foreach(__v => __obj.updateDynamic("LastAnalyzedTime")(__v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      PartitionKeys.foreach(__v => __obj.updateDynamic("PartitionKeys")(__v.asInstanceOf[js.Any]))
+      Retention.foreach(__v => __obj.updateDynamic("Retention")(__v.asInstanceOf[js.Any]))
+      StorageDescriptor.foreach(__v => __obj.updateDynamic("StorageDescriptor")(__v.asInstanceOf[js.Any]))
+      TableType.foreach(__v => __obj.updateDynamic("TableType")(__v.asInstanceOf[js.Any]))
+      UpdateTime.foreach(__v => __obj.updateDynamic("UpdateTime")(__v.asInstanceOf[js.Any]))
+      ViewExpandedText.foreach(__v => __obj.updateDynamic("ViewExpandedText")(__v.asInstanceOf[js.Any]))
+      ViewOriginalText.foreach(__v => __obj.updateDynamic("ViewOriginalText")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Table]
     }
   }
@@ -7719,9 +7723,9 @@ package glue {
         ErrorDetail: js.UndefOr[ErrorDetail] = js.undefined,
         TableName: js.UndefOr[NameString] = js.undefined
     ): TableError = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ErrorDetail.foreach(__v => __obj.update("ErrorDetail", __v.asInstanceOf[js.Any]))
-      TableName.foreach(__v => __obj.update("TableName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ErrorDetail.foreach(__v => __obj.updateDynamic("ErrorDetail")(__v.asInstanceOf[js.Any]))
+      TableName.foreach(__v => __obj.updateDynamic("TableName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TableError]
     }
   }
@@ -7760,21 +7764,21 @@ package glue {
         ViewExpandedText: js.UndefOr[ViewTextString] = js.undefined,
         ViewOriginalText: js.UndefOr[ViewTextString] = js.undefined
     ): TableInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      LastAccessTime.foreach(__v => __obj.update("LastAccessTime", __v.asInstanceOf[js.Any]))
-      LastAnalyzedTime.foreach(__v => __obj.update("LastAnalyzedTime", __v.asInstanceOf[js.Any]))
-      Owner.foreach(__v => __obj.update("Owner", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
-      PartitionKeys.foreach(__v => __obj.update("PartitionKeys", __v.asInstanceOf[js.Any]))
-      Retention.foreach(__v => __obj.update("Retention", __v.asInstanceOf[js.Any]))
-      StorageDescriptor.foreach(__v => __obj.update("StorageDescriptor", __v.asInstanceOf[js.Any]))
-      TableType.foreach(__v => __obj.update("TableType", __v.asInstanceOf[js.Any]))
-      ViewExpandedText.foreach(__v => __obj.update("ViewExpandedText", __v.asInstanceOf[js.Any]))
-      ViewOriginalText.foreach(__v => __obj.update("ViewOriginalText", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LastAccessTime.foreach(__v => __obj.updateDynamic("LastAccessTime")(__v.asInstanceOf[js.Any]))
+      LastAnalyzedTime.foreach(__v => __obj.updateDynamic("LastAnalyzedTime")(__v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      PartitionKeys.foreach(__v => __obj.updateDynamic("PartitionKeys")(__v.asInstanceOf[js.Any]))
+      Retention.foreach(__v => __obj.updateDynamic("Retention")(__v.asInstanceOf[js.Any]))
+      StorageDescriptor.foreach(__v => __obj.updateDynamic("StorageDescriptor")(__v.asInstanceOf[js.Any]))
+      TableType.foreach(__v => __obj.updateDynamic("TableType")(__v.asInstanceOf[js.Any]))
+      ViewExpandedText.foreach(__v => __obj.updateDynamic("ViewExpandedText")(__v.asInstanceOf[js.Any]))
+      ViewOriginalText.foreach(__v => __obj.updateDynamic("ViewOriginalText")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TableInput]
     }
   }
@@ -7793,9 +7797,9 @@ package glue {
         Table: js.UndefOr[Table] = js.undefined,
         VersionId: js.UndefOr[VersionString] = js.undefined
     ): TableVersion = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Table.foreach(__v => __obj.update("Table", __v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Table.foreach(__v => __obj.updateDynamic("Table")(__v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TableVersion]
     }
   }
@@ -7816,10 +7820,10 @@ package glue {
         TableName: js.UndefOr[NameString] = js.undefined,
         VersionId: js.UndefOr[VersionString] = js.undefined
     ): TableVersionError = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ErrorDetail.foreach(__v => __obj.update("ErrorDetail", __v.asInstanceOf[js.Any]))
-      TableName.foreach(__v => __obj.update("TableName", __v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ErrorDetail.foreach(__v => __obj.updateDynamic("ErrorDetail")(__v.asInstanceOf[js.Any]))
+      TableName.foreach(__v => __obj.updateDynamic("TableName")(__v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TableVersionError]
     }
   }
@@ -7835,7 +7839,7 @@ package glue {
         ResourceArn: GlueResourceArn,
         TagsToAdd: TagsMap
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagsToAdd"   -> TagsToAdd.asInstanceOf[js.Any]
       )
@@ -7850,7 +7854,7 @@ package glue {
   object TagResourceResponse {
     def apply(
         ): TagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -7886,17 +7890,17 @@ package glue {
         TaskRunId: js.UndefOr[HashString] = js.undefined,
         TransformId: js.UndefOr[HashString] = js.undefined
     ): TaskRun = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CompletedOn.foreach(__v => __obj.update("CompletedOn", __v.asInstanceOf[js.Any]))
-      ErrorString.foreach(__v => __obj.update("ErrorString", __v.asInstanceOf[js.Any]))
-      ExecutionTime.foreach(__v => __obj.update("ExecutionTime", __v.asInstanceOf[js.Any]))
-      LastModifiedOn.foreach(__v => __obj.update("LastModifiedOn", __v.asInstanceOf[js.Any]))
-      LogGroupName.foreach(__v => __obj.update("LogGroupName", __v.asInstanceOf[js.Any]))
-      Properties.foreach(__v => __obj.update("Properties", __v.asInstanceOf[js.Any]))
-      StartedOn.foreach(__v => __obj.update("StartedOn", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      TaskRunId.foreach(__v => __obj.update("TaskRunId", __v.asInstanceOf[js.Any]))
-      TransformId.foreach(__v => __obj.update("TransformId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CompletedOn.foreach(__v => __obj.updateDynamic("CompletedOn")(__v.asInstanceOf[js.Any]))
+      ErrorString.foreach(__v => __obj.updateDynamic("ErrorString")(__v.asInstanceOf[js.Any]))
+      ExecutionTime.foreach(__v => __obj.updateDynamic("ExecutionTime")(__v.asInstanceOf[js.Any]))
+      LastModifiedOn.foreach(__v => __obj.updateDynamic("LastModifiedOn")(__v.asInstanceOf[js.Any]))
+      LogGroupName.foreach(__v => __obj.updateDynamic("LogGroupName")(__v.asInstanceOf[js.Any]))
+      Properties.foreach(__v => __obj.updateDynamic("Properties")(__v.asInstanceOf[js.Any]))
+      StartedOn.foreach(__v => __obj.updateDynamic("StartedOn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TaskRunId.foreach(__v => __obj.updateDynamic("TaskRunId")(__v.asInstanceOf[js.Any]))
+      TransformId.foreach(__v => __obj.updateDynamic("TransformId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TaskRun]
     }
   }
@@ -7919,11 +7923,11 @@ package glue {
         Status: js.UndefOr[TaskStatusType] = js.undefined,
         TaskRunType: js.UndefOr[TaskType] = js.undefined
     ): TaskRunFilterCriteria = {
-      val __obj = js.Dictionary.empty[js.Any]
-      StartedAfter.foreach(__v => __obj.update("StartedAfter", __v.asInstanceOf[js.Any]))
-      StartedBefore.foreach(__v => __obj.update("StartedBefore", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      TaskRunType.foreach(__v => __obj.update("TaskRunType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      StartedAfter.foreach(__v => __obj.updateDynamic("StartedAfter")(__v.asInstanceOf[js.Any]))
+      StartedBefore.foreach(__v => __obj.updateDynamic("StartedBefore")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TaskRunType.foreach(__v => __obj.updateDynamic("TaskRunType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TaskRunFilterCriteria]
     }
   }
@@ -7948,20 +7952,20 @@ package glue {
         LabelingSetGenerationTaskRunProperties: js.UndefOr[LabelingSetGenerationTaskRunProperties] = js.undefined,
         TaskType: js.UndefOr[TaskType] = js.undefined
     ): TaskRunProperties = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       ExportLabelsTaskRunProperties.foreach(
-        __v => __obj.update("ExportLabelsTaskRunProperties", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ExportLabelsTaskRunProperties")(__v.asInstanceOf[js.Any])
       )
       FindMatchesTaskRunProperties.foreach(
-        __v => __obj.update("FindMatchesTaskRunProperties", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("FindMatchesTaskRunProperties")(__v.asInstanceOf[js.Any])
       )
       ImportLabelsTaskRunProperties.foreach(
-        __v => __obj.update("ImportLabelsTaskRunProperties", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ImportLabelsTaskRunProperties")(__v.asInstanceOf[js.Any])
       )
       LabelingSetGenerationTaskRunProperties.foreach(
-        __v => __obj.update("LabelingSetGenerationTaskRunProperties", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("LabelingSetGenerationTaskRunProperties")(__v.asInstanceOf[js.Any])
       )
-      TaskType.foreach(__v => __obj.update("TaskType", __v.asInstanceOf[js.Any]))
+      TaskType.foreach(__v => __obj.updateDynamic("TaskType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TaskRunProperties]
     }
   }
@@ -7988,7 +7992,7 @@ package glue {
         Column: TaskRunSortColumnType,
         SortDirection: SortDirectionType
     ): TaskRunSortCriteria = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Column"        -> Column.asInstanceOf[js.Any],
         "SortDirection" -> SortDirection.asInstanceOf[js.Any]
       )
@@ -8046,15 +8050,15 @@ package glue {
         Status: js.UndefOr[TransformStatusType] = js.undefined,
         TransformType: js.UndefOr[TransformType] = js.undefined
     ): TransformFilterCriteria = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedAfter.foreach(__v => __obj.update("CreatedAfter", __v.asInstanceOf[js.Any]))
-      CreatedBefore.foreach(__v => __obj.update("CreatedBefore", __v.asInstanceOf[js.Any]))
-      LastModifiedAfter.foreach(__v => __obj.update("LastModifiedAfter", __v.asInstanceOf[js.Any]))
-      LastModifiedBefore.foreach(__v => __obj.update("LastModifiedBefore", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Schema.foreach(__v => __obj.update("Schema", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      TransformType.foreach(__v => __obj.update("TransformType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedAfter.foreach(__v => __obj.updateDynamic("CreatedAfter")(__v.asInstanceOf[js.Any]))
+      CreatedBefore.foreach(__v => __obj.updateDynamic("CreatedBefore")(__v.asInstanceOf[js.Any]))
+      LastModifiedAfter.foreach(__v => __obj.updateDynamic("LastModifiedAfter")(__v.asInstanceOf[js.Any]))
+      LastModifiedBefore.foreach(__v => __obj.updateDynamic("LastModifiedBefore")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Schema.foreach(__v => __obj.updateDynamic("Schema")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TransformType.foreach(__v => __obj.updateDynamic("TransformType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TransformFilterCriteria]
     }
   }
@@ -8073,11 +8077,11 @@ package glue {
         TransformType: TransformType,
         FindMatchesParameters: js.UndefOr[FindMatchesParameters] = js.undefined
     ): TransformParameters = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TransformType" -> TransformType.asInstanceOf[js.Any]
       )
 
-      FindMatchesParameters.foreach(__v => __obj.update("FindMatchesParameters", __v.asInstanceOf[js.Any]))
+      FindMatchesParameters.foreach(__v => __obj.updateDynamic("FindMatchesParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TransformParameters]
     }
   }
@@ -8106,7 +8110,7 @@ package glue {
         Column: TransformSortColumnType,
         SortDirection: SortDirectionType
     ): TransformSortCriteria = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Column"        -> Column.asInstanceOf[js.Any],
         "SortDirection" -> SortDirection.asInstanceOf[js.Any]
       )
@@ -8157,16 +8161,16 @@ package glue {
         Type: js.UndefOr[TriggerType] = js.undefined,
         WorkflowName: js.UndefOr[NameString] = js.undefined
     ): Trigger = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Actions.foreach(__v => __obj.update("Actions", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Predicate.foreach(__v => __obj.update("Predicate", __v.asInstanceOf[js.Any]))
-      Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
-      WorkflowName.foreach(__v => __obj.update("WorkflowName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Predicate.foreach(__v => __obj.updateDynamic("Predicate")(__v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      WorkflowName.foreach(__v => __obj.updateDynamic("WorkflowName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Trigger]
     }
   }
@@ -8183,8 +8187,8 @@ package glue {
     def apply(
         Trigger: js.UndefOr[Trigger] = js.undefined
     ): TriggerNodeDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Trigger.foreach(__v => __obj.update("Trigger", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Trigger.foreach(__v => __obj.updateDynamic("Trigger")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TriggerNodeDetails]
     }
   }
@@ -8232,12 +8236,12 @@ package glue {
         Predicate: js.UndefOr[Predicate] = js.undefined,
         Schedule: js.UndefOr[GenericString] = js.undefined
     ): TriggerUpdate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Actions.foreach(__v => __obj.update("Actions", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Predicate.foreach(__v => __obj.update("Predicate", __v.asInstanceOf[js.Any]))
-      Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Predicate.foreach(__v => __obj.updateDynamic("Predicate")(__v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TriggerUpdate]
     }
   }
@@ -8253,7 +8257,7 @@ package glue {
         ResourceArn: GlueResourceArn,
         TagsToRemove: TagKeysList
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn"  -> ResourceArn.asInstanceOf[js.Any],
         "TagsToRemove" -> TagsToRemove.asInstanceOf[js.Any]
       )
@@ -8268,7 +8272,7 @@ package glue {
   object UntagResourceResponse {
     def apply(
         ): UntagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -8296,11 +8300,11 @@ package glue {
         JsonClassifier: js.UndefOr[UpdateJsonClassifierRequest] = js.undefined,
         XMLClassifier: js.UndefOr[UpdateXMLClassifierRequest] = js.undefined
     ): UpdateClassifierRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CsvClassifier.foreach(__v => __obj.update("CsvClassifier", __v.asInstanceOf[js.Any]))
-      GrokClassifier.foreach(__v => __obj.update("GrokClassifier", __v.asInstanceOf[js.Any]))
-      JsonClassifier.foreach(__v => __obj.update("JsonClassifier", __v.asInstanceOf[js.Any]))
-      XMLClassifier.foreach(__v => __obj.update("XMLClassifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CsvClassifier.foreach(__v => __obj.updateDynamic("CsvClassifier")(__v.asInstanceOf[js.Any]))
+      GrokClassifier.foreach(__v => __obj.updateDynamic("GrokClassifier")(__v.asInstanceOf[js.Any]))
+      JsonClassifier.foreach(__v => __obj.updateDynamic("JsonClassifier")(__v.asInstanceOf[js.Any]))
+      XMLClassifier.foreach(__v => __obj.updateDynamic("XMLClassifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateClassifierRequest]
     }
   }
@@ -8311,7 +8315,7 @@ package glue {
   object UpdateClassifierResponse {
     def apply(
         ): UpdateClassifierResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateClassifierResponse]
     }
@@ -8330,12 +8334,12 @@ package glue {
         Name: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): UpdateConnectionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConnectionInput" -> ConnectionInput.asInstanceOf[js.Any],
         "Name"            -> Name.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateConnectionRequest]
     }
   }
@@ -8346,7 +8350,7 @@ package glue {
   object UpdateConnectionResponse {
     def apply(
         ): UpdateConnectionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateConnectionResponse]
     }
@@ -8381,22 +8385,22 @@ package glue {
         TablePrefix: js.UndefOr[TablePrefix] = js.undefined,
         Targets: js.UndefOr[CrawlerTargets] = js.undefined
     ): UpdateCrawlerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      Classifiers.foreach(__v => __obj.update("Classifiers", __v.asInstanceOf[js.Any]))
-      Configuration.foreach(__v => __obj.update("Configuration", __v.asInstanceOf[js.Any]))
+      Classifiers.foreach(__v => __obj.updateDynamic("Classifiers")(__v.asInstanceOf[js.Any]))
+      Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
       CrawlerSecurityConfiguration.foreach(
-        __v => __obj.update("CrawlerSecurityConfiguration", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("CrawlerSecurityConfiguration")(__v.asInstanceOf[js.Any])
       )
-      DatabaseName.foreach(__v => __obj.update("DatabaseName", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
-      Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
-      SchemaChangePolicy.foreach(__v => __obj.update("SchemaChangePolicy", __v.asInstanceOf[js.Any]))
-      TablePrefix.foreach(__v => __obj.update("TablePrefix", __v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.update("Targets", __v.asInstanceOf[js.Any]))
+      DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
+      SchemaChangePolicy.foreach(__v => __obj.updateDynamic("SchemaChangePolicy")(__v.asInstanceOf[js.Any]))
+      TablePrefix.foreach(__v => __obj.updateDynamic("TablePrefix")(__v.asInstanceOf[js.Any]))
+      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateCrawlerRequest]
     }
   }
@@ -8407,7 +8411,7 @@ package glue {
   object UpdateCrawlerResponse {
     def apply(
         ): UpdateCrawlerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateCrawlerResponse]
     }
@@ -8424,11 +8428,11 @@ package glue {
         CrawlerName: NameString,
         Schedule: js.UndefOr[CronExpression] = js.undefined
     ): UpdateCrawlerScheduleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CrawlerName" -> CrawlerName.asInstanceOf[js.Any]
       )
 
-      Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateCrawlerScheduleRequest]
     }
   }
@@ -8439,7 +8443,7 @@ package glue {
   object UpdateCrawlerScheduleResponse {
     def apply(
         ): UpdateCrawlerScheduleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateCrawlerScheduleResponse]
     }
@@ -8469,16 +8473,16 @@ package glue {
         Header: js.UndefOr[CsvHeader] = js.undefined,
         QuoteSymbol: js.UndefOr[CsvQuoteSymbol] = js.undefined
     ): UpdateCsvClassifierRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      AllowSingleColumn.foreach(__v => __obj.update("AllowSingleColumn", __v.asInstanceOf[js.Any]))
-      ContainsHeader.foreach(__v => __obj.update("ContainsHeader", __v.asInstanceOf[js.Any]))
-      Delimiter.foreach(__v => __obj.update("Delimiter", __v.asInstanceOf[js.Any]))
-      DisableValueTrimming.foreach(__v => __obj.update("DisableValueTrimming", __v.asInstanceOf[js.Any]))
-      Header.foreach(__v => __obj.update("Header", __v.asInstanceOf[js.Any]))
-      QuoteSymbol.foreach(__v => __obj.update("QuoteSymbol", __v.asInstanceOf[js.Any]))
+      AllowSingleColumn.foreach(__v => __obj.updateDynamic("AllowSingleColumn")(__v.asInstanceOf[js.Any]))
+      ContainsHeader.foreach(__v => __obj.updateDynamic("ContainsHeader")(__v.asInstanceOf[js.Any]))
+      Delimiter.foreach(__v => __obj.updateDynamic("Delimiter")(__v.asInstanceOf[js.Any]))
+      DisableValueTrimming.foreach(__v => __obj.updateDynamic("DisableValueTrimming")(__v.asInstanceOf[js.Any]))
+      Header.foreach(__v => __obj.updateDynamic("Header")(__v.asInstanceOf[js.Any]))
+      QuoteSymbol.foreach(__v => __obj.updateDynamic("QuoteSymbol")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateCsvClassifierRequest]
     }
   }
@@ -8496,12 +8500,12 @@ package glue {
         Name: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): UpdateDatabaseRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatabaseInput" -> DatabaseInput.asInstanceOf[js.Any],
         "Name"          -> Name.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDatabaseRequest]
     }
   }
@@ -8512,7 +8516,7 @@ package glue {
   object UpdateDatabaseResponse {
     def apply(
         ): UpdateDatabaseResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateDatabaseResponse]
     }
@@ -8541,17 +8545,17 @@ package glue {
         PublicKey: js.UndefOr[GenericString] = js.undefined,
         UpdateEtlLibraries: js.UndefOr[BooleanValue] = js.undefined
     ): UpdateDevEndpointRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EndpointName" -> EndpointName.asInstanceOf[js.Any]
       )
 
-      AddArguments.foreach(__v => __obj.update("AddArguments", __v.asInstanceOf[js.Any]))
-      AddPublicKeys.foreach(__v => __obj.update("AddPublicKeys", __v.asInstanceOf[js.Any]))
-      CustomLibraries.foreach(__v => __obj.update("CustomLibraries", __v.asInstanceOf[js.Any]))
-      DeleteArguments.foreach(__v => __obj.update("DeleteArguments", __v.asInstanceOf[js.Any]))
-      DeletePublicKeys.foreach(__v => __obj.update("DeletePublicKeys", __v.asInstanceOf[js.Any]))
-      PublicKey.foreach(__v => __obj.update("PublicKey", __v.asInstanceOf[js.Any]))
-      UpdateEtlLibraries.foreach(__v => __obj.update("UpdateEtlLibraries", __v.asInstanceOf[js.Any]))
+      AddArguments.foreach(__v => __obj.updateDynamic("AddArguments")(__v.asInstanceOf[js.Any]))
+      AddPublicKeys.foreach(__v => __obj.updateDynamic("AddPublicKeys")(__v.asInstanceOf[js.Any]))
+      CustomLibraries.foreach(__v => __obj.updateDynamic("CustomLibraries")(__v.asInstanceOf[js.Any]))
+      DeleteArguments.foreach(__v => __obj.updateDynamic("DeleteArguments")(__v.asInstanceOf[js.Any]))
+      DeletePublicKeys.foreach(__v => __obj.updateDynamic("DeletePublicKeys")(__v.asInstanceOf[js.Any]))
+      PublicKey.foreach(__v => __obj.updateDynamic("PublicKey")(__v.asInstanceOf[js.Any]))
+      UpdateEtlLibraries.foreach(__v => __obj.updateDynamic("UpdateEtlLibraries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDevEndpointRequest]
     }
   }
@@ -8562,7 +8566,7 @@ package glue {
   object UpdateDevEndpointResponse {
     def apply(
         ): UpdateDevEndpointResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateDevEndpointResponse]
     }
@@ -8586,13 +8590,13 @@ package glue {
         CustomPatterns: js.UndefOr[CustomPatterns] = js.undefined,
         GrokPattern: js.UndefOr[GrokPattern] = js.undefined
     ): UpdateGrokClassifierRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      Classification.foreach(__v => __obj.update("Classification", __v.asInstanceOf[js.Any]))
-      CustomPatterns.foreach(__v => __obj.update("CustomPatterns", __v.asInstanceOf[js.Any]))
-      GrokPattern.foreach(__v => __obj.update("GrokPattern", __v.asInstanceOf[js.Any]))
+      Classification.foreach(__v => __obj.updateDynamic("Classification")(__v.asInstanceOf[js.Any]))
+      CustomPatterns.foreach(__v => __obj.updateDynamic("CustomPatterns")(__v.asInstanceOf[js.Any]))
+      GrokPattern.foreach(__v => __obj.updateDynamic("GrokPattern")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGrokClassifierRequest]
     }
   }
@@ -8608,7 +8612,7 @@ package glue {
         JobName: NameString,
         JobUpdate: JobUpdate
     ): UpdateJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobName"   -> JobName.asInstanceOf[js.Any],
         "JobUpdate" -> JobUpdate.asInstanceOf[js.Any]
       )
@@ -8626,8 +8630,8 @@ package glue {
     def apply(
         JobName: js.UndefOr[NameString] = js.undefined
     ): UpdateJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobName.foreach(__v => __obj.update("JobName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateJobResponse]
     }
   }
@@ -8646,11 +8650,11 @@ package glue {
         Name: NameString,
         JsonPath: js.UndefOr[JsonPath] = js.undefined
     ): UpdateJsonClassifierRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      JsonPath.foreach(__v => __obj.update("JsonPath", __v.asInstanceOf[js.Any]))
+      JsonPath.foreach(__v => __obj.updateDynamic("JsonPath")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateJsonClassifierRequest]
     }
   }
@@ -8682,19 +8686,19 @@ package glue {
         Timeout: js.UndefOr[Timeout] = js.undefined,
         WorkerType: js.UndefOr[WorkerType] = js.undefined
     ): UpdateMLTransformRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TransformId" -> TransformId.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      MaxCapacity.foreach(__v => __obj.update("MaxCapacity", __v.asInstanceOf[js.Any]))
-      MaxRetries.foreach(__v => __obj.update("MaxRetries", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      NumberOfWorkers.foreach(__v => __obj.update("NumberOfWorkers", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
-      Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
-      Timeout.foreach(__v => __obj.update("Timeout", __v.asInstanceOf[js.Any]))
-      WorkerType.foreach(__v => __obj.update("WorkerType", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
+      MaxRetries.foreach(__v => __obj.updateDynamic("MaxRetries")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NumberOfWorkers.foreach(__v => __obj.updateDynamic("NumberOfWorkers")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
+      Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
+      WorkerType.foreach(__v => __obj.updateDynamic("WorkerType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateMLTransformRequest]
     }
   }
@@ -8708,8 +8712,8 @@ package glue {
     def apply(
         TransformId: js.UndefOr[HashString] = js.undefined
     ): UpdateMLTransformResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TransformId.foreach(__v => __obj.update("TransformId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TransformId.foreach(__v => __obj.updateDynamic("TransformId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateMLTransformResponse]
     }
   }
@@ -8731,14 +8735,14 @@ package glue {
         TableName: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): UpdatePartitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatabaseName"       -> DatabaseName.asInstanceOf[js.Any],
         "PartitionInput"     -> PartitionInput.asInstanceOf[js.Any],
         "PartitionValueList" -> PartitionValueList.asInstanceOf[js.Any],
         "TableName"          -> TableName.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdatePartitionRequest]
     }
   }
@@ -8749,7 +8753,7 @@ package glue {
   object UpdatePartitionResponse {
     def apply(
         ): UpdatePartitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdatePartitionResponse]
     }
@@ -8770,13 +8774,13 @@ package glue {
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
         SkipArchive: js.UndefOr[BooleanNullable] = js.undefined
     ): UpdateTableRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
         "TableInput"   -> TableInput.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
-      SkipArchive.foreach(__v => __obj.update("SkipArchive", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      SkipArchive.foreach(__v => __obj.updateDynamic("SkipArchive")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateTableRequest]
     }
   }
@@ -8787,7 +8791,7 @@ package glue {
   object UpdateTableResponse {
     def apply(
         ): UpdateTableResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateTableResponse]
     }
@@ -8804,7 +8808,7 @@ package glue {
         Name: NameString,
         TriggerUpdate: TriggerUpdate
     ): UpdateTriggerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"          -> Name.asInstanceOf[js.Any],
         "TriggerUpdate" -> TriggerUpdate.asInstanceOf[js.Any]
       )
@@ -8822,8 +8826,8 @@ package glue {
     def apply(
         Trigger: js.UndefOr[Trigger] = js.undefined
     ): UpdateTriggerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Trigger.foreach(__v => __obj.update("Trigger", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Trigger.foreach(__v => __obj.updateDynamic("Trigger")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateTriggerResponse]
     }
   }
@@ -8843,13 +8847,13 @@ package glue {
         FunctionName: NameString,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): UpdateUserDefinedFunctionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatabaseName"  -> DatabaseName.asInstanceOf[js.Any],
         "FunctionInput" -> FunctionInput.asInstanceOf[js.Any],
         "FunctionName"  -> FunctionName.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateUserDefinedFunctionRequest]
     }
   }
@@ -8860,7 +8864,7 @@ package glue {
   object UpdateUserDefinedFunctionResponse {
     def apply(
         ): UpdateUserDefinedFunctionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateUserDefinedFunctionResponse]
     }
@@ -8879,12 +8883,12 @@ package glue {
         DefaultRunProperties: js.UndefOr[WorkflowRunProperties] = js.undefined,
         Description: js.UndefOr[GenericString] = js.undefined
     ): UpdateWorkflowRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      DefaultRunProperties.foreach(__v => __obj.update("DefaultRunProperties", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      DefaultRunProperties.foreach(__v => __obj.updateDynamic("DefaultRunProperties")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateWorkflowRequest]
     }
   }
@@ -8898,8 +8902,8 @@ package glue {
     def apply(
         Name: js.UndefOr[NameString] = js.undefined
     ): UpdateWorkflowResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateWorkflowResponse]
     }
   }
@@ -8920,12 +8924,12 @@ package glue {
         Classification: js.UndefOr[Classification] = js.undefined,
         RowTag: js.UndefOr[RowTag] = js.undefined
     ): UpdateXMLClassifierRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      Classification.foreach(__v => __obj.update("Classification", __v.asInstanceOf[js.Any]))
-      RowTag.foreach(__v => __obj.update("RowTag", __v.asInstanceOf[js.Any]))
+      Classification.foreach(__v => __obj.updateDynamic("Classification")(__v.asInstanceOf[js.Any]))
+      RowTag.foreach(__v => __obj.updateDynamic("RowTag")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateXMLClassifierRequest]
     }
   }
@@ -8952,13 +8956,13 @@ package glue {
         OwnerType: js.UndefOr[PrincipalType] = js.undefined,
         ResourceUris: js.UndefOr[ResourceUriList] = js.undefined
     ): UserDefinedFunction = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClassName.foreach(__v => __obj.update("ClassName", __v.asInstanceOf[js.Any]))
-      CreateTime.foreach(__v => __obj.update("CreateTime", __v.asInstanceOf[js.Any]))
-      FunctionName.foreach(__v => __obj.update("FunctionName", __v.asInstanceOf[js.Any]))
-      OwnerName.foreach(__v => __obj.update("OwnerName", __v.asInstanceOf[js.Any]))
-      OwnerType.foreach(__v => __obj.update("OwnerType", __v.asInstanceOf[js.Any]))
-      ResourceUris.foreach(__v => __obj.update("ResourceUris", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClassName.foreach(__v => __obj.updateDynamic("ClassName")(__v.asInstanceOf[js.Any]))
+      CreateTime.foreach(__v => __obj.updateDynamic("CreateTime")(__v.asInstanceOf[js.Any]))
+      FunctionName.foreach(__v => __obj.updateDynamic("FunctionName")(__v.asInstanceOf[js.Any]))
+      OwnerName.foreach(__v => __obj.updateDynamic("OwnerName")(__v.asInstanceOf[js.Any]))
+      OwnerType.foreach(__v => __obj.updateDynamic("OwnerType")(__v.asInstanceOf[js.Any]))
+      ResourceUris.foreach(__v => __obj.updateDynamic("ResourceUris")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UserDefinedFunction]
     }
   }
@@ -8983,12 +8987,12 @@ package glue {
         OwnerType: js.UndefOr[PrincipalType] = js.undefined,
         ResourceUris: js.UndefOr[ResourceUriList] = js.undefined
     ): UserDefinedFunctionInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClassName.foreach(__v => __obj.update("ClassName", __v.asInstanceOf[js.Any]))
-      FunctionName.foreach(__v => __obj.update("FunctionName", __v.asInstanceOf[js.Any]))
-      OwnerName.foreach(__v => __obj.update("OwnerName", __v.asInstanceOf[js.Any]))
-      OwnerType.foreach(__v => __obj.update("OwnerType", __v.asInstanceOf[js.Any]))
-      ResourceUris.foreach(__v => __obj.update("ResourceUris", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClassName.foreach(__v => __obj.updateDynamic("ClassName")(__v.asInstanceOf[js.Any]))
+      FunctionName.foreach(__v => __obj.updateDynamic("FunctionName")(__v.asInstanceOf[js.Any]))
+      OwnerName.foreach(__v => __obj.updateDynamic("OwnerName")(__v.asInstanceOf[js.Any]))
+      OwnerType.foreach(__v => __obj.updateDynamic("OwnerType")(__v.asInstanceOf[js.Any]))
+      ResourceUris.foreach(__v => __obj.updateDynamic("ResourceUris")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UserDefinedFunctionInput]
     }
   }
@@ -9025,14 +9029,14 @@ package glue {
         LastRun: js.UndefOr[WorkflowRun] = js.undefined,
         Name: js.UndefOr[NameString] = js.undefined
     ): Workflow = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedOn.foreach(__v => __obj.update("CreatedOn", __v.asInstanceOf[js.Any]))
-      DefaultRunProperties.foreach(__v => __obj.update("DefaultRunProperties", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Graph.foreach(__v => __obj.update("Graph", __v.asInstanceOf[js.Any]))
-      LastModifiedOn.foreach(__v => __obj.update("LastModifiedOn", __v.asInstanceOf[js.Any]))
-      LastRun.foreach(__v => __obj.update("LastRun", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedOn.foreach(__v => __obj.updateDynamic("CreatedOn")(__v.asInstanceOf[js.Any]))
+      DefaultRunProperties.foreach(__v => __obj.updateDynamic("DefaultRunProperties")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Graph.foreach(__v => __obj.updateDynamic("Graph")(__v.asInstanceOf[js.Any]))
+      LastModifiedOn.foreach(__v => __obj.updateDynamic("LastModifiedOn")(__v.asInstanceOf[js.Any]))
+      LastRun.foreach(__v => __obj.updateDynamic("LastRun")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Workflow]
     }
   }
@@ -9051,9 +9055,9 @@ package glue {
         Edges: js.UndefOr[EdgeList] = js.undefined,
         Nodes: js.UndefOr[NodeList] = js.undefined
     ): WorkflowGraph = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Edges.foreach(__v => __obj.update("Edges", __v.asInstanceOf[js.Any]))
-      Nodes.foreach(__v => __obj.update("Nodes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Edges.foreach(__v => __obj.updateDynamic("Edges")(__v.asInstanceOf[js.Any]))
+      Nodes.foreach(__v => __obj.updateDynamic("Nodes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkflowGraph]
     }
   }
@@ -9084,15 +9088,15 @@ package glue {
         WorkflowRunId: js.UndefOr[IdString] = js.undefined,
         WorkflowRunProperties: js.UndefOr[WorkflowRunProperties] = js.undefined
     ): WorkflowRun = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CompletedOn.foreach(__v => __obj.update("CompletedOn", __v.asInstanceOf[js.Any]))
-      Graph.foreach(__v => __obj.update("Graph", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      StartedOn.foreach(__v => __obj.update("StartedOn", __v.asInstanceOf[js.Any]))
-      Statistics.foreach(__v => __obj.update("Statistics", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      WorkflowRunId.foreach(__v => __obj.update("WorkflowRunId", __v.asInstanceOf[js.Any]))
-      WorkflowRunProperties.foreach(__v => __obj.update("WorkflowRunProperties", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CompletedOn.foreach(__v => __obj.updateDynamic("CompletedOn")(__v.asInstanceOf[js.Any]))
+      Graph.foreach(__v => __obj.updateDynamic("Graph")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      StartedOn.foreach(__v => __obj.updateDynamic("StartedOn")(__v.asInstanceOf[js.Any]))
+      Statistics.foreach(__v => __obj.updateDynamic("Statistics")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      WorkflowRunId.foreach(__v => __obj.updateDynamic("WorkflowRunId")(__v.asInstanceOf[js.Any]))
+      WorkflowRunProperties.foreach(__v => __obj.updateDynamic("WorkflowRunProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkflowRun]
     }
   }
@@ -9119,13 +9123,13 @@ package glue {
         TimeoutActions: js.UndefOr[IntegerValue] = js.undefined,
         TotalActions: js.UndefOr[IntegerValue] = js.undefined
     ): WorkflowRunStatistics = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FailedActions.foreach(__v => __obj.update("FailedActions", __v.asInstanceOf[js.Any]))
-      RunningActions.foreach(__v => __obj.update("RunningActions", __v.asInstanceOf[js.Any]))
-      StoppedActions.foreach(__v => __obj.update("StoppedActions", __v.asInstanceOf[js.Any]))
-      SucceededActions.foreach(__v => __obj.update("SucceededActions", __v.asInstanceOf[js.Any]))
-      TimeoutActions.foreach(__v => __obj.update("TimeoutActions", __v.asInstanceOf[js.Any]))
-      TotalActions.foreach(__v => __obj.update("TotalActions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FailedActions.foreach(__v => __obj.updateDynamic("FailedActions")(__v.asInstanceOf[js.Any]))
+      RunningActions.foreach(__v => __obj.updateDynamic("RunningActions")(__v.asInstanceOf[js.Any]))
+      StoppedActions.foreach(__v => __obj.updateDynamic("StoppedActions")(__v.asInstanceOf[js.Any]))
+      SucceededActions.foreach(__v => __obj.updateDynamic("SucceededActions")(__v.asInstanceOf[js.Any]))
+      TimeoutActions.foreach(__v => __obj.updateDynamic("TimeoutActions")(__v.asInstanceOf[js.Any]))
+      TotalActions.foreach(__v => __obj.updateDynamic("TotalActions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkflowRunStatistics]
     }
   }
@@ -9159,15 +9163,15 @@ package glue {
         RowTag: js.UndefOr[RowTag] = js.undefined,
         Version: js.UndefOr[VersionId] = js.undefined
     ): XMLClassifier = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Classification" -> Classification.asInstanceOf[js.Any],
         "Name"           -> Name.asInstanceOf[js.Any]
       )
 
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      LastUpdated.foreach(__v => __obj.update("LastUpdated", __v.asInstanceOf[js.Any]))
-      RowTag.foreach(__v => __obj.update("RowTag", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      LastUpdated.foreach(__v => __obj.updateDynamic("LastUpdated")(__v.asInstanceOf[js.Any]))
+      RowTag.foreach(__v => __obj.updateDynamic("RowTag")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[XMLClassifier]
     }
   }

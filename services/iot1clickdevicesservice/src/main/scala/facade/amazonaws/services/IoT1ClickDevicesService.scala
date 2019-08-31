@@ -80,7 +80,7 @@ package iot1clickdevicesservice {
   object Attributes {
     def apply(
         ): Attributes = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[Attributes]
     }
@@ -95,7 +95,7 @@ package iot1clickdevicesservice {
     def apply(
         ClaimCode: __string
     ): ClaimDevicesByClaimCodeRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClaimCode" -> ClaimCode.asInstanceOf[js.Any]
       )
 
@@ -114,9 +114,9 @@ package iot1clickdevicesservice {
         ClaimCode: js.UndefOr[__stringMin12Max40] = js.undefined,
         Total: js.UndefOr[__integer] = js.undefined
     ): ClaimDevicesByClaimCodeResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClaimCode.foreach(__v => __obj.update("ClaimCode", __v.asInstanceOf[js.Any]))
-      Total.foreach(__v => __obj.update("Total", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClaimCode.foreach(__v => __obj.updateDynamic("ClaimCode")(__v.asInstanceOf[js.Any]))
+      Total.foreach(__v => __obj.updateDynamic("Total")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClaimDevicesByClaimCodeResponse]
     }
   }
@@ -130,7 +130,7 @@ package iot1clickdevicesservice {
     def apply(
         DeviceId: __string
     ): DescribeDeviceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DeviceId" -> DeviceId.asInstanceOf[js.Any]
       )
 
@@ -147,8 +147,8 @@ package iot1clickdevicesservice {
     def apply(
         DeviceDescription: js.UndefOr[DeviceDescription] = js.undefined
     ): DescribeDeviceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DeviceDescription.foreach(__v => __obj.update("DeviceDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DeviceDescription.foreach(__v => __obj.updateDynamic("DeviceDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDeviceResponse]
     }
   }
@@ -166,10 +166,10 @@ package iot1clickdevicesservice {
         DeviceId: js.UndefOr[__string] = js.undefined,
         Type: js.UndefOr[__string] = js.undefined
     ): Device = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      DeviceId.foreach(__v => __obj.update("DeviceId", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      DeviceId.foreach(__v => __obj.updateDynamic("DeviceId")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Device]
     }
   }
@@ -195,14 +195,14 @@ package iot1clickdevicesservice {
         Tags: js.UndefOr[__mapOf__string] = js.undefined,
         Type: js.UndefOr[__string] = js.undefined
     ): DeviceDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      DeviceId.foreach(__v => __obj.update("DeviceId", __v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      RemainingLife.foreach(__v => __obj.update("RemainingLife", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      DeviceId.foreach(__v => __obj.updateDynamic("DeviceId")(__v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      RemainingLife.foreach(__v => __obj.updateDynamic("RemainingLife")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeviceDescription]
     }
   }
@@ -218,9 +218,9 @@ package iot1clickdevicesservice {
         Device: js.UndefOr[Device] = js.undefined,
         StdEvent: js.UndefOr[__string] = js.undefined
     ): DeviceEvent = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Device.foreach(__v => __obj.update("Device", __v.asInstanceOf[js.Any]))
-      StdEvent.foreach(__v => __obj.update("StdEvent", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Device.foreach(__v => __obj.updateDynamic("Device")(__v.asInstanceOf[js.Any]))
+      StdEvent.foreach(__v => __obj.updateDynamic("StdEvent")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeviceEvent]
     }
   }
@@ -236,9 +236,9 @@ package iot1clickdevicesservice {
         DeviceType: js.UndefOr[__string] = js.undefined,
         MethodName: js.UndefOr[__string] = js.undefined
     ): DeviceMethod = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DeviceType.foreach(__v => __obj.update("DeviceType", __v.asInstanceOf[js.Any]))
-      MethodName.foreach(__v => __obj.update("MethodName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DeviceType.foreach(__v => __obj.updateDynamic("DeviceType")(__v.asInstanceOf[js.Any]))
+      MethodName.foreach(__v => __obj.updateDynamic("MethodName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeviceMethod]
     }
   }
@@ -254,11 +254,11 @@ package iot1clickdevicesservice {
         DeviceId: __string,
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): FinalizeDeviceClaimRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DeviceId" -> DeviceId.asInstanceOf[js.Any]
       )
 
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FinalizeDeviceClaimRequest]
     }
   }
@@ -272,8 +272,8 @@ package iot1clickdevicesservice {
     def apply(
         State: js.UndefOr[__string] = js.undefined
     ): FinalizeDeviceClaimResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FinalizeDeviceClaimResponse]
     }
   }
@@ -287,7 +287,7 @@ package iot1clickdevicesservice {
     def apply(
         DeviceId: __string
     ): GetDeviceMethodsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DeviceId" -> DeviceId.asInstanceOf[js.Any]
       )
 
@@ -304,8 +304,8 @@ package iot1clickdevicesservice {
     def apply(
         DeviceMethods: js.UndefOr[__listOfDeviceMethod] = js.undefined
     ): GetDeviceMethodsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DeviceMethods.foreach(__v => __obj.update("DeviceMethods", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DeviceMethods.foreach(__v => __obj.updateDynamic("DeviceMethods")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDeviceMethodsResponse]
     }
   }
@@ -319,7 +319,7 @@ package iot1clickdevicesservice {
     def apply(
         DeviceId: __string
     ): InitiateDeviceClaimRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DeviceId" -> DeviceId.asInstanceOf[js.Any]
       )
 
@@ -336,8 +336,8 @@ package iot1clickdevicesservice {
     def apply(
         State: js.UndefOr[__string] = js.undefined
     ): InitiateDeviceClaimResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InitiateDeviceClaimResponse]
     }
   }
@@ -355,12 +355,12 @@ package iot1clickdevicesservice {
         DeviceMethod: js.UndefOr[DeviceMethod] = js.undefined,
         DeviceMethodParameters: js.UndefOr[__string] = js.undefined
     ): InvokeDeviceMethodRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DeviceId" -> DeviceId.asInstanceOf[js.Any]
       )
 
-      DeviceMethod.foreach(__v => __obj.update("DeviceMethod", __v.asInstanceOf[js.Any]))
-      DeviceMethodParameters.foreach(__v => __obj.update("DeviceMethodParameters", __v.asInstanceOf[js.Any]))
+      DeviceMethod.foreach(__v => __obj.updateDynamic("DeviceMethod")(__v.asInstanceOf[js.Any]))
+      DeviceMethodParameters.foreach(__v => __obj.updateDynamic("DeviceMethodParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InvokeDeviceMethodRequest]
     }
   }
@@ -374,8 +374,8 @@ package iot1clickdevicesservice {
     def apply(
         DeviceMethodResponse: js.UndefOr[__string] = js.undefined
     ): InvokeDeviceMethodResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DeviceMethodResponse.foreach(__v => __obj.update("DeviceMethodResponse", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DeviceMethodResponse.foreach(__v => __obj.updateDynamic("DeviceMethodResponse")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InvokeDeviceMethodResponse]
     }
   }
@@ -397,14 +397,14 @@ package iot1clickdevicesservice {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListDeviceEventsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DeviceId"      -> DeviceId.asInstanceOf[js.Any],
         "FromTimeStamp" -> FromTimeStamp.asInstanceOf[js.Any],
         "ToTimeStamp"   -> ToTimeStamp.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDeviceEventsRequest]
     }
   }
@@ -420,9 +420,9 @@ package iot1clickdevicesservice {
         Events: js.UndefOr[__listOfDeviceEvent] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListDeviceEventsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Events.foreach(__v => __obj.update("Events", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Events.foreach(__v => __obj.updateDynamic("Events")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDeviceEventsResponse]
     }
   }
@@ -440,10 +440,10 @@ package iot1clickdevicesservice {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListDevicesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DeviceType.foreach(__v => __obj.update("DeviceType", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DeviceType.foreach(__v => __obj.updateDynamic("DeviceType")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDevicesRequest]
     }
   }
@@ -459,9 +459,9 @@ package iot1clickdevicesservice {
         Devices: js.UndefOr[__listOfDeviceDescription] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListDevicesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Devices.foreach(__v => __obj.update("Devices", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Devices.foreach(__v => __obj.updateDynamic("Devices")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDevicesResponse]
     }
   }
@@ -475,7 +475,7 @@ package iot1clickdevicesservice {
     def apply(
         ResourceArn: __string
     ): ListTagsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
@@ -492,8 +492,8 @@ package iot1clickdevicesservice {
     def apply(
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): ListTagsForResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
@@ -509,7 +509,7 @@ package iot1clickdevicesservice {
         ResourceArn: __string,
         Tags: __mapOf__string
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
       )
@@ -527,7 +527,7 @@ package iot1clickdevicesservice {
     def apply(
         DeviceId: __string
     ): UnclaimDeviceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DeviceId" -> DeviceId.asInstanceOf[js.Any]
       )
 
@@ -544,8 +544,8 @@ package iot1clickdevicesservice {
     def apply(
         State: js.UndefOr[__string] = js.undefined
     ): UnclaimDeviceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UnclaimDeviceResponse]
     }
   }
@@ -561,7 +561,7 @@ package iot1clickdevicesservice {
         ResourceArn: __string,
         TagKeys: __listOf__string
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
       )
@@ -581,11 +581,11 @@ package iot1clickdevicesservice {
         DeviceId: __string,
         Enabled: js.UndefOr[__boolean] = js.undefined
     ): UpdateDeviceStateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DeviceId" -> DeviceId.asInstanceOf[js.Any]
       )
 
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDeviceStateRequest]
     }
   }
@@ -596,7 +596,7 @@ package iot1clickdevicesservice {
   object UpdateDeviceStateResponse {
     def apply(
         ): UpdateDeviceStateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateDeviceStateResponse]
     }

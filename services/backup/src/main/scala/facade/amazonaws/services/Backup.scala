@@ -260,24 +260,24 @@ package backup {
         State: js.UndefOr[BackupJobState] = js.undefined,
         StatusMessage: js.UndefOr[String] = js.undefined
     ): BackupJob = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupJobId.foreach(__v => __obj.update("BackupJobId", __v.asInstanceOf[js.Any]))
-      BackupSizeInBytes.foreach(__v => __obj.update("BackupSizeInBytes", __v.asInstanceOf[js.Any]))
-      BackupVaultArn.foreach(__v => __obj.update("BackupVaultArn", __v.asInstanceOf[js.Any]))
-      BackupVaultName.foreach(__v => __obj.update("BackupVaultName", __v.asInstanceOf[js.Any]))
-      BytesTransferred.foreach(__v => __obj.update("BytesTransferred", __v.asInstanceOf[js.Any]))
-      CompletionDate.foreach(__v => __obj.update("CompletionDate", __v.asInstanceOf[js.Any]))
-      CreatedBy.foreach(__v => __obj.update("CreatedBy", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      ExpectedCompletionDate.foreach(__v => __obj.update("ExpectedCompletionDate", __v.asInstanceOf[js.Any]))
-      IamRoleArn.foreach(__v => __obj.update("IamRoleArn", __v.asInstanceOf[js.Any]))
-      PercentDone.foreach(__v => __obj.update("PercentDone", __v.asInstanceOf[js.Any]))
-      RecoveryPointArn.foreach(__v => __obj.update("RecoveryPointArn", __v.asInstanceOf[js.Any]))
-      ResourceArn.foreach(__v => __obj.update("ResourceArn", __v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
-      StartBy.foreach(__v => __obj.update("StartBy", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupJobId.foreach(__v => __obj.updateDynamic("BackupJobId")(__v.asInstanceOf[js.Any]))
+      BackupSizeInBytes.foreach(__v => __obj.updateDynamic("BackupSizeInBytes")(__v.asInstanceOf[js.Any]))
+      BackupVaultArn.foreach(__v => __obj.updateDynamic("BackupVaultArn")(__v.asInstanceOf[js.Any]))
+      BackupVaultName.foreach(__v => __obj.updateDynamic("BackupVaultName")(__v.asInstanceOf[js.Any]))
+      BytesTransferred.foreach(__v => __obj.updateDynamic("BytesTransferred")(__v.asInstanceOf[js.Any]))
+      CompletionDate.foreach(__v => __obj.updateDynamic("CompletionDate")(__v.asInstanceOf[js.Any]))
+      CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      ExpectedCompletionDate.foreach(__v => __obj.updateDynamic("ExpectedCompletionDate")(__v.asInstanceOf[js.Any]))
+      IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
+      PercentDone.foreach(__v => __obj.updateDynamic("PercentDone")(__v.asInstanceOf[js.Any]))
+      RecoveryPointArn.foreach(__v => __obj.updateDynamic("RecoveryPointArn")(__v.asInstanceOf[js.Any]))
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      StartBy.foreach(__v => __obj.updateDynamic("StartBy")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BackupJob]
     }
   }
@@ -309,7 +309,7 @@ package backup {
         BackupPlanName: BackupPlanName,
         Rules: BackupRules
     ): BackupPlan = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupPlanName" -> BackupPlanName.asInstanceOf[js.Any],
         "Rules"          -> Rules.asInstanceOf[js.Any]
       )
@@ -332,7 +332,7 @@ package backup {
         BackupPlanName: BackupPlanName,
         Rules: BackupRulesInput
     ): BackupPlanInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupPlanName" -> BackupPlanName.asInstanceOf[js.Any],
         "Rules"          -> Rules.asInstanceOf[js.Any]
       )
@@ -355,9 +355,9 @@ package backup {
         BackupPlanTemplateId: js.UndefOr[String] = js.undefined,
         BackupPlanTemplateName: js.UndefOr[String] = js.undefined
     ): BackupPlanTemplatesListMember = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupPlanTemplateId.foreach(__v => __obj.update("BackupPlanTemplateId", __v.asInstanceOf[js.Any]))
-      BackupPlanTemplateName.foreach(__v => __obj.update("BackupPlanTemplateName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupPlanTemplateId.foreach(__v => __obj.updateDynamic("BackupPlanTemplateId")(__v.asInstanceOf[js.Any]))
+      BackupPlanTemplateName.foreach(__v => __obj.updateDynamic("BackupPlanTemplateName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BackupPlanTemplatesListMember]
     }
   }
@@ -388,15 +388,15 @@ package backup {
         LastExecutionDate: js.UndefOr[timestamp] = js.undefined,
         VersionId: js.UndefOr[String] = js.undefined
     ): BackupPlansListMember = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupPlanArn.foreach(__v => __obj.update("BackupPlanArn", __v.asInstanceOf[js.Any]))
-      BackupPlanId.foreach(__v => __obj.update("BackupPlanId", __v.asInstanceOf[js.Any]))
-      BackupPlanName.foreach(__v => __obj.update("BackupPlanName", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      CreatorRequestId.foreach(__v => __obj.update("CreatorRequestId", __v.asInstanceOf[js.Any]))
-      DeletionDate.foreach(__v => __obj.update("DeletionDate", __v.asInstanceOf[js.Any]))
-      LastExecutionDate.foreach(__v => __obj.update("LastExecutionDate", __v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupPlanArn.foreach(__v => __obj.updateDynamic("BackupPlanArn")(__v.asInstanceOf[js.Any]))
+      BackupPlanId.foreach(__v => __obj.updateDynamic("BackupPlanId")(__v.asInstanceOf[js.Any]))
+      BackupPlanName.foreach(__v => __obj.updateDynamic("BackupPlanName")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
+      DeletionDate.foreach(__v => __obj.updateDynamic("DeletionDate")(__v.asInstanceOf[js.Any]))
+      LastExecutionDate.foreach(__v => __obj.updateDynamic("LastExecutionDate")(__v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BackupPlansListMember]
     }
   }
@@ -427,17 +427,17 @@ package backup {
         ScheduleExpression: js.UndefOr[CronExpression] = js.undefined,
         StartWindowMinutes: js.UndefOr[WindowMinutes] = js.undefined
     ): BackupRule = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RuleName"              -> RuleName.asInstanceOf[js.Any],
         "TargetBackupVaultName" -> TargetBackupVaultName.asInstanceOf[js.Any]
       )
 
-      CompletionWindowMinutes.foreach(__v => __obj.update("CompletionWindowMinutes", __v.asInstanceOf[js.Any]))
-      Lifecycle.foreach(__v => __obj.update("Lifecycle", __v.asInstanceOf[js.Any]))
-      RecoveryPointTags.foreach(__v => __obj.update("RecoveryPointTags", __v.asInstanceOf[js.Any]))
-      RuleId.foreach(__v => __obj.update("RuleId", __v.asInstanceOf[js.Any]))
-      ScheduleExpression.foreach(__v => __obj.update("ScheduleExpression", __v.asInstanceOf[js.Any]))
-      StartWindowMinutes.foreach(__v => __obj.update("StartWindowMinutes", __v.asInstanceOf[js.Any]))
+      CompletionWindowMinutes.foreach(__v => __obj.updateDynamic("CompletionWindowMinutes")(__v.asInstanceOf[js.Any]))
+      Lifecycle.foreach(__v => __obj.updateDynamic("Lifecycle")(__v.asInstanceOf[js.Any]))
+      RecoveryPointTags.foreach(__v => __obj.updateDynamic("RecoveryPointTags")(__v.asInstanceOf[js.Any]))
+      RuleId.foreach(__v => __obj.updateDynamic("RuleId")(__v.asInstanceOf[js.Any]))
+      ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
+      StartWindowMinutes.foreach(__v => __obj.updateDynamic("StartWindowMinutes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BackupRule]
     }
   }
@@ -466,16 +466,16 @@ package backup {
         ScheduleExpression: js.UndefOr[CronExpression] = js.undefined,
         StartWindowMinutes: js.UndefOr[WindowMinutes] = js.undefined
     ): BackupRuleInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RuleName"              -> RuleName.asInstanceOf[js.Any],
         "TargetBackupVaultName" -> TargetBackupVaultName.asInstanceOf[js.Any]
       )
 
-      CompletionWindowMinutes.foreach(__v => __obj.update("CompletionWindowMinutes", __v.asInstanceOf[js.Any]))
-      Lifecycle.foreach(__v => __obj.update("Lifecycle", __v.asInstanceOf[js.Any]))
-      RecoveryPointTags.foreach(__v => __obj.update("RecoveryPointTags", __v.asInstanceOf[js.Any]))
-      ScheduleExpression.foreach(__v => __obj.update("ScheduleExpression", __v.asInstanceOf[js.Any]))
-      StartWindowMinutes.foreach(__v => __obj.update("StartWindowMinutes", __v.asInstanceOf[js.Any]))
+      CompletionWindowMinutes.foreach(__v => __obj.updateDynamic("CompletionWindowMinutes")(__v.asInstanceOf[js.Any]))
+      Lifecycle.foreach(__v => __obj.updateDynamic("Lifecycle")(__v.asInstanceOf[js.Any]))
+      RecoveryPointTags.foreach(__v => __obj.updateDynamic("RecoveryPointTags")(__v.asInstanceOf[js.Any]))
+      ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
+      StartWindowMinutes.foreach(__v => __obj.updateDynamic("StartWindowMinutes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BackupRuleInput]
     }
   }
@@ -498,13 +498,13 @@ package backup {
         ListOfTags: js.UndefOr[ListOfTags] = js.undefined,
         Resources: js.UndefOr[ResourceArns] = js.undefined
     ): BackupSelection = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IamRoleArn"    -> IamRoleArn.asInstanceOf[js.Any],
         "SelectionName" -> SelectionName.asInstanceOf[js.Any]
       )
 
-      ListOfTags.foreach(__v => __obj.update("ListOfTags", __v.asInstanceOf[js.Any]))
-      Resources.foreach(__v => __obj.update("Resources", __v.asInstanceOf[js.Any]))
+      ListOfTags.foreach(__v => __obj.updateDynamic("ListOfTags")(__v.asInstanceOf[js.Any]))
+      Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BackupSelection]
     }
   }
@@ -531,13 +531,13 @@ package backup {
         SelectionId: js.UndefOr[String] = js.undefined,
         SelectionName: js.UndefOr[BackupSelectionName] = js.undefined
     ): BackupSelectionsListMember = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupPlanId.foreach(__v => __obj.update("BackupPlanId", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      CreatorRequestId.foreach(__v => __obj.update("CreatorRequestId", __v.asInstanceOf[js.Any]))
-      IamRoleArn.foreach(__v => __obj.update("IamRoleArn", __v.asInstanceOf[js.Any]))
-      SelectionId.foreach(__v => __obj.update("SelectionId", __v.asInstanceOf[js.Any]))
-      SelectionName.foreach(__v => __obj.update("SelectionName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupPlanId.foreach(__v => __obj.updateDynamic("BackupPlanId")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
+      IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
+      SelectionId.foreach(__v => __obj.updateDynamic("SelectionId")(__v.asInstanceOf[js.Any]))
+      SelectionName.foreach(__v => __obj.updateDynamic("SelectionName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BackupSelectionsListMember]
     }
   }
@@ -586,13 +586,13 @@ package backup {
         EncryptionKeyArn: js.UndefOr[ARN] = js.undefined,
         NumberOfRecoveryPoints: js.UndefOr[Double] = js.undefined
     ): BackupVaultListMember = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupVaultArn.foreach(__v => __obj.update("BackupVaultArn", __v.asInstanceOf[js.Any]))
-      BackupVaultName.foreach(__v => __obj.update("BackupVaultName", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      CreatorRequestId.foreach(__v => __obj.update("CreatorRequestId", __v.asInstanceOf[js.Any]))
-      EncryptionKeyArn.foreach(__v => __obj.update("EncryptionKeyArn", __v.asInstanceOf[js.Any]))
-      NumberOfRecoveryPoints.foreach(__v => __obj.update("NumberOfRecoveryPoints", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupVaultArn.foreach(__v => __obj.updateDynamic("BackupVaultArn")(__v.asInstanceOf[js.Any]))
+      BackupVaultName.foreach(__v => __obj.updateDynamic("BackupVaultName")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
+      EncryptionKeyArn.foreach(__v => __obj.updateDynamic("EncryptionKeyArn")(__v.asInstanceOf[js.Any]))
+      NumberOfRecoveryPoints.foreach(__v => __obj.updateDynamic("NumberOfRecoveryPoints")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BackupVaultListMember]
     }
   }
@@ -613,9 +613,9 @@ package backup {
         DeleteAt: js.UndefOr[timestamp] = js.undefined,
         MoveToColdStorageAt: js.UndefOr[timestamp] = js.undefined
     ): CalculatedLifecycle = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DeleteAt.foreach(__v => __obj.update("DeleteAt", __v.asInstanceOf[js.Any]))
-      MoveToColdStorageAt.foreach(__v => __obj.update("MoveToColdStorageAt", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DeleteAt.foreach(__v => __obj.updateDynamic("DeleteAt")(__v.asInstanceOf[js.Any]))
+      MoveToColdStorageAt.foreach(__v => __obj.updateDynamic("MoveToColdStorageAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CalculatedLifecycle]
     }
   }
@@ -636,7 +636,7 @@ package backup {
         ConditionType: ConditionType,
         ConditionValue: ConditionValue
     ): Condition = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConditionKey"   -> ConditionKey.asInstanceOf[js.Any],
         "ConditionType"  -> ConditionType.asInstanceOf[js.Any],
         "ConditionValue" -> ConditionValue.asInstanceOf[js.Any]
@@ -665,12 +665,12 @@ package backup {
         BackupPlanTags: js.UndefOr[Tags] = js.undefined,
         CreatorRequestId: js.UndefOr[String] = js.undefined
     ): CreateBackupPlanInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupPlan" -> BackupPlan.asInstanceOf[js.Any]
       )
 
-      BackupPlanTags.foreach(__v => __obj.update("BackupPlanTags", __v.asInstanceOf[js.Any]))
-      CreatorRequestId.foreach(__v => __obj.update("CreatorRequestId", __v.asInstanceOf[js.Any]))
+      BackupPlanTags.foreach(__v => __obj.updateDynamic("BackupPlanTags")(__v.asInstanceOf[js.Any]))
+      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateBackupPlanInput]
     }
   }
@@ -690,11 +690,11 @@ package backup {
         CreationDate: js.UndefOr[timestamp] = js.undefined,
         VersionId: js.UndefOr[String] = js.undefined
     ): CreateBackupPlanOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupPlanArn.foreach(__v => __obj.update("BackupPlanArn", __v.asInstanceOf[js.Any]))
-      BackupPlanId.foreach(__v => __obj.update("BackupPlanId", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupPlanArn.foreach(__v => __obj.updateDynamic("BackupPlanArn")(__v.asInstanceOf[js.Any]))
+      BackupPlanId.foreach(__v => __obj.updateDynamic("BackupPlanId")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateBackupPlanOutput]
     }
   }
@@ -712,12 +712,12 @@ package backup {
         BackupSelection: BackupSelection,
         CreatorRequestId: js.UndefOr[String] = js.undefined
     ): CreateBackupSelectionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupPlanId"    -> BackupPlanId.asInstanceOf[js.Any],
         "BackupSelection" -> BackupSelection.asInstanceOf[js.Any]
       )
 
-      CreatorRequestId.foreach(__v => __obj.update("CreatorRequestId", __v.asInstanceOf[js.Any]))
+      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateBackupSelectionInput]
     }
   }
@@ -735,10 +735,10 @@ package backup {
         CreationDate: js.UndefOr[timestamp] = js.undefined,
         SelectionId: js.UndefOr[String] = js.undefined
     ): CreateBackupSelectionOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupPlanId.foreach(__v => __obj.update("BackupPlanId", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      SelectionId.foreach(__v => __obj.update("SelectionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupPlanId.foreach(__v => __obj.updateDynamic("BackupPlanId")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      SelectionId.foreach(__v => __obj.updateDynamic("SelectionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateBackupSelectionOutput]
     }
   }
@@ -758,13 +758,13 @@ package backup {
         CreatorRequestId: js.UndefOr[String] = js.undefined,
         EncryptionKeyArn: js.UndefOr[ARN] = js.undefined
     ): CreateBackupVaultInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupVaultName" -> BackupVaultName.asInstanceOf[js.Any]
       )
 
-      BackupVaultTags.foreach(__v => __obj.update("BackupVaultTags", __v.asInstanceOf[js.Any]))
-      CreatorRequestId.foreach(__v => __obj.update("CreatorRequestId", __v.asInstanceOf[js.Any]))
-      EncryptionKeyArn.foreach(__v => __obj.update("EncryptionKeyArn", __v.asInstanceOf[js.Any]))
+      BackupVaultTags.foreach(__v => __obj.updateDynamic("BackupVaultTags")(__v.asInstanceOf[js.Any]))
+      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
+      EncryptionKeyArn.foreach(__v => __obj.updateDynamic("EncryptionKeyArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateBackupVaultInput]
     }
   }
@@ -782,10 +782,10 @@ package backup {
         BackupVaultName: js.UndefOr[BackupVaultName] = js.undefined,
         CreationDate: js.UndefOr[timestamp] = js.undefined
     ): CreateBackupVaultOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupVaultArn.foreach(__v => __obj.update("BackupVaultArn", __v.asInstanceOf[js.Any]))
-      BackupVaultName.foreach(__v => __obj.update("BackupVaultName", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupVaultArn.foreach(__v => __obj.updateDynamic("BackupVaultArn")(__v.asInstanceOf[js.Any]))
+      BackupVaultName.foreach(__v => __obj.updateDynamic("BackupVaultName")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateBackupVaultOutput]
     }
   }
@@ -799,7 +799,7 @@ package backup {
     def apply(
         BackupPlanId: String
     ): DeleteBackupPlanInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupPlanId" -> BackupPlanId.asInstanceOf[js.Any]
       )
 
@@ -822,11 +822,11 @@ package backup {
         DeletionDate: js.UndefOr[timestamp] = js.undefined,
         VersionId: js.UndefOr[String] = js.undefined
     ): DeleteBackupPlanOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupPlanArn.foreach(__v => __obj.update("BackupPlanArn", __v.asInstanceOf[js.Any]))
-      BackupPlanId.foreach(__v => __obj.update("BackupPlanId", __v.asInstanceOf[js.Any]))
-      DeletionDate.foreach(__v => __obj.update("DeletionDate", __v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupPlanArn.foreach(__v => __obj.updateDynamic("BackupPlanArn")(__v.asInstanceOf[js.Any]))
+      BackupPlanId.foreach(__v => __obj.updateDynamic("BackupPlanId")(__v.asInstanceOf[js.Any]))
+      DeletionDate.foreach(__v => __obj.updateDynamic("DeletionDate")(__v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteBackupPlanOutput]
     }
   }
@@ -842,7 +842,7 @@ package backup {
         BackupPlanId: String,
         SelectionId: String
     ): DeleteBackupSelectionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupPlanId" -> BackupPlanId.asInstanceOf[js.Any],
         "SelectionId"  -> SelectionId.asInstanceOf[js.Any]
       )
@@ -860,7 +860,7 @@ package backup {
     def apply(
         BackupVaultName: BackupVaultName
     ): DeleteBackupVaultAccessPolicyInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupVaultName" -> BackupVaultName.asInstanceOf[js.Any]
       )
 
@@ -877,7 +877,7 @@ package backup {
     def apply(
         BackupVaultName: String
     ): DeleteBackupVaultInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupVaultName" -> BackupVaultName.asInstanceOf[js.Any]
       )
 
@@ -894,7 +894,7 @@ package backup {
     def apply(
         BackupVaultName: BackupVaultName
     ): DeleteBackupVaultNotificationsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupVaultName" -> BackupVaultName.asInstanceOf[js.Any]
       )
 
@@ -913,7 +913,7 @@ package backup {
         BackupVaultName: BackupVaultName,
         RecoveryPointArn: ARN
     ): DeleteRecoveryPointInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupVaultName"  -> BackupVaultName.asInstanceOf[js.Any],
         "RecoveryPointArn" -> RecoveryPointArn.asInstanceOf[js.Any]
       )
@@ -931,7 +931,7 @@ package backup {
     def apply(
         BackupJobId: String
     ): DescribeBackupJobInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupJobId" -> BackupJobId.asInstanceOf[js.Any]
       )
 
@@ -980,24 +980,24 @@ package backup {
         State: js.UndefOr[BackupJobState] = js.undefined,
         StatusMessage: js.UndefOr[String] = js.undefined
     ): DescribeBackupJobOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupJobId.foreach(__v => __obj.update("BackupJobId", __v.asInstanceOf[js.Any]))
-      BackupSizeInBytes.foreach(__v => __obj.update("BackupSizeInBytes", __v.asInstanceOf[js.Any]))
-      BackupVaultArn.foreach(__v => __obj.update("BackupVaultArn", __v.asInstanceOf[js.Any]))
-      BackupVaultName.foreach(__v => __obj.update("BackupVaultName", __v.asInstanceOf[js.Any]))
-      BytesTransferred.foreach(__v => __obj.update("BytesTransferred", __v.asInstanceOf[js.Any]))
-      CompletionDate.foreach(__v => __obj.update("CompletionDate", __v.asInstanceOf[js.Any]))
-      CreatedBy.foreach(__v => __obj.update("CreatedBy", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      ExpectedCompletionDate.foreach(__v => __obj.update("ExpectedCompletionDate", __v.asInstanceOf[js.Any]))
-      IamRoleArn.foreach(__v => __obj.update("IamRoleArn", __v.asInstanceOf[js.Any]))
-      PercentDone.foreach(__v => __obj.update("PercentDone", __v.asInstanceOf[js.Any]))
-      RecoveryPointArn.foreach(__v => __obj.update("RecoveryPointArn", __v.asInstanceOf[js.Any]))
-      ResourceArn.foreach(__v => __obj.update("ResourceArn", __v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
-      StartBy.foreach(__v => __obj.update("StartBy", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupJobId.foreach(__v => __obj.updateDynamic("BackupJobId")(__v.asInstanceOf[js.Any]))
+      BackupSizeInBytes.foreach(__v => __obj.updateDynamic("BackupSizeInBytes")(__v.asInstanceOf[js.Any]))
+      BackupVaultArn.foreach(__v => __obj.updateDynamic("BackupVaultArn")(__v.asInstanceOf[js.Any]))
+      BackupVaultName.foreach(__v => __obj.updateDynamic("BackupVaultName")(__v.asInstanceOf[js.Any]))
+      BytesTransferred.foreach(__v => __obj.updateDynamic("BytesTransferred")(__v.asInstanceOf[js.Any]))
+      CompletionDate.foreach(__v => __obj.updateDynamic("CompletionDate")(__v.asInstanceOf[js.Any]))
+      CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      ExpectedCompletionDate.foreach(__v => __obj.updateDynamic("ExpectedCompletionDate")(__v.asInstanceOf[js.Any]))
+      IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
+      PercentDone.foreach(__v => __obj.updateDynamic("PercentDone")(__v.asInstanceOf[js.Any]))
+      RecoveryPointArn.foreach(__v => __obj.updateDynamic("RecoveryPointArn")(__v.asInstanceOf[js.Any]))
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      StartBy.foreach(__v => __obj.updateDynamic("StartBy")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeBackupJobOutput]
     }
   }
@@ -1011,7 +1011,7 @@ package backup {
     def apply(
         BackupVaultName: String
     ): DescribeBackupVaultInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupVaultName" -> BackupVaultName.asInstanceOf[js.Any]
       )
 
@@ -1038,13 +1038,13 @@ package backup {
         EncryptionKeyArn: js.UndefOr[ARN] = js.undefined,
         NumberOfRecoveryPoints: js.UndefOr[Double] = js.undefined
     ): DescribeBackupVaultOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupVaultArn.foreach(__v => __obj.update("BackupVaultArn", __v.asInstanceOf[js.Any]))
-      BackupVaultName.foreach(__v => __obj.update("BackupVaultName", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      CreatorRequestId.foreach(__v => __obj.update("CreatorRequestId", __v.asInstanceOf[js.Any]))
-      EncryptionKeyArn.foreach(__v => __obj.update("EncryptionKeyArn", __v.asInstanceOf[js.Any]))
-      NumberOfRecoveryPoints.foreach(__v => __obj.update("NumberOfRecoveryPoints", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupVaultArn.foreach(__v => __obj.updateDynamic("BackupVaultArn")(__v.asInstanceOf[js.Any]))
+      BackupVaultName.foreach(__v => __obj.updateDynamic("BackupVaultName")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
+      EncryptionKeyArn.foreach(__v => __obj.updateDynamic("EncryptionKeyArn")(__v.asInstanceOf[js.Any]))
+      NumberOfRecoveryPoints.foreach(__v => __obj.updateDynamic("NumberOfRecoveryPoints")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeBackupVaultOutput]
     }
   }
@@ -1058,7 +1058,7 @@ package backup {
     def apply(
         ResourceArn: ARN
     ): DescribeProtectedResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
@@ -1079,10 +1079,10 @@ package backup {
         ResourceArn: js.UndefOr[ARN] = js.undefined,
         ResourceType: js.UndefOr[ResourceType] = js.undefined
     ): DescribeProtectedResourceOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LastBackupTime.foreach(__v => __obj.update("LastBackupTime", __v.asInstanceOf[js.Any]))
-      ResourceArn.foreach(__v => __obj.update("ResourceArn", __v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LastBackupTime.foreach(__v => __obj.updateDynamic("LastBackupTime")(__v.asInstanceOf[js.Any]))
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProtectedResourceOutput]
     }
   }
@@ -1098,7 +1098,7 @@ package backup {
         BackupVaultName: BackupVaultName,
         RecoveryPointArn: ARN
     ): DescribeRecoveryPointInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupVaultName"  -> BackupVaultName.asInstanceOf[js.Any],
         "RecoveryPointArn" -> RecoveryPointArn.asInstanceOf[js.Any]
       )
@@ -1148,24 +1148,24 @@ package backup {
         Status: js.UndefOr[RecoveryPointStatus] = js.undefined,
         StorageClass: js.UndefOr[StorageClass] = js.undefined
     ): DescribeRecoveryPointOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupSizeInBytes.foreach(__v => __obj.update("BackupSizeInBytes", __v.asInstanceOf[js.Any]))
-      BackupVaultArn.foreach(__v => __obj.update("BackupVaultArn", __v.asInstanceOf[js.Any]))
-      BackupVaultName.foreach(__v => __obj.update("BackupVaultName", __v.asInstanceOf[js.Any]))
-      CalculatedLifecycle.foreach(__v => __obj.update("CalculatedLifecycle", __v.asInstanceOf[js.Any]))
-      CompletionDate.foreach(__v => __obj.update("CompletionDate", __v.asInstanceOf[js.Any]))
-      CreatedBy.foreach(__v => __obj.update("CreatedBy", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      EncryptionKeyArn.foreach(__v => __obj.update("EncryptionKeyArn", __v.asInstanceOf[js.Any]))
-      IamRoleArn.foreach(__v => __obj.update("IamRoleArn", __v.asInstanceOf[js.Any]))
-      IsEncrypted.foreach(__v => __obj.update("IsEncrypted", __v.asInstanceOf[js.Any]))
-      LastRestoreTime.foreach(__v => __obj.update("LastRestoreTime", __v.asInstanceOf[js.Any]))
-      Lifecycle.foreach(__v => __obj.update("Lifecycle", __v.asInstanceOf[js.Any]))
-      RecoveryPointArn.foreach(__v => __obj.update("RecoveryPointArn", __v.asInstanceOf[js.Any]))
-      ResourceArn.foreach(__v => __obj.update("ResourceArn", __v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StorageClass.foreach(__v => __obj.update("StorageClass", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupSizeInBytes.foreach(__v => __obj.updateDynamic("BackupSizeInBytes")(__v.asInstanceOf[js.Any]))
+      BackupVaultArn.foreach(__v => __obj.updateDynamic("BackupVaultArn")(__v.asInstanceOf[js.Any]))
+      BackupVaultName.foreach(__v => __obj.updateDynamic("BackupVaultName")(__v.asInstanceOf[js.Any]))
+      CalculatedLifecycle.foreach(__v => __obj.updateDynamic("CalculatedLifecycle")(__v.asInstanceOf[js.Any]))
+      CompletionDate.foreach(__v => __obj.updateDynamic("CompletionDate")(__v.asInstanceOf[js.Any]))
+      CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      EncryptionKeyArn.foreach(__v => __obj.updateDynamic("EncryptionKeyArn")(__v.asInstanceOf[js.Any]))
+      IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
+      IsEncrypted.foreach(__v => __obj.updateDynamic("IsEncrypted")(__v.asInstanceOf[js.Any]))
+      LastRestoreTime.foreach(__v => __obj.updateDynamic("LastRestoreTime")(__v.asInstanceOf[js.Any]))
+      Lifecycle.foreach(__v => __obj.updateDynamic("Lifecycle")(__v.asInstanceOf[js.Any]))
+      RecoveryPointArn.foreach(__v => __obj.updateDynamic("RecoveryPointArn")(__v.asInstanceOf[js.Any]))
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StorageClass.foreach(__v => __obj.updateDynamic("StorageClass")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRecoveryPointOutput]
     }
   }
@@ -1179,7 +1179,7 @@ package backup {
     def apply(
         RestoreJobId: RestoreJobId
     ): DescribeRestoreJobInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RestoreJobId" -> RestoreJobId.asInstanceOf[js.Any]
       )
 
@@ -1216,20 +1216,20 @@ package backup {
         Status: js.UndefOr[RestoreJobStatus] = js.undefined,
         StatusMessage: js.UndefOr[String] = js.undefined
     ): DescribeRestoreJobOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupSizeInBytes.foreach(__v => __obj.update("BackupSizeInBytes", __v.asInstanceOf[js.Any]))
-      CompletionDate.foreach(__v => __obj.update("CompletionDate", __v.asInstanceOf[js.Any]))
-      CreatedResourceArn.foreach(__v => __obj.update("CreatedResourceArn", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupSizeInBytes.foreach(__v => __obj.updateDynamic("BackupSizeInBytes")(__v.asInstanceOf[js.Any]))
+      CompletionDate.foreach(__v => __obj.updateDynamic("CompletionDate")(__v.asInstanceOf[js.Any]))
+      CreatedResourceArn.foreach(__v => __obj.updateDynamic("CreatedResourceArn")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
       ExpectedCompletionTimeMinutes.foreach(
-        __v => __obj.update("ExpectedCompletionTimeMinutes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ExpectedCompletionTimeMinutes")(__v.asInstanceOf[js.Any])
       )
-      IamRoleArn.foreach(__v => __obj.update("IamRoleArn", __v.asInstanceOf[js.Any]))
-      PercentDone.foreach(__v => __obj.update("PercentDone", __v.asInstanceOf[js.Any]))
-      RecoveryPointArn.foreach(__v => __obj.update("RecoveryPointArn", __v.asInstanceOf[js.Any]))
-      RestoreJobId.foreach(__v => __obj.update("RestoreJobId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
+      IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
+      PercentDone.foreach(__v => __obj.updateDynamic("PercentDone")(__v.asInstanceOf[js.Any]))
+      RecoveryPointArn.foreach(__v => __obj.updateDynamic("RecoveryPointArn")(__v.asInstanceOf[js.Any]))
+      RestoreJobId.foreach(__v => __obj.updateDynamic("RestoreJobId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRestoreJobOutput]
     }
   }
@@ -1243,7 +1243,7 @@ package backup {
     def apply(
         BackupPlanId: String
     ): ExportBackupPlanTemplateInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupPlanId" -> BackupPlanId.asInstanceOf[js.Any]
       )
 
@@ -1260,8 +1260,8 @@ package backup {
     def apply(
         BackupPlanTemplateJson: js.UndefOr[String] = js.undefined
     ): ExportBackupPlanTemplateOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupPlanTemplateJson.foreach(__v => __obj.update("BackupPlanTemplateJson", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupPlanTemplateJson.foreach(__v => __obj.updateDynamic("BackupPlanTemplateJson")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportBackupPlanTemplateOutput]
     }
   }
@@ -1275,7 +1275,7 @@ package backup {
     def apply(
         BackupPlanTemplateJson: String
     ): GetBackupPlanFromJSONInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupPlanTemplateJson" -> BackupPlanTemplateJson.asInstanceOf[js.Any]
       )
 
@@ -1292,8 +1292,8 @@ package backup {
     def apply(
         BackupPlan: js.UndefOr[BackupPlan] = js.undefined
     ): GetBackupPlanFromJSONOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupPlan.foreach(__v => __obj.update("BackupPlan", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupPlan.foreach(__v => __obj.updateDynamic("BackupPlan")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBackupPlanFromJSONOutput]
     }
   }
@@ -1307,7 +1307,7 @@ package backup {
     def apply(
         BackupPlanTemplateId: String
     ): GetBackupPlanFromTemplateInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupPlanTemplateId" -> BackupPlanTemplateId.asInstanceOf[js.Any]
       )
 
@@ -1324,8 +1324,8 @@ package backup {
     def apply(
         BackupPlanDocument: js.UndefOr[BackupPlan] = js.undefined
     ): GetBackupPlanFromTemplateOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupPlanDocument.foreach(__v => __obj.update("BackupPlanDocument", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupPlanDocument.foreach(__v => __obj.updateDynamic("BackupPlanDocument")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBackupPlanFromTemplateOutput]
     }
   }
@@ -1341,11 +1341,11 @@ package backup {
         BackupPlanId: String,
         VersionId: js.UndefOr[String] = js.undefined
     ): GetBackupPlanInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupPlanId" -> BackupPlanId.asInstanceOf[js.Any]
       )
 
-      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBackupPlanInput]
     }
   }
@@ -1373,15 +1373,15 @@ package backup {
         LastExecutionDate: js.UndefOr[timestamp] = js.undefined,
         VersionId: js.UndefOr[String] = js.undefined
     ): GetBackupPlanOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupPlan.foreach(__v => __obj.update("BackupPlan", __v.asInstanceOf[js.Any]))
-      BackupPlanArn.foreach(__v => __obj.update("BackupPlanArn", __v.asInstanceOf[js.Any]))
-      BackupPlanId.foreach(__v => __obj.update("BackupPlanId", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      CreatorRequestId.foreach(__v => __obj.update("CreatorRequestId", __v.asInstanceOf[js.Any]))
-      DeletionDate.foreach(__v => __obj.update("DeletionDate", __v.asInstanceOf[js.Any]))
-      LastExecutionDate.foreach(__v => __obj.update("LastExecutionDate", __v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupPlan.foreach(__v => __obj.updateDynamic("BackupPlan")(__v.asInstanceOf[js.Any]))
+      BackupPlanArn.foreach(__v => __obj.updateDynamic("BackupPlanArn")(__v.asInstanceOf[js.Any]))
+      BackupPlanId.foreach(__v => __obj.updateDynamic("BackupPlanId")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
+      DeletionDate.foreach(__v => __obj.updateDynamic("DeletionDate")(__v.asInstanceOf[js.Any]))
+      LastExecutionDate.foreach(__v => __obj.updateDynamic("LastExecutionDate")(__v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBackupPlanOutput]
     }
   }
@@ -1397,7 +1397,7 @@ package backup {
         BackupPlanId: String,
         SelectionId: String
     ): GetBackupSelectionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupPlanId" -> BackupPlanId.asInstanceOf[js.Any],
         "SelectionId"  -> SelectionId.asInstanceOf[js.Any]
       )
@@ -1423,12 +1423,12 @@ package backup {
         CreatorRequestId: js.UndefOr[String] = js.undefined,
         SelectionId: js.UndefOr[String] = js.undefined
     ): GetBackupSelectionOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupPlanId.foreach(__v => __obj.update("BackupPlanId", __v.asInstanceOf[js.Any]))
-      BackupSelection.foreach(__v => __obj.update("BackupSelection", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      CreatorRequestId.foreach(__v => __obj.update("CreatorRequestId", __v.asInstanceOf[js.Any]))
-      SelectionId.foreach(__v => __obj.update("SelectionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupPlanId.foreach(__v => __obj.updateDynamic("BackupPlanId")(__v.asInstanceOf[js.Any]))
+      BackupSelection.foreach(__v => __obj.updateDynamic("BackupSelection")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
+      SelectionId.foreach(__v => __obj.updateDynamic("SelectionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBackupSelectionOutput]
     }
   }
@@ -1442,7 +1442,7 @@ package backup {
     def apply(
         BackupVaultName: BackupVaultName
     ): GetBackupVaultAccessPolicyInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupVaultName" -> BackupVaultName.asInstanceOf[js.Any]
       )
 
@@ -1463,10 +1463,10 @@ package backup {
         BackupVaultName: js.UndefOr[BackupVaultName] = js.undefined,
         Policy: js.UndefOr[IAMPolicy] = js.undefined
     ): GetBackupVaultAccessPolicyOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupVaultArn.foreach(__v => __obj.update("BackupVaultArn", __v.asInstanceOf[js.Any]))
-      BackupVaultName.foreach(__v => __obj.update("BackupVaultName", __v.asInstanceOf[js.Any]))
-      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupVaultArn.foreach(__v => __obj.updateDynamic("BackupVaultArn")(__v.asInstanceOf[js.Any]))
+      BackupVaultName.foreach(__v => __obj.updateDynamic("BackupVaultName")(__v.asInstanceOf[js.Any]))
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBackupVaultAccessPolicyOutput]
     }
   }
@@ -1480,7 +1480,7 @@ package backup {
     def apply(
         BackupVaultName: BackupVaultName
     ): GetBackupVaultNotificationsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupVaultName" -> BackupVaultName.asInstanceOf[js.Any]
       )
 
@@ -1503,11 +1503,11 @@ package backup {
         BackupVaultName: js.UndefOr[BackupVaultName] = js.undefined,
         SNSTopicArn: js.UndefOr[ARN] = js.undefined
     ): GetBackupVaultNotificationsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupVaultArn.foreach(__v => __obj.update("BackupVaultArn", __v.asInstanceOf[js.Any]))
-      BackupVaultEvents.foreach(__v => __obj.update("BackupVaultEvents", __v.asInstanceOf[js.Any]))
-      BackupVaultName.foreach(__v => __obj.update("BackupVaultName", __v.asInstanceOf[js.Any]))
-      SNSTopicArn.foreach(__v => __obj.update("SNSTopicArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupVaultArn.foreach(__v => __obj.updateDynamic("BackupVaultArn")(__v.asInstanceOf[js.Any]))
+      BackupVaultEvents.foreach(__v => __obj.updateDynamic("BackupVaultEvents")(__v.asInstanceOf[js.Any]))
+      BackupVaultName.foreach(__v => __obj.updateDynamic("BackupVaultName")(__v.asInstanceOf[js.Any]))
+      SNSTopicArn.foreach(__v => __obj.updateDynamic("SNSTopicArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBackupVaultNotificationsOutput]
     }
   }
@@ -1523,7 +1523,7 @@ package backup {
         BackupVaultName: BackupVaultName,
         RecoveryPointArn: ARN
     ): GetRecoveryPointRestoreMetadataInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupVaultName"  -> BackupVaultName.asInstanceOf[js.Any],
         "RecoveryPointArn" -> RecoveryPointArn.asInstanceOf[js.Any]
       )
@@ -1545,10 +1545,10 @@ package backup {
         RecoveryPointArn: js.UndefOr[ARN] = js.undefined,
         RestoreMetadata: js.UndefOr[Metadata] = js.undefined
     ): GetRecoveryPointRestoreMetadataOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupVaultArn.foreach(__v => __obj.update("BackupVaultArn", __v.asInstanceOf[js.Any]))
-      RecoveryPointArn.foreach(__v => __obj.update("RecoveryPointArn", __v.asInstanceOf[js.Any]))
-      RestoreMetadata.foreach(__v => __obj.update("RestoreMetadata", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupVaultArn.foreach(__v => __obj.updateDynamic("BackupVaultArn")(__v.asInstanceOf[js.Any]))
+      RecoveryPointArn.foreach(__v => __obj.updateDynamic("RecoveryPointArn")(__v.asInstanceOf[js.Any]))
+      RestoreMetadata.foreach(__v => __obj.updateDynamic("RestoreMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRecoveryPointRestoreMetadataOutput]
     }
   }
@@ -1562,8 +1562,8 @@ package backup {
     def apply(
         ResourceTypes: js.UndefOr[ResourceTypes] = js.undefined
     ): GetSupportedResourceTypesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ResourceTypes.foreach(__v => __obj.update("ResourceTypes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ResourceTypes.foreach(__v => __obj.updateDynamic("ResourceTypes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSupportedResourceTypesOutput]
     }
   }
@@ -1582,9 +1582,11 @@ package backup {
         DeleteAfterDays: js.UndefOr[Double] = js.undefined,
         MoveToColdStorageAfterDays: js.UndefOr[Double] = js.undefined
     ): Lifecycle = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DeleteAfterDays.foreach(__v => __obj.update("DeleteAfterDays", __v.asInstanceOf[js.Any]))
-      MoveToColdStorageAfterDays.foreach(__v => __obj.update("MoveToColdStorageAfterDays", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DeleteAfterDays.foreach(__v => __obj.updateDynamic("DeleteAfterDays")(__v.asInstanceOf[js.Any]))
+      MoveToColdStorageAfterDays.foreach(
+        __v => __obj.updateDynamic("MoveToColdStorageAfterDays")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[Lifecycle]
     }
   }
@@ -1612,15 +1614,15 @@ package backup {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListBackupJobsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ByBackupVaultName.foreach(__v => __obj.update("ByBackupVaultName", __v.asInstanceOf[js.Any]))
-      ByCreatedAfter.foreach(__v => __obj.update("ByCreatedAfter", __v.asInstanceOf[js.Any]))
-      ByCreatedBefore.foreach(__v => __obj.update("ByCreatedBefore", __v.asInstanceOf[js.Any]))
-      ByResourceArn.foreach(__v => __obj.update("ByResourceArn", __v.asInstanceOf[js.Any]))
-      ByResourceType.foreach(__v => __obj.update("ByResourceType", __v.asInstanceOf[js.Any]))
-      ByState.foreach(__v => __obj.update("ByState", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ByBackupVaultName.foreach(__v => __obj.updateDynamic("ByBackupVaultName")(__v.asInstanceOf[js.Any]))
+      ByCreatedAfter.foreach(__v => __obj.updateDynamic("ByCreatedAfter")(__v.asInstanceOf[js.Any]))
+      ByCreatedBefore.foreach(__v => __obj.updateDynamic("ByCreatedBefore")(__v.asInstanceOf[js.Any]))
+      ByResourceArn.foreach(__v => __obj.updateDynamic("ByResourceArn")(__v.asInstanceOf[js.Any]))
+      ByResourceType.foreach(__v => __obj.updateDynamic("ByResourceType")(__v.asInstanceOf[js.Any]))
+      ByState.foreach(__v => __obj.updateDynamic("ByState")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBackupJobsInput]
     }
   }
@@ -1636,9 +1638,9 @@ package backup {
         BackupJobs: js.UndefOr[BackupJobsList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListBackupJobsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupJobs.foreach(__v => __obj.update("BackupJobs", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupJobs.foreach(__v => __obj.updateDynamic("BackupJobs")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBackupJobsOutput]
     }
   }
@@ -1654,9 +1656,9 @@ package backup {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListBackupPlanTemplatesInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBackupPlanTemplatesInput]
     }
   }
@@ -1672,9 +1674,9 @@ package backup {
         BackupPlanTemplatesList: js.UndefOr[BackupPlanTemplatesList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListBackupPlanTemplatesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupPlanTemplatesList.foreach(__v => __obj.update("BackupPlanTemplatesList", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupPlanTemplatesList.foreach(__v => __obj.updateDynamic("BackupPlanTemplatesList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBackupPlanTemplatesOutput]
     }
   }
@@ -1692,12 +1694,12 @@ package backup {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListBackupPlanVersionsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupPlanId" -> BackupPlanId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBackupPlanVersionsInput]
     }
   }
@@ -1713,9 +1715,9 @@ package backup {
         BackupPlanVersionsList: js.UndefOr[BackupPlanVersionsList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListBackupPlanVersionsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupPlanVersionsList.foreach(__v => __obj.update("BackupPlanVersionsList", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupPlanVersionsList.foreach(__v => __obj.updateDynamic("BackupPlanVersionsList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBackupPlanVersionsOutput]
     }
   }
@@ -1733,10 +1735,10 @@ package backup {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListBackupPlansInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IncludeDeleted.foreach(__v => __obj.update("IncludeDeleted", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IncludeDeleted.foreach(__v => __obj.updateDynamic("IncludeDeleted")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBackupPlansInput]
     }
   }
@@ -1752,9 +1754,9 @@ package backup {
         BackupPlansList: js.UndefOr[BackupPlansList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListBackupPlansOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupPlansList.foreach(__v => __obj.update("BackupPlansList", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupPlansList.foreach(__v => __obj.updateDynamic("BackupPlansList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBackupPlansOutput]
     }
   }
@@ -1772,12 +1774,12 @@ package backup {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListBackupSelectionsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupPlanId" -> BackupPlanId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBackupSelectionsInput]
     }
   }
@@ -1793,9 +1795,9 @@ package backup {
         BackupSelectionsList: js.UndefOr[BackupSelectionsList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListBackupSelectionsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupSelectionsList.foreach(__v => __obj.update("BackupSelectionsList", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupSelectionsList.foreach(__v => __obj.updateDynamic("BackupSelectionsList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBackupSelectionsOutput]
     }
   }
@@ -1811,9 +1813,9 @@ package backup {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListBackupVaultsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBackupVaultsInput]
     }
   }
@@ -1829,9 +1831,9 @@ package backup {
         BackupVaultList: js.UndefOr[BackupVaultList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListBackupVaultsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupVaultList.foreach(__v => __obj.update("BackupVaultList", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupVaultList.foreach(__v => __obj.updateDynamic("BackupVaultList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBackupVaultsOutput]
     }
   }
@@ -1847,9 +1849,9 @@ package backup {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListProtectedResourcesInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListProtectedResourcesInput]
     }
   }
@@ -1865,9 +1867,9 @@ package backup {
         NextToken: js.UndefOr[String] = js.undefined,
         Results: js.UndefOr[ProtectedResourcesList] = js.undefined
     ): ListProtectedResourcesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Results.foreach(__v => __obj.update("Results", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Results.foreach(__v => __obj.updateDynamic("Results")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListProtectedResourcesOutput]
     }
   }
@@ -1895,17 +1897,17 @@ package backup {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListRecoveryPointsByBackupVaultInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupVaultName" -> BackupVaultName.asInstanceOf[js.Any]
       )
 
-      ByBackupPlanId.foreach(__v => __obj.update("ByBackupPlanId", __v.asInstanceOf[js.Any]))
-      ByCreatedAfter.foreach(__v => __obj.update("ByCreatedAfter", __v.asInstanceOf[js.Any]))
-      ByCreatedBefore.foreach(__v => __obj.update("ByCreatedBefore", __v.asInstanceOf[js.Any]))
-      ByResourceArn.foreach(__v => __obj.update("ByResourceArn", __v.asInstanceOf[js.Any]))
-      ByResourceType.foreach(__v => __obj.update("ByResourceType", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ByBackupPlanId.foreach(__v => __obj.updateDynamic("ByBackupPlanId")(__v.asInstanceOf[js.Any]))
+      ByCreatedAfter.foreach(__v => __obj.updateDynamic("ByCreatedAfter")(__v.asInstanceOf[js.Any]))
+      ByCreatedBefore.foreach(__v => __obj.updateDynamic("ByCreatedBefore")(__v.asInstanceOf[js.Any]))
+      ByResourceArn.foreach(__v => __obj.updateDynamic("ByResourceArn")(__v.asInstanceOf[js.Any]))
+      ByResourceType.foreach(__v => __obj.updateDynamic("ByResourceType")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRecoveryPointsByBackupVaultInput]
     }
   }
@@ -1921,9 +1923,9 @@ package backup {
         NextToken: js.UndefOr[String] = js.undefined,
         RecoveryPoints: js.UndefOr[RecoveryPointByBackupVaultList] = js.undefined
     ): ListRecoveryPointsByBackupVaultOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      RecoveryPoints.foreach(__v => __obj.update("RecoveryPoints", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RecoveryPoints.foreach(__v => __obj.updateDynamic("RecoveryPoints")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRecoveryPointsByBackupVaultOutput]
     }
   }
@@ -1941,12 +1943,12 @@ package backup {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListRecoveryPointsByResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRecoveryPointsByResourceInput]
     }
   }
@@ -1962,9 +1964,9 @@ package backup {
         NextToken: js.UndefOr[String] = js.undefined,
         RecoveryPoints: js.UndefOr[RecoveryPointByResourceList] = js.undefined
     ): ListRecoveryPointsByResourceOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      RecoveryPoints.foreach(__v => __obj.update("RecoveryPoints", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RecoveryPoints.foreach(__v => __obj.updateDynamic("RecoveryPoints")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRecoveryPointsByResourceOutput]
     }
   }
@@ -1980,9 +1982,9 @@ package backup {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListRestoreJobsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRestoreJobsInput]
     }
   }
@@ -1998,9 +2000,9 @@ package backup {
         NextToken: js.UndefOr[String] = js.undefined,
         RestoreJobs: js.UndefOr[RestoreJobsList] = js.undefined
     ): ListRestoreJobsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      RestoreJobs.foreach(__v => __obj.update("RestoreJobs", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RestoreJobs.foreach(__v => __obj.updateDynamic("RestoreJobs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRestoreJobsOutput]
     }
   }
@@ -2018,12 +2020,12 @@ package backup {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListTagsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsInput]
     }
   }
@@ -2039,9 +2041,9 @@ package backup {
         NextToken: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): ListTagsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsOutput]
     }
   }
@@ -2062,10 +2064,10 @@ package backup {
         ResourceArn: js.UndefOr[ARN] = js.undefined,
         ResourceType: js.UndefOr[ResourceType] = js.undefined
     ): ProtectedResource = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LastBackupTime.foreach(__v => __obj.update("LastBackupTime", __v.asInstanceOf[js.Any]))
-      ResourceArn.foreach(__v => __obj.update("ResourceArn", __v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LastBackupTime.foreach(__v => __obj.updateDynamic("LastBackupTime")(__v.asInstanceOf[js.Any]))
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProtectedResource]
     }
   }
@@ -2081,11 +2083,11 @@ package backup {
         BackupVaultName: BackupVaultName,
         Policy: js.UndefOr[IAMPolicy] = js.undefined
     ): PutBackupVaultAccessPolicyInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupVaultName" -> BackupVaultName.asInstanceOf[js.Any]
       )
 
-      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBackupVaultAccessPolicyInput]
     }
   }
@@ -2103,7 +2105,7 @@ package backup {
         BackupVaultName: BackupVaultName,
         SNSTopicArn: ARN
     ): PutBackupVaultNotificationsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupVaultEvents" -> BackupVaultEvents.asInstanceOf[js.Any],
         "BackupVaultName"   -> BackupVaultName.asInstanceOf[js.Any],
         "SNSTopicArn"       -> SNSTopicArn.asInstanceOf[js.Any]
@@ -2155,23 +2157,23 @@ package backup {
         ResourceType: js.UndefOr[ResourceType] = js.undefined,
         Status: js.UndefOr[RecoveryPointStatus] = js.undefined
     ): RecoveryPointByBackupVault = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupSizeInBytes.foreach(__v => __obj.update("BackupSizeInBytes", __v.asInstanceOf[js.Any]))
-      BackupVaultArn.foreach(__v => __obj.update("BackupVaultArn", __v.asInstanceOf[js.Any]))
-      BackupVaultName.foreach(__v => __obj.update("BackupVaultName", __v.asInstanceOf[js.Any]))
-      CalculatedLifecycle.foreach(__v => __obj.update("CalculatedLifecycle", __v.asInstanceOf[js.Any]))
-      CompletionDate.foreach(__v => __obj.update("CompletionDate", __v.asInstanceOf[js.Any]))
-      CreatedBy.foreach(__v => __obj.update("CreatedBy", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      EncryptionKeyArn.foreach(__v => __obj.update("EncryptionKeyArn", __v.asInstanceOf[js.Any]))
-      IamRoleArn.foreach(__v => __obj.update("IamRoleArn", __v.asInstanceOf[js.Any]))
-      IsEncrypted.foreach(__v => __obj.update("IsEncrypted", __v.asInstanceOf[js.Any]))
-      LastRestoreTime.foreach(__v => __obj.update("LastRestoreTime", __v.asInstanceOf[js.Any]))
-      Lifecycle.foreach(__v => __obj.update("Lifecycle", __v.asInstanceOf[js.Any]))
-      RecoveryPointArn.foreach(__v => __obj.update("RecoveryPointArn", __v.asInstanceOf[js.Any]))
-      ResourceArn.foreach(__v => __obj.update("ResourceArn", __v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupSizeInBytes.foreach(__v => __obj.updateDynamic("BackupSizeInBytes")(__v.asInstanceOf[js.Any]))
+      BackupVaultArn.foreach(__v => __obj.updateDynamic("BackupVaultArn")(__v.asInstanceOf[js.Any]))
+      BackupVaultName.foreach(__v => __obj.updateDynamic("BackupVaultName")(__v.asInstanceOf[js.Any]))
+      CalculatedLifecycle.foreach(__v => __obj.updateDynamic("CalculatedLifecycle")(__v.asInstanceOf[js.Any]))
+      CompletionDate.foreach(__v => __obj.updateDynamic("CompletionDate")(__v.asInstanceOf[js.Any]))
+      CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      EncryptionKeyArn.foreach(__v => __obj.updateDynamic("EncryptionKeyArn")(__v.asInstanceOf[js.Any]))
+      IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
+      IsEncrypted.foreach(__v => __obj.updateDynamic("IsEncrypted")(__v.asInstanceOf[js.Any]))
+      LastRestoreTime.foreach(__v => __obj.updateDynamic("LastRestoreTime")(__v.asInstanceOf[js.Any]))
+      Lifecycle.foreach(__v => __obj.updateDynamic("Lifecycle")(__v.asInstanceOf[js.Any]))
+      RecoveryPointArn.foreach(__v => __obj.updateDynamic("RecoveryPointArn")(__v.asInstanceOf[js.Any]))
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecoveryPointByBackupVault]
     }
   }
@@ -2198,13 +2200,13 @@ package backup {
         RecoveryPointArn: js.UndefOr[ARN] = js.undefined,
         Status: js.UndefOr[RecoveryPointStatus] = js.undefined
     ): RecoveryPointByResource = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupSizeBytes.foreach(__v => __obj.update("BackupSizeBytes", __v.asInstanceOf[js.Any]))
-      BackupVaultName.foreach(__v => __obj.update("BackupVaultName", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      EncryptionKeyArn.foreach(__v => __obj.update("EncryptionKeyArn", __v.asInstanceOf[js.Any]))
-      RecoveryPointArn.foreach(__v => __obj.update("RecoveryPointArn", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupSizeBytes.foreach(__v => __obj.updateDynamic("BackupSizeBytes")(__v.asInstanceOf[js.Any]))
+      BackupVaultName.foreach(__v => __obj.updateDynamic("BackupVaultName")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      EncryptionKeyArn.foreach(__v => __obj.updateDynamic("EncryptionKeyArn")(__v.asInstanceOf[js.Any]))
+      RecoveryPointArn.foreach(__v => __obj.updateDynamic("RecoveryPointArn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecoveryPointByResource]
     }
   }
@@ -2227,11 +2229,11 @@ package backup {
         BackupPlanVersion: js.UndefOr[String] = js.undefined,
         BackupRuleId: js.UndefOr[String] = js.undefined
     ): RecoveryPointCreator = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupPlanArn.foreach(__v => __obj.update("BackupPlanArn", __v.asInstanceOf[js.Any]))
-      BackupPlanId.foreach(__v => __obj.update("BackupPlanId", __v.asInstanceOf[js.Any]))
-      BackupPlanVersion.foreach(__v => __obj.update("BackupPlanVersion", __v.asInstanceOf[js.Any]))
-      BackupRuleId.foreach(__v => __obj.update("BackupRuleId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupPlanArn.foreach(__v => __obj.updateDynamic("BackupPlanArn")(__v.asInstanceOf[js.Any]))
+      BackupPlanId.foreach(__v => __obj.updateDynamic("BackupPlanId")(__v.asInstanceOf[js.Any]))
+      BackupPlanVersion.foreach(__v => __obj.updateDynamic("BackupPlanVersion")(__v.asInstanceOf[js.Any]))
+      BackupRuleId.foreach(__v => __obj.updateDynamic("BackupRuleId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecoveryPointCreator]
     }
   }
@@ -2287,20 +2289,20 @@ package backup {
         Status: js.UndefOr[RestoreJobStatus] = js.undefined,
         StatusMessage: js.UndefOr[String] = js.undefined
     ): RestoreJobsListMember = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupSizeInBytes.foreach(__v => __obj.update("BackupSizeInBytes", __v.asInstanceOf[js.Any]))
-      CompletionDate.foreach(__v => __obj.update("CompletionDate", __v.asInstanceOf[js.Any]))
-      CreatedResourceArn.foreach(__v => __obj.update("CreatedResourceArn", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupSizeInBytes.foreach(__v => __obj.updateDynamic("BackupSizeInBytes")(__v.asInstanceOf[js.Any]))
+      CompletionDate.foreach(__v => __obj.updateDynamic("CompletionDate")(__v.asInstanceOf[js.Any]))
+      CreatedResourceArn.foreach(__v => __obj.updateDynamic("CreatedResourceArn")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
       ExpectedCompletionTimeMinutes.foreach(
-        __v => __obj.update("ExpectedCompletionTimeMinutes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ExpectedCompletionTimeMinutes")(__v.asInstanceOf[js.Any])
       )
-      IamRoleArn.foreach(__v => __obj.update("IamRoleArn", __v.asInstanceOf[js.Any]))
-      PercentDone.foreach(__v => __obj.update("PercentDone", __v.asInstanceOf[js.Any]))
-      RecoveryPointArn.foreach(__v => __obj.update("RecoveryPointArn", __v.asInstanceOf[js.Any]))
-      RestoreJobId.foreach(__v => __obj.update("RestoreJobId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
+      IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
+      PercentDone.foreach(__v => __obj.updateDynamic("PercentDone")(__v.asInstanceOf[js.Any]))
+      RecoveryPointArn.foreach(__v => __obj.updateDynamic("RecoveryPointArn")(__v.asInstanceOf[js.Any]))
+      RestoreJobId.foreach(__v => __obj.updateDynamic("RestoreJobId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RestoreJobsListMember]
     }
   }
@@ -2328,17 +2330,17 @@ package backup {
         RecoveryPointTags: js.UndefOr[Tags] = js.undefined,
         StartWindowMinutes: js.UndefOr[WindowMinutes] = js.undefined
     ): StartBackupJobInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupVaultName" -> BackupVaultName.asInstanceOf[js.Any],
         "IamRoleArn"      -> IamRoleArn.asInstanceOf[js.Any],
         "ResourceArn"     -> ResourceArn.asInstanceOf[js.Any]
       )
 
-      CompleteWindowMinutes.foreach(__v => __obj.update("CompleteWindowMinutes", __v.asInstanceOf[js.Any]))
-      IdempotencyToken.foreach(__v => __obj.update("IdempotencyToken", __v.asInstanceOf[js.Any]))
-      Lifecycle.foreach(__v => __obj.update("Lifecycle", __v.asInstanceOf[js.Any]))
-      RecoveryPointTags.foreach(__v => __obj.update("RecoveryPointTags", __v.asInstanceOf[js.Any]))
-      StartWindowMinutes.foreach(__v => __obj.update("StartWindowMinutes", __v.asInstanceOf[js.Any]))
+      CompleteWindowMinutes.foreach(__v => __obj.updateDynamic("CompleteWindowMinutes")(__v.asInstanceOf[js.Any]))
+      IdempotencyToken.foreach(__v => __obj.updateDynamic("IdempotencyToken")(__v.asInstanceOf[js.Any]))
+      Lifecycle.foreach(__v => __obj.updateDynamic("Lifecycle")(__v.asInstanceOf[js.Any]))
+      RecoveryPointTags.foreach(__v => __obj.updateDynamic("RecoveryPointTags")(__v.asInstanceOf[js.Any]))
+      StartWindowMinutes.foreach(__v => __obj.updateDynamic("StartWindowMinutes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartBackupJobInput]
     }
   }
@@ -2356,10 +2358,10 @@ package backup {
         CreationDate: js.UndefOr[timestamp] = js.undefined,
         RecoveryPointArn: js.UndefOr[ARN] = js.undefined
     ): StartBackupJobOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupJobId.foreach(__v => __obj.update("BackupJobId", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      RecoveryPointArn.foreach(__v => __obj.update("RecoveryPointArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupJobId.foreach(__v => __obj.updateDynamic("BackupJobId")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      RecoveryPointArn.foreach(__v => __obj.updateDynamic("RecoveryPointArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartBackupJobOutput]
     }
   }
@@ -2381,14 +2383,14 @@ package backup {
         IdempotencyToken: js.UndefOr[String] = js.undefined,
         ResourceType: js.UndefOr[ResourceType] = js.undefined
     ): StartRestoreJobInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IamRoleArn"       -> IamRoleArn.asInstanceOf[js.Any],
         "Metadata"         -> Metadata.asInstanceOf[js.Any],
         "RecoveryPointArn" -> RecoveryPointArn.asInstanceOf[js.Any]
       )
 
-      IdempotencyToken.foreach(__v => __obj.update("IdempotencyToken", __v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
+      IdempotencyToken.foreach(__v => __obj.updateDynamic("IdempotencyToken")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartRestoreJobInput]
     }
   }
@@ -2402,8 +2404,8 @@ package backup {
     def apply(
         RestoreJobId: js.UndefOr[RestoreJobId] = js.undefined
     ): StartRestoreJobOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RestoreJobId.foreach(__v => __obj.update("RestoreJobId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RestoreJobId.foreach(__v => __obj.updateDynamic("RestoreJobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartRestoreJobOutput]
     }
   }
@@ -2417,7 +2419,7 @@ package backup {
     def apply(
         BackupJobId: String
     ): StopBackupJobInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupJobId" -> BackupJobId.asInstanceOf[js.Any]
       )
 
@@ -2444,7 +2446,7 @@ package backup {
         ResourceArn: ARN,
         Tags: Tags
     ): TagResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
       )
@@ -2464,7 +2466,7 @@ package backup {
         ResourceArn: ARN,
         TagKeyList: TagKeyList
     ): UntagResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeyList"  -> TagKeyList.asInstanceOf[js.Any]
       )
@@ -2484,7 +2486,7 @@ package backup {
         BackupPlan: BackupPlanInput,
         BackupPlanId: String
     ): UpdateBackupPlanInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupPlan"   -> BackupPlan.asInstanceOf[js.Any],
         "BackupPlanId" -> BackupPlanId.asInstanceOf[js.Any]
       )
@@ -2508,11 +2510,11 @@ package backup {
         CreationDate: js.UndefOr[timestamp] = js.undefined,
         VersionId: js.UndefOr[String] = js.undefined
     ): UpdateBackupPlanOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupPlanArn.foreach(__v => __obj.update("BackupPlanArn", __v.asInstanceOf[js.Any]))
-      BackupPlanId.foreach(__v => __obj.update("BackupPlanId", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupPlanArn.foreach(__v => __obj.updateDynamic("BackupPlanArn")(__v.asInstanceOf[js.Any]))
+      BackupPlanId.foreach(__v => __obj.updateDynamic("BackupPlanId")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateBackupPlanOutput]
     }
   }
@@ -2530,12 +2532,12 @@ package backup {
         RecoveryPointArn: ARN,
         Lifecycle: js.UndefOr[Lifecycle] = js.undefined
     ): UpdateRecoveryPointLifecycleInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupVaultName"  -> BackupVaultName.asInstanceOf[js.Any],
         "RecoveryPointArn" -> RecoveryPointArn.asInstanceOf[js.Any]
       )
 
-      Lifecycle.foreach(__v => __obj.update("Lifecycle", __v.asInstanceOf[js.Any]))
+      Lifecycle.foreach(__v => __obj.updateDynamic("Lifecycle")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRecoveryPointLifecycleInput]
     }
   }
@@ -2555,11 +2557,11 @@ package backup {
         Lifecycle: js.UndefOr[Lifecycle] = js.undefined,
         RecoveryPointArn: js.UndefOr[ARN] = js.undefined
     ): UpdateRecoveryPointLifecycleOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupVaultArn.foreach(__v => __obj.update("BackupVaultArn", __v.asInstanceOf[js.Any]))
-      CalculatedLifecycle.foreach(__v => __obj.update("CalculatedLifecycle", __v.asInstanceOf[js.Any]))
-      Lifecycle.foreach(__v => __obj.update("Lifecycle", __v.asInstanceOf[js.Any]))
-      RecoveryPointArn.foreach(__v => __obj.update("RecoveryPointArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupVaultArn.foreach(__v => __obj.updateDynamic("BackupVaultArn")(__v.asInstanceOf[js.Any]))
+      CalculatedLifecycle.foreach(__v => __obj.updateDynamic("CalculatedLifecycle")(__v.asInstanceOf[js.Any]))
+      Lifecycle.foreach(__v => __obj.updateDynamic("Lifecycle")(__v.asInstanceOf[js.Any]))
+      RecoveryPointArn.foreach(__v => __obj.updateDynamic("RecoveryPointArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRecoveryPointLifecycleOutput]
     }
   }

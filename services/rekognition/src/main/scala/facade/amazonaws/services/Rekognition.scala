@@ -225,9 +225,9 @@ package rekognition {
         High: js.UndefOr[UInteger] = js.undefined,
         Low: js.UndefOr[UInteger] = js.undefined
     ): AgeRange = {
-      val __obj = js.Dictionary.empty[js.Any]
-      High.foreach(__v => __obj.update("High", __v.asInstanceOf[js.Any]))
-      Low.foreach(__v => __obj.update("Low", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      High.foreach(__v => __obj.updateDynamic("High")(__v.asInstanceOf[js.Any]))
+      Low.foreach(__v => __obj.updateDynamic("Low")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AgeRange]
     }
   }
@@ -253,9 +253,9 @@ package rekognition {
         Confidence: js.UndefOr[Percent] = js.undefined,
         Value: js.UndefOr[Boolean] = js.undefined
     ): Beard = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Beard]
     }
   }
@@ -282,11 +282,11 @@ package rekognition {
         Top: js.UndefOr[Float] = js.undefined,
         Width: js.UndefOr[Float] = js.undefined
     ): BoundingBox = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Height.foreach(__v => __obj.update("Height", __v.asInstanceOf[js.Any]))
-      Left.foreach(__v => __obj.update("Left", __v.asInstanceOf[js.Any]))
-      Top.foreach(__v => __obj.update("Top", __v.asInstanceOf[js.Any]))
-      Width.foreach(__v => __obj.update("Width", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Height.foreach(__v => __obj.updateDynamic("Height")(__v.asInstanceOf[js.Any]))
+      Left.foreach(__v => __obj.updateDynamic("Left")(__v.asInstanceOf[js.Any]))
+      Top.foreach(__v => __obj.updateDynamic("Top")(__v.asInstanceOf[js.Any]))
+      Width.foreach(__v => __obj.updateDynamic("Width")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BoundingBox]
     }
   }
@@ -311,12 +311,12 @@ package rekognition {
         Name: js.UndefOr[String] = js.undefined,
         Urls: js.UndefOr[Urls] = js.undefined
     ): Celebrity = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Face.foreach(__v => __obj.update("Face", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      MatchConfidence.foreach(__v => __obj.update("MatchConfidence", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Urls.foreach(__v => __obj.update("Urls", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Face.foreach(__v => __obj.updateDynamic("Face")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      MatchConfidence.foreach(__v => __obj.updateDynamic("MatchConfidence")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Urls.foreach(__v => __obj.updateDynamic("Urls")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Celebrity]
     }
   }
@@ -343,13 +343,13 @@ package rekognition {
         Name: js.UndefOr[String] = js.undefined,
         Urls: js.UndefOr[Urls] = js.undefined
     ): CelebrityDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BoundingBox.foreach(__v => __obj.update("BoundingBox", __v.asInstanceOf[js.Any]))
-      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
-      Face.foreach(__v => __obj.update("Face", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Urls.foreach(__v => __obj.update("Urls", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BoundingBox.foreach(__v => __obj.updateDynamic("BoundingBox")(__v.asInstanceOf[js.Any]))
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      Face.foreach(__v => __obj.updateDynamic("Face")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Urls.foreach(__v => __obj.updateDynamic("Urls")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CelebrityDetail]
     }
   }
@@ -368,9 +368,9 @@ package rekognition {
         Celebrity: js.UndefOr[CelebrityDetail] = js.undefined,
         Timestamp: js.UndefOr[Timestamp] = js.undefined
     ): CelebrityRecognition = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Celebrity.foreach(__v => __obj.update("Celebrity", __v.asInstanceOf[js.Any]))
-      Timestamp.foreach(__v => __obj.update("Timestamp", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Celebrity.foreach(__v => __obj.updateDynamic("Celebrity")(__v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CelebrityRecognition]
     }
   }
@@ -396,9 +396,9 @@ package rekognition {
         Face: js.UndefOr[ComparedFace] = js.undefined,
         Similarity: js.UndefOr[Percent] = js.undefined
     ): CompareFacesMatch = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Face.foreach(__v => __obj.update("Face", __v.asInstanceOf[js.Any]))
-      Similarity.foreach(__v => __obj.update("Similarity", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Face.foreach(__v => __obj.updateDynamic("Face")(__v.asInstanceOf[js.Any]))
+      Similarity.foreach(__v => __obj.updateDynamic("Similarity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CompareFacesMatch]
     }
   }
@@ -416,12 +416,12 @@ package rekognition {
         TargetImage: Image,
         SimilarityThreshold: js.UndefOr[Percent] = js.undefined
     ): CompareFacesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SourceImage" -> SourceImage.asInstanceOf[js.Any],
         "TargetImage" -> TargetImage.asInstanceOf[js.Any]
       )
 
-      SimilarityThreshold.foreach(__v => __obj.update("SimilarityThreshold", __v.asInstanceOf[js.Any]))
+      SimilarityThreshold.foreach(__v => __obj.updateDynamic("SimilarityThreshold")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CompareFacesRequest]
     }
   }
@@ -443,16 +443,16 @@ package rekognition {
         TargetImageOrientationCorrection: js.UndefOr[OrientationCorrection] = js.undefined,
         UnmatchedFaces: js.UndefOr[CompareFacesUnmatchList] = js.undefined
     ): CompareFacesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FaceMatches.foreach(__v => __obj.update("FaceMatches", __v.asInstanceOf[js.Any]))
-      SourceImageFace.foreach(__v => __obj.update("SourceImageFace", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FaceMatches.foreach(__v => __obj.updateDynamic("FaceMatches")(__v.asInstanceOf[js.Any]))
+      SourceImageFace.foreach(__v => __obj.updateDynamic("SourceImageFace")(__v.asInstanceOf[js.Any]))
       SourceImageOrientationCorrection.foreach(
-        __v => __obj.update("SourceImageOrientationCorrection", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("SourceImageOrientationCorrection")(__v.asInstanceOf[js.Any])
       )
       TargetImageOrientationCorrection.foreach(
-        __v => __obj.update("TargetImageOrientationCorrection", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("TargetImageOrientationCorrection")(__v.asInstanceOf[js.Any])
       )
-      UnmatchedFaces.foreach(__v => __obj.update("UnmatchedFaces", __v.asInstanceOf[js.Any]))
+      UnmatchedFaces.foreach(__v => __obj.updateDynamic("UnmatchedFaces")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CompareFacesResponse]
     }
   }
@@ -477,12 +477,12 @@ package rekognition {
         Pose: js.UndefOr[Pose] = js.undefined,
         Quality: js.UndefOr[ImageQuality] = js.undefined
     ): ComparedFace = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BoundingBox.foreach(__v => __obj.update("BoundingBox", __v.asInstanceOf[js.Any]))
-      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
-      Landmarks.foreach(__v => __obj.update("Landmarks", __v.asInstanceOf[js.Any]))
-      Pose.foreach(__v => __obj.update("Pose", __v.asInstanceOf[js.Any]))
-      Quality.foreach(__v => __obj.update("Quality", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BoundingBox.foreach(__v => __obj.updateDynamic("BoundingBox")(__v.asInstanceOf[js.Any]))
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      Landmarks.foreach(__v => __obj.updateDynamic("Landmarks")(__v.asInstanceOf[js.Any]))
+      Pose.foreach(__v => __obj.updateDynamic("Pose")(__v.asInstanceOf[js.Any]))
+      Quality.foreach(__v => __obj.updateDynamic("Quality")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ComparedFace]
     }
   }
@@ -501,9 +501,9 @@ package rekognition {
         BoundingBox: js.UndefOr[BoundingBox] = js.undefined,
         Confidence: js.UndefOr[Percent] = js.undefined
     ): ComparedSourceImageFace = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BoundingBox.foreach(__v => __obj.update("BoundingBox", __v.asInstanceOf[js.Any]))
-      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BoundingBox.foreach(__v => __obj.updateDynamic("BoundingBox")(__v.asInstanceOf[js.Any]))
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ComparedSourceImageFace]
     }
   }
@@ -522,9 +522,9 @@ package rekognition {
         ModerationLabel: js.UndefOr[ModerationLabel] = js.undefined,
         Timestamp: js.UndefOr[Timestamp] = js.undefined
     ): ContentModerationDetection = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ModerationLabel.foreach(__v => __obj.update("ModerationLabel", __v.asInstanceOf[js.Any]))
-      Timestamp.foreach(__v => __obj.update("Timestamp", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ModerationLabel.foreach(__v => __obj.updateDynamic("ModerationLabel")(__v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContentModerationDetection]
     }
   }
@@ -545,7 +545,7 @@ package rekognition {
     def apply(
         CollectionId: CollectionId
     ): CreateCollectionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CollectionId" -> CollectionId.asInstanceOf[js.Any]
       )
 
@@ -566,10 +566,10 @@ package rekognition {
         FaceModelVersion: js.UndefOr[String] = js.undefined,
         StatusCode: js.UndefOr[UInteger] = js.undefined
     ): CreateCollectionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CollectionArn.foreach(__v => __obj.update("CollectionArn", __v.asInstanceOf[js.Any]))
-      FaceModelVersion.foreach(__v => __obj.update("FaceModelVersion", __v.asInstanceOf[js.Any]))
-      StatusCode.foreach(__v => __obj.update("StatusCode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CollectionArn.foreach(__v => __obj.updateDynamic("CollectionArn")(__v.asInstanceOf[js.Any]))
+      FaceModelVersion.foreach(__v => __obj.updateDynamic("FaceModelVersion")(__v.asInstanceOf[js.Any]))
+      StatusCode.foreach(__v => __obj.updateDynamic("StatusCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCollectionResponse]
     }
   }
@@ -591,7 +591,7 @@ package rekognition {
         RoleArn: RoleArn,
         Settings: StreamProcessorSettings
     ): CreateStreamProcessorRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Input"    -> Input.asInstanceOf[js.Any],
         "Name"     -> Name.asInstanceOf[js.Any],
         "Output"   -> Output.asInstanceOf[js.Any],
@@ -612,8 +612,8 @@ package rekognition {
     def apply(
         StreamProcessorArn: js.UndefOr[StreamProcessorArn] = js.undefined
     ): CreateStreamProcessorResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      StreamProcessorArn.foreach(__v => __obj.update("StreamProcessorArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      StreamProcessorArn.foreach(__v => __obj.updateDynamic("StreamProcessorArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateStreamProcessorResponse]
     }
   }
@@ -627,7 +627,7 @@ package rekognition {
     def apply(
         CollectionId: CollectionId
     ): DeleteCollectionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CollectionId" -> CollectionId.asInstanceOf[js.Any]
       )
 
@@ -644,8 +644,8 @@ package rekognition {
     def apply(
         StatusCode: js.UndefOr[UInteger] = js.undefined
     ): DeleteCollectionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      StatusCode.foreach(__v => __obj.update("StatusCode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      StatusCode.foreach(__v => __obj.updateDynamic("StatusCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteCollectionResponse]
     }
   }
@@ -661,7 +661,7 @@ package rekognition {
         CollectionId: CollectionId,
         FaceIds: FaceIdList
     ): DeleteFacesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CollectionId" -> CollectionId.asInstanceOf[js.Any],
         "FaceIds"      -> FaceIds.asInstanceOf[js.Any]
       )
@@ -679,8 +679,8 @@ package rekognition {
     def apply(
         DeletedFaces: js.UndefOr[FaceIdList] = js.undefined
     ): DeleteFacesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DeletedFaces.foreach(__v => __obj.update("DeletedFaces", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DeletedFaces.foreach(__v => __obj.updateDynamic("DeletedFaces")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteFacesResponse]
     }
   }
@@ -694,7 +694,7 @@ package rekognition {
     def apply(
         Name: StreamProcessorName
     ): DeleteStreamProcessorRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -708,7 +708,7 @@ package rekognition {
   object DeleteStreamProcessorResponse {
     def apply(
         ): DeleteStreamProcessorResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteStreamProcessorResponse]
     }
@@ -723,7 +723,7 @@ package rekognition {
     def apply(
         CollectionId: CollectionId
     ): DescribeCollectionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CollectionId" -> CollectionId.asInstanceOf[js.Any]
       )
 
@@ -746,11 +746,11 @@ package rekognition {
         FaceCount: js.UndefOr[ULong] = js.undefined,
         FaceModelVersion: js.UndefOr[String] = js.undefined
     ): DescribeCollectionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CollectionARN.foreach(__v => __obj.update("CollectionARN", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      FaceCount.foreach(__v => __obj.update("FaceCount", __v.asInstanceOf[js.Any]))
-      FaceModelVersion.foreach(__v => __obj.update("FaceModelVersion", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CollectionARN.foreach(__v => __obj.updateDynamic("CollectionARN")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      FaceCount.foreach(__v => __obj.updateDynamic("FaceCount")(__v.asInstanceOf[js.Any]))
+      FaceModelVersion.foreach(__v => __obj.updateDynamic("FaceModelVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeCollectionResponse]
     }
   }
@@ -764,7 +764,7 @@ package rekognition {
     def apply(
         Name: StreamProcessorName
     ): DescribeStreamProcessorRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -799,17 +799,17 @@ package rekognition {
         StatusMessage: js.UndefOr[String] = js.undefined,
         StreamProcessorArn: js.UndefOr[StreamProcessorArn] = js.undefined
     ): DescribeStreamProcessorResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Input.foreach(__v => __obj.update("Input", __v.asInstanceOf[js.Any]))
-      LastUpdateTimestamp.foreach(__v => __obj.update("LastUpdateTimestamp", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Output.foreach(__v => __obj.update("Output", __v.asInstanceOf[js.Any]))
-      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
-      Settings.foreach(__v => __obj.update("Settings", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
-      StreamProcessorArn.foreach(__v => __obj.update("StreamProcessorArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Input.foreach(__v => __obj.updateDynamic("Input")(__v.asInstanceOf[js.Any]))
+      LastUpdateTimestamp.foreach(__v => __obj.updateDynamic("LastUpdateTimestamp")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Output.foreach(__v => __obj.updateDynamic("Output")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      Settings.foreach(__v => __obj.updateDynamic("Settings")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      StreamProcessorArn.foreach(__v => __obj.updateDynamic("StreamProcessorArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeStreamProcessorResponse]
     }
   }
@@ -825,11 +825,11 @@ package rekognition {
         Image: Image,
         Attributes: js.UndefOr[Attributes] = js.undefined
     ): DetectFacesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Image" -> Image.asInstanceOf[js.Any]
       )
 
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetectFacesRequest]
     }
   }
@@ -845,9 +845,9 @@ package rekognition {
         FaceDetails: js.UndefOr[FaceDetailList] = js.undefined,
         OrientationCorrection: js.UndefOr[OrientationCorrection] = js.undefined
     ): DetectFacesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FaceDetails.foreach(__v => __obj.update("FaceDetails", __v.asInstanceOf[js.Any]))
-      OrientationCorrection.foreach(__v => __obj.update("OrientationCorrection", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FaceDetails.foreach(__v => __obj.updateDynamic("FaceDetails")(__v.asInstanceOf[js.Any]))
+      OrientationCorrection.foreach(__v => __obj.updateDynamic("OrientationCorrection")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetectFacesResponse]
     }
   }
@@ -865,12 +865,12 @@ package rekognition {
         MaxLabels: js.UndefOr[UInteger] = js.undefined,
         MinConfidence: js.UndefOr[Percent] = js.undefined
     ): DetectLabelsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Image" -> Image.asInstanceOf[js.Any]
       )
 
-      MaxLabels.foreach(__v => __obj.update("MaxLabels", __v.asInstanceOf[js.Any]))
-      MinConfidence.foreach(__v => __obj.update("MinConfidence", __v.asInstanceOf[js.Any]))
+      MaxLabels.foreach(__v => __obj.updateDynamic("MaxLabels")(__v.asInstanceOf[js.Any]))
+      MinConfidence.foreach(__v => __obj.updateDynamic("MinConfidence")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetectLabelsRequest]
     }
   }
@@ -888,10 +888,10 @@ package rekognition {
         Labels: js.UndefOr[Labels] = js.undefined,
         OrientationCorrection: js.UndefOr[OrientationCorrection] = js.undefined
     ): DetectLabelsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LabelModelVersion.foreach(__v => __obj.update("LabelModelVersion", __v.asInstanceOf[js.Any]))
-      Labels.foreach(__v => __obj.update("Labels", __v.asInstanceOf[js.Any]))
-      OrientationCorrection.foreach(__v => __obj.update("OrientationCorrection", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LabelModelVersion.foreach(__v => __obj.updateDynamic("LabelModelVersion")(__v.asInstanceOf[js.Any]))
+      Labels.foreach(__v => __obj.updateDynamic("Labels")(__v.asInstanceOf[js.Any]))
+      OrientationCorrection.foreach(__v => __obj.updateDynamic("OrientationCorrection")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetectLabelsResponse]
     }
   }
@@ -907,11 +907,11 @@ package rekognition {
         Image: Image,
         MinConfidence: js.UndefOr[Percent] = js.undefined
     ): DetectModerationLabelsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Image" -> Image.asInstanceOf[js.Any]
       )
 
-      MinConfidence.foreach(__v => __obj.update("MinConfidence", __v.asInstanceOf[js.Any]))
+      MinConfidence.foreach(__v => __obj.updateDynamic("MinConfidence")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetectModerationLabelsRequest]
     }
   }
@@ -927,9 +927,9 @@ package rekognition {
         ModerationLabels: js.UndefOr[ModerationLabels] = js.undefined,
         ModerationModelVersion: js.UndefOr[String] = js.undefined
     ): DetectModerationLabelsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ModerationLabels.foreach(__v => __obj.update("ModerationLabels", __v.asInstanceOf[js.Any]))
-      ModerationModelVersion.foreach(__v => __obj.update("ModerationModelVersion", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ModerationLabels.foreach(__v => __obj.updateDynamic("ModerationLabels")(__v.asInstanceOf[js.Any]))
+      ModerationModelVersion.foreach(__v => __obj.updateDynamic("ModerationModelVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetectModerationLabelsResponse]
     }
   }
@@ -943,7 +943,7 @@ package rekognition {
     def apply(
         Image: Image
     ): DetectTextRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Image" -> Image.asInstanceOf[js.Any]
       )
 
@@ -960,8 +960,8 @@ package rekognition {
     def apply(
         TextDetections: js.UndefOr[TextDetectionList] = js.undefined
     ): DetectTextResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TextDetections.foreach(__v => __obj.update("TextDetections", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TextDetections.foreach(__v => __obj.updateDynamic("TextDetections")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetectTextResponse]
     }
   }
@@ -980,9 +980,9 @@ package rekognition {
         Confidence: js.UndefOr[Percent] = js.undefined,
         Type: js.UndefOr[EmotionName] = js.undefined
     ): Emotion = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Emotion]
     }
   }
@@ -1015,9 +1015,9 @@ package rekognition {
         Confidence: js.UndefOr[Percent] = js.undefined,
         Value: js.UndefOr[Boolean] = js.undefined
     ): EyeOpen = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EyeOpen]
     }
   }
@@ -1036,9 +1036,9 @@ package rekognition {
         Confidence: js.UndefOr[Percent] = js.undefined,
         Value: js.UndefOr[Boolean] = js.undefined
     ): Eyeglasses = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Eyeglasses]
     }
   }
@@ -1063,12 +1063,12 @@ package rekognition {
         FaceId: js.UndefOr[FaceId] = js.undefined,
         ImageId: js.UndefOr[ImageId] = js.undefined
     ): Face = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BoundingBox.foreach(__v => __obj.update("BoundingBox", __v.asInstanceOf[js.Any]))
-      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
-      ExternalImageId.foreach(__v => __obj.update("ExternalImageId", __v.asInstanceOf[js.Any]))
-      FaceId.foreach(__v => __obj.update("FaceId", __v.asInstanceOf[js.Any]))
-      ImageId.foreach(__v => __obj.update("ImageId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BoundingBox.foreach(__v => __obj.updateDynamic("BoundingBox")(__v.asInstanceOf[js.Any]))
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      ExternalImageId.foreach(__v => __obj.updateDynamic("ExternalImageId")(__v.asInstanceOf[js.Any]))
+      FaceId.foreach(__v => __obj.updateDynamic("FaceId")(__v.asInstanceOf[js.Any]))
+      ImageId.foreach(__v => __obj.updateDynamic("ImageId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Face]
     }
   }
@@ -1126,22 +1126,22 @@ package rekognition {
         Smile: js.UndefOr[Smile] = js.undefined,
         Sunglasses: js.UndefOr[Sunglasses] = js.undefined
     ): FaceDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AgeRange.foreach(__v => __obj.update("AgeRange", __v.asInstanceOf[js.Any]))
-      Beard.foreach(__v => __obj.update("Beard", __v.asInstanceOf[js.Any]))
-      BoundingBox.foreach(__v => __obj.update("BoundingBox", __v.asInstanceOf[js.Any]))
-      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
-      Emotions.foreach(__v => __obj.update("Emotions", __v.asInstanceOf[js.Any]))
-      Eyeglasses.foreach(__v => __obj.update("Eyeglasses", __v.asInstanceOf[js.Any]))
-      EyesOpen.foreach(__v => __obj.update("EyesOpen", __v.asInstanceOf[js.Any]))
-      Gender.foreach(__v => __obj.update("Gender", __v.asInstanceOf[js.Any]))
-      Landmarks.foreach(__v => __obj.update("Landmarks", __v.asInstanceOf[js.Any]))
-      MouthOpen.foreach(__v => __obj.update("MouthOpen", __v.asInstanceOf[js.Any]))
-      Mustache.foreach(__v => __obj.update("Mustache", __v.asInstanceOf[js.Any]))
-      Pose.foreach(__v => __obj.update("Pose", __v.asInstanceOf[js.Any]))
-      Quality.foreach(__v => __obj.update("Quality", __v.asInstanceOf[js.Any]))
-      Smile.foreach(__v => __obj.update("Smile", __v.asInstanceOf[js.Any]))
-      Sunglasses.foreach(__v => __obj.update("Sunglasses", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AgeRange.foreach(__v => __obj.updateDynamic("AgeRange")(__v.asInstanceOf[js.Any]))
+      Beard.foreach(__v => __obj.updateDynamic("Beard")(__v.asInstanceOf[js.Any]))
+      BoundingBox.foreach(__v => __obj.updateDynamic("BoundingBox")(__v.asInstanceOf[js.Any]))
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      Emotions.foreach(__v => __obj.updateDynamic("Emotions")(__v.asInstanceOf[js.Any]))
+      Eyeglasses.foreach(__v => __obj.updateDynamic("Eyeglasses")(__v.asInstanceOf[js.Any]))
+      EyesOpen.foreach(__v => __obj.updateDynamic("EyesOpen")(__v.asInstanceOf[js.Any]))
+      Gender.foreach(__v => __obj.updateDynamic("Gender")(__v.asInstanceOf[js.Any]))
+      Landmarks.foreach(__v => __obj.updateDynamic("Landmarks")(__v.asInstanceOf[js.Any]))
+      MouthOpen.foreach(__v => __obj.updateDynamic("MouthOpen")(__v.asInstanceOf[js.Any]))
+      Mustache.foreach(__v => __obj.updateDynamic("Mustache")(__v.asInstanceOf[js.Any]))
+      Pose.foreach(__v => __obj.updateDynamic("Pose")(__v.asInstanceOf[js.Any]))
+      Quality.foreach(__v => __obj.updateDynamic("Quality")(__v.asInstanceOf[js.Any]))
+      Smile.foreach(__v => __obj.updateDynamic("Smile")(__v.asInstanceOf[js.Any]))
+      Sunglasses.foreach(__v => __obj.updateDynamic("Sunglasses")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FaceDetail]
     }
   }
@@ -1160,9 +1160,9 @@ package rekognition {
         Face: js.UndefOr[FaceDetail] = js.undefined,
         Timestamp: js.UndefOr[Timestamp] = js.undefined
     ): FaceDetection = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Face.foreach(__v => __obj.update("Face", __v.asInstanceOf[js.Any]))
-      Timestamp.foreach(__v => __obj.update("Timestamp", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Face.foreach(__v => __obj.updateDynamic("Face")(__v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FaceDetection]
     }
   }
@@ -1181,9 +1181,9 @@ package rekognition {
         Face: js.UndefOr[Face] = js.undefined,
         Similarity: js.UndefOr[Percent] = js.undefined
     ): FaceMatch = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Face.foreach(__v => __obj.update("Face", __v.asInstanceOf[js.Any]))
-      Similarity.foreach(__v => __obj.update("Similarity", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Face.foreach(__v => __obj.updateDynamic("Face")(__v.asInstanceOf[js.Any]))
+      Similarity.foreach(__v => __obj.updateDynamic("Similarity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FaceMatch]
     }
   }
@@ -1202,9 +1202,9 @@ package rekognition {
         Face: js.UndefOr[Face] = js.undefined,
         FaceDetail: js.UndefOr[FaceDetail] = js.undefined
     ): FaceRecord = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Face.foreach(__v => __obj.update("Face", __v.asInstanceOf[js.Any]))
-      FaceDetail.foreach(__v => __obj.update("FaceDetail", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Face.foreach(__v => __obj.updateDynamic("Face")(__v.asInstanceOf[js.Any]))
+      FaceDetail.foreach(__v => __obj.updateDynamic("FaceDetail")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FaceRecord]
     }
   }
@@ -1223,9 +1223,9 @@ package rekognition {
         CollectionId: js.UndefOr[CollectionId] = js.undefined,
         FaceMatchThreshold: js.UndefOr[Percent] = js.undefined
     ): FaceSearchSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CollectionId.foreach(__v => __obj.update("CollectionId", __v.asInstanceOf[js.Any]))
-      FaceMatchThreshold.foreach(__v => __obj.update("FaceMatchThreshold", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CollectionId.foreach(__v => __obj.updateDynamic("CollectionId")(__v.asInstanceOf[js.Any]))
+      FaceMatchThreshold.foreach(__v => __obj.updateDynamic("FaceMatchThreshold")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FaceSearchSettings]
     }
   }
@@ -1251,9 +1251,9 @@ package rekognition {
         Confidence: js.UndefOr[Percent] = js.undefined,
         Value: js.UndefOr[GenderType] = js.undefined
     ): Gender = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Gender]
     }
   }
@@ -1279,9 +1279,9 @@ package rekognition {
         BoundingBox: js.UndefOr[BoundingBox] = js.undefined,
         Polygon: js.UndefOr[Polygon] = js.undefined
     ): Geometry = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BoundingBox.foreach(__v => __obj.update("BoundingBox", __v.asInstanceOf[js.Any]))
-      Polygon.foreach(__v => __obj.update("Polygon", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BoundingBox.foreach(__v => __obj.updateDynamic("BoundingBox")(__v.asInstanceOf[js.Any]))
+      Polygon.foreach(__v => __obj.updateDynamic("Polygon")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Geometry]
     }
   }
@@ -1295,7 +1295,7 @@ package rekognition {
     def apply(
         Id: RekognitionUniqueId
     ): GetCelebrityInfoRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
@@ -1314,9 +1314,9 @@ package rekognition {
         Name: js.UndefOr[String] = js.undefined,
         Urls: js.UndefOr[Urls] = js.undefined
     ): GetCelebrityInfoResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Urls.foreach(__v => __obj.update("Urls", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Urls.foreach(__v => __obj.updateDynamic("Urls")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCelebrityInfoResponse]
     }
   }
@@ -1336,13 +1336,13 @@ package rekognition {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         SortBy: js.UndefOr[CelebrityRecognitionSortBy] = js.undefined
     ): GetCelebrityRecognitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      SortBy.foreach(__v => __obj.update("SortBy", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SortBy.foreach(__v => __obj.updateDynamic("SortBy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCelebrityRecognitionRequest]
     }
   }
@@ -1364,12 +1364,12 @@ package rekognition {
         StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
         VideoMetadata: js.UndefOr[VideoMetadata] = js.undefined
     ): GetCelebrityRecognitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Celebrities.foreach(__v => __obj.update("Celebrities", __v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.update("JobStatus", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
-      VideoMetadata.foreach(__v => __obj.update("VideoMetadata", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Celebrities.foreach(__v => __obj.updateDynamic("Celebrities")(__v.asInstanceOf[js.Any]))
+      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      VideoMetadata.foreach(__v => __obj.updateDynamic("VideoMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCelebrityRecognitionResponse]
     }
   }
@@ -1389,13 +1389,13 @@ package rekognition {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         SortBy: js.UndefOr[ContentModerationSortBy] = js.undefined
     ): GetContentModerationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      SortBy.foreach(__v => __obj.update("SortBy", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SortBy.foreach(__v => __obj.updateDynamic("SortBy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetContentModerationRequest]
     }
   }
@@ -1419,13 +1419,13 @@ package rekognition {
         StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
         VideoMetadata: js.UndefOr[VideoMetadata] = js.undefined
     ): GetContentModerationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobStatus.foreach(__v => __obj.update("JobStatus", __v.asInstanceOf[js.Any]))
-      ModerationLabels.foreach(__v => __obj.update("ModerationLabels", __v.asInstanceOf[js.Any]))
-      ModerationModelVersion.foreach(__v => __obj.update("ModerationModelVersion", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
-      VideoMetadata.foreach(__v => __obj.update("VideoMetadata", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
+      ModerationLabels.foreach(__v => __obj.updateDynamic("ModerationLabels")(__v.asInstanceOf[js.Any]))
+      ModerationModelVersion.foreach(__v => __obj.updateDynamic("ModerationModelVersion")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      VideoMetadata.foreach(__v => __obj.updateDynamic("VideoMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetContentModerationResponse]
     }
   }
@@ -1443,12 +1443,12 @@ package rekognition {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): GetFaceDetectionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFaceDetectionRequest]
     }
   }
@@ -1470,12 +1470,12 @@ package rekognition {
         StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
         VideoMetadata: js.UndefOr[VideoMetadata] = js.undefined
     ): GetFaceDetectionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Faces.foreach(__v => __obj.update("Faces", __v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.update("JobStatus", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
-      VideoMetadata.foreach(__v => __obj.update("VideoMetadata", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Faces.foreach(__v => __obj.updateDynamic("Faces")(__v.asInstanceOf[js.Any]))
+      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      VideoMetadata.foreach(__v => __obj.updateDynamic("VideoMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFaceDetectionResponse]
     }
   }
@@ -1495,13 +1495,13 @@ package rekognition {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         SortBy: js.UndefOr[FaceSearchSortBy] = js.undefined
     ): GetFaceSearchRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      SortBy.foreach(__v => __obj.update("SortBy", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SortBy.foreach(__v => __obj.updateDynamic("SortBy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFaceSearchRequest]
     }
   }
@@ -1523,12 +1523,12 @@ package rekognition {
         StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
         VideoMetadata: js.UndefOr[VideoMetadata] = js.undefined
     ): GetFaceSearchResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobStatus.foreach(__v => __obj.update("JobStatus", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Persons.foreach(__v => __obj.update("Persons", __v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
-      VideoMetadata.foreach(__v => __obj.update("VideoMetadata", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Persons.foreach(__v => __obj.updateDynamic("Persons")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      VideoMetadata.foreach(__v => __obj.updateDynamic("VideoMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFaceSearchResponse]
     }
   }
@@ -1548,13 +1548,13 @@ package rekognition {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         SortBy: js.UndefOr[LabelDetectionSortBy] = js.undefined
     ): GetLabelDetectionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      SortBy.foreach(__v => __obj.update("SortBy", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SortBy.foreach(__v => __obj.updateDynamic("SortBy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLabelDetectionRequest]
     }
   }
@@ -1578,13 +1578,13 @@ package rekognition {
         StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
         VideoMetadata: js.UndefOr[VideoMetadata] = js.undefined
     ): GetLabelDetectionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobStatus.foreach(__v => __obj.update("JobStatus", __v.asInstanceOf[js.Any]))
-      LabelModelVersion.foreach(__v => __obj.update("LabelModelVersion", __v.asInstanceOf[js.Any]))
-      Labels.foreach(__v => __obj.update("Labels", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
-      VideoMetadata.foreach(__v => __obj.update("VideoMetadata", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
+      LabelModelVersion.foreach(__v => __obj.updateDynamic("LabelModelVersion")(__v.asInstanceOf[js.Any]))
+      Labels.foreach(__v => __obj.updateDynamic("Labels")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      VideoMetadata.foreach(__v => __obj.updateDynamic("VideoMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLabelDetectionResponse]
     }
   }
@@ -1604,13 +1604,13 @@ package rekognition {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         SortBy: js.UndefOr[PersonTrackingSortBy] = js.undefined
     ): GetPersonTrackingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      SortBy.foreach(__v => __obj.update("SortBy", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SortBy.foreach(__v => __obj.updateDynamic("SortBy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPersonTrackingRequest]
     }
   }
@@ -1632,12 +1632,12 @@ package rekognition {
         StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
         VideoMetadata: js.UndefOr[VideoMetadata] = js.undefined
     ): GetPersonTrackingResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobStatus.foreach(__v => __obj.update("JobStatus", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Persons.foreach(__v => __obj.update("Persons", __v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
-      VideoMetadata.foreach(__v => __obj.update("VideoMetadata", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Persons.foreach(__v => __obj.updateDynamic("Persons")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      VideoMetadata.foreach(__v => __obj.updateDynamic("VideoMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPersonTrackingResponse]
     }
   }
@@ -1662,9 +1662,9 @@ package rekognition {
         Bytes: js.UndefOr[ImageBlob] = js.undefined,
         S3Object: js.UndefOr[S3Object] = js.undefined
     ): Image = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Bytes.foreach(__v => __obj.update("Bytes", __v.asInstanceOf[js.Any]))
-      S3Object.foreach(__v => __obj.update("S3Object", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Bytes.foreach(__v => __obj.updateDynamic("Bytes")(__v.asInstanceOf[js.Any]))
+      S3Object.foreach(__v => __obj.updateDynamic("S3Object")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Image]
     }
   }
@@ -1683,9 +1683,9 @@ package rekognition {
         Brightness: js.UndefOr[Float] = js.undefined,
         Sharpness: js.UndefOr[Float] = js.undefined
     ): ImageQuality = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Brightness.foreach(__v => __obj.update("Brightness", __v.asInstanceOf[js.Any]))
-      Sharpness.foreach(__v => __obj.update("Sharpness", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Brightness.foreach(__v => __obj.updateDynamic("Brightness")(__v.asInstanceOf[js.Any]))
+      Sharpness.foreach(__v => __obj.updateDynamic("Sharpness")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImageQuality]
     }
   }
@@ -1709,15 +1709,15 @@ package rekognition {
         MaxFaces: js.UndefOr[MaxFacesToIndex] = js.undefined,
         QualityFilter: js.UndefOr[QualityFilter] = js.undefined
     ): IndexFacesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CollectionId" -> CollectionId.asInstanceOf[js.Any],
         "Image"        -> Image.asInstanceOf[js.Any]
       )
 
-      DetectionAttributes.foreach(__v => __obj.update("DetectionAttributes", __v.asInstanceOf[js.Any]))
-      ExternalImageId.foreach(__v => __obj.update("ExternalImageId", __v.asInstanceOf[js.Any]))
-      MaxFaces.foreach(__v => __obj.update("MaxFaces", __v.asInstanceOf[js.Any]))
-      QualityFilter.foreach(__v => __obj.update("QualityFilter", __v.asInstanceOf[js.Any]))
+      DetectionAttributes.foreach(__v => __obj.updateDynamic("DetectionAttributes")(__v.asInstanceOf[js.Any]))
+      ExternalImageId.foreach(__v => __obj.updateDynamic("ExternalImageId")(__v.asInstanceOf[js.Any]))
+      MaxFaces.foreach(__v => __obj.updateDynamic("MaxFaces")(__v.asInstanceOf[js.Any]))
+      QualityFilter.foreach(__v => __obj.updateDynamic("QualityFilter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IndexFacesRequest]
     }
   }
@@ -1737,11 +1737,11 @@ package rekognition {
         OrientationCorrection: js.UndefOr[OrientationCorrection] = js.undefined,
         UnindexedFaces: js.UndefOr[UnindexedFaces] = js.undefined
     ): IndexFacesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FaceModelVersion.foreach(__v => __obj.update("FaceModelVersion", __v.asInstanceOf[js.Any]))
-      FaceRecords.foreach(__v => __obj.update("FaceRecords", __v.asInstanceOf[js.Any]))
-      OrientationCorrection.foreach(__v => __obj.update("OrientationCorrection", __v.asInstanceOf[js.Any]))
-      UnindexedFaces.foreach(__v => __obj.update("UnindexedFaces", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FaceModelVersion.foreach(__v => __obj.updateDynamic("FaceModelVersion")(__v.asInstanceOf[js.Any]))
+      FaceRecords.foreach(__v => __obj.updateDynamic("FaceRecords")(__v.asInstanceOf[js.Any]))
+      OrientationCorrection.foreach(__v => __obj.updateDynamic("OrientationCorrection")(__v.asInstanceOf[js.Any]))
+      UnindexedFaces.foreach(__v => __obj.updateDynamic("UnindexedFaces")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IndexFacesResponse]
     }
   }
@@ -1760,9 +1760,9 @@ package rekognition {
         BoundingBox: js.UndefOr[BoundingBox] = js.undefined,
         Confidence: js.UndefOr[Percent] = js.undefined
     ): Instance = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BoundingBox.foreach(__v => __obj.update("BoundingBox", __v.asInstanceOf[js.Any]))
-      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BoundingBox.foreach(__v => __obj.updateDynamic("BoundingBox")(__v.asInstanceOf[js.Any]))
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Instance]
     }
   }
@@ -1779,8 +1779,8 @@ package rekognition {
     def apply(
         Arn: js.UndefOr[KinesisDataArn] = js.undefined
     ): KinesisDataStream = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KinesisDataStream]
     }
   }
@@ -1797,8 +1797,8 @@ package rekognition {
     def apply(
         Arn: js.UndefOr[KinesisVideoArn] = js.undefined
     ): KinesisVideoStream = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KinesisVideoStream]
     }
   }
@@ -1822,11 +1822,11 @@ package rekognition {
         Name: js.UndefOr[String] = js.undefined,
         Parents: js.UndefOr[Parents] = js.undefined
     ): Label = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
-      Instances.foreach(__v => __obj.update("Instances", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Parents.foreach(__v => __obj.update("Parents", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      Instances.foreach(__v => __obj.updateDynamic("Instances")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Parents.foreach(__v => __obj.updateDynamic("Parents")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Label]
     }
   }
@@ -1845,9 +1845,9 @@ package rekognition {
         Label: js.UndefOr[Label] = js.undefined,
         Timestamp: js.UndefOr[Timestamp] = js.undefined
     ): LabelDetection = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Label.foreach(__v => __obj.update("Label", __v.asInstanceOf[js.Any]))
-      Timestamp.foreach(__v => __obj.update("Timestamp", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Label.foreach(__v => __obj.updateDynamic("Label")(__v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LabelDetection]
     }
   }
@@ -1875,10 +1875,10 @@ package rekognition {
         X: js.UndefOr[Float] = js.undefined,
         Y: js.UndefOr[Float] = js.undefined
     ): Landmark = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
-      X.foreach(__v => __obj.update("X", __v.asInstanceOf[js.Any]))
-      Y.foreach(__v => __obj.update("Y", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      X.foreach(__v => __obj.updateDynamic("X")(__v.asInstanceOf[js.Any]))
+      Y.foreach(__v => __obj.updateDynamic("Y")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Landmark]
     }
   }
@@ -1962,9 +1962,9 @@ package rekognition {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListCollectionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCollectionsRequest]
     }
   }
@@ -1982,10 +1982,10 @@ package rekognition {
         FaceModelVersions: js.UndefOr[FaceModelVersionList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListCollectionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CollectionIds.foreach(__v => __obj.update("CollectionIds", __v.asInstanceOf[js.Any]))
-      FaceModelVersions.foreach(__v => __obj.update("FaceModelVersions", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CollectionIds.foreach(__v => __obj.updateDynamic("CollectionIds")(__v.asInstanceOf[js.Any]))
+      FaceModelVersions.foreach(__v => __obj.updateDynamic("FaceModelVersions")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCollectionsResponse]
     }
   }
@@ -2003,12 +2003,12 @@ package rekognition {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListFacesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CollectionId" -> CollectionId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFacesRequest]
     }
   }
@@ -2026,10 +2026,10 @@ package rekognition {
         Faces: js.UndefOr[FaceList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListFacesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FaceModelVersion.foreach(__v => __obj.update("FaceModelVersion", __v.asInstanceOf[js.Any]))
-      Faces.foreach(__v => __obj.update("Faces", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FaceModelVersion.foreach(__v => __obj.updateDynamic("FaceModelVersion")(__v.asInstanceOf[js.Any]))
+      Faces.foreach(__v => __obj.updateDynamic("Faces")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFacesResponse]
     }
   }
@@ -2045,9 +2045,9 @@ package rekognition {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListStreamProcessorsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListStreamProcessorsRequest]
     }
   }
@@ -2063,9 +2063,9 @@ package rekognition {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         StreamProcessors: js.UndefOr[StreamProcessorList] = js.undefined
     ): ListStreamProcessorsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      StreamProcessors.foreach(__v => __obj.update("StreamProcessors", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StreamProcessors.foreach(__v => __obj.updateDynamic("StreamProcessors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListStreamProcessorsResponse]
     }
   }
@@ -2086,10 +2086,10 @@ package rekognition {
         Name: js.UndefOr[String] = js.undefined,
         ParentName: js.UndefOr[String] = js.undefined
     ): ModerationLabel = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      ParentName.foreach(__v => __obj.update("ParentName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ParentName.foreach(__v => __obj.updateDynamic("ParentName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModerationLabel]
     }
   }
@@ -2108,9 +2108,9 @@ package rekognition {
         Confidence: js.UndefOr[Percent] = js.undefined,
         Value: js.UndefOr[Boolean] = js.undefined
     ): MouthOpen = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MouthOpen]
     }
   }
@@ -2129,9 +2129,9 @@ package rekognition {
         Confidence: js.UndefOr[Percent] = js.undefined,
         Value: js.UndefOr[Boolean] = js.undefined
     ): Mustache = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Mustache]
     }
   }
@@ -2150,7 +2150,7 @@ package rekognition {
         RoleArn: RoleArn,
         SNSTopicArn: SNSTopicArn
     ): NotificationChannel = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RoleArn"     -> RoleArn.asInstanceOf[js.Any],
         "SNSTopicArn" -> SNSTopicArn.asInstanceOf[js.Any]
       )
@@ -2180,8 +2180,8 @@ package rekognition {
     def apply(
         Name: js.UndefOr[String] = js.undefined
     ): Parent = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Parent]
     }
   }
@@ -2202,10 +2202,10 @@ package rekognition {
         Face: js.UndefOr[FaceDetail] = js.undefined,
         Index: js.UndefOr[PersonIndex] = js.undefined
     ): PersonDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BoundingBox.foreach(__v => __obj.update("BoundingBox", __v.asInstanceOf[js.Any]))
-      Face.foreach(__v => __obj.update("Face", __v.asInstanceOf[js.Any]))
-      Index.foreach(__v => __obj.update("Index", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BoundingBox.foreach(__v => __obj.updateDynamic("BoundingBox")(__v.asInstanceOf[js.Any]))
+      Face.foreach(__v => __obj.updateDynamic("Face")(__v.asInstanceOf[js.Any]))
+      Index.foreach(__v => __obj.updateDynamic("Index")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PersonDetail]
     }
   }
@@ -2225,9 +2225,9 @@ package rekognition {
         Person: js.UndefOr[PersonDetail] = js.undefined,
         Timestamp: js.UndefOr[Timestamp] = js.undefined
     ): PersonDetection = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Person.foreach(__v => __obj.update("Person", __v.asInstanceOf[js.Any]))
-      Timestamp.foreach(__v => __obj.update("Timestamp", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Person.foreach(__v => __obj.updateDynamic("Person")(__v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PersonDetection]
     }
   }
@@ -2248,10 +2248,10 @@ package rekognition {
         Person: js.UndefOr[PersonDetail] = js.undefined,
         Timestamp: js.UndefOr[Timestamp] = js.undefined
     ): PersonMatch = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FaceMatches.foreach(__v => __obj.update("FaceMatches", __v.asInstanceOf[js.Any]))
-      Person.foreach(__v => __obj.update("Person", __v.asInstanceOf[js.Any]))
-      Timestamp.foreach(__v => __obj.update("Timestamp", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FaceMatches.foreach(__v => __obj.updateDynamic("FaceMatches")(__v.asInstanceOf[js.Any]))
+      Person.foreach(__v => __obj.updateDynamic("Person")(__v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PersonMatch]
     }
   }
@@ -2278,9 +2278,9 @@ package rekognition {
         X: js.UndefOr[Float] = js.undefined,
         Y: js.UndefOr[Float] = js.undefined
     ): Point = {
-      val __obj = js.Dictionary.empty[js.Any]
-      X.foreach(__v => __obj.update("X", __v.asInstanceOf[js.Any]))
-      Y.foreach(__v => __obj.update("Y", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      X.foreach(__v => __obj.updateDynamic("X")(__v.asInstanceOf[js.Any]))
+      Y.foreach(__v => __obj.updateDynamic("Y")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Point]
     }
   }
@@ -2301,10 +2301,10 @@ package rekognition {
         Roll: js.UndefOr[Degree] = js.undefined,
         Yaw: js.UndefOr[Degree] = js.undefined
     ): Pose = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Pitch.foreach(__v => __obj.update("Pitch", __v.asInstanceOf[js.Any]))
-      Roll.foreach(__v => __obj.update("Roll", __v.asInstanceOf[js.Any]))
-      Yaw.foreach(__v => __obj.update("Yaw", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Pitch.foreach(__v => __obj.updateDynamic("Pitch")(__v.asInstanceOf[js.Any]))
+      Roll.foreach(__v => __obj.updateDynamic("Roll")(__v.asInstanceOf[js.Any]))
+      Yaw.foreach(__v => __obj.updateDynamic("Yaw")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Pose]
     }
   }
@@ -2338,7 +2338,7 @@ package rekognition {
     def apply(
         Image: Image
     ): RecognizeCelebritiesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Image" -> Image.asInstanceOf[js.Any]
       )
 
@@ -2359,10 +2359,10 @@ package rekognition {
         OrientationCorrection: js.UndefOr[OrientationCorrection] = js.undefined,
         UnrecognizedFaces: js.UndefOr[ComparedFaceList] = js.undefined
     ): RecognizeCelebritiesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CelebrityFaces.foreach(__v => __obj.update("CelebrityFaces", __v.asInstanceOf[js.Any]))
-      OrientationCorrection.foreach(__v => __obj.update("OrientationCorrection", __v.asInstanceOf[js.Any]))
-      UnrecognizedFaces.foreach(__v => __obj.update("UnrecognizedFaces", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CelebrityFaces.foreach(__v => __obj.updateDynamic("CelebrityFaces")(__v.asInstanceOf[js.Any]))
+      OrientationCorrection.foreach(__v => __obj.updateDynamic("OrientationCorrection")(__v.asInstanceOf[js.Any]))
+      UnrecognizedFaces.foreach(__v => __obj.updateDynamic("UnrecognizedFaces")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecognizeCelebritiesResponse]
     }
   }
@@ -2385,10 +2385,10 @@ package rekognition {
         Name: js.UndefOr[S3ObjectName] = js.undefined,
         Version: js.UndefOr[S3ObjectVersion] = js.undefined
     ): S3Object = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Bucket.foreach(__v => __obj.update("Bucket", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Bucket.foreach(__v => __obj.updateDynamic("Bucket")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Object]
     }
   }
@@ -2408,13 +2408,13 @@ package rekognition {
         FaceMatchThreshold: js.UndefOr[Percent] = js.undefined,
         MaxFaces: js.UndefOr[MaxFaces] = js.undefined
     ): SearchFacesByImageRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CollectionId" -> CollectionId.asInstanceOf[js.Any],
         "Image"        -> Image.asInstanceOf[js.Any]
       )
 
-      FaceMatchThreshold.foreach(__v => __obj.update("FaceMatchThreshold", __v.asInstanceOf[js.Any]))
-      MaxFaces.foreach(__v => __obj.update("MaxFaces", __v.asInstanceOf[js.Any]))
+      FaceMatchThreshold.foreach(__v => __obj.updateDynamic("FaceMatchThreshold")(__v.asInstanceOf[js.Any]))
+      MaxFaces.foreach(__v => __obj.updateDynamic("MaxFaces")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchFacesByImageRequest]
     }
   }
@@ -2434,11 +2434,11 @@ package rekognition {
         SearchedFaceBoundingBox: js.UndefOr[BoundingBox] = js.undefined,
         SearchedFaceConfidence: js.UndefOr[Percent] = js.undefined
     ): SearchFacesByImageResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FaceMatches.foreach(__v => __obj.update("FaceMatches", __v.asInstanceOf[js.Any]))
-      FaceModelVersion.foreach(__v => __obj.update("FaceModelVersion", __v.asInstanceOf[js.Any]))
-      SearchedFaceBoundingBox.foreach(__v => __obj.update("SearchedFaceBoundingBox", __v.asInstanceOf[js.Any]))
-      SearchedFaceConfidence.foreach(__v => __obj.update("SearchedFaceConfidence", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FaceMatches.foreach(__v => __obj.updateDynamic("FaceMatches")(__v.asInstanceOf[js.Any]))
+      FaceModelVersion.foreach(__v => __obj.updateDynamic("FaceModelVersion")(__v.asInstanceOf[js.Any]))
+      SearchedFaceBoundingBox.foreach(__v => __obj.updateDynamic("SearchedFaceBoundingBox")(__v.asInstanceOf[js.Any]))
+      SearchedFaceConfidence.foreach(__v => __obj.updateDynamic("SearchedFaceConfidence")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchFacesByImageResponse]
     }
   }
@@ -2458,13 +2458,13 @@ package rekognition {
         FaceMatchThreshold: js.UndefOr[Percent] = js.undefined,
         MaxFaces: js.UndefOr[MaxFaces] = js.undefined
     ): SearchFacesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CollectionId" -> CollectionId.asInstanceOf[js.Any],
         "FaceId"       -> FaceId.asInstanceOf[js.Any]
       )
 
-      FaceMatchThreshold.foreach(__v => __obj.update("FaceMatchThreshold", __v.asInstanceOf[js.Any]))
-      MaxFaces.foreach(__v => __obj.update("MaxFaces", __v.asInstanceOf[js.Any]))
+      FaceMatchThreshold.foreach(__v => __obj.updateDynamic("FaceMatchThreshold")(__v.asInstanceOf[js.Any]))
+      MaxFaces.foreach(__v => __obj.updateDynamic("MaxFaces")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchFacesRequest]
     }
   }
@@ -2482,10 +2482,10 @@ package rekognition {
         FaceModelVersion: js.UndefOr[String] = js.undefined,
         SearchedFaceId: js.UndefOr[FaceId] = js.undefined
     ): SearchFacesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FaceMatches.foreach(__v => __obj.update("FaceMatches", __v.asInstanceOf[js.Any]))
-      FaceModelVersion.foreach(__v => __obj.update("FaceModelVersion", __v.asInstanceOf[js.Any]))
-      SearchedFaceId.foreach(__v => __obj.update("SearchedFaceId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FaceMatches.foreach(__v => __obj.updateDynamic("FaceMatches")(__v.asInstanceOf[js.Any]))
+      FaceModelVersion.foreach(__v => __obj.updateDynamic("FaceModelVersion")(__v.asInstanceOf[js.Any]))
+      SearchedFaceId.foreach(__v => __obj.updateDynamic("SearchedFaceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchFacesResponse]
     }
   }
@@ -2504,9 +2504,9 @@ package rekognition {
         Confidence: js.UndefOr[Percent] = js.undefined,
         Value: js.UndefOr[Boolean] = js.undefined
     ): Smile = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Smile]
     }
   }
@@ -2526,13 +2526,13 @@ package rekognition {
         JobTag: js.UndefOr[JobTag] = js.undefined,
         NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined
     ): StartCelebrityRecognitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Video" -> Video.asInstanceOf[js.Any]
       )
 
-      ClientRequestToken.foreach(__v => __obj.update("ClientRequestToken", __v.asInstanceOf[js.Any]))
-      JobTag.foreach(__v => __obj.update("JobTag", __v.asInstanceOf[js.Any]))
-      NotificationChannel.foreach(__v => __obj.update("NotificationChannel", __v.asInstanceOf[js.Any]))
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      JobTag.foreach(__v => __obj.updateDynamic("JobTag")(__v.asInstanceOf[js.Any]))
+      NotificationChannel.foreach(__v => __obj.updateDynamic("NotificationChannel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartCelebrityRecognitionRequest]
     }
   }
@@ -2546,8 +2546,8 @@ package rekognition {
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined
     ): StartCelebrityRecognitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobId.foreach(__v => __obj.update("JobId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartCelebrityRecognitionResponse]
     }
   }
@@ -2569,14 +2569,14 @@ package rekognition {
         MinConfidence: js.UndefOr[Percent] = js.undefined,
         NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined
     ): StartContentModerationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Video" -> Video.asInstanceOf[js.Any]
       )
 
-      ClientRequestToken.foreach(__v => __obj.update("ClientRequestToken", __v.asInstanceOf[js.Any]))
-      JobTag.foreach(__v => __obj.update("JobTag", __v.asInstanceOf[js.Any]))
-      MinConfidence.foreach(__v => __obj.update("MinConfidence", __v.asInstanceOf[js.Any]))
-      NotificationChannel.foreach(__v => __obj.update("NotificationChannel", __v.asInstanceOf[js.Any]))
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      JobTag.foreach(__v => __obj.updateDynamic("JobTag")(__v.asInstanceOf[js.Any]))
+      MinConfidence.foreach(__v => __obj.updateDynamic("MinConfidence")(__v.asInstanceOf[js.Any]))
+      NotificationChannel.foreach(__v => __obj.updateDynamic("NotificationChannel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartContentModerationRequest]
     }
   }
@@ -2590,8 +2590,8 @@ package rekognition {
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined
     ): StartContentModerationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobId.foreach(__v => __obj.update("JobId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartContentModerationResponse]
     }
   }
@@ -2613,14 +2613,14 @@ package rekognition {
         JobTag: js.UndefOr[JobTag] = js.undefined,
         NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined
     ): StartFaceDetectionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Video" -> Video.asInstanceOf[js.Any]
       )
 
-      ClientRequestToken.foreach(__v => __obj.update("ClientRequestToken", __v.asInstanceOf[js.Any]))
-      FaceAttributes.foreach(__v => __obj.update("FaceAttributes", __v.asInstanceOf[js.Any]))
-      JobTag.foreach(__v => __obj.update("JobTag", __v.asInstanceOf[js.Any]))
-      NotificationChannel.foreach(__v => __obj.update("NotificationChannel", __v.asInstanceOf[js.Any]))
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      FaceAttributes.foreach(__v => __obj.updateDynamic("FaceAttributes")(__v.asInstanceOf[js.Any]))
+      JobTag.foreach(__v => __obj.updateDynamic("JobTag")(__v.asInstanceOf[js.Any]))
+      NotificationChannel.foreach(__v => __obj.updateDynamic("NotificationChannel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartFaceDetectionRequest]
     }
   }
@@ -2634,8 +2634,8 @@ package rekognition {
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined
     ): StartFaceDetectionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobId.foreach(__v => __obj.update("JobId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartFaceDetectionResponse]
     }
   }
@@ -2659,15 +2659,15 @@ package rekognition {
         JobTag: js.UndefOr[JobTag] = js.undefined,
         NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined
     ): StartFaceSearchRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CollectionId" -> CollectionId.asInstanceOf[js.Any],
         "Video"        -> Video.asInstanceOf[js.Any]
       )
 
-      ClientRequestToken.foreach(__v => __obj.update("ClientRequestToken", __v.asInstanceOf[js.Any]))
-      FaceMatchThreshold.foreach(__v => __obj.update("FaceMatchThreshold", __v.asInstanceOf[js.Any]))
-      JobTag.foreach(__v => __obj.update("JobTag", __v.asInstanceOf[js.Any]))
-      NotificationChannel.foreach(__v => __obj.update("NotificationChannel", __v.asInstanceOf[js.Any]))
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      FaceMatchThreshold.foreach(__v => __obj.updateDynamic("FaceMatchThreshold")(__v.asInstanceOf[js.Any]))
+      JobTag.foreach(__v => __obj.updateDynamic("JobTag")(__v.asInstanceOf[js.Any]))
+      NotificationChannel.foreach(__v => __obj.updateDynamic("NotificationChannel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartFaceSearchRequest]
     }
   }
@@ -2681,8 +2681,8 @@ package rekognition {
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined
     ): StartFaceSearchResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobId.foreach(__v => __obj.update("JobId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartFaceSearchResponse]
     }
   }
@@ -2704,14 +2704,14 @@ package rekognition {
         MinConfidence: js.UndefOr[Percent] = js.undefined,
         NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined
     ): StartLabelDetectionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Video" -> Video.asInstanceOf[js.Any]
       )
 
-      ClientRequestToken.foreach(__v => __obj.update("ClientRequestToken", __v.asInstanceOf[js.Any]))
-      JobTag.foreach(__v => __obj.update("JobTag", __v.asInstanceOf[js.Any]))
-      MinConfidence.foreach(__v => __obj.update("MinConfidence", __v.asInstanceOf[js.Any]))
-      NotificationChannel.foreach(__v => __obj.update("NotificationChannel", __v.asInstanceOf[js.Any]))
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      JobTag.foreach(__v => __obj.updateDynamic("JobTag")(__v.asInstanceOf[js.Any]))
+      MinConfidence.foreach(__v => __obj.updateDynamic("MinConfidence")(__v.asInstanceOf[js.Any]))
+      NotificationChannel.foreach(__v => __obj.updateDynamic("NotificationChannel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartLabelDetectionRequest]
     }
   }
@@ -2725,8 +2725,8 @@ package rekognition {
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined
     ): StartLabelDetectionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobId.foreach(__v => __obj.update("JobId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartLabelDetectionResponse]
     }
   }
@@ -2746,13 +2746,13 @@ package rekognition {
         JobTag: js.UndefOr[JobTag] = js.undefined,
         NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined
     ): StartPersonTrackingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Video" -> Video.asInstanceOf[js.Any]
       )
 
-      ClientRequestToken.foreach(__v => __obj.update("ClientRequestToken", __v.asInstanceOf[js.Any]))
-      JobTag.foreach(__v => __obj.update("JobTag", __v.asInstanceOf[js.Any]))
-      NotificationChannel.foreach(__v => __obj.update("NotificationChannel", __v.asInstanceOf[js.Any]))
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      JobTag.foreach(__v => __obj.updateDynamic("JobTag")(__v.asInstanceOf[js.Any]))
+      NotificationChannel.foreach(__v => __obj.updateDynamic("NotificationChannel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartPersonTrackingRequest]
     }
   }
@@ -2766,8 +2766,8 @@ package rekognition {
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined
     ): StartPersonTrackingResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobId.foreach(__v => __obj.update("JobId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartPersonTrackingResponse]
     }
   }
@@ -2781,7 +2781,7 @@ package rekognition {
     def apply(
         Name: StreamProcessorName
     ): StartStreamProcessorRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -2795,7 +2795,7 @@ package rekognition {
   object StartStreamProcessorResponse {
     def apply(
         ): StartStreamProcessorResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartStreamProcessorResponse]
     }
@@ -2810,7 +2810,7 @@ package rekognition {
     def apply(
         Name: StreamProcessorName
     ): StopStreamProcessorRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -2824,7 +2824,7 @@ package rekognition {
   object StopStreamProcessorResponse {
     def apply(
         ): StopStreamProcessorResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopStreamProcessorResponse]
     }
@@ -2844,9 +2844,9 @@ package rekognition {
         Name: js.UndefOr[StreamProcessorName] = js.undefined,
         Status: js.UndefOr[StreamProcessorStatus] = js.undefined
     ): StreamProcessor = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StreamProcessor]
     }
   }
@@ -2863,8 +2863,8 @@ package rekognition {
     def apply(
         KinesisVideoStream: js.UndefOr[KinesisVideoStream] = js.undefined
     ): StreamProcessorInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      KinesisVideoStream.foreach(__v => __obj.update("KinesisVideoStream", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      KinesisVideoStream.foreach(__v => __obj.updateDynamic("KinesisVideoStream")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StreamProcessorInput]
     }
   }
@@ -2881,8 +2881,8 @@ package rekognition {
     def apply(
         KinesisDataStream: js.UndefOr[KinesisDataStream] = js.undefined
     ): StreamProcessorOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      KinesisDataStream.foreach(__v => __obj.update("KinesisDataStream", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      KinesisDataStream.foreach(__v => __obj.updateDynamic("KinesisDataStream")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StreamProcessorOutput]
     }
   }
@@ -2899,8 +2899,8 @@ package rekognition {
     def apply(
         FaceSearch: js.UndefOr[FaceSearchSettings] = js.undefined
     ): StreamProcessorSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FaceSearch.foreach(__v => __obj.update("FaceSearch", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FaceSearch.foreach(__v => __obj.updateDynamic("FaceSearch")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StreamProcessorSettings]
     }
   }
@@ -2929,9 +2929,9 @@ package rekognition {
         Confidence: js.UndefOr[Percent] = js.undefined,
         Value: js.UndefOr[Boolean] = js.undefined
     ): Sunglasses = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Sunglasses]
     }
   }
@@ -2961,13 +2961,13 @@ package rekognition {
         ParentId: js.UndefOr[UInteger] = js.undefined,
         Type: js.UndefOr[TextTypes] = js.undefined
     ): TextDetection = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
-      DetectedText.foreach(__v => __obj.update("DetectedText", __v.asInstanceOf[js.Any]))
-      Geometry.foreach(__v => __obj.update("Geometry", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      ParentId.foreach(__v => __obj.update("ParentId", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      DetectedText.foreach(__v => __obj.updateDynamic("DetectedText")(__v.asInstanceOf[js.Any]))
+      Geometry.foreach(__v => __obj.updateDynamic("Geometry")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      ParentId.foreach(__v => __obj.updateDynamic("ParentId")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TextDetection]
     }
   }
@@ -2993,9 +2993,9 @@ package rekognition {
         FaceDetail: js.UndefOr[FaceDetail] = js.undefined,
         Reasons: js.UndefOr[Reasons] = js.undefined
     ): UnindexedFace = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FaceDetail.foreach(__v => __obj.update("FaceDetail", __v.asInstanceOf[js.Any]))
-      Reasons.foreach(__v => __obj.update("Reasons", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FaceDetail.foreach(__v => __obj.updateDynamic("FaceDetail")(__v.asInstanceOf[js.Any]))
+      Reasons.foreach(__v => __obj.updateDynamic("Reasons")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UnindexedFace]
     }
   }
@@ -3012,8 +3012,8 @@ package rekognition {
     def apply(
         S3Object: js.UndefOr[S3Object] = js.undefined
     ): Video = {
-      val __obj = js.Dictionary.empty[js.Any]
-      S3Object.foreach(__v => __obj.update("S3Object", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      S3Object.foreach(__v => __obj.updateDynamic("S3Object")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Video]
     }
   }
@@ -3048,13 +3048,13 @@ package rekognition {
         FrameRate: js.UndefOr[Float] = js.undefined,
         FrameWidth: js.UndefOr[ULong] = js.undefined
     ): VideoMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Codec.foreach(__v => __obj.update("Codec", __v.asInstanceOf[js.Any]))
-      DurationMillis.foreach(__v => __obj.update("DurationMillis", __v.asInstanceOf[js.Any]))
-      Format.foreach(__v => __obj.update("Format", __v.asInstanceOf[js.Any]))
-      FrameHeight.foreach(__v => __obj.update("FrameHeight", __v.asInstanceOf[js.Any]))
-      FrameRate.foreach(__v => __obj.update("FrameRate", __v.asInstanceOf[js.Any]))
-      FrameWidth.foreach(__v => __obj.update("FrameWidth", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Codec.foreach(__v => __obj.updateDynamic("Codec")(__v.asInstanceOf[js.Any]))
+      DurationMillis.foreach(__v => __obj.updateDynamic("DurationMillis")(__v.asInstanceOf[js.Any]))
+      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
+      FrameHeight.foreach(__v => __obj.updateDynamic("FrameHeight")(__v.asInstanceOf[js.Any]))
+      FrameRate.foreach(__v => __obj.updateDynamic("FrameRate")(__v.asInstanceOf[js.Any]))
+      FrameWidth.foreach(__v => __obj.updateDynamic("FrameWidth")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VideoMetadata]
     }
   }

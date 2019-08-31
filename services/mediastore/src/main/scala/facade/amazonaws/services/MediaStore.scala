@@ -122,13 +122,13 @@ package mediastore {
         Name: js.UndefOr[ContainerName] = js.undefined,
         Status: js.UndefOr[ContainerStatus] = js.undefined
     ): Container = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ARN.foreach(__v => __obj.update("ARN", __v.asInstanceOf[js.Any]))
-      AccessLoggingEnabled.foreach(__v => __obj.update("AccessLoggingEnabled", __v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      Endpoint.foreach(__v => __obj.update("Endpoint", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
+      AccessLoggingEnabled.foreach(__v => __obj.updateDynamic("AccessLoggingEnabled")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Container]
     }
   }
@@ -161,14 +161,14 @@ package mediastore {
         ExposeHeaders: js.UndefOr[ExposeHeaders] = js.undefined,
         MaxAgeSeconds: js.UndefOr[MaxAgeSeconds] = js.undefined
     ): CorsRule = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AllowedHeaders" -> AllowedHeaders.asInstanceOf[js.Any],
         "AllowedOrigins" -> AllowedOrigins.asInstanceOf[js.Any]
       )
 
-      AllowedMethods.foreach(__v => __obj.update("AllowedMethods", __v.asInstanceOf[js.Any]))
-      ExposeHeaders.foreach(__v => __obj.update("ExposeHeaders", __v.asInstanceOf[js.Any]))
-      MaxAgeSeconds.foreach(__v => __obj.update("MaxAgeSeconds", __v.asInstanceOf[js.Any]))
+      AllowedMethods.foreach(__v => __obj.updateDynamic("AllowedMethods")(__v.asInstanceOf[js.Any]))
+      ExposeHeaders.foreach(__v => __obj.updateDynamic("ExposeHeaders")(__v.asInstanceOf[js.Any]))
+      MaxAgeSeconds.foreach(__v => __obj.updateDynamic("MaxAgeSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CorsRule]
     }
   }
@@ -184,11 +184,11 @@ package mediastore {
         ContainerName: ContainerName,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateContainerInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
       )
 
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateContainerInput]
     }
   }
@@ -202,7 +202,7 @@ package mediastore {
     def apply(
         Container: Container
     ): CreateContainerOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Container" -> Container.asInstanceOf[js.Any]
       )
 
@@ -219,7 +219,7 @@ package mediastore {
     def apply(
         ContainerName: ContainerName
     ): DeleteContainerInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
       )
 
@@ -233,7 +233,7 @@ package mediastore {
   object DeleteContainerOutput {
     def apply(
         ): DeleteContainerOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteContainerOutput]
     }
@@ -248,7 +248,7 @@ package mediastore {
     def apply(
         ContainerName: ContainerName
     ): DeleteContainerPolicyInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
       )
 
@@ -262,7 +262,7 @@ package mediastore {
   object DeleteContainerPolicyOutput {
     def apply(
         ): DeleteContainerPolicyOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteContainerPolicyOutput]
     }
@@ -277,7 +277,7 @@ package mediastore {
     def apply(
         ContainerName: ContainerName
     ): DeleteCorsPolicyInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
       )
 
@@ -291,7 +291,7 @@ package mediastore {
   object DeleteCorsPolicyOutput {
     def apply(
         ): DeleteCorsPolicyOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteCorsPolicyOutput]
     }
@@ -306,7 +306,7 @@ package mediastore {
     def apply(
         ContainerName: ContainerName
     ): DeleteLifecyclePolicyInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
       )
 
@@ -320,7 +320,7 @@ package mediastore {
   object DeleteLifecyclePolicyOutput {
     def apply(
         ): DeleteLifecyclePolicyOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteLifecyclePolicyOutput]
     }
@@ -335,8 +335,8 @@ package mediastore {
     def apply(
         ContainerName: js.UndefOr[ContainerName] = js.undefined
     ): DescribeContainerInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ContainerName.foreach(__v => __obj.update("ContainerName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ContainerName.foreach(__v => __obj.updateDynamic("ContainerName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeContainerInput]
     }
   }
@@ -350,8 +350,8 @@ package mediastore {
     def apply(
         Container: js.UndefOr[Container] = js.undefined
     ): DescribeContainerOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Container.foreach(__v => __obj.update("Container", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Container.foreach(__v => __obj.updateDynamic("Container")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeContainerOutput]
     }
   }
@@ -365,7 +365,7 @@ package mediastore {
     def apply(
         ContainerName: ContainerName
     ): GetContainerPolicyInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
       )
 
@@ -382,7 +382,7 @@ package mediastore {
     def apply(
         Policy: ContainerPolicy
     ): GetContainerPolicyOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Policy" -> Policy.asInstanceOf[js.Any]
       )
 
@@ -399,7 +399,7 @@ package mediastore {
     def apply(
         ContainerName: ContainerName
     ): GetCorsPolicyInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
       )
 
@@ -416,7 +416,7 @@ package mediastore {
     def apply(
         CorsPolicy: CorsPolicy
     ): GetCorsPolicyOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CorsPolicy" -> CorsPolicy.asInstanceOf[js.Any]
       )
 
@@ -433,7 +433,7 @@ package mediastore {
     def apply(
         ContainerName: ContainerName
     ): GetLifecyclePolicyInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
       )
 
@@ -450,7 +450,7 @@ package mediastore {
     def apply(
         LifecyclePolicy: LifecyclePolicy
     ): GetLifecyclePolicyOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LifecyclePolicy" -> LifecyclePolicy.asInstanceOf[js.Any]
       )
 
@@ -469,9 +469,9 @@ package mediastore {
         MaxResults: js.UndefOr[ContainerListLimit] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListContainersInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListContainersInput]
     }
   }
@@ -487,11 +487,11 @@ package mediastore {
         Containers: ContainerList,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListContainersOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Containers" -> Containers.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListContainersOutput]
     }
   }
@@ -505,7 +505,7 @@ package mediastore {
     def apply(
         Resource: ContainerARN
     ): ListTagsForResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Resource" -> Resource.asInstanceOf[js.Any]
       )
 
@@ -522,8 +522,8 @@ package mediastore {
     def apply(
         Tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsForResourceOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceOutput]
     }
   }
@@ -548,7 +548,7 @@ package mediastore {
         ContainerName: ContainerName,
         Policy: ContainerPolicy
     ): PutContainerPolicyInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ContainerName" -> ContainerName.asInstanceOf[js.Any],
         "Policy"        -> Policy.asInstanceOf[js.Any]
       )
@@ -563,7 +563,7 @@ package mediastore {
   object PutContainerPolicyOutput {
     def apply(
         ): PutContainerPolicyOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutContainerPolicyOutput]
     }
@@ -580,7 +580,7 @@ package mediastore {
         ContainerName: ContainerName,
         CorsPolicy: CorsPolicy
     ): PutCorsPolicyInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ContainerName" -> ContainerName.asInstanceOf[js.Any],
         "CorsPolicy"    -> CorsPolicy.asInstanceOf[js.Any]
       )
@@ -595,7 +595,7 @@ package mediastore {
   object PutCorsPolicyOutput {
     def apply(
         ): PutCorsPolicyOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutCorsPolicyOutput]
     }
@@ -612,7 +612,7 @@ package mediastore {
         ContainerName: ContainerName,
         LifecyclePolicy: LifecyclePolicy
     ): PutLifecyclePolicyInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ContainerName"   -> ContainerName.asInstanceOf[js.Any],
         "LifecyclePolicy" -> LifecyclePolicy.asInstanceOf[js.Any]
       )
@@ -627,7 +627,7 @@ package mediastore {
   object PutLifecyclePolicyOutput {
     def apply(
         ): PutLifecyclePolicyOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutLifecyclePolicyOutput]
     }
@@ -642,7 +642,7 @@ package mediastore {
     def apply(
         ContainerName: ContainerName
     ): StartAccessLoggingInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
       )
 
@@ -656,7 +656,7 @@ package mediastore {
   object StartAccessLoggingOutput {
     def apply(
         ): StartAccessLoggingOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartAccessLoggingOutput]
     }
@@ -671,7 +671,7 @@ package mediastore {
     def apply(
         ContainerName: ContainerName
     ): StopAccessLoggingInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ContainerName" -> ContainerName.asInstanceOf[js.Any]
       )
 
@@ -685,7 +685,7 @@ package mediastore {
   object StopAccessLoggingOutput {
     def apply(
         ): StopAccessLoggingOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopAccessLoggingOutput]
     }
@@ -705,9 +705,9 @@ package mediastore {
         Key: js.UndefOr[TagKey] = js.undefined,
         Value: js.UndefOr[TagValue] = js.undefined
     ): Tag = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tag]
     }
   }
@@ -723,7 +723,7 @@ package mediastore {
         Resource: ContainerARN,
         Tags: TagList
     ): TagResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Resource" -> Resource.asInstanceOf[js.Any],
         "Tags"     -> Tags.asInstanceOf[js.Any]
       )
@@ -738,7 +738,7 @@ package mediastore {
   object TagResourceOutput {
     def apply(
         ): TagResourceOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceOutput]
     }
@@ -755,7 +755,7 @@ package mediastore {
         Resource: ContainerARN,
         TagKeys: TagKeyList
     ): UntagResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Resource" -> Resource.asInstanceOf[js.Any],
         "TagKeys"  -> TagKeys.asInstanceOf[js.Any]
       )
@@ -770,7 +770,7 @@ package mediastore {
   object UntagResourceOutput {
     def apply(
         ): UntagResourceOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceOutput]
     }

@@ -164,10 +164,10 @@ package cognitoidentity {
         ProviderName: js.UndefOr[CognitoIdentityProviderName] = js.undefined,
         ServerSideTokenCheck: js.UndefOr[CognitoIdentityProviderTokenCheck] = js.undefined
     ): CognitoIdentityProvider = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClientId.foreach(__v => __obj.update("ClientId", __v.asInstanceOf[js.Any]))
-      ProviderName.foreach(__v => __obj.update("ProviderName", __v.asInstanceOf[js.Any]))
-      ServerSideTokenCheck.foreach(__v => __obj.update("ServerSideTokenCheck", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClientId.foreach(__v => __obj.updateDynamic("ClientId")(__v.asInstanceOf[js.Any]))
+      ProviderName.foreach(__v => __obj.updateDynamic("ProviderName")(__v.asInstanceOf[js.Any]))
+      ServerSideTokenCheck.foreach(__v => __obj.updateDynamic("ServerSideTokenCheck")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CognitoIdentityProvider]
     }
   }
@@ -198,17 +198,19 @@ package cognitoidentity {
         SamlProviderARNs: js.UndefOr[SAMLProviderList] = js.undefined,
         SupportedLoginProviders: js.UndefOr[IdentityProviders] = js.undefined
     ): CreateIdentityPoolInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AllowUnauthenticatedIdentities" -> AllowUnauthenticatedIdentities.asInstanceOf[js.Any],
         "IdentityPoolName"               -> IdentityPoolName.asInstanceOf[js.Any]
       )
 
-      CognitoIdentityProviders.foreach(__v => __obj.update("CognitoIdentityProviders", __v.asInstanceOf[js.Any]))
-      DeveloperProviderName.foreach(__v => __obj.update("DeveloperProviderName", __v.asInstanceOf[js.Any]))
-      IdentityPoolTags.foreach(__v => __obj.update("IdentityPoolTags", __v.asInstanceOf[js.Any]))
-      OpenIdConnectProviderARNs.foreach(__v => __obj.update("OpenIdConnectProviderARNs", __v.asInstanceOf[js.Any]))
-      SamlProviderARNs.foreach(__v => __obj.update("SamlProviderARNs", __v.asInstanceOf[js.Any]))
-      SupportedLoginProviders.foreach(__v => __obj.update("SupportedLoginProviders", __v.asInstanceOf[js.Any]))
+      CognitoIdentityProviders.foreach(__v => __obj.updateDynamic("CognitoIdentityProviders")(__v.asInstanceOf[js.Any]))
+      DeveloperProviderName.foreach(__v => __obj.updateDynamic("DeveloperProviderName")(__v.asInstanceOf[js.Any]))
+      IdentityPoolTags.foreach(__v => __obj.updateDynamic("IdentityPoolTags")(__v.asInstanceOf[js.Any]))
+      OpenIdConnectProviderARNs.foreach(
+        __v => __obj.updateDynamic("OpenIdConnectProviderARNs")(__v.asInstanceOf[js.Any])
+      )
+      SamlProviderARNs.foreach(__v => __obj.updateDynamic("SamlProviderARNs")(__v.asInstanceOf[js.Any]))
+      SupportedLoginProviders.foreach(__v => __obj.updateDynamic("SupportedLoginProviders")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateIdentityPoolInput]
     }
   }
@@ -231,11 +233,11 @@ package cognitoidentity {
         SecretKey: js.UndefOr[SecretKeyString] = js.undefined,
         SessionToken: js.UndefOr[SessionTokenString] = js.undefined
     ): Credentials = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccessKeyId.foreach(__v => __obj.update("AccessKeyId", __v.asInstanceOf[js.Any]))
-      Expiration.foreach(__v => __obj.update("Expiration", __v.asInstanceOf[js.Any]))
-      SecretKey.foreach(__v => __obj.update("SecretKey", __v.asInstanceOf[js.Any]))
-      SessionToken.foreach(__v => __obj.update("SessionToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccessKeyId.foreach(__v => __obj.updateDynamic("AccessKeyId")(__v.asInstanceOf[js.Any]))
+      Expiration.foreach(__v => __obj.updateDynamic("Expiration")(__v.asInstanceOf[js.Any]))
+      SecretKey.foreach(__v => __obj.updateDynamic("SecretKey")(__v.asInstanceOf[js.Any]))
+      SessionToken.foreach(__v => __obj.updateDynamic("SessionToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Credentials]
     }
   }
@@ -252,7 +254,7 @@ package cognitoidentity {
     def apply(
         IdentityIdsToDelete: IdentityIdList
     ): DeleteIdentitiesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdentityIdsToDelete" -> IdentityIdsToDelete.asInstanceOf[js.Any]
       )
 
@@ -272,8 +274,8 @@ package cognitoidentity {
     def apply(
         UnprocessedIdentityIds: js.UndefOr[UnprocessedIdentityIdList] = js.undefined
     ): DeleteIdentitiesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      UnprocessedIdentityIds.foreach(__v => __obj.update("UnprocessedIdentityIds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      UnprocessedIdentityIds.foreach(__v => __obj.updateDynamic("UnprocessedIdentityIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteIdentitiesResponse]
     }
   }
@@ -290,7 +292,7 @@ package cognitoidentity {
     def apply(
         IdentityPoolId: IdentityPoolId
     ): DeleteIdentityPoolInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
 
@@ -310,7 +312,7 @@ package cognitoidentity {
     def apply(
         IdentityId: IdentityId
     ): DescribeIdentityInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdentityId" -> IdentityId.asInstanceOf[js.Any]
       )
 
@@ -330,7 +332,7 @@ package cognitoidentity {
     def apply(
         IdentityPoolId: IdentityPoolId
     ): DescribeIdentityPoolInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
 
@@ -361,12 +363,12 @@ package cognitoidentity {
         CustomRoleArn: js.UndefOr[ARNString] = js.undefined,
         Logins: js.UndefOr[LoginsMap] = js.undefined
     ): GetCredentialsForIdentityInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdentityId" -> IdentityId.asInstanceOf[js.Any]
       )
 
-      CustomRoleArn.foreach(__v => __obj.update("CustomRoleArn", __v.asInstanceOf[js.Any]))
-      Logins.foreach(__v => __obj.update("Logins", __v.asInstanceOf[js.Any]))
+      CustomRoleArn.foreach(__v => __obj.updateDynamic("CustomRoleArn")(__v.asInstanceOf[js.Any]))
+      Logins.foreach(__v => __obj.updateDynamic("Logins")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCredentialsForIdentityInput]
     }
   }
@@ -385,9 +387,9 @@ package cognitoidentity {
         Credentials: js.UndefOr[Credentials] = js.undefined,
         IdentityId: js.UndefOr[IdentityId] = js.undefined
     ): GetCredentialsForIdentityResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Credentials.foreach(__v => __obj.update("Credentials", __v.asInstanceOf[js.Any]))
-      IdentityId.foreach(__v => __obj.update("IdentityId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Credentials.foreach(__v => __obj.updateDynamic("Credentials")(__v.asInstanceOf[js.Any]))
+      IdentityId.foreach(__v => __obj.updateDynamic("IdentityId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCredentialsForIdentityResponse]
     }
   }
@@ -408,12 +410,12 @@ package cognitoidentity {
         AccountId: js.UndefOr[AccountId] = js.undefined,
         Logins: js.UndefOr[LoginsMap] = js.undefined
     ): GetIdInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
 
-      AccountId.foreach(__v => __obj.update("AccountId", __v.asInstanceOf[js.Any]))
-      Logins.foreach(__v => __obj.update("Logins", __v.asInstanceOf[js.Any]))
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      Logins.foreach(__v => __obj.updateDynamic("Logins")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetIdInput]
     }
   }
@@ -430,8 +432,8 @@ package cognitoidentity {
     def apply(
         IdentityId: js.UndefOr[IdentityId] = js.undefined
     ): GetIdResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IdentityId.foreach(__v => __obj.update("IdentityId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IdentityId.foreach(__v => __obj.updateDynamic("IdentityId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetIdResponse]
     }
   }
@@ -448,7 +450,7 @@ package cognitoidentity {
     def apply(
         IdentityPoolId: IdentityPoolId
     ): GetIdentityPoolRolesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
 
@@ -472,10 +474,10 @@ package cognitoidentity {
         RoleMappings: js.UndefOr[RoleMappingMap] = js.undefined,
         Roles: js.UndefOr[RolesMap] = js.undefined
     ): GetIdentityPoolRolesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IdentityPoolId.foreach(__v => __obj.update("IdentityPoolId", __v.asInstanceOf[js.Any]))
-      RoleMappings.foreach(__v => __obj.update("RoleMappings", __v.asInstanceOf[js.Any]))
-      Roles.foreach(__v => __obj.update("Roles", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IdentityPoolId.foreach(__v => __obj.updateDynamic("IdentityPoolId")(__v.asInstanceOf[js.Any]))
+      RoleMappings.foreach(__v => __obj.updateDynamic("RoleMappings")(__v.asInstanceOf[js.Any]))
+      Roles.foreach(__v => __obj.updateDynamic("Roles")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetIdentityPoolRolesResponse]
     }
   }
@@ -498,13 +500,13 @@ package cognitoidentity {
         IdentityId: js.UndefOr[IdentityId] = js.undefined,
         TokenDuration: js.UndefOr[TokenDuration] = js.undefined
     ): GetOpenIdTokenForDeveloperIdentityInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any],
         "Logins"         -> Logins.asInstanceOf[js.Any]
       )
 
-      IdentityId.foreach(__v => __obj.update("IdentityId", __v.asInstanceOf[js.Any]))
-      TokenDuration.foreach(__v => __obj.update("TokenDuration", __v.asInstanceOf[js.Any]))
+      IdentityId.foreach(__v => __obj.updateDynamic("IdentityId")(__v.asInstanceOf[js.Any]))
+      TokenDuration.foreach(__v => __obj.updateDynamic("TokenDuration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetOpenIdTokenForDeveloperIdentityInput]
     }
   }
@@ -523,9 +525,9 @@ package cognitoidentity {
         IdentityId: js.UndefOr[IdentityId] = js.undefined,
         Token: js.UndefOr[OIDCToken] = js.undefined
     ): GetOpenIdTokenForDeveloperIdentityResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IdentityId.foreach(__v => __obj.update("IdentityId", __v.asInstanceOf[js.Any]))
-      Token.foreach(__v => __obj.update("Token", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IdentityId.foreach(__v => __obj.updateDynamic("IdentityId")(__v.asInstanceOf[js.Any]))
+      Token.foreach(__v => __obj.updateDynamic("Token")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetOpenIdTokenForDeveloperIdentityResponse]
     }
   }
@@ -544,11 +546,11 @@ package cognitoidentity {
         IdentityId: IdentityId,
         Logins: js.UndefOr[LoginsMap] = js.undefined
     ): GetOpenIdTokenInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdentityId" -> IdentityId.asInstanceOf[js.Any]
       )
 
-      Logins.foreach(__v => __obj.update("Logins", __v.asInstanceOf[js.Any]))
+      Logins.foreach(__v => __obj.updateDynamic("Logins")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetOpenIdTokenInput]
     }
   }
@@ -567,9 +569,9 @@ package cognitoidentity {
         IdentityId: js.UndefOr[IdentityId] = js.undefined,
         Token: js.UndefOr[OIDCToken] = js.undefined
     ): GetOpenIdTokenResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IdentityId.foreach(__v => __obj.update("IdentityId", __v.asInstanceOf[js.Any]))
-      Token.foreach(__v => __obj.update("Token", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IdentityId.foreach(__v => __obj.updateDynamic("IdentityId")(__v.asInstanceOf[js.Any]))
+      Token.foreach(__v => __obj.updateDynamic("Token")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetOpenIdTokenResponse]
     }
   }
@@ -592,11 +594,11 @@ package cognitoidentity {
         LastModifiedDate: js.UndefOr[DateType] = js.undefined,
         Logins: js.UndefOr[LoginsList] = js.undefined
     ): IdentityDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      IdentityId.foreach(__v => __obj.update("IdentityId", __v.asInstanceOf[js.Any]))
-      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
-      Logins.foreach(__v => __obj.update("Logins", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      IdentityId.foreach(__v => __obj.updateDynamic("IdentityId")(__v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
+      Logins.foreach(__v => __obj.updateDynamic("Logins")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IdentityDescription]
     }
   }
@@ -629,18 +631,20 @@ package cognitoidentity {
         SamlProviderARNs: js.UndefOr[SAMLProviderList] = js.undefined,
         SupportedLoginProviders: js.UndefOr[IdentityProviders] = js.undefined
     ): IdentityPool = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AllowUnauthenticatedIdentities" -> AllowUnauthenticatedIdentities.asInstanceOf[js.Any],
         "IdentityPoolId"                 -> IdentityPoolId.asInstanceOf[js.Any],
         "IdentityPoolName"               -> IdentityPoolName.asInstanceOf[js.Any]
       )
 
-      CognitoIdentityProviders.foreach(__v => __obj.update("CognitoIdentityProviders", __v.asInstanceOf[js.Any]))
-      DeveloperProviderName.foreach(__v => __obj.update("DeveloperProviderName", __v.asInstanceOf[js.Any]))
-      IdentityPoolTags.foreach(__v => __obj.update("IdentityPoolTags", __v.asInstanceOf[js.Any]))
-      OpenIdConnectProviderARNs.foreach(__v => __obj.update("OpenIdConnectProviderARNs", __v.asInstanceOf[js.Any]))
-      SamlProviderARNs.foreach(__v => __obj.update("SamlProviderARNs", __v.asInstanceOf[js.Any]))
-      SupportedLoginProviders.foreach(__v => __obj.update("SupportedLoginProviders", __v.asInstanceOf[js.Any]))
+      CognitoIdentityProviders.foreach(__v => __obj.updateDynamic("CognitoIdentityProviders")(__v.asInstanceOf[js.Any]))
+      DeveloperProviderName.foreach(__v => __obj.updateDynamic("DeveloperProviderName")(__v.asInstanceOf[js.Any]))
+      IdentityPoolTags.foreach(__v => __obj.updateDynamic("IdentityPoolTags")(__v.asInstanceOf[js.Any]))
+      OpenIdConnectProviderARNs.foreach(
+        __v => __obj.updateDynamic("OpenIdConnectProviderARNs")(__v.asInstanceOf[js.Any])
+      )
+      SamlProviderARNs.foreach(__v => __obj.updateDynamic("SamlProviderARNs")(__v.asInstanceOf[js.Any]))
+      SupportedLoginProviders.foreach(__v => __obj.updateDynamic("SupportedLoginProviders")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IdentityPool]
     }
   }
@@ -659,9 +663,9 @@ package cognitoidentity {
         IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
         IdentityPoolName: js.UndefOr[IdentityPoolName] = js.undefined
     ): IdentityPoolShortDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IdentityPoolId.foreach(__v => __obj.update("IdentityPoolId", __v.asInstanceOf[js.Any]))
-      IdentityPoolName.foreach(__v => __obj.update("IdentityPoolName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IdentityPoolId.foreach(__v => __obj.updateDynamic("IdentityPoolId")(__v.asInstanceOf[js.Any]))
+      IdentityPoolName.foreach(__v => __obj.updateDynamic("IdentityPoolName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IdentityPoolShortDescription]
     }
   }
@@ -684,13 +688,13 @@ package cognitoidentity {
         HideDisabled: js.UndefOr[HideDisabled] = js.undefined,
         NextToken: js.UndefOr[PaginationKey] = js.undefined
     ): ListIdentitiesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any],
         "MaxResults"     -> MaxResults.asInstanceOf[js.Any]
       )
 
-      HideDisabled.foreach(__v => __obj.update("HideDisabled", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      HideDisabled.foreach(__v => __obj.updateDynamic("HideDisabled")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListIdentitiesInput]
     }
   }
@@ -711,10 +715,10 @@ package cognitoidentity {
         IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
         NextToken: js.UndefOr[PaginationKey] = js.undefined
     ): ListIdentitiesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Identities.foreach(__v => __obj.update("Identities", __v.asInstanceOf[js.Any]))
-      IdentityPoolId.foreach(__v => __obj.update("IdentityPoolId", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Identities.foreach(__v => __obj.updateDynamic("Identities")(__v.asInstanceOf[js.Any]))
+      IdentityPoolId.foreach(__v => __obj.updateDynamic("IdentityPoolId")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListIdentitiesResponse]
     }
   }
@@ -733,11 +737,11 @@ package cognitoidentity {
         MaxResults: QueryLimit,
         NextToken: js.UndefOr[PaginationKey] = js.undefined
     ): ListIdentityPoolsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MaxResults" -> MaxResults.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListIdentityPoolsInput]
     }
   }
@@ -756,9 +760,9 @@ package cognitoidentity {
         IdentityPools: js.UndefOr[IdentityPoolsList] = js.undefined,
         NextToken: js.UndefOr[PaginationKey] = js.undefined
     ): ListIdentityPoolsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IdentityPools.foreach(__v => __obj.update("IdentityPools", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IdentityPools.foreach(__v => __obj.updateDynamic("IdentityPools")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListIdentityPoolsResponse]
     }
   }
@@ -772,7 +776,7 @@ package cognitoidentity {
     def apply(
         ResourceArn: ARNString
     ): ListTagsForResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
@@ -789,8 +793,8 @@ package cognitoidentity {
     def apply(
         Tags: js.UndefOr[IdentityPoolTagsType] = js.undefined
     ): ListTagsForResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
@@ -815,14 +819,14 @@ package cognitoidentity {
         MaxResults: js.UndefOr[QueryLimit] = js.undefined,
         NextToken: js.UndefOr[PaginationKey] = js.undefined
     ): LookupDeveloperIdentityInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
 
-      DeveloperUserIdentifier.foreach(__v => __obj.update("DeveloperUserIdentifier", __v.asInstanceOf[js.Any]))
-      IdentityId.foreach(__v => __obj.update("IdentityId", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      DeveloperUserIdentifier.foreach(__v => __obj.updateDynamic("DeveloperUserIdentifier")(__v.asInstanceOf[js.Any]))
+      IdentityId.foreach(__v => __obj.updateDynamic("IdentityId")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LookupDeveloperIdentityInput]
     }
   }
@@ -843,10 +847,12 @@ package cognitoidentity {
         IdentityId: js.UndefOr[IdentityId] = js.undefined,
         NextToken: js.UndefOr[PaginationKey] = js.undefined
     ): LookupDeveloperIdentityResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DeveloperUserIdentifierList.foreach(__v => __obj.update("DeveloperUserIdentifierList", __v.asInstanceOf[js.Any]))
-      IdentityId.foreach(__v => __obj.update("IdentityId", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DeveloperUserIdentifierList.foreach(
+        __v => __obj.updateDynamic("DeveloperUserIdentifierList")(__v.asInstanceOf[js.Any])
+      )
+      IdentityId.foreach(__v => __obj.updateDynamic("IdentityId")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LookupDeveloperIdentityResponse]
     }
   }
@@ -869,7 +875,7 @@ package cognitoidentity {
         RoleARN: ARNString,
         Value: ClaimValue
     ): MappingRule = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Claim"     -> Claim.asInstanceOf[js.Any],
         "MatchType" -> MatchType.asInstanceOf[js.Any],
         "RoleARN"   -> RoleARN.asInstanceOf[js.Any],
@@ -907,7 +913,7 @@ package cognitoidentity {
         IdentityPoolId: IdentityPoolId,
         SourceUserIdentifier: DeveloperUserIdentifier
     ): MergeDeveloperIdentitiesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DestinationUserIdentifier" -> DestinationUserIdentifier.asInstanceOf[js.Any],
         "DeveloperProviderName"     -> DeveloperProviderName.asInstanceOf[js.Any],
         "IdentityPoolId"            -> IdentityPoolId.asInstanceOf[js.Any],
@@ -930,8 +936,8 @@ package cognitoidentity {
     def apply(
         IdentityId: js.UndefOr[IdentityId] = js.undefined
     ): MergeDeveloperIdentitiesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IdentityId.foreach(__v => __obj.update("IdentityId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IdentityId.foreach(__v => __obj.updateDynamic("IdentityId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MergeDeveloperIdentitiesResponse]
     }
   }
@@ -952,12 +958,12 @@ package cognitoidentity {
         AmbiguousRoleResolution: js.UndefOr[AmbiguousRoleResolutionType] = js.undefined,
         RulesConfiguration: js.UndefOr[RulesConfigurationType] = js.undefined
     ): RoleMapping = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Type" -> Type.asInstanceOf[js.Any]
       )
 
-      AmbiguousRoleResolution.foreach(__v => __obj.update("AmbiguousRoleResolution", __v.asInstanceOf[js.Any]))
-      RulesConfiguration.foreach(__v => __obj.update("RulesConfiguration", __v.asInstanceOf[js.Any]))
+      AmbiguousRoleResolution.foreach(__v => __obj.updateDynamic("AmbiguousRoleResolution")(__v.asInstanceOf[js.Any]))
+      RulesConfiguration.foreach(__v => __obj.updateDynamic("RulesConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RoleMapping]
     }
   }
@@ -981,7 +987,7 @@ package cognitoidentity {
     def apply(
         Rules: MappingRulesList
     ): RulesConfigurationType = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Rules" -> Rules.asInstanceOf[js.Any]
       )
 
@@ -1005,12 +1011,12 @@ package cognitoidentity {
         Roles: RolesMap,
         RoleMappings: js.UndefOr[RoleMappingMap] = js.undefined
     ): SetIdentityPoolRolesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any],
         "Roles"          -> Roles.asInstanceOf[js.Any]
       )
 
-      RoleMappings.foreach(__v => __obj.update("RoleMappings", __v.asInstanceOf[js.Any]))
+      RoleMappings.foreach(__v => __obj.updateDynamic("RoleMappings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetIdentityPoolRolesInput]
     }
   }
@@ -1026,11 +1032,11 @@ package cognitoidentity {
         ResourceArn: ARNString,
         Tags: js.UndefOr[IdentityPoolTagsType] = js.undefined
     ): TagResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TagResourceInput]
     }
   }
@@ -1041,7 +1047,7 @@ package cognitoidentity {
   object TagResourceResponse {
     def apply(
         ): TagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -1065,7 +1071,7 @@ package cognitoidentity {
         IdentityId: IdentityId,
         IdentityPoolId: IdentityPoolId
     ): UnlinkDeveloperIdentityInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DeveloperProviderName"   -> DeveloperProviderName.asInstanceOf[js.Any],
         "DeveloperUserIdentifier" -> DeveloperUserIdentifier.asInstanceOf[js.Any],
         "IdentityId"              -> IdentityId.asInstanceOf[js.Any],
@@ -1092,7 +1098,7 @@ package cognitoidentity {
         Logins: LoginsMap,
         LoginsToRemove: LoginsList
     ): UnlinkIdentityInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdentityId"     -> IdentityId.asInstanceOf[js.Any],
         "Logins"         -> Logins.asInstanceOf[js.Any],
         "LoginsToRemove" -> LoginsToRemove.asInstanceOf[js.Any]
@@ -1116,9 +1122,9 @@ package cognitoidentity {
         ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
         IdentityId: js.UndefOr[IdentityId] = js.undefined
     ): UnprocessedIdentityId = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
-      IdentityId.foreach(__v => __obj.update("IdentityId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      IdentityId.foreach(__v => __obj.updateDynamic("IdentityId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UnprocessedIdentityId]
     }
   }
@@ -1134,11 +1140,11 @@ package cognitoidentity {
         ResourceArn: ARNString,
         TagKeys: js.UndefOr[IdentityPoolTagsListType] = js.undefined
     ): UntagResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
-      TagKeys.foreach(__v => __obj.update("TagKeys", __v.asInstanceOf[js.Any]))
+      TagKeys.foreach(__v => __obj.updateDynamic("TagKeys")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UntagResourceInput]
     }
   }
@@ -1149,7 +1155,7 @@ package cognitoidentity {
   object UntagResourceResponse {
     def apply(
         ): UntagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
     }

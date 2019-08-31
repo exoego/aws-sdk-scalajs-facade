@@ -255,12 +255,12 @@ package workdocs {
         VersionId: DocumentVersionIdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
     ): AbortDocumentVersionUploadRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DocumentId" -> DocumentId.asInstanceOf[js.Any],
         "VersionId"  -> VersionId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AbortDocumentVersionUploadRequest]
     }
   }
@@ -276,11 +276,11 @@ package workdocs {
         UserId: IdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
     ): ActivateUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UserId" -> UserId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActivateUserRequest]
     }
   }
@@ -294,8 +294,8 @@ package workdocs {
     def apply(
         User: js.UndefOr[User] = js.undefined
     ): ActivateUserResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      User.foreach(__v => __obj.update("User", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActivateUserResponse]
     }
   }
@@ -328,16 +328,16 @@ package workdocs {
         TimeStamp: js.UndefOr[TimestampType] = js.undefined,
         Type: js.UndefOr[ActivityType] = js.undefined
     ): Activity = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CommentMetadata.foreach(__v => __obj.update("CommentMetadata", __v.asInstanceOf[js.Any]))
-      Initiator.foreach(__v => __obj.update("Initiator", __v.asInstanceOf[js.Any]))
-      IsIndirectActivity.foreach(__v => __obj.update("IsIndirectActivity", __v.asInstanceOf[js.Any]))
-      OrganizationId.foreach(__v => __obj.update("OrganizationId", __v.asInstanceOf[js.Any]))
-      OriginalParent.foreach(__v => __obj.update("OriginalParent", __v.asInstanceOf[js.Any]))
-      Participants.foreach(__v => __obj.update("Participants", __v.asInstanceOf[js.Any]))
-      ResourceMetadata.foreach(__v => __obj.update("ResourceMetadata", __v.asInstanceOf[js.Any]))
-      TimeStamp.foreach(__v => __obj.update("TimeStamp", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CommentMetadata.foreach(__v => __obj.updateDynamic("CommentMetadata")(__v.asInstanceOf[js.Any]))
+      Initiator.foreach(__v => __obj.updateDynamic("Initiator")(__v.asInstanceOf[js.Any]))
+      IsIndirectActivity.foreach(__v => __obj.updateDynamic("IsIndirectActivity")(__v.asInstanceOf[js.Any]))
+      OrganizationId.foreach(__v => __obj.updateDynamic("OrganizationId")(__v.asInstanceOf[js.Any]))
+      OriginalParent.foreach(__v => __obj.updateDynamic("OriginalParent")(__v.asInstanceOf[js.Any]))
+      Participants.foreach(__v => __obj.updateDynamic("Participants")(__v.asInstanceOf[js.Any]))
+      ResourceMetadata.foreach(__v => __obj.updateDynamic("ResourceMetadata")(__v.asInstanceOf[js.Any]))
+      TimeStamp.foreach(__v => __obj.updateDynamic("TimeStamp")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Activity]
     }
   }
@@ -431,13 +431,13 @@ package workdocs {
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
         NotificationOptions: js.UndefOr[NotificationOptions] = js.undefined
     ): AddResourcePermissionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Principals" -> Principals.asInstanceOf[js.Any],
         "ResourceId" -> ResourceId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
-      NotificationOptions.foreach(__v => __obj.update("NotificationOptions", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
+      NotificationOptions.foreach(__v => __obj.updateDynamic("NotificationOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddResourcePermissionsRequest]
     }
   }
@@ -451,8 +451,8 @@ package workdocs {
     def apply(
         ShareResults: js.UndefOr[ShareResultsList] = js.undefined
     ): AddResourcePermissionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ShareResults.foreach(__v => __obj.update("ShareResults", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ShareResults.foreach(__v => __obj.updateDynamic("ShareResults")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddResourcePermissionsResponse]
     }
   }
@@ -492,18 +492,18 @@ package workdocs {
         ThreadId: js.UndefOr[CommentIdType] = js.undefined,
         Visibility: js.UndefOr[CommentVisibilityType] = js.undefined
     ): Comment = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CommentId" -> CommentId.asInstanceOf[js.Any]
       )
 
-      Contributor.foreach(__v => __obj.update("Contributor", __v.asInstanceOf[js.Any]))
-      CreatedTimestamp.foreach(__v => __obj.update("CreatedTimestamp", __v.asInstanceOf[js.Any]))
-      ParentId.foreach(__v => __obj.update("ParentId", __v.asInstanceOf[js.Any]))
-      RecipientId.foreach(__v => __obj.update("RecipientId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      Text.foreach(__v => __obj.update("Text", __v.asInstanceOf[js.Any]))
-      ThreadId.foreach(__v => __obj.update("ThreadId", __v.asInstanceOf[js.Any]))
-      Visibility.foreach(__v => __obj.update("Visibility", __v.asInstanceOf[js.Any]))
+      Contributor.foreach(__v => __obj.updateDynamic("Contributor")(__v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      ParentId.foreach(__v => __obj.updateDynamic("ParentId")(__v.asInstanceOf[js.Any]))
+      RecipientId.foreach(__v => __obj.updateDynamic("RecipientId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
+      ThreadId.foreach(__v => __obj.updateDynamic("ThreadId")(__v.asInstanceOf[js.Any]))
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Comment]
     }
   }
@@ -528,12 +528,12 @@ package workdocs {
         CreatedTimestamp: js.UndefOr[TimestampType] = js.undefined,
         RecipientId: js.UndefOr[IdType] = js.undefined
     ): CommentMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CommentId.foreach(__v => __obj.update("CommentId", __v.asInstanceOf[js.Any]))
-      CommentStatus.foreach(__v => __obj.update("CommentStatus", __v.asInstanceOf[js.Any]))
-      Contributor.foreach(__v => __obj.update("Contributor", __v.asInstanceOf[js.Any]))
-      CreatedTimestamp.foreach(__v => __obj.update("CreatedTimestamp", __v.asInstanceOf[js.Any]))
-      RecipientId.foreach(__v => __obj.update("RecipientId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CommentId.foreach(__v => __obj.updateDynamic("CommentId")(__v.asInstanceOf[js.Any]))
+      CommentStatus.foreach(__v => __obj.updateDynamic("CommentStatus")(__v.asInstanceOf[js.Any]))
+      Contributor.foreach(__v => __obj.updateDynamic("Contributor")(__v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      RecipientId.foreach(__v => __obj.updateDynamic("RecipientId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CommentMetadata]
     }
   }
@@ -576,17 +576,17 @@ package workdocs {
         ThreadId: js.UndefOr[CommentIdType] = js.undefined,
         Visibility: js.UndefOr[CommentVisibilityType] = js.undefined
     ): CreateCommentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DocumentId" -> DocumentId.asInstanceOf[js.Any],
         "Text"       -> Text.asInstanceOf[js.Any],
         "VersionId"  -> VersionId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
-      NotifyCollaborators.foreach(__v => __obj.update("NotifyCollaborators", __v.asInstanceOf[js.Any]))
-      ParentId.foreach(__v => __obj.update("ParentId", __v.asInstanceOf[js.Any]))
-      ThreadId.foreach(__v => __obj.update("ThreadId", __v.asInstanceOf[js.Any]))
-      Visibility.foreach(__v => __obj.update("Visibility", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
+      NotifyCollaborators.foreach(__v => __obj.updateDynamic("NotifyCollaborators")(__v.asInstanceOf[js.Any]))
+      ParentId.foreach(__v => __obj.updateDynamic("ParentId")(__v.asInstanceOf[js.Any]))
+      ThreadId.foreach(__v => __obj.updateDynamic("ThreadId")(__v.asInstanceOf[js.Any]))
+      Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCommentRequest]
     }
   }
@@ -600,8 +600,8 @@ package workdocs {
     def apply(
         Comment: js.UndefOr[Comment] = js.undefined
     ): CreateCommentResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Comment.foreach(__v => __obj.update("Comment", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCommentResponse]
     }
   }
@@ -621,13 +621,13 @@ package workdocs {
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
         VersionId: js.UndefOr[DocumentVersionIdType] = js.undefined
     ): CreateCustomMetadataRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CustomMetadata" -> CustomMetadata.asInstanceOf[js.Any],
         "ResourceId"     -> ResourceId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCustomMetadataRequest]
     }
   }
@@ -638,7 +638,7 @@ package workdocs {
   object CreateCustomMetadataResponse {
     def apply(
         ): CreateCustomMetadataResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateCustomMetadataResponse]
     }
@@ -657,12 +657,12 @@ package workdocs {
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
         Name: js.UndefOr[ResourceNameType] = js.undefined
     ): CreateFolderRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ParentFolderId" -> ParentFolderId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFolderRequest]
     }
   }
@@ -676,8 +676,8 @@ package workdocs {
     def apply(
         Metadata: js.UndefOr[FolderMetadata] = js.undefined
     ): CreateFolderResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Metadata.foreach(__v => __obj.update("Metadata", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFolderResponse]
     }
   }
@@ -695,12 +695,12 @@ package workdocs {
         ResourceId: ResourceIdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
     ): CreateLabelsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Labels"     -> Labels.asInstanceOf[js.Any],
         "ResourceId" -> ResourceId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLabelsRequest]
     }
   }
@@ -711,7 +711,7 @@ package workdocs {
   object CreateLabelsResponse {
     def apply(
         ): CreateLabelsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateLabelsResponse]
     }
@@ -732,7 +732,7 @@ package workdocs {
         Protocol: SubscriptionProtocolType,
         SubscriptionType: SubscriptionType
     ): CreateNotificationSubscriptionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Endpoint"         -> Endpoint.asInstanceOf[js.Any],
         "OrganizationId"   -> OrganizationId.asInstanceOf[js.Any],
         "Protocol"         -> Protocol.asInstanceOf[js.Any],
@@ -752,8 +752,8 @@ package workdocs {
     def apply(
         Subscription: js.UndefOr[Subscription] = js.undefined
     ): CreateNotificationSubscriptionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Subscription.foreach(__v => __obj.update("Subscription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Subscription.foreach(__v => __obj.updateDynamic("Subscription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateNotificationSubscriptionResponse]
     }
   }
@@ -783,18 +783,18 @@ package workdocs {
         StorageRule: js.UndefOr[StorageRuleType] = js.undefined,
         TimeZoneId: js.UndefOr[TimeZoneIdType] = js.undefined
     ): CreateUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GivenName" -> GivenName.asInstanceOf[js.Any],
         "Password"  -> Password.asInstanceOf[js.Any],
         "Surname"   -> Surname.asInstanceOf[js.Any],
         "Username"  -> Username.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
-      EmailAddress.foreach(__v => __obj.update("EmailAddress", __v.asInstanceOf[js.Any]))
-      OrganizationId.foreach(__v => __obj.update("OrganizationId", __v.asInstanceOf[js.Any]))
-      StorageRule.foreach(__v => __obj.update("StorageRule", __v.asInstanceOf[js.Any]))
-      TimeZoneId.foreach(__v => __obj.update("TimeZoneId", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
+      EmailAddress.foreach(__v => __obj.updateDynamic("EmailAddress")(__v.asInstanceOf[js.Any]))
+      OrganizationId.foreach(__v => __obj.updateDynamic("OrganizationId")(__v.asInstanceOf[js.Any]))
+      StorageRule.foreach(__v => __obj.updateDynamic("StorageRule")(__v.asInstanceOf[js.Any]))
+      TimeZoneId.foreach(__v => __obj.updateDynamic("TimeZoneId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateUserRequest]
     }
   }
@@ -808,8 +808,8 @@ package workdocs {
     def apply(
         User: js.UndefOr[User] = js.undefined
     ): CreateUserResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      User.foreach(__v => __obj.update("User", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateUserResponse]
     }
   }
@@ -825,11 +825,11 @@ package workdocs {
         UserId: IdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
     ): DeactivateUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UserId" -> UserId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeactivateUserRequest]
     }
   }
@@ -849,13 +849,13 @@ package workdocs {
         VersionId: DocumentVersionIdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
     ): DeleteCommentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CommentId"  -> CommentId.asInstanceOf[js.Any],
         "DocumentId" -> DocumentId.asInstanceOf[js.Any],
         "VersionId"  -> VersionId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteCommentRequest]
     }
   }
@@ -877,14 +877,14 @@ package workdocs {
         Keys: js.UndefOr[CustomMetadataKeyList] = js.undefined,
         VersionId: js.UndefOr[DocumentVersionIdType] = js.undefined
     ): DeleteCustomMetadataRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceId" -> ResourceId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
-      DeleteAll.foreach(__v => __obj.update("DeleteAll", __v.asInstanceOf[js.Any]))
-      Keys.foreach(__v => __obj.update("Keys", __v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
+      DeleteAll.foreach(__v => __obj.updateDynamic("DeleteAll")(__v.asInstanceOf[js.Any]))
+      Keys.foreach(__v => __obj.updateDynamic("Keys")(__v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteCustomMetadataRequest]
     }
   }
@@ -895,7 +895,7 @@ package workdocs {
   object DeleteCustomMetadataResponse {
     def apply(
         ): DeleteCustomMetadataResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteCustomMetadataResponse]
     }
@@ -912,11 +912,11 @@ package workdocs {
         DocumentId: ResourceIdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
     ): DeleteDocumentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DocumentId" -> DocumentId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDocumentRequest]
     }
   }
@@ -932,11 +932,11 @@ package workdocs {
         FolderId: ResourceIdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
     ): DeleteFolderContentsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FolderId" -> FolderId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteFolderContentsRequest]
     }
   }
@@ -952,11 +952,11 @@ package workdocs {
         FolderId: ResourceIdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
     ): DeleteFolderRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FolderId" -> FolderId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteFolderRequest]
     }
   }
@@ -976,13 +976,13 @@ package workdocs {
         DeleteAll: js.UndefOr[BooleanType] = js.undefined,
         Labels: js.UndefOr[SharedLabels] = js.undefined
     ): DeleteLabelsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceId" -> ResourceId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
-      DeleteAll.foreach(__v => __obj.update("DeleteAll", __v.asInstanceOf[js.Any]))
-      Labels.foreach(__v => __obj.update("Labels", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
+      DeleteAll.foreach(__v => __obj.updateDynamic("DeleteAll")(__v.asInstanceOf[js.Any]))
+      Labels.foreach(__v => __obj.updateDynamic("Labels")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteLabelsRequest]
     }
   }
@@ -993,7 +993,7 @@ package workdocs {
   object DeleteLabelsResponse {
     def apply(
         ): DeleteLabelsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteLabelsResponse]
     }
@@ -1010,7 +1010,7 @@ package workdocs {
         OrganizationId: IdType,
         SubscriptionId: IdType
     ): DeleteNotificationSubscriptionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
         "SubscriptionId" -> SubscriptionId.asInstanceOf[js.Any]
       )
@@ -1030,11 +1030,11 @@ package workdocs {
         UserId: IdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
     ): DeleteUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UserId" -> UserId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteUserRequest]
     }
   }
@@ -1066,17 +1066,19 @@ package workdocs {
         StartTime: js.UndefOr[TimestampType] = js.undefined,
         UserId: js.UndefOr[IdType] = js.undefined
     ): DescribeActivitiesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ActivityTypes.foreach(__v => __obj.update("ActivityTypes", __v.asInstanceOf[js.Any]))
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
-      IncludeIndirectActivities.foreach(__v => __obj.update("IncludeIndirectActivities", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      OrganizationId.foreach(__v => __obj.update("OrganizationId", __v.asInstanceOf[js.Any]))
-      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
-      UserId.foreach(__v => __obj.update("UserId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ActivityTypes.foreach(__v => __obj.updateDynamic("ActivityTypes")(__v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      IncludeIndirectActivities.foreach(
+        __v => __obj.updateDynamic("IncludeIndirectActivities")(__v.asInstanceOf[js.Any])
+      )
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      OrganizationId.foreach(__v => __obj.updateDynamic("OrganizationId")(__v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      UserId.foreach(__v => __obj.updateDynamic("UserId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeActivitiesRequest]
     }
   }
@@ -1092,9 +1094,9 @@ package workdocs {
         Marker: js.UndefOr[MarkerType] = js.undefined,
         UserActivities: js.UndefOr[UserActivities] = js.undefined
     ): DescribeActivitiesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      UserActivities.foreach(__v => __obj.update("UserActivities", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      UserActivities.foreach(__v => __obj.updateDynamic("UserActivities")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeActivitiesResponse]
     }
   }
@@ -1116,14 +1118,14 @@ package workdocs {
         Limit: js.UndefOr[LimitType] = js.undefined,
         Marker: js.UndefOr[MarkerType] = js.undefined
     ): DescribeCommentsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DocumentId" -> DocumentId.asInstanceOf[js.Any],
         "VersionId"  -> VersionId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeCommentsRequest]
     }
   }
@@ -1139,9 +1141,9 @@ package workdocs {
         Comments: js.UndefOr[CommentList] = js.undefined,
         Marker: js.UndefOr[MarkerType] = js.undefined
     ): DescribeCommentsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Comments.foreach(__v => __obj.update("Comments", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Comments.foreach(__v => __obj.updateDynamic("Comments")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeCommentsResponse]
     }
   }
@@ -1165,15 +1167,15 @@ package workdocs {
         Limit: js.UndefOr[LimitType] = js.undefined,
         Marker: js.UndefOr[PageMarkerType] = js.undefined
     ): DescribeDocumentVersionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DocumentId" -> DocumentId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
-      Fields.foreach(__v => __obj.update("Fields", __v.asInstanceOf[js.Any]))
-      Include.foreach(__v => __obj.update("Include", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
+      Fields.foreach(__v => __obj.updateDynamic("Fields")(__v.asInstanceOf[js.Any]))
+      Include.foreach(__v => __obj.updateDynamic("Include")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDocumentVersionsRequest]
     }
   }
@@ -1189,9 +1191,9 @@ package workdocs {
         DocumentVersions: js.UndefOr[DocumentVersionMetadataList] = js.undefined,
         Marker: js.UndefOr[PageMarkerType] = js.undefined
     ): DescribeDocumentVersionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DocumentVersions.foreach(__v => __obj.update("DocumentVersions", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DocumentVersions.foreach(__v => __obj.updateDynamic("DocumentVersions")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDocumentVersionsResponse]
     }
   }
@@ -1219,17 +1221,17 @@ package workdocs {
         Sort: js.UndefOr[ResourceSortType] = js.undefined,
         Type: js.UndefOr[FolderContentType] = js.undefined
     ): DescribeFolderContentsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FolderId" -> FolderId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
-      Include.foreach(__v => __obj.update("Include", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      Order.foreach(__v => __obj.update("Order", __v.asInstanceOf[js.Any]))
-      Sort.foreach(__v => __obj.update("Sort", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
+      Include.foreach(__v => __obj.updateDynamic("Include")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      Order.foreach(__v => __obj.updateDynamic("Order")(__v.asInstanceOf[js.Any]))
+      Sort.foreach(__v => __obj.updateDynamic("Sort")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeFolderContentsRequest]
     }
   }
@@ -1247,10 +1249,10 @@ package workdocs {
         Folders: js.UndefOr[FolderMetadataList] = js.undefined,
         Marker: js.UndefOr[PageMarkerType] = js.undefined
     ): DescribeFolderContentsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Documents.foreach(__v => __obj.update("Documents", __v.asInstanceOf[js.Any]))
-      Folders.foreach(__v => __obj.update("Folders", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Documents.foreach(__v => __obj.updateDynamic("Documents")(__v.asInstanceOf[js.Any]))
+      Folders.foreach(__v => __obj.updateDynamic("Folders")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeFolderContentsResponse]
     }
   }
@@ -1272,14 +1274,14 @@ package workdocs {
         Marker: js.UndefOr[MarkerType] = js.undefined,
         OrganizationId: js.UndefOr[IdType] = js.undefined
     ): DescribeGroupsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SearchQuery" -> SearchQuery.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      OrganizationId.foreach(__v => __obj.update("OrganizationId", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      OrganizationId.foreach(__v => __obj.updateDynamic("OrganizationId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeGroupsRequest]
     }
   }
@@ -1295,9 +1297,9 @@ package workdocs {
         Groups: js.UndefOr[GroupMetadataList] = js.undefined,
         Marker: js.UndefOr[MarkerType] = js.undefined
     ): DescribeGroupsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Groups.foreach(__v => __obj.update("Groups", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Groups.foreach(__v => __obj.updateDynamic("Groups")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeGroupsResponse]
     }
   }
@@ -1315,12 +1317,12 @@ package workdocs {
         Limit: js.UndefOr[LimitType] = js.undefined,
         Marker: js.UndefOr[PageMarkerType] = js.undefined
     ): DescribeNotificationSubscriptionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
 
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeNotificationSubscriptionsRequest]
     }
   }
@@ -1336,9 +1338,9 @@ package workdocs {
         Marker: js.UndefOr[PageMarkerType] = js.undefined,
         Subscriptions: js.UndefOr[SubscriptionList] = js.undefined
     ): DescribeNotificationSubscriptionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      Subscriptions.foreach(__v => __obj.update("Subscriptions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      Subscriptions.foreach(__v => __obj.updateDynamic("Subscriptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeNotificationSubscriptionsResponse]
     }
   }
@@ -1360,14 +1362,14 @@ package workdocs {
         Marker: js.UndefOr[PageMarkerType] = js.undefined,
         PrincipalId: js.UndefOr[IdType] = js.undefined
     ): DescribeResourcePermissionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceId" -> ResourceId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      PrincipalId.foreach(__v => __obj.update("PrincipalId", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      PrincipalId.foreach(__v => __obj.updateDynamic("PrincipalId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeResourcePermissionsRequest]
     }
   }
@@ -1383,9 +1385,9 @@ package workdocs {
         Marker: js.UndefOr[PageMarkerType] = js.undefined,
         Principals: js.UndefOr[PrincipalList] = js.undefined
     ): DescribeResourcePermissionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      Principals.foreach(__v => __obj.update("Principals", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      Principals.foreach(__v => __obj.updateDynamic("Principals")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeResourcePermissionsResponse]
     }
   }
@@ -1403,12 +1405,12 @@ package workdocs {
         Limit: js.UndefOr[LimitType] = js.undefined,
         Marker: js.UndefOr[PageMarkerType] = js.undefined
     ): DescribeRootFoldersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AuthenticationToken" -> AuthenticationToken.asInstanceOf[js.Any]
       )
 
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRootFoldersRequest]
     }
   }
@@ -1424,9 +1426,9 @@ package workdocs {
         Folders: js.UndefOr[FolderMetadataList] = js.undefined,
         Marker: js.UndefOr[PageMarkerType] = js.undefined
     ): DescribeRootFoldersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Folders.foreach(__v => __obj.update("Folders", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Folders.foreach(__v => __obj.updateDynamic("Folders")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRootFoldersResponse]
     }
   }
@@ -1458,17 +1460,17 @@ package workdocs {
         Sort: js.UndefOr[UserSortType] = js.undefined,
         UserIds: js.UndefOr[UserIdsType] = js.undefined
     ): DescribeUsersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
-      Fields.foreach(__v => __obj.update("Fields", __v.asInstanceOf[js.Any]))
-      Include.foreach(__v => __obj.update("Include", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      Order.foreach(__v => __obj.update("Order", __v.asInstanceOf[js.Any]))
-      OrganizationId.foreach(__v => __obj.update("OrganizationId", __v.asInstanceOf[js.Any]))
-      Query.foreach(__v => __obj.update("Query", __v.asInstanceOf[js.Any]))
-      Sort.foreach(__v => __obj.update("Sort", __v.asInstanceOf[js.Any]))
-      UserIds.foreach(__v => __obj.update("UserIds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
+      Fields.foreach(__v => __obj.updateDynamic("Fields")(__v.asInstanceOf[js.Any]))
+      Include.foreach(__v => __obj.updateDynamic("Include")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      Order.foreach(__v => __obj.updateDynamic("Order")(__v.asInstanceOf[js.Any]))
+      OrganizationId.foreach(__v => __obj.updateDynamic("OrganizationId")(__v.asInstanceOf[js.Any]))
+      Query.foreach(__v => __obj.updateDynamic("Query")(__v.asInstanceOf[js.Any]))
+      Sort.foreach(__v => __obj.updateDynamic("Sort")(__v.asInstanceOf[js.Any]))
+      UserIds.foreach(__v => __obj.updateDynamic("UserIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeUsersRequest]
     }
   }
@@ -1486,10 +1488,10 @@ package workdocs {
         TotalNumberOfUsers: js.UndefOr[SizeType] = js.undefined,
         Users: js.UndefOr[OrganizationUserList] = js.undefined
     ): DescribeUsersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      TotalNumberOfUsers.foreach(__v => __obj.update("TotalNumberOfUsers", __v.asInstanceOf[js.Any]))
-      Users.foreach(__v => __obj.update("Users", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      TotalNumberOfUsers.foreach(__v => __obj.updateDynamic("TotalNumberOfUsers")(__v.asInstanceOf[js.Any]))
+      Users.foreach(__v => __obj.updateDynamic("Users")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeUsersResponse]
     }
   }
@@ -1520,15 +1522,15 @@ package workdocs {
         ParentFolderId: js.UndefOr[ResourceIdType] = js.undefined,
         ResourceState: js.UndefOr[ResourceStateType] = js.undefined
     ): DocumentMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedTimestamp.foreach(__v => __obj.update("CreatedTimestamp", __v.asInstanceOf[js.Any]))
-      CreatorId.foreach(__v => __obj.update("CreatorId", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Labels.foreach(__v => __obj.update("Labels", __v.asInstanceOf[js.Any]))
-      LatestVersionMetadata.foreach(__v => __obj.update("LatestVersionMetadata", __v.asInstanceOf[js.Any]))
-      ModifiedTimestamp.foreach(__v => __obj.update("ModifiedTimestamp", __v.asInstanceOf[js.Any]))
-      ParentFolderId.foreach(__v => __obj.update("ParentFolderId", __v.asInstanceOf[js.Any]))
-      ResourceState.foreach(__v => __obj.update("ResourceState", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      CreatorId.foreach(__v => __obj.updateDynamic("CreatorId")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Labels.foreach(__v => __obj.updateDynamic("Labels")(__v.asInstanceOf[js.Any]))
+      LatestVersionMetadata.foreach(__v => __obj.updateDynamic("LatestVersionMetadata")(__v.asInstanceOf[js.Any]))
+      ModifiedTimestamp.foreach(__v => __obj.updateDynamic("ModifiedTimestamp")(__v.asInstanceOf[js.Any]))
+      ParentFolderId.foreach(__v => __obj.updateDynamic("ParentFolderId")(__v.asInstanceOf[js.Any]))
+      ResourceState.foreach(__v => __obj.updateDynamic("ResourceState")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DocumentMetadata]
     }
   }
@@ -1591,20 +1593,20 @@ package workdocs {
         Status: js.UndefOr[DocumentStatusType] = js.undefined,
         Thumbnail: js.UndefOr[DocumentThumbnailUrlMap] = js.undefined
     ): DocumentVersionMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ContentCreatedTimestamp.foreach(__v => __obj.update("ContentCreatedTimestamp", __v.asInstanceOf[js.Any]))
-      ContentModifiedTimestamp.foreach(__v => __obj.update("ContentModifiedTimestamp", __v.asInstanceOf[js.Any]))
-      ContentType.foreach(__v => __obj.update("ContentType", __v.asInstanceOf[js.Any]))
-      CreatedTimestamp.foreach(__v => __obj.update("CreatedTimestamp", __v.asInstanceOf[js.Any]))
-      CreatorId.foreach(__v => __obj.update("CreatorId", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      ModifiedTimestamp.foreach(__v => __obj.update("ModifiedTimestamp", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Signature.foreach(__v => __obj.update("Signature", __v.asInstanceOf[js.Any]))
-      Size.foreach(__v => __obj.update("Size", __v.asInstanceOf[js.Any]))
-      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      Thumbnail.foreach(__v => __obj.update("Thumbnail", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ContentCreatedTimestamp.foreach(__v => __obj.updateDynamic("ContentCreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      ContentModifiedTimestamp.foreach(__v => __obj.updateDynamic("ContentModifiedTimestamp")(__v.asInstanceOf[js.Any]))
+      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      CreatorId.foreach(__v => __obj.updateDynamic("CreatorId")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      ModifiedTimestamp.foreach(__v => __obj.updateDynamic("ModifiedTimestamp")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Signature.foreach(__v => __obj.updateDynamic("Signature")(__v.asInstanceOf[js.Any]))
+      Size.foreach(__v => __obj.updateDynamic("Size")(__v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Thumbnail.foreach(__v => __obj.updateDynamic("Thumbnail")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DocumentVersionMetadata]
     }
   }
@@ -1655,18 +1657,18 @@ package workdocs {
         Signature: js.UndefOr[HashType] = js.undefined,
         Size: js.UndefOr[SizeType] = js.undefined
     ): FolderMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedTimestamp.foreach(__v => __obj.update("CreatedTimestamp", __v.asInstanceOf[js.Any]))
-      CreatorId.foreach(__v => __obj.update("CreatorId", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Labels.foreach(__v => __obj.update("Labels", __v.asInstanceOf[js.Any]))
-      LatestVersionSize.foreach(__v => __obj.update("LatestVersionSize", __v.asInstanceOf[js.Any]))
-      ModifiedTimestamp.foreach(__v => __obj.update("ModifiedTimestamp", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      ParentFolderId.foreach(__v => __obj.update("ParentFolderId", __v.asInstanceOf[js.Any]))
-      ResourceState.foreach(__v => __obj.update("ResourceState", __v.asInstanceOf[js.Any]))
-      Signature.foreach(__v => __obj.update("Signature", __v.asInstanceOf[js.Any]))
-      Size.foreach(__v => __obj.update("Size", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      CreatorId.foreach(__v => __obj.updateDynamic("CreatorId")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Labels.foreach(__v => __obj.updateDynamic("Labels")(__v.asInstanceOf[js.Any]))
+      LatestVersionSize.foreach(__v => __obj.updateDynamic("LatestVersionSize")(__v.asInstanceOf[js.Any]))
+      ModifiedTimestamp.foreach(__v => __obj.updateDynamic("ModifiedTimestamp")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ParentFolderId.foreach(__v => __obj.updateDynamic("ParentFolderId")(__v.asInstanceOf[js.Any]))
+      ResourceState.foreach(__v => __obj.updateDynamic("ResourceState")(__v.asInstanceOf[js.Any]))
+      Signature.foreach(__v => __obj.updateDynamic("Signature")(__v.asInstanceOf[js.Any]))
+      Size.foreach(__v => __obj.updateDynamic("Size")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FolderMetadata]
     }
   }
@@ -1680,7 +1682,7 @@ package workdocs {
     def apply(
         AuthenticationToken: AuthenticationHeaderType
     ): GetCurrentUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AuthenticationToken" -> AuthenticationToken.asInstanceOf[js.Any]
       )
 
@@ -1697,8 +1699,8 @@ package workdocs {
     def apply(
         User: js.UndefOr[User] = js.undefined
     ): GetCurrentUserResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      User.foreach(__v => __obj.update("User", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCurrentUserResponse]
     }
   }
@@ -1720,14 +1722,14 @@ package workdocs {
         Limit: js.UndefOr[LimitType] = js.undefined,
         Marker: js.UndefOr[PageMarkerType] = js.undefined
     ): GetDocumentPathRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DocumentId" -> DocumentId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
-      Fields.foreach(__v => __obj.update("Fields", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
+      Fields.foreach(__v => __obj.updateDynamic("Fields")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDocumentPathRequest]
     }
   }
@@ -1741,8 +1743,8 @@ package workdocs {
     def apply(
         Path: js.UndefOr[ResourcePath] = js.undefined
     ): GetDocumentPathResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Path.foreach(__v => __obj.update("Path", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDocumentPathResponse]
     }
   }
@@ -1760,12 +1762,12 @@ package workdocs {
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
         IncludeCustomMetadata: js.UndefOr[BooleanType] = js.undefined
     ): GetDocumentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DocumentId" -> DocumentId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
-      IncludeCustomMetadata.foreach(__v => __obj.update("IncludeCustomMetadata", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
+      IncludeCustomMetadata.foreach(__v => __obj.updateDynamic("IncludeCustomMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDocumentRequest]
     }
   }
@@ -1781,9 +1783,9 @@ package workdocs {
         CustomMetadata: js.UndefOr[CustomMetadataMap] = js.undefined,
         Metadata: js.UndefOr[DocumentMetadata] = js.undefined
     ): GetDocumentResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CustomMetadata.foreach(__v => __obj.update("CustomMetadata", __v.asInstanceOf[js.Any]))
-      Metadata.foreach(__v => __obj.update("Metadata", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CustomMetadata.foreach(__v => __obj.updateDynamic("CustomMetadata")(__v.asInstanceOf[js.Any]))
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDocumentResponse]
     }
   }
@@ -1805,14 +1807,14 @@ package workdocs {
         Fields: js.UndefOr[FieldNamesType] = js.undefined,
         IncludeCustomMetadata: js.UndefOr[BooleanType] = js.undefined
     ): GetDocumentVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DocumentId" -> DocumentId.asInstanceOf[js.Any],
         "VersionId"  -> VersionId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
-      Fields.foreach(__v => __obj.update("Fields", __v.asInstanceOf[js.Any]))
-      IncludeCustomMetadata.foreach(__v => __obj.update("IncludeCustomMetadata", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
+      Fields.foreach(__v => __obj.updateDynamic("Fields")(__v.asInstanceOf[js.Any]))
+      IncludeCustomMetadata.foreach(__v => __obj.updateDynamic("IncludeCustomMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDocumentVersionRequest]
     }
   }
@@ -1828,9 +1830,9 @@ package workdocs {
         CustomMetadata: js.UndefOr[CustomMetadataMap] = js.undefined,
         Metadata: js.UndefOr[DocumentVersionMetadata] = js.undefined
     ): GetDocumentVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CustomMetadata.foreach(__v => __obj.update("CustomMetadata", __v.asInstanceOf[js.Any]))
-      Metadata.foreach(__v => __obj.update("Metadata", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CustomMetadata.foreach(__v => __obj.updateDynamic("CustomMetadata")(__v.asInstanceOf[js.Any]))
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDocumentVersionResponse]
     }
   }
@@ -1852,14 +1854,14 @@ package workdocs {
         Limit: js.UndefOr[LimitType] = js.undefined,
         Marker: js.UndefOr[PageMarkerType] = js.undefined
     ): GetFolderPathRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FolderId" -> FolderId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
-      Fields.foreach(__v => __obj.update("Fields", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
+      Fields.foreach(__v => __obj.updateDynamic("Fields")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFolderPathRequest]
     }
   }
@@ -1873,8 +1875,8 @@ package workdocs {
     def apply(
         Path: js.UndefOr[ResourcePath] = js.undefined
     ): GetFolderPathResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Path.foreach(__v => __obj.update("Path", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFolderPathResponse]
     }
   }
@@ -1892,12 +1894,12 @@ package workdocs {
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
         IncludeCustomMetadata: js.UndefOr[BooleanType] = js.undefined
     ): GetFolderRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FolderId" -> FolderId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
-      IncludeCustomMetadata.foreach(__v => __obj.update("IncludeCustomMetadata", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
+      IncludeCustomMetadata.foreach(__v => __obj.updateDynamic("IncludeCustomMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFolderRequest]
     }
   }
@@ -1913,9 +1915,9 @@ package workdocs {
         CustomMetadata: js.UndefOr[CustomMetadataMap] = js.undefined,
         Metadata: js.UndefOr[FolderMetadata] = js.undefined
     ): GetFolderResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CustomMetadata.foreach(__v => __obj.update("CustomMetadata", __v.asInstanceOf[js.Any]))
-      Metadata.foreach(__v => __obj.update("Metadata", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CustomMetadata.foreach(__v => __obj.updateDynamic("CustomMetadata")(__v.asInstanceOf[js.Any]))
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFolderResponse]
     }
   }
@@ -1937,12 +1939,12 @@ package workdocs {
         Marker: js.UndefOr[PageMarkerType] = js.undefined,
         UserId: js.UndefOr[IdType] = js.undefined
     ): GetResourcesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
-      CollectionType.foreach(__v => __obj.update("CollectionType", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      UserId.foreach(__v => __obj.update("UserId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
+      CollectionType.foreach(__v => __obj.updateDynamic("CollectionType")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      UserId.foreach(__v => __obj.updateDynamic("UserId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetResourcesRequest]
     }
   }
@@ -1960,10 +1962,10 @@ package workdocs {
         Folders: js.UndefOr[FolderMetadataList] = js.undefined,
         Marker: js.UndefOr[PageMarkerType] = js.undefined
     ): GetResourcesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Documents.foreach(__v => __obj.update("Documents", __v.asInstanceOf[js.Any]))
-      Folders.foreach(__v => __obj.update("Folders", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Documents.foreach(__v => __obj.updateDynamic("Documents")(__v.asInstanceOf[js.Any]))
+      Folders.foreach(__v => __obj.updateDynamic("Folders")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetResourcesResponse]
     }
   }
@@ -1982,9 +1984,9 @@ package workdocs {
         Id: js.UndefOr[IdType] = js.undefined,
         Name: js.UndefOr[GroupNameType] = js.undefined
     ): GroupMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GroupMetadata]
     }
   }
@@ -2012,17 +2014,17 @@ package workdocs {
         Id: js.UndefOr[ResourceIdType] = js.undefined,
         Name: js.UndefOr[ResourceNameType] = js.undefined
     ): InitiateDocumentVersionUploadRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ParentFolderId" -> ParentFolderId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
-      ContentCreatedTimestamp.foreach(__v => __obj.update("ContentCreatedTimestamp", __v.asInstanceOf[js.Any]))
-      ContentModifiedTimestamp.foreach(__v => __obj.update("ContentModifiedTimestamp", __v.asInstanceOf[js.Any]))
-      ContentType.foreach(__v => __obj.update("ContentType", __v.asInstanceOf[js.Any]))
-      DocumentSizeInBytes.foreach(__v => __obj.update("DocumentSizeInBytes", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
+      ContentCreatedTimestamp.foreach(__v => __obj.updateDynamic("ContentCreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      ContentModifiedTimestamp.foreach(__v => __obj.updateDynamic("ContentModifiedTimestamp")(__v.asInstanceOf[js.Any]))
+      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
+      DocumentSizeInBytes.foreach(__v => __obj.updateDynamic("DocumentSizeInBytes")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InitiateDocumentVersionUploadRequest]
     }
   }
@@ -2038,9 +2040,9 @@ package workdocs {
         Metadata: js.UndefOr[DocumentMetadata] = js.undefined,
         UploadMetadata: js.UndefOr[UploadMetadata] = js.undefined
     ): InitiateDocumentVersionUploadResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Metadata.foreach(__v => __obj.update("Metadata", __v.asInstanceOf[js.Any]))
-      UploadMetadata.foreach(__v => __obj.update("UploadMetadata", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      UploadMetadata.foreach(__v => __obj.updateDynamic("UploadMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InitiateDocumentVersionUploadResponse]
     }
   }
@@ -2075,9 +2077,9 @@ package workdocs {
         EmailMessage: js.UndefOr[MessageType] = js.undefined,
         SendEmail: js.UndefOr[BooleanType] = js.undefined
     ): NotificationOptions = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EmailMessage.foreach(__v => __obj.update("EmailMessage", __v.asInstanceOf[js.Any]))
-      SendEmail.foreach(__v => __obj.update("SendEmail", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EmailMessage.foreach(__v => __obj.updateDynamic("EmailMessage")(__v.asInstanceOf[js.Any]))
+      SendEmail.foreach(__v => __obj.updateDynamic("SendEmail")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NotificationOptions]
     }
   }
@@ -2103,9 +2105,9 @@ package workdocs {
         Groups: js.UndefOr[GroupMetadataList] = js.undefined,
         Users: js.UndefOr[UserMetadataList] = js.undefined
     ): Participants = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Groups.foreach(__v => __obj.update("Groups", __v.asInstanceOf[js.Any]))
-      Users.foreach(__v => __obj.update("Users", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Groups.foreach(__v => __obj.updateDynamic("Groups")(__v.asInstanceOf[js.Any]))
+      Users.foreach(__v => __obj.updateDynamic("Users")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Participants]
     }
   }
@@ -2124,9 +2126,9 @@ package workdocs {
         Role: js.UndefOr[RoleType] = js.undefined,
         Type: js.UndefOr[RolePermissionType] = js.undefined
     ): PermissionInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PermissionInfo]
     }
   }
@@ -2147,10 +2149,10 @@ package workdocs {
         Roles: js.UndefOr[PermissionInfoList] = js.undefined,
         Type: js.UndefOr[PrincipalType] = js.undefined
     ): Principal = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Roles.foreach(__v => __obj.update("Roles", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Roles.foreach(__v => __obj.updateDynamic("Roles")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Principal]
     }
   }
@@ -2176,11 +2178,11 @@ package workdocs {
         ResourceId: ResourceIdType,
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined
     ): RemoveAllResourcePermissionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceId" -> ResourceId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RemoveAllResourcePermissionsRequest]
     }
   }
@@ -2200,13 +2202,13 @@ package workdocs {
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
         PrincipalType: js.UndefOr[PrincipalType] = js.undefined
     ): RemoveResourcePermissionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PrincipalId" -> PrincipalId.asInstanceOf[js.Any],
         "ResourceId"  -> ResourceId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
-      PrincipalType.foreach(__v => __obj.update("PrincipalType", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
+      PrincipalType.foreach(__v => __obj.updateDynamic("PrincipalType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RemoveResourcePermissionRequest]
     }
   }
@@ -2241,14 +2243,14 @@ package workdocs {
         Type: js.UndefOr[ResourceType] = js.undefined,
         VersionId: js.UndefOr[DocumentVersionIdType] = js.undefined
     ): ResourceMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      OriginalName.foreach(__v => __obj.update("OriginalName", __v.asInstanceOf[js.Any]))
-      Owner.foreach(__v => __obj.update("Owner", __v.asInstanceOf[js.Any]))
-      ParentId.foreach(__v => __obj.update("ParentId", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
-      VersionId.foreach(__v => __obj.update("VersionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      OriginalName.foreach(__v => __obj.updateDynamic("OriginalName")(__v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
+      ParentId.foreach(__v => __obj.updateDynamic("ParentId")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceMetadata]
     }
   }
@@ -2265,8 +2267,8 @@ package workdocs {
     def apply(
         Components: js.UndefOr[ResourcePathComponentList] = js.undefined
     ): ResourcePath = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Components.foreach(__v => __obj.update("Components", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Components.foreach(__v => __obj.updateDynamic("Components")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourcePath]
     }
   }
@@ -2285,9 +2287,9 @@ package workdocs {
         Id: js.UndefOr[IdType] = js.undefined,
         Name: js.UndefOr[ResourceNameType] = js.undefined
     ): ResourcePathComponent = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourcePathComponent]
     }
   }
@@ -2347,7 +2349,7 @@ package workdocs {
         Role: RoleType,
         Type: PrincipalType
     ): SharePrincipal = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id"   -> Id.asInstanceOf[js.Any],
         "Role" -> Role.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
@@ -2379,13 +2381,13 @@ package workdocs {
         Status: js.UndefOr[ShareStatusType] = js.undefined,
         StatusMessage: js.UndefOr[MessageType] = js.undefined
     ): ShareResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InviteePrincipalId.foreach(__v => __obj.update("InviteePrincipalId", __v.asInstanceOf[js.Any]))
-      PrincipalId.foreach(__v => __obj.update("PrincipalId", __v.asInstanceOf[js.Any]))
-      Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
-      ShareId.foreach(__v => __obj.update("ShareId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InviteePrincipalId.foreach(__v => __obj.updateDynamic("InviteePrincipalId")(__v.asInstanceOf[js.Any]))
+      PrincipalId.foreach(__v => __obj.updateDynamic("PrincipalId")(__v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
+      ShareId.foreach(__v => __obj.updateDynamic("ShareId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ShareResult]
     }
   }
@@ -2411,9 +2413,9 @@ package workdocs {
         StorageAllocatedInBytes: js.UndefOr[PositiveSizeType] = js.undefined,
         StorageType: js.UndefOr[StorageType] = js.undefined
     ): StorageRuleType = {
-      val __obj = js.Dictionary.empty[js.Any]
-      StorageAllocatedInBytes.foreach(__v => __obj.update("StorageAllocatedInBytes", __v.asInstanceOf[js.Any]))
-      StorageType.foreach(__v => __obj.update("StorageType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      StorageAllocatedInBytes.foreach(__v => __obj.updateDynamic("StorageAllocatedInBytes")(__v.asInstanceOf[js.Any]))
+      StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StorageRuleType]
     }
   }
@@ -2441,10 +2443,10 @@ package workdocs {
         Protocol: js.UndefOr[SubscriptionProtocolType] = js.undefined,
         SubscriptionId: js.UndefOr[IdType] = js.undefined
     ): Subscription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EndPoint.foreach(__v => __obj.update("EndPoint", __v.asInstanceOf[js.Any]))
-      Protocol.foreach(__v => __obj.update("Protocol", __v.asInstanceOf[js.Any]))
-      SubscriptionId.foreach(__v => __obj.update("SubscriptionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EndPoint.foreach(__v => __obj.updateDynamic("EndPoint")(__v.asInstanceOf[js.Any]))
+      Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
+      SubscriptionId.foreach(__v => __obj.updateDynamic("SubscriptionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Subscription]
     }
   }
@@ -2478,14 +2480,14 @@ package workdocs {
         ParentFolderId: js.UndefOr[ResourceIdType] = js.undefined,
         ResourceState: js.UndefOr[ResourceStateType] = js.undefined
     ): UpdateDocumentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DocumentId" -> DocumentId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      ParentFolderId.foreach(__v => __obj.update("ParentFolderId", __v.asInstanceOf[js.Any]))
-      ResourceState.foreach(__v => __obj.update("ResourceState", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ParentFolderId.foreach(__v => __obj.updateDynamic("ParentFolderId")(__v.asInstanceOf[js.Any]))
+      ResourceState.foreach(__v => __obj.updateDynamic("ResourceState")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDocumentRequest]
     }
   }
@@ -2505,13 +2507,13 @@ package workdocs {
         AuthenticationToken: js.UndefOr[AuthenticationHeaderType] = js.undefined,
         VersionStatus: js.UndefOr[DocumentVersionStatus] = js.undefined
     ): UpdateDocumentVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DocumentId" -> DocumentId.asInstanceOf[js.Any],
         "VersionId"  -> VersionId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
-      VersionStatus.foreach(__v => __obj.update("VersionStatus", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
+      VersionStatus.foreach(__v => __obj.updateDynamic("VersionStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDocumentVersionRequest]
     }
   }
@@ -2533,14 +2535,14 @@ package workdocs {
         ParentFolderId: js.UndefOr[ResourceIdType] = js.undefined,
         ResourceState: js.UndefOr[ResourceStateType] = js.undefined
     ): UpdateFolderRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FolderId" -> FolderId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      ParentFolderId.foreach(__v => __obj.update("ParentFolderId", __v.asInstanceOf[js.Any]))
-      ResourceState.foreach(__v => __obj.update("ResourceState", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ParentFolderId.foreach(__v => __obj.updateDynamic("ParentFolderId")(__v.asInstanceOf[js.Any]))
+      ResourceState.foreach(__v => __obj.updateDynamic("ResourceState")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFolderRequest]
     }
   }
@@ -2570,18 +2572,18 @@ package workdocs {
         TimeZoneId: js.UndefOr[TimeZoneIdType] = js.undefined,
         Type: js.UndefOr[UserType] = js.undefined
     ): UpdateUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UserId" -> UserId.asInstanceOf[js.Any]
       )
 
-      AuthenticationToken.foreach(__v => __obj.update("AuthenticationToken", __v.asInstanceOf[js.Any]))
-      GivenName.foreach(__v => __obj.update("GivenName", __v.asInstanceOf[js.Any]))
-      GrantPoweruserPrivileges.foreach(__v => __obj.update("GrantPoweruserPrivileges", __v.asInstanceOf[js.Any]))
-      Locale.foreach(__v => __obj.update("Locale", __v.asInstanceOf[js.Any]))
-      StorageRule.foreach(__v => __obj.update("StorageRule", __v.asInstanceOf[js.Any]))
-      Surname.foreach(__v => __obj.update("Surname", __v.asInstanceOf[js.Any]))
-      TimeZoneId.foreach(__v => __obj.update("TimeZoneId", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      AuthenticationToken.foreach(__v => __obj.updateDynamic("AuthenticationToken")(__v.asInstanceOf[js.Any]))
+      GivenName.foreach(__v => __obj.updateDynamic("GivenName")(__v.asInstanceOf[js.Any]))
+      GrantPoweruserPrivileges.foreach(__v => __obj.updateDynamic("GrantPoweruserPrivileges")(__v.asInstanceOf[js.Any]))
+      Locale.foreach(__v => __obj.updateDynamic("Locale")(__v.asInstanceOf[js.Any]))
+      StorageRule.foreach(__v => __obj.updateDynamic("StorageRule")(__v.asInstanceOf[js.Any]))
+      Surname.foreach(__v => __obj.updateDynamic("Surname")(__v.asInstanceOf[js.Any]))
+      TimeZoneId.foreach(__v => __obj.updateDynamic("TimeZoneId")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateUserRequest]
     }
   }
@@ -2595,8 +2597,8 @@ package workdocs {
     def apply(
         User: js.UndefOr[User] = js.undefined
     ): UpdateUserResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      User.foreach(__v => __obj.update("User", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateUserResponse]
     }
   }
@@ -2615,9 +2617,9 @@ package workdocs {
         SignedHeaders: js.UndefOr[SignedHeaderMap] = js.undefined,
         UploadUrl: js.UndefOr[UrlType] = js.undefined
     ): UploadMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SignedHeaders.foreach(__v => __obj.update("SignedHeaders", __v.asInstanceOf[js.Any]))
-      UploadUrl.foreach(__v => __obj.update("UploadUrl", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SignedHeaders.foreach(__v => __obj.updateDynamic("SignedHeaders")(__v.asInstanceOf[js.Any]))
+      UploadUrl.foreach(__v => __obj.updateDynamic("UploadUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UploadMetadata]
     }
   }
@@ -2662,22 +2664,22 @@ package workdocs {
         Type: js.UndefOr[UserType] = js.undefined,
         Username: js.UndefOr[UsernameType] = js.undefined
     ): User = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedTimestamp.foreach(__v => __obj.update("CreatedTimestamp", __v.asInstanceOf[js.Any]))
-      EmailAddress.foreach(__v => __obj.update("EmailAddress", __v.asInstanceOf[js.Any]))
-      GivenName.foreach(__v => __obj.update("GivenName", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Locale.foreach(__v => __obj.update("Locale", __v.asInstanceOf[js.Any]))
-      ModifiedTimestamp.foreach(__v => __obj.update("ModifiedTimestamp", __v.asInstanceOf[js.Any]))
-      OrganizationId.foreach(__v => __obj.update("OrganizationId", __v.asInstanceOf[js.Any]))
-      RecycleBinFolderId.foreach(__v => __obj.update("RecycleBinFolderId", __v.asInstanceOf[js.Any]))
-      RootFolderId.foreach(__v => __obj.update("RootFolderId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      Storage.foreach(__v => __obj.update("Storage", __v.asInstanceOf[js.Any]))
-      Surname.foreach(__v => __obj.update("Surname", __v.asInstanceOf[js.Any]))
-      TimeZoneId.foreach(__v => __obj.update("TimeZoneId", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
-      Username.foreach(__v => __obj.update("Username", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      EmailAddress.foreach(__v => __obj.updateDynamic("EmailAddress")(__v.asInstanceOf[js.Any]))
+      GivenName.foreach(__v => __obj.updateDynamic("GivenName")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Locale.foreach(__v => __obj.updateDynamic("Locale")(__v.asInstanceOf[js.Any]))
+      ModifiedTimestamp.foreach(__v => __obj.updateDynamic("ModifiedTimestamp")(__v.asInstanceOf[js.Any]))
+      OrganizationId.foreach(__v => __obj.updateDynamic("OrganizationId")(__v.asInstanceOf[js.Any]))
+      RecycleBinFolderId.foreach(__v => __obj.updateDynamic("RecycleBinFolderId")(__v.asInstanceOf[js.Any]))
+      RootFolderId.foreach(__v => __obj.updateDynamic("RootFolderId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Storage.foreach(__v => __obj.updateDynamic("Storage")(__v.asInstanceOf[js.Any]))
+      Surname.foreach(__v => __obj.updateDynamic("Surname")(__v.asInstanceOf[js.Any]))
+      TimeZoneId.foreach(__v => __obj.updateDynamic("TimeZoneId")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[User]
     }
   }
@@ -2709,12 +2711,12 @@ package workdocs {
         Surname: js.UndefOr[UserAttributeValueType] = js.undefined,
         Username: js.UndefOr[UsernameType] = js.undefined
     ): UserMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EmailAddress.foreach(__v => __obj.update("EmailAddress", __v.asInstanceOf[js.Any]))
-      GivenName.foreach(__v => __obj.update("GivenName", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Surname.foreach(__v => __obj.update("Surname", __v.asInstanceOf[js.Any]))
-      Username.foreach(__v => __obj.update("Username", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EmailAddress.foreach(__v => __obj.updateDynamic("EmailAddress")(__v.asInstanceOf[js.Any]))
+      GivenName.foreach(__v => __obj.updateDynamic("GivenName")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Surname.foreach(__v => __obj.updateDynamic("Surname")(__v.asInstanceOf[js.Any]))
+      Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UserMetadata]
     }
   }
@@ -2751,9 +2753,9 @@ package workdocs {
         StorageRule: js.UndefOr[StorageRuleType] = js.undefined,
         StorageUtilizedInBytes: js.UndefOr[SizeType] = js.undefined
     ): UserStorageMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      StorageRule.foreach(__v => __obj.update("StorageRule", __v.asInstanceOf[js.Any]))
-      StorageUtilizedInBytes.foreach(__v => __obj.update("StorageUtilizedInBytes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      StorageRule.foreach(__v => __obj.updateDynamic("StorageRule")(__v.asInstanceOf[js.Any]))
+      StorageUtilizedInBytes.foreach(__v => __obj.updateDynamic("StorageUtilizedInBytes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UserStorageMetadata]
     }
   }

@@ -145,11 +145,11 @@ package support {
         attachments: Attachments,
         attachmentSetId: js.UndefOr[AttachmentSetId] = js.undefined
     ): AddAttachmentsToSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "attachments" -> attachments.asInstanceOf[js.Any]
       )
 
-      attachmentSetId.foreach(__v => __obj.update("attachmentSetId", __v.asInstanceOf[js.Any]))
+      attachmentSetId.foreach(__v => __obj.updateDynamic("attachmentSetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddAttachmentsToSetRequest]
     }
   }
@@ -168,9 +168,9 @@ package support {
         attachmentSetId: js.UndefOr[AttachmentSetId] = js.undefined,
         expiryTime: js.UndefOr[ExpiryTime] = js.undefined
     ): AddAttachmentsToSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      attachmentSetId.foreach(__v => __obj.update("attachmentSetId", __v.asInstanceOf[js.Any]))
-      expiryTime.foreach(__v => __obj.update("expiryTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      attachmentSetId.foreach(__v => __obj.updateDynamic("attachmentSetId")(__v.asInstanceOf[js.Any]))
+      expiryTime.foreach(__v => __obj.updateDynamic("expiryTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddAttachmentsToSetResponse]
     }
   }
@@ -193,13 +193,13 @@ package support {
         caseId: js.UndefOr[CaseId] = js.undefined,
         ccEmailAddresses: js.UndefOr[CcEmailAddressList] = js.undefined
     ): AddCommunicationToCaseRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "communicationBody" -> communicationBody.asInstanceOf[js.Any]
       )
 
-      attachmentSetId.foreach(__v => __obj.update("attachmentSetId", __v.asInstanceOf[js.Any]))
-      caseId.foreach(__v => __obj.update("caseId", __v.asInstanceOf[js.Any]))
-      ccEmailAddresses.foreach(__v => __obj.update("ccEmailAddresses", __v.asInstanceOf[js.Any]))
+      attachmentSetId.foreach(__v => __obj.updateDynamic("attachmentSetId")(__v.asInstanceOf[js.Any]))
+      caseId.foreach(__v => __obj.updateDynamic("caseId")(__v.asInstanceOf[js.Any]))
+      ccEmailAddresses.foreach(__v => __obj.updateDynamic("ccEmailAddresses")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddCommunicationToCaseRequest]
     }
   }
@@ -216,8 +216,8 @@ package support {
     def apply(
         result: js.UndefOr[Result] = js.undefined
     ): AddCommunicationToCaseResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      result.foreach(__v => __obj.update("result", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      result.foreach(__v => __obj.updateDynamic("result")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddCommunicationToCaseResponse]
     }
   }
@@ -236,9 +236,9 @@ package support {
         data: js.UndefOr[Data] = js.undefined,
         fileName: js.UndefOr[FileName] = js.undefined
     ): Attachment = {
-      val __obj = js.Dictionary.empty[js.Any]
-      data.foreach(__v => __obj.update("data", __v.asInstanceOf[js.Any]))
-      fileName.foreach(__v => __obj.update("fileName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      data.foreach(__v => __obj.updateDynamic("data")(__v.asInstanceOf[js.Any]))
+      fileName.foreach(__v => __obj.updateDynamic("fileName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Attachment]
     }
   }
@@ -257,9 +257,9 @@ package support {
         attachmentId: js.UndefOr[AttachmentId] = js.undefined,
         fileName: js.UndefOr[FileName] = js.undefined
     ): AttachmentDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      attachmentId.foreach(__v => __obj.update("attachmentId", __v.asInstanceOf[js.Any]))
-      fileName.foreach(__v => __obj.update("fileName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      attachmentId.foreach(__v => __obj.updateDynamic("attachmentId")(__v.asInstanceOf[js.Any]))
+      fileName.foreach(__v => __obj.updateDynamic("fileName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttachmentDetails]
     }
   }
@@ -358,19 +358,19 @@ package support {
         submittedBy: js.UndefOr[SubmittedBy] = js.undefined,
         timeCreated: js.UndefOr[TimeCreated] = js.undefined
     ): CaseDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      caseId.foreach(__v => __obj.update("caseId", __v.asInstanceOf[js.Any]))
-      categoryCode.foreach(__v => __obj.update("categoryCode", __v.asInstanceOf[js.Any]))
-      ccEmailAddresses.foreach(__v => __obj.update("ccEmailAddresses", __v.asInstanceOf[js.Any]))
-      displayId.foreach(__v => __obj.update("displayId", __v.asInstanceOf[js.Any]))
-      language.foreach(__v => __obj.update("language", __v.asInstanceOf[js.Any]))
-      recentCommunications.foreach(__v => __obj.update("recentCommunications", __v.asInstanceOf[js.Any]))
-      serviceCode.foreach(__v => __obj.update("serviceCode", __v.asInstanceOf[js.Any]))
-      severityCode.foreach(__v => __obj.update("severityCode", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      subject.foreach(__v => __obj.update("subject", __v.asInstanceOf[js.Any]))
-      submittedBy.foreach(__v => __obj.update("submittedBy", __v.asInstanceOf[js.Any]))
-      timeCreated.foreach(__v => __obj.update("timeCreated", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      caseId.foreach(__v => __obj.updateDynamic("caseId")(__v.asInstanceOf[js.Any]))
+      categoryCode.foreach(__v => __obj.updateDynamic("categoryCode")(__v.asInstanceOf[js.Any]))
+      ccEmailAddresses.foreach(__v => __obj.updateDynamic("ccEmailAddresses")(__v.asInstanceOf[js.Any]))
+      displayId.foreach(__v => __obj.updateDynamic("displayId")(__v.asInstanceOf[js.Any]))
+      language.foreach(__v => __obj.updateDynamic("language")(__v.asInstanceOf[js.Any]))
+      recentCommunications.foreach(__v => __obj.updateDynamic("recentCommunications")(__v.asInstanceOf[js.Any]))
+      serviceCode.foreach(__v => __obj.updateDynamic("serviceCode")(__v.asInstanceOf[js.Any]))
+      severityCode.foreach(__v => __obj.updateDynamic("severityCode")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      subject.foreach(__v => __obj.updateDynamic("subject")(__v.asInstanceOf[js.Any]))
+      submittedBy.foreach(__v => __obj.updateDynamic("submittedBy")(__v.asInstanceOf[js.Any]))
+      timeCreated.foreach(__v => __obj.updateDynamic("timeCreated")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CaseDetails]
     }
   }
@@ -397,9 +397,9 @@ package support {
         code: js.UndefOr[CategoryCode] = js.undefined,
         name: js.UndefOr[CategoryName] = js.undefined
     ): Category = {
-      val __obj = js.Dictionary.empty[js.Any]
-      code.foreach(__v => __obj.update("code", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Category]
     }
   }
@@ -424,12 +424,12 @@ package support {
         submittedBy: js.UndefOr[SubmittedBy] = js.undefined,
         timeCreated: js.UndefOr[TimeCreated] = js.undefined
     ): Communication = {
-      val __obj = js.Dictionary.empty[js.Any]
-      attachmentSet.foreach(__v => __obj.update("attachmentSet", __v.asInstanceOf[js.Any]))
-      body.foreach(__v => __obj.update("body", __v.asInstanceOf[js.Any]))
-      caseId.foreach(__v => __obj.update("caseId", __v.asInstanceOf[js.Any]))
-      submittedBy.foreach(__v => __obj.update("submittedBy", __v.asInstanceOf[js.Any]))
-      timeCreated.foreach(__v => __obj.update("timeCreated", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      attachmentSet.foreach(__v => __obj.updateDynamic("attachmentSet")(__v.asInstanceOf[js.Any]))
+      body.foreach(__v => __obj.updateDynamic("body")(__v.asInstanceOf[js.Any]))
+      caseId.foreach(__v => __obj.updateDynamic("caseId")(__v.asInstanceOf[js.Any]))
+      submittedBy.foreach(__v => __obj.updateDynamic("submittedBy")(__v.asInstanceOf[js.Any]))
+      timeCreated.foreach(__v => __obj.updateDynamic("timeCreated")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Communication]
     }
   }
@@ -462,18 +462,18 @@ package support {
         serviceCode: js.UndefOr[ServiceCode] = js.undefined,
         severityCode: js.UndefOr[SeverityCode] = js.undefined
     ): CreateCaseRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "communicationBody" -> communicationBody.asInstanceOf[js.Any],
         "subject"           -> subject.asInstanceOf[js.Any]
       )
 
-      attachmentSetId.foreach(__v => __obj.update("attachmentSetId", __v.asInstanceOf[js.Any]))
-      categoryCode.foreach(__v => __obj.update("categoryCode", __v.asInstanceOf[js.Any]))
-      ccEmailAddresses.foreach(__v => __obj.update("ccEmailAddresses", __v.asInstanceOf[js.Any]))
-      issueType.foreach(__v => __obj.update("issueType", __v.asInstanceOf[js.Any]))
-      language.foreach(__v => __obj.update("language", __v.asInstanceOf[js.Any]))
-      serviceCode.foreach(__v => __obj.update("serviceCode", __v.asInstanceOf[js.Any]))
-      severityCode.foreach(__v => __obj.update("severityCode", __v.asInstanceOf[js.Any]))
+      attachmentSetId.foreach(__v => __obj.updateDynamic("attachmentSetId")(__v.asInstanceOf[js.Any]))
+      categoryCode.foreach(__v => __obj.updateDynamic("categoryCode")(__v.asInstanceOf[js.Any]))
+      ccEmailAddresses.foreach(__v => __obj.updateDynamic("ccEmailAddresses")(__v.asInstanceOf[js.Any]))
+      issueType.foreach(__v => __obj.updateDynamic("issueType")(__v.asInstanceOf[js.Any]))
+      language.foreach(__v => __obj.updateDynamic("language")(__v.asInstanceOf[js.Any]))
+      serviceCode.foreach(__v => __obj.updateDynamic("serviceCode")(__v.asInstanceOf[js.Any]))
+      severityCode.foreach(__v => __obj.updateDynamic("severityCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCaseRequest]
     }
   }
@@ -490,8 +490,8 @@ package support {
     def apply(
         caseId: js.UndefOr[CaseId] = js.undefined
     ): CreateCaseResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      caseId.foreach(__v => __obj.update("caseId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      caseId.foreach(__v => __obj.updateDynamic("caseId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCaseResponse]
     }
   }
@@ -513,7 +513,7 @@ package support {
     def apply(
         attachmentId: AttachmentId
     ): DescribeAttachmentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "attachmentId" -> attachmentId.asInstanceOf[js.Any]
       )
 
@@ -533,8 +533,8 @@ package support {
     def apply(
         attachment: js.UndefOr[Attachment] = js.undefined
     ): DescribeAttachmentResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      attachment.foreach(__v => __obj.update("attachment", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      attachment.foreach(__v => __obj.updateDynamic("attachment")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAttachmentResponse]
     }
   }
@@ -567,16 +567,16 @@ package support {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeCasesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      afterTime.foreach(__v => __obj.update("afterTime", __v.asInstanceOf[js.Any]))
-      beforeTime.foreach(__v => __obj.update("beforeTime", __v.asInstanceOf[js.Any]))
-      caseIdList.foreach(__v => __obj.update("caseIdList", __v.asInstanceOf[js.Any]))
-      displayId.foreach(__v => __obj.update("displayId", __v.asInstanceOf[js.Any]))
-      includeCommunications.foreach(__v => __obj.update("includeCommunications", __v.asInstanceOf[js.Any]))
-      includeResolvedCases.foreach(__v => __obj.update("includeResolvedCases", __v.asInstanceOf[js.Any]))
-      language.foreach(__v => __obj.update("language", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      afterTime.foreach(__v => __obj.updateDynamic("afterTime")(__v.asInstanceOf[js.Any]))
+      beforeTime.foreach(__v => __obj.updateDynamic("beforeTime")(__v.asInstanceOf[js.Any]))
+      caseIdList.foreach(__v => __obj.updateDynamic("caseIdList")(__v.asInstanceOf[js.Any]))
+      displayId.foreach(__v => __obj.updateDynamic("displayId")(__v.asInstanceOf[js.Any]))
+      includeCommunications.foreach(__v => __obj.updateDynamic("includeCommunications")(__v.asInstanceOf[js.Any]))
+      includeResolvedCases.foreach(__v => __obj.updateDynamic("includeResolvedCases")(__v.asInstanceOf[js.Any]))
+      language.foreach(__v => __obj.updateDynamic("language")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeCasesRequest]
     }
   }
@@ -595,9 +595,9 @@ package support {
         cases: js.UndefOr[CaseList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeCasesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      cases.foreach(__v => __obj.update("cases", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      cases.foreach(__v => __obj.updateDynamic("cases")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeCasesResponse]
     }
   }
@@ -622,14 +622,14 @@ package support {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeCommunicationsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "caseId" -> caseId.asInstanceOf[js.Any]
       )
 
-      afterTime.foreach(__v => __obj.update("afterTime", __v.asInstanceOf[js.Any]))
-      beforeTime.foreach(__v => __obj.update("beforeTime", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      afterTime.foreach(__v => __obj.updateDynamic("afterTime")(__v.asInstanceOf[js.Any]))
+      beforeTime.foreach(__v => __obj.updateDynamic("beforeTime")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeCommunicationsRequest]
     }
   }
@@ -648,9 +648,9 @@ package support {
         communications: js.UndefOr[CommunicationList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeCommunicationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      communications.foreach(__v => __obj.update("communications", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      communications.foreach(__v => __obj.updateDynamic("communications")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeCommunicationsResponse]
     }
   }
@@ -669,9 +669,9 @@ package support {
         language: js.UndefOr[Language] = js.undefined,
         serviceCodeList: js.UndefOr[ServiceCodeList] = js.undefined
     ): DescribeServicesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      language.foreach(__v => __obj.update("language", __v.asInstanceOf[js.Any]))
-      serviceCodeList.foreach(__v => __obj.update("serviceCodeList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      language.foreach(__v => __obj.updateDynamic("language")(__v.asInstanceOf[js.Any]))
+      serviceCodeList.foreach(__v => __obj.updateDynamic("serviceCodeList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeServicesRequest]
     }
   }
@@ -688,8 +688,8 @@ package support {
     def apply(
         services: js.UndefOr[ServiceList] = js.undefined
     ): DescribeServicesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      services.foreach(__v => __obj.update("services", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      services.foreach(__v => __obj.updateDynamic("services")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeServicesResponse]
     }
   }
@@ -706,8 +706,8 @@ package support {
     def apply(
         language: js.UndefOr[Language] = js.undefined
     ): DescribeSeverityLevelsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      language.foreach(__v => __obj.update("language", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      language.foreach(__v => __obj.updateDynamic("language")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSeverityLevelsRequest]
     }
   }
@@ -724,8 +724,8 @@ package support {
     def apply(
         severityLevels: js.UndefOr[SeverityLevelsList] = js.undefined
     ): DescribeSeverityLevelsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      severityLevels.foreach(__v => __obj.update("severityLevels", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      severityLevels.foreach(__v => __obj.updateDynamic("severityLevels")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSeverityLevelsResponse]
     }
   }
@@ -742,7 +742,7 @@ package support {
     def apply(
         checkIds: StringList
     ): DescribeTrustedAdvisorCheckRefreshStatusesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "checkIds" -> checkIds.asInstanceOf[js.Any]
       )
 
@@ -762,7 +762,7 @@ package support {
     def apply(
         statuses: TrustedAdvisorCheckRefreshStatusList
     ): DescribeTrustedAdvisorCheckRefreshStatusesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "statuses" -> statuses.asInstanceOf[js.Any]
       )
 
@@ -784,11 +784,11 @@ package support {
         checkId: String,
         language: js.UndefOr[String] = js.undefined
     ): DescribeTrustedAdvisorCheckResultRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "checkId" -> checkId.asInstanceOf[js.Any]
       )
 
-      language.foreach(__v => __obj.update("language", __v.asInstanceOf[js.Any]))
+      language.foreach(__v => __obj.updateDynamic("language")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTrustedAdvisorCheckResultRequest]
     }
   }
@@ -805,8 +805,8 @@ package support {
     def apply(
         result: js.UndefOr[TrustedAdvisorCheckResult] = js.undefined
     ): DescribeTrustedAdvisorCheckResultResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      result.foreach(__v => __obj.update("result", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      result.foreach(__v => __obj.updateDynamic("result")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTrustedAdvisorCheckResultResponse]
     }
   }
@@ -823,7 +823,7 @@ package support {
     def apply(
         checkIds: StringList
     ): DescribeTrustedAdvisorCheckSummariesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "checkIds" -> checkIds.asInstanceOf[js.Any]
       )
 
@@ -843,7 +843,7 @@ package support {
     def apply(
         summaries: TrustedAdvisorCheckSummaryList
     ): DescribeTrustedAdvisorCheckSummariesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "summaries" -> summaries.asInstanceOf[js.Any]
       )
 
@@ -863,7 +863,7 @@ package support {
     def apply(
         language: String
     ): DescribeTrustedAdvisorChecksRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "language" -> language.asInstanceOf[js.Any]
       )
 
@@ -883,7 +883,7 @@ package support {
     def apply(
         checks: TrustedAdvisorCheckList
     ): DescribeTrustedAdvisorChecksResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "checks" -> checks.asInstanceOf[js.Any]
       )
 
@@ -913,9 +913,9 @@ package support {
         communications: js.UndefOr[CommunicationList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): RecentCaseCommunications = {
-      val __obj = js.Dictionary.empty[js.Any]
-      communications.foreach(__v => __obj.update("communications", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      communications.foreach(__v => __obj.updateDynamic("communications")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecentCaseCommunications]
     }
   }
@@ -932,7 +932,7 @@ package support {
     def apply(
         checkId: String
     ): RefreshTrustedAdvisorCheckRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "checkId" -> checkId.asInstanceOf[js.Any]
       )
 
@@ -952,7 +952,7 @@ package support {
     def apply(
         status: TrustedAdvisorCheckRefreshStatus
     ): RefreshTrustedAdvisorCheckResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "status" -> status.asInstanceOf[js.Any]
       )
 
@@ -972,8 +972,8 @@ package support {
     def apply(
         caseId: js.UndefOr[CaseId] = js.undefined
     ): ResolveCaseRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      caseId.foreach(__v => __obj.update("caseId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      caseId.foreach(__v => __obj.updateDynamic("caseId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResolveCaseRequest]
     }
   }
@@ -992,9 +992,9 @@ package support {
         finalCaseStatus: js.UndefOr[CaseStatus] = js.undefined,
         initialCaseStatus: js.UndefOr[CaseStatus] = js.undefined
     ): ResolveCaseResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      finalCaseStatus.foreach(__v => __obj.update("finalCaseStatus", __v.asInstanceOf[js.Any]))
-      initialCaseStatus.foreach(__v => __obj.update("initialCaseStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      finalCaseStatus.foreach(__v => __obj.updateDynamic("finalCaseStatus")(__v.asInstanceOf[js.Any]))
+      initialCaseStatus.foreach(__v => __obj.updateDynamic("initialCaseStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResolveCaseResponse]
     }
   }
@@ -1015,10 +1015,10 @@ package support {
         code: js.UndefOr[ServiceCode] = js.undefined,
         name: js.UndefOr[ServiceName] = js.undefined
     ): Service = {
-      val __obj = js.Dictionary.empty[js.Any]
-      categories.foreach(__v => __obj.update("categories", __v.asInstanceOf[js.Any]))
-      code.foreach(__v => __obj.update("code", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      categories.foreach(__v => __obj.updateDynamic("categories")(__v.asInstanceOf[js.Any]))
+      code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Service]
     }
   }
@@ -1037,9 +1037,9 @@ package support {
         code: js.UndefOr[SeverityLevelCode] = js.undefined,
         name: js.UndefOr[SeverityLevelName] = js.undefined
     ): SeverityLevel = {
-      val __obj = js.Dictionary.empty[js.Any]
-      code.foreach(__v => __obj.update("code", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SeverityLevel]
     }
   }
@@ -1056,8 +1056,8 @@ package support {
     def apply(
         costOptimizing: js.UndefOr[TrustedAdvisorCostOptimizingSummary] = js.undefined
     ): TrustedAdvisorCategorySpecificSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      costOptimizing.foreach(__v => __obj.update("costOptimizing", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      costOptimizing.foreach(__v => __obj.updateDynamic("costOptimizing")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TrustedAdvisorCategorySpecificSummary]
     }
   }
@@ -1082,7 +1082,7 @@ package support {
         metadata: StringList,
         name: String
     ): TrustedAdvisorCheckDescription = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "category"    -> category.asInstanceOf[js.Any],
         "description" -> description.asInstanceOf[js.Any],
         "id"          -> id.asInstanceOf[js.Any],
@@ -1110,7 +1110,7 @@ package support {
         millisUntilNextRefreshable: Double,
         status: String
     ): TrustedAdvisorCheckRefreshStatus = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "checkId"                    -> checkId.asInstanceOf[js.Any],
         "millisUntilNextRefreshable" -> millisUntilNextRefreshable.asInstanceOf[js.Any],
         "status"                     -> status.asInstanceOf[js.Any]
@@ -1142,7 +1142,7 @@ package support {
         status: String,
         timestamp: String
     ): TrustedAdvisorCheckResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "categorySpecificSummary" -> categorySpecificSummary.asInstanceOf[js.Any],
         "checkId"                 -> checkId.asInstanceOf[js.Any],
         "flaggedResources"        -> flaggedResources.asInstanceOf[js.Any],
@@ -1177,7 +1177,7 @@ package support {
         timestamp: String,
         hasFlaggedResources: js.UndefOr[Boolean] = js.undefined
     ): TrustedAdvisorCheckSummary = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "categorySpecificSummary" -> categorySpecificSummary.asInstanceOf[js.Any],
         "checkId"                 -> checkId.asInstanceOf[js.Any],
         "resourcesSummary"        -> resourcesSummary.asInstanceOf[js.Any],
@@ -1185,7 +1185,7 @@ package support {
         "timestamp"               -> timestamp.asInstanceOf[js.Any]
       )
 
-      hasFlaggedResources.foreach(__v => __obj.update("hasFlaggedResources", __v.asInstanceOf[js.Any]))
+      hasFlaggedResources.foreach(__v => __obj.updateDynamic("hasFlaggedResources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TrustedAdvisorCheckSummary]
     }
   }
@@ -1204,7 +1204,7 @@ package support {
         estimatedMonthlySavings: Double,
         estimatedPercentMonthlySavings: Double
     ): TrustedAdvisorCostOptimizingSummary = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "estimatedMonthlySavings"        -> estimatedMonthlySavings.asInstanceOf[js.Any],
         "estimatedPercentMonthlySavings" -> estimatedPercentMonthlySavings.asInstanceOf[js.Any]
       )
@@ -1233,14 +1233,14 @@ package support {
         isSuppressed: js.UndefOr[Boolean] = js.undefined,
         region: js.UndefOr[String] = js.undefined
     ): TrustedAdvisorResourceDetail = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "metadata"   -> metadata.asInstanceOf[js.Any],
         "resourceId" -> resourceId.asInstanceOf[js.Any],
         "status"     -> status.asInstanceOf[js.Any]
       )
 
-      isSuppressed.foreach(__v => __obj.update("isSuppressed", __v.asInstanceOf[js.Any]))
-      region.foreach(__v => __obj.update("region", __v.asInstanceOf[js.Any]))
+      isSuppressed.foreach(__v => __obj.updateDynamic("isSuppressed")(__v.asInstanceOf[js.Any]))
+      region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TrustedAdvisorResourceDetail]
     }
   }
@@ -1263,7 +1263,7 @@ package support {
         resourcesProcessed: Double,
         resourcesSuppressed: Double
     ): TrustedAdvisorResourcesSummary = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourcesFlagged"    -> resourcesFlagged.asInstanceOf[js.Any],
         "resourcesIgnored"    -> resourcesIgnored.asInstanceOf[js.Any],
         "resourcesProcessed"  -> resourcesProcessed.asInstanceOf[js.Any],

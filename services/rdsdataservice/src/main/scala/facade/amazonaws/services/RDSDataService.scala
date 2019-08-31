@@ -88,16 +88,16 @@ package rdsdataservice {
         schema: js.UndefOr[DbName] = js.undefined,
         transactionId: js.UndefOr[Id] = js.undefined
     ): BatchExecuteStatementRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "secretArn"   -> secretArn.asInstanceOf[js.Any],
         "sql"         -> sql.asInstanceOf[js.Any]
       )
 
-      database.foreach(__v => __obj.update("database", __v.asInstanceOf[js.Any]))
-      parameterSets.foreach(__v => __obj.update("parameterSets", __v.asInstanceOf[js.Any]))
-      schema.foreach(__v => __obj.update("schema", __v.asInstanceOf[js.Any]))
-      transactionId.foreach(__v => __obj.update("transactionId", __v.asInstanceOf[js.Any]))
+      database.foreach(__v => __obj.updateDynamic("database")(__v.asInstanceOf[js.Any]))
+      parameterSets.foreach(__v => __obj.updateDynamic("parameterSets")(__v.asInstanceOf[js.Any]))
+      schema.foreach(__v => __obj.updateDynamic("schema")(__v.asInstanceOf[js.Any]))
+      transactionId.foreach(__v => __obj.updateDynamic("transactionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchExecuteStatementRequest]
     }
   }
@@ -115,8 +115,8 @@ package rdsdataservice {
     def apply(
         updateResults: js.UndefOr[UpdateResults] = js.undefined
     ): BatchExecuteStatementResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      updateResults.foreach(__v => __obj.update("updateResults", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      updateResults.foreach(__v => __obj.updateDynamic("updateResults")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchExecuteStatementResponse]
     }
   }
@@ -140,13 +140,13 @@ package rdsdataservice {
         database: js.UndefOr[DbName] = js.undefined,
         schema: js.UndefOr[DbName] = js.undefined
     ): BeginTransactionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "secretArn"   -> secretArn.asInstanceOf[js.Any]
       )
 
-      database.foreach(__v => __obj.update("database", __v.asInstanceOf[js.Any]))
-      schema.foreach(__v => __obj.update("schema", __v.asInstanceOf[js.Any]))
+      database.foreach(__v => __obj.updateDynamic("database")(__v.asInstanceOf[js.Any]))
+      schema.foreach(__v => __obj.updateDynamic("schema")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BeginTransactionRequest]
     }
   }
@@ -164,8 +164,8 @@ package rdsdataservice {
     def apply(
         transactionId: js.UndefOr[Id] = js.undefined
     ): BeginTransactionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      transactionId.foreach(__v => __obj.update("transactionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      transactionId.foreach(__v => __obj.updateDynamic("transactionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BeginTransactionResponse]
     }
   }
@@ -208,21 +208,21 @@ package rdsdataservice {
         `type`: js.UndefOr[Int] = js.undefined,
         typeName: js.UndefOr[String] = js.undefined
     ): ColumnMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arrayBaseColumnType.foreach(__v => __obj.update("arrayBaseColumnType", __v.asInstanceOf[js.Any]))
-      isAutoIncrement.foreach(__v => __obj.update("isAutoIncrement", __v.asInstanceOf[js.Any]))
-      isCaseSensitive.foreach(__v => __obj.update("isCaseSensitive", __v.asInstanceOf[js.Any]))
-      isCurrency.foreach(__v => __obj.update("isCurrency", __v.asInstanceOf[js.Any]))
-      isSigned.foreach(__v => __obj.update("isSigned", __v.asInstanceOf[js.Any]))
-      label.foreach(__v => __obj.update("label", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      nullable.foreach(__v => __obj.update("nullable", __v.asInstanceOf[js.Any]))
-      precision.foreach(__v => __obj.update("precision", __v.asInstanceOf[js.Any]))
-      scale.foreach(__v => __obj.update("scale", __v.asInstanceOf[js.Any]))
-      schemaName.foreach(__v => __obj.update("schemaName", __v.asInstanceOf[js.Any]))
-      tableName.foreach(__v => __obj.update("tableName", __v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
-      typeName.foreach(__v => __obj.update("typeName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arrayBaseColumnType.foreach(__v => __obj.updateDynamic("arrayBaseColumnType")(__v.asInstanceOf[js.Any]))
+      isAutoIncrement.foreach(__v => __obj.updateDynamic("isAutoIncrement")(__v.asInstanceOf[js.Any]))
+      isCaseSensitive.foreach(__v => __obj.updateDynamic("isCaseSensitive")(__v.asInstanceOf[js.Any]))
+      isCurrency.foreach(__v => __obj.updateDynamic("isCurrency")(__v.asInstanceOf[js.Any]))
+      isSigned.foreach(__v => __obj.updateDynamic("isSigned")(__v.asInstanceOf[js.Any]))
+      label.foreach(__v => __obj.updateDynamic("label")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      nullable.foreach(__v => __obj.updateDynamic("nullable")(__v.asInstanceOf[js.Any]))
+      precision.foreach(__v => __obj.updateDynamic("precision")(__v.asInstanceOf[js.Any]))
+      scale.foreach(__v => __obj.updateDynamic("scale")(__v.asInstanceOf[js.Any]))
+      schemaName.foreach(__v => __obj.updateDynamic("schemaName")(__v.asInstanceOf[js.Any]))
+      tableName.foreach(__v => __obj.updateDynamic("tableName")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      typeName.foreach(__v => __obj.updateDynamic("typeName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ColumnMetadata]
     }
   }
@@ -243,7 +243,7 @@ package rdsdataservice {
         secretArn: Arn,
         transactionId: Id
     ): CommitTransactionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn"   -> resourceArn.asInstanceOf[js.Any],
         "secretArn"     -> secretArn.asInstanceOf[js.Any],
         "transactionId" -> transactionId.asInstanceOf[js.Any]
@@ -265,8 +265,8 @@ package rdsdataservice {
     def apply(
         transactionStatus: js.UndefOr[TransactionStatus] = js.undefined
     ): CommitTransactionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      transactionStatus.foreach(__v => __obj.update("transactionStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      transactionStatus.foreach(__v => __obj.updateDynamic("transactionStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CommitTransactionResponse]
     }
   }
@@ -292,14 +292,14 @@ package rdsdataservice {
         database: js.UndefOr[DbName] = js.undefined,
         schema: js.UndefOr[DbName] = js.undefined
     ): ExecuteSqlRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "awsSecretStoreArn"      -> awsSecretStoreArn.asInstanceOf[js.Any],
         "dbClusterOrInstanceArn" -> dbClusterOrInstanceArn.asInstanceOf[js.Any],
         "sqlStatements"          -> sqlStatements.asInstanceOf[js.Any]
       )
 
-      database.foreach(__v => __obj.update("database", __v.asInstanceOf[js.Any]))
-      schema.foreach(__v => __obj.update("schema", __v.asInstanceOf[js.Any]))
+      database.foreach(__v => __obj.updateDynamic("database")(__v.asInstanceOf[js.Any]))
+      schema.foreach(__v => __obj.updateDynamic("schema")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExecuteSqlRequest]
     }
   }
@@ -317,8 +317,8 @@ package rdsdataservice {
     def apply(
         sqlStatementResults: js.UndefOr[SqlStatementResults] = js.undefined
     ): ExecuteSqlResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      sqlStatementResults.foreach(__v => __obj.update("sqlStatementResults", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      sqlStatementResults.foreach(__v => __obj.updateDynamic("sqlStatementResults")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExecuteSqlResponse]
     }
   }
@@ -352,18 +352,18 @@ package rdsdataservice {
         schema: js.UndefOr[DbName] = js.undefined,
         transactionId: js.UndefOr[Id] = js.undefined
     ): ExecuteStatementRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "secretArn"   -> secretArn.asInstanceOf[js.Any],
         "sql"         -> sql.asInstanceOf[js.Any]
       )
 
-      continueAfterTimeout.foreach(__v => __obj.update("continueAfterTimeout", __v.asInstanceOf[js.Any]))
-      database.foreach(__v => __obj.update("database", __v.asInstanceOf[js.Any]))
-      includeResultMetadata.foreach(__v => __obj.update("includeResultMetadata", __v.asInstanceOf[js.Any]))
-      parameters.foreach(__v => __obj.update("parameters", __v.asInstanceOf[js.Any]))
-      schema.foreach(__v => __obj.update("schema", __v.asInstanceOf[js.Any]))
-      transactionId.foreach(__v => __obj.update("transactionId", __v.asInstanceOf[js.Any]))
+      continueAfterTimeout.foreach(__v => __obj.updateDynamic("continueAfterTimeout")(__v.asInstanceOf[js.Any]))
+      database.foreach(__v => __obj.updateDynamic("database")(__v.asInstanceOf[js.Any]))
+      includeResultMetadata.foreach(__v => __obj.updateDynamic("includeResultMetadata")(__v.asInstanceOf[js.Any]))
+      parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
+      schema.foreach(__v => __obj.updateDynamic("schema")(__v.asInstanceOf[js.Any]))
+      transactionId.foreach(__v => __obj.updateDynamic("transactionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExecuteStatementRequest]
     }
   }
@@ -387,11 +387,11 @@ package rdsdataservice {
         numberOfRecordsUpdated: js.UndefOr[RecordsUpdated] = js.undefined,
         records: js.UndefOr[SqlRecords] = js.undefined
     ): ExecuteStatementResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      columnMetadata.foreach(__v => __obj.update("columnMetadata", __v.asInstanceOf[js.Any]))
-      generatedFields.foreach(__v => __obj.update("generatedFields", __v.asInstanceOf[js.Any]))
-      numberOfRecordsUpdated.foreach(__v => __obj.update("numberOfRecordsUpdated", __v.asInstanceOf[js.Any]))
-      records.foreach(__v => __obj.update("records", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      columnMetadata.foreach(__v => __obj.updateDynamic("columnMetadata")(__v.asInstanceOf[js.Any]))
+      generatedFields.foreach(__v => __obj.updateDynamic("generatedFields")(__v.asInstanceOf[js.Any]))
+      numberOfRecordsUpdated.foreach(__v => __obj.updateDynamic("numberOfRecordsUpdated")(__v.asInstanceOf[js.Any]))
+      records.foreach(__v => __obj.updateDynamic("records")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExecuteStatementResponse]
     }
   }
@@ -418,13 +418,13 @@ package rdsdataservice {
         longValue: js.UndefOr[BoxedLong] = js.undefined,
         stringValue: js.UndefOr[String] = js.undefined
     ): Field = {
-      val __obj = js.Dictionary.empty[js.Any]
-      blobValue.foreach(__v => __obj.update("blobValue", __v.asInstanceOf[js.Any]))
-      booleanValue.foreach(__v => __obj.update("booleanValue", __v.asInstanceOf[js.Any]))
-      doubleValue.foreach(__v => __obj.update("doubleValue", __v.asInstanceOf[js.Any]))
-      isNull.foreach(__v => __obj.update("isNull", __v.asInstanceOf[js.Any]))
-      longValue.foreach(__v => __obj.update("longValue", __v.asInstanceOf[js.Any]))
-      stringValue.foreach(__v => __obj.update("stringValue", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      blobValue.foreach(__v => __obj.updateDynamic("blobValue")(__v.asInstanceOf[js.Any]))
+      booleanValue.foreach(__v => __obj.updateDynamic("booleanValue")(__v.asInstanceOf[js.Any]))
+      doubleValue.foreach(__v => __obj.updateDynamic("doubleValue")(__v.asInstanceOf[js.Any]))
+      isNull.foreach(__v => __obj.updateDynamic("isNull")(__v.asInstanceOf[js.Any]))
+      longValue.foreach(__v => __obj.updateDynamic("longValue")(__v.asInstanceOf[js.Any]))
+      stringValue.foreach(__v => __obj.updateDynamic("stringValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Field]
     }
   }
@@ -441,8 +441,8 @@ package rdsdataservice {
     def apply(
         values: js.UndefOr[Row] = js.undefined
     ): Record = {
-      val __obj = js.Dictionary.empty[js.Any]
-      values.foreach(__v => __obj.update("values", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      values.foreach(__v => __obj.updateDynamic("values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Record]
     }
   }
@@ -461,9 +461,9 @@ package rdsdataservice {
         records: js.UndefOr[Records] = js.undefined,
         resultSetMetadata: js.UndefOr[ResultSetMetadata] = js.undefined
     ): ResultFrame = {
-      val __obj = js.Dictionary.empty[js.Any]
-      records.foreach(__v => __obj.update("records", __v.asInstanceOf[js.Any]))
-      resultSetMetadata.foreach(__v => __obj.update("resultSetMetadata", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      records.foreach(__v => __obj.updateDynamic("records")(__v.asInstanceOf[js.Any]))
+      resultSetMetadata.foreach(__v => __obj.updateDynamic("resultSetMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResultFrame]
     }
   }
@@ -482,9 +482,9 @@ package rdsdataservice {
         columnCount: js.UndefOr[Double] = js.undefined,
         columnMetadata: js.UndefOr[Metadata] = js.undefined
     ): ResultSetMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      columnCount.foreach(__v => __obj.update("columnCount", __v.asInstanceOf[js.Any]))
-      columnMetadata.foreach(__v => __obj.update("columnMetadata", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      columnCount.foreach(__v => __obj.updateDynamic("columnCount")(__v.asInstanceOf[js.Any]))
+      columnMetadata.foreach(__v => __obj.updateDynamic("columnMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResultSetMetadata]
     }
   }
@@ -506,7 +506,7 @@ package rdsdataservice {
         secretArn: Arn,
         transactionId: Id
     ): RollbackTransactionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn"   -> resourceArn.asInstanceOf[js.Any],
         "secretArn"     -> secretArn.asInstanceOf[js.Any],
         "transactionId" -> transactionId.asInstanceOf[js.Any]
@@ -529,8 +529,8 @@ package rdsdataservice {
     def apply(
         transactionStatus: js.UndefOr[TransactionStatus] = js.undefined
     ): RollbackTransactionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      transactionStatus.foreach(__v => __obj.update("transactionStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      transactionStatus.foreach(__v => __obj.updateDynamic("transactionStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RollbackTransactionResponse]
     }
   }
@@ -549,9 +549,9 @@ package rdsdataservice {
         name: js.UndefOr[ParameterName] = js.undefined,
         value: js.UndefOr[Field] = js.undefined
     ): SqlParameter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SqlParameter]
     }
   }
@@ -570,9 +570,9 @@ package rdsdataservice {
         numberOfRecordsUpdated: js.UndefOr[RecordsUpdated] = js.undefined,
         resultFrame: js.UndefOr[ResultFrame] = js.undefined
     ): SqlStatementResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      numberOfRecordsUpdated.foreach(__v => __obj.update("numberOfRecordsUpdated", __v.asInstanceOf[js.Any]))
-      resultFrame.foreach(__v => __obj.update("resultFrame", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      numberOfRecordsUpdated.foreach(__v => __obj.updateDynamic("numberOfRecordsUpdated")(__v.asInstanceOf[js.Any]))
+      resultFrame.foreach(__v => __obj.updateDynamic("resultFrame")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SqlStatementResult]
     }
   }
@@ -589,8 +589,8 @@ package rdsdataservice {
     def apply(
         attributes: js.UndefOr[ArrayValueList] = js.undefined
     ): StructValue = {
-      val __obj = js.Dictionary.empty[js.Any]
-      attributes.foreach(__v => __obj.update("attributes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StructValue]
     }
   }
@@ -607,8 +607,8 @@ package rdsdataservice {
     def apply(
         generatedFields: js.UndefOr[FieldList] = js.undefined
     ): UpdateResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      generatedFields.foreach(__v => __obj.update("generatedFields", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      generatedFields.foreach(__v => __obj.updateDynamic("generatedFields")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateResult]
     }
   }
@@ -643,17 +643,17 @@ package rdsdataservice {
         stringValue: js.UndefOr[String] = js.undefined,
         structValue: js.UndefOr[StructValue] = js.undefined
     ): Value = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arrayValues.foreach(__v => __obj.update("arrayValues", __v.asInstanceOf[js.Any]))
-      bigIntValue.foreach(__v => __obj.update("bigIntValue", __v.asInstanceOf[js.Any]))
-      bitValue.foreach(__v => __obj.update("bitValue", __v.asInstanceOf[js.Any]))
-      blobValue.foreach(__v => __obj.update("blobValue", __v.asInstanceOf[js.Any]))
-      doubleValue.foreach(__v => __obj.update("doubleValue", __v.asInstanceOf[js.Any]))
-      intValue.foreach(__v => __obj.update("intValue", __v.asInstanceOf[js.Any]))
-      isNull.foreach(__v => __obj.update("isNull", __v.asInstanceOf[js.Any]))
-      realValue.foreach(__v => __obj.update("realValue", __v.asInstanceOf[js.Any]))
-      stringValue.foreach(__v => __obj.update("stringValue", __v.asInstanceOf[js.Any]))
-      structValue.foreach(__v => __obj.update("structValue", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arrayValues.foreach(__v => __obj.updateDynamic("arrayValues")(__v.asInstanceOf[js.Any]))
+      bigIntValue.foreach(__v => __obj.updateDynamic("bigIntValue")(__v.asInstanceOf[js.Any]))
+      bitValue.foreach(__v => __obj.updateDynamic("bitValue")(__v.asInstanceOf[js.Any]))
+      blobValue.foreach(__v => __obj.updateDynamic("blobValue")(__v.asInstanceOf[js.Any]))
+      doubleValue.foreach(__v => __obj.updateDynamic("doubleValue")(__v.asInstanceOf[js.Any]))
+      intValue.foreach(__v => __obj.updateDynamic("intValue")(__v.asInstanceOf[js.Any]))
+      isNull.foreach(__v => __obj.updateDynamic("isNull")(__v.asInstanceOf[js.Any]))
+      realValue.foreach(__v => __obj.updateDynamic("realValue")(__v.asInstanceOf[js.Any]))
+      stringValue.foreach(__v => __obj.updateDynamic("stringValue")(__v.asInstanceOf[js.Any]))
+      structValue.foreach(__v => __obj.updateDynamic("structValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Value]
     }
   }

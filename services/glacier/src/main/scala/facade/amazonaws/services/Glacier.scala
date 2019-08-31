@@ -168,7 +168,7 @@ package glacier {
         uploadId: String,
         vaultName: String
     ): AbortMultipartUploadInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any],
         "uploadId"  -> uploadId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
@@ -192,7 +192,7 @@ package glacier {
         accountId: String,
         vaultName: String
     ): AbortVaultLockInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
       )
@@ -225,12 +225,12 @@ package glacier {
         vaultName: String,
         Tags: js.UndefOr[TagMap] = js.undefined
     ): AddTagsToVaultInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
       )
 
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddTagsToVaultInput]
     }
   }
@@ -252,10 +252,10 @@ package glacier {
         checksum: js.UndefOr[String] = js.undefined,
         location: js.UndefOr[String] = js.undefined
     ): ArchiveCreationOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      archiveId.foreach(__v => __obj.update("archiveId", __v.asInstanceOf[js.Any]))
-      checksum.foreach(__v => __obj.update("checksum", __v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      archiveId.foreach(__v => __obj.updateDynamic("archiveId")(__v.asInstanceOf[js.Any]))
+      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ArchiveCreationOutput]
     }
   }
@@ -282,13 +282,13 @@ package glacier {
         QuoteEscapeCharacter: js.UndefOr[String] = js.undefined,
         RecordDelimiter: js.UndefOr[String] = js.undefined
     ): CSVInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Comments.foreach(__v => __obj.update("Comments", __v.asInstanceOf[js.Any]))
-      FieldDelimiter.foreach(__v => __obj.update("FieldDelimiter", __v.asInstanceOf[js.Any]))
-      FileHeaderInfo.foreach(__v => __obj.update("FileHeaderInfo", __v.asInstanceOf[js.Any]))
-      QuoteCharacter.foreach(__v => __obj.update("QuoteCharacter", __v.asInstanceOf[js.Any]))
-      QuoteEscapeCharacter.foreach(__v => __obj.update("QuoteEscapeCharacter", __v.asInstanceOf[js.Any]))
-      RecordDelimiter.foreach(__v => __obj.update("RecordDelimiter", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Comments.foreach(__v => __obj.updateDynamic("Comments")(__v.asInstanceOf[js.Any]))
+      FieldDelimiter.foreach(__v => __obj.updateDynamic("FieldDelimiter")(__v.asInstanceOf[js.Any]))
+      FileHeaderInfo.foreach(__v => __obj.updateDynamic("FileHeaderInfo")(__v.asInstanceOf[js.Any]))
+      QuoteCharacter.foreach(__v => __obj.updateDynamic("QuoteCharacter")(__v.asInstanceOf[js.Any]))
+      QuoteEscapeCharacter.foreach(__v => __obj.updateDynamic("QuoteEscapeCharacter")(__v.asInstanceOf[js.Any]))
+      RecordDelimiter.foreach(__v => __obj.updateDynamic("RecordDelimiter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CSVInput]
     }
   }
@@ -313,12 +313,12 @@ package glacier {
         QuoteFields: js.UndefOr[QuoteFields] = js.undefined,
         RecordDelimiter: js.UndefOr[String] = js.undefined
     ): CSVOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FieldDelimiter.foreach(__v => __obj.update("FieldDelimiter", __v.asInstanceOf[js.Any]))
-      QuoteCharacter.foreach(__v => __obj.update("QuoteCharacter", __v.asInstanceOf[js.Any]))
-      QuoteEscapeCharacter.foreach(__v => __obj.update("QuoteEscapeCharacter", __v.asInstanceOf[js.Any]))
-      QuoteFields.foreach(__v => __obj.update("QuoteFields", __v.asInstanceOf[js.Any]))
-      RecordDelimiter.foreach(__v => __obj.update("RecordDelimiter", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FieldDelimiter.foreach(__v => __obj.updateDynamic("FieldDelimiter")(__v.asInstanceOf[js.Any]))
+      QuoteCharacter.foreach(__v => __obj.updateDynamic("QuoteCharacter")(__v.asInstanceOf[js.Any]))
+      QuoteEscapeCharacter.foreach(__v => __obj.updateDynamic("QuoteEscapeCharacter")(__v.asInstanceOf[js.Any]))
+      QuoteFields.foreach(__v => __obj.updateDynamic("QuoteFields")(__v.asInstanceOf[js.Any]))
+      RecordDelimiter.foreach(__v => __obj.updateDynamic("RecordDelimiter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CSVOutput]
     }
   }
@@ -365,14 +365,14 @@ package glacier {
         archiveSize: js.UndefOr[String] = js.undefined,
         checksum: js.UndefOr[String] = js.undefined
     ): CompleteMultipartUploadInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any],
         "uploadId"  -> uploadId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
       )
 
-      archiveSize.foreach(__v => __obj.update("archiveSize", __v.asInstanceOf[js.Any]))
-      checksum.foreach(__v => __obj.update("checksum", __v.asInstanceOf[js.Any]))
+      archiveSize.foreach(__v => __obj.updateDynamic("archiveSize")(__v.asInstanceOf[js.Any]))
+      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CompleteMultipartUploadInput]
     }
   }
@@ -393,7 +393,7 @@ package glacier {
         lockId: String,
         vaultName: String
     ): CompleteVaultLockInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any],
         "lockId"    -> lockId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
@@ -417,7 +417,7 @@ package glacier {
         accountId: String,
         vaultName: String
     ): CreateVaultInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
       )
@@ -438,8 +438,8 @@ package glacier {
     def apply(
         location: js.UndefOr[String] = js.undefined
     ): CreateVaultOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateVaultOutput]
     }
   }
@@ -456,8 +456,8 @@ package glacier {
     def apply(
         Rules: js.UndefOr[DataRetrievalRulesList] = js.undefined
     ): DataRetrievalPolicy = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Rules.foreach(__v => __obj.update("Rules", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataRetrievalPolicy]
     }
   }
@@ -476,9 +476,9 @@ package glacier {
         BytesPerHour: js.UndefOr[NullableLong] = js.undefined,
         Strategy: js.UndefOr[String] = js.undefined
     ): DataRetrievalRule = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BytesPerHour.foreach(__v => __obj.update("BytesPerHour", __v.asInstanceOf[js.Any]))
-      Strategy.foreach(__v => __obj.update("Strategy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BytesPerHour.foreach(__v => __obj.updateDynamic("BytesPerHour")(__v.asInstanceOf[js.Any]))
+      Strategy.foreach(__v => __obj.updateDynamic("Strategy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataRetrievalRule]
     }
   }
@@ -499,7 +499,7 @@ package glacier {
         archiveId: String,
         vaultName: String
     ): DeleteArchiveInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any],
         "archiveId" -> archiveId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
@@ -523,7 +523,7 @@ package glacier {
         accountId: String,
         vaultName: String
     ): DeleteVaultAccessPolicyInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
       )
@@ -546,7 +546,7 @@ package glacier {
         accountId: String,
         vaultName: String
     ): DeleteVaultInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
       )
@@ -569,7 +569,7 @@ package glacier {
         accountId: String,
         vaultName: String
     ): DeleteVaultNotificationsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
       )
@@ -594,7 +594,7 @@ package glacier {
         jobId: String,
         vaultName: String
     ): DescribeJobInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any],
         "jobId"     -> jobId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
@@ -618,7 +618,7 @@ package glacier {
         accountId: String,
         vaultName: String
     ): DescribeVaultInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
       )
@@ -649,13 +649,13 @@ package glacier {
         VaultARN: js.UndefOr[String] = js.undefined,
         VaultName: js.UndefOr[String] = js.undefined
     ): DescribeVaultOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      LastInventoryDate.foreach(__v => __obj.update("LastInventoryDate", __v.asInstanceOf[js.Any]))
-      NumberOfArchives.foreach(__v => __obj.update("NumberOfArchives", __v.asInstanceOf[js.Any]))
-      SizeInBytes.foreach(__v => __obj.update("SizeInBytes", __v.asInstanceOf[js.Any]))
-      VaultARN.foreach(__v => __obj.update("VaultARN", __v.asInstanceOf[js.Any]))
-      VaultName.foreach(__v => __obj.update("VaultName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      LastInventoryDate.foreach(__v => __obj.updateDynamic("LastInventoryDate")(__v.asInstanceOf[js.Any]))
+      NumberOfArchives.foreach(__v => __obj.updateDynamic("NumberOfArchives")(__v.asInstanceOf[js.Any]))
+      SizeInBytes.foreach(__v => __obj.updateDynamic("SizeInBytes")(__v.asInstanceOf[js.Any]))
+      VaultARN.foreach(__v => __obj.updateDynamic("VaultARN")(__v.asInstanceOf[js.Any]))
+      VaultName.foreach(__v => __obj.updateDynamic("VaultName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeVaultOutput]
     }
   }
@@ -676,10 +676,10 @@ package glacier {
         KMSContext: js.UndefOr[String] = js.undefined,
         KMSKeyId: js.UndefOr[String] = js.undefined
     ): Encryption = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EncryptionType.foreach(__v => __obj.update("EncryptionType", __v.asInstanceOf[js.Any]))
-      KMSContext.foreach(__v => __obj.update("KMSContext", __v.asInstanceOf[js.Any]))
-      KMSKeyId.foreach(__v => __obj.update("KMSKeyId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EncryptionType.foreach(__v => __obj.updateDynamic("EncryptionType")(__v.asInstanceOf[js.Any]))
+      KMSContext.foreach(__v => __obj.updateDynamic("KMSContext")(__v.asInstanceOf[js.Any]))
+      KMSKeyId.foreach(__v => __obj.updateDynamic("KMSKeyId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Encryption]
     }
   }
@@ -717,7 +717,7 @@ package glacier {
     def apply(
         accountId: String
     ): GetDataRetrievalPolicyInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any]
       )
 
@@ -737,8 +737,8 @@ package glacier {
     def apply(
         Policy: js.UndefOr[DataRetrievalPolicy] = js.undefined
     ): GetDataRetrievalPolicyOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDataRetrievalPolicyOutput]
     }
   }
@@ -761,13 +761,13 @@ package glacier {
         vaultName: String,
         range: js.UndefOr[String] = js.undefined
     ): GetJobOutputInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any],
         "jobId"     -> jobId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
       )
 
-      range.foreach(__v => __obj.update("range", __v.asInstanceOf[js.Any]))
+      range.foreach(__v => __obj.updateDynamic("range")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetJobOutputInput]
     }
   }
@@ -796,14 +796,14 @@ package glacier {
         contentType: js.UndefOr[String] = js.undefined,
         status: js.UndefOr[httpstatus] = js.undefined
     ): GetJobOutputOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      acceptRanges.foreach(__v => __obj.update("acceptRanges", __v.asInstanceOf[js.Any]))
-      archiveDescription.foreach(__v => __obj.update("archiveDescription", __v.asInstanceOf[js.Any]))
-      body.foreach(__v => __obj.update("body", __v.asInstanceOf[js.Any]))
-      checksum.foreach(__v => __obj.update("checksum", __v.asInstanceOf[js.Any]))
-      contentRange.foreach(__v => __obj.update("contentRange", __v.asInstanceOf[js.Any]))
-      contentType.foreach(__v => __obj.update("contentType", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      acceptRanges.foreach(__v => __obj.updateDynamic("acceptRanges")(__v.asInstanceOf[js.Any]))
+      archiveDescription.foreach(__v => __obj.updateDynamic("archiveDescription")(__v.asInstanceOf[js.Any]))
+      body.foreach(__v => __obj.updateDynamic("body")(__v.asInstanceOf[js.Any]))
+      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
+      contentRange.foreach(__v => __obj.updateDynamic("contentRange")(__v.asInstanceOf[js.Any]))
+      contentType.foreach(__v => __obj.updateDynamic("contentType")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetJobOutputOutput]
     }
   }
@@ -822,7 +822,7 @@ package glacier {
         accountId: String,
         vaultName: String
     ): GetVaultAccessPolicyInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
       )
@@ -843,8 +843,8 @@ package glacier {
     def apply(
         policy: js.UndefOr[VaultAccessPolicy] = js.undefined
     ): GetVaultAccessPolicyOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      policy.foreach(__v => __obj.update("policy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      policy.foreach(__v => __obj.updateDynamic("policy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetVaultAccessPolicyOutput]
     }
   }
@@ -863,7 +863,7 @@ package glacier {
         accountId: String,
         vaultName: String
     ): GetVaultLockInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
       )
@@ -890,11 +890,11 @@ package glacier {
         Policy: js.UndefOr[String] = js.undefined,
         State: js.UndefOr[String] = js.undefined
     ): GetVaultLockOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      ExpirationDate.foreach(__v => __obj.update("ExpirationDate", __v.asInstanceOf[js.Any]))
-      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      ExpirationDate.foreach(__v => __obj.updateDynamic("ExpirationDate")(__v.asInstanceOf[js.Any]))
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetVaultLockOutput]
     }
   }
@@ -913,7 +913,7 @@ package glacier {
         accountId: String,
         vaultName: String
     ): GetVaultNotificationsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
       )
@@ -934,8 +934,8 @@ package glacier {
     def apply(
         vaultNotificationConfig: js.UndefOr[VaultNotificationConfig] = js.undefined
     ): GetVaultNotificationsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      vaultNotificationConfig.foreach(__v => __obj.update("vaultNotificationConfig", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      vaultNotificationConfig.foreach(__v => __obj.updateDynamic("vaultNotificationConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetVaultNotificationsOutput]
     }
   }
@@ -992,30 +992,30 @@ package glacier {
         Tier: js.UndefOr[String] = js.undefined,
         VaultARN: js.UndefOr[String] = js.undefined
     ): GlacierJobDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Action.foreach(__v => __obj.update("Action", __v.asInstanceOf[js.Any]))
-      ArchiveId.foreach(__v => __obj.update("ArchiveId", __v.asInstanceOf[js.Any]))
-      ArchiveSHA256TreeHash.foreach(__v => __obj.update("ArchiveSHA256TreeHash", __v.asInstanceOf[js.Any]))
-      ArchiveSizeInBytes.foreach(__v => __obj.update("ArchiveSizeInBytes", __v.asInstanceOf[js.Any]))
-      Completed.foreach(__v => __obj.update("Completed", __v.asInstanceOf[js.Any]))
-      CompletionDate.foreach(__v => __obj.update("CompletionDate", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      ArchiveId.foreach(__v => __obj.updateDynamic("ArchiveId")(__v.asInstanceOf[js.Any]))
+      ArchiveSHA256TreeHash.foreach(__v => __obj.updateDynamic("ArchiveSHA256TreeHash")(__v.asInstanceOf[js.Any]))
+      ArchiveSizeInBytes.foreach(__v => __obj.updateDynamic("ArchiveSizeInBytes")(__v.asInstanceOf[js.Any]))
+      Completed.foreach(__v => __obj.updateDynamic("Completed")(__v.asInstanceOf[js.Any]))
+      CompletionDate.foreach(__v => __obj.updateDynamic("CompletionDate")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
       InventoryRetrievalParameters.foreach(
-        __v => __obj.update("InventoryRetrievalParameters", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("InventoryRetrievalParameters")(__v.asInstanceOf[js.Any])
       )
-      InventorySizeInBytes.foreach(__v => __obj.update("InventorySizeInBytes", __v.asInstanceOf[js.Any]))
-      JobDescription.foreach(__v => __obj.update("JobDescription", __v.asInstanceOf[js.Any]))
-      JobId.foreach(__v => __obj.update("JobId", __v.asInstanceOf[js.Any]))
-      JobOutputPath.foreach(__v => __obj.update("JobOutputPath", __v.asInstanceOf[js.Any]))
-      OutputLocation.foreach(__v => __obj.update("OutputLocation", __v.asInstanceOf[js.Any]))
-      RetrievalByteRange.foreach(__v => __obj.update("RetrievalByteRange", __v.asInstanceOf[js.Any]))
-      SHA256TreeHash.foreach(__v => __obj.update("SHA256TreeHash", __v.asInstanceOf[js.Any]))
-      SNSTopic.foreach(__v => __obj.update("SNSTopic", __v.asInstanceOf[js.Any]))
-      SelectParameters.foreach(__v => __obj.update("SelectParameters", __v.asInstanceOf[js.Any]))
-      StatusCode.foreach(__v => __obj.update("StatusCode", __v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
-      Tier.foreach(__v => __obj.update("Tier", __v.asInstanceOf[js.Any]))
-      VaultARN.foreach(__v => __obj.update("VaultARN", __v.asInstanceOf[js.Any]))
+      InventorySizeInBytes.foreach(__v => __obj.updateDynamic("InventorySizeInBytes")(__v.asInstanceOf[js.Any]))
+      JobDescription.foreach(__v => __obj.updateDynamic("JobDescription")(__v.asInstanceOf[js.Any]))
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      JobOutputPath.foreach(__v => __obj.updateDynamic("JobOutputPath")(__v.asInstanceOf[js.Any]))
+      OutputLocation.foreach(__v => __obj.updateDynamic("OutputLocation")(__v.asInstanceOf[js.Any]))
+      RetrievalByteRange.foreach(__v => __obj.updateDynamic("RetrievalByteRange")(__v.asInstanceOf[js.Any]))
+      SHA256TreeHash.foreach(__v => __obj.updateDynamic("SHA256TreeHash")(__v.asInstanceOf[js.Any]))
+      SNSTopic.foreach(__v => __obj.updateDynamic("SNSTopic")(__v.asInstanceOf[js.Any]))
+      SelectParameters.foreach(__v => __obj.updateDynamic("SelectParameters")(__v.asInstanceOf[js.Any]))
+      StatusCode.foreach(__v => __obj.updateDynamic("StatusCode")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      Tier.foreach(__v => __obj.updateDynamic("Tier")(__v.asInstanceOf[js.Any]))
+      VaultARN.foreach(__v => __obj.updateDynamic("VaultARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GlacierJobDescription]
     }
   }
@@ -1034,9 +1034,9 @@ package glacier {
         Grantee: js.UndefOr[Grantee] = js.undefined,
         Permission: js.UndefOr[Permission] = js.undefined
     ): Grant = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Grantee.foreach(__v => __obj.update("Grantee", __v.asInstanceOf[js.Any]))
-      Permission.foreach(__v => __obj.update("Permission", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Grantee.foreach(__v => __obj.updateDynamic("Grantee")(__v.asInstanceOf[js.Any]))
+      Permission.foreach(__v => __obj.updateDynamic("Permission")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Grant]
     }
   }
@@ -1061,14 +1061,14 @@ package glacier {
         ID: js.UndefOr[String] = js.undefined,
         URI: js.UndefOr[String] = js.undefined
     ): Grantee = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Type" -> Type.asInstanceOf[js.Any]
       )
 
-      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
-      EmailAddress.foreach(__v => __obj.update("EmailAddress", __v.asInstanceOf[js.Any]))
-      ID.foreach(__v => __obj.update("ID", __v.asInstanceOf[js.Any]))
-      URI.foreach(__v => __obj.update("URI", __v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
+      EmailAddress.foreach(__v => __obj.updateDynamic("EmailAddress")(__v.asInstanceOf[js.Any]))
+      ID.foreach(__v => __obj.updateDynamic("ID")(__v.asInstanceOf[js.Any]))
+      URI.foreach(__v => __obj.updateDynamic("URI")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Grantee]
     }
   }
@@ -1089,12 +1089,12 @@ package glacier {
         vaultName: String,
         jobParameters: js.UndefOr[JobParameters] = js.undefined
     ): InitiateJobInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
       )
 
-      jobParameters.foreach(__v => __obj.update("jobParameters", __v.asInstanceOf[js.Any]))
+      jobParameters.foreach(__v => __obj.updateDynamic("jobParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InitiateJobInput]
     }
   }
@@ -1115,10 +1115,10 @@ package glacier {
         jobOutputPath: js.UndefOr[String] = js.undefined,
         location: js.UndefOr[String] = js.undefined
     ): InitiateJobOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      jobId.foreach(__v => __obj.update("jobId", __v.asInstanceOf[js.Any]))
-      jobOutputPath.foreach(__v => __obj.update("jobOutputPath", __v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
+      jobOutputPath.foreach(__v => __obj.updateDynamic("jobOutputPath")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InitiateJobOutput]
     }
   }
@@ -1141,13 +1141,13 @@ package glacier {
         archiveDescription: js.UndefOr[String] = js.undefined,
         partSize: js.UndefOr[String] = js.undefined
     ): InitiateMultipartUploadInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
       )
 
-      archiveDescription.foreach(__v => __obj.update("archiveDescription", __v.asInstanceOf[js.Any]))
-      partSize.foreach(__v => __obj.update("partSize", __v.asInstanceOf[js.Any]))
+      archiveDescription.foreach(__v => __obj.updateDynamic("archiveDescription")(__v.asInstanceOf[js.Any]))
+      partSize.foreach(__v => __obj.updateDynamic("partSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InitiateMultipartUploadInput]
     }
   }
@@ -1166,9 +1166,9 @@ package glacier {
         location: js.UndefOr[String] = js.undefined,
         uploadId: js.UndefOr[String] = js.undefined
     ): InitiateMultipartUploadOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
-      uploadId.foreach(__v => __obj.update("uploadId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      uploadId.foreach(__v => __obj.updateDynamic("uploadId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InitiateMultipartUploadOutput]
     }
   }
@@ -1189,12 +1189,12 @@ package glacier {
         vaultName: String,
         policy: js.UndefOr[VaultLockPolicy] = js.undefined
     ): InitiateVaultLockInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
       )
 
-      policy.foreach(__v => __obj.update("policy", __v.asInstanceOf[js.Any]))
+      policy.foreach(__v => __obj.updateDynamic("policy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InitiateVaultLockInput]
     }
   }
@@ -1211,8 +1211,8 @@ package glacier {
     def apply(
         lockId: js.UndefOr[String] = js.undefined
     ): InitiateVaultLockOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      lockId.foreach(__v => __obj.update("lockId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      lockId.foreach(__v => __obj.updateDynamic("lockId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InitiateVaultLockOutput]
     }
   }
@@ -1229,8 +1229,8 @@ package glacier {
     def apply(
         csv: js.UndefOr[CSVInput] = js.undefined
     ): InputSerialization = {
-      val __obj = js.Dictionary.empty[js.Any]
-      csv.foreach(__v => __obj.update("csv", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      csv.foreach(__v => __obj.updateDynamic("csv")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InputSerialization]
     }
   }
@@ -1255,12 +1255,12 @@ package glacier {
         Marker: js.UndefOr[String] = js.undefined,
         StartDate: js.UndefOr[DateTime] = js.undefined
     ): InventoryRetrievalJobDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EndDate.foreach(__v => __obj.update("EndDate", __v.asInstanceOf[js.Any]))
-      Format.foreach(__v => __obj.update("Format", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      StartDate.foreach(__v => __obj.update("StartDate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EndDate.foreach(__v => __obj.updateDynamic("EndDate")(__v.asInstanceOf[js.Any]))
+      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      StartDate.foreach(__v => __obj.updateDynamic("StartDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InventoryRetrievalJobDescription]
     }
   }
@@ -1283,11 +1283,11 @@ package glacier {
         Marker: js.UndefOr[String] = js.undefined,
         StartDate: js.UndefOr[String] = js.undefined
     ): InventoryRetrievalJobInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EndDate.foreach(__v => __obj.update("EndDate", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      StartDate.foreach(__v => __obj.update("StartDate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EndDate.foreach(__v => __obj.updateDynamic("EndDate")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      StartDate.foreach(__v => __obj.updateDynamic("StartDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InventoryRetrievalJobInput]
     }
   }
@@ -1322,19 +1322,19 @@ package glacier {
         Tier: js.UndefOr[String] = js.undefined,
         Type: js.UndefOr[String] = js.undefined
     ): JobParameters = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ArchiveId.foreach(__v => __obj.update("ArchiveId", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Format.foreach(__v => __obj.update("Format", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ArchiveId.foreach(__v => __obj.updateDynamic("ArchiveId")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
       InventoryRetrievalParameters.foreach(
-        __v => __obj.update("InventoryRetrievalParameters", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("InventoryRetrievalParameters")(__v.asInstanceOf[js.Any])
       )
-      OutputLocation.foreach(__v => __obj.update("OutputLocation", __v.asInstanceOf[js.Any]))
-      RetrievalByteRange.foreach(__v => __obj.update("RetrievalByteRange", __v.asInstanceOf[js.Any]))
-      SNSTopic.foreach(__v => __obj.update("SNSTopic", __v.asInstanceOf[js.Any]))
-      SelectParameters.foreach(__v => __obj.update("SelectParameters", __v.asInstanceOf[js.Any]))
-      Tier.foreach(__v => __obj.update("Tier", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      OutputLocation.foreach(__v => __obj.updateDynamic("OutputLocation")(__v.asInstanceOf[js.Any]))
+      RetrievalByteRange.foreach(__v => __obj.updateDynamic("RetrievalByteRange")(__v.asInstanceOf[js.Any]))
+      SNSTopic.foreach(__v => __obj.updateDynamic("SNSTopic")(__v.asInstanceOf[js.Any]))
+      SelectParameters.foreach(__v => __obj.updateDynamic("SelectParameters")(__v.asInstanceOf[js.Any]))
+      Tier.foreach(__v => __obj.updateDynamic("Tier")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobParameters]
     }
   }
@@ -1361,15 +1361,15 @@ package glacier {
         marker: js.UndefOr[String] = js.undefined,
         statuscode: js.UndefOr[String] = js.undefined
     ): ListJobsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
       )
 
-      completed.foreach(__v => __obj.update("completed", __v.asInstanceOf[js.Any]))
-      limit.foreach(__v => __obj.update("limit", __v.asInstanceOf[js.Any]))
-      marker.foreach(__v => __obj.update("marker", __v.asInstanceOf[js.Any]))
-      statuscode.foreach(__v => __obj.update("statuscode", __v.asInstanceOf[js.Any]))
+      completed.foreach(__v => __obj.updateDynamic("completed")(__v.asInstanceOf[js.Any]))
+      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
+      marker.foreach(__v => __obj.updateDynamic("marker")(__v.asInstanceOf[js.Any]))
+      statuscode.foreach(__v => __obj.updateDynamic("statuscode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListJobsInput]
     }
   }
@@ -1388,9 +1388,9 @@ package glacier {
         JobList: js.UndefOr[JobList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
     ): ListJobsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobList.foreach(__v => __obj.update("JobList", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobList.foreach(__v => __obj.updateDynamic("JobList")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListJobsOutput]
     }
   }
@@ -1413,13 +1413,13 @@ package glacier {
         limit: js.UndefOr[String] = js.undefined,
         marker: js.UndefOr[String] = js.undefined
     ): ListMultipartUploadsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
       )
 
-      limit.foreach(__v => __obj.update("limit", __v.asInstanceOf[js.Any]))
-      marker.foreach(__v => __obj.update("marker", __v.asInstanceOf[js.Any]))
+      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
+      marker.foreach(__v => __obj.updateDynamic("marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListMultipartUploadsInput]
     }
   }
@@ -1438,9 +1438,9 @@ package glacier {
         Marker: js.UndefOr[String] = js.undefined,
         UploadsList: js.UndefOr[UploadsList] = js.undefined
     ): ListMultipartUploadsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      UploadsList.foreach(__v => __obj.update("UploadsList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      UploadsList.foreach(__v => __obj.updateDynamic("UploadsList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListMultipartUploadsOutput]
     }
   }
@@ -1465,14 +1465,14 @@ package glacier {
         limit: js.UndefOr[String] = js.undefined,
         marker: js.UndefOr[String] = js.undefined
     ): ListPartsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any],
         "uploadId"  -> uploadId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
       )
 
-      limit.foreach(__v => __obj.update("limit", __v.asInstanceOf[js.Any]))
-      marker.foreach(__v => __obj.update("marker", __v.asInstanceOf[js.Any]))
+      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
+      marker.foreach(__v => __obj.updateDynamic("marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPartsInput]
     }
   }
@@ -1501,14 +1501,14 @@ package glacier {
         Parts: js.UndefOr[PartList] = js.undefined,
         VaultARN: js.UndefOr[String] = js.undefined
     ): ListPartsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ArchiveDescription.foreach(__v => __obj.update("ArchiveDescription", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MultipartUploadId.foreach(__v => __obj.update("MultipartUploadId", __v.asInstanceOf[js.Any]))
-      PartSizeInBytes.foreach(__v => __obj.update("PartSizeInBytes", __v.asInstanceOf[js.Any]))
-      Parts.foreach(__v => __obj.update("Parts", __v.asInstanceOf[js.Any]))
-      VaultARN.foreach(__v => __obj.update("VaultARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ArchiveDescription.foreach(__v => __obj.updateDynamic("ArchiveDescription")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MultipartUploadId.foreach(__v => __obj.updateDynamic("MultipartUploadId")(__v.asInstanceOf[js.Any]))
+      PartSizeInBytes.foreach(__v => __obj.updateDynamic("PartSizeInBytes")(__v.asInstanceOf[js.Any]))
+      Parts.foreach(__v => __obj.updateDynamic("Parts")(__v.asInstanceOf[js.Any]))
+      VaultARN.foreach(__v => __obj.updateDynamic("VaultARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPartsOutput]
     }
   }
@@ -1522,7 +1522,7 @@ package glacier {
     def apply(
         accountId: String
     ): ListProvisionedCapacityInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any]
       )
 
@@ -1539,8 +1539,8 @@ package glacier {
     def apply(
         ProvisionedCapacityList: js.UndefOr[ProvisionedCapacityList] = js.undefined
     ): ListProvisionedCapacityOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ProvisionedCapacityList.foreach(__v => __obj.update("ProvisionedCapacityList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ProvisionedCapacityList.foreach(__v => __obj.updateDynamic("ProvisionedCapacityList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListProvisionedCapacityOutput]
     }
   }
@@ -1559,7 +1559,7 @@ package glacier {
         accountId: String,
         vaultName: String
     ): ListTagsForVaultInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
       )
@@ -1580,8 +1580,8 @@ package glacier {
     def apply(
         Tags: js.UndefOr[TagMap] = js.undefined
     ): ListTagsForVaultOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForVaultOutput]
     }
   }
@@ -1602,12 +1602,12 @@ package glacier {
         limit: js.UndefOr[String] = js.undefined,
         marker: js.UndefOr[String] = js.undefined
     ): ListVaultsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any]
       )
 
-      limit.foreach(__v => __obj.update("limit", __v.asInstanceOf[js.Any]))
-      marker.foreach(__v => __obj.update("marker", __v.asInstanceOf[js.Any]))
+      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
+      marker.foreach(__v => __obj.updateDynamic("marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListVaultsInput]
     }
   }
@@ -1626,9 +1626,9 @@ package glacier {
         Marker: js.UndefOr[String] = js.undefined,
         VaultList: js.UndefOr[VaultList] = js.undefined
     ): ListVaultsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      VaultList.foreach(__v => __obj.update("VaultList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      VaultList.foreach(__v => __obj.updateDynamic("VaultList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListVaultsOutput]
     }
   }
@@ -1645,8 +1645,8 @@ package glacier {
     def apply(
         S3: js.UndefOr[S3Location] = js.undefined
     ): OutputLocation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      S3.foreach(__v => __obj.update("S3", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      S3.foreach(__v => __obj.updateDynamic("S3")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OutputLocation]
     }
   }
@@ -1663,8 +1663,8 @@ package glacier {
     def apply(
         csv: js.UndefOr[CSVOutput] = js.undefined
     ): OutputSerialization = {
-      val __obj = js.Dictionary.empty[js.Any]
-      csv.foreach(__v => __obj.update("csv", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      csv.foreach(__v => __obj.updateDynamic("csv")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OutputSerialization]
     }
   }
@@ -1683,9 +1683,9 @@ package glacier {
         RangeInBytes: js.UndefOr[String] = js.undefined,
         SHA256TreeHash: js.UndefOr[String] = js.undefined
     ): PartListElement = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RangeInBytes.foreach(__v => __obj.update("RangeInBytes", __v.asInstanceOf[js.Any]))
-      SHA256TreeHash.foreach(__v => __obj.update("SHA256TreeHash", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RangeInBytes.foreach(__v => __obj.updateDynamic("RangeInBytes")(__v.asInstanceOf[js.Any]))
+      SHA256TreeHash.foreach(__v => __obj.updateDynamic("SHA256TreeHash")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PartListElement]
     }
   }
@@ -1716,10 +1716,10 @@ package glacier {
         ExpirationDate: js.UndefOr[String] = js.undefined,
         StartDate: js.UndefOr[String] = js.undefined
     ): ProvisionedCapacityDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CapacityId.foreach(__v => __obj.update("CapacityId", __v.asInstanceOf[js.Any]))
-      ExpirationDate.foreach(__v => __obj.update("ExpirationDate", __v.asInstanceOf[js.Any]))
-      StartDate.foreach(__v => __obj.update("StartDate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CapacityId.foreach(__v => __obj.updateDynamic("CapacityId")(__v.asInstanceOf[js.Any]))
+      ExpirationDate.foreach(__v => __obj.updateDynamic("ExpirationDate")(__v.asInstanceOf[js.Any]))
+      StartDate.foreach(__v => __obj.updateDynamic("StartDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisionedCapacityDescription]
     }
   }
@@ -1733,7 +1733,7 @@ package glacier {
     def apply(
         accountId: String
     ): PurchaseProvisionedCapacityInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any]
       )
 
@@ -1750,8 +1750,8 @@ package glacier {
     def apply(
         capacityId: js.UndefOr[String] = js.undefined
     ): PurchaseProvisionedCapacityOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      capacityId.foreach(__v => __obj.update("capacityId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      capacityId.foreach(__v => __obj.updateDynamic("capacityId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PurchaseProvisionedCapacityOutput]
     }
   }
@@ -1779,12 +1779,12 @@ package glacier {
         vaultName: String,
         TagKeys: js.UndefOr[TagKeyList] = js.undefined
     ): RemoveTagsFromVaultInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
       )
 
-      TagKeys.foreach(__v => __obj.update("TagKeys", __v.asInstanceOf[js.Any]))
+      TagKeys.foreach(__v => __obj.updateDynamic("TagKeys")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RemoveTagsFromVaultInput]
     }
   }
@@ -1815,15 +1815,15 @@ package glacier {
         Tagging: js.UndefOr[hashmap] = js.undefined,
         UserMetadata: js.UndefOr[hashmap] = js.undefined
     ): S3Location = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccessControlList.foreach(__v => __obj.update("AccessControlList", __v.asInstanceOf[js.Any]))
-      BucketName.foreach(__v => __obj.update("BucketName", __v.asInstanceOf[js.Any]))
-      CannedACL.foreach(__v => __obj.update("CannedACL", __v.asInstanceOf[js.Any]))
-      Encryption.foreach(__v => __obj.update("Encryption", __v.asInstanceOf[js.Any]))
-      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
-      StorageClass.foreach(__v => __obj.update("StorageClass", __v.asInstanceOf[js.Any]))
-      Tagging.foreach(__v => __obj.update("Tagging", __v.asInstanceOf[js.Any]))
-      UserMetadata.foreach(__v => __obj.update("UserMetadata", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccessControlList.foreach(__v => __obj.updateDynamic("AccessControlList")(__v.asInstanceOf[js.Any]))
+      BucketName.foreach(__v => __obj.updateDynamic("BucketName")(__v.asInstanceOf[js.Any]))
+      CannedACL.foreach(__v => __obj.updateDynamic("CannedACL")(__v.asInstanceOf[js.Any]))
+      Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
+      StorageClass.foreach(__v => __obj.updateDynamic("StorageClass")(__v.asInstanceOf[js.Any]))
+      Tagging.foreach(__v => __obj.updateDynamic("Tagging")(__v.asInstanceOf[js.Any]))
+      UserMetadata.foreach(__v => __obj.updateDynamic("UserMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Location]
     }
   }
@@ -1846,11 +1846,11 @@ package glacier {
         InputSerialization: js.UndefOr[InputSerialization] = js.undefined,
         OutputSerialization: js.UndefOr[OutputSerialization] = js.undefined
     ): SelectParameters = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Expression.foreach(__v => __obj.update("Expression", __v.asInstanceOf[js.Any]))
-      ExpressionType.foreach(__v => __obj.update("ExpressionType", __v.asInstanceOf[js.Any]))
-      InputSerialization.foreach(__v => __obj.update("InputSerialization", __v.asInstanceOf[js.Any]))
-      OutputSerialization.foreach(__v => __obj.update("OutputSerialization", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Expression.foreach(__v => __obj.updateDynamic("Expression")(__v.asInstanceOf[js.Any]))
+      ExpressionType.foreach(__v => __obj.updateDynamic("ExpressionType")(__v.asInstanceOf[js.Any]))
+      InputSerialization.foreach(__v => __obj.updateDynamic("InputSerialization")(__v.asInstanceOf[js.Any]))
+      OutputSerialization.foreach(__v => __obj.updateDynamic("OutputSerialization")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SelectParameters]
     }
   }
@@ -1869,11 +1869,11 @@ package glacier {
         accountId: String,
         Policy: js.UndefOr[DataRetrievalPolicy] = js.undefined
     ): SetDataRetrievalPolicyInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any]
       )
 
-      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetDataRetrievalPolicyInput]
     }
   }
@@ -1894,12 +1894,12 @@ package glacier {
         vaultName: String,
         policy: js.UndefOr[VaultAccessPolicy] = js.undefined
     ): SetVaultAccessPolicyInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
       )
 
-      policy.foreach(__v => __obj.update("policy", __v.asInstanceOf[js.Any]))
+      policy.foreach(__v => __obj.updateDynamic("policy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetVaultAccessPolicyInput]
     }
   }
@@ -1920,12 +1920,12 @@ package glacier {
         vaultName: String,
         vaultNotificationConfig: js.UndefOr[VaultNotificationConfig] = js.undefined
     ): SetVaultNotificationsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
       )
 
-      vaultNotificationConfig.foreach(__v => __obj.update("vaultNotificationConfig", __v.asInstanceOf[js.Any]))
+      vaultNotificationConfig.foreach(__v => __obj.updateDynamic("vaultNotificationConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetVaultNotificationsInput]
     }
   }
@@ -1974,14 +1974,14 @@ package glacier {
         body: js.UndefOr[Stream] = js.undefined,
         checksum: js.UndefOr[String] = js.undefined
     ): UploadArchiveInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
       )
 
-      archiveDescription.foreach(__v => __obj.update("archiveDescription", __v.asInstanceOf[js.Any]))
-      body.foreach(__v => __obj.update("body", __v.asInstanceOf[js.Any]))
-      checksum.foreach(__v => __obj.update("checksum", __v.asInstanceOf[js.Any]))
+      archiveDescription.foreach(__v => __obj.updateDynamic("archiveDescription")(__v.asInstanceOf[js.Any]))
+      body.foreach(__v => __obj.updateDynamic("body")(__v.asInstanceOf[js.Any]))
+      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UploadArchiveInput]
     }
   }
@@ -2006,12 +2006,12 @@ package glacier {
         PartSizeInBytes: js.UndefOr[Double] = js.undefined,
         VaultARN: js.UndefOr[String] = js.undefined
     ): UploadListElement = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ArchiveDescription.foreach(__v => __obj.update("ArchiveDescription", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      MultipartUploadId.foreach(__v => __obj.update("MultipartUploadId", __v.asInstanceOf[js.Any]))
-      PartSizeInBytes.foreach(__v => __obj.update("PartSizeInBytes", __v.asInstanceOf[js.Any]))
-      VaultARN.foreach(__v => __obj.update("VaultARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ArchiveDescription.foreach(__v => __obj.updateDynamic("ArchiveDescription")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      MultipartUploadId.foreach(__v => __obj.updateDynamic("MultipartUploadId")(__v.asInstanceOf[js.Any]))
+      PartSizeInBytes.foreach(__v => __obj.updateDynamic("PartSizeInBytes")(__v.asInstanceOf[js.Any]))
+      VaultARN.foreach(__v => __obj.updateDynamic("VaultARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UploadListElement]
     }
   }
@@ -2038,15 +2038,15 @@ package glacier {
         checksum: js.UndefOr[String] = js.undefined,
         range: js.UndefOr[String] = js.undefined
     ): UploadMultipartPartInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accountId" -> accountId.asInstanceOf[js.Any],
         "uploadId"  -> uploadId.asInstanceOf[js.Any],
         "vaultName" -> vaultName.asInstanceOf[js.Any]
       )
 
-      body.foreach(__v => __obj.update("body", __v.asInstanceOf[js.Any]))
-      checksum.foreach(__v => __obj.update("checksum", __v.asInstanceOf[js.Any]))
-      range.foreach(__v => __obj.update("range", __v.asInstanceOf[js.Any]))
+      body.foreach(__v => __obj.updateDynamic("body")(__v.asInstanceOf[js.Any]))
+      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
+      range.foreach(__v => __obj.updateDynamic("range")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UploadMultipartPartInput]
     }
   }
@@ -2063,8 +2063,8 @@ package glacier {
     def apply(
         checksum: js.UndefOr[String] = js.undefined
     ): UploadMultipartPartOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      checksum.foreach(__v => __obj.update("checksum", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      checksum.foreach(__v => __obj.updateDynamic("checksum")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UploadMultipartPartOutput]
     }
   }
@@ -2081,8 +2081,8 @@ package glacier {
     def apply(
         Policy: js.UndefOr[String] = js.undefined
     ): VaultAccessPolicy = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VaultAccessPolicy]
     }
   }
@@ -2099,8 +2099,8 @@ package glacier {
     def apply(
         Policy: js.UndefOr[String] = js.undefined
     ): VaultLockPolicy = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VaultLockPolicy]
     }
   }
@@ -2119,9 +2119,9 @@ package glacier {
         Events: js.UndefOr[NotificationEventList] = js.undefined,
         SNSTopic: js.UndefOr[String] = js.undefined
     ): VaultNotificationConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Events.foreach(__v => __obj.update("Events", __v.asInstanceOf[js.Any]))
-      SNSTopic.foreach(__v => __obj.update("SNSTopic", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Events.foreach(__v => __obj.updateDynamic("Events")(__v.asInstanceOf[js.Any]))
+      SNSTopic.foreach(__v => __obj.updateDynamic("SNSTopic")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VaultNotificationConfig]
     }
   }

@@ -47,13 +47,13 @@ package personalizeevents {
         sentAt: Date,
         eventId: js.UndefOr[StringType] = js.undefined
     ): Event = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "eventType"  -> eventType.asInstanceOf[js.Any],
         "properties" -> properties.asInstanceOf[js.Any],
         "sentAt"     -> sentAt.asInstanceOf[js.Any]
       )
 
-      eventId.foreach(__v => __obj.update("eventId", __v.asInstanceOf[js.Any]))
+      eventId.foreach(__v => __obj.updateDynamic("eventId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Event]
     }
   }
@@ -73,13 +73,13 @@ package personalizeevents {
         trackingId: StringType,
         userId: js.UndefOr[UserId] = js.undefined
     ): PutEventsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "eventList"  -> eventList.asInstanceOf[js.Any],
         "sessionId"  -> sessionId.asInstanceOf[js.Any],
         "trackingId" -> trackingId.asInstanceOf[js.Any]
       )
 
-      userId.foreach(__v => __obj.update("userId", __v.asInstanceOf[js.Any]))
+      userId.foreach(__v => __obj.updateDynamic("userId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutEventsRequest]
     }
   }

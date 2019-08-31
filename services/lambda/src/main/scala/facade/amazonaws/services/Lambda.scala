@@ -242,13 +242,13 @@ package lambda {
         TotalCodeSize: js.UndefOr[Double] = js.undefined,
         UnreservedConcurrentExecutions: js.UndefOr[UnreservedConcurrentExecutions] = js.undefined
     ): AccountLimit = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CodeSizeUnzipped.foreach(__v => __obj.update("CodeSizeUnzipped", __v.asInstanceOf[js.Any]))
-      CodeSizeZipped.foreach(__v => __obj.update("CodeSizeZipped", __v.asInstanceOf[js.Any]))
-      ConcurrentExecutions.foreach(__v => __obj.update("ConcurrentExecutions", __v.asInstanceOf[js.Any]))
-      TotalCodeSize.foreach(__v => __obj.update("TotalCodeSize", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CodeSizeUnzipped.foreach(__v => __obj.updateDynamic("CodeSizeUnzipped")(__v.asInstanceOf[js.Any]))
+      CodeSizeZipped.foreach(__v => __obj.updateDynamic("CodeSizeZipped")(__v.asInstanceOf[js.Any]))
+      ConcurrentExecutions.foreach(__v => __obj.updateDynamic("ConcurrentExecutions")(__v.asInstanceOf[js.Any]))
+      TotalCodeSize.foreach(__v => __obj.updateDynamic("TotalCodeSize")(__v.asInstanceOf[js.Any]))
       UnreservedConcurrentExecutions.foreach(
-        __v => __obj.update("UnreservedConcurrentExecutions", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("UnreservedConcurrentExecutions")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[AccountLimit]
     }
@@ -268,9 +268,9 @@ package lambda {
         FunctionCount: js.UndefOr[Double] = js.undefined,
         TotalCodeSize: js.UndefOr[Double] = js.undefined
     ): AccountUsage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FunctionCount.foreach(__v => __obj.update("FunctionCount", __v.asInstanceOf[js.Any]))
-      TotalCodeSize.foreach(__v => __obj.update("TotalCodeSize", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FunctionCount.foreach(__v => __obj.updateDynamic("FunctionCount")(__v.asInstanceOf[js.Any]))
+      TotalCodeSize.foreach(__v => __obj.updateDynamic("TotalCodeSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AccountUsage]
     }
   }
@@ -296,7 +296,7 @@ package lambda {
         OrganizationId: js.UndefOr[OrganizationId] = js.undefined,
         RevisionId: js.UndefOr[String] = js.undefined
     ): AddLayerVersionPermissionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Action"        -> Action.asInstanceOf[js.Any],
         "LayerName"     -> LayerName.asInstanceOf[js.Any],
         "Principal"     -> Principal.asInstanceOf[js.Any],
@@ -304,8 +304,8 @@ package lambda {
         "VersionNumber" -> VersionNumber.asInstanceOf[js.Any]
       )
 
-      OrganizationId.foreach(__v => __obj.update("OrganizationId", __v.asInstanceOf[js.Any]))
-      RevisionId.foreach(__v => __obj.update("RevisionId", __v.asInstanceOf[js.Any]))
+      OrganizationId.foreach(__v => __obj.updateDynamic("OrganizationId")(__v.asInstanceOf[js.Any]))
+      RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddLayerVersionPermissionRequest]
     }
   }
@@ -321,9 +321,9 @@ package lambda {
         RevisionId: js.UndefOr[String] = js.undefined,
         Statement: js.UndefOr[String] = js.undefined
     ): AddLayerVersionPermissionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RevisionId.foreach(__v => __obj.update("RevisionId", __v.asInstanceOf[js.Any]))
-      Statement.foreach(__v => __obj.update("Statement", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
+      Statement.foreach(__v => __obj.updateDynamic("Statement")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddLayerVersionPermissionResponse]
     }
   }
@@ -353,18 +353,18 @@ package lambda {
         SourceAccount: js.UndefOr[SourceOwner] = js.undefined,
         SourceArn: js.UndefOr[Arn] = js.undefined
     ): AddPermissionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Action"       -> Action.asInstanceOf[js.Any],
         "FunctionName" -> FunctionName.asInstanceOf[js.Any],
         "Principal"    -> Principal.asInstanceOf[js.Any],
         "StatementId"  -> StatementId.asInstanceOf[js.Any]
       )
 
-      EventSourceToken.foreach(__v => __obj.update("EventSourceToken", __v.asInstanceOf[js.Any]))
-      Qualifier.foreach(__v => __obj.update("Qualifier", __v.asInstanceOf[js.Any]))
-      RevisionId.foreach(__v => __obj.update("RevisionId", __v.asInstanceOf[js.Any]))
-      SourceAccount.foreach(__v => __obj.update("SourceAccount", __v.asInstanceOf[js.Any]))
-      SourceArn.foreach(__v => __obj.update("SourceArn", __v.asInstanceOf[js.Any]))
+      EventSourceToken.foreach(__v => __obj.updateDynamic("EventSourceToken")(__v.asInstanceOf[js.Any]))
+      Qualifier.foreach(__v => __obj.updateDynamic("Qualifier")(__v.asInstanceOf[js.Any]))
+      RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
+      SourceAccount.foreach(__v => __obj.updateDynamic("SourceAccount")(__v.asInstanceOf[js.Any]))
+      SourceArn.foreach(__v => __obj.updateDynamic("SourceArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddPermissionRequest]
     }
   }
@@ -378,8 +378,8 @@ package lambda {
     def apply(
         Statement: js.UndefOr[String] = js.undefined
     ): AddPermissionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Statement.foreach(__v => __obj.update("Statement", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Statement.foreach(__v => __obj.updateDynamic("Statement")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddPermissionResponse]
     }
   }
@@ -406,13 +406,13 @@ package lambda {
         RevisionId: js.UndefOr[String] = js.undefined,
         RoutingConfig: js.UndefOr[AliasRoutingConfiguration] = js.undefined
     ): AliasConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AliasArn.foreach(__v => __obj.update("AliasArn", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      FunctionVersion.foreach(__v => __obj.update("FunctionVersion", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      RevisionId.foreach(__v => __obj.update("RevisionId", __v.asInstanceOf[js.Any]))
-      RoutingConfig.foreach(__v => __obj.update("RoutingConfig", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AliasArn.foreach(__v => __obj.updateDynamic("AliasArn")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      FunctionVersion.foreach(__v => __obj.updateDynamic("FunctionVersion")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
+      RoutingConfig.foreach(__v => __obj.updateDynamic("RoutingConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AliasConfiguration]
     }
   }
@@ -429,8 +429,8 @@ package lambda {
     def apply(
         AdditionalVersionWeights: js.UndefOr[AdditionalVersionWeights] = js.undefined
     ): AliasRoutingConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AdditionalVersionWeights.foreach(__v => __obj.update("AdditionalVersionWeights", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AdditionalVersionWeights.foreach(__v => __obj.updateDynamic("AdditionalVersionWeights")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AliasRoutingConfiguration]
     }
   }
@@ -444,9 +444,9 @@ package lambda {
     def apply(
         ReservedConcurrentExecutions: js.UndefOr[ReservedConcurrentExecutions] = js.undefined
     ): Concurrency = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       ReservedConcurrentExecutions.foreach(
-        __v => __obj.update("ReservedConcurrentExecutions", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ReservedConcurrentExecutions")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[Concurrency]
     }
@@ -469,14 +469,14 @@ package lambda {
         Description: js.UndefOr[Description] = js.undefined,
         RoutingConfig: js.UndefOr[AliasRoutingConfiguration] = js.undefined
     ): CreateAliasRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FunctionName"    -> FunctionName.asInstanceOf[js.Any],
         "FunctionVersion" -> FunctionVersion.asInstanceOf[js.Any],
         "Name"            -> Name.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      RoutingConfig.foreach(__v => __obj.update("RoutingConfig", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      RoutingConfig.foreach(__v => __obj.updateDynamic("RoutingConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAliasRequest]
     }
   }
@@ -500,15 +500,17 @@ package lambda {
         StartingPosition: js.UndefOr[EventSourcePosition] = js.undefined,
         StartingPositionTimestamp: js.UndefOr[Date] = js.undefined
     ): CreateEventSourceMappingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EventSourceArn" -> EventSourceArn.asInstanceOf[js.Any],
         "FunctionName"   -> FunctionName.asInstanceOf[js.Any]
       )
 
-      BatchSize.foreach(__v => __obj.update("BatchSize", __v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      StartingPosition.foreach(__v => __obj.update("StartingPosition", __v.asInstanceOf[js.Any]))
-      StartingPositionTimestamp.foreach(__v => __obj.update("StartingPositionTimestamp", __v.asInstanceOf[js.Any]))
+      BatchSize.foreach(__v => __obj.updateDynamic("BatchSize")(__v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      StartingPosition.foreach(__v => __obj.updateDynamic("StartingPosition")(__v.asInstanceOf[js.Any]))
+      StartingPositionTimestamp.foreach(
+        __v => __obj.updateDynamic("StartingPositionTimestamp")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[CreateEventSourceMappingRequest]
     }
   }
@@ -552,7 +554,7 @@ package lambda {
         TracingConfig: js.UndefOr[TracingConfig] = js.undefined,
         VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): CreateFunctionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Code"         -> Code.asInstanceOf[js.Any],
         "FunctionName" -> FunctionName.asInstanceOf[js.Any],
         "Handler"      -> Handler.asInstanceOf[js.Any],
@@ -560,17 +562,17 @@ package lambda {
         "Runtime"      -> Runtime.asInstanceOf[js.Any]
       )
 
-      DeadLetterConfig.foreach(__v => __obj.update("DeadLetterConfig", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Environment.foreach(__v => __obj.update("Environment", __v.asInstanceOf[js.Any]))
-      KMSKeyArn.foreach(__v => __obj.update("KMSKeyArn", __v.asInstanceOf[js.Any]))
-      Layers.foreach(__v => __obj.update("Layers", __v.asInstanceOf[js.Any]))
-      MemorySize.foreach(__v => __obj.update("MemorySize", __v.asInstanceOf[js.Any]))
-      Publish.foreach(__v => __obj.update("Publish", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      Timeout.foreach(__v => __obj.update("Timeout", __v.asInstanceOf[js.Any]))
-      TracingConfig.foreach(__v => __obj.update("TracingConfig", __v.asInstanceOf[js.Any]))
-      VpcConfig.foreach(__v => __obj.update("VpcConfig", __v.asInstanceOf[js.Any]))
+      DeadLetterConfig.foreach(__v => __obj.updateDynamic("DeadLetterConfig")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
+      KMSKeyArn.foreach(__v => __obj.updateDynamic("KMSKeyArn")(__v.asInstanceOf[js.Any]))
+      Layers.foreach(__v => __obj.updateDynamic("Layers")(__v.asInstanceOf[js.Any]))
+      MemorySize.foreach(__v => __obj.updateDynamic("MemorySize")(__v.asInstanceOf[js.Any]))
+      Publish.foreach(__v => __obj.updateDynamic("Publish")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
+      TracingConfig.foreach(__v => __obj.updateDynamic("TracingConfig")(__v.asInstanceOf[js.Any]))
+      VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFunctionRequest]
     }
   }
@@ -587,8 +589,8 @@ package lambda {
     def apply(
         TargetArn: js.UndefOr[ResourceArn] = js.undefined
     ): DeadLetterConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TargetArn.foreach(__v => __obj.update("TargetArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TargetArn.foreach(__v => __obj.updateDynamic("TargetArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeadLetterConfig]
     }
   }
@@ -604,7 +606,7 @@ package lambda {
         FunctionName: FunctionName,
         Name: Alias
     ): DeleteAliasRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FunctionName" -> FunctionName.asInstanceOf[js.Any],
         "Name"         -> Name.asInstanceOf[js.Any]
       )
@@ -622,7 +624,7 @@ package lambda {
     def apply(
         UUID: String
     ): DeleteEventSourceMappingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UUID" -> UUID.asInstanceOf[js.Any]
       )
 
@@ -639,7 +641,7 @@ package lambda {
     def apply(
         FunctionName: FunctionName
     ): DeleteFunctionConcurrencyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FunctionName" -> FunctionName.asInstanceOf[js.Any]
       )
 
@@ -658,11 +660,11 @@ package lambda {
         FunctionName: FunctionName,
         Qualifier: js.UndefOr[Qualifier] = js.undefined
     ): DeleteFunctionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FunctionName" -> FunctionName.asInstanceOf[js.Any]
       )
 
-      Qualifier.foreach(__v => __obj.update("Qualifier", __v.asInstanceOf[js.Any]))
+      Qualifier.foreach(__v => __obj.updateDynamic("Qualifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteFunctionRequest]
     }
   }
@@ -678,7 +680,7 @@ package lambda {
         LayerName: LayerName,
         VersionNumber: LayerVersionNumber
     ): DeleteLayerVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LayerName"     -> LayerName.asInstanceOf[js.Any],
         "VersionNumber" -> VersionNumber.asInstanceOf[js.Any]
       )
@@ -699,8 +701,8 @@ package lambda {
     def apply(
         Variables: js.UndefOr[EnvironmentVariables] = js.undefined
     ): Environment = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Variables.foreach(__v => __obj.update("Variables", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Variables.foreach(__v => __obj.updateDynamic("Variables")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Environment]
     }
   }
@@ -719,9 +721,9 @@ package lambda {
         ErrorCode: js.UndefOr[String] = js.undefined,
         Message: js.UndefOr[SensitiveString] = js.undefined
     ): EnvironmentError = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnvironmentError]
     }
   }
@@ -740,9 +742,9 @@ package lambda {
         Error: js.UndefOr[EnvironmentError] = js.undefined,
         Variables: js.UndefOr[EnvironmentVariables] = js.undefined
     ): EnvironmentResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Error.foreach(__v => __obj.update("Error", __v.asInstanceOf[js.Any]))
-      Variables.foreach(__v => __obj.update("Variables", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Error.foreach(__v => __obj.updateDynamic("Error")(__v.asInstanceOf[js.Any]))
+      Variables.foreach(__v => __obj.updateDynamic("Variables")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnvironmentResponse]
     }
   }
@@ -773,15 +775,15 @@ package lambda {
         StateTransitionReason: js.UndefOr[String] = js.undefined,
         UUID: js.UndefOr[String] = js.undefined
     ): EventSourceMappingConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BatchSize.foreach(__v => __obj.update("BatchSize", __v.asInstanceOf[js.Any]))
-      EventSourceArn.foreach(__v => __obj.update("EventSourceArn", __v.asInstanceOf[js.Any]))
-      FunctionArn.foreach(__v => __obj.update("FunctionArn", __v.asInstanceOf[js.Any]))
-      LastModified.foreach(__v => __obj.update("LastModified", __v.asInstanceOf[js.Any]))
-      LastProcessingResult.foreach(__v => __obj.update("LastProcessingResult", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
-      StateTransitionReason.foreach(__v => __obj.update("StateTransitionReason", __v.asInstanceOf[js.Any]))
-      UUID.foreach(__v => __obj.update("UUID", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BatchSize.foreach(__v => __obj.updateDynamic("BatchSize")(__v.asInstanceOf[js.Any]))
+      EventSourceArn.foreach(__v => __obj.updateDynamic("EventSourceArn")(__v.asInstanceOf[js.Any]))
+      FunctionArn.foreach(__v => __obj.updateDynamic("FunctionArn")(__v.asInstanceOf[js.Any]))
+      LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
+      LastProcessingResult.foreach(__v => __obj.updateDynamic("LastProcessingResult")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      StateTransitionReason.foreach(__v => __obj.updateDynamic("StateTransitionReason")(__v.asInstanceOf[js.Any]))
+      UUID.foreach(__v => __obj.updateDynamic("UUID")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventSourceMappingConfiguration]
     }
   }
@@ -812,11 +814,11 @@ package lambda {
         S3ObjectVersion: js.UndefOr[S3ObjectVersion] = js.undefined,
         ZipFile: js.UndefOr[Blob] = js.undefined
     ): FunctionCode = {
-      val __obj = js.Dictionary.empty[js.Any]
-      S3Bucket.foreach(__v => __obj.update("S3Bucket", __v.asInstanceOf[js.Any]))
-      S3Key.foreach(__v => __obj.update("S3Key", __v.asInstanceOf[js.Any]))
-      S3ObjectVersion.foreach(__v => __obj.update("S3ObjectVersion", __v.asInstanceOf[js.Any]))
-      ZipFile.foreach(__v => __obj.update("ZipFile", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      S3Bucket.foreach(__v => __obj.updateDynamic("S3Bucket")(__v.asInstanceOf[js.Any]))
+      S3Key.foreach(__v => __obj.updateDynamic("S3Key")(__v.asInstanceOf[js.Any]))
+      S3ObjectVersion.foreach(__v => __obj.updateDynamic("S3ObjectVersion")(__v.asInstanceOf[js.Any]))
+      ZipFile.foreach(__v => __obj.updateDynamic("ZipFile")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FunctionCode]
     }
   }
@@ -835,9 +837,9 @@ package lambda {
         Location: js.UndefOr[String] = js.undefined,
         RepositoryType: js.UndefOr[String] = js.undefined
     ): FunctionCodeLocation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
-      RepositoryType.foreach(__v => __obj.update("RepositoryType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
+      RepositoryType.foreach(__v => __obj.updateDynamic("RepositoryType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FunctionCodeLocation]
     }
   }
@@ -892,27 +894,27 @@ package lambda {
         Version: js.UndefOr[Version] = js.undefined,
         VpcConfig: js.UndefOr[VpcConfigResponse] = js.undefined
     ): FunctionConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CodeSha256.foreach(__v => __obj.update("CodeSha256", __v.asInstanceOf[js.Any]))
-      CodeSize.foreach(__v => __obj.update("CodeSize", __v.asInstanceOf[js.Any]))
-      DeadLetterConfig.foreach(__v => __obj.update("DeadLetterConfig", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Environment.foreach(__v => __obj.update("Environment", __v.asInstanceOf[js.Any]))
-      FunctionArn.foreach(__v => __obj.update("FunctionArn", __v.asInstanceOf[js.Any]))
-      FunctionName.foreach(__v => __obj.update("FunctionName", __v.asInstanceOf[js.Any]))
-      Handler.foreach(__v => __obj.update("Handler", __v.asInstanceOf[js.Any]))
-      KMSKeyArn.foreach(__v => __obj.update("KMSKeyArn", __v.asInstanceOf[js.Any]))
-      LastModified.foreach(__v => __obj.update("LastModified", __v.asInstanceOf[js.Any]))
-      Layers.foreach(__v => __obj.update("Layers", __v.asInstanceOf[js.Any]))
-      MasterArn.foreach(__v => __obj.update("MasterArn", __v.asInstanceOf[js.Any]))
-      MemorySize.foreach(__v => __obj.update("MemorySize", __v.asInstanceOf[js.Any]))
-      RevisionId.foreach(__v => __obj.update("RevisionId", __v.asInstanceOf[js.Any]))
-      Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
-      Runtime.foreach(__v => __obj.update("Runtime", __v.asInstanceOf[js.Any]))
-      Timeout.foreach(__v => __obj.update("Timeout", __v.asInstanceOf[js.Any]))
-      TracingConfig.foreach(__v => __obj.update("TracingConfig", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
-      VpcConfig.foreach(__v => __obj.update("VpcConfig", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CodeSha256.foreach(__v => __obj.updateDynamic("CodeSha256")(__v.asInstanceOf[js.Any]))
+      CodeSize.foreach(__v => __obj.updateDynamic("CodeSize")(__v.asInstanceOf[js.Any]))
+      DeadLetterConfig.foreach(__v => __obj.updateDynamic("DeadLetterConfig")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
+      FunctionArn.foreach(__v => __obj.updateDynamic("FunctionArn")(__v.asInstanceOf[js.Any]))
+      FunctionName.foreach(__v => __obj.updateDynamic("FunctionName")(__v.asInstanceOf[js.Any]))
+      Handler.foreach(__v => __obj.updateDynamic("Handler")(__v.asInstanceOf[js.Any]))
+      KMSKeyArn.foreach(__v => __obj.updateDynamic("KMSKeyArn")(__v.asInstanceOf[js.Any]))
+      LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
+      Layers.foreach(__v => __obj.updateDynamic("Layers")(__v.asInstanceOf[js.Any]))
+      MasterArn.foreach(__v => __obj.updateDynamic("MasterArn")(__v.asInstanceOf[js.Any]))
+      MemorySize.foreach(__v => __obj.updateDynamic("MemorySize")(__v.asInstanceOf[js.Any]))
+      RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
+      Runtime.foreach(__v => __obj.updateDynamic("Runtime")(__v.asInstanceOf[js.Any]))
+      Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
+      TracingConfig.foreach(__v => __obj.updateDynamic("TracingConfig")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FunctionConfiguration]
     }
   }
@@ -929,7 +931,7 @@ package lambda {
   object GetAccountSettingsRequest {
     def apply(
         ): GetAccountSettingsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetAccountSettingsRequest]
     }
@@ -946,9 +948,9 @@ package lambda {
         AccountLimit: js.UndefOr[AccountLimit] = js.undefined,
         AccountUsage: js.UndefOr[AccountUsage] = js.undefined
     ): GetAccountSettingsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccountLimit.foreach(__v => __obj.update("AccountLimit", __v.asInstanceOf[js.Any]))
-      AccountUsage.foreach(__v => __obj.update("AccountUsage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccountLimit.foreach(__v => __obj.updateDynamic("AccountLimit")(__v.asInstanceOf[js.Any]))
+      AccountUsage.foreach(__v => __obj.updateDynamic("AccountUsage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAccountSettingsResponse]
     }
   }
@@ -964,7 +966,7 @@ package lambda {
         FunctionName: FunctionName,
         Name: Alias
     ): GetAliasRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FunctionName" -> FunctionName.asInstanceOf[js.Any],
         "Name"         -> Name.asInstanceOf[js.Any]
       )
@@ -982,7 +984,7 @@ package lambda {
     def apply(
         UUID: String
     ): GetEventSourceMappingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UUID" -> UUID.asInstanceOf[js.Any]
       )
 
@@ -1001,11 +1003,11 @@ package lambda {
         FunctionName: NamespacedFunctionName,
         Qualifier: js.UndefOr[Qualifier] = js.undefined
     ): GetFunctionConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FunctionName" -> FunctionName.asInstanceOf[js.Any]
       )
 
-      Qualifier.foreach(__v => __obj.update("Qualifier", __v.asInstanceOf[js.Any]))
+      Qualifier.foreach(__v => __obj.updateDynamic("Qualifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFunctionConfigurationRequest]
     }
   }
@@ -1021,11 +1023,11 @@ package lambda {
         FunctionName: NamespacedFunctionName,
         Qualifier: js.UndefOr[Qualifier] = js.undefined
     ): GetFunctionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FunctionName" -> FunctionName.asInstanceOf[js.Any]
       )
 
-      Qualifier.foreach(__v => __obj.update("Qualifier", __v.asInstanceOf[js.Any]))
+      Qualifier.foreach(__v => __obj.updateDynamic("Qualifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFunctionRequest]
     }
   }
@@ -1045,11 +1047,11 @@ package lambda {
         Configuration: js.UndefOr[FunctionConfiguration] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): GetFunctionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Code.foreach(__v => __obj.update("Code", __v.asInstanceOf[js.Any]))
-      Concurrency.foreach(__v => __obj.update("Concurrency", __v.asInstanceOf[js.Any]))
-      Configuration.foreach(__v => __obj.update("Configuration", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
+      Concurrency.foreach(__v => __obj.updateDynamic("Concurrency")(__v.asInstanceOf[js.Any]))
+      Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFunctionResponse]
     }
   }
@@ -1063,7 +1065,7 @@ package lambda {
     def apply(
         Arn: LayerVersionArn
     ): GetLayerVersionByArnRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
 
@@ -1082,7 +1084,7 @@ package lambda {
         LayerName: LayerName,
         VersionNumber: LayerVersionNumber
     ): GetLayerVersionPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LayerName"     -> LayerName.asInstanceOf[js.Any],
         "VersionNumber" -> VersionNumber.asInstanceOf[js.Any]
       )
@@ -1102,9 +1104,9 @@ package lambda {
         Policy: js.UndefOr[String] = js.undefined,
         RevisionId: js.UndefOr[String] = js.undefined
     ): GetLayerVersionPolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
-      RevisionId.foreach(__v => __obj.update("RevisionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
+      RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLayerVersionPolicyResponse]
     }
   }
@@ -1120,7 +1122,7 @@ package lambda {
         LayerName: LayerName,
         VersionNumber: LayerVersionNumber
     ): GetLayerVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LayerName"     -> LayerName.asInstanceOf[js.Any],
         "VersionNumber" -> VersionNumber.asInstanceOf[js.Any]
       )
@@ -1152,15 +1154,15 @@ package lambda {
         LicenseInfo: js.UndefOr[LicenseInfo] = js.undefined,
         Version: js.UndefOr[LayerVersionNumber] = js.undefined
     ): GetLayerVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CompatibleRuntimes.foreach(__v => __obj.update("CompatibleRuntimes", __v.asInstanceOf[js.Any]))
-      Content.foreach(__v => __obj.update("Content", __v.asInstanceOf[js.Any]))
-      CreatedDate.foreach(__v => __obj.update("CreatedDate", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      LayerArn.foreach(__v => __obj.update("LayerArn", __v.asInstanceOf[js.Any]))
-      LayerVersionArn.foreach(__v => __obj.update("LayerVersionArn", __v.asInstanceOf[js.Any]))
-      LicenseInfo.foreach(__v => __obj.update("LicenseInfo", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CompatibleRuntimes.foreach(__v => __obj.updateDynamic("CompatibleRuntimes")(__v.asInstanceOf[js.Any]))
+      Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LayerArn.foreach(__v => __obj.updateDynamic("LayerArn")(__v.asInstanceOf[js.Any]))
+      LayerVersionArn.foreach(__v => __obj.updateDynamic("LayerVersionArn")(__v.asInstanceOf[js.Any]))
+      LicenseInfo.foreach(__v => __obj.updateDynamic("LicenseInfo")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLayerVersionResponse]
     }
   }
@@ -1176,11 +1178,11 @@ package lambda {
         FunctionName: NamespacedFunctionName,
         Qualifier: js.UndefOr[Qualifier] = js.undefined
     ): GetPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FunctionName" -> FunctionName.asInstanceOf[js.Any]
       )
 
-      Qualifier.foreach(__v => __obj.update("Qualifier", __v.asInstanceOf[js.Any]))
+      Qualifier.foreach(__v => __obj.updateDynamic("Qualifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPolicyRequest]
     }
   }
@@ -1196,9 +1198,9 @@ package lambda {
         Policy: js.UndefOr[String] = js.undefined,
         RevisionId: js.UndefOr[String] = js.undefined
     ): GetPolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
-      RevisionId.foreach(__v => __obj.update("RevisionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
+      RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPolicyResponse]
     }
   }
@@ -1222,15 +1224,15 @@ package lambda {
         Payload: js.UndefOr[Blob] = js.undefined,
         Qualifier: js.UndefOr[Qualifier] = js.undefined
     ): InvocationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FunctionName" -> FunctionName.asInstanceOf[js.Any]
       )
 
-      ClientContext.foreach(__v => __obj.update("ClientContext", __v.asInstanceOf[js.Any]))
-      InvocationType.foreach(__v => __obj.update("InvocationType", __v.asInstanceOf[js.Any]))
-      LogType.foreach(__v => __obj.update("LogType", __v.asInstanceOf[js.Any]))
-      Payload.foreach(__v => __obj.update("Payload", __v.asInstanceOf[js.Any]))
-      Qualifier.foreach(__v => __obj.update("Qualifier", __v.asInstanceOf[js.Any]))
+      ClientContext.foreach(__v => __obj.updateDynamic("ClientContext")(__v.asInstanceOf[js.Any]))
+      InvocationType.foreach(__v => __obj.updateDynamic("InvocationType")(__v.asInstanceOf[js.Any]))
+      LogType.foreach(__v => __obj.updateDynamic("LogType")(__v.asInstanceOf[js.Any]))
+      Payload.foreach(__v => __obj.updateDynamic("Payload")(__v.asInstanceOf[js.Any]))
+      Qualifier.foreach(__v => __obj.updateDynamic("Qualifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InvocationRequest]
     }
   }
@@ -1252,12 +1254,12 @@ package lambda {
         Payload: js.UndefOr[Blob] = js.undefined,
         StatusCode: js.UndefOr[Int] = js.undefined
     ): InvocationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ExecutedVersion.foreach(__v => __obj.update("ExecutedVersion", __v.asInstanceOf[js.Any]))
-      FunctionError.foreach(__v => __obj.update("FunctionError", __v.asInstanceOf[js.Any]))
-      LogResult.foreach(__v => __obj.update("LogResult", __v.asInstanceOf[js.Any]))
-      Payload.foreach(__v => __obj.update("Payload", __v.asInstanceOf[js.Any]))
-      StatusCode.foreach(__v => __obj.update("StatusCode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ExecutedVersion.foreach(__v => __obj.updateDynamic("ExecutedVersion")(__v.asInstanceOf[js.Any]))
+      FunctionError.foreach(__v => __obj.updateDynamic("FunctionError")(__v.asInstanceOf[js.Any]))
+      LogResult.foreach(__v => __obj.updateDynamic("LogResult")(__v.asInstanceOf[js.Any]))
+      Payload.foreach(__v => __obj.updateDynamic("Payload")(__v.asInstanceOf[js.Any]))
+      StatusCode.foreach(__v => __obj.updateDynamic("StatusCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InvocationResponse]
     }
   }
@@ -1282,7 +1284,7 @@ package lambda {
         FunctionName: NamespacedFunctionName,
         InvokeArgs: BlobStream
     ): InvokeAsyncRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FunctionName" -> FunctionName.asInstanceOf[js.Any],
         "InvokeArgs"   -> InvokeArgs.asInstanceOf[js.Any]
       )
@@ -1304,8 +1306,8 @@ package lambda {
     def apply(
         Status: js.UndefOr[HttpStatus] = js.undefined
     ): InvokeAsyncResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InvokeAsyncResponse]
     }
   }
@@ -1324,9 +1326,9 @@ package lambda {
         Arn: js.UndefOr[LayerVersionArn] = js.undefined,
         CodeSize: js.UndefOr[Double] = js.undefined
     ): Layer = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CodeSize.foreach(__v => __obj.update("CodeSize", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CodeSize.foreach(__v => __obj.updateDynamic("CodeSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Layer]
     }
   }
@@ -1349,11 +1351,11 @@ package lambda {
         S3ObjectVersion: js.UndefOr[S3ObjectVersion] = js.undefined,
         ZipFile: js.UndefOr[Blob] = js.undefined
     ): LayerVersionContentInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      S3Bucket.foreach(__v => __obj.update("S3Bucket", __v.asInstanceOf[js.Any]))
-      S3Key.foreach(__v => __obj.update("S3Key", __v.asInstanceOf[js.Any]))
-      S3ObjectVersion.foreach(__v => __obj.update("S3ObjectVersion", __v.asInstanceOf[js.Any]))
-      ZipFile.foreach(__v => __obj.update("ZipFile", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      S3Bucket.foreach(__v => __obj.updateDynamic("S3Bucket")(__v.asInstanceOf[js.Any]))
+      S3Key.foreach(__v => __obj.updateDynamic("S3Key")(__v.asInstanceOf[js.Any]))
+      S3ObjectVersion.foreach(__v => __obj.updateDynamic("S3ObjectVersion")(__v.asInstanceOf[js.Any]))
+      ZipFile.foreach(__v => __obj.updateDynamic("ZipFile")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LayerVersionContentInput]
     }
   }
@@ -1374,10 +1376,10 @@ package lambda {
         CodeSize: js.UndefOr[Double] = js.undefined,
         Location: js.UndefOr[String] = js.undefined
     ): LayerVersionContentOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CodeSha256.foreach(__v => __obj.update("CodeSha256", __v.asInstanceOf[js.Any]))
-      CodeSize.foreach(__v => __obj.update("CodeSize", __v.asInstanceOf[js.Any]))
-      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CodeSha256.foreach(__v => __obj.updateDynamic("CodeSha256")(__v.asInstanceOf[js.Any]))
+      CodeSize.foreach(__v => __obj.updateDynamic("CodeSize")(__v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LayerVersionContentOutput]
     }
   }
@@ -1404,13 +1406,13 @@ package lambda {
         LicenseInfo: js.UndefOr[LicenseInfo] = js.undefined,
         Version: js.UndefOr[LayerVersionNumber] = js.undefined
     ): LayerVersionsListItem = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CompatibleRuntimes.foreach(__v => __obj.update("CompatibleRuntimes", __v.asInstanceOf[js.Any]))
-      CreatedDate.foreach(__v => __obj.update("CreatedDate", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      LayerVersionArn.foreach(__v => __obj.update("LayerVersionArn", __v.asInstanceOf[js.Any]))
-      LicenseInfo.foreach(__v => __obj.update("LicenseInfo", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CompatibleRuntimes.foreach(__v => __obj.updateDynamic("CompatibleRuntimes")(__v.asInstanceOf[js.Any]))
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LayerVersionArn.foreach(__v => __obj.updateDynamic("LayerVersionArn")(__v.asInstanceOf[js.Any]))
+      LicenseInfo.foreach(__v => __obj.updateDynamic("LicenseInfo")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LayerVersionsListItem]
     }
   }
@@ -1431,10 +1433,10 @@ package lambda {
         LayerArn: js.UndefOr[LayerArn] = js.undefined,
         LayerName: js.UndefOr[LayerName] = js.undefined
     ): LayersListItem = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LatestMatchingVersion.foreach(__v => __obj.update("LatestMatchingVersion", __v.asInstanceOf[js.Any]))
-      LayerArn.foreach(__v => __obj.update("LayerArn", __v.asInstanceOf[js.Any]))
-      LayerName.foreach(__v => __obj.update("LayerName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LatestMatchingVersion.foreach(__v => __obj.updateDynamic("LatestMatchingVersion")(__v.asInstanceOf[js.Any]))
+      LayerArn.foreach(__v => __obj.updateDynamic("LayerArn")(__v.asInstanceOf[js.Any]))
+      LayerName.foreach(__v => __obj.updateDynamic("LayerName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LayersListItem]
     }
   }
@@ -1454,13 +1456,13 @@ package lambda {
         Marker: js.UndefOr[String] = js.undefined,
         MaxItems: js.UndefOr[MaxListItems] = js.undefined
     ): ListAliasesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FunctionName" -> FunctionName.asInstanceOf[js.Any]
       )
 
-      FunctionVersion.foreach(__v => __obj.update("FunctionVersion", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      FunctionVersion.foreach(__v => __obj.updateDynamic("FunctionVersion")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAliasesRequest]
     }
   }
@@ -1476,9 +1478,9 @@ package lambda {
         Aliases: js.UndefOr[AliasList] = js.undefined,
         NextMarker: js.UndefOr[String] = js.undefined
     ): ListAliasesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Aliases.foreach(__v => __obj.update("Aliases", __v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Aliases.foreach(__v => __obj.updateDynamic("Aliases")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAliasesResponse]
     }
   }
@@ -1498,11 +1500,11 @@ package lambda {
         Marker: js.UndefOr[String] = js.undefined,
         MaxItems: js.UndefOr[MaxListItems] = js.undefined
     ): ListEventSourceMappingsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EventSourceArn.foreach(__v => __obj.update("EventSourceArn", __v.asInstanceOf[js.Any]))
-      FunctionName.foreach(__v => __obj.update("FunctionName", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EventSourceArn.foreach(__v => __obj.updateDynamic("EventSourceArn")(__v.asInstanceOf[js.Any]))
+      FunctionName.foreach(__v => __obj.updateDynamic("FunctionName")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEventSourceMappingsRequest]
     }
   }
@@ -1518,9 +1520,9 @@ package lambda {
         EventSourceMappings: js.UndefOr[EventSourceMappingsList] = js.undefined,
         NextMarker: js.UndefOr[String] = js.undefined
     ): ListEventSourceMappingsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EventSourceMappings.foreach(__v => __obj.update("EventSourceMappings", __v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EventSourceMappings.foreach(__v => __obj.updateDynamic("EventSourceMappings")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEventSourceMappingsResponse]
     }
   }
@@ -1540,11 +1542,11 @@ package lambda {
         MasterRegion: js.UndefOr[MasterRegion] = js.undefined,
         MaxItems: js.UndefOr[MaxListItems] = js.undefined
     ): ListFunctionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FunctionVersion.foreach(__v => __obj.update("FunctionVersion", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MasterRegion.foreach(__v => __obj.update("MasterRegion", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FunctionVersion.foreach(__v => __obj.updateDynamic("FunctionVersion")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MasterRegion.foreach(__v => __obj.updateDynamic("MasterRegion")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFunctionsRequest]
     }
   }
@@ -1563,9 +1565,9 @@ package lambda {
         Functions: js.UndefOr[FunctionList] = js.undefined,
         NextMarker: js.UndefOr[String] = js.undefined
     ): ListFunctionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Functions.foreach(__v => __obj.update("Functions", __v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Functions.foreach(__v => __obj.updateDynamic("Functions")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFunctionsResponse]
     }
   }
@@ -1585,13 +1587,13 @@ package lambda {
         Marker: js.UndefOr[String] = js.undefined,
         MaxItems: js.UndefOr[MaxLayerListItems] = js.undefined
     ): ListLayerVersionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LayerName" -> LayerName.asInstanceOf[js.Any]
       )
 
-      CompatibleRuntime.foreach(__v => __obj.update("CompatibleRuntime", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      CompatibleRuntime.foreach(__v => __obj.updateDynamic("CompatibleRuntime")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListLayerVersionsRequest]
     }
   }
@@ -1607,9 +1609,9 @@ package lambda {
         LayerVersions: js.UndefOr[LayerVersionsList] = js.undefined,
         NextMarker: js.UndefOr[String] = js.undefined
     ): ListLayerVersionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LayerVersions.foreach(__v => __obj.update("LayerVersions", __v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LayerVersions.foreach(__v => __obj.updateDynamic("LayerVersions")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListLayerVersionsResponse]
     }
   }
@@ -1627,10 +1629,10 @@ package lambda {
         Marker: js.UndefOr[String] = js.undefined,
         MaxItems: js.UndefOr[MaxLayerListItems] = js.undefined
     ): ListLayersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CompatibleRuntime.foreach(__v => __obj.update("CompatibleRuntime", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CompatibleRuntime.foreach(__v => __obj.updateDynamic("CompatibleRuntime")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListLayersRequest]
     }
   }
@@ -1646,9 +1648,9 @@ package lambda {
         Layers: js.UndefOr[LayersList] = js.undefined,
         NextMarker: js.UndefOr[String] = js.undefined
     ): ListLayersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Layers.foreach(__v => __obj.update("Layers", __v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Layers.foreach(__v => __obj.updateDynamic("Layers")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListLayersResponse]
     }
   }
@@ -1662,7 +1664,7 @@ package lambda {
     def apply(
         Resource: FunctionArn
     ): ListTagsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Resource" -> Resource.asInstanceOf[js.Any]
       )
 
@@ -1679,8 +1681,8 @@ package lambda {
     def apply(
         Tags: js.UndefOr[Tags] = js.undefined
     ): ListTagsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsResponse]
     }
   }
@@ -1698,12 +1700,12 @@ package lambda {
         Marker: js.UndefOr[String] = js.undefined,
         MaxItems: js.UndefOr[MaxListItems] = js.undefined
     ): ListVersionsByFunctionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FunctionName" -> FunctionName.asInstanceOf[js.Any]
       )
 
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListVersionsByFunctionRequest]
     }
   }
@@ -1719,9 +1721,9 @@ package lambda {
         NextMarker: js.UndefOr[String] = js.undefined,
         Versions: js.UndefOr[FunctionList] = js.undefined
     ): ListVersionsByFunctionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
-      Versions.foreach(__v => __obj.update("Versions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
+      Versions.foreach(__v => __obj.updateDynamic("Versions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListVersionsByFunctionResponse]
     }
   }
@@ -1750,14 +1752,14 @@ package lambda {
         Description: js.UndefOr[Description] = js.undefined,
         LicenseInfo: js.UndefOr[LicenseInfo] = js.undefined
     ): PublishLayerVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Content"   -> Content.asInstanceOf[js.Any],
         "LayerName" -> LayerName.asInstanceOf[js.Any]
       )
 
-      CompatibleRuntimes.foreach(__v => __obj.update("CompatibleRuntimes", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      LicenseInfo.foreach(__v => __obj.update("LicenseInfo", __v.asInstanceOf[js.Any]))
+      CompatibleRuntimes.foreach(__v => __obj.updateDynamic("CompatibleRuntimes")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LicenseInfo.foreach(__v => __obj.updateDynamic("LicenseInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PublishLayerVersionRequest]
     }
   }
@@ -1785,15 +1787,15 @@ package lambda {
         LicenseInfo: js.UndefOr[LicenseInfo] = js.undefined,
         Version: js.UndefOr[LayerVersionNumber] = js.undefined
     ): PublishLayerVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CompatibleRuntimes.foreach(__v => __obj.update("CompatibleRuntimes", __v.asInstanceOf[js.Any]))
-      Content.foreach(__v => __obj.update("Content", __v.asInstanceOf[js.Any]))
-      CreatedDate.foreach(__v => __obj.update("CreatedDate", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      LayerArn.foreach(__v => __obj.update("LayerArn", __v.asInstanceOf[js.Any]))
-      LayerVersionArn.foreach(__v => __obj.update("LayerVersionArn", __v.asInstanceOf[js.Any]))
-      LicenseInfo.foreach(__v => __obj.update("LicenseInfo", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CompatibleRuntimes.foreach(__v => __obj.updateDynamic("CompatibleRuntimes")(__v.asInstanceOf[js.Any]))
+      Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LayerArn.foreach(__v => __obj.updateDynamic("LayerArn")(__v.asInstanceOf[js.Any]))
+      LayerVersionArn.foreach(__v => __obj.updateDynamic("LayerVersionArn")(__v.asInstanceOf[js.Any]))
+      LicenseInfo.foreach(__v => __obj.updateDynamic("LicenseInfo")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PublishLayerVersionResponse]
     }
   }
@@ -1813,13 +1815,13 @@ package lambda {
         Description: js.UndefOr[Description] = js.undefined,
         RevisionId: js.UndefOr[String] = js.undefined
     ): PublishVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FunctionName" -> FunctionName.asInstanceOf[js.Any]
       )
 
-      CodeSha256.foreach(__v => __obj.update("CodeSha256", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      RevisionId.foreach(__v => __obj.update("RevisionId", __v.asInstanceOf[js.Any]))
+      CodeSha256.foreach(__v => __obj.updateDynamic("CodeSha256")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PublishVersionRequest]
     }
   }
@@ -1835,7 +1837,7 @@ package lambda {
         FunctionName: FunctionName,
         ReservedConcurrentExecutions: ReservedConcurrentExecutions
     ): PutFunctionConcurrencyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FunctionName"                 -> FunctionName.asInstanceOf[js.Any],
         "ReservedConcurrentExecutions" -> ReservedConcurrentExecutions.asInstanceOf[js.Any]
       )
@@ -1859,13 +1861,13 @@ package lambda {
         VersionNumber: LayerVersionNumber,
         RevisionId: js.UndefOr[String] = js.undefined
     ): RemoveLayerVersionPermissionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LayerName"     -> LayerName.asInstanceOf[js.Any],
         "StatementId"   -> StatementId.asInstanceOf[js.Any],
         "VersionNumber" -> VersionNumber.asInstanceOf[js.Any]
       )
 
-      RevisionId.foreach(__v => __obj.update("RevisionId", __v.asInstanceOf[js.Any]))
+      RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RemoveLayerVersionPermissionRequest]
     }
   }
@@ -1885,13 +1887,13 @@ package lambda {
         Qualifier: js.UndefOr[Qualifier] = js.undefined,
         RevisionId: js.UndefOr[String] = js.undefined
     ): RemovePermissionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FunctionName" -> FunctionName.asInstanceOf[js.Any],
         "StatementId"  -> StatementId.asInstanceOf[js.Any]
       )
 
-      Qualifier.foreach(__v => __obj.update("Qualifier", __v.asInstanceOf[js.Any]))
-      RevisionId.foreach(__v => __obj.update("RevisionId", __v.asInstanceOf[js.Any]))
+      Qualifier.foreach(__v => __obj.updateDynamic("Qualifier")(__v.asInstanceOf[js.Any]))
+      RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RemovePermissionRequest]
     }
   }
@@ -1947,7 +1949,7 @@ package lambda {
         Resource: FunctionArn,
         Tags: Tags
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Resource" -> Resource.asInstanceOf[js.Any],
         "Tags"     -> Tags.asInstanceOf[js.Any]
       )
@@ -1968,8 +1970,8 @@ package lambda {
     def apply(
         Mode: js.UndefOr[TracingMode] = js.undefined
     ): TracingConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Mode.foreach(__v => __obj.update("Mode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TracingConfig]
     }
   }
@@ -1986,8 +1988,8 @@ package lambda {
     def apply(
         Mode: js.UndefOr[TracingMode] = js.undefined
     ): TracingConfigResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Mode.foreach(__v => __obj.update("Mode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TracingConfigResponse]
     }
   }
@@ -2010,7 +2012,7 @@ package lambda {
         Resource: FunctionArn,
         TagKeys: TagKeyList
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Resource" -> Resource.asInstanceOf[js.Any],
         "TagKeys"  -> TagKeys.asInstanceOf[js.Any]
       )
@@ -2038,15 +2040,15 @@ package lambda {
         RevisionId: js.UndefOr[String] = js.undefined,
         RoutingConfig: js.UndefOr[AliasRoutingConfiguration] = js.undefined
     ): UpdateAliasRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FunctionName" -> FunctionName.asInstanceOf[js.Any],
         "Name"         -> Name.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      FunctionVersion.foreach(__v => __obj.update("FunctionVersion", __v.asInstanceOf[js.Any]))
-      RevisionId.foreach(__v => __obj.update("RevisionId", __v.asInstanceOf[js.Any]))
-      RoutingConfig.foreach(__v => __obj.update("RoutingConfig", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      FunctionVersion.foreach(__v => __obj.updateDynamic("FunctionVersion")(__v.asInstanceOf[js.Any]))
+      RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
+      RoutingConfig.foreach(__v => __obj.updateDynamic("RoutingConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAliasRequest]
     }
   }
@@ -2066,13 +2068,13 @@ package lambda {
         Enabled: js.UndefOr[Enabled] = js.undefined,
         FunctionName: js.UndefOr[FunctionName] = js.undefined
     ): UpdateEventSourceMappingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UUID" -> UUID.asInstanceOf[js.Any]
       )
 
-      BatchSize.foreach(__v => __obj.update("BatchSize", __v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      FunctionName.foreach(__v => __obj.update("FunctionName", __v.asInstanceOf[js.Any]))
+      BatchSize.foreach(__v => __obj.updateDynamic("BatchSize")(__v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      FunctionName.foreach(__v => __obj.updateDynamic("FunctionName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateEventSourceMappingRequest]
     }
   }
@@ -2100,17 +2102,17 @@ package lambda {
         S3ObjectVersion: js.UndefOr[S3ObjectVersion] = js.undefined,
         ZipFile: js.UndefOr[Blob] = js.undefined
     ): UpdateFunctionCodeRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FunctionName" -> FunctionName.asInstanceOf[js.Any]
       )
 
-      DryRun.foreach(__v => __obj.update("DryRun", __v.asInstanceOf[js.Any]))
-      Publish.foreach(__v => __obj.update("Publish", __v.asInstanceOf[js.Any]))
-      RevisionId.foreach(__v => __obj.update("RevisionId", __v.asInstanceOf[js.Any]))
-      S3Bucket.foreach(__v => __obj.update("S3Bucket", __v.asInstanceOf[js.Any]))
-      S3Key.foreach(__v => __obj.update("S3Key", __v.asInstanceOf[js.Any]))
-      S3ObjectVersion.foreach(__v => __obj.update("S3ObjectVersion", __v.asInstanceOf[js.Any]))
-      ZipFile.foreach(__v => __obj.update("ZipFile", __v.asInstanceOf[js.Any]))
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      Publish.foreach(__v => __obj.updateDynamic("Publish")(__v.asInstanceOf[js.Any]))
+      RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
+      S3Bucket.foreach(__v => __obj.updateDynamic("S3Bucket")(__v.asInstanceOf[js.Any]))
+      S3Key.foreach(__v => __obj.updateDynamic("S3Key")(__v.asInstanceOf[js.Any]))
+      S3ObjectVersion.foreach(__v => __obj.updateDynamic("S3ObjectVersion")(__v.asInstanceOf[js.Any]))
+      ZipFile.foreach(__v => __obj.updateDynamic("ZipFile")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFunctionCodeRequest]
     }
   }
@@ -2150,23 +2152,23 @@ package lambda {
         TracingConfig: js.UndefOr[TracingConfig] = js.undefined,
         VpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): UpdateFunctionConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FunctionName" -> FunctionName.asInstanceOf[js.Any]
       )
 
-      DeadLetterConfig.foreach(__v => __obj.update("DeadLetterConfig", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Environment.foreach(__v => __obj.update("Environment", __v.asInstanceOf[js.Any]))
-      Handler.foreach(__v => __obj.update("Handler", __v.asInstanceOf[js.Any]))
-      KMSKeyArn.foreach(__v => __obj.update("KMSKeyArn", __v.asInstanceOf[js.Any]))
-      Layers.foreach(__v => __obj.update("Layers", __v.asInstanceOf[js.Any]))
-      MemorySize.foreach(__v => __obj.update("MemorySize", __v.asInstanceOf[js.Any]))
-      RevisionId.foreach(__v => __obj.update("RevisionId", __v.asInstanceOf[js.Any]))
-      Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
-      Runtime.foreach(__v => __obj.update("Runtime", __v.asInstanceOf[js.Any]))
-      Timeout.foreach(__v => __obj.update("Timeout", __v.asInstanceOf[js.Any]))
-      TracingConfig.foreach(__v => __obj.update("TracingConfig", __v.asInstanceOf[js.Any]))
-      VpcConfig.foreach(__v => __obj.update("VpcConfig", __v.asInstanceOf[js.Any]))
+      DeadLetterConfig.foreach(__v => __obj.updateDynamic("DeadLetterConfig")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
+      Handler.foreach(__v => __obj.updateDynamic("Handler")(__v.asInstanceOf[js.Any]))
+      KMSKeyArn.foreach(__v => __obj.updateDynamic("KMSKeyArn")(__v.asInstanceOf[js.Any]))
+      Layers.foreach(__v => __obj.updateDynamic("Layers")(__v.asInstanceOf[js.Any]))
+      MemorySize.foreach(__v => __obj.updateDynamic("MemorySize")(__v.asInstanceOf[js.Any]))
+      RevisionId.foreach(__v => __obj.updateDynamic("RevisionId")(__v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
+      Runtime.foreach(__v => __obj.updateDynamic("Runtime")(__v.asInstanceOf[js.Any]))
+      Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
+      TracingConfig.foreach(__v => __obj.updateDynamic("TracingConfig")(__v.asInstanceOf[js.Any]))
+      VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFunctionConfigurationRequest]
     }
   }
@@ -2185,9 +2187,9 @@ package lambda {
         SecurityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
         SubnetIds: js.UndefOr[SubnetIds] = js.undefined
     ): VpcConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SecurityGroupIds.foreach(__v => __obj.update("SecurityGroupIds", __v.asInstanceOf[js.Any]))
-      SubnetIds.foreach(__v => __obj.update("SubnetIds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VpcConfig]
     }
   }
@@ -2208,10 +2210,10 @@ package lambda {
         SubnetIds: js.UndefOr[SubnetIds] = js.undefined,
         VpcId: js.UndefOr[VpcId] = js.undefined
     ): VpcConfigResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SecurityGroupIds.foreach(__v => __obj.update("SecurityGroupIds", __v.asInstanceOf[js.Any]))
-      SubnetIds.foreach(__v => __obj.update("SubnetIds", __v.asInstanceOf[js.Any]))
-      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VpcConfigResponse]
     }
   }

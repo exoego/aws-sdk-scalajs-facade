@@ -197,12 +197,12 @@ package cloudwatch {
         HistorySummary: js.UndefOr[HistorySummary] = js.undefined,
         Timestamp: js.UndefOr[Timestamp] = js.undefined
     ): AlarmHistoryItem = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AlarmName.foreach(__v => __obj.update("AlarmName", __v.asInstanceOf[js.Any]))
-      HistoryData.foreach(__v => __obj.update("HistoryData", __v.asInstanceOf[js.Any]))
-      HistoryItemType.foreach(__v => __obj.update("HistoryItemType", __v.asInstanceOf[js.Any]))
-      HistorySummary.foreach(__v => __obj.update("HistorySummary", __v.asInstanceOf[js.Any]))
-      Timestamp.foreach(__v => __obj.update("Timestamp", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AlarmName.foreach(__v => __obj.updateDynamic("AlarmName")(__v.asInstanceOf[js.Any]))
+      HistoryData.foreach(__v => __obj.updateDynamic("HistoryData")(__v.asInstanceOf[js.Any]))
+      HistoryItemType.foreach(__v => __obj.updateDynamic("HistoryItemType")(__v.asInstanceOf[js.Any]))
+      HistorySummary.foreach(__v => __obj.updateDynamic("HistorySummary")(__v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AlarmHistoryItem]
     }
   }
@@ -227,12 +227,12 @@ package cloudwatch {
         Namespace: js.UndefOr[Namespace] = js.undefined,
         Stat: js.UndefOr[Stat] = js.undefined
     ): AnomalyDetector = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Configuration.foreach(__v => __obj.update("Configuration", __v.asInstanceOf[js.Any]))
-      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
-      MetricName.foreach(__v => __obj.update("MetricName", __v.asInstanceOf[js.Any]))
-      Namespace.foreach(__v => __obj.update("Namespace", __v.asInstanceOf[js.Any]))
-      Stat.foreach(__v => __obj.update("Stat", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
+      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
+      MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
+      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
+      Stat.foreach(__v => __obj.updateDynamic("Stat")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AnomalyDetector]
     }
   }
@@ -251,9 +251,9 @@ package cloudwatch {
         ExcludedTimeRanges: js.UndefOr[AnomalyDetectorExcludedTimeRanges] = js.undefined,
         MetricTimezone: js.UndefOr[AnomalyDetectorMetricTimezone] = js.undefined
     ): AnomalyDetectorConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ExcludedTimeRanges.foreach(__v => __obj.update("ExcludedTimeRanges", __v.asInstanceOf[js.Any]))
-      MetricTimezone.foreach(__v => __obj.update("MetricTimezone", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ExcludedTimeRanges.foreach(__v => __obj.updateDynamic("ExcludedTimeRanges")(__v.asInstanceOf[js.Any]))
+      MetricTimezone.foreach(__v => __obj.updateDynamic("MetricTimezone")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AnomalyDetectorConfiguration]
     }
   }
@@ -298,11 +298,11 @@ package cloudwatch {
         LastModified: js.UndefOr[LastModified] = js.undefined,
         Size: js.UndefOr[Size] = js.undefined
     ): DashboardEntry = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DashboardArn.foreach(__v => __obj.update("DashboardArn", __v.asInstanceOf[js.Any]))
-      DashboardName.foreach(__v => __obj.update("DashboardName", __v.asInstanceOf[js.Any]))
-      LastModified.foreach(__v => __obj.update("LastModified", __v.asInstanceOf[js.Any]))
-      Size.foreach(__v => __obj.update("Size", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DashboardArn.foreach(__v => __obj.updateDynamic("DashboardArn")(__v.asInstanceOf[js.Any]))
+      DashboardName.foreach(__v => __obj.updateDynamic("DashboardName")(__v.asInstanceOf[js.Any]))
+      LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
+      Size.foreach(__v => __obj.updateDynamic("Size")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DashboardEntry]
     }
   }
@@ -321,9 +321,9 @@ package cloudwatch {
         DataPath: js.UndefOr[DataPath] = js.undefined,
         Message: js.UndefOr[Message] = js.undefined
     ): DashboardValidationMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DataPath.foreach(__v => __obj.update("DataPath", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DataPath.foreach(__v => __obj.updateDynamic("DataPath")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DashboardValidationMessage]
     }
   }
@@ -354,15 +354,15 @@ package cloudwatch {
         Timestamp: js.UndefOr[Timestamp] = js.undefined,
         Unit: js.UndefOr[StandardUnit] = js.undefined
     ): Datapoint = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Average.foreach(__v => __obj.update("Average", __v.asInstanceOf[js.Any]))
-      ExtendedStatistics.foreach(__v => __obj.update("ExtendedStatistics", __v.asInstanceOf[js.Any]))
-      Maximum.foreach(__v => __obj.update("Maximum", __v.asInstanceOf[js.Any]))
-      Minimum.foreach(__v => __obj.update("Minimum", __v.asInstanceOf[js.Any]))
-      SampleCount.foreach(__v => __obj.update("SampleCount", __v.asInstanceOf[js.Any]))
-      Sum.foreach(__v => __obj.update("Sum", __v.asInstanceOf[js.Any]))
-      Timestamp.foreach(__v => __obj.update("Timestamp", __v.asInstanceOf[js.Any]))
-      Unit.foreach(__v => __obj.update("Unit", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Average.foreach(__v => __obj.updateDynamic("Average")(__v.asInstanceOf[js.Any]))
+      ExtendedStatistics.foreach(__v => __obj.updateDynamic("ExtendedStatistics")(__v.asInstanceOf[js.Any]))
+      Maximum.foreach(__v => __obj.updateDynamic("Maximum")(__v.asInstanceOf[js.Any]))
+      Minimum.foreach(__v => __obj.updateDynamic("Minimum")(__v.asInstanceOf[js.Any]))
+      SampleCount.foreach(__v => __obj.updateDynamic("SampleCount")(__v.asInstanceOf[js.Any]))
+      Sum.foreach(__v => __obj.updateDynamic("Sum")(__v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
+      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Datapoint]
     }
   }
@@ -376,7 +376,7 @@ package cloudwatch {
     def apply(
         AlarmNames: AlarmNames
     ): DeleteAlarmsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AlarmNames" -> AlarmNames.asInstanceOf[js.Any]
       )
 
@@ -399,13 +399,13 @@ package cloudwatch {
         Stat: Stat,
         Dimensions: js.UndefOr[Dimensions] = js.undefined
     ): DeleteAnomalyDetectorInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MetricName" -> MetricName.asInstanceOf[js.Any],
         "Namespace"  -> Namespace.asInstanceOf[js.Any],
         "Stat"       -> Stat.asInstanceOf[js.Any]
       )
 
-      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
+      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteAnomalyDetectorInput]
     }
   }
@@ -416,7 +416,7 @@ package cloudwatch {
   object DeleteAnomalyDetectorOutput {
     def apply(
         ): DeleteAnomalyDetectorOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteAnomalyDetectorOutput]
     }
@@ -431,7 +431,7 @@ package cloudwatch {
     def apply(
         DashboardNames: DashboardNames
     ): DeleteDashboardsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DashboardNames" -> DashboardNames.asInstanceOf[js.Any]
       )
 
@@ -445,7 +445,7 @@ package cloudwatch {
   object DeleteDashboardsOutput {
     def apply(
         ): DeleteDashboardsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteDashboardsOutput]
     }
@@ -470,13 +470,13 @@ package cloudwatch {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         StartDate: js.UndefOr[Timestamp] = js.undefined
     ): DescribeAlarmHistoryInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AlarmName.foreach(__v => __obj.update("AlarmName", __v.asInstanceOf[js.Any]))
-      EndDate.foreach(__v => __obj.update("EndDate", __v.asInstanceOf[js.Any]))
-      HistoryItemType.foreach(__v => __obj.update("HistoryItemType", __v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      StartDate.foreach(__v => __obj.update("StartDate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AlarmName.foreach(__v => __obj.updateDynamic("AlarmName")(__v.asInstanceOf[js.Any]))
+      EndDate.foreach(__v => __obj.updateDynamic("EndDate")(__v.asInstanceOf[js.Any]))
+      HistoryItemType.foreach(__v => __obj.updateDynamic("HistoryItemType")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StartDate.foreach(__v => __obj.updateDynamic("StartDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAlarmHistoryInput]
     }
   }
@@ -492,9 +492,9 @@ package cloudwatch {
         AlarmHistoryItems: js.UndefOr[AlarmHistoryItems] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeAlarmHistoryOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AlarmHistoryItems.foreach(__v => __obj.update("AlarmHistoryItems", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AlarmHistoryItems.foreach(__v => __obj.updateDynamic("AlarmHistoryItems")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAlarmHistoryOutput]
     }
   }
@@ -520,16 +520,16 @@ package cloudwatch {
         Statistic: js.UndefOr[Statistic] = js.undefined,
         Unit: js.UndefOr[StandardUnit] = js.undefined
     ): DescribeAlarmsForMetricInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MetricName" -> MetricName.asInstanceOf[js.Any],
         "Namespace"  -> Namespace.asInstanceOf[js.Any]
       )
 
-      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
-      ExtendedStatistic.foreach(__v => __obj.update("ExtendedStatistic", __v.asInstanceOf[js.Any]))
-      Period.foreach(__v => __obj.update("Period", __v.asInstanceOf[js.Any]))
-      Statistic.foreach(__v => __obj.update("Statistic", __v.asInstanceOf[js.Any]))
-      Unit.foreach(__v => __obj.update("Unit", __v.asInstanceOf[js.Any]))
+      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
+      ExtendedStatistic.foreach(__v => __obj.updateDynamic("ExtendedStatistic")(__v.asInstanceOf[js.Any]))
+      Period.foreach(__v => __obj.updateDynamic("Period")(__v.asInstanceOf[js.Any]))
+      Statistic.foreach(__v => __obj.updateDynamic("Statistic")(__v.asInstanceOf[js.Any]))
+      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAlarmsForMetricInput]
     }
   }
@@ -543,8 +543,8 @@ package cloudwatch {
     def apply(
         MetricAlarms: js.UndefOr[MetricAlarms] = js.undefined
     ): DescribeAlarmsForMetricOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MetricAlarms.foreach(__v => __obj.update("MetricAlarms", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MetricAlarms.foreach(__v => __obj.updateDynamic("MetricAlarms")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAlarmsForMetricOutput]
     }
   }
@@ -568,13 +568,13 @@ package cloudwatch {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         StateValue: js.UndefOr[StateValue] = js.undefined
     ): DescribeAlarmsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ActionPrefix.foreach(__v => __obj.update("ActionPrefix", __v.asInstanceOf[js.Any]))
-      AlarmNamePrefix.foreach(__v => __obj.update("AlarmNamePrefix", __v.asInstanceOf[js.Any]))
-      AlarmNames.foreach(__v => __obj.update("AlarmNames", __v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      StateValue.foreach(__v => __obj.update("StateValue", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ActionPrefix.foreach(__v => __obj.updateDynamic("ActionPrefix")(__v.asInstanceOf[js.Any]))
+      AlarmNamePrefix.foreach(__v => __obj.updateDynamic("AlarmNamePrefix")(__v.asInstanceOf[js.Any]))
+      AlarmNames.foreach(__v => __obj.updateDynamic("AlarmNames")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StateValue.foreach(__v => __obj.updateDynamic("StateValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAlarmsInput]
     }
   }
@@ -590,9 +590,9 @@ package cloudwatch {
         MetricAlarms: js.UndefOr[MetricAlarms] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeAlarmsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MetricAlarms.foreach(__v => __obj.update("MetricAlarms", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MetricAlarms.foreach(__v => __obj.updateDynamic("MetricAlarms")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAlarmsOutput]
     }
   }
@@ -614,12 +614,12 @@ package cloudwatch {
         Namespace: js.UndefOr[Namespace] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeAnomalyDetectorsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      MetricName.foreach(__v => __obj.update("MetricName", __v.asInstanceOf[js.Any]))
-      Namespace.foreach(__v => __obj.update("Namespace", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
+      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAnomalyDetectorsInput]
     }
   }
@@ -635,9 +635,9 @@ package cloudwatch {
         AnomalyDetectors: js.UndefOr[AnomalyDetectors] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeAnomalyDetectorsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AnomalyDetectors.foreach(__v => __obj.update("AnomalyDetectors", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AnomalyDetectors.foreach(__v => __obj.updateDynamic("AnomalyDetectors")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAnomalyDetectorsOutput]
     }
   }
@@ -656,7 +656,7 @@ package cloudwatch {
         Name: DimensionName,
         Value: DimensionValue
     ): Dimension = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"  -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
@@ -679,11 +679,11 @@ package cloudwatch {
         Name: DimensionName,
         Value: js.UndefOr[DimensionValue] = js.undefined
     ): DimensionFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DimensionFilter]
     }
   }
@@ -697,7 +697,7 @@ package cloudwatch {
     def apply(
         AlarmNames: AlarmNames
     ): DisableAlarmActionsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AlarmNames" -> AlarmNames.asInstanceOf[js.Any]
       )
 
@@ -714,7 +714,7 @@ package cloudwatch {
     def apply(
         AlarmNames: AlarmNames
     ): EnableAlarmActionsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AlarmNames" -> AlarmNames.asInstanceOf[js.Any]
       )
 
@@ -731,7 +731,7 @@ package cloudwatch {
     def apply(
         DashboardName: DashboardName
     ): GetDashboardInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DashboardName" -> DashboardName.asInstanceOf[js.Any]
       )
 
@@ -752,10 +752,10 @@ package cloudwatch {
         DashboardBody: js.UndefOr[DashboardBody] = js.undefined,
         DashboardName: js.UndefOr[DashboardName] = js.undefined
     ): GetDashboardOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DashboardArn.foreach(__v => __obj.update("DashboardArn", __v.asInstanceOf[js.Any]))
-      DashboardBody.foreach(__v => __obj.update("DashboardBody", __v.asInstanceOf[js.Any]))
-      DashboardName.foreach(__v => __obj.update("DashboardName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DashboardArn.foreach(__v => __obj.updateDynamic("DashboardArn")(__v.asInstanceOf[js.Any]))
+      DashboardBody.foreach(__v => __obj.updateDynamic("DashboardBody")(__v.asInstanceOf[js.Any]))
+      DashboardName.foreach(__v => __obj.updateDynamic("DashboardName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDashboardOutput]
     }
   }
@@ -779,15 +779,15 @@ package cloudwatch {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ScanBy: js.UndefOr[ScanBy] = js.undefined
     ): GetMetricDataInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EndTime"           -> EndTime.asInstanceOf[js.Any],
         "MetricDataQueries" -> MetricDataQueries.asInstanceOf[js.Any],
         "StartTime"         -> StartTime.asInstanceOf[js.Any]
       )
 
-      MaxDatapoints.foreach(__v => __obj.update("MaxDatapoints", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ScanBy.foreach(__v => __obj.update("ScanBy", __v.asInstanceOf[js.Any]))
+      MaxDatapoints.foreach(__v => __obj.updateDynamic("MaxDatapoints")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ScanBy.foreach(__v => __obj.updateDynamic("ScanBy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMetricDataInput]
     }
   }
@@ -805,10 +805,10 @@ package cloudwatch {
         MetricDataResults: js.UndefOr[MetricDataResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetMetricDataOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Messages.foreach(__v => __obj.update("Messages", __v.asInstanceOf[js.Any]))
-      MetricDataResults.foreach(__v => __obj.update("MetricDataResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Messages.foreach(__v => __obj.updateDynamic("Messages")(__v.asInstanceOf[js.Any]))
+      MetricDataResults.foreach(__v => __obj.updateDynamic("MetricDataResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMetricDataOutput]
     }
   }
@@ -838,7 +838,7 @@ package cloudwatch {
         Statistics: js.UndefOr[Statistics] = js.undefined,
         Unit: js.UndefOr[StandardUnit] = js.undefined
     ): GetMetricStatisticsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EndTime"    -> EndTime.asInstanceOf[js.Any],
         "MetricName" -> MetricName.asInstanceOf[js.Any],
         "Namespace"  -> Namespace.asInstanceOf[js.Any],
@@ -846,10 +846,10 @@ package cloudwatch {
         "StartTime"  -> StartTime.asInstanceOf[js.Any]
       )
 
-      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
-      ExtendedStatistics.foreach(__v => __obj.update("ExtendedStatistics", __v.asInstanceOf[js.Any]))
-      Statistics.foreach(__v => __obj.update("Statistics", __v.asInstanceOf[js.Any]))
-      Unit.foreach(__v => __obj.update("Unit", __v.asInstanceOf[js.Any]))
+      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
+      ExtendedStatistics.foreach(__v => __obj.updateDynamic("ExtendedStatistics")(__v.asInstanceOf[js.Any]))
+      Statistics.foreach(__v => __obj.updateDynamic("Statistics")(__v.asInstanceOf[js.Any]))
+      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMetricStatisticsInput]
     }
   }
@@ -865,9 +865,9 @@ package cloudwatch {
         Datapoints: js.UndefOr[Datapoints] = js.undefined,
         Label: js.UndefOr[MetricLabel] = js.undefined
     ): GetMetricStatisticsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Datapoints.foreach(__v => __obj.update("Datapoints", __v.asInstanceOf[js.Any]))
-      Label.foreach(__v => __obj.update("Label", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Datapoints.foreach(__v => __obj.updateDynamic("Datapoints")(__v.asInstanceOf[js.Any]))
+      Label.foreach(__v => __obj.updateDynamic("Label")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMetricStatisticsOutput]
     }
   }
@@ -883,11 +883,11 @@ package cloudwatch {
         MetricWidget: MetricWidget,
         OutputFormat: js.UndefOr[OutputFormat] = js.undefined
     ): GetMetricWidgetImageInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MetricWidget" -> MetricWidget.asInstanceOf[js.Any]
       )
 
-      OutputFormat.foreach(__v => __obj.update("OutputFormat", __v.asInstanceOf[js.Any]))
+      OutputFormat.foreach(__v => __obj.updateDynamic("OutputFormat")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMetricWidgetImageInput]
     }
   }
@@ -901,8 +901,8 @@ package cloudwatch {
     def apply(
         MetricWidgetImage: js.UndefOr[MetricWidgetImage] = js.undefined
     ): GetMetricWidgetImageOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MetricWidgetImage.foreach(__v => __obj.update("MetricWidgetImage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MetricWidgetImage.foreach(__v => __obj.updateDynamic("MetricWidgetImage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMetricWidgetImageOutput]
     }
   }
@@ -926,9 +926,9 @@ package cloudwatch {
         DashboardNamePrefix: js.UndefOr[DashboardNamePrefix] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDashboardsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DashboardNamePrefix.foreach(__v => __obj.update("DashboardNamePrefix", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DashboardNamePrefix.foreach(__v => __obj.updateDynamic("DashboardNamePrefix")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDashboardsInput]
     }
   }
@@ -944,9 +944,9 @@ package cloudwatch {
         DashboardEntries: js.UndefOr[DashboardEntries] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDashboardsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DashboardEntries.foreach(__v => __obj.update("DashboardEntries", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DashboardEntries.foreach(__v => __obj.updateDynamic("DashboardEntries")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDashboardsOutput]
     }
   }
@@ -966,11 +966,11 @@ package cloudwatch {
         Namespace: js.UndefOr[Namespace] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListMetricsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
-      MetricName.foreach(__v => __obj.update("MetricName", __v.asInstanceOf[js.Any]))
-      Namespace.foreach(__v => __obj.update("Namespace", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
+      MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
+      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListMetricsInput]
     }
   }
@@ -986,9 +986,9 @@ package cloudwatch {
         Metrics: js.UndefOr[Metrics] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListMetricsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Metrics.foreach(__v => __obj.update("Metrics", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListMetricsOutput]
     }
   }
@@ -1002,7 +1002,7 @@ package cloudwatch {
     def apply(
         ResourceARN: AmazonResourceName
     ): ListTagsForResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
       )
 
@@ -1019,8 +1019,8 @@ package cloudwatch {
     def apply(
         Tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsForResourceOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceOutput]
     }
   }
@@ -1039,9 +1039,9 @@ package cloudwatch {
         Code: js.UndefOr[MessageDataCode] = js.undefined,
         Value: js.UndefOr[MessageDataValue] = js.undefined
     ): MessageData = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Code.foreach(__v => __obj.update("Code", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MessageData]
     }
   }
@@ -1062,10 +1062,10 @@ package cloudwatch {
         MetricName: js.UndefOr[MetricName] = js.undefined,
         Namespace: js.UndefOr[Namespace] = js.undefined
     ): Metric = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
-      MetricName.foreach(__v => __obj.update("MetricName", __v.asInstanceOf[js.Any]))
-      Namespace.foreach(__v => __obj.update("Namespace", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
+      MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
+      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Metric]
     }
   }
@@ -1134,38 +1134,38 @@ package cloudwatch {
         TreatMissingData: js.UndefOr[TreatMissingData] = js.undefined,
         Unit: js.UndefOr[StandardUnit] = js.undefined
     ): MetricAlarm = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ActionsEnabled.foreach(__v => __obj.update("ActionsEnabled", __v.asInstanceOf[js.Any]))
-      AlarmActions.foreach(__v => __obj.update("AlarmActions", __v.asInstanceOf[js.Any]))
-      AlarmArn.foreach(__v => __obj.update("AlarmArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ActionsEnabled.foreach(__v => __obj.updateDynamic("ActionsEnabled")(__v.asInstanceOf[js.Any]))
+      AlarmActions.foreach(__v => __obj.updateDynamic("AlarmActions")(__v.asInstanceOf[js.Any]))
+      AlarmArn.foreach(__v => __obj.updateDynamic("AlarmArn")(__v.asInstanceOf[js.Any]))
       AlarmConfigurationUpdatedTimestamp.foreach(
-        __v => __obj.update("AlarmConfigurationUpdatedTimestamp", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("AlarmConfigurationUpdatedTimestamp")(__v.asInstanceOf[js.Any])
       )
-      AlarmDescription.foreach(__v => __obj.update("AlarmDescription", __v.asInstanceOf[js.Any]))
-      AlarmName.foreach(__v => __obj.update("AlarmName", __v.asInstanceOf[js.Any]))
-      ComparisonOperator.foreach(__v => __obj.update("ComparisonOperator", __v.asInstanceOf[js.Any]))
-      DatapointsToAlarm.foreach(__v => __obj.update("DatapointsToAlarm", __v.asInstanceOf[js.Any]))
-      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
+      AlarmDescription.foreach(__v => __obj.updateDynamic("AlarmDescription")(__v.asInstanceOf[js.Any]))
+      AlarmName.foreach(__v => __obj.updateDynamic("AlarmName")(__v.asInstanceOf[js.Any]))
+      ComparisonOperator.foreach(__v => __obj.updateDynamic("ComparisonOperator")(__v.asInstanceOf[js.Any]))
+      DatapointsToAlarm.foreach(__v => __obj.updateDynamic("DatapointsToAlarm")(__v.asInstanceOf[js.Any]))
+      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
       EvaluateLowSampleCountPercentile.foreach(
-        __v => __obj.update("EvaluateLowSampleCountPercentile", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("EvaluateLowSampleCountPercentile")(__v.asInstanceOf[js.Any])
       )
-      EvaluationPeriods.foreach(__v => __obj.update("EvaluationPeriods", __v.asInstanceOf[js.Any]))
-      ExtendedStatistic.foreach(__v => __obj.update("ExtendedStatistic", __v.asInstanceOf[js.Any]))
-      InsufficientDataActions.foreach(__v => __obj.update("InsufficientDataActions", __v.asInstanceOf[js.Any]))
-      MetricName.foreach(__v => __obj.update("MetricName", __v.asInstanceOf[js.Any]))
-      Metrics.foreach(__v => __obj.update("Metrics", __v.asInstanceOf[js.Any]))
-      Namespace.foreach(__v => __obj.update("Namespace", __v.asInstanceOf[js.Any]))
-      OKActions.foreach(__v => __obj.update("OKActions", __v.asInstanceOf[js.Any]))
-      Period.foreach(__v => __obj.update("Period", __v.asInstanceOf[js.Any]))
-      StateReason.foreach(__v => __obj.update("StateReason", __v.asInstanceOf[js.Any]))
-      StateReasonData.foreach(__v => __obj.update("StateReasonData", __v.asInstanceOf[js.Any]))
-      StateUpdatedTimestamp.foreach(__v => __obj.update("StateUpdatedTimestamp", __v.asInstanceOf[js.Any]))
-      StateValue.foreach(__v => __obj.update("StateValue", __v.asInstanceOf[js.Any]))
-      Statistic.foreach(__v => __obj.update("Statistic", __v.asInstanceOf[js.Any]))
-      Threshold.foreach(__v => __obj.update("Threshold", __v.asInstanceOf[js.Any]))
-      ThresholdMetricId.foreach(__v => __obj.update("ThresholdMetricId", __v.asInstanceOf[js.Any]))
-      TreatMissingData.foreach(__v => __obj.update("TreatMissingData", __v.asInstanceOf[js.Any]))
-      Unit.foreach(__v => __obj.update("Unit", __v.asInstanceOf[js.Any]))
+      EvaluationPeriods.foreach(__v => __obj.updateDynamic("EvaluationPeriods")(__v.asInstanceOf[js.Any]))
+      ExtendedStatistic.foreach(__v => __obj.updateDynamic("ExtendedStatistic")(__v.asInstanceOf[js.Any]))
+      InsufficientDataActions.foreach(__v => __obj.updateDynamic("InsufficientDataActions")(__v.asInstanceOf[js.Any]))
+      MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
+      Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
+      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
+      OKActions.foreach(__v => __obj.updateDynamic("OKActions")(__v.asInstanceOf[js.Any]))
+      Period.foreach(__v => __obj.updateDynamic("Period")(__v.asInstanceOf[js.Any]))
+      StateReason.foreach(__v => __obj.updateDynamic("StateReason")(__v.asInstanceOf[js.Any]))
+      StateReasonData.foreach(__v => __obj.updateDynamic("StateReasonData")(__v.asInstanceOf[js.Any]))
+      StateUpdatedTimestamp.foreach(__v => __obj.updateDynamic("StateUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      StateValue.foreach(__v => __obj.updateDynamic("StateValue")(__v.asInstanceOf[js.Any]))
+      Statistic.foreach(__v => __obj.updateDynamic("Statistic")(__v.asInstanceOf[js.Any]))
+      Threshold.foreach(__v => __obj.updateDynamic("Threshold")(__v.asInstanceOf[js.Any]))
+      ThresholdMetricId.foreach(__v => __obj.updateDynamic("ThresholdMetricId")(__v.asInstanceOf[js.Any]))
+      TreatMissingData.foreach(__v => __obj.updateDynamic("TreatMissingData")(__v.asInstanceOf[js.Any]))
+      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MetricAlarm]
     }
   }
@@ -1194,14 +1194,14 @@ package cloudwatch {
         MetricStat: js.UndefOr[MetricStat] = js.undefined,
         ReturnData: js.UndefOr[ReturnData] = js.undefined
     ): MetricDataQuery = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
-      Expression.foreach(__v => __obj.update("Expression", __v.asInstanceOf[js.Any]))
-      Label.foreach(__v => __obj.update("Label", __v.asInstanceOf[js.Any]))
-      MetricStat.foreach(__v => __obj.update("MetricStat", __v.asInstanceOf[js.Any]))
-      ReturnData.foreach(__v => __obj.update("ReturnData", __v.asInstanceOf[js.Any]))
+      Expression.foreach(__v => __obj.updateDynamic("Expression")(__v.asInstanceOf[js.Any]))
+      Label.foreach(__v => __obj.updateDynamic("Label")(__v.asInstanceOf[js.Any]))
+      MetricStat.foreach(__v => __obj.updateDynamic("MetricStat")(__v.asInstanceOf[js.Any]))
+      ReturnData.foreach(__v => __obj.updateDynamic("ReturnData")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MetricDataQuery]
     }
   }
@@ -1228,13 +1228,13 @@ package cloudwatch {
         Timestamps: js.UndefOr[Timestamps] = js.undefined,
         Values: js.UndefOr[DatapointValues] = js.undefined
     ): MetricDataResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Label.foreach(__v => __obj.update("Label", __v.asInstanceOf[js.Any]))
-      Messages.foreach(__v => __obj.update("Messages", __v.asInstanceOf[js.Any]))
-      StatusCode.foreach(__v => __obj.update("StatusCode", __v.asInstanceOf[js.Any]))
-      Timestamps.foreach(__v => __obj.update("Timestamps", __v.asInstanceOf[js.Any]))
-      Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Label.foreach(__v => __obj.updateDynamic("Label")(__v.asInstanceOf[js.Any]))
+      Messages.foreach(__v => __obj.updateDynamic("Messages")(__v.asInstanceOf[js.Any]))
+      StatusCode.foreach(__v => __obj.updateDynamic("StatusCode")(__v.asInstanceOf[js.Any]))
+      Timestamps.foreach(__v => __obj.updateDynamic("Timestamps")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MetricDataResult]
     }
   }
@@ -1267,18 +1267,18 @@ package cloudwatch {
         Value: js.UndefOr[DatapointValue] = js.undefined,
         Values: js.UndefOr[Values] = js.undefined
     ): MetricDatum = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MetricName" -> MetricName.asInstanceOf[js.Any]
       )
 
-      Counts.foreach(__v => __obj.update("Counts", __v.asInstanceOf[js.Any]))
-      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
-      StatisticValues.foreach(__v => __obj.update("StatisticValues", __v.asInstanceOf[js.Any]))
-      StorageResolution.foreach(__v => __obj.update("StorageResolution", __v.asInstanceOf[js.Any]))
-      Timestamp.foreach(__v => __obj.update("Timestamp", __v.asInstanceOf[js.Any]))
-      Unit.foreach(__v => __obj.update("Unit", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
-      Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
+      Counts.foreach(__v => __obj.updateDynamic("Counts")(__v.asInstanceOf[js.Any]))
+      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
+      StatisticValues.foreach(__v => __obj.updateDynamic("StatisticValues")(__v.asInstanceOf[js.Any]))
+      StorageResolution.foreach(__v => __obj.updateDynamic("StorageResolution")(__v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
+      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MetricDatum]
     }
   }
@@ -1301,13 +1301,13 @@ package cloudwatch {
         Stat: Stat,
         Unit: js.UndefOr[StandardUnit] = js.undefined
     ): MetricStat = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Metric" -> Metric.asInstanceOf[js.Any],
         "Period" -> Period.asInstanceOf[js.Any],
         "Stat"   -> Stat.asInstanceOf[js.Any]
       )
 
-      Unit.foreach(__v => __obj.update("Unit", __v.asInstanceOf[js.Any]))
+      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MetricStat]
     }
   }
@@ -1329,14 +1329,14 @@ package cloudwatch {
         Configuration: js.UndefOr[AnomalyDetectorConfiguration] = js.undefined,
         Dimensions: js.UndefOr[Dimensions] = js.undefined
     ): PutAnomalyDetectorInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MetricName" -> MetricName.asInstanceOf[js.Any],
         "Namespace"  -> Namespace.asInstanceOf[js.Any],
         "Stat"       -> Stat.asInstanceOf[js.Any]
       )
 
-      Configuration.foreach(__v => __obj.update("Configuration", __v.asInstanceOf[js.Any]))
-      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
+      Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
+      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutAnomalyDetectorInput]
     }
   }
@@ -1347,7 +1347,7 @@ package cloudwatch {
   object PutAnomalyDetectorOutput {
     def apply(
         ): PutAnomalyDetectorOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutAnomalyDetectorOutput]
     }
@@ -1364,7 +1364,7 @@ package cloudwatch {
         DashboardBody: DashboardBody,
         DashboardName: DashboardName
     ): PutDashboardInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DashboardBody" -> DashboardBody.asInstanceOf[js.Any],
         "DashboardName" -> DashboardName.asInstanceOf[js.Any]
       )
@@ -1382,8 +1382,10 @@ package cloudwatch {
     def apply(
         DashboardValidationMessages: js.UndefOr[DashboardValidationMessages] = js.undefined
     ): PutDashboardOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DashboardValidationMessages.foreach(__v => __obj.update("DashboardValidationMessages", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DashboardValidationMessages.foreach(
+        __v => __obj.updateDynamic("DashboardValidationMessages")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[PutDashboardOutput]
     }
   }
@@ -1439,33 +1441,33 @@ package cloudwatch {
         TreatMissingData: js.UndefOr[TreatMissingData] = js.undefined,
         Unit: js.UndefOr[StandardUnit] = js.undefined
     ): PutMetricAlarmInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AlarmName"          -> AlarmName.asInstanceOf[js.Any],
         "ComparisonOperator" -> ComparisonOperator.asInstanceOf[js.Any],
         "EvaluationPeriods"  -> EvaluationPeriods.asInstanceOf[js.Any]
       )
 
-      ActionsEnabled.foreach(__v => __obj.update("ActionsEnabled", __v.asInstanceOf[js.Any]))
-      AlarmActions.foreach(__v => __obj.update("AlarmActions", __v.asInstanceOf[js.Any]))
-      AlarmDescription.foreach(__v => __obj.update("AlarmDescription", __v.asInstanceOf[js.Any]))
-      DatapointsToAlarm.foreach(__v => __obj.update("DatapointsToAlarm", __v.asInstanceOf[js.Any]))
-      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
+      ActionsEnabled.foreach(__v => __obj.updateDynamic("ActionsEnabled")(__v.asInstanceOf[js.Any]))
+      AlarmActions.foreach(__v => __obj.updateDynamic("AlarmActions")(__v.asInstanceOf[js.Any]))
+      AlarmDescription.foreach(__v => __obj.updateDynamic("AlarmDescription")(__v.asInstanceOf[js.Any]))
+      DatapointsToAlarm.foreach(__v => __obj.updateDynamic("DatapointsToAlarm")(__v.asInstanceOf[js.Any]))
+      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
       EvaluateLowSampleCountPercentile.foreach(
-        __v => __obj.update("EvaluateLowSampleCountPercentile", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("EvaluateLowSampleCountPercentile")(__v.asInstanceOf[js.Any])
       )
-      ExtendedStatistic.foreach(__v => __obj.update("ExtendedStatistic", __v.asInstanceOf[js.Any]))
-      InsufficientDataActions.foreach(__v => __obj.update("InsufficientDataActions", __v.asInstanceOf[js.Any]))
-      MetricName.foreach(__v => __obj.update("MetricName", __v.asInstanceOf[js.Any]))
-      Metrics.foreach(__v => __obj.update("Metrics", __v.asInstanceOf[js.Any]))
-      Namespace.foreach(__v => __obj.update("Namespace", __v.asInstanceOf[js.Any]))
-      OKActions.foreach(__v => __obj.update("OKActions", __v.asInstanceOf[js.Any]))
-      Period.foreach(__v => __obj.update("Period", __v.asInstanceOf[js.Any]))
-      Statistic.foreach(__v => __obj.update("Statistic", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      Threshold.foreach(__v => __obj.update("Threshold", __v.asInstanceOf[js.Any]))
-      ThresholdMetricId.foreach(__v => __obj.update("ThresholdMetricId", __v.asInstanceOf[js.Any]))
-      TreatMissingData.foreach(__v => __obj.update("TreatMissingData", __v.asInstanceOf[js.Any]))
-      Unit.foreach(__v => __obj.update("Unit", __v.asInstanceOf[js.Any]))
+      ExtendedStatistic.foreach(__v => __obj.updateDynamic("ExtendedStatistic")(__v.asInstanceOf[js.Any]))
+      InsufficientDataActions.foreach(__v => __obj.updateDynamic("InsufficientDataActions")(__v.asInstanceOf[js.Any]))
+      MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
+      Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
+      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
+      OKActions.foreach(__v => __obj.updateDynamic("OKActions")(__v.asInstanceOf[js.Any]))
+      Period.foreach(__v => __obj.updateDynamic("Period")(__v.asInstanceOf[js.Any]))
+      Statistic.foreach(__v => __obj.updateDynamic("Statistic")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      Threshold.foreach(__v => __obj.updateDynamic("Threshold")(__v.asInstanceOf[js.Any]))
+      ThresholdMetricId.foreach(__v => __obj.updateDynamic("ThresholdMetricId")(__v.asInstanceOf[js.Any]))
+      TreatMissingData.foreach(__v => __obj.updateDynamic("TreatMissingData")(__v.asInstanceOf[js.Any]))
+      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutMetricAlarmInput]
     }
   }
@@ -1481,7 +1483,7 @@ package cloudwatch {
         MetricData: MetricData,
         Namespace: Namespace
     ): PutMetricDataInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MetricData" -> MetricData.asInstanceOf[js.Any],
         "Namespace"  -> Namespace.asInstanceOf[js.Any]
       )
@@ -1504,7 +1506,7 @@ package cloudwatch {
         EndTime: Timestamp,
         StartTime: Timestamp
     ): Range = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EndTime"   -> EndTime.asInstanceOf[js.Any],
         "StartTime" -> StartTime.asInstanceOf[js.Any]
       )
@@ -1535,13 +1537,13 @@ package cloudwatch {
         StateValue: StateValue,
         StateReasonData: js.UndefOr[StateReasonData] = js.undefined
     ): SetAlarmStateInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AlarmName"   -> AlarmName.asInstanceOf[js.Any],
         "StateReason" -> StateReason.asInstanceOf[js.Any],
         "StateValue"  -> StateValue.asInstanceOf[js.Any]
       )
 
-      StateReasonData.foreach(__v => __obj.update("StateReasonData", __v.asInstanceOf[js.Any]))
+      StateReasonData.foreach(__v => __obj.updateDynamic("StateReasonData")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetAlarmStateInput]
     }
   }
@@ -1644,7 +1646,7 @@ package cloudwatch {
         SampleCount: DatapointValue,
         Sum: DatapointValue
     ): StatisticSet = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Maximum"     -> Maximum.asInstanceOf[js.Any],
         "Minimum"     -> Minimum.asInstanceOf[js.Any],
         "SampleCount" -> SampleCount.asInstanceOf[js.Any],
@@ -1677,7 +1679,7 @@ package cloudwatch {
         Key: TagKey,
         Value: TagValue
     ): Tag = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"   -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
@@ -1697,7 +1699,7 @@ package cloudwatch {
         ResourceARN: AmazonResourceName,
         Tags: TagList
     ): TagResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
       )
@@ -1712,7 +1714,7 @@ package cloudwatch {
   object TagResourceOutput {
     def apply(
         ): TagResourceOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceOutput]
     }
@@ -1729,7 +1731,7 @@ package cloudwatch {
         ResourceARN: AmazonResourceName,
         TagKeys: TagKeyList
     ): UntagResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
       )
@@ -1744,7 +1746,7 @@ package cloudwatch {
   object UntagResourceOutput {
     def apply(
         ): UntagResourceOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceOutput]
     }

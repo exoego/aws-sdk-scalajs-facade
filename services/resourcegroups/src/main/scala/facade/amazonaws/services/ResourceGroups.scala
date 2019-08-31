@@ -96,13 +96,13 @@ package resourcegroups {
         Description: js.UndefOr[GroupDescription] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateGroupInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"          -> Name.asInstanceOf[js.Any],
         "ResourceQuery" -> ResourceQuery.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGroupInput]
     }
   }
@@ -120,10 +120,10 @@ package resourcegroups {
         ResourceQuery: js.UndefOr[ResourceQuery] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateGroupOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Group.foreach(__v => __obj.update("Group", __v.asInstanceOf[js.Any]))
-      ResourceQuery.foreach(__v => __obj.update("ResourceQuery", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Group.foreach(__v => __obj.updateDynamic("Group")(__v.asInstanceOf[js.Any]))
+      ResourceQuery.foreach(__v => __obj.updateDynamic("ResourceQuery")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGroupOutput]
     }
   }
@@ -137,7 +137,7 @@ package resourcegroups {
     def apply(
         GroupName: GroupName
     ): DeleteGroupInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupName" -> GroupName.asInstanceOf[js.Any]
       )
 
@@ -154,8 +154,8 @@ package resourcegroups {
     def apply(
         Group: js.UndefOr[Group] = js.undefined
     ): DeleteGroupOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Group.foreach(__v => __obj.update("Group", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Group.foreach(__v => __obj.updateDynamic("Group")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteGroupOutput]
     }
   }
@@ -169,7 +169,7 @@ package resourcegroups {
     def apply(
         GroupName: GroupName
     ): GetGroupInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupName" -> GroupName.asInstanceOf[js.Any]
       )
 
@@ -186,8 +186,8 @@ package resourcegroups {
     def apply(
         Group: js.UndefOr[Group] = js.undefined
     ): GetGroupOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Group.foreach(__v => __obj.update("Group", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Group.foreach(__v => __obj.updateDynamic("Group")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetGroupOutput]
     }
   }
@@ -201,7 +201,7 @@ package resourcegroups {
     def apply(
         GroupName: GroupName
     ): GetGroupQueryInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupName" -> GroupName.asInstanceOf[js.Any]
       )
 
@@ -218,8 +218,8 @@ package resourcegroups {
     def apply(
         GroupQuery: js.UndefOr[GroupQuery] = js.undefined
     ): GetGroupQueryOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GroupQuery.foreach(__v => __obj.update("GroupQuery", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GroupQuery.foreach(__v => __obj.updateDynamic("GroupQuery")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetGroupQueryOutput]
     }
   }
@@ -233,7 +233,7 @@ package resourcegroups {
     def apply(
         Arn: GroupArn
     ): GetTagsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
 
@@ -252,9 +252,9 @@ package resourcegroups {
         Arn: js.UndefOr[GroupArn] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): GetTagsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTagsOutput]
     }
   }
@@ -275,12 +275,12 @@ package resourcegroups {
         Name: GroupName,
         Description: js.UndefOr[GroupDescription] = js.undefined
     ): Group = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupArn" -> GroupArn.asInstanceOf[js.Any],
         "Name"     -> Name.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Group]
     }
   }
@@ -299,7 +299,7 @@ package resourcegroups {
         Name: GroupFilterName,
         Values: GroupFilterValues
     ): GroupFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"   -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
@@ -328,9 +328,9 @@ package resourcegroups {
         GroupArn: js.UndefOr[GroupArn] = js.undefined,
         GroupName: js.UndefOr[GroupName] = js.undefined
     ): GroupIdentifier = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GroupArn.foreach(__v => __obj.update("GroupArn", __v.asInstanceOf[js.Any]))
-      GroupName.foreach(__v => __obj.update("GroupName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GroupArn.foreach(__v => __obj.updateDynamic("GroupArn")(__v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GroupIdentifier]
     }
   }
@@ -349,7 +349,7 @@ package resourcegroups {
         GroupName: GroupName,
         ResourceQuery: ResourceQuery
     ): GroupQuery = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupName"     -> GroupName.asInstanceOf[js.Any],
         "ResourceQuery" -> ResourceQuery.asInstanceOf[js.Any]
       )
@@ -373,13 +373,13 @@ package resourcegroups {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListGroupResourcesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupName" -> GroupName.asInstanceOf[js.Any]
       )
 
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGroupResourcesInput]
     }
   }
@@ -397,10 +397,10 @@ package resourcegroups {
         QueryErrors: js.UndefOr[QueryErrorList] = js.undefined,
         ResourceIdentifiers: js.UndefOr[ResourceIdentifierList] = js.undefined
     ): ListGroupResourcesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      QueryErrors.foreach(__v => __obj.update("QueryErrors", __v.asInstanceOf[js.Any]))
-      ResourceIdentifiers.foreach(__v => __obj.update("ResourceIdentifiers", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      QueryErrors.foreach(__v => __obj.updateDynamic("QueryErrors")(__v.asInstanceOf[js.Any]))
+      ResourceIdentifiers.foreach(__v => __obj.updateDynamic("ResourceIdentifiers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGroupResourcesOutput]
     }
   }
@@ -418,10 +418,10 @@ package resourcegroups {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListGroupsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGroupsInput]
     }
   }
@@ -439,10 +439,10 @@ package resourcegroups {
         Groups: js.UndefOr[GroupList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListGroupsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GroupIdentifiers.foreach(__v => __obj.update("GroupIdentifiers", __v.asInstanceOf[js.Any]))
-      Groups.foreach(__v => __obj.update("Groups", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GroupIdentifiers.foreach(__v => __obj.updateDynamic("GroupIdentifiers")(__v.asInstanceOf[js.Any]))
+      Groups.foreach(__v => __obj.updateDynamic("Groups")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGroupsOutput]
     }
   }
@@ -461,9 +461,9 @@ package resourcegroups {
         ErrorCode: js.UndefOr[QueryErrorCode] = js.undefined,
         Message: js.UndefOr[QueryErrorMessage] = js.undefined
     ): QueryError = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[QueryError]
     }
   }
@@ -496,7 +496,7 @@ package resourcegroups {
         Name: ResourceFilterName,
         Values: ResourceFilterValues
     ): ResourceFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"   -> Name.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
@@ -525,9 +525,9 @@ package resourcegroups {
         ResourceArn: js.UndefOr[ResourceArn] = js.undefined,
         ResourceType: js.UndefOr[ResourceType] = js.undefined
     ): ResourceIdentifier = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ResourceArn.foreach(__v => __obj.update("ResourceArn", __v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceIdentifier]
     }
   }
@@ -546,7 +546,7 @@ package resourcegroups {
         Query: Query,
         Type: QueryType
     ): ResourceQuery = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Query" -> Query.asInstanceOf[js.Any],
         "Type"  -> Type.asInstanceOf[js.Any]
       )
@@ -568,12 +568,12 @@ package resourcegroups {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): SearchResourcesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceQuery" -> ResourceQuery.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchResourcesInput]
     }
   }
@@ -591,10 +591,10 @@ package resourcegroups {
         QueryErrors: js.UndefOr[QueryErrorList] = js.undefined,
         ResourceIdentifiers: js.UndefOr[ResourceIdentifierList] = js.undefined
     ): SearchResourcesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      QueryErrors.foreach(__v => __obj.update("QueryErrors", __v.asInstanceOf[js.Any]))
-      ResourceIdentifiers.foreach(__v => __obj.update("ResourceIdentifiers", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      QueryErrors.foreach(__v => __obj.updateDynamic("QueryErrors")(__v.asInstanceOf[js.Any]))
+      ResourceIdentifiers.foreach(__v => __obj.updateDynamic("ResourceIdentifiers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchResourcesOutput]
     }
   }
@@ -610,7 +610,7 @@ package resourcegroups {
         Arn: GroupArn,
         Tags: Tags
     ): TagInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn"  -> Arn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
@@ -630,9 +630,9 @@ package resourcegroups {
         Arn: js.UndefOr[GroupArn] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): TagOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TagOutput]
     }
   }
@@ -648,7 +648,7 @@ package resourcegroups {
         Arn: GroupArn,
         Keys: TagKeyList
     ): UntagInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn"  -> Arn.asInstanceOf[js.Any],
         "Keys" -> Keys.asInstanceOf[js.Any]
       )
@@ -668,9 +668,9 @@ package resourcegroups {
         Arn: js.UndefOr[GroupArn] = js.undefined,
         Keys: js.UndefOr[TagKeyList] = js.undefined
     ): UntagOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Keys.foreach(__v => __obj.update("Keys", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Keys.foreach(__v => __obj.updateDynamic("Keys")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UntagOutput]
     }
   }
@@ -686,11 +686,11 @@ package resourcegroups {
         GroupName: GroupName,
         Description: js.UndefOr[GroupDescription] = js.undefined
     ): UpdateGroupInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupName" -> GroupName.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGroupInput]
     }
   }
@@ -704,8 +704,8 @@ package resourcegroups {
     def apply(
         Group: js.UndefOr[Group] = js.undefined
     ): UpdateGroupOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Group.foreach(__v => __obj.update("Group", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Group.foreach(__v => __obj.updateDynamic("Group")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGroupOutput]
     }
   }
@@ -721,7 +721,7 @@ package resourcegroups {
         GroupName: GroupName,
         ResourceQuery: ResourceQuery
     ): UpdateGroupQueryInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupName"     -> GroupName.asInstanceOf[js.Any],
         "ResourceQuery" -> ResourceQuery.asInstanceOf[js.Any]
       )
@@ -739,8 +739,8 @@ package resourcegroups {
     def apply(
         GroupQuery: js.UndefOr[GroupQuery] = js.undefined
     ): UpdateGroupQueryOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GroupQuery.foreach(__v => __obj.update("GroupQuery", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GroupQuery.foreach(__v => __obj.updateDynamic("GroupQuery")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGroupQueryOutput]
     }
   }

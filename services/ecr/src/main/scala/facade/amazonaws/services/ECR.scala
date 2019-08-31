@@ -184,10 +184,10 @@ package ecr {
         expiresAt: js.UndefOr[ExpirationTimestamp] = js.undefined,
         proxyEndpoint: js.UndefOr[ProxyEndpoint] = js.undefined
     ): AuthorizationData = {
-      val __obj = js.Dictionary.empty[js.Any]
-      authorizationToken.foreach(__v => __obj.update("authorizationToken", __v.asInstanceOf[js.Any]))
-      expiresAt.foreach(__v => __obj.update("expiresAt", __v.asInstanceOf[js.Any]))
-      proxyEndpoint.foreach(__v => __obj.update("proxyEndpoint", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      authorizationToken.foreach(__v => __obj.updateDynamic("authorizationToken")(__v.asInstanceOf[js.Any]))
+      expiresAt.foreach(__v => __obj.updateDynamic("expiresAt")(__v.asInstanceOf[js.Any]))
+      proxyEndpoint.foreach(__v => __obj.updateDynamic("proxyEndpoint")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AuthorizationData]
     }
   }
@@ -205,12 +205,12 @@ package ecr {
         repositoryName: RepositoryName,
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): BatchCheckLayerAvailabilityRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "layerDigests"   -> layerDigests.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchCheckLayerAvailabilityRequest]
     }
   }
@@ -226,9 +226,9 @@ package ecr {
         failures: js.UndefOr[LayerFailureList] = js.undefined,
         layers: js.UndefOr[LayerList] = js.undefined
     ): BatchCheckLayerAvailabilityResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      failures.foreach(__v => __obj.update("failures", __v.asInstanceOf[js.Any]))
-      layers.foreach(__v => __obj.update("layers", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      failures.foreach(__v => __obj.updateDynamic("failures")(__v.asInstanceOf[js.Any]))
+      layers.foreach(__v => __obj.updateDynamic("layers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchCheckLayerAvailabilityResponse]
     }
   }
@@ -249,12 +249,12 @@ package ecr {
         repositoryName: RepositoryName,
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): BatchDeleteImageRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "imageIds"       -> imageIds.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDeleteImageRequest]
     }
   }
@@ -270,9 +270,9 @@ package ecr {
         failures: js.UndefOr[ImageFailureList] = js.undefined,
         imageIds: js.UndefOr[ImageIdentifierList] = js.undefined
     ): BatchDeleteImageResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      failures.foreach(__v => __obj.update("failures", __v.asInstanceOf[js.Any]))
-      imageIds.foreach(__v => __obj.update("imageIds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      failures.foreach(__v => __obj.updateDynamic("failures")(__v.asInstanceOf[js.Any]))
+      imageIds.foreach(__v => __obj.updateDynamic("imageIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDeleteImageResponse]
     }
   }
@@ -292,13 +292,13 @@ package ecr {
         acceptedMediaTypes: js.UndefOr[MediaTypeList] = js.undefined,
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): BatchGetImageRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "imageIds"       -> imageIds.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      acceptedMediaTypes.foreach(__v => __obj.update("acceptedMediaTypes", __v.asInstanceOf[js.Any]))
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
+      acceptedMediaTypes.foreach(__v => __obj.updateDynamic("acceptedMediaTypes")(__v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetImageRequest]
     }
   }
@@ -314,9 +314,9 @@ package ecr {
         failures: js.UndefOr[ImageFailureList] = js.undefined,
         images: js.UndefOr[ImageList] = js.undefined
     ): BatchGetImageResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      failures.foreach(__v => __obj.update("failures", __v.asInstanceOf[js.Any]))
-      images.foreach(__v => __obj.update("images", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      failures.foreach(__v => __obj.updateDynamic("failures")(__v.asInstanceOf[js.Any]))
+      images.foreach(__v => __obj.updateDynamic("images")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetImageResponse]
     }
   }
@@ -336,13 +336,13 @@ package ecr {
         uploadId: UploadId,
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): CompleteLayerUploadRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "layerDigests"   -> layerDigests.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
         "uploadId"       -> uploadId.asInstanceOf[js.Any]
       )
 
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CompleteLayerUploadRequest]
     }
   }
@@ -362,11 +362,11 @@ package ecr {
         repositoryName: js.UndefOr[RepositoryName] = js.undefined,
         uploadId: js.UndefOr[UploadId] = js.undefined
     ): CompleteLayerUploadResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      layerDigest.foreach(__v => __obj.update("layerDigest", __v.asInstanceOf[js.Any]))
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
-      repositoryName.foreach(__v => __obj.update("repositoryName", __v.asInstanceOf[js.Any]))
-      uploadId.foreach(__v => __obj.update("uploadId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      layerDigest.foreach(__v => __obj.updateDynamic("layerDigest")(__v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
+      repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
+      uploadId.foreach(__v => __obj.updateDynamic("uploadId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CompleteLayerUploadResponse]
     }
   }
@@ -384,12 +384,12 @@ package ecr {
         imageTagMutability: js.UndefOr[ImageTagMutability] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateRepositoryRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      imageTagMutability.foreach(__v => __obj.update("imageTagMutability", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      imageTagMutability.foreach(__v => __obj.updateDynamic("imageTagMutability")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRepositoryRequest]
     }
   }
@@ -403,8 +403,8 @@ package ecr {
     def apply(
         repository: js.UndefOr[Repository] = js.undefined
     ): CreateRepositoryResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      repository.foreach(__v => __obj.update("repository", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      repository.foreach(__v => __obj.updateDynamic("repository")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRepositoryResponse]
     }
   }
@@ -420,11 +420,11 @@ package ecr {
         repositoryName: RepositoryName,
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): DeleteLifecyclePolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteLifecyclePolicyRequest]
     }
   }
@@ -444,11 +444,11 @@ package ecr {
         registryId: js.UndefOr[RegistryId] = js.undefined,
         repositoryName: js.UndefOr[RepositoryName] = js.undefined
     ): DeleteLifecyclePolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      lastEvaluatedAt.foreach(__v => __obj.update("lastEvaluatedAt", __v.asInstanceOf[js.Any]))
-      lifecyclePolicyText.foreach(__v => __obj.update("lifecyclePolicyText", __v.asInstanceOf[js.Any]))
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
-      repositoryName.foreach(__v => __obj.update("repositoryName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      lastEvaluatedAt.foreach(__v => __obj.updateDynamic("lastEvaluatedAt")(__v.asInstanceOf[js.Any]))
+      lifecyclePolicyText.foreach(__v => __obj.updateDynamic("lifecyclePolicyText")(__v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
+      repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteLifecyclePolicyResponse]
     }
   }
@@ -464,11 +464,11 @@ package ecr {
         repositoryName: RepositoryName,
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): DeleteRepositoryPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteRepositoryPolicyRequest]
     }
   }
@@ -486,10 +486,10 @@ package ecr {
         registryId: js.UndefOr[RegistryId] = js.undefined,
         repositoryName: js.UndefOr[RepositoryName] = js.undefined
     ): DeleteRepositoryPolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      policyText.foreach(__v => __obj.update("policyText", __v.asInstanceOf[js.Any]))
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
-      repositoryName.foreach(__v => __obj.update("repositoryName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      policyText.foreach(__v => __obj.updateDynamic("policyText")(__v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
+      repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteRepositoryPolicyResponse]
     }
   }
@@ -507,12 +507,12 @@ package ecr {
         force: js.UndefOr[ForceFlag] = js.undefined,
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): DeleteRepositoryRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      force.foreach(__v => __obj.update("force", __v.asInstanceOf[js.Any]))
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
+      force.foreach(__v => __obj.updateDynamic("force")(__v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteRepositoryRequest]
     }
   }
@@ -526,8 +526,8 @@ package ecr {
     def apply(
         repository: js.UndefOr[Repository] = js.undefined
     ): DeleteRepositoryResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      repository.foreach(__v => __obj.update("repository", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      repository.foreach(__v => __obj.updateDynamic("repository")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteRepositoryResponse]
     }
   }
@@ -544,8 +544,8 @@ package ecr {
     def apply(
         tagStatus: js.UndefOr[TagStatus] = js.undefined
     ): DescribeImagesFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      tagStatus.foreach(__v => __obj.update("tagStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      tagStatus.foreach(__v => __obj.updateDynamic("tagStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeImagesFilter]
     }
   }
@@ -569,15 +569,15 @@ package ecr {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): DescribeImagesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      filter.foreach(__v => __obj.update("filter", __v.asInstanceOf[js.Any]))
-      imageIds.foreach(__v => __obj.update("imageIds", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
+      filter.foreach(__v => __obj.updateDynamic("filter")(__v.asInstanceOf[js.Any]))
+      imageIds.foreach(__v => __obj.updateDynamic("imageIds")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeImagesRequest]
     }
   }
@@ -593,9 +593,9 @@ package ecr {
         imageDetails: js.UndefOr[ImageDetailList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeImagesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      imageDetails.foreach(__v => __obj.update("imageDetails", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      imageDetails.foreach(__v => __obj.updateDynamic("imageDetails")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeImagesResponse]
     }
   }
@@ -615,11 +615,11 @@ package ecr {
         registryId: js.UndefOr[RegistryId] = js.undefined,
         repositoryNames: js.UndefOr[RepositoryNameList] = js.undefined
     ): DescribeRepositoriesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
-      repositoryNames.foreach(__v => __obj.update("repositoryNames", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
+      repositoryNames.foreach(__v => __obj.updateDynamic("repositoryNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRepositoriesRequest]
     }
   }
@@ -635,9 +635,9 @@ package ecr {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         repositories: js.UndefOr[RepositoryList] = js.undefined
     ): DescribeRepositoriesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      repositories.foreach(__v => __obj.update("repositories", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      repositories.foreach(__v => __obj.updateDynamic("repositories")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRepositoriesResponse]
     }
   }
@@ -651,8 +651,8 @@ package ecr {
     def apply(
         registryIds: js.UndefOr[GetAuthorizationTokenRegistryIdList] = js.undefined
     ): GetAuthorizationTokenRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      registryIds.foreach(__v => __obj.update("registryIds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      registryIds.foreach(__v => __obj.updateDynamic("registryIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAuthorizationTokenRequest]
     }
   }
@@ -666,8 +666,8 @@ package ecr {
     def apply(
         authorizationData: js.UndefOr[AuthorizationDataList] = js.undefined
     ): GetAuthorizationTokenResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      authorizationData.foreach(__v => __obj.update("authorizationData", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      authorizationData.foreach(__v => __obj.updateDynamic("authorizationData")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAuthorizationTokenResponse]
     }
   }
@@ -685,12 +685,12 @@ package ecr {
         repositoryName: RepositoryName,
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): GetDownloadUrlForLayerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "layerDigest"    -> layerDigest.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDownloadUrlForLayerRequest]
     }
   }
@@ -706,9 +706,9 @@ package ecr {
         downloadUrl: js.UndefOr[Url] = js.undefined,
         layerDigest: js.UndefOr[LayerDigest] = js.undefined
     ): GetDownloadUrlForLayerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      downloadUrl.foreach(__v => __obj.update("downloadUrl", __v.asInstanceOf[js.Any]))
-      layerDigest.foreach(__v => __obj.update("layerDigest", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      downloadUrl.foreach(__v => __obj.updateDynamic("downloadUrl")(__v.asInstanceOf[js.Any]))
+      layerDigest.foreach(__v => __obj.updateDynamic("layerDigest")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDownloadUrlForLayerResponse]
     }
   }
@@ -732,15 +732,15 @@ package ecr {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): GetLifecyclePolicyPreviewRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      filter.foreach(__v => __obj.update("filter", __v.asInstanceOf[js.Any]))
-      imageIds.foreach(__v => __obj.update("imageIds", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
+      filter.foreach(__v => __obj.updateDynamic("filter")(__v.asInstanceOf[js.Any]))
+      imageIds.foreach(__v => __obj.updateDynamic("imageIds")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLifecyclePolicyPreviewRequest]
     }
   }
@@ -766,14 +766,14 @@ package ecr {
         status: js.UndefOr[LifecyclePolicyPreviewStatus] = js.undefined,
         summary: js.UndefOr[LifecyclePolicyPreviewSummary] = js.undefined
     ): GetLifecyclePolicyPreviewResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      lifecyclePolicyText.foreach(__v => __obj.update("lifecyclePolicyText", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      previewResults.foreach(__v => __obj.update("previewResults", __v.asInstanceOf[js.Any]))
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
-      repositoryName.foreach(__v => __obj.update("repositoryName", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      summary.foreach(__v => __obj.update("summary", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      lifecyclePolicyText.foreach(__v => __obj.updateDynamic("lifecyclePolicyText")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      previewResults.foreach(__v => __obj.updateDynamic("previewResults")(__v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
+      repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      summary.foreach(__v => __obj.updateDynamic("summary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLifecyclePolicyPreviewResponse]
     }
   }
@@ -789,11 +789,11 @@ package ecr {
         repositoryName: RepositoryName,
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): GetLifecyclePolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLifecyclePolicyRequest]
     }
   }
@@ -813,11 +813,11 @@ package ecr {
         registryId: js.UndefOr[RegistryId] = js.undefined,
         repositoryName: js.UndefOr[RepositoryName] = js.undefined
     ): GetLifecyclePolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      lastEvaluatedAt.foreach(__v => __obj.update("lastEvaluatedAt", __v.asInstanceOf[js.Any]))
-      lifecyclePolicyText.foreach(__v => __obj.update("lifecyclePolicyText", __v.asInstanceOf[js.Any]))
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
-      repositoryName.foreach(__v => __obj.update("repositoryName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      lastEvaluatedAt.foreach(__v => __obj.updateDynamic("lastEvaluatedAt")(__v.asInstanceOf[js.Any]))
+      lifecyclePolicyText.foreach(__v => __obj.updateDynamic("lifecyclePolicyText")(__v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
+      repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLifecyclePolicyResponse]
     }
   }
@@ -833,11 +833,11 @@ package ecr {
         repositoryName: RepositoryName,
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): GetRepositoryPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRepositoryPolicyRequest]
     }
   }
@@ -855,10 +855,10 @@ package ecr {
         registryId: js.UndefOr[RegistryId] = js.undefined,
         repositoryName: js.UndefOr[RepositoryName] = js.undefined
     ): GetRepositoryPolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      policyText.foreach(__v => __obj.update("policyText", __v.asInstanceOf[js.Any]))
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
-      repositoryName.foreach(__v => __obj.update("repositoryName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      policyText.foreach(__v => __obj.updateDynamic("policyText")(__v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
+      repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRepositoryPolicyResponse]
     }
   }
@@ -881,11 +881,11 @@ package ecr {
         registryId: js.UndefOr[RegistryId] = js.undefined,
         repositoryName: js.UndefOr[RepositoryName] = js.undefined
     ): Image = {
-      val __obj = js.Dictionary.empty[js.Any]
-      imageId.foreach(__v => __obj.update("imageId", __v.asInstanceOf[js.Any]))
-      imageManifest.foreach(__v => __obj.update("imageManifest", __v.asInstanceOf[js.Any]))
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
-      repositoryName.foreach(__v => __obj.update("repositoryName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      imageId.foreach(__v => __obj.updateDynamic("imageId")(__v.asInstanceOf[js.Any]))
+      imageManifest.foreach(__v => __obj.updateDynamic("imageManifest")(__v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
+      repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Image]
     }
   }
@@ -918,13 +918,13 @@ package ecr {
         registryId: js.UndefOr[RegistryId] = js.undefined,
         repositoryName: js.UndefOr[RepositoryName] = js.undefined
     ): ImageDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      imageDigest.foreach(__v => __obj.update("imageDigest", __v.asInstanceOf[js.Any]))
-      imagePushedAt.foreach(__v => __obj.update("imagePushedAt", __v.asInstanceOf[js.Any]))
-      imageSizeInBytes.foreach(__v => __obj.update("imageSizeInBytes", __v.asInstanceOf[js.Any]))
-      imageTags.foreach(__v => __obj.update("imageTags", __v.asInstanceOf[js.Any]))
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
-      repositoryName.foreach(__v => __obj.update("repositoryName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      imageDigest.foreach(__v => __obj.updateDynamic("imageDigest")(__v.asInstanceOf[js.Any]))
+      imagePushedAt.foreach(__v => __obj.updateDynamic("imagePushedAt")(__v.asInstanceOf[js.Any]))
+      imageSizeInBytes.foreach(__v => __obj.updateDynamic("imageSizeInBytes")(__v.asInstanceOf[js.Any]))
+      imageTags.foreach(__v => __obj.updateDynamic("imageTags")(__v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
+      repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImageDetail]
     }
   }
@@ -945,10 +945,10 @@ package ecr {
         failureReason: js.UndefOr[ImageFailureReason] = js.undefined,
         imageId: js.UndefOr[ImageIdentifier] = js.undefined
     ): ImageFailure = {
-      val __obj = js.Dictionary.empty[js.Any]
-      failureCode.foreach(__v => __obj.update("failureCode", __v.asInstanceOf[js.Any]))
-      failureReason.foreach(__v => __obj.update("failureReason", __v.asInstanceOf[js.Any]))
-      imageId.foreach(__v => __obj.update("imageId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      failureCode.foreach(__v => __obj.updateDynamic("failureCode")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      imageId.foreach(__v => __obj.updateDynamic("imageId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImageFailure]
     }
   }
@@ -979,9 +979,9 @@ package ecr {
         imageDigest: js.UndefOr[ImageDigest] = js.undefined,
         imageTag: js.UndefOr[ImageTag] = js.undefined
     ): ImageIdentifier = {
-      val __obj = js.Dictionary.empty[js.Any]
-      imageDigest.foreach(__v => __obj.update("imageDigest", __v.asInstanceOf[js.Any]))
-      imageTag.foreach(__v => __obj.update("imageTag", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      imageDigest.foreach(__v => __obj.updateDynamic("imageDigest")(__v.asInstanceOf[js.Any]))
+      imageTag.foreach(__v => __obj.updateDynamic("imageTag")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImageIdentifier]
     }
   }
@@ -1004,11 +1004,11 @@ package ecr {
         repositoryName: RepositoryName,
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): InitiateLayerUploadRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InitiateLayerUploadRequest]
     }
   }
@@ -1024,9 +1024,9 @@ package ecr {
         partSize: js.UndefOr[PartSize] = js.undefined,
         uploadId: js.UndefOr[UploadId] = js.undefined
     ): InitiateLayerUploadResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      partSize.foreach(__v => __obj.update("partSize", __v.asInstanceOf[js.Any]))
-      uploadId.foreach(__v => __obj.update("uploadId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      partSize.foreach(__v => __obj.updateDynamic("partSize")(__v.asInstanceOf[js.Any]))
+      uploadId.foreach(__v => __obj.updateDynamic("uploadId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InitiateLayerUploadResponse]
     }
   }
@@ -1049,11 +1049,11 @@ package ecr {
         layerSize: js.UndefOr[LayerSizeInBytes] = js.undefined,
         mediaType: js.UndefOr[MediaType] = js.undefined
     ): Layer = {
-      val __obj = js.Dictionary.empty[js.Any]
-      layerAvailability.foreach(__v => __obj.update("layerAvailability", __v.asInstanceOf[js.Any]))
-      layerDigest.foreach(__v => __obj.update("layerDigest", __v.asInstanceOf[js.Any]))
-      layerSize.foreach(__v => __obj.update("layerSize", __v.asInstanceOf[js.Any]))
-      mediaType.foreach(__v => __obj.update("mediaType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      layerAvailability.foreach(__v => __obj.updateDynamic("layerAvailability")(__v.asInstanceOf[js.Any]))
+      layerDigest.foreach(__v => __obj.updateDynamic("layerDigest")(__v.asInstanceOf[js.Any]))
+      layerSize.foreach(__v => __obj.updateDynamic("layerSize")(__v.asInstanceOf[js.Any]))
+      mediaType.foreach(__v => __obj.updateDynamic("mediaType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Layer]
     }
   }
@@ -1081,10 +1081,10 @@ package ecr {
         failureReason: js.UndefOr[LayerFailureReason] = js.undefined,
         layerDigest: js.UndefOr[BatchedOperationLayerDigest] = js.undefined
     ): LayerFailure = {
-      val __obj = js.Dictionary.empty[js.Any]
-      failureCode.foreach(__v => __obj.update("failureCode", __v.asInstanceOf[js.Any]))
-      failureReason.foreach(__v => __obj.update("failureReason", __v.asInstanceOf[js.Any]))
-      layerDigest.foreach(__v => __obj.update("layerDigest", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      failureCode.foreach(__v => __obj.updateDynamic("failureCode")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      layerDigest.foreach(__v => __obj.updateDynamic("layerDigest")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LayerFailure]
     }
   }
@@ -1108,8 +1108,8 @@ package ecr {
     def apply(
         tagStatus: js.UndefOr[TagStatus] = js.undefined
     ): LifecyclePolicyPreviewFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      tagStatus.foreach(__v => __obj.update("tagStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      tagStatus.foreach(__v => __obj.updateDynamic("tagStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LifecyclePolicyPreviewFilter]
     }
   }
@@ -1134,12 +1134,12 @@ package ecr {
         imagePushedAt: js.UndefOr[PushTimestamp] = js.undefined,
         imageTags: js.UndefOr[ImageTagList] = js.undefined
     ): LifecyclePolicyPreviewResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      action.foreach(__v => __obj.update("action", __v.asInstanceOf[js.Any]))
-      appliedRulePriority.foreach(__v => __obj.update("appliedRulePriority", __v.asInstanceOf[js.Any]))
-      imageDigest.foreach(__v => __obj.update("imageDigest", __v.asInstanceOf[js.Any]))
-      imagePushedAt.foreach(__v => __obj.update("imagePushedAt", __v.asInstanceOf[js.Any]))
-      imageTags.foreach(__v => __obj.update("imageTags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      action.foreach(__v => __obj.updateDynamic("action")(__v.asInstanceOf[js.Any]))
+      appliedRulePriority.foreach(__v => __obj.updateDynamic("appliedRulePriority")(__v.asInstanceOf[js.Any]))
+      imageDigest.foreach(__v => __obj.updateDynamic("imageDigest")(__v.asInstanceOf[js.Any]))
+      imagePushedAt.foreach(__v => __obj.updateDynamic("imagePushedAt")(__v.asInstanceOf[js.Any]))
+      imageTags.foreach(__v => __obj.updateDynamic("imageTags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LifecyclePolicyPreviewResult]
     }
   }
@@ -1165,8 +1165,8 @@ package ecr {
     def apply(
         expiringImageTotalCount: js.UndefOr[ImageCount] = js.undefined
     ): LifecyclePolicyPreviewSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      expiringImageTotalCount.foreach(__v => __obj.update("expiringImageTotalCount", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      expiringImageTotalCount.foreach(__v => __obj.updateDynamic("expiringImageTotalCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LifecyclePolicyPreviewSummary]
     }
   }
@@ -1183,8 +1183,8 @@ package ecr {
     def apply(
         `type`: js.UndefOr[ImageActionType] = js.undefined
     ): LifecyclePolicyRuleAction = {
-      val __obj = js.Dictionary.empty[js.Any]
-      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LifecyclePolicyRuleAction]
     }
   }
@@ -1201,8 +1201,8 @@ package ecr {
     def apply(
         tagStatus: js.UndefOr[TagStatus] = js.undefined
     ): ListImagesFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      tagStatus.foreach(__v => __obj.update("tagStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      tagStatus.foreach(__v => __obj.updateDynamic("tagStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListImagesFilter]
     }
   }
@@ -1224,14 +1224,14 @@ package ecr {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): ListImagesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      filter.foreach(__v => __obj.update("filter", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
+      filter.foreach(__v => __obj.updateDynamic("filter")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListImagesRequest]
     }
   }
@@ -1247,9 +1247,9 @@ package ecr {
         imageIds: js.UndefOr[ImageIdentifierList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListImagesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      imageIds.foreach(__v => __obj.update("imageIds", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      imageIds.foreach(__v => __obj.updateDynamic("imageIds")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListImagesResponse]
     }
   }
@@ -1263,7 +1263,7 @@ package ecr {
     def apply(
         resourceArn: Arn
     ): ListTagsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
 
@@ -1280,8 +1280,8 @@ package ecr {
     def apply(
         tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsForResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
@@ -1301,13 +1301,13 @@ package ecr {
         imageTag: js.UndefOr[ImageTag] = js.undefined,
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): PutImageRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "imageManifest"  -> imageManifest.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      imageTag.foreach(__v => __obj.update("imageTag", __v.asInstanceOf[js.Any]))
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
+      imageTag.foreach(__v => __obj.updateDynamic("imageTag")(__v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutImageRequest]
     }
   }
@@ -1321,8 +1321,8 @@ package ecr {
     def apply(
         image: js.UndefOr[Image] = js.undefined
     ): PutImageResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      image.foreach(__v => __obj.update("image", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      image.foreach(__v => __obj.updateDynamic("image")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutImageResponse]
     }
   }
@@ -1340,12 +1340,12 @@ package ecr {
         repositoryName: RepositoryName,
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): PutImageTagMutabilityRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "imageTagMutability" -> imageTagMutability.asInstanceOf[js.Any],
         "repositoryName"     -> repositoryName.asInstanceOf[js.Any]
       )
 
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutImageTagMutabilityRequest]
     }
   }
@@ -1363,10 +1363,10 @@ package ecr {
         registryId: js.UndefOr[RegistryId] = js.undefined,
         repositoryName: js.UndefOr[RepositoryName] = js.undefined
     ): PutImageTagMutabilityResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      imageTagMutability.foreach(__v => __obj.update("imageTagMutability", __v.asInstanceOf[js.Any]))
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
-      repositoryName.foreach(__v => __obj.update("repositoryName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      imageTagMutability.foreach(__v => __obj.updateDynamic("imageTagMutability")(__v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
+      repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutImageTagMutabilityResponse]
     }
   }
@@ -1384,12 +1384,12 @@ package ecr {
         repositoryName: RepositoryName,
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): PutLifecyclePolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "lifecyclePolicyText" -> lifecyclePolicyText.asInstanceOf[js.Any],
         "repositoryName"      -> repositoryName.asInstanceOf[js.Any]
       )
 
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutLifecyclePolicyRequest]
     }
   }
@@ -1407,10 +1407,10 @@ package ecr {
         registryId: js.UndefOr[RegistryId] = js.undefined,
         repositoryName: js.UndefOr[RepositoryName] = js.undefined
     ): PutLifecyclePolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      lifecyclePolicyText.foreach(__v => __obj.update("lifecyclePolicyText", __v.asInstanceOf[js.Any]))
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
-      repositoryName.foreach(__v => __obj.update("repositoryName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      lifecyclePolicyText.foreach(__v => __obj.updateDynamic("lifecyclePolicyText")(__v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
+      repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutLifecyclePolicyResponse]
     }
   }
@@ -1437,13 +1437,13 @@ package ecr {
         repositoryName: js.UndefOr[RepositoryName] = js.undefined,
         repositoryUri: js.UndefOr[Url] = js.undefined
     ): Repository = {
-      val __obj = js.Dictionary.empty[js.Any]
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      imageTagMutability.foreach(__v => __obj.update("imageTagMutability", __v.asInstanceOf[js.Any]))
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
-      repositoryArn.foreach(__v => __obj.update("repositoryArn", __v.asInstanceOf[js.Any]))
-      repositoryName.foreach(__v => __obj.update("repositoryName", __v.asInstanceOf[js.Any]))
-      repositoryUri.foreach(__v => __obj.update("repositoryUri", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      imageTagMutability.foreach(__v => __obj.updateDynamic("imageTagMutability")(__v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
+      repositoryArn.foreach(__v => __obj.updateDynamic("repositoryArn")(__v.asInstanceOf[js.Any]))
+      repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
+      repositoryUri.foreach(__v => __obj.updateDynamic("repositoryUri")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Repository]
     }
   }
@@ -1463,13 +1463,13 @@ package ecr {
         force: js.UndefOr[ForceFlag] = js.undefined,
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): SetRepositoryPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "policyText"     -> policyText.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      force.foreach(__v => __obj.update("force", __v.asInstanceOf[js.Any]))
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
+      force.foreach(__v => __obj.updateDynamic("force")(__v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetRepositoryPolicyRequest]
     }
   }
@@ -1487,10 +1487,10 @@ package ecr {
         registryId: js.UndefOr[RegistryId] = js.undefined,
         repositoryName: js.UndefOr[RepositoryName] = js.undefined
     ): SetRepositoryPolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      policyText.foreach(__v => __obj.update("policyText", __v.asInstanceOf[js.Any]))
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
-      repositoryName.foreach(__v => __obj.update("repositoryName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      policyText.foreach(__v => __obj.updateDynamic("policyText")(__v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
+      repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetRepositoryPolicyResponse]
     }
   }
@@ -1508,12 +1508,12 @@ package ecr {
         lifecyclePolicyText: js.UndefOr[LifecyclePolicyText] = js.undefined,
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): StartLifecyclePolicyPreviewRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      lifecyclePolicyText.foreach(__v => __obj.update("lifecyclePolicyText", __v.asInstanceOf[js.Any]))
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
+      lifecyclePolicyText.foreach(__v => __obj.updateDynamic("lifecyclePolicyText")(__v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartLifecyclePolicyPreviewRequest]
     }
   }
@@ -1533,11 +1533,11 @@ package ecr {
         repositoryName: js.UndefOr[RepositoryName] = js.undefined,
         status: js.UndefOr[LifecyclePolicyPreviewStatus] = js.undefined
     ): StartLifecyclePolicyPreviewResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      lifecyclePolicyText.foreach(__v => __obj.update("lifecyclePolicyText", __v.asInstanceOf[js.Any]))
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
-      repositoryName.foreach(__v => __obj.update("repositoryName", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      lifecyclePolicyText.foreach(__v => __obj.updateDynamic("lifecyclePolicyText")(__v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
+      repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartLifecyclePolicyPreviewResponse]
     }
   }
@@ -1556,9 +1556,9 @@ package ecr {
         Key: js.UndefOr[TagKey] = js.undefined,
         Value: js.UndefOr[TagValue] = js.undefined
     ): Tag = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tag]
     }
   }
@@ -1574,7 +1574,7 @@ package ecr {
         resourceArn: Arn,
         tags: TagList
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags"        -> tags.asInstanceOf[js.Any]
       )
@@ -1589,7 +1589,7 @@ package ecr {
   object TagResourceResponse {
     def apply(
         ): TagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -1614,7 +1614,7 @@ package ecr {
         resourceArn: Arn,
         tagKeys: TagKeyList
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
       )
@@ -1629,7 +1629,7 @@ package ecr {
   object UntagResourceResponse {
     def apply(
         ): UntagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -1654,7 +1654,7 @@ package ecr {
         uploadId: UploadId,
         registryId: js.UndefOr[RegistryId] = js.undefined
     ): UploadLayerPartRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "layerPartBlob"  -> layerPartBlob.asInstanceOf[js.Any],
         "partFirstByte"  -> partFirstByte.asInstanceOf[js.Any],
         "partLastByte"   -> partLastByte.asInstanceOf[js.Any],
@@ -1662,7 +1662,7 @@ package ecr {
         "uploadId"       -> uploadId.asInstanceOf[js.Any]
       )
 
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UploadLayerPartRequest]
     }
   }
@@ -1682,11 +1682,11 @@ package ecr {
         repositoryName: js.UndefOr[RepositoryName] = js.undefined,
         uploadId: js.UndefOr[UploadId] = js.undefined
     ): UploadLayerPartResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      lastByteReceived.foreach(__v => __obj.update("lastByteReceived", __v.asInstanceOf[js.Any]))
-      registryId.foreach(__v => __obj.update("registryId", __v.asInstanceOf[js.Any]))
-      repositoryName.foreach(__v => __obj.update("repositoryName", __v.asInstanceOf[js.Any]))
-      uploadId.foreach(__v => __obj.update("uploadId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      lastByteReceived.foreach(__v => __obj.updateDynamic("lastByteReceived")(__v.asInstanceOf[js.Any]))
+      registryId.foreach(__v => __obj.updateDynamic("registryId")(__v.asInstanceOf[js.Any]))
+      repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
+      uploadId.foreach(__v => __obj.updateDynamic("uploadId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UploadLayerPartResponse]
     }
   }

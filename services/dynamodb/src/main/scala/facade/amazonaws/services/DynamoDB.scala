@@ -296,7 +296,7 @@ package dynamodb {
         AttributeName: KeySchemaAttributeName,
         AttributeType: ScalarAttributeType
     ): AttributeDefinition = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AttributeName" -> AttributeName.asInstanceOf[js.Any],
         "AttributeType" -> AttributeType.asInstanceOf[js.Any]
       )
@@ -337,17 +337,17 @@ package dynamodb {
         S: js.UndefOr[StringAttributeValue] = js.undefined,
         SS: js.UndefOr[StringSetAttributeValue] = js.undefined
     ): AttributeValue = {
-      val __obj = js.Dictionary.empty[js.Any]
-      B.foreach(__v => __obj.update("B", __v.asInstanceOf[js.Any]))
-      BOOL.foreach(__v => __obj.update("BOOL", __v.asInstanceOf[js.Any]))
-      BS.foreach(__v => __obj.update("BS", __v.asInstanceOf[js.Any]))
-      L.foreach(__v => __obj.update("L", __v.asInstanceOf[js.Any]))
-      M.foreach(__v => __obj.update("M", __v.asInstanceOf[js.Any]))
-      N.foreach(__v => __obj.update("N", __v.asInstanceOf[js.Any]))
-      NS.foreach(__v => __obj.update("NS", __v.asInstanceOf[js.Any]))
-      NULL.foreach(__v => __obj.update("NULL", __v.asInstanceOf[js.Any]))
-      S.foreach(__v => __obj.update("S", __v.asInstanceOf[js.Any]))
-      SS.foreach(__v => __obj.update("SS", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      B.foreach(__v => __obj.updateDynamic("B")(__v.asInstanceOf[js.Any]))
+      BOOL.foreach(__v => __obj.updateDynamic("BOOL")(__v.asInstanceOf[js.Any]))
+      BS.foreach(__v => __obj.updateDynamic("BS")(__v.asInstanceOf[js.Any]))
+      L.foreach(__v => __obj.updateDynamic("L")(__v.asInstanceOf[js.Any]))
+      M.foreach(__v => __obj.updateDynamic("M")(__v.asInstanceOf[js.Any]))
+      N.foreach(__v => __obj.updateDynamic("N")(__v.asInstanceOf[js.Any]))
+      NS.foreach(__v => __obj.updateDynamic("NS")(__v.asInstanceOf[js.Any]))
+      NULL.foreach(__v => __obj.updateDynamic("NULL")(__v.asInstanceOf[js.Any]))
+      S.foreach(__v => __obj.updateDynamic("S")(__v.asInstanceOf[js.Any]))
+      SS.foreach(__v => __obj.updateDynamic("SS")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttributeValue]
     }
     def S(value: StringAttributeValue): AttributeValue = js.Dynamic.literal("S" -> value).asInstanceOf[AttributeValue]
@@ -408,9 +408,9 @@ package dynamodb {
         Action: js.UndefOr[AttributeAction] = js.undefined,
         Value: js.UndefOr[AttributeValue] = js.undefined
     ): AttributeValueUpdate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Action.foreach(__v => __obj.update("Action", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttributeValueUpdate]
     }
   }
@@ -433,10 +433,10 @@ package dynamodb {
           AutoScalingTargetTrackingScalingPolicyConfigurationDescription
         ] = js.undefined
     ): AutoScalingPolicyDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PolicyName.foreach(__v => __obj.update("PolicyName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PolicyName.foreach(__v => __obj.updateDynamic("PolicyName")(__v.asInstanceOf[js.Any]))
       TargetTrackingScalingPolicyConfiguration.foreach(
-        __v => __obj.update("TargetTrackingScalingPolicyConfiguration", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("TargetTrackingScalingPolicyConfiguration")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[AutoScalingPolicyDescription]
     }
@@ -456,11 +456,11 @@ package dynamodb {
         TargetTrackingScalingPolicyConfiguration: AutoScalingTargetTrackingScalingPolicyConfigurationUpdate,
         PolicyName: js.UndefOr[AutoScalingPolicyName] = js.undefined
     ): AutoScalingPolicyUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TargetTrackingScalingPolicyConfiguration" -> TargetTrackingScalingPolicyConfiguration.asInstanceOf[js.Any]
       )
 
-      PolicyName.foreach(__v => __obj.update("PolicyName", __v.asInstanceOf[js.Any]))
+      PolicyName.foreach(__v => __obj.updateDynamic("PolicyName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoScalingPolicyUpdate]
     }
   }
@@ -485,12 +485,12 @@ package dynamodb {
         MinimumUnits: js.UndefOr[PositiveLongObject] = js.undefined,
         ScalingPolicies: js.UndefOr[AutoScalingPolicyDescriptionList] = js.undefined
     ): AutoScalingSettingsDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AutoScalingDisabled.foreach(__v => __obj.update("AutoScalingDisabled", __v.asInstanceOf[js.Any]))
-      AutoScalingRoleArn.foreach(__v => __obj.update("AutoScalingRoleArn", __v.asInstanceOf[js.Any]))
-      MaximumUnits.foreach(__v => __obj.update("MaximumUnits", __v.asInstanceOf[js.Any]))
-      MinimumUnits.foreach(__v => __obj.update("MinimumUnits", __v.asInstanceOf[js.Any]))
-      ScalingPolicies.foreach(__v => __obj.update("ScalingPolicies", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AutoScalingDisabled.foreach(__v => __obj.updateDynamic("AutoScalingDisabled")(__v.asInstanceOf[js.Any]))
+      AutoScalingRoleArn.foreach(__v => __obj.updateDynamic("AutoScalingRoleArn")(__v.asInstanceOf[js.Any]))
+      MaximumUnits.foreach(__v => __obj.updateDynamic("MaximumUnits")(__v.asInstanceOf[js.Any]))
+      MinimumUnits.foreach(__v => __obj.updateDynamic("MinimumUnits")(__v.asInstanceOf[js.Any]))
+      ScalingPolicies.foreach(__v => __obj.updateDynamic("ScalingPolicies")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoScalingSettingsDescription]
     }
   }
@@ -515,12 +515,12 @@ package dynamodb {
         MinimumUnits: js.UndefOr[PositiveLongObject] = js.undefined,
         ScalingPolicyUpdate: js.UndefOr[AutoScalingPolicyUpdate] = js.undefined
     ): AutoScalingSettingsUpdate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AutoScalingDisabled.foreach(__v => __obj.update("AutoScalingDisabled", __v.asInstanceOf[js.Any]))
-      AutoScalingRoleArn.foreach(__v => __obj.update("AutoScalingRoleArn", __v.asInstanceOf[js.Any]))
-      MaximumUnits.foreach(__v => __obj.update("MaximumUnits", __v.asInstanceOf[js.Any]))
-      MinimumUnits.foreach(__v => __obj.update("MinimumUnits", __v.asInstanceOf[js.Any]))
-      ScalingPolicyUpdate.foreach(__v => __obj.update("ScalingPolicyUpdate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AutoScalingDisabled.foreach(__v => __obj.updateDynamic("AutoScalingDisabled")(__v.asInstanceOf[js.Any]))
+      AutoScalingRoleArn.foreach(__v => __obj.updateDynamic("AutoScalingRoleArn")(__v.asInstanceOf[js.Any]))
+      MaximumUnits.foreach(__v => __obj.updateDynamic("MaximumUnits")(__v.asInstanceOf[js.Any]))
+      MinimumUnits.foreach(__v => __obj.updateDynamic("MinimumUnits")(__v.asInstanceOf[js.Any]))
+      ScalingPolicyUpdate.foreach(__v => __obj.updateDynamic("ScalingPolicyUpdate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoScalingSettingsUpdate]
     }
   }
@@ -543,13 +543,13 @@ package dynamodb {
         ScaleInCooldown: js.UndefOr[IntegerObject] = js.undefined,
         ScaleOutCooldown: js.UndefOr[IntegerObject] = js.undefined
     ): AutoScalingTargetTrackingScalingPolicyConfigurationDescription = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TargetValue" -> TargetValue.asInstanceOf[js.Any]
       )
 
-      DisableScaleIn.foreach(__v => __obj.update("DisableScaleIn", __v.asInstanceOf[js.Any]))
-      ScaleInCooldown.foreach(__v => __obj.update("ScaleInCooldown", __v.asInstanceOf[js.Any]))
-      ScaleOutCooldown.foreach(__v => __obj.update("ScaleOutCooldown", __v.asInstanceOf[js.Any]))
+      DisableScaleIn.foreach(__v => __obj.updateDynamic("DisableScaleIn")(__v.asInstanceOf[js.Any]))
+      ScaleInCooldown.foreach(__v => __obj.updateDynamic("ScaleInCooldown")(__v.asInstanceOf[js.Any]))
+      ScaleOutCooldown.foreach(__v => __obj.updateDynamic("ScaleOutCooldown")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoScalingTargetTrackingScalingPolicyConfigurationDescription]
     }
   }
@@ -572,13 +572,13 @@ package dynamodb {
         ScaleInCooldown: js.UndefOr[IntegerObject] = js.undefined,
         ScaleOutCooldown: js.UndefOr[IntegerObject] = js.undefined
     ): AutoScalingTargetTrackingScalingPolicyConfigurationUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TargetValue" -> TargetValue.asInstanceOf[js.Any]
       )
 
-      DisableScaleIn.foreach(__v => __obj.update("DisableScaleIn", __v.asInstanceOf[js.Any]))
-      ScaleInCooldown.foreach(__v => __obj.update("ScaleInCooldown", __v.asInstanceOf[js.Any]))
-      ScaleOutCooldown.foreach(__v => __obj.update("ScaleOutCooldown", __v.asInstanceOf[js.Any]))
+      DisableScaleIn.foreach(__v => __obj.updateDynamic("DisableScaleIn")(__v.asInstanceOf[js.Any]))
+      ScaleInCooldown.foreach(__v => __obj.updateDynamic("ScaleInCooldown")(__v.asInstanceOf[js.Any]))
+      ScaleOutCooldown.foreach(__v => __obj.updateDynamic("ScaleOutCooldown")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoScalingTargetTrackingScalingPolicyConfigurationUpdate]
     }
   }
@@ -599,10 +599,12 @@ package dynamodb {
         SourceTableDetails: js.UndefOr[SourceTableDetails] = js.undefined,
         SourceTableFeatureDetails: js.UndefOr[SourceTableFeatureDetails] = js.undefined
     ): BackupDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupDetails.foreach(__v => __obj.update("BackupDetails", __v.asInstanceOf[js.Any]))
-      SourceTableDetails.foreach(__v => __obj.update("SourceTableDetails", __v.asInstanceOf[js.Any]))
-      SourceTableFeatureDetails.foreach(__v => __obj.update("SourceTableFeatureDetails", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupDetails.foreach(__v => __obj.updateDynamic("BackupDetails")(__v.asInstanceOf[js.Any]))
+      SourceTableDetails.foreach(__v => __obj.updateDynamic("SourceTableDetails")(__v.asInstanceOf[js.Any]))
+      SourceTableFeatureDetails.foreach(
+        __v => __obj.updateDynamic("SourceTableFeatureDetails")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[BackupDescription]
     }
   }
@@ -631,7 +633,7 @@ package dynamodb {
         BackupExpiryDateTime: js.UndefOr[Date] = js.undefined,
         BackupSizeBytes: js.UndefOr[BackupSizeBytes] = js.undefined
     ): BackupDetails = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupArn"              -> BackupArn.asInstanceOf[js.Any],
         "BackupCreationDateTime" -> BackupCreationDateTime.asInstanceOf[js.Any],
         "BackupName"             -> BackupName.asInstanceOf[js.Any],
@@ -639,8 +641,8 @@ package dynamodb {
         "BackupType"             -> BackupType.asInstanceOf[js.Any]
       )
 
-      BackupExpiryDateTime.foreach(__v => __obj.update("BackupExpiryDateTime", __v.asInstanceOf[js.Any]))
-      BackupSizeBytes.foreach(__v => __obj.update("BackupSizeBytes", __v.asInstanceOf[js.Any]))
+      BackupExpiryDateTime.foreach(__v => __obj.updateDynamic("BackupExpiryDateTime")(__v.asInstanceOf[js.Any]))
+      BackupSizeBytes.foreach(__v => __obj.updateDynamic("BackupSizeBytes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BackupDetails]
     }
   }
@@ -683,17 +685,17 @@ package dynamodb {
         TableId: js.UndefOr[TableId] = js.undefined,
         TableName: js.UndefOr[TableName] = js.undefined
     ): BackupSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupArn.foreach(__v => __obj.update("BackupArn", __v.asInstanceOf[js.Any]))
-      BackupCreationDateTime.foreach(__v => __obj.update("BackupCreationDateTime", __v.asInstanceOf[js.Any]))
-      BackupExpiryDateTime.foreach(__v => __obj.update("BackupExpiryDateTime", __v.asInstanceOf[js.Any]))
-      BackupName.foreach(__v => __obj.update("BackupName", __v.asInstanceOf[js.Any]))
-      BackupSizeBytes.foreach(__v => __obj.update("BackupSizeBytes", __v.asInstanceOf[js.Any]))
-      BackupStatus.foreach(__v => __obj.update("BackupStatus", __v.asInstanceOf[js.Any]))
-      BackupType.foreach(__v => __obj.update("BackupType", __v.asInstanceOf[js.Any]))
-      TableArn.foreach(__v => __obj.update("TableArn", __v.asInstanceOf[js.Any]))
-      TableId.foreach(__v => __obj.update("TableId", __v.asInstanceOf[js.Any]))
-      TableName.foreach(__v => __obj.update("TableName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupArn.foreach(__v => __obj.updateDynamic("BackupArn")(__v.asInstanceOf[js.Any]))
+      BackupCreationDateTime.foreach(__v => __obj.updateDynamic("BackupCreationDateTime")(__v.asInstanceOf[js.Any]))
+      BackupExpiryDateTime.foreach(__v => __obj.updateDynamic("BackupExpiryDateTime")(__v.asInstanceOf[js.Any]))
+      BackupName.foreach(__v => __obj.updateDynamic("BackupName")(__v.asInstanceOf[js.Any]))
+      BackupSizeBytes.foreach(__v => __obj.updateDynamic("BackupSizeBytes")(__v.asInstanceOf[js.Any]))
+      BackupStatus.foreach(__v => __obj.updateDynamic("BackupStatus")(__v.asInstanceOf[js.Any]))
+      BackupType.foreach(__v => __obj.updateDynamic("BackupType")(__v.asInstanceOf[js.Any]))
+      TableArn.foreach(__v => __obj.updateDynamic("TableArn")(__v.asInstanceOf[js.Any]))
+      TableId.foreach(__v => __obj.updateDynamic("TableId")(__v.asInstanceOf[js.Any]))
+      TableName.foreach(__v => __obj.updateDynamic("TableName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BackupSummary]
     }
   }
@@ -729,11 +731,11 @@ package dynamodb {
         RequestItems: BatchGetRequestMap,
         ReturnConsumedCapacity: js.UndefOr[ReturnConsumedCapacity] = js.undefined
     ): BatchGetItemInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RequestItems" -> RequestItems.asInstanceOf[js.Any]
       )
 
-      ReturnConsumedCapacity.foreach(__v => __obj.update("ReturnConsumedCapacity", __v.asInstanceOf[js.Any]))
+      ReturnConsumedCapacity.foreach(__v => __obj.updateDynamic("ReturnConsumedCapacity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetItemInput]
     }
   }
@@ -754,10 +756,10 @@ package dynamodb {
         Responses: js.UndefOr[BatchGetResponseMap] = js.undefined,
         UnprocessedKeys: js.UndefOr[BatchGetRequestMap] = js.undefined
     ): BatchGetItemOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConsumedCapacity.foreach(__v => __obj.update("ConsumedCapacity", __v.asInstanceOf[js.Any]))
-      Responses.foreach(__v => __obj.update("Responses", __v.asInstanceOf[js.Any]))
-      UnprocessedKeys.foreach(__v => __obj.update("UnprocessedKeys", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConsumedCapacity.foreach(__v => __obj.updateDynamic("ConsumedCapacity")(__v.asInstanceOf[js.Any]))
+      Responses.foreach(__v => __obj.updateDynamic("Responses")(__v.asInstanceOf[js.Any]))
+      UnprocessedKeys.foreach(__v => __obj.updateDynamic("UnprocessedKeys")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetItemOutput]
     }
   }
@@ -778,12 +780,14 @@ package dynamodb {
         ReturnConsumedCapacity: js.UndefOr[ReturnConsumedCapacity] = js.undefined,
         ReturnItemCollectionMetrics: js.UndefOr[ReturnItemCollectionMetrics] = js.undefined
     ): BatchWriteItemInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RequestItems" -> RequestItems.asInstanceOf[js.Any]
       )
 
-      ReturnConsumedCapacity.foreach(__v => __obj.update("ReturnConsumedCapacity", __v.asInstanceOf[js.Any]))
-      ReturnItemCollectionMetrics.foreach(__v => __obj.update("ReturnItemCollectionMetrics", __v.asInstanceOf[js.Any]))
+      ReturnConsumedCapacity.foreach(__v => __obj.updateDynamic("ReturnConsumedCapacity")(__v.asInstanceOf[js.Any]))
+      ReturnItemCollectionMetrics.foreach(
+        __v => __obj.updateDynamic("ReturnItemCollectionMetrics")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[BatchWriteItemInput]
     }
   }
@@ -804,10 +808,10 @@ package dynamodb {
         ItemCollectionMetrics: js.UndefOr[ItemCollectionMetricsPerTable] = js.undefined,
         UnprocessedItems: js.UndefOr[BatchWriteItemRequestMap] = js.undefined
     ): BatchWriteItemOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConsumedCapacity.foreach(__v => __obj.update("ConsumedCapacity", __v.asInstanceOf[js.Any]))
-      ItemCollectionMetrics.foreach(__v => __obj.update("ItemCollectionMetrics", __v.asInstanceOf[js.Any]))
-      UnprocessedItems.foreach(__v => __obj.update("UnprocessedItems", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConsumedCapacity.foreach(__v => __obj.updateDynamic("ConsumedCapacity")(__v.asInstanceOf[js.Any]))
+      ItemCollectionMetrics.foreach(__v => __obj.updateDynamic("ItemCollectionMetrics")(__v.asInstanceOf[js.Any]))
+      UnprocessedItems.foreach(__v => __obj.updateDynamic("UnprocessedItems")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchWriteItemOutput]
     }
   }
@@ -833,10 +837,10 @@ package dynamodb {
         BillingMode: js.UndefOr[BillingMode] = js.undefined,
         LastUpdateToPayPerRequestDateTime: js.UndefOr[Date] = js.undefined
     ): BillingModeSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BillingMode.foreach(__v => __obj.update("BillingMode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BillingMode.foreach(__v => __obj.updateDynamic("BillingMode")(__v.asInstanceOf[js.Any]))
       LastUpdateToPayPerRequestDateTime.foreach(
-        __v => __obj.update("LastUpdateToPayPerRequestDateTime", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("LastUpdateToPayPerRequestDateTime")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[BillingModeSummary]
     }
@@ -858,10 +862,10 @@ package dynamodb {
         ReadCapacityUnits: js.UndefOr[ConsumedCapacityUnits] = js.undefined,
         WriteCapacityUnits: js.UndefOr[ConsumedCapacityUnits] = js.undefined
     ): Capacity = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CapacityUnits.foreach(__v => __obj.update("CapacityUnits", __v.asInstanceOf[js.Any]))
-      ReadCapacityUnits.foreach(__v => __obj.update("ReadCapacityUnits", __v.asInstanceOf[js.Any]))
-      WriteCapacityUnits.foreach(__v => __obj.update("WriteCapacityUnits", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CapacityUnits.foreach(__v => __obj.updateDynamic("CapacityUnits")(__v.asInstanceOf[js.Any]))
+      ReadCapacityUnits.foreach(__v => __obj.updateDynamic("ReadCapacityUnits")(__v.asInstanceOf[js.Any]))
+      WriteCapacityUnits.foreach(__v => __obj.updateDynamic("WriteCapacityUnits")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Capacity]
     }
   }
@@ -904,11 +908,11 @@ package dynamodb {
         ComparisonOperator: ComparisonOperator,
         AttributeValueList: js.UndefOr[AttributeValueList] = js.undefined
     ): Condition = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ComparisonOperator" -> ComparisonOperator.asInstanceOf[js.Any]
       )
 
-      AttributeValueList.foreach(__v => __obj.update("AttributeValueList", __v.asInstanceOf[js.Any]))
+      AttributeValueList.foreach(__v => __obj.updateDynamic("AttributeValueList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Condition]
     }
   }
@@ -935,16 +939,18 @@ package dynamodb {
         ExpressionAttributeValues: js.UndefOr[ExpressionAttributeValueMap] = js.undefined,
         ReturnValuesOnConditionCheckFailure: js.UndefOr[ReturnValuesOnConditionCheckFailure] = js.undefined
     ): ConditionCheck = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConditionExpression" -> ConditionExpression.asInstanceOf[js.Any],
         "Key"                 -> Key.asInstanceOf[js.Any],
         "TableName"           -> TableName.asInstanceOf[js.Any]
       )
 
-      ExpressionAttributeNames.foreach(__v => __obj.update("ExpressionAttributeNames", __v.asInstanceOf[js.Any]))
-      ExpressionAttributeValues.foreach(__v => __obj.update("ExpressionAttributeValues", __v.asInstanceOf[js.Any]))
+      ExpressionAttributeNames.foreach(__v => __obj.updateDynamic("ExpressionAttributeNames")(__v.asInstanceOf[js.Any]))
+      ExpressionAttributeValues.foreach(
+        __v => __obj.updateDynamic("ExpressionAttributeValues")(__v.asInstanceOf[js.Any])
+      )
       ReturnValuesOnConditionCheckFailure.foreach(
-        __v => __obj.update("ReturnValuesOnConditionCheckFailure", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ReturnValuesOnConditionCheckFailure")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ConditionCheck]
     }
@@ -981,14 +987,14 @@ package dynamodb {
         TableName: js.UndefOr[TableName] = js.undefined,
         WriteCapacityUnits: js.UndefOr[ConsumedCapacityUnits] = js.undefined
     ): ConsumedCapacity = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CapacityUnits.foreach(__v => __obj.update("CapacityUnits", __v.asInstanceOf[js.Any]))
-      GlobalSecondaryIndexes.foreach(__v => __obj.update("GlobalSecondaryIndexes", __v.asInstanceOf[js.Any]))
-      LocalSecondaryIndexes.foreach(__v => __obj.update("LocalSecondaryIndexes", __v.asInstanceOf[js.Any]))
-      ReadCapacityUnits.foreach(__v => __obj.update("ReadCapacityUnits", __v.asInstanceOf[js.Any]))
-      Table.foreach(__v => __obj.update("Table", __v.asInstanceOf[js.Any]))
-      TableName.foreach(__v => __obj.update("TableName", __v.asInstanceOf[js.Any]))
-      WriteCapacityUnits.foreach(__v => __obj.update("WriteCapacityUnits", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CapacityUnits.foreach(__v => __obj.updateDynamic("CapacityUnits")(__v.asInstanceOf[js.Any]))
+      GlobalSecondaryIndexes.foreach(__v => __obj.updateDynamic("GlobalSecondaryIndexes")(__v.asInstanceOf[js.Any]))
+      LocalSecondaryIndexes.foreach(__v => __obj.updateDynamic("LocalSecondaryIndexes")(__v.asInstanceOf[js.Any]))
+      ReadCapacityUnits.foreach(__v => __obj.updateDynamic("ReadCapacityUnits")(__v.asInstanceOf[js.Any]))
+      Table.foreach(__v => __obj.updateDynamic("Table")(__v.asInstanceOf[js.Any]))
+      TableName.foreach(__v => __obj.updateDynamic("TableName")(__v.asInstanceOf[js.Any]))
+      WriteCapacityUnits.foreach(__v => __obj.updateDynamic("WriteCapacityUnits")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConsumedCapacity]
     }
   }
@@ -1007,12 +1013,12 @@ package dynamodb {
         ContinuousBackupsStatus: ContinuousBackupsStatus,
         PointInTimeRecoveryDescription: js.UndefOr[PointInTimeRecoveryDescription] = js.undefined
     ): ContinuousBackupsDescription = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ContinuousBackupsStatus" -> ContinuousBackupsStatus.asInstanceOf[js.Any]
       )
 
       PointInTimeRecoveryDescription.foreach(
-        __v => __obj.update("PointInTimeRecoveryDescription", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("PointInTimeRecoveryDescription")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ContinuousBackupsDescription]
     }
@@ -1036,7 +1042,7 @@ package dynamodb {
         BackupName: BackupName,
         TableName: TableName
     ): CreateBackupInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupName" -> BackupName.asInstanceOf[js.Any],
         "TableName"  -> TableName.asInstanceOf[js.Any]
       )
@@ -1054,8 +1060,8 @@ package dynamodb {
     def apply(
         BackupDetails: js.UndefOr[BackupDetails] = js.undefined
     ): CreateBackupOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupDetails.foreach(__v => __obj.update("BackupDetails", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupDetails.foreach(__v => __obj.updateDynamic("BackupDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateBackupOutput]
     }
   }
@@ -1078,13 +1084,13 @@ package dynamodb {
         Projection: Projection,
         ProvisionedThroughput: js.UndefOr[ProvisionedThroughput] = js.undefined
     ): CreateGlobalSecondaryIndexAction = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IndexName"  -> IndexName.asInstanceOf[js.Any],
         "KeySchema"  -> KeySchema.asInstanceOf[js.Any],
         "Projection" -> Projection.asInstanceOf[js.Any]
       )
 
-      ProvisionedThroughput.foreach(__v => __obj.update("ProvisionedThroughput", __v.asInstanceOf[js.Any]))
+      ProvisionedThroughput.foreach(__v => __obj.updateDynamic("ProvisionedThroughput")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGlobalSecondaryIndexAction]
     }
   }
@@ -1100,7 +1106,7 @@ package dynamodb {
         GlobalTableName: TableName,
         ReplicationGroup: ReplicaList
     ): CreateGlobalTableInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GlobalTableName"  -> GlobalTableName.asInstanceOf[js.Any],
         "ReplicationGroup" -> ReplicationGroup.asInstanceOf[js.Any]
       )
@@ -1118,8 +1124,8 @@ package dynamodb {
     def apply(
         GlobalTableDescription: js.UndefOr[GlobalTableDescription] = js.undefined
     ): CreateGlobalTableOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GlobalTableDescription.foreach(__v => __obj.update("GlobalTableDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GlobalTableDescription.foreach(__v => __obj.updateDynamic("GlobalTableDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGlobalTableOutput]
     }
   }
@@ -1136,7 +1142,7 @@ package dynamodb {
     def apply(
         RegionName: RegionName
     ): CreateReplicaAction = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RegionName" -> RegionName.asInstanceOf[js.Any]
       )
 
@@ -1174,19 +1180,19 @@ package dynamodb {
         StreamSpecification: js.UndefOr[StreamSpecification] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateTableInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AttributeDefinitions" -> AttributeDefinitions.asInstanceOf[js.Any],
         "KeySchema"            -> KeySchema.asInstanceOf[js.Any],
         "TableName"            -> TableName.asInstanceOf[js.Any]
       )
 
-      BillingMode.foreach(__v => __obj.update("BillingMode", __v.asInstanceOf[js.Any]))
-      GlobalSecondaryIndexes.foreach(__v => __obj.update("GlobalSecondaryIndexes", __v.asInstanceOf[js.Any]))
-      LocalSecondaryIndexes.foreach(__v => __obj.update("LocalSecondaryIndexes", __v.asInstanceOf[js.Any]))
-      ProvisionedThroughput.foreach(__v => __obj.update("ProvisionedThroughput", __v.asInstanceOf[js.Any]))
-      SSESpecification.foreach(__v => __obj.update("SSESpecification", __v.asInstanceOf[js.Any]))
-      StreamSpecification.foreach(__v => __obj.update("StreamSpecification", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      BillingMode.foreach(__v => __obj.updateDynamic("BillingMode")(__v.asInstanceOf[js.Any]))
+      GlobalSecondaryIndexes.foreach(__v => __obj.updateDynamic("GlobalSecondaryIndexes")(__v.asInstanceOf[js.Any]))
+      LocalSecondaryIndexes.foreach(__v => __obj.updateDynamic("LocalSecondaryIndexes")(__v.asInstanceOf[js.Any]))
+      ProvisionedThroughput.foreach(__v => __obj.updateDynamic("ProvisionedThroughput")(__v.asInstanceOf[js.Any]))
+      SSESpecification.foreach(__v => __obj.updateDynamic("SSESpecification")(__v.asInstanceOf[js.Any]))
+      StreamSpecification.foreach(__v => __obj.updateDynamic("StreamSpecification")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTableInput]
     }
   }
@@ -1203,8 +1209,8 @@ package dynamodb {
     def apply(
         TableDescription: js.UndefOr[TableDescription] = js.undefined
     ): CreateTableOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TableDescription.foreach(__v => __obj.update("TableDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TableDescription.foreach(__v => __obj.updateDynamic("TableDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTableOutput]
     }
   }
@@ -1231,16 +1237,18 @@ package dynamodb {
         ExpressionAttributeValues: js.UndefOr[ExpressionAttributeValueMap] = js.undefined,
         ReturnValuesOnConditionCheckFailure: js.UndefOr[ReturnValuesOnConditionCheckFailure] = js.undefined
     ): Delete = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"       -> Key.asInstanceOf[js.Any],
         "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
-      ConditionExpression.foreach(__v => __obj.update("ConditionExpression", __v.asInstanceOf[js.Any]))
-      ExpressionAttributeNames.foreach(__v => __obj.update("ExpressionAttributeNames", __v.asInstanceOf[js.Any]))
-      ExpressionAttributeValues.foreach(__v => __obj.update("ExpressionAttributeValues", __v.asInstanceOf[js.Any]))
+      ConditionExpression.foreach(__v => __obj.updateDynamic("ConditionExpression")(__v.asInstanceOf[js.Any]))
+      ExpressionAttributeNames.foreach(__v => __obj.updateDynamic("ExpressionAttributeNames")(__v.asInstanceOf[js.Any]))
+      ExpressionAttributeValues.foreach(
+        __v => __obj.updateDynamic("ExpressionAttributeValues")(__v.asInstanceOf[js.Any])
+      )
       ReturnValuesOnConditionCheckFailure.foreach(
-        __v => __obj.update("ReturnValuesOnConditionCheckFailure", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ReturnValuesOnConditionCheckFailure")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[Delete]
     }
@@ -1255,7 +1263,7 @@ package dynamodb {
     def apply(
         BackupArn: BackupArn
     ): DeleteBackupInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupArn" -> BackupArn.asInstanceOf[js.Any]
       )
 
@@ -1272,8 +1280,8 @@ package dynamodb {
     def apply(
         BackupDescription: js.UndefOr[BackupDescription] = js.undefined
     ): DeleteBackupOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupDescription.foreach(__v => __obj.update("BackupDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupDescription.foreach(__v => __obj.updateDynamic("BackupDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteBackupOutput]
     }
   }
@@ -1290,7 +1298,7 @@ package dynamodb {
     def apply(
         IndexName: IndexName
     ): DeleteGlobalSecondaryIndexAction = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IndexName" -> IndexName.asInstanceOf[js.Any]
       )
 
@@ -1328,19 +1336,23 @@ package dynamodb {
         ReturnItemCollectionMetrics: js.UndefOr[ReturnItemCollectionMetrics] = js.undefined,
         ReturnValues: js.UndefOr[ReturnValue] = js.undefined
     ): DeleteItemInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"       -> Key.asInstanceOf[js.Any],
         "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
-      ConditionExpression.foreach(__v => __obj.update("ConditionExpression", __v.asInstanceOf[js.Any]))
-      ConditionalOperator.foreach(__v => __obj.update("ConditionalOperator", __v.asInstanceOf[js.Any]))
-      Expected.foreach(__v => __obj.update("Expected", __v.asInstanceOf[js.Any]))
-      ExpressionAttributeNames.foreach(__v => __obj.update("ExpressionAttributeNames", __v.asInstanceOf[js.Any]))
-      ExpressionAttributeValues.foreach(__v => __obj.update("ExpressionAttributeValues", __v.asInstanceOf[js.Any]))
-      ReturnConsumedCapacity.foreach(__v => __obj.update("ReturnConsumedCapacity", __v.asInstanceOf[js.Any]))
-      ReturnItemCollectionMetrics.foreach(__v => __obj.update("ReturnItemCollectionMetrics", __v.asInstanceOf[js.Any]))
-      ReturnValues.foreach(__v => __obj.update("ReturnValues", __v.asInstanceOf[js.Any]))
+      ConditionExpression.foreach(__v => __obj.updateDynamic("ConditionExpression")(__v.asInstanceOf[js.Any]))
+      ConditionalOperator.foreach(__v => __obj.updateDynamic("ConditionalOperator")(__v.asInstanceOf[js.Any]))
+      Expected.foreach(__v => __obj.updateDynamic("Expected")(__v.asInstanceOf[js.Any]))
+      ExpressionAttributeNames.foreach(__v => __obj.updateDynamic("ExpressionAttributeNames")(__v.asInstanceOf[js.Any]))
+      ExpressionAttributeValues.foreach(
+        __v => __obj.updateDynamic("ExpressionAttributeValues")(__v.asInstanceOf[js.Any])
+      )
+      ReturnConsumedCapacity.foreach(__v => __obj.updateDynamic("ReturnConsumedCapacity")(__v.asInstanceOf[js.Any]))
+      ReturnItemCollectionMetrics.foreach(
+        __v => __obj.updateDynamic("ReturnItemCollectionMetrics")(__v.asInstanceOf[js.Any])
+      )
+      ReturnValues.foreach(__v => __obj.updateDynamic("ReturnValues")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteItemInput]
     }
   }
@@ -1361,10 +1373,10 @@ package dynamodb {
         ConsumedCapacity: js.UndefOr[ConsumedCapacity] = js.undefined,
         ItemCollectionMetrics: js.UndefOr[ItemCollectionMetrics] = js.undefined
     ): DeleteItemOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      ConsumedCapacity.foreach(__v => __obj.update("ConsumedCapacity", __v.asInstanceOf[js.Any]))
-      ItemCollectionMetrics.foreach(__v => __obj.update("ItemCollectionMetrics", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      ConsumedCapacity.foreach(__v => __obj.updateDynamic("ConsumedCapacity")(__v.asInstanceOf[js.Any]))
+      ItemCollectionMetrics.foreach(__v => __obj.updateDynamic("ItemCollectionMetrics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteItemOutput]
     }
   }
@@ -1381,7 +1393,7 @@ package dynamodb {
     def apply(
         RegionName: RegionName
     ): DeleteReplicaAction = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RegionName" -> RegionName.asInstanceOf[js.Any]
       )
 
@@ -1401,7 +1413,7 @@ package dynamodb {
     def apply(
         Key: Key
     ): DeleteRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key" -> Key.asInstanceOf[js.Any]
       )
 
@@ -1421,7 +1433,7 @@ package dynamodb {
     def apply(
         TableName: TableName
     ): DeleteTableInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
@@ -1441,8 +1453,8 @@ package dynamodb {
     def apply(
         TableDescription: js.UndefOr[TableDescription] = js.undefined
     ): DeleteTableOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TableDescription.foreach(__v => __obj.update("TableDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TableDescription.foreach(__v => __obj.updateDynamic("TableDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteTableOutput]
     }
   }
@@ -1456,7 +1468,7 @@ package dynamodb {
     def apply(
         BackupArn: BackupArn
     ): DescribeBackupInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupArn" -> BackupArn.asInstanceOf[js.Any]
       )
 
@@ -1473,8 +1485,8 @@ package dynamodb {
     def apply(
         BackupDescription: js.UndefOr[BackupDescription] = js.undefined
     ): DescribeBackupOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupDescription.foreach(__v => __obj.update("BackupDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupDescription.foreach(__v => __obj.updateDynamic("BackupDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeBackupOutput]
     }
   }
@@ -1488,7 +1500,7 @@ package dynamodb {
     def apply(
         TableName: TableName
     ): DescribeContinuousBackupsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
@@ -1505,9 +1517,9 @@ package dynamodb {
     def apply(
         ContinuousBackupsDescription: js.UndefOr[ContinuousBackupsDescription] = js.undefined
     ): DescribeContinuousBackupsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       ContinuousBackupsDescription.foreach(
-        __v => __obj.update("ContinuousBackupsDescription", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ContinuousBackupsDescription")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeContinuousBackupsOutput]
     }
@@ -1519,7 +1531,7 @@ package dynamodb {
   object DescribeEndpointsRequest {
     def apply(
         ): DescribeEndpointsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DescribeEndpointsRequest]
     }
@@ -1534,7 +1546,7 @@ package dynamodb {
     def apply(
         Endpoints: Endpoints
     ): DescribeEndpointsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Endpoints" -> Endpoints.asInstanceOf[js.Any]
       )
 
@@ -1551,7 +1563,7 @@ package dynamodb {
     def apply(
         GlobalTableName: TableName
     ): DescribeGlobalTableInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GlobalTableName" -> GlobalTableName.asInstanceOf[js.Any]
       )
 
@@ -1568,8 +1580,8 @@ package dynamodb {
     def apply(
         GlobalTableDescription: js.UndefOr[GlobalTableDescription] = js.undefined
     ): DescribeGlobalTableOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GlobalTableDescription.foreach(__v => __obj.update("GlobalTableDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GlobalTableDescription.foreach(__v => __obj.updateDynamic("GlobalTableDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeGlobalTableOutput]
     }
   }
@@ -1583,7 +1595,7 @@ package dynamodb {
     def apply(
         GlobalTableName: TableName
     ): DescribeGlobalTableSettingsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GlobalTableName" -> GlobalTableName.asInstanceOf[js.Any]
       )
 
@@ -1602,9 +1614,9 @@ package dynamodb {
         GlobalTableName: js.UndefOr[TableName] = js.undefined,
         ReplicaSettings: js.UndefOr[ReplicaSettingsDescriptionList] = js.undefined
     ): DescribeGlobalTableSettingsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GlobalTableName.foreach(__v => __obj.update("GlobalTableName", __v.asInstanceOf[js.Any]))
-      ReplicaSettings.foreach(__v => __obj.update("ReplicaSettings", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GlobalTableName.foreach(__v => __obj.updateDynamic("GlobalTableName")(__v.asInstanceOf[js.Any]))
+      ReplicaSettings.foreach(__v => __obj.updateDynamic("ReplicaSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeGlobalTableSettingsOutput]
     }
   }
@@ -1618,7 +1630,7 @@ package dynamodb {
   object DescribeLimitsInput {
     def apply(
         ): DescribeLimitsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DescribeLimitsInput]
     }
@@ -1642,13 +1654,19 @@ package dynamodb {
         TableMaxReadCapacityUnits: js.UndefOr[PositiveLongObject] = js.undefined,
         TableMaxWriteCapacityUnits: js.UndefOr[PositiveLongObject] = js.undefined
     ): DescribeLimitsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccountMaxReadCapacityUnits.foreach(__v => __obj.update("AccountMaxReadCapacityUnits", __v.asInstanceOf[js.Any]))
-      AccountMaxWriteCapacityUnits.foreach(
-        __v => __obj.update("AccountMaxWriteCapacityUnits", __v.asInstanceOf[js.Any])
+      val __obj = js.Dynamic.literal()
+      AccountMaxReadCapacityUnits.foreach(
+        __v => __obj.updateDynamic("AccountMaxReadCapacityUnits")(__v.asInstanceOf[js.Any])
       )
-      TableMaxReadCapacityUnits.foreach(__v => __obj.update("TableMaxReadCapacityUnits", __v.asInstanceOf[js.Any]))
-      TableMaxWriteCapacityUnits.foreach(__v => __obj.update("TableMaxWriteCapacityUnits", __v.asInstanceOf[js.Any]))
+      AccountMaxWriteCapacityUnits.foreach(
+        __v => __obj.updateDynamic("AccountMaxWriteCapacityUnits")(__v.asInstanceOf[js.Any])
+      )
+      TableMaxReadCapacityUnits.foreach(
+        __v => __obj.updateDynamic("TableMaxReadCapacityUnits")(__v.asInstanceOf[js.Any])
+      )
+      TableMaxWriteCapacityUnits.foreach(
+        __v => __obj.updateDynamic("TableMaxWriteCapacityUnits")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[DescribeLimitsOutput]
     }
   }
@@ -1665,7 +1683,7 @@ package dynamodb {
     def apply(
         TableName: TableName
     ): DescribeTableInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
@@ -1685,8 +1703,8 @@ package dynamodb {
     def apply(
         Table: js.UndefOr[TableDescription] = js.undefined
     ): DescribeTableOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Table.foreach(__v => __obj.update("Table", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Table.foreach(__v => __obj.updateDynamic("Table")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTableOutput]
     }
   }
@@ -1700,7 +1718,7 @@ package dynamodb {
     def apply(
         TableName: TableName
     ): DescribeTimeToLiveInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
@@ -1717,8 +1735,8 @@ package dynamodb {
     def apply(
         TimeToLiveDescription: js.UndefOr[TimeToLiveDescription] = js.undefined
     ): DescribeTimeToLiveOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TimeToLiveDescription.foreach(__v => __obj.update("TimeToLiveDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TimeToLiveDescription.foreach(__v => __obj.updateDynamic("TimeToLiveDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTimeToLiveOutput]
     }
   }
@@ -1737,7 +1755,7 @@ package dynamodb {
         Address: String,
         CachePeriodInMinutes: Double
     ): Endpoint = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Address"              -> Address.asInstanceOf[js.Any],
         "CachePeriodInMinutes" -> CachePeriodInMinutes.asInstanceOf[js.Any]
       )
@@ -1767,11 +1785,11 @@ package dynamodb {
         Exists: js.UndefOr[BooleanObject] = js.undefined,
         Value: js.UndefOr[AttributeValue] = js.undefined
     ): ExpectedAttributeValue = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttributeValueList.foreach(__v => __obj.update("AttributeValueList", __v.asInstanceOf[js.Any]))
-      ComparisonOperator.foreach(__v => __obj.update("ComparisonOperator", __v.asInstanceOf[js.Any]))
-      Exists.foreach(__v => __obj.update("Exists", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttributeValueList.foreach(__v => __obj.updateDynamic("AttributeValueList")(__v.asInstanceOf[js.Any]))
+      ComparisonOperator.foreach(__v => __obj.updateDynamic("ComparisonOperator")(__v.asInstanceOf[js.Any]))
+      Exists.foreach(__v => __obj.updateDynamic("Exists")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExpectedAttributeValue]
     }
   }
@@ -1794,13 +1812,13 @@ package dynamodb {
         ExpressionAttributeNames: js.UndefOr[ExpressionAttributeNameMap] = js.undefined,
         ProjectionExpression: js.UndefOr[ProjectionExpression] = js.undefined
     ): Get = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"       -> Key.asInstanceOf[js.Any],
         "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
-      ExpressionAttributeNames.foreach(__v => __obj.update("ExpressionAttributeNames", __v.asInstanceOf[js.Any]))
-      ProjectionExpression.foreach(__v => __obj.update("ProjectionExpression", __v.asInstanceOf[js.Any]))
+      ExpressionAttributeNames.foreach(__v => __obj.updateDynamic("ExpressionAttributeNames")(__v.asInstanceOf[js.Any]))
+      ProjectionExpression.foreach(__v => __obj.updateDynamic("ProjectionExpression")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Get]
     }
   }
@@ -1829,16 +1847,16 @@ package dynamodb {
         ProjectionExpression: js.UndefOr[ProjectionExpression] = js.undefined,
         ReturnConsumedCapacity: js.UndefOr[ReturnConsumedCapacity] = js.undefined
     ): GetItemInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"       -> Key.asInstanceOf[js.Any],
         "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
-      AttributesToGet.foreach(__v => __obj.update("AttributesToGet", __v.asInstanceOf[js.Any]))
-      ConsistentRead.foreach(__v => __obj.update("ConsistentRead", __v.asInstanceOf[js.Any]))
-      ExpressionAttributeNames.foreach(__v => __obj.update("ExpressionAttributeNames", __v.asInstanceOf[js.Any]))
-      ProjectionExpression.foreach(__v => __obj.update("ProjectionExpression", __v.asInstanceOf[js.Any]))
-      ReturnConsumedCapacity.foreach(__v => __obj.update("ReturnConsumedCapacity", __v.asInstanceOf[js.Any]))
+      AttributesToGet.foreach(__v => __obj.updateDynamic("AttributesToGet")(__v.asInstanceOf[js.Any]))
+      ConsistentRead.foreach(__v => __obj.updateDynamic("ConsistentRead")(__v.asInstanceOf[js.Any]))
+      ExpressionAttributeNames.foreach(__v => __obj.updateDynamic("ExpressionAttributeNames")(__v.asInstanceOf[js.Any]))
+      ProjectionExpression.foreach(__v => __obj.updateDynamic("ProjectionExpression")(__v.asInstanceOf[js.Any]))
+      ReturnConsumedCapacity.foreach(__v => __obj.updateDynamic("ReturnConsumedCapacity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetItemInput]
     }
   }
@@ -1857,9 +1875,9 @@ package dynamodb {
         ConsumedCapacity: js.UndefOr[ConsumedCapacity] = js.undefined,
         Item: js.UndefOr[AttributeMap] = js.undefined
     ): GetItemOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConsumedCapacity.foreach(__v => __obj.update("ConsumedCapacity", __v.asInstanceOf[js.Any]))
-      Item.foreach(__v => __obj.update("Item", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConsumedCapacity.foreach(__v => __obj.updateDynamic("ConsumedCapacity")(__v.asInstanceOf[js.Any]))
+      Item.foreach(__v => __obj.updateDynamic("Item")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetItemOutput]
     }
   }
@@ -1882,13 +1900,13 @@ package dynamodb {
         Projection: Projection,
         ProvisionedThroughput: js.UndefOr[ProvisionedThroughput] = js.undefined
     ): GlobalSecondaryIndex = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IndexName"  -> IndexName.asInstanceOf[js.Any],
         "KeySchema"  -> KeySchema.asInstanceOf[js.Any],
         "Projection" -> Projection.asInstanceOf[js.Any]
       )
 
-      ProvisionedThroughput.foreach(__v => __obj.update("ProvisionedThroughput", __v.asInstanceOf[js.Any]))
+      ProvisionedThroughput.foreach(__v => __obj.updateDynamic("ProvisionedThroughput")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GlobalSecondaryIndex]
     }
   }
@@ -1921,16 +1939,16 @@ package dynamodb {
         Projection: js.UndefOr[Projection] = js.undefined,
         ProvisionedThroughput: js.UndefOr[ProvisionedThroughputDescription] = js.undefined
     ): GlobalSecondaryIndexDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Backfilling.foreach(__v => __obj.update("Backfilling", __v.asInstanceOf[js.Any]))
-      IndexArn.foreach(__v => __obj.update("IndexArn", __v.asInstanceOf[js.Any]))
-      IndexName.foreach(__v => __obj.update("IndexName", __v.asInstanceOf[js.Any]))
-      IndexSizeBytes.foreach(__v => __obj.update("IndexSizeBytes", __v.asInstanceOf[js.Any]))
-      IndexStatus.foreach(__v => __obj.update("IndexStatus", __v.asInstanceOf[js.Any]))
-      ItemCount.foreach(__v => __obj.update("ItemCount", __v.asInstanceOf[js.Any]))
-      KeySchema.foreach(__v => __obj.update("KeySchema", __v.asInstanceOf[js.Any]))
-      Projection.foreach(__v => __obj.update("Projection", __v.asInstanceOf[js.Any]))
-      ProvisionedThroughput.foreach(__v => __obj.update("ProvisionedThroughput", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Backfilling.foreach(__v => __obj.updateDynamic("Backfilling")(__v.asInstanceOf[js.Any]))
+      IndexArn.foreach(__v => __obj.updateDynamic("IndexArn")(__v.asInstanceOf[js.Any]))
+      IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
+      IndexSizeBytes.foreach(__v => __obj.updateDynamic("IndexSizeBytes")(__v.asInstanceOf[js.Any]))
+      IndexStatus.foreach(__v => __obj.updateDynamic("IndexStatus")(__v.asInstanceOf[js.Any]))
+      ItemCount.foreach(__v => __obj.updateDynamic("ItemCount")(__v.asInstanceOf[js.Any]))
+      KeySchema.foreach(__v => __obj.updateDynamic("KeySchema")(__v.asInstanceOf[js.Any]))
+      Projection.foreach(__v => __obj.updateDynamic("Projection")(__v.asInstanceOf[js.Any]))
+      ProvisionedThroughput.foreach(__v => __obj.updateDynamic("ProvisionedThroughput")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GlobalSecondaryIndexDescription]
     }
   }
@@ -1953,11 +1971,11 @@ package dynamodb {
         Projection: js.UndefOr[Projection] = js.undefined,
         ProvisionedThroughput: js.UndefOr[ProvisionedThroughput] = js.undefined
     ): GlobalSecondaryIndexInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IndexName.foreach(__v => __obj.update("IndexName", __v.asInstanceOf[js.Any]))
-      KeySchema.foreach(__v => __obj.update("KeySchema", __v.asInstanceOf[js.Any]))
-      Projection.foreach(__v => __obj.update("Projection", __v.asInstanceOf[js.Any]))
-      ProvisionedThroughput.foreach(__v => __obj.update("ProvisionedThroughput", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
+      KeySchema.foreach(__v => __obj.updateDynamic("KeySchema")(__v.asInstanceOf[js.Any]))
+      Projection.foreach(__v => __obj.updateDynamic("Projection")(__v.asInstanceOf[js.Any]))
+      ProvisionedThroughput.foreach(__v => __obj.updateDynamic("ProvisionedThroughput")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GlobalSecondaryIndexInfo]
     }
   }
@@ -1981,10 +1999,10 @@ package dynamodb {
         Delete: js.UndefOr[DeleteGlobalSecondaryIndexAction] = js.undefined,
         Update: js.UndefOr[UpdateGlobalSecondaryIndexAction] = js.undefined
     ): GlobalSecondaryIndexUpdate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Create.foreach(__v => __obj.update("Create", __v.asInstanceOf[js.Any]))
-      Delete.foreach(__v => __obj.update("Delete", __v.asInstanceOf[js.Any]))
-      Update.foreach(__v => __obj.update("Update", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Create.foreach(__v => __obj.updateDynamic("Create")(__v.asInstanceOf[js.Any]))
+      Delete.foreach(__v => __obj.updateDynamic("Delete")(__v.asInstanceOf[js.Any]))
+      Update.foreach(__v => __obj.updateDynamic("Update")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GlobalSecondaryIndexUpdate]
     }
   }
@@ -2003,9 +2021,9 @@ package dynamodb {
         GlobalTableName: js.UndefOr[TableName] = js.undefined,
         ReplicationGroup: js.UndefOr[ReplicaList] = js.undefined
     ): GlobalTable = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GlobalTableName.foreach(__v => __obj.update("GlobalTableName", __v.asInstanceOf[js.Any]))
-      ReplicationGroup.foreach(__v => __obj.update("ReplicationGroup", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GlobalTableName.foreach(__v => __obj.updateDynamic("GlobalTableName")(__v.asInstanceOf[js.Any]))
+      ReplicationGroup.foreach(__v => __obj.updateDynamic("ReplicationGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GlobalTable]
     }
   }
@@ -2030,12 +2048,12 @@ package dynamodb {
         GlobalTableStatus: js.UndefOr[GlobalTableStatus] = js.undefined,
         ReplicationGroup: js.UndefOr[ReplicaDescriptionList] = js.undefined
     ): GlobalTableDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationDateTime.foreach(__v => __obj.update("CreationDateTime", __v.asInstanceOf[js.Any]))
-      GlobalTableArn.foreach(__v => __obj.update("GlobalTableArn", __v.asInstanceOf[js.Any]))
-      GlobalTableName.foreach(__v => __obj.update("GlobalTableName", __v.asInstanceOf[js.Any]))
-      GlobalTableStatus.foreach(__v => __obj.update("GlobalTableStatus", __v.asInstanceOf[js.Any]))
-      ReplicationGroup.foreach(__v => __obj.update("ReplicationGroup", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationDateTime.foreach(__v => __obj.updateDynamic("CreationDateTime")(__v.asInstanceOf[js.Any]))
+      GlobalTableArn.foreach(__v => __obj.updateDynamic("GlobalTableArn")(__v.asInstanceOf[js.Any]))
+      GlobalTableName.foreach(__v => __obj.updateDynamic("GlobalTableName")(__v.asInstanceOf[js.Any]))
+      GlobalTableStatus.foreach(__v => __obj.updateDynamic("GlobalTableStatus")(__v.asInstanceOf[js.Any]))
+      ReplicationGroup.foreach(__v => __obj.updateDynamic("ReplicationGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GlobalTableDescription]
     }
   }
@@ -2056,15 +2074,15 @@ package dynamodb {
         ProvisionedWriteCapacityAutoScalingSettingsUpdate: js.UndefOr[AutoScalingSettingsUpdate] = js.undefined,
         ProvisionedWriteCapacityUnits: js.UndefOr[PositiveLongObject] = js.undefined
     ): GlobalTableGlobalSecondaryIndexSettingsUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IndexName" -> IndexName.asInstanceOf[js.Any]
       )
 
       ProvisionedWriteCapacityAutoScalingSettingsUpdate.foreach(
-        __v => __obj.update("ProvisionedWriteCapacityAutoScalingSettingsUpdate", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ProvisionedWriteCapacityAutoScalingSettingsUpdate")(__v.asInstanceOf[js.Any])
       )
       ProvisionedWriteCapacityUnits.foreach(
-        __v => __obj.update("ProvisionedWriteCapacityUnits", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ProvisionedWriteCapacityUnits")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GlobalTableGlobalSecondaryIndexSettingsUpdate]
     }
@@ -2102,9 +2120,9 @@ package dynamodb {
         ItemCollectionKey: js.UndefOr[ItemCollectionKeyAttributeMap] = js.undefined,
         SizeEstimateRangeGB: js.UndefOr[ItemCollectionSizeEstimateRange] = js.undefined
     ): ItemCollectionMetrics = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ItemCollectionKey.foreach(__v => __obj.update("ItemCollectionKey", __v.asInstanceOf[js.Any]))
-      SizeEstimateRangeGB.foreach(__v => __obj.update("SizeEstimateRangeGB", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ItemCollectionKey.foreach(__v => __obj.updateDynamic("ItemCollectionKey")(__v.asInstanceOf[js.Any]))
+      SizeEstimateRangeGB.foreach(__v => __obj.updateDynamic("SizeEstimateRangeGB")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ItemCollectionMetrics]
     }
   }
@@ -2121,8 +2139,8 @@ package dynamodb {
     def apply(
         Item: js.UndefOr[AttributeMap] = js.undefined
     ): ItemResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Item.foreach(__v => __obj.update("Item", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Item.foreach(__v => __obj.updateDynamic("Item")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ItemResponse]
     }
   }
@@ -2143,7 +2161,7 @@ package dynamodb {
         AttributeName: KeySchemaAttributeName,
         KeyType: KeyType
     ): KeySchemaElement = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AttributeName" -> AttributeName.asInstanceOf[js.Any],
         "KeyType"       -> KeyType.asInstanceOf[js.Any]
       )
@@ -2180,14 +2198,14 @@ package dynamodb {
         ExpressionAttributeNames: js.UndefOr[ExpressionAttributeNameMap] = js.undefined,
         ProjectionExpression: js.UndefOr[ProjectionExpression] = js.undefined
     ): KeysAndAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Keys" -> Keys.asInstanceOf[js.Any]
       )
 
-      AttributesToGet.foreach(__v => __obj.update("AttributesToGet", __v.asInstanceOf[js.Any]))
-      ConsistentRead.foreach(__v => __obj.update("ConsistentRead", __v.asInstanceOf[js.Any]))
-      ExpressionAttributeNames.foreach(__v => __obj.update("ExpressionAttributeNames", __v.asInstanceOf[js.Any]))
-      ProjectionExpression.foreach(__v => __obj.update("ProjectionExpression", __v.asInstanceOf[js.Any]))
+      AttributesToGet.foreach(__v => __obj.updateDynamic("AttributesToGet")(__v.asInstanceOf[js.Any]))
+      ConsistentRead.foreach(__v => __obj.updateDynamic("ConsistentRead")(__v.asInstanceOf[js.Any]))
+      ExpressionAttributeNames.foreach(__v => __obj.updateDynamic("ExpressionAttributeNames")(__v.asInstanceOf[js.Any]))
+      ProjectionExpression.foreach(__v => __obj.updateDynamic("ProjectionExpression")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KeysAndAttributes]
     }
   }
@@ -2211,13 +2229,13 @@ package dynamodb {
         TimeRangeLowerBound: js.UndefOr[TimeRangeLowerBound] = js.undefined,
         TimeRangeUpperBound: js.UndefOr[TimeRangeUpperBound] = js.undefined
     ): ListBackupsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupType.foreach(__v => __obj.update("BackupType", __v.asInstanceOf[js.Any]))
-      ExclusiveStartBackupArn.foreach(__v => __obj.update("ExclusiveStartBackupArn", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      TableName.foreach(__v => __obj.update("TableName", __v.asInstanceOf[js.Any]))
-      TimeRangeLowerBound.foreach(__v => __obj.update("TimeRangeLowerBound", __v.asInstanceOf[js.Any]))
-      TimeRangeUpperBound.foreach(__v => __obj.update("TimeRangeUpperBound", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupType.foreach(__v => __obj.updateDynamic("BackupType")(__v.asInstanceOf[js.Any]))
+      ExclusiveStartBackupArn.foreach(__v => __obj.updateDynamic("ExclusiveStartBackupArn")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      TableName.foreach(__v => __obj.updateDynamic("TableName")(__v.asInstanceOf[js.Any]))
+      TimeRangeLowerBound.foreach(__v => __obj.updateDynamic("TimeRangeLowerBound")(__v.asInstanceOf[js.Any]))
+      TimeRangeUpperBound.foreach(__v => __obj.updateDynamic("TimeRangeUpperBound")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBackupsInput]
     }
   }
@@ -2233,9 +2251,9 @@ package dynamodb {
         BackupSummaries: js.UndefOr[BackupSummaries] = js.undefined,
         LastEvaluatedBackupArn: js.UndefOr[BackupArn] = js.undefined
     ): ListBackupsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupSummaries.foreach(__v => __obj.update("BackupSummaries", __v.asInstanceOf[js.Any]))
-      LastEvaluatedBackupArn.foreach(__v => __obj.update("LastEvaluatedBackupArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupSummaries.foreach(__v => __obj.updateDynamic("BackupSummaries")(__v.asInstanceOf[js.Any]))
+      LastEvaluatedBackupArn.foreach(__v => __obj.updateDynamic("LastEvaluatedBackupArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBackupsOutput]
     }
   }
@@ -2253,12 +2271,12 @@ package dynamodb {
         Limit: js.UndefOr[PositiveIntegerObject] = js.undefined,
         RegionName: js.UndefOr[RegionName] = js.undefined
     ): ListGlobalTablesInput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       ExclusiveStartGlobalTableName.foreach(
-        __v => __obj.update("ExclusiveStartGlobalTableName", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ExclusiveStartGlobalTableName")(__v.asInstanceOf[js.Any])
       )
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      RegionName.foreach(__v => __obj.update("RegionName", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      RegionName.foreach(__v => __obj.updateDynamic("RegionName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGlobalTablesInput]
     }
   }
@@ -2274,10 +2292,10 @@ package dynamodb {
         GlobalTables: js.UndefOr[GlobalTableList] = js.undefined,
         LastEvaluatedGlobalTableName: js.UndefOr[TableName] = js.undefined
     ): ListGlobalTablesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GlobalTables.foreach(__v => __obj.update("GlobalTables", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GlobalTables.foreach(__v => __obj.updateDynamic("GlobalTables")(__v.asInstanceOf[js.Any]))
       LastEvaluatedGlobalTableName.foreach(
-        __v => __obj.update("LastEvaluatedGlobalTableName", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("LastEvaluatedGlobalTableName")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListGlobalTablesOutput]
     }
@@ -2297,9 +2315,9 @@ package dynamodb {
         ExclusiveStartTableName: js.UndefOr[TableName] = js.undefined,
         Limit: js.UndefOr[ListTablesInputLimit] = js.undefined
     ): ListTablesInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ExclusiveStartTableName.foreach(__v => __obj.update("ExclusiveStartTableName", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ExclusiveStartTableName.foreach(__v => __obj.updateDynamic("ExclusiveStartTableName")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTablesInput]
     }
   }
@@ -2318,9 +2336,9 @@ package dynamodb {
         LastEvaluatedTableName: js.UndefOr[TableName] = js.undefined,
         TableNames: js.UndefOr[TableNameList] = js.undefined
     ): ListTablesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LastEvaluatedTableName.foreach(__v => __obj.update("LastEvaluatedTableName", __v.asInstanceOf[js.Any]))
-      TableNames.foreach(__v => __obj.update("TableNames", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LastEvaluatedTableName.foreach(__v => __obj.updateDynamic("LastEvaluatedTableName")(__v.asInstanceOf[js.Any]))
+      TableNames.foreach(__v => __obj.updateDynamic("TableNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTablesOutput]
     }
   }
@@ -2336,11 +2354,11 @@ package dynamodb {
         ResourceArn: ResourceArnString,
         NextToken: js.UndefOr[NextTokenString] = js.undefined
     ): ListTagsOfResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsOfResourceInput]
     }
   }
@@ -2356,9 +2374,9 @@ package dynamodb {
         NextToken: js.UndefOr[NextTokenString] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsOfResourceOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsOfResourceOutput]
     }
   }
@@ -2379,7 +2397,7 @@ package dynamodb {
         KeySchema: KeySchema,
         Projection: Projection
     ): LocalSecondaryIndex = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IndexName"  -> IndexName.asInstanceOf[js.Any],
         "KeySchema"  -> KeySchema.asInstanceOf[js.Any],
         "Projection" -> Projection.asInstanceOf[js.Any]
@@ -2411,13 +2429,13 @@ package dynamodb {
         KeySchema: js.UndefOr[KeySchema] = js.undefined,
         Projection: js.UndefOr[Projection] = js.undefined
     ): LocalSecondaryIndexDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IndexArn.foreach(__v => __obj.update("IndexArn", __v.asInstanceOf[js.Any]))
-      IndexName.foreach(__v => __obj.update("IndexName", __v.asInstanceOf[js.Any]))
-      IndexSizeBytes.foreach(__v => __obj.update("IndexSizeBytes", __v.asInstanceOf[js.Any]))
-      ItemCount.foreach(__v => __obj.update("ItemCount", __v.asInstanceOf[js.Any]))
-      KeySchema.foreach(__v => __obj.update("KeySchema", __v.asInstanceOf[js.Any]))
-      Projection.foreach(__v => __obj.update("Projection", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IndexArn.foreach(__v => __obj.updateDynamic("IndexArn")(__v.asInstanceOf[js.Any]))
+      IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
+      IndexSizeBytes.foreach(__v => __obj.updateDynamic("IndexSizeBytes")(__v.asInstanceOf[js.Any]))
+      ItemCount.foreach(__v => __obj.updateDynamic("ItemCount")(__v.asInstanceOf[js.Any]))
+      KeySchema.foreach(__v => __obj.updateDynamic("KeySchema")(__v.asInstanceOf[js.Any]))
+      Projection.foreach(__v => __obj.updateDynamic("Projection")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LocalSecondaryIndexDescription]
     }
   }
@@ -2438,10 +2456,10 @@ package dynamodb {
         KeySchema: js.UndefOr[KeySchema] = js.undefined,
         Projection: js.UndefOr[Projection] = js.undefined
     ): LocalSecondaryIndexInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IndexName.foreach(__v => __obj.update("IndexName", __v.asInstanceOf[js.Any]))
-      KeySchema.foreach(__v => __obj.update("KeySchema", __v.asInstanceOf[js.Any]))
-      Projection.foreach(__v => __obj.update("Projection", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
+      KeySchema.foreach(__v => __obj.updateDynamic("KeySchema")(__v.asInstanceOf[js.Any]))
+      Projection.foreach(__v => __obj.updateDynamic("Projection")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LocalSecondaryIndexInfo]
     }
   }
@@ -2462,10 +2480,14 @@ package dynamodb {
         LatestRestorableDateTime: js.UndefOr[Date] = js.undefined,
         PointInTimeRecoveryStatus: js.UndefOr[PointInTimeRecoveryStatus] = js.undefined
     ): PointInTimeRecoveryDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EarliestRestorableDateTime.foreach(__v => __obj.update("EarliestRestorableDateTime", __v.asInstanceOf[js.Any]))
-      LatestRestorableDateTime.foreach(__v => __obj.update("LatestRestorableDateTime", __v.asInstanceOf[js.Any]))
-      PointInTimeRecoveryStatus.foreach(__v => __obj.update("PointInTimeRecoveryStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EarliestRestorableDateTime.foreach(
+        __v => __obj.updateDynamic("EarliestRestorableDateTime")(__v.asInstanceOf[js.Any])
+      )
+      LatestRestorableDateTime.foreach(__v => __obj.updateDynamic("LatestRestorableDateTime")(__v.asInstanceOf[js.Any]))
+      PointInTimeRecoveryStatus.foreach(
+        __v => __obj.updateDynamic("PointInTimeRecoveryStatus")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[PointInTimeRecoveryDescription]
     }
   }
@@ -2482,7 +2504,7 @@ package dynamodb {
     def apply(
         PointInTimeRecoveryEnabled: BooleanObject
     ): PointInTimeRecoverySpecification = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PointInTimeRecoveryEnabled" -> PointInTimeRecoveryEnabled.asInstanceOf[js.Any]
       )
 
@@ -2511,9 +2533,9 @@ package dynamodb {
         NonKeyAttributes: js.UndefOr[NonKeyAttributeNameList] = js.undefined,
         ProjectionType: js.UndefOr[ProjectionType] = js.undefined
     ): Projection = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NonKeyAttributes.foreach(__v => __obj.update("NonKeyAttributes", __v.asInstanceOf[js.Any]))
-      ProjectionType.foreach(__v => __obj.update("ProjectionType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NonKeyAttributes.foreach(__v => __obj.updateDynamic("NonKeyAttributes")(__v.asInstanceOf[js.Any]))
+      ProjectionType.foreach(__v => __obj.updateDynamic("ProjectionType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Projection]
     }
   }
@@ -2541,7 +2563,7 @@ package dynamodb {
         ReadCapacityUnits: PositiveLongObject,
         WriteCapacityUnits: PositiveLongObject
     ): ProvisionedThroughput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ReadCapacityUnits"  -> ReadCapacityUnits.asInstanceOf[js.Any],
         "WriteCapacityUnits" -> WriteCapacityUnits.asInstanceOf[js.Any]
       )
@@ -2570,12 +2592,12 @@ package dynamodb {
         ReadCapacityUnits: js.UndefOr[NonNegativeLongObject] = js.undefined,
         WriteCapacityUnits: js.UndefOr[NonNegativeLongObject] = js.undefined
     ): ProvisionedThroughputDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LastDecreaseDateTime.foreach(__v => __obj.update("LastDecreaseDateTime", __v.asInstanceOf[js.Any]))
-      LastIncreaseDateTime.foreach(__v => __obj.update("LastIncreaseDateTime", __v.asInstanceOf[js.Any]))
-      NumberOfDecreasesToday.foreach(__v => __obj.update("NumberOfDecreasesToday", __v.asInstanceOf[js.Any]))
-      ReadCapacityUnits.foreach(__v => __obj.update("ReadCapacityUnits", __v.asInstanceOf[js.Any]))
-      WriteCapacityUnits.foreach(__v => __obj.update("WriteCapacityUnits", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LastDecreaseDateTime.foreach(__v => __obj.updateDynamic("LastDecreaseDateTime")(__v.asInstanceOf[js.Any]))
+      LastIncreaseDateTime.foreach(__v => __obj.updateDynamic("LastIncreaseDateTime")(__v.asInstanceOf[js.Any]))
+      NumberOfDecreasesToday.foreach(__v => __obj.updateDynamic("NumberOfDecreasesToday")(__v.asInstanceOf[js.Any]))
+      ReadCapacityUnits.foreach(__v => __obj.updateDynamic("ReadCapacityUnits")(__v.asInstanceOf[js.Any]))
+      WriteCapacityUnits.foreach(__v => __obj.updateDynamic("WriteCapacityUnits")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProvisionedThroughputDescription]
     }
   }
@@ -2602,16 +2624,18 @@ package dynamodb {
         ExpressionAttributeValues: js.UndefOr[ExpressionAttributeValueMap] = js.undefined,
         ReturnValuesOnConditionCheckFailure: js.UndefOr[ReturnValuesOnConditionCheckFailure] = js.undefined
     ): Put = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Item"      -> Item.asInstanceOf[js.Any],
         "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
-      ConditionExpression.foreach(__v => __obj.update("ConditionExpression", __v.asInstanceOf[js.Any]))
-      ExpressionAttributeNames.foreach(__v => __obj.update("ExpressionAttributeNames", __v.asInstanceOf[js.Any]))
-      ExpressionAttributeValues.foreach(__v => __obj.update("ExpressionAttributeValues", __v.asInstanceOf[js.Any]))
+      ConditionExpression.foreach(__v => __obj.updateDynamic("ConditionExpression")(__v.asInstanceOf[js.Any]))
+      ExpressionAttributeNames.foreach(__v => __obj.updateDynamic("ExpressionAttributeNames")(__v.asInstanceOf[js.Any]))
+      ExpressionAttributeValues.foreach(
+        __v => __obj.updateDynamic("ExpressionAttributeValues")(__v.asInstanceOf[js.Any])
+      )
       ReturnValuesOnConditionCheckFailure.foreach(
-        __v => __obj.update("ReturnValuesOnConditionCheckFailure", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ReturnValuesOnConditionCheckFailure")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[Put]
     }
@@ -2647,19 +2671,23 @@ package dynamodb {
         ReturnItemCollectionMetrics: js.UndefOr[ReturnItemCollectionMetrics] = js.undefined,
         ReturnValues: js.UndefOr[ReturnValue] = js.undefined
     ): PutItemInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Item"      -> Item.asInstanceOf[js.Any],
         "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
-      ConditionExpression.foreach(__v => __obj.update("ConditionExpression", __v.asInstanceOf[js.Any]))
-      ConditionalOperator.foreach(__v => __obj.update("ConditionalOperator", __v.asInstanceOf[js.Any]))
-      Expected.foreach(__v => __obj.update("Expected", __v.asInstanceOf[js.Any]))
-      ExpressionAttributeNames.foreach(__v => __obj.update("ExpressionAttributeNames", __v.asInstanceOf[js.Any]))
-      ExpressionAttributeValues.foreach(__v => __obj.update("ExpressionAttributeValues", __v.asInstanceOf[js.Any]))
-      ReturnConsumedCapacity.foreach(__v => __obj.update("ReturnConsumedCapacity", __v.asInstanceOf[js.Any]))
-      ReturnItemCollectionMetrics.foreach(__v => __obj.update("ReturnItemCollectionMetrics", __v.asInstanceOf[js.Any]))
-      ReturnValues.foreach(__v => __obj.update("ReturnValues", __v.asInstanceOf[js.Any]))
+      ConditionExpression.foreach(__v => __obj.updateDynamic("ConditionExpression")(__v.asInstanceOf[js.Any]))
+      ConditionalOperator.foreach(__v => __obj.updateDynamic("ConditionalOperator")(__v.asInstanceOf[js.Any]))
+      Expected.foreach(__v => __obj.updateDynamic("Expected")(__v.asInstanceOf[js.Any]))
+      ExpressionAttributeNames.foreach(__v => __obj.updateDynamic("ExpressionAttributeNames")(__v.asInstanceOf[js.Any]))
+      ExpressionAttributeValues.foreach(
+        __v => __obj.updateDynamic("ExpressionAttributeValues")(__v.asInstanceOf[js.Any])
+      )
+      ReturnConsumedCapacity.foreach(__v => __obj.updateDynamic("ReturnConsumedCapacity")(__v.asInstanceOf[js.Any]))
+      ReturnItemCollectionMetrics.foreach(
+        __v => __obj.updateDynamic("ReturnItemCollectionMetrics")(__v.asInstanceOf[js.Any])
+      )
+      ReturnValues.foreach(__v => __obj.updateDynamic("ReturnValues")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutItemInput]
     }
   }
@@ -2680,10 +2708,10 @@ package dynamodb {
         ConsumedCapacity: js.UndefOr[ConsumedCapacity] = js.undefined,
         ItemCollectionMetrics: js.UndefOr[ItemCollectionMetrics] = js.undefined
     ): PutItemOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      ConsumedCapacity.foreach(__v => __obj.update("ConsumedCapacity", __v.asInstanceOf[js.Any]))
-      ItemCollectionMetrics.foreach(__v => __obj.update("ItemCollectionMetrics", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      ConsumedCapacity.foreach(__v => __obj.updateDynamic("ConsumedCapacity")(__v.asInstanceOf[js.Any]))
+      ItemCollectionMetrics.foreach(__v => __obj.updateDynamic("ItemCollectionMetrics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutItemOutput]
     }
   }
@@ -2700,7 +2728,7 @@ package dynamodb {
     def apply(
         Item: PutItemInputAttributeMap
     ): PutRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Item" -> Item.asInstanceOf[js.Any]
       )
 
@@ -2752,26 +2780,28 @@ package dynamodb {
         ScanIndexForward: js.UndefOr[BooleanObject] = js.undefined,
         Select: js.UndefOr[Select] = js.undefined
     ): QueryInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
-      AttributesToGet.foreach(__v => __obj.update("AttributesToGet", __v.asInstanceOf[js.Any]))
-      ConditionalOperator.foreach(__v => __obj.update("ConditionalOperator", __v.asInstanceOf[js.Any]))
-      ConsistentRead.foreach(__v => __obj.update("ConsistentRead", __v.asInstanceOf[js.Any]))
-      ExclusiveStartKey.foreach(__v => __obj.update("ExclusiveStartKey", __v.asInstanceOf[js.Any]))
-      ExpressionAttributeNames.foreach(__v => __obj.update("ExpressionAttributeNames", __v.asInstanceOf[js.Any]))
-      ExpressionAttributeValues.foreach(__v => __obj.update("ExpressionAttributeValues", __v.asInstanceOf[js.Any]))
-      FilterExpression.foreach(__v => __obj.update("FilterExpression", __v.asInstanceOf[js.Any]))
-      IndexName.foreach(__v => __obj.update("IndexName", __v.asInstanceOf[js.Any]))
-      KeyConditionExpression.foreach(__v => __obj.update("KeyConditionExpression", __v.asInstanceOf[js.Any]))
-      KeyConditions.foreach(__v => __obj.update("KeyConditions", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      ProjectionExpression.foreach(__v => __obj.update("ProjectionExpression", __v.asInstanceOf[js.Any]))
-      QueryFilter.foreach(__v => __obj.update("QueryFilter", __v.asInstanceOf[js.Any]))
-      ReturnConsumedCapacity.foreach(__v => __obj.update("ReturnConsumedCapacity", __v.asInstanceOf[js.Any]))
-      ScanIndexForward.foreach(__v => __obj.update("ScanIndexForward", __v.asInstanceOf[js.Any]))
-      Select.foreach(__v => __obj.update("Select", __v.asInstanceOf[js.Any]))
+      AttributesToGet.foreach(__v => __obj.updateDynamic("AttributesToGet")(__v.asInstanceOf[js.Any]))
+      ConditionalOperator.foreach(__v => __obj.updateDynamic("ConditionalOperator")(__v.asInstanceOf[js.Any]))
+      ConsistentRead.foreach(__v => __obj.updateDynamic("ConsistentRead")(__v.asInstanceOf[js.Any]))
+      ExclusiveStartKey.foreach(__v => __obj.updateDynamic("ExclusiveStartKey")(__v.asInstanceOf[js.Any]))
+      ExpressionAttributeNames.foreach(__v => __obj.updateDynamic("ExpressionAttributeNames")(__v.asInstanceOf[js.Any]))
+      ExpressionAttributeValues.foreach(
+        __v => __obj.updateDynamic("ExpressionAttributeValues")(__v.asInstanceOf[js.Any])
+      )
+      FilterExpression.foreach(__v => __obj.updateDynamic("FilterExpression")(__v.asInstanceOf[js.Any]))
+      IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
+      KeyConditionExpression.foreach(__v => __obj.updateDynamic("KeyConditionExpression")(__v.asInstanceOf[js.Any]))
+      KeyConditions.foreach(__v => __obj.updateDynamic("KeyConditions")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      ProjectionExpression.foreach(__v => __obj.updateDynamic("ProjectionExpression")(__v.asInstanceOf[js.Any]))
+      QueryFilter.foreach(__v => __obj.updateDynamic("QueryFilter")(__v.asInstanceOf[js.Any]))
+      ReturnConsumedCapacity.foreach(__v => __obj.updateDynamic("ReturnConsumedCapacity")(__v.asInstanceOf[js.Any]))
+      ScanIndexForward.foreach(__v => __obj.updateDynamic("ScanIndexForward")(__v.asInstanceOf[js.Any]))
+      Select.foreach(__v => __obj.updateDynamic("Select")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[QueryInput]
     }
   }
@@ -2796,12 +2826,12 @@ package dynamodb {
         LastEvaluatedKey: js.UndefOr[Key] = js.undefined,
         ScannedCount: js.UndefOr[Int] = js.undefined
     ): QueryOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConsumedCapacity.foreach(__v => __obj.update("ConsumedCapacity", __v.asInstanceOf[js.Any]))
-      Count.foreach(__v => __obj.update("Count", __v.asInstanceOf[js.Any]))
-      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
-      LastEvaluatedKey.foreach(__v => __obj.update("LastEvaluatedKey", __v.asInstanceOf[js.Any]))
-      ScannedCount.foreach(__v => __obj.update("ScannedCount", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConsumedCapacity.foreach(__v => __obj.updateDynamic("ConsumedCapacity")(__v.asInstanceOf[js.Any]))
+      Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      LastEvaluatedKey.foreach(__v => __obj.updateDynamic("LastEvaluatedKey")(__v.asInstanceOf[js.Any]))
+      ScannedCount.foreach(__v => __obj.updateDynamic("ScannedCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[QueryOutput]
     }
   }
@@ -2818,8 +2848,8 @@ package dynamodb {
     def apply(
         RegionName: js.UndefOr[RegionName] = js.undefined
     ): Replica = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RegionName.foreach(__v => __obj.update("RegionName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RegionName.foreach(__v => __obj.updateDynamic("RegionName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Replica]
     }
   }
@@ -2836,8 +2866,8 @@ package dynamodb {
     def apply(
         RegionName: js.UndefOr[RegionName] = js.undefined
     ): ReplicaDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RegionName.foreach(__v => __obj.update("RegionName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RegionName.foreach(__v => __obj.updateDynamic("RegionName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicaDescription]
     }
   }
@@ -2864,22 +2894,22 @@ package dynamodb {
         ProvisionedWriteCapacityAutoScalingSettings: js.UndefOr[AutoScalingSettingsDescription] = js.undefined,
         ProvisionedWriteCapacityUnits: js.UndefOr[PositiveLongObject] = js.undefined
     ): ReplicaGlobalSecondaryIndexSettingsDescription = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IndexName" -> IndexName.asInstanceOf[js.Any]
       )
 
-      IndexStatus.foreach(__v => __obj.update("IndexStatus", __v.asInstanceOf[js.Any]))
+      IndexStatus.foreach(__v => __obj.updateDynamic("IndexStatus")(__v.asInstanceOf[js.Any]))
       ProvisionedReadCapacityAutoScalingSettings.foreach(
-        __v => __obj.update("ProvisionedReadCapacityAutoScalingSettings", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ProvisionedReadCapacityAutoScalingSettings")(__v.asInstanceOf[js.Any])
       )
       ProvisionedReadCapacityUnits.foreach(
-        __v => __obj.update("ProvisionedReadCapacityUnits", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ProvisionedReadCapacityUnits")(__v.asInstanceOf[js.Any])
       )
       ProvisionedWriteCapacityAutoScalingSettings.foreach(
-        __v => __obj.update("ProvisionedWriteCapacityAutoScalingSettings", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ProvisionedWriteCapacityAutoScalingSettings")(__v.asInstanceOf[js.Any])
       )
       ProvisionedWriteCapacityUnits.foreach(
-        __v => __obj.update("ProvisionedWriteCapacityUnits", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ProvisionedWriteCapacityUnits")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ReplicaGlobalSecondaryIndexSettingsDescription]
     }
@@ -2901,15 +2931,15 @@ package dynamodb {
         ProvisionedReadCapacityAutoScalingSettingsUpdate: js.UndefOr[AutoScalingSettingsUpdate] = js.undefined,
         ProvisionedReadCapacityUnits: js.UndefOr[PositiveLongObject] = js.undefined
     ): ReplicaGlobalSecondaryIndexSettingsUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IndexName" -> IndexName.asInstanceOf[js.Any]
       )
 
       ProvisionedReadCapacityAutoScalingSettingsUpdate.foreach(
-        __v => __obj.update("ProvisionedReadCapacityAutoScalingSettingsUpdate", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ProvisionedReadCapacityAutoScalingSettingsUpdate")(__v.asInstanceOf[js.Any])
       )
       ProvisionedReadCapacityUnits.foreach(
-        __v => __obj.update("ProvisionedReadCapacityUnits", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ProvisionedReadCapacityUnits")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ReplicaGlobalSecondaryIndexSettingsUpdate]
     }
@@ -2942,27 +2972,29 @@ package dynamodb {
         ReplicaProvisionedWriteCapacityUnits: js.UndefOr[NonNegativeLongObject] = js.undefined,
         ReplicaStatus: js.UndefOr[ReplicaStatus] = js.undefined
     ): ReplicaSettingsDescription = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RegionName" -> RegionName.asInstanceOf[js.Any]
       )
 
-      ReplicaBillingModeSummary.foreach(__v => __obj.update("ReplicaBillingModeSummary", __v.asInstanceOf[js.Any]))
+      ReplicaBillingModeSummary.foreach(
+        __v => __obj.updateDynamic("ReplicaBillingModeSummary")(__v.asInstanceOf[js.Any])
+      )
       ReplicaGlobalSecondaryIndexSettings.foreach(
-        __v => __obj.update("ReplicaGlobalSecondaryIndexSettings", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ReplicaGlobalSecondaryIndexSettings")(__v.asInstanceOf[js.Any])
       )
       ReplicaProvisionedReadCapacityAutoScalingSettings.foreach(
-        __v => __obj.update("ReplicaProvisionedReadCapacityAutoScalingSettings", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ReplicaProvisionedReadCapacityAutoScalingSettings")(__v.asInstanceOf[js.Any])
       )
       ReplicaProvisionedReadCapacityUnits.foreach(
-        __v => __obj.update("ReplicaProvisionedReadCapacityUnits", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ReplicaProvisionedReadCapacityUnits")(__v.asInstanceOf[js.Any])
       )
       ReplicaProvisionedWriteCapacityAutoScalingSettings.foreach(
-        __v => __obj.update("ReplicaProvisionedWriteCapacityAutoScalingSettings", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ReplicaProvisionedWriteCapacityAutoScalingSettings")(__v.asInstanceOf[js.Any])
       )
       ReplicaProvisionedWriteCapacityUnits.foreach(
-        __v => __obj.update("ReplicaProvisionedWriteCapacityUnits", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ReplicaProvisionedWriteCapacityUnits")(__v.asInstanceOf[js.Any])
       )
-      ReplicaStatus.foreach(__v => __obj.update("ReplicaStatus", __v.asInstanceOf[js.Any]))
+      ReplicaStatus.foreach(__v => __obj.updateDynamic("ReplicaStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicaSettingsDescription]
     }
   }
@@ -2986,18 +3018,18 @@ package dynamodb {
         ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate: js.UndefOr[AutoScalingSettingsUpdate] = js.undefined,
         ReplicaProvisionedReadCapacityUnits: js.UndefOr[PositiveLongObject] = js.undefined
     ): ReplicaSettingsUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RegionName" -> RegionName.asInstanceOf[js.Any]
       )
 
       ReplicaGlobalSecondaryIndexSettingsUpdate.foreach(
-        __v => __obj.update("ReplicaGlobalSecondaryIndexSettingsUpdate", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ReplicaGlobalSecondaryIndexSettingsUpdate")(__v.asInstanceOf[js.Any])
       )
       ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate.foreach(
-        __v => __obj.update("ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate")(__v.asInstanceOf[js.Any])
       )
       ReplicaProvisionedReadCapacityUnits.foreach(
-        __v => __obj.update("ReplicaProvisionedReadCapacityUnits", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ReplicaProvisionedReadCapacityUnits")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ReplicaSettingsUpdate]
     }
@@ -3029,9 +3061,9 @@ package dynamodb {
         Create: js.UndefOr[CreateReplicaAction] = js.undefined,
         Delete: js.UndefOr[DeleteReplicaAction] = js.undefined
     ): ReplicaUpdate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Create.foreach(__v => __obj.update("Create", __v.asInstanceOf[js.Any]))
-      Delete.foreach(__v => __obj.update("Delete", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Create.foreach(__v => __obj.updateDynamic("Create")(__v.asInstanceOf[js.Any]))
+      Delete.foreach(__v => __obj.updateDynamic("Delete")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplicaUpdate]
     }
   }
@@ -3054,13 +3086,13 @@ package dynamodb {
         SourceBackupArn: js.UndefOr[BackupArn] = js.undefined,
         SourceTableArn: js.UndefOr[TableArn] = js.undefined
     ): RestoreSummary = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RestoreDateTime"   -> RestoreDateTime.asInstanceOf[js.Any],
         "RestoreInProgress" -> RestoreInProgress.asInstanceOf[js.Any]
       )
 
-      SourceBackupArn.foreach(__v => __obj.update("SourceBackupArn", __v.asInstanceOf[js.Any]))
-      SourceTableArn.foreach(__v => __obj.update("SourceTableArn", __v.asInstanceOf[js.Any]))
+      SourceBackupArn.foreach(__v => __obj.updateDynamic("SourceBackupArn")(__v.asInstanceOf[js.Any]))
+      SourceTableArn.foreach(__v => __obj.updateDynamic("SourceTableArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RestoreSummary]
     }
   }
@@ -3076,7 +3108,7 @@ package dynamodb {
         BackupArn: BackupArn,
         TargetTableName: TableName
     ): RestoreTableFromBackupInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupArn"       -> BackupArn.asInstanceOf[js.Any],
         "TargetTableName" -> TargetTableName.asInstanceOf[js.Any]
       )
@@ -3094,8 +3126,8 @@ package dynamodb {
     def apply(
         TableDescription: js.UndefOr[TableDescription] = js.undefined
     ): RestoreTableFromBackupOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TableDescription.foreach(__v => __obj.update("TableDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TableDescription.foreach(__v => __obj.updateDynamic("TableDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RestoreTableFromBackupOutput]
     }
   }
@@ -3115,13 +3147,13 @@ package dynamodb {
         RestoreDateTime: js.UndefOr[Date] = js.undefined,
         UseLatestRestorableTime: js.UndefOr[BooleanObject] = js.undefined
     ): RestoreTableToPointInTimeInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SourceTableName" -> SourceTableName.asInstanceOf[js.Any],
         "TargetTableName" -> TargetTableName.asInstanceOf[js.Any]
       )
 
-      RestoreDateTime.foreach(__v => __obj.update("RestoreDateTime", __v.asInstanceOf[js.Any]))
-      UseLatestRestorableTime.foreach(__v => __obj.update("UseLatestRestorableTime", __v.asInstanceOf[js.Any]))
+      RestoreDateTime.foreach(__v => __obj.updateDynamic("RestoreDateTime")(__v.asInstanceOf[js.Any]))
+      UseLatestRestorableTime.foreach(__v => __obj.updateDynamic("UseLatestRestorableTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RestoreTableToPointInTimeInput]
     }
   }
@@ -3135,8 +3167,8 @@ package dynamodb {
     def apply(
         TableDescription: js.UndefOr[TableDescription] = js.undefined
     ): RestoreTableToPointInTimeOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TableDescription.foreach(__v => __obj.update("TableDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TableDescription.foreach(__v => __obj.updateDynamic("TableDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RestoreTableToPointInTimeOutput]
     }
   }
@@ -3196,10 +3228,10 @@ package dynamodb {
         SSEType: js.UndefOr[SSEType] = js.undefined,
         Status: js.UndefOr[SSEStatus] = js.undefined
     ): SSEDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      KMSMasterKeyArn.foreach(__v => __obj.update("KMSMasterKeyArn", __v.asInstanceOf[js.Any]))
-      SSEType.foreach(__v => __obj.update("SSEType", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      KMSMasterKeyArn.foreach(__v => __obj.updateDynamic("KMSMasterKeyArn")(__v.asInstanceOf[js.Any]))
+      SSEType.foreach(__v => __obj.updateDynamic("SSEType")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SSEDescription]
     }
   }
@@ -3220,10 +3252,10 @@ package dynamodb {
         KMSMasterKeyId: js.UndefOr[KMSMasterKeyId] = js.undefined,
         SSEType: js.UndefOr[SSEType] = js.undefined
     ): SSESpecification = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      KMSMasterKeyId.foreach(__v => __obj.update("KMSMasterKeyId", __v.asInstanceOf[js.Any]))
-      SSEType.foreach(__v => __obj.update("SSEType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      KMSMasterKeyId.foreach(__v => __obj.updateDynamic("KMSMasterKeyId")(__v.asInstanceOf[js.Any]))
+      SSEType.foreach(__v => __obj.updateDynamic("SSEType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SSESpecification]
     }
   }
@@ -3295,25 +3327,27 @@ package dynamodb {
         Select: js.UndefOr[Select] = js.undefined,
         TotalSegments: js.UndefOr[ScanTotalSegments] = js.undefined
     ): ScanInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
-      AttributesToGet.foreach(__v => __obj.update("AttributesToGet", __v.asInstanceOf[js.Any]))
-      ConditionalOperator.foreach(__v => __obj.update("ConditionalOperator", __v.asInstanceOf[js.Any]))
-      ConsistentRead.foreach(__v => __obj.update("ConsistentRead", __v.asInstanceOf[js.Any]))
-      ExclusiveStartKey.foreach(__v => __obj.update("ExclusiveStartKey", __v.asInstanceOf[js.Any]))
-      ExpressionAttributeNames.foreach(__v => __obj.update("ExpressionAttributeNames", __v.asInstanceOf[js.Any]))
-      ExpressionAttributeValues.foreach(__v => __obj.update("ExpressionAttributeValues", __v.asInstanceOf[js.Any]))
-      FilterExpression.foreach(__v => __obj.update("FilterExpression", __v.asInstanceOf[js.Any]))
-      IndexName.foreach(__v => __obj.update("IndexName", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      ProjectionExpression.foreach(__v => __obj.update("ProjectionExpression", __v.asInstanceOf[js.Any]))
-      ReturnConsumedCapacity.foreach(__v => __obj.update("ReturnConsumedCapacity", __v.asInstanceOf[js.Any]))
-      ScanFilter.foreach(__v => __obj.update("ScanFilter", __v.asInstanceOf[js.Any]))
-      Segment.foreach(__v => __obj.update("Segment", __v.asInstanceOf[js.Any]))
-      Select.foreach(__v => __obj.update("Select", __v.asInstanceOf[js.Any]))
-      TotalSegments.foreach(__v => __obj.update("TotalSegments", __v.asInstanceOf[js.Any]))
+      AttributesToGet.foreach(__v => __obj.updateDynamic("AttributesToGet")(__v.asInstanceOf[js.Any]))
+      ConditionalOperator.foreach(__v => __obj.updateDynamic("ConditionalOperator")(__v.asInstanceOf[js.Any]))
+      ConsistentRead.foreach(__v => __obj.updateDynamic("ConsistentRead")(__v.asInstanceOf[js.Any]))
+      ExclusiveStartKey.foreach(__v => __obj.updateDynamic("ExclusiveStartKey")(__v.asInstanceOf[js.Any]))
+      ExpressionAttributeNames.foreach(__v => __obj.updateDynamic("ExpressionAttributeNames")(__v.asInstanceOf[js.Any]))
+      ExpressionAttributeValues.foreach(
+        __v => __obj.updateDynamic("ExpressionAttributeValues")(__v.asInstanceOf[js.Any])
+      )
+      FilterExpression.foreach(__v => __obj.updateDynamic("FilterExpression")(__v.asInstanceOf[js.Any]))
+      IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      ProjectionExpression.foreach(__v => __obj.updateDynamic("ProjectionExpression")(__v.asInstanceOf[js.Any]))
+      ReturnConsumedCapacity.foreach(__v => __obj.updateDynamic("ReturnConsumedCapacity")(__v.asInstanceOf[js.Any]))
+      ScanFilter.foreach(__v => __obj.updateDynamic("ScanFilter")(__v.asInstanceOf[js.Any]))
+      Segment.foreach(__v => __obj.updateDynamic("Segment")(__v.asInstanceOf[js.Any]))
+      Select.foreach(__v => __obj.updateDynamic("Select")(__v.asInstanceOf[js.Any]))
+      TotalSegments.foreach(__v => __obj.updateDynamic("TotalSegments")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScanInput]
     }
   }
@@ -3338,12 +3372,12 @@ package dynamodb {
         LastEvaluatedKey: js.UndefOr[Key] = js.undefined,
         ScannedCount: js.UndefOr[Int] = js.undefined
     ): ScanOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConsumedCapacity.foreach(__v => __obj.update("ConsumedCapacity", __v.asInstanceOf[js.Any]))
-      Count.foreach(__v => __obj.update("Count", __v.asInstanceOf[js.Any]))
-      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
-      LastEvaluatedKey.foreach(__v => __obj.update("LastEvaluatedKey", __v.asInstanceOf[js.Any]))
-      ScannedCount.foreach(__v => __obj.update("ScannedCount", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConsumedCapacity.foreach(__v => __obj.updateDynamic("ConsumedCapacity")(__v.asInstanceOf[js.Any]))
+      Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      LastEvaluatedKey.foreach(__v => __obj.updateDynamic("LastEvaluatedKey")(__v.asInstanceOf[js.Any]))
+      ScannedCount.foreach(__v => __obj.updateDynamic("ScannedCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScanOutput]
     }
   }
@@ -3385,7 +3419,7 @@ package dynamodb {
         TableArn: js.UndefOr[TableArn] = js.undefined,
         TableSizeBytes: js.UndefOr[Double] = js.undefined
     ): SourceTableDetails = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "KeySchema"             -> KeySchema.asInstanceOf[js.Any],
         "ProvisionedThroughput" -> ProvisionedThroughput.asInstanceOf[js.Any],
         "TableCreationDateTime" -> TableCreationDateTime.asInstanceOf[js.Any],
@@ -3393,10 +3427,10 @@ package dynamodb {
         "TableName"             -> TableName.asInstanceOf[js.Any]
       )
 
-      BillingMode.foreach(__v => __obj.update("BillingMode", __v.asInstanceOf[js.Any]))
-      ItemCount.foreach(__v => __obj.update("ItemCount", __v.asInstanceOf[js.Any]))
-      TableArn.foreach(__v => __obj.update("TableArn", __v.asInstanceOf[js.Any]))
-      TableSizeBytes.foreach(__v => __obj.update("TableSizeBytes", __v.asInstanceOf[js.Any]))
+      BillingMode.foreach(__v => __obj.updateDynamic("BillingMode")(__v.asInstanceOf[js.Any]))
+      ItemCount.foreach(__v => __obj.updateDynamic("ItemCount")(__v.asInstanceOf[js.Any]))
+      TableArn.foreach(__v => __obj.updateDynamic("TableArn")(__v.asInstanceOf[js.Any]))
+      TableSizeBytes.foreach(__v => __obj.updateDynamic("TableSizeBytes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SourceTableDetails]
     }
   }
@@ -3421,12 +3455,12 @@ package dynamodb {
         StreamDescription: js.UndefOr[StreamSpecification] = js.undefined,
         TimeToLiveDescription: js.UndefOr[TimeToLiveDescription] = js.undefined
     ): SourceTableFeatureDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GlobalSecondaryIndexes.foreach(__v => __obj.update("GlobalSecondaryIndexes", __v.asInstanceOf[js.Any]))
-      LocalSecondaryIndexes.foreach(__v => __obj.update("LocalSecondaryIndexes", __v.asInstanceOf[js.Any]))
-      SSEDescription.foreach(__v => __obj.update("SSEDescription", __v.asInstanceOf[js.Any]))
-      StreamDescription.foreach(__v => __obj.update("StreamDescription", __v.asInstanceOf[js.Any]))
-      TimeToLiveDescription.foreach(__v => __obj.update("TimeToLiveDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GlobalSecondaryIndexes.foreach(__v => __obj.updateDynamic("GlobalSecondaryIndexes")(__v.asInstanceOf[js.Any]))
+      LocalSecondaryIndexes.foreach(__v => __obj.updateDynamic("LocalSecondaryIndexes")(__v.asInstanceOf[js.Any]))
+      SSEDescription.foreach(__v => __obj.updateDynamic("SSEDescription")(__v.asInstanceOf[js.Any]))
+      StreamDescription.foreach(__v => __obj.updateDynamic("StreamDescription")(__v.asInstanceOf[js.Any]))
+      TimeToLiveDescription.foreach(__v => __obj.updateDynamic("TimeToLiveDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SourceTableFeatureDetails]
     }
   }
@@ -3445,9 +3479,9 @@ package dynamodb {
         StreamEnabled: js.UndefOr[StreamEnabled] = js.undefined,
         StreamViewType: js.UndefOr[StreamViewType] = js.undefined
     ): StreamSpecification = {
-      val __obj = js.Dictionary.empty[js.Any]
-      StreamEnabled.foreach(__v => __obj.update("StreamEnabled", __v.asInstanceOf[js.Any]))
-      StreamViewType.foreach(__v => __obj.update("StreamViewType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      StreamEnabled.foreach(__v => __obj.updateDynamic("StreamEnabled")(__v.asInstanceOf[js.Any]))
+      StreamViewType.foreach(__v => __obj.updateDynamic("StreamViewType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StreamSpecification]
     }
   }
@@ -3507,25 +3541,25 @@ package dynamodb {
         TableSizeBytes: js.UndefOr[Double] = js.undefined,
         TableStatus: js.UndefOr[TableStatus] = js.undefined
     ): TableDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttributeDefinitions.foreach(__v => __obj.update("AttributeDefinitions", __v.asInstanceOf[js.Any]))
-      BillingModeSummary.foreach(__v => __obj.update("BillingModeSummary", __v.asInstanceOf[js.Any]))
-      CreationDateTime.foreach(__v => __obj.update("CreationDateTime", __v.asInstanceOf[js.Any]))
-      GlobalSecondaryIndexes.foreach(__v => __obj.update("GlobalSecondaryIndexes", __v.asInstanceOf[js.Any]))
-      ItemCount.foreach(__v => __obj.update("ItemCount", __v.asInstanceOf[js.Any]))
-      KeySchema.foreach(__v => __obj.update("KeySchema", __v.asInstanceOf[js.Any]))
-      LatestStreamArn.foreach(__v => __obj.update("LatestStreamArn", __v.asInstanceOf[js.Any]))
-      LatestStreamLabel.foreach(__v => __obj.update("LatestStreamLabel", __v.asInstanceOf[js.Any]))
-      LocalSecondaryIndexes.foreach(__v => __obj.update("LocalSecondaryIndexes", __v.asInstanceOf[js.Any]))
-      ProvisionedThroughput.foreach(__v => __obj.update("ProvisionedThroughput", __v.asInstanceOf[js.Any]))
-      RestoreSummary.foreach(__v => __obj.update("RestoreSummary", __v.asInstanceOf[js.Any]))
-      SSEDescription.foreach(__v => __obj.update("SSEDescription", __v.asInstanceOf[js.Any]))
-      StreamSpecification.foreach(__v => __obj.update("StreamSpecification", __v.asInstanceOf[js.Any]))
-      TableArn.foreach(__v => __obj.update("TableArn", __v.asInstanceOf[js.Any]))
-      TableId.foreach(__v => __obj.update("TableId", __v.asInstanceOf[js.Any]))
-      TableName.foreach(__v => __obj.update("TableName", __v.asInstanceOf[js.Any]))
-      TableSizeBytes.foreach(__v => __obj.update("TableSizeBytes", __v.asInstanceOf[js.Any]))
-      TableStatus.foreach(__v => __obj.update("TableStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttributeDefinitions.foreach(__v => __obj.updateDynamic("AttributeDefinitions")(__v.asInstanceOf[js.Any]))
+      BillingModeSummary.foreach(__v => __obj.updateDynamic("BillingModeSummary")(__v.asInstanceOf[js.Any]))
+      CreationDateTime.foreach(__v => __obj.updateDynamic("CreationDateTime")(__v.asInstanceOf[js.Any]))
+      GlobalSecondaryIndexes.foreach(__v => __obj.updateDynamic("GlobalSecondaryIndexes")(__v.asInstanceOf[js.Any]))
+      ItemCount.foreach(__v => __obj.updateDynamic("ItemCount")(__v.asInstanceOf[js.Any]))
+      KeySchema.foreach(__v => __obj.updateDynamic("KeySchema")(__v.asInstanceOf[js.Any]))
+      LatestStreamArn.foreach(__v => __obj.updateDynamic("LatestStreamArn")(__v.asInstanceOf[js.Any]))
+      LatestStreamLabel.foreach(__v => __obj.updateDynamic("LatestStreamLabel")(__v.asInstanceOf[js.Any]))
+      LocalSecondaryIndexes.foreach(__v => __obj.updateDynamic("LocalSecondaryIndexes")(__v.asInstanceOf[js.Any]))
+      ProvisionedThroughput.foreach(__v => __obj.updateDynamic("ProvisionedThroughput")(__v.asInstanceOf[js.Any]))
+      RestoreSummary.foreach(__v => __obj.updateDynamic("RestoreSummary")(__v.asInstanceOf[js.Any]))
+      SSEDescription.foreach(__v => __obj.updateDynamic("SSEDescription")(__v.asInstanceOf[js.Any]))
+      StreamSpecification.foreach(__v => __obj.updateDynamic("StreamSpecification")(__v.asInstanceOf[js.Any]))
+      TableArn.foreach(__v => __obj.updateDynamic("TableArn")(__v.asInstanceOf[js.Any]))
+      TableId.foreach(__v => __obj.updateDynamic("TableId")(__v.asInstanceOf[js.Any]))
+      TableName.foreach(__v => __obj.updateDynamic("TableName")(__v.asInstanceOf[js.Any]))
+      TableSizeBytes.foreach(__v => __obj.updateDynamic("TableSizeBytes")(__v.asInstanceOf[js.Any]))
+      TableStatus.foreach(__v => __obj.updateDynamic("TableStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TableDescription]
     }
   }
@@ -3555,7 +3589,7 @@ package dynamodb {
         Key: TagKeyString,
         Value: TagValueString
     ): Tag = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"   -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
@@ -3575,7 +3609,7 @@ package dynamodb {
         ResourceArn: ResourceArnString,
         Tags: TagList
     ): TagResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
       )
@@ -3598,9 +3632,9 @@ package dynamodb {
         AttributeName: js.UndefOr[TimeToLiveAttributeName] = js.undefined,
         TimeToLiveStatus: js.UndefOr[TimeToLiveStatus] = js.undefined
     ): TimeToLiveDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttributeName.foreach(__v => __obj.update("AttributeName", __v.asInstanceOf[js.Any]))
-      TimeToLiveStatus.foreach(__v => __obj.update("TimeToLiveStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttributeName.foreach(__v => __obj.updateDynamic("AttributeName")(__v.asInstanceOf[js.Any]))
+      TimeToLiveStatus.foreach(__v => __obj.updateDynamic("TimeToLiveStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TimeToLiveDescription]
     }
   }
@@ -3619,7 +3653,7 @@ package dynamodb {
         AttributeName: TimeToLiveAttributeName,
         Enabled: TimeToLiveEnabled
     ): TimeToLiveSpecification = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AttributeName" -> AttributeName.asInstanceOf[js.Any],
         "Enabled"       -> Enabled.asInstanceOf[js.Any]
       )
@@ -3649,7 +3683,7 @@ package dynamodb {
     def apply(
         Get: Get
     ): TransactGetItem = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Get" -> Get.asInstanceOf[js.Any]
       )
 
@@ -3668,11 +3702,11 @@ package dynamodb {
         TransactItems: TransactGetItemList,
         ReturnConsumedCapacity: js.UndefOr[ReturnConsumedCapacity] = js.undefined
     ): TransactGetItemsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TransactItems" -> TransactItems.asInstanceOf[js.Any]
       )
 
-      ReturnConsumedCapacity.foreach(__v => __obj.update("ReturnConsumedCapacity", __v.asInstanceOf[js.Any]))
+      ReturnConsumedCapacity.foreach(__v => __obj.updateDynamic("ReturnConsumedCapacity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TransactGetItemsInput]
     }
   }
@@ -3688,9 +3722,9 @@ package dynamodb {
         ConsumedCapacity: js.UndefOr[ConsumedCapacityMultiple] = js.undefined,
         Responses: js.UndefOr[ItemResponseList] = js.undefined
     ): TransactGetItemsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConsumedCapacity.foreach(__v => __obj.update("ConsumedCapacity", __v.asInstanceOf[js.Any]))
-      Responses.foreach(__v => __obj.update("Responses", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConsumedCapacity.foreach(__v => __obj.updateDynamic("ConsumedCapacity")(__v.asInstanceOf[js.Any]))
+      Responses.foreach(__v => __obj.updateDynamic("Responses")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TransactGetItemsOutput]
     }
   }
@@ -3713,11 +3747,11 @@ package dynamodb {
         Put: js.UndefOr[Put] = js.undefined,
         Update: js.UndefOr[Update] = js.undefined
     ): TransactWriteItem = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConditionCheck.foreach(__v => __obj.update("ConditionCheck", __v.asInstanceOf[js.Any]))
-      Delete.foreach(__v => __obj.update("Delete", __v.asInstanceOf[js.Any]))
-      Put.foreach(__v => __obj.update("Put", __v.asInstanceOf[js.Any]))
-      Update.foreach(__v => __obj.update("Update", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConditionCheck.foreach(__v => __obj.updateDynamic("ConditionCheck")(__v.asInstanceOf[js.Any]))
+      Delete.foreach(__v => __obj.updateDynamic("Delete")(__v.asInstanceOf[js.Any]))
+      Put.foreach(__v => __obj.updateDynamic("Put")(__v.asInstanceOf[js.Any]))
+      Update.foreach(__v => __obj.updateDynamic("Update")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TransactWriteItem]
     }
   }
@@ -3737,13 +3771,15 @@ package dynamodb {
         ReturnConsumedCapacity: js.UndefOr[ReturnConsumedCapacity] = js.undefined,
         ReturnItemCollectionMetrics: js.UndefOr[ReturnItemCollectionMetrics] = js.undefined
     ): TransactWriteItemsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TransactItems" -> TransactItems.asInstanceOf[js.Any]
       )
 
-      ClientRequestToken.foreach(__v => __obj.update("ClientRequestToken", __v.asInstanceOf[js.Any]))
-      ReturnConsumedCapacity.foreach(__v => __obj.update("ReturnConsumedCapacity", __v.asInstanceOf[js.Any]))
-      ReturnItemCollectionMetrics.foreach(__v => __obj.update("ReturnItemCollectionMetrics", __v.asInstanceOf[js.Any]))
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      ReturnConsumedCapacity.foreach(__v => __obj.updateDynamic("ReturnConsumedCapacity")(__v.asInstanceOf[js.Any]))
+      ReturnItemCollectionMetrics.foreach(
+        __v => __obj.updateDynamic("ReturnItemCollectionMetrics")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[TransactWriteItemsInput]
     }
   }
@@ -3759,9 +3795,9 @@ package dynamodb {
         ConsumedCapacity: js.UndefOr[ConsumedCapacityMultiple] = js.undefined,
         ItemCollectionMetrics: js.UndefOr[ItemCollectionMetricsPerTable] = js.undefined
     ): TransactWriteItemsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConsumedCapacity.foreach(__v => __obj.update("ConsumedCapacity", __v.asInstanceOf[js.Any]))
-      ItemCollectionMetrics.foreach(__v => __obj.update("ItemCollectionMetrics", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConsumedCapacity.foreach(__v => __obj.updateDynamic("ConsumedCapacity")(__v.asInstanceOf[js.Any]))
+      ItemCollectionMetrics.foreach(__v => __obj.updateDynamic("ItemCollectionMetrics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TransactWriteItemsOutput]
     }
   }
@@ -3777,7 +3813,7 @@ package dynamodb {
         ResourceArn: ResourceArnString,
         TagKeys: TagKeyList
     ): UntagResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
       )
@@ -3810,17 +3846,19 @@ package dynamodb {
         ExpressionAttributeValues: js.UndefOr[ExpressionAttributeValueMap] = js.undefined,
         ReturnValuesOnConditionCheckFailure: js.UndefOr[ReturnValuesOnConditionCheckFailure] = js.undefined
     ): Update = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"              -> Key.asInstanceOf[js.Any],
         "TableName"        -> TableName.asInstanceOf[js.Any],
         "UpdateExpression" -> UpdateExpression.asInstanceOf[js.Any]
       )
 
-      ConditionExpression.foreach(__v => __obj.update("ConditionExpression", __v.asInstanceOf[js.Any]))
-      ExpressionAttributeNames.foreach(__v => __obj.update("ExpressionAttributeNames", __v.asInstanceOf[js.Any]))
-      ExpressionAttributeValues.foreach(__v => __obj.update("ExpressionAttributeValues", __v.asInstanceOf[js.Any]))
+      ConditionExpression.foreach(__v => __obj.updateDynamic("ConditionExpression")(__v.asInstanceOf[js.Any]))
+      ExpressionAttributeNames.foreach(__v => __obj.updateDynamic("ExpressionAttributeNames")(__v.asInstanceOf[js.Any]))
+      ExpressionAttributeValues.foreach(
+        __v => __obj.updateDynamic("ExpressionAttributeValues")(__v.asInstanceOf[js.Any])
+      )
       ReturnValuesOnConditionCheckFailure.foreach(
-        __v => __obj.update("ReturnValuesOnConditionCheckFailure", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ReturnValuesOnConditionCheckFailure")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[Update]
     }
@@ -3837,7 +3875,7 @@ package dynamodb {
         PointInTimeRecoverySpecification: PointInTimeRecoverySpecification,
         TableName: TableName
     ): UpdateContinuousBackupsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PointInTimeRecoverySpecification" -> PointInTimeRecoverySpecification.asInstanceOf[js.Any],
         "TableName"                        -> TableName.asInstanceOf[js.Any]
       )
@@ -3855,9 +3893,9 @@ package dynamodb {
     def apply(
         ContinuousBackupsDescription: js.UndefOr[ContinuousBackupsDescription] = js.undefined
     ): UpdateContinuousBackupsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       ContinuousBackupsDescription.foreach(
-        __v => __obj.update("ContinuousBackupsDescription", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ContinuousBackupsDescription")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateContinuousBackupsOutput]
     }
@@ -3877,7 +3915,7 @@ package dynamodb {
         IndexName: IndexName,
         ProvisionedThroughput: ProvisionedThroughput
     ): UpdateGlobalSecondaryIndexAction = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IndexName"             -> IndexName.asInstanceOf[js.Any],
         "ProvisionedThroughput" -> ProvisionedThroughput.asInstanceOf[js.Any]
       )
@@ -3897,7 +3935,7 @@ package dynamodb {
         GlobalTableName: TableName,
         ReplicaUpdates: ReplicaUpdateList
     ): UpdateGlobalTableInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GlobalTableName" -> GlobalTableName.asInstanceOf[js.Any],
         "ReplicaUpdates"  -> ReplicaUpdates.asInstanceOf[js.Any]
       )
@@ -3915,8 +3953,8 @@ package dynamodb {
     def apply(
         GlobalTableDescription: js.UndefOr[GlobalTableDescription] = js.undefined
     ): UpdateGlobalTableOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GlobalTableDescription.foreach(__v => __obj.update("GlobalTableDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GlobalTableDescription.foreach(__v => __obj.updateDynamic("GlobalTableDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGlobalTableOutput]
     }
   }
@@ -3942,21 +3980,22 @@ package dynamodb {
         GlobalTableProvisionedWriteCapacityUnits: js.UndefOr[PositiveLongObject] = js.undefined,
         ReplicaSettingsUpdate: js.UndefOr[ReplicaSettingsUpdateList] = js.undefined
     ): UpdateGlobalTableSettingsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GlobalTableName" -> GlobalTableName.asInstanceOf[js.Any]
       )
 
-      GlobalTableBillingMode.foreach(__v => __obj.update("GlobalTableBillingMode", __v.asInstanceOf[js.Any]))
+      GlobalTableBillingMode.foreach(__v => __obj.updateDynamic("GlobalTableBillingMode")(__v.asInstanceOf[js.Any]))
       GlobalTableGlobalSecondaryIndexSettingsUpdate.foreach(
-        __v => __obj.update("GlobalTableGlobalSecondaryIndexSettingsUpdate", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("GlobalTableGlobalSecondaryIndexSettingsUpdate")(__v.asInstanceOf[js.Any])
       )
       GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate.foreach(
-        __v => __obj.update("GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate", __v.asInstanceOf[js.Any])
+        __v =>
+          __obj.updateDynamic("GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate")(__v.asInstanceOf[js.Any])
       )
       GlobalTableProvisionedWriteCapacityUnits.foreach(
-        __v => __obj.update("GlobalTableProvisionedWriteCapacityUnits", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("GlobalTableProvisionedWriteCapacityUnits")(__v.asInstanceOf[js.Any])
       )
-      ReplicaSettingsUpdate.foreach(__v => __obj.update("ReplicaSettingsUpdate", __v.asInstanceOf[js.Any]))
+      ReplicaSettingsUpdate.foreach(__v => __obj.updateDynamic("ReplicaSettingsUpdate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGlobalTableSettingsInput]
     }
   }
@@ -3972,9 +4011,9 @@ package dynamodb {
         GlobalTableName: js.UndefOr[TableName] = js.undefined,
         ReplicaSettings: js.UndefOr[ReplicaSettingsDescriptionList] = js.undefined
     ): UpdateGlobalTableSettingsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GlobalTableName.foreach(__v => __obj.update("GlobalTableName", __v.asInstanceOf[js.Any]))
-      ReplicaSettings.foreach(__v => __obj.update("ReplicaSettings", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GlobalTableName.foreach(__v => __obj.updateDynamic("GlobalTableName")(__v.asInstanceOf[js.Any]))
+      ReplicaSettings.foreach(__v => __obj.updateDynamic("ReplicaSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGlobalTableSettingsOutput]
     }
   }
@@ -4013,21 +4052,25 @@ package dynamodb {
         ReturnValues: js.UndefOr[ReturnValue] = js.undefined,
         UpdateExpression: js.UndefOr[UpdateExpression] = js.undefined
     ): UpdateItemInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"       -> Key.asInstanceOf[js.Any],
         "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
-      AttributeUpdates.foreach(__v => __obj.update("AttributeUpdates", __v.asInstanceOf[js.Any]))
-      ConditionExpression.foreach(__v => __obj.update("ConditionExpression", __v.asInstanceOf[js.Any]))
-      ConditionalOperator.foreach(__v => __obj.update("ConditionalOperator", __v.asInstanceOf[js.Any]))
-      Expected.foreach(__v => __obj.update("Expected", __v.asInstanceOf[js.Any]))
-      ExpressionAttributeNames.foreach(__v => __obj.update("ExpressionAttributeNames", __v.asInstanceOf[js.Any]))
-      ExpressionAttributeValues.foreach(__v => __obj.update("ExpressionAttributeValues", __v.asInstanceOf[js.Any]))
-      ReturnConsumedCapacity.foreach(__v => __obj.update("ReturnConsumedCapacity", __v.asInstanceOf[js.Any]))
-      ReturnItemCollectionMetrics.foreach(__v => __obj.update("ReturnItemCollectionMetrics", __v.asInstanceOf[js.Any]))
-      ReturnValues.foreach(__v => __obj.update("ReturnValues", __v.asInstanceOf[js.Any]))
-      UpdateExpression.foreach(__v => __obj.update("UpdateExpression", __v.asInstanceOf[js.Any]))
+      AttributeUpdates.foreach(__v => __obj.updateDynamic("AttributeUpdates")(__v.asInstanceOf[js.Any]))
+      ConditionExpression.foreach(__v => __obj.updateDynamic("ConditionExpression")(__v.asInstanceOf[js.Any]))
+      ConditionalOperator.foreach(__v => __obj.updateDynamic("ConditionalOperator")(__v.asInstanceOf[js.Any]))
+      Expected.foreach(__v => __obj.updateDynamic("Expected")(__v.asInstanceOf[js.Any]))
+      ExpressionAttributeNames.foreach(__v => __obj.updateDynamic("ExpressionAttributeNames")(__v.asInstanceOf[js.Any]))
+      ExpressionAttributeValues.foreach(
+        __v => __obj.updateDynamic("ExpressionAttributeValues")(__v.asInstanceOf[js.Any])
+      )
+      ReturnConsumedCapacity.foreach(__v => __obj.updateDynamic("ReturnConsumedCapacity")(__v.asInstanceOf[js.Any]))
+      ReturnItemCollectionMetrics.foreach(
+        __v => __obj.updateDynamic("ReturnItemCollectionMetrics")(__v.asInstanceOf[js.Any])
+      )
+      ReturnValues.foreach(__v => __obj.updateDynamic("ReturnValues")(__v.asInstanceOf[js.Any]))
+      UpdateExpression.foreach(__v => __obj.updateDynamic("UpdateExpression")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateItemInput]
     }
   }
@@ -4048,10 +4091,10 @@ package dynamodb {
         ConsumedCapacity: js.UndefOr[ConsumedCapacity] = js.undefined,
         ItemCollectionMetrics: js.UndefOr[ItemCollectionMetrics] = js.undefined
     ): UpdateItemOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      ConsumedCapacity.foreach(__v => __obj.update("ConsumedCapacity", __v.asInstanceOf[js.Any]))
-      ItemCollectionMetrics.foreach(__v => __obj.update("ItemCollectionMetrics", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      ConsumedCapacity.foreach(__v => __obj.updateDynamic("ConsumedCapacity")(__v.asInstanceOf[js.Any]))
+      ItemCollectionMetrics.foreach(__v => __obj.updateDynamic("ItemCollectionMetrics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateItemOutput]
     }
   }
@@ -4080,16 +4123,18 @@ package dynamodb {
         SSESpecification: js.UndefOr[SSESpecification] = js.undefined,
         StreamSpecification: js.UndefOr[StreamSpecification] = js.undefined
     ): UpdateTableInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
-      AttributeDefinitions.foreach(__v => __obj.update("AttributeDefinitions", __v.asInstanceOf[js.Any]))
-      BillingMode.foreach(__v => __obj.update("BillingMode", __v.asInstanceOf[js.Any]))
-      GlobalSecondaryIndexUpdates.foreach(__v => __obj.update("GlobalSecondaryIndexUpdates", __v.asInstanceOf[js.Any]))
-      ProvisionedThroughput.foreach(__v => __obj.update("ProvisionedThroughput", __v.asInstanceOf[js.Any]))
-      SSESpecification.foreach(__v => __obj.update("SSESpecification", __v.asInstanceOf[js.Any]))
-      StreamSpecification.foreach(__v => __obj.update("StreamSpecification", __v.asInstanceOf[js.Any]))
+      AttributeDefinitions.foreach(__v => __obj.updateDynamic("AttributeDefinitions")(__v.asInstanceOf[js.Any]))
+      BillingMode.foreach(__v => __obj.updateDynamic("BillingMode")(__v.asInstanceOf[js.Any]))
+      GlobalSecondaryIndexUpdates.foreach(
+        __v => __obj.updateDynamic("GlobalSecondaryIndexUpdates")(__v.asInstanceOf[js.Any])
+      )
+      ProvisionedThroughput.foreach(__v => __obj.updateDynamic("ProvisionedThroughput")(__v.asInstanceOf[js.Any]))
+      SSESpecification.foreach(__v => __obj.updateDynamic("SSESpecification")(__v.asInstanceOf[js.Any]))
+      StreamSpecification.foreach(__v => __obj.updateDynamic("StreamSpecification")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateTableInput]
     }
   }
@@ -4106,8 +4151,8 @@ package dynamodb {
     def apply(
         TableDescription: js.UndefOr[TableDescription] = js.undefined
     ): UpdateTableOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TableDescription.foreach(__v => __obj.update("TableDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TableDescription.foreach(__v => __obj.updateDynamic("TableDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateTableOutput]
     }
   }
@@ -4126,7 +4171,7 @@ package dynamodb {
         TableName: TableName,
         TimeToLiveSpecification: TimeToLiveSpecification
     ): UpdateTimeToLiveInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TableName"               -> TableName.asInstanceOf[js.Any],
         "TimeToLiveSpecification" -> TimeToLiveSpecification.asInstanceOf[js.Any]
       )
@@ -4144,8 +4189,8 @@ package dynamodb {
     def apply(
         TimeToLiveSpecification: js.UndefOr[TimeToLiveSpecification] = js.undefined
     ): UpdateTimeToLiveOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TimeToLiveSpecification.foreach(__v => __obj.update("TimeToLiveSpecification", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TimeToLiveSpecification.foreach(__v => __obj.updateDynamic("TimeToLiveSpecification")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateTimeToLiveOutput]
     }
   }
@@ -4164,9 +4209,9 @@ package dynamodb {
         DeleteRequest: js.UndefOr[DeleteRequest] = js.undefined,
         PutRequest: js.UndefOr[PutRequest] = js.undefined
     ): WriteRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DeleteRequest.foreach(__v => __obj.update("DeleteRequest", __v.asInstanceOf[js.Any]))
-      PutRequest.foreach(__v => __obj.update("PutRequest", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DeleteRequest.foreach(__v => __obj.updateDynamic("DeleteRequest")(__v.asInstanceOf[js.Any]))
+      PutRequest.foreach(__v => __obj.updateDynamic("PutRequest")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WriteRequest]
     }
   }

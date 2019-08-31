@@ -321,16 +321,16 @@ package chime {
         DefaultLicense: js.UndefOr[License] = js.undefined,
         SupportedLicenses: js.UndefOr[LicenseList] = js.undefined
     ): Account = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId"    -> AccountId.asInstanceOf[js.Any],
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "Name"         -> Name.asInstanceOf[js.Any]
       )
 
-      AccountType.foreach(__v => __obj.update("AccountType", __v.asInstanceOf[js.Any]))
-      CreatedTimestamp.foreach(__v => __obj.update("CreatedTimestamp", __v.asInstanceOf[js.Any]))
-      DefaultLicense.foreach(__v => __obj.update("DefaultLicense", __v.asInstanceOf[js.Any]))
-      SupportedLicenses.foreach(__v => __obj.update("SupportedLicenses", __v.asInstanceOf[js.Any]))
+      AccountType.foreach(__v => __obj.updateDynamic("AccountType")(__v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      DefaultLicense.foreach(__v => __obj.updateDynamic("DefaultLicense")(__v.asInstanceOf[js.Any]))
+      SupportedLicenses.foreach(__v => __obj.updateDynamic("SupportedLicenses")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Account]
     }
   }
@@ -349,9 +349,9 @@ package chime {
         DisableRemoteControl: js.UndefOr[Boolean] = js.undefined,
         EnableDialOut: js.UndefOr[Boolean] = js.undefined
     ): AccountSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DisableRemoteControl.foreach(__v => __obj.update("DisableRemoteControl", __v.asInstanceOf[js.Any]))
-      EnableDialOut.foreach(__v => __obj.update("EnableDialOut", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DisableRemoteControl.foreach(__v => __obj.updateDynamic("DisableRemoteControl")(__v.asInstanceOf[js.Any]))
+      EnableDialOut.foreach(__v => __obj.updateDynamic("EnableDialOut")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AccountSettings]
     }
   }
@@ -378,7 +378,7 @@ package chime {
         E164PhoneNumber: E164PhoneNumber,
         UserId: String
     ): AssociatePhoneNumberWithUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId"       -> AccountId.asInstanceOf[js.Any],
         "E164PhoneNumber" -> E164PhoneNumber.asInstanceOf[js.Any],
         "UserId"          -> UserId.asInstanceOf[js.Any]
@@ -394,7 +394,7 @@ package chime {
   object AssociatePhoneNumberWithUserResponse {
     def apply(
         ): AssociatePhoneNumberWithUserResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociatePhoneNumberWithUserResponse]
     }
@@ -411,11 +411,11 @@ package chime {
         VoiceConnectorId: NonEmptyString,
         E164PhoneNumbers: js.UndefOr[E164PhoneNumberList] = js.undefined
     ): AssociatePhoneNumbersWithVoiceConnectorRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
 
-      E164PhoneNumbers.foreach(__v => __obj.update("E164PhoneNumbers", __v.asInstanceOf[js.Any]))
+      E164PhoneNumbers.foreach(__v => __obj.updateDynamic("E164PhoneNumbers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociatePhoneNumbersWithVoiceConnectorRequest]
     }
   }
@@ -429,8 +429,8 @@ package chime {
     def apply(
         PhoneNumberErrors: js.UndefOr[PhoneNumberErrorList] = js.undefined
     ): AssociatePhoneNumbersWithVoiceConnectorResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PhoneNumberErrors.foreach(__v => __obj.update("PhoneNumberErrors", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PhoneNumberErrors.foreach(__v => __obj.updateDynamic("PhoneNumberErrors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociatePhoneNumbersWithVoiceConnectorResponse]
     }
   }
@@ -444,7 +444,7 @@ package chime {
     def apply(
         PhoneNumberIds: NonEmptyStringList
     ): BatchDeletePhoneNumberRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PhoneNumberIds" -> PhoneNumberIds.asInstanceOf[js.Any]
       )
 
@@ -461,8 +461,8 @@ package chime {
     def apply(
         PhoneNumberErrors: js.UndefOr[PhoneNumberErrorList] = js.undefined
     ): BatchDeletePhoneNumberResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PhoneNumberErrors.foreach(__v => __obj.update("PhoneNumberErrors", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PhoneNumberErrors.foreach(__v => __obj.updateDynamic("PhoneNumberErrors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDeletePhoneNumberResponse]
     }
   }
@@ -478,7 +478,7 @@ package chime {
         AccountId: NonEmptyString,
         UserIdList: UserIdList
     ): BatchSuspendUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId"  -> AccountId.asInstanceOf[js.Any],
         "UserIdList" -> UserIdList.asInstanceOf[js.Any]
       )
@@ -496,8 +496,8 @@ package chime {
     def apply(
         UserErrors: js.UndefOr[UserErrorList] = js.undefined
     ): BatchSuspendUserResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      UserErrors.foreach(__v => __obj.update("UserErrors", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      UserErrors.foreach(__v => __obj.updateDynamic("UserErrors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchSuspendUserResponse]
     }
   }
@@ -513,7 +513,7 @@ package chime {
         AccountId: NonEmptyString,
         UserIdList: UserIdList
     ): BatchUnsuspendUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId"  -> AccountId.asInstanceOf[js.Any],
         "UserIdList" -> UserIdList.asInstanceOf[js.Any]
       )
@@ -531,8 +531,8 @@ package chime {
     def apply(
         UserErrors: js.UndefOr[UserErrorList] = js.undefined
     ): BatchUnsuspendUserResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      UserErrors.foreach(__v => __obj.update("UserErrors", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      UserErrors.foreach(__v => __obj.updateDynamic("UserErrors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchUnsuspendUserResponse]
     }
   }
@@ -546,7 +546,7 @@ package chime {
     def apply(
         UpdatePhoneNumberRequestItems: UpdatePhoneNumberRequestItemList
     ): BatchUpdatePhoneNumberRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UpdatePhoneNumberRequestItems" -> UpdatePhoneNumberRequestItems.asInstanceOf[js.Any]
       )
 
@@ -563,8 +563,8 @@ package chime {
     def apply(
         PhoneNumberErrors: js.UndefOr[PhoneNumberErrorList] = js.undefined
     ): BatchUpdatePhoneNumberResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PhoneNumberErrors.foreach(__v => __obj.update("PhoneNumberErrors", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PhoneNumberErrors.foreach(__v => __obj.updateDynamic("PhoneNumberErrors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchUpdatePhoneNumberResponse]
     }
   }
@@ -580,7 +580,7 @@ package chime {
         AccountId: NonEmptyString,
         UpdateUserRequestItems: UpdateUserRequestItemList
     ): BatchUpdateUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId"              -> AccountId.asInstanceOf[js.Any],
         "UpdateUserRequestItems" -> UpdateUserRequestItems.asInstanceOf[js.Any]
       )
@@ -598,8 +598,8 @@ package chime {
     def apply(
         UserErrors: js.UndefOr[UserErrorList] = js.undefined
     ): BatchUpdateUserResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      UserErrors.foreach(__v => __obj.update("UserErrors", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      UserErrors.foreach(__v => __obj.updateDynamic("UserErrors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchUpdateUserResponse]
     }
   }
@@ -632,16 +632,16 @@ package chime {
         UpdatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined,
         UserId: js.UndefOr[String] = js.undefined
     ): Bot = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BotEmail.foreach(__v => __obj.update("BotEmail", __v.asInstanceOf[js.Any]))
-      BotId.foreach(__v => __obj.update("BotId", __v.asInstanceOf[js.Any]))
-      BotType.foreach(__v => __obj.update("BotType", __v.asInstanceOf[js.Any]))
-      CreatedTimestamp.foreach(__v => __obj.update("CreatedTimestamp", __v.asInstanceOf[js.Any]))
-      Disabled.foreach(__v => __obj.update("Disabled", __v.asInstanceOf[js.Any]))
-      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
-      SecurityToken.foreach(__v => __obj.update("SecurityToken", __v.asInstanceOf[js.Any]))
-      UpdatedTimestamp.foreach(__v => __obj.update("UpdatedTimestamp", __v.asInstanceOf[js.Any]))
-      UserId.foreach(__v => __obj.update("UserId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BotEmail.foreach(__v => __obj.updateDynamic("BotEmail")(__v.asInstanceOf[js.Any]))
+      BotId.foreach(__v => __obj.updateDynamic("BotId")(__v.asInstanceOf[js.Any]))
+      BotType.foreach(__v => __obj.updateDynamic("BotType")(__v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      Disabled.foreach(__v => __obj.updateDynamic("Disabled")(__v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
+      SecurityToken.foreach(__v => __obj.updateDynamic("SecurityToken")(__v.asInstanceOf[js.Any]))
+      UpdatedTimestamp.foreach(__v => __obj.updateDynamic("UpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      UserId.foreach(__v => __obj.updateDynamic("UserId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Bot]
     }
   }
@@ -664,8 +664,8 @@ package chime {
     def apply(
         CdrBucket: js.UndefOr[String] = js.undefined
     ): BusinessCallingSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CdrBucket.foreach(__v => __obj.update("CdrBucket", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CdrBucket.foreach(__v => __obj.updateDynamic("CdrBucket")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BusinessCallingSettings]
     }
   }
@@ -679,7 +679,7 @@ package chime {
     def apply(
         Name: AccountName
     ): CreateAccountRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -696,8 +696,8 @@ package chime {
     def apply(
         Account: js.UndefOr[Account] = js.undefined
     ): CreateAccountResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Account.foreach(__v => __obj.update("Account", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Account.foreach(__v => __obj.updateDynamic("Account")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAccountResponse]
     }
   }
@@ -715,12 +715,12 @@ package chime {
         DisplayName: SensitiveString,
         Domain: js.UndefOr[NonEmptyString] = js.undefined
     ): CreateBotRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId"   -> AccountId.asInstanceOf[js.Any],
         "DisplayName" -> DisplayName.asInstanceOf[js.Any]
       )
 
-      Domain.foreach(__v => __obj.update("Domain", __v.asInstanceOf[js.Any]))
+      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateBotRequest]
     }
   }
@@ -734,8 +734,8 @@ package chime {
     def apply(
         Bot: js.UndefOr[Bot] = js.undefined
     ): CreateBotResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Bot.foreach(__v => __obj.update("Bot", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Bot.foreach(__v => __obj.updateDynamic("Bot")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateBotResponse]
     }
   }
@@ -751,7 +751,7 @@ package chime {
         E164PhoneNumbers: E164PhoneNumberList,
         ProductType: PhoneNumberProductType
     ): CreatePhoneNumberOrderRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "E164PhoneNumbers" -> E164PhoneNumbers.asInstanceOf[js.Any],
         "ProductType"      -> ProductType.asInstanceOf[js.Any]
       )
@@ -769,8 +769,8 @@ package chime {
     def apply(
         PhoneNumberOrder: js.UndefOr[PhoneNumberOrder] = js.undefined
     ): CreatePhoneNumberOrderResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PhoneNumberOrder.foreach(__v => __obj.update("PhoneNumberOrder", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PhoneNumberOrder.foreach(__v => __obj.updateDynamic("PhoneNumberOrder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePhoneNumberOrderResponse]
     }
   }
@@ -786,7 +786,7 @@ package chime {
         Name: VoiceConnectorName,
         RequireEncryption: Boolean
     ): CreateVoiceConnectorRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"              -> Name.asInstanceOf[js.Any],
         "RequireEncryption" -> RequireEncryption.asInstanceOf[js.Any]
       )
@@ -804,8 +804,8 @@ package chime {
     def apply(
         VoiceConnector: js.UndefOr[VoiceConnector] = js.undefined
     ): CreateVoiceConnectorResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      VoiceConnector.foreach(__v => __obj.update("VoiceConnector", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      VoiceConnector.foreach(__v => __obj.updateDynamic("VoiceConnector")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateVoiceConnectorResponse]
     }
   }
@@ -824,9 +824,9 @@ package chime {
         Password: js.UndefOr[SensitiveString] = js.undefined,
         Username: js.UndefOr[SensitiveString] = js.undefined
     ): Credential = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Password.foreach(__v => __obj.update("Password", __v.asInstanceOf[js.Any]))
-      Username.foreach(__v => __obj.update("Username", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Password.foreach(__v => __obj.updateDynamic("Password")(__v.asInstanceOf[js.Any]))
+      Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Credential]
     }
   }
@@ -840,7 +840,7 @@ package chime {
     def apply(
         AccountId: NonEmptyString
     ): DeleteAccountRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any]
       )
 
@@ -854,7 +854,7 @@ package chime {
   object DeleteAccountResponse {
     def apply(
         ): DeleteAccountResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteAccountResponse]
     }
@@ -871,7 +871,7 @@ package chime {
         AccountId: NonEmptyString,
         BotId: NonEmptyString
     ): DeleteEventsConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "BotId"     -> BotId.asInstanceOf[js.Any]
       )
@@ -889,7 +889,7 @@ package chime {
     def apply(
         PhoneNumberId: String
     ): DeletePhoneNumberRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PhoneNumberId" -> PhoneNumberId.asInstanceOf[js.Any]
       )
 
@@ -906,7 +906,7 @@ package chime {
     def apply(
         VoiceConnectorId: NonEmptyString
     ): DeleteVoiceConnectorOriginationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
 
@@ -923,7 +923,7 @@ package chime {
     def apply(
         VoiceConnectorId: NonEmptyString
     ): DeleteVoiceConnectorRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
 
@@ -942,11 +942,11 @@ package chime {
         VoiceConnectorId: NonEmptyString,
         Usernames: js.UndefOr[SensitiveStringList] = js.undefined
     ): DeleteVoiceConnectorTerminationCredentialsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
 
-      Usernames.foreach(__v => __obj.update("Usernames", __v.asInstanceOf[js.Any]))
+      Usernames.foreach(__v => __obj.updateDynamic("Usernames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteVoiceConnectorTerminationCredentialsRequest]
     }
   }
@@ -960,7 +960,7 @@ package chime {
     def apply(
         VoiceConnectorId: NonEmptyString
     ): DeleteVoiceConnectorTerminationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
 
@@ -979,7 +979,7 @@ package chime {
         AccountId: String,
         UserId: String
     ): DisassociatePhoneNumberFromUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "UserId"    -> UserId.asInstanceOf[js.Any]
       )
@@ -994,7 +994,7 @@ package chime {
   object DisassociatePhoneNumberFromUserResponse {
     def apply(
         ): DisassociatePhoneNumberFromUserResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociatePhoneNumberFromUserResponse]
     }
@@ -1011,11 +1011,11 @@ package chime {
         VoiceConnectorId: NonEmptyString,
         E164PhoneNumbers: js.UndefOr[E164PhoneNumberList] = js.undefined
     ): DisassociatePhoneNumbersFromVoiceConnectorRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
 
-      E164PhoneNumbers.foreach(__v => __obj.update("E164PhoneNumbers", __v.asInstanceOf[js.Any]))
+      E164PhoneNumbers.foreach(__v => __obj.updateDynamic("E164PhoneNumbers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisassociatePhoneNumbersFromVoiceConnectorRequest]
     }
   }
@@ -1029,8 +1029,8 @@ package chime {
     def apply(
         PhoneNumberErrors: js.UndefOr[PhoneNumberErrorList] = js.undefined
     ): DisassociatePhoneNumbersFromVoiceConnectorResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PhoneNumberErrors.foreach(__v => __obj.update("PhoneNumberErrors", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PhoneNumberErrors.foreach(__v => __obj.updateDynamic("PhoneNumberErrors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisassociatePhoneNumbersFromVoiceConnectorResponse]
     }
   }
@@ -1087,10 +1087,12 @@ package chime {
         LambdaFunctionArn: js.UndefOr[SensitiveString] = js.undefined,
         OutboundEventsHTTPSEndpoint: js.UndefOr[SensitiveString] = js.undefined
     ): EventsConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BotId.foreach(__v => __obj.update("BotId", __v.asInstanceOf[js.Any]))
-      LambdaFunctionArn.foreach(__v => __obj.update("LambdaFunctionArn", __v.asInstanceOf[js.Any]))
-      OutboundEventsHTTPSEndpoint.foreach(__v => __obj.update("OutboundEventsHTTPSEndpoint", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BotId.foreach(__v => __obj.updateDynamic("BotId")(__v.asInstanceOf[js.Any]))
+      LambdaFunctionArn.foreach(__v => __obj.updateDynamic("LambdaFunctionArn")(__v.asInstanceOf[js.Any]))
+      OutboundEventsHTTPSEndpoint.foreach(
+        __v => __obj.updateDynamic("OutboundEventsHTTPSEndpoint")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[EventsConfiguration]
     }
   }
@@ -1104,7 +1106,7 @@ package chime {
     def apply(
         AccountId: NonEmptyString
     ): GetAccountRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any]
       )
 
@@ -1121,8 +1123,8 @@ package chime {
     def apply(
         Account: js.UndefOr[Account] = js.undefined
     ): GetAccountResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Account.foreach(__v => __obj.update("Account", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Account.foreach(__v => __obj.updateDynamic("Account")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAccountResponse]
     }
   }
@@ -1136,7 +1138,7 @@ package chime {
     def apply(
         AccountId: NonEmptyString
     ): GetAccountSettingsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any]
       )
 
@@ -1153,8 +1155,8 @@ package chime {
     def apply(
         AccountSettings: js.UndefOr[AccountSettings] = js.undefined
     ): GetAccountSettingsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccountSettings.foreach(__v => __obj.update("AccountSettings", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccountSettings.foreach(__v => __obj.updateDynamic("AccountSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAccountSettingsResponse]
     }
   }
@@ -1170,7 +1172,7 @@ package chime {
         AccountId: NonEmptyString,
         BotId: NonEmptyString
     ): GetBotRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "BotId"     -> BotId.asInstanceOf[js.Any]
       )
@@ -1188,8 +1190,8 @@ package chime {
     def apply(
         Bot: js.UndefOr[Bot] = js.undefined
     ): GetBotResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Bot.foreach(__v => __obj.update("Bot", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Bot.foreach(__v => __obj.updateDynamic("Bot")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBotResponse]
     }
   }
@@ -1205,7 +1207,7 @@ package chime {
         AccountId: NonEmptyString,
         BotId: NonEmptyString
     ): GetEventsConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "BotId"     -> BotId.asInstanceOf[js.Any]
       )
@@ -1223,8 +1225,8 @@ package chime {
     def apply(
         EventsConfiguration: js.UndefOr[EventsConfiguration] = js.undefined
     ): GetEventsConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EventsConfiguration.foreach(__v => __obj.update("EventsConfiguration", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EventsConfiguration.foreach(__v => __obj.updateDynamic("EventsConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetEventsConfigurationResponse]
     }
   }
@@ -1240,9 +1242,9 @@ package chime {
         BusinessCalling: js.UndefOr[BusinessCallingSettings] = js.undefined,
         VoiceConnector: js.UndefOr[VoiceConnectorSettings] = js.undefined
     ): GetGlobalSettingsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BusinessCalling.foreach(__v => __obj.update("BusinessCalling", __v.asInstanceOf[js.Any]))
-      VoiceConnector.foreach(__v => __obj.update("VoiceConnector", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BusinessCalling.foreach(__v => __obj.updateDynamic("BusinessCalling")(__v.asInstanceOf[js.Any]))
+      VoiceConnector.foreach(__v => __obj.updateDynamic("VoiceConnector")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetGlobalSettingsResponse]
     }
   }
@@ -1256,7 +1258,7 @@ package chime {
     def apply(
         PhoneNumberOrderId: GuidString
     ): GetPhoneNumberOrderRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PhoneNumberOrderId" -> PhoneNumberOrderId.asInstanceOf[js.Any]
       )
 
@@ -1273,8 +1275,8 @@ package chime {
     def apply(
         PhoneNumberOrder: js.UndefOr[PhoneNumberOrder] = js.undefined
     ): GetPhoneNumberOrderResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PhoneNumberOrder.foreach(__v => __obj.update("PhoneNumberOrder", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PhoneNumberOrder.foreach(__v => __obj.updateDynamic("PhoneNumberOrder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPhoneNumberOrderResponse]
     }
   }
@@ -1288,7 +1290,7 @@ package chime {
     def apply(
         PhoneNumberId: String
     ): GetPhoneNumberRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PhoneNumberId" -> PhoneNumberId.asInstanceOf[js.Any]
       )
 
@@ -1305,8 +1307,8 @@ package chime {
     def apply(
         PhoneNumber: js.UndefOr[PhoneNumber] = js.undefined
     ): GetPhoneNumberResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PhoneNumber.foreach(__v => __obj.update("PhoneNumber", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PhoneNumber.foreach(__v => __obj.updateDynamic("PhoneNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPhoneNumberResponse]
     }
   }
@@ -1322,7 +1324,7 @@ package chime {
         AccountId: NonEmptyString,
         UserId: NonEmptyString
     ): GetUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "UserId"    -> UserId.asInstanceOf[js.Any]
       )
@@ -1340,8 +1342,8 @@ package chime {
     def apply(
         User: js.UndefOr[User] = js.undefined
     ): GetUserResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      User.foreach(__v => __obj.update("User", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetUserResponse]
     }
   }
@@ -1357,7 +1359,7 @@ package chime {
         AccountId: String,
         UserId: String
     ): GetUserSettingsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "UserId"    -> UserId.asInstanceOf[js.Any]
       )
@@ -1375,8 +1377,8 @@ package chime {
     def apply(
         UserSettings: js.UndefOr[UserSettings] = js.undefined
     ): GetUserSettingsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      UserSettings.foreach(__v => __obj.update("UserSettings", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      UserSettings.foreach(__v => __obj.updateDynamic("UserSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetUserSettingsResponse]
     }
   }
@@ -1390,7 +1392,7 @@ package chime {
     def apply(
         VoiceConnectorId: NonEmptyString
     ): GetVoiceConnectorOriginationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
 
@@ -1407,8 +1409,8 @@ package chime {
     def apply(
         Origination: js.UndefOr[Origination] = js.undefined
     ): GetVoiceConnectorOriginationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Origination.foreach(__v => __obj.update("Origination", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Origination.foreach(__v => __obj.updateDynamic("Origination")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetVoiceConnectorOriginationResponse]
     }
   }
@@ -1422,7 +1424,7 @@ package chime {
     def apply(
         VoiceConnectorId: NonEmptyString
     ): GetVoiceConnectorRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
 
@@ -1439,8 +1441,8 @@ package chime {
     def apply(
         VoiceConnector: js.UndefOr[VoiceConnector] = js.undefined
     ): GetVoiceConnectorResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      VoiceConnector.foreach(__v => __obj.update("VoiceConnector", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      VoiceConnector.foreach(__v => __obj.updateDynamic("VoiceConnector")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetVoiceConnectorResponse]
     }
   }
@@ -1454,7 +1456,7 @@ package chime {
     def apply(
         VoiceConnectorId: NonEmptyString
     ): GetVoiceConnectorTerminationHealthRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
 
@@ -1471,8 +1473,8 @@ package chime {
     def apply(
         TerminationHealth: js.UndefOr[TerminationHealth] = js.undefined
     ): GetVoiceConnectorTerminationHealthResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TerminationHealth.foreach(__v => __obj.update("TerminationHealth", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TerminationHealth.foreach(__v => __obj.updateDynamic("TerminationHealth")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetVoiceConnectorTerminationHealthResponse]
     }
   }
@@ -1486,7 +1488,7 @@ package chime {
     def apply(
         VoiceConnectorId: NonEmptyString
     ): GetVoiceConnectorTerminationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
 
@@ -1503,8 +1505,8 @@ package chime {
     def apply(
         Termination: js.UndefOr[Termination] = js.undefined
     ): GetVoiceConnectorTerminationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Termination.foreach(__v => __obj.update("Termination", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Termination.foreach(__v => __obj.updateDynamic("Termination")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetVoiceConnectorTerminationResponse]
     }
   }
@@ -1527,11 +1529,11 @@ package chime {
         InviteId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[InviteStatus] = js.undefined
     ): Invite = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EmailAddress.foreach(__v => __obj.update("EmailAddress", __v.asInstanceOf[js.Any]))
-      EmailStatus.foreach(__v => __obj.update("EmailStatus", __v.asInstanceOf[js.Any]))
-      InviteId.foreach(__v => __obj.update("InviteId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EmailAddress.foreach(__v => __obj.updateDynamic("EmailAddress")(__v.asInstanceOf[js.Any]))
+      EmailStatus.foreach(__v => __obj.updateDynamic("EmailStatus")(__v.asInstanceOf[js.Any]))
+      InviteId.foreach(__v => __obj.updateDynamic("InviteId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Invite]
     }
   }
@@ -1555,7 +1557,7 @@ package chime {
         AccountId: NonEmptyString,
         UserEmailList: UserEmailList
     ): InviteUsersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId"     -> AccountId.asInstanceOf[js.Any],
         "UserEmailList" -> UserEmailList.asInstanceOf[js.Any]
       )
@@ -1573,8 +1575,8 @@ package chime {
     def apply(
         Invites: js.UndefOr[InviteList] = js.undefined
     ): InviteUsersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Invites.foreach(__v => __obj.update("Invites", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Invites.foreach(__v => __obj.updateDynamic("Invites")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InviteUsersResponse]
     }
   }
@@ -1603,11 +1605,11 @@ package chime {
         NextToken: js.UndefOr[String] = js.undefined,
         UserEmail: js.UndefOr[EmailAddress] = js.undefined
     ): ListAccountsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      UserEmail.foreach(__v => __obj.update("UserEmail", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      UserEmail.foreach(__v => __obj.updateDynamic("UserEmail")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAccountsRequest]
     }
   }
@@ -1623,9 +1625,9 @@ package chime {
         Accounts: js.UndefOr[AccountList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListAccountsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Accounts.foreach(__v => __obj.update("Accounts", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Accounts.foreach(__v => __obj.updateDynamic("Accounts")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAccountsResponse]
     }
   }
@@ -1643,12 +1645,12 @@ package chime {
         MaxResults: js.UndefOr[ResultMax] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListBotsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBotsRequest]
     }
   }
@@ -1664,9 +1666,9 @@ package chime {
         Bots: js.UndefOr[BotList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListBotsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Bots.foreach(__v => __obj.update("Bots", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Bots.foreach(__v => __obj.updateDynamic("Bots")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBotsResponse]
     }
   }
@@ -1682,9 +1684,9 @@ package chime {
         MaxResults: js.UndefOr[ResultMax] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListPhoneNumberOrdersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPhoneNumberOrdersRequest]
     }
   }
@@ -1700,9 +1702,9 @@ package chime {
         NextToken: js.UndefOr[String] = js.undefined,
         PhoneNumberOrders: js.UndefOr[PhoneNumberOrderList] = js.undefined
     ): ListPhoneNumberOrdersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PhoneNumberOrders.foreach(__v => __obj.update("PhoneNumberOrders", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PhoneNumberOrders.foreach(__v => __obj.updateDynamic("PhoneNumberOrders")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPhoneNumberOrdersResponse]
     }
   }
@@ -1726,13 +1728,13 @@ package chime {
         ProductType: js.UndefOr[PhoneNumberProductType] = js.undefined,
         Status: js.UndefOr[PhoneNumberStatus] = js.undefined
     ): ListPhoneNumbersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FilterName.foreach(__v => __obj.update("FilterName", __v.asInstanceOf[js.Any]))
-      FilterValue.foreach(__v => __obj.update("FilterValue", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ProductType.foreach(__v => __obj.update("ProductType", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FilterName.foreach(__v => __obj.updateDynamic("FilterName")(__v.asInstanceOf[js.Any]))
+      FilterValue.foreach(__v => __obj.updateDynamic("FilterValue")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ProductType.foreach(__v => __obj.updateDynamic("ProductType")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPhoneNumbersRequest]
     }
   }
@@ -1748,9 +1750,9 @@ package chime {
         NextToken: js.UndefOr[String] = js.undefined,
         PhoneNumbers: js.UndefOr[PhoneNumberList] = js.undefined
     ): ListPhoneNumbersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PhoneNumbers.foreach(__v => __obj.update("PhoneNumbers", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PhoneNumbers.foreach(__v => __obj.updateDynamic("PhoneNumbers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPhoneNumbersResponse]
     }
   }
@@ -1770,13 +1772,13 @@ package chime {
         NextToken: js.UndefOr[String] = js.undefined,
         UserEmail: js.UndefOr[EmailAddress] = js.undefined
     ): ListUsersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      UserEmail.foreach(__v => __obj.update("UserEmail", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      UserEmail.foreach(__v => __obj.updateDynamic("UserEmail")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListUsersRequest]
     }
   }
@@ -1792,9 +1794,9 @@ package chime {
         NextToken: js.UndefOr[String] = js.undefined,
         Users: js.UndefOr[UserList] = js.undefined
     ): ListUsersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Users.foreach(__v => __obj.update("Users", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Users.foreach(__v => __obj.updateDynamic("Users")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListUsersResponse]
     }
   }
@@ -1808,7 +1810,7 @@ package chime {
     def apply(
         VoiceConnectorId: NonEmptyString
     ): ListVoiceConnectorTerminationCredentialsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
 
@@ -1825,8 +1827,8 @@ package chime {
     def apply(
         Usernames: js.UndefOr[SensitiveStringList] = js.undefined
     ): ListVoiceConnectorTerminationCredentialsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Usernames.foreach(__v => __obj.update("Usernames", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Usernames.foreach(__v => __obj.updateDynamic("Usernames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListVoiceConnectorTerminationCredentialsResponse]
     }
   }
@@ -1842,9 +1844,9 @@ package chime {
         MaxResults: js.UndefOr[ResultMax] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListVoiceConnectorsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListVoiceConnectorsRequest]
     }
   }
@@ -1860,9 +1862,9 @@ package chime {
         NextToken: js.UndefOr[String] = js.undefined,
         VoiceConnectors: js.UndefOr[VoiceConnectorList] = js.undefined
     ): ListVoiceConnectorsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      VoiceConnectors.foreach(__v => __obj.update("VoiceConnectors", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      VoiceConnectors.foreach(__v => __obj.updateDynamic("VoiceConnectors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListVoiceConnectorsResponse]
     }
   }
@@ -1878,7 +1880,7 @@ package chime {
         AccountId: NonEmptyString,
         UserId: NonEmptyString
     ): LogoutUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "UserId"    -> UserId.asInstanceOf[js.Any]
       )
@@ -1893,7 +1895,7 @@ package chime {
   object LogoutUserResponse {
     def apply(
         ): LogoutUserResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[LogoutUserResponse]
     }
@@ -1913,9 +1915,9 @@ package chime {
         E164PhoneNumber: js.UndefOr[E164PhoneNumber] = js.undefined,
         Status: js.UndefOr[OrderedPhoneNumberStatus] = js.undefined
     ): OrderedPhoneNumber = {
-      val __obj = js.Dictionary.empty[js.Any]
-      E164PhoneNumber.foreach(__v => __obj.update("E164PhoneNumber", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      E164PhoneNumber.foreach(__v => __obj.updateDynamic("E164PhoneNumber")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OrderedPhoneNumber]
     }
   }
@@ -1942,9 +1944,9 @@ package chime {
         Disabled: js.UndefOr[Boolean] = js.undefined,
         Routes: js.UndefOr[OriginationRouteList] = js.undefined
     ): Origination = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Disabled.foreach(__v => __obj.update("Disabled", __v.asInstanceOf[js.Any]))
-      Routes.foreach(__v => __obj.update("Routes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Disabled.foreach(__v => __obj.updateDynamic("Disabled")(__v.asInstanceOf[js.Any]))
+      Routes.foreach(__v => __obj.updateDynamic("Routes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Origination]
     }
   }
@@ -1969,12 +1971,12 @@ package chime {
         Protocol: js.UndefOr[OriginationRouteProtocol] = js.undefined,
         Weight: js.UndefOr[OriginationRouteWeight] = js.undefined
     ): OriginationRoute = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Host.foreach(__v => __obj.update("Host", __v.asInstanceOf[js.Any]))
-      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
-      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
-      Protocol.foreach(__v => __obj.update("Protocol", __v.asInstanceOf[js.Any]))
-      Weight.foreach(__v => __obj.update("Weight", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Host.foreach(__v => __obj.updateDynamic("Host")(__v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
+      Weight.foreach(__v => __obj.updateDynamic("Weight")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OriginationRoute]
     }
   }
@@ -2016,17 +2018,17 @@ package chime {
         Type: js.UndefOr[PhoneNumberType] = js.undefined,
         UpdatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined
     ): PhoneNumber = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Associations.foreach(__v => __obj.update("Associations", __v.asInstanceOf[js.Any]))
-      Capabilities.foreach(__v => __obj.update("Capabilities", __v.asInstanceOf[js.Any]))
-      CreatedTimestamp.foreach(__v => __obj.update("CreatedTimestamp", __v.asInstanceOf[js.Any]))
-      DeletionTimestamp.foreach(__v => __obj.update("DeletionTimestamp", __v.asInstanceOf[js.Any]))
-      E164PhoneNumber.foreach(__v => __obj.update("E164PhoneNumber", __v.asInstanceOf[js.Any]))
-      PhoneNumberId.foreach(__v => __obj.update("PhoneNumberId", __v.asInstanceOf[js.Any]))
-      ProductType.foreach(__v => __obj.update("ProductType", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
-      UpdatedTimestamp.foreach(__v => __obj.update("UpdatedTimestamp", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Associations.foreach(__v => __obj.updateDynamic("Associations")(__v.asInstanceOf[js.Any]))
+      Capabilities.foreach(__v => __obj.updateDynamic("Capabilities")(__v.asInstanceOf[js.Any]))
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      DeletionTimestamp.foreach(__v => __obj.updateDynamic("DeletionTimestamp")(__v.asInstanceOf[js.Any]))
+      E164PhoneNumber.foreach(__v => __obj.updateDynamic("E164PhoneNumber")(__v.asInstanceOf[js.Any]))
+      PhoneNumberId.foreach(__v => __obj.updateDynamic("PhoneNumberId")(__v.asInstanceOf[js.Any]))
+      ProductType.foreach(__v => __obj.updateDynamic("ProductType")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      UpdatedTimestamp.foreach(__v => __obj.updateDynamic("UpdatedTimestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PhoneNumber]
     }
   }
@@ -2047,10 +2049,10 @@ package chime {
         Name: js.UndefOr[PhoneNumberAssociationName] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
     ): PhoneNumberAssociation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssociatedTimestamp.foreach(__v => __obj.update("AssociatedTimestamp", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssociatedTimestamp.foreach(__v => __obj.updateDynamic("AssociatedTimestamp")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PhoneNumberAssociation]
     }
   }
@@ -2085,13 +2087,13 @@ package chime {
         OutboundMMS: js.UndefOr[NullableBoolean] = js.undefined,
         OutboundSMS: js.UndefOr[NullableBoolean] = js.undefined
     ): PhoneNumberCapabilities = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InboundCall.foreach(__v => __obj.update("InboundCall", __v.asInstanceOf[js.Any]))
-      InboundMMS.foreach(__v => __obj.update("InboundMMS", __v.asInstanceOf[js.Any]))
-      InboundSMS.foreach(__v => __obj.update("InboundSMS", __v.asInstanceOf[js.Any]))
-      OutboundCall.foreach(__v => __obj.update("OutboundCall", __v.asInstanceOf[js.Any]))
-      OutboundMMS.foreach(__v => __obj.update("OutboundMMS", __v.asInstanceOf[js.Any]))
-      OutboundSMS.foreach(__v => __obj.update("OutboundSMS", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InboundCall.foreach(__v => __obj.updateDynamic("InboundCall")(__v.asInstanceOf[js.Any]))
+      InboundMMS.foreach(__v => __obj.updateDynamic("InboundMMS")(__v.asInstanceOf[js.Any]))
+      InboundSMS.foreach(__v => __obj.updateDynamic("InboundSMS")(__v.asInstanceOf[js.Any]))
+      OutboundCall.foreach(__v => __obj.updateDynamic("OutboundCall")(__v.asInstanceOf[js.Any]))
+      OutboundMMS.foreach(__v => __obj.updateDynamic("OutboundMMS")(__v.asInstanceOf[js.Any]))
+      OutboundSMS.foreach(__v => __obj.updateDynamic("OutboundSMS")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PhoneNumberCapabilities]
     }
   }
@@ -2112,10 +2114,10 @@ package chime {
         ErrorMessage: js.UndefOr[String] = js.undefined,
         PhoneNumberId: js.UndefOr[NonEmptyString] = js.undefined
     ): PhoneNumberError = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
-      PhoneNumberId.foreach(__v => __obj.update("PhoneNumberId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      PhoneNumberId.foreach(__v => __obj.updateDynamic("PhoneNumberId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PhoneNumberError]
     }
   }
@@ -2142,13 +2144,13 @@ package chime {
         Status: js.UndefOr[PhoneNumberOrderStatus] = js.undefined,
         UpdatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined
     ): PhoneNumberOrder = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedTimestamp.foreach(__v => __obj.update("CreatedTimestamp", __v.asInstanceOf[js.Any]))
-      OrderedPhoneNumbers.foreach(__v => __obj.update("OrderedPhoneNumbers", __v.asInstanceOf[js.Any]))
-      PhoneNumberOrderId.foreach(__v => __obj.update("PhoneNumberOrderId", __v.asInstanceOf[js.Any]))
-      ProductType.foreach(__v => __obj.update("ProductType", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      UpdatedTimestamp.foreach(__v => __obj.update("UpdatedTimestamp", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      OrderedPhoneNumbers.foreach(__v => __obj.updateDynamic("OrderedPhoneNumbers")(__v.asInstanceOf[js.Any]))
+      PhoneNumberOrderId.foreach(__v => __obj.updateDynamic("PhoneNumberOrderId")(__v.asInstanceOf[js.Any]))
+      ProductType.foreach(__v => __obj.updateDynamic("ProductType")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      UpdatedTimestamp.foreach(__v => __obj.updateDynamic("UpdatedTimestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PhoneNumberOrder]
     }
   }
@@ -2215,13 +2217,15 @@ package chime {
         LambdaFunctionArn: js.UndefOr[SensitiveString] = js.undefined,
         OutboundEventsHTTPSEndpoint: js.UndefOr[SensitiveString] = js.undefined
     ): PutEventsConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "BotId"     -> BotId.asInstanceOf[js.Any]
       )
 
-      LambdaFunctionArn.foreach(__v => __obj.update("LambdaFunctionArn", __v.asInstanceOf[js.Any]))
-      OutboundEventsHTTPSEndpoint.foreach(__v => __obj.update("OutboundEventsHTTPSEndpoint", __v.asInstanceOf[js.Any]))
+      LambdaFunctionArn.foreach(__v => __obj.updateDynamic("LambdaFunctionArn")(__v.asInstanceOf[js.Any]))
+      OutboundEventsHTTPSEndpoint.foreach(
+        __v => __obj.updateDynamic("OutboundEventsHTTPSEndpoint")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[PutEventsConfigurationRequest]
     }
   }
@@ -2235,8 +2239,8 @@ package chime {
     def apply(
         EventsConfiguration: js.UndefOr[EventsConfiguration] = js.undefined
     ): PutEventsConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EventsConfiguration.foreach(__v => __obj.update("EventsConfiguration", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EventsConfiguration.foreach(__v => __obj.updateDynamic("EventsConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutEventsConfigurationResponse]
     }
   }
@@ -2252,7 +2256,7 @@ package chime {
         Origination: Origination,
         VoiceConnectorId: NonEmptyString
     ): PutVoiceConnectorOriginationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Origination"      -> Origination.asInstanceOf[js.Any],
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
@@ -2270,8 +2274,8 @@ package chime {
     def apply(
         Origination: js.UndefOr[Origination] = js.undefined
     ): PutVoiceConnectorOriginationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Origination.foreach(__v => __obj.update("Origination", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Origination.foreach(__v => __obj.updateDynamic("Origination")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutVoiceConnectorOriginationResponse]
     }
   }
@@ -2287,11 +2291,11 @@ package chime {
         VoiceConnectorId: NonEmptyString,
         Credentials: js.UndefOr[CredentialList] = js.undefined
     ): PutVoiceConnectorTerminationCredentialsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
 
-      Credentials.foreach(__v => __obj.update("Credentials", __v.asInstanceOf[js.Any]))
+      Credentials.foreach(__v => __obj.updateDynamic("Credentials")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutVoiceConnectorTerminationCredentialsRequest]
     }
   }
@@ -2307,7 +2311,7 @@ package chime {
         Termination: Termination,
         VoiceConnectorId: NonEmptyString
     ): PutVoiceConnectorTerminationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Termination"      -> Termination.asInstanceOf[js.Any],
         "VoiceConnectorId" -> VoiceConnectorId.asInstanceOf[js.Any]
       )
@@ -2325,8 +2329,8 @@ package chime {
     def apply(
         Termination: js.UndefOr[Termination] = js.undefined
     ): PutVoiceConnectorTerminationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Termination.foreach(__v => __obj.update("Termination", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Termination.foreach(__v => __obj.updateDynamic("Termination")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutVoiceConnectorTerminationResponse]
     }
   }
@@ -2342,7 +2346,7 @@ package chime {
         AccountId: NonEmptyString,
         BotId: NonEmptyString
     ): RegenerateSecurityTokenRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "BotId"     -> BotId.asInstanceOf[js.Any]
       )
@@ -2360,8 +2364,8 @@ package chime {
     def apply(
         Bot: js.UndefOr[Bot] = js.undefined
     ): RegenerateSecurityTokenResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Bot.foreach(__v => __obj.update("Bot", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Bot.foreach(__v => __obj.updateDynamic("Bot")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegenerateSecurityTokenResponse]
     }
   }
@@ -2385,7 +2389,7 @@ package chime {
         AccountId: NonEmptyString,
         UserId: NonEmptyString
     ): ResetPersonalPINRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "UserId"    -> UserId.asInstanceOf[js.Any]
       )
@@ -2403,8 +2407,8 @@ package chime {
     def apply(
         User: js.UndefOr[User] = js.undefined
     ): ResetPersonalPINResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      User.foreach(__v => __obj.update("User", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResetPersonalPINResponse]
     }
   }
@@ -2418,7 +2422,7 @@ package chime {
     def apply(
         PhoneNumberId: NonEmptyString
     ): RestorePhoneNumberRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PhoneNumberId" -> PhoneNumberId.asInstanceOf[js.Any]
       )
 
@@ -2435,8 +2439,8 @@ package chime {
     def apply(
         PhoneNumber: js.UndefOr[PhoneNumber] = js.undefined
     ): RestorePhoneNumberResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PhoneNumber.foreach(__v => __obj.update("PhoneNumber", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PhoneNumber.foreach(__v => __obj.updateDynamic("PhoneNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RestorePhoneNumberResponse]
     }
   }
@@ -2462,14 +2466,14 @@ package chime {
         State: js.UndefOr[String] = js.undefined,
         TollFreePrefix: js.UndefOr[TollFreePrefix] = js.undefined
     ): SearchAvailablePhoneNumbersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AreaCode.foreach(__v => __obj.update("AreaCode", __v.asInstanceOf[js.Any]))
-      City.foreach(__v => __obj.update("City", __v.asInstanceOf[js.Any]))
-      Country.foreach(__v => __obj.update("Country", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
-      TollFreePrefix.foreach(__v => __obj.update("TollFreePrefix", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AreaCode.foreach(__v => __obj.updateDynamic("AreaCode")(__v.asInstanceOf[js.Any]))
+      City.foreach(__v => __obj.updateDynamic("City")(__v.asInstanceOf[js.Any]))
+      Country.foreach(__v => __obj.updateDynamic("Country")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      TollFreePrefix.foreach(__v => __obj.updateDynamic("TollFreePrefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchAvailablePhoneNumbersRequest]
     }
   }
@@ -2483,8 +2487,8 @@ package chime {
     def apply(
         E164PhoneNumbers: js.UndefOr[E164PhoneNumberList] = js.undefined
     ): SearchAvailablePhoneNumbersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      E164PhoneNumbers.foreach(__v => __obj.update("E164PhoneNumbers", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      E164PhoneNumbers.foreach(__v => __obj.updateDynamic("E164PhoneNumbers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchAvailablePhoneNumbersResponse]
     }
   }
@@ -2505,7 +2509,7 @@ package chime {
         OutboundCalling: Boolean,
         SMS: Boolean
     ): TelephonySettings = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InboundCalling"  -> InboundCalling.asInstanceOf[js.Any],
         "OutboundCalling" -> OutboundCalling.asInstanceOf[js.Any],
         "SMS"             -> SMS.asInstanceOf[js.Any]
@@ -2535,12 +2539,12 @@ package chime {
         DefaultPhoneNumber: js.UndefOr[E164PhoneNumber] = js.undefined,
         Disabled: js.UndefOr[Boolean] = js.undefined
     ): Termination = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CallingRegions.foreach(__v => __obj.update("CallingRegions", __v.asInstanceOf[js.Any]))
-      CidrAllowedList.foreach(__v => __obj.update("CidrAllowedList", __v.asInstanceOf[js.Any]))
-      CpsLimit.foreach(__v => __obj.update("CpsLimit", __v.asInstanceOf[js.Any]))
-      DefaultPhoneNumber.foreach(__v => __obj.update("DefaultPhoneNumber", __v.asInstanceOf[js.Any]))
-      Disabled.foreach(__v => __obj.update("Disabled", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CallingRegions.foreach(__v => __obj.updateDynamic("CallingRegions")(__v.asInstanceOf[js.Any]))
+      CidrAllowedList.foreach(__v => __obj.updateDynamic("CidrAllowedList")(__v.asInstanceOf[js.Any]))
+      CpsLimit.foreach(__v => __obj.updateDynamic("CpsLimit")(__v.asInstanceOf[js.Any]))
+      DefaultPhoneNumber.foreach(__v => __obj.updateDynamic("DefaultPhoneNumber")(__v.asInstanceOf[js.Any]))
+      Disabled.foreach(__v => __obj.updateDynamic("Disabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Termination]
     }
   }
@@ -2559,9 +2563,9 @@ package chime {
         Source: js.UndefOr[String] = js.undefined,
         Timestamp: js.UndefOr[Iso8601Timestamp] = js.undefined
     ): TerminationHealth = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
-      Timestamp.foreach(__v => __obj.update("Timestamp", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TerminationHealth]
     }
   }
@@ -2577,11 +2581,11 @@ package chime {
         AccountId: NonEmptyString,
         Name: js.UndefOr[AccountName] = js.undefined
     ): UpdateAccountRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any]
       )
 
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAccountRequest]
     }
   }
@@ -2595,8 +2599,8 @@ package chime {
     def apply(
         Account: js.UndefOr[Account] = js.undefined
     ): UpdateAccountResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Account.foreach(__v => __obj.update("Account", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Account.foreach(__v => __obj.updateDynamic("Account")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAccountResponse]
     }
   }
@@ -2612,7 +2616,7 @@ package chime {
         AccountId: NonEmptyString,
         AccountSettings: AccountSettings
     ): UpdateAccountSettingsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId"       -> AccountId.asInstanceOf[js.Any],
         "AccountSettings" -> AccountSettings.asInstanceOf[js.Any]
       )
@@ -2627,7 +2631,7 @@ package chime {
   object UpdateAccountSettingsResponse {
     def apply(
         ): UpdateAccountSettingsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateAccountSettingsResponse]
     }
@@ -2646,12 +2650,12 @@ package chime {
         BotId: NonEmptyString,
         Disabled: js.UndefOr[NullableBoolean] = js.undefined
     ): UpdateBotRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "BotId"     -> BotId.asInstanceOf[js.Any]
       )
 
-      Disabled.foreach(__v => __obj.update("Disabled", __v.asInstanceOf[js.Any]))
+      Disabled.foreach(__v => __obj.updateDynamic("Disabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateBotRequest]
     }
   }
@@ -2665,8 +2669,8 @@ package chime {
     def apply(
         Bot: js.UndefOr[Bot] = js.undefined
     ): UpdateBotResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Bot.foreach(__v => __obj.update("Bot", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Bot.foreach(__v => __obj.updateDynamic("Bot")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateBotResponse]
     }
   }
@@ -2682,7 +2686,7 @@ package chime {
         BusinessCalling: BusinessCallingSettings,
         VoiceConnector: VoiceConnectorSettings
     ): UpdateGlobalSettingsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BusinessCalling" -> BusinessCalling.asInstanceOf[js.Any],
         "VoiceConnector"  -> VoiceConnector.asInstanceOf[js.Any]
       )
@@ -2702,11 +2706,11 @@ package chime {
         PhoneNumberId: String,
         ProductType: js.UndefOr[PhoneNumberProductType] = js.undefined
     ): UpdatePhoneNumberRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PhoneNumberId" -> PhoneNumberId.asInstanceOf[js.Any]
       )
 
-      ProductType.foreach(__v => __obj.update("ProductType", __v.asInstanceOf[js.Any]))
+      ProductType.foreach(__v => __obj.updateDynamic("ProductType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdatePhoneNumberRequest]
     }
   }
@@ -2725,11 +2729,11 @@ package chime {
         PhoneNumberId: NonEmptyString,
         ProductType: js.UndefOr[PhoneNumberProductType] = js.undefined
     ): UpdatePhoneNumberRequestItem = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PhoneNumberId" -> PhoneNumberId.asInstanceOf[js.Any]
       )
 
-      ProductType.foreach(__v => __obj.update("ProductType", __v.asInstanceOf[js.Any]))
+      ProductType.foreach(__v => __obj.updateDynamic("ProductType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdatePhoneNumberRequestItem]
     }
   }
@@ -2743,8 +2747,8 @@ package chime {
     def apply(
         PhoneNumber: js.UndefOr[PhoneNumber] = js.undefined
     ): UpdatePhoneNumberResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PhoneNumber.foreach(__v => __obj.update("PhoneNumber", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PhoneNumber.foreach(__v => __obj.updateDynamic("PhoneNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdatePhoneNumberResponse]
     }
   }
@@ -2762,12 +2766,12 @@ package chime {
         UserId: NonEmptyString,
         LicenseType: js.UndefOr[License] = js.undefined
     ): UpdateUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "UserId"    -> UserId.asInstanceOf[js.Any]
       )
 
-      LicenseType.foreach(__v => __obj.update("LicenseType", __v.asInstanceOf[js.Any]))
+      LicenseType.foreach(__v => __obj.updateDynamic("LicenseType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateUserRequest]
     }
   }
@@ -2786,11 +2790,11 @@ package chime {
         UserId: NonEmptyString,
         LicenseType: js.UndefOr[License] = js.undefined
     ): UpdateUserRequestItem = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UserId" -> UserId.asInstanceOf[js.Any]
       )
 
-      LicenseType.foreach(__v => __obj.update("LicenseType", __v.asInstanceOf[js.Any]))
+      LicenseType.foreach(__v => __obj.updateDynamic("LicenseType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateUserRequestItem]
     }
   }
@@ -2804,8 +2808,8 @@ package chime {
     def apply(
         User: js.UndefOr[User] = js.undefined
     ): UpdateUserResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      User.foreach(__v => __obj.update("User", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateUserResponse]
     }
   }
@@ -2823,7 +2827,7 @@ package chime {
         UserId: String,
         UserSettings: UserSettings
     ): UpdateUserSettingsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId"    -> AccountId.asInstanceOf[js.Any],
         "UserId"       -> UserId.asInstanceOf[js.Any],
         "UserSettings" -> UserSettings.asInstanceOf[js.Any]
@@ -2846,7 +2850,7 @@ package chime {
         RequireEncryption: Boolean,
         VoiceConnectorId: NonEmptyString
     ): UpdateVoiceConnectorRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"              -> Name.asInstanceOf[js.Any],
         "RequireEncryption" -> RequireEncryption.asInstanceOf[js.Any],
         "VoiceConnectorId"  -> VoiceConnectorId.asInstanceOf[js.Any]
@@ -2865,8 +2869,8 @@ package chime {
     def apply(
         VoiceConnector: js.UndefOr[VoiceConnector] = js.undefined
     ): UpdateVoiceConnectorResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      VoiceConnector.foreach(__v => __obj.update("VoiceConnector", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      VoiceConnector.foreach(__v => __obj.updateDynamic("VoiceConnector")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateVoiceConnectorResponse]
     }
   }
@@ -2903,20 +2907,20 @@ package chime {
         UserInvitationStatus: js.UndefOr[InviteStatus] = js.undefined,
         UserRegistrationStatus: js.UndefOr[RegistrationStatus] = js.undefined
     ): User = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UserId" -> UserId.asInstanceOf[js.Any]
       )
 
-      AccountId.foreach(__v => __obj.update("AccountId", __v.asInstanceOf[js.Any]))
-      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
-      InvitedOn.foreach(__v => __obj.update("InvitedOn", __v.asInstanceOf[js.Any]))
-      LicenseType.foreach(__v => __obj.update("LicenseType", __v.asInstanceOf[js.Any]))
-      PersonalPIN.foreach(__v => __obj.update("PersonalPIN", __v.asInstanceOf[js.Any]))
-      PrimaryEmail.foreach(__v => __obj.update("PrimaryEmail", __v.asInstanceOf[js.Any]))
-      PrimaryProvisionedNumber.foreach(__v => __obj.update("PrimaryProvisionedNumber", __v.asInstanceOf[js.Any]))
-      RegisteredOn.foreach(__v => __obj.update("RegisteredOn", __v.asInstanceOf[js.Any]))
-      UserInvitationStatus.foreach(__v => __obj.update("UserInvitationStatus", __v.asInstanceOf[js.Any]))
-      UserRegistrationStatus.foreach(__v => __obj.update("UserRegistrationStatus", __v.asInstanceOf[js.Any]))
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
+      InvitedOn.foreach(__v => __obj.updateDynamic("InvitedOn")(__v.asInstanceOf[js.Any]))
+      LicenseType.foreach(__v => __obj.updateDynamic("LicenseType")(__v.asInstanceOf[js.Any]))
+      PersonalPIN.foreach(__v => __obj.updateDynamic("PersonalPIN")(__v.asInstanceOf[js.Any]))
+      PrimaryEmail.foreach(__v => __obj.updateDynamic("PrimaryEmail")(__v.asInstanceOf[js.Any]))
+      PrimaryProvisionedNumber.foreach(__v => __obj.updateDynamic("PrimaryProvisionedNumber")(__v.asInstanceOf[js.Any]))
+      RegisteredOn.foreach(__v => __obj.updateDynamic("RegisteredOn")(__v.asInstanceOf[js.Any]))
+      UserInvitationStatus.foreach(__v => __obj.updateDynamic("UserInvitationStatus")(__v.asInstanceOf[js.Any]))
+      UserRegistrationStatus.foreach(__v => __obj.updateDynamic("UserRegistrationStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[User]
     }
   }
@@ -2937,10 +2941,10 @@ package chime {
         ErrorMessage: js.UndefOr[String] = js.undefined,
         UserId: js.UndefOr[NonEmptyString] = js.undefined
     ): UserError = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
-      UserId.foreach(__v => __obj.update("UserId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      UserId.foreach(__v => __obj.updateDynamic("UserId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UserError]
     }
   }
@@ -2957,7 +2961,7 @@ package chime {
     def apply(
         Telephony: TelephonySettings
     ): UserSettings = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Telephony" -> Telephony.asInstanceOf[js.Any]
       )
 
@@ -2987,13 +2991,13 @@ package chime {
         UpdatedTimestamp: js.UndefOr[Iso8601Timestamp] = js.undefined,
         VoiceConnectorId: js.UndefOr[NonEmptyString] = js.undefined
     ): VoiceConnector = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedTimestamp.foreach(__v => __obj.update("CreatedTimestamp", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      OutboundHostName.foreach(__v => __obj.update("OutboundHostName", __v.asInstanceOf[js.Any]))
-      RequireEncryption.foreach(__v => __obj.update("RequireEncryption", __v.asInstanceOf[js.Any]))
-      UpdatedTimestamp.foreach(__v => __obj.update("UpdatedTimestamp", __v.asInstanceOf[js.Any]))
-      VoiceConnectorId.foreach(__v => __obj.update("VoiceConnectorId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedTimestamp.foreach(__v => __obj.updateDynamic("CreatedTimestamp")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      OutboundHostName.foreach(__v => __obj.updateDynamic("OutboundHostName")(__v.asInstanceOf[js.Any]))
+      RequireEncryption.foreach(__v => __obj.updateDynamic("RequireEncryption")(__v.asInstanceOf[js.Any]))
+      UpdatedTimestamp.foreach(__v => __obj.updateDynamic("UpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      VoiceConnectorId.foreach(__v => __obj.updateDynamic("VoiceConnectorId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VoiceConnector]
     }
   }
@@ -3010,8 +3014,8 @@ package chime {
     def apply(
         CdrBucket: js.UndefOr[String] = js.undefined
     ): VoiceConnectorSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CdrBucket.foreach(__v => __obj.update("CdrBucket", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CdrBucket.foreach(__v => __obj.updateDynamic("CdrBucket")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VoiceConnectorSettings]
     }
   }

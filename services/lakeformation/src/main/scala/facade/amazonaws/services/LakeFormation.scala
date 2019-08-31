@@ -102,11 +102,11 @@ package lakeformation {
         Entries: BatchPermissionsRequestEntryList,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): BatchGrantPermissionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Entries" -> Entries.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGrantPermissionsRequest]
     }
   }
@@ -120,8 +120,8 @@ package lakeformation {
     def apply(
         Failures: js.UndefOr[BatchPermissionsFailureList] = js.undefined
     ): BatchGrantPermissionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Failures.foreach(__v => __obj.update("Failures", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Failures.foreach(__v => __obj.updateDynamic("Failures")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGrantPermissionsResponse]
     }
   }
@@ -140,9 +140,9 @@ package lakeformation {
         Error: js.UndefOr[ErrorDetail] = js.undefined,
         RequestEntry: js.UndefOr[BatchPermissionsRequestEntry] = js.undefined
     ): BatchPermissionsFailureEntry = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Error.foreach(__v => __obj.update("Error", __v.asInstanceOf[js.Any]))
-      RequestEntry.foreach(__v => __obj.update("RequestEntry", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Error.foreach(__v => __obj.updateDynamic("Error")(__v.asInstanceOf[js.Any]))
+      RequestEntry.foreach(__v => __obj.updateDynamic("RequestEntry")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchPermissionsFailureEntry]
     }
   }
@@ -167,14 +167,16 @@ package lakeformation {
         Principal: js.UndefOr[DataLakePrincipal] = js.undefined,
         Resource: js.UndefOr[Resource] = js.undefined
     ): BatchPermissionsRequestEntry = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
-      Permissions.foreach(__v => __obj.update("Permissions", __v.asInstanceOf[js.Any]))
-      PermissionsWithGrantOption.foreach(__v => __obj.update("PermissionsWithGrantOption", __v.asInstanceOf[js.Any]))
-      Principal.foreach(__v => __obj.update("Principal", __v.asInstanceOf[js.Any]))
-      Resource.foreach(__v => __obj.update("Resource", __v.asInstanceOf[js.Any]))
+      Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
+      PermissionsWithGrantOption.foreach(
+        __v => __obj.updateDynamic("PermissionsWithGrantOption")(__v.asInstanceOf[js.Any])
+      )
+      Principal.foreach(__v => __obj.updateDynamic("Principal")(__v.asInstanceOf[js.Any]))
+      Resource.foreach(__v => __obj.updateDynamic("Resource")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchPermissionsRequestEntry]
     }
   }
@@ -190,11 +192,11 @@ package lakeformation {
         Entries: BatchPermissionsRequestEntryList,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): BatchRevokePermissionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Entries" -> Entries.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchRevokePermissionsRequest]
     }
   }
@@ -208,8 +210,8 @@ package lakeformation {
     def apply(
         Failures: js.UndefOr[BatchPermissionsFailureList] = js.undefined
     ): BatchRevokePermissionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Failures.foreach(__v => __obj.update("Failures", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Failures.foreach(__v => __obj.updateDynamic("Failures")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchRevokePermissionsResponse]
     }
   }
@@ -223,7 +225,7 @@ package lakeformation {
   object CatalogResource {
     def apply(
         ): CatalogResource = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CatalogResource]
     }
@@ -241,8 +243,8 @@ package lakeformation {
     def apply(
         ExcludedColumnNames: js.UndefOr[ColumnNames] = js.undefined
     ): ColumnWildcard = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ExcludedColumnNames.foreach(__v => __obj.update("ExcludedColumnNames", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ExcludedColumnNames.foreach(__v => __obj.updateDynamic("ExcludedColumnNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ColumnWildcard]
     }
   }
@@ -275,8 +277,10 @@ package lakeformation {
     def apply(
         DataLakePrincipalIdentifier: js.UndefOr[DataLakePrincipalString] = js.undefined
     ): DataLakePrincipal = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DataLakePrincipalIdentifier.foreach(__v => __obj.update("DataLakePrincipalIdentifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DataLakePrincipalIdentifier.foreach(
+        __v => __obj.updateDynamic("DataLakePrincipalIdentifier")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[DataLakePrincipal]
     }
   }
@@ -306,14 +310,14 @@ package lakeformation {
         CreateTableDefaultPermissions: js.UndefOr[PrincipalPermissionsList] = js.undefined,
         DataLakeAdmins: js.UndefOr[DataLakePrincipalList] = js.undefined
     ): DataLakeSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       CreateDatabaseDefaultPermissions.foreach(
-        __v => __obj.update("CreateDatabaseDefaultPermissions", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("CreateDatabaseDefaultPermissions")(__v.asInstanceOf[js.Any])
       )
       CreateTableDefaultPermissions.foreach(
-        __v => __obj.update("CreateTableDefaultPermissions", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("CreateTableDefaultPermissions")(__v.asInstanceOf[js.Any])
       )
-      DataLakeAdmins.foreach(__v => __obj.update("DataLakeAdmins", __v.asInstanceOf[js.Any]))
+      DataLakeAdmins.foreach(__v => __obj.updateDynamic("DataLakeAdmins")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataLakeSettings]
     }
   }
@@ -330,7 +334,7 @@ package lakeformation {
     def apply(
         ResourceArn: ResourceArnString
     ): DataLocationResource = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
@@ -350,7 +354,7 @@ package lakeformation {
     def apply(
         Name: NameString
     ): DatabaseResource = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -367,7 +371,7 @@ package lakeformation {
     def apply(
         ResourceArn: ResourceArnString
     ): DeregisterResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
@@ -381,7 +385,7 @@ package lakeformation {
   object DeregisterResourceResponse {
     def apply(
         ): DeregisterResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeregisterResourceResponse]
     }
@@ -396,7 +400,7 @@ package lakeformation {
     def apply(
         ResourceArn: ResourceArnString
     ): DescribeResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
@@ -413,8 +417,8 @@ package lakeformation {
     def apply(
         ResourceInfo: js.UndefOr[ResourceInfo] = js.undefined
     ): DescribeResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ResourceInfo.foreach(__v => __obj.update("ResourceInfo", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ResourceInfo.foreach(__v => __obj.updateDynamic("ResourceInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeResourceResponse]
     }
   }
@@ -433,9 +437,9 @@ package lakeformation {
         ErrorCode: js.UndefOr[NameString] = js.undefined,
         ErrorMessage: js.UndefOr[DescriptionString] = js.undefined
     ): ErrorDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ErrorDetail]
     }
   }
@@ -464,10 +468,10 @@ package lakeformation {
         Field: js.UndefOr[FieldNameString] = js.undefined,
         StringValueList: js.UndefOr[StringValueList] = js.undefined
     ): FilterCondition = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ComparisonOperator.foreach(__v => __obj.update("ComparisonOperator", __v.asInstanceOf[js.Any]))
-      Field.foreach(__v => __obj.update("Field", __v.asInstanceOf[js.Any]))
-      StringValueList.foreach(__v => __obj.update("StringValueList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ComparisonOperator.foreach(__v => __obj.updateDynamic("ComparisonOperator")(__v.asInstanceOf[js.Any]))
+      Field.foreach(__v => __obj.updateDynamic("Field")(__v.asInstanceOf[js.Any]))
+      StringValueList.foreach(__v => __obj.updateDynamic("StringValueList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FilterCondition]
     }
   }
@@ -481,8 +485,8 @@ package lakeformation {
     def apply(
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): GetDataLakeSettingsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDataLakeSettingsRequest]
     }
   }
@@ -496,8 +500,8 @@ package lakeformation {
     def apply(
         DataLakeSettings: js.UndefOr[DataLakeSettings] = js.undefined
     ): GetDataLakeSettingsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DataLakeSettings.foreach(__v => __obj.update("DataLakeSettings", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DataLakeSettings.foreach(__v => __obj.updateDynamic("DataLakeSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDataLakeSettingsResponse]
     }
   }
@@ -517,13 +521,13 @@ package lakeformation {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): GetEffectivePermissionsForPathRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetEffectivePermissionsForPathRequest]
     }
   }
@@ -539,9 +543,9 @@ package lakeformation {
         NextToken: js.UndefOr[Token] = js.undefined,
         Permissions: js.UndefOr[PrincipalResourcePermissionsList] = js.undefined
     ): GetEffectivePermissionsForPathResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Permissions.foreach(__v => __obj.update("Permissions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetEffectivePermissionsForPathResponse]
     }
   }
@@ -563,14 +567,16 @@ package lakeformation {
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
         PermissionsWithGrantOption: js.UndefOr[PermissionList] = js.undefined
     ): GrantPermissionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Permissions" -> Permissions.asInstanceOf[js.Any],
         "Principal"   -> Principal.asInstanceOf[js.Any],
         "Resource"    -> Resource.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
-      PermissionsWithGrantOption.foreach(__v => __obj.update("PermissionsWithGrantOption", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      PermissionsWithGrantOption.foreach(
+        __v => __obj.updateDynamic("PermissionsWithGrantOption")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[GrantPermissionsRequest]
     }
   }
@@ -581,7 +587,7 @@ package lakeformation {
   object GrantPermissionsResponse {
     def apply(
         ): GrantPermissionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GrantPermissionsResponse]
     }
@@ -606,13 +612,13 @@ package lakeformation {
         Resource: js.UndefOr[Resource] = js.undefined,
         ResourceType: js.UndefOr[DataLakeResourceType] = js.undefined
     ): ListPermissionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Principal.foreach(__v => __obj.update("Principal", __v.asInstanceOf[js.Any]))
-      Resource.foreach(__v => __obj.update("Resource", __v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Principal.foreach(__v => __obj.updateDynamic("Principal")(__v.asInstanceOf[js.Any]))
+      Resource.foreach(__v => __obj.updateDynamic("Resource")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPermissionsRequest]
     }
   }
@@ -628,10 +634,10 @@ package lakeformation {
         NextToken: js.UndefOr[Token] = js.undefined,
         PrincipalResourcePermissions: js.UndefOr[PrincipalResourcePermissionsList] = js.undefined
     ): ListPermissionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       PrincipalResourcePermissions.foreach(
-        __v => __obj.update("PrincipalResourcePermissions", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("PrincipalResourcePermissions")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListPermissionsResponse]
     }
@@ -650,10 +656,10 @@ package lakeformation {
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): ListResourcesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FilterConditionList.foreach(__v => __obj.update("FilterConditionList", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FilterConditionList.foreach(__v => __obj.updateDynamic("FilterConditionList")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResourcesRequest]
     }
   }
@@ -669,9 +675,9 @@ package lakeformation {
         NextToken: js.UndefOr[Token] = js.undefined,
         ResourceInfoList: js.UndefOr[ResourceInfoList] = js.undefined
     ): ListResourcesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ResourceInfoList.foreach(__v => __obj.update("ResourceInfoList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ResourceInfoList.foreach(__v => __obj.updateDynamic("ResourceInfoList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResourcesResponse]
     }
   }
@@ -706,9 +712,9 @@ package lakeformation {
         Permissions: js.UndefOr[PermissionList] = js.undefined,
         Principal: js.UndefOr[DataLakePrincipal] = js.undefined
     ): PrincipalPermissions = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Permissions.foreach(__v => __obj.update("Permissions", __v.asInstanceOf[js.Any]))
-      Principal.foreach(__v => __obj.update("Principal", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
+      Principal.foreach(__v => __obj.updateDynamic("Principal")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PrincipalPermissions]
     }
   }
@@ -731,11 +737,13 @@ package lakeformation {
         Principal: js.UndefOr[DataLakePrincipal] = js.undefined,
         Resource: js.UndefOr[Resource] = js.undefined
     ): PrincipalResourcePermissions = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Permissions.foreach(__v => __obj.update("Permissions", __v.asInstanceOf[js.Any]))
-      PermissionsWithGrantOption.foreach(__v => __obj.update("PermissionsWithGrantOption", __v.asInstanceOf[js.Any]))
-      Principal.foreach(__v => __obj.update("Principal", __v.asInstanceOf[js.Any]))
-      Resource.foreach(__v => __obj.update("Resource", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
+      PermissionsWithGrantOption.foreach(
+        __v => __obj.updateDynamic("PermissionsWithGrantOption")(__v.asInstanceOf[js.Any])
+      )
+      Principal.foreach(__v => __obj.updateDynamic("Principal")(__v.asInstanceOf[js.Any]))
+      Resource.foreach(__v => __obj.updateDynamic("Resource")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PrincipalResourcePermissions]
     }
   }
@@ -751,11 +759,11 @@ package lakeformation {
         DataLakeSettings: DataLakeSettings,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined
     ): PutDataLakeSettingsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DataLakeSettings" -> DataLakeSettings.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutDataLakeSettingsRequest]
     }
   }
@@ -766,7 +774,7 @@ package lakeformation {
   object PutDataLakeSettingsResponse {
     def apply(
         ): PutDataLakeSettingsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutDataLakeSettingsResponse]
     }
@@ -785,12 +793,12 @@ package lakeformation {
         RoleArn: js.UndefOr[IAMRoleArn] = js.undefined,
         UseServiceLinkedRole: js.UndefOr[NullableBoolean] = js.undefined
     ): RegisterResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
-      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
-      UseServiceLinkedRole.foreach(__v => __obj.update("UseServiceLinkedRole", __v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      UseServiceLinkedRole.foreach(__v => __obj.updateDynamic("UseServiceLinkedRole")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterResourceRequest]
     }
   }
@@ -801,7 +809,7 @@ package lakeformation {
   object RegisterResourceResponse {
     def apply(
         ): RegisterResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RegisterResourceResponse]
     }
@@ -827,12 +835,12 @@ package lakeformation {
         Table: js.UndefOr[TableResource] = js.undefined,
         TableWithColumns: js.UndefOr[TableWithColumnsResource] = js.undefined
     ): Resource = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Catalog.foreach(__v => __obj.update("Catalog", __v.asInstanceOf[js.Any]))
-      DataLocation.foreach(__v => __obj.update("DataLocation", __v.asInstanceOf[js.Any]))
-      Database.foreach(__v => __obj.update("Database", __v.asInstanceOf[js.Any]))
-      Table.foreach(__v => __obj.update("Table", __v.asInstanceOf[js.Any]))
-      TableWithColumns.foreach(__v => __obj.update("TableWithColumns", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Catalog.foreach(__v => __obj.updateDynamic("Catalog")(__v.asInstanceOf[js.Any]))
+      DataLocation.foreach(__v => __obj.updateDynamic("DataLocation")(__v.asInstanceOf[js.Any]))
+      Database.foreach(__v => __obj.updateDynamic("Database")(__v.asInstanceOf[js.Any]))
+      Table.foreach(__v => __obj.updateDynamic("Table")(__v.asInstanceOf[js.Any]))
+      TableWithColumns.foreach(__v => __obj.updateDynamic("TableWithColumns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Resource]
     }
   }
@@ -853,10 +861,10 @@ package lakeformation {
         ResourceArn: js.UndefOr[ResourceArnString] = js.undefined,
         RoleArn: js.UndefOr[IAMRoleArn] = js.undefined
     ): ResourceInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LastModified.foreach(__v => __obj.update("LastModified", __v.asInstanceOf[js.Any]))
-      ResourceArn.foreach(__v => __obj.update("ResourceArn", __v.asInstanceOf[js.Any]))
-      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceInfo]
     }
   }
@@ -878,14 +886,16 @@ package lakeformation {
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
         PermissionsWithGrantOption: js.UndefOr[PermissionList] = js.undefined
     ): RevokePermissionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Permissions" -> Permissions.asInstanceOf[js.Any],
         "Principal"   -> Principal.asInstanceOf[js.Any],
         "Resource"    -> Resource.asInstanceOf[js.Any]
       )
 
-      CatalogId.foreach(__v => __obj.update("CatalogId", __v.asInstanceOf[js.Any]))
-      PermissionsWithGrantOption.foreach(__v => __obj.update("PermissionsWithGrantOption", __v.asInstanceOf[js.Any]))
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      PermissionsWithGrantOption.foreach(
+        __v => __obj.updateDynamic("PermissionsWithGrantOption")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[RevokePermissionsRequest]
     }
   }
@@ -896,7 +906,7 @@ package lakeformation {
   object RevokePermissionsResponse {
     def apply(
         ): RevokePermissionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RevokePermissionsResponse]
     }
@@ -916,7 +926,7 @@ package lakeformation {
         DatabaseName: NameString,
         Name: NameString
     ): TableResource = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
         "Name"         -> Name.asInstanceOf[js.Any]
       )
@@ -944,11 +954,11 @@ package lakeformation {
         DatabaseName: js.UndefOr[NameString] = js.undefined,
         Name: js.UndefOr[NameString] = js.undefined
     ): TableWithColumnsResource = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ColumnNames.foreach(__v => __obj.update("ColumnNames", __v.asInstanceOf[js.Any]))
-      ColumnWildcard.foreach(__v => __obj.update("ColumnWildcard", __v.asInstanceOf[js.Any]))
-      DatabaseName.foreach(__v => __obj.update("DatabaseName", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ColumnNames.foreach(__v => __obj.updateDynamic("ColumnNames")(__v.asInstanceOf[js.Any]))
+      ColumnWildcard.foreach(__v => __obj.updateDynamic("ColumnWildcard")(__v.asInstanceOf[js.Any]))
+      DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TableWithColumnsResource]
     }
   }
@@ -964,7 +974,7 @@ package lakeformation {
         ResourceArn: ResourceArnString,
         RoleArn: IAMRoleArn
     ): UpdateResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "RoleArn"     -> RoleArn.asInstanceOf[js.Any]
       )
@@ -979,7 +989,7 @@ package lakeformation {
   object UpdateResourceResponse {
     def apply(
         ): UpdateResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateResourceResponse]
     }

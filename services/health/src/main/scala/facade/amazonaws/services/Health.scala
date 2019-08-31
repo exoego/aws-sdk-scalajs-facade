@@ -120,15 +120,15 @@ package health {
         statusCode: js.UndefOr[entityStatusCode] = js.undefined,
         tags: js.UndefOr[tagSet] = js.undefined
     ): AffectedEntity = {
-      val __obj = js.Dictionary.empty[js.Any]
-      awsAccountId.foreach(__v => __obj.update("awsAccountId", __v.asInstanceOf[js.Any]))
-      entityArn.foreach(__v => __obj.update("entityArn", __v.asInstanceOf[js.Any]))
-      entityUrl.foreach(__v => __obj.update("entityUrl", __v.asInstanceOf[js.Any]))
-      entityValue.foreach(__v => __obj.update("entityValue", __v.asInstanceOf[js.Any]))
-      eventArn.foreach(__v => __obj.update("eventArn", __v.asInstanceOf[js.Any]))
-      lastUpdatedTime.foreach(__v => __obj.update("lastUpdatedTime", __v.asInstanceOf[js.Any]))
-      statusCode.foreach(__v => __obj.update("statusCode", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      awsAccountId.foreach(__v => __obj.updateDynamic("awsAccountId")(__v.asInstanceOf[js.Any]))
+      entityArn.foreach(__v => __obj.updateDynamic("entityArn")(__v.asInstanceOf[js.Any]))
+      entityUrl.foreach(__v => __obj.updateDynamic("entityUrl")(__v.asInstanceOf[js.Any]))
+      entityValue.foreach(__v => __obj.updateDynamic("entityValue")(__v.asInstanceOf[js.Any]))
+      eventArn.foreach(__v => __obj.updateDynamic("eventArn")(__v.asInstanceOf[js.Any]))
+      lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      statusCode.foreach(__v => __obj.updateDynamic("statusCode")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AffectedEntity]
     }
   }
@@ -147,9 +147,9 @@ package health {
         from: js.UndefOr[timestamp] = js.undefined,
         to: js.UndefOr[timestamp] = js.undefined
     ): DateTimeRange = {
-      val __obj = js.Dictionary.empty[js.Any]
-      from.foreach(__v => __obj.update("from", __v.asInstanceOf[js.Any]))
-      to.foreach(__v => __obj.update("to", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      from.foreach(__v => __obj.updateDynamic("from")(__v.asInstanceOf[js.Any]))
+      to.foreach(__v => __obj.updateDynamic("to")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DateTimeRange]
     }
   }
@@ -169,13 +169,13 @@ package health {
         maxResults: js.UndefOr[maxResults] = js.undefined,
         nextToken: js.UndefOr[nextToken] = js.undefined
     ): DescribeAffectedEntitiesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "filter" -> filter.asInstanceOf[js.Any]
       )
 
-      locale.foreach(__v => __obj.update("locale", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      locale.foreach(__v => __obj.updateDynamic("locale")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAffectedEntitiesRequest]
     }
   }
@@ -191,9 +191,9 @@ package health {
         entities: js.UndefOr[EntityList] = js.undefined,
         nextToken: js.UndefOr[nextToken] = js.undefined
     ): DescribeAffectedEntitiesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      entities.foreach(__v => __obj.update("entities", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      entities.foreach(__v => __obj.updateDynamic("entities")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAffectedEntitiesResponse]
     }
   }
@@ -207,8 +207,8 @@ package health {
     def apply(
         eventArns: js.UndefOr[EventArnsList] = js.undefined
     ): DescribeEntityAggregatesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      eventArns.foreach(__v => __obj.update("eventArns", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      eventArns.foreach(__v => __obj.updateDynamic("eventArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEntityAggregatesRequest]
     }
   }
@@ -222,8 +222,8 @@ package health {
     def apply(
         entityAggregates: js.UndefOr[EntityAggregateList] = js.undefined
     ): DescribeEntityAggregatesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      entityAggregates.foreach(__v => __obj.update("entityAggregates", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      entityAggregates.foreach(__v => __obj.updateDynamic("entityAggregates")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEntityAggregatesResponse]
     }
   }
@@ -243,13 +243,13 @@ package health {
         maxResults: js.UndefOr[maxResults] = js.undefined,
         nextToken: js.UndefOr[nextToken] = js.undefined
     ): DescribeEventAggregatesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "aggregateField" -> aggregateField.asInstanceOf[js.Any]
       )
 
-      filter.foreach(__v => __obj.update("filter", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      filter.foreach(__v => __obj.updateDynamic("filter")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEventAggregatesRequest]
     }
   }
@@ -265,9 +265,9 @@ package health {
         eventAggregates: js.UndefOr[EventAggregateList] = js.undefined,
         nextToken: js.UndefOr[nextToken] = js.undefined
     ): DescribeEventAggregatesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      eventAggregates.foreach(__v => __obj.update("eventAggregates", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      eventAggregates.foreach(__v => __obj.updateDynamic("eventAggregates")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEventAggregatesResponse]
     }
   }
@@ -283,11 +283,11 @@ package health {
         eventArns: eventArnList,
         locale: js.UndefOr[locale] = js.undefined
     ): DescribeEventDetailsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "eventArns" -> eventArns.asInstanceOf[js.Any]
       )
 
-      locale.foreach(__v => __obj.update("locale", __v.asInstanceOf[js.Any]))
+      locale.foreach(__v => __obj.updateDynamic("locale")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEventDetailsRequest]
     }
   }
@@ -303,9 +303,9 @@ package health {
         failedSet: js.UndefOr[DescribeEventDetailsFailedSet] = js.undefined,
         successfulSet: js.UndefOr[DescribeEventDetailsSuccessfulSet] = js.undefined
     ): DescribeEventDetailsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      failedSet.foreach(__v => __obj.update("failedSet", __v.asInstanceOf[js.Any]))
-      successfulSet.foreach(__v => __obj.update("successfulSet", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      failedSet.foreach(__v => __obj.updateDynamic("failedSet")(__v.asInstanceOf[js.Any]))
+      successfulSet.foreach(__v => __obj.updateDynamic("successfulSet")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEventDetailsResponse]
     }
   }
@@ -325,11 +325,11 @@ package health {
         maxResults: js.UndefOr[maxResults] = js.undefined,
         nextToken: js.UndefOr[nextToken] = js.undefined
     ): DescribeEventTypesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      filter.foreach(__v => __obj.update("filter", __v.asInstanceOf[js.Any]))
-      locale.foreach(__v => __obj.update("locale", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      filter.foreach(__v => __obj.updateDynamic("filter")(__v.asInstanceOf[js.Any]))
+      locale.foreach(__v => __obj.updateDynamic("locale")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEventTypesRequest]
     }
   }
@@ -345,9 +345,9 @@ package health {
         eventTypes: js.UndefOr[EventTypeList] = js.undefined,
         nextToken: js.UndefOr[nextToken] = js.undefined
     ): DescribeEventTypesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      eventTypes.foreach(__v => __obj.update("eventTypes", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      eventTypes.foreach(__v => __obj.updateDynamic("eventTypes")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEventTypesResponse]
     }
   }
@@ -367,11 +367,11 @@ package health {
         maxResults: js.UndefOr[maxResults] = js.undefined,
         nextToken: js.UndefOr[nextToken] = js.undefined
     ): DescribeEventsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      filter.foreach(__v => __obj.update("filter", __v.asInstanceOf[js.Any]))
-      locale.foreach(__v => __obj.update("locale", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      filter.foreach(__v => __obj.updateDynamic("filter")(__v.asInstanceOf[js.Any]))
+      locale.foreach(__v => __obj.updateDynamic("locale")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEventsRequest]
     }
   }
@@ -387,9 +387,9 @@ package health {
         events: js.UndefOr[EventList] = js.undefined,
         nextToken: js.UndefOr[nextToken] = js.undefined
     ): DescribeEventsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      events.foreach(__v => __obj.update("events", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      events.foreach(__v => __obj.updateDynamic("events")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEventsResponse]
     }
   }
@@ -408,9 +408,9 @@ package health {
         count: js.UndefOr[count] = js.undefined,
         eventArn: js.UndefOr[eventArn] = js.undefined
     ): EntityAggregate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      count.foreach(__v => __obj.update("count", __v.asInstanceOf[js.Any]))
-      eventArn.foreach(__v => __obj.update("eventArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      count.foreach(__v => __obj.updateDynamic("count")(__v.asInstanceOf[js.Any]))
+      eventArn.foreach(__v => __obj.updateDynamic("eventArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EntityAggregate]
     }
   }
@@ -437,15 +437,15 @@ package health {
         statusCodes: js.UndefOr[entityStatusCodeList] = js.undefined,
         tags: js.UndefOr[tagFilter] = js.undefined
     ): EntityFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "eventArns" -> eventArns.asInstanceOf[js.Any]
       )
 
-      entityArns.foreach(__v => __obj.update("entityArns", __v.asInstanceOf[js.Any]))
-      entityValues.foreach(__v => __obj.update("entityValues", __v.asInstanceOf[js.Any]))
-      lastUpdatedTimes.foreach(__v => __obj.update("lastUpdatedTimes", __v.asInstanceOf[js.Any]))
-      statusCodes.foreach(__v => __obj.update("statusCodes", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      entityArns.foreach(__v => __obj.updateDynamic("entityArns")(__v.asInstanceOf[js.Any]))
+      entityValues.foreach(__v => __obj.updateDynamic("entityValues")(__v.asInstanceOf[js.Any]))
+      lastUpdatedTimes.foreach(__v => __obj.updateDynamic("lastUpdatedTimes")(__v.asInstanceOf[js.Any]))
+      statusCodes.foreach(__v => __obj.updateDynamic("statusCodes")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EntityFilter]
     }
   }
@@ -480,17 +480,17 @@ package health {
         startTime: js.UndefOr[timestamp] = js.undefined,
         statusCode: js.UndefOr[eventStatusCode] = js.undefined
     ): Event = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      availabilityZone.foreach(__v => __obj.update("availabilityZone", __v.asInstanceOf[js.Any]))
-      endTime.foreach(__v => __obj.update("endTime", __v.asInstanceOf[js.Any]))
-      eventTypeCategory.foreach(__v => __obj.update("eventTypeCategory", __v.asInstanceOf[js.Any]))
-      eventTypeCode.foreach(__v => __obj.update("eventTypeCode", __v.asInstanceOf[js.Any]))
-      lastUpdatedTime.foreach(__v => __obj.update("lastUpdatedTime", __v.asInstanceOf[js.Any]))
-      region.foreach(__v => __obj.update("region", __v.asInstanceOf[js.Any]))
-      service.foreach(__v => __obj.update("service", __v.asInstanceOf[js.Any]))
-      startTime.foreach(__v => __obj.update("startTime", __v.asInstanceOf[js.Any]))
-      statusCode.foreach(__v => __obj.update("statusCode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      availabilityZone.foreach(__v => __obj.updateDynamic("availabilityZone")(__v.asInstanceOf[js.Any]))
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      eventTypeCategory.foreach(__v => __obj.updateDynamic("eventTypeCategory")(__v.asInstanceOf[js.Any]))
+      eventTypeCode.foreach(__v => __obj.updateDynamic("eventTypeCode")(__v.asInstanceOf[js.Any]))
+      lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
+      service.foreach(__v => __obj.updateDynamic("service")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
+      statusCode.foreach(__v => __obj.updateDynamic("statusCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Event]
     }
   }
@@ -509,9 +509,9 @@ package health {
         aggregateValue: js.UndefOr[aggregateValue] = js.undefined,
         count: js.UndefOr[count] = js.undefined
     ): EventAggregate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      aggregateValue.foreach(__v => __obj.update("aggregateValue", __v.asInstanceOf[js.Any]))
-      count.foreach(__v => __obj.update("count", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      aggregateValue.foreach(__v => __obj.updateDynamic("aggregateValue")(__v.asInstanceOf[js.Any]))
+      count.foreach(__v => __obj.updateDynamic("count")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventAggregate]
     }
   }
@@ -528,8 +528,8 @@ package health {
     def apply(
         latestDescription: js.UndefOr[eventDescription] = js.undefined
     ): EventDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      latestDescription.foreach(__v => __obj.update("latestDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      latestDescription.foreach(__v => __obj.updateDynamic("latestDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventDescription]
     }
   }
@@ -550,10 +550,10 @@ package health {
         eventDescription: js.UndefOr[EventDescription] = js.undefined,
         eventMetadata: js.UndefOr[eventMetadata] = js.undefined
     ): EventDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      event.foreach(__v => __obj.update("event", __v.asInstanceOf[js.Any]))
-      eventDescription.foreach(__v => __obj.update("eventDescription", __v.asInstanceOf[js.Any]))
-      eventMetadata.foreach(__v => __obj.update("eventMetadata", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      event.foreach(__v => __obj.updateDynamic("event")(__v.asInstanceOf[js.Any]))
+      eventDescription.foreach(__v => __obj.updateDynamic("eventDescription")(__v.asInstanceOf[js.Any]))
+      eventMetadata.foreach(__v => __obj.updateDynamic("eventMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventDetails]
     }
   }
@@ -574,10 +574,10 @@ package health {
         errorName: js.UndefOr[String] = js.undefined,
         eventArn: js.UndefOr[eventArn] = js.undefined
     ): EventDetailsErrorItem = {
-      val __obj = js.Dictionary.empty[js.Any]
-      errorMessage.foreach(__v => __obj.update("errorMessage", __v.asInstanceOf[js.Any]))
-      errorName.foreach(__v => __obj.update("errorName", __v.asInstanceOf[js.Any]))
-      eventArn.foreach(__v => __obj.update("eventArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      errorMessage.foreach(__v => __obj.updateDynamic("errorMessage")(__v.asInstanceOf[js.Any]))
+      errorName.foreach(__v => __obj.updateDynamic("errorName")(__v.asInstanceOf[js.Any]))
+      eventArn.foreach(__v => __obj.updateDynamic("eventArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventDetailsErrorItem]
     }
   }
@@ -618,20 +618,20 @@ package health {
         startTimes: js.UndefOr[dateTimeRangeList] = js.undefined,
         tags: js.UndefOr[tagFilter] = js.undefined
     ): EventFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      availabilityZones.foreach(__v => __obj.update("availabilityZones", __v.asInstanceOf[js.Any]))
-      endTimes.foreach(__v => __obj.update("endTimes", __v.asInstanceOf[js.Any]))
-      entityArns.foreach(__v => __obj.update("entityArns", __v.asInstanceOf[js.Any]))
-      entityValues.foreach(__v => __obj.update("entityValues", __v.asInstanceOf[js.Any]))
-      eventArns.foreach(__v => __obj.update("eventArns", __v.asInstanceOf[js.Any]))
-      eventStatusCodes.foreach(__v => __obj.update("eventStatusCodes", __v.asInstanceOf[js.Any]))
-      eventTypeCategories.foreach(__v => __obj.update("eventTypeCategories", __v.asInstanceOf[js.Any]))
-      eventTypeCodes.foreach(__v => __obj.update("eventTypeCodes", __v.asInstanceOf[js.Any]))
-      lastUpdatedTimes.foreach(__v => __obj.update("lastUpdatedTimes", __v.asInstanceOf[js.Any]))
-      regions.foreach(__v => __obj.update("regions", __v.asInstanceOf[js.Any]))
-      services.foreach(__v => __obj.update("services", __v.asInstanceOf[js.Any]))
-      startTimes.foreach(__v => __obj.update("startTimes", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      availabilityZones.foreach(__v => __obj.updateDynamic("availabilityZones")(__v.asInstanceOf[js.Any]))
+      endTimes.foreach(__v => __obj.updateDynamic("endTimes")(__v.asInstanceOf[js.Any]))
+      entityArns.foreach(__v => __obj.updateDynamic("entityArns")(__v.asInstanceOf[js.Any]))
+      entityValues.foreach(__v => __obj.updateDynamic("entityValues")(__v.asInstanceOf[js.Any]))
+      eventArns.foreach(__v => __obj.updateDynamic("eventArns")(__v.asInstanceOf[js.Any]))
+      eventStatusCodes.foreach(__v => __obj.updateDynamic("eventStatusCodes")(__v.asInstanceOf[js.Any]))
+      eventTypeCategories.foreach(__v => __obj.updateDynamic("eventTypeCategories")(__v.asInstanceOf[js.Any]))
+      eventTypeCodes.foreach(__v => __obj.updateDynamic("eventTypeCodes")(__v.asInstanceOf[js.Any]))
+      lastUpdatedTimes.foreach(__v => __obj.updateDynamic("lastUpdatedTimes")(__v.asInstanceOf[js.Any]))
+      regions.foreach(__v => __obj.updateDynamic("regions")(__v.asInstanceOf[js.Any]))
+      services.foreach(__v => __obj.updateDynamic("services")(__v.asInstanceOf[js.Any]))
+      startTimes.foreach(__v => __obj.updateDynamic("startTimes")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventFilter]
     }
   }
@@ -652,10 +652,10 @@ package health {
         code: js.UndefOr[eventTypeCode] = js.undefined,
         service: js.UndefOr[service] = js.undefined
     ): EventType = {
-      val __obj = js.Dictionary.empty[js.Any]
-      category.foreach(__v => __obj.update("category", __v.asInstanceOf[js.Any]))
-      code.foreach(__v => __obj.update("code", __v.asInstanceOf[js.Any]))
-      service.foreach(__v => __obj.update("service", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      category.foreach(__v => __obj.updateDynamic("category")(__v.asInstanceOf[js.Any]))
+      code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
+      service.foreach(__v => __obj.updateDynamic("service")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventType]
     }
   }
@@ -676,10 +676,10 @@ package health {
         eventTypeCodes: js.UndefOr[EventTypeCodeList] = js.undefined,
         services: js.UndefOr[serviceList] = js.undefined
     ): EventTypeFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      eventTypeCategories.foreach(__v => __obj.update("eventTypeCategories", __v.asInstanceOf[js.Any]))
-      eventTypeCodes.foreach(__v => __obj.update("eventTypeCodes", __v.asInstanceOf[js.Any]))
-      services.foreach(__v => __obj.update("services", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      eventTypeCategories.foreach(__v => __obj.updateDynamic("eventTypeCategories")(__v.asInstanceOf[js.Any]))
+      eventTypeCodes.foreach(__v => __obj.updateDynamic("eventTypeCodes")(__v.asInstanceOf[js.Any]))
+      services.foreach(__v => __obj.updateDynamic("services")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventTypeFilter]
     }
   }

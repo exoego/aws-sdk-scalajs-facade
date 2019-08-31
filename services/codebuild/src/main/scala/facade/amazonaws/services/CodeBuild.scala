@@ -179,7 +179,7 @@ package codebuild {
     def apply(
         ids: BuildIds
     ): BatchDeleteBuildsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ids" -> ids.asInstanceOf[js.Any]
       )
 
@@ -198,9 +198,9 @@ package codebuild {
         buildsDeleted: js.UndefOr[BuildIds] = js.undefined,
         buildsNotDeleted: js.UndefOr[BuildsNotDeleted] = js.undefined
     ): BatchDeleteBuildsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      buildsDeleted.foreach(__v => __obj.update("buildsDeleted", __v.asInstanceOf[js.Any]))
-      buildsNotDeleted.foreach(__v => __obj.update("buildsNotDeleted", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      buildsDeleted.foreach(__v => __obj.updateDynamic("buildsDeleted")(__v.asInstanceOf[js.Any]))
+      buildsNotDeleted.foreach(__v => __obj.updateDynamic("buildsNotDeleted")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDeleteBuildsOutput]
     }
   }
@@ -214,7 +214,7 @@ package codebuild {
     def apply(
         ids: BuildIds
     ): BatchGetBuildsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ids" -> ids.asInstanceOf[js.Any]
       )
 
@@ -233,9 +233,9 @@ package codebuild {
         builds: js.UndefOr[Builds] = js.undefined,
         buildsNotFound: js.UndefOr[BuildIds] = js.undefined
     ): BatchGetBuildsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      builds.foreach(__v => __obj.update("builds", __v.asInstanceOf[js.Any]))
-      buildsNotFound.foreach(__v => __obj.update("buildsNotFound", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      builds.foreach(__v => __obj.updateDynamic("builds")(__v.asInstanceOf[js.Any]))
+      buildsNotFound.foreach(__v => __obj.updateDynamic("buildsNotFound")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetBuildsOutput]
     }
   }
@@ -249,7 +249,7 @@ package codebuild {
     def apply(
         names: ProjectNames
     ): BatchGetProjectsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "names" -> names.asInstanceOf[js.Any]
       )
 
@@ -268,9 +268,9 @@ package codebuild {
         projects: js.UndefOr[Projects] = js.undefined,
         projectsNotFound: js.UndefOr[ProjectNames] = js.undefined
     ): BatchGetProjectsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      projects.foreach(__v => __obj.update("projects", __v.asInstanceOf[js.Any]))
-      projectsNotFound.foreach(__v => __obj.update("projectsNotFound", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      projects.foreach(__v => __obj.updateDynamic("projects")(__v.asInstanceOf[js.Any]))
+      projectsNotFound.foreach(__v => __obj.updateDynamic("projectsNotFound")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetProjectsOutput]
     }
   }
@@ -337,33 +337,33 @@ package codebuild {
         timeoutInMinutes: js.UndefOr[WrapperInt] = js.undefined,
         vpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): Build = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      artifacts.foreach(__v => __obj.update("artifacts", __v.asInstanceOf[js.Any]))
-      buildComplete.foreach(__v => __obj.update("buildComplete", __v.asInstanceOf[js.Any]))
-      buildStatus.foreach(__v => __obj.update("buildStatus", __v.asInstanceOf[js.Any]))
-      cache.foreach(__v => __obj.update("cache", __v.asInstanceOf[js.Any]))
-      currentPhase.foreach(__v => __obj.update("currentPhase", __v.asInstanceOf[js.Any]))
-      encryptionKey.foreach(__v => __obj.update("encryptionKey", __v.asInstanceOf[js.Any]))
-      endTime.foreach(__v => __obj.update("endTime", __v.asInstanceOf[js.Any]))
-      environment.foreach(__v => __obj.update("environment", __v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
-      initiator.foreach(__v => __obj.update("initiator", __v.asInstanceOf[js.Any]))
-      logs.foreach(__v => __obj.update("logs", __v.asInstanceOf[js.Any]))
-      networkInterface.foreach(__v => __obj.update("networkInterface", __v.asInstanceOf[js.Any]))
-      phases.foreach(__v => __obj.update("phases", __v.asInstanceOf[js.Any]))
-      projectName.foreach(__v => __obj.update("projectName", __v.asInstanceOf[js.Any]))
-      queuedTimeoutInMinutes.foreach(__v => __obj.update("queuedTimeoutInMinutes", __v.asInstanceOf[js.Any]))
-      resolvedSourceVersion.foreach(__v => __obj.update("resolvedSourceVersion", __v.asInstanceOf[js.Any]))
-      secondaryArtifacts.foreach(__v => __obj.update("secondaryArtifacts", __v.asInstanceOf[js.Any]))
-      secondarySourceVersions.foreach(__v => __obj.update("secondarySourceVersions", __v.asInstanceOf[js.Any]))
-      secondarySources.foreach(__v => __obj.update("secondarySources", __v.asInstanceOf[js.Any]))
-      serviceRole.foreach(__v => __obj.update("serviceRole", __v.asInstanceOf[js.Any]))
-      source.foreach(__v => __obj.update("source", __v.asInstanceOf[js.Any]))
-      sourceVersion.foreach(__v => __obj.update("sourceVersion", __v.asInstanceOf[js.Any]))
-      startTime.foreach(__v => __obj.update("startTime", __v.asInstanceOf[js.Any]))
-      timeoutInMinutes.foreach(__v => __obj.update("timeoutInMinutes", __v.asInstanceOf[js.Any]))
-      vpcConfig.foreach(__v => __obj.update("vpcConfig", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      artifacts.foreach(__v => __obj.updateDynamic("artifacts")(__v.asInstanceOf[js.Any]))
+      buildComplete.foreach(__v => __obj.updateDynamic("buildComplete")(__v.asInstanceOf[js.Any]))
+      buildStatus.foreach(__v => __obj.updateDynamic("buildStatus")(__v.asInstanceOf[js.Any]))
+      cache.foreach(__v => __obj.updateDynamic("cache")(__v.asInstanceOf[js.Any]))
+      currentPhase.foreach(__v => __obj.updateDynamic("currentPhase")(__v.asInstanceOf[js.Any]))
+      encryptionKey.foreach(__v => __obj.updateDynamic("encryptionKey")(__v.asInstanceOf[js.Any]))
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      initiator.foreach(__v => __obj.updateDynamic("initiator")(__v.asInstanceOf[js.Any]))
+      logs.foreach(__v => __obj.updateDynamic("logs")(__v.asInstanceOf[js.Any]))
+      networkInterface.foreach(__v => __obj.updateDynamic("networkInterface")(__v.asInstanceOf[js.Any]))
+      phases.foreach(__v => __obj.updateDynamic("phases")(__v.asInstanceOf[js.Any]))
+      projectName.foreach(__v => __obj.updateDynamic("projectName")(__v.asInstanceOf[js.Any]))
+      queuedTimeoutInMinutes.foreach(__v => __obj.updateDynamic("queuedTimeoutInMinutes")(__v.asInstanceOf[js.Any]))
+      resolvedSourceVersion.foreach(__v => __obj.updateDynamic("resolvedSourceVersion")(__v.asInstanceOf[js.Any]))
+      secondaryArtifacts.foreach(__v => __obj.updateDynamic("secondaryArtifacts")(__v.asInstanceOf[js.Any]))
+      secondarySourceVersions.foreach(__v => __obj.updateDynamic("secondarySourceVersions")(__v.asInstanceOf[js.Any]))
+      secondarySources.foreach(__v => __obj.updateDynamic("secondarySources")(__v.asInstanceOf[js.Any]))
+      serviceRole.foreach(__v => __obj.updateDynamic("serviceRole")(__v.asInstanceOf[js.Any]))
+      source.foreach(__v => __obj.updateDynamic("source")(__v.asInstanceOf[js.Any]))
+      sourceVersion.foreach(__v => __obj.updateDynamic("sourceVersion")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
+      timeoutInMinutes.foreach(__v => __obj.updateDynamic("timeoutInMinutes")(__v.asInstanceOf[js.Any]))
+      vpcConfig.foreach(__v => __obj.updateDynamic("vpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Build]
     }
   }
@@ -390,13 +390,13 @@ package codebuild {
         overrideArtifactName: js.UndefOr[WrapperBoolean] = js.undefined,
         sha256sum: js.UndefOr[String] = js.undefined
     ): BuildArtifacts = {
-      val __obj = js.Dictionary.empty[js.Any]
-      artifactIdentifier.foreach(__v => __obj.update("artifactIdentifier", __v.asInstanceOf[js.Any]))
-      encryptionDisabled.foreach(__v => __obj.update("encryptionDisabled", __v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
-      md5sum.foreach(__v => __obj.update("md5sum", __v.asInstanceOf[js.Any]))
-      overrideArtifactName.foreach(__v => __obj.update("overrideArtifactName", __v.asInstanceOf[js.Any]))
-      sha256sum.foreach(__v => __obj.update("sha256sum", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      artifactIdentifier.foreach(__v => __obj.updateDynamic("artifactIdentifier")(__v.asInstanceOf[js.Any]))
+      encryptionDisabled.foreach(__v => __obj.updateDynamic("encryptionDisabled")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      md5sum.foreach(__v => __obj.updateDynamic("md5sum")(__v.asInstanceOf[js.Any]))
+      overrideArtifactName.foreach(__v => __obj.updateDynamic("overrideArtifactName")(__v.asInstanceOf[js.Any]))
+      sha256sum.foreach(__v => __obj.updateDynamic("sha256sum")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BuildArtifacts]
     }
   }
@@ -415,9 +415,9 @@ package codebuild {
         id: js.UndefOr[NonEmptyString] = js.undefined,
         statusCode: js.UndefOr[String] = js.undefined
     ): BuildNotDeleted = {
-      val __obj = js.Dictionary.empty[js.Any]
-      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
-      statusCode.foreach(__v => __obj.update("statusCode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      statusCode.foreach(__v => __obj.updateDynamic("statusCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BuildNotDeleted]
     }
   }
@@ -444,13 +444,13 @@ package codebuild {
         phaseType: js.UndefOr[BuildPhaseType] = js.undefined,
         startTime: js.UndefOr[Timestamp] = js.undefined
     ): BuildPhase = {
-      val __obj = js.Dictionary.empty[js.Any]
-      contexts.foreach(__v => __obj.update("contexts", __v.asInstanceOf[js.Any]))
-      durationInSeconds.foreach(__v => __obj.update("durationInSeconds", __v.asInstanceOf[js.Any]))
-      endTime.foreach(__v => __obj.update("endTime", __v.asInstanceOf[js.Any]))
-      phaseStatus.foreach(__v => __obj.update("phaseStatus", __v.asInstanceOf[js.Any]))
-      phaseType.foreach(__v => __obj.update("phaseType", __v.asInstanceOf[js.Any]))
-      startTime.foreach(__v => __obj.update("startTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      contexts.foreach(__v => __obj.updateDynamic("contexts")(__v.asInstanceOf[js.Any]))
+      durationInSeconds.foreach(__v => __obj.updateDynamic("durationInSeconds")(__v.asInstanceOf[js.Any]))
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      phaseStatus.foreach(__v => __obj.updateDynamic("phaseStatus")(__v.asInstanceOf[js.Any]))
+      phaseType.foreach(__v => __obj.updateDynamic("phaseType")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BuildPhase]
     }
   }
@@ -517,12 +517,12 @@ package codebuild {
         groupName: js.UndefOr[String] = js.undefined,
         streamName: js.UndefOr[String] = js.undefined
     ): CloudWatchLogsConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "status" -> status.asInstanceOf[js.Any]
       )
 
-      groupName.foreach(__v => __obj.update("groupName", __v.asInstanceOf[js.Any]))
-      streamName.foreach(__v => __obj.update("streamName", __v.asInstanceOf[js.Any]))
+      groupName.foreach(__v => __obj.updateDynamic("groupName")(__v.asInstanceOf[js.Any]))
+      streamName.foreach(__v => __obj.updateDynamic("streamName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CloudWatchLogsConfig]
     }
   }
@@ -578,7 +578,7 @@ package codebuild {
         timeoutInMinutes: js.UndefOr[TimeOut] = js.undefined,
         vpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): CreateProjectInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "artifacts"   -> artifacts.asInstanceOf[js.Any],
         "environment" -> environment.asInstanceOf[js.Any],
         "name"        -> name.asInstanceOf[js.Any],
@@ -586,19 +586,19 @@ package codebuild {
         "source"      -> source.asInstanceOf[js.Any]
       )
 
-      badgeEnabled.foreach(__v => __obj.update("badgeEnabled", __v.asInstanceOf[js.Any]))
-      cache.foreach(__v => __obj.update("cache", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      encryptionKey.foreach(__v => __obj.update("encryptionKey", __v.asInstanceOf[js.Any]))
-      logsConfig.foreach(__v => __obj.update("logsConfig", __v.asInstanceOf[js.Any]))
-      queuedTimeoutInMinutes.foreach(__v => __obj.update("queuedTimeoutInMinutes", __v.asInstanceOf[js.Any]))
-      secondaryArtifacts.foreach(__v => __obj.update("secondaryArtifacts", __v.asInstanceOf[js.Any]))
-      secondarySourceVersions.foreach(__v => __obj.update("secondarySourceVersions", __v.asInstanceOf[js.Any]))
-      secondarySources.foreach(__v => __obj.update("secondarySources", __v.asInstanceOf[js.Any]))
-      sourceVersion.foreach(__v => __obj.update("sourceVersion", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
-      timeoutInMinutes.foreach(__v => __obj.update("timeoutInMinutes", __v.asInstanceOf[js.Any]))
-      vpcConfig.foreach(__v => __obj.update("vpcConfig", __v.asInstanceOf[js.Any]))
+      badgeEnabled.foreach(__v => __obj.updateDynamic("badgeEnabled")(__v.asInstanceOf[js.Any]))
+      cache.foreach(__v => __obj.updateDynamic("cache")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      encryptionKey.foreach(__v => __obj.updateDynamic("encryptionKey")(__v.asInstanceOf[js.Any]))
+      logsConfig.foreach(__v => __obj.updateDynamic("logsConfig")(__v.asInstanceOf[js.Any]))
+      queuedTimeoutInMinutes.foreach(__v => __obj.updateDynamic("queuedTimeoutInMinutes")(__v.asInstanceOf[js.Any]))
+      secondaryArtifacts.foreach(__v => __obj.updateDynamic("secondaryArtifacts")(__v.asInstanceOf[js.Any]))
+      secondarySourceVersions.foreach(__v => __obj.updateDynamic("secondarySourceVersions")(__v.asInstanceOf[js.Any]))
+      secondarySources.foreach(__v => __obj.updateDynamic("secondarySources")(__v.asInstanceOf[js.Any]))
+      sourceVersion.foreach(__v => __obj.updateDynamic("sourceVersion")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      timeoutInMinutes.foreach(__v => __obj.updateDynamic("timeoutInMinutes")(__v.asInstanceOf[js.Any]))
+      vpcConfig.foreach(__v => __obj.updateDynamic("vpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateProjectInput]
     }
   }
@@ -612,8 +612,8 @@ package codebuild {
     def apply(
         project: js.UndefOr[Project] = js.undefined
     ): CreateProjectOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      project.foreach(__v => __obj.update("project", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      project.foreach(__v => __obj.updateDynamic("project")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateProjectOutput]
     }
   }
@@ -631,12 +631,12 @@ package codebuild {
         branchFilter: js.UndefOr[String] = js.undefined,
         filterGroups: js.UndefOr[FilterGroups] = js.undefined
     ): CreateWebhookInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "projectName" -> projectName.asInstanceOf[js.Any]
       )
 
-      branchFilter.foreach(__v => __obj.update("branchFilter", __v.asInstanceOf[js.Any]))
-      filterGroups.foreach(__v => __obj.update("filterGroups", __v.asInstanceOf[js.Any]))
+      branchFilter.foreach(__v => __obj.updateDynamic("branchFilter")(__v.asInstanceOf[js.Any]))
+      filterGroups.foreach(__v => __obj.updateDynamic("filterGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateWebhookInput]
     }
   }
@@ -650,8 +650,8 @@ package codebuild {
     def apply(
         webhook: js.UndefOr[Webhook] = js.undefined
     ): CreateWebhookOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      webhook.foreach(__v => __obj.update("webhook", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      webhook.foreach(__v => __obj.updateDynamic("webhook")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateWebhookOutput]
     }
   }
@@ -671,7 +671,7 @@ package codebuild {
     def apply(
         name: NonEmptyString
     ): DeleteProjectInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
 
@@ -685,7 +685,7 @@ package codebuild {
   object DeleteProjectOutput {
     def apply(
         ): DeleteProjectOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteProjectOutput]
     }
@@ -700,7 +700,7 @@ package codebuild {
     def apply(
         arn: NonEmptyString
     ): DeleteSourceCredentialsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "arn" -> arn.asInstanceOf[js.Any]
       )
 
@@ -717,8 +717,8 @@ package codebuild {
     def apply(
         arn: js.UndefOr[NonEmptyString] = js.undefined
     ): DeleteSourceCredentialsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteSourceCredentialsOutput]
     }
   }
@@ -732,7 +732,7 @@ package codebuild {
     def apply(
         projectName: ProjectName
     ): DeleteWebhookInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "projectName" -> projectName.asInstanceOf[js.Any]
       )
 
@@ -746,7 +746,7 @@ package codebuild {
   object DeleteWebhookOutput {
     def apply(
         ): DeleteWebhookOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteWebhookOutput]
     }
@@ -768,10 +768,10 @@ package codebuild {
         name: js.UndefOr[String] = js.undefined,
         versions: js.UndefOr[ImageVersions] = js.undefined
     ): EnvironmentImage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      versions.foreach(__v => __obj.update("versions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      versions.foreach(__v => __obj.updateDynamic("versions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnvironmentImage]
     }
   }
@@ -790,9 +790,9 @@ package codebuild {
         images: js.UndefOr[EnvironmentImages] = js.undefined,
         language: js.UndefOr[LanguageType] = js.undefined
     ): EnvironmentLanguage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      images.foreach(__v => __obj.update("images", __v.asInstanceOf[js.Any]))
-      language.foreach(__v => __obj.update("language", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      images.foreach(__v => __obj.updateDynamic("images")(__v.asInstanceOf[js.Any]))
+      language.foreach(__v => __obj.updateDynamic("language")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnvironmentLanguage]
     }
   }
@@ -811,9 +811,9 @@ package codebuild {
         languages: js.UndefOr[EnvironmentLanguages] = js.undefined,
         platform: js.UndefOr[PlatformType] = js.undefined
     ): EnvironmentPlatform = {
-      val __obj = js.Dictionary.empty[js.Any]
-      languages.foreach(__v => __obj.update("languages", __v.asInstanceOf[js.Any]))
-      platform.foreach(__v => __obj.update("platform", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      languages.foreach(__v => __obj.updateDynamic("languages")(__v.asInstanceOf[js.Any]))
+      platform.foreach(__v => __obj.updateDynamic("platform")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnvironmentPlatform]
     }
   }
@@ -841,12 +841,12 @@ package codebuild {
         value: String,
         `type`: js.UndefOr[EnvironmentVariableType] = js.undefined
     ): EnvironmentVariable = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name"  -> name.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
 
-      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnvironmentVariable]
     }
   }
@@ -870,7 +870,7 @@ package codebuild {
     def apply(
         fetchSubmodules: WrapperBoolean
     ): GitSubmodulesConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "fetchSubmodules" -> fetchSubmodules.asInstanceOf[js.Any]
       )
 
@@ -902,14 +902,14 @@ package codebuild {
         shouldOverwrite: js.UndefOr[WrapperBoolean] = js.undefined,
         username: js.UndefOr[NonEmptyString] = js.undefined
     ): ImportSourceCredentialsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "authType"   -> authType.asInstanceOf[js.Any],
         "serverType" -> serverType.asInstanceOf[js.Any],
         "token"      -> token.asInstanceOf[js.Any]
       )
 
-      shouldOverwrite.foreach(__v => __obj.update("shouldOverwrite", __v.asInstanceOf[js.Any]))
-      username.foreach(__v => __obj.update("username", __v.asInstanceOf[js.Any]))
+      shouldOverwrite.foreach(__v => __obj.updateDynamic("shouldOverwrite")(__v.asInstanceOf[js.Any]))
+      username.foreach(__v => __obj.updateDynamic("username")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportSourceCredentialsInput]
     }
   }
@@ -923,8 +923,8 @@ package codebuild {
     def apply(
         arn: js.UndefOr[NonEmptyString] = js.undefined
     ): ImportSourceCredentialsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportSourceCredentialsOutput]
     }
   }
@@ -938,7 +938,7 @@ package codebuild {
     def apply(
         projectName: NonEmptyString
     ): InvalidateProjectCacheInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "projectName" -> projectName.asInstanceOf[js.Any]
       )
 
@@ -952,7 +952,7 @@ package codebuild {
   object InvalidateProjectCacheOutput {
     def apply(
         ): InvalidateProjectCacheOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[InvalidateProjectCacheOutput]
     }
@@ -986,12 +986,12 @@ package codebuild {
         nextToken: js.UndefOr[String] = js.undefined,
         sortOrder: js.UndefOr[SortOrderType] = js.undefined
     ): ListBuildsForProjectInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "projectName" -> projectName.asInstanceOf[js.Any]
       )
 
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      sortOrder.foreach(__v => __obj.update("sortOrder", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      sortOrder.foreach(__v => __obj.updateDynamic("sortOrder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBuildsForProjectInput]
     }
   }
@@ -1007,9 +1007,9 @@ package codebuild {
         ids: js.UndefOr[BuildIds] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): ListBuildsForProjectOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ids.foreach(__v => __obj.update("ids", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ids.foreach(__v => __obj.updateDynamic("ids")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBuildsForProjectOutput]
     }
   }
@@ -1025,9 +1025,9 @@ package codebuild {
         nextToken: js.UndefOr[String] = js.undefined,
         sortOrder: js.UndefOr[SortOrderType] = js.undefined
     ): ListBuildsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      sortOrder.foreach(__v => __obj.update("sortOrder", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      sortOrder.foreach(__v => __obj.updateDynamic("sortOrder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBuildsInput]
     }
   }
@@ -1043,9 +1043,9 @@ package codebuild {
         ids: js.UndefOr[BuildIds] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): ListBuildsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ids.foreach(__v => __obj.update("ids", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ids.foreach(__v => __obj.updateDynamic("ids")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBuildsOutput]
     }
   }
@@ -1056,7 +1056,7 @@ package codebuild {
   object ListCuratedEnvironmentImagesInput {
     def apply(
         ): ListCuratedEnvironmentImagesInput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ListCuratedEnvironmentImagesInput]
     }
@@ -1071,8 +1071,8 @@ package codebuild {
     def apply(
         platforms: js.UndefOr[EnvironmentPlatforms] = js.undefined
     ): ListCuratedEnvironmentImagesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      platforms.foreach(__v => __obj.update("platforms", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      platforms.foreach(__v => __obj.updateDynamic("platforms")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCuratedEnvironmentImagesOutput]
     }
   }
@@ -1090,10 +1090,10 @@ package codebuild {
         sortBy: js.UndefOr[ProjectSortByType] = js.undefined,
         sortOrder: js.UndefOr[SortOrderType] = js.undefined
     ): ListProjectsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      sortBy.foreach(__v => __obj.update("sortBy", __v.asInstanceOf[js.Any]))
-      sortOrder.foreach(__v => __obj.update("sortOrder", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      sortBy.foreach(__v => __obj.updateDynamic("sortBy")(__v.asInstanceOf[js.Any]))
+      sortOrder.foreach(__v => __obj.updateDynamic("sortOrder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListProjectsInput]
     }
   }
@@ -1109,9 +1109,9 @@ package codebuild {
         nextToken: js.UndefOr[String] = js.undefined,
         projects: js.UndefOr[ProjectNames] = js.undefined
     ): ListProjectsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      projects.foreach(__v => __obj.update("projects", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      projects.foreach(__v => __obj.updateDynamic("projects")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListProjectsOutput]
     }
   }
@@ -1122,7 +1122,7 @@ package codebuild {
   object ListSourceCredentialsInput {
     def apply(
         ): ListSourceCredentialsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ListSourceCredentialsInput]
     }
@@ -1137,8 +1137,8 @@ package codebuild {
     def apply(
         sourceCredentialsInfos: js.UndefOr[SourceCredentialsInfos] = js.undefined
     ): ListSourceCredentialsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      sourceCredentialsInfos.foreach(__v => __obj.update("sourceCredentialsInfos", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      sourceCredentialsInfos.foreach(__v => __obj.updateDynamic("sourceCredentialsInfos")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSourceCredentialsOutput]
     }
   }
@@ -1157,9 +1157,9 @@ package codebuild {
         cloudWatchLogs: js.UndefOr[CloudWatchLogsConfig] = js.undefined,
         s3Logs: js.UndefOr[S3LogsConfig] = js.undefined
     ): LogsConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      cloudWatchLogs.foreach(__v => __obj.update("cloudWatchLogs", __v.asInstanceOf[js.Any]))
-      s3Logs.foreach(__v => __obj.update("s3Logs", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      cloudWatchLogs.foreach(__v => __obj.updateDynamic("cloudWatchLogs")(__v.asInstanceOf[js.Any]))
+      s3Logs.foreach(__v => __obj.updateDynamic("s3Logs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LogsConfig]
     }
   }
@@ -1193,13 +1193,13 @@ package codebuild {
         s3Logs: js.UndefOr[S3LogsConfig] = js.undefined,
         streamName: js.UndefOr[String] = js.undefined
     ): LogsLocation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      cloudWatchLogs.foreach(__v => __obj.update("cloudWatchLogs", __v.asInstanceOf[js.Any]))
-      deepLink.foreach(__v => __obj.update("deepLink", __v.asInstanceOf[js.Any]))
-      groupName.foreach(__v => __obj.update("groupName", __v.asInstanceOf[js.Any]))
-      s3DeepLink.foreach(__v => __obj.update("s3DeepLink", __v.asInstanceOf[js.Any]))
-      s3Logs.foreach(__v => __obj.update("s3Logs", __v.asInstanceOf[js.Any]))
-      streamName.foreach(__v => __obj.update("streamName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      cloudWatchLogs.foreach(__v => __obj.updateDynamic("cloudWatchLogs")(__v.asInstanceOf[js.Any]))
+      deepLink.foreach(__v => __obj.updateDynamic("deepLink")(__v.asInstanceOf[js.Any]))
+      groupName.foreach(__v => __obj.updateDynamic("groupName")(__v.asInstanceOf[js.Any]))
+      s3DeepLink.foreach(__v => __obj.updateDynamic("s3DeepLink")(__v.asInstanceOf[js.Any]))
+      s3Logs.foreach(__v => __obj.updateDynamic("s3Logs")(__v.asInstanceOf[js.Any]))
+      streamName.foreach(__v => __obj.updateDynamic("streamName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LogsLocation]
     }
   }
@@ -1218,9 +1218,9 @@ package codebuild {
         networkInterfaceId: js.UndefOr[NonEmptyString] = js.undefined,
         subnetId: js.UndefOr[NonEmptyString] = js.undefined
     ): NetworkInterface = {
-      val __obj = js.Dictionary.empty[js.Any]
-      networkInterfaceId.foreach(__v => __obj.update("networkInterfaceId", __v.asInstanceOf[js.Any]))
-      subnetId.foreach(__v => __obj.update("subnetId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      networkInterfaceId.foreach(__v => __obj.updateDynamic("networkInterfaceId")(__v.asInstanceOf[js.Any]))
+      subnetId.foreach(__v => __obj.updateDynamic("subnetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NetworkInterface]
     }
   }
@@ -1239,9 +1239,9 @@ package codebuild {
         message: js.UndefOr[String] = js.undefined,
         statusCode: js.UndefOr[String] = js.undefined
     ): PhaseContext = {
-      val __obj = js.Dictionary.empty[js.Any]
-      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
-      statusCode.foreach(__v => __obj.update("statusCode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      statusCode.foreach(__v => __obj.updateDynamic("statusCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PhaseContext]
     }
   }
@@ -1309,29 +1309,29 @@ package codebuild {
         vpcConfig: js.UndefOr[VpcConfig] = js.undefined,
         webhook: js.UndefOr[Webhook] = js.undefined
     ): Project = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      artifacts.foreach(__v => __obj.update("artifacts", __v.asInstanceOf[js.Any]))
-      badge.foreach(__v => __obj.update("badge", __v.asInstanceOf[js.Any]))
-      cache.foreach(__v => __obj.update("cache", __v.asInstanceOf[js.Any]))
-      created.foreach(__v => __obj.update("created", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      encryptionKey.foreach(__v => __obj.update("encryptionKey", __v.asInstanceOf[js.Any]))
-      environment.foreach(__v => __obj.update("environment", __v.asInstanceOf[js.Any]))
-      lastModified.foreach(__v => __obj.update("lastModified", __v.asInstanceOf[js.Any]))
-      logsConfig.foreach(__v => __obj.update("logsConfig", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      queuedTimeoutInMinutes.foreach(__v => __obj.update("queuedTimeoutInMinutes", __v.asInstanceOf[js.Any]))
-      secondaryArtifacts.foreach(__v => __obj.update("secondaryArtifacts", __v.asInstanceOf[js.Any]))
-      secondarySourceVersions.foreach(__v => __obj.update("secondarySourceVersions", __v.asInstanceOf[js.Any]))
-      secondarySources.foreach(__v => __obj.update("secondarySources", __v.asInstanceOf[js.Any]))
-      serviceRole.foreach(__v => __obj.update("serviceRole", __v.asInstanceOf[js.Any]))
-      source.foreach(__v => __obj.update("source", __v.asInstanceOf[js.Any]))
-      sourceVersion.foreach(__v => __obj.update("sourceVersion", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
-      timeoutInMinutes.foreach(__v => __obj.update("timeoutInMinutes", __v.asInstanceOf[js.Any]))
-      vpcConfig.foreach(__v => __obj.update("vpcConfig", __v.asInstanceOf[js.Any]))
-      webhook.foreach(__v => __obj.update("webhook", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      artifacts.foreach(__v => __obj.updateDynamic("artifacts")(__v.asInstanceOf[js.Any]))
+      badge.foreach(__v => __obj.updateDynamic("badge")(__v.asInstanceOf[js.Any]))
+      cache.foreach(__v => __obj.updateDynamic("cache")(__v.asInstanceOf[js.Any]))
+      created.foreach(__v => __obj.updateDynamic("created")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      encryptionKey.foreach(__v => __obj.updateDynamic("encryptionKey")(__v.asInstanceOf[js.Any]))
+      environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
+      lastModified.foreach(__v => __obj.updateDynamic("lastModified")(__v.asInstanceOf[js.Any]))
+      logsConfig.foreach(__v => __obj.updateDynamic("logsConfig")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      queuedTimeoutInMinutes.foreach(__v => __obj.updateDynamic("queuedTimeoutInMinutes")(__v.asInstanceOf[js.Any]))
+      secondaryArtifacts.foreach(__v => __obj.updateDynamic("secondaryArtifacts")(__v.asInstanceOf[js.Any]))
+      secondarySourceVersions.foreach(__v => __obj.updateDynamic("secondarySourceVersions")(__v.asInstanceOf[js.Any]))
+      secondarySources.foreach(__v => __obj.updateDynamic("secondarySources")(__v.asInstanceOf[js.Any]))
+      serviceRole.foreach(__v => __obj.updateDynamic("serviceRole")(__v.asInstanceOf[js.Any]))
+      source.foreach(__v => __obj.updateDynamic("source")(__v.asInstanceOf[js.Any]))
+      sourceVersion.foreach(__v => __obj.updateDynamic("sourceVersion")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      timeoutInMinutes.foreach(__v => __obj.updateDynamic("timeoutInMinutes")(__v.asInstanceOf[js.Any]))
+      vpcConfig.foreach(__v => __obj.updateDynamic("vpcConfig")(__v.asInstanceOf[js.Any]))
+      webhook.foreach(__v => __obj.updateDynamic("webhook")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Project]
     }
   }
@@ -1364,18 +1364,18 @@ package codebuild {
         packaging: js.UndefOr[ArtifactPackaging] = js.undefined,
         path: js.UndefOr[String] = js.undefined
     ): ProjectArtifacts = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "type" -> `type`.asInstanceOf[js.Any]
       )
 
-      artifactIdentifier.foreach(__v => __obj.update("artifactIdentifier", __v.asInstanceOf[js.Any]))
-      encryptionDisabled.foreach(__v => __obj.update("encryptionDisabled", __v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      namespaceType.foreach(__v => __obj.update("namespaceType", __v.asInstanceOf[js.Any]))
-      overrideArtifactName.foreach(__v => __obj.update("overrideArtifactName", __v.asInstanceOf[js.Any]))
-      packaging.foreach(__v => __obj.update("packaging", __v.asInstanceOf[js.Any]))
-      path.foreach(__v => __obj.update("path", __v.asInstanceOf[js.Any]))
+      artifactIdentifier.foreach(__v => __obj.updateDynamic("artifactIdentifier")(__v.asInstanceOf[js.Any]))
+      encryptionDisabled.foreach(__v => __obj.updateDynamic("encryptionDisabled")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      namespaceType.foreach(__v => __obj.updateDynamic("namespaceType")(__v.asInstanceOf[js.Any]))
+      overrideArtifactName.foreach(__v => __obj.updateDynamic("overrideArtifactName")(__v.asInstanceOf[js.Any]))
+      packaging.foreach(__v => __obj.updateDynamic("packaging")(__v.asInstanceOf[js.Any]))
+      path.foreach(__v => __obj.updateDynamic("path")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProjectArtifacts]
     }
   }
@@ -1394,9 +1394,9 @@ package codebuild {
         badgeEnabled: js.UndefOr[Boolean] = js.undefined,
         badgeRequestUrl: js.UndefOr[String] = js.undefined
     ): ProjectBadge = {
-      val __obj = js.Dictionary.empty[js.Any]
-      badgeEnabled.foreach(__v => __obj.update("badgeEnabled", __v.asInstanceOf[js.Any]))
-      badgeRequestUrl.foreach(__v => __obj.update("badgeRequestUrl", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      badgeEnabled.foreach(__v => __obj.updateDynamic("badgeEnabled")(__v.asInstanceOf[js.Any]))
+      badgeRequestUrl.foreach(__v => __obj.updateDynamic("badgeRequestUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProjectBadge]
     }
   }
@@ -1417,12 +1417,12 @@ package codebuild {
         location: js.UndefOr[String] = js.undefined,
         modes: js.UndefOr[ProjectCacheModes] = js.undefined
     ): ProjectCache = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "type" -> `type`.asInstanceOf[js.Any]
       )
 
-      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
-      modes.foreach(__v => __obj.update("modes", __v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      modes.foreach(__v => __obj.updateDynamic("modes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProjectCache]
     }
   }
@@ -1453,17 +1453,17 @@ package codebuild {
         privilegedMode: js.UndefOr[WrapperBoolean] = js.undefined,
         registryCredential: js.UndefOr[RegistryCredential] = js.undefined
     ): ProjectEnvironment = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "computeType" -> computeType.asInstanceOf[js.Any],
         "image"       -> image.asInstanceOf[js.Any],
         "type"        -> `type`.asInstanceOf[js.Any]
       )
 
-      certificate.foreach(__v => __obj.update("certificate", __v.asInstanceOf[js.Any]))
-      environmentVariables.foreach(__v => __obj.update("environmentVariables", __v.asInstanceOf[js.Any]))
-      imagePullCredentialsType.foreach(__v => __obj.update("imagePullCredentialsType", __v.asInstanceOf[js.Any]))
-      privilegedMode.foreach(__v => __obj.update("privilegedMode", __v.asInstanceOf[js.Any]))
-      registryCredential.foreach(__v => __obj.update("registryCredential", __v.asInstanceOf[js.Any]))
+      certificate.foreach(__v => __obj.updateDynamic("certificate")(__v.asInstanceOf[js.Any]))
+      environmentVariables.foreach(__v => __obj.updateDynamic("environmentVariables")(__v.asInstanceOf[js.Any]))
+      imagePullCredentialsType.foreach(__v => __obj.updateDynamic("imagePullCredentialsType")(__v.asInstanceOf[js.Any]))
+      privilegedMode.foreach(__v => __obj.updateDynamic("privilegedMode")(__v.asInstanceOf[js.Any]))
+      registryCredential.foreach(__v => __obj.updateDynamic("registryCredential")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProjectEnvironment]
     }
   }
@@ -1504,18 +1504,18 @@ package codebuild {
         reportBuildStatus: js.UndefOr[WrapperBoolean] = js.undefined,
         sourceIdentifier: js.UndefOr[String] = js.undefined
     ): ProjectSource = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "type" -> `type`.asInstanceOf[js.Any]
       )
 
-      auth.foreach(__v => __obj.update("auth", __v.asInstanceOf[js.Any]))
-      buildspec.foreach(__v => __obj.update("buildspec", __v.asInstanceOf[js.Any]))
-      gitCloneDepth.foreach(__v => __obj.update("gitCloneDepth", __v.asInstanceOf[js.Any]))
-      gitSubmodulesConfig.foreach(__v => __obj.update("gitSubmodulesConfig", __v.asInstanceOf[js.Any]))
-      insecureSsl.foreach(__v => __obj.update("insecureSsl", __v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
-      reportBuildStatus.foreach(__v => __obj.update("reportBuildStatus", __v.asInstanceOf[js.Any]))
-      sourceIdentifier.foreach(__v => __obj.update("sourceIdentifier", __v.asInstanceOf[js.Any]))
+      auth.foreach(__v => __obj.updateDynamic("auth")(__v.asInstanceOf[js.Any]))
+      buildspec.foreach(__v => __obj.updateDynamic("buildspec")(__v.asInstanceOf[js.Any]))
+      gitCloneDepth.foreach(__v => __obj.updateDynamic("gitCloneDepth")(__v.asInstanceOf[js.Any]))
+      gitSubmodulesConfig.foreach(__v => __obj.updateDynamic("gitSubmodulesConfig")(__v.asInstanceOf[js.Any]))
+      insecureSsl.foreach(__v => __obj.updateDynamic("insecureSsl")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      reportBuildStatus.foreach(__v => __obj.updateDynamic("reportBuildStatus")(__v.asInstanceOf[js.Any]))
+      sourceIdentifier.foreach(__v => __obj.updateDynamic("sourceIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProjectSource]
     }
   }
@@ -1534,7 +1534,7 @@ package codebuild {
         sourceIdentifier: String,
         sourceVersion: String
     ): ProjectSourceVersion = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "sourceIdentifier" -> sourceIdentifier.asInstanceOf[js.Any],
         "sourceVersion"    -> sourceVersion.asInstanceOf[js.Any]
       )
@@ -1560,7 +1560,7 @@ package codebuild {
         credential: NonEmptyString,
         credentialProvider: CredentialProviderType
     ): RegistryCredential = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "credential"         -> credential.asInstanceOf[js.Any],
         "credentialProvider" -> credentialProvider.asInstanceOf[js.Any]
       )
@@ -1585,12 +1585,12 @@ package codebuild {
         encryptionDisabled: js.UndefOr[WrapperBoolean] = js.undefined,
         location: js.UndefOr[String] = js.undefined
     ): S3LogsConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "status" -> status.asInstanceOf[js.Any]
       )
 
-      encryptionDisabled.foreach(__v => __obj.update("encryptionDisabled", __v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
+      encryptionDisabled.foreach(__v => __obj.updateDynamic("encryptionDisabled")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3LogsConfig]
     }
   }
@@ -1625,11 +1625,11 @@ package codebuild {
         `type`: SourceAuthType,
         resource: js.UndefOr[String] = js.undefined
     ): SourceAuth = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "type" -> `type`.asInstanceOf[js.Any]
       )
 
-      resource.foreach(__v => __obj.update("resource", __v.asInstanceOf[js.Any]))
+      resource.foreach(__v => __obj.updateDynamic("resource")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SourceAuth]
     }
   }
@@ -1656,10 +1656,10 @@ package codebuild {
         authType: js.UndefOr[AuthType] = js.undefined,
         serverType: js.UndefOr[ServerType] = js.undefined
     ): SourceCredentialsInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      authType.foreach(__v => __obj.update("authType", __v.asInstanceOf[js.Any]))
-      serverType.foreach(__v => __obj.update("serverType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      authType.foreach(__v => __obj.updateDynamic("authType")(__v.asInstanceOf[js.Any]))
+      serverType.foreach(__v => __obj.updateDynamic("serverType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SourceCredentialsInfo]
     }
   }
@@ -1740,45 +1740,53 @@ package codebuild {
         sourceVersion: js.UndefOr[String] = js.undefined,
         timeoutInMinutesOverride: js.UndefOr[TimeOut] = js.undefined
     ): StartBuildInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "projectName" -> projectName.asInstanceOf[js.Any]
       )
 
-      artifactsOverride.foreach(__v => __obj.update("artifactsOverride", __v.asInstanceOf[js.Any]))
-      buildspecOverride.foreach(__v => __obj.update("buildspecOverride", __v.asInstanceOf[js.Any]))
-      cacheOverride.foreach(__v => __obj.update("cacheOverride", __v.asInstanceOf[js.Any]))
-      certificateOverride.foreach(__v => __obj.update("certificateOverride", __v.asInstanceOf[js.Any]))
-      computeTypeOverride.foreach(__v => __obj.update("computeTypeOverride", __v.asInstanceOf[js.Any]))
-      environmentTypeOverride.foreach(__v => __obj.update("environmentTypeOverride", __v.asInstanceOf[js.Any]))
+      artifactsOverride.foreach(__v => __obj.updateDynamic("artifactsOverride")(__v.asInstanceOf[js.Any]))
+      buildspecOverride.foreach(__v => __obj.updateDynamic("buildspecOverride")(__v.asInstanceOf[js.Any]))
+      cacheOverride.foreach(__v => __obj.updateDynamic("cacheOverride")(__v.asInstanceOf[js.Any]))
+      certificateOverride.foreach(__v => __obj.updateDynamic("certificateOverride")(__v.asInstanceOf[js.Any]))
+      computeTypeOverride.foreach(__v => __obj.updateDynamic("computeTypeOverride")(__v.asInstanceOf[js.Any]))
+      environmentTypeOverride.foreach(__v => __obj.updateDynamic("environmentTypeOverride")(__v.asInstanceOf[js.Any]))
       environmentVariablesOverride.foreach(
-        __v => __obj.update("environmentVariablesOverride", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("environmentVariablesOverride")(__v.asInstanceOf[js.Any])
       )
-      gitCloneDepthOverride.foreach(__v => __obj.update("gitCloneDepthOverride", __v.asInstanceOf[js.Any]))
-      gitSubmodulesConfigOverride.foreach(__v => __obj.update("gitSubmodulesConfigOverride", __v.asInstanceOf[js.Any]))
-      idempotencyToken.foreach(__v => __obj.update("idempotencyToken", __v.asInstanceOf[js.Any]))
-      imageOverride.foreach(__v => __obj.update("imageOverride", __v.asInstanceOf[js.Any]))
+      gitCloneDepthOverride.foreach(__v => __obj.updateDynamic("gitCloneDepthOverride")(__v.asInstanceOf[js.Any]))
+      gitSubmodulesConfigOverride.foreach(
+        __v => __obj.updateDynamic("gitSubmodulesConfigOverride")(__v.asInstanceOf[js.Any])
+      )
+      idempotencyToken.foreach(__v => __obj.updateDynamic("idempotencyToken")(__v.asInstanceOf[js.Any]))
+      imageOverride.foreach(__v => __obj.updateDynamic("imageOverride")(__v.asInstanceOf[js.Any]))
       imagePullCredentialsTypeOverride.foreach(
-        __v => __obj.update("imagePullCredentialsTypeOverride", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("imagePullCredentialsTypeOverride")(__v.asInstanceOf[js.Any])
       )
-      insecureSslOverride.foreach(__v => __obj.update("insecureSslOverride", __v.asInstanceOf[js.Any]))
-      logsConfigOverride.foreach(__v => __obj.update("logsConfigOverride", __v.asInstanceOf[js.Any]))
-      privilegedModeOverride.foreach(__v => __obj.update("privilegedModeOverride", __v.asInstanceOf[js.Any]))
+      insecureSslOverride.foreach(__v => __obj.updateDynamic("insecureSslOverride")(__v.asInstanceOf[js.Any]))
+      logsConfigOverride.foreach(__v => __obj.updateDynamic("logsConfigOverride")(__v.asInstanceOf[js.Any]))
+      privilegedModeOverride.foreach(__v => __obj.updateDynamic("privilegedModeOverride")(__v.asInstanceOf[js.Any]))
       queuedTimeoutInMinutesOverride.foreach(
-        __v => __obj.update("queuedTimeoutInMinutesOverride", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("queuedTimeoutInMinutesOverride")(__v.asInstanceOf[js.Any])
       )
-      registryCredentialOverride.foreach(__v => __obj.update("registryCredentialOverride", __v.asInstanceOf[js.Any]))
-      reportBuildStatusOverride.foreach(__v => __obj.update("reportBuildStatusOverride", __v.asInstanceOf[js.Any]))
-      secondaryArtifactsOverride.foreach(__v => __obj.update("secondaryArtifactsOverride", __v.asInstanceOf[js.Any]))
-      secondarySourcesOverride.foreach(__v => __obj.update("secondarySourcesOverride", __v.asInstanceOf[js.Any]))
+      registryCredentialOverride.foreach(
+        __v => __obj.updateDynamic("registryCredentialOverride")(__v.asInstanceOf[js.Any])
+      )
+      reportBuildStatusOverride.foreach(
+        __v => __obj.updateDynamic("reportBuildStatusOverride")(__v.asInstanceOf[js.Any])
+      )
+      secondaryArtifactsOverride.foreach(
+        __v => __obj.updateDynamic("secondaryArtifactsOverride")(__v.asInstanceOf[js.Any])
+      )
+      secondarySourcesOverride.foreach(__v => __obj.updateDynamic("secondarySourcesOverride")(__v.asInstanceOf[js.Any]))
       secondarySourcesVersionOverride.foreach(
-        __v => __obj.update("secondarySourcesVersionOverride", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("secondarySourcesVersionOverride")(__v.asInstanceOf[js.Any])
       )
-      serviceRoleOverride.foreach(__v => __obj.update("serviceRoleOverride", __v.asInstanceOf[js.Any]))
-      sourceAuthOverride.foreach(__v => __obj.update("sourceAuthOverride", __v.asInstanceOf[js.Any]))
-      sourceLocationOverride.foreach(__v => __obj.update("sourceLocationOverride", __v.asInstanceOf[js.Any]))
-      sourceTypeOverride.foreach(__v => __obj.update("sourceTypeOverride", __v.asInstanceOf[js.Any]))
-      sourceVersion.foreach(__v => __obj.update("sourceVersion", __v.asInstanceOf[js.Any]))
-      timeoutInMinutesOverride.foreach(__v => __obj.update("timeoutInMinutesOverride", __v.asInstanceOf[js.Any]))
+      serviceRoleOverride.foreach(__v => __obj.updateDynamic("serviceRoleOverride")(__v.asInstanceOf[js.Any]))
+      sourceAuthOverride.foreach(__v => __obj.updateDynamic("sourceAuthOverride")(__v.asInstanceOf[js.Any]))
+      sourceLocationOverride.foreach(__v => __obj.updateDynamic("sourceLocationOverride")(__v.asInstanceOf[js.Any]))
+      sourceTypeOverride.foreach(__v => __obj.updateDynamic("sourceTypeOverride")(__v.asInstanceOf[js.Any]))
+      sourceVersion.foreach(__v => __obj.updateDynamic("sourceVersion")(__v.asInstanceOf[js.Any]))
+      timeoutInMinutesOverride.foreach(__v => __obj.updateDynamic("timeoutInMinutesOverride")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartBuildInput]
     }
   }
@@ -1792,8 +1800,8 @@ package codebuild {
     def apply(
         build: js.UndefOr[Build] = js.undefined
     ): StartBuildOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      build.foreach(__v => __obj.update("build", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      build.foreach(__v => __obj.updateDynamic("build")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartBuildOutput]
     }
   }
@@ -1818,7 +1826,7 @@ package codebuild {
     def apply(
         id: NonEmptyString
     ): StopBuildInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "id" -> id.asInstanceOf[js.Any]
       )
 
@@ -1835,8 +1843,8 @@ package codebuild {
     def apply(
         build: js.UndefOr[Build] = js.undefined
     ): StopBuildOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      build.foreach(__v => __obj.update("build", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      build.foreach(__v => __obj.updateDynamic("build")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopBuildOutput]
     }
   }
@@ -1856,9 +1864,9 @@ package codebuild {
         key: js.UndefOr[KeyInput] = js.undefined,
         value: js.UndefOr[ValueInput] = js.undefined
     ): Tag = {
-      val __obj = js.Dictionary.empty[js.Any]
-      key.foreach(__v => __obj.update("key", __v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      key.foreach(__v => __obj.updateDynamic("key")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tag]
     }
   }
@@ -1906,27 +1914,27 @@ package codebuild {
         timeoutInMinutes: js.UndefOr[TimeOut] = js.undefined,
         vpcConfig: js.UndefOr[VpcConfig] = js.undefined
     ): UpdateProjectInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
 
-      artifacts.foreach(__v => __obj.update("artifacts", __v.asInstanceOf[js.Any]))
-      badgeEnabled.foreach(__v => __obj.update("badgeEnabled", __v.asInstanceOf[js.Any]))
-      cache.foreach(__v => __obj.update("cache", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      encryptionKey.foreach(__v => __obj.update("encryptionKey", __v.asInstanceOf[js.Any]))
-      environment.foreach(__v => __obj.update("environment", __v.asInstanceOf[js.Any]))
-      logsConfig.foreach(__v => __obj.update("logsConfig", __v.asInstanceOf[js.Any]))
-      queuedTimeoutInMinutes.foreach(__v => __obj.update("queuedTimeoutInMinutes", __v.asInstanceOf[js.Any]))
-      secondaryArtifacts.foreach(__v => __obj.update("secondaryArtifacts", __v.asInstanceOf[js.Any]))
-      secondarySourceVersions.foreach(__v => __obj.update("secondarySourceVersions", __v.asInstanceOf[js.Any]))
-      secondarySources.foreach(__v => __obj.update("secondarySources", __v.asInstanceOf[js.Any]))
-      serviceRole.foreach(__v => __obj.update("serviceRole", __v.asInstanceOf[js.Any]))
-      source.foreach(__v => __obj.update("source", __v.asInstanceOf[js.Any]))
-      sourceVersion.foreach(__v => __obj.update("sourceVersion", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
-      timeoutInMinutes.foreach(__v => __obj.update("timeoutInMinutes", __v.asInstanceOf[js.Any]))
-      vpcConfig.foreach(__v => __obj.update("vpcConfig", __v.asInstanceOf[js.Any]))
+      artifacts.foreach(__v => __obj.updateDynamic("artifacts")(__v.asInstanceOf[js.Any]))
+      badgeEnabled.foreach(__v => __obj.updateDynamic("badgeEnabled")(__v.asInstanceOf[js.Any]))
+      cache.foreach(__v => __obj.updateDynamic("cache")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      encryptionKey.foreach(__v => __obj.updateDynamic("encryptionKey")(__v.asInstanceOf[js.Any]))
+      environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
+      logsConfig.foreach(__v => __obj.updateDynamic("logsConfig")(__v.asInstanceOf[js.Any]))
+      queuedTimeoutInMinutes.foreach(__v => __obj.updateDynamic("queuedTimeoutInMinutes")(__v.asInstanceOf[js.Any]))
+      secondaryArtifacts.foreach(__v => __obj.updateDynamic("secondaryArtifacts")(__v.asInstanceOf[js.Any]))
+      secondarySourceVersions.foreach(__v => __obj.updateDynamic("secondarySourceVersions")(__v.asInstanceOf[js.Any]))
+      secondarySources.foreach(__v => __obj.updateDynamic("secondarySources")(__v.asInstanceOf[js.Any]))
+      serviceRole.foreach(__v => __obj.updateDynamic("serviceRole")(__v.asInstanceOf[js.Any]))
+      source.foreach(__v => __obj.updateDynamic("source")(__v.asInstanceOf[js.Any]))
+      sourceVersion.foreach(__v => __obj.updateDynamic("sourceVersion")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      timeoutInMinutes.foreach(__v => __obj.updateDynamic("timeoutInMinutes")(__v.asInstanceOf[js.Any]))
+      vpcConfig.foreach(__v => __obj.updateDynamic("vpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateProjectInput]
     }
   }
@@ -1940,8 +1948,8 @@ package codebuild {
     def apply(
         project: js.UndefOr[Project] = js.undefined
     ): UpdateProjectOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      project.foreach(__v => __obj.update("project", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      project.foreach(__v => __obj.updateDynamic("project")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateProjectOutput]
     }
   }
@@ -1961,13 +1969,13 @@ package codebuild {
         filterGroups: js.UndefOr[FilterGroups] = js.undefined,
         rotateSecret: js.UndefOr[Boolean] = js.undefined
     ): UpdateWebhookInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "projectName" -> projectName.asInstanceOf[js.Any]
       )
 
-      branchFilter.foreach(__v => __obj.update("branchFilter", __v.asInstanceOf[js.Any]))
-      filterGroups.foreach(__v => __obj.update("filterGroups", __v.asInstanceOf[js.Any]))
-      rotateSecret.foreach(__v => __obj.update("rotateSecret", __v.asInstanceOf[js.Any]))
+      branchFilter.foreach(__v => __obj.updateDynamic("branchFilter")(__v.asInstanceOf[js.Any]))
+      filterGroups.foreach(__v => __obj.updateDynamic("filterGroups")(__v.asInstanceOf[js.Any]))
+      rotateSecret.foreach(__v => __obj.updateDynamic("rotateSecret")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateWebhookInput]
     }
   }
@@ -1981,8 +1989,8 @@ package codebuild {
     def apply(
         webhook: js.UndefOr[Webhook] = js.undefined
     ): UpdateWebhookOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      webhook.foreach(__v => __obj.update("webhook", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      webhook.foreach(__v => __obj.updateDynamic("webhook")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateWebhookOutput]
     }
   }
@@ -2003,10 +2011,10 @@ package codebuild {
         subnets: js.UndefOr[Subnets] = js.undefined,
         vpcId: js.UndefOr[NonEmptyString] = js.undefined
     ): VpcConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      securityGroupIds.foreach(__v => __obj.update("securityGroupIds", __v.asInstanceOf[js.Any]))
-      subnets.foreach(__v => __obj.update("subnets", __v.asInstanceOf[js.Any]))
-      vpcId.foreach(__v => __obj.update("vpcId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      securityGroupIds.foreach(__v => __obj.updateDynamic("securityGroupIds")(__v.asInstanceOf[js.Any]))
+      subnets.foreach(__v => __obj.updateDynamic("subnets")(__v.asInstanceOf[js.Any]))
+      vpcId.foreach(__v => __obj.updateDynamic("vpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VpcConfig]
     }
   }
@@ -2033,13 +2041,13 @@ package codebuild {
         secret: js.UndefOr[NonEmptyString] = js.undefined,
         url: js.UndefOr[NonEmptyString] = js.undefined
     ): Webhook = {
-      val __obj = js.Dictionary.empty[js.Any]
-      branchFilter.foreach(__v => __obj.update("branchFilter", __v.asInstanceOf[js.Any]))
-      filterGroups.foreach(__v => __obj.update("filterGroups", __v.asInstanceOf[js.Any]))
-      lastModifiedSecret.foreach(__v => __obj.update("lastModifiedSecret", __v.asInstanceOf[js.Any]))
-      payloadUrl.foreach(__v => __obj.update("payloadUrl", __v.asInstanceOf[js.Any]))
-      secret.foreach(__v => __obj.update("secret", __v.asInstanceOf[js.Any]))
-      url.foreach(__v => __obj.update("url", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      branchFilter.foreach(__v => __obj.updateDynamic("branchFilter")(__v.asInstanceOf[js.Any]))
+      filterGroups.foreach(__v => __obj.updateDynamic("filterGroups")(__v.asInstanceOf[js.Any]))
+      lastModifiedSecret.foreach(__v => __obj.updateDynamic("lastModifiedSecret")(__v.asInstanceOf[js.Any]))
+      payloadUrl.foreach(__v => __obj.updateDynamic("payloadUrl")(__v.asInstanceOf[js.Any]))
+      secret.foreach(__v => __obj.updateDynamic("secret")(__v.asInstanceOf[js.Any]))
+      url.foreach(__v => __obj.updateDynamic("url")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Webhook]
     }
   }
@@ -2060,12 +2068,12 @@ package codebuild {
         `type`: WebhookFilterType,
         excludeMatchedPattern: js.UndefOr[WrapperBoolean] = js.undefined
     ): WebhookFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pattern" -> pattern.asInstanceOf[js.Any],
         "type"    -> `type`.asInstanceOf[js.Any]
       )
 
-      excludeMatchedPattern.foreach(__v => __obj.update("excludeMatchedPattern", __v.asInstanceOf[js.Any]))
+      excludeMatchedPattern.foreach(__v => __obj.updateDynamic("excludeMatchedPattern")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WebhookFilter]
     }
   }

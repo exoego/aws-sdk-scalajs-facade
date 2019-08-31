@@ -127,12 +127,12 @@ package datapipeline {
         parameterValues: js.UndefOr[ParameterValueList] = js.undefined,
         startTimestamp: js.UndefOr[timestamp] = js.undefined
     ): ActivatePipelineInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pipelineId" -> pipelineId.asInstanceOf[js.Any]
       )
 
-      parameterValues.foreach(__v => __obj.update("parameterValues", __v.asInstanceOf[js.Any]))
-      startTimestamp.foreach(__v => __obj.update("startTimestamp", __v.asInstanceOf[js.Any]))
+      parameterValues.foreach(__v => __obj.updateDynamic("parameterValues")(__v.asInstanceOf[js.Any]))
+      startTimestamp.foreach(__v => __obj.updateDynamic("startTimestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActivatePipelineInput]
     }
   }
@@ -146,7 +146,7 @@ package datapipeline {
   object ActivatePipelineOutput {
     def apply(
         ): ActivatePipelineOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ActivatePipelineOutput]
     }
@@ -166,7 +166,7 @@ package datapipeline {
         pipelineId: id,
         tags: tagList
     ): AddTagsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pipelineId" -> pipelineId.asInstanceOf[js.Any],
         "tags"       -> tags.asInstanceOf[js.Any]
       )
@@ -184,7 +184,7 @@ package datapipeline {
   object AddTagsOutput {
     def apply(
         ): AddTagsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AddTagsOutput]
     }
@@ -208,13 +208,13 @@ package datapipeline {
         description: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[tagList] = js.undefined
     ): CreatePipelineInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name"     -> name.asInstanceOf[js.Any],
         "uniqueId" -> uniqueId.asInstanceOf[js.Any]
       )
 
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePipelineInput]
     }
   }
@@ -231,7 +231,7 @@ package datapipeline {
     def apply(
         pipelineId: id
     ): CreatePipelineOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pipelineId" -> pipelineId.asInstanceOf[js.Any]
       )
 
@@ -253,11 +253,11 @@ package datapipeline {
         pipelineId: id,
         cancelActive: js.UndefOr[cancelActive] = js.undefined
     ): DeactivatePipelineInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pipelineId" -> pipelineId.asInstanceOf[js.Any]
       )
 
-      cancelActive.foreach(__v => __obj.update("cancelActive", __v.asInstanceOf[js.Any]))
+      cancelActive.foreach(__v => __obj.updateDynamic("cancelActive")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeactivatePipelineInput]
     }
   }
@@ -271,7 +271,7 @@ package datapipeline {
   object DeactivatePipelineOutput {
     def apply(
         ): DeactivatePipelineOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeactivatePipelineOutput]
     }
@@ -289,7 +289,7 @@ package datapipeline {
     def apply(
         pipelineId: id
     ): DeletePipelineInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pipelineId" -> pipelineId.asInstanceOf[js.Any]
       )
 
@@ -315,13 +315,13 @@ package datapipeline {
         evaluateExpressions: js.UndefOr[Boolean] = js.undefined,
         marker: js.UndefOr[String] = js.undefined
     ): DescribeObjectsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "objectIds"  -> objectIds.asInstanceOf[js.Any],
         "pipelineId" -> pipelineId.asInstanceOf[js.Any]
       )
 
-      evaluateExpressions.foreach(__v => __obj.update("evaluateExpressions", __v.asInstanceOf[js.Any]))
-      marker.foreach(__v => __obj.update("marker", __v.asInstanceOf[js.Any]))
+      evaluateExpressions.foreach(__v => __obj.updateDynamic("evaluateExpressions")(__v.asInstanceOf[js.Any]))
+      marker.foreach(__v => __obj.updateDynamic("marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeObjectsInput]
     }
   }
@@ -342,12 +342,12 @@ package datapipeline {
         hasMoreResults: js.UndefOr[Boolean] = js.undefined,
         marker: js.UndefOr[String] = js.undefined
     ): DescribeObjectsOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pipelineObjects" -> pipelineObjects.asInstanceOf[js.Any]
       )
 
-      hasMoreResults.foreach(__v => __obj.update("hasMoreResults", __v.asInstanceOf[js.Any]))
-      marker.foreach(__v => __obj.update("marker", __v.asInstanceOf[js.Any]))
+      hasMoreResults.foreach(__v => __obj.updateDynamic("hasMoreResults")(__v.asInstanceOf[js.Any]))
+      marker.foreach(__v => __obj.updateDynamic("marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeObjectsOutput]
     }
   }
@@ -364,7 +364,7 @@ package datapipeline {
     def apply(
         pipelineIds: idList
     ): DescribePipelinesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pipelineIds" -> pipelineIds.asInstanceOf[js.Any]
       )
 
@@ -384,7 +384,7 @@ package datapipeline {
     def apply(
         pipelineDescriptionList: PipelineDescriptionList
     ): DescribePipelinesOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pipelineDescriptionList" -> pipelineDescriptionList.asInstanceOf[js.Any]
       )
 
@@ -408,7 +408,7 @@ package datapipeline {
         objectId: id,
         pipelineId: id
     ): EvaluateExpressionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "expression" -> expression.asInstanceOf[js.Any],
         "objectId"   -> objectId.asInstanceOf[js.Any],
         "pipelineId" -> pipelineId.asInstanceOf[js.Any]
@@ -430,7 +430,7 @@ package datapipeline {
     def apply(
         evaluatedExpression: longString
     ): EvaluateExpressionOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "evaluatedExpression" -> evaluatedExpression.asInstanceOf[js.Any]
       )
 
@@ -454,12 +454,12 @@ package datapipeline {
         refValue: js.UndefOr[fieldNameString] = js.undefined,
         stringValue: js.UndefOr[fieldStringValue] = js.undefined
     ): Field = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "key" -> key.asInstanceOf[js.Any]
       )
 
-      refValue.foreach(__v => __obj.update("refValue", __v.asInstanceOf[js.Any]))
-      stringValue.foreach(__v => __obj.update("stringValue", __v.asInstanceOf[js.Any]))
+      refValue.foreach(__v => __obj.updateDynamic("refValue")(__v.asInstanceOf[js.Any]))
+      stringValue.foreach(__v => __obj.updateDynamic("stringValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Field]
     }
   }
@@ -478,11 +478,11 @@ package datapipeline {
         pipelineId: id,
         version: js.UndefOr[String] = js.undefined
     ): GetPipelineDefinitionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pipelineId" -> pipelineId.asInstanceOf[js.Any]
       )
 
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPipelineDefinitionInput]
     }
   }
@@ -503,10 +503,10 @@ package datapipeline {
         parameterValues: js.UndefOr[ParameterValueList] = js.undefined,
         pipelineObjects: js.UndefOr[PipelineObjectList] = js.undefined
     ): GetPipelineDefinitionOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      parameterObjects.foreach(__v => __obj.update("parameterObjects", __v.asInstanceOf[js.Any]))
-      parameterValues.foreach(__v => __obj.update("parameterValues", __v.asInstanceOf[js.Any]))
-      pipelineObjects.foreach(__v => __obj.update("pipelineObjects", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      parameterObjects.foreach(__v => __obj.updateDynamic("parameterObjects")(__v.asInstanceOf[js.Any]))
+      parameterValues.foreach(__v => __obj.updateDynamic("parameterValues")(__v.asInstanceOf[js.Any]))
+      pipelineObjects.foreach(__v => __obj.updateDynamic("pipelineObjects")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPipelineDefinitionOutput]
     }
   }
@@ -526,9 +526,9 @@ package datapipeline {
         document: js.UndefOr[String] = js.undefined,
         signature: js.UndefOr[String] = js.undefined
     ): InstanceIdentity = {
-      val __obj = js.Dictionary.empty[js.Any]
-      document.foreach(__v => __obj.update("document", __v.asInstanceOf[js.Any]))
-      signature.foreach(__v => __obj.update("signature", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      document.foreach(__v => __obj.updateDynamic("document")(__v.asInstanceOf[js.Any]))
+      signature.foreach(__v => __obj.updateDynamic("signature")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceIdentity]
     }
   }
@@ -561,8 +561,8 @@ package datapipeline {
     def apply(
         marker: js.UndefOr[String] = js.undefined
     ): ListPipelinesInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      marker.foreach(__v => __obj.update("marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      marker.foreach(__v => __obj.updateDynamic("marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPipelinesInput]
     }
   }
@@ -583,12 +583,12 @@ package datapipeline {
         hasMoreResults: js.UndefOr[Boolean] = js.undefined,
         marker: js.UndefOr[String] = js.undefined
     ): ListPipelinesOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pipelineIdList" -> pipelineIdList.asInstanceOf[js.Any]
       )
 
-      hasMoreResults.foreach(__v => __obj.update("hasMoreResults", __v.asInstanceOf[js.Any]))
-      marker.foreach(__v => __obj.update("marker", __v.asInstanceOf[js.Any]))
+      hasMoreResults.foreach(__v => __obj.updateDynamic("hasMoreResults")(__v.asInstanceOf[js.Any]))
+      marker.foreach(__v => __obj.updateDynamic("marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPipelinesOutput]
     }
   }
@@ -607,9 +607,9 @@ package datapipeline {
         `type`: js.UndefOr[OperatorType] = js.undefined,
         values: js.UndefOr[stringList] = js.undefined
     ): Operator = {
-      val __obj = js.Dictionary.empty[js.Any]
-      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
-      values.foreach(__v => __obj.update("values", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      values.foreach(__v => __obj.updateDynamic("values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Operator]
     }
   }
@@ -638,7 +638,7 @@ package datapipeline {
         key: attributeNameString,
         stringValue: attributeValueString
     ): ParameterAttribute = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "key"         -> key.asInstanceOf[js.Any],
         "stringValue" -> stringValue.asInstanceOf[js.Any]
       )
@@ -661,7 +661,7 @@ package datapipeline {
         attributes: ParameterAttributeList,
         id: fieldNameString
     ): ParameterObject = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "attributes" -> attributes.asInstanceOf[js.Any],
         "id"         -> id.asInstanceOf[js.Any]
       )
@@ -684,7 +684,7 @@ package datapipeline {
         id: fieldNameString,
         stringValue: fieldStringValue
     ): ParameterValue = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "id"          -> id.asInstanceOf[js.Any],
         "stringValue" -> stringValue.asInstanceOf[js.Any]
       )
@@ -721,14 +721,14 @@ package datapipeline {
         description: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[tagList] = js.undefined
     ): PipelineDescription = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "fields"     -> fields.asInstanceOf[js.Any],
         "name"       -> name.asInstanceOf[js.Any],
         "pipelineId" -> pipelineId.asInstanceOf[js.Any]
       )
 
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PipelineDescription]
     }
   }
@@ -747,9 +747,9 @@ package datapipeline {
         id: js.UndefOr[id] = js.undefined,
         name: js.UndefOr[id] = js.undefined
     ): PipelineIdName = {
-      val __obj = js.Dictionary.empty[js.Any]
-      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PipelineIdName]
     }
   }
@@ -778,7 +778,7 @@ package datapipeline {
         id: id,
         name: id
     ): PipelineObject = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "fields" -> fields.asInstanceOf[js.Any],
         "id"     -> id.asInstanceOf[js.Any],
         "name"   -> name.asInstanceOf[js.Any]
@@ -804,12 +804,12 @@ package datapipeline {
         hostname: js.UndefOr[id] = js.undefined,
         instanceIdentity: js.UndefOr[InstanceIdentity] = js.undefined
     ): PollForTaskInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "workerGroup" -> workerGroup.asInstanceOf[js.Any]
       )
 
-      hostname.foreach(__v => __obj.update("hostname", __v.asInstanceOf[js.Any]))
-      instanceIdentity.foreach(__v => __obj.update("instanceIdentity", __v.asInstanceOf[js.Any]))
+      hostname.foreach(__v => __obj.updateDynamic("hostname")(__v.asInstanceOf[js.Any]))
+      instanceIdentity.foreach(__v => __obj.updateDynamic("instanceIdentity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PollForTaskInput]
     }
   }
@@ -826,8 +826,8 @@ package datapipeline {
     def apply(
         taskObject: js.UndefOr[TaskObject] = js.undefined
     ): PollForTaskOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      taskObject.foreach(__v => __obj.update("taskObject", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      taskObject.foreach(__v => __obj.updateDynamic("taskObject")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PollForTaskOutput]
     }
   }
@@ -850,13 +850,13 @@ package datapipeline {
         parameterObjects: js.UndefOr[ParameterObjectList] = js.undefined,
         parameterValues: js.UndefOr[ParameterValueList] = js.undefined
     ): PutPipelineDefinitionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pipelineId"      -> pipelineId.asInstanceOf[js.Any],
         "pipelineObjects" -> pipelineObjects.asInstanceOf[js.Any]
       )
 
-      parameterObjects.foreach(__v => __obj.update("parameterObjects", __v.asInstanceOf[js.Any]))
-      parameterValues.foreach(__v => __obj.update("parameterValues", __v.asInstanceOf[js.Any]))
+      parameterObjects.foreach(__v => __obj.updateDynamic("parameterObjects")(__v.asInstanceOf[js.Any]))
+      parameterValues.foreach(__v => __obj.updateDynamic("parameterValues")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutPipelineDefinitionInput]
     }
   }
@@ -877,12 +877,12 @@ package datapipeline {
         validationErrors: js.UndefOr[ValidationErrors] = js.undefined,
         validationWarnings: js.UndefOr[ValidationWarnings] = js.undefined
     ): PutPipelineDefinitionOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "errored" -> errored.asInstanceOf[js.Any]
       )
 
-      validationErrors.foreach(__v => __obj.update("validationErrors", __v.asInstanceOf[js.Any]))
-      validationWarnings.foreach(__v => __obj.update("validationWarnings", __v.asInstanceOf[js.Any]))
+      validationErrors.foreach(__v => __obj.updateDynamic("validationErrors")(__v.asInstanceOf[js.Any]))
+      validationWarnings.foreach(__v => __obj.updateDynamic("validationWarnings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutPipelineDefinitionOutput]
     }
   }
@@ -899,8 +899,8 @@ package datapipeline {
     def apply(
         selectors: js.UndefOr[SelectorList] = js.undefined
     ): Query = {
-      val __obj = js.Dictionary.empty[js.Any]
-      selectors.foreach(__v => __obj.update("selectors", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      selectors.foreach(__v => __obj.updateDynamic("selectors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Query]
     }
   }
@@ -925,14 +925,14 @@ package datapipeline {
         marker: js.UndefOr[String] = js.undefined,
         query: js.UndefOr[Query] = js.undefined
     ): QueryObjectsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pipelineId" -> pipelineId.asInstanceOf[js.Any],
         "sphere"     -> sphere.asInstanceOf[js.Any]
       )
 
-      limit.foreach(__v => __obj.update("limit", __v.asInstanceOf[js.Any]))
-      marker.foreach(__v => __obj.update("marker", __v.asInstanceOf[js.Any]))
-      query.foreach(__v => __obj.update("query", __v.asInstanceOf[js.Any]))
+      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
+      marker.foreach(__v => __obj.updateDynamic("marker")(__v.asInstanceOf[js.Any]))
+      query.foreach(__v => __obj.updateDynamic("query")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[QueryObjectsInput]
     }
   }
@@ -953,10 +953,10 @@ package datapipeline {
         ids: js.UndefOr[idList] = js.undefined,
         marker: js.UndefOr[String] = js.undefined
     ): QueryObjectsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      hasMoreResults.foreach(__v => __obj.update("hasMoreResults", __v.asInstanceOf[js.Any]))
-      ids.foreach(__v => __obj.update("ids", __v.asInstanceOf[js.Any]))
-      marker.foreach(__v => __obj.update("marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      hasMoreResults.foreach(__v => __obj.updateDynamic("hasMoreResults")(__v.asInstanceOf[js.Any]))
+      ids.foreach(__v => __obj.updateDynamic("ids")(__v.asInstanceOf[js.Any]))
+      marker.foreach(__v => __obj.updateDynamic("marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[QueryObjectsOutput]
     }
   }
@@ -975,7 +975,7 @@ package datapipeline {
         pipelineId: id,
         tagKeys: stringList
     ): RemoveTagsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pipelineId" -> pipelineId.asInstanceOf[js.Any],
         "tagKeys"    -> tagKeys.asInstanceOf[js.Any]
       )
@@ -993,7 +993,7 @@ package datapipeline {
   object RemoveTagsOutput {
     def apply(
         ): RemoveTagsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RemoveTagsOutput]
     }
@@ -1013,11 +1013,11 @@ package datapipeline {
         taskId: taskId,
         fields: js.UndefOr[fieldList] = js.undefined
     ): ReportTaskProgressInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "taskId" -> taskId.asInstanceOf[js.Any]
       )
 
-      fields.foreach(__v => __obj.update("fields", __v.asInstanceOf[js.Any]))
+      fields.foreach(__v => __obj.updateDynamic("fields")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReportTaskProgressInput]
     }
   }
@@ -1034,7 +1034,7 @@ package datapipeline {
     def apply(
         canceled: Boolean
     ): ReportTaskProgressOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "canceled" -> canceled.asInstanceOf[js.Any]
       )
 
@@ -1058,12 +1058,12 @@ package datapipeline {
         hostname: js.UndefOr[id] = js.undefined,
         workerGroup: js.UndefOr[String] = js.undefined
     ): ReportTaskRunnerHeartbeatInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "taskrunnerId" -> taskrunnerId.asInstanceOf[js.Any]
       )
 
-      hostname.foreach(__v => __obj.update("hostname", __v.asInstanceOf[js.Any]))
-      workerGroup.foreach(__v => __obj.update("workerGroup", __v.asInstanceOf[js.Any]))
+      hostname.foreach(__v => __obj.updateDynamic("hostname")(__v.asInstanceOf[js.Any]))
+      workerGroup.foreach(__v => __obj.updateDynamic("workerGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReportTaskRunnerHeartbeatInput]
     }
   }
@@ -1080,7 +1080,7 @@ package datapipeline {
     def apply(
         terminate: Boolean
     ): ReportTaskRunnerHeartbeatOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "terminate" -> terminate.asInstanceOf[js.Any]
       )
 
@@ -1102,9 +1102,9 @@ package datapipeline {
         fieldName: js.UndefOr[String] = js.undefined,
         operator: js.UndefOr[Operator] = js.undefined
     ): Selector = {
-      val __obj = js.Dictionary.empty[js.Any]
-      fieldName.foreach(__v => __obj.update("fieldName", __v.asInstanceOf[js.Any]))
-      operator.foreach(__v => __obj.update("operator", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      fieldName.foreach(__v => __obj.updateDynamic("fieldName")(__v.asInstanceOf[js.Any]))
+      operator.foreach(__v => __obj.updateDynamic("operator")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Selector]
     }
   }
@@ -1125,7 +1125,7 @@ package datapipeline {
         pipelineId: id,
         status: String
     ): SetStatusInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "objectIds"  -> objectIds.asInstanceOf[js.Any],
         "pipelineId" -> pipelineId.asInstanceOf[js.Any],
         "status"     -> status.asInstanceOf[js.Any]
@@ -1155,14 +1155,14 @@ package datapipeline {
         errorMessage: js.UndefOr[errorMessage] = js.undefined,
         errorStackTrace: js.UndefOr[String] = js.undefined
     ): SetTaskStatusInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "taskId"     -> taskId.asInstanceOf[js.Any],
         "taskStatus" -> taskStatus.asInstanceOf[js.Any]
       )
 
-      errorId.foreach(__v => __obj.update("errorId", __v.asInstanceOf[js.Any]))
-      errorMessage.foreach(__v => __obj.update("errorMessage", __v.asInstanceOf[js.Any]))
-      errorStackTrace.foreach(__v => __obj.update("errorStackTrace", __v.asInstanceOf[js.Any]))
+      errorId.foreach(__v => __obj.updateDynamic("errorId")(__v.asInstanceOf[js.Any]))
+      errorMessage.foreach(__v => __obj.updateDynamic("errorMessage")(__v.asInstanceOf[js.Any]))
+      errorStackTrace.foreach(__v => __obj.updateDynamic("errorStackTrace")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetTaskStatusInput]
     }
   }
@@ -1176,7 +1176,7 @@ package datapipeline {
   object SetTaskStatusOutput {
     def apply(
         ): SetTaskStatusOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SetTaskStatusOutput]
     }
@@ -1196,7 +1196,7 @@ package datapipeline {
         key: tagKey,
         value: tagValue
     ): Tag = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "key"   -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
@@ -1231,11 +1231,11 @@ package datapipeline {
         pipelineId: js.UndefOr[id] = js.undefined,
         taskId: js.UndefOr[taskId] = js.undefined
     ): TaskObject = {
-      val __obj = js.Dictionary.empty[js.Any]
-      attemptId.foreach(__v => __obj.update("attemptId", __v.asInstanceOf[js.Any]))
-      objects.foreach(__v => __obj.update("objects", __v.asInstanceOf[js.Any]))
-      pipelineId.foreach(__v => __obj.update("pipelineId", __v.asInstanceOf[js.Any]))
-      taskId.foreach(__v => __obj.update("taskId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      attemptId.foreach(__v => __obj.updateDynamic("attemptId")(__v.asInstanceOf[js.Any]))
+      objects.foreach(__v => __obj.updateDynamic("objects")(__v.asInstanceOf[js.Any]))
+      pipelineId.foreach(__v => __obj.updateDynamic("pipelineId")(__v.asInstanceOf[js.Any]))
+      taskId.foreach(__v => __obj.updateDynamic("taskId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TaskObject]
     }
   }
@@ -1266,13 +1266,13 @@ package datapipeline {
         parameterObjects: js.UndefOr[ParameterObjectList] = js.undefined,
         parameterValues: js.UndefOr[ParameterValueList] = js.undefined
     ): ValidatePipelineDefinitionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pipelineId"      -> pipelineId.asInstanceOf[js.Any],
         "pipelineObjects" -> pipelineObjects.asInstanceOf[js.Any]
       )
 
-      parameterObjects.foreach(__v => __obj.update("parameterObjects", __v.asInstanceOf[js.Any]))
-      parameterValues.foreach(__v => __obj.update("parameterValues", __v.asInstanceOf[js.Any]))
+      parameterObjects.foreach(__v => __obj.updateDynamic("parameterObjects")(__v.asInstanceOf[js.Any]))
+      parameterValues.foreach(__v => __obj.updateDynamic("parameterValues")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ValidatePipelineDefinitionInput]
     }
   }
@@ -1293,12 +1293,12 @@ package datapipeline {
         validationErrors: js.UndefOr[ValidationErrors] = js.undefined,
         validationWarnings: js.UndefOr[ValidationWarnings] = js.undefined
     ): ValidatePipelineDefinitionOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "errored" -> errored.asInstanceOf[js.Any]
       )
 
-      validationErrors.foreach(__v => __obj.update("validationErrors", __v.asInstanceOf[js.Any]))
-      validationWarnings.foreach(__v => __obj.update("validationWarnings", __v.asInstanceOf[js.Any]))
+      validationErrors.foreach(__v => __obj.updateDynamic("validationErrors")(__v.asInstanceOf[js.Any]))
+      validationWarnings.foreach(__v => __obj.updateDynamic("validationWarnings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ValidatePipelineDefinitionOutput]
     }
   }
@@ -1317,9 +1317,9 @@ package datapipeline {
         errors: js.UndefOr[validationMessages] = js.undefined,
         id: js.UndefOr[id] = js.undefined
     ): ValidationError = {
-      val __obj = js.Dictionary.empty[js.Any]
-      errors.foreach(__v => __obj.update("errors", __v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      errors.foreach(__v => __obj.updateDynamic("errors")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ValidationError]
     }
   }
@@ -1338,9 +1338,9 @@ package datapipeline {
         id: js.UndefOr[id] = js.undefined,
         warnings: js.UndefOr[validationMessages] = js.undefined
     ): ValidationWarning = {
-      val __obj = js.Dictionary.empty[js.Any]
-      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
-      warnings.foreach(__v => __obj.update("warnings", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      warnings.foreach(__v => __obj.updateDynamic("warnings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ValidationWarning]
     }
   }

@@ -536,7 +536,7 @@ package lightsail {
     def apply(
         staticIpName: ResourceName
     ): AllocateStaticIpRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "staticIpName" -> staticIpName.asInstanceOf[js.Any]
       )
 
@@ -553,8 +553,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): AllocateStaticIpResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AllocateStaticIpResult]
     }
   }
@@ -572,7 +572,7 @@ package lightsail {
         diskPath: NonEmptyString,
         instanceName: ResourceName
     ): AttachDiskRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "diskName"     -> diskName.asInstanceOf[js.Any],
         "diskPath"     -> diskPath.asInstanceOf[js.Any],
         "instanceName" -> instanceName.asInstanceOf[js.Any]
@@ -591,8 +591,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): AttachDiskResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttachDiskResult]
     }
   }
@@ -608,7 +608,7 @@ package lightsail {
         instanceNames: ResourceNameList,
         loadBalancerName: ResourceName
     ): AttachInstancesToLoadBalancerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "instanceNames"    -> instanceNames.asInstanceOf[js.Any],
         "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
       )
@@ -626,8 +626,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): AttachInstancesToLoadBalancerResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttachInstancesToLoadBalancerResult]
     }
   }
@@ -643,7 +643,7 @@ package lightsail {
         certificateName: ResourceName,
         loadBalancerName: ResourceName
     ): AttachLoadBalancerTlsCertificateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "certificateName"  -> certificateName.asInstanceOf[js.Any],
         "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
       )
@@ -661,8 +661,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): AttachLoadBalancerTlsCertificateResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttachLoadBalancerTlsCertificateResult]
     }
   }
@@ -678,7 +678,7 @@ package lightsail {
         instanceName: ResourceName,
         staticIpName: ResourceName
     ): AttachStaticIpRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "instanceName" -> instanceName.asInstanceOf[js.Any],
         "staticIpName" -> staticIpName.asInstanceOf[js.Any]
       )
@@ -696,8 +696,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): AttachStaticIpResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttachStaticIpResult]
     }
   }
@@ -716,9 +716,9 @@ package lightsail {
         state: js.UndefOr[NonEmptyString] = js.undefined,
         zoneName: js.UndefOr[NonEmptyString] = js.undefined
     ): AvailabilityZone = {
-      val __obj = js.Dictionary.empty[js.Any]
-      state.foreach(__v => __obj.update("state", __v.asInstanceOf[js.Any]))
-      zoneName.foreach(__v => __obj.update("zoneName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      zoneName.foreach(__v => __obj.updateDynamic("zoneName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AvailabilityZone]
     }
   }
@@ -757,19 +757,19 @@ package lightsail {
         version: js.UndefOr[String] = js.undefined,
         versionCode: js.UndefOr[String] = js.undefined
     ): Blueprint = {
-      val __obj = js.Dictionary.empty[js.Any]
-      blueprintId.foreach(__v => __obj.update("blueprintId", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      group.foreach(__v => __obj.update("group", __v.asInstanceOf[js.Any]))
-      isActive.foreach(__v => __obj.update("isActive", __v.asInstanceOf[js.Any]))
-      licenseUrl.foreach(__v => __obj.update("licenseUrl", __v.asInstanceOf[js.Any]))
-      minPower.foreach(__v => __obj.update("minPower", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      platform.foreach(__v => __obj.update("platform", __v.asInstanceOf[js.Any]))
-      productUrl.foreach(__v => __obj.update("productUrl", __v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
-      versionCode.foreach(__v => __obj.update("versionCode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      blueprintId.foreach(__v => __obj.updateDynamic("blueprintId")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      group.foreach(__v => __obj.updateDynamic("group")(__v.asInstanceOf[js.Any]))
+      isActive.foreach(__v => __obj.updateDynamic("isActive")(__v.asInstanceOf[js.Any]))
+      licenseUrl.foreach(__v => __obj.updateDynamic("licenseUrl")(__v.asInstanceOf[js.Any]))
+      minPower.foreach(__v => __obj.updateDynamic("minPower")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      platform.foreach(__v => __obj.updateDynamic("platform")(__v.asInstanceOf[js.Any]))
+      productUrl.foreach(__v => __obj.updateDynamic("productUrl")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
+      versionCode.foreach(__v => __obj.updateDynamic("versionCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Blueprint]
     }
   }
@@ -813,18 +813,18 @@ package lightsail {
         supportedPlatforms: js.UndefOr[InstancePlatformList] = js.undefined,
         transferPerMonthInGb: js.UndefOr[Int] = js.undefined
     ): Bundle = {
-      val __obj = js.Dictionary.empty[js.Any]
-      bundleId.foreach(__v => __obj.update("bundleId", __v.asInstanceOf[js.Any]))
-      cpuCount.foreach(__v => __obj.update("cpuCount", __v.asInstanceOf[js.Any]))
-      diskSizeInGb.foreach(__v => __obj.update("diskSizeInGb", __v.asInstanceOf[js.Any]))
-      instanceType.foreach(__v => __obj.update("instanceType", __v.asInstanceOf[js.Any]))
-      isActive.foreach(__v => __obj.update("isActive", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      power.foreach(__v => __obj.update("power", __v.asInstanceOf[js.Any]))
-      price.foreach(__v => __obj.update("price", __v.asInstanceOf[js.Any]))
-      ramSizeInGb.foreach(__v => __obj.update("ramSizeInGb", __v.asInstanceOf[js.Any]))
-      supportedPlatforms.foreach(__v => __obj.update("supportedPlatforms", __v.asInstanceOf[js.Any]))
-      transferPerMonthInGb.foreach(__v => __obj.update("transferPerMonthInGb", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      bundleId.foreach(__v => __obj.updateDynamic("bundleId")(__v.asInstanceOf[js.Any]))
+      cpuCount.foreach(__v => __obj.updateDynamic("cpuCount")(__v.asInstanceOf[js.Any]))
+      diskSizeInGb.foreach(__v => __obj.updateDynamic("diskSizeInGb")(__v.asInstanceOf[js.Any]))
+      instanceType.foreach(__v => __obj.updateDynamic("instanceType")(__v.asInstanceOf[js.Any]))
+      isActive.foreach(__v => __obj.updateDynamic("isActive")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      power.foreach(__v => __obj.updateDynamic("power")(__v.asInstanceOf[js.Any]))
+      price.foreach(__v => __obj.updateDynamic("price")(__v.asInstanceOf[js.Any]))
+      ramSizeInGb.foreach(__v => __obj.updateDynamic("ramSizeInGb")(__v.asInstanceOf[js.Any]))
+      supportedPlatforms.foreach(__v => __obj.updateDynamic("supportedPlatforms")(__v.asInstanceOf[js.Any]))
+      transferPerMonthInGb.foreach(__v => __obj.updateDynamic("transferPerMonthInGb")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Bundle]
     }
   }
@@ -840,7 +840,7 @@ package lightsail {
         instanceName: ResourceName,
         portInfo: PortInfo
     ): CloseInstancePublicPortsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "instanceName" -> instanceName.asInstanceOf[js.Any],
         "portInfo"     -> portInfo.asInstanceOf[js.Any]
       )
@@ -858,8 +858,8 @@ package lightsail {
     def apply(
         operation: js.UndefOr[Operation] = js.undefined
     ): CloseInstancePublicPortsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operation.foreach(__v => __obj.update("operation", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CloseInstancePublicPortsResult]
     }
   }
@@ -891,15 +891,15 @@ package lightsail {
         sourceInfo: js.UndefOr[CloudFormationStackRecordSourceInfoList] = js.undefined,
         state: js.UndefOr[RecordState] = js.undefined
     ): CloudFormationStackRecord = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      destinationInfo.foreach(__v => __obj.update("destinationInfo", __v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.update("resourceType", __v.asInstanceOf[js.Any]))
-      sourceInfo.foreach(__v => __obj.update("sourceInfo", __v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.update("state", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      destinationInfo.foreach(__v => __obj.updateDynamic("destinationInfo")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      sourceInfo.foreach(__v => __obj.updateDynamic("sourceInfo")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CloudFormationStackRecord]
     }
   }
@@ -920,10 +920,10 @@ package lightsail {
         name: js.UndefOr[NonEmptyString] = js.undefined,
         resourceType: js.UndefOr[CloudFormationStackRecordSourceType] = js.undefined
     ): CloudFormationStackRecordSourceInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.update("resourceType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CloudFormationStackRecordSourceInfo]
     }
   }
@@ -947,7 +947,7 @@ package lightsail {
         sourceSnapshotName: ResourceName,
         targetSnapshotName: ResourceName
     ): CopySnapshotRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "sourceRegion"       -> sourceRegion.asInstanceOf[js.Any],
         "sourceSnapshotName" -> sourceSnapshotName.asInstanceOf[js.Any],
         "targetSnapshotName" -> targetSnapshotName.asInstanceOf[js.Any]
@@ -966,8 +966,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): CopySnapshotResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CopySnapshotResult]
     }
   }
@@ -981,7 +981,7 @@ package lightsail {
     def apply(
         instances: InstanceEntryList
     ): CreateCloudFormationStackRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "instances" -> instances.asInstanceOf[js.Any]
       )
 
@@ -998,8 +998,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): CreateCloudFormationStackResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCloudFormationStackResult]
     }
   }
@@ -1021,14 +1021,14 @@ package lightsail {
         sizeInGb: Int,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateDiskFromSnapshotRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "availabilityZone" -> availabilityZone.asInstanceOf[js.Any],
         "diskName"         -> diskName.asInstanceOf[js.Any],
         "diskSnapshotName" -> diskSnapshotName.asInstanceOf[js.Any],
         "sizeInGb"         -> sizeInGb.asInstanceOf[js.Any]
       )
 
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDiskFromSnapshotRequest]
     }
   }
@@ -1042,8 +1042,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): CreateDiskFromSnapshotResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDiskFromSnapshotResult]
     }
   }
@@ -1063,13 +1063,13 @@ package lightsail {
         sizeInGb: Int,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateDiskRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "availabilityZone" -> availabilityZone.asInstanceOf[js.Any],
         "diskName"         -> diskName.asInstanceOf[js.Any],
         "sizeInGb"         -> sizeInGb.asInstanceOf[js.Any]
       )
 
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDiskRequest]
     }
   }
@@ -1083,8 +1083,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): CreateDiskResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDiskResult]
     }
   }
@@ -1104,13 +1104,13 @@ package lightsail {
         instanceName: js.UndefOr[ResourceName] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateDiskSnapshotRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "diskSnapshotName" -> diskSnapshotName.asInstanceOf[js.Any]
       )
 
-      diskName.foreach(__v => __obj.update("diskName", __v.asInstanceOf[js.Any]))
-      instanceName.foreach(__v => __obj.update("instanceName", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      diskName.foreach(__v => __obj.updateDynamic("diskName")(__v.asInstanceOf[js.Any]))
+      instanceName.foreach(__v => __obj.updateDynamic("instanceName")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDiskSnapshotRequest]
     }
   }
@@ -1124,8 +1124,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): CreateDiskSnapshotResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDiskSnapshotResult]
     }
   }
@@ -1141,7 +1141,7 @@ package lightsail {
         domainEntry: DomainEntry,
         domainName: DomainName
     ): CreateDomainEntryRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domainEntry" -> domainEntry.asInstanceOf[js.Any],
         "domainName"  -> domainName.asInstanceOf[js.Any]
       )
@@ -1159,8 +1159,8 @@ package lightsail {
     def apply(
         operation: js.UndefOr[Operation] = js.undefined
     ): CreateDomainEntryResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operation.foreach(__v => __obj.update("operation", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDomainEntryResult]
     }
   }
@@ -1176,11 +1176,11 @@ package lightsail {
         domainName: DomainName,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateDomainRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domainName" -> domainName.asInstanceOf[js.Any]
       )
 
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDomainRequest]
     }
   }
@@ -1194,8 +1194,8 @@ package lightsail {
     def apply(
         operation: js.UndefOr[Operation] = js.undefined
     ): CreateDomainResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operation.foreach(__v => __obj.update("operation", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDomainResult]
     }
   }
@@ -1213,12 +1213,12 @@ package lightsail {
         instanceSnapshotName: ResourceName,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateInstanceSnapshotRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "instanceName"         -> instanceName.asInstanceOf[js.Any],
         "instanceSnapshotName" -> instanceSnapshotName.asInstanceOf[js.Any]
       )
 
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateInstanceSnapshotRequest]
     }
   }
@@ -1232,8 +1232,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): CreateInstanceSnapshotResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateInstanceSnapshotResult]
     }
   }
@@ -1261,17 +1261,17 @@ package lightsail {
         tags: js.UndefOr[TagList] = js.undefined,
         userData: js.UndefOr[String] = js.undefined
     ): CreateInstancesFromSnapshotRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "availabilityZone"     -> availabilityZone.asInstanceOf[js.Any],
         "bundleId"             -> bundleId.asInstanceOf[js.Any],
         "instanceNames"        -> instanceNames.asInstanceOf[js.Any],
         "instanceSnapshotName" -> instanceSnapshotName.asInstanceOf[js.Any]
       )
 
-      attachedDiskMapping.foreach(__v => __obj.update("attachedDiskMapping", __v.asInstanceOf[js.Any]))
-      keyPairName.foreach(__v => __obj.update("keyPairName", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
-      userData.foreach(__v => __obj.update("userData", __v.asInstanceOf[js.Any]))
+      attachedDiskMapping.foreach(__v => __obj.updateDynamic("attachedDiskMapping")(__v.asInstanceOf[js.Any]))
+      keyPairName.foreach(__v => __obj.updateDynamic("keyPairName")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      userData.foreach(__v => __obj.updateDynamic("userData")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateInstancesFromSnapshotRequest]
     }
   }
@@ -1285,8 +1285,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): CreateInstancesFromSnapshotResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateInstancesFromSnapshotResult]
     }
   }
@@ -1314,17 +1314,17 @@ package lightsail {
         tags: js.UndefOr[TagList] = js.undefined,
         userData: js.UndefOr[String] = js.undefined
     ): CreateInstancesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "availabilityZone" -> availabilityZone.asInstanceOf[js.Any],
         "blueprintId"      -> blueprintId.asInstanceOf[js.Any],
         "bundleId"         -> bundleId.asInstanceOf[js.Any],
         "instanceNames"    -> instanceNames.asInstanceOf[js.Any]
       )
 
-      customImageName.foreach(__v => __obj.update("customImageName", __v.asInstanceOf[js.Any]))
-      keyPairName.foreach(__v => __obj.update("keyPairName", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
-      userData.foreach(__v => __obj.update("userData", __v.asInstanceOf[js.Any]))
+      customImageName.foreach(__v => __obj.updateDynamic("customImageName")(__v.asInstanceOf[js.Any]))
+      keyPairName.foreach(__v => __obj.updateDynamic("keyPairName")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      userData.foreach(__v => __obj.updateDynamic("userData")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateInstancesRequest]
     }
   }
@@ -1338,8 +1338,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): CreateInstancesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateInstancesResult]
     }
   }
@@ -1355,11 +1355,11 @@ package lightsail {
         keyPairName: ResourceName,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateKeyPairRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "keyPairName" -> keyPairName.asInstanceOf[js.Any]
       )
 
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateKeyPairRequest]
     }
   }
@@ -1379,11 +1379,11 @@ package lightsail {
         privateKeyBase64: js.UndefOr[Base64] = js.undefined,
         publicKeyBase64: js.UndefOr[Base64] = js.undefined
     ): CreateKeyPairResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      keyPair.foreach(__v => __obj.update("keyPair", __v.asInstanceOf[js.Any]))
-      operation.foreach(__v => __obj.update("operation", __v.asInstanceOf[js.Any]))
-      privateKeyBase64.foreach(__v => __obj.update("privateKeyBase64", __v.asInstanceOf[js.Any]))
-      publicKeyBase64.foreach(__v => __obj.update("publicKeyBase64", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      keyPair.foreach(__v => __obj.updateDynamic("keyPair")(__v.asInstanceOf[js.Any]))
+      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
+      privateKeyBase64.foreach(__v => __obj.updateDynamic("privateKeyBase64")(__v.asInstanceOf[js.Any]))
+      publicKeyBase64.foreach(__v => __obj.updateDynamic("publicKeyBase64")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateKeyPairResult]
     }
   }
@@ -1409,16 +1409,18 @@ package lightsail {
         healthCheckPath: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateLoadBalancerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "instancePort"     -> instancePort.asInstanceOf[js.Any],
         "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
       )
 
-      certificateAlternativeNames.foreach(__v => __obj.update("certificateAlternativeNames", __v.asInstanceOf[js.Any]))
-      certificateDomainName.foreach(__v => __obj.update("certificateDomainName", __v.asInstanceOf[js.Any]))
-      certificateName.foreach(__v => __obj.update("certificateName", __v.asInstanceOf[js.Any]))
-      healthCheckPath.foreach(__v => __obj.update("healthCheckPath", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      certificateAlternativeNames.foreach(
+        __v => __obj.updateDynamic("certificateAlternativeNames")(__v.asInstanceOf[js.Any])
+      )
+      certificateDomainName.foreach(__v => __obj.updateDynamic("certificateDomainName")(__v.asInstanceOf[js.Any]))
+      certificateName.foreach(__v => __obj.updateDynamic("certificateName")(__v.asInstanceOf[js.Any]))
+      healthCheckPath.foreach(__v => __obj.updateDynamic("healthCheckPath")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLoadBalancerRequest]
     }
   }
@@ -1432,8 +1434,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): CreateLoadBalancerResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLoadBalancerResult]
     }
   }
@@ -1455,14 +1457,16 @@ package lightsail {
         certificateAlternativeNames: js.UndefOr[DomainNameList] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateLoadBalancerTlsCertificateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "certificateDomainName" -> certificateDomainName.asInstanceOf[js.Any],
         "certificateName"       -> certificateName.asInstanceOf[js.Any],
         "loadBalancerName"      -> loadBalancerName.asInstanceOf[js.Any]
       )
 
-      certificateAlternativeNames.foreach(__v => __obj.update("certificateAlternativeNames", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      certificateAlternativeNames.foreach(
+        __v => __obj.updateDynamic("certificateAlternativeNames")(__v.asInstanceOf[js.Any])
+      )
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLoadBalancerTlsCertificateRequest]
     }
   }
@@ -1476,8 +1480,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): CreateLoadBalancerTlsCertificateResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLoadBalancerTlsCertificateResult]
     }
   }
@@ -1507,22 +1511,24 @@ package lightsail {
         tags: js.UndefOr[TagList] = js.undefined,
         useLatestRestorableTime: js.UndefOr[Boolean] = js.undefined
     ): CreateRelationalDatabaseFromSnapshotRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
       )
 
-      availabilityZone.foreach(__v => __obj.update("availabilityZone", __v.asInstanceOf[js.Any]))
-      publiclyAccessible.foreach(__v => __obj.update("publiclyAccessible", __v.asInstanceOf[js.Any]))
-      relationalDatabaseBundleId.foreach(__v => __obj.update("relationalDatabaseBundleId", __v.asInstanceOf[js.Any]))
+      availabilityZone.foreach(__v => __obj.updateDynamic("availabilityZone")(__v.asInstanceOf[js.Any]))
+      publiclyAccessible.foreach(__v => __obj.updateDynamic("publiclyAccessible")(__v.asInstanceOf[js.Any]))
+      relationalDatabaseBundleId.foreach(
+        __v => __obj.updateDynamic("relationalDatabaseBundleId")(__v.asInstanceOf[js.Any])
+      )
       relationalDatabaseSnapshotName.foreach(
-        __v => __obj.update("relationalDatabaseSnapshotName", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("relationalDatabaseSnapshotName")(__v.asInstanceOf[js.Any])
       )
-      restoreTime.foreach(__v => __obj.update("restoreTime", __v.asInstanceOf[js.Any]))
+      restoreTime.foreach(__v => __obj.updateDynamic("restoreTime")(__v.asInstanceOf[js.Any]))
       sourceRelationalDatabaseName.foreach(
-        __v => __obj.update("sourceRelationalDatabaseName", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("sourceRelationalDatabaseName")(__v.asInstanceOf[js.Any])
       )
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
-      useLatestRestorableTime.foreach(__v => __obj.update("useLatestRestorableTime", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      useLatestRestorableTime.foreach(__v => __obj.updateDynamic("useLatestRestorableTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRelationalDatabaseFromSnapshotRequest]
     }
   }
@@ -1536,8 +1542,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): CreateRelationalDatabaseFromSnapshotResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRelationalDatabaseFromSnapshotResult]
     }
   }
@@ -1571,7 +1577,7 @@ package lightsail {
         publiclyAccessible: js.UndefOr[Boolean] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateRelationalDatabaseRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "masterDatabaseName"            -> masterDatabaseName.asInstanceOf[js.Any],
         "masterUsername"                -> masterUsername.asInstanceOf[js.Any],
         "relationalDatabaseBlueprintId" -> relationalDatabaseBlueprintId.asInstanceOf[js.Any],
@@ -1579,12 +1585,14 @@ package lightsail {
         "relationalDatabaseName"        -> relationalDatabaseName.asInstanceOf[js.Any]
       )
 
-      availabilityZone.foreach(__v => __obj.update("availabilityZone", __v.asInstanceOf[js.Any]))
-      masterUserPassword.foreach(__v => __obj.update("masterUserPassword", __v.asInstanceOf[js.Any]))
-      preferredBackupWindow.foreach(__v => __obj.update("preferredBackupWindow", __v.asInstanceOf[js.Any]))
-      preferredMaintenanceWindow.foreach(__v => __obj.update("preferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
-      publiclyAccessible.foreach(__v => __obj.update("publiclyAccessible", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      availabilityZone.foreach(__v => __obj.updateDynamic("availabilityZone")(__v.asInstanceOf[js.Any]))
+      masterUserPassword.foreach(__v => __obj.updateDynamic("masterUserPassword")(__v.asInstanceOf[js.Any]))
+      preferredBackupWindow.foreach(__v => __obj.updateDynamic("preferredBackupWindow")(__v.asInstanceOf[js.Any]))
+      preferredMaintenanceWindow.foreach(
+        __v => __obj.updateDynamic("preferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      )
+      publiclyAccessible.foreach(__v => __obj.updateDynamic("publiclyAccessible")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRelationalDatabaseRequest]
     }
   }
@@ -1598,8 +1606,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): CreateRelationalDatabaseResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRelationalDatabaseResult]
     }
   }
@@ -1617,12 +1625,12 @@ package lightsail {
         relationalDatabaseSnapshotName: ResourceName,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateRelationalDatabaseSnapshotRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "relationalDatabaseName"         -> relationalDatabaseName.asInstanceOf[js.Any],
         "relationalDatabaseSnapshotName" -> relationalDatabaseSnapshotName.asInstanceOf[js.Any]
       )
 
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRelationalDatabaseSnapshotRequest]
     }
   }
@@ -1636,8 +1644,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): CreateRelationalDatabaseSnapshotResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRelationalDatabaseSnapshotResult]
     }
   }
@@ -1651,7 +1659,7 @@ package lightsail {
     def apply(
         diskName: ResourceName
     ): DeleteDiskRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "diskName" -> diskName.asInstanceOf[js.Any]
       )
 
@@ -1668,8 +1676,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): DeleteDiskResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDiskResult]
     }
   }
@@ -1683,7 +1691,7 @@ package lightsail {
     def apply(
         diskSnapshotName: ResourceName
     ): DeleteDiskSnapshotRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "diskSnapshotName" -> diskSnapshotName.asInstanceOf[js.Any]
       )
 
@@ -1700,8 +1708,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): DeleteDiskSnapshotResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDiskSnapshotResult]
     }
   }
@@ -1717,7 +1725,7 @@ package lightsail {
         domainEntry: DomainEntry,
         domainName: DomainName
     ): DeleteDomainEntryRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domainEntry" -> domainEntry.asInstanceOf[js.Any],
         "domainName"  -> domainName.asInstanceOf[js.Any]
       )
@@ -1735,8 +1743,8 @@ package lightsail {
     def apply(
         operation: js.UndefOr[Operation] = js.undefined
     ): DeleteDomainEntryResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operation.foreach(__v => __obj.update("operation", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDomainEntryResult]
     }
   }
@@ -1750,7 +1758,7 @@ package lightsail {
     def apply(
         domainName: DomainName
     ): DeleteDomainRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domainName" -> domainName.asInstanceOf[js.Any]
       )
 
@@ -1767,8 +1775,8 @@ package lightsail {
     def apply(
         operation: js.UndefOr[Operation] = js.undefined
     ): DeleteDomainResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operation.foreach(__v => __obj.update("operation", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDomainResult]
     }
   }
@@ -1782,7 +1790,7 @@ package lightsail {
     def apply(
         instanceName: ResourceName
     ): DeleteInstanceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "instanceName" -> instanceName.asInstanceOf[js.Any]
       )
 
@@ -1799,8 +1807,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): DeleteInstanceResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteInstanceResult]
     }
   }
@@ -1814,7 +1822,7 @@ package lightsail {
     def apply(
         instanceSnapshotName: ResourceName
     ): DeleteInstanceSnapshotRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "instanceSnapshotName" -> instanceSnapshotName.asInstanceOf[js.Any]
       )
 
@@ -1831,8 +1839,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): DeleteInstanceSnapshotResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteInstanceSnapshotResult]
     }
   }
@@ -1846,7 +1854,7 @@ package lightsail {
     def apply(
         keyPairName: ResourceName
     ): DeleteKeyPairRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "keyPairName" -> keyPairName.asInstanceOf[js.Any]
       )
 
@@ -1863,8 +1871,8 @@ package lightsail {
     def apply(
         operation: js.UndefOr[Operation] = js.undefined
     ): DeleteKeyPairResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operation.foreach(__v => __obj.update("operation", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteKeyPairResult]
     }
   }
@@ -1878,7 +1886,7 @@ package lightsail {
     def apply(
         instanceName: ResourceName
     ): DeleteKnownHostKeysRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "instanceName" -> instanceName.asInstanceOf[js.Any]
       )
 
@@ -1895,8 +1903,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): DeleteKnownHostKeysResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteKnownHostKeysResult]
     }
   }
@@ -1910,7 +1918,7 @@ package lightsail {
     def apply(
         loadBalancerName: ResourceName
     ): DeleteLoadBalancerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
       )
 
@@ -1927,8 +1935,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): DeleteLoadBalancerResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteLoadBalancerResult]
     }
   }
@@ -1946,12 +1954,12 @@ package lightsail {
         loadBalancerName: ResourceName,
         force: js.UndefOr[Boolean] = js.undefined
     ): DeleteLoadBalancerTlsCertificateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "certificateName"  -> certificateName.asInstanceOf[js.Any],
         "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
       )
 
-      force.foreach(__v => __obj.update("force", __v.asInstanceOf[js.Any]))
+      force.foreach(__v => __obj.updateDynamic("force")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteLoadBalancerTlsCertificateRequest]
     }
   }
@@ -1965,8 +1973,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): DeleteLoadBalancerTlsCertificateResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteLoadBalancerTlsCertificateResult]
     }
   }
@@ -1984,14 +1992,14 @@ package lightsail {
         finalRelationalDatabaseSnapshotName: js.UndefOr[ResourceName] = js.undefined,
         skipFinalSnapshot: js.UndefOr[Boolean] = js.undefined
     ): DeleteRelationalDatabaseRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
       )
 
       finalRelationalDatabaseSnapshotName.foreach(
-        __v => __obj.update("finalRelationalDatabaseSnapshotName", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("finalRelationalDatabaseSnapshotName")(__v.asInstanceOf[js.Any])
       )
-      skipFinalSnapshot.foreach(__v => __obj.update("skipFinalSnapshot", __v.asInstanceOf[js.Any]))
+      skipFinalSnapshot.foreach(__v => __obj.updateDynamic("skipFinalSnapshot")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteRelationalDatabaseRequest]
     }
   }
@@ -2005,8 +2013,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): DeleteRelationalDatabaseResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteRelationalDatabaseResult]
     }
   }
@@ -2020,7 +2028,7 @@ package lightsail {
     def apply(
         relationalDatabaseSnapshotName: ResourceName
     ): DeleteRelationalDatabaseSnapshotRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "relationalDatabaseSnapshotName" -> relationalDatabaseSnapshotName.asInstanceOf[js.Any]
       )
 
@@ -2037,8 +2045,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): DeleteRelationalDatabaseSnapshotResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteRelationalDatabaseSnapshotResult]
     }
   }
@@ -2057,9 +2065,9 @@ package lightsail {
         id: js.UndefOr[NonEmptyString] = js.undefined,
         service: js.UndefOr[NonEmptyString] = js.undefined
     ): DestinationInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
-      service.foreach(__v => __obj.update("service", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      service.foreach(__v => __obj.updateDynamic("service")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DestinationInfo]
     }
   }
@@ -2073,7 +2081,7 @@ package lightsail {
     def apply(
         diskName: ResourceName
     ): DetachDiskRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "diskName" -> diskName.asInstanceOf[js.Any]
       )
 
@@ -2090,8 +2098,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): DetachDiskResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetachDiskResult]
     }
   }
@@ -2107,7 +2115,7 @@ package lightsail {
         instanceNames: ResourceNameList,
         loadBalancerName: ResourceName
     ): DetachInstancesFromLoadBalancerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "instanceNames"    -> instanceNames.asInstanceOf[js.Any],
         "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
       )
@@ -2125,8 +2133,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): DetachInstancesFromLoadBalancerResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetachInstancesFromLoadBalancerResult]
     }
   }
@@ -2140,7 +2148,7 @@ package lightsail {
     def apply(
         staticIpName: ResourceName
     ): DetachStaticIpRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "staticIpName" -> staticIpName.asInstanceOf[js.Any]
       )
 
@@ -2157,8 +2165,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): DetachStaticIpResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetachStaticIpResult]
     }
   }
@@ -2205,23 +2213,23 @@ package lightsail {
         supportCode: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): Disk = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      attachedTo.foreach(__v => __obj.update("attachedTo", __v.asInstanceOf[js.Any]))
-      attachmentState.foreach(__v => __obj.update("attachmentState", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      gbInUse.foreach(__v => __obj.update("gbInUse", __v.asInstanceOf[js.Any]))
-      iops.foreach(__v => __obj.update("iops", __v.asInstanceOf[js.Any]))
-      isAttached.foreach(__v => __obj.update("isAttached", __v.asInstanceOf[js.Any]))
-      isSystemDisk.foreach(__v => __obj.update("isSystemDisk", __v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      path.foreach(__v => __obj.update("path", __v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.update("resourceType", __v.asInstanceOf[js.Any]))
-      sizeInGb.foreach(__v => __obj.update("sizeInGb", __v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.update("state", __v.asInstanceOf[js.Any]))
-      supportCode.foreach(__v => __obj.update("supportCode", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      attachedTo.foreach(__v => __obj.updateDynamic("attachedTo")(__v.asInstanceOf[js.Any]))
+      attachmentState.foreach(__v => __obj.updateDynamic("attachmentState")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      gbInUse.foreach(__v => __obj.updateDynamic("gbInUse")(__v.asInstanceOf[js.Any]))
+      iops.foreach(__v => __obj.updateDynamic("iops")(__v.asInstanceOf[js.Any]))
+      isAttached.foreach(__v => __obj.updateDynamic("isAttached")(__v.asInstanceOf[js.Any]))
+      isSystemDisk.foreach(__v => __obj.updateDynamic("isSystemDisk")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      path.foreach(__v => __obj.updateDynamic("path")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      sizeInGb.foreach(__v => __obj.updateDynamic("sizeInGb")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Disk]
     }
   }
@@ -2244,11 +2252,11 @@ package lightsail {
         path: js.UndefOr[NonEmptyString] = js.undefined,
         sizeInGb: js.UndefOr[Int] = js.undefined
     ): DiskInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      isSystemDisk.foreach(__v => __obj.update("isSystemDisk", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      path.foreach(__v => __obj.update("path", __v.asInstanceOf[js.Any]))
-      sizeInGb.foreach(__v => __obj.update("sizeInGb", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      isSystemDisk.foreach(__v => __obj.updateDynamic("isSystemDisk")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      path.foreach(__v => __obj.updateDynamic("path")(__v.asInstanceOf[js.Any]))
+      sizeInGb.foreach(__v => __obj.updateDynamic("sizeInGb")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DiskInfo]
     }
   }
@@ -2267,9 +2275,9 @@ package lightsail {
         newDiskName: js.UndefOr[ResourceName] = js.undefined,
         originalDiskPath: js.UndefOr[NonEmptyString] = js.undefined
     ): DiskMap = {
-      val __obj = js.Dictionary.empty[js.Any]
-      newDiskName.foreach(__v => __obj.update("newDiskName", __v.asInstanceOf[js.Any]))
-      originalDiskPath.foreach(__v => __obj.update("originalDiskPath", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      newDiskName.foreach(__v => __obj.updateDynamic("newDiskName")(__v.asInstanceOf[js.Any]))
+      originalDiskPath.foreach(__v => __obj.updateDynamic("originalDiskPath")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DiskMap]
     }
   }
@@ -2312,21 +2320,21 @@ package lightsail {
         supportCode: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): DiskSnapshot = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      fromDiskArn.foreach(__v => __obj.update("fromDiskArn", __v.asInstanceOf[js.Any]))
-      fromDiskName.foreach(__v => __obj.update("fromDiskName", __v.asInstanceOf[js.Any]))
-      fromInstanceArn.foreach(__v => __obj.update("fromInstanceArn", __v.asInstanceOf[js.Any]))
-      fromInstanceName.foreach(__v => __obj.update("fromInstanceName", __v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      progress.foreach(__v => __obj.update("progress", __v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.update("resourceType", __v.asInstanceOf[js.Any]))
-      sizeInGb.foreach(__v => __obj.update("sizeInGb", __v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.update("state", __v.asInstanceOf[js.Any]))
-      supportCode.foreach(__v => __obj.update("supportCode", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      fromDiskArn.foreach(__v => __obj.updateDynamic("fromDiskArn")(__v.asInstanceOf[js.Any]))
+      fromDiskName.foreach(__v => __obj.updateDynamic("fromDiskName")(__v.asInstanceOf[js.Any]))
+      fromInstanceArn.foreach(__v => __obj.updateDynamic("fromInstanceArn")(__v.asInstanceOf[js.Any]))
+      fromInstanceName.foreach(__v => __obj.updateDynamic("fromInstanceName")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      progress.foreach(__v => __obj.updateDynamic("progress")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      sizeInGb.foreach(__v => __obj.updateDynamic("sizeInGb")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DiskSnapshot]
     }
   }
@@ -2343,8 +2351,8 @@ package lightsail {
     def apply(
         sizeInGb: js.UndefOr[Int] = js.undefined
     ): DiskSnapshotInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      sizeInGb.foreach(__v => __obj.update("sizeInGb", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      sizeInGb.foreach(__v => __obj.updateDynamic("sizeInGb")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DiskSnapshotInfo]
     }
   }
@@ -2394,15 +2402,15 @@ package lightsail {
         supportCode: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): Domain = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      domainEntries.foreach(__v => __obj.update("domainEntries", __v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.update("resourceType", __v.asInstanceOf[js.Any]))
-      supportCode.foreach(__v => __obj.update("supportCode", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      domainEntries.foreach(__v => __obj.updateDynamic("domainEntries")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Domain]
     }
   }
@@ -2429,13 +2437,13 @@ package lightsail {
         target: js.UndefOr[String] = js.undefined,
         `type`: js.UndefOr[DomainEntryType] = js.undefined
     ): DomainEntry = {
-      val __obj = js.Dictionary.empty[js.Any]
-      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
-      isAlias.foreach(__v => __obj.update("isAlias", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      options.foreach(__v => __obj.update("options", __v.asInstanceOf[js.Any]))
-      target.foreach(__v => __obj.update("target", __v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      isAlias.foreach(__v => __obj.updateDynamic("isAlias")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      options.foreach(__v => __obj.updateDynamic("options")(__v.asInstanceOf[js.Any]))
+      target.foreach(__v => __obj.updateDynamic("target")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainEntry]
     }
   }
@@ -2446,7 +2454,7 @@ package lightsail {
   object DownloadDefaultKeyPairRequest {
     def apply(
         ): DownloadDefaultKeyPairRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DownloadDefaultKeyPairRequest]
     }
@@ -2463,9 +2471,9 @@ package lightsail {
         privateKeyBase64: js.UndefOr[Base64] = js.undefined,
         publicKeyBase64: js.UndefOr[Base64] = js.undefined
     ): DownloadDefaultKeyPairResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      privateKeyBase64.foreach(__v => __obj.update("privateKeyBase64", __v.asInstanceOf[js.Any]))
-      publicKeyBase64.foreach(__v => __obj.update("publicKeyBase64", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      privateKeyBase64.foreach(__v => __obj.updateDynamic("privateKeyBase64")(__v.asInstanceOf[js.Any]))
+      publicKeyBase64.foreach(__v => __obj.updateDynamic("publicKeyBase64")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DownloadDefaultKeyPairResult]
     }
   }
@@ -2496,15 +2504,15 @@ package lightsail {
         sourceInfo: js.UndefOr[ExportSnapshotRecordSourceInfo] = js.undefined,
         state: js.UndefOr[RecordState] = js.undefined
     ): ExportSnapshotRecord = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      destinationInfo.foreach(__v => __obj.update("destinationInfo", __v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.update("resourceType", __v.asInstanceOf[js.Any]))
-      sourceInfo.foreach(__v => __obj.update("sourceInfo", __v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.update("state", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      destinationInfo.foreach(__v => __obj.updateDynamic("destinationInfo")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      sourceInfo.foreach(__v => __obj.updateDynamic("sourceInfo")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportSnapshotRecord]
     }
   }
@@ -2535,15 +2543,15 @@ package lightsail {
         name: js.UndefOr[NonEmptyString] = js.undefined,
         resourceType: js.UndefOr[ExportSnapshotRecordSourceType] = js.undefined
     ): ExportSnapshotRecordSourceInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      diskSnapshotInfo.foreach(__v => __obj.update("diskSnapshotInfo", __v.asInstanceOf[js.Any]))
-      fromResourceArn.foreach(__v => __obj.update("fromResourceArn", __v.asInstanceOf[js.Any]))
-      fromResourceName.foreach(__v => __obj.update("fromResourceName", __v.asInstanceOf[js.Any]))
-      instanceSnapshotInfo.foreach(__v => __obj.update("instanceSnapshotInfo", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.update("resourceType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      diskSnapshotInfo.foreach(__v => __obj.updateDynamic("diskSnapshotInfo")(__v.asInstanceOf[js.Any]))
+      fromResourceArn.foreach(__v => __obj.updateDynamic("fromResourceArn")(__v.asInstanceOf[js.Any]))
+      fromResourceName.foreach(__v => __obj.updateDynamic("fromResourceName")(__v.asInstanceOf[js.Any]))
+      instanceSnapshotInfo.foreach(__v => __obj.updateDynamic("instanceSnapshotInfo")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportSnapshotRecordSourceInfo]
     }
   }
@@ -2564,7 +2572,7 @@ package lightsail {
     def apply(
         sourceSnapshotName: ResourceName
     ): ExportSnapshotRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "sourceSnapshotName" -> sourceSnapshotName.asInstanceOf[js.Any]
       )
 
@@ -2581,8 +2589,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): ExportSnapshotResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportSnapshotResult]
     }
   }
@@ -2596,8 +2604,8 @@ package lightsail {
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetActiveNamesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      pageToken.foreach(__v => __obj.update("pageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetActiveNamesRequest]
     }
   }
@@ -2613,9 +2621,9 @@ package lightsail {
         activeNames: js.UndefOr[StringList] = js.undefined,
         nextPageToken: js.UndefOr[String] = js.undefined
     ): GetActiveNamesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      activeNames.foreach(__v => __obj.update("activeNames", __v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      activeNames.foreach(__v => __obj.updateDynamic("activeNames")(__v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetActiveNamesResult]
     }
   }
@@ -2631,9 +2639,9 @@ package lightsail {
         includeInactive: js.UndefOr[Boolean] = js.undefined,
         pageToken: js.UndefOr[String] = js.undefined
     ): GetBlueprintsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      includeInactive.foreach(__v => __obj.update("includeInactive", __v.asInstanceOf[js.Any]))
-      pageToken.foreach(__v => __obj.update("pageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      includeInactive.foreach(__v => __obj.updateDynamic("includeInactive")(__v.asInstanceOf[js.Any]))
+      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBlueprintsRequest]
     }
   }
@@ -2649,9 +2657,9 @@ package lightsail {
         blueprints: js.UndefOr[BlueprintList] = js.undefined,
         nextPageToken: js.UndefOr[String] = js.undefined
     ): GetBlueprintsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      blueprints.foreach(__v => __obj.update("blueprints", __v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      blueprints.foreach(__v => __obj.updateDynamic("blueprints")(__v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBlueprintsResult]
     }
   }
@@ -2667,9 +2675,9 @@ package lightsail {
         includeInactive: js.UndefOr[Boolean] = js.undefined,
         pageToken: js.UndefOr[String] = js.undefined
     ): GetBundlesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      includeInactive.foreach(__v => __obj.update("includeInactive", __v.asInstanceOf[js.Any]))
-      pageToken.foreach(__v => __obj.update("pageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      includeInactive.foreach(__v => __obj.updateDynamic("includeInactive")(__v.asInstanceOf[js.Any]))
+      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBundlesRequest]
     }
   }
@@ -2685,9 +2693,9 @@ package lightsail {
         bundles: js.UndefOr[BundleList] = js.undefined,
         nextPageToken: js.UndefOr[String] = js.undefined
     ): GetBundlesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      bundles.foreach(__v => __obj.update("bundles", __v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      bundles.foreach(__v => __obj.updateDynamic("bundles")(__v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBundlesResult]
     }
   }
@@ -2701,8 +2709,8 @@ package lightsail {
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetCloudFormationStackRecordsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      pageToken.foreach(__v => __obj.update("pageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCloudFormationStackRecordsRequest]
     }
   }
@@ -2718,9 +2726,11 @@ package lightsail {
         cloudFormationStackRecords: js.UndefOr[CloudFormationStackRecordList] = js.undefined,
         nextPageToken: js.UndefOr[String] = js.undefined
     ): GetCloudFormationStackRecordsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      cloudFormationStackRecords.foreach(__v => __obj.update("cloudFormationStackRecords", __v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      cloudFormationStackRecords.foreach(
+        __v => __obj.updateDynamic("cloudFormationStackRecords")(__v.asInstanceOf[js.Any])
+      )
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCloudFormationStackRecordsResult]
     }
   }
@@ -2734,7 +2744,7 @@ package lightsail {
     def apply(
         diskName: ResourceName
     ): GetDiskRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "diskName" -> diskName.asInstanceOf[js.Any]
       )
 
@@ -2751,8 +2761,8 @@ package lightsail {
     def apply(
         disk: js.UndefOr[Disk] = js.undefined
     ): GetDiskResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      disk.foreach(__v => __obj.update("disk", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      disk.foreach(__v => __obj.updateDynamic("disk")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDiskResult]
     }
   }
@@ -2766,7 +2776,7 @@ package lightsail {
     def apply(
         diskSnapshotName: ResourceName
     ): GetDiskSnapshotRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "diskSnapshotName" -> diskSnapshotName.asInstanceOf[js.Any]
       )
 
@@ -2783,8 +2793,8 @@ package lightsail {
     def apply(
         diskSnapshot: js.UndefOr[DiskSnapshot] = js.undefined
     ): GetDiskSnapshotResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      diskSnapshot.foreach(__v => __obj.update("diskSnapshot", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      diskSnapshot.foreach(__v => __obj.updateDynamic("diskSnapshot")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDiskSnapshotResult]
     }
   }
@@ -2798,8 +2808,8 @@ package lightsail {
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetDiskSnapshotsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      pageToken.foreach(__v => __obj.update("pageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDiskSnapshotsRequest]
     }
   }
@@ -2815,9 +2825,9 @@ package lightsail {
         diskSnapshots: js.UndefOr[DiskSnapshotList] = js.undefined,
         nextPageToken: js.UndefOr[String] = js.undefined
     ): GetDiskSnapshotsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      diskSnapshots.foreach(__v => __obj.update("diskSnapshots", __v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      diskSnapshots.foreach(__v => __obj.updateDynamic("diskSnapshots")(__v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDiskSnapshotsResult]
     }
   }
@@ -2831,8 +2841,8 @@ package lightsail {
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetDisksRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      pageToken.foreach(__v => __obj.update("pageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDisksRequest]
     }
   }
@@ -2848,9 +2858,9 @@ package lightsail {
         disks: js.UndefOr[DiskList] = js.undefined,
         nextPageToken: js.UndefOr[String] = js.undefined
     ): GetDisksResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      disks.foreach(__v => __obj.update("disks", __v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      disks.foreach(__v => __obj.updateDynamic("disks")(__v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDisksResult]
     }
   }
@@ -2864,7 +2874,7 @@ package lightsail {
     def apply(
         domainName: DomainName
     ): GetDomainRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domainName" -> domainName.asInstanceOf[js.Any]
       )
 
@@ -2881,8 +2891,8 @@ package lightsail {
     def apply(
         domain: js.UndefOr[Domain] = js.undefined
     ): GetDomainResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      domain.foreach(__v => __obj.update("domain", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      domain.foreach(__v => __obj.updateDynamic("domain")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDomainResult]
     }
   }
@@ -2896,8 +2906,8 @@ package lightsail {
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetDomainsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      pageToken.foreach(__v => __obj.update("pageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDomainsRequest]
     }
   }
@@ -2913,9 +2923,9 @@ package lightsail {
         domains: js.UndefOr[DomainList] = js.undefined,
         nextPageToken: js.UndefOr[String] = js.undefined
     ): GetDomainsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      domains.foreach(__v => __obj.update("domains", __v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      domains.foreach(__v => __obj.updateDynamic("domains")(__v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDomainsResult]
     }
   }
@@ -2929,8 +2939,8 @@ package lightsail {
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetExportSnapshotRecordsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      pageToken.foreach(__v => __obj.update("pageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetExportSnapshotRecordsRequest]
     }
   }
@@ -2946,9 +2956,9 @@ package lightsail {
         exportSnapshotRecords: js.UndefOr[ExportSnapshotRecordList] = js.undefined,
         nextPageToken: js.UndefOr[String] = js.undefined
     ): GetExportSnapshotRecordsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      exportSnapshotRecords.foreach(__v => __obj.update("exportSnapshotRecords", __v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      exportSnapshotRecords.foreach(__v => __obj.updateDynamic("exportSnapshotRecords")(__v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetExportSnapshotRecordsResult]
     }
   }
@@ -2964,11 +2974,11 @@ package lightsail {
         instanceName: ResourceName,
         protocol: js.UndefOr[InstanceAccessProtocol] = js.undefined
     ): GetInstanceAccessDetailsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "instanceName" -> instanceName.asInstanceOf[js.Any]
       )
 
-      protocol.foreach(__v => __obj.update("protocol", __v.asInstanceOf[js.Any]))
+      protocol.foreach(__v => __obj.updateDynamic("protocol")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetInstanceAccessDetailsRequest]
     }
   }
@@ -2982,8 +2992,8 @@ package lightsail {
     def apply(
         accessDetails: js.UndefOr[InstanceAccessDetails] = js.undefined
     ): GetInstanceAccessDetailsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      accessDetails.foreach(__v => __obj.update("accessDetails", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      accessDetails.foreach(__v => __obj.updateDynamic("accessDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetInstanceAccessDetailsResult]
     }
   }
@@ -3009,7 +3019,7 @@ package lightsail {
         statistics: MetricStatisticList,
         unit: MetricUnit
     ): GetInstanceMetricDataRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "endTime"      -> endTime.asInstanceOf[js.Any],
         "instanceName" -> instanceName.asInstanceOf[js.Any],
         "metricName"   -> metricName.asInstanceOf[js.Any],
@@ -3034,9 +3044,9 @@ package lightsail {
         metricData: js.UndefOr[MetricDatapointList] = js.undefined,
         metricName: js.UndefOr[InstanceMetricName] = js.undefined
     ): GetInstanceMetricDataResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      metricData.foreach(__v => __obj.update("metricData", __v.asInstanceOf[js.Any]))
-      metricName.foreach(__v => __obj.update("metricName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      metricData.foreach(__v => __obj.updateDynamic("metricData")(__v.asInstanceOf[js.Any]))
+      metricName.foreach(__v => __obj.updateDynamic("metricName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetInstanceMetricDataResult]
     }
   }
@@ -3050,7 +3060,7 @@ package lightsail {
     def apply(
         instanceName: ResourceName
     ): GetInstancePortStatesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "instanceName" -> instanceName.asInstanceOf[js.Any]
       )
 
@@ -3067,8 +3077,8 @@ package lightsail {
     def apply(
         portStates: js.UndefOr[InstancePortStateList] = js.undefined
     ): GetInstancePortStatesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      portStates.foreach(__v => __obj.update("portStates", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      portStates.foreach(__v => __obj.updateDynamic("portStates")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetInstancePortStatesResult]
     }
   }
@@ -3082,7 +3092,7 @@ package lightsail {
     def apply(
         instanceName: ResourceName
     ): GetInstanceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "instanceName" -> instanceName.asInstanceOf[js.Any]
       )
 
@@ -3099,8 +3109,8 @@ package lightsail {
     def apply(
         instance: js.UndefOr[Instance] = js.undefined
     ): GetInstanceResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      instance.foreach(__v => __obj.update("instance", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      instance.foreach(__v => __obj.updateDynamic("instance")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetInstanceResult]
     }
   }
@@ -3114,7 +3124,7 @@ package lightsail {
     def apply(
         instanceSnapshotName: ResourceName
     ): GetInstanceSnapshotRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "instanceSnapshotName" -> instanceSnapshotName.asInstanceOf[js.Any]
       )
 
@@ -3131,8 +3141,8 @@ package lightsail {
     def apply(
         instanceSnapshot: js.UndefOr[InstanceSnapshot] = js.undefined
     ): GetInstanceSnapshotResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      instanceSnapshot.foreach(__v => __obj.update("instanceSnapshot", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      instanceSnapshot.foreach(__v => __obj.updateDynamic("instanceSnapshot")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetInstanceSnapshotResult]
     }
   }
@@ -3146,8 +3156,8 @@ package lightsail {
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetInstanceSnapshotsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      pageToken.foreach(__v => __obj.update("pageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetInstanceSnapshotsRequest]
     }
   }
@@ -3163,9 +3173,9 @@ package lightsail {
         instanceSnapshots: js.UndefOr[InstanceSnapshotList] = js.undefined,
         nextPageToken: js.UndefOr[String] = js.undefined
     ): GetInstanceSnapshotsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      instanceSnapshots.foreach(__v => __obj.update("instanceSnapshots", __v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      instanceSnapshots.foreach(__v => __obj.updateDynamic("instanceSnapshots")(__v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetInstanceSnapshotsResult]
     }
   }
@@ -3179,7 +3189,7 @@ package lightsail {
     def apply(
         instanceName: ResourceName
     ): GetInstanceStateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "instanceName" -> instanceName.asInstanceOf[js.Any]
       )
 
@@ -3196,8 +3206,8 @@ package lightsail {
     def apply(
         state: js.UndefOr[InstanceState] = js.undefined
     ): GetInstanceStateResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      state.foreach(__v => __obj.update("state", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetInstanceStateResult]
     }
   }
@@ -3211,8 +3221,8 @@ package lightsail {
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetInstancesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      pageToken.foreach(__v => __obj.update("pageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetInstancesRequest]
     }
   }
@@ -3228,9 +3238,9 @@ package lightsail {
         instances: js.UndefOr[InstanceList] = js.undefined,
         nextPageToken: js.UndefOr[String] = js.undefined
     ): GetInstancesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      instances.foreach(__v => __obj.update("instances", __v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      instances.foreach(__v => __obj.updateDynamic("instances")(__v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetInstancesResult]
     }
   }
@@ -3244,7 +3254,7 @@ package lightsail {
     def apply(
         keyPairName: ResourceName
     ): GetKeyPairRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "keyPairName" -> keyPairName.asInstanceOf[js.Any]
       )
 
@@ -3261,8 +3271,8 @@ package lightsail {
     def apply(
         keyPair: js.UndefOr[KeyPair] = js.undefined
     ): GetKeyPairResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      keyPair.foreach(__v => __obj.update("keyPair", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      keyPair.foreach(__v => __obj.updateDynamic("keyPair")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetKeyPairResult]
     }
   }
@@ -3276,8 +3286,8 @@ package lightsail {
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetKeyPairsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      pageToken.foreach(__v => __obj.update("pageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetKeyPairsRequest]
     }
   }
@@ -3293,9 +3303,9 @@ package lightsail {
         keyPairs: js.UndefOr[KeyPairList] = js.undefined,
         nextPageToken: js.UndefOr[String] = js.undefined
     ): GetKeyPairsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      keyPairs.foreach(__v => __obj.update("keyPairs", __v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      keyPairs.foreach(__v => __obj.updateDynamic("keyPairs")(__v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetKeyPairsResult]
     }
   }
@@ -3321,7 +3331,7 @@ package lightsail {
         statistics: MetricStatisticList,
         unit: MetricUnit
     ): GetLoadBalancerMetricDataRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "endTime"          -> endTime.asInstanceOf[js.Any],
         "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any],
         "metricName"       -> metricName.asInstanceOf[js.Any],
@@ -3346,9 +3356,9 @@ package lightsail {
         metricData: js.UndefOr[MetricDatapointList] = js.undefined,
         metricName: js.UndefOr[LoadBalancerMetricName] = js.undefined
     ): GetLoadBalancerMetricDataResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      metricData.foreach(__v => __obj.update("metricData", __v.asInstanceOf[js.Any]))
-      metricName.foreach(__v => __obj.update("metricName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      metricData.foreach(__v => __obj.updateDynamic("metricData")(__v.asInstanceOf[js.Any]))
+      metricName.foreach(__v => __obj.updateDynamic("metricName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLoadBalancerMetricDataResult]
     }
   }
@@ -3362,7 +3372,7 @@ package lightsail {
     def apply(
         loadBalancerName: ResourceName
     ): GetLoadBalancerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
       )
 
@@ -3379,8 +3389,8 @@ package lightsail {
     def apply(
         loadBalancer: js.UndefOr[LoadBalancer] = js.undefined
     ): GetLoadBalancerResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      loadBalancer.foreach(__v => __obj.update("loadBalancer", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      loadBalancer.foreach(__v => __obj.updateDynamic("loadBalancer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLoadBalancerResult]
     }
   }
@@ -3394,7 +3404,7 @@ package lightsail {
     def apply(
         loadBalancerName: ResourceName
     ): GetLoadBalancerTlsCertificatesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
       )
 
@@ -3411,8 +3421,8 @@ package lightsail {
     def apply(
         tlsCertificates: js.UndefOr[LoadBalancerTlsCertificateList] = js.undefined
     ): GetLoadBalancerTlsCertificatesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      tlsCertificates.foreach(__v => __obj.update("tlsCertificates", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      tlsCertificates.foreach(__v => __obj.updateDynamic("tlsCertificates")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLoadBalancerTlsCertificatesResult]
     }
   }
@@ -3426,8 +3436,8 @@ package lightsail {
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetLoadBalancersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      pageToken.foreach(__v => __obj.update("pageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLoadBalancersRequest]
     }
   }
@@ -3443,9 +3453,9 @@ package lightsail {
         loadBalancers: js.UndefOr[LoadBalancerList] = js.undefined,
         nextPageToken: js.UndefOr[String] = js.undefined
     ): GetLoadBalancersResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      loadBalancers.foreach(__v => __obj.update("loadBalancers", __v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      loadBalancers.foreach(__v => __obj.updateDynamic("loadBalancers")(__v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLoadBalancersResult]
     }
   }
@@ -3459,7 +3469,7 @@ package lightsail {
     def apply(
         operationId: NonEmptyString
     ): GetOperationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "operationId" -> operationId.asInstanceOf[js.Any]
       )
 
@@ -3476,8 +3486,8 @@ package lightsail {
     def apply(
         operation: js.UndefOr[Operation] = js.undefined
     ): GetOperationResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operation.foreach(__v => __obj.update("operation", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetOperationResult]
     }
   }
@@ -3493,11 +3503,11 @@ package lightsail {
         resourceName: ResourceName,
         pageToken: js.UndefOr[String] = js.undefined
     ): GetOperationsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceName" -> resourceName.asInstanceOf[js.Any]
       )
 
-      pageToken.foreach(__v => __obj.update("pageToken", __v.asInstanceOf[js.Any]))
+      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetOperationsForResourceRequest]
     }
   }
@@ -3515,10 +3525,10 @@ package lightsail {
         nextPageToken: js.UndefOr[String] = js.undefined,
         operations: js.UndefOr[OperationList] = js.undefined
     ): GetOperationsForResourceResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextPageCount.foreach(__v => __obj.update("nextPageCount", __v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextPageCount.foreach(__v => __obj.updateDynamic("nextPageCount")(__v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetOperationsForResourceResult]
     }
   }
@@ -3532,8 +3542,8 @@ package lightsail {
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetOperationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      pageToken.foreach(__v => __obj.update("pageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetOperationsRequest]
     }
   }
@@ -3549,9 +3559,9 @@ package lightsail {
         nextPageToken: js.UndefOr[String] = js.undefined,
         operations: js.UndefOr[OperationList] = js.undefined
     ): GetOperationsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetOperationsResult]
     }
   }
@@ -3567,10 +3577,10 @@ package lightsail {
         includeAvailabilityZones: js.UndefOr[Boolean] = js.undefined,
         includeRelationalDatabaseAvailabilityZones: js.UndefOr[Boolean] = js.undefined
     ): GetRegionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      includeAvailabilityZones.foreach(__v => __obj.update("includeAvailabilityZones", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      includeAvailabilityZones.foreach(__v => __obj.updateDynamic("includeAvailabilityZones")(__v.asInstanceOf[js.Any]))
       includeRelationalDatabaseAvailabilityZones.foreach(
-        __v => __obj.update("includeRelationalDatabaseAvailabilityZones", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("includeRelationalDatabaseAvailabilityZones")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GetRegionsRequest]
     }
@@ -3585,8 +3595,8 @@ package lightsail {
     def apply(
         regions: js.UndefOr[RegionList] = js.undefined
     ): GetRegionsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      regions.foreach(__v => __obj.update("regions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      regions.foreach(__v => __obj.updateDynamic("regions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRegionsResult]
     }
   }
@@ -3600,8 +3610,8 @@ package lightsail {
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetRelationalDatabaseBlueprintsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      pageToken.foreach(__v => __obj.update("pageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRelationalDatabaseBlueprintsRequest]
     }
   }
@@ -3617,9 +3627,9 @@ package lightsail {
         blueprints: js.UndefOr[RelationalDatabaseBlueprintList] = js.undefined,
         nextPageToken: js.UndefOr[String] = js.undefined
     ): GetRelationalDatabaseBlueprintsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      blueprints.foreach(__v => __obj.update("blueprints", __v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      blueprints.foreach(__v => __obj.updateDynamic("blueprints")(__v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRelationalDatabaseBlueprintsResult]
     }
   }
@@ -3633,8 +3643,8 @@ package lightsail {
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetRelationalDatabaseBundlesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      pageToken.foreach(__v => __obj.update("pageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRelationalDatabaseBundlesRequest]
     }
   }
@@ -3650,9 +3660,9 @@ package lightsail {
         bundles: js.UndefOr[RelationalDatabaseBundleList] = js.undefined,
         nextPageToken: js.UndefOr[String] = js.undefined
     ): GetRelationalDatabaseBundlesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      bundles.foreach(__v => __obj.update("bundles", __v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      bundles.foreach(__v => __obj.updateDynamic("bundles")(__v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRelationalDatabaseBundlesResult]
     }
   }
@@ -3670,12 +3680,12 @@ package lightsail {
         durationInMinutes: js.UndefOr[Int] = js.undefined,
         pageToken: js.UndefOr[String] = js.undefined
     ): GetRelationalDatabaseEventsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
       )
 
-      durationInMinutes.foreach(__v => __obj.update("durationInMinutes", __v.asInstanceOf[js.Any]))
-      pageToken.foreach(__v => __obj.update("pageToken", __v.asInstanceOf[js.Any]))
+      durationInMinutes.foreach(__v => __obj.updateDynamic("durationInMinutes")(__v.asInstanceOf[js.Any]))
+      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRelationalDatabaseEventsRequest]
     }
   }
@@ -3691,9 +3701,9 @@ package lightsail {
         nextPageToken: js.UndefOr[String] = js.undefined,
         relationalDatabaseEvents: js.UndefOr[RelationalDatabaseEventList] = js.undefined
     ): GetRelationalDatabaseEventsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
-      relationalDatabaseEvents.foreach(__v => __obj.update("relationalDatabaseEvents", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
+      relationalDatabaseEvents.foreach(__v => __obj.updateDynamic("relationalDatabaseEvents")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRelationalDatabaseEventsResult]
     }
   }
@@ -3717,15 +3727,15 @@ package lightsail {
         startFromHead: js.UndefOr[Boolean] = js.undefined,
         startTime: js.UndefOr[IsoDate] = js.undefined
     ): GetRelationalDatabaseLogEventsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "logStreamName"          -> logStreamName.asInstanceOf[js.Any],
         "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
       )
 
-      endTime.foreach(__v => __obj.update("endTime", __v.asInstanceOf[js.Any]))
-      pageToken.foreach(__v => __obj.update("pageToken", __v.asInstanceOf[js.Any]))
-      startFromHead.foreach(__v => __obj.update("startFromHead", __v.asInstanceOf[js.Any]))
-      startTime.foreach(__v => __obj.update("startTime", __v.asInstanceOf[js.Any]))
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
+      startFromHead.foreach(__v => __obj.updateDynamic("startFromHead")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRelationalDatabaseLogEventsRequest]
     }
   }
@@ -3743,10 +3753,10 @@ package lightsail {
         nextForwardToken: js.UndefOr[String] = js.undefined,
         resourceLogEvents: js.UndefOr[LogEventList] = js.undefined
     ): GetRelationalDatabaseLogEventsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextBackwardToken.foreach(__v => __obj.update("nextBackwardToken", __v.asInstanceOf[js.Any]))
-      nextForwardToken.foreach(__v => __obj.update("nextForwardToken", __v.asInstanceOf[js.Any]))
-      resourceLogEvents.foreach(__v => __obj.update("resourceLogEvents", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextBackwardToken.foreach(__v => __obj.updateDynamic("nextBackwardToken")(__v.asInstanceOf[js.Any]))
+      nextForwardToken.foreach(__v => __obj.updateDynamic("nextForwardToken")(__v.asInstanceOf[js.Any]))
+      resourceLogEvents.foreach(__v => __obj.updateDynamic("resourceLogEvents")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRelationalDatabaseLogEventsResult]
     }
   }
@@ -3760,7 +3770,7 @@ package lightsail {
     def apply(
         relationalDatabaseName: ResourceName
     ): GetRelationalDatabaseLogStreamsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
       )
 
@@ -3777,8 +3787,8 @@ package lightsail {
     def apply(
         logStreams: js.UndefOr[StringList] = js.undefined
     ): GetRelationalDatabaseLogStreamsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      logStreams.foreach(__v => __obj.update("logStreams", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      logStreams.foreach(__v => __obj.updateDynamic("logStreams")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRelationalDatabaseLogStreamsResult]
     }
   }
@@ -3794,11 +3804,11 @@ package lightsail {
         relationalDatabaseName: ResourceName,
         passwordVersion: js.UndefOr[RelationalDatabasePasswordVersion] = js.undefined
     ): GetRelationalDatabaseMasterUserPasswordRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
       )
 
-      passwordVersion.foreach(__v => __obj.update("passwordVersion", __v.asInstanceOf[js.Any]))
+      passwordVersion.foreach(__v => __obj.updateDynamic("passwordVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRelationalDatabaseMasterUserPasswordRequest]
     }
   }
@@ -3814,9 +3824,9 @@ package lightsail {
         createdAt: js.UndefOr[IsoDate] = js.undefined,
         masterUserPassword: js.UndefOr[SensitiveString] = js.undefined
     ): GetRelationalDatabaseMasterUserPasswordResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      masterUserPassword.foreach(__v => __obj.update("masterUserPassword", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      masterUserPassword.foreach(__v => __obj.updateDynamic("masterUserPassword")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRelationalDatabaseMasterUserPasswordResult]
     }
   }
@@ -3842,7 +3852,7 @@ package lightsail {
         statistics: MetricStatisticList,
         unit: MetricUnit
     ): GetRelationalDatabaseMetricDataRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "endTime"                -> endTime.asInstanceOf[js.Any],
         "metricName"             -> metricName.asInstanceOf[js.Any],
         "period"                 -> period.asInstanceOf[js.Any],
@@ -3867,9 +3877,9 @@ package lightsail {
         metricData: js.UndefOr[MetricDatapointList] = js.undefined,
         metricName: js.UndefOr[RelationalDatabaseMetricName] = js.undefined
     ): GetRelationalDatabaseMetricDataResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      metricData.foreach(__v => __obj.update("metricData", __v.asInstanceOf[js.Any]))
-      metricName.foreach(__v => __obj.update("metricName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      metricData.foreach(__v => __obj.updateDynamic("metricData")(__v.asInstanceOf[js.Any]))
+      metricName.foreach(__v => __obj.updateDynamic("metricName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRelationalDatabaseMetricDataResult]
     }
   }
@@ -3885,11 +3895,11 @@ package lightsail {
         relationalDatabaseName: ResourceName,
         pageToken: js.UndefOr[String] = js.undefined
     ): GetRelationalDatabaseParametersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
       )
 
-      pageToken.foreach(__v => __obj.update("pageToken", __v.asInstanceOf[js.Any]))
+      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRelationalDatabaseParametersRequest]
     }
   }
@@ -3905,9 +3915,9 @@ package lightsail {
         nextPageToken: js.UndefOr[String] = js.undefined,
         parameters: js.UndefOr[RelationalDatabaseParameterList] = js.undefined
     ): GetRelationalDatabaseParametersResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
-      parameters.foreach(__v => __obj.update("parameters", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
+      parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRelationalDatabaseParametersResult]
     }
   }
@@ -3921,7 +3931,7 @@ package lightsail {
     def apply(
         relationalDatabaseName: ResourceName
     ): GetRelationalDatabaseRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
       )
 
@@ -3938,8 +3948,8 @@ package lightsail {
     def apply(
         relationalDatabase: js.UndefOr[RelationalDatabase] = js.undefined
     ): GetRelationalDatabaseResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      relationalDatabase.foreach(__v => __obj.update("relationalDatabase", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      relationalDatabase.foreach(__v => __obj.updateDynamic("relationalDatabase")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRelationalDatabaseResult]
     }
   }
@@ -3953,7 +3963,7 @@ package lightsail {
     def apply(
         relationalDatabaseSnapshotName: ResourceName
     ): GetRelationalDatabaseSnapshotRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "relationalDatabaseSnapshotName" -> relationalDatabaseSnapshotName.asInstanceOf[js.Any]
       )
 
@@ -3970,8 +3980,10 @@ package lightsail {
     def apply(
         relationalDatabaseSnapshot: js.UndefOr[RelationalDatabaseSnapshot] = js.undefined
     ): GetRelationalDatabaseSnapshotResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      relationalDatabaseSnapshot.foreach(__v => __obj.update("relationalDatabaseSnapshot", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      relationalDatabaseSnapshot.foreach(
+        __v => __obj.updateDynamic("relationalDatabaseSnapshot")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[GetRelationalDatabaseSnapshotResult]
     }
   }
@@ -3985,8 +3997,8 @@ package lightsail {
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetRelationalDatabaseSnapshotsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      pageToken.foreach(__v => __obj.update("pageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRelationalDatabaseSnapshotsRequest]
     }
   }
@@ -4002,9 +4014,11 @@ package lightsail {
         nextPageToken: js.UndefOr[String] = js.undefined,
         relationalDatabaseSnapshots: js.UndefOr[RelationalDatabaseSnapshotList] = js.undefined
     ): GetRelationalDatabaseSnapshotsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
-      relationalDatabaseSnapshots.foreach(__v => __obj.update("relationalDatabaseSnapshots", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
+      relationalDatabaseSnapshots.foreach(
+        __v => __obj.updateDynamic("relationalDatabaseSnapshots")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[GetRelationalDatabaseSnapshotsResult]
     }
   }
@@ -4018,8 +4032,8 @@ package lightsail {
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetRelationalDatabasesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      pageToken.foreach(__v => __obj.update("pageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRelationalDatabasesRequest]
     }
   }
@@ -4035,9 +4049,9 @@ package lightsail {
         nextPageToken: js.UndefOr[String] = js.undefined,
         relationalDatabases: js.UndefOr[RelationalDatabaseList] = js.undefined
     ): GetRelationalDatabasesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
-      relationalDatabases.foreach(__v => __obj.update("relationalDatabases", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
+      relationalDatabases.foreach(__v => __obj.updateDynamic("relationalDatabases")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRelationalDatabasesResult]
     }
   }
@@ -4051,7 +4065,7 @@ package lightsail {
     def apply(
         staticIpName: ResourceName
     ): GetStaticIpRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "staticIpName" -> staticIpName.asInstanceOf[js.Any]
       )
 
@@ -4068,8 +4082,8 @@ package lightsail {
     def apply(
         staticIp: js.UndefOr[StaticIp] = js.undefined
     ): GetStaticIpResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      staticIp.foreach(__v => __obj.update("staticIp", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      staticIp.foreach(__v => __obj.updateDynamic("staticIp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetStaticIpResult]
     }
   }
@@ -4083,8 +4097,8 @@ package lightsail {
     def apply(
         pageToken: js.UndefOr[String] = js.undefined
     ): GetStaticIpsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      pageToken.foreach(__v => __obj.update("pageToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetStaticIpsRequest]
     }
   }
@@ -4100,9 +4114,9 @@ package lightsail {
         nextPageToken: js.UndefOr[String] = js.undefined,
         staticIps: js.UndefOr[StaticIpList] = js.undefined
     ): GetStaticIpsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
-      staticIps.foreach(__v => __obj.update("staticIps", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
+      staticIps.foreach(__v => __obj.updateDynamic("staticIps")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetStaticIpsResult]
     }
   }
@@ -4131,14 +4145,14 @@ package lightsail {
         publicKey: js.UndefOr[String] = js.undefined,
         witnessedAt: js.UndefOr[IsoDate] = js.undefined
     ): HostKeyAttributes = {
-      val __obj = js.Dictionary.empty[js.Any]
-      algorithm.foreach(__v => __obj.update("algorithm", __v.asInstanceOf[js.Any]))
-      fingerprintSHA1.foreach(__v => __obj.update("fingerprintSHA1", __v.asInstanceOf[js.Any]))
-      fingerprintSHA256.foreach(__v => __obj.update("fingerprintSHA256", __v.asInstanceOf[js.Any]))
-      notValidAfter.foreach(__v => __obj.update("notValidAfter", __v.asInstanceOf[js.Any]))
-      notValidBefore.foreach(__v => __obj.update("notValidBefore", __v.asInstanceOf[js.Any]))
-      publicKey.foreach(__v => __obj.update("publicKey", __v.asInstanceOf[js.Any]))
-      witnessedAt.foreach(__v => __obj.update("witnessedAt", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      algorithm.foreach(__v => __obj.updateDynamic("algorithm")(__v.asInstanceOf[js.Any]))
+      fingerprintSHA1.foreach(__v => __obj.updateDynamic("fingerprintSHA1")(__v.asInstanceOf[js.Any]))
+      fingerprintSHA256.foreach(__v => __obj.updateDynamic("fingerprintSHA256")(__v.asInstanceOf[js.Any]))
+      notValidAfter.foreach(__v => __obj.updateDynamic("notValidAfter")(__v.asInstanceOf[js.Any]))
+      notValidBefore.foreach(__v => __obj.updateDynamic("notValidBefore")(__v.asInstanceOf[js.Any]))
+      publicKey.foreach(__v => __obj.updateDynamic("publicKey")(__v.asInstanceOf[js.Any]))
+      witnessedAt.foreach(__v => __obj.updateDynamic("witnessedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HostKeyAttributes]
     }
   }
@@ -4154,7 +4168,7 @@ package lightsail {
         keyPairName: ResourceName,
         publicKeyBase64: Base64
     ): ImportKeyPairRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "keyPairName"     -> keyPairName.asInstanceOf[js.Any],
         "publicKeyBase64" -> publicKeyBase64.asInstanceOf[js.Any]
       )
@@ -4172,8 +4186,8 @@ package lightsail {
     def apply(
         operation: js.UndefOr[Operation] = js.undefined
     ): ImportKeyPairResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operation.foreach(__v => __obj.update("operation", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportKeyPairResult]
     }
   }
@@ -4226,26 +4240,26 @@ package lightsail {
         tags: js.UndefOr[TagList] = js.undefined,
         username: js.UndefOr[NonEmptyString] = js.undefined
     ): Instance = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      blueprintId.foreach(__v => __obj.update("blueprintId", __v.asInstanceOf[js.Any]))
-      blueprintName.foreach(__v => __obj.update("blueprintName", __v.asInstanceOf[js.Any]))
-      bundleId.foreach(__v => __obj.update("bundleId", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      hardware.foreach(__v => __obj.update("hardware", __v.asInstanceOf[js.Any]))
-      ipv6Address.foreach(__v => __obj.update("ipv6Address", __v.asInstanceOf[js.Any]))
-      isStaticIp.foreach(__v => __obj.update("isStaticIp", __v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      networking.foreach(__v => __obj.update("networking", __v.asInstanceOf[js.Any]))
-      privateIpAddress.foreach(__v => __obj.update("privateIpAddress", __v.asInstanceOf[js.Any]))
-      publicIpAddress.foreach(__v => __obj.update("publicIpAddress", __v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.update("resourceType", __v.asInstanceOf[js.Any]))
-      sshKeyName.foreach(__v => __obj.update("sshKeyName", __v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.update("state", __v.asInstanceOf[js.Any]))
-      supportCode.foreach(__v => __obj.update("supportCode", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
-      username.foreach(__v => __obj.update("username", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      blueprintId.foreach(__v => __obj.updateDynamic("blueprintId")(__v.asInstanceOf[js.Any]))
+      blueprintName.foreach(__v => __obj.updateDynamic("blueprintName")(__v.asInstanceOf[js.Any]))
+      bundleId.foreach(__v => __obj.updateDynamic("bundleId")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      hardware.foreach(__v => __obj.updateDynamic("hardware")(__v.asInstanceOf[js.Any]))
+      ipv6Address.foreach(__v => __obj.updateDynamic("ipv6Address")(__v.asInstanceOf[js.Any]))
+      isStaticIp.foreach(__v => __obj.updateDynamic("isStaticIp")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      networking.foreach(__v => __obj.updateDynamic("networking")(__v.asInstanceOf[js.Any]))
+      privateIpAddress.foreach(__v => __obj.updateDynamic("privateIpAddress")(__v.asInstanceOf[js.Any]))
+      publicIpAddress.foreach(__v => __obj.updateDynamic("publicIpAddress")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      sshKeyName.foreach(__v => __obj.updateDynamic("sshKeyName")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      username.foreach(__v => __obj.updateDynamic("username")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Instance]
     }
   }
@@ -4280,17 +4294,17 @@ package lightsail {
         protocol: js.UndefOr[InstanceAccessProtocol] = js.undefined,
         username: js.UndefOr[String] = js.undefined
     ): InstanceAccessDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      certKey.foreach(__v => __obj.update("certKey", __v.asInstanceOf[js.Any]))
-      expiresAt.foreach(__v => __obj.update("expiresAt", __v.asInstanceOf[js.Any]))
-      hostKeys.foreach(__v => __obj.update("hostKeys", __v.asInstanceOf[js.Any]))
-      instanceName.foreach(__v => __obj.update("instanceName", __v.asInstanceOf[js.Any]))
-      ipAddress.foreach(__v => __obj.update("ipAddress", __v.asInstanceOf[js.Any]))
-      password.foreach(__v => __obj.update("password", __v.asInstanceOf[js.Any]))
-      passwordData.foreach(__v => __obj.update("passwordData", __v.asInstanceOf[js.Any]))
-      privateKey.foreach(__v => __obj.update("privateKey", __v.asInstanceOf[js.Any]))
-      protocol.foreach(__v => __obj.update("protocol", __v.asInstanceOf[js.Any]))
-      username.foreach(__v => __obj.update("username", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      certKey.foreach(__v => __obj.updateDynamic("certKey")(__v.asInstanceOf[js.Any]))
+      expiresAt.foreach(__v => __obj.updateDynamic("expiresAt")(__v.asInstanceOf[js.Any]))
+      hostKeys.foreach(__v => __obj.updateDynamic("hostKeys")(__v.asInstanceOf[js.Any]))
+      instanceName.foreach(__v => __obj.updateDynamic("instanceName")(__v.asInstanceOf[js.Any]))
+      ipAddress.foreach(__v => __obj.updateDynamic("ipAddress")(__v.asInstanceOf[js.Any]))
+      password.foreach(__v => __obj.updateDynamic("password")(__v.asInstanceOf[js.Any]))
+      passwordData.foreach(__v => __obj.updateDynamic("passwordData")(__v.asInstanceOf[js.Any]))
+      privateKey.foreach(__v => __obj.updateDynamic("privateKey")(__v.asInstanceOf[js.Any]))
+      protocol.foreach(__v => __obj.updateDynamic("protocol")(__v.asInstanceOf[js.Any]))
+      username.foreach(__v => __obj.updateDynamic("username")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceAccessDetails]
     }
   }
@@ -4322,14 +4336,14 @@ package lightsail {
         sourceName: ResourceName,
         userData: js.UndefOr[String] = js.undefined
     ): InstanceEntry = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "availabilityZone" -> availabilityZone.asInstanceOf[js.Any],
         "instanceType"     -> instanceType.asInstanceOf[js.Any],
         "portInfoSource"   -> portInfoSource.asInstanceOf[js.Any],
         "sourceName"       -> sourceName.asInstanceOf[js.Any]
       )
 
-      userData.foreach(__v => __obj.update("userData", __v.asInstanceOf[js.Any]))
+      userData.foreach(__v => __obj.updateDynamic("userData")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceEntry]
     }
   }
@@ -4350,10 +4364,10 @@ package lightsail {
         disks: js.UndefOr[DiskList] = js.undefined,
         ramSizeInGb: js.UndefOr[Float] = js.undefined
     ): InstanceHardware = {
-      val __obj = js.Dictionary.empty[js.Any]
-      cpuCount.foreach(__v => __obj.update("cpuCount", __v.asInstanceOf[js.Any]))
-      disks.foreach(__v => __obj.update("disks", __v.asInstanceOf[js.Any]))
-      ramSizeInGb.foreach(__v => __obj.update("ramSizeInGb", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      cpuCount.foreach(__v => __obj.updateDynamic("cpuCount")(__v.asInstanceOf[js.Any]))
+      disks.foreach(__v => __obj.updateDynamic("disks")(__v.asInstanceOf[js.Any]))
+      ramSizeInGb.foreach(__v => __obj.updateDynamic("ramSizeInGb")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceHardware]
     }
   }
@@ -4415,10 +4429,10 @@ package lightsail {
         instanceHealthReason: js.UndefOr[InstanceHealthReason] = js.undefined,
         instanceName: js.UndefOr[ResourceName] = js.undefined
     ): InstanceHealthSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      instanceHealth.foreach(__v => __obj.update("instanceHealth", __v.asInstanceOf[js.Any]))
-      instanceHealthReason.foreach(__v => __obj.update("instanceHealthReason", __v.asInstanceOf[js.Any]))
-      instanceName.foreach(__v => __obj.update("instanceName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      instanceHealth.foreach(__v => __obj.updateDynamic("instanceHealth")(__v.asInstanceOf[js.Any]))
+      instanceHealthReason.foreach(__v => __obj.updateDynamic("instanceHealthReason")(__v.asInstanceOf[js.Any]))
+      instanceName.foreach(__v => __obj.updateDynamic("instanceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceHealthSummary]
     }
   }
@@ -4457,9 +4471,9 @@ package lightsail {
         monthlyTransfer: js.UndefOr[MonthlyTransfer] = js.undefined,
         ports: js.UndefOr[InstancePortInfoList] = js.undefined
     ): InstanceNetworking = {
-      val __obj = js.Dictionary.empty[js.Any]
-      monthlyTransfer.foreach(__v => __obj.update("monthlyTransfer", __v.asInstanceOf[js.Any]))
-      ports.foreach(__v => __obj.update("ports", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      monthlyTransfer.foreach(__v => __obj.updateDynamic("monthlyTransfer")(__v.asInstanceOf[js.Any]))
+      ports.foreach(__v => __obj.updateDynamic("ports")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceNetworking]
     }
   }
@@ -4495,14 +4509,14 @@ package lightsail {
         protocol: js.UndefOr[NetworkProtocol] = js.undefined,
         toPort: js.UndefOr[Port] = js.undefined
     ): InstancePortInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      accessDirection.foreach(__v => __obj.update("accessDirection", __v.asInstanceOf[js.Any]))
-      accessFrom.foreach(__v => __obj.update("accessFrom", __v.asInstanceOf[js.Any]))
-      accessType.foreach(__v => __obj.update("accessType", __v.asInstanceOf[js.Any]))
-      commonName.foreach(__v => __obj.update("commonName", __v.asInstanceOf[js.Any]))
-      fromPort.foreach(__v => __obj.update("fromPort", __v.asInstanceOf[js.Any]))
-      protocol.foreach(__v => __obj.update("protocol", __v.asInstanceOf[js.Any]))
-      toPort.foreach(__v => __obj.update("toPort", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      accessDirection.foreach(__v => __obj.updateDynamic("accessDirection")(__v.asInstanceOf[js.Any]))
+      accessFrom.foreach(__v => __obj.updateDynamic("accessFrom")(__v.asInstanceOf[js.Any]))
+      accessType.foreach(__v => __obj.updateDynamic("accessType")(__v.asInstanceOf[js.Any]))
+      commonName.foreach(__v => __obj.updateDynamic("commonName")(__v.asInstanceOf[js.Any]))
+      fromPort.foreach(__v => __obj.updateDynamic("fromPort")(__v.asInstanceOf[js.Any]))
+      protocol.foreach(__v => __obj.updateDynamic("protocol")(__v.asInstanceOf[js.Any]))
+      toPort.foreach(__v => __obj.updateDynamic("toPort")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstancePortInfo]
     }
   }
@@ -4525,11 +4539,11 @@ package lightsail {
         state: js.UndefOr[PortState] = js.undefined,
         toPort: js.UndefOr[Port] = js.undefined
     ): InstancePortState = {
-      val __obj = js.Dictionary.empty[js.Any]
-      fromPort.foreach(__v => __obj.update("fromPort", __v.asInstanceOf[js.Any]))
-      protocol.foreach(__v => __obj.update("protocol", __v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.update("state", __v.asInstanceOf[js.Any]))
-      toPort.foreach(__v => __obj.update("toPort", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      fromPort.foreach(__v => __obj.updateDynamic("fromPort")(__v.asInstanceOf[js.Any]))
+      protocol.foreach(__v => __obj.updateDynamic("protocol")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      toPort.foreach(__v => __obj.updateDynamic("toPort")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstancePortState]
     }
   }
@@ -4574,22 +4588,22 @@ package lightsail {
         supportCode: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): InstanceSnapshot = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      fromAttachedDisks.foreach(__v => __obj.update("fromAttachedDisks", __v.asInstanceOf[js.Any]))
-      fromBlueprintId.foreach(__v => __obj.update("fromBlueprintId", __v.asInstanceOf[js.Any]))
-      fromBundleId.foreach(__v => __obj.update("fromBundleId", __v.asInstanceOf[js.Any]))
-      fromInstanceArn.foreach(__v => __obj.update("fromInstanceArn", __v.asInstanceOf[js.Any]))
-      fromInstanceName.foreach(__v => __obj.update("fromInstanceName", __v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      progress.foreach(__v => __obj.update("progress", __v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.update("resourceType", __v.asInstanceOf[js.Any]))
-      sizeInGb.foreach(__v => __obj.update("sizeInGb", __v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.update("state", __v.asInstanceOf[js.Any]))
-      supportCode.foreach(__v => __obj.update("supportCode", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      fromAttachedDisks.foreach(__v => __obj.updateDynamic("fromAttachedDisks")(__v.asInstanceOf[js.Any]))
+      fromBlueprintId.foreach(__v => __obj.updateDynamic("fromBlueprintId")(__v.asInstanceOf[js.Any]))
+      fromBundleId.foreach(__v => __obj.updateDynamic("fromBundleId")(__v.asInstanceOf[js.Any]))
+      fromInstanceArn.foreach(__v => __obj.updateDynamic("fromInstanceArn")(__v.asInstanceOf[js.Any]))
+      fromInstanceName.foreach(__v => __obj.updateDynamic("fromInstanceName")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      progress.foreach(__v => __obj.updateDynamic("progress")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      sizeInGb.foreach(__v => __obj.updateDynamic("sizeInGb")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceSnapshot]
     }
   }
@@ -4610,10 +4624,10 @@ package lightsail {
         fromBundleId: js.UndefOr[NonEmptyString] = js.undefined,
         fromDiskInfo: js.UndefOr[DiskInfoList] = js.undefined
     ): InstanceSnapshotInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      fromBlueprintId.foreach(__v => __obj.update("fromBlueprintId", __v.asInstanceOf[js.Any]))
-      fromBundleId.foreach(__v => __obj.update("fromBundleId", __v.asInstanceOf[js.Any]))
-      fromDiskInfo.foreach(__v => __obj.update("fromDiskInfo", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      fromBlueprintId.foreach(__v => __obj.updateDynamic("fromBlueprintId")(__v.asInstanceOf[js.Any]))
+      fromBundleId.foreach(__v => __obj.updateDynamic("fromBundleId")(__v.asInstanceOf[js.Any]))
+      fromDiskInfo.foreach(__v => __obj.updateDynamic("fromDiskInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceSnapshotInfo]
     }
   }
@@ -4640,9 +4654,9 @@ package lightsail {
         code: js.UndefOr[Int] = js.undefined,
         name: js.UndefOr[String] = js.undefined
     ): InstanceState = {
-      val __obj = js.Dictionary.empty[js.Any]
-      code.foreach(__v => __obj.update("code", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceState]
     }
   }
@@ -4653,7 +4667,7 @@ package lightsail {
   object IsVpcPeeredRequest {
     def apply(
         ): IsVpcPeeredRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[IsVpcPeeredRequest]
     }
@@ -4668,8 +4682,8 @@ package lightsail {
     def apply(
         isPeered: js.UndefOr[Boolean] = js.undefined
     ): IsVpcPeeredResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      isPeered.foreach(__v => __obj.update("isPeered", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      isPeered.foreach(__v => __obj.updateDynamic("isPeered")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IsVpcPeeredResult]
     }
   }
@@ -4700,15 +4714,15 @@ package lightsail {
         supportCode: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): KeyPair = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      fingerprint.foreach(__v => __obj.update("fingerprint", __v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.update("resourceType", __v.asInstanceOf[js.Any]))
-      supportCode.foreach(__v => __obj.update("supportCode", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      fingerprint.foreach(__v => __obj.updateDynamic("fingerprint")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KeyPair]
     }
   }
@@ -4755,23 +4769,23 @@ package lightsail {
         tags: js.UndefOr[TagList] = js.undefined,
         tlsCertificateSummaries: js.UndefOr[LoadBalancerTlsCertificateSummaryList] = js.undefined
     ): LoadBalancer = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      configurationOptions.foreach(__v => __obj.update("configurationOptions", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      dnsName.foreach(__v => __obj.update("dnsName", __v.asInstanceOf[js.Any]))
-      healthCheckPath.foreach(__v => __obj.update("healthCheckPath", __v.asInstanceOf[js.Any]))
-      instanceHealthSummary.foreach(__v => __obj.update("instanceHealthSummary", __v.asInstanceOf[js.Any]))
-      instancePort.foreach(__v => __obj.update("instancePort", __v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      protocol.foreach(__v => __obj.update("protocol", __v.asInstanceOf[js.Any]))
-      publicPorts.foreach(__v => __obj.update("publicPorts", __v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.update("resourceType", __v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.update("state", __v.asInstanceOf[js.Any]))
-      supportCode.foreach(__v => __obj.update("supportCode", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
-      tlsCertificateSummaries.foreach(__v => __obj.update("tlsCertificateSummaries", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      configurationOptions.foreach(__v => __obj.updateDynamic("configurationOptions")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      dnsName.foreach(__v => __obj.updateDynamic("dnsName")(__v.asInstanceOf[js.Any]))
+      healthCheckPath.foreach(__v => __obj.updateDynamic("healthCheckPath")(__v.asInstanceOf[js.Any]))
+      instanceHealthSummary.foreach(__v => __obj.updateDynamic("instanceHealthSummary")(__v.asInstanceOf[js.Any]))
+      instancePort.foreach(__v => __obj.updateDynamic("instancePort")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      protocol.foreach(__v => __obj.updateDynamic("protocol")(__v.asInstanceOf[js.Any]))
+      publicPorts.foreach(__v => __obj.updateDynamic("publicPorts")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      tlsCertificateSummaries.foreach(__v => __obj.updateDynamic("tlsCertificateSummaries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoadBalancer]
     }
   }
@@ -4895,32 +4909,32 @@ package lightsail {
         supportCode: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): LoadBalancerTlsCertificate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      domainName.foreach(__v => __obj.update("domainName", __v.asInstanceOf[js.Any]))
-      domainValidationRecords.foreach(__v => __obj.update("domainValidationRecords", __v.asInstanceOf[js.Any]))
-      failureReason.foreach(__v => __obj.update("failureReason", __v.asInstanceOf[js.Any]))
-      isAttached.foreach(__v => __obj.update("isAttached", __v.asInstanceOf[js.Any]))
-      issuedAt.foreach(__v => __obj.update("issuedAt", __v.asInstanceOf[js.Any]))
-      issuer.foreach(__v => __obj.update("issuer", __v.asInstanceOf[js.Any]))
-      keyAlgorithm.foreach(__v => __obj.update("keyAlgorithm", __v.asInstanceOf[js.Any]))
-      loadBalancerName.foreach(__v => __obj.update("loadBalancerName", __v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      notAfter.foreach(__v => __obj.update("notAfter", __v.asInstanceOf[js.Any]))
-      notBefore.foreach(__v => __obj.update("notBefore", __v.asInstanceOf[js.Any]))
-      renewalSummary.foreach(__v => __obj.update("renewalSummary", __v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.update("resourceType", __v.asInstanceOf[js.Any]))
-      revocationReason.foreach(__v => __obj.update("revocationReason", __v.asInstanceOf[js.Any]))
-      revokedAt.foreach(__v => __obj.update("revokedAt", __v.asInstanceOf[js.Any]))
-      serial.foreach(__v => __obj.update("serial", __v.asInstanceOf[js.Any]))
-      signatureAlgorithm.foreach(__v => __obj.update("signatureAlgorithm", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      subject.foreach(__v => __obj.update("subject", __v.asInstanceOf[js.Any]))
-      subjectAlternativeNames.foreach(__v => __obj.update("subjectAlternativeNames", __v.asInstanceOf[js.Any]))
-      supportCode.foreach(__v => __obj.update("supportCode", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      domainName.foreach(__v => __obj.updateDynamic("domainName")(__v.asInstanceOf[js.Any]))
+      domainValidationRecords.foreach(__v => __obj.updateDynamic("domainValidationRecords")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      isAttached.foreach(__v => __obj.updateDynamic("isAttached")(__v.asInstanceOf[js.Any]))
+      issuedAt.foreach(__v => __obj.updateDynamic("issuedAt")(__v.asInstanceOf[js.Any]))
+      issuer.foreach(__v => __obj.updateDynamic("issuer")(__v.asInstanceOf[js.Any]))
+      keyAlgorithm.foreach(__v => __obj.updateDynamic("keyAlgorithm")(__v.asInstanceOf[js.Any]))
+      loadBalancerName.foreach(__v => __obj.updateDynamic("loadBalancerName")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      notAfter.foreach(__v => __obj.updateDynamic("notAfter")(__v.asInstanceOf[js.Any]))
+      notBefore.foreach(__v => __obj.updateDynamic("notBefore")(__v.asInstanceOf[js.Any]))
+      renewalSummary.foreach(__v => __obj.updateDynamic("renewalSummary")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      revocationReason.foreach(__v => __obj.updateDynamic("revocationReason")(__v.asInstanceOf[js.Any]))
+      revokedAt.foreach(__v => __obj.updateDynamic("revokedAt")(__v.asInstanceOf[js.Any]))
+      serial.foreach(__v => __obj.updateDynamic("serial")(__v.asInstanceOf[js.Any]))
+      signatureAlgorithm.foreach(__v => __obj.updateDynamic("signatureAlgorithm")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      subject.foreach(__v => __obj.updateDynamic("subject")(__v.asInstanceOf[js.Any]))
+      subjectAlternativeNames.foreach(__v => __obj.updateDynamic("subjectAlternativeNames")(__v.asInstanceOf[js.Any]))
+      supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoadBalancerTlsCertificate]
     }
   }
@@ -4947,9 +4961,9 @@ package lightsail {
         domainName: js.UndefOr[DomainName] = js.undefined,
         validationStatus: js.UndefOr[LoadBalancerTlsCertificateDomainStatus] = js.undefined
     ): LoadBalancerTlsCertificateDomainValidationOption = {
-      val __obj = js.Dictionary.empty[js.Any]
-      domainName.foreach(__v => __obj.update("domainName", __v.asInstanceOf[js.Any]))
-      validationStatus.foreach(__v => __obj.update("validationStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      domainName.foreach(__v => __obj.updateDynamic("domainName")(__v.asInstanceOf[js.Any]))
+      validationStatus.foreach(__v => __obj.updateDynamic("validationStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoadBalancerTlsCertificateDomainValidationOption]
     }
   }
@@ -4974,12 +4988,12 @@ package lightsail {
         validationStatus: js.UndefOr[LoadBalancerTlsCertificateDomainStatus] = js.undefined,
         value: js.UndefOr[NonEmptyString] = js.undefined
     ): LoadBalancerTlsCertificateDomainValidationRecord = {
-      val __obj = js.Dictionary.empty[js.Any]
-      domainName.foreach(__v => __obj.update("domainName", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
-      validationStatus.foreach(__v => __obj.update("validationStatus", __v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      domainName.foreach(__v => __obj.updateDynamic("domainName")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      validationStatus.foreach(__v => __obj.updateDynamic("validationStatus")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoadBalancerTlsCertificateDomainValidationRecord]
     }
   }
@@ -5025,9 +5039,9 @@ package lightsail {
         domainValidationOptions: js.UndefOr[LoadBalancerTlsCertificateDomainValidationOptionList] = js.undefined,
         renewalStatus: js.UndefOr[LoadBalancerTlsCertificateRenewalStatus] = js.undefined
     ): LoadBalancerTlsCertificateRenewalSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      domainValidationOptions.foreach(__v => __obj.update("domainValidationOptions", __v.asInstanceOf[js.Any]))
-      renewalStatus.foreach(__v => __obj.update("renewalStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      domainValidationOptions.foreach(__v => __obj.updateDynamic("domainValidationOptions")(__v.asInstanceOf[js.Any]))
+      renewalStatus.foreach(__v => __obj.updateDynamic("renewalStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoadBalancerTlsCertificateRenewalSummary]
     }
   }
@@ -5089,9 +5103,9 @@ package lightsail {
         isAttached: js.UndefOr[Boolean] = js.undefined,
         name: js.UndefOr[ResourceName] = js.undefined
     ): LoadBalancerTlsCertificateSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      isAttached.foreach(__v => __obj.update("isAttached", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      isAttached.foreach(__v => __obj.updateDynamic("isAttached")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoadBalancerTlsCertificateSummary]
     }
   }
@@ -5110,9 +5124,9 @@ package lightsail {
         createdAt: js.UndefOr[IsoDate] = js.undefined,
         message: js.UndefOr[String] = js.undefined
     ): LogEvent = {
-      val __obj = js.Dictionary.empty[js.Any]
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LogEvent]
     }
   }
@@ -5141,14 +5155,14 @@ package lightsail {
         timestamp: js.UndefOr[timestamp] = js.undefined,
         unit: js.UndefOr[MetricUnit] = js.undefined
     ): MetricDatapoint = {
-      val __obj = js.Dictionary.empty[js.Any]
-      average.foreach(__v => __obj.update("average", __v.asInstanceOf[js.Any]))
-      maximum.foreach(__v => __obj.update("maximum", __v.asInstanceOf[js.Any]))
-      minimum.foreach(__v => __obj.update("minimum", __v.asInstanceOf[js.Any]))
-      sampleCount.foreach(__v => __obj.update("sampleCount", __v.asInstanceOf[js.Any]))
-      sum.foreach(__v => __obj.update("sum", __v.asInstanceOf[js.Any]))
-      timestamp.foreach(__v => __obj.update("timestamp", __v.asInstanceOf[js.Any]))
-      unit.foreach(__v => __obj.update("unit", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      average.foreach(__v => __obj.updateDynamic("average")(__v.asInstanceOf[js.Any]))
+      maximum.foreach(__v => __obj.updateDynamic("maximum")(__v.asInstanceOf[js.Any]))
+      minimum.foreach(__v => __obj.updateDynamic("minimum")(__v.asInstanceOf[js.Any]))
+      sampleCount.foreach(__v => __obj.updateDynamic("sampleCount")(__v.asInstanceOf[js.Any]))
+      sum.foreach(__v => __obj.updateDynamic("sum")(__v.asInstanceOf[js.Any]))
+      timestamp.foreach(__v => __obj.updateDynamic("timestamp")(__v.asInstanceOf[js.Any]))
+      unit.foreach(__v => __obj.updateDynamic("unit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MetricDatapoint]
     }
   }
@@ -5237,8 +5251,8 @@ package lightsail {
     def apply(
         gbPerMonthAllocated: js.UndefOr[Int] = js.undefined
     ): MonthlyTransfer = {
-      val __obj = js.Dictionary.empty[js.Any]
-      gbPerMonthAllocated.foreach(__v => __obj.update("gbPerMonthAllocated", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      gbPerMonthAllocated.foreach(__v => __obj.updateDynamic("gbPerMonthAllocated")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MonthlyTransfer]
     }
   }
@@ -5262,7 +5276,7 @@ package lightsail {
         instanceName: ResourceName,
         portInfo: PortInfo
     ): OpenInstancePublicPortsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "instanceName" -> instanceName.asInstanceOf[js.Any],
         "portInfo"     -> portInfo.asInstanceOf[js.Any]
       )
@@ -5280,8 +5294,8 @@ package lightsail {
     def apply(
         operation: js.UndefOr[Operation] = js.undefined
     ): OpenInstancePublicPortsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operation.foreach(__v => __obj.update("operation", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OpenInstancePublicPortsResult]
     }
   }
@@ -5320,19 +5334,19 @@ package lightsail {
         status: js.UndefOr[OperationStatus] = js.undefined,
         statusChangedAt: js.UndefOr[IsoDate] = js.undefined
     ): Operation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      errorCode.foreach(__v => __obj.update("errorCode", __v.asInstanceOf[js.Any]))
-      errorDetails.foreach(__v => __obj.update("errorDetails", __v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
-      isTerminal.foreach(__v => __obj.update("isTerminal", __v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
-      operationDetails.foreach(__v => __obj.update("operationDetails", __v.asInstanceOf[js.Any]))
-      operationType.foreach(__v => __obj.update("operationType", __v.asInstanceOf[js.Any]))
-      resourceName.foreach(__v => __obj.update("resourceName", __v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.update("resourceType", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      statusChangedAt.foreach(__v => __obj.update("statusChangedAt", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      errorCode.foreach(__v => __obj.updateDynamic("errorCode")(__v.asInstanceOf[js.Any]))
+      errorDetails.foreach(__v => __obj.updateDynamic("errorDetails")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      isTerminal.foreach(__v => __obj.updateDynamic("isTerminal")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      operationDetails.foreach(__v => __obj.updateDynamic("operationDetails")(__v.asInstanceOf[js.Any]))
+      operationType.foreach(__v => __obj.updateDynamic("operationType")(__v.asInstanceOf[js.Any]))
+      resourceName.foreach(__v => __obj.updateDynamic("resourceName")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      statusChangedAt.foreach(__v => __obj.updateDynamic("statusChangedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Operation]
     }
   }
@@ -5459,9 +5473,9 @@ package lightsail {
         ciphertext: js.UndefOr[String] = js.undefined,
         keyPairName: js.UndefOr[ResourceName] = js.undefined
     ): PasswordData = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ciphertext.foreach(__v => __obj.update("ciphertext", __v.asInstanceOf[js.Any]))
-      keyPairName.foreach(__v => __obj.update("keyPairName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ciphertext.foreach(__v => __obj.updateDynamic("ciphertext")(__v.asInstanceOf[js.Any]))
+      keyPairName.foreach(__v => __obj.updateDynamic("keyPairName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PasswordData]
     }
   }
@@ -5472,7 +5486,7 @@ package lightsail {
   object PeerVpcRequest {
     def apply(
         ): PeerVpcRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PeerVpcRequest]
     }
@@ -5487,8 +5501,8 @@ package lightsail {
     def apply(
         operation: js.UndefOr[Operation] = js.undefined
     ): PeerVpcResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operation.foreach(__v => __obj.update("operation", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PeerVpcResult]
     }
   }
@@ -5509,10 +5523,10 @@ package lightsail {
         currentApplyDate: js.UndefOr[IsoDate] = js.undefined,
         description: js.UndefOr[NonEmptyString] = js.undefined
     ): PendingMaintenanceAction = {
-      val __obj = js.Dictionary.empty[js.Any]
-      action.foreach(__v => __obj.update("action", __v.asInstanceOf[js.Any]))
-      currentApplyDate.foreach(__v => __obj.update("currentApplyDate", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      action.foreach(__v => __obj.updateDynamic("action")(__v.asInstanceOf[js.Any]))
+      currentApplyDate.foreach(__v => __obj.updateDynamic("currentApplyDate")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PendingMaintenanceAction]
     }
   }
@@ -5533,10 +5547,10 @@ package lightsail {
         engineVersion: js.UndefOr[String] = js.undefined,
         masterUserPassword: js.UndefOr[String] = js.undefined
     ): PendingModifiedRelationalDatabaseValues = {
-      val __obj = js.Dictionary.empty[js.Any]
-      backupRetentionEnabled.foreach(__v => __obj.update("backupRetentionEnabled", __v.asInstanceOf[js.Any]))
-      engineVersion.foreach(__v => __obj.update("engineVersion", __v.asInstanceOf[js.Any]))
-      masterUserPassword.foreach(__v => __obj.update("masterUserPassword", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      backupRetentionEnabled.foreach(__v => __obj.updateDynamic("backupRetentionEnabled")(__v.asInstanceOf[js.Any]))
+      engineVersion.foreach(__v => __obj.updateDynamic("engineVersion")(__v.asInstanceOf[js.Any]))
+      masterUserPassword.foreach(__v => __obj.updateDynamic("masterUserPassword")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PendingModifiedRelationalDatabaseValues]
     }
   }
@@ -5564,10 +5578,10 @@ package lightsail {
         protocol: js.UndefOr[NetworkProtocol] = js.undefined,
         toPort: js.UndefOr[Port] = js.undefined
     ): PortInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      fromPort.foreach(__v => __obj.update("fromPort", __v.asInstanceOf[js.Any]))
-      protocol.foreach(__v => __obj.update("protocol", __v.asInstanceOf[js.Any]))
-      toPort.foreach(__v => __obj.update("toPort", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      fromPort.foreach(__v => __obj.updateDynamic("fromPort")(__v.asInstanceOf[js.Any]))
+      protocol.foreach(__v => __obj.updateDynamic("protocol")(__v.asInstanceOf[js.Any]))
+      toPort.foreach(__v => __obj.updateDynamic("toPort")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PortInfo]
     }
   }
@@ -5599,7 +5613,7 @@ package lightsail {
         instanceName: ResourceName,
         portInfos: PortInfoList
     ): PutInstancePublicPortsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "instanceName" -> instanceName.asInstanceOf[js.Any],
         "portInfos"    -> portInfos.asInstanceOf[js.Any]
       )
@@ -5617,8 +5631,8 @@ package lightsail {
     def apply(
         operation: js.UndefOr[Operation] = js.undefined
     ): PutInstancePublicPortsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operation.foreach(__v => __obj.update("operation", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutInstancePublicPortsResult]
     }
   }
@@ -5632,7 +5646,7 @@ package lightsail {
     def apply(
         instanceName: ResourceName
     ): RebootInstanceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "instanceName" -> instanceName.asInstanceOf[js.Any]
       )
 
@@ -5649,8 +5663,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): RebootInstanceResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RebootInstanceResult]
     }
   }
@@ -5664,7 +5678,7 @@ package lightsail {
     def apply(
         relationalDatabaseName: ResourceName
     ): RebootRelationalDatabaseRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
       )
 
@@ -5681,8 +5695,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): RebootRelationalDatabaseResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RebootRelationalDatabaseResult]
     }
   }
@@ -5717,14 +5731,14 @@ package lightsail {
         name: js.UndefOr[RegionName] = js.undefined,
         relationalDatabaseAvailabilityZones: js.UndefOr[AvailabilityZoneList] = js.undefined
     ): Region = {
-      val __obj = js.Dictionary.empty[js.Any]
-      availabilityZones.foreach(__v => __obj.update("availabilityZones", __v.asInstanceOf[js.Any]))
-      continentCode.foreach(__v => __obj.update("continentCode", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      displayName.foreach(__v => __obj.update("displayName", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      availabilityZones.foreach(__v => __obj.updateDynamic("availabilityZones")(__v.asInstanceOf[js.Any]))
+      continentCode.foreach(__v => __obj.updateDynamic("continentCode")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      displayName.foreach(__v => __obj.updateDynamic("displayName")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       relationalDatabaseAvailabilityZones.foreach(
-        __v => __obj.update("relationalDatabaseAvailabilityZones", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("relationalDatabaseAvailabilityZones")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[Region]
     }
@@ -5826,34 +5840,42 @@ package lightsail {
         supportCode: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): RelationalDatabase = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      backupRetentionEnabled.foreach(__v => __obj.update("backupRetentionEnabled", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      engine.foreach(__v => __obj.update("engine", __v.asInstanceOf[js.Any]))
-      engineVersion.foreach(__v => __obj.update("engineVersion", __v.asInstanceOf[js.Any]))
-      hardware.foreach(__v => __obj.update("hardware", __v.asInstanceOf[js.Any]))
-      latestRestorableTime.foreach(__v => __obj.update("latestRestorableTime", __v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
-      masterDatabaseName.foreach(__v => __obj.update("masterDatabaseName", __v.asInstanceOf[js.Any]))
-      masterEndpoint.foreach(__v => __obj.update("masterEndpoint", __v.asInstanceOf[js.Any]))
-      masterUsername.foreach(__v => __obj.update("masterUsername", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      parameterApplyStatus.foreach(__v => __obj.update("parameterApplyStatus", __v.asInstanceOf[js.Any]))
-      pendingMaintenanceActions.foreach(__v => __obj.update("pendingMaintenanceActions", __v.asInstanceOf[js.Any]))
-      pendingModifiedValues.foreach(__v => __obj.update("pendingModifiedValues", __v.asInstanceOf[js.Any]))
-      preferredBackupWindow.foreach(__v => __obj.update("preferredBackupWindow", __v.asInstanceOf[js.Any]))
-      preferredMaintenanceWindow.foreach(__v => __obj.update("preferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
-      publiclyAccessible.foreach(__v => __obj.update("publiclyAccessible", __v.asInstanceOf[js.Any]))
-      relationalDatabaseBlueprintId.foreach(
-        __v => __obj.update("relationalDatabaseBlueprintId", __v.asInstanceOf[js.Any])
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      backupRetentionEnabled.foreach(__v => __obj.updateDynamic("backupRetentionEnabled")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      engine.foreach(__v => __obj.updateDynamic("engine")(__v.asInstanceOf[js.Any]))
+      engineVersion.foreach(__v => __obj.updateDynamic("engineVersion")(__v.asInstanceOf[js.Any]))
+      hardware.foreach(__v => __obj.updateDynamic("hardware")(__v.asInstanceOf[js.Any]))
+      latestRestorableTime.foreach(__v => __obj.updateDynamic("latestRestorableTime")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      masterDatabaseName.foreach(__v => __obj.updateDynamic("masterDatabaseName")(__v.asInstanceOf[js.Any]))
+      masterEndpoint.foreach(__v => __obj.updateDynamic("masterEndpoint")(__v.asInstanceOf[js.Any]))
+      masterUsername.foreach(__v => __obj.updateDynamic("masterUsername")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      parameterApplyStatus.foreach(__v => __obj.updateDynamic("parameterApplyStatus")(__v.asInstanceOf[js.Any]))
+      pendingMaintenanceActions.foreach(
+        __v => __obj.updateDynamic("pendingMaintenanceActions")(__v.asInstanceOf[js.Any])
       )
-      relationalDatabaseBundleId.foreach(__v => __obj.update("relationalDatabaseBundleId", __v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.update("resourceType", __v.asInstanceOf[js.Any]))
-      secondaryAvailabilityZone.foreach(__v => __obj.update("secondaryAvailabilityZone", __v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.update("state", __v.asInstanceOf[js.Any]))
-      supportCode.foreach(__v => __obj.update("supportCode", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      pendingModifiedValues.foreach(__v => __obj.updateDynamic("pendingModifiedValues")(__v.asInstanceOf[js.Any]))
+      preferredBackupWindow.foreach(__v => __obj.updateDynamic("preferredBackupWindow")(__v.asInstanceOf[js.Any]))
+      preferredMaintenanceWindow.foreach(
+        __v => __obj.updateDynamic("preferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      )
+      publiclyAccessible.foreach(__v => __obj.updateDynamic("publiclyAccessible")(__v.asInstanceOf[js.Any]))
+      relationalDatabaseBlueprintId.foreach(
+        __v => __obj.updateDynamic("relationalDatabaseBlueprintId")(__v.asInstanceOf[js.Any])
+      )
+      relationalDatabaseBundleId.foreach(
+        __v => __obj.updateDynamic("relationalDatabaseBundleId")(__v.asInstanceOf[js.Any])
+      )
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      secondaryAvailabilityZone.foreach(
+        __v => __obj.updateDynamic("secondaryAvailabilityZone")(__v.asInstanceOf[js.Any])
+      )
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RelationalDatabase]
     }
   }
@@ -5880,13 +5902,13 @@ package lightsail {
         engineVersionDescription: js.UndefOr[String] = js.undefined,
         isEngineDefault: js.UndefOr[Boolean] = js.undefined
     ): RelationalDatabaseBlueprint = {
-      val __obj = js.Dictionary.empty[js.Any]
-      blueprintId.foreach(__v => __obj.update("blueprintId", __v.asInstanceOf[js.Any]))
-      engine.foreach(__v => __obj.update("engine", __v.asInstanceOf[js.Any]))
-      engineDescription.foreach(__v => __obj.update("engineDescription", __v.asInstanceOf[js.Any]))
-      engineVersion.foreach(__v => __obj.update("engineVersion", __v.asInstanceOf[js.Any]))
-      engineVersionDescription.foreach(__v => __obj.update("engineVersionDescription", __v.asInstanceOf[js.Any]))
-      isEngineDefault.foreach(__v => __obj.update("isEngineDefault", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      blueprintId.foreach(__v => __obj.updateDynamic("blueprintId")(__v.asInstanceOf[js.Any]))
+      engine.foreach(__v => __obj.updateDynamic("engine")(__v.asInstanceOf[js.Any]))
+      engineDescription.foreach(__v => __obj.updateDynamic("engineDescription")(__v.asInstanceOf[js.Any]))
+      engineVersion.foreach(__v => __obj.updateDynamic("engineVersion")(__v.asInstanceOf[js.Any]))
+      engineVersionDescription.foreach(__v => __obj.updateDynamic("engineVersionDescription")(__v.asInstanceOf[js.Any]))
+      isEngineDefault.foreach(__v => __obj.updateDynamic("isEngineDefault")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RelationalDatabaseBlueprint]
     }
   }
@@ -5919,16 +5941,16 @@ package lightsail {
         ramSizeInGb: js.UndefOr[Float] = js.undefined,
         transferPerMonthInGb: js.UndefOr[Int] = js.undefined
     ): RelationalDatabaseBundle = {
-      val __obj = js.Dictionary.empty[js.Any]
-      bundleId.foreach(__v => __obj.update("bundleId", __v.asInstanceOf[js.Any]))
-      cpuCount.foreach(__v => __obj.update("cpuCount", __v.asInstanceOf[js.Any]))
-      diskSizeInGb.foreach(__v => __obj.update("diskSizeInGb", __v.asInstanceOf[js.Any]))
-      isActive.foreach(__v => __obj.update("isActive", __v.asInstanceOf[js.Any]))
-      isEncrypted.foreach(__v => __obj.update("isEncrypted", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      price.foreach(__v => __obj.update("price", __v.asInstanceOf[js.Any]))
-      ramSizeInGb.foreach(__v => __obj.update("ramSizeInGb", __v.asInstanceOf[js.Any]))
-      transferPerMonthInGb.foreach(__v => __obj.update("transferPerMonthInGb", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      bundleId.foreach(__v => __obj.updateDynamic("bundleId")(__v.asInstanceOf[js.Any]))
+      cpuCount.foreach(__v => __obj.updateDynamic("cpuCount")(__v.asInstanceOf[js.Any]))
+      diskSizeInGb.foreach(__v => __obj.updateDynamic("diskSizeInGb")(__v.asInstanceOf[js.Any]))
+      isActive.foreach(__v => __obj.updateDynamic("isActive")(__v.asInstanceOf[js.Any]))
+      isEncrypted.foreach(__v => __obj.updateDynamic("isEncrypted")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      price.foreach(__v => __obj.updateDynamic("price")(__v.asInstanceOf[js.Any]))
+      ramSizeInGb.foreach(__v => __obj.updateDynamic("ramSizeInGb")(__v.asInstanceOf[js.Any]))
+      transferPerMonthInGb.foreach(__v => __obj.updateDynamic("transferPerMonthInGb")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RelationalDatabaseBundle]
     }
   }
@@ -5947,9 +5969,9 @@ package lightsail {
         address: js.UndefOr[NonEmptyString] = js.undefined,
         port: js.UndefOr[Int] = js.undefined
     ): RelationalDatabaseEndpoint = {
-      val __obj = js.Dictionary.empty[js.Any]
-      address.foreach(__v => __obj.update("address", __v.asInstanceOf[js.Any]))
-      port.foreach(__v => __obj.update("port", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      address.foreach(__v => __obj.updateDynamic("address")(__v.asInstanceOf[js.Any]))
+      port.foreach(__v => __obj.updateDynamic("port")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RelationalDatabaseEndpoint]
     }
   }
@@ -5978,11 +6000,11 @@ package lightsail {
         message: js.UndefOr[String] = js.undefined,
         resource: js.UndefOr[ResourceName] = js.undefined
     ): RelationalDatabaseEvent = {
-      val __obj = js.Dictionary.empty[js.Any]
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      eventCategories.foreach(__v => __obj.update("eventCategories", __v.asInstanceOf[js.Any]))
-      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
-      resource.foreach(__v => __obj.update("resource", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      eventCategories.foreach(__v => __obj.updateDynamic("eventCategories")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      resource.foreach(__v => __obj.updateDynamic("resource")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RelationalDatabaseEvent]
     }
   }
@@ -6003,10 +6025,10 @@ package lightsail {
         diskSizeInGb: js.UndefOr[Int] = js.undefined,
         ramSizeInGb: js.UndefOr[Float] = js.undefined
     ): RelationalDatabaseHardware = {
-      val __obj = js.Dictionary.empty[js.Any]
-      cpuCount.foreach(__v => __obj.update("cpuCount", __v.asInstanceOf[js.Any]))
-      diskSizeInGb.foreach(__v => __obj.update("diskSizeInGb", __v.asInstanceOf[js.Any]))
-      ramSizeInGb.foreach(__v => __obj.update("ramSizeInGb", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      cpuCount.foreach(__v => __obj.updateDynamic("cpuCount")(__v.asInstanceOf[js.Any]))
+      diskSizeInGb.foreach(__v => __obj.updateDynamic("diskSizeInGb")(__v.asInstanceOf[js.Any]))
+      ramSizeInGb.foreach(__v => __obj.updateDynamic("ramSizeInGb")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RelationalDatabaseHardware]
     }
   }
@@ -6057,15 +6079,15 @@ package lightsail {
         parameterName: js.UndefOr[String] = js.undefined,
         parameterValue: js.UndefOr[String] = js.undefined
     ): RelationalDatabaseParameter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      allowedValues.foreach(__v => __obj.update("allowedValues", __v.asInstanceOf[js.Any]))
-      applyMethod.foreach(__v => __obj.update("applyMethod", __v.asInstanceOf[js.Any]))
-      applyType.foreach(__v => __obj.update("applyType", __v.asInstanceOf[js.Any]))
-      dataType.foreach(__v => __obj.update("dataType", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      isModifiable.foreach(__v => __obj.update("isModifiable", __v.asInstanceOf[js.Any]))
-      parameterName.foreach(__v => __obj.update("parameterName", __v.asInstanceOf[js.Any]))
-      parameterValue.foreach(__v => __obj.update("parameterValue", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      allowedValues.foreach(__v => __obj.updateDynamic("allowedValues")(__v.asInstanceOf[js.Any]))
+      applyMethod.foreach(__v => __obj.updateDynamic("applyMethod")(__v.asInstanceOf[js.Any]))
+      applyType.foreach(__v => __obj.updateDynamic("applyType")(__v.asInstanceOf[js.Any]))
+      dataType.foreach(__v => __obj.updateDynamic("dataType")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      isModifiable.foreach(__v => __obj.updateDynamic("isModifiable")(__v.asInstanceOf[js.Any]))
+      parameterName.foreach(__v => __obj.updateDynamic("parameterName")(__v.asInstanceOf[js.Any]))
+      parameterValue.foreach(__v => __obj.updateDynamic("parameterValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RelationalDatabaseParameter]
     }
   }
@@ -6118,26 +6140,30 @@ package lightsail {
         supportCode: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): RelationalDatabaseSnapshot = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      engine.foreach(__v => __obj.update("engine", __v.asInstanceOf[js.Any]))
-      engineVersion.foreach(__v => __obj.update("engineVersion", __v.asInstanceOf[js.Any]))
-      fromRelationalDatabaseArn.foreach(__v => __obj.update("fromRelationalDatabaseArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      engine.foreach(__v => __obj.updateDynamic("engine")(__v.asInstanceOf[js.Any]))
+      engineVersion.foreach(__v => __obj.updateDynamic("engineVersion")(__v.asInstanceOf[js.Any]))
+      fromRelationalDatabaseArn.foreach(
+        __v => __obj.updateDynamic("fromRelationalDatabaseArn")(__v.asInstanceOf[js.Any])
+      )
       fromRelationalDatabaseBlueprintId.foreach(
-        __v => __obj.update("fromRelationalDatabaseBlueprintId", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("fromRelationalDatabaseBlueprintId")(__v.asInstanceOf[js.Any])
       )
       fromRelationalDatabaseBundleId.foreach(
-        __v => __obj.update("fromRelationalDatabaseBundleId", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("fromRelationalDatabaseBundleId")(__v.asInstanceOf[js.Any])
       )
-      fromRelationalDatabaseName.foreach(__v => __obj.update("fromRelationalDatabaseName", __v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.update("resourceType", __v.asInstanceOf[js.Any]))
-      sizeInGb.foreach(__v => __obj.update("sizeInGb", __v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.update("state", __v.asInstanceOf[js.Any]))
-      supportCode.foreach(__v => __obj.update("supportCode", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      fromRelationalDatabaseName.foreach(
+        __v => __obj.updateDynamic("fromRelationalDatabaseName")(__v.asInstanceOf[js.Any])
+      )
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      sizeInGb.foreach(__v => __obj.updateDynamic("sizeInGb")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RelationalDatabaseSnapshot]
     }
   }
@@ -6151,7 +6177,7 @@ package lightsail {
     def apply(
         staticIpName: ResourceName
     ): ReleaseStaticIpRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "staticIpName" -> staticIpName.asInstanceOf[js.Any]
       )
 
@@ -6168,8 +6194,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): ReleaseStaticIpResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReleaseStaticIpResult]
     }
   }
@@ -6188,9 +6214,9 @@ package lightsail {
         availabilityZone: js.UndefOr[String] = js.undefined,
         regionName: js.UndefOr[RegionName] = js.undefined
     ): ResourceLocation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      availabilityZone.foreach(__v => __obj.update("availabilityZone", __v.asInstanceOf[js.Any]))
-      regionName.foreach(__v => __obj.update("regionName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      availabilityZone.foreach(__v => __obj.updateDynamic("availabilityZone")(__v.asInstanceOf[js.Any]))
+      regionName.foreach(__v => __obj.updateDynamic("regionName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceLocation]
     }
   }
@@ -6240,7 +6266,7 @@ package lightsail {
     def apply(
         instanceName: ResourceName
     ): StartInstanceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "instanceName" -> instanceName.asInstanceOf[js.Any]
       )
 
@@ -6257,8 +6283,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): StartInstanceResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartInstanceResult]
     }
   }
@@ -6272,7 +6298,7 @@ package lightsail {
     def apply(
         relationalDatabaseName: ResourceName
     ): StartRelationalDatabaseRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
       )
 
@@ -6289,8 +6315,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): StartRelationalDatabaseResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartRelationalDatabaseResult]
     }
   }
@@ -6323,16 +6349,16 @@ package lightsail {
         resourceType: js.UndefOr[ResourceType] = js.undefined,
         supportCode: js.UndefOr[String] = js.undefined
     ): StaticIp = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      attachedTo.foreach(__v => __obj.update("attachedTo", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      ipAddress.foreach(__v => __obj.update("ipAddress", __v.asInstanceOf[js.Any]))
-      isAttached.foreach(__v => __obj.update("isAttached", __v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      resourceType.foreach(__v => __obj.update("resourceType", __v.asInstanceOf[js.Any]))
-      supportCode.foreach(__v => __obj.update("supportCode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      attachedTo.foreach(__v => __obj.updateDynamic("attachedTo")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      ipAddress.foreach(__v => __obj.updateDynamic("ipAddress")(__v.asInstanceOf[js.Any]))
+      isAttached.foreach(__v => __obj.updateDynamic("isAttached")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StaticIp]
     }
   }
@@ -6348,11 +6374,11 @@ package lightsail {
         instanceName: ResourceName,
         force: js.UndefOr[Boolean] = js.undefined
     ): StopInstanceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "instanceName" -> instanceName.asInstanceOf[js.Any]
       )
 
-      force.foreach(__v => __obj.update("force", __v.asInstanceOf[js.Any]))
+      force.foreach(__v => __obj.updateDynamic("force")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopInstanceRequest]
     }
   }
@@ -6366,8 +6392,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): StopInstanceResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopInstanceResult]
     }
   }
@@ -6383,12 +6409,12 @@ package lightsail {
         relationalDatabaseName: ResourceName,
         relationalDatabaseSnapshotName: js.UndefOr[ResourceName] = js.undefined
     ): StopRelationalDatabaseRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
       )
 
       relationalDatabaseSnapshotName.foreach(
-        __v => __obj.update("relationalDatabaseSnapshotName", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("relationalDatabaseSnapshotName")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[StopRelationalDatabaseRequest]
     }
@@ -6403,8 +6429,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): StopRelationalDatabaseResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopRelationalDatabaseResult]
     }
   }
@@ -6424,9 +6450,9 @@ package lightsail {
         key: js.UndefOr[TagKey] = js.undefined,
         value: js.UndefOr[TagValue] = js.undefined
     ): Tag = {
-      val __obj = js.Dictionary.empty[js.Any]
-      key.foreach(__v => __obj.update("key", __v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      key.foreach(__v => __obj.updateDynamic("key")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tag]
     }
   }
@@ -6442,7 +6468,7 @@ package lightsail {
         resourceName: ResourceName,
         tags: TagList
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceName" -> resourceName.asInstanceOf[js.Any],
         "tags"         -> tags.asInstanceOf[js.Any]
       )
@@ -6460,8 +6486,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): TagResourceResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TagResourceResult]
     }
   }
@@ -6472,7 +6498,7 @@ package lightsail {
   object UnpeerVpcRequest {
     def apply(
         ): UnpeerVpcRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UnpeerVpcRequest]
     }
@@ -6487,8 +6513,8 @@ package lightsail {
     def apply(
         operation: js.UndefOr[Operation] = js.undefined
     ): UnpeerVpcResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operation.foreach(__v => __obj.update("operation", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operation.foreach(__v => __obj.updateDynamic("operation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UnpeerVpcResult]
     }
   }
@@ -6504,7 +6530,7 @@ package lightsail {
         resourceName: ResourceName,
         tagKeys: TagKeyList
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceName" -> resourceName.asInstanceOf[js.Any],
         "tagKeys"      -> tagKeys.asInstanceOf[js.Any]
       )
@@ -6522,8 +6548,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): UntagResourceResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UntagResourceResult]
     }
   }
@@ -6539,7 +6565,7 @@ package lightsail {
         domainEntry: DomainEntry,
         domainName: DomainName
     ): UpdateDomainEntryRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domainEntry" -> domainEntry.asInstanceOf[js.Any],
         "domainName"  -> domainName.asInstanceOf[js.Any]
       )
@@ -6557,8 +6583,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): UpdateDomainEntryResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDomainEntryResult]
     }
   }
@@ -6576,7 +6602,7 @@ package lightsail {
         attributeValue: StringMax256,
         loadBalancerName: ResourceName
     ): UpdateLoadBalancerAttributeRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "attributeName"    -> attributeName.asInstanceOf[js.Any],
         "attributeValue"   -> attributeValue.asInstanceOf[js.Any],
         "loadBalancerName" -> loadBalancerName.asInstanceOf[js.Any]
@@ -6595,8 +6621,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): UpdateLoadBalancerAttributeResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateLoadBalancerAttributeResult]
     }
   }
@@ -6612,7 +6638,7 @@ package lightsail {
         parameters: RelationalDatabaseParameterList,
         relationalDatabaseName: ResourceName
     ): UpdateRelationalDatabaseParametersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "parameters"             -> parameters.asInstanceOf[js.Any],
         "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
       )
@@ -6630,8 +6656,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): UpdateRelationalDatabaseParametersResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRelationalDatabaseParametersResult]
     }
   }
@@ -6661,18 +6687,20 @@ package lightsail {
         publiclyAccessible: js.UndefOr[Boolean] = js.undefined,
         rotateMasterUserPassword: js.UndefOr[Boolean] = js.undefined
     ): UpdateRelationalDatabaseRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "relationalDatabaseName" -> relationalDatabaseName.asInstanceOf[js.Any]
       )
 
-      applyImmediately.foreach(__v => __obj.update("applyImmediately", __v.asInstanceOf[js.Any]))
-      disableBackupRetention.foreach(__v => __obj.update("disableBackupRetention", __v.asInstanceOf[js.Any]))
-      enableBackupRetention.foreach(__v => __obj.update("enableBackupRetention", __v.asInstanceOf[js.Any]))
-      masterUserPassword.foreach(__v => __obj.update("masterUserPassword", __v.asInstanceOf[js.Any]))
-      preferredBackupWindow.foreach(__v => __obj.update("preferredBackupWindow", __v.asInstanceOf[js.Any]))
-      preferredMaintenanceWindow.foreach(__v => __obj.update("preferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
-      publiclyAccessible.foreach(__v => __obj.update("publiclyAccessible", __v.asInstanceOf[js.Any]))
-      rotateMasterUserPassword.foreach(__v => __obj.update("rotateMasterUserPassword", __v.asInstanceOf[js.Any]))
+      applyImmediately.foreach(__v => __obj.updateDynamic("applyImmediately")(__v.asInstanceOf[js.Any]))
+      disableBackupRetention.foreach(__v => __obj.updateDynamic("disableBackupRetention")(__v.asInstanceOf[js.Any]))
+      enableBackupRetention.foreach(__v => __obj.updateDynamic("enableBackupRetention")(__v.asInstanceOf[js.Any]))
+      masterUserPassword.foreach(__v => __obj.updateDynamic("masterUserPassword")(__v.asInstanceOf[js.Any]))
+      preferredBackupWindow.foreach(__v => __obj.updateDynamic("preferredBackupWindow")(__v.asInstanceOf[js.Any]))
+      preferredMaintenanceWindow.foreach(
+        __v => __obj.updateDynamic("preferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      )
+      publiclyAccessible.foreach(__v => __obj.updateDynamic("publiclyAccessible")(__v.asInstanceOf[js.Any]))
+      rotateMasterUserPassword.foreach(__v => __obj.updateDynamic("rotateMasterUserPassword")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRelationalDatabaseRequest]
     }
   }
@@ -6686,8 +6714,8 @@ package lightsail {
     def apply(
         operations: js.UndefOr[OperationList] = js.undefined
     ): UpdateRelationalDatabaseResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      operations.foreach(__v => __obj.update("operations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRelationalDatabaseResult]
     }
   }

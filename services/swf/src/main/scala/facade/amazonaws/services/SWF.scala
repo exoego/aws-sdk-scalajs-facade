@@ -231,7 +231,7 @@ package swf {
         workflowExecution: WorkflowExecution,
         input: js.UndefOr[Data] = js.undefined
     ): ActivityTask = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "activityId"        -> activityId.asInstanceOf[js.Any],
         "activityType"      -> activityType.asInstanceOf[js.Any],
         "startedEventId"    -> startedEventId.asInstanceOf[js.Any],
@@ -239,7 +239,7 @@ package swf {
         "workflowExecution" -> workflowExecution.asInstanceOf[js.Any]
       )
 
-      input.foreach(__v => __obj.update("input", __v.asInstanceOf[js.Any]))
+      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActivityTask]
     }
   }
@@ -258,7 +258,7 @@ package swf {
         activityId: ActivityId,
         decisionTaskCompletedEventId: EventId
     ): ActivityTaskCancelRequestedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "activityId"                   -> activityId.asInstanceOf[js.Any],
         "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any]
       )
@@ -285,14 +285,14 @@ package swf {
         details: js.UndefOr[Data] = js.undefined,
         latestCancelRequestedEventId: js.UndefOr[EventId] = js.undefined
     ): ActivityTaskCanceledEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any],
         "startedEventId"   -> startedEventId.asInstanceOf[js.Any]
       )
 
-      details.foreach(__v => __obj.update("details", __v.asInstanceOf[js.Any]))
+      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
       latestCancelRequestedEventId.foreach(
-        __v => __obj.update("latestCancelRequestedEventId", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("latestCancelRequestedEventId")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ActivityTaskCanceledEventAttributes]
     }
@@ -314,12 +314,12 @@ package swf {
         startedEventId: EventId,
         result: js.UndefOr[Data] = js.undefined
     ): ActivityTaskCompletedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any],
         "startedEventId"   -> startedEventId.asInstanceOf[js.Any]
       )
 
-      result.foreach(__v => __obj.update("result", __v.asInstanceOf[js.Any]))
+      result.foreach(__v => __obj.updateDynamic("result")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActivityTaskCompletedEventAttributes]
     }
   }
@@ -342,13 +342,13 @@ package swf {
         details: js.UndefOr[Data] = js.undefined,
         reason: js.UndefOr[FailureReason] = js.undefined
     ): ActivityTaskFailedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any],
         "startedEventId"   -> startedEventId.asInstanceOf[js.Any]
       )
 
-      details.foreach(__v => __obj.update("details", __v.asInstanceOf[js.Any]))
-      reason.foreach(__v => __obj.update("reason", __v.asInstanceOf[js.Any]))
+      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
+      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActivityTaskFailedEventAttributes]
     }
   }
@@ -385,20 +385,20 @@ package swf {
         startToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
         taskPriority: js.UndefOr[TaskPriority] = js.undefined
     ): ActivityTaskScheduledEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "activityId"                   -> activityId.asInstanceOf[js.Any],
         "activityType"                 -> activityType.asInstanceOf[js.Any],
         "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
         "taskList"                     -> taskList.asInstanceOf[js.Any]
       )
 
-      control.foreach(__v => __obj.update("control", __v.asInstanceOf[js.Any]))
-      heartbeatTimeout.foreach(__v => __obj.update("heartbeatTimeout", __v.asInstanceOf[js.Any]))
-      input.foreach(__v => __obj.update("input", __v.asInstanceOf[js.Any]))
-      scheduleToCloseTimeout.foreach(__v => __obj.update("scheduleToCloseTimeout", __v.asInstanceOf[js.Any]))
-      scheduleToStartTimeout.foreach(__v => __obj.update("scheduleToStartTimeout", __v.asInstanceOf[js.Any]))
-      startToCloseTimeout.foreach(__v => __obj.update("startToCloseTimeout", __v.asInstanceOf[js.Any]))
-      taskPriority.foreach(__v => __obj.update("taskPriority", __v.asInstanceOf[js.Any]))
+      control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
+      heartbeatTimeout.foreach(__v => __obj.updateDynamic("heartbeatTimeout")(__v.asInstanceOf[js.Any]))
+      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
+      scheduleToCloseTimeout.foreach(__v => __obj.updateDynamic("scheduleToCloseTimeout")(__v.asInstanceOf[js.Any]))
+      scheduleToStartTimeout.foreach(__v => __obj.updateDynamic("scheduleToStartTimeout")(__v.asInstanceOf[js.Any]))
+      startToCloseTimeout.foreach(__v => __obj.updateDynamic("startToCloseTimeout")(__v.asInstanceOf[js.Any]))
+      taskPriority.foreach(__v => __obj.updateDynamic("taskPriority")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActivityTaskScheduledEventAttributes]
     }
   }
@@ -417,11 +417,11 @@ package swf {
         scheduledEventId: EventId,
         identity: js.UndefOr[Identity] = js.undefined
     ): ActivityTaskStartedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any]
       )
 
-      identity.foreach(__v => __obj.update("identity", __v.asInstanceOf[js.Any]))
+      identity.foreach(__v => __obj.updateDynamic("identity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActivityTaskStartedEventAttributes]
     }
   }
@@ -438,7 +438,7 @@ package swf {
     def apply(
         cancelRequested: Canceled
     ): ActivityTaskStatus = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "cancelRequested" -> cancelRequested.asInstanceOf[js.Any]
       )
 
@@ -464,13 +464,13 @@ package swf {
         timeoutType: ActivityTaskTimeoutType,
         details: js.UndefOr[LimitedData] = js.undefined
     ): ActivityTaskTimedOutEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any],
         "startedEventId"   -> startedEventId.asInstanceOf[js.Any],
         "timeoutType"      -> timeoutType.asInstanceOf[js.Any]
       )
 
-      details.foreach(__v => __obj.update("details", __v.asInstanceOf[js.Any]))
+      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActivityTaskTimedOutEventAttributes]
     }
   }
@@ -498,7 +498,7 @@ package swf {
         name: Name,
         version: Version
     ): ActivityType = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name"    -> name.asInstanceOf[js.Any],
         "version" -> version.asInstanceOf[js.Any]
       )
@@ -529,18 +529,20 @@ package swf {
         defaultTaskScheduleToStartTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
         defaultTaskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined
     ): ActivityTypeConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      defaultTaskHeartbeatTimeout.foreach(__v => __obj.update("defaultTaskHeartbeatTimeout", __v.asInstanceOf[js.Any]))
-      defaultTaskList.foreach(__v => __obj.update("defaultTaskList", __v.asInstanceOf[js.Any]))
-      defaultTaskPriority.foreach(__v => __obj.update("defaultTaskPriority", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      defaultTaskHeartbeatTimeout.foreach(
+        __v => __obj.updateDynamic("defaultTaskHeartbeatTimeout")(__v.asInstanceOf[js.Any])
+      )
+      defaultTaskList.foreach(__v => __obj.updateDynamic("defaultTaskList")(__v.asInstanceOf[js.Any]))
+      defaultTaskPriority.foreach(__v => __obj.updateDynamic("defaultTaskPriority")(__v.asInstanceOf[js.Any]))
       defaultTaskScheduleToCloseTimeout.foreach(
-        __v => __obj.update("defaultTaskScheduleToCloseTimeout", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("defaultTaskScheduleToCloseTimeout")(__v.asInstanceOf[js.Any])
       )
       defaultTaskScheduleToStartTimeout.foreach(
-        __v => __obj.update("defaultTaskScheduleToStartTimeout", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("defaultTaskScheduleToStartTimeout")(__v.asInstanceOf[js.Any])
       )
       defaultTaskStartToCloseTimeout.foreach(
-        __v => __obj.update("defaultTaskStartToCloseTimeout", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("defaultTaskStartToCloseTimeout")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ActivityTypeConfiguration]
     }
@@ -560,7 +562,7 @@ package swf {
         configuration: ActivityTypeConfiguration,
         typeInfo: ActivityTypeInfo
     ): ActivityTypeDetail = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "configuration" -> configuration.asInstanceOf[js.Any],
         "typeInfo"      -> typeInfo.asInstanceOf[js.Any]
       )
@@ -589,14 +591,14 @@ package swf {
         deprecationDate: js.UndefOr[Timestamp] = js.undefined,
         description: js.UndefOr[Description] = js.undefined
     ): ActivityTypeInfo = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "activityType" -> activityType.asInstanceOf[js.Any],
         "creationDate" -> creationDate.asInstanceOf[js.Any],
         "status"       -> status.asInstanceOf[js.Any]
       )
 
-      deprecationDate.foreach(__v => __obj.update("deprecationDate", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      deprecationDate.foreach(__v => __obj.updateDynamic("deprecationDate")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActivityTypeInfo]
     }
   }
@@ -615,11 +617,11 @@ package swf {
         typeInfos: ActivityTypeInfoList,
         nextPageToken: js.UndefOr[PageToken] = js.undefined
     ): ActivityTypeInfos = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "typeInfos" -> typeInfos.asInstanceOf[js.Any]
       )
 
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActivityTypeInfos]
     }
   }
@@ -642,7 +644,7 @@ package swf {
     def apply(
         timerId: TimerId
     ): CancelTimerDecisionAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "timerId" -> timerId.asInstanceOf[js.Any]
       )
 
@@ -673,7 +675,7 @@ package swf {
         decisionTaskCompletedEventId: EventId,
         timerId: TimerId
     ): CancelTimerFailedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "cause"                        -> cause.asInstanceOf[js.Any],
         "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
         "timerId"                      -> timerId.asInstanceOf[js.Any]
@@ -701,8 +703,8 @@ package swf {
     def apply(
         details: js.UndefOr[Data] = js.undefined
     ): CancelWorkflowExecutionDecisionAttributes = {
-      val __obj = js.Dictionary.empty[js.Any]
-      details.foreach(__v => __obj.update("details", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CancelWorkflowExecutionDecisionAttributes]
     }
   }
@@ -728,7 +730,7 @@ package swf {
         cause: CancelWorkflowExecutionFailedCause,
         decisionTaskCompletedEventId: EventId
     ): CancelWorkflowExecutionFailedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "cause"                        -> cause.asInstanceOf[js.Any],
         "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any]
       )
@@ -765,14 +767,14 @@ package swf {
         workflowType: WorkflowType,
         details: js.UndefOr[Data] = js.undefined
     ): ChildWorkflowExecutionCanceledEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "initiatedEventId"  -> initiatedEventId.asInstanceOf[js.Any],
         "startedEventId"    -> startedEventId.asInstanceOf[js.Any],
         "workflowExecution" -> workflowExecution.asInstanceOf[js.Any],
         "workflowType"      -> workflowType.asInstanceOf[js.Any]
       )
 
-      details.foreach(__v => __obj.update("details", __v.asInstanceOf[js.Any]))
+      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChildWorkflowExecutionCanceledEventAttributes]
     }
   }
@@ -797,14 +799,14 @@ package swf {
         workflowType: WorkflowType,
         result: js.UndefOr[Data] = js.undefined
     ): ChildWorkflowExecutionCompletedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "initiatedEventId"  -> initiatedEventId.asInstanceOf[js.Any],
         "startedEventId"    -> startedEventId.asInstanceOf[js.Any],
         "workflowExecution" -> workflowExecution.asInstanceOf[js.Any],
         "workflowType"      -> workflowType.asInstanceOf[js.Any]
       )
 
-      result.foreach(__v => __obj.update("result", __v.asInstanceOf[js.Any]))
+      result.foreach(__v => __obj.updateDynamic("result")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChildWorkflowExecutionCompletedEventAttributes]
     }
   }
@@ -831,15 +833,15 @@ package swf {
         details: js.UndefOr[Data] = js.undefined,
         reason: js.UndefOr[FailureReason] = js.undefined
     ): ChildWorkflowExecutionFailedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "initiatedEventId"  -> initiatedEventId.asInstanceOf[js.Any],
         "startedEventId"    -> startedEventId.asInstanceOf[js.Any],
         "workflowExecution" -> workflowExecution.asInstanceOf[js.Any],
         "workflowType"      -> workflowType.asInstanceOf[js.Any]
       )
 
-      details.foreach(__v => __obj.update("details", __v.asInstanceOf[js.Any]))
-      reason.foreach(__v => __obj.update("reason", __v.asInstanceOf[js.Any]))
+      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
+      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChildWorkflowExecutionFailedEventAttributes]
     }
   }
@@ -860,7 +862,7 @@ package swf {
         workflowExecution: WorkflowExecution,
         workflowType: WorkflowType
     ): ChildWorkflowExecutionStartedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "initiatedEventId"  -> initiatedEventId.asInstanceOf[js.Any],
         "workflowExecution" -> workflowExecution.asInstanceOf[js.Any],
         "workflowType"      -> workflowType.asInstanceOf[js.Any]
@@ -888,7 +890,7 @@ package swf {
         workflowExecution: WorkflowExecution,
         workflowType: WorkflowType
     ): ChildWorkflowExecutionTerminatedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "initiatedEventId"  -> initiatedEventId.asInstanceOf[js.Any],
         "startedEventId"    -> startedEventId.asInstanceOf[js.Any],
         "workflowExecution" -> workflowExecution.asInstanceOf[js.Any],
@@ -919,7 +921,7 @@ package swf {
         workflowExecution: WorkflowExecution,
         workflowType: WorkflowType
     ): ChildWorkflowExecutionTimedOutEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "initiatedEventId"  -> initiatedEventId.asInstanceOf[js.Any],
         "startedEventId"    -> startedEventId.asInstanceOf[js.Any],
         "timeoutType"       -> timeoutType.asInstanceOf[js.Any],
@@ -954,7 +956,7 @@ package swf {
     def apply(
         status: CloseStatus
     ): CloseStatusFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "status" -> status.asInstanceOf[js.Any]
       )
 
@@ -980,8 +982,8 @@ package swf {
     def apply(
         result: js.UndefOr[Data] = js.undefined
     ): CompleteWorkflowExecutionDecisionAttributes = {
-      val __obj = js.Dictionary.empty[js.Any]
-      result.foreach(__v => __obj.update("result", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      result.foreach(__v => __obj.updateDynamic("result")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CompleteWorkflowExecutionDecisionAttributes]
     }
   }
@@ -1007,7 +1009,7 @@ package swf {
         cause: CompleteWorkflowExecutionFailedCause,
         decisionTaskCompletedEventId: EventId
     ): CompleteWorkflowExecutionFailedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "cause"                        -> cause.asInstanceOf[js.Any],
         "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any]
       )
@@ -1053,18 +1055,18 @@ package swf {
         taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
         workflowTypeVersion: js.UndefOr[Version] = js.undefined
     ): ContinueAsNewWorkflowExecutionDecisionAttributes = {
-      val __obj = js.Dictionary.empty[js.Any]
-      childPolicy.foreach(__v => __obj.update("childPolicy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      childPolicy.foreach(__v => __obj.updateDynamic("childPolicy")(__v.asInstanceOf[js.Any]))
       executionStartToCloseTimeout.foreach(
-        __v => __obj.update("executionStartToCloseTimeout", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
       )
-      input.foreach(__v => __obj.update("input", __v.asInstanceOf[js.Any]))
-      lambdaRole.foreach(__v => __obj.update("lambdaRole", __v.asInstanceOf[js.Any]))
-      tagList.foreach(__v => __obj.update("tagList", __v.asInstanceOf[js.Any]))
-      taskList.foreach(__v => __obj.update("taskList", __v.asInstanceOf[js.Any]))
-      taskPriority.foreach(__v => __obj.update("taskPriority", __v.asInstanceOf[js.Any]))
-      taskStartToCloseTimeout.foreach(__v => __obj.update("taskStartToCloseTimeout", __v.asInstanceOf[js.Any]))
-      workflowTypeVersion.foreach(__v => __obj.update("workflowTypeVersion", __v.asInstanceOf[js.Any]))
+      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
+      lambdaRole.foreach(__v => __obj.updateDynamic("lambdaRole")(__v.asInstanceOf[js.Any]))
+      tagList.foreach(__v => __obj.updateDynamic("tagList")(__v.asInstanceOf[js.Any]))
+      taskList.foreach(__v => __obj.updateDynamic("taskList")(__v.asInstanceOf[js.Any]))
+      taskPriority.foreach(__v => __obj.updateDynamic("taskPriority")(__v.asInstanceOf[js.Any]))
+      taskStartToCloseTimeout.foreach(__v => __obj.updateDynamic("taskStartToCloseTimeout")(__v.asInstanceOf[js.Any]))
+      workflowTypeVersion.foreach(__v => __obj.updateDynamic("workflowTypeVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContinueAsNewWorkflowExecutionDecisionAttributes]
     }
   }
@@ -1109,7 +1111,7 @@ package swf {
         cause: ContinueAsNewWorkflowExecutionFailedCause,
         decisionTaskCompletedEventId: EventId
     ): ContinueAsNewWorkflowExecutionFailedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "cause"                        -> cause.asInstanceOf[js.Any],
         "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any]
       )
@@ -1139,16 +1141,16 @@ package swf {
         tagFilter: js.UndefOr[TagFilter] = js.undefined,
         typeFilter: js.UndefOr[WorkflowTypeFilter] = js.undefined
     ): CountClosedWorkflowExecutionsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domain" -> domain.asInstanceOf[js.Any]
       )
 
-      closeStatusFilter.foreach(__v => __obj.update("closeStatusFilter", __v.asInstanceOf[js.Any]))
-      closeTimeFilter.foreach(__v => __obj.update("closeTimeFilter", __v.asInstanceOf[js.Any]))
-      executionFilter.foreach(__v => __obj.update("executionFilter", __v.asInstanceOf[js.Any]))
-      startTimeFilter.foreach(__v => __obj.update("startTimeFilter", __v.asInstanceOf[js.Any]))
-      tagFilter.foreach(__v => __obj.update("tagFilter", __v.asInstanceOf[js.Any]))
-      typeFilter.foreach(__v => __obj.update("typeFilter", __v.asInstanceOf[js.Any]))
+      closeStatusFilter.foreach(__v => __obj.updateDynamic("closeStatusFilter")(__v.asInstanceOf[js.Any]))
+      closeTimeFilter.foreach(__v => __obj.updateDynamic("closeTimeFilter")(__v.asInstanceOf[js.Any]))
+      executionFilter.foreach(__v => __obj.updateDynamic("executionFilter")(__v.asInstanceOf[js.Any]))
+      startTimeFilter.foreach(__v => __obj.updateDynamic("startTimeFilter")(__v.asInstanceOf[js.Any]))
+      tagFilter.foreach(__v => __obj.updateDynamic("tagFilter")(__v.asInstanceOf[js.Any]))
+      typeFilter.foreach(__v => __obj.updateDynamic("typeFilter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CountClosedWorkflowExecutionsInput]
     }
   }
@@ -1170,14 +1172,14 @@ package swf {
         tagFilter: js.UndefOr[TagFilter] = js.undefined,
         typeFilter: js.UndefOr[WorkflowTypeFilter] = js.undefined
     ): CountOpenWorkflowExecutionsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domain"          -> domain.asInstanceOf[js.Any],
         "startTimeFilter" -> startTimeFilter.asInstanceOf[js.Any]
       )
 
-      executionFilter.foreach(__v => __obj.update("executionFilter", __v.asInstanceOf[js.Any]))
-      tagFilter.foreach(__v => __obj.update("tagFilter", __v.asInstanceOf[js.Any]))
-      typeFilter.foreach(__v => __obj.update("typeFilter", __v.asInstanceOf[js.Any]))
+      executionFilter.foreach(__v => __obj.updateDynamic("executionFilter")(__v.asInstanceOf[js.Any]))
+      tagFilter.foreach(__v => __obj.updateDynamic("tagFilter")(__v.asInstanceOf[js.Any]))
+      typeFilter.foreach(__v => __obj.updateDynamic("typeFilter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CountOpenWorkflowExecutionsInput]
     }
   }
@@ -1193,7 +1195,7 @@ package swf {
         domain: DomainName,
         taskList: TaskList
     ): CountPendingActivityTasksInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domain"   -> domain.asInstanceOf[js.Any],
         "taskList" -> taskList.asInstanceOf[js.Any]
       )
@@ -1213,7 +1215,7 @@ package swf {
         domain: DomainName,
         taskList: TaskList
     ): CountPendingDecisionTasksInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domain"   -> domain.asInstanceOf[js.Any],
         "taskList" -> taskList.asInstanceOf[js.Any]
       )
@@ -1318,48 +1320,48 @@ package swf {
           js.undefined,
         startTimerDecisionAttributes: js.UndefOr[StartTimerDecisionAttributes] = js.undefined
     ): Decision = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "decisionType" -> decisionType.asInstanceOf[js.Any]
       )
 
       cancelTimerDecisionAttributes.foreach(
-        __v => __obj.update("cancelTimerDecisionAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("cancelTimerDecisionAttributes")(__v.asInstanceOf[js.Any])
       )
       cancelWorkflowExecutionDecisionAttributes.foreach(
-        __v => __obj.update("cancelWorkflowExecutionDecisionAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("cancelWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
       )
       completeWorkflowExecutionDecisionAttributes.foreach(
-        __v => __obj.update("completeWorkflowExecutionDecisionAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("completeWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
       )
       continueAsNewWorkflowExecutionDecisionAttributes.foreach(
-        __v => __obj.update("continueAsNewWorkflowExecutionDecisionAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("continueAsNewWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
       )
       failWorkflowExecutionDecisionAttributes.foreach(
-        __v => __obj.update("failWorkflowExecutionDecisionAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("failWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
       )
       recordMarkerDecisionAttributes.foreach(
-        __v => __obj.update("recordMarkerDecisionAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("recordMarkerDecisionAttributes")(__v.asInstanceOf[js.Any])
       )
       requestCancelActivityTaskDecisionAttributes.foreach(
-        __v => __obj.update("requestCancelActivityTaskDecisionAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("requestCancelActivityTaskDecisionAttributes")(__v.asInstanceOf[js.Any])
       )
       requestCancelExternalWorkflowExecutionDecisionAttributes.foreach(
-        __v => __obj.update("requestCancelExternalWorkflowExecutionDecisionAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("requestCancelExternalWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
       )
       scheduleActivityTaskDecisionAttributes.foreach(
-        __v => __obj.update("scheduleActivityTaskDecisionAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("scheduleActivityTaskDecisionAttributes")(__v.asInstanceOf[js.Any])
       )
       scheduleLambdaFunctionDecisionAttributes.foreach(
-        __v => __obj.update("scheduleLambdaFunctionDecisionAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("scheduleLambdaFunctionDecisionAttributes")(__v.asInstanceOf[js.Any])
       )
       signalExternalWorkflowExecutionDecisionAttributes.foreach(
-        __v => __obj.update("signalExternalWorkflowExecutionDecisionAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("signalExternalWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
       )
       startChildWorkflowExecutionDecisionAttributes.foreach(
-        __v => __obj.update("startChildWorkflowExecutionDecisionAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("startChildWorkflowExecutionDecisionAttributes")(__v.asInstanceOf[js.Any])
       )
       startTimerDecisionAttributes.foreach(
-        __v => __obj.update("startTimerDecisionAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("startTimerDecisionAttributes")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[Decision]
     }
@@ -1389,7 +1391,7 @@ package swf {
         nextPageToken: js.UndefOr[PageToken] = js.undefined,
         previousStartedEventId: js.UndefOr[EventId] = js.undefined
     ): DecisionTask = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "events"            -> events.asInstanceOf[js.Any],
         "startedEventId"    -> startedEventId.asInstanceOf[js.Any],
         "taskToken"         -> taskToken.asInstanceOf[js.Any],
@@ -1397,8 +1399,8 @@ package swf {
         "workflowType"      -> workflowType.asInstanceOf[js.Any]
       )
 
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
-      previousStartedEventId.foreach(__v => __obj.update("previousStartedEventId", __v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
+      previousStartedEventId.foreach(__v => __obj.updateDynamic("previousStartedEventId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DecisionTask]
     }
   }
@@ -1419,12 +1421,12 @@ package swf {
         startedEventId: EventId,
         executionContext: js.UndefOr[Data] = js.undefined
     ): DecisionTaskCompletedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any],
         "startedEventId"   -> startedEventId.asInstanceOf[js.Any]
       )
 
-      executionContext.foreach(__v => __obj.update("executionContext", __v.asInstanceOf[js.Any]))
+      executionContext.foreach(__v => __obj.updateDynamic("executionContext")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DecisionTaskCompletedEventAttributes]
     }
   }
@@ -1445,12 +1447,12 @@ package swf {
         startToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
         taskPriority: js.UndefOr[TaskPriority] = js.undefined
     ): DecisionTaskScheduledEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "taskList" -> taskList.asInstanceOf[js.Any]
       )
 
-      startToCloseTimeout.foreach(__v => __obj.update("startToCloseTimeout", __v.asInstanceOf[js.Any]))
-      taskPriority.foreach(__v => __obj.update("taskPriority", __v.asInstanceOf[js.Any]))
+      startToCloseTimeout.foreach(__v => __obj.updateDynamic("startToCloseTimeout")(__v.asInstanceOf[js.Any]))
+      taskPriority.foreach(__v => __obj.updateDynamic("taskPriority")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DecisionTaskScheduledEventAttributes]
     }
   }
@@ -1469,11 +1471,11 @@ package swf {
         scheduledEventId: EventId,
         identity: js.UndefOr[Identity] = js.undefined
     ): DecisionTaskStartedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any]
       )
 
-      identity.foreach(__v => __obj.update("identity", __v.asInstanceOf[js.Any]))
+      identity.foreach(__v => __obj.updateDynamic("identity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DecisionTaskStartedEventAttributes]
     }
   }
@@ -1494,7 +1496,7 @@ package swf {
         startedEventId: EventId,
         timeoutType: DecisionTaskTimeoutType
     ): DecisionTaskTimedOutEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any],
         "startedEventId"   -> startedEventId.asInstanceOf[js.Any],
         "timeoutType"      -> timeoutType.asInstanceOf[js.Any]
@@ -1555,7 +1557,7 @@ package swf {
         activityType: ActivityType,
         domain: DomainName
     ): DeprecateActivityTypeInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "activityType" -> activityType.asInstanceOf[js.Any],
         "domain"       -> domain.asInstanceOf[js.Any]
       )
@@ -1573,7 +1575,7 @@ package swf {
     def apply(
         name: DomainName
     ): DeprecateDomainInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
 
@@ -1592,7 +1594,7 @@ package swf {
         domain: DomainName,
         workflowType: WorkflowType
     ): DeprecateWorkflowTypeInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domain"       -> domain.asInstanceOf[js.Any],
         "workflowType" -> workflowType.asInstanceOf[js.Any]
       )
@@ -1612,7 +1614,7 @@ package swf {
         activityType: ActivityType,
         domain: DomainName
     ): DescribeActivityTypeInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "activityType" -> activityType.asInstanceOf[js.Any],
         "domain"       -> domain.asInstanceOf[js.Any]
       )
@@ -1630,7 +1632,7 @@ package swf {
     def apply(
         name: DomainName
     ): DescribeDomainInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
 
@@ -1649,7 +1651,7 @@ package swf {
         domain: DomainName,
         execution: WorkflowExecution
     ): DescribeWorkflowExecutionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domain"    -> domain.asInstanceOf[js.Any],
         "execution" -> execution.asInstanceOf[js.Any]
       )
@@ -1669,7 +1671,7 @@ package swf {
         domain: DomainName,
         workflowType: WorkflowType
     ): DescribeWorkflowTypeInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domain"       -> domain.asInstanceOf[js.Any],
         "workflowType" -> workflowType.asInstanceOf[js.Any]
       )
@@ -1690,7 +1692,7 @@ package swf {
     def apply(
         workflowExecutionRetentionPeriodInDays: DurationInDays
     ): DomainConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "workflowExecutionRetentionPeriodInDays" -> workflowExecutionRetentionPeriodInDays.asInstanceOf[js.Any]
       )
 
@@ -1712,7 +1714,7 @@ package swf {
         configuration: DomainConfiguration,
         domainInfo: DomainInfo
     ): DomainDetail = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "configuration" -> configuration.asInstanceOf[js.Any],
         "domainInfo"    -> domainInfo.asInstanceOf[js.Any]
       )
@@ -1739,13 +1741,13 @@ package swf {
         arn: js.UndefOr[Arn] = js.undefined,
         description: js.UndefOr[Description] = js.undefined
     ): DomainInfo = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name"   -> name.asInstanceOf[js.Any],
         "status" -> status.asInstanceOf[js.Any]
       )
 
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainInfo]
     }
   }
@@ -1764,11 +1766,11 @@ package swf {
         domainInfos: DomainInfoList,
         nextPageToken: js.UndefOr[PageToken] = js.undefined
     ): DomainInfos = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domainInfos" -> domainInfos.asInstanceOf[js.Any]
       )
 
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainInfos]
     }
   }
@@ -1910,11 +1912,11 @@ package swf {
         oldestDate: Timestamp,
         latestDate: js.UndefOr[Timestamp] = js.undefined
     ): ExecutionTimeFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "oldestDate" -> oldestDate.asInstanceOf[js.Any]
       )
 
-      latestDate.foreach(__v => __obj.update("latestDate", __v.asInstanceOf[js.Any]))
+      latestDate.foreach(__v => __obj.updateDynamic("latestDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExecutionTimeFilter]
     }
   }
@@ -1933,7 +1935,7 @@ package swf {
         initiatedEventId: EventId,
         workflowExecution: WorkflowExecution
     ): ExternalWorkflowExecutionCancelRequestedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "initiatedEventId"  -> initiatedEventId.asInstanceOf[js.Any],
         "workflowExecution" -> workflowExecution.asInstanceOf[js.Any]
       )
@@ -1956,7 +1958,7 @@ package swf {
         initiatedEventId: EventId,
         workflowExecution: WorkflowExecution
     ): ExternalWorkflowExecutionSignaledEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "initiatedEventId"  -> initiatedEventId.asInstanceOf[js.Any],
         "workflowExecution" -> workflowExecution.asInstanceOf[js.Any]
       )
@@ -1985,9 +1987,9 @@ package swf {
         details: js.UndefOr[Data] = js.undefined,
         reason: js.UndefOr[FailureReason] = js.undefined
     ): FailWorkflowExecutionDecisionAttributes = {
-      val __obj = js.Dictionary.empty[js.Any]
-      details.foreach(__v => __obj.update("details", __v.asInstanceOf[js.Any]))
-      reason.foreach(__v => __obj.update("reason", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
+      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FailWorkflowExecutionDecisionAttributes]
     }
   }
@@ -2013,7 +2015,7 @@ package swf {
         cause: FailWorkflowExecutionFailedCause,
         decisionTaskCompletedEventId: EventId
     ): FailWorkflowExecutionFailedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "cause"                        -> cause.asInstanceOf[js.Any],
         "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any]
       )
@@ -2039,14 +2041,14 @@ package swf {
         nextPageToken: js.UndefOr[PageToken] = js.undefined,
         reverseOrder: js.UndefOr[ReverseOrder] = js.undefined
     ): GetWorkflowExecutionHistoryInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domain"    -> domain.asInstanceOf[js.Any],
         "execution" -> execution.asInstanceOf[js.Any]
       )
 
-      maximumPageSize.foreach(__v => __obj.update("maximumPageSize", __v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
-      reverseOrder.foreach(__v => __obj.update("reverseOrder", __v.asInstanceOf[js.Any]))
+      maximumPageSize.foreach(__v => __obj.updateDynamic("maximumPageSize")(__v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
+      reverseOrder.foreach(__v => __obj.updateDynamic("reverseOrder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetWorkflowExecutionHistoryInput]
     }
   }
@@ -2065,11 +2067,11 @@ package swf {
         events: HistoryEventList,
         nextPageToken: js.UndefOr[PageToken] = js.undefined
     ): History = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "events" -> events.asInstanceOf[js.Any]
       )
 
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[History]
     }
   }
@@ -2291,169 +2293,176 @@ package swf {
           js.undefined,
         workflowExecutionTimedOutEventAttributes: js.UndefOr[WorkflowExecutionTimedOutEventAttributes] = js.undefined
     ): HistoryEvent = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "eventId"        -> eventId.asInstanceOf[js.Any],
         "eventTimestamp" -> eventTimestamp.asInstanceOf[js.Any],
         "eventType"      -> eventType.asInstanceOf[js.Any]
       )
 
       activityTaskCancelRequestedEventAttributes.foreach(
-        __v => __obj.update("activityTaskCancelRequestedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("activityTaskCancelRequestedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       activityTaskCanceledEventAttributes.foreach(
-        __v => __obj.update("activityTaskCanceledEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("activityTaskCanceledEventAttributes")(__v.asInstanceOf[js.Any])
       )
       activityTaskCompletedEventAttributes.foreach(
-        __v => __obj.update("activityTaskCompletedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("activityTaskCompletedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       activityTaskFailedEventAttributes.foreach(
-        __v => __obj.update("activityTaskFailedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("activityTaskFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       activityTaskScheduledEventAttributes.foreach(
-        __v => __obj.update("activityTaskScheduledEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("activityTaskScheduledEventAttributes")(__v.asInstanceOf[js.Any])
       )
       activityTaskStartedEventAttributes.foreach(
-        __v => __obj.update("activityTaskStartedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("activityTaskStartedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       activityTaskTimedOutEventAttributes.foreach(
-        __v => __obj.update("activityTaskTimedOutEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("activityTaskTimedOutEventAttributes")(__v.asInstanceOf[js.Any])
       )
       cancelTimerFailedEventAttributes.foreach(
-        __v => __obj.update("cancelTimerFailedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("cancelTimerFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       cancelWorkflowExecutionFailedEventAttributes.foreach(
-        __v => __obj.update("cancelWorkflowExecutionFailedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("cancelWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       childWorkflowExecutionCanceledEventAttributes.foreach(
-        __v => __obj.update("childWorkflowExecutionCanceledEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("childWorkflowExecutionCanceledEventAttributes")(__v.asInstanceOf[js.Any])
       )
       childWorkflowExecutionCompletedEventAttributes.foreach(
-        __v => __obj.update("childWorkflowExecutionCompletedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("childWorkflowExecutionCompletedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       childWorkflowExecutionFailedEventAttributes.foreach(
-        __v => __obj.update("childWorkflowExecutionFailedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("childWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       childWorkflowExecutionStartedEventAttributes.foreach(
-        __v => __obj.update("childWorkflowExecutionStartedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("childWorkflowExecutionStartedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       childWorkflowExecutionTerminatedEventAttributes.foreach(
-        __v => __obj.update("childWorkflowExecutionTerminatedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("childWorkflowExecutionTerminatedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       childWorkflowExecutionTimedOutEventAttributes.foreach(
-        __v => __obj.update("childWorkflowExecutionTimedOutEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("childWorkflowExecutionTimedOutEventAttributes")(__v.asInstanceOf[js.Any])
       )
       completeWorkflowExecutionFailedEventAttributes.foreach(
-        __v => __obj.update("completeWorkflowExecutionFailedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("completeWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       continueAsNewWorkflowExecutionFailedEventAttributes.foreach(
-        __v => __obj.update("continueAsNewWorkflowExecutionFailedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("continueAsNewWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       decisionTaskCompletedEventAttributes.foreach(
-        __v => __obj.update("decisionTaskCompletedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("decisionTaskCompletedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       decisionTaskScheduledEventAttributes.foreach(
-        __v => __obj.update("decisionTaskScheduledEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("decisionTaskScheduledEventAttributes")(__v.asInstanceOf[js.Any])
       )
       decisionTaskStartedEventAttributes.foreach(
-        __v => __obj.update("decisionTaskStartedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("decisionTaskStartedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       decisionTaskTimedOutEventAttributes.foreach(
-        __v => __obj.update("decisionTaskTimedOutEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("decisionTaskTimedOutEventAttributes")(__v.asInstanceOf[js.Any])
       )
       externalWorkflowExecutionCancelRequestedEventAttributes.foreach(
-        __v => __obj.update("externalWorkflowExecutionCancelRequestedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("externalWorkflowExecutionCancelRequestedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       externalWorkflowExecutionSignaledEventAttributes.foreach(
-        __v => __obj.update("externalWorkflowExecutionSignaledEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("externalWorkflowExecutionSignaledEventAttributes")(__v.asInstanceOf[js.Any])
       )
       failWorkflowExecutionFailedEventAttributes.foreach(
-        __v => __obj.update("failWorkflowExecutionFailedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("failWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       lambdaFunctionCompletedEventAttributes.foreach(
-        __v => __obj.update("lambdaFunctionCompletedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("lambdaFunctionCompletedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       lambdaFunctionFailedEventAttributes.foreach(
-        __v => __obj.update("lambdaFunctionFailedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("lambdaFunctionFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       lambdaFunctionScheduledEventAttributes.foreach(
-        __v => __obj.update("lambdaFunctionScheduledEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("lambdaFunctionScheduledEventAttributes")(__v.asInstanceOf[js.Any])
       )
       lambdaFunctionStartedEventAttributes.foreach(
-        __v => __obj.update("lambdaFunctionStartedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("lambdaFunctionStartedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       lambdaFunctionTimedOutEventAttributes.foreach(
-        __v => __obj.update("lambdaFunctionTimedOutEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("lambdaFunctionTimedOutEventAttributes")(__v.asInstanceOf[js.Any])
       )
       markerRecordedEventAttributes.foreach(
-        __v => __obj.update("markerRecordedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("markerRecordedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       recordMarkerFailedEventAttributes.foreach(
-        __v => __obj.update("recordMarkerFailedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("recordMarkerFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       requestCancelActivityTaskFailedEventAttributes.foreach(
-        __v => __obj.update("requestCancelActivityTaskFailedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("requestCancelActivityTaskFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       requestCancelExternalWorkflowExecutionFailedEventAttributes.foreach(
-        __v => __obj.update("requestCancelExternalWorkflowExecutionFailedEventAttributes", __v.asInstanceOf[js.Any])
+        __v =>
+          __obj.updateDynamic("requestCancelExternalWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       requestCancelExternalWorkflowExecutionInitiatedEventAttributes.foreach(
-        __v => __obj.update("requestCancelExternalWorkflowExecutionInitiatedEventAttributes", __v.asInstanceOf[js.Any])
+        __v =>
+          __obj
+            .updateDynamic("requestCancelExternalWorkflowExecutionInitiatedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       scheduleActivityTaskFailedEventAttributes.foreach(
-        __v => __obj.update("scheduleActivityTaskFailedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("scheduleActivityTaskFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       scheduleLambdaFunctionFailedEventAttributes.foreach(
-        __v => __obj.update("scheduleLambdaFunctionFailedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("scheduleLambdaFunctionFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       signalExternalWorkflowExecutionFailedEventAttributes.foreach(
-        __v => __obj.update("signalExternalWorkflowExecutionFailedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("signalExternalWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       signalExternalWorkflowExecutionInitiatedEventAttributes.foreach(
-        __v => __obj.update("signalExternalWorkflowExecutionInitiatedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("signalExternalWorkflowExecutionInitiatedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       startChildWorkflowExecutionFailedEventAttributes.foreach(
-        __v => __obj.update("startChildWorkflowExecutionFailedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("startChildWorkflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       startChildWorkflowExecutionInitiatedEventAttributes.foreach(
-        __v => __obj.update("startChildWorkflowExecutionInitiatedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("startChildWorkflowExecutionInitiatedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       startLambdaFunctionFailedEventAttributes.foreach(
-        __v => __obj.update("startLambdaFunctionFailedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("startLambdaFunctionFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       startTimerFailedEventAttributes.foreach(
-        __v => __obj.update("startTimerFailedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("startTimerFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       timerCanceledEventAttributes.foreach(
-        __v => __obj.update("timerCanceledEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("timerCanceledEventAttributes")(__v.asInstanceOf[js.Any])
       )
-      timerFiredEventAttributes.foreach(__v => __obj.update("timerFiredEventAttributes", __v.asInstanceOf[js.Any]))
-      timerStartedEventAttributes.foreach(__v => __obj.update("timerStartedEventAttributes", __v.asInstanceOf[js.Any]))
+      timerFiredEventAttributes.foreach(
+        __v => __obj.updateDynamic("timerFiredEventAttributes")(__v.asInstanceOf[js.Any])
+      )
+      timerStartedEventAttributes.foreach(
+        __v => __obj.updateDynamic("timerStartedEventAttributes")(__v.asInstanceOf[js.Any])
+      )
       workflowExecutionCancelRequestedEventAttributes.foreach(
-        __v => __obj.update("workflowExecutionCancelRequestedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("workflowExecutionCancelRequestedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       workflowExecutionCanceledEventAttributes.foreach(
-        __v => __obj.update("workflowExecutionCanceledEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("workflowExecutionCanceledEventAttributes")(__v.asInstanceOf[js.Any])
       )
       workflowExecutionCompletedEventAttributes.foreach(
-        __v => __obj.update("workflowExecutionCompletedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("workflowExecutionCompletedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       workflowExecutionContinuedAsNewEventAttributes.foreach(
-        __v => __obj.update("workflowExecutionContinuedAsNewEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("workflowExecutionContinuedAsNewEventAttributes")(__v.asInstanceOf[js.Any])
       )
       workflowExecutionFailedEventAttributes.foreach(
-        __v => __obj.update("workflowExecutionFailedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("workflowExecutionFailedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       workflowExecutionSignaledEventAttributes.foreach(
-        __v => __obj.update("workflowExecutionSignaledEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("workflowExecutionSignaledEventAttributes")(__v.asInstanceOf[js.Any])
       )
       workflowExecutionStartedEventAttributes.foreach(
-        __v => __obj.update("workflowExecutionStartedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("workflowExecutionStartedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       workflowExecutionTerminatedEventAttributes.foreach(
-        __v => __obj.update("workflowExecutionTerminatedEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("workflowExecutionTerminatedEventAttributes")(__v.asInstanceOf[js.Any])
       )
       workflowExecutionTimedOutEventAttributes.foreach(
-        __v => __obj.update("workflowExecutionTimedOutEventAttributes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("workflowExecutionTimedOutEventAttributes")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[HistoryEvent]
     }
@@ -2475,12 +2484,12 @@ package swf {
         startedEventId: EventId,
         result: js.UndefOr[Data] = js.undefined
     ): LambdaFunctionCompletedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any],
         "startedEventId"   -> startedEventId.asInstanceOf[js.Any]
       )
 
-      result.foreach(__v => __obj.update("result", __v.asInstanceOf[js.Any]))
+      result.foreach(__v => __obj.updateDynamic("result")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LambdaFunctionCompletedEventAttributes]
     }
   }
@@ -2503,13 +2512,13 @@ package swf {
         details: js.UndefOr[Data] = js.undefined,
         reason: js.UndefOr[FailureReason] = js.undefined
     ): LambdaFunctionFailedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any],
         "startedEventId"   -> startedEventId.asInstanceOf[js.Any]
       )
 
-      details.foreach(__v => __obj.update("details", __v.asInstanceOf[js.Any]))
-      reason.foreach(__v => __obj.update("reason", __v.asInstanceOf[js.Any]))
+      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
+      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LambdaFunctionFailedEventAttributes]
     }
   }
@@ -2536,15 +2545,15 @@ package swf {
         input: js.UndefOr[FunctionInput] = js.undefined,
         startToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined
     ): LambdaFunctionScheduledEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
         "id"                           -> id.asInstanceOf[js.Any],
         "name"                         -> name.asInstanceOf[js.Any]
       )
 
-      control.foreach(__v => __obj.update("control", __v.asInstanceOf[js.Any]))
-      input.foreach(__v => __obj.update("input", __v.asInstanceOf[js.Any]))
-      startToCloseTimeout.foreach(__v => __obj.update("startToCloseTimeout", __v.asInstanceOf[js.Any]))
+      control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
+      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
+      startToCloseTimeout.foreach(__v => __obj.updateDynamic("startToCloseTimeout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LambdaFunctionScheduledEventAttributes]
     }
   }
@@ -2561,7 +2570,7 @@ package swf {
     def apply(
         scheduledEventId: EventId
     ): LambdaFunctionStartedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any]
       )
 
@@ -2585,12 +2594,12 @@ package swf {
         startedEventId: EventId,
         timeoutType: js.UndefOr[LambdaFunctionTimeoutType] = js.undefined
     ): LambdaFunctionTimedOutEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "scheduledEventId" -> scheduledEventId.asInstanceOf[js.Any],
         "startedEventId"   -> startedEventId.asInstanceOf[js.Any]
       )
 
-      timeoutType.foreach(__v => __obj.update("timeoutType", __v.asInstanceOf[js.Any]))
+      timeoutType.foreach(__v => __obj.updateDynamic("timeoutType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LambdaFunctionTimedOutEventAttributes]
     }
   }
@@ -2620,15 +2629,15 @@ package swf {
         nextPageToken: js.UndefOr[PageToken] = js.undefined,
         reverseOrder: js.UndefOr[ReverseOrder] = js.undefined
     ): ListActivityTypesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domain"             -> domain.asInstanceOf[js.Any],
         "registrationStatus" -> registrationStatus.asInstanceOf[js.Any]
       )
 
-      maximumPageSize.foreach(__v => __obj.update("maximumPageSize", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
-      reverseOrder.foreach(__v => __obj.update("reverseOrder", __v.asInstanceOf[js.Any]))
+      maximumPageSize.foreach(__v => __obj.updateDynamic("maximumPageSize")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
+      reverseOrder.foreach(__v => __obj.updateDynamic("reverseOrder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListActivityTypesInput]
     }
   }
@@ -2660,19 +2669,19 @@ package swf {
         tagFilter: js.UndefOr[TagFilter] = js.undefined,
         typeFilter: js.UndefOr[WorkflowTypeFilter] = js.undefined
     ): ListClosedWorkflowExecutionsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domain" -> domain.asInstanceOf[js.Any]
       )
 
-      closeStatusFilter.foreach(__v => __obj.update("closeStatusFilter", __v.asInstanceOf[js.Any]))
-      closeTimeFilter.foreach(__v => __obj.update("closeTimeFilter", __v.asInstanceOf[js.Any]))
-      executionFilter.foreach(__v => __obj.update("executionFilter", __v.asInstanceOf[js.Any]))
-      maximumPageSize.foreach(__v => __obj.update("maximumPageSize", __v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
-      reverseOrder.foreach(__v => __obj.update("reverseOrder", __v.asInstanceOf[js.Any]))
-      startTimeFilter.foreach(__v => __obj.update("startTimeFilter", __v.asInstanceOf[js.Any]))
-      tagFilter.foreach(__v => __obj.update("tagFilter", __v.asInstanceOf[js.Any]))
-      typeFilter.foreach(__v => __obj.update("typeFilter", __v.asInstanceOf[js.Any]))
+      closeStatusFilter.foreach(__v => __obj.updateDynamic("closeStatusFilter")(__v.asInstanceOf[js.Any]))
+      closeTimeFilter.foreach(__v => __obj.updateDynamic("closeTimeFilter")(__v.asInstanceOf[js.Any]))
+      executionFilter.foreach(__v => __obj.updateDynamic("executionFilter")(__v.asInstanceOf[js.Any]))
+      maximumPageSize.foreach(__v => __obj.updateDynamic("maximumPageSize")(__v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
+      reverseOrder.foreach(__v => __obj.updateDynamic("reverseOrder")(__v.asInstanceOf[js.Any]))
+      startTimeFilter.foreach(__v => __obj.updateDynamic("startTimeFilter")(__v.asInstanceOf[js.Any]))
+      tagFilter.foreach(__v => __obj.updateDynamic("tagFilter")(__v.asInstanceOf[js.Any]))
+      typeFilter.foreach(__v => __obj.updateDynamic("typeFilter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListClosedWorkflowExecutionsInput]
     }
   }
@@ -2692,13 +2701,13 @@ package swf {
         nextPageToken: js.UndefOr[PageToken] = js.undefined,
         reverseOrder: js.UndefOr[ReverseOrder] = js.undefined
     ): ListDomainsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "registrationStatus" -> registrationStatus.asInstanceOf[js.Any]
       )
 
-      maximumPageSize.foreach(__v => __obj.update("maximumPageSize", __v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
-      reverseOrder.foreach(__v => __obj.update("reverseOrder", __v.asInstanceOf[js.Any]))
+      maximumPageSize.foreach(__v => __obj.updateDynamic("maximumPageSize")(__v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
+      reverseOrder.foreach(__v => __obj.updateDynamic("reverseOrder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDomainsInput]
     }
   }
@@ -2726,17 +2735,17 @@ package swf {
         tagFilter: js.UndefOr[TagFilter] = js.undefined,
         typeFilter: js.UndefOr[WorkflowTypeFilter] = js.undefined
     ): ListOpenWorkflowExecutionsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domain"          -> domain.asInstanceOf[js.Any],
         "startTimeFilter" -> startTimeFilter.asInstanceOf[js.Any]
       )
 
-      executionFilter.foreach(__v => __obj.update("executionFilter", __v.asInstanceOf[js.Any]))
-      maximumPageSize.foreach(__v => __obj.update("maximumPageSize", __v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
-      reverseOrder.foreach(__v => __obj.update("reverseOrder", __v.asInstanceOf[js.Any]))
-      tagFilter.foreach(__v => __obj.update("tagFilter", __v.asInstanceOf[js.Any]))
-      typeFilter.foreach(__v => __obj.update("typeFilter", __v.asInstanceOf[js.Any]))
+      executionFilter.foreach(__v => __obj.updateDynamic("executionFilter")(__v.asInstanceOf[js.Any]))
+      maximumPageSize.foreach(__v => __obj.updateDynamic("maximumPageSize")(__v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
+      reverseOrder.foreach(__v => __obj.updateDynamic("reverseOrder")(__v.asInstanceOf[js.Any]))
+      tagFilter.foreach(__v => __obj.updateDynamic("tagFilter")(__v.asInstanceOf[js.Any]))
+      typeFilter.foreach(__v => __obj.updateDynamic("typeFilter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListOpenWorkflowExecutionsInput]
     }
   }
@@ -2750,7 +2759,7 @@ package swf {
     def apply(
         resourceArn: Arn
     ): ListTagsForResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
 
@@ -2767,8 +2776,8 @@ package swf {
     def apply(
         tags: js.UndefOr[ResourceTagList] = js.undefined
     ): ListTagsForResourceOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceOutput]
     }
   }
@@ -2792,15 +2801,15 @@ package swf {
         nextPageToken: js.UndefOr[PageToken] = js.undefined,
         reverseOrder: js.UndefOr[ReverseOrder] = js.undefined
     ): ListWorkflowTypesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domain"             -> domain.asInstanceOf[js.Any],
         "registrationStatus" -> registrationStatus.asInstanceOf[js.Any]
       )
 
-      maximumPageSize.foreach(__v => __obj.update("maximumPageSize", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
-      reverseOrder.foreach(__v => __obj.update("reverseOrder", __v.asInstanceOf[js.Any]))
+      maximumPageSize.foreach(__v => __obj.updateDynamic("maximumPageSize")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
+      reverseOrder.foreach(__v => __obj.updateDynamic("reverseOrder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListWorkflowTypesInput]
     }
   }
@@ -2821,12 +2830,12 @@ package swf {
         markerName: MarkerName,
         details: js.UndefOr[Data] = js.undefined
     ): MarkerRecordedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
         "markerName"                   -> markerName.asInstanceOf[js.Any]
       )
 
-      details.foreach(__v => __obj.update("details", __v.asInstanceOf[js.Any]))
+      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MarkerRecordedEventAttributes]
     }
   }
@@ -2845,11 +2854,11 @@ package swf {
         count: Count,
         truncated: js.UndefOr[Truncated] = js.undefined
     ): PendingTaskCount = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "count" -> count.asInstanceOf[js.Any]
       )
 
-      truncated.foreach(__v => __obj.update("truncated", __v.asInstanceOf[js.Any]))
+      truncated.foreach(__v => __obj.updateDynamic("truncated")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PendingTaskCount]
     }
   }
@@ -2867,12 +2876,12 @@ package swf {
         taskList: TaskList,
         identity: js.UndefOr[Identity] = js.undefined
     ): PollForActivityTaskInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domain"   -> domain.asInstanceOf[js.Any],
         "taskList" -> taskList.asInstanceOf[js.Any]
       )
 
-      identity.foreach(__v => __obj.update("identity", __v.asInstanceOf[js.Any]))
+      identity.foreach(__v => __obj.updateDynamic("identity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PollForActivityTaskInput]
     }
   }
@@ -2896,15 +2905,15 @@ package swf {
         nextPageToken: js.UndefOr[PageToken] = js.undefined,
         reverseOrder: js.UndefOr[ReverseOrder] = js.undefined
     ): PollForDecisionTaskInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domain"   -> domain.asInstanceOf[js.Any],
         "taskList" -> taskList.asInstanceOf[js.Any]
       )
 
-      identity.foreach(__v => __obj.update("identity", __v.asInstanceOf[js.Any]))
-      maximumPageSize.foreach(__v => __obj.update("maximumPageSize", __v.asInstanceOf[js.Any]))
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
-      reverseOrder.foreach(__v => __obj.update("reverseOrder", __v.asInstanceOf[js.Any]))
+      identity.foreach(__v => __obj.updateDynamic("identity")(__v.asInstanceOf[js.Any]))
+      maximumPageSize.foreach(__v => __obj.updateDynamic("maximumPageSize")(__v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
+      reverseOrder.foreach(__v => __obj.updateDynamic("reverseOrder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PollForDecisionTaskInput]
     }
   }
@@ -2920,11 +2929,11 @@ package swf {
         taskToken: TaskToken,
         details: js.UndefOr[LimitedData] = js.undefined
     ): RecordActivityTaskHeartbeatInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "taskToken" -> taskToken.asInstanceOf[js.Any]
       )
 
-      details.foreach(__v => __obj.update("details", __v.asInstanceOf[js.Any]))
+      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecordActivityTaskHeartbeatInput]
     }
   }
@@ -2949,11 +2958,11 @@ package swf {
         markerName: MarkerName,
         details: js.UndefOr[Data] = js.undefined
     ): RecordMarkerDecisionAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "markerName" -> markerName.asInstanceOf[js.Any]
       )
 
-      details.foreach(__v => __obj.update("details", __v.asInstanceOf[js.Any]))
+      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecordMarkerDecisionAttributes]
     }
   }
@@ -2980,7 +2989,7 @@ package swf {
         decisionTaskCompletedEventId: EventId,
         markerName: MarkerName
     ): RecordMarkerFailedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "cause"                        -> cause.asInstanceOf[js.Any],
         "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
         "markerName"                   -> markerName.asInstanceOf[js.Any]
@@ -3017,25 +3026,27 @@ package swf {
         defaultTaskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
         description: js.UndefOr[Description] = js.undefined
     ): RegisterActivityTypeInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domain"  -> domain.asInstanceOf[js.Any],
         "name"    -> name.asInstanceOf[js.Any],
         "version" -> version.asInstanceOf[js.Any]
       )
 
-      defaultTaskHeartbeatTimeout.foreach(__v => __obj.update("defaultTaskHeartbeatTimeout", __v.asInstanceOf[js.Any]))
-      defaultTaskList.foreach(__v => __obj.update("defaultTaskList", __v.asInstanceOf[js.Any]))
-      defaultTaskPriority.foreach(__v => __obj.update("defaultTaskPriority", __v.asInstanceOf[js.Any]))
+      defaultTaskHeartbeatTimeout.foreach(
+        __v => __obj.updateDynamic("defaultTaskHeartbeatTimeout")(__v.asInstanceOf[js.Any])
+      )
+      defaultTaskList.foreach(__v => __obj.updateDynamic("defaultTaskList")(__v.asInstanceOf[js.Any]))
+      defaultTaskPriority.foreach(__v => __obj.updateDynamic("defaultTaskPriority")(__v.asInstanceOf[js.Any]))
       defaultTaskScheduleToCloseTimeout.foreach(
-        __v => __obj.update("defaultTaskScheduleToCloseTimeout", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("defaultTaskScheduleToCloseTimeout")(__v.asInstanceOf[js.Any])
       )
       defaultTaskScheduleToStartTimeout.foreach(
-        __v => __obj.update("defaultTaskScheduleToStartTimeout", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("defaultTaskScheduleToStartTimeout")(__v.asInstanceOf[js.Any])
       )
       defaultTaskStartToCloseTimeout.foreach(
-        __v => __obj.update("defaultTaskStartToCloseTimeout", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("defaultTaskStartToCloseTimeout")(__v.asInstanceOf[js.Any])
       )
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterActivityTypeInput]
     }
   }
@@ -3055,13 +3066,13 @@ package swf {
         description: js.UndefOr[Description] = js.undefined,
         tags: js.UndefOr[ResourceTagList] = js.undefined
     ): RegisterDomainInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name"                                   -> name.asInstanceOf[js.Any],
         "workflowExecutionRetentionPeriodInDays" -> workflowExecutionRetentionPeriodInDays.asInstanceOf[js.Any]
       )
 
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterDomainInput]
     }
   }
@@ -3093,23 +3104,23 @@ package swf {
         defaultTaskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
         description: js.UndefOr[Description] = js.undefined
     ): RegisterWorkflowTypeInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domain"  -> domain.asInstanceOf[js.Any],
         "name"    -> name.asInstanceOf[js.Any],
         "version" -> version.asInstanceOf[js.Any]
       )
 
-      defaultChildPolicy.foreach(__v => __obj.update("defaultChildPolicy", __v.asInstanceOf[js.Any]))
+      defaultChildPolicy.foreach(__v => __obj.updateDynamic("defaultChildPolicy")(__v.asInstanceOf[js.Any]))
       defaultExecutionStartToCloseTimeout.foreach(
-        __v => __obj.update("defaultExecutionStartToCloseTimeout", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("defaultExecutionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
       )
-      defaultLambdaRole.foreach(__v => __obj.update("defaultLambdaRole", __v.asInstanceOf[js.Any]))
-      defaultTaskList.foreach(__v => __obj.update("defaultTaskList", __v.asInstanceOf[js.Any]))
-      defaultTaskPriority.foreach(__v => __obj.update("defaultTaskPriority", __v.asInstanceOf[js.Any]))
+      defaultLambdaRole.foreach(__v => __obj.updateDynamic("defaultLambdaRole")(__v.asInstanceOf[js.Any]))
+      defaultTaskList.foreach(__v => __obj.updateDynamic("defaultTaskList")(__v.asInstanceOf[js.Any]))
+      defaultTaskPriority.foreach(__v => __obj.updateDynamic("defaultTaskPriority")(__v.asInstanceOf[js.Any]))
       defaultTaskStartToCloseTimeout.foreach(
-        __v => __obj.update("defaultTaskStartToCloseTimeout", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("defaultTaskStartToCloseTimeout")(__v.asInstanceOf[js.Any])
       )
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterWorkflowTypeInput]
     }
   }
@@ -3139,7 +3150,7 @@ package swf {
     def apply(
         activityId: ActivityId
     ): RequestCancelActivityTaskDecisionAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "activityId" -> activityId.asInstanceOf[js.Any]
       )
 
@@ -3170,7 +3181,7 @@ package swf {
         cause: RequestCancelActivityTaskFailedCause,
         decisionTaskCompletedEventId: EventId
     ): RequestCancelActivityTaskFailedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "activityId"                   -> activityId.asInstanceOf[js.Any],
         "cause"                        -> cause.asInstanceOf[js.Any],
         "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any]
@@ -3202,12 +3213,12 @@ package swf {
         control: js.UndefOr[Data] = js.undefined,
         runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined
     ): RequestCancelExternalWorkflowExecutionDecisionAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "workflowId" -> workflowId.asInstanceOf[js.Any]
       )
 
-      control.foreach(__v => __obj.update("control", __v.asInstanceOf[js.Any]))
-      runId.foreach(__v => __obj.update("runId", __v.asInstanceOf[js.Any]))
+      control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
+      runId.foreach(__v => __obj.updateDynamic("runId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RequestCancelExternalWorkflowExecutionDecisionAttributes]
     }
   }
@@ -3249,15 +3260,15 @@ package swf {
         control: js.UndefOr[Data] = js.undefined,
         runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined
     ): RequestCancelExternalWorkflowExecutionFailedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "cause"                        -> cause.asInstanceOf[js.Any],
         "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
         "initiatedEventId"             -> initiatedEventId.asInstanceOf[js.Any],
         "workflowId"                   -> workflowId.asInstanceOf[js.Any]
       )
 
-      control.foreach(__v => __obj.update("control", __v.asInstanceOf[js.Any]))
-      runId.foreach(__v => __obj.update("runId", __v.asInstanceOf[js.Any]))
+      control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
+      runId.foreach(__v => __obj.updateDynamic("runId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RequestCancelExternalWorkflowExecutionFailedEventAttributes]
     }
   }
@@ -3280,13 +3291,13 @@ package swf {
         control: js.UndefOr[Data] = js.undefined,
         runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined
     ): RequestCancelExternalWorkflowExecutionInitiatedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
         "workflowId"                   -> workflowId.asInstanceOf[js.Any]
       )
 
-      control.foreach(__v => __obj.update("control", __v.asInstanceOf[js.Any]))
-      runId.foreach(__v => __obj.update("runId", __v.asInstanceOf[js.Any]))
+      control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
+      runId.foreach(__v => __obj.updateDynamic("runId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RequestCancelExternalWorkflowExecutionInitiatedEventAttributes]
     }
   }
@@ -3304,12 +3315,12 @@ package swf {
         workflowId: WorkflowId,
         runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined
     ): RequestCancelWorkflowExecutionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domain"     -> domain.asInstanceOf[js.Any],
         "workflowId" -> workflowId.asInstanceOf[js.Any]
       )
 
-      runId.foreach(__v => __obj.update("runId", __v.asInstanceOf[js.Any]))
+      runId.foreach(__v => __obj.updateDynamic("runId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RequestCancelWorkflowExecutionInput]
     }
   }
@@ -3329,11 +3340,11 @@ package swf {
         key: ResourceTagKey,
         value: js.UndefOr[ResourceTagValue] = js.undefined
     ): ResourceTag = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "key" -> key.asInstanceOf[js.Any]
       )
 
-      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceTag]
     }
   }
@@ -3349,11 +3360,11 @@ package swf {
         taskToken: TaskToken,
         details: js.UndefOr[Data] = js.undefined
     ): RespondActivityTaskCanceledInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "taskToken" -> taskToken.asInstanceOf[js.Any]
       )
 
-      details.foreach(__v => __obj.update("details", __v.asInstanceOf[js.Any]))
+      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RespondActivityTaskCanceledInput]
     }
   }
@@ -3369,11 +3380,11 @@ package swf {
         taskToken: TaskToken,
         result: js.UndefOr[Data] = js.undefined
     ): RespondActivityTaskCompletedInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "taskToken" -> taskToken.asInstanceOf[js.Any]
       )
 
-      result.foreach(__v => __obj.update("result", __v.asInstanceOf[js.Any]))
+      result.foreach(__v => __obj.updateDynamic("result")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RespondActivityTaskCompletedInput]
     }
   }
@@ -3391,12 +3402,12 @@ package swf {
         details: js.UndefOr[Data] = js.undefined,
         reason: js.UndefOr[FailureReason] = js.undefined
     ): RespondActivityTaskFailedInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "taskToken" -> taskToken.asInstanceOf[js.Any]
       )
 
-      details.foreach(__v => __obj.update("details", __v.asInstanceOf[js.Any]))
-      reason.foreach(__v => __obj.update("reason", __v.asInstanceOf[js.Any]))
+      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
+      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RespondActivityTaskFailedInput]
     }
   }
@@ -3417,12 +3428,12 @@ package swf {
         decisions: js.UndefOr[DecisionList] = js.undefined,
         executionContext: js.UndefOr[Data] = js.undefined
     ): RespondDecisionTaskCompletedInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "taskToken" -> taskToken.asInstanceOf[js.Any]
       )
 
-      decisions.foreach(__v => __obj.update("decisions", __v.asInstanceOf[js.Any]))
-      executionContext.foreach(__v => __obj.update("executionContext", __v.asInstanceOf[js.Any]))
+      decisions.foreach(__v => __obj.updateDynamic("decisions")(__v.asInstanceOf[js.Any]))
+      executionContext.foreach(__v => __obj.updateDynamic("executionContext")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RespondDecisionTaskCompletedInput]
     }
   }
@@ -3439,8 +3450,8 @@ package swf {
     def apply(
         runId: js.UndefOr[WorkflowRunId] = js.undefined
     ): Run = {
-      val __obj = js.Dictionary.empty[js.Any]
-      runId.foreach(__v => __obj.update("runId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      runId.foreach(__v => __obj.updateDynamic("runId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Run]
     }
   }
@@ -3484,19 +3495,19 @@ package swf {
         taskList: js.UndefOr[TaskList] = js.undefined,
         taskPriority: js.UndefOr[TaskPriority] = js.undefined
     ): ScheduleActivityTaskDecisionAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "activityId"   -> activityId.asInstanceOf[js.Any],
         "activityType" -> activityType.asInstanceOf[js.Any]
       )
 
-      control.foreach(__v => __obj.update("control", __v.asInstanceOf[js.Any]))
-      heartbeatTimeout.foreach(__v => __obj.update("heartbeatTimeout", __v.asInstanceOf[js.Any]))
-      input.foreach(__v => __obj.update("input", __v.asInstanceOf[js.Any]))
-      scheduleToCloseTimeout.foreach(__v => __obj.update("scheduleToCloseTimeout", __v.asInstanceOf[js.Any]))
-      scheduleToStartTimeout.foreach(__v => __obj.update("scheduleToStartTimeout", __v.asInstanceOf[js.Any]))
-      startToCloseTimeout.foreach(__v => __obj.update("startToCloseTimeout", __v.asInstanceOf[js.Any]))
-      taskList.foreach(__v => __obj.update("taskList", __v.asInstanceOf[js.Any]))
-      taskPriority.foreach(__v => __obj.update("taskPriority", __v.asInstanceOf[js.Any]))
+      control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
+      heartbeatTimeout.foreach(__v => __obj.updateDynamic("heartbeatTimeout")(__v.asInstanceOf[js.Any]))
+      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
+      scheduleToCloseTimeout.foreach(__v => __obj.updateDynamic("scheduleToCloseTimeout")(__v.asInstanceOf[js.Any]))
+      scheduleToStartTimeout.foreach(__v => __obj.updateDynamic("scheduleToStartTimeout")(__v.asInstanceOf[js.Any]))
+      startToCloseTimeout.foreach(__v => __obj.updateDynamic("startToCloseTimeout")(__v.asInstanceOf[js.Any]))
+      taskList.foreach(__v => __obj.updateDynamic("taskList")(__v.asInstanceOf[js.Any]))
+      taskPriority.foreach(__v => __obj.updateDynamic("taskPriority")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScheduleActivityTaskDecisionAttributes]
     }
   }
@@ -3549,7 +3560,7 @@ package swf {
         cause: ScheduleActivityTaskFailedCause,
         decisionTaskCompletedEventId: EventId
     ): ScheduleActivityTaskFailedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "activityId"                   -> activityId.asInstanceOf[js.Any],
         "activityType"                 -> activityType.asInstanceOf[js.Any],
         "cause"                        -> cause.asInstanceOf[js.Any],
@@ -3580,14 +3591,14 @@ package swf {
         input: js.UndefOr[FunctionInput] = js.undefined,
         startToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined
     ): ScheduleLambdaFunctionDecisionAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "id"   -> id.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any]
       )
 
-      control.foreach(__v => __obj.update("control", __v.asInstanceOf[js.Any]))
-      input.foreach(__v => __obj.update("input", __v.asInstanceOf[js.Any]))
-      startToCloseTimeout.foreach(__v => __obj.update("startToCloseTimeout", __v.asInstanceOf[js.Any]))
+      control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
+      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
+      startToCloseTimeout.foreach(__v => __obj.updateDynamic("startToCloseTimeout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScheduleLambdaFunctionDecisionAttributes]
     }
   }
@@ -3626,7 +3637,7 @@ package swf {
         id: FunctionId,
         name: FunctionName
     ): ScheduleLambdaFunctionFailedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "cause"                        -> cause.asInstanceOf[js.Any],
         "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
         "id"                           -> id.asInstanceOf[js.Any],
@@ -3663,14 +3674,14 @@ package swf {
         input: js.UndefOr[Data] = js.undefined,
         runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined
     ): SignalExternalWorkflowExecutionDecisionAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "signalName" -> signalName.asInstanceOf[js.Any],
         "workflowId" -> workflowId.asInstanceOf[js.Any]
       )
 
-      control.foreach(__v => __obj.update("control", __v.asInstanceOf[js.Any]))
-      input.foreach(__v => __obj.update("input", __v.asInstanceOf[js.Any]))
-      runId.foreach(__v => __obj.update("runId", __v.asInstanceOf[js.Any]))
+      control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
+      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
+      runId.foreach(__v => __obj.updateDynamic("runId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SignalExternalWorkflowExecutionDecisionAttributes]
     }
   }
@@ -3711,15 +3722,15 @@ package swf {
         control: js.UndefOr[Data] = js.undefined,
         runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined
     ): SignalExternalWorkflowExecutionFailedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "cause"                        -> cause.asInstanceOf[js.Any],
         "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
         "initiatedEventId"             -> initiatedEventId.asInstanceOf[js.Any],
         "workflowId"                   -> workflowId.asInstanceOf[js.Any]
       )
 
-      control.foreach(__v => __obj.update("control", __v.asInstanceOf[js.Any]))
-      runId.foreach(__v => __obj.update("runId", __v.asInstanceOf[js.Any]))
+      control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
+      runId.foreach(__v => __obj.updateDynamic("runId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SignalExternalWorkflowExecutionFailedEventAttributes]
     }
   }
@@ -3746,15 +3757,15 @@ package swf {
         input: js.UndefOr[Data] = js.undefined,
         runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined
     ): SignalExternalWorkflowExecutionInitiatedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
         "signalName"                   -> signalName.asInstanceOf[js.Any],
         "workflowId"                   -> workflowId.asInstanceOf[js.Any]
       )
 
-      control.foreach(__v => __obj.update("control", __v.asInstanceOf[js.Any]))
-      input.foreach(__v => __obj.update("input", __v.asInstanceOf[js.Any]))
-      runId.foreach(__v => __obj.update("runId", __v.asInstanceOf[js.Any]))
+      control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
+      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
+      runId.foreach(__v => __obj.updateDynamic("runId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SignalExternalWorkflowExecutionInitiatedEventAttributes]
     }
   }
@@ -3776,14 +3787,14 @@ package swf {
         input: js.UndefOr[Data] = js.undefined,
         runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined
     ): SignalWorkflowExecutionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domain"     -> domain.asInstanceOf[js.Any],
         "signalName" -> signalName.asInstanceOf[js.Any],
         "workflowId" -> workflowId.asInstanceOf[js.Any]
       )
 
-      input.foreach(__v => __obj.update("input", __v.asInstanceOf[js.Any]))
-      runId.foreach(__v => __obj.update("runId", __v.asInstanceOf[js.Any]))
+      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
+      runId.foreach(__v => __obj.updateDynamic("runId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SignalWorkflowExecutionInput]
     }
   }
@@ -3830,22 +3841,22 @@ package swf {
         taskPriority: js.UndefOr[TaskPriority] = js.undefined,
         taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined
     ): StartChildWorkflowExecutionDecisionAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "workflowId"   -> workflowId.asInstanceOf[js.Any],
         "workflowType" -> workflowType.asInstanceOf[js.Any]
       )
 
-      childPolicy.foreach(__v => __obj.update("childPolicy", __v.asInstanceOf[js.Any]))
-      control.foreach(__v => __obj.update("control", __v.asInstanceOf[js.Any]))
+      childPolicy.foreach(__v => __obj.updateDynamic("childPolicy")(__v.asInstanceOf[js.Any]))
+      control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
       executionStartToCloseTimeout.foreach(
-        __v => __obj.update("executionStartToCloseTimeout", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
       )
-      input.foreach(__v => __obj.update("input", __v.asInstanceOf[js.Any]))
-      lambdaRole.foreach(__v => __obj.update("lambdaRole", __v.asInstanceOf[js.Any]))
-      tagList.foreach(__v => __obj.update("tagList", __v.asInstanceOf[js.Any]))
-      taskList.foreach(__v => __obj.update("taskList", __v.asInstanceOf[js.Any]))
-      taskPriority.foreach(__v => __obj.update("taskPriority", __v.asInstanceOf[js.Any]))
-      taskStartToCloseTimeout.foreach(__v => __obj.update("taskStartToCloseTimeout", __v.asInstanceOf[js.Any]))
+      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
+      lambdaRole.foreach(__v => __obj.updateDynamic("lambdaRole")(__v.asInstanceOf[js.Any]))
+      tagList.foreach(__v => __obj.updateDynamic("tagList")(__v.asInstanceOf[js.Any]))
+      taskList.foreach(__v => __obj.updateDynamic("taskList")(__v.asInstanceOf[js.Any]))
+      taskPriority.foreach(__v => __obj.updateDynamic("taskPriority")(__v.asInstanceOf[js.Any]))
+      taskStartToCloseTimeout.foreach(__v => __obj.updateDynamic("taskStartToCloseTimeout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartChildWorkflowExecutionDecisionAttributes]
     }
   }
@@ -3902,7 +3913,7 @@ package swf {
         workflowType: WorkflowType,
         control: js.UndefOr[Data] = js.undefined
     ): StartChildWorkflowExecutionFailedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "cause"                        -> cause.asInstanceOf[js.Any],
         "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
         "initiatedEventId"             -> initiatedEventId.asInstanceOf[js.Any],
@@ -3910,7 +3921,7 @@ package swf {
         "workflowType"                 -> workflowType.asInstanceOf[js.Any]
       )
 
-      control.foreach(__v => __obj.update("control", __v.asInstanceOf[js.Any]))
+      control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartChildWorkflowExecutionFailedEventAttributes]
     }
   }
@@ -3949,7 +3960,7 @@ package swf {
         taskPriority: js.UndefOr[TaskPriority] = js.undefined,
         taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined
     ): StartChildWorkflowExecutionInitiatedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "childPolicy"                  -> childPolicy.asInstanceOf[js.Any],
         "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
         "taskList"                     -> taskList.asInstanceOf[js.Any],
@@ -3957,15 +3968,15 @@ package swf {
         "workflowType"                 -> workflowType.asInstanceOf[js.Any]
       )
 
-      control.foreach(__v => __obj.update("control", __v.asInstanceOf[js.Any]))
+      control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
       executionStartToCloseTimeout.foreach(
-        __v => __obj.update("executionStartToCloseTimeout", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
       )
-      input.foreach(__v => __obj.update("input", __v.asInstanceOf[js.Any]))
-      lambdaRole.foreach(__v => __obj.update("lambdaRole", __v.asInstanceOf[js.Any]))
-      tagList.foreach(__v => __obj.update("tagList", __v.asInstanceOf[js.Any]))
-      taskPriority.foreach(__v => __obj.update("taskPriority", __v.asInstanceOf[js.Any]))
-      taskStartToCloseTimeout.foreach(__v => __obj.update("taskStartToCloseTimeout", __v.asInstanceOf[js.Any]))
+      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
+      lambdaRole.foreach(__v => __obj.updateDynamic("lambdaRole")(__v.asInstanceOf[js.Any]))
+      tagList.foreach(__v => __obj.updateDynamic("tagList")(__v.asInstanceOf[js.Any]))
+      taskPriority.foreach(__v => __obj.updateDynamic("taskPriority")(__v.asInstanceOf[js.Any]))
+      taskStartToCloseTimeout.foreach(__v => __obj.updateDynamic("taskStartToCloseTimeout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartChildWorkflowExecutionInitiatedEventAttributes]
     }
   }
@@ -3992,10 +4003,10 @@ package swf {
         message: js.UndefOr[CauseMessage] = js.undefined,
         scheduledEventId: js.UndefOr[EventId] = js.undefined
     ): StartLambdaFunctionFailedEventAttributes = {
-      val __obj = js.Dictionary.empty[js.Any]
-      cause.foreach(__v => __obj.update("cause", __v.asInstanceOf[js.Any]))
-      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
-      scheduledEventId.foreach(__v => __obj.update("scheduledEventId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      cause.foreach(__v => __obj.updateDynamic("cause")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      scheduledEventId.foreach(__v => __obj.updateDynamic("scheduledEventId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartLambdaFunctionFailedEventAttributes]
     }
   }
@@ -4022,12 +4033,12 @@ package swf {
         timerId: TimerId,
         control: js.UndefOr[Data] = js.undefined
     ): StartTimerDecisionAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "startToFireTimeout" -> startToFireTimeout.asInstanceOf[js.Any],
         "timerId"            -> timerId.asInstanceOf[js.Any]
       )
 
-      control.foreach(__v => __obj.update("control", __v.asInstanceOf[js.Any]))
+      control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartTimerDecisionAttributes]
     }
   }
@@ -4064,7 +4075,7 @@ package swf {
         decisionTaskCompletedEventId: EventId,
         timerId: TimerId
     ): StartTimerFailedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "cause"                        -> cause.asInstanceOf[js.Any],
         "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
         "timerId"                      -> timerId.asInstanceOf[js.Any]
@@ -4103,22 +4114,22 @@ package swf {
         taskPriority: js.UndefOr[TaskPriority] = js.undefined,
         taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined
     ): StartWorkflowExecutionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domain"       -> domain.asInstanceOf[js.Any],
         "workflowId"   -> workflowId.asInstanceOf[js.Any],
         "workflowType" -> workflowType.asInstanceOf[js.Any]
       )
 
-      childPolicy.foreach(__v => __obj.update("childPolicy", __v.asInstanceOf[js.Any]))
+      childPolicy.foreach(__v => __obj.updateDynamic("childPolicy")(__v.asInstanceOf[js.Any]))
       executionStartToCloseTimeout.foreach(
-        __v => __obj.update("executionStartToCloseTimeout", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
       )
-      input.foreach(__v => __obj.update("input", __v.asInstanceOf[js.Any]))
-      lambdaRole.foreach(__v => __obj.update("lambdaRole", __v.asInstanceOf[js.Any]))
-      tagList.foreach(__v => __obj.update("tagList", __v.asInstanceOf[js.Any]))
-      taskList.foreach(__v => __obj.update("taskList", __v.asInstanceOf[js.Any]))
-      taskPriority.foreach(__v => __obj.update("taskPriority", __v.asInstanceOf[js.Any]))
-      taskStartToCloseTimeout.foreach(__v => __obj.update("taskStartToCloseTimeout", __v.asInstanceOf[js.Any]))
+      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
+      lambdaRole.foreach(__v => __obj.updateDynamic("lambdaRole")(__v.asInstanceOf[js.Any]))
+      tagList.foreach(__v => __obj.updateDynamic("tagList")(__v.asInstanceOf[js.Any]))
+      taskList.foreach(__v => __obj.updateDynamic("taskList")(__v.asInstanceOf[js.Any]))
+      taskPriority.foreach(__v => __obj.updateDynamic("taskPriority")(__v.asInstanceOf[js.Any]))
+      taskStartToCloseTimeout.foreach(__v => __obj.updateDynamic("taskStartToCloseTimeout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartWorkflowExecutionInput]
     }
   }
@@ -4135,7 +4146,7 @@ package swf {
     def apply(
         tag: Tag
     ): TagFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "tag" -> tag.asInstanceOf[js.Any]
       )
 
@@ -4154,7 +4165,7 @@ package swf {
         resourceArn: Arn,
         tags: ResourceTagList
     ): TagResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags"        -> tags.asInstanceOf[js.Any]
       )
@@ -4175,7 +4186,7 @@ package swf {
     def apply(
         name: Name
     ): TaskList = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
 
@@ -4202,15 +4213,15 @@ package swf {
         reason: js.UndefOr[TerminateReason] = js.undefined,
         runId: js.UndefOr[WorkflowRunIdOptional] = js.undefined
     ): TerminateWorkflowExecutionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domain"     -> domain.asInstanceOf[js.Any],
         "workflowId" -> workflowId.asInstanceOf[js.Any]
       )
 
-      childPolicy.foreach(__v => __obj.update("childPolicy", __v.asInstanceOf[js.Any]))
-      details.foreach(__v => __obj.update("details", __v.asInstanceOf[js.Any]))
-      reason.foreach(__v => __obj.update("reason", __v.asInstanceOf[js.Any]))
-      runId.foreach(__v => __obj.update("runId", __v.asInstanceOf[js.Any]))
+      childPolicy.foreach(__v => __obj.updateDynamic("childPolicy")(__v.asInstanceOf[js.Any]))
+      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
+      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
+      runId.foreach(__v => __obj.updateDynamic("runId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TerminateWorkflowExecutionInput]
     }
   }
@@ -4231,7 +4242,7 @@ package swf {
         startedEventId: EventId,
         timerId: TimerId
     ): TimerCanceledEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
         "startedEventId"               -> startedEventId.asInstanceOf[js.Any],
         "timerId"                      -> timerId.asInstanceOf[js.Any]
@@ -4255,7 +4266,7 @@ package swf {
         startedEventId: EventId,
         timerId: TimerId
     ): TimerFiredEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "startedEventId" -> startedEventId.asInstanceOf[js.Any],
         "timerId"        -> timerId.asInstanceOf[js.Any]
       )
@@ -4282,13 +4293,13 @@ package swf {
         timerId: TimerId,
         control: js.UndefOr[Data] = js.undefined
     ): TimerStartedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
         "startToFireTimeout"           -> startToFireTimeout.asInstanceOf[js.Any],
         "timerId"                      -> timerId.asInstanceOf[js.Any]
       )
 
-      control.foreach(__v => __obj.update("control", __v.asInstanceOf[js.Any]))
+      control.foreach(__v => __obj.updateDynamic("control")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TimerStartedEventAttributes]
     }
   }
@@ -4304,7 +4315,7 @@ package swf {
         activityType: ActivityType,
         domain: DomainName
     ): UndeprecateActivityTypeInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "activityType" -> activityType.asInstanceOf[js.Any],
         "domain"       -> domain.asInstanceOf[js.Any]
       )
@@ -4322,7 +4333,7 @@ package swf {
     def apply(
         name: DomainName
     ): UndeprecateDomainInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
 
@@ -4341,7 +4352,7 @@ package swf {
         domain: DomainName,
         workflowType: WorkflowType
     ): UndeprecateWorkflowTypeInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "domain"       -> domain.asInstanceOf[js.Any],
         "workflowType" -> workflowType.asInstanceOf[js.Any]
       )
@@ -4361,7 +4372,7 @@ package swf {
         resourceArn: Arn,
         tagKeys: ResourceTagKeyList
     ): UntagResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
       )
@@ -4384,7 +4395,7 @@ package swf {
         runId: WorkflowRunId,
         workflowId: WorkflowId
     ): WorkflowExecution = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "runId"      -> runId.asInstanceOf[js.Any],
         "workflowId" -> workflowId.asInstanceOf[js.Any]
       )
@@ -4415,10 +4426,12 @@ package swf {
         externalInitiatedEventId: js.UndefOr[EventId] = js.undefined,
         externalWorkflowExecution: js.UndefOr[WorkflowExecution] = js.undefined
     ): WorkflowExecutionCancelRequestedEventAttributes = {
-      val __obj = js.Dictionary.empty[js.Any]
-      cause.foreach(__v => __obj.update("cause", __v.asInstanceOf[js.Any]))
-      externalInitiatedEventId.foreach(__v => __obj.update("externalInitiatedEventId", __v.asInstanceOf[js.Any]))
-      externalWorkflowExecution.foreach(__v => __obj.update("externalWorkflowExecution", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      cause.foreach(__v => __obj.updateDynamic("cause")(__v.asInstanceOf[js.Any]))
+      externalInitiatedEventId.foreach(__v => __obj.updateDynamic("externalInitiatedEventId")(__v.asInstanceOf[js.Any]))
+      externalWorkflowExecution.foreach(
+        __v => __obj.updateDynamic("externalWorkflowExecution")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[WorkflowExecutionCancelRequestedEventAttributes]
     }
   }
@@ -4437,11 +4450,11 @@ package swf {
         decisionTaskCompletedEventId: EventId,
         details: js.UndefOr[Data] = js.undefined
     ): WorkflowExecutionCanceledEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any]
       )
 
-      details.foreach(__v => __obj.update("details", __v.asInstanceOf[js.Any]))
+      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkflowExecutionCanceledEventAttributes]
     }
   }
@@ -4460,11 +4473,11 @@ package swf {
         decisionTaskCompletedEventId: EventId,
         result: js.UndefOr[Data] = js.undefined
     ): WorkflowExecutionCompletedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any]
       )
 
-      result.foreach(__v => __obj.update("result", __v.asInstanceOf[js.Any]))
+      result.foreach(__v => __obj.updateDynamic("result")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkflowExecutionCompletedEventAttributes]
     }
   }
@@ -4491,15 +4504,15 @@ package swf {
         lambdaRole: js.UndefOr[Arn] = js.undefined,
         taskPriority: js.UndefOr[TaskPriority] = js.undefined
     ): WorkflowExecutionConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "childPolicy"                  -> childPolicy.asInstanceOf[js.Any],
         "executionStartToCloseTimeout" -> executionStartToCloseTimeout.asInstanceOf[js.Any],
         "taskList"                     -> taskList.asInstanceOf[js.Any],
         "taskStartToCloseTimeout"      -> taskStartToCloseTimeout.asInstanceOf[js.Any]
       )
 
-      lambdaRole.foreach(__v => __obj.update("lambdaRole", __v.asInstanceOf[js.Any]))
-      taskPriority.foreach(__v => __obj.update("taskPriority", __v.asInstanceOf[js.Any]))
+      lambdaRole.foreach(__v => __obj.updateDynamic("lambdaRole")(__v.asInstanceOf[js.Any]))
+      taskPriority.foreach(__v => __obj.updateDynamic("taskPriority")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkflowExecutionConfiguration]
     }
   }
@@ -4536,7 +4549,7 @@ package swf {
         taskPriority: js.UndefOr[TaskPriority] = js.undefined,
         taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined
     ): WorkflowExecutionContinuedAsNewEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "childPolicy"                  -> childPolicy.asInstanceOf[js.Any],
         "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any],
         "newExecutionRunId"            -> newExecutionRunId.asInstanceOf[js.Any],
@@ -4545,13 +4558,13 @@ package swf {
       )
 
       executionStartToCloseTimeout.foreach(
-        __v => __obj.update("executionStartToCloseTimeout", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
       )
-      input.foreach(__v => __obj.update("input", __v.asInstanceOf[js.Any]))
-      lambdaRole.foreach(__v => __obj.update("lambdaRole", __v.asInstanceOf[js.Any]))
-      tagList.foreach(__v => __obj.update("tagList", __v.asInstanceOf[js.Any]))
-      taskPriority.foreach(__v => __obj.update("taskPriority", __v.asInstanceOf[js.Any]))
-      taskStartToCloseTimeout.foreach(__v => __obj.update("taskStartToCloseTimeout", __v.asInstanceOf[js.Any]))
+      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
+      lambdaRole.foreach(__v => __obj.updateDynamic("lambdaRole")(__v.asInstanceOf[js.Any]))
+      tagList.foreach(__v => __obj.updateDynamic("tagList")(__v.asInstanceOf[js.Any]))
+      taskPriority.foreach(__v => __obj.updateDynamic("taskPriority")(__v.asInstanceOf[js.Any]))
+      taskStartToCloseTimeout.foreach(__v => __obj.updateDynamic("taskStartToCloseTimeout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkflowExecutionContinuedAsNewEventAttributes]
     }
   }
@@ -4570,11 +4583,11 @@ package swf {
         count: Count,
         truncated: js.UndefOr[Truncated] = js.undefined
     ): WorkflowExecutionCount = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "count" -> count.asInstanceOf[js.Any]
       )
 
-      truncated.foreach(__v => __obj.update("truncated", __v.asInstanceOf[js.Any]))
+      truncated.foreach(__v => __obj.updateDynamic("truncated")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkflowExecutionCount]
     }
   }
@@ -4599,14 +4612,16 @@ package swf {
         latestActivityTaskTimestamp: js.UndefOr[Timestamp] = js.undefined,
         latestExecutionContext: js.UndefOr[Data] = js.undefined
     ): WorkflowExecutionDetail = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "executionConfiguration" -> executionConfiguration.asInstanceOf[js.Any],
         "executionInfo"          -> executionInfo.asInstanceOf[js.Any],
         "openCounts"             -> openCounts.asInstanceOf[js.Any]
       )
 
-      latestActivityTaskTimestamp.foreach(__v => __obj.update("latestActivityTaskTimestamp", __v.asInstanceOf[js.Any]))
-      latestExecutionContext.foreach(__v => __obj.update("latestExecutionContext", __v.asInstanceOf[js.Any]))
+      latestActivityTaskTimestamp.foreach(
+        __v => __obj.updateDynamic("latestActivityTaskTimestamp")(__v.asInstanceOf[js.Any])
+      )
+      latestExecutionContext.foreach(__v => __obj.updateDynamic("latestExecutionContext")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkflowExecutionDetail]
     }
   }
@@ -4627,12 +4642,12 @@ package swf {
         details: js.UndefOr[Data] = js.undefined,
         reason: js.UndefOr[FailureReason] = js.undefined
     ): WorkflowExecutionFailedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "decisionTaskCompletedEventId" -> decisionTaskCompletedEventId.asInstanceOf[js.Any]
       )
 
-      details.foreach(__v => __obj.update("details", __v.asInstanceOf[js.Any]))
-      reason.foreach(__v => __obj.update("reason", __v.asInstanceOf[js.Any]))
+      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
+      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkflowExecutionFailedEventAttributes]
     }
   }
@@ -4649,7 +4664,7 @@ package swf {
     def apply(
         workflowId: WorkflowId
     ): WorkflowExecutionFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "workflowId" -> workflowId.asInstanceOf[js.Any]
       )
 
@@ -4685,18 +4700,18 @@ package swf {
         parent: js.UndefOr[WorkflowExecution] = js.undefined,
         tagList: js.UndefOr[TagList] = js.undefined
     ): WorkflowExecutionInfo = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "execution"       -> execution.asInstanceOf[js.Any],
         "executionStatus" -> executionStatus.asInstanceOf[js.Any],
         "startTimestamp"  -> startTimestamp.asInstanceOf[js.Any],
         "workflowType"    -> workflowType.asInstanceOf[js.Any]
       )
 
-      cancelRequested.foreach(__v => __obj.update("cancelRequested", __v.asInstanceOf[js.Any]))
-      closeStatus.foreach(__v => __obj.update("closeStatus", __v.asInstanceOf[js.Any]))
-      closeTimestamp.foreach(__v => __obj.update("closeTimestamp", __v.asInstanceOf[js.Any]))
-      parent.foreach(__v => __obj.update("parent", __v.asInstanceOf[js.Any]))
-      tagList.foreach(__v => __obj.update("tagList", __v.asInstanceOf[js.Any]))
+      cancelRequested.foreach(__v => __obj.updateDynamic("cancelRequested")(__v.asInstanceOf[js.Any]))
+      closeStatus.foreach(__v => __obj.updateDynamic("closeStatus")(__v.asInstanceOf[js.Any]))
+      closeTimestamp.foreach(__v => __obj.updateDynamic("closeTimestamp")(__v.asInstanceOf[js.Any]))
+      parent.foreach(__v => __obj.updateDynamic("parent")(__v.asInstanceOf[js.Any]))
+      tagList.foreach(__v => __obj.updateDynamic("tagList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkflowExecutionInfo]
     }
   }
@@ -4715,11 +4730,11 @@ package swf {
         executionInfos: WorkflowExecutionInfoList,
         nextPageToken: js.UndefOr[PageToken] = js.undefined
     ): WorkflowExecutionInfos = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "executionInfos" -> executionInfos.asInstanceOf[js.Any]
       )
 
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkflowExecutionInfos]
     }
   }
@@ -4744,14 +4759,14 @@ package swf {
         openTimers: Count,
         openLambdaFunctions: js.UndefOr[Count] = js.undefined
     ): WorkflowExecutionOpenCounts = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "openActivityTasks"           -> openActivityTasks.asInstanceOf[js.Any],
         "openChildWorkflowExecutions" -> openChildWorkflowExecutions.asInstanceOf[js.Any],
         "openDecisionTasks"           -> openDecisionTasks.asInstanceOf[js.Any],
         "openTimers"                  -> openTimers.asInstanceOf[js.Any]
       )
 
-      openLambdaFunctions.foreach(__v => __obj.update("openLambdaFunctions", __v.asInstanceOf[js.Any]))
+      openLambdaFunctions.foreach(__v => __obj.updateDynamic("openLambdaFunctions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkflowExecutionOpenCounts]
     }
   }
@@ -4774,13 +4789,15 @@ package swf {
         externalWorkflowExecution: js.UndefOr[WorkflowExecution] = js.undefined,
         input: js.UndefOr[Data] = js.undefined
     ): WorkflowExecutionSignaledEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "signalName" -> signalName.asInstanceOf[js.Any]
       )
 
-      externalInitiatedEventId.foreach(__v => __obj.update("externalInitiatedEventId", __v.asInstanceOf[js.Any]))
-      externalWorkflowExecution.foreach(__v => __obj.update("externalWorkflowExecution", __v.asInstanceOf[js.Any]))
-      input.foreach(__v => __obj.update("input", __v.asInstanceOf[js.Any]))
+      externalInitiatedEventId.foreach(__v => __obj.updateDynamic("externalInitiatedEventId")(__v.asInstanceOf[js.Any]))
+      externalWorkflowExecution.foreach(
+        __v => __obj.updateDynamic("externalWorkflowExecution")(__v.asInstanceOf[js.Any])
+      )
+      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkflowExecutionSignaledEventAttributes]
     }
   }
@@ -4819,23 +4836,23 @@ package swf {
         taskPriority: js.UndefOr[TaskPriority] = js.undefined,
         taskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined
     ): WorkflowExecutionStartedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "childPolicy"  -> childPolicy.asInstanceOf[js.Any],
         "taskList"     -> taskList.asInstanceOf[js.Any],
         "workflowType" -> workflowType.asInstanceOf[js.Any]
       )
 
-      continuedExecutionRunId.foreach(__v => __obj.update("continuedExecutionRunId", __v.asInstanceOf[js.Any]))
+      continuedExecutionRunId.foreach(__v => __obj.updateDynamic("continuedExecutionRunId")(__v.asInstanceOf[js.Any]))
       executionStartToCloseTimeout.foreach(
-        __v => __obj.update("executionStartToCloseTimeout", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("executionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
       )
-      input.foreach(__v => __obj.update("input", __v.asInstanceOf[js.Any]))
-      lambdaRole.foreach(__v => __obj.update("lambdaRole", __v.asInstanceOf[js.Any]))
-      parentInitiatedEventId.foreach(__v => __obj.update("parentInitiatedEventId", __v.asInstanceOf[js.Any]))
-      parentWorkflowExecution.foreach(__v => __obj.update("parentWorkflowExecution", __v.asInstanceOf[js.Any]))
-      tagList.foreach(__v => __obj.update("tagList", __v.asInstanceOf[js.Any]))
-      taskPriority.foreach(__v => __obj.update("taskPriority", __v.asInstanceOf[js.Any]))
-      taskStartToCloseTimeout.foreach(__v => __obj.update("taskStartToCloseTimeout", __v.asInstanceOf[js.Any]))
+      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
+      lambdaRole.foreach(__v => __obj.updateDynamic("lambdaRole")(__v.asInstanceOf[js.Any]))
+      parentInitiatedEventId.foreach(__v => __obj.updateDynamic("parentInitiatedEventId")(__v.asInstanceOf[js.Any]))
+      parentWorkflowExecution.foreach(__v => __obj.updateDynamic("parentWorkflowExecution")(__v.asInstanceOf[js.Any]))
+      tagList.foreach(__v => __obj.updateDynamic("tagList")(__v.asInstanceOf[js.Any]))
+      taskPriority.foreach(__v => __obj.updateDynamic("taskPriority")(__v.asInstanceOf[js.Any]))
+      taskStartToCloseTimeout.foreach(__v => __obj.updateDynamic("taskStartToCloseTimeout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkflowExecutionStartedEventAttributes]
     }
   }
@@ -4866,13 +4883,13 @@ package swf {
         details: js.UndefOr[Data] = js.undefined,
         reason: js.UndefOr[TerminateReason] = js.undefined
     ): WorkflowExecutionTerminatedEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "childPolicy" -> childPolicy.asInstanceOf[js.Any]
       )
 
-      cause.foreach(__v => __obj.update("cause", __v.asInstanceOf[js.Any]))
-      details.foreach(__v => __obj.update("details", __v.asInstanceOf[js.Any]))
-      reason.foreach(__v => __obj.update("reason", __v.asInstanceOf[js.Any]))
+      cause.foreach(__v => __obj.updateDynamic("cause")(__v.asInstanceOf[js.Any]))
+      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
+      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkflowExecutionTerminatedEventAttributes]
     }
   }
@@ -4891,7 +4908,7 @@ package swf {
         childPolicy: ChildPolicy,
         timeoutType: WorkflowExecutionTimeoutType
     ): WorkflowExecutionTimedOutEventAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "childPolicy" -> childPolicy.asInstanceOf[js.Any],
         "timeoutType" -> timeoutType.asInstanceOf[js.Any]
       )
@@ -4920,7 +4937,7 @@ package swf {
         name: Name,
         version: Version
     ): WorkflowType = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name"    -> name.asInstanceOf[js.Any],
         "version" -> version.asInstanceOf[js.Any]
       )
@@ -4951,16 +4968,16 @@ package swf {
         defaultTaskPriority: js.UndefOr[TaskPriority] = js.undefined,
         defaultTaskStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined
     ): WorkflowTypeConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      defaultChildPolicy.foreach(__v => __obj.update("defaultChildPolicy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      defaultChildPolicy.foreach(__v => __obj.updateDynamic("defaultChildPolicy")(__v.asInstanceOf[js.Any]))
       defaultExecutionStartToCloseTimeout.foreach(
-        __v => __obj.update("defaultExecutionStartToCloseTimeout", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("defaultExecutionStartToCloseTimeout")(__v.asInstanceOf[js.Any])
       )
-      defaultLambdaRole.foreach(__v => __obj.update("defaultLambdaRole", __v.asInstanceOf[js.Any]))
-      defaultTaskList.foreach(__v => __obj.update("defaultTaskList", __v.asInstanceOf[js.Any]))
-      defaultTaskPriority.foreach(__v => __obj.update("defaultTaskPriority", __v.asInstanceOf[js.Any]))
+      defaultLambdaRole.foreach(__v => __obj.updateDynamic("defaultLambdaRole")(__v.asInstanceOf[js.Any]))
+      defaultTaskList.foreach(__v => __obj.updateDynamic("defaultTaskList")(__v.asInstanceOf[js.Any]))
+      defaultTaskPriority.foreach(__v => __obj.updateDynamic("defaultTaskPriority")(__v.asInstanceOf[js.Any]))
       defaultTaskStartToCloseTimeout.foreach(
-        __v => __obj.update("defaultTaskStartToCloseTimeout", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("defaultTaskStartToCloseTimeout")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[WorkflowTypeConfiguration]
     }
@@ -4980,7 +4997,7 @@ package swf {
         configuration: WorkflowTypeConfiguration,
         typeInfo: WorkflowTypeInfo
     ): WorkflowTypeDetail = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "configuration" -> configuration.asInstanceOf[js.Any],
         "typeInfo"      -> typeInfo.asInstanceOf[js.Any]
       )
@@ -5003,11 +5020,11 @@ package swf {
         name: Name,
         version: js.UndefOr[VersionOptional] = js.undefined
     ): WorkflowTypeFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
 
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkflowTypeFilter]
     }
   }
@@ -5032,14 +5049,14 @@ package swf {
         deprecationDate: js.UndefOr[Timestamp] = js.undefined,
         description: js.UndefOr[Description] = js.undefined
     ): WorkflowTypeInfo = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "creationDate" -> creationDate.asInstanceOf[js.Any],
         "status"       -> status.asInstanceOf[js.Any],
         "workflowType" -> workflowType.asInstanceOf[js.Any]
       )
 
-      deprecationDate.foreach(__v => __obj.update("deprecationDate", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      deprecationDate.foreach(__v => __obj.updateDynamic("deprecationDate")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkflowTypeInfo]
     }
   }
@@ -5058,11 +5075,11 @@ package swf {
         typeInfos: WorkflowTypeInfoList,
         nextPageToken: js.UndefOr[PageToken] = js.undefined
     ): WorkflowTypeInfos = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "typeInfos" -> typeInfos.asInstanceOf[js.Any]
       )
 
-      nextPageToken.foreach(__v => __obj.update("nextPageToken", __v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkflowTypeInfos]
     }
   }

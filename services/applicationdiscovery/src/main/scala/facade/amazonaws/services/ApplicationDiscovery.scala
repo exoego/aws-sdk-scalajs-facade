@@ -196,10 +196,10 @@ package applicationdiscovery {
         description: js.UndefOr[String] = js.undefined,
         operationSucceeded: js.UndefOr[Boolean] = js.undefined
     ): AgentConfigurationStatus = {
-      val __obj = js.Dictionary.empty[js.Any]
-      agentId.foreach(__v => __obj.update("agentId", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      operationSucceeded.foreach(__v => __obj.update("operationSucceeded", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      agentId.foreach(__v => __obj.updateDynamic("agentId")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      operationSucceeded.foreach(__v => __obj.updateDynamic("operationSucceeded")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AgentConfigurationStatus]
     }
   }
@@ -234,17 +234,17 @@ package applicationdiscovery {
         registeredTime: js.UndefOr[String] = js.undefined,
         version: js.UndefOr[String] = js.undefined
     ): AgentInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      agentId.foreach(__v => __obj.update("agentId", __v.asInstanceOf[js.Any]))
-      agentNetworkInfoList.foreach(__v => __obj.update("agentNetworkInfoList", __v.asInstanceOf[js.Any]))
-      agentType.foreach(__v => __obj.update("agentType", __v.asInstanceOf[js.Any]))
-      collectionStatus.foreach(__v => __obj.update("collectionStatus", __v.asInstanceOf[js.Any]))
-      connectorId.foreach(__v => __obj.update("connectorId", __v.asInstanceOf[js.Any]))
-      health.foreach(__v => __obj.update("health", __v.asInstanceOf[js.Any]))
-      hostName.foreach(__v => __obj.update("hostName", __v.asInstanceOf[js.Any]))
-      lastHealthPingTime.foreach(__v => __obj.update("lastHealthPingTime", __v.asInstanceOf[js.Any]))
-      registeredTime.foreach(__v => __obj.update("registeredTime", __v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      agentId.foreach(__v => __obj.updateDynamic("agentId")(__v.asInstanceOf[js.Any]))
+      agentNetworkInfoList.foreach(__v => __obj.updateDynamic("agentNetworkInfoList")(__v.asInstanceOf[js.Any]))
+      agentType.foreach(__v => __obj.updateDynamic("agentType")(__v.asInstanceOf[js.Any]))
+      collectionStatus.foreach(__v => __obj.updateDynamic("collectionStatus")(__v.asInstanceOf[js.Any]))
+      connectorId.foreach(__v => __obj.updateDynamic("connectorId")(__v.asInstanceOf[js.Any]))
+      health.foreach(__v => __obj.updateDynamic("health")(__v.asInstanceOf[js.Any]))
+      hostName.foreach(__v => __obj.updateDynamic("hostName")(__v.asInstanceOf[js.Any]))
+      lastHealthPingTime.foreach(__v => __obj.updateDynamic("lastHealthPingTime")(__v.asInstanceOf[js.Any]))
+      registeredTime.foreach(__v => __obj.updateDynamic("registeredTime")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AgentInfo]
     }
   }
@@ -263,9 +263,9 @@ package applicationdiscovery {
         ipAddress: js.UndefOr[String] = js.undefined,
         macAddress: js.UndefOr[String] = js.undefined
     ): AgentNetworkInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ipAddress.foreach(__v => __obj.update("ipAddress", __v.asInstanceOf[js.Any]))
-      macAddress.foreach(__v => __obj.update("macAddress", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ipAddress.foreach(__v => __obj.updateDynamic("ipAddress")(__v.asInstanceOf[js.Any]))
+      macAddress.foreach(__v => __obj.updateDynamic("macAddress")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AgentNetworkInfo]
     }
   }
@@ -292,7 +292,7 @@ package applicationdiscovery {
         applicationConfigurationId: ApplicationId,
         configurationIds: ConfigurationIdList
     ): AssociateConfigurationItemsToApplicationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "applicationConfigurationId" -> applicationConfigurationId.asInstanceOf[js.Any],
         "configurationIds"           -> configurationIds.asInstanceOf[js.Any]
       )
@@ -307,7 +307,7 @@ package applicationdiscovery {
   object AssociateConfigurationItemsToApplicationResponse {
     def apply(
         ): AssociateConfigurationItemsToApplicationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateConfigurationItemsToApplicationResponse]
     }
@@ -329,10 +329,10 @@ package applicationdiscovery {
         errorDescription: js.UndefOr[BatchDeleteImportDataErrorDescription] = js.undefined,
         importTaskId: js.UndefOr[ImportTaskIdentifier] = js.undefined
     ): BatchDeleteImportDataError = {
-      val __obj = js.Dictionary.empty[js.Any]
-      errorCode.foreach(__v => __obj.update("errorCode", __v.asInstanceOf[js.Any]))
-      errorDescription.foreach(__v => __obj.update("errorDescription", __v.asInstanceOf[js.Any]))
-      importTaskId.foreach(__v => __obj.update("importTaskId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      errorCode.foreach(__v => __obj.updateDynamic("errorCode")(__v.asInstanceOf[js.Any]))
+      errorDescription.foreach(__v => __obj.updateDynamic("errorDescription")(__v.asInstanceOf[js.Any]))
+      importTaskId.foreach(__v => __obj.updateDynamic("importTaskId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDeleteImportDataError]
     }
   }
@@ -354,7 +354,7 @@ package applicationdiscovery {
     def apply(
         importTaskIds: ToDeleteIdentifierList
     ): BatchDeleteImportDataRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "importTaskIds" -> importTaskIds.asInstanceOf[js.Any]
       )
 
@@ -371,8 +371,8 @@ package applicationdiscovery {
     def apply(
         errors: js.UndefOr[BatchDeleteImportDataErrorList] = js.undefined
     ): BatchDeleteImportDataResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      errors.foreach(__v => __obj.update("errors", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      errors.foreach(__v => __obj.updateDynamic("errors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDeleteImportDataResponse]
     }
   }
@@ -406,12 +406,12 @@ package applicationdiscovery {
         timeOfCreation: js.UndefOr[TimeStamp] = js.undefined,
         value: js.UndefOr[TagValue] = js.undefined
     ): ConfigurationTag = {
-      val __obj = js.Dictionary.empty[js.Any]
-      configurationId.foreach(__v => __obj.update("configurationId", __v.asInstanceOf[js.Any]))
-      configurationType.foreach(__v => __obj.update("configurationType", __v.asInstanceOf[js.Any]))
-      key.foreach(__v => __obj.update("key", __v.asInstanceOf[js.Any]))
-      timeOfCreation.foreach(__v => __obj.update("timeOfCreation", __v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      configurationId.foreach(__v => __obj.updateDynamic("configurationId")(__v.asInstanceOf[js.Any]))
+      configurationType.foreach(__v => __obj.updateDynamic("configurationType")(__v.asInstanceOf[js.Any]))
+      key.foreach(__v => __obj.updateDynamic("key")(__v.asInstanceOf[js.Any]))
+      timeOfCreation.foreach(__v => __obj.updateDynamic("timeOfCreation")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfigurationTag]
     }
   }
@@ -442,15 +442,15 @@ package applicationdiscovery {
         statusDetail: js.UndefOr[StringMax255] = js.undefined,
         stopTime: js.UndefOr[TimeStamp] = js.undefined
     ): ContinuousExportDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      dataSource.foreach(__v => __obj.update("dataSource", __v.asInstanceOf[js.Any]))
-      exportId.foreach(__v => __obj.update("exportId", __v.asInstanceOf[js.Any]))
-      s3Bucket.foreach(__v => __obj.update("s3Bucket", __v.asInstanceOf[js.Any]))
-      schemaStorageConfig.foreach(__v => __obj.update("schemaStorageConfig", __v.asInstanceOf[js.Any]))
-      startTime.foreach(__v => __obj.update("startTime", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      statusDetail.foreach(__v => __obj.update("statusDetail", __v.asInstanceOf[js.Any]))
-      stopTime.foreach(__v => __obj.update("stopTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      dataSource.foreach(__v => __obj.updateDynamic("dataSource")(__v.asInstanceOf[js.Any]))
+      exportId.foreach(__v => __obj.updateDynamic("exportId")(__v.asInstanceOf[js.Any]))
+      s3Bucket.foreach(__v => __obj.updateDynamic("s3Bucket")(__v.asInstanceOf[js.Any]))
+      schemaStorageConfig.foreach(__v => __obj.updateDynamic("schemaStorageConfig")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      statusDetail.foreach(__v => __obj.updateDynamic("statusDetail")(__v.asInstanceOf[js.Any]))
+      stopTime.foreach(__v => __obj.updateDynamic("stopTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContinuousExportDescription]
     }
   }
@@ -480,11 +480,11 @@ package applicationdiscovery {
         name: String,
         description: js.UndefOr[String] = js.undefined
     ): CreateApplicationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
 
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateApplicationRequest]
     }
   }
@@ -498,8 +498,8 @@ package applicationdiscovery {
     def apply(
         configurationId: js.UndefOr[String] = js.undefined
     ): CreateApplicationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      configurationId.foreach(__v => __obj.update("configurationId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      configurationId.foreach(__v => __obj.updateDynamic("configurationId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateApplicationResponse]
     }
   }
@@ -515,7 +515,7 @@ package applicationdiscovery {
         configurationIds: ConfigurationIdList,
         tags: TagSet
     ): CreateTagsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "configurationIds" -> configurationIds.asInstanceOf[js.Any],
         "tags"             -> tags.asInstanceOf[js.Any]
       )
@@ -530,7 +530,7 @@ package applicationdiscovery {
   object CreateTagsResponse {
     def apply(
         ): CreateTagsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateTagsResponse]
     }
@@ -560,7 +560,7 @@ package applicationdiscovery {
         unhealthyAgents: Int,
         unknownAgents: Int
     ): CustomerAgentInfo = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "activeAgents"      -> activeAgents.asInstanceOf[js.Any],
         "blackListedAgents" -> blackListedAgents.asInstanceOf[js.Any],
         "healthyAgents"     -> healthyAgents.asInstanceOf[js.Any],
@@ -598,7 +598,7 @@ package applicationdiscovery {
         unhealthyConnectors: Int,
         unknownConnectors: Int
     ): CustomerConnectorInfo = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "activeConnectors"      -> activeConnectors.asInstanceOf[js.Any],
         "blackListedConnectors" -> blackListedConnectors.asInstanceOf[js.Any],
         "healthyConnectors"     -> healthyConnectors.asInstanceOf[js.Any],
@@ -627,7 +627,7 @@ package applicationdiscovery {
     def apply(
         configurationIds: ApplicationIdsList
     ): DeleteApplicationsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "configurationIds" -> configurationIds.asInstanceOf[js.Any]
       )
 
@@ -641,7 +641,7 @@ package applicationdiscovery {
   object DeleteApplicationsResponse {
     def apply(
         ): DeleteApplicationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteApplicationsResponse]
     }
@@ -658,11 +658,11 @@ package applicationdiscovery {
         configurationIds: ConfigurationIdList,
         tags: js.UndefOr[TagSet] = js.undefined
     ): DeleteTagsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "configurationIds" -> configurationIds.asInstanceOf[js.Any]
       )
 
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteTagsRequest]
     }
   }
@@ -673,7 +673,7 @@ package applicationdiscovery {
   object DeleteTagsResponse {
     def apply(
         ): DeleteTagsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteTagsResponse]
     }
@@ -694,11 +694,11 @@ package applicationdiscovery {
         maxResults: js.UndefOr[Int] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeAgentsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      agentIds.foreach(__v => __obj.update("agentIds", __v.asInstanceOf[js.Any]))
-      filters.foreach(__v => __obj.update("filters", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      agentIds.foreach(__v => __obj.updateDynamic("agentIds")(__v.asInstanceOf[js.Any]))
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAgentsRequest]
     }
   }
@@ -714,9 +714,9 @@ package applicationdiscovery {
         agentsInfo: js.UndefOr[AgentsInfo] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeAgentsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      agentsInfo.foreach(__v => __obj.update("agentsInfo", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      agentsInfo.foreach(__v => __obj.updateDynamic("agentsInfo")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAgentsResponse]
     }
   }
@@ -730,7 +730,7 @@ package applicationdiscovery {
     def apply(
         configurationIds: ConfigurationIdList
     ): DescribeConfigurationsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "configurationIds" -> configurationIds.asInstanceOf[js.Any]
       )
 
@@ -747,8 +747,8 @@ package applicationdiscovery {
     def apply(
         configurations: js.UndefOr[DescribeConfigurationsAttributes] = js.undefined
     ): DescribeConfigurationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      configurations.foreach(__v => __obj.update("configurations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      configurations.foreach(__v => __obj.updateDynamic("configurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeConfigurationsResponse]
     }
   }
@@ -766,10 +766,10 @@ package applicationdiscovery {
         maxResults: js.UndefOr[DescribeContinuousExportsMaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeContinuousExportsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      exportIds.foreach(__v => __obj.update("exportIds", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      exportIds.foreach(__v => __obj.updateDynamic("exportIds")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeContinuousExportsRequest]
     }
   }
@@ -785,9 +785,9 @@ package applicationdiscovery {
         descriptions: js.UndefOr[ContinuousExportDescriptions] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeContinuousExportsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      descriptions.foreach(__v => __obj.update("descriptions", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      descriptions.foreach(__v => __obj.updateDynamic("descriptions")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeContinuousExportsResponse]
     }
   }
@@ -805,10 +805,10 @@ package applicationdiscovery {
         maxResults: js.UndefOr[Int] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeExportConfigurationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      exportIds.foreach(__v => __obj.update("exportIds", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      exportIds.foreach(__v => __obj.updateDynamic("exportIds")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeExportConfigurationsRequest]
     }
   }
@@ -824,9 +824,9 @@ package applicationdiscovery {
         exportsInfo: js.UndefOr[ExportsInfo] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeExportConfigurationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      exportsInfo.foreach(__v => __obj.update("exportsInfo", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      exportsInfo.foreach(__v => __obj.updateDynamic("exportsInfo")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeExportConfigurationsResponse]
     }
   }
@@ -846,11 +846,11 @@ package applicationdiscovery {
         maxResults: js.UndefOr[Int] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeExportTasksRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      exportIds.foreach(__v => __obj.update("exportIds", __v.asInstanceOf[js.Any]))
-      filters.foreach(__v => __obj.update("filters", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      exportIds.foreach(__v => __obj.updateDynamic("exportIds")(__v.asInstanceOf[js.Any]))
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeExportTasksRequest]
     }
   }
@@ -866,9 +866,9 @@ package applicationdiscovery {
         exportsInfo: js.UndefOr[ExportsInfo] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeExportTasksResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      exportsInfo.foreach(__v => __obj.update("exportsInfo", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      exportsInfo.foreach(__v => __obj.updateDynamic("exportsInfo")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeExportTasksResponse]
     }
   }
@@ -886,10 +886,10 @@ package applicationdiscovery {
         maxResults: js.UndefOr[DescribeImportTasksMaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeImportTasksRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      filters.foreach(__v => __obj.update("filters", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeImportTasksRequest]
     }
   }
@@ -905,9 +905,9 @@ package applicationdiscovery {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         tasks: js.UndefOr[ImportTaskList] = js.undefined
     ): DescribeImportTasksResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      tasks.foreach(__v => __obj.update("tasks", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      tasks.foreach(__v => __obj.updateDynamic("tasks")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeImportTasksResponse]
     }
   }
@@ -925,10 +925,10 @@ package applicationdiscovery {
         maxResults: js.UndefOr[Int] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeTagsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      filters.foreach(__v => __obj.update("filters", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTagsRequest]
     }
   }
@@ -944,9 +944,9 @@ package applicationdiscovery {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         tags: js.UndefOr[ConfigurationTagSet] = js.undefined
     ): DescribeTagsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTagsResponse]
     }
   }
@@ -962,7 +962,7 @@ package applicationdiscovery {
         applicationConfigurationId: ApplicationId,
         configurationIds: ConfigurationIdList
     ): DisassociateConfigurationItemsFromApplicationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "applicationConfigurationId" -> applicationConfigurationId.asInstanceOf[js.Any],
         "configurationIds"           -> configurationIds.asInstanceOf[js.Any]
       )
@@ -977,7 +977,7 @@ package applicationdiscovery {
   object DisassociateConfigurationItemsFromApplicationResponse {
     def apply(
         ): DisassociateConfigurationItemsFromApplicationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateConfigurationItemsFromApplicationResponse]
     }
@@ -992,8 +992,8 @@ package applicationdiscovery {
     def apply(
         exportId: js.UndefOr[ConfigurationsExportId] = js.undefined
     ): ExportConfigurationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      exportId.foreach(__v => __obj.update("exportId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      exportId.foreach(__v => __obj.updateDynamic("exportId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportConfigurationsResponse]
     }
   }
@@ -1021,7 +1021,7 @@ package applicationdiscovery {
         name: FilterName,
         values: FilterValues
     ): ExportFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "condition" -> condition.asInstanceOf[js.Any],
         "name"      -> name.asInstanceOf[js.Any],
         "values"    -> values.asInstanceOf[js.Any]
@@ -1057,17 +1057,19 @@ package applicationdiscovery {
         requestedEndTime: js.UndefOr[TimeStamp] = js.undefined,
         requestedStartTime: js.UndefOr[TimeStamp] = js.undefined
     ): ExportInfo = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "exportId"          -> exportId.asInstanceOf[js.Any],
         "exportRequestTime" -> exportRequestTime.asInstanceOf[js.Any],
         "exportStatus"      -> exportStatus.asInstanceOf[js.Any],
         "statusMessage"     -> statusMessage.asInstanceOf[js.Any]
       )
 
-      configurationsDownloadUrl.foreach(__v => __obj.update("configurationsDownloadUrl", __v.asInstanceOf[js.Any]))
-      isTruncated.foreach(__v => __obj.update("isTruncated", __v.asInstanceOf[js.Any]))
-      requestedEndTime.foreach(__v => __obj.update("requestedEndTime", __v.asInstanceOf[js.Any]))
-      requestedStartTime.foreach(__v => __obj.update("requestedStartTime", __v.asInstanceOf[js.Any]))
+      configurationsDownloadUrl.foreach(
+        __v => __obj.updateDynamic("configurationsDownloadUrl")(__v.asInstanceOf[js.Any])
+      )
+      isTruncated.foreach(__v => __obj.updateDynamic("isTruncated")(__v.asInstanceOf[js.Any]))
+      requestedEndTime.foreach(__v => __obj.updateDynamic("requestedEndTime")(__v.asInstanceOf[js.Any]))
+      requestedStartTime.foreach(__v => __obj.updateDynamic("requestedStartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportInfo]
     }
   }
@@ -1097,7 +1099,7 @@ package applicationdiscovery {
         name: String,
         values: FilterValues
     ): Filter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "condition" -> condition.asInstanceOf[js.Any],
         "name"      -> name.asInstanceOf[js.Any],
         "values"    -> values.asInstanceOf[js.Any]
@@ -1113,7 +1115,7 @@ package applicationdiscovery {
   object GetDiscoverySummaryRequest {
     def apply(
         ): GetDiscoverySummaryRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetDiscoverySummaryRequest]
     }
@@ -1138,13 +1140,15 @@ package applicationdiscovery {
         serversMappedToApplications: js.UndefOr[Double] = js.undefined,
         serversMappedtoTags: js.UndefOr[Double] = js.undefined
     ): GetDiscoverySummaryResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      agentSummary.foreach(__v => __obj.update("agentSummary", __v.asInstanceOf[js.Any]))
-      applications.foreach(__v => __obj.update("applications", __v.asInstanceOf[js.Any]))
-      connectorSummary.foreach(__v => __obj.update("connectorSummary", __v.asInstanceOf[js.Any]))
-      servers.foreach(__v => __obj.update("servers", __v.asInstanceOf[js.Any]))
-      serversMappedToApplications.foreach(__v => __obj.update("serversMappedToApplications", __v.asInstanceOf[js.Any]))
-      serversMappedtoTags.foreach(__v => __obj.update("serversMappedtoTags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      agentSummary.foreach(__v => __obj.updateDynamic("agentSummary")(__v.asInstanceOf[js.Any]))
+      applications.foreach(__v => __obj.updateDynamic("applications")(__v.asInstanceOf[js.Any]))
+      connectorSummary.foreach(__v => __obj.updateDynamic("connectorSummary")(__v.asInstanceOf[js.Any]))
+      servers.foreach(__v => __obj.updateDynamic("servers")(__v.asInstanceOf[js.Any]))
+      serversMappedToApplications.foreach(
+        __v => __obj.updateDynamic("serversMappedToApplications")(__v.asInstanceOf[js.Any])
+      )
+      serversMappedtoTags.foreach(__v => __obj.updateDynamic("serversMappedtoTags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDiscoverySummaryResponse]
     }
   }
@@ -1215,20 +1219,22 @@ package applicationdiscovery {
         serverImportSuccess: js.UndefOr[Int] = js.undefined,
         status: js.UndefOr[ImportStatus] = js.undefined
     ): ImportTask = {
-      val __obj = js.Dictionary.empty[js.Any]
-      applicationImportFailure.foreach(__v => __obj.update("applicationImportFailure", __v.asInstanceOf[js.Any]))
-      applicationImportSuccess.foreach(__v => __obj.update("applicationImportSuccess", __v.asInstanceOf[js.Any]))
-      clientRequestToken.foreach(__v => __obj.update("clientRequestToken", __v.asInstanceOf[js.Any]))
-      errorsAndFailedEntriesZip.foreach(__v => __obj.update("errorsAndFailedEntriesZip", __v.asInstanceOf[js.Any]))
-      importCompletionTime.foreach(__v => __obj.update("importCompletionTime", __v.asInstanceOf[js.Any]))
-      importDeletedTime.foreach(__v => __obj.update("importDeletedTime", __v.asInstanceOf[js.Any]))
-      importRequestTime.foreach(__v => __obj.update("importRequestTime", __v.asInstanceOf[js.Any]))
-      importTaskId.foreach(__v => __obj.update("importTaskId", __v.asInstanceOf[js.Any]))
-      importUrl.foreach(__v => __obj.update("importUrl", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      serverImportFailure.foreach(__v => __obj.update("serverImportFailure", __v.asInstanceOf[js.Any]))
-      serverImportSuccess.foreach(__v => __obj.update("serverImportSuccess", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      applicationImportFailure.foreach(__v => __obj.updateDynamic("applicationImportFailure")(__v.asInstanceOf[js.Any]))
+      applicationImportSuccess.foreach(__v => __obj.updateDynamic("applicationImportSuccess")(__v.asInstanceOf[js.Any]))
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      errorsAndFailedEntriesZip.foreach(
+        __v => __obj.updateDynamic("errorsAndFailedEntriesZip")(__v.asInstanceOf[js.Any])
+      )
+      importCompletionTime.foreach(__v => __obj.updateDynamic("importCompletionTime")(__v.asInstanceOf[js.Any]))
+      importDeletedTime.foreach(__v => __obj.updateDynamic("importDeletedTime")(__v.asInstanceOf[js.Any]))
+      importRequestTime.foreach(__v => __obj.updateDynamic("importRequestTime")(__v.asInstanceOf[js.Any]))
+      importTaskId.foreach(__v => __obj.updateDynamic("importTaskId")(__v.asInstanceOf[js.Any]))
+      importUrl.foreach(__v => __obj.updateDynamic("importUrl")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      serverImportFailure.foreach(__v => __obj.updateDynamic("serverImportFailure")(__v.asInstanceOf[js.Any]))
+      serverImportSuccess.foreach(__v => __obj.updateDynamic("serverImportSuccess")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportTask]
     }
   }
@@ -1249,9 +1255,9 @@ package applicationdiscovery {
         name: js.UndefOr[ImportTaskFilterName] = js.undefined,
         values: js.UndefOr[ImportTaskFilterValueList] = js.undefined
     ): ImportTaskFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      values.foreach(__v => __obj.update("values", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      values.foreach(__v => __obj.updateDynamic("values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportTaskFilter]
     }
   }
@@ -1281,14 +1287,14 @@ package applicationdiscovery {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         orderBy: js.UndefOr[OrderByList] = js.undefined
     ): ListConfigurationsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "configurationType" -> configurationType.asInstanceOf[js.Any]
       )
 
-      filters.foreach(__v => __obj.update("filters", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      orderBy.foreach(__v => __obj.update("orderBy", __v.asInstanceOf[js.Any]))
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      orderBy.foreach(__v => __obj.updateDynamic("orderBy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListConfigurationsRequest]
     }
   }
@@ -1304,9 +1310,9 @@ package applicationdiscovery {
         configurations: js.UndefOr[Configurations] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListConfigurationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      configurations.foreach(__v => __obj.update("configurations", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      configurations.foreach(__v => __obj.updateDynamic("configurations")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListConfigurationsResponse]
     }
   }
@@ -1328,14 +1334,14 @@ package applicationdiscovery {
         nextToken: js.UndefOr[String] = js.undefined,
         portInformationNeeded: js.UndefOr[Boolean] = js.undefined
     ): ListServerNeighborsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "configurationId" -> configurationId.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      neighborConfigurationIds.foreach(__v => __obj.update("neighborConfigurationIds", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      portInformationNeeded.foreach(__v => __obj.update("portInformationNeeded", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      neighborConfigurationIds.foreach(__v => __obj.updateDynamic("neighborConfigurationIds")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      portInformationNeeded.foreach(__v => __obj.updateDynamic("portInformationNeeded")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListServerNeighborsRequest]
     }
   }
@@ -1353,12 +1359,12 @@ package applicationdiscovery {
         knownDependencyCount: js.UndefOr[Double] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): ListServerNeighborsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "neighbors" -> neighbors.asInstanceOf[js.Any]
       )
 
-      knownDependencyCount.foreach(__v => __obj.update("knownDependencyCount", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      knownDependencyCount.foreach(__v => __obj.updateDynamic("knownDependencyCount")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListServerNeighborsResponse]
     }
   }
@@ -1383,14 +1389,14 @@ package applicationdiscovery {
         destinationPort: js.UndefOr[BoxedInteger] = js.undefined,
         transportProtocol: js.UndefOr[String] = js.undefined
     ): NeighborConnectionDetail = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "connectionsCount"    -> connectionsCount.asInstanceOf[js.Any],
         "destinationServerId" -> destinationServerId.asInstanceOf[js.Any],
         "sourceServerId"      -> sourceServerId.asInstanceOf[js.Any]
       )
 
-      destinationPort.foreach(__v => __obj.update("destinationPort", __v.asInstanceOf[js.Any]))
-      transportProtocol.foreach(__v => __obj.update("transportProtocol", __v.asInstanceOf[js.Any]))
+      destinationPort.foreach(__v => __obj.updateDynamic("destinationPort")(__v.asInstanceOf[js.Any]))
+      transportProtocol.foreach(__v => __obj.updateDynamic("transportProtocol")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NeighborConnectionDetail]
     }
   }
@@ -1409,11 +1415,11 @@ package applicationdiscovery {
         fieldName: String,
         sortOrder: js.UndefOr[orderString] = js.undefined
     ): OrderByElement = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "fieldName" -> fieldName.asInstanceOf[js.Any]
       )
 
-      sortOrder.foreach(__v => __obj.update("sortOrder", __v.asInstanceOf[js.Any]))
+      sortOrder.foreach(__v => __obj.updateDynamic("sortOrder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OrderByElement]
     }
   }
@@ -1424,7 +1430,7 @@ package applicationdiscovery {
   object StartContinuousExportRequest {
     def apply(
         ): StartContinuousExportRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartContinuousExportRequest]
     }
@@ -1447,12 +1453,12 @@ package applicationdiscovery {
         schemaStorageConfig: js.UndefOr[SchemaStorageConfig] = js.undefined,
         startTime: js.UndefOr[TimeStamp] = js.undefined
     ): StartContinuousExportResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      dataSource.foreach(__v => __obj.update("dataSource", __v.asInstanceOf[js.Any]))
-      exportId.foreach(__v => __obj.update("exportId", __v.asInstanceOf[js.Any]))
-      s3Bucket.foreach(__v => __obj.update("s3Bucket", __v.asInstanceOf[js.Any]))
-      schemaStorageConfig.foreach(__v => __obj.update("schemaStorageConfig", __v.asInstanceOf[js.Any]))
-      startTime.foreach(__v => __obj.update("startTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      dataSource.foreach(__v => __obj.updateDynamic("dataSource")(__v.asInstanceOf[js.Any]))
+      exportId.foreach(__v => __obj.updateDynamic("exportId")(__v.asInstanceOf[js.Any]))
+      s3Bucket.foreach(__v => __obj.updateDynamic("s3Bucket")(__v.asInstanceOf[js.Any]))
+      schemaStorageConfig.foreach(__v => __obj.updateDynamic("schemaStorageConfig")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartContinuousExportResponse]
     }
   }
@@ -1466,7 +1472,7 @@ package applicationdiscovery {
     def apply(
         agentIds: AgentIds
     ): StartDataCollectionByAgentIdsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "agentIds" -> agentIds.asInstanceOf[js.Any]
       )
 
@@ -1483,8 +1489,10 @@ package applicationdiscovery {
     def apply(
         agentsConfigurationStatus: js.UndefOr[AgentConfigurationStatusList] = js.undefined
     ): StartDataCollectionByAgentIdsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      agentsConfigurationStatus.foreach(__v => __obj.update("agentsConfigurationStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      agentsConfigurationStatus.foreach(
+        __v => __obj.updateDynamic("agentsConfigurationStatus")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[StartDataCollectionByAgentIdsResponse]
     }
   }
@@ -1504,11 +1512,11 @@ package applicationdiscovery {
         filters: js.UndefOr[ExportFilters] = js.undefined,
         startTime: js.UndefOr[TimeStamp] = js.undefined
     ): StartExportTaskRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      endTime.foreach(__v => __obj.update("endTime", __v.asInstanceOf[js.Any]))
-      exportDataFormat.foreach(__v => __obj.update("exportDataFormat", __v.asInstanceOf[js.Any]))
-      filters.foreach(__v => __obj.update("filters", __v.asInstanceOf[js.Any]))
-      startTime.foreach(__v => __obj.update("startTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      exportDataFormat.foreach(__v => __obj.updateDynamic("exportDataFormat")(__v.asInstanceOf[js.Any]))
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartExportTaskRequest]
     }
   }
@@ -1522,8 +1530,8 @@ package applicationdiscovery {
     def apply(
         exportId: js.UndefOr[ConfigurationsExportId] = js.undefined
     ): StartExportTaskResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      exportId.foreach(__v => __obj.update("exportId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      exportId.foreach(__v => __obj.updateDynamic("exportId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartExportTaskResponse]
     }
   }
@@ -1541,12 +1549,12 @@ package applicationdiscovery {
         name: ImportTaskName,
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined
     ): StartImportTaskRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "importUrl" -> importUrl.asInstanceOf[js.Any],
         "name"      -> name.asInstanceOf[js.Any]
       )
 
-      clientRequestToken.foreach(__v => __obj.update("clientRequestToken", __v.asInstanceOf[js.Any]))
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartImportTaskRequest]
     }
   }
@@ -1560,8 +1568,8 @@ package applicationdiscovery {
     def apply(
         task: js.UndefOr[ImportTask] = js.undefined
     ): StartImportTaskResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      task.foreach(__v => __obj.update("task", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      task.foreach(__v => __obj.updateDynamic("task")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartImportTaskResponse]
     }
   }
@@ -1575,7 +1583,7 @@ package applicationdiscovery {
     def apply(
         exportId: ConfigurationsExportId
     ): StopContinuousExportRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "exportId" -> exportId.asInstanceOf[js.Any]
       )
 
@@ -1594,9 +1602,9 @@ package applicationdiscovery {
         startTime: js.UndefOr[TimeStamp] = js.undefined,
         stopTime: js.UndefOr[TimeStamp] = js.undefined
     ): StopContinuousExportResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      startTime.foreach(__v => __obj.update("startTime", __v.asInstanceOf[js.Any]))
-      stopTime.foreach(__v => __obj.update("stopTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
+      stopTime.foreach(__v => __obj.updateDynamic("stopTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopContinuousExportResponse]
     }
   }
@@ -1610,7 +1618,7 @@ package applicationdiscovery {
     def apply(
         agentIds: AgentIds
     ): StopDataCollectionByAgentIdsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "agentIds" -> agentIds.asInstanceOf[js.Any]
       )
 
@@ -1627,8 +1635,10 @@ package applicationdiscovery {
     def apply(
         agentsConfigurationStatus: js.UndefOr[AgentConfigurationStatusList] = js.undefined
     ): StopDataCollectionByAgentIdsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      agentsConfigurationStatus.foreach(__v => __obj.update("agentsConfigurationStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      agentsConfigurationStatus.foreach(
+        __v => __obj.updateDynamic("agentsConfigurationStatus")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[StopDataCollectionByAgentIdsResponse]
     }
   }
@@ -1647,7 +1657,7 @@ package applicationdiscovery {
         key: TagKey,
         value: TagValue
     ): Tag = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "key"   -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
@@ -1670,7 +1680,7 @@ package applicationdiscovery {
         name: FilterName,
         values: FilterValues
     ): TagFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name"   -> name.asInstanceOf[js.Any],
         "values" -> values.asInstanceOf[js.Any]
       )
@@ -1692,12 +1702,12 @@ package applicationdiscovery {
         description: js.UndefOr[String] = js.undefined,
         name: js.UndefOr[String] = js.undefined
     ): UpdateApplicationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "configurationId" -> configurationId.asInstanceOf[js.Any]
       )
 
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateApplicationRequest]
     }
   }
@@ -1708,7 +1718,7 @@ package applicationdiscovery {
   object UpdateApplicationResponse {
     def apply(
         ): UpdateApplicationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateApplicationResponse]
     }
