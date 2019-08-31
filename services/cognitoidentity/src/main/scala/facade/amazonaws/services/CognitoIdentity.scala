@@ -159,6 +159,7 @@ package cognitoidentity {
   }
 
   object CognitoIdentityProvider {
+    @inline
     def apply(
         ClientId: js.UndefOr[CognitoIdentityProviderClientId] = js.undefined,
         ProviderName: js.UndefOr[CognitoIdentityProviderName] = js.undefined,
@@ -188,6 +189,7 @@ package cognitoidentity {
   }
 
   object CreateIdentityPoolInput {
+    @inline
     def apply(
         AllowUnauthenticatedIdentities: IdentityPoolUnauthenticated,
         IdentityPoolName: IdentityPoolName,
@@ -227,6 +229,7 @@ package cognitoidentity {
   }
 
   object Credentials {
+    @inline
     def apply(
         AccessKeyId: js.UndefOr[AccessKeyString] = js.undefined,
         Expiration: js.UndefOr[DateType] = js.undefined,
@@ -251,6 +254,7 @@ package cognitoidentity {
   }
 
   object DeleteIdentitiesInput {
+    @inline
     def apply(
         IdentityIdsToDelete: IdentityIdList
     ): DeleteIdentitiesInput = {
@@ -271,6 +275,7 @@ package cognitoidentity {
   }
 
   object DeleteIdentitiesResponse {
+    @inline
     def apply(
         UnprocessedIdentityIds: js.UndefOr[UnprocessedIdentityIdList] = js.undefined
     ): DeleteIdentitiesResponse = {
@@ -289,6 +294,7 @@ package cognitoidentity {
   }
 
   object DeleteIdentityPoolInput {
+    @inline
     def apply(
         IdentityPoolId: IdentityPoolId
     ): DeleteIdentityPoolInput = {
@@ -309,6 +315,7 @@ package cognitoidentity {
   }
 
   object DescribeIdentityInput {
+    @inline
     def apply(
         IdentityId: IdentityId
     ): DescribeIdentityInput = {
@@ -329,6 +336,7 @@ package cognitoidentity {
   }
 
   object DescribeIdentityPoolInput {
+    @inline
     def apply(
         IdentityPoolId: IdentityPoolId
     ): DescribeIdentityPoolInput = {
@@ -358,6 +366,7 @@ package cognitoidentity {
   }
 
   object GetCredentialsForIdentityInput {
+    @inline
     def apply(
         IdentityId: IdentityId,
         CustomRoleArn: js.UndefOr[ARNString] = js.undefined,
@@ -383,6 +392,7 @@ package cognitoidentity {
   }
 
   object GetCredentialsForIdentityResponse {
+    @inline
     def apply(
         Credentials: js.UndefOr[Credentials] = js.undefined,
         IdentityId: js.UndefOr[IdentityId] = js.undefined
@@ -405,6 +415,7 @@ package cognitoidentity {
   }
 
   object GetIdInput {
+    @inline
     def apply(
         IdentityPoolId: IdentityPoolId,
         AccountId: js.UndefOr[AccountId] = js.undefined,
@@ -429,6 +440,7 @@ package cognitoidentity {
   }
 
   object GetIdResponse {
+    @inline
     def apply(
         IdentityId: js.UndefOr[IdentityId] = js.undefined
     ): GetIdResponse = {
@@ -447,6 +459,7 @@ package cognitoidentity {
   }
 
   object GetIdentityPoolRolesInput {
+    @inline
     def apply(
         IdentityPoolId: IdentityPoolId
     ): GetIdentityPoolRolesInput = {
@@ -469,6 +482,7 @@ package cognitoidentity {
   }
 
   object GetIdentityPoolRolesResponse {
+    @inline
     def apply(
         IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
         RoleMappings: js.UndefOr[RoleMappingMap] = js.undefined,
@@ -494,6 +508,7 @@ package cognitoidentity {
   }
 
   object GetOpenIdTokenForDeveloperIdentityInput {
+    @inline
     def apply(
         IdentityPoolId: IdentityPoolId,
         Logins: LoginsMap,
@@ -521,6 +536,7 @@ package cognitoidentity {
   }
 
   object GetOpenIdTokenForDeveloperIdentityResponse {
+    @inline
     def apply(
         IdentityId: js.UndefOr[IdentityId] = js.undefined,
         Token: js.UndefOr[OIDCToken] = js.undefined
@@ -542,6 +558,7 @@ package cognitoidentity {
   }
 
   object GetOpenIdTokenInput {
+    @inline
     def apply(
         IdentityId: IdentityId,
         Logins: js.UndefOr[LoginsMap] = js.undefined
@@ -565,6 +582,7 @@ package cognitoidentity {
   }
 
   object GetOpenIdTokenResponse {
+    @inline
     def apply(
         IdentityId: js.UndefOr[IdentityId] = js.undefined,
         Token: js.UndefOr[OIDCToken] = js.undefined
@@ -588,6 +606,7 @@ package cognitoidentity {
   }
 
   object IdentityDescription {
+    @inline
     def apply(
         CreationDate: js.UndefOr[DateType] = js.undefined,
         IdentityId: js.UndefOr[IdentityId] = js.undefined,
@@ -620,6 +639,7 @@ package cognitoidentity {
   }
 
   object IdentityPool {
+    @inline
     def apply(
         AllowUnauthenticatedIdentities: IdentityPoolUnauthenticated,
         IdentityPoolId: IdentityPoolId,
@@ -659,6 +679,7 @@ package cognitoidentity {
   }
 
   object IdentityPoolShortDescription {
+    @inline
     def apply(
         IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
         IdentityPoolName: js.UndefOr[IdentityPoolName] = js.undefined
@@ -682,6 +703,7 @@ package cognitoidentity {
   }
 
   object ListIdentitiesInput {
+    @inline
     def apply(
         IdentityPoolId: IdentityPoolId,
         MaxResults: QueryLimit,
@@ -710,6 +732,7 @@ package cognitoidentity {
   }
 
   object ListIdentitiesResponse {
+    @inline
     def apply(
         Identities: js.UndefOr[IdentitiesList] = js.undefined,
         IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
@@ -733,6 +756,7 @@ package cognitoidentity {
   }
 
   object ListIdentityPoolsInput {
+    @inline
     def apply(
         MaxResults: QueryLimit,
         NextToken: js.UndefOr[PaginationKey] = js.undefined
@@ -756,6 +780,7 @@ package cognitoidentity {
   }
 
   object ListIdentityPoolsResponse {
+    @inline
     def apply(
         IdentityPools: js.UndefOr[IdentityPoolsList] = js.undefined,
         NextToken: js.UndefOr[PaginationKey] = js.undefined
@@ -773,6 +798,7 @@ package cognitoidentity {
   }
 
   object ListTagsForResourceInput {
+    @inline
     def apply(
         ResourceArn: ARNString
     ): ListTagsForResourceInput = {
@@ -790,6 +816,7 @@ package cognitoidentity {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         Tags: js.UndefOr[IdentityPoolTagsType] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -812,6 +839,7 @@ package cognitoidentity {
   }
 
   object LookupDeveloperIdentityInput {
+    @inline
     def apply(
         IdentityPoolId: IdentityPoolId,
         DeveloperUserIdentifier: js.UndefOr[DeveloperUserIdentifier] = js.undefined,
@@ -842,6 +870,7 @@ package cognitoidentity {
   }
 
   object LookupDeveloperIdentityResponse {
+    @inline
     def apply(
         DeveloperUserIdentifierList: js.UndefOr[DeveloperUserIdentifierList] = js.undefined,
         IdentityId: js.UndefOr[IdentityId] = js.undefined,
@@ -869,6 +898,7 @@ package cognitoidentity {
   }
 
   object MappingRule {
+    @inline
     def apply(
         Claim: ClaimName,
         MatchType: MappingRuleMatchType,
@@ -907,6 +937,7 @@ package cognitoidentity {
   }
 
   object MergeDeveloperIdentitiesInput {
+    @inline
     def apply(
         DestinationUserIdentifier: DeveloperUserIdentifier,
         DeveloperProviderName: DeveloperProviderName,
@@ -933,6 +964,7 @@ package cognitoidentity {
   }
 
   object MergeDeveloperIdentitiesResponse {
+    @inline
     def apply(
         IdentityId: js.UndefOr[IdentityId] = js.undefined
     ): MergeDeveloperIdentitiesResponse = {
@@ -953,6 +985,7 @@ package cognitoidentity {
   }
 
   object RoleMapping {
+    @inline
     def apply(
         Type: RoleMappingType,
         AmbiguousRoleResolution: js.UndefOr[AmbiguousRoleResolutionType] = js.undefined,
@@ -984,6 +1017,7 @@ package cognitoidentity {
   }
 
   object RulesConfigurationType {
+    @inline
     def apply(
         Rules: MappingRulesList
     ): RulesConfigurationType = {
@@ -1006,6 +1040,7 @@ package cognitoidentity {
   }
 
   object SetIdentityPoolRolesInput {
+    @inline
     def apply(
         IdentityPoolId: IdentityPoolId,
         Roles: RolesMap,
@@ -1028,6 +1063,7 @@ package cognitoidentity {
   }
 
   object TagResourceInput {
+    @inline
     def apply(
         ResourceArn: ARNString,
         Tags: js.UndefOr[IdentityPoolTagsType] = js.undefined
@@ -1045,6 +1081,7 @@ package cognitoidentity {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1065,6 +1102,7 @@ package cognitoidentity {
   }
 
   object UnlinkDeveloperIdentityInput {
+    @inline
     def apply(
         DeveloperProviderName: DeveloperProviderName,
         DeveloperUserIdentifier: DeveloperUserIdentifier,
@@ -1093,6 +1131,7 @@ package cognitoidentity {
   }
 
   object UnlinkIdentityInput {
+    @inline
     def apply(
         IdentityId: IdentityId,
         Logins: LoginsMap,
@@ -1118,6 +1157,7 @@ package cognitoidentity {
   }
 
   object UnprocessedIdentityId {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
         IdentityId: js.UndefOr[IdentityId] = js.undefined
@@ -1136,6 +1176,7 @@ package cognitoidentity {
   }
 
   object UntagResourceInput {
+    @inline
     def apply(
         ResourceArn: ARNString,
         TagKeys: js.UndefOr[IdentityPoolTagsListType] = js.undefined
@@ -1153,6 +1194,7 @@ package cognitoidentity {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()

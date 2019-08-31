@@ -68,6 +68,7 @@ package mediatailor {
   }
 
   object CdnConfiguration {
+    @inline
     def apply(
         AdSegmentUrlPrefix: js.UndefOr[__string] = js.undefined,
         ContentSegmentUrlPrefix: js.UndefOr[__string] = js.undefined
@@ -90,6 +91,7 @@ package mediatailor {
   }
 
   object DashConfiguration {
+    @inline
     def apply(
         ManifestEndpointPrefix: js.UndefOr[__string] = js.undefined,
         MpdLocation: js.UndefOr[__string] = js.undefined,
@@ -113,6 +115,7 @@ package mediatailor {
   }
 
   object DashConfigurationForPut {
+    @inline
     def apply(
         MpdLocation: js.UndefOr[__string] = js.undefined,
         OriginManifestType: js.UndefOr[OriginManifestType] = js.undefined
@@ -130,6 +133,7 @@ package mediatailor {
   }
 
   object DeletePlaybackConfigurationRequest {
+    @inline
     def apply(
         Name: __string
     ): DeletePlaybackConfigurationRequest = {
@@ -145,6 +149,7 @@ package mediatailor {
   trait DeletePlaybackConfigurationResponse extends js.Object {}
 
   object DeletePlaybackConfigurationResponse {
+    @inline
     def apply(
         ): DeletePlaybackConfigurationResponse = {
       val __obj = js.Dynamic.literal()
@@ -159,6 +164,7 @@ package mediatailor {
   }
 
   object GetPlaybackConfigurationRequest {
+    @inline
     def apply(
         Name: __string
     ): GetPlaybackConfigurationRequest = {
@@ -187,6 +193,7 @@ package mediatailor {
   }
 
   object GetPlaybackConfigurationResponse {
+    @inline
     def apply(
         AdDecisionServerUrl: js.UndefOr[__string] = js.undefined,
         CdnConfiguration: js.UndefOr[CdnConfiguration] = js.undefined,
@@ -229,6 +236,7 @@ package mediatailor {
   }
 
   object HlsConfiguration {
+    @inline
     def apply(
         ManifestEndpointPrefix: js.UndefOr[__string] = js.undefined
     ): HlsConfiguration = {
@@ -245,6 +253,7 @@ package mediatailor {
   }
 
   object ListPlaybackConfigurationsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[__integerMin1Max100] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -263,6 +272,7 @@ package mediatailor {
   }
 
   object ListPlaybackConfigurationsResponse {
+    @inline
     def apply(
         Items: js.UndefOr[__listOfPlaybackConfigurations] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -280,6 +290,7 @@ package mediatailor {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceArn: __string
     ): ListTagsForResourceRequest = {
@@ -297,6 +308,7 @@ package mediatailor {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -333,6 +345,7 @@ package mediatailor {
   }
 
   object PlaybackConfiguration {
+    @inline
     def apply(
         AdDecisionServerUrl: js.UndefOr[__string] = js.undefined,
         CdnConfiguration: js.UndefOr[CdnConfiguration] = js.undefined,
@@ -379,6 +392,7 @@ package mediatailor {
   }
 
   object PutPlaybackConfigurationRequest {
+    @inline
     def apply(
         AdDecisionServerUrl: js.UndefOr[__string] = js.undefined,
         CdnConfiguration: js.UndefOr[CdnConfiguration] = js.undefined,
@@ -419,6 +433,7 @@ package mediatailor {
   }
 
   object PutPlaybackConfigurationResponse {
+    @inline
     def apply(
         AdDecisionServerUrl: js.UndefOr[__string] = js.undefined,
         CdnConfiguration: js.UndefOr[CdnConfiguration] = js.undefined,
@@ -459,6 +474,7 @@ package mediatailor {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceArn: __string,
         Tags: __mapOf__string
@@ -479,6 +495,7 @@ package mediatailor {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceArn: __string,
         TagKeys: __listOf__string

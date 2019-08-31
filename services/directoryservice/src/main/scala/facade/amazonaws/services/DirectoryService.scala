@@ -314,6 +314,7 @@ package directoryservice {
   }
 
   object AcceptSharedDirectoryRequest {
+    @inline
     def apply(
         SharedDirectoryId: DirectoryId
     ): AcceptSharedDirectoryRequest = {
@@ -331,6 +332,7 @@ package directoryservice {
   }
 
   object AcceptSharedDirectoryResult {
+    @inline
     def apply(
         SharedDirectory: js.UndefOr[SharedDirectory] = js.undefined
     ): AcceptSharedDirectoryResult = {
@@ -348,6 +350,7 @@ package directoryservice {
   }
 
   object AddIpRoutesRequest {
+    @inline
     def apply(
         DirectoryId: DirectoryId,
         IpRoutes: IpRoutes,
@@ -370,6 +373,7 @@ package directoryservice {
   trait AddIpRoutesResult extends js.Object {}
 
   object AddIpRoutesResult {
+    @inline
     def apply(
         ): AddIpRoutesResult = {
       val __obj = js.Dynamic.literal()
@@ -385,6 +389,7 @@ package directoryservice {
   }
 
   object AddTagsToResourceRequest {
+    @inline
     def apply(
         ResourceId: ResourceId,
         Tags: Tags
@@ -402,6 +407,7 @@ package directoryservice {
   trait AddTagsToResourceResult extends js.Object {}
 
   object AddTagsToResourceResult {
+    @inline
     def apply(
         ): AddTagsToResourceResult = {
       val __obj = js.Dynamic.literal()
@@ -420,6 +426,7 @@ package directoryservice {
   }
 
   object Attribute {
+    @inline
     def apply(
         Name: js.UndefOr[AttributeName] = js.undefined,
         Value: js.UndefOr[AttributeValue] = js.undefined
@@ -438,6 +445,7 @@ package directoryservice {
   }
 
   object CancelSchemaExtensionRequest {
+    @inline
     def apply(
         DirectoryId: DirectoryId,
         SchemaExtensionId: SchemaExtensionId
@@ -455,6 +463,7 @@ package directoryservice {
   trait CancelSchemaExtensionResult extends js.Object {}
 
   object CancelSchemaExtensionResult {
+    @inline
     def apply(
         ): CancelSchemaExtensionResult = {
       val __obj = js.Dynamic.literal()
@@ -474,6 +483,7 @@ package directoryservice {
   }
 
   object Computer {
+    @inline
     def apply(
         ComputerAttributes: js.UndefOr[Attributes] = js.undefined,
         ComputerId: js.UndefOr[SID] = js.undefined,
@@ -498,6 +508,7 @@ package directoryservice {
   }
 
   object ConditionalForwarder {
+    @inline
     def apply(
         DnsIpAddrs: js.UndefOr[DnsIpAddrs] = js.undefined,
         RemoteDomainName: js.UndefOr[RemoteDomainName] = js.undefined,
@@ -526,6 +537,7 @@ package directoryservice {
   }
 
   object ConnectDirectoryRequest {
+    @inline
     def apply(
         ConnectSettings: DirectoryConnectSettings,
         Name: DirectoryName,
@@ -558,6 +570,7 @@ package directoryservice {
   }
 
   object ConnectDirectoryResult {
+    @inline
     def apply(
         DirectoryId: js.UndefOr[DirectoryId] = js.undefined
     ): ConnectDirectoryResult = {
@@ -577,6 +590,7 @@ package directoryservice {
   }
 
   object CreateAliasRequest {
+    @inline
     def apply(
         Alias: AliasName,
         DirectoryId: DirectoryId
@@ -600,6 +614,7 @@ package directoryservice {
   }
 
   object CreateAliasResult {
+    @inline
     def apply(
         Alias: js.UndefOr[AliasName] = js.undefined,
         DirectoryId: js.UndefOr[DirectoryId] = js.undefined
@@ -624,6 +639,7 @@ package directoryservice {
   }
 
   object CreateComputerRequest {
+    @inline
     def apply(
         ComputerName: ComputerName,
         DirectoryId: DirectoryId,
@@ -654,6 +670,7 @@ package directoryservice {
   }
 
   object CreateComputerResult {
+    @inline
     def apply(
         Computer: js.UndefOr[Computer] = js.undefined
     ): CreateComputerResult = {
@@ -674,6 +691,7 @@ package directoryservice {
   }
 
   object CreateConditionalForwarderRequest {
+    @inline
     def apply(
         DirectoryId: DirectoryId,
         DnsIpAddrs: DnsIpAddrs,
@@ -696,6 +714,7 @@ package directoryservice {
   trait CreateConditionalForwarderResult extends js.Object {}
 
   object CreateConditionalForwarderResult {
+    @inline
     def apply(
         ): CreateConditionalForwarderResult = {
       val __obj = js.Dynamic.literal()
@@ -719,6 +738,7 @@ package directoryservice {
   }
 
   object CreateDirectoryRequest {
+    @inline
     def apply(
         Name: DirectoryName,
         Password: Password,
@@ -751,6 +771,7 @@ package directoryservice {
   }
 
   object CreateDirectoryResult {
+    @inline
     def apply(
         DirectoryId: js.UndefOr[DirectoryId] = js.undefined
     ): CreateDirectoryResult = {
@@ -767,6 +788,7 @@ package directoryservice {
   }
 
   object CreateLogSubscriptionRequest {
+    @inline
     def apply(
         DirectoryId: DirectoryId,
         LogGroupName: LogGroupName
@@ -784,6 +806,7 @@ package directoryservice {
   trait CreateLogSubscriptionResult extends js.Object {}
 
   object CreateLogSubscriptionResult {
+    @inline
     def apply(
         ): CreateLogSubscriptionResult = {
       val __obj = js.Dynamic.literal()
@@ -807,6 +830,7 @@ package directoryservice {
   }
 
   object CreateMicrosoftADRequest {
+    @inline
     def apply(
         Name: DirectoryName,
         Password: Password,
@@ -839,6 +863,7 @@ package directoryservice {
   }
 
   object CreateMicrosoftADResult {
+    @inline
     def apply(
         DirectoryId: js.UndefOr[DirectoryId] = js.undefined
     ): CreateMicrosoftADResult = {
@@ -858,6 +883,7 @@ package directoryservice {
   }
 
   object CreateSnapshotRequest {
+    @inline
     def apply(
         DirectoryId: DirectoryId,
         Name: js.UndefOr[SnapshotName] = js.undefined
@@ -880,6 +906,7 @@ package directoryservice {
   }
 
   object CreateSnapshotResult {
+    @inline
     def apply(
         SnapshotId: js.UndefOr[SnapshotId] = js.undefined
     ): CreateSnapshotResult = {
@@ -905,6 +932,7 @@ package directoryservice {
   }
 
   object CreateTrustRequest {
+    @inline
     def apply(
         DirectoryId: DirectoryId,
         RemoteDomainName: RemoteDomainName,
@@ -939,6 +967,7 @@ package directoryservice {
   }
 
   object CreateTrustResult {
+    @inline
     def apply(
         TrustId: js.UndefOr[TrustId] = js.undefined
     ): CreateTrustResult = {
@@ -958,6 +987,7 @@ package directoryservice {
   }
 
   object DeleteConditionalForwarderRequest {
+    @inline
     def apply(
         DirectoryId: DirectoryId,
         RemoteDomainName: RemoteDomainName
@@ -978,6 +1008,7 @@ package directoryservice {
   trait DeleteConditionalForwarderResult extends js.Object {}
 
   object DeleteConditionalForwarderResult {
+    @inline
     def apply(
         ): DeleteConditionalForwarderResult = {
       val __obj = js.Dynamic.literal()
@@ -995,6 +1026,7 @@ package directoryservice {
   }
 
   object DeleteDirectoryRequest {
+    @inline
     def apply(
         DirectoryId: DirectoryId
     ): DeleteDirectoryRequest = {
@@ -1015,6 +1047,7 @@ package directoryservice {
   }
 
   object DeleteDirectoryResult {
+    @inline
     def apply(
         DirectoryId: js.UndefOr[DirectoryId] = js.undefined
     ): DeleteDirectoryResult = {
@@ -1030,6 +1063,7 @@ package directoryservice {
   }
 
   object DeleteLogSubscriptionRequest {
+    @inline
     def apply(
         DirectoryId: DirectoryId
     ): DeleteLogSubscriptionRequest = {
@@ -1045,6 +1079,7 @@ package directoryservice {
   trait DeleteLogSubscriptionResult extends js.Object {}
 
   object DeleteLogSubscriptionResult {
+    @inline
     def apply(
         ): DeleteLogSubscriptionResult = {
       val __obj = js.Dynamic.literal()
@@ -1062,6 +1097,7 @@ package directoryservice {
   }
 
   object DeleteSnapshotRequest {
+    @inline
     def apply(
         SnapshotId: SnapshotId
     ): DeleteSnapshotRequest = {
@@ -1082,6 +1118,7 @@ package directoryservice {
   }
 
   object DeleteSnapshotResult {
+    @inline
     def apply(
         SnapshotId: js.UndefOr[SnapshotId] = js.undefined
     ): DeleteSnapshotResult = {
@@ -1101,6 +1138,7 @@ package directoryservice {
   }
 
   object DeleteTrustRequest {
+    @inline
     def apply(
         TrustId: TrustId,
         DeleteAssociatedConditionalForwarder: js.UndefOr[DeleteAssociatedConditionalForwarder] = js.undefined
@@ -1125,6 +1163,7 @@ package directoryservice {
   }
 
   object DeleteTrustResult {
+    @inline
     def apply(
         TrustId: js.UndefOr[TrustId] = js.undefined
     ): DeleteTrustResult = {
@@ -1144,6 +1183,7 @@ package directoryservice {
   }
 
   object DeregisterEventTopicRequest {
+    @inline
     def apply(
         DirectoryId: DirectoryId,
         TopicName: TopicName
@@ -1164,6 +1204,7 @@ package directoryservice {
   trait DeregisterEventTopicResult extends js.Object {}
 
   object DeregisterEventTopicResult {
+    @inline
     def apply(
         ): DeregisterEventTopicResult = {
       val __obj = js.Dynamic.literal()
@@ -1182,6 +1223,7 @@ package directoryservice {
   }
 
   object DescribeConditionalForwardersRequest {
+    @inline
     def apply(
         DirectoryId: DirectoryId,
         RemoteDomainNames: js.UndefOr[RemoteDomainNames] = js.undefined
@@ -1204,6 +1246,7 @@ package directoryservice {
   }
 
   object DescribeConditionalForwardersResult {
+    @inline
     def apply(
         ConditionalForwarders: js.UndefOr[ConditionalForwarders] = js.undefined
     ): DescribeConditionalForwardersResult = {
@@ -1224,6 +1267,7 @@ package directoryservice {
   }
 
   object DescribeDirectoriesRequest {
+    @inline
     def apply(
         DirectoryIds: js.UndefOr[DirectoryIds] = js.undefined,
         Limit: js.UndefOr[Limit] = js.undefined,
@@ -1247,6 +1291,7 @@ package directoryservice {
   }
 
   object DescribeDirectoriesResult {
+    @inline
     def apply(
         DirectoryDescriptions: js.UndefOr[DirectoryDescriptions] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1267,6 +1312,7 @@ package directoryservice {
   }
 
   object DescribeDomainControllersRequest {
+    @inline
     def apply(
         DirectoryId: DirectoryId,
         DomainControllerIds: js.UndefOr[DomainControllerIds] = js.undefined,
@@ -1291,6 +1337,7 @@ package directoryservice {
   }
 
   object DescribeDomainControllersResult {
+    @inline
     def apply(
         DomainControllers: js.UndefOr[DomainControllers] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1312,6 +1359,7 @@ package directoryservice {
   }
 
   object DescribeEventTopicsRequest {
+    @inline
     def apply(
         DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
         TopicNames: js.UndefOr[TopicNames] = js.undefined
@@ -1332,6 +1380,7 @@ package directoryservice {
   }
 
   object DescribeEventTopicsResult {
+    @inline
     def apply(
         EventTopics: js.UndefOr[EventTopics] = js.undefined
     ): DescribeEventTopicsResult = {
@@ -1350,6 +1399,7 @@ package directoryservice {
   }
 
   object DescribeSharedDirectoriesRequest {
+    @inline
     def apply(
         OwnerDirectoryId: DirectoryId,
         Limit: js.UndefOr[Limit] = js.undefined,
@@ -1374,6 +1424,7 @@ package directoryservice {
   }
 
   object DescribeSharedDirectoriesResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         SharedDirectories: js.UndefOr[SharedDirectories] = js.undefined
@@ -1397,6 +1448,7 @@ package directoryservice {
   }
 
   object DescribeSnapshotsRequest {
+    @inline
     def apply(
         DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
         Limit: js.UndefOr[Limit] = js.undefined,
@@ -1422,6 +1474,7 @@ package directoryservice {
   }
 
   object DescribeSnapshotsResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Snapshots: js.UndefOr[Snapshots] = js.undefined
@@ -1445,6 +1498,7 @@ package directoryservice {
   }
 
   object DescribeTrustsRequest {
+    @inline
     def apply(
         DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
         Limit: js.UndefOr[Limit] = js.undefined,
@@ -1470,6 +1524,7 @@ package directoryservice {
   }
 
   object DescribeTrustsResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Trusts: js.UndefOr[Trusts] = js.undefined
@@ -1493,6 +1548,7 @@ package directoryservice {
   }
 
   object DirectoryConnectSettings {
+    @inline
     def apply(
         CustomerDnsIps: DnsIpAddrs,
         CustomerUserName: UserName,
@@ -1524,6 +1580,7 @@ package directoryservice {
   }
 
   object DirectoryConnectSettingsDescription {
+    @inline
     def apply(
         AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
         ConnectIps: js.UndefOr[IpAddrs] = js.undefined,
@@ -1575,6 +1632,7 @@ package directoryservice {
   }
 
   object DirectoryDescription {
+    @inline
     def apply(
         AccessUrl: js.UndefOr[AccessUrl] = js.undefined,
         Alias: js.UndefOr[AliasName] = js.undefined,
@@ -1658,6 +1716,7 @@ package directoryservice {
   }
 
   object DirectoryLimits {
+    @inline
     def apply(
         CloudOnlyDirectoriesCurrentCount: js.UndefOr[Limit] = js.undefined,
         CloudOnlyDirectoriesLimit: js.UndefOr[Limit] = js.undefined,
@@ -1757,6 +1816,7 @@ package directoryservice {
   }
 
   object DirectoryVpcSettings {
+    @inline
     def apply(
         SubnetIds: SubnetIds,
         VpcId: VpcId
@@ -1782,6 +1842,7 @@ package directoryservice {
   }
 
   object DirectoryVpcSettingsDescription {
+    @inline
     def apply(
         AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
         SecurityGroupId: js.UndefOr[SecurityGroupId] = js.undefined,
@@ -1806,6 +1867,7 @@ package directoryservice {
   }
 
   object DisableRadiusRequest {
+    @inline
     def apply(
         DirectoryId: DirectoryId
     ): DisableRadiusRequest = {
@@ -1824,6 +1886,7 @@ package directoryservice {
   trait DisableRadiusResult extends js.Object {}
 
   object DisableRadiusResult {
+    @inline
     def apply(
         ): DisableRadiusResult = {
       val __obj = js.Dynamic.literal()
@@ -1843,6 +1906,7 @@ package directoryservice {
   }
 
   object DisableSsoRequest {
+    @inline
     def apply(
         DirectoryId: DirectoryId,
         Password: js.UndefOr[ConnectPassword] = js.undefined,
@@ -1865,6 +1929,7 @@ package directoryservice {
   trait DisableSsoResult extends js.Object {}
 
   object DisableSsoResult {
+    @inline
     def apply(
         ): DisableSsoResult = {
       val __obj = js.Dynamic.literal()
@@ -1891,6 +1956,7 @@ package directoryservice {
   }
 
   object DomainController {
+    @inline
     def apply(
         AvailabilityZone: js.UndefOr[AvailabilityZone] = js.undefined,
         DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
@@ -1942,6 +2008,7 @@ package directoryservice {
   }
 
   object EnableRadiusRequest {
+    @inline
     def apply(
         DirectoryId: DirectoryId,
         RadiusSettings: RadiusSettings
@@ -1962,6 +2029,7 @@ package directoryservice {
   trait EnableRadiusResult extends js.Object {}
 
   object EnableRadiusResult {
+    @inline
     def apply(
         ): EnableRadiusResult = {
       val __obj = js.Dynamic.literal()
@@ -1981,6 +2049,7 @@ package directoryservice {
   }
 
   object EnableSsoRequest {
+    @inline
     def apply(
         DirectoryId: DirectoryId,
         Password: js.UndefOr[ConnectPassword] = js.undefined,
@@ -2003,6 +2072,7 @@ package directoryservice {
   trait EnableSsoResult extends js.Object {}
 
   object EnableSsoResult {
+    @inline
     def apply(
         ): EnableSsoResult = {
       val __obj = js.Dynamic.literal()
@@ -2024,6 +2094,7 @@ package directoryservice {
   }
 
   object EventTopic {
+    @inline
     def apply(
         CreatedDateTime: js.UndefOr[CreatedDateTime] = js.undefined,
         DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
@@ -2048,6 +2119,7 @@ package directoryservice {
   trait GetDirectoryLimitsRequest extends js.Object {}
 
   object GetDirectoryLimitsRequest {
+    @inline
     def apply(
         ): GetDirectoryLimitsRequest = {
       val __obj = js.Dynamic.literal()
@@ -2065,6 +2137,7 @@ package directoryservice {
   }
 
   object GetDirectoryLimitsResult {
+    @inline
     def apply(
         DirectoryLimits: js.UndefOr[DirectoryLimits] = js.undefined
     ): GetDirectoryLimitsResult = {
@@ -2083,6 +2156,7 @@ package directoryservice {
   }
 
   object GetSnapshotLimitsRequest {
+    @inline
     def apply(
         DirectoryId: DirectoryId
     ): GetSnapshotLimitsRequest = {
@@ -2103,6 +2177,7 @@ package directoryservice {
   }
 
   object GetSnapshotLimitsResult {
+    @inline
     def apply(
         SnapshotLimits: js.UndefOr[SnapshotLimits] = js.undefined
     ): GetSnapshotLimitsResult = {
@@ -2122,6 +2197,7 @@ package directoryservice {
   }
 
   object IpRoute {
+    @inline
     def apply(
         CidrIp: js.UndefOr[CidrIp] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined
@@ -2147,6 +2223,7 @@ package directoryservice {
   }
 
   object IpRouteInfo {
+    @inline
     def apply(
         AddedDateTime: js.UndefOr[AddedDateTime] = js.undefined,
         CidrIp: js.UndefOr[CidrIp] = js.undefined,
@@ -2185,6 +2262,7 @@ package directoryservice {
   }
 
   object ListIpRoutesRequest {
+    @inline
     def apply(
         DirectoryId: DirectoryId,
         Limit: js.UndefOr[Limit] = js.undefined,
@@ -2207,6 +2285,7 @@ package directoryservice {
   }
 
   object ListIpRoutesResult {
+    @inline
     def apply(
         IpRoutesInfo: js.UndefOr[IpRoutesInfo] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -2226,6 +2305,7 @@ package directoryservice {
   }
 
   object ListLogSubscriptionsRequest {
+    @inline
     def apply(
         DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
         Limit: js.UndefOr[Limit] = js.undefined,
@@ -2246,6 +2326,7 @@ package directoryservice {
   }
 
   object ListLogSubscriptionsResult {
+    @inline
     def apply(
         LogSubscriptions: js.UndefOr[LogSubscriptions] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -2265,6 +2346,7 @@ package directoryservice {
   }
 
   object ListSchemaExtensionsRequest {
+    @inline
     def apply(
         DirectoryId: DirectoryId,
         Limit: js.UndefOr[Limit] = js.undefined,
@@ -2287,6 +2369,7 @@ package directoryservice {
   }
 
   object ListSchemaExtensionsResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         SchemaExtensionsInfo: js.UndefOr[SchemaExtensionsInfo] = js.undefined
@@ -2306,6 +2389,7 @@ package directoryservice {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceId: ResourceId,
         Limit: js.UndefOr[Limit] = js.undefined,
@@ -2328,6 +2412,7 @@ package directoryservice {
   }
 
   object ListTagsForResourceResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
@@ -2350,6 +2435,7 @@ package directoryservice {
   }
 
   object LogSubscription {
+    @inline
     def apply(
         DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
         LogGroupName: js.UndefOr[LogGroupName] = js.undefined,
@@ -2379,6 +2465,7 @@ package directoryservice {
   }
 
   object OwnerDirectoryDescription {
+    @inline
     def apply(
         AccountId: js.UndefOr[CustomerId] = js.undefined,
         DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
@@ -2423,6 +2510,7 @@ package directoryservice {
   }
 
   object RadiusSettings {
+    @inline
     def apply(
         AuthenticationProtocol: js.UndefOr[RadiusAuthenticationProtocol] = js.undefined,
         DisplayLabel: js.UndefOr[RadiusDisplayLabel] = js.undefined,
@@ -2464,6 +2552,7 @@ package directoryservice {
   }
 
   object RegisterEventTopicRequest {
+    @inline
     def apply(
         DirectoryId: DirectoryId,
         TopicName: TopicName
@@ -2484,6 +2573,7 @@ package directoryservice {
   trait RegisterEventTopicResult extends js.Object {}
 
   object RegisterEventTopicResult {
+    @inline
     def apply(
         ): RegisterEventTopicResult = {
       val __obj = js.Dynamic.literal()
@@ -2498,6 +2588,7 @@ package directoryservice {
   }
 
   object RejectSharedDirectoryRequest {
+    @inline
     def apply(
         SharedDirectoryId: DirectoryId
     ): RejectSharedDirectoryRequest = {
@@ -2515,6 +2606,7 @@ package directoryservice {
   }
 
   object RejectSharedDirectoryResult {
+    @inline
     def apply(
         SharedDirectoryId: js.UndefOr[DirectoryId] = js.undefined
     ): RejectSharedDirectoryResult = {
@@ -2531,6 +2623,7 @@ package directoryservice {
   }
 
   object RemoveIpRoutesRequest {
+    @inline
     def apply(
         CidrIps: CidrIps,
         DirectoryId: DirectoryId
@@ -2548,6 +2641,7 @@ package directoryservice {
   trait RemoveIpRoutesResult extends js.Object {}
 
   object RemoveIpRoutesResult {
+    @inline
     def apply(
         ): RemoveIpRoutesResult = {
       val __obj = js.Dynamic.literal()
@@ -2563,6 +2657,7 @@ package directoryservice {
   }
 
   object RemoveTagsFromResourceRequest {
+    @inline
     def apply(
         ResourceId: ResourceId,
         TagKeys: TagKeys
@@ -2580,6 +2675,7 @@ package directoryservice {
   trait RemoveTagsFromResourceResult extends js.Object {}
 
   object RemoveTagsFromResourceResult {
+    @inline
     def apply(
         ): RemoveTagsFromResourceResult = {
       val __obj = js.Dynamic.literal()
@@ -2602,6 +2698,7 @@ package directoryservice {
   }
 
   object ResetUserPasswordRequest {
+    @inline
     def apply(
         DirectoryId: DirectoryId,
         NewPassword: UserPassword,
@@ -2621,6 +2718,7 @@ package directoryservice {
   trait ResetUserPasswordResult extends js.Object {}
 
   object ResetUserPasswordResult {
+    @inline
     def apply(
         ): ResetUserPasswordResult = {
       val __obj = js.Dynamic.literal()
@@ -2638,6 +2736,7 @@ package directoryservice {
   }
 
   object RestoreFromSnapshotRequest {
+    @inline
     def apply(
         SnapshotId: SnapshotId
     ): RestoreFromSnapshotRequest = {
@@ -2656,6 +2755,7 @@ package directoryservice {
   trait RestoreFromSnapshotResult extends js.Object {}
 
   object RestoreFromSnapshotResult {
+    @inline
     def apply(
         ): RestoreFromSnapshotResult = {
       val __obj = js.Dynamic.literal()
@@ -2679,6 +2779,7 @@ package directoryservice {
   }
 
   object SchemaExtensionInfo {
+    @inline
     def apply(
         Description: js.UndefOr[Description] = js.undefined,
         DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
@@ -2744,6 +2845,7 @@ package directoryservice {
   }
 
   object ShareDirectoryRequest {
+    @inline
     def apply(
         DirectoryId: DirectoryId,
         ShareMethod: ShareMethod,
@@ -2767,6 +2869,7 @@ package directoryservice {
   }
 
   object ShareDirectoryResult {
+    @inline
     def apply(
         SharedDirectoryId: js.UndefOr[DirectoryId] = js.undefined
     ): ShareDirectoryResult = {
@@ -2809,6 +2912,7 @@ package directoryservice {
   }
 
   object ShareTarget {
+    @inline
     def apply(
         Id: TargetId,
         Type: TargetType
@@ -2839,6 +2943,7 @@ package directoryservice {
   }
 
   object SharedDirectory {
+    @inline
     def apply(
         CreatedDateTime: js.UndefOr[CreatedDateTime] = js.undefined,
         LastUpdatedDateTime: js.UndefOr[LastUpdatedDateTime] = js.undefined,
@@ -2878,6 +2983,7 @@ package directoryservice {
   }
 
   object Snapshot {
+    @inline
     def apply(
         DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
         Name: js.UndefOr[SnapshotName] = js.undefined,
@@ -2908,6 +3014,7 @@ package directoryservice {
   }
 
   object SnapshotLimits {
+    @inline
     def apply(
         ManualSnapshotsCurrentCount: js.UndefOr[Limit] = js.undefined,
         ManualSnapshotsLimit: js.UndefOr[Limit] = js.undefined,
@@ -2949,6 +3056,7 @@ package directoryservice {
   }
 
   object StartSchemaExtensionRequest {
+    @inline
     def apply(
         CreateSnapshotBeforeSchemaExtension: CreateSnapshotBeforeSchemaExtension,
         Description: Description,
@@ -2972,6 +3080,7 @@ package directoryservice {
   }
 
   object StartSchemaExtensionResult {
+    @inline
     def apply(
         SchemaExtensionId: js.UndefOr[SchemaExtensionId] = js.undefined
     ): StartSchemaExtensionResult = {
@@ -2991,6 +3100,7 @@ package directoryservice {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: TagValue
@@ -3038,6 +3148,7 @@ package directoryservice {
   }
 
   object Trust {
+    @inline
     def apply(
         CreatedDateTime: js.UndefOr[CreatedDateTime] = js.undefined,
         DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
@@ -3119,6 +3230,7 @@ package directoryservice {
   }
 
   object UnshareDirectoryRequest {
+    @inline
     def apply(
         DirectoryId: DirectoryId,
         UnshareTarget: UnshareTarget
@@ -3138,6 +3250,7 @@ package directoryservice {
   }
 
   object UnshareDirectoryResult {
+    @inline
     def apply(
         SharedDirectoryId: js.UndefOr[DirectoryId] = js.undefined
     ): UnshareDirectoryResult = {
@@ -3157,6 +3270,7 @@ package directoryservice {
   }
 
   object UnshareTarget {
+    @inline
     def apply(
         Id: TargetId,
         Type: TargetType
@@ -3181,6 +3295,7 @@ package directoryservice {
   }
 
   object UpdateConditionalForwarderRequest {
+    @inline
     def apply(
         DirectoryId: DirectoryId,
         DnsIpAddrs: DnsIpAddrs,
@@ -3203,6 +3318,7 @@ package directoryservice {
   trait UpdateConditionalForwarderResult extends js.Object {}
 
   object UpdateConditionalForwarderResult {
+    @inline
     def apply(
         ): UpdateConditionalForwarderResult = {
       val __obj = js.Dynamic.literal()
@@ -3218,6 +3334,7 @@ package directoryservice {
   }
 
   object UpdateNumberOfDomainControllersRequest {
+    @inline
     def apply(
         DesiredNumber: DesiredNumberOfDomainControllers,
         DirectoryId: DirectoryId
@@ -3235,6 +3352,7 @@ package directoryservice {
   trait UpdateNumberOfDomainControllersResult extends js.Object {}
 
   object UpdateNumberOfDomainControllersResult {
+    @inline
     def apply(
         ): UpdateNumberOfDomainControllersResult = {
       val __obj = js.Dynamic.literal()
@@ -3253,6 +3371,7 @@ package directoryservice {
   }
 
   object UpdateRadiusRequest {
+    @inline
     def apply(
         DirectoryId: DirectoryId,
         RadiusSettings: RadiusSettings
@@ -3273,6 +3392,7 @@ package directoryservice {
   trait UpdateRadiusResult extends js.Object {}
 
   object UpdateRadiusResult {
+    @inline
     def apply(
         ): UpdateRadiusResult = {
       val __obj = js.Dynamic.literal()
@@ -3288,6 +3408,7 @@ package directoryservice {
   }
 
   object UpdateTrustRequest {
+    @inline
     def apply(
         TrustId: TrustId,
         SelectiveAuth: js.UndefOr[SelectiveAuth] = js.undefined
@@ -3308,6 +3429,7 @@ package directoryservice {
   }
 
   object UpdateTrustResult {
+    @inline
     def apply(
         RequestId: js.UndefOr[RequestId] = js.undefined,
         TrustId: js.UndefOr[TrustId] = js.undefined
@@ -3328,6 +3450,7 @@ package directoryservice {
   }
 
   object VerifyTrustRequest {
+    @inline
     def apply(
         TrustId: TrustId
     ): VerifyTrustRequest = {
@@ -3348,6 +3471,7 @@ package directoryservice {
   }
 
   object VerifyTrustResult {
+    @inline
     def apply(
         TrustId: js.UndefOr[TrustId] = js.undefined
     ): VerifyTrustResult = {

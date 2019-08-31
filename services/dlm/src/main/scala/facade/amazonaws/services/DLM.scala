@@ -72,6 +72,7 @@ package dlm {
   }
 
   object CreateLifecyclePolicyRequest {
+    @inline
     def apply(
         Description: PolicyDescription,
         ExecutionRoleArn: ExecutionRoleArn,
@@ -95,6 +96,7 @@ package dlm {
   }
 
   object CreateLifecyclePolicyResponse {
+    @inline
     def apply(
         PolicyId: js.UndefOr[PolicyId] = js.undefined
     ): CreateLifecyclePolicyResponse = {
@@ -115,6 +117,7 @@ package dlm {
   }
 
   object CreateRule {
+    @inline
     def apply(
         Interval: Interval,
         IntervalUnit: IntervalUnitValues,
@@ -136,6 +139,7 @@ package dlm {
   }
 
   object DeleteLifecyclePolicyRequest {
+    @inline
     def apply(
         PolicyId: PolicyId
     ): DeleteLifecyclePolicyRequest = {
@@ -151,6 +155,7 @@ package dlm {
   trait DeleteLifecyclePolicyResponse extends js.Object {}
 
   object DeleteLifecyclePolicyResponse {
+    @inline
     def apply(
         ): DeleteLifecyclePolicyResponse = {
       val __obj = js.Dynamic.literal()
@@ -169,6 +174,7 @@ package dlm {
   }
 
   object GetLifecyclePoliciesRequest {
+    @inline
     def apply(
         PolicyIds: js.UndefOr[PolicyIdList] = js.undefined,
         ResourceTypes: js.UndefOr[ResourceTypeValuesList] = js.undefined,
@@ -192,6 +198,7 @@ package dlm {
   }
 
   object GetLifecyclePoliciesResponse {
+    @inline
     def apply(
         Policies: js.UndefOr[LifecyclePolicySummaryList] = js.undefined
     ): GetLifecyclePoliciesResponse = {
@@ -207,6 +214,7 @@ package dlm {
   }
 
   object GetLifecyclePolicyRequest {
+    @inline
     def apply(
         PolicyId: PolicyId
     ): GetLifecyclePolicyRequest = {
@@ -224,6 +232,7 @@ package dlm {
   }
 
   object GetLifecyclePolicyResponse {
+    @inline
     def apply(
         Policy: js.UndefOr[LifecyclePolicy] = js.undefined
     ): GetLifecyclePolicyResponse = {
@@ -262,6 +271,7 @@ package dlm {
   }
 
   object LifecyclePolicy {
+    @inline
     def apply(
         DateCreated: js.UndefOr[Timestamp] = js.undefined,
         DateModified: js.UndefOr[Timestamp] = js.undefined,
@@ -294,6 +304,7 @@ package dlm {
   }
 
   object LifecyclePolicySummary {
+    @inline
     def apply(
         Description: js.UndefOr[PolicyDescription] = js.undefined,
         PolicyId: js.UndefOr[PolicyId] = js.undefined,
@@ -316,6 +327,7 @@ package dlm {
   }
 
   object Parameters {
+    @inline
     def apply(
         ExcludeBootVolume: js.UndefOr[ExcludeBootVolume] = js.undefined
     ): Parameters = {
@@ -338,6 +350,7 @@ package dlm {
   }
 
   object PolicyDetails {
+    @inline
     def apply(
         Parameters: js.UndefOr[Parameters] = js.undefined,
         PolicyType: js.UndefOr[PolicyTypeValues] = js.undefined,
@@ -377,6 +390,7 @@ package dlm {
   }
 
   object RetainRule {
+    @inline
     def apply(
         Count: Count
     ): RetainRule = {
@@ -402,6 +416,7 @@ package dlm {
   }
 
   object Schedule {
+    @inline
     def apply(
         CopyTags: js.UndefOr[CopyTags] = js.undefined,
         CreateRule: js.UndefOr[CreateRule] = js.undefined,
@@ -438,6 +453,7 @@ package dlm {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: String,
         Value: String
@@ -461,6 +477,7 @@ package dlm {
   }
 
   object UpdateLifecyclePolicyRequest {
+    @inline
     def apply(
         PolicyId: PolicyId,
         Description: js.UndefOr[PolicyDescription] = js.undefined,
@@ -484,6 +501,7 @@ package dlm {
   trait UpdateLifecyclePolicyResponse extends js.Object {}
 
   object UpdateLifecyclePolicyResponse {
+    @inline
     def apply(
         ): UpdateLifecyclePolicyResponse = {
       val __obj = js.Dynamic.literal()

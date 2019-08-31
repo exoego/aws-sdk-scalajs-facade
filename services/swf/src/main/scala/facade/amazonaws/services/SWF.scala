@@ -223,6 +223,7 @@ package swf {
   }
 
   object ActivityTask {
+    @inline
     def apply(
         activityId: ActivityId,
         activityType: ActivityType,
@@ -254,6 +255,7 @@ package swf {
   }
 
   object ActivityTaskCancelRequestedEventAttributes {
+    @inline
     def apply(
         activityId: ActivityId,
         decisionTaskCompletedEventId: EventId
@@ -279,6 +281,7 @@ package swf {
   }
 
   object ActivityTaskCanceledEventAttributes {
+    @inline
     def apply(
         scheduledEventId: EventId,
         startedEventId: EventId,
@@ -309,6 +312,7 @@ package swf {
   }
 
   object ActivityTaskCompletedEventAttributes {
+    @inline
     def apply(
         scheduledEventId: EventId,
         startedEventId: EventId,
@@ -336,6 +340,7 @@ package swf {
   }
 
   object ActivityTaskFailedEventAttributes {
+    @inline
     def apply(
         scheduledEventId: EventId,
         startedEventId: EventId,
@@ -372,6 +377,7 @@ package swf {
   }
 
   object ActivityTaskScheduledEventAttributes {
+    @inline
     def apply(
         activityId: ActivityId,
         activityType: ActivityType,
@@ -413,6 +419,7 @@ package swf {
   }
 
   object ActivityTaskStartedEventAttributes {
+    @inline
     def apply(
         scheduledEventId: EventId,
         identity: js.UndefOr[Identity] = js.undefined
@@ -435,6 +442,7 @@ package swf {
   }
 
   object ActivityTaskStatus {
+    @inline
     def apply(
         cancelRequested: Canceled
     ): ActivityTaskStatus = {
@@ -458,6 +466,7 @@ package swf {
   }
 
   object ActivityTaskTimedOutEventAttributes {
+    @inline
     def apply(
         scheduledEventId: EventId,
         startedEventId: EventId,
@@ -494,6 +503,7 @@ package swf {
   }
 
   object ActivityType {
+    @inline
     def apply(
         name: Name,
         version: Version
@@ -521,6 +531,7 @@ package swf {
   }
 
   object ActivityTypeConfiguration {
+    @inline
     def apply(
         defaultTaskHeartbeatTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
         defaultTaskList: js.UndefOr[TaskList] = js.undefined,
@@ -558,6 +569,7 @@ package swf {
   }
 
   object ActivityTypeDetail {
+    @inline
     def apply(
         configuration: ActivityTypeConfiguration,
         typeInfo: ActivityTypeInfo
@@ -584,6 +596,7 @@ package swf {
   }
 
   object ActivityTypeInfo {
+    @inline
     def apply(
         activityType: ActivityType,
         creationDate: Timestamp,
@@ -613,6 +626,7 @@ package swf {
   }
 
   object ActivityTypeInfos {
+    @inline
     def apply(
         typeInfos: ActivityTypeInfoList,
         nextPageToken: js.UndefOr[PageToken] = js.undefined
@@ -641,6 +655,7 @@ package swf {
   }
 
   object CancelTimerDecisionAttributes {
+    @inline
     def apply(
         timerId: TimerId
     ): CancelTimerDecisionAttributes = {
@@ -670,6 +685,7 @@ package swf {
   }
 
   object CancelTimerFailedEventAttributes {
+    @inline
     def apply(
         cause: CancelTimerFailedCause,
         decisionTaskCompletedEventId: EventId,
@@ -700,6 +716,7 @@ package swf {
   }
 
   object CancelWorkflowExecutionDecisionAttributes {
+    @inline
     def apply(
         details: js.UndefOr[Data] = js.undefined
     ): CancelWorkflowExecutionDecisionAttributes = {
@@ -726,6 +743,7 @@ package swf {
   }
 
   object CancelWorkflowExecutionFailedEventAttributes {
+    @inline
     def apply(
         cause: CancelWorkflowExecutionFailedCause,
         decisionTaskCompletedEventId: EventId
@@ -760,6 +778,7 @@ package swf {
   }
 
   object ChildWorkflowExecutionCanceledEventAttributes {
+    @inline
     def apply(
         initiatedEventId: EventId,
         startedEventId: EventId,
@@ -792,6 +811,7 @@ package swf {
   }
 
   object ChildWorkflowExecutionCompletedEventAttributes {
+    @inline
     def apply(
         initiatedEventId: EventId,
         startedEventId: EventId,
@@ -825,6 +845,7 @@ package swf {
   }
 
   object ChildWorkflowExecutionFailedEventAttributes {
+    @inline
     def apply(
         initiatedEventId: EventId,
         startedEventId: EventId,
@@ -857,6 +878,7 @@ package swf {
   }
 
   object ChildWorkflowExecutionStartedEventAttributes {
+    @inline
     def apply(
         initiatedEventId: EventId,
         workflowExecution: WorkflowExecution,
@@ -884,6 +906,7 @@ package swf {
   }
 
   object ChildWorkflowExecutionTerminatedEventAttributes {
+    @inline
     def apply(
         initiatedEventId: EventId,
         startedEventId: EventId,
@@ -914,6 +937,7 @@ package swf {
   }
 
   object ChildWorkflowExecutionTimedOutEventAttributes {
+    @inline
     def apply(
         initiatedEventId: EventId,
         startedEventId: EventId,
@@ -953,6 +977,7 @@ package swf {
   }
 
   object CloseStatusFilter {
+    @inline
     def apply(
         status: CloseStatus
     ): CloseStatusFilter = {
@@ -979,6 +1004,7 @@ package swf {
   }
 
   object CompleteWorkflowExecutionDecisionAttributes {
+    @inline
     def apply(
         result: js.UndefOr[Data] = js.undefined
     ): CompleteWorkflowExecutionDecisionAttributes = {
@@ -1005,6 +1031,7 @@ package swf {
   }
 
   object CompleteWorkflowExecutionFailedEventAttributes {
+    @inline
     def apply(
         cause: CompleteWorkflowExecutionFailedCause,
         decisionTaskCompletedEventId: EventId
@@ -1044,6 +1071,7 @@ package swf {
   }
 
   object ContinueAsNewWorkflowExecutionDecisionAttributes {
+    @inline
     def apply(
         childPolicy: js.UndefOr[ChildPolicy] = js.undefined,
         executionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
@@ -1107,6 +1135,7 @@ package swf {
   }
 
   object ContinueAsNewWorkflowExecutionFailedEventAttributes {
+    @inline
     def apply(
         cause: ContinueAsNewWorkflowExecutionFailedCause,
         decisionTaskCompletedEventId: EventId
@@ -1132,6 +1161,7 @@ package swf {
   }
 
   object CountClosedWorkflowExecutionsInput {
+    @inline
     def apply(
         domain: DomainName,
         closeStatusFilter: js.UndefOr[CloseStatusFilter] = js.undefined,
@@ -1165,6 +1195,7 @@ package swf {
   }
 
   object CountOpenWorkflowExecutionsInput {
+    @inline
     def apply(
         domain: DomainName,
         startTimeFilter: ExecutionTimeFilter,
@@ -1191,6 +1222,7 @@ package swf {
   }
 
   object CountPendingActivityTasksInput {
+    @inline
     def apply(
         domain: DomainName,
         taskList: TaskList
@@ -1211,6 +1243,7 @@ package swf {
   }
 
   object CountPendingDecisionTasksInput {
+    @inline
     def apply(
         domain: DomainName,
         taskList: TaskList
@@ -1296,6 +1329,7 @@ package swf {
   }
 
   object Decision {
+    @inline
     def apply(
         decisionType: DecisionType,
         cancelTimerDecisionAttributes: js.UndefOr[CancelTimerDecisionAttributes] = js.undefined,
@@ -1382,6 +1416,7 @@ package swf {
   }
 
   object DecisionTask {
+    @inline
     def apply(
         events: HistoryEventList,
         startedEventId: EventId,
@@ -1416,6 +1451,7 @@ package swf {
   }
 
   object DecisionTaskCompletedEventAttributes {
+    @inline
     def apply(
         scheduledEventId: EventId,
         startedEventId: EventId,
@@ -1442,6 +1478,7 @@ package swf {
   }
 
   object DecisionTaskScheduledEventAttributes {
+    @inline
     def apply(
         taskList: TaskList,
         startToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
@@ -1467,6 +1504,7 @@ package swf {
   }
 
   object DecisionTaskStartedEventAttributes {
+    @inline
     def apply(
         scheduledEventId: EventId,
         identity: js.UndefOr[Identity] = js.undefined
@@ -1491,6 +1529,7 @@ package swf {
   }
 
   object DecisionTaskTimedOutEventAttributes {
+    @inline
     def apply(
         scheduledEventId: EventId,
         startedEventId: EventId,
@@ -1553,6 +1592,7 @@ package swf {
   }
 
   object DeprecateActivityTypeInput {
+    @inline
     def apply(
         activityType: ActivityType,
         domain: DomainName
@@ -1572,6 +1612,7 @@ package swf {
   }
 
   object DeprecateDomainInput {
+    @inline
     def apply(
         name: DomainName
     ): DeprecateDomainInput = {
@@ -1590,6 +1631,7 @@ package swf {
   }
 
   object DeprecateWorkflowTypeInput {
+    @inline
     def apply(
         domain: DomainName,
         workflowType: WorkflowType
@@ -1610,6 +1652,7 @@ package swf {
   }
 
   object DescribeActivityTypeInput {
+    @inline
     def apply(
         activityType: ActivityType,
         domain: DomainName
@@ -1629,6 +1672,7 @@ package swf {
   }
 
   object DescribeDomainInput {
+    @inline
     def apply(
         name: DomainName
     ): DescribeDomainInput = {
@@ -1647,6 +1691,7 @@ package swf {
   }
 
   object DescribeWorkflowExecutionInput {
+    @inline
     def apply(
         domain: DomainName,
         execution: WorkflowExecution
@@ -1667,6 +1712,7 @@ package swf {
   }
 
   object DescribeWorkflowTypeInput {
+    @inline
     def apply(
         domain: DomainName,
         workflowType: WorkflowType
@@ -1689,6 +1735,7 @@ package swf {
   }
 
   object DomainConfiguration {
+    @inline
     def apply(
         workflowExecutionRetentionPeriodInDays: DurationInDays
     ): DomainConfiguration = {
@@ -1710,6 +1757,7 @@ package swf {
   }
 
   object DomainDetail {
+    @inline
     def apply(
         configuration: DomainConfiguration,
         domainInfo: DomainInfo
@@ -1735,6 +1783,7 @@ package swf {
   }
 
   object DomainInfo {
+    @inline
     def apply(
         name: DomainName,
         status: RegistrationStatus,
@@ -1762,6 +1811,7 @@ package swf {
   }
 
   object DomainInfos {
+    @inline
     def apply(
         domainInfos: DomainInfoList,
         nextPageToken: js.UndefOr[PageToken] = js.undefined
@@ -1908,6 +1958,7 @@ package swf {
   }
 
   object ExecutionTimeFilter {
+    @inline
     def apply(
         oldestDate: Timestamp,
         latestDate: js.UndefOr[Timestamp] = js.undefined
@@ -1931,6 +1982,7 @@ package swf {
   }
 
   object ExternalWorkflowExecutionCancelRequestedEventAttributes {
+    @inline
     def apply(
         initiatedEventId: EventId,
         workflowExecution: WorkflowExecution
@@ -1954,6 +2006,7 @@ package swf {
   }
 
   object ExternalWorkflowExecutionSignaledEventAttributes {
+    @inline
     def apply(
         initiatedEventId: EventId,
         workflowExecution: WorkflowExecution
@@ -1983,6 +2036,7 @@ package swf {
   }
 
   object FailWorkflowExecutionDecisionAttributes {
+    @inline
     def apply(
         details: js.UndefOr[Data] = js.undefined,
         reason: js.UndefOr[FailureReason] = js.undefined
@@ -2011,6 +2065,7 @@ package swf {
   }
 
   object FailWorkflowExecutionFailedEventAttributes {
+    @inline
     def apply(
         cause: FailWorkflowExecutionFailedCause,
         decisionTaskCompletedEventId: EventId
@@ -2034,6 +2089,7 @@ package swf {
   }
 
   object GetWorkflowExecutionHistoryInput {
+    @inline
     def apply(
         domain: DomainName,
         execution: WorkflowExecution,
@@ -2063,6 +2119,7 @@ package swf {
   }
 
   object History {
+    @inline
     def apply(
         events: HistoryEventList,
         nextPageToken: js.UndefOr[PageToken] = js.undefined
@@ -2203,6 +2260,7 @@ package swf {
   }
 
   object HistoryEvent {
+    @inline
     def apply(
         eventId: EventId,
         eventTimestamp: Timestamp,
@@ -2479,6 +2537,7 @@ package swf {
   }
 
   object LambdaFunctionCompletedEventAttributes {
+    @inline
     def apply(
         scheduledEventId: EventId,
         startedEventId: EventId,
@@ -2506,6 +2565,7 @@ package swf {
   }
 
   object LambdaFunctionFailedEventAttributes {
+    @inline
     def apply(
         scheduledEventId: EventId,
         startedEventId: EventId,
@@ -2537,6 +2597,7 @@ package swf {
   }
 
   object LambdaFunctionScheduledEventAttributes {
+    @inline
     def apply(
         decisionTaskCompletedEventId: EventId,
         id: FunctionId,
@@ -2567,6 +2628,7 @@ package swf {
   }
 
   object LambdaFunctionStartedEventAttributes {
+    @inline
     def apply(
         scheduledEventId: EventId
     ): LambdaFunctionStartedEventAttributes = {
@@ -2589,6 +2651,7 @@ package swf {
   }
 
   object LambdaFunctionTimedOutEventAttributes {
+    @inline
     def apply(
         scheduledEventId: EventId,
         startedEventId: EventId,
@@ -2621,6 +2684,7 @@ package swf {
   }
 
   object ListActivityTypesInput {
+    @inline
     def apply(
         domain: DomainName,
         registrationStatus: RegistrationStatus,
@@ -2657,6 +2721,7 @@ package swf {
   }
 
   object ListClosedWorkflowExecutionsInput {
+    @inline
     def apply(
         domain: DomainName,
         closeStatusFilter: js.UndefOr[CloseStatusFilter] = js.undefined,
@@ -2695,6 +2760,7 @@ package swf {
   }
 
   object ListDomainsInput {
+    @inline
     def apply(
         registrationStatus: RegistrationStatus,
         maximumPageSize: js.UndefOr[PageSize] = js.undefined,
@@ -2725,6 +2791,7 @@ package swf {
   }
 
   object ListOpenWorkflowExecutionsInput {
+    @inline
     def apply(
         domain: DomainName,
         startTimeFilter: ExecutionTimeFilter,
@@ -2756,6 +2823,7 @@ package swf {
   }
 
   object ListTagsForResourceInput {
+    @inline
     def apply(
         resourceArn: Arn
     ): ListTagsForResourceInput = {
@@ -2773,6 +2841,7 @@ package swf {
   }
 
   object ListTagsForResourceOutput {
+    @inline
     def apply(
         tags: js.UndefOr[ResourceTagList] = js.undefined
     ): ListTagsForResourceOutput = {
@@ -2793,6 +2862,7 @@ package swf {
   }
 
   object ListWorkflowTypesInput {
+    @inline
     def apply(
         domain: DomainName,
         registrationStatus: RegistrationStatus,
@@ -2825,6 +2895,7 @@ package swf {
   }
 
   object MarkerRecordedEventAttributes {
+    @inline
     def apply(
         decisionTaskCompletedEventId: EventId,
         markerName: MarkerName,
@@ -2850,6 +2921,7 @@ package swf {
   }
 
   object PendingTaskCount {
+    @inline
     def apply(
         count: Count,
         truncated: js.UndefOr[Truncated] = js.undefined
@@ -2871,6 +2943,7 @@ package swf {
   }
 
   object PollForActivityTaskInput {
+    @inline
     def apply(
         domain: DomainName,
         taskList: TaskList,
@@ -2897,6 +2970,7 @@ package swf {
   }
 
   object PollForDecisionTaskInput {
+    @inline
     def apply(
         domain: DomainName,
         taskList: TaskList,
@@ -2925,6 +2999,7 @@ package swf {
   }
 
   object RecordActivityTaskHeartbeatInput {
+    @inline
     def apply(
         taskToken: TaskToken,
         details: js.UndefOr[LimitedData] = js.undefined
@@ -2954,6 +3029,7 @@ package swf {
   }
 
   object RecordMarkerDecisionAttributes {
+    @inline
     def apply(
         markerName: MarkerName,
         details: js.UndefOr[Data] = js.undefined
@@ -2984,6 +3060,7 @@ package swf {
   }
 
   object RecordMarkerFailedEventAttributes {
+    @inline
     def apply(
         cause: RecordMarkerFailedCause,
         decisionTaskCompletedEventId: EventId,
@@ -3014,6 +3091,7 @@ package swf {
   }
 
   object RegisterActivityTypeInput {
+    @inline
     def apply(
         domain: DomainName,
         name: Name,
@@ -3060,6 +3138,7 @@ package swf {
   }
 
   object RegisterDomainInput {
+    @inline
     def apply(
         name: DomainName,
         workflowExecutionRetentionPeriodInDays: DurationInDays,
@@ -3092,6 +3171,7 @@ package swf {
   }
 
   object RegisterWorkflowTypeInput {
+    @inline
     def apply(
         domain: DomainName,
         name: Name,
@@ -3147,6 +3227,7 @@ package swf {
   }
 
   object RequestCancelActivityTaskDecisionAttributes {
+    @inline
     def apply(
         activityId: ActivityId
     ): RequestCancelActivityTaskDecisionAttributes = {
@@ -3176,6 +3257,7 @@ package swf {
   }
 
   object RequestCancelActivityTaskFailedEventAttributes {
+    @inline
     def apply(
         activityId: ActivityId,
         cause: RequestCancelActivityTaskFailedCause,
@@ -3208,6 +3290,7 @@ package swf {
   }
 
   object RequestCancelExternalWorkflowExecutionDecisionAttributes {
+    @inline
     def apply(
         workflowId: WorkflowId,
         control: js.UndefOr[Data] = js.undefined,
@@ -3252,6 +3335,7 @@ package swf {
   }
 
   object RequestCancelExternalWorkflowExecutionFailedEventAttributes {
+    @inline
     def apply(
         cause: RequestCancelExternalWorkflowExecutionFailedCause,
         decisionTaskCompletedEventId: EventId,
@@ -3285,6 +3369,7 @@ package swf {
   }
 
   object RequestCancelExternalWorkflowExecutionInitiatedEventAttributes {
+    @inline
     def apply(
         decisionTaskCompletedEventId: EventId,
         workflowId: WorkflowId,
@@ -3310,6 +3395,7 @@ package swf {
   }
 
   object RequestCancelWorkflowExecutionInput {
+    @inline
     def apply(
         domain: DomainName,
         workflowId: WorkflowId,
@@ -3336,6 +3422,7 @@ package swf {
   }
 
   object ResourceTag {
+    @inline
     def apply(
         key: ResourceTagKey,
         value: js.UndefOr[ResourceTagValue] = js.undefined
@@ -3356,6 +3443,7 @@ package swf {
   }
 
   object RespondActivityTaskCanceledInput {
+    @inline
     def apply(
         taskToken: TaskToken,
         details: js.UndefOr[Data] = js.undefined
@@ -3376,6 +3464,7 @@ package swf {
   }
 
   object RespondActivityTaskCompletedInput {
+    @inline
     def apply(
         taskToken: TaskToken,
         result: js.UndefOr[Data] = js.undefined
@@ -3397,6 +3486,7 @@ package swf {
   }
 
   object RespondActivityTaskFailedInput {
+    @inline
     def apply(
         taskToken: TaskToken,
         details: js.UndefOr[Data] = js.undefined,
@@ -3423,6 +3513,7 @@ package swf {
   }
 
   object RespondDecisionTaskCompletedInput {
+    @inline
     def apply(
         taskToken: TaskToken,
         decisions: js.UndefOr[DecisionList] = js.undefined,
@@ -3447,6 +3538,7 @@ package swf {
   }
 
   object Run {
+    @inline
     def apply(
         runId: js.UndefOr[WorkflowRunId] = js.undefined
     ): Run = {
@@ -3483,6 +3575,7 @@ package swf {
   }
 
   object ScheduleActivityTaskDecisionAttributes {
+    @inline
     def apply(
         activityId: ActivityId,
         activityType: ActivityType,
@@ -3554,6 +3647,7 @@ package swf {
   }
 
   object ScheduleActivityTaskFailedEventAttributes {
+    @inline
     def apply(
         activityId: ActivityId,
         activityType: ActivityType,
@@ -3584,6 +3678,7 @@ package swf {
   }
 
   object ScheduleLambdaFunctionDecisionAttributes {
+    @inline
     def apply(
         id: FunctionId,
         name: FunctionName,
@@ -3631,6 +3726,7 @@ package swf {
   }
 
   object ScheduleLambdaFunctionFailedEventAttributes {
+    @inline
     def apply(
         cause: ScheduleLambdaFunctionFailedCause,
         decisionTaskCompletedEventId: EventId,
@@ -3667,6 +3763,7 @@ package swf {
   }
 
   object SignalExternalWorkflowExecutionDecisionAttributes {
+    @inline
     def apply(
         signalName: SignalName,
         workflowId: WorkflowId,
@@ -3714,6 +3811,7 @@ package swf {
   }
 
   object SignalExternalWorkflowExecutionFailedEventAttributes {
+    @inline
     def apply(
         cause: SignalExternalWorkflowExecutionFailedCause,
         decisionTaskCompletedEventId: EventId,
@@ -3749,6 +3847,7 @@ package swf {
   }
 
   object SignalExternalWorkflowExecutionInitiatedEventAttributes {
+    @inline
     def apply(
         decisionTaskCompletedEventId: EventId,
         signalName: SignalName,
@@ -3780,6 +3879,7 @@ package swf {
   }
 
   object SignalWorkflowExecutionInput {
+    @inline
     def apply(
         domain: DomainName,
         signalName: SignalName,
@@ -3828,6 +3928,7 @@ package swf {
   }
 
   object StartChildWorkflowExecutionDecisionAttributes {
+    @inline
     def apply(
         workflowId: WorkflowId,
         workflowType: WorkflowType,
@@ -3905,6 +4006,7 @@ package swf {
   }
 
   object StartChildWorkflowExecutionFailedEventAttributes {
+    @inline
     def apply(
         cause: StartChildWorkflowExecutionFailedCause,
         decisionTaskCompletedEventId: EventId,
@@ -3946,6 +4048,7 @@ package swf {
   }
 
   object StartChildWorkflowExecutionInitiatedEventAttributes {
+    @inline
     def apply(
         childPolicy: ChildPolicy,
         decisionTaskCompletedEventId: EventId,
@@ -3998,6 +4101,7 @@ package swf {
   }
 
   object StartLambdaFunctionFailedEventAttributes {
+    @inline
     def apply(
         cause: js.UndefOr[StartLambdaFunctionFailedCause] = js.undefined,
         message: js.UndefOr[CauseMessage] = js.undefined,
@@ -4028,6 +4132,7 @@ package swf {
   }
 
   object StartTimerDecisionAttributes {
+    @inline
     def apply(
         startToFireTimeout: DurationInSeconds,
         timerId: TimerId,
@@ -4070,6 +4175,7 @@ package swf {
   }
 
   object StartTimerFailedEventAttributes {
+    @inline
     def apply(
         cause: StartTimerFailedCause,
         decisionTaskCompletedEventId: EventId,
@@ -4101,6 +4207,7 @@ package swf {
   }
 
   object StartWorkflowExecutionInput {
+    @inline
     def apply(
         domain: DomainName,
         workflowId: WorkflowId,
@@ -4143,6 +4250,7 @@ package swf {
   }
 
   object TagFilter {
+    @inline
     def apply(
         tag: Tag
     ): TagFilter = {
@@ -4161,6 +4269,7 @@ package swf {
   }
 
   object TagResourceInput {
+    @inline
     def apply(
         resourceArn: Arn,
         tags: ResourceTagList
@@ -4183,6 +4292,7 @@ package swf {
   }
 
   object TaskList {
+    @inline
     def apply(
         name: Name
     ): TaskList = {
@@ -4205,6 +4315,7 @@ package swf {
   }
 
   object TerminateWorkflowExecutionInput {
+    @inline
     def apply(
         domain: DomainName,
         workflowId: WorkflowId,
@@ -4237,6 +4348,7 @@ package swf {
   }
 
   object TimerCanceledEventAttributes {
+    @inline
     def apply(
         decisionTaskCompletedEventId: EventId,
         startedEventId: EventId,
@@ -4262,6 +4374,7 @@ package swf {
   }
 
   object TimerFiredEventAttributes {
+    @inline
     def apply(
         startedEventId: EventId,
         timerId: TimerId
@@ -4287,6 +4400,7 @@ package swf {
   }
 
   object TimerStartedEventAttributes {
+    @inline
     def apply(
         decisionTaskCompletedEventId: EventId,
         startToFireTimeout: DurationInSeconds,
@@ -4311,6 +4425,7 @@ package swf {
   }
 
   object UndeprecateActivityTypeInput {
+    @inline
     def apply(
         activityType: ActivityType,
         domain: DomainName
@@ -4330,6 +4445,7 @@ package swf {
   }
 
   object UndeprecateDomainInput {
+    @inline
     def apply(
         name: DomainName
     ): UndeprecateDomainInput = {
@@ -4348,6 +4464,7 @@ package swf {
   }
 
   object UndeprecateWorkflowTypeInput {
+    @inline
     def apply(
         domain: DomainName,
         workflowType: WorkflowType
@@ -4368,6 +4485,7 @@ package swf {
   }
 
   object UntagResourceInput {
+    @inline
     def apply(
         resourceArn: Arn,
         tagKeys: ResourceTagKeyList
@@ -4391,6 +4509,7 @@ package swf {
   }
 
   object WorkflowExecution {
+    @inline
     def apply(
         runId: WorkflowRunId,
         workflowId: WorkflowId
@@ -4421,6 +4540,7 @@ package swf {
   }
 
   object WorkflowExecutionCancelRequestedEventAttributes {
+    @inline
     def apply(
         cause: js.UndefOr[WorkflowExecutionCancelRequestedCause] = js.undefined,
         externalInitiatedEventId: js.UndefOr[EventId] = js.undefined,
@@ -4446,6 +4566,7 @@ package swf {
   }
 
   object WorkflowExecutionCanceledEventAttributes {
+    @inline
     def apply(
         decisionTaskCompletedEventId: EventId,
         details: js.UndefOr[Data] = js.undefined
@@ -4469,6 +4590,7 @@ package swf {
   }
 
   object WorkflowExecutionCompletedEventAttributes {
+    @inline
     def apply(
         decisionTaskCompletedEventId: EventId,
         result: js.UndefOr[Data] = js.undefined
@@ -4496,6 +4618,7 @@ package swf {
   }
 
   object WorkflowExecutionConfiguration {
+    @inline
     def apply(
         childPolicy: ChildPolicy,
         executionStartToCloseTimeout: DurationInSeconds,
@@ -4536,6 +4659,7 @@ package swf {
   }
 
   object WorkflowExecutionContinuedAsNewEventAttributes {
+    @inline
     def apply(
         childPolicy: ChildPolicy,
         decisionTaskCompletedEventId: EventId,
@@ -4579,6 +4703,7 @@ package swf {
   }
 
   object WorkflowExecutionCount {
+    @inline
     def apply(
         count: Count,
         truncated: js.UndefOr[Truncated] = js.undefined
@@ -4605,6 +4730,7 @@ package swf {
   }
 
   object WorkflowExecutionDetail {
+    @inline
     def apply(
         executionConfiguration: WorkflowExecutionConfiguration,
         executionInfo: WorkflowExecutionInfo,
@@ -4637,6 +4763,7 @@ package swf {
   }
 
   object WorkflowExecutionFailedEventAttributes {
+    @inline
     def apply(
         decisionTaskCompletedEventId: EventId,
         details: js.UndefOr[Data] = js.undefined,
@@ -4661,6 +4788,7 @@ package swf {
   }
 
   object WorkflowExecutionFilter {
+    @inline
     def apply(
         workflowId: WorkflowId
     ): WorkflowExecutionFilter = {
@@ -4689,6 +4817,7 @@ package swf {
   }
 
   object WorkflowExecutionInfo {
+    @inline
     def apply(
         execution: WorkflowExecution,
         executionStatus: ExecutionStatus,
@@ -4726,6 +4855,7 @@ package swf {
   }
 
   object WorkflowExecutionInfos {
+    @inline
     def apply(
         executionInfos: WorkflowExecutionInfoList,
         nextPageToken: js.UndefOr[PageToken] = js.undefined
@@ -4752,6 +4882,7 @@ package swf {
   }
 
   object WorkflowExecutionOpenCounts {
+    @inline
     def apply(
         openActivityTasks: Count,
         openChildWorkflowExecutions: Count,
@@ -4783,6 +4914,7 @@ package swf {
   }
 
   object WorkflowExecutionSignaledEventAttributes {
+    @inline
     def apply(
         signalName: SignalName,
         externalInitiatedEventId: js.UndefOr[EventId] = js.undefined,
@@ -4822,6 +4954,7 @@ package swf {
   }
 
   object WorkflowExecutionStartedEventAttributes {
+    @inline
     def apply(
         childPolicy: ChildPolicy,
         taskList: TaskList,
@@ -4877,6 +5010,7 @@ package swf {
   }
 
   object WorkflowExecutionTerminatedEventAttributes {
+    @inline
     def apply(
         childPolicy: ChildPolicy,
         cause: js.UndefOr[WorkflowExecutionTerminatedCause] = js.undefined,
@@ -4904,6 +5038,7 @@ package swf {
   }
 
   object WorkflowExecutionTimedOutEventAttributes {
+    @inline
     def apply(
         childPolicy: ChildPolicy,
         timeoutType: WorkflowExecutionTimeoutType
@@ -4933,6 +5068,7 @@ package swf {
   }
 
   object WorkflowType {
+    @inline
     def apply(
         name: Name,
         version: Version
@@ -4960,6 +5096,7 @@ package swf {
   }
 
   object WorkflowTypeConfiguration {
+    @inline
     def apply(
         defaultChildPolicy: js.UndefOr[ChildPolicy] = js.undefined,
         defaultExecutionStartToCloseTimeout: js.UndefOr[DurationInSecondsOptional] = js.undefined,
@@ -4993,6 +5130,7 @@ package swf {
   }
 
   object WorkflowTypeDetail {
+    @inline
     def apply(
         configuration: WorkflowTypeConfiguration,
         typeInfo: WorkflowTypeInfo
@@ -5016,6 +5154,7 @@ package swf {
   }
 
   object WorkflowTypeFilter {
+    @inline
     def apply(
         name: Name,
         version: js.UndefOr[VersionOptional] = js.undefined
@@ -5042,6 +5181,7 @@ package swf {
   }
 
   object WorkflowTypeInfo {
+    @inline
     def apply(
         creationDate: Timestamp,
         status: RegistrationStatus,
@@ -5071,6 +5211,7 @@ package swf {
   }
 
   object WorkflowTypeInfos {
+    @inline
     def apply(
         typeInfos: WorkflowTypeInfoList,
         nextPageToken: js.UndefOr[PageToken] = js.undefined

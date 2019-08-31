@@ -103,6 +103,7 @@ package serverlessapplicationrepository {
   }
 
   object ApplicationDependencySummary {
+    @inline
     def apply(
         ApplicationId: __string,
         SemanticVersion: __string
@@ -127,6 +128,7 @@ package serverlessapplicationrepository {
   }
 
   object ApplicationPolicyStatement {
+    @inline
     def apply(
         Actions: __listOf__string,
         Principals: __listOf__string,
@@ -158,6 +160,7 @@ package serverlessapplicationrepository {
   }
 
   object ApplicationSummary {
+    @inline
     def apply(
         ApplicationId: __string,
         Author: __string,
@@ -217,6 +220,7 @@ package serverlessapplicationrepository {
   }
 
   object CreateApplicationRequest {
+    @inline
     def apply(
         Author: __string,
         Description: __string,
@@ -272,6 +276,7 @@ package serverlessapplicationrepository {
   }
 
   object CreateApplicationResponse {
+    @inline
     def apply(
         ApplicationId: js.UndefOr[__string] = js.undefined,
         Author: js.UndefOr[__string] = js.undefined,
@@ -312,6 +317,7 @@ package serverlessapplicationrepository {
   }
 
   object CreateApplicationVersionRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         SemanticVersion: __string,
@@ -347,6 +353,7 @@ package serverlessapplicationrepository {
   }
 
   object CreateApplicationVersionResponse {
+    @inline
     def apply(
         ApplicationId: js.UndefOr[__string] = js.undefined,
         CreationTime: js.UndefOr[__string] = js.undefined,
@@ -390,6 +397,7 @@ package serverlessapplicationrepository {
   }
 
   object CreateCloudFormationChangeSetRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         StackName: __string,
@@ -434,6 +442,7 @@ package serverlessapplicationrepository {
   }
 
   object CreateCloudFormationChangeSetResponse {
+    @inline
     def apply(
         ApplicationId: js.UndefOr[__string] = js.undefined,
         ChangeSetId: js.UndefOr[__string] = js.undefined,
@@ -456,6 +465,7 @@ package serverlessapplicationrepository {
   }
 
   object CreateCloudFormationTemplateRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         SemanticVersion: js.UndefOr[__string] = js.undefined
@@ -481,6 +491,7 @@ package serverlessapplicationrepository {
   }
 
   object CreateCloudFormationTemplateResponse {
+    @inline
     def apply(
         ApplicationId: js.UndefOr[__string] = js.undefined,
         CreationTime: js.UndefOr[__string] = js.undefined,
@@ -508,6 +519,7 @@ package serverlessapplicationrepository {
   }
 
   object DeleteApplicationRequest {
+    @inline
     def apply(
         ApplicationId: __string
     ): DeleteApplicationRequest = {
@@ -525,6 +537,7 @@ package serverlessapplicationrepository {
   }
 
   object GetApplicationPolicyRequest {
+    @inline
     def apply(
         ApplicationId: __string
     ): GetApplicationPolicyRequest = {
@@ -542,6 +555,7 @@ package serverlessapplicationrepository {
   }
 
   object GetApplicationPolicyResponse {
+    @inline
     def apply(
         Statements: js.UndefOr[__listOfApplicationPolicyStatement] = js.undefined
     ): GetApplicationPolicyResponse = {
@@ -558,6 +572,7 @@ package serverlessapplicationrepository {
   }
 
   object GetApplicationRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         SemanticVersion: js.UndefOr[__string] = js.undefined
@@ -587,6 +602,7 @@ package serverlessapplicationrepository {
   }
 
   object GetApplicationResponse {
+    @inline
     def apply(
         ApplicationId: js.UndefOr[__string] = js.undefined,
         Author: js.UndefOr[__string] = js.undefined,
@@ -623,6 +639,7 @@ package serverlessapplicationrepository {
   }
 
   object GetCloudFormationTemplateRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         TemplateId: __string
@@ -648,6 +665,7 @@ package serverlessapplicationrepository {
   }
 
   object GetCloudFormationTemplateResponse {
+    @inline
     def apply(
         ApplicationId: js.UndefOr[__string] = js.undefined,
         CreationTime: js.UndefOr[__string] = js.undefined,
@@ -678,6 +696,7 @@ package serverlessapplicationrepository {
   }
 
   object ListApplicationDependenciesRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         MaxItems: js.UndefOr[MaxItems] = js.undefined,
@@ -702,6 +721,7 @@ package serverlessapplicationrepository {
   }
 
   object ListApplicationDependenciesResponse {
+    @inline
     def apply(
         Dependencies: js.UndefOr[__listOfApplicationDependencySummary] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -721,6 +741,7 @@ package serverlessapplicationrepository {
   }
 
   object ListApplicationVersionsRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         MaxItems: js.UndefOr[MaxItems] = js.undefined,
@@ -743,6 +764,7 @@ package serverlessapplicationrepository {
   }
 
   object ListApplicationVersionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[__string] = js.undefined,
         Versions: js.UndefOr[__listOfVersionSummary] = js.undefined
@@ -761,6 +783,7 @@ package serverlessapplicationrepository {
   }
 
   object ListApplicationsRequest {
+    @inline
     def apply(
         MaxItems: js.UndefOr[MaxItems] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -779,6 +802,7 @@ package serverlessapplicationrepository {
   }
 
   object ListApplicationsResponse {
+    @inline
     def apply(
         Applications: js.UndefOr[__listOfApplicationSummary] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -811,6 +835,7 @@ package serverlessapplicationrepository {
   }
 
   object ParameterDefinition {
+    @inline
     def apply(
         Name: __string,
         ReferencedByResources: __listOf__string,
@@ -856,6 +881,7 @@ package serverlessapplicationrepository {
   }
 
   object ParameterValue {
+    @inline
     def apply(
         Name: __string,
         Value: __string
@@ -876,6 +902,7 @@ package serverlessapplicationrepository {
   }
 
   object PutApplicationPolicyRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         Statements: __listOfApplicationPolicyStatement
@@ -895,6 +922,7 @@ package serverlessapplicationrepository {
   }
 
   object PutApplicationPolicyResponse {
+    @inline
     def apply(
         Statements: js.UndefOr[__listOfApplicationPolicyStatement] = js.undefined
     ): PutApplicationPolicyResponse = {
@@ -915,6 +943,7 @@ package serverlessapplicationrepository {
   }
 
   object RollbackConfiguration {
+    @inline
     def apply(
         MonitoringTimeInMinutes: js.UndefOr[__integer] = js.undefined,
         RollbackTriggers: js.UndefOr[__listOfRollbackTrigger] = js.undefined
@@ -937,6 +966,7 @@ package serverlessapplicationrepository {
   }
 
   object RollbackTrigger {
+    @inline
     def apply(
         Arn: __string,
         Type: __string
@@ -969,6 +999,7 @@ package serverlessapplicationrepository {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: __string,
         Value: __string
@@ -994,6 +1025,7 @@ package serverlessapplicationrepository {
   }
 
   object UpdateApplicationRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         Author: js.UndefOr[__string] = js.undefined,
@@ -1033,6 +1065,7 @@ package serverlessapplicationrepository {
   }
 
   object UpdateApplicationResponse {
+    @inline
     def apply(
         ApplicationId: js.UndefOr[__string] = js.undefined,
         Author: js.UndefOr[__string] = js.undefined,
@@ -1079,6 +1112,7 @@ package serverlessapplicationrepository {
   }
 
   object Version {
+    @inline
     def apply(
         ApplicationId: __string,
         CreationTime: __string,
@@ -1118,6 +1152,7 @@ package serverlessapplicationrepository {
   }
 
   object VersionSummary {
+    @inline
     def apply(
         ApplicationId: __string,
         CreationTime: __string,

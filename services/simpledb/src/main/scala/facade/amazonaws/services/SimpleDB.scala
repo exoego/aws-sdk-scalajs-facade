@@ -71,6 +71,7 @@ package simpledb {
   }
 
   object Attribute {
+    @inline
     def apply(
         Name: String,
         Value: String,
@@ -103,6 +104,7 @@ package simpledb {
   }
 
   object BatchDeleteAttributesRequest {
+    @inline
     def apply(
         DomainName: String,
         Items: DeletableItemList
@@ -123,6 +125,7 @@ package simpledb {
   }
 
   object BatchPutAttributesRequest {
+    @inline
     def apply(
         DomainName: String,
         Items: ReplaceableItemList
@@ -142,6 +145,7 @@ package simpledb {
   }
 
   object CreateDomainRequest {
+    @inline
     def apply(
         DomainName: String
     ): CreateDomainRequest = {
@@ -163,6 +167,7 @@ package simpledb {
   }
 
   object DeletableAttribute {
+    @inline
     def apply(
         Name: String,
         Value: js.UndefOr[String] = js.undefined
@@ -183,6 +188,7 @@ package simpledb {
   }
 
   object DeletableItem {
+    @inline
     def apply(
         Name: String,
         Attributes: js.UndefOr[DeletableAttributeList] = js.undefined
@@ -205,6 +211,7 @@ package simpledb {
   }
 
   object DeleteAttributesRequest {
+    @inline
     def apply(
         DomainName: String,
         ItemName: String,
@@ -228,6 +235,7 @@ package simpledb {
   }
 
   object DeleteDomainRequest {
+    @inline
     def apply(
         DomainName: String
     ): DeleteDomainRequest = {
@@ -245,6 +253,7 @@ package simpledb {
   }
 
   object DomainMetadataRequest {
+    @inline
     def apply(
         DomainName: String
     ): DomainMetadataRequest = {
@@ -268,6 +277,7 @@ package simpledb {
   }
 
   object DomainMetadataResult {
+    @inline
     def apply(
         AttributeNameCount: js.UndefOr[Int] = js.undefined,
         AttributeNamesSizeBytes: js.UndefOr[Double] = js.undefined,
@@ -306,6 +316,7 @@ package simpledb {
   }
 
   object GetAttributesRequest {
+    @inline
     def apply(
         DomainName: String,
         ItemName: String,
@@ -329,6 +340,7 @@ package simpledb {
   }
 
   object GetAttributesResult {
+    @inline
     def apply(
         Attributes: js.UndefOr[AttributeList] = js.undefined
     ): GetAttributesResult = {
@@ -389,6 +401,7 @@ package simpledb {
   }
 
   object Item {
+    @inline
     def apply(
         Attributes: AttributeList,
         Name: String,
@@ -411,6 +424,7 @@ package simpledb {
   }
 
   object ListDomainsRequest {
+    @inline
     def apply(
         MaxNumberOfDomains: js.UndefOr[Int] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -429,6 +443,7 @@ package simpledb {
   }
 
   object ListDomainsResult {
+    @inline
     def apply(
         DomainNames: js.UndefOr[DomainNameList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -513,6 +528,7 @@ package simpledb {
   }
 
   object PutAttributesRequest {
+    @inline
     def apply(
         Attributes: ReplaceableAttributeList,
         DomainName: String,
@@ -541,6 +557,7 @@ package simpledb {
   }
 
   object ReplaceableAttribute {
+    @inline
     def apply(
         Name: String,
         Value: String,
@@ -566,6 +583,7 @@ package simpledb {
   }
 
   object ReplaceableItem {
+    @inline
     def apply(
         Attributes: ReplaceableAttributeList,
         Name: String
@@ -595,6 +613,7 @@ package simpledb {
   }
 
   object SelectRequest {
+    @inline
     def apply(
         SelectExpression: String,
         ConsistentRead: js.UndefOr[Boolean] = js.undefined,
@@ -617,6 +636,7 @@ package simpledb {
   }
 
   object SelectResult {
+    @inline
     def apply(
         Items: js.UndefOr[ItemList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -647,6 +667,7 @@ package simpledb {
   }
 
   object UpdateCondition {
+    @inline
     def apply(
         Exists: js.UndefOr[Boolean] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,

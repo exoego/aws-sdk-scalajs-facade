@@ -175,6 +175,7 @@ package workmail {
   }
 
   object AssociateDelegateToResourceRequest {
+    @inline
     def apply(
         EntityId: WorkMailIdentifier,
         OrganizationId: OrganizationId,
@@ -194,6 +195,7 @@ package workmail {
   trait AssociateDelegateToResourceResponse extends js.Object {}
 
   object AssociateDelegateToResourceResponse {
+    @inline
     def apply(
         ): AssociateDelegateToResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -210,6 +212,7 @@ package workmail {
   }
 
   object AssociateMemberToGroupRequest {
+    @inline
     def apply(
         GroupId: WorkMailIdentifier,
         MemberId: WorkMailIdentifier,
@@ -229,6 +232,7 @@ package workmail {
   trait AssociateMemberToGroupResponse extends js.Object {}
 
   object AssociateMemberToGroupResponse {
+    @inline
     def apply(
         ): AssociateMemberToGroupResponse = {
       val __obj = js.Dynamic.literal()
@@ -248,6 +252,7 @@ package workmail {
   }
 
   object BookingOptions {
+    @inline
     def apply(
         AutoAcceptRequests: js.UndefOr[Boolean] = js.undefined,
         AutoDeclineConflictingRequests: js.UndefOr[Boolean] = js.undefined,
@@ -273,6 +278,7 @@ package workmail {
   }
 
   object CreateAliasRequest {
+    @inline
     def apply(
         Alias: EmailAddress,
         EntityId: WorkMailIdentifier,
@@ -292,6 +298,7 @@ package workmail {
   trait CreateAliasResponse extends js.Object {}
 
   object CreateAliasResponse {
+    @inline
     def apply(
         ): CreateAliasResponse = {
       val __obj = js.Dynamic.literal()
@@ -307,6 +314,7 @@ package workmail {
   }
 
   object CreateGroupRequest {
+    @inline
     def apply(
         Name: GroupName,
         OrganizationId: OrganizationId
@@ -326,6 +334,7 @@ package workmail {
   }
 
   object CreateGroupResponse {
+    @inline
     def apply(
         GroupId: js.UndefOr[WorkMailIdentifier] = js.undefined
     ): CreateGroupResponse = {
@@ -343,6 +352,7 @@ package workmail {
   }
 
   object CreateResourceRequest {
+    @inline
     def apply(
         Name: ResourceName,
         OrganizationId: OrganizationId,
@@ -364,6 +374,7 @@ package workmail {
   }
 
   object CreateResourceResponse {
+    @inline
     def apply(
         ResourceId: js.UndefOr[ResourceId] = js.undefined
     ): CreateResourceResponse = {
@@ -382,6 +393,7 @@ package workmail {
   }
 
   object CreateUserRequest {
+    @inline
     def apply(
         DisplayName: String,
         Name: UserName,
@@ -405,6 +417,7 @@ package workmail {
   }
 
   object CreateUserResponse {
+    @inline
     def apply(
         UserId: js.UndefOr[WorkMailIdentifier] = js.undefined
     ): CreateUserResponse = {
@@ -424,6 +437,7 @@ package workmail {
   }
 
   object Delegate {
+    @inline
     def apply(
         Id: String,
         Type: MemberType
@@ -445,6 +459,7 @@ package workmail {
   }
 
   object DeleteAliasRequest {
+    @inline
     def apply(
         Alias: EmailAddress,
         EntityId: WorkMailIdentifier,
@@ -464,6 +479,7 @@ package workmail {
   trait DeleteAliasResponse extends js.Object {}
 
   object DeleteAliasResponse {
+    @inline
     def apply(
         ): DeleteAliasResponse = {
       val __obj = js.Dynamic.literal()
@@ -479,6 +495,7 @@ package workmail {
   }
 
   object DeleteGroupRequest {
+    @inline
     def apply(
         GroupId: WorkMailIdentifier,
         OrganizationId: OrganizationId
@@ -496,6 +513,7 @@ package workmail {
   trait DeleteGroupResponse extends js.Object {}
 
   object DeleteGroupResponse {
+    @inline
     def apply(
         ): DeleteGroupResponse = {
       val __obj = js.Dynamic.literal()
@@ -512,6 +530,7 @@ package workmail {
   }
 
   object DeleteMailboxPermissionsRequest {
+    @inline
     def apply(
         EntityId: WorkMailIdentifier,
         GranteeId: WorkMailIdentifier,
@@ -531,6 +550,7 @@ package workmail {
   trait DeleteMailboxPermissionsResponse extends js.Object {}
 
   object DeleteMailboxPermissionsResponse {
+    @inline
     def apply(
         ): DeleteMailboxPermissionsResponse = {
       val __obj = js.Dynamic.literal()
@@ -546,6 +566,7 @@ package workmail {
   }
 
   object DeleteResourceRequest {
+    @inline
     def apply(
         OrganizationId: OrganizationId,
         ResourceId: ResourceId
@@ -563,6 +584,7 @@ package workmail {
   trait DeleteResourceResponse extends js.Object {}
 
   object DeleteResourceResponse {
+    @inline
     def apply(
         ): DeleteResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -578,6 +600,7 @@ package workmail {
   }
 
   object DeleteUserRequest {
+    @inline
     def apply(
         OrganizationId: OrganizationId,
         UserId: WorkMailIdentifier
@@ -595,6 +618,7 @@ package workmail {
   trait DeleteUserResponse extends js.Object {}
 
   object DeleteUserResponse {
+    @inline
     def apply(
         ): DeleteUserResponse = {
       val __obj = js.Dynamic.literal()
@@ -610,6 +634,7 @@ package workmail {
   }
 
   object DeregisterFromWorkMailRequest {
+    @inline
     def apply(
         EntityId: WorkMailIdentifier,
         OrganizationId: OrganizationId
@@ -627,6 +652,7 @@ package workmail {
   trait DeregisterFromWorkMailResponse extends js.Object {}
 
   object DeregisterFromWorkMailResponse {
+    @inline
     def apply(
         ): DeregisterFromWorkMailResponse = {
       val __obj = js.Dynamic.literal()
@@ -642,6 +668,7 @@ package workmail {
   }
 
   object DescribeGroupRequest {
+    @inline
     def apply(
         GroupId: WorkMailIdentifier,
         OrganizationId: OrganizationId
@@ -666,6 +693,7 @@ package workmail {
   }
 
   object DescribeGroupResponse {
+    @inline
     def apply(
         DisabledDate: js.UndefOr[Timestamp] = js.undefined,
         Email: js.UndefOr[EmailAddress] = js.undefined,
@@ -691,6 +719,7 @@ package workmail {
   }
 
   object DescribeOrganizationRequest {
+    @inline
     def apply(
         OrganizationId: OrganizationId
     ): DescribeOrganizationRequest = {
@@ -715,6 +744,7 @@ package workmail {
   }
 
   object DescribeOrganizationResponse {
+    @inline
     def apply(
         Alias: js.UndefOr[OrganizationName] = js.undefined,
         CompletedDate: js.UndefOr[Timestamp] = js.undefined,
@@ -745,6 +775,7 @@ package workmail {
   }
 
   object DescribeResourceRequest {
+    @inline
     def apply(
         OrganizationId: OrganizationId,
         ResourceId: ResourceId
@@ -771,6 +802,7 @@ package workmail {
   }
 
   object DescribeResourceResponse {
+    @inline
     def apply(
         BookingOptions: js.UndefOr[BookingOptions] = js.undefined,
         DisabledDate: js.UndefOr[Timestamp] = js.undefined,
@@ -801,6 +833,7 @@ package workmail {
   }
 
   object DescribeUserRequest {
+    @inline
     def apply(
         OrganizationId: OrganizationId,
         UserId: WorkMailIdentifier
@@ -827,6 +860,7 @@ package workmail {
   }
 
   object DescribeUserResponse {
+    @inline
     def apply(
         DisabledDate: js.UndefOr[Timestamp] = js.undefined,
         DisplayName: js.UndefOr[String] = js.undefined,
@@ -858,6 +892,7 @@ package workmail {
   }
 
   object DisassociateDelegateFromResourceRequest {
+    @inline
     def apply(
         EntityId: WorkMailIdentifier,
         OrganizationId: OrganizationId,
@@ -877,6 +912,7 @@ package workmail {
   trait DisassociateDelegateFromResourceResponse extends js.Object {}
 
   object DisassociateDelegateFromResourceResponse {
+    @inline
     def apply(
         ): DisassociateDelegateFromResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -893,6 +929,7 @@ package workmail {
   }
 
   object DisassociateMemberFromGroupRequest {
+    @inline
     def apply(
         GroupId: WorkMailIdentifier,
         MemberId: WorkMailIdentifier,
@@ -912,6 +949,7 @@ package workmail {
   trait DisassociateMemberFromGroupResponse extends js.Object {}
 
   object DisassociateMemberFromGroupResponse {
+    @inline
     def apply(
         ): DisassociateMemberFromGroupResponse = {
       val __obj = js.Dynamic.literal()
@@ -935,6 +973,7 @@ package workmail {
   }
 
   object GetMailboxDetailsRequest {
+    @inline
     def apply(
         OrganizationId: OrganizationId,
         UserId: WorkMailIdentifier
@@ -955,6 +994,7 @@ package workmail {
   }
 
   object GetMailboxDetailsResponse {
+    @inline
     def apply(
         MailboxQuota: js.UndefOr[MailboxQuota] = js.undefined,
         MailboxSize: js.UndefOr[MailboxSize] = js.undefined
@@ -980,6 +1020,7 @@ package workmail {
   }
 
   object Group {
+    @inline
     def apply(
         DisabledDate: js.UndefOr[Timestamp] = js.undefined,
         Email: js.UndefOr[EmailAddress] = js.undefined,
@@ -1008,6 +1049,7 @@ package workmail {
   }
 
   object ListAliasesRequest {
+    @inline
     def apply(
         EntityId: WorkMailIdentifier,
         OrganizationId: OrganizationId,
@@ -1032,6 +1074,7 @@ package workmail {
   }
 
   object ListAliasesResponse {
+    @inline
     def apply(
         Aliases: js.UndefOr[Aliases] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1052,6 +1095,7 @@ package workmail {
   }
 
   object ListGroupMembersRequest {
+    @inline
     def apply(
         GroupId: WorkMailIdentifier,
         OrganizationId: OrganizationId,
@@ -1076,6 +1120,7 @@ package workmail {
   }
 
   object ListGroupMembersResponse {
+    @inline
     def apply(
         Members: js.UndefOr[Members] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1095,6 +1140,7 @@ package workmail {
   }
 
   object ListGroupsRequest {
+    @inline
     def apply(
         OrganizationId: OrganizationId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1117,6 +1163,7 @@ package workmail {
   }
 
   object ListGroupsResponse {
+    @inline
     def apply(
         Groups: js.UndefOr[Groups] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1137,6 +1184,7 @@ package workmail {
   }
 
   object ListMailboxPermissionsRequest {
+    @inline
     def apply(
         EntityId: WorkMailIdentifier,
         OrganizationId: OrganizationId,
@@ -1161,6 +1209,7 @@ package workmail {
   }
 
   object ListMailboxPermissionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Permissions: js.UndefOr[Permissions] = js.undefined
@@ -1179,6 +1228,7 @@ package workmail {
   }
 
   object ListOrganizationsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1197,6 +1247,7 @@ package workmail {
   }
 
   object ListOrganizationsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         OrganizationSummaries: js.UndefOr[OrganizationSummaries] = js.undefined
@@ -1217,6 +1268,7 @@ package workmail {
   }
 
   object ListResourceDelegatesRequest {
+    @inline
     def apply(
         OrganizationId: OrganizationId,
         ResourceId: WorkMailIdentifier,
@@ -1241,6 +1293,7 @@ package workmail {
   }
 
   object ListResourceDelegatesResponse {
+    @inline
     def apply(
         Delegates: js.UndefOr[ResourceDelegates] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1260,6 +1313,7 @@ package workmail {
   }
 
   object ListResourcesRequest {
+    @inline
     def apply(
         OrganizationId: OrganizationId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1282,6 +1336,7 @@ package workmail {
   }
 
   object ListResourcesResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Resources: js.UndefOr[Resources] = js.undefined
@@ -1301,6 +1356,7 @@ package workmail {
   }
 
   object ListUsersRequest {
+    @inline
     def apply(
         OrganizationId: OrganizationId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1323,6 +1379,7 @@ package workmail {
   }
 
   object ListUsersResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Users: js.UndefOr[Users] = js.undefined
@@ -1348,6 +1405,7 @@ package workmail {
   }
 
   object Member {
+    @inline
     def apply(
         DisabledDate: js.UndefOr[Timestamp] = js.undefined,
         EnabledDate: js.UndefOr[Timestamp] = js.undefined,
@@ -1386,6 +1444,7 @@ package workmail {
   }
 
   object OrganizationSummary {
+    @inline
     def apply(
         Alias: js.UndefOr[OrganizationName] = js.undefined,
         ErrorMessage: js.UndefOr[String] = js.undefined,
@@ -1412,6 +1471,7 @@ package workmail {
   }
 
   object Permission {
+    @inline
     def apply(
         GranteeId: WorkMailIdentifier,
         GranteeType: MemberType,
@@ -1444,6 +1504,7 @@ package workmail {
   }
 
   object PutMailboxPermissionsRequest {
+    @inline
     def apply(
         EntityId: WorkMailIdentifier,
         GranteeId: WorkMailIdentifier,
@@ -1465,6 +1526,7 @@ package workmail {
   trait PutMailboxPermissionsResponse extends js.Object {}
 
   object PutMailboxPermissionsResponse {
+    @inline
     def apply(
         ): PutMailboxPermissionsResponse = {
       val __obj = js.Dynamic.literal()
@@ -1481,6 +1543,7 @@ package workmail {
   }
 
   object RegisterToWorkMailRequest {
+    @inline
     def apply(
         Email: EmailAddress,
         EntityId: WorkMailIdentifier,
@@ -1500,6 +1563,7 @@ package workmail {
   trait RegisterToWorkMailResponse extends js.Object {}
 
   object RegisterToWorkMailResponse {
+    @inline
     def apply(
         ): RegisterToWorkMailResponse = {
       val __obj = js.Dynamic.literal()
@@ -1516,6 +1580,7 @@ package workmail {
   }
 
   object ResetPasswordRequest {
+    @inline
     def apply(
         OrganizationId: OrganizationId,
         Password: Password,
@@ -1535,6 +1600,7 @@ package workmail {
   trait ResetPasswordResponse extends js.Object {}
 
   object ResetPasswordResponse {
+    @inline
     def apply(
         ): ResetPasswordResponse = {
       val __obj = js.Dynamic.literal()
@@ -1558,6 +1624,7 @@ package workmail {
   }
 
   object Resource {
+    @inline
     def apply(
         DisabledDate: js.UndefOr[Timestamp] = js.undefined,
         Email: js.UndefOr[EmailAddress] = js.undefined,
@@ -1594,6 +1661,7 @@ package workmail {
   }
 
   object UpdateMailboxQuotaRequest {
+    @inline
     def apply(
         MailboxQuota: MailboxQuota,
         OrganizationId: OrganizationId,
@@ -1613,6 +1681,7 @@ package workmail {
   trait UpdateMailboxQuotaResponse extends js.Object {}
 
   object UpdateMailboxQuotaResponse {
+    @inline
     def apply(
         ): UpdateMailboxQuotaResponse = {
       val __obj = js.Dynamic.literal()
@@ -1629,6 +1698,7 @@ package workmail {
   }
 
   object UpdatePrimaryEmailAddressRequest {
+    @inline
     def apply(
         Email: EmailAddress,
         EntityId: WorkMailIdentifier,
@@ -1648,6 +1718,7 @@ package workmail {
   trait UpdatePrimaryEmailAddressResponse extends js.Object {}
 
   object UpdatePrimaryEmailAddressResponse {
+    @inline
     def apply(
         ): UpdatePrimaryEmailAddressResponse = {
       val __obj = js.Dynamic.literal()
@@ -1665,6 +1736,7 @@ package workmail {
   }
 
   object UpdateResourceRequest {
+    @inline
     def apply(
         OrganizationId: OrganizationId,
         ResourceId: ResourceId,
@@ -1686,6 +1758,7 @@ package workmail {
   trait UpdateResourceResponse extends js.Object {}
 
   object UpdateResourceResponse {
+    @inline
     def apply(
         ): UpdateResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1710,6 +1783,7 @@ package workmail {
   }
 
   object User {
+    @inline
     def apply(
         DisabledDate: js.UndefOr[Timestamp] = js.undefined,
         DisplayName: js.UndefOr[String] = js.undefined,

@@ -51,6 +51,7 @@ package pi {
   }
 
   object DataPoint {
+    @inline
     def apply(
         Timestamp: ISOTimestamp,
         Value: Double
@@ -80,6 +81,7 @@ package pi {
   }
 
   object DescribeDimensionKeysRequest {
+    @inline
     def apply(
         EndTime: ISOTimestamp,
         GroupBy: DimensionGroup,
@@ -121,6 +123,7 @@ package pi {
   }
 
   object DescribeDimensionKeysResponse {
+    @inline
     def apply(
         AlignedEndTime: js.UndefOr[ISOTimestamp] = js.undefined,
         AlignedStartTime: js.UndefOr[ISOTimestamp] = js.undefined,
@@ -149,6 +152,7 @@ package pi {
   }
 
   object DimensionGroup {
+    @inline
     def apply(
         Group: String,
         Dimensions: js.UndefOr[StringList] = js.undefined,
@@ -175,6 +179,7 @@ package pi {
   }
 
   object DimensionKeyDescription {
+    @inline
     def apply(
         Dimensions: js.UndefOr[DimensionMap] = js.undefined,
         Partitions: js.UndefOr[MetricValuesList] = js.undefined,
@@ -201,6 +206,7 @@ package pi {
   }
 
   object GetResourceMetricsRequest {
+    @inline
     def apply(
         EndTime: ISOTimestamp,
         Identifier: String,
@@ -236,6 +242,7 @@ package pi {
   }
 
   object GetResourceMetricsResponse {
+    @inline
     def apply(
         AlignedEndTime: js.UndefOr[ISOTimestamp] = js.undefined,
         AlignedStartTime: js.UndefOr[ISOTimestamp] = js.undefined,
@@ -279,6 +286,7 @@ package pi {
   }
 
   object MetricKeyDataPoints {
+    @inline
     def apply(
         DataPoints: js.UndefOr[DataPointsList] = js.undefined,
         Key: js.UndefOr[ResponseResourceMetricKey] = js.undefined
@@ -301,6 +309,7 @@ package pi {
   }
 
   object MetricQuery {
+    @inline
     def apply(
         Metric: String,
         Filter: js.UndefOr[MetricQueryFilterMap] = js.undefined,
@@ -333,6 +342,7 @@ package pi {
   }
 
   object ResponsePartitionKey {
+    @inline
     def apply(
         Dimensions: DimensionMap
     ): ResponsePartitionKey = {
@@ -354,6 +364,7 @@ package pi {
   }
 
   object ResponseResourceMetricKey {
+    @inline
     def apply(
         Metric: String,
         Dimensions: js.UndefOr[DimensionMap] = js.undefined

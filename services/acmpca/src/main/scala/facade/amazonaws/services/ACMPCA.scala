@@ -176,6 +176,7 @@ package acmpca {
   }
 
   object ASN1Subject {
+    @inline
     def apply(
         CommonName: js.UndefOr[String64] = js.undefined,
         Country: js.UndefOr[CountryCodeString] = js.undefined,
@@ -256,6 +257,7 @@ package acmpca {
   }
 
   object CertificateAuthority {
+    @inline
     def apply(
         Arn: js.UndefOr[Arn] = js.undefined,
         CertificateAuthorityConfiguration: js.UndefOr[CertificateAuthorityConfiguration] = js.undefined,
@@ -300,6 +302,7 @@ package acmpca {
   }
 
   object CertificateAuthorityConfiguration {
+    @inline
     def apply(
         KeyAlgorithm: KeyAlgorithm,
         SigningAlgorithm: SigningAlgorithm,
@@ -342,6 +345,7 @@ package acmpca {
   }
 
   object CreateCertificateAuthorityAuditReportRequest {
+    @inline
     def apply(
         AuditReportResponseFormat: AuditReportResponseFormat,
         CertificateAuthorityArn: Arn,
@@ -364,6 +368,7 @@ package acmpca {
   }
 
   object CreateCertificateAuthorityAuditReportResponse {
+    @inline
     def apply(
         AuditReportId: js.UndefOr[AuditReportId] = js.undefined,
         S3Key: js.UndefOr[String] = js.undefined
@@ -385,6 +390,7 @@ package acmpca {
   }
 
   object CreateCertificateAuthorityRequest {
+    @inline
     def apply(
         CertificateAuthorityConfiguration: CertificateAuthorityConfiguration,
         CertificateAuthorityType: CertificateAuthorityType,
@@ -410,6 +416,7 @@ package acmpca {
   }
 
   object CreateCertificateAuthorityResponse {
+    @inline
     def apply(
         CertificateAuthorityArn: js.UndefOr[Arn] = js.undefined
     ): CreateCertificateAuthorityResponse = {
@@ -428,6 +435,7 @@ package acmpca {
   }
 
   object CreatePermissionRequest {
+    @inline
     def apply(
         Actions: ActionList,
         CertificateAuthorityArn: Arn,
@@ -476,6 +484,7 @@ package acmpca {
   }
 
   object CrlConfiguration {
+    @inline
     def apply(
         Enabled: Boolean,
         CustomCname: js.UndefOr[String253] = js.undefined,
@@ -500,6 +509,7 @@ package acmpca {
   }
 
   object DeleteCertificateAuthorityRequest {
+    @inline
     def apply(
         CertificateAuthorityArn: Arn,
         PermanentDeletionTimeInDays: js.UndefOr[PermanentDeletionTimeInDays] = js.undefined
@@ -523,6 +533,7 @@ package acmpca {
   }
 
   object DeletePermissionRequest {
+    @inline
     def apply(
         CertificateAuthorityArn: Arn,
         Principal: Principal,
@@ -545,6 +556,7 @@ package acmpca {
   }
 
   object DescribeCertificateAuthorityAuditReportRequest {
+    @inline
     def apply(
         AuditReportId: AuditReportId,
         CertificateAuthorityArn: Arn
@@ -567,6 +579,7 @@ package acmpca {
   }
 
   object DescribeCertificateAuthorityAuditReportResponse {
+    @inline
     def apply(
         AuditReportStatus: js.UndefOr[AuditReportStatus] = js.undefined,
         CreatedAt: js.UndefOr[TStamp] = js.undefined,
@@ -588,6 +601,7 @@ package acmpca {
   }
 
   object DescribeCertificateAuthorityRequest {
+    @inline
     def apply(
         CertificateAuthorityArn: Arn
     ): DescribeCertificateAuthorityRequest = {
@@ -605,6 +619,7 @@ package acmpca {
   }
 
   object DescribeCertificateAuthorityResponse {
+    @inline
     def apply(
         CertificateAuthority: js.UndefOr[CertificateAuthority] = js.undefined
     ): DescribeCertificateAuthorityResponse = {
@@ -628,6 +643,7 @@ package acmpca {
   }
 
   object GetCertificateAuthorityCertificateRequest {
+    @inline
     def apply(
         CertificateAuthorityArn: Arn
     ): GetCertificateAuthorityCertificateRequest = {
@@ -646,6 +662,7 @@ package acmpca {
   }
 
   object GetCertificateAuthorityCertificateResponse {
+    @inline
     def apply(
         Certificate: js.UndefOr[CertificateBody] = js.undefined,
         CertificateChain: js.UndefOr[CertificateChain] = js.undefined
@@ -663,6 +680,7 @@ package acmpca {
   }
 
   object GetCertificateAuthorityCsrRequest {
+    @inline
     def apply(
         CertificateAuthorityArn: Arn
     ): GetCertificateAuthorityCsrRequest = {
@@ -680,6 +698,7 @@ package acmpca {
   }
 
   object GetCertificateAuthorityCsrResponse {
+    @inline
     def apply(
         Csr: js.UndefOr[CsrBody] = js.undefined
     ): GetCertificateAuthorityCsrResponse = {
@@ -696,6 +715,7 @@ package acmpca {
   }
 
   object GetCertificateRequest {
+    @inline
     def apply(
         CertificateArn: Arn,
         CertificateAuthorityArn: Arn
@@ -716,6 +736,7 @@ package acmpca {
   }
 
   object GetCertificateResponse {
+    @inline
     def apply(
         Certificate: js.UndefOr[CertificateBody] = js.undefined,
         CertificateChain: js.UndefOr[CertificateChain] = js.undefined
@@ -735,6 +756,7 @@ package acmpca {
   }
 
   object ImportCertificateAuthorityCertificateRequest {
+    @inline
     def apply(
         Certificate: CertificateBodyBlob,
         CertificateAuthorityArn: Arn,
@@ -761,6 +783,7 @@ package acmpca {
   }
 
   object IssueCertificateRequest {
+    @inline
     def apply(
         CertificateAuthorityArn: Arn,
         Csr: CsrBlob,
@@ -788,6 +811,7 @@ package acmpca {
   }
 
   object IssueCertificateResponse {
+    @inline
     def apply(
         CertificateArn: js.UndefOr[Arn] = js.undefined
     ): IssueCertificateResponse = {
@@ -813,6 +837,7 @@ package acmpca {
   }
 
   object ListCertificateAuthoritiesRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -831,6 +856,7 @@ package acmpca {
   }
 
   object ListCertificateAuthoritiesResponse {
+    @inline
     def apply(
         CertificateAuthorities: js.UndefOr[CertificateAuthorities] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -850,6 +876,7 @@ package acmpca {
   }
 
   object ListPermissionsRequest {
+    @inline
     def apply(
         CertificateAuthorityArn: Arn,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -872,6 +899,7 @@ package acmpca {
   }
 
   object ListPermissionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Permissions: js.UndefOr[PermissionList] = js.undefined
@@ -891,6 +919,7 @@ package acmpca {
   }
 
   object ListTagsRequest {
+    @inline
     def apply(
         CertificateAuthorityArn: Arn,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -913,6 +942,7 @@ package acmpca {
   }
 
   object ListTagsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -938,6 +968,7 @@ package acmpca {
   }
 
   object Permission {
+    @inline
     def apply(
         Actions: js.UndefOr[ActionList] = js.undefined,
         CertificateAuthorityArn: js.UndefOr[Arn] = js.undefined,
@@ -963,6 +994,7 @@ package acmpca {
   }
 
   object RestoreCertificateAuthorityRequest {
+    @inline
     def apply(
         CertificateAuthorityArn: Arn
     ): RestoreCertificateAuthorityRequest = {
@@ -983,6 +1015,7 @@ package acmpca {
   }
 
   object RevocationConfiguration {
+    @inline
     def apply(
         CrlConfiguration: js.UndefOr[CrlConfiguration] = js.undefined
     ): RevocationConfiguration = {
@@ -1024,6 +1057,7 @@ package acmpca {
   }
 
   object RevokeCertificateRequest {
+    @inline
     def apply(
         CertificateAuthorityArn: Arn,
         CertificateSerial: String128,
@@ -1062,6 +1096,7 @@ package acmpca {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: js.UndefOr[TagValue] = js.undefined
@@ -1082,6 +1117,7 @@ package acmpca {
   }
 
   object TagCertificateAuthorityRequest {
+    @inline
     def apply(
         CertificateAuthorityArn: Arn,
         Tags: TagList
@@ -1102,6 +1138,7 @@ package acmpca {
   }
 
   object UntagCertificateAuthorityRequest {
+    @inline
     def apply(
         CertificateAuthorityArn: Arn,
         Tags: TagList
@@ -1123,6 +1160,7 @@ package acmpca {
   }
 
   object UpdateCertificateAuthorityRequest {
+    @inline
     def apply(
         CertificateAuthorityArn: Arn,
         RevocationConfiguration: js.UndefOr[RevocationConfiguration] = js.undefined,
@@ -1148,6 +1186,7 @@ package acmpca {
   }
 
   object Validity {
+    @inline
     def apply(
         Type: ValidityPeriodType,
         Value: PositiveLong

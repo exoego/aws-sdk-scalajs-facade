@@ -566,6 +566,7 @@ package mediaconvert {
   }
 
   object AacSettings {
+    @inline
     def apply(
         AudioDescriptionBroadcasterMix: js.UndefOr[AacAudioDescriptionBroadcasterMix] = js.undefined,
         Bitrate: js.UndefOr[__integerMin6000Max1024000] = js.undefined,
@@ -700,6 +701,7 @@ package mediaconvert {
   }
 
   object Ac3Settings {
+    @inline
     def apply(
         Bitrate: js.UndefOr[__integerMin64000Max640000] = js.undefined,
         BitstreamMode: js.UndefOr[Ac3BitstreamMode] = js.undefined,
@@ -744,6 +746,7 @@ package mediaconvert {
   }
 
   object AccelerationSettings {
+    @inline
     def apply(
         Mode: AccelerationMode
     ): AccelerationSettings = {
@@ -777,6 +780,7 @@ package mediaconvert {
   }
 
   object AiffSettings {
+    @inline
     def apply(
         BitDepth: js.UndefOr[__integerMin16Max24] = js.undefined,
         Channels: js.UndefOr[__integerMin1Max2] = js.undefined,
@@ -799,6 +803,7 @@ package mediaconvert {
   }
 
   object AncillarySourceSettings {
+    @inline
     def apply(
         SourceAncillaryChannelNumber: js.UndefOr[__integerMin1Max4] = js.undefined
     ): AncillarySourceSettings = {
@@ -826,6 +831,7 @@ package mediaconvert {
   }
 
   object AssociateCertificateRequest {
+    @inline
     def apply(
         Arn: __string
     ): AssociateCertificateRequest = {
@@ -841,6 +847,7 @@ package mediaconvert {
   trait AssociateCertificateResponse extends js.Object {}
 
   object AssociateCertificateResponse {
+    @inline
     def apply(
         ): AssociateCertificateResponse = {
       val __obj = js.Dynamic.literal()
@@ -881,6 +888,7 @@ package mediaconvert {
   }
 
   object AudioCodecSettings {
+    @inline
     def apply(
         AacSettings: js.UndefOr[AacSettings] = js.undefined,
         Ac3Settings: js.UndefOr[Ac3Settings] = js.undefined,
@@ -932,6 +940,7 @@ package mediaconvert {
   }
 
   object AudioDescription {
+    @inline
     def apply(
         AudioNormalizationSettings: js.UndefOr[AudioNormalizationSettings] = js.undefined,
         AudioSourceName: js.UndefOr[__string] = js.undefined,
@@ -1027,6 +1036,7 @@ package mediaconvert {
   }
 
   object AudioNormalizationSettings {
+    @inline
     def apply(
         Algorithm: js.UndefOr[AudioNormalizationAlgorithm] = js.undefined,
         AlgorithmControl: js.UndefOr[AudioNormalizationAlgorithmControl] = js.undefined,
@@ -1066,6 +1076,7 @@ package mediaconvert {
   }
 
   object AudioSelector {
+    @inline
     def apply(
         CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3] = js.undefined,
         DefaultSelection: js.UndefOr[AudioDefaultSelection] = js.undefined,
@@ -1104,6 +1115,7 @@ package mediaconvert {
   }
 
   object AudioSelectorGroup {
+    @inline
     def apply(
         AudioSelectorNames: js.UndefOr[__listOf__stringMin1] = js.undefined
     ): AudioSelectorGroup = {
@@ -1143,6 +1155,7 @@ package mediaconvert {
   }
 
   object AvailBlanking {
+    @inline
     def apply(
         AvailBlankingImage: js.UndefOr[__stringMin14PatternS3BmpBMPPngPNG] = js.undefined
     ): AvailBlanking = {
@@ -1188,6 +1201,7 @@ package mediaconvert {
   }
 
   object BurninDestinationSettings {
+    @inline
     def apply(
         Alignment: js.UndefOr[BurninSubtitleAlignment] = js.undefined,
         BackgroundColor: js.UndefOr[BurninSubtitleBackgroundColor] = js.undefined,
@@ -1307,6 +1321,7 @@ package mediaconvert {
   }
 
   object CancelJobRequest {
+    @inline
     def apply(
         Id: __string
     ): CancelJobRequest = {
@@ -1322,6 +1337,7 @@ package mediaconvert {
   trait CancelJobResponse extends js.Object {}
 
   object CancelJobResponse {
+    @inline
     def apply(
         ): CancelJobResponse = {
       val __obj = js.Dynamic.literal()
@@ -1343,6 +1359,7 @@ package mediaconvert {
   }
 
   object CaptionDescription {
+    @inline
     def apply(
         CaptionSelectorName: js.UndefOr[__stringMin1] = js.undefined,
         CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3] = js.undefined,
@@ -1372,6 +1389,7 @@ package mediaconvert {
   }
 
   object CaptionDescriptionPreset {
+    @inline
     def apply(
         CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3] = js.undefined,
         DestinationSettings: js.UndefOr[CaptionDestinationSettings] = js.undefined,
@@ -1402,6 +1420,7 @@ package mediaconvert {
   }
 
   object CaptionDestinationSettings {
+    @inline
     def apply(
         BurninDestinationSettings: js.UndefOr[BurninDestinationSettings] = js.undefined,
         DestinationType: js.UndefOr[CaptionDestinationType] = js.undefined,
@@ -1475,6 +1494,7 @@ package mediaconvert {
   }
 
   object CaptionSelector {
+    @inline
     def apply(
         CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3] = js.undefined,
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
@@ -1503,6 +1523,7 @@ package mediaconvert {
   }
 
   object CaptionSourceSettings {
+    @inline
     def apply(
         AncillarySourceSettings: js.UndefOr[AncillarySourceSettings] = js.undefined,
         DvbSubSourceSettings: js.UndefOr[DvbSubSourceSettings] = js.undefined,
@@ -1555,6 +1576,7 @@ package mediaconvert {
   }
 
   object ChannelMapping {
+    @inline
     def apply(
         OutputChannels: js.UndefOr[__listOfOutputChannelMapping] = js.undefined
     ): ChannelMapping = {
@@ -1598,6 +1620,7 @@ package mediaconvert {
   }
 
   object CmafEncryptionSettings {
+    @inline
     def apply(
         ConstantInitializationVector: js.UndefOr[__stringMin32Max32Pattern09aFAF32] = js.undefined,
         EncryptionMethod: js.UndefOr[CmafEncryptionType] = js.undefined,
@@ -1654,6 +1677,7 @@ package mediaconvert {
   }
 
   object CmafGroupSettings {
+    @inline
     def apply(
         BaseUrl: js.UndefOr[__string] = js.undefined,
         ClientCache: js.UndefOr[CmafClientCache] = js.undefined,
@@ -1787,6 +1811,7 @@ package mediaconvert {
   }
 
   object ColorCorrector {
+    @inline
     def apply(
         Brightness: js.UndefOr[__integerMin1Max100] = js.undefined,
         ColorSpaceConversion: js.UndefOr[ColorSpaceConversion] = js.undefined,
@@ -1875,6 +1900,7 @@ package mediaconvert {
   }
 
   object ContainerSettings {
+    @inline
     def apply(
         Container: js.UndefOr[ContainerType] = js.undefined,
         F4vSettings: js.UndefOr[F4vSettings] = js.undefined,
@@ -1927,6 +1953,7 @@ package mediaconvert {
   }
 
   object CreateJobRequest {
+    @inline
     def apply(
         Role: __string,
         Settings: JobSettings,
@@ -1962,6 +1989,7 @@ package mediaconvert {
   }
 
   object CreateJobResponse {
+    @inline
     def apply(
         Job: js.UndefOr[Job] = js.undefined
     ): CreateJobResponse = {
@@ -1985,6 +2013,7 @@ package mediaconvert {
   }
 
   object CreateJobTemplateRequest {
+    @inline
     def apply(
         Name: __string,
         Settings: JobTemplateSettings,
@@ -2018,6 +2047,7 @@ package mediaconvert {
   }
 
   object CreateJobTemplateResponse {
+    @inline
     def apply(
         JobTemplate: js.UndefOr[JobTemplate] = js.undefined
     ): CreateJobTemplateResponse = {
@@ -2037,6 +2067,7 @@ package mediaconvert {
   }
 
   object CreatePresetRequest {
+    @inline
     def apply(
         Name: __string,
         Settings: PresetSettings,
@@ -2062,6 +2093,7 @@ package mediaconvert {
   }
 
   object CreatePresetResponse {
+    @inline
     def apply(
         Preset: js.UndefOr[Preset] = js.undefined
     ): CreatePresetResponse = {
@@ -2082,6 +2114,7 @@ package mediaconvert {
   }
 
   object CreateQueueRequest {
+    @inline
     def apply(
         Name: __string,
         Description: js.UndefOr[__string] = js.undefined,
@@ -2109,6 +2142,7 @@ package mediaconvert {
   }
 
   object CreateQueueResponse {
+    @inline
     def apply(
         Queue: js.UndefOr[Queue] = js.undefined
     ): CreateQueueResponse = {
@@ -2128,6 +2162,7 @@ package mediaconvert {
   }
 
   object DashIsoEncryptionSettings {
+    @inline
     def apply(
         PlaybackDeviceCompatibility: js.UndefOr[DashIsoPlaybackDeviceCompatibility] = js.undefined,
         SpekeKeyProvider: js.UndefOr[SpekeKeyProvider] = js.undefined
@@ -2159,6 +2194,7 @@ package mediaconvert {
   }
 
   object DashIsoGroupSettings {
+    @inline
     def apply(
         BaseUrl: js.UndefOr[__string] = js.undefined,
         Destination: js.UndefOr[__stringPatternS3] = js.undefined,
@@ -2262,6 +2298,7 @@ package mediaconvert {
   }
 
   object Deinterlacer {
+    @inline
     def apply(
         Algorithm: js.UndefOr[DeinterlaceAlgorithm] = js.undefined,
         Control: js.UndefOr[DeinterlacerControl] = js.undefined,
@@ -2302,6 +2339,7 @@ package mediaconvert {
   }
 
   object DeleteJobTemplateRequest {
+    @inline
     def apply(
         Name: __string
     ): DeleteJobTemplateRequest = {
@@ -2317,6 +2355,7 @@ package mediaconvert {
   trait DeleteJobTemplateResponse extends js.Object {}
 
   object DeleteJobTemplateResponse {
+    @inline
     def apply(
         ): DeleteJobTemplateResponse = {
       val __obj = js.Dynamic.literal()
@@ -2331,6 +2370,7 @@ package mediaconvert {
   }
 
   object DeletePresetRequest {
+    @inline
     def apply(
         Name: __string
     ): DeletePresetRequest = {
@@ -2346,6 +2386,7 @@ package mediaconvert {
   trait DeletePresetResponse extends js.Object {}
 
   object DeletePresetResponse {
+    @inline
     def apply(
         ): DeletePresetResponse = {
       val __obj = js.Dynamic.literal()
@@ -2360,6 +2401,7 @@ package mediaconvert {
   }
 
   object DeleteQueueRequest {
+    @inline
     def apply(
         Name: __string
     ): DeleteQueueRequest = {
@@ -2375,6 +2417,7 @@ package mediaconvert {
   trait DeleteQueueResponse extends js.Object {}
 
   object DeleteQueueResponse {
+    @inline
     def apply(
         ): DeleteQueueResponse = {
       val __obj = js.Dynamic.literal()
@@ -2404,6 +2447,7 @@ package mediaconvert {
   }
 
   object DescribeEndpointsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[__integer] = js.undefined,
         Mode: js.UndefOr[DescribeEndpointsMode] = js.undefined,
@@ -2424,6 +2468,7 @@ package mediaconvert {
   }
 
   object DescribeEndpointsResponse {
+    @inline
     def apply(
         Endpoints: js.UndefOr[__listOfEndpoint] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -2444,6 +2489,7 @@ package mediaconvert {
   }
 
   object DestinationSettings {
+    @inline
     def apply(
         S3Settings: js.UndefOr[S3DestinationSettings] = js.undefined
     ): DestinationSettings = {
@@ -2459,6 +2505,7 @@ package mediaconvert {
   }
 
   object DisassociateCertificateRequest {
+    @inline
     def apply(
         Arn: __string
     ): DisassociateCertificateRequest = {
@@ -2474,6 +2521,7 @@ package mediaconvert {
   trait DisassociateCertificateResponse extends js.Object {}
 
   object DisassociateCertificateResponse {
+    @inline
     def apply(
         ): DisassociateCertificateResponse = {
       val __obj = js.Dynamic.literal()
@@ -2503,6 +2551,7 @@ package mediaconvert {
   }
 
   object DvbNitSettings {
+    @inline
     def apply(
         NetworkId: js.UndefOr[__integerMin0Max65535] = js.undefined,
         NetworkName: js.UndefOr[__stringMin1Max256] = js.undefined,
@@ -2528,6 +2577,7 @@ package mediaconvert {
   }
 
   object DvbSdtSettings {
+    @inline
     def apply(
         OutputSdt: js.UndefOr[OutputSdt] = js.undefined,
         SdtInterval: js.UndefOr[__integerMin25Max2000] = js.undefined,
@@ -2568,6 +2618,7 @@ package mediaconvert {
   }
 
   object DvbSubDestinationSettings {
+    @inline
     def apply(
         Alignment: js.UndefOr[DvbSubtitleAlignment] = js.undefined,
         BackgroundColor: js.UndefOr[DvbSubtitleBackgroundColor] = js.undefined,
@@ -2618,6 +2669,7 @@ package mediaconvert {
   }
 
   object DvbSubSourceSettings {
+    @inline
     def apply(
         Pid: js.UndefOr[__integerMin1Max2147483647] = js.undefined
     ): DvbSubSourceSettings = {
@@ -2708,6 +2760,7 @@ package mediaconvert {
   }
 
   object DvbTdtSettings {
+    @inline
     def apply(
         TdtInterval: js.UndefOr[__integerMin1000Max30000] = js.undefined
     ): DvbTdtSettings = {
@@ -2809,6 +2862,7 @@ package mediaconvert {
   }
 
   object Eac3AtmosSettings {
+    @inline
     def apply(
         Bitrate: js.UndefOr[__integerMin384000Max768000] = js.undefined,
         BitstreamMode: js.UndefOr[Eac3AtmosBitstreamMode] = js.undefined,
@@ -3024,6 +3078,7 @@ package mediaconvert {
   }
 
   object Eac3Settings {
+    @inline
     def apply(
         AttenuationControl: js.UndefOr[Eac3AttenuationControl] = js.undefined,
         Bitrate: js.UndefOr[__integerMin64000Max640000] = js.undefined,
@@ -3131,6 +3186,7 @@ package mediaconvert {
   }
 
   object EmbeddedDestinationSettings {
+    @inline
     def apply(
         Destination608ChannelNumber: js.UndefOr[__integerMin1Max4] = js.undefined,
         Destination708ServiceNumber: js.UndefOr[__integerMin1Max6] = js.undefined
@@ -3157,6 +3213,7 @@ package mediaconvert {
   }
 
   object EmbeddedSourceSettings {
+    @inline
     def apply(
         Convert608To708: js.UndefOr[EmbeddedConvert608To708] = js.undefined,
         Source608ChannelNumber: js.UndefOr[__integerMin1Max4] = js.undefined,
@@ -3179,6 +3236,7 @@ package mediaconvert {
   }
 
   object Endpoint {
+    @inline
     def apply(
         Url: js.UndefOr[__string] = js.undefined
     ): Endpoint = {
@@ -3197,6 +3255,7 @@ package mediaconvert {
   }
 
   object EsamManifestConfirmConditionNotification {
+    @inline
     def apply(
         MccXml: js.UndefOr[__stringPatternSNManifestConfirmConditionNotificationNS] = js.undefined
     ): EsamManifestConfirmConditionNotification = {
@@ -3217,6 +3276,7 @@ package mediaconvert {
   }
 
   object EsamSettings {
+    @inline
     def apply(
         ManifestConfirmConditionNotification: js.UndefOr[EsamManifestConfirmConditionNotification] = js.undefined,
         ResponseSignalPreroll: js.UndefOr[__integerMin0Max30000] = js.undefined,
@@ -3243,6 +3303,7 @@ package mediaconvert {
   }
 
   object EsamSignalProcessingNotification {
+    @inline
     def apply(
         SccXml: js.UndefOr[__stringPatternSNSignalProcessingNotificationNS] = js.undefined
     ): EsamSignalProcessingNotification = {
@@ -3271,6 +3332,7 @@ package mediaconvert {
   }
 
   object F4vSettings {
+    @inline
     def apply(
         MoovPlacement: js.UndefOr[F4vMoovPlacement] = js.undefined
     ): F4vSettings = {
@@ -3290,6 +3352,7 @@ package mediaconvert {
   }
 
   object FileGroupSettings {
+    @inline
     def apply(
         Destination: js.UndefOr[__stringPatternS3] = js.undefined,
         DestinationSettings: js.UndefOr[DestinationSettings] = js.undefined
@@ -3322,6 +3385,7 @@ package mediaconvert {
   }
 
   object FileSourceSettings {
+    @inline
     def apply(
         Convert608To708: js.UndefOr[FileSourceConvert608To708] = js.undefined,
         SourceFile: js.UndefOr[__stringMin14PatternS3SccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTSmiSMI] = js.undefined,
@@ -3358,6 +3422,7 @@ package mediaconvert {
   }
 
   object FrameCaptureSettings {
+    @inline
     def apply(
         FramerateDenominator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
         FramerateNumerator: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
@@ -3379,6 +3444,7 @@ package mediaconvert {
   }
 
   object GetJobRequest {
+    @inline
     def apply(
         Id: __string
     ): GetJobRequest = {
@@ -3396,6 +3462,7 @@ package mediaconvert {
   }
 
   object GetJobResponse {
+    @inline
     def apply(
         Job: js.UndefOr[Job] = js.undefined
     ): GetJobResponse = {
@@ -3411,6 +3478,7 @@ package mediaconvert {
   }
 
   object GetJobTemplateRequest {
+    @inline
     def apply(
         Name: __string
     ): GetJobTemplateRequest = {
@@ -3428,6 +3496,7 @@ package mediaconvert {
   }
 
   object GetJobTemplateResponse {
+    @inline
     def apply(
         JobTemplate: js.UndefOr[JobTemplate] = js.undefined
     ): GetJobTemplateResponse = {
@@ -3443,6 +3512,7 @@ package mediaconvert {
   }
 
   object GetPresetRequest {
+    @inline
     def apply(
         Name: __string
     ): GetPresetRequest = {
@@ -3460,6 +3530,7 @@ package mediaconvert {
   }
 
   object GetPresetResponse {
+    @inline
     def apply(
         Preset: js.UndefOr[Preset] = js.undefined
     ): GetPresetResponse = {
@@ -3475,6 +3546,7 @@ package mediaconvert {
   }
 
   object GetQueueRequest {
+    @inline
     def apply(
         Name: __string
     ): GetQueueRequest = {
@@ -3492,6 +3564,7 @@ package mediaconvert {
   }
 
   object GetQueueResponse {
+    @inline
     def apply(
         Queue: js.UndefOr[Queue] = js.undefined
     ): GetQueueResponse = {
@@ -3700,6 +3773,7 @@ package mediaconvert {
   }
 
   object H264QvbrSettings {
+    @inline
     def apply(
         MaxAverageBitrate: js.UndefOr[__integerMin1000Max1152000000] = js.undefined,
         QvbrQualityLevel: js.UndefOr[__integerMin1Max10] = js.undefined
@@ -3790,6 +3864,7 @@ package mediaconvert {
   }
 
   object H264Settings {
+    @inline
     def apply(
         AdaptiveQuantization: js.UndefOr[H264AdaptiveQuantization] = js.undefined,
         Bitrate: js.UndefOr[__integerMin1000Max1152000000] = js.undefined,
@@ -4142,6 +4217,7 @@ package mediaconvert {
   }
 
   object H265QvbrSettings {
+    @inline
     def apply(
         MaxAverageBitrate: js.UndefOr[__integerMin1000Max1466400000] = js.undefined,
         QvbrQualityLevel: js.UndefOr[__integerMin1Max10] = js.undefined
@@ -4233,6 +4309,7 @@ package mediaconvert {
   }
 
   object H265Settings {
+    @inline
     def apply(
         AdaptiveQuantization: js.UndefOr[H265AdaptiveQuantization] = js.undefined,
         AlternateTransferFunctionSei: js.UndefOr[H265AlternateTransferFunctionSei] = js.undefined,
@@ -4435,6 +4512,7 @@ package mediaconvert {
   }
 
   object Hdr10Metadata {
+    @inline
     def apply(
         BluePrimaryX: js.UndefOr[__integerMin0Max50000] = js.undefined,
         BluePrimaryY: js.UndefOr[__integerMin0Max50000] = js.undefined,
@@ -4516,6 +4594,7 @@ package mediaconvert {
   }
 
   object HlsCaptionLanguageMapping {
+    @inline
     def apply(
         CaptionChannel: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
         CustomLanguageCode: js.UndefOr[__stringMin3Max3PatternAZaZ3] = js.undefined,
@@ -4587,6 +4666,7 @@ package mediaconvert {
   }
 
   object HlsEncryptionSettings {
+    @inline
     def apply(
         ConstantInitializationVector: js.UndefOr[__stringMin32Max32Pattern09aFAF32] = js.undefined,
         EncryptionMethod: js.UndefOr[HlsEncryptionType] = js.undefined,
@@ -4654,6 +4734,7 @@ package mediaconvert {
   }
 
   object HlsGroupSettings {
+    @inline
     def apply(
         AdMarkers: js.UndefOr[__listOfHlsAdMarkers] = js.undefined,
         BaseUrl: js.UndefOr[__string] = js.undefined,
@@ -4815,6 +4896,7 @@ package mediaconvert {
   }
 
   object HlsSettings {
+    @inline
     def apply(
         AudioGroupId: js.UndefOr[__string] = js.undefined,
         AudioOnlyContainer: js.UndefOr[HlsAudioOnlyContainer] = js.undefined,
@@ -4865,6 +4947,7 @@ package mediaconvert {
   }
 
   object Id3Insertion {
+    @inline
     def apply(
         Id3: js.UndefOr[__stringPatternAZaZ0902] = js.undefined,
         Timecode: js.UndefOr[__stringPattern010920405090509092] = js.undefined
@@ -4885,6 +4968,7 @@ package mediaconvert {
   }
 
   object ImageInserter {
+    @inline
     def apply(
         InsertableImages: js.UndefOr[__listOfInsertableImage] = js.undefined
     ): ImageInserter = {
@@ -4922,6 +5006,7 @@ package mediaconvert {
   }
 
   object Input {
+    @inline
     def apply(
         AudioSelectorGroups: js.UndefOr[__mapOfAudioSelectorGroup] = js.undefined,
         AudioSelectors: js.UndefOr[__mapOfAudioSelector] = js.undefined,
@@ -4977,6 +5062,7 @@ package mediaconvert {
   }
 
   object InputClipping {
+    @inline
     def apply(
         EndTimecode: js.UndefOr[__stringPattern010920405090509092] = js.undefined,
         StartTimecode: js.UndefOr[__stringPattern010920405090509092] = js.undefined
@@ -5010,6 +5096,7 @@ package mediaconvert {
   }
 
   object InputDecryptionSettings {
+    @inline
     def apply(
         DecryptionMode: js.UndefOr[DecryptionMode] = js.undefined,
         EncryptedDecryptionKey: js.UndefOr[__stringMin24Max512PatternAZaZ0902] = js.undefined,
@@ -5092,6 +5179,7 @@ package mediaconvert {
   }
 
   object InputTemplate {
+    @inline
     def apply(
         AudioSelectorGroups: js.UndefOr[__mapOfAudioSelectorGroup] = js.undefined,
         AudioSelectors: js.UndefOr[__mapOfAudioSelector] = js.undefined,
@@ -5159,6 +5247,7 @@ package mediaconvert {
   }
 
   object InsertableImage {
+    @inline
     def apply(
         Duration: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
         FadeIn: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
@@ -5216,6 +5305,7 @@ package mediaconvert {
   }
 
   object Job {
+    @inline
     def apply(
         Role: __string,
         Settings: JobSettings,
@@ -5293,6 +5383,7 @@ package mediaconvert {
   }
 
   object JobSettings {
+    @inline
     def apply(
         AdAvailOffset: js.UndefOr[__integerMinNegative1000Max1000] = js.undefined,
         AvailBlanking: js.UndefOr[AvailBlanking] = js.undefined,
@@ -5351,6 +5442,7 @@ package mediaconvert {
   }
 
   object JobTemplate {
+    @inline
     def apply(
         Name: __string,
         Settings: JobTemplateSettings,
@@ -5412,6 +5504,7 @@ package mediaconvert {
   }
 
   object JobTemplateSettings {
+    @inline
     def apply(
         AdAvailOffset: js.UndefOr[__integerMinNegative1000Max1000] = js.undefined,
         AvailBlanking: js.UndefOr[AvailBlanking] = js.undefined,
@@ -5840,6 +5933,7 @@ package mediaconvert {
   }
 
   object ListJobTemplatesRequest {
+    @inline
     def apply(
         Category: js.UndefOr[__string] = js.undefined,
         ListBy: js.UndefOr[JobTemplateListBy] = js.undefined,
@@ -5864,6 +5958,7 @@ package mediaconvert {
   }
 
   object ListJobTemplatesResponse {
+    @inline
     def apply(
         JobTemplates: js.UndefOr[__listOfJobTemplate] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -5885,6 +5980,7 @@ package mediaconvert {
   }
 
   object ListJobsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[__integerMin1Max20] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined,
@@ -5909,6 +6005,7 @@ package mediaconvert {
   }
 
   object ListJobsResponse {
+    @inline
     def apply(
         Jobs: js.UndefOr[__listOfJob] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -5930,6 +6027,7 @@ package mediaconvert {
   }
 
   object ListPresetsRequest {
+    @inline
     def apply(
         Category: js.UndefOr[__string] = js.undefined,
         ListBy: js.UndefOr[PresetListBy] = js.undefined,
@@ -5954,6 +6052,7 @@ package mediaconvert {
   }
 
   object ListPresetsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[__string] = js.undefined,
         Presets: js.UndefOr[__listOfPreset] = js.undefined
@@ -5974,6 +6073,7 @@ package mediaconvert {
   }
 
   object ListQueuesRequest {
+    @inline
     def apply(
         ListBy: js.UndefOr[QueueListBy] = js.undefined,
         MaxResults: js.UndefOr[__integerMin1Max20] = js.undefined,
@@ -5996,6 +6096,7 @@ package mediaconvert {
   }
 
   object ListQueuesResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[__string] = js.undefined,
         Queues: js.UndefOr[__listOfQueue] = js.undefined
@@ -6013,6 +6114,7 @@ package mediaconvert {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         Arn: __string
     ): ListTagsForResourceRequest = {
@@ -6030,6 +6132,7 @@ package mediaconvert {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         ResourceTags: js.UndefOr[ResourceTags] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -6138,6 +6241,7 @@ package mediaconvert {
   }
 
   object M2tsScte35Esam {
+    @inline
     def apply(
         Scte35EsamPid: js.UndefOr[__integerMin32Max8182] = js.undefined
     ): M2tsScte35Esam = {
@@ -6225,6 +6329,7 @@ package mediaconvert {
   }
 
   object M2tsSettings {
+    @inline
     def apply(
         AudioBufferModel: js.UndefOr[M2tsAudioBufferModel] = js.undefined,
         AudioFramesPerPes: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
@@ -6358,6 +6463,7 @@ package mediaconvert {
   }
 
   object M3u8Settings {
+    @inline
     def apply(
         AudioFramesPerPes: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
         AudioPids: js.UndefOr[__listOf__integerMin32Max8182] = js.undefined,
@@ -6411,6 +6517,7 @@ package mediaconvert {
   }
 
   object MotionImageInserter {
+    @inline
     def apply(
         Framerate: js.UndefOr[MotionImageInsertionFramerate] = js.undefined,
         Input: js.UndefOr[__stringMin14Max1285PatternS3Mov09Png] = js.undefined,
@@ -6440,6 +6547,7 @@ package mediaconvert {
   }
 
   object MotionImageInsertionFramerate {
+    @inline
     def apply(
         FramerateDenominator: js.UndefOr[__integerMin1Max17895697] = js.undefined,
         FramerateNumerator: js.UndefOr[__integerMin1Max2147483640] = js.undefined
@@ -6471,6 +6579,7 @@ package mediaconvert {
   }
 
   object MotionImageInsertionOffset {
+    @inline
     def apply(
         ImageX: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
         ImageY: js.UndefOr[__integerMin0Max2147483647] = js.undefined
@@ -6555,6 +6664,7 @@ package mediaconvert {
   }
 
   object MovSettings {
+    @inline
     def apply(
         ClapAtom: js.UndefOr[MovClapAtom] = js.undefined,
         CslgAtom: js.UndefOr[MovCslgAtom] = js.undefined,
@@ -6583,6 +6693,7 @@ package mediaconvert {
   }
 
   object Mp2Settings {
+    @inline
     def apply(
         Bitrate: js.UndefOr[__integerMin32000Max384000] = js.undefined,
         Channels: js.UndefOr[__integerMin1Max2] = js.undefined,
@@ -6638,6 +6749,7 @@ package mediaconvert {
   }
 
   object Mp4Settings {
+    @inline
     def apply(
         CslgAtom: js.UndefOr[Mp4CslgAtom] = js.undefined,
         FreeSpaceBox: js.UndefOr[Mp4FreeSpaceBox] = js.undefined,
@@ -6837,6 +6949,7 @@ package mediaconvert {
   }
 
   object Mpeg2Settings {
+    @inline
     def apply(
         AdaptiveQuantization: js.UndefOr[Mpeg2AdaptiveQuantization] = js.undefined,
         Bitrate: js.UndefOr[__integerMin1000Max288000000] = js.undefined,
@@ -6986,6 +7099,7 @@ package mediaconvert {
   }
 
   object MsSmoothEncryptionSettings {
+    @inline
     def apply(
         SpekeKeyProvider: js.UndefOr[SpekeKeyProvider] = js.undefined
     ): MsSmoothEncryptionSettings = {
@@ -7009,6 +7123,7 @@ package mediaconvert {
   }
 
   object MsSmoothGroupSettings {
+    @inline
     def apply(
         AudioDeduplication: js.UndefOr[MsSmoothAudioDeduplication] = js.undefined,
         Destination: js.UndefOr[__stringPatternS3] = js.undefined,
@@ -7048,6 +7163,7 @@ package mediaconvert {
   }
 
   object NielsenConfiguration {
+    @inline
     def apply(
         BreakoutCode: js.UndefOr[__integerMin0Max0] = js.undefined,
         DistributorId: js.UndefOr[__string] = js.undefined
@@ -7071,6 +7187,7 @@ package mediaconvert {
   }
 
   object NoiseReducer {
+    @inline
     def apply(
         Filter: js.UndefOr[NoiseReducerFilter] = js.undefined,
         FilterSettings: js.UndefOr[NoiseReducerFilterSettings] = js.undefined,
@@ -7111,6 +7228,7 @@ package mediaconvert {
   }
 
   object NoiseReducerFilterSettings {
+    @inline
     def apply(
         Strength: js.UndefOr[__integerMin0Max3] = js.undefined
     ): NoiseReducerFilterSettings = {
@@ -7131,6 +7249,7 @@ package mediaconvert {
   }
 
   object NoiseReducerSpatialFilterSettings {
+    @inline
     def apply(
         PostFilterSharpenStrength: js.UndefOr[__integerMin0Max3] = js.undefined,
         Speed: js.UndefOr[__integerMinNegative2Max3] = js.undefined,
@@ -7157,6 +7276,7 @@ package mediaconvert {
   }
 
   object NoiseReducerTemporalFilterSettings {
+    @inline
     def apply(
         AggressiveMode: js.UndefOr[__integerMin0Max4] = js.undefined,
         Speed: js.UndefOr[__integerMinNegative1Max3] = js.undefined,
@@ -7196,6 +7316,7 @@ package mediaconvert {
   }
 
   object Output {
+    @inline
     def apply(
         AudioDescriptions: js.UndefOr[__listOfAudioDescription] = js.undefined,
         CaptionDescriptions: js.UndefOr[__listOfCaptionDescription] = js.undefined,
@@ -7228,6 +7349,7 @@ package mediaconvert {
   }
 
   object OutputChannelMapping {
+    @inline
     def apply(
         InputChannels: js.UndefOr[__listOf__integerMinNegative60Max6] = js.undefined
     ): OutputChannelMapping = {
@@ -7247,6 +7369,7 @@ package mediaconvert {
   }
 
   object OutputDetail {
+    @inline
     def apply(
         DurationInMs: js.UndefOr[__integer] = js.undefined,
         VideoDetails: js.UndefOr[VideoDetail] = js.undefined
@@ -7270,6 +7393,7 @@ package mediaconvert {
   }
 
   object OutputGroup {
+    @inline
     def apply(
         CustomName: js.UndefOr[__string] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
@@ -7294,6 +7418,7 @@ package mediaconvert {
   }
 
   object OutputGroupDetail {
+    @inline
     def apply(
         OutputDetails: js.UndefOr[__listOfOutputDetail] = js.undefined
     ): OutputGroupDetail = {
@@ -7317,6 +7442,7 @@ package mediaconvert {
   }
 
   object OutputGroupSettings {
+    @inline
     def apply(
         CmafGroupSettings: js.UndefOr[CmafGroupSettings] = js.undefined,
         DashIsoGroupSettings: js.UndefOr[DashIsoGroupSettings] = js.undefined,
@@ -7378,6 +7504,7 @@ package mediaconvert {
   }
 
   object OutputSettings {
+    @inline
     def apply(
         HlsSettings: js.UndefOr[HlsSettings] = js.undefined
     ): OutputSettings = {
@@ -7403,6 +7530,7 @@ package mediaconvert {
   }
 
   object Preset {
+    @inline
     def apply(
         Name: __string,
         Settings: PresetSettings,
@@ -7451,6 +7579,7 @@ package mediaconvert {
   }
 
   object PresetSettings {
+    @inline
     def apply(
         AudioDescriptions: js.UndefOr[__listOfAudioDescription] = js.undefined,
         CaptionDescriptions: js.UndefOr[__listOfCaptionDescriptionPreset] = js.undefined,
@@ -7553,6 +7682,7 @@ package mediaconvert {
   }
 
   object ProresSettings {
+    @inline
     def apply(
         CodecProfile: js.UndefOr[ProresCodecProfile] = js.undefined,
         FramerateControl: js.UndefOr[ProresFramerateControl] = js.undefined,
@@ -7623,6 +7753,7 @@ package mediaconvert {
   }
 
   object Queue {
+    @inline
     def apply(
         Name: __string,
         Arn: js.UndefOr[__string] = js.undefined,
@@ -7686,6 +7817,7 @@ package mediaconvert {
   }
 
   object Rectangle {
+    @inline
     def apply(
         Height: js.UndefOr[__integerMin2Max2147483647] = js.undefined,
         Width: js.UndefOr[__integerMin2Max2147483647] = js.undefined,
@@ -7712,6 +7844,7 @@ package mediaconvert {
   }
 
   object RemixSettings {
+    @inline
     def apply(
         ChannelMapping: js.UndefOr[ChannelMapping] = js.undefined,
         ChannelsIn: js.UndefOr[__integerMin1Max16] = js.undefined,
@@ -7749,6 +7882,7 @@ package mediaconvert {
   }
 
   object ReservationPlan {
+    @inline
     def apply(
         Commitment: js.UndefOr[Commitment] = js.undefined,
         ExpiresAt: js.UndefOr[__timestampUnix] = js.undefined,
@@ -7779,6 +7913,7 @@ package mediaconvert {
   }
 
   object ReservationPlanSettings {
+    @inline
     def apply(
         Commitment: Commitment,
         RenewalType: RenewalType,
@@ -7814,6 +7949,7 @@ package mediaconvert {
   }
 
   object ResourceTags {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         Tags: js.UndefOr[__mapOf__string] = js.undefined
@@ -7845,6 +7981,7 @@ package mediaconvert {
   }
 
   object S3DestinationSettings {
+    @inline
     def apply(
         Encryption: js.UndefOr[S3EncryptionSettings] = js.undefined
     ): S3DestinationSettings = {
@@ -7866,6 +8003,7 @@ package mediaconvert {
   }
 
   object S3EncryptionSettings {
+    @inline
     def apply(
         EncryptionType: js.UndefOr[S3ServerSideEncryptionType] = js.undefined,
         KmsKeyArn: js.UndefOr[
@@ -7922,6 +8060,7 @@ package mediaconvert {
   }
 
   object SccDestinationSettings {
+    @inline
     def apply(
         Framerate: js.UndefOr[SccDestinationFramerate] = js.undefined
     ): SccDestinationSettings = {
@@ -7943,6 +8082,7 @@ package mediaconvert {
   }
 
   object SpekeKeyProvider {
+    @inline
     def apply(
         CertificateArn: js.UndefOr[__stringPatternArnAwsUsGovAcm] = js.undefined,
         ResourceId: js.UndefOr[__string] = js.undefined,
@@ -7971,6 +8111,7 @@ package mediaconvert {
   }
 
   object SpekeKeyProviderCmaf {
+    @inline
     def apply(
         CertificateArn: js.UndefOr[__stringPatternArnAwsUsGovAcm] = js.undefined,
         DashSignaledSystemIds: js.UndefOr[__listOf__stringMin36Max36Pattern09aFAF809aFAF409aFAF409aFAF409aFAF12] =
@@ -8002,6 +8143,7 @@ package mediaconvert {
   }
 
   object StaticKeyProvider {
+    @inline
     def apply(
         KeyFormat: js.UndefOr[__stringPatternIdentityAZaZ26AZaZ09163] = js.undefined,
         KeyFormatVersions: js.UndefOr[__stringPatternDD] = js.undefined,
@@ -8065,6 +8207,7 @@ package mediaconvert {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         Arn: __string,
         Tags: __mapOf__string
@@ -8082,6 +8225,7 @@ package mediaconvert {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -8100,6 +8244,7 @@ package mediaconvert {
   }
 
   object TeletextDestinationSettings {
+    @inline
     def apply(
         PageNumber: js.UndefOr[__stringMin3Max3Pattern1809aFAF09aEAE] = js.undefined,
         PageTypes: js.UndefOr[__listOfTeletextPageType] = js.undefined
@@ -8141,6 +8286,7 @@ package mediaconvert {
   }
 
   object TeletextSourceSettings {
+    @inline
     def apply(
         PageNumber: js.UndefOr[__stringMin3Max3Pattern1809aFAF09aEAE] = js.undefined
     ): TeletextSourceSettings = {
@@ -8161,6 +8307,7 @@ package mediaconvert {
   }
 
   object TimecodeBurnin {
+    @inline
     def apply(
         FontSize: js.UndefOr[__integerMin10Max48] = js.undefined,
         Position: js.UndefOr[TimecodeBurninPosition] = js.undefined,
@@ -8215,6 +8362,7 @@ package mediaconvert {
   }
 
   object TimecodeConfig {
+    @inline
     def apply(
         Anchor: js.UndefOr[__stringPattern010920405090509092] = js.undefined,
         Source: js.UndefOr[TimecodeSource] = js.undefined,
@@ -8260,6 +8408,7 @@ package mediaconvert {
   }
 
   object TimedMetadataInsertion {
+    @inline
     def apply(
         Id3Insertions: js.UndefOr[__listOfId3Insertion] = js.undefined
     ): TimedMetadataInsertion = {
@@ -8280,6 +8429,7 @@ package mediaconvert {
   }
 
   object Timing {
+    @inline
     def apply(
         FinishTime: js.UndefOr[__timestampUnix] = js.undefined,
         StartTime: js.UndefOr[__timestampUnix] = js.undefined,
@@ -8302,6 +8452,7 @@ package mediaconvert {
   }
 
   object TrackSourceSettings {
+    @inline
     def apply(
         TrackNumber: js.UndefOr[__integerMin1Max2147483647] = js.undefined
     ): TrackSourceSettings = {
@@ -8320,6 +8471,7 @@ package mediaconvert {
   }
 
   object TtmlDestinationSettings {
+    @inline
     def apply(
         StylePassthrough: js.UndefOr[TtmlStylePassthrough] = js.undefined
     ): TtmlDestinationSettings = {
@@ -8353,6 +8505,7 @@ package mediaconvert {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         Arn: __string,
         TagKeys: js.UndefOr[__listOf__string] = js.undefined
@@ -8370,6 +8523,7 @@ package mediaconvert {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -8391,6 +8545,7 @@ package mediaconvert {
   }
 
   object UpdateJobTemplateRequest {
+    @inline
     def apply(
         Name: __string,
         AccelerationSettings: js.UndefOr[AccelerationSettings] = js.undefined,
@@ -8422,6 +8577,7 @@ package mediaconvert {
   }
 
   object UpdateJobTemplateResponse {
+    @inline
     def apply(
         JobTemplate: js.UndefOr[JobTemplate] = js.undefined
     ): UpdateJobTemplateResponse = {
@@ -8440,6 +8596,7 @@ package mediaconvert {
   }
 
   object UpdatePresetRequest {
+    @inline
     def apply(
         Name: __string,
         Category: js.UndefOr[__string] = js.undefined,
@@ -8463,6 +8620,7 @@ package mediaconvert {
   }
 
   object UpdatePresetResponse {
+    @inline
     def apply(
         Preset: js.UndefOr[Preset] = js.undefined
     ): UpdatePresetResponse = {
@@ -8481,6 +8639,7 @@ package mediaconvert {
   }
 
   object UpdateQueueRequest {
+    @inline
     def apply(
         Name: __string,
         Description: js.UndefOr[__string] = js.undefined,
@@ -8504,6 +8663,7 @@ package mediaconvert {
   }
 
   object UpdateQueueResponse {
+    @inline
     def apply(
         Queue: js.UndefOr[Queue] = js.undefined
     ): UpdateQueueResponse = {
@@ -8540,6 +8700,7 @@ package mediaconvert {
   }
 
   object VideoCodecSettings {
+    @inline
     def apply(
         Codec: js.UndefOr[VideoCodec] = js.undefined,
         FrameCaptureSettings: js.UndefOr[FrameCaptureSettings] = js.undefined,
@@ -8582,6 +8743,7 @@ package mediaconvert {
   }
 
   object VideoDescription {
+    @inline
     def apply(
         AfdSignaling: js.UndefOr[AfdSignaling] = js.undefined,
         AntiAlias: js.UndefOr[AntiAlias] = js.undefined,
@@ -8629,6 +8791,7 @@ package mediaconvert {
   }
 
   object VideoDetail {
+    @inline
     def apply(
         HeightInPx: js.UndefOr[__integer] = js.undefined,
         WidthInPx: js.UndefOr[__integer] = js.undefined
@@ -8653,6 +8816,7 @@ package mediaconvert {
   }
 
   object VideoPreprocessor {
+    @inline
     def apply(
         ColorCorrector: js.UndefOr[ColorCorrector] = js.undefined,
         Deinterlacer: js.UndefOr[Deinterlacer] = js.undefined,
@@ -8684,6 +8848,7 @@ package mediaconvert {
   }
 
   object VideoSelector {
+    @inline
     def apply(
         ColorSpace: js.UndefOr[ColorSpace] = js.undefined,
         ColorSpaceUsage: js.UndefOr[ColorSpaceUsage] = js.undefined,
@@ -8735,6 +8900,7 @@ package mediaconvert {
   }
 
   object WavSettings {
+    @inline
     def apply(
         BitDepth: js.UndefOr[__integerMin16Max24] = js.undefined,
         Channels: js.UndefOr[__integerMin1Max8] = js.undefined,

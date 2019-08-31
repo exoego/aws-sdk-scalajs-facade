@@ -110,6 +110,7 @@ package cloudhsmv2 {
   }
 
   object Backup {
+    @inline
     def apply(
         BackupId: BackupId,
         BackupState: js.UndefOr[BackupState] = js.undefined,
@@ -165,6 +166,7 @@ package cloudhsmv2 {
   }
 
   object Certificates {
+    @inline
     def apply(
         AwsHardwareCertificate: js.UndefOr[Cert] = js.undefined,
         ClusterCertificate: js.UndefOr[Cert] = js.undefined,
@@ -205,6 +207,7 @@ package cloudhsmv2 {
   }
 
   object Cluster {
+    @inline
     def apply(
         BackupPolicy: js.UndefOr[BackupPolicy] = js.undefined,
         Certificates: js.UndefOr[Certificates] = js.undefined,
@@ -271,6 +274,7 @@ package cloudhsmv2 {
   }
 
   object CopyBackupToRegionRequest {
+    @inline
     def apply(
         BackupId: BackupId,
         DestinationRegion: Region
@@ -290,6 +294,7 @@ package cloudhsmv2 {
   }
 
   object CopyBackupToRegionResponse {
+    @inline
     def apply(
         DestinationBackup: js.UndefOr[DestinationBackup] = js.undefined
     ): CopyBackupToRegionResponse = {
@@ -307,6 +312,7 @@ package cloudhsmv2 {
   }
 
   object CreateClusterRequest {
+    @inline
     def apply(
         HsmType: HsmType,
         SubnetIds: SubnetIds,
@@ -328,6 +334,7 @@ package cloudhsmv2 {
   }
 
   object CreateClusterResponse {
+    @inline
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): CreateClusterResponse = {
@@ -345,6 +352,7 @@ package cloudhsmv2 {
   }
 
   object CreateHsmRequest {
+    @inline
     def apply(
         AvailabilityZone: ExternalAz,
         ClusterId: ClusterId,
@@ -366,6 +374,7 @@ package cloudhsmv2 {
   }
 
   object CreateHsmResponse {
+    @inline
     def apply(
         Hsm: js.UndefOr[Hsm] = js.undefined
     ): CreateHsmResponse = {
@@ -381,6 +390,7 @@ package cloudhsmv2 {
   }
 
   object DeleteBackupRequest {
+    @inline
     def apply(
         BackupId: BackupId
     ): DeleteBackupRequest = {
@@ -398,6 +408,7 @@ package cloudhsmv2 {
   }
 
   object DeleteBackupResponse {
+    @inline
     def apply(
         Backup: js.UndefOr[Backup] = js.undefined
     ): DeleteBackupResponse = {
@@ -413,6 +424,7 @@ package cloudhsmv2 {
   }
 
   object DeleteClusterRequest {
+    @inline
     def apply(
         ClusterId: ClusterId
     ): DeleteClusterRequest = {
@@ -430,6 +442,7 @@ package cloudhsmv2 {
   }
 
   object DeleteClusterResponse {
+    @inline
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): DeleteClusterResponse = {
@@ -448,6 +461,7 @@ package cloudhsmv2 {
   }
 
   object DeleteHsmRequest {
+    @inline
     def apply(
         ClusterId: ClusterId,
         EniId: js.UndefOr[EniId] = js.undefined,
@@ -471,6 +485,7 @@ package cloudhsmv2 {
   }
 
   object DeleteHsmResponse {
+    @inline
     def apply(
         HsmId: js.UndefOr[HsmId] = js.undefined
     ): DeleteHsmResponse = {
@@ -489,6 +504,7 @@ package cloudhsmv2 {
   }
 
   object DescribeBackupsRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[Filters] = js.undefined,
         MaxResults: js.UndefOr[MaxSize] = js.undefined,
@@ -511,6 +527,7 @@ package cloudhsmv2 {
   }
 
   object DescribeBackupsResponse {
+    @inline
     def apply(
         Backups: js.UndefOr[Backups] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -530,6 +547,7 @@ package cloudhsmv2 {
   }
 
   object DescribeClustersRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[Filters] = js.undefined,
         MaxResults: js.UndefOr[MaxSize] = js.undefined,
@@ -550,6 +568,7 @@ package cloudhsmv2 {
   }
 
   object DescribeClustersResponse {
+    @inline
     def apply(
         Clusters: js.UndefOr[Clusters] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -570,6 +589,7 @@ package cloudhsmv2 {
   }
 
   object DestinationBackup {
+    @inline
     def apply(
         CreateTimestamp: js.UndefOr[Timestamp] = js.undefined,
         SourceBackup: js.UndefOr[BackupId] = js.undefined,
@@ -601,6 +621,7 @@ package cloudhsmv2 {
   }
 
   object Hsm {
+    @inline
     def apply(
         HsmId: HsmId,
         AvailabilityZone: js.UndefOr[ExternalAz] = js.undefined,
@@ -644,6 +665,7 @@ package cloudhsmv2 {
   }
 
   object InitializeClusterRequest {
+    @inline
     def apply(
         ClusterId: ClusterId,
         SignedCert: Cert,
@@ -666,6 +688,7 @@ package cloudhsmv2 {
   }
 
   object InitializeClusterResponse {
+    @inline
     def apply(
         State: js.UndefOr[ClusterState] = js.undefined,
         StateMessage: js.UndefOr[StateMessage] = js.undefined
@@ -685,6 +708,7 @@ package cloudhsmv2 {
   }
 
   object ListTagsRequest {
+    @inline
     def apply(
         ResourceId: ClusterId,
         MaxResults: js.UndefOr[MaxSize] = js.undefined,
@@ -707,6 +731,7 @@ package cloudhsmv2 {
   }
 
   object ListTagsResponse {
+    @inline
     def apply(
         TagList: TagList,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -726,6 +751,7 @@ package cloudhsmv2 {
   }
 
   object RestoreBackupRequest {
+    @inline
     def apply(
         BackupId: BackupId
     ): RestoreBackupRequest = {
@@ -743,6 +769,7 @@ package cloudhsmv2 {
   }
 
   object RestoreBackupResponse {
+    @inline
     def apply(
         Backup: js.UndefOr[Backup] = js.undefined
     ): RestoreBackupResponse = {
@@ -762,6 +789,7 @@ package cloudhsmv2 {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: TagValue
@@ -782,6 +810,7 @@ package cloudhsmv2 {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceId: ClusterId,
         TagList: TagList
@@ -799,6 +828,7 @@ package cloudhsmv2 {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -814,6 +844,7 @@ package cloudhsmv2 {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceId: ClusterId,
         TagKeyList: TagKeyList
@@ -831,6 +862,7 @@ package cloudhsmv2 {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()

@@ -173,6 +173,7 @@ package datasync {
   }
 
   object AgentListEntry {
+    @inline
     def apply(
         AgentArn: js.UndefOr[AgentArn] = js.undefined,
         Name: js.UndefOr[TagValue] = js.undefined,
@@ -206,6 +207,7 @@ package datasync {
   }
 
   object CancelTaskExecutionRequest {
+    @inline
     def apply(
         TaskExecutionArn: TaskExecutionArn
     ): CancelTaskExecutionRequest = {
@@ -221,6 +223,7 @@ package datasync {
   trait CancelTaskExecutionResponse extends js.Object {}
 
   object CancelTaskExecutionResponse {
+    @inline
     def apply(
         ): CancelTaskExecutionResponse = {
       val __obj = js.Dynamic.literal()
@@ -240,6 +243,7 @@ package datasync {
   }
 
   object CreateAgentRequest {
+    @inline
     def apply(
         ActivationKey: ActivationKey,
         AgentName: js.UndefOr[TagValue] = js.undefined,
@@ -267,6 +271,7 @@ package datasync {
   }
 
   object CreateAgentResponse {
+    @inline
     def apply(
         AgentArn: js.UndefOr[AgentArn] = js.undefined
     ): CreateAgentResponse = {
@@ -285,6 +290,7 @@ package datasync {
   }
 
   object CreateLocationEfsRequest {
+    @inline
     def apply(
         Ec2Config: Ec2Config,
         EfsFilesystemArn: EfsFilesystemArn,
@@ -311,6 +317,7 @@ package datasync {
   }
 
   object CreateLocationEfsResponse {
+    @inline
     def apply(
         LocationArn: js.UndefOr[LocationArn] = js.undefined
     ): CreateLocationEfsResponse = {
@@ -330,6 +337,7 @@ package datasync {
   }
 
   object CreateLocationNfsRequest {
+    @inline
     def apply(
         OnPremConfig: OnPremConfig,
         ServerHostname: ServerHostname,
@@ -355,6 +363,7 @@ package datasync {
   }
 
   object CreateLocationNfsResponse {
+    @inline
     def apply(
         LocationArn: js.UndefOr[LocationArn] = js.undefined
     ): CreateLocationNfsResponse = {
@@ -373,6 +382,7 @@ package datasync {
   }
 
   object CreateLocationS3Request {
+    @inline
     def apply(
         S3BucketArn: S3BucketArn,
         S3Config: S3Config,
@@ -396,6 +406,7 @@ package datasync {
   }
 
   object CreateLocationS3Response {
+    @inline
     def apply(
         LocationArn: js.UndefOr[LocationArn] = js.undefined
     ): CreateLocationS3Response = {
@@ -418,6 +429,7 @@ package datasync {
   }
 
   object CreateLocationSmbRequest {
+    @inline
     def apply(
         AgentArns: AgentArnList,
         Password: SmbPassword,
@@ -449,6 +461,7 @@ package datasync {
   }
 
   object CreateLocationSmbResponse {
+    @inline
     def apply(
         LocationArn: js.UndefOr[LocationArn] = js.undefined
     ): CreateLocationSmbResponse = {
@@ -470,6 +483,7 @@ package datasync {
   }
 
   object CreateTaskRequest {
+    @inline
     def apply(
         DestinationLocationArn: LocationArn,
         SourceLocationArn: LocationArn,
@@ -499,6 +513,7 @@ package datasync {
   }
 
   object CreateTaskResponse {
+    @inline
     def apply(
         TaskArn: js.UndefOr[TaskArn] = js.undefined
     ): CreateTaskResponse = {
@@ -514,6 +529,7 @@ package datasync {
   }
 
   object DeleteAgentRequest {
+    @inline
     def apply(
         AgentArn: AgentArn
     ): DeleteAgentRequest = {
@@ -529,6 +545,7 @@ package datasync {
   trait DeleteAgentResponse extends js.Object {}
 
   object DeleteAgentResponse {
+    @inline
     def apply(
         ): DeleteAgentResponse = {
       val __obj = js.Dynamic.literal()
@@ -546,6 +563,7 @@ package datasync {
   }
 
   object DeleteLocationRequest {
+    @inline
     def apply(
         LocationArn: LocationArn
     ): DeleteLocationRequest = {
@@ -561,6 +579,7 @@ package datasync {
   trait DeleteLocationResponse extends js.Object {}
 
   object DeleteLocationResponse {
+    @inline
     def apply(
         ): DeleteLocationResponse = {
       val __obj = js.Dynamic.literal()
@@ -578,6 +597,7 @@ package datasync {
   }
 
   object DeleteTaskRequest {
+    @inline
     def apply(
         TaskArn: TaskArn
     ): DeleteTaskRequest = {
@@ -593,6 +613,7 @@ package datasync {
   trait DeleteTaskResponse extends js.Object {}
 
   object DeleteTaskResponse {
+    @inline
     def apply(
         ): DeleteTaskResponse = {
       val __obj = js.Dynamic.literal()
@@ -610,6 +631,7 @@ package datasync {
   }
 
   object DescribeAgentRequest {
+    @inline
     def apply(
         AgentArn: AgentArn
     ): DescribeAgentRequest = {
@@ -633,6 +655,7 @@ package datasync {
   }
 
   object DescribeAgentResponse {
+    @inline
     def apply(
         AgentArn: js.UndefOr[AgentArn] = js.undefined,
         CreationTime: js.UndefOr[Time] = js.undefined,
@@ -660,6 +683,7 @@ package datasync {
   }
 
   object DescribeLocationEfsRequest {
+    @inline
     def apply(
         LocationArn: LocationArn
     ): DescribeLocationEfsRequest = {
@@ -680,6 +704,7 @@ package datasync {
   }
 
   object DescribeLocationEfsResponse {
+    @inline
     def apply(
         CreationTime: js.UndefOr[Time] = js.undefined,
         Ec2Config: js.UndefOr[Ec2Config] = js.undefined,
@@ -701,6 +726,7 @@ package datasync {
   }
 
   object DescribeLocationNfsRequest {
+    @inline
     def apply(
         LocationArn: LocationArn
     ): DescribeLocationNfsRequest = {
@@ -722,6 +748,7 @@ package datasync {
   }
 
   object DescribeLocationNfsResponse {
+    @inline
     def apply(
         CreationTime: js.UndefOr[Time] = js.undefined,
         LocationArn: js.UndefOr[LocationArn] = js.undefined,
@@ -745,6 +772,7 @@ package datasync {
   }
 
   object DescribeLocationS3Request {
+    @inline
     def apply(
         LocationArn: LocationArn
     ): DescribeLocationS3Request = {
@@ -765,6 +793,7 @@ package datasync {
   }
 
   object DescribeLocationS3Response {
+    @inline
     def apply(
         CreationTime: js.UndefOr[Time] = js.undefined,
         LocationArn: js.UndefOr[LocationArn] = js.undefined,
@@ -786,6 +815,7 @@ package datasync {
   }
 
   object DescribeLocationSmbRequest {
+    @inline
     def apply(
         LocationArn: LocationArn
     ): DescribeLocationSmbRequest = {
@@ -809,6 +839,7 @@ package datasync {
   }
 
   object DescribeLocationSmbResponse {
+    @inline
     def apply(
         AgentArns: js.UndefOr[AgentArnList] = js.undefined,
         CreationTime: js.UndefOr[Time] = js.undefined,
@@ -836,6 +867,7 @@ package datasync {
   }
 
   object DescribeTaskExecutionRequest {
+    @inline
     def apply(
         TaskExecutionArn: TaskExecutionArn
     ): DescribeTaskExecutionRequest = {
@@ -864,6 +896,7 @@ package datasync {
   }
 
   object DescribeTaskExecutionResponse {
+    @inline
     def apply(
         BytesTransferred: js.UndefOr[Double] = js.undefined,
         BytesWritten: js.UndefOr[Double] = js.undefined,
@@ -901,6 +934,7 @@ package datasync {
   }
 
   object DescribeTaskRequest {
+    @inline
     def apply(
         TaskArn: TaskArn
     ): DescribeTaskRequest = {
@@ -931,6 +965,7 @@ package datasync {
   }
 
   object DescribeTaskResponse {
+    @inline
     def apply(
         CloudWatchLogGroupArn: js.UndefOr[LogGroupArn] = js.undefined,
         CreationTime: js.UndefOr[Time] = js.undefined,
@@ -980,6 +1015,7 @@ package datasync {
   }
 
   object Ec2Config {
+    @inline
     def apply(
         SecurityGroupArns: Ec2SecurityGroupArnList,
         SubnetArn: Ec2SubnetArn
@@ -1010,6 +1046,7 @@ package datasync {
   }
 
   object FilterRule {
+    @inline
     def apply(
         FilterType: js.UndefOr[FilterType] = js.undefined,
         Value: js.UndefOr[FilterValue] = js.undefined
@@ -1043,6 +1080,7 @@ package datasync {
   }
 
   object ListAgentsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1061,6 +1099,7 @@ package datasync {
   }
 
   object ListAgentsResponse {
+    @inline
     def apply(
         Agents: js.UndefOr[AgentList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1079,6 +1118,7 @@ package datasync {
   }
 
   object ListLocationsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1097,6 +1137,7 @@ package datasync {
   }
 
   object ListLocationsResponse {
+    @inline
     def apply(
         Locations: js.UndefOr[LocationList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1116,6 +1157,7 @@ package datasync {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceArn: TaggableResourceArn,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1138,6 +1180,7 @@ package datasync {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -1160,6 +1203,7 @@ package datasync {
   }
 
   object ListTaskExecutionsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
@@ -1180,6 +1224,7 @@ package datasync {
   }
 
   object ListTaskExecutionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         TaskExecutions: js.UndefOr[TaskExecutionList] = js.undefined
@@ -1198,6 +1243,7 @@ package datasync {
   }
 
   object ListTasksRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1216,6 +1262,7 @@ package datasync {
   }
 
   object ListTasksResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Tasks: js.UndefOr[TaskList] = js.undefined
@@ -1237,6 +1284,7 @@ package datasync {
   }
 
   object LocationListEntry {
+    @inline
     def apply(
         LocationArn: js.UndefOr[LocationArn] = js.undefined,
         LocationUri: js.UndefOr[LocationUri] = js.undefined
@@ -1264,6 +1312,7 @@ package datasync {
   }
 
   object NfsMountOptions {
+    @inline
     def apply(
         Version: js.UndefOr[NfsVersion] = js.undefined
     ): NfsMountOptions = {
@@ -1291,6 +1340,7 @@ package datasync {
   }
 
   object OnPremConfig {
+    @inline
     def apply(
         AgentArns: AgentArnList
     ): OnPremConfig = {
@@ -1320,6 +1370,7 @@ package datasync {
   }
 
   object Options {
+    @inline
     def apply(
         Atime: js.UndefOr[Atime] = js.undefined,
         BytesPerSecond: js.UndefOr[BytesPerSecond] = js.undefined,
@@ -1387,6 +1438,7 @@ package datasync {
   }
 
   object PrivateLinkConfig {
+    @inline
     def apply(
         PrivateLinkEndpoint: js.UndefOr[Endpoint] = js.undefined,
         SecurityGroupArns: js.UndefOr[PLSecurityGroupArnList] = js.undefined,
@@ -1412,6 +1464,7 @@ package datasync {
   }
 
   object S3Config {
+    @inline
     def apply(
         BucketAccessRoleArn: IamRoleArn
     ): S3Config = {
@@ -1432,6 +1485,7 @@ package datasync {
   }
 
   object SmbMountOptions {
+    @inline
     def apply(
         Version: js.UndefOr[SmbVersion] = js.undefined
     ): SmbMountOptions = {
@@ -1457,6 +1511,7 @@ package datasync {
   }
 
   object StartTaskExecutionRequest {
+    @inline
     def apply(
         TaskArn: TaskArn,
         Includes: js.UndefOr[FilterList] = js.undefined,
@@ -1478,6 +1533,7 @@ package datasync {
   }
 
   object StartTaskExecutionResponse {
+    @inline
     def apply(
         TaskExecutionArn: js.UndefOr[TaskExecutionArn] = js.undefined
     ): StartTaskExecutionResponse = {
@@ -1497,6 +1553,7 @@ package datasync {
   }
 
   object TagListEntry {
+    @inline
     def apply(
         Key: TagKey,
         Value: js.UndefOr[TagValue] = js.undefined
@@ -1517,6 +1574,7 @@ package datasync {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceArn: TaggableResourceArn,
         Tags: TagList
@@ -1534,6 +1592,7 @@ package datasync {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1552,6 +1611,7 @@ package datasync {
   }
 
   object TaskExecutionListEntry {
+    @inline
     def apply(
         Status: js.UndefOr[TaskExecutionStatus] = js.undefined,
         TaskExecutionArn: js.UndefOr[TaskExecutionArn] = js.undefined
@@ -1579,6 +1639,7 @@ package datasync {
   }
 
   object TaskExecutionResultDetail {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[String] = js.undefined,
         ErrorDetail: js.UndefOr[String] = js.undefined,
@@ -1624,6 +1685,7 @@ package datasync {
   }
 
   object TaskListEntry {
+    @inline
     def apply(
         Name: js.UndefOr[TagValue] = js.undefined,
         Status: js.UndefOr[TaskStatus] = js.undefined,
@@ -1662,6 +1724,7 @@ package datasync {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         Keys: TagKeyList,
         ResourceArn: TaggableResourceArn
@@ -1679,6 +1742,7 @@ package datasync {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1694,6 +1758,7 @@ package datasync {
   }
 
   object UpdateAgentRequest {
+    @inline
     def apply(
         AgentArn: AgentArn,
         Name: js.UndefOr[TagValue] = js.undefined
@@ -1711,6 +1776,7 @@ package datasync {
   trait UpdateAgentResponse extends js.Object {}
 
   object UpdateAgentResponse {
+    @inline
     def apply(
         ): UpdateAgentResponse = {
       val __obj = js.Dynamic.literal()
@@ -1732,6 +1798,7 @@ package datasync {
   }
 
   object UpdateTaskRequest {
+    @inline
     def apply(
         TaskArn: TaskArn,
         CloudWatchLogGroupArn: js.UndefOr[LogGroupArn] = js.undefined,
@@ -1755,6 +1822,7 @@ package datasync {
   trait UpdateTaskResponse extends js.Object {}
 
   object UpdateTaskResponse {
+    @inline
     def apply(
         ): UpdateTaskResponse = {
       val __obj = js.Dynamic.literal()

@@ -85,6 +85,7 @@ package dynamodbstreams {
   }
 
   object AttributeValue {
+    @inline
     def apply(
         B: js.UndefOr[BinaryAttributeValue] = js.undefined,
         BOOL: js.UndefOr[BooleanAttributeValue] = js.undefined,
@@ -123,6 +124,7 @@ package dynamodbstreams {
   }
 
   object DescribeStreamInput {
+    @inline
     def apply(
         StreamArn: StreamArn,
         ExclusiveStartShardId: js.UndefOr[ShardId] = js.undefined,
@@ -147,6 +149,7 @@ package dynamodbstreams {
   }
 
   object DescribeStreamOutput {
+    @inline
     def apply(
         StreamDescription: js.UndefOr[StreamDescription] = js.undefined
     ): DescribeStreamOutput = {
@@ -174,6 +177,7 @@ package dynamodbstreams {
   }
 
   object GetRecordsInput {
+    @inline
     def apply(
         ShardIterator: ShardIterator,
         Limit: js.UndefOr[PositiveIntegerObject] = js.undefined
@@ -197,6 +201,7 @@ package dynamodbstreams {
   }
 
   object GetRecordsOutput {
+    @inline
     def apply(
         NextShardIterator: js.UndefOr[ShardIterator] = js.undefined,
         Records: js.UndefOr[RecordList] = js.undefined
@@ -220,6 +225,7 @@ package dynamodbstreams {
   }
 
   object GetShardIteratorInput {
+    @inline
     def apply(
         ShardId: ShardId,
         ShardIteratorType: ShardIteratorType,
@@ -246,6 +252,7 @@ package dynamodbstreams {
   }
 
   object GetShardIteratorOutput {
+    @inline
     def apply(
         ShardIterator: js.UndefOr[ShardIterator] = js.undefined
     ): GetShardIteratorOutput = {
@@ -265,6 +272,7 @@ package dynamodbstreams {
   }
 
   object Identity {
+    @inline
     def apply(
         PrincipalId: js.UndefOr[String] = js.undefined,
         Type: js.UndefOr[String] = js.undefined
@@ -298,6 +306,7 @@ package dynamodbstreams {
   }
 
   object KeySchemaElement {
+    @inline
     def apply(
         AttributeName: KeySchemaAttributeName,
         KeyType: KeyType
@@ -337,6 +346,7 @@ package dynamodbstreams {
   }
 
   object ListStreamsInput {
+    @inline
     def apply(
         ExclusiveStartStreamArn: js.UndefOr[StreamArn] = js.undefined,
         Limit: js.UndefOr[PositiveIntegerObject] = js.undefined,
@@ -360,6 +370,7 @@ package dynamodbstreams {
   }
 
   object ListStreamsOutput {
+    @inline
     def apply(
         LastEvaluatedStreamArn: js.UndefOr[StreamArn] = js.undefined,
         Streams: js.UndefOr[StreamList] = js.undefined
@@ -394,6 +405,7 @@ package dynamodbstreams {
   }
 
   object Record {
+    @inline
     def apply(
         awsRegion: js.UndefOr[String] = js.undefined,
         dynamodb: js.UndefOr[StreamRecord] = js.undefined,
@@ -433,6 +445,7 @@ package dynamodbstreams {
   }
 
   object SequenceNumberRange {
+    @inline
     def apply(
         EndingSequenceNumber: js.UndefOr[SequenceNumber] = js.undefined,
         StartingSequenceNumber: js.UndefOr[SequenceNumber] = js.undefined
@@ -455,6 +468,7 @@ package dynamodbstreams {
   }
 
   object Shard {
+    @inline
     def apply(
         ParentShardId: js.UndefOr[ShardId] = js.undefined,
         SequenceNumberRange: js.UndefOr[SequenceNumberRange] = js.undefined,
@@ -488,6 +502,7 @@ package dynamodbstreams {
   }
 
   object Stream {
+    @inline
     def apply(
         StreamArn: js.UndefOr[StreamArn] = js.undefined,
         StreamLabel: js.UndefOr[String] = js.undefined,
@@ -518,6 +533,7 @@ package dynamodbstreams {
   }
 
   object StreamDescription {
+    @inline
     def apply(
         CreationRequestDateTime: js.UndefOr[Date] = js.undefined,
         KeySchema: js.UndefOr[KeySchema] = js.undefined,
@@ -558,6 +574,7 @@ package dynamodbstreams {
   }
 
   object StreamRecord {
+    @inline
     def apply(
         ApproximateCreationDateTime: js.UndefOr[Date] = js.undefined,
         Keys: js.UndefOr[AttributeMap] = js.undefined,

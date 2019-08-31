@@ -134,6 +134,7 @@ package iotevents {
   }
 
   object Action {
+    @inline
     def apply(
         clearTimer: js.UndefOr[ClearTimerAction] = js.undefined,
         firehose: js.UndefOr[FirehoseAction] = js.undefined,
@@ -170,6 +171,7 @@ package iotevents {
   }
 
   object Attribute {
+    @inline
     def apply(
         jsonPath: AttributeJsonPath
     ): Attribute = {
@@ -190,6 +192,7 @@ package iotevents {
   }
 
   object ClearTimerAction {
+    @inline
     def apply(
         timerName: TimerName
     ): ClearTimerAction = {
@@ -212,6 +215,7 @@ package iotevents {
   }
 
   object CreateDetectorModelRequest {
+    @inline
     def apply(
         detectorModelDefinition: DetectorModelDefinition,
         detectorModelName: DetectorModelName,
@@ -239,6 +243,7 @@ package iotevents {
   }
 
   object CreateDetectorModelResponse {
+    @inline
     def apply(
         detectorModelConfiguration: js.UndefOr[DetectorModelConfiguration] = js.undefined
     ): CreateDetectorModelResponse = {
@@ -259,6 +264,7 @@ package iotevents {
   }
 
   object CreateInputRequest {
+    @inline
     def apply(
         inputDefinition: InputDefinition,
         inputName: InputName,
@@ -282,6 +288,7 @@ package iotevents {
   }
 
   object CreateInputResponse {
+    @inline
     def apply(
         inputConfiguration: js.UndefOr[InputConfiguration] = js.undefined
     ): CreateInputResponse = {
@@ -297,6 +304,7 @@ package iotevents {
   }
 
   object DeleteDetectorModelRequest {
+    @inline
     def apply(
         detectorModelName: DetectorModelName
     ): DeleteDetectorModelRequest = {
@@ -312,6 +320,7 @@ package iotevents {
   trait DeleteDetectorModelResponse extends js.Object {}
 
   object DeleteDetectorModelResponse {
+    @inline
     def apply(
         ): DeleteDetectorModelResponse = {
       val __obj = js.Dynamic.literal()
@@ -326,6 +335,7 @@ package iotevents {
   }
 
   object DeleteInputRequest {
+    @inline
     def apply(
         inputName: InputName
     ): DeleteInputRequest = {
@@ -341,6 +351,7 @@ package iotevents {
   trait DeleteInputResponse extends js.Object {}
 
   object DeleteInputResponse {
+    @inline
     def apply(
         ): DeleteInputResponse = {
       val __obj = js.Dynamic.literal()
@@ -356,6 +367,7 @@ package iotevents {
   }
 
   object DescribeDetectorModelRequest {
+    @inline
     def apply(
         detectorModelName: DetectorModelName,
         detectorModelVersion: js.UndefOr[DetectorModelVersion] = js.undefined
@@ -375,6 +387,7 @@ package iotevents {
   }
 
   object DescribeDetectorModelResponse {
+    @inline
     def apply(
         detectorModel: js.UndefOr[DetectorModel] = js.undefined
     ): DescribeDetectorModelResponse = {
@@ -390,6 +403,7 @@ package iotevents {
   }
 
   object DescribeInputRequest {
+    @inline
     def apply(
         inputName: InputName
     ): DescribeInputRequest = {
@@ -407,6 +421,7 @@ package iotevents {
   }
 
   object DescribeInputResponse {
+    @inline
     def apply(
         input: js.UndefOr[Input] = js.undefined
     ): DescribeInputResponse = {
@@ -420,6 +435,7 @@ package iotevents {
   trait DescribeLoggingOptionsRequest extends js.Object {}
 
   object DescribeLoggingOptionsRequest {
+    @inline
     def apply(
         ): DescribeLoggingOptionsRequest = {
       val __obj = js.Dynamic.literal()
@@ -434,6 +450,7 @@ package iotevents {
   }
 
   object DescribeLoggingOptionsResponse {
+    @inline
     def apply(
         loggingOptions: js.UndefOr[LoggingOptions] = js.undefined
     ): DescribeLoggingOptionsResponse = {
@@ -453,6 +470,7 @@ package iotevents {
   }
 
   object DetectorDebugOption {
+    @inline
     def apply(
         detectorModelName: DetectorModelName,
         keyValue: js.UndefOr[KeyValue] = js.undefined
@@ -476,6 +494,7 @@ package iotevents {
   }
 
   object DetectorModel {
+    @inline
     def apply(
         detectorModelConfiguration: js.UndefOr[DetectorModelConfiguration] = js.undefined,
         detectorModelDefinition: js.UndefOr[DetectorModelDefinition] = js.undefined
@@ -506,6 +525,7 @@ package iotevents {
   }
 
   object DetectorModelConfiguration {
+    @inline
     def apply(
         creationTime: js.UndefOr[Timestamp] = js.undefined,
         detectorModelArn: js.UndefOr[DetectorModelArn] = js.undefined,
@@ -541,6 +561,7 @@ package iotevents {
   }
 
   object DetectorModelDefinition {
+    @inline
     def apply(
         initialStateName: StateName,
         states: States
@@ -565,6 +586,7 @@ package iotevents {
   }
 
   object DetectorModelSummary {
+    @inline
     def apply(
         creationTime: js.UndefOr[Timestamp] = js.undefined,
         detectorModelDescription: js.UndefOr[DetectorModelDescription] = js.undefined,
@@ -605,6 +627,7 @@ package iotevents {
   }
 
   object DetectorModelVersionSummary {
+    @inline
     def apply(
         creationTime: js.UndefOr[Timestamp] = js.undefined,
         detectorModelArn: js.UndefOr[DetectorModelArn] = js.undefined,
@@ -637,6 +660,7 @@ package iotevents {
   }
 
   object Event {
+    @inline
     def apply(
         eventName: EventName,
         actions: js.UndefOr[Actions] = js.undefined,
@@ -662,6 +686,7 @@ package iotevents {
   }
 
   object FirehoseAction {
+    @inline
     def apply(
         deliveryStreamName: DeliveryStreamName,
         separator: js.UndefOr[FirehoseSeparator] = js.undefined
@@ -685,6 +710,7 @@ package iotevents {
   }
 
   object Input {
+    @inline
     def apply(
         inputConfiguration: js.UndefOr[InputConfiguration] = js.undefined,
         inputDefinition: js.UndefOr[InputDefinition] = js.undefined
@@ -710,6 +736,7 @@ package iotevents {
   }
 
   object InputConfiguration {
+    @inline
     def apply(
         creationTime: Timestamp,
         inputArn: InputArn,
@@ -740,6 +767,7 @@ package iotevents {
   }
 
   object InputDefinition {
+    @inline
     def apply(
         attributes: Attributes
     ): InputDefinition = {
@@ -774,6 +802,7 @@ package iotevents {
   }
 
   object InputSummary {
+    @inline
     def apply(
         creationTime: js.UndefOr[Timestamp] = js.undefined,
         inputArn: js.UndefOr[InputArn] = js.undefined,
@@ -802,6 +831,7 @@ package iotevents {
   }
 
   object IotEventsAction {
+    @inline
     def apply(
         inputName: InputName
     ): IotEventsAction = {
@@ -822,6 +852,7 @@ package iotevents {
   }
 
   object IotTopicPublishAction {
+    @inline
     def apply(
         mqttTopic: MQTTTopic
     ): IotTopicPublishAction = {
@@ -842,6 +873,7 @@ package iotevents {
   }
 
   object LambdaAction {
+    @inline
     def apply(
         functionArn: AmazonResourceName
     ): LambdaAction = {
@@ -861,6 +893,7 @@ package iotevents {
   }
 
   object ListDetectorModelVersionsRequest {
+    @inline
     def apply(
         detectorModelName: DetectorModelName,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -883,6 +916,7 @@ package iotevents {
   }
 
   object ListDetectorModelVersionsResponse {
+    @inline
     def apply(
         detectorModelVersionSummaries: js.UndefOr[DetectorModelVersionSummaries] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -903,6 +937,7 @@ package iotevents {
   }
 
   object ListDetectorModelsRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -921,6 +956,7 @@ package iotevents {
   }
 
   object ListDetectorModelsResponse {
+    @inline
     def apply(
         detectorModelSummaries: js.UndefOr[DetectorModelSummaries] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -939,6 +975,7 @@ package iotevents {
   }
 
   object ListInputsRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -957,6 +994,7 @@ package iotevents {
   }
 
   object ListInputsResponse {
+    @inline
     def apply(
         inputSummaries: js.UndefOr[InputSummaries] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -974,6 +1012,7 @@ package iotevents {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         resourceArn: AmazonResourceName
     ): ListTagsForResourceRequest = {
@@ -991,6 +1030,7 @@ package iotevents {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         tags: js.UndefOr[Tags] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -1020,6 +1060,7 @@ package iotevents {
   }
 
   object LoggingOptions {
+    @inline
     def apply(
         enabled: LoggingEnabled,
         level: LoggingLevel,
@@ -1046,6 +1087,7 @@ package iotevents {
   }
 
   object OnEnterLifecycle {
+    @inline
     def apply(
         events: js.UndefOr[Events] = js.undefined
     ): OnEnterLifecycle = {
@@ -1064,6 +1106,7 @@ package iotevents {
   }
 
   object OnExitLifecycle {
+    @inline
     def apply(
         events: js.UndefOr[Events] = js.undefined
     ): OnExitLifecycle = {
@@ -1083,6 +1126,7 @@ package iotevents {
   }
 
   object OnInputLifecycle {
+    @inline
     def apply(
         events: js.UndefOr[Events] = js.undefined,
         transitionEvents: js.UndefOr[TransitionEvents] = js.undefined
@@ -1100,6 +1144,7 @@ package iotevents {
   }
 
   object PutLoggingOptionsRequest {
+    @inline
     def apply(
         loggingOptions: LoggingOptions
     ): PutLoggingOptionsRequest = {
@@ -1120,6 +1165,7 @@ package iotevents {
   }
 
   object ResetTimerAction {
+    @inline
     def apply(
         timerName: TimerName
     ): ResetTimerAction = {
@@ -1140,6 +1186,7 @@ package iotevents {
   }
 
   object SNSTopicPublishAction {
+    @inline
     def apply(
         targetArn: AmazonResourceName
     ): SNSTopicPublishAction = {
@@ -1161,6 +1208,7 @@ package iotevents {
   }
 
   object SetTimerAction {
+    @inline
     def apply(
         seconds: Seconds,
         timerName: TimerName
@@ -1184,6 +1232,7 @@ package iotevents {
   }
 
   object SetVariableAction {
+    @inline
     def apply(
         value: VariableValue,
         variableName: VariableName
@@ -1207,6 +1256,7 @@ package iotevents {
   }
 
   object SqsAction {
+    @inline
     def apply(
         queueUrl: QueueUrl,
         useBase64: js.UndefOr[UseBase64] = js.undefined
@@ -1232,6 +1282,7 @@ package iotevents {
   }
 
   object State {
+    @inline
     def apply(
         stateName: StateName,
         onEnter: js.UndefOr[OnEnterLifecycle] = js.undefined,
@@ -1259,6 +1310,7 @@ package iotevents {
   }
 
   object Tag {
+    @inline
     def apply(
         key: TagKey,
         value: TagValue
@@ -1279,6 +1331,7 @@ package iotevents {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         resourceArn: AmazonResourceName,
         tags: Tags
@@ -1296,6 +1349,7 @@ package iotevents {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1316,6 +1370,7 @@ package iotevents {
   }
 
   object TransitionEvent {
+    @inline
     def apply(
         condition: Condition,
         eventName: EventName,
@@ -1340,6 +1395,7 @@ package iotevents {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         resourceArn: AmazonResourceName,
         tagKeys: TagKeys
@@ -1357,6 +1413,7 @@ package iotevents {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1374,6 +1431,7 @@ package iotevents {
   }
 
   object UpdateDetectorModelRequest {
+    @inline
     def apply(
         detectorModelDefinition: DetectorModelDefinition,
         detectorModelName: DetectorModelName,
@@ -1397,6 +1455,7 @@ package iotevents {
   }
 
   object UpdateDetectorModelResponse {
+    @inline
     def apply(
         detectorModelConfiguration: js.UndefOr[DetectorModelConfiguration] = js.undefined
     ): UpdateDetectorModelResponse = {
@@ -1416,6 +1475,7 @@ package iotevents {
   }
 
   object UpdateInputRequest {
+    @inline
     def apply(
         inputDefinition: InputDefinition,
         inputName: InputName,
@@ -1437,6 +1497,7 @@ package iotevents {
   }
 
   object UpdateInputResponse {
+    @inline
     def apply(
         inputConfiguration: js.UndefOr[InputConfiguration] = js.undefined
     ): UpdateInputResponse = {

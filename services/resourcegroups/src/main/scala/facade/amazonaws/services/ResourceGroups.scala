@@ -90,6 +90,7 @@ package resourcegroups {
   }
 
   object CreateGroupInput {
+    @inline
     def apply(
         Name: GroupName,
         ResourceQuery: ResourceQuery,
@@ -115,6 +116,7 @@ package resourcegroups {
   }
 
   object CreateGroupOutput {
+    @inline
     def apply(
         Group: js.UndefOr[Group] = js.undefined,
         ResourceQuery: js.UndefOr[ResourceQuery] = js.undefined,
@@ -134,6 +136,7 @@ package resourcegroups {
   }
 
   object DeleteGroupInput {
+    @inline
     def apply(
         GroupName: GroupName
     ): DeleteGroupInput = {
@@ -151,6 +154,7 @@ package resourcegroups {
   }
 
   object DeleteGroupOutput {
+    @inline
     def apply(
         Group: js.UndefOr[Group] = js.undefined
     ): DeleteGroupOutput = {
@@ -166,6 +170,7 @@ package resourcegroups {
   }
 
   object GetGroupInput {
+    @inline
     def apply(
         GroupName: GroupName
     ): GetGroupInput = {
@@ -183,6 +188,7 @@ package resourcegroups {
   }
 
   object GetGroupOutput {
+    @inline
     def apply(
         Group: js.UndefOr[Group] = js.undefined
     ): GetGroupOutput = {
@@ -198,6 +204,7 @@ package resourcegroups {
   }
 
   object GetGroupQueryInput {
+    @inline
     def apply(
         GroupName: GroupName
     ): GetGroupQueryInput = {
@@ -215,6 +222,7 @@ package resourcegroups {
   }
 
   object GetGroupQueryOutput {
+    @inline
     def apply(
         GroupQuery: js.UndefOr[GroupQuery] = js.undefined
     ): GetGroupQueryOutput = {
@@ -230,6 +238,7 @@ package resourcegroups {
   }
 
   object GetTagsInput {
+    @inline
     def apply(
         Arn: GroupArn
     ): GetTagsInput = {
@@ -248,6 +257,7 @@ package resourcegroups {
   }
 
   object GetTagsOutput {
+    @inline
     def apply(
         Arn: js.UndefOr[GroupArn] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
@@ -270,6 +280,7 @@ package resourcegroups {
   }
 
   object Group {
+    @inline
     def apply(
         GroupArn: GroupArn,
         Name: GroupName,
@@ -295,6 +306,7 @@ package resourcegroups {
   }
 
   object GroupFilter {
+    @inline
     def apply(
         Name: GroupFilterName,
         Values: GroupFilterValues
@@ -324,6 +336,7 @@ package resourcegroups {
   }
 
   object GroupIdentifier {
+    @inline
     def apply(
         GroupArn: js.UndefOr[GroupArn] = js.undefined,
         GroupName: js.UndefOr[GroupName] = js.undefined
@@ -345,6 +358,7 @@ package resourcegroups {
   }
 
   object GroupQuery {
+    @inline
     def apply(
         GroupName: GroupName,
         ResourceQuery: ResourceQuery
@@ -367,6 +381,7 @@ package resourcegroups {
   }
 
   object ListGroupResourcesInput {
+    @inline
     def apply(
         GroupName: GroupName,
         Filters: js.UndefOr[ResourceFilterList] = js.undefined,
@@ -392,6 +407,7 @@ package resourcegroups {
   }
 
   object ListGroupResourcesOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         QueryErrors: js.UndefOr[QueryErrorList] = js.undefined,
@@ -413,6 +429,7 @@ package resourcegroups {
   }
 
   object ListGroupsInput {
+    @inline
     def apply(
         Filters: js.UndefOr[GroupFilterList] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -434,6 +451,7 @@ package resourcegroups {
   }
 
   object ListGroupsOutput {
+    @inline
     def apply(
         GroupIdentifiers: js.UndefOr[GroupIdentifierList] = js.undefined,
         Groups: js.UndefOr[GroupList] = js.undefined,
@@ -457,6 +475,7 @@ package resourcegroups {
   }
 
   object QueryError {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[QueryErrorCode] = js.undefined,
         Message: js.UndefOr[QueryErrorMessage] = js.undefined
@@ -492,6 +511,7 @@ package resourcegroups {
   }
 
   object ResourceFilter {
+    @inline
     def apply(
         Name: ResourceFilterName,
         Values: ResourceFilterValues
@@ -521,6 +541,7 @@ package resourcegroups {
   }
 
   object ResourceIdentifier {
+    @inline
     def apply(
         ResourceArn: js.UndefOr[ResourceArn] = js.undefined,
         ResourceType: js.UndefOr[ResourceType] = js.undefined
@@ -542,6 +563,7 @@ package resourcegroups {
   }
 
   object ResourceQuery {
+    @inline
     def apply(
         Query: Query,
         Type: QueryType
@@ -563,6 +585,7 @@ package resourcegroups {
   }
 
   object SearchResourcesInput {
+    @inline
     def apply(
         ResourceQuery: ResourceQuery,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -586,6 +609,7 @@ package resourcegroups {
   }
 
   object SearchResourcesOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         QueryErrors: js.UndefOr[QueryErrorList] = js.undefined,
@@ -606,6 +630,7 @@ package resourcegroups {
   }
 
   object TagInput {
+    @inline
     def apply(
         Arn: GroupArn,
         Tags: Tags
@@ -626,6 +651,7 @@ package resourcegroups {
   }
 
   object TagOutput {
+    @inline
     def apply(
         Arn: js.UndefOr[GroupArn] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
@@ -644,6 +670,7 @@ package resourcegroups {
   }
 
   object UntagInput {
+    @inline
     def apply(
         Arn: GroupArn,
         Keys: TagKeyList
@@ -664,6 +691,7 @@ package resourcegroups {
   }
 
   object UntagOutput {
+    @inline
     def apply(
         Arn: js.UndefOr[GroupArn] = js.undefined,
         Keys: js.UndefOr[TagKeyList] = js.undefined
@@ -682,6 +710,7 @@ package resourcegroups {
   }
 
   object UpdateGroupInput {
+    @inline
     def apply(
         GroupName: GroupName,
         Description: js.UndefOr[GroupDescription] = js.undefined
@@ -701,6 +730,7 @@ package resourcegroups {
   }
 
   object UpdateGroupOutput {
+    @inline
     def apply(
         Group: js.UndefOr[Group] = js.undefined
     ): UpdateGroupOutput = {
@@ -717,6 +747,7 @@ package resourcegroups {
   }
 
   object UpdateGroupQueryInput {
+    @inline
     def apply(
         GroupName: GroupName,
         ResourceQuery: ResourceQuery
@@ -736,6 +767,7 @@ package resourcegroups {
   }
 
   object UpdateGroupQueryOutput {
+    @inline
     def apply(
         GroupQuery: js.UndefOr[GroupQuery] = js.undefined
     ): UpdateGroupQueryOutput = {

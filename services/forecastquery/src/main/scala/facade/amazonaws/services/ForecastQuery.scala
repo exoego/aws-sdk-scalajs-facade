@@ -45,6 +45,7 @@ package forecastquery {
   }
 
   object DataPoint {
+    @inline
     def apply(
         Timestamp: js.UndefOr[Timestamp] = js.undefined,
         Value: js.UndefOr[Double] = js.undefined
@@ -65,6 +66,7 @@ package forecastquery {
   }
 
   object Forecast {
+    @inline
     def apply(
         Predictions: js.UndefOr[Predictions] = js.undefined
     ): Forecast = {
@@ -84,6 +86,7 @@ package forecastquery {
   }
 
   object QueryForecastRequest {
+    @inline
     def apply(
         Filters: Filters,
         ForecastArn: Arn,
@@ -109,6 +112,7 @@ package forecastquery {
   }
 
   object QueryForecastResponse {
+    @inline
     def apply(
         Forecast: js.UndefOr[Forecast] = js.undefined
     ): QueryForecastResponse = {

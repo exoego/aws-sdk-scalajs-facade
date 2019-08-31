@@ -156,6 +156,7 @@ package firehose {
   }
 
   object BufferingHints {
+    @inline
     def apply(
         IntervalInSeconds: js.UndefOr[IntervalInSeconds] = js.undefined,
         SizeInMBs: js.UndefOr[SizeInMBs] = js.undefined
@@ -178,6 +179,7 @@ package firehose {
   }
 
   object CloudWatchLoggingOptions {
+    @inline
     def apply(
         Enabled: js.UndefOr[BooleanObject] = js.undefined,
         LogGroupName: js.UndefOr[LogGroupName] = js.undefined,
@@ -211,6 +213,7 @@ package firehose {
   }
 
   object CopyCommand {
+    @inline
     def apply(
         DataTableName: DataTableName,
         CopyOptions: js.UndefOr[CopyOptions] = js.undefined,
@@ -240,6 +243,7 @@ package firehose {
   }
 
   object CreateDeliveryStreamInput {
+    @inline
     def apply(
         DeliveryStreamName: DeliveryStreamName,
         DeliveryStreamType: js.UndefOr[DeliveryStreamType] = js.undefined,
@@ -285,6 +289,7 @@ package firehose {
   }
 
   object CreateDeliveryStreamOutput {
+    @inline
     def apply(
         DeliveryStreamARN: js.UndefOr[DeliveryStreamARN] = js.undefined
     ): CreateDeliveryStreamOutput = {
@@ -306,6 +311,7 @@ package firehose {
   }
 
   object DataFormatConversionConfiguration {
+    @inline
     def apply(
         Enabled: js.UndefOr[BooleanObject] = js.undefined,
         InputFormatConfiguration: js.UndefOr[InputFormatConfiguration] = js.undefined,
@@ -329,6 +335,7 @@ package firehose {
   }
 
   object DeleteDeliveryStreamInput {
+    @inline
     def apply(
         DeliveryStreamName: DeliveryStreamName
     ): DeleteDeliveryStreamInput = {
@@ -344,6 +351,7 @@ package firehose {
   trait DeleteDeliveryStreamOutput extends js.Object {}
 
   object DeleteDeliveryStreamOutput {
+    @inline
     def apply(
         ): DeleteDeliveryStreamOutput = {
       val __obj = js.Dynamic.literal()
@@ -371,6 +379,7 @@ package firehose {
   }
 
   object DeliveryStreamDescription {
+    @inline
     def apply(
         DeliveryStreamARN: DeliveryStreamARN,
         DeliveryStreamName: DeliveryStreamName,
@@ -413,6 +422,7 @@ package firehose {
   }
 
   object DeliveryStreamEncryptionConfiguration {
+    @inline
     def apply(
         Status: js.UndefOr[DeliveryStreamEncryptionStatus] = js.undefined
     ): DeliveryStreamEncryptionConfiguration = {
@@ -454,6 +464,7 @@ package firehose {
   }
 
   object DescribeDeliveryStreamInput {
+    @inline
     def apply(
         DeliveryStreamName: DeliveryStreamName,
         ExclusiveStartDestinationId: js.UndefOr[DestinationId] = js.undefined,
@@ -477,6 +488,7 @@ package firehose {
   }
 
   object DescribeDeliveryStreamOutput {
+    @inline
     def apply(
         DeliveryStreamDescription: DeliveryStreamDescription
     ): DescribeDeliveryStreamOutput = {
@@ -498,6 +510,7 @@ package firehose {
   }
 
   object Deserializer {
+    @inline
     def apply(
         HiveJsonSerDe: js.UndefOr[HiveJsonSerDe] = js.undefined,
         OpenXJsonSerDe: js.UndefOr[OpenXJsonSerDe] = js.undefined
@@ -523,6 +536,7 @@ package firehose {
   }
 
   object DestinationDescription {
+    @inline
     def apply(
         DestinationId: DestinationId,
         ElasticsearchDestinationDescription: js.UndefOr[ElasticsearchDestinationDescription] = js.undefined,
@@ -562,6 +576,7 @@ package firehose {
   }
 
   object ElasticsearchBufferingHints {
+    @inline
     def apply(
         IntervalInSeconds: js.UndefOr[ElasticsearchBufferingIntervalInSeconds] = js.undefined,
         SizeInMBs: js.UndefOr[ElasticsearchBufferingSizeInMBs] = js.undefined
@@ -592,6 +607,7 @@ package firehose {
   }
 
   object ElasticsearchDestinationConfiguration {
+    @inline
     def apply(
         DomainARN: ElasticsearchDomainARN,
         IndexName: ElasticsearchIndexName,
@@ -642,6 +658,7 @@ package firehose {
   }
 
   object ElasticsearchDestinationDescription {
+    @inline
     def apply(
         BufferingHints: js.UndefOr[ElasticsearchBufferingHints] = js.undefined,
         CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
@@ -689,6 +706,7 @@ package firehose {
   }
 
   object ElasticsearchDestinationUpdate {
+    @inline
     def apply(
         BufferingHints: js.UndefOr[ElasticsearchBufferingHints] = js.undefined,
         CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
@@ -735,6 +753,7 @@ package firehose {
   }
 
   object ElasticsearchRetryOptions {
+    @inline
     def apply(
         DurationInSeconds: js.UndefOr[ElasticsearchRetryDurationInSeconds] = js.undefined
     ): ElasticsearchRetryOptions = {
@@ -761,6 +780,7 @@ package firehose {
   }
 
   object EncryptionConfiguration {
+    @inline
     def apply(
         KMSEncryptionConfig: js.UndefOr[KMSEncryptionConfig] = js.undefined,
         NoEncryptionConfig: js.UndefOr[NoEncryptionConfig] = js.undefined
@@ -792,6 +812,7 @@ package firehose {
   }
 
   object ExtendedS3DestinationConfiguration {
+    @inline
     def apply(
         BucketARN: BucketARN,
         RoleARN: RoleARN,
@@ -847,6 +868,7 @@ package firehose {
   }
 
   object ExtendedS3DestinationDescription {
+    @inline
     def apply(
         BucketARN: BucketARN,
         BufferingHints: BufferingHints,
@@ -902,6 +924,7 @@ package firehose {
   }
 
   object ExtendedS3DestinationUpdate {
+    @inline
     def apply(
         BucketARN: js.UndefOr[BucketARN] = js.undefined,
         BufferingHints: js.UndefOr[BufferingHints] = js.undefined,
@@ -951,6 +974,7 @@ package firehose {
   }
 
   object HiveJsonSerDe {
+    @inline
     def apply(
         TimestampFormats: js.UndefOr[ListOfNonEmptyStrings] = js.undefined
     ): HiveJsonSerDe = {
@@ -969,6 +993,7 @@ package firehose {
   }
 
   object InputFormatConfiguration {
+    @inline
     def apply(
         Deserializer: js.UndefOr[Deserializer] = js.undefined
     ): InputFormatConfiguration = {
@@ -987,6 +1012,7 @@ package firehose {
   }
 
   object KMSEncryptionConfig {
+    @inline
     def apply(
         AWSKMSKeyARN: AWSKMSKeyARN
     ): KMSEncryptionConfig = {
@@ -1008,6 +1034,7 @@ package firehose {
   }
 
   object KinesisStreamSourceConfiguration {
+    @inline
     def apply(
         KinesisStreamARN: KinesisStreamARN,
         RoleARN: RoleARN
@@ -1032,6 +1059,7 @@ package firehose {
   }
 
   object KinesisStreamSourceDescription {
+    @inline
     def apply(
         DeliveryStartTimestamp: js.UndefOr[DeliveryStartTimestamp] = js.undefined,
         KinesisStreamARN: js.UndefOr[KinesisStreamARN] = js.undefined,
@@ -1053,6 +1081,7 @@ package firehose {
   }
 
   object ListDeliveryStreamsInput {
+    @inline
     def apply(
         DeliveryStreamType: js.UndefOr[DeliveryStreamType] = js.undefined,
         ExclusiveStartDeliveryStreamName: js.UndefOr[DeliveryStreamName] = js.undefined,
@@ -1075,6 +1104,7 @@ package firehose {
   }
 
   object ListDeliveryStreamsOutput {
+    @inline
     def apply(
         DeliveryStreamNames: DeliveryStreamNameList,
         HasMoreDeliveryStreams: BooleanObject
@@ -1096,6 +1126,7 @@ package firehose {
   }
 
   object ListTagsForDeliveryStreamInput {
+    @inline
     def apply(
         DeliveryStreamName: DeliveryStreamName,
         ExclusiveStartTagKey: js.UndefOr[TagKey] = js.undefined,
@@ -1118,6 +1149,7 @@ package firehose {
   }
 
   object ListTagsForDeliveryStreamOutput {
+    @inline
     def apply(
         HasMoreTags: BooleanObject,
         Tags: ListTagsForDeliveryStreamOutputTagList
@@ -1148,6 +1180,7 @@ package firehose {
   }
 
   object OpenXJsonSerDe {
+    @inline
     def apply(
         CaseInsensitive: js.UndefOr[BooleanObject] = js.undefined,
         ColumnToJsonKeyMappings: js.UndefOr[ColumnToJsonKeyMappings] = js.undefined,
@@ -1196,6 +1229,7 @@ package firehose {
   }
 
   object OrcSerDe {
+    @inline
     def apply(
         BlockSizeBytes: js.UndefOr[BlockSizeBytes] = js.undefined,
         BloomFilterColumns: js.UndefOr[ListOfNonEmptyStringsWithoutWhitespace] = js.undefined,
@@ -1234,6 +1268,7 @@ package firehose {
   }
 
   object OutputFormatConfiguration {
+    @inline
     def apply(
         Serializer: js.UndefOr[Serializer] = js.undefined
     ): OutputFormatConfiguration = {
@@ -1265,6 +1300,7 @@ package firehose {
   }
 
   object ParquetSerDe {
+    @inline
     def apply(
         BlockSizeBytes: js.UndefOr[BlockSizeBytes] = js.undefined,
         Compression: js.UndefOr[ParquetCompression] = js.undefined,
@@ -1303,6 +1339,7 @@ package firehose {
   }
 
   object ProcessingConfiguration {
+    @inline
     def apply(
         Enabled: js.UndefOr[BooleanObject] = js.undefined,
         Processors: js.UndefOr[ProcessorList] = js.undefined
@@ -1324,6 +1361,7 @@ package firehose {
   }
 
   object Processor {
+    @inline
     def apply(
         Type: ProcessorType,
         Parameters: js.UndefOr[ProcessorParameterList] = js.undefined
@@ -1347,6 +1385,7 @@ package firehose {
   }
 
   object ProcessorParameter {
+    @inline
     def apply(
         ParameterName: ProcessorParameterName,
         ParameterValue: ProcessorParameterValue
@@ -1384,6 +1423,7 @@ package firehose {
   }
 
   object PutRecordBatchInput {
+    @inline
     def apply(
         DeliveryStreamName: DeliveryStreamName,
         Records: PutRecordBatchRequestEntryList
@@ -1405,6 +1445,7 @@ package firehose {
   }
 
   object PutRecordBatchOutput {
+    @inline
     def apply(
         FailedPutCount: NonNegativeIntegerObject,
         RequestResponses: PutRecordBatchResponseEntryList,
@@ -1431,6 +1472,7 @@ package firehose {
   }
 
   object PutRecordBatchResponseEntry {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
         ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
@@ -1451,6 +1493,7 @@ package firehose {
   }
 
   object PutRecordInput {
+    @inline
     def apply(
         DeliveryStreamName: DeliveryStreamName,
         Record: Record
@@ -1471,6 +1514,7 @@ package firehose {
   }
 
   object PutRecordOutput {
+    @inline
     def apply(
         RecordId: PutResponseRecordId,
         Encrypted: js.UndefOr[BooleanObject] = js.undefined
@@ -1493,6 +1537,7 @@ package firehose {
   }
 
   object Record {
+    @inline
     def apply(
         Data: Data
     ): Record = {
@@ -1523,6 +1568,7 @@ package firehose {
   }
 
   object RedshiftDestinationConfiguration {
+    @inline
     def apply(
         ClusterJDBCURL: ClusterJDBCURL,
         CopyCommand: CopyCommand,
@@ -1572,6 +1618,7 @@ package firehose {
   }
 
   object RedshiftDestinationDescription {
+    @inline
     def apply(
         ClusterJDBCURL: ClusterJDBCURL,
         CopyCommand: CopyCommand,
@@ -1620,6 +1667,7 @@ package firehose {
   }
 
   object RedshiftDestinationUpdate {
+    @inline
     def apply(
         CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
         ClusterJDBCURL: js.UndefOr[ClusterJDBCURL] = js.undefined,
@@ -1658,6 +1706,7 @@ package firehose {
   }
 
   object RedshiftRetryOptions {
+    @inline
     def apply(
         DurationInSeconds: js.UndefOr[RedshiftRetryDurationInSeconds] = js.undefined
     ): RedshiftRetryOptions = {
@@ -1697,6 +1746,7 @@ package firehose {
   }
 
   object S3DestinationConfiguration {
+    @inline
     def apply(
         BucketARN: BucketARN,
         RoleARN: RoleARN,
@@ -1738,6 +1788,7 @@ package firehose {
   }
 
   object S3DestinationDescription {
+    @inline
     def apply(
         BucketARN: BucketARN,
         BufferingHints: BufferingHints,
@@ -1779,6 +1830,7 @@ package firehose {
   }
 
   object S3DestinationUpdate {
+    @inline
     def apply(
         BucketARN: js.UndefOr[BucketARN] = js.undefined,
         BufferingHints: js.UndefOr[BufferingHints] = js.undefined,
@@ -1816,6 +1868,7 @@ package firehose {
   }
 
   object SchemaConfiguration {
+    @inline
     def apply(
         CatalogId: js.UndefOr[NonEmptyStringWithoutWhitespace] = js.undefined,
         DatabaseName: js.UndefOr[NonEmptyStringWithoutWhitespace] = js.undefined,
@@ -1845,6 +1898,7 @@ package firehose {
   }
 
   object Serializer {
+    @inline
     def apply(
         OrcSerDe: js.UndefOr[OrcSerDe] = js.undefined,
         ParquetSerDe: js.UndefOr[ParquetSerDe] = js.undefined
@@ -1865,6 +1919,7 @@ package firehose {
   }
 
   object SourceDescription {
+    @inline
     def apply(
         KinesisStreamSourceDescription: js.UndefOr[KinesisStreamSourceDescription] = js.undefined
     ): SourceDescription = {
@@ -1893,6 +1948,7 @@ package firehose {
   }
 
   object SplunkDestinationConfiguration {
+    @inline
     def apply(
         HECEndpoint: HECEndpoint,
         HECEndpointType: HECEndpointType,
@@ -1939,6 +1995,7 @@ package firehose {
   }
 
   object SplunkDestinationDescription {
+    @inline
     def apply(
         CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
         HECAcknowledgmentTimeoutInSeconds: js.UndefOr[HECAcknowledgmentTimeoutInSeconds] = js.undefined,
@@ -1983,6 +2040,7 @@ package firehose {
   }
 
   object SplunkDestinationUpdate {
+    @inline
     def apply(
         CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
         HECAcknowledgmentTimeoutInSeconds: js.UndefOr[HECAcknowledgmentTimeoutInSeconds] = js.undefined,
@@ -2019,6 +2077,7 @@ package firehose {
   }
 
   object SplunkRetryOptions {
+    @inline
     def apply(
         DurationInSeconds: js.UndefOr[SplunkRetryDurationInSeconds] = js.undefined
     ): SplunkRetryOptions = {
@@ -2041,6 +2100,7 @@ package firehose {
   }
 
   object StartDeliveryStreamEncryptionInput {
+    @inline
     def apply(
         DeliveryStreamName: DeliveryStreamName
     ): StartDeliveryStreamEncryptionInput = {
@@ -2056,6 +2116,7 @@ package firehose {
   trait StartDeliveryStreamEncryptionOutput extends js.Object {}
 
   object StartDeliveryStreamEncryptionOutput {
+    @inline
     def apply(
         ): StartDeliveryStreamEncryptionOutput = {
       val __obj = js.Dynamic.literal()
@@ -2070,6 +2131,7 @@ package firehose {
   }
 
   object StopDeliveryStreamEncryptionInput {
+    @inline
     def apply(
         DeliveryStreamName: DeliveryStreamName
     ): StopDeliveryStreamEncryptionInput = {
@@ -2085,6 +2147,7 @@ package firehose {
   trait StopDeliveryStreamEncryptionOutput extends js.Object {}
 
   object StopDeliveryStreamEncryptionOutput {
+    @inline
     def apply(
         ): StopDeliveryStreamEncryptionOutput = {
       val __obj = js.Dynamic.literal()
@@ -2103,6 +2166,7 @@ package firehose {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: js.UndefOr[TagValue] = js.undefined
@@ -2123,6 +2187,7 @@ package firehose {
   }
 
   object TagDeliveryStreamInput {
+    @inline
     def apply(
         DeliveryStreamName: DeliveryStreamName,
         Tags: TagDeliveryStreamInputTagList
@@ -2140,6 +2205,7 @@ package firehose {
   trait TagDeliveryStreamOutput extends js.Object {}
 
   object TagDeliveryStreamOutput {
+    @inline
     def apply(
         ): TagDeliveryStreamOutput = {
       val __obj = js.Dynamic.literal()
@@ -2155,6 +2221,7 @@ package firehose {
   }
 
   object UntagDeliveryStreamInput {
+    @inline
     def apply(
         DeliveryStreamName: DeliveryStreamName,
         TagKeys: TagKeyList
@@ -2172,6 +2239,7 @@ package firehose {
   trait UntagDeliveryStreamOutput extends js.Object {}
 
   object UntagDeliveryStreamOutput {
+    @inline
     def apply(
         ): UntagDeliveryStreamOutput = {
       val __obj = js.Dynamic.literal()
@@ -2193,6 +2261,7 @@ package firehose {
   }
 
   object UpdateDestinationInput {
+    @inline
     def apply(
         CurrentDeliveryStreamVersionId: DeliveryStreamVersionId,
         DeliveryStreamName: DeliveryStreamName,
@@ -2228,6 +2297,7 @@ package firehose {
   trait UpdateDestinationOutput extends js.Object {}
 
   object UpdateDestinationOutput {
+    @inline
     def apply(
         ): UpdateDestinationOutput = {
       val __obj = js.Dynamic.literal()

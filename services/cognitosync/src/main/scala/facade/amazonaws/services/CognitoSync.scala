@@ -128,6 +128,7 @@ package cognitosync {
   }
 
   object BulkPublishRequest {
+    @inline
     def apply(
         IdentityPoolId: IdentityPoolId
     ): BulkPublishRequest = {
@@ -148,6 +149,7 @@ package cognitosync {
   }
 
   object BulkPublishResponse {
+    @inline
     def apply(
         IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined
     ): BulkPublishResponse = {
@@ -177,6 +179,7 @@ package cognitosync {
   }
 
   object CognitoStreams {
+    @inline
     def apply(
         RoleArn: js.UndefOr[AssumeRoleArn] = js.undefined,
         StreamName: js.UndefOr[StreamName] = js.undefined,
@@ -213,6 +216,7 @@ package cognitosync {
   }
 
   object Dataset {
+    @inline
     def apply(
         CreationDate: js.UndefOr[Date] = js.undefined,
         DataStorage: js.UndefOr[Double] = js.undefined,
@@ -245,6 +249,7 @@ package cognitosync {
   }
 
   object DeleteDatasetRequest {
+    @inline
     def apply(
         DatasetName: DatasetName,
         IdentityId: IdentityId,
@@ -269,6 +274,7 @@ package cognitosync {
   }
 
   object DeleteDatasetResponse {
+    @inline
     def apply(
         Dataset: js.UndefOr[Dataset] = js.undefined
     ): DeleteDatasetResponse = {
@@ -289,6 +295,7 @@ package cognitosync {
   }
 
   object DescribeDatasetRequest {
+    @inline
     def apply(
         DatasetName: DatasetName,
         IdentityId: IdentityId,
@@ -313,6 +320,7 @@ package cognitosync {
   }
 
   object DescribeDatasetResponse {
+    @inline
     def apply(
         Dataset: js.UndefOr[Dataset] = js.undefined
     ): DescribeDatasetResponse = {
@@ -331,6 +339,7 @@ package cognitosync {
   }
 
   object DescribeIdentityPoolUsageRequest {
+    @inline
     def apply(
         IdentityPoolId: IdentityPoolId
     ): DescribeIdentityPoolUsageRequest = {
@@ -351,6 +360,7 @@ package cognitosync {
   }
 
   object DescribeIdentityPoolUsageResponse {
+    @inline
     def apply(
         IdentityPoolUsage: js.UndefOr[IdentityPoolUsage] = js.undefined
     ): DescribeIdentityPoolUsageResponse = {
@@ -370,6 +380,7 @@ package cognitosync {
   }
 
   object DescribeIdentityUsageRequest {
+    @inline
     def apply(
         IdentityId: IdentityId,
         IdentityPoolId: IdentityPoolId
@@ -392,6 +403,7 @@ package cognitosync {
   }
 
   object DescribeIdentityUsageResponse {
+    @inline
     def apply(
         IdentityUsage: js.UndefOr[IdentityUsage] = js.undefined
     ): DescribeIdentityUsageResponse = {
@@ -418,6 +430,7 @@ package cognitosync {
   }
 
   object GetBulkPublishDetailsRequest {
+    @inline
     def apply(
         IdentityPoolId: IdentityPoolId
     ): GetBulkPublishDetailsRequest = {
@@ -442,6 +455,7 @@ package cognitosync {
   }
 
   object GetBulkPublishDetailsResponse {
+    @inline
     def apply(
         BulkPublishCompleteTime: js.UndefOr[Date] = js.undefined,
         BulkPublishStartTime: js.UndefOr[Date] = js.undefined,
@@ -468,6 +482,7 @@ package cognitosync {
   }
 
   object GetCognitoEventsRequest {
+    @inline
     def apply(
         IdentityPoolId: IdentityPoolId
     ): GetCognitoEventsRequest = {
@@ -488,6 +503,7 @@ package cognitosync {
   }
 
   object GetCognitoEventsResponse {
+    @inline
     def apply(
         Events: js.UndefOr[Events] = js.undefined
     ): GetCognitoEventsResponse = {
@@ -506,6 +522,7 @@ package cognitosync {
   }
 
   object GetIdentityPoolConfigurationRequest {
+    @inline
     def apply(
         IdentityPoolId: IdentityPoolId
     ): GetIdentityPoolConfigurationRequest = {
@@ -528,6 +545,7 @@ package cognitosync {
   }
 
   object GetIdentityPoolConfigurationResponse {
+    @inline
     def apply(
         CognitoStreams: js.UndefOr[CognitoStreams] = js.undefined,
         IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
@@ -553,6 +571,7 @@ package cognitosync {
   }
 
   object IdentityPoolUsage {
+    @inline
     def apply(
         DataStorage: js.UndefOr[Double] = js.undefined,
         IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
@@ -581,6 +600,7 @@ package cognitosync {
   }
 
   object IdentityUsage {
+    @inline
     def apply(
         DataStorage: js.UndefOr[Double] = js.undefined,
         DatasetCount: js.UndefOr[Int] = js.undefined,
@@ -655,6 +675,7 @@ package cognitosync {
   }
 
   object ListDatasetsRequest {
+    @inline
     def apply(
         IdentityId: IdentityId,
         IdentityPoolId: IdentityPoolId,
@@ -683,6 +704,7 @@ package cognitosync {
   }
 
   object ListDatasetsResponse {
+    @inline
     def apply(
         Count: js.UndefOr[Int] = js.undefined,
         Datasets: js.UndefOr[DatasetList] = js.undefined,
@@ -706,6 +728,7 @@ package cognitosync {
   }
 
   object ListIdentityPoolUsageRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[IntegerString] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -729,6 +752,7 @@ package cognitosync {
   }
 
   object ListIdentityPoolUsageResponse {
+    @inline
     def apply(
         Count: js.UndefOr[Int] = js.undefined,
         IdentityPoolUsages: js.UndefOr[IdentityPoolUsageList] = js.undefined,
@@ -759,6 +783,7 @@ package cognitosync {
   }
 
   object ListRecordsRequest {
+    @inline
     def apply(
         DatasetName: DatasetName,
         IdentityId: IdentityId,
@@ -799,6 +824,7 @@ package cognitosync {
   }
 
   object ListRecordsResponse {
+    @inline
     def apply(
         Count: js.UndefOr[Int] = js.undefined,
         DatasetDeletedAfterRequestedSyncCount: js.UndefOr[Boolean] = js.undefined,
@@ -860,6 +886,7 @@ package cognitosync {
   }
 
   object PushSync {
+    @inline
     def apply(
         ApplicationArns: js.UndefOr[ApplicationArnList] = js.undefined,
         RoleArn: js.UndefOr[AssumeRoleArn] = js.undefined
@@ -885,6 +912,7 @@ package cognitosync {
   }
 
   object Record {
+    @inline
     def apply(
         DeviceLastModifiedDate: js.UndefOr[Date] = js.undefined,
         Key: js.UndefOr[RecordKey] = js.undefined,
@@ -917,6 +945,7 @@ package cognitosync {
   }
 
   object RecordPatch {
+    @inline
     def apply(
         Key: RecordKey,
         Op: Operation,
@@ -948,6 +977,7 @@ package cognitosync {
   }
 
   object RegisterDeviceRequest {
+    @inline
     def apply(
         IdentityId: IdentityId,
         IdentityPoolId: IdentityPoolId,
@@ -974,6 +1004,7 @@ package cognitosync {
   }
 
   object RegisterDeviceResponse {
+    @inline
     def apply(
         DeviceId: js.UndefOr[DeviceId] = js.undefined
     ): RegisterDeviceResponse = {
@@ -1010,6 +1041,7 @@ package cognitosync {
   }
 
   object SetCognitoEventsRequest {
+    @inline
     def apply(
         Events: Events,
         IdentityPoolId: IdentityPoolId
@@ -1034,6 +1066,7 @@ package cognitosync {
   }
 
   object SetIdentityPoolConfigurationRequest {
+    @inline
     def apply(
         IdentityPoolId: IdentityPoolId,
         CognitoStreams: js.UndefOr[CognitoStreams] = js.undefined,
@@ -1060,6 +1093,7 @@ package cognitosync {
   }
 
   object SetIdentityPoolConfigurationResponse {
+    @inline
     def apply(
         CognitoStreams: js.UndefOr[CognitoStreams] = js.undefined,
         IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
@@ -1092,6 +1126,7 @@ package cognitosync {
   }
 
   object SubscribeToDatasetRequest {
+    @inline
     def apply(
         DatasetName: DatasetName,
         DeviceId: DeviceId,
@@ -1116,6 +1151,7 @@ package cognitosync {
   trait SubscribeToDatasetResponse extends js.Object {}
 
   object SubscribeToDatasetResponse {
+    @inline
     def apply(
         ): SubscribeToDatasetResponse = {
       val __obj = js.Dynamic.literal()
@@ -1144,6 +1180,7 @@ package cognitosync {
   }
 
   object UnsubscribeFromDatasetRequest {
+    @inline
     def apply(
         DatasetName: DatasetName,
         DeviceId: DeviceId,
@@ -1168,6 +1205,7 @@ package cognitosync {
   trait UnsubscribeFromDatasetResponse extends js.Object {}
 
   object UnsubscribeFromDatasetResponse {
+    @inline
     def apply(
         ): UnsubscribeFromDatasetResponse = {
       val __obj = js.Dynamic.literal()
@@ -1191,6 +1229,7 @@ package cognitosync {
   }
 
   object UpdateRecordsRequest {
+    @inline
     def apply(
         DatasetName: DatasetName,
         IdentityId: IdentityId,
@@ -1223,6 +1262,7 @@ package cognitosync {
   }
 
   object UpdateRecordsResponse {
+    @inline
     def apply(
         Records: js.UndefOr[RecordList] = js.undefined
     ): UpdateRecordsResponse = {

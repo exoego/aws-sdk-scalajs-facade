@@ -487,6 +487,7 @@ package configservice {
   }
 
   object AccountAggregationSource {
+    @inline
     def apply(
         AccountIds: AccountAggregationSourceAccountList,
         AllAwsRegions: js.UndefOr[Boolean] = js.undefined,
@@ -515,6 +516,7 @@ package configservice {
   }
 
   object AggregateComplianceByConfigRule {
+    @inline
     def apply(
         AccountId: js.UndefOr[AccountId] = js.undefined,
         AwsRegion: js.UndefOr[AwsRegion] = js.undefined,
@@ -540,6 +542,7 @@ package configservice {
   }
 
   object AggregateComplianceCount {
+    @inline
     def apply(
         ComplianceSummary: js.UndefOr[ComplianceSummary] = js.undefined,
         GroupName: js.UndefOr[StringWithCharLimit256] = js.undefined
@@ -566,6 +569,7 @@ package configservice {
   }
 
   object AggregateEvaluationResult {
+    @inline
     def apply(
         AccountId: js.UndefOr[AccountId] = js.undefined,
         Annotation: js.UndefOr[StringWithCharLimit256] = js.undefined,
@@ -602,6 +606,7 @@ package configservice {
   }
 
   object AggregateResourceIdentifier {
+    @inline
     def apply(
         ResourceId: ResourceId,
         ResourceType: ResourceType,
@@ -636,6 +641,7 @@ package configservice {
   }
 
   object AggregatedSourceStatus {
+    @inline
     def apply(
         AwsRegion: js.UndefOr[AwsRegion] = js.undefined,
         LastErrorCode: js.UndefOr[String] = js.undefined,
@@ -684,6 +690,7 @@ package configservice {
   }
 
   object AggregationAuthorization {
+    @inline
     def apply(
         AggregationAuthorizationArn: js.UndefOr[String] = js.undefined,
         AuthorizedAccountId: js.UndefOr[AccountId] = js.undefined,
@@ -723,6 +730,7 @@ package configservice {
   }
 
   object BaseConfigurationItem {
+    @inline
     def apply(
         accountId: js.UndefOr[AccountId] = js.undefined,
         arn: js.UndefOr[ARN] = js.undefined,
@@ -769,6 +777,7 @@ package configservice {
   }
 
   object BatchGetAggregateResourceConfigRequest {
+    @inline
     def apply(
         ConfigurationAggregatorName: ConfigurationAggregatorName,
         ResourceIdentifiers: ResourceIdentifiersList
@@ -789,6 +798,7 @@ package configservice {
   }
 
   object BatchGetAggregateResourceConfigResponse {
+    @inline
     def apply(
         BaseConfigurationItems: js.UndefOr[BaseConfigurationItems] = js.undefined,
         UnprocessedResourceIdentifiers: js.UndefOr[UnprocessedResourceIdentifierList] = js.undefined
@@ -808,6 +818,7 @@ package configservice {
   }
 
   object BatchGetResourceConfigRequest {
+    @inline
     def apply(
         resourceKeys: ResourceKeys
     ): BatchGetResourceConfigRequest = {
@@ -826,6 +837,7 @@ package configservice {
   }
 
   object BatchGetResourceConfigResponse {
+    @inline
     def apply(
         baseConfigurationItems: js.UndefOr[BaseConfigurationItems] = js.undefined,
         unprocessedResourceKeys: js.UndefOr[ResourceKeys] = js.undefined
@@ -854,6 +866,7 @@ package configservice {
   }
 
   object Compliance {
+    @inline
     def apply(
         ComplianceContributorCount: js.UndefOr[ComplianceContributorCount] = js.undefined,
         ComplianceType: js.UndefOr[ComplianceType] = js.undefined
@@ -877,6 +890,7 @@ package configservice {
   }
 
   object ComplianceByConfigRule {
+    @inline
     def apply(
         Compliance: js.UndefOr[Compliance] = js.undefined,
         ConfigRuleName: js.UndefOr[StringWithCharLimit64] = js.undefined
@@ -899,6 +913,7 @@ package configservice {
   }
 
   object ComplianceByResource {
+    @inline
     def apply(
         Compliance: js.UndefOr[Compliance] = js.undefined,
         ResourceId: js.UndefOr[BaseResourceId] = js.undefined,
@@ -922,6 +937,7 @@ package configservice {
   }
 
   object ComplianceContributorCount {
+    @inline
     def apply(
         CapExceeded: js.UndefOr[Boolean] = js.undefined,
         CappedCount: js.UndefOr[Int] = js.undefined
@@ -944,6 +960,7 @@ package configservice {
   }
 
   object ComplianceSummary {
+    @inline
     def apply(
         ComplianceSummaryTimestamp: js.UndefOr[Date] = js.undefined,
         CompliantResourceCount: js.UndefOr[ComplianceContributorCount] = js.undefined,
@@ -971,6 +988,7 @@ package configservice {
   }
 
   object ComplianceSummaryByResourceType {
+    @inline
     def apply(
         ComplianceSummary: js.UndefOr[ComplianceSummary] = js.undefined,
         ResourceType: js.UndefOr[StringWithCharLimit256] = js.undefined
@@ -1005,6 +1023,7 @@ package configservice {
   }
 
   object ConfigExportDeliveryInfo {
+    @inline
     def apply(
         lastAttemptTime: js.UndefOr[Date] = js.undefined,
         lastErrorCode: js.UndefOr[String] = js.undefined,
@@ -1045,6 +1064,7 @@ package configservice {
   }
 
   object ConfigRule {
+    @inline
     def apply(
         Source: Source,
         ConfigRuleArn: js.UndefOr[String] = js.undefined,
@@ -1088,6 +1108,7 @@ package configservice {
   }
 
   object ConfigRuleComplianceFilters {
+    @inline
     def apply(
         AccountId: js.UndefOr[AccountId] = js.undefined,
         AwsRegion: js.UndefOr[AwsRegion] = js.undefined,
@@ -1113,6 +1134,7 @@ package configservice {
   }
 
   object ConfigRuleComplianceSummaryFilters {
+    @inline
     def apply(
         AccountId: js.UndefOr[AccountId] = js.undefined,
         AwsRegion: js.UndefOr[AwsRegion] = js.undefined
@@ -1151,6 +1173,7 @@ package configservice {
   }
 
   object ConfigRuleEvaluationStatus {
+    @inline
     def apply(
         ConfigRuleArn: js.UndefOr[String] = js.undefined,
         ConfigRuleId: js.UndefOr[String] = js.undefined,
@@ -1212,6 +1235,7 @@ package configservice {
   }
 
   object ConfigSnapshotDeliveryProperties {
+    @inline
     def apply(
         deliveryFrequency: js.UndefOr[MaximumExecutionFrequency] = js.undefined
     ): ConfigSnapshotDeliveryProperties = {
@@ -1233,6 +1257,7 @@ package configservice {
   }
 
   object ConfigStreamDeliveryInfo {
+    @inline
     def apply(
         lastErrorCode: js.UndefOr[String] = js.undefined,
         lastErrorMessage: js.UndefOr[String] = js.undefined,
@@ -1262,6 +1287,7 @@ package configservice {
   }
 
   object ConfigurationAggregator {
+    @inline
     def apply(
         AccountAggregationSources: js.UndefOr[AccountAggregationSourceList] = js.undefined,
         ConfigurationAggregatorArn: js.UndefOr[ConfigurationAggregatorArn] = js.undefined,
@@ -1315,6 +1341,7 @@ package configservice {
   }
 
   object ConfigurationItem {
+    @inline
     def apply(
         accountId: js.UndefOr[AccountId] = js.undefined,
         arn: js.UndefOr[ARN] = js.undefined,
@@ -1385,6 +1412,7 @@ package configservice {
   }
 
   object ConfigurationRecorder {
+    @inline
     def apply(
         name: js.UndefOr[RecorderName] = js.undefined,
         recordingGroup: js.UndefOr[RecordingGroup] = js.undefined,
@@ -1414,6 +1442,7 @@ package configservice {
   }
 
   object ConfigurationRecorderStatus {
+    @inline
     def apply(
         lastErrorCode: js.UndefOr[String] = js.undefined,
         lastErrorMessage: js.UndefOr[String] = js.undefined,
@@ -1444,6 +1473,7 @@ package configservice {
   }
 
   object DeleteAggregationAuthorizationRequest {
+    @inline
     def apply(
         AuthorizedAccountId: AccountId,
         AuthorizedAwsRegion: AwsRegion
@@ -1466,6 +1496,7 @@ package configservice {
   }
 
   object DeleteConfigRuleRequest {
+    @inline
     def apply(
         ConfigRuleName: StringWithCharLimit64
     ): DeleteConfigRuleRequest = {
@@ -1483,6 +1514,7 @@ package configservice {
   }
 
   object DeleteConfigurationAggregatorRequest {
+    @inline
     def apply(
         ConfigurationAggregatorName: ConfigurationAggregatorName
     ): DeleteConfigurationAggregatorRequest = {
@@ -1503,6 +1535,7 @@ package configservice {
   }
 
   object DeleteConfigurationRecorderRequest {
+    @inline
     def apply(
         ConfigurationRecorderName: RecorderName
     ): DeleteConfigurationRecorderRequest = {
@@ -1523,6 +1556,7 @@ package configservice {
   }
 
   object DeleteDeliveryChannelRequest {
+    @inline
     def apply(
         DeliveryChannelName: ChannelName
     ): DeleteDeliveryChannelRequest = {
@@ -1543,6 +1577,7 @@ package configservice {
   }
 
   object DeleteEvaluationResultsRequest {
+    @inline
     def apply(
         ConfigRuleName: StringWithCharLimit64
     ): DeleteEvaluationResultsRequest = {
@@ -1561,6 +1596,7 @@ package configservice {
   trait DeleteEvaluationResultsResponse extends js.Object {}
 
   object DeleteEvaluationResultsResponse {
+    @inline
     def apply(
         ): DeleteEvaluationResultsResponse = {
       val __obj = js.Dynamic.literal()
@@ -1575,6 +1611,7 @@ package configservice {
   }
 
   object DeleteOrganizationConfigRuleRequest {
+    @inline
     def apply(
         OrganizationConfigRuleName: StringWithCharLimit64
     ): DeleteOrganizationConfigRuleRequest = {
@@ -1593,6 +1630,7 @@ package configservice {
   }
 
   object DeletePendingAggregationRequestRequest {
+    @inline
     def apply(
         RequesterAccountId: AccountId,
         RequesterAwsRegion: AwsRegion
@@ -1613,6 +1651,7 @@ package configservice {
   }
 
   object DeleteRemediationConfigurationRequest {
+    @inline
     def apply(
         ConfigRuleName: StringWithCharLimit64,
         ResourceType: js.UndefOr[String] = js.undefined
@@ -1630,6 +1669,7 @@ package configservice {
   trait DeleteRemediationConfigurationResponse extends js.Object {}
 
   object DeleteRemediationConfigurationResponse {
+    @inline
     def apply(
         ): DeleteRemediationConfigurationResponse = {
       val __obj = js.Dynamic.literal()
@@ -1644,6 +1684,7 @@ package configservice {
   }
 
   object DeleteRetentionConfigurationRequest {
+    @inline
     def apply(
         RetentionConfigurationName: RetentionConfigurationName
     ): DeleteRetentionConfigurationRequest = {
@@ -1664,6 +1705,7 @@ package configservice {
   }
 
   object DeliverConfigSnapshotRequest {
+    @inline
     def apply(
         deliveryChannelName: ChannelName
     ): DeliverConfigSnapshotRequest = {
@@ -1684,6 +1726,7 @@ package configservice {
   }
 
   object DeliverConfigSnapshotResponse {
+    @inline
     def apply(
         configSnapshotId: js.UndefOr[String] = js.undefined
     ): DeliverConfigSnapshotResponse = {
@@ -1706,6 +1749,7 @@ package configservice {
   }
 
   object DeliveryChannel {
+    @inline
     def apply(
         configSnapshotDeliveryProperties: js.UndefOr[ConfigSnapshotDeliveryProperties] = js.undefined,
         name: js.UndefOr[ChannelName] = js.undefined,
@@ -1738,6 +1782,7 @@ package configservice {
   }
 
   object DeliveryChannelStatus {
+    @inline
     def apply(
         configHistoryDeliveryInfo: js.UndefOr[ConfigExportDeliveryInfo] = js.undefined,
         configSnapshotDeliveryInfo: js.UndefOr[ConfigExportDeliveryInfo] = js.undefined,
@@ -1774,6 +1819,7 @@ package configservice {
   }
 
   object DescribeAggregateComplianceByConfigRulesRequest {
+    @inline
     def apply(
         ConfigurationAggregatorName: ConfigurationAggregatorName,
         Filters: js.UndefOr[ConfigRuleComplianceFilters] = js.undefined,
@@ -1798,6 +1844,7 @@ package configservice {
   }
 
   object DescribeAggregateComplianceByConfigRulesResponse {
+    @inline
     def apply(
         AggregateComplianceByConfigRules: js.UndefOr[AggregateComplianceByConfigRuleList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1818,6 +1865,7 @@ package configservice {
   }
 
   object DescribeAggregationAuthorizationsRequest {
+    @inline
     def apply(
         Limit: js.UndefOr[Limit] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1836,6 +1884,7 @@ package configservice {
   }
 
   object DescribeAggregationAuthorizationsResponse {
+    @inline
     def apply(
         AggregationAuthorizations: js.UndefOr[AggregationAuthorizationList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1860,6 +1909,7 @@ package configservice {
   }
 
   object DescribeComplianceByConfigRuleRequest {
+    @inline
     def apply(
         ComplianceTypes: js.UndefOr[ComplianceTypes] = js.undefined,
         ConfigRuleNames: js.UndefOr[ConfigRuleNames] = js.undefined,
@@ -1883,6 +1933,7 @@ package configservice {
   }
 
   object DescribeComplianceByConfigRuleResponse {
+    @inline
     def apply(
         ComplianceByConfigRules: js.UndefOr[ComplianceByConfigRules] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1907,6 +1958,7 @@ package configservice {
   }
 
   object DescribeComplianceByResourceRequest {
+    @inline
     def apply(
         ComplianceTypes: js.UndefOr[ComplianceTypes] = js.undefined,
         Limit: js.UndefOr[Limit] = js.undefined,
@@ -1934,6 +1986,7 @@ package configservice {
   }
 
   object DescribeComplianceByResourceResponse {
+    @inline
     def apply(
         ComplianceByResources: js.UndefOr[ComplianceByResources] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1956,6 +2009,7 @@ package configservice {
   }
 
   object DescribeConfigRuleEvaluationStatusRequest {
+    @inline
     def apply(
         ConfigRuleNames: js.UndefOr[ConfigRuleNames] = js.undefined,
         Limit: js.UndefOr[RuleLimit] = js.undefined,
@@ -1979,6 +2033,7 @@ package configservice {
   }
 
   object DescribeConfigRuleEvaluationStatusResponse {
+    @inline
     def apply(
         ConfigRulesEvaluationStatus: js.UndefOr[ConfigRuleEvaluationStatusList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -2002,6 +2057,7 @@ package configservice {
   }
 
   object DescribeConfigRulesRequest {
+    @inline
     def apply(
         ConfigRuleNames: js.UndefOr[ConfigRuleNames] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -2023,6 +2079,7 @@ package configservice {
   }
 
   object DescribeConfigRulesResponse {
+    @inline
     def apply(
         ConfigRules: js.UndefOr[ConfigRules] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -2043,6 +2100,7 @@ package configservice {
   }
 
   object DescribeConfigurationAggregatorSourcesStatusRequest {
+    @inline
     def apply(
         ConfigurationAggregatorName: ConfigurationAggregatorName,
         Limit: js.UndefOr[Limit] = js.undefined,
@@ -2067,6 +2125,7 @@ package configservice {
   }
 
   object DescribeConfigurationAggregatorSourcesStatusResponse {
+    @inline
     def apply(
         AggregatedSourceStatusList: js.UndefOr[AggregatedSourceStatusList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -2088,6 +2147,7 @@ package configservice {
   }
 
   object DescribeConfigurationAggregatorsRequest {
+    @inline
     def apply(
         ConfigurationAggregatorNames: js.UndefOr[ConfigurationAggregatorNameList] = js.undefined,
         Limit: js.UndefOr[Limit] = js.undefined,
@@ -2110,6 +2170,7 @@ package configservice {
   }
 
   object DescribeConfigurationAggregatorsResponse {
+    @inline
     def apply(
         ConfigurationAggregators: js.UndefOr[ConfigurationAggregatorList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -2130,6 +2191,7 @@ package configservice {
   }
 
   object DescribeConfigurationRecorderStatusRequest {
+    @inline
     def apply(
         ConfigurationRecorderNames: js.UndefOr[ConfigurationRecorderNameList] = js.undefined
     ): DescribeConfigurationRecorderStatusRequest = {
@@ -2150,6 +2212,7 @@ package configservice {
   }
 
   object DescribeConfigurationRecorderStatusResponse {
+    @inline
     def apply(
         ConfigurationRecordersStatus: js.UndefOr[ConfigurationRecorderStatusList] = js.undefined
     ): DescribeConfigurationRecorderStatusResponse = {
@@ -2170,6 +2233,7 @@ package configservice {
   }
 
   object DescribeConfigurationRecordersRequest {
+    @inline
     def apply(
         ConfigurationRecorderNames: js.UndefOr[ConfigurationRecorderNameList] = js.undefined
     ): DescribeConfigurationRecordersRequest = {
@@ -2190,6 +2254,7 @@ package configservice {
   }
 
   object DescribeConfigurationRecordersResponse {
+    @inline
     def apply(
         ConfigurationRecorders: js.UndefOr[ConfigurationRecorderList] = js.undefined
     ): DescribeConfigurationRecordersResponse = {
@@ -2208,6 +2273,7 @@ package configservice {
   }
 
   object DescribeDeliveryChannelStatusRequest {
+    @inline
     def apply(
         DeliveryChannelNames: js.UndefOr[DeliveryChannelNameList] = js.undefined
     ): DescribeDeliveryChannelStatusRequest = {
@@ -2226,6 +2292,7 @@ package configservice {
   }
 
   object DescribeDeliveryChannelStatusResponse {
+    @inline
     def apply(
         DeliveryChannelsStatus: js.UndefOr[DeliveryChannelStatusList] = js.undefined
     ): DescribeDeliveryChannelStatusResponse = {
@@ -2244,6 +2311,7 @@ package configservice {
   }
 
   object DescribeDeliveryChannelsRequest {
+    @inline
     def apply(
         DeliveryChannelNames: js.UndefOr[DeliveryChannelNameList] = js.undefined
     ): DescribeDeliveryChannelsRequest = {
@@ -2262,6 +2330,7 @@ package configservice {
   }
 
   object DescribeDeliveryChannelsResponse {
+    @inline
     def apply(
         DeliveryChannels: js.UndefOr[DeliveryChannelList] = js.undefined
     ): DescribeDeliveryChannelsResponse = {
@@ -2279,6 +2348,7 @@ package configservice {
   }
 
   object DescribeOrganizationConfigRuleStatusesRequest {
+    @inline
     def apply(
         Limit: js.UndefOr[CosmosPageLimit] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined,
@@ -2301,6 +2371,7 @@ package configservice {
   }
 
   object DescribeOrganizationConfigRuleStatusesResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         OrganizationConfigRuleStatuses: js.UndefOr[OrganizationConfigRuleStatuses] = js.undefined
@@ -2322,6 +2393,7 @@ package configservice {
   }
 
   object DescribeOrganizationConfigRulesRequest {
+    @inline
     def apply(
         Limit: js.UndefOr[CosmosPageLimit] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined,
@@ -2344,6 +2416,7 @@ package configservice {
   }
 
   object DescribeOrganizationConfigRulesResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         OrganizationConfigRules: js.UndefOr[OrganizationConfigRules] = js.undefined
@@ -2362,6 +2435,7 @@ package configservice {
   }
 
   object DescribePendingAggregationRequestsRequest {
+    @inline
     def apply(
         Limit: js.UndefOr[DescribePendingAggregationRequestsLimit] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -2380,6 +2454,7 @@ package configservice {
   }
 
   object DescribePendingAggregationRequestsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         PendingAggregationRequests: js.UndefOr[PendingAggregationRequestList] = js.undefined
@@ -2399,6 +2474,7 @@ package configservice {
   }
 
   object DescribeRemediationConfigurationsRequest {
+    @inline
     def apply(
         ConfigRuleNames: ConfigRuleNames
     ): DescribeRemediationConfigurationsRequest = {
@@ -2416,6 +2492,7 @@ package configservice {
   }
 
   object DescribeRemediationConfigurationsResponse {
+    @inline
     def apply(
         RemediationConfigurations: js.UndefOr[RemediationConfigurations] = js.undefined
     ): DescribeRemediationConfigurationsResponse = {
@@ -2436,6 +2513,7 @@ package configservice {
   }
 
   object DescribeRemediationExecutionStatusRequest {
+    @inline
     def apply(
         ConfigRuleName: StringWithCharLimit64,
         Limit: js.UndefOr[Limit] = js.undefined,
@@ -2460,6 +2538,7 @@ package configservice {
   }
 
   object DescribeRemediationExecutionStatusResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[StringWithCharLimit256] = js.undefined,
         RemediationExecutionStatuses: js.UndefOr[RemediationExecutionStatuses] = js.undefined
@@ -2480,6 +2559,7 @@ package configservice {
   }
 
   object DescribeRetentionConfigurationsRequest {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         RetentionConfigurationNames: js.UndefOr[RetentionConfigurationNameList] = js.undefined
@@ -2500,6 +2580,7 @@ package configservice {
   }
 
   object DescribeRetentionConfigurationsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         RetentionConfigurations: js.UndefOr[RetentionConfigurationList] = js.undefined
@@ -2524,6 +2605,7 @@ package configservice {
   }
 
   object Evaluation {
+    @inline
     def apply(
         ComplianceResourceId: BaseResourceId,
         ComplianceResourceType: StringWithCharLimit256,
@@ -2557,6 +2639,7 @@ package configservice {
   }
 
   object EvaluationResult {
+    @inline
     def apply(
         Annotation: js.UndefOr[StringWithCharLimit256] = js.undefined,
         ComplianceType: js.UndefOr[ComplianceType] = js.undefined,
@@ -2588,6 +2671,7 @@ package configservice {
   }
 
   object EvaluationResultIdentifier {
+    @inline
     def apply(
         EvaluationResultQualifier: js.UndefOr[EvaluationResultQualifier] = js.undefined,
         OrderingTimestamp: js.UndefOr[Date] = js.undefined
@@ -2612,6 +2696,7 @@ package configservice {
   }
 
   object EvaluationResultQualifier {
+    @inline
     def apply(
         ConfigRuleName: js.UndefOr[StringWithCharLimit64] = js.undefined,
         ResourceId: js.UndefOr[BaseResourceId] = js.undefined,
@@ -2641,6 +2726,7 @@ package configservice {
   }
 
   object FailedRemediationBatch {
+    @inline
     def apply(
         FailedItems: js.UndefOr[RemediationConfigurations] = js.undefined,
         FailureMessage: js.UndefOr[String] = js.undefined
@@ -2661,6 +2747,7 @@ package configservice {
   }
 
   object FieldInfo {
+    @inline
     def apply(
         Name: js.UndefOr[FieldName] = js.undefined
     ): FieldInfo = {
@@ -2682,6 +2769,7 @@ package configservice {
   }
 
   object GetAggregateComplianceDetailsByConfigRuleRequest {
+    @inline
     def apply(
         AccountId: AccountId,
         AwsRegion: AwsRegion,
@@ -2712,6 +2800,7 @@ package configservice {
   }
 
   object GetAggregateComplianceDetailsByConfigRuleResponse {
+    @inline
     def apply(
         AggregateEvaluationResults: js.UndefOr[AggregateEvaluationResultList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -2735,6 +2824,7 @@ package configservice {
   }
 
   object GetAggregateConfigRuleComplianceSummaryRequest {
+    @inline
     def apply(
         ConfigurationAggregatorName: ConfigurationAggregatorName,
         Filters: js.UndefOr[ConfigRuleComplianceSummaryFilters] = js.undefined,
@@ -2762,6 +2852,7 @@ package configservice {
   }
 
   object GetAggregateConfigRuleComplianceSummaryResponse {
+    @inline
     def apply(
         AggregateComplianceCounts: js.UndefOr[AggregateComplianceCountList] = js.undefined,
         GroupByKey: js.UndefOr[StringWithCharLimit256] = js.undefined,
@@ -2787,6 +2878,7 @@ package configservice {
   }
 
   object GetAggregateDiscoveredResourceCountsRequest {
+    @inline
     def apply(
         ConfigurationAggregatorName: ConfigurationAggregatorName,
         Filters: js.UndefOr[ResourceCountFilters] = js.undefined,
@@ -2815,6 +2907,7 @@ package configservice {
   }
 
   object GetAggregateDiscoveredResourceCountsResponse {
+    @inline
     def apply(
         TotalDiscoveredResources: Double,
         GroupByKey: js.UndefOr[StringWithCharLimit256] = js.undefined,
@@ -2839,6 +2932,7 @@ package configservice {
   }
 
   object GetAggregateResourceConfigRequest {
+    @inline
     def apply(
         ConfigurationAggregatorName: ConfigurationAggregatorName,
         ResourceIdentifier: AggregateResourceIdentifier
@@ -2858,6 +2952,7 @@ package configservice {
   }
 
   object GetAggregateResourceConfigResponse {
+    @inline
     def apply(
         ConfigurationItem: js.UndefOr[ConfigurationItem] = js.undefined
     ): GetAggregateResourceConfigResponse = {
@@ -2879,6 +2974,7 @@ package configservice {
   }
 
   object GetComplianceDetailsByConfigRuleRequest {
+    @inline
     def apply(
         ConfigRuleName: StringWithCharLimit64,
         ComplianceTypes: js.UndefOr[ComplianceTypes] = js.undefined,
@@ -2906,6 +3002,7 @@ package configservice {
   }
 
   object GetComplianceDetailsByConfigRuleResponse {
+    @inline
     def apply(
         EvaluationResults: js.UndefOr[EvaluationResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -2929,6 +3026,7 @@ package configservice {
   }
 
   object GetComplianceDetailsByResourceRequest {
+    @inline
     def apply(
         ResourceId: BaseResourceId,
         ResourceType: StringWithCharLimit256,
@@ -2956,6 +3054,7 @@ package configservice {
   }
 
   object GetComplianceDetailsByResourceResponse {
+    @inline
     def apply(
         EvaluationResults: js.UndefOr[EvaluationResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -2976,6 +3075,7 @@ package configservice {
   }
 
   object GetComplianceSummaryByConfigRuleResponse {
+    @inline
     def apply(
         ComplianceSummary: js.UndefOr[ComplianceSummary] = js.undefined
     ): GetComplianceSummaryByConfigRuleResponse = {
@@ -2994,6 +3094,7 @@ package configservice {
   }
 
   object GetComplianceSummaryByResourceTypeRequest {
+    @inline
     def apply(
         ResourceTypes: js.UndefOr[ResourceTypes] = js.undefined
     ): GetComplianceSummaryByResourceTypeRequest = {
@@ -3012,6 +3113,7 @@ package configservice {
   }
 
   object GetComplianceSummaryByResourceTypeResponse {
+    @inline
     def apply(
         ComplianceSummariesByResourceType: js.UndefOr[ComplianceSummariesByResourceType] = js.undefined
     ): GetComplianceSummaryByResourceTypeResponse = {
@@ -3031,6 +3133,7 @@ package configservice {
   }
 
   object GetDiscoveredResourceCountsRequest {
+    @inline
     def apply(
         limit: js.UndefOr[Limit] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
@@ -3052,6 +3155,7 @@ package configservice {
   }
 
   object GetDiscoveredResourceCountsResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         resourceCounts: js.UndefOr[ResourceCounts] = js.undefined,
@@ -3074,6 +3178,7 @@ package configservice {
   }
 
   object GetOrganizationConfigRuleDetailedStatusRequest {
+    @inline
     def apply(
         OrganizationConfigRuleName: StringWithCharLimit64,
         Filters: js.UndefOr[StatusDetailFilters] = js.undefined,
@@ -3098,6 +3203,7 @@ package configservice {
   }
 
   object GetOrganizationConfigRuleDetailedStatusResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         OrganizationConfigRuleDetailedStatus: js.UndefOr[OrganizationConfigRuleDetailedStatus] = js.undefined
@@ -3126,6 +3232,7 @@ package configservice {
   }
 
   object GetResourceConfigHistoryRequest {
+    @inline
     def apply(
         resourceId: ResourceId,
         resourceType: ResourceType,
@@ -3159,6 +3266,7 @@ package configservice {
   }
 
   object GetResourceConfigHistoryResponse {
+    @inline
     def apply(
         configurationItems: js.UndefOr[ConfigurationItemList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -3180,6 +3288,7 @@ package configservice {
   }
 
   object GroupedResourceCount {
+    @inline
     def apply(
         GroupName: StringWithCharLimit256,
         ResourceCount: Double
@@ -3203,6 +3312,7 @@ package configservice {
   }
 
   object ListAggregateDiscoveredResourcesRequest {
+    @inline
     def apply(
         ConfigurationAggregatorName: ConfigurationAggregatorName,
         ResourceType: ResourceType,
@@ -3229,6 +3339,7 @@ package configservice {
   }
 
   object ListAggregateDiscoveredResourcesResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ResourceIdentifiers: js.UndefOr[DiscoveredResourceIdentifierList] = js.undefined
@@ -3254,6 +3365,7 @@ package configservice {
   }
 
   object ListDiscoveredResourcesRequest {
+    @inline
     def apply(
         resourceType: ResourceType,
         includeDeletedResources: js.UndefOr[Boolean] = js.undefined,
@@ -3285,6 +3397,7 @@ package configservice {
   }
 
   object ListDiscoveredResourcesResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         resourceIdentifiers: js.UndefOr[ResourceIdentifierList] = js.undefined
@@ -3304,6 +3417,7 @@ package configservice {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceArn: AmazonResourceName,
         Limit: js.UndefOr[Limit] = js.undefined,
@@ -3326,6 +3440,7 @@ package configservice {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -3384,6 +3499,7 @@ package configservice {
   }
 
   object MemberAccountStatus {
+    @inline
     def apply(
         AccountId: AccountId,
         ConfigRuleName: StringWithCharLimit64,
@@ -3432,6 +3548,7 @@ package configservice {
   }
 
   object OrganizationAggregationSource {
+    @inline
     def apply(
         RoleArn: String,
         AllAwsRegions: js.UndefOr[Boolean] = js.undefined,
@@ -3458,6 +3575,7 @@ package configservice {
   }
 
   object OrganizationConfigRule {
+    @inline
     def apply(
         OrganizationConfigRuleArn: StringWithCharLimit256,
         OrganizationConfigRuleName: StringWithCharLimit64,
@@ -3493,6 +3611,7 @@ package configservice {
   }
 
   object OrganizationConfigRuleStatus {
+    @inline
     def apply(
         OrganizationConfigRuleName: StringWithCharLimit64,
         OrganizationRuleStatus: OrganizationRuleStatus,
@@ -3536,6 +3655,7 @@ package configservice {
   }
 
   object OrganizationCustomRuleMetadata {
+    @inline
     def apply(
         LambdaFunctionArn: StringWithCharLimit256,
         OrganizationConfigRuleTriggerTypes: OrganizationConfigRuleTriggerTypes,
@@ -3578,6 +3698,7 @@ package configservice {
   }
 
   object OrganizationManagedRuleMetadata {
+    @inline
     def apply(
         RuleIdentifier: StringWithCharLimit256,
         Description: js.UndefOr[StringWithCharLimit256Min0] = js.undefined,
@@ -3648,6 +3769,7 @@ package configservice {
   }
 
   object PendingAggregationRequest {
+    @inline
     def apply(
         RequesterAccountId: js.UndefOr[AccountId] = js.undefined,
         RequesterAwsRegion: js.UndefOr[AwsRegion] = js.undefined
@@ -3667,6 +3789,7 @@ package configservice {
   }
 
   object PutAggregationAuthorizationRequest {
+    @inline
     def apply(
         AuthorizedAccountId: AccountId,
         AuthorizedAwsRegion: AwsRegion,
@@ -3688,6 +3811,7 @@ package configservice {
   }
 
   object PutAggregationAuthorizationResponse {
+    @inline
     def apply(
         AggregationAuthorization: js.UndefOr[AggregationAuthorization] = js.undefined
     ): PutAggregationAuthorizationResponse = {
@@ -3704,6 +3828,7 @@ package configservice {
   }
 
   object PutConfigRuleRequest {
+    @inline
     def apply(
         ConfigRule: ConfigRule,
         Tags: js.UndefOr[TagsList] = js.undefined
@@ -3726,6 +3851,7 @@ package configservice {
   }
 
   object PutConfigurationAggregatorRequest {
+    @inline
     def apply(
         ConfigurationAggregatorName: ConfigurationAggregatorName,
         AccountAggregationSources: js.UndefOr[AccountAggregationSourceList] = js.undefined,
@@ -3753,6 +3879,7 @@ package configservice {
   }
 
   object PutConfigurationAggregatorResponse {
+    @inline
     def apply(
         ConfigurationAggregator: js.UndefOr[ConfigurationAggregator] = js.undefined
     ): PutConfigurationAggregatorResponse = {
@@ -3771,6 +3898,7 @@ package configservice {
   }
 
   object PutConfigurationRecorderRequest {
+    @inline
     def apply(
         ConfigurationRecorder: ConfigurationRecorder
     ): PutConfigurationRecorderRequest = {
@@ -3791,6 +3919,7 @@ package configservice {
   }
 
   object PutDeliveryChannelRequest {
+    @inline
     def apply(
         DeliveryChannel: DeliveryChannel
     ): PutDeliveryChannelRequest = {
@@ -3813,6 +3942,7 @@ package configservice {
   }
 
   object PutEvaluationsRequest {
+    @inline
     def apply(
         ResultToken: String,
         Evaluations: js.UndefOr[Evaluations] = js.undefined,
@@ -3837,6 +3967,7 @@ package configservice {
   }
 
   object PutEvaluationsResponse {
+    @inline
     def apply(
         FailedEvaluations: js.UndefOr[Evaluations] = js.undefined
     ): PutEvaluationsResponse = {
@@ -3855,6 +3986,7 @@ package configservice {
   }
 
   object PutOrganizationConfigRuleRequest {
+    @inline
     def apply(
         OrganizationConfigRuleName: StringWithCharLimit64,
         ExcludedAccounts: js.UndefOr[ExcludedAccounts] = js.undefined,
@@ -3882,6 +4014,7 @@ package configservice {
   }
 
   object PutOrganizationConfigRuleResponse {
+    @inline
     def apply(
         OrganizationConfigRuleArn: js.UndefOr[StringWithCharLimit256] = js.undefined
     ): PutOrganizationConfigRuleResponse = {
@@ -3899,6 +4032,7 @@ package configservice {
   }
 
   object PutRemediationConfigurationsRequest {
+    @inline
     def apply(
         RemediationConfigurations: RemediationConfigurations
     ): PutRemediationConfigurationsRequest = {
@@ -3916,6 +4050,7 @@ package configservice {
   }
 
   object PutRemediationConfigurationsResponse {
+    @inline
     def apply(
         FailedBatches: js.UndefOr[FailedRemediationBatches] = js.undefined
     ): PutRemediationConfigurationsResponse = {
@@ -3931,6 +4066,7 @@ package configservice {
   }
 
   object PutRetentionConfigurationRequest {
+    @inline
     def apply(
         RetentionPeriodInDays: RetentionPeriodInDays
     ): PutRetentionConfigurationRequest = {
@@ -3948,6 +4084,7 @@ package configservice {
   }
 
   object PutRetentionConfigurationResponse {
+    @inline
     def apply(
         RetentionConfiguration: js.UndefOr[RetentionConfiguration] = js.undefined
     ): PutRetentionConfigurationResponse = {
@@ -3966,6 +4103,7 @@ package configservice {
   }
 
   object QueryInfo {
+    @inline
     def apply(
         SelectFields: js.UndefOr[FieldInfoList] = js.undefined
     ): QueryInfo = {
@@ -4001,6 +4139,7 @@ package configservice {
   }
 
   object RecordingGroup {
+    @inline
     def apply(
         allSupported: js.UndefOr[AllSupported] = js.undefined,
         includeGlobalResourceTypes: js.UndefOr[IncludeGlobalResourceTypes] = js.undefined,
@@ -4028,6 +4167,7 @@ package configservice {
   }
 
   object Relationship {
+    @inline
     def apply(
         relationshipName: js.UndefOr[RelationshipName] = js.undefined,
         resourceId: js.UndefOr[ResourceId] = js.undefined,
@@ -4057,6 +4197,7 @@ package configservice {
   }
 
   object RemediationConfiguration {
+    @inline
     def apply(
         ConfigRuleName: StringWithCharLimit64,
         TargetId: StringWithCharLimit256,
@@ -4100,6 +4241,7 @@ package configservice {
   }
 
   object RemediationExecutionStatus {
+    @inline
     def apply(
         InvocationTime: js.UndefOr[Date] = js.undefined,
         LastUpdatedTime: js.UndefOr[Date] = js.undefined,
@@ -4130,6 +4272,7 @@ package configservice {
   }
 
   object RemediationExecutionStep {
+    @inline
     def apply(
         ErrorMessage: js.UndefOr[String] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,
@@ -4165,6 +4308,7 @@ package configservice {
   }
 
   object RemediationParameterValue {
+    @inline
     def apply(
         ResourceValue: js.UndefOr[ResourceValue] = js.undefined,
         StaticValue: js.UndefOr[StaticValue] = js.undefined
@@ -4192,6 +4336,7 @@ package configservice {
   }
 
   object ResourceCount {
+    @inline
     def apply(
         count: js.UndefOr[Double] = js.undefined,
         resourceType: js.UndefOr[ResourceType] = js.undefined
@@ -4214,6 +4359,7 @@ package configservice {
   }
 
   object ResourceCountFilters {
+    @inline
     def apply(
         AccountId: js.UndefOr[AccountId] = js.undefined,
         Region: js.UndefOr[AwsRegion] = js.undefined,
@@ -4247,6 +4393,7 @@ package configservice {
   }
 
   object ResourceFilters {
+    @inline
     def apply(
         AccountId: js.UndefOr[AccountId] = js.undefined,
         Region: js.UndefOr[AwsRegion] = js.undefined,
@@ -4274,6 +4421,7 @@ package configservice {
   }
 
   object ResourceIdentifier {
+    @inline
     def apply(
         resourceDeletionTime: js.UndefOr[ResourceDeletionTime] = js.undefined,
         resourceId: js.UndefOr[ResourceId] = js.undefined,
@@ -4299,6 +4447,7 @@ package configservice {
   }
 
   object ResourceKey {
+    @inline
     def apply(
         resourceId: ResourceId,
         resourceType: ResourceType
@@ -4457,6 +4606,7 @@ package configservice {
   }
 
   object ResourceValue {
+    @inline
     def apply(
         Value: js.UndefOr[ResourceValueType] = js.undefined
     ): ResourceValue = {
@@ -4482,6 +4632,7 @@ package configservice {
   }
 
   object RetentionConfiguration {
+    @inline
     def apply(
         Name: RetentionConfigurationName,
         RetentionPeriodInDays: RetentionPeriodInDays
@@ -4507,6 +4658,7 @@ package configservice {
   }
 
   object Scope {
+    @inline
     def apply(
         ComplianceResourceId: js.UndefOr[BaseResourceId] = js.undefined,
         ComplianceResourceTypes: js.UndefOr[ComplianceResourceTypes] = js.undefined,
@@ -4530,6 +4682,7 @@ package configservice {
   }
 
   object SelectResourceConfigRequest {
+    @inline
     def apply(
         Expression: Expression,
         Limit: js.UndefOr[Limit] = js.undefined,
@@ -4553,6 +4706,7 @@ package configservice {
   }
 
   object SelectResourceConfigResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         QueryInfo: js.UndefOr[QueryInfo] = js.undefined,
@@ -4577,6 +4731,7 @@ package configservice {
   }
 
   object Source {
+    @inline
     def apply(
         Owner: Owner,
         SourceIdentifier: StringWithCharLimit256,
@@ -4603,6 +4758,7 @@ package configservice {
   }
 
   object SourceDetail {
+    @inline
     def apply(
         EventSource: js.UndefOr[EventSource] = js.undefined,
         MaximumExecutionFrequency: js.UndefOr[MaximumExecutionFrequency] = js.undefined,
@@ -4627,6 +4783,7 @@ package configservice {
   }
 
   object StartConfigRulesEvaluationRequest {
+    @inline
     def apply(
         ConfigRuleNames: js.UndefOr[ReevaluateConfigRuleNames] = js.undefined
     ): StartConfigRulesEvaluationRequest = {
@@ -4643,6 +4800,7 @@ package configservice {
   trait StartConfigRulesEvaluationResponse extends js.Object {}
 
   object StartConfigRulesEvaluationResponse {
+    @inline
     def apply(
         ): StartConfigRulesEvaluationResponse = {
       val __obj = js.Dynamic.literal()
@@ -4660,6 +4818,7 @@ package configservice {
   }
 
   object StartConfigurationRecorderRequest {
+    @inline
     def apply(
         ConfigurationRecorderName: RecorderName
     ): StartConfigurationRecorderRequest = {
@@ -4678,6 +4837,7 @@ package configservice {
   }
 
   object StartRemediationExecutionRequest {
+    @inline
     def apply(
         ConfigRuleName: StringWithCharLimit64,
         ResourceKeys: ResourceKeys
@@ -4698,6 +4858,7 @@ package configservice {
   }
 
   object StartRemediationExecutionResponse {
+    @inline
     def apply(
         FailedItems: js.UndefOr[ResourceKeys] = js.undefined,
         FailureMessage: js.UndefOr[String] = js.undefined
@@ -4718,6 +4879,7 @@ package configservice {
   }
 
   object StaticValue {
+    @inline
     def apply(
         Values: js.UndefOr[StaticParameterValues] = js.undefined
     ): StaticValue = {
@@ -4734,6 +4896,7 @@ package configservice {
   }
 
   object StatusDetailFilters {
+    @inline
     def apply(
         AccountId: js.UndefOr[AccountId] = js.undefined,
         MemberAccountRuleStatus: js.UndefOr[MemberAccountRuleStatus] = js.undefined
@@ -4754,6 +4917,7 @@ package configservice {
   }
 
   object StopConfigurationRecorderRequest {
+    @inline
     def apply(
         ConfigurationRecorderName: RecorderName
     ): StopConfigurationRecorderRequest = {
@@ -4775,6 +4939,7 @@ package configservice {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: js.UndefOr[TagKey] = js.undefined,
         Value: js.UndefOr[TagValue] = js.undefined
@@ -4793,6 +4958,7 @@ package configservice {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceArn: AmazonResourceName,
         Tags: TagList
@@ -4813,6 +4979,7 @@ package configservice {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceArn: AmazonResourceName,
         TagKeys: TagKeyList

@@ -328,6 +328,7 @@ package codedeploy {
   }
 
   object AddTagsToOnPremisesInstancesInput {
+    @inline
     def apply(
         instanceNames: InstanceNameList,
         tags: TagList
@@ -350,6 +351,7 @@ package codedeploy {
   }
 
   object Alarm {
+    @inline
     def apply(
         name: js.UndefOr[AlarmName] = js.undefined
     ): Alarm = {
@@ -370,6 +372,7 @@ package codedeploy {
   }
 
   object AlarmConfiguration {
+    @inline
     def apply(
         alarms: js.UndefOr[AlarmList] = js.undefined,
         enabled: js.UndefOr[Boolean] = js.undefined,
@@ -393,6 +396,7 @@ package codedeploy {
   }
 
   object AppSpecContent {
+    @inline
     def apply(
         content: js.UndefOr[RawStringContent] = js.undefined,
         sha256: js.UndefOr[RawStringSha256] = js.undefined
@@ -418,6 +422,7 @@ package codedeploy {
   }
 
   object ApplicationInfo {
+    @inline
     def apply(
         applicationId: js.UndefOr[ApplicationId] = js.undefined,
         applicationName: js.UndefOr[ApplicationName] = js.undefined,
@@ -455,6 +460,7 @@ package codedeploy {
   }
 
   object AutoRollbackConfiguration {
+    @inline
     def apply(
         enabled: js.UndefOr[Boolean] = js.undefined,
         events: js.UndefOr[AutoRollbackEventsList] = js.undefined
@@ -484,6 +490,7 @@ package codedeploy {
   }
 
   object AutoScalingGroup {
+    @inline
     def apply(
         hook: js.UndefOr[AutoScalingGroupHook] = js.undefined,
         name: js.UndefOr[AutoScalingGroupName] = js.undefined
@@ -505,6 +512,7 @@ package codedeploy {
   }
 
   object BatchGetApplicationRevisionsInput {
+    @inline
     def apply(
         applicationName: ApplicationName,
         revisions: RevisionLocationList
@@ -529,6 +537,7 @@ package codedeploy {
   }
 
   object BatchGetApplicationRevisionsOutput {
+    @inline
     def apply(
         applicationName: js.UndefOr[ApplicationName] = js.undefined,
         errorMessage: js.UndefOr[ErrorMessage] = js.undefined,
@@ -551,6 +560,7 @@ package codedeploy {
   }
 
   object BatchGetApplicationsInput {
+    @inline
     def apply(
         applicationNames: ApplicationsList
     ): BatchGetApplicationsInput = {
@@ -571,6 +581,7 @@ package codedeploy {
   }
 
   object BatchGetApplicationsOutput {
+    @inline
     def apply(
         applicationsInfo: js.UndefOr[ApplicationsInfoList] = js.undefined
     ): BatchGetApplicationsOutput = {
@@ -590,6 +601,7 @@ package codedeploy {
   }
 
   object BatchGetDeploymentGroupsInput {
+    @inline
     def apply(
         applicationName: ApplicationName,
         deploymentGroupNames: DeploymentGroupsList
@@ -613,6 +625,7 @@ package codedeploy {
   }
 
   object BatchGetDeploymentGroupsOutput {
+    @inline
     def apply(
         deploymentGroupsInfo: js.UndefOr[DeploymentGroupInfoList] = js.undefined,
         errorMessage: js.UndefOr[ErrorMessage] = js.undefined
@@ -634,6 +647,7 @@ package codedeploy {
   }
 
   object BatchGetDeploymentInstancesInput {
+    @inline
     def apply(
         deploymentId: DeploymentId,
         instanceIds: InstancesList
@@ -657,6 +671,7 @@ package codedeploy {
   }
 
   object BatchGetDeploymentInstancesOutput {
+    @inline
     def apply(
         errorMessage: js.UndefOr[ErrorMessage] = js.undefined,
         instancesSummary: js.UndefOr[InstanceSummaryList] = js.undefined
@@ -675,6 +690,7 @@ package codedeploy {
   }
 
   object BatchGetDeploymentTargetsInput {
+    @inline
     def apply(
         deploymentId: js.UndefOr[DeploymentId] = js.undefined,
         targetIds: js.UndefOr[TargetIdList] = js.undefined
@@ -692,6 +708,7 @@ package codedeploy {
   }
 
   object BatchGetDeploymentTargetsOutput {
+    @inline
     def apply(
         deploymentTargets: js.UndefOr[DeploymentTargetList] = js.undefined
     ): BatchGetDeploymentTargetsOutput = {
@@ -710,6 +727,7 @@ package codedeploy {
   }
 
   object BatchGetDeploymentsInput {
+    @inline
     def apply(
         deploymentIds: DeploymentsList
     ): BatchGetDeploymentsInput = {
@@ -730,6 +748,7 @@ package codedeploy {
   }
 
   object BatchGetDeploymentsOutput {
+    @inline
     def apply(
         deploymentsInfo: js.UndefOr[DeploymentsInfoList] = js.undefined
     ): BatchGetDeploymentsOutput = {
@@ -748,6 +767,7 @@ package codedeploy {
   }
 
   object BatchGetOnPremisesInstancesInput {
+    @inline
     def apply(
         instanceNames: InstanceNameList
     ): BatchGetOnPremisesInstancesInput = {
@@ -768,6 +788,7 @@ package codedeploy {
   }
 
   object BatchGetOnPremisesInstancesOutput {
+    @inline
     def apply(
         instanceInfos: js.UndefOr[InstanceInfoList] = js.undefined
     ): BatchGetOnPremisesInstancesOutput = {
@@ -788,6 +809,7 @@ package codedeploy {
   }
 
   object BlueGreenDeploymentConfiguration {
+    @inline
     def apply(
         deploymentReadyOption: js.UndefOr[DeploymentReadyOption] = js.undefined,
         greenFleetProvisioningOption: js.UndefOr[GreenFleetProvisioningOption] = js.undefined,
@@ -815,6 +837,7 @@ package codedeploy {
   }
 
   object BlueInstanceTerminationOption {
+    @inline
     def apply(
         action: js.UndefOr[InstanceAction] = js.undefined,
         terminationWaitTimeInMinutes: js.UndefOr[Duration] = js.undefined
@@ -853,6 +876,7 @@ package codedeploy {
   }
 
   object ContinueDeploymentInput {
+    @inline
     def apply(
         deploymentId: js.UndefOr[DeploymentId] = js.undefined,
         deploymentWaitType: js.UndefOr[DeploymentWaitType] = js.undefined
@@ -875,6 +899,7 @@ package codedeploy {
   }
 
   object CreateApplicationInput {
+    @inline
     def apply(
         applicationName: ApplicationName,
         computePlatform: js.UndefOr[ComputePlatform] = js.undefined,
@@ -899,6 +924,7 @@ package codedeploy {
   }
 
   object CreateApplicationOutput {
+    @inline
     def apply(
         applicationId: js.UndefOr[ApplicationId] = js.undefined
     ): CreateApplicationOutput = {
@@ -920,6 +946,7 @@ package codedeploy {
   }
 
   object CreateDeploymentConfigInput {
+    @inline
     def apply(
         deploymentConfigName: DeploymentConfigName,
         computePlatform: js.UndefOr[ComputePlatform] = js.undefined,
@@ -946,6 +973,7 @@ package codedeploy {
   }
 
   object CreateDeploymentConfigOutput {
+    @inline
     def apply(
         deploymentConfigId: js.UndefOr[DeploymentConfigId] = js.undefined
     ): CreateDeploymentConfigOutput = {
@@ -980,6 +1008,7 @@ package codedeploy {
   }
 
   object CreateDeploymentGroupInput {
+    @inline
     def apply(
         applicationName: ApplicationName,
         deploymentGroupName: DeploymentGroupName,
@@ -1038,6 +1067,7 @@ package codedeploy {
   }
 
   object CreateDeploymentGroupOutput {
+    @inline
     def apply(
         deploymentGroupId: js.UndefOr[DeploymentGroupId] = js.undefined
     ): CreateDeploymentGroupOutput = {
@@ -1065,6 +1095,7 @@ package codedeploy {
   }
 
   object CreateDeploymentInput {
+    @inline
     def apply(
         applicationName: ApplicationName,
         autoRollbackConfiguration: js.UndefOr[AutoRollbackConfiguration] = js.undefined,
@@ -1109,6 +1140,7 @@ package codedeploy {
   }
 
   object CreateDeploymentOutput {
+    @inline
     def apply(
         deploymentId: js.UndefOr[DeploymentId] = js.undefined
     ): CreateDeploymentOutput = {
@@ -1127,6 +1159,7 @@ package codedeploy {
   }
 
   object DeleteApplicationInput {
+    @inline
     def apply(
         applicationName: ApplicationName
     ): DeleteApplicationInput = {
@@ -1147,6 +1180,7 @@ package codedeploy {
   }
 
   object DeleteDeploymentConfigInput {
+    @inline
     def apply(
         deploymentConfigName: DeploymentConfigName
     ): DeleteDeploymentConfigInput = {
@@ -1168,6 +1202,7 @@ package codedeploy {
   }
 
   object DeleteDeploymentGroupInput {
+    @inline
     def apply(
         applicationName: ApplicationName,
         deploymentGroupName: DeploymentGroupName
@@ -1190,6 +1225,7 @@ package codedeploy {
   }
 
   object DeleteDeploymentGroupOutput {
+    @inline
     def apply(
         hooksNotCleanedUp: js.UndefOr[AutoScalingGroupList] = js.undefined
     ): DeleteDeploymentGroupOutput = {
@@ -1208,6 +1244,7 @@ package codedeploy {
   }
 
   object DeleteGitHubAccountTokenInput {
+    @inline
     def apply(
         tokenName: js.UndefOr[GitHubAccountTokenName] = js.undefined
     ): DeleteGitHubAccountTokenInput = {
@@ -1226,6 +1263,7 @@ package codedeploy {
   }
 
   object DeleteGitHubAccountTokenOutput {
+    @inline
     def apply(
         tokenName: js.UndefOr[GitHubAccountTokenName] = js.undefined
     ): DeleteGitHubAccountTokenOutput = {
@@ -1249,6 +1287,7 @@ package codedeploy {
   }
 
   object DeploymentConfigInfo {
+    @inline
     def apply(
         computePlatform: js.UndefOr[ComputePlatform] = js.undefined,
         createTime: js.UndefOr[Timestamp] = js.undefined,
@@ -1305,6 +1344,7 @@ package codedeploy {
   }
 
   object DeploymentGroupInfo {
+    @inline
     def apply(
         alarmConfiguration: js.UndefOr[AlarmConfiguration] = js.undefined,
         applicationName: js.UndefOr[ApplicationName] = js.undefined,
@@ -1395,6 +1435,7 @@ package codedeploy {
   }
 
   object DeploymentInfo {
+    @inline
     def apply(
         additionalDeploymentStatusInfo: js.UndefOr[AdditionalDeploymentStatusInfo] = js.undefined,
         applicationName: js.UndefOr[ApplicationName] = js.undefined,
@@ -1489,6 +1530,7 @@ package codedeploy {
   }
 
   object DeploymentOverview {
+    @inline
     def apply(
         Failed: js.UndefOr[InstanceCount] = js.undefined,
         InProgress: js.UndefOr[InstanceCount] = js.undefined,
@@ -1525,6 +1567,7 @@ package codedeploy {
   }
 
   object DeploymentReadyOption {
+    @inline
     def apply(
         actionOnTimeout: js.UndefOr[DeploymentReadyAction] = js.undefined,
         waitTimeInMinutes: js.UndefOr[Duration] = js.undefined
@@ -1558,6 +1601,7 @@ package codedeploy {
   }
 
   object DeploymentStyle {
+    @inline
     def apply(
         deploymentOption: js.UndefOr[DeploymentOption] = js.undefined,
         deploymentType: js.UndefOr[DeploymentType] = js.undefined
@@ -1581,6 +1625,7 @@ package codedeploy {
   }
 
   object DeploymentTarget {
+    @inline
     def apply(
         deploymentTargetType: js.UndefOr[DeploymentTargetType] = js.undefined,
         ecsTarget: js.UndefOr[ECSTarget] = js.undefined,
@@ -1627,6 +1672,7 @@ package codedeploy {
   }
 
   object DeregisterOnPremisesInstanceInput {
+    @inline
     def apply(
         instanceName: InstanceName
     ): DeregisterOnPremisesInstanceInput = {
@@ -1650,6 +1696,7 @@ package codedeploy {
   }
 
   object Diagnostics {
+    @inline
     def apply(
         errorCode: js.UndefOr[LifecycleErrorCode] = js.undefined,
         logTail: js.UndefOr[LogTail] = js.undefined,
@@ -1676,6 +1723,7 @@ package codedeploy {
   }
 
   object EC2TagFilter {
+    @inline
     def apply(
         Key: js.UndefOr[Key] = js.undefined,
         Type: js.UndefOr[EC2TagFilterType] = js.undefined,
@@ -1706,6 +1754,7 @@ package codedeploy {
   }
 
   object EC2TagSet {
+    @inline
     def apply(
         ec2TagSetList: js.UndefOr[EC2TagSetList] = js.undefined
     ): EC2TagSet = {
@@ -1725,6 +1774,7 @@ package codedeploy {
   }
 
   object ECSService {
+    @inline
     def apply(
         clusterName: js.UndefOr[ECSClusterName] = js.undefined,
         serviceName: js.UndefOr[ECSServiceName] = js.undefined
@@ -1751,6 +1801,7 @@ package codedeploy {
   }
 
   object ECSTarget {
+    @inline
     def apply(
         deploymentId: js.UndefOr[DeploymentId] = js.undefined,
         lastUpdatedAt: js.UndefOr[Time] = js.undefined,
@@ -1788,6 +1839,7 @@ package codedeploy {
   }
 
   object ECSTaskSet {
+    @inline
     def apply(
         desiredCount: js.UndefOr[ECSTaskSetCount] = js.undefined,
         identifer: js.UndefOr[ECSTaskSetIdentifier] = js.undefined,
@@ -1820,6 +1872,7 @@ package codedeploy {
   }
 
   object ELBInfo {
+    @inline
     def apply(
         name: js.UndefOr[ELBName] = js.undefined
     ): ELBInfo = {
@@ -1913,6 +1966,7 @@ package codedeploy {
   }
 
   object ErrorInformation {
+    @inline
     def apply(
         code: js.UndefOr[ErrorCode] = js.undefined,
         message: js.UndefOr[ErrorMessage] = js.undefined
@@ -1945,6 +1999,7 @@ package codedeploy {
   }
 
   object GenericRevisionInfo {
+    @inline
     def apply(
         deploymentGroups: js.UndefOr[DeploymentGroupsList] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
@@ -1971,6 +2026,7 @@ package codedeploy {
   }
 
   object GetApplicationInput {
+    @inline
     def apply(
         applicationName: ApplicationName
     ): GetApplicationInput = {
@@ -1991,6 +2047,7 @@ package codedeploy {
   }
 
   object GetApplicationOutput {
+    @inline
     def apply(
         application: js.UndefOr[ApplicationInfo] = js.undefined
     ): GetApplicationOutput = {
@@ -2010,6 +2067,7 @@ package codedeploy {
   }
 
   object GetApplicationRevisionInput {
+    @inline
     def apply(
         applicationName: ApplicationName,
         revision: RevisionLocation
@@ -2034,6 +2092,7 @@ package codedeploy {
   }
 
   object GetApplicationRevisionOutput {
+    @inline
     def apply(
         applicationName: js.UndefOr[ApplicationName] = js.undefined,
         revision: js.UndefOr[RevisionLocation] = js.undefined,
@@ -2056,6 +2115,7 @@ package codedeploy {
   }
 
   object GetDeploymentConfigInput {
+    @inline
     def apply(
         deploymentConfigName: DeploymentConfigName
     ): GetDeploymentConfigInput = {
@@ -2076,6 +2136,7 @@ package codedeploy {
   }
 
   object GetDeploymentConfigOutput {
+    @inline
     def apply(
         deploymentConfigInfo: js.UndefOr[DeploymentConfigInfo] = js.undefined
     ): GetDeploymentConfigOutput = {
@@ -2095,6 +2156,7 @@ package codedeploy {
   }
 
   object GetDeploymentGroupInput {
+    @inline
     def apply(
         applicationName: ApplicationName,
         deploymentGroupName: DeploymentGroupName
@@ -2117,6 +2179,7 @@ package codedeploy {
   }
 
   object GetDeploymentGroupOutput {
+    @inline
     def apply(
         deploymentGroupInfo: js.UndefOr[DeploymentGroupInfo] = js.undefined
     ): GetDeploymentGroupOutput = {
@@ -2135,6 +2198,7 @@ package codedeploy {
   }
 
   object GetDeploymentInput {
+    @inline
     def apply(
         deploymentId: DeploymentId
     ): GetDeploymentInput = {
@@ -2156,6 +2220,7 @@ package codedeploy {
   }
 
   object GetDeploymentInstanceInput {
+    @inline
     def apply(
         deploymentId: DeploymentId,
         instanceId: InstanceId
@@ -2178,6 +2243,7 @@ package codedeploy {
   }
 
   object GetDeploymentInstanceOutput {
+    @inline
     def apply(
         instanceSummary: js.UndefOr[InstanceSummary] = js.undefined
     ): GetDeploymentInstanceOutput = {
@@ -2196,6 +2262,7 @@ package codedeploy {
   }
 
   object GetDeploymentOutput {
+    @inline
     def apply(
         deploymentInfo: js.UndefOr[DeploymentInfo] = js.undefined
     ): GetDeploymentOutput = {
@@ -2212,6 +2279,7 @@ package codedeploy {
   }
 
   object GetDeploymentTargetInput {
+    @inline
     def apply(
         deploymentId: js.UndefOr[DeploymentId] = js.undefined,
         targetId: js.UndefOr[TargetId] = js.undefined
@@ -2229,6 +2297,7 @@ package codedeploy {
   }
 
   object GetDeploymentTargetOutput {
+    @inline
     def apply(
         deploymentTarget: js.UndefOr[DeploymentTarget] = js.undefined
     ): GetDeploymentTargetOutput = {
@@ -2247,6 +2316,7 @@ package codedeploy {
   }
 
   object GetOnPremisesInstanceInput {
+    @inline
     def apply(
         instanceName: InstanceName
     ): GetOnPremisesInstanceInput = {
@@ -2267,6 +2337,7 @@ package codedeploy {
   }
 
   object GetOnPremisesInstanceOutput {
+    @inline
     def apply(
         instanceInfo: js.UndefOr[InstanceInfo] = js.undefined
     ): GetOnPremisesInstanceOutput = {
@@ -2286,6 +2357,7 @@ package codedeploy {
   }
 
   object GitHubLocation {
+    @inline
     def apply(
         commitId: js.UndefOr[CommitId] = js.undefined,
         repository: js.UndefOr[Repository] = js.undefined
@@ -2313,6 +2385,7 @@ package codedeploy {
   }
 
   object GreenFleetProvisioningOption {
+    @inline
     def apply(
         action: js.UndefOr[GreenFleetProvisioningAction] = js.undefined
     ): GreenFleetProvisioningOption = {
@@ -2344,6 +2417,7 @@ package codedeploy {
   }
 
   object InstanceInfo {
+    @inline
     def apply(
         deregisterTime: js.UndefOr[Timestamp] = js.undefined,
         iamSessionArn: js.UndefOr[IamSessionArn] = js.undefined,
@@ -2393,6 +2467,7 @@ package codedeploy {
   }
 
   object InstanceSummary {
+    @inline
     def apply(
         deploymentId: js.UndefOr[DeploymentId] = js.undefined,
         instanceId: js.UndefOr[InstanceId] = js.undefined,
@@ -2427,6 +2502,7 @@ package codedeploy {
   }
 
   object InstanceTarget {
+    @inline
     def apply(
         deploymentId: js.UndefOr[DeploymentId] = js.undefined,
         instanceLabel: js.UndefOr[TargetLabel] = js.undefined,
@@ -2468,6 +2544,7 @@ package codedeploy {
   }
 
   object LambdaFunctionInfo {
+    @inline
     def apply(
         currentVersion: js.UndefOr[Version] = js.undefined,
         functionAlias: js.UndefOr[LambdaFunctionAlias] = js.undefined,
@@ -2500,6 +2577,7 @@ package codedeploy {
   }
 
   object LambdaTarget {
+    @inline
     def apply(
         deploymentId: js.UndefOr[DeploymentId] = js.undefined,
         lambdaFunctionInfo: js.UndefOr[LambdaFunctionInfo] = js.undefined,
@@ -2533,6 +2611,7 @@ package codedeploy {
   }
 
   object LastDeploymentInfo {
+    @inline
     def apply(
         createTime: js.UndefOr[Timestamp] = js.undefined,
         deploymentId: js.UndefOr[DeploymentId] = js.undefined,
@@ -2574,6 +2653,7 @@ package codedeploy {
   }
 
   object LifecycleEvent {
+    @inline
     def apply(
         diagnostics: js.UndefOr[Diagnostics] = js.undefined,
         endTime: js.UndefOr[Timestamp] = js.undefined,
@@ -2617,6 +2697,7 @@ package codedeploy {
   }
 
   object ListApplicationRevisionsInput {
+    @inline
     def apply(
         applicationName: ApplicationName,
         deployed: js.UndefOr[ListStateFilterAction] = js.undefined,
@@ -2650,6 +2731,7 @@ package codedeploy {
   }
 
   object ListApplicationRevisionsOutput {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         revisions: js.UndefOr[RevisionLocationList] = js.undefined
@@ -2670,6 +2752,7 @@ package codedeploy {
   }
 
   object ListApplicationsInput {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListApplicationsInput = {
@@ -2689,6 +2772,7 @@ package codedeploy {
   }
 
   object ListApplicationsOutput {
+    @inline
     def apply(
         applications: js.UndefOr[ApplicationsList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -2709,6 +2793,7 @@ package codedeploy {
   }
 
   object ListDeploymentConfigsInput {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDeploymentConfigsInput = {
@@ -2728,6 +2813,7 @@ package codedeploy {
   }
 
   object ListDeploymentConfigsOutput {
+    @inline
     def apply(
         deploymentConfigsList: js.UndefOr[DeploymentConfigsList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -2749,6 +2835,7 @@ package codedeploy {
   }
 
   object ListDeploymentGroupsInput {
+    @inline
     def apply(
         applicationName: ApplicationName,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -2773,6 +2860,7 @@ package codedeploy {
   }
 
   object ListDeploymentGroupsOutput {
+    @inline
     def apply(
         applicationName: js.UndefOr[ApplicationName] = js.undefined,
         deploymentGroups: js.UndefOr[DeploymentGroupsList] = js.undefined,
@@ -2798,6 +2886,7 @@ package codedeploy {
   }
 
   object ListDeploymentInstancesInput {
+    @inline
     def apply(
         deploymentId: DeploymentId,
         instanceStatusFilter: js.UndefOr[InstanceStatusList] = js.undefined,
@@ -2825,6 +2914,7 @@ package codedeploy {
   }
 
   object ListDeploymentInstancesOutput {
+    @inline
     def apply(
         instancesList: js.UndefOr[InstancesList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -2844,6 +2934,7 @@ package codedeploy {
   }
 
   object ListDeploymentTargetsInput {
+    @inline
     def apply(
         deploymentId: js.UndefOr[DeploymentId] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
@@ -2864,6 +2955,7 @@ package codedeploy {
   }
 
   object ListDeploymentTargetsOutput {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         targetIds: js.UndefOr[TargetIdList] = js.undefined
@@ -2888,6 +2980,7 @@ package codedeploy {
   }
 
   object ListDeploymentsInput {
+    @inline
     def apply(
         applicationName: js.UndefOr[ApplicationName] = js.undefined,
         createTimeRange: js.UndefOr[TimeRange] = js.undefined,
@@ -2915,6 +3008,7 @@ package codedeploy {
   }
 
   object ListDeploymentsOutput {
+    @inline
     def apply(
         deployments: js.UndefOr[DeploymentsList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -2935,6 +3029,7 @@ package codedeploy {
   }
 
   object ListGitHubAccountTokenNamesInput {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListGitHubAccountTokenNamesInput = {
@@ -2954,6 +3049,7 @@ package codedeploy {
   }
 
   object ListGitHubAccountTokenNamesOutput {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         tokenNameList: js.UndefOr[GitHubAccountTokenNameList] = js.undefined
@@ -2976,6 +3072,7 @@ package codedeploy {
   }
 
   object ListOnPremisesInstancesInput {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         registrationStatus: js.UndefOr[RegistrationStatus] = js.undefined,
@@ -2999,6 +3096,7 @@ package codedeploy {
   }
 
   object ListOnPremisesInstancesOutput {
+    @inline
     def apply(
         instanceNames: js.UndefOr[InstanceNameList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -3025,6 +3123,7 @@ package codedeploy {
   }
 
   object ListTagsForResourceInput {
+    @inline
     def apply(
         ResourceArn: Arn,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -3045,6 +3144,7 @@ package codedeploy {
   }
 
   object ListTagsForResourceOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -3067,6 +3167,7 @@ package codedeploy {
   }
 
   object LoadBalancerInfo {
+    @inline
     def apply(
         elbInfoList: js.UndefOr[ELBInfoList] = js.undefined,
         targetGroupInfoList: js.UndefOr[TargetGroupInfoList] = js.undefined,
@@ -3090,6 +3191,7 @@ package codedeploy {
   }
 
   object MinimumHealthyHosts {
+    @inline
     def apply(
         `type`: js.UndefOr[MinimumHealthyHostsType] = js.undefined,
         value: js.UndefOr[MinimumHealthyHostsValue] = js.undefined
@@ -3117,6 +3219,7 @@ package codedeploy {
   }
 
   object OnPremisesTagSet {
+    @inline
     def apply(
         onPremisesTagSetList: js.UndefOr[OnPremisesTagSetList] = js.undefined
     ): OnPremisesTagSet = {
@@ -3134,6 +3237,7 @@ package codedeploy {
   }
 
   object PutLifecycleEventHookExecutionStatusInput {
+    @inline
     def apply(
         deploymentId: js.UndefOr[DeploymentId] = js.undefined,
         lifecycleEventHookExecutionId: js.UndefOr[LifecycleEventHookExecutionId] = js.undefined,
@@ -3155,6 +3259,7 @@ package codedeploy {
   }
 
   object PutLifecycleEventHookExecutionStatusOutput {
+    @inline
     def apply(
         lifecycleEventHookExecutionId: js.UndefOr[LifecycleEventHookExecutionId] = js.undefined
     ): PutLifecycleEventHookExecutionStatusOutput = {
@@ -3177,6 +3282,7 @@ package codedeploy {
   }
 
   object RawString {
+    @inline
     def apply(
         content: js.UndefOr[RawStringContent] = js.undefined,
         sha256: js.UndefOr[RawStringSha256] = js.undefined
@@ -3199,6 +3305,7 @@ package codedeploy {
   }
 
   object RegisterApplicationRevisionInput {
+    @inline
     def apply(
         applicationName: ApplicationName,
         revision: RevisionLocation,
@@ -3225,6 +3332,7 @@ package codedeploy {
   }
 
   object RegisterOnPremisesInstanceInput {
+    @inline
     def apply(
         instanceName: InstanceName,
         iamSessionArn: js.UndefOr[IamSessionArn] = js.undefined,
@@ -3257,6 +3365,7 @@ package codedeploy {
   }
 
   object RemoveTagsFromOnPremisesInstancesInput {
+    @inline
     def apply(
         instanceNames: InstanceNameList,
         tags: TagList
@@ -3280,6 +3389,7 @@ package codedeploy {
   }
 
   object RevisionInfo {
+    @inline
     def apply(
         genericRevisionInfo: js.UndefOr[GenericRevisionInfo] = js.undefined,
         revisionLocation: js.UndefOr[RevisionLocation] = js.undefined
@@ -3304,6 +3414,7 @@ package codedeploy {
   }
 
   object RevisionLocation {
+    @inline
     def apply(
         appSpecContent: js.UndefOr[AppSpecContent] = js.undefined,
         gitHubLocation: js.UndefOr[GitHubLocation] = js.undefined,
@@ -3341,6 +3452,7 @@ package codedeploy {
   }
 
   object RollbackInfo {
+    @inline
     def apply(
         rollbackDeploymentId: js.UndefOr[DeploymentId] = js.undefined,
         rollbackMessage: js.UndefOr[Description] = js.undefined,
@@ -3369,6 +3481,7 @@ package codedeploy {
   }
 
   object S3Location {
+    @inline
     def apply(
         bucket: js.UndefOr[S3Bucket] = js.undefined,
         bundleType: js.UndefOr[BundleType] = js.undefined,
@@ -3392,6 +3505,7 @@ package codedeploy {
   }
 
   object SkipWaitTimeForInstanceTerminationInput {
+    @inline
     def apply(
         deploymentId: js.UndefOr[DeploymentId] = js.undefined
     ): SkipWaitTimeForInstanceTerminationInput = {
@@ -3418,6 +3532,7 @@ package codedeploy {
   }
 
   object StopDeploymentInput {
+    @inline
     def apply(
         deploymentId: DeploymentId,
         autoRollbackEnabled: js.UndefOr[NullableBoolean] = js.undefined
@@ -3441,6 +3556,7 @@ package codedeploy {
   }
 
   object StopDeploymentOutput {
+    @inline
     def apply(
         status: js.UndefOr[StopStatus] = js.undefined,
         statusMessage: js.UndefOr[Message] = js.undefined
@@ -3469,6 +3585,7 @@ package codedeploy {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: js.UndefOr[Key] = js.undefined,
         Value: js.UndefOr[Value] = js.undefined
@@ -3491,6 +3608,7 @@ package codedeploy {
   }
 
   object TagFilter {
+    @inline
     def apply(
         Key: js.UndefOr[Key] = js.undefined,
         Type: js.UndefOr[TagFilterType] = js.undefined,
@@ -3519,6 +3637,7 @@ package codedeploy {
   }
 
   object TagResourceInput {
+    @inline
     def apply(
         ResourceArn: Arn,
         Tags: TagList
@@ -3536,6 +3655,7 @@ package codedeploy {
   trait TagResourceOutput extends js.Object {}
 
   object TagResourceOutput {
+    @inline
     def apply(
         ): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
@@ -3560,6 +3680,7 @@ package codedeploy {
   }
 
   object TargetGroupInfo {
+    @inline
     def apply(
         name: js.UndefOr[TargetGroupName] = js.undefined
     ): TargetGroupInfo = {
@@ -3580,6 +3701,7 @@ package codedeploy {
   }
 
   object TargetGroupPairInfo {
+    @inline
     def apply(
         prodTrafficRoute: js.UndefOr[TrafficRoute] = js.undefined,
         targetGroups: js.UndefOr[TargetGroupInfoList] = js.undefined,
@@ -3604,6 +3726,7 @@ package codedeploy {
   }
 
   object TargetInstances {
+    @inline
     def apply(
         autoScalingGroups: js.UndefOr[AutoScalingGroupNameList] = js.undefined,
         ec2TagSet: js.UndefOr[EC2TagSet] = js.undefined,
@@ -3646,6 +3769,7 @@ package codedeploy {
   }
 
   object TimeBasedCanary {
+    @inline
     def apply(
         canaryInterval: js.UndefOr[WaitTimeInMins] = js.undefined,
         canaryPercentage: js.UndefOr[Percentage] = js.undefined
@@ -3667,6 +3791,7 @@ package codedeploy {
   }
 
   object TimeBasedLinear {
+    @inline
     def apply(
         linearInterval: js.UndefOr[WaitTimeInMins] = js.undefined,
         linearPercentage: js.UndefOr[Percentage] = js.undefined
@@ -3688,6 +3813,7 @@ package codedeploy {
   }
 
   object TimeRange {
+    @inline
     def apply(
         end: js.UndefOr[Timestamp] = js.undefined,
         start: js.UndefOr[Timestamp] = js.undefined
@@ -3708,6 +3834,7 @@ package codedeploy {
   }
 
   object TrafficRoute {
+    @inline
     def apply(
         listenerArns: js.UndefOr[ListenerArnList] = js.undefined
     ): TrafficRoute = {
@@ -3728,6 +3855,7 @@ package codedeploy {
   }
 
   object TrafficRoutingConfig {
+    @inline
     def apply(
         timeBasedCanary: js.UndefOr[TimeBasedCanary] = js.undefined,
         timeBasedLinear: js.UndefOr[TimeBasedLinear] = js.undefined,
@@ -3760,6 +3888,7 @@ package codedeploy {
   }
 
   object TriggerConfig {
+    @inline
     def apply(
         triggerEvents: js.UndefOr[TriggerEventTypeList] = js.undefined,
         triggerName: js.UndefOr[TriggerName] = js.undefined,
@@ -3808,6 +3937,7 @@ package codedeploy {
   }
 
   object UntagResourceInput {
+    @inline
     def apply(
         ResourceArn: Arn,
         TagKeys: TagKeyList
@@ -3825,6 +3955,7 @@ package codedeploy {
   trait UntagResourceOutput extends js.Object {}
 
   object UntagResourceOutput {
+    @inline
     def apply(
         ): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
@@ -3843,6 +3974,7 @@ package codedeploy {
   }
 
   object UpdateApplicationInput {
+    @inline
     def apply(
         applicationName: js.UndefOr[ApplicationName] = js.undefined,
         newApplicationName: js.UndefOr[ApplicationName] = js.undefined
@@ -3879,6 +4011,7 @@ package codedeploy {
   }
 
   object UpdateDeploymentGroupInput {
+    @inline
     def apply(
         applicationName: ApplicationName,
         currentDeploymentGroupName: DeploymentGroupName,
@@ -3937,6 +4070,7 @@ package codedeploy {
   }
 
   object UpdateDeploymentGroupOutput {
+    @inline
     def apply(
         hooksNotCleanedUp: js.UndefOr[AutoScalingGroupList] = js.undefined
     ): UpdateDeploymentGroupOutput = {

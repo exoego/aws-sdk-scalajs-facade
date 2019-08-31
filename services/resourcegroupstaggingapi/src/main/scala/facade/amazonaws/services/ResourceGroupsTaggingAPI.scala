@@ -76,6 +76,7 @@ package resourcegroupstaggingapi {
   }
 
   object FailureInfo {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
         ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
@@ -99,6 +100,7 @@ package resourcegroupstaggingapi {
   }
 
   object GetResourcesInput {
+    @inline
     def apply(
         PaginationToken: js.UndefOr[PaginationToken] = js.undefined,
         ResourceTypeFilters: js.UndefOr[ResourceTypeFilterList] = js.undefined,
@@ -123,6 +125,7 @@ package resourcegroupstaggingapi {
   }
 
   object GetResourcesOutput {
+    @inline
     def apply(
         PaginationToken: js.UndefOr[PaginationToken] = js.undefined,
         ResourceTagMappingList: js.UndefOr[ResourceTagMappingList] = js.undefined
@@ -140,6 +143,7 @@ package resourcegroupstaggingapi {
   }
 
   object GetTagKeysInput {
+    @inline
     def apply(
         PaginationToken: js.UndefOr[PaginationToken] = js.undefined
     ): GetTagKeysInput = {
@@ -156,6 +160,7 @@ package resourcegroupstaggingapi {
   }
 
   object GetTagKeysOutput {
+    @inline
     def apply(
         PaginationToken: js.UndefOr[PaginationToken] = js.undefined,
         TagKeys: js.UndefOr[TagKeyList] = js.undefined
@@ -174,6 +179,7 @@ package resourcegroupstaggingapi {
   }
 
   object GetTagValuesInput {
+    @inline
     def apply(
         Key: TagKey,
         PaginationToken: js.UndefOr[PaginationToken] = js.undefined
@@ -194,6 +200,7 @@ package resourcegroupstaggingapi {
   }
 
   object GetTagValuesOutput {
+    @inline
     def apply(
         PaginationToken: js.UndefOr[PaginationToken] = js.undefined,
         TagValues: js.UndefOr[TagValuesOutputList] = js.undefined
@@ -215,6 +222,7 @@ package resourcegroupstaggingapi {
   }
 
   object ResourceTagMapping {
+    @inline
     def apply(
         ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -236,6 +244,7 @@ package resourcegroupstaggingapi {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: TagValue
@@ -259,6 +268,7 @@ package resourcegroupstaggingapi {
   }
 
   object TagFilter {
+    @inline
     def apply(
         Key: js.UndefOr[TagKey] = js.undefined,
         Values: js.UndefOr[TagValueList] = js.undefined
@@ -277,6 +287,7 @@ package resourcegroupstaggingapi {
   }
 
   object TagResourcesInput {
+    @inline
     def apply(
         ResourceARNList: ResourceARNList,
         Tags: TagMap
@@ -296,6 +307,7 @@ package resourcegroupstaggingapi {
   }
 
   object TagResourcesOutput {
+    @inline
     def apply(
         FailedResourcesMap: js.UndefOr[FailedResourcesMap] = js.undefined
     ): TagResourcesOutput = {
@@ -312,6 +324,7 @@ package resourcegroupstaggingapi {
   }
 
   object UntagResourcesInput {
+    @inline
     def apply(
         ResourceARNList: ResourceARNList,
         TagKeys: TagKeyListForUntag
@@ -331,6 +344,7 @@ package resourcegroupstaggingapi {
   }
 
   object UntagResourcesOutput {
+    @inline
     def apply(
         FailedResourcesMap: js.UndefOr[FailedResourcesMap] = js.undefined
     ): UntagResourcesOutput = {

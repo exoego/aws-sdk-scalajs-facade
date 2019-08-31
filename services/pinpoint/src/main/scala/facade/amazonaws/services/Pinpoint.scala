@@ -344,6 +344,7 @@ package pinpoint {
   }
 
   object ADMChannelRequest {
+    @inline
     def apply(
         ClientId: __string,
         ClientSecret: __string,
@@ -377,6 +378,7 @@ package pinpoint {
   }
 
   object ADMChannelResponse {
+    @inline
     def apply(
         Platform: __string,
         ApplicationId: js.UndefOr[__string] = js.undefined,
@@ -430,6 +432,7 @@ package pinpoint {
   }
 
   object ADMMessage {
+    @inline
     def apply(
         Action: js.UndefOr[Action] = js.undefined,
         Body: js.UndefOr[__string] = js.undefined,
@@ -485,6 +488,7 @@ package pinpoint {
   }
 
   object APNSChannelRequest {
+    @inline
     def apply(
         BundleId: js.UndefOr[__string] = js.undefined,
         Certificate: js.UndefOr[__string] = js.undefined,
@@ -530,6 +534,7 @@ package pinpoint {
   }
 
   object APNSChannelResponse {
+    @inline
     def apply(
         Platform: __string,
         ApplicationId: js.UndefOr[__string] = js.undefined,
@@ -590,6 +595,7 @@ package pinpoint {
   }
 
   object APNSMessage {
+    @inline
     def apply(
         Action: js.UndefOr[Action] = js.undefined,
         Badge: js.UndefOr[__integer] = js.undefined,
@@ -649,6 +655,7 @@ package pinpoint {
   }
 
   object APNSSandboxChannelRequest {
+    @inline
     def apply(
         BundleId: js.UndefOr[__string] = js.undefined,
         Certificate: js.UndefOr[__string] = js.undefined,
@@ -694,6 +701,7 @@ package pinpoint {
   }
 
   object APNSSandboxChannelResponse {
+    @inline
     def apply(
         Platform: __string,
         ApplicationId: js.UndefOr[__string] = js.undefined,
@@ -745,6 +753,7 @@ package pinpoint {
   }
 
   object APNSVoipChannelRequest {
+    @inline
     def apply(
         BundleId: js.UndefOr[__string] = js.undefined,
         Certificate: js.UndefOr[__string] = js.undefined,
@@ -790,6 +799,7 @@ package pinpoint {
   }
 
   object APNSVoipChannelResponse {
+    @inline
     def apply(
         Platform: __string,
         ApplicationId: js.UndefOr[__string] = js.undefined,
@@ -841,6 +851,7 @@ package pinpoint {
   }
 
   object APNSVoipSandboxChannelRequest {
+    @inline
     def apply(
         BundleId: js.UndefOr[__string] = js.undefined,
         Certificate: js.UndefOr[__string] = js.undefined,
@@ -886,6 +897,7 @@ package pinpoint {
   }
 
   object APNSVoipSandboxChannelResponse {
+    @inline
     def apply(
         Platform: __string,
         ApplicationId: js.UndefOr[__string] = js.undefined,
@@ -939,6 +951,7 @@ package pinpoint {
   }
 
   object ActivitiesResponse {
+    @inline
     def apply(
         Item: ListOfActivityResponse,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -973,6 +986,7 @@ package pinpoint {
   }
 
   object ActivityResponse {
+    @inline
     def apply(
         ApplicationId: __string,
         CampaignId: __string,
@@ -1022,6 +1036,7 @@ package pinpoint {
   }
 
   object AddressConfiguration {
+    @inline
     def apply(
         BodyOverride: js.UndefOr[__string] = js.undefined,
         ChannelType: js.UndefOr[ChannelType] = js.undefined,
@@ -1055,6 +1070,7 @@ package pinpoint {
   }
 
   object ApplicationDateRangeKpiResponse {
+    @inline
     def apply(
         ApplicationId: __string,
         EndTime: __timestampIso8601,
@@ -1088,6 +1104,7 @@ package pinpoint {
   }
 
   object ApplicationResponse {
+    @inline
     def apply(
         Arn: __string,
         Id: __string,
@@ -1118,6 +1135,7 @@ package pinpoint {
   }
 
   object ApplicationSettingsResource {
+    @inline
     def apply(
         ApplicationId: __string,
         CampaignHook: js.UndefOr[CampaignHook] = js.undefined,
@@ -1147,6 +1165,7 @@ package pinpoint {
   }
 
   object ApplicationsResponse {
+    @inline
     def apply(
         Item: js.UndefOr[ListOfApplicationResponse] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -1168,6 +1187,7 @@ package pinpoint {
   }
 
   object AttributeDimension {
+    @inline
     def apply(
         Values: ListOf__string,
         AttributeType: js.UndefOr[AttributeType] = js.undefined
@@ -1199,6 +1219,7 @@ package pinpoint {
   }
 
   object AttributesResource {
+    @inline
     def apply(
         ApplicationId: __string,
         AttributeType: __string,
@@ -1225,6 +1246,7 @@ package pinpoint {
   }
 
   object BaiduChannelRequest {
+    @inline
     def apply(
         ApiKey: __string,
         SecretKey: __string,
@@ -1259,6 +1281,7 @@ package pinpoint {
   }
 
   object BaiduChannelResponse {
+    @inline
     def apply(
         Credential: __string,
         Platform: __string,
@@ -1312,6 +1335,7 @@ package pinpoint {
   }
 
   object BaiduMessage {
+    @inline
     def apply(
         Action: js.UndefOr[Action] = js.undefined,
         Body: js.UndefOr[__string] = js.undefined,
@@ -1356,6 +1380,7 @@ package pinpoint {
   }
 
   object BaseKpiResult {
+    @inline
     def apply(
         Rows: ListOfResultRow
     ): BaseKpiResult = {
@@ -1382,6 +1407,7 @@ package pinpoint {
   }
 
   object CampaignDateRangeKpiResponse {
+    @inline
     def apply(
         ApplicationId: __string,
         CampaignId: __string,
@@ -1417,6 +1443,7 @@ package pinpoint {
   }
 
   object CampaignEmailMessage {
+    @inline
     def apply(
         Title: __string,
         Body: js.UndefOr[__string] = js.undefined,
@@ -1444,6 +1471,7 @@ package pinpoint {
   }
 
   object CampaignEventFilter {
+    @inline
     def apply(
         Dimensions: EventDimensions,
         FilterType: FilterType
@@ -1468,6 +1496,7 @@ package pinpoint {
   }
 
   object CampaignHook {
+    @inline
     def apply(
         LambdaFunctionName: js.UndefOr[__string] = js.undefined,
         Mode: js.UndefOr[Mode] = js.undefined,
@@ -1493,6 +1522,7 @@ package pinpoint {
   }
 
   object CampaignLimits {
+    @inline
     def apply(
         Daily: js.UndefOr[__integer] = js.undefined,
         MaximumDuration: js.UndefOr[__integer] = js.undefined,
@@ -1538,6 +1568,7 @@ package pinpoint {
   }
 
   object CampaignResponse {
+    @inline
     def apply(
         ApplicationId: __string,
         Arn: __string,
@@ -1602,6 +1633,7 @@ package pinpoint {
   }
 
   object CampaignSmsMessage {
+    @inline
     def apply(
         Body: js.UndefOr[__string] = js.undefined,
         MessageType: js.UndefOr[MessageType] = js.undefined,
@@ -1624,6 +1656,7 @@ package pinpoint {
   }
 
   object CampaignState {
+    @inline
     def apply(
         CampaignStatus: js.UndefOr[CampaignStatus] = js.undefined
     ): CampaignState = {
@@ -1654,6 +1687,7 @@ package pinpoint {
   }
 
   object CampaignsResponse {
+    @inline
     def apply(
         Item: ListOfCampaignResponse,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -1684,6 +1718,7 @@ package pinpoint {
   }
 
   object ChannelResponse {
+    @inline
     def apply(
         ApplicationId: js.UndefOr[__string] = js.undefined,
         CreationDate: js.UndefOr[__string] = js.undefined,
@@ -1736,6 +1771,7 @@ package pinpoint {
   }
 
   object ChannelsResponse {
+    @inline
     def apply(
         Channels: MapOfChannelResponse
     ): ChannelsResponse = {
@@ -1753,6 +1789,7 @@ package pinpoint {
   }
 
   object CreateAppRequest {
+    @inline
     def apply(
         CreateApplicationRequest: CreateApplicationRequest
     ): CreateAppRequest = {
@@ -1770,6 +1807,7 @@ package pinpoint {
   }
 
   object CreateAppResponse {
+    @inline
     def apply(
         ApplicationResponse: ApplicationResponse
     ): CreateAppResponse = {
@@ -1791,6 +1829,7 @@ package pinpoint {
   }
 
   object CreateApplicationRequest {
+    @inline
     def apply(
         Name: __string,
         tags: js.UndefOr[MapOf__string] = js.undefined
@@ -1811,6 +1850,7 @@ package pinpoint {
   }
 
   object CreateCampaignRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         WriteCampaignRequest: WriteCampaignRequest
@@ -1830,6 +1870,7 @@ package pinpoint {
   }
 
   object CreateCampaignResponse {
+    @inline
     def apply(
         CampaignResponse: CampaignResponse
     ): CreateCampaignResponse = {
@@ -1848,6 +1889,7 @@ package pinpoint {
   }
 
   object CreateExportJobRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         ExportJobRequest: ExportJobRequest
@@ -1867,6 +1909,7 @@ package pinpoint {
   }
 
   object CreateExportJobResponse {
+    @inline
     def apply(
         ExportJobResponse: ExportJobResponse
     ): CreateExportJobResponse = {
@@ -1885,6 +1928,7 @@ package pinpoint {
   }
 
   object CreateImportJobRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         ImportJobRequest: ImportJobRequest
@@ -1904,6 +1948,7 @@ package pinpoint {
   }
 
   object CreateImportJobResponse {
+    @inline
     def apply(
         ImportJobResponse: ImportJobResponse
     ): CreateImportJobResponse = {
@@ -1922,6 +1967,7 @@ package pinpoint {
   }
 
   object CreateSegmentRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         WriteSegmentRequest: WriteSegmentRequest
@@ -1941,6 +1987,7 @@ package pinpoint {
   }
 
   object CreateSegmentResponse {
+    @inline
     def apply(
         SegmentResponse: SegmentResponse
     ): CreateSegmentResponse = {
@@ -1962,6 +2009,7 @@ package pinpoint {
   }
 
   object DefaultMessage {
+    @inline
     def apply(
         Body: js.UndefOr[__string] = js.undefined,
         Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined
@@ -1988,6 +2036,7 @@ package pinpoint {
   }
 
   object DefaultPushNotificationMessage {
+    @inline
     def apply(
         Action: js.UndefOr[Action] = js.undefined,
         Body: js.UndefOr[__string] = js.undefined,
@@ -2015,6 +2064,7 @@ package pinpoint {
   }
 
   object DeleteAdmChannelRequest {
+    @inline
     def apply(
         ApplicationId: __string
     ): DeleteAdmChannelRequest = {
@@ -2032,6 +2082,7 @@ package pinpoint {
   }
 
   object DeleteAdmChannelResponse {
+    @inline
     def apply(
         ADMChannelResponse: ADMChannelResponse
     ): DeleteAdmChannelResponse = {
@@ -2049,6 +2100,7 @@ package pinpoint {
   }
 
   object DeleteApnsChannelRequest {
+    @inline
     def apply(
         ApplicationId: __string
     ): DeleteApnsChannelRequest = {
@@ -2066,6 +2118,7 @@ package pinpoint {
   }
 
   object DeleteApnsChannelResponse {
+    @inline
     def apply(
         APNSChannelResponse: APNSChannelResponse
     ): DeleteApnsChannelResponse = {
@@ -2083,6 +2136,7 @@ package pinpoint {
   }
 
   object DeleteApnsSandboxChannelRequest {
+    @inline
     def apply(
         ApplicationId: __string
     ): DeleteApnsSandboxChannelRequest = {
@@ -2100,6 +2154,7 @@ package pinpoint {
   }
 
   object DeleteApnsSandboxChannelResponse {
+    @inline
     def apply(
         APNSSandboxChannelResponse: APNSSandboxChannelResponse
     ): DeleteApnsSandboxChannelResponse = {
@@ -2117,6 +2172,7 @@ package pinpoint {
   }
 
   object DeleteApnsVoipChannelRequest {
+    @inline
     def apply(
         ApplicationId: __string
     ): DeleteApnsVoipChannelRequest = {
@@ -2134,6 +2190,7 @@ package pinpoint {
   }
 
   object DeleteApnsVoipChannelResponse {
+    @inline
     def apply(
         APNSVoipChannelResponse: APNSVoipChannelResponse
     ): DeleteApnsVoipChannelResponse = {
@@ -2151,6 +2208,7 @@ package pinpoint {
   }
 
   object DeleteApnsVoipSandboxChannelRequest {
+    @inline
     def apply(
         ApplicationId: __string
     ): DeleteApnsVoipSandboxChannelRequest = {
@@ -2168,6 +2226,7 @@ package pinpoint {
   }
 
   object DeleteApnsVoipSandboxChannelResponse {
+    @inline
     def apply(
         APNSVoipSandboxChannelResponse: APNSVoipSandboxChannelResponse
     ): DeleteApnsVoipSandboxChannelResponse = {
@@ -2185,6 +2244,7 @@ package pinpoint {
   }
 
   object DeleteAppRequest {
+    @inline
     def apply(
         ApplicationId: __string
     ): DeleteAppRequest = {
@@ -2202,6 +2262,7 @@ package pinpoint {
   }
 
   object DeleteAppResponse {
+    @inline
     def apply(
         ApplicationResponse: ApplicationResponse
     ): DeleteAppResponse = {
@@ -2219,6 +2280,7 @@ package pinpoint {
   }
 
   object DeleteBaiduChannelRequest {
+    @inline
     def apply(
         ApplicationId: __string
     ): DeleteBaiduChannelRequest = {
@@ -2236,6 +2298,7 @@ package pinpoint {
   }
 
   object DeleteBaiduChannelResponse {
+    @inline
     def apply(
         BaiduChannelResponse: BaiduChannelResponse
     ): DeleteBaiduChannelResponse = {
@@ -2254,6 +2317,7 @@ package pinpoint {
   }
 
   object DeleteCampaignRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         CampaignId: __string
@@ -2273,6 +2337,7 @@ package pinpoint {
   }
 
   object DeleteCampaignResponse {
+    @inline
     def apply(
         CampaignResponse: CampaignResponse
     ): DeleteCampaignResponse = {
@@ -2290,6 +2355,7 @@ package pinpoint {
   }
 
   object DeleteEmailChannelRequest {
+    @inline
     def apply(
         ApplicationId: __string
     ): DeleteEmailChannelRequest = {
@@ -2307,6 +2373,7 @@ package pinpoint {
   }
 
   object DeleteEmailChannelResponse {
+    @inline
     def apply(
         EmailChannelResponse: EmailChannelResponse
     ): DeleteEmailChannelResponse = {
@@ -2325,6 +2392,7 @@ package pinpoint {
   }
 
   object DeleteEndpointRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         EndpointId: __string
@@ -2344,6 +2412,7 @@ package pinpoint {
   }
 
   object DeleteEndpointResponse {
+    @inline
     def apply(
         EndpointResponse: EndpointResponse
     ): DeleteEndpointResponse = {
@@ -2361,6 +2430,7 @@ package pinpoint {
   }
 
   object DeleteEventStreamRequest {
+    @inline
     def apply(
         ApplicationId: __string
     ): DeleteEventStreamRequest = {
@@ -2378,6 +2448,7 @@ package pinpoint {
   }
 
   object DeleteEventStreamResponse {
+    @inline
     def apply(
         EventStream: EventStream
     ): DeleteEventStreamResponse = {
@@ -2395,6 +2466,7 @@ package pinpoint {
   }
 
   object DeleteGcmChannelRequest {
+    @inline
     def apply(
         ApplicationId: __string
     ): DeleteGcmChannelRequest = {
@@ -2412,6 +2484,7 @@ package pinpoint {
   }
 
   object DeleteGcmChannelResponse {
+    @inline
     def apply(
         GCMChannelResponse: GCMChannelResponse
     ): DeleteGcmChannelResponse = {
@@ -2430,6 +2503,7 @@ package pinpoint {
   }
 
   object DeleteSegmentRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         SegmentId: __string
@@ -2449,6 +2523,7 @@ package pinpoint {
   }
 
   object DeleteSegmentResponse {
+    @inline
     def apply(
         SegmentResponse: SegmentResponse
     ): DeleteSegmentResponse = {
@@ -2466,6 +2541,7 @@ package pinpoint {
   }
 
   object DeleteSmsChannelRequest {
+    @inline
     def apply(
         ApplicationId: __string
     ): DeleteSmsChannelRequest = {
@@ -2483,6 +2559,7 @@ package pinpoint {
   }
 
   object DeleteSmsChannelResponse {
+    @inline
     def apply(
         SMSChannelResponse: SMSChannelResponse
     ): DeleteSmsChannelResponse = {
@@ -2501,6 +2578,7 @@ package pinpoint {
   }
 
   object DeleteUserEndpointsRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         UserId: __string
@@ -2520,6 +2598,7 @@ package pinpoint {
   }
 
   object DeleteUserEndpointsResponse {
+    @inline
     def apply(
         EndpointsResponse: EndpointsResponse
     ): DeleteUserEndpointsResponse = {
@@ -2537,6 +2616,7 @@ package pinpoint {
   }
 
   object DeleteVoiceChannelRequest {
+    @inline
     def apply(
         ApplicationId: __string
     ): DeleteVoiceChannelRequest = {
@@ -2554,6 +2634,7 @@ package pinpoint {
   }
 
   object DeleteVoiceChannelResponse {
+    @inline
     def apply(
         VoiceChannelResponse: VoiceChannelResponse
     ): DeleteVoiceChannelResponse = {
@@ -2603,6 +2684,7 @@ package pinpoint {
   }
 
   object DirectMessageConfiguration {
+    @inline
     def apply(
         ADMMessage: js.UndefOr[ADMMessage] = js.undefined,
         APNSMessage: js.UndefOr[APNSMessage] = js.undefined,
@@ -2652,6 +2734,7 @@ package pinpoint {
   }
 
   object EmailChannelRequest {
+    @inline
     def apply(
         FromAddress: __string,
         Identity: __string,
@@ -2694,6 +2777,7 @@ package pinpoint {
   }
 
   object EmailChannelResponse {
+    @inline
     def apply(
         Platform: __string,
         ApplicationId: js.UndefOr[__string] = js.undefined,
@@ -2748,6 +2832,7 @@ package pinpoint {
   }
 
   object EmailMessage {
+    @inline
     def apply(
         Body: js.UndefOr[__string] = js.undefined,
         FeedbackForwardingAddress: js.UndefOr[__string] = js.undefined,
@@ -2791,6 +2876,7 @@ package pinpoint {
   }
 
   object EndpointBatchItem {
+    @inline
     def apply(
         Address: js.UndefOr[__string] = js.undefined,
         Attributes: js.UndefOr[MapOfListOf__string] = js.undefined,
@@ -2831,6 +2917,7 @@ package pinpoint {
   }
 
   object EndpointBatchRequest {
+    @inline
     def apply(
         Item: ListOfEndpointBatchItem
     ): EndpointBatchRequest = {
@@ -2858,6 +2945,7 @@ package pinpoint {
   }
 
   object EndpointDemographic {
+    @inline
     def apply(
         AppVersion: js.UndefOr[__string] = js.undefined,
         Locale: js.UndefOr[__string] = js.undefined,
@@ -2891,6 +2979,7 @@ package pinpoint {
   }
 
   object EndpointItemResponse {
+    @inline
     def apply(
         Message: js.UndefOr[__string] = js.undefined,
         StatusCode: js.UndefOr[__integer] = js.undefined
@@ -2916,6 +3005,7 @@ package pinpoint {
   }
 
   object EndpointLocation {
+    @inline
     def apply(
         City: js.UndefOr[__string] = js.undefined,
         Country: js.UndefOr[__string] = js.undefined,
@@ -2949,6 +3039,7 @@ package pinpoint {
   }
 
   object EndpointMessageResult {
+    @inline
     def apply(
         DeliveryStatus: DeliveryStatus,
         StatusCode: __integer,
@@ -2989,6 +3080,7 @@ package pinpoint {
   }
 
   object EndpointRequest {
+    @inline
     def apply(
         Address: js.UndefOr[__string] = js.undefined,
         Attributes: js.UndefOr[MapOfListOf__string] = js.undefined,
@@ -3041,6 +3133,7 @@ package pinpoint {
   }
 
   object EndpointResponse {
+    @inline
     def apply(
         Address: js.UndefOr[__string] = js.undefined,
         ApplicationId: js.UndefOr[__string] = js.undefined,
@@ -3091,6 +3184,7 @@ package pinpoint {
   }
 
   object EndpointSendConfiguration {
+    @inline
     def apply(
         BodyOverride: js.UndefOr[__string] = js.undefined,
         Context: js.UndefOr[MapOf__string] = js.undefined,
@@ -3118,6 +3212,7 @@ package pinpoint {
   }
 
   object EndpointUser {
+    @inline
     def apply(
         UserAttributes: js.UndefOr[MapOfListOf__string] = js.undefined,
         UserId: js.UndefOr[__string] = js.undefined
@@ -3138,6 +3233,7 @@ package pinpoint {
   }
 
   object EndpointsResponse {
+    @inline
     def apply(
         Item: ListOfEndpointResponse
     ): EndpointsResponse = {
@@ -3167,6 +3263,7 @@ package pinpoint {
   }
 
   object Event {
+    @inline
     def apply(
         EventType: __string,
         Timestamp: __string,
@@ -3207,6 +3304,7 @@ package pinpoint {
   }
 
   object EventDimensions {
+    @inline
     def apply(
         Attributes: js.UndefOr[MapOfAttributeDimension] = js.undefined,
         EventType: js.UndefOr[SetDimension] = js.undefined,
@@ -3230,6 +3328,7 @@ package pinpoint {
   }
 
   object EventItemResponse {
+    @inline
     def apply(
         Message: js.UndefOr[__string] = js.undefined,
         StatusCode: js.UndefOr[__integer] = js.undefined
@@ -3255,6 +3354,7 @@ package pinpoint {
   }
 
   object EventStream {
+    @inline
     def apply(
         ApplicationId: __string,
         DestinationStreamArn: __string,
@@ -3286,6 +3386,7 @@ package pinpoint {
   }
 
   object EventsBatch {
+    @inline
     def apply(
         Endpoint: PublicEndpoint,
         Events: MapOfEvent
@@ -3308,6 +3409,7 @@ package pinpoint {
   }
 
   object EventsRequest {
+    @inline
     def apply(
         BatchItem: MapOfEventsBatch
     ): EventsRequest = {
@@ -3328,6 +3430,7 @@ package pinpoint {
   }
 
   object EventsResponse {
+    @inline
     def apply(
         Results: js.UndefOr[MapOfItemResponse] = js.undefined
     ): EventsResponse = {
@@ -3349,6 +3452,7 @@ package pinpoint {
   }
 
   object ExportJobRequest {
+    @inline
     def apply(
         RoleArn: __string,
         S3UrlPrefix: __string,
@@ -3378,6 +3482,7 @@ package pinpoint {
   }
 
   object ExportJobResource {
+    @inline
     def apply(
         RoleArn: __string,
         S3UrlPrefix: __string,
@@ -3416,6 +3521,7 @@ package pinpoint {
   }
 
   object ExportJobResponse {
+    @inline
     def apply(
         ApplicationId: __string,
         CreationDate: __string,
@@ -3461,6 +3567,7 @@ package pinpoint {
   }
 
   object ExportJobsResponse {
+    @inline
     def apply(
         Item: ListOfExportJobResponse,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -3509,6 +3616,7 @@ package pinpoint {
   }
 
   object GCMChannelRequest {
+    @inline
     def apply(
         ApiKey: __string,
         Enabled: js.UndefOr[__boolean] = js.undefined
@@ -3541,6 +3649,7 @@ package pinpoint {
   }
 
   object GCMChannelResponse {
+    @inline
     def apply(
         Credential: __string,
         Platform: __string,
@@ -3597,6 +3706,7 @@ package pinpoint {
   }
 
   object GCMMessage {
+    @inline
     def apply(
         Action: js.UndefOr[Action] = js.undefined,
         Body: js.UndefOr[__string] = js.undefined,
@@ -3648,6 +3758,7 @@ package pinpoint {
   }
 
   object GPSCoordinates {
+    @inline
     def apply(
         Latitude: __double,
         Longitude: __double
@@ -3671,6 +3782,7 @@ package pinpoint {
   }
 
   object GPSPointDimension {
+    @inline
     def apply(
         Coordinates: GPSCoordinates,
         RangeInKilometers: js.UndefOr[__double] = js.undefined
@@ -3690,6 +3802,7 @@ package pinpoint {
   }
 
   object GetAdmChannelRequest {
+    @inline
     def apply(
         ApplicationId: __string
     ): GetAdmChannelRequest = {
@@ -3707,6 +3820,7 @@ package pinpoint {
   }
 
   object GetAdmChannelResponse {
+    @inline
     def apply(
         ADMChannelResponse: ADMChannelResponse
     ): GetAdmChannelResponse = {
@@ -3724,6 +3838,7 @@ package pinpoint {
   }
 
   object GetApnsChannelRequest {
+    @inline
     def apply(
         ApplicationId: __string
     ): GetApnsChannelRequest = {
@@ -3741,6 +3856,7 @@ package pinpoint {
   }
 
   object GetApnsChannelResponse {
+    @inline
     def apply(
         APNSChannelResponse: APNSChannelResponse
     ): GetApnsChannelResponse = {
@@ -3758,6 +3874,7 @@ package pinpoint {
   }
 
   object GetApnsSandboxChannelRequest {
+    @inline
     def apply(
         ApplicationId: __string
     ): GetApnsSandboxChannelRequest = {
@@ -3775,6 +3892,7 @@ package pinpoint {
   }
 
   object GetApnsSandboxChannelResponse {
+    @inline
     def apply(
         APNSSandboxChannelResponse: APNSSandboxChannelResponse
     ): GetApnsSandboxChannelResponse = {
@@ -3792,6 +3910,7 @@ package pinpoint {
   }
 
   object GetApnsVoipChannelRequest {
+    @inline
     def apply(
         ApplicationId: __string
     ): GetApnsVoipChannelRequest = {
@@ -3809,6 +3928,7 @@ package pinpoint {
   }
 
   object GetApnsVoipChannelResponse {
+    @inline
     def apply(
         APNSVoipChannelResponse: APNSVoipChannelResponse
     ): GetApnsVoipChannelResponse = {
@@ -3826,6 +3946,7 @@ package pinpoint {
   }
 
   object GetApnsVoipSandboxChannelRequest {
+    @inline
     def apply(
         ApplicationId: __string
     ): GetApnsVoipSandboxChannelRequest = {
@@ -3843,6 +3964,7 @@ package pinpoint {
   }
 
   object GetApnsVoipSandboxChannelResponse {
+    @inline
     def apply(
         APNSVoipSandboxChannelResponse: APNSVoipSandboxChannelResponse
     ): GetApnsVoipSandboxChannelResponse = {
@@ -3860,6 +3982,7 @@ package pinpoint {
   }
 
   object GetAppRequest {
+    @inline
     def apply(
         ApplicationId: __string
     ): GetAppRequest = {
@@ -3877,6 +4000,7 @@ package pinpoint {
   }
 
   object GetAppResponse {
+    @inline
     def apply(
         ApplicationResponse: ApplicationResponse
     ): GetAppResponse = {
@@ -3899,6 +4023,7 @@ package pinpoint {
   }
 
   object GetApplicationDateRangeKpiRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         KpiName: __string,
@@ -3926,6 +4051,7 @@ package pinpoint {
   }
 
   object GetApplicationDateRangeKpiResponse {
+    @inline
     def apply(
         ApplicationDateRangeKpiResponse: ApplicationDateRangeKpiResponse
     ): GetApplicationDateRangeKpiResponse = {
@@ -3943,6 +4069,7 @@ package pinpoint {
   }
 
   object GetApplicationSettingsRequest {
+    @inline
     def apply(
         ApplicationId: __string
     ): GetApplicationSettingsRequest = {
@@ -3960,6 +4087,7 @@ package pinpoint {
   }
 
   object GetApplicationSettingsResponse {
+    @inline
     def apply(
         ApplicationSettingsResource: ApplicationSettingsResource
     ): GetApplicationSettingsResponse = {
@@ -3978,6 +4106,7 @@ package pinpoint {
   }
 
   object GetAppsRequest {
+    @inline
     def apply(
         PageSize: js.UndefOr[__string] = js.undefined,
         Token: js.UndefOr[__string] = js.undefined
@@ -3995,6 +4124,7 @@ package pinpoint {
   }
 
   object GetAppsResponse {
+    @inline
     def apply(
         ApplicationsResponse: ApplicationsResponse
     ): GetAppsResponse = {
@@ -4012,6 +4142,7 @@ package pinpoint {
   }
 
   object GetBaiduChannelRequest {
+    @inline
     def apply(
         ApplicationId: __string
     ): GetBaiduChannelRequest = {
@@ -4029,6 +4160,7 @@ package pinpoint {
   }
 
   object GetBaiduChannelResponse {
+    @inline
     def apply(
         BaiduChannelResponse: BaiduChannelResponse
     ): GetBaiduChannelResponse = {
@@ -4049,6 +4181,7 @@ package pinpoint {
   }
 
   object GetCampaignActivitiesRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         CampaignId: __string,
@@ -4072,6 +4205,7 @@ package pinpoint {
   }
 
   object GetCampaignActivitiesResponse {
+    @inline
     def apply(
         ActivitiesResponse: ActivitiesResponse
     ): GetCampaignActivitiesResponse = {
@@ -4095,6 +4229,7 @@ package pinpoint {
   }
 
   object GetCampaignDateRangeKpiRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         CampaignId: __string,
@@ -4124,6 +4259,7 @@ package pinpoint {
   }
 
   object GetCampaignDateRangeKpiResponse {
+    @inline
     def apply(
         CampaignDateRangeKpiResponse: CampaignDateRangeKpiResponse
     ): GetCampaignDateRangeKpiResponse = {
@@ -4142,6 +4278,7 @@ package pinpoint {
   }
 
   object GetCampaignRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         CampaignId: __string
@@ -4161,6 +4298,7 @@ package pinpoint {
   }
 
   object GetCampaignResponse {
+    @inline
     def apply(
         CampaignResponse: CampaignResponse
     ): GetCampaignResponse = {
@@ -4180,6 +4318,7 @@ package pinpoint {
   }
 
   object GetCampaignVersionRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         CampaignId: __string,
@@ -4201,6 +4340,7 @@ package pinpoint {
   }
 
   object GetCampaignVersionResponse {
+    @inline
     def apply(
         CampaignResponse: CampaignResponse
     ): GetCampaignVersionResponse = {
@@ -4221,6 +4361,7 @@ package pinpoint {
   }
 
   object GetCampaignVersionsRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         CampaignId: __string,
@@ -4244,6 +4385,7 @@ package pinpoint {
   }
 
   object GetCampaignVersionsResponse {
+    @inline
     def apply(
         CampaignsResponse: CampaignsResponse
     ): GetCampaignVersionsResponse = {
@@ -4263,6 +4405,7 @@ package pinpoint {
   }
 
   object GetCampaignsRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         PageSize: js.UndefOr[__string] = js.undefined,
@@ -4284,6 +4427,7 @@ package pinpoint {
   }
 
   object GetCampaignsResponse {
+    @inline
     def apply(
         CampaignsResponse: CampaignsResponse
     ): GetCampaignsResponse = {
@@ -4301,6 +4445,7 @@ package pinpoint {
   }
 
   object GetChannelsRequest {
+    @inline
     def apply(
         ApplicationId: __string
     ): GetChannelsRequest = {
@@ -4318,6 +4463,7 @@ package pinpoint {
   }
 
   object GetChannelsResponse {
+    @inline
     def apply(
         ChannelsResponse: ChannelsResponse
     ): GetChannelsResponse = {
@@ -4335,6 +4481,7 @@ package pinpoint {
   }
 
   object GetEmailChannelRequest {
+    @inline
     def apply(
         ApplicationId: __string
     ): GetEmailChannelRequest = {
@@ -4352,6 +4499,7 @@ package pinpoint {
   }
 
   object GetEmailChannelResponse {
+    @inline
     def apply(
         EmailChannelResponse: EmailChannelResponse
     ): GetEmailChannelResponse = {
@@ -4370,6 +4518,7 @@ package pinpoint {
   }
 
   object GetEndpointRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         EndpointId: __string
@@ -4389,6 +4538,7 @@ package pinpoint {
   }
 
   object GetEndpointResponse {
+    @inline
     def apply(
         EndpointResponse: EndpointResponse
     ): GetEndpointResponse = {
@@ -4406,6 +4556,7 @@ package pinpoint {
   }
 
   object GetEventStreamRequest {
+    @inline
     def apply(
         ApplicationId: __string
     ): GetEventStreamRequest = {
@@ -4423,6 +4574,7 @@ package pinpoint {
   }
 
   object GetEventStreamResponse {
+    @inline
     def apply(
         EventStream: EventStream
     ): GetEventStreamResponse = {
@@ -4441,6 +4593,7 @@ package pinpoint {
   }
 
   object GetExportJobRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         JobId: __string
@@ -4460,6 +4613,7 @@ package pinpoint {
   }
 
   object GetExportJobResponse {
+    @inline
     def apply(
         ExportJobResponse: ExportJobResponse
     ): GetExportJobResponse = {
@@ -4479,6 +4633,7 @@ package pinpoint {
   }
 
   object GetExportJobsRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         PageSize: js.UndefOr[__string] = js.undefined,
@@ -4500,6 +4655,7 @@ package pinpoint {
   }
 
   object GetExportJobsResponse {
+    @inline
     def apply(
         ExportJobsResponse: ExportJobsResponse
     ): GetExportJobsResponse = {
@@ -4517,6 +4673,7 @@ package pinpoint {
   }
 
   object GetGcmChannelRequest {
+    @inline
     def apply(
         ApplicationId: __string
     ): GetGcmChannelRequest = {
@@ -4534,6 +4691,7 @@ package pinpoint {
   }
 
   object GetGcmChannelResponse {
+    @inline
     def apply(
         GCMChannelResponse: GCMChannelResponse
     ): GetGcmChannelResponse = {
@@ -4552,6 +4710,7 @@ package pinpoint {
   }
 
   object GetImportJobRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         JobId: __string
@@ -4571,6 +4730,7 @@ package pinpoint {
   }
 
   object GetImportJobResponse {
+    @inline
     def apply(
         ImportJobResponse: ImportJobResponse
     ): GetImportJobResponse = {
@@ -4590,6 +4750,7 @@ package pinpoint {
   }
 
   object GetImportJobsRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         PageSize: js.UndefOr[__string] = js.undefined,
@@ -4611,6 +4772,7 @@ package pinpoint {
   }
 
   object GetImportJobsResponse {
+    @inline
     def apply(
         ImportJobsResponse: ImportJobsResponse
     ): GetImportJobsResponse = {
@@ -4631,6 +4793,7 @@ package pinpoint {
   }
 
   object GetSegmentExportJobsRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         SegmentId: __string,
@@ -4654,6 +4817,7 @@ package pinpoint {
   }
 
   object GetSegmentExportJobsResponse {
+    @inline
     def apply(
         ExportJobsResponse: ExportJobsResponse
     ): GetSegmentExportJobsResponse = {
@@ -4674,6 +4838,7 @@ package pinpoint {
   }
 
   object GetSegmentImportJobsRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         SegmentId: __string,
@@ -4697,6 +4862,7 @@ package pinpoint {
   }
 
   object GetSegmentImportJobsResponse {
+    @inline
     def apply(
         ImportJobsResponse: ImportJobsResponse
     ): GetSegmentImportJobsResponse = {
@@ -4715,6 +4881,7 @@ package pinpoint {
   }
 
   object GetSegmentRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         SegmentId: __string
@@ -4734,6 +4901,7 @@ package pinpoint {
   }
 
   object GetSegmentResponse {
+    @inline
     def apply(
         SegmentResponse: SegmentResponse
     ): GetSegmentResponse = {
@@ -4753,6 +4921,7 @@ package pinpoint {
   }
 
   object GetSegmentVersionRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         SegmentId: __string,
@@ -4774,6 +4943,7 @@ package pinpoint {
   }
 
   object GetSegmentVersionResponse {
+    @inline
     def apply(
         SegmentResponse: SegmentResponse
     ): GetSegmentVersionResponse = {
@@ -4794,6 +4964,7 @@ package pinpoint {
   }
 
   object GetSegmentVersionsRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         SegmentId: __string,
@@ -4817,6 +4988,7 @@ package pinpoint {
   }
 
   object GetSegmentVersionsResponse {
+    @inline
     def apply(
         SegmentsResponse: SegmentsResponse
     ): GetSegmentVersionsResponse = {
@@ -4836,6 +5008,7 @@ package pinpoint {
   }
 
   object GetSegmentsRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         PageSize: js.UndefOr[__string] = js.undefined,
@@ -4857,6 +5030,7 @@ package pinpoint {
   }
 
   object GetSegmentsResponse {
+    @inline
     def apply(
         SegmentsResponse: SegmentsResponse
     ): GetSegmentsResponse = {
@@ -4874,6 +5048,7 @@ package pinpoint {
   }
 
   object GetSmsChannelRequest {
+    @inline
     def apply(
         ApplicationId: __string
     ): GetSmsChannelRequest = {
@@ -4891,6 +5066,7 @@ package pinpoint {
   }
 
   object GetSmsChannelResponse {
+    @inline
     def apply(
         SMSChannelResponse: SMSChannelResponse
     ): GetSmsChannelResponse = {
@@ -4909,6 +5085,7 @@ package pinpoint {
   }
 
   object GetUserEndpointsRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         UserId: __string
@@ -4928,6 +5105,7 @@ package pinpoint {
   }
 
   object GetUserEndpointsResponse {
+    @inline
     def apply(
         EndpointsResponse: EndpointsResponse
     ): GetUserEndpointsResponse = {
@@ -4945,6 +5123,7 @@ package pinpoint {
   }
 
   object GetVoiceChannelRequest {
+    @inline
     def apply(
         ApplicationId: __string
     ): GetVoiceChannelRequest = {
@@ -4962,6 +5141,7 @@ package pinpoint {
   }
 
   object GetVoiceChannelResponse {
+    @inline
     def apply(
         VoiceChannelResponse: VoiceChannelResponse
     ): GetVoiceChannelResponse = {
@@ -4989,6 +5169,7 @@ package pinpoint {
   }
 
   object ImportJobRequest {
+    @inline
     def apply(
         Format: Format,
         RoleArn: __string,
@@ -5030,6 +5211,7 @@ package pinpoint {
   }
 
   object ImportJobResource {
+    @inline
     def apply(
         Format: Format,
         RoleArn: __string,
@@ -5076,6 +5258,7 @@ package pinpoint {
   }
 
   object ImportJobResponse {
+    @inline
     def apply(
         ApplicationId: __string,
         CreationDate: __string,
@@ -5121,6 +5304,7 @@ package pinpoint {
   }
 
   object ImportJobsResponse {
+    @inline
     def apply(
         Item: ListOfImportJobResponse,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -5152,6 +5336,7 @@ package pinpoint {
   }
 
   object ItemResponse {
+    @inline
     def apply(
         EndpointItemResponse: js.UndefOr[EndpointItemResponse] = js.undefined,
         EventsItemResponse: js.UndefOr[MapOfEventItemResponse] = js.undefined
@@ -5181,6 +5366,7 @@ package pinpoint {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceArn: __string
     ): ListTagsForResourceRequest = {
@@ -5198,6 +5384,7 @@ package pinpoint {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         TagsModel: TagsModel
     ): ListTagsForResourceResponse = {
@@ -5229,6 +5416,7 @@ package pinpoint {
   }
 
   object Message {
+    @inline
     def apply(
         Action: js.UndefOr[Action] = js.undefined,
         Body: js.UndefOr[__string] = js.undefined,
@@ -5270,6 +5458,7 @@ package pinpoint {
   }
 
   object MessageBody {
+    @inline
     def apply(
         Message: js.UndefOr[__string] = js.undefined,
         RequestID: js.UndefOr[__string] = js.undefined
@@ -5296,6 +5485,7 @@ package pinpoint {
   }
 
   object MessageConfiguration {
+    @inline
     def apply(
         ADMMessage: js.UndefOr[Message] = js.undefined,
         APNSMessage: js.UndefOr[Message] = js.undefined,
@@ -5330,6 +5520,7 @@ package pinpoint {
   }
 
   object MessageRequest {
+    @inline
     def apply(
         MessageConfiguration: DirectMessageConfiguration,
         Addresses: js.UndefOr[MapOfAddressConfiguration] = js.undefined,
@@ -5361,6 +5552,7 @@ package pinpoint {
   }
 
   object MessageResponse {
+    @inline
     def apply(
         ApplicationId: __string,
         EndpointResult: js.UndefOr[MapOfEndpointMessageResult] = js.undefined,
@@ -5391,6 +5583,7 @@ package pinpoint {
   }
 
   object MessageResult {
+    @inline
     def apply(
         DeliveryStatus: DeliveryStatus,
         StatusCode: __integer,
@@ -5427,6 +5620,7 @@ package pinpoint {
   }
 
   object MetricDimension {
+    @inline
     def apply(
         ComparisonOperator: __string,
         Value: __double
@@ -5457,6 +5651,7 @@ package pinpoint {
   }
 
   object NumberValidateRequest {
+    @inline
     def apply(
         IsoCountryCode: js.UndefOr[__string] = js.undefined,
         PhoneNumber: js.UndefOr[__string] = js.undefined
@@ -5490,6 +5685,7 @@ package pinpoint {
   }
 
   object NumberValidateResponse {
+    @inline
     def apply(
         Carrier: js.UndefOr[__string] = js.undefined,
         City: js.UndefOr[__string] = js.undefined,
@@ -5533,6 +5729,7 @@ package pinpoint {
   }
 
   object PhoneNumberValidateRequest {
+    @inline
     def apply(
         NumberValidateRequest: NumberValidateRequest
     ): PhoneNumberValidateRequest = {
@@ -5550,6 +5747,7 @@ package pinpoint {
   }
 
   object PhoneNumberValidateResponse {
+    @inline
     def apply(
         NumberValidateResponse: NumberValidateResponse
     ): PhoneNumberValidateResponse = {
@@ -5580,6 +5778,7 @@ package pinpoint {
   }
 
   object PublicEndpoint {
+    @inline
     def apply(
         Address: js.UndefOr[__string] = js.undefined,
         Attributes: js.UndefOr[MapOfListOf__string] = js.undefined,
@@ -5616,6 +5815,7 @@ package pinpoint {
   }
 
   object PutEventStreamRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         WriteEventStream: WriteEventStream
@@ -5635,6 +5835,7 @@ package pinpoint {
   }
 
   object PutEventStreamResponse {
+    @inline
     def apply(
         EventStream: EventStream
     ): PutEventStreamResponse = {
@@ -5653,6 +5854,7 @@ package pinpoint {
   }
 
   object PutEventsRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         EventsRequest: EventsRequest
@@ -5672,6 +5874,7 @@ package pinpoint {
   }
 
   object PutEventsResponse {
+    @inline
     def apply(
         EventsResponse: EventsResponse
     ): PutEventsResponse = {
@@ -5693,6 +5896,7 @@ package pinpoint {
   }
 
   object QuietTime {
+    @inline
     def apply(
         End: js.UndefOr[__string] = js.undefined,
         Start: js.UndefOr[__string] = js.undefined
@@ -5713,6 +5917,7 @@ package pinpoint {
   }
 
   object RawEmail {
+    @inline
     def apply(
         Data: js.UndefOr[__blob] = js.undefined
     ): RawEmail = {
@@ -5732,6 +5937,7 @@ package pinpoint {
   }
 
   object RecencyDimension {
+    @inline
     def apply(
         Duration: Duration,
         RecencyType: RecencyType
@@ -5760,6 +5966,7 @@ package pinpoint {
   }
 
   object RemoveAttributesRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         AttributeType: __string,
@@ -5781,6 +5988,7 @@ package pinpoint {
   }
 
   object RemoveAttributesResponse {
+    @inline
     def apply(
         AttributesResource: AttributesResource
     ): RemoveAttributesResponse = {
@@ -5802,6 +6010,7 @@ package pinpoint {
   }
 
   object ResultRow {
+    @inline
     def apply(
         GroupedBys: ListOfResultRowValue,
         Values: ListOfResultRowValue
@@ -5826,6 +6035,7 @@ package pinpoint {
   }
 
   object ResultRowValue {
+    @inline
     def apply(
         Key: __string,
         Type: __string,
@@ -5852,6 +6062,7 @@ package pinpoint {
   }
 
   object SMSChannelRequest {
+    @inline
     def apply(
         Enabled: js.UndefOr[__boolean] = js.undefined,
         SenderId: js.UndefOr[__string] = js.undefined,
@@ -5887,6 +6098,7 @@ package pinpoint {
   }
 
   object SMSChannelResponse {
+    @inline
     def apply(
         Platform: __string,
         ApplicationId: js.UndefOr[__string] = js.undefined,
@@ -5942,6 +6154,7 @@ package pinpoint {
   }
 
   object SMSMessage {
+    @inline
     def apply(
         Body: js.UndefOr[__string] = js.undefined,
         Keyword: js.UndefOr[__string] = js.undefined,
@@ -5976,6 +6189,7 @@ package pinpoint {
   }
 
   object Schedule {
+    @inline
     def apply(
         StartTime: __string,
         EndTime: js.UndefOr[__string] = js.undefined,
@@ -6008,6 +6222,7 @@ package pinpoint {
   }
 
   object SegmentBehaviors {
+    @inline
     def apply(
         Recency: js.UndefOr[RecencyDimension] = js.undefined
     ): SegmentBehaviors = {
@@ -6031,6 +6246,7 @@ package pinpoint {
   }
 
   object SegmentDemographics {
+    @inline
     def apply(
         AppVersion: js.UndefOr[SetDimension] = js.undefined,
         Channel: js.UndefOr[SetDimension] = js.undefined,
@@ -6064,6 +6280,7 @@ package pinpoint {
   }
 
   object SegmentDimensions {
+    @inline
     def apply(
         Attributes: js.UndefOr[MapOfAttributeDimension] = js.undefined,
         Behavior: js.UndefOr[SegmentBehaviors] = js.undefined,
@@ -6095,6 +6312,7 @@ package pinpoint {
   }
 
   object SegmentGroup {
+    @inline
     def apply(
         Dimensions: js.UndefOr[ListOfSegmentDimensions] = js.undefined,
         SourceSegments: js.UndefOr[ListOfSegmentReference] = js.undefined,
@@ -6120,6 +6338,7 @@ package pinpoint {
   }
 
   object SegmentGroupList {
+    @inline
     def apply(
         Groups: js.UndefOr[ListOfSegmentGroup] = js.undefined,
         Include: js.UndefOr[Include] = js.undefined
@@ -6145,6 +6364,7 @@ package pinpoint {
   }
 
   object SegmentImportResource {
+    @inline
     def apply(
         ExternalId: __string,
         Format: Format,
@@ -6176,6 +6396,7 @@ package pinpoint {
   }
 
   object SegmentLocation {
+    @inline
     def apply(
         Country: js.UndefOr[SetDimension] = js.undefined,
         GPSPoint: js.UndefOr[GPSPointDimension] = js.undefined
@@ -6197,6 +6418,7 @@ package pinpoint {
   }
 
   object SegmentReference {
+    @inline
     def apply(
         Id: __string,
         Version: js.UndefOr[__integer] = js.undefined
@@ -6230,6 +6452,7 @@ package pinpoint {
   }
 
   object SegmentResponse {
+    @inline
     def apply(
         ApplicationId: __string,
         Arn: __string,
@@ -6280,6 +6503,7 @@ package pinpoint {
   }
 
   object SegmentsResponse {
+    @inline
     def apply(
         Item: ListOfSegmentResponse,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -6300,6 +6524,7 @@ package pinpoint {
   }
 
   object SendMessagesRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         MessageRequest: MessageRequest
@@ -6319,6 +6544,7 @@ package pinpoint {
   }
 
   object SendMessagesResponse {
+    @inline
     def apply(
         MessageResponse: MessageResponse
     ): SendMessagesResponse = {
@@ -6342,6 +6568,7 @@ package pinpoint {
   }
 
   object SendUsersMessageRequest {
+    @inline
     def apply(
         MessageConfiguration: DirectMessageConfiguration,
         Users: MapOfEndpointSendConfiguration,
@@ -6370,6 +6597,7 @@ package pinpoint {
   }
 
   object SendUsersMessageResponse {
+    @inline
     def apply(
         ApplicationId: __string,
         RequestId: js.UndefOr[__string] = js.undefined,
@@ -6392,6 +6620,7 @@ package pinpoint {
   }
 
   object SendUsersMessagesRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         SendUsersMessageRequest: SendUsersMessageRequest
@@ -6411,6 +6640,7 @@ package pinpoint {
   }
 
   object SendUsersMessagesResponse {
+    @inline
     def apply(
         SendUsersMessageResponse: SendUsersMessageResponse
     ): SendUsersMessagesResponse = {
@@ -6434,6 +6664,7 @@ package pinpoint {
   }
 
   object Session {
+    @inline
     def apply(
         Id: __string,
         StartTimestamp: __string,
@@ -6461,6 +6692,7 @@ package pinpoint {
   }
 
   object SetDimension {
+    @inline
     def apply(
         Values: ListOf__string,
         DimensionType: js.UndefOr[DimensionType] = js.undefined
@@ -6485,6 +6717,7 @@ package pinpoint {
   }
 
   object SimpleEmail {
+    @inline
     def apply(
         HtmlPart: js.UndefOr[SimpleEmailPart] = js.undefined,
         Subject: js.UndefOr[SimpleEmailPart] = js.undefined,
@@ -6508,6 +6741,7 @@ package pinpoint {
   }
 
   object SimpleEmailPart {
+    @inline
     def apply(
         Charset: js.UndefOr[__string] = js.undefined,
         Data: js.UndefOr[__string] = js.undefined
@@ -6534,6 +6768,7 @@ package pinpoint {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceArn: __string,
         TagsModel: TagsModel
@@ -6556,6 +6791,7 @@ package pinpoint {
   }
 
   object TagsModel {
+    @inline
     def apply(
         tags: MapOf__string
     ): TagsModel = {
@@ -6582,6 +6818,7 @@ package pinpoint {
   }
 
   object TreatmentResource {
+    @inline
     def apply(
         Id: __string,
         SizePercent: __integer,
@@ -6620,6 +6857,7 @@ package pinpoint {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceArn: __string,
         TagKeys: ListOf__string
@@ -6640,6 +6878,7 @@ package pinpoint {
   }
 
   object UpdateAdmChannelRequest {
+    @inline
     def apply(
         ADMChannelRequest: ADMChannelRequest,
         ApplicationId: __string
@@ -6659,6 +6898,7 @@ package pinpoint {
   }
 
   object UpdateAdmChannelResponse {
+    @inline
     def apply(
         ADMChannelResponse: ADMChannelResponse
     ): UpdateAdmChannelResponse = {
@@ -6677,6 +6917,7 @@ package pinpoint {
   }
 
   object UpdateApnsChannelRequest {
+    @inline
     def apply(
         APNSChannelRequest: APNSChannelRequest,
         ApplicationId: __string
@@ -6696,6 +6937,7 @@ package pinpoint {
   }
 
   object UpdateApnsChannelResponse {
+    @inline
     def apply(
         APNSChannelResponse: APNSChannelResponse
     ): UpdateApnsChannelResponse = {
@@ -6714,6 +6956,7 @@ package pinpoint {
   }
 
   object UpdateApnsSandboxChannelRequest {
+    @inline
     def apply(
         APNSSandboxChannelRequest: APNSSandboxChannelRequest,
         ApplicationId: __string
@@ -6733,6 +6976,7 @@ package pinpoint {
   }
 
   object UpdateApnsSandboxChannelResponse {
+    @inline
     def apply(
         APNSSandboxChannelResponse: APNSSandboxChannelResponse
     ): UpdateApnsSandboxChannelResponse = {
@@ -6751,6 +6995,7 @@ package pinpoint {
   }
 
   object UpdateApnsVoipChannelRequest {
+    @inline
     def apply(
         APNSVoipChannelRequest: APNSVoipChannelRequest,
         ApplicationId: __string
@@ -6770,6 +7015,7 @@ package pinpoint {
   }
 
   object UpdateApnsVoipChannelResponse {
+    @inline
     def apply(
         APNSVoipChannelResponse: APNSVoipChannelResponse
     ): UpdateApnsVoipChannelResponse = {
@@ -6788,6 +7034,7 @@ package pinpoint {
   }
 
   object UpdateApnsVoipSandboxChannelRequest {
+    @inline
     def apply(
         APNSVoipSandboxChannelRequest: APNSVoipSandboxChannelRequest,
         ApplicationId: __string
@@ -6807,6 +7054,7 @@ package pinpoint {
   }
 
   object UpdateApnsVoipSandboxChannelResponse {
+    @inline
     def apply(
         APNSVoipSandboxChannelResponse: APNSVoipSandboxChannelResponse
     ): UpdateApnsVoipSandboxChannelResponse = {
@@ -6825,6 +7073,7 @@ package pinpoint {
   }
 
   object UpdateApplicationSettingsRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         WriteApplicationSettingsRequest: WriteApplicationSettingsRequest
@@ -6844,6 +7093,7 @@ package pinpoint {
   }
 
   object UpdateApplicationSettingsResponse {
+    @inline
     def apply(
         ApplicationSettingsResource: ApplicationSettingsResource
     ): UpdateApplicationSettingsResponse = {
@@ -6864,6 +7114,7 @@ package pinpoint {
   }
 
   object UpdateAttributesRequest {
+    @inline
     def apply(
         Blacklist: js.UndefOr[ListOf__string] = js.undefined
     ): UpdateAttributesRequest = {
@@ -6880,6 +7131,7 @@ package pinpoint {
   }
 
   object UpdateBaiduChannelRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         BaiduChannelRequest: BaiduChannelRequest
@@ -6899,6 +7151,7 @@ package pinpoint {
   }
 
   object UpdateBaiduChannelResponse {
+    @inline
     def apply(
         BaiduChannelResponse: BaiduChannelResponse
     ): UpdateBaiduChannelResponse = {
@@ -6918,6 +7171,7 @@ package pinpoint {
   }
 
   object UpdateCampaignRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         CampaignId: __string,
@@ -6939,6 +7193,7 @@ package pinpoint {
   }
 
   object UpdateCampaignResponse {
+    @inline
     def apply(
         CampaignResponse: CampaignResponse
     ): UpdateCampaignResponse = {
@@ -6957,6 +7212,7 @@ package pinpoint {
   }
 
   object UpdateEmailChannelRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         EmailChannelRequest: EmailChannelRequest
@@ -6976,6 +7232,7 @@ package pinpoint {
   }
 
   object UpdateEmailChannelResponse {
+    @inline
     def apply(
         EmailChannelResponse: EmailChannelResponse
     ): UpdateEmailChannelResponse = {
@@ -6995,6 +7252,7 @@ package pinpoint {
   }
 
   object UpdateEndpointRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         EndpointId: __string,
@@ -7016,6 +7274,7 @@ package pinpoint {
   }
 
   object UpdateEndpointResponse {
+    @inline
     def apply(
         MessageBody: MessageBody
     ): UpdateEndpointResponse = {
@@ -7034,6 +7293,7 @@ package pinpoint {
   }
 
   object UpdateEndpointsBatchRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         EndpointBatchRequest: EndpointBatchRequest
@@ -7053,6 +7313,7 @@ package pinpoint {
   }
 
   object UpdateEndpointsBatchResponse {
+    @inline
     def apply(
         MessageBody: MessageBody
     ): UpdateEndpointsBatchResponse = {
@@ -7071,6 +7332,7 @@ package pinpoint {
   }
 
   object UpdateGcmChannelRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         GCMChannelRequest: GCMChannelRequest
@@ -7090,6 +7352,7 @@ package pinpoint {
   }
 
   object UpdateGcmChannelResponse {
+    @inline
     def apply(
         GCMChannelResponse: GCMChannelResponse
     ): UpdateGcmChannelResponse = {
@@ -7109,6 +7372,7 @@ package pinpoint {
   }
 
   object UpdateSegmentRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         SegmentId: __string,
@@ -7130,6 +7394,7 @@ package pinpoint {
   }
 
   object UpdateSegmentResponse {
+    @inline
     def apply(
         SegmentResponse: SegmentResponse
     ): UpdateSegmentResponse = {
@@ -7148,6 +7413,7 @@ package pinpoint {
   }
 
   object UpdateSmsChannelRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         SMSChannelRequest: SMSChannelRequest
@@ -7167,6 +7433,7 @@ package pinpoint {
   }
 
   object UpdateSmsChannelResponse {
+    @inline
     def apply(
         SMSChannelResponse: SMSChannelResponse
     ): UpdateSmsChannelResponse = {
@@ -7185,6 +7452,7 @@ package pinpoint {
   }
 
   object UpdateVoiceChannelRequest {
+    @inline
     def apply(
         ApplicationId: __string,
         VoiceChannelRequest: VoiceChannelRequest
@@ -7204,6 +7472,7 @@ package pinpoint {
   }
 
   object UpdateVoiceChannelResponse {
+    @inline
     def apply(
         VoiceChannelResponse: VoiceChannelResponse
     ): UpdateVoiceChannelResponse = {
@@ -7224,6 +7493,7 @@ package pinpoint {
   }
 
   object VoiceChannelRequest {
+    @inline
     def apply(
         Enabled: js.UndefOr[__boolean] = js.undefined
     ): VoiceChannelRequest = {
@@ -7251,6 +7521,7 @@ package pinpoint {
   }
 
   object VoiceChannelResponse {
+    @inline
     def apply(
         Platform: __string,
         ApplicationId: js.UndefOr[__string] = js.undefined,
@@ -7293,6 +7564,7 @@ package pinpoint {
   }
 
   object VoiceMessage {
+    @inline
     def apply(
         Body: js.UndefOr[__string] = js.undefined,
         LanguageCode: js.UndefOr[__string] = js.undefined,
@@ -7322,6 +7594,7 @@ package pinpoint {
   }
 
   object WriteApplicationSettingsRequest {
+    @inline
     def apply(
         CampaignHook: js.UndefOr[CampaignHook] = js.undefined,
         CloudWatchMetricsEnabled: js.UndefOr[__boolean] = js.undefined,
@@ -7359,6 +7632,7 @@ package pinpoint {
   }
 
   object WriteCampaignRequest {
+    @inline
     def apply(
         AdditionalTreatments: js.UndefOr[ListOfWriteTreatmentResource] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
@@ -7404,6 +7678,7 @@ package pinpoint {
   }
 
   object WriteEventStream {
+    @inline
     def apply(
         DestinationStreamArn: __string,
         RoleArn: __string
@@ -7429,6 +7704,7 @@ package pinpoint {
   }
 
   object WriteSegmentRequest {
+    @inline
     def apply(
         Dimensions: js.UndefOr[SegmentDimensions] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
@@ -7457,6 +7733,7 @@ package pinpoint {
   }
 
   object WriteTreatmentResource {
+    @inline
     def apply(
         SizePercent: __integer,
         MessageConfiguration: js.UndefOr[MessageConfiguration] = js.undefined,

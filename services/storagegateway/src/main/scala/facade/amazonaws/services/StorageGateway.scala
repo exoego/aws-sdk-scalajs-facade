@@ -416,6 +416,7 @@ package storagegateway {
   }
 
   object ActivateGatewayInput {
+    @inline
     def apply(
         ActivationKey: ActivationKey,
         GatewayName: GatewayName,
@@ -452,6 +453,7 @@ package storagegateway {
   }
 
   object ActivateGatewayOutput {
+    @inline
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): ActivateGatewayOutput = {
@@ -468,6 +470,7 @@ package storagegateway {
   }
 
   object AddCacheInput {
+    @inline
     def apply(
         DiskIds: DiskIds,
         GatewayARN: GatewayARN
@@ -487,6 +490,7 @@ package storagegateway {
   }
 
   object AddCacheOutput {
+    @inline
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): AddCacheOutput = {
@@ -503,6 +507,7 @@ package storagegateway {
   }
 
   object AddTagsToResourceInput {
+    @inline
     def apply(
         ResourceARN: ResourceARN,
         Tags: Tags
@@ -522,6 +527,7 @@ package storagegateway {
   }
 
   object AddTagsToResourceOutput {
+    @inline
     def apply(
         ResourceARN: js.UndefOr[ResourceARN] = js.undefined
     ): AddTagsToResourceOutput = {
@@ -538,6 +544,7 @@ package storagegateway {
   }
 
   object AddUploadBufferInput {
+    @inline
     def apply(
         DiskIds: DiskIds,
         GatewayARN: GatewayARN
@@ -557,6 +564,7 @@ package storagegateway {
   }
 
   object AddUploadBufferOutput {
+    @inline
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): AddUploadBufferOutput = {
@@ -577,6 +585,7 @@ package storagegateway {
   }
 
   object AddWorkingStorageInput {
+    @inline
     def apply(
         DiskIds: DiskIds,
         GatewayARN: GatewayARN
@@ -599,6 +608,7 @@ package storagegateway {
   }
 
   object AddWorkingStorageOutput {
+    @inline
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): AddWorkingStorageOutput = {
@@ -615,6 +625,7 @@ package storagegateway {
   }
 
   object AssignTapePoolInput {
+    @inline
     def apply(
         PoolId: PoolId,
         TapeARN: TapeARN
@@ -634,6 +645,7 @@ package storagegateway {
   }
 
   object AssignTapePoolOutput {
+    @inline
     def apply(
         TapeARN: js.UndefOr[TapeARN] = js.undefined
     ): AssignTapePoolOutput = {
@@ -653,6 +665,7 @@ package storagegateway {
   }
 
   object AttachVolumeInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN,
         NetworkInterfaceId: NetworkInterfaceId,
@@ -679,6 +692,7 @@ package storagegateway {
   }
 
   object AttachVolumeOutput {
+    @inline
     def apply(
         TargetARN: js.UndefOr[TargetARN] = js.undefined,
         VolumeARN: js.UndefOr[VolumeARN] = js.undefined
@@ -711,6 +725,7 @@ package storagegateway {
   }
 
   object CachediSCSIVolume {
+    @inline
     def apply(
         CreatedDate: js.UndefOr[CreatedDate] = js.undefined,
         KMSKey: js.UndefOr[KMSKey] = js.undefined,
@@ -751,6 +766,7 @@ package storagegateway {
   }
 
   object CancelArchivalInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN,
         TapeARN: TapeARN
@@ -770,6 +786,7 @@ package storagegateway {
   }
 
   object CancelArchivalOutput {
+    @inline
     def apply(
         TapeARN: js.UndefOr[TapeARN] = js.undefined
     ): CancelArchivalOutput = {
@@ -786,6 +803,7 @@ package storagegateway {
   }
 
   object CancelRetrievalInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN,
         TapeARN: TapeARN
@@ -805,6 +823,7 @@ package storagegateway {
   }
 
   object CancelRetrievalOutput {
+    @inline
     def apply(
         TapeARN: js.UndefOr[TapeARN] = js.undefined
     ): CancelRetrievalOutput = {
@@ -826,6 +845,7 @@ package storagegateway {
   }
 
   object ChapInfo {
+    @inline
     def apply(
         InitiatorName: js.UndefOr[IqnName] = js.undefined,
         SecretToAuthenticateInitiator: js.UndefOr[ChapSecret] = js.undefined,
@@ -860,6 +880,7 @@ package storagegateway {
   }
 
   object CreateCachediSCSIVolumeInput {
+    @inline
     def apply(
         ClientToken: ClientToken,
         GatewayARN: GatewayARN,
@@ -896,6 +917,7 @@ package storagegateway {
   }
 
   object CreateCachediSCSIVolumeOutput {
+    @inline
     def apply(
         TargetARN: js.UndefOr[TargetARN] = js.undefined,
         VolumeARN: js.UndefOr[VolumeARN] = js.undefined
@@ -927,6 +949,7 @@ package storagegateway {
   }
 
   object CreateNFSFileShareInput {
+    @inline
     def apply(
         ClientToken: ClientToken,
         GatewayARN: GatewayARN,
@@ -972,6 +995,7 @@ package storagegateway {
   }
 
   object CreateNFSFileShareOutput {
+    @inline
     def apply(
         FileShareARN: js.UndefOr[FileShareARN] = js.undefined
     ): CreateNFSFileShareOutput = {
@@ -1003,6 +1027,7 @@ package storagegateway {
   }
 
   object CreateSMBFileShareInput {
+    @inline
     def apply(
         ClientToken: ClientToken,
         GatewayARN: GatewayARN,
@@ -1052,6 +1077,7 @@ package storagegateway {
   }
 
   object CreateSMBFileShareOutput {
+    @inline
     def apply(
         FileShareARN: js.UndefOr[FileShareARN] = js.undefined
     ): CreateSMBFileShareOutput = {
@@ -1069,6 +1095,7 @@ package storagegateway {
   }
 
   object CreateSnapshotFromVolumeRecoveryPointInput {
+    @inline
     def apply(
         SnapshotDescription: SnapshotDescription,
         VolumeARN: VolumeARN,
@@ -1092,6 +1119,7 @@ package storagegateway {
   }
 
   object CreateSnapshotFromVolumeRecoveryPointOutput {
+    @inline
     def apply(
         SnapshotId: js.UndefOr[SnapshotId] = js.undefined,
         VolumeARN: js.UndefOr[VolumeARN] = js.undefined,
@@ -1118,6 +1146,7 @@ package storagegateway {
   }
 
   object CreateSnapshotInput {
+    @inline
     def apply(
         SnapshotDescription: SnapshotDescription,
         VolumeARN: VolumeARN,
@@ -1143,6 +1172,7 @@ package storagegateway {
   }
 
   object CreateSnapshotOutput {
+    @inline
     def apply(
         SnapshotId: js.UndefOr[SnapshotId] = js.undefined,
         VolumeARN: js.UndefOr[VolumeARN] = js.undefined
@@ -1176,6 +1206,7 @@ package storagegateway {
   }
 
   object CreateStorediSCSIVolumeInput {
+    @inline
     def apply(
         DiskId: DiskId,
         GatewayARN: GatewayARN,
@@ -1214,6 +1245,7 @@ package storagegateway {
   }
 
   object CreateStorediSCSIVolumeOutput {
+    @inline
     def apply(
         TargetARN: js.UndefOr[TargetARN] = js.undefined,
         VolumeARN: js.UndefOr[VolumeARN] = js.undefined,
@@ -1239,6 +1271,7 @@ package storagegateway {
   }
 
   object CreateTapeWithBarcodeInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN,
         TapeBarcode: TapeBarcode,
@@ -1271,6 +1304,7 @@ package storagegateway {
   }
 
   object CreateTapeWithBarcodeOutput {
+    @inline
     def apply(
         TapeARN: js.UndefOr[TapeARN] = js.undefined
     ): CreateTapeWithBarcodeOutput = {
@@ -1294,6 +1328,7 @@ package storagegateway {
   }
 
   object CreateTapesInput {
+    @inline
     def apply(
         ClientToken: ClientToken,
         GatewayARN: GatewayARN,
@@ -1330,6 +1365,7 @@ package storagegateway {
   }
 
   object CreateTapesOutput {
+    @inline
     def apply(
         TapeARNs: js.UndefOr[TapeARNs] = js.undefined
     ): CreateTapesOutput = {
@@ -1350,6 +1386,7 @@ package storagegateway {
   }
 
   object DeleteBandwidthRateLimitInput {
+    @inline
     def apply(
         BandwidthType: BandwidthType,
         GatewayARN: GatewayARN
@@ -1372,6 +1409,7 @@ package storagegateway {
   }
 
   object DeleteBandwidthRateLimitOutput {
+    @inline
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): DeleteBandwidthRateLimitOutput = {
@@ -1393,6 +1431,7 @@ package storagegateway {
   }
 
   object DeleteChapCredentialsInput {
+    @inline
     def apply(
         InitiatorName: IqnName,
         TargetARN: TargetARN
@@ -1416,6 +1455,7 @@ package storagegateway {
   }
 
   object DeleteChapCredentialsOutput {
+    @inline
     def apply(
         InitiatorName: js.UndefOr[IqnName] = js.undefined,
         TargetARN: js.UndefOr[TargetARN] = js.undefined
@@ -1434,6 +1474,7 @@ package storagegateway {
   }
 
   object DeleteFileShareInput {
+    @inline
     def apply(
         FileShareARN: FileShareARN,
         ForceDelete: js.UndefOr[Boolean] = js.undefined
@@ -1453,6 +1494,7 @@ package storagegateway {
   }
 
   object DeleteFileShareOutput {
+    @inline
     def apply(
         FileShareARN: js.UndefOr[FileShareARN] = js.undefined
     ): DeleteFileShareOutput = {
@@ -1471,6 +1513,7 @@ package storagegateway {
   }
 
   object DeleteGatewayInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN
     ): DeleteGatewayInput = {
@@ -1491,6 +1534,7 @@ package storagegateway {
   }
 
   object DeleteGatewayOutput {
+    @inline
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): DeleteGatewayOutput = {
@@ -1506,6 +1550,7 @@ package storagegateway {
   }
 
   object DeleteSnapshotScheduleInput {
+    @inline
     def apply(
         VolumeARN: VolumeARN
     ): DeleteSnapshotScheduleInput = {
@@ -1523,6 +1568,7 @@ package storagegateway {
   }
 
   object DeleteSnapshotScheduleOutput {
+    @inline
     def apply(
         VolumeARN: js.UndefOr[VolumeARN] = js.undefined
     ): DeleteSnapshotScheduleOutput = {
@@ -1538,6 +1584,7 @@ package storagegateway {
   }
 
   object DeleteTapeArchiveInput {
+    @inline
     def apply(
         TapeARN: TapeARN
     ): DeleteTapeArchiveInput = {
@@ -1555,6 +1602,7 @@ package storagegateway {
   }
 
   object DeleteTapeArchiveOutput {
+    @inline
     def apply(
         TapeARN: js.UndefOr[TapeARN] = js.undefined
     ): DeleteTapeArchiveOutput = {
@@ -1571,6 +1619,7 @@ package storagegateway {
   }
 
   object DeleteTapeInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN,
         TapeARN: TapeARN
@@ -1590,6 +1639,7 @@ package storagegateway {
   }
 
   object DeleteTapeOutput {
+    @inline
     def apply(
         TapeARN: js.UndefOr[TapeARN] = js.undefined
     ): DeleteTapeOutput = {
@@ -1608,6 +1658,7 @@ package storagegateway {
   }
 
   object DeleteVolumeInput {
+    @inline
     def apply(
         VolumeARN: VolumeARN
     ): DeleteVolumeInput = {
@@ -1628,6 +1679,7 @@ package storagegateway {
   }
 
   object DeleteVolumeOutput {
+    @inline
     def apply(
         VolumeARN: js.UndefOr[VolumeARN] = js.undefined
     ): DeleteVolumeOutput = {
@@ -1646,6 +1698,7 @@ package storagegateway {
   }
 
   object DescribeBandwidthRateLimitInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN
     ): DescribeBandwidthRateLimitInput = {
@@ -1668,6 +1721,7 @@ package storagegateway {
   }
 
   object DescribeBandwidthRateLimitOutput {
+    @inline
     def apply(
         AverageDownloadRateLimitInBitsPerSec: js.UndefOr[BandwidthDownloadRateLimit] = js.undefined,
         AverageUploadRateLimitInBitsPerSec: js.UndefOr[BandwidthUploadRateLimit] = js.undefined,
@@ -1691,6 +1745,7 @@ package storagegateway {
   }
 
   object DescribeCacheInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN
     ): DescribeCacheInput = {
@@ -1714,6 +1769,7 @@ package storagegateway {
   }
 
   object DescribeCacheOutput {
+    @inline
     def apply(
         CacheAllocatedInBytes: js.UndefOr[Double] = js.undefined,
         CacheDirtyPercentage: js.UndefOr[double] = js.undefined,
@@ -1741,6 +1797,7 @@ package storagegateway {
   }
 
   object DescribeCachediSCSIVolumesInput {
+    @inline
     def apply(
         VolumeARNs: VolumeARNs
     ): DescribeCachediSCSIVolumesInput = {
@@ -1761,6 +1818,7 @@ package storagegateway {
   }
 
   object DescribeCachediSCSIVolumesOutput {
+    @inline
     def apply(
         CachediSCSIVolumes: js.UndefOr[CachediSCSIVolumes] = js.undefined
     ): DescribeCachediSCSIVolumesOutput = {
@@ -1779,6 +1837,7 @@ package storagegateway {
   }
 
   object DescribeChapCredentialsInput {
+    @inline
     def apply(
         TargetARN: TargetARN
     ): DescribeChapCredentialsInput = {
@@ -1799,6 +1858,7 @@ package storagegateway {
   }
 
   object DescribeChapCredentialsOutput {
+    @inline
     def apply(
         ChapCredentials: js.UndefOr[ChapCredentials] = js.undefined
     ): DescribeChapCredentialsOutput = {
@@ -1817,6 +1877,7 @@ package storagegateway {
   }
 
   object DescribeGatewayInformationInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN
     ): DescribeGatewayInformationInput = {
@@ -1849,6 +1910,7 @@ package storagegateway {
   }
 
   object DescribeGatewayInformationOutput {
+    @inline
     def apply(
         Ec2InstanceId: js.UndefOr[Ec2InstanceId] = js.undefined,
         Ec2InstanceRegion: js.UndefOr[Ec2InstanceRegion] = js.undefined,
@@ -1893,6 +1955,7 @@ package storagegateway {
   }
 
   object DescribeMaintenanceStartTimeInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN
     ): DescribeMaintenanceStartTimeInput = {
@@ -1923,6 +1986,7 @@ package storagegateway {
   }
 
   object DescribeMaintenanceStartTimeOutput {
+    @inline
     def apply(
         DayOfMonth: js.UndefOr[DayOfMonth] = js.undefined,
         DayOfWeek: js.UndefOr[DayOfWeek] = js.undefined,
@@ -1948,6 +2012,7 @@ package storagegateway {
   }
 
   object DescribeNFSFileSharesInput {
+    @inline
     def apply(
         FileShareARNList: FileShareARNList
     ): DescribeNFSFileSharesInput = {
@@ -1965,6 +2030,7 @@ package storagegateway {
   }
 
   object DescribeNFSFileSharesOutput {
+    @inline
     def apply(
         NFSFileShareInfoList: js.UndefOr[NFSFileShareInfoList] = js.undefined
     ): DescribeNFSFileSharesOutput = {
@@ -1980,6 +2046,7 @@ package storagegateway {
   }
 
   object DescribeSMBFileSharesInput {
+    @inline
     def apply(
         FileShareARNList: FileShareARNList
     ): DescribeSMBFileSharesInput = {
@@ -1997,6 +2064,7 @@ package storagegateway {
   }
 
   object DescribeSMBFileSharesOutput {
+    @inline
     def apply(
         SMBFileShareInfoList: js.UndefOr[SMBFileShareInfoList] = js.undefined
     ): DescribeSMBFileSharesOutput = {
@@ -2012,6 +2080,7 @@ package storagegateway {
   }
 
   object DescribeSMBSettingsInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN
     ): DescribeSMBSettingsInput = {
@@ -2032,6 +2101,7 @@ package storagegateway {
   }
 
   object DescribeSMBSettingsOutput {
+    @inline
     def apply(
         DomainName: js.UndefOr[DomainName] = js.undefined,
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
@@ -2056,6 +2126,7 @@ package storagegateway {
   }
 
   object DescribeSnapshotScheduleInput {
+    @inline
     def apply(
         VolumeARN: VolumeARN
     ): DescribeSnapshotScheduleInput = {
@@ -2078,6 +2149,7 @@ package storagegateway {
   }
 
   object DescribeSnapshotScheduleOutput {
+    @inline
     def apply(
         Description: js.UndefOr[Description] = js.undefined,
         RecurrenceInHours: js.UndefOr[RecurrenceInHours] = js.undefined,
@@ -2106,6 +2178,7 @@ package storagegateway {
   }
 
   object DescribeStorediSCSIVolumesInput {
+    @inline
     def apply(
         VolumeARNs: VolumeARNs
     ): DescribeStorediSCSIVolumesInput = {
@@ -2123,6 +2196,7 @@ package storagegateway {
   }
 
   object DescribeStorediSCSIVolumesOutput {
+    @inline
     def apply(
         StorediSCSIVolumes: js.UndefOr[StorediSCSIVolumes] = js.undefined
     ): DescribeStorediSCSIVolumesOutput = {
@@ -2140,6 +2214,7 @@ package storagegateway {
   }
 
   object DescribeTapeArchivesInput {
+    @inline
     def apply(
         Limit: js.UndefOr[PositiveIntObject] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined,
@@ -2160,6 +2235,7 @@ package storagegateway {
   }
 
   object DescribeTapeArchivesOutput {
+    @inline
     def apply(
         Marker: js.UndefOr[Marker] = js.undefined,
         TapeArchives: js.UndefOr[TapeArchives] = js.undefined
@@ -2179,6 +2255,7 @@ package storagegateway {
   }
 
   object DescribeTapeRecoveryPointsInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN,
         Limit: js.UndefOr[PositiveIntObject] = js.undefined,
@@ -2202,6 +2279,7 @@ package storagegateway {
   }
 
   object DescribeTapeRecoveryPointsOutput {
+    @inline
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined,
@@ -2224,6 +2302,7 @@ package storagegateway {
   }
 
   object DescribeTapesInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN,
         Limit: js.UndefOr[PositiveIntObject] = js.undefined,
@@ -2248,6 +2327,7 @@ package storagegateway {
   }
 
   object DescribeTapesOutput {
+    @inline
     def apply(
         Marker: js.UndefOr[Marker] = js.undefined,
         Tapes: js.UndefOr[Tapes] = js.undefined
@@ -2265,6 +2345,7 @@ package storagegateway {
   }
 
   object DescribeUploadBufferInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN
     ): DescribeUploadBufferInput = {
@@ -2285,6 +2366,7 @@ package storagegateway {
   }
 
   object DescribeUploadBufferOutput {
+    @inline
     def apply(
         DiskIds: js.UndefOr[DiskIds] = js.undefined,
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
@@ -2311,6 +2393,7 @@ package storagegateway {
   }
 
   object DescribeVTLDevicesInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN,
         Limit: js.UndefOr[PositiveIntObject] = js.undefined,
@@ -2336,6 +2419,7 @@ package storagegateway {
   }
 
   object DescribeVTLDevicesOutput {
+    @inline
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined,
@@ -2358,6 +2442,7 @@ package storagegateway {
   }
 
   object DescribeWorkingStorageInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN
     ): DescribeWorkingStorageInput = {
@@ -2381,6 +2466,7 @@ package storagegateway {
   }
 
   object DescribeWorkingStorageOutput {
+    @inline
     def apply(
         DiskIds: js.UndefOr[DiskIds] = js.undefined,
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
@@ -2410,6 +2496,7 @@ package storagegateway {
   }
 
   object DetachVolumeInput {
+    @inline
     def apply(
         VolumeARN: VolumeARN,
         ForceDetach: js.UndefOr[Boolean] = js.undefined
@@ -2432,6 +2519,7 @@ package storagegateway {
   }
 
   object DetachVolumeOutput {
+    @inline
     def apply(
         VolumeARN: js.UndefOr[VolumeARN] = js.undefined
     ): DetachVolumeOutput = {
@@ -2453,6 +2541,7 @@ package storagegateway {
   }
 
   object DeviceiSCSIAttributes {
+    @inline
     def apply(
         ChapEnabled: js.UndefOr[Boolean] = js.undefined,
         NetworkInterfaceId: js.UndefOr[NetworkInterfaceId] = js.undefined,
@@ -2474,6 +2563,7 @@ package storagegateway {
   }
 
   object DisableGatewayInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN
     ): DisableGatewayInput = {
@@ -2491,6 +2581,7 @@ package storagegateway {
   }
 
   object DisableGatewayOutput {
+    @inline
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): DisableGatewayOutput = {
@@ -2516,6 +2607,7 @@ package storagegateway {
   }
 
   object Disk {
+    @inline
     def apply(
         DiskAllocationResource: js.UndefOr[String] = js.undefined,
         DiskAllocationType: js.UndefOr[DiskAllocationType] = js.undefined,
@@ -2552,6 +2644,7 @@ package storagegateway {
   }
 
   object FileShareInfo {
+    @inline
     def apply(
         FileShareARN: js.UndefOr[FileShareARN] = js.undefined,
         FileShareId: js.UndefOr[FileShareId] = js.undefined,
@@ -2594,6 +2687,7 @@ package storagegateway {
   }
 
   object GatewayInfo {
+    @inline
     def apply(
         Ec2InstanceId: js.UndefOr[Ec2InstanceId] = js.undefined,
         Ec2InstanceRegion: js.UndefOr[Ec2InstanceRegion] = js.undefined,
@@ -2626,6 +2720,7 @@ package storagegateway {
   }
 
   object JoinDomainInput {
+    @inline
     def apply(
         DomainName: DomainName,
         GatewayARN: GatewayARN,
@@ -2653,6 +2748,7 @@ package storagegateway {
   }
 
   object JoinDomainOutput {
+    @inline
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): JoinDomainOutput = {
@@ -2673,6 +2769,7 @@ package storagegateway {
   }
 
   object ListFileSharesInput {
+    @inline
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
         Limit: js.UndefOr[PositiveIntObject] = js.undefined,
@@ -2697,6 +2794,7 @@ package storagegateway {
   }
 
   object ListFileSharesOutput {
+    @inline
     def apply(
         FileShareInfoList: js.UndefOr[FileShareInfoList] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined,
@@ -2722,6 +2820,7 @@ package storagegateway {
   }
 
   object ListGatewaysInput {
+    @inline
     def apply(
         Limit: js.UndefOr[PositiveIntObject] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined
@@ -2740,6 +2839,7 @@ package storagegateway {
   }
 
   object ListGatewaysOutput {
+    @inline
     def apply(
         Gateways: js.UndefOr[Gateways] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined
@@ -2760,6 +2860,7 @@ package storagegateway {
   }
 
   object ListLocalDisksInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN
     ): ListLocalDisksInput = {
@@ -2778,6 +2879,7 @@ package storagegateway {
   }
 
   object ListLocalDisksOutput {
+    @inline
     def apply(
         Disks: js.UndefOr[Disks] = js.undefined,
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
@@ -2797,6 +2899,7 @@ package storagegateway {
   }
 
   object ListTagsForResourceInput {
+    @inline
     def apply(
         ResourceARN: ResourceARN,
         Limit: js.UndefOr[PositiveIntObject] = js.undefined,
@@ -2820,6 +2923,7 @@ package storagegateway {
   }
 
   object ListTagsForResourceOutput {
+    @inline
     def apply(
         Marker: js.UndefOr[Marker] = js.undefined,
         ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
@@ -2847,6 +2951,7 @@ package storagegateway {
   }
 
   object ListTapesInput {
+    @inline
     def apply(
         Limit: js.UndefOr[PositiveIntObject] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined,
@@ -2872,6 +2977,7 @@ package storagegateway {
   }
 
   object ListTapesOutput {
+    @inline
     def apply(
         Marker: js.UndefOr[Marker] = js.undefined,
         TapeInfos: js.UndefOr[TapeInfos] = js.undefined
@@ -2889,6 +2995,7 @@ package storagegateway {
   }
 
   object ListVolumeInitiatorsInput {
+    @inline
     def apply(
         VolumeARN: VolumeARN
     ): ListVolumeInitiatorsInput = {
@@ -2906,6 +3013,7 @@ package storagegateway {
   }
 
   object ListVolumeInitiatorsOutput {
+    @inline
     def apply(
         Initiators: js.UndefOr[Initiators] = js.undefined
     ): ListVolumeInitiatorsOutput = {
@@ -2921,6 +3029,7 @@ package storagegateway {
   }
 
   object ListVolumeRecoveryPointsInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN
     ): ListVolumeRecoveryPointsInput = {
@@ -2939,6 +3048,7 @@ package storagegateway {
   }
 
   object ListVolumeRecoveryPointsOutput {
+    @inline
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
         VolumeRecoveryPointInfos: js.UndefOr[VolumeRecoveryPointInfos] = js.undefined
@@ -2963,6 +3073,7 @@ package storagegateway {
   }
 
   object ListVolumesInput {
+    @inline
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
         Limit: js.UndefOr[PositiveIntObject] = js.undefined,
@@ -2989,6 +3100,7 @@ package storagegateway {
   }
 
   object ListVolumesOutput {
+    @inline
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined,
@@ -3014,6 +3126,7 @@ package storagegateway {
   }
 
   object NFSFileShareDefaults {
+    @inline
     def apply(
         DirectoryMode: js.UndefOr[PermissionMode] = js.undefined,
         FileMode: js.UndefOr[PermissionMode] = js.undefined,
@@ -3055,6 +3168,7 @@ package storagegateway {
   }
 
   object NFSFileShareInfo {
+    @inline
     def apply(
         ClientList: js.UndefOr[FileShareClientList] = js.undefined,
         DefaultStorageClass: js.UndefOr[StorageClass] = js.undefined,
@@ -3109,6 +3223,7 @@ package storagegateway {
   }
 
   object NetworkInterface {
+    @inline
     def apply(
         Ipv4Address: js.UndefOr[String] = js.undefined,
         Ipv6Address: js.UndefOr[String] = js.undefined,
@@ -3128,6 +3243,7 @@ package storagegateway {
   }
 
   object NotifyWhenUploadedInput {
+    @inline
     def apply(
         FileShareARN: FileShareARN
     ): NotifyWhenUploadedInput = {
@@ -3146,6 +3262,7 @@ package storagegateway {
   }
 
   object NotifyWhenUploadedOutput {
+    @inline
     def apply(
         FileShareARN: js.UndefOr[FileShareARN] = js.undefined,
         NotificationId: js.UndefOr[NotificationId] = js.undefined
@@ -3190,6 +3307,7 @@ package storagegateway {
   }
 
   object RefreshCacheInput {
+    @inline
     def apply(
         FileShareARN: FileShareARN,
         FolderList: js.UndefOr[FolderList] = js.undefined,
@@ -3212,6 +3330,7 @@ package storagegateway {
   }
 
   object RefreshCacheOutput {
+    @inline
     def apply(
         FileShareARN: js.UndefOr[FileShareARN] = js.undefined,
         NotificationId: js.UndefOr[NotificationId] = js.undefined
@@ -3230,6 +3349,7 @@ package storagegateway {
   }
 
   object RemoveTagsFromResourceInput {
+    @inline
     def apply(
         ResourceARN: ResourceARN,
         TagKeys: TagKeys
@@ -3249,6 +3369,7 @@ package storagegateway {
   }
 
   object RemoveTagsFromResourceOutput {
+    @inline
     def apply(
         ResourceARN: js.UndefOr[ResourceARN] = js.undefined
     ): RemoveTagsFromResourceOutput = {
@@ -3264,6 +3385,7 @@ package storagegateway {
   }
 
   object ResetCacheInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN
     ): ResetCacheInput = {
@@ -3281,6 +3403,7 @@ package storagegateway {
   }
 
   object ResetCacheOutput {
+    @inline
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): ResetCacheOutput = {
@@ -3297,6 +3420,7 @@ package storagegateway {
   }
 
   object RetrieveTapeArchiveInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN,
         TapeARN: TapeARN
@@ -3316,6 +3440,7 @@ package storagegateway {
   }
 
   object RetrieveTapeArchiveOutput {
+    @inline
     def apply(
         TapeARN: js.UndefOr[TapeARN] = js.undefined
     ): RetrieveTapeArchiveOutput = {
@@ -3332,6 +3457,7 @@ package storagegateway {
   }
 
   object RetrieveTapeRecoveryPointInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN,
         TapeARN: TapeARN
@@ -3351,6 +3477,7 @@ package storagegateway {
   }
 
   object RetrieveTapeRecoveryPointOutput {
+    @inline
     def apply(
         TapeARN: js.UndefOr[TapeARN] = js.undefined
     ): RetrieveTapeRecoveryPointOutput = {
@@ -3388,6 +3515,7 @@ package storagegateway {
   }
 
   object SMBFileShareInfo {
+    @inline
     def apply(
         AdminUserList: js.UndefOr[FileShareUserList] = js.undefined,
         Authentication: js.UndefOr[Authentication] = js.undefined,
@@ -3450,6 +3578,7 @@ package storagegateway {
   }
 
   object SetLocalConsolePasswordInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN,
         LocalConsolePassword: LocalConsolePassword
@@ -3469,6 +3598,7 @@ package storagegateway {
   }
 
   object SetLocalConsolePasswordOutput {
+    @inline
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): SetLocalConsolePasswordOutput = {
@@ -3485,6 +3615,7 @@ package storagegateway {
   }
 
   object SetSMBGuestPasswordInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN,
         Password: SMBGuestPassword
@@ -3504,6 +3635,7 @@ package storagegateway {
   }
 
   object SetSMBGuestPasswordOutput {
+    @inline
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): SetSMBGuestPasswordOutput = {
@@ -3522,6 +3654,7 @@ package storagegateway {
   }
 
   object ShutdownGatewayInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN
     ): ShutdownGatewayInput = {
@@ -3542,6 +3675,7 @@ package storagegateway {
   }
 
   object ShutdownGatewayOutput {
+    @inline
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): ShutdownGatewayOutput = {
@@ -3560,6 +3694,7 @@ package storagegateway {
   }
 
   object StartGatewayInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN
     ): StartGatewayInput = {
@@ -3580,6 +3715,7 @@ package storagegateway {
   }
 
   object StartGatewayOutput {
+    @inline
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): StartGatewayOutput = {
@@ -3612,6 +3748,7 @@ package storagegateway {
   }
 
   object StorediSCSIVolume {
+    @inline
     def apply(
         CreatedDate: js.UndefOr[CreatedDate] = js.undefined,
         KMSKey: js.UndefOr[KMSKey] = js.undefined,
@@ -3659,6 +3796,7 @@ package storagegateway {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: TagValue
@@ -3690,6 +3828,7 @@ package storagegateway {
   }
 
   object Tape {
+    @inline
     def apply(
         KMSKey: js.UndefOr[KMSKey] = js.undefined,
         PoolId: js.UndefOr[PoolId] = js.undefined,
@@ -3735,6 +3874,7 @@ package storagegateway {
   }
 
   object TapeArchive {
+    @inline
     def apply(
         CompletionTime: js.UndefOr[Time] = js.undefined,
         KMSKey: js.UndefOr[KMSKey] = js.undefined,
@@ -3776,6 +3916,7 @@ package storagegateway {
   }
 
   object TapeInfo {
+    @inline
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
         PoolId: js.UndefOr[PoolId] = js.undefined,
@@ -3807,6 +3948,7 @@ package storagegateway {
   }
 
   object TapeRecoveryPointInfo {
+    @inline
     def apply(
         TapeARN: js.UndefOr[TapeARN] = js.undefined,
         TapeRecoveryPointTime: js.UndefOr[Time] = js.undefined,
@@ -3835,6 +3977,7 @@ package storagegateway {
   }
 
   object UpdateBandwidthRateLimitInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN,
         AverageDownloadRateLimitInBitsPerSec: js.UndefOr[BandwidthDownloadRateLimit] = js.undefined,
@@ -3863,6 +4006,7 @@ package storagegateway {
   }
 
   object UpdateBandwidthRateLimitOutput {
+    @inline
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): UpdateBandwidthRateLimitOutput = {
@@ -3888,6 +4032,7 @@ package storagegateway {
   }
 
   object UpdateChapCredentialsInput {
+    @inline
     def apply(
         InitiatorName: IqnName,
         SecretToAuthenticateInitiator: ChapSecret,
@@ -3917,6 +4062,7 @@ package storagegateway {
   }
 
   object UpdateChapCredentialsOutput {
+    @inline
     def apply(
         InitiatorName: js.UndefOr[IqnName] = js.undefined,
         TargetARN: js.UndefOr[TargetARN] = js.undefined
@@ -3936,6 +4082,7 @@ package storagegateway {
   }
 
   object UpdateGatewayInformationInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN,
         GatewayName: js.UndefOr[GatewayName] = js.undefined,
@@ -3961,6 +4108,7 @@ package storagegateway {
   }
 
   object UpdateGatewayInformationOutput {
+    @inline
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
         GatewayName: js.UndefOr[String] = js.undefined
@@ -3981,6 +4129,7 @@ package storagegateway {
   }
 
   object UpdateGatewaySoftwareNowInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN
     ): UpdateGatewaySoftwareNowInput = {
@@ -4001,6 +4150,7 @@ package storagegateway {
   }
 
   object UpdateGatewaySoftwareNowOutput {
+    @inline
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): UpdateGatewaySoftwareNowOutput = {
@@ -4027,6 +4177,7 @@ package storagegateway {
   }
 
   object UpdateMaintenanceStartTimeInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN,
         HourOfDay: HourOfDay,
@@ -4055,6 +4206,7 @@ package storagegateway {
   }
 
   object UpdateMaintenanceStartTimeOutput {
+    @inline
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): UpdateMaintenanceStartTimeOutput = {
@@ -4080,6 +4232,7 @@ package storagegateway {
   }
 
   object UpdateNFSFileShareInput {
+    @inline
     def apply(
         FileShareARN: FileShareARN,
         ClientList: js.UndefOr[FileShareClientList] = js.undefined,
@@ -4117,6 +4270,7 @@ package storagegateway {
   }
 
   object UpdateNFSFileShareOutput {
+    @inline
     def apply(
         FileShareARN: js.UndefOr[FileShareARN] = js.undefined
     ): UpdateNFSFileShareOutput = {
@@ -4143,6 +4297,7 @@ package storagegateway {
   }
 
   object UpdateSMBFileShareInput {
+    @inline
     def apply(
         FileShareARN: FileShareARN,
         AdminUserList: js.UndefOr[FileShareUserList] = js.undefined,
@@ -4182,6 +4337,7 @@ package storagegateway {
   }
 
   object UpdateSMBFileShareOutput {
+    @inline
     def apply(
         FileShareARN: js.UndefOr[FileShareARN] = js.undefined
     ): UpdateSMBFileShareOutput = {
@@ -4198,6 +4354,7 @@ package storagegateway {
   }
 
   object UpdateSMBSecurityStrategyInput {
+    @inline
     def apply(
         GatewayARN: GatewayARN,
         SMBSecurityStrategy: SMBSecurityStrategy
@@ -4217,6 +4374,7 @@ package storagegateway {
   }
 
   object UpdateSMBSecurityStrategyOutput {
+    @inline
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined
     ): UpdateSMBSecurityStrategyOutput = {
@@ -4243,6 +4401,7 @@ package storagegateway {
   }
 
   object UpdateSnapshotScheduleInput {
+    @inline
     def apply(
         RecurrenceInHours: RecurrenceInHours,
         StartAt: HourOfDay,
@@ -4271,6 +4430,7 @@ package storagegateway {
   }
 
   object UpdateSnapshotScheduleOutput {
+    @inline
     def apply(
         VolumeARN: js.UndefOr[VolumeARN] = js.undefined
     ): UpdateSnapshotScheduleOutput = {
@@ -4287,6 +4447,7 @@ package storagegateway {
   }
 
   object UpdateVTLDeviceTypeInput {
+    @inline
     def apply(
         DeviceType: DeviceType,
         VTLDeviceARN: VTLDeviceARN
@@ -4306,6 +4467,7 @@ package storagegateway {
   }
 
   object UpdateVTLDeviceTypeOutput {
+    @inline
     def apply(
         VTLDeviceARN: js.UndefOr[VTLDeviceARN] = js.undefined
     ): UpdateVTLDeviceTypeOutput = {
@@ -4328,6 +4490,7 @@ package storagegateway {
   }
 
   object VTLDevice {
+    @inline
     def apply(
         DeviceiSCSIAttributes: js.UndefOr[DeviceiSCSIAttributes] = js.undefined,
         VTLDeviceARN: js.UndefOr[VTLDeviceARN] = js.undefined,
@@ -4362,6 +4525,7 @@ package storagegateway {
   }
 
   object VolumeInfo {
+    @inline
     def apply(
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
         GatewayId: js.UndefOr[GatewayId] = js.undefined,
@@ -4395,6 +4559,7 @@ package storagegateway {
   }
 
   object VolumeRecoveryPointInfo {
+    @inline
     def apply(
         VolumeARN: js.UndefOr[VolumeARN] = js.undefined,
         VolumeRecoveryPointTime: js.UndefOr[String] = js.undefined,
@@ -4423,6 +4588,7 @@ package storagegateway {
   }
 
   object VolumeiSCSIAttributes {
+    @inline
     def apply(
         ChapEnabled: js.UndefOr[Boolean] = js.undefined,
         LunNumber: js.UndefOr[PositiveIntObject] = js.undefined,

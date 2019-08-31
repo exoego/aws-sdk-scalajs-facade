@@ -473,6 +473,7 @@ package medialive {
   }
 
   object AacSettings {
+    @inline
     def apply(
         Bitrate: js.UndefOr[__double] = js.undefined,
         CodingMode: js.UndefOr[AacCodingMode] = js.undefined,
@@ -604,6 +605,7 @@ package medialive {
   }
 
   object Ac3Settings {
+    @inline
     def apply(
         Bitrate: js.UndefOr[__double] = js.undefined,
         BitstreamMode: js.UndefOr[Ac3BitstreamMode] = js.undefined,
@@ -645,6 +647,7 @@ package medialive {
   }
 
   object ArchiveContainerSettings {
+    @inline
     def apply(
         M2tsSettings: js.UndefOr[M2tsSettings] = js.undefined
     ): ArchiveContainerSettings = {
@@ -664,6 +667,7 @@ package medialive {
   }
 
   object ArchiveGroupSettings {
+    @inline
     def apply(
         Destination: OutputLocationRef,
         RolloverInterval: js.UndefOr[__integerMin1] = js.undefined
@@ -688,6 +692,7 @@ package medialive {
   }
 
   object ArchiveOutputSettings {
+    @inline
     def apply(
         ContainerSettings: ArchiveContainerSettings,
         Extension: js.UndefOr[__string] = js.undefined,
@@ -710,6 +715,7 @@ package medialive {
   trait AribDestinationSettings extends js.Object {}
 
   object AribDestinationSettings {
+    @inline
     def apply(
         ): AribDestinationSettings = {
       val __obj = js.Dynamic.literal()
@@ -725,6 +731,7 @@ package medialive {
   trait AribSourceSettings extends js.Object {}
 
   object AribSourceSettings {
+    @inline
     def apply(
         ): AribSourceSettings = {
       val __obj = js.Dynamic.literal()
@@ -743,6 +750,7 @@ package medialive {
   }
 
   object AudioChannelMapping {
+    @inline
     def apply(
         InputChannelLevels: __listOfInputChannelLevel,
         OutputChannel: __integerMin0Max7
@@ -769,6 +777,7 @@ package medialive {
   }
 
   object AudioCodecSettings {
+    @inline
     def apply(
         AacSettings: js.UndefOr[AacSettings] = js.undefined,
         Ac3Settings: js.UndefOr[Ac3Settings] = js.undefined,
@@ -804,6 +813,7 @@ package medialive {
   }
 
   object AudioDescription {
+    @inline
     def apply(
         AudioSelectorName: __string,
         Name: __string,
@@ -865,6 +875,7 @@ package medialive {
   }
 
   object AudioLanguageSelection {
+    @inline
     def apply(
         LanguageCode: __string,
         LanguageSelectionPolicy: js.UndefOr[AudioLanguageSelectionPolicy] = js.undefined
@@ -918,6 +929,7 @@ package medialive {
   }
 
   object AudioNormalizationSettings {
+    @inline
     def apply(
         Algorithm: js.UndefOr[AudioNormalizationAlgorithm] = js.undefined,
         AlgorithmControl: js.UndefOr[AudioNormalizationAlgorithmControl] = js.undefined,
@@ -942,6 +954,7 @@ package medialive {
   }
 
   object AudioOnlyHlsSettings {
+    @inline
     def apply(
         AudioGroupId: js.UndefOr[__string] = js.undefined,
         AudioOnlyImage: js.UndefOr[InputLocation] = js.undefined,
@@ -983,6 +996,7 @@ package medialive {
   }
 
   object AudioPidSelection {
+    @inline
     def apply(
         Pid: __integerMin0Max8191
     ): AudioPidSelection = {
@@ -1004,6 +1018,7 @@ package medialive {
   }
 
   object AudioSelector {
+    @inline
     def apply(
         Name: __stringMin1,
         SelectorSettings: js.UndefOr[AudioSelectorSettings] = js.undefined
@@ -1027,6 +1042,7 @@ package medialive {
   }
 
   object AudioSelectorSettings {
+    @inline
     def apply(
         AudioLanguageSelection: js.UndefOr[AudioLanguageSelection] = js.undefined,
         AudioPidSelection: js.UndefOr[AudioPidSelection] = js.undefined
@@ -1070,6 +1086,7 @@ package medialive {
   }
 
   object AvailBlanking {
+    @inline
     def apply(
         AvailBlankingImage: js.UndefOr[InputLocation] = js.undefined,
         State: js.UndefOr[AvailBlankingState] = js.undefined
@@ -1100,6 +1117,7 @@ package medialive {
   }
 
   object AvailConfiguration {
+    @inline
     def apply(
         AvailSettings: js.UndefOr[AvailSettings] = js.undefined
     ): AvailConfiguration = {
@@ -1119,6 +1137,7 @@ package medialive {
   }
 
   object AvailSettings {
+    @inline
     def apply(
         Scte35SpliceInsert: js.UndefOr[Scte35SpliceInsert] = js.undefined,
         Scte35TimeSignalApos: js.UndefOr[Scte35TimeSignalApos] = js.undefined
@@ -1139,6 +1158,7 @@ package medialive {
   }
 
   object BatchScheduleActionCreateRequest {
+    @inline
     def apply(
         ScheduleActions: __listOfScheduleAction
     ): BatchScheduleActionCreateRequest = {
@@ -1159,6 +1179,7 @@ package medialive {
   }
 
   object BatchScheduleActionCreateResult {
+    @inline
     def apply(
         ScheduleActions: __listOfScheduleAction
     ): BatchScheduleActionCreateResult = {
@@ -1179,6 +1200,7 @@ package medialive {
   }
 
   object BatchScheduleActionDeleteRequest {
+    @inline
     def apply(
         ActionNames: __listOf__string
     ): BatchScheduleActionDeleteRequest = {
@@ -1199,6 +1221,7 @@ package medialive {
   }
 
   object BatchScheduleActionDeleteResult {
+    @inline
     def apply(
         ScheduleActions: __listOfScheduleAction
     ): BatchScheduleActionDeleteResult = {
@@ -1221,6 +1244,7 @@ package medialive {
   }
 
   object BatchUpdateScheduleRequest {
+    @inline
     def apply(
         ChannelId: __string,
         Creates: js.UndefOr[BatchScheduleActionCreateRequest] = js.undefined,
@@ -1246,6 +1270,7 @@ package medialive {
   }
 
   object BatchUpdateScheduleResponse {
+    @inline
     def apply(
         Creates: js.UndefOr[BatchScheduleActionCreateResult] = js.undefined,
         Deletes: js.UndefOr[BatchScheduleActionDeleteResult] = js.undefined
@@ -1270,6 +1295,7 @@ package medialive {
   }
 
   object BlackoutSlate {
+    @inline
     def apply(
         BlackoutSlateImage: js.UndefOr[InputLocation] = js.undefined,
         NetworkEndBlackout: js.UndefOr[BlackoutSlateNetworkEndBlackout] = js.undefined,
@@ -1354,6 +1380,7 @@ package medialive {
   }
 
   object BurnInDestinationSettings {
+    @inline
     def apply(
         Alignment: js.UndefOr[BurnInAlignment] = js.undefined,
         BackgroundColor: js.UndefOr[BurnInBackgroundColor] = js.undefined,
@@ -1457,6 +1484,7 @@ package medialive {
   }
 
   object CaptionDescription {
+    @inline
     def apply(
         CaptionSelectorName: __string,
         Name: __string,
@@ -1496,6 +1524,7 @@ package medialive {
   }
 
   object CaptionDestinationSettings {
+    @inline
     def apply(
         AribDestinationSettings: js.UndefOr[AribDestinationSettings] = js.undefined,
         BurnInDestinationSettings: js.UndefOr[BurnInDestinationSettings] = js.undefined,
@@ -1558,6 +1587,7 @@ package medialive {
   }
 
   object CaptionLanguageMapping {
+    @inline
     def apply(
         CaptionChannel: __integerMin1Max4,
         LanguageCode: __stringMin3Max3,
@@ -1584,6 +1614,7 @@ package medialive {
   }
 
   object CaptionSelector {
+    @inline
     def apply(
         Name: __stringMin1,
         LanguageCode: js.UndefOr[__string] = js.undefined,
@@ -1613,6 +1644,7 @@ package medialive {
   }
 
   object CaptionSelectorSettings {
+    @inline
     def apply(
         AribSourceSettings: js.UndefOr[AribSourceSettings] = js.undefined,
         DvbSubSourceSettings: js.UndefOr[DvbSubSourceSettings] = js.undefined,
@@ -1655,6 +1687,7 @@ package medialive {
   }
 
   object Channel {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         ChannelClass: js.UndefOr[ChannelClass] = js.undefined,
@@ -1711,6 +1744,7 @@ package medialive {
   }
 
   object ChannelEgressEndpoint {
+    @inline
     def apply(
         SourceIp: js.UndefOr[__string] = js.undefined
     ): ChannelEgressEndpoint = {
@@ -1774,6 +1808,7 @@ package medialive {
   }
 
   object ChannelSummary {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         ChannelClass: js.UndefOr[ChannelClass] = js.undefined,
@@ -1826,6 +1861,7 @@ package medialive {
   }
 
   object CreateChannelRequest {
+    @inline
     def apply(
         ChannelClass: js.UndefOr[ChannelClass] = js.undefined,
         Destinations: js.UndefOr[__listOfOutputDestination] = js.undefined,
@@ -1864,6 +1900,7 @@ package medialive {
   }
 
   object CreateChannelResponse {
+    @inline
     def apply(
         Channel: js.UndefOr[Channel] = js.undefined
     ): CreateChannelResponse = {
@@ -1891,6 +1928,7 @@ package medialive {
   }
 
   object CreateInputRequest {
+    @inline
     def apply(
         Destinations: js.UndefOr[__listOfInputDestinationRequest] = js.undefined,
         InputSecurityGroups: js.UndefOr[__listOf__string] = js.undefined,
@@ -1927,6 +1965,7 @@ package medialive {
   }
 
   object CreateInputResponse {
+    @inline
     def apply(
         Input: js.UndefOr[Input] = js.undefined
     ): CreateInputResponse = {
@@ -1946,6 +1985,7 @@ package medialive {
   }
 
   object CreateInputSecurityGroupRequest {
+    @inline
     def apply(
         Tags: js.UndefOr[Tags] = js.undefined,
         WhitelistRules: js.UndefOr[__listOfInputWhitelistRuleCidr] = js.undefined
@@ -1966,6 +2006,7 @@ package medialive {
   }
 
   object CreateInputSecurityGroupResponse {
+    @inline
     def apply(
         SecurityGroup: js.UndefOr[InputSecurityGroup] = js.undefined
     ): CreateInputSecurityGroupResponse = {
@@ -1985,6 +2026,7 @@ package medialive {
   }
 
   object CreateTagsRequest {
+    @inline
     def apply(
         ResourceArn: __string,
         Tags: js.UndefOr[Tags] = js.undefined
@@ -2007,6 +2049,7 @@ package medialive {
   }
 
   object DeleteChannelRequest {
+    @inline
     def apply(
         ChannelId: __string
     ): DeleteChannelRequest = {
@@ -2041,6 +2084,7 @@ package medialive {
   }
 
   object DeleteChannelResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         ChannelClass: js.UndefOr[ChannelClass] = js.undefined,
@@ -2087,6 +2131,7 @@ package medialive {
   }
 
   object DeleteInputRequest {
+    @inline
     def apply(
         InputId: __string
     ): DeleteInputRequest = {
@@ -2105,6 +2150,7 @@ package medialive {
   trait DeleteInputResponse extends js.Object {}
 
   object DeleteInputResponse {
+    @inline
     def apply(
         ): DeleteInputResponse = {
       val __obj = js.Dynamic.literal()
@@ -2122,6 +2168,7 @@ package medialive {
   }
 
   object DeleteInputSecurityGroupRequest {
+    @inline
     def apply(
         InputSecurityGroupId: __string
     ): DeleteInputSecurityGroupRequest = {
@@ -2140,6 +2187,7 @@ package medialive {
   trait DeleteInputSecurityGroupResponse extends js.Object {}
 
   object DeleteInputSecurityGroupResponse {
+    @inline
     def apply(
         ): DeleteInputSecurityGroupResponse = {
       val __obj = js.Dynamic.literal()
@@ -2157,6 +2205,7 @@ package medialive {
   }
 
   object DeleteReservationRequest {
+    @inline
     def apply(
         ReservationId: __string
     ): DeleteReservationRequest = {
@@ -2194,6 +2243,7 @@ package medialive {
   }
 
   object DeleteReservationResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         Count: js.UndefOr[__integer] = js.undefined,
@@ -2246,6 +2296,7 @@ package medialive {
   }
 
   object DeleteScheduleRequest {
+    @inline
     def apply(
         ChannelId: __string
     ): DeleteScheduleRequest = {
@@ -2264,6 +2315,7 @@ package medialive {
   trait DeleteScheduleResponse extends js.Object {}
 
   object DeleteScheduleResponse {
+    @inline
     def apply(
         ): DeleteScheduleResponse = {
       val __obj = js.Dynamic.literal()
@@ -2282,6 +2334,7 @@ package medialive {
   }
 
   object DeleteTagsRequest {
+    @inline
     def apply(
         ResourceArn: __string,
         TagKeys: __listOf__string
@@ -2304,6 +2357,7 @@ package medialive {
   }
 
   object DescribeChannelRequest {
+    @inline
     def apply(
         ChannelId: __string
     ): DescribeChannelRequest = {
@@ -2338,6 +2392,7 @@ package medialive {
   }
 
   object DescribeChannelResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         ChannelClass: js.UndefOr[ChannelClass] = js.undefined,
@@ -2384,6 +2439,7 @@ package medialive {
   }
 
   object DescribeInputRequest {
+    @inline
     def apply(
         InputId: __string
     ): DescribeInputRequest = {
@@ -2417,6 +2473,7 @@ package medialive {
   }
 
   object DescribeInputResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         AttachedChannels: js.UndefOr[__listOf__string] = js.undefined,
@@ -2461,6 +2518,7 @@ package medialive {
   }
 
   object DescribeInputSecurityGroupRequest {
+    @inline
     def apply(
         InputSecurityGroupId: __string
     ): DescribeInputSecurityGroupRequest = {
@@ -2486,6 +2544,7 @@ package medialive {
   }
 
   object DescribeInputSecurityGroupResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined,
@@ -2514,6 +2573,7 @@ package medialive {
   }
 
   object DescribeOfferingRequest {
+    @inline
     def apply(
         OfferingId: __string
     ): DescribeOfferingRequest = {
@@ -2544,6 +2604,7 @@ package medialive {
   }
 
   object DescribeOfferingResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CurrencyCode: js.UndefOr[__string] = js.undefined,
@@ -2582,6 +2643,7 @@ package medialive {
   }
 
   object DescribeReservationRequest {
+    @inline
     def apply(
         ReservationId: __string
     ): DescribeReservationRequest = {
@@ -2619,6 +2681,7 @@ package medialive {
   }
 
   object DescribeReservationResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         Count: js.UndefOr[__integer] = js.undefined,
@@ -2673,6 +2736,7 @@ package medialive {
   }
 
   object DescribeScheduleRequest {
+    @inline
     def apply(
         ChannelId: __string,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -2698,6 +2762,7 @@ package medialive {
   }
 
   object DescribeScheduleResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[__string] = js.undefined,
         ScheduleActions: js.UndefOr[__listOfScheduleAction] = js.undefined
@@ -2720,6 +2785,7 @@ package medialive {
   }
 
   object DvbNitSettings {
+    @inline
     def apply(
         NetworkId: __integerMin0Max65536,
         NetworkName: __stringMin1Max256,
@@ -2759,6 +2825,7 @@ package medialive {
   }
 
   object DvbSdtSettings {
+    @inline
     def apply(
         OutputSdt: js.UndefOr[DvbSdtOutputSdt] = js.undefined,
         RepInterval: js.UndefOr[__integerMin25Max2000] = js.undefined,
@@ -2849,6 +2916,7 @@ package medialive {
   }
 
   object DvbSubDestinationSettings {
+    @inline
     def apply(
         Alignment: js.UndefOr[DvbSubDestinationAlignment] = js.undefined,
         BackgroundColor: js.UndefOr[DvbSubDestinationBackgroundColor] = js.undefined,
@@ -2920,6 +2988,7 @@ package medialive {
   }
 
   object DvbSubSourceSettings {
+    @inline
     def apply(
         Pid: js.UndefOr[__integerMin1] = js.undefined
     ): DvbSubSourceSettings = {
@@ -2938,6 +3007,7 @@ package medialive {
   }
 
   object DvbTdtSettings {
+    @inline
     def apply(
         RepInterval: js.UndefOr[__integerMin1000Max30000] = js.undefined
     ): DvbTdtSettings = {
@@ -3097,6 +3167,7 @@ package medialive {
   }
 
   object Eac3Settings {
+    @inline
     def apply(
         AttenuationControl: js.UndefOr[Eac3AttenuationControl] = js.undefined,
         Bitrate: js.UndefOr[__double] = js.undefined,
@@ -3195,6 +3266,7 @@ package medialive {
   trait EmbeddedDestinationSettings extends js.Object {}
 
   object EmbeddedDestinationSettings {
+    @inline
     def apply(
         ): EmbeddedDestinationSettings = {
       val __obj = js.Dynamic.literal()
@@ -3210,6 +3282,7 @@ package medialive {
   trait EmbeddedPlusScte20DestinationSettings extends js.Object {}
 
   object EmbeddedPlusScte20DestinationSettings {
+    @inline
     def apply(
         ): EmbeddedPlusScte20DestinationSettings = {
       val __obj = js.Dynamic.literal()
@@ -3240,6 +3313,7 @@ package medialive {
   }
 
   object EmbeddedSourceSettings {
+    @inline
     def apply(
         Convert608To708: js.UndefOr[EmbeddedConvert608To708] = js.undefined,
         Scte20Detection: js.UndefOr[EmbeddedScte20Detection] = js.undefined,
@@ -3272,6 +3346,7 @@ package medialive {
   }
 
   object EncoderSettings {
+    @inline
     def apply(
         AudioDescriptions: __listOfAudioDescription,
         OutputGroups: __listOfOutputGroup,
@@ -3320,6 +3395,7 @@ package medialive {
   }
 
   object FecOutputSettings {
+    @inline
     def apply(
         ColumnDepth: js.UndefOr[__integerMin4Max20] = js.undefined,
         IncludeFec: js.UndefOr[FecOutputIncludeFec] = js.undefined,
@@ -3375,6 +3451,7 @@ package medialive {
   }
 
   object FixedModeScheduleActionStartSettings {
+    @inline
     def apply(
         Time: __string
     ): FixedModeScheduleActionStartSettings = {
@@ -3396,6 +3473,7 @@ package medialive {
   }
 
   object FollowModeScheduleActionStartSettings {
+    @inline
     def apply(
         FollowPoint: FollowPoint,
         ReferenceActionName: __string
@@ -3428,6 +3506,7 @@ package medialive {
   }
 
   object FrameCaptureGroupSettings {
+    @inline
     def apply(
         Destination: OutputLocationRef
     ): FrameCaptureGroupSettings = {
@@ -3448,6 +3527,7 @@ package medialive {
   }
 
   object FrameCaptureOutputSettings {
+    @inline
     def apply(
         NameModifier: js.UndefOr[__string] = js.undefined
     ): FrameCaptureOutputSettings = {
@@ -3466,6 +3546,7 @@ package medialive {
   }
 
   object FrameCaptureSettings {
+    @inline
     def apply(
         CaptureInterval: __integerMin1Max3600
     ): FrameCaptureSettings = {
@@ -3491,6 +3572,7 @@ package medialive {
   }
 
   object GlobalConfiguration {
+    @inline
     def apply(
         InitialAudioGain: js.UndefOr[__integerMinNegative60Max60] = js.undefined,
         InputEndAction: js.UndefOr[GlobalConfigurationInputEndAction] = js.undefined,
@@ -3782,6 +3864,7 @@ package medialive {
   }
 
   object H264Settings {
+    @inline
     def apply(
         AdaptiveQuantization: js.UndefOr[H264AdaptiveQuantization] = js.undefined,
         AfdSignaling: js.UndefOr[AfdSignaling] = js.undefined,
@@ -3949,6 +4032,7 @@ package medialive {
   }
 
   object HlsAkamaiSettings {
+    @inline
     def apply(
         ConnectionRetryInterval: js.UndefOr[__integerMin0] = js.undefined,
         FilecacheDuration: js.UndefOr[__integerMin0Max600] = js.undefined,
@@ -3982,6 +4066,7 @@ package medialive {
   }
 
   object HlsBasicPutSettings {
+    @inline
     def apply(
         ConnectionRetryInterval: js.UndefOr[__integerMin0] = js.undefined,
         FilecacheDuration: js.UndefOr[__integerMin0Max600] = js.undefined,
@@ -4020,6 +4105,7 @@ package medialive {
   }
 
   object HlsCdnSettings {
+    @inline
     def apply(
         HlsAkamaiSettings: js.UndefOr[HlsAkamaiSettings] = js.undefined,
         HlsBasicPutSettings: js.UndefOr[HlsBasicPutSettings] = js.undefined,
@@ -4120,6 +4206,7 @@ package medialive {
   }
 
   object HlsGroupSettings {
+    @inline
     def apply(
         Destination: OutputLocationRef,
         AdMarkers: js.UndefOr[__listOfHlsAdMarkers] = js.undefined,
@@ -4217,6 +4304,7 @@ package medialive {
   }
 
   object HlsInputSettings {
+    @inline
     def apply(
         Bandwidth: js.UndefOr[__integerMin0] = js.undefined,
         BufferSegments: js.UndefOr[__integerMin0] = js.undefined,
@@ -4285,6 +4373,7 @@ package medialive {
   }
 
   object HlsMediaStoreSettings {
+    @inline
     def apply(
         ConnectionRetryInterval: js.UndefOr[__integerMin0] = js.undefined,
         FilecacheDuration: js.UndefOr[__integerMin0Max600] = js.undefined,
@@ -4342,6 +4431,7 @@ package medialive {
   }
 
   object HlsOutputSettings {
+    @inline
     def apply(
         HlsSettings: HlsSettings,
         NameModifier: js.UndefOr[__stringMin1] = js.undefined,
@@ -4397,6 +4487,7 @@ package medialive {
   }
 
   object HlsSettings {
+    @inline
     def apply(
         AudioOnlyHlsSettings: js.UndefOr[AudioOnlyHlsSettings] = js.undefined,
         StandardHlsSettings: js.UndefOr[StandardHlsSettings] = js.undefined
@@ -4438,6 +4529,7 @@ package medialive {
   }
 
   object HlsTimedMetadataScheduleActionSettings {
+    @inline
     def apply(
         Id3: __string
     ): HlsTimedMetadataScheduleActionSettings = {
@@ -4482,6 +4574,7 @@ package medialive {
   }
 
   object HlsWebdavSettings {
+    @inline
     def apply(
         ConnectionRetryInterval: js.UndefOr[__integerMin0] = js.undefined,
         FilecacheDuration: js.UndefOr[__integerMin0Max600] = js.undefined,
@@ -4516,6 +4609,7 @@ package medialive {
   trait ImmediateModeScheduleActionStartSettings extends js.Object {}
 
   object ImmediateModeScheduleActionStartSettings {
+    @inline
     def apply(
         ): ImmediateModeScheduleActionStartSettings = {
       val __obj = js.Dynamic.literal()
@@ -4546,6 +4640,7 @@ package medialive {
   }
 
   object Input {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         AttachedChannels: js.UndefOr[__listOf__string] = js.undefined,
@@ -4592,6 +4687,7 @@ package medialive {
   }
 
   object InputAttachment {
+    @inline
     def apply(
         InputAttachmentName: js.UndefOr[__string] = js.undefined,
         InputId: js.UndefOr[__string] = js.undefined,
@@ -4615,6 +4711,7 @@ package medialive {
   }
 
   object InputChannelLevel {
+    @inline
     def apply(
         Gain: __integerMinNegative60Max6,
         InputChannel: __integerMin0Max15
@@ -4649,6 +4746,7 @@ package medialive {
   }
 
   object InputClippingSettings {
+    @inline
     def apply(
         InputTimecodeSource: InputTimecodeSource,
         StartTimecode: js.UndefOr[StartTimecode] = js.undefined,
@@ -4707,6 +4805,7 @@ package medialive {
   }
 
   object InputDestination {
+    @inline
     def apply(
         Ip: js.UndefOr[__string] = js.undefined,
         Port: js.UndefOr[__string] = js.undefined,
@@ -4731,6 +4830,7 @@ package medialive {
   }
 
   object InputDestinationRequest {
+    @inline
     def apply(
         StreamName: js.UndefOr[__string] = js.undefined
     ): InputDestinationRequest = {
@@ -4750,6 +4850,7 @@ package medialive {
   }
 
   object InputDestinationVpc {
+    @inline
     def apply(
         AvailabilityZone: js.UndefOr[__string] = js.undefined,
         NetworkInterfaceId: js.UndefOr[__string] = js.undefined
@@ -4783,6 +4884,7 @@ package medialive {
   }
 
   object InputLocation {
+    @inline
     def apply(
         Uri: __string,
         PasswordParam: js.UndefOr[__string] = js.undefined,
@@ -4852,6 +4954,7 @@ package medialive {
   }
 
   object InputLossBehavior {
+    @inline
     def apply(
         BlackFrameMsec: js.UndefOr[__integerMin0Max1000000] = js.undefined,
         InputLossImageColor: js.UndefOr[__stringMin6Max6] = js.undefined,
@@ -4915,6 +5018,7 @@ package medialive {
   }
 
   object InputSecurityGroup {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined,
@@ -4963,6 +5067,7 @@ package medialive {
   }
 
   object InputSettings {
+    @inline
     def apply(
         AudioSelectors: js.UndefOr[__listOfAudioSelector] = js.undefined,
         CaptionSelectors: js.UndefOr[__listOfCaptionSelector] = js.undefined,
@@ -4999,6 +5104,7 @@ package medialive {
   }
 
   object InputSource {
+    @inline
     def apply(
         PasswordParam: js.UndefOr[__string] = js.undefined,
         Url: js.UndefOr[__string] = js.undefined,
@@ -5033,6 +5139,7 @@ package medialive {
   }
 
   object InputSourceRequest {
+    @inline
     def apply(
         PasswordParam: js.UndefOr[__string] = js.undefined,
         Url: js.UndefOr[__string] = js.undefined,
@@ -5069,6 +5176,7 @@ package medialive {
   }
 
   object InputSpecification {
+    @inline
     def apply(
         Codec: js.UndefOr[InputCodec] = js.undefined,
         MaximumBitrate: js.UndefOr[InputMaximumBitrate] = js.undefined,
@@ -5106,6 +5214,7 @@ package medialive {
   }
 
   object InputSwitchScheduleActionSettings {
+    @inline
     def apply(
         InputAttachmentNameReference: __string,
         InputClippingSettings: js.UndefOr[InputClippingSettings] = js.undefined,
@@ -5159,6 +5268,7 @@ package medialive {
   }
 
   object InputVpcRequest {
+    @inline
     def apply(
         SubnetIds: __listOf__string,
         SecurityGroupIds: js.UndefOr[__listOf__string] = js.undefined
@@ -5181,6 +5291,7 @@ package medialive {
   }
 
   object InputWhitelistRule {
+    @inline
     def apply(
         Cidr: js.UndefOr[__string] = js.undefined
     ): InputWhitelistRule = {
@@ -5199,6 +5310,7 @@ package medialive {
   }
 
   object InputWhitelistRuleCidr {
+    @inline
     def apply(
         Cidr: js.UndefOr[__string] = js.undefined
     ): InputWhitelistRuleCidr = {
@@ -5217,6 +5329,7 @@ package medialive {
   }
 
   object KeyProviderSettings {
+    @inline
     def apply(
         StaticKeySettings: js.UndefOr[StaticKeySettings] = js.undefined
     ): KeyProviderSettings = {
@@ -5246,6 +5359,7 @@ package medialive {
   }
 
   object ListChannelsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -5267,6 +5381,7 @@ package medialive {
   }
 
   object ListChannelsResponse {
+    @inline
     def apply(
         Channels: js.UndefOr[__listOfChannelSummary] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -5288,6 +5403,7 @@ package medialive {
   }
 
   object ListInputSecurityGroupsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -5309,6 +5425,7 @@ package medialive {
   }
 
   object ListInputSecurityGroupsResponse {
+    @inline
     def apply(
         InputSecurityGroups: js.UndefOr[__listOfInputSecurityGroup] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -5330,6 +5447,7 @@ package medialive {
   }
 
   object ListInputsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -5351,6 +5469,7 @@ package medialive {
   }
 
   object ListInputsResponse {
+    @inline
     def apply(
         Inputs: js.UndefOr[__listOfInput] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -5381,6 +5500,7 @@ package medialive {
   }
 
   object ListOfferingsRequest {
+    @inline
     def apply(
         ChannelClass: js.UndefOr[__string] = js.undefined,
         ChannelConfiguration: js.UndefOr[__string] = js.undefined,
@@ -5420,6 +5540,7 @@ package medialive {
   }
 
   object ListOfferingsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[__string] = js.undefined,
         Offerings: js.UndefOr[__listOfOffering] = js.undefined
@@ -5449,6 +5570,7 @@ package medialive {
   }
 
   object ListReservationsRequest {
+    @inline
     def apply(
         ChannelClass: js.UndefOr[__string] = js.undefined,
         Codec: js.UndefOr[__string] = js.undefined,
@@ -5486,6 +5608,7 @@ package medialive {
   }
 
   object ListReservationsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[__string] = js.undefined,
         Reservations: js.UndefOr[__listOfReservation] = js.undefined
@@ -5506,6 +5629,7 @@ package medialive {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceArn: __string
     ): ListTagsForResourceRequest = {
@@ -5526,6 +5650,7 @@ package medialive {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         Tags: js.UndefOr[Tags] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -5776,6 +5901,7 @@ package medialive {
   }
 
   object M2tsSettings {
+    @inline
     def apply(
         AbsentInputAudioBehavior: js.UndefOr[M2tsAbsentInputAudioBehavior] = js.undefined,
         Arib: js.UndefOr[M2tsArib] = js.undefined,
@@ -5929,6 +6055,7 @@ package medialive {
   }
 
   object M3u8Settings {
+    @inline
     def apply(
         AudioFramesPerPes: js.UndefOr[__integerMin0] = js.undefined,
         AudioPids: js.UndefOr[__string] = js.undefined,
@@ -5987,6 +6114,7 @@ package medialive {
   }
 
   object MediaConnectFlow {
+    @inline
     def apply(
         FlowArn: js.UndefOr[__string] = js.undefined
     ): MediaConnectFlow = {
@@ -6005,6 +6133,7 @@ package medialive {
   }
 
   object MediaConnectFlowRequest {
+    @inline
     def apply(
         FlowArn: js.UndefOr[__string] = js.undefined
     ): MediaConnectFlowRequest = {
@@ -6023,6 +6152,7 @@ package medialive {
   }
 
   object MediaPackageGroupSettings {
+    @inline
     def apply(
         Destination: OutputLocationRef
     ): MediaPackageGroupSettings = {
@@ -6043,6 +6173,7 @@ package medialive {
   }
 
   object MediaPackageOutputDestinationSettings {
+    @inline
     def apply(
         ChannelId: js.UndefOr[__stringMin1] = js.undefined
     ): MediaPackageOutputDestinationSettings = {
@@ -6059,6 +6190,7 @@ package medialive {
   trait MediaPackageOutputSettings extends js.Object {}
 
   object MediaPackageOutputSettings {
+    @inline
     def apply(
         ): MediaPackageOutputSettings = {
       val __obj = js.Dynamic.literal()
@@ -6088,6 +6220,7 @@ package medialive {
   }
 
   object Mp2Settings {
+    @inline
     def apply(
         Bitrate: js.UndefOr[__double] = js.undefined,
         CodingMode: js.UndefOr[Mp2CodingMode] = js.undefined,
@@ -6128,6 +6261,7 @@ package medialive {
   }
 
   object MsSmoothGroupSettings {
+    @inline
     def apply(
         Destination: OutputLocationRef,
         AcquisitionPointId: js.UndefOr[__string] = js.undefined,
@@ -6184,6 +6318,7 @@ package medialive {
   }
 
   object MsSmoothOutputSettings {
+    @inline
     def apply(
         NameModifier: js.UndefOr[__string] = js.undefined
     ): MsSmoothOutputSettings = {
@@ -6213,6 +6348,7 @@ package medialive {
   }
 
   object NetworkInputSettings {
+    @inline
     def apply(
         HlsInputSettings: js.UndefOr[HlsInputSettings] = js.undefined,
         ServerValidation: js.UndefOr[NetworkInputServerValidation] = js.undefined
@@ -6243,6 +6379,7 @@ package medialive {
   }
 
   object Offering {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CurrencyCode: js.UndefOr[__string] = js.undefined,
@@ -6303,6 +6440,7 @@ package medialive {
   }
 
   object Output {
+    @inline
     def apply(
         OutputSettings: OutputSettings,
         AudioDescriptionNames: js.UndefOr[__listOf__string] = js.undefined,
@@ -6333,6 +6471,7 @@ package medialive {
   }
 
   object OutputDestination {
+    @inline
     def apply(
         Id: js.UndefOr[__string] = js.undefined,
         MediaPackageSettings: js.UndefOr[__listOfMediaPackageOutputDestinationSettings] = js.undefined,
@@ -6358,6 +6497,7 @@ package medialive {
   }
 
   object OutputDestinationSettings {
+    @inline
     def apply(
         PasswordParam: js.UndefOr[__string] = js.undefined,
         StreamName: js.UndefOr[__string] = js.undefined,
@@ -6384,6 +6524,7 @@ package medialive {
   }
 
   object OutputGroup {
+    @inline
     def apply(
         OutputGroupSettings: OutputGroupSettings,
         Outputs: __listOfOutput,
@@ -6414,6 +6555,7 @@ package medialive {
   }
 
   object OutputGroupSettings {
+    @inline
     def apply(
         ArchiveGroupSettings: js.UndefOr[ArchiveGroupSettings] = js.undefined,
         FrameCaptureGroupSettings: js.UndefOr[FrameCaptureGroupSettings] = js.undefined,
@@ -6448,6 +6590,7 @@ package medialive {
   }
 
   object OutputLocationRef {
+    @inline
     def apply(
         DestinationRefId: js.UndefOr[__string] = js.undefined
     ): OutputLocationRef = {
@@ -6472,6 +6615,7 @@ package medialive {
   }
 
   object OutputSettings {
+    @inline
     def apply(
         ArchiveOutputSettings: js.UndefOr[ArchiveOutputSettings] = js.undefined,
         FrameCaptureOutputSettings: js.UndefOr[FrameCaptureOutputSettings] = js.undefined,
@@ -6504,6 +6648,7 @@ package medialive {
   trait PassThroughSettings extends js.Object {}
 
   object PassThroughSettings {
+    @inline
     def apply(
         ): PassThroughSettings = {
       val __obj = js.Dynamic.literal()
@@ -6521,6 +6666,7 @@ package medialive {
   }
 
   object PauseStateScheduleActionSettings {
+    @inline
     def apply(
         Pipelines: js.UndefOr[__listOfPipelinePauseStateSettings] = js.undefined
     ): PauseStateScheduleActionSettings = {
@@ -6541,6 +6687,7 @@ package medialive {
   }
 
   object PipelineDetail {
+    @inline
     def apply(
         ActiveInputAttachmentName: js.UndefOr[__string] = js.undefined,
         ActiveInputSwitchActionName: js.UndefOr[__string] = js.undefined,
@@ -6577,6 +6724,7 @@ package medialive {
   }
 
   object PipelinePauseStateSettings {
+    @inline
     def apply(
         PipelineId: PipelineId
     ): PipelinePauseStateSettings = {
@@ -6602,6 +6750,7 @@ package medialive {
   }
 
   object PurchaseOfferingRequest {
+    @inline
     def apply(
         Count: __integerMin1,
         OfferingId: __string,
@@ -6632,6 +6781,7 @@ package medialive {
   }
 
   object PurchaseOfferingResponse {
+    @inline
     def apply(
         Reservation: js.UndefOr[Reservation] = js.undefined
     ): PurchaseOfferingResponse = {
@@ -6652,6 +6802,7 @@ package medialive {
   }
 
   object RemixSettings {
+    @inline
     def apply(
         ChannelMappings: __listOfAudioChannelMapping,
         ChannelsIn: js.UndefOr[__integerMin1Max16] = js.undefined,
@@ -6693,6 +6844,7 @@ package medialive {
   }
 
   object Reservation {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         Count: js.UndefOr[__integer] = js.undefined,
@@ -6796,6 +6948,7 @@ package medialive {
   }
 
   object ReservationResourceSpecification {
+    @inline
     def apply(
         ChannelClass: js.UndefOr[ChannelClass] = js.undefined,
         Codec: js.UndefOr[ReservationCodec] = js.undefined,
@@ -6891,6 +7044,7 @@ package medialive {
   trait RtmpCaptionInfoDestinationSettings extends js.Object {}
 
   object RtmpCaptionInfoDestinationSettings {
+    @inline
     def apply(
         ): RtmpCaptionInfoDestinationSettings = {
       val __obj = js.Dynamic.literal()
@@ -6913,6 +7067,7 @@ package medialive {
   }
 
   object RtmpGroupSettings {
+    @inline
     def apply(
         AuthenticationScheme: js.UndefOr[AuthenticationScheme] = js.undefined,
         CacheFullBehavior: js.UndefOr[RtmpCacheFullBehavior] = js.undefined,
@@ -6954,6 +7109,7 @@ package medialive {
   }
 
   object RtmpOutputSettings {
+    @inline
     def apply(
         Destination: OutputLocationRef,
         CertificateMode: js.UndefOr[RtmpOutputCertificateMode] = js.undefined,
@@ -6982,6 +7138,7 @@ package medialive {
   }
 
   object ScheduleAction {
+    @inline
     def apply(
         ActionName: __string,
         ScheduleActionSettings: ScheduleActionSettings,
@@ -7013,6 +7170,7 @@ package medialive {
   }
 
   object ScheduleActionSettings {
+    @inline
     def apply(
         HlsTimedMetadataSettings: js.UndefOr[HlsTimedMetadataScheduleActionSettings] = js.undefined,
         InputSwitchSettings: js.UndefOr[InputSwitchScheduleActionSettings] = js.undefined,
@@ -7055,6 +7213,7 @@ package medialive {
   }
 
   object ScheduleActionStartSettings {
+    @inline
     def apply(
         FixedModeScheduleActionStartSettings: js.UndefOr[FixedModeScheduleActionStartSettings] = js.undefined,
         FollowModeScheduleActionStartSettings: js.UndefOr[FollowModeScheduleActionStartSettings] = js.undefined,
@@ -7091,6 +7250,7 @@ package medialive {
   trait Scte20PlusEmbeddedDestinationSettings extends js.Object {}
 
   object Scte20PlusEmbeddedDestinationSettings {
+    @inline
     def apply(
         ): Scte20PlusEmbeddedDestinationSettings = {
       val __obj = js.Dynamic.literal()
@@ -7109,6 +7269,7 @@ package medialive {
   }
 
   object Scte20SourceSettings {
+    @inline
     def apply(
         Convert608To708: js.UndefOr[Scte20Convert608To708] = js.undefined,
         Source608ChannelNumber: js.UndefOr[__integerMin1Max4] = js.undefined
@@ -7127,6 +7288,7 @@ package medialive {
   trait Scte27DestinationSettings extends js.Object {}
 
   object Scte27DestinationSettings {
+    @inline
     def apply(
         ): Scte27DestinationSettings = {
       val __obj = js.Dynamic.literal()
@@ -7144,6 +7306,7 @@ package medialive {
   }
 
   object Scte27SourceSettings {
+    @inline
     def apply(
         Pid: js.UndefOr[__integerMin1] = js.undefined
     ): Scte27SourceSettings = {
@@ -7195,6 +7358,7 @@ package medialive {
   }
 
   object Scte35DeliveryRestrictions {
+    @inline
     def apply(
         ArchiveAllowedFlag: Scte35ArchiveAllowedFlag,
         DeviceRestrictions: Scte35DeviceRestrictions,
@@ -7221,6 +7385,7 @@ package medialive {
   }
 
   object Scte35Descriptor {
+    @inline
     def apply(
         Scte35DescriptorSettings: Scte35DescriptorSettings
     ): Scte35Descriptor = {
@@ -7241,6 +7406,7 @@ package medialive {
   }
 
   object Scte35DescriptorSettings {
+    @inline
     def apply(
         SegmentationDescriptorScte35DescriptorSettings: Scte35SegmentationDescriptor
     ): Scte35DescriptorSettings = {
@@ -7284,6 +7450,7 @@ package medialive {
   }
 
   object Scte35ReturnToNetworkScheduleActionSettings {
+    @inline
     def apply(
         SpliceEventId: __longMin0Max4294967295
     ): Scte35ReturnToNetworkScheduleActionSettings = {
@@ -7324,6 +7491,7 @@ package medialive {
   }
 
   object Scte35SegmentationDescriptor {
+    @inline
     def apply(
         SegmentationCancelIndicator: Scte35SegmentationCancelIndicator,
         SegmentationEventId: __longMin0Max4294967295,
@@ -7366,6 +7534,7 @@ package medialive {
   }
 
   object Scte35SpliceInsert {
+    @inline
     def apply(
         AdAvailOffset: js.UndefOr[__integerMinNegative1000Max1000] = js.undefined,
         NoRegionalBlackoutFlag: js.UndefOr[Scte35SpliceInsertNoRegionalBlackoutBehavior] = js.undefined,
@@ -7399,6 +7568,7 @@ package medialive {
   }
 
   object Scte35SpliceInsertScheduleActionSettings {
+    @inline
     def apply(
         SpliceEventId: __longMin0Max4294967295,
         Duration: js.UndefOr[__longMin0Max8589934591] = js.undefined
@@ -7433,6 +7603,7 @@ package medialive {
   }
 
   object Scte35TimeSignalApos {
+    @inline
     def apply(
         AdAvailOffset: js.UndefOr[__integerMinNegative1000Max1000] = js.undefined,
         NoRegionalBlackoutFlag: js.UndefOr[Scte35AposNoRegionalBlackoutBehavior] = js.undefined,
@@ -7455,6 +7626,7 @@ package medialive {
   }
 
   object Scte35TimeSignalScheduleActionSettings {
+    @inline
     def apply(
         Scte35Descriptors: __listOfScte35Descriptor
     ): Scte35TimeSignalScheduleActionSettings = {
@@ -7564,6 +7736,7 @@ package medialive {
   trait SmpteTtDestinationSettings extends js.Object {}
 
   object SmpteTtDestinationSettings {
+    @inline
     def apply(
         ): SmpteTtDestinationSettings = {
       val __obj = js.Dynamic.literal()
@@ -7582,6 +7755,7 @@ package medialive {
   }
 
   object StandardHlsSettings {
+    @inline
     def apply(
         M3u8Settings: M3u8Settings,
         AudioRenditionSets: js.UndefOr[__string] = js.undefined
@@ -7604,6 +7778,7 @@ package medialive {
   }
 
   object StartChannelRequest {
+    @inline
     def apply(
         ChannelId: __string
     ): StartChannelRequest = {
@@ -7638,6 +7813,7 @@ package medialive {
   }
 
   object StartChannelResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         ChannelClass: js.UndefOr[ChannelClass] = js.undefined,
@@ -7684,6 +7860,7 @@ package medialive {
   }
 
   object StartTimecode {
+    @inline
     def apply(
         Timecode: js.UndefOr[__string] = js.undefined
     ): StartTimecode = {
@@ -7711,6 +7888,7 @@ package medialive {
   }
 
   object StaticImageActivateScheduleActionSettings {
+    @inline
     def apply(
         Image: InputLocation,
         Duration: js.UndefOr[__integerMin0] = js.undefined,
@@ -7750,6 +7928,7 @@ package medialive {
   }
 
   object StaticImageDeactivateScheduleActionSettings {
+    @inline
     def apply(
         FadeOut: js.UndefOr[__integerMin0] = js.undefined,
         Layer: js.UndefOr[__integerMin0Max7] = js.undefined
@@ -7771,6 +7950,7 @@ package medialive {
   }
 
   object StaticKeySettings {
+    @inline
     def apply(
         StaticKeyValue: __stringMin32Max32,
         KeyProviderServer: js.UndefOr[InputLocation] = js.undefined
@@ -7793,6 +7973,7 @@ package medialive {
   }
 
   object StopChannelRequest {
+    @inline
     def apply(
         ChannelId: __string
     ): StopChannelRequest = {
@@ -7827,6 +8008,7 @@ package medialive {
   }
 
   object StopChannelResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         ChannelClass: js.UndefOr[ChannelClass] = js.undefined,
@@ -7874,6 +8056,7 @@ package medialive {
   }
 
   object StopTimecode {
+    @inline
     def apply(
         LastFrameClippingBehavior: js.UndefOr[LastFrameClippingBehavior] = js.undefined,
         Timecode: js.UndefOr[__string] = js.undefined
@@ -7894,6 +8077,7 @@ package medialive {
   trait TeletextDestinationSettings extends js.Object {}
 
   object TeletextDestinationSettings {
+    @inline
     def apply(
         ): TeletextDestinationSettings = {
       val __obj = js.Dynamic.literal()
@@ -7911,6 +8095,7 @@ package medialive {
   }
 
   object TeletextSourceSettings {
+    @inline
     def apply(
         PageNumber: js.UndefOr[__string] = js.undefined
     ): TeletextSourceSettings = {
@@ -7930,6 +8115,7 @@ package medialive {
   }
 
   object TimecodeConfig {
+    @inline
     def apply(
         Source: TimecodeConfigSource,
         SyncThreshold: js.UndefOr[__integerMin1Max1000000] = js.undefined
@@ -7963,6 +8149,7 @@ package medialive {
   }
 
   object TtmlDestinationSettings {
+    @inline
     def apply(
         StyleControl: js.UndefOr[TtmlDestinationStyleControl] = js.undefined
     ): TtmlDestinationSettings = {
@@ -7991,6 +8178,7 @@ package medialive {
   }
 
   object UdpContainerSettings {
+    @inline
     def apply(
         M2tsSettings: js.UndefOr[M2tsSettings] = js.undefined
     ): UdpContainerSettings = {
@@ -8011,6 +8199,7 @@ package medialive {
   }
 
   object UdpGroupSettings {
+    @inline
     def apply(
         InputLossAction: js.UndefOr[InputLossActionForUdpOut] = js.undefined,
         TimedMetadataId3Frame: js.UndefOr[UdpTimedMetadataId3Frame] = js.undefined,
@@ -8036,6 +8225,7 @@ package medialive {
   }
 
   object UdpOutputSettings {
+    @inline
     def apply(
         ContainerSettings: UdpContainerSettings,
         Destination: OutputLocationRef,
@@ -8075,6 +8265,7 @@ package medialive {
   }
 
   object UpdateChannelClassRequest {
+    @inline
     def apply(
         ChannelClass: ChannelClass,
         ChannelId: __string,
@@ -8099,6 +8290,7 @@ package medialive {
   }
 
   object UpdateChannelClassResponse {
+    @inline
     def apply(
         Channel: js.UndefOr[Channel] = js.undefined
     ): UpdateChannelClassResponse = {
@@ -8124,6 +8316,7 @@ package medialive {
   }
 
   object UpdateChannelRequest {
+    @inline
     def apply(
         ChannelId: __string,
         Destinations: js.UndefOr[__listOfOutputDestination] = js.undefined,
@@ -8158,6 +8351,7 @@ package medialive {
   }
 
   object UpdateChannelResponse {
+    @inline
     def apply(
         Channel: js.UndefOr[Channel] = js.undefined
     ): UpdateChannelResponse = {
@@ -8182,6 +8376,7 @@ package medialive {
   }
 
   object UpdateInputRequest {
+    @inline
     def apply(
         InputId: __string,
         Destinations: js.UndefOr[__listOfInputDestinationRequest] = js.undefined,
@@ -8214,6 +8409,7 @@ package medialive {
   }
 
   object UpdateInputResponse {
+    @inline
     def apply(
         Input: js.UndefOr[Input] = js.undefined
     ): UpdateInputResponse = {
@@ -8234,6 +8430,7 @@ package medialive {
   }
 
   object UpdateInputSecurityGroupRequest {
+    @inline
     def apply(
         InputSecurityGroupId: __string,
         Tags: js.UndefOr[Tags] = js.undefined,
@@ -8258,6 +8455,7 @@ package medialive {
   }
 
   object UpdateInputSecurityGroupResponse {
+    @inline
     def apply(
         SecurityGroup: js.UndefOr[InputSecurityGroup] = js.undefined
     ): UpdateInputSecurityGroupResponse = {
@@ -8277,6 +8475,7 @@ package medialive {
   }
 
   object UpdateReservationRequest {
+    @inline
     def apply(
         ReservationId: __string,
         Name: js.UndefOr[__string] = js.undefined
@@ -8299,6 +8498,7 @@ package medialive {
   }
 
   object UpdateReservationResponse {
+    @inline
     def apply(
         Reservation: js.UndefOr[Reservation] = js.undefined
     ): UpdateReservationResponse = {
@@ -8318,6 +8518,7 @@ package medialive {
   }
 
   object VideoCodecSettings {
+    @inline
     def apply(
         FrameCaptureSettings: js.UndefOr[FrameCaptureSettings] = js.undefined,
         H264Settings: js.UndefOr[H264Settings] = js.undefined
@@ -8344,6 +8545,7 @@ package medialive {
   }
 
   object VideoDescription {
+    @inline
     def apply(
         Name: __string,
         CodecSettings: js.UndefOr[VideoCodecSettings] = js.undefined,
@@ -8399,6 +8601,7 @@ package medialive {
   }
 
   object VideoSelector {
+    @inline
     def apply(
         ColorSpace: js.UndefOr[VideoSelectorColorSpace] = js.undefined,
         ColorSpaceUsage: js.UndefOr[VideoSelectorColorSpaceUsage] = js.undefined,
@@ -8442,6 +8645,7 @@ package medialive {
   }
 
   object VideoSelectorPid {
+    @inline
     def apply(
         Pid: js.UndefOr[__integerMin0Max8191] = js.undefined
     ): VideoSelectorPid = {
@@ -8460,6 +8664,7 @@ package medialive {
   }
 
   object VideoSelectorProgramId {
+    @inline
     def apply(
         ProgramId: js.UndefOr[__integerMin0Max65536] = js.undefined
     ): VideoSelectorProgramId = {
@@ -8479,6 +8684,7 @@ package medialive {
   }
 
   object VideoSelectorSettings {
+    @inline
     def apply(
         VideoSelectorPid: js.UndefOr[VideoSelectorPid] = js.undefined,
         VideoSelectorProgramId: js.UndefOr[VideoSelectorProgramId] = js.undefined
@@ -8497,6 +8703,7 @@ package medialive {
   trait WebvttDestinationSettings extends js.Object {}
 
   object WebvttDestinationSettings {
+    @inline
     def apply(
         ): WebvttDestinationSettings = {
       val __obj = js.Dynamic.literal()

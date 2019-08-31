@@ -334,6 +334,7 @@ package cloudformation {
   }
 
   object AccountGateResult {
+    @inline
     def apply(
         Status: js.UndefOr[AccountGateStatus] = js.undefined,
         StatusReason: js.UndefOr[AccountGateStatusReason] = js.undefined
@@ -363,6 +364,7 @@ package cloudformation {
   }
 
   object AccountLimit {
+    @inline
     def apply(
         Name: js.UndefOr[LimitName] = js.undefined,
         Value: js.UndefOr[LimitValue] = js.undefined
@@ -384,6 +386,7 @@ package cloudformation {
   }
 
   object CancelUpdateStackInput {
+    @inline
     def apply(
         StackName: StackName,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined
@@ -415,6 +418,7 @@ package cloudformation {
   }
 
   object Change {
+    @inline
     def apply(
         ResourceChange: js.UndefOr[ResourceChange] = js.undefined,
         Type: js.UndefOr[ChangeType] = js.undefined
@@ -462,6 +466,7 @@ package cloudformation {
   }
 
   object ChangeSetSummary {
+    @inline
     def apply(
         ChangeSetId: js.UndefOr[ChangeSetId] = js.undefined,
         ChangeSetName: js.UndefOr[ChangeSetName] = js.undefined,
@@ -524,6 +529,7 @@ package cloudformation {
   }
 
   object ContinueUpdateRollbackInput {
+    @inline
     def apply(
         StackName: StackNameOrId,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
@@ -548,6 +554,7 @@ package cloudformation {
   trait ContinueUpdateRollbackOutput extends js.Object {}
 
   object ContinueUpdateRollbackOutput {
+    @inline
     def apply(
         ): ContinueUpdateRollbackOutput = {
       val __obj = js.Dynamic.literal()
@@ -579,6 +586,7 @@ package cloudformation {
   }
 
   object CreateChangeSetInput {
+    @inline
     def apply(
         ChangeSetName: ChangeSetName,
         StackName: StackNameOrId,
@@ -628,6 +636,7 @@ package cloudformation {
   }
 
   object CreateChangeSetOutput {
+    @inline
     def apply(
         Id: js.UndefOr[ChangeSetId] = js.undefined,
         StackId: js.UndefOr[StackId] = js.undefined
@@ -664,6 +673,7 @@ package cloudformation {
   }
 
   object CreateStackInput {
+    @inline
     def apply(
         StackName: StackName,
         Capabilities: js.UndefOr[Capabilities] = js.undefined,
@@ -720,6 +730,7 @@ package cloudformation {
   }
 
   object CreateStackInstancesInput {
+    @inline
     def apply(
         Accounts: AccountList,
         Regions: RegionList,
@@ -747,6 +758,7 @@ package cloudformation {
   }
 
   object CreateStackInstancesOutput {
+    @inline
     def apply(
         OperationId: js.UndefOr[ClientRequestToken] = js.undefined
     ): CreateStackInstancesOutput = {
@@ -765,6 +777,7 @@ package cloudformation {
   }
 
   object CreateStackOutput {
+    @inline
     def apply(
         StackId: js.UndefOr[StackId] = js.undefined
     ): CreateStackOutput = {
@@ -789,6 +802,7 @@ package cloudformation {
   }
 
   object CreateStackSetInput {
+    @inline
     def apply(
         StackSetName: StackSetName,
         AdministrationRoleARN: js.UndefOr[RoleARN] = js.undefined,
@@ -824,6 +838,7 @@ package cloudformation {
   }
 
   object CreateStackSetOutput {
+    @inline
     def apply(
         StackSetId: js.UndefOr[StackSetId] = js.undefined
     ): CreateStackSetOutput = {
@@ -843,6 +858,7 @@ package cloudformation {
   }
 
   object DeleteChangeSetInput {
+    @inline
     def apply(
         ChangeSetName: ChangeSetNameOrId,
         StackName: js.UndefOr[StackNameOrId] = js.undefined
@@ -863,6 +879,7 @@ package cloudformation {
   trait DeleteChangeSetOutput extends js.Object {}
 
   object DeleteChangeSetOutput {
+    @inline
     def apply(
         ): DeleteChangeSetOutput = {
       val __obj = js.Dynamic.literal()
@@ -883,6 +900,7 @@ package cloudformation {
   }
 
   object DeleteStackInput {
+    @inline
     def apply(
         StackName: StackName,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
@@ -911,6 +929,7 @@ package cloudformation {
   }
 
   object DeleteStackInstancesInput {
+    @inline
     def apply(
         Accounts: AccountList,
         Regions: RegionList,
@@ -938,6 +957,7 @@ package cloudformation {
   }
 
   object DeleteStackInstancesOutput {
+    @inline
     def apply(
         OperationId: js.UndefOr[ClientRequestToken] = js.undefined
     ): DeleteStackInstancesOutput = {
@@ -953,6 +973,7 @@ package cloudformation {
   }
 
   object DeleteStackSetInput {
+    @inline
     def apply(
         StackSetName: StackSetName
     ): DeleteStackSetInput = {
@@ -968,6 +989,7 @@ package cloudformation {
   trait DeleteStackSetOutput extends js.Object {}
 
   object DeleteStackSetOutput {
+    @inline
     def apply(
         ): DeleteStackSetOutput = {
       val __obj = js.Dynamic.literal()
@@ -985,6 +1007,7 @@ package cloudformation {
   }
 
   object DescribeAccountLimitsInput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeAccountLimitsInput = {
@@ -1004,6 +1027,7 @@ package cloudformation {
   }
 
   object DescribeAccountLimitsOutput {
+    @inline
     def apply(
         AccountLimits: js.UndefOr[AccountLimitList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1026,6 +1050,7 @@ package cloudformation {
   }
 
   object DescribeChangeSetInput {
+    @inline
     def apply(
         ChangeSetName: ChangeSetNameOrId,
         NextToken: js.UndefOr[NextToken] = js.undefined,
@@ -1065,6 +1090,7 @@ package cloudformation {
   }
 
   object DescribeChangeSetOutput {
+    @inline
     def apply(
         Capabilities: js.UndefOr[Capabilities] = js.undefined,
         ChangeSetId: js.UndefOr[ChangeSetId] = js.undefined,
@@ -1110,6 +1136,7 @@ package cloudformation {
   }
 
   object DescribeStackDriftDetectionStatusInput {
+    @inline
     def apply(
         StackDriftDetectionId: StackDriftDetectionId
     ): DescribeStackDriftDetectionStatusInput = {
@@ -1133,6 +1160,7 @@ package cloudformation {
   }
 
   object DescribeStackDriftDetectionStatusOutput {
+    @inline
     def apply(
         DetectionStatus: StackDriftDetectionStatus,
         StackDriftDetectionId: StackDriftDetectionId,
@@ -1168,6 +1196,7 @@ package cloudformation {
   }
 
   object DescribeStackEventsInput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         StackName: js.UndefOr[StackName] = js.undefined
@@ -1189,6 +1218,7 @@ package cloudformation {
   }
 
   object DescribeStackEventsOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         StackEvents: js.UndefOr[StackEvents] = js.undefined
@@ -1208,6 +1238,7 @@ package cloudformation {
   }
 
   object DescribeStackInstanceInput {
+    @inline
     def apply(
         StackInstanceAccount: Account,
         StackInstanceRegion: Region,
@@ -1229,6 +1260,7 @@ package cloudformation {
   }
 
   object DescribeStackInstanceOutput {
+    @inline
     def apply(
         StackInstance: js.UndefOr[StackInstance] = js.undefined
     ): DescribeStackInstanceOutput = {
@@ -1247,6 +1279,7 @@ package cloudformation {
   }
 
   object DescribeStackResourceDriftsInput {
+    @inline
     def apply(
         StackName: StackNameOrId,
         MaxResults: js.UndefOr[BoxedMaxResults] = js.undefined,
@@ -1273,6 +1306,7 @@ package cloudformation {
   }
 
   object DescribeStackResourceDriftsOutput {
+    @inline
     def apply(
         StackResourceDrifts: StackResourceDrifts,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1296,6 +1330,7 @@ package cloudformation {
   }
 
   object DescribeStackResourceInput {
+    @inline
     def apply(
         LogicalResourceId: LogicalResourceId,
         StackName: StackName
@@ -1318,6 +1353,7 @@ package cloudformation {
   }
 
   object DescribeStackResourceOutput {
+    @inline
     def apply(
         StackResourceDetail: js.UndefOr[StackResourceDetail] = js.undefined
     ): DescribeStackResourceOutput = {
@@ -1338,6 +1374,7 @@ package cloudformation {
   }
 
   object DescribeStackResourcesInput {
+    @inline
     def apply(
         LogicalResourceId: js.UndefOr[LogicalResourceId] = js.undefined,
         PhysicalResourceId: js.UndefOr[PhysicalResourceId] = js.undefined,
@@ -1360,6 +1397,7 @@ package cloudformation {
   }
 
   object DescribeStackResourcesOutput {
+    @inline
     def apply(
         StackResources: js.UndefOr[StackResources] = js.undefined
     ): DescribeStackResourcesOutput = {
@@ -1375,6 +1413,7 @@ package cloudformation {
   }
 
   object DescribeStackSetInput {
+    @inline
     def apply(
         StackSetName: StackSetName
     ): DescribeStackSetInput = {
@@ -1393,6 +1432,7 @@ package cloudformation {
   }
 
   object DescribeStackSetOperationInput {
+    @inline
     def apply(
         OperationId: ClientRequestToken,
         StackSetName: StackSetName
@@ -1412,6 +1452,7 @@ package cloudformation {
   }
 
   object DescribeStackSetOperationOutput {
+    @inline
     def apply(
         StackSetOperation: js.UndefOr[StackSetOperation] = js.undefined
     ): DescribeStackSetOperationOutput = {
@@ -1427,6 +1468,7 @@ package cloudformation {
   }
 
   object DescribeStackSetOutput {
+    @inline
     def apply(
         StackSet: js.UndefOr[StackSet] = js.undefined
     ): DescribeStackSetOutput = {
@@ -1446,6 +1488,7 @@ package cloudformation {
   }
 
   object DescribeStacksInput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         StackName: js.UndefOr[StackName] = js.undefined
@@ -1467,6 +1510,7 @@ package cloudformation {
   }
 
   object DescribeStacksOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Stacks: js.UndefOr[Stacks] = js.undefined
@@ -1485,6 +1529,7 @@ package cloudformation {
   }
 
   object DetectStackDriftInput {
+    @inline
     def apply(
         StackName: StackNameOrId,
         LogicalResourceIds: js.UndefOr[LogicalResourceIds] = js.undefined
@@ -1504,6 +1549,7 @@ package cloudformation {
   }
 
   object DetectStackDriftOutput {
+    @inline
     def apply(
         StackDriftDetectionId: StackDriftDetectionId
     ): DetectStackDriftOutput = {
@@ -1522,6 +1568,7 @@ package cloudformation {
   }
 
   object DetectStackResourceDriftInput {
+    @inline
     def apply(
         LogicalResourceId: LogicalResourceId,
         StackName: StackNameOrId
@@ -1541,6 +1588,7 @@ package cloudformation {
   }
 
   object DetectStackResourceDriftOutput {
+    @inline
     def apply(
         StackResourceDrift: StackResourceDrift
     ): DetectStackResourceDriftOutput = {
@@ -1571,6 +1619,7 @@ package cloudformation {
   }
 
   object EstimateTemplateCostInput {
+    @inline
     def apply(
         Parameters: js.UndefOr[Parameters] = js.undefined,
         TemplateBody: js.UndefOr[TemplateBody] = js.undefined,
@@ -1593,6 +1642,7 @@ package cloudformation {
   }
 
   object EstimateTemplateCostOutput {
+    @inline
     def apply(
         Url: js.UndefOr[Url] = js.undefined
     ): EstimateTemplateCostOutput = {
@@ -1620,6 +1670,7 @@ package cloudformation {
   }
 
   object ExecuteChangeSetInput {
+    @inline
     def apply(
         ChangeSetName: ChangeSetNameOrId,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
@@ -1642,6 +1693,7 @@ package cloudformation {
   trait ExecuteChangeSetOutput extends js.Object {}
 
   object ExecuteChangeSetOutput {
+    @inline
     def apply(
         ): ExecuteChangeSetOutput = {
       val __obj = js.Dynamic.literal()
@@ -1674,6 +1726,7 @@ package cloudformation {
   }
 
   object Export {
+    @inline
     def apply(
         ExportingStackId: js.UndefOr[StackId] = js.undefined,
         Name: js.UndefOr[ExportName] = js.undefined,
@@ -1696,6 +1749,7 @@ package cloudformation {
   }
 
   object GetStackPolicyInput {
+    @inline
     def apply(
         StackName: StackName
     ): GetStackPolicyInput = {
@@ -1716,6 +1770,7 @@ package cloudformation {
   }
 
   object GetStackPolicyOutput {
+    @inline
     def apply(
         StackPolicyBody: js.UndefOr[StackPolicyBody] = js.undefined
     ): GetStackPolicyOutput = {
@@ -1736,6 +1791,7 @@ package cloudformation {
   }
 
   object GetTemplateInput {
+    @inline
     def apply(
         ChangeSetName: js.UndefOr[ChangeSetNameOrId] = js.undefined,
         StackName: js.UndefOr[StackName] = js.undefined,
@@ -1759,6 +1815,7 @@ package cloudformation {
   }
 
   object GetTemplateOutput {
+    @inline
     def apply(
         StagesAvailable: js.UndefOr[StageList] = js.undefined,
         TemplateBody: js.UndefOr[TemplateBody] = js.undefined
@@ -1782,6 +1839,7 @@ package cloudformation {
   }
 
   object GetTemplateSummaryInput {
+    @inline
     def apply(
         StackName: js.UndefOr[StackNameOrId] = js.undefined,
         StackSetName: js.UndefOr[StackSetNameOrId] = js.undefined,
@@ -1813,6 +1871,7 @@ package cloudformation {
   }
 
   object GetTemplateSummaryOutput {
+    @inline
     def apply(
         Capabilities: js.UndefOr[Capabilities] = js.undefined,
         CapabilitiesReason: js.UndefOr[CapabilitiesReason] = js.undefined,
@@ -1846,6 +1905,7 @@ package cloudformation {
   }
 
   object ListChangeSetsInput {
+    @inline
     def apply(
         StackName: StackNameOrId,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1869,6 +1929,7 @@ package cloudformation {
   }
 
   object ListChangeSetsOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Summaries: js.UndefOr[ChangeSetSummaries] = js.undefined
@@ -1886,6 +1947,7 @@ package cloudformation {
   }
 
   object ListExportsInput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListExportsInput = {
@@ -1902,6 +1964,7 @@ package cloudformation {
   }
 
   object ListExportsOutput {
+    @inline
     def apply(
         Exports: js.UndefOr[Exports] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1920,6 +1983,7 @@ package cloudformation {
   }
 
   object ListImportsInput {
+    @inline
     def apply(
         ExportName: ExportName,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1940,6 +2004,7 @@ package cloudformation {
   }
 
   object ListImportsOutput {
+    @inline
     def apply(
         Imports: js.UndefOr[Imports] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1961,6 +2026,7 @@ package cloudformation {
   }
 
   object ListStackInstancesInput {
+    @inline
     def apply(
         StackSetName: StackSetName,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1987,6 +2053,7 @@ package cloudformation {
   }
 
   object ListStackInstancesOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Summaries: js.UndefOr[StackInstanceSummaries] = js.undefined
@@ -2008,6 +2075,7 @@ package cloudformation {
   }
 
   object ListStackResourcesInput {
+    @inline
     def apply(
         StackName: StackName,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -2031,6 +2099,7 @@ package cloudformation {
   }
 
   object ListStackResourcesOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         StackResourceSummaries: js.UndefOr[StackResourceSummaries] = js.undefined
@@ -2051,6 +2120,7 @@ package cloudformation {
   }
 
   object ListStackSetOperationResultsInput {
+    @inline
     def apply(
         OperationId: ClientRequestToken,
         StackSetName: StackSetName,
@@ -2075,6 +2145,7 @@ package cloudformation {
   }
 
   object ListStackSetOperationResultsOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Summaries: js.UndefOr[StackSetOperationResultSummaries] = js.undefined
@@ -2094,6 +2165,7 @@ package cloudformation {
   }
 
   object ListStackSetOperationsInput {
+    @inline
     def apply(
         StackSetName: StackSetName,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -2116,6 +2188,7 @@ package cloudformation {
   }
 
   object ListStackSetOperationsOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Summaries: js.UndefOr[StackSetOperationSummaries] = js.undefined
@@ -2135,6 +2208,7 @@ package cloudformation {
   }
 
   object ListStackSetsInput {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
@@ -2155,6 +2229,7 @@ package cloudformation {
   }
 
   object ListStackSetsOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Summaries: js.UndefOr[StackSetSummaries] = js.undefined
@@ -2176,6 +2251,7 @@ package cloudformation {
   }
 
   object ListStacksInput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         StackStatusFilter: js.UndefOr[StackStatusFilter] = js.undefined
@@ -2197,6 +2273,7 @@ package cloudformation {
   }
 
   object ListStacksOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         StackSummaries: js.UndefOr[StackSummaries] = js.undefined
@@ -2228,6 +2305,7 @@ package cloudformation {
   }
 
   object Output {
+    @inline
     def apply(
         Description: js.UndefOr[Description] = js.undefined,
         ExportName: js.UndefOr[ExportName] = js.undefined,
@@ -2255,6 +2333,7 @@ package cloudformation {
   }
 
   object Parameter {
+    @inline
     def apply(
         ParameterKey: js.UndefOr[ParameterKey] = js.undefined,
         ParameterValue: js.UndefOr[ParameterValue] = js.undefined,
@@ -2279,6 +2358,7 @@ package cloudformation {
   }
 
   object ParameterConstraints {
+    @inline
     def apply(
         AllowedValues: js.UndefOr[AllowedValues] = js.undefined
     ): ParameterConstraints = {
@@ -2302,6 +2382,7 @@ package cloudformation {
   }
 
   object ParameterDeclaration {
+    @inline
     def apply(
         DefaultValue: js.UndefOr[ParameterValue] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
@@ -2331,6 +2412,7 @@ package cloudformation {
   }
 
   object PhysicalResourceIdContextKeyValuePair {
+    @inline
     def apply(
         Key: Key,
         Value: Value
@@ -2356,6 +2438,7 @@ package cloudformation {
   }
 
   object PropertyDifference {
+    @inline
     def apply(
         ActualValue: PropertyValue,
         DifferenceType: DifferenceType,
@@ -2415,6 +2498,7 @@ package cloudformation {
   }
 
   object ResourceChange {
+    @inline
     def apply(
         Action: js.UndefOr[ChangeAction] = js.undefined,
         Details: js.UndefOr[ResourceChangeDetails] = js.undefined,
@@ -2448,6 +2532,7 @@ package cloudformation {
   }
 
   object ResourceChangeDetail {
+    @inline
     def apply(
         CausingEntity: js.UndefOr[CausingEntity] = js.undefined,
         ChangeSource: js.UndefOr[ChangeSource] = js.undefined,
@@ -2509,6 +2594,7 @@ package cloudformation {
   }
 
   object ResourceTargetDefinition {
+    @inline
     def apply(
         Attribute: js.UndefOr[ResourceAttribute] = js.undefined,
         Name: js.UndefOr[PropertyName] = js.undefined,
@@ -2533,6 +2619,7 @@ package cloudformation {
   }
 
   object RollbackConfiguration {
+    @inline
     def apply(
         MonitoringTimeInMinutes: js.UndefOr[MonitoringTimeInMinutes] = js.undefined,
         RollbackTriggers: js.UndefOr[RollbackTriggers] = js.undefined
@@ -2554,6 +2641,7 @@ package cloudformation {
   }
 
   object RollbackTrigger {
+    @inline
     def apply(
         Arn: Arn,
         Type: Type
@@ -2578,6 +2666,7 @@ package cloudformation {
   }
 
   object SetStackPolicyInput {
+    @inline
     def apply(
         StackName: StackName,
         StackPolicyBody: js.UndefOr[StackPolicyBody] = js.undefined,
@@ -2605,6 +2694,7 @@ package cloudformation {
   }
 
   object SignalResourceInput {
+    @inline
     def apply(
         LogicalResourceId: LogicalResourceId,
         StackName: StackNameOrId,
@@ -2652,6 +2742,7 @@ package cloudformation {
   }
 
   object Stack {
+    @inline
     def apply(
         CreationTime: CreationTime,
         StackName: StackName,
@@ -2725,6 +2816,7 @@ package cloudformation {
   }
 
   object StackDriftInformation {
+    @inline
     def apply(
         StackDriftStatus: StackDriftStatus,
         LastCheckTimestamp: js.UndefOr[Timestamp] = js.undefined
@@ -2748,6 +2840,7 @@ package cloudformation {
   }
 
   object StackDriftInformationSummary {
+    @inline
     def apply(
         StackDriftStatus: StackDriftStatus,
         LastCheckTimestamp: js.UndefOr[Timestamp] = js.undefined
@@ -2789,6 +2882,7 @@ package cloudformation {
   }
 
   object StackEvent {
+    @inline
     def apply(
         EventId: EventId,
         StackId: StackId,
@@ -2835,6 +2929,7 @@ package cloudformation {
   }
 
   object StackInstance {
+    @inline
     def apply(
         Account: js.UndefOr[Account] = js.undefined,
         ParameterOverrides: js.UndefOr[Parameters] = js.undefined,
@@ -2878,6 +2973,7 @@ package cloudformation {
   }
 
   object StackInstanceSummary {
+    @inline
     def apply(
         Account: js.UndefOr[Account] = js.undefined,
         Region: js.UndefOr[Region] = js.undefined,
@@ -2915,6 +3011,7 @@ package cloudformation {
   }
 
   object StackResource {
+    @inline
     def apply(
         LogicalResourceId: LogicalResourceId,
         ResourceStatus: ResourceStatus,
@@ -2963,6 +3060,7 @@ package cloudformation {
   }
 
   object StackResourceDetail {
+    @inline
     def apply(
         LastUpdatedTimestamp: Timestamp,
         LogicalResourceId: LogicalResourceId,
@@ -3014,6 +3112,7 @@ package cloudformation {
   }
 
   object StackResourceDrift {
+    @inline
     def apply(
         LogicalResourceId: LogicalResourceId,
         ResourceType: ResourceType,
@@ -3055,6 +3154,7 @@ package cloudformation {
   }
 
   object StackResourceDriftInformation {
+    @inline
     def apply(
         StackResourceDriftStatus: StackResourceDriftStatus,
         LastCheckTimestamp: js.UndefOr[Timestamp] = js.undefined
@@ -3078,6 +3178,7 @@ package cloudformation {
   }
 
   object StackResourceDriftInformationSummary {
+    @inline
     def apply(
         StackResourceDriftStatus: StackResourceDriftStatus,
         LastCheckTimestamp: js.UndefOr[Timestamp] = js.undefined
@@ -3115,6 +3216,7 @@ package cloudformation {
   }
 
   object StackResourceSummary {
+    @inline
     def apply(
         LastUpdatedTimestamp: Timestamp,
         LogicalResourceId: LogicalResourceId,
@@ -3157,6 +3259,7 @@ package cloudformation {
   }
 
   object StackSet {
+    @inline
     def apply(
         AdministrationRoleARN: js.UndefOr[RoleARN] = js.undefined,
         Capabilities: js.UndefOr[Capabilities] = js.undefined,
@@ -3204,6 +3307,7 @@ package cloudformation {
   }
 
   object StackSetOperation {
+    @inline
     def apply(
         Action: js.UndefOr[StackSetOperationAction] = js.undefined,
         AdministrationRoleARN: js.UndefOr[RoleARN] = js.undefined,
@@ -3253,6 +3357,7 @@ package cloudformation {
   }
 
   object StackSetOperationPreferences {
+    @inline
     def apply(
         FailureToleranceCount: js.UndefOr[FailureToleranceCount] = js.undefined,
         FailureTolerancePercentage: js.UndefOr[FailureTolerancePercentage] = js.undefined,
@@ -3295,6 +3400,7 @@ package cloudformation {
   }
 
   object StackSetOperationResultSummary {
+    @inline
     def apply(
         Account: js.UndefOr[Account] = js.undefined,
         AccountGateResult: js.UndefOr[AccountGateResult] = js.undefined,
@@ -3335,6 +3441,7 @@ package cloudformation {
   }
 
   object StackSetOperationSummary {
+    @inline
     def apply(
         Action: js.UndefOr[StackSetOperationAction] = js.undefined,
         CreationTimestamp: js.UndefOr[Timestamp] = js.undefined,
@@ -3371,6 +3478,7 @@ package cloudformation {
   }
 
   object StackSetSummary {
+    @inline
     def apply(
         Description: js.UndefOr[Description] = js.undefined,
         StackSetId: js.UndefOr[StackSetId] = js.undefined,
@@ -3447,6 +3555,7 @@ package cloudformation {
   }
 
   object StackSummary {
+    @inline
     def apply(
         CreationTime: CreationTime,
         StackName: StackName,
@@ -3485,6 +3594,7 @@ package cloudformation {
   }
 
   object StopStackSetOperationInput {
+    @inline
     def apply(
         OperationId: ClientRequestToken,
         StackSetName: StackSetName
@@ -3502,6 +3612,7 @@ package cloudformation {
   trait StopStackSetOperationOutput extends js.Object {}
 
   object StopStackSetOperationOutput {
+    @inline
     def apply(
         ): StopStackSetOperationOutput = {
       val __obj = js.Dynamic.literal()
@@ -3520,6 +3631,7 @@ package cloudformation {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: TagValue
@@ -3545,6 +3657,7 @@ package cloudformation {
   }
 
   object TemplateParameter {
+    @inline
     def apply(
         DefaultValue: js.UndefOr[ParameterValue] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
@@ -3591,6 +3704,7 @@ package cloudformation {
   }
 
   object UpdateStackInput {
+    @inline
     def apply(
         StackName: StackName,
         Capabilities: js.UndefOr[Capabilities] = js.undefined,
@@ -3647,6 +3761,7 @@ package cloudformation {
   }
 
   object UpdateStackInstancesInput {
+    @inline
     def apply(
         Accounts: AccountList,
         Regions: RegionList,
@@ -3674,6 +3789,7 @@ package cloudformation {
   }
 
   object UpdateStackInstancesOutput {
+    @inline
     def apply(
         OperationId: js.UndefOr[ClientRequestToken] = js.undefined
     ): UpdateStackInstancesOutput = {
@@ -3692,6 +3808,7 @@ package cloudformation {
   }
 
   object UpdateStackOutput {
+    @inline
     def apply(
         StackId: js.UndefOr[StackId] = js.undefined
     ): UpdateStackOutput = {
@@ -3720,6 +3837,7 @@ package cloudformation {
   }
 
   object UpdateStackSetInput {
+    @inline
     def apply(
         StackSetName: StackSetName,
         Accounts: js.UndefOr[AccountList] = js.undefined,
@@ -3763,6 +3881,7 @@ package cloudformation {
   }
 
   object UpdateStackSetOutput {
+    @inline
     def apply(
         OperationId: js.UndefOr[ClientRequestToken] = js.undefined
     ): UpdateStackSetOutput = {
@@ -3779,6 +3898,7 @@ package cloudformation {
   }
 
   object UpdateTerminationProtectionInput {
+    @inline
     def apply(
         EnableTerminationProtection: EnableTerminationProtection,
         StackName: StackNameOrId
@@ -3798,6 +3918,7 @@ package cloudformation {
   }
 
   object UpdateTerminationProtectionOutput {
+    @inline
     def apply(
         StackId: js.UndefOr[StackId] = js.undefined
     ): UpdateTerminationProtectionOutput = {
@@ -3817,6 +3938,7 @@ package cloudformation {
   }
 
   object ValidateTemplateInput {
+    @inline
     def apply(
         TemplateBody: js.UndefOr[TemplateBody] = js.undefined,
         TemplateURL: js.UndefOr[TemplateURL] = js.undefined
@@ -3841,6 +3963,7 @@ package cloudformation {
   }
 
   object ValidateTemplateOutput {
+    @inline
     def apply(
         Capabilities: js.UndefOr[Capabilities] = js.undefined,
         CapabilitiesReason: js.UndefOr[CapabilitiesReason] = js.undefined,

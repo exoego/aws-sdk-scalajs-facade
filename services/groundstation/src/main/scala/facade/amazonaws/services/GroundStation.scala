@@ -159,6 +159,7 @@ package groundstation {
   }
 
   object AntennaDownlinkConfig {
+    @inline
     def apply(
         spectrumConfig: SpectrumConfig
     ): AntennaDownlinkConfig = {
@@ -181,6 +182,7 @@ package groundstation {
   }
 
   object AntennaDownlinkDemodDecodeConfig {
+    @inline
     def apply(
         decodeConfig: DecodeConfig,
         demodulationConfig: DemodulationConfig,
@@ -206,6 +208,7 @@ package groundstation {
   }
 
   object AntennaUplinkConfig {
+    @inline
     def apply(
         spectrumConfig: UplinkSpectrumConfig,
         targetEirp: Eirp
@@ -236,6 +239,7 @@ package groundstation {
   }
 
   object CancelContactRequest {
+    @inline
     def apply(
         contactId: String
     ): CancelContactRequest = {
@@ -278,6 +282,7 @@ package groundstation {
   }
 
   object ConfigIdResponse {
+    @inline
     def apply(
         configArn: js.UndefOr[ConfigArn] = js.undefined,
         configId: js.UndefOr[String] = js.undefined,
@@ -303,6 +308,7 @@ package groundstation {
   }
 
   object ConfigListItem {
+    @inline
     def apply(
         configArn: js.UndefOr[ConfigArn] = js.undefined,
         configId: js.UndefOr[String] = js.undefined,
@@ -333,6 +339,7 @@ package groundstation {
   }
 
   object ConfigTypeData {
+    @inline
     def apply(
         antennaDownlinkConfig: js.UndefOr[AntennaDownlinkConfig] = js.undefined,
         antennaDownlinkDemodDecodeConfig: js.UndefOr[AntennaDownlinkDemodDecodeConfig] = js.undefined,
@@ -374,6 +381,7 @@ package groundstation {
   }
 
   object ContactData {
+    @inline
     def apply(
         contactId: js.UndefOr[String] = js.undefined,
         contactStatus: js.UndefOr[ContactStatus] = js.undefined,
@@ -414,6 +422,7 @@ package groundstation {
   }
 
   object ContactIdResponse {
+    @inline
     def apply(
         contactId: js.UndefOr[String] = js.undefined
     ): ContactIdResponse = {
@@ -464,6 +473,7 @@ package groundstation {
   }
 
   object CreateConfigRequest {
+    @inline
     def apply(
         configData: ConfigTypeData,
         name: SafeName,
@@ -489,6 +499,7 @@ package groundstation {
   }
 
   object CreateDataflowEndpointGroupRequest {
+    @inline
     def apply(
         endpointDetails: EndpointDetailsList,
         tags: js.UndefOr[TagsMap] = js.undefined
@@ -517,6 +528,7 @@ package groundstation {
   }
 
   object CreateMissionProfileRequest {
+    @inline
     def apply(
         dataflowEdges: DataflowEdgeList,
         minimumViableContactDurationSeconds: DurationInSeconds,
@@ -563,6 +575,7 @@ package groundstation {
   }
 
   object DataflowEndpoint {
+    @inline
     def apply(
         address: js.UndefOr[SocketAddress] = js.undefined,
         name: js.UndefOr[SafeName] = js.undefined,
@@ -585,6 +598,7 @@ package groundstation {
   }
 
   object DataflowEndpointConfig {
+    @inline
     def apply(
         dataflowEndpointName: String
     ): DataflowEndpointConfig = {
@@ -605,6 +619,7 @@ package groundstation {
   }
 
   object DataflowEndpointGroupIdResponse {
+    @inline
     def apply(
         dataflowEndpointGroupId: js.UndefOr[String] = js.undefined
     ): DataflowEndpointGroupIdResponse = {
@@ -624,6 +639,7 @@ package groundstation {
   }
 
   object DataflowEndpointListItem {
+    @inline
     def apply(
         dataflowEndpointGroupArn: js.UndefOr[DataflowEndpointGroupArn] = js.undefined,
         dataflowEndpointGroupId: js.UndefOr[String] = js.undefined
@@ -644,6 +660,7 @@ package groundstation {
   }
 
   object DecodeConfig {
+    @inline
     def apply(
         unvalidatedJSON: JsonString
     ): DecodeConfig = {
@@ -665,6 +682,7 @@ package groundstation {
   }
 
   object DeleteConfigRequest {
+    @inline
     def apply(
         configId: String,
         configType: ConfigCapabilityType
@@ -687,6 +705,7 @@ package groundstation {
   }
 
   object DeleteDataflowEndpointGroupRequest {
+    @inline
     def apply(
         dataflowEndpointGroupId: String
     ): DeleteDataflowEndpointGroupRequest = {
@@ -707,6 +726,7 @@ package groundstation {
   }
 
   object DeleteMissionProfileRequest {
+    @inline
     def apply(
         missionProfileId: String
     ): DeleteMissionProfileRequest = {
@@ -727,6 +747,7 @@ package groundstation {
   }
 
   object DemodulationConfig {
+    @inline
     def apply(
         unvalidatedJSON: JsonString
     ): DemodulationConfig = {
@@ -747,6 +768,7 @@ package groundstation {
   }
 
   object DescribeContactRequest {
+    @inline
     def apply(
         contactId: String
     ): DescribeContactRequest = {
@@ -778,6 +800,7 @@ package groundstation {
   }
 
   object DescribeContactResponse {
+    @inline
     def apply(
         contactId: js.UndefOr[String] = js.undefined,
         contactStatus: js.UndefOr[ContactStatus] = js.undefined,
@@ -819,6 +842,7 @@ package groundstation {
   }
 
   object Eirp {
+    @inline
     def apply(
         units: EirpUnits,
         value: Double
@@ -848,6 +872,7 @@ package groundstation {
   }
 
   object Elevation {
+    @inline
     def apply(
         unit: AngleUnits,
         value: Double
@@ -871,6 +896,7 @@ package groundstation {
   }
 
   object EndpointDetails {
+    @inline
     def apply(
         endpoint: js.UndefOr[DataflowEndpoint] = js.undefined,
         securityDetails: js.UndefOr[SecurityDetails] = js.undefined
@@ -902,6 +928,7 @@ package groundstation {
   }
 
   object Frequency {
+    @inline
     def apply(
         units: FrequencyUnits,
         value: Double
@@ -925,6 +952,7 @@ package groundstation {
   }
 
   object FrequencyBandwidth {
+    @inline
     def apply(
         units: BandwidthUnits,
         value: Double
@@ -956,6 +984,7 @@ package groundstation {
   }
 
   object GetConfigRequest {
+    @inline
     def apply(
         configId: String,
         configType: ConfigCapabilityType
@@ -983,6 +1012,7 @@ package groundstation {
   }
 
   object GetConfigResponse {
+    @inline
     def apply(
         configArn: ConfigArn,
         configData: ConfigTypeData,
@@ -1013,6 +1043,7 @@ package groundstation {
   }
 
   object GetDataflowEndpointGroupRequest {
+    @inline
     def apply(
         dataflowEndpointGroupId: String
     ): GetDataflowEndpointGroupRequest = {
@@ -1036,6 +1067,7 @@ package groundstation {
   }
 
   object GetDataflowEndpointGroupResponse {
+    @inline
     def apply(
         dataflowEndpointGroupArn: js.UndefOr[DataflowEndpointGroupArn] = js.undefined,
         dataflowEndpointGroupId: js.UndefOr[String] = js.undefined,
@@ -1061,6 +1093,7 @@ package groundstation {
   }
 
   object GetMinuteUsageRequest {
+    @inline
     def apply(
         month: Int,
         year: Int
@@ -1087,6 +1120,7 @@ package groundstation {
   }
 
   object GetMinuteUsageResponse {
+    @inline
     def apply(
         estimatedMinutesRemaining: js.UndefOr[Int] = js.undefined,
         isReservedMinutesCustomer: js.UndefOr[Boolean] = js.undefined,
@@ -1119,6 +1153,7 @@ package groundstation {
   }
 
   object GetMissionProfileRequest {
+    @inline
     def apply(
         missionProfileId: String
     ): GetMissionProfileRequest = {
@@ -1148,6 +1183,7 @@ package groundstation {
   }
 
   object GetMissionProfileResponse {
+    @inline
     def apply(
         contactPostPassDurationSeconds: js.UndefOr[DurationInSeconds] = js.undefined,
         contactPrePassDurationSeconds: js.UndefOr[DurationInSeconds] = js.undefined,
@@ -1190,6 +1226,7 @@ package groundstation {
   }
 
   object GetSatelliteRequest {
+    @inline
     def apply(
         satelliteId: String
     ): GetSatelliteRequest = {
@@ -1215,6 +1252,7 @@ package groundstation {
   }
 
   object GetSatelliteResponse {
+    @inline
     def apply(
         dateCreated: js.UndefOr[Timestamp] = js.undefined,
         lastUpdated: js.UndefOr[Timestamp] = js.undefined,
@@ -1245,6 +1283,7 @@ package groundstation {
   }
 
   object GroundStationData {
+    @inline
     def apply(
         groundStationId: js.UndefOr[String] = js.undefined,
         groundStationName: js.UndefOr[String] = js.undefined,
@@ -1268,6 +1307,7 @@ package groundstation {
   }
 
   object ListConfigsRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[Int] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
@@ -1289,6 +1329,7 @@ package groundstation {
   }
 
   object ListConfigsResponse {
+    @inline
     def apply(
         configList: js.UndefOr[ConfigList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
@@ -1316,6 +1357,7 @@ package groundstation {
   }
 
   object ListContactsRequest {
+    @inline
     def apply(
         endTime: Timestamp,
         startTime: Timestamp,
@@ -1351,6 +1393,7 @@ package groundstation {
   }
 
   object ListContactsResponse {
+    @inline
     def apply(
         contactList: js.UndefOr[ContactList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
@@ -1372,6 +1415,7 @@ package groundstation {
   }
 
   object ListDataflowEndpointGroupsRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[Int] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
@@ -1393,6 +1437,7 @@ package groundstation {
   }
 
   object ListDataflowEndpointGroupsResponse {
+    @inline
     def apply(
         dataflowEndpointGroupList: js.UndefOr[DataflowEndpointGroupList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
@@ -1416,6 +1461,7 @@ package groundstation {
   }
 
   object ListGroundStationsRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[Int] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
@@ -1437,6 +1483,7 @@ package groundstation {
   }
 
   object ListGroundStationsResponse {
+    @inline
     def apply(
         groundStationList: js.UndefOr[GroundStationList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
@@ -1458,6 +1505,7 @@ package groundstation {
   }
 
   object ListMissionProfilesRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[Int] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
@@ -1479,6 +1527,7 @@ package groundstation {
   }
 
   object ListMissionProfilesResponse {
+    @inline
     def apply(
         missionProfileList: js.UndefOr[MissionProfileList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
@@ -1500,6 +1549,7 @@ package groundstation {
   }
 
   object ListSatellitesRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[Int] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
@@ -1521,6 +1571,7 @@ package groundstation {
   }
 
   object ListSatellitesResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[String] = js.undefined,
         satellites: js.UndefOr[SatelliteList] = js.undefined
@@ -1541,6 +1592,7 @@ package groundstation {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         resourceArn: String
     ): ListTagsForResourceRequest = {
@@ -1561,6 +1613,7 @@ package groundstation {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         tags: js.UndefOr[TagsMap] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -1579,6 +1632,7 @@ package groundstation {
   }
 
   object MissionProfileIdResponse {
+    @inline
     def apply(
         missionProfileId: js.UndefOr[String] = js.undefined
     ): MissionProfileIdResponse = {
@@ -1600,6 +1654,7 @@ package groundstation {
   }
 
   object MissionProfileListItem {
+    @inline
     def apply(
         missionProfileArn: js.UndefOr[MissionProfileArn] = js.undefined,
         missionProfileId: js.UndefOr[String] = js.undefined,
@@ -1637,6 +1692,7 @@ package groundstation {
   }
 
   object ReserveContactRequest {
+    @inline
     def apply(
         endTime: Timestamp,
         groundStation: String,
@@ -1669,6 +1725,7 @@ package groundstation {
   }
 
   object SatelliteListItem {
+    @inline
     def apply(
         noradSatelliteID: js.UndefOr[noradSatelliteID] = js.undefined,
         satelliteArn: js.UndefOr[satelliteArn] = js.undefined,
@@ -1693,6 +1750,7 @@ package groundstation {
   }
 
   object SecurityDetails {
+    @inline
     def apply(
         roleArn: RoleArn,
         securityGroupIds: SecurityGroupIdList,
@@ -1718,6 +1776,7 @@ package groundstation {
   }
 
   object SocketAddress {
+    @inline
     def apply(
         name: String,
         port: Int
@@ -1742,6 +1801,7 @@ package groundstation {
   }
 
   object SpectrumConfig {
+    @inline
     def apply(
         bandwidth: FrequencyBandwidth,
         centerFrequency: Frequency,
@@ -1767,6 +1827,7 @@ package groundstation {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         resourceArn: String,
         tags: js.UndefOr[TagsMap] = js.undefined
@@ -1787,6 +1848,7 @@ package groundstation {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1805,6 +1867,7 @@ package groundstation {
   }
 
   object TrackingConfig {
+    @inline
     def apply(
         autotrack: Criticality
     ): TrackingConfig = {
@@ -1826,6 +1889,7 @@ package groundstation {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         resourceArn: String,
         tagKeys: TagKeys
@@ -1846,6 +1910,7 @@ package groundstation {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1866,6 +1931,7 @@ package groundstation {
   }
 
   object UpdateConfigRequest {
+    @inline
     def apply(
         configData: ConfigTypeData,
         configId: String,
@@ -1898,6 +1964,7 @@ package groundstation {
   }
 
   object UpdateMissionProfileRequest {
+    @inline
     def apply(
         missionProfileId: String,
         contactPostPassDurationSeconds: js.UndefOr[DurationInSeconds] = js.undefined,
@@ -1940,6 +2007,7 @@ package groundstation {
   }
 
   object UplinkEchoConfig {
+    @inline
     def apply(
         antennaUplinkConfigArn: ConfigArn,
         enabled: Boolean
@@ -1963,6 +2031,7 @@ package groundstation {
   }
 
   object UplinkSpectrumConfig {
+    @inline
     def apply(
         centerFrequency: Frequency,
         polarization: js.UndefOr[Polarization] = js.undefined

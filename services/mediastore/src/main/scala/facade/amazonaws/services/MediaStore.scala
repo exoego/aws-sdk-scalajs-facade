@@ -114,6 +114,7 @@ package mediastore {
   }
 
   object Container {
+    @inline
     def apply(
         ARN: js.UndefOr[ContainerARN] = js.undefined,
         AccessLoggingEnabled: js.UndefOr[ContainerAccessLoggingEnabled] = js.undefined,
@@ -154,6 +155,7 @@ package mediastore {
   }
 
   object CorsRule {
+    @inline
     def apply(
         AllowedHeaders: AllowedHeaders,
         AllowedOrigins: AllowedOrigins,
@@ -180,6 +182,7 @@ package mediastore {
   }
 
   object CreateContainerInput {
+    @inline
     def apply(
         ContainerName: ContainerName,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -199,6 +202,7 @@ package mediastore {
   }
 
   object CreateContainerOutput {
+    @inline
     def apply(
         Container: Container
     ): CreateContainerOutput = {
@@ -216,6 +220,7 @@ package mediastore {
   }
 
   object DeleteContainerInput {
+    @inline
     def apply(
         ContainerName: ContainerName
     ): DeleteContainerInput = {
@@ -231,6 +236,7 @@ package mediastore {
   trait DeleteContainerOutput extends js.Object {}
 
   object DeleteContainerOutput {
+    @inline
     def apply(
         ): DeleteContainerOutput = {
       val __obj = js.Dynamic.literal()
@@ -245,6 +251,7 @@ package mediastore {
   }
 
   object DeleteContainerPolicyInput {
+    @inline
     def apply(
         ContainerName: ContainerName
     ): DeleteContainerPolicyInput = {
@@ -260,6 +267,7 @@ package mediastore {
   trait DeleteContainerPolicyOutput extends js.Object {}
 
   object DeleteContainerPolicyOutput {
+    @inline
     def apply(
         ): DeleteContainerPolicyOutput = {
       val __obj = js.Dynamic.literal()
@@ -274,6 +282,7 @@ package mediastore {
   }
 
   object DeleteCorsPolicyInput {
+    @inline
     def apply(
         ContainerName: ContainerName
     ): DeleteCorsPolicyInput = {
@@ -289,6 +298,7 @@ package mediastore {
   trait DeleteCorsPolicyOutput extends js.Object {}
 
   object DeleteCorsPolicyOutput {
+    @inline
     def apply(
         ): DeleteCorsPolicyOutput = {
       val __obj = js.Dynamic.literal()
@@ -303,6 +313,7 @@ package mediastore {
   }
 
   object DeleteLifecyclePolicyInput {
+    @inline
     def apply(
         ContainerName: ContainerName
     ): DeleteLifecyclePolicyInput = {
@@ -318,6 +329,7 @@ package mediastore {
   trait DeleteLifecyclePolicyOutput extends js.Object {}
 
   object DeleteLifecyclePolicyOutput {
+    @inline
     def apply(
         ): DeleteLifecyclePolicyOutput = {
       val __obj = js.Dynamic.literal()
@@ -332,6 +344,7 @@ package mediastore {
   }
 
   object DescribeContainerInput {
+    @inline
     def apply(
         ContainerName: js.UndefOr[ContainerName] = js.undefined
     ): DescribeContainerInput = {
@@ -347,6 +360,7 @@ package mediastore {
   }
 
   object DescribeContainerOutput {
+    @inline
     def apply(
         Container: js.UndefOr[Container] = js.undefined
     ): DescribeContainerOutput = {
@@ -362,6 +376,7 @@ package mediastore {
   }
 
   object GetContainerPolicyInput {
+    @inline
     def apply(
         ContainerName: ContainerName
     ): GetContainerPolicyInput = {
@@ -379,6 +394,7 @@ package mediastore {
   }
 
   object GetContainerPolicyOutput {
+    @inline
     def apply(
         Policy: ContainerPolicy
     ): GetContainerPolicyOutput = {
@@ -396,6 +412,7 @@ package mediastore {
   }
 
   object GetCorsPolicyInput {
+    @inline
     def apply(
         ContainerName: ContainerName
     ): GetCorsPolicyInput = {
@@ -413,6 +430,7 @@ package mediastore {
   }
 
   object GetCorsPolicyOutput {
+    @inline
     def apply(
         CorsPolicy: CorsPolicy
     ): GetCorsPolicyOutput = {
@@ -430,6 +448,7 @@ package mediastore {
   }
 
   object GetLifecyclePolicyInput {
+    @inline
     def apply(
         ContainerName: ContainerName
     ): GetLifecyclePolicyInput = {
@@ -447,6 +466,7 @@ package mediastore {
   }
 
   object GetLifecyclePolicyOutput {
+    @inline
     def apply(
         LifecyclePolicy: LifecyclePolicy
     ): GetLifecyclePolicyOutput = {
@@ -465,6 +485,7 @@ package mediastore {
   }
 
   object ListContainersInput {
+    @inline
     def apply(
         MaxResults: js.UndefOr[ContainerListLimit] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -483,6 +504,7 @@ package mediastore {
   }
 
   object ListContainersOutput {
+    @inline
     def apply(
         Containers: ContainerList,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -502,6 +524,7 @@ package mediastore {
   }
 
   object ListTagsForResourceInput {
+    @inline
     def apply(
         Resource: ContainerARN
     ): ListTagsForResourceInput = {
@@ -519,6 +542,7 @@ package mediastore {
   }
 
   object ListTagsForResourceOutput {
+    @inline
     def apply(
         Tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsForResourceOutput = {
@@ -544,6 +568,7 @@ package mediastore {
   }
 
   object PutContainerPolicyInput {
+    @inline
     def apply(
         ContainerName: ContainerName,
         Policy: ContainerPolicy
@@ -561,6 +586,7 @@ package mediastore {
   trait PutContainerPolicyOutput extends js.Object {}
 
   object PutContainerPolicyOutput {
+    @inline
     def apply(
         ): PutContainerPolicyOutput = {
       val __obj = js.Dynamic.literal()
@@ -576,6 +602,7 @@ package mediastore {
   }
 
   object PutCorsPolicyInput {
+    @inline
     def apply(
         ContainerName: ContainerName,
         CorsPolicy: CorsPolicy
@@ -593,6 +620,7 @@ package mediastore {
   trait PutCorsPolicyOutput extends js.Object {}
 
   object PutCorsPolicyOutput {
+    @inline
     def apply(
         ): PutCorsPolicyOutput = {
       val __obj = js.Dynamic.literal()
@@ -608,6 +636,7 @@ package mediastore {
   }
 
   object PutLifecyclePolicyInput {
+    @inline
     def apply(
         ContainerName: ContainerName,
         LifecyclePolicy: LifecyclePolicy
@@ -625,6 +654,7 @@ package mediastore {
   trait PutLifecyclePolicyOutput extends js.Object {}
 
   object PutLifecyclePolicyOutput {
+    @inline
     def apply(
         ): PutLifecyclePolicyOutput = {
       val __obj = js.Dynamic.literal()
@@ -639,6 +669,7 @@ package mediastore {
   }
 
   object StartAccessLoggingInput {
+    @inline
     def apply(
         ContainerName: ContainerName
     ): StartAccessLoggingInput = {
@@ -654,6 +685,7 @@ package mediastore {
   trait StartAccessLoggingOutput extends js.Object {}
 
   object StartAccessLoggingOutput {
+    @inline
     def apply(
         ): StartAccessLoggingOutput = {
       val __obj = js.Dynamic.literal()
@@ -668,6 +700,7 @@ package mediastore {
   }
 
   object StopAccessLoggingInput {
+    @inline
     def apply(
         ContainerName: ContainerName
     ): StopAccessLoggingInput = {
@@ -683,6 +716,7 @@ package mediastore {
   trait StopAccessLoggingOutput extends js.Object {}
 
   object StopAccessLoggingOutput {
+    @inline
     def apply(
         ): StopAccessLoggingOutput = {
       val __obj = js.Dynamic.literal()
@@ -701,6 +735,7 @@ package mediastore {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: js.UndefOr[TagKey] = js.undefined,
         Value: js.UndefOr[TagValue] = js.undefined
@@ -719,6 +754,7 @@ package mediastore {
   }
 
   object TagResourceInput {
+    @inline
     def apply(
         Resource: ContainerARN,
         Tags: TagList
@@ -736,6 +772,7 @@ package mediastore {
   trait TagResourceOutput extends js.Object {}
 
   object TagResourceOutput {
+    @inline
     def apply(
         ): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
@@ -751,6 +788,7 @@ package mediastore {
   }
 
   object UntagResourceInput {
+    @inline
     def apply(
         Resource: ContainerARN,
         TagKeys: TagKeyList
@@ -768,6 +806,7 @@ package mediastore {
   trait UntagResourceOutput extends js.Object {}
 
   object UntagResourceOutput {
+    @inline
     def apply(
         ): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()

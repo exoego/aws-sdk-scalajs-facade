@@ -155,6 +155,7 @@ package route53resolver {
   }
 
   object AssociateResolverEndpointIpAddressRequest {
+    @inline
     def apply(
         IpAddress: IpAddressUpdate,
         ResolverEndpointId: ResourceId
@@ -174,6 +175,7 @@ package route53resolver {
   }
 
   object AssociateResolverEndpointIpAddressResponse {
+    @inline
     def apply(
         ResolverEndpoint: js.UndefOr[ResolverEndpoint] = js.undefined
     ): AssociateResolverEndpointIpAddressResponse = {
@@ -191,6 +193,7 @@ package route53resolver {
   }
 
   object AssociateResolverRuleRequest {
+    @inline
     def apply(
         ResolverRuleId: ResourceId,
         VPCId: ResourceId,
@@ -212,6 +215,7 @@ package route53resolver {
   }
 
   object AssociateResolverRuleResponse {
+    @inline
     def apply(
         ResolverRuleAssociation: js.UndefOr[ResolverRuleAssociation] = js.undefined
     ): AssociateResolverRuleResponse = {
@@ -232,6 +236,7 @@ package route53resolver {
   }
 
   object CreateResolverEndpointRequest {
+    @inline
     def apply(
         CreatorRequestId: CreatorRequestId,
         Direction: ResolverEndpointDirection,
@@ -259,6 +264,7 @@ package route53resolver {
   }
 
   object CreateResolverEndpointResponse {
+    @inline
     def apply(
         ResolverEndpoint: js.UndefOr[ResolverEndpoint] = js.undefined
     ): CreateResolverEndpointResponse = {
@@ -280,6 +286,7 @@ package route53resolver {
   }
 
   object CreateResolverRuleRequest {
+    @inline
     def apply(
         CreatorRequestId: CreatorRequestId,
         DomainName: DomainName,
@@ -309,6 +316,7 @@ package route53resolver {
   }
 
   object CreateResolverRuleResponse {
+    @inline
     def apply(
         ResolverRule: js.UndefOr[ResolverRule] = js.undefined
     ): CreateResolverRuleResponse = {
@@ -324,6 +332,7 @@ package route53resolver {
   }
 
   object DeleteResolverEndpointRequest {
+    @inline
     def apply(
         ResolverEndpointId: ResourceId
     ): DeleteResolverEndpointRequest = {
@@ -341,6 +350,7 @@ package route53resolver {
   }
 
   object DeleteResolverEndpointResponse {
+    @inline
     def apply(
         ResolverEndpoint: js.UndefOr[ResolverEndpoint] = js.undefined
     ): DeleteResolverEndpointResponse = {
@@ -356,6 +366,7 @@ package route53resolver {
   }
 
   object DeleteResolverRuleRequest {
+    @inline
     def apply(
         ResolverRuleId: ResourceId
     ): DeleteResolverRuleRequest = {
@@ -373,6 +384,7 @@ package route53resolver {
   }
 
   object DeleteResolverRuleResponse {
+    @inline
     def apply(
         ResolverRule: js.UndefOr[ResolverRule] = js.undefined
     ): DeleteResolverRuleResponse = {
@@ -389,6 +401,7 @@ package route53resolver {
   }
 
   object DisassociateResolverEndpointIpAddressRequest {
+    @inline
     def apply(
         IpAddress: IpAddressUpdate,
         ResolverEndpointId: ResourceId
@@ -408,6 +421,7 @@ package route53resolver {
   }
 
   object DisassociateResolverEndpointIpAddressResponse {
+    @inline
     def apply(
         ResolverEndpoint: js.UndefOr[ResolverEndpoint] = js.undefined
     ): DisassociateResolverEndpointIpAddressResponse = {
@@ -424,6 +438,7 @@ package route53resolver {
   }
 
   object DisassociateResolverRuleRequest {
+    @inline
     def apply(
         ResolverRuleId: ResourceId,
         VPCId: ResourceId
@@ -443,6 +458,7 @@ package route53resolver {
   }
 
   object DisassociateResolverRuleResponse {
+    @inline
     def apply(
         ResolverRuleAssociation: js.UndefOr[ResolverRuleAssociation] = js.undefined
     ): DisassociateResolverRuleResponse = {
@@ -462,6 +478,7 @@ package route53resolver {
   }
 
   object Filter {
+    @inline
     def apply(
         Name: js.UndefOr[FilterName] = js.undefined,
         Values: js.UndefOr[FilterValues] = js.undefined
@@ -479,6 +496,7 @@ package route53resolver {
   }
 
   object GetResolverEndpointRequest {
+    @inline
     def apply(
         ResolverEndpointId: ResourceId
     ): GetResolverEndpointRequest = {
@@ -496,6 +514,7 @@ package route53resolver {
   }
 
   object GetResolverEndpointResponse {
+    @inline
     def apply(
         ResolverEndpoint: js.UndefOr[ResolverEndpoint] = js.undefined
     ): GetResolverEndpointResponse = {
@@ -511,6 +530,7 @@ package route53resolver {
   }
 
   object GetResolverRuleAssociationRequest {
+    @inline
     def apply(
         ResolverRuleAssociationId: ResourceId
     ): GetResolverRuleAssociationRequest = {
@@ -528,6 +548,7 @@ package route53resolver {
   }
 
   object GetResolverRuleAssociationResponse {
+    @inline
     def apply(
         ResolverRuleAssociation: js.UndefOr[ResolverRuleAssociation] = js.undefined
     ): GetResolverRuleAssociationResponse = {
@@ -543,6 +564,7 @@ package route53resolver {
   }
 
   object GetResolverRulePolicyRequest {
+    @inline
     def apply(
         Arn: Arn
     ): GetResolverRulePolicyRequest = {
@@ -560,6 +582,7 @@ package route53resolver {
   }
 
   object GetResolverRulePolicyResponse {
+    @inline
     def apply(
         ResolverRulePolicy: js.UndefOr[ResolverRulePolicy] = js.undefined
     ): GetResolverRulePolicyResponse = {
@@ -575,6 +598,7 @@ package route53resolver {
   }
 
   object GetResolverRuleRequest {
+    @inline
     def apply(
         ResolverRuleId: ResourceId
     ): GetResolverRuleRequest = {
@@ -592,6 +616,7 @@ package route53resolver {
   }
 
   object GetResolverRuleResponse {
+    @inline
     def apply(
         ResolverRule: js.UndefOr[ResolverRule] = js.undefined
     ): GetResolverRuleResponse = {
@@ -611,6 +636,7 @@ package route53resolver {
   }
 
   object IpAddressRequest {
+    @inline
     def apply(
         SubnetId: SubnetId,
         Ip: js.UndefOr[Ip] = js.undefined
@@ -639,6 +665,7 @@ package route53resolver {
   }
 
   object IpAddressResponse {
+    @inline
     def apply(
         CreationTime: js.UndefOr[Rfc3339TimeString] = js.undefined,
         Ip: js.UndefOr[Ip] = js.undefined,
@@ -699,6 +726,7 @@ package route53resolver {
   }
 
   object IpAddressUpdate {
+    @inline
     def apply(
         Ip: js.UndefOr[Ip] = js.undefined,
         IpId: js.UndefOr[ResourceId] = js.undefined,
@@ -720,6 +748,7 @@ package route53resolver {
   }
 
   object ListResolverEndpointIpAddressesRequest {
+    @inline
     def apply(
         ResolverEndpointId: ResourceId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -743,6 +772,7 @@ package route53resolver {
   }
 
   object ListResolverEndpointIpAddressesResponse {
+    @inline
     def apply(
         IpAddresses: js.UndefOr[IpAddressesResponse] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -764,6 +794,7 @@ package route53resolver {
   }
 
   object ListResolverEndpointsRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[Filters] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -785,6 +816,7 @@ package route53resolver {
   }
 
   object ListResolverEndpointsResponse {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
@@ -806,6 +838,7 @@ package route53resolver {
   }
 
   object ListResolverRuleAssociationsRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[Filters] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -827,6 +860,7 @@ package route53resolver {
   }
 
   object ListResolverRuleAssociationsResponse {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
@@ -848,6 +882,7 @@ package route53resolver {
   }
 
   object ListResolverRulesRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[Filters] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -869,6 +904,7 @@ package route53resolver {
   }
 
   object ListResolverRulesResponse {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
@@ -890,6 +926,7 @@ package route53resolver {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceArn: Arn,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -912,6 +949,7 @@ package route53resolver {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -930,6 +968,7 @@ package route53resolver {
   }
 
   object PutResolverRulePolicyRequest {
+    @inline
     def apply(
         Arn: Arn,
         ResolverRulePolicy: ResolverRulePolicy
@@ -952,6 +991,7 @@ package route53resolver {
   }
 
   object PutResolverRulePolicyResponse {
+    @inline
     def apply(
         ReturnValue: js.UndefOr[Boolean] = js.undefined
     ): PutResolverRulePolicyResponse = {
@@ -981,6 +1021,7 @@ package route53resolver {
   }
 
   object ResolverEndpoint {
+    @inline
     def apply(
         Arn: js.UndefOr[Arn] = js.undefined,
         CreationTime: js.UndefOr[Rfc3339TimeString] = js.undefined,
@@ -1050,6 +1091,7 @@ package route53resolver {
   }
 
   object ResolverRule {
+    @inline
     def apply(
         Arn: js.UndefOr[Arn] = js.undefined,
         CreatorRequestId: js.UndefOr[CreatorRequestId] = js.undefined,
@@ -1095,6 +1137,7 @@ package route53resolver {
   }
 
   object ResolverRuleAssociation {
+    @inline
     def apply(
         Id: js.UndefOr[ResourceId] = js.undefined,
         Name: js.UndefOr[Name] = js.undefined,
@@ -1135,6 +1178,7 @@ package route53resolver {
   }
 
   object ResolverRuleConfig {
+    @inline
     def apply(
         Name: js.UndefOr[Name] = js.undefined,
         ResolverEndpointId: js.UndefOr[ResourceId] = js.undefined,
@@ -1183,6 +1227,7 @@ package route53resolver {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: js.UndefOr[TagKey] = js.undefined,
         Value: js.UndefOr[TagValue] = js.undefined
@@ -1201,6 +1246,7 @@ package route53resolver {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceArn: Arn,
         Tags: TagList
@@ -1218,6 +1264,7 @@ package route53resolver {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1236,6 +1283,7 @@ package route53resolver {
   }
 
   object TargetAddress {
+    @inline
     def apply(
         Ip: Ip,
         Port: js.UndefOr[Port] = js.undefined
@@ -1256,6 +1304,7 @@ package route53resolver {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceArn: Arn,
         TagKeys: TagKeyList
@@ -1273,6 +1322,7 @@ package route53resolver {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1288,6 +1338,7 @@ package route53resolver {
   }
 
   object UpdateResolverEndpointRequest {
+    @inline
     def apply(
         ResolverEndpointId: ResourceId,
         Name: js.UndefOr[Name] = js.undefined
@@ -1307,6 +1358,7 @@ package route53resolver {
   }
 
   object UpdateResolverEndpointResponse {
+    @inline
     def apply(
         ResolverEndpoint: js.UndefOr[ResolverEndpoint] = js.undefined
     ): UpdateResolverEndpointResponse = {
@@ -1323,6 +1375,7 @@ package route53resolver {
   }
 
   object UpdateResolverRuleRequest {
+    @inline
     def apply(
         Config: ResolverRuleConfig,
         ResolverRuleId: ResourceId
@@ -1342,6 +1395,7 @@ package route53resolver {
   }
 
   object UpdateResolverRuleResponse {
+    @inline
     def apply(
         ResolverRule: js.UndefOr[ResolverRule] = js.undefined
     ): UpdateResolverRuleResponse = {

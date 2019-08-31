@@ -168,6 +168,7 @@ package kinesisanalytics {
   }
 
   object AddApplicationCloudWatchLoggingOptionRequest {
+    @inline
     def apply(
         ApplicationName: ApplicationName,
         CloudWatchLoggingOption: CloudWatchLoggingOption,
@@ -187,6 +188,7 @@ package kinesisanalytics {
   trait AddApplicationCloudWatchLoggingOptionResponse extends js.Object {}
 
   object AddApplicationCloudWatchLoggingOptionResponse {
+    @inline
     def apply(
         ): AddApplicationCloudWatchLoggingOptionResponse = {
       val __obj = js.Dynamic.literal()
@@ -204,6 +206,7 @@ package kinesisanalytics {
   }
 
   object AddApplicationInputProcessingConfigurationRequest {
+    @inline
     def apply(
         ApplicationName: ApplicationName,
         CurrentApplicationVersionId: ApplicationVersionId,
@@ -225,6 +228,7 @@ package kinesisanalytics {
   trait AddApplicationInputProcessingConfigurationResponse extends js.Object {}
 
   object AddApplicationInputProcessingConfigurationResponse {
+    @inline
     def apply(
         ): AddApplicationInputProcessingConfigurationResponse = {
       val __obj = js.Dynamic.literal()
@@ -244,6 +248,7 @@ package kinesisanalytics {
   }
 
   object AddApplicationInputRequest {
+    @inline
     def apply(
         ApplicationName: ApplicationName,
         CurrentApplicationVersionId: ApplicationVersionId,
@@ -266,6 +271,7 @@ package kinesisanalytics {
   trait AddApplicationInputResponse extends js.Object {}
 
   object AddApplicationInputResponse {
+    @inline
     def apply(
         ): AddApplicationInputResponse = {
       val __obj = js.Dynamic.literal()
@@ -285,6 +291,7 @@ package kinesisanalytics {
   }
 
   object AddApplicationOutputRequest {
+    @inline
     def apply(
         ApplicationName: ApplicationName,
         CurrentApplicationVersionId: ApplicationVersionId,
@@ -307,6 +314,7 @@ package kinesisanalytics {
   trait AddApplicationOutputResponse extends js.Object {}
 
   object AddApplicationOutputResponse {
+    @inline
     def apply(
         ): AddApplicationOutputResponse = {
       val __obj = js.Dynamic.literal()
@@ -326,6 +334,7 @@ package kinesisanalytics {
   }
 
   object AddApplicationReferenceDataSourceRequest {
+    @inline
     def apply(
         ApplicationName: ApplicationName,
         CurrentApplicationVersionId: ApplicationVersionId,
@@ -348,6 +357,7 @@ package kinesisanalytics {
   trait AddApplicationReferenceDataSourceResponse extends js.Object {}
 
   object AddApplicationReferenceDataSourceResponse {
+    @inline
     def apply(
         ): AddApplicationReferenceDataSourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -377,6 +387,7 @@ package kinesisanalytics {
   }
 
   object ApplicationDetail {
+    @inline
     def apply(
         ApplicationARN: ResourceARN,
         ApplicationName: ApplicationName,
@@ -437,6 +448,7 @@ package kinesisanalytics {
   }
 
   object ApplicationSummary {
+    @inline
     def apply(
         ApplicationARN: ResourceARN,
         ApplicationName: ApplicationName,
@@ -465,6 +477,7 @@ package kinesisanalytics {
   }
 
   object ApplicationUpdate {
+    @inline
     def apply(
         ApplicationCodeUpdate: js.UndefOr[ApplicationCode] = js.undefined,
         CloudWatchLoggingOptionUpdates: js.UndefOr[CloudWatchLoggingOptionUpdates] = js.undefined,
@@ -498,6 +511,7 @@ package kinesisanalytics {
   }
 
   object CSVMappingParameters {
+    @inline
     def apply(
         RecordColumnDelimiter: RecordColumnDelimiter,
         RecordRowDelimiter: RecordRowDelimiter
@@ -521,6 +535,7 @@ package kinesisanalytics {
   }
 
   object CloudWatchLoggingOption {
+    @inline
     def apply(
         LogStreamARN: LogStreamARN,
         RoleARN: RoleARN
@@ -545,6 +560,7 @@ package kinesisanalytics {
   }
 
   object CloudWatchLoggingOptionDescription {
+    @inline
     def apply(
         LogStreamARN: LogStreamARN,
         RoleARN: RoleARN,
@@ -573,6 +589,7 @@ package kinesisanalytics {
   }
 
   object CloudWatchLoggingOptionUpdate {
+    @inline
     def apply(
         CloudWatchLoggingOptionId: Id,
         LogStreamARNUpdate: js.UndefOr[LogStreamARN] = js.undefined,
@@ -603,6 +620,7 @@ package kinesisanalytics {
   }
 
   object CreateApplicationRequest {
+    @inline
     def apply(
         ApplicationName: ApplicationName,
         ApplicationCode: js.UndefOr[ApplicationCode] = js.undefined,
@@ -635,6 +653,7 @@ package kinesisanalytics {
   }
 
   object CreateApplicationResponse {
+    @inline
     def apply(
         ApplicationSummary: ApplicationSummary
     ): CreateApplicationResponse = {
@@ -654,6 +673,7 @@ package kinesisanalytics {
   }
 
   object DeleteApplicationCloudWatchLoggingOptionRequest {
+    @inline
     def apply(
         ApplicationName: ApplicationName,
         CloudWatchLoggingOptionId: Id,
@@ -673,6 +693,7 @@ package kinesisanalytics {
   trait DeleteApplicationCloudWatchLoggingOptionResponse extends js.Object {}
 
   object DeleteApplicationCloudWatchLoggingOptionResponse {
+    @inline
     def apply(
         ): DeleteApplicationCloudWatchLoggingOptionResponse = {
       val __obj = js.Dynamic.literal()
@@ -689,6 +710,7 @@ package kinesisanalytics {
   }
 
   object DeleteApplicationInputProcessingConfigurationRequest {
+    @inline
     def apply(
         ApplicationName: ApplicationName,
         CurrentApplicationVersionId: ApplicationVersionId,
@@ -708,6 +730,7 @@ package kinesisanalytics {
   trait DeleteApplicationInputProcessingConfigurationResponse extends js.Object {}
 
   object DeleteApplicationInputProcessingConfigurationResponse {
+    @inline
     def apply(
         ): DeleteApplicationInputProcessingConfigurationResponse = {
       val __obj = js.Dynamic.literal()
@@ -727,6 +750,7 @@ package kinesisanalytics {
   }
 
   object DeleteApplicationOutputRequest {
+    @inline
     def apply(
         ApplicationName: ApplicationName,
         CurrentApplicationVersionId: ApplicationVersionId,
@@ -749,6 +773,7 @@ package kinesisanalytics {
   trait DeleteApplicationOutputResponse extends js.Object {}
 
   object DeleteApplicationOutputResponse {
+    @inline
     def apply(
         ): DeleteApplicationOutputResponse = {
       val __obj = js.Dynamic.literal()
@@ -765,6 +790,7 @@ package kinesisanalytics {
   }
 
   object DeleteApplicationReferenceDataSourceRequest {
+    @inline
     def apply(
         ApplicationName: ApplicationName,
         CurrentApplicationVersionId: ApplicationVersionId,
@@ -784,6 +810,7 @@ package kinesisanalytics {
   trait DeleteApplicationReferenceDataSourceResponse extends js.Object {}
 
   object DeleteApplicationReferenceDataSourceResponse {
+    @inline
     def apply(
         ): DeleteApplicationReferenceDataSourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -802,6 +829,7 @@ package kinesisanalytics {
   }
 
   object DeleteApplicationRequest {
+    @inline
     def apply(
         ApplicationName: ApplicationName,
         CreateTimestamp: Timestamp
@@ -822,6 +850,7 @@ package kinesisanalytics {
   trait DeleteApplicationResponse extends js.Object {}
 
   object DeleteApplicationResponse {
+    @inline
     def apply(
         ): DeleteApplicationResponse = {
       val __obj = js.Dynamic.literal()
@@ -839,6 +868,7 @@ package kinesisanalytics {
   }
 
   object DescribeApplicationRequest {
+    @inline
     def apply(
         ApplicationName: ApplicationName
     ): DescribeApplicationRequest = {
@@ -859,6 +889,7 @@ package kinesisanalytics {
   }
 
   object DescribeApplicationResponse {
+    @inline
     def apply(
         ApplicationDetail: ApplicationDetail
     ): DescribeApplicationResponse = {
@@ -879,6 +910,7 @@ package kinesisanalytics {
   }
 
   object DestinationSchema {
+    @inline
     def apply(
         RecordFormatType: RecordFormatType
     ): DestinationSchema = {
@@ -900,6 +932,7 @@ package kinesisanalytics {
   }
 
   object DiscoverInputSchemaRequest {
+    @inline
     def apply(
         InputProcessingConfiguration: js.UndefOr[InputProcessingConfiguration] = js.undefined,
         InputStartingPositionConfiguration: js.UndefOr[InputStartingPositionConfiguration] = js.undefined,
@@ -933,6 +966,7 @@ package kinesisanalytics {
   }
 
   object DiscoverInputSchemaResponse {
+    @inline
     def apply(
         InputSchema: js.UndefOr[SourceSchema] = js.undefined,
         ParsedInputRecords: js.UndefOr[ParsedInputRecords] = js.undefined,
@@ -962,6 +996,7 @@ package kinesisanalytics {
   }
 
   object Input {
+    @inline
     def apply(
         InputSchema: SourceSchema,
         NamePrefix: InAppStreamName,
@@ -995,6 +1030,7 @@ package kinesisanalytics {
   }
 
   object InputConfiguration {
+    @inline
     def apply(
         Id: Id,
         InputStartingPositionConfiguration: InputStartingPositionConfiguration
@@ -1025,6 +1061,7 @@ package kinesisanalytics {
   }
 
   object InputDescription {
+    @inline
     def apply(
         InAppStreamNames: js.UndefOr[InAppStreamNames] = js.undefined,
         InputId: js.UndefOr[Id] = js.undefined,
@@ -1068,6 +1105,7 @@ package kinesisanalytics {
   }
 
   object InputLambdaProcessor {
+    @inline
     def apply(
         ResourceARN: ResourceARN,
         RoleARN: RoleARN
@@ -1091,6 +1129,7 @@ package kinesisanalytics {
   }
 
   object InputLambdaProcessorDescription {
+    @inline
     def apply(
         ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
         RoleARN: js.UndefOr[RoleARN] = js.undefined
@@ -1112,6 +1151,7 @@ package kinesisanalytics {
   }
 
   object InputLambdaProcessorUpdate {
+    @inline
     def apply(
         ResourceARNUpdate: js.UndefOr[ResourceARN] = js.undefined,
         RoleARNUpdate: js.UndefOr[RoleARN] = js.undefined
@@ -1132,6 +1172,7 @@ package kinesisanalytics {
   }
 
   object InputParallelism {
+    @inline
     def apply(
         Count: js.UndefOr[InputParallelismCount] = js.undefined
     ): InputParallelism = {
@@ -1150,6 +1191,7 @@ package kinesisanalytics {
   }
 
   object InputParallelismUpdate {
+    @inline
     def apply(
         CountUpdate: js.UndefOr[InputParallelismCount] = js.undefined
     ): InputParallelismUpdate = {
@@ -1168,6 +1210,7 @@ package kinesisanalytics {
   }
 
   object InputProcessingConfiguration {
+    @inline
     def apply(
         InputLambdaProcessor: InputLambdaProcessor
     ): InputProcessingConfiguration = {
@@ -1188,6 +1231,7 @@ package kinesisanalytics {
   }
 
   object InputProcessingConfigurationDescription {
+    @inline
     def apply(
         InputLambdaProcessorDescription: js.UndefOr[InputLambdaProcessorDescription] = js.undefined
     ): InputProcessingConfigurationDescription = {
@@ -1208,6 +1252,7 @@ package kinesisanalytics {
   }
 
   object InputProcessingConfigurationUpdate {
+    @inline
     def apply(
         InputLambdaProcessorUpdate: InputLambdaProcessorUpdate
     ): InputProcessingConfigurationUpdate = {
@@ -1230,6 +1275,7 @@ package kinesisanalytics {
   }
 
   object InputSchemaUpdate {
+    @inline
     def apply(
         RecordColumnUpdates: js.UndefOr[RecordColumns] = js.undefined,
         RecordEncodingUpdate: js.UndefOr[RecordEncoding] = js.undefined,
@@ -1260,6 +1306,7 @@ package kinesisanalytics {
   }
 
   object InputStartingPositionConfiguration {
+    @inline
     def apply(
         InputStartingPosition: js.UndefOr[InputStartingPosition] = js.undefined
     ): InputStartingPositionConfiguration = {
@@ -1284,6 +1331,7 @@ package kinesisanalytics {
   }
 
   object InputUpdate {
+    @inline
     def apply(
         InputId: Id,
         InputParallelismUpdate: js.UndefOr[InputParallelismUpdate] = js.undefined,
@@ -1322,6 +1370,7 @@ package kinesisanalytics {
   }
 
   object JSONMappingParameters {
+    @inline
     def apply(
         RecordRowPath: RecordRowPath
     ): JSONMappingParameters = {
@@ -1343,6 +1392,7 @@ package kinesisanalytics {
   }
 
   object KinesisFirehoseInput {
+    @inline
     def apply(
         ResourceARN: ResourceARN,
         RoleARN: RoleARN
@@ -1366,6 +1416,7 @@ package kinesisanalytics {
   }
 
   object KinesisFirehoseInputDescription {
+    @inline
     def apply(
         ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
         RoleARN: js.UndefOr[RoleARN] = js.undefined
@@ -1387,6 +1438,7 @@ package kinesisanalytics {
   }
 
   object KinesisFirehoseInputUpdate {
+    @inline
     def apply(
         ResourceARNUpdate: js.UndefOr[ResourceARN] = js.undefined,
         RoleARNUpdate: js.UndefOr[RoleARN] = js.undefined
@@ -1408,6 +1460,7 @@ package kinesisanalytics {
   }
 
   object KinesisFirehoseOutput {
+    @inline
     def apply(
         ResourceARN: ResourceARN,
         RoleARN: RoleARN
@@ -1431,6 +1484,7 @@ package kinesisanalytics {
   }
 
   object KinesisFirehoseOutputDescription {
+    @inline
     def apply(
         ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
         RoleARN: js.UndefOr[RoleARN] = js.undefined
@@ -1452,6 +1506,7 @@ package kinesisanalytics {
   }
 
   object KinesisFirehoseOutputUpdate {
+    @inline
     def apply(
         ResourceARNUpdate: js.UndefOr[ResourceARN] = js.undefined,
         RoleARNUpdate: js.UndefOr[RoleARN] = js.undefined
@@ -1473,6 +1528,7 @@ package kinesisanalytics {
   }
 
   object KinesisStreamsInput {
+    @inline
     def apply(
         ResourceARN: ResourceARN,
         RoleARN: RoleARN
@@ -1496,6 +1552,7 @@ package kinesisanalytics {
   }
 
   object KinesisStreamsInputDescription {
+    @inline
     def apply(
         ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
         RoleARN: js.UndefOr[RoleARN] = js.undefined
@@ -1517,6 +1574,7 @@ package kinesisanalytics {
   }
 
   object KinesisStreamsInputUpdate {
+    @inline
     def apply(
         ResourceARNUpdate: js.UndefOr[ResourceARN] = js.undefined,
         RoleARNUpdate: js.UndefOr[RoleARN] = js.undefined
@@ -1538,6 +1596,7 @@ package kinesisanalytics {
   }
 
   object KinesisStreamsOutput {
+    @inline
     def apply(
         ResourceARN: ResourceARN,
         RoleARN: RoleARN
@@ -1561,6 +1620,7 @@ package kinesisanalytics {
   }
 
   object KinesisStreamsOutputDescription {
+    @inline
     def apply(
         ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
         RoleARN: js.UndefOr[RoleARN] = js.undefined
@@ -1582,6 +1642,7 @@ package kinesisanalytics {
   }
 
   object KinesisStreamsOutputUpdate {
+    @inline
     def apply(
         ResourceARNUpdate: js.UndefOr[ResourceARN] = js.undefined,
         RoleARNUpdate: js.UndefOr[RoleARN] = js.undefined
@@ -1603,6 +1664,7 @@ package kinesisanalytics {
   }
 
   object LambdaOutput {
+    @inline
     def apply(
         ResourceARN: ResourceARN,
         RoleARN: RoleARN
@@ -1626,6 +1688,7 @@ package kinesisanalytics {
   }
 
   object LambdaOutputDescription {
+    @inline
     def apply(
         ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
         RoleARN: js.UndefOr[RoleARN] = js.undefined
@@ -1647,6 +1710,7 @@ package kinesisanalytics {
   }
 
   object LambdaOutputUpdate {
+    @inline
     def apply(
         ResourceARNUpdate: js.UndefOr[ResourceARN] = js.undefined,
         RoleARNUpdate: js.UndefOr[RoleARN] = js.undefined
@@ -1668,6 +1732,7 @@ package kinesisanalytics {
   }
 
   object ListApplicationsRequest {
+    @inline
     def apply(
         ExclusiveStartApplicationName: js.UndefOr[ApplicationName] = js.undefined,
         Limit: js.UndefOr[ListApplicationsInputLimit] = js.undefined
@@ -1691,6 +1756,7 @@ package kinesisanalytics {
   }
 
   object ListApplicationsResponse {
+    @inline
     def apply(
         ApplicationSummaries: ApplicationSummaries,
         HasMoreApplications: BooleanObject
@@ -1710,6 +1776,7 @@ package kinesisanalytics {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceARN: KinesisAnalyticsARN
     ): ListTagsForResourceRequest = {
@@ -1727,6 +1794,7 @@ package kinesisanalytics {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         Tags: js.UndefOr[Tags] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -1746,6 +1814,7 @@ package kinesisanalytics {
   }
 
   object MappingParameters {
+    @inline
     def apply(
         CSVMappingParameters: js.UndefOr[CSVMappingParameters] = js.undefined,
         JSONMappingParameters: js.UndefOr[JSONMappingParameters] = js.undefined
@@ -1771,6 +1840,7 @@ package kinesisanalytics {
   }
 
   object Output {
+    @inline
     def apply(
         DestinationSchema: DestinationSchema,
         Name: InAppStreamName,
@@ -1804,6 +1874,7 @@ package kinesisanalytics {
   }
 
   object OutputDescription {
+    @inline
     def apply(
         DestinationSchema: js.UndefOr[DestinationSchema] = js.undefined,
         KinesisFirehoseOutputDescription: js.UndefOr[KinesisFirehoseOutputDescription] = js.undefined,
@@ -1841,6 +1912,7 @@ package kinesisanalytics {
   }
 
   object OutputUpdate {
+    @inline
     def apply(
         OutputId: Id,
         DestinationSchemaUpdate: js.UndefOr[DestinationSchema] = js.undefined,
@@ -1878,6 +1950,7 @@ package kinesisanalytics {
   }
 
   object RecordColumn {
+    @inline
     def apply(
         Name: RecordColumnName,
         SqlType: RecordColumnSqlType,
@@ -1903,6 +1976,7 @@ package kinesisanalytics {
   }
 
   object RecordFormat {
+    @inline
     def apply(
         RecordFormatType: RecordFormatType,
         MappingParameters: js.UndefOr[MappingParameters] = js.undefined
@@ -1934,6 +2008,7 @@ package kinesisanalytics {
   }
 
   object ReferenceDataSource {
+    @inline
     def apply(
         ReferenceSchema: SourceSchema,
         TableName: InAppTableName,
@@ -1961,6 +2036,7 @@ package kinesisanalytics {
   }
 
   object ReferenceDataSourceDescription {
+    @inline
     def apply(
         ReferenceId: Id,
         S3ReferenceDataSourceDescription: S3ReferenceDataSourceDescription,
@@ -1990,6 +2066,7 @@ package kinesisanalytics {
   }
 
   object ReferenceDataSourceUpdate {
+    @inline
     def apply(
         ReferenceId: Id,
         ReferenceSchemaUpdate: js.UndefOr[SourceSchema] = js.undefined,
@@ -2020,6 +2097,7 @@ package kinesisanalytics {
   }
 
   object S3Configuration {
+    @inline
     def apply(
         BucketARN: BucketARN,
         FileKey: FileKey,
@@ -2047,6 +2125,7 @@ package kinesisanalytics {
   }
 
   object S3ReferenceDataSource {
+    @inline
     def apply(
         BucketARN: BucketARN,
         FileKey: FileKey,
@@ -2073,6 +2152,7 @@ package kinesisanalytics {
   }
 
   object S3ReferenceDataSourceDescription {
+    @inline
     def apply(
         BucketARN: BucketARN,
         FileKey: FileKey,
@@ -2099,6 +2179,7 @@ package kinesisanalytics {
   }
 
   object S3ReferenceDataSourceUpdate {
+    @inline
     def apply(
         BucketARNUpdate: js.UndefOr[BucketARN] = js.undefined,
         FileKeyUpdate: js.UndefOr[FileKey] = js.undefined,
@@ -2123,6 +2204,7 @@ package kinesisanalytics {
   }
 
   object SourceSchema {
+    @inline
     def apply(
         RecordColumns: RecordColumns,
         RecordFormat: RecordFormat,
@@ -2148,6 +2230,7 @@ package kinesisanalytics {
   }
 
   object StartApplicationRequest {
+    @inline
     def apply(
         ApplicationName: ApplicationName,
         InputConfigurations: InputConfigurations
@@ -2168,6 +2251,7 @@ package kinesisanalytics {
   trait StartApplicationResponse extends js.Object {}
 
   object StartApplicationResponse {
+    @inline
     def apply(
         ): StartApplicationResponse = {
       val __obj = js.Dynamic.literal()
@@ -2185,6 +2269,7 @@ package kinesisanalytics {
   }
 
   object StopApplicationRequest {
+    @inline
     def apply(
         ApplicationName: ApplicationName
     ): StopApplicationRequest = {
@@ -2203,6 +2288,7 @@ package kinesisanalytics {
   trait StopApplicationResponse extends js.Object {}
 
   object StopApplicationResponse {
+    @inline
     def apply(
         ): StopApplicationResponse = {
       val __obj = js.Dynamic.literal()
@@ -2221,6 +2307,7 @@ package kinesisanalytics {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: js.UndefOr[TagValue] = js.undefined
@@ -2241,6 +2328,7 @@ package kinesisanalytics {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceARN: KinesisAnalyticsARN,
         Tags: Tags
@@ -2258,6 +2346,7 @@ package kinesisanalytics {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -2273,6 +2362,7 @@ package kinesisanalytics {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceARN: KinesisAnalyticsARN,
         TagKeys: TagKeys
@@ -2290,6 +2380,7 @@ package kinesisanalytics {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -2306,6 +2397,7 @@ package kinesisanalytics {
   }
 
   object UpdateApplicationRequest {
+    @inline
     def apply(
         ApplicationName: ApplicationName,
         ApplicationUpdate: ApplicationUpdate,
@@ -2325,6 +2417,7 @@ package kinesisanalytics {
   trait UpdateApplicationResponse extends js.Object {}
 
   object UpdateApplicationResponse {
+    @inline
     def apply(
         ): UpdateApplicationResponse = {
       val __obj = js.Dynamic.literal()

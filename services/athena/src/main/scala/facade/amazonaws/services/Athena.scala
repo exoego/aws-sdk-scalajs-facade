@@ -126,6 +126,7 @@ package athena {
   }
 
   object BatchGetNamedQueryInput {
+    @inline
     def apply(
         NamedQueryIds: NamedQueryIdList
     ): BatchGetNamedQueryInput = {
@@ -144,6 +145,7 @@ package athena {
   }
 
   object BatchGetNamedQueryOutput {
+    @inline
     def apply(
         NamedQueries: js.UndefOr[NamedQueryList] = js.undefined,
         UnprocessedNamedQueryIds: js.UndefOr[UnprocessedNamedQueryIdList] = js.undefined
@@ -161,6 +163,7 @@ package athena {
   }
 
   object BatchGetQueryExecutionInput {
+    @inline
     def apply(
         QueryExecutionIds: QueryExecutionIdList
     ): BatchGetQueryExecutionInput = {
@@ -179,6 +182,7 @@ package athena {
   }
 
   object BatchGetQueryExecutionOutput {
+    @inline
     def apply(
         QueryExecutions: js.UndefOr[QueryExecutionList] = js.undefined,
         UnprocessedQueryExecutionIds: js.UndefOr[UnprocessedQueryExecutionIdList] = js.undefined
@@ -210,6 +214,7 @@ package athena {
   }
 
   object ColumnInfo {
+    @inline
     def apply(
         Name: String,
         Type: String,
@@ -258,6 +263,7 @@ package athena {
   }
 
   object CreateNamedQueryInput {
+    @inline
     def apply(
         Database: DatabaseString,
         Name: NameString,
@@ -285,6 +291,7 @@ package athena {
   }
 
   object CreateNamedQueryOutput {
+    @inline
     def apply(
         NamedQueryId: js.UndefOr[NamedQueryId] = js.undefined
     ): CreateNamedQueryOutput = {
@@ -303,6 +310,7 @@ package athena {
   }
 
   object CreateWorkGroupInput {
+    @inline
     def apply(
         Name: WorkGroupName,
         Configuration: js.UndefOr[WorkGroupConfiguration] = js.undefined,
@@ -324,6 +332,7 @@ package athena {
   trait CreateWorkGroupOutput extends js.Object {}
 
   object CreateWorkGroupOutput {
+    @inline
     def apply(
         ): CreateWorkGroupOutput = {
       val __obj = js.Dynamic.literal()
@@ -341,6 +350,7 @@ package athena {
   }
 
   object Datum {
+    @inline
     def apply(
         VarCharValue: js.UndefOr[datumString] = js.undefined
     ): Datum = {
@@ -356,6 +366,7 @@ package athena {
   }
 
   object DeleteNamedQueryInput {
+    @inline
     def apply(
         NamedQueryId: NamedQueryId
     ): DeleteNamedQueryInput = {
@@ -371,6 +382,7 @@ package athena {
   trait DeleteNamedQueryOutput extends js.Object {}
 
   object DeleteNamedQueryOutput {
+    @inline
     def apply(
         ): DeleteNamedQueryOutput = {
       val __obj = js.Dynamic.literal()
@@ -386,6 +398,7 @@ package athena {
   }
 
   object DeleteWorkGroupInput {
+    @inline
     def apply(
         WorkGroup: WorkGroupName,
         RecursiveDeleteOption: js.UndefOr[BoxedBoolean] = js.undefined
@@ -403,6 +416,7 @@ package athena {
   trait DeleteWorkGroupOutput extends js.Object {}
 
   object DeleteWorkGroupOutput {
+    @inline
     def apply(
         ): DeleteWorkGroupOutput = {
       val __obj = js.Dynamic.literal()
@@ -421,6 +435,7 @@ package athena {
   }
 
   object EncryptionConfiguration {
+    @inline
     def apply(
         EncryptionOption: EncryptionOption,
         KmsKey: js.UndefOr[String] = js.undefined
@@ -448,6 +463,7 @@ package athena {
   }
 
   object GetNamedQueryInput {
+    @inline
     def apply(
         NamedQueryId: NamedQueryId
     ): GetNamedQueryInput = {
@@ -465,6 +481,7 @@ package athena {
   }
 
   object GetNamedQueryOutput {
+    @inline
     def apply(
         NamedQuery: js.UndefOr[NamedQuery] = js.undefined
     ): GetNamedQueryOutput = {
@@ -480,6 +497,7 @@ package athena {
   }
 
   object GetQueryExecutionInput {
+    @inline
     def apply(
         QueryExecutionId: QueryExecutionId
     ): GetQueryExecutionInput = {
@@ -497,6 +515,7 @@ package athena {
   }
 
   object GetQueryExecutionOutput {
+    @inline
     def apply(
         QueryExecution: js.UndefOr[QueryExecution] = js.undefined
     ): GetQueryExecutionOutput = {
@@ -514,6 +533,7 @@ package athena {
   }
 
   object GetQueryResultsInput {
+    @inline
     def apply(
         QueryExecutionId: QueryExecutionId,
         MaxResults: js.UndefOr[MaxQueryResults] = js.undefined,
@@ -537,6 +557,7 @@ package athena {
   }
 
   object GetQueryResultsOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[Token] = js.undefined,
         ResultSet: js.UndefOr[ResultSet] = js.undefined,
@@ -556,6 +577,7 @@ package athena {
   }
 
   object GetWorkGroupInput {
+    @inline
     def apply(
         WorkGroup: WorkGroupName
     ): GetWorkGroupInput = {
@@ -573,6 +595,7 @@ package athena {
   }
 
   object GetWorkGroupOutput {
+    @inline
     def apply(
         WorkGroup: js.UndefOr[WorkGroup] = js.undefined
     ): GetWorkGroupOutput = {
@@ -590,6 +613,7 @@ package athena {
   }
 
   object ListNamedQueriesInput {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxNamedQueriesCount] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined,
@@ -610,6 +634,7 @@ package athena {
   }
 
   object ListNamedQueriesOutput {
+    @inline
     def apply(
         NamedQueryIds: js.UndefOr[NamedQueryIdList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
@@ -629,6 +654,7 @@ package athena {
   }
 
   object ListQueryExecutionsInput {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxQueryExecutionsCount] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined,
@@ -649,6 +675,7 @@ package athena {
   }
 
   object ListQueryExecutionsOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[Token] = js.undefined,
         QueryExecutionIds: js.UndefOr[QueryExecutionIdList] = js.undefined
@@ -668,6 +695,7 @@ package athena {
   }
 
   object ListTagsForResourceInput {
+    @inline
     def apply(
         ResourceARN: AmazonResourceName,
         MaxResults: js.UndefOr[MaxTagsCount] = js.undefined,
@@ -690,6 +718,7 @@ package athena {
   }
 
   object ListTagsForResourceOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[Token] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -708,6 +737,7 @@ package athena {
   }
 
   object ListWorkGroupsInput {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxWorkGroupsCount] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
@@ -726,6 +756,7 @@ package athena {
   }
 
   object ListWorkGroupsOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[Token] = js.undefined,
         WorkGroups: js.UndefOr[WorkGroupsList] = js.undefined
@@ -751,6 +782,7 @@ package athena {
   }
 
   object NamedQuery {
+    @inline
     def apply(
         Database: DatabaseString,
         Name: NameString,
@@ -788,6 +820,7 @@ package athena {
   }
 
   object QueryExecution {
+    @inline
     def apply(
         Query: js.UndefOr[QueryString] = js.undefined,
         QueryExecutionContext: js.UndefOr[QueryExecutionContext] = js.undefined,
@@ -820,6 +853,7 @@ package athena {
   }
 
   object QueryExecutionContext {
+    @inline
     def apply(
         Database: js.UndefOr[DatabaseString] = js.undefined
     ): QueryExecutionContext = {
@@ -849,6 +883,7 @@ package athena {
   }
 
   object QueryExecutionStatistics {
+    @inline
     def apply(
         DataScannedInBytes: js.UndefOr[Double] = js.undefined,
         EngineExecutionTimeInMillis: js.UndefOr[Double] = js.undefined
@@ -874,6 +909,7 @@ package athena {
   }
 
   object QueryExecutionStatus {
+    @inline
     def apply(
         CompletionDateTime: js.UndefOr[Date] = js.undefined,
         State: js.UndefOr[QueryExecutionState] = js.undefined,
@@ -899,6 +935,7 @@ package athena {
   }
 
   object ResultConfiguration {
+    @inline
     def apply(
         EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
         OutputLocation: js.UndefOr[String] = js.undefined
@@ -922,6 +959,7 @@ package athena {
   }
 
   object ResultConfigurationUpdates {
+    @inline
     def apply(
         EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
         OutputLocation: js.UndefOr[String] = js.undefined,
@@ -949,6 +987,7 @@ package athena {
   }
 
   object ResultSet {
+    @inline
     def apply(
         ResultSetMetadata: js.UndefOr[ResultSetMetadata] = js.undefined,
         Rows: js.UndefOr[RowList] = js.undefined
@@ -969,6 +1008,7 @@ package athena {
   }
 
   object ResultSetMetadata {
+    @inline
     def apply(
         ColumnInfo: js.UndefOr[ColumnInfoList] = js.undefined
     ): ResultSetMetadata = {
@@ -987,6 +1027,7 @@ package athena {
   }
 
   object Row {
+    @inline
     def apply(
         Data: js.UndefOr[datumList] = js.undefined
     ): Row = {
@@ -1006,6 +1047,7 @@ package athena {
   }
 
   object StartQueryExecutionInput {
+    @inline
     def apply(
         QueryString: QueryString,
         ClientRequestToken: js.UndefOr[IdempotencyToken] = js.undefined,
@@ -1031,6 +1073,7 @@ package athena {
   }
 
   object StartQueryExecutionOutput {
+    @inline
     def apply(
         QueryExecutionId: js.UndefOr[QueryExecutionId] = js.undefined
     ): StartQueryExecutionOutput = {
@@ -1054,6 +1097,7 @@ package athena {
   }
 
   object StopQueryExecutionInput {
+    @inline
     def apply(
         QueryExecutionId: QueryExecutionId
     ): StopQueryExecutionInput = {
@@ -1069,6 +1113,7 @@ package athena {
   trait StopQueryExecutionOutput extends js.Object {}
 
   object StopQueryExecutionOutput {
+    @inline
     def apply(
         ): StopQueryExecutionOutput = {
       val __obj = js.Dynamic.literal()
@@ -1087,6 +1132,7 @@ package athena {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: js.UndefOr[TagKey] = js.undefined,
         Value: js.UndefOr[TagValue] = js.undefined
@@ -1105,6 +1151,7 @@ package athena {
   }
 
   object TagResourceInput {
+    @inline
     def apply(
         ResourceARN: AmazonResourceName,
         Tags: TagList
@@ -1122,6 +1169,7 @@ package athena {
   trait TagResourceOutput extends js.Object {}
 
   object TagResourceOutput {
+    @inline
     def apply(
         ): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
@@ -1141,6 +1189,7 @@ package athena {
   }
 
   object UnprocessedNamedQueryId {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
         ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
@@ -1165,6 +1214,7 @@ package athena {
   }
 
   object UnprocessedQueryExecutionId {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
         ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
@@ -1185,6 +1235,7 @@ package athena {
   }
 
   object UntagResourceInput {
+    @inline
     def apply(
         ResourceARN: AmazonResourceName,
         TagKeys: TagKeyList
@@ -1202,6 +1253,7 @@ package athena {
   trait UntagResourceOutput extends js.Object {}
 
   object UntagResourceOutput {
+    @inline
     def apply(
         ): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
@@ -1219,6 +1271,7 @@ package athena {
   }
 
   object UpdateWorkGroupInput {
+    @inline
     def apply(
         WorkGroup: WorkGroupName,
         ConfigurationUpdates: js.UndefOr[WorkGroupConfigurationUpdates] = js.undefined,
@@ -1240,6 +1293,7 @@ package athena {
   trait UpdateWorkGroupOutput extends js.Object {}
 
   object UpdateWorkGroupOutput {
+    @inline
     def apply(
         ): UpdateWorkGroupOutput = {
       val __obj = js.Dynamic.literal()
@@ -1261,6 +1315,7 @@ package athena {
   }
 
   object WorkGroup {
+    @inline
     def apply(
         Name: WorkGroupName,
         Configuration: js.UndefOr[WorkGroupConfiguration] = js.undefined,
@@ -1293,6 +1348,7 @@ package athena {
   }
 
   object WorkGroupConfiguration {
+    @inline
     def apply(
         BytesScannedCutoffPerQuery: js.UndefOr[BytesScannedCutoffValue] = js.undefined,
         EnforceWorkGroupConfiguration: js.UndefOr[BoxedBoolean] = js.undefined,
@@ -1330,6 +1386,7 @@ package athena {
   }
 
   object WorkGroupConfigurationUpdates {
+    @inline
     def apply(
         BytesScannedCutoffPerQuery: js.UndefOr[BytesScannedCutoffValue] = js.undefined,
         EnforceWorkGroupConfiguration: js.UndefOr[BoxedBoolean] = js.undefined,
@@ -1378,6 +1435,7 @@ package athena {
   }
 
   object WorkGroupSummary {
+    @inline
     def apply(
         CreationTime: js.UndefOr[Date] = js.undefined,
         Description: js.UndefOr[WorkGroupDescriptionString] = js.undefined,

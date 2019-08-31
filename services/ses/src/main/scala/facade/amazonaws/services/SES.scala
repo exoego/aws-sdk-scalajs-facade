@@ -446,6 +446,7 @@ package ses {
   }
 
   object AddHeaderAction {
+    @inline
     def apply(
         HeaderName: HeaderName,
         HeaderValue: HeaderValue
@@ -476,6 +477,7 @@ package ses {
   }
 
   object Body {
+    @inline
     def apply(
         Html: js.UndefOr[Content] = js.undefined,
         Text: js.UndefOr[Content] = js.undefined
@@ -501,6 +503,7 @@ package ses {
   }
 
   object BounceAction {
+    @inline
     def apply(
         Message: BounceMessage,
         Sender: Address,
@@ -546,6 +549,7 @@ package ses {
   }
 
   object BouncedRecipientInfo {
+    @inline
     def apply(
         Recipient: Address,
         BounceType: js.UndefOr[BounceType] = js.undefined,
@@ -574,6 +578,7 @@ package ses {
   }
 
   object BulkEmailDestination {
+    @inline
     def apply(
         Destination: Destination,
         ReplacementTags: js.UndefOr[MessageTagList] = js.undefined,
@@ -600,6 +605,7 @@ package ses {
   }
 
   object BulkEmailDestinationStatus {
+    @inline
     def apply(
         Error: js.UndefOr[Error] = js.undefined,
         MessageId: js.UndefOr[MessageId] = js.undefined,
@@ -659,6 +665,7 @@ package ses {
   }
 
   object CloneReceiptRuleSetRequest {
+    @inline
     def apply(
         OriginalRuleSetName: ReceiptRuleSetName,
         RuleSetName: ReceiptRuleSetName
@@ -679,6 +686,7 @@ package ses {
   trait CloneReceiptRuleSetResponse extends js.Object {}
 
   object CloneReceiptRuleSetResponse {
+    @inline
     def apply(
         ): CloneReceiptRuleSetResponse = {
       val __obj = js.Dynamic.literal()
@@ -697,6 +705,7 @@ package ses {
   }
 
   object CloudWatchDestination {
+    @inline
     def apply(
         DimensionConfigurations: CloudWatchDimensionConfigurations
     ): CloudWatchDestination = {
@@ -720,6 +729,7 @@ package ses {
   }
 
   object CloudWatchDimensionConfiguration {
+    @inline
     def apply(
         DefaultDimensionValue: DefaultDimensionValue,
         DimensionName: DimensionName,
@@ -745,6 +755,7 @@ package ses {
   }
 
   object ConfigurationSet {
+    @inline
     def apply(
         Name: ConfigurationSetName
     ): ConfigurationSet = {
@@ -776,6 +787,7 @@ package ses {
   }
 
   object Content {
+    @inline
     def apply(
         Data: MessageData,
         Charset: js.UndefOr[Charset] = js.undefined
@@ -799,6 +811,7 @@ package ses {
   }
 
   object CreateConfigurationSetEventDestinationRequest {
+    @inline
     def apply(
         ConfigurationSetName: ConfigurationSetName,
         EventDestination: EventDestination
@@ -819,6 +832,7 @@ package ses {
   trait CreateConfigurationSetEventDestinationResponse extends js.Object {}
 
   object CreateConfigurationSetEventDestinationResponse {
+    @inline
     def apply(
         ): CreateConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
@@ -836,6 +850,7 @@ package ses {
   }
 
   object CreateConfigurationSetRequest {
+    @inline
     def apply(
         ConfigurationSet: ConfigurationSet
     ): CreateConfigurationSetRequest = {
@@ -854,6 +869,7 @@ package ses {
   trait CreateConfigurationSetResponse extends js.Object {}
 
   object CreateConfigurationSetResponse {
+    @inline
     def apply(
         ): CreateConfigurationSetResponse = {
       val __obj = js.Dynamic.literal()
@@ -872,6 +888,7 @@ package ses {
   }
 
   object CreateConfigurationSetTrackingOptionsRequest {
+    @inline
     def apply(
         ConfigurationSetName: ConfigurationSetName,
         TrackingOptions: TrackingOptions
@@ -892,6 +909,7 @@ package ses {
   trait CreateConfigurationSetTrackingOptionsResponse extends js.Object {}
 
   object CreateConfigurationSetTrackingOptionsResponse {
+    @inline
     def apply(
         ): CreateConfigurationSetTrackingOptionsResponse = {
       val __obj = js.Dynamic.literal()
@@ -914,6 +932,7 @@ package ses {
   }
 
   object CreateCustomVerificationEmailTemplateRequest {
+    @inline
     def apply(
         FailureRedirectionURL: FailureRedirectionURL,
         FromEmailAddress: FromAddress,
@@ -944,6 +963,7 @@ package ses {
   }
 
   object CreateReceiptFilterRequest {
+    @inline
     def apply(
         Filter: ReceiptFilter
     ): CreateReceiptFilterRequest = {
@@ -962,6 +982,7 @@ package ses {
   trait CreateReceiptFilterResponse extends js.Object {}
 
   object CreateReceiptFilterResponse {
+    @inline
     def apply(
         ): CreateReceiptFilterResponse = {
       val __obj = js.Dynamic.literal()
@@ -981,6 +1002,7 @@ package ses {
   }
 
   object CreateReceiptRuleRequest {
+    @inline
     def apply(
         Rule: ReceiptRule,
         RuleSetName: ReceiptRuleSetName,
@@ -1003,6 +1025,7 @@ package ses {
   trait CreateReceiptRuleResponse extends js.Object {}
 
   object CreateReceiptRuleResponse {
+    @inline
     def apply(
         ): CreateReceiptRuleResponse = {
       val __obj = js.Dynamic.literal()
@@ -1020,6 +1043,7 @@ package ses {
   }
 
   object CreateReceiptRuleSetRequest {
+    @inline
     def apply(
         RuleSetName: ReceiptRuleSetName
     ): CreateReceiptRuleSetRequest = {
@@ -1038,6 +1062,7 @@ package ses {
   trait CreateReceiptRuleSetResponse extends js.Object {}
 
   object CreateReceiptRuleSetResponse {
+    @inline
     def apply(
         ): CreateReceiptRuleSetResponse = {
       val __obj = js.Dynamic.literal()
@@ -1055,6 +1080,7 @@ package ses {
   }
 
   object CreateTemplateRequest {
+    @inline
     def apply(
         Template: Template
     ): CreateTemplateRequest = {
@@ -1070,6 +1096,7 @@ package ses {
   trait CreateTemplateResponse extends js.Object {}
 
   object CreateTemplateResponse {
+    @inline
     def apply(
         ): CreateTemplateResponse = {
       val __obj = js.Dynamic.literal()
@@ -1100,6 +1127,7 @@ package ses {
   }
 
   object CustomVerificationEmailTemplate {
+    @inline
     def apply(
         FailureRedirectionURL: js.UndefOr[FailureRedirectionURL] = js.undefined,
         FromEmailAddress: js.UndefOr[FromAddress] = js.undefined,
@@ -1127,6 +1155,7 @@ package ses {
   }
 
   object DeleteConfigurationSetEventDestinationRequest {
+    @inline
     def apply(
         ConfigurationSetName: ConfigurationSetName,
         EventDestinationName: EventDestinationName
@@ -1147,6 +1176,7 @@ package ses {
   trait DeleteConfigurationSetEventDestinationResponse extends js.Object {}
 
   object DeleteConfigurationSetEventDestinationResponse {
+    @inline
     def apply(
         ): DeleteConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
@@ -1164,6 +1194,7 @@ package ses {
   }
 
   object DeleteConfigurationSetRequest {
+    @inline
     def apply(
         ConfigurationSetName: ConfigurationSetName
     ): DeleteConfigurationSetRequest = {
@@ -1182,6 +1213,7 @@ package ses {
   trait DeleteConfigurationSetResponse extends js.Object {}
 
   object DeleteConfigurationSetResponse {
+    @inline
     def apply(
         ): DeleteConfigurationSetResponse = {
       val __obj = js.Dynamic.literal()
@@ -1199,6 +1231,7 @@ package ses {
   }
 
   object DeleteConfigurationSetTrackingOptionsRequest {
+    @inline
     def apply(
         ConfigurationSetName: ConfigurationSetName
     ): DeleteConfigurationSetTrackingOptionsRequest = {
@@ -1217,6 +1250,7 @@ package ses {
   trait DeleteConfigurationSetTrackingOptionsResponse extends js.Object {}
 
   object DeleteConfigurationSetTrackingOptionsResponse {
+    @inline
     def apply(
         ): DeleteConfigurationSetTrackingOptionsResponse = {
       val __obj = js.Dynamic.literal()
@@ -1234,6 +1268,7 @@ package ses {
   }
 
   object DeleteCustomVerificationEmailTemplateRequest {
+    @inline
     def apply(
         TemplateName: TemplateName
     ): DeleteCustomVerificationEmailTemplateRequest = {
@@ -1255,6 +1290,7 @@ package ses {
   }
 
   object DeleteIdentityPolicyRequest {
+    @inline
     def apply(
         Identity: Identity,
         PolicyName: PolicyName
@@ -1275,6 +1311,7 @@ package ses {
   trait DeleteIdentityPolicyResponse extends js.Object {}
 
   object DeleteIdentityPolicyResponse {
+    @inline
     def apply(
         ): DeleteIdentityPolicyResponse = {
       val __obj = js.Dynamic.literal()
@@ -1292,6 +1329,7 @@ package ses {
   }
 
   object DeleteIdentityRequest {
+    @inline
     def apply(
         Identity: Identity
     ): DeleteIdentityRequest = {
@@ -1310,6 +1348,7 @@ package ses {
   trait DeleteIdentityResponse extends js.Object {}
 
   object DeleteIdentityResponse {
+    @inline
     def apply(
         ): DeleteIdentityResponse = {
       val __obj = js.Dynamic.literal()
@@ -1327,6 +1366,7 @@ package ses {
   }
 
   object DeleteReceiptFilterRequest {
+    @inline
     def apply(
         FilterName: ReceiptFilterName
     ): DeleteReceiptFilterRequest = {
@@ -1345,6 +1385,7 @@ package ses {
   trait DeleteReceiptFilterResponse extends js.Object {}
 
   object DeleteReceiptFilterResponse {
+    @inline
     def apply(
         ): DeleteReceiptFilterResponse = {
       val __obj = js.Dynamic.literal()
@@ -1363,6 +1404,7 @@ package ses {
   }
 
   object DeleteReceiptRuleRequest {
+    @inline
     def apply(
         RuleName: ReceiptRuleName,
         RuleSetName: ReceiptRuleSetName
@@ -1383,6 +1425,7 @@ package ses {
   trait DeleteReceiptRuleResponse extends js.Object {}
 
   object DeleteReceiptRuleResponse {
+    @inline
     def apply(
         ): DeleteReceiptRuleResponse = {
       val __obj = js.Dynamic.literal()
@@ -1400,6 +1443,7 @@ package ses {
   }
 
   object DeleteReceiptRuleSetRequest {
+    @inline
     def apply(
         RuleSetName: ReceiptRuleSetName
     ): DeleteReceiptRuleSetRequest = {
@@ -1418,6 +1462,7 @@ package ses {
   trait DeleteReceiptRuleSetResponse extends js.Object {}
 
   object DeleteReceiptRuleSetResponse {
+    @inline
     def apply(
         ): DeleteReceiptRuleSetResponse = {
       val __obj = js.Dynamic.literal()
@@ -1435,6 +1480,7 @@ package ses {
   }
 
   object DeleteTemplateRequest {
+    @inline
     def apply(
         TemplateName: TemplateName
     ): DeleteTemplateRequest = {
@@ -1450,6 +1496,7 @@ package ses {
   trait DeleteTemplateResponse extends js.Object {}
 
   object DeleteTemplateResponse {
+    @inline
     def apply(
         ): DeleteTemplateResponse = {
       val __obj = js.Dynamic.literal()
@@ -1467,6 +1514,7 @@ package ses {
   }
 
   object DeleteVerifiedEmailAddressRequest {
+    @inline
     def apply(
         EmailAddress: Address
     ): DeleteVerifiedEmailAddressRequest = {
@@ -1487,6 +1535,7 @@ package ses {
   }
 
   object DeliveryOptions {
+    @inline
     def apply(
         TlsPolicy: js.UndefOr[TlsPolicy] = js.undefined
     ): DeliveryOptions = {
@@ -1503,6 +1552,7 @@ package ses {
   trait DescribeActiveReceiptRuleSetRequest extends js.Object {}
 
   object DescribeActiveReceiptRuleSetRequest {
+    @inline
     def apply(
         ): DescribeActiveReceiptRuleSetRequest = {
       val __obj = js.Dynamic.literal()
@@ -1521,6 +1571,7 @@ package ses {
   }
 
   object DescribeActiveReceiptRuleSetResponse {
+    @inline
     def apply(
         Metadata: js.UndefOr[ReceiptRuleSetMetadata] = js.undefined,
         Rules: js.UndefOr[ReceiptRulesList] = js.undefined
@@ -1542,6 +1593,7 @@ package ses {
   }
 
   object DescribeConfigurationSetRequest {
+    @inline
     def apply(
         ConfigurationSetName: ConfigurationSetName,
         ConfigurationSetAttributeNames: js.UndefOr[ConfigurationSetAttributeList] = js.undefined
@@ -1570,6 +1622,7 @@ package ses {
   }
 
   object DescribeConfigurationSetResponse {
+    @inline
     def apply(
         ConfigurationSet: js.UndefOr[ConfigurationSet] = js.undefined,
         DeliveryOptions: js.UndefOr[DeliveryOptions] = js.undefined,
@@ -1597,6 +1650,7 @@ package ses {
   }
 
   object DescribeReceiptRuleRequest {
+    @inline
     def apply(
         RuleName: ReceiptRuleName,
         RuleSetName: ReceiptRuleSetName
@@ -1619,6 +1673,7 @@ package ses {
   }
 
   object DescribeReceiptRuleResponse {
+    @inline
     def apply(
         Rule: js.UndefOr[ReceiptRule] = js.undefined
     ): DescribeReceiptRuleResponse = {
@@ -1637,6 +1692,7 @@ package ses {
   }
 
   object DescribeReceiptRuleSetRequest {
+    @inline
     def apply(
         RuleSetName: ReceiptRuleSetName
     ): DescribeReceiptRuleSetRequest = {
@@ -1658,6 +1714,7 @@ package ses {
   }
 
   object DescribeReceiptRuleSetResponse {
+    @inline
     def apply(
         Metadata: js.UndefOr[ReceiptRuleSetMetadata] = js.undefined,
         Rules: js.UndefOr[ReceiptRulesList] = js.undefined
@@ -1682,6 +1739,7 @@ package ses {
   }
 
   object Destination {
+    @inline
     def apply(
         BccAddresses: js.UndefOr[AddressList] = js.undefined,
         CcAddresses: js.UndefOr[AddressList] = js.undefined,
@@ -1730,6 +1788,7 @@ package ses {
   }
 
   object EventDestination {
+    @inline
     def apply(
         MatchingEventTypes: EventTypes,
         Name: EventDestinationName,
@@ -1777,6 +1836,7 @@ package ses {
   }
 
   object ExtensionField {
+    @inline
     def apply(
         Name: ExtensionFieldName,
         Value: ExtensionFieldValue
@@ -1799,6 +1859,7 @@ package ses {
   }
 
   object GetAccountSendingEnabledResponse {
+    @inline
     def apply(
         Enabled: js.UndefOr[Enabled] = js.undefined
     ): GetAccountSendingEnabledResponse = {
@@ -1817,6 +1878,7 @@ package ses {
   }
 
   object GetCustomVerificationEmailTemplateRequest {
+    @inline
     def apply(
         TemplateName: TemplateName
     ): GetCustomVerificationEmailTemplateRequest = {
@@ -1842,6 +1904,7 @@ package ses {
   }
 
   object GetCustomVerificationEmailTemplateResponse {
+    @inline
     def apply(
         FailureRedirectionURL: js.UndefOr[FailureRedirectionURL] = js.undefined,
         FromEmailAddress: js.UndefOr[FromAddress] = js.undefined,
@@ -1870,6 +1933,7 @@ package ses {
   }
 
   object GetIdentityDkimAttributesRequest {
+    @inline
     def apply(
         Identities: IdentityList
     ): GetIdentityDkimAttributesRequest = {
@@ -1890,6 +1954,7 @@ package ses {
   }
 
   object GetIdentityDkimAttributesResponse {
+    @inline
     def apply(
         DkimAttributes: DkimAttributes
     ): GetIdentityDkimAttributesResponse = {
@@ -1910,6 +1975,7 @@ package ses {
   }
 
   object GetIdentityMailFromDomainAttributesRequest {
+    @inline
     def apply(
         Identities: IdentityList
     ): GetIdentityMailFromDomainAttributesRequest = {
@@ -1930,6 +1996,7 @@ package ses {
   }
 
   object GetIdentityMailFromDomainAttributesResponse {
+    @inline
     def apply(
         MailFromDomainAttributes: MailFromDomainAttributes
     ): GetIdentityMailFromDomainAttributesResponse = {
@@ -1950,6 +2017,7 @@ package ses {
   }
 
   object GetIdentityNotificationAttributesRequest {
+    @inline
     def apply(
         Identities: IdentityList
     ): GetIdentityNotificationAttributesRequest = {
@@ -1970,6 +2038,7 @@ package ses {
   }
 
   object GetIdentityNotificationAttributesResponse {
+    @inline
     def apply(
         NotificationAttributes: NotificationAttributes
     ): GetIdentityNotificationAttributesResponse = {
@@ -1991,6 +2060,7 @@ package ses {
   }
 
   object GetIdentityPoliciesRequest {
+    @inline
     def apply(
         Identity: Identity,
         PolicyNames: PolicyNameList
@@ -2013,6 +2083,7 @@ package ses {
   }
 
   object GetIdentityPoliciesResponse {
+    @inline
     def apply(
         Policies: PolicyMap
     ): GetIdentityPoliciesResponse = {
@@ -2033,6 +2104,7 @@ package ses {
   }
 
   object GetIdentityVerificationAttributesRequest {
+    @inline
     def apply(
         Identities: IdentityList
     ): GetIdentityVerificationAttributesRequest = {
@@ -2053,6 +2125,7 @@ package ses {
   }
 
   object GetIdentityVerificationAttributesResponse {
+    @inline
     def apply(
         VerificationAttributes: VerificationAttributes
     ): GetIdentityVerificationAttributesResponse = {
@@ -2075,6 +2148,7 @@ package ses {
   }
 
   object GetSendQuotaResponse {
+    @inline
     def apply(
         Max24HourSend: js.UndefOr[Max24HourSend] = js.undefined,
         MaxSendRate: js.UndefOr[MaxSendRate] = js.undefined,
@@ -2097,6 +2171,7 @@ package ses {
   }
 
   object GetSendStatisticsResponse {
+    @inline
     def apply(
         SendDataPoints: js.UndefOr[SendDataPointList] = js.undefined
     ): GetSendStatisticsResponse = {
@@ -2112,6 +2187,7 @@ package ses {
   }
 
   object GetTemplateRequest {
+    @inline
     def apply(
         TemplateName: TemplateName
     ): GetTemplateRequest = {
@@ -2129,6 +2205,7 @@ package ses {
   }
 
   object GetTemplateResponse {
+    @inline
     def apply(
         Template: js.UndefOr[Template] = js.undefined
     ): GetTemplateResponse = {
@@ -2149,6 +2226,7 @@ package ses {
   }
 
   object IdentityDkimAttributes {
+    @inline
     def apply(
         DkimEnabled: Enabled,
         DkimVerificationStatus: VerificationStatus,
@@ -2175,6 +2253,7 @@ package ses {
   }
 
   object IdentityMailFromDomainAttributes {
+    @inline
     def apply(
         BehaviorOnMXFailure: BehaviorOnMXFailure,
         MailFromDomain: MailFromDomainName,
@@ -2205,6 +2284,7 @@ package ses {
   }
 
   object IdentityNotificationAttributes {
+    @inline
     def apply(
         BounceTopic: NotificationTopic,
         ComplaintTopic: NotificationTopic,
@@ -2251,6 +2331,7 @@ package ses {
   }
 
   object IdentityVerificationAttributes {
+    @inline
     def apply(
         VerificationStatus: VerificationStatus,
         VerificationToken: js.UndefOr[VerificationToken] = js.undefined
@@ -2282,6 +2363,7 @@ package ses {
   }
 
   object KinesisFirehoseDestination {
+    @inline
     def apply(
         DeliveryStreamARN: AmazonResourceName,
         IAMRoleARN: AmazonResourceName
@@ -2308,6 +2390,7 @@ package ses {
   }
 
   object LambdaAction {
+    @inline
     def apply(
         FunctionArn: AmazonResourceName,
         InvocationType: js.UndefOr[InvocationType] = js.undefined,
@@ -2333,6 +2416,7 @@ package ses {
   }
 
   object ListConfigurationSetsRequest {
+    @inline
     def apply(
         MaxItems: js.UndefOr[MaxItems] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -2354,6 +2438,7 @@ package ses {
   }
 
   object ListConfigurationSetsResponse {
+    @inline
     def apply(
         ConfigurationSets: js.UndefOr[ConfigurationSets] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -2376,6 +2461,7 @@ package ses {
   }
 
   object ListCustomVerificationEmailTemplatesRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -2397,6 +2483,7 @@ package ses {
   }
 
   object ListCustomVerificationEmailTemplatesResponse {
+    @inline
     def apply(
         CustomVerificationEmailTemplates: js.UndefOr[CustomVerificationEmailTemplates] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -2421,6 +2508,7 @@ package ses {
   }
 
   object ListIdentitiesRequest {
+    @inline
     def apply(
         IdentityType: js.UndefOr[IdentityType] = js.undefined,
         MaxItems: js.UndefOr[MaxItems] = js.undefined,
@@ -2444,6 +2532,7 @@ package ses {
   }
 
   object ListIdentitiesResponse {
+    @inline
     def apply(
         Identities: IdentityList,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -2466,6 +2555,7 @@ package ses {
   }
 
   object ListIdentityPoliciesRequest {
+    @inline
     def apply(
         Identity: Identity
     ): ListIdentityPoliciesRequest = {
@@ -2486,6 +2576,7 @@ package ses {
   }
 
   object ListIdentityPoliciesResponse {
+    @inline
     def apply(
         PolicyNames: PolicyNameList
     ): ListIdentityPoliciesResponse = {
@@ -2504,6 +2595,7 @@ package ses {
   trait ListReceiptFiltersRequest extends js.Object {}
 
   object ListReceiptFiltersRequest {
+    @inline
     def apply(
         ): ListReceiptFiltersRequest = {
       val __obj = js.Dynamic.literal()
@@ -2521,6 +2613,7 @@ package ses {
   }
 
   object ListReceiptFiltersResponse {
+    @inline
     def apply(
         Filters: js.UndefOr[ReceiptFilterList] = js.undefined
     ): ListReceiptFiltersResponse = {
@@ -2539,6 +2632,7 @@ package ses {
   }
 
   object ListReceiptRuleSetsRequest {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListReceiptRuleSetsRequest = {
@@ -2558,6 +2652,7 @@ package ses {
   }
 
   object ListReceiptRuleSetsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         RuleSets: js.UndefOr[ReceiptRuleSetsLists] = js.undefined
@@ -2576,6 +2671,7 @@ package ses {
   }
 
   object ListTemplatesRequest {
+    @inline
     def apply(
         MaxItems: js.UndefOr[MaxItems] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -2594,6 +2690,7 @@ package ses {
   }
 
   object ListTemplatesResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         TemplatesMetadata: js.UndefOr[TemplateMetadataList] = js.undefined
@@ -2614,6 +2711,7 @@ package ses {
   }
 
   object ListVerifiedEmailAddressesResponse {
+    @inline
     def apply(
         VerifiedEmailAddresses: js.UndefOr[AddressList] = js.undefined
     ): ListVerifiedEmailAddressesResponse = {
@@ -2633,6 +2731,7 @@ package ses {
   }
 
   object Message {
+    @inline
     def apply(
         Body: Body,
         Subject: Content
@@ -2658,6 +2757,7 @@ package ses {
   }
 
   object MessageDsn {
+    @inline
     def apply(
         ReportingMta: ReportingMta,
         ArrivalDate: js.UndefOr[ArrivalDate] = js.undefined,
@@ -2684,6 +2784,7 @@ package ses {
   }
 
   object MessageTag {
+    @inline
     def apply(
         Name: MessageTagName,
         Value: MessageTagValue
@@ -2715,6 +2816,7 @@ package ses {
   }
 
   object PutConfigurationSetDeliveryOptionsRequest {
+    @inline
     def apply(
         ConfigurationSetName: ConfigurationSetName,
         DeliveryOptions: js.UndefOr[DeliveryOptions] = js.undefined
@@ -2735,6 +2837,7 @@ package ses {
   trait PutConfigurationSetDeliveryOptionsResponse extends js.Object {}
 
   object PutConfigurationSetDeliveryOptionsResponse {
+    @inline
     def apply(
         ): PutConfigurationSetDeliveryOptionsResponse = {
       val __obj = js.Dynamic.literal()
@@ -2754,6 +2857,7 @@ package ses {
   }
 
   object PutIdentityPolicyRequest {
+    @inline
     def apply(
         Identity: Identity,
         Policy: Policy,
@@ -2776,6 +2880,7 @@ package ses {
   trait PutIdentityPolicyResponse extends js.Object {}
 
   object PutIdentityPolicyResponse {
+    @inline
     def apply(
         ): PutIdentityPolicyResponse = {
       val __obj = js.Dynamic.literal()
@@ -2793,6 +2898,7 @@ package ses {
   }
 
   object RawMessage {
+    @inline
     def apply(
         Data: RawMessageData
     ): RawMessage = {
@@ -2820,6 +2926,7 @@ package ses {
   }
 
   object ReceiptAction {
+    @inline
     def apply(
         AddHeaderAction: js.UndefOr[AddHeaderAction] = js.undefined,
         BounceAction: js.UndefOr[BounceAction] = js.undefined,
@@ -2852,6 +2959,7 @@ package ses {
   }
 
   object ReceiptFilter {
+    @inline
     def apply(
         IpFilter: ReceiptIpFilter,
         Name: ReceiptFilterName
@@ -2883,6 +2991,7 @@ package ses {
   }
 
   object ReceiptIpFilter {
+    @inline
     def apply(
         Cidr: Cidr,
         Policy: ReceiptFilterPolicy
@@ -2912,6 +3021,7 @@ package ses {
   }
 
   object ReceiptRule {
+    @inline
     def apply(
         Name: ReceiptRuleName,
         Actions: js.UndefOr[ReceiptActionsList] = js.undefined,
@@ -2945,6 +3055,7 @@ package ses {
   }
 
   object ReceiptRuleSetMetadata {
+    @inline
     def apply(
         CreatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
         Name: js.UndefOr[ReceiptRuleSetName] = js.undefined
@@ -2972,6 +3083,7 @@ package ses {
   }
 
   object RecipientDsnFields {
+    @inline
     def apply(
         Action: DsnAction,
         Status: DsnStatus,
@@ -3005,6 +3117,7 @@ package ses {
   }
 
   object ReorderReceiptRuleSetRequest {
+    @inline
     def apply(
         RuleNames: ReceiptRuleNamesList,
         RuleSetName: ReceiptRuleSetName
@@ -3025,6 +3138,7 @@ package ses {
   trait ReorderReceiptRuleSetResponse extends js.Object {}
 
   object ReorderReceiptRuleSetResponse {
+    @inline
     def apply(
         ): ReorderReceiptRuleSetResponse = {
       val __obj = js.Dynamic.literal()
@@ -3044,6 +3158,7 @@ package ses {
   }
 
   object ReputationOptions {
+    @inline
     def apply(
         LastFreshStart: js.UndefOr[LastFreshStart] = js.undefined,
         ReputationMetricsEnabled: js.UndefOr[Enabled] = js.undefined,
@@ -3073,6 +3188,7 @@ package ses {
   }
 
   object S3Action {
+    @inline
     def apply(
         BucketName: S3BucketName,
         KmsKeyArn: js.UndefOr[AmazonResourceName] = js.undefined,
@@ -3103,6 +3219,7 @@ package ses {
   }
 
   object SNSAction {
+    @inline
     def apply(
         TopicArn: AmazonResourceName,
         Encoding: js.UndefOr[SNSActionEncoding] = js.undefined
@@ -3133,6 +3250,7 @@ package ses {
   }
 
   object SNSDestination {
+    @inline
     def apply(
         TopicARN: AmazonResourceName
     ): SNSDestination = {
@@ -3158,6 +3276,7 @@ package ses {
   }
 
   object SendBounceRequest {
+    @inline
     def apply(
         BounceSender: Address,
         BouncedRecipientInfoList: BouncedRecipientInfoList,
@@ -3188,6 +3307,7 @@ package ses {
   }
 
   object SendBounceResponse {
+    @inline
     def apply(
         MessageId: js.UndefOr[MessageId] = js.undefined
     ): SendBounceResponse = {
@@ -3216,6 +3336,7 @@ package ses {
   }
 
   object SendBulkTemplatedEmailRequest {
+    @inline
     def apply(
         Destinations: BulkEmailDestinationList,
         Source: Address,
@@ -3253,6 +3374,7 @@ package ses {
   }
 
   object SendBulkTemplatedEmailResponse {
+    @inline
     def apply(
         Status: BulkEmailDestinationStatusList
     ): SendBulkTemplatedEmailResponse = {
@@ -3275,6 +3397,7 @@ package ses {
   }
 
   object SendCustomVerificationEmailRequest {
+    @inline
     def apply(
         EmailAddress: Address,
         TemplateName: TemplateName,
@@ -3299,6 +3422,7 @@ package ses {
   }
 
   object SendCustomVerificationEmailResponse {
+    @inline
     def apply(
         MessageId: js.UndefOr[MessageId] = js.undefined
     ): SendCustomVerificationEmailResponse = {
@@ -3321,6 +3445,7 @@ package ses {
   }
 
   object SendDataPoint {
+    @inline
     def apply(
         Bounces: js.UndefOr[Counter] = js.undefined,
         Complaints: js.UndefOr[Counter] = js.undefined,
@@ -3355,6 +3480,7 @@ package ses {
   }
 
   object SendEmailRequest {
+    @inline
     def apply(
         Destination: Destination,
         Message: Message,
@@ -3391,6 +3517,7 @@ package ses {
   }
 
   object SendEmailResponse {
+    @inline
     def apply(
         MessageId: MessageId
     ): SendEmailResponse = {
@@ -3418,6 +3545,7 @@ package ses {
   }
 
   object SendRawEmailRequest {
+    @inline
     def apply(
         RawMessage: RawMessage,
         ConfigurationSetName: js.UndefOr[ConfigurationSetName] = js.undefined,
@@ -3452,6 +3580,7 @@ package ses {
   }
 
   object SendRawEmailResponse {
+    @inline
     def apply(
         MessageId: MessageId
     ): SendRawEmailResponse = {
@@ -3482,6 +3611,7 @@ package ses {
   }
 
   object SendTemplatedEmailRequest {
+    @inline
     def apply(
         Destination: Destination,
         Source: Address,
@@ -3519,6 +3649,7 @@ package ses {
   }
 
   object SendTemplatedEmailResponse {
+    @inline
     def apply(
         MessageId: MessageId
     ): SendTemplatedEmailResponse = {
@@ -3539,6 +3670,7 @@ package ses {
   }
 
   object SetActiveReceiptRuleSetRequest {
+    @inline
     def apply(
         RuleSetName: js.UndefOr[ReceiptRuleSetName] = js.undefined
     ): SetActiveReceiptRuleSetRequest = {
@@ -3555,6 +3687,7 @@ package ses {
   trait SetActiveReceiptRuleSetResponse extends js.Object {}
 
   object SetActiveReceiptRuleSetResponse {
+    @inline
     def apply(
         ): SetActiveReceiptRuleSetResponse = {
       val __obj = js.Dynamic.literal()
@@ -3573,6 +3706,7 @@ package ses {
   }
 
   object SetIdentityDkimEnabledRequest {
+    @inline
     def apply(
         DkimEnabled: Enabled,
         Identity: Identity
@@ -3593,6 +3727,7 @@ package ses {
   trait SetIdentityDkimEnabledResponse extends js.Object {}
 
   object SetIdentityDkimEnabledResponse {
+    @inline
     def apply(
         ): SetIdentityDkimEnabledResponse = {
       val __obj = js.Dynamic.literal()
@@ -3611,6 +3746,7 @@ package ses {
   }
 
   object SetIdentityFeedbackForwardingEnabledRequest {
+    @inline
     def apply(
         ForwardingEnabled: Enabled,
         Identity: Identity
@@ -3631,6 +3767,7 @@ package ses {
   trait SetIdentityFeedbackForwardingEnabledResponse extends js.Object {}
 
   object SetIdentityFeedbackForwardingEnabledResponse {
+    @inline
     def apply(
         ): SetIdentityFeedbackForwardingEnabledResponse = {
       val __obj = js.Dynamic.literal()
@@ -3650,6 +3787,7 @@ package ses {
   }
 
   object SetIdentityHeadersInNotificationsEnabledRequest {
+    @inline
     def apply(
         Enabled: Enabled,
         Identity: Identity,
@@ -3672,6 +3810,7 @@ package ses {
   trait SetIdentityHeadersInNotificationsEnabledResponse extends js.Object {}
 
   object SetIdentityHeadersInNotificationsEnabledResponse {
+    @inline
     def apply(
         ): SetIdentityHeadersInNotificationsEnabledResponse = {
       val __obj = js.Dynamic.literal()
@@ -3691,6 +3830,7 @@ package ses {
   }
 
   object SetIdentityMailFromDomainRequest {
+    @inline
     def apply(
         Identity: Identity,
         BehaviorOnMXFailure: js.UndefOr[BehaviorOnMXFailure] = js.undefined,
@@ -3713,6 +3853,7 @@ package ses {
   trait SetIdentityMailFromDomainResponse extends js.Object {}
 
   object SetIdentityMailFromDomainResponse {
+    @inline
     def apply(
         ): SetIdentityMailFromDomainResponse = {
       val __obj = js.Dynamic.literal()
@@ -3732,6 +3873,7 @@ package ses {
   }
 
   object SetIdentityNotificationTopicRequest {
+    @inline
     def apply(
         Identity: Identity,
         NotificationType: NotificationType,
@@ -3754,6 +3896,7 @@ package ses {
   trait SetIdentityNotificationTopicResponse extends js.Object {}
 
   object SetIdentityNotificationTopicResponse {
+    @inline
     def apply(
         ): SetIdentityNotificationTopicResponse = {
       val __obj = js.Dynamic.literal()
@@ -3773,6 +3916,7 @@ package ses {
   }
 
   object SetReceiptRulePositionRequest {
+    @inline
     def apply(
         RuleName: ReceiptRuleName,
         RuleSetName: ReceiptRuleSetName,
@@ -3795,6 +3939,7 @@ package ses {
   trait SetReceiptRulePositionResponse extends js.Object {}
 
   object SetReceiptRulePositionResponse {
+    @inline
     def apply(
         ): SetReceiptRulePositionResponse = {
       val __obj = js.Dynamic.literal()
@@ -3814,6 +3959,7 @@ package ses {
   }
 
   object StopAction {
+    @inline
     def apply(
         Scope: StopScope,
         TopicArn: js.UndefOr[AmazonResourceName] = js.undefined
@@ -3845,6 +3991,7 @@ package ses {
   }
 
   object Template {
+    @inline
     def apply(
         TemplateName: TemplateName,
         HtmlPart: js.UndefOr[HtmlPart] = js.undefined,
@@ -3872,6 +4019,7 @@ package ses {
   }
 
   object TemplateMetadata {
+    @inline
     def apply(
         CreatedTimestamp: js.UndefOr[Timestamp] = js.undefined,
         Name: js.UndefOr[TemplateName] = js.undefined
@@ -3890,6 +4038,7 @@ package ses {
   }
 
   object TestRenderTemplateRequest {
+    @inline
     def apply(
         TemplateData: TemplateData,
         TemplateName: TemplateName
@@ -3909,6 +4058,7 @@ package ses {
   }
 
   object TestRenderTemplateResponse {
+    @inline
     def apply(
         RenderedTemplate: js.UndefOr[RenderedTemplate] = js.undefined
     ): TestRenderTemplateResponse = {
@@ -3935,6 +4085,7 @@ package ses {
   }
 
   object TrackingOptions {
+    @inline
     def apply(
         CustomRedirectDomain: js.UndefOr[CustomRedirectDomain] = js.undefined
     ): TrackingOptions = {
@@ -3953,6 +4104,7 @@ package ses {
   }
 
   object UpdateAccountSendingEnabledRequest {
+    @inline
     def apply(
         Enabled: js.UndefOr[Enabled] = js.undefined
     ): UpdateAccountSendingEnabledRequest = {
@@ -3972,6 +4124,7 @@ package ses {
   }
 
   object UpdateConfigurationSetEventDestinationRequest {
+    @inline
     def apply(
         ConfigurationSetName: ConfigurationSetName,
         EventDestination: EventDestination
@@ -3992,6 +4145,7 @@ package ses {
   trait UpdateConfigurationSetEventDestinationResponse extends js.Object {}
 
   object UpdateConfigurationSetEventDestinationResponse {
+    @inline
     def apply(
         ): UpdateConfigurationSetEventDestinationResponse = {
       val __obj = js.Dynamic.literal()
@@ -4010,6 +4164,7 @@ package ses {
   }
 
   object UpdateConfigurationSetReputationMetricsEnabledRequest {
+    @inline
     def apply(
         ConfigurationSetName: ConfigurationSetName,
         Enabled: Enabled
@@ -4033,6 +4188,7 @@ package ses {
   }
 
   object UpdateConfigurationSetSendingEnabledRequest {
+    @inline
     def apply(
         ConfigurationSetName: ConfigurationSetName,
         Enabled: Enabled
@@ -4056,6 +4212,7 @@ package ses {
   }
 
   object UpdateConfigurationSetTrackingOptionsRequest {
+    @inline
     def apply(
         ConfigurationSetName: ConfigurationSetName,
         TrackingOptions: TrackingOptions
@@ -4076,6 +4233,7 @@ package ses {
   trait UpdateConfigurationSetTrackingOptionsResponse extends js.Object {}
 
   object UpdateConfigurationSetTrackingOptionsResponse {
+    @inline
     def apply(
         ): UpdateConfigurationSetTrackingOptionsResponse = {
       val __obj = js.Dynamic.literal()
@@ -4098,6 +4256,7 @@ package ses {
   }
 
   object UpdateCustomVerificationEmailTemplateRequest {
+    @inline
     def apply(
         TemplateName: TemplateName,
         FailureRedirectionURL: js.UndefOr[FailureRedirectionURL] = js.undefined,
@@ -4129,6 +4288,7 @@ package ses {
   }
 
   object UpdateReceiptRuleRequest {
+    @inline
     def apply(
         Rule: ReceiptRule,
         RuleSetName: ReceiptRuleSetName
@@ -4149,6 +4309,7 @@ package ses {
   trait UpdateReceiptRuleResponse extends js.Object {}
 
   object UpdateReceiptRuleResponse {
+    @inline
     def apply(
         ): UpdateReceiptRuleResponse = {
       val __obj = js.Dynamic.literal()
@@ -4163,6 +4324,7 @@ package ses {
   }
 
   object UpdateTemplateRequest {
+    @inline
     def apply(
         Template: Template
     ): UpdateTemplateRequest = {
@@ -4178,6 +4340,7 @@ package ses {
   trait UpdateTemplateResponse extends js.Object {}
 
   object UpdateTemplateResponse {
+    @inline
     def apply(
         ): UpdateTemplateResponse = {
       val __obj = js.Dynamic.literal()
@@ -4205,6 +4368,7 @@ package ses {
   }
 
   object VerifyDomainDkimRequest {
+    @inline
     def apply(
         Domain: Domain
     ): VerifyDomainDkimRequest = {
@@ -4225,6 +4389,7 @@ package ses {
   }
 
   object VerifyDomainDkimResponse {
+    @inline
     def apply(
         DkimTokens: VerificationTokenList
     ): VerifyDomainDkimResponse = {
@@ -4245,6 +4410,7 @@ package ses {
   }
 
   object VerifyDomainIdentityRequest {
+    @inline
     def apply(
         Domain: Domain
     ): VerifyDomainIdentityRequest = {
@@ -4265,6 +4431,7 @@ package ses {
   }
 
   object VerifyDomainIdentityResponse {
+    @inline
     def apply(
         VerificationToken: VerificationToken
     ): VerifyDomainIdentityResponse = {
@@ -4285,6 +4452,7 @@ package ses {
   }
 
   object VerifyEmailAddressRequest {
+    @inline
     def apply(
         EmailAddress: Address
     ): VerifyEmailAddressRequest = {
@@ -4305,6 +4473,7 @@ package ses {
   }
 
   object VerifyEmailIdentityRequest {
+    @inline
     def apply(
         EmailAddress: Address
     ): VerifyEmailIdentityRequest = {
@@ -4323,6 +4492,7 @@ package ses {
   trait VerifyEmailIdentityResponse extends js.Object {}
 
   object VerifyEmailIdentityResponse {
+    @inline
     def apply(
         ): VerifyEmailIdentityResponse = {
       val __obj = js.Dynamic.literal()
@@ -4342,6 +4512,7 @@ package ses {
   }
 
   object WorkmailAction {
+    @inline
     def apply(
         OrganizationArn: AmazonResourceName,
         TopicArn: js.UndefOr[AmazonResourceName] = js.undefined

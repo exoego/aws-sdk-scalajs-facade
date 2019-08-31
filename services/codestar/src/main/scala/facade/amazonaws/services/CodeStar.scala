@@ -129,6 +129,7 @@ package codestar {
   }
 
   object AssociateTeamMemberRequest {
+    @inline
     def apply(
         projectId: ProjectId,
         projectRole: Role,
@@ -154,6 +155,7 @@ package codestar {
   }
 
   object AssociateTeamMemberResult {
+    @inline
     def apply(
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined
     ): AssociateTeamMemberResult = {
@@ -173,6 +175,7 @@ package codestar {
   }
 
   object Code {
+    @inline
     def apply(
         destination: CodeDestination,
         source: CodeSource
@@ -195,6 +198,7 @@ package codestar {
   }
 
   object CodeCommitCodeDestination {
+    @inline
     def apply(
         name: RepositoryName
     ): CodeCommitCodeDestination = {
@@ -216,6 +220,7 @@ package codestar {
   }
 
   object CodeDestination {
+    @inline
     def apply(
         codeCommit: js.UndefOr[CodeCommitCodeDestination] = js.undefined,
         gitHub: js.UndefOr[GitHubCodeDestination] = js.undefined
@@ -236,6 +241,7 @@ package codestar {
   }
 
   object CodeSource {
+    @inline
     def apply(
         s3: S3Location
     ): CodeSource = {
@@ -259,6 +265,7 @@ package codestar {
   }
 
   object CreateProjectRequest {
+    @inline
     def apply(
         id: ProjectId,
         name: ProjectName,
@@ -291,6 +298,7 @@ package codestar {
   }
 
   object CreateProjectResult {
+    @inline
     def apply(
         arn: ProjectArn,
         id: ProjectId,
@@ -317,6 +325,7 @@ package codestar {
   }
 
   object CreateUserProfileRequest {
+    @inline
     def apply(
         displayName: UserProfileDisplayName,
         emailAddress: Email,
@@ -345,6 +354,7 @@ package codestar {
   }
 
   object CreateUserProfileResult {
+    @inline
     def apply(
         userArn: UserArn,
         createdTimestamp: js.UndefOr[CreatedTimestamp] = js.undefined,
@@ -374,6 +384,7 @@ package codestar {
   }
 
   object DeleteProjectRequest {
+    @inline
     def apply(
         id: ProjectId,
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
@@ -396,6 +407,7 @@ package codestar {
   }
 
   object DeleteProjectResult {
+    @inline
     def apply(
         projectArn: js.UndefOr[ProjectArn] = js.undefined,
         stackId: js.UndefOr[StackId] = js.undefined
@@ -413,6 +425,7 @@ package codestar {
   }
 
   object DeleteUserProfileRequest {
+    @inline
     def apply(
         userArn: UserArn
     ): DeleteUserProfileRequest = {
@@ -430,6 +443,7 @@ package codestar {
   }
 
   object DeleteUserProfileResult {
+    @inline
     def apply(
         userArn: UserArn
     ): DeleteUserProfileResult = {
@@ -447,6 +461,7 @@ package codestar {
   }
 
   object DescribeProjectRequest {
+    @inline
     def apply(
         id: ProjectId
     ): DescribeProjectRequest = {
@@ -472,6 +487,7 @@ package codestar {
   }
 
   object DescribeProjectResult {
+    @inline
     def apply(
         arn: js.UndefOr[ProjectArn] = js.undefined,
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
@@ -503,6 +519,7 @@ package codestar {
   }
 
   object DescribeUserProfileRequest {
+    @inline
     def apply(
         userArn: UserArn
     ): DescribeUserProfileRequest = {
@@ -525,6 +542,7 @@ package codestar {
   }
 
   object DescribeUserProfileResult {
+    @inline
     def apply(
         createdTimestamp: CreatedTimestamp,
         lastModifiedTimestamp: LastModifiedTimestamp,
@@ -553,6 +571,7 @@ package codestar {
   }
 
   object DisassociateTeamMemberRequest {
+    @inline
     def apply(
         projectId: ProjectId,
         userArn: UserArn
@@ -570,6 +589,7 @@ package codestar {
   trait DisassociateTeamMemberResult extends js.Object {}
 
   object DisassociateTeamMemberResult {
+    @inline
     def apply(
         ): DisassociateTeamMemberResult = {
       val __obj = js.Dynamic.literal()
@@ -593,6 +613,7 @@ package codestar {
   }
 
   object GitHubCodeDestination {
+    @inline
     def apply(
         issuesEnabled: RepositoryEnableIssues,
         name: RepositoryName,
@@ -623,6 +644,7 @@ package codestar {
   }
 
   object ListProjectsRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -641,6 +663,7 @@ package codestar {
   }
 
   object ListProjectsResult {
+    @inline
     def apply(
         projects: ProjectsList,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -662,6 +685,7 @@ package codestar {
   }
 
   object ListResourcesRequest {
+    @inline
     def apply(
         projectId: ProjectId,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -684,6 +708,7 @@ package codestar {
   }
 
   object ListResourcesResult {
+    @inline
     def apply(
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         resources: js.UndefOr[ResourcesResult] = js.undefined
@@ -703,6 +728,7 @@ package codestar {
   }
 
   object ListTagsForProjectRequest {
+    @inline
     def apply(
         id: ProjectId,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -725,6 +751,7 @@ package codestar {
   }
 
   object ListTagsForProjectResult {
+    @inline
     def apply(
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
@@ -744,6 +771,7 @@ package codestar {
   }
 
   object ListTeamMembersRequest {
+    @inline
     def apply(
         projectId: ProjectId,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -766,6 +794,7 @@ package codestar {
   }
 
   object ListTeamMembersResult {
+    @inline
     def apply(
         teamMembers: TeamMemberResult,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -786,6 +815,7 @@ package codestar {
   }
 
   object ListUserProfilesRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -804,6 +834,7 @@ package codestar {
   }
 
   object ListUserProfilesResult {
+    @inline
     def apply(
         userProfiles: UserProfilesList,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -827,6 +858,7 @@ package codestar {
   }
 
   object ProjectStatus {
+    @inline
     def apply(
         state: State,
         reason: js.UndefOr[Reason] = js.undefined
@@ -850,6 +882,7 @@ package codestar {
   }
 
   object ProjectSummary {
+    @inline
     def apply(
         projectArn: js.UndefOr[ProjectArn] = js.undefined,
         projectId: js.UndefOr[ProjectId] = js.undefined
@@ -870,6 +903,7 @@ package codestar {
   }
 
   object Resource {
+    @inline
     def apply(
         id: ResourceId
     ): Resource = {
@@ -891,6 +925,7 @@ package codestar {
   }
 
   object S3Location {
+    @inline
     def apply(
         bucketKey: js.UndefOr[BucketKey] = js.undefined,
         bucketName: js.UndefOr[BucketName] = js.undefined
@@ -909,6 +944,7 @@ package codestar {
   }
 
   object TagProjectRequest {
+    @inline
     def apply(
         id: ProjectId,
         tags: Tags
@@ -928,6 +964,7 @@ package codestar {
   }
 
   object TagProjectResult {
+    @inline
     def apply(
         tags: js.UndefOr[Tags] = js.undefined
     ): TagProjectResult = {
@@ -948,6 +985,7 @@ package codestar {
   }
 
   object TeamMember {
+    @inline
     def apply(
         projectRole: Role,
         userArn: UserArn,
@@ -974,6 +1012,7 @@ package codestar {
   }
 
   object Toolchain {
+    @inline
     def apply(
         source: ToolchainSource,
         roleArn: js.UndefOr[RoleArn] = js.undefined,
@@ -998,6 +1037,7 @@ package codestar {
   }
 
   object ToolchainSource {
+    @inline
     def apply(
         s3: S3Location
     ): ToolchainSource = {
@@ -1016,6 +1056,7 @@ package codestar {
   }
 
   object UntagProjectRequest {
+    @inline
     def apply(
         id: ProjectId,
         tags: TagKeys
@@ -1033,6 +1074,7 @@ package codestar {
   trait UntagProjectResult extends js.Object {}
 
   object UntagProjectResult {
+    @inline
     def apply(
         ): UntagProjectResult = {
       val __obj = js.Dynamic.literal()
@@ -1049,6 +1091,7 @@ package codestar {
   }
 
   object UpdateProjectRequest {
+    @inline
     def apply(
         id: ProjectId,
         description: js.UndefOr[ProjectDescription] = js.undefined,
@@ -1068,6 +1111,7 @@ package codestar {
   trait UpdateProjectResult extends js.Object {}
 
   object UpdateProjectResult {
+    @inline
     def apply(
         ): UpdateProjectResult = {
       val __obj = js.Dynamic.literal()
@@ -1085,6 +1129,7 @@ package codestar {
   }
 
   object UpdateTeamMemberRequest {
+    @inline
     def apply(
         projectId: ProjectId,
         userArn: UserArn,
@@ -1110,6 +1155,7 @@ package codestar {
   }
 
   object UpdateTeamMemberResult {
+    @inline
     def apply(
         projectRole: js.UndefOr[Role] = js.undefined,
         remoteAccessAllowed: js.UndefOr[RemoteAccessAllowed] = js.undefined,
@@ -1132,6 +1178,7 @@ package codestar {
   }
 
   object UpdateUserProfileRequest {
+    @inline
     def apply(
         userArn: UserArn,
         displayName: js.UndefOr[UserProfileDisplayName] = js.undefined,
@@ -1160,6 +1207,7 @@ package codestar {
   }
 
   object UpdateUserProfileResult {
+    @inline
     def apply(
         userArn: UserArn,
         createdTimestamp: js.UndefOr[CreatedTimestamp] = js.undefined,
@@ -1193,6 +1241,7 @@ package codestar {
   }
 
   object UserProfileSummary {
+    @inline
     def apply(
         displayName: js.UndefOr[UserProfileDisplayName] = js.undefined,
         emailAddress: js.UndefOr[Email] = js.undefined,

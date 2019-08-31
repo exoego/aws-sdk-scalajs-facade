@@ -107,6 +107,7 @@ package marketplacecommerceanalytics {
   }
 
   object GenerateDataSetRequest {
+    @inline
     def apply(
         dataSetPublicationDate: DataSetPublicationDate,
         dataSetType: DataSetType,
@@ -139,6 +140,7 @@ package marketplacecommerceanalytics {
   }
 
   object GenerateDataSetResult {
+    @inline
     def apply(
         dataSetRequestId: js.UndefOr[DataSetRequestId] = js.undefined
     ): GenerateDataSetResult = {
@@ -171,6 +173,7 @@ package marketplacecommerceanalytics {
   }
 
   object StartSupportDataExportRequest {
+    @inline
     def apply(
         dataSetType: SupportDataSetType,
         destinationS3BucketName: DestinationS3BucketName,
@@ -203,6 +206,7 @@ package marketplacecommerceanalytics {
   }
 
   object StartSupportDataExportResult {
+    @inline
     def apply(
         dataSetRequestId: js.UndefOr[DataSetRequestId] = js.undefined
     ): StartSupportDataExportResult = {

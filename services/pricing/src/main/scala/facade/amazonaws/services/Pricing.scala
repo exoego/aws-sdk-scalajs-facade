@@ -49,6 +49,7 @@ package pricing {
   }
 
   object AttributeValue {
+    @inline
     def apply(
         Value: js.UndefOr[String] = js.undefined
     ): AttributeValue = {
@@ -67,6 +68,7 @@ package pricing {
   }
 
   object DescribeServicesRequest {
+    @inline
     def apply(
         FormatVersion: js.UndefOr[String] = js.undefined,
         MaxResults: js.UndefOr[BoxedInteger] = js.undefined,
@@ -90,6 +92,7 @@ package pricing {
   }
 
   object DescribeServicesResponse {
+    @inline
     def apply(
         FormatVersion: js.UndefOr[String] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined,
@@ -122,6 +125,7 @@ package pricing {
   }
 
   object Filter {
+    @inline
     def apply(
         Field: String,
         Type: FilterType,
@@ -152,6 +156,7 @@ package pricing {
   }
 
   object GetAttributeValuesRequest {
+    @inline
     def apply(
         AttributeName: String,
         ServiceCode: String,
@@ -176,6 +181,7 @@ package pricing {
   }
 
   object GetAttributeValuesResponse {
+    @inline
     def apply(
         AttributeValues: js.UndefOr[AttributeValueList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -197,6 +203,7 @@ package pricing {
   }
 
   object GetProductsRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[Filters] = js.undefined,
         FormatVersion: js.UndefOr[String] = js.undefined,
@@ -222,6 +229,7 @@ package pricing {
   }
 
   object GetProductsResponse {
+    @inline
     def apply(
         FormatVersion: js.UndefOr[String] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined,
@@ -277,6 +285,7 @@ package pricing {
   }
 
   object Service {
+    @inline
     def apply(
         AttributeNames: js.UndefOr[AttributeNameList] = js.undefined,
         ServiceCode: js.UndefOr[String] = js.undefined

@@ -671,6 +671,7 @@ package iam {
   }
 
   object AccessDetail {
+    @inline
     def apply(
         ServiceName: serviceNameType,
         ServiceNamespace: serviceNamespaceType,
@@ -710,6 +711,7 @@ package iam {
   }
 
   object AccessKey {
+    @inline
     def apply(
         AccessKeyId: accessKeyIdType,
         SecretAccessKey: accessKeySecretType,
@@ -741,6 +743,7 @@ package iam {
   }
 
   object AccessKeyLastUsed {
+    @inline
     def apply(
         LastUsedDate: dateType,
         Region: stringType,
@@ -769,6 +772,7 @@ package iam {
   }
 
   object AccessKeyMetadata {
+    @inline
     def apply(
         AccessKeyId: js.UndefOr[accessKeyIdType] = js.undefined,
         CreateDate: js.UndefOr[dateType] = js.undefined,
@@ -791,6 +795,7 @@ package iam {
   }
 
   object AddClientIDToOpenIDConnectProviderRequest {
+    @inline
     def apply(
         ClientID: clientIDType,
         OpenIDConnectProviderArn: arnType
@@ -811,6 +816,7 @@ package iam {
   }
 
   object AddRoleToInstanceProfileRequest {
+    @inline
     def apply(
         InstanceProfileName: instanceProfileNameType,
         RoleName: roleNameType
@@ -831,6 +837,7 @@ package iam {
   }
 
   object AddUserToGroupRequest {
+    @inline
     def apply(
         GroupName: groupNameType,
         UserName: existingUserNameType
@@ -851,6 +858,7 @@ package iam {
   }
 
   object AttachGroupPolicyRequest {
+    @inline
     def apply(
         GroupName: groupNameType,
         PolicyArn: arnType
@@ -871,6 +879,7 @@ package iam {
   }
 
   object AttachRolePolicyRequest {
+    @inline
     def apply(
         PolicyArn: arnType,
         RoleName: roleNameType
@@ -891,6 +900,7 @@ package iam {
   }
 
   object AttachUserPolicyRequest {
+    @inline
     def apply(
         PolicyArn: arnType,
         UserName: userNameType
@@ -916,6 +926,7 @@ package iam {
   }
 
   object AttachedPermissionsBoundary {
+    @inline
     def apply(
         PermissionsBoundaryArn: js.UndefOr[arnType] = js.undefined,
         PermissionsBoundaryType: js.UndefOr[PermissionsBoundaryAttachmentType] = js.undefined
@@ -939,6 +950,7 @@ package iam {
   }
 
   object AttachedPolicy {
+    @inline
     def apply(
         PolicyArn: js.UndefOr[arnType] = js.undefined,
         PolicyName: js.UndefOr[policyNameType] = js.undefined
@@ -957,6 +969,7 @@ package iam {
   }
 
   object ChangePasswordRequest {
+    @inline
     def apply(
         NewPassword: passwordType,
         OldPassword: passwordType
@@ -982,6 +995,7 @@ package iam {
   }
 
   object ContextEntry {
+    @inline
     def apply(
         ContextKeyName: js.UndefOr[ContextKeyNameType] = js.undefined,
         ContextKeyType: js.UndefOr[ContextKeyTypeEnum] = js.undefined,
@@ -1033,6 +1047,7 @@ package iam {
   }
 
   object CreateAccessKeyRequest {
+    @inline
     def apply(
         UserName: js.UndefOr[existingUserNameType] = js.undefined
     ): CreateAccessKeyRequest = {
@@ -1051,6 +1066,7 @@ package iam {
   }
 
   object CreateAccessKeyResponse {
+    @inline
     def apply(
         AccessKey: AccessKey
     ): CreateAccessKeyResponse = {
@@ -1068,6 +1084,7 @@ package iam {
   }
 
   object CreateAccountAliasRequest {
+    @inline
     def apply(
         AccountAlias: accountAliasType
     ): CreateAccountAliasRequest = {
@@ -1086,6 +1103,7 @@ package iam {
   }
 
   object CreateGroupRequest {
+    @inline
     def apply(
         GroupName: groupNameType,
         Path: js.UndefOr[pathType] = js.undefined
@@ -1108,6 +1126,7 @@ package iam {
   }
 
   object CreateGroupResponse {
+    @inline
     def apply(
         Group: Group
     ): CreateGroupResponse = {
@@ -1126,6 +1145,7 @@ package iam {
   }
 
   object CreateInstanceProfileRequest {
+    @inline
     def apply(
         InstanceProfileName: instanceProfileNameType,
         Path: js.UndefOr[pathType] = js.undefined
@@ -1148,6 +1168,7 @@ package iam {
   }
 
   object CreateInstanceProfileResponse {
+    @inline
     def apply(
         InstanceProfile: InstanceProfile
     ): CreateInstanceProfileResponse = {
@@ -1167,6 +1188,7 @@ package iam {
   }
 
   object CreateLoginProfileRequest {
+    @inline
     def apply(
         Password: passwordType,
         UserName: userNameType,
@@ -1191,6 +1213,7 @@ package iam {
   }
 
   object CreateLoginProfileResponse {
+    @inline
     def apply(
         LoginProfile: LoginProfile
     ): CreateLoginProfileResponse = {
@@ -1210,6 +1233,7 @@ package iam {
   }
 
   object CreateOpenIDConnectProviderRequest {
+    @inline
     def apply(
         ThumbprintList: thumbprintListType,
         Url: OpenIDConnectProviderUrlType,
@@ -1234,6 +1258,7 @@ package iam {
   }
 
   object CreateOpenIDConnectProviderResponse {
+    @inline
     def apply(
         OpenIDConnectProviderArn: js.UndefOr[arnType] = js.undefined
     ): CreateOpenIDConnectProviderResponse = {
@@ -1252,6 +1277,7 @@ package iam {
   }
 
   object CreatePolicyRequest {
+    @inline
     def apply(
         PolicyDocument: policyDocumentType,
         PolicyName: policyNameType,
@@ -1278,6 +1304,7 @@ package iam {
   }
 
   object CreatePolicyResponse {
+    @inline
     def apply(
         Policy: js.UndefOr[Policy] = js.undefined
     ): CreatePolicyResponse = {
@@ -1295,6 +1322,7 @@ package iam {
   }
 
   object CreatePolicyVersionRequest {
+    @inline
     def apply(
         PolicyArn: arnType,
         PolicyDocument: policyDocumentType,
@@ -1319,6 +1347,7 @@ package iam {
   }
 
   object CreatePolicyVersionResponse {
+    @inline
     def apply(
         PolicyVersion: js.UndefOr[PolicyVersion] = js.undefined
     ): CreatePolicyVersionResponse = {
@@ -1340,6 +1369,7 @@ package iam {
   }
 
   object CreateRoleRequest {
+    @inline
     def apply(
         AssumeRolePolicyDocument: policyDocumentType,
         RoleName: roleNameType,
@@ -1372,6 +1402,7 @@ package iam {
   }
 
   object CreateRoleResponse {
+    @inline
     def apply(
         Role: Role
     ): CreateRoleResponse = {
@@ -1390,6 +1421,7 @@ package iam {
   }
 
   object CreateSAMLProviderRequest {
+    @inline
     def apply(
         Name: SAMLProviderNameType,
         SAMLMetadataDocument: SAMLMetadataDocumentType
@@ -1412,6 +1444,7 @@ package iam {
   }
 
   object CreateSAMLProviderResponse {
+    @inline
     def apply(
         SAMLProviderArn: js.UndefOr[arnType] = js.undefined
     ): CreateSAMLProviderResponse = {
@@ -1429,6 +1462,7 @@ package iam {
   }
 
   object CreateServiceLinkedRoleRequest {
+    @inline
     def apply(
         AWSServiceName: groupNameType,
         CustomSuffix: js.UndefOr[customSuffixType] = js.undefined,
@@ -1450,6 +1484,7 @@ package iam {
   }
 
   object CreateServiceLinkedRoleResponse {
+    @inline
     def apply(
         Role: js.UndefOr[Role] = js.undefined
     ): CreateServiceLinkedRoleResponse = {
@@ -1466,6 +1501,7 @@ package iam {
   }
 
   object CreateServiceSpecificCredentialRequest {
+    @inline
     def apply(
         ServiceName: serviceName,
         UserName: userNameType
@@ -1485,6 +1521,7 @@ package iam {
   }
 
   object CreateServiceSpecificCredentialResponse {
+    @inline
     def apply(
         ServiceSpecificCredential: js.UndefOr[ServiceSpecificCredential] = js.undefined
     ): CreateServiceSpecificCredentialResponse = {
@@ -1505,6 +1542,7 @@ package iam {
   }
 
   object CreateUserRequest {
+    @inline
     def apply(
         UserName: userNameType,
         Path: js.UndefOr[pathType] = js.undefined,
@@ -1531,6 +1569,7 @@ package iam {
   }
 
   object CreateUserResponse {
+    @inline
     def apply(
         User: js.UndefOr[User] = js.undefined
     ): CreateUserResponse = {
@@ -1547,6 +1586,7 @@ package iam {
   }
 
   object CreateVirtualMFADeviceRequest {
+    @inline
     def apply(
         VirtualMFADeviceName: virtualMFADeviceName,
         Path: js.UndefOr[pathType] = js.undefined
@@ -1569,6 +1609,7 @@ package iam {
   }
 
   object CreateVirtualMFADeviceResponse {
+    @inline
     def apply(
         VirtualMFADevice: VirtualMFADevice
     ): CreateVirtualMFADeviceResponse = {
@@ -1587,6 +1628,7 @@ package iam {
   }
 
   object DeactivateMFADeviceRequest {
+    @inline
     def apply(
         SerialNumber: serialNumberType,
         UserName: existingUserNameType
@@ -1607,6 +1649,7 @@ package iam {
   }
 
   object DeleteAccessKeyRequest {
+    @inline
     def apply(
         AccessKeyId: accessKeyIdType,
         UserName: js.UndefOr[existingUserNameType] = js.undefined
@@ -1626,6 +1669,7 @@ package iam {
   }
 
   object DeleteAccountAliasRequest {
+    @inline
     def apply(
         AccountAlias: accountAliasType
     ): DeleteAccountAliasRequest = {
@@ -1644,6 +1688,7 @@ package iam {
   }
 
   object DeleteGroupPolicyRequest {
+    @inline
     def apply(
         GroupName: groupNameType,
         PolicyName: policyNameType
@@ -1663,6 +1708,7 @@ package iam {
   }
 
   object DeleteGroupRequest {
+    @inline
     def apply(
         GroupName: groupNameType
     ): DeleteGroupRequest = {
@@ -1680,6 +1726,7 @@ package iam {
   }
 
   object DeleteInstanceProfileRequest {
+    @inline
     def apply(
         InstanceProfileName: instanceProfileNameType
     ): DeleteInstanceProfileRequest = {
@@ -1697,6 +1744,7 @@ package iam {
   }
 
   object DeleteLoginProfileRequest {
+    @inline
     def apply(
         UserName: userNameType
     ): DeleteLoginProfileRequest = {
@@ -1714,6 +1762,7 @@ package iam {
   }
 
   object DeleteOpenIDConnectProviderRequest {
+    @inline
     def apply(
         OpenIDConnectProviderArn: arnType
     ): DeleteOpenIDConnectProviderRequest = {
@@ -1731,6 +1780,7 @@ package iam {
   }
 
   object DeletePolicyRequest {
+    @inline
     def apply(
         PolicyArn: arnType
     ): DeletePolicyRequest = {
@@ -1749,6 +1799,7 @@ package iam {
   }
 
   object DeletePolicyVersionRequest {
+    @inline
     def apply(
         PolicyArn: arnType,
         VersionId: policyVersionIdType
@@ -1768,6 +1819,7 @@ package iam {
   }
 
   object DeleteRolePermissionsBoundaryRequest {
+    @inline
     def apply(
         RoleName: roleNameType
     ): DeleteRolePermissionsBoundaryRequest = {
@@ -1786,6 +1838,7 @@ package iam {
   }
 
   object DeleteRolePolicyRequest {
+    @inline
     def apply(
         PolicyName: policyNameType,
         RoleName: roleNameType
@@ -1805,6 +1858,7 @@ package iam {
   }
 
   object DeleteRoleRequest {
+    @inline
     def apply(
         RoleName: roleNameType
     ): DeleteRoleRequest = {
@@ -1822,6 +1876,7 @@ package iam {
   }
 
   object DeleteSAMLProviderRequest {
+    @inline
     def apply(
         SAMLProviderArn: arnType
     ): DeleteSAMLProviderRequest = {
@@ -1840,6 +1895,7 @@ package iam {
   }
 
   object DeleteSSHPublicKeyRequest {
+    @inline
     def apply(
         SSHPublicKeyId: publicKeyIdType,
         UserName: userNameType
@@ -1859,6 +1915,7 @@ package iam {
   }
 
   object DeleteServerCertificateRequest {
+    @inline
     def apply(
         ServerCertificateName: serverCertificateNameType
     ): DeleteServerCertificateRequest = {
@@ -1876,6 +1933,7 @@ package iam {
   }
 
   object DeleteServiceLinkedRoleRequest {
+    @inline
     def apply(
         RoleName: roleNameType
     ): DeleteServiceLinkedRoleRequest = {
@@ -1893,6 +1951,7 @@ package iam {
   }
 
   object DeleteServiceLinkedRoleResponse {
+    @inline
     def apply(
         DeletionTaskId: DeletionTaskIdType
     ): DeleteServiceLinkedRoleResponse = {
@@ -1911,6 +1970,7 @@ package iam {
   }
 
   object DeleteServiceSpecificCredentialRequest {
+    @inline
     def apply(
         ServiceSpecificCredentialId: serviceSpecificCredentialId,
         UserName: js.UndefOr[userNameType] = js.undefined
@@ -1931,6 +1991,7 @@ package iam {
   }
 
   object DeleteSigningCertificateRequest {
+    @inline
     def apply(
         CertificateId: certificateIdType,
         UserName: js.UndefOr[existingUserNameType] = js.undefined
@@ -1950,6 +2011,7 @@ package iam {
   }
 
   object DeleteUserPermissionsBoundaryRequest {
+    @inline
     def apply(
         UserName: userNameType
     ): DeleteUserPermissionsBoundaryRequest = {
@@ -1968,6 +2030,7 @@ package iam {
   }
 
   object DeleteUserPolicyRequest {
+    @inline
     def apply(
         PolicyName: policyNameType,
         UserName: existingUserNameType
@@ -1987,6 +2050,7 @@ package iam {
   }
 
   object DeleteUserRequest {
+    @inline
     def apply(
         UserName: existingUserNameType
     ): DeleteUserRequest = {
@@ -2004,6 +2068,7 @@ package iam {
   }
 
   object DeleteVirtualMFADeviceRequest {
+    @inline
     def apply(
         SerialNumber: serialNumberType
     ): DeleteVirtualMFADeviceRequest = {
@@ -2026,6 +2091,7 @@ package iam {
   }
 
   object DeletionTaskFailureReasonType {
+    @inline
     def apply(
         Reason: js.UndefOr[ReasonType] = js.undefined,
         RoleUsageList: js.UndefOr[RoleUsageListType] = js.undefined
@@ -2053,6 +2119,7 @@ package iam {
   }
 
   object DetachGroupPolicyRequest {
+    @inline
     def apply(
         GroupName: groupNameType,
         PolicyArn: arnType
@@ -2073,6 +2140,7 @@ package iam {
   }
 
   object DetachRolePolicyRequest {
+    @inline
     def apply(
         PolicyArn: arnType,
         RoleName: roleNameType
@@ -2093,6 +2161,7 @@ package iam {
   }
 
   object DetachUserPolicyRequest {
+    @inline
     def apply(
         PolicyArn: arnType,
         UserName: userNameType
@@ -2115,6 +2184,7 @@ package iam {
   }
 
   object EnableMFADeviceRequest {
+    @inline
     def apply(
         AuthenticationCode1: authenticationCodeType,
         AuthenticationCode2: authenticationCodeType,
@@ -2143,6 +2213,7 @@ package iam {
   }
 
   object EntityDetails {
+    @inline
     def apply(
         EntityInfo: EntityInfo,
         LastAuthenticated: js.UndefOr[dateType] = js.undefined
@@ -2170,6 +2241,7 @@ package iam {
   }
 
   object EntityInfo {
+    @inline
     def apply(
         Arn: arnType,
         Id: idType,
@@ -2210,6 +2282,7 @@ package iam {
   }
 
   object ErrorDetails {
+    @inline
     def apply(
         Code: stringType,
         Message: stringType
@@ -2240,6 +2313,7 @@ package iam {
   }
 
   object EvaluationResult {
+    @inline
     def apply(
         EvalActionName: ActionNameType,
         EvalDecision: PolicyEvaluationDecisionType,
@@ -2277,6 +2351,7 @@ package iam {
   }
 
   object GenerateCredentialReportResponse {
+    @inline
     def apply(
         Description: js.UndefOr[ReportStateDescriptionType] = js.undefined,
         State: js.UndefOr[ReportStateType] = js.undefined
@@ -2295,6 +2370,7 @@ package iam {
   }
 
   object GenerateOrganizationsAccessReportRequest {
+    @inline
     def apply(
         EntityPath: organizationsEntityPathType,
         OrganizationsPolicyId: js.UndefOr[organizationsPolicyIdType] = js.undefined
@@ -2314,6 +2390,7 @@ package iam {
   }
 
   object GenerateOrganizationsAccessReportResponse {
+    @inline
     def apply(
         JobId: js.UndefOr[jobIDType] = js.undefined
     ): GenerateOrganizationsAccessReportResponse = {
@@ -2329,6 +2406,7 @@ package iam {
   }
 
   object GenerateServiceLastAccessedDetailsRequest {
+    @inline
     def apply(
         Arn: arnType
     ): GenerateServiceLastAccessedDetailsRequest = {
@@ -2346,6 +2424,7 @@ package iam {
   }
 
   object GenerateServiceLastAccessedDetailsResponse {
+    @inline
     def apply(
         JobId: js.UndefOr[jobIDType] = js.undefined
     ): GenerateServiceLastAccessedDetailsResponse = {
@@ -2361,6 +2440,7 @@ package iam {
   }
 
   object GetAccessKeyLastUsedRequest {
+    @inline
     def apply(
         AccessKeyId: accessKeyIdType
     ): GetAccessKeyLastUsedRequest = {
@@ -2382,6 +2462,7 @@ package iam {
   }
 
   object GetAccessKeyLastUsedResponse {
+    @inline
     def apply(
         AccessKeyLastUsed: js.UndefOr[AccessKeyLastUsed] = js.undefined,
         UserName: js.UndefOr[existingUserNameType] = js.undefined
@@ -2401,6 +2482,7 @@ package iam {
   }
 
   object GetAccountAuthorizationDetailsRequest {
+    @inline
     def apply(
         Filter: js.UndefOr[entityListType] = js.undefined,
         Marker: js.UndefOr[markerType] = js.undefined,
@@ -2428,6 +2510,7 @@ package iam {
   }
 
   object GetAccountAuthorizationDetailsResponse {
+    @inline
     def apply(
         GroupDetailList: js.UndefOr[groupDetailListType] = js.undefined,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
@@ -2456,6 +2539,7 @@ package iam {
   }
 
   object GetAccountPasswordPolicyResponse {
+    @inline
     def apply(
         PasswordPolicy: PasswordPolicy
     ): GetAccountPasswordPolicyResponse = {
@@ -2476,6 +2560,7 @@ package iam {
   }
 
   object GetAccountSummaryResponse {
+    @inline
     def apply(
         SummaryMap: js.UndefOr[summaryMapType] = js.undefined
     ): GetAccountSummaryResponse = {
@@ -2491,6 +2576,7 @@ package iam {
   }
 
   object GetContextKeysForCustomPolicyRequest {
+    @inline
     def apply(
         PolicyInputList: SimulationPolicyListType
     ): GetContextKeysForCustomPolicyRequest = {
@@ -2511,6 +2597,7 @@ package iam {
   }
 
   object GetContextKeysForPolicyResponse {
+    @inline
     def apply(
         ContextKeyNames: js.UndefOr[ContextKeyNamesResultListType] = js.undefined
     ): GetContextKeysForPolicyResponse = {
@@ -2527,6 +2614,7 @@ package iam {
   }
 
   object GetContextKeysForPrincipalPolicyRequest {
+    @inline
     def apply(
         PolicySourceArn: arnType,
         PolicyInputList: js.UndefOr[SimulationPolicyListType] = js.undefined
@@ -2551,6 +2639,7 @@ package iam {
   }
 
   object GetCredentialReportResponse {
+    @inline
     def apply(
         Content: js.UndefOr[ReportContentType] = js.undefined,
         GeneratedTime: js.UndefOr[dateType] = js.undefined,
@@ -2571,6 +2660,7 @@ package iam {
   }
 
   object GetGroupPolicyRequest {
+    @inline
     def apply(
         GroupName: groupNameType,
         PolicyName: policyNameType
@@ -2595,6 +2685,7 @@ package iam {
   }
 
   object GetGroupPolicyResponse {
+    @inline
     def apply(
         GroupName: groupNameType,
         PolicyDocument: policyDocumentType,
@@ -2618,6 +2709,7 @@ package iam {
   }
 
   object GetGroupRequest {
+    @inline
     def apply(
         GroupName: groupNameType,
         Marker: js.UndefOr[markerType] = js.undefined,
@@ -2645,6 +2737,7 @@ package iam {
   }
 
   object GetGroupResponse {
+    @inline
     def apply(
         Group: Group,
         Users: userListType,
@@ -2668,6 +2761,7 @@ package iam {
   }
 
   object GetInstanceProfileRequest {
+    @inline
     def apply(
         InstanceProfileName: instanceProfileNameType
     ): GetInstanceProfileRequest = {
@@ -2688,6 +2782,7 @@ package iam {
   }
 
   object GetInstanceProfileResponse {
+    @inline
     def apply(
         InstanceProfile: InstanceProfile
     ): GetInstanceProfileResponse = {
@@ -2705,6 +2800,7 @@ package iam {
   }
 
   object GetLoginProfileRequest {
+    @inline
     def apply(
         UserName: userNameType
     ): GetLoginProfileRequest = {
@@ -2725,6 +2821,7 @@ package iam {
   }
 
   object GetLoginProfileResponse {
+    @inline
     def apply(
         LoginProfile: LoginProfile
     ): GetLoginProfileResponse = {
@@ -2742,6 +2839,7 @@ package iam {
   }
 
   object GetOpenIDConnectProviderRequest {
+    @inline
     def apply(
         OpenIDConnectProviderArn: arnType
     ): GetOpenIDConnectProviderRequest = {
@@ -2765,6 +2863,7 @@ package iam {
   }
 
   object GetOpenIDConnectProviderResponse {
+    @inline
     def apply(
         ClientIDList: js.UndefOr[clientIDListType] = js.undefined,
         CreateDate: js.UndefOr[dateType] = js.undefined,
@@ -2789,6 +2888,7 @@ package iam {
   }
 
   object GetOrganizationsAccessReportRequest {
+    @inline
     def apply(
         JobId: jobIDType,
         Marker: js.UndefOr[markerType] = js.undefined,
@@ -2820,6 +2920,7 @@ package iam {
   }
 
   object GetOrganizationsAccessReportResponse {
+    @inline
     def apply(
         JobCreationDate: dateType,
         JobStatus: jobStatusType,
@@ -2857,6 +2958,7 @@ package iam {
   }
 
   object GetPolicyRequest {
+    @inline
     def apply(
         PolicyArn: arnType
     ): GetPolicyRequest = {
@@ -2877,6 +2979,7 @@ package iam {
   }
 
   object GetPolicyResponse {
+    @inline
     def apply(
         Policy: js.UndefOr[Policy] = js.undefined
     ): GetPolicyResponse = {
@@ -2893,6 +2996,7 @@ package iam {
   }
 
   object GetPolicyVersionRequest {
+    @inline
     def apply(
         PolicyArn: arnType,
         VersionId: policyVersionIdType
@@ -2915,6 +3019,7 @@ package iam {
   }
 
   object GetPolicyVersionResponse {
+    @inline
     def apply(
         PolicyVersion: js.UndefOr[PolicyVersion] = js.undefined
     ): GetPolicyVersionResponse = {
@@ -2931,6 +3036,7 @@ package iam {
   }
 
   object GetRolePolicyRequest {
+    @inline
     def apply(
         PolicyName: policyNameType,
         RoleName: roleNameType
@@ -2955,6 +3061,7 @@ package iam {
   }
 
   object GetRolePolicyResponse {
+    @inline
     def apply(
         PolicyDocument: policyDocumentType,
         PolicyName: policyNameType,
@@ -2976,6 +3083,7 @@ package iam {
   }
 
   object GetRoleRequest {
+    @inline
     def apply(
         RoleName: roleNameType
     ): GetRoleRequest = {
@@ -2996,6 +3104,7 @@ package iam {
   }
 
   object GetRoleResponse {
+    @inline
     def apply(
         Role: Role
     ): GetRoleResponse = {
@@ -3013,6 +3122,7 @@ package iam {
   }
 
   object GetSAMLProviderRequest {
+    @inline
     def apply(
         SAMLProviderArn: arnType
     ): GetSAMLProviderRequest = {
@@ -3035,6 +3145,7 @@ package iam {
   }
 
   object GetSAMLProviderResponse {
+    @inline
     def apply(
         CreateDate: js.UndefOr[dateType] = js.undefined,
         SAMLMetadataDocument: js.UndefOr[SAMLMetadataDocumentType] = js.undefined,
@@ -3056,6 +3167,7 @@ package iam {
   }
 
   object GetSSHPublicKeyRequest {
+    @inline
     def apply(
         Encoding: encodingType,
         SSHPublicKeyId: publicKeyIdType,
@@ -3080,6 +3192,7 @@ package iam {
   }
 
   object GetSSHPublicKeyResponse {
+    @inline
     def apply(
         SSHPublicKey: js.UndefOr[SSHPublicKey] = js.undefined
     ): GetSSHPublicKeyResponse = {
@@ -3095,6 +3208,7 @@ package iam {
   }
 
   object GetServerCertificateRequest {
+    @inline
     def apply(
         ServerCertificateName: serverCertificateNameType
     ): GetServerCertificateRequest = {
@@ -3115,6 +3229,7 @@ package iam {
   }
 
   object GetServerCertificateResponse {
+    @inline
     def apply(
         ServerCertificate: ServerCertificate
     ): GetServerCertificateResponse = {
@@ -3134,6 +3249,7 @@ package iam {
   }
 
   object GetServiceLastAccessedDetailsRequest {
+    @inline
     def apply(
         JobId: jobIDType,
         Marker: js.UndefOr[markerType] = js.undefined,
@@ -3161,6 +3277,7 @@ package iam {
   }
 
   object GetServiceLastAccessedDetailsResponse {
+    @inline
     def apply(
         JobCompletionDate: dateType,
         JobCreationDate: dateType,
@@ -3193,6 +3310,7 @@ package iam {
   }
 
   object GetServiceLastAccessedDetailsWithEntitiesRequest {
+    @inline
     def apply(
         JobId: jobIDType,
         ServiceNamespace: serviceNamespaceType,
@@ -3222,6 +3340,7 @@ package iam {
   }
 
   object GetServiceLastAccessedDetailsWithEntitiesResponse {
+    @inline
     def apply(
         EntityDetailsList: entityDetailsListType,
         JobCompletionDate: dateType,
@@ -3251,6 +3370,7 @@ package iam {
   }
 
   object GetServiceLinkedRoleDeletionStatusRequest {
+    @inline
     def apply(
         DeletionTaskId: DeletionTaskIdType
     ): GetServiceLinkedRoleDeletionStatusRequest = {
@@ -3269,6 +3389,7 @@ package iam {
   }
 
   object GetServiceLinkedRoleDeletionStatusResponse {
+    @inline
     def apply(
         Status: DeletionTaskStatusType,
         Reason: js.UndefOr[DeletionTaskFailureReasonType] = js.undefined
@@ -3289,6 +3410,7 @@ package iam {
   }
 
   object GetUserPolicyRequest {
+    @inline
     def apply(
         PolicyName: policyNameType,
         UserName: existingUserNameType
@@ -3313,6 +3435,7 @@ package iam {
   }
 
   object GetUserPolicyResponse {
+    @inline
     def apply(
         PolicyDocument: policyDocumentType,
         PolicyName: policyNameType,
@@ -3334,6 +3457,7 @@ package iam {
   }
 
   object GetUserRequest {
+    @inline
     def apply(
         UserName: js.UndefOr[existingUserNameType] = js.undefined
     ): GetUserRequest = {
@@ -3352,6 +3476,7 @@ package iam {
   }
 
   object GetUserResponse {
+    @inline
     def apply(
         User: User
     ): GetUserResponse = {
@@ -3380,6 +3505,7 @@ package iam {
   }
 
   object Group {
+    @inline
     def apply(
         Arn: arnType,
         CreateDate: dateType,
@@ -3415,6 +3541,7 @@ package iam {
   }
 
   object GroupDetail {
+    @inline
     def apply(
         Arn: js.UndefOr[arnType] = js.undefined,
         AttachedManagedPolicies: js.UndefOr[attachedPoliciesListType] = js.undefined,
@@ -3455,6 +3582,7 @@ package iam {
   }
 
   object InstanceProfile {
+    @inline
     def apply(
         Arn: arnType,
         CreateDate: dateType,
@@ -3484,6 +3612,7 @@ package iam {
   }
 
   object ListAccessKeysRequest {
+    @inline
     def apply(
         Marker: js.UndefOr[markerType] = js.undefined,
         MaxItems: js.UndefOr[maxItemsType] = js.undefined,
@@ -3508,6 +3637,7 @@ package iam {
   }
 
   object ListAccessKeysResponse {
+    @inline
     def apply(
         AccessKeyMetadata: accessKeyMetadataListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
@@ -3530,6 +3660,7 @@ package iam {
   }
 
   object ListAccountAliasesRequest {
+    @inline
     def apply(
         Marker: js.UndefOr[markerType] = js.undefined,
         MaxItems: js.UndefOr[maxItemsType] = js.undefined
@@ -3552,6 +3683,7 @@ package iam {
   }
 
   object ListAccountAliasesResponse {
+    @inline
     def apply(
         AccountAliases: accountAliasListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
@@ -3576,6 +3708,7 @@ package iam {
   }
 
   object ListAttachedGroupPoliciesRequest {
+    @inline
     def apply(
         GroupName: groupNameType,
         Marker: js.UndefOr[markerType] = js.undefined,
@@ -3604,6 +3737,7 @@ package iam {
   }
 
   object ListAttachedGroupPoliciesResponse {
+    @inline
     def apply(
         AttachedPolicies: js.UndefOr[attachedPoliciesListType] = js.undefined,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
@@ -3626,6 +3760,7 @@ package iam {
   }
 
   object ListAttachedRolePoliciesRequest {
+    @inline
     def apply(
         RoleName: roleNameType,
         Marker: js.UndefOr[markerType] = js.undefined,
@@ -3654,6 +3789,7 @@ package iam {
   }
 
   object ListAttachedRolePoliciesResponse {
+    @inline
     def apply(
         AttachedPolicies: js.UndefOr[attachedPoliciesListType] = js.undefined,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
@@ -3676,6 +3812,7 @@ package iam {
   }
 
   object ListAttachedUserPoliciesRequest {
+    @inline
     def apply(
         UserName: userNameType,
         Marker: js.UndefOr[markerType] = js.undefined,
@@ -3704,6 +3841,7 @@ package iam {
   }
 
   object ListAttachedUserPoliciesResponse {
+    @inline
     def apply(
         AttachedPolicies: js.UndefOr[attachedPoliciesListType] = js.undefined,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
@@ -3728,6 +3866,7 @@ package iam {
   }
 
   object ListEntitiesForPolicyRequest {
+    @inline
     def apply(
         PolicyArn: arnType,
         EntityFilter: js.UndefOr[EntityType] = js.undefined,
@@ -3762,6 +3901,7 @@ package iam {
   }
 
   object ListEntitiesForPolicyResponse {
+    @inline
     def apply(
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined,
@@ -3787,6 +3927,7 @@ package iam {
   }
 
   object ListGroupPoliciesRequest {
+    @inline
     def apply(
         GroupName: groupNameType,
         Marker: js.UndefOr[markerType] = js.undefined,
@@ -3813,6 +3954,7 @@ package iam {
   }
 
   object ListGroupPoliciesResponse {
+    @inline
     def apply(
         PolicyNames: policyNameListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
@@ -3836,6 +3978,7 @@ package iam {
   }
 
   object ListGroupsForUserRequest {
+    @inline
     def apply(
         UserName: existingUserNameType,
         Marker: js.UndefOr[markerType] = js.undefined,
@@ -3862,6 +4005,7 @@ package iam {
   }
 
   object ListGroupsForUserResponse {
+    @inline
     def apply(
         Groups: groupListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
@@ -3885,6 +4029,7 @@ package iam {
   }
 
   object ListGroupsRequest {
+    @inline
     def apply(
         Marker: js.UndefOr[markerType] = js.undefined,
         MaxItems: js.UndefOr[maxItemsType] = js.undefined,
@@ -3909,6 +4054,7 @@ package iam {
   }
 
   object ListGroupsResponse {
+    @inline
     def apply(
         Groups: groupListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
@@ -3932,6 +4078,7 @@ package iam {
   }
 
   object ListInstanceProfilesForRoleRequest {
+    @inline
     def apply(
         RoleName: roleNameType,
         Marker: js.UndefOr[markerType] = js.undefined,
@@ -3958,6 +4105,7 @@ package iam {
   }
 
   object ListInstanceProfilesForRoleResponse {
+    @inline
     def apply(
         InstanceProfiles: instanceProfileListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
@@ -3981,6 +4129,7 @@ package iam {
   }
 
   object ListInstanceProfilesRequest {
+    @inline
     def apply(
         Marker: js.UndefOr[markerType] = js.undefined,
         MaxItems: js.UndefOr[maxItemsType] = js.undefined,
@@ -4005,6 +4154,7 @@ package iam {
   }
 
   object ListInstanceProfilesResponse {
+    @inline
     def apply(
         InstanceProfiles: instanceProfileListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
@@ -4028,6 +4178,7 @@ package iam {
   }
 
   object ListMFADevicesRequest {
+    @inline
     def apply(
         Marker: js.UndefOr[markerType] = js.undefined,
         MaxItems: js.UndefOr[maxItemsType] = js.undefined,
@@ -4052,6 +4203,7 @@ package iam {
   }
 
   object ListMFADevicesResponse {
+    @inline
     def apply(
         MFADevices: mfaDeviceListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
@@ -4071,6 +4223,7 @@ package iam {
   trait ListOpenIDConnectProvidersRequest extends js.Object {}
 
   object ListOpenIDConnectProvidersRequest {
+    @inline
     def apply(
         ): ListOpenIDConnectProvidersRequest = {
       val __obj = js.Dynamic.literal()
@@ -4088,6 +4241,7 @@ package iam {
   }
 
   object ListOpenIDConnectProvidersResponse {
+    @inline
     def apply(
         OpenIDConnectProviderList: js.UndefOr[OpenIDConnectProviderListType] = js.undefined
     ): ListOpenIDConnectProvidersResponse = {
@@ -4110,6 +4264,7 @@ package iam {
   }
 
   object ListPoliciesGrantingServiceAccessEntry {
+    @inline
     def apply(
         Policies: js.UndefOr[policyGrantingServiceAccessListType] = js.undefined,
         ServiceNamespace: js.UndefOr[serviceNamespaceType] = js.undefined
@@ -4129,6 +4284,7 @@ package iam {
   }
 
   object ListPoliciesGrantingServiceAccessRequest {
+    @inline
     def apply(
         Arn: arnType,
         ServiceNamespaces: serviceNamespaceListType,
@@ -4152,6 +4308,7 @@ package iam {
   }
 
   object ListPoliciesGrantingServiceAccessResponse {
+    @inline
     def apply(
         PoliciesGrantingServiceAccess: listPolicyGrantingServiceAccessResponseListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
@@ -4178,6 +4335,7 @@ package iam {
   }
 
   object ListPoliciesRequest {
+    @inline
     def apply(
         Marker: js.UndefOr[markerType] = js.undefined,
         MaxItems: js.UndefOr[maxItemsType] = js.undefined,
@@ -4208,6 +4366,7 @@ package iam {
   }
 
   object ListPoliciesResponse {
+    @inline
     def apply(
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined,
@@ -4229,6 +4388,7 @@ package iam {
   }
 
   object ListPolicyVersionsRequest {
+    @inline
     def apply(
         PolicyArn: arnType,
         Marker: js.UndefOr[markerType] = js.undefined,
@@ -4255,6 +4415,7 @@ package iam {
   }
 
   object ListPolicyVersionsResponse {
+    @inline
     def apply(
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined,
@@ -4276,6 +4437,7 @@ package iam {
   }
 
   object ListRolePoliciesRequest {
+    @inline
     def apply(
         RoleName: roleNameType,
         Marker: js.UndefOr[markerType] = js.undefined,
@@ -4302,6 +4464,7 @@ package iam {
   }
 
   object ListRolePoliciesResponse {
+    @inline
     def apply(
         PolicyNames: policyNameListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
@@ -4325,6 +4488,7 @@ package iam {
   }
 
   object ListRoleTagsRequest {
+    @inline
     def apply(
         RoleName: roleNameType,
         Marker: js.UndefOr[markerType] = js.undefined,
@@ -4348,6 +4512,7 @@ package iam {
   }
 
   object ListRoleTagsResponse {
+    @inline
     def apply(
         Tags: tagListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
@@ -4371,6 +4536,7 @@ package iam {
   }
 
   object ListRolesRequest {
+    @inline
     def apply(
         Marker: js.UndefOr[markerType] = js.undefined,
         MaxItems: js.UndefOr[maxItemsType] = js.undefined,
@@ -4395,6 +4561,7 @@ package iam {
   }
 
   object ListRolesResponse {
+    @inline
     def apply(
         Roles: roleListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
@@ -4414,6 +4581,7 @@ package iam {
   trait ListSAMLProvidersRequest extends js.Object {}
 
   object ListSAMLProvidersRequest {
+    @inline
     def apply(
         ): ListSAMLProvidersRequest = {
       val __obj = js.Dynamic.literal()
@@ -4431,6 +4599,7 @@ package iam {
   }
 
   object ListSAMLProvidersResponse {
+    @inline
     def apply(
         SAMLProviderList: js.UndefOr[SAMLProviderListType] = js.undefined
     ): ListSAMLProvidersResponse = {
@@ -4448,6 +4617,7 @@ package iam {
   }
 
   object ListSSHPublicKeysRequest {
+    @inline
     def apply(
         Marker: js.UndefOr[markerType] = js.undefined,
         MaxItems: js.UndefOr[maxItemsType] = js.undefined,
@@ -4472,6 +4642,7 @@ package iam {
   }
 
   object ListSSHPublicKeysResponse {
+    @inline
     def apply(
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
         Marker: js.UndefOr[responseMarkerType] = js.undefined,
@@ -4493,6 +4664,7 @@ package iam {
   }
 
   object ListServerCertificatesRequest {
+    @inline
     def apply(
         Marker: js.UndefOr[markerType] = js.undefined,
         MaxItems: js.UndefOr[maxItemsType] = js.undefined,
@@ -4517,6 +4689,7 @@ package iam {
   }
 
   object ListServerCertificatesResponse {
+    @inline
     def apply(
         ServerCertificateMetadataList: serverCertificateMetadataListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
@@ -4539,6 +4712,7 @@ package iam {
   }
 
   object ListServiceSpecificCredentialsRequest {
+    @inline
     def apply(
         ServiceName: js.UndefOr[serviceName] = js.undefined,
         UserName: js.UndefOr[userNameType] = js.undefined
@@ -4556,6 +4730,7 @@ package iam {
   }
 
   object ListServiceSpecificCredentialsResponse {
+    @inline
     def apply(
         ServiceSpecificCredentials: js.UndefOr[ServiceSpecificCredentialsListType] = js.undefined
     ): ListServiceSpecificCredentialsResponse = {
@@ -4575,6 +4750,7 @@ package iam {
   }
 
   object ListSigningCertificatesRequest {
+    @inline
     def apply(
         Marker: js.UndefOr[markerType] = js.undefined,
         MaxItems: js.UndefOr[maxItemsType] = js.undefined,
@@ -4599,6 +4775,7 @@ package iam {
   }
 
   object ListSigningCertificatesResponse {
+    @inline
     def apply(
         Certificates: certificateListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
@@ -4622,6 +4799,7 @@ package iam {
   }
 
   object ListUserPoliciesRequest {
+    @inline
     def apply(
         UserName: existingUserNameType,
         Marker: js.UndefOr[markerType] = js.undefined,
@@ -4648,6 +4826,7 @@ package iam {
   }
 
   object ListUserPoliciesResponse {
+    @inline
     def apply(
         PolicyNames: policyNameListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
@@ -4671,6 +4850,7 @@ package iam {
   }
 
   object ListUserTagsRequest {
+    @inline
     def apply(
         UserName: existingUserNameType,
         Marker: js.UndefOr[markerType] = js.undefined,
@@ -4694,6 +4874,7 @@ package iam {
   }
 
   object ListUserTagsResponse {
+    @inline
     def apply(
         Tags: tagListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
@@ -4717,6 +4898,7 @@ package iam {
   }
 
   object ListUsersRequest {
+    @inline
     def apply(
         Marker: js.UndefOr[markerType] = js.undefined,
         MaxItems: js.UndefOr[maxItemsType] = js.undefined,
@@ -4741,6 +4923,7 @@ package iam {
   }
 
   object ListUsersResponse {
+    @inline
     def apply(
         Users: userListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
@@ -4764,6 +4947,7 @@ package iam {
   }
 
   object ListVirtualMFADevicesRequest {
+    @inline
     def apply(
         AssignmentStatus: js.UndefOr[assignmentStatusType] = js.undefined,
         Marker: js.UndefOr[markerType] = js.undefined,
@@ -4788,6 +4972,7 @@ package iam {
   }
 
   object ListVirtualMFADevicesResponse {
+    @inline
     def apply(
         VirtualMFADevices: virtualMFADeviceListType,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
@@ -4815,6 +5000,7 @@ package iam {
   }
 
   object LoginProfile {
+    @inline
     def apply(
         CreateDate: dateType,
         UserName: userNameType,
@@ -4842,6 +5028,7 @@ package iam {
   }
 
   object MFADevice {
+    @inline
     def apply(
         EnableDate: dateType,
         SerialNumber: serialNumberType,
@@ -4879,6 +5066,7 @@ package iam {
   }
 
   object ManagedPolicyDetail {
+    @inline
     def apply(
         Arn: js.UndefOr[arnType] = js.undefined,
         AttachmentCount: js.UndefOr[attachmentCountType] = js.undefined,
@@ -4921,6 +5109,7 @@ package iam {
   }
 
   object OpenIDConnectProviderListEntry {
+    @inline
     def apply(
         Arn: js.UndefOr[arnType] = js.undefined
     ): OpenIDConnectProviderListEntry = {
@@ -4939,6 +5128,7 @@ package iam {
   }
 
   object OrganizationsDecisionDetail {
+    @inline
     def apply(
         AllowedByOrganizations: js.UndefOr[booleanType] = js.undefined
     ): OrganizationsDecisionDetail = {
@@ -4967,6 +5157,7 @@ package iam {
   }
 
   object PasswordPolicy {
+    @inline
     def apply(
         AllowUsersToChangePassword: js.UndefOr[booleanType] = js.undefined,
         ExpirePasswords: js.UndefOr[booleanType] = js.undefined,
@@ -5027,6 +5218,7 @@ package iam {
   }
 
   object Policy {
+    @inline
     def apply(
         Arn: js.UndefOr[arnType] = js.undefined,
         AttachmentCount: js.UndefOr[attachmentCountType] = js.undefined,
@@ -5069,6 +5261,7 @@ package iam {
   }
 
   object PolicyDetail {
+    @inline
     def apply(
         PolicyDocument: js.UndefOr[policyDocumentType] = js.undefined,
         PolicyName: js.UndefOr[policyNameType] = js.undefined
@@ -5102,6 +5295,7 @@ package iam {
   }
 
   object PolicyGrantingServiceAccess {
+    @inline
     def apply(
         PolicyName: policyNameType,
         PolicyType: policyType,
@@ -5133,6 +5327,7 @@ package iam {
   }
 
   object PolicyGroup {
+    @inline
     def apply(
         GroupId: js.UndefOr[idType] = js.undefined,
         GroupName: js.UndefOr[groupNameType] = js.undefined
@@ -5156,6 +5351,7 @@ package iam {
   }
 
   object PolicyRole {
+    @inline
     def apply(
         RoleId: js.UndefOr[idType] = js.undefined,
         RoleName: js.UndefOr[roleNameType] = js.undefined
@@ -5202,6 +5398,7 @@ package iam {
   }
 
   object PolicyUser {
+    @inline
     def apply(
         UserId: js.UndefOr[idType] = js.undefined,
         UserName: js.UndefOr[userNameType] = js.undefined
@@ -5227,6 +5424,7 @@ package iam {
   }
 
   object PolicyVersion {
+    @inline
     def apply(
         CreateDate: js.UndefOr[dateType] = js.undefined,
         Document: js.UndefOr[policyDocumentType] = js.undefined,
@@ -5253,6 +5451,7 @@ package iam {
   }
 
   object Position {
+    @inline
     def apply(
         Column: js.UndefOr[ColumnNumber] = js.undefined,
         Line: js.UndefOr[LineNumber] = js.undefined
@@ -5272,6 +5471,7 @@ package iam {
   }
 
   object PutGroupPolicyRequest {
+    @inline
     def apply(
         GroupName: groupNameType,
         PolicyDocument: policyDocumentType,
@@ -5294,6 +5494,7 @@ package iam {
   }
 
   object PutRolePermissionsBoundaryRequest {
+    @inline
     def apply(
         PermissionsBoundary: arnType,
         RoleName: roleNameType
@@ -5315,6 +5516,7 @@ package iam {
   }
 
   object PutRolePolicyRequest {
+    @inline
     def apply(
         PolicyDocument: policyDocumentType,
         PolicyName: policyNameType,
@@ -5337,6 +5539,7 @@ package iam {
   }
 
   object PutUserPermissionsBoundaryRequest {
+    @inline
     def apply(
         PermissionsBoundary: arnType,
         UserName: userNameType
@@ -5358,6 +5561,7 @@ package iam {
   }
 
   object PutUserPolicyRequest {
+    @inline
     def apply(
         PolicyDocument: policyDocumentType,
         PolicyName: policyNameType,
@@ -5380,6 +5584,7 @@ package iam {
   }
 
   object RemoveClientIDFromOpenIDConnectProviderRequest {
+    @inline
     def apply(
         ClientID: clientIDType,
         OpenIDConnectProviderArn: arnType
@@ -5400,6 +5605,7 @@ package iam {
   }
 
   object RemoveRoleFromInstanceProfileRequest {
+    @inline
     def apply(
         InstanceProfileName: instanceProfileNameType,
         RoleName: roleNameType
@@ -5420,6 +5626,7 @@ package iam {
   }
 
   object RemoveUserFromGroupRequest {
+    @inline
     def apply(
         GroupName: groupNameType,
         UserName: existingUserNameType
@@ -5454,6 +5661,7 @@ package iam {
   }
 
   object ResetServiceSpecificCredentialRequest {
+    @inline
     def apply(
         ServiceSpecificCredentialId: serviceSpecificCredentialId,
         UserName: js.UndefOr[userNameType] = js.undefined
@@ -5473,6 +5681,7 @@ package iam {
   }
 
   object ResetServiceSpecificCredentialResponse {
+    @inline
     def apply(
         ServiceSpecificCredential: js.UndefOr[ServiceSpecificCredential] = js.undefined
     ): ResetServiceSpecificCredentialResponse = {
@@ -5498,6 +5707,7 @@ package iam {
   }
 
   object ResourceSpecificResult {
+    @inline
     def apply(
         EvalResourceDecision: PolicyEvaluationDecisionType,
         EvalResourceName: ResourceNameType,
@@ -5526,6 +5736,7 @@ package iam {
   }
 
   object ResyncMFADeviceRequest {
+    @inline
     def apply(
         AuthenticationCode1: authenticationCodeType,
         AuthenticationCode2: authenticationCodeType,
@@ -5561,6 +5772,7 @@ package iam {
   }
 
   object Role {
+    @inline
     def apply(
         Arn: arnType,
         CreateDate: dateType,
@@ -5610,6 +5822,7 @@ package iam {
   }
 
   object RoleDetail {
+    @inline
     def apply(
         Arn: js.UndefOr[arnType] = js.undefined,
         AssumeRolePolicyDocument: js.UndefOr[policyDocumentType] = js.undefined,
@@ -5650,6 +5863,7 @@ package iam {
   }
 
   object RoleUsageType {
+    @inline
     def apply(
         Region: js.UndefOr[RegionNameType] = js.undefined,
         Resources: js.UndefOr[ArnListType] = js.undefined
@@ -5672,6 +5886,7 @@ package iam {
   }
 
   object SAMLProviderListEntry {
+    @inline
     def apply(
         Arn: js.UndefOr[arnType] = js.undefined,
         CreateDate: js.UndefOr[dateType] = js.undefined,
@@ -5700,6 +5915,7 @@ package iam {
   }
 
   object SSHPublicKey {
+    @inline
     def apply(
         Fingerprint: publicKeyFingerprintType,
         SSHPublicKeyBody: publicKeyMaterialType,
@@ -5734,6 +5950,7 @@ package iam {
   }
 
   object SSHPublicKeyMetadata {
+    @inline
     def apply(
         SSHPublicKeyId: publicKeyIdType,
         Status: statusType,
@@ -5763,6 +5980,7 @@ package iam {
   }
 
   object ServerCertificate {
+    @inline
     def apply(
         CertificateBody: certificateBodyType,
         ServerCertificateMetadata: ServerCertificateMetadata,
@@ -5793,6 +6011,7 @@ package iam {
   }
 
   object ServerCertificateMetadata {
+    @inline
     def apply(
         Arn: arnType,
         Path: pathType,
@@ -5828,6 +6047,7 @@ package iam {
   }
 
   object ServiceLastAccessed {
+    @inline
     def apply(
         ServiceName: serviceNameType,
         ServiceNamespace: serviceNamespaceType,
@@ -5864,6 +6084,7 @@ package iam {
   }
 
   object ServiceSpecificCredential {
+    @inline
     def apply(
         CreateDate: dateType,
         ServiceName: serviceName,
@@ -5901,6 +6122,7 @@ package iam {
   }
 
   object ServiceSpecificCredentialMetadata {
+    @inline
     def apply(
         CreateDate: dateType,
         ServiceName: serviceName,
@@ -5929,6 +6151,7 @@ package iam {
   }
 
   object SetDefaultPolicyVersionRequest {
+    @inline
     def apply(
         PolicyArn: arnType,
         VersionId: policyVersionIdType
@@ -5948,6 +6171,7 @@ package iam {
   }
 
   object SetSecurityTokenServicePreferencesRequest {
+    @inline
     def apply(
         GlobalEndpointTokenVersion: globalEndpointTokenVersion
     ): SetSecurityTokenServicePreferencesRequest = {
@@ -5973,6 +6197,7 @@ package iam {
   }
 
   object SigningCertificate {
+    @inline
     def apply(
         CertificateBody: certificateBodyType,
         CertificateId: certificateIdType,
@@ -6007,6 +6232,7 @@ package iam {
   }
 
   object SimulateCustomPolicyRequest {
+    @inline
     def apply(
         ActionNames: ActionNameListType,
         PolicyInputList: SimulationPolicyListType,
@@ -6047,6 +6273,7 @@ package iam {
   }
 
   object SimulatePolicyResponse {
+    @inline
     def apply(
         EvaluationResults: js.UndefOr[EvaluationResultsListType] = js.undefined,
         IsTruncated: js.UndefOr[booleanType] = js.undefined,
@@ -6076,6 +6303,7 @@ package iam {
   }
 
   object SimulatePrincipalPolicyRequest {
+    @inline
     def apply(
         ActionNames: ActionNameListType,
         PolicySourceArn: arnType,
@@ -6120,6 +6348,7 @@ package iam {
   }
 
   object Statement {
+    @inline
     def apply(
         EndPosition: js.UndefOr[Position] = js.undefined,
         SourcePolicyId: js.UndefOr[PolicyIdentifierType] = js.undefined,
@@ -6145,6 +6374,7 @@ package iam {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: tagKeyType,
         Value: tagValueType
@@ -6165,6 +6395,7 @@ package iam {
   }
 
   object TagRoleRequest {
+    @inline
     def apply(
         RoleName: roleNameType,
         Tags: tagListType
@@ -6185,6 +6416,7 @@ package iam {
   }
 
   object TagUserRequest {
+    @inline
     def apply(
         Tags: tagListType,
         UserName: existingUserNameType
@@ -6205,6 +6437,7 @@ package iam {
   }
 
   object UntagRoleRequest {
+    @inline
     def apply(
         RoleName: roleNameType,
         TagKeys: tagKeyListType
@@ -6225,6 +6458,7 @@ package iam {
   }
 
   object UntagUserRequest {
+    @inline
     def apply(
         TagKeys: tagKeyListType,
         UserName: existingUserNameType
@@ -6246,6 +6480,7 @@ package iam {
   }
 
   object UpdateAccessKeyRequest {
+    @inline
     def apply(
         AccessKeyId: accessKeyIdType,
         Status: statusType,
@@ -6275,6 +6510,7 @@ package iam {
   }
 
   object UpdateAccountPasswordPolicyRequest {
+    @inline
     def apply(
         AllowUsersToChangePassword: js.UndefOr[booleanType] = js.undefined,
         HardExpiry: js.UndefOr[booleanObjectType] = js.undefined,
@@ -6313,6 +6549,7 @@ package iam {
   }
 
   object UpdateAssumeRolePolicyRequest {
+    @inline
     def apply(
         PolicyDocument: policyDocumentType,
         RoleName: roleNameType
@@ -6334,6 +6571,7 @@ package iam {
   }
 
   object UpdateGroupRequest {
+    @inline
     def apply(
         GroupName: groupNameType,
         NewGroupName: js.UndefOr[groupNameType] = js.undefined,
@@ -6357,6 +6595,7 @@ package iam {
   }
 
   object UpdateLoginProfileRequest {
+    @inline
     def apply(
         UserName: userNameType,
         Password: js.UndefOr[passwordType] = js.undefined,
@@ -6379,6 +6618,7 @@ package iam {
   }
 
   object UpdateOpenIDConnectProviderThumbprintRequest {
+    @inline
     def apply(
         OpenIDConnectProviderArn: arnType,
         ThumbprintList: thumbprintListType
@@ -6399,6 +6639,7 @@ package iam {
   }
 
   object UpdateRoleDescriptionRequest {
+    @inline
     def apply(
         Description: roleDescriptionType,
         RoleName: roleNameType
@@ -6418,6 +6659,7 @@ package iam {
   }
 
   object UpdateRoleDescriptionResponse {
+    @inline
     def apply(
         Role: js.UndefOr[Role] = js.undefined
     ): UpdateRoleDescriptionResponse = {
@@ -6435,6 +6677,7 @@ package iam {
   }
 
   object UpdateRoleRequest {
+    @inline
     def apply(
         RoleName: roleNameType,
         Description: js.UndefOr[roleDescriptionType] = js.undefined,
@@ -6454,6 +6697,7 @@ package iam {
   trait UpdateRoleResponse extends js.Object {}
 
   object UpdateRoleResponse {
+    @inline
     def apply(
         ): UpdateRoleResponse = {
       val __obj = js.Dynamic.literal()
@@ -6469,6 +6713,7 @@ package iam {
   }
 
   object UpdateSAMLProviderRequest {
+    @inline
     def apply(
         SAMLMetadataDocument: SAMLMetadataDocumentType,
         SAMLProviderArn: arnType
@@ -6491,6 +6736,7 @@ package iam {
   }
 
   object UpdateSAMLProviderResponse {
+    @inline
     def apply(
         SAMLProviderArn: js.UndefOr[arnType] = js.undefined
     ): UpdateSAMLProviderResponse = {
@@ -6508,6 +6754,7 @@ package iam {
   }
 
   object UpdateSSHPublicKeyRequest {
+    @inline
     def apply(
         SSHPublicKeyId: publicKeyIdType,
         Status: statusType,
@@ -6531,6 +6778,7 @@ package iam {
   }
 
   object UpdateServerCertificateRequest {
+    @inline
     def apply(
         ServerCertificateName: serverCertificateNameType,
         NewPath: js.UndefOr[pathType] = js.undefined,
@@ -6554,6 +6802,7 @@ package iam {
   }
 
   object UpdateServiceSpecificCredentialRequest {
+    @inline
     def apply(
         ServiceSpecificCredentialId: serviceSpecificCredentialId,
         Status: statusType,
@@ -6577,6 +6826,7 @@ package iam {
   }
 
   object UpdateSigningCertificateRequest {
+    @inline
     def apply(
         CertificateId: certificateIdType,
         Status: statusType,
@@ -6600,6 +6850,7 @@ package iam {
   }
 
   object UpdateUserRequest {
+    @inline
     def apply(
         UserName: existingUserNameType,
         NewPath: js.UndefOr[pathType] = js.undefined,
@@ -6622,6 +6873,7 @@ package iam {
   }
 
   object UploadSSHPublicKeyRequest {
+    @inline
     def apply(
         SSHPublicKeyBody: publicKeyMaterialType,
         UserName: userNameType
@@ -6644,6 +6896,7 @@ package iam {
   }
 
   object UploadSSHPublicKeyResponse {
+    @inline
     def apply(
         SSHPublicKey: js.UndefOr[SSHPublicKey] = js.undefined
     ): UploadSSHPublicKeyResponse = {
@@ -6663,6 +6916,7 @@ package iam {
   }
 
   object UploadServerCertificateRequest {
+    @inline
     def apply(
         CertificateBody: certificateBodyType,
         PrivateKey: privateKeyType,
@@ -6691,6 +6945,7 @@ package iam {
   }
 
   object UploadServerCertificateResponse {
+    @inline
     def apply(
         ServerCertificateMetadata: js.UndefOr[ServerCertificateMetadata] = js.undefined
     ): UploadServerCertificateResponse = {
@@ -6709,6 +6964,7 @@ package iam {
   }
 
   object UploadSigningCertificateRequest {
+    @inline
     def apply(
         CertificateBody: certificateBodyType,
         UserName: js.UndefOr[existingUserNameType] = js.undefined
@@ -6731,6 +6987,7 @@ package iam {
   }
 
   object UploadSigningCertificateResponse {
+    @inline
     def apply(
         Certificate: SigningCertificate
     ): UploadSigningCertificateResponse = {
@@ -6762,6 +7019,7 @@ package iam {
   }
 
   object User {
+    @inline
     def apply(
         Arn: arnType,
         CreateDate: dateType,
@@ -6806,6 +7064,7 @@ package iam {
   }
 
   object UserDetail {
+    @inline
     def apply(
         Arn: js.UndefOr[arnType] = js.undefined,
         AttachedManagedPolicies: js.UndefOr[attachedPoliciesListType] = js.undefined,
@@ -6846,6 +7105,7 @@ package iam {
   }
 
   object VirtualMFADevice {
+    @inline
     def apply(
         SerialNumber: serialNumberType,
         Base32StringSeed: js.UndefOr[BootstrapDatum] = js.undefined,

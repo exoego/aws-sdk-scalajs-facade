@@ -424,6 +424,7 @@ package apigateway {
   }
 
   object AccessLogSettings {
+    @inline
     def apply(
         destinationArn: js.UndefOr[String] = js.undefined,
         format: js.UndefOr[String] = js.undefined
@@ -465,6 +466,7 @@ package apigateway {
   }
 
   object Account {
+    @inline
     def apply(
         apiKeyVersion: js.UndefOr[String] = js.undefined,
         cloudwatchRoleArn: js.UndefOr[String] = js.undefined,
@@ -500,6 +502,7 @@ package apigateway {
   }
 
   object ApiKey {
+    @inline
     def apply(
         createdDate: js.UndefOr[Timestamp] = js.undefined,
         customerId: js.UndefOr[String] = js.undefined,
@@ -537,6 +540,7 @@ package apigateway {
   }
 
   object ApiKeyIds {
+    @inline
     def apply(
         ids: js.UndefOr[ListOfString] = js.undefined,
         warnings: js.UndefOr[ListOfString] = js.undefined
@@ -568,6 +572,7 @@ package apigateway {
   }
 
   object ApiKeys {
+    @inline
     def apply(
         items: js.UndefOr[ListOfApiKey] = js.undefined,
         position: js.UndefOr[String] = js.undefined,
@@ -598,6 +603,7 @@ package apigateway {
   }
 
   object ApiStage {
+    @inline
     def apply(
         apiId: js.UndefOr[String] = js.undefined,
         stage: js.UndefOr[String] = js.undefined,
@@ -631,6 +637,7 @@ package apigateway {
   }
 
   object Authorizer {
+    @inline
     def apply(
         authType: js.UndefOr[String] = js.undefined,
         authorizerCredentials: js.UndefOr[String] = js.undefined,
@@ -685,6 +692,7 @@ package apigateway {
   }
 
   object Authorizers {
+    @inline
     def apply(
         items: js.UndefOr[ListOfAuthorizer] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -709,6 +717,7 @@ package apigateway {
   }
 
   object BasePathMapping {
+    @inline
     def apply(
         basePath: js.UndefOr[String] = js.undefined,
         restApiId: js.UndefOr[String] = js.undefined,
@@ -734,6 +743,7 @@ package apigateway {
   }
 
   object BasePathMappings {
+    @inline
     def apply(
         items: js.UndefOr[ListOfBasePathMapping] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -787,6 +797,7 @@ package apigateway {
   }
 
   object CanarySettings {
+    @inline
     def apply(
         deploymentId: js.UndefOr[String] = js.undefined,
         percentTraffic: js.UndefOr[Double] = js.undefined,
@@ -818,6 +829,7 @@ package apigateway {
   }
 
   object ClientCertificate {
+    @inline
     def apply(
         clientCertificateId: js.UndefOr[String] = js.undefined,
         createdDate: js.UndefOr[Timestamp] = js.undefined,
@@ -849,6 +861,7 @@ package apigateway {
   }
 
   object ClientCertificates {
+    @inline
     def apply(
         items: js.UndefOr[ListOfClientCertificate] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -890,6 +903,7 @@ package apigateway {
   }
 
   object CreateApiKeyRequest {
+    @inline
     def apply(
         customerId: js.UndefOr[String] = js.undefined,
         description: js.UndefOr[String] = js.undefined,
@@ -931,6 +945,7 @@ package apigateway {
   }
 
   object CreateAuthorizerRequest {
+    @inline
     def apply(
         name: String,
         restApiId: String,
@@ -976,6 +991,7 @@ package apigateway {
   }
 
   object CreateBasePathMappingRequest {
+    @inline
     def apply(
         domainName: String,
         restApiId: String,
@@ -1010,6 +1026,7 @@ package apigateway {
   }
 
   object CreateDeploymentRequest {
+    @inline
     def apply(
         restApiId: String,
         cacheClusterEnabled: js.UndefOr[NullableBoolean] = js.undefined,
@@ -1048,6 +1065,7 @@ package apigateway {
   }
 
   object CreateDocumentationPartRequest {
+    @inline
     def apply(
         location: DocumentationPartLocation,
         properties: String,
@@ -1075,6 +1093,7 @@ package apigateway {
   }
 
   object CreateDocumentationVersionRequest {
+    @inline
     def apply(
         documentationVersion: String,
         restApiId: String,
@@ -1111,6 +1130,7 @@ package apigateway {
   }
 
   object CreateDomainNameRequest {
+    @inline
     def apply(
         domainName: String,
         certificateArn: js.UndefOr[String] = js.undefined,
@@ -1155,6 +1175,7 @@ package apigateway {
   }
 
   object CreateModelRequest {
+    @inline
     def apply(
         contentType: String,
         name: String,
@@ -1186,6 +1207,7 @@ package apigateway {
   }
 
   object CreateRequestValidatorRequest {
+    @inline
     def apply(
         restApiId: String,
         name: js.UndefOr[String] = js.undefined,
@@ -1216,6 +1238,7 @@ package apigateway {
   }
 
   object CreateResourceRequest {
+    @inline
     def apply(
         parentId: String,
         pathPart: String,
@@ -1249,6 +1272,7 @@ package apigateway {
   }
 
   object CreateRestApiRequest {
+    @inline
     def apply(
         name: String,
         apiKeySource: js.UndefOr[ApiKeySourceType] = js.undefined,
@@ -1297,6 +1321,7 @@ package apigateway {
   }
 
   object CreateStageRequest {
+    @inline
     def apply(
         deploymentId: String,
         restApiId: String,
@@ -1339,6 +1364,7 @@ package apigateway {
   }
 
   object CreateUsagePlanKeyRequest {
+    @inline
     def apply(
         keyId: String,
         keyType: String,
@@ -1368,6 +1394,7 @@ package apigateway {
   }
 
   object CreateUsagePlanRequest {
+    @inline
     def apply(
         name: String,
         apiStages: js.UndefOr[ListOfApiStage] = js.undefined,
@@ -1401,6 +1428,7 @@ package apigateway {
   }
 
   object CreateVpcLinkRequest {
+    @inline
     def apply(
         name: String,
         targetArns: ListOfString,
@@ -1427,6 +1455,7 @@ package apigateway {
   }
 
   object DeleteApiKeyRequest {
+    @inline
     def apply(
         apiKey: String
     ): DeleteApiKeyRequest = {
@@ -1448,6 +1477,7 @@ package apigateway {
   }
 
   object DeleteAuthorizerRequest {
+    @inline
     def apply(
         authorizerId: String,
         restApiId: String
@@ -1471,6 +1501,7 @@ package apigateway {
   }
 
   object DeleteBasePathMappingRequest {
+    @inline
     def apply(
         basePath: String,
         domainName: String
@@ -1493,6 +1524,7 @@ package apigateway {
   }
 
   object DeleteClientCertificateRequest {
+    @inline
     def apply(
         clientCertificateId: String
     ): DeleteClientCertificateRequest = {
@@ -1514,6 +1546,7 @@ package apigateway {
   }
 
   object DeleteDeploymentRequest {
+    @inline
     def apply(
         deploymentId: String,
         restApiId: String
@@ -1537,6 +1570,7 @@ package apigateway {
   }
 
   object DeleteDocumentationPartRequest {
+    @inline
     def apply(
         documentationPartId: String,
         restApiId: String
@@ -1560,6 +1594,7 @@ package apigateway {
   }
 
   object DeleteDocumentationVersionRequest {
+    @inline
     def apply(
         documentationVersion: String,
         restApiId: String
@@ -1582,6 +1617,7 @@ package apigateway {
   }
 
   object DeleteDomainNameRequest {
+    @inline
     def apply(
         domainName: String
     ): DeleteDomainNameRequest = {
@@ -1603,6 +1639,7 @@ package apigateway {
   }
 
   object DeleteGatewayResponseRequest {
+    @inline
     def apply(
         responseType: GatewayResponseType,
         restApiId: String
@@ -1627,6 +1664,7 @@ package apigateway {
   }
 
   object DeleteIntegrationRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -1654,6 +1692,7 @@ package apigateway {
   }
 
   object DeleteIntegrationResponseRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -1682,6 +1721,7 @@ package apigateway {
   }
 
   object DeleteMethodRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -1709,6 +1749,7 @@ package apigateway {
   }
 
   object DeleteMethodResponseRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -1736,6 +1777,7 @@ package apigateway {
   }
 
   object DeleteModelRequest {
+    @inline
     def apply(
         modelName: String,
         restApiId: String
@@ -1759,6 +1801,7 @@ package apigateway {
   }
 
   object DeleteRequestValidatorRequest {
+    @inline
     def apply(
         requestValidatorId: String,
         restApiId: String
@@ -1782,6 +1825,7 @@ package apigateway {
   }
 
   object DeleteResourceRequest {
+    @inline
     def apply(
         resourceId: String,
         restApiId: String
@@ -1804,6 +1848,7 @@ package apigateway {
   }
 
   object DeleteRestApiRequest {
+    @inline
     def apply(
         restApiId: String
     ): DeleteRestApiRequest = {
@@ -1825,6 +1870,7 @@ package apigateway {
   }
 
   object DeleteStageRequest {
+    @inline
     def apply(
         restApiId: String,
         stageName: String
@@ -1848,6 +1894,7 @@ package apigateway {
   }
 
   object DeleteUsagePlanKeyRequest {
+    @inline
     def apply(
         keyId: String,
         usagePlanId: String
@@ -1870,6 +1917,7 @@ package apigateway {
   }
 
   object DeleteUsagePlanRequest {
+    @inline
     def apply(
         usagePlanId: String
     ): DeleteUsagePlanRequest = {
@@ -1890,6 +1938,7 @@ package apigateway {
   }
 
   object DeleteVpcLinkRequest {
+    @inline
     def apply(
         vpcLinkId: String
     ): DeleteVpcLinkRequest = {
@@ -1915,6 +1964,7 @@ package apigateway {
   }
 
   object Deployment {
+    @inline
     def apply(
         apiSummary: js.UndefOr[PathToMapOfMethodSnapshot] = js.undefined,
         createdDate: js.UndefOr[Timestamp] = js.undefined,
@@ -1941,6 +1991,7 @@ package apigateway {
   }
 
   object DeploymentCanarySettings {
+    @inline
     def apply(
         percentTraffic: js.UndefOr[Double] = js.undefined,
         stageVariableOverrides: js.UndefOr[MapOfStringToString] = js.undefined,
@@ -1966,6 +2017,7 @@ package apigateway {
   }
 
   object Deployments {
+    @inline
     def apply(
         items: js.UndefOr[ListOfDeployment] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -1992,6 +2044,7 @@ package apigateway {
   }
 
   object DocumentationPart {
+    @inline
     def apply(
         id: js.UndefOr[String] = js.undefined,
         location: js.UndefOr[DocumentationPartLocation] = js.undefined,
@@ -2017,6 +2070,7 @@ package apigateway {
   }
 
   object DocumentationPartIds {
+    @inline
     def apply(
         ids: js.UndefOr[ListOfString] = js.undefined,
         warnings: js.UndefOr[ListOfString] = js.undefined
@@ -2041,6 +2095,7 @@ package apigateway {
   }
 
   object DocumentationPartLocation {
+    @inline
     def apply(
         `type`: DocumentationPartType,
         method: js.UndefOr[String] = js.undefined,
@@ -2104,6 +2159,7 @@ package apigateway {
   }
 
   object DocumentationParts {
+    @inline
     def apply(
         items: js.UndefOr[ListOfDocumentationPart] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -2129,6 +2185,7 @@ package apigateway {
   }
 
   object DocumentationVersion {
+    @inline
     def apply(
         createdDate: js.UndefOr[Timestamp] = js.undefined,
         description: js.UndefOr[String] = js.undefined,
@@ -2155,6 +2212,7 @@ package apigateway {
   }
 
   object DocumentationVersions {
+    @inline
     def apply(
         items: js.UndefOr[ListOfDocumentationVersion] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -2192,6 +2250,7 @@ package apigateway {
   }
 
   object DomainName {
+    @inline
     def apply(
         certificateArn: js.UndefOr[String] = js.undefined,
         certificateName: js.UndefOr[String] = js.undefined,
@@ -2249,6 +2308,7 @@ package apigateway {
   }
 
   object DomainNames {
+    @inline
     def apply(
         items: js.UndefOr[ListOfDomainName] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -2269,6 +2329,7 @@ package apigateway {
   }
 
   object EndpointConfiguration {
+    @inline
     def apply(
         types: js.UndefOr[ListOfEndpointType] = js.undefined
     ): EndpointConfiguration = {
@@ -2300,6 +2361,7 @@ package apigateway {
   }
 
   object ExportResponse {
+    @inline
     def apply(
         body: js.UndefOr[Blob] = js.undefined,
         contentDisposition: js.UndefOr[String] = js.undefined,
@@ -2323,6 +2385,7 @@ package apigateway {
   }
 
   object FlushStageAuthorizersCacheRequest {
+    @inline
     def apply(
         restApiId: String,
         stageName: String
@@ -2346,6 +2409,7 @@ package apigateway {
   }
 
   object FlushStageCacheRequest {
+    @inline
     def apply(
         restApiId: String,
         stageName: String
@@ -2384,6 +2448,7 @@ package apigateway {
   }
 
   object GatewayResponse {
+    @inline
     def apply(
         defaultResponse: js.UndefOr[Boolean] = js.undefined,
         responseParameters: js.UndefOr[MapOfStringToString] = js.undefined,
@@ -2471,6 +2536,7 @@ package apigateway {
   }
 
   object GatewayResponses {
+    @inline
     def apply(
         items: js.UndefOr[ListOfGatewayResponse] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -2492,6 +2558,7 @@ package apigateway {
   }
 
   object GenerateClientCertificateRequest {
+    @inline
     def apply(
         description: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[MapOfStringToString] = js.undefined
@@ -2510,6 +2577,7 @@ package apigateway {
   trait GetAccountRequest extends js.Object {}
 
   object GetAccountRequest {
+    @inline
     def apply(
         ): GetAccountRequest = {
       val __obj = js.Dynamic.literal()
@@ -2528,6 +2596,7 @@ package apigateway {
   }
 
   object GetApiKeyRequest {
+    @inline
     def apply(
         apiKey: String,
         includeValue: js.UndefOr[NullableBoolean] = js.undefined
@@ -2554,6 +2623,7 @@ package apigateway {
   }
 
   object GetApiKeysRequest {
+    @inline
     def apply(
         customerId: js.UndefOr[String] = js.undefined,
         includeValues: js.UndefOr[NullableBoolean] = js.undefined,
@@ -2581,6 +2651,7 @@ package apigateway {
   }
 
   object GetAuthorizerRequest {
+    @inline
     def apply(
         authorizerId: String,
         restApiId: String
@@ -2605,6 +2676,7 @@ package apigateway {
   }
 
   object GetAuthorizersRequest {
+    @inline
     def apply(
         restApiId: String,
         limit: js.UndefOr[NullableInteger] = js.undefined,
@@ -2630,6 +2702,7 @@ package apigateway {
   }
 
   object GetBasePathMappingRequest {
+    @inline
     def apply(
         basePath: String,
         domainName: String
@@ -2654,6 +2727,7 @@ package apigateway {
   }
 
   object GetBasePathMappingsRequest {
+    @inline
     def apply(
         domainName: String,
         limit: js.UndefOr[NullableInteger] = js.undefined,
@@ -2678,6 +2752,7 @@ package apigateway {
   }
 
   object GetClientCertificateRequest {
+    @inline
     def apply(
         clientCertificateId: String
     ): GetClientCertificateRequest = {
@@ -2699,6 +2774,7 @@ package apigateway {
   }
 
   object GetClientCertificatesRequest {
+    @inline
     def apply(
         limit: js.UndefOr[NullableInteger] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -2721,6 +2797,7 @@ package apigateway {
   }
 
   object GetDeploymentRequest {
+    @inline
     def apply(
         deploymentId: String,
         restApiId: String,
@@ -2747,6 +2824,7 @@ package apigateway {
   }
 
   object GetDeploymentsRequest {
+    @inline
     def apply(
         restApiId: String,
         limit: js.UndefOr[NullableInteger] = js.undefined,
@@ -2772,6 +2850,7 @@ package apigateway {
   }
 
   object GetDocumentationPartRequest {
+    @inline
     def apply(
         documentationPartId: String,
         restApiId: String
@@ -2800,6 +2879,7 @@ package apigateway {
   }
 
   object GetDocumentationPartsRequest {
+    @inline
     def apply(
         restApiId: String,
         limit: js.UndefOr[NullableInteger] = js.undefined,
@@ -2833,6 +2913,7 @@ package apigateway {
   }
 
   object GetDocumentationVersionRequest {
+    @inline
     def apply(
         documentationVersion: String,
         restApiId: String
@@ -2857,6 +2938,7 @@ package apigateway {
   }
 
   object GetDocumentationVersionsRequest {
+    @inline
     def apply(
         restApiId: String,
         limit: js.UndefOr[NullableInteger] = js.undefined,
@@ -2881,6 +2963,7 @@ package apigateway {
   }
 
   object GetDomainNameRequest {
+    @inline
     def apply(
         domainName: String
     ): GetDomainNameRequest = {
@@ -2902,6 +2985,7 @@ package apigateway {
   }
 
   object GetDomainNamesRequest {
+    @inline
     def apply(
         limit: js.UndefOr[NullableInteger] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -2926,6 +3010,7 @@ package apigateway {
   }
 
   object GetExportRequest {
+    @inline
     def apply(
         exportType: String,
         restApiId: String,
@@ -2955,6 +3040,7 @@ package apigateway {
   }
 
   object GetGatewayResponseRequest {
+    @inline
     def apply(
         responseType: GatewayResponseType,
         restApiId: String
@@ -2979,6 +3065,7 @@ package apigateway {
   }
 
   object GetGatewayResponsesRequest {
+    @inline
     def apply(
         restApiId: String,
         limit: js.UndefOr[NullableInteger] = js.undefined,
@@ -3005,6 +3092,7 @@ package apigateway {
   }
 
   object GetIntegrationRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -3032,6 +3120,7 @@ package apigateway {
   }
 
   object GetIntegrationResponseRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -3060,6 +3149,7 @@ package apigateway {
   }
 
   object GetMethodRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -3087,6 +3177,7 @@ package apigateway {
   }
 
   object GetMethodResponseRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -3115,6 +3206,7 @@ package apigateway {
   }
 
   object GetModelRequest {
+    @inline
     def apply(
         modelName: String,
         restApiId: String,
@@ -3140,6 +3232,7 @@ package apigateway {
   }
 
   object GetModelTemplateRequest {
+    @inline
     def apply(
         modelName: String,
         restApiId: String
@@ -3164,6 +3257,7 @@ package apigateway {
   }
 
   object GetModelsRequest {
+    @inline
     def apply(
         restApiId: String,
         limit: js.UndefOr[NullableInteger] = js.undefined,
@@ -3189,6 +3283,7 @@ package apigateway {
   }
 
   object GetRequestValidatorRequest {
+    @inline
     def apply(
         requestValidatorId: String,
         restApiId: String
@@ -3213,6 +3308,7 @@ package apigateway {
   }
 
   object GetRequestValidatorsRequest {
+    @inline
     def apply(
         restApiId: String,
         limit: js.UndefOr[NullableInteger] = js.undefined,
@@ -3239,6 +3335,7 @@ package apigateway {
   }
 
   object GetResourceRequest {
+    @inline
     def apply(
         resourceId: String,
         restApiId: String,
@@ -3266,6 +3363,7 @@ package apigateway {
   }
 
   object GetResourcesRequest {
+    @inline
     def apply(
         restApiId: String,
         embed: js.UndefOr[ListOfString] = js.undefined,
@@ -3292,6 +3390,7 @@ package apigateway {
   }
 
   object GetRestApiRequest {
+    @inline
     def apply(
         restApiId: String
     ): GetRestApiRequest = {
@@ -3313,6 +3412,7 @@ package apigateway {
   }
 
   object GetRestApisRequest {
+    @inline
     def apply(
         limit: js.UndefOr[NullableInteger] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -3336,6 +3436,7 @@ package apigateway {
   }
 
   object GetSdkRequest {
+    @inline
     def apply(
         restApiId: String,
         sdkType: String,
@@ -3362,6 +3463,7 @@ package apigateway {
   }
 
   object GetSdkTypeRequest {
+    @inline
     def apply(
         id: String
     ): GetSdkTypeRequest = {
@@ -3383,6 +3485,7 @@ package apigateway {
   }
 
   object GetSdkTypesRequest {
+    @inline
     def apply(
         limit: js.UndefOr[NullableInteger] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -3404,6 +3507,7 @@ package apigateway {
   }
 
   object GetStageRequest {
+    @inline
     def apply(
         restApiId: String,
         stageName: String
@@ -3427,6 +3531,7 @@ package apigateway {
   }
 
   object GetStagesRequest {
+    @inline
     def apply(
         restApiId: String,
         deploymentId: js.UndefOr[String] = js.undefined
@@ -3451,6 +3556,7 @@ package apigateway {
   }
 
   object GetTagsRequest {
+    @inline
     def apply(
         resourceArn: String,
         limit: js.UndefOr[NullableInteger] = js.undefined,
@@ -3476,6 +3582,7 @@ package apigateway {
   }
 
   object GetUsagePlanKeyRequest {
+    @inline
     def apply(
         keyId: String,
         usagePlanId: String
@@ -3501,6 +3608,7 @@ package apigateway {
   }
 
   object GetUsagePlanKeysRequest {
+    @inline
     def apply(
         usagePlanId: String,
         limit: js.UndefOr[NullableInteger] = js.undefined,
@@ -3527,6 +3635,7 @@ package apigateway {
   }
 
   object GetUsagePlanRequest {
+    @inline
     def apply(
         usagePlanId: String
     ): GetUsagePlanRequest = {
@@ -3549,6 +3658,7 @@ package apigateway {
   }
 
   object GetUsagePlansRequest {
+    @inline
     def apply(
         keyId: js.UndefOr[String] = js.undefined,
         limit: js.UndefOr[NullableInteger] = js.undefined,
@@ -3576,6 +3686,7 @@ package apigateway {
   }
 
   object GetUsageRequest {
+    @inline
     def apply(
         endDate: String,
         startDate: String,
@@ -3606,6 +3717,7 @@ package apigateway {
   }
 
   object GetVpcLinkRequest {
+    @inline
     def apply(
         vpcLinkId: String
     ): GetVpcLinkRequest = {
@@ -3627,6 +3739,7 @@ package apigateway {
   }
 
   object GetVpcLinksRequest {
+    @inline
     def apply(
         limit: js.UndefOr[NullableInteger] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -3649,6 +3762,7 @@ package apigateway {
   }
 
   object ImportApiKeysRequest {
+    @inline
     def apply(
         body: Blob,
         format: ApiKeysFormat,
@@ -3676,6 +3790,7 @@ package apigateway {
   }
 
   object ImportDocumentationPartsRequest {
+    @inline
     def apply(
         body: Blob,
         restApiId: String,
@@ -3704,6 +3819,7 @@ package apigateway {
   }
 
   object ImportRestApiRequest {
+    @inline
     def apply(
         body: Blob,
         failOnWarnings: js.UndefOr[Boolean] = js.undefined,
@@ -3743,6 +3859,7 @@ package apigateway {
   }
 
   object Integration {
+    @inline
     def apply(
         cacheKeyParameters: js.UndefOr[ListOfString] = js.undefined,
         cacheNamespace: js.UndefOr[String] = js.undefined,
@@ -3793,6 +3910,7 @@ package apigateway {
   }
 
   object IntegrationResponse {
+    @inline
     def apply(
         contentHandling: js.UndefOr[ContentHandlingStrategy] = js.undefined,
         responseParameters: js.UndefOr[MapOfStringToString] = js.undefined,
@@ -3860,6 +3978,7 @@ package apigateway {
   }
 
   object Method {
+    @inline
     def apply(
         apiKeyRequired: js.UndefOr[NullableBoolean] = js.undefined,
         authorizationScopes: js.UndefOr[ListOfString] = js.undefined,
@@ -3910,6 +4029,7 @@ package apigateway {
   }
 
   object MethodResponse {
+    @inline
     def apply(
         responseModels: js.UndefOr[MapOfStringToString] = js.undefined,
         responseParameters: js.UndefOr[MapOfStringToBoolean] = js.undefined,
@@ -3941,6 +4061,7 @@ package apigateway {
   }
 
   object MethodSetting {
+    @inline
     def apply(
         cacheDataEncrypted: js.UndefOr[Boolean] = js.undefined,
         cacheTtlInSeconds: js.UndefOr[Int] = js.undefined,
@@ -3982,6 +4103,7 @@ package apigateway {
   }
 
   object MethodSnapshot {
+    @inline
     def apply(
         apiKeyRequired: js.UndefOr[Boolean] = js.undefined,
         authorizationType: js.UndefOr[String] = js.undefined
@@ -4010,6 +4132,7 @@ package apigateway {
   }
 
   object Model {
+    @inline
     def apply(
         contentType: js.UndefOr[String] = js.undefined,
         description: js.UndefOr[String] = js.undefined,
@@ -4039,6 +4162,7 @@ package apigateway {
   }
 
   object Models {
+    @inline
     def apply(
         items: js.UndefOr[ListOfModel] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -4073,6 +4197,7 @@ package apigateway {
   }
 
   object PatchOperation {
+    @inline
     def apply(
         from: js.UndefOr[String] = js.undefined,
         op: js.UndefOr[Op] = js.undefined,
@@ -4101,6 +4226,7 @@ package apigateway {
   }
 
   object PutGatewayResponseRequest {
+    @inline
     def apply(
         responseType: GatewayResponseType,
         restApiId: String,
@@ -4144,6 +4270,7 @@ package apigateway {
   }
 
   object PutIntegrationRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -4201,6 +4328,7 @@ package apigateway {
   }
 
   object PutIntegrationResponseRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -4245,6 +4373,7 @@ package apigateway {
   }
 
   object PutMethodRequest {
+    @inline
     def apply(
         authorizationType: String,
         httpMethod: String,
@@ -4290,6 +4419,7 @@ package apigateway {
   }
 
   object PutMethodResponseRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -4331,6 +4461,7 @@ package apigateway {
   }
 
   object PutRestApiRequest {
+    @inline
     def apply(
         body: Blob,
         restApiId: String,
@@ -4369,6 +4500,7 @@ package apigateway {
   }
 
   object QuotaSettings {
+    @inline
     def apply(
         limit: js.UndefOr[Int] = js.undefined,
         offset: js.UndefOr[Int] = js.undefined,
@@ -4397,6 +4529,7 @@ package apigateway {
   }
 
   object RequestValidator {
+    @inline
     def apply(
         id: js.UndefOr[String] = js.undefined,
         name: js.UndefOr[String] = js.undefined,
@@ -4427,6 +4560,7 @@ package apigateway {
   }
 
   object RequestValidators {
+    @inline
     def apply(
         items: js.UndefOr[ListOfRequestValidator] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -4453,6 +4587,7 @@ package apigateway {
   }
 
   object Resource {
+    @inline
     def apply(
         id: js.UndefOr[String] = js.undefined,
         parentId: js.UndefOr[String] = js.undefined,
@@ -4482,6 +4617,7 @@ package apigateway {
   }
 
   object Resources {
+    @inline
     def apply(
         items: js.UndefOr[ListOfResource] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -4515,6 +4651,7 @@ package apigateway {
   }
 
   object RestApi {
+    @inline
     def apply(
         apiKeySource: js.UndefOr[ApiKeySourceType] = js.undefined,
         binaryMediaTypes: js.UndefOr[ListOfString] = js.undefined,
@@ -4558,6 +4695,7 @@ package apigateway {
   }
 
   object RestApis {
+    @inline
     def apply(
         items: js.UndefOr[ListOfRestApi] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -4582,6 +4720,7 @@ package apigateway {
   }
 
   object SdkConfigurationProperty {
+    @inline
     def apply(
         defaultValue: js.UndefOr[String] = js.undefined,
         description: js.UndefOr[String] = js.undefined,
@@ -4610,6 +4749,7 @@ package apigateway {
   }
 
   object SdkResponse {
+    @inline
     def apply(
         body: js.UndefOr[Blob] = js.undefined,
         contentDisposition: js.UndefOr[String] = js.undefined,
@@ -4635,6 +4775,7 @@ package apigateway {
   }
 
   object SdkType {
+    @inline
     def apply(
         configurationProperties: js.UndefOr[ListOfSdkConfigurationProperty] = js.undefined,
         description: js.UndefOr[String] = js.undefined,
@@ -4660,6 +4801,7 @@ package apigateway {
   }
 
   object SdkTypes {
+    @inline
     def apply(
         items: js.UndefOr[ListOfSdkType] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -4705,6 +4847,7 @@ package apigateway {
   }
 
   object Stage {
+    @inline
     def apply(
         accessLogSettings: js.UndefOr[AccessLogSettings] = js.undefined,
         cacheClusterEnabled: js.UndefOr[Boolean] = js.undefined,
@@ -4756,6 +4899,7 @@ package apigateway {
   }
 
   object StageKey {
+    @inline
     def apply(
         restApiId: js.UndefOr[String] = js.undefined,
         stageName: js.UndefOr[String] = js.undefined
@@ -4778,6 +4922,7 @@ package apigateway {
   }
 
   object Stages {
+    @inline
     def apply(
         item: js.UndefOr[ListOfStage] = js.undefined
     ): Stages = {
@@ -4797,6 +4942,7 @@ package apigateway {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         resourceArn: String,
         tags: MapOfStringToString
@@ -4819,6 +4965,7 @@ package apigateway {
   }
 
   object Tags {
+    @inline
     def apply(
         tags: js.UndefOr[MapOfStringToString] = js.undefined
     ): Tags = {
@@ -4839,6 +4986,7 @@ package apigateway {
   }
 
   object Template {
+    @inline
     def apply(
         value: js.UndefOr[String] = js.undefined
     ): Template = {
@@ -4864,6 +5012,7 @@ package apigateway {
   }
 
   object TestInvokeAuthorizerRequest {
+    @inline
     def apply(
         authorizerId: String,
         restApiId: String,
@@ -4904,6 +5053,7 @@ package apigateway {
   }
 
   object TestInvokeAuthorizerResponse {
+    @inline
     def apply(
         authorization: js.UndefOr[MapOfStringToList] = js.undefined,
         claims: js.UndefOr[MapOfStringToString] = js.undefined,
@@ -4942,6 +5092,7 @@ package apigateway {
   }
 
   object TestInvokeMethodRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -4985,6 +5136,7 @@ package apigateway {
   }
 
   object TestInvokeMethodResponse {
+    @inline
     def apply(
         body: js.UndefOr[String] = js.undefined,
         headers: js.UndefOr[MapOfStringToString] = js.undefined,
@@ -5014,6 +5166,7 @@ package apigateway {
   }
 
   object ThrottleSettings {
+    @inline
     def apply(
         burstLimit: js.UndefOr[Int] = js.undefined,
         rateLimit: js.UndefOr[Double] = js.undefined
@@ -5044,6 +5197,7 @@ package apigateway {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         resourceArn: String,
         tagKeys: ListOfString
@@ -5066,6 +5220,7 @@ package apigateway {
   }
 
   object UpdateAccountRequest {
+    @inline
     def apply(
         patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
     ): UpdateAccountRequest = {
@@ -5085,6 +5240,7 @@ package apigateway {
   }
 
   object UpdateApiKeyRequest {
+    @inline
     def apply(
         apiKey: String,
         patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
@@ -5109,6 +5265,7 @@ package apigateway {
   }
 
   object UpdateAuthorizerRequest {
+    @inline
     def apply(
         authorizerId: String,
         restApiId: String,
@@ -5135,6 +5292,7 @@ package apigateway {
   }
 
   object UpdateBasePathMappingRequest {
+    @inline
     def apply(
         basePath: String,
         domainName: String,
@@ -5160,6 +5318,7 @@ package apigateway {
   }
 
   object UpdateClientCertificateRequest {
+    @inline
     def apply(
         clientCertificateId: String,
         patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
@@ -5184,6 +5343,7 @@ package apigateway {
   }
 
   object UpdateDeploymentRequest {
+    @inline
     def apply(
         deploymentId: String,
         restApiId: String,
@@ -5210,6 +5370,7 @@ package apigateway {
   }
 
   object UpdateDocumentationPartRequest {
+    @inline
     def apply(
         documentationPartId: String,
         restApiId: String,
@@ -5236,6 +5397,7 @@ package apigateway {
   }
 
   object UpdateDocumentationVersionRequest {
+    @inline
     def apply(
         documentationVersion: String,
         restApiId: String,
@@ -5261,6 +5423,7 @@ package apigateway {
   }
 
   object UpdateDomainNameRequest {
+    @inline
     def apply(
         domainName: String,
         patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
@@ -5285,6 +5448,7 @@ package apigateway {
   }
 
   object UpdateGatewayResponseRequest {
+    @inline
     def apply(
         responseType: GatewayResponseType,
         restApiId: String,
@@ -5312,6 +5476,7 @@ package apigateway {
   }
 
   object UpdateIntegrationRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -5342,6 +5507,7 @@ package apigateway {
   }
 
   object UpdateIntegrationResponseRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -5373,6 +5539,7 @@ package apigateway {
   }
 
   object UpdateMethodRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -5403,6 +5570,7 @@ package apigateway {
   }
 
   object UpdateMethodResponseRequest {
+    @inline
     def apply(
         httpMethod: String,
         resourceId: String,
@@ -5433,6 +5601,7 @@ package apigateway {
   }
 
   object UpdateModelRequest {
+    @inline
     def apply(
         modelName: String,
         restApiId: String,
@@ -5459,6 +5628,7 @@ package apigateway {
   }
 
   object UpdateRequestValidatorRequest {
+    @inline
     def apply(
         requestValidatorId: String,
         restApiId: String,
@@ -5485,6 +5655,7 @@ package apigateway {
   }
 
   object UpdateResourceRequest {
+    @inline
     def apply(
         resourceId: String,
         restApiId: String,
@@ -5510,6 +5681,7 @@ package apigateway {
   }
 
   object UpdateRestApiRequest {
+    @inline
     def apply(
         restApiId: String,
         patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
@@ -5534,6 +5706,7 @@ package apigateway {
   }
 
   object UpdateStageRequest {
+    @inline
     def apply(
         restApiId: String,
         stageName: String,
@@ -5559,6 +5732,7 @@ package apigateway {
   }
 
   object UpdateUsagePlanRequest {
+    @inline
     def apply(
         usagePlanId: String,
         patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
@@ -5583,6 +5757,7 @@ package apigateway {
   }
 
   object UpdateUsageRequest {
+    @inline
     def apply(
         keyId: String,
         usagePlanId: String,
@@ -5608,6 +5783,7 @@ package apigateway {
   }
 
   object UpdateVpcLinkRequest {
+    @inline
     def apply(
         vpcLinkId: String,
         patchOperations: js.UndefOr[ListOfPatchOperation] = js.undefined
@@ -5636,6 +5812,7 @@ package apigateway {
   }
 
   object Usage {
+    @inline
     def apply(
         endDate: js.UndefOr[String] = js.undefined,
         items: js.UndefOr[MapOfKeyUsages] = js.undefined,
@@ -5672,6 +5849,7 @@ package apigateway {
   }
 
   object UsagePlan {
+    @inline
     def apply(
         apiStages: js.UndefOr[ListOfApiStage] = js.undefined,
         description: js.UndefOr[String] = js.undefined,
@@ -5710,6 +5888,7 @@ package apigateway {
   }
 
   object UsagePlanKey {
+    @inline
     def apply(
         id: js.UndefOr[String] = js.undefined,
         name: js.UndefOr[String] = js.undefined,
@@ -5737,6 +5916,7 @@ package apigateway {
   }
 
   object UsagePlanKeys {
+    @inline
     def apply(
         items: js.UndefOr[ListOfUsagePlanKey] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -5760,6 +5940,7 @@ package apigateway {
   }
 
   object UsagePlans {
+    @inline
     def apply(
         items: js.UndefOr[ListOfUsagePlan] = js.undefined,
         position: js.UndefOr[String] = js.undefined
@@ -5788,6 +5969,7 @@ package apigateway {
   }
 
   object VpcLink {
+    @inline
     def apply(
         description: js.UndefOr[String] = js.undefined,
         id: js.UndefOr[String] = js.undefined,
@@ -5830,6 +6012,7 @@ package apigateway {
   }
 
   object VpcLinks {
+    @inline
     def apply(
         items: js.UndefOr[ListOfVpcLink] = js.undefined,
         position: js.UndefOr[String] = js.undefined

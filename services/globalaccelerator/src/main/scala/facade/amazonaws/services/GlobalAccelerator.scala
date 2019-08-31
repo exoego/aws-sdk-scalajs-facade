@@ -121,6 +121,7 @@ package globalaccelerator {
   }
 
   object Accelerator {
+    @inline
     def apply(
         AcceleratorArn: js.UndefOr[GenericString] = js.undefined,
         CreatedTime: js.UndefOr[Timestamp] = js.undefined,
@@ -155,6 +156,7 @@ package globalaccelerator {
   }
 
   object AcceleratorAttributes {
+    @inline
     def apply(
         FlowLogsEnabled: js.UndefOr[GenericBoolean] = js.undefined,
         FlowLogsS3Bucket: js.UndefOr[GenericString] = js.undefined,
@@ -191,6 +193,7 @@ package globalaccelerator {
   }
 
   object CreateAcceleratorRequest {
+    @inline
     def apply(
         IdempotencyToken: IdempotencyToken,
         Name: GenericString,
@@ -214,6 +217,7 @@ package globalaccelerator {
   }
 
   object CreateAcceleratorResponse {
+    @inline
     def apply(
         Accelerator: js.UndefOr[Accelerator] = js.undefined
     ): CreateAcceleratorResponse = {
@@ -238,6 +242,7 @@ package globalaccelerator {
   }
 
   object CreateEndpointGroupRequest {
+    @inline
     def apply(
         EndpointGroupRegion: GenericString,
         IdempotencyToken: IdempotencyToken,
@@ -275,6 +280,7 @@ package globalaccelerator {
   }
 
   object CreateEndpointGroupResponse {
+    @inline
     def apply(
         EndpointGroup: js.UndefOr[EndpointGroup] = js.undefined
     ): CreateEndpointGroupResponse = {
@@ -294,6 +300,7 @@ package globalaccelerator {
   }
 
   object CreateListenerRequest {
+    @inline
     def apply(
         AcceleratorArn: GenericString,
         IdempotencyToken: IdempotencyToken,
@@ -319,6 +326,7 @@ package globalaccelerator {
   }
 
   object CreateListenerResponse {
+    @inline
     def apply(
         Listener: js.UndefOr[Listener] = js.undefined
     ): CreateListenerResponse = {
@@ -334,6 +342,7 @@ package globalaccelerator {
   }
 
   object DeleteAcceleratorRequest {
+    @inline
     def apply(
         AcceleratorArn: GenericString
     ): DeleteAcceleratorRequest = {
@@ -351,6 +360,7 @@ package globalaccelerator {
   }
 
   object DeleteEndpointGroupRequest {
+    @inline
     def apply(
         EndpointGroupArn: GenericString
     ): DeleteEndpointGroupRequest = {
@@ -368,6 +378,7 @@ package globalaccelerator {
   }
 
   object DeleteListenerRequest {
+    @inline
     def apply(
         ListenerArn: GenericString
     ): DeleteListenerRequest = {
@@ -385,6 +396,7 @@ package globalaccelerator {
   }
 
   object DescribeAcceleratorAttributesRequest {
+    @inline
     def apply(
         AcceleratorArn: js.UndefOr[GenericString] = js.undefined
     ): DescribeAcceleratorAttributesRequest = {
@@ -400,6 +412,7 @@ package globalaccelerator {
   }
 
   object DescribeAcceleratorAttributesResponse {
+    @inline
     def apply(
         AcceleratorAttributes: js.UndefOr[AcceleratorAttributes] = js.undefined
     ): DescribeAcceleratorAttributesResponse = {
@@ -415,6 +428,7 @@ package globalaccelerator {
   }
 
   object DescribeAcceleratorRequest {
+    @inline
     def apply(
         AcceleratorArn: GenericString
     ): DescribeAcceleratorRequest = {
@@ -432,6 +446,7 @@ package globalaccelerator {
   }
 
   object DescribeAcceleratorResponse {
+    @inline
     def apply(
         Accelerator: js.UndefOr[Accelerator] = js.undefined
     ): DescribeAcceleratorResponse = {
@@ -447,6 +462,7 @@ package globalaccelerator {
   }
 
   object DescribeEndpointGroupRequest {
+    @inline
     def apply(
         EndpointGroupArn: GenericString
     ): DescribeEndpointGroupRequest = {
@@ -464,6 +480,7 @@ package globalaccelerator {
   }
 
   object DescribeEndpointGroupResponse {
+    @inline
     def apply(
         EndpointGroup: js.UndefOr[EndpointGroup] = js.undefined
     ): DescribeEndpointGroupResponse = {
@@ -479,6 +496,7 @@ package globalaccelerator {
   }
 
   object DescribeListenerRequest {
+    @inline
     def apply(
         ListenerArn: GenericString
     ): DescribeListenerRequest = {
@@ -496,6 +514,7 @@ package globalaccelerator {
   }
 
   object DescribeListenerResponse {
+    @inline
     def apply(
         Listener: js.UndefOr[Listener] = js.undefined
     ): DescribeListenerResponse = {
@@ -515,6 +534,7 @@ package globalaccelerator {
   }
 
   object EndpointConfiguration {
+    @inline
     def apply(
         EndpointId: js.UndefOr[GenericString] = js.undefined,
         Weight: js.UndefOr[EndpointWeight] = js.undefined
@@ -538,6 +558,7 @@ package globalaccelerator {
   }
 
   object EndpointDescription {
+    @inline
     def apply(
         EndpointId: js.UndefOr[GenericString] = js.undefined,
         HealthReason: js.UndefOr[GenericString] = js.undefined,
@@ -570,6 +591,7 @@ package globalaccelerator {
   }
 
   object EndpointGroup {
+    @inline
     def apply(
         EndpointDescriptions: js.UndefOr[EndpointDescriptions] = js.undefined,
         EndpointGroupArn: js.UndefOr[GenericString] = js.undefined,
@@ -629,6 +651,7 @@ package globalaccelerator {
   }
 
   object IpSet {
+    @inline
     def apply(
         IpAddresses: js.UndefOr[IpAddresses] = js.undefined,
         IpFamily: js.UndefOr[GenericString] = js.undefined
@@ -647,6 +670,7 @@ package globalaccelerator {
   }
 
   object ListAcceleratorsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
@@ -665,6 +689,7 @@ package globalaccelerator {
   }
 
   object ListAcceleratorsResponse {
+    @inline
     def apply(
         Accelerators: js.UndefOr[Accelerators] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
@@ -684,6 +709,7 @@ package globalaccelerator {
   }
 
   object ListEndpointGroupsRequest {
+    @inline
     def apply(
         ListenerArn: GenericString,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -706,6 +732,7 @@ package globalaccelerator {
   }
 
   object ListEndpointGroupsResponse {
+    @inline
     def apply(
         EndpointGroups: js.UndefOr[EndpointGroups] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
@@ -725,6 +752,7 @@ package globalaccelerator {
   }
 
   object ListListenersRequest {
+    @inline
     def apply(
         AcceleratorArn: GenericString,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -747,6 +775,7 @@ package globalaccelerator {
   }
 
   object ListListenersResponse {
+    @inline
     def apply(
         Listeners: js.UndefOr[Listeners] = js.undefined,
         NextToken: js.UndefOr[GenericString] = js.undefined
@@ -770,6 +799,7 @@ package globalaccelerator {
   }
 
   object Listener {
+    @inline
     def apply(
         ClientAffinity: js.UndefOr[ClientAffinity] = js.undefined,
         ListenerArn: js.UndefOr[GenericString] = js.undefined,
@@ -795,6 +825,7 @@ package globalaccelerator {
   }
 
   object PortRange {
+    @inline
     def apply(
         FromPort: js.UndefOr[PortNumber] = js.undefined,
         ToPort: js.UndefOr[PortNumber] = js.undefined
@@ -822,6 +853,7 @@ package globalaccelerator {
   }
 
   object UpdateAcceleratorAttributesRequest {
+    @inline
     def apply(
         AcceleratorArn: js.UndefOr[GenericString] = js.undefined,
         FlowLogsEnabled: js.UndefOr[GenericBoolean] = js.undefined,
@@ -843,6 +875,7 @@ package globalaccelerator {
   }
 
   object UpdateAcceleratorAttributesResponse {
+    @inline
     def apply(
         AcceleratorAttributes: js.UndefOr[AcceleratorAttributes] = js.undefined
     ): UpdateAcceleratorAttributesResponse = {
@@ -861,6 +894,7 @@ package globalaccelerator {
   }
 
   object UpdateAcceleratorRequest {
+    @inline
     def apply(
         AcceleratorArn: GenericString,
         Enabled: js.UndefOr[GenericBoolean] = js.undefined,
@@ -884,6 +918,7 @@ package globalaccelerator {
   }
 
   object UpdateAcceleratorResponse {
+    @inline
     def apply(
         Accelerator: js.UndefOr[Accelerator] = js.undefined
     ): UpdateAcceleratorResponse = {
@@ -906,6 +941,7 @@ package globalaccelerator {
   }
 
   object UpdateEndpointGroupRequest {
+    @inline
     def apply(
         EndpointGroupArn: GenericString,
         EndpointConfigurations: js.UndefOr[EndpointConfigurations] = js.undefined,
@@ -939,6 +975,7 @@ package globalaccelerator {
   }
 
   object UpdateEndpointGroupResponse {
+    @inline
     def apply(
         EndpointGroup: js.UndefOr[EndpointGroup] = js.undefined
     ): UpdateEndpointGroupResponse = {
@@ -957,6 +994,7 @@ package globalaccelerator {
   }
 
   object UpdateListenerRequest {
+    @inline
     def apply(
         ListenerArn: GenericString,
         ClientAffinity: js.UndefOr[ClientAffinity] = js.undefined,
@@ -980,6 +1018,7 @@ package globalaccelerator {
   }
 
   object UpdateListenerResponse {
+    @inline
     def apply(
         Listener: js.UndefOr[Listener] = js.undefined
     ): UpdateListenerResponse = {

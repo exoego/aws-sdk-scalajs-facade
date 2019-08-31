@@ -574,6 +574,7 @@ package rds {
   }
 
   object AccountAttributesMessage {
+    @inline
     def apply(
         AccountQuotas: js.UndefOr[AccountQuotaList] = js.undefined
     ): AccountAttributesMessage = {
@@ -613,6 +614,7 @@ package rds {
   }
 
   object AccountQuota {
+    @inline
     def apply(
         AccountQuotaName: js.UndefOr[String] = js.undefined,
         Max: js.UndefOr[Double] = js.undefined,
@@ -650,6 +652,7 @@ package rds {
   }
 
   object AddRoleToDBClusterMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String,
         RoleArn: String,
@@ -673,6 +676,7 @@ package rds {
   }
 
   object AddRoleToDBInstanceMessage {
+    @inline
     def apply(
         DBInstanceIdentifier: String,
         FeatureName: String,
@@ -698,6 +702,7 @@ package rds {
   }
 
   object AddSourceIdentifierToSubscriptionMessage {
+    @inline
     def apply(
         SourceIdentifier: String,
         SubscriptionName: String
@@ -717,6 +722,7 @@ package rds {
   }
 
   object AddSourceIdentifierToSubscriptionResult {
+    @inline
     def apply(
         EventSubscription: js.UndefOr[EventSubscription] = js.undefined
     ): AddSourceIdentifierToSubscriptionResult = {
@@ -736,6 +742,7 @@ package rds {
   }
 
   object AddTagsToResourceMessage {
+    @inline
     def apply(
         ResourceName: String,
         Tags: TagList
@@ -767,6 +774,7 @@ package rds {
   }
 
   object ApplyPendingMaintenanceActionMessage {
+    @inline
     def apply(
         ApplyAction: String,
         OptInType: String,
@@ -788,6 +796,7 @@ package rds {
   }
 
   object ApplyPendingMaintenanceActionResult {
+    @inline
     def apply(
         ResourcePendingMaintenanceActions: js.UndefOr[ResourcePendingMaintenanceActions] = js.undefined
     ): ApplyPendingMaintenanceActionResult = {
@@ -812,6 +821,7 @@ package rds {
   }
 
   object AuthorizeDBSecurityGroupIngressMessage {
+    @inline
     def apply(
         DBSecurityGroupName: String,
         CIDRIP: js.UndefOr[String] = js.undefined,
@@ -837,6 +847,7 @@ package rds {
   }
 
   object AuthorizeDBSecurityGroupIngressResult {
+    @inline
     def apply(
         DBSecurityGroup: js.UndefOr[DBSecurityGroup] = js.undefined
     ): AuthorizeDBSecurityGroupIngressResult = {
@@ -856,6 +867,7 @@ package rds {
   }
 
   object AvailabilityZone {
+    @inline
     def apply(
         Name: js.UndefOr[String] = js.undefined
     ): AvailabilityZone = {
@@ -877,6 +889,7 @@ package rds {
   }
 
   object AvailableProcessorFeature {
+    @inline
     def apply(
         AllowedValues: js.UndefOr[String] = js.undefined,
         DefaultValue: js.UndefOr[String] = js.undefined,
@@ -902,6 +915,7 @@ package rds {
   }
 
   object BacktrackDBClusterMessage {
+    @inline
     def apply(
         BacktrackTo: TStamp,
         DBClusterIdentifier: String,
@@ -935,6 +949,7 @@ package rds {
   }
 
   object Certificate {
+    @inline
     def apply(
         CertificateArn: js.UndefOr[String] = js.undefined,
         CertificateIdentifier: js.UndefOr[String] = js.undefined,
@@ -964,6 +979,7 @@ package rds {
   }
 
   object CertificateMessage {
+    @inline
     def apply(
         Certificates: js.UndefOr[CertificateList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -985,6 +1001,7 @@ package rds {
   }
 
   object CharacterSet {
+    @inline
     def apply(
         CharacterSetDescription: js.UndefOr[String] = js.undefined,
         CharacterSetName: js.UndefOr[String] = js.undefined
@@ -1007,6 +1024,7 @@ package rds {
   }
 
   object CloudwatchLogsExportConfiguration {
+    @inline
     def apply(
         DisableLogTypes: js.UndefOr[LogTypeList] = js.undefined,
         EnableLogTypes: js.UndefOr[LogTypeList] = js.undefined
@@ -1027,6 +1045,7 @@ package rds {
   }
 
   object CopyDBClusterParameterGroupMessage {
+    @inline
     def apply(
         SourceDBClusterParameterGroupIdentifier: String,
         TargetDBClusterParameterGroupDescription: String,
@@ -1050,6 +1069,7 @@ package rds {
   }
 
   object CopyDBClusterParameterGroupResult {
+    @inline
     def apply(
         DBClusterParameterGroup: js.UndefOr[DBClusterParameterGroup] = js.undefined
     ): CopyDBClusterParameterGroupResult = {
@@ -1074,6 +1094,7 @@ package rds {
   }
 
   object CopyDBClusterSnapshotMessage {
+    @inline
     def apply(
         SourceDBClusterSnapshotIdentifier: String,
         TargetDBClusterSnapshotIdentifier: String,
@@ -1103,6 +1124,7 @@ package rds {
   }
 
   object CopyDBClusterSnapshotResult {
+    @inline
     def apply(
         DBClusterSnapshot: js.UndefOr[DBClusterSnapshot] = js.undefined
     ): CopyDBClusterSnapshotResult = {
@@ -1124,6 +1146,7 @@ package rds {
   }
 
   object CopyDBParameterGroupMessage {
+    @inline
     def apply(
         SourceDBParameterGroupIdentifier: String,
         TargetDBParameterGroupDescription: String,
@@ -1147,6 +1170,7 @@ package rds {
   }
 
   object CopyDBParameterGroupResult {
+    @inline
     def apply(
         DBParameterGroup: js.UndefOr[DBParameterGroup] = js.undefined
     ): CopyDBParameterGroupResult = {
@@ -1172,6 +1196,7 @@ package rds {
   }
 
   object CopyDBSnapshotMessage {
+    @inline
     def apply(
         SourceDBSnapshotIdentifier: String,
         TargetDBSnapshotIdentifier: String,
@@ -1203,6 +1228,7 @@ package rds {
   }
 
   object CopyDBSnapshotResult {
+    @inline
     def apply(
         DBSnapshot: js.UndefOr[DBSnapshot] = js.undefined
     ): CopyDBSnapshotResult = {
@@ -1224,6 +1250,7 @@ package rds {
   }
 
   object CopyOptionGroupMessage {
+    @inline
     def apply(
         SourceOptionGroupIdentifier: String,
         TargetOptionGroupDescription: String,
@@ -1247,6 +1274,7 @@ package rds {
   }
 
   object CopyOptionGroupResult {
+    @inline
     def apply(
         OptionGroup: js.UndefOr[OptionGroup] = js.undefined
     ): CopyOptionGroupResult = {
@@ -1266,6 +1294,7 @@ package rds {
   }
 
   object CreateDBClusterEndpointMessage {
+    @inline
     def apply(
         DBClusterEndpointIdentifier: String,
         DBClusterIdentifier: String,
@@ -1324,6 +1353,7 @@ package rds {
   }
 
   object CreateDBClusterMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String,
         Engine: String,
@@ -1417,6 +1447,7 @@ package rds {
   }
 
   object CreateDBClusterParameterGroupMessage {
+    @inline
     def apply(
         DBClusterParameterGroupName: String,
         DBParameterGroupFamily: String,
@@ -1440,6 +1471,7 @@ package rds {
   }
 
   object CreateDBClusterParameterGroupResult {
+    @inline
     def apply(
         DBClusterParameterGroup: js.UndefOr[DBClusterParameterGroup] = js.undefined
     ): CreateDBClusterParameterGroupResult = {
@@ -1455,6 +1487,7 @@ package rds {
   }
 
   object CreateDBClusterResult {
+    @inline
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): CreateDBClusterResult = {
@@ -1475,6 +1508,7 @@ package rds {
   }
 
   object CreateDBClusterSnapshotMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String,
         DBClusterSnapshotIdentifier: String,
@@ -1496,6 +1530,7 @@ package rds {
   }
 
   object CreateDBClusterSnapshotResult {
+    @inline
     def apply(
         DBClusterSnapshot: js.UndefOr[DBClusterSnapshot] = js.undefined
     ): CreateDBClusterSnapshotResult = {
@@ -1559,6 +1594,7 @@ package rds {
   }
 
   object CreateDBInstanceMessage {
+    @inline
     def apply(
         DBInstanceClass: String,
         DBInstanceIdentifier: String,
@@ -1705,6 +1741,7 @@ package rds {
   }
 
   object CreateDBInstanceReadReplicaMessage {
+    @inline
     def apply(
         DBInstanceIdentifier: String,
         SourceDBInstanceIdentifier: String,
@@ -1788,6 +1825,7 @@ package rds {
   }
 
   object CreateDBInstanceReadReplicaResult {
+    @inline
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): CreateDBInstanceReadReplicaResult = {
@@ -1803,6 +1841,7 @@ package rds {
   }
 
   object CreateDBInstanceResult {
+    @inline
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): CreateDBInstanceResult = {
@@ -1824,6 +1863,7 @@ package rds {
   }
 
   object CreateDBParameterGroupMessage {
+    @inline
     def apply(
         DBParameterGroupFamily: String,
         DBParameterGroupName: String,
@@ -1847,6 +1887,7 @@ package rds {
   }
 
   object CreateDBParameterGroupResult {
+    @inline
     def apply(
         DBParameterGroup: js.UndefOr[DBParameterGroup] = js.undefined
     ): CreateDBParameterGroupResult = {
@@ -1867,6 +1908,7 @@ package rds {
   }
 
   object CreateDBSecurityGroupMessage {
+    @inline
     def apply(
         DBSecurityGroupDescription: String,
         DBSecurityGroupName: String,
@@ -1888,6 +1930,7 @@ package rds {
   }
 
   object CreateDBSecurityGroupResult {
+    @inline
     def apply(
         DBSecurityGroup: js.UndefOr[DBSecurityGroup] = js.undefined
     ): CreateDBSecurityGroupResult = {
@@ -1908,6 +1951,7 @@ package rds {
   }
 
   object CreateDBSnapshotMessage {
+    @inline
     def apply(
         DBInstanceIdentifier: String,
         DBSnapshotIdentifier: String,
@@ -1929,6 +1973,7 @@ package rds {
   }
 
   object CreateDBSnapshotResult {
+    @inline
     def apply(
         DBSnapshot: js.UndefOr[DBSnapshot] = js.undefined
     ): CreateDBSnapshotResult = {
@@ -1950,6 +1995,7 @@ package rds {
   }
 
   object CreateDBSubnetGroupMessage {
+    @inline
     def apply(
         DBSubnetGroupDescription: String,
         DBSubnetGroupName: String,
@@ -1973,6 +2019,7 @@ package rds {
   }
 
   object CreateDBSubnetGroupResult {
+    @inline
     def apply(
         DBSubnetGroup: js.UndefOr[DBSubnetGroup] = js.undefined
     ): CreateDBSubnetGroupResult = {
@@ -1997,6 +2044,7 @@ package rds {
   }
 
   object CreateEventSubscriptionMessage {
+    @inline
     def apply(
         SnsTopicArn: String,
         SubscriptionName: String,
@@ -2026,6 +2074,7 @@ package rds {
   }
 
   object CreateEventSubscriptionResult {
+    @inline
     def apply(
         EventSubscription: js.UndefOr[EventSubscription] = js.undefined
     ): CreateEventSubscriptionResult = {
@@ -2047,6 +2096,7 @@ package rds {
   }
 
   object CreateGlobalClusterMessage {
+    @inline
     def apply(
         DatabaseName: js.UndefOr[String] = js.undefined,
         DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
@@ -2076,6 +2126,7 @@ package rds {
   }
 
   object CreateGlobalClusterResult {
+    @inline
     def apply(
         GlobalCluster: js.UndefOr[GlobalCluster] = js.undefined
     ): CreateGlobalClusterResult = {
@@ -2098,6 +2149,7 @@ package rds {
   }
 
   object CreateOptionGroupMessage {
+    @inline
     def apply(
         EngineName: String,
         MajorEngineVersion: String,
@@ -2123,6 +2175,7 @@ package rds {
   }
 
   object CreateOptionGroupResult {
+    @inline
     def apply(
         OptionGroup: js.UndefOr[OptionGroup] = js.undefined
     ): CreateOptionGroupResult = {
@@ -2192,6 +2245,7 @@ package rds {
   }
 
   object DBCluster {
+    @inline
     def apply(
         ActivityStreamKinesisStreamName: js.UndefOr[String] = js.undefined,
         ActivityStreamKmsKeyId: js.UndefOr[String] = js.undefined,
@@ -2329,6 +2383,7 @@ package rds {
   }
 
   object DBClusterBacktrack {
+    @inline
     def apply(
         BacktrackIdentifier: js.UndefOr[String] = js.undefined,
         BacktrackRequestCreationTime: js.UndefOr[TStamp] = js.undefined,
@@ -2360,6 +2415,7 @@ package rds {
   }
 
   object DBClusterBacktrackMessage {
+    @inline
     def apply(
         DBClusterBacktracks: js.UndefOr[DBClusterBacktrackList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -2381,6 +2437,7 @@ package rds {
   }
 
   object DBClusterCapacityInfo {
+    @inline
     def apply(
         CurrentCapacity: js.UndefOr[IntegerOptional] = js.undefined,
         DBClusterIdentifier: js.UndefOr[String] = js.undefined,
@@ -2421,6 +2478,7 @@ package rds {
   }
 
   object DBClusterEndpoint {
+    @inline
     def apply(
         CustomEndpointType: js.UndefOr[String] = js.undefined,
         DBClusterEndpointArn: js.UndefOr[String] = js.undefined,
@@ -2459,6 +2517,7 @@ package rds {
   }
 
   object DBClusterEndpointMessage {
+    @inline
     def apply(
         DBClusterEndpoints: js.UndefOr[DBClusterEndpointList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -2482,6 +2541,7 @@ package rds {
   }
 
   object DBClusterMember {
+    @inline
     def apply(
         DBClusterParameterGroupStatus: js.UndefOr[String] = js.undefined,
         DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
@@ -2509,6 +2569,7 @@ package rds {
   }
 
   object DBClusterMessage {
+    @inline
     def apply(
         DBClusters: js.UndefOr[DBClusterList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -2530,6 +2591,7 @@ package rds {
   }
 
   object DBClusterOptionGroupStatus {
+    @inline
     def apply(
         DBClusterOptionGroupName: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
@@ -2554,6 +2616,7 @@ package rds {
   }
 
   object DBClusterParameterGroup {
+    @inline
     def apply(
         DBClusterParameterGroupArn: js.UndefOr[String] = js.undefined,
         DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
@@ -2583,6 +2646,7 @@ package rds {
   }
 
   object DBClusterParameterGroupDetails {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         Parameters: js.UndefOr[ParametersList] = js.undefined
@@ -2603,6 +2667,7 @@ package rds {
   }
 
   object DBClusterParameterGroupNameMessage {
+    @inline
     def apply(
         DBClusterParameterGroupName: js.UndefOr[String] = js.undefined
     ): DBClusterParameterGroupNameMessage = {
@@ -2624,6 +2689,7 @@ package rds {
   }
 
   object DBClusterParameterGroupsMessage {
+    @inline
     def apply(
         DBClusterParameterGroups: js.UndefOr[DBClusterParameterGroupList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -2646,6 +2712,7 @@ package rds {
   }
 
   object DBClusterRole {
+    @inline
     def apply(
         FeatureName: js.UndefOr[String] = js.undefined,
         RoleArn: js.UndefOr[String] = js.undefined,
@@ -2688,6 +2755,7 @@ package rds {
   }
 
   object DBClusterSnapshot {
+    @inline
     def apply(
         AllocatedStorage: js.UndefOr[Int] = js.undefined,
         AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
@@ -2752,6 +2820,7 @@ package rds {
   }
 
   object DBClusterSnapshotAttribute {
+    @inline
     def apply(
         AttributeName: js.UndefOr[String] = js.undefined,
         AttributeValues: js.UndefOr[AttributeValueList] = js.undefined
@@ -2774,6 +2843,7 @@ package rds {
   }
 
   object DBClusterSnapshotAttributesResult {
+    @inline
     def apply(
         DBClusterSnapshotAttributes: js.UndefOr[DBClusterSnapshotAttributeList] = js.undefined,
         DBClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined
@@ -2799,6 +2869,7 @@ package rds {
   }
 
   object DBClusterSnapshotMessage {
+    @inline
     def apply(
         DBClusterSnapshots: js.UndefOr[DBClusterSnapshotList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -2833,6 +2904,7 @@ package rds {
   }
 
   object DBEngineVersion {
+    @inline
     def apply(
         DBEngineDescription: js.UndefOr[String] = js.undefined,
         DBEngineVersionDescription: js.UndefOr[String] = js.undefined,
@@ -2884,6 +2956,7 @@ package rds {
   }
 
   object DBEngineVersionMessage {
+    @inline
     def apply(
         DBEngineVersions: js.UndefOr[DBEngineVersionList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -2962,6 +3035,7 @@ package rds {
   }
 
   object DBInstance {
+    @inline
     def apply(
         AllocatedStorage: js.UndefOr[Int] = js.undefined,
         AssociatedRoles: js.UndefOr[DBInstanceRoles] = js.undefined,
@@ -3138,6 +3212,7 @@ package rds {
   }
 
   object DBInstanceAutomatedBackup {
+    @inline
     def apply(
         AllocatedStorage: js.UndefOr[Int] = js.undefined,
         AvailabilityZone: js.UndefOr[String] = js.undefined,
@@ -3203,6 +3278,7 @@ package rds {
   }
 
   object DBInstanceAutomatedBackupMessage {
+    @inline
     def apply(
         DBInstanceAutomatedBackups: js.UndefOr[DBInstanceAutomatedBackupList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -3226,6 +3302,7 @@ package rds {
   }
 
   object DBInstanceMessage {
+    @inline
     def apply(
         DBInstances: js.UndefOr[DBInstanceList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -3248,6 +3325,7 @@ package rds {
   }
 
   object DBInstanceRole {
+    @inline
     def apply(
         FeatureName: js.UndefOr[String] = js.undefined,
         RoleArn: js.UndefOr[String] = js.undefined,
@@ -3273,6 +3351,7 @@ package rds {
   }
 
   object DBInstanceStatusInfo {
+    @inline
     def apply(
         Message: js.UndefOr[String] = js.undefined,
         Normal: js.UndefOr[Boolean] = js.undefined,
@@ -3301,6 +3380,7 @@ package rds {
   }
 
   object DBParameterGroup {
+    @inline
     def apply(
         DBParameterGroupArn: js.UndefOr[String] = js.undefined,
         DBParameterGroupFamily: js.UndefOr[String] = js.undefined,
@@ -3326,6 +3406,7 @@ package rds {
   }
 
   object DBParameterGroupDetails {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         Parameters: js.UndefOr[ParametersList] = js.undefined
@@ -3346,6 +3427,7 @@ package rds {
   }
 
   object DBParameterGroupNameMessage {
+    @inline
     def apply(
         DBParameterGroupName: js.UndefOr[String] = js.undefined
     ): DBParameterGroupNameMessage = {
@@ -3372,6 +3454,7 @@ package rds {
   }
 
   object DBParameterGroupStatus {
+    @inline
     def apply(
         DBParameterGroupName: js.UndefOr[String] = js.undefined,
         ParameterApplyStatus: js.UndefOr[String] = js.undefined
@@ -3393,6 +3476,7 @@ package rds {
   }
 
   object DBParameterGroupsMessage {
+    @inline
     def apply(
         DBParameterGroups: js.UndefOr[DBParameterGroupList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -3420,6 +3504,7 @@ package rds {
   }
 
   object DBSecurityGroup {
+    @inline
     def apply(
         DBSecurityGroupArn: js.UndefOr[String] = js.undefined,
         DBSecurityGroupDescription: js.UndefOr[String] = js.undefined,
@@ -3457,6 +3542,7 @@ package rds {
   }
 
   object DBSecurityGroupMembership {
+    @inline
     def apply(
         DBSecurityGroupName: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
@@ -3478,6 +3564,7 @@ package rds {
   }
 
   object DBSecurityGroupMessage {
+    @inline
     def apply(
         DBSecurityGroups: js.UndefOr[DBSecurityGroups] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -3526,6 +3613,7 @@ package rds {
   }
 
   object DBSnapshot {
+    @inline
     def apply(
         AllocatedStorage: js.UndefOr[Int] = js.undefined,
         AvailabilityZone: js.UndefOr[String] = js.undefined,
@@ -3604,6 +3692,7 @@ package rds {
   }
 
   object DBSnapshotAttribute {
+    @inline
     def apply(
         AttributeName: js.UndefOr[String] = js.undefined,
         AttributeValues: js.UndefOr[AttributeValueList] = js.undefined
@@ -3626,6 +3715,7 @@ package rds {
   }
 
   object DBSnapshotAttributesResult {
+    @inline
     def apply(
         DBSnapshotAttributes: js.UndefOr[DBSnapshotAttributeList] = js.undefined,
         DBSnapshotIdentifier: js.UndefOr[String] = js.undefined
@@ -3647,6 +3737,7 @@ package rds {
   }
 
   object DBSnapshotMessage {
+    @inline
     def apply(
         DBSnapshots: js.UndefOr[DBSnapshotList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -3673,6 +3764,7 @@ package rds {
   }
 
   object DBSubnetGroup {
+    @inline
     def apply(
         DBSubnetGroupArn: js.UndefOr[String] = js.undefined,
         DBSubnetGroupDescription: js.UndefOr[String] = js.undefined,
@@ -3702,6 +3794,7 @@ package rds {
   }
 
   object DBSubnetGroupMessage {
+    @inline
     def apply(
         DBSubnetGroups: js.UndefOr[DBSubnetGroups] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -3719,6 +3812,7 @@ package rds {
   }
 
   object DeleteDBClusterEndpointMessage {
+    @inline
     def apply(
         DBClusterEndpointIdentifier: String
     ): DeleteDBClusterEndpointMessage = {
@@ -3741,6 +3835,7 @@ package rds {
   }
 
   object DeleteDBClusterMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String,
         FinalDBSnapshotIdentifier: js.UndefOr[String] = js.undefined,
@@ -3767,6 +3862,7 @@ package rds {
   }
 
   object DeleteDBClusterParameterGroupMessage {
+    @inline
     def apply(
         DBClusterParameterGroupName: String
     ): DeleteDBClusterParameterGroupMessage = {
@@ -3784,6 +3880,7 @@ package rds {
   }
 
   object DeleteDBClusterResult {
+    @inline
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): DeleteDBClusterResult = {
@@ -3802,6 +3899,7 @@ package rds {
   }
 
   object DeleteDBClusterSnapshotMessage {
+    @inline
     def apply(
         DBClusterSnapshotIdentifier: String
     ): DeleteDBClusterSnapshotMessage = {
@@ -3819,6 +3917,7 @@ package rds {
   }
 
   object DeleteDBClusterSnapshotResult {
+    @inline
     def apply(
         DBClusterSnapshot: js.UndefOr[DBClusterSnapshot] = js.undefined
     ): DeleteDBClusterSnapshotResult = {
@@ -3837,6 +3936,7 @@ package rds {
   }
 
   object DeleteDBInstanceAutomatedBackupMessage {
+    @inline
     def apply(
         DbiResourceId: String
     ): DeleteDBInstanceAutomatedBackupMessage = {
@@ -3854,6 +3954,7 @@ package rds {
   }
 
   object DeleteDBInstanceAutomatedBackupResult {
+    @inline
     def apply(
         DBInstanceAutomatedBackup: js.UndefOr[DBInstanceAutomatedBackup] = js.undefined
     ): DeleteDBInstanceAutomatedBackupResult = {
@@ -3877,6 +3978,7 @@ package rds {
   }
 
   object DeleteDBInstanceMessage {
+    @inline
     def apply(
         DBInstanceIdentifier: String,
         DeleteAutomatedBackups: js.UndefOr[BooleanOptional] = js.undefined,
@@ -3902,6 +4004,7 @@ package rds {
   }
 
   object DeleteDBInstanceResult {
+    @inline
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): DeleteDBInstanceResult = {
@@ -3920,6 +4023,7 @@ package rds {
   }
 
   object DeleteDBParameterGroupMessage {
+    @inline
     def apply(
         DBParameterGroupName: String
     ): DeleteDBParameterGroupMessage = {
@@ -3940,6 +4044,7 @@ package rds {
   }
 
   object DeleteDBSecurityGroupMessage {
+    @inline
     def apply(
         DBSecurityGroupName: String
     ): DeleteDBSecurityGroupMessage = {
@@ -3960,6 +4065,7 @@ package rds {
   }
 
   object DeleteDBSnapshotMessage {
+    @inline
     def apply(
         DBSnapshotIdentifier: String
     ): DeleteDBSnapshotMessage = {
@@ -3977,6 +4083,7 @@ package rds {
   }
 
   object DeleteDBSnapshotResult {
+    @inline
     def apply(
         DBSnapshot: js.UndefOr[DBSnapshot] = js.undefined
     ): DeleteDBSnapshotResult = {
@@ -3995,6 +4102,7 @@ package rds {
   }
 
   object DeleteDBSubnetGroupMessage {
+    @inline
     def apply(
         DBSubnetGroupName: String
     ): DeleteDBSubnetGroupMessage = {
@@ -4015,6 +4123,7 @@ package rds {
   }
 
   object DeleteEventSubscriptionMessage {
+    @inline
     def apply(
         SubscriptionName: String
     ): DeleteEventSubscriptionMessage = {
@@ -4032,6 +4141,7 @@ package rds {
   }
 
   object DeleteEventSubscriptionResult {
+    @inline
     def apply(
         EventSubscription: js.UndefOr[EventSubscription] = js.undefined
     ): DeleteEventSubscriptionResult = {
@@ -4047,6 +4157,7 @@ package rds {
   }
 
   object DeleteGlobalClusterMessage {
+    @inline
     def apply(
         GlobalClusterIdentifier: String
     ): DeleteGlobalClusterMessage = {
@@ -4064,6 +4175,7 @@ package rds {
   }
 
   object DeleteGlobalClusterResult {
+    @inline
     def apply(
         GlobalCluster: js.UndefOr[GlobalCluster] = js.undefined
     ): DeleteGlobalClusterResult = {
@@ -4082,6 +4194,7 @@ package rds {
   }
 
   object DeleteOptionGroupMessage {
+    @inline
     def apply(
         OptionGroupName: String
     ): DeleteOptionGroupMessage = {
@@ -4100,6 +4213,7 @@ package rds {
   trait DescribeAccountAttributesMessage extends js.Object {}
 
   object DescribeAccountAttributesMessage {
+    @inline
     def apply(
         ): DescribeAccountAttributesMessage = {
       val __obj = js.Dynamic.literal()
@@ -4120,6 +4234,7 @@ package rds {
   }
 
   object DescribeCertificatesMessage {
+    @inline
     def apply(
         CertificateIdentifier: js.UndefOr[String] = js.undefined,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -4148,6 +4263,7 @@ package rds {
   }
 
   object DescribeDBClusterBacktracksMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String,
         BacktrackIdentifier: js.UndefOr[String] = js.undefined,
@@ -4177,6 +4293,7 @@ package rds {
   }
 
   object DescribeDBClusterEndpointsMessage {
+    @inline
     def apply(
         DBClusterEndpointIdentifier: js.UndefOr[String] = js.undefined,
         DBClusterIdentifier: js.UndefOr[String] = js.undefined,
@@ -4208,6 +4325,7 @@ package rds {
   }
 
   object DescribeDBClusterParameterGroupsMessage {
+    @inline
     def apply(
         DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -4238,6 +4356,7 @@ package rds {
   }
 
   object DescribeDBClusterParametersMessage {
+    @inline
     def apply(
         DBClusterParameterGroupName: String,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -4266,6 +4385,7 @@ package rds {
   }
 
   object DescribeDBClusterSnapshotAttributesMessage {
+    @inline
     def apply(
         DBClusterSnapshotIdentifier: String
     ): DescribeDBClusterSnapshotAttributesMessage = {
@@ -4283,6 +4403,7 @@ package rds {
   }
 
   object DescribeDBClusterSnapshotAttributesResult {
+    @inline
     def apply(
         DBClusterSnapshotAttributesResult: js.UndefOr[DBClusterSnapshotAttributesResult] = js.undefined
     ): DescribeDBClusterSnapshotAttributesResult = {
@@ -4310,6 +4431,7 @@ package rds {
   }
 
   object DescribeDBClusterSnapshotsMessage {
+    @inline
     def apply(
         DBClusterIdentifier: js.UndefOr[String] = js.undefined,
         DBClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined,
@@ -4348,6 +4470,7 @@ package rds {
   }
 
   object DescribeDBClustersMessage {
+    @inline
     def apply(
         DBClusterIdentifier: js.UndefOr[String] = js.undefined,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -4380,6 +4503,7 @@ package rds {
   }
 
   object DescribeDBEngineVersionsMessage {
+    @inline
     def apply(
         DBParameterGroupFamily: js.UndefOr[String] = js.undefined,
         DefaultOnly: js.UndefOr[Boolean] = js.undefined,
@@ -4422,6 +4546,7 @@ package rds {
   }
 
   object DescribeDBInstanceAutomatedBackupsMessage {
+    @inline
     def apply(
         DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
         DbiResourceId: js.UndefOr[String] = js.undefined,
@@ -4451,6 +4576,7 @@ package rds {
   }
 
   object DescribeDBInstancesMessage {
+    @inline
     def apply(
         DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -4477,6 +4603,7 @@ package rds {
   }
 
   object DescribeDBLogFilesDetails {
+    @inline
     def apply(
         LastWritten: js.UndefOr[Double] = js.undefined,
         LogFileName: js.UndefOr[String] = js.undefined,
@@ -4505,6 +4632,7 @@ package rds {
   }
 
   object DescribeDBLogFilesMessage {
+    @inline
     def apply(
         DBInstanceIdentifier: String,
         FileLastWritten: js.UndefOr[Double] = js.undefined,
@@ -4538,6 +4666,7 @@ package rds {
   }
 
   object DescribeDBLogFilesResponse {
+    @inline
     def apply(
         DescribeDBLogFiles: js.UndefOr[DescribeDBLogFilesList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -4561,6 +4690,7 @@ package rds {
   }
 
   object DescribeDBParameterGroupsMessage {
+    @inline
     def apply(
         DBParameterGroupName: js.UndefOr[String] = js.undefined,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -4586,6 +4716,7 @@ package rds {
   }
 
   object DescribeDBParametersMessage {
+    @inline
     def apply(
         DBParameterGroupName: String,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -4617,6 +4748,7 @@ package rds {
   }
 
   object DescribeDBSecurityGroupsMessage {
+    @inline
     def apply(
         DBSecurityGroupName: js.UndefOr[String] = js.undefined,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -4641,6 +4773,7 @@ package rds {
   }
 
   object DescribeDBSnapshotAttributesMessage {
+    @inline
     def apply(
         DBSnapshotIdentifier: String
     ): DescribeDBSnapshotAttributesMessage = {
@@ -4658,6 +4791,7 @@ package rds {
   }
 
   object DescribeDBSnapshotAttributesResult {
+    @inline
     def apply(
         DBSnapshotAttributesResult: js.UndefOr[DBSnapshotAttributesResult] = js.undefined
     ): DescribeDBSnapshotAttributesResult = {
@@ -4686,6 +4820,7 @@ package rds {
   }
 
   object DescribeDBSnapshotsMessage {
+    @inline
     def apply(
         DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
         DBSnapshotIdentifier: js.UndefOr[String] = js.undefined,
@@ -4723,6 +4858,7 @@ package rds {
   }
 
   object DescribeDBSubnetGroupsMessage {
+    @inline
     def apply(
         DBSubnetGroupName: js.UndefOr[String] = js.undefined,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -4750,6 +4886,7 @@ package rds {
   }
 
   object DescribeEngineDefaultClusterParametersMessage {
+    @inline
     def apply(
         DBParameterGroupFamily: String,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -4773,6 +4910,7 @@ package rds {
   }
 
   object DescribeEngineDefaultClusterParametersResult {
+    @inline
     def apply(
         EngineDefaults: js.UndefOr[EngineDefaults] = js.undefined
     ): DescribeEngineDefaultClusterParametersResult = {
@@ -4794,6 +4932,7 @@ package rds {
   }
 
   object DescribeEngineDefaultParametersMessage {
+    @inline
     def apply(
         DBParameterGroupFamily: String,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -4817,6 +4956,7 @@ package rds {
   }
 
   object DescribeEngineDefaultParametersResult {
+    @inline
     def apply(
         EngineDefaults: js.UndefOr[EngineDefaults] = js.undefined
     ): DescribeEngineDefaultParametersResult = {
@@ -4836,6 +4976,7 @@ package rds {
   }
 
   object DescribeEventCategoriesMessage {
+    @inline
     def apply(
         Filters: js.UndefOr[FilterList] = js.undefined,
         SourceType: js.UndefOr[String] = js.undefined
@@ -4859,6 +5000,7 @@ package rds {
   }
 
   object DescribeEventSubscriptionsMessage {
+    @inline
     def apply(
         Filters: js.UndefOr[FilterList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -4891,6 +5033,7 @@ package rds {
   }
 
   object DescribeEventsMessage {
+    @inline
     def apply(
         Duration: js.UndefOr[IntegerOptional] = js.undefined,
         EndTime: js.UndefOr[TStamp] = js.undefined,
@@ -4925,6 +5068,7 @@ package rds {
   }
 
   object DescribeGlobalClustersMessage {
+    @inline
     def apply(
         Filters: js.UndefOr[FilterList] = js.undefined,
         GlobalClusterIdentifier: js.UndefOr[String] = js.undefined,
@@ -4953,6 +5097,7 @@ package rds {
   }
 
   object DescribeOptionGroupOptionsMessage {
+    @inline
     def apply(
         EngineName: String,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -4986,6 +5131,7 @@ package rds {
   }
 
   object DescribeOptionGroupsMessage {
+    @inline
     def apply(
         EngineName: js.UndefOr[String] = js.undefined,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -5021,6 +5167,7 @@ package rds {
   }
 
   object DescribeOrderableDBInstanceOptionsMessage {
+    @inline
     def apply(
         Engine: String,
         DBInstanceClass: js.UndefOr[String] = js.undefined,
@@ -5058,6 +5205,7 @@ package rds {
   }
 
   object DescribePendingMaintenanceActionsMessage {
+    @inline
     def apply(
         Filters: js.UndefOr[FilterList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -5091,6 +5239,7 @@ package rds {
   }
 
   object DescribeReservedDBInstancesMessage {
+    @inline
     def apply(
         DBInstanceClass: js.UndefOr[String] = js.undefined,
         Duration: js.UndefOr[String] = js.undefined,
@@ -5137,6 +5286,7 @@ package rds {
   }
 
   object DescribeReservedDBInstancesOfferingsMessage {
+    @inline
     def apply(
         DBInstanceClass: js.UndefOr[String] = js.undefined,
         Duration: js.UndefOr[String] = js.undefined,
@@ -5176,6 +5326,7 @@ package rds {
   }
 
   object DescribeSourceRegionsMessage {
+    @inline
     def apply(
         Filters: js.UndefOr[FilterList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -5200,6 +5351,7 @@ package rds {
   }
 
   object DescribeValidDBInstanceModificationsMessage {
+    @inline
     def apply(
         DBInstanceIdentifier: String
     ): DescribeValidDBInstanceModificationsMessage = {
@@ -5217,6 +5369,7 @@ package rds {
   }
 
   object DescribeValidDBInstanceModificationsResult {
+    @inline
     def apply(
         ValidDBInstanceModificationsMessage: js.UndefOr[ValidDBInstanceModificationsMessage] = js.undefined
     ): DescribeValidDBInstanceModificationsResult = {
@@ -5240,6 +5393,7 @@ package rds {
   }
 
   object DomainMembership {
+    @inline
     def apply(
         Domain: js.UndefOr[String] = js.undefined,
         FQDN: js.UndefOr[String] = js.undefined,
@@ -5265,6 +5419,7 @@ package rds {
   }
 
   object DoubleRange {
+    @inline
     def apply(
         From: js.UndefOr[Double] = js.undefined,
         To: js.UndefOr[Double] = js.undefined
@@ -5287,6 +5442,7 @@ package rds {
   }
 
   object DownloadDBLogFilePortionDetails {
+    @inline
     def apply(
         AdditionalDataPending: js.UndefOr[Boolean] = js.undefined,
         LogFileData: js.UndefOr[String] = js.undefined,
@@ -5312,6 +5468,7 @@ package rds {
   }
 
   object DownloadDBLogFilePortionMessage {
+    @inline
     def apply(
         DBInstanceIdentifier: String,
         LogFileName: String,
@@ -5344,6 +5501,7 @@ package rds {
   }
 
   object EC2SecurityGroup {
+    @inline
     def apply(
         EC2SecurityGroupId: js.UndefOr[String] = js.undefined,
         EC2SecurityGroupName: js.UndefOr[String] = js.undefined,
@@ -5374,6 +5532,7 @@ package rds {
   }
 
   object Endpoint {
+    @inline
     def apply(
         Address: js.UndefOr[String] = js.undefined,
         HostedZoneId: js.UndefOr[String] = js.undefined,
@@ -5398,6 +5557,7 @@ package rds {
   }
 
   object EngineDefaults {
+    @inline
     def apply(
         DBParameterGroupFamily: js.UndefOr[String] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -5425,6 +5585,7 @@ package rds {
   }
 
   object Event {
+    @inline
     def apply(
         Date: js.UndefOr[TStamp] = js.undefined,
         EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
@@ -5454,6 +5615,7 @@ package rds {
   }
 
   object EventCategoriesMap {
+    @inline
     def apply(
         EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
         SourceType: js.UndefOr[String] = js.undefined
@@ -5474,6 +5636,7 @@ package rds {
   }
 
   object EventCategoriesMessage {
+    @inline
     def apply(
         EventCategoriesMapList: js.UndefOr[EventCategoriesMapList] = js.undefined
     ): EventCategoriesMessage = {
@@ -5501,6 +5664,7 @@ package rds {
   }
 
   object EventSubscription {
+    @inline
     def apply(
         CustSubscriptionId: js.UndefOr[String] = js.undefined,
         CustomerAwsId: js.UndefOr[String] = js.undefined,
@@ -5538,6 +5702,7 @@ package rds {
   }
 
   object EventSubscriptionsMessage {
+    @inline
     def apply(
         EventSubscriptionsList: js.UndefOr[EventSubscriptionsList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -5559,6 +5724,7 @@ package rds {
   }
 
   object EventsMessage {
+    @inline
     def apply(
         Events: js.UndefOr[EventList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -5580,6 +5746,7 @@ package rds {
   }
 
   object FailoverDBClusterMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String,
         TargetDBInstanceIdentifier: js.UndefOr[String] = js.undefined
@@ -5601,6 +5768,7 @@ package rds {
   }
 
   object FailoverDBClusterResult {
+    @inline
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): FailoverDBClusterResult = {
@@ -5628,6 +5796,7 @@ package rds {
   }
 
   object Filter {
+    @inline
     def apply(
         Name: String,
         Values: FilterValueList
@@ -5659,6 +5828,7 @@ package rds {
   }
 
   object GlobalCluster {
+    @inline
     def apply(
         DatabaseName: js.UndefOr[String] = js.undefined,
         DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
@@ -5697,6 +5867,7 @@ package rds {
   }
 
   object GlobalClusterMember {
+    @inline
     def apply(
         DBClusterArn: js.UndefOr[String] = js.undefined,
         IsWriter: js.UndefOr[Boolean] = js.undefined,
@@ -5717,6 +5888,7 @@ package rds {
   }
 
   object GlobalClustersMessage {
+    @inline
     def apply(
         GlobalClusters: js.UndefOr[GlobalClusterList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -5738,6 +5910,7 @@ package rds {
   }
 
   object IPRange {
+    @inline
     def apply(
         CIDRIP: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
@@ -5759,6 +5932,7 @@ package rds {
   }
 
   object ListTagsForResourceMessage {
+    @inline
     def apply(
         ResourceName: String,
         Filters: js.UndefOr[FilterList] = js.undefined
@@ -5782,6 +5956,7 @@ package rds {
   }
 
   object MinimumEngineVersionPerAllowedValue {
+    @inline
     def apply(
         AllowedValue: js.UndefOr[String] = js.undefined,
         MinimumEngineVersion: js.UndefOr[String] = js.undefined
@@ -5802,6 +5977,7 @@ package rds {
   }
 
   object ModifyCurrentDBClusterCapacityMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String,
         Capacity: js.UndefOr[IntegerOptional] = js.undefined,
@@ -5828,6 +6004,7 @@ package rds {
   }
 
   object ModifyDBClusterEndpointMessage {
+    @inline
     def apply(
         DBClusterEndpointIdentifier: String,
         EndpointType: js.UndefOr[String] = js.undefined,
@@ -5874,6 +6051,7 @@ package rds {
   }
 
   object ModifyDBClusterMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String,
         AllowMajorVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
@@ -5945,6 +6123,7 @@ package rds {
   }
 
   object ModifyDBClusterParameterGroupMessage {
+    @inline
     def apply(
         DBClusterParameterGroupName: String,
         Parameters: ParametersList
@@ -5964,6 +6143,7 @@ package rds {
   }
 
   object ModifyDBClusterResult {
+    @inline
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): ModifyDBClusterResult = {
@@ -5985,6 +6165,7 @@ package rds {
   }
 
   object ModifyDBClusterSnapshotAttributeMessage {
+    @inline
     def apply(
         AttributeName: String,
         DBClusterSnapshotIdentifier: String,
@@ -6008,6 +6189,7 @@ package rds {
   }
 
   object ModifyDBClusterSnapshotAttributeResult {
+    @inline
     def apply(
         DBClusterSnapshotAttributesResult: js.UndefOr[DBClusterSnapshotAttributesResult] = js.undefined
     ): ModifyDBClusterSnapshotAttributeResult = {
@@ -6068,6 +6250,7 @@ package rds {
   }
 
   object ModifyDBInstanceMessage {
+    @inline
     def apply(
         DBInstanceIdentifier: String,
         AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
@@ -6179,6 +6362,7 @@ package rds {
   }
 
   object ModifyDBInstanceResult {
+    @inline
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): ModifyDBInstanceResult = {
@@ -6198,6 +6382,7 @@ package rds {
   }
 
   object ModifyDBParameterGroupMessage {
+    @inline
     def apply(
         DBParameterGroupName: String,
         Parameters: ParametersList
@@ -6223,6 +6408,7 @@ package rds {
   }
 
   object ModifyDBSnapshotAttributeMessage {
+    @inline
     def apply(
         AttributeName: String,
         DBSnapshotIdentifier: String,
@@ -6246,6 +6432,7 @@ package rds {
   }
 
   object ModifyDBSnapshotAttributeResult {
+    @inline
     def apply(
         DBSnapshotAttributesResult: js.UndefOr[DBSnapshotAttributesResult] = js.undefined
     ): ModifyDBSnapshotAttributeResult = {
@@ -6265,6 +6452,7 @@ package rds {
   }
 
   object ModifyDBSnapshotMessage {
+    @inline
     def apply(
         DBSnapshotIdentifier: String,
         EngineVersion: js.UndefOr[String] = js.undefined,
@@ -6286,6 +6474,7 @@ package rds {
   }
 
   object ModifyDBSnapshotResult {
+    @inline
     def apply(
         DBSnapshot: js.UndefOr[DBSnapshot] = js.undefined
     ): ModifyDBSnapshotResult = {
@@ -6306,6 +6495,7 @@ package rds {
   }
 
   object ModifyDBSubnetGroupMessage {
+    @inline
     def apply(
         DBSubnetGroupName: String,
         SubnetIds: SubnetIdentifierList,
@@ -6327,6 +6517,7 @@ package rds {
   }
 
   object ModifyDBSubnetGroupResult {
+    @inline
     def apply(
         DBSubnetGroup: js.UndefOr[DBSubnetGroup] = js.undefined
     ): ModifyDBSubnetGroupResult = {
@@ -6349,6 +6540,7 @@ package rds {
   }
 
   object ModifyEventSubscriptionMessage {
+    @inline
     def apply(
         SubscriptionName: String,
         Enabled: js.UndefOr[BooleanOptional] = js.undefined,
@@ -6374,6 +6566,7 @@ package rds {
   }
 
   object ModifyEventSubscriptionResult {
+    @inline
     def apply(
         EventSubscription: js.UndefOr[EventSubscription] = js.undefined
     ): ModifyEventSubscriptionResult = {
@@ -6391,6 +6584,7 @@ package rds {
   }
 
   object ModifyGlobalClusterMessage {
+    @inline
     def apply(
         DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
         GlobalClusterIdentifier: js.UndefOr[String] = js.undefined,
@@ -6412,6 +6606,7 @@ package rds {
   }
 
   object ModifyGlobalClusterResult {
+    @inline
     def apply(
         GlobalCluster: js.UndefOr[GlobalCluster] = js.undefined
     ): ModifyGlobalClusterResult = {
@@ -6433,6 +6628,7 @@ package rds {
   }
 
   object ModifyOptionGroupMessage {
+    @inline
     def apply(
         OptionGroupName: String,
         ApplyImmediately: js.UndefOr[Boolean] = js.undefined,
@@ -6456,6 +6652,7 @@ package rds {
   }
 
   object ModifyOptionGroupResult {
+    @inline
     def apply(
         OptionGroup: js.UndefOr[OptionGroup] = js.undefined
     ): ModifyOptionGroupResult = {
@@ -6482,6 +6679,7 @@ package rds {
   }
 
   object Option {
+    @inline
     def apply(
         DBSecurityGroupMemberships: js.UndefOr[DBSecurityGroupMembershipList] = js.undefined,
         OptionDescription: js.UndefOr[String] = js.undefined,
@@ -6525,6 +6723,7 @@ package rds {
   }
 
   object OptionConfiguration {
+    @inline
     def apply(
         OptionName: String,
         DBSecurityGroupMemberships: js.UndefOr[DBSecurityGroupNameList] = js.undefined,
@@ -6566,6 +6765,7 @@ package rds {
   }
 
   object OptionGroup {
+    @inline
     def apply(
         AllowsVpcAndNonVpcInstanceMemberships: js.UndefOr[Boolean] = js.undefined,
         EngineName: js.UndefOr[String] = js.undefined,
@@ -6601,6 +6801,7 @@ package rds {
   }
 
   object OptionGroupMembership {
+    @inline
     def apply(
         OptionGroupName: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
@@ -6636,6 +6837,7 @@ package rds {
   }
 
   object OptionGroupOption {
+    @inline
     def apply(
         DefaultPort: js.UndefOr[IntegerOptional] = js.undefined,
         Description: js.UndefOr[String] = js.undefined,
@@ -6701,6 +6903,7 @@ package rds {
   }
 
   object OptionGroupOptionSetting {
+    @inline
     def apply(
         AllowedValues: js.UndefOr[String] = js.undefined,
         ApplyType: js.UndefOr[String] = js.undefined,
@@ -6736,6 +6939,7 @@ package rds {
   }
 
   object OptionGroupOptionsMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         OptionGroupOptions: js.UndefOr[OptionGroupOptionsList] = js.undefined
@@ -6757,6 +6961,7 @@ package rds {
   }
 
   object OptionGroups {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         OptionGroupsList: js.UndefOr[OptionGroupsList] = js.undefined
@@ -6785,6 +6990,7 @@ package rds {
   }
 
   object OptionSetting {
+    @inline
     def apply(
         AllowedValues: js.UndefOr[String] = js.undefined,
         ApplyType: js.UndefOr[String] = js.undefined,
@@ -6820,6 +7026,7 @@ package rds {
   }
 
   object OptionVersion {
+    @inline
     def apply(
         IsDefault: js.UndefOr[Boolean] = js.undefined,
         Version: js.UndefOr[String] = js.undefined
@@ -6863,6 +7070,7 @@ package rds {
   }
 
   object OrderableDBInstanceOption {
+    @inline
     def apply(
         AvailabilityZones: js.UndefOr[AvailabilityZoneList] = js.undefined,
         AvailableProcessorFeatures: js.UndefOr[AvailableProcessorFeatureList] = js.undefined,
@@ -6938,6 +7146,7 @@ package rds {
   }
 
   object OrderableDBInstanceOptionsMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         OrderableDBInstanceOptions: js.UndefOr[OrderableDBInstanceOptionsList] = js.undefined
@@ -6971,6 +7180,7 @@ package rds {
   }
 
   object Parameter {
+    @inline
     def apply(
         AllowedValues: js.UndefOr[String] = js.undefined,
         ApplyMethod: js.UndefOr[ApplyMethod] = js.undefined,
@@ -7010,6 +7220,7 @@ package rds {
   }
 
   object PendingCloudwatchLogsExports {
+    @inline
     def apply(
         LogTypesToDisable: js.UndefOr[LogTypeList] = js.undefined,
         LogTypesToEnable: js.UndefOr[LogTypeList] = js.undefined
@@ -7035,6 +7246,7 @@ package rds {
   }
 
   object PendingMaintenanceAction {
+    @inline
     def apply(
         Action: js.UndefOr[String] = js.undefined,
         AutoAppliedAfterDate: js.UndefOr[TStamp] = js.undefined,
@@ -7064,6 +7276,7 @@ package rds {
   }
 
   object PendingMaintenanceActionsMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         PendingMaintenanceActions: js.UndefOr[PendingMaintenanceActions] = js.undefined
@@ -7100,6 +7313,7 @@ package rds {
   }
 
   object PendingModifiedValues {
+    @inline
     def apply(
         AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
         BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
@@ -7162,6 +7376,7 @@ package rds {
   }
 
   object ProcessorFeature {
+    @inline
     def apply(
         Name: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
@@ -7182,6 +7397,7 @@ package rds {
   }
 
   object PromoteReadReplicaDBClusterMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String
     ): PromoteReadReplicaDBClusterMessage = {
@@ -7199,6 +7415,7 @@ package rds {
   }
 
   object PromoteReadReplicaDBClusterResult {
+    @inline
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): PromoteReadReplicaDBClusterResult = {
@@ -7219,6 +7436,7 @@ package rds {
   }
 
   object PromoteReadReplicaMessage {
+    @inline
     def apply(
         DBInstanceIdentifier: String,
         BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
@@ -7240,6 +7458,7 @@ package rds {
   }
 
   object PromoteReadReplicaResult {
+    @inline
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): PromoteReadReplicaResult = {
@@ -7261,6 +7480,7 @@ package rds {
   }
 
   object PurchaseReservedDBInstancesOfferingMessage {
+    @inline
     def apply(
         ReservedDBInstancesOfferingId: String,
         DBInstanceCount: js.UndefOr[IntegerOptional] = js.undefined,
@@ -7284,6 +7504,7 @@ package rds {
   }
 
   object PurchaseReservedDBInstancesOfferingResult {
+    @inline
     def apply(
         ReservedDBInstance: js.UndefOr[ReservedDBInstance] = js.undefined
     ): PurchaseReservedDBInstancesOfferingResult = {
@@ -7304,6 +7525,7 @@ package rds {
   }
 
   object Range {
+    @inline
     def apply(
         From: js.UndefOr[Int] = js.undefined,
         Step: js.UndefOr[IntegerOptional] = js.undefined,
@@ -7327,6 +7549,7 @@ package rds {
   }
 
   object RebootDBInstanceMessage {
+    @inline
     def apply(
         DBInstanceIdentifier: String,
         ForceFailover: js.UndefOr[BooleanOptional] = js.undefined
@@ -7346,6 +7569,7 @@ package rds {
   }
 
   object RebootDBInstanceResult {
+    @inline
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): RebootDBInstanceResult = {
@@ -7365,6 +7589,7 @@ package rds {
   }
 
   object RecurringCharge {
+    @inline
     def apply(
         RecurringChargeAmount: js.UndefOr[Double] = js.undefined,
         RecurringChargeFrequency: js.UndefOr[String] = js.undefined
@@ -7383,6 +7608,7 @@ package rds {
   }
 
   object RemoveFromGlobalClusterMessage {
+    @inline
     def apply(
         DbClusterIdentifier: js.UndefOr[String] = js.undefined,
         GlobalClusterIdentifier: js.UndefOr[String] = js.undefined
@@ -7400,6 +7626,7 @@ package rds {
   }
 
   object RemoveFromGlobalClusterResult {
+    @inline
     def apply(
         GlobalCluster: js.UndefOr[GlobalCluster] = js.undefined
     ): RemoveFromGlobalClusterResult = {
@@ -7417,6 +7644,7 @@ package rds {
   }
 
   object RemoveRoleFromDBClusterMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String,
         RoleArn: String,
@@ -7440,6 +7668,7 @@ package rds {
   }
 
   object RemoveRoleFromDBInstanceMessage {
+    @inline
     def apply(
         DBInstanceIdentifier: String,
         FeatureName: String,
@@ -7465,6 +7694,7 @@ package rds {
   }
 
   object RemoveSourceIdentifierFromSubscriptionMessage {
+    @inline
     def apply(
         SourceIdentifier: String,
         SubscriptionName: String
@@ -7484,6 +7714,7 @@ package rds {
   }
 
   object RemoveSourceIdentifierFromSubscriptionResult {
+    @inline
     def apply(
         EventSubscription: js.UndefOr[EventSubscription] = js.undefined
     ): RemoveSourceIdentifierFromSubscriptionResult = {
@@ -7503,6 +7734,7 @@ package rds {
   }
 
   object RemoveTagsFromResourceMessage {
+    @inline
     def apply(
         ResourceName: String,
         TagKeys: KeyList
@@ -7539,6 +7771,7 @@ package rds {
   }
 
   object ReservedDBInstance {
+    @inline
     def apply(
         CurrencyCode: js.UndefOr[String] = js.undefined,
         DBInstanceClass: js.UndefOr[String] = js.undefined,
@@ -7588,6 +7821,7 @@ package rds {
   }
 
   object ReservedDBInstanceMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         ReservedDBInstances: js.UndefOr[ReservedDBInstanceList] = js.undefined
@@ -7617,6 +7851,7 @@ package rds {
   }
 
   object ReservedDBInstancesOffering {
+    @inline
     def apply(
         CurrencyCode: js.UndefOr[String] = js.undefined,
         DBInstanceClass: js.UndefOr[String] = js.undefined,
@@ -7656,6 +7891,7 @@ package rds {
   }
 
   object ReservedDBInstancesOfferingMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         ReservedDBInstancesOfferings: js.UndefOr[ReservedDBInstancesOfferingList] = js.undefined
@@ -7680,6 +7916,7 @@ package rds {
   }
 
   object ResetDBClusterParameterGroupMessage {
+    @inline
     def apply(
         DBClusterParameterGroupName: String,
         Parameters: js.UndefOr[ParametersList] = js.undefined,
@@ -7706,6 +7943,7 @@ package rds {
   }
 
   object ResetDBParameterGroupMessage {
+    @inline
     def apply(
         DBParameterGroupName: String,
         Parameters: js.UndefOr[ParametersList] = js.undefined,
@@ -7731,6 +7969,7 @@ package rds {
   }
 
   object ResourcePendingMaintenanceActions {
+    @inline
     def apply(
         PendingMaintenanceActionDetails: js.UndefOr[PendingMaintenanceActionDetails] = js.undefined,
         ResourceIdentifier: js.UndefOr[String] = js.undefined
@@ -7778,6 +8017,7 @@ package rds {
   }
 
   object RestoreDBClusterFromS3Message {
+    @inline
     def apply(
         DBClusterIdentifier: String,
         Engine: String,
@@ -7859,6 +8099,7 @@ package rds {
   }
 
   object RestoreDBClusterFromS3Result {
+    @inline
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): RestoreDBClusterFromS3Result = {
@@ -7896,6 +8137,7 @@ package rds {
   }
 
   object RestoreDBClusterFromSnapshotMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String,
         Engine: String,
@@ -7957,6 +8199,7 @@ package rds {
   }
 
   object RestoreDBClusterFromSnapshotResult {
+    @inline
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): RestoreDBClusterFromSnapshotResult = {
@@ -7991,6 +8234,7 @@ package rds {
   }
 
   object RestoreDBClusterToPointInTimeMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String,
         SourceDBClusterIdentifier: String,
@@ -8046,6 +8290,7 @@ package rds {
   }
 
   object RestoreDBClusterToPointInTimeResult {
+    @inline
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): RestoreDBClusterToPointInTimeResult = {
@@ -8091,6 +8336,7 @@ package rds {
   }
 
   object RestoreDBInstanceFromDBSnapshotMessage {
+    @inline
     def apply(
         DBInstanceIdentifier: String,
         DBSnapshotIdentifier: String,
@@ -8168,6 +8414,7 @@ package rds {
   }
 
   object RestoreDBInstanceFromDBSnapshotResult {
+    @inline
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): RestoreDBInstanceFromDBSnapshotResult = {
@@ -8225,6 +8472,7 @@ package rds {
   }
 
   object RestoreDBInstanceFromS3Message {
+    @inline
     def apply(
         DBInstanceClass: String,
         DBInstanceIdentifier: String,
@@ -8340,6 +8588,7 @@ package rds {
   }
 
   object RestoreDBInstanceFromS3Result {
+    @inline
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): RestoreDBInstanceFromS3Result = {
@@ -8388,6 +8637,7 @@ package rds {
   }
 
   object RestoreDBInstanceToPointInTimeMessage {
+    @inline
     def apply(
         TargetDBInstanceIdentifier: String,
         AutoMinorVersionUpgrade: js.UndefOr[BooleanOptional] = js.undefined,
@@ -8473,6 +8723,7 @@ package rds {
   }
 
   object RestoreDBInstanceToPointInTimeResult {
+    @inline
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): RestoreDBInstanceToPointInTimeResult = {
@@ -8492,6 +8743,7 @@ package rds {
   }
 
   object RestoreWindow {
+    @inline
     def apply(
         EarliestTime: js.UndefOr[TStamp] = js.undefined,
         LatestTime: js.UndefOr[TStamp] = js.undefined
@@ -8516,6 +8768,7 @@ package rds {
   }
 
   object RevokeDBSecurityGroupIngressMessage {
+    @inline
     def apply(
         DBSecurityGroupName: String,
         CIDRIP: js.UndefOr[String] = js.undefined,
@@ -8541,6 +8794,7 @@ package rds {
   }
 
   object RevokeDBSecurityGroupIngressResult {
+    @inline
     def apply(
         DBSecurityGroup: js.UndefOr[DBSecurityGroup] = js.undefined
     ): RevokeDBSecurityGroupIngressResult = {
@@ -8564,6 +8818,7 @@ package rds {
   }
 
   object ScalingConfiguration {
+    @inline
     def apply(
         AutoPause: js.UndefOr[BooleanOptional] = js.undefined,
         MaxCapacity: js.UndefOr[IntegerOptional] = js.undefined,
@@ -8595,6 +8850,7 @@ package rds {
   }
 
   object ScalingConfigurationInfo {
+    @inline
     def apply(
         AutoPause: js.UndefOr[BooleanOptional] = js.undefined,
         MaxCapacity: js.UndefOr[IntegerOptional] = js.undefined,
@@ -8623,6 +8879,7 @@ package rds {
   }
 
   object SourceRegion {
+    @inline
     def apply(
         Endpoint: js.UndefOr[String] = js.undefined,
         RegionName: js.UndefOr[String] = js.undefined,
@@ -8646,6 +8903,7 @@ package rds {
   }
 
   object SourceRegionMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         SourceRegions: js.UndefOr[SourceRegionList] = js.undefined
@@ -8686,6 +8944,7 @@ package rds {
   }
 
   object StartActivityStreamRequest {
+    @inline
     def apply(
         KmsKeyId: String,
         Mode: ActivityStreamMode,
@@ -8713,6 +8972,7 @@ package rds {
   }
 
   object StartActivityStreamResponse {
+    @inline
     def apply(
         ApplyImmediately: js.UndefOr[Boolean] = js.undefined,
         KinesisStreamName: js.UndefOr[String] = js.undefined,
@@ -8736,6 +8996,7 @@ package rds {
   }
 
   object StartDBClusterMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String
     ): StartDBClusterMessage = {
@@ -8753,6 +9014,7 @@ package rds {
   }
 
   object StartDBClusterResult {
+    @inline
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): StartDBClusterResult = {
@@ -8768,6 +9030,7 @@ package rds {
   }
 
   object StartDBInstanceMessage {
+    @inline
     def apply(
         DBInstanceIdentifier: String
     ): StartDBInstanceMessage = {
@@ -8785,6 +9048,7 @@ package rds {
   }
 
   object StartDBInstanceResult {
+    @inline
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): StartDBInstanceResult = {
@@ -8801,6 +9065,7 @@ package rds {
   }
 
   object StopActivityStreamRequest {
+    @inline
     def apply(
         ResourceArn: String,
         ApplyImmediately: js.UndefOr[BooleanOptional] = js.undefined
@@ -8822,6 +9087,7 @@ package rds {
   }
 
   object StopActivityStreamResponse {
+    @inline
     def apply(
         KinesisStreamName: js.UndefOr[String] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
@@ -8841,6 +9107,7 @@ package rds {
   }
 
   object StopDBClusterMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String
     ): StopDBClusterMessage = {
@@ -8858,6 +9125,7 @@ package rds {
   }
 
   object StopDBClusterResult {
+    @inline
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): StopDBClusterResult = {
@@ -8874,6 +9142,7 @@ package rds {
   }
 
   object StopDBInstanceMessage {
+    @inline
     def apply(
         DBInstanceIdentifier: String,
         DBSnapshotIdentifier: js.UndefOr[String] = js.undefined
@@ -8893,6 +9162,7 @@ package rds {
   }
 
   object StopDBInstanceResult {
+    @inline
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): StopDBInstanceResult = {
@@ -8913,6 +9183,7 @@ package rds {
   }
 
   object Subnet {
+    @inline
     def apply(
         SubnetAvailabilityZone: js.UndefOr[AvailabilityZone] = js.undefined,
         SubnetIdentifier: js.UndefOr[String] = js.undefined,
@@ -8936,6 +9207,7 @@ package rds {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
@@ -8956,6 +9228,7 @@ package rds {
   }
 
   object TagListMessage {
+    @inline
     def apply(
         TagList: js.UndefOr[TagList] = js.undefined
     ): TagListMessage = {
@@ -8974,6 +9247,7 @@ package rds {
   }
 
   object Timezone {
+    @inline
     def apply(
         TimezoneName: js.UndefOr[String] = js.undefined
     ): Timezone = {
@@ -8996,6 +9270,7 @@ package rds {
   }
 
   object UpgradeTarget {
+    @inline
     def apply(
         AutoUpgrade: js.UndefOr[Boolean] = js.undefined,
         Description: js.UndefOr[String] = js.undefined,
@@ -9023,6 +9298,7 @@ package rds {
   }
 
   object ValidDBInstanceModificationsMessage {
+    @inline
     def apply(
         Storage: js.UndefOr[ValidStorageOptionsList] = js.undefined,
         ValidProcessorFeatures: js.UndefOr[AvailableProcessorFeatureList] = js.undefined
@@ -9047,6 +9323,7 @@ package rds {
   }
 
   object ValidStorageOptions {
+    @inline
     def apply(
         IopsToStorageRatio: js.UndefOr[DoubleRangeList] = js.undefined,
         ProvisionedIops: js.UndefOr[RangeList] = js.undefined,
@@ -9076,6 +9353,7 @@ package rds {
   }
 
   object VpcSecurityGroupMembership {
+    @inline
     def apply(
         Status: js.UndefOr[String] = js.undefined,
         VpcSecurityGroupId: js.UndefOr[String] = js.undefined

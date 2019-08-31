@@ -69,6 +69,7 @@ package cloudsearchdomain {
   }
 
   object Bucket {
+    @inline
     def apply(
         count: js.UndefOr[Double] = js.undefined,
         value: js.UndefOr[String] = js.undefined
@@ -89,6 +90,7 @@ package cloudsearchdomain {
   }
 
   object BucketInfo {
+    @inline
     def apply(
         buckets: js.UndefOr[BucketList] = js.undefined
     ): BucketInfo = {
@@ -123,6 +125,7 @@ package cloudsearchdomain {
   }
 
   object DocumentServiceWarning {
+    @inline
     def apply(
         message: js.UndefOr[String] = js.undefined
     ): DocumentServiceWarning = {
@@ -148,6 +151,7 @@ package cloudsearchdomain {
   }
 
   object FieldStats {
+    @inline
     def apply(
         count: js.UndefOr[Double] = js.undefined,
         max: js.UndefOr[String] = js.undefined,
@@ -183,6 +187,7 @@ package cloudsearchdomain {
   }
 
   object Hit {
+    @inline
     def apply(
         exprs: js.UndefOr[Exprs] = js.undefined,
         fields: js.UndefOr[Fields] = js.undefined,
@@ -210,6 +215,7 @@ package cloudsearchdomain {
   }
 
   object Hits {
+    @inline
     def apply(
         cursor: js.UndefOr[String] = js.undefined,
         found: js.UndefOr[Double] = js.undefined,
@@ -264,6 +270,7 @@ package cloudsearchdomain {
   }
 
   object SearchRequest {
+    @inline
     def apply(
         query: Query,
         cursor: js.UndefOr[Cursor] = js.undefined,
@@ -313,6 +320,7 @@ package cloudsearchdomain {
   }
 
   object SearchResponse {
+    @inline
     def apply(
         facets: js.UndefOr[Facets] = js.undefined,
         hits: js.UndefOr[Hits] = js.undefined,
@@ -338,6 +346,7 @@ package cloudsearchdomain {
   }
 
   object SearchStatus {
+    @inline
     def apply(
         rid: js.UndefOr[String] = js.undefined,
         timems: js.UndefOr[Double] = js.undefined
@@ -360,6 +369,7 @@ package cloudsearchdomain {
   }
 
   object SuggestModel {
+    @inline
     def apply(
         found: js.UndefOr[Double] = js.undefined,
         query: js.UndefOr[String] = js.undefined,
@@ -384,6 +394,7 @@ package cloudsearchdomain {
   }
 
   object SuggestRequest {
+    @inline
     def apply(
         query: Query,
         suggester: Suggester,
@@ -409,6 +420,7 @@ package cloudsearchdomain {
   }
 
   object SuggestResponse {
+    @inline
     def apply(
         status: js.UndefOr[SuggestStatus] = js.undefined,
         suggest: js.UndefOr[SuggestModel] = js.undefined
@@ -430,6 +442,7 @@ package cloudsearchdomain {
   }
 
   object SuggestStatus {
+    @inline
     def apply(
         rid: js.UndefOr[String] = js.undefined,
         timems: js.UndefOr[Double] = js.undefined
@@ -452,6 +465,7 @@ package cloudsearchdomain {
   }
 
   object SuggestionMatch {
+    @inline
     def apply(
         id: js.UndefOr[String] = js.undefined,
         score: js.UndefOr[Double] = js.undefined,
@@ -475,6 +489,7 @@ package cloudsearchdomain {
   }
 
   object UploadDocumentsRequest {
+    @inline
     def apply(
         contentType: ContentType,
         documents: Blob
@@ -500,6 +515,7 @@ package cloudsearchdomain {
   }
 
   object UploadDocumentsResponse {
+    @inline
     def apply(
         adds: js.UndefOr[Adds] = js.undefined,
         deletes: js.UndefOr[Deletes] = js.undefined,

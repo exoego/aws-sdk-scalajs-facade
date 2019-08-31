@@ -179,6 +179,7 @@ package ecr {
   }
 
   object AuthorizationData {
+    @inline
     def apply(
         authorizationToken: js.UndefOr[Base64] = js.undefined,
         expiresAt: js.UndefOr[ExpirationTimestamp] = js.undefined,
@@ -200,6 +201,7 @@ package ecr {
   }
 
   object BatchCheckLayerAvailabilityRequest {
+    @inline
     def apply(
         layerDigests: BatchedOperationLayerDigestList,
         repositoryName: RepositoryName,
@@ -222,6 +224,7 @@ package ecr {
   }
 
   object BatchCheckLayerAvailabilityResponse {
+    @inline
     def apply(
         failures: js.UndefOr[LayerFailureList] = js.undefined,
         layers: js.UndefOr[LayerList] = js.undefined
@@ -244,6 +247,7 @@ package ecr {
   }
 
   object BatchDeleteImageRequest {
+    @inline
     def apply(
         imageIds: ImageIdentifierList,
         repositoryName: RepositoryName,
@@ -266,6 +270,7 @@ package ecr {
   }
 
   object BatchDeleteImageResponse {
+    @inline
     def apply(
         failures: js.UndefOr[ImageFailureList] = js.undefined,
         imageIds: js.UndefOr[ImageIdentifierList] = js.undefined
@@ -286,6 +291,7 @@ package ecr {
   }
 
   object BatchGetImageRequest {
+    @inline
     def apply(
         imageIds: ImageIdentifierList,
         repositoryName: RepositoryName,
@@ -310,6 +316,7 @@ package ecr {
   }
 
   object BatchGetImageResponse {
+    @inline
     def apply(
         failures: js.UndefOr[ImageFailureList] = js.undefined,
         images: js.UndefOr[ImageList] = js.undefined
@@ -330,6 +337,7 @@ package ecr {
   }
 
   object CompleteLayerUploadRequest {
+    @inline
     def apply(
         layerDigests: LayerDigestList,
         repositoryName: RepositoryName,
@@ -356,6 +364,7 @@ package ecr {
   }
 
   object CompleteLayerUploadResponse {
+    @inline
     def apply(
         layerDigest: js.UndefOr[LayerDigest] = js.undefined,
         registryId: js.UndefOr[RegistryId] = js.undefined,
@@ -379,6 +388,7 @@ package ecr {
   }
 
   object CreateRepositoryRequest {
+    @inline
     def apply(
         repositoryName: RepositoryName,
         imageTagMutability: js.UndefOr[ImageTagMutability] = js.undefined,
@@ -400,6 +410,7 @@ package ecr {
   }
 
   object CreateRepositoryResponse {
+    @inline
     def apply(
         repository: js.UndefOr[Repository] = js.undefined
     ): CreateRepositoryResponse = {
@@ -416,6 +427,7 @@ package ecr {
   }
 
   object DeleteLifecyclePolicyRequest {
+    @inline
     def apply(
         repositoryName: RepositoryName,
         registryId: js.UndefOr[RegistryId] = js.undefined
@@ -438,6 +450,7 @@ package ecr {
   }
 
   object DeleteLifecyclePolicyResponse {
+    @inline
     def apply(
         lastEvaluatedAt: js.UndefOr[EvaluationTimestamp] = js.undefined,
         lifecyclePolicyText: js.UndefOr[LifecyclePolicyText] = js.undefined,
@@ -460,6 +473,7 @@ package ecr {
   }
 
   object DeleteRepositoryPolicyRequest {
+    @inline
     def apply(
         repositoryName: RepositoryName,
         registryId: js.UndefOr[RegistryId] = js.undefined
@@ -481,6 +495,7 @@ package ecr {
   }
 
   object DeleteRepositoryPolicyResponse {
+    @inline
     def apply(
         policyText: js.UndefOr[RepositoryPolicyText] = js.undefined,
         registryId: js.UndefOr[RegistryId] = js.undefined,
@@ -502,6 +517,7 @@ package ecr {
   }
 
   object DeleteRepositoryRequest {
+    @inline
     def apply(
         repositoryName: RepositoryName,
         force: js.UndefOr[ForceFlag] = js.undefined,
@@ -523,6 +539,7 @@ package ecr {
   }
 
   object DeleteRepositoryResponse {
+    @inline
     def apply(
         repository: js.UndefOr[Repository] = js.undefined
     ): DeleteRepositoryResponse = {
@@ -541,6 +558,7 @@ package ecr {
   }
 
   object DescribeImagesFilter {
+    @inline
     def apply(
         tagStatus: js.UndefOr[TagStatus] = js.undefined
     ): DescribeImagesFilter = {
@@ -561,6 +579,7 @@ package ecr {
   }
 
   object DescribeImagesRequest {
+    @inline
     def apply(
         repositoryName: RepositoryName,
         filter: js.UndefOr[DescribeImagesFilter] = js.undefined,
@@ -589,6 +608,7 @@ package ecr {
   }
 
   object DescribeImagesResponse {
+    @inline
     def apply(
         imageDetails: js.UndefOr[ImageDetailList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -609,6 +629,7 @@ package ecr {
   }
 
   object DescribeRepositoriesRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
@@ -631,6 +652,7 @@ package ecr {
   }
 
   object DescribeRepositoriesResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         repositories: js.UndefOr[RepositoryList] = js.undefined
@@ -648,6 +670,7 @@ package ecr {
   }
 
   object GetAuthorizationTokenRequest {
+    @inline
     def apply(
         registryIds: js.UndefOr[GetAuthorizationTokenRegistryIdList] = js.undefined
     ): GetAuthorizationTokenRequest = {
@@ -663,6 +686,7 @@ package ecr {
   }
 
   object GetAuthorizationTokenResponse {
+    @inline
     def apply(
         authorizationData: js.UndefOr[AuthorizationDataList] = js.undefined
     ): GetAuthorizationTokenResponse = {
@@ -680,6 +704,7 @@ package ecr {
   }
 
   object GetDownloadUrlForLayerRequest {
+    @inline
     def apply(
         layerDigest: LayerDigest,
         repositoryName: RepositoryName,
@@ -702,6 +727,7 @@ package ecr {
   }
 
   object GetDownloadUrlForLayerResponse {
+    @inline
     def apply(
         downloadUrl: js.UndefOr[Url] = js.undefined,
         layerDigest: js.UndefOr[LayerDigest] = js.undefined
@@ -724,6 +750,7 @@ package ecr {
   }
 
   object GetLifecyclePolicyPreviewRequest {
+    @inline
     def apply(
         repositoryName: RepositoryName,
         filter: js.UndefOr[LifecyclePolicyPreviewFilter] = js.undefined,
@@ -757,6 +784,7 @@ package ecr {
   }
 
   object GetLifecyclePolicyPreviewResponse {
+    @inline
     def apply(
         lifecyclePolicyText: js.UndefOr[LifecyclePolicyText] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
@@ -785,6 +813,7 @@ package ecr {
   }
 
   object GetLifecyclePolicyRequest {
+    @inline
     def apply(
         repositoryName: RepositoryName,
         registryId: js.UndefOr[RegistryId] = js.undefined
@@ -807,6 +836,7 @@ package ecr {
   }
 
   object GetLifecyclePolicyResponse {
+    @inline
     def apply(
         lastEvaluatedAt: js.UndefOr[EvaluationTimestamp] = js.undefined,
         lifecyclePolicyText: js.UndefOr[LifecyclePolicyText] = js.undefined,
@@ -829,6 +859,7 @@ package ecr {
   }
 
   object GetRepositoryPolicyRequest {
+    @inline
     def apply(
         repositoryName: RepositoryName,
         registryId: js.UndefOr[RegistryId] = js.undefined
@@ -850,6 +881,7 @@ package ecr {
   }
 
   object GetRepositoryPolicyResponse {
+    @inline
     def apply(
         policyText: js.UndefOr[RepositoryPolicyText] = js.undefined,
         registryId: js.UndefOr[RegistryId] = js.undefined,
@@ -875,6 +907,7 @@ package ecr {
   }
 
   object Image {
+    @inline
     def apply(
         imageId: js.UndefOr[ImageIdentifier] = js.undefined,
         imageManifest: js.UndefOr[ImageManifest] = js.undefined,
@@ -910,6 +943,7 @@ package ecr {
   }
 
   object ImageDetail {
+    @inline
     def apply(
         imageDigest: js.UndefOr[ImageDigest] = js.undefined,
         imagePushedAt: js.UndefOr[PushTimestamp] = js.undefined,
@@ -940,6 +974,7 @@ package ecr {
   }
 
   object ImageFailure {
+    @inline
     def apply(
         failureCode: js.UndefOr[ImageFailureCode] = js.undefined,
         failureReason: js.UndefOr[ImageFailureReason] = js.undefined,
@@ -975,6 +1010,7 @@ package ecr {
   }
 
   object ImageIdentifier {
+    @inline
     def apply(
         imageDigest: js.UndefOr[ImageDigest] = js.undefined,
         imageTag: js.UndefOr[ImageTag] = js.undefined
@@ -1000,6 +1036,7 @@ package ecr {
   }
 
   object InitiateLayerUploadRequest {
+    @inline
     def apply(
         repositoryName: RepositoryName,
         registryId: js.UndefOr[RegistryId] = js.undefined
@@ -1020,6 +1057,7 @@ package ecr {
   }
 
   object InitiateLayerUploadResponse {
+    @inline
     def apply(
         partSize: js.UndefOr[PartSize] = js.undefined,
         uploadId: js.UndefOr[UploadId] = js.undefined
@@ -1043,6 +1081,7 @@ package ecr {
   }
 
   object Layer {
+    @inline
     def apply(
         layerAvailability: js.UndefOr[LayerAvailability] = js.undefined,
         layerDigest: js.UndefOr[LayerDigest] = js.undefined,
@@ -1076,6 +1115,7 @@ package ecr {
   }
 
   object LayerFailure {
+    @inline
     def apply(
         failureCode: js.UndefOr[LayerFailureCode] = js.undefined,
         failureReason: js.UndefOr[LayerFailureReason] = js.undefined,
@@ -1105,6 +1145,7 @@ package ecr {
   }
 
   object LifecyclePolicyPreviewFilter {
+    @inline
     def apply(
         tagStatus: js.UndefOr[TagStatus] = js.undefined
     ): LifecyclePolicyPreviewFilter = {
@@ -1127,6 +1168,7 @@ package ecr {
   }
 
   object LifecyclePolicyPreviewResult {
+    @inline
     def apply(
         action: js.UndefOr[LifecyclePolicyRuleAction] = js.undefined,
         appliedRulePriority: js.UndefOr[LifecyclePolicyRulePriority] = js.undefined,
@@ -1162,6 +1204,7 @@ package ecr {
   }
 
   object LifecyclePolicyPreviewSummary {
+    @inline
     def apply(
         expiringImageTotalCount: js.UndefOr[ImageCount] = js.undefined
     ): LifecyclePolicyPreviewSummary = {
@@ -1180,6 +1223,7 @@ package ecr {
   }
 
   object LifecyclePolicyRuleAction {
+    @inline
     def apply(
         `type`: js.UndefOr[ImageActionType] = js.undefined
     ): LifecyclePolicyRuleAction = {
@@ -1198,6 +1242,7 @@ package ecr {
   }
 
   object ListImagesFilter {
+    @inline
     def apply(
         tagStatus: js.UndefOr[TagStatus] = js.undefined
     ): ListImagesFilter = {
@@ -1217,6 +1262,7 @@ package ecr {
   }
 
   object ListImagesRequest {
+    @inline
     def apply(
         repositoryName: RepositoryName,
         filter: js.UndefOr[ListImagesFilter] = js.undefined,
@@ -1243,6 +1289,7 @@ package ecr {
   }
 
   object ListImagesResponse {
+    @inline
     def apply(
         imageIds: js.UndefOr[ImageIdentifierList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1260,6 +1307,7 @@ package ecr {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         resourceArn: Arn
     ): ListTagsForResourceRequest = {
@@ -1277,6 +1325,7 @@ package ecr {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -1295,6 +1344,7 @@ package ecr {
   }
 
   object PutImageRequest {
+    @inline
     def apply(
         imageManifest: ImageManifest,
         repositoryName: RepositoryName,
@@ -1318,6 +1368,7 @@ package ecr {
   }
 
   object PutImageResponse {
+    @inline
     def apply(
         image: js.UndefOr[Image] = js.undefined
     ): PutImageResponse = {
@@ -1335,6 +1386,7 @@ package ecr {
   }
 
   object PutImageTagMutabilityRequest {
+    @inline
     def apply(
         imageTagMutability: ImageTagMutability,
         repositoryName: RepositoryName,
@@ -1358,6 +1410,7 @@ package ecr {
   }
 
   object PutImageTagMutabilityResponse {
+    @inline
     def apply(
         imageTagMutability: js.UndefOr[ImageTagMutability] = js.undefined,
         registryId: js.UndefOr[RegistryId] = js.undefined,
@@ -1379,6 +1432,7 @@ package ecr {
   }
 
   object PutLifecyclePolicyRequest {
+    @inline
     def apply(
         lifecyclePolicyText: LifecyclePolicyText,
         repositoryName: RepositoryName,
@@ -1402,6 +1456,7 @@ package ecr {
   }
 
   object PutLifecyclePolicyResponse {
+    @inline
     def apply(
         lifecyclePolicyText: js.UndefOr[LifecyclePolicyText] = js.undefined,
         registryId: js.UndefOr[RegistryId] = js.undefined,
@@ -1429,6 +1484,7 @@ package ecr {
   }
 
   object Repository {
+    @inline
     def apply(
         createdAt: js.UndefOr[CreationTimestamp] = js.undefined,
         imageTagMutability: js.UndefOr[ImageTagMutability] = js.undefined,
@@ -1457,6 +1513,7 @@ package ecr {
   }
 
   object SetRepositoryPolicyRequest {
+    @inline
     def apply(
         policyText: RepositoryPolicyText,
         repositoryName: RepositoryName,
@@ -1482,6 +1539,7 @@ package ecr {
   }
 
   object SetRepositoryPolicyResponse {
+    @inline
     def apply(
         policyText: js.UndefOr[RepositoryPolicyText] = js.undefined,
         registryId: js.UndefOr[RegistryId] = js.undefined,
@@ -1503,6 +1561,7 @@ package ecr {
   }
 
   object StartLifecyclePolicyPreviewRequest {
+    @inline
     def apply(
         repositoryName: RepositoryName,
         lifecyclePolicyText: js.UndefOr[LifecyclePolicyText] = js.undefined,
@@ -1527,6 +1586,7 @@ package ecr {
   }
 
   object StartLifecyclePolicyPreviewResponse {
+    @inline
     def apply(
         lifecyclePolicyText: js.UndefOr[LifecyclePolicyText] = js.undefined,
         registryId: js.UndefOr[RegistryId] = js.undefined,
@@ -1552,6 +1612,7 @@ package ecr {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: js.UndefOr[TagKey] = js.undefined,
         Value: js.UndefOr[TagValue] = js.undefined
@@ -1570,6 +1631,7 @@ package ecr {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         resourceArn: Arn,
         tags: TagList
@@ -1587,6 +1649,7 @@ package ecr {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1610,6 +1673,7 @@ package ecr {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         resourceArn: Arn,
         tagKeys: TagKeyList
@@ -1627,6 +1691,7 @@ package ecr {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1646,6 +1711,7 @@ package ecr {
   }
 
   object UploadLayerPartRequest {
+    @inline
     def apply(
         layerPartBlob: LayerPartBlob,
         partFirstByte: PartSize,
@@ -1676,6 +1742,7 @@ package ecr {
   }
 
   object UploadLayerPartResponse {
+    @inline
     def apply(
         lastByteReceived: js.UndefOr[PartSize] = js.undefined,
         registryId: js.UndefOr[RegistryId] = js.undefined,

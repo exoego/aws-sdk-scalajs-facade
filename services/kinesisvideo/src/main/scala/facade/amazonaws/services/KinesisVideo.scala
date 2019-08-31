@@ -109,6 +109,7 @@ package kinesisvideo {
   }
 
   object CreateStreamInput {
+    @inline
     def apply(
         StreamName: StreamName,
         DataRetentionInHours: js.UndefOr[DataRetentionInHours] = js.undefined,
@@ -136,6 +137,7 @@ package kinesisvideo {
   }
 
   object CreateStreamOutput {
+    @inline
     def apply(
         StreamARN: js.UndefOr[ResourceARN] = js.undefined
     ): CreateStreamOutput = {
@@ -152,6 +154,7 @@ package kinesisvideo {
   }
 
   object DeleteStreamInput {
+    @inline
     def apply(
         StreamARN: ResourceARN,
         CurrentVersion: js.UndefOr[Version] = js.undefined
@@ -169,6 +172,7 @@ package kinesisvideo {
   trait DeleteStreamOutput extends js.Object {}
 
   object DeleteStreamOutput {
+    @inline
     def apply(
         ): DeleteStreamOutput = {
       val __obj = js.Dynamic.literal()
@@ -184,6 +188,7 @@ package kinesisvideo {
   }
 
   object DescribeStreamInput {
+    @inline
     def apply(
         StreamARN: js.UndefOr[ResourceARN] = js.undefined,
         StreamName: js.UndefOr[StreamName] = js.undefined
@@ -201,6 +206,7 @@ package kinesisvideo {
   }
 
   object DescribeStreamOutput {
+    @inline
     def apply(
         StreamInfo: js.UndefOr[StreamInfo] = js.undefined
     ): DescribeStreamOutput = {
@@ -218,6 +224,7 @@ package kinesisvideo {
   }
 
   object GetDataEndpointInput {
+    @inline
     def apply(
         APIName: APIName,
         StreamARN: js.UndefOr[ResourceARN] = js.undefined,
@@ -239,6 +246,7 @@ package kinesisvideo {
   }
 
   object GetDataEndpointOutput {
+    @inline
     def apply(
         DataEndpoint: js.UndefOr[DataEndpoint] = js.undefined
     ): GetDataEndpointOutput = {
@@ -256,6 +264,7 @@ package kinesisvideo {
   }
 
   object ListStreamsInput {
+    @inline
     def apply(
         MaxResults: js.UndefOr[ListStreamsInputLimit] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
@@ -276,6 +285,7 @@ package kinesisvideo {
   }
 
   object ListStreamsOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         StreamInfoList: js.UndefOr[StreamInfoList] = js.undefined
@@ -295,6 +305,7 @@ package kinesisvideo {
   }
 
   object ListTagsForStreamInput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         StreamARN: js.UndefOr[ResourceARN] = js.undefined,
@@ -315,6 +326,7 @@ package kinesisvideo {
   }
 
   object ListTagsForStreamOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Tags: js.UndefOr[ResourceTags] = js.undefined
@@ -352,6 +364,7 @@ package kinesisvideo {
   }
 
   object StreamInfo {
+    @inline
     def apply(
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         DataRetentionInHours: js.UndefOr[DataRetentionInHours] = js.undefined,
@@ -387,6 +400,7 @@ package kinesisvideo {
   }
 
   object StreamNameCondition {
+    @inline
     def apply(
         ComparisonOperator: js.UndefOr[ComparisonOperator] = js.undefined,
         ComparisonValue: js.UndefOr[StreamName] = js.undefined
@@ -406,6 +420,7 @@ package kinesisvideo {
   }
 
   object TagStreamInput {
+    @inline
     def apply(
         Tags: ResourceTags,
         StreamARN: js.UndefOr[ResourceARN] = js.undefined,
@@ -425,6 +440,7 @@ package kinesisvideo {
   trait TagStreamOutput extends js.Object {}
 
   object TagStreamOutput {
+    @inline
     def apply(
         ): TagStreamOutput = {
       val __obj = js.Dynamic.literal()
@@ -441,6 +457,7 @@ package kinesisvideo {
   }
 
   object UntagStreamInput {
+    @inline
     def apply(
         TagKeyList: TagKeyList,
         StreamARN: js.UndefOr[ResourceARN] = js.undefined,
@@ -460,6 +477,7 @@ package kinesisvideo {
   trait UntagStreamOutput extends js.Object {}
 
   object UntagStreamOutput {
+    @inline
     def apply(
         ): UntagStreamOutput = {
       val __obj = js.Dynamic.literal()
@@ -478,6 +496,7 @@ package kinesisvideo {
   }
 
   object UpdateDataRetentionInput {
+    @inline
     def apply(
         CurrentVersion: Version,
         DataRetentionChangeInHours: DataRetentionChangeInHours,
@@ -508,6 +527,7 @@ package kinesisvideo {
   trait UpdateDataRetentionOutput extends js.Object {}
 
   object UpdateDataRetentionOutput {
+    @inline
     def apply(
         ): UpdateDataRetentionOutput = {
       val __obj = js.Dynamic.literal()
@@ -526,6 +546,7 @@ package kinesisvideo {
   }
 
   object UpdateStreamInput {
+    @inline
     def apply(
         CurrentVersion: Version,
         DeviceName: js.UndefOr[DeviceName] = js.undefined,
@@ -549,6 +570,7 @@ package kinesisvideo {
   trait UpdateStreamOutput extends js.Object {}
 
   object UpdateStreamOutput {
+    @inline
     def apply(
         ): UpdateStreamOutput = {
       val __obj = js.Dynamic.literal()

@@ -129,6 +129,7 @@ package licensemanager {
   }
 
   object ConsumedLicenseSummary {
+    @inline
     def apply(
         ConsumedLicenses: js.UndefOr[BoxLong] = js.undefined,
         ResourceType: js.UndefOr[ResourceType] = js.undefined
@@ -152,6 +153,7 @@ package licensemanager {
   }
 
   object CreateLicenseConfigurationRequest {
+    @inline
     def apply(
         LicenseCountingType: LicenseCountingType,
         Name: String,
@@ -181,6 +183,7 @@ package licensemanager {
   }
 
   object CreateLicenseConfigurationResponse {
+    @inline
     def apply(
         LicenseConfigurationArn: js.UndefOr[String] = js.undefined
     ): CreateLicenseConfigurationResponse = {
@@ -196,6 +199,7 @@ package licensemanager {
   }
 
   object DeleteLicenseConfigurationRequest {
+    @inline
     def apply(
         LicenseConfigurationArn: String
     ): DeleteLicenseConfigurationRequest = {
@@ -211,6 +215,7 @@ package licensemanager {
   trait DeleteLicenseConfigurationResponse extends js.Object {}
 
   object DeleteLicenseConfigurationResponse {
+    @inline
     def apply(
         ): DeleteLicenseConfigurationResponse = {
       val __obj = js.Dynamic.literal()
@@ -229,6 +234,7 @@ package licensemanager {
   }
 
   object Filter {
+    @inline
     def apply(
         Name: js.UndefOr[FilterName] = js.undefined,
         Values: js.UndefOr[FilterValues] = js.undefined
@@ -246,6 +252,7 @@ package licensemanager {
   }
 
   object GetLicenseConfigurationRequest {
+    @inline
     def apply(
         LicenseConfigurationArn: String
     ): GetLicenseConfigurationRequest = {
@@ -276,6 +283,7 @@ package licensemanager {
   }
 
   object GetLicenseConfigurationResponse {
+    @inline
     def apply(
         ConsumedLicenseSummaryList: js.UndefOr[ConsumedLicenseSummaryList] = js.undefined,
         ConsumedLicenses: js.UndefOr[BoxLong] = js.undefined,
@@ -319,6 +327,7 @@ package licensemanager {
   trait GetServiceSettingsRequest extends js.Object {}
 
   object GetServiceSettingsRequest {
+    @inline
     def apply(
         ): GetServiceSettingsRequest = {
       val __obj = js.Dynamic.literal()
@@ -336,6 +345,7 @@ package licensemanager {
   }
 
   object GetServiceSettingsResponse {
+    @inline
     def apply(
         EnableCrossAccountsDiscovery: js.UndefOr[BoxBoolean] = js.undefined,
         OrganizationConfiguration: js.UndefOr[OrganizationConfiguration] = js.undefined,
@@ -366,6 +376,7 @@ package licensemanager {
   }
 
   object InventoryFilter {
+    @inline
     def apply(
         Condition: InventoryFilterCondition,
         Name: String,
@@ -411,6 +422,7 @@ package licensemanager {
   }
 
   object LicenseConfiguration {
+    @inline
     def apply(
         ConsumedLicenseSummaryList: js.UndefOr[ConsumedLicenseSummaryList] = js.undefined,
         ConsumedLicenses: js.UndefOr[BoxLong] = js.undefined,
@@ -460,6 +472,7 @@ package licensemanager {
   }
 
   object LicenseConfigurationAssociation {
+    @inline
     def apply(
         AssociationTime: js.UndefOr[DateTime] = js.undefined,
         ResourceArn: js.UndefOr[String] = js.undefined,
@@ -496,6 +509,7 @@ package licensemanager {
   }
 
   object LicenseConfigurationUsage {
+    @inline
     def apply(
         AssociationTime: js.UndefOr[DateTime] = js.undefined,
         ConsumedLicenses: js.UndefOr[BoxLong] = js.undefined,
@@ -533,6 +547,7 @@ package licensemanager {
   }
 
   object LicenseSpecification {
+    @inline
     def apply(
         LicenseConfigurationArn: String
     ): LicenseSpecification = {
@@ -552,6 +567,7 @@ package licensemanager {
   }
 
   object ListAssociationsForLicenseConfigurationRequest {
+    @inline
     def apply(
         LicenseConfigurationArn: String,
         MaxResults: js.UndefOr[BoxInteger] = js.undefined,
@@ -574,6 +590,7 @@ package licensemanager {
   }
 
   object ListAssociationsForLicenseConfigurationResponse {
+    @inline
     def apply(
         LicenseConfigurationAssociations: js.UndefOr[LicenseConfigurationAssociations] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -596,6 +613,7 @@ package licensemanager {
   }
 
   object ListLicenseConfigurationsRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[Filters] = js.undefined,
         LicenseConfigurationArns: js.UndefOr[StringList] = js.undefined,
@@ -618,6 +636,7 @@ package licensemanager {
   }
 
   object ListLicenseConfigurationsResponse {
+    @inline
     def apply(
         LicenseConfigurations: js.UndefOr[LicenseConfigurations] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -637,6 +656,7 @@ package licensemanager {
   }
 
   object ListLicenseSpecificationsForResourceRequest {
+    @inline
     def apply(
         ResourceArn: String,
         MaxResults: js.UndefOr[BoxInteger] = js.undefined,
@@ -659,6 +679,7 @@ package licensemanager {
   }
 
   object ListLicenseSpecificationsForResourceResponse {
+    @inline
     def apply(
         LicenseSpecifications: js.UndefOr[LicenseSpecifications] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -678,6 +699,7 @@ package licensemanager {
   }
 
   object ListResourceInventoryRequest {
+    @inline
     def apply(
         Filters: js.UndefOr[InventoryFilterList] = js.undefined,
         MaxResults: js.UndefOr[BoxInteger] = js.undefined,
@@ -698,6 +720,7 @@ package licensemanager {
   }
 
   object ListResourceInventoryResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         ResourceInventoryList: js.UndefOr[ResourceInventoryList] = js.undefined
@@ -715,6 +738,7 @@ package licensemanager {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceArn: String
     ): ListTagsForResourceRequest = {
@@ -732,6 +756,7 @@ package licensemanager {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         Tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -750,6 +775,7 @@ package licensemanager {
   }
 
   object ListUsageForLicenseConfigurationRequest {
+    @inline
     def apply(
         LicenseConfigurationArn: String,
         Filters: js.UndefOr[Filters] = js.undefined,
@@ -774,6 +800,7 @@ package licensemanager {
   }
 
   object ListUsageForLicenseConfigurationResponse {
+    @inline
     def apply(
         LicenseConfigurationUsageList: js.UndefOr[LicenseConfigurationUsageList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -797,6 +824,7 @@ package licensemanager {
   }
 
   object ManagedResourceSummary {
+    @inline
     def apply(
         AssociationCount: js.UndefOr[BoxLong] = js.undefined,
         ResourceType: js.UndefOr[ResourceType] = js.undefined
@@ -817,6 +845,7 @@ package licensemanager {
   }
 
   object OrganizationConfiguration {
+    @inline
     def apply(
         EnableIntegration: Boolean
     ): OrganizationConfiguration = {
@@ -842,6 +871,7 @@ package licensemanager {
   }
 
   object ResourceInventory {
+    @inline
     def apply(
         Platform: js.UndefOr[String] = js.undefined,
         PlatformVersion: js.UndefOr[String] = js.undefined,
@@ -879,6 +909,7 @@ package licensemanager {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
@@ -897,6 +928,7 @@ package licensemanager {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceArn: String,
         Tags: TagList
@@ -914,6 +946,7 @@ package licensemanager {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -929,6 +962,7 @@ package licensemanager {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceArn: String,
         TagKeys: TagKeyList
@@ -946,6 +980,7 @@ package licensemanager {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -966,6 +1001,7 @@ package licensemanager {
   }
 
   object UpdateLicenseConfigurationRequest {
+    @inline
     def apply(
         LicenseConfigurationArn: String,
         Description: js.UndefOr[String] = js.undefined,
@@ -995,6 +1031,7 @@ package licensemanager {
   trait UpdateLicenseConfigurationResponse extends js.Object {}
 
   object UpdateLicenseConfigurationResponse {
+    @inline
     def apply(
         ): UpdateLicenseConfigurationResponse = {
       val __obj = js.Dynamic.literal()
@@ -1011,6 +1048,7 @@ package licensemanager {
   }
 
   object UpdateLicenseSpecificationsForResourceRequest {
+    @inline
     def apply(
         ResourceArn: String,
         AddLicenseSpecifications: js.UndefOr[LicenseSpecifications] = js.undefined,
@@ -1032,6 +1070,7 @@ package licensemanager {
   trait UpdateLicenseSpecificationsForResourceResponse extends js.Object {}
 
   object UpdateLicenseSpecificationsForResourceResponse {
+    @inline
     def apply(
         ): UpdateLicenseSpecificationsForResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1049,6 +1088,7 @@ package licensemanager {
   }
 
   object UpdateServiceSettingsRequest {
+    @inline
     def apply(
         EnableCrossAccountsDiscovery: js.UndefOr[BoxBoolean] = js.undefined,
         OrganizationConfiguration: js.UndefOr[OrganizationConfiguration] = js.undefined,
@@ -1072,6 +1112,7 @@ package licensemanager {
   trait UpdateServiceSettingsResponse extends js.Object {}
 
   object UpdateServiceSettingsResponse {
+    @inline
     def apply(
         ): UpdateServiceSettingsResponse = {
       val __obj = js.Dynamic.literal()

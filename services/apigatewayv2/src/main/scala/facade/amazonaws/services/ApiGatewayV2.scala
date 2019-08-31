@@ -265,6 +265,7 @@ package apigatewayv2 {
   }
 
   object AccessLogSettings {
+    @inline
     def apply(
         DestinationArn: js.UndefOr[Arn] = js.undefined,
         Format: js.UndefOr[StringWithLengthBetween1And1024] = js.undefined
@@ -296,6 +297,7 @@ package apigatewayv2 {
   }
 
   object Api {
+    @inline
     def apply(
         Name: StringWithLengthBetween1And128,
         ProtocolType: ProtocolType,
@@ -343,6 +345,7 @@ package apigatewayv2 {
   }
 
   object ApiMapping {
+    @inline
     def apply(
         ApiId: Id,
         Stage: StringWithLengthBetween1And128,
@@ -390,6 +393,7 @@ package apigatewayv2 {
   }
 
   object Authorizer {
+    @inline
     def apply(
         Name: StringWithLengthBetween1And128,
         AuthorizerCredentialsArn: js.UndefOr[Arn] = js.undefined,
@@ -460,6 +464,7 @@ package apigatewayv2 {
   }
 
   object CreateApiMappingRequest {
+    @inline
     def apply(
         ApiId: Id,
         DomainName: __string,
@@ -486,6 +491,7 @@ package apigatewayv2 {
   }
 
   object CreateApiMappingResponse {
+    @inline
     def apply(
         ApiId: js.UndefOr[Id] = js.undefined,
         ApiMappingId: js.UndefOr[Id] = js.undefined,
@@ -514,6 +520,7 @@ package apigatewayv2 {
   }
 
   object CreateApiRequest {
+    @inline
     def apply(
         Name: StringWithLengthBetween1And128,
         ProtocolType: ProtocolType,
@@ -558,6 +565,7 @@ package apigatewayv2 {
   }
 
   object CreateApiResponse {
+    @inline
     def apply(
         ApiEndpoint: js.UndefOr[__string] = js.undefined,
         ApiId: js.UndefOr[Id] = js.undefined,
@@ -605,6 +613,7 @@ package apigatewayv2 {
   }
 
   object CreateAuthorizerRequest {
+    @inline
     def apply(
         ApiId: __string,
         AuthorizerType: AuthorizerType,
@@ -650,6 +659,7 @@ package apigatewayv2 {
   }
 
   object CreateAuthorizerResponse {
+    @inline
     def apply(
         AuthorizerCredentialsArn: js.UndefOr[Arn] = js.undefined,
         AuthorizerId: js.UndefOr[Id] = js.undefined,
@@ -687,6 +697,7 @@ package apigatewayv2 {
   }
 
   object CreateDeploymentRequest {
+    @inline
     def apply(
         ApiId: __string,
         Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
@@ -712,6 +723,7 @@ package apigatewayv2 {
   }
 
   object CreateDeploymentResponse {
+    @inline
     def apply(
         CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
         DeploymentId: js.UndefOr[Id] = js.undefined,
@@ -737,6 +749,7 @@ package apigatewayv2 {
   }
 
   object CreateDomainNameRequest {
+    @inline
     def apply(
         DomainName: StringWithLengthBetween1And512,
         DomainNameConfigurations: js.UndefOr[DomainNameConfigurations] = js.undefined,
@@ -761,6 +774,7 @@ package apigatewayv2 {
   }
 
   object CreateDomainNameResponse {
+    @inline
     def apply(
         ApiMappingSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         DomainName: js.UndefOr[StringWithLengthBetween1And512] = js.undefined,
@@ -797,6 +811,7 @@ package apigatewayv2 {
   }
 
   object CreateIntegrationRequest {
+    @inline
     def apply(
         ApiId: __string,
         IntegrationType: IntegrationType,
@@ -856,6 +871,7 @@ package apigatewayv2 {
   }
 
   object CreateIntegrationResponse {
+    @inline
     def apply(
         ConnectionId: js.UndefOr[StringWithLengthBetween1And1024] = js.undefined,
         ConnectionType: js.UndefOr[ConnectionType] = js.undefined,
@@ -909,6 +925,7 @@ package apigatewayv2 {
   }
 
   object CreateIntegrationResponseRequest {
+    @inline
     def apply(
         ApiId: __string,
         IntegrationId: __string,
@@ -945,6 +962,7 @@ package apigatewayv2 {
   }
 
   object CreateIntegrationResponseResponse {
+    @inline
     def apply(
         ContentHandlingStrategy: js.UndefOr[ContentHandlingStrategy] = js.undefined,
         IntegrationResponseId: js.UndefOr[Id] = js.undefined,
@@ -976,6 +994,7 @@ package apigatewayv2 {
   }
 
   object CreateModelRequest {
+    @inline
     def apply(
         ApiId: __string,
         Name: StringWithLengthBetween1And128,
@@ -1005,6 +1024,7 @@ package apigatewayv2 {
   }
 
   object CreateModelResponse {
+    @inline
     def apply(
         ContentType: js.UndefOr[StringWithLengthBetween1And256] = js.undefined,
         Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
@@ -1039,6 +1059,7 @@ package apigatewayv2 {
   }
 
   object CreateRouteRequest {
+    @inline
     def apply(
         ApiId: __string,
         RouteKey: SelectionKey,
@@ -1091,6 +1112,7 @@ package apigatewayv2 {
   }
 
   object CreateRouteResponse {
+    @inline
     def apply(
         ApiKeyRequired: js.UndefOr[__boolean] = js.undefined,
         AuthorizationScopes: js.UndefOr[AuthorizationScopes] = js.undefined,
@@ -1135,6 +1157,7 @@ package apigatewayv2 {
   }
 
   object CreateRouteResponseRequest {
+    @inline
     def apply(
         ApiId: __string,
         RouteId: __string,
@@ -1166,6 +1189,7 @@ package apigatewayv2 {
   }
 
   object CreateRouteResponseResponse {
+    @inline
     def apply(
         ModelSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         ResponseModels: js.UndefOr[RouteModels] = js.undefined,
@@ -1198,6 +1222,7 @@ package apigatewayv2 {
   }
 
   object CreateStageRequest {
+    @inline
     def apply(
         ApiId: __string,
         StageName: StringWithLengthBetween1And128,
@@ -1243,6 +1268,7 @@ package apigatewayv2 {
   }
 
   object CreateStageResponse {
+    @inline
     def apply(
         AccessLogSettings: js.UndefOr[AccessLogSettings] = js.undefined,
         ClientCertificateId: js.UndefOr[Id] = js.undefined,
@@ -1279,6 +1305,7 @@ package apigatewayv2 {
   }
 
   object DeleteApiMappingRequest {
+    @inline
     def apply(
         ApiMappingId: __string,
         DomainName: __string
@@ -1298,6 +1325,7 @@ package apigatewayv2 {
   }
 
   object DeleteApiRequest {
+    @inline
     def apply(
         ApiId: __string
     ): DeleteApiRequest = {
@@ -1316,6 +1344,7 @@ package apigatewayv2 {
   }
 
   object DeleteAuthorizerRequest {
+    @inline
     def apply(
         ApiId: __string,
         AuthorizerId: __string
@@ -1336,6 +1365,7 @@ package apigatewayv2 {
   }
 
   object DeleteDeploymentRequest {
+    @inline
     def apply(
         ApiId: __string,
         DeploymentId: __string
@@ -1355,6 +1385,7 @@ package apigatewayv2 {
   }
 
   object DeleteDomainNameRequest {
+    @inline
     def apply(
         DomainName: __string
     ): DeleteDomainNameRequest = {
@@ -1373,6 +1404,7 @@ package apigatewayv2 {
   }
 
   object DeleteIntegrationRequest {
+    @inline
     def apply(
         ApiId: __string,
         IntegrationId: __string
@@ -1394,6 +1426,7 @@ package apigatewayv2 {
   }
 
   object DeleteIntegrationResponseRequest {
+    @inline
     def apply(
         ApiId: __string,
         IntegrationId: __string,
@@ -1416,6 +1449,7 @@ package apigatewayv2 {
   }
 
   object DeleteModelRequest {
+    @inline
     def apply(
         ApiId: __string,
         ModelId: __string
@@ -1436,6 +1470,7 @@ package apigatewayv2 {
   }
 
   object DeleteRouteRequest {
+    @inline
     def apply(
         ApiId: __string,
         RouteId: __string
@@ -1457,6 +1492,7 @@ package apigatewayv2 {
   }
 
   object DeleteRouteResponseRequest {
+    @inline
     def apply(
         ApiId: __string,
         RouteId: __string,
@@ -1479,6 +1515,7 @@ package apigatewayv2 {
   }
 
   object DeleteStageRequest {
+    @inline
     def apply(
         ApiId: __string,
         StageName: __string
@@ -1507,6 +1544,7 @@ package apigatewayv2 {
   }
 
   object Deployment {
+    @inline
     def apply(
         CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
         DeploymentId: js.UndefOr[Id] = js.undefined,
@@ -1547,6 +1585,7 @@ package apigatewayv2 {
   }
 
   object DomainName {
+    @inline
     def apply(
         DomainName: StringWithLengthBetween1And512,
         ApiMappingSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
@@ -1583,6 +1622,7 @@ package apigatewayv2 {
   }
 
   object DomainNameConfiguration {
+    @inline
     def apply(
         ApiGatewayDomainName: js.UndefOr[__string] = js.undefined,
         CertificateArn: js.UndefOr[Arn] = js.undefined,
@@ -1635,6 +1675,7 @@ package apigatewayv2 {
   }
 
   object GetApiMappingRequest {
+    @inline
     def apply(
         ApiMappingId: __string,
         DomainName: __string
@@ -1657,6 +1698,7 @@ package apigatewayv2 {
   }
 
   object GetApiMappingResponse {
+    @inline
     def apply(
         ApiId: js.UndefOr[Id] = js.undefined,
         ApiMappingId: js.UndefOr[Id] = js.undefined,
@@ -1680,6 +1722,7 @@ package apigatewayv2 {
   }
 
   object GetApiMappingsRequest {
+    @inline
     def apply(
         DomainName: __string,
         MaxResults: js.UndefOr[__string] = js.undefined,
@@ -1702,6 +1745,7 @@ package apigatewayv2 {
   }
 
   object GetApiMappingsResponse {
+    @inline
     def apply(
         Items: js.UndefOr[__listOfApiMapping] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1719,6 +1763,7 @@ package apigatewayv2 {
   }
 
   object GetApiRequest {
+    @inline
     def apply(
         ApiId: __string
     ): GetApiRequest = {
@@ -1747,6 +1792,7 @@ package apigatewayv2 {
   }
 
   object GetApiResponse {
+    @inline
     def apply(
         ApiEndpoint: js.UndefOr[__string] = js.undefined,
         ApiId: js.UndefOr[Id] = js.undefined,
@@ -1787,6 +1833,7 @@ package apigatewayv2 {
   }
 
   object GetApisRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -1805,6 +1852,7 @@ package apigatewayv2 {
   }
 
   object GetApisResponse {
+    @inline
     def apply(
         Items: js.UndefOr[__listOfApi] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1823,6 +1871,7 @@ package apigatewayv2 {
   }
 
   object GetAuthorizerRequest {
+    @inline
     def apply(
         ApiId: __string,
         AuthorizerId: __string
@@ -1850,6 +1899,7 @@ package apigatewayv2 {
   }
 
   object GetAuthorizerResponse {
+    @inline
     def apply(
         AuthorizerCredentialsArn: js.UndefOr[Arn] = js.undefined,
         AuthorizerId: js.UndefOr[Id] = js.undefined,
@@ -1887,6 +1937,7 @@ package apigatewayv2 {
   }
 
   object GetAuthorizersRequest {
+    @inline
     def apply(
         ApiId: __string,
         MaxResults: js.UndefOr[__string] = js.undefined,
@@ -1909,6 +1960,7 @@ package apigatewayv2 {
   }
 
   object GetAuthorizersResponse {
+    @inline
     def apply(
         Items: js.UndefOr[__listOfAuthorizer] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1927,6 +1979,7 @@ package apigatewayv2 {
   }
 
   object GetDeploymentRequest {
+    @inline
     def apply(
         ApiId: __string,
         DeploymentId: __string
@@ -1950,6 +2003,7 @@ package apigatewayv2 {
   }
 
   object GetDeploymentResponse {
+    @inline
     def apply(
         CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
         DeploymentId: js.UndefOr[Id] = js.undefined,
@@ -1975,6 +2029,7 @@ package apigatewayv2 {
   }
 
   object GetDeploymentsRequest {
+    @inline
     def apply(
         ApiId: __string,
         MaxResults: js.UndefOr[__string] = js.undefined,
@@ -1997,6 +2052,7 @@ package apigatewayv2 {
   }
 
   object GetDeploymentsResponse {
+    @inline
     def apply(
         Items: js.UndefOr[__listOfDeployment] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -2014,6 +2070,7 @@ package apigatewayv2 {
   }
 
   object GetDomainNameRequest {
+    @inline
     def apply(
         DomainName: __string
     ): GetDomainNameRequest = {
@@ -2034,6 +2091,7 @@ package apigatewayv2 {
   }
 
   object GetDomainNameResponse {
+    @inline
     def apply(
         ApiMappingSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         DomainName: js.UndefOr[StringWithLengthBetween1And512] = js.undefined,
@@ -2058,6 +2116,7 @@ package apigatewayv2 {
   }
 
   object GetDomainNamesRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -2076,6 +2135,7 @@ package apigatewayv2 {
   }
 
   object GetDomainNamesResponse {
+    @inline
     def apply(
         Items: js.UndefOr[__listOfDomainName] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -2094,6 +2154,7 @@ package apigatewayv2 {
   }
 
   object GetIntegrationRequest {
+    @inline
     def apply(
         ApiId: __string,
         IntegrationId: __string
@@ -2127,6 +2188,7 @@ package apigatewayv2 {
   }
 
   object GetIntegrationResponse {
+    @inline
     def apply(
         ConnectionId: js.UndefOr[StringWithLengthBetween1And1024] = js.undefined,
         ConnectionType: js.UndefOr[ConnectionType] = js.undefined,
@@ -2176,6 +2238,7 @@ package apigatewayv2 {
   }
 
   object GetIntegrationResponseRequest {
+    @inline
     def apply(
         ApiId: __string,
         IntegrationId: __string,
@@ -2202,6 +2265,7 @@ package apigatewayv2 {
   }
 
   object GetIntegrationResponseResponse {
+    @inline
     def apply(
         ContentHandlingStrategy: js.UndefOr[ContentHandlingStrategy] = js.undefined,
         IntegrationResponseId: js.UndefOr[Id] = js.undefined,
@@ -2232,6 +2296,7 @@ package apigatewayv2 {
   }
 
   object GetIntegrationResponsesRequest {
+    @inline
     def apply(
         ApiId: __string,
         IntegrationId: __string,
@@ -2256,6 +2321,7 @@ package apigatewayv2 {
   }
 
   object GetIntegrationResponsesResponse {
+    @inline
     def apply(
         Items: js.UndefOr[__listOfIntegrationResponse] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -2275,6 +2341,7 @@ package apigatewayv2 {
   }
 
   object GetIntegrationsRequest {
+    @inline
     def apply(
         ApiId: __string,
         MaxResults: js.UndefOr[__string] = js.undefined,
@@ -2297,6 +2364,7 @@ package apigatewayv2 {
   }
 
   object GetIntegrationsResponse {
+    @inline
     def apply(
         Items: js.UndefOr[__listOfIntegration] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -2315,6 +2383,7 @@ package apigatewayv2 {
   }
 
   object GetModelRequest {
+    @inline
     def apply(
         ApiId: __string,
         ModelId: __string
@@ -2338,6 +2407,7 @@ package apigatewayv2 {
   }
 
   object GetModelResponse {
+    @inline
     def apply(
         ContentType: js.UndefOr[StringWithLengthBetween1And256] = js.undefined,
         Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
@@ -2362,6 +2432,7 @@ package apigatewayv2 {
   }
 
   object GetModelTemplateRequest {
+    @inline
     def apply(
         ApiId: __string,
         ModelId: __string
@@ -2381,6 +2452,7 @@ package apigatewayv2 {
   }
 
   object GetModelTemplateResponse {
+    @inline
     def apply(
         Value: js.UndefOr[__string] = js.undefined
     ): GetModelTemplateResponse = {
@@ -2398,6 +2470,7 @@ package apigatewayv2 {
   }
 
   object GetModelsRequest {
+    @inline
     def apply(
         ApiId: __string,
         MaxResults: js.UndefOr[__string] = js.undefined,
@@ -2420,6 +2493,7 @@ package apigatewayv2 {
   }
 
   object GetModelsResponse {
+    @inline
     def apply(
         Items: js.UndefOr[__listOfModel] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -2438,6 +2512,7 @@ package apigatewayv2 {
   }
 
   object GetRouteRequest {
+    @inline
     def apply(
         ApiId: __string,
         RouteId: __string
@@ -2468,6 +2543,7 @@ package apigatewayv2 {
   }
 
   object GetRouteResponse {
+    @inline
     def apply(
         ApiKeyRequired: js.UndefOr[__boolean] = js.undefined,
         AuthorizationScopes: js.UndefOr[AuthorizationScopes] = js.undefined,
@@ -2509,6 +2585,7 @@ package apigatewayv2 {
   }
 
   object GetRouteResponseRequest {
+    @inline
     def apply(
         ApiId: __string,
         RouteId: __string,
@@ -2534,6 +2611,7 @@ package apigatewayv2 {
   }
 
   object GetRouteResponseResponse {
+    @inline
     def apply(
         ModelSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         ResponseModels: js.UndefOr[RouteModels] = js.undefined,
@@ -2560,6 +2638,7 @@ package apigatewayv2 {
   }
 
   object GetRouteResponsesRequest {
+    @inline
     def apply(
         ApiId: __string,
         RouteId: __string,
@@ -2584,6 +2663,7 @@ package apigatewayv2 {
   }
 
   object GetRouteResponsesResponse {
+    @inline
     def apply(
         Items: js.UndefOr[__listOfRouteResponse] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -2603,6 +2683,7 @@ package apigatewayv2 {
   }
 
   object GetRoutesRequest {
+    @inline
     def apply(
         ApiId: __string,
         MaxResults: js.UndefOr[__string] = js.undefined,
@@ -2625,6 +2706,7 @@ package apigatewayv2 {
   }
 
   object GetRoutesResponse {
+    @inline
     def apply(
         Items: js.UndefOr[__listOfRoute] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -2643,6 +2725,7 @@ package apigatewayv2 {
   }
 
   object GetStageRequest {
+    @inline
     def apply(
         ApiId: __string,
         StageName: __string
@@ -2672,6 +2755,7 @@ package apigatewayv2 {
   }
 
   object GetStageResponse {
+    @inline
     def apply(
         AccessLogSettings: js.UndefOr[AccessLogSettings] = js.undefined,
         ClientCertificateId: js.UndefOr[Id] = js.undefined,
@@ -2709,6 +2793,7 @@ package apigatewayv2 {
   }
 
   object GetStagesRequest {
+    @inline
     def apply(
         ApiId: __string,
         MaxResults: js.UndefOr[__string] = js.undefined,
@@ -2731,6 +2816,7 @@ package apigatewayv2 {
   }
 
   object GetStagesResponse {
+    @inline
     def apply(
         Items: js.UndefOr[__listOfStage] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -2748,6 +2834,7 @@ package apigatewayv2 {
   }
 
   object GetTagsRequest {
+    @inline
     def apply(
         ResourceArn: __string
     ): GetTagsRequest = {
@@ -2765,6 +2852,7 @@ package apigatewayv2 {
   }
 
   object GetTagsResponse {
+    @inline
     def apply(
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): GetTagsResponse = {
@@ -2797,6 +2885,7 @@ package apigatewayv2 {
   }
 
   object Integration {
+    @inline
     def apply(
         ConnectionId: js.UndefOr[StringWithLengthBetween1And1024] = js.undefined,
         ConnectionType: js.UndefOr[ConnectionType] = js.undefined,
@@ -2852,6 +2941,7 @@ package apigatewayv2 {
   }
 
   object IntegrationResponse {
+    @inline
     def apply(
         IntegrationResponseKey: SelectionKey,
         ContentHandlingStrategy: js.UndefOr[ContentHandlingStrategy] = js.undefined,
@@ -2913,6 +3003,7 @@ package apigatewayv2 {
   }
 
   object Model {
+    @inline
     def apply(
         Name: StringWithLengthBetween1And128,
         ContentType: js.UndefOr[StringWithLengthBetween1And256] = js.undefined,
@@ -2942,6 +3033,7 @@ package apigatewayv2 {
   }
 
   object ParameterConstraints {
+    @inline
     def apply(
         Required: js.UndefOr[__boolean] = js.undefined
     ): ParameterConstraints = {
@@ -2991,6 +3083,7 @@ package apigatewayv2 {
   }
 
   object Route {
+    @inline
     def apply(
         RouteKey: SelectionKey,
         ApiKeyRequired: js.UndefOr[__boolean] = js.undefined,
@@ -3039,6 +3132,7 @@ package apigatewayv2 {
   }
 
   object RouteResponse {
+    @inline
     def apply(
         RouteResponseKey: SelectionKey,
         ModelSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
@@ -3071,6 +3165,7 @@ package apigatewayv2 {
   }
 
   object RouteSettings {
+    @inline
     def apply(
         DataTraceEnabled: js.UndefOr[__boolean] = js.undefined,
         DetailedMetricsEnabled: js.UndefOr[__boolean] = js.undefined,
@@ -3117,6 +3212,7 @@ package apigatewayv2 {
   }
 
   object Stage {
+    @inline
     def apply(
         StageName: StringWithLengthBetween1And128,
         AccessLogSettings: js.UndefOr[AccessLogSettings] = js.undefined,
@@ -3155,6 +3251,7 @@ package apigatewayv2 {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceArn: __string,
         Tags: js.UndefOr[Tags] = js.undefined
@@ -3172,6 +3269,7 @@ package apigatewayv2 {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -3187,6 +3285,7 @@ package apigatewayv2 {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceArn: __string,
         TagKeys: __listOf__string
@@ -3210,6 +3309,7 @@ package apigatewayv2 {
   }
 
   object UpdateApiMappingRequest {
+    @inline
     def apply(
         ApiId: Id,
         ApiMappingId: __string,
@@ -3238,6 +3338,7 @@ package apigatewayv2 {
   }
 
   object UpdateApiMappingResponse {
+    @inline
     def apply(
         ApiId: js.UndefOr[Id] = js.undefined,
         ApiMappingId: js.UndefOr[Id] = js.undefined,
@@ -3265,6 +3366,7 @@ package apigatewayv2 {
   }
 
   object UpdateApiRequest {
+    @inline
     def apply(
         ApiId: __string,
         ApiKeySelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
@@ -3307,6 +3409,7 @@ package apigatewayv2 {
   }
 
   object UpdateApiResponse {
+    @inline
     def apply(
         ApiEndpoint: js.UndefOr[__string] = js.undefined,
         ApiId: js.UndefOr[Id] = js.undefined,
@@ -3355,6 +3458,7 @@ package apigatewayv2 {
   }
 
   object UpdateAuthorizerRequest {
+    @inline
     def apply(
         ApiId: __string,
         AuthorizerId: __string,
@@ -3402,6 +3506,7 @@ package apigatewayv2 {
   }
 
   object UpdateAuthorizerResponse {
+    @inline
     def apply(
         AuthorizerCredentialsArn: js.UndefOr[Arn] = js.undefined,
         AuthorizerId: js.UndefOr[Id] = js.undefined,
@@ -3439,6 +3544,7 @@ package apigatewayv2 {
   }
 
   object UpdateDeploymentRequest {
+    @inline
     def apply(
         ApiId: __string,
         DeploymentId: __string,
@@ -3464,6 +3570,7 @@ package apigatewayv2 {
   }
 
   object UpdateDeploymentResponse {
+    @inline
     def apply(
         CreatedDate: js.UndefOr[__timestampIso8601] = js.undefined,
         DeploymentId: js.UndefOr[Id] = js.undefined,
@@ -3488,6 +3595,7 @@ package apigatewayv2 {
   }
 
   object UpdateDomainNameRequest {
+    @inline
     def apply(
         DomainName: __string,
         DomainNameConfigurations: js.UndefOr[DomainNameConfigurations] = js.undefined
@@ -3510,6 +3618,7 @@ package apigatewayv2 {
   }
 
   object UpdateDomainNameResponse {
+    @inline
     def apply(
         ApiMappingSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         DomainName: js.UndefOr[StringWithLengthBetween1And512] = js.undefined,
@@ -3547,6 +3656,7 @@ package apigatewayv2 {
   }
 
   object UpdateIntegrationRequest {
+    @inline
     def apply(
         ApiId: __string,
         IntegrationId: __string,
@@ -3608,6 +3718,7 @@ package apigatewayv2 {
   }
 
   object UpdateIntegrationResponse {
+    @inline
     def apply(
         ConnectionId: js.UndefOr[StringWithLengthBetween1And1024] = js.undefined,
         ConnectionType: js.UndefOr[ConnectionType] = js.undefined,
@@ -3662,6 +3773,7 @@ package apigatewayv2 {
   }
 
   object UpdateIntegrationResponseRequest {
+    @inline
     def apply(
         ApiId: __string,
         IntegrationId: __string,
@@ -3700,6 +3812,7 @@ package apigatewayv2 {
   }
 
   object UpdateIntegrationResponseResponse {
+    @inline
     def apply(
         ContentHandlingStrategy: js.UndefOr[ContentHandlingStrategy] = js.undefined,
         IntegrationResponseId: js.UndefOr[Id] = js.undefined,
@@ -3732,6 +3845,7 @@ package apigatewayv2 {
   }
 
   object UpdateModelRequest {
+    @inline
     def apply(
         ApiId: __string,
         ModelId: __string,
@@ -3763,6 +3877,7 @@ package apigatewayv2 {
   }
 
   object UpdateModelResponse {
+    @inline
     def apply(
         ContentType: js.UndefOr[StringWithLengthBetween1And256] = js.undefined,
         Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
@@ -3798,6 +3913,7 @@ package apigatewayv2 {
   }
 
   object UpdateRouteRequest {
+    @inline
     def apply(
         ApiId: __string,
         RouteId: __string,
@@ -3852,6 +3968,7 @@ package apigatewayv2 {
   }
 
   object UpdateRouteResponse {
+    @inline
     def apply(
         ApiKeyRequired: js.UndefOr[__boolean] = js.undefined,
         AuthorizationScopes: js.UndefOr[AuthorizationScopes] = js.undefined,
@@ -3897,6 +4014,7 @@ package apigatewayv2 {
   }
 
   object UpdateRouteResponseRequest {
+    @inline
     def apply(
         ApiId: __string,
         RouteId: __string,
@@ -3930,6 +4048,7 @@ package apigatewayv2 {
   }
 
   object UpdateRouteResponseResponse {
+    @inline
     def apply(
         ModelSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         ResponseModels: js.UndefOr[RouteModels] = js.undefined,
@@ -3961,6 +4080,7 @@ package apigatewayv2 {
   }
 
   object UpdateStageRequest {
+    @inline
     def apply(
         ApiId: __string,
         StageName: __string,
@@ -4004,6 +4124,7 @@ package apigatewayv2 {
   }
 
   object UpdateStageResponse {
+    @inline
     def apply(
         AccessLogSettings: js.UndefOr[AccessLogSettings] = js.undefined,
         ClientCertificateId: js.UndefOr[Id] = js.undefined,

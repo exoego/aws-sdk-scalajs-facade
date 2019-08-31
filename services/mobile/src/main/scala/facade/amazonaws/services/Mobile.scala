@@ -110,6 +110,7 @@ package mobile {
   }
 
   object BundleDetails {
+    @inline
     def apply(
         availablePlatforms: js.UndefOr[Platforms] = js.undefined,
         bundleId: js.UndefOr[BundleId] = js.undefined,
@@ -141,6 +142,7 @@ package mobile {
   }
 
   object CreateProjectRequest {
+    @inline
     def apply(
         contents: js.UndefOr[Contents] = js.undefined,
         name: js.UndefOr[ProjectName] = js.undefined,
@@ -165,6 +167,7 @@ package mobile {
   }
 
   object CreateProjectResult {
+    @inline
     def apply(
         details: js.UndefOr[ProjectDetails] = js.undefined
     ): CreateProjectResult = {
@@ -183,6 +186,7 @@ package mobile {
   }
 
   object DeleteProjectRequest {
+    @inline
     def apply(
         projectId: ProjectId
     ): DeleteProjectRequest = {
@@ -204,6 +208,7 @@ package mobile {
   }
 
   object DeleteProjectResult {
+    @inline
     def apply(
         deletedResources: js.UndefOr[Resources] = js.undefined,
         orphanedResources: js.UndefOr[Resources] = js.undefined
@@ -224,6 +229,7 @@ package mobile {
   }
 
   object DescribeBundleRequest {
+    @inline
     def apply(
         bundleId: BundleId
     ): DescribeBundleRequest = {
@@ -244,6 +250,7 @@ package mobile {
   }
 
   object DescribeBundleResult {
+    @inline
     def apply(
         details: js.UndefOr[BundleDetails] = js.undefined
     ): DescribeBundleResult = {
@@ -263,6 +270,7 @@ package mobile {
   }
 
   object DescribeProjectRequest {
+    @inline
     def apply(
         projectId: ProjectId,
         syncFromResources: js.UndefOr[Boolean] = js.undefined
@@ -285,6 +293,7 @@ package mobile {
   }
 
   object DescribeProjectResult {
+    @inline
     def apply(
         details: js.UndefOr[ProjectDetails] = js.undefined
     ): DescribeProjectResult = {
@@ -305,6 +314,7 @@ package mobile {
   }
 
   object ExportBundleRequest {
+    @inline
     def apply(
         bundleId: BundleId,
         platform: js.UndefOr[Platform] = js.undefined,
@@ -329,6 +339,7 @@ package mobile {
   }
 
   object ExportBundleResult {
+    @inline
     def apply(
         downloadUrl: js.UndefOr[DownloadUrl] = js.undefined
     ): ExportBundleResult = {
@@ -347,6 +358,7 @@ package mobile {
   }
 
   object ExportProjectRequest {
+    @inline
     def apply(
         projectId: ProjectId
     ): ExportProjectRequest = {
@@ -369,6 +381,7 @@ package mobile {
   }
 
   object ExportProjectResult {
+    @inline
     def apply(
         downloadUrl: js.UndefOr[DownloadUrl] = js.undefined,
         shareUrl: js.UndefOr[ShareUrl] = js.undefined,
@@ -409,6 +422,7 @@ package mobile {
   }
 
   object ListBundlesRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -430,6 +444,7 @@ package mobile {
   }
 
   object ListBundlesResult {
+    @inline
     def apply(
         bundleList: js.UndefOr[BundleList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -451,6 +466,7 @@ package mobile {
   }
 
   object ListProjectsRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -472,6 +488,7 @@ package mobile {
   }
 
   object ListProjectsResult {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         projects: js.UndefOr[ProjectSummaries] = js.undefined
@@ -522,6 +539,7 @@ package mobile {
   }
 
   object ProjectDetails {
+    @inline
     def apply(
         consoleUrl: js.UndefOr[ConsoleUrl] = js.undefined,
         createdDate: js.UndefOr[Date] = js.undefined,
@@ -566,6 +584,7 @@ package mobile {
   }
 
   object ProjectSummary {
+    @inline
     def apply(
         name: js.UndefOr[ProjectName] = js.undefined,
         projectId: js.UndefOr[ProjectId] = js.undefined
@@ -590,6 +609,7 @@ package mobile {
   }
 
   object Resource {
+    @inline
     def apply(
         arn: js.UndefOr[ResourceArn] = js.undefined,
         attributes: js.UndefOr[Attributes] = js.undefined,
@@ -643,6 +663,7 @@ package mobile {
   }
 
   object UpdateProjectRequest {
+    @inline
     def apply(
         projectId: ProjectId,
         contents: js.UndefOr[Contents] = js.undefined
@@ -665,6 +686,7 @@ package mobile {
   }
 
   object UpdateProjectResult {
+    @inline
     def apply(
         details: js.UndefOr[ProjectDetails] = js.undefined
     ): UpdateProjectResult = {

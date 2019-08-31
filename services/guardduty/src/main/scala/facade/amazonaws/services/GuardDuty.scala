@@ -224,6 +224,7 @@ package guardduty {
   }
 
   object AcceptInvitationRequest {
+    @inline
     def apply(
         DetectorId: DetectorId,
         InvitationId: String,
@@ -243,6 +244,7 @@ package guardduty {
   trait AcceptInvitationResponse extends js.Object {}
 
   object AcceptInvitationResponse {
+    @inline
     def apply(
         ): AcceptInvitationResponse = {
       val __obj = js.Dynamic.literal()
@@ -263,6 +265,7 @@ package guardduty {
   }
 
   object AccessKeyDetails {
+    @inline
     def apply(
         AccessKeyId: js.UndefOr[String] = js.undefined,
         PrincipalId: js.UndefOr[String] = js.undefined,
@@ -288,6 +291,7 @@ package guardduty {
   }
 
   object AccountDetail {
+    @inline
     def apply(
         AccountId: AccountId,
         Email: Email
@@ -314,6 +318,7 @@ package guardduty {
   }
 
   object Action {
+    @inline
     def apply(
         ActionType: js.UndefOr[String] = js.undefined,
         AwsApiCallAction: js.UndefOr[AwsApiCallAction] = js.undefined,
@@ -338,6 +343,7 @@ package guardduty {
   }
 
   object ArchiveFindingsRequest {
+    @inline
     def apply(
         DetectorId: DetectorId,
         FindingIds: FindingIds
@@ -355,6 +361,7 @@ package guardduty {
   trait ArchiveFindingsResponse extends js.Object {}
 
   object ArchiveFindingsResponse {
+    @inline
     def apply(
         ): ArchiveFindingsResponse = {
       val __obj = js.Dynamic.literal()
@@ -376,6 +383,7 @@ package guardduty {
   }
 
   object AwsApiCallAction {
+    @inline
     def apply(
         Api: js.UndefOr[String] = js.undefined,
         CallerType: js.UndefOr[String] = js.undefined,
@@ -402,6 +410,7 @@ package guardduty {
   }
 
   object City {
+    @inline
     def apply(
         CityName: js.UndefOr[String] = js.undefined
     ): City = {
@@ -431,6 +440,7 @@ package guardduty {
   }
 
   object Condition {
+    @inline
     def apply(
         Eq: js.UndefOr[Eq] = js.undefined,
         Equals: js.UndefOr[Equals] = js.undefined,
@@ -472,6 +482,7 @@ package guardduty {
   }
 
   object Country {
+    @inline
     def apply(
         CountryCode: js.UndefOr[String] = js.undefined,
         CountryName: js.UndefOr[String] = js.undefined
@@ -492,6 +503,7 @@ package guardduty {
   }
 
   object CreateDetectorRequest {
+    @inline
     def apply(
         Enable: Boolean,
         ClientToken: js.UndefOr[ClientToken] = js.undefined,
@@ -517,6 +529,7 @@ package guardduty {
   }
 
   object CreateDetectorResponse {
+    @inline
     def apply(
         DetectorId: js.UndefOr[DetectorId] = js.undefined
     ): CreateDetectorResponse = {
@@ -539,6 +552,7 @@ package guardduty {
   }
 
   object CreateFilterRequest {
+    @inline
     def apply(
         DetectorId: DetectorId,
         FindingCriteria: FindingCriteria,
@@ -570,6 +584,7 @@ package guardduty {
   }
 
   object CreateFilterResponse {
+    @inline
     def apply(
         Name: FilterName
     ): CreateFilterResponse = {
@@ -593,6 +608,7 @@ package guardduty {
   }
 
   object CreateIPSetRequest {
+    @inline
     def apply(
         Activate: Boolean,
         DetectorId: DetectorId,
@@ -622,6 +638,7 @@ package guardduty {
   }
 
   object CreateIPSetResponse {
+    @inline
     def apply(
         IpSetId: String
     ): CreateIPSetResponse = {
@@ -640,6 +657,7 @@ package guardduty {
   }
 
   object CreateMembersRequest {
+    @inline
     def apply(
         AccountDetails: AccountDetails,
         DetectorId: DetectorId
@@ -659,6 +677,7 @@ package guardduty {
   }
 
   object CreateMembersResponse {
+    @inline
     def apply(
         UnprocessedAccounts: UnprocessedAccounts
     ): CreateMembersResponse = {
@@ -677,6 +696,7 @@ package guardduty {
   }
 
   object CreateSampleFindingsRequest {
+    @inline
     def apply(
         DetectorId: DetectorId,
         FindingTypes: js.UndefOr[FindingTypes] = js.undefined
@@ -694,6 +714,7 @@ package guardduty {
   trait CreateSampleFindingsResponse extends js.Object {}
 
   object CreateSampleFindingsResponse {
+    @inline
     def apply(
         ): CreateSampleFindingsResponse = {
       val __obj = js.Dynamic.literal()
@@ -714,6 +735,7 @@ package guardduty {
   }
 
   object CreateThreatIntelSetRequest {
+    @inline
     def apply(
         Activate: Boolean,
         DetectorId: DetectorId,
@@ -743,6 +765,7 @@ package guardduty {
   }
 
   object CreateThreatIntelSetResponse {
+    @inline
     def apply(
         ThreatIntelSetId: String
     ): CreateThreatIntelSetResponse = {
@@ -760,6 +783,7 @@ package guardduty {
   }
 
   object DeclineInvitationsRequest {
+    @inline
     def apply(
         AccountIds: AccountIds
     ): DeclineInvitationsRequest = {
@@ -777,6 +801,7 @@ package guardduty {
   }
 
   object DeclineInvitationsResponse {
+    @inline
     def apply(
         UnprocessedAccounts: UnprocessedAccounts
     ): DeclineInvitationsResponse = {
@@ -794,6 +819,7 @@ package guardduty {
   }
 
   object DeleteDetectorRequest {
+    @inline
     def apply(
         DetectorId: DetectorId
     ): DeleteDetectorRequest = {
@@ -809,6 +835,7 @@ package guardduty {
   trait DeleteDetectorResponse extends js.Object {}
 
   object DeleteDetectorResponse {
+    @inline
     def apply(
         ): DeleteDetectorResponse = {
       val __obj = js.Dynamic.literal()
@@ -824,6 +851,7 @@ package guardduty {
   }
 
   object DeleteFilterRequest {
+    @inline
     def apply(
         DetectorId: DetectorId,
         FilterName: String
@@ -841,6 +869,7 @@ package guardduty {
   trait DeleteFilterResponse extends js.Object {}
 
   object DeleteFilterResponse {
+    @inline
     def apply(
         ): DeleteFilterResponse = {
       val __obj = js.Dynamic.literal()
@@ -856,6 +885,7 @@ package guardduty {
   }
 
   object DeleteIPSetRequest {
+    @inline
     def apply(
         DetectorId: DetectorId,
         IpSetId: String
@@ -873,6 +903,7 @@ package guardduty {
   trait DeleteIPSetResponse extends js.Object {}
 
   object DeleteIPSetResponse {
+    @inline
     def apply(
         ): DeleteIPSetResponse = {
       val __obj = js.Dynamic.literal()
@@ -887,6 +918,7 @@ package guardduty {
   }
 
   object DeleteInvitationsRequest {
+    @inline
     def apply(
         AccountIds: AccountIds
     ): DeleteInvitationsRequest = {
@@ -904,6 +936,7 @@ package guardduty {
   }
 
   object DeleteInvitationsResponse {
+    @inline
     def apply(
         UnprocessedAccounts: UnprocessedAccounts
     ): DeleteInvitationsResponse = {
@@ -922,6 +955,7 @@ package guardduty {
   }
 
   object DeleteMembersRequest {
+    @inline
     def apply(
         AccountIds: AccountIds,
         DetectorId: DetectorId
@@ -941,6 +975,7 @@ package guardduty {
   }
 
   object DeleteMembersResponse {
+    @inline
     def apply(
         UnprocessedAccounts: UnprocessedAccounts
     ): DeleteMembersResponse = {
@@ -959,6 +994,7 @@ package guardduty {
   }
 
   object DeleteThreatIntelSetRequest {
+    @inline
     def apply(
         DetectorId: DetectorId,
         ThreatIntelSetId: String
@@ -976,6 +1012,7 @@ package guardduty {
   trait DeleteThreatIntelSetResponse extends js.Object {}
 
   object DeleteThreatIntelSetResponse {
+    @inline
     def apply(
         ): DeleteThreatIntelSetResponse = {
       val __obj = js.Dynamic.literal()
@@ -997,6 +1034,7 @@ package guardduty {
   }
 
   object DisassociateFromMasterAccountRequest {
+    @inline
     def apply(
         DetectorId: DetectorId
     ): DisassociateFromMasterAccountRequest = {
@@ -1012,6 +1050,7 @@ package guardduty {
   trait DisassociateFromMasterAccountResponse extends js.Object {}
 
   object DisassociateFromMasterAccountResponse {
+    @inline
     def apply(
         ): DisassociateFromMasterAccountResponse = {
       val __obj = js.Dynamic.literal()
@@ -1027,6 +1066,7 @@ package guardduty {
   }
 
   object DisassociateMembersRequest {
+    @inline
     def apply(
         AccountIds: AccountIds,
         DetectorId: DetectorId
@@ -1046,6 +1086,7 @@ package guardduty {
   }
 
   object DisassociateMembersResponse {
+    @inline
     def apply(
         UnprocessedAccounts: UnprocessedAccounts
     ): DisassociateMembersResponse = {
@@ -1066,6 +1107,7 @@ package guardduty {
   }
 
   object DnsRequestAction {
+    @inline
     def apply(
         Domain: js.UndefOr[String] = js.undefined
     ): DnsRequestAction = {
@@ -1084,6 +1126,7 @@ package guardduty {
   }
 
   object DomainDetails {
+    @inline
     def apply(
         Domain: js.UndefOr[String] = js.undefined
     ): DomainDetails = {
@@ -1102,6 +1145,7 @@ package guardduty {
   }
 
   object Evidence {
+    @inline
     def apply(
         ThreatIntelligenceDetails: js.UndefOr[ThreatIntelligenceDetails] = js.undefined
     ): Evidence = {
@@ -1150,6 +1194,7 @@ package guardduty {
   }
 
   object Finding {
+    @inline
     def apply(
         AccountId: String,
         Arn: String,
@@ -1198,6 +1243,7 @@ package guardduty {
   }
 
   object FindingCriteria {
+    @inline
     def apply(
         Criterion: js.UndefOr[Criterion] = js.undefined
     ): FindingCriteria = {
@@ -1230,6 +1276,7 @@ package guardduty {
   }
 
   object FindingStatistics {
+    @inline
     def apply(
         CountBySeverity: js.UndefOr[CountBySeverity] = js.undefined
     ): FindingStatistics = {
@@ -1249,6 +1296,7 @@ package guardduty {
   }
 
   object GeoLocation {
+    @inline
     def apply(
         Lat: js.UndefOr[Double] = js.undefined,
         Lon: js.UndefOr[Double] = js.undefined
@@ -1266,6 +1314,7 @@ package guardduty {
   }
 
   object GetDetectorRequest {
+    @inline
     def apply(
         DetectorId: DetectorId
     ): GetDetectorRequest = {
@@ -1288,6 +1337,7 @@ package guardduty {
   }
 
   object GetDetectorResponse {
+    @inline
     def apply(
         ServiceRole: String,
         Status: DetectorStatus,
@@ -1318,6 +1368,7 @@ package guardduty {
   }
 
   object GetFilterRequest {
+    @inline
     def apply(
         DetectorId: DetectorId,
         FilterName: String
@@ -1342,6 +1393,7 @@ package guardduty {
   }
 
   object GetFilterResponse {
+    @inline
     def apply(
         Action: FilterAction,
         FindingCriteria: FindingCriteria,
@@ -1371,6 +1423,7 @@ package guardduty {
   }
 
   object GetFindingsRequest {
+    @inline
     def apply(
         DetectorId: DetectorId,
         FindingIds: FindingIds,
@@ -1392,6 +1445,7 @@ package guardduty {
   }
 
   object GetFindingsResponse {
+    @inline
     def apply(
         Findings: Findings
     ): GetFindingsResponse = {
@@ -1411,6 +1465,7 @@ package guardduty {
   }
 
   object GetFindingsStatisticsRequest {
+    @inline
     def apply(
         DetectorId: DetectorId,
         FindingStatisticTypes: FindingStatisticTypes,
@@ -1432,6 +1487,7 @@ package guardduty {
   }
 
   object GetFindingsStatisticsResponse {
+    @inline
     def apply(
         FindingStatistics: FindingStatistics
     ): GetFindingsStatisticsResponse = {
@@ -1450,6 +1506,7 @@ package guardduty {
   }
 
   object GetIPSetRequest {
+    @inline
     def apply(
         DetectorId: DetectorId,
         IpSetId: String
@@ -1473,6 +1530,7 @@ package guardduty {
   }
 
   object GetIPSetResponse {
+    @inline
     def apply(
         Format: IpSetFormat,
         Location: Location,
@@ -1496,6 +1554,7 @@ package guardduty {
   trait GetInvitationsCountRequest extends js.Object {}
 
   object GetInvitationsCountRequest {
+    @inline
     def apply(
         ): GetInvitationsCountRequest = {
       val __obj = js.Dynamic.literal()
@@ -1510,6 +1569,7 @@ package guardduty {
   }
 
   object GetInvitationsCountResponse {
+    @inline
     def apply(
         InvitationsCount: js.UndefOr[Int] = js.undefined
     ): GetInvitationsCountResponse = {
@@ -1525,6 +1585,7 @@ package guardduty {
   }
 
   object GetMasterAccountRequest {
+    @inline
     def apply(
         DetectorId: DetectorId
     ): GetMasterAccountRequest = {
@@ -1542,6 +1603,7 @@ package guardduty {
   }
 
   object GetMasterAccountResponse {
+    @inline
     def apply(
         Master: Master
     ): GetMasterAccountResponse = {
@@ -1560,6 +1622,7 @@ package guardduty {
   }
 
   object GetMembersRequest {
+    @inline
     def apply(
         AccountIds: AccountIds,
         DetectorId: DetectorId
@@ -1580,6 +1643,7 @@ package guardduty {
   }
 
   object GetMembersResponse {
+    @inline
     def apply(
         Members: Members,
         UnprocessedAccounts: UnprocessedAccounts
@@ -1600,6 +1664,7 @@ package guardduty {
   }
 
   object GetThreatIntelSetRequest {
+    @inline
     def apply(
         DetectorId: DetectorId,
         ThreatIntelSetId: String
@@ -1623,6 +1688,7 @@ package guardduty {
   }
 
   object GetThreatIntelSetResponse {
+    @inline
     def apply(
         Format: ThreatIntelSetFormat,
         Location: Location,
@@ -1652,6 +1718,7 @@ package guardduty {
   }
 
   object IamInstanceProfile {
+    @inline
     def apply(
         Arn: js.UndefOr[String] = js.undefined,
         Id: js.UndefOr[String] = js.undefined
@@ -1683,6 +1750,7 @@ package guardduty {
   }
 
   object InstanceDetails {
+    @inline
     def apply(
         AvailabilityZone: js.UndefOr[String] = js.undefined,
         IamInstanceProfile: js.UndefOr[IamInstanceProfile] = js.undefined,
@@ -1726,6 +1794,7 @@ package guardduty {
   }
 
   object Invitation {
+    @inline
     def apply(
         AccountId: js.UndefOr[AccountId] = js.undefined,
         InvitationId: js.UndefOr[String] = js.undefined,
@@ -1750,6 +1819,7 @@ package guardduty {
   }
 
   object InviteMembersRequest {
+    @inline
     def apply(
         AccountIds: AccountIds,
         DetectorId: DetectorId,
@@ -1773,6 +1843,7 @@ package guardduty {
   }
 
   object InviteMembersResponse {
+    @inline
     def apply(
         UnprocessedAccounts: UnprocessedAccounts
     ): InviteMembersResponse = {
@@ -1814,6 +1885,7 @@ package guardduty {
   }
 
   object ListDetectorsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1832,6 +1904,7 @@ package guardduty {
   }
 
   object ListDetectorsResponse {
+    @inline
     def apply(
         DetectorIds: DetectorIds,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1853,6 +1926,7 @@ package guardduty {
   }
 
   object ListFiltersRequest {
+    @inline
     def apply(
         DetectorId: DetectorId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1875,6 +1949,7 @@ package guardduty {
   }
 
   object ListFiltersResponse {
+    @inline
     def apply(
         FilterNames: FilterNames,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1898,6 +1973,7 @@ package guardduty {
   }
 
   object ListFindingsRequest {
+    @inline
     def apply(
         DetectorId: DetectorId,
         FindingCriteria: js.UndefOr[FindingCriteria] = js.undefined,
@@ -1924,6 +2000,7 @@ package guardduty {
   }
 
   object ListFindingsResponse {
+    @inline
     def apply(
         FindingIds: FindingIds,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1945,6 +2022,7 @@ package guardduty {
   }
 
   object ListIPSetsRequest {
+    @inline
     def apply(
         DetectorId: DetectorId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1967,6 +2045,7 @@ package guardduty {
   }
 
   object ListIPSetsResponse {
+    @inline
     def apply(
         IpSetIds: IpSetIds,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1987,6 +2066,7 @@ package guardduty {
   }
 
   object ListInvitationsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -2005,6 +2085,7 @@ package guardduty {
   }
 
   object ListInvitationsResponse {
+    @inline
     def apply(
         Invitations: js.UndefOr[Invitations] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -2025,6 +2106,7 @@ package guardduty {
   }
 
   object ListMembersRequest {
+    @inline
     def apply(
         DetectorId: DetectorId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -2049,6 +2131,7 @@ package guardduty {
   }
 
   object ListMembersResponse {
+    @inline
     def apply(
         Members: js.UndefOr[Members] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -2066,6 +2149,7 @@ package guardduty {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceArn: GuardDutyArn
     ): ListTagsForResourceRequest = {
@@ -2083,6 +2167,7 @@ package guardduty {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         Tags: js.UndefOr[TagMap] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -2100,6 +2185,7 @@ package guardduty {
   }
 
   object ListThreatIntelSetsRequest {
+    @inline
     def apply(
         DetectorId: DetectorId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -2122,6 +2208,7 @@ package guardduty {
   }
 
   object ListThreatIntelSetsResponse {
+    @inline
     def apply(
         ThreatIntelSetIds: ThreatIntelSetIds,
         NextToken: js.UndefOr[String] = js.undefined
@@ -2145,6 +2232,7 @@ package guardduty {
   }
 
   object LocalPortDetails {
+    @inline
     def apply(
         Port: js.UndefOr[Int] = js.undefined,
         PortName: js.UndefOr[String] = js.undefined
@@ -2168,6 +2256,7 @@ package guardduty {
   }
 
   object Master {
+    @inline
     def apply(
         AccountId: js.UndefOr[AccountId] = js.undefined,
         InvitationId: js.UndefOr[String] = js.undefined,
@@ -2198,6 +2287,7 @@ package guardduty {
   }
 
   object Member {
+    @inline
     def apply(
         AccountId: AccountId,
         Email: Email,
@@ -2235,6 +2325,7 @@ package guardduty {
   }
 
   object NetworkConnectionAction {
+    @inline
     def apply(
         Blocked: js.UndefOr[Boolean] = js.undefined,
         ConnectionDirection: js.UndefOr[String] = js.undefined,
@@ -2272,6 +2363,7 @@ package guardduty {
   }
 
   object NetworkInterface {
+    @inline
     def apply(
         Ipv6Addresses: js.UndefOr[Ipv6Addresses] = js.undefined,
         NetworkInterfaceId: js.UndefOr[String] = js.undefined,
@@ -2318,6 +2410,7 @@ package guardduty {
   }
 
   object Organization {
+    @inline
     def apply(
         Asn: js.UndefOr[String] = js.undefined,
         AsnOrg: js.UndefOr[String] = js.undefined,
@@ -2343,6 +2436,7 @@ package guardduty {
   }
 
   object PortProbeAction {
+    @inline
     def apply(
         Blocked: js.UndefOr[Boolean] = js.undefined,
         PortProbeDetails: js.UndefOr[PortProbeDetails] = js.undefined
@@ -2364,6 +2458,7 @@ package guardduty {
   }
 
   object PortProbeDetail {
+    @inline
     def apply(
         LocalPortDetails: js.UndefOr[LocalPortDetails] = js.undefined,
         RemoteIpDetails: js.UndefOr[RemoteIpDetails] = js.undefined
@@ -2385,6 +2480,7 @@ package guardduty {
   }
 
   object PrivateIpAddressDetails {
+    @inline
     def apply(
         PrivateDnsName: js.UndefOr[String] = js.undefined,
         PrivateIpAddress: js.UndefOr[String] = js.undefined
@@ -2406,6 +2502,7 @@ package guardduty {
   }
 
   object ProductCode {
+    @inline
     def apply(
         Code: js.UndefOr[String] = js.undefined,
         ProductType: js.UndefOr[String] = js.undefined
@@ -2430,6 +2527,7 @@ package guardduty {
   }
 
   object RemoteIpDetails {
+    @inline
     def apply(
         City: js.UndefOr[City] = js.undefined,
         Country: js.UndefOr[Country] = js.undefined,
@@ -2457,6 +2555,7 @@ package guardduty {
   }
 
   object RemotePortDetails {
+    @inline
     def apply(
         Port: js.UndefOr[Int] = js.undefined,
         PortName: js.UndefOr[String] = js.undefined
@@ -2479,6 +2578,7 @@ package guardduty {
   }
 
   object Resource {
+    @inline
     def apply(
         AccessKeyDetails: js.UndefOr[AccessKeyDetails] = js.undefined,
         InstanceDetails: js.UndefOr[InstanceDetails] = js.undefined,
@@ -2502,6 +2602,7 @@ package guardduty {
   }
 
   object SecurityGroup {
+    @inline
     def apply(
         GroupId: js.UndefOr[String] = js.undefined,
         GroupName: js.UndefOr[String] = js.undefined
@@ -2531,6 +2632,7 @@ package guardduty {
   }
 
   object Service {
+    @inline
     def apply(
         Action: js.UndefOr[Action] = js.undefined,
         Archived: js.UndefOr[Boolean] = js.undefined,
@@ -2568,6 +2670,7 @@ package guardduty {
   }
 
   object SortCriteria {
+    @inline
     def apply(
         AttributeName: js.UndefOr[String] = js.undefined,
         OrderBy: js.UndefOr[OrderBy] = js.undefined
@@ -2586,6 +2689,7 @@ package guardduty {
   }
 
   object StartMonitoringMembersRequest {
+    @inline
     def apply(
         AccountIds: AccountIds,
         DetectorId: DetectorId
@@ -2605,6 +2709,7 @@ package guardduty {
   }
 
   object StartMonitoringMembersResponse {
+    @inline
     def apply(
         UnprocessedAccounts: UnprocessedAccounts
     ): StartMonitoringMembersResponse = {
@@ -2623,6 +2728,7 @@ package guardduty {
   }
 
   object StopMonitoringMembersRequest {
+    @inline
     def apply(
         AccountIds: AccountIds,
         DetectorId: DetectorId
@@ -2642,6 +2748,7 @@ package guardduty {
   }
 
   object StopMonitoringMembersResponse {
+    @inline
     def apply(
         UnprocessedAccounts: UnprocessedAccounts
     ): StopMonitoringMembersResponse = {
@@ -2663,6 +2770,7 @@ package guardduty {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
@@ -2681,6 +2789,7 @@ package guardduty {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceArn: GuardDutyArn,
         Tags: TagMap
@@ -2698,6 +2807,7 @@ package guardduty {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -2739,6 +2849,7 @@ package guardduty {
   }
 
   object ThreatIntelligenceDetail {
+    @inline
     def apply(
         ThreatListName: js.UndefOr[String] = js.undefined,
         ThreatNames: js.UndefOr[ThreatNames] = js.undefined
@@ -2757,6 +2868,7 @@ package guardduty {
   }
 
   object UnarchiveFindingsRequest {
+    @inline
     def apply(
         DetectorId: DetectorId,
         FindingIds: FindingIds
@@ -2774,6 +2886,7 @@ package guardduty {
   trait UnarchiveFindingsResponse extends js.Object {}
 
   object UnarchiveFindingsResponse {
+    @inline
     def apply(
         ): UnarchiveFindingsResponse = {
       val __obj = js.Dynamic.literal()
@@ -2792,6 +2905,7 @@ package guardduty {
   }
 
   object UnprocessedAccount {
+    @inline
     def apply(
         AccountId: AccountId,
         Result: String
@@ -2812,6 +2926,7 @@ package guardduty {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceArn: GuardDutyArn,
         TagKeys: TagKeyList
@@ -2829,6 +2944,7 @@ package guardduty {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -2845,6 +2961,7 @@ package guardduty {
   }
 
   object UpdateDetectorRequest {
+    @inline
     def apply(
         DetectorId: DetectorId,
         Enable: js.UndefOr[Boolean] = js.undefined,
@@ -2866,6 +2983,7 @@ package guardduty {
   trait UpdateDetectorResponse extends js.Object {}
 
   object UpdateDetectorResponse {
+    @inline
     def apply(
         ): UpdateDetectorResponse = {
       val __obj = js.Dynamic.literal()
@@ -2885,6 +3003,7 @@ package guardduty {
   }
 
   object UpdateFilterRequest {
+    @inline
     def apply(
         DetectorId: DetectorId,
         FilterName: String,
@@ -2912,6 +3031,7 @@ package guardduty {
   }
 
   object UpdateFilterResponse {
+    @inline
     def apply(
         Name: FilterName
     ): UpdateFilterResponse = {
@@ -2932,6 +3052,7 @@ package guardduty {
   }
 
   object UpdateFindingsFeedbackRequest {
+    @inline
     def apply(
         DetectorId: DetectorId,
         Feedback: Feedback,
@@ -2953,6 +3074,7 @@ package guardduty {
   trait UpdateFindingsFeedbackResponse extends js.Object {}
 
   object UpdateFindingsFeedbackResponse {
+    @inline
     def apply(
         ): UpdateFindingsFeedbackResponse = {
       val __obj = js.Dynamic.literal()
@@ -2971,6 +3093,7 @@ package guardduty {
   }
 
   object UpdateIPSetRequest {
+    @inline
     def apply(
         DetectorId: DetectorId,
         IpSetId: String,
@@ -2994,6 +3117,7 @@ package guardduty {
   trait UpdateIPSetResponse extends js.Object {}
 
   object UpdateIPSetResponse {
+    @inline
     def apply(
         ): UpdateIPSetResponse = {
       val __obj = js.Dynamic.literal()
@@ -3012,6 +3136,7 @@ package guardduty {
   }
 
   object UpdateThreatIntelSetRequest {
+    @inline
     def apply(
         DetectorId: DetectorId,
         ThreatIntelSetId: String,
@@ -3035,6 +3160,7 @@ package guardduty {
   trait UpdateThreatIntelSetResponse extends js.Object {}
 
   object UpdateThreatIntelSetResponse {
+    @inline
     def apply(
         ): UpdateThreatIntelSetResponse = {
       val __obj = js.Dynamic.literal()

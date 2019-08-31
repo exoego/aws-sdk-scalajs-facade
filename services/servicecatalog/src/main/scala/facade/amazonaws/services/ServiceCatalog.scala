@@ -621,6 +621,7 @@ package servicecatalog {
   }
 
   object AcceptPortfolioShareInput {
+    @inline
     def apply(
         PortfolioId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
@@ -640,6 +641,7 @@ package servicecatalog {
   trait AcceptPortfolioShareOutput extends js.Object {}
 
   object AcceptPortfolioShareOutput {
+    @inline
     def apply(
         ): AcceptPortfolioShareOutput = {
       val __obj = js.Dynamic.literal()
@@ -658,6 +660,7 @@ package servicecatalog {
   }
 
   object AccessLevelFilter {
+    @inline
     def apply(
         Key: js.UndefOr[AccessLevelFilterKey] = js.undefined,
         Value: js.UndefOr[AccessLevelFilterValue] = js.undefined
@@ -692,6 +695,7 @@ package servicecatalog {
   }
 
   object AssociateBudgetWithResourceInput {
+    @inline
     def apply(
         BudgetName: BudgetName,
         ResourceId: Id
@@ -709,6 +713,7 @@ package servicecatalog {
   trait AssociateBudgetWithResourceOutput extends js.Object {}
 
   object AssociateBudgetWithResourceOutput {
+    @inline
     def apply(
         ): AssociateBudgetWithResourceOutput = {
       val __obj = js.Dynamic.literal()
@@ -726,6 +731,7 @@ package servicecatalog {
   }
 
   object AssociatePrincipalWithPortfolioInput {
+    @inline
     def apply(
         PortfolioId: Id,
         PrincipalARN: PrincipalARN,
@@ -747,6 +753,7 @@ package servicecatalog {
   trait AssociatePrincipalWithPortfolioOutput extends js.Object {}
 
   object AssociatePrincipalWithPortfolioOutput {
+    @inline
     def apply(
         ): AssociatePrincipalWithPortfolioOutput = {
       val __obj = js.Dynamic.literal()
@@ -764,6 +771,7 @@ package servicecatalog {
   }
 
   object AssociateProductWithPortfolioInput {
+    @inline
     def apply(
         PortfolioId: Id,
         ProductId: Id,
@@ -785,6 +793,7 @@ package servicecatalog {
   trait AssociateProductWithPortfolioOutput extends js.Object {}
 
   object AssociateProductWithPortfolioOutput {
+    @inline
     def apply(
         ): AssociateProductWithPortfolioOutput = {
       val __obj = js.Dynamic.literal()
@@ -802,6 +811,7 @@ package servicecatalog {
   }
 
   object AssociateServiceActionWithProvisioningArtifactInput {
+    @inline
     def apply(
         ProductId: Id,
         ProvisioningArtifactId: Id,
@@ -823,6 +833,7 @@ package servicecatalog {
   trait AssociateServiceActionWithProvisioningArtifactOutput extends js.Object {}
 
   object AssociateServiceActionWithProvisioningArtifactOutput {
+    @inline
     def apply(
         ): AssociateServiceActionWithProvisioningArtifactOutput = {
       val __obj = js.Dynamic.literal()
@@ -838,6 +849,7 @@ package servicecatalog {
   }
 
   object AssociateTagOptionWithResourceInput {
+    @inline
     def apply(
         ResourceId: ResourceId,
         TagOptionId: TagOptionId
@@ -855,6 +867,7 @@ package servicecatalog {
   trait AssociateTagOptionWithResourceOutput extends js.Object {}
 
   object AssociateTagOptionWithResourceOutput {
+    @inline
     def apply(
         ): AssociateTagOptionWithResourceOutput = {
       val __obj = js.Dynamic.literal()
@@ -870,6 +883,7 @@ package servicecatalog {
   }
 
   object BatchAssociateServiceActionWithProvisioningArtifactInput {
+    @inline
     def apply(
         ServiceActionAssociations: ServiceActionAssociations,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
@@ -889,6 +903,7 @@ package servicecatalog {
   }
 
   object BatchAssociateServiceActionWithProvisioningArtifactOutput {
+    @inline
     def apply(
         FailedServiceActionAssociations: js.UndefOr[FailedServiceActionAssociations] = js.undefined
     ): BatchAssociateServiceActionWithProvisioningArtifactOutput = {
@@ -907,6 +922,7 @@ package servicecatalog {
   }
 
   object BatchDisassociateServiceActionFromProvisioningArtifactInput {
+    @inline
     def apply(
         ServiceActionAssociations: ServiceActionAssociations,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
@@ -926,6 +942,7 @@ package servicecatalog {
   }
 
   object BatchDisassociateServiceActionFromProvisioningArtifactOutput {
+    @inline
     def apply(
         FailedServiceActionAssociations: js.UndefOr[FailedServiceActionAssociations] = js.undefined
     ): BatchDisassociateServiceActionFromProvisioningArtifactOutput = {
@@ -946,6 +963,7 @@ package servicecatalog {
   }
 
   object BudgetDetail {
+    @inline
     def apply(
         BudgetName: js.UndefOr[BudgetName] = js.undefined
     ): BudgetDetail = {
@@ -972,6 +990,7 @@ package servicecatalog {
   }
 
   object CloudWatchDashboard {
+    @inline
     def apply(
         Name: js.UndefOr[CloudWatchDashboardName] = js.undefined
     ): CloudWatchDashboard = {
@@ -993,6 +1012,7 @@ package servicecatalog {
   }
 
   object ConstraintDetail {
+    @inline
     def apply(
         ConstraintId: js.UndefOr[Id] = js.undefined,
         Description: js.UndefOr[ConstraintDescription] = js.undefined,
@@ -1018,6 +1038,7 @@ package servicecatalog {
   }
 
   object ConstraintSummary {
+    @inline
     def apply(
         Description: js.UndefOr[ConstraintDescription] = js.undefined,
         Type: js.UndefOr[ConstraintType] = js.undefined
@@ -1047,6 +1068,7 @@ package servicecatalog {
   }
 
   object CopyProductInput {
+    @inline
     def apply(
         IdempotencyToken: IdempotencyToken,
         SourceProductArn: ProductArn,
@@ -1078,6 +1100,7 @@ package servicecatalog {
   }
 
   object CopyProductOutput {
+    @inline
     def apply(
         CopyProductToken: js.UndefOr[Id] = js.undefined
     ): CopyProductOutput = {
@@ -1107,6 +1130,7 @@ package servicecatalog {
   }
 
   object CreateConstraintInput {
+    @inline
     def apply(
         IdempotencyToken: IdempotencyToken,
         Parameters: ConstraintParameters,
@@ -1138,6 +1162,7 @@ package servicecatalog {
   }
 
   object CreateConstraintOutput {
+    @inline
     def apply(
         ConstraintDetail: js.UndefOr[ConstraintDetail] = js.undefined,
         ConstraintParameters: js.UndefOr[ConstraintParameters] = js.undefined,
@@ -1162,6 +1187,7 @@ package servicecatalog {
   }
 
   object CreatePortfolioInput {
+    @inline
     def apply(
         DisplayName: PortfolioDisplayName,
         IdempotencyToken: IdempotencyToken,
@@ -1190,6 +1216,7 @@ package servicecatalog {
   }
 
   object CreatePortfolioOutput {
+    @inline
     def apply(
         PortfolioDetail: js.UndefOr[PortfolioDetail] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
@@ -1210,6 +1237,7 @@ package servicecatalog {
   }
 
   object CreatePortfolioShareInput {
+    @inline
     def apply(
         PortfolioId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
@@ -1233,6 +1261,7 @@ package servicecatalog {
   }
 
   object CreatePortfolioShareOutput {
+    @inline
     def apply(
         PortfolioShareToken: js.UndefOr[Id] = js.undefined
     ): CreatePortfolioShareOutput = {
@@ -1259,6 +1288,7 @@ package servicecatalog {
   }
 
   object CreateProductInput {
+    @inline
     def apply(
         IdempotencyToken: IdempotencyToken,
         Name: ProductViewName,
@@ -1300,6 +1330,7 @@ package servicecatalog {
   }
 
   object CreateProductOutput {
+    @inline
     def apply(
         ProductViewDetail: js.UndefOr[ProductViewDetail] = js.undefined,
         ProvisioningArtifactDetail: js.UndefOr[ProvisioningArtifactDetail] = js.undefined,
@@ -1331,6 +1362,7 @@ package servicecatalog {
   }
 
   object CreateProvisionedProductPlanInput {
+    @inline
     def apply(
         IdempotencyToken: IdempotencyToken,
         PlanName: ProvisionedProductPlanName,
@@ -1372,6 +1404,7 @@ package servicecatalog {
   }
 
   object CreateProvisionedProductPlanOutput {
+    @inline
     def apply(
         PlanId: js.UndefOr[Id] = js.undefined,
         PlanName: js.UndefOr[ProvisionedProductPlanName] = js.undefined,
@@ -1398,6 +1431,7 @@ package servicecatalog {
   }
 
   object CreateProvisioningArtifactInput {
+    @inline
     def apply(
         IdempotencyToken: IdempotencyToken,
         Parameters: ProvisioningArtifactProperties,
@@ -1423,6 +1457,7 @@ package servicecatalog {
   }
 
   object CreateProvisioningArtifactOutput {
+    @inline
     def apply(
         Info: js.UndefOr[ProvisioningArtifactInfo] = js.undefined,
         ProvisioningArtifactDetail: js.UndefOr[ProvisioningArtifactDetail] = js.undefined,
@@ -1449,6 +1484,7 @@ package servicecatalog {
   }
 
   object CreateServiceActionInput {
+    @inline
     def apply(
         Definition: ServiceActionDefinitionMap,
         DefinitionType: ServiceActionDefinitionType,
@@ -1476,6 +1512,7 @@ package servicecatalog {
   }
 
   object CreateServiceActionOutput {
+    @inline
     def apply(
         ServiceActionDetail: js.UndefOr[ServiceActionDetail] = js.undefined
     ): CreateServiceActionOutput = {
@@ -1492,6 +1529,7 @@ package servicecatalog {
   }
 
   object CreateTagOptionInput {
+    @inline
     def apply(
         Key: TagOptionKey,
         Value: TagOptionValue
@@ -1511,6 +1549,7 @@ package servicecatalog {
   }
 
   object CreateTagOptionOutput {
+    @inline
     def apply(
         TagOptionDetail: js.UndefOr[TagOptionDetail] = js.undefined
     ): CreateTagOptionOutput = {
@@ -1527,6 +1566,7 @@ package servicecatalog {
   }
 
   object DeleteConstraintInput {
+    @inline
     def apply(
         Id: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
@@ -1544,6 +1584,7 @@ package servicecatalog {
   trait DeleteConstraintOutput extends js.Object {}
 
   object DeleteConstraintOutput {
+    @inline
     def apply(
         ): DeleteConstraintOutput = {
       val __obj = js.Dynamic.literal()
@@ -1559,6 +1600,7 @@ package servicecatalog {
   }
 
   object DeletePortfolioInput {
+    @inline
     def apply(
         Id: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
@@ -1576,6 +1618,7 @@ package servicecatalog {
   trait DeletePortfolioOutput extends js.Object {}
 
   object DeletePortfolioOutput {
+    @inline
     def apply(
         ): DeletePortfolioOutput = {
       val __obj = js.Dynamic.literal()
@@ -1593,6 +1636,7 @@ package servicecatalog {
   }
 
   object DeletePortfolioShareInput {
+    @inline
     def apply(
         PortfolioId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
@@ -1616,6 +1660,7 @@ package servicecatalog {
   }
 
   object DeletePortfolioShareOutput {
+    @inline
     def apply(
         PortfolioShareToken: js.UndefOr[Id] = js.undefined
     ): DeletePortfolioShareOutput = {
@@ -1632,6 +1677,7 @@ package servicecatalog {
   }
 
   object DeleteProductInput {
+    @inline
     def apply(
         Id: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
@@ -1649,6 +1695,7 @@ package servicecatalog {
   trait DeleteProductOutput extends js.Object {}
 
   object DeleteProductOutput {
+    @inline
     def apply(
         ): DeleteProductOutput = {
       val __obj = js.Dynamic.literal()
@@ -1665,6 +1712,7 @@ package servicecatalog {
   }
 
   object DeleteProvisionedProductPlanInput {
+    @inline
     def apply(
         PlanId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
@@ -1684,6 +1732,7 @@ package servicecatalog {
   trait DeleteProvisionedProductPlanOutput extends js.Object {}
 
   object DeleteProvisionedProductPlanOutput {
+    @inline
     def apply(
         ): DeleteProvisionedProductPlanOutput = {
       val __obj = js.Dynamic.literal()
@@ -1700,6 +1749,7 @@ package servicecatalog {
   }
 
   object DeleteProvisioningArtifactInput {
+    @inline
     def apply(
         ProductId: Id,
         ProvisioningArtifactId: Id,
@@ -1719,6 +1769,7 @@ package servicecatalog {
   trait DeleteProvisioningArtifactOutput extends js.Object {}
 
   object DeleteProvisioningArtifactOutput {
+    @inline
     def apply(
         ): DeleteProvisioningArtifactOutput = {
       val __obj = js.Dynamic.literal()
@@ -1734,6 +1785,7 @@ package servicecatalog {
   }
 
   object DeleteServiceActionInput {
+    @inline
     def apply(
         Id: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
@@ -1751,6 +1803,7 @@ package servicecatalog {
   trait DeleteServiceActionOutput extends js.Object {}
 
   object DeleteServiceActionOutput {
+    @inline
     def apply(
         ): DeleteServiceActionOutput = {
       val __obj = js.Dynamic.literal()
@@ -1765,6 +1818,7 @@ package servicecatalog {
   }
 
   object DeleteTagOptionInput {
+    @inline
     def apply(
         Id: TagOptionId
     ): DeleteTagOptionInput = {
@@ -1780,6 +1834,7 @@ package servicecatalog {
   trait DeleteTagOptionOutput extends js.Object {}
 
   object DeleteTagOptionOutput {
+    @inline
     def apply(
         ): DeleteTagOptionOutput = {
       val __obj = js.Dynamic.literal()
@@ -1795,6 +1850,7 @@ package servicecatalog {
   }
 
   object DescribeConstraintInput {
+    @inline
     def apply(
         Id: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
@@ -1816,6 +1872,7 @@ package servicecatalog {
   }
 
   object DescribeConstraintOutput {
+    @inline
     def apply(
         ConstraintDetail: js.UndefOr[ConstraintDetail] = js.undefined,
         ConstraintParameters: js.UndefOr[ConstraintParameters] = js.undefined,
@@ -1836,6 +1893,7 @@ package servicecatalog {
   }
 
   object DescribeCopyProductStatusInput {
+    @inline
     def apply(
         CopyProductToken: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
@@ -1857,6 +1915,7 @@ package servicecatalog {
   }
 
   object DescribeCopyProductStatusOutput {
+    @inline
     def apply(
         CopyProductStatus: js.UndefOr[CopyProductStatus] = js.undefined,
         StatusDetail: js.UndefOr[StatusDetail] = js.undefined,
@@ -1877,6 +1936,7 @@ package servicecatalog {
   }
 
   object DescribePortfolioInput {
+    @inline
     def apply(
         Id: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
@@ -1899,6 +1959,7 @@ package servicecatalog {
   }
 
   object DescribePortfolioOutput {
+    @inline
     def apply(
         Budgets: js.UndefOr[Budgets] = js.undefined,
         PortfolioDetail: js.UndefOr[PortfolioDetail] = js.undefined,
@@ -1920,6 +1981,7 @@ package servicecatalog {
   }
 
   object DescribePortfolioShareStatusInput {
+    @inline
     def apply(
         PortfolioShareToken: Id
     ): DescribePortfolioShareStatusInput = {
@@ -1941,6 +2003,7 @@ package servicecatalog {
   }
 
   object DescribePortfolioShareStatusOutput {
+    @inline
     def apply(
         OrganizationNodeValue: js.UndefOr[OrganizationNodeValue] = js.undefined,
         PortfolioId: js.UndefOr[Id] = js.undefined,
@@ -1965,6 +2028,7 @@ package servicecatalog {
   }
 
   object DescribeProductAsAdminInput {
+    @inline
     def apply(
         Id: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
@@ -1988,6 +2052,7 @@ package servicecatalog {
   }
 
   object DescribeProductAsAdminOutput {
+    @inline
     def apply(
         Budgets: js.UndefOr[Budgets] = js.undefined,
         ProductViewDetail: js.UndefOr[ProductViewDetail] = js.undefined,
@@ -2014,6 +2079,7 @@ package servicecatalog {
   }
 
   object DescribeProductInput {
+    @inline
     def apply(
         Id: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
@@ -2035,6 +2101,7 @@ package servicecatalog {
   }
 
   object DescribeProductOutput {
+    @inline
     def apply(
         Budgets: js.UndefOr[Budgets] = js.undefined,
         ProductViewSummary: js.UndefOr[ProductViewSummary] = js.undefined,
@@ -2055,6 +2122,7 @@ package servicecatalog {
   }
 
   object DescribeProductViewInput {
+    @inline
     def apply(
         Id: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
@@ -2075,6 +2143,7 @@ package servicecatalog {
   }
 
   object DescribeProductViewOutput {
+    @inline
     def apply(
         ProductViewSummary: js.UndefOr[ProductViewSummary] = js.undefined,
         ProvisioningArtifacts: js.UndefOr[ProvisioningArtifacts] = js.undefined
@@ -2093,6 +2162,7 @@ package servicecatalog {
   }
 
   object DescribeProvisionedProductInput {
+    @inline
     def apply(
         Id: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
@@ -2113,6 +2183,7 @@ package servicecatalog {
   }
 
   object DescribeProvisionedProductOutput {
+    @inline
     def apply(
         CloudWatchDashboards: js.UndefOr[CloudWatchDashboards] = js.undefined,
         ProvisionedProductDetail: js.UndefOr[ProvisionedProductDetail] = js.undefined
@@ -2133,6 +2204,7 @@ package servicecatalog {
   }
 
   object DescribeProvisionedProductPlanInput {
+    @inline
     def apply(
         PlanId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
@@ -2158,6 +2230,7 @@ package servicecatalog {
   }
 
   object DescribeProvisionedProductPlanOutput {
+    @inline
     def apply(
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         ProvisionedProductPlanDetails: js.UndefOr[ProvisionedProductPlanDetails] = js.undefined,
@@ -2182,6 +2255,7 @@ package servicecatalog {
   }
 
   object DescribeProvisioningArtifactInput {
+    @inline
     def apply(
         ProductId: Id,
         ProvisioningArtifactId: Id,
@@ -2207,6 +2281,7 @@ package servicecatalog {
   }
 
   object DescribeProvisioningArtifactOutput {
+    @inline
     def apply(
         Info: js.UndefOr[ProvisioningArtifactInfo] = js.undefined,
         ProvisioningArtifactDetail: js.UndefOr[ProvisioningArtifactDetail] = js.undefined,
@@ -2231,6 +2306,7 @@ package servicecatalog {
   }
 
   object DescribeProvisioningParametersInput {
+    @inline
     def apply(
         ProductId: Id,
         ProvisioningArtifactId: Id,
@@ -2258,6 +2334,7 @@ package servicecatalog {
   }
 
   object DescribeProvisioningParametersOutput {
+    @inline
     def apply(
         ConstraintSummaries: js.UndefOr[ConstraintSummaries] = js.undefined,
         ProvisioningArtifactParameters: js.UndefOr[ProvisioningArtifactParameters] = js.undefined,
@@ -2288,6 +2365,7 @@ package servicecatalog {
   }
 
   object DescribeRecordInput {
+    @inline
     def apply(
         Id: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
@@ -2313,6 +2391,7 @@ package servicecatalog {
   }
 
   object DescribeRecordOutput {
+    @inline
     def apply(
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         RecordDetail: js.UndefOr[RecordDetail] = js.undefined,
@@ -2334,6 +2413,7 @@ package servicecatalog {
   }
 
   object DescribeServiceActionExecutionParametersInput {
+    @inline
     def apply(
         ProvisionedProductId: Id,
         ServiceActionId: Id,
@@ -2355,6 +2435,7 @@ package servicecatalog {
   }
 
   object DescribeServiceActionExecutionParametersOutput {
+    @inline
     def apply(
         ServiceActionParameters: js.UndefOr[ExecutionParameters] = js.undefined
     ): DescribeServiceActionExecutionParametersOutput = {
@@ -2371,6 +2452,7 @@ package servicecatalog {
   }
 
   object DescribeServiceActionInput {
+    @inline
     def apply(
         Id: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
@@ -2390,6 +2472,7 @@ package servicecatalog {
   }
 
   object DescribeServiceActionOutput {
+    @inline
     def apply(
         ServiceActionDetail: js.UndefOr[ServiceActionDetail] = js.undefined
     ): DescribeServiceActionOutput = {
@@ -2405,6 +2488,7 @@ package servicecatalog {
   }
 
   object DescribeTagOptionInput {
+    @inline
     def apply(
         Id: TagOptionId
     ): DescribeTagOptionInput = {
@@ -2422,6 +2506,7 @@ package servicecatalog {
   }
 
   object DescribeTagOptionOutput {
+    @inline
     def apply(
         TagOptionDetail: js.UndefOr[TagOptionDetail] = js.undefined
     ): DescribeTagOptionOutput = {
@@ -2435,6 +2520,7 @@ package servicecatalog {
   trait DisableAWSOrganizationsAccessInput extends js.Object {}
 
   object DisableAWSOrganizationsAccessInput {
+    @inline
     def apply(
         ): DisableAWSOrganizationsAccessInput = {
       val __obj = js.Dynamic.literal()
@@ -2447,6 +2533,7 @@ package servicecatalog {
   trait DisableAWSOrganizationsAccessOutput extends js.Object {}
 
   object DisableAWSOrganizationsAccessOutput {
+    @inline
     def apply(
         ): DisableAWSOrganizationsAccessOutput = {
       val __obj = js.Dynamic.literal()
@@ -2462,6 +2549,7 @@ package servicecatalog {
   }
 
   object DisassociateBudgetFromResourceInput {
+    @inline
     def apply(
         BudgetName: BudgetName,
         ResourceId: Id
@@ -2479,6 +2567,7 @@ package servicecatalog {
   trait DisassociateBudgetFromResourceOutput extends js.Object {}
 
   object DisassociateBudgetFromResourceOutput {
+    @inline
     def apply(
         ): DisassociateBudgetFromResourceOutput = {
       val __obj = js.Dynamic.literal()
@@ -2495,6 +2584,7 @@ package servicecatalog {
   }
 
   object DisassociatePrincipalFromPortfolioInput {
+    @inline
     def apply(
         PortfolioId: Id,
         PrincipalARN: PrincipalARN,
@@ -2514,6 +2604,7 @@ package servicecatalog {
   trait DisassociatePrincipalFromPortfolioOutput extends js.Object {}
 
   object DisassociatePrincipalFromPortfolioOutput {
+    @inline
     def apply(
         ): DisassociatePrincipalFromPortfolioOutput = {
       val __obj = js.Dynamic.literal()
@@ -2530,6 +2621,7 @@ package servicecatalog {
   }
 
   object DisassociateProductFromPortfolioInput {
+    @inline
     def apply(
         PortfolioId: Id,
         ProductId: Id,
@@ -2549,6 +2641,7 @@ package servicecatalog {
   trait DisassociateProductFromPortfolioOutput extends js.Object {}
 
   object DisassociateProductFromPortfolioOutput {
+    @inline
     def apply(
         ): DisassociateProductFromPortfolioOutput = {
       val __obj = js.Dynamic.literal()
@@ -2566,6 +2659,7 @@ package servicecatalog {
   }
 
   object DisassociateServiceActionFromProvisioningArtifactInput {
+    @inline
     def apply(
         ProductId: Id,
         ProvisioningArtifactId: Id,
@@ -2587,6 +2681,7 @@ package servicecatalog {
   trait DisassociateServiceActionFromProvisioningArtifactOutput extends js.Object {}
 
   object DisassociateServiceActionFromProvisioningArtifactOutput {
+    @inline
     def apply(
         ): DisassociateServiceActionFromProvisioningArtifactOutput = {
       val __obj = js.Dynamic.literal()
@@ -2602,6 +2697,7 @@ package servicecatalog {
   }
 
   object DisassociateTagOptionFromResourceInput {
+    @inline
     def apply(
         ResourceId: ResourceId,
         TagOptionId: TagOptionId
@@ -2619,6 +2715,7 @@ package servicecatalog {
   trait DisassociateTagOptionFromResourceOutput extends js.Object {}
 
   object DisassociateTagOptionFromResourceOutput {
+    @inline
     def apply(
         ): DisassociateTagOptionFromResourceOutput = {
       val __obj = js.Dynamic.literal()
@@ -2631,6 +2728,7 @@ package servicecatalog {
   trait EnableAWSOrganizationsAccessInput extends js.Object {}
 
   object EnableAWSOrganizationsAccessInput {
+    @inline
     def apply(
         ): EnableAWSOrganizationsAccessInput = {
       val __obj = js.Dynamic.literal()
@@ -2643,6 +2741,7 @@ package servicecatalog {
   trait EnableAWSOrganizationsAccessOutput extends js.Object {}
 
   object EnableAWSOrganizationsAccessOutput {
+    @inline
     def apply(
         ): EnableAWSOrganizationsAccessOutput = {
       val __obj = js.Dynamic.literal()
@@ -2666,6 +2765,7 @@ package servicecatalog {
   }
 
   object ExecuteProvisionedProductPlanInput {
+    @inline
     def apply(
         IdempotencyToken: IdempotencyToken,
         PlanId: Id,
@@ -2687,6 +2787,7 @@ package servicecatalog {
   }
 
   object ExecuteProvisionedProductPlanOutput {
+    @inline
     def apply(
         RecordDetail: js.UndefOr[RecordDetail] = js.undefined
     ): ExecuteProvisionedProductPlanOutput = {
@@ -2706,6 +2807,7 @@ package servicecatalog {
   }
 
   object ExecuteProvisionedProductServiceActionInput {
+    @inline
     def apply(
         ExecuteToken: IdempotencyToken,
         ProvisionedProductId: Id,
@@ -2731,6 +2833,7 @@ package servicecatalog {
   }
 
   object ExecuteProvisionedProductServiceActionOutput {
+    @inline
     def apply(
         RecordDetail: js.UndefOr[RecordDetail] = js.undefined
     ): ExecuteProvisionedProductServiceActionOutput = {
@@ -2748,6 +2851,7 @@ package servicecatalog {
   }
 
   object ExecutionParameter {
+    @inline
     def apply(
         DefaultValues: js.UndefOr[ExecutionParameterValueList] = js.undefined,
         Name: js.UndefOr[ExecutionParameterKey] = js.undefined,
@@ -2774,6 +2878,7 @@ package servicecatalog {
   }
 
   object FailedServiceActionAssociation {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[ServiceActionAssociationErrorCode] = js.undefined,
         ErrorMessage: js.UndefOr[ServiceActionAssociationErrorMessage] = js.undefined,
@@ -2795,6 +2900,7 @@ package servicecatalog {
   trait GetAWSOrganizationsAccessStatusInput extends js.Object {}
 
   object GetAWSOrganizationsAccessStatusInput {
+    @inline
     def apply(
         ): GetAWSOrganizationsAccessStatusInput = {
       val __obj = js.Dynamic.literal()
@@ -2809,6 +2915,7 @@ package servicecatalog {
   }
 
   object GetAWSOrganizationsAccessStatusOutput {
+    @inline
     def apply(
         AccessStatus: js.UndefOr[AccessStatus] = js.undefined
     ): GetAWSOrganizationsAccessStatusOutput = {
@@ -2830,6 +2937,7 @@ package servicecatalog {
   }
 
   object LaunchPathSummary {
+    @inline
     def apply(
         ConstraintSummaries: js.UndefOr[ConstraintSummaries] = js.undefined,
         Id: js.UndefOr[Id] = js.undefined,
@@ -2854,6 +2962,7 @@ package servicecatalog {
   }
 
   object ListAcceptedPortfolioSharesInput {
+    @inline
     def apply(
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
         PageSize: js.UndefOr[PageSize] = js.undefined,
@@ -2876,6 +2985,7 @@ package servicecatalog {
   }
 
   object ListAcceptedPortfolioSharesOutput {
+    @inline
     def apply(
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         PortfolioDetails: js.UndefOr[PortfolioDetails] = js.undefined
@@ -2896,6 +3006,7 @@ package servicecatalog {
   }
 
   object ListBudgetsForResourceInput {
+    @inline
     def apply(
         ResourceId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
@@ -2920,6 +3031,7 @@ package servicecatalog {
   }
 
   object ListBudgetsForResourceOutput {
+    @inline
     def apply(
         Budgets: js.UndefOr[Budgets] = js.undefined,
         NextPageToken: js.UndefOr[PageToken] = js.undefined
@@ -2941,6 +3053,7 @@ package servicecatalog {
   }
 
   object ListConstraintsForPortfolioInput {
+    @inline
     def apply(
         PortfolioId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
@@ -2967,6 +3080,7 @@ package servicecatalog {
   }
 
   object ListConstraintsForPortfolioOutput {
+    @inline
     def apply(
         ConstraintDetails: js.UndefOr[ConstraintDetails] = js.undefined,
         NextPageToken: js.UndefOr[PageToken] = js.undefined
@@ -2987,6 +3101,7 @@ package servicecatalog {
   }
 
   object ListLaunchPathsInput {
+    @inline
     def apply(
         ProductId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
@@ -3011,6 +3126,7 @@ package servicecatalog {
   }
 
   object ListLaunchPathsOutput {
+    @inline
     def apply(
         LaunchPathSummaries: js.UndefOr[LaunchPathSummaries] = js.undefined,
         NextPageToken: js.UndefOr[PageToken] = js.undefined
@@ -3032,6 +3148,7 @@ package servicecatalog {
   }
 
   object ListOrganizationPortfolioAccessInput {
+    @inline
     def apply(
         OrganizationNodeType: OrganizationNodeType,
         PortfolioId: Id,
@@ -3058,6 +3175,7 @@ package servicecatalog {
   }
 
   object ListOrganizationPortfolioAccessOutput {
+    @inline
     def apply(
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         OrganizationNodes: js.UndefOr[OrganizationNodes] = js.undefined
@@ -3076,6 +3194,7 @@ package servicecatalog {
   }
 
   object ListPortfolioAccessInput {
+    @inline
     def apply(
         PortfolioId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
@@ -3096,6 +3215,7 @@ package servicecatalog {
   }
 
   object ListPortfolioAccessOutput {
+    @inline
     def apply(
         AccountIds: js.UndefOr[AccountIds] = js.undefined,
         NextPageToken: js.UndefOr[PageToken] = js.undefined
@@ -3116,6 +3236,7 @@ package servicecatalog {
   }
 
   object ListPortfoliosForProductInput {
+    @inline
     def apply(
         ProductId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
@@ -3140,6 +3261,7 @@ package servicecatalog {
   }
 
   object ListPortfoliosForProductOutput {
+    @inline
     def apply(
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         PortfolioDetails: js.UndefOr[PortfolioDetails] = js.undefined
@@ -3159,6 +3281,7 @@ package servicecatalog {
   }
 
   object ListPortfoliosInput {
+    @inline
     def apply(
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
         PageSize: js.UndefOr[PageSize] = js.undefined,
@@ -3179,6 +3302,7 @@ package servicecatalog {
   }
 
   object ListPortfoliosOutput {
+    @inline
     def apply(
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         PortfolioDetails: js.UndefOr[PortfolioDetails] = js.undefined
@@ -3199,6 +3323,7 @@ package servicecatalog {
   }
 
   object ListPrincipalsForPortfolioInput {
+    @inline
     def apply(
         PortfolioId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
@@ -3223,6 +3348,7 @@ package servicecatalog {
   }
 
   object ListPrincipalsForPortfolioOutput {
+    @inline
     def apply(
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         Principals: js.UndefOr[Principals] = js.undefined
@@ -3244,6 +3370,7 @@ package servicecatalog {
   }
 
   object ListProvisionedProductPlansInput {
+    @inline
     def apply(
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
         AccessLevelFilter: js.UndefOr[AccessLevelFilter] = js.undefined,
@@ -3268,6 +3395,7 @@ package servicecatalog {
   }
 
   object ListProvisionedProductPlansOutput {
+    @inline
     def apply(
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         ProvisionedProductPlans: js.UndefOr[ProvisionedProductPlans] = js.undefined
@@ -3288,6 +3416,7 @@ package servicecatalog {
   }
 
   object ListProvisioningArtifactsForServiceActionInput {
+    @inline
     def apply(
         ServiceActionId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
@@ -3312,6 +3441,7 @@ package servicecatalog {
   }
 
   object ListProvisioningArtifactsForServiceActionOutput {
+    @inline
     def apply(
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         ProvisioningArtifactViews: js.UndefOr[ProvisioningArtifactViews] = js.undefined
@@ -3332,6 +3462,7 @@ package servicecatalog {
   }
 
   object ListProvisioningArtifactsInput {
+    @inline
     def apply(
         ProductId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined
@@ -3352,6 +3483,7 @@ package servicecatalog {
   }
 
   object ListProvisioningArtifactsOutput {
+    @inline
     def apply(
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         ProvisioningArtifactDetails: js.UndefOr[ProvisioningArtifactDetails] = js.undefined
@@ -3375,6 +3507,7 @@ package servicecatalog {
   }
 
   object ListRecordHistoryInput {
+    @inline
     def apply(
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
         AccessLevelFilter: js.UndefOr[AccessLevelFilter] = js.undefined,
@@ -3399,6 +3532,7 @@ package servicecatalog {
   }
 
   object ListRecordHistoryOutput {
+    @inline
     def apply(
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         RecordDetails: js.UndefOr[RecordDetails] = js.undefined
@@ -3420,6 +3554,7 @@ package servicecatalog {
   }
 
   object ListRecordHistorySearchFilter {
+    @inline
     def apply(
         Key: js.UndefOr[SearchFilterKey] = js.undefined,
         Value: js.UndefOr[SearchFilterValue] = js.undefined
@@ -3440,6 +3575,7 @@ package servicecatalog {
   }
 
   object ListResourcesForTagOptionInput {
+    @inline
     def apply(
         TagOptionId: TagOptionId,
         PageSize: js.UndefOr[PageSize] = js.undefined,
@@ -3464,6 +3600,7 @@ package servicecatalog {
   }
 
   object ListResourcesForTagOptionOutput {
+    @inline
     def apply(
         PageToken: js.UndefOr[PageToken] = js.undefined,
         ResourceDetails: js.UndefOr[ResourceDetails] = js.undefined
@@ -3485,6 +3622,7 @@ package servicecatalog {
   }
 
   object ListServiceActionsForProvisioningArtifactInput {
+    @inline
     def apply(
         ProductId: Id,
         ProvisioningArtifactId: Id,
@@ -3511,6 +3649,7 @@ package servicecatalog {
   }
 
   object ListServiceActionsForProvisioningArtifactOutput {
+    @inline
     def apply(
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         ServiceActionSummaries: js.UndefOr[ServiceActionSummaries] = js.undefined
@@ -3530,6 +3669,7 @@ package servicecatalog {
   }
 
   object ListServiceActionsInput {
+    @inline
     def apply(
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
         PageSize: js.UndefOr[PageSize] = js.undefined,
@@ -3550,6 +3690,7 @@ package servicecatalog {
   }
 
   object ListServiceActionsOutput {
+    @inline
     def apply(
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         ServiceActionSummaries: js.UndefOr[ServiceActionSummaries] = js.undefined
@@ -3570,6 +3711,7 @@ package servicecatalog {
   }
 
   object ListStackInstancesForProvisionedProductInput {
+    @inline
     def apply(
         ProvisionedProductId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
@@ -3594,6 +3736,7 @@ package servicecatalog {
   }
 
   object ListStackInstancesForProvisionedProductOutput {
+    @inline
     def apply(
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         StackInstances: js.UndefOr[StackInstances] = js.undefined
@@ -3616,6 +3759,7 @@ package servicecatalog {
   }
 
   object ListTagOptionsFilters {
+    @inline
     def apply(
         Active: js.UndefOr[TagOptionActive] = js.undefined,
         Key: js.UndefOr[TagOptionKey] = js.undefined,
@@ -3637,6 +3781,7 @@ package servicecatalog {
   }
 
   object ListTagOptionsInput {
+    @inline
     def apply(
         Filters: js.UndefOr[ListTagOptionsFilters] = js.undefined,
         PageSize: js.UndefOr[PageSize] = js.undefined,
@@ -3657,6 +3802,7 @@ package servicecatalog {
   }
 
   object ListTagOptionsOutput {
+    @inline
     def apply(
         PageToken: js.UndefOr[PageToken] = js.undefined,
         TagOptionDetails: js.UndefOr[TagOptionDetails] = js.undefined
@@ -3678,6 +3824,7 @@ package servicecatalog {
   }
 
   object OrganizationNode {
+    @inline
     def apply(
         Type: js.UndefOr[OrganizationNodeType] = js.undefined,
         Value: js.UndefOr[OrganizationNodeValue] = js.undefined
@@ -3706,6 +3853,7 @@ package servicecatalog {
   }
 
   object ParameterConstraints {
+    @inline
     def apply(
         AllowedValues: js.UndefOr[AllowedValues] = js.undefined
     ): ParameterConstraints = {
@@ -3729,6 +3877,7 @@ package servicecatalog {
   }
 
   object PortfolioDetail {
+    @inline
     def apply(
         ARN: js.UndefOr[ResourceARN] = js.undefined,
         CreatedTime: js.UndefOr[CreationTime] = js.undefined,
@@ -3766,6 +3915,7 @@ package servicecatalog {
   }
 
   object Principal {
+    @inline
     def apply(
         PrincipalARN: js.UndefOr[PrincipalARN] = js.undefined,
         PrincipalType: js.UndefOr[PrincipalType] = js.undefined
@@ -3806,6 +3956,7 @@ package servicecatalog {
   }
 
   object ProductViewAggregationValue {
+    @inline
     def apply(
         ApproximateCount: js.UndefOr[ApproximateCount] = js.undefined,
         Value: js.UndefOr[AttributeValue] = js.undefined
@@ -3829,6 +3980,7 @@ package servicecatalog {
   }
 
   object ProductViewDetail {
+    @inline
     def apply(
         CreatedTime: js.UndefOr[CreatedTime] = js.undefined,
         ProductARN: js.UndefOr[ResourceARN] = js.undefined,
@@ -3880,6 +4032,7 @@ package servicecatalog {
   }
 
   object ProductViewSummary {
+    @inline
     def apply(
         Distributor: js.UndefOr[ProductViewDistributor] = js.undefined,
         HasDefaultPath: js.UndefOr[HasDefaultPath] = js.undefined,
@@ -3930,6 +4083,7 @@ package servicecatalog {
   }
 
   object ProvisionProductInput {
+    @inline
     def apply(
         ProductId: Id,
         ProvisionToken: IdempotencyToken,
@@ -3965,6 +4119,7 @@ package servicecatalog {
   }
 
   object ProvisionProductOutput {
+    @inline
     def apply(
         RecordDetail: js.UndefOr[RecordDetail] = js.undefined
     ): ProvisionProductOutput = {
@@ -3997,6 +4152,7 @@ package servicecatalog {
   }
 
   object ProvisionedProductAttribute {
+    @inline
     def apply(
         Arn: js.UndefOr[ProvisionedProductNameOrArn] = js.undefined,
         CreatedTime: js.UndefOr[CreatedTime] = js.undefined,
@@ -4053,6 +4209,7 @@ package servicecatalog {
   }
 
   object ProvisionedProductDetail {
+    @inline
     def apply(
         Arn: js.UndefOr[ProvisionedProductNameOrArn] = js.undefined,
         CreatedTime: js.UndefOr[CreatedTime] = js.undefined,
@@ -4105,6 +4262,7 @@ package servicecatalog {
   }
 
   object ProvisionedProductPlanDetails {
+    @inline
     def apply(
         CreatedTime: js.UndefOr[CreatedTime] = js.undefined,
         NotificationArns: js.UndefOr[NotificationArns] = js.undefined,
@@ -4169,6 +4327,7 @@ package servicecatalog {
   }
 
   object ProvisionedProductPlanSummary {
+    @inline
     def apply(
         PlanId: js.UndefOr[Id] = js.undefined,
         PlanName: js.UndefOr[ProvisionedProductPlanName] = js.undefined,
@@ -4223,6 +4382,7 @@ package servicecatalog {
   }
 
   object ProvisioningArtifact {
+    @inline
     def apply(
         CreatedTime: js.UndefOr[ProvisioningArtifactCreatedTime] = js.undefined,
         Description: js.UndefOr[ProvisioningArtifactDescription] = js.undefined,
@@ -4255,6 +4415,7 @@ package servicecatalog {
   }
 
   object ProvisioningArtifactDetail {
+    @inline
     def apply(
         Active: js.UndefOr[ProvisioningArtifactActive] = js.undefined,
         CreatedTime: js.UndefOr[CreationTime] = js.undefined,
@@ -4297,6 +4458,7 @@ package servicecatalog {
   }
 
   object ProvisioningArtifactParameter {
+    @inline
     def apply(
         DefaultValue: js.UndefOr[DefaultValue] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
@@ -4327,6 +4489,7 @@ package servicecatalog {
   }
 
   object ProvisioningArtifactPreferences {
+    @inline
     def apply(
         StackSetAccounts: js.UndefOr[StackSetAccounts] = js.undefined,
         StackSetRegions: js.UndefOr[StackSetRegions] = js.undefined
@@ -4351,6 +4514,7 @@ package servicecatalog {
   }
 
   object ProvisioningArtifactProperties {
+    @inline
     def apply(
         Info: ProvisioningArtifactInfo,
         Description: js.UndefOr[ProvisioningArtifactDescription] = js.undefined,
@@ -4391,6 +4555,7 @@ package servicecatalog {
   }
 
   object ProvisioningArtifactSummary {
+    @inline
     def apply(
         CreatedTime: js.UndefOr[ProvisioningArtifactCreatedTime] = js.undefined,
         Description: js.UndefOr[ProvisioningArtifactDescription] = js.undefined,
@@ -4428,6 +4593,7 @@ package servicecatalog {
   }
 
   object ProvisioningArtifactView {
+    @inline
     def apply(
         ProductViewSummary: js.UndefOr[ProductViewSummary] = js.undefined,
         ProvisioningArtifact: js.UndefOr[ProvisioningArtifact] = js.undefined
@@ -4449,6 +4615,7 @@ package servicecatalog {
   }
 
   object ProvisioningParameter {
+    @inline
     def apply(
         Key: js.UndefOr[ParameterKey] = js.undefined,
         Value: js.UndefOr[ParameterValue] = js.undefined
@@ -4474,6 +4641,7 @@ package servicecatalog {
   }
 
   object ProvisioningPreferences {
+    @inline
     def apply(
         StackSetAccounts: js.UndefOr[StackSetAccounts] = js.undefined,
         StackSetFailureToleranceCount: js.UndefOr[StackSetFailureToleranceCount] = js.undefined,
@@ -4522,6 +4690,7 @@ package servicecatalog {
   }
 
   object RecordDetail {
+    @inline
     def apply(
         CreatedTime: js.UndefOr[CreatedTime] = js.undefined,
         PathId: js.UndefOr[Id] = js.undefined,
@@ -4565,6 +4734,7 @@ package servicecatalog {
   }
 
   object RecordError {
+    @inline
     def apply(
         Code: js.UndefOr[ErrorCode] = js.undefined,
         Description: js.UndefOr[ErrorDescription] = js.undefined
@@ -4587,6 +4757,7 @@ package servicecatalog {
   }
 
   object RecordOutput {
+    @inline
     def apply(
         Description: js.UndefOr[Description] = js.undefined,
         OutputKey: js.UndefOr[OutputKey] = js.undefined,
@@ -4620,6 +4791,7 @@ package servicecatalog {
   }
 
   object RecordTag {
+    @inline
     def apply(
         Key: js.UndefOr[RecordTagKey] = js.undefined,
         Value: js.UndefOr[RecordTagValue] = js.undefined
@@ -4639,6 +4811,7 @@ package servicecatalog {
   }
 
   object RejectPortfolioShareInput {
+    @inline
     def apply(
         PortfolioId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
@@ -4658,6 +4831,7 @@ package servicecatalog {
   trait RejectPortfolioShareOutput extends js.Object {}
 
   object RejectPortfolioShareOutput {
+    @inline
     def apply(
         ): RejectPortfolioShareOutput = {
       val __obj = js.Dynamic.literal()
@@ -4708,6 +4882,7 @@ package servicecatalog {
   }
 
   object ResourceChange {
+    @inline
     def apply(
         Action: js.UndefOr[ChangeAction] = js.undefined,
         Details: js.UndefOr[ResourceChangeDetails] = js.undefined,
@@ -4740,6 +4915,7 @@ package servicecatalog {
   }
 
   object ResourceChangeDetail {
+    @inline
     def apply(
         CausingEntity: js.UndefOr[CausingEntity] = js.undefined,
         Evaluation: js.UndefOr[EvaluationType] = js.undefined,
@@ -4766,6 +4942,7 @@ package servicecatalog {
   }
 
   object ResourceDetail {
+    @inline
     def apply(
         ARN: js.UndefOr[ResourceDetailARN] = js.undefined,
         CreatedTime: js.UndefOr[ResourceDetailCreatedTime] = js.undefined,
@@ -4794,6 +4971,7 @@ package servicecatalog {
   }
 
   object ResourceTargetDefinition {
+    @inline
     def apply(
         Attribute: js.UndefOr[ResourceAttribute] = js.undefined,
         Name: js.UndefOr[PropertyName] = js.undefined,
@@ -4816,6 +4994,7 @@ package servicecatalog {
   }
 
   object ScanProvisionedProductsInput {
+    @inline
     def apply(
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
         AccessLevelFilter: js.UndefOr[AccessLevelFilter] = js.undefined,
@@ -4838,6 +5017,7 @@ package servicecatalog {
   }
 
   object ScanProvisionedProductsOutput {
+    @inline
     def apply(
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         ProvisionedProducts: js.UndefOr[ProvisionedProductDetails] = js.undefined
@@ -4862,6 +5042,7 @@ package servicecatalog {
   }
 
   object SearchProductsAsAdminInput {
+    @inline
     def apply(
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
         Filters: js.UndefOr[ProductViewFilters] = js.undefined,
@@ -4892,6 +5073,7 @@ package servicecatalog {
   }
 
   object SearchProductsAsAdminOutput {
+    @inline
     def apply(
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         ProductViewDetails: js.UndefOr[ProductViewDetails] = js.undefined
@@ -4914,6 +5096,7 @@ package servicecatalog {
   }
 
   object SearchProductsInput {
+    @inline
     def apply(
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
         Filters: js.UndefOr[ProductViewFilters] = js.undefined,
@@ -4941,6 +5124,7 @@ package servicecatalog {
   }
 
   object SearchProductsOutput {
+    @inline
     def apply(
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         ProductViewAggregations: js.UndefOr[ProductViewAggregations] = js.undefined,
@@ -4966,6 +5150,7 @@ package servicecatalog {
   }
 
   object SearchProvisionedProductsInput {
+    @inline
     def apply(
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
         AccessLevelFilter: js.UndefOr[AccessLevelFilter] = js.undefined,
@@ -4995,6 +5180,7 @@ package servicecatalog {
   }
 
   object SearchProvisionedProductsOutput {
+    @inline
     def apply(
         NextPageToken: js.UndefOr[PageToken] = js.undefined,
         ProvisionedProducts: js.UndefOr[ProvisionedProductAttributes] = js.undefined,
@@ -5019,6 +5205,7 @@ package servicecatalog {
   }
 
   object ServiceActionAssociation {
+    @inline
     def apply(
         ProductId: Id,
         ProvisioningArtifactId: Id,
@@ -5070,6 +5257,7 @@ package servicecatalog {
   }
 
   object ServiceActionDetail {
+    @inline
     def apply(
         Definition: js.UndefOr[ServiceActionDefinitionMap] = js.undefined,
         ServiceActionSummary: js.UndefOr[ServiceActionSummary] = js.undefined
@@ -5093,6 +5281,7 @@ package servicecatalog {
   }
 
   object ServiceActionSummary {
+    @inline
     def apply(
         DefinitionType: js.UndefOr[ServiceActionDefinitionType] = js.undefined,
         Description: js.UndefOr[ServiceActionDescription] = js.undefined,
@@ -5118,6 +5307,7 @@ package servicecatalog {
   }
 
   object ShareDetails {
+    @inline
     def apply(
         ShareErrors: js.UndefOr[ShareErrors] = js.undefined,
         SuccessfulShares: js.UndefOr[SuccessfulShares] = js.undefined
@@ -5140,6 +5330,7 @@ package servicecatalog {
   }
 
   object ShareError {
+    @inline
     def apply(
         Accounts: js.UndefOr[Namespaces] = js.undefined,
         Error: js.UndefOr[Error] = js.undefined,
@@ -5181,6 +5372,7 @@ package servicecatalog {
   }
 
   object StackInstance {
+    @inline
     def apply(
         Account: js.UndefOr[AccountId] = js.undefined,
         Region: js.UndefOr[Region] = js.undefined,
@@ -5228,6 +5420,7 @@ package servicecatalog {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: TagValue
@@ -5253,6 +5446,7 @@ package servicecatalog {
   }
 
   object TagOptionDetail {
+    @inline
     def apply(
         Active: js.UndefOr[TagOptionActive] = js.undefined,
         Id: js.UndefOr[TagOptionId] = js.undefined,
@@ -5278,6 +5472,7 @@ package servicecatalog {
   }
 
   object TagOptionSummary {
+    @inline
     def apply(
         Key: js.UndefOr[TagOptionKey] = js.undefined,
         Values: js.UndefOr[TagOptionValues] = js.undefined
@@ -5299,6 +5494,7 @@ package servicecatalog {
   }
 
   object TerminateProvisionedProductInput {
+    @inline
     def apply(
         TerminateToken: IdempotencyToken,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
@@ -5324,6 +5520,7 @@ package servicecatalog {
   }
 
   object TerminateProvisionedProductOutput {
+    @inline
     def apply(
         RecordDetail: js.UndefOr[RecordDetail] = js.undefined
     ): TerminateProvisionedProductOutput = {
@@ -5342,6 +5539,7 @@ package servicecatalog {
   }
 
   object UpdateConstraintInput {
+    @inline
     def apply(
         Id: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
@@ -5367,6 +5565,7 @@ package servicecatalog {
   }
 
   object UpdateConstraintOutput {
+    @inline
     def apply(
         ConstraintDetail: js.UndefOr[ConstraintDetail] = js.undefined,
         ConstraintParameters: js.UndefOr[ConstraintParameters] = js.undefined,
@@ -5392,6 +5591,7 @@ package servicecatalog {
   }
 
   object UpdatePortfolioInput {
+    @inline
     def apply(
         Id: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
@@ -5422,6 +5622,7 @@ package servicecatalog {
   }
 
   object UpdatePortfolioOutput {
+    @inline
     def apply(
         PortfolioDetail: js.UndefOr[PortfolioDetail] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
@@ -5449,6 +5650,7 @@ package servicecatalog {
   }
 
   object UpdateProductInput {
+    @inline
     def apply(
         Id: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
@@ -5487,6 +5689,7 @@ package servicecatalog {
   }
 
   object UpdateProductOutput {
+    @inline
     def apply(
         ProductViewDetail: js.UndefOr[ProductViewDetail] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
@@ -5513,6 +5716,7 @@ package servicecatalog {
   }
 
   object UpdateProvisionedProductInput {
+    @inline
     def apply(
         UpdateToken: IdempotencyToken,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
@@ -5548,6 +5752,7 @@ package servicecatalog {
   }
 
   object UpdateProvisionedProductOutput {
+    @inline
     def apply(
         RecordDetail: js.UndefOr[RecordDetail] = js.undefined
     ): UpdateProvisionedProductOutput = {
@@ -5566,6 +5771,7 @@ package servicecatalog {
   }
 
   object UpdateProvisionedProductPropertiesInput {
+    @inline
     def apply(
         IdempotencyToken: IdempotencyToken,
         ProvisionedProductId: Id,
@@ -5592,6 +5798,7 @@ package servicecatalog {
   }
 
   object UpdateProvisionedProductPropertiesOutput {
+    @inline
     def apply(
         ProvisionedProductId: js.UndefOr[Id] = js.undefined,
         ProvisionedProductProperties: js.UndefOr[ProvisionedProductProperties] = js.undefined,
@@ -5621,6 +5828,7 @@ package servicecatalog {
   }
 
   object UpdateProvisioningArtifactInput {
+    @inline
     def apply(
         ProductId: Id,
         ProvisioningArtifactId: Id,
@@ -5652,6 +5860,7 @@ package servicecatalog {
   }
 
   object UpdateProvisioningArtifactOutput {
+    @inline
     def apply(
         Info: js.UndefOr[ProvisioningArtifactInfo] = js.undefined,
         ProvisioningArtifactDetail: js.UndefOr[ProvisioningArtifactDetail] = js.undefined,
@@ -5678,6 +5887,7 @@ package servicecatalog {
   }
 
   object UpdateProvisioningParameter {
+    @inline
     def apply(
         Key: js.UndefOr[ParameterKey] = js.undefined,
         UsePreviousValue: js.UndefOr[UsePreviousValue] = js.undefined,
@@ -5706,6 +5916,7 @@ package servicecatalog {
   }
 
   object UpdateProvisioningPreferences {
+    @inline
     def apply(
         StackSetAccounts: js.UndefOr[StackSetAccounts] = js.undefined,
         StackSetFailureToleranceCount: js.UndefOr[StackSetFailureToleranceCount] = js.undefined,
@@ -5745,6 +5956,7 @@ package servicecatalog {
   }
 
   object UpdateServiceActionInput {
+    @inline
     def apply(
         Id: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
@@ -5770,6 +5982,7 @@ package servicecatalog {
   }
 
   object UpdateServiceActionOutput {
+    @inline
     def apply(
         ServiceActionDetail: js.UndefOr[ServiceActionDetail] = js.undefined
     ): UpdateServiceActionOutput = {
@@ -5787,6 +6000,7 @@ package servicecatalog {
   }
 
   object UpdateTagOptionInput {
+    @inline
     def apply(
         Id: TagOptionId,
         Active: js.UndefOr[TagOptionActive] = js.undefined,
@@ -5808,6 +6022,7 @@ package servicecatalog {
   }
 
   object UpdateTagOptionOutput {
+    @inline
     def apply(
         TagOptionDetail: js.UndefOr[TagOptionDetail] = js.undefined
     ): UpdateTagOptionOutput = {
@@ -5827,6 +6042,7 @@ package servicecatalog {
   }
 
   object UsageInstruction {
+    @inline
     def apply(
         Type: js.UndefOr[InstructionType] = js.undefined,
         Value: js.UndefOr[InstructionValue] = js.undefined

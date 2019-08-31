@@ -40,6 +40,7 @@ package sagemakerruntime {
   }
 
   object InvokeEndpointInput {
+    @inline
     def apply(
         Body: BodyBlob,
         EndpointName: EndpointName,
@@ -68,6 +69,7 @@ package sagemakerruntime {
   }
 
   object InvokeEndpointOutput {
+    @inline
     def apply(
         Body: BodyBlob,
         ContentType: js.UndefOr[Header] = js.undefined,

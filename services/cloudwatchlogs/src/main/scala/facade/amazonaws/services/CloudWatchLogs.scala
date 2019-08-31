@@ -228,6 +228,7 @@ package cloudwatchlogs {
   }
 
   object AssociateKmsKeyRequest {
+    @inline
     def apply(
         kmsKeyId: KmsKeyId,
         logGroupName: LogGroupName
@@ -247,6 +248,7 @@ package cloudwatchlogs {
   }
 
   object CancelExportTaskRequest {
+    @inline
     def apply(
         taskId: ExportTaskId
     ): CancelExportTaskRequest = {
@@ -270,6 +272,7 @@ package cloudwatchlogs {
   }
 
   object CreateExportTaskRequest {
+    @inline
     def apply(
         destination: ExportDestinationBucket,
         from: Timestamp,
@@ -299,6 +302,7 @@ package cloudwatchlogs {
   }
 
   object CreateExportTaskResponse {
+    @inline
     def apply(
         taskId: js.UndefOr[ExportTaskId] = js.undefined
     ): CreateExportTaskResponse = {
@@ -316,6 +320,7 @@ package cloudwatchlogs {
   }
 
   object CreateLogGroupRequest {
+    @inline
     def apply(
         logGroupName: LogGroupName,
         kmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
@@ -338,6 +343,7 @@ package cloudwatchlogs {
   }
 
   object CreateLogStreamRequest {
+    @inline
     def apply(
         logGroupName: LogGroupName,
         logStreamName: LogStreamName
@@ -357,6 +363,7 @@ package cloudwatchlogs {
   }
 
   object DeleteDestinationRequest {
+    @inline
     def apply(
         destinationName: DestinationName
     ): DeleteDestinationRequest = {
@@ -374,6 +381,7 @@ package cloudwatchlogs {
   }
 
   object DeleteLogGroupRequest {
+    @inline
     def apply(
         logGroupName: LogGroupName
     ): DeleteLogGroupRequest = {
@@ -392,6 +400,7 @@ package cloudwatchlogs {
   }
 
   object DeleteLogStreamRequest {
+    @inline
     def apply(
         logGroupName: LogGroupName,
         logStreamName: LogStreamName
@@ -412,6 +421,7 @@ package cloudwatchlogs {
   }
 
   object DeleteMetricFilterRequest {
+    @inline
     def apply(
         filterName: FilterName,
         logGroupName: LogGroupName
@@ -431,6 +441,7 @@ package cloudwatchlogs {
   }
 
   object DeleteResourcePolicyRequest {
+    @inline
     def apply(
         policyName: js.UndefOr[PolicyName] = js.undefined
     ): DeleteResourcePolicyRequest = {
@@ -446,6 +457,7 @@ package cloudwatchlogs {
   }
 
   object DeleteRetentionPolicyRequest {
+    @inline
     def apply(
         logGroupName: LogGroupName
     ): DeleteRetentionPolicyRequest = {
@@ -464,6 +476,7 @@ package cloudwatchlogs {
   }
 
   object DeleteSubscriptionFilterRequest {
+    @inline
     def apply(
         filterName: FilterName,
         logGroupName: LogGroupName
@@ -485,6 +498,7 @@ package cloudwatchlogs {
   }
 
   object DescribeDestinationsRequest {
+    @inline
     def apply(
         DestinationNamePrefix: js.UndefOr[DestinationName] = js.undefined,
         limit: js.UndefOr[DescribeLimit] = js.undefined,
@@ -505,6 +519,7 @@ package cloudwatchlogs {
   }
 
   object DescribeDestinationsResponse {
+    @inline
     def apply(
         destinations: js.UndefOr[Destinations] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -525,6 +540,7 @@ package cloudwatchlogs {
   }
 
   object DescribeExportTasksRequest {
+    @inline
     def apply(
         limit: js.UndefOr[DescribeLimit] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
@@ -547,6 +563,7 @@ package cloudwatchlogs {
   }
 
   object DescribeExportTasksResponse {
+    @inline
     def apply(
         exportTasks: js.UndefOr[ExportTasks] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -566,6 +583,7 @@ package cloudwatchlogs {
   }
 
   object DescribeLogGroupsRequest {
+    @inline
     def apply(
         limit: js.UndefOr[DescribeLimit] = js.undefined,
         logGroupNamePrefix: js.UndefOr[LogGroupName] = js.undefined,
@@ -586,6 +604,7 @@ package cloudwatchlogs {
   }
 
   object DescribeLogGroupsResponse {
+    @inline
     def apply(
         logGroups: js.UndefOr[LogGroups] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -608,6 +627,7 @@ package cloudwatchlogs {
   }
 
   object DescribeLogStreamsRequest {
+    @inline
     def apply(
         logGroupName: LogGroupName,
         descending: js.UndefOr[Descending] = js.undefined,
@@ -636,6 +656,7 @@ package cloudwatchlogs {
   }
 
   object DescribeLogStreamsResponse {
+    @inline
     def apply(
         logStreams: js.UndefOr[LogStreams] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -658,6 +679,7 @@ package cloudwatchlogs {
   }
 
   object DescribeMetricFiltersRequest {
+    @inline
     def apply(
         filterNamePrefix: js.UndefOr[FilterName] = js.undefined,
         limit: js.UndefOr[DescribeLimit] = js.undefined,
@@ -684,6 +706,7 @@ package cloudwatchlogs {
   }
 
   object DescribeMetricFiltersResponse {
+    @inline
     def apply(
         metricFilters: js.UndefOr[MetricFilters] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -704,6 +727,7 @@ package cloudwatchlogs {
   }
 
   object DescribeQueriesRequest {
+    @inline
     def apply(
         logGroupName: js.UndefOr[LogGroupName] = js.undefined,
         maxResults: js.UndefOr[DescribeQueriesMaxResults] = js.undefined,
@@ -726,6 +750,7 @@ package cloudwatchlogs {
   }
 
   object DescribeQueriesResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         queries: js.UndefOr[QueryInfoList] = js.undefined
@@ -744,6 +769,7 @@ package cloudwatchlogs {
   }
 
   object DescribeResourcePoliciesRequest {
+    @inline
     def apply(
         limit: js.UndefOr[DescribeLimit] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -762,6 +788,7 @@ package cloudwatchlogs {
   }
 
   object DescribeResourcePoliciesResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         resourcePolicies: js.UndefOr[ResourcePolicies] = js.undefined
@@ -782,6 +809,7 @@ package cloudwatchlogs {
   }
 
   object DescribeSubscriptionFiltersRequest {
+    @inline
     def apply(
         logGroupName: LogGroupName,
         filterNamePrefix: js.UndefOr[FilterName] = js.undefined,
@@ -806,6 +834,7 @@ package cloudwatchlogs {
   }
 
   object DescribeSubscriptionFiltersResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         subscriptionFilters: js.UndefOr[SubscriptionFilters] = js.undefined
@@ -831,6 +860,7 @@ package cloudwatchlogs {
   }
 
   object Destination {
+    @inline
     def apply(
         accessPolicy: js.UndefOr[AccessPolicy] = js.undefined,
         arn: js.UndefOr[Arn] = js.undefined,
@@ -856,6 +886,7 @@ package cloudwatchlogs {
   }
 
   object DisassociateKmsKeyRequest {
+    @inline
     def apply(
         logGroupName: LogGroupName
     ): DisassociateKmsKeyRequest = {
@@ -894,6 +925,7 @@ package cloudwatchlogs {
   }
 
   object ExportTask {
+    @inline
     def apply(
         destination: js.UndefOr[ExportDestinationBucket] = js.undefined,
         destinationPrefix: js.UndefOr[ExportDestinationPrefix] = js.undefined,
@@ -929,6 +961,7 @@ package cloudwatchlogs {
   }
 
   object ExportTaskExecutionInfo {
+    @inline
     def apply(
         completionTime: js.UndefOr[Timestamp] = js.undefined,
         creationTime: js.UndefOr[Timestamp] = js.undefined
@@ -950,6 +983,7 @@ package cloudwatchlogs {
   }
 
   object ExportTaskStatus {
+    @inline
     def apply(
         code: js.UndefOr[ExportTaskStatusCode] = js.undefined,
         message: js.UndefOr[ExportTaskStatusMessage] = js.undefined
@@ -986,6 +1020,7 @@ package cloudwatchlogs {
   }
 
   object FilterLogEventsRequest {
+    @inline
     def apply(
         logGroupName: LogGroupName,
         endTime: js.UndefOr[Timestamp] = js.undefined,
@@ -1021,6 +1056,7 @@ package cloudwatchlogs {
   }
 
   object FilterLogEventsResponse {
+    @inline
     def apply(
         events: js.UndefOr[FilteredLogEvents] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
@@ -1047,6 +1083,7 @@ package cloudwatchlogs {
   }
 
   object FilteredLogEvent {
+    @inline
     def apply(
         eventId: js.UndefOr[EventId] = js.undefined,
         ingestionTime: js.UndefOr[Timestamp] = js.undefined,
@@ -1076,6 +1113,7 @@ package cloudwatchlogs {
   }
 
   object GetLogEventsRequest {
+    @inline
     def apply(
         logGroupName: LogGroupName,
         logStreamName: LogStreamName,
@@ -1107,6 +1145,7 @@ package cloudwatchlogs {
   }
 
   object GetLogEventsResponse {
+    @inline
     def apply(
         events: js.UndefOr[OutputLogEvents] = js.undefined,
         nextBackwardToken: js.UndefOr[NextToken] = js.undefined,
@@ -1127,6 +1166,7 @@ package cloudwatchlogs {
   }
 
   object GetLogGroupFieldsRequest {
+    @inline
     def apply(
         logGroupName: LogGroupName,
         time: js.UndefOr[Timestamp] = js.undefined
@@ -1146,6 +1186,7 @@ package cloudwatchlogs {
   }
 
   object GetLogGroupFieldsResponse {
+    @inline
     def apply(
         logGroupFields: js.UndefOr[LogGroupFieldList] = js.undefined
     ): GetLogGroupFieldsResponse = {
@@ -1161,6 +1202,7 @@ package cloudwatchlogs {
   }
 
   object GetLogRecordRequest {
+    @inline
     def apply(
         logRecordPointer: LogRecordPointer
     ): GetLogRecordRequest = {
@@ -1178,6 +1220,7 @@ package cloudwatchlogs {
   }
 
   object GetLogRecordResponse {
+    @inline
     def apply(
         logRecord: js.UndefOr[LogRecord] = js.undefined
     ): GetLogRecordResponse = {
@@ -1193,6 +1236,7 @@ package cloudwatchlogs {
   }
 
   object GetQueryResultsRequest {
+    @inline
     def apply(
         queryId: QueryId
     ): GetQueryResultsRequest = {
@@ -1212,6 +1256,7 @@ package cloudwatchlogs {
   }
 
   object GetQueryResultsResponse {
+    @inline
     def apply(
         results: js.UndefOr[QueryResults] = js.undefined,
         statistics: js.UndefOr[QueryStatistics] = js.undefined,
@@ -1235,6 +1280,7 @@ package cloudwatchlogs {
   }
 
   object InputLogEvent {
+    @inline
     def apply(
         message: EventMessage,
         timestamp: Timestamp
@@ -1254,6 +1300,7 @@ package cloudwatchlogs {
   }
 
   object ListTagsLogGroupRequest {
+    @inline
     def apply(
         logGroupName: LogGroupName
     ): ListTagsLogGroupRequest = {
@@ -1271,6 +1318,7 @@ package cloudwatchlogs {
   }
 
   object ListTagsLogGroupResponse {
+    @inline
     def apply(
         tags: js.UndefOr[Tags] = js.undefined
     ): ListTagsLogGroupResponse = {
@@ -1295,6 +1343,7 @@ package cloudwatchlogs {
   }
 
   object LogGroup {
+    @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         creationTime: js.UndefOr[Timestamp] = js.undefined,
@@ -1326,6 +1375,7 @@ package cloudwatchlogs {
   }
 
   object LogGroupField {
+    @inline
     def apply(
         name: js.UndefOr[Field] = js.undefined,
         percent: js.UndefOr[Percentage] = js.undefined
@@ -1353,6 +1403,7 @@ package cloudwatchlogs {
   }
 
   object LogStream {
+    @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         creationTime: js.UndefOr[Timestamp] = js.undefined,
@@ -1389,6 +1440,7 @@ package cloudwatchlogs {
   }
 
   object MetricFilter {
+    @inline
     def apply(
         creationTime: js.UndefOr[Timestamp] = js.undefined,
         filterName: js.UndefOr[FilterName] = js.undefined,
@@ -1417,6 +1469,7 @@ package cloudwatchlogs {
   }
 
   object MetricFilterMatchRecord {
+    @inline
     def apply(
         eventMessage: js.UndefOr[EventMessage] = js.undefined,
         eventNumber: js.UndefOr[EventNumber] = js.undefined,
@@ -1442,6 +1495,7 @@ package cloudwatchlogs {
   }
 
   object MetricTransformation {
+    @inline
     def apply(
         metricName: MetricName,
         metricNamespace: MetricNamespace,
@@ -1477,6 +1531,7 @@ package cloudwatchlogs {
   }
 
   object OutputLogEvent {
+    @inline
     def apply(
         ingestionTime: js.UndefOr[Timestamp] = js.undefined,
         message: js.UndefOr[EventMessage] = js.undefined,
@@ -1497,6 +1552,7 @@ package cloudwatchlogs {
   }
 
   object PutDestinationPolicyRequest {
+    @inline
     def apply(
         accessPolicy: AccessPolicy,
         destinationName: DestinationName
@@ -1518,6 +1574,7 @@ package cloudwatchlogs {
   }
 
   object PutDestinationRequest {
+    @inline
     def apply(
         destinationName: DestinationName,
         roleArn: RoleArn,
@@ -1539,6 +1596,7 @@ package cloudwatchlogs {
   }
 
   object PutDestinationResponse {
+    @inline
     def apply(
         destination: js.UndefOr[Destination] = js.undefined
     ): PutDestinationResponse = {
@@ -1557,6 +1615,7 @@ package cloudwatchlogs {
   }
 
   object PutLogEventsRequest {
+    @inline
     def apply(
         logEvents: InputLogEvents,
         logGroupName: LogGroupName,
@@ -1581,6 +1640,7 @@ package cloudwatchlogs {
   }
 
   object PutLogEventsResponse {
+    @inline
     def apply(
         nextSequenceToken: js.UndefOr[SequenceToken] = js.undefined,
         rejectedLogEventsInfo: js.UndefOr[RejectedLogEventsInfo] = js.undefined
@@ -1601,6 +1661,7 @@ package cloudwatchlogs {
   }
 
   object PutMetricFilterRequest {
+    @inline
     def apply(
         filterName: FilterName,
         filterPattern: FilterPattern,
@@ -1625,6 +1686,7 @@ package cloudwatchlogs {
   }
 
   object PutResourcePolicyRequest {
+    @inline
     def apply(
         policyDocument: js.UndefOr[PolicyDocument] = js.undefined,
         policyName: js.UndefOr[PolicyName] = js.undefined
@@ -1642,6 +1704,7 @@ package cloudwatchlogs {
   }
 
   object PutResourcePolicyResponse {
+    @inline
     def apply(
         resourcePolicy: js.UndefOr[ResourcePolicy] = js.undefined
     ): PutResourcePolicyResponse = {
@@ -1658,6 +1721,7 @@ package cloudwatchlogs {
   }
 
   object PutRetentionPolicyRequest {
+    @inline
     def apply(
         logGroupName: LogGroupName,
         retentionInDays: Days
@@ -1682,6 +1746,7 @@ package cloudwatchlogs {
   }
 
   object PutSubscriptionFilterRequest {
+    @inline
     def apply(
         destinationArn: DestinationArn,
         filterName: FilterName,
@@ -1716,6 +1781,7 @@ package cloudwatchlogs {
   }
 
   object QueryInfo {
+    @inline
     def apply(
         createTime: js.UndefOr[Timestamp] = js.undefined,
         logGroupName: js.UndefOr[LogGroupName] = js.undefined,
@@ -1744,6 +1810,7 @@ package cloudwatchlogs {
   }
 
   object QueryStatistics {
+    @inline
     def apply(
         bytesScanned: js.UndefOr[StatsValue] = js.undefined,
         recordsMatched: js.UndefOr[StatsValue] = js.undefined,
@@ -1778,6 +1845,7 @@ package cloudwatchlogs {
   }
 
   object RejectedLogEventsInfo {
+    @inline
     def apply(
         expiredLogEventEndIndex: js.UndefOr[LogEventIndex] = js.undefined,
         tooNewLogEventStartIndex: js.UndefOr[LogEventIndex] = js.undefined,
@@ -1802,6 +1870,7 @@ package cloudwatchlogs {
   }
 
   object ResourcePolicy {
+    @inline
     def apply(
         lastUpdatedTime: js.UndefOr[Timestamp] = js.undefined,
         policyDocument: js.UndefOr[PolicyDocument] = js.undefined,
@@ -1825,6 +1894,7 @@ package cloudwatchlogs {
   }
 
   object ResultField {
+    @inline
     def apply(
         field: js.UndefOr[Field] = js.undefined,
         value: js.UndefOr[Value] = js.undefined
@@ -1846,6 +1916,7 @@ package cloudwatchlogs {
   }
 
   object SearchedLogStream {
+    @inline
     def apply(
         logStreamName: js.UndefOr[LogStreamName] = js.undefined,
         searchedCompletely: js.UndefOr[LogStreamSearchedCompletely] = js.undefined
@@ -1868,6 +1939,7 @@ package cloudwatchlogs {
   }
 
   object StartQueryRequest {
+    @inline
     def apply(
         endTime: Timestamp,
         queryString: QueryString,
@@ -1895,6 +1967,7 @@ package cloudwatchlogs {
   }
 
   object StartQueryResponse {
+    @inline
     def apply(
         queryId: js.UndefOr[QueryId] = js.undefined
     ): StartQueryResponse = {
@@ -1910,6 +1983,7 @@ package cloudwatchlogs {
   }
 
   object StopQueryRequest {
+    @inline
     def apply(
         queryId: QueryId
     ): StopQueryRequest = {
@@ -1927,6 +2001,7 @@ package cloudwatchlogs {
   }
 
   object StopQueryResponse {
+    @inline
     def apply(
         success: js.UndefOr[Success] = js.undefined
     ): StopQueryResponse = {
@@ -1951,6 +2026,7 @@ package cloudwatchlogs {
   }
 
   object SubscriptionFilter {
+    @inline
     def apply(
         creationTime: js.UndefOr[Timestamp] = js.undefined,
         destinationArn: js.UndefOr[DestinationArn] = js.undefined,
@@ -1979,6 +2055,7 @@ package cloudwatchlogs {
   }
 
   object TagLogGroupRequest {
+    @inline
     def apply(
         logGroupName: LogGroupName,
         tags: Tags
@@ -1999,6 +2076,7 @@ package cloudwatchlogs {
   }
 
   object TestMetricFilterRequest {
+    @inline
     def apply(
         filterPattern: FilterPattern,
         logEventMessages: TestEventMessages
@@ -2018,6 +2096,7 @@ package cloudwatchlogs {
   }
 
   object TestMetricFilterResponse {
+    @inline
     def apply(
         matches: js.UndefOr[MetricFilterMatches] = js.undefined
     ): TestMetricFilterResponse = {
@@ -2034,6 +2113,7 @@ package cloudwatchlogs {
   }
 
   object UntagLogGroupRequest {
+    @inline
     def apply(
         logGroupName: LogGroupName,
         tags: TagList

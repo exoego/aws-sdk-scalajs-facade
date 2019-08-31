@@ -83,6 +83,7 @@ package textract {
   }
 
   object AnalyzeDocumentRequest {
+    @inline
     def apply(
         Document: Document,
         FeatureTypes: FeatureTypes
@@ -103,6 +104,7 @@ package textract {
   }
 
   object AnalyzeDocumentResponse {
+    @inline
     def apply(
         Blocks: js.UndefOr[BlockList] = js.undefined,
         DocumentMetadata: js.UndefOr[DocumentMetadata] = js.undefined
@@ -137,6 +139,7 @@ package textract {
   }
 
   object Block {
+    @inline
     def apply(
         BlockType: js.UndefOr[BlockType] = js.undefined,
         ColumnIndex: js.UndefOr[UInteger] = js.undefined,
@@ -196,6 +199,7 @@ package textract {
   }
 
   object BoundingBox {
+    @inline
     def apply(
         Height: js.UndefOr[Float] = js.undefined,
         Left: js.UndefOr[Float] = js.undefined,
@@ -217,6 +221,7 @@ package textract {
   }
 
   object DetectDocumentTextRequest {
+    @inline
     def apply(
         Document: Document
     ): DetectDocumentTextRequest = {
@@ -235,6 +240,7 @@ package textract {
   }
 
   object DetectDocumentTextResponse {
+    @inline
     def apply(
         Blocks: js.UndefOr[BlockList] = js.undefined,
         DocumentMetadata: js.UndefOr[DocumentMetadata] = js.undefined
@@ -261,6 +267,7 @@ package textract {
   }
 
   object Document {
+    @inline
     def apply(
         Bytes: js.UndefOr[ImageBlob] = js.undefined,
         S3Object: js.UndefOr[S3Object] = js.undefined
@@ -282,6 +289,7 @@ package textract {
   }
 
   object DocumentLocation {
+    @inline
     def apply(
         S3Object: js.UndefOr[S3Object] = js.undefined
     ): DocumentLocation = {
@@ -300,6 +308,7 @@ package textract {
   }
 
   object DocumentMetadata {
+    @inline
     def apply(
         Pages: js.UndefOr[UInteger] = js.undefined
     ): DocumentMetadata = {
@@ -333,6 +342,7 @@ package textract {
   }
 
   object Geometry {
+    @inline
     def apply(
         BoundingBox: js.UndefOr[BoundingBox] = js.undefined,
         Polygon: js.UndefOr[Polygon] = js.undefined
@@ -352,6 +362,7 @@ package textract {
   }
 
   object GetDocumentAnalysisRequest {
+    @inline
     def apply(
         JobId: JobId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -378,6 +389,7 @@ package textract {
   }
 
   object GetDocumentAnalysisResponse {
+    @inline
     def apply(
         Blocks: js.UndefOr[BlockList] = js.undefined,
         DocumentMetadata: js.UndefOr[DocumentMetadata] = js.undefined,
@@ -405,6 +417,7 @@ package textract {
   }
 
   object GetDocumentTextDetectionRequest {
+    @inline
     def apply(
         JobId: JobId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -431,6 +444,7 @@ package textract {
   }
 
   object GetDocumentTextDetectionResponse {
+    @inline
     def apply(
         Blocks: js.UndefOr[BlockList] = js.undefined,
         DocumentMetadata: js.UndefOr[DocumentMetadata] = js.undefined,
@@ -469,6 +483,7 @@ package textract {
   }
 
   object NotificationChannel {
+    @inline
     def apply(
         RoleArn: RoleArn,
         SNSTopicArn: SNSTopicArn
@@ -493,6 +508,7 @@ package textract {
   }
 
   object Point {
+    @inline
     def apply(
         X: js.UndefOr[Float] = js.undefined,
         Y: js.UndefOr[Float] = js.undefined
@@ -515,6 +531,7 @@ package textract {
   }
 
   object Relationship {
+    @inline
     def apply(
         Ids: js.UndefOr[IdList] = js.undefined,
         Type: js.UndefOr[RelationshipType] = js.undefined
@@ -546,6 +563,7 @@ package textract {
   }
 
   object S3Object {
+    @inline
     def apply(
         Bucket: js.UndefOr[S3Bucket] = js.undefined,
         Name: js.UndefOr[S3ObjectName] = js.undefined,
@@ -576,6 +594,7 @@ package textract {
   }
 
   object StartDocumentAnalysisRequest {
+    @inline
     def apply(
         DocumentLocation: DocumentLocation,
         FeatureTypes: FeatureTypes,
@@ -601,6 +620,7 @@ package textract {
   }
 
   object StartDocumentAnalysisResponse {
+    @inline
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined
     ): StartDocumentAnalysisResponse = {
@@ -619,6 +639,7 @@ package textract {
   }
 
   object StartDocumentTextDetectionRequest {
+    @inline
     def apply(
         DocumentLocation: DocumentLocation,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
@@ -642,6 +663,7 @@ package textract {
   }
 
   object StartDocumentTextDetectionResponse {
+    @inline
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined
     ): StartDocumentTextDetectionResponse = {
@@ -661,6 +683,7 @@ package textract {
   }
 
   object Warning {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
         Pages: js.UndefOr[Pages] = js.undefined

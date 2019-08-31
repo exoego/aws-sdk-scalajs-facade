@@ -221,6 +221,7 @@ package rekognition {
   }
 
   object AgeRange {
+    @inline
     def apply(
         High: js.UndefOr[UInteger] = js.undefined,
         Low: js.UndefOr[UInteger] = js.undefined
@@ -249,6 +250,7 @@ package rekognition {
   }
 
   object Beard {
+    @inline
     def apply(
         Confidence: js.UndefOr[Percent] = js.undefined,
         Value: js.UndefOr[Boolean] = js.undefined
@@ -276,6 +278,7 @@ package rekognition {
   }
 
   object BoundingBox {
+    @inline
     def apply(
         Height: js.UndefOr[Float] = js.undefined,
         Left: js.UndefOr[Float] = js.undefined,
@@ -304,6 +307,7 @@ package rekognition {
   }
 
   object Celebrity {
+    @inline
     def apply(
         Face: js.UndefOr[ComparedFace] = js.undefined,
         Id: js.UndefOr[RekognitionUniqueId] = js.undefined,
@@ -335,6 +339,7 @@ package rekognition {
   }
 
   object CelebrityDetail {
+    @inline
     def apply(
         BoundingBox: js.UndefOr[BoundingBox] = js.undefined,
         Confidence: js.UndefOr[Percent] = js.undefined,
@@ -364,6 +369,7 @@ package rekognition {
   }
 
   object CelebrityRecognition {
+    @inline
     def apply(
         Celebrity: js.UndefOr[CelebrityDetail] = js.undefined,
         Timestamp: js.UndefOr[Timestamp] = js.undefined
@@ -392,6 +398,7 @@ package rekognition {
   }
 
   object CompareFacesMatch {
+    @inline
     def apply(
         Face: js.UndefOr[ComparedFace] = js.undefined,
         Similarity: js.UndefOr[Percent] = js.undefined
@@ -411,6 +418,7 @@ package rekognition {
   }
 
   object CompareFacesRequest {
+    @inline
     def apply(
         SourceImage: Image,
         TargetImage: Image,
@@ -436,6 +444,7 @@ package rekognition {
   }
 
   object CompareFacesResponse {
+    @inline
     def apply(
         FaceMatches: js.UndefOr[CompareFacesMatchList] = js.undefined,
         SourceImageFace: js.UndefOr[ComparedSourceImageFace] = js.undefined,
@@ -470,6 +479,7 @@ package rekognition {
   }
 
   object ComparedFace {
+    @inline
     def apply(
         BoundingBox: js.UndefOr[BoundingBox] = js.undefined,
         Confidence: js.UndefOr[Percent] = js.undefined,
@@ -497,6 +507,7 @@ package rekognition {
   }
 
   object ComparedSourceImageFace {
+    @inline
     def apply(
         BoundingBox: js.UndefOr[BoundingBox] = js.undefined,
         Confidence: js.UndefOr[Percent] = js.undefined
@@ -518,6 +529,7 @@ package rekognition {
   }
 
   object ContentModerationDetection {
+    @inline
     def apply(
         ModerationLabel: js.UndefOr[ModerationLabel] = js.undefined,
         Timestamp: js.UndefOr[Timestamp] = js.undefined
@@ -542,6 +554,7 @@ package rekognition {
   }
 
   object CreateCollectionRequest {
+    @inline
     def apply(
         CollectionId: CollectionId
     ): CreateCollectionRequest = {
@@ -561,6 +574,7 @@ package rekognition {
   }
 
   object CreateCollectionResponse {
+    @inline
     def apply(
         CollectionArn: js.UndefOr[String] = js.undefined,
         FaceModelVersion: js.UndefOr[String] = js.undefined,
@@ -584,6 +598,7 @@ package rekognition {
   }
 
   object CreateStreamProcessorRequest {
+    @inline
     def apply(
         Input: StreamProcessorInput,
         Name: StreamProcessorName,
@@ -609,6 +624,7 @@ package rekognition {
   }
 
   object CreateStreamProcessorResponse {
+    @inline
     def apply(
         StreamProcessorArn: js.UndefOr[StreamProcessorArn] = js.undefined
     ): CreateStreamProcessorResponse = {
@@ -624,6 +640,7 @@ package rekognition {
   }
 
   object DeleteCollectionRequest {
+    @inline
     def apply(
         CollectionId: CollectionId
     ): DeleteCollectionRequest = {
@@ -641,6 +658,7 @@ package rekognition {
   }
 
   object DeleteCollectionResponse {
+    @inline
     def apply(
         StatusCode: js.UndefOr[UInteger] = js.undefined
     ): DeleteCollectionResponse = {
@@ -657,6 +675,7 @@ package rekognition {
   }
 
   object DeleteFacesRequest {
+    @inline
     def apply(
         CollectionId: CollectionId,
         FaceIds: FaceIdList
@@ -676,6 +695,7 @@ package rekognition {
   }
 
   object DeleteFacesResponse {
+    @inline
     def apply(
         DeletedFaces: js.UndefOr[FaceIdList] = js.undefined
     ): DeleteFacesResponse = {
@@ -691,6 +711,7 @@ package rekognition {
   }
 
   object DeleteStreamProcessorRequest {
+    @inline
     def apply(
         Name: StreamProcessorName
     ): DeleteStreamProcessorRequest = {
@@ -706,6 +727,7 @@ package rekognition {
   trait DeleteStreamProcessorResponse extends js.Object {}
 
   object DeleteStreamProcessorResponse {
+    @inline
     def apply(
         ): DeleteStreamProcessorResponse = {
       val __obj = js.Dynamic.literal()
@@ -720,6 +742,7 @@ package rekognition {
   }
 
   object DescribeCollectionRequest {
+    @inline
     def apply(
         CollectionId: CollectionId
     ): DescribeCollectionRequest = {
@@ -740,6 +763,7 @@ package rekognition {
   }
 
   object DescribeCollectionResponse {
+    @inline
     def apply(
         CollectionARN: js.UndefOr[String] = js.undefined,
         CreationTimestamp: js.UndefOr[DateTime] = js.undefined,
@@ -761,6 +785,7 @@ package rekognition {
   }
 
   object DescribeStreamProcessorRequest {
+    @inline
     def apply(
         Name: StreamProcessorName
     ): DescribeStreamProcessorRequest = {
@@ -787,6 +812,7 @@ package rekognition {
   }
 
   object DescribeStreamProcessorResponse {
+    @inline
     def apply(
         CreationTimestamp: js.UndefOr[DateTime] = js.undefined,
         Input: js.UndefOr[StreamProcessorInput] = js.undefined,
@@ -821,6 +847,7 @@ package rekognition {
   }
 
   object DetectFacesRequest {
+    @inline
     def apply(
         Image: Image,
         Attributes: js.UndefOr[Attributes] = js.undefined
@@ -841,6 +868,7 @@ package rekognition {
   }
 
   object DetectFacesResponse {
+    @inline
     def apply(
         FaceDetails: js.UndefOr[FaceDetailList] = js.undefined,
         OrientationCorrection: js.UndefOr[OrientationCorrection] = js.undefined
@@ -860,6 +888,7 @@ package rekognition {
   }
 
   object DetectLabelsRequest {
+    @inline
     def apply(
         Image: Image,
         MaxLabels: js.UndefOr[UInteger] = js.undefined,
@@ -883,6 +912,7 @@ package rekognition {
   }
 
   object DetectLabelsResponse {
+    @inline
     def apply(
         LabelModelVersion: js.UndefOr[String] = js.undefined,
         Labels: js.UndefOr[Labels] = js.undefined,
@@ -903,6 +933,7 @@ package rekognition {
   }
 
   object DetectModerationLabelsRequest {
+    @inline
     def apply(
         Image: Image,
         MinConfidence: js.UndefOr[Percent] = js.undefined
@@ -923,6 +954,7 @@ package rekognition {
   }
 
   object DetectModerationLabelsResponse {
+    @inline
     def apply(
         ModerationLabels: js.UndefOr[ModerationLabels] = js.undefined,
         ModerationModelVersion: js.UndefOr[String] = js.undefined
@@ -940,6 +972,7 @@ package rekognition {
   }
 
   object DetectTextRequest {
+    @inline
     def apply(
         Image: Image
     ): DetectTextRequest = {
@@ -957,6 +990,7 @@ package rekognition {
   }
 
   object DetectTextResponse {
+    @inline
     def apply(
         TextDetections: js.UndefOr[TextDetectionList] = js.undefined
     ): DetectTextResponse = {
@@ -976,6 +1010,7 @@ package rekognition {
   }
 
   object Emotion {
+    @inline
     def apply(
         Confidence: js.UndefOr[Percent] = js.undefined,
         Type: js.UndefOr[EmotionName] = js.undefined
@@ -1011,6 +1046,7 @@ package rekognition {
   }
 
   object EyeOpen {
+    @inline
     def apply(
         Confidence: js.UndefOr[Percent] = js.undefined,
         Value: js.UndefOr[Boolean] = js.undefined
@@ -1032,6 +1068,7 @@ package rekognition {
   }
 
   object Eyeglasses {
+    @inline
     def apply(
         Confidence: js.UndefOr[Percent] = js.undefined,
         Value: js.UndefOr[Boolean] = js.undefined
@@ -1056,6 +1093,7 @@ package rekognition {
   }
 
   object Face {
+    @inline
     def apply(
         BoundingBox: js.UndefOr[BoundingBox] = js.undefined,
         Confidence: js.UndefOr[Percent] = js.undefined,
@@ -1109,6 +1147,7 @@ package rekognition {
   }
 
   object FaceDetail {
+    @inline
     def apply(
         AgeRange: js.UndefOr[AgeRange] = js.undefined,
         Beard: js.UndefOr[Beard] = js.undefined,
@@ -1156,6 +1195,7 @@ package rekognition {
   }
 
   object FaceDetection {
+    @inline
     def apply(
         Face: js.UndefOr[FaceDetail] = js.undefined,
         Timestamp: js.UndefOr[Timestamp] = js.undefined
@@ -1177,6 +1217,7 @@ package rekognition {
   }
 
   object FaceMatch {
+    @inline
     def apply(
         Face: js.UndefOr[Face] = js.undefined,
         Similarity: js.UndefOr[Percent] = js.undefined
@@ -1198,6 +1239,7 @@ package rekognition {
   }
 
   object FaceRecord {
+    @inline
     def apply(
         Face: js.UndefOr[Face] = js.undefined,
         FaceDetail: js.UndefOr[FaceDetail] = js.undefined
@@ -1219,6 +1261,7 @@ package rekognition {
   }
 
   object FaceSearchSettings {
+    @inline
     def apply(
         CollectionId: js.UndefOr[CollectionId] = js.undefined,
         FaceMatchThreshold: js.UndefOr[Percent] = js.undefined
@@ -1247,6 +1290,7 @@ package rekognition {
   }
 
   object Gender {
+    @inline
     def apply(
         Confidence: js.UndefOr[Percent] = js.undefined,
         Value: js.UndefOr[GenderType] = js.undefined
@@ -1275,6 +1319,7 @@ package rekognition {
   }
 
   object Geometry {
+    @inline
     def apply(
         BoundingBox: js.UndefOr[BoundingBox] = js.undefined,
         Polygon: js.UndefOr[Polygon] = js.undefined
@@ -1292,6 +1337,7 @@ package rekognition {
   }
 
   object GetCelebrityInfoRequest {
+    @inline
     def apply(
         Id: RekognitionUniqueId
     ): GetCelebrityInfoRequest = {
@@ -1310,6 +1356,7 @@ package rekognition {
   }
 
   object GetCelebrityInfoResponse {
+    @inline
     def apply(
         Name: js.UndefOr[String] = js.undefined,
         Urls: js.UndefOr[Urls] = js.undefined
@@ -1330,6 +1377,7 @@ package rekognition {
   }
 
   object GetCelebrityRecognitionRequest {
+    @inline
     def apply(
         JobId: JobId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1357,6 +1405,7 @@ package rekognition {
   }
 
   object GetCelebrityRecognitionResponse {
+    @inline
     def apply(
         Celebrities: js.UndefOr[CelebrityRecognitions] = js.undefined,
         JobStatus: js.UndefOr[VideoJobStatus] = js.undefined,
@@ -1383,6 +1432,7 @@ package rekognition {
   }
 
   object GetContentModerationRequest {
+    @inline
     def apply(
         JobId: JobId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1411,6 +1461,7 @@ package rekognition {
   }
 
   object GetContentModerationResponse {
+    @inline
     def apply(
         JobStatus: js.UndefOr[VideoJobStatus] = js.undefined,
         ModerationLabels: js.UndefOr[ContentModerationDetections] = js.undefined,
@@ -1438,6 +1489,7 @@ package rekognition {
   }
 
   object GetFaceDetectionRequest {
+    @inline
     def apply(
         JobId: JobId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1463,6 +1515,7 @@ package rekognition {
   }
 
   object GetFaceDetectionResponse {
+    @inline
     def apply(
         Faces: js.UndefOr[FaceDetections] = js.undefined,
         JobStatus: js.UndefOr[VideoJobStatus] = js.undefined,
@@ -1489,6 +1542,7 @@ package rekognition {
   }
 
   object GetFaceSearchRequest {
+    @inline
     def apply(
         JobId: JobId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1516,6 +1570,7 @@ package rekognition {
   }
 
   object GetFaceSearchResponse {
+    @inline
     def apply(
         JobStatus: js.UndefOr[VideoJobStatus] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
@@ -1542,6 +1597,7 @@ package rekognition {
   }
 
   object GetLabelDetectionRequest {
+    @inline
     def apply(
         JobId: JobId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1570,6 +1626,7 @@ package rekognition {
   }
 
   object GetLabelDetectionResponse {
+    @inline
     def apply(
         JobStatus: js.UndefOr[VideoJobStatus] = js.undefined,
         LabelModelVersion: js.UndefOr[String] = js.undefined,
@@ -1598,6 +1655,7 @@ package rekognition {
   }
 
   object GetPersonTrackingRequest {
+    @inline
     def apply(
         JobId: JobId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1625,6 +1683,7 @@ package rekognition {
   }
 
   object GetPersonTrackingResponse {
+    @inline
     def apply(
         JobStatus: js.UndefOr[VideoJobStatus] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
@@ -1658,6 +1717,7 @@ package rekognition {
   }
 
   object Image {
+    @inline
     def apply(
         Bytes: js.UndefOr[ImageBlob] = js.undefined,
         S3Object: js.UndefOr[S3Object] = js.undefined
@@ -1679,6 +1739,7 @@ package rekognition {
   }
 
   object ImageQuality {
+    @inline
     def apply(
         Brightness: js.UndefOr[Float] = js.undefined,
         Sharpness: js.UndefOr[Float] = js.undefined
@@ -1701,6 +1762,7 @@ package rekognition {
   }
 
   object IndexFacesRequest {
+    @inline
     def apply(
         CollectionId: CollectionId,
         Image: Image,
@@ -1731,6 +1793,7 @@ package rekognition {
   }
 
   object IndexFacesResponse {
+    @inline
     def apply(
         FaceModelVersion: js.UndefOr[String] = js.undefined,
         FaceRecords: js.UndefOr[FaceRecordList] = js.undefined,
@@ -1756,6 +1819,7 @@ package rekognition {
   }
 
   object Instance {
+    @inline
     def apply(
         BoundingBox: js.UndefOr[BoundingBox] = js.undefined,
         Confidence: js.UndefOr[Percent] = js.undefined
@@ -1776,6 +1840,7 @@ package rekognition {
   }
 
   object KinesisDataStream {
+    @inline
     def apply(
         Arn: js.UndefOr[KinesisDataArn] = js.undefined
     ): KinesisDataStream = {
@@ -1794,6 +1859,7 @@ package rekognition {
   }
 
   object KinesisVideoStream {
+    @inline
     def apply(
         Arn: js.UndefOr[KinesisVideoArn] = js.undefined
     ): KinesisVideoStream = {
@@ -1816,6 +1882,7 @@ package rekognition {
   }
 
   object Label {
+    @inline
     def apply(
         Confidence: js.UndefOr[Percent] = js.undefined,
         Instances: js.UndefOr[Instances] = js.undefined,
@@ -1841,6 +1908,7 @@ package rekognition {
   }
 
   object LabelDetection {
+    @inline
     def apply(
         Label: js.UndefOr[Label] = js.undefined,
         Timestamp: js.UndefOr[Timestamp] = js.undefined
@@ -1870,6 +1938,7 @@ package rekognition {
   }
 
   object Landmark {
+    @inline
     def apply(
         Type: js.UndefOr[LandmarkType] = js.undefined,
         X: js.UndefOr[Float] = js.undefined,
@@ -1958,6 +2027,7 @@ package rekognition {
   }
 
   object ListCollectionsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -1977,6 +2047,7 @@ package rekognition {
   }
 
   object ListCollectionsResponse {
+    @inline
     def apply(
         CollectionIds: js.UndefOr[CollectionIdList] = js.undefined,
         FaceModelVersions: js.UndefOr[FaceModelVersionList] = js.undefined,
@@ -1998,6 +2069,7 @@ package rekognition {
   }
 
   object ListFacesRequest {
+    @inline
     def apply(
         CollectionId: CollectionId,
         MaxResults: js.UndefOr[PageSize] = js.undefined,
@@ -2021,6 +2093,7 @@ package rekognition {
   }
 
   object ListFacesResponse {
+    @inline
     def apply(
         FaceModelVersion: js.UndefOr[String] = js.undefined,
         Faces: js.UndefOr[FaceList] = js.undefined,
@@ -2041,6 +2114,7 @@ package rekognition {
   }
 
   object ListStreamProcessorsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -2059,6 +2133,7 @@ package rekognition {
   }
 
   object ListStreamProcessorsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         StreamProcessors: js.UndefOr[StreamProcessorList] = js.undefined
@@ -2081,6 +2156,7 @@ package rekognition {
   }
 
   object ModerationLabel {
+    @inline
     def apply(
         Confidence: js.UndefOr[Percent] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,
@@ -2104,6 +2180,7 @@ package rekognition {
   }
 
   object MouthOpen {
+    @inline
     def apply(
         Confidence: js.UndefOr[Percent] = js.undefined,
         Value: js.UndefOr[Boolean] = js.undefined
@@ -2125,6 +2202,7 @@ package rekognition {
   }
 
   object Mustache {
+    @inline
     def apply(
         Confidence: js.UndefOr[Percent] = js.undefined,
         Value: js.UndefOr[Boolean] = js.undefined
@@ -2146,6 +2224,7 @@ package rekognition {
   }
 
   object NotificationChannel {
+    @inline
     def apply(
         RoleArn: RoleArn,
         SNSTopicArn: SNSTopicArn
@@ -2177,6 +2256,7 @@ package rekognition {
   }
 
   object Parent {
+    @inline
     def apply(
         Name: js.UndefOr[String] = js.undefined
     ): Parent = {
@@ -2197,6 +2277,7 @@ package rekognition {
   }
 
   object PersonDetail {
+    @inline
     def apply(
         BoundingBox: js.UndefOr[BoundingBox] = js.undefined,
         Face: js.UndefOr[FaceDetail] = js.undefined,
@@ -2221,6 +2302,7 @@ package rekognition {
   }
 
   object PersonDetection {
+    @inline
     def apply(
         Person: js.UndefOr[PersonDetail] = js.undefined,
         Timestamp: js.UndefOr[Timestamp] = js.undefined
@@ -2243,6 +2325,7 @@ package rekognition {
   }
 
   object PersonMatch {
+    @inline
     def apply(
         FaceMatches: js.UndefOr[FaceMatchList] = js.undefined,
         Person: js.UndefOr[PersonDetail] = js.undefined,
@@ -2274,6 +2357,7 @@ package rekognition {
   }
 
   object Point {
+    @inline
     def apply(
         X: js.UndefOr[Float] = js.undefined,
         Y: js.UndefOr[Float] = js.undefined
@@ -2296,6 +2380,7 @@ package rekognition {
   }
 
   object Pose {
+    @inline
     def apply(
         Pitch: js.UndefOr[Degree] = js.undefined,
         Roll: js.UndefOr[Degree] = js.undefined,
@@ -2335,6 +2420,7 @@ package rekognition {
   }
 
   object RecognizeCelebritiesRequest {
+    @inline
     def apply(
         Image: Image
     ): RecognizeCelebritiesRequest = {
@@ -2354,6 +2440,7 @@ package rekognition {
   }
 
   object RecognizeCelebritiesResponse {
+    @inline
     def apply(
         CelebrityFaces: js.UndefOr[CelebrityList] = js.undefined,
         OrientationCorrection: js.UndefOr[OrientationCorrection] = js.undefined,
@@ -2380,6 +2467,7 @@ package rekognition {
   }
 
   object S3Object {
+    @inline
     def apply(
         Bucket: js.UndefOr[S3Bucket] = js.undefined,
         Name: js.UndefOr[S3ObjectName] = js.undefined,
@@ -2402,6 +2490,7 @@ package rekognition {
   }
 
   object SearchFacesByImageRequest {
+    @inline
     def apply(
         CollectionId: CollectionId,
         Image: Image,
@@ -2428,6 +2517,7 @@ package rekognition {
   }
 
   object SearchFacesByImageResponse {
+    @inline
     def apply(
         FaceMatches: js.UndefOr[FaceMatchList] = js.undefined,
         FaceModelVersion: js.UndefOr[String] = js.undefined,
@@ -2452,6 +2542,7 @@ package rekognition {
   }
 
   object SearchFacesRequest {
+    @inline
     def apply(
         CollectionId: CollectionId,
         FaceId: FaceId,
@@ -2477,6 +2568,7 @@ package rekognition {
   }
 
   object SearchFacesResponse {
+    @inline
     def apply(
         FaceMatches: js.UndefOr[FaceMatchList] = js.undefined,
         FaceModelVersion: js.UndefOr[String] = js.undefined,
@@ -2500,6 +2592,7 @@ package rekognition {
   }
 
   object Smile {
+    @inline
     def apply(
         Confidence: js.UndefOr[Percent] = js.undefined,
         Value: js.UndefOr[Boolean] = js.undefined
@@ -2520,6 +2613,7 @@ package rekognition {
   }
 
   object StartCelebrityRecognitionRequest {
+    @inline
     def apply(
         Video: Video,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
@@ -2543,6 +2637,7 @@ package rekognition {
   }
 
   object StartCelebrityRecognitionResponse {
+    @inline
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined
     ): StartCelebrityRecognitionResponse = {
@@ -2562,6 +2657,7 @@ package rekognition {
   }
 
   object StartContentModerationRequest {
+    @inline
     def apply(
         Video: Video,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
@@ -2587,6 +2683,7 @@ package rekognition {
   }
 
   object StartContentModerationResponse {
+    @inline
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined
     ): StartContentModerationResponse = {
@@ -2606,6 +2703,7 @@ package rekognition {
   }
 
   object StartFaceDetectionRequest {
+    @inline
     def apply(
         Video: Video,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
@@ -2631,6 +2729,7 @@ package rekognition {
   }
 
   object StartFaceDetectionResponse {
+    @inline
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined
     ): StartFaceDetectionResponse = {
@@ -2651,6 +2750,7 @@ package rekognition {
   }
 
   object StartFaceSearchRequest {
+    @inline
     def apply(
         CollectionId: CollectionId,
         Video: Video,
@@ -2678,6 +2778,7 @@ package rekognition {
   }
 
   object StartFaceSearchResponse {
+    @inline
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined
     ): StartFaceSearchResponse = {
@@ -2697,6 +2798,7 @@ package rekognition {
   }
 
   object StartLabelDetectionRequest {
+    @inline
     def apply(
         Video: Video,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
@@ -2722,6 +2824,7 @@ package rekognition {
   }
 
   object StartLabelDetectionResponse {
+    @inline
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined
     ): StartLabelDetectionResponse = {
@@ -2740,6 +2843,7 @@ package rekognition {
   }
 
   object StartPersonTrackingRequest {
+    @inline
     def apply(
         Video: Video,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
@@ -2763,6 +2867,7 @@ package rekognition {
   }
 
   object StartPersonTrackingResponse {
+    @inline
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined
     ): StartPersonTrackingResponse = {
@@ -2778,6 +2883,7 @@ package rekognition {
   }
 
   object StartStreamProcessorRequest {
+    @inline
     def apply(
         Name: StreamProcessorName
     ): StartStreamProcessorRequest = {
@@ -2793,6 +2899,7 @@ package rekognition {
   trait StartStreamProcessorResponse extends js.Object {}
 
   object StartStreamProcessorResponse {
+    @inline
     def apply(
         ): StartStreamProcessorResponse = {
       val __obj = js.Dynamic.literal()
@@ -2807,6 +2914,7 @@ package rekognition {
   }
 
   object StopStreamProcessorRequest {
+    @inline
     def apply(
         Name: StreamProcessorName
     ): StopStreamProcessorRequest = {
@@ -2822,6 +2930,7 @@ package rekognition {
   trait StopStreamProcessorResponse extends js.Object {}
 
   object StopStreamProcessorResponse {
+    @inline
     def apply(
         ): StopStreamProcessorResponse = {
       val __obj = js.Dynamic.literal()
@@ -2840,6 +2949,7 @@ package rekognition {
   }
 
   object StreamProcessor {
+    @inline
     def apply(
         Name: js.UndefOr[StreamProcessorName] = js.undefined,
         Status: js.UndefOr[StreamProcessorStatus] = js.undefined
@@ -2860,6 +2970,7 @@ package rekognition {
   }
 
   object StreamProcessorInput {
+    @inline
     def apply(
         KinesisVideoStream: js.UndefOr[KinesisVideoStream] = js.undefined
     ): StreamProcessorInput = {
@@ -2878,6 +2989,7 @@ package rekognition {
   }
 
   object StreamProcessorOutput {
+    @inline
     def apply(
         KinesisDataStream: js.UndefOr[KinesisDataStream] = js.undefined
     ): StreamProcessorOutput = {
@@ -2896,6 +3008,7 @@ package rekognition {
   }
 
   object StreamProcessorSettings {
+    @inline
     def apply(
         FaceSearch: js.UndefOr[FaceSearchSettings] = js.undefined
     ): StreamProcessorSettings = {
@@ -2925,6 +3038,7 @@ package rekognition {
   }
 
   object Sunglasses {
+    @inline
     def apply(
         Confidence: js.UndefOr[Percent] = js.undefined,
         Value: js.UndefOr[Boolean] = js.undefined
@@ -2953,6 +3067,7 @@ package rekognition {
   }
 
   object TextDetection {
+    @inline
     def apply(
         Confidence: js.UndefOr[Percent] = js.undefined,
         DetectedText: js.UndefOr[String] = js.undefined,
@@ -2989,6 +3104,7 @@ package rekognition {
   }
 
   object UnindexedFace {
+    @inline
     def apply(
         FaceDetail: js.UndefOr[FaceDetail] = js.undefined,
         Reasons: js.UndefOr[Reasons] = js.undefined
@@ -3009,6 +3125,7 @@ package rekognition {
   }
 
   object Video {
+    @inline
     def apply(
         S3Object: js.UndefOr[S3Object] = js.undefined
     ): Video = {
@@ -3040,6 +3157,7 @@ package rekognition {
   }
 
   object VideoMetadata {
+    @inline
     def apply(
         Codec: js.UndefOr[String] = js.undefined,
         DurationMillis: js.UndefOr[ULong] = js.undefined,

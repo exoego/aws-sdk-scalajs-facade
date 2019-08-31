@@ -212,6 +212,7 @@ package kms {
   }
 
   object AliasListEntry {
+    @inline
     def apply(
         AliasArn: js.UndefOr[ArnType] = js.undefined,
         AliasName: js.UndefOr[AliasNameType] = js.undefined,
@@ -231,6 +232,7 @@ package kms {
   }
 
   object CancelKeyDeletionRequest {
+    @inline
     def apply(
         KeyId: KeyIdType
     ): CancelKeyDeletionRequest = {
@@ -248,6 +250,7 @@ package kms {
   }
 
   object CancelKeyDeletionResponse {
+    @inline
     def apply(
         KeyId: js.UndefOr[KeyIdType] = js.undefined
     ): CancelKeyDeletionResponse = {
@@ -263,6 +266,7 @@ package kms {
   }
 
   object ConnectCustomKeyStoreRequest {
+    @inline
     def apply(
         CustomKeyStoreId: CustomKeyStoreIdType
     ): ConnectCustomKeyStoreRequest = {
@@ -278,6 +282,7 @@ package kms {
   trait ConnectCustomKeyStoreResponse extends js.Object {}
 
   object ConnectCustomKeyStoreResponse {
+    @inline
     def apply(
         ): ConnectCustomKeyStoreResponse = {
       val __obj = js.Dynamic.literal()
@@ -323,6 +328,7 @@ package kms {
   }
 
   object CreateAliasRequest {
+    @inline
     def apply(
         AliasName: AliasNameType,
         TargetKeyId: KeyIdType
@@ -345,6 +351,7 @@ package kms {
   }
 
   object CreateCustomKeyStoreRequest {
+    @inline
     def apply(
         CloudHsmClusterId: CloudHsmClusterIdType,
         CustomKeyStoreName: CustomKeyStoreNameType,
@@ -368,6 +375,7 @@ package kms {
   }
 
   object CreateCustomKeyStoreResponse {
+    @inline
     def apply(
         CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType] = js.undefined
     ): CreateCustomKeyStoreResponse = {
@@ -389,6 +397,7 @@ package kms {
   }
 
   object CreateGrantRequest {
+    @inline
     def apply(
         GranteePrincipal: PrincipalIdType,
         KeyId: KeyIdType,
@@ -419,6 +428,7 @@ package kms {
   }
 
   object CreateGrantResponse {
+    @inline
     def apply(
         GrantId: js.UndefOr[GrantIdType] = js.undefined,
         GrantToken: js.UndefOr[GrantTokenType] = js.undefined
@@ -442,6 +452,7 @@ package kms {
   }
 
   object CreateKeyRequest {
+    @inline
     def apply(
         BypassPolicyLockoutSafetyCheck: js.UndefOr[BooleanType] = js.undefined,
         CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType] = js.undefined,
@@ -471,6 +482,7 @@ package kms {
   }
 
   object CreateKeyResponse {
+    @inline
     def apply(
         KeyMetadata: js.UndefOr[KeyMetadata] = js.undefined
     ): CreateKeyResponse = {
@@ -495,6 +507,7 @@ package kms {
   }
 
   object CustomKeyStoresListEntry {
+    @inline
     def apply(
         CloudHsmClusterId: js.UndefOr[CloudHsmClusterIdType] = js.undefined,
         ConnectionErrorCode: js.UndefOr[ConnectionErrorCodeType] = js.undefined,
@@ -531,6 +544,7 @@ package kms {
   }
 
   object DecryptRequest {
+    @inline
     def apply(
         CiphertextBlob: CiphertextType,
         EncryptionContext: js.UndefOr[EncryptionContextType] = js.undefined,
@@ -553,6 +567,7 @@ package kms {
   }
 
   object DecryptResponse {
+    @inline
     def apply(
         KeyId: js.UndefOr[KeyIdType] = js.undefined,
         Plaintext: js.UndefOr[PlaintextType] = js.undefined
@@ -570,6 +585,7 @@ package kms {
   }
 
   object DeleteAliasRequest {
+    @inline
     def apply(
         AliasName: AliasNameType
     ): DeleteAliasRequest = {
@@ -587,6 +603,7 @@ package kms {
   }
 
   object DeleteCustomKeyStoreRequest {
+    @inline
     def apply(
         CustomKeyStoreId: CustomKeyStoreIdType
     ): DeleteCustomKeyStoreRequest = {
@@ -602,6 +619,7 @@ package kms {
   trait DeleteCustomKeyStoreResponse extends js.Object {}
 
   object DeleteCustomKeyStoreResponse {
+    @inline
     def apply(
         ): DeleteCustomKeyStoreResponse = {
       val __obj = js.Dynamic.literal()
@@ -616,6 +634,7 @@ package kms {
   }
 
   object DeleteImportedKeyMaterialRequest {
+    @inline
     def apply(
         KeyId: KeyIdType
     ): DeleteImportedKeyMaterialRequest = {
@@ -636,6 +655,7 @@ package kms {
   }
 
   object DescribeCustomKeyStoresRequest {
+    @inline
     def apply(
         CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType] = js.undefined,
         CustomKeyStoreName: js.UndefOr[CustomKeyStoreNameType] = js.undefined,
@@ -659,6 +679,7 @@ package kms {
   }
 
   object DescribeCustomKeyStoresResponse {
+    @inline
     def apply(
         CustomKeyStores: js.UndefOr[CustomKeyStoresList] = js.undefined,
         NextMarker: js.UndefOr[MarkerType] = js.undefined,
@@ -679,6 +700,7 @@ package kms {
   }
 
   object DescribeKeyRequest {
+    @inline
     def apply(
         KeyId: KeyIdType,
         GrantTokens: js.UndefOr[GrantTokenList] = js.undefined
@@ -698,6 +720,7 @@ package kms {
   }
 
   object DescribeKeyResponse {
+    @inline
     def apply(
         KeyMetadata: js.UndefOr[KeyMetadata] = js.undefined
     ): DescribeKeyResponse = {
@@ -713,6 +736,7 @@ package kms {
   }
 
   object DisableKeyRequest {
+    @inline
     def apply(
         KeyId: KeyIdType
     ): DisableKeyRequest = {
@@ -730,6 +754,7 @@ package kms {
   }
 
   object DisableKeyRotationRequest {
+    @inline
     def apply(
         KeyId: KeyIdType
     ): DisableKeyRotationRequest = {
@@ -747,6 +772,7 @@ package kms {
   }
 
   object DisconnectCustomKeyStoreRequest {
+    @inline
     def apply(
         CustomKeyStoreId: CustomKeyStoreIdType
     ): DisconnectCustomKeyStoreRequest = {
@@ -762,6 +788,7 @@ package kms {
   trait DisconnectCustomKeyStoreResponse extends js.Object {}
 
   object DisconnectCustomKeyStoreResponse {
+    @inline
     def apply(
         ): DisconnectCustomKeyStoreResponse = {
       val __obj = js.Dynamic.literal()
@@ -776,6 +803,7 @@ package kms {
   }
 
   object EnableKeyRequest {
+    @inline
     def apply(
         KeyId: KeyIdType
     ): EnableKeyRequest = {
@@ -793,6 +821,7 @@ package kms {
   }
 
   object EnableKeyRotationRequest {
+    @inline
     def apply(
         KeyId: KeyIdType
     ): EnableKeyRotationRequest = {
@@ -813,6 +842,7 @@ package kms {
   }
 
   object EncryptRequest {
+    @inline
     def apply(
         KeyId: KeyIdType,
         Plaintext: PlaintextType,
@@ -837,6 +867,7 @@ package kms {
   }
 
   object EncryptResponse {
+    @inline
     def apply(
         CiphertextBlob: js.UndefOr[CiphertextType] = js.undefined,
         KeyId: js.UndefOr[KeyIdType] = js.undefined
@@ -865,6 +896,7 @@ package kms {
   }
 
   object GenerateDataKeyRequest {
+    @inline
     def apply(
         KeyId: KeyIdType,
         EncryptionContext: js.UndefOr[EncryptionContextType] = js.undefined,
@@ -892,6 +924,7 @@ package kms {
   }
 
   object GenerateDataKeyResponse {
+    @inline
     def apply(
         CiphertextBlob: js.UndefOr[CiphertextType] = js.undefined,
         KeyId: js.UndefOr[KeyIdType] = js.undefined,
@@ -915,6 +948,7 @@ package kms {
   }
 
   object GenerateDataKeyWithoutPlaintextRequest {
+    @inline
     def apply(
         KeyId: KeyIdType,
         EncryptionContext: js.UndefOr[EncryptionContextType] = js.undefined,
@@ -941,6 +975,7 @@ package kms {
   }
 
   object GenerateDataKeyWithoutPlaintextResponse {
+    @inline
     def apply(
         CiphertextBlob: js.UndefOr[CiphertextType] = js.undefined,
         KeyId: js.UndefOr[KeyIdType] = js.undefined
@@ -959,6 +994,7 @@ package kms {
   }
 
   object GenerateRandomRequest {
+    @inline
     def apply(
         CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType] = js.undefined,
         NumberOfBytes: js.UndefOr[NumberOfBytesType] = js.undefined
@@ -976,6 +1012,7 @@ package kms {
   }
 
   object GenerateRandomResponse {
+    @inline
     def apply(
         Plaintext: js.UndefOr[PlaintextType] = js.undefined
     ): GenerateRandomResponse = {
@@ -992,6 +1029,7 @@ package kms {
   }
 
   object GetKeyPolicyRequest {
+    @inline
     def apply(
         KeyId: KeyIdType,
         PolicyName: PolicyNameType
@@ -1011,6 +1049,7 @@ package kms {
   }
 
   object GetKeyPolicyResponse {
+    @inline
     def apply(
         Policy: js.UndefOr[PolicyType] = js.undefined
     ): GetKeyPolicyResponse = {
@@ -1026,6 +1065,7 @@ package kms {
   }
 
   object GetKeyRotationStatusRequest {
+    @inline
     def apply(
         KeyId: KeyIdType
     ): GetKeyRotationStatusRequest = {
@@ -1043,6 +1083,7 @@ package kms {
   }
 
   object GetKeyRotationStatusResponse {
+    @inline
     def apply(
         KeyRotationEnabled: js.UndefOr[BooleanType] = js.undefined
     ): GetKeyRotationStatusResponse = {
@@ -1060,6 +1101,7 @@ package kms {
   }
 
   object GetParametersForImportRequest {
+    @inline
     def apply(
         KeyId: KeyIdType,
         WrappingAlgorithm: AlgorithmSpec,
@@ -1084,6 +1126,7 @@ package kms {
   }
 
   object GetParametersForImportResponse {
+    @inline
     def apply(
         ImportToken: js.UndefOr[CiphertextType] = js.undefined,
         KeyId: js.UndefOr[KeyIdType] = js.undefined,
@@ -1120,6 +1163,7 @@ package kms {
   }
 
   object GrantConstraints {
+    @inline
     def apply(
         EncryptionContextEquals: js.UndefOr[EncryptionContextType] = js.undefined,
         EncryptionContextSubset: js.UndefOr[EncryptionContextType] = js.undefined
@@ -1148,6 +1192,7 @@ package kms {
   }
 
   object GrantListEntry {
+    @inline
     def apply(
         Constraints: js.UndefOr[GrantConstraints] = js.undefined,
         CreationDate: js.UndefOr[DateType] = js.undefined,
@@ -1209,6 +1254,7 @@ package kms {
   }
 
   object ImportKeyMaterialRequest {
+    @inline
     def apply(
         EncryptedKeyMaterial: CiphertextType,
         ImportToken: CiphertextType,
@@ -1232,6 +1278,7 @@ package kms {
   trait ImportKeyMaterialResponse extends js.Object {}
 
   object ImportKeyMaterialResponse {
+    @inline
     def apply(
         ): ImportKeyMaterialResponse = {
       val __obj = js.Dynamic.literal()
@@ -1250,6 +1297,7 @@ package kms {
   }
 
   object KeyListEntry {
+    @inline
     def apply(
         KeyArn: js.UndefOr[ArnType] = js.undefined,
         KeyId: js.UndefOr[KeyIdType] = js.undefined
@@ -1292,6 +1340,7 @@ package kms {
   }
 
   object KeyMetadata {
+    @inline
     def apply(
         KeyId: KeyIdType,
         AWSAccountId: js.UndefOr[AWSAccountIdType] = js.undefined,
@@ -1355,6 +1404,7 @@ package kms {
   }
 
   object ListAliasesRequest {
+    @inline
     def apply(
         KeyId: js.UndefOr[KeyIdType] = js.undefined,
         Limit: js.UndefOr[LimitType] = js.undefined,
@@ -1376,6 +1426,7 @@ package kms {
   }
 
   object ListAliasesResponse {
+    @inline
     def apply(
         Aliases: js.UndefOr[AliasList] = js.undefined,
         NextMarker: js.UndefOr[MarkerType] = js.undefined,
@@ -1397,6 +1448,7 @@ package kms {
   }
 
   object ListGrantsRequest {
+    @inline
     def apply(
         KeyId: KeyIdType,
         Limit: js.UndefOr[LimitType] = js.undefined,
@@ -1420,6 +1472,7 @@ package kms {
   }
 
   object ListGrantsResponse {
+    @inline
     def apply(
         Grants: js.UndefOr[GrantList] = js.undefined,
         NextMarker: js.UndefOr[MarkerType] = js.undefined,
@@ -1441,6 +1494,7 @@ package kms {
   }
 
   object ListKeyPoliciesRequest {
+    @inline
     def apply(
         KeyId: KeyIdType,
         Limit: js.UndefOr[LimitType] = js.undefined,
@@ -1464,6 +1518,7 @@ package kms {
   }
 
   object ListKeyPoliciesResponse {
+    @inline
     def apply(
         NextMarker: js.UndefOr[MarkerType] = js.undefined,
         PolicyNames: js.UndefOr[PolicyNameList] = js.undefined,
@@ -1484,6 +1539,7 @@ package kms {
   }
 
   object ListKeysRequest {
+    @inline
     def apply(
         Limit: js.UndefOr[LimitType] = js.undefined,
         Marker: js.UndefOr[MarkerType] = js.undefined
@@ -1503,6 +1559,7 @@ package kms {
   }
 
   object ListKeysResponse {
+    @inline
     def apply(
         Keys: js.UndefOr[KeyList] = js.undefined,
         NextMarker: js.UndefOr[MarkerType] = js.undefined,
@@ -1524,6 +1581,7 @@ package kms {
   }
 
   object ListResourceTagsRequest {
+    @inline
     def apply(
         KeyId: KeyIdType,
         Limit: js.UndefOr[LimitType] = js.undefined,
@@ -1547,6 +1605,7 @@ package kms {
   }
 
   object ListResourceTagsResponse {
+    @inline
     def apply(
         NextMarker: js.UndefOr[MarkerType] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
@@ -1568,6 +1627,7 @@ package kms {
   }
 
   object ListRetirableGrantsRequest {
+    @inline
     def apply(
         RetiringPrincipal: PrincipalIdType,
         Limit: js.UndefOr[LimitType] = js.undefined,
@@ -1600,6 +1660,7 @@ package kms {
   }
 
   object PutKeyPolicyRequest {
+    @inline
     def apply(
         KeyId: KeyIdType,
         Policy: PolicyType,
@@ -1629,6 +1690,7 @@ package kms {
   }
 
   object ReEncryptRequest {
+    @inline
     def apply(
         CiphertextBlob: CiphertextType,
         DestinationKeyId: KeyIdType,
@@ -1658,6 +1720,7 @@ package kms {
   }
 
   object ReEncryptResponse {
+    @inline
     def apply(
         CiphertextBlob: js.UndefOr[CiphertextType] = js.undefined,
         KeyId: js.UndefOr[KeyIdType] = js.undefined,
@@ -1679,6 +1742,7 @@ package kms {
   }
 
   object RetireGrantRequest {
+    @inline
     def apply(
         GrantId: js.UndefOr[GrantIdType] = js.undefined,
         GrantToken: js.UndefOr[GrantTokenType] = js.undefined,
@@ -1699,6 +1763,7 @@ package kms {
   }
 
   object RevokeGrantRequest {
+    @inline
     def apply(
         GrantId: GrantIdType,
         KeyId: KeyIdType
@@ -1719,6 +1784,7 @@ package kms {
   }
 
   object ScheduleKeyDeletionRequest {
+    @inline
     def apply(
         KeyId: KeyIdType,
         PendingWindowInDays: js.UndefOr[PendingWindowInDaysType] = js.undefined
@@ -1739,6 +1805,7 @@ package kms {
   }
 
   object ScheduleKeyDeletionResponse {
+    @inline
     def apply(
         DeletionDate: js.UndefOr[DateType] = js.undefined,
         KeyId: js.UndefOr[KeyIdType] = js.undefined
@@ -1761,6 +1828,7 @@ package kms {
   }
 
   object Tag {
+    @inline
     def apply(
         TagKey: TagKeyType,
         TagValue: TagValueType
@@ -1781,6 +1849,7 @@ package kms {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         KeyId: KeyIdType,
         Tags: TagList
@@ -1801,6 +1870,7 @@ package kms {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         KeyId: KeyIdType,
         TagKeys: TagKeyList
@@ -1821,6 +1891,7 @@ package kms {
   }
 
   object UpdateAliasRequest {
+    @inline
     def apply(
         AliasName: AliasNameType,
         TargetKeyId: KeyIdType
@@ -1843,6 +1914,7 @@ package kms {
   }
 
   object UpdateCustomKeyStoreRequest {
+    @inline
     def apply(
         CustomKeyStoreId: CustomKeyStoreIdType,
         CloudHsmClusterId: js.UndefOr[CloudHsmClusterIdType] = js.undefined,
@@ -1864,6 +1936,7 @@ package kms {
   trait UpdateCustomKeyStoreResponse extends js.Object {}
 
   object UpdateCustomKeyStoreResponse {
+    @inline
     def apply(
         ): UpdateCustomKeyStoreResponse = {
       val __obj = js.Dynamic.literal()
@@ -1879,6 +1952,7 @@ package kms {
   }
 
   object UpdateKeyDescriptionRequest {
+    @inline
     def apply(
         Description: DescriptionType,
         KeyId: KeyIdType

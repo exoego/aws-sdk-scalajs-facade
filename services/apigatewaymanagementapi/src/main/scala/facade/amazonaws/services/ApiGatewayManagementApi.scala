@@ -34,6 +34,7 @@ package apigatewaymanagementapi {
   }
 
   object PostToConnectionRequest {
+    @inline
     def apply(
         ConnectionId: __string,
         Data: Data

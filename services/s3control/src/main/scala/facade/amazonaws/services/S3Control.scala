@@ -112,6 +112,7 @@ package s3control {
   }
 
   object CreateJobRequest {
+    @inline
     def apply(
         AccountId: AccountId,
         ClientRequestToken: NonEmptyMaxLength64String,
@@ -145,6 +146,7 @@ package s3control {
   }
 
   object CreateJobResult {
+    @inline
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined
     ): CreateJobResult = {
@@ -160,6 +162,7 @@ package s3control {
   }
 
   object DeletePublicAccessBlockRequest {
+    @inline
     def apply(
         AccountId: AccountId
     ): DeletePublicAccessBlockRequest = {
@@ -178,6 +181,7 @@ package s3control {
   }
 
   object DescribeJobRequest {
+    @inline
     def apply(
         AccountId: AccountId,
         JobId: JobId
@@ -197,6 +201,7 @@ package s3control {
   }
 
   object DescribeJobResult {
+    @inline
     def apply(
         Job: js.UndefOr[JobDescriptor] = js.undefined
     ): DescribeJobResult = {
@@ -212,6 +217,7 @@ package s3control {
   }
 
   object GetPublicAccessBlockOutput {
+    @inline
     def apply(
         PublicAccessBlockConfiguration: js.UndefOr[PublicAccessBlockConfiguration] = js.undefined
     ): GetPublicAccessBlockOutput = {
@@ -229,6 +235,7 @@ package s3control {
   }
 
   object GetPublicAccessBlockRequest {
+    @inline
     def apply(
         AccountId: AccountId
     ): GetPublicAccessBlockRequest = {
@@ -265,6 +272,7 @@ package s3control {
   }
 
   object JobDescriptor {
+    @inline
     def apply(
         ConfirmationRequired: js.UndefOr[ConfirmationRequired] = js.undefined,
         CreationTime: js.UndefOr[JobCreationTime] = js.undefined,
@@ -316,6 +324,7 @@ package s3control {
   }
 
   object JobFailure {
+    @inline
     def apply(
         FailureCode: js.UndefOr[JobFailureCode] = js.undefined,
         FailureReason: js.UndefOr[JobFailureReason] = js.undefined
@@ -343,6 +352,7 @@ package s3control {
   }
 
   object JobListDescriptor {
+    @inline
     def apply(
         CreationTime: js.UndefOr[JobCreationTime] = js.undefined,
         Description: js.UndefOr[NonEmptyMaxLength256String] = js.undefined,
@@ -376,6 +386,7 @@ package s3control {
   }
 
   object JobManifest {
+    @inline
     def apply(
         Location: JobManifestLocation,
         Spec: JobManifestSpec
@@ -416,6 +427,7 @@ package s3control {
   }
 
   object JobManifestLocation {
+    @inline
     def apply(
         ETag: NonEmptyMaxLength1024String,
         ObjectArn: S3KeyArnString,
@@ -441,6 +453,7 @@ package s3control {
   }
 
   object JobManifestSpec {
+    @inline
     def apply(
         Format: JobManifestFormat,
         Fields: js.UndefOr[JobManifestFieldList] = js.undefined
@@ -467,6 +480,7 @@ package s3control {
   }
 
   object JobOperation {
+    @inline
     def apply(
         LambdaInvoke: js.UndefOr[LambdaInvokeOperation] = js.undefined,
         S3InitiateRestoreObject: js.UndefOr[S3InitiateRestoreObjectOperation] = js.undefined,
@@ -495,6 +509,7 @@ package s3control {
   }
 
   object JobProgressSummary {
+    @inline
     def apply(
         NumberOfTasksFailed: js.UndefOr[JobNumberOfTasksFailed] = js.undefined,
         NumberOfTasksSucceeded: js.UndefOr[JobNumberOfTasksSucceeded] = js.undefined,
@@ -521,6 +536,7 @@ package s3control {
   }
 
   object JobReport {
+    @inline
     def apply(
         Enabled: Boolean,
         Bucket: js.UndefOr[S3BucketArnString] = js.undefined,
@@ -596,6 +612,7 @@ package s3control {
   }
 
   object LambdaInvokeOperation {
+    @inline
     def apply(
         FunctionArn: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined
     ): LambdaInvokeOperation = {
@@ -614,6 +631,7 @@ package s3control {
   }
 
   object ListJobsRequest {
+    @inline
     def apply(
         AccountId: AccountId,
         JobStatuses: js.UndefOr[JobStatusList] = js.undefined,
@@ -638,6 +656,7 @@ package s3control {
   }
 
   object ListJobsResult {
+    @inline
     def apply(
         Jobs: js.UndefOr[JobListDescriptorList] = js.undefined,
         NextToken: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined
@@ -673,6 +692,7 @@ package s3control {
   }
 
   object PublicAccessBlockConfiguration {
+    @inline
     def apply(
         BlockPublicAcls: js.UndefOr[Setting] = js.undefined,
         BlockPublicPolicy: js.UndefOr[Setting] = js.undefined,
@@ -695,6 +715,7 @@ package s3control {
   }
 
   object PutPublicAccessBlockRequest {
+    @inline
     def apply(
         AccountId: AccountId,
         PublicAccessBlockConfiguration: PublicAccessBlockConfiguration
@@ -725,6 +746,7 @@ package s3control {
   }
 
   object S3AccessControlList {
+    @inline
     def apply(
         Owner: S3ObjectOwner,
         Grants: js.UndefOr[S3GrantList] = js.undefined
@@ -748,6 +770,7 @@ package s3control {
   }
 
   object S3AccessControlPolicy {
+    @inline
     def apply(
         AccessControlList: js.UndefOr[S3AccessControlList] = js.undefined,
         CannedAccessControlList: js.UndefOr[S3CannedAccessControlList] = js.undefined
@@ -805,6 +828,7 @@ package s3control {
   }
 
   object S3CopyObjectOperation {
+    @inline
     def apply(
         AccessControlGrants: js.UndefOr[S3GrantList] = js.undefined,
         CannedAccessControlList: js.UndefOr[S3CannedAccessControlList] = js.undefined,
@@ -867,6 +891,7 @@ package s3control {
   }
 
   object S3Grant {
+    @inline
     def apply(
         Grantee: js.UndefOr[S3Grantee] = js.undefined,
         Permission: js.UndefOr[S3Permission] = js.undefined
@@ -889,6 +914,7 @@ package s3control {
   }
 
   object S3Grantee {
+    @inline
     def apply(
         DisplayName: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined,
         Identifier: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined,
@@ -920,6 +946,7 @@ package s3control {
   }
 
   object S3InitiateRestoreObjectOperation {
+    @inline
     def apply(
         ExpirationInDays: js.UndefOr[S3ExpirationInDays] = js.undefined,
         GlacierJobTier: js.UndefOr[S3GlacierJobTier] = js.undefined
@@ -971,6 +998,7 @@ package s3control {
   }
 
   object S3ObjectMetadata {
+    @inline
     def apply(
         CacheControl: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined,
         ContentDisposition: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined,
@@ -1010,6 +1038,7 @@ package s3control {
   }
 
   object S3ObjectOwner {
+    @inline
     def apply(
         DisplayName: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined,
         ID: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined
@@ -1047,6 +1076,7 @@ package s3control {
   }
 
   object S3SetObjectAclOperation {
+    @inline
     def apply(
         AccessControlPolicy: js.UndefOr[S3AccessControlPolicy] = js.undefined
     ): S3SetObjectAclOperation = {
@@ -1065,6 +1095,7 @@ package s3control {
   }
 
   object S3SetObjectTaggingOperation {
+    @inline
     def apply(
         TagSet: js.UndefOr[S3TagSet] = js.undefined
     ): S3SetObjectTaggingOperation = {
@@ -1096,6 +1127,7 @@ package s3control {
   }
 
   object S3Tag {
+    @inline
     def apply(
         Key: NonEmptyMaxLength1024String,
         Value: MaxLength1024String
@@ -1117,6 +1149,7 @@ package s3control {
   }
 
   object UpdateJobPriorityRequest {
+    @inline
     def apply(
         AccountId: AccountId,
         JobId: JobId,
@@ -1139,6 +1172,7 @@ package s3control {
   }
 
   object UpdateJobPriorityResult {
+    @inline
     def apply(
         JobId: JobId,
         Priority: JobPriority
@@ -1161,6 +1195,7 @@ package s3control {
   }
 
   object UpdateJobStatusRequest {
+    @inline
     def apply(
         AccountId: AccountId,
         JobId: JobId,
@@ -1186,6 +1221,7 @@ package s3control {
   }
 
   object UpdateJobStatusResult {
+    @inline
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined,
         Status: js.UndefOr[JobStatus] = js.undefined,

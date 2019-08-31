@@ -116,6 +116,7 @@ package transfer {
   }
 
   object CreateServerRequest {
+    @inline
     def apply(
         EndpointDetails: js.UndefOr[EndpointDetails] = js.undefined,
         EndpointType: js.UndefOr[EndpointType] = js.undefined,
@@ -143,6 +144,7 @@ package transfer {
   }
 
   object CreateServerResponse {
+    @inline
     def apply(
         ServerId: ServerId
     ): CreateServerResponse = {
@@ -166,6 +168,7 @@ package transfer {
   }
 
   object CreateUserRequest {
+    @inline
     def apply(
         Role: Role,
         ServerId: ServerId,
@@ -196,6 +199,7 @@ package transfer {
   }
 
   object CreateUserResponse {
+    @inline
     def apply(
         ServerId: ServerId,
         UserName: UserName
@@ -215,6 +219,7 @@ package transfer {
   }
 
   object DeleteServerRequest {
+    @inline
     def apply(
         ServerId: ServerId
     ): DeleteServerRequest = {
@@ -234,6 +239,7 @@ package transfer {
   }
 
   object DeleteSshPublicKeyRequest {
+    @inline
     def apply(
         ServerId: ServerId,
         SshPublicKeyId: SshPublicKeyId,
@@ -256,6 +262,7 @@ package transfer {
   }
 
   object DeleteUserRequest {
+    @inline
     def apply(
         ServerId: ServerId,
         UserName: UserName
@@ -275,6 +282,7 @@ package transfer {
   }
 
   object DescribeServerRequest {
+    @inline
     def apply(
         ServerId: ServerId
     ): DescribeServerRequest = {
@@ -292,6 +300,7 @@ package transfer {
   }
 
   object DescribeServerResponse {
+    @inline
     def apply(
         Server: DescribedServer
     ): DescribeServerResponse = {
@@ -310,6 +319,7 @@ package transfer {
   }
 
   object DescribeUserRequest {
+    @inline
     def apply(
         ServerId: ServerId,
         UserName: UserName
@@ -330,6 +340,7 @@ package transfer {
   }
 
   object DescribeUserResponse {
+    @inline
     def apply(
         ServerId: ServerId,
         User: DescribedUser
@@ -362,6 +373,7 @@ package transfer {
   }
 
   object DescribedServer {
+    @inline
     def apply(
         Arn: Arn,
         EndpointDetails: js.UndefOr[EndpointDetails] = js.undefined,
@@ -408,6 +420,7 @@ package transfer {
   }
 
   object DescribedUser {
+    @inline
     def apply(
         Arn: Arn,
         HomeDirectory: js.UndefOr[HomeDirectory] = js.undefined,
@@ -440,6 +453,7 @@ package transfer {
   }
 
   object EndpointDetails {
+    @inline
     def apply(
         VpcEndpointId: js.UndefOr[VpcEndpointId] = js.undefined
     ): EndpointDetails = {
@@ -466,6 +480,7 @@ package transfer {
   }
 
   object IdentityProviderDetails {
+    @inline
     def apply(
         InvocationRole: js.UndefOr[Role] = js.undefined,
         Url: js.UndefOr[Url] = js.undefined
@@ -495,6 +510,7 @@ package transfer {
   }
 
   object ImportSshPublicKeyRequest {
+    @inline
     def apply(
         ServerId: ServerId,
         SshPublicKeyBody: SshPublicKeyBody,
@@ -521,6 +537,7 @@ package transfer {
   }
 
   object ImportSshPublicKeyResponse {
+    @inline
     def apply(
         ServerId: ServerId,
         SshPublicKeyId: SshPublicKeyId,
@@ -543,6 +560,7 @@ package transfer {
   }
 
   object ListServersRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -561,6 +579,7 @@ package transfer {
   }
 
   object ListServersResponse {
+    @inline
     def apply(
         Servers: ListedServers,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -582,6 +601,7 @@ package transfer {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         Arn: Arn,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -605,6 +625,7 @@ package transfer {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[Arn] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
@@ -626,6 +647,7 @@ package transfer {
   }
 
   object ListUsersRequest {
+    @inline
     def apply(
         ServerId: ServerId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -649,6 +671,7 @@ package transfer {
   }
 
   object ListUsersResponse {
+    @inline
     def apply(
         ServerId: ServerId,
         Users: ListedUsers,
@@ -679,6 +702,7 @@ package transfer {
   }
 
   object ListedServer {
+    @inline
     def apply(
         Arn: Arn,
         EndpointType: js.UndefOr[EndpointType] = js.undefined,
@@ -715,6 +739,7 @@ package transfer {
   }
 
   object ListedUser {
+    @inline
     def apply(
         Arn: Arn,
         HomeDirectory: js.UndefOr[HomeDirectory] = js.undefined,
@@ -745,6 +770,7 @@ package transfer {
   }
 
   object SshPublicKey {
+    @inline
     def apply(
         DateImported: DateImported,
         SshPublicKeyBody: SshPublicKeyBody,
@@ -766,6 +792,7 @@ package transfer {
   }
 
   object StartServerRequest {
+    @inline
     def apply(
         ServerId: ServerId
     ): StartServerRequest = {
@@ -798,6 +825,7 @@ package transfer {
   }
 
   object StopServerRequest {
+    @inline
     def apply(
         ServerId: ServerId
     ): StopServerRequest = {
@@ -819,6 +847,7 @@ package transfer {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: TagValue
@@ -839,6 +868,7 @@ package transfer {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         Arn: Arn,
         Tags: Tags
@@ -860,6 +890,7 @@ package transfer {
   }
 
   object TestIdentityProviderRequest {
+    @inline
     def apply(
         ServerId: ServerId,
         UserName: UserName,
@@ -884,6 +915,7 @@ package transfer {
   }
 
   object TestIdentityProviderResponse {
+    @inline
     def apply(
         StatusCode: StatusCode,
         Url: Url,
@@ -908,6 +940,7 @@ package transfer {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         Arn: Arn,
         TagKeys: TagKeys
@@ -932,6 +965,7 @@ package transfer {
   }
 
   object UpdateServerRequest {
+    @inline
     def apply(
         ServerId: ServerId,
         EndpointDetails: js.UndefOr[EndpointDetails] = js.undefined,
@@ -959,6 +993,7 @@ package transfer {
   }
 
   object UpdateServerResponse {
+    @inline
     def apply(
         ServerId: ServerId
     ): UpdateServerResponse = {
@@ -980,6 +1015,7 @@ package transfer {
   }
 
   object UpdateUserRequest {
+    @inline
     def apply(
         ServerId: ServerId,
         UserName: UserName,
@@ -1009,6 +1045,7 @@ package transfer {
   }
 
   object UpdateUserResponse {
+    @inline
     def apply(
         ServerId: ServerId,
         UserName: UserName

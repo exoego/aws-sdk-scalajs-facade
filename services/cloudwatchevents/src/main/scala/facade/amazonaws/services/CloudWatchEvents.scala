@@ -189,6 +189,7 @@ package cloudwatchevents {
   }
 
   object ActivateEventSourceRequest {
+    @inline
     def apply(
         Name: EventSourceName
     ): ActivateEventSourceRequest = {
@@ -218,6 +219,7 @@ package cloudwatchevents {
   }
 
   object AwsVpcConfiguration {
+    @inline
     def apply(
         Subnets: StringList,
         AssignPublicIp: js.UndefOr[AssignPublicIp] = js.undefined,
@@ -242,6 +244,7 @@ package cloudwatchevents {
   }
 
   object BatchArrayProperties {
+    @inline
     def apply(
         Size: js.UndefOr[Int] = js.undefined
     ): BatchArrayProperties = {
@@ -263,6 +266,7 @@ package cloudwatchevents {
   }
 
   object BatchParameters {
+    @inline
     def apply(
         JobDefinition: String,
         JobName: String,
@@ -289,6 +293,7 @@ package cloudwatchevents {
   }
 
   object BatchRetryStrategy {
+    @inline
     def apply(
         Attempts: js.UndefOr[Int] = js.undefined
     ): BatchRetryStrategy = {
@@ -310,6 +315,7 @@ package cloudwatchevents {
   }
 
   object Condition {
+    @inline
     def apply(
         Key: String,
         Type: String,
@@ -332,6 +338,7 @@ package cloudwatchevents {
   }
 
   object CreateEventBusRequest {
+    @inline
     def apply(
         Name: EventBusName,
         EventSourceName: js.UndefOr[EventSourceName] = js.undefined
@@ -351,6 +358,7 @@ package cloudwatchevents {
   }
 
   object CreateEventBusResponse {
+    @inline
     def apply(
         EventBusArn: js.UndefOr[String] = js.undefined
     ): CreateEventBusResponse = {
@@ -367,6 +375,7 @@ package cloudwatchevents {
   }
 
   object CreatePartnerEventSourceRequest {
+    @inline
     def apply(
         Account: AccountId,
         Name: EventSourceName
@@ -386,6 +395,7 @@ package cloudwatchevents {
   }
 
   object CreatePartnerEventSourceResponse {
+    @inline
     def apply(
         EventSourceArn: js.UndefOr[String] = js.undefined
     ): CreatePartnerEventSourceResponse = {
@@ -401,6 +411,7 @@ package cloudwatchevents {
   }
 
   object DeactivateEventSourceRequest {
+    @inline
     def apply(
         Name: EventSourceName
     ): DeactivateEventSourceRequest = {
@@ -418,6 +429,7 @@ package cloudwatchevents {
   }
 
   object DeleteEventBusRequest {
+    @inline
     def apply(
         Name: EventBusName
     ): DeleteEventBusRequest = {
@@ -436,6 +448,7 @@ package cloudwatchevents {
   }
 
   object DeletePartnerEventSourceRequest {
+    @inline
     def apply(
         Account: AccountId,
         Name: EventSourceName
@@ -457,6 +470,7 @@ package cloudwatchevents {
   }
 
   object DeleteRuleRequest {
+    @inline
     def apply(
         Name: RuleName,
         EventBusName: js.UndefOr[EventBusName] = js.undefined,
@@ -478,6 +492,7 @@ package cloudwatchevents {
   }
 
   object DescribeEventBusRequest {
+    @inline
     def apply(
         Name: js.UndefOr[EventBusName] = js.undefined
     ): DescribeEventBusRequest = {
@@ -495,6 +510,7 @@ package cloudwatchevents {
   }
 
   object DescribeEventBusResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[String] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,
@@ -514,6 +530,7 @@ package cloudwatchevents {
   }
 
   object DescribeEventSourceRequest {
+    @inline
     def apply(
         Name: EventSourceName
     ): DescribeEventSourceRequest = {
@@ -536,6 +553,7 @@ package cloudwatchevents {
   }
 
   object DescribeEventSourceResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[String] = js.undefined,
         CreatedBy: js.UndefOr[String] = js.undefined,
@@ -561,6 +579,7 @@ package cloudwatchevents {
   }
 
   object DescribePartnerEventSourceRequest {
+    @inline
     def apply(
         Name: EventSourceName
     ): DescribePartnerEventSourceRequest = {
@@ -579,6 +598,7 @@ package cloudwatchevents {
   }
 
   object DescribePartnerEventSourceResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[String] = js.undefined,
         Name: js.UndefOr[String] = js.undefined
@@ -597,6 +617,7 @@ package cloudwatchevents {
   }
 
   object DescribeRuleRequest {
+    @inline
     def apply(
         Name: RuleName,
         EventBusName: js.UndefOr[EventBusName] = js.undefined
@@ -624,6 +645,7 @@ package cloudwatchevents {
   }
 
   object DescribeRuleResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[RuleArn] = js.undefined,
         Description: js.UndefOr[RuleDescription] = js.undefined,
@@ -656,6 +678,7 @@ package cloudwatchevents {
   }
 
   object DisableRuleRequest {
+    @inline
     def apply(
         Name: RuleName,
         EventBusName: js.UndefOr[EventBusName] = js.undefined
@@ -683,6 +706,7 @@ package cloudwatchevents {
   }
 
   object EcsParameters {
+    @inline
     def apply(
         TaskDefinitionArn: Arn,
         Group: js.UndefOr[String] = js.undefined,
@@ -711,6 +735,7 @@ package cloudwatchevents {
   }
 
   object EnableRuleRequest {
+    @inline
     def apply(
         Name: RuleName,
         EventBusName: js.UndefOr[EventBusName] = js.undefined
@@ -735,6 +760,7 @@ package cloudwatchevents {
   }
 
   object EventBus {
+    @inline
     def apply(
         Arn: js.UndefOr[String] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,
@@ -762,6 +788,7 @@ package cloudwatchevents {
   }
 
   object EventSource {
+    @inline
     def apply(
         Arn: js.UndefOr[String] = js.undefined,
         CreatedBy: js.UndefOr[String] = js.undefined,
@@ -799,6 +826,7 @@ package cloudwatchevents {
   }
 
   object InputTransformer {
+    @inline
     def apply(
         InputTemplate: TransformerInput,
         InputPathsMap: js.UndefOr[TransformerPaths] = js.undefined
@@ -821,6 +849,7 @@ package cloudwatchevents {
   }
 
   object KinesisParameters {
+    @inline
     def apply(
         PartitionKeyPath: TargetPartitionKeyPath
     ): KinesisParameters = {
@@ -847,6 +876,7 @@ package cloudwatchevents {
   }
 
   object ListEventBusesRequest {
+    @inline
     def apply(
         Limit: js.UndefOr[LimitMax100] = js.undefined,
         NamePrefix: js.UndefOr[EventBusName] = js.undefined,
@@ -867,6 +897,7 @@ package cloudwatchevents {
   }
 
   object ListEventBusesResponse {
+    @inline
     def apply(
         EventBuses: js.UndefOr[EventBusList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -886,6 +917,7 @@ package cloudwatchevents {
   }
 
   object ListEventSourcesRequest {
+    @inline
     def apply(
         Limit: js.UndefOr[LimitMax100] = js.undefined,
         NamePrefix: js.UndefOr[EventSourceNamePrefix] = js.undefined,
@@ -906,6 +938,7 @@ package cloudwatchevents {
   }
 
   object ListEventSourcesResponse {
+    @inline
     def apply(
         EventSources: js.UndefOr[EventSourceList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -925,6 +958,7 @@ package cloudwatchevents {
   }
 
   object ListPartnerEventSourceAccountsRequest {
+    @inline
     def apply(
         EventSourceName: EventSourceName,
         Limit: js.UndefOr[LimitMax100] = js.undefined,
@@ -947,6 +981,7 @@ package cloudwatchevents {
   }
 
   object ListPartnerEventSourceAccountsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PartnerEventSourceAccounts: js.UndefOr[PartnerEventSourceAccountList] = js.undefined
@@ -968,6 +1003,7 @@ package cloudwatchevents {
   }
 
   object ListPartnerEventSourcesRequest {
+    @inline
     def apply(
         NamePrefix: PartnerEventSourceNamePrefix,
         Limit: js.UndefOr[LimitMax100] = js.undefined,
@@ -990,6 +1026,7 @@ package cloudwatchevents {
   }
 
   object ListPartnerEventSourcesResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PartnerEventSources: js.UndefOr[PartnerEventSourceList] = js.undefined
@@ -1010,6 +1047,7 @@ package cloudwatchevents {
   }
 
   object ListRuleNamesByTargetRequest {
+    @inline
     def apply(
         TargetArn: TargetArn,
         EventBusName: js.UndefOr[EventBusName] = js.undefined,
@@ -1034,6 +1072,7 @@ package cloudwatchevents {
   }
 
   object ListRuleNamesByTargetResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         RuleNames: js.UndefOr[RuleNameList] = js.undefined
@@ -1054,6 +1093,7 @@ package cloudwatchevents {
   }
 
   object ListRulesRequest {
+    @inline
     def apply(
         EventBusName: js.UndefOr[EventBusName] = js.undefined,
         Limit: js.UndefOr[LimitMax100] = js.undefined,
@@ -1076,6 +1116,7 @@ package cloudwatchevents {
   }
 
   object ListRulesResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Rules: js.UndefOr[RuleResponseList] = js.undefined
@@ -1093,6 +1134,7 @@ package cloudwatchevents {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceARN: Arn
     ): ListTagsForResourceRequest = {
@@ -1110,6 +1152,7 @@ package cloudwatchevents {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         Tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -1128,6 +1171,7 @@ package cloudwatchevents {
   }
 
   object ListTargetsByRuleRequest {
+    @inline
     def apply(
         Rule: RuleName,
         EventBusName: js.UndefOr[EventBusName] = js.undefined,
@@ -1152,6 +1196,7 @@ package cloudwatchevents {
   }
 
   object ListTargetsByRuleResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Targets: js.UndefOr[TargetList] = js.undefined
@@ -1172,6 +1217,7 @@ package cloudwatchevents {
   }
 
   object NetworkConfiguration {
+    @inline
     def apply(
         awsvpcConfiguration: js.UndefOr[AwsVpcConfiguration] = js.undefined
     ): NetworkConfiguration = {
@@ -1191,6 +1237,7 @@ package cloudwatchevents {
   }
 
   object PartnerEventSource {
+    @inline
     def apply(
         Arn: js.UndefOr[String] = js.undefined,
         Name: js.UndefOr[String] = js.undefined
@@ -1214,6 +1261,7 @@ package cloudwatchevents {
   }
 
   object PartnerEventSourceAccount {
+    @inline
     def apply(
         Account: js.UndefOr[AccountId] = js.undefined,
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
@@ -1235,6 +1283,7 @@ package cloudwatchevents {
   }
 
   object PutEventsRequest {
+    @inline
     def apply(
         Entries: PutEventsRequestEntryList
     ): PutEventsRequest = {
@@ -1260,6 +1309,7 @@ package cloudwatchevents {
   }
 
   object PutEventsRequestEntry {
+    @inline
     def apply(
         Detail: js.UndefOr[String] = js.undefined,
         DetailType: js.UndefOr[String] = js.undefined,
@@ -1286,6 +1336,7 @@ package cloudwatchevents {
   }
 
   object PutEventsResponse {
+    @inline
     def apply(
         Entries: js.UndefOr[PutEventsResultEntryList] = js.undefined,
         FailedEntryCount: js.UndefOr[Int] = js.undefined
@@ -1308,6 +1359,7 @@ package cloudwatchevents {
   }
 
   object PutEventsResultEntry {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
         ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
@@ -1327,6 +1379,7 @@ package cloudwatchevents {
   }
 
   object PutPartnerEventsRequest {
+    @inline
     def apply(
         Entries: PutPartnerEventsRequestEntryList
     ): PutPartnerEventsRequest = {
@@ -1351,6 +1404,7 @@ package cloudwatchevents {
   }
 
   object PutPartnerEventsRequestEntry {
+    @inline
     def apply(
         Detail: js.UndefOr[String] = js.undefined,
         DetailType: js.UndefOr[String] = js.undefined,
@@ -1375,6 +1429,7 @@ package cloudwatchevents {
   }
 
   object PutPartnerEventsResponse {
+    @inline
     def apply(
         Entries: js.UndefOr[PutPartnerEventsResultEntryList] = js.undefined,
         FailedEntryCount: js.UndefOr[Int] = js.undefined
@@ -1397,6 +1452,7 @@ package cloudwatchevents {
   }
 
   object PutPartnerEventsResultEntry {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
         ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
@@ -1420,6 +1476,7 @@ package cloudwatchevents {
   }
 
   object PutPermissionRequest {
+    @inline
     def apply(
         Action: Action,
         Principal: Principal,
@@ -1452,6 +1509,7 @@ package cloudwatchevents {
   }
 
   object PutRuleRequest {
+    @inline
     def apply(
         Name: RuleName,
         Description: js.UndefOr[RuleDescription] = js.undefined,
@@ -1483,6 +1541,7 @@ package cloudwatchevents {
   }
 
   object PutRuleResponse {
+    @inline
     def apply(
         RuleArn: js.UndefOr[RuleArn] = js.undefined
     ): PutRuleResponse = {
@@ -1500,6 +1559,7 @@ package cloudwatchevents {
   }
 
   object PutTargetsRequest {
+    @inline
     def apply(
         Rule: RuleName,
         Targets: TargetList,
@@ -1522,6 +1582,7 @@ package cloudwatchevents {
   }
 
   object PutTargetsResponse {
+    @inline
     def apply(
         FailedEntries: js.UndefOr[PutTargetsResultEntryList] = js.undefined,
         FailedEntryCount: js.UndefOr[Int] = js.undefined
@@ -1544,6 +1605,7 @@ package cloudwatchevents {
   }
 
   object PutTargetsResultEntry {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
         ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
@@ -1564,6 +1626,7 @@ package cloudwatchevents {
   }
 
   object RemovePermissionRequest {
+    @inline
     def apply(
         StatementId: StatementId,
         EventBusName: js.UndefOr[NonPartnerEventBusName] = js.undefined
@@ -1586,6 +1649,7 @@ package cloudwatchevents {
   }
 
   object RemoveTargetsRequest {
+    @inline
     def apply(
         Ids: TargetIdList,
         Rule: RuleName,
@@ -1610,6 +1674,7 @@ package cloudwatchevents {
   }
 
   object RemoveTargetsResponse {
+    @inline
     def apply(
         FailedEntries: js.UndefOr[RemoveTargetsResultEntryList] = js.undefined,
         FailedEntryCount: js.UndefOr[Int] = js.undefined
@@ -1632,6 +1697,7 @@ package cloudwatchevents {
   }
 
   object RemoveTargetsResultEntry {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
         ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
@@ -1662,6 +1728,7 @@ package cloudwatchevents {
   }
 
   object Rule {
+    @inline
     def apply(
         Arn: js.UndefOr[RuleArn] = js.undefined,
         Description: js.UndefOr[RuleDescription] = js.undefined,
@@ -1703,6 +1770,7 @@ package cloudwatchevents {
   }
 
   object RunCommandParameters {
+    @inline
     def apply(
         RunCommandTargets: RunCommandTargets
     ): RunCommandParameters = {
@@ -1724,6 +1792,7 @@ package cloudwatchevents {
   }
 
   object RunCommandTarget {
+    @inline
     def apply(
         Key: RunCommandTargetKey,
         Values: RunCommandTargetValues
@@ -1746,6 +1815,7 @@ package cloudwatchevents {
   }
 
   object SqsParameters {
+    @inline
     def apply(
         MessageGroupId: js.UndefOr[MessageGroupId] = js.undefined
     ): SqsParameters = {
@@ -1765,6 +1835,7 @@ package cloudwatchevents {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: TagValue
@@ -1785,6 +1856,7 @@ package cloudwatchevents {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceARN: Arn,
         Tags: TagList
@@ -1802,6 +1874,7 @@ package cloudwatchevents {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1830,6 +1903,7 @@ package cloudwatchevents {
   }
 
   object Target {
+    @inline
     def apply(
         Arn: TargetArn,
         Id: TargetId,
@@ -1868,6 +1942,7 @@ package cloudwatchevents {
   }
 
   object TestEventPatternRequest {
+    @inline
     def apply(
         Event: String,
         EventPattern: EventPattern
@@ -1887,6 +1962,7 @@ package cloudwatchevents {
   }
 
   object TestEventPatternResponse {
+    @inline
     def apply(
         Result: js.UndefOr[Boolean] = js.undefined
     ): TestEventPatternResponse = {
@@ -1903,6 +1979,7 @@ package cloudwatchevents {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceARN: Arn,
         TagKeys: TagKeyList
@@ -1920,6 +1997,7 @@ package cloudwatchevents {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()

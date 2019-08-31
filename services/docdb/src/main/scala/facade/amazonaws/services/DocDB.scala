@@ -238,6 +238,7 @@ package docdb {
   }
 
   object AddTagsToResourceMessage {
+    @inline
     def apply(
         ResourceName: String,
         Tags: TagList
@@ -269,6 +270,7 @@ package docdb {
   }
 
   object ApplyPendingMaintenanceActionMessage {
+    @inline
     def apply(
         ApplyAction: String,
         OptInType: String,
@@ -290,6 +292,7 @@ package docdb {
   }
 
   object ApplyPendingMaintenanceActionResult {
+    @inline
     def apply(
         ResourcePendingMaintenanceActions: js.UndefOr[ResourcePendingMaintenanceActions] = js.undefined
     ): ApplyPendingMaintenanceActionResult = {
@@ -310,6 +313,7 @@ package docdb {
   }
 
   object AvailabilityZone {
+    @inline
     def apply(
         Name: js.UndefOr[String] = js.undefined
     ): AvailabilityZone = {
@@ -330,6 +334,7 @@ package docdb {
   }
 
   object CloudwatchLogsExportConfiguration {
+    @inline
     def apply(
         DisableLogTypes: js.UndefOr[LogTypeList] = js.undefined,
         EnableLogTypes: js.UndefOr[LogTypeList] = js.undefined
@@ -353,6 +358,7 @@ package docdb {
   }
 
   object CopyDBClusterParameterGroupMessage {
+    @inline
     def apply(
         SourceDBClusterParameterGroupIdentifier: String,
         TargetDBClusterParameterGroupDescription: String,
@@ -376,6 +382,7 @@ package docdb {
   }
 
   object CopyDBClusterParameterGroupResult {
+    @inline
     def apply(
         DBClusterParameterGroup: js.UndefOr[DBClusterParameterGroup] = js.undefined
     ): CopyDBClusterParameterGroupResult = {
@@ -399,6 +406,7 @@ package docdb {
   }
 
   object CopyDBClusterSnapshotMessage {
+    @inline
     def apply(
         SourceDBClusterSnapshotIdentifier: String,
         TargetDBClusterSnapshotIdentifier: String,
@@ -426,6 +434,7 @@ package docdb {
   }
 
   object CopyDBClusterSnapshotResult {
+    @inline
     def apply(
         DBClusterSnapshot: js.UndefOr[DBClusterSnapshot] = js.undefined
     ): CopyDBClusterSnapshotResult = {
@@ -461,6 +470,7 @@ package docdb {
   }
 
   object CreateDBClusterMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String,
         Engine: String,
@@ -524,6 +534,7 @@ package docdb {
   }
 
   object CreateDBClusterParameterGroupMessage {
+    @inline
     def apply(
         DBClusterParameterGroupName: String,
         DBParameterGroupFamily: String,
@@ -547,6 +558,7 @@ package docdb {
   }
 
   object CreateDBClusterParameterGroupResult {
+    @inline
     def apply(
         DBClusterParameterGroup: js.UndefOr[DBClusterParameterGroup] = js.undefined
     ): CreateDBClusterParameterGroupResult = {
@@ -562,6 +574,7 @@ package docdb {
   }
 
   object CreateDBClusterResult {
+    @inline
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): CreateDBClusterResult = {
@@ -582,6 +595,7 @@ package docdb {
   }
 
   object CreateDBClusterSnapshotMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String,
         DBClusterSnapshotIdentifier: String,
@@ -603,6 +617,7 @@ package docdb {
   }
 
   object CreateDBClusterSnapshotResult {
+    @inline
     def apply(
         DBClusterSnapshot: js.UndefOr[DBClusterSnapshot] = js.undefined
     ): CreateDBClusterSnapshotResult = {
@@ -629,6 +644,7 @@ package docdb {
   }
 
   object CreateDBInstanceMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String,
         DBInstanceClass: String,
@@ -664,6 +680,7 @@ package docdb {
   }
 
   object CreateDBInstanceResult {
+    @inline
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): CreateDBInstanceResult = {
@@ -685,6 +702,7 @@ package docdb {
   }
 
   object CreateDBSubnetGroupMessage {
+    @inline
     def apply(
         DBSubnetGroupDescription: String,
         DBSubnetGroupName: String,
@@ -708,6 +726,7 @@ package docdb {
   }
 
   object CreateDBSubnetGroupResult {
+    @inline
     def apply(
         DBSubnetGroup: js.UndefOr[DBSubnetGroup] = js.undefined
     ): CreateDBSubnetGroupResult = {
@@ -754,6 +773,7 @@ package docdb {
   }
 
   object DBCluster {
+    @inline
     def apply(
         AssociatedRoles: js.UndefOr[DBClusterRoles] = js.undefined,
         AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
@@ -835,6 +855,7 @@ package docdb {
   }
 
   object DBClusterMember {
+    @inline
     def apply(
         DBClusterParameterGroupStatus: js.UndefOr[String] = js.undefined,
         DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
@@ -862,6 +883,7 @@ package docdb {
   }
 
   object DBClusterMessage {
+    @inline
     def apply(
         DBClusters: js.UndefOr[DBClusterList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -885,6 +907,7 @@ package docdb {
   }
 
   object DBClusterParameterGroup {
+    @inline
     def apply(
         DBClusterParameterGroupArn: js.UndefOr[String] = js.undefined,
         DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
@@ -914,6 +937,7 @@ package docdb {
   }
 
   object DBClusterParameterGroupDetails {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         Parameters: js.UndefOr[ParametersList] = js.undefined
@@ -934,6 +958,7 @@ package docdb {
   }
 
   object DBClusterParameterGroupNameMessage {
+    @inline
     def apply(
         DBClusterParameterGroupName: js.UndefOr[String] = js.undefined
     ): DBClusterParameterGroupNameMessage = {
@@ -955,6 +980,7 @@ package docdb {
   }
 
   object DBClusterParameterGroupsMessage {
+    @inline
     def apply(
         DBClusterParameterGroups: js.UndefOr[DBClusterParameterGroupList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -976,6 +1002,7 @@ package docdb {
   }
 
   object DBClusterRole {
+    @inline
     def apply(
         RoleArn: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
@@ -1012,6 +1039,7 @@ package docdb {
   }
 
   object DBClusterSnapshot {
+    @inline
     def apply(
         AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
         ClusterCreateTime: js.UndefOr[TStamp] = js.undefined,
@@ -1068,6 +1096,7 @@ package docdb {
   }
 
   object DBClusterSnapshotAttribute {
+    @inline
     def apply(
         AttributeName: js.UndefOr[String] = js.undefined,
         AttributeValues: js.UndefOr[AttributeValueList] = js.undefined
@@ -1089,6 +1118,7 @@ package docdb {
   }
 
   object DBClusterSnapshotAttributesResult {
+    @inline
     def apply(
         DBClusterSnapshotAttributes: js.UndefOr[DBClusterSnapshotAttributeList] = js.undefined,
         DBClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined
@@ -1114,6 +1144,7 @@ package docdb {
   }
 
   object DBClusterSnapshotMessage {
+    @inline
     def apply(
         DBClusterSnapshots: js.UndefOr[DBClusterSnapshotList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -1141,6 +1172,7 @@ package docdb {
   }
 
   object DBEngineVersion {
+    @inline
     def apply(
         DBEngineDescription: js.UndefOr[String] = js.undefined,
         DBEngineVersionDescription: js.UndefOr[String] = js.undefined,
@@ -1178,6 +1210,7 @@ package docdb {
   }
 
   object DBEngineVersionMessage {
+    @inline
     def apply(
         DBEngineVersions: js.UndefOr[DBEngineVersionList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -1222,6 +1255,7 @@ package docdb {
   }
 
   object DBInstance {
+    @inline
     def apply(
         AutoMinorVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
         AvailabilityZone: js.UndefOr[String] = js.undefined,
@@ -1293,6 +1327,7 @@ package docdb {
   }
 
   object DBInstanceMessage {
+    @inline
     def apply(
         DBInstances: js.UndefOr[DBInstanceList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -1316,6 +1351,7 @@ package docdb {
   }
 
   object DBInstanceStatusInfo {
+    @inline
     def apply(
         Message: js.UndefOr[String] = js.undefined,
         Normal: js.UndefOr[Boolean] = js.undefined,
@@ -1345,6 +1381,7 @@ package docdb {
   }
 
   object DBSubnetGroup {
+    @inline
     def apply(
         DBSubnetGroupArn: js.UndefOr[String] = js.undefined,
         DBSubnetGroupDescription: js.UndefOr[String] = js.undefined,
@@ -1374,6 +1411,7 @@ package docdb {
   }
 
   object DBSubnetGroupMessage {
+    @inline
     def apply(
         DBSubnetGroups: js.UndefOr[DBSubnetGroups] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -1396,6 +1434,7 @@ package docdb {
   }
 
   object DeleteDBClusterMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String,
         FinalDBSnapshotIdentifier: js.UndefOr[String] = js.undefined,
@@ -1422,6 +1461,7 @@ package docdb {
   }
 
   object DeleteDBClusterParameterGroupMessage {
+    @inline
     def apply(
         DBClusterParameterGroupName: String
     ): DeleteDBClusterParameterGroupMessage = {
@@ -1439,6 +1479,7 @@ package docdb {
   }
 
   object DeleteDBClusterResult {
+    @inline
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): DeleteDBClusterResult = {
@@ -1457,6 +1498,7 @@ package docdb {
   }
 
   object DeleteDBClusterSnapshotMessage {
+    @inline
     def apply(
         DBClusterSnapshotIdentifier: String
     ): DeleteDBClusterSnapshotMessage = {
@@ -1474,6 +1516,7 @@ package docdb {
   }
 
   object DeleteDBClusterSnapshotResult {
+    @inline
     def apply(
         DBClusterSnapshot: js.UndefOr[DBClusterSnapshot] = js.undefined
     ): DeleteDBClusterSnapshotResult = {
@@ -1492,6 +1535,7 @@ package docdb {
   }
 
   object DeleteDBInstanceMessage {
+    @inline
     def apply(
         DBInstanceIdentifier: String
     ): DeleteDBInstanceMessage = {
@@ -1509,6 +1553,7 @@ package docdb {
   }
 
   object DeleteDBInstanceResult {
+    @inline
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): DeleteDBInstanceResult = {
@@ -1527,6 +1572,7 @@ package docdb {
   }
 
   object DeleteDBSubnetGroupMessage {
+    @inline
     def apply(
         DBSubnetGroupName: String
     ): DeleteDBSubnetGroupMessage = {
@@ -1550,6 +1596,7 @@ package docdb {
   }
 
   object DescribeDBClusterParameterGroupsMessage {
+    @inline
     def apply(
         DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -1580,6 +1627,7 @@ package docdb {
   }
 
   object DescribeDBClusterParametersMessage {
+    @inline
     def apply(
         DBClusterParameterGroupName: String,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -1608,6 +1656,7 @@ package docdb {
   }
 
   object DescribeDBClusterSnapshotAttributesMessage {
+    @inline
     def apply(
         DBClusterSnapshotIdentifier: String
     ): DescribeDBClusterSnapshotAttributesMessage = {
@@ -1625,6 +1674,7 @@ package docdb {
   }
 
   object DescribeDBClusterSnapshotAttributesResult {
+    @inline
     def apply(
         DBClusterSnapshotAttributesResult: js.UndefOr[DBClusterSnapshotAttributesResult] = js.undefined
     ): DescribeDBClusterSnapshotAttributesResult = {
@@ -1652,6 +1702,7 @@ package docdb {
   }
 
   object DescribeDBClusterSnapshotsMessage {
+    @inline
     def apply(
         DBClusterIdentifier: js.UndefOr[String] = js.undefined,
         DBClusterSnapshotIdentifier: js.UndefOr[String] = js.undefined,
@@ -1689,6 +1740,7 @@ package docdb {
   }
 
   object DescribeDBClustersMessage {
+    @inline
     def apply(
         DBClusterIdentifier: js.UndefOr[String] = js.undefined,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -1721,6 +1773,7 @@ package docdb {
   }
 
   object DescribeDBEngineVersionsMessage {
+    @inline
     def apply(
         DBParameterGroupFamily: js.UndefOr[String] = js.undefined,
         DefaultOnly: js.UndefOr[Boolean] = js.undefined,
@@ -1760,6 +1813,7 @@ package docdb {
   }
 
   object DescribeDBInstancesMessage {
+    @inline
     def apply(
         DBInstanceIdentifier: js.UndefOr[String] = js.undefined,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -1787,6 +1841,7 @@ package docdb {
   }
 
   object DescribeDBSubnetGroupsMessage {
+    @inline
     def apply(
         DBSubnetGroupName: js.UndefOr[String] = js.undefined,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -1814,6 +1869,7 @@ package docdb {
   }
 
   object DescribeEngineDefaultClusterParametersMessage {
+    @inline
     def apply(
         DBParameterGroupFamily: String,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -1837,6 +1893,7 @@ package docdb {
   }
 
   object DescribeEngineDefaultClusterParametersResult {
+    @inline
     def apply(
         EngineDefaults: js.UndefOr[EngineDefaults] = js.undefined
     ): DescribeEngineDefaultClusterParametersResult = {
@@ -1856,6 +1913,7 @@ package docdb {
   }
 
   object DescribeEventCategoriesMessage {
+    @inline
     def apply(
         Filters: js.UndefOr[FilterList] = js.undefined,
         SourceType: js.UndefOr[String] = js.undefined
@@ -1884,6 +1942,7 @@ package docdb {
   }
 
   object DescribeEventsMessage {
+    @inline
     def apply(
         Duration: js.UndefOr[IntegerOptional] = js.undefined,
         EndTime: js.UndefOr[TStamp] = js.undefined,
@@ -1925,6 +1984,7 @@ package docdb {
   }
 
   object DescribeOrderableDBInstanceOptionsMessage {
+    @inline
     def apply(
         Engine: String,
         DBInstanceClass: js.UndefOr[String] = js.undefined,
@@ -1962,6 +2022,7 @@ package docdb {
   }
 
   object DescribePendingMaintenanceActionsMessage {
+    @inline
     def apply(
         Filters: js.UndefOr[FilterList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -1988,6 +2049,7 @@ package docdb {
   }
 
   object Endpoint {
+    @inline
     def apply(
         Address: js.UndefOr[String] = js.undefined,
         HostedZoneId: js.UndefOr[String] = js.undefined,
@@ -2012,6 +2074,7 @@ package docdb {
   }
 
   object EngineDefaults {
+    @inline
     def apply(
         DBParameterGroupFamily: js.UndefOr[String] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -2039,6 +2102,7 @@ package docdb {
   }
 
   object Event {
+    @inline
     def apply(
         Date: js.UndefOr[TStamp] = js.undefined,
         EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
@@ -2068,6 +2132,7 @@ package docdb {
   }
 
   object EventCategoriesMap {
+    @inline
     def apply(
         EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
         SourceType: js.UndefOr[String] = js.undefined
@@ -2088,6 +2153,7 @@ package docdb {
   }
 
   object EventCategoriesMessage {
+    @inline
     def apply(
         EventCategoriesMapList: js.UndefOr[EventCategoriesMapList] = js.undefined
     ): EventCategoriesMessage = {
@@ -2107,6 +2173,7 @@ package docdb {
   }
 
   object EventsMessage {
+    @inline
     def apply(
         Events: js.UndefOr[EventList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -2128,6 +2195,7 @@ package docdb {
   }
 
   object FailoverDBClusterMessage {
+    @inline
     def apply(
         DBClusterIdentifier: js.UndefOr[String] = js.undefined,
         TargetDBInstanceIdentifier: js.UndefOr[String] = js.undefined
@@ -2147,6 +2215,7 @@ package docdb {
   }
 
   object FailoverDBClusterResult {
+    @inline
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): FailoverDBClusterResult = {
@@ -2167,6 +2236,7 @@ package docdb {
   }
 
   object Filter {
+    @inline
     def apply(
         Name: String,
         Values: FilterValueList
@@ -2190,6 +2260,7 @@ package docdb {
   }
 
   object ListTagsForResourceMessage {
+    @inline
     def apply(
         ResourceName: String,
         Filters: js.UndefOr[FilterList] = js.undefined
@@ -2224,6 +2295,7 @@ package docdb {
   }
 
   object ModifyDBClusterMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String,
         ApplyImmediately: js.UndefOr[Boolean] = js.undefined,
@@ -2275,6 +2347,7 @@ package docdb {
   }
 
   object ModifyDBClusterParameterGroupMessage {
+    @inline
     def apply(
         DBClusterParameterGroupName: String,
         Parameters: ParametersList
@@ -2294,6 +2367,7 @@ package docdb {
   }
 
   object ModifyDBClusterResult {
+    @inline
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): ModifyDBClusterResult = {
@@ -2315,6 +2389,7 @@ package docdb {
   }
 
   object ModifyDBClusterSnapshotAttributeMessage {
+    @inline
     def apply(
         AttributeName: String,
         DBClusterSnapshotIdentifier: String,
@@ -2338,6 +2413,7 @@ package docdb {
   }
 
   object ModifyDBClusterSnapshotAttributeResult {
+    @inline
     def apply(
         DBClusterSnapshotAttributesResult: js.UndefOr[DBClusterSnapshotAttributesResult] = js.undefined
     ): ModifyDBClusterSnapshotAttributeResult = {
@@ -2364,6 +2440,7 @@ package docdb {
   }
 
   object ModifyDBInstanceMessage {
+    @inline
     def apply(
         DBInstanceIdentifier: String,
         ApplyImmediately: js.UndefOr[Boolean] = js.undefined,
@@ -2395,6 +2472,7 @@ package docdb {
   }
 
   object ModifyDBInstanceResult {
+    @inline
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): ModifyDBInstanceResult = {
@@ -2415,6 +2493,7 @@ package docdb {
   }
 
   object ModifyDBSubnetGroupMessage {
+    @inline
     def apply(
         DBSubnetGroupName: String,
         SubnetIds: SubnetIdentifierList,
@@ -2436,6 +2515,7 @@ package docdb {
   }
 
   object ModifyDBSubnetGroupResult {
+    @inline
     def apply(
         DBSubnetGroup: js.UndefOr[DBSubnetGroup] = js.undefined
     ): ModifyDBSubnetGroupResult = {
@@ -2459,6 +2539,7 @@ package docdb {
   }
 
   object OrderableDBInstanceOption {
+    @inline
     def apply(
         AvailabilityZones: js.UndefOr[AvailabilityZoneList] = js.undefined,
         DBInstanceClass: js.UndefOr[String] = js.undefined,
@@ -2488,6 +2569,7 @@ package docdb {
   }
 
   object OrderableDBInstanceOptionsMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         OrderableDBInstanceOptions: js.UndefOr[OrderableDBInstanceOptionsList] = js.undefined
@@ -2519,6 +2601,7 @@ package docdb {
   }
 
   object Parameter {
+    @inline
     def apply(
         AllowedValues: js.UndefOr[String] = js.undefined,
         ApplyMethod: js.UndefOr[ApplyMethod] = js.undefined,
@@ -2556,6 +2639,7 @@ package docdb {
   }
 
   object PendingCloudwatchLogsExports {
+    @inline
     def apply(
         LogTypesToDisable: js.UndefOr[LogTypeList] = js.undefined,
         LogTypesToEnable: js.UndefOr[LogTypeList] = js.undefined
@@ -2581,6 +2665,7 @@ package docdb {
   }
 
   object PendingMaintenanceAction {
+    @inline
     def apply(
         Action: js.UndefOr[String] = js.undefined,
         AutoAppliedAfterDate: js.UndefOr[TStamp] = js.undefined,
@@ -2610,6 +2695,7 @@ package docdb {
   }
 
   object PendingMaintenanceActionsMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         PendingMaintenanceActions: js.UndefOr[PendingMaintenanceActions] = js.undefined
@@ -2645,6 +2731,7 @@ package docdb {
   }
 
   object PendingModifiedValues {
+    @inline
     def apply(
         AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
         BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
@@ -2692,6 +2779,7 @@ package docdb {
   }
 
   object RebootDBInstanceMessage {
+    @inline
     def apply(
         DBInstanceIdentifier: String,
         ForceFailover: js.UndefOr[BooleanOptional] = js.undefined
@@ -2711,6 +2799,7 @@ package docdb {
   }
 
   object RebootDBInstanceResult {
+    @inline
     def apply(
         DBInstance: js.UndefOr[DBInstance] = js.undefined
     ): RebootDBInstanceResult = {
@@ -2730,6 +2819,7 @@ package docdb {
   }
 
   object RemoveTagsFromResourceMessage {
+    @inline
     def apply(
         ResourceName: String,
         TagKeys: KeyList
@@ -2754,6 +2844,7 @@ package docdb {
   }
 
   object ResetDBClusterParameterGroupMessage {
+    @inline
     def apply(
         DBClusterParameterGroupName: String,
         Parameters: js.UndefOr[ParametersList] = js.undefined,
@@ -2779,6 +2870,7 @@ package docdb {
   }
 
   object ResourcePendingMaintenanceActions {
+    @inline
     def apply(
         PendingMaintenanceActionDetails: js.UndefOr[PendingMaintenanceActionDetails] = js.undefined,
         ResourceIdentifier: js.UndefOr[String] = js.undefined
@@ -2812,6 +2904,7 @@ package docdb {
   }
 
   object RestoreDBClusterFromSnapshotMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String,
         Engine: String,
@@ -2853,6 +2946,7 @@ package docdb {
   }
 
   object RestoreDBClusterFromSnapshotResult {
+    @inline
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): RestoreDBClusterFromSnapshotResult = {
@@ -2881,6 +2975,7 @@ package docdb {
   }
 
   object RestoreDBClusterToPointInTimeMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String,
         SourceDBClusterIdentifier: String,
@@ -2920,6 +3015,7 @@ package docdb {
   }
 
   object RestoreDBClusterToPointInTimeResult {
+    @inline
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): RestoreDBClusterToPointInTimeResult = {
@@ -2955,6 +3051,7 @@ package docdb {
   }
 
   object StartDBClusterMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String
     ): StartDBClusterMessage = {
@@ -2972,6 +3069,7 @@ package docdb {
   }
 
   object StartDBClusterResult {
+    @inline
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): StartDBClusterResult = {
@@ -2987,6 +3085,7 @@ package docdb {
   }
 
   object StopDBClusterMessage {
+    @inline
     def apply(
         DBClusterIdentifier: String
     ): StopDBClusterMessage = {
@@ -3004,6 +3103,7 @@ package docdb {
   }
 
   object StopDBClusterResult {
+    @inline
     def apply(
         DBCluster: js.UndefOr[DBCluster] = js.undefined
     ): StopDBClusterResult = {
@@ -3024,6 +3124,7 @@ package docdb {
   }
 
   object Subnet {
+    @inline
     def apply(
         SubnetAvailabilityZone: js.UndefOr[AvailabilityZone] = js.undefined,
         SubnetIdentifier: js.UndefOr[String] = js.undefined,
@@ -3047,6 +3148,7 @@ package docdb {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
@@ -3067,6 +3169,7 @@ package docdb {
   }
 
   object TagListMessage {
+    @inline
     def apply(
         TagList: js.UndefOr[TagList] = js.undefined
     ): TagListMessage = {
@@ -3089,6 +3192,7 @@ package docdb {
   }
 
   object UpgradeTarget {
+    @inline
     def apply(
         AutoUpgrade: js.UndefOr[Boolean] = js.undefined,
         Description: js.UndefOr[String] = js.undefined,
@@ -3116,6 +3220,7 @@ package docdb {
   }
 
   object VpcSecurityGroupMembership {
+    @inline
     def apply(
         Status: js.UndefOr[String] = js.undefined,
         VpcSecurityGroupId: js.UndefOr[String] = js.undefined

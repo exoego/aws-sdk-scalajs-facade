@@ -265,6 +265,7 @@ package codepipeline {
   }
 
   object AWSSessionCredentials {
+    @inline
     def apply(
         accessKeyId: AccessKeyId,
         secretAccessKey: SecretAccessKey,
@@ -290,6 +291,7 @@ package codepipeline {
   }
 
   object AcknowledgeJobInput {
+    @inline
     def apply(
         jobId: JobId,
         nonce: Nonce
@@ -312,6 +314,7 @@ package codepipeline {
   }
 
   object AcknowledgeJobOutput {
+    @inline
     def apply(
         status: js.UndefOr[JobStatus] = js.undefined
     ): AcknowledgeJobOutput = {
@@ -332,6 +335,7 @@ package codepipeline {
   }
 
   object AcknowledgeThirdPartyJobInput {
+    @inline
     def apply(
         clientToken: ClientToken,
         jobId: ThirdPartyJobId,
@@ -356,6 +360,7 @@ package codepipeline {
   }
 
   object AcknowledgeThirdPartyJobOutput {
+    @inline
     def apply(
         status: js.UndefOr[JobStatus] = js.undefined
     ): AcknowledgeThirdPartyJobOutput = {
@@ -385,6 +390,7 @@ package codepipeline {
   }
 
   object ActionConfiguration {
+    @inline
     def apply(
         configuration: js.UndefOr[ActionConfigurationMap] = js.undefined
     ): ActionConfiguration = {
@@ -409,6 +415,7 @@ package codepipeline {
   }
 
   object ActionConfigurationProperty {
+    @inline
     def apply(
         key: Boolean,
         name: ActionConfigurationKey,
@@ -450,6 +457,7 @@ package codepipeline {
   }
 
   object ActionContext {
+    @inline
     def apply(
         actionExecutionId: js.UndefOr[ActionExecutionId] = js.undefined,
         name: js.UndefOr[ActionName] = js.undefined
@@ -477,6 +485,7 @@ package codepipeline {
   }
 
   object ActionDeclaration {
+    @inline
     def apply(
         actionTypeId: ActionTypeId,
         name: ActionName,
@@ -519,6 +528,7 @@ package codepipeline {
   }
 
   object ActionExecution {
+    @inline
     def apply(
         errorDetails: js.UndefOr[ErrorDetails] = js.undefined,
         externalExecutionId: js.UndefOr[ExecutionId] = js.undefined,
@@ -562,6 +572,7 @@ package codepipeline {
   }
 
   object ActionExecutionDetail {
+    @inline
     def apply(
         actionExecutionId: js.UndefOr[ActionExecutionId] = js.undefined,
         actionName: js.UndefOr[ActionName] = js.undefined,
@@ -598,6 +609,7 @@ package codepipeline {
   }
 
   object ActionExecutionFilter {
+    @inline
     def apply(
         pipelineExecutionId: js.UndefOr[PipelineExecutionId] = js.undefined
     ): ActionExecutionFilter = {
@@ -620,6 +632,7 @@ package codepipeline {
   }
 
   object ActionExecutionInput {
+    @inline
     def apply(
         actionTypeId: js.UndefOr[ActionTypeId] = js.undefined,
         configuration: js.UndefOr[ActionConfigurationMap] = js.undefined,
@@ -647,6 +660,7 @@ package codepipeline {
   }
 
   object ActionExecutionOutput {
+    @inline
     def apply(
         executionResult: js.UndefOr[ActionExecutionResult] = js.undefined,
         outputArtifacts: js.UndefOr[ArtifactDetailList] = js.undefined
@@ -669,6 +683,7 @@ package codepipeline {
   }
 
   object ActionExecutionResult {
+    @inline
     def apply(
         externalExecutionId: js.UndefOr[ExternalExecutionId] = js.undefined,
         externalExecutionSummary: js.UndefOr[ExternalExecutionSummary] = js.undefined,
@@ -709,6 +724,7 @@ package codepipeline {
   }
 
   object ActionRevision {
+    @inline
     def apply(
         created: Timestamp,
         revisionChangeId: RevisionChangeIdentifier,
@@ -737,6 +753,7 @@ package codepipeline {
   }
 
   object ActionState {
+    @inline
     def apply(
         actionName: js.UndefOr[ActionName] = js.undefined,
         currentRevision: js.UndefOr[ActionRevision] = js.undefined,
@@ -767,6 +784,7 @@ package codepipeline {
   }
 
   object ActionType {
+    @inline
     def apply(
         id: ActionTypeId,
         inputArtifactDetails: ArtifactDetails,
@@ -800,6 +818,7 @@ package codepipeline {
   }
 
   object ActionTypeId {
+    @inline
     def apply(
         category: ActionCategory,
         owner: ActionOwner,
@@ -829,6 +848,7 @@ package codepipeline {
   }
 
   object ActionTypeSettings {
+    @inline
     def apply(
         entityUrlTemplate: js.UndefOr[UrlTemplate] = js.undefined,
         executionUrlTemplate: js.UndefOr[UrlTemplate] = js.undefined,
@@ -856,6 +876,7 @@ package codepipeline {
   }
 
   object ApprovalResult {
+    @inline
     def apply(
         status: ApprovalStatus,
         summary: ApprovalSummary
@@ -887,6 +908,7 @@ package codepipeline {
   }
 
   object Artifact {
+    @inline
     def apply(
         location: js.UndefOr[ArtifactLocation] = js.undefined,
         name: js.UndefOr[ArtifactName] = js.undefined,
@@ -910,6 +932,7 @@ package codepipeline {
   }
 
   object ArtifactDetail {
+    @inline
     def apply(
         name: js.UndefOr[ArtifactName] = js.undefined,
         s3location: js.UndefOr[S3Location] = js.undefined
@@ -931,6 +954,7 @@ package codepipeline {
   }
 
   object ArtifactDetails {
+    @inline
     def apply(
         maximumCount: MaximumArtifactCount,
         minimumCount: MinimumArtifactCount
@@ -954,6 +978,7 @@ package codepipeline {
   }
 
   object ArtifactLocation {
+    @inline
     def apply(
         s3Location: js.UndefOr[S3ArtifactLocation] = js.undefined,
         `type`: js.UndefOr[ArtifactLocationType] = js.undefined
@@ -985,6 +1010,7 @@ package codepipeline {
   }
 
   object ArtifactRevision {
+    @inline
     def apply(
         created: js.UndefOr[Timestamp] = js.undefined,
         name: js.UndefOr[ArtifactName] = js.undefined,
@@ -1015,6 +1041,7 @@ package codepipeline {
   }
 
   object ArtifactStore {
+    @inline
     def apply(
         location: ArtifactStoreLocation,
         `type`: ArtifactStoreType,
@@ -1046,6 +1073,7 @@ package codepipeline {
   }
 
   object BlockerDeclaration {
+    @inline
     def apply(
         name: BlockerName,
         `type`: BlockerType
@@ -1081,6 +1109,7 @@ package codepipeline {
   }
 
   object CreateCustomActionTypeInput {
+    @inline
     def apply(
         category: ActionCategory,
         inputArtifactDetails: ArtifactDetails,
@@ -1116,6 +1145,7 @@ package codepipeline {
   }
 
   object CreateCustomActionTypeOutput {
+    @inline
     def apply(
         actionType: ActionType,
         tags: js.UndefOr[TagList] = js.undefined
@@ -1139,6 +1169,7 @@ package codepipeline {
   }
 
   object CreatePipelineInput {
+    @inline
     def apply(
         pipeline: PipelineDeclaration,
         tags: js.UndefOr[TagList] = js.undefined
@@ -1162,6 +1193,7 @@ package codepipeline {
   }
 
   object CreatePipelineOutput {
+    @inline
     def apply(
         pipeline: js.UndefOr[PipelineDeclaration] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
@@ -1185,6 +1217,7 @@ package codepipeline {
   }
 
   object CurrentRevision {
+    @inline
     def apply(
         changeIdentifier: RevisionChangeIdentifier,
         revision: Revision,
@@ -1213,6 +1246,7 @@ package codepipeline {
   }
 
   object DeleteCustomActionTypeInput {
+    @inline
     def apply(
         category: ActionCategory,
         provider: ActionProvider,
@@ -1237,6 +1271,7 @@ package codepipeline {
   }
 
   object DeletePipelineInput {
+    @inline
     def apply(
         name: PipelineName
     ): DeletePipelineInput = {
@@ -1254,6 +1289,7 @@ package codepipeline {
   }
 
   object DeleteWebhookInput {
+    @inline
     def apply(
         name: WebhookName
     ): DeleteWebhookInput = {
@@ -1269,6 +1305,7 @@ package codepipeline {
   trait DeleteWebhookOutput extends js.Object {}
 
   object DeleteWebhookOutput {
+    @inline
     def apply(
         ): DeleteWebhookOutput = {
       val __obj = js.Dynamic.literal()
@@ -1283,6 +1320,7 @@ package codepipeline {
   }
 
   object DeregisterWebhookWithThirdPartyInput {
+    @inline
     def apply(
         webhookName: js.UndefOr[WebhookName] = js.undefined
     ): DeregisterWebhookWithThirdPartyInput = {
@@ -1296,6 +1334,7 @@ package codepipeline {
   trait DeregisterWebhookWithThirdPartyOutput extends js.Object {}
 
   object DeregisterWebhookWithThirdPartyOutput {
+    @inline
     def apply(
         ): DeregisterWebhookWithThirdPartyOutput = {
       val __obj = js.Dynamic.literal()
@@ -1316,6 +1355,7 @@ package codepipeline {
   }
 
   object DisableStageTransitionInput {
+    @inline
     def apply(
         pipelineName: PipelineName,
         reason: DisabledReason,
@@ -1344,6 +1384,7 @@ package codepipeline {
   }
 
   object EnableStageTransitionInput {
+    @inline
     def apply(
         pipelineName: PipelineName,
         stageName: StageName,
@@ -1369,6 +1410,7 @@ package codepipeline {
   }
 
   object EncryptionKey {
+    @inline
     def apply(
         id: EncryptionKeyId,
         `type`: EncryptionKeyType
@@ -1398,6 +1440,7 @@ package codepipeline {
   }
 
   object ErrorDetails {
+    @inline
     def apply(
         code: js.UndefOr[Code] = js.undefined,
         message: js.UndefOr[Message] = js.undefined
@@ -1420,6 +1463,7 @@ package codepipeline {
   }
 
   object ExecutionDetails {
+    @inline
     def apply(
         externalExecutionId: js.UndefOr[ExecutionId] = js.undefined,
         percentComplete: js.UndefOr[Percentage] = js.undefined,
@@ -1444,6 +1488,7 @@ package codepipeline {
   }
 
   object FailureDetails {
+    @inline
     def apply(
         message: Message,
         `type`: FailureType,
@@ -1488,6 +1533,7 @@ package codepipeline {
   }
 
   object GetJobDetailsInput {
+    @inline
     def apply(
         jobId: JobId
     ): GetJobDetailsInput = {
@@ -1508,6 +1554,7 @@ package codepipeline {
   }
 
   object GetJobDetailsOutput {
+    @inline
     def apply(
         jobDetails: js.UndefOr[JobDetails] = js.undefined
     ): GetJobDetailsOutput = {
@@ -1527,6 +1574,7 @@ package codepipeline {
   }
 
   object GetPipelineExecutionInput {
+    @inline
     def apply(
         pipelineExecutionId: PipelineExecutionId,
         pipelineName: PipelineName
@@ -1549,6 +1597,7 @@ package codepipeline {
   }
 
   object GetPipelineExecutionOutput {
+    @inline
     def apply(
         pipelineExecution: js.UndefOr[PipelineExecution] = js.undefined
     ): GetPipelineExecutionOutput = {
@@ -1568,6 +1617,7 @@ package codepipeline {
   }
 
   object GetPipelineInput {
+    @inline
     def apply(
         name: PipelineName,
         version: js.UndefOr[PipelineVersion] = js.undefined
@@ -1591,6 +1641,7 @@ package codepipeline {
   }
 
   object GetPipelineOutput {
+    @inline
     def apply(
         metadata: js.UndefOr[PipelineMetadata] = js.undefined,
         pipeline: js.UndefOr[PipelineDeclaration] = js.undefined
@@ -1611,6 +1662,7 @@ package codepipeline {
   }
 
   object GetPipelineStateInput {
+    @inline
     def apply(
         name: PipelineName
     ): GetPipelineStateInput = {
@@ -1635,6 +1687,7 @@ package codepipeline {
   }
 
   object GetPipelineStateOutput {
+    @inline
     def apply(
         created: js.UndefOr[Timestamp] = js.undefined,
         pipelineName: js.UndefOr[PipelineName] = js.undefined,
@@ -1662,6 +1715,7 @@ package codepipeline {
   }
 
   object GetThirdPartyJobDetailsInput {
+    @inline
     def apply(
         clientToken: ClientToken,
         jobId: ThirdPartyJobId
@@ -1684,6 +1738,7 @@ package codepipeline {
   }
 
   object GetThirdPartyJobDetailsOutput {
+    @inline
     def apply(
         jobDetails: js.UndefOr[ThirdPartyJobDetails] = js.undefined
     ): GetThirdPartyJobDetailsOutput = {
@@ -1702,6 +1757,7 @@ package codepipeline {
   }
 
   object InputArtifact {
+    @inline
     def apply(
         name: ArtifactName
     ): InputArtifact = {
@@ -1725,6 +1781,7 @@ package codepipeline {
   }
 
   object Job {
+    @inline
     def apply(
         accountId: js.UndefOr[AccountId] = js.undefined,
         data: js.UndefOr[JobData] = js.undefined,
@@ -1756,6 +1813,7 @@ package codepipeline {
   }
 
   object JobData {
+    @inline
     def apply(
         actionConfiguration: js.UndefOr[ActionConfiguration] = js.undefined,
         actionTypeId: js.UndefOr[ActionTypeId] = js.undefined,
@@ -1790,6 +1848,7 @@ package codepipeline {
   }
 
   object JobDetails {
+    @inline
     def apply(
         accountId: js.UndefOr[AccountId] = js.undefined,
         data: js.UndefOr[JobData] = js.undefined,
@@ -1824,6 +1883,7 @@ package codepipeline {
   }
 
   object ListActionExecutionsInput {
+    @inline
     def apply(
         pipelineName: PipelineName,
         filter: js.UndefOr[ActionExecutionFilter] = js.undefined,
@@ -1848,6 +1908,7 @@ package codepipeline {
   }
 
   object ListActionExecutionsOutput {
+    @inline
     def apply(
         actionExecutionDetails: js.UndefOr[ActionExecutionDetailList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1869,6 +1930,7 @@ package codepipeline {
   }
 
   object ListActionTypesInput {
+    @inline
     def apply(
         actionOwnerFilter: js.UndefOr[ActionOwner] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1890,6 +1952,7 @@ package codepipeline {
   }
 
   object ListActionTypesOutput {
+    @inline
     def apply(
         actionTypes: ActionTypeList,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1914,6 +1977,7 @@ package codepipeline {
   }
 
   object ListPipelineExecutionsInput {
+    @inline
     def apply(
         pipelineName: PipelineName,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1939,6 +2003,7 @@ package codepipeline {
   }
 
   object ListPipelineExecutionsOutput {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         pipelineExecutionSummaries: js.UndefOr[PipelineExecutionSummaryList] = js.undefined
@@ -1961,6 +2026,7 @@ package codepipeline {
   }
 
   object ListPipelinesInput {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListPipelinesInput = {
@@ -1980,6 +2046,7 @@ package codepipeline {
   }
 
   object ListPipelinesOutput {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         pipelines: js.UndefOr[PipelineList] = js.undefined
@@ -1999,6 +2066,7 @@ package codepipeline {
   }
 
   object ListTagsForResourceInput {
+    @inline
     def apply(
         resourceArn: ResourceArn,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -2021,6 +2089,7 @@ package codepipeline {
   }
 
   object ListTagsForResourceOutput {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
@@ -2047,6 +2116,7 @@ package codepipeline {
   }
 
   object ListWebhookItem {
+    @inline
     def apply(
         definition: WebhookDefinition,
         url: WebhookUrl,
@@ -2077,6 +2147,7 @@ package codepipeline {
   }
 
   object ListWebhooksInput {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -2095,6 +2166,7 @@ package codepipeline {
   }
 
   object ListWebhooksOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         webhooks: js.UndefOr[WebhookList] = js.undefined
@@ -2115,6 +2187,7 @@ package codepipeline {
   }
 
   object OutputArtifact {
+    @inline
     def apply(
         name: ArtifactName
     ): OutputArtifact = {
@@ -2141,6 +2214,7 @@ package codepipeline {
   }
 
   object PipelineContext {
+    @inline
     def apply(
         action: js.UndefOr[ActionContext] = js.undefined,
         pipelineArn: js.UndefOr[PipelineArn] = js.undefined,
@@ -2172,6 +2246,7 @@ package codepipeline {
   }
 
   object PipelineDeclaration {
+    @inline
     def apply(
         name: PipelineName,
         roleArn: RoleArn,
@@ -2206,6 +2281,7 @@ package codepipeline {
   }
 
   object PipelineExecution {
+    @inline
     def apply(
         artifactRevisions: js.UndefOr[ArtifactRevisionList] = js.undefined,
         pipelineExecutionId: js.UndefOr[PipelineExecutionId] = js.undefined,
@@ -2245,6 +2321,7 @@ package codepipeline {
   }
 
   object PipelineExecutionSummary {
+    @inline
     def apply(
         lastUpdateTime: js.UndefOr[Timestamp] = js.undefined,
         pipelineExecutionId: js.UndefOr[PipelineExecutionId] = js.undefined,
@@ -2273,6 +2350,7 @@ package codepipeline {
   }
 
   object PipelineMetadata {
+    @inline
     def apply(
         created: js.UndefOr[Timestamp] = js.undefined,
         pipelineArn: js.UndefOr[PipelineArn] = js.undefined,
@@ -2298,6 +2376,7 @@ package codepipeline {
   }
 
   object PipelineSummary {
+    @inline
     def apply(
         created: js.UndefOr[Timestamp] = js.undefined,
         name: js.UndefOr[PipelineName] = js.undefined,
@@ -2324,6 +2403,7 @@ package codepipeline {
   }
 
   object PollForJobsInput {
+    @inline
     def apply(
         actionTypeId: ActionTypeId,
         maxBatchSize: js.UndefOr[MaxBatchSize] = js.undefined,
@@ -2348,6 +2428,7 @@ package codepipeline {
   }
 
   object PollForJobsOutput {
+    @inline
     def apply(
         jobs: js.UndefOr[JobList] = js.undefined
     ): PollForJobsOutput = {
@@ -2367,6 +2448,7 @@ package codepipeline {
   }
 
   object PollForThirdPartyJobsInput {
+    @inline
     def apply(
         actionTypeId: ActionTypeId,
         maxBatchSize: js.UndefOr[MaxBatchSize] = js.undefined
@@ -2389,6 +2471,7 @@ package codepipeline {
   }
 
   object PollForThirdPartyJobsOutput {
+    @inline
     def apply(
         jobs: js.UndefOr[ThirdPartyJobList] = js.undefined
     ): PollForThirdPartyJobsOutput = {
@@ -2410,6 +2493,7 @@ package codepipeline {
   }
 
   object PutActionRevisionInput {
+    @inline
     def apply(
         actionName: ActionName,
         actionRevision: ActionRevision,
@@ -2437,6 +2521,7 @@ package codepipeline {
   }
 
   object PutActionRevisionOutput {
+    @inline
     def apply(
         newRevision: js.UndefOr[Boolean] = js.undefined,
         pipelineExecutionId: js.UndefOr[PipelineExecutionId] = js.undefined
@@ -2461,6 +2546,7 @@ package codepipeline {
   }
 
   object PutApprovalResultInput {
+    @inline
     def apply(
         actionName: ActionName,
         pipelineName: PipelineName,
@@ -2489,6 +2575,7 @@ package codepipeline {
   }
 
   object PutApprovalResultOutput {
+    @inline
     def apply(
         approvedAt: js.UndefOr[Timestamp] = js.undefined
     ): PutApprovalResultOutput = {
@@ -2508,6 +2595,7 @@ package codepipeline {
   }
 
   object PutJobFailureResultInput {
+    @inline
     def apply(
         failureDetails: FailureDetails,
         jobId: JobId
@@ -2533,6 +2621,7 @@ package codepipeline {
   }
 
   object PutJobSuccessResultInput {
+    @inline
     def apply(
         jobId: JobId,
         continuationToken: js.UndefOr[ContinuationToken] = js.undefined,
@@ -2561,6 +2650,7 @@ package codepipeline {
   }
 
   object PutThirdPartyJobFailureResultInput {
+    @inline
     def apply(
         clientToken: ClientToken,
         failureDetails: FailureDetails,
@@ -2589,6 +2679,7 @@ package codepipeline {
   }
 
   object PutThirdPartyJobSuccessResultInput {
+    @inline
     def apply(
         clientToken: ClientToken,
         jobId: ThirdPartyJobId,
@@ -2615,6 +2706,7 @@ package codepipeline {
   }
 
   object PutWebhookInput {
+    @inline
     def apply(
         webhook: WebhookDefinition,
         tags: js.UndefOr[TagList] = js.undefined
@@ -2634,6 +2726,7 @@ package codepipeline {
   }
 
   object PutWebhookOutput {
+    @inline
     def apply(
         webhook: js.UndefOr[ListWebhookItem] = js.undefined
     ): PutWebhookOutput = {
@@ -2649,6 +2742,7 @@ package codepipeline {
   }
 
   object RegisterWebhookWithThirdPartyInput {
+    @inline
     def apply(
         webhookName: js.UndefOr[WebhookName] = js.undefined
     ): RegisterWebhookWithThirdPartyInput = {
@@ -2662,6 +2756,7 @@ package codepipeline {
   trait RegisterWebhookWithThirdPartyOutput extends js.Object {}
 
   object RegisterWebhookWithThirdPartyOutput {
+    @inline
     def apply(
         ): RegisterWebhookWithThirdPartyOutput = {
       val __obj = js.Dynamic.literal()
@@ -2682,6 +2777,7 @@ package codepipeline {
   }
 
   object RetryStageExecutionInput {
+    @inline
     def apply(
         pipelineExecutionId: PipelineExecutionId,
         pipelineName: PipelineName,
@@ -2708,6 +2804,7 @@ package codepipeline {
   }
 
   object RetryStageExecutionOutput {
+    @inline
     def apply(
         pipelineExecutionId: js.UndefOr[PipelineExecutionId] = js.undefined
     ): RetryStageExecutionOutput = {
@@ -2727,6 +2824,7 @@ package codepipeline {
   }
 
   object S3ArtifactLocation {
+    @inline
     def apply(
         bucketName: S3BucketName,
         objectKey: S3ObjectKey
@@ -2750,6 +2848,7 @@ package codepipeline {
   }
 
   object S3Location {
+    @inline
     def apply(
         bucket: js.UndefOr[S3Bucket] = js.undefined,
         key: js.UndefOr[S3Key] = js.undefined
@@ -2773,6 +2872,7 @@ package codepipeline {
   }
 
   object SourceRevision {
+    @inline
     def apply(
         actionName: ActionName,
         revisionId: js.UndefOr[Revision] = js.undefined,
@@ -2799,6 +2899,7 @@ package codepipeline {
   }
 
   object StageContext {
+    @inline
     def apply(
         name: js.UndefOr[StageName] = js.undefined
     ): StageContext = {
@@ -2819,6 +2920,7 @@ package codepipeline {
   }
 
   object StageDeclaration {
+    @inline
     def apply(
         actions: StageActionDeclarationList,
         name: StageName,
@@ -2844,6 +2946,7 @@ package codepipeline {
   }
 
   object StageExecution {
+    @inline
     def apply(
         pipelineExecutionId: PipelineExecutionId,
         status: StageExecutionStatus
@@ -2883,6 +2986,7 @@ package codepipeline {
   }
 
   object StageState {
+    @inline
     def apply(
         actionStates: js.UndefOr[ActionStateList] = js.undefined,
         inboundTransitionState: js.UndefOr[TransitionState] = js.undefined,
@@ -2915,6 +3019,7 @@ package codepipeline {
   }
 
   object StartPipelineExecutionInput {
+    @inline
     def apply(
         name: PipelineName,
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined
@@ -2937,6 +3042,7 @@ package codepipeline {
   }
 
   object StartPipelineExecutionOutput {
+    @inline
     def apply(
         pipelineExecutionId: js.UndefOr[PipelineExecutionId] = js.undefined
     ): StartPipelineExecutionOutput = {
@@ -2956,6 +3062,7 @@ package codepipeline {
   }
 
   object Tag {
+    @inline
     def apply(
         key: TagKey,
         value: TagValue
@@ -2976,6 +3083,7 @@ package codepipeline {
   }
 
   object TagResourceInput {
+    @inline
     def apply(
         resourceArn: ResourceArn,
         tags: TagList
@@ -2993,6 +3101,7 @@ package codepipeline {
   trait TagResourceOutput extends js.Object {}
 
   object TagResourceOutput {
+    @inline
     def apply(
         ): TagResourceOutput = {
       val __obj = js.Dynamic.literal()
@@ -3011,6 +3120,7 @@ package codepipeline {
   }
 
   object ThirdPartyJob {
+    @inline
     def apply(
         clientId: js.UndefOr[ClientId] = js.undefined,
         jobId: js.UndefOr[JobId] = js.undefined
@@ -3038,6 +3148,7 @@ package codepipeline {
   }
 
   object ThirdPartyJobData {
+    @inline
     def apply(
         actionConfiguration: js.UndefOr[ActionConfiguration] = js.undefined,
         actionTypeId: js.UndefOr[ActionTypeId] = js.undefined,
@@ -3072,6 +3183,7 @@ package codepipeline {
   }
 
   object ThirdPartyJobDetails {
+    @inline
     def apply(
         data: js.UndefOr[ThirdPartyJobData] = js.undefined,
         id: js.UndefOr[ThirdPartyJobId] = js.undefined,
@@ -3097,6 +3209,7 @@ package codepipeline {
   }
 
   object TransitionState {
+    @inline
     def apply(
         disabledReason: js.UndefOr[DisabledReason] = js.undefined,
         enabled: js.UndefOr[Enabled] = js.undefined,
@@ -3119,6 +3232,7 @@ package codepipeline {
   }
 
   object UntagResourceInput {
+    @inline
     def apply(
         resourceArn: ResourceArn,
         tagKeys: TagKeyList
@@ -3136,6 +3250,7 @@ package codepipeline {
   trait UntagResourceOutput extends js.Object {}
 
   object UntagResourceOutput {
+    @inline
     def apply(
         ): UntagResourceOutput = {
       val __obj = js.Dynamic.literal()
@@ -3153,6 +3268,7 @@ package codepipeline {
   }
 
   object UpdatePipelineInput {
+    @inline
     def apply(
         pipeline: PipelineDeclaration
     ): UpdatePipelineInput = {
@@ -3173,6 +3289,7 @@ package codepipeline {
   }
 
   object UpdatePipelineOutput {
+    @inline
     def apply(
         pipeline: js.UndefOr[PipelineDeclaration] = js.undefined
     ): UpdatePipelineOutput = {
@@ -3192,6 +3309,7 @@ package codepipeline {
   }
 
   object WebhookAuthConfiguration {
+    @inline
     def apply(
         AllowedIPRange: js.UndefOr[WebhookAuthConfigurationAllowedIPRange] = js.undefined,
         SecretToken: js.UndefOr[WebhookAuthConfigurationSecretToken] = js.undefined
@@ -3225,6 +3343,7 @@ package codepipeline {
   }
 
   object WebhookDefinition {
+    @inline
     def apply(
         authentication: WebhookAuthenticationType,
         authenticationConfiguration: WebhookAuthConfiguration,
@@ -3256,6 +3375,7 @@ package codepipeline {
   }
 
   object WebhookFilterRule {
+    @inline
     def apply(
         jsonPath: JsonPath,
         matchEquals: js.UndefOr[MatchEquals] = js.undefined

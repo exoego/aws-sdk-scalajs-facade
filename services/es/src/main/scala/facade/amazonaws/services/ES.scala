@@ -216,6 +216,7 @@ package es {
   }
 
   object AccessPoliciesStatus {
+    @inline
     def apply(
         Options: PolicyDocument,
         Status: OptionStatus
@@ -239,6 +240,7 @@ package es {
   }
 
   object AddTagsRequest {
+    @inline
     def apply(
         ARN: ARN,
         TagList: TagList
@@ -262,6 +264,7 @@ package es {
   }
 
   object AdditionalLimit {
+    @inline
     def apply(
         LimitName: js.UndefOr[LimitName] = js.undefined,
         LimitValues: js.UndefOr[LimitValueList] = js.undefined
@@ -286,6 +289,7 @@ package es {
   }
 
   object AdvancedOptionsStatus {
+    @inline
     def apply(
         Options: AdvancedOptions,
         Status: OptionStatus
@@ -308,6 +312,7 @@ package es {
   }
 
   object CancelElasticsearchServiceSoftwareUpdateRequest {
+    @inline
     def apply(
         DomainName: DomainName
     ): CancelElasticsearchServiceSoftwareUpdateRequest = {
@@ -328,6 +333,7 @@ package es {
   }
 
   object CancelElasticsearchServiceSoftwareUpdateResponse {
+    @inline
     def apply(
         ServiceSoftwareOptions: js.UndefOr[ServiceSoftwareOptions] = js.undefined
     ): CancelElasticsearchServiceSoftwareUpdateResponse = {
@@ -349,6 +355,7 @@ package es {
   }
 
   object CognitoOptions {
+    @inline
     def apply(
         Enabled: js.UndefOr[Boolean] = js.undefined,
         IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
@@ -374,6 +381,7 @@ package es {
   }
 
   object CognitoOptionsStatus {
+    @inline
     def apply(
         Options: CognitoOptions,
         Status: OptionStatus
@@ -397,6 +405,7 @@ package es {
   }
 
   object CompatibleVersionsMap {
+    @inline
     def apply(
         SourceVersion: js.UndefOr[ElasticsearchVersionString] = js.undefined,
         TargetVersions: js.UndefOr[ElasticsearchVersionList] = js.undefined
@@ -425,6 +434,7 @@ package es {
   }
 
   object CreateElasticsearchDomainRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         AccessPolicies: js.UndefOr[PolicyDocument] = js.undefined,
@@ -471,6 +481,7 @@ package es {
   }
 
   object CreateElasticsearchDomainResponse {
+    @inline
     def apply(
         DomainStatus: js.UndefOr[ElasticsearchDomainStatus] = js.undefined
     ): CreateElasticsearchDomainResponse = {
@@ -489,6 +500,7 @@ package es {
   }
 
   object DeleteElasticsearchDomainRequest {
+    @inline
     def apply(
         DomainName: DomainName
     ): DeleteElasticsearchDomainRequest = {
@@ -509,6 +521,7 @@ package es {
   }
 
   object DeleteElasticsearchDomainResponse {
+    @inline
     def apply(
         DomainStatus: js.UndefOr[ElasticsearchDomainStatus] = js.undefined
     ): DeleteElasticsearchDomainResponse = {
@@ -537,6 +550,7 @@ package es {
   }
 
   object DescribeElasticsearchDomainConfigRequest {
+    @inline
     def apply(
         DomainName: DomainName
     ): DescribeElasticsearchDomainConfigRequest = {
@@ -557,6 +571,7 @@ package es {
   }
 
   object DescribeElasticsearchDomainConfigResponse {
+    @inline
     def apply(
         DomainConfig: ElasticsearchDomainConfig
     ): DescribeElasticsearchDomainConfigResponse = {
@@ -577,6 +592,7 @@ package es {
   }
 
   object DescribeElasticsearchDomainRequest {
+    @inline
     def apply(
         DomainName: DomainName
     ): DescribeElasticsearchDomainRequest = {
@@ -597,6 +613,7 @@ package es {
   }
 
   object DescribeElasticsearchDomainResponse {
+    @inline
     def apply(
         DomainStatus: ElasticsearchDomainStatus
     ): DescribeElasticsearchDomainResponse = {
@@ -617,6 +634,7 @@ package es {
   }
 
   object DescribeElasticsearchDomainsRequest {
+    @inline
     def apply(
         DomainNames: DomainNameList
     ): DescribeElasticsearchDomainsRequest = {
@@ -637,6 +655,7 @@ package es {
   }
 
   object DescribeElasticsearchDomainsResponse {
+    @inline
     def apply(
         DomainStatusList: ElasticsearchDomainStatusList
     ): DescribeElasticsearchDomainsResponse = {
@@ -659,6 +678,7 @@ package es {
   }
 
   object DescribeElasticsearchInstanceTypeLimitsRequest {
+    @inline
     def apply(
         ElasticsearchVersion: ElasticsearchVersionString,
         InstanceType: ESPartitionInstanceType,
@@ -683,6 +703,7 @@ package es {
   }
 
   object DescribeElasticsearchInstanceTypeLimitsResponse {
+    @inline
     def apply(
         LimitsByRole: js.UndefOr[LimitsByRole] = js.undefined
     ): DescribeElasticsearchInstanceTypeLimitsResponse = {
@@ -703,6 +724,7 @@ package es {
   }
 
   object DescribeReservedElasticsearchInstanceOfferingsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
@@ -728,6 +750,7 @@ package es {
   }
 
   object DescribeReservedElasticsearchInstanceOfferingsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ReservedElasticsearchInstanceOfferings: js.UndefOr[ReservedElasticsearchInstanceOfferingList] = js.undefined
@@ -752,6 +775,7 @@ package es {
   }
 
   object DescribeReservedElasticsearchInstancesRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
@@ -777,6 +801,7 @@ package es {
   }
 
   object DescribeReservedElasticsearchInstancesResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         ReservedElasticsearchInstances: js.UndefOr[ReservedElasticsearchInstanceList] = js.undefined
@@ -796,6 +821,7 @@ package es {
   }
 
   object DomainInfo {
+    @inline
     def apply(
         DomainName: js.UndefOr[DomainName] = js.undefined
     ): DomainInfo = {
@@ -817,6 +843,7 @@ package es {
   }
 
   object EBSOptions {
+    @inline
     def apply(
         EBSEnabled: js.UndefOr[Boolean] = js.undefined,
         Iops: js.UndefOr[IntegerClass] = js.undefined,
@@ -842,6 +869,7 @@ package es {
   }
 
   object EBSOptionsStatus {
+    @inline
     def apply(
         Options: EBSOptions,
         Status: OptionStatus
@@ -990,6 +1018,7 @@ package es {
   }
 
   object ElasticsearchClusterConfig {
+    @inline
     def apply(
         DedicatedMasterCount: js.UndefOr[IntegerClass] = js.undefined,
         DedicatedMasterEnabled: js.UndefOr[Boolean] = js.undefined,
@@ -1021,6 +1050,7 @@ package es {
   }
 
   object ElasticsearchClusterConfigStatus {
+    @inline
     def apply(
         Options: ElasticsearchClusterConfig,
         Status: OptionStatus
@@ -1053,6 +1083,7 @@ package es {
   }
 
   object ElasticsearchDomainConfig {
+    @inline
     def apply(
         AccessPolicies: js.UndefOr[AccessPoliciesStatus] = js.undefined,
         AdvancedOptions: js.UndefOr[AdvancedOptionsStatus] = js.undefined,
@@ -1115,6 +1146,7 @@ package es {
   }
 
   object ElasticsearchDomainStatus {
+    @inline
     def apply(
         ARN: ARN,
         DomainId: DomainId,
@@ -1178,6 +1210,7 @@ package es {
   }
 
   object ElasticsearchVersionStatus {
+    @inline
     def apply(
         Options: ElasticsearchVersionString,
         Status: OptionStatus
@@ -1201,6 +1234,7 @@ package es {
   }
 
   object EncryptionAtRestOptions {
+    @inline
     def apply(
         Enabled: js.UndefOr[Boolean] = js.undefined,
         KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
@@ -1222,6 +1256,7 @@ package es {
   }
 
   object EncryptionAtRestOptionsStatus {
+    @inline
     def apply(
         Options: EncryptionAtRestOptions,
         Status: OptionStatus
@@ -1244,6 +1279,7 @@ package es {
   }
 
   object GetCompatibleElasticsearchVersionsRequest {
+    @inline
     def apply(
         DomainName: js.UndefOr[DomainName] = js.undefined
     ): GetCompatibleElasticsearchVersionsRequest = {
@@ -1262,6 +1298,7 @@ package es {
   }
 
   object GetCompatibleElasticsearchVersionsResponse {
+    @inline
     def apply(
         CompatibleElasticsearchVersions: js.UndefOr[CompatibleElasticsearchVersionsList] = js.undefined
     ): GetCompatibleElasticsearchVersionsResponse = {
@@ -1284,6 +1321,7 @@ package es {
   }
 
   object GetUpgradeHistoryRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1309,6 +1347,7 @@ package es {
   }
 
   object GetUpgradeHistoryResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         UpgradeHistories: js.UndefOr[UpgradeHistoryList] = js.undefined
@@ -1329,6 +1368,7 @@ package es {
   }
 
   object GetUpgradeStatusRequest {
+    @inline
     def apply(
         DomainName: DomainName
     ): GetUpgradeStatusRequest = {
@@ -1351,6 +1391,7 @@ package es {
   }
 
   object GetUpgradeStatusResponse {
+    @inline
     def apply(
         StepStatus: js.UndefOr[UpgradeStatus] = js.undefined,
         UpgradeName: js.UndefOr[UpgradeName] = js.undefined,
@@ -1374,6 +1415,7 @@ package es {
   }
 
   object InstanceCountLimits {
+    @inline
     def apply(
         MaximumInstanceCount: js.UndefOr[MaximumInstanceCount] = js.undefined,
         MinimumInstanceCount: js.UndefOr[MinimumInstanceCount] = js.undefined
@@ -1394,6 +1436,7 @@ package es {
   }
 
   object InstanceLimits {
+    @inline
     def apply(
         InstanceCountLimits: js.UndefOr[InstanceCountLimits] = js.undefined
     ): InstanceLimits = {
@@ -1414,6 +1457,7 @@ package es {
   }
 
   object Limits {
+    @inline
     def apply(
         AdditionalLimits: js.UndefOr[AdditionalLimitList] = js.undefined,
         InstanceLimits: js.UndefOr[InstanceLimits] = js.undefined,
@@ -1436,6 +1480,7 @@ package es {
   }
 
   object ListDomainNamesResponse {
+    @inline
     def apply(
         DomainNames: js.UndefOr[DomainInfoList] = js.undefined
     ): ListDomainNamesResponse = {
@@ -1457,6 +1502,7 @@ package es {
   }
 
   object ListElasticsearchInstanceTypesRequest {
+    @inline
     def apply(
         ElasticsearchVersion: ElasticsearchVersionString,
         DomainName: js.UndefOr[DomainName] = js.undefined,
@@ -1484,6 +1530,7 @@ package es {
   }
 
   object ListElasticsearchInstanceTypesResponse {
+    @inline
     def apply(
         ElasticsearchInstanceTypes: js.UndefOr[ElasticsearchInstanceTypeList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1509,6 +1556,7 @@ package es {
   }
 
   object ListElasticsearchVersionsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1530,6 +1578,7 @@ package es {
   }
 
   object ListElasticsearchVersionsResponse {
+    @inline
     def apply(
         ElasticsearchVersions: js.UndefOr[ElasticsearchVersionList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1550,6 +1599,7 @@ package es {
   }
 
   object ListTagsRequest {
+    @inline
     def apply(
         ARN: ARN
     ): ListTagsRequest = {
@@ -1570,6 +1620,7 @@ package es {
   }
 
   object ListTagsResponse {
+    @inline
     def apply(
         TagList: js.UndefOr[TagList] = js.undefined
     ): ListTagsResponse = {
@@ -1591,6 +1642,7 @@ package es {
   }
 
   object LogPublishingOption {
+    @inline
     def apply(
         CloudWatchLogsLogGroupArn: js.UndefOr[CloudWatchLogsLogGroupArn] = js.undefined,
         Enabled: js.UndefOr[Boolean] = js.undefined
@@ -1614,6 +1666,7 @@ package es {
   }
 
   object LogPublishingOptionsStatus {
+    @inline
     def apply(
         Options: js.UndefOr[LogPublishingOptions] = js.undefined,
         Status: js.UndefOr[OptionStatus] = js.undefined
@@ -1648,6 +1701,7 @@ package es {
   }
 
   object NodeToNodeEncryptionOptions {
+    @inline
     def apply(
         Enabled: js.UndefOr[Boolean] = js.undefined
     ): NodeToNodeEncryptionOptions = {
@@ -1667,6 +1721,7 @@ package es {
   }
 
   object NodeToNodeEncryptionOptionsStatus {
+    @inline
     def apply(
         Options: NodeToNodeEncryptionOptions,
         Status: OptionStatus
@@ -1706,6 +1761,7 @@ package es {
   }
 
   object OptionStatus {
+    @inline
     def apply(
         CreationDate: UpdateTimestamp,
         State: OptionState,
@@ -1736,6 +1792,7 @@ package es {
   }
 
   object PurchaseReservedElasticsearchInstanceOfferingRequest {
+    @inline
     def apply(
         ReservationName: ReservationToken,
         ReservedElasticsearchInstanceOfferingId: GUID,
@@ -1761,6 +1818,7 @@ package es {
   }
 
   object PurchaseReservedElasticsearchInstanceOfferingResponse {
+    @inline
     def apply(
         ReservationName: js.UndefOr[ReservationToken] = js.undefined,
         ReservedElasticsearchInstanceId: js.UndefOr[GUID] = js.undefined
@@ -1784,6 +1842,7 @@ package es {
   }
 
   object RecurringCharge {
+    @inline
     def apply(
         RecurringChargeAmount: js.UndefOr[Double] = js.undefined,
         RecurringChargeFrequency: js.UndefOr[String] = js.undefined
@@ -1805,6 +1864,7 @@ package es {
   }
 
   object RemoveTagsRequest {
+    @inline
     def apply(
         ARN: ARN,
         TagKeys: StringList
@@ -1839,6 +1899,7 @@ package es {
   }
 
   object ReservedElasticsearchInstance {
+    @inline
     def apply(
         CurrencyCode: js.UndefOr[String] = js.undefined,
         Duration: js.UndefOr[Int] = js.undefined,
@@ -1896,6 +1957,7 @@ package es {
   }
 
   object ReservedElasticsearchInstanceOffering {
+    @inline
     def apply(
         CurrencyCode: js.UndefOr[String] = js.undefined,
         Duration: js.UndefOr[Int] = js.undefined,
@@ -1946,6 +2008,7 @@ package es {
   }
 
   object ServiceSoftwareOptions {
+    @inline
     def apply(
         AutomatedUpdateDate: js.UndefOr[DeploymentCloseDateTimeStamp] = js.undefined,
         Cancellable: js.UndefOr[Boolean] = js.undefined,
@@ -1976,6 +2039,7 @@ package es {
   }
 
   object SnapshotOptions {
+    @inline
     def apply(
         AutomatedSnapshotStartHour: js.UndefOr[IntegerClass] = js.undefined
     ): SnapshotOptions = {
@@ -1997,6 +2061,7 @@ package es {
   }
 
   object SnapshotOptionsStatus {
+    @inline
     def apply(
         Options: SnapshotOptions,
         Status: OptionStatus
@@ -2019,6 +2084,7 @@ package es {
   }
 
   object StartElasticsearchServiceSoftwareUpdateRequest {
+    @inline
     def apply(
         DomainName: DomainName
     ): StartElasticsearchServiceSoftwareUpdateRequest = {
@@ -2039,6 +2105,7 @@ package es {
   }
 
   object StartElasticsearchServiceSoftwareUpdateResponse {
+    @inline
     def apply(
         ServiceSoftwareOptions: js.UndefOr[ServiceSoftwareOptions] = js.undefined
     ): StartElasticsearchServiceSoftwareUpdateResponse = {
@@ -2059,6 +2126,7 @@ package es {
   }
 
   object StorageType {
+    @inline
     def apply(
         StorageSubTypeName: js.UndefOr[StorageSubTypeName] = js.undefined,
         StorageTypeLimits: js.UndefOr[StorageTypeLimitList] = js.undefined,
@@ -2082,6 +2150,7 @@ package es {
   }
 
   object StorageTypeLimit {
+    @inline
     def apply(
         LimitName: js.UndefOr[LimitName] = js.undefined,
         LimitValues: js.UndefOr[LimitValueList] = js.undefined
@@ -2103,6 +2172,7 @@ package es {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: TagValue
@@ -2133,6 +2203,7 @@ package es {
   }
 
   object UpdateElasticsearchDomainConfigRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         AccessPolicies: js.UndefOr[PolicyDocument] = js.undefined,
@@ -2171,6 +2242,7 @@ package es {
   }
 
   object UpdateElasticsearchDomainConfigResponse {
+    @inline
     def apply(
         DomainConfig: ElasticsearchDomainConfig
     ): UpdateElasticsearchDomainConfigResponse = {
@@ -2193,6 +2265,7 @@ package es {
   }
 
   object UpgradeElasticsearchDomainRequest {
+    @inline
     def apply(
         DomainName: DomainName,
         TargetVersion: ElasticsearchVersionString,
@@ -2219,6 +2292,7 @@ package es {
   }
 
   object UpgradeElasticsearchDomainResponse {
+    @inline
     def apply(
         DomainName: js.UndefOr[DomainName] = js.undefined,
         PerformCheckOnly: js.UndefOr[Boolean] = js.undefined,
@@ -2244,6 +2318,7 @@ package es {
   }
 
   object UpgradeHistory {
+    @inline
     def apply(
         StartTimestamp: js.UndefOr[StartTimestamp] = js.undefined,
         StepsList: js.UndefOr[UpgradeStepsList] = js.undefined,
@@ -2288,6 +2363,7 @@ package es {
   }
 
   object UpgradeStepItem {
+    @inline
     def apply(
         Issues: js.UndefOr[Issues] = js.undefined,
         ProgressPercent: js.UndefOr[Double] = js.undefined,
@@ -2315,6 +2391,7 @@ package es {
   }
 
   object VPCDerivedInfo {
+    @inline
     def apply(
         AvailabilityZones: js.UndefOr[StringList] = js.undefined,
         SecurityGroupIds: js.UndefOr[StringList] = js.undefined,
@@ -2340,6 +2417,7 @@ package es {
   }
 
   object VPCDerivedInfoStatus {
+    @inline
     def apply(
         Options: VPCDerivedInfo,
         Status: OptionStatus
@@ -2363,6 +2441,7 @@ package es {
   }
 
   object VPCOptions {
+    @inline
     def apply(
         SecurityGroupIds: js.UndefOr[StringList] = js.undefined,
         SubnetIds: js.UndefOr[StringList] = js.undefined
@@ -2394,6 +2473,7 @@ package es {
   }
 
   object ZoneAwarenessConfig {
+    @inline
     def apply(
         AvailabilityZoneCount: js.UndefOr[IntegerClass] = js.undefined
     ): ZoneAwarenessConfig = {

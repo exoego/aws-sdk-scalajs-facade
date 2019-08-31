@@ -249,6 +249,7 @@ package workspaces {
   }
 
   object AccountModification {
+    @inline
     def apply(
         DedicatedTenancyManagementCidrRange: js.UndefOr[DedicatedTenancyManagementCidrRange] = js.undefined,
         DedicatedTenancySupport: js.UndefOr[DedicatedTenancySupportResultEnum] = js.undefined,
@@ -277,6 +278,7 @@ package workspaces {
   }
 
   object AssociateIpGroupsRequest {
+    @inline
     def apply(
         DirectoryId: DirectoryId,
         GroupIds: IpGroupIdList
@@ -294,6 +296,7 @@ package workspaces {
   trait AssociateIpGroupsResult extends js.Object {}
 
   object AssociateIpGroupsResult {
+    @inline
     def apply(
         ): AssociateIpGroupsResult = {
       val __obj = js.Dynamic.literal()
@@ -309,6 +312,7 @@ package workspaces {
   }
 
   object AuthorizeIpRulesRequest {
+    @inline
     def apply(
         GroupId: IpGroupId,
         UserRules: IpRuleList
@@ -326,6 +330,7 @@ package workspaces {
   trait AuthorizeIpRulesResult extends js.Object {}
 
   object AuthorizeIpRulesResult {
+    @inline
     def apply(
         ): AuthorizeIpRulesResult = {
       val __obj = js.Dynamic.literal()
@@ -343,6 +348,7 @@ package workspaces {
   }
 
   object ClientProperties {
+    @inline
     def apply(
         ReconnectEnabled: js.UndefOr[ReconnectEnum] = js.undefined
     ): ClientProperties = {
@@ -362,6 +368,7 @@ package workspaces {
   }
 
   object ClientPropertiesResult {
+    @inline
     def apply(
         ClientProperties: js.UndefOr[ClientProperties] = js.undefined,
         ResourceId: js.UndefOr[NonEmptyString] = js.undefined
@@ -394,6 +401,7 @@ package workspaces {
   }
 
   object ComputeType {
+    @inline
     def apply(
         Name: js.UndefOr[Compute] = js.undefined
     ): ComputeType = {
@@ -421,6 +429,7 @@ package workspaces {
   }
 
   object CopyWorkspaceImageRequest {
+    @inline
     def apply(
         Name: WorkspaceImageName,
         SourceImageId: WorkspaceImageId,
@@ -446,6 +455,7 @@ package workspaces {
   }
 
   object CopyWorkspaceImageResult {
+    @inline
     def apply(
         ImageId: js.UndefOr[WorkspaceImageId] = js.undefined
     ): CopyWorkspaceImageResult = {
@@ -464,6 +474,7 @@ package workspaces {
   }
 
   object CreateIpGroupRequest {
+    @inline
     def apply(
         GroupName: IpGroupName,
         GroupDesc: js.UndefOr[IpGroupDesc] = js.undefined,
@@ -487,6 +498,7 @@ package workspaces {
   }
 
   object CreateIpGroupResult {
+    @inline
     def apply(
         GroupId: js.UndefOr[IpGroupId] = js.undefined
     ): CreateIpGroupResult = {
@@ -503,6 +515,7 @@ package workspaces {
   }
 
   object CreateTagsRequest {
+    @inline
     def apply(
         ResourceId: NonEmptyString,
         Tags: TagList
@@ -520,6 +533,7 @@ package workspaces {
   trait CreateTagsResult extends js.Object {}
 
   object CreateTagsResult {
+    @inline
     def apply(
         ): CreateTagsResult = {
       val __obj = js.Dynamic.literal()
@@ -534,6 +548,7 @@ package workspaces {
   }
 
   object CreateWorkspacesRequest {
+    @inline
     def apply(
         Workspaces: WorkspaceRequestList
     ): CreateWorkspacesRequest = {
@@ -552,6 +567,7 @@ package workspaces {
   }
 
   object CreateWorkspacesResult {
+    @inline
     def apply(
         FailedRequests: js.UndefOr[FailedCreateWorkspaceRequests] = js.undefined,
         PendingRequests: js.UndefOr[WorkspaceList] = js.undefined
@@ -597,6 +613,7 @@ package workspaces {
   }
 
   object DefaultWorkspaceCreationProperties {
+    @inline
     def apply(
         CustomSecurityGroupId: js.UndefOr[SecurityGroupId] = js.undefined,
         DefaultOu: js.UndefOr[DefaultOu] = js.undefined,
@@ -622,6 +639,7 @@ package workspaces {
   }
 
   object DeleteIpGroupRequest {
+    @inline
     def apply(
         GroupId: IpGroupId
     ): DeleteIpGroupRequest = {
@@ -637,6 +655,7 @@ package workspaces {
   trait DeleteIpGroupResult extends js.Object {}
 
   object DeleteIpGroupResult {
+    @inline
     def apply(
         ): DeleteIpGroupResult = {
       val __obj = js.Dynamic.literal()
@@ -652,6 +671,7 @@ package workspaces {
   }
 
   object DeleteTagsRequest {
+    @inline
     def apply(
         ResourceId: NonEmptyString,
         TagKeys: TagKeyList
@@ -669,6 +689,7 @@ package workspaces {
   trait DeleteTagsResult extends js.Object {}
 
   object DeleteTagsResult {
+    @inline
     def apply(
         ): DeleteTagsResult = {
       val __obj = js.Dynamic.literal()
@@ -683,6 +704,7 @@ package workspaces {
   }
 
   object DeleteWorkspaceImageRequest {
+    @inline
     def apply(
         ImageId: WorkspaceImageId
     ): DeleteWorkspaceImageRequest = {
@@ -698,6 +720,7 @@ package workspaces {
   trait DeleteWorkspaceImageResult extends js.Object {}
 
   object DeleteWorkspaceImageResult {
+    @inline
     def apply(
         ): DeleteWorkspaceImageResult = {
       val __obj = js.Dynamic.literal()
@@ -712,6 +735,7 @@ package workspaces {
   }
 
   object DescribeAccountModificationsRequest {
+    @inline
     def apply(
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): DescribeAccountModificationsRequest = {
@@ -728,6 +752,7 @@ package workspaces {
   }
 
   object DescribeAccountModificationsResult {
+    @inline
     def apply(
         AccountModifications: js.UndefOr[AccountModificationList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -743,6 +768,7 @@ package workspaces {
   trait DescribeAccountRequest extends js.Object {}
 
   object DescribeAccountRequest {
+    @inline
     def apply(
         ): DescribeAccountRequest = {
       val __obj = js.Dynamic.literal()
@@ -758,6 +784,7 @@ package workspaces {
   }
 
   object DescribeAccountResult {
+    @inline
     def apply(
         DedicatedTenancyManagementCidrRange: js.UndefOr[DedicatedTenancyManagementCidrRange] = js.undefined,
         DedicatedTenancySupport: js.UndefOr[DedicatedTenancySupportResultEnum] = js.undefined
@@ -777,6 +804,7 @@ package workspaces {
   }
 
   object DescribeClientPropertiesRequest {
+    @inline
     def apply(
         ResourceIds: ResourceIdList
     ): DescribeClientPropertiesRequest = {
@@ -794,6 +822,7 @@ package workspaces {
   }
 
   object DescribeClientPropertiesResult {
+    @inline
     def apply(
         ClientPropertiesList: js.UndefOr[ClientPropertiesList] = js.undefined
     ): DescribeClientPropertiesResult = {
@@ -811,6 +840,7 @@ package workspaces {
   }
 
   object DescribeIpGroupsRequest {
+    @inline
     def apply(
         GroupIds: js.UndefOr[IpGroupIdList] = js.undefined,
         MaxResults: js.UndefOr[Limit] = js.undefined,
@@ -831,6 +861,7 @@ package workspaces {
   }
 
   object DescribeIpGroupsResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         Result: js.UndefOr[WorkspacesIpGroupsList] = js.undefined
@@ -848,6 +879,7 @@ package workspaces {
   }
 
   object DescribeTagsRequest {
+    @inline
     def apply(
         ResourceId: NonEmptyString
     ): DescribeTagsRequest = {
@@ -865,6 +897,7 @@ package workspaces {
   }
 
   object DescribeTagsResult {
+    @inline
     def apply(
         TagList: js.UndefOr[TagList] = js.undefined
     ): DescribeTagsResult = {
@@ -882,6 +915,7 @@ package workspaces {
   }
 
   object DescribeWorkspaceBundlesRequest {
+    @inline
     def apply(
         BundleIds: js.UndefOr[BundleIdList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
@@ -902,6 +936,7 @@ package workspaces {
   }
 
   object DescribeWorkspaceBundlesResult {
+    @inline
     def apply(
         Bundles: js.UndefOr[BundleList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -920,6 +955,7 @@ package workspaces {
   }
 
   object DescribeWorkspaceDirectoriesRequest {
+    @inline
     def apply(
         DirectoryIds: js.UndefOr[DirectoryIdList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -938,6 +974,7 @@ package workspaces {
   }
 
   object DescribeWorkspaceDirectoriesResult {
+    @inline
     def apply(
         Directories: js.UndefOr[DirectoryList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -957,6 +994,7 @@ package workspaces {
   }
 
   object DescribeWorkspaceImagesRequest {
+    @inline
     def apply(
         ImageIds: js.UndefOr[WorkspaceImageIdList] = js.undefined,
         MaxResults: js.UndefOr[Limit] = js.undefined,
@@ -977,6 +1015,7 @@ package workspaces {
   }
 
   object DescribeWorkspaceImagesResult {
+    @inline
     def apply(
         Images: js.UndefOr[WorkspaceImageList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -995,6 +1034,7 @@ package workspaces {
   }
 
   object DescribeWorkspacesConnectionStatusRequest {
+    @inline
     def apply(
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         WorkspaceIds: js.UndefOr[WorkspaceIdList] = js.undefined
@@ -1013,6 +1053,7 @@ package workspaces {
   }
 
   object DescribeWorkspacesConnectionStatusResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         WorkspacesConnectionStatus: js.UndefOr[WorkspaceConnectionStatusList] = js.undefined
@@ -1037,6 +1078,7 @@ package workspaces {
   }
 
   object DescribeWorkspacesRequest {
+    @inline
     def apply(
         BundleId: js.UndefOr[BundleId] = js.undefined,
         DirectoryId: js.UndefOr[DirectoryId] = js.undefined,
@@ -1063,6 +1105,7 @@ package workspaces {
   }
 
   object DescribeWorkspacesResult {
+    @inline
     def apply(
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         Workspaces: js.UndefOr[WorkspaceList] = js.undefined
@@ -1081,6 +1124,7 @@ package workspaces {
   }
 
   object DisassociateIpGroupsRequest {
+    @inline
     def apply(
         DirectoryId: DirectoryId,
         GroupIds: IpGroupIdList
@@ -1098,6 +1142,7 @@ package workspaces {
   trait DisassociateIpGroupsResult extends js.Object {}
 
   object DisassociateIpGroupsResult {
+    @inline
     def apply(
         ): DisassociateIpGroupsResult = {
       val __obj = js.Dynamic.literal()
@@ -1117,6 +1162,7 @@ package workspaces {
   }
 
   object FailedCreateWorkspaceRequest {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[ErrorType] = js.undefined,
         ErrorMessage: js.UndefOr[Description] = js.undefined,
@@ -1141,6 +1187,7 @@ package workspaces {
   }
 
   object FailedWorkspaceChangeRequest {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[ErrorType] = js.undefined,
         ErrorMessage: js.UndefOr[Description] = js.undefined,
@@ -1164,6 +1211,7 @@ package workspaces {
   }
 
   object ImportWorkspaceImageRequest {
+    @inline
     def apply(
         Ec2ImageId: Ec2ImageId,
         ImageDescription: WorkspaceImageDescription,
@@ -1189,6 +1237,7 @@ package workspaces {
   }
 
   object ImportWorkspaceImageResult {
+    @inline
     def apply(
         ImageId: js.UndefOr[WorkspaceImageId] = js.undefined
     ): ImportWorkspaceImageResult = {
@@ -1208,6 +1257,7 @@ package workspaces {
   }
 
   object IpRuleItem {
+    @inline
     def apply(
         ipRule: js.UndefOr[IpRule] = js.undefined,
         ruleDesc: js.UndefOr[IpRuleDesc] = js.undefined
@@ -1227,6 +1277,7 @@ package workspaces {
   }
 
   object ListAvailableManagementCidrRangesRequest {
+    @inline
     def apply(
         ManagementCidrRangeConstraint: ManagementCidrRangeConstraint,
         MaxResults: js.UndefOr[ManagementCidrRangeMaxResults] = js.undefined,
@@ -1249,6 +1300,7 @@ package workspaces {
   }
 
   object ListAvailableManagementCidrRangesResult {
+    @inline
     def apply(
         ManagementCidrRanges: js.UndefOr[DedicatedTenancyCidrRangeList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -1278,6 +1330,7 @@ package workspaces {
   }
 
   object ModificationState {
+    @inline
     def apply(
         Resource: js.UndefOr[ModificationResourceEnum] = js.undefined,
         State: js.UndefOr[ModificationStateEnum] = js.undefined
@@ -1303,6 +1356,7 @@ package workspaces {
   }
 
   object ModifyAccountRequest {
+    @inline
     def apply(
         DedicatedTenancyManagementCidrRange: js.UndefOr[DedicatedTenancyManagementCidrRange] = js.undefined,
         DedicatedTenancySupport: js.UndefOr[DedicatedTenancySupportEnum] = js.undefined
@@ -1320,6 +1374,7 @@ package workspaces {
   trait ModifyAccountResult extends js.Object {}
 
   object ModifyAccountResult {
+    @inline
     def apply(
         ): ModifyAccountResult = {
       val __obj = js.Dynamic.literal()
@@ -1335,6 +1390,7 @@ package workspaces {
   }
 
   object ModifyClientPropertiesRequest {
+    @inline
     def apply(
         ClientProperties: ClientProperties,
         ResourceId: NonEmptyString
@@ -1352,6 +1408,7 @@ package workspaces {
   trait ModifyClientPropertiesResult extends js.Object {}
 
   object ModifyClientPropertiesResult {
+    @inline
     def apply(
         ): ModifyClientPropertiesResult = {
       val __obj = js.Dynamic.literal()
@@ -1367,6 +1424,7 @@ package workspaces {
   }
 
   object ModifyWorkspacePropertiesRequest {
+    @inline
     def apply(
         WorkspaceId: WorkspaceId,
         WorkspaceProperties: WorkspaceProperties
@@ -1384,6 +1442,7 @@ package workspaces {
   trait ModifyWorkspacePropertiesResult extends js.Object {}
 
   object ModifyWorkspacePropertiesResult {
+    @inline
     def apply(
         ): ModifyWorkspacePropertiesResult = {
       val __obj = js.Dynamic.literal()
@@ -1399,6 +1458,7 @@ package workspaces {
   }
 
   object ModifyWorkspaceStateRequest {
+    @inline
     def apply(
         WorkspaceId: WorkspaceId,
         WorkspaceState: TargetWorkspaceState
@@ -1416,6 +1476,7 @@ package workspaces {
   trait ModifyWorkspaceStateResult extends js.Object {}
 
   object ModifyWorkspaceStateResult {
+    @inline
     def apply(
         ): ModifyWorkspaceStateResult = {
       val __obj = js.Dynamic.literal()
@@ -1433,6 +1494,7 @@ package workspaces {
   }
 
   object OperatingSystem {
+    @inline
     def apply(
         Type: js.UndefOr[OperatingSystemType] = js.undefined
     ): OperatingSystem = {
@@ -1458,6 +1520,7 @@ package workspaces {
   }
 
   object RebootRequest {
+    @inline
     def apply(
         WorkspaceId: WorkspaceId
     ): RebootRequest = {
@@ -1475,6 +1538,7 @@ package workspaces {
   }
 
   object RebootWorkspacesRequest {
+    @inline
     def apply(
         RebootWorkspaceRequests: RebootWorkspaceRequests
     ): RebootWorkspacesRequest = {
@@ -1492,6 +1556,7 @@ package workspaces {
   }
 
   object RebootWorkspacesResult {
+    @inline
     def apply(
         FailedRequests: js.UndefOr[FailedRebootWorkspaceRequests] = js.undefined
     ): RebootWorkspacesResult = {
@@ -1510,6 +1575,7 @@ package workspaces {
   }
 
   object RebuildRequest {
+    @inline
     def apply(
         WorkspaceId: WorkspaceId
     ): RebuildRequest = {
@@ -1527,6 +1593,7 @@ package workspaces {
   }
 
   object RebuildWorkspacesRequest {
+    @inline
     def apply(
         RebuildWorkspaceRequests: RebuildWorkspaceRequests
     ): RebuildWorkspacesRequest = {
@@ -1544,6 +1611,7 @@ package workspaces {
   }
 
   object RebuildWorkspacesResult {
+    @inline
     def apply(
         FailedRequests: js.UndefOr[FailedRebuildWorkspaceRequests] = js.undefined
     ): RebuildWorkspacesResult = {
@@ -1567,6 +1635,7 @@ package workspaces {
   }
 
   object RevokeIpRulesRequest {
+    @inline
     def apply(
         GroupId: IpGroupId,
         UserRules: IpRevokedRuleList
@@ -1584,6 +1653,7 @@ package workspaces {
   trait RevokeIpRulesResult extends js.Object {}
 
   object RevokeIpRulesResult {
+    @inline
     def apply(
         ): RevokeIpRulesResult = {
       val __obj = js.Dynamic.literal()
@@ -1601,6 +1671,7 @@ package workspaces {
   }
 
   object RootStorage {
+    @inline
     def apply(
         Capacity: js.UndefOr[NonEmptyString] = js.undefined
     ): RootStorage = {
@@ -1626,6 +1697,7 @@ package workspaces {
   }
 
   object StartRequest {
+    @inline
     def apply(
         WorkspaceId: js.UndefOr[WorkspaceId] = js.undefined
     ): StartRequest = {
@@ -1641,6 +1713,7 @@ package workspaces {
   }
 
   object StartWorkspacesRequest {
+    @inline
     def apply(
         StartWorkspaceRequests: StartWorkspaceRequests
     ): StartWorkspacesRequest = {
@@ -1658,6 +1731,7 @@ package workspaces {
   }
 
   object StartWorkspacesResult {
+    @inline
     def apply(
         FailedRequests: js.UndefOr[FailedStartWorkspaceRequests] = js.undefined
     ): StartWorkspacesResult = {
@@ -1676,6 +1750,7 @@ package workspaces {
   }
 
   object StopRequest {
+    @inline
     def apply(
         WorkspaceId: js.UndefOr[WorkspaceId] = js.undefined
     ): StopRequest = {
@@ -1691,6 +1766,7 @@ package workspaces {
   }
 
   object StopWorkspacesRequest {
+    @inline
     def apply(
         StopWorkspaceRequests: StopWorkspaceRequests
     ): StopWorkspacesRequest = {
@@ -1708,6 +1784,7 @@ package workspaces {
   }
 
   object StopWorkspacesResult {
+    @inline
     def apply(
         FailedRequests: js.UndefOr[FailedStopWorkspaceRequests] = js.undefined
     ): StopWorkspacesResult = {
@@ -1727,6 +1804,7 @@ package workspaces {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: js.UndefOr[TagValue] = js.undefined
@@ -1756,6 +1834,7 @@ package workspaces {
   }
 
   object TerminateRequest {
+    @inline
     def apply(
         WorkspaceId: WorkspaceId
     ): TerminateRequest = {
@@ -1773,6 +1852,7 @@ package workspaces {
   }
 
   object TerminateWorkspacesRequest {
+    @inline
     def apply(
         TerminateWorkspaceRequests: TerminateWorkspaceRequests
     ): TerminateWorkspacesRequest = {
@@ -1790,6 +1870,7 @@ package workspaces {
   }
 
   object TerminateWorkspacesResult {
+    @inline
     def apply(
         FailedRequests: js.UndefOr[FailedTerminateWorkspaceRequests] = js.undefined
     ): TerminateWorkspacesResult = {
@@ -1806,6 +1887,7 @@ package workspaces {
   }
 
   object UpdateRulesOfIpGroupRequest {
+    @inline
     def apply(
         GroupId: IpGroupId,
         UserRules: IpRuleList
@@ -1823,6 +1905,7 @@ package workspaces {
   trait UpdateRulesOfIpGroupResult extends js.Object {}
 
   object UpdateRulesOfIpGroupResult {
+    @inline
     def apply(
         ): UpdateRulesOfIpGroupResult = {
       val __obj = js.Dynamic.literal()
@@ -1840,6 +1923,7 @@ package workspaces {
   }
 
   object UserStorage {
+    @inline
     def apply(
         Capacity: js.UndefOr[NonEmptyString] = js.undefined
     ): UserStorage = {
@@ -1872,6 +1956,7 @@ package workspaces {
   }
 
   object Workspace {
+    @inline
     def apply(
         BundleId: js.UndefOr[BundleId] = js.undefined,
         ComputerName: js.UndefOr[ComputerName] = js.undefined,
@@ -1928,6 +2013,7 @@ package workspaces {
   }
 
   object WorkspaceBundle {
+    @inline
     def apply(
         BundleId: js.UndefOr[BundleId] = js.undefined,
         ComputeType: js.UndefOr[ComputeType] = js.undefined,
@@ -1961,6 +2047,7 @@ package workspaces {
   }
 
   object WorkspaceConnectionStatus {
+    @inline
     def apply(
         ConnectionState: js.UndefOr[ConnectionState] = js.undefined,
         ConnectionStateCheckTimestamp: js.UndefOr[Timestamp] = js.undefined,
@@ -2001,6 +2088,7 @@ package workspaces {
   }
 
   object WorkspaceDirectory {
+    @inline
     def apply(
         Alias: js.UndefOr[Alias] = js.undefined,
         CustomerUserName: js.UndefOr[UserName] = js.undefined,
@@ -2069,6 +2157,7 @@ package workspaces {
   }
 
   object WorkspaceImage {
+    @inline
     def apply(
         Description: js.UndefOr[WorkspaceImageDescription] = js.undefined,
         ErrorCode: js.UndefOr[WorkspaceImageErrorCode] = js.undefined,
@@ -2128,6 +2217,7 @@ package workspaces {
   }
 
   object WorkspaceProperties {
+    @inline
     def apply(
         ComputeTypeName: js.UndefOr[Compute] = js.undefined,
         RootVolumeSizeGib: js.UndefOr[RootVolumeSizeGib] = js.undefined,
@@ -2163,6 +2253,7 @@ package workspaces {
   }
 
   object WorkspaceRequest {
+    @inline
     def apply(
         BundleId: BundleId,
         DirectoryId: DirectoryId,
@@ -2244,6 +2335,7 @@ package workspaces {
   }
 
   object WorkspacesIpGroup {
+    @inline
     def apply(
         groupDesc: js.UndefOr[IpGroupDesc] = js.undefined,
         groupId: js.UndefOr[IpGroupId] = js.undefined,

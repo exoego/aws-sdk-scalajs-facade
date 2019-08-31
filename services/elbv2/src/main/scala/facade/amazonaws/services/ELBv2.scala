@@ -283,6 +283,7 @@ package elbv2 {
   }
 
   object Action {
+    @inline
     def apply(
         Type: ActionTypeEnum,
         AuthenticateCognitoConfig: js.UndefOr[AuthenticateCognitoActionConfig] = js.undefined,
@@ -326,6 +327,7 @@ package elbv2 {
   }
 
   object AddListenerCertificatesInput {
+    @inline
     def apply(
         Certificates: CertificateList,
         ListenerArn: ListenerArn
@@ -345,6 +347,7 @@ package elbv2 {
   }
 
   object AddListenerCertificatesOutput {
+    @inline
     def apply(
         Certificates: js.UndefOr[CertificateList] = js.undefined
     ): AddListenerCertificatesOutput = {
@@ -361,6 +364,7 @@ package elbv2 {
   }
 
   object AddTagsInput {
+    @inline
     def apply(
         ResourceArns: ResourceArns,
         Tags: TagList
@@ -378,6 +382,7 @@ package elbv2 {
   trait AddTagsOutput extends js.Object {}
 
   object AddTagsOutput {
+    @inline
     def apply(
         ): AddTagsOutput = {
       val __obj = js.Dynamic.literal()
@@ -410,6 +415,7 @@ package elbv2 {
   }
 
   object AuthenticateCognitoActionConfig {
+    @inline
     def apply(
         UserPoolArn: AuthenticateCognitoActionUserPoolArn,
         UserPoolClientId: AuthenticateCognitoActionUserPoolClientId,
@@ -466,6 +472,7 @@ package elbv2 {
   }
 
   object AuthenticateOidcActionConfig {
+    @inline
     def apply(
         AuthorizationEndpoint: AuthenticateOidcActionAuthorizationEndpoint,
         ClientId: AuthenticateOidcActionClientId,
@@ -513,6 +520,7 @@ package elbv2 {
   }
 
   object AvailabilityZone {
+    @inline
     def apply(
         LoadBalancerAddresses: js.UndefOr[LoadBalancerAddresses] = js.undefined,
         SubnetId: js.UndefOr[SubnetId] = js.undefined,
@@ -536,6 +544,7 @@ package elbv2 {
   }
 
   object Certificate {
+    @inline
     def apply(
         CertificateArn: js.UndefOr[CertificateArn] = js.undefined,
         IsDefault: js.UndefOr[Default] = js.undefined
@@ -557,6 +566,7 @@ package elbv2 {
   }
 
   object Cipher {
+    @inline
     def apply(
         Name: js.UndefOr[CipherName] = js.undefined,
         Priority: js.UndefOr[CipherPriority] = js.undefined
@@ -579,6 +589,7 @@ package elbv2 {
   }
 
   object CreateListenerInput {
+    @inline
     def apply(
         DefaultActions: Actions,
         LoadBalancerArn: LoadBalancerArn,
@@ -606,6 +617,7 @@ package elbv2 {
   }
 
   object CreateListenerOutput {
+    @inline
     def apply(
         Listeners: js.UndefOr[Listeners] = js.undefined
     ): CreateListenerOutput = {
@@ -628,6 +640,7 @@ package elbv2 {
   }
 
   object CreateLoadBalancerInput {
+    @inline
     def apply(
         Name: LoadBalancerName,
         IpAddressType: js.UndefOr[IpAddressType] = js.undefined,
@@ -659,6 +672,7 @@ package elbv2 {
   }
 
   object CreateLoadBalancerOutput {
+    @inline
     def apply(
         LoadBalancers: js.UndefOr[LoadBalancers] = js.undefined
     ): CreateLoadBalancerOutput = {
@@ -677,6 +691,7 @@ package elbv2 {
   }
 
   object CreateRuleInput {
+    @inline
     def apply(
         Actions: Actions,
         Conditions: RuleConditionList,
@@ -700,6 +715,7 @@ package elbv2 {
   }
 
   object CreateRuleOutput {
+    @inline
     def apply(
         Rules: js.UndefOr[Rules] = js.undefined
     ): CreateRuleOutput = {
@@ -728,6 +744,7 @@ package elbv2 {
   }
 
   object CreateTargetGroupInput {
+    @inline
     def apply(
         Name: TargetGroupName,
         HealthCheckEnabled: js.UndefOr[HealthCheckEnabled] = js.undefined,
@@ -775,6 +792,7 @@ package elbv2 {
   }
 
   object CreateTargetGroupOutput {
+    @inline
     def apply(
         TargetGroups: js.UndefOr[TargetGroups] = js.undefined
     ): CreateTargetGroupOutput = {
@@ -790,6 +808,7 @@ package elbv2 {
   }
 
   object DeleteListenerInput {
+    @inline
     def apply(
         ListenerArn: ListenerArn
     ): DeleteListenerInput = {
@@ -805,6 +824,7 @@ package elbv2 {
   trait DeleteListenerOutput extends js.Object {}
 
   object DeleteListenerOutput {
+    @inline
     def apply(
         ): DeleteListenerOutput = {
       val __obj = js.Dynamic.literal()
@@ -819,6 +839,7 @@ package elbv2 {
   }
 
   object DeleteLoadBalancerInput {
+    @inline
     def apply(
         LoadBalancerArn: LoadBalancerArn
     ): DeleteLoadBalancerInput = {
@@ -834,6 +855,7 @@ package elbv2 {
   trait DeleteLoadBalancerOutput extends js.Object {}
 
   object DeleteLoadBalancerOutput {
+    @inline
     def apply(
         ): DeleteLoadBalancerOutput = {
       val __obj = js.Dynamic.literal()
@@ -848,6 +870,7 @@ package elbv2 {
   }
 
   object DeleteRuleInput {
+    @inline
     def apply(
         RuleArn: RuleArn
     ): DeleteRuleInput = {
@@ -863,6 +886,7 @@ package elbv2 {
   trait DeleteRuleOutput extends js.Object {}
 
   object DeleteRuleOutput {
+    @inline
     def apply(
         ): DeleteRuleOutput = {
       val __obj = js.Dynamic.literal()
@@ -877,6 +901,7 @@ package elbv2 {
   }
 
   object DeleteTargetGroupInput {
+    @inline
     def apply(
         TargetGroupArn: TargetGroupArn
     ): DeleteTargetGroupInput = {
@@ -892,6 +917,7 @@ package elbv2 {
   trait DeleteTargetGroupOutput extends js.Object {}
 
   object DeleteTargetGroupOutput {
+    @inline
     def apply(
         ): DeleteTargetGroupOutput = {
       val __obj = js.Dynamic.literal()
@@ -907,6 +933,7 @@ package elbv2 {
   }
 
   object DeregisterTargetsInput {
+    @inline
     def apply(
         TargetGroupArn: TargetGroupArn,
         Targets: TargetDescriptions
@@ -924,6 +951,7 @@ package elbv2 {
   trait DeregisterTargetsOutput extends js.Object {}
 
   object DeregisterTargetsOutput {
+    @inline
     def apply(
         ): DeregisterTargetsOutput = {
       val __obj = js.Dynamic.literal()
@@ -939,6 +967,7 @@ package elbv2 {
   }
 
   object DescribeAccountLimitsInput {
+    @inline
     def apply(
         Marker: js.UndefOr[Marker] = js.undefined,
         PageSize: js.UndefOr[PageSize] = js.undefined
@@ -957,6 +986,7 @@ package elbv2 {
   }
 
   object DescribeAccountLimitsOutput {
+    @inline
     def apply(
         Limits: js.UndefOr[Limits] = js.undefined,
         NextMarker: js.UndefOr[Marker] = js.undefined
@@ -976,6 +1006,7 @@ package elbv2 {
   }
 
   object DescribeListenerCertificatesInput {
+    @inline
     def apply(
         ListenerArn: ListenerArn,
         Marker: js.UndefOr[Marker] = js.undefined,
@@ -998,6 +1029,7 @@ package elbv2 {
   }
 
   object DescribeListenerCertificatesOutput {
+    @inline
     def apply(
         Certificates: js.UndefOr[CertificateList] = js.undefined,
         NextMarker: js.UndefOr[Marker] = js.undefined
@@ -1018,6 +1050,7 @@ package elbv2 {
   }
 
   object DescribeListenersInput {
+    @inline
     def apply(
         ListenerArns: js.UndefOr[ListenerArns] = js.undefined,
         LoadBalancerArn: js.UndefOr[LoadBalancerArn] = js.undefined,
@@ -1040,6 +1073,7 @@ package elbv2 {
   }
 
   object DescribeListenersOutput {
+    @inline
     def apply(
         Listeners: js.UndefOr[Listeners] = js.undefined,
         NextMarker: js.UndefOr[Marker] = js.undefined
@@ -1057,6 +1091,7 @@ package elbv2 {
   }
 
   object DescribeLoadBalancerAttributesInput {
+    @inline
     def apply(
         LoadBalancerArn: LoadBalancerArn
     ): DescribeLoadBalancerAttributesInput = {
@@ -1074,6 +1109,7 @@ package elbv2 {
   }
 
   object DescribeLoadBalancerAttributesOutput {
+    @inline
     def apply(
         Attributes: js.UndefOr[LoadBalancerAttributes] = js.undefined
     ): DescribeLoadBalancerAttributesOutput = {
@@ -1092,6 +1128,7 @@ package elbv2 {
   }
 
   object DescribeLoadBalancersInput {
+    @inline
     def apply(
         LoadBalancerArns: js.UndefOr[LoadBalancerArns] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined,
@@ -1114,6 +1151,7 @@ package elbv2 {
   }
 
   object DescribeLoadBalancersOutput {
+    @inline
     def apply(
         LoadBalancers: js.UndefOr[LoadBalancers] = js.undefined,
         NextMarker: js.UndefOr[Marker] = js.undefined
@@ -1134,6 +1172,7 @@ package elbv2 {
   }
 
   object DescribeRulesInput {
+    @inline
     def apply(
         ListenerArn: js.UndefOr[ListenerArn] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined,
@@ -1156,6 +1195,7 @@ package elbv2 {
   }
 
   object DescribeRulesOutput {
+    @inline
     def apply(
         NextMarker: js.UndefOr[Marker] = js.undefined,
         Rules: js.UndefOr[Rules] = js.undefined
@@ -1175,6 +1215,7 @@ package elbv2 {
   }
 
   object DescribeSSLPoliciesInput {
+    @inline
     def apply(
         Marker: js.UndefOr[Marker] = js.undefined,
         Names: js.UndefOr[SslPolicyNames] = js.undefined,
@@ -1195,6 +1236,7 @@ package elbv2 {
   }
 
   object DescribeSSLPoliciesOutput {
+    @inline
     def apply(
         NextMarker: js.UndefOr[Marker] = js.undefined,
         SslPolicies: js.UndefOr[SslPolicies] = js.undefined
@@ -1212,6 +1254,7 @@ package elbv2 {
   }
 
   object DescribeTagsInput {
+    @inline
     def apply(
         ResourceArns: ResourceArns
     ): DescribeTagsInput = {
@@ -1229,6 +1272,7 @@ package elbv2 {
   }
 
   object DescribeTagsOutput {
+    @inline
     def apply(
         TagDescriptions: js.UndefOr[TagDescriptions] = js.undefined
     ): DescribeTagsOutput = {
@@ -1244,6 +1288,7 @@ package elbv2 {
   }
 
   object DescribeTargetGroupAttributesInput {
+    @inline
     def apply(
         TargetGroupArn: TargetGroupArn
     ): DescribeTargetGroupAttributesInput = {
@@ -1261,6 +1306,7 @@ package elbv2 {
   }
 
   object DescribeTargetGroupAttributesOutput {
+    @inline
     def apply(
         Attributes: js.UndefOr[TargetGroupAttributes] = js.undefined
     ): DescribeTargetGroupAttributesOutput = {
@@ -1280,6 +1326,7 @@ package elbv2 {
   }
 
   object DescribeTargetGroupsInput {
+    @inline
     def apply(
         LoadBalancerArn: js.UndefOr[LoadBalancerArn] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined,
@@ -1304,6 +1351,7 @@ package elbv2 {
   }
 
   object DescribeTargetGroupsOutput {
+    @inline
     def apply(
         NextMarker: js.UndefOr[Marker] = js.undefined,
         TargetGroups: js.UndefOr[TargetGroups] = js.undefined
@@ -1322,6 +1370,7 @@ package elbv2 {
   }
 
   object DescribeTargetHealthInput {
+    @inline
     def apply(
         TargetGroupArn: TargetGroupArn,
         Targets: js.UndefOr[TargetDescriptions] = js.undefined
@@ -1341,6 +1390,7 @@ package elbv2 {
   }
 
   object DescribeTargetHealthOutput {
+    @inline
     def apply(
         TargetHealthDescriptions: js.UndefOr[TargetHealthDescriptions] = js.undefined
     ): DescribeTargetHealthOutput = {
@@ -1361,6 +1411,7 @@ package elbv2 {
   }
 
   object FixedResponseActionConfig {
+    @inline
     def apply(
         StatusCode: FixedResponseActionStatusCode,
         ContentType: js.UndefOr[FixedResponseActionContentType] = js.undefined,
@@ -1385,6 +1436,7 @@ package elbv2 {
   }
 
   object HostHeaderConditionConfig {
+    @inline
     def apply(
         Values: js.UndefOr[ListOfString] = js.undefined
     ): HostHeaderConditionConfig = {
@@ -1405,6 +1457,7 @@ package elbv2 {
   }
 
   object HttpHeaderConditionConfig {
+    @inline
     def apply(
         HttpHeaderName: js.UndefOr[HttpHeaderConditionName] = js.undefined,
         Values: js.UndefOr[ListOfString] = js.undefined
@@ -1426,6 +1479,7 @@ package elbv2 {
   }
 
   object HttpRequestMethodConditionConfig {
+    @inline
     def apply(
         Values: js.UndefOr[ListOfString] = js.undefined
     ): HttpRequestMethodConditionConfig = {
@@ -1452,6 +1506,7 @@ package elbv2 {
   }
 
   object Limit {
+    @inline
     def apply(
         Max: js.UndefOr[Max] = js.undefined,
         Name: js.UndefOr[Name] = js.undefined
@@ -1478,6 +1533,7 @@ package elbv2 {
   }
 
   object Listener {
+    @inline
     def apply(
         Certificates: js.UndefOr[CertificateList] = js.undefined,
         DefaultActions: js.UndefOr[Actions] = js.undefined,
@@ -1519,6 +1575,7 @@ package elbv2 {
   }
 
   object LoadBalancer {
+    @inline
     def apply(
         AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
         CanonicalHostedZoneId: js.UndefOr[CanonicalHostedZoneId] = js.undefined,
@@ -1560,6 +1617,7 @@ package elbv2 {
   }
 
   object LoadBalancerAddress {
+    @inline
     def apply(
         AllocationId: js.UndefOr[AllocationId] = js.undefined,
         IpAddress: js.UndefOr[IpAddress] = js.undefined
@@ -1581,6 +1639,7 @@ package elbv2 {
   }
 
   object LoadBalancerAttribute {
+    @inline
     def apply(
         Key: js.UndefOr[LoadBalancerAttributeKey] = js.undefined,
         Value: js.UndefOr[LoadBalancerAttributeValue] = js.undefined
@@ -1609,6 +1668,7 @@ package elbv2 {
   }
 
   object LoadBalancerState {
+    @inline
     def apply(
         Code: js.UndefOr[LoadBalancerStateEnum] = js.undefined,
         Reason: js.UndefOr[StateReason] = js.undefined
@@ -1645,6 +1705,7 @@ package elbv2 {
   }
 
   object Matcher {
+    @inline
     def apply(
         HttpCode: HttpCode
     ): Matcher = {
@@ -1667,6 +1728,7 @@ package elbv2 {
   }
 
   object ModifyListenerInput {
+    @inline
     def apply(
         ListenerArn: ListenerArn,
         Certificates: js.UndefOr[CertificateList] = js.undefined,
@@ -1694,6 +1756,7 @@ package elbv2 {
   }
 
   object ModifyListenerOutput {
+    @inline
     def apply(
         Listeners: js.UndefOr[Listeners] = js.undefined
     ): ModifyListenerOutput = {
@@ -1710,6 +1773,7 @@ package elbv2 {
   }
 
   object ModifyLoadBalancerAttributesInput {
+    @inline
     def apply(
         Attributes: LoadBalancerAttributes,
         LoadBalancerArn: LoadBalancerArn
@@ -1729,6 +1793,7 @@ package elbv2 {
   }
 
   object ModifyLoadBalancerAttributesOutput {
+    @inline
     def apply(
         Attributes: js.UndefOr[LoadBalancerAttributes] = js.undefined
     ): ModifyLoadBalancerAttributesOutput = {
@@ -1746,6 +1811,7 @@ package elbv2 {
   }
 
   object ModifyRuleInput {
+    @inline
     def apply(
         RuleArn: RuleArn,
         Actions: js.UndefOr[Actions] = js.undefined,
@@ -1767,6 +1833,7 @@ package elbv2 {
   }
 
   object ModifyRuleOutput {
+    @inline
     def apply(
         Rules: js.UndefOr[Rules] = js.undefined
     ): ModifyRuleOutput = {
@@ -1783,6 +1850,7 @@ package elbv2 {
   }
 
   object ModifyTargetGroupAttributesInput {
+    @inline
     def apply(
         Attributes: TargetGroupAttributes,
         TargetGroupArn: TargetGroupArn
@@ -1802,6 +1870,7 @@ package elbv2 {
   }
 
   object ModifyTargetGroupAttributesOutput {
+    @inline
     def apply(
         Attributes: js.UndefOr[TargetGroupAttributes] = js.undefined
     ): ModifyTargetGroupAttributesOutput = {
@@ -1826,6 +1895,7 @@ package elbv2 {
   }
 
   object ModifyTargetGroupInput {
+    @inline
     def apply(
         TargetGroupArn: TargetGroupArn,
         HealthCheckEnabled: js.UndefOr[HealthCheckEnabled] = js.undefined,
@@ -1865,6 +1935,7 @@ package elbv2 {
   }
 
   object ModifyTargetGroupOutput {
+    @inline
     def apply(
         TargetGroups: js.UndefOr[TargetGroups] = js.undefined
     ): ModifyTargetGroupOutput = {
@@ -1883,6 +1954,7 @@ package elbv2 {
   }
 
   object PathPatternConditionConfig {
+    @inline
     def apply(
         Values: js.UndefOr[ListOfString] = js.undefined
     ): PathPatternConditionConfig = {
@@ -1913,6 +1985,7 @@ package elbv2 {
   }
 
   object QueryStringConditionConfig {
+    @inline
     def apply(
         Values: js.UndefOr[QueryStringKeyValuePairList] = js.undefined
     ): QueryStringConditionConfig = {
@@ -1932,6 +2005,7 @@ package elbv2 {
   }
 
   object QueryStringKeyValuePair {
+    @inline
     def apply(
         Key: js.UndefOr[StringValue] = js.undefined,
         Value: js.UndefOr[StringValue] = js.undefined
@@ -1965,6 +2039,7 @@ package elbv2 {
   }
 
   object RedirectActionConfig {
+    @inline
     def apply(
         StatusCode: RedirectActionStatusCodeEnum,
         Host: js.UndefOr[RedirectActionHost] = js.undefined,
@@ -2000,6 +2075,7 @@ package elbv2 {
   }
 
   object RegisterTargetsInput {
+    @inline
     def apply(
         TargetGroupArn: TargetGroupArn,
         Targets: TargetDescriptions
@@ -2017,6 +2093,7 @@ package elbv2 {
   trait RegisterTargetsOutput extends js.Object {}
 
   object RegisterTargetsOutput {
+    @inline
     def apply(
         ): RegisterTargetsOutput = {
       val __obj = js.Dynamic.literal()
@@ -2032,6 +2109,7 @@ package elbv2 {
   }
 
   object RemoveListenerCertificatesInput {
+    @inline
     def apply(
         Certificates: CertificateList,
         ListenerArn: ListenerArn
@@ -2049,6 +2127,7 @@ package elbv2 {
   trait RemoveListenerCertificatesOutput extends js.Object {}
 
   object RemoveListenerCertificatesOutput {
+    @inline
     def apply(
         ): RemoveListenerCertificatesOutput = {
       val __obj = js.Dynamic.literal()
@@ -2064,6 +2143,7 @@ package elbv2 {
   }
 
   object RemoveTagsInput {
+    @inline
     def apply(
         ResourceArns: ResourceArns,
         TagKeys: TagKeys
@@ -2081,6 +2161,7 @@ package elbv2 {
   trait RemoveTagsOutput extends js.Object {}
 
   object RemoveTagsOutput {
+    @inline
     def apply(
         ): RemoveTagsOutput = {
       val __obj = js.Dynamic.literal()
@@ -2102,6 +2183,7 @@ package elbv2 {
   }
 
   object Rule {
+    @inline
     def apply(
         Actions: js.UndefOr[Actions] = js.undefined,
         Conditions: js.UndefOr[RuleConditionList] = js.undefined,
@@ -2135,6 +2217,7 @@ package elbv2 {
   }
 
   object RuleCondition {
+    @inline
     def apply(
         Field: js.UndefOr[ConditionFieldName] = js.undefined,
         HostHeaderConfig: js.UndefOr[HostHeaderConditionConfig] = js.undefined,
@@ -2168,6 +2251,7 @@ package elbv2 {
   }
 
   object RulePriorityPair {
+    @inline
     def apply(
         Priority: js.UndefOr[RulePriority] = js.undefined,
         RuleArn: js.UndefOr[RuleArn] = js.undefined
@@ -2186,6 +2270,7 @@ package elbv2 {
   }
 
   object SetIpAddressTypeInput {
+    @inline
     def apply(
         IpAddressType: IpAddressType,
         LoadBalancerArn: LoadBalancerArn
@@ -2205,6 +2290,7 @@ package elbv2 {
   }
 
   object SetIpAddressTypeOutput {
+    @inline
     def apply(
         IpAddressType: js.UndefOr[IpAddressType] = js.undefined
     ): SetIpAddressTypeOutput = {
@@ -2220,6 +2306,7 @@ package elbv2 {
   }
 
   object SetRulePrioritiesInput {
+    @inline
     def apply(
         RulePriorities: RulePriorityList
     ): SetRulePrioritiesInput = {
@@ -2237,6 +2324,7 @@ package elbv2 {
   }
 
   object SetRulePrioritiesOutput {
+    @inline
     def apply(
         Rules: js.UndefOr[Rules] = js.undefined
     ): SetRulePrioritiesOutput = {
@@ -2253,6 +2341,7 @@ package elbv2 {
   }
 
   object SetSecurityGroupsInput {
+    @inline
     def apply(
         LoadBalancerArn: LoadBalancerArn,
         SecurityGroups: SecurityGroups
@@ -2272,6 +2361,7 @@ package elbv2 {
   }
 
   object SetSecurityGroupsOutput {
+    @inline
     def apply(
         SecurityGroupIds: js.UndefOr[SecurityGroups] = js.undefined
     ): SetSecurityGroupsOutput = {
@@ -2289,6 +2379,7 @@ package elbv2 {
   }
 
   object SetSubnetsInput {
+    @inline
     def apply(
         LoadBalancerArn: LoadBalancerArn,
         SubnetMappings: js.UndefOr[SubnetMappings] = js.undefined,
@@ -2310,6 +2401,7 @@ package elbv2 {
   }
 
   object SetSubnetsOutput {
+    @inline
     def apply(
         AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined
     ): SetSubnetsOutput = {
@@ -2329,6 +2421,7 @@ package elbv2 {
   }
 
   object SourceIpConditionConfig {
+    @inline
     def apply(
         Values: js.UndefOr[ListOfString] = js.undefined
     ): SourceIpConditionConfig = {
@@ -2349,6 +2442,7 @@ package elbv2 {
   }
 
   object SslPolicy {
+    @inline
     def apply(
         Ciphers: js.UndefOr[Ciphers] = js.undefined,
         Name: js.UndefOr[SslPolicyName] = js.undefined,
@@ -2372,6 +2466,7 @@ package elbv2 {
   }
 
   object SubnetMapping {
+    @inline
     def apply(
         AllocationId: js.UndefOr[AllocationId] = js.undefined,
         SubnetId: js.UndefOr[SubnetId] = js.undefined
@@ -2393,6 +2488,7 @@ package elbv2 {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: js.UndefOr[TagValue] = js.undefined
@@ -2416,6 +2512,7 @@ package elbv2 {
   }
 
   object TagDescription {
+    @inline
     def apply(
         ResourceArn: js.UndefOr[ResourceArn] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -2438,6 +2535,7 @@ package elbv2 {
   }
 
   object TargetDescription {
+    @inline
     def apply(
         Id: TargetId,
         AvailabilityZone: js.UndefOr[ZoneName] = js.undefined,
@@ -2477,6 +2575,7 @@ package elbv2 {
   }
 
   object TargetGroup {
+    @inline
     def apply(
         HealthCheckEnabled: js.UndefOr[HealthCheckEnabled] = js.undefined,
         HealthCheckIntervalSeconds: js.UndefOr[HealthCheckIntervalSeconds] = js.undefined,
@@ -2530,6 +2629,7 @@ package elbv2 {
   }
 
   object TargetGroupAttribute {
+    @inline
     def apply(
         Key: js.UndefOr[TargetGroupAttributeKey] = js.undefined,
         Value: js.UndefOr[TargetGroupAttributeValue] = js.undefined
@@ -2552,6 +2652,7 @@ package elbv2 {
   }
 
   object TargetHealth {
+    @inline
     def apply(
         Description: js.UndefOr[Description] = js.undefined,
         Reason: js.UndefOr[TargetHealthReasonEnum] = js.undefined,
@@ -2576,6 +2677,7 @@ package elbv2 {
   }
 
   object TargetHealthDescription {
+    @inline
     def apply(
         HealthCheckPort: js.UndefOr[HealthCheckPort] = js.undefined,
         Target: js.UndefOr[TargetDescription] = js.undefined,

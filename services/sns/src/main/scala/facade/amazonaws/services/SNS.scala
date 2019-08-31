@@ -184,6 +184,7 @@ package sns {
   }
 
   object AddPermissionInput {
+    @inline
     def apply(
         AWSAccountId: DelegatesList,
         ActionName: ActionsList,
@@ -210,6 +211,7 @@ package sns {
   }
 
   object CheckIfPhoneNumberIsOptedOutInput {
+    @inline
     def apply(
         phoneNumber: PhoneNumber
     ): CheckIfPhoneNumberIsOptedOutInput = {
@@ -230,6 +232,7 @@ package sns {
   }
 
   object CheckIfPhoneNumberIsOptedOutResponse {
+    @inline
     def apply(
         isOptedOut: js.UndefOr[Boolean] = js.undefined
     ): CheckIfPhoneNumberIsOptedOutResponse = {
@@ -250,6 +253,7 @@ package sns {
   }
 
   object ConfirmSubscriptionInput {
+    @inline
     def apply(
         Token: token,
         TopicArn: topicARN,
@@ -276,6 +280,7 @@ package sns {
   }
 
   object ConfirmSubscriptionResponse {
+    @inline
     def apply(
         SubscriptionArn: js.UndefOr[subscriptionARN] = js.undefined
     ): ConfirmSubscriptionResponse = {
@@ -294,6 +299,7 @@ package sns {
   }
 
   object CreateEndpointResponse {
+    @inline
     def apply(
         EndpointArn: js.UndefOr[String] = js.undefined
     ): CreateEndpointResponse = {
@@ -314,6 +320,7 @@ package sns {
   }
 
   object CreatePlatformApplicationInput {
+    @inline
     def apply(
         Attributes: MapStringToString,
         Name: String,
@@ -338,6 +345,7 @@ package sns {
   }
 
   object CreatePlatformApplicationResponse {
+    @inline
     def apply(
         PlatformApplicationArn: js.UndefOr[String] = js.undefined
     ): CreatePlatformApplicationResponse = {
@@ -359,6 +367,7 @@ package sns {
   }
 
   object CreatePlatformEndpointInput {
+    @inline
     def apply(
         PlatformApplicationArn: String,
         Token: String,
@@ -387,6 +396,7 @@ package sns {
   }
 
   object CreateTopicInput {
+    @inline
     def apply(
         Name: topicName,
         Attributes: js.UndefOr[TopicAttributesMap] = js.undefined,
@@ -411,6 +421,7 @@ package sns {
   }
 
   object CreateTopicResponse {
+    @inline
     def apply(
         TopicArn: js.UndefOr[topicARN] = js.undefined
     ): CreateTopicResponse = {
@@ -429,6 +440,7 @@ package sns {
   }
 
   object DeleteEndpointInput {
+    @inline
     def apply(
         EndpointArn: String
     ): DeleteEndpointInput = {
@@ -449,6 +461,7 @@ package sns {
   }
 
   object DeletePlatformApplicationInput {
+    @inline
     def apply(
         PlatformApplicationArn: String
     ): DeletePlatformApplicationInput = {
@@ -466,6 +479,7 @@ package sns {
   }
 
   object DeleteTopicInput {
+    @inline
     def apply(
         TopicArn: topicARN
     ): DeleteTopicInput = {
@@ -487,6 +501,7 @@ package sns {
   }
 
   object Endpoint {
+    @inline
     def apply(
         Attributes: js.UndefOr[MapStringToString] = js.undefined,
         EndpointArn: js.UndefOr[String] = js.undefined
@@ -507,6 +522,7 @@ package sns {
   }
 
   object GetEndpointAttributesInput {
+    @inline
     def apply(
         EndpointArn: String
     ): GetEndpointAttributesInput = {
@@ -527,6 +543,7 @@ package sns {
   }
 
   object GetEndpointAttributesResponse {
+    @inline
     def apply(
         Attributes: js.UndefOr[MapStringToString] = js.undefined
     ): GetEndpointAttributesResponse = {
@@ -545,6 +562,7 @@ package sns {
   }
 
   object GetPlatformApplicationAttributesInput {
+    @inline
     def apply(
         PlatformApplicationArn: String
     ): GetPlatformApplicationAttributesInput = {
@@ -565,6 +583,7 @@ package sns {
   }
 
   object GetPlatformApplicationAttributesResponse {
+    @inline
     def apply(
         Attributes: js.UndefOr[MapStringToString] = js.undefined
     ): GetPlatformApplicationAttributesResponse = {
@@ -583,6 +602,7 @@ package sns {
   }
 
   object GetSMSAttributesInput {
+    @inline
     def apply(
         attributes: js.UndefOr[ListString] = js.undefined
     ): GetSMSAttributesInput = {
@@ -601,6 +621,7 @@ package sns {
   }
 
   object GetSMSAttributesResponse {
+    @inline
     def apply(
         attributes: js.UndefOr[MapStringToString] = js.undefined
     ): GetSMSAttributesResponse = {
@@ -619,6 +640,7 @@ package sns {
   }
 
   object GetSubscriptionAttributesInput {
+    @inline
     def apply(
         SubscriptionArn: subscriptionARN
     ): GetSubscriptionAttributesInput = {
@@ -639,6 +661,7 @@ package sns {
   }
 
   object GetSubscriptionAttributesResponse {
+    @inline
     def apply(
         Attributes: js.UndefOr[SubscriptionAttributesMap] = js.undefined
     ): GetSubscriptionAttributesResponse = {
@@ -657,6 +680,7 @@ package sns {
   }
 
   object GetTopicAttributesInput {
+    @inline
     def apply(
         TopicArn: topicARN
     ): GetTopicAttributesInput = {
@@ -677,6 +701,7 @@ package sns {
   }
 
   object GetTopicAttributesResponse {
+    @inline
     def apply(
         Attributes: js.UndefOr[TopicAttributesMap] = js.undefined
     ): GetTopicAttributesResponse = {
@@ -696,6 +721,7 @@ package sns {
   }
 
   object ListEndpointsByPlatformApplicationInput {
+    @inline
     def apply(
         PlatformApplicationArn: String,
         NextToken: js.UndefOr[String] = js.undefined
@@ -719,6 +745,7 @@ package sns {
   }
 
   object ListEndpointsByPlatformApplicationResponse {
+    @inline
     def apply(
         Endpoints: js.UndefOr[ListOfEndpoints] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -739,6 +766,7 @@ package sns {
   }
 
   object ListPhoneNumbersOptedOutInput {
+    @inline
     def apply(
         nextToken: js.UndefOr[String] = js.undefined
     ): ListPhoneNumbersOptedOutInput = {
@@ -758,6 +786,7 @@ package sns {
   }
 
   object ListPhoneNumbersOptedOutResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[String] = js.undefined,
         phoneNumbers: js.UndefOr[PhoneNumberList] = js.undefined
@@ -778,6 +807,7 @@ package sns {
   }
 
   object ListPlatformApplicationsInput {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined
     ): ListPlatformApplicationsInput = {
@@ -797,6 +827,7 @@ package sns {
   }
 
   object ListPlatformApplicationsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         PlatformApplications: js.UndefOr[ListOfPlatformApplications] = js.undefined
@@ -818,6 +849,7 @@ package sns {
   }
 
   object ListSubscriptionsByTopicInput {
+    @inline
     def apply(
         TopicArn: topicARN,
         NextToken: js.UndefOr[nextToken] = js.undefined
@@ -841,6 +873,7 @@ package sns {
   }
 
   object ListSubscriptionsByTopicResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[nextToken] = js.undefined,
         Subscriptions: js.UndefOr[SubscriptionsList] = js.undefined
@@ -861,6 +894,7 @@ package sns {
   }
 
   object ListSubscriptionsInput {
+    @inline
     def apply(
         NextToken: js.UndefOr[nextToken] = js.undefined
     ): ListSubscriptionsInput = {
@@ -880,6 +914,7 @@ package sns {
   }
 
   object ListSubscriptionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[nextToken] = js.undefined,
         Subscriptions: js.UndefOr[SubscriptionsList] = js.undefined
@@ -897,6 +932,7 @@ package sns {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceArn: AmazonResourceName
     ): ListTagsForResourceRequest = {
@@ -914,6 +950,7 @@ package sns {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         Tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -929,6 +966,7 @@ package sns {
   }
 
   object ListTopicsInput {
+    @inline
     def apply(
         NextToken: js.UndefOr[nextToken] = js.undefined
     ): ListTopicsInput = {
@@ -948,6 +986,7 @@ package sns {
   }
 
   object ListTopicsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[nextToken] = js.undefined,
         Topics: js.UndefOr[TopicsList] = js.undefined
@@ -971,6 +1010,7 @@ package sns {
   }
 
   object MessageAttributeValue {
+    @inline
     def apply(
         DataType: String,
         BinaryValue: js.UndefOr[Binary] = js.undefined,
@@ -995,6 +1035,7 @@ package sns {
   }
 
   object OptInPhoneNumberInput {
+    @inline
     def apply(
         phoneNumber: PhoneNumber
     ): OptInPhoneNumberInput = {
@@ -1013,6 +1054,7 @@ package sns {
   trait OptInPhoneNumberResponse extends js.Object {}
 
   object OptInPhoneNumberResponse {
+    @inline
     def apply(
         ): OptInPhoneNumberResponse = {
       val __obj = js.Dynamic.literal()
@@ -1031,6 +1073,7 @@ package sns {
   }
 
   object PlatformApplication {
+    @inline
     def apply(
         Attributes: js.UndefOr[MapStringToString] = js.undefined,
         PlatformApplicationArn: js.UndefOr[String] = js.undefined
@@ -1057,6 +1100,7 @@ package sns {
   }
 
   object PublishInput {
+    @inline
     def apply(
         Message: message,
         MessageAttributes: js.UndefOr[MessageAttributeMap] = js.undefined,
@@ -1089,6 +1133,7 @@ package sns {
   }
 
   object PublishResponse {
+    @inline
     def apply(
         MessageId: js.UndefOr[messageId] = js.undefined
     ): PublishResponse = {
@@ -1108,6 +1153,7 @@ package sns {
   }
 
   object RemovePermissionInput {
+    @inline
     def apply(
         Label: label,
         TopicArn: topicARN
@@ -1131,6 +1177,7 @@ package sns {
   }
 
   object SetEndpointAttributesInput {
+    @inline
     def apply(
         Attributes: MapStringToString,
         EndpointArn: String
@@ -1154,6 +1201,7 @@ package sns {
   }
 
   object SetPlatformApplicationAttributesInput {
+    @inline
     def apply(
         Attributes: MapStringToString,
         PlatformApplicationArn: String
@@ -1176,6 +1224,7 @@ package sns {
   }
 
   object SetSMSAttributesInput {
+    @inline
     def apply(
         attributes: MapStringToString
     ): SetSMSAttributesInput = {
@@ -1194,6 +1243,7 @@ package sns {
   trait SetSMSAttributesResponse extends js.Object {}
 
   object SetSMSAttributesResponse {
+    @inline
     def apply(
         ): SetSMSAttributesResponse = {
       val __obj = js.Dynamic.literal()
@@ -1213,6 +1263,7 @@ package sns {
   }
 
   object SetSubscriptionAttributesInput {
+    @inline
     def apply(
         AttributeName: attributeName,
         SubscriptionArn: subscriptionARN,
@@ -1239,6 +1290,7 @@ package sns {
   }
 
   object SetTopicAttributesInput {
+    @inline
     def apply(
         AttributeName: attributeName,
         TopicArn: topicARN,
@@ -1267,6 +1319,7 @@ package sns {
   }
 
   object SubscribeInput {
+    @inline
     def apply(
         Protocol: protocol,
         TopicArn: topicARN,
@@ -1295,6 +1348,7 @@ package sns {
   }
 
   object SubscribeResponse {
+    @inline
     def apply(
         SubscriptionArn: js.UndefOr[subscriptionARN] = js.undefined
     ): SubscribeResponse = {
@@ -1317,6 +1371,7 @@ package sns {
   }
 
   object Subscription {
+    @inline
     def apply(
         Endpoint: js.UndefOr[endpoint] = js.undefined,
         Owner: js.UndefOr[account] = js.undefined,
@@ -1344,6 +1399,7 @@ package sns {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: TagValue
@@ -1364,6 +1420,7 @@ package sns {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceArn: AmazonResourceName,
         Tags: TagList
@@ -1381,6 +1438,7 @@ package sns {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1398,6 +1456,7 @@ package sns {
   }
 
   object Topic {
+    @inline
     def apply(
         TopicArn: js.UndefOr[topicARN] = js.undefined
     ): Topic = {
@@ -1416,6 +1475,7 @@ package sns {
   }
 
   object UnsubscribeInput {
+    @inline
     def apply(
         SubscriptionArn: subscriptionARN
     ): UnsubscribeInput = {
@@ -1434,6 +1494,7 @@ package sns {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceArn: AmazonResourceName,
         TagKeys: TagKeyList
@@ -1451,6 +1512,7 @@ package sns {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()

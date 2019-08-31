@@ -122,6 +122,7 @@ package ram {
   }
 
   object AcceptResourceShareInvitationRequest {
+    @inline
     def apply(
         resourceShareInvitationArn: String,
         clientToken: js.UndefOr[String] = js.undefined
@@ -142,6 +143,7 @@ package ram {
   }
 
   object AcceptResourceShareInvitationResponse {
+    @inline
     def apply(
         clientToken: js.UndefOr[String] = js.undefined,
         resourceShareInvitation: js.UndefOr[ResourceShareInvitation] = js.undefined
@@ -162,6 +164,7 @@ package ram {
   }
 
   object AssociateResourceShareRequest {
+    @inline
     def apply(
         resourceShareArn: String,
         clientToken: js.UndefOr[String] = js.undefined,
@@ -186,6 +189,7 @@ package ram {
   }
 
   object AssociateResourceShareResponse {
+    @inline
     def apply(
         clientToken: js.UndefOr[String] = js.undefined,
         resourceShareAssociations: js.UndefOr[ResourceShareAssociationList] = js.undefined
@@ -210,6 +214,7 @@ package ram {
   }
 
   object CreateResourceShareRequest {
+    @inline
     def apply(
         name: String,
         allowExternalPrincipals: js.UndefOr[Boolean] = js.undefined,
@@ -238,6 +243,7 @@ package ram {
   }
 
   object CreateResourceShareResponse {
+    @inline
     def apply(
         clientToken: js.UndefOr[String] = js.undefined,
         resourceShare: js.UndefOr[ResourceShare] = js.undefined
@@ -256,6 +262,7 @@ package ram {
   }
 
   object DeleteResourceShareRequest {
+    @inline
     def apply(
         resourceShareArn: String,
         clientToken: js.UndefOr[String] = js.undefined
@@ -276,6 +283,7 @@ package ram {
   }
 
   object DeleteResourceShareResponse {
+    @inline
     def apply(
         clientToken: js.UndefOr[String] = js.undefined,
         returnValue: js.UndefOr[Boolean] = js.undefined
@@ -296,6 +304,7 @@ package ram {
   }
 
   object DisassociateResourceShareRequest {
+    @inline
     def apply(
         resourceShareArn: String,
         clientToken: js.UndefOr[String] = js.undefined,
@@ -320,6 +329,7 @@ package ram {
   }
 
   object DisassociateResourceShareResponse {
+    @inline
     def apply(
         clientToken: js.UndefOr[String] = js.undefined,
         resourceShareAssociations: js.UndefOr[ResourceShareAssociationList] = js.undefined
@@ -337,6 +347,7 @@ package ram {
   trait EnableSharingWithAwsOrganizationRequest extends js.Object {}
 
   object EnableSharingWithAwsOrganizationRequest {
+    @inline
     def apply(
         ): EnableSharingWithAwsOrganizationRequest = {
       val __obj = js.Dynamic.literal()
@@ -351,6 +362,7 @@ package ram {
   }
 
   object EnableSharingWithAwsOrganizationResponse {
+    @inline
     def apply(
         returnValue: js.UndefOr[Boolean] = js.undefined
     ): EnableSharingWithAwsOrganizationResponse = {
@@ -369,6 +381,7 @@ package ram {
   }
 
   object GetResourcePoliciesRequest {
+    @inline
     def apply(
         resourceArns: ResourceArnList,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -393,6 +406,7 @@ package ram {
   }
 
   object GetResourcePoliciesResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[String] = js.undefined,
         policies: js.UndefOr[PolicyList] = js.undefined
@@ -416,6 +430,7 @@ package ram {
   }
 
   object GetResourceShareAssociationsRequest {
+    @inline
     def apply(
         associationType: ResourceShareAssociationType,
         associationStatus: js.UndefOr[ResourceShareAssociationStatus] = js.undefined,
@@ -446,6 +461,7 @@ package ram {
   }
 
   object GetResourceShareAssociationsResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[String] = js.undefined,
         resourceShareAssociations: js.UndefOr[ResourceShareAssociationList] = js.undefined
@@ -468,6 +484,7 @@ package ram {
   }
 
   object GetResourceShareInvitationsRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined,
@@ -492,6 +509,7 @@ package ram {
   }
 
   object GetResourceShareInvitationsResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[String] = js.undefined,
         resourceShareInvitations: js.UndefOr[ResourceShareInvitationList] = js.undefined
@@ -515,6 +533,7 @@ package ram {
   }
 
   object GetResourceSharesRequest {
+    @inline
     def apply(
         resourceOwner: ResourceOwner,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -545,6 +564,7 @@ package ram {
   }
 
   object GetResourceSharesResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[String] = js.undefined,
         resourceShares: js.UndefOr[ResourceShareList] = js.undefined
@@ -568,6 +588,7 @@ package ram {
   }
 
   object ListPrincipalsRequest {
+    @inline
     def apply(
         resourceOwner: ResourceOwner,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -598,6 +619,7 @@ package ram {
   }
 
   object ListPrincipalsResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[String] = js.undefined,
         principals: js.UndefOr[PrincipalList] = js.undefined
@@ -621,6 +643,7 @@ package ram {
   }
 
   object ListResourcesRequest {
+    @inline
     def apply(
         resourceOwner: ResourceOwner,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -651,6 +674,7 @@ package ram {
   }
 
   object ListResourcesResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[String] = js.undefined,
         resources: js.UndefOr[ResourceList] = js.undefined
@@ -675,6 +699,7 @@ package ram {
   }
 
   object Principal {
+    @inline
     def apply(
         creationTime: js.UndefOr[DateTime] = js.undefined,
         external: js.UndefOr[Boolean] = js.undefined,
@@ -699,6 +724,7 @@ package ram {
   }
 
   object RejectResourceShareInvitationRequest {
+    @inline
     def apply(
         resourceShareInvitationArn: String,
         clientToken: js.UndefOr[String] = js.undefined
@@ -719,6 +745,7 @@ package ram {
   }
 
   object RejectResourceShareInvitationResponse {
+    @inline
     def apply(
         clientToken: js.UndefOr[String] = js.undefined,
         resourceShareInvitation: js.UndefOr[ResourceShareInvitation] = js.undefined
@@ -745,6 +772,7 @@ package ram {
   }
 
   object Resource {
+    @inline
     def apply(
         arn: js.UndefOr[String] = js.undefined,
         creationTime: js.UndefOr[DateTime] = js.undefined,
@@ -790,6 +818,7 @@ package ram {
   }
 
   object ResourceShare {
+    @inline
     def apply(
         allowExternalPrincipals: js.UndefOr[Boolean] = js.undefined,
         creationTime: js.UndefOr[DateTime] = js.undefined,
@@ -831,6 +860,7 @@ package ram {
   }
 
   object ResourceShareAssociation {
+    @inline
     def apply(
         associatedEntity: js.UndefOr[String] = js.undefined,
         associationType: js.UndefOr[ResourceShareAssociationType] = js.undefined,
@@ -887,6 +917,7 @@ package ram {
   }
 
   object ResourceShareInvitation {
+    @inline
     def apply(
         invitationTimestamp: js.UndefOr[DateTime] = js.undefined,
         receiverAccountId: js.UndefOr[String] = js.undefined,
@@ -952,6 +983,7 @@ package ram {
   }
 
   object Tag {
+    @inline
     def apply(
         key: js.UndefOr[TagKey] = js.undefined,
         value: js.UndefOr[TagValue] = js.undefined
@@ -973,6 +1005,7 @@ package ram {
   }
 
   object TagFilter {
+    @inline
     def apply(
         tagKey: js.UndefOr[TagKey] = js.undefined,
         tagValues: js.UndefOr[TagValueList] = js.undefined
@@ -991,6 +1024,7 @@ package ram {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         resourceShareArn: String,
         tags: TagList
@@ -1008,6 +1042,7 @@ package ram {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1023,6 +1058,7 @@ package ram {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         resourceShareArn: String,
         tagKeys: TagKeyList
@@ -1040,6 +1076,7 @@ package ram {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1057,6 +1094,7 @@ package ram {
   }
 
   object UpdateResourceShareRequest {
+    @inline
     def apply(
         resourceShareArn: String,
         allowExternalPrincipals: js.UndefOr[Boolean] = js.undefined,
@@ -1081,6 +1119,7 @@ package ram {
   }
 
   object UpdateResourceShareResponse {
+    @inline
     def apply(
         clientToken: js.UndefOr[String] = js.undefined,
         resourceShare: js.UndefOr[ResourceShare] = js.undefined

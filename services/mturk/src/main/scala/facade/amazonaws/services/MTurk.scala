@@ -230,6 +230,7 @@ package mturk {
   }
 
   object AcceptQualificationRequestRequest {
+    @inline
     def apply(
         QualificationRequestId: String,
         IntegerValue: js.UndefOr[Int] = js.undefined
@@ -247,6 +248,7 @@ package mturk {
   trait AcceptQualificationRequestResponse extends js.Object {}
 
   object AcceptQualificationRequestResponse {
+    @inline
     def apply(
         ): AcceptQualificationRequestResponse = {
       val __obj = js.Dynamic.literal()
@@ -263,6 +265,7 @@ package mturk {
   }
 
   object ApproveAssignmentRequest {
+    @inline
     def apply(
         AssignmentId: EntityId,
         OverrideRejection: js.UndefOr[Boolean] = js.undefined,
@@ -282,6 +285,7 @@ package mturk {
   trait ApproveAssignmentResponse extends js.Object {}
 
   object ApproveAssignmentResponse {
+    @inline
     def apply(
         ): ApproveAssignmentResponse = {
       val __obj = js.Dynamic.literal()
@@ -310,6 +314,7 @@ package mturk {
   }
 
   object Assignment {
+    @inline
     def apply(
         AcceptTime: js.UndefOr[Timestamp] = js.undefined,
         Answer: js.UndefOr[String] = js.undefined,
@@ -358,6 +363,7 @@ package mturk {
   }
 
   object AssociateQualificationWithWorkerRequest {
+    @inline
     def apply(
         QualificationTypeId: EntityId,
         WorkerId: CustomerId,
@@ -379,6 +385,7 @@ package mturk {
   trait AssociateQualificationWithWorkerResponse extends js.Object {}
 
   object AssociateQualificationWithWorkerResponse {
+    @inline
     def apply(
         ): AssociateQualificationWithWorkerResponse = {
       val __obj = js.Dynamic.literal()
@@ -400,6 +407,7 @@ package mturk {
   }
 
   object BonusPayment {
+    @inline
     def apply(
         AssignmentId: js.UndefOr[EntityId] = js.undefined,
         BonusAmount: js.UndefOr[CurrencyAmount] = js.undefined,
@@ -453,6 +461,7 @@ package mturk {
   }
 
   object CreateAdditionalAssignmentsForHITRequest {
+    @inline
     def apply(
         HITId: EntityId,
         NumberOfAdditionalAssignments: Int,
@@ -472,6 +481,7 @@ package mturk {
   trait CreateAdditionalAssignmentsForHITResponse extends js.Object {}
 
   object CreateAdditionalAssignmentsForHITResponse {
+    @inline
     def apply(
         ): CreateAdditionalAssignmentsForHITResponse = {
       val __obj = js.Dynamic.literal()
@@ -501,6 +511,7 @@ package mturk {
   }
 
   object CreateHITRequest {
+    @inline
     def apply(
         AssignmentDurationInSeconds: Double,
         Description: String,
@@ -552,6 +563,7 @@ package mturk {
   }
 
   object CreateHITResponse {
+    @inline
     def apply(
         HIT: js.UndefOr[HIT] = js.undefined
     ): CreateHITResponse = {
@@ -573,6 +585,7 @@ package mturk {
   }
 
   object CreateHITTypeRequest {
+    @inline
     def apply(
         AssignmentDurationInSeconds: Double,
         Description: String,
@@ -606,6 +619,7 @@ package mturk {
   }
 
   object CreateHITTypeResponse {
+    @inline
     def apply(
         HITTypeId: js.UndefOr[EntityId] = js.undefined
     ): CreateHITTypeResponse = {
@@ -630,6 +644,7 @@ package mturk {
   }
 
   object CreateHITWithHITTypeRequest {
+    @inline
     def apply(
         HITTypeId: EntityId,
         LifetimeInSeconds: Double,
@@ -665,6 +680,7 @@ package mturk {
   }
 
   object CreateHITWithHITTypeResponse {
+    @inline
     def apply(
         HIT: js.UndefOr[HIT] = js.undefined
     ): CreateHITWithHITTypeResponse = {
@@ -689,6 +705,7 @@ package mturk {
   }
 
   object CreateQualificationTypeRequest {
+    @inline
     def apply(
         Description: String,
         Name: String,
@@ -724,6 +741,7 @@ package mturk {
   }
 
   object CreateQualificationTypeResponse {
+    @inline
     def apply(
         QualificationType: js.UndefOr[QualificationType] = js.undefined
     ): CreateQualificationTypeResponse = {
@@ -740,6 +758,7 @@ package mturk {
   }
 
   object CreateWorkerBlockRequest {
+    @inline
     def apply(
         Reason: String,
         WorkerId: CustomerId
@@ -757,6 +776,7 @@ package mturk {
   trait CreateWorkerBlockResponse extends js.Object {}
 
   object CreateWorkerBlockResponse {
+    @inline
     def apply(
         ): CreateWorkerBlockResponse = {
       val __obj = js.Dynamic.literal()
@@ -771,6 +791,7 @@ package mturk {
   }
 
   object DeleteHITRequest {
+    @inline
     def apply(
         HITId: EntityId
     ): DeleteHITRequest = {
@@ -786,6 +807,7 @@ package mturk {
   trait DeleteHITResponse extends js.Object {}
 
   object DeleteHITResponse {
+    @inline
     def apply(
         ): DeleteHITResponse = {
       val __obj = js.Dynamic.literal()
@@ -800,6 +822,7 @@ package mturk {
   }
 
   object DeleteQualificationTypeRequest {
+    @inline
     def apply(
         QualificationTypeId: EntityId
     ): DeleteQualificationTypeRequest = {
@@ -815,6 +838,7 @@ package mturk {
   trait DeleteQualificationTypeResponse extends js.Object {}
 
   object DeleteQualificationTypeResponse {
+    @inline
     def apply(
         ): DeleteQualificationTypeResponse = {
       val __obj = js.Dynamic.literal()
@@ -830,6 +854,7 @@ package mturk {
   }
 
   object DeleteWorkerBlockRequest {
+    @inline
     def apply(
         WorkerId: CustomerId,
         Reason: js.UndefOr[String] = js.undefined
@@ -847,6 +872,7 @@ package mturk {
   trait DeleteWorkerBlockResponse extends js.Object {}
 
   object DeleteWorkerBlockResponse {
+    @inline
     def apply(
         ): DeleteWorkerBlockResponse = {
       val __obj = js.Dynamic.literal()
@@ -863,6 +889,7 @@ package mturk {
   }
 
   object DisassociateQualificationFromWorkerRequest {
+    @inline
     def apply(
         QualificationTypeId: EntityId,
         WorkerId: CustomerId,
@@ -882,6 +909,7 @@ package mturk {
   trait DisassociateQualificationFromWorkerResponse extends js.Object {}
 
   object DisassociateQualificationFromWorkerResponse {
+    @inline
     def apply(
         ): DisassociateQualificationFromWorkerResponse = {
       val __obj = js.Dynamic.literal()
@@ -926,6 +954,7 @@ package mturk {
   trait GetAccountBalanceRequest extends js.Object {}
 
   object GetAccountBalanceRequest {
+    @inline
     def apply(
         ): GetAccountBalanceRequest = {
       val __obj = js.Dynamic.literal()
@@ -941,6 +970,7 @@ package mturk {
   }
 
   object GetAccountBalanceResponse {
+    @inline
     def apply(
         AvailableBalance: js.UndefOr[CurrencyAmount] = js.undefined,
         OnHoldBalance: js.UndefOr[CurrencyAmount] = js.undefined
@@ -958,6 +988,7 @@ package mturk {
   }
 
   object GetAssignmentRequest {
+    @inline
     def apply(
         AssignmentId: EntityId
     ): GetAssignmentRequest = {
@@ -976,6 +1007,7 @@ package mturk {
   }
 
   object GetAssignmentResponse {
+    @inline
     def apply(
         Assignment: js.UndefOr[Assignment] = js.undefined,
         HIT: js.UndefOr[HIT] = js.undefined
@@ -994,6 +1026,7 @@ package mturk {
   }
 
   object GetFileUploadURLRequest {
+    @inline
     def apply(
         AssignmentId: EntityId,
         QuestionIdentifier: String
@@ -1013,6 +1046,7 @@ package mturk {
   }
 
   object GetFileUploadURLResponse {
+    @inline
     def apply(
         FileUploadURL: js.UndefOr[String] = js.undefined
     ): GetFileUploadURLResponse = {
@@ -1028,6 +1062,7 @@ package mturk {
   }
 
   object GetHITRequest {
+    @inline
     def apply(
         HITId: EntityId
     ): GetHITRequest = {
@@ -1045,6 +1080,7 @@ package mturk {
   }
 
   object GetHITResponse {
+    @inline
     def apply(
         HIT: js.UndefOr[HIT] = js.undefined
     ): GetHITResponse = {
@@ -1061,6 +1097,7 @@ package mturk {
   }
 
   object GetQualificationScoreRequest {
+    @inline
     def apply(
         QualificationTypeId: EntityId,
         WorkerId: CustomerId
@@ -1080,6 +1117,7 @@ package mturk {
   }
 
   object GetQualificationScoreResponse {
+    @inline
     def apply(
         Qualification: js.UndefOr[Qualification] = js.undefined
     ): GetQualificationScoreResponse = {
@@ -1095,6 +1133,7 @@ package mturk {
   }
 
   object GetQualificationTypeRequest {
+    @inline
     def apply(
         QualificationTypeId: EntityId
     ): GetQualificationTypeRequest = {
@@ -1112,6 +1151,7 @@ package mturk {
   }
 
   object GetQualificationTypeResponse {
+    @inline
     def apply(
         QualificationType: js.UndefOr[QualificationType] = js.undefined
     ): GetQualificationTypeResponse = {
@@ -1150,6 +1190,7 @@ package mturk {
   }
 
   object HIT {
+    @inline
     def apply(
         AssignmentDurationInSeconds: js.UndefOr[Double] = js.undefined,
         AutoApprovalDelayInSeconds: js.UndefOr[Double] = js.undefined,
@@ -1229,6 +1270,7 @@ package mturk {
   }
 
   object HITLayoutParameter {
+    @inline
     def apply(
         Name: String,
         Value: String
@@ -1270,6 +1312,7 @@ package mturk {
   }
 
   object ListAssignmentsForHITRequest {
+    @inline
     def apply(
         HITId: EntityId,
         AssignmentStatuses: js.UndefOr[AssignmentStatusList] = js.undefined,
@@ -1295,6 +1338,7 @@ package mturk {
   }
 
   object ListAssignmentsForHITResponse {
+    @inline
     def apply(
         Assignments: js.UndefOr[AssignmentList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
@@ -1317,6 +1361,7 @@ package mturk {
   }
 
   object ListBonusPaymentsRequest {
+    @inline
     def apply(
         AssignmentId: js.UndefOr[EntityId] = js.undefined,
         HITId: js.UndefOr[EntityId] = js.undefined,
@@ -1340,6 +1385,7 @@ package mturk {
   }
 
   object ListBonusPaymentsResponse {
+    @inline
     def apply(
         BonusPayments: js.UndefOr[BonusPaymentList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
@@ -1361,6 +1407,7 @@ package mturk {
   }
 
   object ListHITsForQualificationTypeRequest {
+    @inline
     def apply(
         QualificationTypeId: EntityId,
         MaxResults: js.UndefOr[ResultSize] = js.undefined,
@@ -1384,6 +1431,7 @@ package mturk {
   }
 
   object ListHITsForQualificationTypeResponse {
+    @inline
     def apply(
         HITs: js.UndefOr[HITList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
@@ -1404,6 +1452,7 @@ package mturk {
   }
 
   object ListHITsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[ResultSize] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -1423,6 +1472,7 @@ package mturk {
   }
 
   object ListHITsResponse {
+    @inline
     def apply(
         HITs: js.UndefOr[HITList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
@@ -1444,6 +1494,7 @@ package mturk {
   }
 
   object ListQualificationRequestsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[ResultSize] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
@@ -1465,6 +1516,7 @@ package mturk {
   }
 
   object ListQualificationRequestsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         NumResults: js.UndefOr[Int] = js.undefined,
@@ -1488,6 +1540,7 @@ package mturk {
   }
 
   object ListQualificationTypesRequest {
+    @inline
     def apply(
         MustBeRequestable: Boolean,
         MaxResults: js.UndefOr[ResultSize] = js.undefined,
@@ -1515,6 +1568,7 @@ package mturk {
   }
 
   object ListQualificationTypesResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         NumResults: js.UndefOr[Int] = js.undefined,
@@ -1539,6 +1593,7 @@ package mturk {
   }
 
   object ListReviewPolicyResultsForHITRequest {
+    @inline
     def apply(
         HITId: EntityId,
         MaxResults: js.UndefOr[ResultSize] = js.undefined,
@@ -1571,6 +1626,7 @@ package mturk {
   }
 
   object ListReviewPolicyResultsForHITResponse {
+    @inline
     def apply(
         AssignmentReviewPolicy: js.UndefOr[ReviewPolicy] = js.undefined,
         AssignmentReviewReport: js.UndefOr[ReviewReport] = js.undefined,
@@ -1599,6 +1655,7 @@ package mturk {
   }
 
   object ListReviewableHITsRequest {
+    @inline
     def apply(
         HITTypeId: js.UndefOr[EntityId] = js.undefined,
         MaxResults: js.UndefOr[ResultSize] = js.undefined,
@@ -1622,6 +1679,7 @@ package mturk {
   }
 
   object ListReviewableHITsResponse {
+    @inline
     def apply(
         HITs: js.UndefOr[HITList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
@@ -1642,6 +1700,7 @@ package mturk {
   }
 
   object ListWorkerBlocksRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[ResultSize] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -1661,6 +1720,7 @@ package mturk {
   }
 
   object ListWorkerBlocksResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         NumResults: js.UndefOr[Int] = js.undefined,
@@ -1683,6 +1743,7 @@ package mturk {
   }
 
   object ListWorkersWithQualificationTypeRequest {
+    @inline
     def apply(
         QualificationTypeId: EntityId,
         MaxResults: js.UndefOr[ResultSize] = js.undefined,
@@ -1708,6 +1769,7 @@ package mturk {
   }
 
   object ListWorkersWithQualificationTypeResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         NumResults: js.UndefOr[Int] = js.undefined,
@@ -1731,6 +1793,7 @@ package mturk {
   }
 
   object Locale {
+    @inline
     def apply(
         Country: CountryParameters,
         Subdivision: js.UndefOr[CountryParameters] = js.undefined
@@ -1756,6 +1819,7 @@ package mturk {
   }
 
   object NotificationSpecification {
+    @inline
     def apply(
         Destination: String,
         EventTypes: EventTypeList,
@@ -1799,6 +1863,7 @@ package mturk {
   }
 
   object NotifyWorkersFailureStatus {
+    @inline
     def apply(
         NotifyWorkersFailureCode: js.UndefOr[NotifyWorkersFailureCode] = js.undefined,
         NotifyWorkersFailureMessage: js.UndefOr[String] = js.undefined,
@@ -1822,6 +1887,7 @@ package mturk {
   }
 
   object NotifyWorkersRequest {
+    @inline
     def apply(
         MessageText: String,
         Subject: String,
@@ -1843,6 +1909,7 @@ package mturk {
   }
 
   object NotifyWorkersResponse {
+    @inline
     def apply(
         NotifyWorkersFailureStatuses: js.UndefOr[NotifyWorkersFailureStatusList] = js.undefined
     ): NotifyWorkersResponse = {
@@ -1864,6 +1931,7 @@ package mturk {
   }
 
   object ParameterMapEntry {
+    @inline
     def apply(
         Key: js.UndefOr[String] = js.undefined,
         Values: js.UndefOr[StringList] = js.undefined
@@ -1886,6 +1954,7 @@ package mturk {
   }
 
   object PolicyParameter {
+    @inline
     def apply(
         Key: js.UndefOr[String] = js.undefined,
         MapEntries: js.UndefOr[ParameterMapEntryList] = js.undefined,
@@ -1913,6 +1982,7 @@ package mturk {
   }
 
   object Qualification {
+    @inline
     def apply(
         GrantTime: js.UndefOr[Timestamp] = js.undefined,
         IntegerValue: js.UndefOr[Int] = js.undefined,
@@ -1946,6 +2016,7 @@ package mturk {
   }
 
   object QualificationRequest {
+    @inline
     def apply(
         Answer: js.UndefOr[String] = js.undefined,
         QualificationRequestId: js.UndefOr[String] = js.undefined,
@@ -1979,6 +2050,7 @@ package mturk {
   }
 
   object QualificationRequirement {
+    @inline
     def apply(
         Comparator: Comparator,
         QualificationTypeId: String,
@@ -2028,6 +2100,7 @@ package mturk {
   }
 
   object QualificationType {
+    @inline
     def apply(
         AnswerKey: js.UndefOr[String] = js.undefined,
         AutoGranted: js.UndefOr[Boolean] = js.undefined,
@@ -2075,6 +2148,7 @@ package mturk {
   }
 
   object RejectAssignmentRequest {
+    @inline
     def apply(
         AssignmentId: EntityId,
         RequesterFeedback: String
@@ -2092,6 +2166,7 @@ package mturk {
   trait RejectAssignmentResponse extends js.Object {}
 
   object RejectAssignmentResponse {
+    @inline
     def apply(
         ): RejectAssignmentResponse = {
       val __obj = js.Dynamic.literal()
@@ -2107,6 +2182,7 @@ package mturk {
   }
 
   object RejectQualificationRequestRequest {
+    @inline
     def apply(
         QualificationRequestId: String,
         Reason: js.UndefOr[String] = js.undefined
@@ -2124,6 +2200,7 @@ package mturk {
   trait RejectQualificationRequestResponse extends js.Object {}
 
   object RejectQualificationRequestResponse {
+    @inline
     def apply(
         ): RejectQualificationRequestResponse = {
       val __obj = js.Dynamic.literal()
@@ -2157,6 +2234,7 @@ package mturk {
   }
 
   object ReviewActionDetail {
+    @inline
     def apply(
         ActionId: js.UndefOr[EntityId] = js.undefined,
         ActionName: js.UndefOr[String] = js.undefined,
@@ -2199,6 +2277,7 @@ package mturk {
   }
 
   object ReviewPolicy {
+    @inline
     def apply(
         PolicyName: String,
         Parameters: js.UndefOr[PolicyParameterList] = js.undefined
@@ -2229,6 +2308,7 @@ package mturk {
   }
 
   object ReviewReport {
+    @inline
     def apply(
         ReviewActions: js.UndefOr[ReviewActionDetailList] = js.undefined,
         ReviewResults: js.UndefOr[ReviewResultDetailList] = js.undefined
@@ -2254,6 +2334,7 @@ package mturk {
   }
 
   object ReviewResultDetail {
+    @inline
     def apply(
         ActionId: js.UndefOr[EntityId] = js.undefined,
         Key: js.UndefOr[String] = js.undefined,
@@ -2290,6 +2371,7 @@ package mturk {
   }
 
   object SendBonusRequest {
+    @inline
     def apply(
         AssignmentId: EntityId,
         BonusAmount: CurrencyAmount,
@@ -2313,6 +2395,7 @@ package mturk {
   trait SendBonusResponse extends js.Object {}
 
   object SendBonusResponse {
+    @inline
     def apply(
         ): SendBonusResponse = {
       val __obj = js.Dynamic.literal()
@@ -2328,6 +2411,7 @@ package mturk {
   }
 
   object SendTestEventNotificationRequest {
+    @inline
     def apply(
         Notification: NotificationSpecification,
         TestEventType: EventType
@@ -2345,6 +2429,7 @@ package mturk {
   trait SendTestEventNotificationResponse extends js.Object {}
 
   object SendTestEventNotificationResponse {
+    @inline
     def apply(
         ): SendTestEventNotificationResponse = {
       val __obj = js.Dynamic.literal()
@@ -2369,6 +2454,7 @@ package mturk {
   }
 
   object UpdateExpirationForHITRequest {
+    @inline
     def apply(
         ExpireAt: Timestamp,
         HITId: EntityId
@@ -2386,6 +2472,7 @@ package mturk {
   trait UpdateExpirationForHITResponse extends js.Object {}
 
   object UpdateExpirationForHITResponse {
+    @inline
     def apply(
         ): UpdateExpirationForHITResponse = {
       val __obj = js.Dynamic.literal()
@@ -2401,6 +2488,7 @@ package mturk {
   }
 
   object UpdateHITReviewStatusRequest {
+    @inline
     def apply(
         HITId: EntityId,
         Revert: js.UndefOr[Boolean] = js.undefined
@@ -2418,6 +2506,7 @@ package mturk {
   trait UpdateHITReviewStatusResponse extends js.Object {}
 
   object UpdateHITReviewStatusResponse {
+    @inline
     def apply(
         ): UpdateHITReviewStatusResponse = {
       val __obj = js.Dynamic.literal()
@@ -2433,6 +2522,7 @@ package mturk {
   }
 
   object UpdateHITTypeOfHITRequest {
+    @inline
     def apply(
         HITId: EntityId,
         HITTypeId: EntityId
@@ -2450,6 +2540,7 @@ package mturk {
   trait UpdateHITTypeOfHITResponse extends js.Object {}
 
   object UpdateHITTypeOfHITResponse {
+    @inline
     def apply(
         ): UpdateHITTypeOfHITResponse = {
       val __obj = js.Dynamic.literal()
@@ -2466,6 +2557,7 @@ package mturk {
   }
 
   object UpdateNotificationSettingsRequest {
+    @inline
     def apply(
         HITTypeId: EntityId,
         Active: js.UndefOr[Boolean] = js.undefined,
@@ -2485,6 +2577,7 @@ package mturk {
   trait UpdateNotificationSettingsResponse extends js.Object {}
 
   object UpdateNotificationSettingsResponse {
+    @inline
     def apply(
         ): UpdateNotificationSettingsResponse = {
       val __obj = js.Dynamic.literal()
@@ -2507,6 +2600,7 @@ package mturk {
   }
 
   object UpdateQualificationTypeRequest {
+    @inline
     def apply(
         QualificationTypeId: EntityId,
         AnswerKey: js.UndefOr[String] = js.undefined,
@@ -2540,6 +2634,7 @@ package mturk {
   }
 
   object UpdateQualificationTypeResponse {
+    @inline
     def apply(
         QualificationType: js.UndefOr[QualificationType] = js.undefined
     ): UpdateQualificationTypeResponse = {
@@ -2559,6 +2654,7 @@ package mturk {
   }
 
   object WorkerBlock {
+    @inline
     def apply(
         Reason: js.UndefOr[String] = js.undefined,
         WorkerId: js.UndefOr[CustomerId] = js.undefined

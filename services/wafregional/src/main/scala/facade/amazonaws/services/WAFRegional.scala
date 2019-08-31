@@ -400,6 +400,7 @@ package wafregional {
   }
 
   object ActivatedRule {
+    @inline
     def apply(
         Priority: RulePriority,
         RuleId: ResourceId,
@@ -428,6 +429,7 @@ package wafregional {
   }
 
   object AssociateWebACLRequest {
+    @inline
     def apply(
         ResourceArn: ResourceArn,
         WebACLId: ResourceId
@@ -445,6 +447,7 @@ package wafregional {
   trait AssociateWebACLResponse extends js.Object {}
 
   object AssociateWebACLResponse {
+    @inline
     def apply(
         ): AssociateWebACLResponse = {
       val __obj = js.Dynamic.literal()
@@ -465,6 +468,7 @@ package wafregional {
   }
 
   object ByteMatchSet {
+    @inline
     def apply(
         ByteMatchSetId: ResourceId,
         ByteMatchTuples: ByteMatchTuples,
@@ -490,6 +494,7 @@ package wafregional {
   }
 
   object ByteMatchSetSummary {
+    @inline
     def apply(
         ByteMatchSetId: ResourceId,
         Name: ResourceName
@@ -513,6 +518,7 @@ package wafregional {
   }
 
   object ByteMatchSetUpdate {
+    @inline
     def apply(
         Action: ChangeAction,
         ByteMatchTuple: ByteMatchTuple
@@ -538,6 +544,7 @@ package wafregional {
   }
 
   object ByteMatchTuple {
+    @inline
     def apply(
         FieldToMatch: FieldToMatch,
         PositionalConstraint: PositionalConstraint,
@@ -588,6 +595,7 @@ package wafregional {
   }
 
   object CreateByteMatchSetRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         Name: ResourceName
@@ -608,6 +616,7 @@ package wafregional {
   }
 
   object CreateByteMatchSetResponse {
+    @inline
     def apply(
         ByteMatchSet: js.UndefOr[ByteMatchSet] = js.undefined,
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
@@ -626,6 +635,7 @@ package wafregional {
   }
 
   object CreateGeoMatchSetRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         Name: ResourceName
@@ -646,6 +656,7 @@ package wafregional {
   }
 
   object CreateGeoMatchSetResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         GeoMatchSet: js.UndefOr[GeoMatchSet] = js.undefined
@@ -664,6 +675,7 @@ package wafregional {
   }
 
   object CreateIPSetRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         Name: ResourceName
@@ -684,6 +696,7 @@ package wafregional {
   }
 
   object CreateIPSetResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         IPSet: js.UndefOr[IPSet] = js.undefined
@@ -706,6 +719,7 @@ package wafregional {
   }
 
   object CreateRateBasedRuleRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         MetricName: MetricName,
@@ -734,6 +748,7 @@ package wafregional {
   }
 
   object CreateRateBasedRuleResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         Rule: js.UndefOr[RateBasedRule] = js.undefined
@@ -752,6 +767,7 @@ package wafregional {
   }
 
   object CreateRegexMatchSetRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         Name: ResourceName
@@ -772,6 +788,7 @@ package wafregional {
   }
 
   object CreateRegexMatchSetResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         RegexMatchSet: js.UndefOr[RegexMatchSet] = js.undefined
@@ -790,6 +807,7 @@ package wafregional {
   }
 
   object CreateRegexPatternSetRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         Name: ResourceName
@@ -810,6 +828,7 @@ package wafregional {
   }
 
   object CreateRegexPatternSetResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         RegexPatternSet: js.UndefOr[RegexPatternSet] = js.undefined
@@ -830,6 +849,7 @@ package wafregional {
   }
 
   object CreateRuleGroupRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         MetricName: MetricName,
@@ -854,6 +874,7 @@ package wafregional {
   }
 
   object CreateRuleGroupResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         RuleGroup: js.UndefOr[RuleGroup] = js.undefined
@@ -874,6 +895,7 @@ package wafregional {
   }
 
   object CreateRuleRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         MetricName: MetricName,
@@ -898,6 +920,7 @@ package wafregional {
   }
 
   object CreateRuleResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         Rule: js.UndefOr[Rule] = js.undefined
@@ -916,6 +939,7 @@ package wafregional {
   }
 
   object CreateSizeConstraintSetRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         Name: ResourceName
@@ -936,6 +960,7 @@ package wafregional {
   }
 
   object CreateSizeConstraintSetResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         SizeConstraintSet: js.UndefOr[SizeConstraintSet] = js.undefined
@@ -957,6 +982,7 @@ package wafregional {
   }
 
   object CreateSqlInjectionMatchSetRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         Name: ResourceName
@@ -980,6 +1006,7 @@ package wafregional {
   }
 
   object CreateSqlInjectionMatchSetResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         SqlInjectionMatchSet: js.UndefOr[SqlInjectionMatchSet] = js.undefined
@@ -1001,6 +1028,7 @@ package wafregional {
   }
 
   object CreateWebACLRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         DefaultAction: WafAction,
@@ -1027,6 +1055,7 @@ package wafregional {
   }
 
   object CreateWebACLResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         WebACL: js.UndefOr[WebACL] = js.undefined
@@ -1048,6 +1077,7 @@ package wafregional {
   }
 
   object CreateXssMatchSetRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         Name: ResourceName
@@ -1071,6 +1101,7 @@ package wafregional {
   }
 
   object CreateXssMatchSetResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         XssMatchSet: js.UndefOr[XssMatchSet] = js.undefined
@@ -1089,6 +1120,7 @@ package wafregional {
   }
 
   object DeleteByteMatchSetRequest {
+    @inline
     def apply(
         ByteMatchSetId: ResourceId,
         ChangeToken: ChangeToken
@@ -1108,6 +1140,7 @@ package wafregional {
   }
 
   object DeleteByteMatchSetResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteByteMatchSetResponse = {
@@ -1124,6 +1157,7 @@ package wafregional {
   }
 
   object DeleteGeoMatchSetRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         GeoMatchSetId: ResourceId
@@ -1143,6 +1177,7 @@ package wafregional {
   }
 
   object DeleteGeoMatchSetResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteGeoMatchSetResponse = {
@@ -1159,6 +1194,7 @@ package wafregional {
   }
 
   object DeleteIPSetRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         IPSetId: ResourceId
@@ -1178,6 +1214,7 @@ package wafregional {
   }
 
   object DeleteIPSetResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteIPSetResponse = {
@@ -1193,6 +1230,7 @@ package wafregional {
   }
 
   object DeleteLoggingConfigurationRequest {
+    @inline
     def apply(
         ResourceArn: ResourceArn
     ): DeleteLoggingConfigurationRequest = {
@@ -1208,6 +1246,7 @@ package wafregional {
   trait DeleteLoggingConfigurationResponse extends js.Object {}
 
   object DeleteLoggingConfigurationResponse {
+    @inline
     def apply(
         ): DeleteLoggingConfigurationResponse = {
       val __obj = js.Dynamic.literal()
@@ -1222,6 +1261,7 @@ package wafregional {
   }
 
   object DeletePermissionPolicyRequest {
+    @inline
     def apply(
         ResourceArn: ResourceArn
     ): DeletePermissionPolicyRequest = {
@@ -1237,6 +1277,7 @@ package wafregional {
   trait DeletePermissionPolicyResponse extends js.Object {}
 
   object DeletePermissionPolicyResponse {
+    @inline
     def apply(
         ): DeletePermissionPolicyResponse = {
       val __obj = js.Dynamic.literal()
@@ -1252,6 +1293,7 @@ package wafregional {
   }
 
   object DeleteRateBasedRuleRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         RuleId: ResourceId
@@ -1271,6 +1313,7 @@ package wafregional {
   }
 
   object DeleteRateBasedRuleResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteRateBasedRuleResponse = {
@@ -1287,6 +1330,7 @@ package wafregional {
   }
 
   object DeleteRegexMatchSetRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         RegexMatchSetId: ResourceId
@@ -1306,6 +1350,7 @@ package wafregional {
   }
 
   object DeleteRegexMatchSetResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteRegexMatchSetResponse = {
@@ -1322,6 +1367,7 @@ package wafregional {
   }
 
   object DeleteRegexPatternSetRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         RegexPatternSetId: ResourceId
@@ -1341,6 +1387,7 @@ package wafregional {
   }
 
   object DeleteRegexPatternSetResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteRegexPatternSetResponse = {
@@ -1357,6 +1404,7 @@ package wafregional {
   }
 
   object DeleteRuleGroupRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         RuleGroupId: ResourceId
@@ -1376,6 +1424,7 @@ package wafregional {
   }
 
   object DeleteRuleGroupResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteRuleGroupResponse = {
@@ -1392,6 +1441,7 @@ package wafregional {
   }
 
   object DeleteRuleRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         RuleId: ResourceId
@@ -1411,6 +1461,7 @@ package wafregional {
   }
 
   object DeleteRuleResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteRuleResponse = {
@@ -1427,6 +1478,7 @@ package wafregional {
   }
 
   object DeleteSizeConstraintSetRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         SizeConstraintSetId: ResourceId
@@ -1446,6 +1498,7 @@ package wafregional {
   }
 
   object DeleteSizeConstraintSetResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteSizeConstraintSetResponse = {
@@ -1465,6 +1518,7 @@ package wafregional {
   }
 
   object DeleteSqlInjectionMatchSetRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         SqlInjectionMatchSetId: ResourceId
@@ -1487,6 +1541,7 @@ package wafregional {
   }
 
   object DeleteSqlInjectionMatchSetResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteSqlInjectionMatchSetResponse = {
@@ -1503,6 +1558,7 @@ package wafregional {
   }
 
   object DeleteWebACLRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         WebACLId: ResourceId
@@ -1522,6 +1578,7 @@ package wafregional {
   }
 
   object DeleteWebACLResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteWebACLResponse = {
@@ -1541,6 +1598,7 @@ package wafregional {
   }
 
   object DeleteXssMatchSetRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         XssMatchSetId: ResourceId
@@ -1563,6 +1621,7 @@ package wafregional {
   }
 
   object DeleteXssMatchSetResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteXssMatchSetResponse = {
@@ -1578,6 +1637,7 @@ package wafregional {
   }
 
   object DisassociateWebACLRequest {
+    @inline
     def apply(
         ResourceArn: ResourceArn
     ): DisassociateWebACLRequest = {
@@ -1593,6 +1653,7 @@ package wafregional {
   trait DisassociateWebACLResponse extends js.Object {}
 
   object DisassociateWebACLResponse {
+    @inline
     def apply(
         ): DisassociateWebACLResponse = {
       val __obj = js.Dynamic.literal()
@@ -1610,6 +1671,7 @@ package wafregional {
   }
 
   object ExcludedRule {
+    @inline
     def apply(
         RuleId: ResourceId
     ): ExcludedRule = {
@@ -1631,6 +1693,7 @@ package wafregional {
   }
 
   object FieldToMatch {
+    @inline
     def apply(
         Type: MatchFieldType,
         Data: js.UndefOr[MatchFieldData] = js.undefined
@@ -1654,6 +1717,7 @@ package wafregional {
   }
 
   object GeoMatchConstraint {
+    @inline
     def apply(
         Type: GeoMatchConstraintType,
         Value: GeoMatchConstraintValue
@@ -2190,6 +2254,7 @@ package wafregional {
   }
 
   object GeoMatchSet {
+    @inline
     def apply(
         GeoMatchConstraints: GeoMatchConstraints,
         GeoMatchSetId: ResourceId,
@@ -2215,6 +2280,7 @@ package wafregional {
   }
 
   object GeoMatchSetSummary {
+    @inline
     def apply(
         GeoMatchSetId: ResourceId,
         Name: ResourceName
@@ -2238,6 +2304,7 @@ package wafregional {
   }
 
   object GeoMatchSetUpdate {
+    @inline
     def apply(
         Action: ChangeAction,
         GeoMatchConstraint: GeoMatchConstraint
@@ -2257,6 +2324,7 @@ package wafregional {
   }
 
   object GetByteMatchSetRequest {
+    @inline
     def apply(
         ByteMatchSetId: ResourceId
     ): GetByteMatchSetRequest = {
@@ -2274,6 +2342,7 @@ package wafregional {
   }
 
   object GetByteMatchSetResponse {
+    @inline
     def apply(
         ByteMatchSet: js.UndefOr[ByteMatchSet] = js.undefined
     ): GetByteMatchSetResponse = {
@@ -2287,6 +2356,7 @@ package wafregional {
   trait GetChangeTokenRequest extends js.Object {}
 
   object GetChangeTokenRequest {
+    @inline
     def apply(
         ): GetChangeTokenRequest = {
       val __obj = js.Dynamic.literal()
@@ -2301,6 +2371,7 @@ package wafregional {
   }
 
   object GetChangeTokenResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): GetChangeTokenResponse = {
@@ -2316,6 +2387,7 @@ package wafregional {
   }
 
   object GetChangeTokenStatusRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken
     ): GetChangeTokenStatusRequest = {
@@ -2333,6 +2405,7 @@ package wafregional {
   }
 
   object GetChangeTokenStatusResponse {
+    @inline
     def apply(
         ChangeTokenStatus: js.UndefOr[ChangeTokenStatus] = js.undefined
     ): GetChangeTokenStatusResponse = {
@@ -2348,6 +2421,7 @@ package wafregional {
   }
 
   object GetGeoMatchSetRequest {
+    @inline
     def apply(
         GeoMatchSetId: ResourceId
     ): GetGeoMatchSetRequest = {
@@ -2365,6 +2439,7 @@ package wafregional {
   }
 
   object GetGeoMatchSetResponse {
+    @inline
     def apply(
         GeoMatchSet: js.UndefOr[GeoMatchSet] = js.undefined
     ): GetGeoMatchSetResponse = {
@@ -2380,6 +2455,7 @@ package wafregional {
   }
 
   object GetIPSetRequest {
+    @inline
     def apply(
         IPSetId: ResourceId
     ): GetIPSetRequest = {
@@ -2397,6 +2473,7 @@ package wafregional {
   }
 
   object GetIPSetResponse {
+    @inline
     def apply(
         IPSet: js.UndefOr[IPSet] = js.undefined
     ): GetIPSetResponse = {
@@ -2412,6 +2489,7 @@ package wafregional {
   }
 
   object GetLoggingConfigurationRequest {
+    @inline
     def apply(
         ResourceArn: ResourceArn
     ): GetLoggingConfigurationRequest = {
@@ -2429,6 +2507,7 @@ package wafregional {
   }
 
   object GetLoggingConfigurationResponse {
+    @inline
     def apply(
         LoggingConfiguration: js.UndefOr[LoggingConfiguration] = js.undefined
     ): GetLoggingConfigurationResponse = {
@@ -2444,6 +2523,7 @@ package wafregional {
   }
 
   object GetPermissionPolicyRequest {
+    @inline
     def apply(
         ResourceArn: ResourceArn
     ): GetPermissionPolicyRequest = {
@@ -2461,6 +2541,7 @@ package wafregional {
   }
 
   object GetPermissionPolicyResponse {
+    @inline
     def apply(
         Policy: js.UndefOr[PolicyString] = js.undefined
     ): GetPermissionPolicyResponse = {
@@ -2477,6 +2558,7 @@ package wafregional {
   }
 
   object GetRateBasedRuleManagedKeysRequest {
+    @inline
     def apply(
         RuleId: ResourceId,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
@@ -2497,6 +2579,7 @@ package wafregional {
   }
 
   object GetRateBasedRuleManagedKeysResponse {
+    @inline
     def apply(
         ManagedKeys: js.UndefOr[ManagedKeys] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
@@ -2514,6 +2597,7 @@ package wafregional {
   }
 
   object GetRateBasedRuleRequest {
+    @inline
     def apply(
         RuleId: ResourceId
     ): GetRateBasedRuleRequest = {
@@ -2531,6 +2615,7 @@ package wafregional {
   }
 
   object GetRateBasedRuleResponse {
+    @inline
     def apply(
         Rule: js.UndefOr[RateBasedRule] = js.undefined
     ): GetRateBasedRuleResponse = {
@@ -2546,6 +2631,7 @@ package wafregional {
   }
 
   object GetRegexMatchSetRequest {
+    @inline
     def apply(
         RegexMatchSetId: ResourceId
     ): GetRegexMatchSetRequest = {
@@ -2563,6 +2649,7 @@ package wafregional {
   }
 
   object GetRegexMatchSetResponse {
+    @inline
     def apply(
         RegexMatchSet: js.UndefOr[RegexMatchSet] = js.undefined
     ): GetRegexMatchSetResponse = {
@@ -2578,6 +2665,7 @@ package wafregional {
   }
 
   object GetRegexPatternSetRequest {
+    @inline
     def apply(
         RegexPatternSetId: ResourceId
     ): GetRegexPatternSetRequest = {
@@ -2595,6 +2683,7 @@ package wafregional {
   }
 
   object GetRegexPatternSetResponse {
+    @inline
     def apply(
         RegexPatternSet: js.UndefOr[RegexPatternSet] = js.undefined
     ): GetRegexPatternSetResponse = {
@@ -2610,6 +2699,7 @@ package wafregional {
   }
 
   object GetRuleGroupRequest {
+    @inline
     def apply(
         RuleGroupId: ResourceId
     ): GetRuleGroupRequest = {
@@ -2627,6 +2717,7 @@ package wafregional {
   }
 
   object GetRuleGroupResponse {
+    @inline
     def apply(
         RuleGroup: js.UndefOr[RuleGroup] = js.undefined
     ): GetRuleGroupResponse = {
@@ -2642,6 +2733,7 @@ package wafregional {
   }
 
   object GetRuleRequest {
+    @inline
     def apply(
         RuleId: ResourceId
     ): GetRuleRequest = {
@@ -2659,6 +2751,7 @@ package wafregional {
   }
 
   object GetRuleResponse {
+    @inline
     def apply(
         Rule: js.UndefOr[Rule] = js.undefined
     ): GetRuleResponse = {
@@ -2677,6 +2770,7 @@ package wafregional {
   }
 
   object GetSampledRequestsRequest {
+    @inline
     def apply(
         MaxItems: GetSampledRequestsMaxItems,
         RuleId: ResourceId,
@@ -2702,6 +2796,7 @@ package wafregional {
   }
 
   object GetSampledRequestsResponse {
+    @inline
     def apply(
         PopulationSize: js.UndefOr[PopulationSize] = js.undefined,
         SampledRequests: js.UndefOr[SampledHTTPRequests] = js.undefined,
@@ -2721,6 +2816,7 @@ package wafregional {
   }
 
   object GetSizeConstraintSetRequest {
+    @inline
     def apply(
         SizeConstraintSetId: ResourceId
     ): GetSizeConstraintSetRequest = {
@@ -2738,6 +2834,7 @@ package wafregional {
   }
 
   object GetSizeConstraintSetResponse {
+    @inline
     def apply(
         SizeConstraintSet: js.UndefOr[SizeConstraintSet] = js.undefined
     ): GetSizeConstraintSetResponse = {
@@ -2756,6 +2853,7 @@ package wafregional {
   }
 
   object GetSqlInjectionMatchSetRequest {
+    @inline
     def apply(
         SqlInjectionMatchSetId: ResourceId
     ): GetSqlInjectionMatchSetRequest = {
@@ -2776,6 +2874,7 @@ package wafregional {
   }
 
   object GetSqlInjectionMatchSetResponse {
+    @inline
     def apply(
         SqlInjectionMatchSet: js.UndefOr[SqlInjectionMatchSet] = js.undefined
     ): GetSqlInjectionMatchSetResponse = {
@@ -2791,6 +2890,7 @@ package wafregional {
   }
 
   object GetWebACLForResourceRequest {
+    @inline
     def apply(
         ResourceArn: ResourceArn
     ): GetWebACLForResourceRequest = {
@@ -2808,6 +2908,7 @@ package wafregional {
   }
 
   object GetWebACLForResourceResponse {
+    @inline
     def apply(
         WebACLSummary: js.UndefOr[WebACLSummary] = js.undefined
     ): GetWebACLForResourceResponse = {
@@ -2823,6 +2924,7 @@ package wafregional {
   }
 
   object GetWebACLRequest {
+    @inline
     def apply(
         WebACLId: ResourceId
     ): GetWebACLRequest = {
@@ -2840,6 +2942,7 @@ package wafregional {
   }
 
   object GetWebACLResponse {
+    @inline
     def apply(
         WebACL: js.UndefOr[WebACL] = js.undefined
     ): GetWebACLResponse = {
@@ -2858,6 +2961,7 @@ package wafregional {
   }
 
   object GetXssMatchSetRequest {
+    @inline
     def apply(
         XssMatchSetId: ResourceId
     ): GetXssMatchSetRequest = {
@@ -2878,6 +2982,7 @@ package wafregional {
   }
 
   object GetXssMatchSetResponse {
+    @inline
     def apply(
         XssMatchSet: js.UndefOr[XssMatchSet] = js.undefined
     ): GetXssMatchSetResponse = {
@@ -2897,6 +3002,7 @@ package wafregional {
   }
 
   object HTTPHeader {
+    @inline
     def apply(
         Name: js.UndefOr[HeaderName] = js.undefined,
         Value: js.UndefOr[HeaderValue] = js.undefined
@@ -2922,6 +3028,7 @@ package wafregional {
   }
 
   object HTTPRequest {
+    @inline
     def apply(
         ClientIP: js.UndefOr[IPString] = js.undefined,
         Country: js.UndefOr[Country] = js.undefined,
@@ -2953,6 +3060,7 @@ package wafregional {
   }
 
   object IPSet {
+    @inline
     def apply(
         IPSetDescriptors: IPSetDescriptors,
         IPSetId: ResourceId,
@@ -2978,6 +3086,7 @@ package wafregional {
   }
 
   object IPSetDescriptor {
+    @inline
     def apply(
         Type: IPSetDescriptorType,
         Value: IPSetDescriptorValue
@@ -3008,6 +3117,7 @@ package wafregional {
   }
 
   object IPSetSummary {
+    @inline
     def apply(
         IPSetId: ResourceId,
         Name: ResourceName
@@ -3031,6 +3141,7 @@ package wafregional {
   }
 
   object IPSetUpdate {
+    @inline
     def apply(
         Action: ChangeAction,
         IPSetDescriptor: IPSetDescriptor
@@ -3052,6 +3163,7 @@ package wafregional {
   }
 
   object ListActivatedRulesInRuleGroupRequest {
+    @inline
     def apply(
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
@@ -3072,6 +3184,7 @@ package wafregional {
   }
 
   object ListActivatedRulesInRuleGroupResponse {
+    @inline
     def apply(
         ActivatedRules: js.UndefOr[ActivatedRules] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
@@ -3090,6 +3203,7 @@ package wafregional {
   }
 
   object ListByteMatchSetsRequest {
+    @inline
     def apply(
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
@@ -3108,6 +3222,7 @@ package wafregional {
   }
 
   object ListByteMatchSetsResponse {
+    @inline
     def apply(
         ByteMatchSets: js.UndefOr[ByteMatchSetSummaries] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
@@ -3126,6 +3241,7 @@ package wafregional {
   }
 
   object ListGeoMatchSetsRequest {
+    @inline
     def apply(
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
@@ -3144,6 +3260,7 @@ package wafregional {
   }
 
   object ListGeoMatchSetsResponse {
+    @inline
     def apply(
         GeoMatchSets: js.UndefOr[GeoMatchSetSummaries] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
@@ -3162,6 +3279,7 @@ package wafregional {
   }
 
   object ListIPSetsRequest {
+    @inline
     def apply(
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
@@ -3180,6 +3298,7 @@ package wafregional {
   }
 
   object ListIPSetsResponse {
+    @inline
     def apply(
         IPSets: js.UndefOr[IPSetSummaries] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
@@ -3198,6 +3317,7 @@ package wafregional {
   }
 
   object ListLoggingConfigurationsRequest {
+    @inline
     def apply(
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
@@ -3216,6 +3336,7 @@ package wafregional {
   }
 
   object ListLoggingConfigurationsResponse {
+    @inline
     def apply(
         LoggingConfigurations: js.UndefOr[LoggingConfigurations] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
@@ -3234,6 +3355,7 @@ package wafregional {
   }
 
   object ListRateBasedRulesRequest {
+    @inline
     def apply(
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
@@ -3252,6 +3374,7 @@ package wafregional {
   }
 
   object ListRateBasedRulesResponse {
+    @inline
     def apply(
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         Rules: js.UndefOr[RuleSummaries] = js.undefined
@@ -3270,6 +3393,7 @@ package wafregional {
   }
 
   object ListRegexMatchSetsRequest {
+    @inline
     def apply(
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
@@ -3288,6 +3412,7 @@ package wafregional {
   }
 
   object ListRegexMatchSetsResponse {
+    @inline
     def apply(
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         RegexMatchSets: js.UndefOr[RegexMatchSetSummaries] = js.undefined
@@ -3306,6 +3431,7 @@ package wafregional {
   }
 
   object ListRegexPatternSetsRequest {
+    @inline
     def apply(
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
@@ -3324,6 +3450,7 @@ package wafregional {
   }
 
   object ListRegexPatternSetsResponse {
+    @inline
     def apply(
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         RegexPatternSets: js.UndefOr[RegexPatternSetSummaries] = js.undefined
@@ -3342,6 +3469,7 @@ package wafregional {
   }
 
   object ListResourcesForWebACLRequest {
+    @inline
     def apply(
         WebACLId: ResourceId,
         ResourceType: js.UndefOr[ResourceType] = js.undefined
@@ -3361,6 +3489,7 @@ package wafregional {
   }
 
   object ListResourcesForWebACLResponse {
+    @inline
     def apply(
         ResourceArns: js.UndefOr[ResourceArns] = js.undefined
     ): ListResourcesForWebACLResponse = {
@@ -3377,6 +3506,7 @@ package wafregional {
   }
 
   object ListRuleGroupsRequest {
+    @inline
     def apply(
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
@@ -3395,6 +3525,7 @@ package wafregional {
   }
 
   object ListRuleGroupsResponse {
+    @inline
     def apply(
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         RuleGroups: js.UndefOr[RuleGroupSummaries] = js.undefined
@@ -3413,6 +3544,7 @@ package wafregional {
   }
 
   object ListRulesRequest {
+    @inline
     def apply(
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
@@ -3431,6 +3563,7 @@ package wafregional {
   }
 
   object ListRulesResponse {
+    @inline
     def apply(
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         Rules: js.UndefOr[RuleSummaries] = js.undefined
@@ -3449,6 +3582,7 @@ package wafregional {
   }
 
   object ListSizeConstraintSetsRequest {
+    @inline
     def apply(
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
@@ -3467,6 +3601,7 @@ package wafregional {
   }
 
   object ListSizeConstraintSetsResponse {
+    @inline
     def apply(
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         SizeConstraintSets: js.UndefOr[SizeConstraintSetSummaries] = js.undefined
@@ -3488,6 +3623,7 @@ package wafregional {
   }
 
   object ListSqlInjectionMatchSetsRequest {
+    @inline
     def apply(
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
@@ -3509,6 +3645,7 @@ package wafregional {
   }
 
   object ListSqlInjectionMatchSetsResponse {
+    @inline
     def apply(
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         SqlInjectionMatchSets: js.UndefOr[SqlInjectionMatchSetSummaries] = js.undefined
@@ -3527,6 +3664,7 @@ package wafregional {
   }
 
   object ListSubscribedRuleGroupsRequest {
+    @inline
     def apply(
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
@@ -3545,6 +3683,7 @@ package wafregional {
   }
 
   object ListSubscribedRuleGroupsResponse {
+    @inline
     def apply(
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         RuleGroups: js.UndefOr[SubscribedRuleGroupSummaries] = js.undefined
@@ -3564,6 +3703,7 @@ package wafregional {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceARN: ResourceArn,
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
@@ -3586,6 +3726,7 @@ package wafregional {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         TagInfoForResource: js.UndefOr[TagInfoForResource] = js.undefined
@@ -3604,6 +3745,7 @@ package wafregional {
   }
 
   object ListWebACLsRequest {
+    @inline
     def apply(
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
@@ -3622,6 +3764,7 @@ package wafregional {
   }
 
   object ListWebACLsResponse {
+    @inline
     def apply(
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         WebACLs: js.UndefOr[WebACLSummaries] = js.undefined
@@ -3643,6 +3786,7 @@ package wafregional {
   }
 
   object ListXssMatchSetsRequest {
+    @inline
     def apply(
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
@@ -3664,6 +3808,7 @@ package wafregional {
   }
 
   object ListXssMatchSetsResponse {
+    @inline
     def apply(
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         XssMatchSets: js.UndefOr[XssMatchSetSummaries] = js.undefined
@@ -3686,6 +3831,7 @@ package wafregional {
   }
 
   object LoggingConfiguration {
+    @inline
     def apply(
         LogDestinationConfigs: LogDestinationConfigs,
         ResourceArn: ResourceArn,
@@ -3734,6 +3880,7 @@ package wafregional {
   }
 
   object Predicate {
+    @inline
     def apply(
         DataId: ResourceId,
         Negated: Negated,
@@ -3768,6 +3915,7 @@ package wafregional {
   }
 
   object PutLoggingConfigurationRequest {
+    @inline
     def apply(
         LoggingConfiguration: LoggingConfiguration
     ): PutLoggingConfigurationRequest = {
@@ -3785,6 +3933,7 @@ package wafregional {
   }
 
   object PutLoggingConfigurationResponse {
+    @inline
     def apply(
         LoggingConfiguration: js.UndefOr[LoggingConfiguration] = js.undefined
     ): PutLoggingConfigurationResponse = {
@@ -3801,6 +3950,7 @@ package wafregional {
   }
 
   object PutPermissionPolicyRequest {
+    @inline
     def apply(
         Policy: PolicyString,
         ResourceArn: ResourceArn
@@ -3818,6 +3968,7 @@ package wafregional {
   trait PutPermissionPolicyResponse extends js.Object {}
 
   object PutPermissionPolicyResponse {
+    @inline
     def apply(
         ): PutPermissionPolicyResponse = {
       val __obj = js.Dynamic.literal()
@@ -3844,6 +3995,7 @@ package wafregional {
   }
 
   object RateBasedRule {
+    @inline
     def apply(
         MatchPredicates: Predicates,
         RateKey: RateKey,
@@ -3883,6 +4035,7 @@ package wafregional {
   }
 
   object RegexMatchSet {
+    @inline
     def apply(
         Name: js.UndefOr[ResourceName] = js.undefined,
         RegexMatchSetId: js.UndefOr[ResourceId] = js.undefined,
@@ -3906,6 +4059,7 @@ package wafregional {
   }
 
   object RegexMatchSetSummary {
+    @inline
     def apply(
         Name: ResourceName,
         RegexMatchSetId: ResourceId
@@ -3929,6 +4083,7 @@ package wafregional {
   }
 
   object RegexMatchSetUpdate {
+    @inline
     def apply(
         Action: ChangeAction,
         RegexMatchTuple: RegexMatchTuple
@@ -3956,6 +4111,7 @@ package wafregional {
   }
 
   object RegexMatchTuple {
+    @inline
     def apply(
         FieldToMatch: FieldToMatch,
         RegexPatternSetId: ResourceId,
@@ -3982,6 +4138,7 @@ package wafregional {
   }
 
   object RegexPatternSet {
+    @inline
     def apply(
         RegexPatternSetId: ResourceId,
         RegexPatternStrings: RegexPatternStrings,
@@ -4007,6 +4164,7 @@ package wafregional {
   }
 
   object RegexPatternSetSummary {
+    @inline
     def apply(
         Name: ResourceName,
         RegexPatternSetId: ResourceId
@@ -4030,6 +4188,7 @@ package wafregional {
   }
 
   object RegexPatternSetUpdate {
+    @inline
     def apply(
         Action: ChangeAction,
         RegexPatternString: RegexPatternString
@@ -4065,6 +4224,7 @@ package wafregional {
   }
 
   object Rule {
+    @inline
     def apply(
         Predicates: Predicates,
         RuleId: ResourceId,
@@ -4097,6 +4257,7 @@ package wafregional {
   }
 
   object RuleGroup {
+    @inline
     def apply(
         RuleGroupId: ResourceId,
         MetricName: js.UndefOr[MetricName] = js.undefined,
@@ -4122,6 +4283,7 @@ package wafregional {
   }
 
   object RuleGroupSummary {
+    @inline
     def apply(
         Name: ResourceName,
         RuleGroupId: ResourceId
@@ -4145,6 +4307,7 @@ package wafregional {
   }
 
   object RuleGroupUpdate {
+    @inline
     def apply(
         Action: ChangeAction,
         ActivatedRule: ActivatedRule
@@ -4168,6 +4331,7 @@ package wafregional {
   }
 
   object RuleSummary {
+    @inline
     def apply(
         Name: ResourceName,
         RuleId: ResourceId
@@ -4191,6 +4355,7 @@ package wafregional {
   }
 
   object RuleUpdate {
+    @inline
     def apply(
         Action: ChangeAction,
         Predicate: Predicate
@@ -4217,6 +4382,7 @@ package wafregional {
   }
 
   object SampledHTTPRequest {
+    @inline
     def apply(
         Request: HTTPRequest,
         Weight: SampleWeight,
@@ -4248,6 +4414,7 @@ package wafregional {
   }
 
   object SizeConstraint {
+    @inline
     def apply(
         ComparisonOperator: ComparisonOperator,
         FieldToMatch: FieldToMatch,
@@ -4276,6 +4443,7 @@ package wafregional {
   }
 
   object SizeConstraintSet {
+    @inline
     def apply(
         SizeConstraintSetId: ResourceId,
         SizeConstraints: SizeConstraints,
@@ -4301,6 +4469,7 @@ package wafregional {
   }
 
   object SizeConstraintSetSummary {
+    @inline
     def apply(
         Name: ResourceName,
         SizeConstraintSetId: ResourceId
@@ -4324,6 +4493,7 @@ package wafregional {
   }
 
   object SizeConstraintSetUpdate {
+    @inline
     def apply(
         Action: ChangeAction,
         SizeConstraint: SizeConstraint
@@ -4348,6 +4518,7 @@ package wafregional {
   }
 
   object SqlInjectionMatchSet {
+    @inline
     def apply(
         SqlInjectionMatchSetId: ResourceId,
         SqlInjectionMatchTuples: SqlInjectionMatchTuples,
@@ -4373,6 +4544,7 @@ package wafregional {
   }
 
   object SqlInjectionMatchSetSummary {
+    @inline
     def apply(
         Name: ResourceName,
         SqlInjectionMatchSetId: ResourceId
@@ -4396,6 +4568,7 @@ package wafregional {
   }
 
   object SqlInjectionMatchSetUpdate {
+    @inline
     def apply(
         Action: ChangeAction,
         SqlInjectionMatchTuple: SqlInjectionMatchTuple
@@ -4419,6 +4592,7 @@ package wafregional {
   }
 
   object SqlInjectionMatchTuple {
+    @inline
     def apply(
         FieldToMatch: FieldToMatch,
         TextTransformation: TextTransformation
@@ -4443,6 +4617,7 @@ package wafregional {
   }
 
   object SubscribedRuleGroupSummary {
+    @inline
     def apply(
         MetricName: MetricName,
         Name: ResourceName,
@@ -4465,6 +4640,7 @@ package wafregional {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: js.UndefOr[TagKey] = js.undefined,
         Value: js.UndefOr[TagValue] = js.undefined
@@ -4483,6 +4659,7 @@ package wafregional {
   }
 
   object TagInfoForResource {
+    @inline
     def apply(
         ResourceARN: js.UndefOr[ResourceArn] = js.undefined,
         TagList: js.UndefOr[TagList] = js.undefined
@@ -4501,6 +4678,7 @@ package wafregional {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceARN: ResourceArn,
         Tags: TagList
@@ -4518,6 +4696,7 @@ package wafregional {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -4549,6 +4728,7 @@ package wafregional {
   }
 
   object TimeWindow {
+    @inline
     def apply(
         EndTime: Timestamp,
         StartTime: Timestamp
@@ -4569,6 +4749,7 @@ package wafregional {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceARN: ResourceArn,
         TagKeys: TagKeyList
@@ -4586,6 +4767,7 @@ package wafregional {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -4602,6 +4784,7 @@ package wafregional {
   }
 
   object UpdateByteMatchSetRequest {
+    @inline
     def apply(
         ByteMatchSetId: ResourceId,
         ChangeToken: ChangeToken,
@@ -4623,6 +4806,7 @@ package wafregional {
   }
 
   object UpdateByteMatchSetResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateByteMatchSetResponse = {
@@ -4640,6 +4824,7 @@ package wafregional {
   }
 
   object UpdateGeoMatchSetRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         GeoMatchSetId: ResourceId,
@@ -4661,6 +4846,7 @@ package wafregional {
   }
 
   object UpdateGeoMatchSetResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateGeoMatchSetResponse = {
@@ -4678,6 +4864,7 @@ package wafregional {
   }
 
   object UpdateIPSetRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         IPSetId: ResourceId,
@@ -4699,6 +4886,7 @@ package wafregional {
   }
 
   object UpdateIPSetResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateIPSetResponse = {
@@ -4717,6 +4905,7 @@ package wafregional {
   }
 
   object UpdateRateBasedRuleRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         RateLimit: RateLimit,
@@ -4740,6 +4929,7 @@ package wafregional {
   }
 
   object UpdateRateBasedRuleResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateRateBasedRuleResponse = {
@@ -4757,6 +4947,7 @@ package wafregional {
   }
 
   object UpdateRegexMatchSetRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         RegexMatchSetId: ResourceId,
@@ -4778,6 +4969,7 @@ package wafregional {
   }
 
   object UpdateRegexMatchSetResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateRegexMatchSetResponse = {
@@ -4795,6 +4987,7 @@ package wafregional {
   }
 
   object UpdateRegexPatternSetRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         RegexPatternSetId: ResourceId,
@@ -4816,6 +5009,7 @@ package wafregional {
   }
 
   object UpdateRegexPatternSetResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateRegexPatternSetResponse = {
@@ -4833,6 +5027,7 @@ package wafregional {
   }
 
   object UpdateRuleGroupRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         RuleGroupId: ResourceId,
@@ -4854,6 +5049,7 @@ package wafregional {
   }
 
   object UpdateRuleGroupResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateRuleGroupResponse = {
@@ -4871,6 +5067,7 @@ package wafregional {
   }
 
   object UpdateRuleRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         RuleId: ResourceId,
@@ -4892,6 +5089,7 @@ package wafregional {
   }
 
   object UpdateRuleResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateRuleResponse = {
@@ -4909,6 +5107,7 @@ package wafregional {
   }
 
   object UpdateSizeConstraintSetRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         SizeConstraintSetId: ResourceId,
@@ -4930,6 +5129,7 @@ package wafregional {
   }
 
   object UpdateSizeConstraintSetResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateSizeConstraintSetResponse = {
@@ -4950,6 +5150,7 @@ package wafregional {
   }
 
   object UpdateSqlInjectionMatchSetRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         SqlInjectionMatchSetId: ResourceId,
@@ -4974,6 +5175,7 @@ package wafregional {
   }
 
   object UpdateSqlInjectionMatchSetResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateSqlInjectionMatchSetResponse = {
@@ -4992,6 +5194,7 @@ package wafregional {
   }
 
   object UpdateWebACLRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         WebACLId: ResourceId,
@@ -5015,6 +5218,7 @@ package wafregional {
   }
 
   object UpdateWebACLResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateWebACLResponse = {
@@ -5035,6 +5239,7 @@ package wafregional {
   }
 
   object UpdateXssMatchSetRequest {
+    @inline
     def apply(
         ChangeToken: ChangeToken,
         Updates: XssMatchSetUpdates,
@@ -5059,6 +5264,7 @@ package wafregional {
   }
 
   object UpdateXssMatchSetResponse {
+    @inline
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateXssMatchSetResponse = {
@@ -5077,6 +5283,7 @@ package wafregional {
   }
 
   object WafAction {
+    @inline
     def apply(
         Type: WafActionType
     ): WafAction = {
@@ -5105,6 +5312,7 @@ package wafregional {
   }
 
   object WafOverrideAction {
+    @inline
     def apply(
         Type: WafOverrideActionType
     ): WafOverrideAction = {
@@ -5145,6 +5353,7 @@ package wafregional {
   }
 
   object WebACL {
+    @inline
     def apply(
         DefaultAction: WafAction,
         Rules: ActivatedRules,
@@ -5176,6 +5385,7 @@ package wafregional {
   }
 
   object WebACLSummary {
+    @inline
     def apply(
         Name: ResourceName,
         WebACLId: ResourceId
@@ -5199,6 +5409,7 @@ package wafregional {
   }
 
   object WebACLUpdate {
+    @inline
     def apply(
         Action: ChangeAction,
         ActivatedRule: ActivatedRule
@@ -5223,6 +5434,7 @@ package wafregional {
   }
 
   object XssMatchSet {
+    @inline
     def apply(
         XssMatchSetId: ResourceId,
         XssMatchTuples: XssMatchTuples,
@@ -5248,6 +5460,7 @@ package wafregional {
   }
 
   object XssMatchSetSummary {
+    @inline
     def apply(
         Name: ResourceName,
         XssMatchSetId: ResourceId
@@ -5271,6 +5484,7 @@ package wafregional {
   }
 
   object XssMatchSetUpdate {
+    @inline
     def apply(
         Action: ChangeAction,
         XssMatchTuple: XssMatchTuple
@@ -5294,6 +5508,7 @@ package wafregional {
   }
 
   object XssMatchTuple {
+    @inline
     def apply(
         FieldToMatch: FieldToMatch,
         TextTransformation: TextTransformation

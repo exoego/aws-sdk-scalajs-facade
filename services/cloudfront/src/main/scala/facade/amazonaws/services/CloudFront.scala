@@ -304,6 +304,7 @@ package cloudfront {
   }
 
   object ActiveTrustedSigners {
+    @inline
     def apply(
         Enabled: Boolean,
         Quantity: Int,
@@ -330,6 +331,7 @@ package cloudfront {
   }
 
   object AliasICPRecordal {
+    @inline
     def apply(
         CNAME: js.UndefOr[String] = js.undefined,
         ICPRecordalStatus: js.UndefOr[ICPRecordalStatus] = js.undefined
@@ -351,6 +353,7 @@ package cloudfront {
   }
 
   object Aliases {
+    @inline
     def apply(
         Quantity: Int,
         Items: js.UndefOr[AliasList] = js.undefined
@@ -379,6 +382,7 @@ package cloudfront {
   }
 
   object AllowedMethods {
+    @inline
     def apply(
         Items: MethodsList,
         Quantity: Int,
@@ -421,6 +425,7 @@ package cloudfront {
   }
 
   object CacheBehavior {
+    @inline
     def apply(
         ForwardedValues: ForwardedValues,
         MinTTL: Double,
@@ -468,6 +473,7 @@ package cloudfront {
   }
 
   object CacheBehaviors {
+    @inline
     def apply(
         Quantity: Int,
         Items: js.UndefOr[CacheBehaviorList] = js.undefined
@@ -494,6 +500,7 @@ package cloudfront {
   }
 
   object CachedMethods {
+    @inline
     def apply(
         Items: MethodsList,
         Quantity: Int
@@ -526,6 +533,7 @@ package cloudfront {
   }
 
   object CloudFrontOriginAccessIdentity {
+    @inline
     def apply(
         Id: String,
         S3CanonicalUserId: String,
@@ -553,6 +561,7 @@ package cloudfront {
   }
 
   object CloudFrontOriginAccessIdentityConfig {
+    @inline
     def apply(
         CallerReference: String,
         Comment: String
@@ -580,6 +589,7 @@ package cloudfront {
   }
 
   object CloudFrontOriginAccessIdentityList {
+    @inline
     def apply(
         IsTruncated: Boolean,
         Marker: String,
@@ -612,6 +622,7 @@ package cloudfront {
   }
 
   object CloudFrontOriginAccessIdentitySummary {
+    @inline
     def apply(
         Comment: String,
         Id: String,
@@ -638,6 +649,7 @@ package cloudfront {
   }
 
   object ContentTypeProfile {
+    @inline
     def apply(
         ContentType: String,
         Format: Format,
@@ -663,6 +675,7 @@ package cloudfront {
   }
 
   object ContentTypeProfileConfig {
+    @inline
     def apply(
         ForwardWhenContentTypeIsUnknown: Boolean,
         ContentTypeProfiles: js.UndefOr[ContentTypeProfiles] = js.undefined
@@ -686,6 +699,7 @@ package cloudfront {
   }
 
   object ContentTypeProfiles {
+    @inline
     def apply(
         Quantity: Int,
         Items: js.UndefOr[ContentTypeProfileList] = js.undefined
@@ -709,6 +723,7 @@ package cloudfront {
   }
 
   object CookieNames {
+    @inline
     def apply(
         Quantity: Int,
         Items: js.UndefOr[CookieNameList] = js.undefined
@@ -732,6 +747,7 @@ package cloudfront {
   }
 
   object CookiePreference {
+    @inline
     def apply(
         Forward: ItemSelection,
         WhitelistedNames: js.UndefOr[CookieNames] = js.undefined
@@ -754,6 +770,7 @@ package cloudfront {
   }
 
   object CreateCloudFrontOriginAccessIdentityRequest {
+    @inline
     def apply(
         CloudFrontOriginAccessIdentityConfig: CloudFrontOriginAccessIdentityConfig
     ): CreateCloudFrontOriginAccessIdentityRequest = {
@@ -776,6 +793,7 @@ package cloudfront {
   }
 
   object CreateCloudFrontOriginAccessIdentityResult {
+    @inline
     def apply(
         CloudFrontOriginAccessIdentity: js.UndefOr[CloudFrontOriginAccessIdentity] = js.undefined,
         ETag: js.UndefOr[String] = js.undefined,
@@ -800,6 +818,7 @@ package cloudfront {
   }
 
   object CreateDistributionRequest {
+    @inline
     def apply(
         DistributionConfig: DistributionConfig
     ): CreateDistributionRequest = {
@@ -822,6 +841,7 @@ package cloudfront {
   }
 
   object CreateDistributionResult {
+    @inline
     def apply(
         Distribution: js.UndefOr[Distribution] = js.undefined,
         ETag: js.UndefOr[String] = js.undefined,
@@ -844,6 +864,7 @@ package cloudfront {
   }
 
   object CreateDistributionWithTagsRequest {
+    @inline
     def apply(
         DistributionConfigWithTags: DistributionConfigWithTags
     ): CreateDistributionWithTagsRequest = {
@@ -866,6 +887,7 @@ package cloudfront {
   }
 
   object CreateDistributionWithTagsResult {
+    @inline
     def apply(
         Distribution: js.UndefOr[Distribution] = js.undefined,
         ETag: js.UndefOr[String] = js.undefined,
@@ -885,6 +907,7 @@ package cloudfront {
   }
 
   object CreateFieldLevelEncryptionConfigRequest {
+    @inline
     def apply(
         FieldLevelEncryptionConfig: FieldLevelEncryptionConfig
     ): CreateFieldLevelEncryptionConfigRequest = {
@@ -904,6 +927,7 @@ package cloudfront {
   }
 
   object CreateFieldLevelEncryptionConfigResult {
+    @inline
     def apply(
         ETag: js.UndefOr[String] = js.undefined,
         FieldLevelEncryption: js.UndefOr[FieldLevelEncryption] = js.undefined,
@@ -923,6 +947,7 @@ package cloudfront {
   }
 
   object CreateFieldLevelEncryptionProfileRequest {
+    @inline
     def apply(
         FieldLevelEncryptionProfileConfig: FieldLevelEncryptionProfileConfig
     ): CreateFieldLevelEncryptionProfileRequest = {
@@ -942,6 +967,7 @@ package cloudfront {
   }
 
   object CreateFieldLevelEncryptionProfileResult {
+    @inline
     def apply(
         ETag: js.UndefOr[String] = js.undefined,
         FieldLevelEncryptionProfile: js.UndefOr[FieldLevelEncryptionProfile] = js.undefined,
@@ -967,6 +993,7 @@ package cloudfront {
   }
 
   object CreateInvalidationRequest {
+    @inline
     def apply(
         DistributionId: String,
         InvalidationBatch: InvalidationBatch
@@ -990,6 +1017,7 @@ package cloudfront {
   }
 
   object CreateInvalidationResult {
+    @inline
     def apply(
         Invalidation: js.UndefOr[Invalidation] = js.undefined,
         Location: js.UndefOr[String] = js.undefined
@@ -1007,6 +1035,7 @@ package cloudfront {
   }
 
   object CreatePublicKeyRequest {
+    @inline
     def apply(
         PublicKeyConfig: PublicKeyConfig
     ): CreatePublicKeyRequest = {
@@ -1026,6 +1055,7 @@ package cloudfront {
   }
 
   object CreatePublicKeyResult {
+    @inline
     def apply(
         ETag: js.UndefOr[String] = js.undefined,
         Location: js.UndefOr[String] = js.undefined,
@@ -1048,6 +1078,7 @@ package cloudfront {
   }
 
   object CreateStreamingDistributionRequest {
+    @inline
     def apply(
         StreamingDistributionConfig: StreamingDistributionConfig
     ): CreateStreamingDistributionRequest = {
@@ -1070,6 +1101,7 @@ package cloudfront {
   }
 
   object CreateStreamingDistributionResult {
+    @inline
     def apply(
         ETag: js.UndefOr[String] = js.undefined,
         Location: js.UndefOr[String] = js.undefined,
@@ -1092,6 +1124,7 @@ package cloudfront {
   }
 
   object CreateStreamingDistributionWithTagsRequest {
+    @inline
     def apply(
         StreamingDistributionConfigWithTags: StreamingDistributionConfigWithTags
     ): CreateStreamingDistributionWithTagsRequest = {
@@ -1114,6 +1147,7 @@ package cloudfront {
   }
 
   object CreateStreamingDistributionWithTagsResult {
+    @inline
     def apply(
         ETag: js.UndefOr[String] = js.undefined,
         Location: js.UndefOr[String] = js.undefined,
@@ -1142,6 +1176,7 @@ package cloudfront {
   }
 
   object CustomErrorResponse {
+    @inline
     def apply(
         ErrorCode: Int,
         ErrorCachingMinTTL: js.UndefOr[Double] = js.undefined,
@@ -1172,6 +1207,7 @@ package cloudfront {
   }
 
   object CustomErrorResponses {
+    @inline
     def apply(
         Quantity: Int,
         Items: js.UndefOr[CustomErrorResponseList] = js.undefined
@@ -1195,6 +1231,7 @@ package cloudfront {
   }
 
   object CustomHeaders {
+    @inline
     def apply(
         Quantity: Int,
         Items: js.UndefOr[OriginCustomHeadersList] = js.undefined
@@ -1222,6 +1259,7 @@ package cloudfront {
   }
 
   object CustomOriginConfig {
+    @inline
     def apply(
         HTTPPort: Int,
         HTTPSPort: Int,
@@ -1263,6 +1301,7 @@ package cloudfront {
   }
 
   object DefaultCacheBehavior {
+    @inline
     def apply(
         ForwardedValues: ForwardedValues,
         MinTTL: Double,
@@ -1308,6 +1347,7 @@ package cloudfront {
   }
 
   object DeleteCloudFrontOriginAccessIdentityRequest {
+    @inline
     def apply(
         Id: String,
         IfMatch: js.UndefOr[String] = js.undefined
@@ -1341,6 +1381,7 @@ package cloudfront {
   }
 
   object DeleteDistributionRequest {
+    @inline
     def apply(
         Id: String,
         IfMatch: js.UndefOr[String] = js.undefined
@@ -1361,6 +1402,7 @@ package cloudfront {
   }
 
   object DeleteFieldLevelEncryptionConfigRequest {
+    @inline
     def apply(
         Id: String,
         IfMatch: js.UndefOr[String] = js.undefined
@@ -1381,6 +1423,7 @@ package cloudfront {
   }
 
   object DeleteFieldLevelEncryptionProfileRequest {
+    @inline
     def apply(
         Id: String,
         IfMatch: js.UndefOr[String] = js.undefined
@@ -1401,6 +1444,7 @@ package cloudfront {
   }
 
   object DeletePublicKeyRequest {
+    @inline
     def apply(
         Id: String,
         IfMatch: js.UndefOr[String] = js.undefined
@@ -1424,6 +1468,7 @@ package cloudfront {
   }
 
   object DeleteStreamingDistributionRequest {
+    @inline
     def apply(
         Id: String,
         IfMatch: js.UndefOr[String] = js.undefined
@@ -1454,6 +1499,7 @@ package cloudfront {
   }
 
   object Distribution {
+    @inline
     def apply(
         ARN: String,
         ActiveTrustedSigners: ActiveTrustedSigners,
@@ -1506,6 +1552,7 @@ package cloudfront {
   }
 
   object DistributionConfig {
+    @inline
     def apply(
         CallerReference: String,
         Comment: CommentType,
@@ -1559,6 +1606,7 @@ package cloudfront {
   }
 
   object DistributionConfigWithTags {
+    @inline
     def apply(
         DistributionConfig: DistributionConfig,
         Tags: Tags
@@ -1586,6 +1634,7 @@ package cloudfront {
   }
 
   object DistributionList {
+    @inline
     def apply(
         IsTruncated: Boolean,
         Marker: String,
@@ -1635,6 +1684,7 @@ package cloudfront {
   }
 
   object DistributionSummary {
+    @inline
     def apply(
         ARN: String,
         Aliases: Aliases,
@@ -1694,6 +1744,7 @@ package cloudfront {
   }
 
   object EncryptionEntities {
+    @inline
     def apply(
         Quantity: Int,
         Items: js.UndefOr[EncryptionEntityList] = js.undefined
@@ -1718,6 +1769,7 @@ package cloudfront {
   }
 
   object EncryptionEntity {
+    @inline
     def apply(
         FieldPatterns: FieldPatterns,
         ProviderId: String,
@@ -1753,6 +1805,7 @@ package cloudfront {
   }
 
   object FieldLevelEncryption {
+    @inline
     def apply(
         FieldLevelEncryptionConfig: FieldLevelEncryptionConfig,
         Id: String,
@@ -1780,6 +1833,7 @@ package cloudfront {
   }
 
   object FieldLevelEncryptionConfig {
+    @inline
     def apply(
         CallerReference: String,
         Comment: js.UndefOr[String] = js.undefined,
@@ -1809,6 +1863,7 @@ package cloudfront {
   }
 
   object FieldLevelEncryptionList {
+    @inline
     def apply(
         MaxItems: Int,
         Quantity: Int,
@@ -1837,6 +1892,7 @@ package cloudfront {
   }
 
   object FieldLevelEncryptionProfile {
+    @inline
     def apply(
         FieldLevelEncryptionProfileConfig: FieldLevelEncryptionProfileConfig,
         Id: String,
@@ -1864,6 +1920,7 @@ package cloudfront {
   }
 
   object FieldLevelEncryptionProfileConfig {
+    @inline
     def apply(
         CallerReference: String,
         EncryptionEntities: EncryptionEntities,
@@ -1893,6 +1950,7 @@ package cloudfront {
   }
 
   object FieldLevelEncryptionProfileList {
+    @inline
     def apply(
         MaxItems: Int,
         Quantity: Int,
@@ -1923,6 +1981,7 @@ package cloudfront {
   }
 
   object FieldLevelEncryptionProfileSummary {
+    @inline
     def apply(
         EncryptionEntities: EncryptionEntities,
         Id: String,
@@ -1955,6 +2014,7 @@ package cloudfront {
   }
 
   object FieldLevelEncryptionSummary {
+    @inline
     def apply(
         Id: String,
         LastModifiedTime: timestamp,
@@ -1984,6 +2044,7 @@ package cloudfront {
   }
 
   object FieldPatterns {
+    @inline
     def apply(
         Quantity: Int,
         Items: js.UndefOr[FieldPatternList] = js.undefined
@@ -2015,6 +2076,7 @@ package cloudfront {
   }
 
   object ForwardedValues {
+    @inline
     def apply(
         Cookies: CookiePreference,
         QueryString: Boolean,
@@ -2043,6 +2105,7 @@ package cloudfront {
   }
 
   object GeoRestriction {
+    @inline
     def apply(
         Quantity: Int,
         RestrictionType: GeoRestrictionType,
@@ -2075,6 +2138,7 @@ package cloudfront {
   }
 
   object GetCloudFrontOriginAccessIdentityConfigRequest {
+    @inline
     def apply(
         Id: String
     ): GetCloudFrontOriginAccessIdentityConfigRequest = {
@@ -2096,6 +2160,7 @@ package cloudfront {
   }
 
   object GetCloudFrontOriginAccessIdentityConfigResult {
+    @inline
     def apply(
         CloudFrontOriginAccessIdentityConfig: js.UndefOr[CloudFrontOriginAccessIdentityConfig] = js.undefined,
         ETag: js.UndefOr[String] = js.undefined
@@ -2118,6 +2183,7 @@ package cloudfront {
   }
 
   object GetCloudFrontOriginAccessIdentityRequest {
+    @inline
     def apply(
         Id: String
     ): GetCloudFrontOriginAccessIdentityRequest = {
@@ -2139,6 +2205,7 @@ package cloudfront {
   }
 
   object GetCloudFrontOriginAccessIdentityResult {
+    @inline
     def apply(
         CloudFrontOriginAccessIdentity: js.UndefOr[CloudFrontOriginAccessIdentity] = js.undefined,
         ETag: js.UndefOr[String] = js.undefined
@@ -2161,6 +2228,7 @@ package cloudfront {
   }
 
   object GetDistributionConfigRequest {
+    @inline
     def apply(
         Id: String
     ): GetDistributionConfigRequest = {
@@ -2182,6 +2250,7 @@ package cloudfront {
   }
 
   object GetDistributionConfigResult {
+    @inline
     def apply(
         DistributionConfig: js.UndefOr[DistributionConfig] = js.undefined,
         ETag: js.UndefOr[String] = js.undefined
@@ -2202,6 +2271,7 @@ package cloudfront {
   }
 
   object GetDistributionRequest {
+    @inline
     def apply(
         Id: String
     ): GetDistributionRequest = {
@@ -2223,6 +2293,7 @@ package cloudfront {
   }
 
   object GetDistributionResult {
+    @inline
     def apply(
         Distribution: js.UndefOr[Distribution] = js.undefined,
         ETag: js.UndefOr[String] = js.undefined
@@ -2240,6 +2311,7 @@ package cloudfront {
   }
 
   object GetFieldLevelEncryptionConfigRequest {
+    @inline
     def apply(
         Id: String
     ): GetFieldLevelEncryptionConfigRequest = {
@@ -2258,6 +2330,7 @@ package cloudfront {
   }
 
   object GetFieldLevelEncryptionConfigResult {
+    @inline
     def apply(
         ETag: js.UndefOr[String] = js.undefined,
         FieldLevelEncryptionConfig: js.UndefOr[FieldLevelEncryptionConfig] = js.undefined
@@ -2277,6 +2350,7 @@ package cloudfront {
   }
 
   object GetFieldLevelEncryptionProfileConfigRequest {
+    @inline
     def apply(
         Id: String
     ): GetFieldLevelEncryptionProfileConfigRequest = {
@@ -2295,6 +2369,7 @@ package cloudfront {
   }
 
   object GetFieldLevelEncryptionProfileConfigResult {
+    @inline
     def apply(
         ETag: js.UndefOr[String] = js.undefined,
         FieldLevelEncryptionProfileConfig: js.UndefOr[FieldLevelEncryptionProfileConfig] = js.undefined
@@ -2314,6 +2389,7 @@ package cloudfront {
   }
 
   object GetFieldLevelEncryptionProfileRequest {
+    @inline
     def apply(
         Id: String
     ): GetFieldLevelEncryptionProfileRequest = {
@@ -2332,6 +2408,7 @@ package cloudfront {
   }
 
   object GetFieldLevelEncryptionProfileResult {
+    @inline
     def apply(
         ETag: js.UndefOr[String] = js.undefined,
         FieldLevelEncryptionProfile: js.UndefOr[FieldLevelEncryptionProfile] = js.undefined
@@ -2351,6 +2428,7 @@ package cloudfront {
   }
 
   object GetFieldLevelEncryptionRequest {
+    @inline
     def apply(
         Id: String
     ): GetFieldLevelEncryptionRequest = {
@@ -2369,6 +2447,7 @@ package cloudfront {
   }
 
   object GetFieldLevelEncryptionResult {
+    @inline
     def apply(
         ETag: js.UndefOr[String] = js.undefined,
         FieldLevelEncryption: js.UndefOr[FieldLevelEncryption] = js.undefined
@@ -2390,6 +2469,7 @@ package cloudfront {
   }
 
   object GetInvalidationRequest {
+    @inline
     def apply(
         DistributionId: String,
         Id: String
@@ -2412,6 +2492,7 @@ package cloudfront {
   }
 
   object GetInvalidationResult {
+    @inline
     def apply(
         Invalidation: js.UndefOr[Invalidation] = js.undefined
     ): GetInvalidationResult = {
@@ -2427,6 +2508,7 @@ package cloudfront {
   }
 
   object GetPublicKeyConfigRequest {
+    @inline
     def apply(
         Id: String
     ): GetPublicKeyConfigRequest = {
@@ -2445,6 +2527,7 @@ package cloudfront {
   }
 
   object GetPublicKeyConfigResult {
+    @inline
     def apply(
         ETag: js.UndefOr[String] = js.undefined,
         PublicKeyConfig: js.UndefOr[PublicKeyConfig] = js.undefined
@@ -2462,6 +2545,7 @@ package cloudfront {
   }
 
   object GetPublicKeyRequest {
+    @inline
     def apply(
         Id: String
     ): GetPublicKeyRequest = {
@@ -2480,6 +2564,7 @@ package cloudfront {
   }
 
   object GetPublicKeyResult {
+    @inline
     def apply(
         ETag: js.UndefOr[String] = js.undefined,
         PublicKey: js.UndefOr[PublicKey] = js.undefined
@@ -2500,6 +2585,7 @@ package cloudfront {
   }
 
   object GetStreamingDistributionConfigRequest {
+    @inline
     def apply(
         Id: String
     ): GetStreamingDistributionConfigRequest = {
@@ -2521,6 +2607,7 @@ package cloudfront {
   }
 
   object GetStreamingDistributionConfigResult {
+    @inline
     def apply(
         ETag: js.UndefOr[String] = js.undefined,
         StreamingDistributionConfig: js.UndefOr[StreamingDistributionConfig] = js.undefined
@@ -2543,6 +2630,7 @@ package cloudfront {
   }
 
   object GetStreamingDistributionRequest {
+    @inline
     def apply(
         Id: String
     ): GetStreamingDistributionRequest = {
@@ -2564,6 +2652,7 @@ package cloudfront {
   }
 
   object GetStreamingDistributionResult {
+    @inline
     def apply(
         ETag: js.UndefOr[String] = js.undefined,
         StreamingDistribution: js.UndefOr[StreamingDistribution] = js.undefined
@@ -2586,6 +2675,7 @@ package cloudfront {
   }
 
   object Headers {
+    @inline
     def apply(
         Quantity: Int,
         Items: js.UndefOr[HeaderList] = js.undefined
@@ -2626,6 +2716,7 @@ package cloudfront {
   }
 
   object Invalidation {
+    @inline
     def apply(
         CreateTime: timestamp,
         Id: String,
@@ -2653,6 +2744,7 @@ package cloudfront {
   }
 
   object InvalidationBatch {
+    @inline
     def apply(
         CallerReference: String,
         Paths: Paths
@@ -2680,6 +2772,7 @@ package cloudfront {
   }
 
   object InvalidationList {
+    @inline
     def apply(
         IsTruncated: Boolean,
         Marker: String,
@@ -2712,6 +2805,7 @@ package cloudfront {
   }
 
   object InvalidationSummary {
+    @inline
     def apply(
         CreateTime: timestamp,
         Id: String,
@@ -2746,6 +2840,7 @@ package cloudfront {
   }
 
   object KeyPairIds {
+    @inline
     def apply(
         Quantity: Int,
         Items: js.UndefOr[KeyPairIdList] = js.undefined
@@ -2770,6 +2865,7 @@ package cloudfront {
   }
 
   object LambdaFunctionAssociation {
+    @inline
     def apply(
         EventType: EventType,
         LambdaFunctionARN: LambdaFunctionARN,
@@ -2797,6 +2893,7 @@ package cloudfront {
   }
 
   object LambdaFunctionAssociations {
+    @inline
     def apply(
         Quantity: Int,
         Items: js.UndefOr[LambdaFunctionAssociationList] = js.undefined
@@ -2820,6 +2917,7 @@ package cloudfront {
   }
 
   object ListCloudFrontOriginAccessIdentitiesRequest {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         MaxItems: js.UndefOr[String] = js.undefined
@@ -2840,6 +2938,7 @@ package cloudfront {
   }
 
   object ListCloudFrontOriginAccessIdentitiesResult {
+    @inline
     def apply(
         CloudFrontOriginAccessIdentityList: js.UndefOr[CloudFrontOriginAccessIdentityList] = js.undefined
     ): ListCloudFrontOriginAccessIdentitiesResult = {
@@ -2862,6 +2961,7 @@ package cloudfront {
   }
 
   object ListDistributionsByWebACLIdRequest {
+    @inline
     def apply(
         WebACLId: String,
         Marker: js.UndefOr[String] = js.undefined,
@@ -2886,6 +2986,7 @@ package cloudfront {
   }
 
   object ListDistributionsByWebACLIdResult {
+    @inline
     def apply(
         DistributionList: js.UndefOr[DistributionList] = js.undefined
     ): ListDistributionsByWebACLIdResult = {
@@ -2905,6 +3006,7 @@ package cloudfront {
   }
 
   object ListDistributionsRequest {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         MaxItems: js.UndefOr[String] = js.undefined
@@ -2925,6 +3027,7 @@ package cloudfront {
   }
 
   object ListDistributionsResult {
+    @inline
     def apply(
         DistributionList: js.UndefOr[DistributionList] = js.undefined
     ): ListDistributionsResult = {
@@ -2941,6 +3044,7 @@ package cloudfront {
   }
 
   object ListFieldLevelEncryptionConfigsRequest {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         MaxItems: js.UndefOr[String] = js.undefined
@@ -2958,6 +3062,7 @@ package cloudfront {
   }
 
   object ListFieldLevelEncryptionConfigsResult {
+    @inline
     def apply(
         FieldLevelEncryptionList: js.UndefOr[FieldLevelEncryptionList] = js.undefined
     ): ListFieldLevelEncryptionConfigsResult = {
@@ -2974,6 +3079,7 @@ package cloudfront {
   }
 
   object ListFieldLevelEncryptionProfilesRequest {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         MaxItems: js.UndefOr[String] = js.undefined
@@ -2991,6 +3097,7 @@ package cloudfront {
   }
 
   object ListFieldLevelEncryptionProfilesResult {
+    @inline
     def apply(
         FieldLevelEncryptionProfileList: js.UndefOr[FieldLevelEncryptionProfileList] = js.undefined
     ): ListFieldLevelEncryptionProfilesResult = {
@@ -3013,6 +3120,7 @@ package cloudfront {
   }
 
   object ListInvalidationsRequest {
+    @inline
     def apply(
         DistributionId: String,
         Marker: js.UndefOr[String] = js.undefined,
@@ -3037,6 +3145,7 @@ package cloudfront {
   }
 
   object ListInvalidationsResult {
+    @inline
     def apply(
         InvalidationList: js.UndefOr[InvalidationList] = js.undefined
     ): ListInvalidationsResult = {
@@ -3053,6 +3162,7 @@ package cloudfront {
   }
 
   object ListPublicKeysRequest {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         MaxItems: js.UndefOr[String] = js.undefined
@@ -3070,6 +3180,7 @@ package cloudfront {
   }
 
   object ListPublicKeysResult {
+    @inline
     def apply(
         PublicKeyList: js.UndefOr[PublicKeyList] = js.undefined
     ): ListPublicKeysResult = {
@@ -3089,6 +3200,7 @@ package cloudfront {
   }
 
   object ListStreamingDistributionsRequest {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         MaxItems: js.UndefOr[String] = js.undefined
@@ -3109,6 +3221,7 @@ package cloudfront {
   }
 
   object ListStreamingDistributionsResult {
+    @inline
     def apply(
         StreamingDistributionList: js.UndefOr[StreamingDistributionList] = js.undefined
     ): ListStreamingDistributionsResult = {
@@ -3129,6 +3242,7 @@ package cloudfront {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         Resource: ResourceARN
     ): ListTagsForResourceRequest = {
@@ -3149,6 +3263,7 @@ package cloudfront {
   }
 
   object ListTagsForResourceResult {
+    @inline
     def apply(
         Tags: Tags
     ): ListTagsForResourceResult = {
@@ -3172,6 +3287,7 @@ package cloudfront {
   }
 
   object LoggingConfig {
+    @inline
     def apply(
         Bucket: String,
         Enabled: Boolean,
@@ -3226,6 +3342,7 @@ package cloudfront {
   }
 
   object Origin {
+    @inline
     def apply(
         DomainName: String,
         Id: String,
@@ -3257,6 +3374,7 @@ package cloudfront {
   }
 
   object OriginCustomHeader {
+    @inline
     def apply(
         HeaderName: String,
         HeaderValue: String
@@ -3281,6 +3399,7 @@ package cloudfront {
   }
 
   object OriginGroup {
+    @inline
     def apply(
         FailoverCriteria: OriginGroupFailoverCriteria,
         Id: String,
@@ -3305,6 +3424,7 @@ package cloudfront {
   }
 
   object OriginGroupFailoverCriteria {
+    @inline
     def apply(
         StatusCodes: StatusCodes
     ): OriginGroupFailoverCriteria = {
@@ -3325,6 +3445,7 @@ package cloudfront {
   }
 
   object OriginGroupMember {
+    @inline
     def apply(
         OriginId: String
     ): OriginGroupMember = {
@@ -3346,6 +3467,7 @@ package cloudfront {
   }
 
   object OriginGroupMembers {
+    @inline
     def apply(
         Items: OriginGroupMemberList,
         Quantity: Int
@@ -3369,6 +3491,7 @@ package cloudfront {
   }
 
   object OriginGroups {
+    @inline
     def apply(
         Quantity: Int,
         Items: js.UndefOr[OriginGroupList] = js.undefined
@@ -3400,6 +3523,7 @@ package cloudfront {
   }
 
   object OriginSslProtocols {
+    @inline
     def apply(
         Items: SslProtocolsList,
         Quantity: Int
@@ -3423,6 +3547,7 @@ package cloudfront {
   }
 
   object Origins {
+    @inline
     def apply(
         Items: OriginList,
         Quantity: Int
@@ -3446,6 +3571,7 @@ package cloudfront {
   }
 
   object Paths {
+    @inline
     def apply(
         Quantity: Int,
         Items: js.UndefOr[PathList] = js.undefined
@@ -3478,6 +3604,7 @@ package cloudfront {
   }
 
   object PublicKey {
+    @inline
     def apply(
         CreatedTime: timestamp,
         Id: String,
@@ -3505,6 +3632,7 @@ package cloudfront {
   }
 
   object PublicKeyConfig {
+    @inline
     def apply(
         CallerReference: String,
         EncodedKey: String,
@@ -3534,6 +3662,7 @@ package cloudfront {
   }
 
   object PublicKeyList {
+    @inline
     def apply(
         MaxItems: Int,
         Quantity: Int,
@@ -3564,6 +3693,7 @@ package cloudfront {
   }
 
   object PublicKeySummary {
+    @inline
     def apply(
         CreatedTime: timestamp,
         EncodedKey: String,
@@ -3593,6 +3723,7 @@ package cloudfront {
   }
 
   object QueryArgProfile {
+    @inline
     def apply(
         ProfileId: String,
         QueryArg: String
@@ -3616,6 +3747,7 @@ package cloudfront {
   }
 
   object QueryArgProfileConfig {
+    @inline
     def apply(
         ForwardWhenQueryArgProfileIsUnknown: Boolean,
         QueryArgProfiles: js.UndefOr[QueryArgProfiles] = js.undefined
@@ -3639,6 +3771,7 @@ package cloudfront {
   }
 
   object QueryArgProfiles {
+    @inline
     def apply(
         Quantity: Int,
         Items: js.UndefOr[QueryArgProfileList] = js.undefined
@@ -3662,6 +3795,7 @@ package cloudfront {
   }
 
   object QueryStringCacheKeys {
+    @inline
     def apply(
         Quantity: Int,
         Items: js.UndefOr[QueryStringCacheKeysList] = js.undefined
@@ -3684,6 +3818,7 @@ package cloudfront {
   }
 
   object Restrictions {
+    @inline
     def apply(
         GeoRestriction: GeoRestriction
     ): Restrictions = {
@@ -3705,6 +3840,7 @@ package cloudfront {
   }
 
   object S3Origin {
+    @inline
     def apply(
         DomainName: String,
         OriginAccessIdentity: String
@@ -3727,6 +3863,7 @@ package cloudfront {
   }
 
   object S3OriginConfig {
+    @inline
     def apply(
         OriginAccessIdentity: String
     ): S3OriginConfig = {
@@ -3755,6 +3892,7 @@ package cloudfront {
   }
 
   object Signer {
+    @inline
     def apply(
         AwsAccountNumber: js.UndefOr[String] = js.undefined,
         KeyPairIds: js.UndefOr[KeyPairIds] = js.undefined
@@ -3785,6 +3923,7 @@ package cloudfront {
   }
 
   object StatusCodes {
+    @inline
     def apply(
         Items: StatusCodeList,
         Quantity: Int
@@ -3813,6 +3952,7 @@ package cloudfront {
   }
 
   object StreamingDistribution {
+    @inline
     def apply(
         ARN: String,
         ActiveTrustedSigners: ActiveTrustedSigners,
@@ -3852,6 +3992,7 @@ package cloudfront {
   }
 
   object StreamingDistributionConfig {
+    @inline
     def apply(
         CallerReference: String,
         Comment: String,
@@ -3887,6 +4028,7 @@ package cloudfront {
   }
 
   object StreamingDistributionConfigWithTags {
+    @inline
     def apply(
         StreamingDistributionConfig: StreamingDistributionConfig,
         Tags: Tags
@@ -3914,6 +4056,7 @@ package cloudfront {
   }
 
   object StreamingDistributionList {
+    @inline
     def apply(
         IsTruncated: Boolean,
         Marker: String,
@@ -3954,6 +4097,7 @@ package cloudfront {
   }
 
   object StreamingDistributionSummary {
+    @inline
     def apply(
         ARN: String,
         Aliases: Aliases,
@@ -3996,6 +4140,7 @@ package cloudfront {
   }
 
   object StreamingLoggingConfig {
+    @inline
     def apply(
         Bucket: String,
         Enabled: Boolean,
@@ -4021,6 +4166,7 @@ package cloudfront {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: js.UndefOr[TagValue] = js.undefined
@@ -4043,6 +4189,7 @@ package cloudfront {
   }
 
   object TagKeys {
+    @inline
     def apply(
         Items: js.UndefOr[TagKeyList] = js.undefined
     ): TagKeys = {
@@ -4062,6 +4209,7 @@ package cloudfront {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         Resource: ResourceARN,
         Tags: Tags
@@ -4084,6 +4232,7 @@ package cloudfront {
   }
 
   object Tags {
+    @inline
     def apply(
         Items: js.UndefOr[TagList] = js.undefined
     ): Tags = {
@@ -4108,6 +4257,7 @@ package cloudfront {
   }
 
   object TrustedSigners {
+    @inline
     def apply(
         Enabled: Boolean,
         Quantity: Int,
@@ -4133,6 +4283,7 @@ package cloudfront {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         Resource: ResourceARN,
         TagKeys: TagKeys
@@ -4157,6 +4308,7 @@ package cloudfront {
   }
 
   object UpdateCloudFrontOriginAccessIdentityRequest {
+    @inline
     def apply(
         CloudFrontOriginAccessIdentityConfig: CloudFrontOriginAccessIdentityConfig,
         Id: String,
@@ -4182,6 +4334,7 @@ package cloudfront {
   }
 
   object UpdateCloudFrontOriginAccessIdentityResult {
+    @inline
     def apply(
         CloudFrontOriginAccessIdentity: js.UndefOr[CloudFrontOriginAccessIdentity] = js.undefined,
         ETag: js.UndefOr[String] = js.undefined
@@ -4206,6 +4359,7 @@ package cloudfront {
   }
 
   object UpdateDistributionRequest {
+    @inline
     def apply(
         DistributionConfig: DistributionConfig,
         Id: String,
@@ -4231,6 +4385,7 @@ package cloudfront {
   }
 
   object UpdateDistributionResult {
+    @inline
     def apply(
         Distribution: js.UndefOr[Distribution] = js.undefined,
         ETag: js.UndefOr[String] = js.undefined
@@ -4250,6 +4405,7 @@ package cloudfront {
   }
 
   object UpdateFieldLevelEncryptionConfigRequest {
+    @inline
     def apply(
         FieldLevelEncryptionConfig: FieldLevelEncryptionConfig,
         Id: String,
@@ -4272,6 +4428,7 @@ package cloudfront {
   }
 
   object UpdateFieldLevelEncryptionConfigResult {
+    @inline
     def apply(
         ETag: js.UndefOr[String] = js.undefined,
         FieldLevelEncryption: js.UndefOr[FieldLevelEncryption] = js.undefined
@@ -4291,6 +4448,7 @@ package cloudfront {
   }
 
   object UpdateFieldLevelEncryptionProfileRequest {
+    @inline
     def apply(
         FieldLevelEncryptionProfileConfig: FieldLevelEncryptionProfileConfig,
         Id: String,
@@ -4313,6 +4471,7 @@ package cloudfront {
   }
 
   object UpdateFieldLevelEncryptionProfileResult {
+    @inline
     def apply(
         ETag: js.UndefOr[String] = js.undefined,
         FieldLevelEncryptionProfile: js.UndefOr[FieldLevelEncryptionProfile] = js.undefined
@@ -4334,6 +4493,7 @@ package cloudfront {
   }
 
   object UpdatePublicKeyRequest {
+    @inline
     def apply(
         Id: String,
         PublicKeyConfig: PublicKeyConfig,
@@ -4356,6 +4516,7 @@ package cloudfront {
   }
 
   object UpdatePublicKeyResult {
+    @inline
     def apply(
         ETag: js.UndefOr[String] = js.undefined,
         PublicKey: js.UndefOr[PublicKey] = js.undefined
@@ -4378,6 +4539,7 @@ package cloudfront {
   }
 
   object UpdateStreamingDistributionRequest {
+    @inline
     def apply(
         Id: String,
         StreamingDistributionConfig: StreamingDistributionConfig,
@@ -4403,6 +4565,7 @@ package cloudfront {
   }
 
   object UpdateStreamingDistributionResult {
+    @inline
     def apply(
         ETag: js.UndefOr[String] = js.undefined,
         StreamingDistribution: js.UndefOr[StreamingDistribution] = js.undefined
@@ -4437,6 +4600,7 @@ package cloudfront {
   }
 
   object ViewerCertificate {
+    @inline
     def apply(
         ACMCertificateArn: js.UndefOr[String] = js.undefined,
         Certificate: js.UndefOr[String] = js.undefined,

@@ -88,6 +88,7 @@ package signer {
   }
 
   object CancelSigningProfileRequest {
+    @inline
     def apply(
         profileName: ProfileName
     ): CancelSigningProfileRequest = {
@@ -111,6 +112,7 @@ package signer {
   }
 
   object DescribeSigningJobRequest {
+    @inline
     def apply(
         jobId: JobId
     ): DescribeSigningJobRequest = {
@@ -140,6 +142,7 @@ package signer {
   }
 
   object DescribeSigningJobResponse {
+    @inline
     def apply(
         completedAt: js.UndefOr[CompletedAt] = js.undefined,
         createdAt: js.UndefOr[CreatedAt] = js.undefined,
@@ -182,6 +185,7 @@ package signer {
   }
 
   object Destination {
+    @inline
     def apply(
         s3: js.UndefOr[S3Destination] = js.undefined
     ): Destination = {
@@ -208,6 +212,7 @@ package signer {
   }
 
   object EncryptionAlgorithmOptions {
+    @inline
     def apply(
         allowedValues: EncryptionAlgorithms,
         defaultValue: EncryptionAlgorithm
@@ -227,6 +232,7 @@ package signer {
   }
 
   object GetSigningPlatformRequest {
+    @inline
     def apply(
         platformId: PlatformId
     ): GetSigningPlatformRequest = {
@@ -251,6 +257,7 @@ package signer {
   }
 
   object GetSigningPlatformResponse {
+    @inline
     def apply(
         category: js.UndefOr[Category] = js.undefined,
         displayName: js.UndefOr[DisplayName] = js.undefined,
@@ -280,6 +287,7 @@ package signer {
   }
 
   object GetSigningProfileRequest {
+    @inline
     def apply(
         profileName: ProfileName
     ): GetSigningProfileRequest = {
@@ -302,6 +310,7 @@ package signer {
   }
 
   object GetSigningProfileResponse {
+    @inline
     def apply(
         overrides: js.UndefOr[SigningPlatformOverrides] = js.undefined,
         platformId: js.UndefOr[PlatformId] = js.undefined,
@@ -338,6 +347,7 @@ package signer {
   }
 
   object HashAlgorithmOptions {
+    @inline
     def apply(
         allowedValues: HashAlgorithms,
         defaultValue: HashAlgorithm
@@ -367,6 +377,7 @@ package signer {
   }
 
   object ListSigningJobsRequest {
+    @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
@@ -391,6 +402,7 @@ package signer {
   }
 
   object ListSigningJobsResponse {
+    @inline
     def apply(
         jobs: js.UndefOr[SigningJobs] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -412,6 +424,7 @@ package signer {
   }
 
   object ListSigningPlatformsRequest {
+    @inline
     def apply(
         category: js.UndefOr[String] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -436,6 +449,7 @@ package signer {
   }
 
   object ListSigningPlatformsResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[String] = js.undefined,
         platforms: js.UndefOr[SigningPlatforms] = js.undefined
@@ -455,6 +469,7 @@ package signer {
   }
 
   object ListSigningProfilesRequest {
+    @inline
     def apply(
         includeCanceled: js.UndefOr[Boolean] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -475,6 +490,7 @@ package signer {
   }
 
   object ListSigningProfilesResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         profiles: js.UndefOr[SigningProfiles] = js.undefined
@@ -496,6 +512,7 @@ package signer {
   }
 
   object PutSigningProfileRequest {
+    @inline
     def apply(
         platformId: PlatformId,
         profileName: ProfileName,
@@ -521,6 +538,7 @@ package signer {
   }
 
   object PutSigningProfileResponse {
+    @inline
     def apply(
         arn: js.UndefOr[String] = js.undefined
     ): PutSigningProfileResponse = {
@@ -540,6 +558,7 @@ package signer {
   }
 
   object S3Destination {
+    @inline
     def apply(
         bucketName: js.UndefOr[BucketName] = js.undefined,
         prefix: js.UndefOr[Prefix] = js.undefined
@@ -561,6 +580,7 @@ package signer {
   }
 
   object S3SignedObject {
+    @inline
     def apply(
         bucketName: js.UndefOr[BucketName] = js.undefined,
         key: js.UndefOr[key] = js.undefined
@@ -583,6 +603,7 @@ package signer {
   }
 
   object S3Source {
+    @inline
     def apply(
         bucketName: BucketName,
         key: Key,
@@ -607,6 +628,7 @@ package signer {
   }
 
   object SignedObject {
+    @inline
     def apply(
         s3: js.UndefOr[S3SignedObject] = js.undefined
     ): SignedObject = {
@@ -626,6 +648,7 @@ package signer {
   }
 
   object SigningConfiguration {
+    @inline
     def apply(
         encryptionAlgorithmOptions: EncryptionAlgorithmOptions,
         hashAlgorithmOptions: HashAlgorithmOptions
@@ -649,6 +672,7 @@ package signer {
   }
 
   object SigningConfigurationOverrides {
+    @inline
     def apply(
         encryptionAlgorithm: js.UndefOr[EncryptionAlgorithm] = js.undefined,
         hashAlgorithm: js.UndefOr[HashAlgorithm] = js.undefined
@@ -670,6 +694,7 @@ package signer {
   }
 
   object SigningImageFormat {
+    @inline
     def apply(
         defaultFormat: ImageFormat,
         supportedFormats: ImageFormats
@@ -697,6 +722,7 @@ package signer {
   }
 
   object SigningJob {
+    @inline
     def apply(
         createdAt: js.UndefOr[CreatedAt] = js.undefined,
         jobId: js.UndefOr[JobId] = js.undefined,
@@ -725,6 +751,7 @@ package signer {
   }
 
   object SigningMaterial {
+    @inline
     def apply(
         certificateArn: CertificateArn
     ): SigningMaterial = {
@@ -752,6 +779,7 @@ package signer {
   }
 
   object SigningPlatform {
+    @inline
     def apply(
         category: js.UndefOr[Category] = js.undefined,
         displayName: js.UndefOr[String] = js.undefined,
@@ -784,6 +812,7 @@ package signer {
   }
 
   object SigningPlatformOverrides {
+    @inline
     def apply(
         signingConfiguration: js.UndefOr[SigningConfigurationOverrides] = js.undefined
     ): SigningPlatformOverrides = {
@@ -806,6 +835,7 @@ package signer {
   }
 
   object SigningProfile {
+    @inline
     def apply(
         platformId: js.UndefOr[PlatformId] = js.undefined,
         profileName: js.UndefOr[ProfileName] = js.undefined,
@@ -847,6 +877,7 @@ package signer {
   }
 
   object Source {
+    @inline
     def apply(
         s3: js.UndefOr[S3Source] = js.undefined
     ): Source = {
@@ -865,6 +896,7 @@ package signer {
   }
 
   object StartSigningJobRequest {
+    @inline
     def apply(
         clientRequestToken: ClientRequestToken,
         destination: Destination,
@@ -888,6 +920,7 @@ package signer {
   }
 
   object StartSigningJobResponse {
+    @inline
     def apply(
         jobId: js.UndefOr[JobId] = js.undefined
     ): StartSigningJobResponse = {

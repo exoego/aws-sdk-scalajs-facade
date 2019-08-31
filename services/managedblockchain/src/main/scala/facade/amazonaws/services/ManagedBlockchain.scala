@@ -122,6 +122,7 @@ package managedblockchain {
   }
 
   object ApprovalThresholdPolicy {
+    @inline
     def apply(
         ProposalDurationInHours: js.UndefOr[ProposalDurationInt] = js.undefined,
         ThresholdComparator: js.UndefOr[ThresholdComparator] = js.undefined,
@@ -144,6 +145,7 @@ package managedblockchain {
   }
 
   object CreateMemberInput {
+    @inline
     def apply(
         ClientRequestToken: ClientRequestTokenString,
         InvitationId: ResourceIdString,
@@ -167,6 +169,7 @@ package managedblockchain {
   }
 
   object CreateMemberOutput {
+    @inline
     def apply(
         MemberId: js.UndefOr[ResourceIdString] = js.undefined
     ): CreateMemberOutput = {
@@ -189,6 +192,7 @@ package managedblockchain {
   }
 
   object CreateNetworkInput {
+    @inline
     def apply(
         ClientRequestToken: ClientRequestTokenString,
         Framework: Framework,
@@ -221,6 +225,7 @@ package managedblockchain {
   }
 
   object CreateNetworkOutput {
+    @inline
     def apply(
         MemberId: js.UndefOr[ResourceIdString] = js.undefined,
         NetworkId: js.UndefOr[ResourceIdString] = js.undefined
@@ -241,6 +246,7 @@ package managedblockchain {
   }
 
   object CreateNodeInput {
+    @inline
     def apply(
         ClientRequestToken: ClientRequestTokenString,
         MemberId: ResourceIdString,
@@ -264,6 +270,7 @@ package managedblockchain {
   }
 
   object CreateNodeOutput {
+    @inline
     def apply(
         NodeId: js.UndefOr[ResourceIdString] = js.undefined
     ): CreateNodeOutput = {
@@ -283,6 +290,7 @@ package managedblockchain {
   }
 
   object CreateProposalInput {
+    @inline
     def apply(
         Actions: ProposalActions,
         ClientRequestToken: ClientRequestTokenString,
@@ -308,6 +316,7 @@ package managedblockchain {
   }
 
   object CreateProposalOutput {
+    @inline
     def apply(
         ProposalId: js.UndefOr[ResourceIdString] = js.undefined
     ): CreateProposalOutput = {
@@ -324,6 +333,7 @@ package managedblockchain {
   }
 
   object DeleteMemberInput {
+    @inline
     def apply(
         MemberId: ResourceIdString,
         NetworkId: ResourceIdString
@@ -341,6 +351,7 @@ package managedblockchain {
   trait DeleteMemberOutput extends js.Object {}
 
   object DeleteMemberOutput {
+    @inline
     def apply(
         ): DeleteMemberOutput = {
       val __obj = js.Dynamic.literal()
@@ -357,6 +368,7 @@ package managedblockchain {
   }
 
   object DeleteNodeInput {
+    @inline
     def apply(
         MemberId: ResourceIdString,
         NetworkId: ResourceIdString,
@@ -376,6 +388,7 @@ package managedblockchain {
   trait DeleteNodeOutput extends js.Object {}
 
   object DeleteNodeOutput {
+    @inline
     def apply(
         ): DeleteNodeOutput = {
       val __obj = js.Dynamic.literal()
@@ -404,6 +417,7 @@ package managedblockchain {
   }
 
   object GetMemberInput {
+    @inline
     def apply(
         MemberId: ResourceIdString,
         NetworkId: ResourceIdString
@@ -423,6 +437,7 @@ package managedblockchain {
   }
 
   object GetMemberOutput {
+    @inline
     def apply(
         Member: js.UndefOr[Member] = js.undefined
     ): GetMemberOutput = {
@@ -438,6 +453,7 @@ package managedblockchain {
   }
 
   object GetNetworkInput {
+    @inline
     def apply(
         NetworkId: ResourceIdString
     ): GetNetworkInput = {
@@ -455,6 +471,7 @@ package managedblockchain {
   }
 
   object GetNetworkOutput {
+    @inline
     def apply(
         Network: js.UndefOr[Network] = js.undefined
     ): GetNetworkOutput = {
@@ -472,6 +489,7 @@ package managedblockchain {
   }
 
   object GetNodeInput {
+    @inline
     def apply(
         MemberId: ResourceIdString,
         NetworkId: ResourceIdString,
@@ -493,6 +511,7 @@ package managedblockchain {
   }
 
   object GetNodeOutput {
+    @inline
     def apply(
         Node: js.UndefOr[Node] = js.undefined
     ): GetNodeOutput = {
@@ -509,6 +528,7 @@ package managedblockchain {
   }
 
   object GetProposalInput {
+    @inline
     def apply(
         NetworkId: ResourceIdString,
         ProposalId: ResourceIdString
@@ -528,6 +548,7 @@ package managedblockchain {
   }
 
   object GetProposalOutput {
+    @inline
     def apply(
         Proposal: js.UndefOr[Proposal] = js.undefined
     ): GetProposalOutput = {
@@ -550,6 +571,7 @@ package managedblockchain {
   }
 
   object Invitation {
+    @inline
     def apply(
         CreationDate: js.UndefOr[Timestamp] = js.undefined,
         ExpirationDate: js.UndefOr[Timestamp] = js.undefined,
@@ -586,6 +608,7 @@ package managedblockchain {
   }
 
   object InviteAction {
+    @inline
     def apply(
         Principal: PrincipalString
     ): InviteAction = {
@@ -604,6 +627,7 @@ package managedblockchain {
   }
 
   object ListInvitationsInput {
+    @inline
     def apply(
         MaxResults: js.UndefOr[ProposalListMaxResults] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -622,6 +646,7 @@ package managedblockchain {
   }
 
   object ListInvitationsOutput {
+    @inline
     def apply(
         Invitations: js.UndefOr[InvitationList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -644,6 +669,7 @@ package managedblockchain {
   }
 
   object ListMembersInput {
+    @inline
     def apply(
         NetworkId: ResourceIdString,
         IsOwned: js.UndefOr[IsOwned] = js.undefined,
@@ -672,6 +698,7 @@ package managedblockchain {
   }
 
   object ListMembersOutput {
+    @inline
     def apply(
         Members: js.UndefOr[MemberSummaryList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -693,6 +720,7 @@ package managedblockchain {
   }
 
   object ListNetworksInput {
+    @inline
     def apply(
         Framework: js.UndefOr[Framework] = js.undefined,
         MaxResults: js.UndefOr[NetworkListMaxResults] = js.undefined,
@@ -717,6 +745,7 @@ package managedblockchain {
   }
 
   object ListNetworksOutput {
+    @inline
     def apply(
         Networks: js.UndefOr[NetworkSummaryList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -738,6 +767,7 @@ package managedblockchain {
   }
 
   object ListNodesInput {
+    @inline
     def apply(
         MemberId: ResourceIdString,
         NetworkId: ResourceIdString,
@@ -764,6 +794,7 @@ package managedblockchain {
   }
 
   object ListNodesOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         Nodes: js.UndefOr[NodeSummaryList] = js.undefined
@@ -784,6 +815,7 @@ package managedblockchain {
   }
 
   object ListProposalVotesInput {
+    @inline
     def apply(
         NetworkId: ResourceIdString,
         ProposalId: ResourceIdString,
@@ -808,6 +840,7 @@ package managedblockchain {
   }
 
   object ListProposalVotesOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         ProposalVotes: js.UndefOr[ProposalVoteList] = js.undefined
@@ -827,6 +860,7 @@ package managedblockchain {
   }
 
   object ListProposalsInput {
+    @inline
     def apply(
         NetworkId: ResourceIdString,
         MaxResults: js.UndefOr[ProposalListMaxResults] = js.undefined,
@@ -849,6 +883,7 @@ package managedblockchain {
   }
 
   object ListProposalsOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         Proposals: js.UndefOr[ProposalSummaryList] = js.undefined
@@ -875,6 +910,7 @@ package managedblockchain {
   }
 
   object Member {
+    @inline
     def apply(
         CreationDate: js.UndefOr[Timestamp] = js.undefined,
         Description: js.UndefOr[DescriptionString] = js.undefined,
@@ -907,6 +943,7 @@ package managedblockchain {
   }
 
   object MemberConfiguration {
+    @inline
     def apply(
         FrameworkConfiguration: MemberFrameworkConfiguration,
         Name: NetworkMemberNameString,
@@ -932,6 +969,7 @@ package managedblockchain {
   }
 
   object MemberFabricAttributes {
+    @inline
     def apply(
         AdminUsername: js.UndefOr[UsernameString] = js.undefined,
         CaEndpoint: js.UndefOr[String] = js.undefined
@@ -953,6 +991,7 @@ package managedblockchain {
   }
 
   object MemberFabricConfiguration {
+    @inline
     def apply(
         AdminPassword: PasswordString,
         AdminUsername: UsernameString
@@ -975,6 +1014,7 @@ package managedblockchain {
   }
 
   object MemberFrameworkAttributes {
+    @inline
     def apply(
         Fabric: js.UndefOr[MemberFabricAttributes] = js.undefined
     ): MemberFrameworkAttributes = {
@@ -993,6 +1033,7 @@ package managedblockchain {
   }
 
   object MemberFrameworkConfiguration {
+    @inline
     def apply(
         Fabric: js.UndefOr[MemberFabricConfiguration] = js.undefined
     ): MemberFrameworkConfiguration = {
@@ -1026,6 +1067,7 @@ package managedblockchain {
   }
 
   object MemberSummary {
+    @inline
     def apply(
         CreationDate: js.UndefOr[Timestamp] = js.undefined,
         Description: js.UndefOr[DescriptionString] = js.undefined,
@@ -1063,6 +1105,7 @@ package managedblockchain {
   }
 
   object Network {
+    @inline
     def apply(
         CreationDate: js.UndefOr[Timestamp] = js.undefined,
         Description: js.UndefOr[DescriptionString] = js.undefined,
@@ -1100,6 +1143,7 @@ package managedblockchain {
   }
 
   object NetworkFabricAttributes {
+    @inline
     def apply(
         Edition: js.UndefOr[Edition] = js.undefined,
         OrderingServiceEndpoint: js.UndefOr[String] = js.undefined
@@ -1120,6 +1164,7 @@ package managedblockchain {
   }
 
   object NetworkFabricConfiguration {
+    @inline
     def apply(
         Edition: Edition
     ): NetworkFabricConfiguration = {
@@ -1140,6 +1185,7 @@ package managedblockchain {
   }
 
   object NetworkFrameworkAttributes {
+    @inline
     def apply(
         Fabric: js.UndefOr[NetworkFabricAttributes] = js.undefined
     ): NetworkFrameworkAttributes = {
@@ -1158,6 +1204,7 @@ package managedblockchain {
   }
 
   object NetworkFrameworkConfiguration {
+    @inline
     def apply(
         Fabric: js.UndefOr[NetworkFabricConfiguration] = js.undefined
     ): NetworkFrameworkConfiguration = {
@@ -1192,6 +1239,7 @@ package managedblockchain {
   }
 
   object NetworkSummary {
+    @inline
     def apply(
         CreationDate: js.UndefOr[Timestamp] = js.undefined,
         Description: js.UndefOr[DescriptionString] = js.undefined,
@@ -1229,6 +1277,7 @@ package managedblockchain {
   }
 
   object Node {
+    @inline
     def apply(
         AvailabilityZone: js.UndefOr[AvailabilityZoneString] = js.undefined,
         CreationDate: js.UndefOr[Timestamp] = js.undefined,
@@ -1262,6 +1311,7 @@ package managedblockchain {
   }
 
   object NodeConfiguration {
+    @inline
     def apply(
         AvailabilityZone: AvailabilityZoneString,
         InstanceType: InstanceTypeString
@@ -1285,6 +1335,7 @@ package managedblockchain {
   }
 
   object NodeFabricAttributes {
+    @inline
     def apply(
         PeerEndpoint: js.UndefOr[String] = js.undefined,
         PeerEventEndpoint: js.UndefOr[String] = js.undefined
@@ -1305,6 +1356,7 @@ package managedblockchain {
   }
 
   object NodeFrameworkAttributes {
+    @inline
     def apply(
         Fabric: js.UndefOr[NodeFabricAttributes] = js.undefined
     ): NodeFrameworkAttributes = {
@@ -1338,6 +1390,7 @@ package managedblockchain {
   }
 
   object NodeSummary {
+    @inline
     def apply(
         AvailabilityZone: js.UndefOr[AvailabilityZoneString] = js.undefined,
         CreationDate: js.UndefOr[Timestamp] = js.undefined,
@@ -1375,6 +1428,7 @@ package managedblockchain {
   }
 
   object Proposal {
+    @inline
     def apply(
         Actions: js.UndefOr[ProposalActions] = js.undefined,
         CreationDate: js.UndefOr[Timestamp] = js.undefined,
@@ -1416,6 +1470,7 @@ package managedblockchain {
   }
 
   object ProposalActions {
+    @inline
     def apply(
         Invitations: js.UndefOr[InviteActionList] = js.undefined,
         Removals: js.UndefOr[RemoveActionList] = js.undefined
@@ -1452,6 +1507,7 @@ package managedblockchain {
   }
 
   object ProposalSummary {
+    @inline
     def apply(
         CreationDate: js.UndefOr[Timestamp] = js.undefined,
         Description: js.UndefOr[DescriptionString] = js.undefined,
@@ -1479,6 +1535,7 @@ package managedblockchain {
   }
 
   object RejectInvitationInput {
+    @inline
     def apply(
         InvitationId: ResourceIdString
     ): RejectInvitationInput = {
@@ -1494,6 +1551,7 @@ package managedblockchain {
   trait RejectInvitationOutput extends js.Object {}
 
   object RejectInvitationOutput {
+    @inline
     def apply(
         ): RejectInvitationOutput = {
       val __obj = js.Dynamic.literal()
@@ -1511,6 +1569,7 @@ package managedblockchain {
   }
 
   object RemoveAction {
+    @inline
     def apply(
         MemberId: ResourceIdString
     ): RemoveAction = {
@@ -1538,6 +1597,7 @@ package managedblockchain {
   }
 
   object VoteOnProposalInput {
+    @inline
     def apply(
         NetworkId: ResourceIdString,
         ProposalId: ResourceIdString,
@@ -1559,6 +1619,7 @@ package managedblockchain {
   trait VoteOnProposalOutput extends js.Object {}
 
   object VoteOnProposalOutput {
+    @inline
     def apply(
         ): VoteOnProposalOutput = {
       val __obj = js.Dynamic.literal()
@@ -1578,6 +1639,7 @@ package managedblockchain {
   }
 
   object VoteSummary {
+    @inline
     def apply(
         MemberId: js.UndefOr[ResourceIdString] = js.undefined,
         MemberName: js.UndefOr[NetworkMemberNameString] = js.undefined,
@@ -1607,6 +1669,7 @@ package managedblockchain {
   }
 
   object VotingPolicy {
+    @inline
     def apply(
         ApprovalThresholdPolicy: js.UndefOr[ApprovalThresholdPolicy] = js.undefined
     ): VotingPolicy = {

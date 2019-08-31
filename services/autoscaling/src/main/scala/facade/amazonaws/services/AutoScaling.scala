@@ -333,6 +333,7 @@ package autoscaling {
   }
 
   object ActivitiesType {
+    @inline
     def apply(
         Activities: Activities,
         NextToken: js.UndefOr[XmlString] = js.undefined
@@ -364,6 +365,7 @@ package autoscaling {
   }
 
   object Activity {
+    @inline
     def apply(
         ActivityId: XmlString,
         AutoScalingGroupName: XmlStringMaxLen255,
@@ -399,6 +401,7 @@ package autoscaling {
   }
 
   object ActivityType {
+    @inline
     def apply(
         Activity: js.UndefOr[Activity] = js.undefined
     ): ActivityType = {
@@ -417,6 +420,7 @@ package autoscaling {
   }
 
   object AdjustmentType {
+    @inline
     def apply(
         AdjustmentType: js.UndefOr[XmlStringMaxLen255] = js.undefined
     ): AdjustmentType = {
@@ -436,6 +440,7 @@ package autoscaling {
   }
 
   object Alarm {
+    @inline
     def apply(
         AlarmARN: js.UndefOr[ResourceName] = js.undefined,
         AlarmName: js.UndefOr[XmlStringMaxLen255] = js.undefined
@@ -454,6 +459,7 @@ package autoscaling {
   }
 
   object AttachInstancesQuery {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         InstanceIds: js.UndefOr[InstanceIds] = js.undefined
@@ -471,6 +477,7 @@ package autoscaling {
   trait AttachLoadBalancerTargetGroupsResultType extends js.Object {}
 
   object AttachLoadBalancerTargetGroupsResultType {
+    @inline
     def apply(
         ): AttachLoadBalancerTargetGroupsResultType = {
       val __obj = js.Dynamic.literal()
@@ -486,6 +493,7 @@ package autoscaling {
   }
 
   object AttachLoadBalancerTargetGroupsType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         TargetGroupARNs: TargetGroupARNs
@@ -503,6 +511,7 @@ package autoscaling {
   trait AttachLoadBalancersResultType extends js.Object {}
 
   object AttachLoadBalancersResultType {
+    @inline
     def apply(
         ): AttachLoadBalancersResultType = {
       val __obj = js.Dynamic.literal()
@@ -518,6 +527,7 @@ package autoscaling {
   }
 
   object AttachLoadBalancersType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         LoadBalancerNames: LoadBalancerNames
@@ -564,6 +574,7 @@ package autoscaling {
   }
 
   object AutoScalingGroup {
+    @inline
     def apply(
         AutoScalingGroupName: XmlStringMaxLen255,
         AvailabilityZones: AvailabilityZones,
@@ -633,6 +644,7 @@ package autoscaling {
   }
 
   object AutoScalingGroupNamesType {
+    @inline
     def apply(
         AutoScalingGroupNames: js.UndefOr[AutoScalingGroupNames] = js.undefined,
         MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
@@ -653,6 +665,7 @@ package autoscaling {
   }
 
   object AutoScalingGroupsType {
+    @inline
     def apply(
         AutoScalingGroups: AutoScalingGroups,
         NextToken: js.UndefOr[XmlString] = js.undefined
@@ -682,6 +695,7 @@ package autoscaling {
   }
 
   object AutoScalingInstanceDetails {
+    @inline
     def apply(
         AutoScalingGroupName: XmlStringMaxLen255,
         AvailabilityZone: XmlStringMaxLen255,
@@ -714,6 +728,7 @@ package autoscaling {
   }
 
   object AutoScalingInstancesType {
+    @inline
     def apply(
         AutoScalingInstances: js.UndefOr[AutoScalingInstances] = js.undefined,
         NextToken: js.UndefOr[XmlString] = js.undefined
@@ -731,6 +746,7 @@ package autoscaling {
   }
 
   object BatchDeleteScheduledActionAnswer {
+    @inline
     def apply(
         FailedScheduledActions: js.UndefOr[FailedScheduledUpdateGroupActionRequests] = js.undefined
     ): BatchDeleteScheduledActionAnswer = {
@@ -747,6 +763,7 @@ package autoscaling {
   }
 
   object BatchDeleteScheduledActionType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         ScheduledActionNames: ScheduledActionNames
@@ -766,6 +783,7 @@ package autoscaling {
   }
 
   object BatchPutScheduledUpdateGroupActionAnswer {
+    @inline
     def apply(
         FailedScheduledUpdateGroupActions: js.UndefOr[FailedScheduledUpdateGroupActionRequests] = js.undefined
     ): BatchPutScheduledUpdateGroupActionAnswer = {
@@ -784,6 +802,7 @@ package autoscaling {
   }
 
   object BatchPutScheduledUpdateGroupActionType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         ScheduledUpdateGroupActions: ScheduledUpdateGroupActionRequests
@@ -809,6 +828,7 @@ package autoscaling {
   }
 
   object BlockDeviceMapping {
+    @inline
     def apply(
         DeviceName: XmlStringMaxLen255,
         Ebs: js.UndefOr[Ebs] = js.undefined,
@@ -830,6 +850,7 @@ package autoscaling {
   trait CompleteLifecycleActionAnswer extends js.Object {}
 
   object CompleteLifecycleActionAnswer {
+    @inline
     def apply(
         ): CompleteLifecycleActionAnswer = {
       val __obj = js.Dynamic.literal()
@@ -848,6 +869,7 @@ package autoscaling {
   }
 
   object CompleteLifecycleActionType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         LifecycleActionResult: LifecycleActionResult,
@@ -893,6 +915,7 @@ package autoscaling {
   }
 
   object CreateAutoScalingGroupType {
+    @inline
     def apply(
         AutoScalingGroupName: XmlStringMaxLen255,
         MaxSize: AutoScalingGroupMaxSize,
@@ -971,6 +994,7 @@ package autoscaling {
   }
 
   object CreateLaunchConfigurationType {
+    @inline
     def apply(
         LaunchConfigurationName: XmlStringMaxLen255,
         AssociatePublicIpAddress: js.UndefOr[AssociatePublicIpAddress] = js.undefined,
@@ -1024,6 +1048,7 @@ package autoscaling {
   }
 
   object CreateOrUpdateTagsType {
+    @inline
     def apply(
         Tags: Tags
     ): CreateOrUpdateTagsType = {
@@ -1052,6 +1077,7 @@ package autoscaling {
   }
 
   object CustomizedMetricSpecification {
+    @inline
     def apply(
         MetricName: MetricName,
         Namespace: MetricNamespace,
@@ -1078,6 +1104,7 @@ package autoscaling {
   }
 
   object DeleteAutoScalingGroupType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         ForceDelete: js.UndefOr[ForceDelete] = js.undefined
@@ -1095,6 +1122,7 @@ package autoscaling {
   trait DeleteLifecycleHookAnswer extends js.Object {}
 
   object DeleteLifecycleHookAnswer {
+    @inline
     def apply(
         ): DeleteLifecycleHookAnswer = {
       val __obj = js.Dynamic.literal()
@@ -1110,6 +1138,7 @@ package autoscaling {
   }
 
   object DeleteLifecycleHookType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         LifecycleHookName: AsciiStringMaxLen255
@@ -1130,6 +1159,7 @@ package autoscaling {
   }
 
   object DeleteNotificationConfigurationType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         TopicARN: ResourceName
@@ -1150,6 +1180,7 @@ package autoscaling {
   }
 
   object DeletePolicyType {
+    @inline
     def apply(
         PolicyName: ResourceName,
         AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined
@@ -1170,6 +1201,7 @@ package autoscaling {
   }
 
   object DeleteScheduledActionType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         ScheduledActionName: ResourceName
@@ -1189,6 +1221,7 @@ package autoscaling {
   }
 
   object DeleteTagsType {
+    @inline
     def apply(
         Tags: Tags
     ): DeleteTagsType = {
@@ -1209,6 +1242,7 @@ package autoscaling {
   }
 
   object DescribeAccountLimitsAnswer {
+    @inline
     def apply(
         MaxNumberOfAutoScalingGroups: js.UndefOr[MaxNumberOfAutoScalingGroups] = js.undefined,
         MaxNumberOfLaunchConfigurations: js.UndefOr[MaxNumberOfLaunchConfigurations] = js.undefined,
@@ -1238,6 +1272,7 @@ package autoscaling {
   }
 
   object DescribeAdjustmentTypesAnswer {
+    @inline
     def apply(
         AdjustmentTypes: js.UndefOr[AdjustmentTypes] = js.undefined
     ): DescribeAdjustmentTypesAnswer = {
@@ -1255,6 +1290,7 @@ package autoscaling {
   }
 
   object DescribeAutoScalingInstancesType {
+    @inline
     def apply(
         InstanceIds: js.UndefOr[InstanceIds] = js.undefined,
         MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
@@ -1274,6 +1310,7 @@ package autoscaling {
   }
 
   object DescribeAutoScalingNotificationTypesAnswer {
+    @inline
     def apply(
         AutoScalingNotificationTypes: js.UndefOr[AutoScalingNotificationTypes] = js.undefined
     ): DescribeAutoScalingNotificationTypesAnswer = {
@@ -1291,6 +1328,7 @@ package autoscaling {
   }
 
   object DescribeLifecycleHookTypesAnswer {
+    @inline
     def apply(
         LifecycleHookTypes: js.UndefOr[AutoScalingNotificationTypes] = js.undefined
     ): DescribeLifecycleHookTypesAnswer = {
@@ -1306,6 +1344,7 @@ package autoscaling {
   }
 
   object DescribeLifecycleHooksAnswer {
+    @inline
     def apply(
         LifecycleHooks: js.UndefOr[LifecycleHooks] = js.undefined
     ): DescribeLifecycleHooksAnswer = {
@@ -1322,6 +1361,7 @@ package autoscaling {
   }
 
   object DescribeLifecycleHooksType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         LifecycleHookNames: js.UndefOr[LifecycleHookNames] = js.undefined
@@ -1343,6 +1383,7 @@ package autoscaling {
   }
 
   object DescribeLoadBalancerTargetGroupsRequest {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
@@ -1365,6 +1406,7 @@ package autoscaling {
   }
 
   object DescribeLoadBalancerTargetGroupsResponse {
+    @inline
     def apply(
         LoadBalancerTargetGroups: js.UndefOr[LoadBalancerTargetGroupStates] = js.undefined,
         NextToken: js.UndefOr[XmlString] = js.undefined
@@ -1384,6 +1426,7 @@ package autoscaling {
   }
 
   object DescribeLoadBalancersRequest {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
@@ -1406,6 +1449,7 @@ package autoscaling {
   }
 
   object DescribeLoadBalancersResponse {
+    @inline
     def apply(
         LoadBalancers: js.UndefOr[LoadBalancerStates] = js.undefined,
         NextToken: js.UndefOr[XmlString] = js.undefined
@@ -1424,6 +1468,7 @@ package autoscaling {
   }
 
   object DescribeMetricCollectionTypesAnswer {
+    @inline
     def apply(
         Granularities: js.UndefOr[MetricGranularityTypes] = js.undefined,
         Metrics: js.UndefOr[MetricCollectionTypes] = js.undefined
@@ -1442,6 +1487,7 @@ package autoscaling {
   }
 
   object DescribeNotificationConfigurationsAnswer {
+    @inline
     def apply(
         NotificationConfigurations: NotificationConfigurations,
         NextToken: js.UndefOr[XmlString] = js.undefined
@@ -1463,6 +1509,7 @@ package autoscaling {
   }
 
   object DescribeNotificationConfigurationsType {
+    @inline
     def apply(
         AutoScalingGroupNames: js.UndefOr[AutoScalingGroupNames] = js.undefined,
         MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
@@ -1486,6 +1533,7 @@ package autoscaling {
   }
 
   object DescribePoliciesType {
+    @inline
     def apply(
         AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
         MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
@@ -1512,6 +1560,7 @@ package autoscaling {
   }
 
   object DescribeScalingActivitiesType {
+    @inline
     def apply(
         ActivityIds: js.UndefOr[ActivityIds] = js.undefined,
         AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
@@ -1538,6 +1587,7 @@ package autoscaling {
   }
 
   object DescribeScheduledActionsType {
+    @inline
     def apply(
         AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
         EndTime: js.UndefOr[TimestampType] = js.undefined,
@@ -1565,6 +1615,7 @@ package autoscaling {
   }
 
   object DescribeTagsType {
+    @inline
     def apply(
         Filters: js.UndefOr[Filters] = js.undefined,
         MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
@@ -1584,6 +1635,7 @@ package autoscaling {
   }
 
   object DescribeTerminationPolicyTypesAnswer {
+    @inline
     def apply(
         TerminationPolicyTypes: js.UndefOr[TerminationPolicies] = js.undefined
     ): DescribeTerminationPolicyTypesAnswer = {
@@ -1599,6 +1651,7 @@ package autoscaling {
   }
 
   object DetachInstancesAnswer {
+    @inline
     def apply(
         Activities: js.UndefOr[Activities] = js.undefined
     ): DetachInstancesAnswer = {
@@ -1616,6 +1669,7 @@ package autoscaling {
   }
 
   object DetachInstancesQuery {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         ShouldDecrementDesiredCapacity: ShouldDecrementDesiredCapacity,
@@ -1635,6 +1689,7 @@ package autoscaling {
   trait DetachLoadBalancerTargetGroupsResultType extends js.Object {}
 
   object DetachLoadBalancerTargetGroupsResultType {
+    @inline
     def apply(
         ): DetachLoadBalancerTargetGroupsResultType = {
       val __obj = js.Dynamic.literal()
@@ -1650,6 +1705,7 @@ package autoscaling {
   }
 
   object DetachLoadBalancerTargetGroupsType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         TargetGroupARNs: TargetGroupARNs
@@ -1667,6 +1723,7 @@ package autoscaling {
   trait DetachLoadBalancersResultType extends js.Object {}
 
   object DetachLoadBalancersResultType {
+    @inline
     def apply(
         ): DetachLoadBalancersResultType = {
       val __obj = js.Dynamic.literal()
@@ -1682,6 +1739,7 @@ package autoscaling {
   }
 
   object DetachLoadBalancersType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         LoadBalancerNames: LoadBalancerNames
@@ -1702,6 +1760,7 @@ package autoscaling {
   }
 
   object DisableMetricsCollectionQuery {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         Metrics: js.UndefOr[Metrics] = js.undefined
@@ -1729,6 +1788,7 @@ package autoscaling {
   }
 
   object Ebs {
+    @inline
     def apply(
         DeleteOnTermination: js.UndefOr[BlockDeviceEbsDeleteOnTermination] = js.undefined,
         Encrypted: js.UndefOr[BlockDeviceEbsEncrypted] = js.undefined,
@@ -1756,6 +1816,7 @@ package autoscaling {
   }
 
   object EnableMetricsCollectionQuery {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         Granularity: XmlStringMaxLen255,
@@ -1781,6 +1842,7 @@ package autoscaling {
   }
 
   object EnabledMetric {
+    @inline
     def apply(
         Granularity: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         Metric: js.UndefOr[XmlStringMaxLen255] = js.undefined
@@ -1798,6 +1860,7 @@ package autoscaling {
   }
 
   object EnterStandbyAnswer {
+    @inline
     def apply(
         Activities: js.UndefOr[Activities] = js.undefined
     ): EnterStandbyAnswer = {
@@ -1815,6 +1878,7 @@ package autoscaling {
   }
 
   object EnterStandbyQuery {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         ShouldDecrementDesiredCapacity: ShouldDecrementDesiredCapacity,
@@ -1840,6 +1904,7 @@ package autoscaling {
   }
 
   object ExecutePolicyType {
+    @inline
     def apply(
         PolicyName: ResourceName,
         AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
@@ -1865,6 +1930,7 @@ package autoscaling {
   }
 
   object ExitStandbyAnswer {
+    @inline
     def apply(
         Activities: js.UndefOr[Activities] = js.undefined
     ): ExitStandbyAnswer = {
@@ -1881,6 +1947,7 @@ package autoscaling {
   }
 
   object ExitStandbyQuery {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         InstanceIds: js.UndefOr[InstanceIds] = js.undefined
@@ -1905,6 +1972,7 @@ package autoscaling {
   }
 
   object FailedScheduledUpdateGroupActionRequest {
+    @inline
     def apply(
         ScheduledActionName: XmlStringMaxLen255,
         ErrorCode: js.UndefOr[XmlStringMaxLen64] = js.undefined,
@@ -1930,6 +1998,7 @@ package autoscaling {
   }
 
   object Filter {
+    @inline
     def apply(
         Name: js.UndefOr[XmlString] = js.undefined,
         Values: js.UndefOr[Values] = js.undefined
@@ -1956,6 +2025,7 @@ package autoscaling {
   }
 
   object Instance {
+    @inline
     def apply(
         AvailabilityZone: XmlStringMaxLen255,
         HealthStatus: XmlStringMaxLen32,
@@ -1988,6 +2058,7 @@ package autoscaling {
   }
 
   object InstanceMonitoring {
+    @inline
     def apply(
         Enabled: js.UndefOr[MonitoringEnabled] = js.undefined
     ): InstanceMonitoring = {
@@ -2012,6 +2083,7 @@ package autoscaling {
   }
 
   object InstancesDistribution {
+    @inline
     def apply(
         OnDemandAllocationStrategy: js.UndefOr[XmlString] = js.undefined,
         OnDemandBaseCapacity: js.UndefOr[OnDemandBaseCapacity] = js.undefined,
@@ -2062,6 +2134,7 @@ package autoscaling {
   }
 
   object LaunchConfiguration {
+    @inline
     def apply(
         CreatedTime: TimestampType,
         ImageId: XmlStringMaxLen255,
@@ -2117,6 +2190,7 @@ package autoscaling {
   }
 
   object LaunchConfigurationNameType {
+    @inline
     def apply(
         LaunchConfigurationName: ResourceName
     ): LaunchConfigurationNameType = {
@@ -2136,6 +2210,7 @@ package autoscaling {
   }
 
   object LaunchConfigurationNamesType {
+    @inline
     def apply(
         LaunchConfigurationNames: js.UndefOr[LaunchConfigurationNames] = js.undefined,
         MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
@@ -2156,6 +2231,7 @@ package autoscaling {
   }
 
   object LaunchConfigurationsType {
+    @inline
     def apply(
         LaunchConfigurations: LaunchConfigurations,
         NextToken: js.UndefOr[XmlString] = js.undefined
@@ -2180,6 +2256,7 @@ package autoscaling {
   }
 
   object LaunchTemplate {
+    @inline
     def apply(
         LaunchTemplateSpecification: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
         Overrides: js.UndefOr[Overrides] = js.undefined
@@ -2202,6 +2279,7 @@ package autoscaling {
   }
 
   object LaunchTemplateOverrides {
+    @inline
     def apply(
         InstanceType: js.UndefOr[XmlStringMaxLen255] = js.undefined
     ): LaunchTemplateOverrides = {
@@ -2223,6 +2301,7 @@ package autoscaling {
   }
 
   object LaunchTemplateSpecification {
+    @inline
     def apply(
         LaunchTemplateId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         LaunchTemplateName: js.UndefOr[LaunchTemplateName] = js.undefined,
@@ -2253,6 +2332,7 @@ package autoscaling {
   }
 
   object LifecycleHook {
+    @inline
     def apply(
         AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
         DefaultResult: js.UndefOr[LifecycleActionResult] = js.undefined,
@@ -2302,6 +2382,7 @@ package autoscaling {
   }
 
   object LifecycleHookSpecification {
+    @inline
     def apply(
         LifecycleHookName: AsciiStringMaxLen255,
         LifecycleTransition: LifecycleTransition,
@@ -2371,6 +2452,7 @@ package autoscaling {
   }
 
   object LoadBalancerState {
+    @inline
     def apply(
         LoadBalancerName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         State: js.UndefOr[XmlStringMaxLen255] = js.undefined
@@ -2393,6 +2475,7 @@ package autoscaling {
   }
 
   object LoadBalancerTargetGroupState {
+    @inline
     def apply(
         LoadBalancerTargetGroupARN: js.UndefOr[XmlStringMaxLen511] = js.undefined,
         State: js.UndefOr[XmlStringMaxLen255] = js.undefined
@@ -2415,6 +2498,7 @@ package autoscaling {
   }
 
   object MetricCollectionType {
+    @inline
     def apply(
         Metric: js.UndefOr[XmlStringMaxLen255] = js.undefined
     ): MetricCollectionType = {
@@ -2434,6 +2518,7 @@ package autoscaling {
   }
 
   object MetricDimension {
+    @inline
     def apply(
         Name: MetricDimensionName,
         Value: MetricDimensionValue
@@ -2456,6 +2541,7 @@ package autoscaling {
   }
 
   object MetricGranularityType {
+    @inline
     def apply(
         Granularity: js.UndefOr[XmlStringMaxLen255] = js.undefined
     ): MetricGranularityType = {
@@ -2497,6 +2583,7 @@ package autoscaling {
   }
 
   object MixedInstancesPolicy {
+    @inline
     def apply(
         InstancesDistribution: js.UndefOr[InstancesDistribution] = js.undefined,
         LaunchTemplate: js.UndefOr[LaunchTemplate] = js.undefined
@@ -2519,6 +2606,7 @@ package autoscaling {
   }
 
   object NotificationConfiguration {
+    @inline
     def apply(
         AutoScalingGroupName: js.UndefOr[ResourceName] = js.undefined,
         NotificationType: js.UndefOr[XmlStringMaxLen255] = js.undefined,
@@ -2539,6 +2627,7 @@ package autoscaling {
   }
 
   object PoliciesType {
+    @inline
     def apply(
         NextToken: js.UndefOr[XmlString] = js.undefined,
         ScalingPolicies: js.UndefOr[ScalingPolicies] = js.undefined
@@ -2560,6 +2649,7 @@ package autoscaling {
   }
 
   object PolicyARNType {
+    @inline
     def apply(
         Alarms: js.UndefOr[Alarms] = js.undefined,
         PolicyARN: js.UndefOr[ResourceName] = js.undefined
@@ -2581,6 +2671,7 @@ package autoscaling {
   }
 
   object PredefinedMetricSpecification {
+    @inline
     def apply(
         PredefinedMetricType: MetricType,
         ResourceLabel: js.UndefOr[XmlStringMaxLen1023] = js.undefined
@@ -2604,6 +2695,7 @@ package autoscaling {
   }
 
   object ProcessType {
+    @inline
     def apply(
         ProcessName: XmlStringMaxLen255
     ): ProcessType = {
@@ -2621,6 +2713,7 @@ package autoscaling {
   }
 
   object ProcessesType {
+    @inline
     def apply(
         Processes: js.UndefOr[Processes] = js.undefined
     ): ProcessesType = {
@@ -2634,6 +2727,7 @@ package autoscaling {
   trait PutLifecycleHookAnswer extends js.Object {}
 
   object PutLifecycleHookAnswer {
+    @inline
     def apply(
         ): PutLifecycleHookAnswer = {
       val __obj = js.Dynamic.literal()
@@ -2655,6 +2749,7 @@ package autoscaling {
   }
 
   object PutLifecycleHookType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         LifecycleHookName: AsciiStringMaxLen255,
@@ -2688,6 +2783,7 @@ package autoscaling {
   }
 
   object PutNotificationConfigurationType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         NotificationTypes: AutoScalingNotificationTypes,
@@ -2720,6 +2816,7 @@ package autoscaling {
   }
 
   object PutScalingPolicyType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         PolicyName: XmlStringMaxLen255,
@@ -2769,6 +2866,7 @@ package autoscaling {
   }
 
   object PutScheduledUpdateGroupActionType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         ScheduledActionName: XmlStringMaxLen255,
@@ -2800,6 +2898,7 @@ package autoscaling {
   trait RecordLifecycleActionHeartbeatAnswer extends js.Object {}
 
   object RecordLifecycleActionHeartbeatAnswer {
+    @inline
     def apply(
         ): RecordLifecycleActionHeartbeatAnswer = {
       val __obj = js.Dynamic.literal()
@@ -2817,6 +2916,7 @@ package autoscaling {
   }
 
   object RecordLifecycleActionHeartbeatType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         LifecycleHookName: AsciiStringMaxLen255,
@@ -2888,6 +2988,7 @@ package autoscaling {
   }
 
   object ScalingPolicy {
+    @inline
     def apply(
         AdjustmentType: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         Alarms: js.UndefOr[Alarms] = js.undefined,
@@ -2932,6 +3033,7 @@ package autoscaling {
   }
 
   object ScalingProcessQuery {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         ScalingProcesses: js.UndefOr[ProcessNames] = js.undefined
@@ -2952,6 +3054,7 @@ package autoscaling {
   }
 
   object ScheduledActionsType {
+    @inline
     def apply(
         NextToken: js.UndefOr[XmlString] = js.undefined,
         ScheduledUpdateGroupActions: js.UndefOr[ScheduledUpdateGroupActions] = js.undefined
@@ -2983,6 +3086,7 @@ package autoscaling {
   }
 
   object ScheduledUpdateGroupAction {
+    @inline
     def apply(
         AutoScalingGroupName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity] = js.undefined,
@@ -3026,6 +3130,7 @@ package autoscaling {
   }
 
   object ScheduledUpdateGroupActionRequest {
+    @inline
     def apply(
         ScheduledActionName: XmlStringMaxLen255,
         DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity] = js.undefined,
@@ -3057,6 +3162,7 @@ package autoscaling {
   }
 
   object SetDesiredCapacityType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         DesiredCapacity: AutoScalingGroupDesiredCapacity,
@@ -3080,6 +3186,7 @@ package autoscaling {
   }
 
   object SetInstanceHealthQuery {
+    @inline
     def apply(
         HealthStatus: XmlStringMaxLen32,
         InstanceId: XmlStringMaxLen19,
@@ -3099,6 +3206,7 @@ package autoscaling {
   trait SetInstanceProtectionAnswer extends js.Object {}
 
   object SetInstanceProtectionAnswer {
+    @inline
     def apply(
         ): SetInstanceProtectionAnswer = {
       val __obj = js.Dynamic.literal()
@@ -3115,6 +3223,7 @@ package autoscaling {
   }
 
   object SetInstanceProtectionQuery {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         InstanceIds: InstanceIds,
@@ -3149,6 +3258,7 @@ package autoscaling {
   }
 
   object StepAdjustment {
+    @inline
     def apply(
         ScalingAdjustment: PolicyIncrement,
         MetricIntervalLowerBound: js.UndefOr[MetricScale] = js.undefined,
@@ -3174,6 +3284,7 @@ package autoscaling {
   }
 
   object SuspendedProcess {
+    @inline
     def apply(
         ProcessName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         SuspensionReason: js.UndefOr[XmlStringMaxLen255] = js.undefined
@@ -3198,6 +3309,7 @@ package autoscaling {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         PropagateAtLaunch: js.UndefOr[PropagateAtLaunch] = js.undefined,
@@ -3230,6 +3342,7 @@ package autoscaling {
   }
 
   object TagDescription {
+    @inline
     def apply(
         Key: js.UndefOr[TagKey] = js.undefined,
         PropagateAtLaunch: js.UndefOr[PropagateAtLaunch] = js.undefined,
@@ -3254,6 +3367,7 @@ package autoscaling {
   }
 
   object TagsType {
+    @inline
     def apply(
         NextToken: js.UndefOr[XmlString] = js.undefined,
         Tags: js.UndefOr[TagDescriptionList] = js.undefined
@@ -3277,6 +3391,7 @@ package autoscaling {
   }
 
   object TargetTrackingConfiguration {
+    @inline
     def apply(
         TargetValue: MetricScale,
         CustomizedMetricSpecification: js.UndefOr[CustomizedMetricSpecification] = js.undefined,
@@ -3305,6 +3420,7 @@ package autoscaling {
   }
 
   object TerminateInstanceInAutoScalingGroupType {
+    @inline
     def apply(
         InstanceId: XmlStringMaxLen19,
         ShouldDecrementDesiredCapacity: ShouldDecrementDesiredCapacity
@@ -3339,6 +3455,7 @@ package autoscaling {
   }
 
   object UpdateAutoScalingGroupType {
+    @inline
     def apply(
         AutoScalingGroupName: ResourceName,
         AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,

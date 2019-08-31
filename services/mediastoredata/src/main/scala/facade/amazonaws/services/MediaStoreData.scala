@@ -63,6 +63,7 @@ package mediastoredata {
   }
 
   object DeleteObjectRequest {
+    @inline
     def apply(
         Path: PathNaming
     ): DeleteObjectRequest = {
@@ -78,6 +79,7 @@ package mediastoredata {
   trait DeleteObjectResponse extends js.Object {}
 
   object DeleteObjectResponse {
+    @inline
     def apply(
         ): DeleteObjectResponse = {
       val __obj = js.Dynamic.literal()
@@ -92,6 +94,7 @@ package mediastoredata {
   }
 
   object DescribeObjectRequest {
+    @inline
     def apply(
         Path: PathNaming
     ): DescribeObjectRequest = {
@@ -113,6 +116,7 @@ package mediastoredata {
   }
 
   object DescribeObjectResponse {
+    @inline
     def apply(
         CacheControl: js.UndefOr[StringPrimitive] = js.undefined,
         ContentLength: js.UndefOr[NonNegativeLong] = js.undefined,
@@ -137,6 +141,7 @@ package mediastoredata {
   }
 
   object GetObjectRequest {
+    @inline
     def apply(
         Path: PathNaming,
         Range: js.UndefOr[RangePattern] = js.undefined
@@ -163,6 +168,7 @@ package mediastoredata {
   }
 
   object GetObjectResponse {
+    @inline
     def apply(
         StatusCode: statusCode,
         Body: js.UndefOr[PayloadBlob] = js.undefined,
@@ -202,6 +208,7 @@ package mediastoredata {
   }
 
   object Item {
+    @inline
     def apply(
         ContentLength: js.UndefOr[NonNegativeLong] = js.undefined,
         ContentType: js.UndefOr[ContentType] = js.undefined,
@@ -236,6 +243,7 @@ package mediastoredata {
   }
 
   object ListItemsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[ListLimit] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
@@ -256,6 +264,7 @@ package mediastoredata {
   }
 
   object ListItemsResponse {
+    @inline
     def apply(
         Items: js.UndefOr[ItemList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -278,6 +287,7 @@ package mediastoredata {
   }
 
   object PutObjectRequest {
+    @inline
     def apply(
         Body: PayloadBlob,
         Path: PathNaming,
@@ -307,6 +317,7 @@ package mediastoredata {
   }
 
   object PutObjectResponse {
+    @inline
     def apply(
         ContentSHA256: js.UndefOr[SHA256Hash] = js.undefined,
         ETag: js.UndefOr[ETag] = js.undefined,

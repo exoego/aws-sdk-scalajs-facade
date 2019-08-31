@@ -41,6 +41,7 @@ package personalizeevents {
   }
 
   object Event {
+    @inline
     def apply(
         eventType: StringType,
         properties: EventPropertiesJSON,
@@ -67,6 +68,7 @@ package personalizeevents {
   }
 
   object PutEventsRequest {
+    @inline
     def apply(
         eventList: EventList,
         sessionId: StringType,

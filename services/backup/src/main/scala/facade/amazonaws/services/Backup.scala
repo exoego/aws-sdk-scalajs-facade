@@ -241,6 +241,7 @@ package backup {
   }
 
   object BackupJob {
+    @inline
     def apply(
         BackupJobId: js.UndefOr[String] = js.undefined,
         BackupSizeInBytes: js.UndefOr[Double] = js.undefined,
@@ -305,6 +306,7 @@ package backup {
   }
 
   object BackupPlan {
+    @inline
     def apply(
         BackupPlanName: BackupPlanName,
         Rules: BackupRules
@@ -328,6 +330,7 @@ package backup {
   }
 
   object BackupPlanInput {
+    @inline
     def apply(
         BackupPlanName: BackupPlanName,
         Rules: BackupRulesInput
@@ -351,6 +354,7 @@ package backup {
   }
 
   object BackupPlanTemplatesListMember {
+    @inline
     def apply(
         BackupPlanTemplateId: js.UndefOr[String] = js.undefined,
         BackupPlanTemplateName: js.UndefOr[String] = js.undefined
@@ -378,6 +382,7 @@ package backup {
   }
 
   object BackupPlansListMember {
+    @inline
     def apply(
         BackupPlanArn: js.UndefOr[ARN] = js.undefined,
         BackupPlanId: js.UndefOr[String] = js.undefined,
@@ -417,6 +422,7 @@ package backup {
   }
 
   object BackupRule {
+    @inline
     def apply(
         RuleName: BackupRuleName,
         TargetBackupVaultName: BackupVaultName,
@@ -457,6 +463,7 @@ package backup {
   }
 
   object BackupRuleInput {
+    @inline
     def apply(
         RuleName: BackupRuleName,
         TargetBackupVaultName: BackupVaultName,
@@ -492,6 +499,7 @@ package backup {
   }
 
   object BackupSelection {
+    @inline
     def apply(
         IamRoleArn: IAMRoleArn,
         SelectionName: BackupSelectionName,
@@ -523,6 +531,7 @@ package backup {
   }
 
   object BackupSelectionsListMember {
+    @inline
     def apply(
         BackupPlanId: js.UndefOr[String] = js.undefined,
         CreationDate: js.UndefOr[timestamp] = js.undefined,
@@ -578,6 +587,7 @@ package backup {
   }
 
   object BackupVaultListMember {
+    @inline
     def apply(
         BackupVaultArn: js.UndefOr[ARN] = js.undefined,
         BackupVaultName: js.UndefOr[BackupVaultName] = js.undefined,
@@ -609,6 +619,7 @@ package backup {
   }
 
   object CalculatedLifecycle {
+    @inline
     def apply(
         DeleteAt: js.UndefOr[timestamp] = js.undefined,
         MoveToColdStorageAt: js.UndefOr[timestamp] = js.undefined
@@ -631,6 +642,7 @@ package backup {
   }
 
   object Condition {
+    @inline
     def apply(
         ConditionKey: ConditionKey,
         ConditionType: ConditionType,
@@ -660,6 +672,7 @@ package backup {
   }
 
   object CreateBackupPlanInput {
+    @inline
     def apply(
         BackupPlan: BackupPlanInput,
         BackupPlanTags: js.UndefOr[Tags] = js.undefined,
@@ -684,6 +697,7 @@ package backup {
   }
 
   object CreateBackupPlanOutput {
+    @inline
     def apply(
         BackupPlanArn: js.UndefOr[ARN] = js.undefined,
         BackupPlanId: js.UndefOr[String] = js.undefined,
@@ -707,6 +721,7 @@ package backup {
   }
 
   object CreateBackupSelectionInput {
+    @inline
     def apply(
         BackupPlanId: String,
         BackupSelection: BackupSelection,
@@ -730,6 +745,7 @@ package backup {
   }
 
   object CreateBackupSelectionOutput {
+    @inline
     def apply(
         BackupPlanId: js.UndefOr[String] = js.undefined,
         CreationDate: js.UndefOr[timestamp] = js.undefined,
@@ -752,6 +768,7 @@ package backup {
   }
 
   object CreateBackupVaultInput {
+    @inline
     def apply(
         BackupVaultName: BackupVaultName,
         BackupVaultTags: js.UndefOr[Tags] = js.undefined,
@@ -777,6 +794,7 @@ package backup {
   }
 
   object CreateBackupVaultOutput {
+    @inline
     def apply(
         BackupVaultArn: js.UndefOr[ARN] = js.undefined,
         BackupVaultName: js.UndefOr[BackupVaultName] = js.undefined,
@@ -796,6 +814,7 @@ package backup {
   }
 
   object DeleteBackupPlanInput {
+    @inline
     def apply(
         BackupPlanId: String
     ): DeleteBackupPlanInput = {
@@ -816,6 +835,7 @@ package backup {
   }
 
   object DeleteBackupPlanOutput {
+    @inline
     def apply(
         BackupPlanArn: js.UndefOr[ARN] = js.undefined,
         BackupPlanId: js.UndefOr[String] = js.undefined,
@@ -838,6 +858,7 @@ package backup {
   }
 
   object DeleteBackupSelectionInput {
+    @inline
     def apply(
         BackupPlanId: String,
         SelectionId: String
@@ -857,6 +878,7 @@ package backup {
   }
 
   object DeleteBackupVaultAccessPolicyInput {
+    @inline
     def apply(
         BackupVaultName: BackupVaultName
     ): DeleteBackupVaultAccessPolicyInput = {
@@ -874,6 +896,7 @@ package backup {
   }
 
   object DeleteBackupVaultInput {
+    @inline
     def apply(
         BackupVaultName: String
     ): DeleteBackupVaultInput = {
@@ -891,6 +914,7 @@ package backup {
   }
 
   object DeleteBackupVaultNotificationsInput {
+    @inline
     def apply(
         BackupVaultName: BackupVaultName
     ): DeleteBackupVaultNotificationsInput = {
@@ -909,6 +933,7 @@ package backup {
   }
 
   object DeleteRecoveryPointInput {
+    @inline
     def apply(
         BackupVaultName: BackupVaultName,
         RecoveryPointArn: ARN
@@ -928,6 +953,7 @@ package backup {
   }
 
   object DescribeBackupJobInput {
+    @inline
     def apply(
         BackupJobId: String
     ): DescribeBackupJobInput = {
@@ -961,6 +987,7 @@ package backup {
   }
 
   object DescribeBackupJobOutput {
+    @inline
     def apply(
         BackupJobId: js.UndefOr[String] = js.undefined,
         BackupSizeInBytes: js.UndefOr[Double] = js.undefined,
@@ -1008,6 +1035,7 @@ package backup {
   }
 
   object DescribeBackupVaultInput {
+    @inline
     def apply(
         BackupVaultName: String
     ): DescribeBackupVaultInput = {
@@ -1030,6 +1058,7 @@ package backup {
   }
 
   object DescribeBackupVaultOutput {
+    @inline
     def apply(
         BackupVaultArn: js.UndefOr[ARN] = js.undefined,
         BackupVaultName: js.UndefOr[String] = js.undefined,
@@ -1055,6 +1084,7 @@ package backup {
   }
 
   object DescribeProtectedResourceInput {
+    @inline
     def apply(
         ResourceArn: ARN
     ): DescribeProtectedResourceInput = {
@@ -1074,6 +1104,7 @@ package backup {
   }
 
   object DescribeProtectedResourceOutput {
+    @inline
     def apply(
         LastBackupTime: js.UndefOr[timestamp] = js.undefined,
         ResourceArn: js.UndefOr[ARN] = js.undefined,
@@ -1094,6 +1125,7 @@ package backup {
   }
 
   object DescribeRecoveryPointInput {
+    @inline
     def apply(
         BackupVaultName: BackupVaultName,
         RecoveryPointArn: ARN
@@ -1129,6 +1161,7 @@ package backup {
   }
 
   object DescribeRecoveryPointOutput {
+    @inline
     def apply(
         BackupSizeInBytes: js.UndefOr[Double] = js.undefined,
         BackupVaultArn: js.UndefOr[ARN] = js.undefined,
@@ -1176,6 +1209,7 @@ package backup {
   }
 
   object DescribeRestoreJobInput {
+    @inline
     def apply(
         RestoreJobId: RestoreJobId
     ): DescribeRestoreJobInput = {
@@ -1203,6 +1237,7 @@ package backup {
   }
 
   object DescribeRestoreJobOutput {
+    @inline
     def apply(
         BackupSizeInBytes: js.UndefOr[Double] = js.undefined,
         CompletionDate: js.UndefOr[timestamp] = js.undefined,
@@ -1240,6 +1275,7 @@ package backup {
   }
 
   object ExportBackupPlanTemplateInput {
+    @inline
     def apply(
         BackupPlanId: String
     ): ExportBackupPlanTemplateInput = {
@@ -1257,6 +1293,7 @@ package backup {
   }
 
   object ExportBackupPlanTemplateOutput {
+    @inline
     def apply(
         BackupPlanTemplateJson: js.UndefOr[String] = js.undefined
     ): ExportBackupPlanTemplateOutput = {
@@ -1272,6 +1309,7 @@ package backup {
   }
 
   object GetBackupPlanFromJSONInput {
+    @inline
     def apply(
         BackupPlanTemplateJson: String
     ): GetBackupPlanFromJSONInput = {
@@ -1289,6 +1327,7 @@ package backup {
   }
 
   object GetBackupPlanFromJSONOutput {
+    @inline
     def apply(
         BackupPlan: js.UndefOr[BackupPlan] = js.undefined
     ): GetBackupPlanFromJSONOutput = {
@@ -1304,6 +1343,7 @@ package backup {
   }
 
   object GetBackupPlanFromTemplateInput {
+    @inline
     def apply(
         BackupPlanTemplateId: String
     ): GetBackupPlanFromTemplateInput = {
@@ -1321,6 +1361,7 @@ package backup {
   }
 
   object GetBackupPlanFromTemplateOutput {
+    @inline
     def apply(
         BackupPlanDocument: js.UndefOr[BackupPlan] = js.undefined
     ): GetBackupPlanFromTemplateOutput = {
@@ -1337,6 +1378,7 @@ package backup {
   }
 
   object GetBackupPlanInput {
+    @inline
     def apply(
         BackupPlanId: String,
         VersionId: js.UndefOr[String] = js.undefined
@@ -1363,6 +1405,7 @@ package backup {
   }
 
   object GetBackupPlanOutput {
+    @inline
     def apply(
         BackupPlan: js.UndefOr[BackupPlan] = js.undefined,
         BackupPlanArn: js.UndefOr[ARN] = js.undefined,
@@ -1393,6 +1436,7 @@ package backup {
   }
 
   object GetBackupSelectionInput {
+    @inline
     def apply(
         BackupPlanId: String,
         SelectionId: String
@@ -1416,6 +1460,7 @@ package backup {
   }
 
   object GetBackupSelectionOutput {
+    @inline
     def apply(
         BackupPlanId: js.UndefOr[String] = js.undefined,
         BackupSelection: js.UndefOr[BackupSelection] = js.undefined,
@@ -1439,6 +1484,7 @@ package backup {
   }
 
   object GetBackupVaultAccessPolicyInput {
+    @inline
     def apply(
         BackupVaultName: BackupVaultName
     ): GetBackupVaultAccessPolicyInput = {
@@ -1458,6 +1504,7 @@ package backup {
   }
 
   object GetBackupVaultAccessPolicyOutput {
+    @inline
     def apply(
         BackupVaultArn: js.UndefOr[ARN] = js.undefined,
         BackupVaultName: js.UndefOr[BackupVaultName] = js.undefined,
@@ -1477,6 +1524,7 @@ package backup {
   }
 
   object GetBackupVaultNotificationsInput {
+    @inline
     def apply(
         BackupVaultName: BackupVaultName
     ): GetBackupVaultNotificationsInput = {
@@ -1497,6 +1545,7 @@ package backup {
   }
 
   object GetBackupVaultNotificationsOutput {
+    @inline
     def apply(
         BackupVaultArn: js.UndefOr[ARN] = js.undefined,
         BackupVaultEvents: js.UndefOr[BackupVaultEvents] = js.undefined,
@@ -1519,6 +1568,7 @@ package backup {
   }
 
   object GetRecoveryPointRestoreMetadataInput {
+    @inline
     def apply(
         BackupVaultName: BackupVaultName,
         RecoveryPointArn: ARN
@@ -1540,6 +1590,7 @@ package backup {
   }
 
   object GetRecoveryPointRestoreMetadataOutput {
+    @inline
     def apply(
         BackupVaultArn: js.UndefOr[ARN] = js.undefined,
         RecoveryPointArn: js.UndefOr[ARN] = js.undefined,
@@ -1559,6 +1610,7 @@ package backup {
   }
 
   object GetSupportedResourceTypesOutput {
+    @inline
     def apply(
         ResourceTypes: js.UndefOr[ResourceTypes] = js.undefined
     ): GetSupportedResourceTypesOutput = {
@@ -1578,6 +1630,7 @@ package backup {
   }
 
   object Lifecycle {
+    @inline
     def apply(
         DeleteAfterDays: js.UndefOr[Double] = js.undefined,
         MoveToColdStorageAfterDays: js.UndefOr[Double] = js.undefined
@@ -1604,6 +1657,7 @@ package backup {
   }
 
   object ListBackupJobsInput {
+    @inline
     def apply(
         ByBackupVaultName: js.UndefOr[BackupVaultName] = js.undefined,
         ByCreatedAfter: js.UndefOr[timestamp] = js.undefined,
@@ -1634,6 +1688,7 @@ package backup {
   }
 
   object ListBackupJobsOutput {
+    @inline
     def apply(
         BackupJobs: js.UndefOr[BackupJobsList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1652,6 +1707,7 @@ package backup {
   }
 
   object ListBackupPlanTemplatesInput {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1670,6 +1726,7 @@ package backup {
   }
 
   object ListBackupPlanTemplatesOutput {
+    @inline
     def apply(
         BackupPlanTemplatesList: js.UndefOr[BackupPlanTemplatesList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1689,6 +1746,7 @@ package backup {
   }
 
   object ListBackupPlanVersionsInput {
+    @inline
     def apply(
         BackupPlanId: String,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1711,6 +1769,7 @@ package backup {
   }
 
   object ListBackupPlanVersionsOutput {
+    @inline
     def apply(
         BackupPlanVersionsList: js.UndefOr[BackupPlanVersionsList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1730,6 +1789,7 @@ package backup {
   }
 
   object ListBackupPlansInput {
+    @inline
     def apply(
         IncludeDeleted: js.UndefOr[Boolean] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1750,6 +1810,7 @@ package backup {
   }
 
   object ListBackupPlansOutput {
+    @inline
     def apply(
         BackupPlansList: js.UndefOr[BackupPlansList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1769,6 +1830,7 @@ package backup {
   }
 
   object ListBackupSelectionsInput {
+    @inline
     def apply(
         BackupPlanId: String,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1791,6 +1853,7 @@ package backup {
   }
 
   object ListBackupSelectionsOutput {
+    @inline
     def apply(
         BackupSelectionsList: js.UndefOr[BackupSelectionsList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1809,6 +1872,7 @@ package backup {
   }
 
   object ListBackupVaultsInput {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1827,6 +1891,7 @@ package backup {
   }
 
   object ListBackupVaultsOutput {
+    @inline
     def apply(
         BackupVaultList: js.UndefOr[BackupVaultList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1845,6 +1910,7 @@ package backup {
   }
 
   object ListProtectedResourcesInput {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1863,6 +1929,7 @@ package backup {
   }
 
   object ListProtectedResourcesOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         Results: js.UndefOr[ProtectedResourcesList] = js.undefined
@@ -1887,6 +1954,7 @@ package backup {
   }
 
   object ListRecoveryPointsByBackupVaultInput {
+    @inline
     def apply(
         BackupVaultName: BackupVaultName,
         ByBackupPlanId: js.UndefOr[String] = js.undefined,
@@ -1919,6 +1987,7 @@ package backup {
   }
 
   object ListRecoveryPointsByBackupVaultOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         RecoveryPoints: js.UndefOr[RecoveryPointByBackupVaultList] = js.undefined
@@ -1938,6 +2007,7 @@ package backup {
   }
 
   object ListRecoveryPointsByResourceInput {
+    @inline
     def apply(
         ResourceArn: ARN,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1960,6 +2030,7 @@ package backup {
   }
 
   object ListRecoveryPointsByResourceOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         RecoveryPoints: js.UndefOr[RecoveryPointByResourceList] = js.undefined
@@ -1978,6 +2049,7 @@ package backup {
   }
 
   object ListRestoreJobsInput {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -1996,6 +2068,7 @@ package backup {
   }
 
   object ListRestoreJobsOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         RestoreJobs: js.UndefOr[RestoreJobsList] = js.undefined
@@ -2015,6 +2088,7 @@ package backup {
   }
 
   object ListTagsInput {
+    @inline
     def apply(
         ResourceArn: ARN,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -2037,6 +2111,7 @@ package backup {
   }
 
   object ListTagsOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
@@ -2059,6 +2134,7 @@ package backup {
   }
 
   object ProtectedResource {
+    @inline
     def apply(
         LastBackupTime: js.UndefOr[timestamp] = js.undefined,
         ResourceArn: js.UndefOr[ARN] = js.undefined,
@@ -2079,6 +2155,7 @@ package backup {
   }
 
   object PutBackupVaultAccessPolicyInput {
+    @inline
     def apply(
         BackupVaultName: BackupVaultName,
         Policy: js.UndefOr[IAMPolicy] = js.undefined
@@ -2100,6 +2177,7 @@ package backup {
   }
 
   object PutBackupVaultNotificationsInput {
+    @inline
     def apply(
         BackupVaultEvents: BackupVaultEvents,
         BackupVaultName: BackupVaultName,
@@ -2139,6 +2217,7 @@ package backup {
   }
 
   object RecoveryPointByBackupVault {
+    @inline
     def apply(
         BackupSizeInBytes: js.UndefOr[Double] = js.undefined,
         BackupVaultArn: js.UndefOr[ARN] = js.undefined,
@@ -2192,6 +2271,7 @@ package backup {
   }
 
   object RecoveryPointByResource {
+    @inline
     def apply(
         BackupSizeBytes: js.UndefOr[Double] = js.undefined,
         BackupVaultName: js.UndefOr[BackupVaultName] = js.undefined,
@@ -2223,6 +2303,7 @@ package backup {
   }
 
   object RecoveryPointCreator {
+    @inline
     def apply(
         BackupPlanArn: js.UndefOr[ARN] = js.undefined,
         BackupPlanId: js.UndefOr[String] = js.undefined,
@@ -2276,6 +2357,7 @@ package backup {
   }
 
   object RestoreJobsListMember {
+    @inline
     def apply(
         BackupSizeInBytes: js.UndefOr[Double] = js.undefined,
         CompletionDate: js.UndefOr[timestamp] = js.undefined,
@@ -2320,6 +2402,7 @@ package backup {
   }
 
   object StartBackupJobInput {
+    @inline
     def apply(
         BackupVaultName: BackupVaultName,
         IamRoleArn: IAMRoleArn,
@@ -2353,6 +2436,7 @@ package backup {
   }
 
   object StartBackupJobOutput {
+    @inline
     def apply(
         BackupJobId: js.UndefOr[String] = js.undefined,
         CreationDate: js.UndefOr[timestamp] = js.undefined,
@@ -2376,6 +2460,7 @@ package backup {
   }
 
   object StartRestoreJobInput {
+    @inline
     def apply(
         IamRoleArn: IAMRoleArn,
         Metadata: Metadata,
@@ -2401,6 +2486,7 @@ package backup {
   }
 
   object StartRestoreJobOutput {
+    @inline
     def apply(
         RestoreJobId: js.UndefOr[RestoreJobId] = js.undefined
     ): StartRestoreJobOutput = {
@@ -2416,6 +2502,7 @@ package backup {
   }
 
   object StopBackupJobInput {
+    @inline
     def apply(
         BackupJobId: String
     ): StopBackupJobInput = {
@@ -2442,6 +2529,7 @@ package backup {
   }
 
   object TagResourceInput {
+    @inline
     def apply(
         ResourceArn: ARN,
         Tags: Tags
@@ -2462,6 +2550,7 @@ package backup {
   }
 
   object UntagResourceInput {
+    @inline
     def apply(
         ResourceArn: ARN,
         TagKeyList: TagKeyList
@@ -2482,6 +2571,7 @@ package backup {
   }
 
   object UpdateBackupPlanInput {
+    @inline
     def apply(
         BackupPlan: BackupPlanInput,
         BackupPlanId: String
@@ -2504,6 +2594,7 @@ package backup {
   }
 
   object UpdateBackupPlanOutput {
+    @inline
     def apply(
         BackupPlanArn: js.UndefOr[ARN] = js.undefined,
         BackupPlanId: js.UndefOr[String] = js.undefined,
@@ -2527,6 +2618,7 @@ package backup {
   }
 
   object UpdateRecoveryPointLifecycleInput {
+    @inline
     def apply(
         BackupVaultName: BackupVaultName,
         RecoveryPointArn: ARN,
@@ -2551,6 +2643,7 @@ package backup {
   }
 
   object UpdateRecoveryPointLifecycleOutput {
+    @inline
     def apply(
         BackupVaultArn: js.UndefOr[ARN] = js.undefined,
         CalculatedLifecycle: js.UndefOr[CalculatedLifecycle] = js.undefined,

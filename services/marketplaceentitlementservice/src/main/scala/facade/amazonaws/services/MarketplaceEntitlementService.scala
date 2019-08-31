@@ -48,6 +48,7 @@ package marketplaceentitlementservice {
   }
 
   object Entitlement {
+    @inline
     def apply(
         CustomerIdentifier: js.UndefOr[NonEmptyString] = js.undefined,
         Dimension: js.UndefOr[NonEmptyString] = js.undefined,
@@ -77,6 +78,7 @@ package marketplaceentitlementservice {
   }
 
   object EntitlementValue {
+    @inline
     def apply(
         BooleanValue: js.UndefOr[Boolean] = js.undefined,
         DoubleValue: js.UndefOr[Double] = js.undefined,
@@ -111,6 +113,7 @@ package marketplaceentitlementservice {
   }
 
   object GetEntitlementsRequest {
+    @inline
     def apply(
         ProductCode: ProductCode,
         Filter: js.UndefOr[GetEntitlementFilters] = js.undefined,
@@ -138,6 +141,7 @@ package marketplaceentitlementservice {
   }
 
   object GetEntitlementsResult {
+    @inline
     def apply(
         Entitlements: js.UndefOr[EntitlementList] = js.undefined,
         NextToken: js.UndefOr[NonEmptyString] = js.undefined

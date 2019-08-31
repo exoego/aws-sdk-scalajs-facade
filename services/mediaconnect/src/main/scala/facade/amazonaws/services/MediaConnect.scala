@@ -97,6 +97,7 @@ package mediaconnect {
   }
 
   object AddFlowOutputsRequest {
+    @inline
     def apply(
         FlowArn: __string,
         Outputs: __listOfAddOutputRequest
@@ -117,6 +118,7 @@ package mediaconnect {
   }
 
   object AddFlowOutputsResponse {
+    @inline
     def apply(
         FlowArn: js.UndefOr[__string] = js.undefined,
         Outputs: js.UndefOr[__listOfOutput] = js.undefined
@@ -147,6 +149,7 @@ package mediaconnect {
   }
 
   object AddOutputRequest {
+    @inline
     def apply(
         Protocol: Protocol,
         CidrAllowList: js.UndefOr[__listOf__string] = js.undefined,
@@ -199,6 +202,7 @@ package mediaconnect {
   }
 
   object CreateFlowRequest {
+    @inline
     def apply(
         Name: __string,
         Source: SetSourceRequest,
@@ -224,6 +228,7 @@ package mediaconnect {
   }
 
   object CreateFlowResponse {
+    @inline
     def apply(
         Flow: js.UndefOr[Flow] = js.undefined
     ): CreateFlowResponse = {
@@ -239,6 +244,7 @@ package mediaconnect {
   }
 
   object DeleteFlowRequest {
+    @inline
     def apply(
         FlowArn: __string
     ): DeleteFlowRequest = {
@@ -257,6 +263,7 @@ package mediaconnect {
   }
 
   object DeleteFlowResponse {
+    @inline
     def apply(
         FlowArn: js.UndefOr[__string] = js.undefined,
         Status: js.UndefOr[Status] = js.undefined
@@ -274,6 +281,7 @@ package mediaconnect {
   }
 
   object DescribeFlowRequest {
+    @inline
     def apply(
         FlowArn: __string
     ): DescribeFlowRequest = {
@@ -292,6 +300,7 @@ package mediaconnect {
   }
 
   object DescribeFlowResponse {
+    @inline
     def apply(
         Flow: js.UndefOr[Flow] = js.undefined,
         Messages: js.UndefOr[Messages] = js.undefined
@@ -320,6 +329,7 @@ package mediaconnect {
   }
 
   object Encryption {
+    @inline
     def apply(
         Algorithm: Algorithm,
         RoleArn: __string,
@@ -362,6 +372,7 @@ package mediaconnect {
   }
 
   object Entitlement {
+    @inline
     def apply(
         EntitlementArn: __string,
         Name: __string,
@@ -398,6 +409,7 @@ package mediaconnect {
   }
 
   object Flow {
+    @inline
     def apply(
         AvailabilityZone: __string,
         Entitlements: __listOfEntitlement,
@@ -437,6 +449,7 @@ package mediaconnect {
   }
 
   object GrantEntitlementRequest {
+    @inline
     def apply(
         Subscribers: __listOf__string,
         Description: js.UndefOr[__string] = js.undefined,
@@ -464,6 +477,7 @@ package mediaconnect {
   }
 
   object GrantFlowEntitlementsRequest {
+    @inline
     def apply(
         Entitlements: __listOfGrantEntitlementRequest,
         FlowArn: __string
@@ -484,6 +498,7 @@ package mediaconnect {
   }
 
   object GrantFlowEntitlementsResponse {
+    @inline
     def apply(
         Entitlements: js.UndefOr[__listOfEntitlement] = js.undefined,
         FlowArn: js.UndefOr[__string] = js.undefined
@@ -509,6 +524,7 @@ package mediaconnect {
   }
 
   object ListEntitlementsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -527,6 +543,7 @@ package mediaconnect {
   }
 
   object ListEntitlementsResponse {
+    @inline
     def apply(
         Entitlements: js.UndefOr[__listOfListedEntitlement] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -545,6 +562,7 @@ package mediaconnect {
   }
 
   object ListFlowsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -563,6 +581,7 @@ package mediaconnect {
   }
 
   object ListFlowsResponse {
+    @inline
     def apply(
         Flows: js.UndefOr[__listOfListedFlow] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -580,6 +599,7 @@ package mediaconnect {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceArn: __string
     ): ListTagsForResourceRequest = {
@@ -597,6 +617,7 @@ package mediaconnect {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -616,6 +637,7 @@ package mediaconnect {
   }
 
   object ListedEntitlement {
+    @inline
     def apply(
         EntitlementArn: __string,
         EntitlementName: __string
@@ -643,6 +665,7 @@ package mediaconnect {
   }
 
   object ListedFlow {
+    @inline
     def apply(
         AvailabilityZone: __string,
         Description: __string,
@@ -673,6 +696,7 @@ package mediaconnect {
   }
 
   object Messages {
+    @inline
     def apply(
         Errors: __listOf__string
     ): Messages = {
@@ -701,6 +725,7 @@ package mediaconnect {
   }
 
   object Output {
+    @inline
     def apply(
         Name: __string,
         OutputArn: __string,
@@ -744,6 +769,7 @@ package mediaconnect {
   }
 
   object RemoveFlowOutputRequest {
+    @inline
     def apply(
         FlowArn: __string,
         OutputArn: __string
@@ -764,6 +790,7 @@ package mediaconnect {
   }
 
   object RemoveFlowOutputResponse {
+    @inline
     def apply(
         FlowArn: js.UndefOr[__string] = js.undefined,
         OutputArn: js.UndefOr[__string] = js.undefined
@@ -782,6 +809,7 @@ package mediaconnect {
   }
 
   object RevokeFlowEntitlementRequest {
+    @inline
     def apply(
         EntitlementArn: __string,
         FlowArn: __string
@@ -802,6 +830,7 @@ package mediaconnect {
   }
 
   object RevokeFlowEntitlementResponse {
+    @inline
     def apply(
         EntitlementArn: js.UndefOr[__string] = js.undefined,
         FlowArn: js.UndefOr[__string] = js.undefined
@@ -831,6 +860,7 @@ package mediaconnect {
   }
 
   object SetSourceRequest {
+    @inline
     def apply(
         Decryption: js.UndefOr[Encryption] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
@@ -875,6 +905,7 @@ package mediaconnect {
   }
 
   object Source {
+    @inline
     def apply(
         Name: __string,
         SourceArn: __string,
@@ -915,6 +946,7 @@ package mediaconnect {
   }
 
   object StartFlowRequest {
+    @inline
     def apply(
         FlowArn: __string
     ): StartFlowRequest = {
@@ -933,6 +965,7 @@ package mediaconnect {
   }
 
   object StartFlowResponse {
+    @inline
     def apply(
         FlowArn: js.UndefOr[__string] = js.undefined,
         Status: js.UndefOr[Status] = js.undefined
@@ -962,6 +995,7 @@ package mediaconnect {
   }
 
   object StopFlowRequest {
+    @inline
     def apply(
         FlowArn: __string
     ): StopFlowRequest = {
@@ -980,6 +1014,7 @@ package mediaconnect {
   }
 
   object StopFlowResponse {
+    @inline
     def apply(
         FlowArn: js.UndefOr[__string] = js.undefined,
         Status: js.UndefOr[Status] = js.undefined
@@ -1001,6 +1036,7 @@ package mediaconnect {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceArn: __string,
         Tags: __mapOf__string
@@ -1029,6 +1065,7 @@ package mediaconnect {
   }
 
   object Transport {
+    @inline
     def apply(
         Protocol: Protocol,
         CidrAllowList: js.UndefOr[__listOf__string] = js.undefined,
@@ -1059,6 +1096,7 @@ package mediaconnect {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceArn: __string,
         TagKeys: __listOf__string
@@ -1089,6 +1127,7 @@ package mediaconnect {
   }
 
   object UpdateEncryption {
+    @inline
     def apply(
         Algorithm: js.UndefOr[Algorithm] = js.undefined,
         ConstantInitializationVector: js.UndefOr[__string] = js.undefined,
@@ -1129,6 +1168,7 @@ package mediaconnect {
   }
 
   object UpdateFlowEntitlementRequest {
+    @inline
     def apply(
         EntitlementArn: __string,
         FlowArn: __string,
@@ -1155,6 +1195,7 @@ package mediaconnect {
   }
 
   object UpdateFlowEntitlementResponse {
+    @inline
     def apply(
         Entitlement: js.UndefOr[Entitlement] = js.undefined,
         FlowArn: js.UndefOr[__string] = js.undefined
@@ -1186,6 +1227,7 @@ package mediaconnect {
   }
 
   object UpdateFlowOutputRequest {
+    @inline
     def apply(
         FlowArn: __string,
         OutputArn: __string,
@@ -1226,6 +1268,7 @@ package mediaconnect {
   }
 
   object UpdateFlowOutputResponse {
+    @inline
     def apply(
         FlowArn: js.UndefOr[__string] = js.undefined,
         Output: js.UndefOr[Output] = js.undefined
@@ -1256,6 +1299,7 @@ package mediaconnect {
   }
 
   object UpdateFlowSourceRequest {
+    @inline
     def apply(
         FlowArn: __string,
         SourceArn: __string,
@@ -1294,6 +1338,7 @@ package mediaconnect {
   }
 
   object UpdateFlowSourceResponse {
+    @inline
     def apply(
         FlowArn: js.UndefOr[__string] = js.undefined,
         Source: js.UndefOr[Source] = js.undefined

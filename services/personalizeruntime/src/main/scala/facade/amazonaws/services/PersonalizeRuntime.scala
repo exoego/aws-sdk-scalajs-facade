@@ -43,6 +43,7 @@ package personalizeruntime {
   }
 
   object GetPersonalizedRankingRequest {
+    @inline
     def apply(
         campaignArn: Arn,
         inputList: InputList,
@@ -64,6 +65,7 @@ package personalizeruntime {
   }
 
   object GetPersonalizedRankingResponse {
+    @inline
     def apply(
         personalizedRanking: js.UndefOr[ItemList] = js.undefined
     ): GetPersonalizedRankingResponse = {
@@ -82,6 +84,7 @@ package personalizeruntime {
   }
 
   object GetRecommendationsRequest {
+    @inline
     def apply(
         campaignArn: Arn,
         itemId: js.UndefOr[ItemID] = js.undefined,
@@ -105,6 +108,7 @@ package personalizeruntime {
   }
 
   object GetRecommendationsResponse {
+    @inline
     def apply(
         itemList: js.UndefOr[ItemList] = js.undefined
     ): GetRecommendationsResponse = {
@@ -124,6 +128,7 @@ package personalizeruntime {
   }
 
   object PredictedItem {
+    @inline
     def apply(
         itemId: js.UndefOr[ItemID] = js.undefined
     ): PredictedItem = {

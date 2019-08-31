@@ -77,6 +77,7 @@ package transcribeservice {
   }
 
   object CreateVocabularyRequest {
+    @inline
     def apply(
         LanguageCode: LanguageCode,
         VocabularyName: VocabularyName,
@@ -104,6 +105,7 @@ package transcribeservice {
   }
 
   object CreateVocabularyResponse {
+    @inline
     def apply(
         FailureReason: js.UndefOr[FailureReason] = js.undefined,
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
@@ -127,6 +129,7 @@ package transcribeservice {
   }
 
   object DeleteTranscriptionJobRequest {
+    @inline
     def apply(
         TranscriptionJobName: TranscriptionJobName
     ): DeleteTranscriptionJobRequest = {
@@ -144,6 +147,7 @@ package transcribeservice {
   }
 
   object DeleteVocabularyRequest {
+    @inline
     def apply(
         VocabularyName: VocabularyName
     ): DeleteVocabularyRequest = {
@@ -161,6 +165,7 @@ package transcribeservice {
   }
 
   object GetTranscriptionJobRequest {
+    @inline
     def apply(
         TranscriptionJobName: TranscriptionJobName
     ): GetTranscriptionJobRequest = {
@@ -178,6 +183,7 @@ package transcribeservice {
   }
 
   object GetTranscriptionJobResponse {
+    @inline
     def apply(
         TranscriptionJob: js.UndefOr[TranscriptionJob] = js.undefined
     ): GetTranscriptionJobResponse = {
@@ -193,6 +199,7 @@ package transcribeservice {
   }
 
   object GetVocabularyRequest {
+    @inline
     def apply(
         VocabularyName: VocabularyName
     ): GetVocabularyRequest = {
@@ -215,6 +222,7 @@ package transcribeservice {
   }
 
   object GetVocabularyResponse {
+    @inline
     def apply(
         DownloadUri: js.UndefOr[Uri] = js.undefined,
         FailureReason: js.UndefOr[FailureReason] = js.undefined,
@@ -283,6 +291,7 @@ package transcribeservice {
   }
 
   object ListTranscriptionJobsRequest {
+    @inline
     def apply(
         JobNameContains: js.UndefOr[TranscriptionJobName] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -306,6 +315,7 @@ package transcribeservice {
   }
 
   object ListTranscriptionJobsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Status: js.UndefOr[TranscriptionJobStatus] = js.undefined,
@@ -330,6 +340,7 @@ package transcribeservice {
   }
 
   object ListVocabulariesRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NameContains: js.UndefOr[VocabularyName] = js.undefined,
@@ -353,6 +364,7 @@ package transcribeservice {
   }
 
   object ListVocabulariesResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Status: js.UndefOr[TranscriptionJobStatus] = js.undefined,
@@ -375,6 +387,7 @@ package transcribeservice {
   }
 
   object Media {
+    @inline
     def apply(
         MediaFileUri: js.UndefOr[Uri] = js.undefined
     ): Media = {
@@ -412,6 +425,7 @@ package transcribeservice {
   }
 
   object Settings {
+    @inline
     def apply(
         ChannelIdentification: js.UndefOr[Boolean] = js.undefined,
         MaxSpeakerLabels: js.UndefOr[MaxSpeakers] = js.undefined,
@@ -439,6 +453,7 @@ package transcribeservice {
   }
 
   object StartTranscriptionJobRequest {
+    @inline
     def apply(
         LanguageCode: LanguageCode,
         Media: Media,
@@ -468,6 +483,7 @@ package transcribeservice {
   }
 
   object StartTranscriptionJobResponse {
+    @inline
     def apply(
         TranscriptionJob: js.UndefOr[TranscriptionJob] = js.undefined
     ): StartTranscriptionJobResponse = {
@@ -486,6 +502,7 @@ package transcribeservice {
   }
 
   object Transcript {
+    @inline
     def apply(
         TranscriptFileUri: js.UndefOr[Uri] = js.undefined
     ): Transcript = {
@@ -514,6 +531,7 @@ package transcribeservice {
   }
 
   object TranscriptionJob {
+    @inline
     def apply(
         CompletionTime: js.UndefOr[DateTime] = js.undefined,
         CreationTime: js.UndefOr[DateTime] = js.undefined,
@@ -566,6 +584,7 @@ package transcribeservice {
   }
 
   object TranscriptionJobSummary {
+    @inline
     def apply(
         CompletionTime: js.UndefOr[DateTime] = js.undefined,
         CreationTime: js.UndefOr[DateTime] = js.undefined,
@@ -596,6 +615,7 @@ package transcribeservice {
   }
 
   object UpdateVocabularyRequest {
+    @inline
     def apply(
         LanguageCode: LanguageCode,
         VocabularyName: VocabularyName,
@@ -622,6 +642,7 @@ package transcribeservice {
   }
 
   object UpdateVocabularyResponse {
+    @inline
     def apply(
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         LastModifiedTime: js.UndefOr[DateTime] = js.undefined,
@@ -649,6 +670,7 @@ package transcribeservice {
   }
 
   object VocabularyInfo {
+    @inline
     def apply(
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         LastModifiedTime: js.UndefOr[DateTime] = js.undefined,

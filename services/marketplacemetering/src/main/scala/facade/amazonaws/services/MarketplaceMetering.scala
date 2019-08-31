@@ -55,6 +55,7 @@ package marketplacemetering {
   }
 
   object BatchMeterUsageRequest {
+    @inline
     def apply(
         ProductCode: ProductCode,
         UsageRecords: UsageRecordList
@@ -78,6 +79,7 @@ package marketplacemetering {
   }
 
   object BatchMeterUsageResult {
+    @inline
     def apply(
         Results: js.UndefOr[UsageRecordResultList] = js.undefined,
         UnprocessedRecords: js.UndefOr[UsageRecordList] = js.undefined
@@ -99,6 +101,7 @@ package marketplacemetering {
   }
 
   object MeterUsageRequest {
+    @inline
     def apply(
         ProductCode: ProductCode,
         Timestamp: Timestamp,
@@ -124,6 +127,7 @@ package marketplacemetering {
   }
 
   object MeterUsageResult {
+    @inline
     def apply(
         MeteringRecordId: js.UndefOr[String] = js.undefined
     ): MeterUsageResult = {
@@ -141,6 +145,7 @@ package marketplacemetering {
   }
 
   object RegisterUsageRequest {
+    @inline
     def apply(
         ProductCode: ProductCode,
         PublicKeyVersion: VersionInteger,
@@ -163,6 +168,7 @@ package marketplacemetering {
   }
 
   object RegisterUsageResult {
+    @inline
     def apply(
         PublicKeyRotationTimestamp: js.UndefOr[Timestamp] = js.undefined,
         Signature: js.UndefOr[NonEmptyString] = js.undefined
@@ -185,6 +191,7 @@ package marketplacemetering {
   }
 
   object ResolveCustomerRequest {
+    @inline
     def apply(
         RegistrationToken: NonEmptyString
     ): ResolveCustomerRequest = {
@@ -206,6 +213,7 @@ package marketplacemetering {
   }
 
   object ResolveCustomerResult {
+    @inline
     def apply(
         CustomerIdentifier: js.UndefOr[CustomerIdentifier] = js.undefined,
         ProductCode: js.UndefOr[ProductCode] = js.undefined
@@ -230,6 +238,7 @@ package marketplacemetering {
   }
 
   object UsageRecord {
+    @inline
     def apply(
         CustomerIdentifier: CustomerIdentifier,
         Dimension: UsageDimension,
@@ -258,6 +267,7 @@ package marketplacemetering {
   }
 
   object UsageRecordResult {
+    @inline
     def apply(
         MeteringRecordId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[UsageRecordResultStatus] = js.undefined,

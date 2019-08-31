@@ -570,6 +570,7 @@ package sagemaker {
   }
 
   object AddTagsInput {
+    @inline
     def apply(
         ResourceArn: ResourceArn,
         Tags: TagList
@@ -589,6 +590,7 @@ package sagemaker {
   }
 
   object AddTagsOutput {
+    @inline
     def apply(
         Tags: js.UndefOr[TagList] = js.undefined
     ): AddTagsOutput = {
@@ -618,6 +620,7 @@ package sagemaker {
   }
 
   object AlgorithmSpecification {
+    @inline
     def apply(
         TrainingInputMode: TrainingInputMode,
         AlgorithmName: js.UndefOr[ArnOrName] = js.undefined,
@@ -655,6 +658,7 @@ package sagemaker {
   }
 
   object AlgorithmStatusDetails {
+    @inline
     def apply(
         ImageScanStatuses: js.UndefOr[AlgorithmStatusItemList] = js.undefined,
         ValidationStatuses: js.UndefOr[AlgorithmStatusItemList] = js.undefined
@@ -677,6 +681,7 @@ package sagemaker {
   }
 
   object AlgorithmStatusItem {
+    @inline
     def apply(
         Name: EntityName,
         Status: DetailedAlgorithmStatus,
@@ -705,6 +710,7 @@ package sagemaker {
   }
 
   object AlgorithmSummary {
+    @inline
     def apply(
         AlgorithmArn: AlgorithmArn,
         AlgorithmName: EntityName,
@@ -736,6 +742,7 @@ package sagemaker {
   }
 
   object AlgorithmValidationProfile {
+    @inline
     def apply(
         ProfileName: EntityName,
         TrainingJobDefinition: TrainingJobDefinition,
@@ -761,6 +768,7 @@ package sagemaker {
   }
 
   object AlgorithmValidationSpecification {
+    @inline
     def apply(
         ValidationProfiles: AlgorithmValidationProfiles,
         ValidationRole: RoleArn
@@ -783,6 +791,7 @@ package sagemaker {
   }
 
   object AnnotationConsolidationConfig {
+    @inline
     def apply(
         AnnotationConsolidationLambdaArn: LambdaFunctionArn
     ): AnnotationConsolidationConfig = {
@@ -825,6 +834,7 @@ package sagemaker {
   }
 
   object CategoricalParameterRange {
+    @inline
     def apply(
         Name: ParameterKey,
         Values: ParameterValues
@@ -847,6 +857,7 @@ package sagemaker {
   }
 
   object CategoricalParameterRangeSpecification {
+    @inline
     def apply(
         Values: ParameterValues
     ): CategoricalParameterRangeSpecification = {
@@ -873,6 +884,7 @@ package sagemaker {
   }
 
   object Channel {
+    @inline
     def apply(
         ChannelName: ChannelName,
         DataSource: DataSource,
@@ -910,6 +922,7 @@ package sagemaker {
   }
 
   object ChannelSpecification {
+    @inline
     def apply(
         Name: ChannelName,
         SupportedContentTypes: ContentTypes,
@@ -943,6 +956,7 @@ package sagemaker {
   }
 
   object CheckpointConfig {
+    @inline
     def apply(
         S3Uri: S3Uri,
         LocalPath: js.UndefOr[DirectoryPath] = js.undefined
@@ -984,6 +998,7 @@ package sagemaker {
   }
 
   object CodeRepositorySummary {
+    @inline
     def apply(
         CodeRepositoryArn: CodeRepositoryArn,
         CodeRepositoryName: EntityName,
@@ -1014,6 +1029,7 @@ package sagemaker {
   }
 
   object CognitoMemberDefinition {
+    @inline
     def apply(
         ClientId: CognitoClientId,
         UserGroup: CognitoUserGroup,
@@ -1056,6 +1072,7 @@ package sagemaker {
   }
 
   object CompilationJobSummary {
+    @inline
     def apply(
         CompilationJobArn: CompilationJobArn,
         CompilationJobName: EntityName,
@@ -1101,6 +1118,7 @@ package sagemaker {
   }
 
   object ContainerDefinition {
+    @inline
     def apply(
         ContainerHostname: js.UndefOr[ContainerHostname] = js.undefined,
         Environment: js.UndefOr[EnvironmentMap] = js.undefined,
@@ -1137,6 +1155,7 @@ package sagemaker {
   }
 
   object ContinuousParameterRange {
+    @inline
     def apply(
         MaxValue: ParameterValue,
         MinValue: ParameterValue,
@@ -1164,6 +1183,7 @@ package sagemaker {
   }
 
   object ContinuousParameterRangeSpecification {
+    @inline
     def apply(
         MaxValue: ParameterValue,
         MinValue: ParameterValue
@@ -1188,6 +1208,7 @@ package sagemaker {
   }
 
   object CreateAlgorithmInput {
+    @inline
     def apply(
         AlgorithmName: EntityName,
         TrainingSpecification: TrainingSpecification,
@@ -1215,6 +1236,7 @@ package sagemaker {
   }
 
   object CreateAlgorithmOutput {
+    @inline
     def apply(
         AlgorithmArn: AlgorithmArn
     ): CreateAlgorithmOutput = {
@@ -1233,6 +1255,7 @@ package sagemaker {
   }
 
   object CreateCodeRepositoryInput {
+    @inline
     def apply(
         CodeRepositoryName: EntityName,
         GitConfig: GitConfig
@@ -1252,6 +1275,7 @@ package sagemaker {
   }
 
   object CreateCodeRepositoryOutput {
+    @inline
     def apply(
         CodeRepositoryArn: CodeRepositoryArn
     ): CreateCodeRepositoryOutput = {
@@ -1273,6 +1297,7 @@ package sagemaker {
   }
 
   object CreateCompilationJobRequest {
+    @inline
     def apply(
         CompilationJobName: EntityName,
         InputConfig: InputConfig,
@@ -1298,6 +1323,7 @@ package sagemaker {
   }
 
   object CreateCompilationJobResponse {
+    @inline
     def apply(
         CompilationJobArn: CompilationJobArn
     ): CreateCompilationJobResponse = {
@@ -1318,6 +1344,7 @@ package sagemaker {
   }
 
   object CreateEndpointConfigInput {
+    @inline
     def apply(
         EndpointConfigName: EndpointConfigName,
         ProductionVariants: ProductionVariantList,
@@ -1341,6 +1368,7 @@ package sagemaker {
   }
 
   object CreateEndpointConfigOutput {
+    @inline
     def apply(
         EndpointConfigArn: EndpointConfigArn
     ): CreateEndpointConfigOutput = {
@@ -1360,6 +1388,7 @@ package sagemaker {
   }
 
   object CreateEndpointInput {
+    @inline
     def apply(
         EndpointConfigName: EndpointConfigName,
         EndpointName: EndpointName,
@@ -1381,6 +1410,7 @@ package sagemaker {
   }
 
   object CreateEndpointOutput {
+    @inline
     def apply(
         EndpointArn: EndpointArn
     ): CreateEndpointOutput = {
@@ -1402,6 +1432,7 @@ package sagemaker {
   }
 
   object CreateHyperParameterTuningJobRequest {
+    @inline
     def apply(
         HyperParameterTuningJobConfig: HyperParameterTuningJobConfig,
         HyperParameterTuningJobName: HyperParameterTuningJobName,
@@ -1427,6 +1458,7 @@ package sagemaker {
   }
 
   object CreateHyperParameterTuningJobResponse {
+    @inline
     def apply(
         HyperParameterTuningJobArn: HyperParameterTuningJobArn
     ): CreateHyperParameterTuningJobResponse = {
@@ -1453,6 +1485,7 @@ package sagemaker {
   }
 
   object CreateLabelingJobRequest {
+    @inline
     def apply(
         HumanTaskConfig: HumanTaskConfig,
         InputConfig: LabelingJobInputConfig,
@@ -1490,6 +1523,7 @@ package sagemaker {
   }
 
   object CreateLabelingJobResponse {
+    @inline
     def apply(
         LabelingJobArn: LabelingJobArn
     ): CreateLabelingJobResponse = {
@@ -1513,6 +1547,7 @@ package sagemaker {
   }
 
   object CreateModelInput {
+    @inline
     def apply(
         ExecutionRoleArn: RoleArn,
         ModelName: ModelName,
@@ -1542,6 +1577,7 @@ package sagemaker {
   }
 
   object CreateModelOutput {
+    @inline
     def apply(
         ModelArn: ModelArn
     ): CreateModelOutput = {
@@ -1564,6 +1600,7 @@ package sagemaker {
   }
 
   object CreateModelPackageInput {
+    @inline
     def apply(
         ModelPackageName: EntityName,
         CertifyForMarketplace: js.UndefOr[CertifyForMarketplace] = js.undefined,
@@ -1593,6 +1630,7 @@ package sagemaker {
   }
 
   object CreateModelPackageOutput {
+    @inline
     def apply(
         ModelPackageArn: ModelPackageArn
     ): CreateModelPackageOutput = {
@@ -1623,6 +1661,7 @@ package sagemaker {
   }
 
   object CreateNotebookInstanceInput {
+    @inline
     def apply(
         InstanceType: InstanceType,
         NotebookInstanceName: NotebookInstanceName,
@@ -1670,6 +1709,7 @@ package sagemaker {
   }
 
   object CreateNotebookInstanceLifecycleConfigInput {
+    @inline
     def apply(
         NotebookInstanceLifecycleConfigName: NotebookInstanceLifecycleConfigName,
         OnCreate: js.UndefOr[NotebookInstanceLifecycleConfigList] = js.undefined,
@@ -1691,6 +1731,7 @@ package sagemaker {
   }
 
   object CreateNotebookInstanceLifecycleConfigOutput {
+    @inline
     def apply(
         NotebookInstanceLifecycleConfigArn: js.UndefOr[NotebookInstanceLifecycleConfigArn] = js.undefined
     ): CreateNotebookInstanceLifecycleConfigOutput = {
@@ -1708,6 +1749,7 @@ package sagemaker {
   }
 
   object CreateNotebookInstanceOutput {
+    @inline
     def apply(
         NotebookInstanceArn: js.UndefOr[NotebookInstanceArn] = js.undefined
     ): CreateNotebookInstanceOutput = {
@@ -1724,6 +1766,7 @@ package sagemaker {
   }
 
   object CreatePresignedNotebookInstanceUrlInput {
+    @inline
     def apply(
         NotebookInstanceName: NotebookInstanceName,
         SessionExpirationDurationInSeconds: js.UndefOr[SessionExpirationDurationInSeconds] = js.undefined
@@ -1745,6 +1788,7 @@ package sagemaker {
   }
 
   object CreatePresignedNotebookInstanceUrlOutput {
+    @inline
     def apply(
         AuthorizedUrl: js.UndefOr[NotebookInstanceUrl] = js.undefined
     ): CreatePresignedNotebookInstanceUrlOutput = {
@@ -1773,6 +1817,7 @@ package sagemaker {
   }
 
   object CreateTrainingJobRequest {
+    @inline
     def apply(
         AlgorithmSpecification: AlgorithmSpecification,
         OutputDataConfig: OutputDataConfig,
@@ -1820,6 +1865,7 @@ package sagemaker {
   }
 
   object CreateTrainingJobResponse {
+    @inline
     def apply(
         TrainingJobArn: TrainingJobArn
     ): CreateTrainingJobResponse = {
@@ -1847,6 +1893,7 @@ package sagemaker {
   }
 
   object CreateTransformJobRequest {
+    @inline
     def apply(
         ModelName: ModelName,
         TransformInput: TransformInput,
@@ -1884,6 +1931,7 @@ package sagemaker {
   }
 
   object CreateTransformJobResponse {
+    @inline
     def apply(
         TransformJobArn: TransformJobArn
     ): CreateTransformJobResponse = {
@@ -1905,6 +1953,7 @@ package sagemaker {
   }
 
   object CreateWorkteamRequest {
+    @inline
     def apply(
         Description: String200,
         MemberDefinitions: MemberDefinitions,
@@ -1932,6 +1981,7 @@ package sagemaker {
   }
 
   object CreateWorkteamResponse {
+    @inline
     def apply(
         WorkteamArn: js.UndefOr[WorkteamArn] = js.undefined
     ): CreateWorkteamResponse = {
@@ -1952,6 +2002,7 @@ package sagemaker {
   }
 
   object DataProcessing {
+    @inline
     def apply(
         InputFilter: js.UndefOr[JsonPath] = js.undefined,
         JoinSource: js.UndefOr[JoinSource] = js.undefined,
@@ -1975,6 +2026,7 @@ package sagemaker {
   }
 
   object DataSource {
+    @inline
     def apply(
         FileSystemDataSource: js.UndefOr[FileSystemDataSource] = js.undefined,
         S3DataSource: js.UndefOr[S3DataSource] = js.undefined
@@ -1992,6 +2044,7 @@ package sagemaker {
   }
 
   object DeleteAlgorithmInput {
+    @inline
     def apply(
         AlgorithmName: EntityName
     ): DeleteAlgorithmInput = {
@@ -2009,6 +2062,7 @@ package sagemaker {
   }
 
   object DeleteCodeRepositoryInput {
+    @inline
     def apply(
         CodeRepositoryName: EntityName
     ): DeleteCodeRepositoryInput = {
@@ -2026,6 +2080,7 @@ package sagemaker {
   }
 
   object DeleteEndpointConfigInput {
+    @inline
     def apply(
         EndpointConfigName: EndpointConfigName
     ): DeleteEndpointConfigInput = {
@@ -2043,6 +2098,7 @@ package sagemaker {
   }
 
   object DeleteEndpointInput {
+    @inline
     def apply(
         EndpointName: EndpointName
     ): DeleteEndpointInput = {
@@ -2060,6 +2116,7 @@ package sagemaker {
   }
 
   object DeleteModelInput {
+    @inline
     def apply(
         ModelName: ModelName
     ): DeleteModelInput = {
@@ -2077,6 +2134,7 @@ package sagemaker {
   }
 
   object DeleteModelPackageInput {
+    @inline
     def apply(
         ModelPackageName: EntityName
     ): DeleteModelPackageInput = {
@@ -2094,6 +2152,7 @@ package sagemaker {
   }
 
   object DeleteNotebookInstanceInput {
+    @inline
     def apply(
         NotebookInstanceName: NotebookInstanceName
     ): DeleteNotebookInstanceInput = {
@@ -2111,6 +2170,7 @@ package sagemaker {
   }
 
   object DeleteNotebookInstanceLifecycleConfigInput {
+    @inline
     def apply(
         NotebookInstanceLifecycleConfigName: NotebookInstanceLifecycleConfigName
     ): DeleteNotebookInstanceLifecycleConfigInput = {
@@ -2129,6 +2189,7 @@ package sagemaker {
   }
 
   object DeleteTagsInput {
+    @inline
     def apply(
         ResourceArn: ResourceArn,
         TagKeys: TagKeyList
@@ -2146,6 +2207,7 @@ package sagemaker {
   trait DeleteTagsOutput extends js.Object {}
 
   object DeleteTagsOutput {
+    @inline
     def apply(
         ): DeleteTagsOutput = {
       val __obj = js.Dynamic.literal()
@@ -2160,6 +2222,7 @@ package sagemaker {
   }
 
   object DeleteWorkteamRequest {
+    @inline
     def apply(
         WorkteamName: WorkteamName
     ): DeleteWorkteamRequest = {
@@ -2177,6 +2240,7 @@ package sagemaker {
   }
 
   object DeleteWorkteamResponse {
+    @inline
     def apply(
         Success: Success
     ): DeleteWorkteamResponse = {
@@ -2200,6 +2264,7 @@ package sagemaker {
   }
 
   object DeployedImage {
+    @inline
     def apply(
         ResolutionTime: js.UndefOr[Timestamp] = js.undefined,
         ResolvedImage: js.UndefOr[Image] = js.undefined,
@@ -2219,6 +2284,7 @@ package sagemaker {
   }
 
   object DescribeAlgorithmInput {
+    @inline
     def apply(
         AlgorithmName: ArnOrName
     ): DescribeAlgorithmInput = {
@@ -2246,6 +2312,7 @@ package sagemaker {
   }
 
   object DescribeAlgorithmOutput {
+    @inline
     def apply(
         AlgorithmArn: AlgorithmArn,
         AlgorithmName: EntityName,
@@ -2283,6 +2350,7 @@ package sagemaker {
   }
 
   object DescribeCodeRepositoryInput {
+    @inline
     def apply(
         CodeRepositoryName: EntityName
     ): DescribeCodeRepositoryInput = {
@@ -2304,6 +2372,7 @@ package sagemaker {
   }
 
   object DescribeCodeRepositoryOutput {
+    @inline
     def apply(
         CodeRepositoryArn: CodeRepositoryArn,
         CodeRepositoryName: EntityName,
@@ -2329,6 +2398,7 @@ package sagemaker {
   }
 
   object DescribeCompilationJobRequest {
+    @inline
     def apply(
         CompilationJobName: EntityName
     ): DescribeCompilationJobRequest = {
@@ -2358,6 +2428,7 @@ package sagemaker {
   }
 
   object DescribeCompilationJobResponse {
+    @inline
     def apply(
         CompilationJobArn: CompilationJobArn,
         CompilationJobName: EntityName,
@@ -2399,6 +2470,7 @@ package sagemaker {
   }
 
   object DescribeEndpointConfigInput {
+    @inline
     def apply(
         EndpointConfigName: EndpointConfigName
     ): DescribeEndpointConfigInput = {
@@ -2420,6 +2492,7 @@ package sagemaker {
   }
 
   object DescribeEndpointConfigOutput {
+    @inline
     def apply(
         CreationTime: Timestamp,
         EndpointConfigArn: EndpointConfigArn,
@@ -2445,6 +2518,7 @@ package sagemaker {
   }
 
   object DescribeEndpointInput {
+    @inline
     def apply(
         EndpointName: EndpointName
     ): DescribeEndpointInput = {
@@ -2469,6 +2543,7 @@ package sagemaker {
   }
 
   object DescribeEndpointOutput {
+    @inline
     def apply(
         CreationTime: Timestamp,
         EndpointArn: EndpointArn,
@@ -2500,6 +2575,7 @@ package sagemaker {
   }
 
   object DescribeHyperParameterTuningJobRequest {
+    @inline
     def apply(
         HyperParameterTuningJobName: HyperParameterTuningJobName
     ): DescribeHyperParameterTuningJobRequest = {
@@ -2530,6 +2606,7 @@ package sagemaker {
   }
 
   object DescribeHyperParameterTuningJobResponse {
+    @inline
     def apply(
         CreationTime: Timestamp,
         HyperParameterTuningJobArn: HyperParameterTuningJobArn,
@@ -2575,6 +2652,7 @@ package sagemaker {
   }
 
   object DescribeLabelingJobRequest {
+    @inline
     def apply(
         LabelingJobName: LabelingJobName
     ): DescribeLabelingJobRequest = {
@@ -2609,6 +2687,7 @@ package sagemaker {
   }
 
   object DescribeLabelingJobResponse {
+    @inline
     def apply(
         CreationTime: Timestamp,
         HumanTaskConfig: HumanTaskConfig,
@@ -2662,6 +2741,7 @@ package sagemaker {
   }
 
   object DescribeModelInput {
+    @inline
     def apply(
         ModelName: ModelName
     ): DescribeModelInput = {
@@ -2686,6 +2766,7 @@ package sagemaker {
   }
 
   object DescribeModelOutput {
+    @inline
     def apply(
         CreationTime: Timestamp,
         ExecutionRoleArn: RoleArn,
@@ -2717,6 +2798,7 @@ package sagemaker {
   }
 
   object DescribeModelPackageInput {
+    @inline
     def apply(
         ModelPackageName: ArnOrName
     ): DescribeModelPackageInput = {
@@ -2743,6 +2825,7 @@ package sagemaker {
   }
 
   object DescribeModelPackageOutput {
+    @inline
     def apply(
         CreationTime: CreationTime,
         ModelPackageArn: ModelPackageArn,
@@ -2780,6 +2863,7 @@ package sagemaker {
   }
 
   object DescribeNotebookInstanceInput {
+    @inline
     def apply(
         NotebookInstanceName: NotebookInstanceName
     ): DescribeNotebookInstanceInput = {
@@ -2797,6 +2881,7 @@ package sagemaker {
   }
 
   object DescribeNotebookInstanceLifecycleConfigInput {
+    @inline
     def apply(
         NotebookInstanceLifecycleConfigName: NotebookInstanceLifecycleConfigName
     ): DescribeNotebookInstanceLifecycleConfigInput = {
@@ -2819,6 +2904,7 @@ package sagemaker {
   }
 
   object DescribeNotebookInstanceLifecycleConfigOutput {
+    @inline
     def apply(
         CreationTime: js.UndefOr[CreationTime] = js.undefined,
         LastModifiedTime: js.UndefOr[LastModifiedTime] = js.undefined,
@@ -2867,6 +2953,7 @@ package sagemaker {
   }
 
   object DescribeNotebookInstanceOutput {
+    @inline
     def apply(
         AcceleratorTypes: js.UndefOr[NotebookInstanceAcceleratorTypes] = js.undefined,
         AdditionalCodeRepositories: js.UndefOr[AdditionalCodeRepositoryNamesOrUrls] = js.undefined,
@@ -2924,6 +3011,7 @@ package sagemaker {
   }
 
   object DescribeSubscribedWorkteamRequest {
+    @inline
     def apply(
         WorkteamArn: WorkteamArn
     ): DescribeSubscribedWorkteamRequest = {
@@ -2941,6 +3029,7 @@ package sagemaker {
   }
 
   object DescribeSubscribedWorkteamResponse {
+    @inline
     def apply(
         SubscribedWorkteam: SubscribedWorkteam
     ): DescribeSubscribedWorkteamResponse = {
@@ -2958,6 +3047,7 @@ package sagemaker {
   }
 
   object DescribeTrainingJobRequest {
+    @inline
     def apply(
         TrainingJobName: TrainingJobName
     ): DescribeTrainingJobRequest = {
@@ -3002,6 +3092,7 @@ package sagemaker {
   }
 
   object DescribeTrainingJobResponse {
+    @inline
     def apply(
         AlgorithmSpecification: AlgorithmSpecification,
         CreationTime: Timestamp,
@@ -3079,6 +3170,7 @@ package sagemaker {
   }
 
   object DescribeTransformJobRequest {
+    @inline
     def apply(
         TransformJobName: TransformJobName
     ): DescribeTransformJobRequest = {
@@ -3112,6 +3204,7 @@ package sagemaker {
   }
 
   object DescribeTransformJobResponse {
+    @inline
     def apply(
         CreationTime: Timestamp,
         ModelName: ModelName,
@@ -3161,6 +3254,7 @@ package sagemaker {
   }
 
   object DescribeWorkteamRequest {
+    @inline
     def apply(
         WorkteamName: WorkteamName
     ): DescribeWorkteamRequest = {
@@ -3178,6 +3272,7 @@ package sagemaker {
   }
 
   object DescribeWorkteamResponse {
+    @inline
     def apply(
         Workteam: Workteam
     ): DescribeWorkteamResponse = {
@@ -3200,6 +3295,7 @@ package sagemaker {
   }
 
   object DesiredWeightAndCapacity {
+    @inline
     def apply(
         VariantName: VariantName,
         DesiredInstanceCount: js.UndefOr[TaskCount] = js.undefined,
@@ -3258,6 +3354,7 @@ package sagemaker {
   }
 
   object EndpointConfigSummary {
+    @inline
     def apply(
         CreationTime: Timestamp,
         EndpointConfigArn: EndpointConfigArn,
@@ -3309,6 +3406,7 @@ package sagemaker {
   }
 
   object EndpointSummary {
+    @inline
     def apply(
         CreationTime: Timestamp,
         EndpointArn: EndpointArn,
@@ -3347,6 +3445,7 @@ package sagemaker {
   }
 
   object FileSystemDataSource {
+    @inline
     def apply(
         DirectoryPath: DirectoryPath,
         FileSystemAccessMode: FileSystemAccessMode,
@@ -3399,6 +3498,7 @@ package sagemaker {
   }
 
   object Filter {
+    @inline
     def apply(
         Name: ResourcePropertyName,
         Operator: js.UndefOr[Operator] = js.undefined,
@@ -3425,6 +3525,7 @@ package sagemaker {
   }
 
   object FinalHyperParameterTuningJobObjectiveMetric {
+    @inline
     def apply(
         MetricName: MetricName,
         Value: MetricValue,
@@ -3457,6 +3558,7 @@ package sagemaker {
   }
 
   object GetSearchSuggestionsRequest {
+    @inline
     def apply(
         Resource: ResourceType,
         SuggestionQuery: js.UndefOr[SuggestionQuery] = js.undefined
@@ -3476,6 +3578,7 @@ package sagemaker {
   }
 
   object GetSearchSuggestionsResponse {
+    @inline
     def apply(
         PropertyNameSuggestions: js.UndefOr[PropertyNameSuggestionList] = js.undefined
     ): GetSearchSuggestionsResponse = {
@@ -3496,6 +3599,7 @@ package sagemaker {
   }
 
   object GitConfig {
+    @inline
     def apply(
         RepositoryUrl: GitConfigUrl,
         Branch: js.UndefOr[Branch] = js.undefined,
@@ -3520,6 +3624,7 @@ package sagemaker {
   }
 
   object GitConfigForUpdate {
+    @inline
     def apply(
         SecretArn: js.UndefOr[SecretArn] = js.undefined
     ): GitConfigForUpdate = {
@@ -3549,6 +3654,7 @@ package sagemaker {
   }
 
   object HumanTaskConfig {
+    @inline
     def apply(
         AnnotationConsolidationConfig: AnnotationConsolidationConfig,
         NumberOfHumanWorkersPerDataObject: NumberOfHumanWorkersPerDataObject,
@@ -3596,6 +3702,7 @@ package sagemaker {
   }
 
   object HyperParameterAlgorithmSpecification {
+    @inline
     def apply(
         TrainingInputMode: TrainingInputMode,
         AlgorithmName: js.UndefOr[ArnOrName] = js.undefined,
@@ -3637,6 +3744,7 @@ package sagemaker {
   }
 
   object HyperParameterSpecification {
+    @inline
     def apply(
         Name: ParameterName,
         Type: ParameterType,
@@ -3680,6 +3788,7 @@ package sagemaker {
   }
 
   object HyperParameterTrainingJobDefinition {
+    @inline
     def apply(
         AlgorithmSpecification: HyperParameterAlgorithmSpecification,
         OutputDataConfig: OutputDataConfig,
@@ -3736,6 +3845,7 @@ package sagemaker {
   }
 
   object HyperParameterTrainingJobSummary {
+    @inline
     def apply(
         CreationTime: Timestamp,
         TrainingJobArn: TrainingJobArn,
@@ -3783,6 +3893,7 @@ package sagemaker {
   }
 
   object HyperParameterTuningJobConfig {
+    @inline
     def apply(
         ResourceLimits: ResourceLimits,
         Strategy: HyperParameterTuningJobStrategyType,
@@ -3816,6 +3927,7 @@ package sagemaker {
   }
 
   object HyperParameterTuningJobObjective {
+    @inline
     def apply(
         MetricName: MetricName,
         Type: HyperParameterTuningJobObjectiveType
@@ -3882,6 +3994,7 @@ package sagemaker {
   }
 
   object HyperParameterTuningJobSummary {
+    @inline
     def apply(
         CreationTime: Timestamp,
         HyperParameterTuningJobArn: HyperParameterTuningJobArn,
@@ -3926,6 +4039,7 @@ package sagemaker {
   }
 
   object HyperParameterTuningJobWarmStartConfig {
+    @inline
     def apply(
         ParentHyperParameterTuningJobs: ParentHyperParameterTuningJobs,
         WarmStartType: HyperParameterTuningJobWarmStartType
@@ -3959,6 +4073,7 @@ package sagemaker {
   }
 
   object InferenceSpecification {
+    @inline
     def apply(
         Containers: ModelPackageContainerDefinitionList,
         SupportedContentTypes: ContentTypes,
@@ -3989,6 +4104,7 @@ package sagemaker {
   }
 
   object InputConfig {
+    @inline
     def apply(
         DataInputConfig: DataInputConfig,
         Framework: Framework,
@@ -4100,6 +4216,7 @@ package sagemaker {
   }
 
   object IntegerParameterRange {
+    @inline
     def apply(
         MaxValue: ParameterValue,
         MinValue: ParameterValue,
@@ -4127,6 +4244,7 @@ package sagemaker {
   }
 
   object IntegerParameterRangeSpecification {
+    @inline
     def apply(
         MaxValue: ParameterValue,
         MinValue: ParameterValue
@@ -4160,6 +4278,7 @@ package sagemaker {
   }
 
   object LabelCounters {
+    @inline
     def apply(
         FailedNonRetryableError: js.UndefOr[LabelCounter] = js.undefined,
         HumanLabeled: js.UndefOr[LabelCounter] = js.undefined,
@@ -4188,6 +4307,7 @@ package sagemaker {
   }
 
   object LabelCountersForWorkteam {
+    @inline
     def apply(
         HumanLabeled: js.UndefOr[LabelCounter] = js.undefined,
         PendingHuman: js.UndefOr[LabelCounter] = js.undefined,
@@ -4212,6 +4332,7 @@ package sagemaker {
   }
 
   object LabelingJobAlgorithmsConfig {
+    @inline
     def apply(
         LabelingJobAlgorithmSpecificationArn: LabelingJobAlgorithmSpecificationArn,
         InitialActiveLearningModelArn: js.UndefOr[ModelArn] = js.undefined,
@@ -4240,6 +4361,7 @@ package sagemaker {
   }
 
   object LabelingJobDataAttributes {
+    @inline
     def apply(
         ContentClassifiers: js.UndefOr[ContentClassifiers] = js.undefined
     ): LabelingJobDataAttributes = {
@@ -4258,6 +4380,7 @@ package sagemaker {
   }
 
   object LabelingJobDataSource {
+    @inline
     def apply(
         S3DataSource: LabelingJobS3DataSource
     ): LabelingJobDataSource = {
@@ -4283,6 +4406,7 @@ package sagemaker {
   }
 
   object LabelingJobForWorkteamSummary {
+    @inline
     def apply(
         CreationTime: Timestamp,
         JobReferenceCode: JobReferenceCode,
@@ -4316,6 +4440,7 @@ package sagemaker {
   }
 
   object LabelingJobInputConfig {
+    @inline
     def apply(
         DataSource: LabelingJobDataSource,
         DataAttributes: js.UndefOr[LabelingJobDataAttributes] = js.undefined
@@ -4339,6 +4464,7 @@ package sagemaker {
   }
 
   object LabelingJobOutput {
+    @inline
     def apply(
         OutputDatasetS3Uri: S3Uri,
         FinalActiveLearningModelArn: js.UndefOr[ModelArn] = js.undefined
@@ -4364,6 +4490,7 @@ package sagemaker {
   }
 
   object LabelingJobOutputConfig {
+    @inline
     def apply(
         S3OutputPath: S3Uri,
         KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
@@ -4386,6 +4513,7 @@ package sagemaker {
   }
 
   object LabelingJobResourceConfig {
+    @inline
     def apply(
         VolumeKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
     ): LabelingJobResourceConfig = {
@@ -4404,6 +4532,7 @@ package sagemaker {
   }
 
   object LabelingJobS3DataSource {
+    @inline
     def apply(
         ManifestS3Uri: S3Uri
     ): LabelingJobS3DataSource = {
@@ -4435,6 +4564,7 @@ package sagemaker {
   }
 
   object LabelingJobStoppingConditions {
+    @inline
     def apply(
         MaxHumanLabeledObjectCount: js.UndefOr[MaxHumanLabeledObjectCount] = js.undefined,
         MaxPercentageOfInputDatasetLabeled: js.UndefOr[MaxPercentageOfInputDatasetLabeled] = js.undefined
@@ -4470,6 +4600,7 @@ package sagemaker {
   }
 
   object LabelingJobSummary {
+    @inline
     def apply(
         CreationTime: Timestamp,
         LabelCounters: LabelCounters,
@@ -4517,6 +4648,7 @@ package sagemaker {
   }
 
   object ListAlgorithmsInput {
+    @inline
     def apply(
         CreationTimeAfter: js.UndefOr[CreationTime] = js.undefined,
         CreationTimeBefore: js.UndefOr[CreationTime] = js.undefined,
@@ -4545,6 +4677,7 @@ package sagemaker {
   }
 
   object ListAlgorithmsOutput {
+    @inline
     def apply(
         AlgorithmSummaryList: AlgorithmSummaryList,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -4572,6 +4705,7 @@ package sagemaker {
   }
 
   object ListCodeRepositoriesInput {
+    @inline
     def apply(
         CreationTimeAfter: js.UndefOr[CreationTime] = js.undefined,
         CreationTimeBefore: js.UndefOr[CreationTime] = js.undefined,
@@ -4604,6 +4738,7 @@ package sagemaker {
   }
 
   object ListCodeRepositoriesOutput {
+    @inline
     def apply(
         CodeRepositorySummaryList: CodeRepositorySummaryList,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -4632,6 +4767,7 @@ package sagemaker {
   }
 
   object ListCompilationJobsRequest {
+    @inline
     def apply(
         CreationTimeAfter: js.UndefOr[CreationTime] = js.undefined,
         CreationTimeBefore: js.UndefOr[CreationTime] = js.undefined,
@@ -4666,6 +4802,7 @@ package sagemaker {
   }
 
   object ListCompilationJobsResponse {
+    @inline
     def apply(
         CompilationJobSummaries: CompilationJobSummaries,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -4699,6 +4836,7 @@ package sagemaker {
   }
 
   object ListEndpointConfigsInput {
+    @inline
     def apply(
         CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
         CreationTimeBefore: js.UndefOr[Timestamp] = js.undefined,
@@ -4727,6 +4865,7 @@ package sagemaker {
   }
 
   object ListEndpointConfigsOutput {
+    @inline
     def apply(
         EndpointConfigs: EndpointConfigSummaryList,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -4755,6 +4894,7 @@ package sagemaker {
   }
 
   object ListEndpointsInput {
+    @inline
     def apply(
         CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
         CreationTimeBefore: js.UndefOr[Timestamp] = js.undefined,
@@ -4789,6 +4929,7 @@ package sagemaker {
   }
 
   object ListEndpointsOutput {
+    @inline
     def apply(
         Endpoints: EndpointSummaryList,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -4817,6 +4958,7 @@ package sagemaker {
   }
 
   object ListHyperParameterTuningJobsRequest {
+    @inline
     def apply(
         CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
         CreationTimeBefore: js.UndefOr[Timestamp] = js.undefined,
@@ -4851,6 +4993,7 @@ package sagemaker {
   }
 
   object ListHyperParameterTuningJobsResponse {
+    @inline
     def apply(
         HyperParameterTuningJobSummaries: HyperParameterTuningJobSummaries,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -4877,6 +5020,7 @@ package sagemaker {
   }
 
   object ListLabelingJobsForWorkteamRequest {
+    @inline
     def apply(
         WorkteamArn: WorkteamArn,
         CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
@@ -4909,6 +5053,7 @@ package sagemaker {
   }
 
   object ListLabelingJobsForWorkteamResponse {
+    @inline
     def apply(
         LabelingJobSummaryList: LabelingJobForWorkteamSummaryList,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -4943,6 +5088,7 @@ package sagemaker {
   }
 
   object ListLabelingJobsRequest {
+    @inline
     def apply(
         CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
         CreationTimeBefore: js.UndefOr[Timestamp] = js.undefined,
@@ -4977,6 +5123,7 @@ package sagemaker {
   }
 
   object ListLabelingJobsResponse {
+    @inline
     def apply(
         LabelingJobSummaryList: js.UndefOr[LabelingJobSummaryList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -5000,6 +5147,7 @@ package sagemaker {
   }
 
   object ListModelPackagesInput {
+    @inline
     def apply(
         CreationTimeAfter: js.UndefOr[CreationTime] = js.undefined,
         CreationTimeBefore: js.UndefOr[CreationTime] = js.undefined,
@@ -5028,6 +5176,7 @@ package sagemaker {
   }
 
   object ListModelPackagesOutput {
+    @inline
     def apply(
         ModelPackageSummaryList: ModelPackageSummaryList,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -5053,6 +5202,7 @@ package sagemaker {
   }
 
   object ListModelsInput {
+    @inline
     def apply(
         CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
         CreationTimeBefore: js.UndefOr[Timestamp] = js.undefined,
@@ -5081,6 +5231,7 @@ package sagemaker {
   }
 
   object ListModelsOutput {
+    @inline
     def apply(
         Models: ModelSummaryList,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -5108,6 +5259,7 @@ package sagemaker {
   }
 
   object ListNotebookInstanceLifecycleConfigsInput {
+    @inline
     def apply(
         CreationTimeAfter: js.UndefOr[CreationTime] = js.undefined,
         CreationTimeBefore: js.UndefOr[CreationTime] = js.undefined,
@@ -5140,6 +5292,7 @@ package sagemaker {
   }
 
   object ListNotebookInstanceLifecycleConfigsOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         NotebookInstanceLifecycleConfigs: js.UndefOr[NotebookInstanceLifecycleConfigSummaryList] = js.undefined
@@ -5171,6 +5324,7 @@ package sagemaker {
   }
 
   object ListNotebookInstancesInput {
+    @inline
     def apply(
         AdditionalCodeRepositoryEquals: js.UndefOr[CodeRepositoryNameOrUrl] = js.undefined,
         CreationTimeAfter: js.UndefOr[CreationTime] = js.undefined,
@@ -5217,6 +5371,7 @@ package sagemaker {
   }
 
   object ListNotebookInstancesOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         NotebookInstances: js.UndefOr[NotebookInstanceSummaryList] = js.undefined
@@ -5236,6 +5391,7 @@ package sagemaker {
   }
 
   object ListSubscribedWorkteamsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NameContains: js.UndefOr[WorkteamName] = js.undefined,
@@ -5256,6 +5412,7 @@ package sagemaker {
   }
 
   object ListSubscribedWorkteamsResponse {
+    @inline
     def apply(
         SubscribedWorkteams: SubscribedWorkteams,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -5277,6 +5434,7 @@ package sagemaker {
   }
 
   object ListTagsInput {
+    @inline
     def apply(
         ResourceArn: ResourceArn,
         MaxResults: js.UndefOr[ListTagsMaxResults] = js.undefined,
@@ -5299,6 +5457,7 @@ package sagemaker {
   }
 
   object ListTagsOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -5321,6 +5480,7 @@ package sagemaker {
   }
 
   object ListTrainingJobsForHyperParameterTuningJobRequest {
+    @inline
     def apply(
         HyperParameterTuningJobName: HyperParameterTuningJobName,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -5349,6 +5509,7 @@ package sagemaker {
   }
 
   object ListTrainingJobsForHyperParameterTuningJobResponse {
+    @inline
     def apply(
         TrainingJobSummaries: HyperParameterTrainingJobSummaries,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -5377,6 +5538,7 @@ package sagemaker {
   }
 
   object ListTrainingJobsRequest {
+    @inline
     def apply(
         CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
         CreationTimeBefore: js.UndefOr[Timestamp] = js.undefined,
@@ -5411,6 +5573,7 @@ package sagemaker {
   }
 
   object ListTrainingJobsResponse {
+    @inline
     def apply(
         TrainingJobSummaries: TrainingJobSummaries,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -5439,6 +5602,7 @@ package sagemaker {
   }
 
   object ListTransformJobsRequest {
+    @inline
     def apply(
         CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
         CreationTimeBefore: js.UndefOr[Timestamp] = js.undefined,
@@ -5473,6 +5637,7 @@ package sagemaker {
   }
 
   object ListTransformJobsResponse {
+    @inline
     def apply(
         TransformJobSummaries: TransformJobSummaries,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -5496,6 +5661,7 @@ package sagemaker {
   }
 
   object ListWorkteamsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NameContains: js.UndefOr[WorkteamName] = js.undefined,
@@ -5520,6 +5686,7 @@ package sagemaker {
   }
 
   object ListWorkteamsResponse {
+    @inline
     def apply(
         Workteams: Workteams,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -5549,6 +5716,7 @@ package sagemaker {
   }
 
   object MemberDefinition {
+    @inline
     def apply(
         CognitoMemberDefinition: js.UndefOr[CognitoMemberDefinition] = js.undefined
     ): MemberDefinition = {
@@ -5569,6 +5737,7 @@ package sagemaker {
   }
 
   object MetricData {
+    @inline
     def apply(
         MetricName: js.UndefOr[MetricName] = js.undefined,
         Timestamp: js.UndefOr[Timestamp] = js.undefined,
@@ -5592,6 +5761,7 @@ package sagemaker {
   }
 
   object MetricDefinition {
+    @inline
     def apply(
         Name: MetricName,
         Regex: MetricRegex
@@ -5614,6 +5784,7 @@ package sagemaker {
   }
 
   object ModelArtifacts {
+    @inline
     def apply(
         S3ModelArtifacts: S3Uri
     ): ModelArtifacts = {
@@ -5638,6 +5809,7 @@ package sagemaker {
   }
 
   object ModelPackageContainerDefinition {
+    @inline
     def apply(
         Image: Image,
         ContainerHostname: js.UndefOr[ContainerHostname] = js.undefined,
@@ -5684,6 +5856,7 @@ package sagemaker {
   }
 
   object ModelPackageStatusDetails {
+    @inline
     def apply(
         ValidationStatuses: ModelPackageStatusItemList,
         ImageScanStatuses: js.UndefOr[ModelPackageStatusItemList] = js.undefined
@@ -5708,6 +5881,7 @@ package sagemaker {
   }
 
   object ModelPackageStatusItem {
+    @inline
     def apply(
         Name: EntityName,
         Status: DetailedModelPackageStatus,
@@ -5736,6 +5910,7 @@ package sagemaker {
   }
 
   object ModelPackageSummary {
+    @inline
     def apply(
         CreationTime: CreationTime,
         ModelPackageArn: ModelPackageArn,
@@ -5766,6 +5941,7 @@ package sagemaker {
   }
 
   object ModelPackageValidationProfile {
+    @inline
     def apply(
         ProfileName: EntityName,
         TransformJobDefinition: TransformJobDefinition
@@ -5789,6 +5965,7 @@ package sagemaker {
   }
 
   object ModelPackageValidationSpecification {
+    @inline
     def apply(
         ValidationProfiles: ModelPackageValidationProfiles,
         ValidationRole: RoleArn
@@ -5820,6 +5997,7 @@ package sagemaker {
   }
 
   object ModelSummary {
+    @inline
     def apply(
         CreationTime: Timestamp,
         ModelArn: ModelArn,
@@ -5849,6 +6027,7 @@ package sagemaker {
   }
 
   object NestedFilters {
+    @inline
     def apply(
         Filters: FilterList,
         NestedPropertyName: ResourcePropertyName
@@ -5897,6 +6076,7 @@ package sagemaker {
   }
 
   object NotebookInstanceLifecycleConfigSummary {
+    @inline
     def apply(
         NotebookInstanceLifecycleConfigArn: NotebookInstanceLifecycleConfigArn,
         NotebookInstanceLifecycleConfigName: NotebookInstanceLifecycleConfigName,
@@ -5928,6 +6108,7 @@ package sagemaker {
   }
 
   object NotebookInstanceLifecycleHook {
+    @inline
     def apply(
         Content: js.UndefOr[NotebookInstanceLifecycleConfigContent] = js.undefined
     ): NotebookInstanceLifecycleHook = {
@@ -5982,6 +6163,7 @@ package sagemaker {
   }
 
   object NotebookInstanceSummary {
+    @inline
     def apply(
         NotebookInstanceArn: NotebookInstanceArn,
         NotebookInstanceName: NotebookInstanceName,
@@ -6024,6 +6206,7 @@ package sagemaker {
   }
 
   object NotificationConfiguration {
+    @inline
     def apply(
         NotificationTopicArn: js.UndefOr[NotificationTopicArn] = js.undefined
     ): NotificationConfiguration = {
@@ -6052,6 +6235,7 @@ package sagemaker {
   }
 
   object ObjectiveStatusCounters {
+    @inline
     def apply(
         Failed: js.UndefOr[ObjectiveStatusCounter] = js.undefined,
         Pending: js.UndefOr[ObjectiveStatusCounter] = js.undefined,
@@ -6096,6 +6280,7 @@ package sagemaker {
   }
 
   object OutputConfig {
+    @inline
     def apply(
         S3OutputLocation: S3Uri,
         TargetDevice: TargetDevice
@@ -6119,6 +6304,7 @@ package sagemaker {
   }
 
   object OutputDataConfig {
+    @inline
     def apply(
         S3OutputPath: S3Uri,
         KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
@@ -6143,6 +6329,7 @@ package sagemaker {
   }
 
   object ParameterRange {
+    @inline
     def apply(
         CategoricalParameterRangeSpecification: js.UndefOr[CategoricalParameterRangeSpecification] = js.undefined,
         ContinuousParameterRangeSpecification: js.UndefOr[ContinuousParameterRangeSpecification] = js.undefined,
@@ -6175,6 +6362,7 @@ package sagemaker {
   }
 
   object ParameterRanges {
+    @inline
     def apply(
         CategoricalParameterRanges: js.UndefOr[CategoricalParameterRanges] = js.undefined,
         ContinuousParameterRanges: js.UndefOr[ContinuousParameterRanges] = js.undefined,
@@ -6210,6 +6398,7 @@ package sagemaker {
   }
 
   object ParentHyperParameterTuningJob {
+    @inline
     def apply(
         HyperParameterTuningJobName: js.UndefOr[HyperParameterTuningJobName] = js.undefined
     ): ParentHyperParameterTuningJob = {
@@ -6235,6 +6424,7 @@ package sagemaker {
   }
 
   object ProductionVariant {
+    @inline
     def apply(
         InitialInstanceCount: TaskCount,
         InstanceType: ProductionVariantInstanceType,
@@ -6350,6 +6540,7 @@ package sagemaker {
   }
 
   object ProductionVariantSummary {
+    @inline
     def apply(
         VariantName: VariantName,
         CurrentInstanceCount: js.UndefOr[TaskCount] = js.undefined,
@@ -6380,6 +6571,7 @@ package sagemaker {
   }
 
   object PropertyNameQuery {
+    @inline
     def apply(
         PropertyNameHint: PropertyNameHint
     ): PropertyNameQuery = {
@@ -6400,6 +6592,7 @@ package sagemaker {
   }
 
   object PropertyNameSuggestion {
+    @inline
     def apply(
         PropertyName: js.UndefOr[ResourcePropertyName] = js.undefined
     ): PropertyNameSuggestion = {
@@ -6455,6 +6648,7 @@ package sagemaker {
   }
 
   object PublicWorkforceTaskPrice {
+    @inline
     def apply(
         AmountInUsd: js.UndefOr[USD] = js.undefined
     ): PublicWorkforceTaskPrice = {
@@ -6479,6 +6673,7 @@ package sagemaker {
   }
 
   object RenderUiTemplateRequest {
+    @inline
     def apply(
         RoleArn: RoleArn,
         Task: RenderableTask,
@@ -6501,6 +6696,7 @@ package sagemaker {
   }
 
   object RenderUiTemplateResponse {
+    @inline
     def apply(
         Errors: RenderingErrorList,
         RenderedContent: String
@@ -6523,6 +6719,7 @@ package sagemaker {
   }
 
   object RenderableTask {
+    @inline
     def apply(
         Input: TaskInput
     ): RenderableTask = {
@@ -6544,6 +6741,7 @@ package sagemaker {
   }
 
   object RenderingError {
+    @inline
     def apply(
         Code: String,
         Message: String
@@ -6569,6 +6767,7 @@ package sagemaker {
   }
 
   object ResourceConfig {
+    @inline
     def apply(
         InstanceCount: TrainingInstanceCount,
         InstanceType: TrainingInstanceType,
@@ -6596,6 +6795,7 @@ package sagemaker {
   }
 
   object ResourceLimits {
+    @inline
     def apply(
         MaxNumberOfTrainingJobs: MaxNumberOfTrainingJobs,
         MaxParallelTrainingJobs: MaxParallelTrainingJobs
@@ -6641,6 +6841,7 @@ package sagemaker {
   }
 
   object S3DataSource {
+    @inline
     def apply(
         S3DataType: S3DataType,
         S3Uri: S3Uri,
@@ -6683,6 +6884,7 @@ package sagemaker {
   }
 
   object SearchExpression {
+    @inline
     def apply(
         Filters: js.UndefOr[FilterList] = js.undefined,
         NestedFilters: js.UndefOr[NestedFiltersList] = js.undefined,
@@ -6707,6 +6909,7 @@ package sagemaker {
   }
 
   object SearchRecord {
+    @inline
     def apply(
         TrainingJob: js.UndefOr[TrainingJob] = js.undefined
     ): SearchRecord = {
@@ -6727,6 +6930,7 @@ package sagemaker {
   }
 
   object SearchRequest {
+    @inline
     def apply(
         Resource: ResourceType,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -6755,6 +6959,7 @@ package sagemaker {
   }
 
   object SearchResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Results: js.UndefOr[SearchResultsList] = js.undefined
@@ -6822,6 +7027,7 @@ package sagemaker {
   }
 
   object SecondaryStatusTransition {
+    @inline
     def apply(
         StartTime: Timestamp,
         Status: SecondaryStatus,
@@ -6849,6 +7055,7 @@ package sagemaker {
   }
 
   object ShuffleConfig {
+    @inline
     def apply(
         Seed: Seed
     ): ShuffleConfig = {
@@ -6885,6 +7092,7 @@ package sagemaker {
   }
 
   object SourceAlgorithm {
+    @inline
     def apply(
         AlgorithmName: ArnOrName,
         ModelDataUrl: js.UndefOr[Url] = js.undefined
@@ -6907,6 +7115,7 @@ package sagemaker {
   }
 
   object SourceAlgorithmSpecification {
+    @inline
     def apply(
         SourceAlgorithms: SourceAlgorithmList
     ): SourceAlgorithmSpecification = {
@@ -6933,6 +7142,7 @@ package sagemaker {
   }
 
   object StartNotebookInstanceInput {
+    @inline
     def apply(
         NotebookInstanceName: NotebookInstanceName
     ): StartNotebookInstanceInput = {
@@ -6950,6 +7160,7 @@ package sagemaker {
   }
 
   object StopCompilationJobRequest {
+    @inline
     def apply(
         CompilationJobName: EntityName
     ): StopCompilationJobRequest = {
@@ -6967,6 +7178,7 @@ package sagemaker {
   }
 
   object StopHyperParameterTuningJobRequest {
+    @inline
     def apply(
         HyperParameterTuningJobName: HyperParameterTuningJobName
     ): StopHyperParameterTuningJobRequest = {
@@ -6984,6 +7196,7 @@ package sagemaker {
   }
 
   object StopLabelingJobRequest {
+    @inline
     def apply(
         LabelingJobName: LabelingJobName
     ): StopLabelingJobRequest = {
@@ -7001,6 +7214,7 @@ package sagemaker {
   }
 
   object StopNotebookInstanceInput {
+    @inline
     def apply(
         NotebookInstanceName: NotebookInstanceName
     ): StopNotebookInstanceInput = {
@@ -7018,6 +7232,7 @@ package sagemaker {
   }
 
   object StopTrainingJobRequest {
+    @inline
     def apply(
         TrainingJobName: TrainingJobName
     ): StopTrainingJobRequest = {
@@ -7035,6 +7250,7 @@ package sagemaker {
   }
 
   object StopTransformJobRequest {
+    @inline
     def apply(
         TransformJobName: TransformJobName
     ): StopTransformJobRequest = {
@@ -7060,6 +7276,7 @@ package sagemaker {
   }
 
   object StoppingCondition {
+    @inline
     def apply(
         MaxRuntimeInSeconds: js.UndefOr[MaxRuntimeInSeconds] = js.undefined,
         MaxWaitTimeInSeconds: js.UndefOr[MaxWaitTimeInSeconds] = js.undefined
@@ -7084,6 +7301,7 @@ package sagemaker {
   }
 
   object SubscribedWorkteam {
+    @inline
     def apply(
         WorkteamArn: WorkteamArn,
         ListingId: js.UndefOr[String] = js.undefined,
@@ -7112,6 +7330,7 @@ package sagemaker {
   }
 
   object SuggestionQuery {
+    @inline
     def apply(
         PropertyNameQuery: js.UndefOr[PropertyNameQuery] = js.undefined
     ): SuggestionQuery = {
@@ -7131,6 +7350,7 @@ package sagemaker {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: TagValue
@@ -7290,6 +7510,7 @@ package sagemaker {
   }
 
   object TrainingJob {
+    @inline
     def apply(
         AlgorithmSpecification: js.UndefOr[AlgorithmSpecification] = js.undefined,
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
@@ -7365,6 +7586,7 @@ package sagemaker {
   }
 
   object TrainingJobDefinition {
+    @inline
     def apply(
         InputDataConfig: InputDataConfig,
         OutputDataConfig: OutputDataConfig,
@@ -7425,6 +7647,7 @@ package sagemaker {
   }
 
   object TrainingJobStatusCounters {
+    @inline
     def apply(
         Completed: js.UndefOr[TrainingJobStatusCounter] = js.undefined,
         InProgress: js.UndefOr[TrainingJobStatusCounter] = js.undefined,
@@ -7456,6 +7679,7 @@ package sagemaker {
   }
 
   object TrainingJobSummary {
+    @inline
     def apply(
         CreationTime: Timestamp,
         TrainingJobArn: TrainingJobArn,
@@ -7493,6 +7717,7 @@ package sagemaker {
   }
 
   object TrainingSpecification {
+    @inline
     def apply(
         SupportedTrainingInstanceTypes: TrainingInstanceTypes,
         TrainingChannels: ChannelSpecifications,
@@ -7531,6 +7756,7 @@ package sagemaker {
   }
 
   object TransformDataSource {
+    @inline
     def apply(
         S3DataSource: TransformS3DataSource
     ): TransformDataSource = {
@@ -7554,6 +7780,7 @@ package sagemaker {
   }
 
   object TransformInput {
+    @inline
     def apply(
         DataSource: TransformDataSource,
         CompressionType: js.UndefOr[CompressionType] = js.undefined,
@@ -7646,6 +7873,7 @@ package sagemaker {
   }
 
   object TransformJobDefinition {
+    @inline
     def apply(
         TransformInput: TransformInput,
         TransformOutput: TransformOutput,
@@ -7694,6 +7922,7 @@ package sagemaker {
   }
 
   object TransformJobSummary {
+    @inline
     def apply(
         CreationTime: Timestamp,
         TransformJobArn: TransformJobArn,
@@ -7729,6 +7958,7 @@ package sagemaker {
   }
 
   object TransformOutput {
+    @inline
     def apply(
         S3OutputPath: S3Uri,
         Accept: js.UndefOr[Accept] = js.undefined,
@@ -7757,6 +7987,7 @@ package sagemaker {
   }
 
   object TransformResources {
+    @inline
     def apply(
         InstanceCount: TransformInstanceCount,
         InstanceType: TransformInstanceType,
@@ -7782,6 +8013,7 @@ package sagemaker {
   }
 
   object TransformS3DataSource {
+    @inline
     def apply(
         S3DataType: S3DataType,
         S3Uri: S3Uri
@@ -7806,6 +8038,7 @@ package sagemaker {
   }
 
   object USD {
+    @inline
     def apply(
         Cents: js.UndefOr[Cents] = js.undefined,
         Dollars: js.UndefOr[Dollars] = js.undefined,
@@ -7828,6 +8061,7 @@ package sagemaker {
   }
 
   object UiConfig {
+    @inline
     def apply(
         UiTemplateS3Uri: S3Uri
     ): UiConfig = {
@@ -7848,6 +8082,7 @@ package sagemaker {
   }
 
   object UiTemplate {
+    @inline
     def apply(
         Content: TemplateContent
     ): UiTemplate = {
@@ -7866,6 +8101,7 @@ package sagemaker {
   }
 
   object UpdateCodeRepositoryInput {
+    @inline
     def apply(
         CodeRepositoryName: EntityName,
         GitConfig: js.UndefOr[GitConfigForUpdate] = js.undefined
@@ -7885,6 +8121,7 @@ package sagemaker {
   }
 
   object UpdateCodeRepositoryOutput {
+    @inline
     def apply(
         CodeRepositoryArn: CodeRepositoryArn
     ): UpdateCodeRepositoryOutput = {
@@ -7903,6 +8140,7 @@ package sagemaker {
   }
 
   object UpdateEndpointInput {
+    @inline
     def apply(
         EndpointConfigName: EndpointConfigName,
         EndpointName: EndpointName
@@ -7922,6 +8160,7 @@ package sagemaker {
   }
 
   object UpdateEndpointOutput {
+    @inline
     def apply(
         EndpointArn: EndpointArn
     ): UpdateEndpointOutput = {
@@ -7940,6 +8179,7 @@ package sagemaker {
   }
 
   object UpdateEndpointWeightsAndCapacitiesInput {
+    @inline
     def apply(
         DesiredWeightsAndCapacities: DesiredWeightAndCapacityList,
         EndpointName: EndpointName
@@ -7959,6 +8199,7 @@ package sagemaker {
   }
 
   object UpdateEndpointWeightsAndCapacitiesOutput {
+    @inline
     def apply(
         EndpointArn: EndpointArn
     ): UpdateEndpointWeightsAndCapacitiesOutput = {
@@ -7988,6 +8229,7 @@ package sagemaker {
   }
 
   object UpdateNotebookInstanceInput {
+    @inline
     def apply(
         NotebookInstanceName: NotebookInstanceName,
         AcceleratorTypes: js.UndefOr[NotebookInstanceAcceleratorTypes] = js.undefined,
@@ -8041,6 +8283,7 @@ package sagemaker {
   }
 
   object UpdateNotebookInstanceLifecycleConfigInput {
+    @inline
     def apply(
         NotebookInstanceLifecycleConfigName: NotebookInstanceLifecycleConfigName,
         OnCreate: js.UndefOr[NotebookInstanceLifecycleConfigList] = js.undefined,
@@ -8060,6 +8303,7 @@ package sagemaker {
   trait UpdateNotebookInstanceLifecycleConfigOutput extends js.Object {}
 
   object UpdateNotebookInstanceLifecycleConfigOutput {
+    @inline
     def apply(
         ): UpdateNotebookInstanceLifecycleConfigOutput = {
       val __obj = js.Dynamic.literal()
@@ -8072,6 +8316,7 @@ package sagemaker {
   trait UpdateNotebookInstanceOutput extends js.Object {}
 
   object UpdateNotebookInstanceOutput {
+    @inline
     def apply(
         ): UpdateNotebookInstanceOutput = {
       val __obj = js.Dynamic.literal()
@@ -8089,6 +8334,7 @@ package sagemaker {
   }
 
   object UpdateWorkteamRequest {
+    @inline
     def apply(
         WorkteamName: WorkteamName,
         Description: js.UndefOr[String200] = js.undefined,
@@ -8114,6 +8360,7 @@ package sagemaker {
   }
 
   object UpdateWorkteamResponse {
+    @inline
     def apply(
         Workteam: Workteam
     ): UpdateWorkteamResponse = {
@@ -8135,6 +8382,7 @@ package sagemaker {
   }
 
   object VpcConfig {
+    @inline
     def apply(
         SecurityGroupIds: VpcSecurityGroupIds,
         Subnets: Subnets
@@ -8165,6 +8413,7 @@ package sagemaker {
   }
 
   object Workteam {
+    @inline
     def apply(
         Description: String200,
         MemberDefinitions: MemberDefinitions,

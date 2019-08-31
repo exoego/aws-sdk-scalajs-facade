@@ -97,6 +97,7 @@ package polly {
   }
 
   object DeleteLexiconInput {
+    @inline
     def apply(
         Name: LexiconName
     ): DeleteLexiconInput = {
@@ -112,6 +113,7 @@ package polly {
   trait DeleteLexiconOutput extends js.Object {}
 
   object DeleteLexiconOutput {
+    @inline
     def apply(
         ): DeleteLexiconOutput = {
       val __obj = js.Dynamic.literal()
@@ -129,6 +131,7 @@ package polly {
   }
 
   object DescribeVoicesInput {
+    @inline
     def apply(
         Engine: js.UndefOr[Engine] = js.undefined,
         IncludeAdditionalLanguageCodes: js.UndefOr[IncludeAdditionalLanguageCodes] = js.undefined,
@@ -153,6 +156,7 @@ package polly {
   }
 
   object DescribeVoicesOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Voices: js.UndefOr[VoiceList] = js.undefined
@@ -184,6 +188,7 @@ package polly {
   }
 
   object GetLexiconInput {
+    @inline
     def apply(
         Name: LexiconName
     ): GetLexiconInput = {
@@ -202,6 +207,7 @@ package polly {
   }
 
   object GetLexiconOutput {
+    @inline
     def apply(
         Lexicon: js.UndefOr[Lexicon] = js.undefined,
         LexiconAttributes: js.UndefOr[LexiconAttributes] = js.undefined
@@ -219,6 +225,7 @@ package polly {
   }
 
   object GetSpeechSynthesisTaskInput {
+    @inline
     def apply(
         TaskId: TaskId
     ): GetSpeechSynthesisTaskInput = {
@@ -236,6 +243,7 @@ package polly {
   }
 
   object GetSpeechSynthesisTaskOutput {
+    @inline
     def apply(
         SynthesisTask: js.UndefOr[SynthesisTask] = js.undefined
     ): GetSpeechSynthesisTaskOutput = {
@@ -321,6 +329,7 @@ package polly {
   }
 
   object Lexicon {
+    @inline
     def apply(
         Content: js.UndefOr[LexiconContent] = js.undefined,
         Name: js.UndefOr[LexiconName] = js.undefined
@@ -346,6 +355,7 @@ package polly {
   }
 
   object LexiconAttributes {
+    @inline
     def apply(
         Alphabet: js.UndefOr[Alphabet] = js.undefined,
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
@@ -375,6 +385,7 @@ package polly {
   }
 
   object LexiconDescription {
+    @inline
     def apply(
         Attributes: js.UndefOr[LexiconAttributes] = js.undefined,
         Name: js.UndefOr[LexiconName] = js.undefined
@@ -392,6 +403,7 @@ package polly {
   }
 
   object ListLexiconsInput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListLexiconsInput = {
@@ -408,6 +420,7 @@ package polly {
   }
 
   object ListLexiconsOutput {
+    @inline
     def apply(
         Lexicons: js.UndefOr[LexiconDescriptionList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -427,6 +440,7 @@ package polly {
   }
 
   object ListSpeechSynthesisTasksInput {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
@@ -447,6 +461,7 @@ package polly {
   }
 
   object ListSpeechSynthesisTasksOutput {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         SynthesisTasks: js.UndefOr[SynthesisTasks] = js.undefined
@@ -474,6 +489,7 @@ package polly {
   }
 
   object PutLexiconInput {
+    @inline
     def apply(
         Content: LexiconContent,
         Name: LexiconName
@@ -491,6 +507,7 @@ package polly {
   trait PutLexiconOutput extends js.Object {}
 
   object PutLexiconOutput {
+    @inline
     def apply(
         ): PutLexiconOutput = {
       val __obj = js.Dynamic.literal()
@@ -525,6 +542,7 @@ package polly {
   }
 
   object StartSpeechSynthesisTaskInput {
+    @inline
     def apply(
         OutputFormat: OutputFormat,
         OutputS3BucketName: OutputS3BucketName,
@@ -564,6 +582,7 @@ package polly {
   }
 
   object StartSpeechSynthesisTaskOutput {
+    @inline
     def apply(
         SynthesisTask: js.UndefOr[SynthesisTask] = js.undefined
     ): StartSpeechSynthesisTaskOutput = {
@@ -596,6 +615,7 @@ package polly {
   }
 
   object SynthesisTask {
+    @inline
     def apply(
         CreationTime: js.UndefOr[DateTime] = js.undefined,
         Engine: js.UndefOr[Engine] = js.undefined,
@@ -647,6 +667,7 @@ package polly {
   }
 
   object SynthesizeSpeechInput {
+    @inline
     def apply(
         OutputFormat: OutputFormat,
         Text: Text,
@@ -682,6 +703,7 @@ package polly {
   }
 
   object SynthesizeSpeechOutput {
+    @inline
     def apply(
         AudioStream: js.UndefOr[AudioStream] = js.undefined,
         ContentType: js.UndefOr[ContentType] = js.undefined,
@@ -726,6 +748,7 @@ package polly {
   }
 
   object Voice {
+    @inline
     def apply(
         AdditionalLanguageCodes: js.UndefOr[LanguageCodeList] = js.undefined,
         Gender: js.UndefOr[Gender] = js.undefined,

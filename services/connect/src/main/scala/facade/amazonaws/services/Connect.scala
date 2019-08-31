@@ -177,6 +177,7 @@ package connect {
   }
 
   object CreateUserRequest {
+    @inline
     def apply(
         InstanceId: InstanceId,
         PhoneConfig: UserPhoneConfig,
@@ -211,6 +212,7 @@ package connect {
   }
 
   object CreateUserResponse {
+    @inline
     def apply(
         UserArn: js.UndefOr[ARN] = js.undefined,
         UserId: js.UndefOr[UserId] = js.undefined
@@ -234,6 +236,7 @@ package connect {
   }
 
   object Credentials {
+    @inline
     def apply(
         AccessToken: js.UndefOr[SecurityToken] = js.undefined,
         AccessTokenExpiration: js.UndefOr[timestamp] = js.undefined,
@@ -259,6 +262,7 @@ package connect {
   }
 
   object CurrentMetric {
+    @inline
     def apply(
         Name: js.UndefOr[CurrentMetricName] = js.undefined,
         Unit: js.UndefOr[Unit] = js.undefined
@@ -280,6 +284,7 @@ package connect {
   }
 
   object CurrentMetricData {
+    @inline
     def apply(
         Metric: js.UndefOr[CurrentMetric] = js.undefined,
         Value: js.UndefOr[Value] = js.undefined
@@ -332,6 +337,7 @@ package connect {
   }
 
   object CurrentMetricResult {
+    @inline
     def apply(
         Collections: js.UndefOr[CurrentMetricDataCollections] = js.undefined,
         Dimensions: js.UndefOr[Dimensions] = js.undefined
@@ -350,6 +356,7 @@ package connect {
   }
 
   object DeleteUserRequest {
+    @inline
     def apply(
         InstanceId: InstanceId,
         UserId: UserId
@@ -370,6 +377,7 @@ package connect {
   }
 
   object DescribeUserHierarchyGroupRequest {
+    @inline
     def apply(
         HierarchyGroupId: HierarchyGroupId,
         InstanceId: InstanceId
@@ -389,6 +397,7 @@ package connect {
   }
 
   object DescribeUserHierarchyGroupResponse {
+    @inline
     def apply(
         HierarchyGroup: js.UndefOr[HierarchyGroup] = js.undefined
     ): DescribeUserHierarchyGroupResponse = {
@@ -404,6 +413,7 @@ package connect {
   }
 
   object DescribeUserHierarchyStructureRequest {
+    @inline
     def apply(
         InstanceId: InstanceId
     ): DescribeUserHierarchyStructureRequest = {
@@ -421,6 +431,7 @@ package connect {
   }
 
   object DescribeUserHierarchyStructureResponse {
+    @inline
     def apply(
         HierarchyStructure: js.UndefOr[HierarchyStructure] = js.undefined
     ): DescribeUserHierarchyStructureResponse = {
@@ -437,6 +448,7 @@ package connect {
   }
 
   object DescribeUserRequest {
+    @inline
     def apply(
         InstanceId: InstanceId,
         UserId: UserId
@@ -456,6 +468,7 @@ package connect {
   }
 
   object DescribeUserResponse {
+    @inline
     def apply(
         User: js.UndefOr[User] = js.undefined
     ): DescribeUserResponse = {
@@ -475,6 +488,7 @@ package connect {
   }
 
   object Dimensions {
+    @inline
     def apply(
         Channel: js.UndefOr[Channel] = js.undefined,
         Queue: js.UndefOr[QueueReference] = js.undefined
@@ -496,6 +510,7 @@ package connect {
   }
 
   object Filters {
+    @inline
     def apply(
         Channels: js.UndefOr[Channels] = js.undefined,
         Queues: js.UndefOr[Queues] = js.undefined
@@ -514,6 +529,7 @@ package connect {
   }
 
   object GetContactAttributesRequest {
+    @inline
     def apply(
         InitialContactId: ContactId,
         InstanceId: InstanceId
@@ -533,6 +549,7 @@ package connect {
   }
 
   object GetContactAttributesResponse {
+    @inline
     def apply(
         Attributes: js.UndefOr[Attributes] = js.undefined
     ): GetContactAttributesResponse = {
@@ -553,6 +570,7 @@ package connect {
   }
 
   object GetCurrentMetricDataRequest {
+    @inline
     def apply(
         CurrentMetrics: CurrentMetrics,
         Filters: Filters,
@@ -582,6 +600,7 @@ package connect {
   }
 
   object GetCurrentMetricDataResponse {
+    @inline
     def apply(
         DataSnapshotTime: js.UndefOr[timestamp] = js.undefined,
         MetricResults: js.UndefOr[CurrentMetricResults] = js.undefined,
@@ -601,6 +620,7 @@ package connect {
   }
 
   object GetFederationTokenRequest {
+    @inline
     def apply(
         InstanceId: InstanceId
     ): GetFederationTokenRequest = {
@@ -618,6 +638,7 @@ package connect {
   }
 
   object GetFederationTokenResponse {
+    @inline
     def apply(
         Credentials: js.UndefOr[Credentials] = js.undefined
     ): GetFederationTokenResponse = {
@@ -640,6 +661,7 @@ package connect {
   }
 
   object GetMetricDataRequest {
+    @inline
     def apply(
         EndTime: timestamp,
         Filters: Filters,
@@ -672,6 +694,7 @@ package connect {
   }
 
   object GetMetricDataResponse {
+    @inline
     def apply(
         MetricResults: js.UndefOr[HistoricalMetricResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -703,6 +726,7 @@ package connect {
   }
 
   object HierarchyGroup {
+    @inline
     def apply(
         Arn: js.UndefOr[ARN] = js.undefined,
         HierarchyPath: js.UndefOr[HierarchyPath] = js.undefined,
@@ -731,6 +755,7 @@ package connect {
   }
 
   object HierarchyGroupSummary {
+    @inline
     def apply(
         Arn: js.UndefOr[ARN] = js.undefined,
         Id: js.UndefOr[HierarchyGroupId] = js.undefined,
@@ -755,6 +780,7 @@ package connect {
   }
 
   object HierarchyLevel {
+    @inline
     def apply(
         Arn: js.UndefOr[ARN] = js.undefined,
         Id: js.UndefOr[HierarchyLevelId] = js.undefined,
@@ -781,6 +807,7 @@ package connect {
   }
 
   object HierarchyPath {
+    @inline
     def apply(
         LevelFive: js.UndefOr[HierarchyGroupSummary] = js.undefined,
         LevelFour: js.UndefOr[HierarchyGroupSummary] = js.undefined,
@@ -811,6 +838,7 @@ package connect {
   }
 
   object HierarchyStructure {
+    @inline
     def apply(
         LevelFive: js.UndefOr[HierarchyLevel] = js.undefined,
         LevelFour: js.UndefOr[HierarchyLevel] = js.undefined,
@@ -840,6 +868,7 @@ package connect {
   }
 
   object HistoricalMetric {
+    @inline
     def apply(
         Name: js.UndefOr[HistoricalMetricName] = js.undefined,
         Statistic: js.UndefOr[Statistic] = js.undefined,
@@ -865,6 +894,7 @@ package connect {
   }
 
   object HistoricalMetricData {
+    @inline
     def apply(
         Metric: js.UndefOr[HistoricalMetric] = js.undefined,
         Value: js.UndefOr[Value] = js.undefined
@@ -947,6 +977,7 @@ package connect {
   }
 
   object HistoricalMetricResult {
+    @inline
     def apply(
         Collections: js.UndefOr[HistoricalMetricDataCollections] = js.undefined,
         Dimensions: js.UndefOr[Dimensions] = js.undefined
@@ -966,6 +997,7 @@ package connect {
   }
 
   object ListRoutingProfilesRequest {
+    @inline
     def apply(
         InstanceId: InstanceId,
         MaxResults: js.UndefOr[MaxResult1000] = js.undefined,
@@ -988,6 +1020,7 @@ package connect {
   }
 
   object ListRoutingProfilesResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         RoutingProfileSummaryList: js.UndefOr[RoutingProfileSummaryList] = js.undefined
@@ -1009,6 +1042,7 @@ package connect {
   }
 
   object ListSecurityProfilesRequest {
+    @inline
     def apply(
         InstanceId: InstanceId,
         MaxResults: js.UndefOr[MaxResult1000] = js.undefined,
@@ -1031,6 +1065,7 @@ package connect {
   }
 
   object ListSecurityProfilesResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         SecurityProfileSummaryList: js.UndefOr[SecurityProfileSummaryList] = js.undefined
@@ -1052,6 +1087,7 @@ package connect {
   }
 
   object ListUserHierarchyGroupsRequest {
+    @inline
     def apply(
         InstanceId: InstanceId,
         MaxResults: js.UndefOr[MaxResult1000] = js.undefined,
@@ -1074,6 +1110,7 @@ package connect {
   }
 
   object ListUserHierarchyGroupsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         UserHierarchyGroupSummaryList: js.UndefOr[HierarchyGroupSummaryList] = js.undefined
@@ -1095,6 +1132,7 @@ package connect {
   }
 
   object ListUsersRequest {
+    @inline
     def apply(
         InstanceId: InstanceId,
         MaxResults: js.UndefOr[MaxResult1000] = js.undefined,
@@ -1117,6 +1155,7 @@ package connect {
   }
 
   object ListUsersResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         UserSummaryList: js.UndefOr[UserSummaryList] = js.undefined
@@ -1145,6 +1184,7 @@ package connect {
   }
 
   object QueueReference {
+    @inline
     def apply(
         Arn: js.UndefOr[ARN] = js.undefined,
         Id: js.UndefOr[QueueId] = js.undefined
@@ -1167,6 +1207,7 @@ package connect {
   }
 
   object RoutingProfileSummary {
+    @inline
     def apply(
         Arn: js.UndefOr[ARN] = js.undefined,
         Id: js.UndefOr[RoutingProfileId] = js.undefined,
@@ -1191,6 +1232,7 @@ package connect {
   }
 
   object SecurityProfileSummary {
+    @inline
     def apply(
         Arn: js.UndefOr[ARN] = js.undefined,
         Id: js.UndefOr[SecurityProfileId] = js.undefined,
@@ -1216,6 +1258,7 @@ package connect {
   }
 
   object StartOutboundVoiceContactRequest {
+    @inline
     def apply(
         ContactFlowId: ContactFlowId,
         DestinationPhoneNumber: PhoneNumber,
@@ -1245,6 +1288,7 @@ package connect {
   }
 
   object StartOutboundVoiceContactResponse {
+    @inline
     def apply(
         ContactId: js.UndefOr[ContactId] = js.undefined
     ): StartOutboundVoiceContactResponse = {
@@ -1269,6 +1313,7 @@ package connect {
   }
 
   object StopContactRequest {
+    @inline
     def apply(
         ContactId: ContactId,
         InstanceId: InstanceId
@@ -1286,6 +1331,7 @@ package connect {
   trait StopContactResponse extends js.Object {}
 
   object StopContactResponse {
+    @inline
     def apply(
         ): StopContactResponse = {
       val __obj = js.Dynamic.literal()
@@ -1304,6 +1350,7 @@ package connect {
   }
 
   object Threshold {
+    @inline
     def apply(
         Comparison: js.UndefOr[Comparison] = js.undefined,
         ThresholdValue: js.UndefOr[ThresholdValue] = js.undefined
@@ -1331,6 +1378,7 @@ package connect {
   }
 
   object UpdateContactAttributesRequest {
+    @inline
     def apply(
         Attributes: Attributes,
         InitialContactId: ContactId,
@@ -1350,6 +1398,7 @@ package connect {
   trait UpdateContactAttributesResponse extends js.Object {}
 
   object UpdateContactAttributesResponse {
+    @inline
     def apply(
         ): UpdateContactAttributesResponse = {
       val __obj = js.Dynamic.literal()
@@ -1366,6 +1415,7 @@ package connect {
   }
 
   object UpdateUserHierarchyRequest {
+    @inline
     def apply(
         InstanceId: InstanceId,
         UserId: UserId,
@@ -1389,6 +1439,7 @@ package connect {
   }
 
   object UpdateUserIdentityInfoRequest {
+    @inline
     def apply(
         IdentityInfo: UserIdentityInfo,
         InstanceId: InstanceId,
@@ -1412,6 +1463,7 @@ package connect {
   }
 
   object UpdateUserPhoneConfigRequest {
+    @inline
     def apply(
         InstanceId: InstanceId,
         PhoneConfig: UserPhoneConfig,
@@ -1435,6 +1487,7 @@ package connect {
   }
 
   object UpdateUserRoutingProfileRequest {
+    @inline
     def apply(
         InstanceId: InstanceId,
         RoutingProfileId: RoutingProfileId,
@@ -1458,6 +1511,7 @@ package connect {
   }
 
   object UpdateUserSecurityProfilesRequest {
+    @inline
     def apply(
         InstanceId: InstanceId,
         SecurityProfileIds: SecurityProfileIds,
@@ -1490,6 +1544,7 @@ package connect {
   }
 
   object User {
+    @inline
     def apply(
         Arn: js.UndefOr[ARN] = js.undefined,
         DirectoryUserId: js.UndefOr[DirectoryUserId] = js.undefined,
@@ -1526,6 +1581,7 @@ package connect {
   }
 
   object UserIdentityInfo {
+    @inline
     def apply(
         Email: js.UndefOr[Email] = js.undefined,
         FirstName: js.UndefOr[AgentFirstName] = js.undefined,
@@ -1551,6 +1607,7 @@ package connect {
   }
 
   object UserPhoneConfig {
+    @inline
     def apply(
         PhoneType: PhoneType,
         AfterContactWorkTimeLimit: js.UndefOr[AfterContactWorkTimeLimit] = js.undefined,
@@ -1581,6 +1638,7 @@ package connect {
   }
 
   object UserSummary {
+    @inline
     def apply(
         Arn: js.UndefOr[ARN] = js.undefined,
         Id: js.UndefOr[UserId] = js.undefined,

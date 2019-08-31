@@ -129,6 +129,7 @@ package batch {
   }
 
   object ArrayProperties {
+    @inline
     def apply(
         size: js.UndefOr[Int] = js.undefined
     ): ArrayProperties = {
@@ -149,6 +150,7 @@ package batch {
   }
 
   object ArrayPropertiesDetail {
+    @inline
     def apply(
         index: js.UndefOr[Int] = js.undefined,
         size: js.UndefOr[Int] = js.undefined,
@@ -172,6 +174,7 @@ package batch {
   }
 
   object ArrayPropertiesSummary {
+    @inline
     def apply(
         index: js.UndefOr[Int] = js.undefined,
         size: js.UndefOr[Int] = js.undefined
@@ -197,6 +200,7 @@ package batch {
   }
 
   object AttemptContainerDetail {
+    @inline
     def apply(
         containerInstanceArn: js.UndefOr[String] = js.undefined,
         exitCode: js.UndefOr[Int] = js.undefined,
@@ -228,6 +232,7 @@ package batch {
   }
 
   object AttemptDetail {
+    @inline
     def apply(
         container: js.UndefOr[AttemptContainerDetail] = js.undefined,
         startedAt: js.UndefOr[Double] = js.undefined,
@@ -282,6 +287,7 @@ package batch {
   }
 
   object CancelJobRequest {
+    @inline
     def apply(
         jobId: String,
         reason: String
@@ -299,6 +305,7 @@ package batch {
   trait CancelJobResponse extends js.Object {}
 
   object CancelJobResponse {
+    @inline
     def apply(
         ): CancelJobResponse = {
       val __obj = js.Dynamic.literal()
@@ -324,6 +331,7 @@ package batch {
   }
 
   object ComputeEnvironmentDetail {
+    @inline
     def apply(
         computeEnvironmentArn: String,
         computeEnvironmentName: String,
@@ -361,6 +369,7 @@ package batch {
   }
 
   object ComputeEnvironmentOrder {
+    @inline
     def apply(
         computeEnvironment: String,
         order: Int
@@ -397,6 +406,7 @@ package batch {
   }
 
   object ComputeResource {
+    @inline
     def apply(
         instanceRole: String,
         instanceTypes: StringList,
@@ -447,6 +457,7 @@ package batch {
   }
 
   object ComputeResourceUpdate {
+    @inline
     def apply(
         desiredvCpus: js.UndefOr[Int] = js.undefined,
         maxvCpus: js.UndefOr[Int] = js.undefined,
@@ -489,6 +500,7 @@ package batch {
   }
 
   object ContainerDetail {
+    @inline
     def apply(
         command: js.UndefOr[StringList] = js.undefined,
         containerInstanceArn: js.UndefOr[String] = js.undefined,
@@ -552,6 +564,7 @@ package batch {
   }
 
   object ContainerOverrides {
+    @inline
     def apply(
         command: js.UndefOr[StringList] = js.undefined,
         environment: js.UndefOr[EnvironmentVariables] = js.undefined,
@@ -594,6 +607,7 @@ package batch {
   }
 
   object ContainerProperties {
+    @inline
     def apply(
         command: js.UndefOr[StringList] = js.undefined,
         environment: js.UndefOr[EnvironmentVariables] = js.undefined,
@@ -641,6 +655,7 @@ package batch {
   }
 
   object ContainerSummary {
+    @inline
     def apply(
         exitCode: js.UndefOr[Int] = js.undefined,
         reason: js.UndefOr[String] = js.undefined
@@ -662,6 +677,7 @@ package batch {
   }
 
   object CreateComputeEnvironmentRequest {
+    @inline
     def apply(
         computeEnvironmentName: String,
         serviceRole: String,
@@ -688,6 +704,7 @@ package batch {
   }
 
   object CreateComputeEnvironmentResponse {
+    @inline
     def apply(
         computeEnvironmentArn: js.UndefOr[String] = js.undefined,
         computeEnvironmentName: js.UndefOr[String] = js.undefined
@@ -708,6 +725,7 @@ package batch {
   }
 
   object CreateJobQueueRequest {
+    @inline
     def apply(
         computeEnvironmentOrder: ComputeEnvironmentOrders,
         jobQueueName: String,
@@ -732,6 +750,7 @@ package batch {
   }
 
   object CreateJobQueueResponse {
+    @inline
     def apply(
         jobQueueArn: String,
         jobQueueName: String
@@ -751,6 +770,7 @@ package batch {
   }
 
   object DeleteComputeEnvironmentRequest {
+    @inline
     def apply(
         computeEnvironment: String
     ): DeleteComputeEnvironmentRequest = {
@@ -766,6 +786,7 @@ package batch {
   trait DeleteComputeEnvironmentResponse extends js.Object {}
 
   object DeleteComputeEnvironmentResponse {
+    @inline
     def apply(
         ): DeleteComputeEnvironmentResponse = {
       val __obj = js.Dynamic.literal()
@@ -780,6 +801,7 @@ package batch {
   }
 
   object DeleteJobQueueRequest {
+    @inline
     def apply(
         jobQueue: String
     ): DeleteJobQueueRequest = {
@@ -795,6 +817,7 @@ package batch {
   trait DeleteJobQueueResponse extends js.Object {}
 
   object DeleteJobQueueResponse {
+    @inline
     def apply(
         ): DeleteJobQueueResponse = {
       val __obj = js.Dynamic.literal()
@@ -809,6 +832,7 @@ package batch {
   }
 
   object DeregisterJobDefinitionRequest {
+    @inline
     def apply(
         jobDefinition: String
     ): DeregisterJobDefinitionRequest = {
@@ -824,6 +848,7 @@ package batch {
   trait DeregisterJobDefinitionResponse extends js.Object {}
 
   object DeregisterJobDefinitionResponse {
+    @inline
     def apply(
         ): DeregisterJobDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -840,6 +865,7 @@ package batch {
   }
 
   object DescribeComputeEnvironmentsRequest {
+    @inline
     def apply(
         computeEnvironments: js.UndefOr[StringList] = js.undefined,
         maxResults: js.UndefOr[Int] = js.undefined,
@@ -860,6 +886,7 @@ package batch {
   }
 
   object DescribeComputeEnvironmentsResponse {
+    @inline
     def apply(
         computeEnvironments: js.UndefOr[ComputeEnvironmentDetailList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
@@ -881,6 +908,7 @@ package batch {
   }
 
   object DescribeJobDefinitionsRequest {
+    @inline
     def apply(
         jobDefinitionName: js.UndefOr[String] = js.undefined,
         jobDefinitions: js.UndefOr[StringList] = js.undefined,
@@ -905,6 +933,7 @@ package batch {
   }
 
   object DescribeJobDefinitionsResponse {
+    @inline
     def apply(
         jobDefinitions: js.UndefOr[JobDefinitionList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
@@ -924,6 +953,7 @@ package batch {
   }
 
   object DescribeJobQueuesRequest {
+    @inline
     def apply(
         jobQueues: js.UndefOr[StringList] = js.undefined,
         maxResults: js.UndefOr[Int] = js.undefined,
@@ -944,6 +974,7 @@ package batch {
   }
 
   object DescribeJobQueuesResponse {
+    @inline
     def apply(
         jobQueues: js.UndefOr[JobQueueDetailList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
@@ -961,6 +992,7 @@ package batch {
   }
 
   object DescribeJobsRequest {
+    @inline
     def apply(
         jobs: StringList
     ): DescribeJobsRequest = {
@@ -978,6 +1010,7 @@ package batch {
   }
 
   object DescribeJobsResponse {
+    @inline
     def apply(
         jobs: js.UndefOr[JobDetailList] = js.undefined
     ): DescribeJobsResponse = {
@@ -998,6 +1031,7 @@ package batch {
   }
 
   object Device {
+    @inline
     def apply(
         hostPath: String,
         containerPath: js.UndefOr[String] = js.undefined,
@@ -1030,6 +1064,7 @@ package batch {
   }
 
   object Host {
+    @inline
     def apply(
         sourcePath: js.UndefOr[String] = js.undefined
     ): Host = {
@@ -1075,6 +1110,7 @@ package batch {
   }
 
   object JobDefinition {
+    @inline
     def apply(
         jobDefinitionArn: String,
         jobDefinitionName: String,
@@ -1121,6 +1157,7 @@ package batch {
   }
 
   object JobDependency {
+    @inline
     def apply(
         jobId: js.UndefOr[String] = js.undefined,
         `type`: js.UndefOr[ArrayJobDependency] = js.undefined
@@ -1158,6 +1195,7 @@ package batch {
   }
 
   object JobDetail {
+    @inline
     def apply(
         jobDefinition: String,
         jobId: String,
@@ -1218,6 +1256,7 @@ package batch {
   }
 
   object JobQueueDetail {
+    @inline
     def apply(
         computeEnvironmentOrder: ComputeEnvironmentOrders,
         jobQueueArn: String,
@@ -1271,6 +1310,7 @@ package batch {
   }
 
   object JobSummary {
+    @inline
     def apply(
         jobId: String,
         jobName: String,
@@ -1309,6 +1349,7 @@ package batch {
   }
 
   object JobTimeout {
+    @inline
     def apply(
         attemptDurationSeconds: js.UndefOr[Int] = js.undefined
     ): JobTimeout = {
@@ -1328,6 +1369,7 @@ package batch {
   }
 
   object KeyValuePair {
+    @inline
     def apply(
         name: js.UndefOr[String] = js.undefined,
         value: js.UndefOr[String] = js.undefined
@@ -1350,6 +1392,7 @@ package batch {
   }
 
   object LaunchTemplateSpecification {
+    @inline
     def apply(
         launchTemplateId: js.UndefOr[String] = js.undefined,
         launchTemplateName: js.UndefOr[String] = js.undefined,
@@ -1372,6 +1415,7 @@ package batch {
   }
 
   object LinuxParameters {
+    @inline
     def apply(
         devices: js.UndefOr[DevicesList] = js.undefined
     ): LinuxParameters = {
@@ -1392,6 +1436,7 @@ package batch {
   }
 
   object ListJobsRequest {
+    @inline
     def apply(
         arrayJobId: js.UndefOr[String] = js.undefined,
         jobQueue: js.UndefOr[String] = js.undefined,
@@ -1418,6 +1463,7 @@ package batch {
   }
 
   object ListJobsResponse {
+    @inline
     def apply(
         jobSummaryList: JobSummaryList,
         nextToken: js.UndefOr[String] = js.undefined
@@ -1442,6 +1488,7 @@ package batch {
   }
 
   object MountPoint {
+    @inline
     def apply(
         containerPath: js.UndefOr[String] = js.undefined,
         readOnly: js.UndefOr[Boolean] = js.undefined,
@@ -1466,6 +1513,7 @@ package batch {
   }
 
   object NetworkInterface {
+    @inline
     def apply(
         attachmentId: js.UndefOr[String] = js.undefined,
         ipv6Address: js.UndefOr[String] = js.undefined,
@@ -1489,6 +1537,7 @@ package batch {
   }
 
   object NodeDetails {
+    @inline
     def apply(
         isMainNode: js.UndefOr[Boolean] = js.undefined,
         nodeIndex: js.UndefOr[Int] = js.undefined
@@ -1510,6 +1559,7 @@ package batch {
   }
 
   object NodeOverrides {
+    @inline
     def apply(
         nodePropertyOverrides: js.UndefOr[NodePropertyOverrides] = js.undefined,
         numNodes: js.UndefOr[Int] = js.undefined
@@ -1532,6 +1582,7 @@ package batch {
   }
 
   object NodeProperties {
+    @inline
     def apply(
         mainNode: Int,
         nodeRangeProperties: NodeRangeProperties,
@@ -1558,6 +1609,7 @@ package batch {
   }
 
   object NodePropertiesSummary {
+    @inline
     def apply(
         isMainNode: js.UndefOr[Boolean] = js.undefined,
         nodeIndex: js.UndefOr[Int] = js.undefined,
@@ -1581,6 +1633,7 @@ package batch {
   }
 
   object NodePropertyOverride {
+    @inline
     def apply(
         targetNodes: String,
         containerOverrides: js.UndefOr[ContainerOverrides] = js.undefined
@@ -1604,6 +1657,7 @@ package batch {
   }
 
   object NodeRangeProperty {
+    @inline
     def apply(
         targetNodes: String,
         container: js.UndefOr[ContainerProperties] = js.undefined
@@ -1629,6 +1683,7 @@ package batch {
   }
 
   object RegisterJobDefinitionRequest {
+    @inline
     def apply(
         jobDefinitionName: String,
         `type`: JobDefinitionType,
@@ -1660,6 +1715,7 @@ package batch {
   }
 
   object RegisterJobDefinitionResponse {
+    @inline
     def apply(
         jobDefinitionArn: String,
         jobDefinitionName: String,
@@ -1685,6 +1741,7 @@ package batch {
   }
 
   object ResourceRequirement {
+    @inline
     def apply(
         `type`: ResourceType,
         value: String
@@ -1713,6 +1770,7 @@ package batch {
   }
 
   object RetryStrategy {
+    @inline
     def apply(
         attempts: js.UndefOr[Int] = js.undefined
     ): RetryStrategy = {
@@ -1737,6 +1795,7 @@ package batch {
   }
 
   object SubmitJobRequest {
+    @inline
     def apply(
         jobDefinition: String,
         jobName: String,
@@ -1773,6 +1832,7 @@ package batch {
   }
 
   object SubmitJobResponse {
+    @inline
     def apply(
         jobId: String,
         jobName: String
@@ -1793,6 +1853,7 @@ package batch {
   }
 
   object TerminateJobRequest {
+    @inline
     def apply(
         jobId: String,
         reason: String
@@ -1810,6 +1871,7 @@ package batch {
   trait TerminateJobResponse extends js.Object {}
 
   object TerminateJobResponse {
+    @inline
     def apply(
         ): TerminateJobResponse = {
       val __obj = js.Dynamic.literal()
@@ -1829,6 +1891,7 @@ package batch {
   }
 
   object Ulimit {
+    @inline
     def apply(
         hardLimit: Int,
         name: String,
@@ -1853,6 +1916,7 @@ package batch {
   }
 
   object UpdateComputeEnvironmentRequest {
+    @inline
     def apply(
         computeEnvironment: String,
         computeResources: js.UndefOr[ComputeResourceUpdate] = js.undefined,
@@ -1877,6 +1941,7 @@ package batch {
   }
 
   object UpdateComputeEnvironmentResponse {
+    @inline
     def apply(
         computeEnvironmentArn: js.UndefOr[String] = js.undefined,
         computeEnvironmentName: js.UndefOr[String] = js.undefined
@@ -1897,6 +1962,7 @@ package batch {
   }
 
   object UpdateJobQueueRequest {
+    @inline
     def apply(
         jobQueue: String,
         computeEnvironmentOrder: js.UndefOr[ComputeEnvironmentOrders] = js.undefined,
@@ -1921,6 +1987,7 @@ package batch {
   }
 
   object UpdateJobQueueResponse {
+    @inline
     def apply(
         jobQueueArn: js.UndefOr[String] = js.undefined,
         jobQueueName: js.UndefOr[String] = js.undefined
@@ -1942,6 +2009,7 @@ package batch {
   }
 
   object Volume {
+    @inline
     def apply(
         host: js.UndefOr[Host] = js.undefined,
         name: js.UndefOr[String] = js.undefined

@@ -293,6 +293,7 @@ package dms {
   }
 
   object AccountQuota {
+    @inline
     def apply(
         AccountQuotaName: js.UndefOr[String] = js.undefined,
         Max: js.UndefOr[Double] = js.undefined,
@@ -316,6 +317,7 @@ package dms {
   }
 
   object AddTagsToResourceMessage {
+    @inline
     def apply(
         ResourceArn: String,
         Tags: TagList
@@ -336,6 +338,7 @@ package dms {
   trait AddTagsToResourceResponse extends js.Object {}
 
   object AddTagsToResourceResponse {
+    @inline
     def apply(
         ): AddTagsToResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -355,6 +358,7 @@ package dms {
   }
 
   object ApplyPendingMaintenanceActionMessage {
+    @inline
     def apply(
         ApplyAction: String,
         OptInType: String,
@@ -379,6 +383,7 @@ package dms {
   }
 
   object ApplyPendingMaintenanceActionResponse {
+    @inline
     def apply(
         ResourcePendingMaintenanceActions: js.UndefOr[ResourcePendingMaintenanceActions] = js.undefined
     ): ApplyPendingMaintenanceActionResponse = {
@@ -414,6 +419,7 @@ package dms {
   }
 
   object AvailabilityZone {
+    @inline
     def apply(
         Name: js.UndefOr[String] = js.undefined
     ): AvailabilityZone = {
@@ -441,6 +447,7 @@ package dms {
   }
 
   object Certificate {
+    @inline
     def apply(
         CertificateArn: js.UndefOr[String] = js.undefined,
         CertificateCreationDate: js.UndefOr[TStamp] = js.undefined,
@@ -489,6 +496,7 @@ package dms {
   }
 
   object Connection {
+    @inline
     def apply(
         EndpointArn: js.UndefOr[String] = js.undefined,
         EndpointIdentifier: js.UndefOr[String] = js.undefined,
@@ -540,6 +548,7 @@ package dms {
   }
 
   object CreateEndpointMessage {
+    @inline
     def apply(
         EndpointIdentifier: String,
         EndpointType: ReplicationEndpointTypeValue,
@@ -604,6 +613,7 @@ package dms {
   }
 
   object CreateEndpointResponse {
+    @inline
     def apply(
         Endpoint: js.UndefOr[Endpoint] = js.undefined
     ): CreateEndpointResponse = {
@@ -628,6 +638,7 @@ package dms {
   }
 
   object CreateEventSubscriptionMessage {
+    @inline
     def apply(
         SnsTopicArn: String,
         SubscriptionName: String,
@@ -660,6 +671,7 @@ package dms {
   }
 
   object CreateEventSubscriptionResponse {
+    @inline
     def apply(
         EventSubscription: js.UndefOr[EventSubscription] = js.undefined
     ): CreateEventSubscriptionResponse = {
@@ -691,6 +703,7 @@ package dms {
   }
 
   object CreateReplicationInstanceMessage {
+    @inline
     def apply(
         ReplicationInstanceClass: String,
         ReplicationInstanceIdentifier: String,
@@ -741,6 +754,7 @@ package dms {
   }
 
   object CreateReplicationInstanceResponse {
+    @inline
     def apply(
         ReplicationInstance: js.UndefOr[ReplicationInstance] = js.undefined
     ): CreateReplicationInstanceResponse = {
@@ -762,6 +776,7 @@ package dms {
   }
 
   object CreateReplicationSubnetGroupMessage {
+    @inline
     def apply(
         ReplicationSubnetGroupDescription: String,
         ReplicationSubnetGroupIdentifier: String,
@@ -788,6 +803,7 @@ package dms {
   }
 
   object CreateReplicationSubnetGroupResponse {
+    @inline
     def apply(
         ReplicationSubnetGroup: js.UndefOr[ReplicationSubnetGroup] = js.undefined
     ): CreateReplicationSubnetGroupResponse = {
@@ -816,6 +832,7 @@ package dms {
   }
 
   object CreateReplicationTaskMessage {
+    @inline
     def apply(
         MigrationType: MigrationTypeValue,
         ReplicationInstanceArn: String,
@@ -856,6 +873,7 @@ package dms {
   }
 
   object CreateReplicationTaskResponse {
+    @inline
     def apply(
         ReplicationTask: js.UndefOr[ReplicationTask] = js.undefined
     ): CreateReplicationTaskResponse = {
@@ -878,6 +896,7 @@ package dms {
   }
 
   object DeleteCertificateMessage {
+    @inline
     def apply(
         CertificateArn: String
     ): DeleteCertificateMessage = {
@@ -895,6 +914,7 @@ package dms {
   }
 
   object DeleteCertificateResponse {
+    @inline
     def apply(
         Certificate: js.UndefOr[Certificate] = js.undefined
     ): DeleteCertificateResponse = {
@@ -913,6 +933,7 @@ package dms {
   }
 
   object DeleteEndpointMessage {
+    @inline
     def apply(
         EndpointArn: String
     ): DeleteEndpointMessage = {
@@ -933,6 +954,7 @@ package dms {
   }
 
   object DeleteEndpointResponse {
+    @inline
     def apply(
         Endpoint: js.UndefOr[Endpoint] = js.undefined
     ): DeleteEndpointResponse = {
@@ -951,6 +973,7 @@ package dms {
   }
 
   object DeleteEventSubscriptionMessage {
+    @inline
     def apply(
         SubscriptionName: String
     ): DeleteEventSubscriptionMessage = {
@@ -971,6 +994,7 @@ package dms {
   }
 
   object DeleteEventSubscriptionResponse {
+    @inline
     def apply(
         EventSubscription: js.UndefOr[EventSubscription] = js.undefined
     ): DeleteEventSubscriptionResponse = {
@@ -989,6 +1013,7 @@ package dms {
   }
 
   object DeleteReplicationInstanceMessage {
+    @inline
     def apply(
         ReplicationInstanceArn: String
     ): DeleteReplicationInstanceMessage = {
@@ -1009,6 +1034,7 @@ package dms {
   }
 
   object DeleteReplicationInstanceResponse {
+    @inline
     def apply(
         ReplicationInstance: js.UndefOr[ReplicationInstance] = js.undefined
     ): DeleteReplicationInstanceResponse = {
@@ -1027,6 +1053,7 @@ package dms {
   }
 
   object DeleteReplicationSubnetGroupMessage {
+    @inline
     def apply(
         ReplicationSubnetGroupIdentifier: String
     ): DeleteReplicationSubnetGroupMessage = {
@@ -1045,6 +1072,7 @@ package dms {
   trait DeleteReplicationSubnetGroupResponse extends js.Object {}
 
   object DeleteReplicationSubnetGroupResponse {
+    @inline
     def apply(
         ): DeleteReplicationSubnetGroupResponse = {
       val __obj = js.Dynamic.literal()
@@ -1062,6 +1090,7 @@ package dms {
   }
 
   object DeleteReplicationTaskMessage {
+    @inline
     def apply(
         ReplicationTaskArn: String
     ): DeleteReplicationTaskMessage = {
@@ -1082,6 +1111,7 @@ package dms {
   }
 
   object DeleteReplicationTaskResponse {
+    @inline
     def apply(
         ReplicationTask: js.UndefOr[ReplicationTask] = js.undefined
     ): DeleteReplicationTaskResponse = {
@@ -1098,6 +1128,7 @@ package dms {
   trait DescribeAccountAttributesMessage extends js.Object {}
 
   object DescribeAccountAttributesMessage {
+    @inline
     def apply(
         ): DescribeAccountAttributesMessage = {
       val __obj = js.Dynamic.literal()
@@ -1116,6 +1147,7 @@ package dms {
   }
 
   object DescribeAccountAttributesResponse {
+    @inline
     def apply(
         AccountQuotas: js.UndefOr[AccountQuotaList] = js.undefined,
         UniqueAccountIdentifier: js.UndefOr[String] = js.undefined
@@ -1135,6 +1167,7 @@ package dms {
   }
 
   object DescribeCertificatesMessage {
+    @inline
     def apply(
         Filters: js.UndefOr[FilterList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -1155,6 +1188,7 @@ package dms {
   }
 
   object DescribeCertificatesResponse {
+    @inline
     def apply(
         Certificates: js.UndefOr[CertificateList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -1177,6 +1211,7 @@ package dms {
   }
 
   object DescribeConnectionsMessage {
+    @inline
     def apply(
         Filters: js.UndefOr[FilterList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -1200,6 +1235,7 @@ package dms {
   }
 
   object DescribeConnectionsResponse {
+    @inline
     def apply(
         Connections: js.UndefOr[ConnectionList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -1222,6 +1258,7 @@ package dms {
   }
 
   object DescribeEndpointTypesMessage {
+    @inline
     def apply(
         Filters: js.UndefOr[FilterList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -1245,6 +1282,7 @@ package dms {
   }
 
   object DescribeEndpointTypesResponse {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         SupportedEndpointTypes: js.UndefOr[SupportedEndpointTypeList] = js.undefined
@@ -1267,6 +1305,7 @@ package dms {
   }
 
   object DescribeEndpointsMessage {
+    @inline
     def apply(
         Filters: js.UndefOr[FilterList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -1290,6 +1329,7 @@ package dms {
   }
 
   object DescribeEndpointsResponse {
+    @inline
     def apply(
         Endpoints: js.UndefOr[EndpointList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -1311,6 +1351,7 @@ package dms {
   }
 
   object DescribeEventCategoriesMessage {
+    @inline
     def apply(
         Filters: js.UndefOr[FilterList] = js.undefined,
         SourceType: js.UndefOr[String] = js.undefined
@@ -1331,6 +1372,7 @@ package dms {
   }
 
   object DescribeEventCategoriesResponse {
+    @inline
     def apply(
         EventCategoryGroupList: js.UndefOr[EventCategoryGroupList] = js.undefined
     ): DescribeEventCategoriesResponse = {
@@ -1352,6 +1394,7 @@ package dms {
   }
 
   object DescribeEventSubscriptionsMessage {
+    @inline
     def apply(
         Filters: js.UndefOr[FilterList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -1377,6 +1420,7 @@ package dms {
   }
 
   object DescribeEventSubscriptionsResponse {
+    @inline
     def apply(
         EventSubscriptionsList: js.UndefOr[EventSubscriptionsList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -1405,6 +1449,7 @@ package dms {
   }
 
   object DescribeEventsMessage {
+    @inline
     def apply(
         Duration: js.UndefOr[IntegerOptional] = js.undefined,
         EndTime: js.UndefOr[TStamp] = js.undefined,
@@ -1440,6 +1485,7 @@ package dms {
   }
 
   object DescribeEventsResponse {
+    @inline
     def apply(
         Events: js.UndefOr[EventList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined
@@ -1461,6 +1507,7 @@ package dms {
   }
 
   object DescribeOrderableReplicationInstancesMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
@@ -1482,6 +1529,7 @@ package dms {
   }
 
   object DescribeOrderableReplicationInstancesResponse {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         OrderableReplicationInstances: js.UndefOr[OrderableReplicationInstanceList] = js.undefined
@@ -1507,6 +1555,7 @@ package dms {
   }
 
   object DescribePendingMaintenanceActionsMessage {
+    @inline
     def apply(
         Filters: js.UndefOr[FilterList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -1532,6 +1581,7 @@ package dms {
   }
 
   object DescribePendingMaintenanceActionsResponse {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         PendingMaintenanceActions: js.UndefOr[PendingMaintenanceActions] = js.undefined
@@ -1554,6 +1604,7 @@ package dms {
   }
 
   object DescribeRefreshSchemasStatusMessage {
+    @inline
     def apply(
         EndpointArn: String
     ): DescribeRefreshSchemasStatusMessage = {
@@ -1574,6 +1625,7 @@ package dms {
   }
 
   object DescribeRefreshSchemasStatusResponse {
+    @inline
     def apply(
         RefreshSchemasStatus: js.UndefOr[RefreshSchemasStatus] = js.undefined
     ): DescribeRefreshSchemasStatusResponse = {
@@ -1591,6 +1643,7 @@ package dms {
   }
 
   object DescribeReplicationInstanceTaskLogsMessage {
+    @inline
     def apply(
         ReplicationInstanceArn: String,
         Marker: js.UndefOr[String] = js.undefined,
@@ -1614,6 +1667,7 @@ package dms {
   }
 
   object DescribeReplicationInstanceTaskLogsResponse {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         ReplicationInstanceArn: js.UndefOr[String] = js.undefined,
@@ -1640,6 +1694,7 @@ package dms {
   }
 
   object DescribeReplicationInstancesMessage {
+    @inline
     def apply(
         Filters: js.UndefOr[FilterList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -1663,6 +1718,7 @@ package dms {
   }
 
   object DescribeReplicationInstancesResponse {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         ReplicationInstances: js.UndefOr[ReplicationInstanceList] = js.undefined
@@ -1685,6 +1741,7 @@ package dms {
   }
 
   object DescribeReplicationSubnetGroupsMessage {
+    @inline
     def apply(
         Filters: js.UndefOr[FilterList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -1708,6 +1765,7 @@ package dms {
   }
 
   object DescribeReplicationSubnetGroupsResponse {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         ReplicationSubnetGroups: js.UndefOr[ReplicationSubnetGroups] = js.undefined
@@ -1730,6 +1788,7 @@ package dms {
   }
 
   object DescribeReplicationTaskAssessmentResultsMessage {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
@@ -1754,6 +1813,7 @@ package dms {
   }
 
   object DescribeReplicationTaskAssessmentResultsResponse {
+    @inline
     def apply(
         BucketName: js.UndefOr[String] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -1781,6 +1841,7 @@ package dms {
   }
 
   object DescribeReplicationTasksMessage {
+    @inline
     def apply(
         Filters: js.UndefOr[FilterList] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
@@ -1806,6 +1867,7 @@ package dms {
   }
 
   object DescribeReplicationTasksResponse {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         ReplicationTasks: js.UndefOr[ReplicationTaskList] = js.undefined
@@ -1828,6 +1890,7 @@ package dms {
   }
 
   object DescribeSchemasMessage {
+    @inline
     def apply(
         EndpointArn: String,
         Marker: js.UndefOr[String] = js.undefined,
@@ -1853,6 +1916,7 @@ package dms {
   }
 
   object DescribeSchemasResponse {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         Schemas: js.UndefOr[SchemaList] = js.undefined
@@ -1876,6 +1940,7 @@ package dms {
   }
 
   object DescribeTableStatisticsMessage {
+    @inline
     def apply(
         ReplicationTaskArn: String,
         Filters: js.UndefOr[FilterList] = js.undefined,
@@ -1904,6 +1969,7 @@ package dms {
   }
 
   object DescribeTableStatisticsResponse {
+    @inline
     def apply(
         Marker: js.UndefOr[String] = js.undefined,
         ReplicationTaskArn: js.UndefOr[String] = js.undefined,
@@ -1936,6 +2002,7 @@ package dms {
   }
 
   object DmsTransferSettings {
+    @inline
     def apply(
         BucketName: js.UndefOr[String] = js.undefined,
         ServiceAccessRoleArn: js.UndefOr[String] = js.undefined
@@ -1956,6 +2023,7 @@ package dms {
   }
 
   object DynamoDbSettings {
+    @inline
     def apply(
         ServiceAccessRoleArn: String
     ): DynamoDbSettings = {
@@ -1979,6 +2047,7 @@ package dms {
   }
 
   object ElasticsearchSettings {
+    @inline
     def apply(
         EndpointUri: String,
         ServiceAccessRoleArn: String,
@@ -2043,6 +2112,7 @@ package dms {
   }
 
   object Endpoint {
+    @inline
     def apply(
         CertificateArn: js.UndefOr[String] = js.undefined,
         DatabaseName: js.UndefOr[String] = js.undefined,
@@ -2113,6 +2183,7 @@ package dms {
   }
 
   object Event {
+    @inline
     def apply(
         Date: js.UndefOr[TStamp] = js.undefined,
         EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
@@ -2140,6 +2211,7 @@ package dms {
   }
 
   object EventCategoryGroup {
+    @inline
     def apply(
         EventCategories: js.UndefOr[EventCategoriesList] = js.undefined,
         SourceType: js.UndefOr[String] = js.undefined
@@ -2168,6 +2240,7 @@ package dms {
   }
 
   object EventSubscription {
+    @inline
     def apply(
         CustSubscriptionId: js.UndefOr[String] = js.undefined,
         CustomerAwsId: js.UndefOr[String] = js.undefined,
@@ -2203,6 +2276,7 @@ package dms {
   }
 
   object Filter {
+    @inline
     def apply(
         Name: String,
         Values: FilterValueList
@@ -2225,6 +2299,7 @@ package dms {
   }
 
   object ImportCertificateMessage {
+    @inline
     def apply(
         CertificateIdentifier: String,
         CertificatePem: js.UndefOr[String] = js.undefined,
@@ -2248,6 +2323,7 @@ package dms {
   }
 
   object ImportCertificateResponse {
+    @inline
     def apply(
         Certificate: js.UndefOr[Certificate] = js.undefined
     ): ImportCertificateResponse = {
@@ -2268,6 +2344,7 @@ package dms {
   }
 
   object KinesisSettings {
+    @inline
     def apply(
         MessageFormat: js.UndefOr[MessageFormatValue] = js.undefined,
         ServiceAccessRoleArn: js.UndefOr[String] = js.undefined,
@@ -2290,6 +2367,7 @@ package dms {
   }
 
   object ListTagsForResourceMessage {
+    @inline
     def apply(
         ResourceArn: String
     ): ListTagsForResourceMessage = {
@@ -2310,6 +2388,7 @@ package dms {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         TagList: js.UndefOr[TagList] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -2362,6 +2441,7 @@ package dms {
   }
 
   object ModifyEndpointMessage {
+    @inline
     def apply(
         EndpointArn: String,
         CertificateArn: js.UndefOr[String] = js.undefined,
@@ -2424,6 +2504,7 @@ package dms {
   }
 
   object ModifyEndpointResponse {
+    @inline
     def apply(
         Endpoint: js.UndefOr[Endpoint] = js.undefined
     ): ModifyEndpointResponse = {
@@ -2446,6 +2527,7 @@ package dms {
   }
 
   object ModifyEventSubscriptionMessage {
+    @inline
     def apply(
         SubscriptionName: String,
         Enabled: js.UndefOr[BooleanOptional] = js.undefined,
@@ -2474,6 +2556,7 @@ package dms {
   }
 
   object ModifyEventSubscriptionResponse {
+    @inline
     def apply(
         EventSubscription: js.UndefOr[EventSubscription] = js.undefined
     ): ModifyEventSubscriptionResponse = {
@@ -2502,6 +2585,7 @@ package dms {
   }
 
   object ModifyReplicationInstanceMessage {
+    @inline
     def apply(
         ReplicationInstanceArn: String,
         AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
@@ -2546,6 +2630,7 @@ package dms {
   }
 
   object ModifyReplicationInstanceResponse {
+    @inline
     def apply(
         ReplicationInstance: js.UndefOr[ReplicationInstance] = js.undefined
     ): ModifyReplicationInstanceResponse = {
@@ -2566,6 +2651,7 @@ package dms {
   }
 
   object ModifyReplicationSubnetGroupMessage {
+    @inline
     def apply(
         ReplicationSubnetGroupIdentifier: String,
         SubnetIds: SubnetIdentifierList,
@@ -2592,6 +2678,7 @@ package dms {
   }
 
   object ModifyReplicationSubnetGroupResponse {
+    @inline
     def apply(
         ReplicationSubnetGroup: js.UndefOr[ReplicationSubnetGroup] = js.undefined
     ): ModifyReplicationSubnetGroupResponse = {
@@ -2617,6 +2704,7 @@ package dms {
   }
 
   object ModifyReplicationTaskMessage {
+    @inline
     def apply(
         ReplicationTaskArn: String,
         CdcStartPosition: js.UndefOr[String] = js.undefined,
@@ -2653,6 +2741,7 @@ package dms {
   }
 
   object ModifyReplicationTaskResponse {
+    @inline
     def apply(
         ReplicationTask: js.UndefOr[ReplicationTask] = js.undefined
     ): ModifyReplicationTaskResponse = {
@@ -2682,6 +2771,7 @@ package dms {
   }
 
   object MongoDbSettings {
+    @inline
     def apply(
         AuthMechanism: js.UndefOr[AuthMechanismValue] = js.undefined,
         AuthSource: js.UndefOr[String] = js.undefined,
@@ -2737,6 +2827,7 @@ package dms {
   }
 
   object OrderableReplicationInstance {
+    @inline
     def apply(
         AvailabilityZones: js.UndefOr[AvailabilityZonesList] = js.undefined,
         DefaultAllocatedStorage: js.UndefOr[Int] = js.undefined,
@@ -2783,6 +2874,7 @@ package dms {
   }
 
   object PendingMaintenanceAction {
+    @inline
     def apply(
         Action: js.UndefOr[String] = js.undefined,
         AutoAppliedAfterDate: js.UndefOr[TStamp] = js.undefined,
@@ -2809,6 +2901,7 @@ package dms {
   }
 
   object RebootReplicationInstanceMessage {
+    @inline
     def apply(
         ReplicationInstanceArn: String,
         ForceFailover: js.UndefOr[BooleanOptional] = js.undefined
@@ -2828,6 +2921,7 @@ package dms {
   }
 
   object RebootReplicationInstanceResponse {
+    @inline
     def apply(
         ReplicationInstance: js.UndefOr[ReplicationInstance] = js.undefined
     ): RebootReplicationInstanceResponse = {
@@ -2870,6 +2964,7 @@ package dms {
   }
 
   object RedshiftSettings {
+    @inline
     def apply(
         AcceptAnyDate: js.UndefOr[BooleanOptional] = js.undefined,
         AfterConnectScript: js.UndefOr[String] = js.undefined,
@@ -2941,6 +3036,7 @@ package dms {
   }
 
   object RefreshSchemasMessage {
+    @inline
     def apply(
         EndpointArn: String,
         ReplicationInstanceArn: String
@@ -2963,6 +3059,7 @@ package dms {
   }
 
   object RefreshSchemasResponse {
+    @inline
     def apply(
         RefreshSchemasStatus: js.UndefOr[RefreshSchemasStatus] = js.undefined
     ): RefreshSchemasResponse = {
@@ -2985,6 +3082,7 @@ package dms {
   }
 
   object RefreshSchemasStatus {
+    @inline
     def apply(
         EndpointArn: js.UndefOr[String] = js.undefined,
         LastFailureMessage: js.UndefOr[String] = js.undefined,
@@ -3031,6 +3129,7 @@ package dms {
   }
 
   object ReloadTablesMessage {
+    @inline
     def apply(
         ReplicationTaskArn: String,
         TablesToReload: TableListToReload,
@@ -3052,6 +3151,7 @@ package dms {
   }
 
   object ReloadTablesResponse {
+    @inline
     def apply(
         ReplicationTaskArn: js.UndefOr[String] = js.undefined
     ): ReloadTablesResponse = {
@@ -3071,6 +3171,7 @@ package dms {
   }
 
   object RemoveTagsFromResourceMessage {
+    @inline
     def apply(
         ResourceArn: String,
         TagKeys: KeyList
@@ -3091,6 +3192,7 @@ package dms {
   trait RemoveTagsFromResourceResponse extends js.Object {}
 
   object RemoveTagsFromResourceResponse {
+    @inline
     def apply(
         ): RemoveTagsFromResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -3137,6 +3239,7 @@ package dms {
   }
 
   object ReplicationInstance {
+    @inline
     def apply(
         AllocatedStorage: js.UndefOr[Int] = js.undefined,
         AutoMinorVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
@@ -3217,6 +3320,7 @@ package dms {
   }
 
   object ReplicationInstanceTaskLog {
+    @inline
     def apply(
         ReplicationInstanceTaskLogSize: js.UndefOr[Double] = js.undefined,
         ReplicationTaskArn: js.UndefOr[String] = js.undefined,
@@ -3244,6 +3348,7 @@ package dms {
   }
 
   object ReplicationPendingModifiedValues {
+    @inline
     def apply(
         AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
@@ -3272,6 +3377,7 @@ package dms {
   }
 
   object ReplicationSubnetGroup {
+    @inline
     def apply(
         ReplicationSubnetGroupDescription: js.UndefOr[String] = js.undefined,
         ReplicationSubnetGroupIdentifier: js.UndefOr[String] = js.undefined,
@@ -3318,6 +3424,7 @@ package dms {
   }
 
   object ReplicationTask {
+    @inline
     def apply(
         CdcStartPosition: js.UndefOr[String] = js.undefined,
         CdcStopPosition: js.UndefOr[String] = js.undefined,
@@ -3378,6 +3485,7 @@ package dms {
   }
 
   object ReplicationTaskAssessmentResult {
+    @inline
     def apply(
         AssessmentResults: js.UndefOr[String] = js.undefined,
         AssessmentResultsFile: js.UndefOr[String] = js.undefined,
@@ -3417,6 +3525,7 @@ package dms {
   }
 
   object ReplicationTaskStats {
+    @inline
     def apply(
         ElapsedTimeMillis: js.UndefOr[Double] = js.undefined,
         FullLoadProgressPercent: js.UndefOr[Int] = js.undefined,
@@ -3446,6 +3555,7 @@ package dms {
   }
 
   object ResourcePendingMaintenanceActions {
+    @inline
     def apply(
         PendingMaintenanceActionDetails: js.UndefOr[PendingMaintenanceActionDetails] = js.undefined,
         ResourceIdentifier: js.UndefOr[String] = js.undefined
@@ -3486,6 +3596,7 @@ package dms {
   }
 
   object S3Settings {
+    @inline
     def apply(
         BucketFolder: js.UndefOr[String] = js.undefined,
         BucketName: js.UndefOr[String] = js.undefined,
@@ -3548,6 +3659,7 @@ package dms {
   }
 
   object StartReplicationTaskAssessmentMessage {
+    @inline
     def apply(
         ReplicationTaskArn: String
     ): StartReplicationTaskAssessmentMessage = {
@@ -3568,6 +3680,7 @@ package dms {
   }
 
   object StartReplicationTaskAssessmentResponse {
+    @inline
     def apply(
         ReplicationTask: js.UndefOr[ReplicationTask] = js.undefined
     ): StartReplicationTaskAssessmentResponse = {
@@ -3590,6 +3703,7 @@ package dms {
   }
 
   object StartReplicationTaskMessage {
+    @inline
     def apply(
         ReplicationTaskArn: String,
         StartReplicationTaskType: StartReplicationTaskTypeValue,
@@ -3618,6 +3732,7 @@ package dms {
   }
 
   object StartReplicationTaskResponse {
+    @inline
     def apply(
         ReplicationTask: js.UndefOr[ReplicationTask] = js.undefined
     ): StartReplicationTaskResponse = {
@@ -3644,6 +3759,7 @@ package dms {
   }
 
   object StopReplicationTaskMessage {
+    @inline
     def apply(
         ReplicationTaskArn: String
     ): StopReplicationTaskMessage = {
@@ -3664,6 +3780,7 @@ package dms {
   }
 
   object StopReplicationTaskResponse {
+    @inline
     def apply(
         ReplicationTask: js.UndefOr[ReplicationTask] = js.undefined
     ): StopReplicationTaskResponse = {
@@ -3684,6 +3801,7 @@ package dms {
   }
 
   object Subnet {
+    @inline
     def apply(
         SubnetAvailabilityZone: js.UndefOr[AvailabilityZone] = js.undefined,
         SubnetIdentifier: js.UndefOr[String] = js.undefined,
@@ -3709,6 +3827,7 @@ package dms {
   }
 
   object SupportedEndpointType {
+    @inline
     def apply(
         EndpointType: js.UndefOr[ReplicationEndpointTypeValue] = js.undefined,
         EngineDisplayName: js.UndefOr[String] = js.undefined,
@@ -3748,6 +3867,7 @@ package dms {
   }
 
   object TableStatistics {
+    @inline
     def apply(
         Ddls: js.UndefOr[Double] = js.undefined,
         Deletes: js.UndefOr[Double] = js.undefined,
@@ -3801,6 +3921,7 @@ package dms {
   }
 
   object TableToReload {
+    @inline
     def apply(
         SchemaName: js.UndefOr[String] = js.undefined,
         TableName: js.UndefOr[String] = js.undefined
@@ -3822,6 +3943,7 @@ package dms {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
@@ -3843,6 +3965,7 @@ package dms {
   }
 
   object TestConnectionMessage {
+    @inline
     def apply(
         EndpointArn: String,
         ReplicationInstanceArn: String
@@ -3865,6 +3988,7 @@ package dms {
   }
 
   object TestConnectionResponse {
+    @inline
     def apply(
         Connection: js.UndefOr[Connection] = js.undefined
     ): TestConnectionResponse = {
@@ -3884,6 +4008,7 @@ package dms {
   }
 
   object VpcSecurityGroupMembership {
+    @inline
     def apply(
         Status: js.UndefOr[String] = js.undefined,
         VpcSecurityGroupId: js.UndefOr[String] = js.undefined

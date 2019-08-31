@@ -95,6 +95,7 @@ package sts {
   }
 
   object AssumeRoleRequest {
+    @inline
     def apply(
         RoleArn: arnType,
         RoleSessionName: roleSessionNameType,
@@ -131,6 +132,7 @@ package sts {
   }
 
   object AssumeRoleResponse {
+    @inline
     def apply(
         AssumedRoleUser: js.UndefOr[AssumedRoleUser] = js.undefined,
         Credentials: js.UndefOr[Credentials] = js.undefined,
@@ -155,6 +157,7 @@ package sts {
   }
 
   object AssumeRoleWithSAMLRequest {
+    @inline
     def apply(
         PrincipalArn: arnType,
         RoleArn: arnType,
@@ -192,6 +195,7 @@ package sts {
   }
 
   object AssumeRoleWithSAMLResponse {
+    @inline
     def apply(
         AssumedRoleUser: js.UndefOr[AssumedRoleUser] = js.undefined,
         Audience: js.UndefOr[Audience] = js.undefined,
@@ -227,6 +231,7 @@ package sts {
   }
 
   object AssumeRoleWithWebIdentityRequest {
+    @inline
     def apply(
         RoleArn: arnType,
         RoleSessionName: roleSessionNameType,
@@ -264,6 +269,7 @@ package sts {
   }
 
   object AssumeRoleWithWebIdentityResponse {
+    @inline
     def apply(
         AssumedRoleUser: js.UndefOr[AssumedRoleUser] = js.undefined,
         Audience: js.UndefOr[Audience] = js.undefined,
@@ -295,6 +301,7 @@ package sts {
   }
 
   object AssumedRoleUser {
+    @inline
     def apply(
         Arn: arnType,
         AssumedRoleId: assumedRoleIdType
@@ -320,6 +327,7 @@ package sts {
   }
 
   object Credentials {
+    @inline
     def apply(
         AccessKeyId: accessKeyIdType,
         Expiration: dateType,
@@ -343,6 +351,7 @@ package sts {
   }
 
   object DecodeAuthorizationMessageRequest {
+    @inline
     def apply(
         EncodedMessage: encodedMessageType
     ): DecodeAuthorizationMessageRequest = {
@@ -363,6 +372,7 @@ package sts {
   }
 
   object DecodeAuthorizationMessageResponse {
+    @inline
     def apply(
         DecodedMessage: js.UndefOr[decodedMessageType] = js.undefined
     ): DecodeAuthorizationMessageResponse = {
@@ -382,6 +392,7 @@ package sts {
   }
 
   object FederatedUser {
+    @inline
     def apply(
         Arn: arnType,
         FederatedUserId: federatedIdType
@@ -401,6 +412,7 @@ package sts {
   }
 
   object GetAccessKeyInfoRequest {
+    @inline
     def apply(
         AccessKeyId: accessKeyIdType
     ): GetAccessKeyInfoRequest = {
@@ -418,6 +430,7 @@ package sts {
   }
 
   object GetAccessKeyInfoResponse {
+    @inline
     def apply(
         Account: js.UndefOr[accountType] = js.undefined
     ): GetAccessKeyInfoResponse = {
@@ -431,6 +444,7 @@ package sts {
   trait GetCallerIdentityRequest extends js.Object {}
 
   object GetCallerIdentityRequest {
+    @inline
     def apply(
         ): GetCallerIdentityRequest = {
       val __obj = js.Dynamic.literal()
@@ -450,6 +464,7 @@ package sts {
   }
 
   object GetCallerIdentityResponse {
+    @inline
     def apply(
         Account: js.UndefOr[accountType] = js.undefined,
         Arn: js.UndefOr[arnType] = js.undefined,
@@ -472,6 +487,7 @@ package sts {
   }
 
   object GetFederationTokenRequest {
+    @inline
     def apply(
         Name: userNameType,
         DurationSeconds: js.UndefOr[durationSecondsType] = js.undefined,
@@ -500,6 +516,7 @@ package sts {
   }
 
   object GetFederationTokenResponse {
+    @inline
     def apply(
         Credentials: js.UndefOr[Credentials] = js.undefined,
         FederatedUser: js.UndefOr[FederatedUser] = js.undefined,
@@ -521,6 +538,7 @@ package sts {
   }
 
   object GetSessionTokenRequest {
+    @inline
     def apply(
         DurationSeconds: js.UndefOr[durationSecondsType] = js.undefined,
         SerialNumber: js.UndefOr[serialNumberType] = js.undefined,
@@ -543,6 +561,7 @@ package sts {
   }
 
   object GetSessionTokenResponse {
+    @inline
     def apply(
         Credentials: js.UndefOr[Credentials] = js.undefined
     ): GetSessionTokenResponse = {
@@ -561,6 +580,7 @@ package sts {
   }
 
   object PolicyDescriptorType {
+    @inline
     def apply(
         arn: js.UndefOr[arnType] = js.undefined
     ): PolicyDescriptorType = {

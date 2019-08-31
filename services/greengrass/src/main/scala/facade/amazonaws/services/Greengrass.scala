@@ -488,6 +488,7 @@ package greengrass {
   }
 
   object AssociateRoleToGroupRequest {
+    @inline
     def apply(
         GroupId: __string,
         RoleArn: __string
@@ -507,6 +508,7 @@ package greengrass {
   }
 
   object AssociateRoleToGroupResponse {
+    @inline
     def apply(
         AssociatedAt: js.UndefOr[__string] = js.undefined
     ): AssociateRoleToGroupResponse = {
@@ -522,6 +524,7 @@ package greengrass {
   }
 
   object AssociateServiceRoleToAccountRequest {
+    @inline
     def apply(
         RoleArn: __string
     ): AssociateServiceRoleToAccountRequest = {
@@ -539,6 +542,7 @@ package greengrass {
   }
 
   object AssociateServiceRoleToAccountResponse {
+    @inline
     def apply(
         AssociatedAt: js.UndefOr[__string] = js.undefined
     ): AssociateServiceRoleToAccountResponse = {
@@ -559,6 +563,7 @@ package greengrass {
   }
 
   object BulkDeployment {
+    @inline
     def apply(
         BulkDeploymentArn: js.UndefOr[__string] = js.undefined,
         BulkDeploymentId: js.UndefOr[__string] = js.undefined,
@@ -583,6 +588,7 @@ package greengrass {
   }
 
   object BulkDeploymentMetrics {
+    @inline
     def apply(
         InvalidInputRecords: js.UndefOr[__integer] = js.undefined,
         RecordsProcessed: js.UndefOr[__integer] = js.undefined,
@@ -612,6 +618,7 @@ package greengrass {
   }
 
   object BulkDeploymentResult {
+    @inline
     def apply(
         CreatedAt: js.UndefOr[__string] = js.undefined,
         DeploymentArn: js.UndefOr[__string] = js.undefined,
@@ -661,6 +668,7 @@ package greengrass {
   }
 
   object ConnectivityInfo {
+    @inline
     def apply(
         HostAddress: js.UndefOr[__string] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined,
@@ -687,6 +695,7 @@ package greengrass {
   }
 
   object Connector {
+    @inline
     def apply(
         ConnectorArn: __string,
         Id: __string,
@@ -711,6 +720,7 @@ package greengrass {
   }
 
   object ConnectorDefinitionVersion {
+    @inline
     def apply(
         Connectors: js.UndefOr[__listOfConnector] = js.undefined
     ): ConnectorDefinitionVersion = {
@@ -732,6 +742,7 @@ package greengrass {
   }
 
   object Core {
+    @inline
     def apply(
         CertificateArn: __string,
         Id: __string,
@@ -758,6 +769,7 @@ package greengrass {
   }
 
   object CoreDefinitionVersion {
+    @inline
     def apply(
         Cores: js.UndefOr[__listOfCore] = js.undefined
     ): CoreDefinitionVersion = {
@@ -776,6 +788,7 @@ package greengrass {
   }
 
   object CreateConnectorDefinitionRequest {
+    @inline
     def apply(
         AmznClientToken: js.UndefOr[__string] = js.undefined,
         InitialVersion: js.UndefOr[ConnectorDefinitionVersion] = js.undefined,
@@ -803,6 +816,7 @@ package greengrass {
   }
 
   object CreateConnectorDefinitionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -832,6 +846,7 @@ package greengrass {
   }
 
   object CreateConnectorDefinitionVersionRequest {
+    @inline
     def apply(
         ConnectorDefinitionId: __string,
         AmznClientToken: js.UndefOr[__string] = js.undefined,
@@ -856,6 +871,7 @@ package greengrass {
   }
 
   object CreateConnectorDefinitionVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -883,6 +899,7 @@ package greengrass {
   }
 
   object CreateCoreDefinitionRequest {
+    @inline
     def apply(
         AmznClientToken: js.UndefOr[__string] = js.undefined,
         InitialVersion: js.UndefOr[CoreDefinitionVersion] = js.undefined,
@@ -910,6 +927,7 @@ package greengrass {
   }
 
   object CreateCoreDefinitionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -939,6 +957,7 @@ package greengrass {
   }
 
   object CreateCoreDefinitionVersionRequest {
+    @inline
     def apply(
         CoreDefinitionId: __string,
         AmznClientToken: js.UndefOr[__string] = js.undefined,
@@ -963,6 +982,7 @@ package greengrass {
   }
 
   object CreateCoreDefinitionVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -988,6 +1008,7 @@ package greengrass {
   }
 
   object CreateDeploymentRequest {
+    @inline
     def apply(
         DeploymentType: DeploymentType,
         GroupId: __string,
@@ -1014,6 +1035,7 @@ package greengrass {
   }
 
   object CreateDeploymentResponse {
+    @inline
     def apply(
         DeploymentArn: js.UndefOr[__string] = js.undefined,
         DeploymentId: js.UndefOr[__string] = js.undefined
@@ -1034,6 +1056,7 @@ package greengrass {
   }
 
   object CreateDeviceDefinitionRequest {
+    @inline
     def apply(
         AmznClientToken: js.UndefOr[__string] = js.undefined,
         InitialVersion: js.UndefOr[DeviceDefinitionVersion] = js.undefined,
@@ -1061,6 +1084,7 @@ package greengrass {
   }
 
   object CreateDeviceDefinitionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -1090,6 +1114,7 @@ package greengrass {
   }
 
   object CreateDeviceDefinitionVersionRequest {
+    @inline
     def apply(
         DeviceDefinitionId: __string,
         AmznClientToken: js.UndefOr[__string] = js.undefined,
@@ -1114,6 +1139,7 @@ package greengrass {
   }
 
   object CreateDeviceDefinitionVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -1138,6 +1164,7 @@ package greengrass {
   }
 
   object CreateFunctionDefinitionRequest {
+    @inline
     def apply(
         AmznClientToken: js.UndefOr[__string] = js.undefined,
         InitialVersion: js.UndefOr[FunctionDefinitionVersion] = js.undefined,
@@ -1165,6 +1192,7 @@ package greengrass {
   }
 
   object CreateFunctionDefinitionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -1198,6 +1226,7 @@ package greengrass {
   }
 
   object CreateFunctionDefinitionVersionRequest {
+    @inline
     def apply(
         FunctionDefinitionId: __string,
         AmznClientToken: js.UndefOr[__string] = js.undefined,
@@ -1224,6 +1253,7 @@ package greengrass {
   }
 
   object CreateFunctionDefinitionVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -1246,6 +1276,7 @@ package greengrass {
   }
 
   object CreateGroupCertificateAuthorityRequest {
+    @inline
     def apply(
         GroupId: __string,
         AmznClientToken: js.UndefOr[__string] = js.undefined
@@ -1265,6 +1296,7 @@ package greengrass {
   }
 
   object CreateGroupCertificateAuthorityResponse {
+    @inline
     def apply(
         GroupCertificateAuthorityArn: js.UndefOr[__string] = js.undefined
     ): CreateGroupCertificateAuthorityResponse = {
@@ -1285,6 +1317,7 @@ package greengrass {
   }
 
   object CreateGroupRequest {
+    @inline
     def apply(
         AmznClientToken: js.UndefOr[__string] = js.undefined,
         InitialVersion: js.UndefOr[GroupVersion] = js.undefined,
@@ -1312,6 +1345,7 @@ package greengrass {
   }
 
   object CreateGroupResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -1347,6 +1381,7 @@ package greengrass {
   }
 
   object CreateGroupVersionRequest {
+    @inline
     def apply(
         GroupId: __string,
         AmznClientToken: js.UndefOr[__string] = js.undefined,
@@ -1395,6 +1430,7 @@ package greengrass {
   }
 
   object CreateGroupVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -1419,6 +1455,7 @@ package greengrass {
   }
 
   object CreateLoggerDefinitionRequest {
+    @inline
     def apply(
         AmznClientToken: js.UndefOr[__string] = js.undefined,
         InitialVersion: js.UndefOr[LoggerDefinitionVersion] = js.undefined,
@@ -1446,6 +1483,7 @@ package greengrass {
   }
 
   object CreateLoggerDefinitionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -1475,6 +1513,7 @@ package greengrass {
   }
 
   object CreateLoggerDefinitionVersionRequest {
+    @inline
     def apply(
         LoggerDefinitionId: __string,
         AmznClientToken: js.UndefOr[__string] = js.undefined,
@@ -1499,6 +1538,7 @@ package greengrass {
   }
 
   object CreateLoggerDefinitionVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -1523,6 +1563,7 @@ package greengrass {
   }
 
   object CreateResourceDefinitionRequest {
+    @inline
     def apply(
         AmznClientToken: js.UndefOr[__string] = js.undefined,
         InitialVersion: js.UndefOr[ResourceDefinitionVersion] = js.undefined,
@@ -1550,6 +1591,7 @@ package greengrass {
   }
 
   object CreateResourceDefinitionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -1579,6 +1621,7 @@ package greengrass {
   }
 
   object CreateResourceDefinitionVersionRequest {
+    @inline
     def apply(
         ResourceDefinitionId: __string,
         AmznClientToken: js.UndefOr[__string] = js.undefined,
@@ -1603,6 +1646,7 @@ package greengrass {
   }
 
   object CreateResourceDefinitionVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -1630,6 +1674,7 @@ package greengrass {
   }
 
   object CreateSoftwareUpdateJobRequest {
+    @inline
     def apply(
         S3UrlSignerRole: S3UrlSignerRole,
         SoftwareToUpdate: SoftwareToUpdate,
@@ -1660,6 +1705,7 @@ package greengrass {
   }
 
   object CreateSoftwareUpdateJobResponse {
+    @inline
     def apply(
         IotJobArn: js.UndefOr[__string] = js.undefined,
         IotJobId: js.UndefOr[__string] = js.undefined
@@ -1680,6 +1726,7 @@ package greengrass {
   }
 
   object CreateSubscriptionDefinitionRequest {
+    @inline
     def apply(
         AmznClientToken: js.UndefOr[__string] = js.undefined,
         InitialVersion: js.UndefOr[SubscriptionDefinitionVersion] = js.undefined,
@@ -1707,6 +1754,7 @@ package greengrass {
   }
 
   object CreateSubscriptionDefinitionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -1736,6 +1784,7 @@ package greengrass {
   }
 
   object CreateSubscriptionDefinitionVersionRequest {
+    @inline
     def apply(
         SubscriptionDefinitionId: __string,
         AmznClientToken: js.UndefOr[__string] = js.undefined,
@@ -1760,6 +1809,7 @@ package greengrass {
   }
 
   object CreateSubscriptionDefinitionVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -1791,6 +1841,7 @@ package greengrass {
   }
 
   object DefinitionInformation {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -1820,6 +1871,7 @@ package greengrass {
   }
 
   object DeleteConnectorDefinitionRequest {
+    @inline
     def apply(
         ConnectorDefinitionId: __string
     ): DeleteConnectorDefinitionRequest = {
@@ -1835,6 +1887,7 @@ package greengrass {
   trait DeleteConnectorDefinitionResponse extends js.Object {}
 
   object DeleteConnectorDefinitionResponse {
+    @inline
     def apply(
         ): DeleteConnectorDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -1849,6 +1902,7 @@ package greengrass {
   }
 
   object DeleteCoreDefinitionRequest {
+    @inline
     def apply(
         CoreDefinitionId: __string
     ): DeleteCoreDefinitionRequest = {
@@ -1864,6 +1918,7 @@ package greengrass {
   trait DeleteCoreDefinitionResponse extends js.Object {}
 
   object DeleteCoreDefinitionResponse {
+    @inline
     def apply(
         ): DeleteCoreDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -1878,6 +1933,7 @@ package greengrass {
   }
 
   object DeleteDeviceDefinitionRequest {
+    @inline
     def apply(
         DeviceDefinitionId: __string
     ): DeleteDeviceDefinitionRequest = {
@@ -1893,6 +1949,7 @@ package greengrass {
   trait DeleteDeviceDefinitionResponse extends js.Object {}
 
   object DeleteDeviceDefinitionResponse {
+    @inline
     def apply(
         ): DeleteDeviceDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -1907,6 +1964,7 @@ package greengrass {
   }
 
   object DeleteFunctionDefinitionRequest {
+    @inline
     def apply(
         FunctionDefinitionId: __string
     ): DeleteFunctionDefinitionRequest = {
@@ -1922,6 +1980,7 @@ package greengrass {
   trait DeleteFunctionDefinitionResponse extends js.Object {}
 
   object DeleteFunctionDefinitionResponse {
+    @inline
     def apply(
         ): DeleteFunctionDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -1936,6 +1995,7 @@ package greengrass {
   }
 
   object DeleteGroupRequest {
+    @inline
     def apply(
         GroupId: __string
     ): DeleteGroupRequest = {
@@ -1951,6 +2011,7 @@ package greengrass {
   trait DeleteGroupResponse extends js.Object {}
 
   object DeleteGroupResponse {
+    @inline
     def apply(
         ): DeleteGroupResponse = {
       val __obj = js.Dynamic.literal()
@@ -1965,6 +2026,7 @@ package greengrass {
   }
 
   object DeleteLoggerDefinitionRequest {
+    @inline
     def apply(
         LoggerDefinitionId: __string
     ): DeleteLoggerDefinitionRequest = {
@@ -1980,6 +2042,7 @@ package greengrass {
   trait DeleteLoggerDefinitionResponse extends js.Object {}
 
   object DeleteLoggerDefinitionResponse {
+    @inline
     def apply(
         ): DeleteLoggerDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -1994,6 +2057,7 @@ package greengrass {
   }
 
   object DeleteResourceDefinitionRequest {
+    @inline
     def apply(
         ResourceDefinitionId: __string
     ): DeleteResourceDefinitionRequest = {
@@ -2009,6 +2073,7 @@ package greengrass {
   trait DeleteResourceDefinitionResponse extends js.Object {}
 
   object DeleteResourceDefinitionResponse {
+    @inline
     def apply(
         ): DeleteResourceDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -2023,6 +2088,7 @@ package greengrass {
   }
 
   object DeleteSubscriptionDefinitionRequest {
+    @inline
     def apply(
         SubscriptionDefinitionId: __string
     ): DeleteSubscriptionDefinitionRequest = {
@@ -2038,6 +2104,7 @@ package greengrass {
   trait DeleteSubscriptionDefinitionResponse extends js.Object {}
 
   object DeleteSubscriptionDefinitionResponse {
+    @inline
     def apply(
         ): DeleteSubscriptionDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -2059,6 +2126,7 @@ package greengrass {
   }
 
   object Deployment {
+    @inline
     def apply(
         CreatedAt: js.UndefOr[__string] = js.undefined,
         DeploymentArn: js.UndefOr[__string] = js.undefined,
@@ -2100,6 +2168,7 @@ package greengrass {
   }
 
   object Device {
+    @inline
     def apply(
         CertificateArn: __string,
         Id: __string,
@@ -2126,6 +2195,7 @@ package greengrass {
   }
 
   object DeviceDefinitionVersion {
+    @inline
     def apply(
         Devices: js.UndefOr[__listOfDevice] = js.undefined
     ): DeviceDefinitionVersion = {
@@ -2141,6 +2211,7 @@ package greengrass {
   }
 
   object DisassociateRoleFromGroupRequest {
+    @inline
     def apply(
         GroupId: __string
     ): DisassociateRoleFromGroupRequest = {
@@ -2158,6 +2229,7 @@ package greengrass {
   }
 
   object DisassociateRoleFromGroupResponse {
+    @inline
     def apply(
         DisassociatedAt: js.UndefOr[__string] = js.undefined
     ): DisassociateRoleFromGroupResponse = {
@@ -2171,6 +2243,7 @@ package greengrass {
   trait DisassociateServiceRoleFromAccountRequest extends js.Object {}
 
   object DisassociateServiceRoleFromAccountRequest {
+    @inline
     def apply(
         ): DisassociateServiceRoleFromAccountRequest = {
       val __obj = js.Dynamic.literal()
@@ -2185,6 +2258,7 @@ package greengrass {
   }
 
   object DisassociateServiceRoleFromAccountResponse {
+    @inline
     def apply(
         DisassociatedAt: js.UndefOr[__string] = js.undefined
     ): DisassociateServiceRoleFromAccountResponse = {
@@ -2211,6 +2285,7 @@ package greengrass {
   }
 
   object ErrorDetail {
+    @inline
     def apply(
         DetailedErrorCode: js.UndefOr[__string] = js.undefined,
         DetailedErrorMessage: js.UndefOr[__string] = js.undefined
@@ -2233,6 +2308,7 @@ package greengrass {
   }
 
   object Function {
+    @inline
     def apply(
         Id: __string,
         FunctionArn: js.UndefOr[__string] = js.undefined,
@@ -2263,6 +2339,7 @@ package greengrass {
   }
 
   object FunctionConfiguration {
+    @inline
     def apply(
         EncodingType: js.UndefOr[EncodingType] = js.undefined,
         Environment: js.UndefOr[FunctionConfigurationEnvironment] = js.undefined,
@@ -2296,6 +2373,7 @@ package greengrass {
   }
 
   object FunctionConfigurationEnvironment {
+    @inline
     def apply(
         AccessSysfs: js.UndefOr[__boolean] = js.undefined,
         Execution: js.UndefOr[FunctionExecutionConfig] = js.undefined,
@@ -2320,6 +2398,7 @@ package greengrass {
   }
 
   object FunctionDefaultConfig {
+    @inline
     def apply(
         Execution: js.UndefOr[FunctionDefaultExecutionConfig] = js.undefined
     ): FunctionDefaultConfig = {
@@ -2339,6 +2418,7 @@ package greengrass {
   }
 
   object FunctionDefaultExecutionConfig {
+    @inline
     def apply(
         IsolationMode: js.UndefOr[FunctionIsolationMode] = js.undefined,
         RunAs: js.UndefOr[FunctionRunAsConfig] = js.undefined
@@ -2360,6 +2440,7 @@ package greengrass {
   }
 
   object FunctionDefinitionVersion {
+    @inline
     def apply(
         DefaultConfig: js.UndefOr[FunctionDefaultConfig] = js.undefined,
         Functions: js.UndefOr[__listOfFunction] = js.undefined
@@ -2381,6 +2462,7 @@ package greengrass {
   }
 
   object FunctionExecutionConfig {
+    @inline
     def apply(
         IsolationMode: js.UndefOr[FunctionIsolationMode] = js.undefined,
         RunAs: js.UndefOr[FunctionRunAsConfig] = js.undefined
@@ -2412,6 +2494,7 @@ package greengrass {
   }
 
   object FunctionRunAsConfig {
+    @inline
     def apply(
         Gid: js.UndefOr[__integer] = js.undefined,
         Uid: js.UndefOr[__integer] = js.undefined
@@ -2429,6 +2512,7 @@ package greengrass {
   }
 
   object GetAssociatedRoleRequest {
+    @inline
     def apply(
         GroupId: __string
     ): GetAssociatedRoleRequest = {
@@ -2447,6 +2531,7 @@ package greengrass {
   }
 
   object GetAssociatedRoleResponse {
+    @inline
     def apply(
         AssociatedAt: js.UndefOr[__string] = js.undefined,
         RoleArn: js.UndefOr[__string] = js.undefined
@@ -2464,6 +2549,7 @@ package greengrass {
   }
 
   object GetBulkDeploymentStatusRequest {
+    @inline
     def apply(
         BulkDeploymentId: __string
     ): GetBulkDeploymentStatusRequest = {
@@ -2486,6 +2572,7 @@ package greengrass {
   }
 
   object GetBulkDeploymentStatusResponse {
+    @inline
     def apply(
         BulkDeploymentMetrics: js.UndefOr[BulkDeploymentMetrics] = js.undefined,
         BulkDeploymentStatus: js.UndefOr[BulkDeploymentStatus] = js.undefined,
@@ -2511,6 +2598,7 @@ package greengrass {
   }
 
   object GetConnectivityInfoRequest {
+    @inline
     def apply(
         ThingName: __string
     ): GetConnectivityInfoRequest = {
@@ -2529,6 +2617,7 @@ package greengrass {
   }
 
   object GetConnectivityInfoResponse {
+    @inline
     def apply(
         ConnectivityInfo: js.UndefOr[__listOfConnectivityInfo] = js.undefined,
         Message: js.UndefOr[__string] = js.undefined
@@ -2546,6 +2635,7 @@ package greengrass {
   }
 
   object GetConnectorDefinitionRequest {
+    @inline
     def apply(
         ConnectorDefinitionId: __string
     ): GetConnectorDefinitionRequest = {
@@ -2570,6 +2660,7 @@ package greengrass {
   }
 
   object GetConnectorDefinitionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -2601,6 +2692,7 @@ package greengrass {
   }
 
   object GetConnectorDefinitionVersionRequest {
+    @inline
     def apply(
         ConnectorDefinitionId: __string,
         ConnectorDefinitionVersionId: __string,
@@ -2627,6 +2719,7 @@ package greengrass {
   }
 
   object GetConnectorDefinitionVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -2652,6 +2745,7 @@ package greengrass {
   }
 
   object GetCoreDefinitionRequest {
+    @inline
     def apply(
         CoreDefinitionId: __string
     ): GetCoreDefinitionRequest = {
@@ -2676,6 +2770,7 @@ package greengrass {
   }
 
   object GetCoreDefinitionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -2706,6 +2801,7 @@ package greengrass {
   }
 
   object GetCoreDefinitionVersionRequest {
+    @inline
     def apply(
         CoreDefinitionId: __string,
         CoreDefinitionVersionId: __string
@@ -2730,6 +2826,7 @@ package greengrass {
   }
 
   object GetCoreDefinitionVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -2756,6 +2853,7 @@ package greengrass {
   }
 
   object GetDeploymentStatusRequest {
+    @inline
     def apply(
         DeploymentId: __string,
         GroupId: __string
@@ -2779,6 +2877,7 @@ package greengrass {
   }
 
   object GetDeploymentStatusResponse {
+    @inline
     def apply(
         DeploymentStatus: js.UndefOr[__string] = js.undefined,
         DeploymentType: js.UndefOr[DeploymentType] = js.undefined,
@@ -2802,6 +2901,7 @@ package greengrass {
   }
 
   object GetDeviceDefinitionRequest {
+    @inline
     def apply(
         DeviceDefinitionId: __string
     ): GetDeviceDefinitionRequest = {
@@ -2826,6 +2926,7 @@ package greengrass {
   }
 
   object GetDeviceDefinitionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -2857,6 +2958,7 @@ package greengrass {
   }
 
   object GetDeviceDefinitionVersionRequest {
+    @inline
     def apply(
         DeviceDefinitionId: __string,
         DeviceDefinitionVersionId: __string,
@@ -2883,6 +2985,7 @@ package greengrass {
   }
 
   object GetDeviceDefinitionVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -2908,6 +3011,7 @@ package greengrass {
   }
 
   object GetFunctionDefinitionRequest {
+    @inline
     def apply(
         FunctionDefinitionId: __string
     ): GetFunctionDefinitionRequest = {
@@ -2932,6 +3036,7 @@ package greengrass {
   }
 
   object GetFunctionDefinitionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -2963,6 +3068,7 @@ package greengrass {
   }
 
   object GetFunctionDefinitionVersionRequest {
+    @inline
     def apply(
         FunctionDefinitionId: __string,
         FunctionDefinitionVersionId: __string,
@@ -2989,6 +3095,7 @@ package greengrass {
   }
 
   object GetFunctionDefinitionVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -3015,6 +3122,7 @@ package greengrass {
   }
 
   object GetGroupCertificateAuthorityRequest {
+    @inline
     def apply(
         CertificateAuthorityId: __string,
         GroupId: __string
@@ -3036,6 +3144,7 @@ package greengrass {
   }
 
   object GetGroupCertificateAuthorityResponse {
+    @inline
     def apply(
         GroupCertificateAuthorityArn: js.UndefOr[__string] = js.undefined,
         GroupCertificateAuthorityId: js.UndefOr[__string] = js.undefined,
@@ -3059,6 +3168,7 @@ package greengrass {
   }
 
   object GetGroupCertificateConfigurationRequest {
+    @inline
     def apply(
         GroupId: __string
     ): GetGroupCertificateConfigurationRequest = {
@@ -3078,6 +3188,7 @@ package greengrass {
   }
 
   object GetGroupCertificateConfigurationResponse {
+    @inline
     def apply(
         CertificateAuthorityExpiryInMilliseconds: js.UndefOr[__string] = js.undefined,
         CertificateExpiryInMilliseconds: js.UndefOr[__string] = js.undefined,
@@ -3101,6 +3212,7 @@ package greengrass {
   }
 
   object GetGroupRequest {
+    @inline
     def apply(
         GroupId: __string
     ): GetGroupRequest = {
@@ -3125,6 +3237,7 @@ package greengrass {
   }
 
   object GetGroupResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -3155,6 +3268,7 @@ package greengrass {
   }
 
   object GetGroupVersionRequest {
+    @inline
     def apply(
         GroupId: __string,
         GroupVersionId: __string
@@ -3178,6 +3292,7 @@ package greengrass {
   }
 
   object GetGroupVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -3201,6 +3316,7 @@ package greengrass {
   }
 
   object GetLoggerDefinitionRequest {
+    @inline
     def apply(
         LoggerDefinitionId: __string
     ): GetLoggerDefinitionRequest = {
@@ -3225,6 +3341,7 @@ package greengrass {
   }
 
   object GetLoggerDefinitionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -3256,6 +3373,7 @@ package greengrass {
   }
 
   object GetLoggerDefinitionVersionRequest {
+    @inline
     def apply(
         LoggerDefinitionId: __string,
         LoggerDefinitionVersionId: __string,
@@ -3281,6 +3399,7 @@ package greengrass {
   }
 
   object GetLoggerDefinitionVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -3304,6 +3423,7 @@ package greengrass {
   }
 
   object GetResourceDefinitionRequest {
+    @inline
     def apply(
         ResourceDefinitionId: __string
     ): GetResourceDefinitionRequest = {
@@ -3328,6 +3448,7 @@ package greengrass {
   }
 
   object GetResourceDefinitionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -3358,6 +3479,7 @@ package greengrass {
   }
 
   object GetResourceDefinitionVersionRequest {
+    @inline
     def apply(
         ResourceDefinitionId: __string,
         ResourceDefinitionVersionId: __string
@@ -3381,6 +3503,7 @@ package greengrass {
   }
 
   object GetResourceDefinitionVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -3402,6 +3525,7 @@ package greengrass {
   trait GetServiceRoleForAccountRequest extends js.Object {}
 
   object GetServiceRoleForAccountRequest {
+    @inline
     def apply(
         ): GetServiceRoleForAccountRequest = {
       val __obj = js.Dynamic.literal()
@@ -3417,6 +3541,7 @@ package greengrass {
   }
 
   object GetServiceRoleForAccountResponse {
+    @inline
     def apply(
         AssociatedAt: js.UndefOr[__string] = js.undefined,
         RoleArn: js.UndefOr[__string] = js.undefined
@@ -3434,6 +3559,7 @@ package greengrass {
   }
 
   object GetSubscriptionDefinitionRequest {
+    @inline
     def apply(
         SubscriptionDefinitionId: __string
     ): GetSubscriptionDefinitionRequest = {
@@ -3458,6 +3584,7 @@ package greengrass {
   }
 
   object GetSubscriptionDefinitionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -3489,6 +3616,7 @@ package greengrass {
   }
 
   object GetSubscriptionDefinitionVersionRequest {
+    @inline
     def apply(
         SubscriptionDefinitionId: __string,
         SubscriptionDefinitionVersionId: __string,
@@ -3515,6 +3643,7 @@ package greengrass {
   }
 
   object GetSubscriptionDefinitionVersionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -3544,6 +3673,7 @@ package greengrass {
   }
 
   object GroupCertificateAuthorityProperties {
+    @inline
     def apply(
         GroupCertificateAuthorityArn: js.UndefOr[__string] = js.undefined,
         GroupCertificateAuthorityId: js.UndefOr[__string] = js.undefined
@@ -3574,6 +3704,7 @@ package greengrass {
   }
 
   object GroupInformation {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,
@@ -3605,6 +3736,7 @@ package greengrass {
   }
 
   object GroupOwnerSetting {
+    @inline
     def apply(
         AutoAddGroupOwner: js.UndefOr[__boolean] = js.undefined,
         GroupOwner: js.UndefOr[__string] = js.undefined
@@ -3631,6 +3763,7 @@ package greengrass {
   }
 
   object GroupVersion {
+    @inline
     def apply(
         ConnectorDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
         CoreDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
@@ -3672,6 +3805,7 @@ package greengrass {
   }
 
   object ListBulkDeploymentDetailedReportsRequest {
+    @inline
     def apply(
         BulkDeploymentId: __string,
         MaxResults: js.UndefOr[__string] = js.undefined,
@@ -3694,6 +3828,7 @@ package greengrass {
   }
 
   object ListBulkDeploymentDetailedReportsResponse {
+    @inline
     def apply(
         Deployments: js.UndefOr[BulkDeploymentResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -3712,6 +3847,7 @@ package greengrass {
   }
 
   object ListBulkDeploymentsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -3730,6 +3866,7 @@ package greengrass {
   }
 
   object ListBulkDeploymentsResponse {
+    @inline
     def apply(
         BulkDeployments: js.UndefOr[BulkDeployments] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -3749,6 +3886,7 @@ package greengrass {
   }
 
   object ListConnectorDefinitionVersionsRequest {
+    @inline
     def apply(
         ConnectorDefinitionId: __string,
         MaxResults: js.UndefOr[__string] = js.undefined,
@@ -3771,6 +3909,7 @@ package greengrass {
   }
 
   object ListConnectorDefinitionVersionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[__string] = js.undefined,
         Versions: js.UndefOr[__listOfVersionInformation] = js.undefined
@@ -3789,6 +3928,7 @@ package greengrass {
   }
 
   object ListConnectorDefinitionsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -3807,6 +3947,7 @@ package greengrass {
   }
 
   object ListConnectorDefinitionsResponse {
+    @inline
     def apply(
         Definitions: js.UndefOr[__listOfDefinitionInformation] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -3826,6 +3967,7 @@ package greengrass {
   }
 
   object ListCoreDefinitionVersionsRequest {
+    @inline
     def apply(
         CoreDefinitionId: __string,
         MaxResults: js.UndefOr[__string] = js.undefined,
@@ -3848,6 +3990,7 @@ package greengrass {
   }
 
   object ListCoreDefinitionVersionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[__string] = js.undefined,
         Versions: js.UndefOr[__listOfVersionInformation] = js.undefined
@@ -3866,6 +4009,7 @@ package greengrass {
   }
 
   object ListCoreDefinitionsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -3884,6 +4028,7 @@ package greengrass {
   }
 
   object ListCoreDefinitionsResponse {
+    @inline
     def apply(
         Definitions: js.UndefOr[__listOfDefinitionInformation] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -3903,6 +4048,7 @@ package greengrass {
   }
 
   object ListDeploymentsRequest {
+    @inline
     def apply(
         GroupId: __string,
         MaxResults: js.UndefOr[__string] = js.undefined,
@@ -3925,6 +4071,7 @@ package greengrass {
   }
 
   object ListDeploymentsResponse {
+    @inline
     def apply(
         Deployments: js.UndefOr[Deployments] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -3944,6 +4091,7 @@ package greengrass {
   }
 
   object ListDeviceDefinitionVersionsRequest {
+    @inline
     def apply(
         DeviceDefinitionId: __string,
         MaxResults: js.UndefOr[__string] = js.undefined,
@@ -3966,6 +4114,7 @@ package greengrass {
   }
 
   object ListDeviceDefinitionVersionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[__string] = js.undefined,
         Versions: js.UndefOr[__listOfVersionInformation] = js.undefined
@@ -3984,6 +4133,7 @@ package greengrass {
   }
 
   object ListDeviceDefinitionsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -4002,6 +4152,7 @@ package greengrass {
   }
 
   object ListDeviceDefinitionsResponse {
+    @inline
     def apply(
         Definitions: js.UndefOr[__listOfDefinitionInformation] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -4021,6 +4172,7 @@ package greengrass {
   }
 
   object ListFunctionDefinitionVersionsRequest {
+    @inline
     def apply(
         FunctionDefinitionId: __string,
         MaxResults: js.UndefOr[__string] = js.undefined,
@@ -4043,6 +4195,7 @@ package greengrass {
   }
 
   object ListFunctionDefinitionVersionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[__string] = js.undefined,
         Versions: js.UndefOr[__listOfVersionInformation] = js.undefined
@@ -4061,6 +4214,7 @@ package greengrass {
   }
 
   object ListFunctionDefinitionsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -4079,6 +4233,7 @@ package greengrass {
   }
 
   object ListFunctionDefinitionsResponse {
+    @inline
     def apply(
         Definitions: js.UndefOr[__listOfDefinitionInformation] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -4096,6 +4251,7 @@ package greengrass {
   }
 
   object ListGroupCertificateAuthoritiesRequest {
+    @inline
     def apply(
         GroupId: __string
     ): ListGroupCertificateAuthoritiesRequest = {
@@ -4113,6 +4269,7 @@ package greengrass {
   }
 
   object ListGroupCertificateAuthoritiesResponse {
+    @inline
     def apply(
         GroupCertificateAuthorities: js.UndefOr[__listOfGroupCertificateAuthorityProperties] = js.undefined
     ): ListGroupCertificateAuthoritiesResponse = {
@@ -4132,6 +4289,7 @@ package greengrass {
   }
 
   object ListGroupVersionsRequest {
+    @inline
     def apply(
         GroupId: __string,
         MaxResults: js.UndefOr[__string] = js.undefined,
@@ -4154,6 +4312,7 @@ package greengrass {
   }
 
   object ListGroupVersionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[__string] = js.undefined,
         Versions: js.UndefOr[__listOfVersionInformation] = js.undefined
@@ -4172,6 +4331,7 @@ package greengrass {
   }
 
   object ListGroupsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -4190,6 +4350,7 @@ package greengrass {
   }
 
   object ListGroupsResponse {
+    @inline
     def apply(
         Groups: js.UndefOr[__listOfGroupInformation] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -4209,6 +4370,7 @@ package greengrass {
   }
 
   object ListLoggerDefinitionVersionsRequest {
+    @inline
     def apply(
         LoggerDefinitionId: __string,
         MaxResults: js.UndefOr[__string] = js.undefined,
@@ -4231,6 +4393,7 @@ package greengrass {
   }
 
   object ListLoggerDefinitionVersionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[__string] = js.undefined,
         Versions: js.UndefOr[__listOfVersionInformation] = js.undefined
@@ -4249,6 +4412,7 @@ package greengrass {
   }
 
   object ListLoggerDefinitionsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -4267,6 +4431,7 @@ package greengrass {
   }
 
   object ListLoggerDefinitionsResponse {
+    @inline
     def apply(
         Definitions: js.UndefOr[__listOfDefinitionInformation] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -4286,6 +4451,7 @@ package greengrass {
   }
 
   object ListResourceDefinitionVersionsRequest {
+    @inline
     def apply(
         ResourceDefinitionId: __string,
         MaxResults: js.UndefOr[__string] = js.undefined,
@@ -4308,6 +4474,7 @@ package greengrass {
   }
 
   object ListResourceDefinitionVersionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[__string] = js.undefined,
         Versions: js.UndefOr[__listOfVersionInformation] = js.undefined
@@ -4326,6 +4493,7 @@ package greengrass {
   }
 
   object ListResourceDefinitionsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -4344,6 +4512,7 @@ package greengrass {
   }
 
   object ListResourceDefinitionsResponse {
+    @inline
     def apply(
         Definitions: js.UndefOr[__listOfDefinitionInformation] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -4363,6 +4532,7 @@ package greengrass {
   }
 
   object ListSubscriptionDefinitionVersionsRequest {
+    @inline
     def apply(
         SubscriptionDefinitionId: __string,
         MaxResults: js.UndefOr[__string] = js.undefined,
@@ -4385,6 +4555,7 @@ package greengrass {
   }
 
   object ListSubscriptionDefinitionVersionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[__string] = js.undefined,
         Versions: js.UndefOr[__listOfVersionInformation] = js.undefined
@@ -4403,6 +4574,7 @@ package greengrass {
   }
 
   object ListSubscriptionDefinitionsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -4421,6 +4593,7 @@ package greengrass {
   }
 
   object ListSubscriptionDefinitionsResponse {
+    @inline
     def apply(
         Definitions: js.UndefOr[__listOfDefinitionInformation] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -4438,6 +4611,7 @@ package greengrass {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceArn: __string
     ): ListTagsForResourceRequest = {
@@ -4455,6 +4629,7 @@ package greengrass {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         tags: js.UndefOr[Tags] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -4474,6 +4649,7 @@ package greengrass {
   }
 
   object LocalDeviceResourceData {
+    @inline
     def apply(
         GroupOwnerSetting: js.UndefOr[GroupOwnerSetting] = js.undefined,
         SourcePath: js.UndefOr[__string] = js.undefined
@@ -4496,6 +4672,7 @@ package greengrass {
   }
 
   object LocalVolumeResourceData {
+    @inline
     def apply(
         DestinationPath: js.UndefOr[__string] = js.undefined,
         GroupOwnerSetting: js.UndefOr[GroupOwnerSetting] = js.undefined,
@@ -4522,6 +4699,7 @@ package greengrass {
   }
 
   object Logger {
+    @inline
     def apply(
         Component: LoggerComponent,
         Id: __string,
@@ -4557,6 +4735,7 @@ package greengrass {
   }
 
   object LoggerDefinitionVersion {
+    @inline
     def apply(
         Loggers: js.UndefOr[__listOfLogger] = js.undefined
     ): LoggerDefinitionVersion = {
@@ -4604,6 +4783,7 @@ package greengrass {
   }
 
   object ResetDeploymentsRequest {
+    @inline
     def apply(
         GroupId: __string,
         AmznClientToken: js.UndefOr[__string] = js.undefined,
@@ -4626,6 +4806,7 @@ package greengrass {
   }
 
   object ResetDeploymentsResponse {
+    @inline
     def apply(
         DeploymentArn: js.UndefOr[__string] = js.undefined,
         DeploymentId: js.UndefOr[__string] = js.undefined
@@ -4648,6 +4829,7 @@ package greengrass {
   }
 
   object Resource {
+    @inline
     def apply(
         Id: __string,
         Name: __string,
@@ -4673,6 +4855,7 @@ package greengrass {
   }
 
   object ResourceAccessPolicy {
+    @inline
     def apply(
         ResourceId: __string,
         Permission: js.UndefOr[Permission] = js.undefined
@@ -4699,6 +4882,7 @@ package greengrass {
   }
 
   object ResourceDataContainer {
+    @inline
     def apply(
         LocalDeviceResourceData: js.UndefOr[LocalDeviceResourceData] = js.undefined,
         LocalVolumeResourceData: js.UndefOr[LocalVolumeResourceData] = js.undefined,
@@ -4731,6 +4915,7 @@ package greengrass {
   }
 
   object ResourceDefinitionVersion {
+    @inline
     def apply(
         Resources: js.UndefOr[__listOfResource] = js.undefined
     ): ResourceDefinitionVersion = {
@@ -4750,6 +4935,7 @@ package greengrass {
   }
 
   object S3MachineLearningModelResourceData {
+    @inline
     def apply(
         DestinationPath: js.UndefOr[__string] = js.undefined,
         S3Uri: js.UndefOr[__string] = js.undefined
@@ -4771,6 +4957,7 @@ package greengrass {
   }
 
   object SageMakerMachineLearningModelResourceData {
+    @inline
     def apply(
         DestinationPath: js.UndefOr[__string] = js.undefined,
         SageMakerJobArn: js.UndefOr[__string] = js.undefined
@@ -4792,6 +4979,7 @@ package greengrass {
   }
 
   object SecretsManagerSecretResourceData {
+    @inline
     def apply(
         ARN: js.UndefOr[__string] = js.undefined,
         AdditionalStagingLabelsToDownload: js.UndefOr[__listOf__string] = js.undefined
@@ -4824,6 +5012,7 @@ package greengrass {
   }
 
   object StartBulkDeploymentRequest {
+    @inline
     def apply(
         ExecutionRoleArn: __string,
         InputFileUri: __string,
@@ -4848,6 +5037,7 @@ package greengrass {
   }
 
   object StartBulkDeploymentResponse {
+    @inline
     def apply(
         BulkDeploymentArn: js.UndefOr[__string] = js.undefined,
         BulkDeploymentId: js.UndefOr[__string] = js.undefined
@@ -4865,6 +5055,7 @@ package greengrass {
   }
 
   object StopBulkDeploymentRequest {
+    @inline
     def apply(
         BulkDeploymentId: __string
     ): StopBulkDeploymentRequest = {
@@ -4880,6 +5071,7 @@ package greengrass {
   trait StopBulkDeploymentResponse extends js.Object {}
 
   object StopBulkDeploymentResponse {
+    @inline
     def apply(
         ): StopBulkDeploymentResponse = {
       val __obj = js.Dynamic.literal()
@@ -4900,6 +5092,7 @@ package greengrass {
   }
 
   object Subscription {
+    @inline
     def apply(
         Id: __string,
         Source: __string,
@@ -4926,6 +5119,7 @@ package greengrass {
   }
 
   object SubscriptionDefinitionVersion {
+    @inline
     def apply(
         Subscriptions: js.UndefOr[__listOfSubscription] = js.undefined
     ): SubscriptionDefinitionVersion = {
@@ -4945,6 +5139,7 @@ package greengrass {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceArn: __string,
         tags: js.UndefOr[Tags] = js.undefined
@@ -4965,6 +5160,7 @@ package greengrass {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceArn: __string,
         TagKeys: __listOf__string
@@ -5004,6 +5200,7 @@ package greengrass {
   }
 
   object UpdateConnectivityInfoRequest {
+    @inline
     def apply(
         ThingName: __string,
         ConnectivityInfo: js.UndefOr[__listOfConnectivityInfo] = js.undefined
@@ -5024,6 +5221,7 @@ package greengrass {
   }
 
   object UpdateConnectivityInfoResponse {
+    @inline
     def apply(
         Message: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__string] = js.undefined
@@ -5042,6 +5240,7 @@ package greengrass {
   }
 
   object UpdateConnectorDefinitionRequest {
+    @inline
     def apply(
         ConnectorDefinitionId: __string,
         Name: js.UndefOr[__string] = js.undefined
@@ -5059,6 +5258,7 @@ package greengrass {
   trait UpdateConnectorDefinitionResponse extends js.Object {}
 
   object UpdateConnectorDefinitionResponse {
+    @inline
     def apply(
         ): UpdateConnectorDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -5074,6 +5274,7 @@ package greengrass {
   }
 
   object UpdateCoreDefinitionRequest {
+    @inline
     def apply(
         CoreDefinitionId: __string,
         Name: js.UndefOr[__string] = js.undefined
@@ -5091,6 +5292,7 @@ package greengrass {
   trait UpdateCoreDefinitionResponse extends js.Object {}
 
   object UpdateCoreDefinitionResponse {
+    @inline
     def apply(
         ): UpdateCoreDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -5106,6 +5308,7 @@ package greengrass {
   }
 
   object UpdateDeviceDefinitionRequest {
+    @inline
     def apply(
         DeviceDefinitionId: __string,
         Name: js.UndefOr[__string] = js.undefined
@@ -5123,6 +5326,7 @@ package greengrass {
   trait UpdateDeviceDefinitionResponse extends js.Object {}
 
   object UpdateDeviceDefinitionResponse {
+    @inline
     def apply(
         ): UpdateDeviceDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -5138,6 +5342,7 @@ package greengrass {
   }
 
   object UpdateFunctionDefinitionRequest {
+    @inline
     def apply(
         FunctionDefinitionId: __string,
         Name: js.UndefOr[__string] = js.undefined
@@ -5155,6 +5360,7 @@ package greengrass {
   trait UpdateFunctionDefinitionResponse extends js.Object {}
 
   object UpdateFunctionDefinitionResponse {
+    @inline
     def apply(
         ): UpdateFunctionDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -5170,6 +5376,7 @@ package greengrass {
   }
 
   object UpdateGroupCertificateConfigurationRequest {
+    @inline
     def apply(
         GroupId: __string,
         CertificateExpiryInMilliseconds: js.UndefOr[__string] = js.undefined
@@ -5193,6 +5400,7 @@ package greengrass {
   }
 
   object UpdateGroupCertificateConfigurationResponse {
+    @inline
     def apply(
         CertificateAuthorityExpiryInMilliseconds: js.UndefOr[__string] = js.undefined,
         CertificateExpiryInMilliseconds: js.UndefOr[__string] = js.undefined,
@@ -5217,6 +5425,7 @@ package greengrass {
   }
 
   object UpdateGroupRequest {
+    @inline
     def apply(
         GroupId: __string,
         Name: js.UndefOr[__string] = js.undefined
@@ -5234,6 +5443,7 @@ package greengrass {
   trait UpdateGroupResponse extends js.Object {}
 
   object UpdateGroupResponse {
+    @inline
     def apply(
         ): UpdateGroupResponse = {
       val __obj = js.Dynamic.literal()
@@ -5249,6 +5459,7 @@ package greengrass {
   }
 
   object UpdateLoggerDefinitionRequest {
+    @inline
     def apply(
         LoggerDefinitionId: __string,
         Name: js.UndefOr[__string] = js.undefined
@@ -5266,6 +5477,7 @@ package greengrass {
   trait UpdateLoggerDefinitionResponse extends js.Object {}
 
   object UpdateLoggerDefinitionResponse {
+    @inline
     def apply(
         ): UpdateLoggerDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -5281,6 +5493,7 @@ package greengrass {
   }
 
   object UpdateResourceDefinitionRequest {
+    @inline
     def apply(
         ResourceDefinitionId: __string,
         Name: js.UndefOr[__string] = js.undefined
@@ -5298,6 +5511,7 @@ package greengrass {
   trait UpdateResourceDefinitionResponse extends js.Object {}
 
   object UpdateResourceDefinitionResponse {
+    @inline
     def apply(
         ): UpdateResourceDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -5313,6 +5527,7 @@ package greengrass {
   }
 
   object UpdateSubscriptionDefinitionRequest {
+    @inline
     def apply(
         SubscriptionDefinitionId: __string,
         Name: js.UndefOr[__string] = js.undefined
@@ -5330,6 +5545,7 @@ package greengrass {
   trait UpdateSubscriptionDefinitionResponse extends js.Object {}
 
   object UpdateSubscriptionDefinitionResponse {
+    @inline
     def apply(
         ): UpdateSubscriptionDefinitionResponse = {
       val __obj = js.Dynamic.literal()
@@ -5373,6 +5589,7 @@ package greengrass {
   }
 
   object VersionInformation {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTimestamp: js.UndefOr[__string] = js.undefined,

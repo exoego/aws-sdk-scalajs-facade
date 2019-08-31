@@ -248,6 +248,7 @@ package robomaker {
   }
 
   object BatchDescribeSimulationJobRequest {
+    @inline
     def apply(
         jobs: Arns
     ): BatchDescribeSimulationJobRequest = {
@@ -266,6 +267,7 @@ package robomaker {
   }
 
   object BatchDescribeSimulationJobResponse {
+    @inline
     def apply(
         jobs: js.UndefOr[SimulationJobs] = js.undefined,
         unprocessedJobs: js.UndefOr[Arns] = js.undefined
@@ -283,6 +285,7 @@ package robomaker {
   }
 
   object CancelDeploymentJobRequest {
+    @inline
     def apply(
         job: Arn
     ): CancelDeploymentJobRequest = {
@@ -298,6 +301,7 @@ package robomaker {
   trait CancelDeploymentJobResponse extends js.Object {}
 
   object CancelDeploymentJobResponse {
+    @inline
     def apply(
         ): CancelDeploymentJobResponse = {
       val __obj = js.Dynamic.literal()
@@ -312,6 +316,7 @@ package robomaker {
   }
 
   object CancelSimulationJobRequest {
+    @inline
     def apply(
         job: Arn
     ): CancelSimulationJobRequest = {
@@ -327,6 +332,7 @@ package robomaker {
   trait CancelSimulationJobResponse extends js.Object {}
 
   object CancelSimulationJobResponse {
+    @inline
     def apply(
         ): CancelSimulationJobResponse = {
       val __obj = js.Dynamic.literal()
@@ -345,6 +351,7 @@ package robomaker {
   }
 
   object CreateDeploymentJobRequest {
+    @inline
     def apply(
         clientRequestToken: ClientRequestToken,
         deploymentApplicationConfigs: DeploymentApplicationConfigs,
@@ -378,6 +385,7 @@ package robomaker {
   }
 
   object CreateDeploymentJobResponse {
+    @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         createdAt: js.UndefOr[CreatedAt] = js.undefined,
@@ -412,6 +420,7 @@ package robomaker {
   }
 
   object CreateFleetRequest {
+    @inline
     def apply(
         name: Name,
         tags: js.UndefOr[TagMap] = js.undefined
@@ -434,6 +443,7 @@ package robomaker {
   }
 
   object CreateFleetResponse {
+    @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         createdAt: js.UndefOr[CreatedAt] = js.undefined,
@@ -458,6 +468,7 @@ package robomaker {
   }
 
   object CreateRobotApplicationRequest {
+    @inline
     def apply(
         name: Name,
         robotSoftwareSuite: RobotSoftwareSuite,
@@ -488,6 +499,7 @@ package robomaker {
   }
 
   object CreateRobotApplicationResponse {
+    @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
@@ -518,6 +530,7 @@ package robomaker {
   }
 
   object CreateRobotApplicationVersionRequest {
+    @inline
     def apply(
         application: Arn,
         currentRevisionId: js.UndefOr[RevisionId] = js.undefined
@@ -543,6 +556,7 @@ package robomaker {
   }
 
   object CreateRobotApplicationVersionResponse {
+    @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
@@ -573,6 +587,7 @@ package robomaker {
   }
 
   object CreateRobotRequest {
+    @inline
     def apply(
         architecture: Architecture,
         greengrassGroupId: Id,
@@ -601,6 +616,7 @@ package robomaker {
   }
 
   object CreateRobotResponse {
+    @inline
     def apply(
         architecture: js.UndefOr[Architecture] = js.undefined,
         arn: js.UndefOr[Arn] = js.undefined,
@@ -631,6 +647,7 @@ package robomaker {
   }
 
   object CreateSimulationApplicationRequest {
+    @inline
     def apply(
         name: Name,
         robotSoftwareSuite: RobotSoftwareSuite,
@@ -667,6 +684,7 @@ package robomaker {
   }
 
   object CreateSimulationApplicationResponse {
+    @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
@@ -701,6 +719,7 @@ package robomaker {
   }
 
   object CreateSimulationApplicationVersionRequest {
+    @inline
     def apply(
         application: Arn,
         currentRevisionId: js.UndefOr[RevisionId] = js.undefined
@@ -728,6 +747,7 @@ package robomaker {
   }
 
   object CreateSimulationApplicationVersionResponse {
+    @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
@@ -769,6 +789,7 @@ package robomaker {
   }
 
   object CreateSimulationJobRequest {
+    @inline
     def apply(
         iamRole: IamRole,
         maxJobDurationInSeconds: JobDuration,
@@ -822,6 +843,7 @@ package robomaker {
   }
 
   object CreateSimulationJobResponse {
+    @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
@@ -874,6 +896,7 @@ package robomaker {
   }
 
   object DataSource {
+    @inline
     def apply(
         name: js.UndefOr[Name] = js.undefined,
         s3Bucket: js.UndefOr[S3Bucket] = js.undefined,
@@ -898,6 +921,7 @@ package robomaker {
   }
 
   object DataSourceConfig {
+    @inline
     def apply(
         name: Name,
         s3Bucket: S3Bucket,
@@ -919,6 +943,7 @@ package robomaker {
   }
 
   object DeleteFleetRequest {
+    @inline
     def apply(
         fleet: Arn
     ): DeleteFleetRequest = {
@@ -934,6 +959,7 @@ package robomaker {
   trait DeleteFleetResponse extends js.Object {}
 
   object DeleteFleetResponse {
+    @inline
     def apply(
         ): DeleteFleetResponse = {
       val __obj = js.Dynamic.literal()
@@ -949,6 +975,7 @@ package robomaker {
   }
 
   object DeleteRobotApplicationRequest {
+    @inline
     def apply(
         application: Arn,
         applicationVersion: js.UndefOr[Version] = js.undefined
@@ -966,6 +993,7 @@ package robomaker {
   trait DeleteRobotApplicationResponse extends js.Object {}
 
   object DeleteRobotApplicationResponse {
+    @inline
     def apply(
         ): DeleteRobotApplicationResponse = {
       val __obj = js.Dynamic.literal()
@@ -980,6 +1008,7 @@ package robomaker {
   }
 
   object DeleteRobotRequest {
+    @inline
     def apply(
         robot: Arn
     ): DeleteRobotRequest = {
@@ -995,6 +1024,7 @@ package robomaker {
   trait DeleteRobotResponse extends js.Object {}
 
   object DeleteRobotResponse {
+    @inline
     def apply(
         ): DeleteRobotResponse = {
       val __obj = js.Dynamic.literal()
@@ -1010,6 +1040,7 @@ package robomaker {
   }
 
   object DeleteSimulationApplicationRequest {
+    @inline
     def apply(
         application: Arn,
         applicationVersion: js.UndefOr[Version] = js.undefined
@@ -1027,6 +1058,7 @@ package robomaker {
   trait DeleteSimulationApplicationResponse extends js.Object {}
 
   object DeleteSimulationApplicationResponse {
+    @inline
     def apply(
         ): DeleteSimulationApplicationResponse = {
       val __obj = js.Dynamic.literal()
@@ -1046,6 +1078,7 @@ package robomaker {
   }
 
   object DeploymentApplicationConfig {
+    @inline
     def apply(
         application: Arn,
         applicationVersion: DeploymentVersion,
@@ -1072,6 +1105,7 @@ package robomaker {
   }
 
   object DeploymentConfig {
+    @inline
     def apply(
         concurrentDeploymentPercentage: js.UndefOr[Percentage] = js.undefined,
         failureThresholdPercentage: js.UndefOr[Percentage] = js.undefined,
@@ -1107,6 +1141,7 @@ package robomaker {
   }
 
   object DeploymentJob {
+    @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         createdAt: js.UndefOr[CreatedAt] = js.undefined,
@@ -1187,6 +1222,7 @@ package robomaker {
   }
 
   object DeploymentLaunchConfig {
+    @inline
     def apply(
         launchFile: Command,
         packageName: Command,
@@ -1224,6 +1260,7 @@ package robomaker {
   }
 
   object DeregisterRobotRequest {
+    @inline
     def apply(
         fleet: Arn,
         robot: Arn
@@ -1244,6 +1281,7 @@ package robomaker {
   }
 
   object DeregisterRobotResponse {
+    @inline
     def apply(
         fleet: js.UndefOr[Arn] = js.undefined,
         robot: js.UndefOr[Arn] = js.undefined
@@ -1261,6 +1299,7 @@ package robomaker {
   }
 
   object DescribeDeploymentJobRequest {
+    @inline
     def apply(
         job: Arn
     ): DescribeDeploymentJobRequest = {
@@ -1287,6 +1326,7 @@ package robomaker {
   }
 
   object DescribeDeploymentJobResponse {
+    @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         createdAt: js.UndefOr[CreatedAt] = js.undefined,
@@ -1322,6 +1362,7 @@ package robomaker {
   }
 
   object DescribeFleetRequest {
+    @inline
     def apply(
         fleet: Arn
     ): DescribeFleetRequest = {
@@ -1346,6 +1387,7 @@ package robomaker {
   }
 
   object DescribeFleetResponse {
+    @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         createdAt: js.UndefOr[CreatedAt] = js.undefined,
@@ -1376,6 +1418,7 @@ package robomaker {
   }
 
   object DescribeRobotApplicationRequest {
+    @inline
     def apply(
         application: Arn,
         applicationVersion: js.UndefOr[Version] = js.undefined
@@ -1402,6 +1445,7 @@ package robomaker {
   }
 
   object DescribeRobotApplicationResponse {
+    @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
@@ -1431,6 +1475,7 @@ package robomaker {
   }
 
   object DescribeRobotRequest {
+    @inline
     def apply(
         robot: Arn
     ): DescribeRobotRequest = {
@@ -1457,6 +1502,7 @@ package robomaker {
   }
 
   object DescribeRobotResponse {
+    @inline
     def apply(
         architecture: js.UndefOr[Architecture] = js.undefined,
         arn: js.UndefOr[Arn] = js.undefined,
@@ -1491,6 +1537,7 @@ package robomaker {
   }
 
   object DescribeSimulationApplicationRequest {
+    @inline
     def apply(
         application: Arn,
         applicationVersion: js.UndefOr[Version] = js.undefined
@@ -1519,6 +1566,7 @@ package robomaker {
   }
 
   object DescribeSimulationApplicationResponse {
+    @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
@@ -1552,6 +1600,7 @@ package robomaker {
   }
 
   object DescribeSimulationJobRequest {
+    @inline
     def apply(
         job: Arn
     ): DescribeSimulationJobRequest = {
@@ -1587,6 +1636,7 @@ package robomaker {
   }
 
   object DescribeSimulationJobResponse {
+    @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
@@ -1649,6 +1699,7 @@ package robomaker {
   }
 
   object Filter {
+    @inline
     def apply(
         name: js.UndefOr[Name] = js.undefined,
         values: js.UndefOr[FilterValues] = js.undefined
@@ -1674,6 +1725,7 @@ package robomaker {
   }
 
   object Fleet {
+    @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         createdAt: js.UndefOr[CreatedAt] = js.undefined,
@@ -1704,6 +1756,7 @@ package robomaker {
   }
 
   object LaunchConfig {
+    @inline
     def apply(
         launchFile: Command,
         packageName: Command,
@@ -1727,6 +1780,7 @@ package robomaker {
   }
 
   object ListDeploymentJobsRequest {
+    @inline
     def apply(
         filters: js.UndefOr[Filters] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1747,6 +1801,7 @@ package robomaker {
   }
 
   object ListDeploymentJobsResponse {
+    @inline
     def apply(
         deploymentJobs: js.UndefOr[DeploymentJobs] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -1766,6 +1821,7 @@ package robomaker {
   }
 
   object ListFleetsRequest {
+    @inline
     def apply(
         filters: js.UndefOr[Filters] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1786,6 +1842,7 @@ package robomaker {
   }
 
   object ListFleetsResponse {
+    @inline
     def apply(
         fleetDetails: js.UndefOr[Fleets] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -1806,6 +1863,7 @@ package robomaker {
   }
 
   object ListRobotApplicationsRequest {
+    @inline
     def apply(
         filters: js.UndefOr[Filters] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1828,6 +1886,7 @@ package robomaker {
   }
 
   object ListRobotApplicationsResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         robotApplicationSummaries: js.UndefOr[RobotApplicationSummaries] = js.undefined
@@ -1849,6 +1908,7 @@ package robomaker {
   }
 
   object ListRobotsRequest {
+    @inline
     def apply(
         filters: js.UndefOr[Filters] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1869,6 +1929,7 @@ package robomaker {
   }
 
   object ListRobotsResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         robots: js.UndefOr[Robots] = js.undefined
@@ -1889,6 +1950,7 @@ package robomaker {
   }
 
   object ListSimulationApplicationsRequest {
+    @inline
     def apply(
         filters: js.UndefOr[Filters] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1911,6 +1973,7 @@ package robomaker {
   }
 
   object ListSimulationApplicationsResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         simulationApplicationSummaries: js.UndefOr[SimulationApplicationSummaries] = js.undefined
@@ -1932,6 +1995,7 @@ package robomaker {
   }
 
   object ListSimulationJobsRequest {
+    @inline
     def apply(
         filters: js.UndefOr[Filters] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1952,6 +2016,7 @@ package robomaker {
   }
 
   object ListSimulationJobsResponse {
+    @inline
     def apply(
         simulationJobSummaries: SimulationJobSummaries,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -1971,6 +2036,7 @@ package robomaker {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         resourceArn: Arn
     ): ListTagsForResourceRequest = {
@@ -1988,6 +2054,7 @@ package robomaker {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         tags: js.UndefOr[TagMap] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -2006,6 +2073,7 @@ package robomaker {
   }
 
   object LoggingConfig {
+    @inline
     def apply(
         recordAllRosTopics: BoxedBoolean
     ): LoggingConfig = {
@@ -2027,6 +2095,7 @@ package robomaker {
   }
 
   object OutputLocation {
+    @inline
     def apply(
         s3Bucket: js.UndefOr[S3Bucket] = js.undefined,
         s3Prefix: js.UndefOr[S3Key] = js.undefined
@@ -2050,6 +2119,7 @@ package robomaker {
   }
 
   object ProgressDetail {
+    @inline
     def apply(
         currentProgress: js.UndefOr[RobotDeploymentStep] = js.undefined,
         estimatedTimeRemainingSeconds: js.UndefOr[GenericInteger] = js.undefined,
@@ -2074,6 +2144,7 @@ package robomaker {
   }
 
   object RegisterRobotRequest {
+    @inline
     def apply(
         fleet: Arn,
         robot: Arn
@@ -2094,6 +2165,7 @@ package robomaker {
   }
 
   object RegisterRobotResponse {
+    @inline
     def apply(
         fleet: js.UndefOr[Arn] = js.undefined,
         robot: js.UndefOr[Arn] = js.undefined
@@ -2115,6 +2187,7 @@ package robomaker {
   }
 
   object RenderingEngine {
+    @inline
     def apply(
         name: js.UndefOr[RenderingEngineType] = js.undefined,
         version: js.UndefOr[RenderingEngineVersionType] = js.undefined
@@ -2138,6 +2211,7 @@ package robomaker {
   }
 
   object RestartSimulationJobRequest {
+    @inline
     def apply(
         job: Arn
     ): RestartSimulationJobRequest = {
@@ -2153,6 +2227,7 @@ package robomaker {
   trait RestartSimulationJobResponse extends js.Object {}
 
   object RestartSimulationJobResponse {
+    @inline
     def apply(
         ): RestartSimulationJobResponse = {
       val __obj = js.Dynamic.literal()
@@ -2178,6 +2253,7 @@ package robomaker {
   }
 
   object Robot {
+    @inline
     def apply(
         architecture: js.UndefOr[Architecture] = js.undefined,
         arn: js.UndefOr[Arn] = js.undefined,
@@ -2214,6 +2290,7 @@ package robomaker {
   }
 
   object RobotApplicationConfig {
+    @inline
     def apply(
         application: Arn,
         launchConfig: LaunchConfig,
@@ -2242,6 +2319,7 @@ package robomaker {
   }
 
   object RobotApplicationSummary {
+    @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
@@ -2274,6 +2352,7 @@ package robomaker {
   }
 
   object RobotDeployment {
+    @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         deploymentFinishTime: js.UndefOr[CreatedAt] = js.undefined,
@@ -2318,6 +2397,7 @@ package robomaker {
   }
 
   object RobotSoftwareSuite {
+    @inline
     def apply(
         name: js.UndefOr[RobotSoftwareSuiteType] = js.undefined,
         version: js.UndefOr[RobotSoftwareSuiteVersionType] = js.undefined
@@ -2365,6 +2445,7 @@ package robomaker {
   }
 
   object S3KeyOutput {
+    @inline
     def apply(
         etag: js.UndefOr[S3Etag] = js.undefined,
         s3Key: js.UndefOr[S3Key] = js.undefined
@@ -2387,6 +2468,7 @@ package robomaker {
   }
 
   object SimulationApplicationConfig {
+    @inline
     def apply(
         application: Arn,
         launchConfig: LaunchConfig,
@@ -2416,6 +2498,7 @@ package robomaker {
   }
 
   object SimulationApplicationSummary {
+    @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
@@ -2462,6 +2545,7 @@ package robomaker {
   }
 
   object SimulationJob {
+    @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
@@ -2604,6 +2688,7 @@ package robomaker {
   }
 
   object SimulationJobSummary {
+    @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         dataSourceNames: js.UndefOr[DataSourceNames] = js.undefined,
@@ -2637,6 +2722,7 @@ package robomaker {
   }
 
   object SimulationSoftwareSuite {
+    @inline
     def apply(
         name: js.UndefOr[SimulationSoftwareSuiteType] = js.undefined,
         version: js.UndefOr[SimulationSoftwareSuiteVersionType] = js.undefined
@@ -2667,6 +2753,7 @@ package robomaker {
   }
 
   object Source {
+    @inline
     def apply(
         architecture: js.UndefOr[Architecture] = js.undefined,
         etag: js.UndefOr[S3Etag] = js.undefined,
@@ -2693,6 +2780,7 @@ package robomaker {
   }
 
   object SourceConfig {
+    @inline
     def apply(
         architecture: js.UndefOr[Architecture] = js.undefined,
         s3Bucket: js.UndefOr[S3Bucket] = js.undefined,
@@ -2713,6 +2801,7 @@ package robomaker {
   }
 
   object SyncDeploymentJobRequest {
+    @inline
     def apply(
         clientRequestToken: ClientRequestToken,
         fleet: Arn
@@ -2739,6 +2828,7 @@ package robomaker {
   }
 
   object SyncDeploymentJobResponse {
+    @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         createdAt: js.UndefOr[CreatedAt] = js.undefined,
@@ -2771,6 +2861,7 @@ package robomaker {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         resourceArn: Arn,
         tags: TagMap
@@ -2788,6 +2879,7 @@ package robomaker {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -2803,6 +2895,7 @@ package robomaker {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         resourceArn: Arn,
         tagKeys: TagKeyList
@@ -2820,6 +2913,7 @@ package robomaker {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -2837,6 +2931,7 @@ package robomaker {
   }
 
   object UpdateRobotApplicationRequest {
+    @inline
     def apply(
         application: Arn,
         robotSoftwareSuite: RobotSoftwareSuite,
@@ -2866,6 +2961,7 @@ package robomaker {
   }
 
   object UpdateRobotApplicationResponse {
+    @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
@@ -2898,6 +2994,7 @@ package robomaker {
   }
 
   object UpdateSimulationApplicationRequest {
+    @inline
     def apply(
         application: Arn,
         robotSoftwareSuite: RobotSoftwareSuite,
@@ -2933,6 +3030,7 @@ package robomaker {
   }
 
   object UpdateSimulationApplicationResponse {
+    @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
@@ -2969,6 +3067,7 @@ package robomaker {
   }
 
   object VPCConfig {
+    @inline
     def apply(
         subnets: Subnets,
         assignPublicIp: js.UndefOr[Boolean] = js.undefined,
@@ -2996,6 +3095,7 @@ package robomaker {
   }
 
   object VPCConfigResponse {
+    @inline
     def apply(
         assignPublicIp: js.UndefOr[Boolean] = js.undefined,
         securityGroups: js.UndefOr[SecurityGroups] = js.undefined,

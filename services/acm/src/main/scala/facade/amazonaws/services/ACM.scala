@@ -114,6 +114,7 @@ package acm {
   }
 
   object AddTagsToCertificateRequest {
+    @inline
     def apply(
         CertificateArn: Arn,
         Tags: TagList
@@ -161,6 +162,7 @@ package acm {
   }
 
   object CertificateDetail {
+    @inline
     def apply(
         CertificateArn: js.UndefOr[Arn] = js.undefined,
         CertificateAuthorityArn: js.UndefOr[Arn] = js.undefined,
@@ -229,6 +231,7 @@ package acm {
   }
 
   object CertificateOptions {
+    @inline
     def apply(
         CertificateTransparencyLoggingPreference: js.UndefOr[CertificateTransparencyLoggingPreference] = js.undefined
     ): CertificateOptions = {
@@ -263,6 +266,7 @@ package acm {
   }
 
   object CertificateSummary {
+    @inline
     def apply(
         CertificateArn: js.UndefOr[Arn] = js.undefined,
         DomainName: js.UndefOr[DomainNameString] = js.undefined
@@ -295,6 +299,7 @@ package acm {
   }
 
   object DeleteCertificateRequest {
+    @inline
     def apply(
         CertificateArn: Arn
     ): DeleteCertificateRequest = {
@@ -312,6 +317,7 @@ package acm {
   }
 
   object DescribeCertificateRequest {
+    @inline
     def apply(
         CertificateArn: Arn
     ): DescribeCertificateRequest = {
@@ -329,6 +335,7 @@ package acm {
   }
 
   object DescribeCertificateResponse {
+    @inline
     def apply(
         Certificate: js.UndefOr[CertificateDetail] = js.undefined
     ): DescribeCertificateResponse = {
@@ -360,6 +367,7 @@ package acm {
   }
 
   object DomainValidation {
+    @inline
     def apply(
         DomainName: DomainNameString,
         ResourceRecord: js.UndefOr[ResourceRecord] = js.undefined,
@@ -391,6 +399,7 @@ package acm {
   }
 
   object DomainValidationOption {
+    @inline
     def apply(
         DomainName: DomainNameString,
         ValidationDomain: DomainNameString
@@ -411,6 +420,7 @@ package acm {
   }
 
   object ExportCertificateRequest {
+    @inline
     def apply(
         CertificateArn: Arn,
         Passphrase: PassphraseBlob
@@ -432,6 +442,7 @@ package acm {
   }
 
   object ExportCertificateResponse {
+    @inline
     def apply(
         Certificate: js.UndefOr[CertificateBody] = js.undefined,
         CertificateChain: js.UndefOr[CertificateChain] = js.undefined,
@@ -455,6 +466,7 @@ package acm {
   }
 
   object ExtendedKeyUsage {
+    @inline
     def apply(
         Name: js.UndefOr[ExtendedKeyUsageName] = js.undefined,
         OID: js.UndefOr[String] = js.undefined
@@ -547,6 +559,7 @@ package acm {
   }
 
   object Filters {
+    @inline
     def apply(
         extendedKeyUsage: js.UndefOr[ExtendedKeyUsageFilterList] = js.undefined,
         keyTypes: js.UndefOr[KeyAlgorithmList] = js.undefined,
@@ -566,6 +579,7 @@ package acm {
   }
 
   object GetCertificateRequest {
+    @inline
     def apply(
         CertificateArn: Arn
     ): GetCertificateRequest = {
@@ -584,6 +598,7 @@ package acm {
   }
 
   object GetCertificateResponse {
+    @inline
     def apply(
         Certificate: js.UndefOr[CertificateBody] = js.undefined,
         CertificateChain: js.UndefOr[CertificateChain] = js.undefined
@@ -604,6 +619,7 @@ package acm {
   }
 
   object ImportCertificateRequest {
+    @inline
     def apply(
         Certificate: CertificateBodyBlob,
         PrivateKey: PrivateKeyBlob,
@@ -627,6 +643,7 @@ package acm {
   }
 
   object ImportCertificateResponse {
+    @inline
     def apply(
         CertificateArn: js.UndefOr[Arn] = js.undefined
     ): ImportCertificateResponse = {
@@ -656,6 +673,7 @@ package acm {
   }
 
   object KeyUsage {
+    @inline
     def apply(
         Name: js.UndefOr[KeyUsageName] = js.undefined
     ): KeyUsage = {
@@ -704,6 +722,7 @@ package acm {
   }
 
   object ListCertificatesRequest {
+    @inline
     def apply(
         CertificateStatuses: js.UndefOr[CertificateStatuses] = js.undefined,
         Includes: js.UndefOr[Filters] = js.undefined,
@@ -726,6 +745,7 @@ package acm {
   }
 
   object ListCertificatesResponse {
+    @inline
     def apply(
         CertificateSummaryList: js.UndefOr[CertificateSummaryList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -743,6 +763,7 @@ package acm {
   }
 
   object ListTagsForCertificateRequest {
+    @inline
     def apply(
         CertificateArn: Arn
     ): ListTagsForCertificateRequest = {
@@ -760,6 +781,7 @@ package acm {
   }
 
   object ListTagsForCertificateResponse {
+    @inline
     def apply(
         Tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsForCertificateResponse = {
@@ -782,6 +804,7 @@ package acm {
   }
 
   object RemoveTagsFromCertificateRequest {
+    @inline
     def apply(
         CertificateArn: Arn,
         Tags: TagList
@@ -801,6 +824,7 @@ package acm {
   }
 
   object RenewCertificateRequest {
+    @inline
     def apply(
         CertificateArn: Arn
     ): RenewCertificateRequest = {
@@ -840,6 +864,7 @@ package acm {
   }
 
   object RenewalSummary {
+    @inline
     def apply(
         DomainValidationOptions: DomainValidationList,
         RenewalStatus: RenewalStatus,
@@ -869,6 +894,7 @@ package acm {
   }
 
   object RequestCertificateRequest {
+    @inline
     def apply(
         DomainName: DomainNameString,
         CertificateAuthorityArn: js.UndefOr[Arn] = js.undefined,
@@ -898,6 +924,7 @@ package acm {
   }
 
   object RequestCertificateResponse {
+    @inline
     def apply(
         CertificateArn: js.UndefOr[Arn] = js.undefined
     ): RequestCertificateResponse = {
@@ -915,6 +942,7 @@ package acm {
   }
 
   object ResendValidationEmailRequest {
+    @inline
     def apply(
         CertificateArn: Arn,
         Domain: DomainNameString,
@@ -941,6 +969,7 @@ package acm {
   }
 
   object ResourceRecord {
+    @inline
     def apply(
         Name: String,
         Type: RecordType,
@@ -994,6 +1023,7 @@ package acm {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: js.UndefOr[TagValue] = js.undefined
@@ -1014,6 +1044,7 @@ package acm {
   }
 
   object UpdateCertificateOptionsRequest {
+    @inline
     def apply(
         CertificateArn: Arn,
         Options: CertificateOptions

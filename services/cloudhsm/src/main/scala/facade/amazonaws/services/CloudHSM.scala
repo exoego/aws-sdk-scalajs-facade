@@ -124,6 +124,7 @@ package cloudhsm {
   }
 
   object AddTagsToResourceRequest {
+    @inline
     def apply(
         ResourceArn: String,
         TagList: TagList
@@ -143,6 +144,7 @@ package cloudhsm {
   }
 
   object AddTagsToResourceResponse {
+    @inline
     def apply(
         Status: String
     ): AddTagsToResourceResponse = {
@@ -193,6 +195,7 @@ package cloudhsm {
   }
 
   object CreateHapgRequest {
+    @inline
     def apply(
         Label: Label
     ): CreateHapgRequest = {
@@ -213,6 +216,7 @@ package cloudhsm {
   }
 
   object CreateHapgResponse {
+    @inline
     def apply(
         HapgArn: js.UndefOr[HapgArn] = js.undefined
     ): CreateHapgResponse = {
@@ -238,6 +242,7 @@ package cloudhsm {
   }
 
   object CreateHsmRequest {
+    @inline
     def apply(
         IamRoleArn: IamRoleArn,
         SshKey: SshKey,
@@ -272,6 +277,7 @@ package cloudhsm {
   }
 
   object CreateHsmResponse {
+    @inline
     def apply(
         HsmArn: js.UndefOr[HsmArn] = js.undefined
     ): CreateHsmResponse = {
@@ -291,6 +297,7 @@ package cloudhsm {
   }
 
   object CreateLunaClientRequest {
+    @inline
     def apply(
         Certificate: Certificate,
         Label: js.UndefOr[ClientLabel] = js.undefined
@@ -313,6 +320,7 @@ package cloudhsm {
   }
 
   object CreateLunaClientResponse {
+    @inline
     def apply(
         ClientArn: js.UndefOr[ClientArn] = js.undefined
     ): CreateLunaClientResponse = {
@@ -331,6 +339,7 @@ package cloudhsm {
   }
 
   object DeleteHapgRequest {
+    @inline
     def apply(
         HapgArn: HapgArn
     ): DeleteHapgRequest = {
@@ -351,6 +360,7 @@ package cloudhsm {
   }
 
   object DeleteHapgResponse {
+    @inline
     def apply(
         Status: String
     ): DeleteHapgResponse = {
@@ -371,6 +381,7 @@ package cloudhsm {
   }
 
   object DeleteHsmRequest {
+    @inline
     def apply(
         HsmArn: HsmArn
     ): DeleteHsmRequest = {
@@ -391,6 +402,7 @@ package cloudhsm {
   }
 
   object DeleteHsmResponse {
+    @inline
     def apply(
         Status: String
     ): DeleteHsmResponse = {
@@ -408,6 +420,7 @@ package cloudhsm {
   }
 
   object DeleteLunaClientRequest {
+    @inline
     def apply(
         ClientArn: ClientArn
     ): DeleteLunaClientRequest = {
@@ -425,6 +438,7 @@ package cloudhsm {
   }
 
   object DeleteLunaClientResponse {
+    @inline
     def apply(
         Status: String
     ): DeleteLunaClientResponse = {
@@ -445,6 +459,7 @@ package cloudhsm {
   }
 
   object DescribeHapgRequest {
+    @inline
     def apply(
         HapgArn: HapgArn
     ): DescribeHapgRequest = {
@@ -473,6 +488,7 @@ package cloudhsm {
   }
 
   object DescribeHapgResponse {
+    @inline
     def apply(
         HapgArn: js.UndefOr[HapgArn] = js.undefined,
         HapgSerial: js.UndefOr[String] = js.undefined,
@@ -508,6 +524,7 @@ package cloudhsm {
   }
 
   object DescribeHsmRequest {
+    @inline
     def apply(
         HsmArn: js.UndefOr[HsmArn] = js.undefined,
         HsmSerialNumber: js.UndefOr[HsmSerialNumber] = js.undefined
@@ -548,6 +565,7 @@ package cloudhsm {
   }
 
   object DescribeHsmResponse {
+    @inline
     def apply(
         AvailabilityZone: js.UndefOr[AZ] = js.undefined,
         EniId: js.UndefOr[EniId] = js.undefined,
@@ -604,6 +622,7 @@ package cloudhsm {
   }
 
   object DescribeLunaClientRequest {
+    @inline
     def apply(
         CertificateFingerprint: js.UndefOr[CertificateFingerprint] = js.undefined,
         ClientArn: js.UndefOr[ClientArn] = js.undefined
@@ -625,6 +644,7 @@ package cloudhsm {
   }
 
   object DescribeLunaClientResponse {
+    @inline
     def apply(
         Certificate: js.UndefOr[Certificate] = js.undefined,
         CertificateFingerprint: js.UndefOr[CertificateFingerprint] = js.undefined,
@@ -650,6 +670,7 @@ package cloudhsm {
   }
 
   object GetConfigRequest {
+    @inline
     def apply(
         ClientArn: ClientArn,
         ClientVersion: ClientVersion,
@@ -673,6 +694,7 @@ package cloudhsm {
   }
 
   object GetConfigResponse {
+    @inline
     def apply(
         ConfigCred: js.UndefOr[String] = js.undefined,
         ConfigFile: js.UndefOr[String] = js.undefined,
@@ -711,6 +733,7 @@ package cloudhsm {
   trait ListAvailableZonesRequest extends js.Object {}
 
   object ListAvailableZonesRequest {
+    @inline
     def apply(
         ): ListAvailableZonesRequest = {
       val __obj = js.Dynamic.literal()
@@ -725,6 +748,7 @@ package cloudhsm {
   }
 
   object ListAvailableZonesResponse {
+    @inline
     def apply(
         AZList: js.UndefOr[AZList] = js.undefined
     ): ListAvailableZonesResponse = {
@@ -740,6 +764,7 @@ package cloudhsm {
   }
 
   object ListHapgsRequest {
+    @inline
     def apply(
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListHapgsRequest = {
@@ -756,6 +781,7 @@ package cloudhsm {
   }
 
   object ListHapgsResponse {
+    @inline
     def apply(
         HapgList: HapgList,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -775,6 +801,7 @@ package cloudhsm {
   }
 
   object ListHsmsRequest {
+    @inline
     def apply(
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListHsmsRequest = {
@@ -794,6 +821,7 @@ package cloudhsm {
   }
 
   object ListHsmsResponse {
+    @inline
     def apply(
         HsmList: js.UndefOr[HsmList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -811,6 +839,7 @@ package cloudhsm {
   }
 
   object ListLunaClientsRequest {
+    @inline
     def apply(
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListLunaClientsRequest = {
@@ -827,6 +856,7 @@ package cloudhsm {
   }
 
   object ListLunaClientsResponse {
+    @inline
     def apply(
         ClientList: ClientList,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
@@ -846,6 +876,7 @@ package cloudhsm {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceArn: String
     ): ListTagsForResourceRequest = {
@@ -863,6 +894,7 @@ package cloudhsm {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         TagList: TagList
     ): ListTagsForResourceResponse = {
@@ -882,6 +914,7 @@ package cloudhsm {
   }
 
   object ModifyHapgRequest {
+    @inline
     def apply(
         HapgArn: HapgArn,
         Label: js.UndefOr[Label] = js.undefined,
@@ -903,6 +936,7 @@ package cloudhsm {
   }
 
   object ModifyHapgResponse {
+    @inline
     def apply(
         HapgArn: js.UndefOr[HapgArn] = js.undefined
     ): ModifyHapgResponse = {
@@ -926,6 +960,7 @@ package cloudhsm {
   }
 
   object ModifyHsmRequest {
+    @inline
     def apply(
         HsmArn: HsmArn,
         EniIp: js.UndefOr[IpAddress] = js.undefined,
@@ -956,6 +991,7 @@ package cloudhsm {
   }
 
   object ModifyHsmResponse {
+    @inline
     def apply(
         HsmArn: js.UndefOr[HsmArn] = js.undefined
     ): ModifyHsmResponse = {
@@ -972,6 +1008,7 @@ package cloudhsm {
   }
 
   object ModifyLunaClientRequest {
+    @inline
     def apply(
         Certificate: Certificate,
         ClientArn: ClientArn
@@ -991,6 +1028,7 @@ package cloudhsm {
   }
 
   object ModifyLunaClientResponse {
+    @inline
     def apply(
         ClientArn: js.UndefOr[ClientArn] = js.undefined
     ): ModifyLunaClientResponse = {
@@ -1007,6 +1045,7 @@ package cloudhsm {
   }
 
   object RemoveTagsFromResourceRequest {
+    @inline
     def apply(
         ResourceArn: String,
         TagKeyList: TagKeyList
@@ -1026,6 +1065,7 @@ package cloudhsm {
   }
 
   object RemoveTagsFromResourceResponse {
+    @inline
     def apply(
         Status: String
     ): RemoveTagsFromResourceResponse = {
@@ -1058,6 +1098,7 @@ package cloudhsm {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: TagValue

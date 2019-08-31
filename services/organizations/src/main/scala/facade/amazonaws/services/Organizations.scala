@@ -257,6 +257,7 @@ package organizations {
   }
 
   object AcceptHandshakeRequest {
+    @inline
     def apply(
         HandshakeId: HandshakeId
     ): AcceptHandshakeRequest = {
@@ -274,6 +275,7 @@ package organizations {
   }
 
   object AcceptHandshakeResponse {
+    @inline
     def apply(
         Handshake: js.UndefOr[Handshake] = js.undefined
     ): AcceptHandshakeResponse = {
@@ -298,6 +300,7 @@ package organizations {
   }
 
   object Account {
+    @inline
     def apply(
         Arn: js.UndefOr[AccountArn] = js.undefined,
         Email: js.UndefOr[Email] = js.undefined,
@@ -351,6 +354,7 @@ package organizations {
   }
 
   object AttachPolicyRequest {
+    @inline
     def apply(
         PolicyId: PolicyId,
         TargetId: PolicyTargetId
@@ -370,6 +374,7 @@ package organizations {
   }
 
   object CancelHandshakeRequest {
+    @inline
     def apply(
         HandshakeId: HandshakeId
     ): CancelHandshakeRequest = {
@@ -387,6 +392,7 @@ package organizations {
   }
 
   object CancelHandshakeResponse {
+    @inline
     def apply(
         Handshake: js.UndefOr[Handshake] = js.undefined
     ): CancelHandshakeResponse = {
@@ -406,6 +412,7 @@ package organizations {
   }
 
   object Child {
+    @inline
     def apply(
         Id: js.UndefOr[ChildId] = js.undefined,
         Type: js.UndefOr[ChildType] = js.undefined
@@ -453,6 +460,7 @@ package organizations {
   }
 
   object CreateAccountRequest {
+    @inline
     def apply(
         AccountName: AccountName,
         Email: Email,
@@ -476,6 +484,7 @@ package organizations {
   }
 
   object CreateAccountResponse {
+    @inline
     def apply(
         CreateAccountStatus: js.UndefOr[CreateAccountStatus] = js.undefined
     ): CreateAccountResponse = {
@@ -509,6 +518,7 @@ package organizations {
   }
 
   object CreateAccountStatus {
+    @inline
     def apply(
         AccountId: js.UndefOr[AccountId] = js.undefined,
         AccountName: js.UndefOr[AccountName] = js.undefined,
@@ -541,6 +551,7 @@ package organizations {
   }
 
   object CreateGovCloudAccountRequest {
+    @inline
     def apply(
         AccountName: AccountName,
         Email: Email,
@@ -564,6 +575,7 @@ package organizations {
   }
 
   object CreateGovCloudAccountResponse {
+    @inline
     def apply(
         CreateAccountStatus: js.UndefOr[CreateAccountStatus] = js.undefined
     ): CreateGovCloudAccountResponse = {
@@ -579,6 +591,7 @@ package organizations {
   }
 
   object CreateOrganizationRequest {
+    @inline
     def apply(
         FeatureSet: js.UndefOr[OrganizationFeatureSet] = js.undefined
     ): CreateOrganizationRequest = {
@@ -594,6 +607,7 @@ package organizations {
   }
 
   object CreateOrganizationResponse {
+    @inline
     def apply(
         Organization: js.UndefOr[Organization] = js.undefined
     ): CreateOrganizationResponse = {
@@ -610,6 +624,7 @@ package organizations {
   }
 
   object CreateOrganizationalUnitRequest {
+    @inline
     def apply(
         Name: OrganizationalUnitName,
         ParentId: ParentId
@@ -629,6 +644,7 @@ package organizations {
   }
 
   object CreateOrganizationalUnitResponse {
+    @inline
     def apply(
         OrganizationalUnit: js.UndefOr[OrganizationalUnit] = js.undefined
     ): CreateOrganizationalUnitResponse = {
@@ -647,6 +663,7 @@ package organizations {
   }
 
   object CreatePolicyRequest {
+    @inline
     def apply(
         Content: PolicyContent,
         Description: PolicyDescription,
@@ -670,6 +687,7 @@ package organizations {
   }
 
   object CreatePolicyResponse {
+    @inline
     def apply(
         Policy: js.UndefOr[Policy] = js.undefined
     ): CreatePolicyResponse = {
@@ -685,6 +703,7 @@ package organizations {
   }
 
   object DeclineHandshakeRequest {
+    @inline
     def apply(
         HandshakeId: HandshakeId
     ): DeclineHandshakeRequest = {
@@ -702,6 +721,7 @@ package organizations {
   }
 
   object DeclineHandshakeResponse {
+    @inline
     def apply(
         Handshake: js.UndefOr[Handshake] = js.undefined
     ): DeclineHandshakeResponse = {
@@ -717,6 +737,7 @@ package organizations {
   }
 
   object DeleteOrganizationalUnitRequest {
+    @inline
     def apply(
         OrganizationalUnitId: OrganizationalUnitId
     ): DeleteOrganizationalUnitRequest = {
@@ -734,6 +755,7 @@ package organizations {
   }
 
   object DeletePolicyRequest {
+    @inline
     def apply(
         PolicyId: PolicyId
     ): DeletePolicyRequest = {
@@ -751,6 +773,7 @@ package organizations {
   }
 
   object DescribeAccountRequest {
+    @inline
     def apply(
         AccountId: AccountId
     ): DescribeAccountRequest = {
@@ -768,6 +791,7 @@ package organizations {
   }
 
   object DescribeAccountResponse {
+    @inline
     def apply(
         Account: js.UndefOr[Account] = js.undefined
     ): DescribeAccountResponse = {
@@ -783,6 +807,7 @@ package organizations {
   }
 
   object DescribeCreateAccountStatusRequest {
+    @inline
     def apply(
         CreateAccountRequestId: CreateAccountRequestId
     ): DescribeCreateAccountStatusRequest = {
@@ -800,6 +825,7 @@ package organizations {
   }
 
   object DescribeCreateAccountStatusResponse {
+    @inline
     def apply(
         CreateAccountStatus: js.UndefOr[CreateAccountStatus] = js.undefined
     ): DescribeCreateAccountStatusResponse = {
@@ -815,6 +841,7 @@ package organizations {
   }
 
   object DescribeHandshakeRequest {
+    @inline
     def apply(
         HandshakeId: HandshakeId
     ): DescribeHandshakeRequest = {
@@ -832,6 +859,7 @@ package organizations {
   }
 
   object DescribeHandshakeResponse {
+    @inline
     def apply(
         Handshake: js.UndefOr[Handshake] = js.undefined
     ): DescribeHandshakeResponse = {
@@ -847,6 +875,7 @@ package organizations {
   }
 
   object DescribeOrganizationResponse {
+    @inline
     def apply(
         Organization: js.UndefOr[Organization] = js.undefined
     ): DescribeOrganizationResponse = {
@@ -862,6 +891,7 @@ package organizations {
   }
 
   object DescribeOrganizationalUnitRequest {
+    @inline
     def apply(
         OrganizationalUnitId: OrganizationalUnitId
     ): DescribeOrganizationalUnitRequest = {
@@ -879,6 +909,7 @@ package organizations {
   }
 
   object DescribeOrganizationalUnitResponse {
+    @inline
     def apply(
         OrganizationalUnit: js.UndefOr[OrganizationalUnit] = js.undefined
     ): DescribeOrganizationalUnitResponse = {
@@ -894,6 +925,7 @@ package organizations {
   }
 
   object DescribePolicyRequest {
+    @inline
     def apply(
         PolicyId: PolicyId
     ): DescribePolicyRequest = {
@@ -911,6 +943,7 @@ package organizations {
   }
 
   object DescribePolicyResponse {
+    @inline
     def apply(
         Policy: js.UndefOr[Policy] = js.undefined
     ): DescribePolicyResponse = {
@@ -927,6 +960,7 @@ package organizations {
   }
 
   object DetachPolicyRequest {
+    @inline
     def apply(
         PolicyId: PolicyId,
         TargetId: PolicyTargetId
@@ -946,6 +980,7 @@ package organizations {
   }
 
   object DisableAWSServiceAccessRequest {
+    @inline
     def apply(
         ServicePrincipal: ServicePrincipal
     ): DisableAWSServiceAccessRequest = {
@@ -964,6 +999,7 @@ package organizations {
   }
 
   object DisablePolicyTypeRequest {
+    @inline
     def apply(
         PolicyType: PolicyType,
         RootId: RootId
@@ -983,6 +1019,7 @@ package organizations {
   }
 
   object DisablePolicyTypeResponse {
+    @inline
     def apply(
         Root: js.UndefOr[Root] = js.undefined
     ): DisablePolicyTypeResponse = {
@@ -998,6 +1035,7 @@ package organizations {
   }
 
   object EnableAWSServiceAccessRequest {
+    @inline
     def apply(
         ServicePrincipal: ServicePrincipal
     ): EnableAWSServiceAccessRequest = {
@@ -1013,6 +1051,7 @@ package organizations {
   trait EnableAllFeaturesRequest extends js.Object {}
 
   object EnableAllFeaturesRequest {
+    @inline
     def apply(
         ): EnableAllFeaturesRequest = {
       val __obj = js.Dynamic.literal()
@@ -1027,6 +1066,7 @@ package organizations {
   }
 
   object EnableAllFeaturesResponse {
+    @inline
     def apply(
         Handshake: js.UndefOr[Handshake] = js.undefined
     ): EnableAllFeaturesResponse = {
@@ -1043,6 +1083,7 @@ package organizations {
   }
 
   object EnablePolicyTypeRequest {
+    @inline
     def apply(
         PolicyType: PolicyType,
         RootId: RootId
@@ -1062,6 +1103,7 @@ package organizations {
   }
 
   object EnablePolicyTypeResponse {
+    @inline
     def apply(
         Root: js.UndefOr[Root] = js.undefined
     ): EnablePolicyTypeResponse = {
@@ -1081,6 +1123,7 @@ package organizations {
   }
 
   object EnabledServicePrincipal {
+    @inline
     def apply(
         DateEnabled: js.UndefOr[Timestamp] = js.undefined,
         ServicePrincipal: js.UndefOr[ServicePrincipal] = js.undefined
@@ -1109,6 +1152,7 @@ package organizations {
   }
 
   object Handshake {
+    @inline
     def apply(
         Action: js.UndefOr[ActionType] = js.undefined,
         Arn: js.UndefOr[HandshakeArn] = js.undefined,
@@ -1142,6 +1186,7 @@ package organizations {
   }
 
   object HandshakeFilter {
+    @inline
     def apply(
         ActionType: js.UndefOr[ActionType] = js.undefined,
         ParentHandshakeId: js.UndefOr[HandshakeId] = js.undefined
@@ -1163,6 +1208,7 @@ package organizations {
   }
 
   object HandshakeParty {
+    @inline
     def apply(
         Id: HandshakePartyId,
         Type: HandshakePartyType
@@ -1195,6 +1241,7 @@ package organizations {
   }
 
   object HandshakeResource {
+    @inline
     def apply(
         Resources: js.UndefOr[HandshakeResources] = js.undefined,
         Type: js.UndefOr[HandshakeResourceType] = js.undefined,
@@ -1257,6 +1304,7 @@ package organizations {
   }
 
   object InviteAccountToOrganizationRequest {
+    @inline
     def apply(
         Target: HandshakeParty,
         Notes: js.UndefOr[HandshakeNotes] = js.undefined
@@ -1276,6 +1324,7 @@ package organizations {
   }
 
   object InviteAccountToOrganizationResponse {
+    @inline
     def apply(
         Handshake: js.UndefOr[Handshake] = js.undefined
     ): InviteAccountToOrganizationResponse = {
@@ -1292,6 +1341,7 @@ package organizations {
   }
 
   object ListAWSServiceAccessForOrganizationRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1310,6 +1360,7 @@ package organizations {
   }
 
   object ListAWSServiceAccessForOrganizationResponse {
+    @inline
     def apply(
         EnabledServicePrincipals: js.UndefOr[EnabledServicePrincipals] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1329,6 +1380,7 @@ package organizations {
   }
 
   object ListAccountsForParentRequest {
+    @inline
     def apply(
         ParentId: ParentId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1351,6 +1403,7 @@ package organizations {
   }
 
   object ListAccountsForParentResponse {
+    @inline
     def apply(
         Accounts: js.UndefOr[Accounts] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1369,6 +1422,7 @@ package organizations {
   }
 
   object ListAccountsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1387,6 +1441,7 @@ package organizations {
   }
 
   object ListAccountsResponse {
+    @inline
     def apply(
         Accounts: js.UndefOr[Accounts] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1407,6 +1462,7 @@ package organizations {
   }
 
   object ListChildrenRequest {
+    @inline
     def apply(
         ChildType: ChildType,
         ParentId: ParentId,
@@ -1431,6 +1487,7 @@ package organizations {
   }
 
   object ListChildrenResponse {
+    @inline
     def apply(
         Children: js.UndefOr[Children] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1450,6 +1507,7 @@ package organizations {
   }
 
   object ListCreateAccountStatusRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
@@ -1470,6 +1528,7 @@ package organizations {
   }
 
   object ListCreateAccountStatusResponse {
+    @inline
     def apply(
         CreateAccountStatuses: js.UndefOr[CreateAccountStatuses] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1489,6 +1548,7 @@ package organizations {
   }
 
   object ListHandshakesForAccountRequest {
+    @inline
     def apply(
         Filter: js.UndefOr[HandshakeFilter] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1509,6 +1569,7 @@ package organizations {
   }
 
   object ListHandshakesForAccountResponse {
+    @inline
     def apply(
         Handshakes: js.UndefOr[Handshakes] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1528,6 +1589,7 @@ package organizations {
   }
 
   object ListHandshakesForOrganizationRequest {
+    @inline
     def apply(
         Filter: js.UndefOr[HandshakeFilter] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1548,6 +1610,7 @@ package organizations {
   }
 
   object ListHandshakesForOrganizationResponse {
+    @inline
     def apply(
         Handshakes: js.UndefOr[Handshakes] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1567,6 +1630,7 @@ package organizations {
   }
 
   object ListOrganizationalUnitsForParentRequest {
+    @inline
     def apply(
         ParentId: ParentId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1589,6 +1653,7 @@ package organizations {
   }
 
   object ListOrganizationalUnitsForParentResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         OrganizationalUnits: js.UndefOr[OrganizationalUnits] = js.undefined
@@ -1608,6 +1673,7 @@ package organizations {
   }
 
   object ListParentsRequest {
+    @inline
     def apply(
         ChildId: ChildId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1630,6 +1696,7 @@ package organizations {
   }
 
   object ListParentsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Parents: js.UndefOr[Parents] = js.undefined
@@ -1650,6 +1717,7 @@ package organizations {
   }
 
   object ListPoliciesForTargetRequest {
+    @inline
     def apply(
         Filter: PolicyType,
         TargetId: PolicyTargetId,
@@ -1674,6 +1742,7 @@ package organizations {
   }
 
   object ListPoliciesForTargetResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Policies: js.UndefOr[Policies] = js.undefined
@@ -1693,6 +1762,7 @@ package organizations {
   }
 
   object ListPoliciesRequest {
+    @inline
     def apply(
         Filter: PolicyType,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1715,6 +1785,7 @@ package organizations {
   }
 
   object ListPoliciesResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Policies: js.UndefOr[Policies] = js.undefined
@@ -1733,6 +1804,7 @@ package organizations {
   }
 
   object ListRootsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1751,6 +1823,7 @@ package organizations {
   }
 
   object ListRootsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Roots: js.UndefOr[Roots] = js.undefined
@@ -1769,6 +1842,7 @@ package organizations {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceId: TaggableResourceId,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1789,6 +1863,7 @@ package organizations {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
@@ -1808,6 +1883,7 @@ package organizations {
   }
 
   object ListTargetsForPolicyRequest {
+    @inline
     def apply(
         PolicyId: PolicyId,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1830,6 +1906,7 @@ package organizations {
   }
 
   object ListTargetsForPolicyResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Targets: js.UndefOr[PolicyTargets] = js.undefined
@@ -1849,6 +1926,7 @@ package organizations {
   }
 
   object MoveAccountRequest {
+    @inline
     def apply(
         AccountId: AccountId,
         DestinationParentId: ParentId,
@@ -1879,6 +1957,7 @@ package organizations {
   }
 
   object Organization {
+    @inline
     def apply(
         Arn: js.UndefOr[OrganizationArn] = js.undefined,
         AvailablePolicyTypes: js.UndefOr[PolicyTypes] = js.undefined,
@@ -1918,6 +1997,7 @@ package organizations {
   }
 
   object OrganizationalUnit {
+    @inline
     def apply(
         Arn: js.UndefOr[OrganizationalUnitArn] = js.undefined,
         Id: js.UndefOr[OrganizationalUnitId] = js.undefined,
@@ -1941,6 +2021,7 @@ package organizations {
   }
 
   object Parent {
+    @inline
     def apply(
         Id: js.UndefOr[ParentId] = js.undefined,
         Type: js.UndefOr[ParentType] = js.undefined
@@ -1969,6 +2050,7 @@ package organizations {
   }
 
   object Policy {
+    @inline
     def apply(
         Content: js.UndefOr[PolicyContent] = js.undefined,
         PolicySummary: js.UndefOr[PolicySummary] = js.undefined
@@ -1994,6 +2076,7 @@ package organizations {
   }
 
   object PolicySummary {
+    @inline
     def apply(
         Arn: js.UndefOr[PolicyArn] = js.undefined,
         AwsManaged: js.UndefOr[AwsManagedPolicy] = js.undefined,
@@ -2025,6 +2108,7 @@ package organizations {
   }
 
   object PolicyTargetSummary {
+    @inline
     def apply(
         Arn: js.UndefOr[GenericArn] = js.undefined,
         Name: js.UndefOr[TargetName] = js.undefined,
@@ -2064,6 +2148,7 @@ package organizations {
   }
 
   object PolicyTypeSummary {
+    @inline
     def apply(
         Status: js.UndefOr[PolicyTypeStatus] = js.undefined,
         Type: js.UndefOr[PolicyType] = js.undefined
@@ -2081,6 +2166,7 @@ package organizations {
   }
 
   object RemoveAccountFromOrganizationRequest {
+    @inline
     def apply(
         AccountId: AccountId
     ): RemoveAccountFromOrganizationRequest = {
@@ -2104,6 +2190,7 @@ package organizations {
   }
 
   object Root {
+    @inline
     def apply(
         Arn: js.UndefOr[RootArn] = js.undefined,
         Id: js.UndefOr[RootId] = js.undefined,
@@ -2129,6 +2216,7 @@ package organizations {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: TagValue
@@ -2149,6 +2237,7 @@ package organizations {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceId: TaggableResourceId,
         Tags: Tags
@@ -2177,6 +2266,7 @@ package organizations {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceId: TaggableResourceId,
         TagKeys: TagKeys
@@ -2197,6 +2287,7 @@ package organizations {
   }
 
   object UpdateOrganizationalUnitRequest {
+    @inline
     def apply(
         OrganizationalUnitId: OrganizationalUnitId,
         Name: js.UndefOr[OrganizationalUnitName] = js.undefined
@@ -2216,6 +2307,7 @@ package organizations {
   }
 
   object UpdateOrganizationalUnitResponse {
+    @inline
     def apply(
         OrganizationalUnit: js.UndefOr[OrganizationalUnit] = js.undefined
     ): UpdateOrganizationalUnitResponse = {
@@ -2234,6 +2326,7 @@ package organizations {
   }
 
   object UpdatePolicyRequest {
+    @inline
     def apply(
         PolicyId: PolicyId,
         Content: js.UndefOr[PolicyContent] = js.undefined,
@@ -2257,6 +2350,7 @@ package organizations {
   }
 
   object UpdatePolicyResponse {
+    @inline
     def apply(
         Policy: js.UndefOr[Policy] = js.undefined
     ): UpdatePolicyResponse = {

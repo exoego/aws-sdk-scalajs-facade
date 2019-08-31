@@ -132,6 +132,7 @@ package mq {
   }
 
   object AvailabilityZone {
+    @inline
     def apply(
         Name: js.UndefOr[__string] = js.undefined
     ): AvailabilityZone = {
@@ -151,6 +152,7 @@ package mq {
   }
 
   object BrokerEngineType {
+    @inline
     def apply(
         EngineType: js.UndefOr[EngineType] = js.undefined,
         EngineVersions: js.UndefOr[__listOfEngineVersion] = js.undefined
@@ -173,6 +175,7 @@ package mq {
   }
 
   object BrokerInstance {
+    @inline
     def apply(
         ConsoleURL: js.UndefOr[__string] = js.undefined,
         Endpoints: js.UndefOr[__listOf__string] = js.undefined,
@@ -198,6 +201,7 @@ package mq {
   }
 
   object BrokerInstanceOption {
+    @inline
     def apply(
         AvailabilityZones: js.UndefOr[__listOfAvailabilityZone] = js.undefined,
         EngineType: js.UndefOr[EngineType] = js.undefined,
@@ -243,6 +247,7 @@ package mq {
   }
 
   object BrokerSummary {
+    @inline
     def apply(
         BrokerArn: js.UndefOr[__string] = js.undefined,
         BrokerId: js.UndefOr[__string] = js.undefined,
@@ -292,6 +297,7 @@ package mq {
   }
 
   object Configuration {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         Created: js.UndefOr[__timestampIso8601] = js.undefined,
@@ -327,6 +333,7 @@ package mq {
   }
 
   object ConfigurationId {
+    @inline
     def apply(
         Id: js.UndefOr[__string] = js.undefined,
         Revision: js.UndefOr[__integer] = js.undefined
@@ -349,6 +356,7 @@ package mq {
   }
 
   object ConfigurationRevision {
+    @inline
     def apply(
         Created: js.UndefOr[__timestampIso8601] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
@@ -373,6 +381,7 @@ package mq {
   }
 
   object Configurations {
+    @inline
     def apply(
         Current: js.UndefOr[ConfigurationId] = js.undefined,
         History: js.UndefOr[__listOfConfigurationId] = js.undefined,
@@ -410,6 +419,7 @@ package mq {
   }
 
   object CreateBrokerRequest {
+    @inline
     def apply(
         AutoMinorVersionUpgrade: js.UndefOr[__boolean] = js.undefined,
         BrokerName: js.UndefOr[__string] = js.undefined,
@@ -458,6 +468,7 @@ package mq {
   }
 
   object CreateBrokerResponse {
+    @inline
     def apply(
         BrokerArn: js.UndefOr[__string] = js.undefined,
         BrokerId: js.UndefOr[__string] = js.undefined
@@ -481,6 +492,7 @@ package mq {
   }
 
   object CreateConfigurationRequest {
+    @inline
     def apply(
         EngineType: js.UndefOr[EngineType] = js.undefined,
         EngineVersion: js.UndefOr[__string] = js.undefined,
@@ -506,6 +518,7 @@ package mq {
   }
 
   object CreateConfigurationResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         Created: js.UndefOr[__timestampIso8601] = js.undefined,
@@ -533,6 +546,7 @@ package mq {
   }
 
   object CreateTagsRequest {
+    @inline
     def apply(
         ResourceArn: __string,
         Tags: js.UndefOr[__mapOf__string] = js.undefined
@@ -559,6 +573,7 @@ package mq {
   }
 
   object CreateUserRequest {
+    @inline
     def apply(
         BrokerId: __string,
         Username: __string,
@@ -582,6 +597,7 @@ package mq {
   trait CreateUserResponse extends js.Object {}
 
   object CreateUserResponse {
+    @inline
     def apply(
         ): CreateUserResponse = {
       val __obj = js.Dynamic.literal()
@@ -608,6 +624,7 @@ package mq {
   }
 
   object DeleteBrokerRequest {
+    @inline
     def apply(
         BrokerId: __string
     ): DeleteBrokerRequest = {
@@ -625,6 +642,7 @@ package mq {
   }
 
   object DeleteBrokerResponse {
+    @inline
     def apply(
         BrokerId: js.UndefOr[__string] = js.undefined
     ): DeleteBrokerResponse = {
@@ -641,6 +659,7 @@ package mq {
   }
 
   object DeleteTagsRequest {
+    @inline
     def apply(
         ResourceArn: __string,
         TagKeys: __listOf__string
@@ -661,6 +680,7 @@ package mq {
   }
 
   object DeleteUserRequest {
+    @inline
     def apply(
         BrokerId: __string,
         Username: __string
@@ -678,6 +698,7 @@ package mq {
   trait DeleteUserResponse extends js.Object {}
 
   object DeleteUserResponse {
+    @inline
     def apply(
         ): DeleteUserResponse = {
       val __obj = js.Dynamic.literal()
@@ -704,6 +725,7 @@ package mq {
   }
 
   object DescribeBrokerEngineTypesRequest {
+    @inline
     def apply(
         EngineType: js.UndefOr[__string] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -725,6 +747,7 @@ package mq {
   }
 
   object DescribeBrokerEngineTypesResponse {
+    @inline
     def apply(
         BrokerEngineTypes: js.UndefOr[__listOfBrokerEngineType] = js.undefined,
         MaxResults: js.UndefOr[__integerMin5Max100] = js.undefined,
@@ -747,6 +770,7 @@ package mq {
   }
 
   object DescribeBrokerInstanceOptionsRequest {
+    @inline
     def apply(
         EngineType: js.UndefOr[__string] = js.undefined,
         HostInstanceType: js.UndefOr[__string] = js.undefined,
@@ -770,6 +794,7 @@ package mq {
   }
 
   object DescribeBrokerInstanceOptionsResponse {
+    @inline
     def apply(
         BrokerInstanceOptions: js.UndefOr[__listOfBrokerInstanceOption] = js.undefined,
         MaxResults: js.UndefOr[__integerMin5Max100] = js.undefined,
@@ -789,6 +814,7 @@ package mq {
   }
 
   object DescribeBrokerRequest {
+    @inline
     def apply(
         BrokerId: __string
     ): DescribeBrokerRequest = {
@@ -826,6 +852,7 @@ package mq {
   }
 
   object DescribeBrokerResponse {
+    @inline
     def apply(
         AutoMinorVersionUpgrade: js.UndefOr[__boolean] = js.undefined,
         BrokerArn: js.UndefOr[__string] = js.undefined,
@@ -883,6 +910,7 @@ package mq {
   }
 
   object DescribeConfigurationRequest {
+    @inline
     def apply(
         ConfigurationId: __string
     ): DescribeConfigurationRequest = {
@@ -908,6 +936,7 @@ package mq {
   }
 
   object DescribeConfigurationResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         Created: js.UndefOr[__timestampIso8601] = js.undefined,
@@ -940,6 +969,7 @@ package mq {
   }
 
   object DescribeConfigurationRevisionRequest {
+    @inline
     def apply(
         ConfigurationId: __string,
         ConfigurationRevision: __string
@@ -962,6 +992,7 @@ package mq {
   }
 
   object DescribeConfigurationRevisionResponse {
+    @inline
     def apply(
         ConfigurationId: js.UndefOr[__string] = js.undefined,
         Created: js.UndefOr[__timestampIso8601] = js.undefined,
@@ -984,6 +1015,7 @@ package mq {
   }
 
   object DescribeUserRequest {
+    @inline
     def apply(
         BrokerId: __string,
         Username: __string
@@ -1007,6 +1039,7 @@ package mq {
   }
 
   object DescribeUserResponse {
+    @inline
     def apply(
         BrokerId: js.UndefOr[__string] = js.undefined,
         ConsoleAccess: js.UndefOr[__boolean] = js.undefined,
@@ -1034,6 +1067,7 @@ package mq {
   }
 
   object EncryptionOptions {
+    @inline
     def apply(
         UseAwsOwnedKey: __boolean,
         KmsKeyId: js.UndefOr[__string] = js.undefined
@@ -1065,6 +1099,7 @@ package mq {
   }
 
   object EngineVersion {
+    @inline
     def apply(
         Name: js.UndefOr[__string] = js.undefined
     ): EngineVersion = {
@@ -1081,6 +1116,7 @@ package mq {
   }
 
   object ListBrokersRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -1099,6 +1135,7 @@ package mq {
   }
 
   object ListBrokersResponse {
+    @inline
     def apply(
         BrokerSummaries: js.UndefOr[__listOfBrokerSummary] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -1118,6 +1155,7 @@ package mq {
   }
 
   object ListConfigurationRevisionsRequest {
+    @inline
     def apply(
         ConfigurationId: __string,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1142,6 +1180,7 @@ package mq {
   }
 
   object ListConfigurationRevisionsResponse {
+    @inline
     def apply(
         ConfigurationId: js.UndefOr[__string] = js.undefined,
         MaxResults: js.UndefOr[__integer] = js.undefined,
@@ -1164,6 +1203,7 @@ package mq {
   }
 
   object ListConfigurationsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -1183,6 +1223,7 @@ package mq {
   }
 
   object ListConfigurationsResponse {
+    @inline
     def apply(
         Configurations: js.UndefOr[__listOfConfiguration] = js.undefined,
         MaxResults: js.UndefOr[__integer] = js.undefined,
@@ -1202,6 +1243,7 @@ package mq {
   }
 
   object ListTagsRequest {
+    @inline
     def apply(
         ResourceArn: __string
     ): ListTagsRequest = {
@@ -1219,6 +1261,7 @@ package mq {
   }
 
   object ListTagsResponse {
+    @inline
     def apply(
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): ListTagsResponse = {
@@ -1236,6 +1279,7 @@ package mq {
   }
 
   object ListUsersRequest {
+    @inline
     def apply(
         BrokerId: __string,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1260,6 +1304,7 @@ package mq {
   }
 
   object ListUsersResponse {
+    @inline
     def apply(
         BrokerId: js.UndefOr[__string] = js.undefined,
         MaxResults: js.UndefOr[__integerMin5Max100] = js.undefined,
@@ -1285,6 +1330,7 @@ package mq {
   }
 
   object Logs {
+    @inline
     def apply(
         Audit: js.UndefOr[__boolean] = js.undefined,
         General: js.UndefOr[__boolean] = js.undefined
@@ -1309,6 +1355,7 @@ package mq {
   }
 
   object LogsSummary {
+    @inline
     def apply(
         Audit: js.UndefOr[__boolean] = js.undefined,
         AuditLogGroup: js.UndefOr[__string] = js.undefined,
@@ -1336,6 +1383,7 @@ package mq {
   }
 
   object PendingLogs {
+    @inline
     def apply(
         Audit: js.UndefOr[__boolean] = js.undefined,
         General: js.UndefOr[__boolean] = js.undefined
@@ -1353,6 +1401,7 @@ package mq {
   }
 
   object RebootBrokerRequest {
+    @inline
     def apply(
         BrokerId: __string
     ): RebootBrokerRequest = {
@@ -1368,6 +1417,7 @@ package mq {
   trait RebootBrokerResponse extends js.Object {}
 
   object RebootBrokerResponse {
+    @inline
     def apply(
         ): RebootBrokerResponse = {
       val __obj = js.Dynamic.literal()
@@ -1387,6 +1437,7 @@ package mq {
   }
 
   object SanitizationWarning {
+    @inline
     def apply(
         AttributeName: js.UndefOr[__string] = js.undefined,
         ElementName: js.UndefOr[__string] = js.undefined,
@@ -1426,6 +1477,7 @@ package mq {
   }
 
   object UpdateBrokerRequest {
+    @inline
     def apply(
         BrokerId: __string,
         AutoMinorVersionUpgrade: js.UndefOr[__boolean] = js.undefined,
@@ -1455,6 +1507,7 @@ package mq {
   }
 
   object UpdateBrokerResponse {
+    @inline
     def apply(
         AutoMinorVersionUpgrade: js.UndefOr[__boolean] = js.undefined,
         BrokerId: js.UndefOr[__string] = js.undefined,
@@ -1483,6 +1536,7 @@ package mq {
   }
 
   object UpdateConfigurationRequest {
+    @inline
     def apply(
         ConfigurationId: __string,
         Data: js.UndefOr[__string] = js.undefined,
@@ -1509,6 +1563,7 @@ package mq {
   }
 
   object UpdateConfigurationResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         Created: js.UndefOr[__timestampIso8601] = js.undefined,
@@ -1541,6 +1596,7 @@ package mq {
   }
 
   object UpdateUserRequest {
+    @inline
     def apply(
         BrokerId: __string,
         Username: __string,
@@ -1564,6 +1620,7 @@ package mq {
   trait UpdateUserResponse extends js.Object {}
 
   object UpdateUserResponse {
+    @inline
     def apply(
         ): UpdateUserResponse = {
       val __obj = js.Dynamic.literal()
@@ -1584,6 +1641,7 @@ package mq {
   }
 
   object User {
+    @inline
     def apply(
         ConsoleAccess: js.UndefOr[__boolean] = js.undefined,
         Groups: js.UndefOr[__listOf__string] = js.undefined,
@@ -1610,6 +1668,7 @@ package mq {
   }
 
   object UserPendingChanges {
+    @inline
     def apply(
         ConsoleAccess: js.UndefOr[__boolean] = js.undefined,
         Groups: js.UndefOr[__listOf__string] = js.undefined,
@@ -1633,6 +1692,7 @@ package mq {
   }
 
   object UserSummary {
+    @inline
     def apply(
         PendingChange: js.UndefOr[ChangeType] = js.undefined,
         Username: js.UndefOr[__string] = js.undefined
@@ -1655,6 +1715,7 @@ package mq {
   }
 
   object WeeklyStartTime {
+    @inline
     def apply(
         DayOfWeek: js.UndefOr[DayOfWeek] = js.undefined,
         TimeOfDay: js.UndefOr[__string] = js.undefined,

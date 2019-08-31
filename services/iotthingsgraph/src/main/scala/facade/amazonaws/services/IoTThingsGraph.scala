@@ -217,6 +217,7 @@ package iotthingsgraph {
   }
 
   object AssociateEntityToThingRequest {
+    @inline
     def apply(
         entityId: Urn,
         thingName: ThingName,
@@ -236,6 +237,7 @@ package iotthingsgraph {
   trait AssociateEntityToThingResponse extends js.Object {}
 
   object AssociateEntityToThingResponse {
+    @inline
     def apply(
         ): AssociateEntityToThingResponse = {
       val __obj = js.Dynamic.literal()
@@ -251,6 +253,7 @@ package iotthingsgraph {
   }
 
   object CreateFlowTemplateRequest {
+    @inline
     def apply(
         definition: DefinitionDocument,
         compatibleNamespaceVersion: js.UndefOr[Version] = js.undefined
@@ -272,6 +275,7 @@ package iotthingsgraph {
   }
 
   object CreateFlowTemplateResponse {
+    @inline
     def apply(
         summary: js.UndefOr[FlowTemplateSummary] = js.undefined
     ): CreateFlowTemplateResponse = {
@@ -293,6 +297,7 @@ package iotthingsgraph {
   }
 
   object CreateSystemInstanceRequest {
+    @inline
     def apply(
         definition: DefinitionDocument,
         target: DeploymentTarget,
@@ -322,6 +327,7 @@ package iotthingsgraph {
   }
 
   object CreateSystemInstanceResponse {
+    @inline
     def apply(
         summary: js.UndefOr[SystemInstanceSummary] = js.undefined
     ): CreateSystemInstanceResponse = {
@@ -338,6 +344,7 @@ package iotthingsgraph {
   }
 
   object CreateSystemTemplateRequest {
+    @inline
     def apply(
         definition: DefinitionDocument,
         compatibleNamespaceVersion: js.UndefOr[Version] = js.undefined
@@ -359,6 +366,7 @@ package iotthingsgraph {
   }
 
   object CreateSystemTemplateResponse {
+    @inline
     def apply(
         summary: js.UndefOr[SystemTemplateSummary] = js.undefined
     ): CreateSystemTemplateResponse = {
@@ -378,6 +386,7 @@ package iotthingsgraph {
   }
 
   object DefinitionDocument {
+    @inline
     def apply(
         language: DefinitionLanguage,
         text: DefinitionText
@@ -403,6 +412,7 @@ package iotthingsgraph {
   }
 
   object DeleteFlowTemplateRequest {
+    @inline
     def apply(
         id: Urn
     ): DeleteFlowTemplateRequest = {
@@ -418,6 +428,7 @@ package iotthingsgraph {
   trait DeleteFlowTemplateResponse extends js.Object {}
 
   object DeleteFlowTemplateResponse {
+    @inline
     def apply(
         ): DeleteFlowTemplateResponse = {
       val __obj = js.Dynamic.literal()
@@ -430,6 +441,7 @@ package iotthingsgraph {
   trait DeleteNamespaceRequest extends js.Object {}
 
   object DeleteNamespaceRequest {
+    @inline
     def apply(
         ): DeleteNamespaceRequest = {
       val __obj = js.Dynamic.literal()
@@ -445,6 +457,7 @@ package iotthingsgraph {
   }
 
   object DeleteNamespaceResponse {
+    @inline
     def apply(
         namespaceArn: js.UndefOr[Arn] = js.undefined,
         namespaceName: js.UndefOr[NamespaceName] = js.undefined
@@ -462,6 +475,7 @@ package iotthingsgraph {
   }
 
   object DeleteSystemInstanceRequest {
+    @inline
     def apply(
         id: js.UndefOr[Urn] = js.undefined
     ): DeleteSystemInstanceRequest = {
@@ -475,6 +489,7 @@ package iotthingsgraph {
   trait DeleteSystemInstanceResponse extends js.Object {}
 
   object DeleteSystemInstanceResponse {
+    @inline
     def apply(
         ): DeleteSystemInstanceResponse = {
       val __obj = js.Dynamic.literal()
@@ -489,6 +504,7 @@ package iotthingsgraph {
   }
 
   object DeleteSystemTemplateRequest {
+    @inline
     def apply(
         id: Urn
     ): DeleteSystemTemplateRequest = {
@@ -504,6 +520,7 @@ package iotthingsgraph {
   trait DeleteSystemTemplateResponse extends js.Object {}
 
   object DeleteSystemTemplateResponse {
+    @inline
     def apply(
         ): DeleteSystemTemplateResponse = {
       val __obj = js.Dynamic.literal()
@@ -522,6 +539,7 @@ package iotthingsgraph {
   }
 
   object DependencyRevision {
+    @inline
     def apply(
         id: js.UndefOr[Urn] = js.undefined,
         revisionNumber: js.UndefOr[Version] = js.undefined
@@ -539,6 +557,7 @@ package iotthingsgraph {
   }
 
   object DeploySystemInstanceRequest {
+    @inline
     def apply(
         id: js.UndefOr[Urn] = js.undefined
     ): DeploySystemInstanceRequest = {
@@ -555,6 +574,7 @@ package iotthingsgraph {
   }
 
   object DeploySystemInstanceResponse {
+    @inline
     def apply(
         summary: SystemInstanceSummary,
         greengrassDeploymentId: js.UndefOr[GreengrassDeploymentId] = js.undefined
@@ -581,6 +601,7 @@ package iotthingsgraph {
   }
 
   object DeprecateFlowTemplateRequest {
+    @inline
     def apply(
         id: Urn
     ): DeprecateFlowTemplateRequest = {
@@ -596,6 +617,7 @@ package iotthingsgraph {
   trait DeprecateFlowTemplateResponse extends js.Object {}
 
   object DeprecateFlowTemplateResponse {
+    @inline
     def apply(
         ): DeprecateFlowTemplateResponse = {
       val __obj = js.Dynamic.literal()
@@ -610,6 +632,7 @@ package iotthingsgraph {
   }
 
   object DeprecateSystemTemplateRequest {
+    @inline
     def apply(
         id: Urn
     ): DeprecateSystemTemplateRequest = {
@@ -625,6 +648,7 @@ package iotthingsgraph {
   trait DeprecateSystemTemplateResponse extends js.Object {}
 
   object DeprecateSystemTemplateResponse {
+    @inline
     def apply(
         ): DeprecateSystemTemplateResponse = {
       val __obj = js.Dynamic.literal()
@@ -639,6 +663,7 @@ package iotthingsgraph {
   }
 
   object DescribeNamespaceRequest {
+    @inline
     def apply(
         namespaceName: js.UndefOr[NamespaceName] = js.undefined
     ): DescribeNamespaceRequest = {
@@ -658,6 +683,7 @@ package iotthingsgraph {
   }
 
   object DescribeNamespaceResponse {
+    @inline
     def apply(
         namespaceArn: js.UndefOr[Arn] = js.undefined,
         namespaceName: js.UndefOr[NamespaceName] = js.undefined,
@@ -682,6 +708,7 @@ package iotthingsgraph {
   }
 
   object DissociateEntityFromThingRequest {
+    @inline
     def apply(
         entityType: EntityType,
         thingName: ThingName
@@ -699,6 +726,7 @@ package iotthingsgraph {
   trait DissociateEntityFromThingResponse extends js.Object {}
 
   object DissociateEntityFromThingResponse {
+    @inline
     def apply(
         ): DissociateEntityFromThingResponse = {
       val __obj = js.Dynamic.literal()
@@ -720,6 +748,7 @@ package iotthingsgraph {
   }
 
   object EntityDescription {
+    @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         createdAt: js.UndefOr[Timestamp] = js.undefined,
@@ -747,6 +776,7 @@ package iotthingsgraph {
   }
 
   object EntityFilter {
+    @inline
     def apply(
         name: js.UndefOr[EntityFilterName] = js.undefined,
         value: js.UndefOr[EntityFilterValues] = js.undefined
@@ -838,6 +868,7 @@ package iotthingsgraph {
   }
 
   object FlowExecutionMessage {
+    @inline
     def apply(
         eventType: js.UndefOr[FlowExecutionEventType] = js.undefined,
         messageId: js.UndefOr[FlowExecutionMessageId] = js.undefined,
@@ -876,6 +907,7 @@ package iotthingsgraph {
   }
 
   object FlowExecutionSummary {
+    @inline
     def apply(
         createdAt: js.UndefOr[Timestamp] = js.undefined,
         flowExecutionId: js.UndefOr[FlowExecutionId] = js.undefined,
@@ -906,6 +938,7 @@ package iotthingsgraph {
   }
 
   object FlowTemplateDescription {
+    @inline
     def apply(
         definition: js.UndefOr[DefinitionDocument] = js.undefined,
         summary: js.UndefOr[FlowTemplateSummary] = js.undefined,
@@ -931,6 +964,7 @@ package iotthingsgraph {
   }
 
   object FlowTemplateFilter {
+    @inline
     def apply(
         name: FlowTemplateFilterName,
         value: FlowTemplateFilterValues
@@ -962,6 +996,7 @@ package iotthingsgraph {
   }
 
   object FlowTemplateSummary {
+    @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         createdAt: js.UndefOr[Timestamp] = js.undefined,
@@ -984,6 +1019,7 @@ package iotthingsgraph {
   }
 
   object GetEntitiesRequest {
+    @inline
     def apply(
         ids: Urns,
         namespaceVersion: js.UndefOr[Version] = js.undefined
@@ -1003,6 +1039,7 @@ package iotthingsgraph {
   }
 
   object GetEntitiesResponse {
+    @inline
     def apply(
         descriptions: js.UndefOr[EntityDescriptions] = js.undefined
     ): GetEntitiesResponse = {
@@ -1019,6 +1056,7 @@ package iotthingsgraph {
   }
 
   object GetFlowTemplateRequest {
+    @inline
     def apply(
         id: Urn,
         revisionNumber: js.UndefOr[Version] = js.undefined
@@ -1038,6 +1076,7 @@ package iotthingsgraph {
   }
 
   object GetFlowTemplateResponse {
+    @inline
     def apply(
         description: js.UndefOr[FlowTemplateDescription] = js.undefined
     ): GetFlowTemplateResponse = {
@@ -1055,6 +1094,7 @@ package iotthingsgraph {
   }
 
   object GetFlowTemplateRevisionsRequest {
+    @inline
     def apply(
         id: Urn,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1077,6 +1117,7 @@ package iotthingsgraph {
   }
 
   object GetFlowTemplateRevisionsResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         summaries: js.UndefOr[FlowTemplateSummaries] = js.undefined
@@ -1092,6 +1133,7 @@ package iotthingsgraph {
   trait GetNamespaceDeletionStatusRequest extends js.Object {}
 
   object GetNamespaceDeletionStatusRequest {
+    @inline
     def apply(
         ): GetNamespaceDeletionStatusRequest = {
       val __obj = js.Dynamic.literal()
@@ -1110,6 +1152,7 @@ package iotthingsgraph {
   }
 
   object GetNamespaceDeletionStatusResponse {
+    @inline
     def apply(
         errorCode: js.UndefOr[NamespaceDeletionStatusErrorCodes] = js.undefined,
         errorMessage: js.UndefOr[String] = js.undefined,
@@ -1133,6 +1176,7 @@ package iotthingsgraph {
   }
 
   object GetSystemInstanceRequest {
+    @inline
     def apply(
         id: Urn
     ): GetSystemInstanceRequest = {
@@ -1150,6 +1194,7 @@ package iotthingsgraph {
   }
 
   object GetSystemInstanceResponse {
+    @inline
     def apply(
         description: js.UndefOr[SystemInstanceDescription] = js.undefined
     ): GetSystemInstanceResponse = {
@@ -1166,6 +1211,7 @@ package iotthingsgraph {
   }
 
   object GetSystemTemplateRequest {
+    @inline
     def apply(
         id: Urn,
         revisionNumber: js.UndefOr[Version] = js.undefined
@@ -1185,6 +1231,7 @@ package iotthingsgraph {
   }
 
   object GetSystemTemplateResponse {
+    @inline
     def apply(
         description: js.UndefOr[SystemTemplateDescription] = js.undefined
     ): GetSystemTemplateResponse = {
@@ -1202,6 +1249,7 @@ package iotthingsgraph {
   }
 
   object GetSystemTemplateRevisionsRequest {
+    @inline
     def apply(
         id: Urn,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1224,6 +1272,7 @@ package iotthingsgraph {
   }
 
   object GetSystemTemplateRevisionsResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         summaries: js.UndefOr[SystemTemplateSummaries] = js.undefined
@@ -1241,6 +1290,7 @@ package iotthingsgraph {
   }
 
   object GetUploadStatusRequest {
+    @inline
     def apply(
         uploadId: UploadId
     ): GetUploadStatusRequest = {
@@ -1264,6 +1314,7 @@ package iotthingsgraph {
   }
 
   object GetUploadStatusResponse {
+    @inline
     def apply(
         createdDate: Timestamp,
         uploadId: UploadId,
@@ -1295,6 +1346,7 @@ package iotthingsgraph {
   }
 
   object ListFlowExecutionMessagesRequest {
+    @inline
     def apply(
         flowExecutionId: FlowExecutionId,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1317,6 +1369,7 @@ package iotthingsgraph {
   }
 
   object ListFlowExecutionMessagesResponse {
+    @inline
     def apply(
         messages: js.UndefOr[FlowExecutionMessages] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1336,6 +1389,7 @@ package iotthingsgraph {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         resourceArn: ResourceArn,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1358,6 +1412,7 @@ package iotthingsgraph {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
@@ -1379,6 +1434,7 @@ package iotthingsgraph {
   }
 
   object MetricsConfiguration {
+    @inline
     def apply(
         cloudMetricEnabled: js.UndefOr[Enabled] = js.undefined,
         metricRuleRoleArn: js.UndefOr[RoleArn] = js.undefined
@@ -1414,6 +1470,7 @@ package iotthingsgraph {
   }
 
   object SearchEntitiesRequest {
+    @inline
     def apply(
         entityTypes: EntityTypes,
         filters: js.UndefOr[EntityFilters] = js.undefined,
@@ -1440,6 +1497,7 @@ package iotthingsgraph {
   }
 
   object SearchEntitiesResponse {
+    @inline
     def apply(
         descriptions: js.UndefOr[EntityDescriptions] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
@@ -1462,6 +1520,7 @@ package iotthingsgraph {
   }
 
   object SearchFlowExecutionsRequest {
+    @inline
     def apply(
         systemInstanceId: Urn,
         endTime: js.UndefOr[Timestamp] = js.undefined,
@@ -1490,6 +1549,7 @@ package iotthingsgraph {
   }
 
   object SearchFlowExecutionsResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         summaries: js.UndefOr[FlowExecutionSummaries] = js.undefined
@@ -1509,6 +1569,7 @@ package iotthingsgraph {
   }
 
   object SearchFlowTemplatesRequest {
+    @inline
     def apply(
         filters: js.UndefOr[FlowTemplateFilters] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1529,6 +1590,7 @@ package iotthingsgraph {
   }
 
   object SearchFlowTemplatesResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         summaries: js.UndefOr[FlowTemplateSummaries] = js.undefined
@@ -1548,6 +1610,7 @@ package iotthingsgraph {
   }
 
   object SearchSystemInstancesRequest {
+    @inline
     def apply(
         filters: js.UndefOr[SystemInstanceFilters] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1568,6 +1631,7 @@ package iotthingsgraph {
   }
 
   object SearchSystemInstancesResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         summaries: js.UndefOr[SystemInstanceSummaries] = js.undefined
@@ -1587,6 +1651,7 @@ package iotthingsgraph {
   }
 
   object SearchSystemTemplatesRequest {
+    @inline
     def apply(
         filters: js.UndefOr[SystemTemplateFilters] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1607,6 +1672,7 @@ package iotthingsgraph {
   }
 
   object SearchSystemTemplatesResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         summaries: js.UndefOr[SystemTemplateSummaries] = js.undefined
@@ -1627,6 +1693,7 @@ package iotthingsgraph {
   }
 
   object SearchThingsRequest {
+    @inline
     def apply(
         entityId: Urn,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1651,6 +1718,7 @@ package iotthingsgraph {
   }
 
   object SearchThingsResponse {
+    @inline
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined,
         things: js.UndefOr[Things] = js.undefined
@@ -1701,6 +1769,7 @@ package iotthingsgraph {
   }
 
   object SystemInstanceDescription {
+    @inline
     def apply(
         definition: js.UndefOr[DefinitionDocument] = js.undefined,
         flowActionsRoleArn: js.UndefOr[RoleArn] = js.undefined,
@@ -1736,6 +1805,7 @@ package iotthingsgraph {
   }
 
   object SystemInstanceFilter {
+    @inline
     def apply(
         name: js.UndefOr[SystemInstanceFilterName] = js.undefined,
         value: js.UndefOr[SystemInstanceFilterValues] = js.undefined
@@ -1772,6 +1842,7 @@ package iotthingsgraph {
   }
 
   object SystemInstanceSummary {
+    @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         createdAt: js.UndefOr[Timestamp] = js.undefined,
@@ -1808,6 +1879,7 @@ package iotthingsgraph {
   }
 
   object SystemTemplateDescription {
+    @inline
     def apply(
         definition: js.UndefOr[DefinitionDocument] = js.undefined,
         summary: js.UndefOr[SystemTemplateSummary] = js.undefined,
@@ -1833,6 +1905,7 @@ package iotthingsgraph {
   }
 
   object SystemTemplateFilter {
+    @inline
     def apply(
         name: SystemTemplateFilterName,
         value: SystemTemplateFilterValues
@@ -1864,6 +1937,7 @@ package iotthingsgraph {
   }
 
   object SystemTemplateSummary {
+    @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
         createdAt: js.UndefOr[Timestamp] = js.undefined,
@@ -1889,6 +1963,7 @@ package iotthingsgraph {
   }
 
   object Tag {
+    @inline
     def apply(
         key: TagKey,
         value: TagValue
@@ -1909,6 +1984,7 @@ package iotthingsgraph {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         resourceArn: ResourceArn,
         tags: TagList
@@ -1926,6 +2002,7 @@ package iotthingsgraph {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1944,6 +2021,7 @@ package iotthingsgraph {
   }
 
   object Thing {
+    @inline
     def apply(
         thingArn: js.UndefOr[ThingArn] = js.undefined,
         thingName: js.UndefOr[ThingName] = js.undefined
@@ -1961,6 +2039,7 @@ package iotthingsgraph {
   }
 
   object UndeploySystemInstanceRequest {
+    @inline
     def apply(
         id: js.UndefOr[Urn] = js.undefined
     ): UndeploySystemInstanceRequest = {
@@ -1976,6 +2055,7 @@ package iotthingsgraph {
   }
 
   object UndeploySystemInstanceResponse {
+    @inline
     def apply(
         summary: js.UndefOr[SystemInstanceSummary] = js.undefined
     ): UndeploySystemInstanceResponse = {
@@ -1992,6 +2072,7 @@ package iotthingsgraph {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         resourceArn: ResourceArn,
         tagKeys: TagKeyList
@@ -2009,6 +2090,7 @@ package iotthingsgraph {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -2025,6 +2107,7 @@ package iotthingsgraph {
   }
 
   object UpdateFlowTemplateRequest {
+    @inline
     def apply(
         definition: DefinitionDocument,
         id: Urn,
@@ -2048,6 +2131,7 @@ package iotthingsgraph {
   }
 
   object UpdateFlowTemplateResponse {
+    @inline
     def apply(
         summary: js.UndefOr[FlowTemplateSummary] = js.undefined
     ): UpdateFlowTemplateResponse = {
@@ -2065,6 +2149,7 @@ package iotthingsgraph {
   }
 
   object UpdateSystemTemplateRequest {
+    @inline
     def apply(
         definition: DefinitionDocument,
         id: Urn,
@@ -2088,6 +2173,7 @@ package iotthingsgraph {
   }
 
   object UpdateSystemTemplateResponse {
+    @inline
     def apply(
         summary: js.UndefOr[SystemTemplateSummary] = js.undefined
     ): UpdateSystemTemplateResponse = {
@@ -2105,6 +2191,7 @@ package iotthingsgraph {
   }
 
   object UploadEntityDefinitionsRequest {
+    @inline
     def apply(
         deprecateExistingEntities: js.UndefOr[DeprecateExistingEntities] = js.undefined,
         document: js.UndefOr[DefinitionDocument] = js.undefined,
@@ -2126,6 +2213,7 @@ package iotthingsgraph {
   }
 
   object UploadEntityDefinitionsResponse {
+    @inline
     def apply(
         uploadId: UploadId
     ): UploadEntityDefinitionsResponse = {

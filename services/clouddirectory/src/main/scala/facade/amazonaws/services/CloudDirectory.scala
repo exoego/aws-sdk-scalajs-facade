@@ -319,6 +319,7 @@ package clouddirectory {
   }
 
   object AddFacetToObjectRequest {
+    @inline
     def apply(
         DirectoryArn: Arn,
         ObjectReference: ObjectReference,
@@ -340,6 +341,7 @@ package clouddirectory {
   trait AddFacetToObjectResponse extends js.Object {}
 
   object AddFacetToObjectResponse {
+    @inline
     def apply(
         ): AddFacetToObjectResponse = {
       val __obj = js.Dynamic.literal()
@@ -355,6 +357,7 @@ package clouddirectory {
   }
 
   object ApplySchemaRequest {
+    @inline
     def apply(
         DirectoryArn: Arn,
         PublishedSchemaArn: Arn
@@ -375,6 +378,7 @@ package clouddirectory {
   }
 
   object ApplySchemaResponse {
+    @inline
     def apply(
         AppliedSchemaArn: js.UndefOr[Arn] = js.undefined,
         DirectoryArn: js.UndefOr[Arn] = js.undefined
@@ -395,6 +399,7 @@ package clouddirectory {
   }
 
   object AttachObjectRequest {
+    @inline
     def apply(
         ChildReference: ObjectReference,
         DirectoryArn: Arn,
@@ -418,6 +423,7 @@ package clouddirectory {
   }
 
   object AttachObjectResponse {
+    @inline
     def apply(
         AttachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
     ): AttachObjectResponse = {
@@ -435,6 +441,7 @@ package clouddirectory {
   }
 
   object AttachPolicyRequest {
+    @inline
     def apply(
         DirectoryArn: Arn,
         ObjectReference: ObjectReference,
@@ -454,6 +461,7 @@ package clouddirectory {
   trait AttachPolicyResponse extends js.Object {}
 
   object AttachPolicyResponse {
+    @inline
     def apply(
         ): AttachPolicyResponse = {
       val __obj = js.Dynamic.literal()
@@ -470,6 +478,7 @@ package clouddirectory {
   }
 
   object AttachToIndexRequest {
+    @inline
     def apply(
         DirectoryArn: Arn,
         IndexReference: ObjectReference,
@@ -491,6 +500,7 @@ package clouddirectory {
   }
 
   object AttachToIndexResponse {
+    @inline
     def apply(
         AttachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
     ): AttachToIndexResponse = {
@@ -510,6 +520,7 @@ package clouddirectory {
   }
 
   object AttachTypedLinkRequest {
+    @inline
     def apply(
         Attributes: AttributeNameAndValueList,
         DirectoryArn: Arn,
@@ -535,6 +546,7 @@ package clouddirectory {
   }
 
   object AttachTypedLinkResponse {
+    @inline
     def apply(
         TypedLinkSpecifier: js.UndefOr[TypedLinkSpecifier] = js.undefined
     ): AttachTypedLinkResponse = {
@@ -555,6 +567,7 @@ package clouddirectory {
   }
 
   object AttributeKey {
+    @inline
     def apply(
         FacetName: FacetName,
         Name: AttributeName,
@@ -580,6 +593,7 @@ package clouddirectory {
   }
 
   object AttributeKeyAndValue {
+    @inline
     def apply(
         Key: AttributeKey,
         Value: TypedAttributeValue
@@ -603,6 +617,7 @@ package clouddirectory {
   }
 
   object AttributeNameAndValue {
+    @inline
     def apply(
         AttributeName: AttributeName,
         Value: TypedAttributeValue
@@ -627,6 +642,7 @@ package clouddirectory {
   }
 
   object BatchAddFacetToObject {
+    @inline
     def apply(
         ObjectAttributeList: AttributeKeyAndValueList,
         ObjectReference: ObjectReference,
@@ -649,6 +665,7 @@ package clouddirectory {
   trait BatchAddFacetToObjectResponse extends js.Object {}
 
   object BatchAddFacetToObjectResponse {
+    @inline
     def apply(
         ): BatchAddFacetToObjectResponse = {
       val __obj = js.Dynamic.literal()
@@ -668,6 +685,7 @@ package clouddirectory {
   }
 
   object BatchAttachObject {
+    @inline
     def apply(
         ChildReference: ObjectReference,
         LinkName: LinkName,
@@ -692,6 +710,7 @@ package clouddirectory {
   }
 
   object BatchAttachObjectResponse {
+    @inline
     def apply(
         attachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
     ): BatchAttachObjectResponse = {
@@ -711,6 +730,7 @@ package clouddirectory {
   }
 
   object BatchAttachPolicy {
+    @inline
     def apply(
         ObjectReference: ObjectReference,
         PolicyReference: ObjectReference
@@ -731,6 +751,7 @@ package clouddirectory {
   trait BatchAttachPolicyResponse extends js.Object {}
 
   object BatchAttachPolicyResponse {
+    @inline
     def apply(
         ): BatchAttachPolicyResponse = {
       val __obj = js.Dynamic.literal()
@@ -749,6 +770,7 @@ package clouddirectory {
   }
 
   object BatchAttachToIndex {
+    @inline
     def apply(
         IndexReference: ObjectReference,
         TargetReference: ObjectReference
@@ -771,6 +793,7 @@ package clouddirectory {
   }
 
   object BatchAttachToIndexResponse {
+    @inline
     def apply(
         AttachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
     ): BatchAttachToIndexResponse = {
@@ -792,6 +815,7 @@ package clouddirectory {
   }
 
   object BatchAttachTypedLink {
+    @inline
     def apply(
         Attributes: AttributeNameAndValueList,
         SourceObjectReference: ObjectReference,
@@ -818,6 +842,7 @@ package clouddirectory {
   }
 
   object BatchAttachTypedLinkResponse {
+    @inline
     def apply(
         TypedLinkSpecifier: js.UndefOr[TypedLinkSpecifier] = js.undefined
     ): BatchAttachTypedLinkResponse = {
@@ -840,6 +865,7 @@ package clouddirectory {
   }
 
   object BatchCreateIndex {
+    @inline
     def apply(
         IsUnique: Boolean,
         OrderedIndexedAttributeList: AttributeKeyList,
@@ -868,6 +894,7 @@ package clouddirectory {
   }
 
   object BatchCreateIndexResponse {
+    @inline
     def apply(
         ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
     ): BatchCreateIndexResponse = {
@@ -890,6 +917,7 @@ package clouddirectory {
   }
 
   object BatchCreateObject {
+    @inline
     def apply(
         ObjectAttributeList: AttributeKeyAndValueList,
         SchemaFacet: SchemaFacetList,
@@ -918,6 +946,7 @@ package clouddirectory {
   }
 
   object BatchCreateObjectResponse {
+    @inline
     def apply(
         ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
     ): BatchCreateObjectResponse = {
@@ -936,6 +965,7 @@ package clouddirectory {
   }
 
   object BatchDeleteObject {
+    @inline
     def apply(
         ObjectReference: ObjectReference
     ): BatchDeleteObject = {
@@ -954,6 +984,7 @@ package clouddirectory {
   trait BatchDeleteObjectResponse extends js.Object {}
 
   object BatchDeleteObjectResponse {
+    @inline
     def apply(
         ): BatchDeleteObjectResponse = {
       val __obj = js.Dynamic.literal()
@@ -972,6 +1003,7 @@ package clouddirectory {
   }
 
   object BatchDetachFromIndex {
+    @inline
     def apply(
         IndexReference: ObjectReference,
         TargetReference: ObjectReference
@@ -994,6 +1026,7 @@ package clouddirectory {
   }
 
   object BatchDetachFromIndexResponse {
+    @inline
     def apply(
         DetachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
     ): BatchDetachFromIndexResponse = {
@@ -1014,6 +1047,7 @@ package clouddirectory {
   }
 
   object BatchDetachObject {
+    @inline
     def apply(
         LinkName: LinkName,
         ParentReference: ObjectReference,
@@ -1038,6 +1072,7 @@ package clouddirectory {
   }
 
   object BatchDetachObjectResponse {
+    @inline
     def apply(
         detachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
     ): BatchDetachObjectResponse = {
@@ -1057,6 +1092,7 @@ package clouddirectory {
   }
 
   object BatchDetachPolicy {
+    @inline
     def apply(
         ObjectReference: ObjectReference,
         PolicyReference: ObjectReference
@@ -1077,6 +1113,7 @@ package clouddirectory {
   trait BatchDetachPolicyResponse extends js.Object {}
 
   object BatchDetachPolicyResponse {
+    @inline
     def apply(
         ): BatchDetachPolicyResponse = {
       val __obj = js.Dynamic.literal()
@@ -1094,6 +1131,7 @@ package clouddirectory {
   }
 
   object BatchDetachTypedLink {
+    @inline
     def apply(
         TypedLinkSpecifier: TypedLinkSpecifier
     ): BatchDetachTypedLink = {
@@ -1112,6 +1150,7 @@ package clouddirectory {
   trait BatchDetachTypedLinkResponse extends js.Object {}
 
   object BatchDetachTypedLinkResponse {
+    @inline
     def apply(
         ): BatchDetachTypedLinkResponse = {
       val __obj = js.Dynamic.literal()
@@ -1130,6 +1169,7 @@ package clouddirectory {
   }
 
   object BatchGetLinkAttributes {
+    @inline
     def apply(
         AttributeNames: AttributeNameList,
         TypedLinkSpecifier: TypedLinkSpecifier
@@ -1152,6 +1192,7 @@ package clouddirectory {
   }
 
   object BatchGetLinkAttributesResponse {
+    @inline
     def apply(
         Attributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined
     ): BatchGetLinkAttributesResponse = {
@@ -1172,6 +1213,7 @@ package clouddirectory {
   }
 
   object BatchGetObjectAttributes {
+    @inline
     def apply(
         AttributeNames: AttributeNameList,
         ObjectReference: ObjectReference,
@@ -1196,6 +1238,7 @@ package clouddirectory {
   }
 
   object BatchGetObjectAttributesResponse {
+    @inline
     def apply(
         Attributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined
     ): BatchGetObjectAttributesResponse = {
@@ -1214,6 +1257,7 @@ package clouddirectory {
   }
 
   object BatchGetObjectInformation {
+    @inline
     def apply(
         ObjectReference: ObjectReference
     ): BatchGetObjectInformation = {
@@ -1235,6 +1279,7 @@ package clouddirectory {
   }
 
   object BatchGetObjectInformationResponse {
+    @inline
     def apply(
         ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined,
         SchemaFacets: js.UndefOr[SchemaFacetList] = js.undefined
@@ -1257,6 +1302,7 @@ package clouddirectory {
   }
 
   object BatchListAttachedIndices {
+    @inline
     def apply(
         TargetReference: ObjectReference,
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
@@ -1282,6 +1328,7 @@ package clouddirectory {
   }
 
   object BatchListAttachedIndicesResponse {
+    @inline
     def apply(
         IndexAttachments: js.UndefOr[IndexAttachmentList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1306,6 +1353,7 @@ package clouddirectory {
   }
 
   object BatchListIncomingTypedLinks {
+    @inline
     def apply(
         ObjectReference: ObjectReference,
         FilterAttributeRanges: js.UndefOr[TypedLinkAttributeRangeList] = js.undefined,
@@ -1335,6 +1383,7 @@ package clouddirectory {
   }
 
   object BatchListIncomingTypedLinksResponse {
+    @inline
     def apply(
         LinkSpecifiers: js.UndefOr[TypedLinkSpecifierList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1358,6 +1407,7 @@ package clouddirectory {
   }
 
   object BatchListIndex {
+    @inline
     def apply(
         IndexReference: ObjectReference,
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
@@ -1385,6 +1435,7 @@ package clouddirectory {
   }
 
   object BatchListIndexResponse {
+    @inline
     def apply(
         IndexAttachments: js.UndefOr[IndexAttachmentList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1408,6 +1459,7 @@ package clouddirectory {
   }
 
   object BatchListObjectAttributes {
+    @inline
     def apply(
         ObjectReference: ObjectReference,
         FacetFilter: js.UndefOr[SchemaFacet] = js.undefined,
@@ -1435,6 +1487,7 @@ package clouddirectory {
   }
 
   object BatchListObjectAttributesResponse {
+    @inline
     def apply(
         Attributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1457,6 +1510,7 @@ package clouddirectory {
   }
 
   object BatchListObjectChildren {
+    @inline
     def apply(
         ObjectReference: ObjectReference,
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
@@ -1482,6 +1536,7 @@ package clouddirectory {
   }
 
   object BatchListObjectChildrenResponse {
+    @inline
     def apply(
         Children: js.UndefOr[LinkNameToObjectIdentifierMap] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1504,6 +1559,7 @@ package clouddirectory {
   }
 
   object BatchListObjectParentPaths {
+    @inline
     def apply(
         ObjectReference: ObjectReference,
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
@@ -1529,6 +1585,7 @@ package clouddirectory {
   }
 
   object BatchListObjectParentPathsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PathToObjectIdentifiersList: js.UndefOr[PathToObjectIdentifiersList] = js.undefined
@@ -1550,6 +1607,7 @@ package clouddirectory {
   }
 
   object BatchListObjectParents {
+    @inline
     def apply(
         ObjectReference: ObjectReference,
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
@@ -1572,6 +1630,7 @@ package clouddirectory {
   }
 
   object BatchListObjectParentsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ParentLinks: js.UndefOr[ObjectIdentifierAndLinkNameList] = js.undefined
@@ -1594,6 +1653,7 @@ package clouddirectory {
   }
 
   object BatchListObjectPolicies {
+    @inline
     def apply(
         ObjectReference: ObjectReference,
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
@@ -1619,6 +1679,7 @@ package clouddirectory {
   }
 
   object BatchListObjectPoliciesResponse {
+    @inline
     def apply(
         AttachedPolicyIds: js.UndefOr[ObjectIdentifierList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -1643,6 +1704,7 @@ package clouddirectory {
   }
 
   object BatchListOutgoingTypedLinks {
+    @inline
     def apply(
         ObjectReference: ObjectReference,
         FilterAttributeRanges: js.UndefOr[TypedLinkAttributeRangeList] = js.undefined,
@@ -1672,6 +1734,7 @@ package clouddirectory {
   }
 
   object BatchListOutgoingTypedLinksResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         TypedLinkSpecifiers: js.UndefOr[TypedLinkSpecifierList] = js.undefined
@@ -1694,6 +1757,7 @@ package clouddirectory {
   }
 
   object BatchListPolicyAttachments {
+    @inline
     def apply(
         PolicyReference: ObjectReference,
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
@@ -1719,6 +1783,7 @@ package clouddirectory {
   }
 
   object BatchListPolicyAttachmentsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ObjectIdentifiers: js.UndefOr[ObjectIdentifierList] = js.undefined
@@ -1741,6 +1806,7 @@ package clouddirectory {
   }
 
   object BatchLookupPolicy {
+    @inline
     def apply(
         ObjectReference: ObjectReference,
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
@@ -1766,6 +1832,7 @@ package clouddirectory {
   }
 
   object BatchLookupPolicyResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PolicyToPathList: js.UndefOr[PolicyToPathList] = js.undefined
@@ -1787,6 +1854,7 @@ package clouddirectory {
   }
 
   object BatchReadException {
+    @inline
     def apply(
         Message: js.UndefOr[ExceptionMessage] = js.undefined,
         Type: js.UndefOr[BatchReadExceptionType] = js.undefined
@@ -1854,6 +1922,7 @@ package clouddirectory {
   }
 
   object BatchReadOperation {
+    @inline
     def apply(
         GetLinkAttributes: js.UndefOr[BatchGetLinkAttributes] = js.undefined,
         GetObjectAttributes: js.UndefOr[BatchGetObjectAttributes] = js.undefined,
@@ -1899,6 +1968,7 @@ package clouddirectory {
   }
 
   object BatchReadOperationResponse {
+    @inline
     def apply(
         ExceptionResponse: js.UndefOr[BatchReadException] = js.undefined,
         SuccessfulResponse: js.UndefOr[BatchReadSuccessfulResponse] = js.undefined
@@ -1918,6 +1988,7 @@ package clouddirectory {
   }
 
   object BatchReadRequest {
+    @inline
     def apply(
         DirectoryArn: Arn,
         Operations: BatchReadOperationList,
@@ -1939,6 +2010,7 @@ package clouddirectory {
   }
 
   object BatchReadResponse {
+    @inline
     def apply(
         Responses: js.UndefOr[BatchReadOperationResponseList] = js.undefined
     ): BatchReadResponse = {
@@ -1970,6 +2042,7 @@ package clouddirectory {
   }
 
   object BatchReadSuccessfulResponse {
+    @inline
     def apply(
         GetLinkAttributes: js.UndefOr[BatchGetLinkAttributesResponse] = js.undefined,
         GetObjectAttributes: js.UndefOr[BatchGetObjectAttributesResponse] = js.undefined,
@@ -2015,6 +2088,7 @@ package clouddirectory {
   }
 
   object BatchRemoveFacetFromObject {
+    @inline
     def apply(
         ObjectReference: ObjectReference,
         SchemaFacet: SchemaFacet
@@ -2035,6 +2109,7 @@ package clouddirectory {
   trait BatchRemoveFacetFromObjectResponse extends js.Object {}
 
   object BatchRemoveFacetFromObjectResponse {
+    @inline
     def apply(
         ): BatchRemoveFacetFromObjectResponse = {
       val __obj = js.Dynamic.literal()
@@ -2053,6 +2128,7 @@ package clouddirectory {
   }
 
   object BatchUpdateLinkAttributes {
+    @inline
     def apply(
         AttributeUpdates: LinkAttributeUpdateList,
         TypedLinkSpecifier: TypedLinkSpecifier
@@ -2073,6 +2149,7 @@ package clouddirectory {
   trait BatchUpdateLinkAttributesResponse extends js.Object {}
 
   object BatchUpdateLinkAttributesResponse {
+    @inline
     def apply(
         ): BatchUpdateLinkAttributesResponse = {
       val __obj = js.Dynamic.literal()
@@ -2091,6 +2168,7 @@ package clouddirectory {
   }
 
   object BatchUpdateObjectAttributes {
+    @inline
     def apply(
         AttributeUpdates: ObjectAttributeUpdateList,
         ObjectReference: ObjectReference
@@ -2113,6 +2191,7 @@ package clouddirectory {
   }
 
   object BatchUpdateObjectAttributesResponse {
+    @inline
     def apply(
         ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
     ): BatchUpdateObjectAttributesResponse = {
@@ -2145,6 +2224,7 @@ package clouddirectory {
   }
 
   object BatchWriteOperation {
+    @inline
     def apply(
         AddFacetToObject: js.UndefOr[BatchAddFacetToObject] = js.undefined,
         AttachObject: js.UndefOr[BatchAttachObject] = js.undefined,
@@ -2205,6 +2285,7 @@ package clouddirectory {
   }
 
   object BatchWriteOperationResponse {
+    @inline
     def apply(
         AddFacetToObject: js.UndefOr[BatchAddFacetToObjectResponse] = js.undefined,
         AttachObject: js.UndefOr[BatchAttachObjectResponse] = js.undefined,
@@ -2249,6 +2330,7 @@ package clouddirectory {
   }
 
   object BatchWriteRequest {
+    @inline
     def apply(
         DirectoryArn: Arn,
         Operations: BatchWriteOperationList
@@ -2268,6 +2350,7 @@ package clouddirectory {
   }
 
   object BatchWriteResponse {
+    @inline
     def apply(
         Responses: js.UndefOr[BatchWriteOperationResponseList] = js.undefined
     ): BatchWriteResponse = {
@@ -2291,6 +2374,7 @@ package clouddirectory {
   }
 
   object CreateDirectoryRequest {
+    @inline
     def apply(
         Name: DirectoryName,
         SchemaArn: Arn
@@ -2313,6 +2397,7 @@ package clouddirectory {
   }
 
   object CreateDirectoryResponse {
+    @inline
     def apply(
         AppliedSchemaArn: Arn,
         DirectoryArn: DirectoryArn,
@@ -2340,6 +2425,7 @@ package clouddirectory {
   }
 
   object CreateFacetRequest {
+    @inline
     def apply(
         Name: FacetName,
         SchemaArn: Arn,
@@ -2363,6 +2449,7 @@ package clouddirectory {
   trait CreateFacetResponse extends js.Object {}
 
   object CreateFacetResponse {
+    @inline
     def apply(
         ): CreateFacetResponse = {
       val __obj = js.Dynamic.literal()
@@ -2381,6 +2468,7 @@ package clouddirectory {
   }
 
   object CreateIndexRequest {
+    @inline
     def apply(
         DirectoryArn: Arn,
         IsUnique: Boolean,
@@ -2406,6 +2494,7 @@ package clouddirectory {
   }
 
   object CreateIndexResponse {
+    @inline
     def apply(
         ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
     ): CreateIndexResponse = {
@@ -2425,6 +2514,7 @@ package clouddirectory {
   }
 
   object CreateObjectRequest {
+    @inline
     def apply(
         DirectoryArn: Arn,
         SchemaFacets: SchemaFacetList,
@@ -2450,6 +2540,7 @@ package clouddirectory {
   }
 
   object CreateObjectResponse {
+    @inline
     def apply(
         ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
     ): CreateObjectResponse = {
@@ -2465,6 +2556,7 @@ package clouddirectory {
   }
 
   object CreateSchemaRequest {
+    @inline
     def apply(
         Name: SchemaName
     ): CreateSchemaRequest = {
@@ -2482,6 +2574,7 @@ package clouddirectory {
   }
 
   object CreateSchemaResponse {
+    @inline
     def apply(
         SchemaArn: js.UndefOr[Arn] = js.undefined
     ): CreateSchemaResponse = {
@@ -2498,6 +2591,7 @@ package clouddirectory {
   }
 
   object CreateTypedLinkFacetRequest {
+    @inline
     def apply(
         Facet: TypedLinkFacet,
         SchemaArn: Arn
@@ -2515,6 +2609,7 @@ package clouddirectory {
   trait CreateTypedLinkFacetResponse extends js.Object {}
 
   object CreateTypedLinkFacetResponse {
+    @inline
     def apply(
         ): CreateTypedLinkFacetResponse = {
       val __obj = js.Dynamic.literal()
@@ -2529,6 +2624,7 @@ package clouddirectory {
   }
 
   object DeleteDirectoryRequest {
+    @inline
     def apply(
         DirectoryArn: Arn
     ): DeleteDirectoryRequest = {
@@ -2546,6 +2642,7 @@ package clouddirectory {
   }
 
   object DeleteDirectoryResponse {
+    @inline
     def apply(
         DirectoryArn: Arn
     ): DeleteDirectoryResponse = {
@@ -2564,6 +2661,7 @@ package clouddirectory {
   }
 
   object DeleteFacetRequest {
+    @inline
     def apply(
         Name: FacetName,
         SchemaArn: Arn
@@ -2581,6 +2679,7 @@ package clouddirectory {
   trait DeleteFacetResponse extends js.Object {}
 
   object DeleteFacetResponse {
+    @inline
     def apply(
         ): DeleteFacetResponse = {
       val __obj = js.Dynamic.literal()
@@ -2596,6 +2695,7 @@ package clouddirectory {
   }
 
   object DeleteObjectRequest {
+    @inline
     def apply(
         DirectoryArn: Arn,
         ObjectReference: ObjectReference
@@ -2613,6 +2713,7 @@ package clouddirectory {
   trait DeleteObjectResponse extends js.Object {}
 
   object DeleteObjectResponse {
+    @inline
     def apply(
         ): DeleteObjectResponse = {
       val __obj = js.Dynamic.literal()
@@ -2627,6 +2728,7 @@ package clouddirectory {
   }
 
   object DeleteSchemaRequest {
+    @inline
     def apply(
         SchemaArn: Arn
     ): DeleteSchemaRequest = {
@@ -2644,6 +2746,7 @@ package clouddirectory {
   }
 
   object DeleteSchemaResponse {
+    @inline
     def apply(
         SchemaArn: js.UndefOr[Arn] = js.undefined
     ): DeleteSchemaResponse = {
@@ -2660,6 +2763,7 @@ package clouddirectory {
   }
 
   object DeleteTypedLinkFacetRequest {
+    @inline
     def apply(
         Name: TypedLinkName,
         SchemaArn: Arn
@@ -2677,6 +2781,7 @@ package clouddirectory {
   trait DeleteTypedLinkFacetResponse extends js.Object {}
 
   object DeleteTypedLinkFacetResponse {
+    @inline
     def apply(
         ): DeleteTypedLinkFacetResponse = {
       val __obj = js.Dynamic.literal()
@@ -2693,6 +2798,7 @@ package clouddirectory {
   }
 
   object DetachFromIndexRequest {
+    @inline
     def apply(
         DirectoryArn: Arn,
         IndexReference: ObjectReference,
@@ -2714,6 +2820,7 @@ package clouddirectory {
   }
 
   object DetachFromIndexResponse {
+    @inline
     def apply(
         DetachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
     ): DetachFromIndexResponse = {
@@ -2731,6 +2838,7 @@ package clouddirectory {
   }
 
   object DetachObjectRequest {
+    @inline
     def apply(
         DirectoryArn: Arn,
         LinkName: LinkName,
@@ -2752,6 +2860,7 @@ package clouddirectory {
   }
 
   object DetachObjectResponse {
+    @inline
     def apply(
         DetachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
     ): DetachObjectResponse = {
@@ -2769,6 +2878,7 @@ package clouddirectory {
   }
 
   object DetachPolicyRequest {
+    @inline
     def apply(
         DirectoryArn: Arn,
         ObjectReference: ObjectReference,
@@ -2788,6 +2898,7 @@ package clouddirectory {
   trait DetachPolicyResponse extends js.Object {}
 
   object DetachPolicyResponse {
+    @inline
     def apply(
         ): DetachPolicyResponse = {
       val __obj = js.Dynamic.literal()
@@ -2803,6 +2914,7 @@ package clouddirectory {
   }
 
   object DetachTypedLinkRequest {
+    @inline
     def apply(
         DirectoryArn: Arn,
         TypedLinkSpecifier: TypedLinkSpecifier
@@ -2828,6 +2940,7 @@ package clouddirectory {
   }
 
   object Directory {
+    @inline
     def apply(
         CreationDateTime: js.UndefOr[Date] = js.undefined,
         DirectoryArn: js.UndefOr[DirectoryArn] = js.undefined,
@@ -2857,6 +2970,7 @@ package clouddirectory {
   }
 
   object DisableDirectoryRequest {
+    @inline
     def apply(
         DirectoryArn: Arn
     ): DisableDirectoryRequest = {
@@ -2874,6 +2988,7 @@ package clouddirectory {
   }
 
   object DisableDirectoryResponse {
+    @inline
     def apply(
         DirectoryArn: Arn
     ): DisableDirectoryResponse = {
@@ -2891,6 +3006,7 @@ package clouddirectory {
   }
 
   object EnableDirectoryRequest {
+    @inline
     def apply(
         DirectoryArn: Arn
     ): EnableDirectoryRequest = {
@@ -2908,6 +3024,7 @@ package clouddirectory {
   }
 
   object EnableDirectoryResponse {
+    @inline
     def apply(
         DirectoryArn: Arn
     ): EnableDirectoryResponse = {
@@ -2930,6 +3047,7 @@ package clouddirectory {
   }
 
   object Facet {
+    @inline
     def apply(
         FacetStyle: js.UndefOr[FacetStyle] = js.undefined,
         Name: js.UndefOr[FacetName] = js.undefined,
@@ -2955,6 +3073,7 @@ package clouddirectory {
   }
 
   object FacetAttribute {
+    @inline
     def apply(
         Name: AttributeName,
         AttributeDefinition: js.UndefOr[FacetAttributeDefinition] = js.undefined,
@@ -2984,6 +3103,7 @@ package clouddirectory {
   }
 
   object FacetAttributeDefinition {
+    @inline
     def apply(
         Type: FacetAttributeType,
         DefaultValue: js.UndefOr[TypedAttributeValue] = js.undefined,
@@ -3011,6 +3131,7 @@ package clouddirectory {
   }
 
   object FacetAttributeReference {
+    @inline
     def apply(
         TargetAttributeName: AttributeName,
         TargetFacetName: FacetName
@@ -3045,6 +3166,7 @@ package clouddirectory {
   }
 
   object FacetAttributeUpdate {
+    @inline
     def apply(
         Action: js.UndefOr[UpdateActionType] = js.undefined,
         Attribute: js.UndefOr[FacetAttribute] = js.undefined
@@ -3069,6 +3191,7 @@ package clouddirectory {
   }
 
   object GetAppliedSchemaVersionRequest {
+    @inline
     def apply(
         SchemaArn: Arn
     ): GetAppliedSchemaVersionRequest = {
@@ -3086,6 +3209,7 @@ package clouddirectory {
   }
 
   object GetAppliedSchemaVersionResponse {
+    @inline
     def apply(
         AppliedSchemaArn: js.UndefOr[Arn] = js.undefined
     ): GetAppliedSchemaVersionResponse = {
@@ -3101,6 +3225,7 @@ package clouddirectory {
   }
 
   object GetDirectoryRequest {
+    @inline
     def apply(
         DirectoryArn: DirectoryArn
     ): GetDirectoryRequest = {
@@ -3118,6 +3243,7 @@ package clouddirectory {
   }
 
   object GetDirectoryResponse {
+    @inline
     def apply(
         Directory: Directory
     ): GetDirectoryResponse = {
@@ -3136,6 +3262,7 @@ package clouddirectory {
   }
 
   object GetFacetRequest {
+    @inline
     def apply(
         Name: FacetName,
         SchemaArn: Arn
@@ -3155,6 +3282,7 @@ package clouddirectory {
   }
 
   object GetFacetResponse {
+    @inline
     def apply(
         Facet: js.UndefOr[Facet] = js.undefined
     ): GetFacetResponse = {
@@ -3173,6 +3301,7 @@ package clouddirectory {
   }
 
   object GetLinkAttributesRequest {
+    @inline
     def apply(
         AttributeNames: AttributeNameList,
         DirectoryArn: Arn,
@@ -3196,6 +3325,7 @@ package clouddirectory {
   }
 
   object GetLinkAttributesResponse {
+    @inline
     def apply(
         Attributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined
     ): GetLinkAttributesResponse = {
@@ -3215,6 +3345,7 @@ package clouddirectory {
   }
 
   object GetObjectAttributesRequest {
+    @inline
     def apply(
         AttributeNames: AttributeNameList,
         DirectoryArn: Arn,
@@ -3240,6 +3371,7 @@ package clouddirectory {
   }
 
   object GetObjectAttributesResponse {
+    @inline
     def apply(
         Attributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined
     ): GetObjectAttributesResponse = {
@@ -3257,6 +3389,7 @@ package clouddirectory {
   }
 
   object GetObjectInformationRequest {
+    @inline
     def apply(
         DirectoryArn: Arn,
         ObjectReference: ObjectReference,
@@ -3279,6 +3412,7 @@ package clouddirectory {
   }
 
   object GetObjectInformationResponse {
+    @inline
     def apply(
         ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined,
         SchemaFacets: js.UndefOr[SchemaFacetList] = js.undefined
@@ -3296,6 +3430,7 @@ package clouddirectory {
   }
 
   object GetSchemaAsJsonRequest {
+    @inline
     def apply(
         SchemaArn: Arn
     ): GetSchemaAsJsonRequest = {
@@ -3314,6 +3449,7 @@ package clouddirectory {
   }
 
   object GetSchemaAsJsonResponse {
+    @inline
     def apply(
         Document: js.UndefOr[SchemaJsonDocument] = js.undefined,
         Name: js.UndefOr[SchemaName] = js.undefined
@@ -3332,6 +3468,7 @@ package clouddirectory {
   }
 
   object GetTypedLinkFacetInformationRequest {
+    @inline
     def apply(
         Name: TypedLinkName,
         SchemaArn: Arn
@@ -3351,6 +3488,7 @@ package clouddirectory {
   }
 
   object GetTypedLinkFacetInformationResponse {
+    @inline
     def apply(
         IdentityAttributeOrder: js.UndefOr[AttributeNameList] = js.undefined
     ): GetTypedLinkFacetInformationResponse = {
@@ -3370,6 +3508,7 @@ package clouddirectory {
   }
 
   object IndexAttachment {
+    @inline
     def apply(
         IndexedAttributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined,
         ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
@@ -3391,6 +3530,7 @@ package clouddirectory {
   }
 
   object LinkAttributeAction {
+    @inline
     def apply(
         AttributeActionType: js.UndefOr[UpdateActionType] = js.undefined,
         AttributeUpdateValue: js.UndefOr[TypedAttributeValue] = js.undefined
@@ -3412,6 +3552,7 @@ package clouddirectory {
   }
 
   object LinkAttributeUpdate {
+    @inline
     def apply(
         AttributeAction: js.UndefOr[LinkAttributeAction] = js.undefined,
         AttributeKey: js.UndefOr[AttributeKey] = js.undefined
@@ -3432,6 +3573,7 @@ package clouddirectory {
   }
 
   object ListAppliedSchemaArnsRequest {
+    @inline
     def apply(
         DirectoryArn: Arn,
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
@@ -3456,6 +3598,7 @@ package clouddirectory {
   }
 
   object ListAppliedSchemaArnsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         SchemaArns: js.UndefOr[Arns] = js.undefined
@@ -3477,6 +3620,7 @@ package clouddirectory {
   }
 
   object ListAttachedIndicesRequest {
+    @inline
     def apply(
         DirectoryArn: Arn,
         TargetReference: ObjectReference,
@@ -3503,6 +3647,7 @@ package clouddirectory {
   }
 
   object ListAttachedIndicesResponse {
+    @inline
     def apply(
         IndexAttachments: js.UndefOr[IndexAttachmentList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -3521,6 +3666,7 @@ package clouddirectory {
   }
 
   object ListDevelopmentSchemaArnsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -3539,6 +3685,7 @@ package clouddirectory {
   }
 
   object ListDevelopmentSchemaArnsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         SchemaArns: js.UndefOr[Arns] = js.undefined
@@ -3558,6 +3705,7 @@ package clouddirectory {
   }
 
   object ListDirectoriesRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
@@ -3578,6 +3726,7 @@ package clouddirectory {
   }
 
   object ListDirectoriesResponse {
+    @inline
     def apply(
         Directories: DirectoryList,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -3600,6 +3749,7 @@ package clouddirectory {
   }
 
   object ListFacetAttributesRequest {
+    @inline
     def apply(
         Name: FacetName,
         SchemaArn: Arn,
@@ -3624,6 +3774,7 @@ package clouddirectory {
   }
 
   object ListFacetAttributesResponse {
+    @inline
     def apply(
         Attributes: js.UndefOr[FacetAttributeList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -3643,6 +3794,7 @@ package clouddirectory {
   }
 
   object ListFacetNamesRequest {
+    @inline
     def apply(
         SchemaArn: Arn,
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
@@ -3665,6 +3817,7 @@ package clouddirectory {
   }
 
   object ListFacetNamesResponse {
+    @inline
     def apply(
         FacetNames: js.UndefOr[FacetNameList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -3688,6 +3841,7 @@ package clouddirectory {
   }
 
   object ListIncomingTypedLinksRequest {
+    @inline
     def apply(
         DirectoryArn: Arn,
         ObjectReference: ObjectReference,
@@ -3718,6 +3872,7 @@ package clouddirectory {
   }
 
   object ListIncomingTypedLinksResponse {
+    @inline
     def apply(
         LinkSpecifiers: js.UndefOr[TypedLinkSpecifierList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -3740,6 +3895,7 @@ package clouddirectory {
   }
 
   object ListIndexRequest {
+    @inline
     def apply(
         DirectoryArn: Arn,
         IndexReference: ObjectReference,
@@ -3768,6 +3924,7 @@ package clouddirectory {
   }
 
   object ListIndexResponse {
+    @inline
     def apply(
         IndexAttachments: js.UndefOr[IndexAttachmentList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -3787,6 +3944,7 @@ package clouddirectory {
   }
 
   object ListManagedSchemaArnsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
@@ -3807,6 +3965,7 @@ package clouddirectory {
   }
 
   object ListManagedSchemaArnsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         SchemaArns: js.UndefOr[Arns] = js.undefined
@@ -3829,6 +3988,7 @@ package clouddirectory {
   }
 
   object ListObjectAttributesRequest {
+    @inline
     def apply(
         DirectoryArn: Arn,
         ObjectReference: ObjectReference,
@@ -3857,6 +4017,7 @@ package clouddirectory {
   }
 
   object ListObjectAttributesResponse {
+    @inline
     def apply(
         Attributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -3878,6 +4039,7 @@ package clouddirectory {
   }
 
   object ListObjectChildrenRequest {
+    @inline
     def apply(
         DirectoryArn: Arn,
         ObjectReference: ObjectReference,
@@ -3904,6 +4066,7 @@ package clouddirectory {
   }
 
   object ListObjectChildrenResponse {
+    @inline
     def apply(
         Children: js.UndefOr[LinkNameToObjectIdentifierMap] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -3924,6 +4087,7 @@ package clouddirectory {
   }
 
   object ListObjectParentPathsRequest {
+    @inline
     def apply(
         DirectoryArn: Arn,
         ObjectReference: ObjectReference,
@@ -3948,6 +4112,7 @@ package clouddirectory {
   }
 
   object ListObjectParentPathsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PathToObjectIdentifiersList: js.UndefOr[PathToObjectIdentifiersList] = js.undefined
@@ -3972,6 +4137,7 @@ package clouddirectory {
   }
 
   object ListObjectParentsRequest {
+    @inline
     def apply(
         DirectoryArn: Arn,
         ObjectReference: ObjectReference,
@@ -4003,6 +4169,7 @@ package clouddirectory {
   }
 
   object ListObjectParentsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ParentLinks: js.UndefOr[ObjectIdentifierAndLinkNameList] = js.undefined,
@@ -4026,6 +4193,7 @@ package clouddirectory {
   }
 
   object ListObjectPoliciesRequest {
+    @inline
     def apply(
         DirectoryArn: Arn,
         ObjectReference: ObjectReference,
@@ -4052,6 +4220,7 @@ package clouddirectory {
   }
 
   object ListObjectPoliciesResponse {
+    @inline
     def apply(
         AttachedPolicyIds: js.UndefOr[ObjectIdentifierList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -4075,6 +4244,7 @@ package clouddirectory {
   }
 
   object ListOutgoingTypedLinksRequest {
+    @inline
     def apply(
         DirectoryArn: Arn,
         ObjectReference: ObjectReference,
@@ -4105,6 +4275,7 @@ package clouddirectory {
   }
 
   object ListOutgoingTypedLinksResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         TypedLinkSpecifiers: js.UndefOr[TypedLinkSpecifierList] = js.undefined
@@ -4126,6 +4297,7 @@ package clouddirectory {
   }
 
   object ListPolicyAttachmentsRequest {
+    @inline
     def apply(
         DirectoryArn: Arn,
         PolicyReference: ObjectReference,
@@ -4152,6 +4324,7 @@ package clouddirectory {
   }
 
   object ListPolicyAttachmentsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ObjectIdentifiers: js.UndefOr[ObjectIdentifierList] = js.undefined
@@ -4171,6 +4344,7 @@ package clouddirectory {
   }
 
   object ListPublishedSchemaArnsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
@@ -4191,6 +4365,7 @@ package clouddirectory {
   }
 
   object ListPublishedSchemaArnsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         SchemaArns: js.UndefOr[Arns] = js.undefined
@@ -4210,6 +4385,7 @@ package clouddirectory {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceArn: Arn,
         MaxResults: js.UndefOr[TagsNumberResults] = js.undefined,
@@ -4232,6 +4408,7 @@ package clouddirectory {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -4252,6 +4429,7 @@ package clouddirectory {
   }
 
   object ListTypedLinkFacetAttributesRequest {
+    @inline
     def apply(
         Name: TypedLinkName,
         SchemaArn: Arn,
@@ -4276,6 +4454,7 @@ package clouddirectory {
   }
 
   object ListTypedLinkFacetAttributesResponse {
+    @inline
     def apply(
         Attributes: js.UndefOr[TypedLinkAttributeDefinitionList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -4295,6 +4474,7 @@ package clouddirectory {
   }
 
   object ListTypedLinkFacetNamesRequest {
+    @inline
     def apply(
         SchemaArn: Arn,
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
@@ -4317,6 +4497,7 @@ package clouddirectory {
   }
 
   object ListTypedLinkFacetNamesResponse {
+    @inline
     def apply(
         FacetNames: js.UndefOr[TypedLinkNameList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -4337,6 +4518,7 @@ package clouddirectory {
   }
 
   object LookupPolicyRequest {
+    @inline
     def apply(
         DirectoryArn: Arn,
         ObjectReference: ObjectReference,
@@ -4361,6 +4543,7 @@ package clouddirectory {
   }
 
   object LookupPolicyResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PolicyToPathList: js.UndefOr[PolicyToPathList] = js.undefined
@@ -4382,6 +4565,7 @@ package clouddirectory {
   }
 
   object ObjectAttributeAction {
+    @inline
     def apply(
         ObjectAttributeActionType: js.UndefOr[UpdateActionType] = js.undefined,
         ObjectAttributeUpdateValue: js.UndefOr[TypedAttributeValue] = js.undefined
@@ -4407,6 +4591,7 @@ package clouddirectory {
   }
 
   object ObjectAttributeRange {
+    @inline
     def apply(
         AttributeKey: js.UndefOr[AttributeKey] = js.undefined,
         Range: js.UndefOr[TypedAttributeValueRange] = js.undefined
@@ -4428,6 +4613,7 @@ package clouddirectory {
   }
 
   object ObjectAttributeUpdate {
+    @inline
     def apply(
         ObjectAttributeAction: js.UndefOr[ObjectAttributeAction] = js.undefined,
         ObjectAttributeKey: js.UndefOr[AttributeKey] = js.undefined
@@ -4449,6 +4635,7 @@ package clouddirectory {
   }
 
   object ObjectIdentifierAndLinkNameTuple {
+    @inline
     def apply(
         LinkName: js.UndefOr[LinkName] = js.undefined,
         ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
@@ -4469,6 +4656,7 @@ package clouddirectory {
   }
 
   object ObjectReference {
+    @inline
     def apply(
         Selector: js.UndefOr[SelectorObjectReference] = js.undefined
     ): ObjectReference = {
@@ -4497,6 +4685,7 @@ package clouddirectory {
   }
 
   object PathToObjectIdentifiers {
+    @inline
     def apply(
         ObjectIdentifiers: js.UndefOr[ObjectIdentifierList] = js.undefined,
         Path: js.UndefOr[PathString] = js.undefined
@@ -4519,6 +4708,7 @@ package clouddirectory {
   }
 
   object PolicyAttachment {
+    @inline
     def apply(
         ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined,
         PolicyId: js.UndefOr[ObjectIdentifier] = js.undefined,
@@ -4542,6 +4732,7 @@ package clouddirectory {
   }
 
   object PolicyToPath {
+    @inline
     def apply(
         Path: js.UndefOr[PathString] = js.undefined,
         Policies: js.UndefOr[PolicyAttachmentList] = js.undefined
@@ -4562,6 +4753,7 @@ package clouddirectory {
   }
 
   object PublishSchemaRequest {
+    @inline
     def apply(
         DevelopmentSchemaArn: Arn,
         Version: Version,
@@ -4585,6 +4777,7 @@ package clouddirectory {
   }
 
   object PublishSchemaResponse {
+    @inline
     def apply(
         PublishedSchemaArn: js.UndefOr[Arn] = js.undefined
     ): PublishSchemaResponse = {
@@ -4601,6 +4794,7 @@ package clouddirectory {
   }
 
   object PutSchemaFromJsonRequest {
+    @inline
     def apply(
         Document: SchemaJsonDocument,
         SchemaArn: Arn
@@ -4620,6 +4814,7 @@ package clouddirectory {
   }
 
   object PutSchemaFromJsonResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[Arn] = js.undefined
     ): PutSchemaFromJsonResponse = {
@@ -4647,6 +4842,7 @@ package clouddirectory {
   }
 
   object RemoveFacetFromObjectRequest {
+    @inline
     def apply(
         DirectoryArn: Arn,
         ObjectReference: ObjectReference,
@@ -4666,6 +4862,7 @@ package clouddirectory {
   trait RemoveFacetFromObjectResponse extends js.Object {}
 
   object RemoveFacetFromObjectResponse {
+    @inline
     def apply(
         ): RemoveFacetFromObjectResponse = {
       val __obj = js.Dynamic.literal()
@@ -4691,6 +4888,7 @@ package clouddirectory {
   }
 
   object Rule {
+    @inline
     def apply(
         Parameters: js.UndefOr[RuleParameterMap] = js.undefined,
         Type: js.UndefOr[RuleType] = js.undefined
@@ -4721,6 +4919,7 @@ package clouddirectory {
   }
 
   object SchemaFacet {
+    @inline
     def apply(
         FacetName: js.UndefOr[FacetName] = js.undefined,
         SchemaArn: js.UndefOr[Arn] = js.undefined
@@ -4742,6 +4941,7 @@ package clouddirectory {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: js.UndefOr[TagKey] = js.undefined,
         Value: js.UndefOr[TagValue] = js.undefined
@@ -4760,6 +4960,7 @@ package clouddirectory {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceArn: Arn,
         Tags: TagList
@@ -4777,6 +4978,7 @@ package clouddirectory {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -4798,6 +5000,7 @@ package clouddirectory {
   }
 
   object TypedAttributeValue {
+    @inline
     def apply(
         BinaryValue: js.UndefOr[BinaryAttributeValue] = js.undefined,
         BooleanValue: js.UndefOr[BooleanAttributeValue] = js.undefined,
@@ -4827,6 +5030,7 @@ package clouddirectory {
   }
 
   object TypedAttributeValueRange {
+    @inline
     def apply(
         EndMode: RangeMode,
         StartMode: RangeMode,
@@ -4858,6 +5062,7 @@ package clouddirectory {
   }
 
   object TypedLinkAttributeDefinition {
+    @inline
     def apply(
         Name: AttributeName,
         RequiredBehavior: RequiredAttributeBehavior,
@@ -4889,6 +5094,7 @@ package clouddirectory {
   }
 
   object TypedLinkAttributeRange {
+    @inline
     def apply(
         Range: TypedAttributeValueRange,
         AttributeName: js.UndefOr[AttributeName] = js.undefined
@@ -4913,6 +5119,7 @@ package clouddirectory {
   }
 
   object TypedLinkFacet {
+    @inline
     def apply(
         Attributes: TypedLinkAttributeDefinitionList,
         IdentityAttributeOrder: AttributeNameList,
@@ -4938,6 +5145,7 @@ package clouddirectory {
   }
 
   object TypedLinkFacetAttributeUpdate {
+    @inline
     def apply(
         Action: UpdateActionType,
         Attribute: TypedLinkAttributeDefinition
@@ -4961,6 +5169,7 @@ package clouddirectory {
   }
 
   object TypedLinkSchemaAndFacetName {
+    @inline
     def apply(
         SchemaArn: Arn,
         TypedLinkName: TypedLinkName
@@ -4986,6 +5195,7 @@ package clouddirectory {
   }
 
   object TypedLinkSpecifier {
+    @inline
     def apply(
         IdentityAttributeValues: AttributeNameAndValueList,
         SourceObjectReference: ObjectReference,
@@ -5010,6 +5220,7 @@ package clouddirectory {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceArn: Arn,
         TagKeys: TagKeyList
@@ -5027,6 +5238,7 @@ package clouddirectory {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -5051,6 +5263,7 @@ package clouddirectory {
   }
 
   object UpdateFacetRequest {
+    @inline
     def apply(
         Name: FacetName,
         SchemaArn: Arn,
@@ -5072,6 +5285,7 @@ package clouddirectory {
   trait UpdateFacetResponse extends js.Object {}
 
   object UpdateFacetResponse {
+    @inline
     def apply(
         ): UpdateFacetResponse = {
       val __obj = js.Dynamic.literal()
@@ -5088,6 +5302,7 @@ package clouddirectory {
   }
 
   object UpdateLinkAttributesRequest {
+    @inline
     def apply(
         AttributeUpdates: LinkAttributeUpdateList,
         DirectoryArn: Arn,
@@ -5107,6 +5322,7 @@ package clouddirectory {
   trait UpdateLinkAttributesResponse extends js.Object {}
 
   object UpdateLinkAttributesResponse {
+    @inline
     def apply(
         ): UpdateLinkAttributesResponse = {
       val __obj = js.Dynamic.literal()
@@ -5123,6 +5339,7 @@ package clouddirectory {
   }
 
   object UpdateObjectAttributesRequest {
+    @inline
     def apply(
         AttributeUpdates: ObjectAttributeUpdateList,
         DirectoryArn: Arn,
@@ -5144,6 +5361,7 @@ package clouddirectory {
   }
 
   object UpdateObjectAttributesResponse {
+    @inline
     def apply(
         ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
     ): UpdateObjectAttributesResponse = {
@@ -5160,6 +5378,7 @@ package clouddirectory {
   }
 
   object UpdateSchemaRequest {
+    @inline
     def apply(
         Name: SchemaName,
         SchemaArn: Arn
@@ -5179,6 +5398,7 @@ package clouddirectory {
   }
 
   object UpdateSchemaResponse {
+    @inline
     def apply(
         SchemaArn: js.UndefOr[Arn] = js.undefined
     ): UpdateSchemaResponse = {
@@ -5197,6 +5417,7 @@ package clouddirectory {
   }
 
   object UpdateTypedLinkFacetRequest {
+    @inline
     def apply(
         AttributeUpdates: TypedLinkFacetAttributeUpdateList,
         IdentityAttributeOrder: AttributeNameList,
@@ -5218,6 +5439,7 @@ package clouddirectory {
   trait UpdateTypedLinkFacetResponse extends js.Object {}
 
   object UpdateTypedLinkFacetResponse {
+    @inline
     def apply(
         ): UpdateTypedLinkFacetResponse = {
       val __obj = js.Dynamic.literal()
@@ -5234,6 +5456,7 @@ package clouddirectory {
   }
 
   object UpgradeAppliedSchemaRequest {
+    @inline
     def apply(
         DirectoryArn: Arn,
         PublishedSchemaArn: Arn,
@@ -5256,6 +5479,7 @@ package clouddirectory {
   }
 
   object UpgradeAppliedSchemaResponse {
+    @inline
     def apply(
         DirectoryArn: js.UndefOr[Arn] = js.undefined,
         UpgradedSchemaArn: js.UndefOr[Arn] = js.undefined
@@ -5276,6 +5500,7 @@ package clouddirectory {
   }
 
   object UpgradePublishedSchemaRequest {
+    @inline
     def apply(
         DevelopmentSchemaArn: Arn,
         MinorVersion: Version,
@@ -5299,6 +5524,7 @@ package clouddirectory {
   }
 
   object UpgradePublishedSchemaResponse {
+    @inline
     def apply(
         UpgradedSchemaArn: js.UndefOr[Arn] = js.undefined
     ): UpgradePublishedSchemaResponse = {

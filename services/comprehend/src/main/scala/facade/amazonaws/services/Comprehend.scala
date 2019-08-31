@@ -307,6 +307,7 @@ package comprehend {
   }
 
   object BatchDetectDominantLanguageItemResult {
+    @inline
     def apply(
         Index: js.UndefOr[Int] = js.undefined,
         Languages: js.UndefOr[ListOfDominantLanguages] = js.undefined
@@ -324,6 +325,7 @@ package comprehend {
   }
 
   object BatchDetectDominantLanguageRequest {
+    @inline
     def apply(
         TextList: StringList
     ): BatchDetectDominantLanguageRequest = {
@@ -342,6 +344,7 @@ package comprehend {
   }
 
   object BatchDetectDominantLanguageResponse {
+    @inline
     def apply(
         ErrorList: BatchItemErrorList,
         ResultList: ListOfDetectDominantLanguageResult
@@ -365,6 +368,7 @@ package comprehend {
   }
 
   object BatchDetectEntitiesItemResult {
+    @inline
     def apply(
         Entities: js.UndefOr[ListOfEntities] = js.undefined,
         Index: js.UndefOr[Int] = js.undefined
@@ -383,6 +387,7 @@ package comprehend {
   }
 
   object BatchDetectEntitiesRequest {
+    @inline
     def apply(
         LanguageCode: LanguageCode,
         TextList: StringList
@@ -403,6 +408,7 @@ package comprehend {
   }
 
   object BatchDetectEntitiesResponse {
+    @inline
     def apply(
         ErrorList: BatchItemErrorList,
         ResultList: ListOfDetectEntitiesResult
@@ -426,6 +432,7 @@ package comprehend {
   }
 
   object BatchDetectKeyPhrasesItemResult {
+    @inline
     def apply(
         Index: js.UndefOr[Int] = js.undefined,
         KeyPhrases: js.UndefOr[ListOfKeyPhrases] = js.undefined
@@ -444,6 +451,7 @@ package comprehend {
   }
 
   object BatchDetectKeyPhrasesRequest {
+    @inline
     def apply(
         LanguageCode: LanguageCode,
         TextList: StringList
@@ -464,6 +472,7 @@ package comprehend {
   }
 
   object BatchDetectKeyPhrasesResponse {
+    @inline
     def apply(
         ErrorList: BatchItemErrorList,
         ResultList: ListOfDetectKeyPhrasesResult
@@ -488,6 +497,7 @@ package comprehend {
   }
 
   object BatchDetectSentimentItemResult {
+    @inline
     def apply(
         Index: js.UndefOr[Int] = js.undefined,
         Sentiment: js.UndefOr[SentimentType] = js.undefined,
@@ -508,6 +518,7 @@ package comprehend {
   }
 
   object BatchDetectSentimentRequest {
+    @inline
     def apply(
         LanguageCode: LanguageCode,
         TextList: StringList
@@ -528,6 +539,7 @@ package comprehend {
   }
 
   object BatchDetectSentimentResponse {
+    @inline
     def apply(
         ErrorList: BatchItemErrorList,
         ResultList: ListOfDetectSentimentResult
@@ -551,6 +563,7 @@ package comprehend {
   }
 
   object BatchDetectSyntaxItemResult {
+    @inline
     def apply(
         Index: js.UndefOr[Int] = js.undefined,
         SyntaxTokens: js.UndefOr[ListOfSyntaxTokens] = js.undefined
@@ -569,6 +582,7 @@ package comprehend {
   }
 
   object BatchDetectSyntaxRequest {
+    @inline
     def apply(
         LanguageCode: SyntaxLanguageCode,
         TextList: StringList
@@ -589,6 +603,7 @@ package comprehend {
   }
 
   object BatchDetectSyntaxResponse {
+    @inline
     def apply(
         ErrorList: BatchItemErrorList,
         ResultList: ListOfDetectSyntaxResult
@@ -613,6 +628,7 @@ package comprehend {
   }
 
   object BatchItemError {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[String] = js.undefined,
         ErrorMessage: js.UndefOr[String] = js.undefined,
@@ -638,6 +654,7 @@ package comprehend {
   }
 
   object ClassifierEvaluationMetrics {
+    @inline
     def apply(
         Accuracy: js.UndefOr[Double] = js.undefined,
         F1Score: js.UndefOr[Double] = js.undefined,
@@ -665,6 +682,7 @@ package comprehend {
   }
 
   object ClassifierMetadata {
+    @inline
     def apply(
         EvaluationMetrics: js.UndefOr[ClassifierEvaluationMetrics] = js.undefined,
         NumberOfLabels: js.UndefOr[Int] = js.undefined,
@@ -694,6 +712,7 @@ package comprehend {
   }
 
   object CreateDocumentClassifierRequest {
+    @inline
     def apply(
         DataAccessRoleArn: IamRoleArn,
         DocumentClassifierName: ComprehendArnName,
@@ -727,6 +746,7 @@ package comprehend {
   }
 
   object CreateDocumentClassifierResponse {
+    @inline
     def apply(
         DocumentClassifierArn: js.UndefOr[DocumentClassifierArn] = js.undefined
     ): CreateDocumentClassifierResponse = {
@@ -749,6 +769,7 @@ package comprehend {
   }
 
   object CreateEntityRecognizerRequest {
+    @inline
     def apply(
         DataAccessRoleArn: IamRoleArn,
         InputDataConfig: EntityRecognizerInputDataConfig,
@@ -780,6 +801,7 @@ package comprehend {
   }
 
   object CreateEntityRecognizerResponse {
+    @inline
     def apply(
         EntityRecognizerArn: js.UndefOr[EntityRecognizerArn] = js.undefined
     ): CreateEntityRecognizerResponse = {
@@ -795,6 +817,7 @@ package comprehend {
   }
 
   object DeleteDocumentClassifierRequest {
+    @inline
     def apply(
         DocumentClassifierArn: DocumentClassifierArn
     ): DeleteDocumentClassifierRequest = {
@@ -810,6 +833,7 @@ package comprehend {
   trait DeleteDocumentClassifierResponse extends js.Object {}
 
   object DeleteDocumentClassifierResponse {
+    @inline
     def apply(
         ): DeleteDocumentClassifierResponse = {
       val __obj = js.Dynamic.literal()
@@ -824,6 +848,7 @@ package comprehend {
   }
 
   object DeleteEntityRecognizerRequest {
+    @inline
     def apply(
         EntityRecognizerArn: EntityRecognizerArn
     ): DeleteEntityRecognizerRequest = {
@@ -839,6 +864,7 @@ package comprehend {
   trait DeleteEntityRecognizerResponse extends js.Object {}
 
   object DeleteEntityRecognizerResponse {
+    @inline
     def apply(
         ): DeleteEntityRecognizerResponse = {
       val __obj = js.Dynamic.literal()
@@ -853,6 +879,7 @@ package comprehend {
   }
 
   object DescribeDocumentClassificationJobRequest {
+    @inline
     def apply(
         JobId: JobId
     ): DescribeDocumentClassificationJobRequest = {
@@ -870,6 +897,7 @@ package comprehend {
   }
 
   object DescribeDocumentClassificationJobResponse {
+    @inline
     def apply(
         DocumentClassificationJobProperties: js.UndefOr[DocumentClassificationJobProperties] = js.undefined
     ): DescribeDocumentClassificationJobResponse = {
@@ -887,6 +915,7 @@ package comprehend {
   }
 
   object DescribeDocumentClassifierRequest {
+    @inline
     def apply(
         DocumentClassifierArn: DocumentClassifierArn
     ): DescribeDocumentClassifierRequest = {
@@ -904,6 +933,7 @@ package comprehend {
   }
 
   object DescribeDocumentClassifierResponse {
+    @inline
     def apply(
         DocumentClassifierProperties: js.UndefOr[DocumentClassifierProperties] = js.undefined
     ): DescribeDocumentClassifierResponse = {
@@ -921,6 +951,7 @@ package comprehend {
   }
 
   object DescribeDominantLanguageDetectionJobRequest {
+    @inline
     def apply(
         JobId: JobId
     ): DescribeDominantLanguageDetectionJobRequest = {
@@ -938,6 +969,7 @@ package comprehend {
   }
 
   object DescribeDominantLanguageDetectionJobResponse {
+    @inline
     def apply(
         DominantLanguageDetectionJobProperties: js.UndefOr[DominantLanguageDetectionJobProperties] = js.undefined
     ): DescribeDominantLanguageDetectionJobResponse = {
@@ -955,6 +987,7 @@ package comprehend {
   }
 
   object DescribeEntitiesDetectionJobRequest {
+    @inline
     def apply(
         JobId: JobId
     ): DescribeEntitiesDetectionJobRequest = {
@@ -972,6 +1005,7 @@ package comprehend {
   }
 
   object DescribeEntitiesDetectionJobResponse {
+    @inline
     def apply(
         EntitiesDetectionJobProperties: js.UndefOr[EntitiesDetectionJobProperties] = js.undefined
     ): DescribeEntitiesDetectionJobResponse = {
@@ -989,6 +1023,7 @@ package comprehend {
   }
 
   object DescribeEntityRecognizerRequest {
+    @inline
     def apply(
         EntityRecognizerArn: EntityRecognizerArn
     ): DescribeEntityRecognizerRequest = {
@@ -1006,6 +1041,7 @@ package comprehend {
   }
 
   object DescribeEntityRecognizerResponse {
+    @inline
     def apply(
         EntityRecognizerProperties: js.UndefOr[EntityRecognizerProperties] = js.undefined
     ): DescribeEntityRecognizerResponse = {
@@ -1023,6 +1059,7 @@ package comprehend {
   }
 
   object DescribeKeyPhrasesDetectionJobRequest {
+    @inline
     def apply(
         JobId: JobId
     ): DescribeKeyPhrasesDetectionJobRequest = {
@@ -1040,6 +1077,7 @@ package comprehend {
   }
 
   object DescribeKeyPhrasesDetectionJobResponse {
+    @inline
     def apply(
         KeyPhrasesDetectionJobProperties: js.UndefOr[KeyPhrasesDetectionJobProperties] = js.undefined
     ): DescribeKeyPhrasesDetectionJobResponse = {
@@ -1057,6 +1095,7 @@ package comprehend {
   }
 
   object DescribeSentimentDetectionJobRequest {
+    @inline
     def apply(
         JobId: JobId
     ): DescribeSentimentDetectionJobRequest = {
@@ -1074,6 +1113,7 @@ package comprehend {
   }
 
   object DescribeSentimentDetectionJobResponse {
+    @inline
     def apply(
         SentimentDetectionJobProperties: js.UndefOr[SentimentDetectionJobProperties] = js.undefined
     ): DescribeSentimentDetectionJobResponse = {
@@ -1091,6 +1131,7 @@ package comprehend {
   }
 
   object DescribeTopicsDetectionJobRequest {
+    @inline
     def apply(
         JobId: JobId
     ): DescribeTopicsDetectionJobRequest = {
@@ -1108,6 +1149,7 @@ package comprehend {
   }
 
   object DescribeTopicsDetectionJobResponse {
+    @inline
     def apply(
         TopicsDetectionJobProperties: js.UndefOr[TopicsDetectionJobProperties] = js.undefined
     ): DescribeTopicsDetectionJobResponse = {
@@ -1125,6 +1167,7 @@ package comprehend {
   }
 
   object DetectDominantLanguageRequest {
+    @inline
     def apply(
         Text: String
     ): DetectDominantLanguageRequest = {
@@ -1142,6 +1185,7 @@ package comprehend {
   }
 
   object DetectDominantLanguageResponse {
+    @inline
     def apply(
         Languages: js.UndefOr[ListOfDominantLanguages] = js.undefined
     ): DetectDominantLanguageResponse = {
@@ -1158,6 +1202,7 @@ package comprehend {
   }
 
   object DetectEntitiesRequest {
+    @inline
     def apply(
         LanguageCode: LanguageCode,
         Text: String
@@ -1177,6 +1222,7 @@ package comprehend {
   }
 
   object DetectEntitiesResponse {
+    @inline
     def apply(
         Entities: js.UndefOr[ListOfEntities] = js.undefined
     ): DetectEntitiesResponse = {
@@ -1193,6 +1239,7 @@ package comprehend {
   }
 
   object DetectKeyPhrasesRequest {
+    @inline
     def apply(
         LanguageCode: LanguageCode,
         Text: String
@@ -1212,6 +1259,7 @@ package comprehend {
   }
 
   object DetectKeyPhrasesResponse {
+    @inline
     def apply(
         KeyPhrases: js.UndefOr[ListOfKeyPhrases] = js.undefined
     ): DetectKeyPhrasesResponse = {
@@ -1228,6 +1276,7 @@ package comprehend {
   }
 
   object DetectSentimentRequest {
+    @inline
     def apply(
         LanguageCode: LanguageCode,
         Text: String
@@ -1248,6 +1297,7 @@ package comprehend {
   }
 
   object DetectSentimentResponse {
+    @inline
     def apply(
         Sentiment: js.UndefOr[SentimentType] = js.undefined,
         SentimentScore: js.UndefOr[SentimentScore] = js.undefined
@@ -1266,6 +1316,7 @@ package comprehend {
   }
 
   object DetectSyntaxRequest {
+    @inline
     def apply(
         LanguageCode: SyntaxLanguageCode,
         Text: String
@@ -1285,6 +1336,7 @@ package comprehend {
   }
 
   object DetectSyntaxResponse {
+    @inline
     def apply(
         SyntaxTokens: js.UndefOr[ListOfSyntaxTokens] = js.undefined
     ): DetectSyntaxResponse = {
@@ -1306,6 +1358,7 @@ package comprehend {
   }
 
   object DocumentClassificationJobFilter {
+    @inline
     def apply(
         JobName: js.UndefOr[JobName] = js.undefined,
         JobStatus: js.UndefOr[JobStatus] = js.undefined,
@@ -1341,6 +1394,7 @@ package comprehend {
   }
 
   object DocumentClassificationJobProperties {
+    @inline
     def apply(
         DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
         DocumentClassifierArn: js.UndefOr[DocumentClassifierArn] = js.undefined,
@@ -1383,6 +1437,7 @@ package comprehend {
   }
 
   object DocumentClassifierFilter {
+    @inline
     def apply(
         Status: js.UndefOr[ModelStatus] = js.undefined,
         SubmitTimeAfter: js.UndefOr[Timestamp] = js.undefined,
@@ -1406,6 +1461,7 @@ package comprehend {
   }
 
   object DocumentClassifierInputDataConfig {
+    @inline
     def apply(
         S3Uri: S3Uri
     ): DocumentClassifierInputDataConfig = {
@@ -1427,6 +1483,7 @@ package comprehend {
   }
 
   object DocumentClassifierOutputDataConfig {
+    @inline
     def apply(
         KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
         S3Uri: js.UndefOr[S3Uri] = js.undefined
@@ -1460,6 +1517,7 @@ package comprehend {
   }
 
   object DocumentClassifierProperties {
+    @inline
     def apply(
         ClassifierMetadata: js.UndefOr[ClassifierMetadata] = js.undefined,
         DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
@@ -1505,6 +1563,7 @@ package comprehend {
   }
 
   object DominantLanguage {
+    @inline
     def apply(
         LanguageCode: js.UndefOr[String] = js.undefined,
         Score: js.UndefOr[Float] = js.undefined
@@ -1528,6 +1587,7 @@ package comprehend {
   }
 
   object DominantLanguageDetectionJobFilter {
+    @inline
     def apply(
         JobName: js.UndefOr[JobName] = js.undefined,
         JobStatus: js.UndefOr[JobStatus] = js.undefined,
@@ -1562,6 +1622,7 @@ package comprehend {
   }
 
   object DominantLanguageDetectionJobProperties {
+    @inline
     def apply(
         DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
         EndTime: js.UndefOr[Timestamp] = js.undefined,
@@ -1603,6 +1664,7 @@ package comprehend {
   }
 
   object EntitiesDetectionJobFilter {
+    @inline
     def apply(
         JobName: js.UndefOr[JobName] = js.undefined,
         JobStatus: js.UndefOr[JobStatus] = js.undefined,
@@ -1639,6 +1701,7 @@ package comprehend {
   }
 
   object EntitiesDetectionJobProperties {
+    @inline
     def apply(
         DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
         EndTime: js.UndefOr[Timestamp] = js.undefined,
@@ -1686,6 +1749,7 @@ package comprehend {
   }
 
   object Entity {
+    @inline
     def apply(
         BeginOffset: js.UndefOr[Int] = js.undefined,
         EndOffset: js.UndefOr[Int] = js.undefined,
@@ -1712,6 +1776,7 @@ package comprehend {
   }
 
   object EntityRecognizerAnnotations {
+    @inline
     def apply(
         S3Uri: S3Uri
     ): EntityRecognizerAnnotations = {
@@ -1732,6 +1797,7 @@ package comprehend {
   }
 
   object EntityRecognizerDocuments {
+    @inline
     def apply(
         S3Uri: S3Uri
     ): EntityRecognizerDocuments = {
@@ -1752,6 +1818,7 @@ package comprehend {
   }
 
   object EntityRecognizerEntityList {
+    @inline
     def apply(
         S3Uri: S3Uri
     ): EntityRecognizerEntityList = {
@@ -1774,6 +1841,7 @@ package comprehend {
   }
 
   object EntityRecognizerEvaluationMetrics {
+    @inline
     def apply(
         F1Score: js.UndefOr[Double] = js.undefined,
         Precision: js.UndefOr[Double] = js.undefined,
@@ -1798,6 +1866,7 @@ package comprehend {
   }
 
   object EntityRecognizerFilter {
+    @inline
     def apply(
         Status: js.UndefOr[ModelStatus] = js.undefined,
         SubmitTimeAfter: js.UndefOr[Timestamp] = js.undefined,
@@ -1823,6 +1892,7 @@ package comprehend {
   }
 
   object EntityRecognizerInputDataConfig {
+    @inline
     def apply(
         Documents: EntityRecognizerDocuments,
         EntityTypes: EntityTypesList,
@@ -1852,6 +1922,7 @@ package comprehend {
   }
 
   object EntityRecognizerMetadata {
+    @inline
     def apply(
         EntityTypes: js.UndefOr[EntityRecognizerMetadataEntityTypesList] = js.undefined,
         EvaluationMetrics: js.UndefOr[EntityRecognizerEvaluationMetrics] = js.undefined,
@@ -1878,6 +1949,7 @@ package comprehend {
   }
 
   object EntityRecognizerMetadataEntityTypesListItem {
+    @inline
     def apply(
         EvaluationMetrics: js.UndefOr[EntityTypesEvaluationMetrics] = js.undefined,
         NumberOfTrainMentions: js.UndefOr[Int] = js.undefined,
@@ -1912,6 +1984,7 @@ package comprehend {
   }
 
   object EntityRecognizerProperties {
+    @inline
     def apply(
         DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
         EndTime: js.UndefOr[Timestamp] = js.undefined,
@@ -1971,6 +2044,7 @@ package comprehend {
   }
 
   object EntityTypesEvaluationMetrics {
+    @inline
     def apply(
         F1Score: js.UndefOr[Double] = js.undefined,
         Precision: js.UndefOr[Double] = js.undefined,
@@ -1993,6 +2067,7 @@ package comprehend {
   }
 
   object EntityTypesListItem {
+    @inline
     def apply(
         Type: EntityTypeName
     ): EntityTypesListItem = {
@@ -2014,6 +2089,7 @@ package comprehend {
   }
 
   object InputDataConfig {
+    @inline
     def apply(
         S3Uri: S3Uri,
         InputFormat: js.UndefOr[InputFormat] = js.undefined
@@ -2057,6 +2133,7 @@ package comprehend {
   }
 
   object KeyPhrase {
+    @inline
     def apply(
         BeginOffset: js.UndefOr[Int] = js.undefined,
         EndOffset: js.UndefOr[Int] = js.undefined,
@@ -2084,6 +2161,7 @@ package comprehend {
   }
 
   object KeyPhrasesDetectionJobFilter {
+    @inline
     def apply(
         JobName: js.UndefOr[JobName] = js.undefined,
         JobStatus: js.UndefOr[JobStatus] = js.undefined,
@@ -2119,6 +2197,7 @@ package comprehend {
   }
 
   object KeyPhrasesDetectionJobProperties {
+    @inline
     def apply(
         DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
         EndTime: js.UndefOr[Timestamp] = js.undefined,
@@ -2169,6 +2248,7 @@ package comprehend {
   }
 
   object ListDocumentClassificationJobsRequest {
+    @inline
     def apply(
         Filter: js.UndefOr[DocumentClassificationJobFilter] = js.undefined,
         MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
@@ -2189,6 +2269,7 @@ package comprehend {
   }
 
   object ListDocumentClassificationJobsResponse {
+    @inline
     def apply(
         DocumentClassificationJobPropertiesList: js.UndefOr[DocumentClassificationJobPropertiesList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -2210,6 +2291,7 @@ package comprehend {
   }
 
   object ListDocumentClassifiersRequest {
+    @inline
     def apply(
         Filter: js.UndefOr[DocumentClassifierFilter] = js.undefined,
         MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
@@ -2230,6 +2312,7 @@ package comprehend {
   }
 
   object ListDocumentClassifiersResponse {
+    @inline
     def apply(
         DocumentClassifierPropertiesList: js.UndefOr[DocumentClassifierPropertiesList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -2251,6 +2334,7 @@ package comprehend {
   }
 
   object ListDominantLanguageDetectionJobsRequest {
+    @inline
     def apply(
         Filter: js.UndefOr[DominantLanguageDetectionJobFilter] = js.undefined,
         MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
@@ -2271,6 +2355,7 @@ package comprehend {
   }
 
   object ListDominantLanguageDetectionJobsResponse {
+    @inline
     def apply(
         DominantLanguageDetectionJobPropertiesList: js.UndefOr[DominantLanguageDetectionJobPropertiesList] =
           js.undefined,
@@ -2293,6 +2378,7 @@ package comprehend {
   }
 
   object ListEntitiesDetectionJobsRequest {
+    @inline
     def apply(
         Filter: js.UndefOr[EntitiesDetectionJobFilter] = js.undefined,
         MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
@@ -2313,6 +2399,7 @@ package comprehend {
   }
 
   object ListEntitiesDetectionJobsResponse {
+    @inline
     def apply(
         EntitiesDetectionJobPropertiesList: js.UndefOr[EntitiesDetectionJobPropertiesList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -2334,6 +2421,7 @@ package comprehend {
   }
 
   object ListEntityRecognizersRequest {
+    @inline
     def apply(
         Filter: js.UndefOr[EntityRecognizerFilter] = js.undefined,
         MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
@@ -2354,6 +2442,7 @@ package comprehend {
   }
 
   object ListEntityRecognizersResponse {
+    @inline
     def apply(
         EntityRecognizerPropertiesList: js.UndefOr[EntityRecognizerPropertiesList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -2375,6 +2464,7 @@ package comprehend {
   }
 
   object ListKeyPhrasesDetectionJobsRequest {
+    @inline
     def apply(
         Filter: js.UndefOr[KeyPhrasesDetectionJobFilter] = js.undefined,
         MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
@@ -2395,6 +2485,7 @@ package comprehend {
   }
 
   object ListKeyPhrasesDetectionJobsResponse {
+    @inline
     def apply(
         KeyPhrasesDetectionJobPropertiesList: js.UndefOr[KeyPhrasesDetectionJobPropertiesList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
@@ -2416,6 +2507,7 @@ package comprehend {
   }
 
   object ListSentimentDetectionJobsRequest {
+    @inline
     def apply(
         Filter: js.UndefOr[SentimentDetectionJobFilter] = js.undefined,
         MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
@@ -2436,6 +2528,7 @@ package comprehend {
   }
 
   object ListSentimentDetectionJobsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         SentimentDetectionJobPropertiesList: js.UndefOr[SentimentDetectionJobPropertiesList] = js.undefined
@@ -2455,6 +2548,7 @@ package comprehend {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceArn: ComprehendArn
     ): ListTagsForResourceRequest = {
@@ -2473,6 +2567,7 @@ package comprehend {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         ResourceArn: js.UndefOr[ComprehendArn] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -2492,6 +2587,7 @@ package comprehend {
   }
 
   object ListTopicsDetectionJobsRequest {
+    @inline
     def apply(
         Filter: js.UndefOr[TopicsDetectionJobFilter] = js.undefined,
         MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
@@ -2512,6 +2608,7 @@ package comprehend {
   }
 
   object ListTopicsDetectionJobsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[String] = js.undefined,
         TopicsDetectionJobPropertiesList: js.UndefOr[TopicsDetectionJobPropertiesList] = js.undefined
@@ -2548,6 +2645,7 @@ package comprehend {
   }
 
   object OutputDataConfig {
+    @inline
     def apply(
         S3Uri: S3Uri,
         KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
@@ -2571,6 +2669,7 @@ package comprehend {
   }
 
   object PartOfSpeechTag {
+    @inline
     def apply(
         Score: js.UndefOr[Float] = js.undefined,
         Tag: js.UndefOr[PartOfSpeechTagType] = js.undefined
@@ -2619,6 +2718,7 @@ package comprehend {
   }
 
   object SentimentDetectionJobFilter {
+    @inline
     def apply(
         JobName: js.UndefOr[JobName] = js.undefined,
         JobStatus: js.UndefOr[JobStatus] = js.undefined,
@@ -2654,6 +2754,7 @@ package comprehend {
   }
 
   object SentimentDetectionJobProperties {
+    @inline
     def apply(
         DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
         EndTime: js.UndefOr[Timestamp] = js.undefined,
@@ -2697,6 +2798,7 @@ package comprehend {
   }
 
   object SentimentScore {
+    @inline
     def apply(
         Mixed: js.UndefOr[Float] = js.undefined,
         Negative: js.UndefOr[Float] = js.undefined,
@@ -2734,6 +2836,7 @@ package comprehend {
   }
 
   object StartDocumentClassificationJobRequest {
+    @inline
     def apply(
         DataAccessRoleArn: IamRoleArn,
         DocumentClassifierArn: DocumentClassifierArn,
@@ -2766,6 +2869,7 @@ package comprehend {
   }
 
   object StartDocumentClassificationJobResponse {
+    @inline
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined,
         JobStatus: js.UndefOr[JobStatus] = js.undefined
@@ -2789,6 +2893,7 @@ package comprehend {
   }
 
   object StartDominantLanguageDetectionJobRequest {
+    @inline
     def apply(
         DataAccessRoleArn: IamRoleArn,
         InputDataConfig: InputDataConfig,
@@ -2819,6 +2924,7 @@ package comprehend {
   }
 
   object StartDominantLanguageDetectionJobResponse {
+    @inline
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined,
         JobStatus: js.UndefOr[JobStatus] = js.undefined
@@ -2844,6 +2950,7 @@ package comprehend {
   }
 
   object StartEntitiesDetectionJobRequest {
+    @inline
     def apply(
         DataAccessRoleArn: IamRoleArn,
         InputDataConfig: InputDataConfig,
@@ -2878,6 +2985,7 @@ package comprehend {
   }
 
   object StartEntitiesDetectionJobResponse {
+    @inline
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined,
         JobStatus: js.UndefOr[JobStatus] = js.undefined
@@ -2902,6 +3010,7 @@ package comprehend {
   }
 
   object StartKeyPhrasesDetectionJobRequest {
+    @inline
     def apply(
         DataAccessRoleArn: IamRoleArn,
         InputDataConfig: InputDataConfig,
@@ -2934,6 +3043,7 @@ package comprehend {
   }
 
   object StartKeyPhrasesDetectionJobResponse {
+    @inline
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined,
         JobStatus: js.UndefOr[JobStatus] = js.undefined
@@ -2958,6 +3068,7 @@ package comprehend {
   }
 
   object StartSentimentDetectionJobRequest {
+    @inline
     def apply(
         DataAccessRoleArn: IamRoleArn,
         InputDataConfig: InputDataConfig,
@@ -2990,6 +3101,7 @@ package comprehend {
   }
 
   object StartSentimentDetectionJobResponse {
+    @inline
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined,
         JobStatus: js.UndefOr[JobStatus] = js.undefined
@@ -3014,6 +3126,7 @@ package comprehend {
   }
 
   object StartTopicsDetectionJobRequest {
+    @inline
     def apply(
         DataAccessRoleArn: IamRoleArn,
         InputDataConfig: InputDataConfig,
@@ -3046,6 +3159,7 @@ package comprehend {
   }
 
   object StartTopicsDetectionJobResponse {
+    @inline
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined,
         JobStatus: js.UndefOr[JobStatus] = js.undefined
@@ -3063,6 +3177,7 @@ package comprehend {
   }
 
   object StopDominantLanguageDetectionJobRequest {
+    @inline
     def apply(
         JobId: JobId
     ): StopDominantLanguageDetectionJobRequest = {
@@ -3081,6 +3196,7 @@ package comprehend {
   }
 
   object StopDominantLanguageDetectionJobResponse {
+    @inline
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined,
         JobStatus: js.UndefOr[JobStatus] = js.undefined
@@ -3098,6 +3214,7 @@ package comprehend {
   }
 
   object StopEntitiesDetectionJobRequest {
+    @inline
     def apply(
         JobId: JobId
     ): StopEntitiesDetectionJobRequest = {
@@ -3116,6 +3233,7 @@ package comprehend {
   }
 
   object StopEntitiesDetectionJobResponse {
+    @inline
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined,
         JobStatus: js.UndefOr[JobStatus] = js.undefined
@@ -3133,6 +3251,7 @@ package comprehend {
   }
 
   object StopKeyPhrasesDetectionJobRequest {
+    @inline
     def apply(
         JobId: JobId
     ): StopKeyPhrasesDetectionJobRequest = {
@@ -3151,6 +3270,7 @@ package comprehend {
   }
 
   object StopKeyPhrasesDetectionJobResponse {
+    @inline
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined,
         JobStatus: js.UndefOr[JobStatus] = js.undefined
@@ -3168,6 +3288,7 @@ package comprehend {
   }
 
   object StopSentimentDetectionJobRequest {
+    @inline
     def apply(
         JobId: JobId
     ): StopSentimentDetectionJobRequest = {
@@ -3186,6 +3307,7 @@ package comprehend {
   }
 
   object StopSentimentDetectionJobResponse {
+    @inline
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined,
         JobStatus: js.UndefOr[JobStatus] = js.undefined
@@ -3203,6 +3325,7 @@ package comprehend {
   }
 
   object StopTrainingDocumentClassifierRequest {
+    @inline
     def apply(
         DocumentClassifierArn: DocumentClassifierArn
     ): StopTrainingDocumentClassifierRequest = {
@@ -3218,6 +3341,7 @@ package comprehend {
   trait StopTrainingDocumentClassifierResponse extends js.Object {}
 
   object StopTrainingDocumentClassifierResponse {
+    @inline
     def apply(
         ): StopTrainingDocumentClassifierResponse = {
       val __obj = js.Dynamic.literal()
@@ -3232,6 +3356,7 @@ package comprehend {
   }
 
   object StopTrainingEntityRecognizerRequest {
+    @inline
     def apply(
         EntityRecognizerArn: EntityRecognizerArn
     ): StopTrainingEntityRecognizerRequest = {
@@ -3247,6 +3372,7 @@ package comprehend {
   trait StopTrainingEntityRecognizerResponse extends js.Object {}
 
   object StopTrainingEntityRecognizerResponse {
+    @inline
     def apply(
         ): StopTrainingEntityRecognizerResponse = {
       val __obj = js.Dynamic.literal()
@@ -3279,6 +3405,7 @@ package comprehend {
   }
 
   object SyntaxToken {
+    @inline
     def apply(
         BeginOffset: js.UndefOr[Int] = js.undefined,
         EndOffset: js.UndefOr[Int] = js.undefined,
@@ -3306,6 +3433,7 @@ package comprehend {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: TagKey,
         Value: js.UndefOr[TagValue] = js.undefined
@@ -3326,6 +3454,7 @@ package comprehend {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceArn: ComprehendArn,
         Tags: TagList
@@ -3343,6 +3472,7 @@ package comprehend {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -3363,6 +3493,7 @@ package comprehend {
   }
 
   object TopicsDetectionJobFilter {
+    @inline
     def apply(
         JobName: js.UndefOr[JobName] = js.undefined,
         JobStatus: js.UndefOr[JobStatus] = js.undefined,
@@ -3398,6 +3529,7 @@ package comprehend {
   }
 
   object TopicsDetectionJobProperties {
+    @inline
     def apply(
         DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
         EndTime: js.UndefOr[Timestamp] = js.undefined,
@@ -3436,6 +3568,7 @@ package comprehend {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceArn: ComprehendArn,
         TagKeys: TagKeyList
@@ -3453,6 +3586,7 @@ package comprehend {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -3471,6 +3605,7 @@ package comprehend {
   }
 
   object VpcConfig {
+    @inline
     def apply(
         SecurityGroupIds: SecurityGroupIds,
         Subnets: Subnets

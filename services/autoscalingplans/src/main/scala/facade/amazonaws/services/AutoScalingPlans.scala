@@ -102,6 +102,7 @@ package autoscalingplans {
   }
 
   object ApplicationSource {
+    @inline
     def apply(
         CloudFormationStackARN: js.UndefOr[XmlString] = js.undefined,
         TagFilters: js.UndefOr[TagFilters] = js.undefined
@@ -121,6 +122,7 @@ package autoscalingplans {
   }
 
   object CreateScalingPlanRequest {
+    @inline
     def apply(
         ApplicationSource: ApplicationSource,
         ScalingInstructions: ScalingInstructions,
@@ -142,6 +144,7 @@ package autoscalingplans {
   }
 
   object CreateScalingPlanResponse {
+    @inline
     def apply(
         ScalingPlanVersion: ScalingPlanVersion
     ): CreateScalingPlanResponse = {
@@ -169,6 +172,7 @@ package autoscalingplans {
   }
 
   object CustomizedLoadMetricSpecification {
+    @inline
     def apply(
         MetricName: MetricName,
         Namespace: MetricNamespace,
@@ -205,6 +209,7 @@ package autoscalingplans {
   }
 
   object CustomizedScalingMetricSpecification {
+    @inline
     def apply(
         MetricName: MetricName,
         Namespace: MetricNamespace,
@@ -234,6 +239,7 @@ package autoscalingplans {
   }
 
   object Datapoint {
+    @inline
     def apply(
         Timestamp: js.UndefOr[TimestampType] = js.undefined,
         Value: js.UndefOr[MetricScale] = js.undefined
@@ -252,6 +258,7 @@ package autoscalingplans {
   }
 
   object DeleteScalingPlanRequest {
+    @inline
     def apply(
         ScalingPlanName: ScalingPlanName,
         ScalingPlanVersion: ScalingPlanVersion
@@ -269,6 +276,7 @@ package autoscalingplans {
   trait DeleteScalingPlanResponse extends js.Object {}
 
   object DeleteScalingPlanResponse {
+    @inline
     def apply(
         ): DeleteScalingPlanResponse = {
       val __obj = js.Dynamic.literal()
@@ -286,6 +294,7 @@ package autoscalingplans {
   }
 
   object DescribeScalingPlanResourcesRequest {
+    @inline
     def apply(
         ScalingPlanName: ScalingPlanName,
         ScalingPlanVersion: ScalingPlanVersion,
@@ -310,6 +319,7 @@ package autoscalingplans {
   }
 
   object DescribeScalingPlanResourcesResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ScalingPlanResources: js.UndefOr[ScalingPlanResources] = js.undefined
@@ -331,6 +341,7 @@ package autoscalingplans {
   }
 
   object DescribeScalingPlansRequest {
+    @inline
     def apply(
         ApplicationSources: js.UndefOr[ApplicationSources] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -355,6 +366,7 @@ package autoscalingplans {
   }
 
   object DescribeScalingPlansResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ScalingPlans: js.UndefOr[ScalingPlans] = js.undefined
@@ -389,6 +401,7 @@ package autoscalingplans {
   }
 
   object GetScalingPlanResourceForecastDataRequest {
+    @inline
     def apply(
         EndTime: TimestampType,
         ForecastDataType: ForecastDataType,
@@ -420,6 +433,7 @@ package autoscalingplans {
   }
 
   object GetScalingPlanResourceForecastDataResponse {
+    @inline
     def apply(
         Datapoints: Datapoints
     ): GetScalingPlanResourceForecastDataResponse = {
@@ -452,6 +466,7 @@ package autoscalingplans {
   }
 
   object MetricDimension {
+    @inline
     def apply(
         Name: MetricDimensionName,
         Value: MetricDimensionValue
@@ -491,6 +506,7 @@ package autoscalingplans {
   }
 
   object PredefinedLoadMetricSpecification {
+    @inline
     def apply(
         PredefinedLoadMetricType: LoadMetricType,
         ResourceLabel: js.UndefOr[ResourceLabel] = js.undefined
@@ -514,6 +530,7 @@ package autoscalingplans {
   }
 
   object PredefinedScalingMetricSpecification {
+    @inline
     def apply(
         PredefinedScalingMetricType: ScalingMetricType,
         ResourceLabel: js.UndefOr[ResourceLabel] = js.undefined
@@ -595,6 +612,7 @@ package autoscalingplans {
   }
 
   object ScalingInstruction {
+    @inline
     def apply(
         MaxCapacity: ResourceCapacity,
         MinCapacity: ResourceCapacity,
@@ -694,6 +712,7 @@ package autoscalingplans {
   }
 
   object ScalingPlan {
+    @inline
     def apply(
         ApplicationSource: ApplicationSource,
         ScalingInstructions: ScalingInstructions,
@@ -735,6 +754,7 @@ package autoscalingplans {
   }
 
   object ScalingPlanResource {
+    @inline
     def apply(
         ResourceId: ResourceIdMaxLen1600,
         ScalableDimension: ScalableDimension,
@@ -795,6 +815,7 @@ package autoscalingplans {
   }
 
   object ScalingPolicy {
+    @inline
     def apply(
         PolicyName: PolicyName,
         PolicyType: PolicyType,
@@ -847,6 +868,7 @@ package autoscalingplans {
   }
 
   object TagFilter {
+    @inline
     def apply(
         Key: js.UndefOr[XmlStringMaxLen128] = js.undefined,
         Values: js.UndefOr[TagValues] = js.undefined
@@ -873,6 +895,7 @@ package autoscalingplans {
   }
 
   object TargetTrackingConfiguration {
+    @inline
     def apply(
         TargetValue: MetricScale,
         CustomizedScalingMetricSpecification: js.UndefOr[CustomizedScalingMetricSpecification] = js.undefined,
@@ -909,6 +932,7 @@ package autoscalingplans {
   }
 
   object UpdateScalingPlanRequest {
+    @inline
     def apply(
         ScalingPlanName: ScalingPlanName,
         ScalingPlanVersion: ScalingPlanVersion,
@@ -930,6 +954,7 @@ package autoscalingplans {
   trait UpdateScalingPlanResponse extends js.Object {}
 
   object UpdateScalingPlanResponse {
+    @inline
     def apply(
         ): UpdateScalingPlanResponse = {
       val __obj = js.Dynamic.literal()

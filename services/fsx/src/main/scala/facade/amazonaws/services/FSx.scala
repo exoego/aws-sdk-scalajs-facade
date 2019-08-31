@@ -121,6 +121,7 @@ package fsx {
   }
 
   object ActiveDirectoryBackupAttributes {
+    @inline
     def apply(
         ActiveDirectoryId: js.UndefOr[DirectoryId] = js.undefined,
         DomainName: js.UndefOr[ActiveDirectoryFullyQualifiedName] = js.undefined
@@ -151,6 +152,7 @@ package fsx {
   }
 
   object Backup {
+    @inline
     def apply(
         BackupId: BackupId,
         CreationTime: CreationTime,
@@ -191,6 +193,7 @@ package fsx {
   }
 
   object BackupFailureDetails {
+    @inline
     def apply(
         Message: js.UndefOr[ErrorMessage] = js.undefined
     ): BackupFailureDetails = {
@@ -233,6 +236,7 @@ package fsx {
   }
 
   object CreateBackupRequest {
+    @inline
     def apply(
         FileSystemId: FileSystemId,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
@@ -257,6 +261,7 @@ package fsx {
   }
 
   object CreateBackupResponse {
+    @inline
     def apply(
         Backup: js.UndefOr[Backup] = js.undefined
     ): CreateBackupResponse = {
@@ -280,6 +285,7 @@ package fsx {
   }
 
   object CreateFileSystemFromBackupRequest {
+    @inline
     def apply(
         BackupId: BackupId,
         SubnetIds: SubnetIds,
@@ -310,6 +316,7 @@ package fsx {
   }
 
   object CreateFileSystemFromBackupResponse {
+    @inline
     def apply(
         FileSystem: js.UndefOr[FileSystem] = js.undefined
     ): CreateFileSystemFromBackupResponse = {
@@ -331,6 +338,7 @@ package fsx {
   }
 
   object CreateFileSystemLustreConfiguration {
+    @inline
     def apply(
         ExportPath: js.UndefOr[ArchivePath] = js.undefined,
         ImportPath: js.UndefOr[ArchivePath] = js.undefined,
@@ -365,6 +373,7 @@ package fsx {
   }
 
   object CreateFileSystemRequest {
+    @inline
     def apply(
         FileSystemType: FileSystemType,
         StorageCapacity: StorageCapacity,
@@ -401,6 +410,7 @@ package fsx {
   }
 
   object CreateFileSystemResponse {
+    @inline
     def apply(
         FileSystem: js.UndefOr[FileSystem] = js.undefined
     ): CreateFileSystemResponse = {
@@ -425,6 +435,7 @@ package fsx {
   }
 
   object CreateFileSystemWindowsConfiguration {
+    @inline
     def apply(
         ThroughputCapacity: MegabytesPerSecond,
         ActiveDirectoryId: js.UndefOr[DirectoryId] = js.undefined,
@@ -467,6 +478,7 @@ package fsx {
   }
 
   object DataRepositoryConfiguration {
+    @inline
     def apply(
         ExportPath: js.UndefOr[ArchivePath] = js.undefined,
         ImportPath: js.UndefOr[ArchivePath] = js.undefined,
@@ -490,6 +502,7 @@ package fsx {
   }
 
   object DeleteBackupRequest {
+    @inline
     def apply(
         BackupId: BackupId,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined
@@ -513,6 +526,7 @@ package fsx {
   }
 
   object DeleteBackupResponse {
+    @inline
     def apply(
         BackupId: js.UndefOr[BackupId] = js.undefined,
         Lifecycle: js.UndefOr[BackupLifecycle] = js.undefined
@@ -535,6 +549,7 @@ package fsx {
   }
 
   object DeleteFileSystemRequest {
+    @inline
     def apply(
         FileSystemId: FileSystemId,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
@@ -561,6 +576,7 @@ package fsx {
   }
 
   object DeleteFileSystemResponse {
+    @inline
     def apply(
         FileSystemId: js.UndefOr[FileSystemId] = js.undefined,
         Lifecycle: js.UndefOr[FileSystemLifecycle] = js.undefined,
@@ -584,6 +600,7 @@ package fsx {
   }
 
   object DeleteFileSystemWindowsConfiguration {
+    @inline
     def apply(
         FinalBackupTags: js.UndefOr[Tags] = js.undefined,
         SkipFinalBackup: js.UndefOr[Flag] = js.undefined
@@ -605,6 +622,7 @@ package fsx {
   }
 
   object DeleteFileSystemWindowsResponse {
+    @inline
     def apply(
         FinalBackupId: js.UndefOr[BackupId] = js.undefined,
         FinalBackupTags: js.UndefOr[Tags] = js.undefined
@@ -628,6 +646,7 @@ package fsx {
   }
 
   object DescribeBackupsRequest {
+    @inline
     def apply(
         BackupIds: js.UndefOr[BackupIds] = js.undefined,
         Filters: js.UndefOr[Filters] = js.undefined,
@@ -653,6 +672,7 @@ package fsx {
   }
 
   object DescribeBackupsResponse {
+    @inline
     def apply(
         Backups: js.UndefOr[Backups] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -675,6 +695,7 @@ package fsx {
   }
 
   object DescribeFileSystemsRequest {
+    @inline
     def apply(
         FileSystemIds: js.UndefOr[FileSystemIds] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -698,6 +719,7 @@ package fsx {
   }
 
   object DescribeFileSystemsResponse {
+    @inline
     def apply(
         FileSystems: js.UndefOr[FileSystems] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
@@ -733,6 +755,7 @@ package fsx {
   }
 
   object FileSystem {
+    @inline
     def apply(
         CreationTime: js.UndefOr[CreationTime] = js.undefined,
         DNSName: js.UndefOr[DNSName] = js.undefined,
@@ -781,6 +804,7 @@ package fsx {
   }
 
   object FileSystemFailureDetails {
+    @inline
     def apply(
         Message: js.UndefOr[ErrorMessage] = js.undefined
     ): FileSystemFailureDetails = {
@@ -834,6 +858,7 @@ package fsx {
   }
 
   object Filter {
+    @inline
     def apply(
         Name: js.UndefOr[FilterName] = js.undefined,
         Values: js.UndefOr[FilterValues] = js.undefined
@@ -866,6 +891,7 @@ package fsx {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceARN: ResourceARN,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -891,6 +917,7 @@ package fsx {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
@@ -912,6 +939,7 @@ package fsx {
   }
 
   object LustreFileSystemConfiguration {
+    @inline
     def apply(
         DataRepositoryConfiguration: js.UndefOr[DataRepositoryConfiguration] = js.undefined,
         WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined
@@ -940,6 +968,7 @@ package fsx {
   }
 
   object SelfManagedActiveDirectoryAttributes {
+    @inline
     def apply(
         DnsIps: js.UndefOr[DnsIps] = js.undefined,
         DomainName: js.UndefOr[ActiveDirectoryFullyQualifiedName] = js.undefined,
@@ -975,6 +1004,7 @@ package fsx {
   }
 
   object SelfManagedActiveDirectoryConfiguration {
+    @inline
     def apply(
         DnsIps: DnsIps,
         DomainName: ActiveDirectoryFullyQualifiedName,
@@ -1011,6 +1041,7 @@ package fsx {
   }
 
   object SelfManagedActiveDirectoryConfigurationUpdates {
+    @inline
     def apply(
         DnsIps: js.UndefOr[DnsIps] = js.undefined,
         Password: js.UndefOr[DirectoryPassword] = js.undefined,
@@ -1034,6 +1065,7 @@ package fsx {
   }
 
   object Tag {
+    @inline
     def apply(
         Key: js.UndefOr[TagKey] = js.undefined,
         Value: js.UndefOr[TagValue] = js.undefined
@@ -1055,6 +1087,7 @@ package fsx {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceARN: ResourceARN,
         Tags: Tags
@@ -1075,6 +1108,7 @@ package fsx {
   trait TagResourceResponse extends js.Object {}
 
   object TagResourceResponse {
+    @inline
     def apply(
         ): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1093,6 +1127,7 @@ package fsx {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceARN: ResourceARN,
         TagKeys: TagKeys
@@ -1113,6 +1148,7 @@ package fsx {
   trait UntagResourceResponse extends js.Object {}
 
   object UntagResourceResponse {
+    @inline
     def apply(
         ): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
@@ -1130,6 +1166,7 @@ package fsx {
   }
 
   object UpdateFileSystemLustreConfiguration {
+    @inline
     def apply(
         WeeklyMaintenanceStartTime: js.UndefOr[WeeklyTime] = js.undefined
     ): UpdateFileSystemLustreConfiguration = {
@@ -1153,6 +1190,7 @@ package fsx {
   }
 
   object UpdateFileSystemRequest {
+    @inline
     def apply(
         FileSystemId: FileSystemId,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
@@ -1179,6 +1217,7 @@ package fsx {
   }
 
   object UpdateFileSystemResponse {
+    @inline
     def apply(
         FileSystem: js.UndefOr[FileSystem] = js.undefined
     ): UpdateFileSystemResponse = {
@@ -1200,6 +1239,7 @@ package fsx {
   }
 
   object UpdateFileSystemWindowsConfiguration {
+    @inline
     def apply(
         AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays] = js.undefined,
         DailyAutomaticBackupStartTime: js.UndefOr[DailyTime] = js.undefined,
@@ -1240,6 +1280,7 @@ package fsx {
   }
 
   object WindowsFileSystemConfiguration {
+    @inline
     def apply(
         ActiveDirectoryId: js.UndefOr[DirectoryId] = js.undefined,
         AutomaticBackupRetentionDays: js.UndefOr[AutomaticBackupRetentionDays] = js.undefined,

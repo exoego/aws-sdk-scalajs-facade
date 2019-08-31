@@ -133,6 +133,7 @@ package kafka {
   }
 
   object BrokerEBSVolumeInfo {
+    @inline
     def apply(
         KafkaBrokerNodeId: __string,
         VolumeSizeGB: __integer
@@ -160,6 +161,7 @@ package kafka {
   }
 
   object BrokerNodeGroupInfo {
+    @inline
     def apply(
         ClientSubnets: __listOf__string,
         InstanceType: __stringMin5Max32,
@@ -194,6 +196,7 @@ package kafka {
   }
 
   object BrokerNodeInfo {
+    @inline
     def apply(
         AttachedENIId: js.UndefOr[__string] = js.undefined,
         BrokerId: js.UndefOr[__double] = js.undefined,
@@ -227,6 +230,7 @@ package kafka {
   }
 
   object BrokerSoftwareInfo {
+    @inline
     def apply(
         ConfigurationArn: js.UndefOr[__string] = js.undefined,
         ConfigurationRevision: js.UndefOr[__long] = js.undefined,
@@ -250,6 +254,7 @@ package kafka {
   }
 
   object ClientAuthentication {
+    @inline
     def apply(
         Tls: js.UndefOr[Tls] = js.undefined
     ): ClientAuthentication = {
@@ -294,6 +299,7 @@ package kafka {
   }
 
   object ClusterInfo {
+    @inline
     def apply(
         ActiveOperationArn: js.UndefOr[__string] = js.undefined,
         BrokerNodeGroupInfo: js.UndefOr[BrokerNodeGroupInfo] = js.undefined,
@@ -350,6 +356,7 @@ package kafka {
   }
 
   object ClusterOperationInfo {
+    @inline
     def apply(
         ClientRequestId: js.UndefOr[__string] = js.undefined,
         ClusterArn: js.UndefOr[__string] = js.undefined,
@@ -406,6 +413,7 @@ package kafka {
   }
 
   object Configuration {
+    @inline
     def apply(
         Arn: __string,
         CreationTime: __timestampIso8601,
@@ -438,6 +446,7 @@ package kafka {
   }
 
   object ConfigurationInfo {
+    @inline
     def apply(
         Arn: __string,
         Revision: __long
@@ -463,6 +472,7 @@ package kafka {
   }
 
   object ConfigurationRevision {
+    @inline
     def apply(
         CreationTime: __timestampIso8601,
         Revision: __long,
@@ -492,6 +502,7 @@ package kafka {
   }
 
   object CreateClusterRequest {
+    @inline
     def apply(
         BrokerNodeGroupInfo: BrokerNodeGroupInfo,
         ClusterName: __stringMin1Max64,
@@ -527,6 +538,7 @@ package kafka {
   }
 
   object CreateClusterResponse {
+    @inline
     def apply(
         ClusterArn: js.UndefOr[__string] = js.undefined,
         ClusterName: js.UndefOr[__string] = js.undefined,
@@ -549,6 +561,7 @@ package kafka {
   }
 
   object CreateConfigurationRequest {
+    @inline
     def apply(
         KafkaVersions: __listOf__string,
         Name: __string,
@@ -575,6 +588,7 @@ package kafka {
   }
 
   object CreateConfigurationResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTime: js.UndefOr[__timestampIso8601] = js.undefined,
@@ -597,6 +611,7 @@ package kafka {
   }
 
   object DeleteClusterRequest {
+    @inline
     def apply(
         ClusterArn: __string,
         CurrentVersion: js.UndefOr[__string] = js.undefined
@@ -617,6 +632,7 @@ package kafka {
   }
 
   object DeleteClusterResponse {
+    @inline
     def apply(
         ClusterArn: js.UndefOr[__string] = js.undefined,
         State: js.UndefOr[ClusterState] = js.undefined
@@ -634,6 +650,7 @@ package kafka {
   }
 
   object DescribeClusterOperationRequest {
+    @inline
     def apply(
         ClusterOperationArn: __string
     ): DescribeClusterOperationRequest = {
@@ -651,6 +668,7 @@ package kafka {
   }
 
   object DescribeClusterOperationResponse {
+    @inline
     def apply(
         ClusterOperationInfo: js.UndefOr[ClusterOperationInfo] = js.undefined
     ): DescribeClusterOperationResponse = {
@@ -666,6 +684,7 @@ package kafka {
   }
 
   object DescribeClusterRequest {
+    @inline
     def apply(
         ClusterArn: __string
     ): DescribeClusterRequest = {
@@ -683,6 +702,7 @@ package kafka {
   }
 
   object DescribeClusterResponse {
+    @inline
     def apply(
         ClusterInfo: js.UndefOr[ClusterInfo] = js.undefined
     ): DescribeClusterResponse = {
@@ -698,6 +718,7 @@ package kafka {
   }
 
   object DescribeConfigurationRequest {
+    @inline
     def apply(
         Arn: __string
     ): DescribeConfigurationRequest = {
@@ -720,6 +741,7 @@ package kafka {
   }
 
   object DescribeConfigurationResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTime: js.UndefOr[__timestampIso8601] = js.undefined,
@@ -746,6 +768,7 @@ package kafka {
   }
 
   object DescribeConfigurationRevisionRequest {
+    @inline
     def apply(
         Arn: __string,
         Revision: __long
@@ -769,6 +792,7 @@ package kafka {
   }
 
   object DescribeConfigurationRevisionResponse {
+    @inline
     def apply(
         Arn: js.UndefOr[__string] = js.undefined,
         CreationTime: js.UndefOr[__timestampIso8601] = js.undefined,
@@ -796,6 +820,7 @@ package kafka {
   }
 
   object EBSStorageInfo {
+    @inline
     def apply(
         VolumeSize: js.UndefOr[__integerMin1Max16384] = js.undefined
     ): EBSStorageInfo = {
@@ -815,6 +840,7 @@ package kafka {
   }
 
   object EncryptionAtRest {
+    @inline
     def apply(
         DataVolumeKMSKeyId: __string
     ): EncryptionAtRest = {
@@ -837,6 +863,7 @@ package kafka {
   }
 
   object EncryptionInTransit {
+    @inline
     def apply(
         ClientBroker: js.UndefOr[ClientBroker] = js.undefined,
         InCluster: js.UndefOr[__boolean] = js.undefined
@@ -859,6 +886,7 @@ package kafka {
   }
 
   object EncryptionInfo {
+    @inline
     def apply(
         EncryptionAtRest: js.UndefOr[EncryptionAtRest] = js.undefined,
         EncryptionInTransit: js.UndefOr[EncryptionInTransit] = js.undefined
@@ -893,6 +921,7 @@ package kafka {
   }
 
   object ErrorInfo {
+    @inline
     def apply(
         ErrorCode: js.UndefOr[__string] = js.undefined,
         ErrorString: js.UndefOr[__string] = js.undefined
@@ -910,6 +939,7 @@ package kafka {
   }
 
   object GetBootstrapBrokersRequest {
+    @inline
     def apply(
         ClusterArn: __string
     ): GetBootstrapBrokersRequest = {
@@ -928,6 +958,7 @@ package kafka {
   }
 
   object GetBootstrapBrokersResponse {
+    @inline
     def apply(
         BootstrapBrokerString: js.UndefOr[__string] = js.undefined,
         BootstrapBrokerStringTls: js.UndefOr[__string] = js.undefined
@@ -947,6 +978,7 @@ package kafka {
   }
 
   object ListClusterOperationsRequest {
+    @inline
     def apply(
         ClusterArn: __string,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -969,6 +1001,7 @@ package kafka {
   }
 
   object ListClusterOperationsResponse {
+    @inline
     def apply(
         ClusterOperationInfoList: js.UndefOr[__listOfClusterOperationInfo] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -988,6 +1021,7 @@ package kafka {
   }
 
   object ListClustersRequest {
+    @inline
     def apply(
         ClusterNameFilter: js.UndefOr[__string] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1008,6 +1042,7 @@ package kafka {
   }
 
   object ListClustersResponse {
+    @inline
     def apply(
         ClusterInfoList: js.UndefOr[__listOfClusterInfo] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -1027,6 +1062,7 @@ package kafka {
   }
 
   object ListConfigurationRevisionsRequest {
+    @inline
     def apply(
         Arn: __string,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1049,6 +1085,7 @@ package kafka {
   }
 
   object ListConfigurationRevisionsResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[__string] = js.undefined,
         Revisions: js.UndefOr[__listOfConfigurationRevision] = js.undefined
@@ -1067,6 +1104,7 @@ package kafka {
   }
 
   object ListConfigurationsRequest {
+    @inline
     def apply(
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -1085,6 +1123,7 @@ package kafka {
   }
 
   object ListConfigurationsResponse {
+    @inline
     def apply(
         Configurations: js.UndefOr[__listOfConfiguration] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
@@ -1104,6 +1143,7 @@ package kafka {
   }
 
   object ListNodesRequest {
+    @inline
     def apply(
         ClusterArn: __string,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
@@ -1126,6 +1166,7 @@ package kafka {
   }
 
   object ListNodesResponse {
+    @inline
     def apply(
         NextToken: js.UndefOr[__string] = js.undefined,
         NodeInfoList: js.UndefOr[__listOfNodeInfo] = js.undefined
@@ -1143,6 +1184,7 @@ package kafka {
   }
 
   object ListTagsForResourceRequest {
+    @inline
     def apply(
         ResourceArn: __string
     ): ListTagsForResourceRequest = {
@@ -1160,6 +1202,7 @@ package kafka {
   }
 
   object ListTagsForResourceResponse {
+    @inline
     def apply(
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): ListTagsForResourceResponse = {
@@ -1181,6 +1224,7 @@ package kafka {
   }
 
   object MutableClusterInfo {
+    @inline
     def apply(
         BrokerEBSVolumeInfo: js.UndefOr[__listOfBrokerEBSVolumeInfo] = js.undefined,
         ConfigurationInfo: js.UndefOr[ConfigurationInfo] = js.undefined,
@@ -1209,6 +1253,7 @@ package kafka {
   }
 
   object NodeInfo {
+    @inline
     def apply(
         AddedToClusterTime: js.UndefOr[__string] = js.undefined,
         BrokerNodeInfo: js.UndefOr[BrokerNodeInfo] = js.undefined,
@@ -1248,6 +1293,7 @@ package kafka {
   }
 
   object StorageInfo {
+    @inline
     def apply(
         EbsStorageInfo: js.UndefOr[EBSStorageInfo] = js.undefined
     ): StorageInfo = {
@@ -1264,6 +1310,7 @@ package kafka {
   }
 
   object TagResourceRequest {
+    @inline
     def apply(
         ResourceArn: __string,
         Tags: __mapOf__string
@@ -1287,6 +1334,7 @@ package kafka {
   }
 
   object Tls {
+    @inline
     def apply(
         CertificateAuthorityArnList: js.UndefOr[__listOf__string] = js.undefined
     ): Tls = {
@@ -1305,6 +1353,7 @@ package kafka {
   }
 
   object UntagResourceRequest {
+    @inline
     def apply(
         ResourceArn: __string,
         TagKeys: __listOf__string
@@ -1326,6 +1375,7 @@ package kafka {
   }
 
   object UpdateBrokerStorageRequest {
+    @inline
     def apply(
         ClusterArn: __string,
         CurrentVersion: __string,
@@ -1348,6 +1398,7 @@ package kafka {
   }
 
   object UpdateBrokerStorageResponse {
+    @inline
     def apply(
         ClusterArn: js.UndefOr[__string] = js.undefined,
         ClusterOperationArn: js.UndefOr[__string] = js.undefined
@@ -1367,6 +1418,7 @@ package kafka {
   }
 
   object UpdateClusterConfigurationRequest {
+    @inline
     def apply(
         ClusterArn: __string,
         ConfigurationInfo: ConfigurationInfo,
@@ -1389,6 +1441,7 @@ package kafka {
   }
 
   object UpdateClusterConfigurationResponse {
+    @inline
     def apply(
         ClusterArn: js.UndefOr[__string] = js.undefined,
         ClusterOperationArn: js.UndefOr[__string] = js.undefined
@@ -1414,6 +1467,7 @@ package kafka {
   }
 
   object ZookeeperNodeInfo {
+    @inline
     def apply(
         AttachedENIId: js.UndefOr[__string] = js.undefined,
         ClientVpcIpAddress: js.UndefOr[__string] = js.undefined,
