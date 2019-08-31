@@ -33,7 +33,7 @@ package object lexruntime {
   type genericAttachmentList       = js.Array[GenericAttachment]
   type listOfButtons               = js.Array[Button]
 
-  implicit final class LexRuntimeOps(val service: LexRuntime) extends AnyVal {
+  implicit final class LexRuntimeOps(private val service: LexRuntime) extends AnyVal {
 
     def deleteSessionFuture(params: DeleteSessionRequest): Future[DeleteSessionResponse] =
       service.deleteSession(params).promise.toFuture

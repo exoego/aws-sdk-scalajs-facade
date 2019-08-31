@@ -44,7 +44,7 @@ package object cloudhsm {
   type Timestamp              = String
   type VpcId                  = String
 
-  implicit final class CloudHSMOps(val service: CloudHSM) extends AnyVal {
+  implicit final class CloudHSMOps(private val service: CloudHSM) extends AnyVal {
 
     def addTagsToResourceFuture(params: AddTagsToResourceRequest): Future[AddTagsToResourceResponse] =
       service.addTagsToResource(params).promise.toFuture

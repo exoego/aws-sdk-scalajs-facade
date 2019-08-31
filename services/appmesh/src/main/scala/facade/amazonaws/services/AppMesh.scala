@@ -56,7 +56,7 @@ package object appmesh {
   type VirtualServiceStatusCode          = String
   type WeightedTargets                   = js.Array[WeightedTarget]
 
-  implicit final class AppMeshOps(val service: AppMesh) extends AnyVal {
+  implicit final class AppMeshOps(private val service: AppMesh) extends AnyVal {
 
     def createMeshFuture(params: CreateMeshInput): Future[CreateMeshOutput] =
       service.createMesh(params).promise.toFuture

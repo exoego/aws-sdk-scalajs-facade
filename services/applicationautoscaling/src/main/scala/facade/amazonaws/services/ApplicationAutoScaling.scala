@@ -44,7 +44,7 @@ package object applicationautoscaling {
   type TimestampType             = js.Date
   type XmlString                 = String
 
-  implicit final class ApplicationAutoScalingOps(val service: ApplicationAutoScaling) extends AnyVal {
+  implicit final class ApplicationAutoScalingOps(private val service: ApplicationAutoScaling) extends AnyVal {
 
     def deleteScalingPolicyFuture(params: DeleteScalingPolicyRequest): Future[DeleteScalingPolicyResponse] =
       service.deleteScalingPolicy(params).promise.toFuture

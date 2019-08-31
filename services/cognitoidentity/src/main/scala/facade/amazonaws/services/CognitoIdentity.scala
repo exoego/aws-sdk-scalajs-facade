@@ -57,7 +57,7 @@ package object cognitoidentity {
   type TokenDuration                     = Double
   type UnprocessedIdentityIdList         = js.Array[UnprocessedIdentityId]
 
-  implicit final class CognitoIdentityOps(val service: CognitoIdentity) extends AnyVal {
+  implicit final class CognitoIdentityOps(private val service: CognitoIdentity) extends AnyVal {
 
     def createIdentityPoolFuture(params: CreateIdentityPoolInput): Future[IdentityPool] =
       service.createIdentityPool(params).promise.toFuture

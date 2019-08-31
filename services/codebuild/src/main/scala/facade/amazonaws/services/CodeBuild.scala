@@ -66,7 +66,7 @@ package object codebuild {
   type WrapperInt                     = Int
   type WrapperLong                    = Double
 
-  implicit final class CodeBuildOps(val service: CodeBuild) extends AnyVal {
+  implicit final class CodeBuildOps(private val service: CodeBuild) extends AnyVal {
 
     def batchDeleteBuildsFuture(params: BatchDeleteBuildsInput): Future[BatchDeleteBuildsOutput] =
       service.batchDeleteBuilds(params).promise.toFuture

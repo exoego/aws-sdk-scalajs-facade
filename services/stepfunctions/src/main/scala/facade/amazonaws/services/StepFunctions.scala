@@ -36,7 +36,7 @@ package object stepfunctions {
   type TimeoutInSeconds      = Double
   type Timestamp             = js.Date
 
-  implicit final class StepFunctionsOps(val service: StepFunctions) extends AnyVal {
+  implicit final class StepFunctionsOps(private val service: StepFunctions) extends AnyVal {
 
     def createActivityFuture(params: CreateActivityInput): Future[CreateActivityOutput] =
       service.createActivity(params).promise.toFuture

@@ -68,7 +68,7 @@ package object datasync {
   type VerifyMode                      = String
   type VpcEndpointId                   = String
 
-  implicit final class DataSyncOps(val service: DataSync) extends AnyVal {
+  implicit final class DataSyncOps(private val service: DataSync) extends AnyVal {
 
     def cancelTaskExecutionFuture(params: CancelTaskExecutionRequest): Future[CancelTaskExecutionResponse] =
       service.cancelTaskExecution(params).promise.toFuture

@@ -54,7 +54,7 @@ package object autoscalingplans {
   type XmlStringMaxLen128                   = String
   type XmlStringMaxLen256                   = String
 
-  implicit final class AutoScalingPlansOps(val service: AutoScalingPlans) extends AnyVal {
+  implicit final class AutoScalingPlansOps(private val service: AutoScalingPlans) extends AnyVal {
 
     def createScalingPlanFuture(params: CreateScalingPlanRequest): Future[CreateScalingPlanResponse] =
       service.createScalingPlan(params).promise.toFuture

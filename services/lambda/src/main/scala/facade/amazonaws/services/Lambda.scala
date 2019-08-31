@@ -84,7 +84,7 @@ package object lambda {
   type VpcId                           = String
   type Weight                          = Double
 
-  implicit final class LambdaOps(val service: Lambda) extends AnyVal {
+  implicit final class LambdaOps(private val service: Lambda) extends AnyVal {
 
     def addLayerVersionPermissionFuture(
         params: AddLayerVersionPermissionRequest

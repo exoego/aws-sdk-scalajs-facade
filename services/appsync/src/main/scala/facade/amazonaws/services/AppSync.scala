@@ -39,7 +39,7 @@ package object appsync {
   type TypeDefinitionFormat              = String
   type TypeList                          = js.Array[Type]
 
-  implicit final class AppSyncOps(val service: AppSync) extends AnyVal {
+  implicit final class AppSyncOps(private val service: AppSync) extends AnyVal {
 
     def createApiKeyFuture(params: CreateApiKeyRequest): Future[CreateApiKeyResponse] =
       service.createApiKey(params).promise.toFuture

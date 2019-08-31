@@ -28,7 +28,7 @@ package object iotjobsdataplane {
   type ThingName                        = String
   type VersionNumber                    = Double
 
-  implicit final class IoTJobsDataPlaneOps(val service: IoTJobsDataPlane) extends AnyVal {
+  implicit final class IoTJobsDataPlaneOps(private val service: IoTJobsDataPlane) extends AnyVal {
 
     def describeJobExecutionFuture(params: DescribeJobExecutionRequest): Future[DescribeJobExecutionResponse] =
       service.describeJobExecution(params).promise.toFuture

@@ -408,7 +408,7 @@ package object mediaconvert {
   type __stringPatternWS                                       = String
   type __timestampUnix                                         = js.Date
 
-  implicit final class MediaConvertOps(val service: MediaConvert) extends AnyVal {
+  implicit final class MediaConvertOps(private val service: MediaConvert) extends AnyVal {
 
     def associateCertificateFuture(params: AssociateCertificateRequest): Future[AssociateCertificateResponse] =
       service.associateCertificate(params).promise.toFuture

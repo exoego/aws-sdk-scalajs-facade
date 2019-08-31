@@ -165,7 +165,7 @@ package object elasticbeanstalk {
   type VersionLabelsList                    = js.Array[VersionLabel]
   type VirtualizationType                   = String
 
-  implicit final class ElasticBeanstalkOps(val service: ElasticBeanstalk) extends AnyVal {
+  implicit final class ElasticBeanstalkOps(private val service: ElasticBeanstalk) extends AnyVal {
 
     def abortEnvironmentUpdateFuture(params: AbortEnvironmentUpdateMessage): Future[js.Object] =
       service.abortEnvironmentUpdate(params).promise.toFuture

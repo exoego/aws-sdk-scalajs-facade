@@ -42,7 +42,7 @@ package object cloudhsmv2 {
   type Timestamp             = js.Date
   type VpcId                 = String
 
-  implicit final class CloudHSMV2Ops(val service: CloudHSMV2) extends AnyVal {
+  implicit final class CloudHSMV2Ops(private val service: CloudHSMV2) extends AnyVal {
 
     def copyBackupToRegionFuture(params: CopyBackupToRegionRequest): Future[CopyBackupToRegionResponse] =
       service.copyBackupToRegion(params).promise.toFuture

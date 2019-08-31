@@ -51,7 +51,7 @@ package object importexport {
   type street2               = String
   type street3               = String
 
-  implicit final class ImportExportOps(val service: ImportExport) extends AnyVal {
+  implicit final class ImportExportOps(private val service: ImportExport) extends AnyVal {
 
     def cancelJobFuture(params: CancelJobInput): Future[CancelJobOutput] = service.cancelJob(params).promise.toFuture
     def createJobFuture(params: CreateJobInput): Future[CreateJobOutput] = service.createJob(params).promise.toFuture

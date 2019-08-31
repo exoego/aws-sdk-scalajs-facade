@@ -75,7 +75,7 @@ package object applicationdiscovery {
   type ToDeleteIdentifierList                = js.Array[ImportTaskIdentifier]
   type orderString                           = String
 
-  implicit final class ApplicationDiscoveryOps(val service: ApplicationDiscovery) extends AnyVal {
+  implicit final class ApplicationDiscoveryOps(private val service: ApplicationDiscovery) extends AnyVal {
 
     def associateConfigurationItemsToApplicationFuture(
         params: AssociateConfigurationItemsToApplicationRequest

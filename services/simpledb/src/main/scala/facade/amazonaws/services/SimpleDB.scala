@@ -17,7 +17,7 @@ package object simpledb {
   type ReplaceableAttributeList = js.Array[ReplaceableAttribute]
   type ReplaceableItemList      = js.Array[ReplaceableItem]
 
-  implicit final class SimpleDBOps(val service: SimpleDB) extends AnyVal {
+  implicit final class SimpleDBOps(private val service: SimpleDB) extends AnyVal {
 
     def batchDeleteAttributesFuture(params: BatchDeleteAttributesRequest): Future[js.Object] =
       service.batchDeleteAttributes(params).promise.toFuture

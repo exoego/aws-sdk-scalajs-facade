@@ -218,7 +218,7 @@ package object servicecatalog {
   type UserArnSession                          = String
   type Verbose                                 = Boolean
 
-  implicit final class ServiceCatalogOps(val service: ServiceCatalog) extends AnyVal {
+  implicit final class ServiceCatalogOps(private val service: ServiceCatalog) extends AnyVal {
 
     def acceptPortfolioShareFuture(params: AcceptPortfolioShareInput): Future[AcceptPortfolioShareOutput] =
       service.acceptPortfolioShare(params).promise.toFuture

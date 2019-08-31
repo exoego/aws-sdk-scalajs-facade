@@ -35,7 +35,7 @@ package object mq {
   type __string                      = String
   type __timestampIso8601            = js.Date
 
-  implicit final class MQOps(val service: MQ) extends AnyVal {
+  implicit final class MQOps(private val service: MQ) extends AnyVal {
 
     def createBrokerFuture(params: CreateBrokerRequest): Future[CreateBrokerResponse] =
       service.createBroker(params).promise.toFuture

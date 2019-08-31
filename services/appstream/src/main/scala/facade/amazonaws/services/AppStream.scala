@@ -90,7 +90,7 @@ package object appstream {
   type Username                                 = String
   type VisibilityType                           = String
 
-  implicit final class AppStreamOps(val service: AppStream) extends AnyVal {
+  implicit final class AppStreamOps(private val service: AppStream) extends AnyVal {
 
     def associateFleetFuture(params: AssociateFleetRequest): Future[AssociateFleetResult] =
       service.associateFleet(params).promise.toFuture

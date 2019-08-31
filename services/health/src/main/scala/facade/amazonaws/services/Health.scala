@@ -58,7 +58,7 @@ package object health {
   type tagValue                          = String
   type timestamp                         = js.Date
 
-  implicit final class HealthOps(val service: Health) extends AnyVal {
+  implicit final class HealthOps(private val service: Health) extends AnyVal {
 
     def describeAffectedEntitiesFuture(
         params: DescribeAffectedEntitiesRequest

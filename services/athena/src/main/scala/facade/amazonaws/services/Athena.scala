@@ -50,7 +50,7 @@ package object athena {
   type datumList                       = js.Array[Datum]
   type datumString                     = String
 
-  implicit final class AthenaOps(val service: Athena) extends AnyVal {
+  implicit final class AthenaOps(private val service: Athena) extends AnyVal {
 
     def batchGetNamedQueryFuture(params: BatchGetNamedQueryInput): Future[BatchGetNamedQueryOutput] =
       service.batchGetNamedQuery(params).promise.toFuture

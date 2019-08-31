@@ -96,7 +96,7 @@ package object directconnect {
   type VirtualInterfaceState  = String
   type VirtualInterfaceType   = String
 
-  implicit final class DirectConnectOps(val service: DirectConnect) extends AnyVal {
+  implicit final class DirectConnectOps(private val service: DirectConnect) extends AnyVal {
 
     def acceptDirectConnectGatewayAssociationProposalFuture(
         params: AcceptDirectConnectGatewayAssociationProposalRequest

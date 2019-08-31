@@ -32,7 +32,7 @@ package object licensemanager {
   type TagKeyList                       = js.Array[String]
   type TagList                          = js.Array[Tag]
 
-  implicit final class LicenseManagerOps(val service: LicenseManager) extends AnyVal {
+  implicit final class LicenseManagerOps(private val service: LicenseManager) extends AnyVal {
 
     def createLicenseConfigurationFuture(
         params: CreateLicenseConfigurationRequest

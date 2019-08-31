@@ -41,7 +41,7 @@ package object servicequotas {
   type ServiceQuotaTemplateAssociationStatus            = String
   type Statistic                                        = String
 
-  implicit final class ServiceQuotasOps(val service: ServiceQuotas) extends AnyVal {
+  implicit final class ServiceQuotasOps(private val service: ServiceQuotas) extends AnyVal {
 
     def associateServiceQuotaTemplateFuture(
         params: AssociateServiceQuotaTemplateRequest

@@ -35,7 +35,7 @@ package object kafka {
   type __stringMin5Max32             = String
   type __timestampIso8601            = js.Date
 
-  implicit final class KafkaOps(val service: Kafka) extends AnyVal {
+  implicit final class KafkaOps(private val service: Kafka) extends AnyVal {
 
     def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
       service.createCluster(params).promise.toFuture

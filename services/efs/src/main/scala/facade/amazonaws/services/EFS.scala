@@ -38,7 +38,7 @@ package object efs {
   type Timestamp                    = js.Date
   type TransitionToIARules          = String
 
-  implicit final class EFSOps(val service: EFS) extends AnyVal {
+  implicit final class EFSOps(private val service: EFS) extends AnyVal {
 
     def createFileSystemFuture(params: CreateFileSystemRequest): Future[FileSystemDescription] =
       service.createFileSystem(params).promise.toFuture

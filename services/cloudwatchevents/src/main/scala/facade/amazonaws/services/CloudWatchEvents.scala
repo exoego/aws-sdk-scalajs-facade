@@ -72,7 +72,7 @@ package object cloudwatchevents {
   type TransformerInput                 = String
   type TransformerPaths                 = js.Dictionary[TargetInputPath]
 
-  implicit final class CloudWatchEventsOps(val service: CloudWatchEvents) extends AnyVal {
+  implicit final class CloudWatchEventsOps(private val service: CloudWatchEvents) extends AnyVal {
 
     def activateEventSourceFuture(params: ActivateEventSourceRequest): Future[js.Object] =
       service.activateEventSource(params).promise.toFuture

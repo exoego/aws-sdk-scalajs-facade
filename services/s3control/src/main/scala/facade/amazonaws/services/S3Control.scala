@@ -63,7 +63,7 @@ package object s3control {
   type SuspendedDate               = js.Date
   type TimeStamp                   = js.Date
 
-  implicit final class S3ControlOps(val service: S3Control) extends AnyVal {
+  implicit final class S3ControlOps(private val service: S3Control) extends AnyVal {
 
     def createJobFuture(params: CreateJobRequest): Future[CreateJobResult] = service.createJob(params).promise.toFuture
     def deletePublicAccessBlockFuture(params: DeletePublicAccessBlockRequest): Future[js.Object] =

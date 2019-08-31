@@ -61,7 +61,7 @@ package object comprehend {
   type Timestamp                                  = js.Date
   type TopicsDetectionJobPropertiesList           = js.Array[TopicsDetectionJobProperties]
 
-  implicit final class ComprehendOps(val service: Comprehend) extends AnyVal {
+  implicit final class ComprehendOps(private val service: Comprehend) extends AnyVal {
 
     def batchDetectDominantLanguageFuture(
         params: BatchDetectDominantLanguageRequest

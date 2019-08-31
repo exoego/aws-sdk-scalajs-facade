@@ -127,7 +127,7 @@ package object directoryservice {
   type UserPassword                               = String
   type VpcId                                      = String
 
-  implicit final class DirectoryServiceOps(val service: DirectoryService) extends AnyVal {
+  implicit final class DirectoryServiceOps(private val service: DirectoryService) extends AnyVal {
 
     def acceptSharedDirectoryFuture(params: AcceptSharedDirectoryRequest): Future[AcceptSharedDirectoryResult] =
       service.acceptSharedDirectory(params).promise.toFuture

@@ -25,7 +25,7 @@ package object mediaconnect {
   type __mapOf__string                 = js.Dictionary[__string]
   type __string                        = String
 
-  implicit final class MediaConnectOps(val service: MediaConnect) extends AnyVal {
+  implicit final class MediaConnectOps(private val service: MediaConnect) extends AnyVal {
 
     def addFlowOutputsFuture(params: AddFlowOutputsRequest): Future[AddFlowOutputsResponse] =
       service.addFlowOutputs(params).promise.toFuture

@@ -35,7 +35,7 @@ package object globalaccelerator {
   type Timestamp                  = js.Date
   type TrafficDialPercentage      = Float
 
-  implicit final class GlobalAcceleratorOps(val service: GlobalAccelerator) extends AnyVal {
+  implicit final class GlobalAcceleratorOps(private val service: GlobalAccelerator) extends AnyVal {
 
     def createAcceleratorFuture(params: CreateAcceleratorRequest): Future[CreateAcceleratorResponse] =
       service.createAccelerator(params).promise.toFuture

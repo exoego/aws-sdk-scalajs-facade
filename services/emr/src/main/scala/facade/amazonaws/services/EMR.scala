@@ -98,7 +98,7 @@ package object emr {
   type XmlStringMaxLen256                     = String
   type XmlStringMaxLen256List                 = js.Array[XmlStringMaxLen256]
 
-  implicit final class EMROps(val service: EMR) extends AnyVal {
+  implicit final class EMROps(private val service: EMR) extends AnyVal {
 
     def addInstanceFleetFuture(params: AddInstanceFleetInput): Future[AddInstanceFleetOutput] =
       service.addInstanceFleet(params).promise.toFuture

@@ -28,7 +28,7 @@ package object cloudtrail {
   type TrailList            = js.Array[Trail]
   type TrailNameList        = js.Array[String]
 
-  implicit final class CloudTrailOps(val service: CloudTrail) extends AnyVal {
+  implicit final class CloudTrailOps(private val service: CloudTrail) extends AnyVal {
 
     def addTagsFuture(params: AddTagsRequest): Future[AddTagsResponse] = service.addTags(params).promise.toFuture
     def createTrailFuture(params: CreateTrailRequest): Future[CreateTrailResponse] =

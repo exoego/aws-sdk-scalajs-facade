@@ -73,7 +73,7 @@ package object apigateway {
   type UnauthorizedCacheControlHeaderStrategy = String
   type VpcLinkStatus                          = String
 
-  implicit final class APIGatewayOps(val service: APIGateway) extends AnyVal {
+  implicit final class APIGatewayOps(private val service: APIGateway) extends AnyVal {
 
     def createApiKeyFuture(params: CreateApiKeyRequest): Future[ApiKey] = service.createApiKey(params).promise.toFuture
     def createAuthorizerFuture(params: CreateAuthorizerRequest): Future[Authorizer] =

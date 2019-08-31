@@ -42,7 +42,7 @@ package object fms {
   type TimeStamp                  = js.Date
   type ViolationReason            = String
 
-  implicit final class FMSOps(val service: FMS) extends AnyVal {
+  implicit final class FMSOps(private val service: FMS) extends AnyVal {
 
     def associateAdminAccountFuture(params: AssociateAdminAccountRequest): Future[js.Object] =
       service.associateAdminAccount(params).promise.toFuture

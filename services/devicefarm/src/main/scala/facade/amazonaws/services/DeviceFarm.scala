@@ -101,7 +101,7 @@ package object devicefarm {
   type VPCEServiceName                    = String
   type VideoCapture                       = Boolean
 
-  implicit final class DeviceFarmOps(val service: DeviceFarm) extends AnyVal {
+  implicit final class DeviceFarmOps(private val service: DeviceFarm) extends AnyVal {
 
     def createDevicePoolFuture(params: CreateDevicePoolRequest): Future[CreateDevicePoolResult] =
       service.createDevicePool(params).promise.toFuture

@@ -40,7 +40,7 @@ package object mobile {
   type ShareUrl         = String
   type SnapshotId       = String
 
-  implicit final class MobileOps(val service: Mobile) extends AnyVal {
+  implicit final class MobileOps(private val service: Mobile) extends AnyVal {
 
     def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResult] =
       service.createProject(params).promise.toFuture

@@ -15,7 +15,7 @@ package object mediatailor {
   type __mapOf__string                = js.Dictionary[__string]
   type __string                       = String
 
-  implicit final class MediaTailorOps(val service: MediaTailor) extends AnyVal {
+  implicit final class MediaTailorOps(private val service: MediaTailor) extends AnyVal {
 
     def deletePlaybackConfigurationFuture(
         params: DeletePlaybackConfigurationRequest

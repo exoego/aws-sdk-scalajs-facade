@@ -67,7 +67,7 @@ package object ecr {
   type UploadId                         = String
   type Url                              = String
 
-  implicit final class ECROps(val service: ECR) extends AnyVal {
+  implicit final class ECROps(private val service: ECR) extends AnyVal {
 
     def batchCheckLayerAvailabilityFuture(
         params: BatchCheckLayerAvailabilityRequest

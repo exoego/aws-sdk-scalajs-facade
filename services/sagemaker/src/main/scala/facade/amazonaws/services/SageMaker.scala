@@ -280,7 +280,7 @@ package object sagemaker {
   type WorkteamName                                 = String
   type Workteams                                    = js.Array[Workteam]
 
-  implicit final class SageMakerOps(val service: SageMaker) extends AnyVal {
+  implicit final class SageMakerOps(private val service: SageMaker) extends AnyVal {
 
     def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise.toFuture
     def createAlgorithmFuture(params: CreateAlgorithmInput): Future[CreateAlgorithmOutput] =

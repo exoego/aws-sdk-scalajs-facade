@@ -52,7 +52,7 @@ package object codestar {
   type UserProfileDisplayName = String
   type UserProfilesList       = js.Array[UserProfileSummary]
 
-  implicit final class CodeStarOps(val service: CodeStar) extends AnyVal {
+  implicit final class CodeStarOps(private val service: CodeStar) extends AnyVal {
 
     def associateTeamMemberFuture(params: AssociateTeamMemberRequest): Future[AssociateTeamMemberResult] =
       service.associateTeamMember(params).promise.toFuture

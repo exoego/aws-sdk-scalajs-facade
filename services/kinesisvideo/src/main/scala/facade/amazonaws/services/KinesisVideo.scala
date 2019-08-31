@@ -30,7 +30,7 @@ package object kinesisvideo {
   type UpdateDataRetentionOperation = String
   type Version                      = String
 
-  implicit final class KinesisVideoOps(val service: KinesisVideo) extends AnyVal {
+  implicit final class KinesisVideoOps(private val service: KinesisVideo) extends AnyVal {
 
     def createStreamFuture(params: CreateStreamInput): Future[CreateStreamOutput] =
       service.createStream(params).promise.toFuture

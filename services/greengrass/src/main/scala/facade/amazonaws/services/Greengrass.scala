@@ -46,7 +46,7 @@ package object greengrass {
   type __mapOf__string                             = js.Dictionary[__string]
   type __string                                    = String
 
-  implicit final class GreengrassOps(val service: Greengrass) extends AnyVal {
+  implicit final class GreengrassOps(private val service: Greengrass) extends AnyVal {
 
     def associateRoleToGroupFuture(params: AssociateRoleToGroupRequest): Future[AssociateRoleToGroupResponse] =
       service.associateRoleToGroup(params).promise.toFuture

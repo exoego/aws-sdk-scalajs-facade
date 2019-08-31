@@ -60,7 +60,7 @@ package object kms {
   type TrustAnchorCertificateType = String
   type WrappingKeySpec            = String
 
-  implicit final class KMSOps(val service: KMS) extends AnyVal {
+  implicit final class KMSOps(private val service: KMS) extends AnyVal {
 
     def cancelKeyDeletionFuture(params: CancelKeyDeletionRequest): Future[CancelKeyDeletionResponse] =
       service.cancelKeyDeletion(params).promise.toFuture

@@ -40,7 +40,7 @@ package object shield {
   type TopContributors             = js.Array[Contributor]
   type Unit                        = String
 
-  implicit final class ShieldOps(val service: Shield) extends AnyVal {
+  implicit final class ShieldOps(private val service: Shield) extends AnyVal {
 
     def associateDRTLogBucketFuture(params: AssociateDRTLogBucketRequest): Future[AssociateDRTLogBucketResponse] =
       service.associateDRTLogBucket(params).promise.toFuture

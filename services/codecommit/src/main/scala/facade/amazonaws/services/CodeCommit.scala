@@ -120,7 +120,7 @@ package object codecommit {
   type Title                                    = String
   type blob                                     = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
 
-  implicit final class CodeCommitOps(val service: CodeCommit) extends AnyVal {
+  implicit final class CodeCommitOps(private val service: CodeCommit) extends AnyVal {
 
     def batchDescribeMergeConflictsFuture(
         params: BatchDescribeMergeConflictsInput

@@ -87,7 +87,7 @@ package object redshift {
   type VpcSecurityGroupIdList             = js.Array[String]
   type VpcSecurityGroupMembershipList     = js.Array[VpcSecurityGroupMembership]
 
-  implicit final class RedshiftOps(val service: Redshift) extends AnyVal {
+  implicit final class RedshiftOps(private val service: Redshift) extends AnyVal {
 
     def acceptReservedNodeExchangeFuture(
         params: AcceptReservedNodeExchangeInputMessage

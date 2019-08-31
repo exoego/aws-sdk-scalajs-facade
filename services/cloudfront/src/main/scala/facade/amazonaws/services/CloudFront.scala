@@ -62,7 +62,7 @@ package object cloudfront {
   type ViewerProtocolPolicy                      = String
   type timestamp                                 = js.Date
 
-  implicit final class CloudFrontOps(val service: CloudFront) extends AnyVal {
+  implicit final class CloudFrontOps(private val service: CloudFront) extends AnyVal {
 
     def createCloudFrontOriginAccessIdentityFuture(
         params: CreateCloudFrontOriginAccessIdentityRequest

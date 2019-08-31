@@ -64,7 +64,7 @@ package object chime {
   type VoiceConnectorList               = js.Array[VoiceConnector]
   type VoiceConnectorName               = String
 
-  implicit final class ChimeOps(val service: Chime) extends AnyVal {
+  implicit final class ChimeOps(private val service: Chime) extends AnyVal {
 
     def associatePhoneNumberWithUserFuture(
         params: AssociatePhoneNumberWithUserRequest

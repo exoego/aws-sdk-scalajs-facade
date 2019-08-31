@@ -71,7 +71,7 @@ package object es {
   type UserPoolId                                 = String
   type VolumeType                                 = String
 
-  implicit final class ESOps(val service: ES) extends AnyVal {
+  implicit final class ESOps(private val service: ES) extends AnyVal {
 
     def addTagsFuture(params: AddTagsRequest): Future[js.Object] = service.addTags(params).promise.toFuture
     def cancelElasticsearchServiceSoftwareUpdateFuture(

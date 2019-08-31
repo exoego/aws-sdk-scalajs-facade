@@ -84,7 +84,7 @@ package object elb {
   type UnhealthyThreshold              = Int
   type VPCId                           = String
 
-  implicit final class ELBOps(val service: ELB) extends AnyVal {
+  implicit final class ELBOps(private val service: ELB) extends AnyVal {
 
     def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise.toFuture
     def applySecurityGroupsToLoadBalancerFuture(

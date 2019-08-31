@@ -42,7 +42,7 @@ package object signer {
   type Version               = String
   type key                   = String
 
-  implicit final class SignerOps(val service: Signer) extends AnyVal {
+  implicit final class SignerOps(private val service: Signer) extends AnyVal {
 
     def cancelSigningProfileFuture(params: CancelSigningProfileRequest): Future[js.Object] =
       service.cancelSigningProfile(params).promise.toFuture

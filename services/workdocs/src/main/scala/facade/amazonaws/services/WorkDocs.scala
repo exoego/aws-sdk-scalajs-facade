@@ -90,7 +90,7 @@ package object workdocs {
   type UserType                    = String
   type UsernameType                = String
 
-  implicit final class WorkDocsOps(val service: WorkDocs) extends AnyVal {
+  implicit final class WorkDocsOps(private val service: WorkDocs) extends AnyVal {
 
     def abortDocumentVersionUploadFuture(params: AbortDocumentVersionUploadRequest): Future[js.Object] =
       service.abortDocumentVersionUpload(params).promise.toFuture

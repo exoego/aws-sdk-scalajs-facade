@@ -72,7 +72,7 @@ package object eventbridge {
   type TransformerInput                 = String
   type TransformerPaths                 = js.Dictionary[TargetInputPath]
 
-  implicit final class EventBridgeOps(val service: EventBridge) extends AnyVal {
+  implicit final class EventBridgeOps(private val service: EventBridge) extends AnyVal {
 
     def activateEventSourceFuture(params: ActivateEventSourceRequest): Future[js.Object] =
       service.activateEventSource(params).promise.toFuture

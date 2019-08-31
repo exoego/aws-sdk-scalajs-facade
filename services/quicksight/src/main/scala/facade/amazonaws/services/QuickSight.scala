@@ -26,7 +26,7 @@ package object quicksight {
   type UserName                 = String
   type UserRole                 = String
 
-  implicit final class QuickSightOps(val service: QuickSight) extends AnyVal {
+  implicit final class QuickSightOps(private val service: QuickSight) extends AnyVal {
 
     def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResponse] =
       service.createGroup(params).promise.toFuture

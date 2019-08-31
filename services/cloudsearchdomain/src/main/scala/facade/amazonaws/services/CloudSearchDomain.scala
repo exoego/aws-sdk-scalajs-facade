@@ -39,7 +39,7 @@ package object cloudsearchdomain {
   type Suggestions             = js.Array[SuggestionMatch]
   type SuggestionsSize         = Double
 
-  implicit final class CloudSearchDomainOps(val service: CloudSearchDomain) extends AnyVal {
+  implicit final class CloudSearchDomainOps(private val service: CloudSearchDomain) extends AnyVal {
 
     def searchFuture(params: SearchRequest): Future[SearchResponse]    = service.search(params).promise.toFuture
     def suggestFuture(params: SuggestRequest): Future[SuggestResponse] = service.suggest(params).promise.toFuture

@@ -54,7 +54,7 @@ package object forecast {
   type Values                        = js.Array[Value]
   type WeightedQuantileLosses        = js.Array[WeightedQuantileLoss]
 
-  implicit final class ForecastOps(val service: Forecast) extends AnyVal {
+  implicit final class ForecastOps(private val service: Forecast) extends AnyVal {
 
     def createDatasetFuture(params: CreateDatasetRequest): Future[CreateDatasetResponse] =
       service.createDataset(params).promise.toFuture

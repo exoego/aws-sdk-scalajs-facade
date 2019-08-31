@@ -53,7 +53,7 @@ package object backup {
   type WindowMinutes                  = Double
   type timestamp                      = js.Date
 
-  implicit final class BackupOps(val service: Backup) extends AnyVal {
+  implicit final class BackupOps(private val service: Backup) extends AnyVal {
 
     def createBackupPlanFuture(params: CreateBackupPlanInput): Future[CreateBackupPlanOutput] =
       service.createBackupPlan(params).promise.toFuture

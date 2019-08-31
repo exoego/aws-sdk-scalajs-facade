@@ -37,7 +37,7 @@ package object cognitosync {
   type StreamingStatus       = String
   type SyncSessionToken      = String
 
-  implicit final class CognitoSyncOps(val service: CognitoSync) extends AnyVal {
+  implicit final class CognitoSyncOps(private val service: CognitoSync) extends AnyVal {
 
     def bulkPublishFuture(params: BulkPublishRequest): Future[BulkPublishResponse] =
       service.bulkPublish(params).promise.toFuture

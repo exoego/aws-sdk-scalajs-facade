@@ -15,7 +15,7 @@ package object ec2instanceconnect {
   type SSHPublicKey     = String
   type Success          = Boolean
 
-  implicit final class EC2InstanceConnectOps(val service: EC2InstanceConnect) extends AnyVal {
+  implicit final class EC2InstanceConnectOps(private val service: EC2InstanceConnect) extends AnyVal {
 
     def sendSSHPublicKeyFuture(params: SendSSHPublicKeyRequest): Future[SendSSHPublicKeyResponse] =
       service.sendSSHPublicKey(params).promise.toFuture

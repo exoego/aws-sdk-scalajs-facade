@@ -90,7 +90,7 @@ package object firehose {
   type Timestamp                               = js.Date
   type Username                                = String
 
-  implicit final class FirehoseOps(val service: Firehose) extends AnyVal {
+  implicit final class FirehoseOps(private val service: Firehose) extends AnyVal {
 
     def createDeliveryStreamFuture(params: CreateDeliveryStreamInput): Future[CreateDeliveryStreamOutput] =
       service.createDeliveryStream(params).promise.toFuture

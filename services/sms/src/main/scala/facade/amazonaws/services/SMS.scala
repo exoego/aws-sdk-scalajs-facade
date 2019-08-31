@@ -91,7 +91,7 @@ package object sms {
   type VmPath                               = String
   type VmServerAddressList                  = js.Array[VmServerAddress]
 
-  implicit final class SMSOps(val service: SMS) extends AnyVal {
+  implicit final class SMSOps(private val service: SMS) extends AnyVal {
 
     def createAppFuture(params: CreateAppRequest): Future[CreateAppResponse] =
       service.createApp(params).promise.toFuture

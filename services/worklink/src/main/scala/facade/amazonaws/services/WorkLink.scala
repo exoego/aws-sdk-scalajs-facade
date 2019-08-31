@@ -44,7 +44,7 @@ package object worklink {
   type WebsiteAuthorizationProvidersSummaryList = js.Array[WebsiteAuthorizationProviderSummary]
   type WebsiteCaSummaryList                     = js.Array[WebsiteCaSummary]
 
-  implicit final class WorkLinkOps(val service: WorkLink) extends AnyVal {
+  implicit final class WorkLinkOps(private val service: WorkLink) extends AnyVal {
 
     def associateDomainFuture(params: AssociateDomainRequest): Future[AssociateDomainResponse] =
       service.associateDomain(params).promise.toFuture
