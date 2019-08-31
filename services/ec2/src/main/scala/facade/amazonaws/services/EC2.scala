@@ -540,7 +540,7 @@ package object ec2 {
   type ZoneNameStringList                               = js.Array[String]
   type scope                                            = String
 
-  implicit final class EC2Ops(val service: EC2) extends AnyVal {
+  implicit final class EC2Ops(private val service: EC2) extends AnyVal {
 
     def acceptReservedInstancesExchangeQuoteFuture(
         params: AcceptReservedInstancesExchangeQuoteRequest

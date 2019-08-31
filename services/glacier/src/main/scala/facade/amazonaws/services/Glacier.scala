@@ -37,7 +37,7 @@ package object glacier {
   type hashmap                 = js.Dictionary[String]
   type httpstatus              = Int
 
-  implicit final class GlacierOps(val service: Glacier) extends AnyVal {
+  implicit final class GlacierOps(private val service: Glacier) extends AnyVal {
 
     def abortMultipartUploadFuture(params: AbortMultipartUploadInput): Future[js.Object] =
       service.abortMultipartUpload(params).promise.toFuture

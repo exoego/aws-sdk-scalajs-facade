@@ -22,7 +22,7 @@ package object iot1clickdevicesservice {
   type __stringMin12Max40        = String
   type __timestampIso8601        = js.Date
 
-  implicit final class IoT1ClickDevicesServiceOps(val service: IoT1ClickDevicesService) extends AnyVal {
+  implicit final class IoT1ClickDevicesServiceOps(private val service: IoT1ClickDevicesService) extends AnyVal {
 
     def claimDevicesByClaimCodeFuture(params: ClaimDevicesByClaimCodeRequest): Future[ClaimDevicesByClaimCodeResponse] =
       service.claimDevicesByClaimCode(params).promise.toFuture

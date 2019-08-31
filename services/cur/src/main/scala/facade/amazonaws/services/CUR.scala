@@ -26,7 +26,7 @@ package object cur {
   type SchemaElementList      = js.Array[SchemaElement]
   type TimeUnit               = String
 
-  implicit final class CUROps(val service: CUR) extends AnyVal {
+  implicit final class CUROps(private val service: CUR) extends AnyVal {
 
     def deleteReportDefinitionFuture(params: DeleteReportDefinitionRequest): Future[DeleteReportDefinitionResponse] =
       service.deleteReportDefinition(params).promise.toFuture

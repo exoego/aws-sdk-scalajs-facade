@@ -11,7 +11,7 @@ package object apigatewaymanagementapi {
   type Data     = nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type __string = String
 
-  implicit final class ApiGatewayManagementApiOps(val service: ApiGatewayManagementApi) extends AnyVal {
+  implicit final class ApiGatewayManagementApiOps(private val service: ApiGatewayManagementApi) extends AnyVal {
 
     def postToConnectionFuture(params: PostToConnectionRequest): Future[js.Object] =
       service.postToConnection(params).promise.toFuture

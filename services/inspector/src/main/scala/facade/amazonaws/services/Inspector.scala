@@ -108,7 +108,7 @@ package object inspector {
   type UserAttributeList                      = js.Array[Attribute]
   type Version                                = String
 
-  implicit final class InspectorOps(val service: Inspector) extends AnyVal {
+  implicit final class InspectorOps(private val service: Inspector) extends AnyVal {
 
     def addAttributesToFindingsFuture(params: AddAttributesToFindingsRequest): Future[AddAttributesToFindingsResponse] =
       service.addAttributesToFindings(params).promise.toFuture

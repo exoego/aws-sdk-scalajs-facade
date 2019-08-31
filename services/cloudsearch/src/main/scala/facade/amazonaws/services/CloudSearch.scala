@@ -48,7 +48,7 @@ package object cloudsearch {
   type UpdateTimestamp          = js.Date
   type Word                     = String
 
-  implicit final class CloudSearchOps(val service: CloudSearch) extends AnyVal {
+  implicit final class CloudSearchOps(private val service: CloudSearch) extends AnyVal {
 
     def buildSuggestersFuture(params: BuildSuggestersRequest): Future[BuildSuggestersResponse] =
       service.buildSuggesters(params).promise.toFuture

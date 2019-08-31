@@ -110,7 +110,7 @@ package object lightsail {
   type double                                               = Double
   type timestamp                                            = js.Date
 
-  implicit final class LightsailOps(val service: Lightsail) extends AnyVal {
+  implicit final class LightsailOps(private val service: Lightsail) extends AnyVal {
 
     def allocateStaticIpFuture(params: AllocateStaticIpRequest): Future[AllocateStaticIpResult] =
       service.allocateStaticIp(params).promise.toFuture

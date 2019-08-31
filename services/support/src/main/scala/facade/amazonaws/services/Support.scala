@@ -55,7 +55,7 @@ package object support {
   type TrustedAdvisorCheckSummaryList       = js.Array[TrustedAdvisorCheckSummary]
   type TrustedAdvisorResourceDetailList     = js.Array[TrustedAdvisorResourceDetail]
 
-  implicit final class SupportOps(val service: Support) extends AnyVal {
+  implicit final class SupportOps(private val service: Support) extends AnyVal {
 
     def addAttachmentsToSetFuture(params: AddAttachmentsToSetRequest): Future[AddAttachmentsToSetResponse] =
       service.addAttachmentsToSet(params).promise.toFuture

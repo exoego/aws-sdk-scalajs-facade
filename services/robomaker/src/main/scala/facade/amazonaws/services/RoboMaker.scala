@@ -83,7 +83,7 @@ package object robomaker {
   type Version                            = String
   type VersionQualifier                   = String
 
-  implicit final class RoboMakerOps(val service: RoboMaker) extends AnyVal {
+  implicit final class RoboMakerOps(private val service: RoboMaker) extends AnyVal {
 
     def batchDescribeSimulationJobFuture(
         params: BatchDescribeSimulationJobRequest

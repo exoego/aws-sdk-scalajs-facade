@@ -64,7 +64,7 @@ package object guardduty {
   type ThreatNames                = js.Array[String]
   type UnprocessedAccounts        = js.Array[UnprocessedAccount]
 
-  implicit final class GuardDutyOps(val service: GuardDuty) extends AnyVal {
+  implicit final class GuardDutyOps(private val service: GuardDuty) extends AnyVal {
 
     def acceptInvitationFuture(params: AcceptInvitationRequest): Future[AcceptInvitationResponse] =
       service.acceptInvitation(params).promise.toFuture

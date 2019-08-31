@@ -41,7 +41,7 @@ package object dynamodbstreams {
   type StringSetAttributeValue = js.Array[StringAttributeValue]
   type TableName               = String
 
-  implicit final class DynamoDBStreamsOps(val service: DynamoDBStreams) extends AnyVal {
+  implicit final class DynamoDBStreamsOps(private val service: DynamoDBStreams) extends AnyVal {
 
     def describeStreamFuture(params: DescribeStreamInput): Future[DescribeStreamOutput] =
       service.describeStream(params).promise.toFuture

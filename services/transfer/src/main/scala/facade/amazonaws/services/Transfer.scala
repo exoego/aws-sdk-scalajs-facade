@@ -41,7 +41,7 @@ package object transfer {
   type UserPassword         = String
   type VpcEndpointId        = String
 
-  implicit final class TransferOps(val service: Transfer) extends AnyVal {
+  implicit final class TransferOps(private val service: Transfer) extends AnyVal {
 
     def createServerFuture(params: CreateServerRequest): Future[CreateServerResponse] =
       service.createServer(params).promise.toFuture

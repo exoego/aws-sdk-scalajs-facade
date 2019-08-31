@@ -73,7 +73,7 @@ package object iotthingsgraph {
   type Urns                              = js.Array[Urn]
   type Version                           = Double
 
-  implicit final class IoTThingsGraphOps(val service: IoTThingsGraph) extends AnyVal {
+  implicit final class IoTThingsGraphOps(private val service: IoTThingsGraph) extends AnyVal {
 
     def associateEntityToThingFuture(params: AssociateEntityToThingRequest): Future[AssociateEntityToThingResponse] =
       service.associateEntityToThing(params).promise.toFuture

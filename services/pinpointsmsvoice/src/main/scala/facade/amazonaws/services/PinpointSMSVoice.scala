@@ -17,7 +17,7 @@ package object pinpointsmsvoice {
   type WordCharactersWithDelimiters = String
   type __string                     = String
 
-  implicit final class PinpointSMSVoiceOps(val service: PinpointSMSVoice) extends AnyVal {
+  implicit final class PinpointSMSVoiceOps(private val service: PinpointSMSVoice) extends AnyVal {
 
     def createConfigurationSetEventDestinationFuture(
         params: CreateConfigurationSetEventDestinationRequest

@@ -19,7 +19,7 @@ package object forecastquery {
   type TimeSeries     = js.Array[DataPoint]
   type Timestamp      = String
 
-  implicit final class ForecastQueryOps(val service: ForecastQuery) extends AnyVal {
+  implicit final class ForecastQueryOps(private val service: ForecastQuery) extends AnyVal {
 
     def queryForecastFuture(params: QueryForecastRequest): Future[QueryForecastResponse] =
       service.queryForecast(params).promise.toFuture

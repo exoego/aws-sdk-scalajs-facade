@@ -40,7 +40,7 @@ package object textract {
   type UInteger         = Int
   type Warnings         = js.Array[Warning]
 
-  implicit final class TextractOps(val service: Textract) extends AnyVal {
+  implicit final class TextractOps(private val service: Textract) extends AnyVal {
 
     def analyzeDocumentFuture(params: AnalyzeDocumentRequest): Future[AnalyzeDocumentResponse] =
       service.analyzeDocument(params).promise.toFuture

@@ -88,7 +88,7 @@ package object rekognition {
   type Urls                  = js.Array[Url]
   type VideoJobStatus        = String
 
-  implicit final class RekognitionOps(val service: Rekognition) extends AnyVal {
+  implicit final class RekognitionOps(private val service: Rekognition) extends AnyVal {
 
     def compareFacesFuture(params: CompareFacesRequest): Future[CompareFacesResponse] =
       service.compareFaces(params).promise.toFuture

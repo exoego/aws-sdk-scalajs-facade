@@ -36,7 +36,7 @@ package object dax {
   type TStamp                      = js.Date
   type TagList                     = js.Array[Tag]
 
-  implicit final class DAXOps(val service: DAX) extends AnyVal {
+  implicit final class DAXOps(private val service: DAX) extends AnyVal {
 
     def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
       service.createCluster(params).promise.toFuture

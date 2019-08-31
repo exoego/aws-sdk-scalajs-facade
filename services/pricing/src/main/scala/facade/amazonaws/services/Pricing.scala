@@ -18,7 +18,7 @@ package object pricing {
   type ServiceList        = js.Array[Service]
   type errorMessage       = String
 
-  implicit final class PricingOps(val service: Pricing) extends AnyVal {
+  implicit final class PricingOps(private val service: Pricing) extends AnyVal {
 
     def describeServicesFuture(params: DescribeServicesRequest): Future[DescribeServicesResponse] =
       service.describeServices(params).promise.toFuture

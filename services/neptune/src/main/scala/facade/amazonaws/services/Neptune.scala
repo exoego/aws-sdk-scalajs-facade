@@ -62,7 +62,7 @@ package object neptune {
   type VpcSecurityGroupIdList              = js.Array[String]
   type VpcSecurityGroupMembershipList      = js.Array[VpcSecurityGroupMembership]
 
-  implicit final class NeptuneOps(val service: Neptune) extends AnyVal {
+  implicit final class NeptuneOps(private val service: Neptune) extends AnyVal {
 
     def addRoleToDBClusterFuture(params: AddRoleToDBClusterMessage): Future[js.Object] =
       service.addRoleToDBCluster(params).promise.toFuture

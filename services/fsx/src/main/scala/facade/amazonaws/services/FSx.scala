@@ -62,7 +62,7 @@ package object fsx {
   type VpcId                               = String
   type WeeklyTime                          = String
 
-  implicit final class FSxOps(val service: FSx) extends AnyVal {
+  implicit final class FSxOps(private val service: FSx) extends AnyVal {
 
     def createBackupFuture(params: CreateBackupRequest): Future[CreateBackupResponse] =
       service.createBackup(params).promise.toFuture

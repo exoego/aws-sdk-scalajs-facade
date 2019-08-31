@@ -25,7 +25,8 @@ package object serverlessapplicationrepository {
   type __listOf__string                     = js.Array[__string]
   type __string                             = String
 
-  implicit final class ServerlessApplicationRepositoryOps(val service: ServerlessApplicationRepository) extends AnyVal {
+  implicit final class ServerlessApplicationRepositoryOps(private val service: ServerlessApplicationRepository)
+      extends AnyVal {
 
     def createApplicationFuture(params: CreateApplicationRequest): Future[CreateApplicationResponse] =
       service.createApplication(params).promise.toFuture

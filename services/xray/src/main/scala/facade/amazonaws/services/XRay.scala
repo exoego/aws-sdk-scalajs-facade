@@ -87,7 +87,7 @@ package object xray {
   type ValuesWithServiceIds            = js.Array[ValueWithServiceIds]
   type Version                         = Int
 
-  implicit final class XRayOps(val service: XRay) extends AnyVal {
+  implicit final class XRayOps(private val service: XRay) extends AnyVal {
 
     def batchGetTracesFuture(params: BatchGetTracesRequest): Future[BatchGetTracesResult] =
       service.batchGetTraces(params).promise.toFuture

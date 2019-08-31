@@ -53,7 +53,7 @@ package object secretsmanager {
   type TagListType                   = js.Array[Tag]
   type TagValueType                  = String
 
-  implicit final class SecretsManagerOps(val service: SecretsManager) extends AnyVal {
+  implicit final class SecretsManagerOps(private val service: SecretsManager) extends AnyVal {
 
     def cancelRotateSecretFuture(params: CancelRotateSecretRequest): Future[CancelRotateSecretResponse] =
       service.cancelRotateSecret(params).promise.toFuture

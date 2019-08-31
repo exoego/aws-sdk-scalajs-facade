@@ -33,7 +33,7 @@ package object mediapackage {
   type __mapOf__string                             = js.Dictionary[__string]
   type __string                                    = String
 
-  implicit final class MediaPackageOps(val service: MediaPackage) extends AnyVal {
+  implicit final class MediaPackageOps(private val service: MediaPackage) extends AnyVal {
 
     def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] =
       service.createChannel(params).promise.toFuture

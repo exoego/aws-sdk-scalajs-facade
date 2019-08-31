@@ -35,7 +35,7 @@ package object ioteventsdata {
   type VariableValue          = String
   type Variables              = js.Array[Variable]
 
-  implicit final class IoTEventsDataOps(val service: IoTEventsData) extends AnyVal {
+  implicit final class IoTEventsDataOps(private val service: IoTEventsData) extends AnyVal {
 
     def batchPutMessageFuture(params: BatchPutMessageRequest): Future[BatchPutMessageResponse] =
       service.batchPutMessage(params).promise.toFuture

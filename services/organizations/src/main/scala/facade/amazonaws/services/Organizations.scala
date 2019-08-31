@@ -77,7 +77,7 @@ package object organizations {
   type TargetType                 = String
   type Timestamp                  = js.Date
 
-  implicit final class OrganizationsOps(val service: Organizations) extends AnyVal {
+  implicit final class OrganizationsOps(private val service: Organizations) extends AnyVal {
 
     def acceptHandshakeFuture(params: AcceptHandshakeRequest): Future[AcceptHandshakeResponse] =
       service.acceptHandshake(params).promise.toFuture

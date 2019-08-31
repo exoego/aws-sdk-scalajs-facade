@@ -97,7 +97,7 @@ package object waf {
   type XssMatchSetUpdates            = js.Array[XssMatchSetUpdate]
   type XssMatchTuples                = js.Array[XssMatchTuple]
 
-  implicit final class WAFOps(val service: WAF) extends AnyVal {
+  implicit final class WAFOps(private val service: WAF) extends AnyVal {
 
     def createByteMatchSetFuture(params: CreateByteMatchSetRequest): Future[CreateByteMatchSetResponse] =
       service.createByteMatchSet(params).promise.toFuture

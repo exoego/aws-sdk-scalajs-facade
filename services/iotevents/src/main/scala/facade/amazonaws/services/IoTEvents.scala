@@ -51,7 +51,7 @@ package object iotevents {
   type VariableName                  = String
   type VariableValue                 = String
 
-  implicit final class IoTEventsOps(val service: IoTEvents) extends AnyVal {
+  implicit final class IoTEventsOps(private val service: IoTEvents) extends AnyVal {
 
     def createDetectorModelFuture(params: CreateDetectorModelRequest): Future[CreateDetectorModelResponse] =
       service.createDetectorModel(params).promise.toFuture

@@ -18,7 +18,7 @@ package object iotdata {
   type Topic        = String
   type errorMessage = String
 
-  implicit final class IotDataOps(val service: IotData) extends AnyVal {
+  implicit final class IotDataOps(private val service: IotData) extends AnyVal {
 
     def deleteThingShadowFuture(params: DeleteThingShadowRequest): Future[DeleteThingShadowResponse] =
       service.deleteThingShadow(params).promise.toFuture

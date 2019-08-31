@@ -25,7 +25,7 @@ package object macie {
   type S3ResourcesClassification       = js.Array[S3ResourceClassification]
   type S3ResourcesClassificationUpdate = js.Array[S3ResourceClassificationUpdate]
 
-  implicit final class MacieOps(val service: Macie) extends AnyVal {
+  implicit final class MacieOps(private val service: Macie) extends AnyVal {
 
     def associateMemberAccountFuture(params: AssociateMemberAccountRequest): Future[js.Object] =
       service.associateMemberAccount(params).promise.toFuture

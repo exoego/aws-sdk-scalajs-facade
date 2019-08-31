@@ -249,7 +249,7 @@ package object s3 {
   type WebsiteRedirectLocation           = String
   type Years                             = Int
 
-  implicit final class S3Ops(val service: S3) extends AnyVal {
+  implicit final class S3Ops(private val service: S3) extends AnyVal {
 
     def abortMultipartUploadFuture(params: AbortMultipartUploadRequest): Future[AbortMultipartUploadOutput] =
       service.abortMultipartUpload(params).promise.toFuture

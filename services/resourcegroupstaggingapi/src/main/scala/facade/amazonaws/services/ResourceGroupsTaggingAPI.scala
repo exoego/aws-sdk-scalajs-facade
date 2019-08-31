@@ -30,7 +30,7 @@ package object resourcegroupstaggingapi {
   type TagValuesOutputList    = js.Array[TagValue]
   type TagsPerPage            = Int
 
-  implicit final class ResourceGroupsTaggingAPIOps(val service: ResourceGroupsTaggingAPI) extends AnyVal {
+  implicit final class ResourceGroupsTaggingAPIOps(private val service: ResourceGroupsTaggingAPI) extends AnyVal {
 
     def getResourcesFuture(params: GetResourcesInput): Future[GetResourcesOutput] =
       service.getResources(params).promise.toFuture

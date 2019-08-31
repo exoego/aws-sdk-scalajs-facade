@@ -403,7 +403,7 @@ package object iot {
   type ViolationId                         = String
   type WaitingForDataCollectionChecksCount = Int
 
-  implicit final class IotOps(val service: Iot) extends AnyVal {
+  implicit final class IotOps(private val service: Iot) extends AnyVal {
 
     def acceptCertificateTransferFuture(params: AcceptCertificateTransferRequest): Future[js.Object] =
       service.acceptCertificateTransfer(params).promise.toFuture

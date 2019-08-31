@@ -54,7 +54,7 @@ package object acm {
   type ValidationEmailList = js.Array[String]
   type ValidationMethod    = String
 
-  implicit final class ACMOps(val service: ACM) extends AnyVal {
+  implicit final class ACMOps(private val service: ACM) extends AnyVal {
 
     def addTagsToCertificateFuture(params: AddTagsToCertificateRequest): Future[js.Object] =
       service.addTagsToCertificate(params).promise.toFuture

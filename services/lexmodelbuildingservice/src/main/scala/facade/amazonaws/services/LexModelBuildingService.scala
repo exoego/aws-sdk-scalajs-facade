@@ -76,7 +76,7 @@ package object lexmodelbuildingservice {
   type Value                       = String
   type Version                     = String
 
-  implicit final class LexModelBuildingServiceOps(val service: LexModelBuildingService) extends AnyVal {
+  implicit final class LexModelBuildingServiceOps(private val service: LexModelBuildingService) extends AnyVal {
 
     def createBotVersionFuture(params: CreateBotVersionRequest): Future[CreateBotVersionResponse] =
       service.createBotVersion(params).promise.toFuture

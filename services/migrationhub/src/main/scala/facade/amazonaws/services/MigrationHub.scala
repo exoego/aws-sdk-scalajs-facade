@@ -37,7 +37,7 @@ package object migrationhub {
   type Token                           = String
   type UpdateDateTime                  = js.Date
 
-  implicit final class MigrationHubOps(val service: MigrationHub) extends AnyVal {
+  implicit final class MigrationHubOps(private val service: MigrationHub) extends AnyVal {
 
     def associateCreatedArtifactFuture(
         params: AssociateCreatedArtifactRequest

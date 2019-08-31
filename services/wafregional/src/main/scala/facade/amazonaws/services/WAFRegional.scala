@@ -99,7 +99,7 @@ package object wafregional {
   type XssMatchSetUpdates            = js.Array[XssMatchSetUpdate]
   type XssMatchTuples                = js.Array[XssMatchTuple]
 
-  implicit final class WAFRegionalOps(val service: WAFRegional) extends AnyVal {
+  implicit final class WAFRegionalOps(private val service: WAFRegional) extends AnyVal {
 
     def associateWebACLFuture(params: AssociateWebACLRequest): Future[AssociateWebACLResponse] =
       service.associateWebACL(params).promise.toFuture

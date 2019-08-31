@@ -29,7 +29,7 @@ package object cloud9 {
   type Timestamp                  = js.Date
   type UserArn                    = String
 
-  implicit final class Cloud9Ops(val service: Cloud9) extends AnyVal {
+  implicit final class Cloud9Ops(private val service: Cloud9) extends AnyVal {
 
     def createEnvironmentEC2Future(params: CreateEnvironmentEC2Request): Future[CreateEnvironmentEC2Result] =
       service.createEnvironmentEC2(params).promise.toFuture

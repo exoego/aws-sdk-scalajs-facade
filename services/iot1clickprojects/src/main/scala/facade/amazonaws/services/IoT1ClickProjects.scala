@@ -35,7 +35,7 @@ package object iot1clickprojects {
   type TagValue                     = String
   type Time                         = js.Date
 
-  implicit final class IoT1ClickProjectsOps(val service: IoT1ClickProjects) extends AnyVal {
+  implicit final class IoT1ClickProjectsOps(private val service: IoT1ClickProjects) extends AnyVal {
 
     def associateDeviceWithPlacementFuture(
         params: AssociateDeviceWithPlacementRequest

@@ -36,7 +36,7 @@ package object resourcegroups {
   type TagValue               = String
   type Tags                   = js.Dictionary[TagValue]
 
-  implicit final class ResourceGroupsOps(val service: ResourceGroups) extends AnyVal {
+  implicit final class ResourceGroupsOps(private val service: ResourceGroups) extends AnyVal {
 
     def createGroupFuture(params: CreateGroupInput): Future[CreateGroupOutput] =
       service.createGroup(params).promise.toFuture

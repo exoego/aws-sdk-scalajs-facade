@@ -80,7 +80,7 @@ package object machinelearning {
   type VipURL                          = String
   type floatLabel                      = Float
 
-  implicit final class MachineLearningOps(val service: MachineLearning) extends AnyVal {
+  implicit final class MachineLearningOps(private val service: MachineLearning) extends AnyVal {
 
     def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise.toFuture
     def createBatchPredictionFuture(params: CreateBatchPredictionInput): Future[CreateBatchPredictionOutput] =

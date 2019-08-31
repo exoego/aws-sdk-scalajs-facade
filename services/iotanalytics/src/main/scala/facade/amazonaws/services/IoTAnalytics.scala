@@ -97,7 +97,7 @@ package object iotanalytics {
   type Variables                = js.Array[Variable]
   type VolumeSizeInGB           = Int
 
-  implicit final class IoTAnalyticsOps(val service: IoTAnalytics) extends AnyVal {
+  implicit final class IoTAnalyticsOps(private val service: IoTAnalytics) extends AnyVal {
 
     def batchPutMessageFuture(params: BatchPutMessageRequest): Future[BatchPutMessageResponse] =
       service.batchPutMessage(params).promise.toFuture

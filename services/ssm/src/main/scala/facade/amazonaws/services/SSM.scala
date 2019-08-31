@@ -513,7 +513,7 @@ package object ssm {
   type ValidNextStepList                       = js.Array[ValidNextStep]
   type Version                                 = String
 
-  implicit final class SSMOps(val service: SSM) extends AnyVal {
+  implicit final class SSMOps(private val service: SSM) extends AnyVal {
 
     def addTagsToResourceFuture(params: AddTagsToResourceRequest): Future[AddTagsToResourceResult] =
       service.addTagsToResource(params).promise.toFuture

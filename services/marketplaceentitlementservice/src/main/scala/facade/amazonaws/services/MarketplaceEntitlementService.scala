@@ -18,7 +18,8 @@ package object marketplaceentitlementservice {
   type ProductCode              = String
   type Timestamp                = js.Date
 
-  implicit final class MarketplaceEntitlementServiceOps(val service: MarketplaceEntitlementService) extends AnyVal {
+  implicit final class MarketplaceEntitlementServiceOps(private val service: MarketplaceEntitlementService)
+      extends AnyVal {
 
     def getEntitlementsFuture(params: GetEntitlementsRequest): Future[GetEntitlementsResult] =
       service.getEntitlements(params).promise.toFuture

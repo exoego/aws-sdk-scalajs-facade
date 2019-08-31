@@ -34,7 +34,7 @@ package object ram {
   type TagValue                       = String
   type TagValueList                   = js.Array[TagValue]
 
-  implicit final class RAMOps(val service: RAM) extends AnyVal {
+  implicit final class RAMOps(private val service: RAM) extends AnyVal {
 
     def acceptResourceShareInvitationFuture(
         params: AcceptResourceShareInvitationRequest

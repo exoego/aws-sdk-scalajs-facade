@@ -175,7 +175,7 @@ package object alexaforbusiness {
   type user_LastName                = String
   type user_UserId                  = String
 
-  implicit final class AlexaForBusinessOps(val service: AlexaForBusiness) extends AnyVal {
+  implicit final class AlexaForBusinessOps(private val service: AlexaForBusiness) extends AnyVal {
 
     def approveSkillFuture(params: ApproveSkillRequest): Future[ApproveSkillResponse] =
       service.approveSkill(params).promise.toFuture

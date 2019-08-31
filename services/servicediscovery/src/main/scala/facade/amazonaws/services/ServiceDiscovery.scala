@@ -55,7 +55,7 @@ package object servicediscovery {
   type ServiceSummariesList    = js.Array[ServiceSummary]
   type Timestamp               = js.Date
 
-  implicit final class ServiceDiscoveryOps(val service: ServiceDiscovery) extends AnyVal {
+  implicit final class ServiceDiscoveryOps(private val service: ServiceDiscovery) extends AnyVal {
 
     def createHttpNamespaceFuture(params: CreateHttpNamespaceRequest): Future[CreateHttpNamespaceResponse] =
       service.createHttpNamespace(params).promise.toFuture

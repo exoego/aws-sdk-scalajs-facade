@@ -35,7 +35,7 @@ package object lakeformation {
   type StringValueList                  = js.Array[StringValue]
   type Token                            = String
 
-  implicit final class LakeFormationOps(val service: LakeFormation) extends AnyVal {
+  implicit final class LakeFormationOps(private val service: LakeFormation) extends AnyVal {
 
     def batchGrantPermissionsFuture(params: BatchGrantPermissionsRequest): Future[BatchGrantPermissionsResponse] =
       service.batchGrantPermissions(params).promise.toFuture

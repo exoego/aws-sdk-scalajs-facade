@@ -36,7 +36,7 @@ package object opsworkscm {
   type TimeWindowDefinition           = String
   type Timestamp                      = js.Date
 
-  implicit final class OpsWorksCMOps(val service: OpsWorksCM) extends AnyVal {
+  implicit final class OpsWorksCMOps(private val service: OpsWorksCM) extends AnyVal {
 
     def associateNodeFuture(params: AssociateNodeRequest): Future[AssociateNodeResponse] =
       service.associateNode(params).promise.toFuture

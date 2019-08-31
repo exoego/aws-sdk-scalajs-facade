@@ -22,7 +22,8 @@ package object marketplacecommerceanalytics {
   type SnsTopicArn             = String
   type SupportDataSetType      = String
 
-  implicit final class MarketplaceCommerceAnalyticsOps(val service: MarketplaceCommerceAnalytics) extends AnyVal {
+  implicit final class MarketplaceCommerceAnalyticsOps(private val service: MarketplaceCommerceAnalytics)
+      extends AnyVal {
 
     def generateDataSetFuture(params: GenerateDataSetRequest): Future[GenerateDataSetResult] =
       service.generateDataSet(params).promise.toFuture

@@ -64,7 +64,7 @@ package object dms {
   type VpcSecurityGroupIdList                  = js.Array[String]
   type VpcSecurityGroupMembershipList          = js.Array[VpcSecurityGroupMembership]
 
-  implicit final class DMSOps(val service: DMS) extends AnyVal {
+  implicit final class DMSOps(private val service: DMS) extends AnyVal {
 
     def addTagsToResourceFuture(params: AddTagsToResourceMessage): Future[AddTagsToResourceResponse] =
       service.addTagsToResource(params).promise.toFuture

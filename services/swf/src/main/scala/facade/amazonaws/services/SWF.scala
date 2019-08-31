@@ -83,7 +83,7 @@ package object swf {
   type WorkflowRunIdOptional                             = String
   type WorkflowTypeInfoList                              = js.Array[WorkflowTypeInfo]
 
-  implicit final class SWFOps(val service: SWF) extends AnyVal {
+  implicit final class SWFOps(private val service: SWF) extends AnyVal {
 
     def countClosedWorkflowExecutionsFuture(
         params: CountClosedWorkflowExecutionsInput

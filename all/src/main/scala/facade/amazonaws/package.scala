@@ -1,7 +1,7 @@
 package facade
 
 package object amazonaws {
-  implicit final class AWSExtensionMethods(val aws: AWS.type) extends AnyVal {
+  implicit final class AWSExtensionMethods(private val aws: AWS.type) extends AnyVal {
     def config_=(config: AWSConfig): Unit = {
       aws.config = config match {
         case global: AWSConfigWithServicesDefault => global

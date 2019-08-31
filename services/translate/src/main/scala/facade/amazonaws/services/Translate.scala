@@ -28,7 +28,7 @@ package object translate {
   type TerminologyPropertiesList = js.Array[TerminologyProperties]
   type Timestamp                 = js.Date
 
-  implicit final class TranslateOps(val service: Translate) extends AnyVal {
+  implicit final class TranslateOps(private val service: Translate) extends AnyVal {
 
     def deleteTerminologyFuture(params: DeleteTerminologyRequest): Future[js.Object] =
       service.deleteTerminology(params).promise.toFuture

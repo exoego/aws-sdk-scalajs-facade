@@ -67,7 +67,7 @@ package object securityhub {
   type VerificationState             = String
   type WorkflowState                 = String
 
-  implicit final class SecurityHubOps(val service: SecurityHub) extends AnyVal {
+  implicit final class SecurityHubOps(private val service: SecurityHub) extends AnyVal {
 
     def acceptInvitationFuture(params: AcceptInvitationRequest): Future[AcceptInvitationResponse] =
       service.acceptInvitation(params).promise.toFuture

@@ -101,7 +101,7 @@ package object rds {
   type VpcSecurityGroupIdList                  = js.Array[String]
   type VpcSecurityGroupMembershipList          = js.Array[VpcSecurityGroupMembership]
 
-  implicit final class RDSOps(val service: RDS) extends AnyVal {
+  implicit final class RDSOps(private val service: RDS) extends AnyVal {
 
     def addRoleToDBClusterFuture(params: AddRoleToDBClusterMessage): Future[js.Object] =
       service.addRoleToDBCluster(params).promise.toFuture

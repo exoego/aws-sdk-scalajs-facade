@@ -163,7 +163,7 @@ package object cognitoidentityprovider {
   type VerifiedAttributesListType         = js.Array[VerifiedAttributeType]
   type VerifySoftwareTokenResponseType    = String
 
-  implicit final class CognitoIdentityProviderOps(val service: CognitoIdentityProvider) extends AnyVal {
+  implicit final class CognitoIdentityProviderOps(private val service: CognitoIdentityProvider) extends AnyVal {
 
     def addCustomAttributesFuture(params: AddCustomAttributesRequest): Future[AddCustomAttributesResponse] =
       service.addCustomAttributes(params).promise.toFuture

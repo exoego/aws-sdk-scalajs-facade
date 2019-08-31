@@ -47,7 +47,7 @@ package object managedblockchain {
   type VoteCount                = Int
   type VoteValue                = String
 
-  implicit final class ManagedBlockchainOps(val service: ManagedBlockchain) extends AnyVal {
+  implicit final class ManagedBlockchainOps(private val service: ManagedBlockchain) extends AnyVal {
 
     def createMemberFuture(params: CreateMemberInput): Future[CreateMemberOutput] =
       service.createMember(params).promise.toFuture

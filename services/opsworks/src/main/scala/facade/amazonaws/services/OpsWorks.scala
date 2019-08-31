@@ -68,7 +68,7 @@ package object opsworks {
   type VolumeType                           = String
   type Volumes                              = js.Array[Volume]
 
-  implicit final class OpsWorksOps(val service: OpsWorks) extends AnyVal {
+  implicit final class OpsWorksOps(private val service: OpsWorks) extends AnyVal {
 
     def assignInstanceFuture(params: AssignInstanceRequest): Future[js.Object] =
       service.assignInstance(params).promise.toFuture

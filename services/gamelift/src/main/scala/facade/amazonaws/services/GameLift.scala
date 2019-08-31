@@ -115,7 +115,7 @@ package object gamelift {
   type ZipBlob =
     nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
 
-  implicit final class GameLiftOps(val service: GameLift) extends AnyVal {
+  implicit final class GameLiftOps(private val service: GameLift) extends AnyVal {
 
     def acceptMatchFuture(params: AcceptMatchInput): Future[AcceptMatchOutput] =
       service.acceptMatch(params).promise.toFuture

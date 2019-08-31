@@ -88,7 +88,7 @@ package object kinesisanalyticsv2 {
   type ZipFileContent =
     nodejs.buffer.Buffer | nodejs.stream.Readable | js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
 
-  implicit final class KinesisAnalyticsV2Ops(val service: KinesisAnalyticsV2) extends AnyVal {
+  implicit final class KinesisAnalyticsV2Ops(private val service: KinesisAnalyticsV2) extends AnyVal {
 
     def addApplicationCloudWatchLoggingOptionFuture(
         params: AddApplicationCloudWatchLoggingOptionRequest

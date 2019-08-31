@@ -68,7 +68,7 @@ package object personalize {
   type TransactionsPerSecond                  = Int
   type Tunable                                = Boolean
 
-  implicit final class PersonalizeOps(val service: Personalize) extends AnyVal {
+  implicit final class PersonalizeOps(private val service: Personalize) extends AnyVal {
 
     def createCampaignFuture(params: CreateCampaignRequest): Future[CreateCampaignResponse] =
       service.createCampaign(params).promise.toFuture

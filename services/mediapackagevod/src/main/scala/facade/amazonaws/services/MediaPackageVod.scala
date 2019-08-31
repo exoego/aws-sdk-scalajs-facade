@@ -25,7 +25,7 @@ package object mediapackagevod {
   type __listOf__string               = js.Array[__string]
   type __string                       = String
 
-  implicit final class MediaPackageVodOps(val service: MediaPackageVod) extends AnyVal {
+  implicit final class MediaPackageVodOps(private val service: MediaPackageVod) extends AnyVal {
 
     def createAssetFuture(params: CreateAssetRequest): Future[CreateAssetResponse] =
       service.createAsset(params).promise.toFuture

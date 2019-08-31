@@ -158,7 +158,7 @@ package object iam {
   type virtualMFADeviceListType                        = js.Array[VirtualMFADevice]
   type virtualMFADeviceName                            = String
 
-  implicit final class IAMOps(val service: IAM) extends AnyVal {
+  implicit final class IAMOps(private val service: IAM) extends AnyVal {
 
     def addClientIDToOpenIDConnectProviderFuture(params: AddClientIDToOpenIDConnectProviderRequest): Future[js.Object] =
       service.addClientIDToOpenIDConnectProvider(params).promise.toFuture

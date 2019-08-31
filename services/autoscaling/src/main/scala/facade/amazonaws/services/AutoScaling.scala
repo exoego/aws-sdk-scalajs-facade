@@ -125,7 +125,7 @@ package object autoscaling {
   type XmlStringMaxLen64                   = String
   type XmlStringUserData                   = String
 
-  implicit final class AutoScalingOps(val service: AutoScaling) extends AnyVal {
+  implicit final class AutoScalingOps(private val service: AutoScaling) extends AnyVal {
 
     def attachInstancesFuture(params: AttachInstancesQuery): Future[js.Object] =
       service.attachInstances(params).promise.toFuture

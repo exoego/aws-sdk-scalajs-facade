@@ -147,7 +147,7 @@ package object codedeploy {
   type VersionId                     = String
   type WaitTimeInMins                = Int
 
-  implicit final class CodeDeployOps(val service: CodeDeploy) extends AnyVal {
+  implicit final class CodeDeployOps(private val service: CodeDeploy) extends AnyVal {
 
     def addTagsToOnPremisesInstancesFuture(params: AddTagsToOnPremisesInstancesInput): Future[js.Object] =
       service.addTagsToOnPremisesInstances(params).promise.toFuture

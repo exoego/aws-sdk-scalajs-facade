@@ -90,7 +90,7 @@ package object pinpointemail {
   type Volume          = Double
   type WarmupStatus    = String
 
-  implicit final class PinpointEmailOps(val service: PinpointEmail) extends AnyVal {
+  implicit final class PinpointEmailOps(private val service: PinpointEmail) extends AnyVal {
 
     def createConfigurationSetEventDestinationFuture(
         params: CreateConfigurationSetEventDestinationRequest

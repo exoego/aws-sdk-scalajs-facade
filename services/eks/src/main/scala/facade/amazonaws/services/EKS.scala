@@ -25,7 +25,7 @@ package object eks {
   type UpdateStatus                  = String
   type UpdateType                    = String
 
-  implicit final class EKSOps(val service: EKS) extends AnyVal {
+  implicit final class EKSOps(private val service: EKS) extends AnyVal {
 
     def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResponse] =
       service.createCluster(params).promise.toFuture

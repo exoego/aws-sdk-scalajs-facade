@@ -130,7 +130,7 @@ package object storagegateway {
   type VolumeUsedInBytes          = Double
   type double                     = Double
 
-  implicit final class StorageGatewayOps(val service: StorageGateway) extends AnyVal {
+  implicit final class StorageGatewayOps(private val service: StorageGateway) extends AnyVal {
 
     def activateGatewayFuture(params: ActivateGatewayInput): Future[ActivateGatewayOutput] =
       service.activateGateway(params).promise.toFuture

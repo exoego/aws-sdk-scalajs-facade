@@ -53,7 +53,7 @@ package object mturk {
   type TurkErrorCode                  = String
   type WorkerBlockList                = js.Array[WorkerBlock]
 
-  implicit final class MTurkOps(val service: MTurk) extends AnyVal {
+  implicit final class MTurkOps(private val service: MTurk) extends AnyVal {
 
     def acceptQualificationRequestFuture(
         params: AcceptQualificationRequestRequest

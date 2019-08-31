@@ -42,7 +42,7 @@ package object batch {
   type Ulimits                      = js.Array[Ulimit]
   type Volumes                      = js.Array[Volume]
 
-  implicit final class BatchOps(val service: Batch) extends AnyVal {
+  implicit final class BatchOps(private val service: Batch) extends AnyVal {
 
     def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] =
       service.cancelJob(params).promise.toFuture

@@ -127,7 +127,7 @@ package object route53 {
   type VPCRegion                         = String
   type VPCs                              = js.Array[VPC]
 
-  implicit final class Route53Ops(val service: Route53) extends AnyVal {
+  implicit final class Route53Ops(private val service: Route53) extends AnyVal {
 
     def associateVPCWithHostedZoneFuture(
         params: AssociateVPCWithHostedZoneRequest

@@ -46,7 +46,7 @@ package object sns {
   type topicARN                   = String
   type topicName                  = String
 
-  implicit final class SNSOps(val service: SNS) extends AnyVal {
+  implicit final class SNSOps(private val service: SNS) extends AnyVal {
 
     def addPermissionFuture(params: AddPermissionInput): Future[js.Object] =
       service.addPermission(params).promise.toFuture

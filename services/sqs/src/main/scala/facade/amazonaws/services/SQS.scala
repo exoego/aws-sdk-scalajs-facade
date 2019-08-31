@@ -35,7 +35,7 @@ package object sqs {
   type TagMap                                       = js.Dictionary[TagValue]
   type TagValue                                     = String
 
-  implicit final class SQSOps(val service: SQS) extends AnyVal {
+  implicit final class SQSOps(private val service: SQS) extends AnyVal {
 
     def addPermissionFuture(params: AddPermissionRequest): Future[js.Object] =
       service.addPermission(params).promise.toFuture

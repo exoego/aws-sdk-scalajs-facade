@@ -37,7 +37,7 @@ package object workmail {
   type Users                 = js.Array[User]
   type WorkMailIdentifier    = String
 
-  implicit final class WorkMailOps(val service: WorkMail) extends AnyVal {
+  implicit final class WorkMailOps(private val service: WorkMail) extends AnyVal {
 
     def associateDelegateToResourceFuture(
         params: AssociateDelegateToResourceRequest

@@ -22,7 +22,7 @@ package object pi {
   type ServiceType                 = String
   type StringList                  = js.Array[String]
 
-  implicit final class PIOps(val service: PI) extends AnyVal {
+  implicit final class PIOps(private val service: PI) extends AnyVal {
 
     def describeDimensionKeysFuture(params: DescribeDimensionKeysRequest): Future[DescribeDimensionKeysResponse] =
       service.describeDimensionKeys(params).promise.toFuture

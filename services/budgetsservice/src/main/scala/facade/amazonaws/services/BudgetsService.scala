@@ -34,7 +34,7 @@ package object budgetsservice {
   type TimeUnit                        = String
   type UnitValue                       = String
 
-  implicit final class BudgetsServiceOps(val service: BudgetsService) extends AnyVal {
+  implicit final class BudgetsServiceOps(private val service: BudgetsService) extends AnyVal {
 
     def createBudgetFuture(params: CreateBudgetRequest): Future[CreateBudgetResponse] =
       service.createBudget(params).promise.toFuture
