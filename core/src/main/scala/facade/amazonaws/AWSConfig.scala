@@ -124,7 +124,7 @@ object HttpOptions {
     new HttpOptions(proxy, agent, connectTimeout, timeout, xhrAsync, xhrWithCredentials)
 }
 
-trait Logger {
+trait Logger extends js.Object {
   def write(chunk: js.Any, encoding: js.UndefOr[String], callback: js.UndefOr[js.Function0[Unit]]): Unit
 
   def log(messages: js.Any*): Unit
