@@ -163,7 +163,7 @@ package cloudsearch {
         Options: PolicyDocument,
         Status: OptionStatus
     ): AccessPoliciesStatus = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Options" -> Options.asInstanceOf[js.Any],
         "Status"  -> Status.asInstanceOf[js.Any]
       )
@@ -201,14 +201,14 @@ package cloudsearch {
         Stopwords: js.UndefOr[String] = js.undefined,
         Synonyms: js.UndefOr[String] = js.undefined
     ): AnalysisOptions = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AlgorithmicStemming.foreach(__v => __obj.update("AlgorithmicStemming", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AlgorithmicStemming.foreach(__v => __obj.updateDynamic("AlgorithmicStemming")(__v.asInstanceOf[js.Any]))
       JapaneseTokenizationDictionary.foreach(
-        __v => __obj.update("JapaneseTokenizationDictionary", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("JapaneseTokenizationDictionary")(__v.asInstanceOf[js.Any])
       )
-      StemmingDictionary.foreach(__v => __obj.update("StemmingDictionary", __v.asInstanceOf[js.Any]))
-      Stopwords.foreach(__v => __obj.update("Stopwords", __v.asInstanceOf[js.Any]))
-      Synonyms.foreach(__v => __obj.update("Synonyms", __v.asInstanceOf[js.Any]))
+      StemmingDictionary.foreach(__v => __obj.updateDynamic("StemmingDictionary")(__v.asInstanceOf[js.Any]))
+      Stopwords.foreach(__v => __obj.updateDynamic("Stopwords")(__v.asInstanceOf[js.Any]))
+      Synonyms.foreach(__v => __obj.updateDynamic("Synonyms")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AnalysisOptions]
     }
   }
@@ -229,12 +229,12 @@ package cloudsearch {
         AnalysisSchemeName: StandardName,
         AnalysisOptions: js.UndefOr[AnalysisOptions] = js.undefined
     ): AnalysisScheme = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AnalysisSchemeLanguage" -> AnalysisSchemeLanguage.asInstanceOf[js.Any],
         "AnalysisSchemeName"     -> AnalysisSchemeName.asInstanceOf[js.Any]
       )
 
-      AnalysisOptions.foreach(__v => __obj.update("AnalysisOptions", __v.asInstanceOf[js.Any]))
+      AnalysisOptions.foreach(__v => __obj.updateDynamic("AnalysisOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AnalysisScheme]
     }
   }
@@ -334,7 +334,7 @@ package cloudsearch {
         Options: AnalysisScheme,
         Status: OptionStatus
     ): AnalysisSchemeStatus = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Options" -> Options.asInstanceOf[js.Any],
         "Status"  -> Status.asInstanceOf[js.Any]
       )
@@ -357,7 +357,7 @@ package cloudsearch {
         Options: MultiAZ,
         Status: OptionStatus
     ): AvailabilityOptionsStatus = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Options" -> Options.asInstanceOf[js.Any],
         "Status"  -> Status.asInstanceOf[js.Any]
       )
@@ -387,7 +387,7 @@ package cloudsearch {
     def apply(
         DomainName: DomainName
     ): BuildSuggestersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
@@ -407,8 +407,8 @@ package cloudsearch {
     def apply(
         FieldNames: js.UndefOr[FieldNameList] = js.undefined
     ): BuildSuggestersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FieldNames.foreach(__v => __obj.update("FieldNames", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FieldNames.foreach(__v => __obj.updateDynamic("FieldNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BuildSuggestersResponse]
     }
   }
@@ -425,7 +425,7 @@ package cloudsearch {
     def apply(
         DomainName: DomainName
     ): CreateDomainRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
@@ -445,8 +445,8 @@ package cloudsearch {
     def apply(
         DomainStatus: js.UndefOr[DomainStatus] = js.undefined
     ): CreateDomainResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DomainStatus.foreach(__v => __obj.update("DomainStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DomainStatus.foreach(__v => __obj.updateDynamic("DomainStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDomainResponse]
     }
   }
@@ -471,12 +471,12 @@ package cloudsearch {
         SearchEnabled: js.UndefOr[Boolean] = js.undefined,
         SourceFields: js.UndefOr[FieldNameCommaList] = js.undefined
     ): DateArrayOptions = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DefaultValue.foreach(__v => __obj.update("DefaultValue", __v.asInstanceOf[js.Any]))
-      FacetEnabled.foreach(__v => __obj.update("FacetEnabled", __v.asInstanceOf[js.Any]))
-      ReturnEnabled.foreach(__v => __obj.update("ReturnEnabled", __v.asInstanceOf[js.Any]))
-      SearchEnabled.foreach(__v => __obj.update("SearchEnabled", __v.asInstanceOf[js.Any]))
-      SourceFields.foreach(__v => __obj.update("SourceFields", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DefaultValue.foreach(__v => __obj.updateDynamic("DefaultValue")(__v.asInstanceOf[js.Any]))
+      FacetEnabled.foreach(__v => __obj.updateDynamic("FacetEnabled")(__v.asInstanceOf[js.Any]))
+      ReturnEnabled.foreach(__v => __obj.updateDynamic("ReturnEnabled")(__v.asInstanceOf[js.Any]))
+      SearchEnabled.foreach(__v => __obj.updateDynamic("SearchEnabled")(__v.asInstanceOf[js.Any]))
+      SourceFields.foreach(__v => __obj.updateDynamic("SourceFields")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DateArrayOptions]
     }
   }
@@ -503,13 +503,13 @@ package cloudsearch {
         SortEnabled: js.UndefOr[Boolean] = js.undefined,
         SourceField: js.UndefOr[FieldName] = js.undefined
     ): DateOptions = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DefaultValue.foreach(__v => __obj.update("DefaultValue", __v.asInstanceOf[js.Any]))
-      FacetEnabled.foreach(__v => __obj.update("FacetEnabled", __v.asInstanceOf[js.Any]))
-      ReturnEnabled.foreach(__v => __obj.update("ReturnEnabled", __v.asInstanceOf[js.Any]))
-      SearchEnabled.foreach(__v => __obj.update("SearchEnabled", __v.asInstanceOf[js.Any]))
-      SortEnabled.foreach(__v => __obj.update("SortEnabled", __v.asInstanceOf[js.Any]))
-      SourceField.foreach(__v => __obj.update("SourceField", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DefaultValue.foreach(__v => __obj.updateDynamic("DefaultValue")(__v.asInstanceOf[js.Any]))
+      FacetEnabled.foreach(__v => __obj.updateDynamic("FacetEnabled")(__v.asInstanceOf[js.Any]))
+      ReturnEnabled.foreach(__v => __obj.updateDynamic("ReturnEnabled")(__v.asInstanceOf[js.Any]))
+      SearchEnabled.foreach(__v => __obj.updateDynamic("SearchEnabled")(__v.asInstanceOf[js.Any]))
+      SortEnabled.foreach(__v => __obj.updateDynamic("SortEnabled")(__v.asInstanceOf[js.Any]))
+      SourceField.foreach(__v => __obj.updateDynamic("SourceField")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DateOptions]
     }
   }
@@ -528,7 +528,7 @@ package cloudsearch {
         AnalysisScheme: AnalysisScheme,
         DomainName: DomainName
     ): DefineAnalysisSchemeRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AnalysisScheme" -> AnalysisScheme.asInstanceOf[js.Any],
         "DomainName"     -> DomainName.asInstanceOf[js.Any]
       )
@@ -549,7 +549,7 @@ package cloudsearch {
     def apply(
         AnalysisScheme: AnalysisSchemeStatus
     ): DefineAnalysisSchemeResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AnalysisScheme" -> AnalysisScheme.asInstanceOf[js.Any]
       )
 
@@ -571,7 +571,7 @@ package cloudsearch {
         DomainName: DomainName,
         Expression: Expression
     ): DefineExpressionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "Expression" -> Expression.asInstanceOf[js.Any]
       )
@@ -592,7 +592,7 @@ package cloudsearch {
     def apply(
         Expression: ExpressionStatus
     ): DefineExpressionResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Expression" -> Expression.asInstanceOf[js.Any]
       )
 
@@ -614,7 +614,7 @@ package cloudsearch {
         DomainName: DomainName,
         IndexField: IndexField
     ): DefineIndexFieldRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "IndexField" -> IndexField.asInstanceOf[js.Any]
       )
@@ -635,7 +635,7 @@ package cloudsearch {
     def apply(
         IndexField: IndexFieldStatus
     ): DefineIndexFieldResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IndexField" -> IndexField.asInstanceOf[js.Any]
       )
 
@@ -657,7 +657,7 @@ package cloudsearch {
         DomainName: DomainName,
         Suggester: Suggester
     ): DefineSuggesterRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "Suggester"  -> Suggester.asInstanceOf[js.Any]
       )
@@ -678,7 +678,7 @@ package cloudsearch {
     def apply(
         Suggester: SuggesterStatus
     ): DefineSuggesterResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Suggester" -> Suggester.asInstanceOf[js.Any]
       )
 
@@ -700,7 +700,7 @@ package cloudsearch {
         AnalysisSchemeName: StandardName,
         DomainName: DomainName
     ): DeleteAnalysisSchemeRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AnalysisSchemeName" -> AnalysisSchemeName.asInstanceOf[js.Any],
         "DomainName"         -> DomainName.asInstanceOf[js.Any]
       )
@@ -721,7 +721,7 @@ package cloudsearch {
     def apply(
         AnalysisScheme: AnalysisSchemeStatus
     ): DeleteAnalysisSchemeResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AnalysisScheme" -> AnalysisScheme.asInstanceOf[js.Any]
       )
 
@@ -741,7 +741,7 @@ package cloudsearch {
     def apply(
         DomainName: DomainName
     ): DeleteDomainRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
@@ -761,8 +761,8 @@ package cloudsearch {
     def apply(
         DomainStatus: js.UndefOr[DomainStatus] = js.undefined
     ): DeleteDomainResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DomainStatus.foreach(__v => __obj.update("DomainStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DomainStatus.foreach(__v => __obj.updateDynamic("DomainStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDomainResponse]
     }
   }
@@ -781,7 +781,7 @@ package cloudsearch {
         DomainName: DomainName,
         ExpressionName: StandardName
     ): DeleteExpressionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName"     -> DomainName.asInstanceOf[js.Any],
         "ExpressionName" -> ExpressionName.asInstanceOf[js.Any]
       )
@@ -802,7 +802,7 @@ package cloudsearch {
     def apply(
         Expression: ExpressionStatus
     ): DeleteExpressionResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Expression" -> Expression.asInstanceOf[js.Any]
       )
 
@@ -824,7 +824,7 @@ package cloudsearch {
         DomainName: DomainName,
         IndexFieldName: DynamicFieldName
     ): DeleteIndexFieldRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName"     -> DomainName.asInstanceOf[js.Any],
         "IndexFieldName" -> IndexFieldName.asInstanceOf[js.Any]
       )
@@ -845,7 +845,7 @@ package cloudsearch {
     def apply(
         IndexField: IndexFieldStatus
     ): DeleteIndexFieldResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IndexField" -> IndexField.asInstanceOf[js.Any]
       )
 
@@ -867,7 +867,7 @@ package cloudsearch {
         DomainName: DomainName,
         SuggesterName: StandardName
     ): DeleteSuggesterRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName"    -> DomainName.asInstanceOf[js.Any],
         "SuggesterName" -> SuggesterName.asInstanceOf[js.Any]
       )
@@ -888,7 +888,7 @@ package cloudsearch {
     def apply(
         Suggester: SuggesterStatus
     ): DeleteSuggesterResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Suggester" -> Suggester.asInstanceOf[js.Any]
       )
 
@@ -912,12 +912,12 @@ package cloudsearch {
         AnalysisSchemeNames: js.UndefOr[StandardNameList] = js.undefined,
         Deployed: js.UndefOr[Boolean] = js.undefined
     ): DescribeAnalysisSchemesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
-      AnalysisSchemeNames.foreach(__v => __obj.update("AnalysisSchemeNames", __v.asInstanceOf[js.Any]))
-      Deployed.foreach(__v => __obj.update("Deployed", __v.asInstanceOf[js.Any]))
+      AnalysisSchemeNames.foreach(__v => __obj.updateDynamic("AnalysisSchemeNames")(__v.asInstanceOf[js.Any]))
+      Deployed.foreach(__v => __obj.updateDynamic("Deployed")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAnalysisSchemesRequest]
     }
   }
@@ -934,7 +934,7 @@ package cloudsearch {
     def apply(
         AnalysisSchemes: AnalysisSchemeStatusList
     ): DescribeAnalysisSchemesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AnalysisSchemes" -> AnalysisSchemes.asInstanceOf[js.Any]
       )
 
@@ -956,11 +956,11 @@ package cloudsearch {
         DomainName: DomainName,
         Deployed: js.UndefOr[Boolean] = js.undefined
     ): DescribeAvailabilityOptionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
-      Deployed.foreach(__v => __obj.update("Deployed", __v.asInstanceOf[js.Any]))
+      Deployed.foreach(__v => __obj.updateDynamic("Deployed")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAvailabilityOptionsRequest]
     }
   }
@@ -977,8 +977,8 @@ package cloudsearch {
     def apply(
         AvailabilityOptions: js.UndefOr[AvailabilityOptionsStatus] = js.undefined
     ): DescribeAvailabilityOptionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AvailabilityOptions.foreach(__v => __obj.update("AvailabilityOptions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AvailabilityOptions.foreach(__v => __obj.updateDynamic("AvailabilityOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAvailabilityOptionsResponse]
     }
   }
@@ -995,8 +995,8 @@ package cloudsearch {
     def apply(
         DomainNames: js.UndefOr[DomainNameList] = js.undefined
     ): DescribeDomainsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DomainNames.foreach(__v => __obj.update("DomainNames", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DomainNames.foreach(__v => __obj.updateDynamic("DomainNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDomainsRequest]
     }
   }
@@ -1013,7 +1013,7 @@ package cloudsearch {
     def apply(
         DomainStatusList: DomainStatusList
     ): DescribeDomainsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainStatusList" -> DomainStatusList.asInstanceOf[js.Any]
       )
 
@@ -1037,12 +1037,12 @@ package cloudsearch {
         Deployed: js.UndefOr[Boolean] = js.undefined,
         ExpressionNames: js.UndefOr[StandardNameList] = js.undefined
     ): DescribeExpressionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
-      Deployed.foreach(__v => __obj.update("Deployed", __v.asInstanceOf[js.Any]))
-      ExpressionNames.foreach(__v => __obj.update("ExpressionNames", __v.asInstanceOf[js.Any]))
+      Deployed.foreach(__v => __obj.updateDynamic("Deployed")(__v.asInstanceOf[js.Any]))
+      ExpressionNames.foreach(__v => __obj.updateDynamic("ExpressionNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeExpressionsRequest]
     }
   }
@@ -1059,7 +1059,7 @@ package cloudsearch {
     def apply(
         Expressions: ExpressionStatusList
     ): DescribeExpressionsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Expressions" -> Expressions.asInstanceOf[js.Any]
       )
 
@@ -1083,12 +1083,12 @@ package cloudsearch {
         Deployed: js.UndefOr[Boolean] = js.undefined,
         FieldNames: js.UndefOr[DynamicFieldNameList] = js.undefined
     ): DescribeIndexFieldsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
-      Deployed.foreach(__v => __obj.update("Deployed", __v.asInstanceOf[js.Any]))
-      FieldNames.foreach(__v => __obj.update("FieldNames", __v.asInstanceOf[js.Any]))
+      Deployed.foreach(__v => __obj.updateDynamic("Deployed")(__v.asInstanceOf[js.Any]))
+      FieldNames.foreach(__v => __obj.updateDynamic("FieldNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeIndexFieldsRequest]
     }
   }
@@ -1105,7 +1105,7 @@ package cloudsearch {
     def apply(
         IndexFields: IndexFieldStatusList
     ): DescribeIndexFieldsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IndexFields" -> IndexFields.asInstanceOf[js.Any]
       )
 
@@ -1125,7 +1125,7 @@ package cloudsearch {
     def apply(
         DomainName: DomainName
     ): DescribeScalingParametersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
@@ -1145,7 +1145,7 @@ package cloudsearch {
     def apply(
         ScalingParameters: ScalingParametersStatus
     ): DescribeScalingParametersResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ScalingParameters" -> ScalingParameters.asInstanceOf[js.Any]
       )
 
@@ -1167,11 +1167,11 @@ package cloudsearch {
         DomainName: DomainName,
         Deployed: js.UndefOr[Boolean] = js.undefined
     ): DescribeServiceAccessPoliciesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
-      Deployed.foreach(__v => __obj.update("Deployed", __v.asInstanceOf[js.Any]))
+      Deployed.foreach(__v => __obj.updateDynamic("Deployed")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeServiceAccessPoliciesRequest]
     }
   }
@@ -1188,7 +1188,7 @@ package cloudsearch {
     def apply(
         AccessPolicies: AccessPoliciesStatus
     ): DescribeServiceAccessPoliciesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccessPolicies" -> AccessPolicies.asInstanceOf[js.Any]
       )
 
@@ -1212,12 +1212,12 @@ package cloudsearch {
         Deployed: js.UndefOr[Boolean] = js.undefined,
         SuggesterNames: js.UndefOr[StandardNameList] = js.undefined
     ): DescribeSuggestersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
-      Deployed.foreach(__v => __obj.update("Deployed", __v.asInstanceOf[js.Any]))
-      SuggesterNames.foreach(__v => __obj.update("SuggesterNames", __v.asInstanceOf[js.Any]))
+      Deployed.foreach(__v => __obj.updateDynamic("Deployed")(__v.asInstanceOf[js.Any]))
+      SuggesterNames.foreach(__v => __obj.updateDynamic("SuggesterNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSuggestersRequest]
     }
   }
@@ -1234,7 +1234,7 @@ package cloudsearch {
     def apply(
         Suggesters: SuggesterStatusList
     ): DescribeSuggestersResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Suggesters" -> Suggesters.asInstanceOf[js.Any]
       )
 
@@ -1264,12 +1264,12 @@ package cloudsearch {
         FuzzyMatching: js.UndefOr[SuggesterFuzzyMatching] = js.undefined,
         SortExpression: js.UndefOr[String] = js.undefined
     ): DocumentSuggesterOptions = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SourceField" -> SourceField.asInstanceOf[js.Any]
       )
 
-      FuzzyMatching.foreach(__v => __obj.update("FuzzyMatching", __v.asInstanceOf[js.Any]))
-      SortExpression.foreach(__v => __obj.update("SortExpression", __v.asInstanceOf[js.Any]))
+      FuzzyMatching.foreach(__v => __obj.updateDynamic("FuzzyMatching")(__v.asInstanceOf[js.Any]))
+      SortExpression.foreach(__v => __obj.updateDynamic("SortExpression")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DocumentSuggesterOptions]
     }
   }
@@ -1310,22 +1310,22 @@ package cloudsearch {
         SearchPartitionCount: js.UndefOr[PartitionCount] = js.undefined,
         SearchService: js.UndefOr[ServiceEndpoint] = js.undefined
     ): DomainStatus = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainId"               -> DomainId.asInstanceOf[js.Any],
         "DomainName"             -> DomainName.asInstanceOf[js.Any],
         "RequiresIndexDocuments" -> RequiresIndexDocuments.asInstanceOf[js.Any]
       )
 
-      ARN.foreach(__v => __obj.update("ARN", __v.asInstanceOf[js.Any]))
-      Created.foreach(__v => __obj.update("Created", __v.asInstanceOf[js.Any]))
-      Deleted.foreach(__v => __obj.update("Deleted", __v.asInstanceOf[js.Any]))
-      DocService.foreach(__v => __obj.update("DocService", __v.asInstanceOf[js.Any]))
-      Limits.foreach(__v => __obj.update("Limits", __v.asInstanceOf[js.Any]))
-      Processing.foreach(__v => __obj.update("Processing", __v.asInstanceOf[js.Any]))
-      SearchInstanceCount.foreach(__v => __obj.update("SearchInstanceCount", __v.asInstanceOf[js.Any]))
-      SearchInstanceType.foreach(__v => __obj.update("SearchInstanceType", __v.asInstanceOf[js.Any]))
-      SearchPartitionCount.foreach(__v => __obj.update("SearchPartitionCount", __v.asInstanceOf[js.Any]))
-      SearchService.foreach(__v => __obj.update("SearchService", __v.asInstanceOf[js.Any]))
+      ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
+      Created.foreach(__v => __obj.updateDynamic("Created")(__v.asInstanceOf[js.Any]))
+      Deleted.foreach(__v => __obj.updateDynamic("Deleted")(__v.asInstanceOf[js.Any]))
+      DocService.foreach(__v => __obj.updateDynamic("DocService")(__v.asInstanceOf[js.Any]))
+      Limits.foreach(__v => __obj.updateDynamic("Limits")(__v.asInstanceOf[js.Any]))
+      Processing.foreach(__v => __obj.updateDynamic("Processing")(__v.asInstanceOf[js.Any]))
+      SearchInstanceCount.foreach(__v => __obj.updateDynamic("SearchInstanceCount")(__v.asInstanceOf[js.Any]))
+      SearchInstanceType.foreach(__v => __obj.updateDynamic("SearchInstanceType")(__v.asInstanceOf[js.Any]))
+      SearchPartitionCount.foreach(__v => __obj.updateDynamic("SearchPartitionCount")(__v.asInstanceOf[js.Any]))
+      SearchService.foreach(__v => __obj.updateDynamic("SearchService")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainStatus]
     }
   }
@@ -1350,12 +1350,12 @@ package cloudsearch {
         SearchEnabled: js.UndefOr[Boolean] = js.undefined,
         SourceFields: js.UndefOr[FieldNameCommaList] = js.undefined
     ): DoubleArrayOptions = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DefaultValue.foreach(__v => __obj.update("DefaultValue", __v.asInstanceOf[js.Any]))
-      FacetEnabled.foreach(__v => __obj.update("FacetEnabled", __v.asInstanceOf[js.Any]))
-      ReturnEnabled.foreach(__v => __obj.update("ReturnEnabled", __v.asInstanceOf[js.Any]))
-      SearchEnabled.foreach(__v => __obj.update("SearchEnabled", __v.asInstanceOf[js.Any]))
-      SourceFields.foreach(__v => __obj.update("SourceFields", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DefaultValue.foreach(__v => __obj.updateDynamic("DefaultValue")(__v.asInstanceOf[js.Any]))
+      FacetEnabled.foreach(__v => __obj.updateDynamic("FacetEnabled")(__v.asInstanceOf[js.Any]))
+      ReturnEnabled.foreach(__v => __obj.updateDynamic("ReturnEnabled")(__v.asInstanceOf[js.Any]))
+      SearchEnabled.foreach(__v => __obj.updateDynamic("SearchEnabled")(__v.asInstanceOf[js.Any]))
+      SourceFields.foreach(__v => __obj.updateDynamic("SourceFields")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DoubleArrayOptions]
     }
   }
@@ -1382,13 +1382,13 @@ package cloudsearch {
         SortEnabled: js.UndefOr[Boolean] = js.undefined,
         SourceField: js.UndefOr[FieldName] = js.undefined
     ): DoubleOptions = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DefaultValue.foreach(__v => __obj.update("DefaultValue", __v.asInstanceOf[js.Any]))
-      FacetEnabled.foreach(__v => __obj.update("FacetEnabled", __v.asInstanceOf[js.Any]))
-      ReturnEnabled.foreach(__v => __obj.update("ReturnEnabled", __v.asInstanceOf[js.Any]))
-      SearchEnabled.foreach(__v => __obj.update("SearchEnabled", __v.asInstanceOf[js.Any]))
-      SortEnabled.foreach(__v => __obj.update("SortEnabled", __v.asInstanceOf[js.Any]))
-      SourceField.foreach(__v => __obj.update("SourceField", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DefaultValue.foreach(__v => __obj.updateDynamic("DefaultValue")(__v.asInstanceOf[js.Any]))
+      FacetEnabled.foreach(__v => __obj.updateDynamic("FacetEnabled")(__v.asInstanceOf[js.Any]))
+      ReturnEnabled.foreach(__v => __obj.updateDynamic("ReturnEnabled")(__v.asInstanceOf[js.Any]))
+      SearchEnabled.foreach(__v => __obj.updateDynamic("SearchEnabled")(__v.asInstanceOf[js.Any]))
+      SortEnabled.foreach(__v => __obj.updateDynamic("SortEnabled")(__v.asInstanceOf[js.Any]))
+      SourceField.foreach(__v => __obj.updateDynamic("SourceField")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DoubleOptions]
     }
   }
@@ -1407,7 +1407,7 @@ package cloudsearch {
         ExpressionName: StandardName,
         ExpressionValue: ExpressionValue
     ): Expression = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ExpressionName"  -> ExpressionName.asInstanceOf[js.Any],
         "ExpressionValue" -> ExpressionValue.asInstanceOf[js.Any]
       )
@@ -1430,7 +1430,7 @@ package cloudsearch {
         Options: Expression,
         Status: OptionStatus
     ): ExpressionStatus = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Options" -> Options.asInstanceOf[js.Any],
         "Status"  -> Status.asInstanceOf[js.Any]
       )
@@ -1451,7 +1451,7 @@ package cloudsearch {
     def apply(
         DomainName: DomainName
     ): IndexDocumentsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
@@ -1471,8 +1471,8 @@ package cloudsearch {
     def apply(
         FieldNames: js.UndefOr[FieldNameList] = js.undefined
     ): IndexDocumentsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FieldNames.foreach(__v => __obj.update("FieldNames", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FieldNames.foreach(__v => __obj.updateDynamic("FieldNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IndexDocumentsResponse]
     }
   }
@@ -1513,22 +1513,22 @@ package cloudsearch {
         TextArrayOptions: js.UndefOr[TextArrayOptions] = js.undefined,
         TextOptions: js.UndefOr[TextOptions] = js.undefined
     ): IndexField = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IndexFieldName" -> IndexFieldName.asInstanceOf[js.Any],
         "IndexFieldType" -> IndexFieldType.asInstanceOf[js.Any]
       )
 
-      DateArrayOptions.foreach(__v => __obj.update("DateArrayOptions", __v.asInstanceOf[js.Any]))
-      DateOptions.foreach(__v => __obj.update("DateOptions", __v.asInstanceOf[js.Any]))
-      DoubleArrayOptions.foreach(__v => __obj.update("DoubleArrayOptions", __v.asInstanceOf[js.Any]))
-      DoubleOptions.foreach(__v => __obj.update("DoubleOptions", __v.asInstanceOf[js.Any]))
-      IntArrayOptions.foreach(__v => __obj.update("IntArrayOptions", __v.asInstanceOf[js.Any]))
-      IntOptions.foreach(__v => __obj.update("IntOptions", __v.asInstanceOf[js.Any]))
-      LatLonOptions.foreach(__v => __obj.update("LatLonOptions", __v.asInstanceOf[js.Any]))
-      LiteralArrayOptions.foreach(__v => __obj.update("LiteralArrayOptions", __v.asInstanceOf[js.Any]))
-      LiteralOptions.foreach(__v => __obj.update("LiteralOptions", __v.asInstanceOf[js.Any]))
-      TextArrayOptions.foreach(__v => __obj.update("TextArrayOptions", __v.asInstanceOf[js.Any]))
-      TextOptions.foreach(__v => __obj.update("TextOptions", __v.asInstanceOf[js.Any]))
+      DateArrayOptions.foreach(__v => __obj.updateDynamic("DateArrayOptions")(__v.asInstanceOf[js.Any]))
+      DateOptions.foreach(__v => __obj.updateDynamic("DateOptions")(__v.asInstanceOf[js.Any]))
+      DoubleArrayOptions.foreach(__v => __obj.updateDynamic("DoubleArrayOptions")(__v.asInstanceOf[js.Any]))
+      DoubleOptions.foreach(__v => __obj.updateDynamic("DoubleOptions")(__v.asInstanceOf[js.Any]))
+      IntArrayOptions.foreach(__v => __obj.updateDynamic("IntArrayOptions")(__v.asInstanceOf[js.Any]))
+      IntOptions.foreach(__v => __obj.updateDynamic("IntOptions")(__v.asInstanceOf[js.Any]))
+      LatLonOptions.foreach(__v => __obj.updateDynamic("LatLonOptions")(__v.asInstanceOf[js.Any]))
+      LiteralArrayOptions.foreach(__v => __obj.updateDynamic("LiteralArrayOptions")(__v.asInstanceOf[js.Any]))
+      LiteralOptions.foreach(__v => __obj.updateDynamic("LiteralOptions")(__v.asInstanceOf[js.Any]))
+      TextArrayOptions.foreach(__v => __obj.updateDynamic("TextArrayOptions")(__v.asInstanceOf[js.Any]))
+      TextOptions.foreach(__v => __obj.updateDynamic("TextOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IndexField]
     }
   }
@@ -1547,7 +1547,7 @@ package cloudsearch {
         Options: IndexField,
         Status: OptionStatus
     ): IndexFieldStatus = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Options" -> Options.asInstanceOf[js.Any],
         "Status"  -> Status.asInstanceOf[js.Any]
       )
@@ -1609,12 +1609,12 @@ package cloudsearch {
         SearchEnabled: js.UndefOr[Boolean] = js.undefined,
         SourceFields: js.UndefOr[FieldNameCommaList] = js.undefined
     ): IntArrayOptions = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DefaultValue.foreach(__v => __obj.update("DefaultValue", __v.asInstanceOf[js.Any]))
-      FacetEnabled.foreach(__v => __obj.update("FacetEnabled", __v.asInstanceOf[js.Any]))
-      ReturnEnabled.foreach(__v => __obj.update("ReturnEnabled", __v.asInstanceOf[js.Any]))
-      SearchEnabled.foreach(__v => __obj.update("SearchEnabled", __v.asInstanceOf[js.Any]))
-      SourceFields.foreach(__v => __obj.update("SourceFields", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DefaultValue.foreach(__v => __obj.updateDynamic("DefaultValue")(__v.asInstanceOf[js.Any]))
+      FacetEnabled.foreach(__v => __obj.updateDynamic("FacetEnabled")(__v.asInstanceOf[js.Any]))
+      ReturnEnabled.foreach(__v => __obj.updateDynamic("ReturnEnabled")(__v.asInstanceOf[js.Any]))
+      SearchEnabled.foreach(__v => __obj.updateDynamic("SearchEnabled")(__v.asInstanceOf[js.Any]))
+      SourceFields.foreach(__v => __obj.updateDynamic("SourceFields")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IntArrayOptions]
     }
   }
@@ -1641,13 +1641,13 @@ package cloudsearch {
         SortEnabled: js.UndefOr[Boolean] = js.undefined,
         SourceField: js.UndefOr[FieldName] = js.undefined
     ): IntOptions = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DefaultValue.foreach(__v => __obj.update("DefaultValue", __v.asInstanceOf[js.Any]))
-      FacetEnabled.foreach(__v => __obj.update("FacetEnabled", __v.asInstanceOf[js.Any]))
-      ReturnEnabled.foreach(__v => __obj.update("ReturnEnabled", __v.asInstanceOf[js.Any]))
-      SearchEnabled.foreach(__v => __obj.update("SearchEnabled", __v.asInstanceOf[js.Any]))
-      SortEnabled.foreach(__v => __obj.update("SortEnabled", __v.asInstanceOf[js.Any]))
-      SourceField.foreach(__v => __obj.update("SourceField", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DefaultValue.foreach(__v => __obj.updateDynamic("DefaultValue")(__v.asInstanceOf[js.Any]))
+      FacetEnabled.foreach(__v => __obj.updateDynamic("FacetEnabled")(__v.asInstanceOf[js.Any]))
+      ReturnEnabled.foreach(__v => __obj.updateDynamic("ReturnEnabled")(__v.asInstanceOf[js.Any]))
+      SearchEnabled.foreach(__v => __obj.updateDynamic("SearchEnabled")(__v.asInstanceOf[js.Any]))
+      SortEnabled.foreach(__v => __obj.updateDynamic("SortEnabled")(__v.asInstanceOf[js.Any]))
+      SourceField.foreach(__v => __obj.updateDynamic("SourceField")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IntOptions]
     }
   }
@@ -1686,13 +1686,13 @@ package cloudsearch {
         SortEnabled: js.UndefOr[Boolean] = js.undefined,
         SourceField: js.UndefOr[FieldName] = js.undefined
     ): LatLonOptions = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DefaultValue.foreach(__v => __obj.update("DefaultValue", __v.asInstanceOf[js.Any]))
-      FacetEnabled.foreach(__v => __obj.update("FacetEnabled", __v.asInstanceOf[js.Any]))
-      ReturnEnabled.foreach(__v => __obj.update("ReturnEnabled", __v.asInstanceOf[js.Any]))
-      SearchEnabled.foreach(__v => __obj.update("SearchEnabled", __v.asInstanceOf[js.Any]))
-      SortEnabled.foreach(__v => __obj.update("SortEnabled", __v.asInstanceOf[js.Any]))
-      SourceField.foreach(__v => __obj.update("SourceField", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DefaultValue.foreach(__v => __obj.updateDynamic("DefaultValue")(__v.asInstanceOf[js.Any]))
+      FacetEnabled.foreach(__v => __obj.updateDynamic("FacetEnabled")(__v.asInstanceOf[js.Any]))
+      ReturnEnabled.foreach(__v => __obj.updateDynamic("ReturnEnabled")(__v.asInstanceOf[js.Any]))
+      SearchEnabled.foreach(__v => __obj.updateDynamic("SearchEnabled")(__v.asInstanceOf[js.Any]))
+      SortEnabled.foreach(__v => __obj.updateDynamic("SortEnabled")(__v.asInstanceOf[js.Any]))
+      SourceField.foreach(__v => __obj.updateDynamic("SourceField")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LatLonOptions]
     }
   }
@@ -1714,7 +1714,7 @@ package cloudsearch {
         MaximumPartitionCount: MaximumPartitionCount,
         MaximumReplicationCount: MaximumReplicationCount
     ): Limits = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MaximumPartitionCount"   -> MaximumPartitionCount.asInstanceOf[js.Any],
         "MaximumReplicationCount" -> MaximumReplicationCount.asInstanceOf[js.Any]
       )
@@ -1735,8 +1735,8 @@ package cloudsearch {
     def apply(
         DomainNames: js.UndefOr[DomainNameMap] = js.undefined
     ): ListDomainNamesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DomainNames.foreach(__v => __obj.update("DomainNames", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DomainNames.foreach(__v => __obj.updateDynamic("DomainNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDomainNamesResponse]
     }
   }
@@ -1761,12 +1761,12 @@ package cloudsearch {
         SearchEnabled: js.UndefOr[Boolean] = js.undefined,
         SourceFields: js.UndefOr[FieldNameCommaList] = js.undefined
     ): LiteralArrayOptions = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DefaultValue.foreach(__v => __obj.update("DefaultValue", __v.asInstanceOf[js.Any]))
-      FacetEnabled.foreach(__v => __obj.update("FacetEnabled", __v.asInstanceOf[js.Any]))
-      ReturnEnabled.foreach(__v => __obj.update("ReturnEnabled", __v.asInstanceOf[js.Any]))
-      SearchEnabled.foreach(__v => __obj.update("SearchEnabled", __v.asInstanceOf[js.Any]))
-      SourceFields.foreach(__v => __obj.update("SourceFields", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DefaultValue.foreach(__v => __obj.updateDynamic("DefaultValue")(__v.asInstanceOf[js.Any]))
+      FacetEnabled.foreach(__v => __obj.updateDynamic("FacetEnabled")(__v.asInstanceOf[js.Any]))
+      ReturnEnabled.foreach(__v => __obj.updateDynamic("ReturnEnabled")(__v.asInstanceOf[js.Any]))
+      SearchEnabled.foreach(__v => __obj.updateDynamic("SearchEnabled")(__v.asInstanceOf[js.Any]))
+      SourceFields.foreach(__v => __obj.updateDynamic("SourceFields")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LiteralArrayOptions]
     }
   }
@@ -1793,13 +1793,13 @@ package cloudsearch {
         SortEnabled: js.UndefOr[Boolean] = js.undefined,
         SourceField: js.UndefOr[FieldName] = js.undefined
     ): LiteralOptions = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DefaultValue.foreach(__v => __obj.update("DefaultValue", __v.asInstanceOf[js.Any]))
-      FacetEnabled.foreach(__v => __obj.update("FacetEnabled", __v.asInstanceOf[js.Any]))
-      ReturnEnabled.foreach(__v => __obj.update("ReturnEnabled", __v.asInstanceOf[js.Any]))
-      SearchEnabled.foreach(__v => __obj.update("SearchEnabled", __v.asInstanceOf[js.Any]))
-      SortEnabled.foreach(__v => __obj.update("SortEnabled", __v.asInstanceOf[js.Any]))
-      SourceField.foreach(__v => __obj.update("SourceField", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DefaultValue.foreach(__v => __obj.updateDynamic("DefaultValue")(__v.asInstanceOf[js.Any]))
+      FacetEnabled.foreach(__v => __obj.updateDynamic("FacetEnabled")(__v.asInstanceOf[js.Any]))
+      ReturnEnabled.foreach(__v => __obj.updateDynamic("ReturnEnabled")(__v.asInstanceOf[js.Any]))
+      SearchEnabled.foreach(__v => __obj.updateDynamic("SearchEnabled")(__v.asInstanceOf[js.Any]))
+      SortEnabled.foreach(__v => __obj.updateDynamic("SortEnabled")(__v.asInstanceOf[js.Any]))
+      SourceField.foreach(__v => __obj.updateDynamic("SourceField")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LiteralOptions]
     }
   }
@@ -1840,14 +1840,14 @@ package cloudsearch {
         PendingDeletion: js.UndefOr[Boolean] = js.undefined,
         UpdateVersion: js.UndefOr[UIntValue] = js.undefined
     ): OptionStatus = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CreationDate" -> CreationDate.asInstanceOf[js.Any],
         "State"        -> State.asInstanceOf[js.Any],
         "UpdateDate"   -> UpdateDate.asInstanceOf[js.Any]
       )
 
-      PendingDeletion.foreach(__v => __obj.update("PendingDeletion", __v.asInstanceOf[js.Any]))
-      UpdateVersion.foreach(__v => __obj.update("UpdateVersion", __v.asInstanceOf[js.Any]))
+      PendingDeletion.foreach(__v => __obj.updateDynamic("PendingDeletion")(__v.asInstanceOf[js.Any]))
+      UpdateVersion.foreach(__v => __obj.updateDynamic("UpdateVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OptionStatus]
     }
   }
@@ -1901,10 +1901,10 @@ package cloudsearch {
         DesiredPartitionCount: js.UndefOr[UIntValue] = js.undefined,
         DesiredReplicationCount: js.UndefOr[UIntValue] = js.undefined
     ): ScalingParameters = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DesiredInstanceType.foreach(__v => __obj.update("DesiredInstanceType", __v.asInstanceOf[js.Any]))
-      DesiredPartitionCount.foreach(__v => __obj.update("DesiredPartitionCount", __v.asInstanceOf[js.Any]))
-      DesiredReplicationCount.foreach(__v => __obj.update("DesiredReplicationCount", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DesiredInstanceType.foreach(__v => __obj.updateDynamic("DesiredInstanceType")(__v.asInstanceOf[js.Any]))
+      DesiredPartitionCount.foreach(__v => __obj.updateDynamic("DesiredPartitionCount")(__v.asInstanceOf[js.Any]))
+      DesiredReplicationCount.foreach(__v => __obj.updateDynamic("DesiredReplicationCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScalingParameters]
     }
   }
@@ -1923,7 +1923,7 @@ package cloudsearch {
         Options: ScalingParameters,
         Status: OptionStatus
     ): ScalingParametersStatus = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Options" -> Options.asInstanceOf[js.Any],
         "Status"  -> Status.asInstanceOf[js.Any]
       )
@@ -1944,8 +1944,8 @@ package cloudsearch {
     def apply(
         Endpoint: js.UndefOr[ServiceUrl] = js.undefined
     ): ServiceEndpoint = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Endpoint.foreach(__v => __obj.update("Endpoint", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServiceEndpoint]
     }
   }
@@ -1964,7 +1964,7 @@ package cloudsearch {
         DocumentSuggesterOptions: DocumentSuggesterOptions,
         SuggesterName: StandardName
     ): Suggester = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DocumentSuggesterOptions" -> DocumentSuggesterOptions.asInstanceOf[js.Any],
         "SuggesterName"            -> SuggesterName.asInstanceOf[js.Any]
       )
@@ -1995,7 +1995,7 @@ package cloudsearch {
         Options: Suggester,
         Status: OptionStatus
     ): SuggesterStatus = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Options" -> Options.asInstanceOf[js.Any],
         "Status"  -> Status.asInstanceOf[js.Any]
       )
@@ -2024,12 +2024,12 @@ package cloudsearch {
         ReturnEnabled: js.UndefOr[Boolean] = js.undefined,
         SourceFields: js.UndefOr[FieldNameCommaList] = js.undefined
     ): TextArrayOptions = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AnalysisScheme.foreach(__v => __obj.update("AnalysisScheme", __v.asInstanceOf[js.Any]))
-      DefaultValue.foreach(__v => __obj.update("DefaultValue", __v.asInstanceOf[js.Any]))
-      HighlightEnabled.foreach(__v => __obj.update("HighlightEnabled", __v.asInstanceOf[js.Any]))
-      ReturnEnabled.foreach(__v => __obj.update("ReturnEnabled", __v.asInstanceOf[js.Any]))
-      SourceFields.foreach(__v => __obj.update("SourceFields", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AnalysisScheme.foreach(__v => __obj.updateDynamic("AnalysisScheme")(__v.asInstanceOf[js.Any]))
+      DefaultValue.foreach(__v => __obj.updateDynamic("DefaultValue")(__v.asInstanceOf[js.Any]))
+      HighlightEnabled.foreach(__v => __obj.updateDynamic("HighlightEnabled")(__v.asInstanceOf[js.Any]))
+      ReturnEnabled.foreach(__v => __obj.updateDynamic("ReturnEnabled")(__v.asInstanceOf[js.Any]))
+      SourceFields.foreach(__v => __obj.updateDynamic("SourceFields")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TextArrayOptions]
     }
   }
@@ -2056,13 +2056,13 @@ package cloudsearch {
         SortEnabled: js.UndefOr[Boolean] = js.undefined,
         SourceField: js.UndefOr[FieldName] = js.undefined
     ): TextOptions = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AnalysisScheme.foreach(__v => __obj.update("AnalysisScheme", __v.asInstanceOf[js.Any]))
-      DefaultValue.foreach(__v => __obj.update("DefaultValue", __v.asInstanceOf[js.Any]))
-      HighlightEnabled.foreach(__v => __obj.update("HighlightEnabled", __v.asInstanceOf[js.Any]))
-      ReturnEnabled.foreach(__v => __obj.update("ReturnEnabled", __v.asInstanceOf[js.Any]))
-      SortEnabled.foreach(__v => __obj.update("SortEnabled", __v.asInstanceOf[js.Any]))
-      SourceField.foreach(__v => __obj.update("SourceField", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AnalysisScheme.foreach(__v => __obj.updateDynamic("AnalysisScheme")(__v.asInstanceOf[js.Any]))
+      DefaultValue.foreach(__v => __obj.updateDynamic("DefaultValue")(__v.asInstanceOf[js.Any]))
+      HighlightEnabled.foreach(__v => __obj.updateDynamic("HighlightEnabled")(__v.asInstanceOf[js.Any]))
+      ReturnEnabled.foreach(__v => __obj.updateDynamic("ReturnEnabled")(__v.asInstanceOf[js.Any]))
+      SortEnabled.foreach(__v => __obj.updateDynamic("SortEnabled")(__v.asInstanceOf[js.Any]))
+      SourceField.foreach(__v => __obj.updateDynamic("SourceField")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TextOptions]
     }
   }
@@ -2081,7 +2081,7 @@ package cloudsearch {
         DomainName: DomainName,
         MultiAZ: Boolean
     ): UpdateAvailabilityOptionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "MultiAZ"    -> MultiAZ.asInstanceOf[js.Any]
       )
@@ -2102,8 +2102,8 @@ package cloudsearch {
     def apply(
         AvailabilityOptions: js.UndefOr[AvailabilityOptionsStatus] = js.undefined
     ): UpdateAvailabilityOptionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AvailabilityOptions.foreach(__v => __obj.update("AvailabilityOptions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AvailabilityOptions.foreach(__v => __obj.updateDynamic("AvailabilityOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAvailabilityOptionsResponse]
     }
   }
@@ -2122,7 +2122,7 @@ package cloudsearch {
         DomainName: DomainName,
         ScalingParameters: ScalingParameters
     ): UpdateScalingParametersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName"        -> DomainName.asInstanceOf[js.Any],
         "ScalingParameters" -> ScalingParameters.asInstanceOf[js.Any]
       )
@@ -2143,7 +2143,7 @@ package cloudsearch {
     def apply(
         ScalingParameters: ScalingParametersStatus
     ): UpdateScalingParametersResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ScalingParameters" -> ScalingParameters.asInstanceOf[js.Any]
       )
 
@@ -2165,7 +2165,7 @@ package cloudsearch {
         AccessPolicies: PolicyDocument,
         DomainName: DomainName
     ): UpdateServiceAccessPoliciesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccessPolicies" -> AccessPolicies.asInstanceOf[js.Any],
         "DomainName"     -> DomainName.asInstanceOf[js.Any]
       )
@@ -2186,7 +2186,7 @@ package cloudsearch {
     def apply(
         AccessPolicies: AccessPoliciesStatus
     ): UpdateServiceAccessPoliciesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccessPolicies" -> AccessPolicies.asInstanceOf[js.Any]
       )
 

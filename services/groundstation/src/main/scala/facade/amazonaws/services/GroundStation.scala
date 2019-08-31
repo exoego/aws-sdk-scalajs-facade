@@ -162,7 +162,7 @@ package groundstation {
     def apply(
         spectrumConfig: SpectrumConfig
     ): AntennaDownlinkConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "spectrumConfig" -> spectrumConfig.asInstanceOf[js.Any]
       )
 
@@ -186,7 +186,7 @@ package groundstation {
         demodulationConfig: DemodulationConfig,
         spectrumConfig: SpectrumConfig
     ): AntennaDownlinkDemodDecodeConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "decodeConfig"       -> decodeConfig.asInstanceOf[js.Any],
         "demodulationConfig" -> demodulationConfig.asInstanceOf[js.Any],
         "spectrumConfig"     -> spectrumConfig.asInstanceOf[js.Any]
@@ -210,7 +210,7 @@ package groundstation {
         spectrumConfig: UplinkSpectrumConfig,
         targetEirp: Eirp
     ): AntennaUplinkConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "spectrumConfig" -> spectrumConfig.asInstanceOf[js.Any],
         "targetEirp"     -> targetEirp.asInstanceOf[js.Any]
       )
@@ -239,7 +239,7 @@ package groundstation {
     def apply(
         contactId: String
     ): CancelContactRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "contactId" -> contactId.asInstanceOf[js.Any]
       )
 
@@ -283,10 +283,10 @@ package groundstation {
         configId: js.UndefOr[String] = js.undefined,
         configType: js.UndefOr[ConfigCapabilityType] = js.undefined
     ): ConfigIdResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      configArn.foreach(__v => __obj.update("configArn", __v.asInstanceOf[js.Any]))
-      configId.foreach(__v => __obj.update("configId", __v.asInstanceOf[js.Any]))
-      configType.foreach(__v => __obj.update("configType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      configArn.foreach(__v => __obj.updateDynamic("configArn")(__v.asInstanceOf[js.Any]))
+      configId.foreach(__v => __obj.updateDynamic("configId")(__v.asInstanceOf[js.Any]))
+      configType.foreach(__v => __obj.updateDynamic("configType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfigIdResponse]
     }
   }
@@ -309,11 +309,11 @@ package groundstation {
         configType: js.UndefOr[ConfigCapabilityType] = js.undefined,
         name: js.UndefOr[String] = js.undefined
     ): ConfigListItem = {
-      val __obj = js.Dictionary.empty[js.Any]
-      configArn.foreach(__v => __obj.update("configArn", __v.asInstanceOf[js.Any]))
-      configId.foreach(__v => __obj.update("configId", __v.asInstanceOf[js.Any]))
-      configType.foreach(__v => __obj.update("configType", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      configArn.foreach(__v => __obj.updateDynamic("configArn")(__v.asInstanceOf[js.Any]))
+      configId.foreach(__v => __obj.updateDynamic("configId")(__v.asInstanceOf[js.Any]))
+      configType.foreach(__v => __obj.updateDynamic("configType")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfigListItem]
     }
   }
@@ -341,15 +341,15 @@ package groundstation {
         trackingConfig: js.UndefOr[TrackingConfig] = js.undefined,
         uplinkEchoConfig: js.UndefOr[UplinkEchoConfig] = js.undefined
     ): ConfigTypeData = {
-      val __obj = js.Dictionary.empty[js.Any]
-      antennaDownlinkConfig.foreach(__v => __obj.update("antennaDownlinkConfig", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      antennaDownlinkConfig.foreach(__v => __obj.updateDynamic("antennaDownlinkConfig")(__v.asInstanceOf[js.Any]))
       antennaDownlinkDemodDecodeConfig.foreach(
-        __v => __obj.update("antennaDownlinkDemodDecodeConfig", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("antennaDownlinkDemodDecodeConfig")(__v.asInstanceOf[js.Any])
       )
-      antennaUplinkConfig.foreach(__v => __obj.update("antennaUplinkConfig", __v.asInstanceOf[js.Any]))
-      dataflowEndpointConfig.foreach(__v => __obj.update("dataflowEndpointConfig", __v.asInstanceOf[js.Any]))
-      trackingConfig.foreach(__v => __obj.update("trackingConfig", __v.asInstanceOf[js.Any]))
-      uplinkEchoConfig.foreach(__v => __obj.update("uplinkEchoConfig", __v.asInstanceOf[js.Any]))
+      antennaUplinkConfig.foreach(__v => __obj.updateDynamic("antennaUplinkConfig")(__v.asInstanceOf[js.Any]))
+      dataflowEndpointConfig.foreach(__v => __obj.updateDynamic("dataflowEndpointConfig")(__v.asInstanceOf[js.Any]))
+      trackingConfig.foreach(__v => __obj.updateDynamic("trackingConfig")(__v.asInstanceOf[js.Any]))
+      uplinkEchoConfig.foreach(__v => __obj.updateDynamic("uplinkEchoConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfigTypeData]
     }
   }
@@ -388,19 +388,19 @@ package groundstation {
         startTime: js.UndefOr[Timestamp] = js.undefined,
         tags: js.UndefOr[TagsMap] = js.undefined
     ): ContactData = {
-      val __obj = js.Dictionary.empty[js.Any]
-      contactId.foreach(__v => __obj.update("contactId", __v.asInstanceOf[js.Any]))
-      contactStatus.foreach(__v => __obj.update("contactStatus", __v.asInstanceOf[js.Any]))
-      endTime.foreach(__v => __obj.update("endTime", __v.asInstanceOf[js.Any]))
-      errorMessage.foreach(__v => __obj.update("errorMessage", __v.asInstanceOf[js.Any]))
-      groundStation.foreach(__v => __obj.update("groundStation", __v.asInstanceOf[js.Any]))
-      maximumElevation.foreach(__v => __obj.update("maximumElevation", __v.asInstanceOf[js.Any]))
-      missionProfileArn.foreach(__v => __obj.update("missionProfileArn", __v.asInstanceOf[js.Any]))
-      postPassEndTime.foreach(__v => __obj.update("postPassEndTime", __v.asInstanceOf[js.Any]))
-      prePassStartTime.foreach(__v => __obj.update("prePassStartTime", __v.asInstanceOf[js.Any]))
-      satelliteArn.foreach(__v => __obj.update("satelliteArn", __v.asInstanceOf[js.Any]))
-      startTime.foreach(__v => __obj.update("startTime", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      contactId.foreach(__v => __obj.updateDynamic("contactId")(__v.asInstanceOf[js.Any]))
+      contactStatus.foreach(__v => __obj.updateDynamic("contactStatus")(__v.asInstanceOf[js.Any]))
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      errorMessage.foreach(__v => __obj.updateDynamic("errorMessage")(__v.asInstanceOf[js.Any]))
+      groundStation.foreach(__v => __obj.updateDynamic("groundStation")(__v.asInstanceOf[js.Any]))
+      maximumElevation.foreach(__v => __obj.updateDynamic("maximumElevation")(__v.asInstanceOf[js.Any]))
+      missionProfileArn.foreach(__v => __obj.updateDynamic("missionProfileArn")(__v.asInstanceOf[js.Any]))
+      postPassEndTime.foreach(__v => __obj.updateDynamic("postPassEndTime")(__v.asInstanceOf[js.Any]))
+      prePassStartTime.foreach(__v => __obj.updateDynamic("prePassStartTime")(__v.asInstanceOf[js.Any]))
+      satelliteArn.foreach(__v => __obj.updateDynamic("satelliteArn")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContactData]
     }
   }
@@ -417,8 +417,8 @@ package groundstation {
     def apply(
         contactId: js.UndefOr[String] = js.undefined
     ): ContactIdResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      contactId.foreach(__v => __obj.update("contactId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      contactId.foreach(__v => __obj.updateDynamic("contactId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContactIdResponse]
     }
   }
@@ -469,12 +469,12 @@ package groundstation {
         name: SafeName,
         tags: js.UndefOr[TagsMap] = js.undefined
     ): CreateConfigRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "configData" -> configData.asInstanceOf[js.Any],
         "name"       -> name.asInstanceOf[js.Any]
       )
 
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateConfigRequest]
     }
   }
@@ -493,11 +493,11 @@ package groundstation {
         endpointDetails: EndpointDetailsList,
         tags: js.UndefOr[TagsMap] = js.undefined
     ): CreateDataflowEndpointGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "endpointDetails" -> endpointDetails.asInstanceOf[js.Any]
       )
 
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDataflowEndpointGroupRequest]
     }
   }
@@ -526,7 +526,7 @@ package groundstation {
         contactPrePassDurationSeconds: js.UndefOr[DurationInSeconds] = js.undefined,
         tags: js.UndefOr[TagsMap] = js.undefined
     ): CreateMissionProfileRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "dataflowEdges"                       -> dataflowEdges.asInstanceOf[js.Any],
         "minimumViableContactDurationSeconds" -> minimumViableContactDurationSeconds.asInstanceOf[js.Any],
         "name"                                -> name.asInstanceOf[js.Any],
@@ -534,12 +534,12 @@ package groundstation {
       )
 
       contactPostPassDurationSeconds.foreach(
-        __v => __obj.update("contactPostPassDurationSeconds", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("contactPostPassDurationSeconds")(__v.asInstanceOf[js.Any])
       )
       contactPrePassDurationSeconds.foreach(
-        __v => __obj.update("contactPrePassDurationSeconds", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("contactPrePassDurationSeconds")(__v.asInstanceOf[js.Any])
       )
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateMissionProfileRequest]
     }
   }
@@ -568,10 +568,10 @@ package groundstation {
         name: js.UndefOr[SafeName] = js.undefined,
         status: js.UndefOr[EndpointStatus] = js.undefined
     ): DataflowEndpoint = {
-      val __obj = js.Dictionary.empty[js.Any]
-      address.foreach(__v => __obj.update("address", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      address.foreach(__v => __obj.updateDynamic("address")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataflowEndpoint]
     }
   }
@@ -588,7 +588,7 @@ package groundstation {
     def apply(
         dataflowEndpointName: String
     ): DataflowEndpointConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "dataflowEndpointName" -> dataflowEndpointName.asInstanceOf[js.Any]
       )
 
@@ -608,8 +608,8 @@ package groundstation {
     def apply(
         dataflowEndpointGroupId: js.UndefOr[String] = js.undefined
     ): DataflowEndpointGroupIdResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      dataflowEndpointGroupId.foreach(__v => __obj.update("dataflowEndpointGroupId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      dataflowEndpointGroupId.foreach(__v => __obj.updateDynamic("dataflowEndpointGroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataflowEndpointGroupIdResponse]
     }
   }
@@ -628,9 +628,9 @@ package groundstation {
         dataflowEndpointGroupArn: js.UndefOr[DataflowEndpointGroupArn] = js.undefined,
         dataflowEndpointGroupId: js.UndefOr[String] = js.undefined
     ): DataflowEndpointListItem = {
-      val __obj = js.Dictionary.empty[js.Any]
-      dataflowEndpointGroupArn.foreach(__v => __obj.update("dataflowEndpointGroupArn", __v.asInstanceOf[js.Any]))
-      dataflowEndpointGroupId.foreach(__v => __obj.update("dataflowEndpointGroupId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      dataflowEndpointGroupArn.foreach(__v => __obj.updateDynamic("dataflowEndpointGroupArn")(__v.asInstanceOf[js.Any]))
+      dataflowEndpointGroupId.foreach(__v => __obj.updateDynamic("dataflowEndpointGroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataflowEndpointListItem]
     }
   }
@@ -647,7 +647,7 @@ package groundstation {
     def apply(
         unvalidatedJSON: JsonString
     ): DecodeConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "unvalidatedJSON" -> unvalidatedJSON.asInstanceOf[js.Any]
       )
 
@@ -669,7 +669,7 @@ package groundstation {
         configId: String,
         configType: ConfigCapabilityType
     ): DeleteConfigRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "configId"   -> configId.asInstanceOf[js.Any],
         "configType" -> configType.asInstanceOf[js.Any]
       )
@@ -690,7 +690,7 @@ package groundstation {
     def apply(
         dataflowEndpointGroupId: String
     ): DeleteDataflowEndpointGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "dataflowEndpointGroupId" -> dataflowEndpointGroupId.asInstanceOf[js.Any]
       )
 
@@ -710,7 +710,7 @@ package groundstation {
     def apply(
         missionProfileId: String
     ): DeleteMissionProfileRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "missionProfileId" -> missionProfileId.asInstanceOf[js.Any]
       )
 
@@ -730,7 +730,7 @@ package groundstation {
     def apply(
         unvalidatedJSON: JsonString
     ): DemodulationConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "unvalidatedJSON" -> unvalidatedJSON.asInstanceOf[js.Any]
       )
 
@@ -750,7 +750,7 @@ package groundstation {
     def apply(
         contactId: String
     ): DescribeContactRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "contactId" -> contactId.asInstanceOf[js.Any]
       )
 
@@ -792,19 +792,19 @@ package groundstation {
         startTime: js.UndefOr[Timestamp] = js.undefined,
         tags: js.UndefOr[TagsMap] = js.undefined
     ): DescribeContactResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      contactId.foreach(__v => __obj.update("contactId", __v.asInstanceOf[js.Any]))
-      contactStatus.foreach(__v => __obj.update("contactStatus", __v.asInstanceOf[js.Any]))
-      endTime.foreach(__v => __obj.update("endTime", __v.asInstanceOf[js.Any]))
-      errorMessage.foreach(__v => __obj.update("errorMessage", __v.asInstanceOf[js.Any]))
-      groundStation.foreach(__v => __obj.update("groundStation", __v.asInstanceOf[js.Any]))
-      maximumElevation.foreach(__v => __obj.update("maximumElevation", __v.asInstanceOf[js.Any]))
-      missionProfileArn.foreach(__v => __obj.update("missionProfileArn", __v.asInstanceOf[js.Any]))
-      postPassEndTime.foreach(__v => __obj.update("postPassEndTime", __v.asInstanceOf[js.Any]))
-      prePassStartTime.foreach(__v => __obj.update("prePassStartTime", __v.asInstanceOf[js.Any]))
-      satelliteArn.foreach(__v => __obj.update("satelliteArn", __v.asInstanceOf[js.Any]))
-      startTime.foreach(__v => __obj.update("startTime", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      contactId.foreach(__v => __obj.updateDynamic("contactId")(__v.asInstanceOf[js.Any]))
+      contactStatus.foreach(__v => __obj.updateDynamic("contactStatus")(__v.asInstanceOf[js.Any]))
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      errorMessage.foreach(__v => __obj.updateDynamic("errorMessage")(__v.asInstanceOf[js.Any]))
+      groundStation.foreach(__v => __obj.updateDynamic("groundStation")(__v.asInstanceOf[js.Any]))
+      maximumElevation.foreach(__v => __obj.updateDynamic("maximumElevation")(__v.asInstanceOf[js.Any]))
+      missionProfileArn.foreach(__v => __obj.updateDynamic("missionProfileArn")(__v.asInstanceOf[js.Any]))
+      postPassEndTime.foreach(__v => __obj.updateDynamic("postPassEndTime")(__v.asInstanceOf[js.Any]))
+      prePassStartTime.foreach(__v => __obj.updateDynamic("prePassStartTime")(__v.asInstanceOf[js.Any]))
+      satelliteArn.foreach(__v => __obj.updateDynamic("satelliteArn")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeContactResponse]
     }
   }
@@ -823,7 +823,7 @@ package groundstation {
         units: EirpUnits,
         value: Double
     ): Eirp = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "units" -> units.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
@@ -852,7 +852,7 @@ package groundstation {
         unit: AngleUnits,
         value: Double
     ): Elevation = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "unit"  -> unit.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
@@ -875,9 +875,9 @@ package groundstation {
         endpoint: js.UndefOr[DataflowEndpoint] = js.undefined,
         securityDetails: js.UndefOr[SecurityDetails] = js.undefined
     ): EndpointDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      endpoint.foreach(__v => __obj.update("endpoint", __v.asInstanceOf[js.Any]))
-      securityDetails.foreach(__v => __obj.update("securityDetails", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      endpoint.foreach(__v => __obj.updateDynamic("endpoint")(__v.asInstanceOf[js.Any]))
+      securityDetails.foreach(__v => __obj.updateDynamic("securityDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EndpointDetails]
     }
   }
@@ -906,7 +906,7 @@ package groundstation {
         units: FrequencyUnits,
         value: Double
     ): Frequency = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "units" -> units.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
@@ -929,7 +929,7 @@ package groundstation {
         units: BandwidthUnits,
         value: Double
     ): FrequencyBandwidth = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "units" -> units.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
@@ -960,7 +960,7 @@ package groundstation {
         configId: String,
         configType: ConfigCapabilityType
     ): GetConfigRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "configId"   -> configId.asInstanceOf[js.Any],
         "configType" -> configType.asInstanceOf[js.Any]
       )
@@ -991,15 +991,15 @@ package groundstation {
         configType: js.UndefOr[ConfigCapabilityType] = js.undefined,
         tags: js.UndefOr[TagsMap] = js.undefined
     ): GetConfigResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "configArn"  -> configArn.asInstanceOf[js.Any],
         "configData" -> configData.asInstanceOf[js.Any],
         "configId"   -> configId.asInstanceOf[js.Any],
         "name"       -> name.asInstanceOf[js.Any]
       )
 
-      configType.foreach(__v => __obj.update("configType", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      configType.foreach(__v => __obj.updateDynamic("configType")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetConfigResponse]
     }
   }
@@ -1016,7 +1016,7 @@ package groundstation {
     def apply(
         dataflowEndpointGroupId: String
     ): GetDataflowEndpointGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "dataflowEndpointGroupId" -> dataflowEndpointGroupId.asInstanceOf[js.Any]
       )
 
@@ -1042,11 +1042,11 @@ package groundstation {
         endpointsDetails: js.UndefOr[EndpointDetailsList] = js.undefined,
         tags: js.UndefOr[TagsMap] = js.undefined
     ): GetDataflowEndpointGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      dataflowEndpointGroupArn.foreach(__v => __obj.update("dataflowEndpointGroupArn", __v.asInstanceOf[js.Any]))
-      dataflowEndpointGroupId.foreach(__v => __obj.update("dataflowEndpointGroupId", __v.asInstanceOf[js.Any]))
-      endpointsDetails.foreach(__v => __obj.update("endpointsDetails", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      dataflowEndpointGroupArn.foreach(__v => __obj.updateDynamic("dataflowEndpointGroupArn")(__v.asInstanceOf[js.Any]))
+      dataflowEndpointGroupId.foreach(__v => __obj.updateDynamic("dataflowEndpointGroupId")(__v.asInstanceOf[js.Any]))
+      endpointsDetails.foreach(__v => __obj.updateDynamic("endpointsDetails")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDataflowEndpointGroupResponse]
     }
   }
@@ -1065,7 +1065,7 @@ package groundstation {
         month: Int,
         year: Int
     ): GetMinuteUsageRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "month" -> month.asInstanceOf[js.Any],
         "year"  -> year.asInstanceOf[js.Any]
       )
@@ -1094,14 +1094,18 @@ package groundstation {
         totalScheduledMinutes: js.UndefOr[Int] = js.undefined,
         upcomingMinutesScheduled: js.UndefOr[Int] = js.undefined
     ): GetMinuteUsageResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      estimatedMinutesRemaining.foreach(__v => __obj.update("estimatedMinutesRemaining", __v.asInstanceOf[js.Any]))
-      isReservedMinutesCustomer.foreach(__v => __obj.update("isReservedMinutesCustomer", __v.asInstanceOf[js.Any]))
-      totalReservedMinuteAllocation.foreach(
-        __v => __obj.update("totalReservedMinuteAllocation", __v.asInstanceOf[js.Any])
+      val __obj = js.Dynamic.literal()
+      estimatedMinutesRemaining.foreach(
+        __v => __obj.updateDynamic("estimatedMinutesRemaining")(__v.asInstanceOf[js.Any])
       )
-      totalScheduledMinutes.foreach(__v => __obj.update("totalScheduledMinutes", __v.asInstanceOf[js.Any]))
-      upcomingMinutesScheduled.foreach(__v => __obj.update("upcomingMinutesScheduled", __v.asInstanceOf[js.Any]))
+      isReservedMinutesCustomer.foreach(
+        __v => __obj.updateDynamic("isReservedMinutesCustomer")(__v.asInstanceOf[js.Any])
+      )
+      totalReservedMinuteAllocation.foreach(
+        __v => __obj.updateDynamic("totalReservedMinuteAllocation")(__v.asInstanceOf[js.Any])
+      )
+      totalScheduledMinutes.foreach(__v => __obj.updateDynamic("totalScheduledMinutes")(__v.asInstanceOf[js.Any]))
+      upcomingMinutesScheduled.foreach(__v => __obj.updateDynamic("upcomingMinutesScheduled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMinuteUsageResponse]
     }
   }
@@ -1118,7 +1122,7 @@ package groundstation {
     def apply(
         missionProfileId: String
     ): GetMissionProfileRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "missionProfileId" -> missionProfileId.asInstanceOf[js.Any]
       )
 
@@ -1156,23 +1160,23 @@ package groundstation {
         tags: js.UndefOr[TagsMap] = js.undefined,
         trackingConfigArn: js.UndefOr[ConfigArn] = js.undefined
     ): GetMissionProfileResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       contactPostPassDurationSeconds.foreach(
-        __v => __obj.update("contactPostPassDurationSeconds", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("contactPostPassDurationSeconds")(__v.asInstanceOf[js.Any])
       )
       contactPrePassDurationSeconds.foreach(
-        __v => __obj.update("contactPrePassDurationSeconds", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("contactPrePassDurationSeconds")(__v.asInstanceOf[js.Any])
       )
-      dataflowEdges.foreach(__v => __obj.update("dataflowEdges", __v.asInstanceOf[js.Any]))
+      dataflowEdges.foreach(__v => __obj.updateDynamic("dataflowEdges")(__v.asInstanceOf[js.Any]))
       minimumViableContactDurationSeconds.foreach(
-        __v => __obj.update("minimumViableContactDurationSeconds", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("minimumViableContactDurationSeconds")(__v.asInstanceOf[js.Any])
       )
-      missionProfileArn.foreach(__v => __obj.update("missionProfileArn", __v.asInstanceOf[js.Any]))
-      missionProfileId.foreach(__v => __obj.update("missionProfileId", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      region.foreach(__v => __obj.update("region", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
-      trackingConfigArn.foreach(__v => __obj.update("trackingConfigArn", __v.asInstanceOf[js.Any]))
+      missionProfileArn.foreach(__v => __obj.updateDynamic("missionProfileArn")(__v.asInstanceOf[js.Any]))
+      missionProfileId.foreach(__v => __obj.updateDynamic("missionProfileId")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      trackingConfigArn.foreach(__v => __obj.updateDynamic("trackingConfigArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMissionProfileResponse]
     }
   }
@@ -1189,7 +1193,7 @@ package groundstation {
     def apply(
         satelliteId: String
     ): GetSatelliteRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "satelliteId" -> satelliteId.asInstanceOf[js.Any]
       )
 
@@ -1219,13 +1223,13 @@ package groundstation {
         satelliteId: js.UndefOr[Uuid] = js.undefined,
         tags: js.UndefOr[TagsMap] = js.undefined
     ): GetSatelliteResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      dateCreated.foreach(__v => __obj.update("dateCreated", __v.asInstanceOf[js.Any]))
-      lastUpdated.foreach(__v => __obj.update("lastUpdated", __v.asInstanceOf[js.Any]))
-      noradSatelliteID.foreach(__v => __obj.update("noradSatelliteID", __v.asInstanceOf[js.Any]))
-      satelliteArn.foreach(__v => __obj.update("satelliteArn", __v.asInstanceOf[js.Any]))
-      satelliteId.foreach(__v => __obj.update("satelliteId", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      dateCreated.foreach(__v => __obj.updateDynamic("dateCreated")(__v.asInstanceOf[js.Any]))
+      lastUpdated.foreach(__v => __obj.updateDynamic("lastUpdated")(__v.asInstanceOf[js.Any]))
+      noradSatelliteID.foreach(__v => __obj.updateDynamic("noradSatelliteID")(__v.asInstanceOf[js.Any]))
+      satelliteArn.foreach(__v => __obj.updateDynamic("satelliteArn")(__v.asInstanceOf[js.Any]))
+      satelliteId.foreach(__v => __obj.updateDynamic("satelliteId")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSatelliteResponse]
     }
   }
@@ -1246,10 +1250,10 @@ package groundstation {
         groundStationName: js.UndefOr[String] = js.undefined,
         region: js.UndefOr[String] = js.undefined
     ): GroundStationData = {
-      val __obj = js.Dictionary.empty[js.Any]
-      groundStationId.foreach(__v => __obj.update("groundStationId", __v.asInstanceOf[js.Any]))
-      groundStationName.foreach(__v => __obj.update("groundStationName", __v.asInstanceOf[js.Any]))
-      region.foreach(__v => __obj.update("region", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      groundStationId.foreach(__v => __obj.updateDynamic("groundStationId")(__v.asInstanceOf[js.Any]))
+      groundStationName.foreach(__v => __obj.updateDynamic("groundStationName")(__v.asInstanceOf[js.Any]))
+      region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GroundStationData]
     }
   }
@@ -1268,9 +1272,9 @@ package groundstation {
         maxResults: js.UndefOr[Int] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): ListConfigsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListConfigsRequest]
     }
   }
@@ -1289,9 +1293,9 @@ package groundstation {
         configList: js.UndefOr[ConfigList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): ListConfigsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      configList.foreach(__v => __obj.update("configList", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      configList.foreach(__v => __obj.updateDynamic("configList")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListConfigsResponse]
     }
   }
@@ -1322,17 +1326,17 @@ package groundstation {
         nextToken: js.UndefOr[String] = js.undefined,
         satelliteArn: js.UndefOr[satelliteArn] = js.undefined
     ): ListContactsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "endTime"    -> endTime.asInstanceOf[js.Any],
         "startTime"  -> startTime.asInstanceOf[js.Any],
         "statusList" -> statusList.asInstanceOf[js.Any]
       )
 
-      groundStation.foreach(__v => __obj.update("groundStation", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      missionProfileArn.foreach(__v => __obj.update("missionProfileArn", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      satelliteArn.foreach(__v => __obj.update("satelliteArn", __v.asInstanceOf[js.Any]))
+      groundStation.foreach(__v => __obj.updateDynamic("groundStation")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      missionProfileArn.foreach(__v => __obj.updateDynamic("missionProfileArn")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      satelliteArn.foreach(__v => __obj.updateDynamic("satelliteArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListContactsRequest]
     }
   }
@@ -1351,9 +1355,9 @@ package groundstation {
         contactList: js.UndefOr[ContactList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): ListContactsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      contactList.foreach(__v => __obj.update("contactList", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      contactList.foreach(__v => __obj.updateDynamic("contactList")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListContactsResponse]
     }
   }
@@ -1372,9 +1376,9 @@ package groundstation {
         maxResults: js.UndefOr[Int] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): ListDataflowEndpointGroupsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDataflowEndpointGroupsRequest]
     }
   }
@@ -1393,9 +1397,11 @@ package groundstation {
         dataflowEndpointGroupList: js.UndefOr[DataflowEndpointGroupList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): ListDataflowEndpointGroupsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      dataflowEndpointGroupList.foreach(__v => __obj.update("dataflowEndpointGroupList", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      dataflowEndpointGroupList.foreach(
+        __v => __obj.updateDynamic("dataflowEndpointGroupList")(__v.asInstanceOf[js.Any])
+      )
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDataflowEndpointGroupsResponse]
     }
   }
@@ -1414,9 +1420,9 @@ package groundstation {
         maxResults: js.UndefOr[Int] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): ListGroundStationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGroundStationsRequest]
     }
   }
@@ -1435,9 +1441,9 @@ package groundstation {
         groundStationList: js.UndefOr[GroundStationList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): ListGroundStationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      groundStationList.foreach(__v => __obj.update("groundStationList", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      groundStationList.foreach(__v => __obj.updateDynamic("groundStationList")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGroundStationsResponse]
     }
   }
@@ -1456,9 +1462,9 @@ package groundstation {
         maxResults: js.UndefOr[Int] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): ListMissionProfilesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListMissionProfilesRequest]
     }
   }
@@ -1477,9 +1483,9 @@ package groundstation {
         missionProfileList: js.UndefOr[MissionProfileList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): ListMissionProfilesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      missionProfileList.foreach(__v => __obj.update("missionProfileList", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      missionProfileList.foreach(__v => __obj.updateDynamic("missionProfileList")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListMissionProfilesResponse]
     }
   }
@@ -1498,9 +1504,9 @@ package groundstation {
         maxResults: js.UndefOr[Int] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): ListSatellitesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSatellitesRequest]
     }
   }
@@ -1519,9 +1525,9 @@ package groundstation {
         nextToken: js.UndefOr[String] = js.undefined,
         satellites: js.UndefOr[SatelliteList] = js.undefined
     ): ListSatellitesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      satellites.foreach(__v => __obj.update("satellites", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      satellites.foreach(__v => __obj.updateDynamic("satellites")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSatellitesResponse]
     }
   }
@@ -1538,7 +1544,7 @@ package groundstation {
     def apply(
         resourceArn: String
     ): ListTagsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
 
@@ -1558,8 +1564,8 @@ package groundstation {
     def apply(
         tags: js.UndefOr[TagsMap] = js.undefined
     ): ListTagsForResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
@@ -1576,8 +1582,8 @@ package groundstation {
     def apply(
         missionProfileId: js.UndefOr[String] = js.undefined
     ): MissionProfileIdResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      missionProfileId.foreach(__v => __obj.update("missionProfileId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      missionProfileId.foreach(__v => __obj.updateDynamic("missionProfileId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MissionProfileIdResponse]
     }
   }
@@ -1600,11 +1606,11 @@ package groundstation {
         name: js.UndefOr[String] = js.undefined,
         region: js.UndefOr[String] = js.undefined
     ): MissionProfileListItem = {
-      val __obj = js.Dictionary.empty[js.Any]
-      missionProfileArn.foreach(__v => __obj.update("missionProfileArn", __v.asInstanceOf[js.Any]))
-      missionProfileId.foreach(__v => __obj.update("missionProfileId", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      region.foreach(__v => __obj.update("region", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      missionProfileArn.foreach(__v => __obj.updateDynamic("missionProfileArn")(__v.asInstanceOf[js.Any]))
+      missionProfileId.foreach(__v => __obj.updateDynamic("missionProfileId")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MissionProfileListItem]
     }
   }
@@ -1639,7 +1645,7 @@ package groundstation {
         startTime: Timestamp,
         tags: js.UndefOr[TagsMap] = js.undefined
     ): ReserveContactRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "endTime"           -> endTime.asInstanceOf[js.Any],
         "groundStation"     -> groundStation.asInstanceOf[js.Any],
         "missionProfileArn" -> missionProfileArn.asInstanceOf[js.Any],
@@ -1647,7 +1653,7 @@ package groundstation {
         "startTime"         -> startTime.asInstanceOf[js.Any]
       )
 
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReserveContactRequest]
     }
   }
@@ -1668,10 +1674,10 @@ package groundstation {
         satelliteArn: js.UndefOr[satelliteArn] = js.undefined,
         satelliteId: js.UndefOr[Uuid] = js.undefined
     ): SatelliteListItem = {
-      val __obj = js.Dictionary.empty[js.Any]
-      noradSatelliteID.foreach(__v => __obj.update("noradSatelliteID", __v.asInstanceOf[js.Any]))
-      satelliteArn.foreach(__v => __obj.update("satelliteArn", __v.asInstanceOf[js.Any]))
-      satelliteId.foreach(__v => __obj.update("satelliteId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      noradSatelliteID.foreach(__v => __obj.updateDynamic("noradSatelliteID")(__v.asInstanceOf[js.Any]))
+      satelliteArn.foreach(__v => __obj.updateDynamic("satelliteArn")(__v.asInstanceOf[js.Any]))
+      satelliteId.foreach(__v => __obj.updateDynamic("satelliteId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SatelliteListItem]
     }
   }
@@ -1692,7 +1698,7 @@ package groundstation {
         securityGroupIds: SecurityGroupIdList,
         subnetIds: SubnetList
     ): SecurityDetails = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "roleArn"          -> roleArn.asInstanceOf[js.Any],
         "securityGroupIds" -> securityGroupIds.asInstanceOf[js.Any],
         "subnetIds"        -> subnetIds.asInstanceOf[js.Any]
@@ -1716,7 +1722,7 @@ package groundstation {
         name: String,
         port: Int
     ): SocketAddress = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any],
         "port" -> port.asInstanceOf[js.Any]
       )
@@ -1741,12 +1747,12 @@ package groundstation {
         centerFrequency: Frequency,
         polarization: js.UndefOr[Polarization] = js.undefined
     ): SpectrumConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "bandwidth"       -> bandwidth.asInstanceOf[js.Any],
         "centerFrequency" -> centerFrequency.asInstanceOf[js.Any]
       )
 
-      polarization.foreach(__v => __obj.update("polarization", __v.asInstanceOf[js.Any]))
+      polarization.foreach(__v => __obj.updateDynamic("polarization")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SpectrumConfig]
     }
   }
@@ -1765,11 +1771,11 @@ package groundstation {
         resourceArn: String,
         tags: js.UndefOr[TagsMap] = js.undefined
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
 
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -1783,7 +1789,7 @@ package groundstation {
   object TagResourceResponse {
     def apply(
         ): TagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -1802,7 +1808,7 @@ package groundstation {
     def apply(
         autotrack: Criticality
     ): TrackingConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "autotrack" -> autotrack.asInstanceOf[js.Any]
       )
 
@@ -1824,7 +1830,7 @@ package groundstation {
         resourceArn: String,
         tagKeys: TagKeys
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
       )
@@ -1842,7 +1848,7 @@ package groundstation {
   object UntagResourceResponse {
     def apply(
         ): UntagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -1866,7 +1872,7 @@ package groundstation {
         configType: ConfigCapabilityType,
         name: SafeName
     ): UpdateConfigRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "configData" -> configData.asInstanceOf[js.Any],
         "configId"   -> configId.asInstanceOf[js.Any],
         "configType" -> configType.asInstanceOf[js.Any],
@@ -1901,22 +1907,22 @@ package groundstation {
         name: js.UndefOr[SafeName] = js.undefined,
         trackingConfigArn: js.UndefOr[ConfigArn] = js.undefined
     ): UpdateMissionProfileRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "missionProfileId" -> missionProfileId.asInstanceOf[js.Any]
       )
 
       contactPostPassDurationSeconds.foreach(
-        __v => __obj.update("contactPostPassDurationSeconds", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("contactPostPassDurationSeconds")(__v.asInstanceOf[js.Any])
       )
       contactPrePassDurationSeconds.foreach(
-        __v => __obj.update("contactPrePassDurationSeconds", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("contactPrePassDurationSeconds")(__v.asInstanceOf[js.Any])
       )
-      dataflowEdges.foreach(__v => __obj.update("dataflowEdges", __v.asInstanceOf[js.Any]))
+      dataflowEdges.foreach(__v => __obj.updateDynamic("dataflowEdges")(__v.asInstanceOf[js.Any]))
       minimumViableContactDurationSeconds.foreach(
-        __v => __obj.update("minimumViableContactDurationSeconds", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("minimumViableContactDurationSeconds")(__v.asInstanceOf[js.Any])
       )
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      trackingConfigArn.foreach(__v => __obj.update("trackingConfigArn", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      trackingConfigArn.foreach(__v => __obj.updateDynamic("trackingConfigArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateMissionProfileRequest]
     }
   }
@@ -1938,7 +1944,7 @@ package groundstation {
         antennaUplinkConfigArn: ConfigArn,
         enabled: Boolean
     ): UplinkEchoConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "antennaUplinkConfigArn" -> antennaUplinkConfigArn.asInstanceOf[js.Any],
         "enabled"                -> enabled.asInstanceOf[js.Any]
       )
@@ -1961,11 +1967,11 @@ package groundstation {
         centerFrequency: Frequency,
         polarization: js.UndefOr[Polarization] = js.undefined
     ): UplinkSpectrumConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "centerFrequency" -> centerFrequency.asInstanceOf[js.Any]
       )
 
-      polarization.foreach(__v => __obj.update("polarization", __v.asInstanceOf[js.Any]))
+      polarization.foreach(__v => __obj.updateDynamic("polarization")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UplinkSpectrumConfig]
     }
   }

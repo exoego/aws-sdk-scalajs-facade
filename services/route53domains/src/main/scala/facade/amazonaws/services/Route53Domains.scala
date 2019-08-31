@@ -185,12 +185,12 @@ package route53domains {
         Operation: js.UndefOr[OperationType] = js.undefined,
         Price: js.UndefOr[Price] = js.undefined
     ): BillingRecord = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BillDate.foreach(__v => __obj.update("BillDate", __v.asInstanceOf[js.Any]))
-      DomainName.foreach(__v => __obj.update("DomainName", __v.asInstanceOf[js.Any]))
-      InvoiceId.foreach(__v => __obj.update("InvoiceId", __v.asInstanceOf[js.Any]))
-      Operation.foreach(__v => __obj.update("Operation", __v.asInstanceOf[js.Any]))
-      Price.foreach(__v => __obj.update("Price", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BillDate.foreach(__v => __obj.updateDynamic("BillDate")(__v.asInstanceOf[js.Any]))
+      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
+      InvoiceId.foreach(__v => __obj.updateDynamic("InvoiceId")(__v.asInstanceOf[js.Any]))
+      Operation.foreach(__v => __obj.updateDynamic("Operation")(__v.asInstanceOf[js.Any]))
+      Price.foreach(__v => __obj.updateDynamic("Price")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BillingRecord]
     }
   }
@@ -209,11 +209,11 @@ package route53domains {
         DomainName: DomainName,
         IdnLangCode: js.UndefOr[LangCode] = js.undefined
     ): CheckDomainAvailabilityRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
-      IdnLangCode.foreach(__v => __obj.update("IdnLangCode", __v.asInstanceOf[js.Any]))
+      IdnLangCode.foreach(__v => __obj.updateDynamic("IdnLangCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CheckDomainAvailabilityRequest]
     }
   }
@@ -230,7 +230,7 @@ package route53domains {
     def apply(
         Availability: DomainAvailability
     ): CheckDomainAvailabilityResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Availability" -> Availability.asInstanceOf[js.Any]
       )
 
@@ -252,11 +252,11 @@ package route53domains {
         DomainName: DomainName,
         AuthCode: js.UndefOr[DomainAuthCode] = js.undefined
     ): CheckDomainTransferabilityRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
-      AuthCode.foreach(__v => __obj.update("AuthCode", __v.asInstanceOf[js.Any]))
+      AuthCode.foreach(__v => __obj.updateDynamic("AuthCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CheckDomainTransferabilityRequest]
     }
   }
@@ -273,7 +273,7 @@ package route53domains {
     def apply(
         Transferability: DomainTransferability
     ): CheckDomainTransferabilityResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Transferability" -> Transferability.asInstanceOf[js.Any]
       )
 
@@ -319,21 +319,21 @@ package route53domains {
         State: js.UndefOr[State] = js.undefined,
         ZipCode: js.UndefOr[ZipCode] = js.undefined
     ): ContactDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AddressLine1.foreach(__v => __obj.update("AddressLine1", __v.asInstanceOf[js.Any]))
-      AddressLine2.foreach(__v => __obj.update("AddressLine2", __v.asInstanceOf[js.Any]))
-      City.foreach(__v => __obj.update("City", __v.asInstanceOf[js.Any]))
-      ContactType.foreach(__v => __obj.update("ContactType", __v.asInstanceOf[js.Any]))
-      CountryCode.foreach(__v => __obj.update("CountryCode", __v.asInstanceOf[js.Any]))
-      Email.foreach(__v => __obj.update("Email", __v.asInstanceOf[js.Any]))
-      ExtraParams.foreach(__v => __obj.update("ExtraParams", __v.asInstanceOf[js.Any]))
-      Fax.foreach(__v => __obj.update("Fax", __v.asInstanceOf[js.Any]))
-      FirstName.foreach(__v => __obj.update("FirstName", __v.asInstanceOf[js.Any]))
-      LastName.foreach(__v => __obj.update("LastName", __v.asInstanceOf[js.Any]))
-      OrganizationName.foreach(__v => __obj.update("OrganizationName", __v.asInstanceOf[js.Any]))
-      PhoneNumber.foreach(__v => __obj.update("PhoneNumber", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
-      ZipCode.foreach(__v => __obj.update("ZipCode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AddressLine1.foreach(__v => __obj.updateDynamic("AddressLine1")(__v.asInstanceOf[js.Any]))
+      AddressLine2.foreach(__v => __obj.updateDynamic("AddressLine2")(__v.asInstanceOf[js.Any]))
+      City.foreach(__v => __obj.updateDynamic("City")(__v.asInstanceOf[js.Any]))
+      ContactType.foreach(__v => __obj.updateDynamic("ContactType")(__v.asInstanceOf[js.Any]))
+      CountryCode.foreach(__v => __obj.updateDynamic("CountryCode")(__v.asInstanceOf[js.Any]))
+      Email.foreach(__v => __obj.updateDynamic("Email")(__v.asInstanceOf[js.Any]))
+      ExtraParams.foreach(__v => __obj.updateDynamic("ExtraParams")(__v.asInstanceOf[js.Any]))
+      Fax.foreach(__v => __obj.updateDynamic("Fax")(__v.asInstanceOf[js.Any]))
+      FirstName.foreach(__v => __obj.updateDynamic("FirstName")(__v.asInstanceOf[js.Any]))
+      LastName.foreach(__v => __obj.updateDynamic("LastName")(__v.asInstanceOf[js.Any]))
+      OrganizationName.foreach(__v => __obj.updateDynamic("OrganizationName")(__v.asInstanceOf[js.Any]))
+      PhoneNumber.foreach(__v => __obj.updateDynamic("PhoneNumber")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      ZipCode.foreach(__v => __obj.updateDynamic("ZipCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContactDetail]
     }
   }
@@ -828,7 +828,7 @@ package route53domains {
         DomainName: DomainName,
         TagsToDelete: TagKeyList
     ): DeleteTagsForDomainRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName"   -> DomainName.asInstanceOf[js.Any],
         "TagsToDelete" -> TagsToDelete.asInstanceOf[js.Any]
       )
@@ -843,7 +843,7 @@ package route53domains {
   object DeleteTagsForDomainResponse {
     def apply(
         ): DeleteTagsForDomainResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteTagsForDomainResponse]
     }
@@ -858,7 +858,7 @@ package route53domains {
     def apply(
         DomainName: DomainName
     ): DisableDomainAutoRenewRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
@@ -872,7 +872,7 @@ package route53domains {
   object DisableDomainAutoRenewResponse {
     def apply(
         ): DisableDomainAutoRenewResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisableDomainAutoRenewResponse]
     }
@@ -890,7 +890,7 @@ package route53domains {
     def apply(
         DomainName: DomainName
     ): DisableDomainTransferLockRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
@@ -910,7 +910,7 @@ package route53domains {
     def apply(
         OperationId: OperationId
     ): DisableDomainTransferLockResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OperationId" -> OperationId.asInstanceOf[js.Any]
       )
 
@@ -964,9 +964,9 @@ package route53domains {
         Availability: js.UndefOr[String] = js.undefined,
         DomainName: js.UndefOr[DomainName] = js.undefined
     ): DomainSuggestion = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Availability.foreach(__v => __obj.update("Availability", __v.asInstanceOf[js.Any]))
-      DomainName.foreach(__v => __obj.update("DomainName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Availability.foreach(__v => __obj.updateDynamic("Availability")(__v.asInstanceOf[js.Any]))
+      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainSuggestion]
     }
   }
@@ -989,13 +989,13 @@ package route53domains {
         Expiry: js.UndefOr[Timestamp] = js.undefined,
         TransferLock: js.UndefOr[Boolean] = js.undefined
     ): DomainSummary = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
-      AutoRenew.foreach(__v => __obj.update("AutoRenew", __v.asInstanceOf[js.Any]))
-      Expiry.foreach(__v => __obj.update("Expiry", __v.asInstanceOf[js.Any]))
-      TransferLock.foreach(__v => __obj.update("TransferLock", __v.asInstanceOf[js.Any]))
+      AutoRenew.foreach(__v => __obj.updateDynamic("AutoRenew")(__v.asInstanceOf[js.Any]))
+      Expiry.foreach(__v => __obj.updateDynamic("Expiry")(__v.asInstanceOf[js.Any]))
+      TransferLock.foreach(__v => __obj.updateDynamic("TransferLock")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainSummary]
     }
   }
@@ -1012,8 +1012,8 @@ package route53domains {
     def apply(
         Transferable: js.UndefOr[Transferable] = js.undefined
     ): DomainTransferability = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Transferable.foreach(__v => __obj.update("Transferable", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Transferable.foreach(__v => __obj.updateDynamic("Transferable")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainTransferability]
     }
   }
@@ -1035,7 +1035,7 @@ package route53domains {
     def apply(
         DomainName: DomainName
     ): EnableDomainAutoRenewRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
@@ -1049,7 +1049,7 @@ package route53domains {
   object EnableDomainAutoRenewResponse {
     def apply(
         ): EnableDomainAutoRenewResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[EnableDomainAutoRenewResponse]
     }
@@ -1067,7 +1067,7 @@ package route53domains {
     def apply(
         DomainName: DomainName
     ): EnableDomainTransferLockRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
@@ -1087,7 +1087,7 @@ package route53domains {
     def apply(
         OperationId: OperationId
     ): EnableDomainTransferLockResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OperationId" -> OperationId.asInstanceOf[js.Any]
       )
 
@@ -1109,7 +1109,7 @@ package route53domains {
         Name: ExtraParamName,
         Value: ExtraParamValue
     ): ExtraParam = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"  -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
@@ -1187,8 +1187,8 @@ package route53domains {
     def apply(
         domainName: js.UndefOr[DomainName] = js.undefined
     ): GetContactReachabilityStatusRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      domainName.foreach(__v => __obj.update("domainName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      domainName.foreach(__v => __obj.updateDynamic("domainName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetContactReachabilityStatusRequest]
     }
   }
@@ -1204,9 +1204,9 @@ package route53domains {
         domainName: js.UndefOr[DomainName] = js.undefined,
         status: js.UndefOr[ReachabilityStatus] = js.undefined
     ): GetContactReachabilityStatusResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      domainName.foreach(__v => __obj.update("domainName", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      domainName.foreach(__v => __obj.updateDynamic("domainName")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetContactReachabilityStatusResponse]
     }
   }
@@ -1223,7 +1223,7 @@ package route53domains {
     def apply(
         DomainName: DomainName
     ): GetDomainDetailRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
@@ -1283,7 +1283,7 @@ package route53domains {
         UpdatedDate: js.UndefOr[Timestamp] = js.undefined,
         WhoIsServer: js.UndefOr[RegistrarWhoIsServer] = js.undefined
     ): GetDomainDetailResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AdminContact"      -> AdminContact.asInstanceOf[js.Any],
         "DomainName"        -> DomainName.asInstanceOf[js.Any],
         "Nameservers"       -> Nameservers.asInstanceOf[js.Any],
@@ -1291,22 +1291,22 @@ package route53domains {
         "TechContact"       -> TechContact.asInstanceOf[js.Any]
       )
 
-      AbuseContactEmail.foreach(__v => __obj.update("AbuseContactEmail", __v.asInstanceOf[js.Any]))
-      AbuseContactPhone.foreach(__v => __obj.update("AbuseContactPhone", __v.asInstanceOf[js.Any]))
-      AdminPrivacy.foreach(__v => __obj.update("AdminPrivacy", __v.asInstanceOf[js.Any]))
-      AutoRenew.foreach(__v => __obj.update("AutoRenew", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      DnsSec.foreach(__v => __obj.update("DnsSec", __v.asInstanceOf[js.Any]))
-      ExpirationDate.foreach(__v => __obj.update("ExpirationDate", __v.asInstanceOf[js.Any]))
-      RegistrantPrivacy.foreach(__v => __obj.update("RegistrantPrivacy", __v.asInstanceOf[js.Any]))
-      RegistrarName.foreach(__v => __obj.update("RegistrarName", __v.asInstanceOf[js.Any]))
-      RegistrarUrl.foreach(__v => __obj.update("RegistrarUrl", __v.asInstanceOf[js.Any]))
-      RegistryDomainId.foreach(__v => __obj.update("RegistryDomainId", __v.asInstanceOf[js.Any]))
-      Reseller.foreach(__v => __obj.update("Reseller", __v.asInstanceOf[js.Any]))
-      StatusList.foreach(__v => __obj.update("StatusList", __v.asInstanceOf[js.Any]))
-      TechPrivacy.foreach(__v => __obj.update("TechPrivacy", __v.asInstanceOf[js.Any]))
-      UpdatedDate.foreach(__v => __obj.update("UpdatedDate", __v.asInstanceOf[js.Any]))
-      WhoIsServer.foreach(__v => __obj.update("WhoIsServer", __v.asInstanceOf[js.Any]))
+      AbuseContactEmail.foreach(__v => __obj.updateDynamic("AbuseContactEmail")(__v.asInstanceOf[js.Any]))
+      AbuseContactPhone.foreach(__v => __obj.updateDynamic("AbuseContactPhone")(__v.asInstanceOf[js.Any]))
+      AdminPrivacy.foreach(__v => __obj.updateDynamic("AdminPrivacy")(__v.asInstanceOf[js.Any]))
+      AutoRenew.foreach(__v => __obj.updateDynamic("AutoRenew")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      DnsSec.foreach(__v => __obj.updateDynamic("DnsSec")(__v.asInstanceOf[js.Any]))
+      ExpirationDate.foreach(__v => __obj.updateDynamic("ExpirationDate")(__v.asInstanceOf[js.Any]))
+      RegistrantPrivacy.foreach(__v => __obj.updateDynamic("RegistrantPrivacy")(__v.asInstanceOf[js.Any]))
+      RegistrarName.foreach(__v => __obj.updateDynamic("RegistrarName")(__v.asInstanceOf[js.Any]))
+      RegistrarUrl.foreach(__v => __obj.updateDynamic("RegistrarUrl")(__v.asInstanceOf[js.Any]))
+      RegistryDomainId.foreach(__v => __obj.updateDynamic("RegistryDomainId")(__v.asInstanceOf[js.Any]))
+      Reseller.foreach(__v => __obj.updateDynamic("Reseller")(__v.asInstanceOf[js.Any]))
+      StatusList.foreach(__v => __obj.updateDynamic("StatusList")(__v.asInstanceOf[js.Any]))
+      TechPrivacy.foreach(__v => __obj.updateDynamic("TechPrivacy")(__v.asInstanceOf[js.Any]))
+      UpdatedDate.foreach(__v => __obj.updateDynamic("UpdatedDate")(__v.asInstanceOf[js.Any]))
+      WhoIsServer.foreach(__v => __obj.updateDynamic("WhoIsServer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDomainDetailResponse]
     }
   }
@@ -1324,7 +1324,7 @@ package route53domains {
         OnlyAvailable: Boolean,
         SuggestionCount: Int
     ): GetDomainSuggestionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName"      -> DomainName.asInstanceOf[js.Any],
         "OnlyAvailable"   -> OnlyAvailable.asInstanceOf[js.Any],
         "SuggestionCount" -> SuggestionCount.asInstanceOf[js.Any]
@@ -1343,8 +1343,8 @@ package route53domains {
     def apply(
         SuggestionsList: js.UndefOr[DomainSuggestionsList] = js.undefined
     ): GetDomainSuggestionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SuggestionsList.foreach(__v => __obj.update("SuggestionsList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SuggestionsList.foreach(__v => __obj.updateDynamic("SuggestionsList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDomainSuggestionsResponse]
     }
   }
@@ -1361,7 +1361,7 @@ package route53domains {
     def apply(
         OperationId: OperationId
     ): GetOperationDetailRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OperationId" -> OperationId.asInstanceOf[js.Any]
       )
 
@@ -1391,13 +1391,13 @@ package route53domains {
         SubmittedDate: js.UndefOr[Timestamp] = js.undefined,
         Type: js.UndefOr[OperationType] = js.undefined
     ): GetOperationDetailResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DomainName.foreach(__v => __obj.update("DomainName", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
-      OperationId.foreach(__v => __obj.update("OperationId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      SubmittedDate.foreach(__v => __obj.update("SubmittedDate", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      SubmittedDate.foreach(__v => __obj.updateDynamic("SubmittedDate")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetOperationDetailResponse]
     }
   }
@@ -1424,9 +1424,9 @@ package route53domains {
         Marker: js.UndefOr[PageMarker] = js.undefined,
         MaxItems: js.UndefOr[PageMaxItems] = js.undefined
     ): ListDomainsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDomainsRequest]
     }
   }
@@ -1445,11 +1445,11 @@ package route53domains {
         Domains: DomainSummaryList,
         NextPageMarker: js.UndefOr[PageMarker] = js.undefined
     ): ListDomainsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Domains" -> Domains.asInstanceOf[js.Any]
       )
 
-      NextPageMarker.foreach(__v => __obj.update("NextPageMarker", __v.asInstanceOf[js.Any]))
+      NextPageMarker.foreach(__v => __obj.updateDynamic("NextPageMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDomainsResponse]
     }
   }
@@ -1470,10 +1470,10 @@ package route53domains {
         MaxItems: js.UndefOr[PageMaxItems] = js.undefined,
         SubmittedSince: js.UndefOr[Timestamp] = js.undefined
     ): ListOperationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
-      SubmittedSince.foreach(__v => __obj.update("SubmittedSince", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      SubmittedSince.foreach(__v => __obj.updateDynamic("SubmittedSince")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListOperationsRequest]
     }
   }
@@ -1492,11 +1492,11 @@ package route53domains {
         Operations: OperationSummaryList,
         NextPageMarker: js.UndefOr[PageMarker] = js.undefined
     ): ListOperationsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Operations" -> Operations.asInstanceOf[js.Any]
       )
 
-      NextPageMarker.foreach(__v => __obj.update("NextPageMarker", __v.asInstanceOf[js.Any]))
+      NextPageMarker.foreach(__v => __obj.updateDynamic("NextPageMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListOperationsResponse]
     }
   }
@@ -1513,7 +1513,7 @@ package route53domains {
     def apply(
         DomainName: DomainName
     ): ListTagsForDomainRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
@@ -1533,7 +1533,7 @@ package route53domains {
     def apply(
         TagList: TagList
     ): ListTagsForDomainResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TagList" -> TagList.asInstanceOf[js.Any]
       )
 
@@ -1555,11 +1555,11 @@ package route53domains {
         Name: HostName,
         GlueIps: js.UndefOr[GlueIpList] = js.undefined
     ): Nameserver = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      GlueIps.foreach(__v => __obj.update("GlueIps", __v.asInstanceOf[js.Any]))
+      GlueIps.foreach(__v => __obj.updateDynamic("GlueIps")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Nameserver]
     }
   }
@@ -1600,7 +1600,7 @@ package route53domains {
         SubmittedDate: Timestamp,
         Type: OperationType
     ): OperationSummary = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OperationId"   -> OperationId.asInstanceOf[js.Any],
         "Status"        -> Status.asInstanceOf[js.Any],
         "SubmittedDate" -> SubmittedDate.asInstanceOf[js.Any],
@@ -1689,7 +1689,7 @@ package route53domains {
         PrivacyProtectRegistrantContact: js.UndefOr[Boolean] = js.undefined,
         PrivacyProtectTechContact: js.UndefOr[Boolean] = js.undefined
     ): RegisterDomainRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AdminContact"      -> AdminContact.asInstanceOf[js.Any],
         "DomainName"        -> DomainName.asInstanceOf[js.Any],
         "DurationInYears"   -> DurationInYears.asInstanceOf[js.Any],
@@ -1697,13 +1697,17 @@ package route53domains {
         "TechContact"       -> TechContact.asInstanceOf[js.Any]
       )
 
-      AutoRenew.foreach(__v => __obj.update("AutoRenew", __v.asInstanceOf[js.Any]))
-      IdnLangCode.foreach(__v => __obj.update("IdnLangCode", __v.asInstanceOf[js.Any]))
-      PrivacyProtectAdminContact.foreach(__v => __obj.update("PrivacyProtectAdminContact", __v.asInstanceOf[js.Any]))
-      PrivacyProtectRegistrantContact.foreach(
-        __v => __obj.update("PrivacyProtectRegistrantContact", __v.asInstanceOf[js.Any])
+      AutoRenew.foreach(__v => __obj.updateDynamic("AutoRenew")(__v.asInstanceOf[js.Any]))
+      IdnLangCode.foreach(__v => __obj.updateDynamic("IdnLangCode")(__v.asInstanceOf[js.Any]))
+      PrivacyProtectAdminContact.foreach(
+        __v => __obj.updateDynamic("PrivacyProtectAdminContact")(__v.asInstanceOf[js.Any])
       )
-      PrivacyProtectTechContact.foreach(__v => __obj.update("PrivacyProtectTechContact", __v.asInstanceOf[js.Any]))
+      PrivacyProtectRegistrantContact.foreach(
+        __v => __obj.updateDynamic("PrivacyProtectRegistrantContact")(__v.asInstanceOf[js.Any])
+      )
+      PrivacyProtectTechContact.foreach(
+        __v => __obj.updateDynamic("PrivacyProtectTechContact")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[RegisterDomainRequest]
     }
   }
@@ -1720,7 +1724,7 @@ package route53domains {
     def apply(
         OperationId: OperationId
     ): RegisterDomainResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OperationId" -> OperationId.asInstanceOf[js.Any]
       )
 
@@ -1744,12 +1748,12 @@ package route53domains {
         DomainName: DomainName,
         DurationInYears: js.UndefOr[DurationInYears] = js.undefined
     ): RenewDomainRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CurrentExpiryYear" -> CurrentExpiryYear.asInstanceOf[js.Any],
         "DomainName"        -> DomainName.asInstanceOf[js.Any]
       )
 
-      DurationInYears.foreach(__v => __obj.update("DurationInYears", __v.asInstanceOf[js.Any]))
+      DurationInYears.foreach(__v => __obj.updateDynamic("DurationInYears")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RenewDomainRequest]
     }
   }
@@ -1763,7 +1767,7 @@ package route53domains {
     def apply(
         OperationId: OperationId
     ): RenewDomainResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OperationId" -> OperationId.asInstanceOf[js.Any]
       )
 
@@ -1780,8 +1784,8 @@ package route53domains {
     def apply(
         domainName: js.UndefOr[DomainName] = js.undefined
     ): ResendContactReachabilityEmailRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      domainName.foreach(__v => __obj.update("domainName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      domainName.foreach(__v => __obj.updateDynamic("domainName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResendContactReachabilityEmailRequest]
     }
   }
@@ -1799,10 +1803,10 @@ package route53domains {
         emailAddress: js.UndefOr[Email] = js.undefined,
         isAlreadyVerified: js.UndefOr[Boolean] = js.undefined
     ): ResendContactReachabilityEmailResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      domainName.foreach(__v => __obj.update("domainName", __v.asInstanceOf[js.Any]))
-      emailAddress.foreach(__v => __obj.update("emailAddress", __v.asInstanceOf[js.Any]))
-      isAlreadyVerified.foreach(__v => __obj.update("isAlreadyVerified", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      domainName.foreach(__v => __obj.updateDynamic("domainName")(__v.asInstanceOf[js.Any]))
+      emailAddress.foreach(__v => __obj.updateDynamic("emailAddress")(__v.asInstanceOf[js.Any]))
+      isAlreadyVerified.foreach(__v => __obj.updateDynamic("isAlreadyVerified")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResendContactReachabilityEmailResponse]
     }
   }
@@ -1819,7 +1823,7 @@ package route53domains {
     def apply(
         DomainName: DomainName
     ): RetrieveDomainAuthCodeRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
@@ -1839,7 +1843,7 @@ package route53domains {
     def apply(
         AuthCode: DomainAuthCode
     ): RetrieveDomainAuthCodeResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AuthCode" -> AuthCode.asInstanceOf[js.Any]
       )
 
@@ -1869,9 +1873,9 @@ package route53domains {
         Key: js.UndefOr[TagKey] = js.undefined,
         Value: js.UndefOr[TagValue] = js.undefined
     ): Tag = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tag]
     }
   }
@@ -1910,7 +1914,7 @@ package route53domains {
         PrivacyProtectRegistrantContact: js.UndefOr[Boolean] = js.undefined,
         PrivacyProtectTechContact: js.UndefOr[Boolean] = js.undefined
     ): TransferDomainRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AdminContact"      -> AdminContact.asInstanceOf[js.Any],
         "DomainName"        -> DomainName.asInstanceOf[js.Any],
         "DurationInYears"   -> DurationInYears.asInstanceOf[js.Any],
@@ -1918,15 +1922,19 @@ package route53domains {
         "TechContact"       -> TechContact.asInstanceOf[js.Any]
       )
 
-      AuthCode.foreach(__v => __obj.update("AuthCode", __v.asInstanceOf[js.Any]))
-      AutoRenew.foreach(__v => __obj.update("AutoRenew", __v.asInstanceOf[js.Any]))
-      IdnLangCode.foreach(__v => __obj.update("IdnLangCode", __v.asInstanceOf[js.Any]))
-      Nameservers.foreach(__v => __obj.update("Nameservers", __v.asInstanceOf[js.Any]))
-      PrivacyProtectAdminContact.foreach(__v => __obj.update("PrivacyProtectAdminContact", __v.asInstanceOf[js.Any]))
-      PrivacyProtectRegistrantContact.foreach(
-        __v => __obj.update("PrivacyProtectRegistrantContact", __v.asInstanceOf[js.Any])
+      AuthCode.foreach(__v => __obj.updateDynamic("AuthCode")(__v.asInstanceOf[js.Any]))
+      AutoRenew.foreach(__v => __obj.updateDynamic("AutoRenew")(__v.asInstanceOf[js.Any]))
+      IdnLangCode.foreach(__v => __obj.updateDynamic("IdnLangCode")(__v.asInstanceOf[js.Any]))
+      Nameservers.foreach(__v => __obj.updateDynamic("Nameservers")(__v.asInstanceOf[js.Any]))
+      PrivacyProtectAdminContact.foreach(
+        __v => __obj.updateDynamic("PrivacyProtectAdminContact")(__v.asInstanceOf[js.Any])
       )
-      PrivacyProtectTechContact.foreach(__v => __obj.update("PrivacyProtectTechContact", __v.asInstanceOf[js.Any]))
+      PrivacyProtectRegistrantContact.foreach(
+        __v => __obj.updateDynamic("PrivacyProtectRegistrantContact")(__v.asInstanceOf[js.Any])
+      )
+      PrivacyProtectTechContact.foreach(
+        __v => __obj.updateDynamic("PrivacyProtectTechContact")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[TransferDomainRequest]
     }
   }
@@ -1943,7 +1951,7 @@ package route53domains {
     def apply(
         OperationId: OperationId
     ): TransferDomainResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OperationId" -> OperationId.asInstanceOf[js.Any]
       )
 
@@ -1995,13 +2003,13 @@ package route53domains {
         RegistrantPrivacy: js.UndefOr[Boolean] = js.undefined,
         TechPrivacy: js.UndefOr[Boolean] = js.undefined
     ): UpdateDomainContactPrivacyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
-      AdminPrivacy.foreach(__v => __obj.update("AdminPrivacy", __v.asInstanceOf[js.Any]))
-      RegistrantPrivacy.foreach(__v => __obj.update("RegistrantPrivacy", __v.asInstanceOf[js.Any]))
-      TechPrivacy.foreach(__v => __obj.update("TechPrivacy", __v.asInstanceOf[js.Any]))
+      AdminPrivacy.foreach(__v => __obj.updateDynamic("AdminPrivacy")(__v.asInstanceOf[js.Any]))
+      RegistrantPrivacy.foreach(__v => __obj.updateDynamic("RegistrantPrivacy")(__v.asInstanceOf[js.Any]))
+      TechPrivacy.foreach(__v => __obj.updateDynamic("TechPrivacy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDomainContactPrivacyRequest]
     }
   }
@@ -2018,7 +2026,7 @@ package route53domains {
     def apply(
         OperationId: OperationId
     ): UpdateDomainContactPrivacyResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OperationId" -> OperationId.asInstanceOf[js.Any]
       )
 
@@ -2044,13 +2052,13 @@ package route53domains {
         RegistrantContact: js.UndefOr[ContactDetail] = js.undefined,
         TechContact: js.UndefOr[ContactDetail] = js.undefined
     ): UpdateDomainContactRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
-      AdminContact.foreach(__v => __obj.update("AdminContact", __v.asInstanceOf[js.Any]))
-      RegistrantContact.foreach(__v => __obj.update("RegistrantContact", __v.asInstanceOf[js.Any]))
-      TechContact.foreach(__v => __obj.update("TechContact", __v.asInstanceOf[js.Any]))
+      AdminContact.foreach(__v => __obj.updateDynamic("AdminContact")(__v.asInstanceOf[js.Any]))
+      RegistrantContact.foreach(__v => __obj.updateDynamic("RegistrantContact")(__v.asInstanceOf[js.Any]))
+      TechContact.foreach(__v => __obj.updateDynamic("TechContact")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDomainContactRequest]
     }
   }
@@ -2067,7 +2075,7 @@ package route53domains {
     def apply(
         OperationId: OperationId
     ): UpdateDomainContactResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OperationId" -> OperationId.asInstanceOf[js.Any]
       )
 
@@ -2092,12 +2100,12 @@ package route53domains {
         Nameservers: NameserverList,
         FIAuthKey: js.UndefOr[FIAuthKey] = js.undefined
     ): UpdateDomainNameserversRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName"  -> DomainName.asInstanceOf[js.Any],
         "Nameservers" -> Nameservers.asInstanceOf[js.Any]
       )
 
-      FIAuthKey.foreach(__v => __obj.update("FIAuthKey", __v.asInstanceOf[js.Any]))
+      FIAuthKey.foreach(__v => __obj.updateDynamic("FIAuthKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDomainNameserversRequest]
     }
   }
@@ -2114,7 +2122,7 @@ package route53domains {
     def apply(
         OperationId: OperationId
     ): UpdateDomainNameserversResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OperationId" -> OperationId.asInstanceOf[js.Any]
       )
 
@@ -2136,11 +2144,11 @@ package route53domains {
         DomainName: DomainName,
         TagsToUpdate: js.UndefOr[TagList] = js.undefined
     ): UpdateTagsForDomainRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
-      TagsToUpdate.foreach(__v => __obj.update("TagsToUpdate", __v.asInstanceOf[js.Any]))
+      TagsToUpdate.foreach(__v => __obj.updateDynamic("TagsToUpdate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateTagsForDomainRequest]
     }
   }
@@ -2151,7 +2159,7 @@ package route53domains {
   object UpdateTagsForDomainResponse {
     def apply(
         ): UpdateTagsForDomainResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateTagsForDomainResponse]
     }
@@ -2175,11 +2183,11 @@ package route53domains {
         MaxItems: js.UndefOr[PageMaxItems] = js.undefined,
         Start: js.UndefOr[Timestamp] = js.undefined
     ): ViewBillingRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      End.foreach(__v => __obj.update("End", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
-      Start.foreach(__v => __obj.update("Start", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      End.foreach(__v => __obj.updateDynamic("End")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      Start.foreach(__v => __obj.updateDynamic("Start")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ViewBillingRequest]
     }
   }
@@ -2198,9 +2206,9 @@ package route53domains {
         BillingRecords: js.UndefOr[BillingRecords] = js.undefined,
         NextPageMarker: js.UndefOr[PageMarker] = js.undefined
     ): ViewBillingResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BillingRecords.foreach(__v => __obj.update("BillingRecords", __v.asInstanceOf[js.Any]))
-      NextPageMarker.foreach(__v => __obj.update("NextPageMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BillingRecords.foreach(__v => __obj.updateDynamic("BillingRecords")(__v.asInstanceOf[js.Any]))
+      NextPageMarker.foreach(__v => __obj.updateDynamic("NextPageMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ViewBillingResponse]
     }
   }

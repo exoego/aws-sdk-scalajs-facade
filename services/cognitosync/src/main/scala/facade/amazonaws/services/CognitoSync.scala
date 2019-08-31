@@ -131,7 +131,7 @@ package cognitosync {
     def apply(
         IdentityPoolId: IdentityPoolId
     ): BulkPublishRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
 
@@ -151,8 +151,8 @@ package cognitosync {
     def apply(
         IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined
     ): BulkPublishResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IdentityPoolId.foreach(__v => __obj.update("IdentityPoolId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IdentityPoolId.foreach(__v => __obj.updateDynamic("IdentityPoolId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BulkPublishResponse]
     }
   }
@@ -182,10 +182,10 @@ package cognitosync {
         StreamName: js.UndefOr[StreamName] = js.undefined,
         StreamingStatus: js.UndefOr[StreamingStatus] = js.undefined
     ): CognitoStreams = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
-      StreamName.foreach(__v => __obj.update("StreamName", __v.asInstanceOf[js.Any]))
-      StreamingStatus.foreach(__v => __obj.update("StreamingStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      StreamName.foreach(__v => __obj.updateDynamic("StreamName")(__v.asInstanceOf[js.Any]))
+      StreamingStatus.foreach(__v => __obj.updateDynamic("StreamingStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CognitoStreams]
     }
   }
@@ -222,14 +222,14 @@ package cognitosync {
         LastModifiedDate: js.UndefOr[Date] = js.undefined,
         NumRecords: js.UndefOr[Double] = js.undefined
     ): Dataset = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      DataStorage.foreach(__v => __obj.update("DataStorage", __v.asInstanceOf[js.Any]))
-      DatasetName.foreach(__v => __obj.update("DatasetName", __v.asInstanceOf[js.Any]))
-      IdentityId.foreach(__v => __obj.update("IdentityId", __v.asInstanceOf[js.Any]))
-      LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
-      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
-      NumRecords.foreach(__v => __obj.update("NumRecords", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      DataStorage.foreach(__v => __obj.updateDynamic("DataStorage")(__v.asInstanceOf[js.Any]))
+      DatasetName.foreach(__v => __obj.updateDynamic("DatasetName")(__v.asInstanceOf[js.Any]))
+      IdentityId.foreach(__v => __obj.updateDynamic("IdentityId")(__v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
+      NumRecords.foreach(__v => __obj.updateDynamic("NumRecords")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Dataset]
     }
   }
@@ -250,7 +250,7 @@ package cognitosync {
         IdentityId: IdentityId,
         IdentityPoolId: IdentityPoolId
     ): DeleteDatasetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatasetName"    -> DatasetName.asInstanceOf[js.Any],
         "IdentityId"     -> IdentityId.asInstanceOf[js.Any],
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
@@ -272,8 +272,8 @@ package cognitosync {
     def apply(
         Dataset: js.UndefOr[Dataset] = js.undefined
     ): DeleteDatasetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Dataset.foreach(__v => __obj.update("Dataset", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Dataset.foreach(__v => __obj.updateDynamic("Dataset")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDatasetResponse]
     }
   }
@@ -294,7 +294,7 @@ package cognitosync {
         IdentityId: IdentityId,
         IdentityPoolId: IdentityPoolId
     ): DescribeDatasetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatasetName"    -> DatasetName.asInstanceOf[js.Any],
         "IdentityId"     -> IdentityId.asInstanceOf[js.Any],
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
@@ -316,8 +316,8 @@ package cognitosync {
     def apply(
         Dataset: js.UndefOr[Dataset] = js.undefined
     ): DescribeDatasetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Dataset.foreach(__v => __obj.update("Dataset", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Dataset.foreach(__v => __obj.updateDynamic("Dataset")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDatasetResponse]
     }
   }
@@ -334,7 +334,7 @@ package cognitosync {
     def apply(
         IdentityPoolId: IdentityPoolId
     ): DescribeIdentityPoolUsageRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
 
@@ -354,8 +354,8 @@ package cognitosync {
     def apply(
         IdentityPoolUsage: js.UndefOr[IdentityPoolUsage] = js.undefined
     ): DescribeIdentityPoolUsageResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IdentityPoolUsage.foreach(__v => __obj.update("IdentityPoolUsage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IdentityPoolUsage.foreach(__v => __obj.updateDynamic("IdentityPoolUsage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeIdentityPoolUsageResponse]
     }
   }
@@ -374,7 +374,7 @@ package cognitosync {
         IdentityId: IdentityId,
         IdentityPoolId: IdentityPoolId
     ): DescribeIdentityUsageRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdentityId"     -> IdentityId.asInstanceOf[js.Any],
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
@@ -395,8 +395,8 @@ package cognitosync {
     def apply(
         IdentityUsage: js.UndefOr[IdentityUsage] = js.undefined
     ): DescribeIdentityUsageResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IdentityUsage.foreach(__v => __obj.update("IdentityUsage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IdentityUsage.foreach(__v => __obj.updateDynamic("IdentityUsage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeIdentityUsageResponse]
     }
   }
@@ -421,7 +421,7 @@ package cognitosync {
     def apply(
         IdentityPoolId: IdentityPoolId
     ): GetBulkPublishDetailsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
 
@@ -449,12 +449,12 @@ package cognitosync {
         FailureMessage: js.UndefOr[String] = js.undefined,
         IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined
     ): GetBulkPublishDetailsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BulkPublishCompleteTime.foreach(__v => __obj.update("BulkPublishCompleteTime", __v.asInstanceOf[js.Any]))
-      BulkPublishStartTime.foreach(__v => __obj.update("BulkPublishStartTime", __v.asInstanceOf[js.Any]))
-      BulkPublishStatus.foreach(__v => __obj.update("BulkPublishStatus", __v.asInstanceOf[js.Any]))
-      FailureMessage.foreach(__v => __obj.update("FailureMessage", __v.asInstanceOf[js.Any]))
-      IdentityPoolId.foreach(__v => __obj.update("IdentityPoolId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BulkPublishCompleteTime.foreach(__v => __obj.updateDynamic("BulkPublishCompleteTime")(__v.asInstanceOf[js.Any]))
+      BulkPublishStartTime.foreach(__v => __obj.updateDynamic("BulkPublishStartTime")(__v.asInstanceOf[js.Any]))
+      BulkPublishStatus.foreach(__v => __obj.updateDynamic("BulkPublishStatus")(__v.asInstanceOf[js.Any]))
+      FailureMessage.foreach(__v => __obj.updateDynamic("FailureMessage")(__v.asInstanceOf[js.Any]))
+      IdentityPoolId.foreach(__v => __obj.updateDynamic("IdentityPoolId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBulkPublishDetailsResponse]
     }
   }
@@ -471,7 +471,7 @@ package cognitosync {
     def apply(
         IdentityPoolId: IdentityPoolId
     ): GetCognitoEventsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
 
@@ -491,8 +491,8 @@ package cognitosync {
     def apply(
         Events: js.UndefOr[Events] = js.undefined
     ): GetCognitoEventsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Events.foreach(__v => __obj.update("Events", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Events.foreach(__v => __obj.updateDynamic("Events")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCognitoEventsResponse]
     }
   }
@@ -509,7 +509,7 @@ package cognitosync {
     def apply(
         IdentityPoolId: IdentityPoolId
     ): GetIdentityPoolConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
 
@@ -533,10 +533,10 @@ package cognitosync {
         IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
         PushSync: js.UndefOr[PushSync] = js.undefined
     ): GetIdentityPoolConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CognitoStreams.foreach(__v => __obj.update("CognitoStreams", __v.asInstanceOf[js.Any]))
-      IdentityPoolId.foreach(__v => __obj.update("IdentityPoolId", __v.asInstanceOf[js.Any]))
-      PushSync.foreach(__v => __obj.update("PushSync", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CognitoStreams.foreach(__v => __obj.updateDynamic("CognitoStreams")(__v.asInstanceOf[js.Any]))
+      IdentityPoolId.foreach(__v => __obj.updateDynamic("IdentityPoolId")(__v.asInstanceOf[js.Any]))
+      PushSync.foreach(__v => __obj.updateDynamic("PushSync")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetIdentityPoolConfigurationResponse]
     }
   }
@@ -559,11 +559,11 @@ package cognitosync {
         LastModifiedDate: js.UndefOr[Date] = js.undefined,
         SyncSessionsCount: js.UndefOr[Double] = js.undefined
     ): IdentityPoolUsage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DataStorage.foreach(__v => __obj.update("DataStorage", __v.asInstanceOf[js.Any]))
-      IdentityPoolId.foreach(__v => __obj.update("IdentityPoolId", __v.asInstanceOf[js.Any]))
-      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
-      SyncSessionsCount.foreach(__v => __obj.update("SyncSessionsCount", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DataStorage.foreach(__v => __obj.updateDynamic("DataStorage")(__v.asInstanceOf[js.Any]))
+      IdentityPoolId.foreach(__v => __obj.updateDynamic("IdentityPoolId")(__v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
+      SyncSessionsCount.foreach(__v => __obj.updateDynamic("SyncSessionsCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IdentityPoolUsage]
     }
   }
@@ -588,12 +588,12 @@ package cognitosync {
         IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
         LastModifiedDate: js.UndefOr[Date] = js.undefined
     ): IdentityUsage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DataStorage.foreach(__v => __obj.update("DataStorage", __v.asInstanceOf[js.Any]))
-      DatasetCount.foreach(__v => __obj.update("DatasetCount", __v.asInstanceOf[js.Any]))
-      IdentityId.foreach(__v => __obj.update("IdentityId", __v.asInstanceOf[js.Any]))
-      IdentityPoolId.foreach(__v => __obj.update("IdentityPoolId", __v.asInstanceOf[js.Any]))
-      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DataStorage.foreach(__v => __obj.updateDynamic("DataStorage")(__v.asInstanceOf[js.Any]))
+      DatasetCount.foreach(__v => __obj.updateDynamic("DatasetCount")(__v.asInstanceOf[js.Any]))
+      IdentityId.foreach(__v => __obj.updateDynamic("IdentityId")(__v.asInstanceOf[js.Any]))
+      IdentityPoolId.foreach(__v => __obj.updateDynamic("IdentityPoolId")(__v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IdentityUsage]
     }
   }
@@ -661,13 +661,13 @@ package cognitosync {
         MaxResults: js.UndefOr[IntegerString] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListDatasetsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdentityId"     -> IdentityId.asInstanceOf[js.Any],
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDatasetsRequest]
     }
   }
@@ -688,10 +688,10 @@ package cognitosync {
         Datasets: js.UndefOr[DatasetList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListDatasetsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Count.foreach(__v => __obj.update("Count", __v.asInstanceOf[js.Any]))
-      Datasets.foreach(__v => __obj.update("Datasets", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
+      Datasets.foreach(__v => __obj.updateDynamic("Datasets")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDatasetsResponse]
     }
   }
@@ -710,9 +710,9 @@ package cognitosync {
         MaxResults: js.UndefOr[IntegerString] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListIdentityPoolUsageRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListIdentityPoolUsageRequest]
     }
   }
@@ -735,11 +735,11 @@ package cognitosync {
         MaxResults: js.UndefOr[Int] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListIdentityPoolUsageResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Count.foreach(__v => __obj.update("Count", __v.asInstanceOf[js.Any]))
-      IdentityPoolUsages.foreach(__v => __obj.update("IdentityPoolUsages", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
+      IdentityPoolUsages.foreach(__v => __obj.updateDynamic("IdentityPoolUsages")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListIdentityPoolUsageResponse]
     }
   }
@@ -768,16 +768,16 @@ package cognitosync {
         NextToken: js.UndefOr[String] = js.undefined,
         SyncSessionToken: js.UndefOr[SyncSessionToken] = js.undefined
     ): ListRecordsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatasetName"    -> DatasetName.asInstanceOf[js.Any],
         "IdentityId"     -> IdentityId.asInstanceOf[js.Any],
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
 
-      LastSyncCount.foreach(__v => __obj.update("LastSyncCount", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      SyncSessionToken.foreach(__v => __obj.update("SyncSessionToken", __v.asInstanceOf[js.Any]))
+      LastSyncCount.foreach(__v => __obj.updateDynamic("LastSyncCount")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SyncSessionToken.foreach(__v => __obj.updateDynamic("SyncSessionToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRecordsRequest]
     }
   }
@@ -810,18 +810,18 @@ package cognitosync {
         Records: js.UndefOr[RecordList] = js.undefined,
         SyncSessionToken: js.UndefOr[String] = js.undefined
     ): ListRecordsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Count.foreach(__v => __obj.update("Count", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
       DatasetDeletedAfterRequestedSyncCount.foreach(
-        __v => __obj.update("DatasetDeletedAfterRequestedSyncCount", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("DatasetDeletedAfterRequestedSyncCount")(__v.asInstanceOf[js.Any])
       )
-      DatasetExists.foreach(__v => __obj.update("DatasetExists", __v.asInstanceOf[js.Any]))
-      DatasetSyncCount.foreach(__v => __obj.update("DatasetSyncCount", __v.asInstanceOf[js.Any]))
-      LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
-      MergedDatasetNames.foreach(__v => __obj.update("MergedDatasetNames", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Records.foreach(__v => __obj.update("Records", __v.asInstanceOf[js.Any]))
-      SyncSessionToken.foreach(__v => __obj.update("SyncSessionToken", __v.asInstanceOf[js.Any]))
+      DatasetExists.foreach(__v => __obj.updateDynamic("DatasetExists")(__v.asInstanceOf[js.Any]))
+      DatasetSyncCount.foreach(__v => __obj.updateDynamic("DatasetSyncCount")(__v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
+      MergedDatasetNames.foreach(__v => __obj.updateDynamic("MergedDatasetNames")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Records.foreach(__v => __obj.updateDynamic("Records")(__v.asInstanceOf[js.Any]))
+      SyncSessionToken.foreach(__v => __obj.updateDynamic("SyncSessionToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRecordsResponse]
     }
   }
@@ -864,9 +864,9 @@ package cognitosync {
         ApplicationArns: js.UndefOr[ApplicationArnList] = js.undefined,
         RoleArn: js.UndefOr[AssumeRoleArn] = js.undefined
     ): PushSync = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationArns.foreach(__v => __obj.update("ApplicationArns", __v.asInstanceOf[js.Any]))
-      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationArns.foreach(__v => __obj.updateDynamic("ApplicationArns")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PushSync]
     }
   }
@@ -893,13 +893,13 @@ package cognitosync {
         SyncCount: js.UndefOr[Double] = js.undefined,
         Value: js.UndefOr[RecordValue] = js.undefined
     ): Record = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DeviceLastModifiedDate.foreach(__v => __obj.update("DeviceLastModifiedDate", __v.asInstanceOf[js.Any]))
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
-      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
-      SyncCount.foreach(__v => __obj.update("SyncCount", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DeviceLastModifiedDate.foreach(__v => __obj.updateDynamic("DeviceLastModifiedDate")(__v.asInstanceOf[js.Any]))
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
+      SyncCount.foreach(__v => __obj.updateDynamic("SyncCount")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Record]
     }
   }
@@ -924,14 +924,14 @@ package cognitosync {
         DeviceLastModifiedDate: js.UndefOr[Date] = js.undefined,
         Value: js.UndefOr[RecordValue] = js.undefined
     ): RecordPatch = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"       -> Key.asInstanceOf[js.Any],
         "Op"        -> Op.asInstanceOf[js.Any],
         "SyncCount" -> SyncCount.asInstanceOf[js.Any]
       )
 
-      DeviceLastModifiedDate.foreach(__v => __obj.update("DeviceLastModifiedDate", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      DeviceLastModifiedDate.foreach(__v => __obj.updateDynamic("DeviceLastModifiedDate")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecordPatch]
     }
   }
@@ -954,7 +954,7 @@ package cognitosync {
         Platform: Platform,
         Token: PushToken
     ): RegisterDeviceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdentityId"     -> IdentityId.asInstanceOf[js.Any],
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any],
         "Platform"       -> Platform.asInstanceOf[js.Any],
@@ -977,8 +977,8 @@ package cognitosync {
     def apply(
         DeviceId: js.UndefOr[DeviceId] = js.undefined
     ): RegisterDeviceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DeviceId.foreach(__v => __obj.update("DeviceId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DeviceId.foreach(__v => __obj.updateDynamic("DeviceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterDeviceResponse]
     }
   }
@@ -1014,7 +1014,7 @@ package cognitosync {
         Events: Events,
         IdentityPoolId: IdentityPoolId
     ): SetCognitoEventsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Events"         -> Events.asInstanceOf[js.Any],
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
@@ -1039,12 +1039,12 @@ package cognitosync {
         CognitoStreams: js.UndefOr[CognitoStreams] = js.undefined,
         PushSync: js.UndefOr[PushSync] = js.undefined
     ): SetIdentityPoolConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdentityPoolId" -> IdentityPoolId.asInstanceOf[js.Any]
       )
 
-      CognitoStreams.foreach(__v => __obj.update("CognitoStreams", __v.asInstanceOf[js.Any]))
-      PushSync.foreach(__v => __obj.update("PushSync", __v.asInstanceOf[js.Any]))
+      CognitoStreams.foreach(__v => __obj.updateDynamic("CognitoStreams")(__v.asInstanceOf[js.Any]))
+      PushSync.foreach(__v => __obj.updateDynamic("PushSync")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetIdentityPoolConfigurationRequest]
     }
   }
@@ -1065,10 +1065,10 @@ package cognitosync {
         IdentityPoolId: js.UndefOr[IdentityPoolId] = js.undefined,
         PushSync: js.UndefOr[PushSync] = js.undefined
     ): SetIdentityPoolConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CognitoStreams.foreach(__v => __obj.update("CognitoStreams", __v.asInstanceOf[js.Any]))
-      IdentityPoolId.foreach(__v => __obj.update("IdentityPoolId", __v.asInstanceOf[js.Any]))
-      PushSync.foreach(__v => __obj.update("PushSync", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CognitoStreams.foreach(__v => __obj.updateDynamic("CognitoStreams")(__v.asInstanceOf[js.Any]))
+      IdentityPoolId.foreach(__v => __obj.updateDynamic("IdentityPoolId")(__v.asInstanceOf[js.Any]))
+      PushSync.foreach(__v => __obj.updateDynamic("PushSync")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetIdentityPoolConfigurationResponse]
     }
   }
@@ -1098,7 +1098,7 @@ package cognitosync {
         IdentityId: IdentityId,
         IdentityPoolId: IdentityPoolId
     ): SubscribeToDatasetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatasetName"    -> DatasetName.asInstanceOf[js.Any],
         "DeviceId"       -> DeviceId.asInstanceOf[js.Any],
         "IdentityId"     -> IdentityId.asInstanceOf[js.Any],
@@ -1118,7 +1118,7 @@ package cognitosync {
   object SubscribeToDatasetResponse {
     def apply(
         ): SubscribeToDatasetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SubscribeToDatasetResponse]
     }
@@ -1150,7 +1150,7 @@ package cognitosync {
         IdentityId: IdentityId,
         IdentityPoolId: IdentityPoolId
     ): UnsubscribeFromDatasetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatasetName"    -> DatasetName.asInstanceOf[js.Any],
         "DeviceId"       -> DeviceId.asInstanceOf[js.Any],
         "IdentityId"     -> IdentityId.asInstanceOf[js.Any],
@@ -1170,7 +1170,7 @@ package cognitosync {
   object UnsubscribeFromDatasetResponse {
     def apply(
         ): UnsubscribeFromDatasetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UnsubscribeFromDatasetResponse]
     }
@@ -1200,16 +1200,16 @@ package cognitosync {
         DeviceId: js.UndefOr[DeviceId] = js.undefined,
         RecordPatches: js.UndefOr[RecordPatchList] = js.undefined
     ): UpdateRecordsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DatasetName"      -> DatasetName.asInstanceOf[js.Any],
         "IdentityId"       -> IdentityId.asInstanceOf[js.Any],
         "IdentityPoolId"   -> IdentityPoolId.asInstanceOf[js.Any],
         "SyncSessionToken" -> SyncSessionToken.asInstanceOf[js.Any]
       )
 
-      ClientContext.foreach(__v => __obj.update("ClientContext", __v.asInstanceOf[js.Any]))
-      DeviceId.foreach(__v => __obj.update("DeviceId", __v.asInstanceOf[js.Any]))
-      RecordPatches.foreach(__v => __obj.update("RecordPatches", __v.asInstanceOf[js.Any]))
+      ClientContext.foreach(__v => __obj.updateDynamic("ClientContext")(__v.asInstanceOf[js.Any]))
+      DeviceId.foreach(__v => __obj.updateDynamic("DeviceId")(__v.asInstanceOf[js.Any]))
+      RecordPatches.foreach(__v => __obj.updateDynamic("RecordPatches")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRecordsRequest]
     }
   }
@@ -1226,8 +1226,8 @@ package cognitosync {
     def apply(
         Records: js.UndefOr[RecordList] = js.undefined
     ): UpdateRecordsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Records.foreach(__v => __obj.update("Records", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Records.foreach(__v => __obj.updateDynamic("Records")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRecordsResponse]
     }
   }

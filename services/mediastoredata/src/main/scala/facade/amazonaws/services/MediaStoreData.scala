@@ -66,7 +66,7 @@ package mediastoredata {
     def apply(
         Path: PathNaming
     ): DeleteObjectRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Path" -> Path.asInstanceOf[js.Any]
       )
 
@@ -80,7 +80,7 @@ package mediastoredata {
   object DeleteObjectResponse {
     def apply(
         ): DeleteObjectResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteObjectResponse]
     }
@@ -95,7 +95,7 @@ package mediastoredata {
     def apply(
         Path: PathNaming
     ): DescribeObjectRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Path" -> Path.asInstanceOf[js.Any]
       )
 
@@ -120,12 +120,12 @@ package mediastoredata {
         ETag: js.UndefOr[ETag] = js.undefined,
         LastModified: js.UndefOr[TimeStamp] = js.undefined
     ): DescribeObjectResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CacheControl.foreach(__v => __obj.update("CacheControl", __v.asInstanceOf[js.Any]))
-      ContentLength.foreach(__v => __obj.update("ContentLength", __v.asInstanceOf[js.Any]))
-      ContentType.foreach(__v => __obj.update("ContentType", __v.asInstanceOf[js.Any]))
-      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
-      LastModified.foreach(__v => __obj.update("LastModified", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CacheControl.foreach(__v => __obj.updateDynamic("CacheControl")(__v.asInstanceOf[js.Any]))
+      ContentLength.foreach(__v => __obj.updateDynamic("ContentLength")(__v.asInstanceOf[js.Any]))
+      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
+      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
+      LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeObjectResponse]
     }
   }
@@ -141,11 +141,11 @@ package mediastoredata {
         Path: PathNaming,
         Range: js.UndefOr[RangePattern] = js.undefined
     ): GetObjectRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Path" -> Path.asInstanceOf[js.Any]
       )
 
-      Range.foreach(__v => __obj.update("Range", __v.asInstanceOf[js.Any]))
+      Range.foreach(__v => __obj.updateDynamic("Range")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetObjectRequest]
     }
   }
@@ -173,17 +173,17 @@ package mediastoredata {
         ETag: js.UndefOr[ETag] = js.undefined,
         LastModified: js.UndefOr[TimeStamp] = js.undefined
     ): GetObjectResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "StatusCode" -> StatusCode.asInstanceOf[js.Any]
       )
 
-      Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
-      CacheControl.foreach(__v => __obj.update("CacheControl", __v.asInstanceOf[js.Any]))
-      ContentLength.foreach(__v => __obj.update("ContentLength", __v.asInstanceOf[js.Any]))
-      ContentRange.foreach(__v => __obj.update("ContentRange", __v.asInstanceOf[js.Any]))
-      ContentType.foreach(__v => __obj.update("ContentType", __v.asInstanceOf[js.Any]))
-      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
-      LastModified.foreach(__v => __obj.update("LastModified", __v.asInstanceOf[js.Any]))
+      Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
+      CacheControl.foreach(__v => __obj.updateDynamic("CacheControl")(__v.asInstanceOf[js.Any]))
+      ContentLength.foreach(__v => __obj.updateDynamic("ContentLength")(__v.asInstanceOf[js.Any]))
+      ContentRange.foreach(__v => __obj.updateDynamic("ContentRange")(__v.asInstanceOf[js.Any]))
+      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
+      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
+      LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetObjectResponse]
     }
   }
@@ -210,13 +210,13 @@ package mediastoredata {
         Name: js.UndefOr[ItemName] = js.undefined,
         Type: js.UndefOr[ItemType] = js.undefined
     ): Item = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ContentLength.foreach(__v => __obj.update("ContentLength", __v.asInstanceOf[js.Any]))
-      ContentType.foreach(__v => __obj.update("ContentType", __v.asInstanceOf[js.Any]))
-      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
-      LastModified.foreach(__v => __obj.update("LastModified", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ContentLength.foreach(__v => __obj.updateDynamic("ContentLength")(__v.asInstanceOf[js.Any]))
+      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
+      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
+      LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Item]
     }
   }
@@ -241,10 +241,10 @@ package mediastoredata {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         Path: js.UndefOr[ListPathNaming] = js.undefined
     ): ListItemsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Path.foreach(__v => __obj.update("Path", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListItemsRequest]
     }
   }
@@ -260,9 +260,9 @@ package mediastoredata {
         Items: js.UndefOr[ItemList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListItemsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListItemsResponse]
     }
   }
@@ -286,15 +286,15 @@ package mediastoredata {
         StorageClass: js.UndefOr[StorageClass] = js.undefined,
         UploadAvailability: js.UndefOr[UploadAvailability] = js.undefined
     ): PutObjectRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Body" -> Body.asInstanceOf[js.Any],
         "Path" -> Path.asInstanceOf[js.Any]
       )
 
-      CacheControl.foreach(__v => __obj.update("CacheControl", __v.asInstanceOf[js.Any]))
-      ContentType.foreach(__v => __obj.update("ContentType", __v.asInstanceOf[js.Any]))
-      StorageClass.foreach(__v => __obj.update("StorageClass", __v.asInstanceOf[js.Any]))
-      UploadAvailability.foreach(__v => __obj.update("UploadAvailability", __v.asInstanceOf[js.Any]))
+      CacheControl.foreach(__v => __obj.updateDynamic("CacheControl")(__v.asInstanceOf[js.Any]))
+      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
+      StorageClass.foreach(__v => __obj.updateDynamic("StorageClass")(__v.asInstanceOf[js.Any]))
+      UploadAvailability.foreach(__v => __obj.updateDynamic("UploadAvailability")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutObjectRequest]
     }
   }
@@ -312,10 +312,10 @@ package mediastoredata {
         ETag: js.UndefOr[ETag] = js.undefined,
         StorageClass: js.UndefOr[StorageClass] = js.undefined
     ): PutObjectResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ContentSHA256.foreach(__v => __obj.update("ContentSHA256", __v.asInstanceOf[js.Any]))
-      ETag.foreach(__v => __obj.update("ETag", __v.asInstanceOf[js.Any]))
-      StorageClass.foreach(__v => __obj.update("StorageClass", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ContentSHA256.foreach(__v => __obj.updateDynamic("ContentSHA256")(__v.asInstanceOf[js.Any]))
+      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
+      StorageClass.foreach(__v => __obj.updateDynamic("StorageClass")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutObjectResponse]
     }
   }

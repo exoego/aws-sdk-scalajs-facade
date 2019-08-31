@@ -325,13 +325,13 @@ package clouddirectory {
         SchemaFacet: SchemaFacet,
         ObjectAttributeList: js.UndefOr[AttributeKeyAndValueList] = js.undefined
     ): AddFacetToObjectRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
         "SchemaFacet"     -> SchemaFacet.asInstanceOf[js.Any]
       )
 
-      ObjectAttributeList.foreach(__v => __obj.update("ObjectAttributeList", __v.asInstanceOf[js.Any]))
+      ObjectAttributeList.foreach(__v => __obj.updateDynamic("ObjectAttributeList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddFacetToObjectRequest]
     }
   }
@@ -342,7 +342,7 @@ package clouddirectory {
   object AddFacetToObjectResponse {
     def apply(
         ): AddFacetToObjectResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AddFacetToObjectResponse]
     }
@@ -359,7 +359,7 @@ package clouddirectory {
         DirectoryArn: Arn,
         PublishedSchemaArn: Arn
     ): ApplySchemaRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn"       -> DirectoryArn.asInstanceOf[js.Any],
         "PublishedSchemaArn" -> PublishedSchemaArn.asInstanceOf[js.Any]
       )
@@ -379,9 +379,9 @@ package clouddirectory {
         AppliedSchemaArn: js.UndefOr[Arn] = js.undefined,
         DirectoryArn: js.UndefOr[Arn] = js.undefined
     ): ApplySchemaResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AppliedSchemaArn.foreach(__v => __obj.update("AppliedSchemaArn", __v.asInstanceOf[js.Any]))
-      DirectoryArn.foreach(__v => __obj.update("DirectoryArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AppliedSchemaArn.foreach(__v => __obj.updateDynamic("AppliedSchemaArn")(__v.asInstanceOf[js.Any]))
+      DirectoryArn.foreach(__v => __obj.updateDynamic("DirectoryArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplySchemaResponse]
     }
   }
@@ -401,7 +401,7 @@ package clouddirectory {
         LinkName: LinkName,
         ParentReference: ObjectReference
     ): AttachObjectRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChildReference"  -> ChildReference.asInstanceOf[js.Any],
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "LinkName"        -> LinkName.asInstanceOf[js.Any],
@@ -421,8 +421,8 @@ package clouddirectory {
     def apply(
         AttachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
     ): AttachObjectResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttachedObjectIdentifier.foreach(__v => __obj.update("AttachedObjectIdentifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttachedObjectIdentifier.foreach(__v => __obj.updateDynamic("AttachedObjectIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttachObjectResponse]
     }
   }
@@ -440,7 +440,7 @@ package clouddirectory {
         ObjectReference: ObjectReference,
         PolicyReference: ObjectReference
     ): AttachPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
         "PolicyReference" -> PolicyReference.asInstanceOf[js.Any]
@@ -456,7 +456,7 @@ package clouddirectory {
   object AttachPolicyResponse {
     def apply(
         ): AttachPolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AttachPolicyResponse]
     }
@@ -475,7 +475,7 @@ package clouddirectory {
         IndexReference: ObjectReference,
         TargetReference: ObjectReference
     ): AttachToIndexRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "IndexReference"  -> IndexReference.asInstanceOf[js.Any],
         "TargetReference" -> TargetReference.asInstanceOf[js.Any]
@@ -494,8 +494,8 @@ package clouddirectory {
     def apply(
         AttachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
     ): AttachToIndexResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttachedObjectIdentifier.foreach(__v => __obj.update("AttachedObjectIdentifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttachedObjectIdentifier.foreach(__v => __obj.updateDynamic("AttachedObjectIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttachToIndexResponse]
     }
   }
@@ -517,7 +517,7 @@ package clouddirectory {
         TargetObjectReference: ObjectReference,
         TypedLinkFacet: TypedLinkSchemaAndFacetName
     ): AttachTypedLinkRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Attributes"            -> Attributes.asInstanceOf[js.Any],
         "DirectoryArn"          -> DirectoryArn.asInstanceOf[js.Any],
         "SourceObjectReference" -> SourceObjectReference.asInstanceOf[js.Any],
@@ -538,8 +538,8 @@ package clouddirectory {
     def apply(
         TypedLinkSpecifier: js.UndefOr[TypedLinkSpecifier] = js.undefined
     ): AttachTypedLinkResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TypedLinkSpecifier.foreach(__v => __obj.update("TypedLinkSpecifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TypedLinkSpecifier.foreach(__v => __obj.updateDynamic("TypedLinkSpecifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttachTypedLinkResponse]
     }
   }
@@ -560,7 +560,7 @@ package clouddirectory {
         Name: AttributeName,
         SchemaArn: Arn
     ): AttributeKey = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FacetName" -> FacetName.asInstanceOf[js.Any],
         "Name"      -> Name.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
@@ -584,7 +584,7 @@ package clouddirectory {
         Key: AttributeKey,
         Value: TypedAttributeValue
     ): AttributeKeyAndValue = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"   -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
@@ -607,7 +607,7 @@ package clouddirectory {
         AttributeName: AttributeName,
         Value: TypedAttributeValue
     ): AttributeNameAndValue = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AttributeName" -> AttributeName.asInstanceOf[js.Any],
         "Value"         -> Value.asInstanceOf[js.Any]
       )
@@ -632,7 +632,7 @@ package clouddirectory {
         ObjectReference: ObjectReference,
         SchemaFacet: SchemaFacet
     ): BatchAddFacetToObject = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ObjectAttributeList" -> ObjectAttributeList.asInstanceOf[js.Any],
         "ObjectReference"     -> ObjectReference.asInstanceOf[js.Any],
         "SchemaFacet"         -> SchemaFacet.asInstanceOf[js.Any]
@@ -651,7 +651,7 @@ package clouddirectory {
   object BatchAddFacetToObjectResponse {
     def apply(
         ): BatchAddFacetToObjectResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[BatchAddFacetToObjectResponse]
     }
@@ -673,7 +673,7 @@ package clouddirectory {
         LinkName: LinkName,
         ParentReference: ObjectReference
     ): BatchAttachObject = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChildReference"  -> ChildReference.asInstanceOf[js.Any],
         "LinkName"        -> LinkName.asInstanceOf[js.Any],
         "ParentReference" -> ParentReference.asInstanceOf[js.Any]
@@ -695,8 +695,8 @@ package clouddirectory {
     def apply(
         attachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
     ): BatchAttachObjectResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      attachedObjectIdentifier.foreach(__v => __obj.update("attachedObjectIdentifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      attachedObjectIdentifier.foreach(__v => __obj.updateDynamic("attachedObjectIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchAttachObjectResponse]
     }
   }
@@ -715,7 +715,7 @@ package clouddirectory {
         ObjectReference: ObjectReference,
         PolicyReference: ObjectReference
     ): BatchAttachPolicy = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
         "PolicyReference" -> PolicyReference.asInstanceOf[js.Any]
       )
@@ -733,7 +733,7 @@ package clouddirectory {
   object BatchAttachPolicyResponse {
     def apply(
         ): BatchAttachPolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[BatchAttachPolicyResponse]
     }
@@ -753,7 +753,7 @@ package clouddirectory {
         IndexReference: ObjectReference,
         TargetReference: ObjectReference
     ): BatchAttachToIndex = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IndexReference"  -> IndexReference.asInstanceOf[js.Any],
         "TargetReference" -> TargetReference.asInstanceOf[js.Any]
       )
@@ -774,8 +774,8 @@ package clouddirectory {
     def apply(
         AttachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
     ): BatchAttachToIndexResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttachedObjectIdentifier.foreach(__v => __obj.update("AttachedObjectIdentifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttachedObjectIdentifier.foreach(__v => __obj.updateDynamic("AttachedObjectIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchAttachToIndexResponse]
     }
   }
@@ -798,7 +798,7 @@ package clouddirectory {
         TargetObjectReference: ObjectReference,
         TypedLinkFacet: TypedLinkSchemaAndFacetName
     ): BatchAttachTypedLink = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Attributes"            -> Attributes.asInstanceOf[js.Any],
         "SourceObjectReference" -> SourceObjectReference.asInstanceOf[js.Any],
         "TargetObjectReference" -> TargetObjectReference.asInstanceOf[js.Any],
@@ -821,8 +821,8 @@ package clouddirectory {
     def apply(
         TypedLinkSpecifier: js.UndefOr[TypedLinkSpecifier] = js.undefined
     ): BatchAttachTypedLinkResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TypedLinkSpecifier.foreach(__v => __obj.update("TypedLinkSpecifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TypedLinkSpecifier.foreach(__v => __obj.updateDynamic("TypedLinkSpecifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchAttachTypedLinkResponse]
     }
   }
@@ -847,14 +847,14 @@ package clouddirectory {
         LinkName: js.UndefOr[LinkName] = js.undefined,
         ParentReference: js.UndefOr[ObjectReference] = js.undefined
     ): BatchCreateIndex = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IsUnique"                    -> IsUnique.asInstanceOf[js.Any],
         "OrderedIndexedAttributeList" -> OrderedIndexedAttributeList.asInstanceOf[js.Any]
       )
 
-      BatchReferenceName.foreach(__v => __obj.update("BatchReferenceName", __v.asInstanceOf[js.Any]))
-      LinkName.foreach(__v => __obj.update("LinkName", __v.asInstanceOf[js.Any]))
-      ParentReference.foreach(__v => __obj.update("ParentReference", __v.asInstanceOf[js.Any]))
+      BatchReferenceName.foreach(__v => __obj.updateDynamic("BatchReferenceName")(__v.asInstanceOf[js.Any]))
+      LinkName.foreach(__v => __obj.updateDynamic("LinkName")(__v.asInstanceOf[js.Any]))
+      ParentReference.foreach(__v => __obj.updateDynamic("ParentReference")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchCreateIndex]
     }
   }
@@ -871,8 +871,8 @@ package clouddirectory {
     def apply(
         ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
     ): BatchCreateIndexResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ObjectIdentifier.foreach(__v => __obj.update("ObjectIdentifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ObjectIdentifier.foreach(__v => __obj.updateDynamic("ObjectIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchCreateIndexResponse]
     }
   }
@@ -897,14 +897,14 @@ package clouddirectory {
         LinkName: js.UndefOr[LinkName] = js.undefined,
         ParentReference: js.UndefOr[ObjectReference] = js.undefined
     ): BatchCreateObject = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ObjectAttributeList" -> ObjectAttributeList.asInstanceOf[js.Any],
         "SchemaFacet"         -> SchemaFacet.asInstanceOf[js.Any]
       )
 
-      BatchReferenceName.foreach(__v => __obj.update("BatchReferenceName", __v.asInstanceOf[js.Any]))
-      LinkName.foreach(__v => __obj.update("LinkName", __v.asInstanceOf[js.Any]))
-      ParentReference.foreach(__v => __obj.update("ParentReference", __v.asInstanceOf[js.Any]))
+      BatchReferenceName.foreach(__v => __obj.updateDynamic("BatchReferenceName")(__v.asInstanceOf[js.Any]))
+      LinkName.foreach(__v => __obj.updateDynamic("LinkName")(__v.asInstanceOf[js.Any]))
+      ParentReference.foreach(__v => __obj.updateDynamic("ParentReference")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchCreateObject]
     }
   }
@@ -921,8 +921,8 @@ package clouddirectory {
     def apply(
         ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
     ): BatchCreateObjectResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ObjectIdentifier.foreach(__v => __obj.update("ObjectIdentifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ObjectIdentifier.foreach(__v => __obj.updateDynamic("ObjectIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchCreateObjectResponse]
     }
   }
@@ -939,7 +939,7 @@ package clouddirectory {
     def apply(
         ObjectReference: ObjectReference
     ): BatchDeleteObject = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
@@ -956,7 +956,7 @@ package clouddirectory {
   object BatchDeleteObjectResponse {
     def apply(
         ): BatchDeleteObjectResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[BatchDeleteObjectResponse]
     }
@@ -976,7 +976,7 @@ package clouddirectory {
         IndexReference: ObjectReference,
         TargetReference: ObjectReference
     ): BatchDetachFromIndex = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IndexReference"  -> IndexReference.asInstanceOf[js.Any],
         "TargetReference" -> TargetReference.asInstanceOf[js.Any]
       )
@@ -997,8 +997,8 @@ package clouddirectory {
     def apply(
         DetachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
     ): BatchDetachFromIndexResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DetachedObjectIdentifier.foreach(__v => __obj.update("DetachedObjectIdentifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DetachedObjectIdentifier.foreach(__v => __obj.updateDynamic("DetachedObjectIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDetachFromIndexResponse]
     }
   }
@@ -1019,12 +1019,12 @@ package clouddirectory {
         ParentReference: ObjectReference,
         BatchReferenceName: js.UndefOr[BatchReferenceName] = js.undefined
     ): BatchDetachObject = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LinkName"        -> LinkName.asInstanceOf[js.Any],
         "ParentReference" -> ParentReference.asInstanceOf[js.Any]
       )
 
-      BatchReferenceName.foreach(__v => __obj.update("BatchReferenceName", __v.asInstanceOf[js.Any]))
+      BatchReferenceName.foreach(__v => __obj.updateDynamic("BatchReferenceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDetachObject]
     }
   }
@@ -1041,8 +1041,8 @@ package clouddirectory {
     def apply(
         detachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
     ): BatchDetachObjectResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      detachedObjectIdentifier.foreach(__v => __obj.update("detachedObjectIdentifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      detachedObjectIdentifier.foreach(__v => __obj.updateDynamic("detachedObjectIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDetachObjectResponse]
     }
   }
@@ -1061,7 +1061,7 @@ package clouddirectory {
         ObjectReference: ObjectReference,
         PolicyReference: ObjectReference
     ): BatchDetachPolicy = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
         "PolicyReference" -> PolicyReference.asInstanceOf[js.Any]
       )
@@ -1079,7 +1079,7 @@ package clouddirectory {
   object BatchDetachPolicyResponse {
     def apply(
         ): BatchDetachPolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[BatchDetachPolicyResponse]
     }
@@ -1097,7 +1097,7 @@ package clouddirectory {
     def apply(
         TypedLinkSpecifier: TypedLinkSpecifier
     ): BatchDetachTypedLink = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TypedLinkSpecifier" -> TypedLinkSpecifier.asInstanceOf[js.Any]
       )
 
@@ -1114,7 +1114,7 @@ package clouddirectory {
   object BatchDetachTypedLinkResponse {
     def apply(
         ): BatchDetachTypedLinkResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[BatchDetachTypedLinkResponse]
     }
@@ -1134,7 +1134,7 @@ package clouddirectory {
         AttributeNames: AttributeNameList,
         TypedLinkSpecifier: TypedLinkSpecifier
     ): BatchGetLinkAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AttributeNames"     -> AttributeNames.asInstanceOf[js.Any],
         "TypedLinkSpecifier" -> TypedLinkSpecifier.asInstanceOf[js.Any]
       )
@@ -1155,8 +1155,8 @@ package clouddirectory {
     def apply(
         Attributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined
     ): BatchGetLinkAttributesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetLinkAttributesResponse]
     }
   }
@@ -1177,7 +1177,7 @@ package clouddirectory {
         ObjectReference: ObjectReference,
         SchemaFacet: SchemaFacet
     ): BatchGetObjectAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AttributeNames"  -> AttributeNames.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
         "SchemaFacet"     -> SchemaFacet.asInstanceOf[js.Any]
@@ -1199,8 +1199,8 @@ package clouddirectory {
     def apply(
         Attributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined
     ): BatchGetObjectAttributesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetObjectAttributesResponse]
     }
   }
@@ -1217,7 +1217,7 @@ package clouddirectory {
     def apply(
         ObjectReference: ObjectReference
     ): BatchGetObjectInformation = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
@@ -1239,9 +1239,9 @@ package clouddirectory {
         ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined,
         SchemaFacets: js.UndefOr[SchemaFacetList] = js.undefined
     ): BatchGetObjectInformationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ObjectIdentifier.foreach(__v => __obj.update("ObjectIdentifier", __v.asInstanceOf[js.Any]))
-      SchemaFacets.foreach(__v => __obj.update("SchemaFacets", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ObjectIdentifier.foreach(__v => __obj.updateDynamic("ObjectIdentifier")(__v.asInstanceOf[js.Any]))
+      SchemaFacets.foreach(__v => __obj.updateDynamic("SchemaFacets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetObjectInformationResponse]
     }
   }
@@ -1262,12 +1262,12 @@ package clouddirectory {
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): BatchListAttachedIndices = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TargetReference" -> TargetReference.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchListAttachedIndices]
     }
   }
@@ -1286,9 +1286,9 @@ package clouddirectory {
         IndexAttachments: js.UndefOr[IndexAttachmentList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): BatchListAttachedIndicesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IndexAttachments.foreach(__v => __obj.update("IndexAttachments", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IndexAttachments.foreach(__v => __obj.updateDynamic("IndexAttachments")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchListAttachedIndicesResponse]
     }
   }
@@ -1313,14 +1313,14 @@ package clouddirectory {
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): BatchListIncomingTypedLinks = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
-      FilterAttributeRanges.foreach(__v => __obj.update("FilterAttributeRanges", __v.asInstanceOf[js.Any]))
-      FilterTypedLink.foreach(__v => __obj.update("FilterTypedLink", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      FilterAttributeRanges.foreach(__v => __obj.updateDynamic("FilterAttributeRanges")(__v.asInstanceOf[js.Any]))
+      FilterTypedLink.foreach(__v => __obj.updateDynamic("FilterTypedLink")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchListIncomingTypedLinks]
     }
   }
@@ -1339,9 +1339,9 @@ package clouddirectory {
         LinkSpecifiers: js.UndefOr[TypedLinkSpecifierList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): BatchListIncomingTypedLinksResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LinkSpecifiers.foreach(__v => __obj.update("LinkSpecifiers", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LinkSpecifiers.foreach(__v => __obj.updateDynamic("LinkSpecifiers")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchListIncomingTypedLinksResponse]
     }
   }
@@ -1364,13 +1364,13 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         RangesOnIndexedValues: js.UndefOr[ObjectAttributeRangeList] = js.undefined
     ): BatchListIndex = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IndexReference" -> IndexReference.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      RangesOnIndexedValues.foreach(__v => __obj.update("RangesOnIndexedValues", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RangesOnIndexedValues.foreach(__v => __obj.updateDynamic("RangesOnIndexedValues")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchListIndex]
     }
   }
@@ -1389,9 +1389,9 @@ package clouddirectory {
         IndexAttachments: js.UndefOr[IndexAttachmentList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): BatchListIndexResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IndexAttachments.foreach(__v => __obj.update("IndexAttachments", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IndexAttachments.foreach(__v => __obj.updateDynamic("IndexAttachments")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchListIndexResponse]
     }
   }
@@ -1414,13 +1414,13 @@ package clouddirectory {
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): BatchListObjectAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
-      FacetFilter.foreach(__v => __obj.update("FacetFilter", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      FacetFilter.foreach(__v => __obj.updateDynamic("FacetFilter")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchListObjectAttributes]
     }
   }
@@ -1439,9 +1439,9 @@ package clouddirectory {
         Attributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): BatchListObjectAttributesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchListObjectAttributesResponse]
     }
   }
@@ -1462,12 +1462,12 @@ package clouddirectory {
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): BatchListObjectChildren = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchListObjectChildren]
     }
   }
@@ -1486,9 +1486,9 @@ package clouddirectory {
         Children: js.UndefOr[LinkNameToObjectIdentifierMap] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): BatchListObjectChildrenResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Children.foreach(__v => __obj.update("Children", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Children.foreach(__v => __obj.updateDynamic("Children")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchListObjectChildrenResponse]
     }
   }
@@ -1509,12 +1509,12 @@ package clouddirectory {
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): BatchListObjectParentPaths = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchListObjectParentPaths]
     }
   }
@@ -1533,9 +1533,11 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PathToObjectIdentifiersList: js.UndefOr[PathToObjectIdentifiersList] = js.undefined
     ): BatchListObjectParentPathsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PathToObjectIdentifiersList.foreach(__v => __obj.update("PathToObjectIdentifiersList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PathToObjectIdentifiersList.foreach(
+        __v => __obj.updateDynamic("PathToObjectIdentifiersList")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[BatchListObjectParentPathsResponse]
     }
   }
@@ -1553,12 +1555,12 @@ package clouddirectory {
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): BatchListObjectParents = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchListObjectParents]
     }
   }
@@ -1574,9 +1576,9 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ParentLinks: js.UndefOr[ObjectIdentifierAndLinkNameList] = js.undefined
     ): BatchListObjectParentsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ParentLinks.foreach(__v => __obj.update("ParentLinks", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ParentLinks.foreach(__v => __obj.updateDynamic("ParentLinks")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchListObjectParentsResponse]
     }
   }
@@ -1597,12 +1599,12 @@ package clouddirectory {
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): BatchListObjectPolicies = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchListObjectPolicies]
     }
   }
@@ -1621,9 +1623,9 @@ package clouddirectory {
         AttachedPolicyIds: js.UndefOr[ObjectIdentifierList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): BatchListObjectPoliciesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttachedPolicyIds.foreach(__v => __obj.update("AttachedPolicyIds", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttachedPolicyIds.foreach(__v => __obj.updateDynamic("AttachedPolicyIds")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchListObjectPoliciesResponse]
     }
   }
@@ -1648,14 +1650,14 @@ package clouddirectory {
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): BatchListOutgoingTypedLinks = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
-      FilterAttributeRanges.foreach(__v => __obj.update("FilterAttributeRanges", __v.asInstanceOf[js.Any]))
-      FilterTypedLink.foreach(__v => __obj.update("FilterTypedLink", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      FilterAttributeRanges.foreach(__v => __obj.updateDynamic("FilterAttributeRanges")(__v.asInstanceOf[js.Any]))
+      FilterTypedLink.foreach(__v => __obj.updateDynamic("FilterTypedLink")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchListOutgoingTypedLinks]
     }
   }
@@ -1674,9 +1676,9 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         TypedLinkSpecifiers: js.UndefOr[TypedLinkSpecifierList] = js.undefined
     ): BatchListOutgoingTypedLinksResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      TypedLinkSpecifiers.foreach(__v => __obj.update("TypedLinkSpecifiers", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TypedLinkSpecifiers.foreach(__v => __obj.updateDynamic("TypedLinkSpecifiers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchListOutgoingTypedLinksResponse]
     }
   }
@@ -1697,12 +1699,12 @@ package clouddirectory {
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): BatchListPolicyAttachments = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyReference" -> PolicyReference.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchListPolicyAttachments]
     }
   }
@@ -1721,9 +1723,9 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ObjectIdentifiers: js.UndefOr[ObjectIdentifierList] = js.undefined
     ): BatchListPolicyAttachmentsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ObjectIdentifiers.foreach(__v => __obj.update("ObjectIdentifiers", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ObjectIdentifiers.foreach(__v => __obj.updateDynamic("ObjectIdentifiers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchListPolicyAttachmentsResponse]
     }
   }
@@ -1744,12 +1746,12 @@ package clouddirectory {
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): BatchLookupPolicy = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchLookupPolicy]
     }
   }
@@ -1768,9 +1770,9 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PolicyToPathList: js.UndefOr[PolicyToPathList] = js.undefined
     ): BatchLookupPolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PolicyToPathList.foreach(__v => __obj.update("PolicyToPathList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PolicyToPathList.foreach(__v => __obj.updateDynamic("PolicyToPathList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchLookupPolicyResponse]
     }
   }
@@ -1789,9 +1791,9 @@ package clouddirectory {
         Message: js.UndefOr[ExceptionMessage] = js.undefined,
         Type: js.UndefOr[BatchReadExceptionType] = js.undefined
     ): BatchReadException = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchReadException]
     }
   }
@@ -1868,21 +1870,21 @@ package clouddirectory {
         ListPolicyAttachments: js.UndefOr[BatchListPolicyAttachments] = js.undefined,
         LookupPolicy: js.UndefOr[BatchLookupPolicy] = js.undefined
     ): BatchReadOperation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GetLinkAttributes.foreach(__v => __obj.update("GetLinkAttributes", __v.asInstanceOf[js.Any]))
-      GetObjectAttributes.foreach(__v => __obj.update("GetObjectAttributes", __v.asInstanceOf[js.Any]))
-      GetObjectInformation.foreach(__v => __obj.update("GetObjectInformation", __v.asInstanceOf[js.Any]))
-      ListAttachedIndices.foreach(__v => __obj.update("ListAttachedIndices", __v.asInstanceOf[js.Any]))
-      ListIncomingTypedLinks.foreach(__v => __obj.update("ListIncomingTypedLinks", __v.asInstanceOf[js.Any]))
-      ListIndex.foreach(__v => __obj.update("ListIndex", __v.asInstanceOf[js.Any]))
-      ListObjectAttributes.foreach(__v => __obj.update("ListObjectAttributes", __v.asInstanceOf[js.Any]))
-      ListObjectChildren.foreach(__v => __obj.update("ListObjectChildren", __v.asInstanceOf[js.Any]))
-      ListObjectParentPaths.foreach(__v => __obj.update("ListObjectParentPaths", __v.asInstanceOf[js.Any]))
-      ListObjectParents.foreach(__v => __obj.update("ListObjectParents", __v.asInstanceOf[js.Any]))
-      ListObjectPolicies.foreach(__v => __obj.update("ListObjectPolicies", __v.asInstanceOf[js.Any]))
-      ListOutgoingTypedLinks.foreach(__v => __obj.update("ListOutgoingTypedLinks", __v.asInstanceOf[js.Any]))
-      ListPolicyAttachments.foreach(__v => __obj.update("ListPolicyAttachments", __v.asInstanceOf[js.Any]))
-      LookupPolicy.foreach(__v => __obj.update("LookupPolicy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GetLinkAttributes.foreach(__v => __obj.updateDynamic("GetLinkAttributes")(__v.asInstanceOf[js.Any]))
+      GetObjectAttributes.foreach(__v => __obj.updateDynamic("GetObjectAttributes")(__v.asInstanceOf[js.Any]))
+      GetObjectInformation.foreach(__v => __obj.updateDynamic("GetObjectInformation")(__v.asInstanceOf[js.Any]))
+      ListAttachedIndices.foreach(__v => __obj.updateDynamic("ListAttachedIndices")(__v.asInstanceOf[js.Any]))
+      ListIncomingTypedLinks.foreach(__v => __obj.updateDynamic("ListIncomingTypedLinks")(__v.asInstanceOf[js.Any]))
+      ListIndex.foreach(__v => __obj.updateDynamic("ListIndex")(__v.asInstanceOf[js.Any]))
+      ListObjectAttributes.foreach(__v => __obj.updateDynamic("ListObjectAttributes")(__v.asInstanceOf[js.Any]))
+      ListObjectChildren.foreach(__v => __obj.updateDynamic("ListObjectChildren")(__v.asInstanceOf[js.Any]))
+      ListObjectParentPaths.foreach(__v => __obj.updateDynamic("ListObjectParentPaths")(__v.asInstanceOf[js.Any]))
+      ListObjectParents.foreach(__v => __obj.updateDynamic("ListObjectParents")(__v.asInstanceOf[js.Any]))
+      ListObjectPolicies.foreach(__v => __obj.updateDynamic("ListObjectPolicies")(__v.asInstanceOf[js.Any]))
+      ListOutgoingTypedLinks.foreach(__v => __obj.updateDynamic("ListOutgoingTypedLinks")(__v.asInstanceOf[js.Any]))
+      ListPolicyAttachments.foreach(__v => __obj.updateDynamic("ListPolicyAttachments")(__v.asInstanceOf[js.Any]))
+      LookupPolicy.foreach(__v => __obj.updateDynamic("LookupPolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchReadOperation]
     }
   }
@@ -1901,9 +1903,9 @@ package clouddirectory {
         ExceptionResponse: js.UndefOr[BatchReadException] = js.undefined,
         SuccessfulResponse: js.UndefOr[BatchReadSuccessfulResponse] = js.undefined
     ): BatchReadOperationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ExceptionResponse.foreach(__v => __obj.update("ExceptionResponse", __v.asInstanceOf[js.Any]))
-      SuccessfulResponse.foreach(__v => __obj.update("SuccessfulResponse", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ExceptionResponse.foreach(__v => __obj.updateDynamic("ExceptionResponse")(__v.asInstanceOf[js.Any]))
+      SuccessfulResponse.foreach(__v => __obj.updateDynamic("SuccessfulResponse")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchReadOperationResponse]
     }
   }
@@ -1921,12 +1923,12 @@ package clouddirectory {
         Operations: BatchReadOperationList,
         ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined
     ): BatchReadRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "Operations"   -> Operations.asInstanceOf[js.Any]
       )
 
-      ConsistencyLevel.foreach(__v => __obj.update("ConsistencyLevel", __v.asInstanceOf[js.Any]))
+      ConsistencyLevel.foreach(__v => __obj.updateDynamic("ConsistencyLevel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchReadRequest]
     }
   }
@@ -1940,8 +1942,8 @@ package clouddirectory {
     def apply(
         Responses: js.UndefOr[BatchReadOperationResponseList] = js.undefined
     ): BatchReadResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Responses.foreach(__v => __obj.update("Responses", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Responses.foreach(__v => __obj.updateDynamic("Responses")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchReadResponse]
     }
   }
@@ -1984,21 +1986,21 @@ package clouddirectory {
         ListPolicyAttachments: js.UndefOr[BatchListPolicyAttachmentsResponse] = js.undefined,
         LookupPolicy: js.UndefOr[BatchLookupPolicyResponse] = js.undefined
     ): BatchReadSuccessfulResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GetLinkAttributes.foreach(__v => __obj.update("GetLinkAttributes", __v.asInstanceOf[js.Any]))
-      GetObjectAttributes.foreach(__v => __obj.update("GetObjectAttributes", __v.asInstanceOf[js.Any]))
-      GetObjectInformation.foreach(__v => __obj.update("GetObjectInformation", __v.asInstanceOf[js.Any]))
-      ListAttachedIndices.foreach(__v => __obj.update("ListAttachedIndices", __v.asInstanceOf[js.Any]))
-      ListIncomingTypedLinks.foreach(__v => __obj.update("ListIncomingTypedLinks", __v.asInstanceOf[js.Any]))
-      ListIndex.foreach(__v => __obj.update("ListIndex", __v.asInstanceOf[js.Any]))
-      ListObjectAttributes.foreach(__v => __obj.update("ListObjectAttributes", __v.asInstanceOf[js.Any]))
-      ListObjectChildren.foreach(__v => __obj.update("ListObjectChildren", __v.asInstanceOf[js.Any]))
-      ListObjectParentPaths.foreach(__v => __obj.update("ListObjectParentPaths", __v.asInstanceOf[js.Any]))
-      ListObjectParents.foreach(__v => __obj.update("ListObjectParents", __v.asInstanceOf[js.Any]))
-      ListObjectPolicies.foreach(__v => __obj.update("ListObjectPolicies", __v.asInstanceOf[js.Any]))
-      ListOutgoingTypedLinks.foreach(__v => __obj.update("ListOutgoingTypedLinks", __v.asInstanceOf[js.Any]))
-      ListPolicyAttachments.foreach(__v => __obj.update("ListPolicyAttachments", __v.asInstanceOf[js.Any]))
-      LookupPolicy.foreach(__v => __obj.update("LookupPolicy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GetLinkAttributes.foreach(__v => __obj.updateDynamic("GetLinkAttributes")(__v.asInstanceOf[js.Any]))
+      GetObjectAttributes.foreach(__v => __obj.updateDynamic("GetObjectAttributes")(__v.asInstanceOf[js.Any]))
+      GetObjectInformation.foreach(__v => __obj.updateDynamic("GetObjectInformation")(__v.asInstanceOf[js.Any]))
+      ListAttachedIndices.foreach(__v => __obj.updateDynamic("ListAttachedIndices")(__v.asInstanceOf[js.Any]))
+      ListIncomingTypedLinks.foreach(__v => __obj.updateDynamic("ListIncomingTypedLinks")(__v.asInstanceOf[js.Any]))
+      ListIndex.foreach(__v => __obj.updateDynamic("ListIndex")(__v.asInstanceOf[js.Any]))
+      ListObjectAttributes.foreach(__v => __obj.updateDynamic("ListObjectAttributes")(__v.asInstanceOf[js.Any]))
+      ListObjectChildren.foreach(__v => __obj.updateDynamic("ListObjectChildren")(__v.asInstanceOf[js.Any]))
+      ListObjectParentPaths.foreach(__v => __obj.updateDynamic("ListObjectParentPaths")(__v.asInstanceOf[js.Any]))
+      ListObjectParents.foreach(__v => __obj.updateDynamic("ListObjectParents")(__v.asInstanceOf[js.Any]))
+      ListObjectPolicies.foreach(__v => __obj.updateDynamic("ListObjectPolicies")(__v.asInstanceOf[js.Any]))
+      ListOutgoingTypedLinks.foreach(__v => __obj.updateDynamic("ListOutgoingTypedLinks")(__v.asInstanceOf[js.Any]))
+      ListPolicyAttachments.foreach(__v => __obj.updateDynamic("ListPolicyAttachments")(__v.asInstanceOf[js.Any]))
+      LookupPolicy.foreach(__v => __obj.updateDynamic("LookupPolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchReadSuccessfulResponse]
     }
   }
@@ -2017,7 +2019,7 @@ package clouddirectory {
         ObjectReference: ObjectReference,
         SchemaFacet: SchemaFacet
     ): BatchRemoveFacetFromObject = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
         "SchemaFacet"     -> SchemaFacet.asInstanceOf[js.Any]
       )
@@ -2035,7 +2037,7 @@ package clouddirectory {
   object BatchRemoveFacetFromObjectResponse {
     def apply(
         ): BatchRemoveFacetFromObjectResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[BatchRemoveFacetFromObjectResponse]
     }
@@ -2055,7 +2057,7 @@ package clouddirectory {
         AttributeUpdates: LinkAttributeUpdateList,
         TypedLinkSpecifier: TypedLinkSpecifier
     ): BatchUpdateLinkAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AttributeUpdates"   -> AttributeUpdates.asInstanceOf[js.Any],
         "TypedLinkSpecifier" -> TypedLinkSpecifier.asInstanceOf[js.Any]
       )
@@ -2073,7 +2075,7 @@ package clouddirectory {
   object BatchUpdateLinkAttributesResponse {
     def apply(
         ): BatchUpdateLinkAttributesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[BatchUpdateLinkAttributesResponse]
     }
@@ -2093,7 +2095,7 @@ package clouddirectory {
         AttributeUpdates: ObjectAttributeUpdateList,
         ObjectReference: ObjectReference
     ): BatchUpdateObjectAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AttributeUpdates" -> AttributeUpdates.asInstanceOf[js.Any],
         "ObjectReference"  -> ObjectReference.asInstanceOf[js.Any]
       )
@@ -2114,8 +2116,8 @@ package clouddirectory {
     def apply(
         ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
     ): BatchUpdateObjectAttributesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ObjectIdentifier.foreach(__v => __obj.update("ObjectIdentifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ObjectIdentifier.foreach(__v => __obj.updateDynamic("ObjectIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchUpdateObjectAttributesResponse]
     }
   }
@@ -2160,22 +2162,22 @@ package clouddirectory {
         UpdateLinkAttributes: js.UndefOr[BatchUpdateLinkAttributes] = js.undefined,
         UpdateObjectAttributes: js.UndefOr[BatchUpdateObjectAttributes] = js.undefined
     ): BatchWriteOperation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AddFacetToObject.foreach(__v => __obj.update("AddFacetToObject", __v.asInstanceOf[js.Any]))
-      AttachObject.foreach(__v => __obj.update("AttachObject", __v.asInstanceOf[js.Any]))
-      AttachPolicy.foreach(__v => __obj.update("AttachPolicy", __v.asInstanceOf[js.Any]))
-      AttachToIndex.foreach(__v => __obj.update("AttachToIndex", __v.asInstanceOf[js.Any]))
-      AttachTypedLink.foreach(__v => __obj.update("AttachTypedLink", __v.asInstanceOf[js.Any]))
-      CreateIndex.foreach(__v => __obj.update("CreateIndex", __v.asInstanceOf[js.Any]))
-      CreateObject.foreach(__v => __obj.update("CreateObject", __v.asInstanceOf[js.Any]))
-      DeleteObject.foreach(__v => __obj.update("DeleteObject", __v.asInstanceOf[js.Any]))
-      DetachFromIndex.foreach(__v => __obj.update("DetachFromIndex", __v.asInstanceOf[js.Any]))
-      DetachObject.foreach(__v => __obj.update("DetachObject", __v.asInstanceOf[js.Any]))
-      DetachPolicy.foreach(__v => __obj.update("DetachPolicy", __v.asInstanceOf[js.Any]))
-      DetachTypedLink.foreach(__v => __obj.update("DetachTypedLink", __v.asInstanceOf[js.Any]))
-      RemoveFacetFromObject.foreach(__v => __obj.update("RemoveFacetFromObject", __v.asInstanceOf[js.Any]))
-      UpdateLinkAttributes.foreach(__v => __obj.update("UpdateLinkAttributes", __v.asInstanceOf[js.Any]))
-      UpdateObjectAttributes.foreach(__v => __obj.update("UpdateObjectAttributes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AddFacetToObject.foreach(__v => __obj.updateDynamic("AddFacetToObject")(__v.asInstanceOf[js.Any]))
+      AttachObject.foreach(__v => __obj.updateDynamic("AttachObject")(__v.asInstanceOf[js.Any]))
+      AttachPolicy.foreach(__v => __obj.updateDynamic("AttachPolicy")(__v.asInstanceOf[js.Any]))
+      AttachToIndex.foreach(__v => __obj.updateDynamic("AttachToIndex")(__v.asInstanceOf[js.Any]))
+      AttachTypedLink.foreach(__v => __obj.updateDynamic("AttachTypedLink")(__v.asInstanceOf[js.Any]))
+      CreateIndex.foreach(__v => __obj.updateDynamic("CreateIndex")(__v.asInstanceOf[js.Any]))
+      CreateObject.foreach(__v => __obj.updateDynamic("CreateObject")(__v.asInstanceOf[js.Any]))
+      DeleteObject.foreach(__v => __obj.updateDynamic("DeleteObject")(__v.asInstanceOf[js.Any]))
+      DetachFromIndex.foreach(__v => __obj.updateDynamic("DetachFromIndex")(__v.asInstanceOf[js.Any]))
+      DetachObject.foreach(__v => __obj.updateDynamic("DetachObject")(__v.asInstanceOf[js.Any]))
+      DetachPolicy.foreach(__v => __obj.updateDynamic("DetachPolicy")(__v.asInstanceOf[js.Any]))
+      DetachTypedLink.foreach(__v => __obj.updateDynamic("DetachTypedLink")(__v.asInstanceOf[js.Any]))
+      RemoveFacetFromObject.foreach(__v => __obj.updateDynamic("RemoveFacetFromObject")(__v.asInstanceOf[js.Any]))
+      UpdateLinkAttributes.foreach(__v => __obj.updateDynamic("UpdateLinkAttributes")(__v.asInstanceOf[js.Any]))
+      UpdateObjectAttributes.foreach(__v => __obj.updateDynamic("UpdateObjectAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchWriteOperation]
     }
   }
@@ -2220,22 +2222,22 @@ package clouddirectory {
         UpdateLinkAttributes: js.UndefOr[BatchUpdateLinkAttributesResponse] = js.undefined,
         UpdateObjectAttributes: js.UndefOr[BatchUpdateObjectAttributesResponse] = js.undefined
     ): BatchWriteOperationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AddFacetToObject.foreach(__v => __obj.update("AddFacetToObject", __v.asInstanceOf[js.Any]))
-      AttachObject.foreach(__v => __obj.update("AttachObject", __v.asInstanceOf[js.Any]))
-      AttachPolicy.foreach(__v => __obj.update("AttachPolicy", __v.asInstanceOf[js.Any]))
-      AttachToIndex.foreach(__v => __obj.update("AttachToIndex", __v.asInstanceOf[js.Any]))
-      AttachTypedLink.foreach(__v => __obj.update("AttachTypedLink", __v.asInstanceOf[js.Any]))
-      CreateIndex.foreach(__v => __obj.update("CreateIndex", __v.asInstanceOf[js.Any]))
-      CreateObject.foreach(__v => __obj.update("CreateObject", __v.asInstanceOf[js.Any]))
-      DeleteObject.foreach(__v => __obj.update("DeleteObject", __v.asInstanceOf[js.Any]))
-      DetachFromIndex.foreach(__v => __obj.update("DetachFromIndex", __v.asInstanceOf[js.Any]))
-      DetachObject.foreach(__v => __obj.update("DetachObject", __v.asInstanceOf[js.Any]))
-      DetachPolicy.foreach(__v => __obj.update("DetachPolicy", __v.asInstanceOf[js.Any]))
-      DetachTypedLink.foreach(__v => __obj.update("DetachTypedLink", __v.asInstanceOf[js.Any]))
-      RemoveFacetFromObject.foreach(__v => __obj.update("RemoveFacetFromObject", __v.asInstanceOf[js.Any]))
-      UpdateLinkAttributes.foreach(__v => __obj.update("UpdateLinkAttributes", __v.asInstanceOf[js.Any]))
-      UpdateObjectAttributes.foreach(__v => __obj.update("UpdateObjectAttributes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AddFacetToObject.foreach(__v => __obj.updateDynamic("AddFacetToObject")(__v.asInstanceOf[js.Any]))
+      AttachObject.foreach(__v => __obj.updateDynamic("AttachObject")(__v.asInstanceOf[js.Any]))
+      AttachPolicy.foreach(__v => __obj.updateDynamic("AttachPolicy")(__v.asInstanceOf[js.Any]))
+      AttachToIndex.foreach(__v => __obj.updateDynamic("AttachToIndex")(__v.asInstanceOf[js.Any]))
+      AttachTypedLink.foreach(__v => __obj.updateDynamic("AttachTypedLink")(__v.asInstanceOf[js.Any]))
+      CreateIndex.foreach(__v => __obj.updateDynamic("CreateIndex")(__v.asInstanceOf[js.Any]))
+      CreateObject.foreach(__v => __obj.updateDynamic("CreateObject")(__v.asInstanceOf[js.Any]))
+      DeleteObject.foreach(__v => __obj.updateDynamic("DeleteObject")(__v.asInstanceOf[js.Any]))
+      DetachFromIndex.foreach(__v => __obj.updateDynamic("DetachFromIndex")(__v.asInstanceOf[js.Any]))
+      DetachObject.foreach(__v => __obj.updateDynamic("DetachObject")(__v.asInstanceOf[js.Any]))
+      DetachPolicy.foreach(__v => __obj.updateDynamic("DetachPolicy")(__v.asInstanceOf[js.Any]))
+      DetachTypedLink.foreach(__v => __obj.updateDynamic("DetachTypedLink")(__v.asInstanceOf[js.Any]))
+      RemoveFacetFromObject.foreach(__v => __obj.updateDynamic("RemoveFacetFromObject")(__v.asInstanceOf[js.Any]))
+      UpdateLinkAttributes.foreach(__v => __obj.updateDynamic("UpdateLinkAttributes")(__v.asInstanceOf[js.Any]))
+      UpdateObjectAttributes.foreach(__v => __obj.updateDynamic("UpdateObjectAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchWriteOperationResponse]
     }
   }
@@ -2251,7 +2253,7 @@ package clouddirectory {
         DirectoryArn: Arn,
         Operations: BatchWriteOperationList
     ): BatchWriteRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "Operations"   -> Operations.asInstanceOf[js.Any]
       )
@@ -2269,8 +2271,8 @@ package clouddirectory {
     def apply(
         Responses: js.UndefOr[BatchWriteOperationResponseList] = js.undefined
     ): BatchWriteResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Responses.foreach(__v => __obj.update("Responses", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Responses.foreach(__v => __obj.updateDynamic("Responses")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchWriteResponse]
     }
   }
@@ -2293,7 +2295,7 @@ package clouddirectory {
         Name: DirectoryName,
         SchemaArn: Arn
     ): CreateDirectoryRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"      -> Name.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
@@ -2317,7 +2319,7 @@ package clouddirectory {
         Name: DirectoryName,
         ObjectIdentifier: ObjectIdentifier
     ): CreateDirectoryResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AppliedSchemaArn" -> AppliedSchemaArn.asInstanceOf[js.Any],
         "DirectoryArn"     -> DirectoryArn.asInstanceOf[js.Any],
         "Name"             -> Name.asInstanceOf[js.Any],
@@ -2345,14 +2347,14 @@ package clouddirectory {
         FacetStyle: js.UndefOr[FacetStyle] = js.undefined,
         ObjectType: js.UndefOr[ObjectType] = js.undefined
     ): CreateFacetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"      -> Name.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
 
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      FacetStyle.foreach(__v => __obj.update("FacetStyle", __v.asInstanceOf[js.Any]))
-      ObjectType.foreach(__v => __obj.update("ObjectType", __v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      FacetStyle.foreach(__v => __obj.updateDynamic("FacetStyle")(__v.asInstanceOf[js.Any]))
+      ObjectType.foreach(__v => __obj.updateDynamic("ObjectType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFacetRequest]
     }
   }
@@ -2363,7 +2365,7 @@ package clouddirectory {
   object CreateFacetResponse {
     def apply(
         ): CreateFacetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateFacetResponse]
     }
@@ -2386,14 +2388,14 @@ package clouddirectory {
         LinkName: js.UndefOr[LinkName] = js.undefined,
         ParentReference: js.UndefOr[ObjectReference] = js.undefined
     ): CreateIndexRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn"                -> DirectoryArn.asInstanceOf[js.Any],
         "IsUnique"                    -> IsUnique.asInstanceOf[js.Any],
         "OrderedIndexedAttributeList" -> OrderedIndexedAttributeList.asInstanceOf[js.Any]
       )
 
-      LinkName.foreach(__v => __obj.update("LinkName", __v.asInstanceOf[js.Any]))
-      ParentReference.foreach(__v => __obj.update("ParentReference", __v.asInstanceOf[js.Any]))
+      LinkName.foreach(__v => __obj.updateDynamic("LinkName")(__v.asInstanceOf[js.Any]))
+      ParentReference.foreach(__v => __obj.updateDynamic("ParentReference")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateIndexRequest]
     }
   }
@@ -2407,8 +2409,8 @@ package clouddirectory {
     def apply(
         ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
     ): CreateIndexResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ObjectIdentifier.foreach(__v => __obj.update("ObjectIdentifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ObjectIdentifier.foreach(__v => __obj.updateDynamic("ObjectIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateIndexResponse]
     }
   }
@@ -2430,14 +2432,14 @@ package clouddirectory {
         ObjectAttributeList: js.UndefOr[AttributeKeyAndValueList] = js.undefined,
         ParentReference: js.UndefOr[ObjectReference] = js.undefined
     ): CreateObjectRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any],
         "SchemaFacets" -> SchemaFacets.asInstanceOf[js.Any]
       )
 
-      LinkName.foreach(__v => __obj.update("LinkName", __v.asInstanceOf[js.Any]))
-      ObjectAttributeList.foreach(__v => __obj.update("ObjectAttributeList", __v.asInstanceOf[js.Any]))
-      ParentReference.foreach(__v => __obj.update("ParentReference", __v.asInstanceOf[js.Any]))
+      LinkName.foreach(__v => __obj.updateDynamic("LinkName")(__v.asInstanceOf[js.Any]))
+      ObjectAttributeList.foreach(__v => __obj.updateDynamic("ObjectAttributeList")(__v.asInstanceOf[js.Any]))
+      ParentReference.foreach(__v => __obj.updateDynamic("ParentReference")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateObjectRequest]
     }
   }
@@ -2451,8 +2453,8 @@ package clouddirectory {
     def apply(
         ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
     ): CreateObjectResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ObjectIdentifier.foreach(__v => __obj.update("ObjectIdentifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ObjectIdentifier.foreach(__v => __obj.updateDynamic("ObjectIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateObjectResponse]
     }
   }
@@ -2466,7 +2468,7 @@ package clouddirectory {
     def apply(
         Name: SchemaName
     ): CreateSchemaRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -2483,8 +2485,8 @@ package clouddirectory {
     def apply(
         SchemaArn: js.UndefOr[Arn] = js.undefined
     ): CreateSchemaResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SchemaArn.foreach(__v => __obj.update("SchemaArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SchemaArn.foreach(__v => __obj.updateDynamic("SchemaArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSchemaResponse]
     }
   }
@@ -2500,7 +2502,7 @@ package clouddirectory {
         Facet: TypedLinkFacet,
         SchemaArn: Arn
     ): CreateTypedLinkFacetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Facet"     -> Facet.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
@@ -2515,7 +2517,7 @@ package clouddirectory {
   object CreateTypedLinkFacetResponse {
     def apply(
         ): CreateTypedLinkFacetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateTypedLinkFacetResponse]
     }
@@ -2530,7 +2532,7 @@ package clouddirectory {
     def apply(
         DirectoryArn: Arn
     ): DeleteDirectoryRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any]
       )
 
@@ -2547,7 +2549,7 @@ package clouddirectory {
     def apply(
         DirectoryArn: Arn
     ): DeleteDirectoryResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any]
       )
 
@@ -2566,7 +2568,7 @@ package clouddirectory {
         Name: FacetName,
         SchemaArn: Arn
     ): DeleteFacetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"      -> Name.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
@@ -2581,7 +2583,7 @@ package clouddirectory {
   object DeleteFacetResponse {
     def apply(
         ): DeleteFacetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteFacetResponse]
     }
@@ -2598,7 +2600,7 @@ package clouddirectory {
         DirectoryArn: Arn,
         ObjectReference: ObjectReference
     ): DeleteObjectRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
@@ -2613,7 +2615,7 @@ package clouddirectory {
   object DeleteObjectResponse {
     def apply(
         ): DeleteObjectResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteObjectResponse]
     }
@@ -2628,7 +2630,7 @@ package clouddirectory {
     def apply(
         SchemaArn: Arn
     ): DeleteSchemaRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
 
@@ -2645,8 +2647,8 @@ package clouddirectory {
     def apply(
         SchemaArn: js.UndefOr[Arn] = js.undefined
     ): DeleteSchemaResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SchemaArn.foreach(__v => __obj.update("SchemaArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SchemaArn.foreach(__v => __obj.updateDynamic("SchemaArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteSchemaResponse]
     }
   }
@@ -2662,7 +2664,7 @@ package clouddirectory {
         Name: TypedLinkName,
         SchemaArn: Arn
     ): DeleteTypedLinkFacetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"      -> Name.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
@@ -2677,7 +2679,7 @@ package clouddirectory {
   object DeleteTypedLinkFacetResponse {
     def apply(
         ): DeleteTypedLinkFacetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteTypedLinkFacetResponse]
     }
@@ -2696,7 +2698,7 @@ package clouddirectory {
         IndexReference: ObjectReference,
         TargetReference: ObjectReference
     ): DetachFromIndexRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "IndexReference"  -> IndexReference.asInstanceOf[js.Any],
         "TargetReference" -> TargetReference.asInstanceOf[js.Any]
@@ -2715,8 +2717,8 @@ package clouddirectory {
     def apply(
         DetachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
     ): DetachFromIndexResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DetachedObjectIdentifier.foreach(__v => __obj.update("DetachedObjectIdentifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DetachedObjectIdentifier.foreach(__v => __obj.updateDynamic("DetachedObjectIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetachFromIndexResponse]
     }
   }
@@ -2734,7 +2736,7 @@ package clouddirectory {
         LinkName: LinkName,
         ParentReference: ObjectReference
     ): DetachObjectRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "LinkName"        -> LinkName.asInstanceOf[js.Any],
         "ParentReference" -> ParentReference.asInstanceOf[js.Any]
@@ -2753,8 +2755,8 @@ package clouddirectory {
     def apply(
         DetachedObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
     ): DetachObjectResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DetachedObjectIdentifier.foreach(__v => __obj.update("DetachedObjectIdentifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DetachedObjectIdentifier.foreach(__v => __obj.updateDynamic("DetachedObjectIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetachObjectResponse]
     }
   }
@@ -2772,7 +2774,7 @@ package clouddirectory {
         ObjectReference: ObjectReference,
         PolicyReference: ObjectReference
     ): DetachPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
         "PolicyReference" -> PolicyReference.asInstanceOf[js.Any]
@@ -2788,7 +2790,7 @@ package clouddirectory {
   object DetachPolicyResponse {
     def apply(
         ): DetachPolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DetachPolicyResponse]
     }
@@ -2805,7 +2807,7 @@ package clouddirectory {
         DirectoryArn: Arn,
         TypedLinkSpecifier: TypedLinkSpecifier
     ): DetachTypedLinkRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn"       -> DirectoryArn.asInstanceOf[js.Any],
         "TypedLinkSpecifier" -> TypedLinkSpecifier.asInstanceOf[js.Any]
       )
@@ -2832,11 +2834,11 @@ package clouddirectory {
         Name: js.UndefOr[DirectoryName] = js.undefined,
         State: js.UndefOr[DirectoryState] = js.undefined
     ): Directory = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationDateTime.foreach(__v => __obj.update("CreationDateTime", __v.asInstanceOf[js.Any]))
-      DirectoryArn.foreach(__v => __obj.update("DirectoryArn", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationDateTime.foreach(__v => __obj.updateDynamic("CreationDateTime")(__v.asInstanceOf[js.Any]))
+      DirectoryArn.foreach(__v => __obj.updateDynamic("DirectoryArn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Directory]
     }
   }
@@ -2858,7 +2860,7 @@ package clouddirectory {
     def apply(
         DirectoryArn: Arn
     ): DisableDirectoryRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any]
       )
 
@@ -2875,7 +2877,7 @@ package clouddirectory {
     def apply(
         DirectoryArn: Arn
     ): DisableDirectoryResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any]
       )
 
@@ -2892,7 +2894,7 @@ package clouddirectory {
     def apply(
         DirectoryArn: Arn
     ): EnableDirectoryRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any]
       )
 
@@ -2909,7 +2911,7 @@ package clouddirectory {
     def apply(
         DirectoryArn: Arn
     ): EnableDirectoryResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any]
       )
 
@@ -2933,10 +2935,10 @@ package clouddirectory {
         Name: js.UndefOr[FacetName] = js.undefined,
         ObjectType: js.UndefOr[ObjectType] = js.undefined
     ): Facet = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FacetStyle.foreach(__v => __obj.update("FacetStyle", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      ObjectType.foreach(__v => __obj.update("ObjectType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FacetStyle.foreach(__v => __obj.updateDynamic("FacetStyle")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ObjectType.foreach(__v => __obj.updateDynamic("ObjectType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Facet]
     }
   }
@@ -2959,13 +2961,13 @@ package clouddirectory {
         AttributeReference: js.UndefOr[FacetAttributeReference] = js.undefined,
         RequiredBehavior: js.UndefOr[RequiredAttributeBehavior] = js.undefined
     ): FacetAttribute = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      AttributeDefinition.foreach(__v => __obj.update("AttributeDefinition", __v.asInstanceOf[js.Any]))
-      AttributeReference.foreach(__v => __obj.update("AttributeReference", __v.asInstanceOf[js.Any]))
-      RequiredBehavior.foreach(__v => __obj.update("RequiredBehavior", __v.asInstanceOf[js.Any]))
+      AttributeDefinition.foreach(__v => __obj.updateDynamic("AttributeDefinition")(__v.asInstanceOf[js.Any]))
+      AttributeReference.foreach(__v => __obj.updateDynamic("AttributeReference")(__v.asInstanceOf[js.Any]))
+      RequiredBehavior.foreach(__v => __obj.updateDynamic("RequiredBehavior")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FacetAttribute]
     }
   }
@@ -2988,13 +2990,13 @@ package clouddirectory {
         IsImmutable: js.UndefOr[Boolean] = js.undefined,
         Rules: js.UndefOr[RuleMap] = js.undefined
     ): FacetAttributeDefinition = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Type" -> Type.asInstanceOf[js.Any]
       )
 
-      DefaultValue.foreach(__v => __obj.update("DefaultValue", __v.asInstanceOf[js.Any]))
-      IsImmutable.foreach(__v => __obj.update("IsImmutable", __v.asInstanceOf[js.Any]))
-      Rules.foreach(__v => __obj.update("Rules", __v.asInstanceOf[js.Any]))
+      DefaultValue.foreach(__v => __obj.updateDynamic("DefaultValue")(__v.asInstanceOf[js.Any]))
+      IsImmutable.foreach(__v => __obj.updateDynamic("IsImmutable")(__v.asInstanceOf[js.Any]))
+      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FacetAttributeDefinition]
     }
   }
@@ -3013,7 +3015,7 @@ package clouddirectory {
         TargetAttributeName: AttributeName,
         TargetFacetName: FacetName
     ): FacetAttributeReference = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TargetAttributeName" -> TargetAttributeName.asInstanceOf[js.Any],
         "TargetFacetName"     -> TargetFacetName.asInstanceOf[js.Any]
       )
@@ -3047,9 +3049,9 @@ package clouddirectory {
         Action: js.UndefOr[UpdateActionType] = js.undefined,
         Attribute: js.UndefOr[FacetAttribute] = js.undefined
     ): FacetAttributeUpdate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Action.foreach(__v => __obj.update("Action", __v.asInstanceOf[js.Any]))
-      Attribute.foreach(__v => __obj.update("Attribute", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      Attribute.foreach(__v => __obj.updateDynamic("Attribute")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FacetAttributeUpdate]
     }
   }
@@ -3070,7 +3072,7 @@ package clouddirectory {
     def apply(
         SchemaArn: Arn
     ): GetAppliedSchemaVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
 
@@ -3087,8 +3089,8 @@ package clouddirectory {
     def apply(
         AppliedSchemaArn: js.UndefOr[Arn] = js.undefined
     ): GetAppliedSchemaVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AppliedSchemaArn.foreach(__v => __obj.update("AppliedSchemaArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AppliedSchemaArn.foreach(__v => __obj.updateDynamic("AppliedSchemaArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAppliedSchemaVersionResponse]
     }
   }
@@ -3102,7 +3104,7 @@ package clouddirectory {
     def apply(
         DirectoryArn: DirectoryArn
     ): GetDirectoryRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any]
       )
 
@@ -3119,7 +3121,7 @@ package clouddirectory {
     def apply(
         Directory: Directory
     ): GetDirectoryResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Directory" -> Directory.asInstanceOf[js.Any]
       )
 
@@ -3138,7 +3140,7 @@ package clouddirectory {
         Name: FacetName,
         SchemaArn: Arn
     ): GetFacetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"      -> Name.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
@@ -3156,8 +3158,8 @@ package clouddirectory {
     def apply(
         Facet: js.UndefOr[Facet] = js.undefined
     ): GetFacetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Facet.foreach(__v => __obj.update("Facet", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Facet.foreach(__v => __obj.updateDynamic("Facet")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFacetResponse]
     }
   }
@@ -3177,13 +3179,13 @@ package clouddirectory {
         TypedLinkSpecifier: TypedLinkSpecifier,
         ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined
     ): GetLinkAttributesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AttributeNames"     -> AttributeNames.asInstanceOf[js.Any],
         "DirectoryArn"       -> DirectoryArn.asInstanceOf[js.Any],
         "TypedLinkSpecifier" -> TypedLinkSpecifier.asInstanceOf[js.Any]
       )
 
-      ConsistencyLevel.foreach(__v => __obj.update("ConsistencyLevel", __v.asInstanceOf[js.Any]))
+      ConsistencyLevel.foreach(__v => __obj.updateDynamic("ConsistencyLevel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLinkAttributesRequest]
     }
   }
@@ -3197,8 +3199,8 @@ package clouddirectory {
     def apply(
         Attributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined
     ): GetLinkAttributesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLinkAttributesResponse]
     }
   }
@@ -3220,14 +3222,14 @@ package clouddirectory {
         SchemaFacet: SchemaFacet,
         ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined
     ): GetObjectAttributesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AttributeNames"  -> AttributeNames.asInstanceOf[js.Any],
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
         "SchemaFacet"     -> SchemaFacet.asInstanceOf[js.Any]
       )
 
-      ConsistencyLevel.foreach(__v => __obj.update("ConsistencyLevel", __v.asInstanceOf[js.Any]))
+      ConsistencyLevel.foreach(__v => __obj.updateDynamic("ConsistencyLevel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetObjectAttributesRequest]
     }
   }
@@ -3241,8 +3243,8 @@ package clouddirectory {
     def apply(
         Attributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined
     ): GetObjectAttributesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetObjectAttributesResponse]
     }
   }
@@ -3260,12 +3262,12 @@ package clouddirectory {
         ObjectReference: ObjectReference,
         ConsistencyLevel: js.UndefOr[ConsistencyLevel] = js.undefined
     ): GetObjectInformationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
-      ConsistencyLevel.foreach(__v => __obj.update("ConsistencyLevel", __v.asInstanceOf[js.Any]))
+      ConsistencyLevel.foreach(__v => __obj.updateDynamic("ConsistencyLevel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetObjectInformationRequest]
     }
   }
@@ -3281,9 +3283,9 @@ package clouddirectory {
         ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined,
         SchemaFacets: js.UndefOr[SchemaFacetList] = js.undefined
     ): GetObjectInformationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ObjectIdentifier.foreach(__v => __obj.update("ObjectIdentifier", __v.asInstanceOf[js.Any]))
-      SchemaFacets.foreach(__v => __obj.update("SchemaFacets", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ObjectIdentifier.foreach(__v => __obj.updateDynamic("ObjectIdentifier")(__v.asInstanceOf[js.Any]))
+      SchemaFacets.foreach(__v => __obj.updateDynamic("SchemaFacets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetObjectInformationResponse]
     }
   }
@@ -3297,7 +3299,7 @@ package clouddirectory {
     def apply(
         SchemaArn: Arn
     ): GetSchemaAsJsonRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
 
@@ -3316,9 +3318,9 @@ package clouddirectory {
         Document: js.UndefOr[SchemaJsonDocument] = js.undefined,
         Name: js.UndefOr[SchemaName] = js.undefined
     ): GetSchemaAsJsonResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Document.foreach(__v => __obj.update("Document", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Document.foreach(__v => __obj.updateDynamic("Document")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSchemaAsJsonResponse]
     }
   }
@@ -3334,7 +3336,7 @@ package clouddirectory {
         Name: TypedLinkName,
         SchemaArn: Arn
     ): GetTypedLinkFacetInformationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"      -> Name.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
@@ -3352,8 +3354,8 @@ package clouddirectory {
     def apply(
         IdentityAttributeOrder: js.UndefOr[AttributeNameList] = js.undefined
     ): GetTypedLinkFacetInformationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IdentityAttributeOrder.foreach(__v => __obj.update("IdentityAttributeOrder", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IdentityAttributeOrder.foreach(__v => __obj.updateDynamic("IdentityAttributeOrder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTypedLinkFacetInformationResponse]
     }
   }
@@ -3372,9 +3374,9 @@ package clouddirectory {
         IndexedAttributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined,
         ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
     ): IndexAttachment = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IndexedAttributes.foreach(__v => __obj.update("IndexedAttributes", __v.asInstanceOf[js.Any]))
-      ObjectIdentifier.foreach(__v => __obj.update("ObjectIdentifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IndexedAttributes.foreach(__v => __obj.updateDynamic("IndexedAttributes")(__v.asInstanceOf[js.Any]))
+      ObjectIdentifier.foreach(__v => __obj.updateDynamic("ObjectIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IndexAttachment]
     }
   }
@@ -3393,9 +3395,9 @@ package clouddirectory {
         AttributeActionType: js.UndefOr[UpdateActionType] = js.undefined,
         AttributeUpdateValue: js.UndefOr[TypedAttributeValue] = js.undefined
     ): LinkAttributeAction = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttributeActionType.foreach(__v => __obj.update("AttributeActionType", __v.asInstanceOf[js.Any]))
-      AttributeUpdateValue.foreach(__v => __obj.update("AttributeUpdateValue", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttributeActionType.foreach(__v => __obj.updateDynamic("AttributeActionType")(__v.asInstanceOf[js.Any]))
+      AttributeUpdateValue.foreach(__v => __obj.updateDynamic("AttributeUpdateValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LinkAttributeAction]
     }
   }
@@ -3414,9 +3416,9 @@ package clouddirectory {
         AttributeAction: js.UndefOr[LinkAttributeAction] = js.undefined,
         AttributeKey: js.UndefOr[AttributeKey] = js.undefined
     ): LinkAttributeUpdate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttributeAction.foreach(__v => __obj.update("AttributeAction", __v.asInstanceOf[js.Any]))
-      AttributeKey.foreach(__v => __obj.update("AttributeKey", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttributeAction.foreach(__v => __obj.updateDynamic("AttributeAction")(__v.asInstanceOf[js.Any]))
+      AttributeKey.foreach(__v => __obj.updateDynamic("AttributeKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LinkAttributeUpdate]
     }
   }
@@ -3436,13 +3438,13 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         SchemaArn: js.UndefOr[Arn] = js.undefined
     ): ListAppliedSchemaArnsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn" -> DirectoryArn.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      SchemaArn.foreach(__v => __obj.update("SchemaArn", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SchemaArn.foreach(__v => __obj.updateDynamic("SchemaArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAppliedSchemaArnsRequest]
     }
   }
@@ -3458,9 +3460,9 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         SchemaArns: js.UndefOr[Arns] = js.undefined
     ): ListAppliedSchemaArnsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      SchemaArns.foreach(__v => __obj.update("SchemaArns", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SchemaArns.foreach(__v => __obj.updateDynamic("SchemaArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAppliedSchemaArnsResponse]
     }
   }
@@ -3482,14 +3484,14 @@ package clouddirectory {
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListAttachedIndicesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "TargetReference" -> TargetReference.asInstanceOf[js.Any]
       )
 
-      ConsistencyLevel.foreach(__v => __obj.update("ConsistencyLevel", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ConsistencyLevel.foreach(__v => __obj.updateDynamic("ConsistencyLevel")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAttachedIndicesRequest]
     }
   }
@@ -3505,9 +3507,9 @@ package clouddirectory {
         IndexAttachments: js.UndefOr[IndexAttachmentList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListAttachedIndicesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IndexAttachments.foreach(__v => __obj.update("IndexAttachments", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IndexAttachments.foreach(__v => __obj.updateDynamic("IndexAttachments")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAttachedIndicesResponse]
     }
   }
@@ -3523,9 +3525,9 @@ package clouddirectory {
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDevelopmentSchemaArnsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDevelopmentSchemaArnsRequest]
     }
   }
@@ -3541,9 +3543,9 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         SchemaArns: js.UndefOr[Arns] = js.undefined
     ): ListDevelopmentSchemaArnsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      SchemaArns.foreach(__v => __obj.update("SchemaArns", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SchemaArns.foreach(__v => __obj.updateDynamic("SchemaArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDevelopmentSchemaArnsResponse]
     }
   }
@@ -3561,10 +3563,10 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         state: js.UndefOr[DirectoryState] = js.undefined
     ): ListDirectoriesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.update("state", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDirectoriesRequest]
     }
   }
@@ -3580,11 +3582,11 @@ package clouddirectory {
         Directories: DirectoryList,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDirectoriesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Directories" -> Directories.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDirectoriesResponse]
     }
   }
@@ -3604,13 +3606,13 @@ package clouddirectory {
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListFacetAttributesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"      -> Name.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFacetAttributesRequest]
     }
   }
@@ -3626,9 +3628,9 @@ package clouddirectory {
         Attributes: js.UndefOr[FacetAttributeList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListFacetAttributesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFacetAttributesResponse]
     }
   }
@@ -3646,12 +3648,12 @@ package clouddirectory {
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListFacetNamesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFacetNamesRequest]
     }
   }
@@ -3667,9 +3669,9 @@ package clouddirectory {
         FacetNames: js.UndefOr[FacetNameList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListFacetNamesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FacetNames.foreach(__v => __obj.update("FacetNames", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FacetNames.foreach(__v => __obj.updateDynamic("FacetNames")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFacetNamesResponse]
     }
   }
@@ -3695,16 +3697,16 @@ package clouddirectory {
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListIncomingTypedLinksRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
-      ConsistencyLevel.foreach(__v => __obj.update("ConsistencyLevel", __v.asInstanceOf[js.Any]))
-      FilterAttributeRanges.foreach(__v => __obj.update("FilterAttributeRanges", __v.asInstanceOf[js.Any]))
-      FilterTypedLink.foreach(__v => __obj.update("FilterTypedLink", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ConsistencyLevel.foreach(__v => __obj.updateDynamic("ConsistencyLevel")(__v.asInstanceOf[js.Any]))
+      FilterAttributeRanges.foreach(__v => __obj.updateDynamic("FilterAttributeRanges")(__v.asInstanceOf[js.Any]))
+      FilterTypedLink.foreach(__v => __obj.updateDynamic("FilterTypedLink")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListIncomingTypedLinksRequest]
     }
   }
@@ -3720,9 +3722,9 @@ package clouddirectory {
         LinkSpecifiers: js.UndefOr[TypedLinkSpecifierList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListIncomingTypedLinksResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LinkSpecifiers.foreach(__v => __obj.update("LinkSpecifiers", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LinkSpecifiers.foreach(__v => __obj.updateDynamic("LinkSpecifiers")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListIncomingTypedLinksResponse]
     }
   }
@@ -3746,15 +3748,15 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         RangesOnIndexedValues: js.UndefOr[ObjectAttributeRangeList] = js.undefined
     ): ListIndexRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn"   -> DirectoryArn.asInstanceOf[js.Any],
         "IndexReference" -> IndexReference.asInstanceOf[js.Any]
       )
 
-      ConsistencyLevel.foreach(__v => __obj.update("ConsistencyLevel", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      RangesOnIndexedValues.foreach(__v => __obj.update("RangesOnIndexedValues", __v.asInstanceOf[js.Any]))
+      ConsistencyLevel.foreach(__v => __obj.updateDynamic("ConsistencyLevel")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RangesOnIndexedValues.foreach(__v => __obj.updateDynamic("RangesOnIndexedValues")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListIndexRequest]
     }
   }
@@ -3770,9 +3772,9 @@ package clouddirectory {
         IndexAttachments: js.UndefOr[IndexAttachmentList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListIndexResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IndexAttachments.foreach(__v => __obj.update("IndexAttachments", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IndexAttachments.foreach(__v => __obj.updateDynamic("IndexAttachments")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListIndexResponse]
     }
   }
@@ -3790,10 +3792,10 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         SchemaArn: js.UndefOr[Arn] = js.undefined
     ): ListManagedSchemaArnsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      SchemaArn.foreach(__v => __obj.update("SchemaArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SchemaArn.foreach(__v => __obj.updateDynamic("SchemaArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListManagedSchemaArnsRequest]
     }
   }
@@ -3809,9 +3811,9 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         SchemaArns: js.UndefOr[Arns] = js.undefined
     ): ListManagedSchemaArnsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      SchemaArns.foreach(__v => __obj.update("SchemaArns", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SchemaArns.foreach(__v => __obj.updateDynamic("SchemaArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListManagedSchemaArnsResponse]
     }
   }
@@ -3835,15 +3837,15 @@ package clouddirectory {
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListObjectAttributesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
-      ConsistencyLevel.foreach(__v => __obj.update("ConsistencyLevel", __v.asInstanceOf[js.Any]))
-      FacetFilter.foreach(__v => __obj.update("FacetFilter", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ConsistencyLevel.foreach(__v => __obj.updateDynamic("ConsistencyLevel")(__v.asInstanceOf[js.Any]))
+      FacetFilter.foreach(__v => __obj.updateDynamic("FacetFilter")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListObjectAttributesRequest]
     }
   }
@@ -3859,9 +3861,9 @@ package clouddirectory {
         Attributes: js.UndefOr[AttributeKeyAndValueList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListObjectAttributesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListObjectAttributesResponse]
     }
   }
@@ -3883,14 +3885,14 @@ package clouddirectory {
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListObjectChildrenRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
-      ConsistencyLevel.foreach(__v => __obj.update("ConsistencyLevel", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ConsistencyLevel.foreach(__v => __obj.updateDynamic("ConsistencyLevel")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListObjectChildrenRequest]
     }
   }
@@ -3906,9 +3908,9 @@ package clouddirectory {
         Children: js.UndefOr[LinkNameToObjectIdentifierMap] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListObjectChildrenResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Children.foreach(__v => __obj.update("Children", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Children.foreach(__v => __obj.updateDynamic("Children")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListObjectChildrenResponse]
     }
   }
@@ -3928,13 +3930,13 @@ package clouddirectory {
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListObjectParentPathsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListObjectParentPathsRequest]
     }
   }
@@ -3950,9 +3952,11 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PathToObjectIdentifiersList: js.UndefOr[PathToObjectIdentifiersList] = js.undefined
     ): ListObjectParentPathsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PathToObjectIdentifiersList.foreach(__v => __obj.update("PathToObjectIdentifiersList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PathToObjectIdentifiersList.foreach(
+        __v => __obj.updateDynamic("PathToObjectIdentifiersList")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[ListObjectParentPathsResponse]
     }
   }
@@ -3976,15 +3980,17 @@ package clouddirectory {
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListObjectParentsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
-      ConsistencyLevel.foreach(__v => __obj.update("ConsistencyLevel", __v.asInstanceOf[js.Any]))
-      IncludeAllLinksToEachParent.foreach(__v => __obj.update("IncludeAllLinksToEachParent", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ConsistencyLevel.foreach(__v => __obj.updateDynamic("ConsistencyLevel")(__v.asInstanceOf[js.Any]))
+      IncludeAllLinksToEachParent.foreach(
+        __v => __obj.updateDynamic("IncludeAllLinksToEachParent")(__v.asInstanceOf[js.Any])
+      )
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListObjectParentsRequest]
     }
   }
@@ -4002,10 +4008,10 @@ package clouddirectory {
         ParentLinks: js.UndefOr[ObjectIdentifierAndLinkNameList] = js.undefined,
         Parents: js.UndefOr[ObjectIdentifierToLinkNameMap] = js.undefined
     ): ListObjectParentsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ParentLinks.foreach(__v => __obj.update("ParentLinks", __v.asInstanceOf[js.Any]))
-      Parents.foreach(__v => __obj.update("Parents", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ParentLinks.foreach(__v => __obj.updateDynamic("ParentLinks")(__v.asInstanceOf[js.Any]))
+      Parents.foreach(__v => __obj.updateDynamic("Parents")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListObjectParentsResponse]
     }
   }
@@ -4027,14 +4033,14 @@ package clouddirectory {
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListObjectPoliciesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
-      ConsistencyLevel.foreach(__v => __obj.update("ConsistencyLevel", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ConsistencyLevel.foreach(__v => __obj.updateDynamic("ConsistencyLevel")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListObjectPoliciesRequest]
     }
   }
@@ -4050,9 +4056,9 @@ package clouddirectory {
         AttachedPolicyIds: js.UndefOr[ObjectIdentifierList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListObjectPoliciesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttachedPolicyIds.foreach(__v => __obj.update("AttachedPolicyIds", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttachedPolicyIds.foreach(__v => __obj.updateDynamic("AttachedPolicyIds")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListObjectPoliciesResponse]
     }
   }
@@ -4078,16 +4084,16 @@ package clouddirectory {
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListOutgoingTypedLinksRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
-      ConsistencyLevel.foreach(__v => __obj.update("ConsistencyLevel", __v.asInstanceOf[js.Any]))
-      FilterAttributeRanges.foreach(__v => __obj.update("FilterAttributeRanges", __v.asInstanceOf[js.Any]))
-      FilterTypedLink.foreach(__v => __obj.update("FilterTypedLink", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ConsistencyLevel.foreach(__v => __obj.updateDynamic("ConsistencyLevel")(__v.asInstanceOf[js.Any]))
+      FilterAttributeRanges.foreach(__v => __obj.updateDynamic("FilterAttributeRanges")(__v.asInstanceOf[js.Any]))
+      FilterTypedLink.foreach(__v => __obj.updateDynamic("FilterTypedLink")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListOutgoingTypedLinksRequest]
     }
   }
@@ -4103,9 +4109,9 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         TypedLinkSpecifiers: js.UndefOr[TypedLinkSpecifierList] = js.undefined
     ): ListOutgoingTypedLinksResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      TypedLinkSpecifiers.foreach(__v => __obj.update("TypedLinkSpecifiers", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TypedLinkSpecifiers.foreach(__v => __obj.updateDynamic("TypedLinkSpecifiers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListOutgoingTypedLinksResponse]
     }
   }
@@ -4127,14 +4133,14 @@ package clouddirectory {
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListPolicyAttachmentsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "PolicyReference" -> PolicyReference.asInstanceOf[js.Any]
       )
 
-      ConsistencyLevel.foreach(__v => __obj.update("ConsistencyLevel", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      ConsistencyLevel.foreach(__v => __obj.updateDynamic("ConsistencyLevel")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPolicyAttachmentsRequest]
     }
   }
@@ -4150,9 +4156,9 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ObjectIdentifiers: js.UndefOr[ObjectIdentifierList] = js.undefined
     ): ListPolicyAttachmentsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ObjectIdentifiers.foreach(__v => __obj.update("ObjectIdentifiers", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ObjectIdentifiers.foreach(__v => __obj.updateDynamic("ObjectIdentifiers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPolicyAttachmentsResponse]
     }
   }
@@ -4170,10 +4176,10 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         SchemaArn: js.UndefOr[Arn] = js.undefined
     ): ListPublishedSchemaArnsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      SchemaArn.foreach(__v => __obj.update("SchemaArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SchemaArn.foreach(__v => __obj.updateDynamic("SchemaArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPublishedSchemaArnsRequest]
     }
   }
@@ -4189,9 +4195,9 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         SchemaArns: js.UndefOr[Arns] = js.undefined
     ): ListPublishedSchemaArnsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      SchemaArns.foreach(__v => __obj.update("SchemaArns", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SchemaArns.foreach(__v => __obj.updateDynamic("SchemaArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPublishedSchemaArnsResponse]
     }
   }
@@ -4209,12 +4215,12 @@ package clouddirectory {
         MaxResults: js.UndefOr[TagsNumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListTagsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -4230,9 +4236,9 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsForResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
@@ -4252,13 +4258,13 @@ package clouddirectory {
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListTypedLinkFacetAttributesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"      -> Name.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTypedLinkFacetAttributesRequest]
     }
   }
@@ -4274,9 +4280,9 @@ package clouddirectory {
         Attributes: js.UndefOr[TypedLinkAttributeDefinitionList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListTypedLinkFacetAttributesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTypedLinkFacetAttributesResponse]
     }
   }
@@ -4294,12 +4300,12 @@ package clouddirectory {
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListTypedLinkFacetNamesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTypedLinkFacetNamesRequest]
     }
   }
@@ -4315,9 +4321,9 @@ package clouddirectory {
         FacetNames: js.UndefOr[TypedLinkNameList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListTypedLinkFacetNamesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FacetNames.foreach(__v => __obj.update("FacetNames", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FacetNames.foreach(__v => __obj.updateDynamic("FacetNames")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTypedLinkFacetNamesResponse]
     }
   }
@@ -4337,13 +4343,13 @@ package clouddirectory {
         MaxResults: js.UndefOr[NumberResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): LookupPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LookupPolicyRequest]
     }
   }
@@ -4359,9 +4365,9 @@ package clouddirectory {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PolicyToPathList: js.UndefOr[PolicyToPathList] = js.undefined
     ): LookupPolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PolicyToPathList.foreach(__v => __obj.update("PolicyToPathList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PolicyToPathList.foreach(__v => __obj.updateDynamic("PolicyToPathList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LookupPolicyResponse]
     }
   }
@@ -4380,9 +4386,13 @@ package clouddirectory {
         ObjectAttributeActionType: js.UndefOr[UpdateActionType] = js.undefined,
         ObjectAttributeUpdateValue: js.UndefOr[TypedAttributeValue] = js.undefined
     ): ObjectAttributeAction = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ObjectAttributeActionType.foreach(__v => __obj.update("ObjectAttributeActionType", __v.asInstanceOf[js.Any]))
-      ObjectAttributeUpdateValue.foreach(__v => __obj.update("ObjectAttributeUpdateValue", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ObjectAttributeActionType.foreach(
+        __v => __obj.updateDynamic("ObjectAttributeActionType")(__v.asInstanceOf[js.Any])
+      )
+      ObjectAttributeUpdateValue.foreach(
+        __v => __obj.updateDynamic("ObjectAttributeUpdateValue")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[ObjectAttributeAction]
     }
   }
@@ -4401,9 +4411,9 @@ package clouddirectory {
         AttributeKey: js.UndefOr[AttributeKey] = js.undefined,
         Range: js.UndefOr[TypedAttributeValueRange] = js.undefined
     ): ObjectAttributeRange = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttributeKey.foreach(__v => __obj.update("AttributeKey", __v.asInstanceOf[js.Any]))
-      Range.foreach(__v => __obj.update("Range", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttributeKey.foreach(__v => __obj.updateDynamic("AttributeKey")(__v.asInstanceOf[js.Any]))
+      Range.foreach(__v => __obj.updateDynamic("Range")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ObjectAttributeRange]
     }
   }
@@ -4422,9 +4432,9 @@ package clouddirectory {
         ObjectAttributeAction: js.UndefOr[ObjectAttributeAction] = js.undefined,
         ObjectAttributeKey: js.UndefOr[AttributeKey] = js.undefined
     ): ObjectAttributeUpdate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ObjectAttributeAction.foreach(__v => __obj.update("ObjectAttributeAction", __v.asInstanceOf[js.Any]))
-      ObjectAttributeKey.foreach(__v => __obj.update("ObjectAttributeKey", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ObjectAttributeAction.foreach(__v => __obj.updateDynamic("ObjectAttributeAction")(__v.asInstanceOf[js.Any]))
+      ObjectAttributeKey.foreach(__v => __obj.updateDynamic("ObjectAttributeKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ObjectAttributeUpdate]
     }
   }
@@ -4443,9 +4453,9 @@ package clouddirectory {
         LinkName: js.UndefOr[LinkName] = js.undefined,
         ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
     ): ObjectIdentifierAndLinkNameTuple = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LinkName.foreach(__v => __obj.update("LinkName", __v.asInstanceOf[js.Any]))
-      ObjectIdentifier.foreach(__v => __obj.update("ObjectIdentifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LinkName.foreach(__v => __obj.updateDynamic("LinkName")(__v.asInstanceOf[js.Any]))
+      ObjectIdentifier.foreach(__v => __obj.updateDynamic("ObjectIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ObjectIdentifierAndLinkNameTuple]
     }
   }
@@ -4462,8 +4472,8 @@ package clouddirectory {
     def apply(
         Selector: js.UndefOr[SelectorObjectReference] = js.undefined
     ): ObjectReference = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Selector.foreach(__v => __obj.update("Selector", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Selector.foreach(__v => __obj.updateDynamic("Selector")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ObjectReference]
     }
   }
@@ -4491,9 +4501,9 @@ package clouddirectory {
         ObjectIdentifiers: js.UndefOr[ObjectIdentifierList] = js.undefined,
         Path: js.UndefOr[PathString] = js.undefined
     ): PathToObjectIdentifiers = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ObjectIdentifiers.foreach(__v => __obj.update("ObjectIdentifiers", __v.asInstanceOf[js.Any]))
-      Path.foreach(__v => __obj.update("Path", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ObjectIdentifiers.foreach(__v => __obj.updateDynamic("ObjectIdentifiers")(__v.asInstanceOf[js.Any]))
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PathToObjectIdentifiers]
     }
   }
@@ -4514,10 +4524,10 @@ package clouddirectory {
         PolicyId: js.UndefOr[ObjectIdentifier] = js.undefined,
         PolicyType: js.UndefOr[PolicyType] = js.undefined
     ): PolicyAttachment = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ObjectIdentifier.foreach(__v => __obj.update("ObjectIdentifier", __v.asInstanceOf[js.Any]))
-      PolicyId.foreach(__v => __obj.update("PolicyId", __v.asInstanceOf[js.Any]))
-      PolicyType.foreach(__v => __obj.update("PolicyType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ObjectIdentifier.foreach(__v => __obj.updateDynamic("ObjectIdentifier")(__v.asInstanceOf[js.Any]))
+      PolicyId.foreach(__v => __obj.updateDynamic("PolicyId")(__v.asInstanceOf[js.Any]))
+      PolicyType.foreach(__v => __obj.updateDynamic("PolicyType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PolicyAttachment]
     }
   }
@@ -4536,9 +4546,9 @@ package clouddirectory {
         Path: js.UndefOr[PathString] = js.undefined,
         Policies: js.UndefOr[PolicyAttachmentList] = js.undefined
     ): PolicyToPath = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Path.foreach(__v => __obj.update("Path", __v.asInstanceOf[js.Any]))
-      Policies.foreach(__v => __obj.update("Policies", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
+      Policies.foreach(__v => __obj.updateDynamic("Policies")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PolicyToPath]
     }
   }
@@ -4558,13 +4568,13 @@ package clouddirectory {
         MinorVersion: js.UndefOr[Version] = js.undefined,
         Name: js.UndefOr[SchemaName] = js.undefined
     ): PublishSchemaRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DevelopmentSchemaArn" -> DevelopmentSchemaArn.asInstanceOf[js.Any],
         "Version"              -> Version.asInstanceOf[js.Any]
       )
 
-      MinorVersion.foreach(__v => __obj.update("MinorVersion", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      MinorVersion.foreach(__v => __obj.updateDynamic("MinorVersion")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PublishSchemaRequest]
     }
   }
@@ -4578,8 +4588,8 @@ package clouddirectory {
     def apply(
         PublishedSchemaArn: js.UndefOr[Arn] = js.undefined
     ): PublishSchemaResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PublishedSchemaArn.foreach(__v => __obj.update("PublishedSchemaArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PublishedSchemaArn.foreach(__v => __obj.updateDynamic("PublishedSchemaArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PublishSchemaResponse]
     }
   }
@@ -4595,7 +4605,7 @@ package clouddirectory {
         Document: SchemaJsonDocument,
         SchemaArn: Arn
     ): PutSchemaFromJsonRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Document"  -> Document.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
@@ -4613,8 +4623,8 @@ package clouddirectory {
     def apply(
         Arn: js.UndefOr[Arn] = js.undefined
     ): PutSchemaFromJsonResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutSchemaFromJsonResponse]
     }
   }
@@ -4642,7 +4652,7 @@ package clouddirectory {
         ObjectReference: ObjectReference,
         SchemaFacet: SchemaFacet
     ): RemoveFacetFromObjectRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn"    -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference" -> ObjectReference.asInstanceOf[js.Any],
         "SchemaFacet"     -> SchemaFacet.asInstanceOf[js.Any]
@@ -4658,7 +4668,7 @@ package clouddirectory {
   object RemoveFacetFromObjectResponse {
     def apply(
         ): RemoveFacetFromObjectResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RemoveFacetFromObjectResponse]
     }
@@ -4685,9 +4695,9 @@ package clouddirectory {
         Parameters: js.UndefOr[RuleParameterMap] = js.undefined,
         Type: js.UndefOr[RuleType] = js.undefined
     ): Rule = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Rule]
     }
   }
@@ -4715,9 +4725,9 @@ package clouddirectory {
         FacetName: js.UndefOr[FacetName] = js.undefined,
         SchemaArn: js.UndefOr[Arn] = js.undefined
     ): SchemaFacet = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FacetName.foreach(__v => __obj.update("FacetName", __v.asInstanceOf[js.Any]))
-      SchemaArn.foreach(__v => __obj.update("SchemaArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FacetName.foreach(__v => __obj.updateDynamic("FacetName")(__v.asInstanceOf[js.Any]))
+      SchemaArn.foreach(__v => __obj.updateDynamic("SchemaArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SchemaFacet]
     }
   }
@@ -4736,9 +4746,9 @@ package clouddirectory {
         Key: js.UndefOr[TagKey] = js.undefined,
         Value: js.UndefOr[TagValue] = js.undefined
     ): Tag = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tag]
     }
   }
@@ -4754,7 +4764,7 @@ package clouddirectory {
         ResourceArn: Arn,
         Tags: TagList
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
       )
@@ -4769,7 +4779,7 @@ package clouddirectory {
   object TagResourceResponse {
     def apply(
         ): TagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -4795,12 +4805,12 @@ package clouddirectory {
         NumberValue: js.UndefOr[NumberAttributeValue] = js.undefined,
         StringValue: js.UndefOr[StringAttributeValue] = js.undefined
     ): TypedAttributeValue = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BinaryValue.foreach(__v => __obj.update("BinaryValue", __v.asInstanceOf[js.Any]))
-      BooleanValue.foreach(__v => __obj.update("BooleanValue", __v.asInstanceOf[js.Any]))
-      DatetimeValue.foreach(__v => __obj.update("DatetimeValue", __v.asInstanceOf[js.Any]))
-      NumberValue.foreach(__v => __obj.update("NumberValue", __v.asInstanceOf[js.Any]))
-      StringValue.foreach(__v => __obj.update("StringValue", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BinaryValue.foreach(__v => __obj.updateDynamic("BinaryValue")(__v.asInstanceOf[js.Any]))
+      BooleanValue.foreach(__v => __obj.updateDynamic("BooleanValue")(__v.asInstanceOf[js.Any]))
+      DatetimeValue.foreach(__v => __obj.updateDynamic("DatetimeValue")(__v.asInstanceOf[js.Any]))
+      NumberValue.foreach(__v => __obj.updateDynamic("NumberValue")(__v.asInstanceOf[js.Any]))
+      StringValue.foreach(__v => __obj.updateDynamic("StringValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TypedAttributeValue]
     }
   }
@@ -4823,13 +4833,13 @@ package clouddirectory {
         EndValue: js.UndefOr[TypedAttributeValue] = js.undefined,
         StartValue: js.UndefOr[TypedAttributeValue] = js.undefined
     ): TypedAttributeValueRange = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EndMode"   -> EndMode.asInstanceOf[js.Any],
         "StartMode" -> StartMode.asInstanceOf[js.Any]
       )
 
-      EndValue.foreach(__v => __obj.update("EndValue", __v.asInstanceOf[js.Any]))
-      StartValue.foreach(__v => __obj.update("StartValue", __v.asInstanceOf[js.Any]))
+      EndValue.foreach(__v => __obj.updateDynamic("EndValue")(__v.asInstanceOf[js.Any]))
+      StartValue.foreach(__v => __obj.updateDynamic("StartValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TypedAttributeValueRange]
     }
   }
@@ -4856,15 +4866,15 @@ package clouddirectory {
         IsImmutable: js.UndefOr[Boolean] = js.undefined,
         Rules: js.UndefOr[RuleMap] = js.undefined
     ): TypedLinkAttributeDefinition = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"             -> Name.asInstanceOf[js.Any],
         "RequiredBehavior" -> RequiredBehavior.asInstanceOf[js.Any],
         "Type"             -> Type.asInstanceOf[js.Any]
       )
 
-      DefaultValue.foreach(__v => __obj.update("DefaultValue", __v.asInstanceOf[js.Any]))
-      IsImmutable.foreach(__v => __obj.update("IsImmutable", __v.asInstanceOf[js.Any]))
-      Rules.foreach(__v => __obj.update("Rules", __v.asInstanceOf[js.Any]))
+      DefaultValue.foreach(__v => __obj.updateDynamic("DefaultValue")(__v.asInstanceOf[js.Any]))
+      IsImmutable.foreach(__v => __obj.updateDynamic("IsImmutable")(__v.asInstanceOf[js.Any]))
+      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TypedLinkAttributeDefinition]
     }
   }
@@ -4883,11 +4893,11 @@ package clouddirectory {
         Range: TypedAttributeValueRange,
         AttributeName: js.UndefOr[AttributeName] = js.undefined
     ): TypedLinkAttributeRange = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Range" -> Range.asInstanceOf[js.Any]
       )
 
-      AttributeName.foreach(__v => __obj.update("AttributeName", __v.asInstanceOf[js.Any]))
+      AttributeName.foreach(__v => __obj.updateDynamic("AttributeName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TypedLinkAttributeRange]
     }
   }
@@ -4908,7 +4918,7 @@ package clouddirectory {
         IdentityAttributeOrder: AttributeNameList,
         Name: TypedLinkName
     ): TypedLinkFacet = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Attributes"             -> Attributes.asInstanceOf[js.Any],
         "IdentityAttributeOrder" -> IdentityAttributeOrder.asInstanceOf[js.Any],
         "Name"                   -> Name.asInstanceOf[js.Any]
@@ -4932,7 +4942,7 @@ package clouddirectory {
         Action: UpdateActionType,
         Attribute: TypedLinkAttributeDefinition
     ): TypedLinkFacetAttributeUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Action"    -> Action.asInstanceOf[js.Any],
         "Attribute" -> Attribute.asInstanceOf[js.Any]
       )
@@ -4955,7 +4965,7 @@ package clouddirectory {
         SchemaArn: Arn,
         TypedLinkName: TypedLinkName
     ): TypedLinkSchemaAndFacetName = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SchemaArn"     -> SchemaArn.asInstanceOf[js.Any],
         "TypedLinkName" -> TypedLinkName.asInstanceOf[js.Any]
       )
@@ -4982,7 +4992,7 @@ package clouddirectory {
         TargetObjectReference: ObjectReference,
         TypedLinkFacet: TypedLinkSchemaAndFacetName
     ): TypedLinkSpecifier = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdentityAttributeValues" -> IdentityAttributeValues.asInstanceOf[js.Any],
         "SourceObjectReference"   -> SourceObjectReference.asInstanceOf[js.Any],
         "TargetObjectReference"   -> TargetObjectReference.asInstanceOf[js.Any],
@@ -5004,7 +5014,7 @@ package clouddirectory {
         ResourceArn: Arn,
         TagKeys: TagKeyList
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
       )
@@ -5019,7 +5029,7 @@ package clouddirectory {
   object UntagResourceResponse {
     def apply(
         ): UntagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -5047,13 +5057,13 @@ package clouddirectory {
         AttributeUpdates: js.UndefOr[FacetAttributeUpdateList] = js.undefined,
         ObjectType: js.UndefOr[ObjectType] = js.undefined
     ): UpdateFacetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"      -> Name.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
 
-      AttributeUpdates.foreach(__v => __obj.update("AttributeUpdates", __v.asInstanceOf[js.Any]))
-      ObjectType.foreach(__v => __obj.update("ObjectType", __v.asInstanceOf[js.Any]))
+      AttributeUpdates.foreach(__v => __obj.updateDynamic("AttributeUpdates")(__v.asInstanceOf[js.Any]))
+      ObjectType.foreach(__v => __obj.updateDynamic("ObjectType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFacetRequest]
     }
   }
@@ -5064,7 +5074,7 @@ package clouddirectory {
   object UpdateFacetResponse {
     def apply(
         ): UpdateFacetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateFacetResponse]
     }
@@ -5083,7 +5093,7 @@ package clouddirectory {
         DirectoryArn: Arn,
         TypedLinkSpecifier: TypedLinkSpecifier
     ): UpdateLinkAttributesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AttributeUpdates"   -> AttributeUpdates.asInstanceOf[js.Any],
         "DirectoryArn"       -> DirectoryArn.asInstanceOf[js.Any],
         "TypedLinkSpecifier" -> TypedLinkSpecifier.asInstanceOf[js.Any]
@@ -5099,7 +5109,7 @@ package clouddirectory {
   object UpdateLinkAttributesResponse {
     def apply(
         ): UpdateLinkAttributesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateLinkAttributesResponse]
     }
@@ -5118,7 +5128,7 @@ package clouddirectory {
         DirectoryArn: Arn,
         ObjectReference: ObjectReference
     ): UpdateObjectAttributesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AttributeUpdates" -> AttributeUpdates.asInstanceOf[js.Any],
         "DirectoryArn"     -> DirectoryArn.asInstanceOf[js.Any],
         "ObjectReference"  -> ObjectReference.asInstanceOf[js.Any]
@@ -5137,8 +5147,8 @@ package clouddirectory {
     def apply(
         ObjectIdentifier: js.UndefOr[ObjectIdentifier] = js.undefined
     ): UpdateObjectAttributesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ObjectIdentifier.foreach(__v => __obj.update("ObjectIdentifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ObjectIdentifier.foreach(__v => __obj.updateDynamic("ObjectIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateObjectAttributesResponse]
     }
   }
@@ -5154,7 +5164,7 @@ package clouddirectory {
         Name: SchemaName,
         SchemaArn: Arn
     ): UpdateSchemaRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"      -> Name.asInstanceOf[js.Any],
         "SchemaArn" -> SchemaArn.asInstanceOf[js.Any]
       )
@@ -5172,8 +5182,8 @@ package clouddirectory {
     def apply(
         SchemaArn: js.UndefOr[Arn] = js.undefined
     ): UpdateSchemaResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SchemaArn.foreach(__v => __obj.update("SchemaArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SchemaArn.foreach(__v => __obj.updateDynamic("SchemaArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSchemaResponse]
     }
   }
@@ -5193,7 +5203,7 @@ package clouddirectory {
         Name: TypedLinkName,
         SchemaArn: Arn
     ): UpdateTypedLinkFacetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AttributeUpdates"       -> AttributeUpdates.asInstanceOf[js.Any],
         "IdentityAttributeOrder" -> IdentityAttributeOrder.asInstanceOf[js.Any],
         "Name"                   -> Name.asInstanceOf[js.Any],
@@ -5210,7 +5220,7 @@ package clouddirectory {
   object UpdateTypedLinkFacetResponse {
     def apply(
         ): UpdateTypedLinkFacetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateTypedLinkFacetResponse]
     }
@@ -5229,12 +5239,12 @@ package clouddirectory {
         PublishedSchemaArn: Arn,
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): UpgradeAppliedSchemaRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryArn"       -> DirectoryArn.asInstanceOf[js.Any],
         "PublishedSchemaArn" -> PublishedSchemaArn.asInstanceOf[js.Any]
       )
 
-      DryRun.foreach(__v => __obj.update("DryRun", __v.asInstanceOf[js.Any]))
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpgradeAppliedSchemaRequest]
     }
   }
@@ -5250,9 +5260,9 @@ package clouddirectory {
         DirectoryArn: js.UndefOr[Arn] = js.undefined,
         UpgradedSchemaArn: js.UndefOr[Arn] = js.undefined
     ): UpgradeAppliedSchemaResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DirectoryArn.foreach(__v => __obj.update("DirectoryArn", __v.asInstanceOf[js.Any]))
-      UpgradedSchemaArn.foreach(__v => __obj.update("UpgradedSchemaArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DirectoryArn.foreach(__v => __obj.updateDynamic("DirectoryArn")(__v.asInstanceOf[js.Any]))
+      UpgradedSchemaArn.foreach(__v => __obj.updateDynamic("UpgradedSchemaArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpgradeAppliedSchemaResponse]
     }
   }
@@ -5272,13 +5282,13 @@ package clouddirectory {
         PublishedSchemaArn: Arn,
         DryRun: js.UndefOr[Boolean] = js.undefined
     ): UpgradePublishedSchemaRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DevelopmentSchemaArn" -> DevelopmentSchemaArn.asInstanceOf[js.Any],
         "MinorVersion"         -> MinorVersion.asInstanceOf[js.Any],
         "PublishedSchemaArn"   -> PublishedSchemaArn.asInstanceOf[js.Any]
       )
 
-      DryRun.foreach(__v => __obj.update("DryRun", __v.asInstanceOf[js.Any]))
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpgradePublishedSchemaRequest]
     }
   }
@@ -5292,8 +5302,8 @@ package clouddirectory {
     def apply(
         UpgradedSchemaArn: js.UndefOr[Arn] = js.undefined
     ): UpgradePublishedSchemaResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      UpgradedSchemaArn.foreach(__v => __obj.update("UpgradedSchemaArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      UpgradedSchemaArn.foreach(__v => __obj.updateDynamic("UpgradedSchemaArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpgradePublishedSchemaResponse]
     }
   }

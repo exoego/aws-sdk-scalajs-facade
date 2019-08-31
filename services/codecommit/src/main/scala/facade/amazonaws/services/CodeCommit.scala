@@ -334,7 +334,7 @@ package codecommit {
         filePath: Path,
         message: Message
     ): BatchDescribeMergeConflictsError = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "exceptionName" -> exceptionName.asInstanceOf[js.Any],
         "filePath"      -> filePath.asInstanceOf[js.Any],
         "message"       -> message.asInstanceOf[js.Any]
@@ -371,19 +371,21 @@ package codecommit {
         maxMergeHunks: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): BatchDescribeMergeConflictsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "destinationCommitSpecifier" -> destinationCommitSpecifier.asInstanceOf[js.Any],
         "mergeOption"                -> mergeOption.asInstanceOf[js.Any],
         "repositoryName"             -> repositoryName.asInstanceOf[js.Any],
         "sourceCommitSpecifier"      -> sourceCommitSpecifier.asInstanceOf[js.Any]
       )
 
-      conflictDetailLevel.foreach(__v => __obj.update("conflictDetailLevel", __v.asInstanceOf[js.Any]))
-      conflictResolutionStrategy.foreach(__v => __obj.update("conflictResolutionStrategy", __v.asInstanceOf[js.Any]))
-      filePaths.foreach(__v => __obj.update("filePaths", __v.asInstanceOf[js.Any]))
-      maxConflictFiles.foreach(__v => __obj.update("maxConflictFiles", __v.asInstanceOf[js.Any]))
-      maxMergeHunks.foreach(__v => __obj.update("maxMergeHunks", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
+      conflictResolutionStrategy.foreach(
+        __v => __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
+      )
+      filePaths.foreach(__v => __obj.updateDynamic("filePaths")(__v.asInstanceOf[js.Any]))
+      maxConflictFiles.foreach(__v => __obj.updateDynamic("maxConflictFiles")(__v.asInstanceOf[js.Any]))
+      maxMergeHunks.foreach(__v => __obj.updateDynamic("maxMergeHunks")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDescribeMergeConflictsInput]
     }
   }
@@ -407,15 +409,15 @@ package codecommit {
         errors: js.UndefOr[BatchDescribeMergeConflictsErrors] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): BatchDescribeMergeConflictsOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "conflicts"           -> conflicts.asInstanceOf[js.Any],
         "destinationCommitId" -> destinationCommitId.asInstanceOf[js.Any],
         "sourceCommitId"      -> sourceCommitId.asInstanceOf[js.Any]
       )
 
-      baseCommitId.foreach(__v => __obj.update("baseCommitId", __v.asInstanceOf[js.Any]))
-      errors.foreach(__v => __obj.update("errors", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      baseCommitId.foreach(__v => __obj.updateDynamic("baseCommitId")(__v.asInstanceOf[js.Any]))
+      errors.foreach(__v => __obj.updateDynamic("errors")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDescribeMergeConflictsOutput]
     }
   }
@@ -436,10 +438,10 @@ package codecommit {
         errorCode: js.UndefOr[ErrorCode] = js.undefined,
         errorMessage: js.UndefOr[ErrorMessage] = js.undefined
     ): BatchGetCommitsError = {
-      val __obj = js.Dictionary.empty[js.Any]
-      commitId.foreach(__v => __obj.update("commitId", __v.asInstanceOf[js.Any]))
-      errorCode.foreach(__v => __obj.update("errorCode", __v.asInstanceOf[js.Any]))
-      errorMessage.foreach(__v => __obj.update("errorMessage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      commitId.foreach(__v => __obj.updateDynamic("commitId")(__v.asInstanceOf[js.Any]))
+      errorCode.foreach(__v => __obj.updateDynamic("errorCode")(__v.asInstanceOf[js.Any]))
+      errorMessage.foreach(__v => __obj.updateDynamic("errorMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetCommitsError]
     }
   }
@@ -455,7 +457,7 @@ package codecommit {
         commitIds: CommitIdsInputList,
         repositoryName: RepositoryName
     ): BatchGetCommitsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "commitIds"      -> commitIds.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
@@ -475,9 +477,9 @@ package codecommit {
         commits: js.UndefOr[CommitObjectsList] = js.undefined,
         errors: js.UndefOr[BatchGetCommitsErrorsList] = js.undefined
     ): BatchGetCommitsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      commits.foreach(__v => __obj.update("commits", __v.asInstanceOf[js.Any]))
-      errors.foreach(__v => __obj.update("errors", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      commits.foreach(__v => __obj.updateDynamic("commits")(__v.asInstanceOf[js.Any]))
+      errors.foreach(__v => __obj.updateDynamic("errors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetCommitsOutput]
     }
   }
@@ -494,7 +496,7 @@ package codecommit {
     def apply(
         repositoryNames: RepositoryNameList
     ): BatchGetRepositoriesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "repositoryNames" -> repositoryNames.asInstanceOf[js.Any]
       )
 
@@ -516,9 +518,9 @@ package codecommit {
         repositories: js.UndefOr[RepositoryMetadataList] = js.undefined,
         repositoriesNotFound: js.UndefOr[RepositoryNotFoundList] = js.undefined
     ): BatchGetRepositoriesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      repositories.foreach(__v => __obj.update("repositories", __v.asInstanceOf[js.Any]))
-      repositoriesNotFound.foreach(__v => __obj.update("repositoriesNotFound", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      repositories.foreach(__v => __obj.updateDynamic("repositories")(__v.asInstanceOf[js.Any]))
+      repositoriesNotFound.foreach(__v => __obj.updateDynamic("repositoriesNotFound")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetRepositoriesOutput]
     }
   }
@@ -539,10 +541,10 @@ package codecommit {
         mode: js.UndefOr[Mode] = js.undefined,
         path: js.UndefOr[Path] = js.undefined
     ): BlobMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      blobId.foreach(__v => __obj.update("blobId", __v.asInstanceOf[js.Any]))
-      mode.foreach(__v => __obj.update("mode", __v.asInstanceOf[js.Any]))
-      path.foreach(__v => __obj.update("path", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      blobId.foreach(__v => __obj.updateDynamic("blobId")(__v.asInstanceOf[js.Any]))
+      mode.foreach(__v => __obj.updateDynamic("mode")(__v.asInstanceOf[js.Any]))
+      path.foreach(__v => __obj.updateDynamic("path")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BlobMetadata]
     }
   }
@@ -561,9 +563,9 @@ package codecommit {
         branchName: js.UndefOr[BranchName] = js.undefined,
         commitId: js.UndefOr[CommitId] = js.undefined
     ): BranchInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      branchName.foreach(__v => __obj.update("branchName", __v.asInstanceOf[js.Any]))
-      commitId.foreach(__v => __obj.update("commitId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      branchName.foreach(__v => __obj.updateDynamic("branchName")(__v.asInstanceOf[js.Any]))
+      commitId.foreach(__v => __obj.updateDynamic("commitId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BranchInfo]
     }
   }
@@ -602,15 +604,15 @@ package codecommit {
         inReplyTo: js.UndefOr[CommentId] = js.undefined,
         lastModifiedDate: js.UndefOr[LastModifiedDate] = js.undefined
     ): Comment = {
-      val __obj = js.Dictionary.empty[js.Any]
-      authorArn.foreach(__v => __obj.update("authorArn", __v.asInstanceOf[js.Any]))
-      clientRequestToken.foreach(__v => __obj.update("clientRequestToken", __v.asInstanceOf[js.Any]))
-      commentId.foreach(__v => __obj.update("commentId", __v.asInstanceOf[js.Any]))
-      content.foreach(__v => __obj.update("content", __v.asInstanceOf[js.Any]))
-      creationDate.foreach(__v => __obj.update("creationDate", __v.asInstanceOf[js.Any]))
-      deleted.foreach(__v => __obj.update("deleted", __v.asInstanceOf[js.Any]))
-      inReplyTo.foreach(__v => __obj.update("inReplyTo", __v.asInstanceOf[js.Any]))
-      lastModifiedDate.foreach(__v => __obj.update("lastModifiedDate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      authorArn.foreach(__v => __obj.updateDynamic("authorArn")(__v.asInstanceOf[js.Any]))
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      commentId.foreach(__v => __obj.updateDynamic("commentId")(__v.asInstanceOf[js.Any]))
+      content.foreach(__v => __obj.updateDynamic("content")(__v.asInstanceOf[js.Any]))
+      creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
+      deleted.foreach(__v => __obj.updateDynamic("deleted")(__v.asInstanceOf[js.Any]))
+      inReplyTo.foreach(__v => __obj.updateDynamic("inReplyTo")(__v.asInstanceOf[js.Any]))
+      lastModifiedDate.foreach(__v => __obj.updateDynamic("lastModifiedDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Comment]
     }
   }
@@ -639,14 +641,14 @@ package codecommit {
         location: js.UndefOr[Location] = js.undefined,
         repositoryName: js.UndefOr[RepositoryName] = js.undefined
     ): CommentsForComparedCommit = {
-      val __obj = js.Dictionary.empty[js.Any]
-      afterBlobId.foreach(__v => __obj.update("afterBlobId", __v.asInstanceOf[js.Any]))
-      afterCommitId.foreach(__v => __obj.update("afterCommitId", __v.asInstanceOf[js.Any]))
-      beforeBlobId.foreach(__v => __obj.update("beforeBlobId", __v.asInstanceOf[js.Any]))
-      beforeCommitId.foreach(__v => __obj.update("beforeCommitId", __v.asInstanceOf[js.Any]))
-      comments.foreach(__v => __obj.update("comments", __v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
-      repositoryName.foreach(__v => __obj.update("repositoryName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      afterBlobId.foreach(__v => __obj.updateDynamic("afterBlobId")(__v.asInstanceOf[js.Any]))
+      afterCommitId.foreach(__v => __obj.updateDynamic("afterCommitId")(__v.asInstanceOf[js.Any]))
+      beforeBlobId.foreach(__v => __obj.updateDynamic("beforeBlobId")(__v.asInstanceOf[js.Any]))
+      beforeCommitId.foreach(__v => __obj.updateDynamic("beforeCommitId")(__v.asInstanceOf[js.Any]))
+      comments.foreach(__v => __obj.updateDynamic("comments")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CommentsForComparedCommit]
     }
   }
@@ -677,15 +679,15 @@ package codecommit {
         pullRequestId: js.UndefOr[PullRequestId] = js.undefined,
         repositoryName: js.UndefOr[RepositoryName] = js.undefined
     ): CommentsForPullRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      afterBlobId.foreach(__v => __obj.update("afterBlobId", __v.asInstanceOf[js.Any]))
-      afterCommitId.foreach(__v => __obj.update("afterCommitId", __v.asInstanceOf[js.Any]))
-      beforeBlobId.foreach(__v => __obj.update("beforeBlobId", __v.asInstanceOf[js.Any]))
-      beforeCommitId.foreach(__v => __obj.update("beforeCommitId", __v.asInstanceOf[js.Any]))
-      comments.foreach(__v => __obj.update("comments", __v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
-      pullRequestId.foreach(__v => __obj.update("pullRequestId", __v.asInstanceOf[js.Any]))
-      repositoryName.foreach(__v => __obj.update("repositoryName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      afterBlobId.foreach(__v => __obj.updateDynamic("afterBlobId")(__v.asInstanceOf[js.Any]))
+      afterCommitId.foreach(__v => __obj.updateDynamic("afterCommitId")(__v.asInstanceOf[js.Any]))
+      beforeBlobId.foreach(__v => __obj.updateDynamic("beforeBlobId")(__v.asInstanceOf[js.Any]))
+      beforeCommitId.foreach(__v => __obj.updateDynamic("beforeCommitId")(__v.asInstanceOf[js.Any]))
+      comments.foreach(__v => __obj.updateDynamic("comments")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      pullRequestId.foreach(__v => __obj.updateDynamic("pullRequestId")(__v.asInstanceOf[js.Any]))
+      repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CommentsForPullRequest]
     }
   }
@@ -714,14 +716,14 @@ package codecommit {
         parents: js.UndefOr[ParentList] = js.undefined,
         treeId: js.UndefOr[ObjectId] = js.undefined
     ): Commit = {
-      val __obj = js.Dictionary.empty[js.Any]
-      additionalData.foreach(__v => __obj.update("additionalData", __v.asInstanceOf[js.Any]))
-      author.foreach(__v => __obj.update("author", __v.asInstanceOf[js.Any]))
-      commitId.foreach(__v => __obj.update("commitId", __v.asInstanceOf[js.Any]))
-      committer.foreach(__v => __obj.update("committer", __v.asInstanceOf[js.Any]))
-      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
-      parents.foreach(__v => __obj.update("parents", __v.asInstanceOf[js.Any]))
-      treeId.foreach(__v => __obj.update("treeId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      additionalData.foreach(__v => __obj.updateDynamic("additionalData")(__v.asInstanceOf[js.Any]))
+      author.foreach(__v => __obj.updateDynamic("author")(__v.asInstanceOf[js.Any]))
+      commitId.foreach(__v => __obj.updateDynamic("commitId")(__v.asInstanceOf[js.Any]))
+      committer.foreach(__v => __obj.updateDynamic("committer")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      parents.foreach(__v => __obj.updateDynamic("parents")(__v.asInstanceOf[js.Any]))
+      treeId.foreach(__v => __obj.updateDynamic("treeId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Commit]
     }
   }
@@ -740,9 +742,9 @@ package codecommit {
         conflictMetadata: js.UndefOr[ConflictMetadata] = js.undefined,
         mergeHunks: js.UndefOr[MergeHunks] = js.undefined
     ): Conflict = {
-      val __obj = js.Dictionary.empty[js.Any]
-      conflictMetadata.foreach(__v => __obj.update("conflictMetadata", __v.asInstanceOf[js.Any]))
-      mergeHunks.foreach(__v => __obj.update("mergeHunks", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      conflictMetadata.foreach(__v => __obj.updateDynamic("conflictMetadata")(__v.asInstanceOf[js.Any]))
+      mergeHunks.foreach(__v => __obj.updateDynamic("mergeHunks")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Conflict]
     }
   }
@@ -784,17 +786,17 @@ package codecommit {
         objectTypeConflict: js.UndefOr[IsObjectTypeConflict] = js.undefined,
         objectTypes: js.UndefOr[ObjectTypes] = js.undefined
     ): ConflictMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      contentConflict.foreach(__v => __obj.update("contentConflict", __v.asInstanceOf[js.Any]))
-      fileModeConflict.foreach(__v => __obj.update("fileModeConflict", __v.asInstanceOf[js.Any]))
-      fileModes.foreach(__v => __obj.update("fileModes", __v.asInstanceOf[js.Any]))
-      filePath.foreach(__v => __obj.update("filePath", __v.asInstanceOf[js.Any]))
-      fileSizes.foreach(__v => __obj.update("fileSizes", __v.asInstanceOf[js.Any]))
-      isBinaryFile.foreach(__v => __obj.update("isBinaryFile", __v.asInstanceOf[js.Any]))
-      mergeOperations.foreach(__v => __obj.update("mergeOperations", __v.asInstanceOf[js.Any]))
-      numberOfConflicts.foreach(__v => __obj.update("numberOfConflicts", __v.asInstanceOf[js.Any]))
-      objectTypeConflict.foreach(__v => __obj.update("objectTypeConflict", __v.asInstanceOf[js.Any]))
-      objectTypes.foreach(__v => __obj.update("objectTypes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      contentConflict.foreach(__v => __obj.updateDynamic("contentConflict")(__v.asInstanceOf[js.Any]))
+      fileModeConflict.foreach(__v => __obj.updateDynamic("fileModeConflict")(__v.asInstanceOf[js.Any]))
+      fileModes.foreach(__v => __obj.updateDynamic("fileModes")(__v.asInstanceOf[js.Any]))
+      filePath.foreach(__v => __obj.updateDynamic("filePath")(__v.asInstanceOf[js.Any]))
+      fileSizes.foreach(__v => __obj.updateDynamic("fileSizes")(__v.asInstanceOf[js.Any]))
+      isBinaryFile.foreach(__v => __obj.updateDynamic("isBinaryFile")(__v.asInstanceOf[js.Any]))
+      mergeOperations.foreach(__v => __obj.updateDynamic("mergeOperations")(__v.asInstanceOf[js.Any]))
+      numberOfConflicts.foreach(__v => __obj.updateDynamic("numberOfConflicts")(__v.asInstanceOf[js.Any]))
+      objectTypeConflict.foreach(__v => __obj.updateDynamic("objectTypeConflict")(__v.asInstanceOf[js.Any]))
+      objectTypes.foreach(__v => __obj.updateDynamic("objectTypes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConflictMetadata]
     }
   }
@@ -815,10 +817,10 @@ package codecommit {
         replaceContents: js.UndefOr[ReplaceContentEntries] = js.undefined,
         setFileModes: js.UndefOr[SetFileModeEntries] = js.undefined
     ): ConflictResolution = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deleteFiles.foreach(__v => __obj.update("deleteFiles", __v.asInstanceOf[js.Any]))
-      replaceContents.foreach(__v => __obj.update("replaceContents", __v.asInstanceOf[js.Any]))
-      setFileModes.foreach(__v => __obj.update("setFileModes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deleteFiles.foreach(__v => __obj.updateDynamic("deleteFiles")(__v.asInstanceOf[js.Any]))
+      replaceContents.foreach(__v => __obj.updateDynamic("replaceContents")(__v.asInstanceOf[js.Any]))
+      setFileModes.foreach(__v => __obj.updateDynamic("setFileModes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConflictResolution]
     }
   }
@@ -848,7 +850,7 @@ package codecommit {
         commitId: CommitId,
         repositoryName: RepositoryName
     ): CreateBranchInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "branchName"     -> branchName.asInstanceOf[js.Any],
         "commitId"       -> commitId.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
@@ -885,19 +887,19 @@ package codecommit {
         putFiles: js.UndefOr[PutFileEntries] = js.undefined,
         setFileModes: js.UndefOr[SetFileModeEntries] = js.undefined
     ): CreateCommitInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "branchName"     -> branchName.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      authorName.foreach(__v => __obj.update("authorName", __v.asInstanceOf[js.Any]))
-      commitMessage.foreach(__v => __obj.update("commitMessage", __v.asInstanceOf[js.Any]))
-      deleteFiles.foreach(__v => __obj.update("deleteFiles", __v.asInstanceOf[js.Any]))
-      email.foreach(__v => __obj.update("email", __v.asInstanceOf[js.Any]))
-      keepEmptyFolders.foreach(__v => __obj.update("keepEmptyFolders", __v.asInstanceOf[js.Any]))
-      parentCommitId.foreach(__v => __obj.update("parentCommitId", __v.asInstanceOf[js.Any]))
-      putFiles.foreach(__v => __obj.update("putFiles", __v.asInstanceOf[js.Any]))
-      setFileModes.foreach(__v => __obj.update("setFileModes", __v.asInstanceOf[js.Any]))
+      authorName.foreach(__v => __obj.updateDynamic("authorName")(__v.asInstanceOf[js.Any]))
+      commitMessage.foreach(__v => __obj.updateDynamic("commitMessage")(__v.asInstanceOf[js.Any]))
+      deleteFiles.foreach(__v => __obj.updateDynamic("deleteFiles")(__v.asInstanceOf[js.Any]))
+      email.foreach(__v => __obj.updateDynamic("email")(__v.asInstanceOf[js.Any]))
+      keepEmptyFolders.foreach(__v => __obj.updateDynamic("keepEmptyFolders")(__v.asInstanceOf[js.Any]))
+      parentCommitId.foreach(__v => __obj.updateDynamic("parentCommitId")(__v.asInstanceOf[js.Any]))
+      putFiles.foreach(__v => __obj.updateDynamic("putFiles")(__v.asInstanceOf[js.Any]))
+      setFileModes.foreach(__v => __obj.updateDynamic("setFileModes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCommitInput]
     }
   }
@@ -919,12 +921,12 @@ package codecommit {
         filesUpdated: js.UndefOr[FilesMetadata] = js.undefined,
         treeId: js.UndefOr[ObjectId] = js.undefined
     ): CreateCommitOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      commitId.foreach(__v => __obj.update("commitId", __v.asInstanceOf[js.Any]))
-      filesAdded.foreach(__v => __obj.update("filesAdded", __v.asInstanceOf[js.Any]))
-      filesDeleted.foreach(__v => __obj.update("filesDeleted", __v.asInstanceOf[js.Any]))
-      filesUpdated.foreach(__v => __obj.update("filesUpdated", __v.asInstanceOf[js.Any]))
-      treeId.foreach(__v => __obj.update("treeId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      commitId.foreach(__v => __obj.updateDynamic("commitId")(__v.asInstanceOf[js.Any]))
+      filesAdded.foreach(__v => __obj.updateDynamic("filesAdded")(__v.asInstanceOf[js.Any]))
+      filesDeleted.foreach(__v => __obj.updateDynamic("filesDeleted")(__v.asInstanceOf[js.Any]))
+      filesUpdated.foreach(__v => __obj.updateDynamic("filesUpdated")(__v.asInstanceOf[js.Any]))
+      treeId.foreach(__v => __obj.updateDynamic("treeId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCommitOutput]
     }
   }
@@ -944,13 +946,13 @@ package codecommit {
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
         description: js.UndefOr[Description] = js.undefined
     ): CreatePullRequestInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "targets" -> targets.asInstanceOf[js.Any],
         "title"   -> title.asInstanceOf[js.Any]
       )
 
-      clientRequestToken.foreach(__v => __obj.update("clientRequestToken", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePullRequestInput]
     }
   }
@@ -964,7 +966,7 @@ package codecommit {
     def apply(
         pullRequest: PullRequest
     ): CreatePullRequestOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pullRequest" -> pullRequest.asInstanceOf[js.Any]
       )
 
@@ -988,12 +990,12 @@ package codecommit {
         repositoryDescription: js.UndefOr[RepositoryDescription] = js.undefined,
         tags: js.UndefOr[TagsMap] = js.undefined
     ): CreateRepositoryInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      repositoryDescription.foreach(__v => __obj.update("repositoryDescription", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      repositoryDescription.foreach(__v => __obj.updateDynamic("repositoryDescription")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRepositoryInput]
     }
   }
@@ -1010,8 +1012,8 @@ package codecommit {
     def apply(
         repositoryMetadata: js.UndefOr[RepositoryMetadata] = js.undefined
     ): CreateRepositoryOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      repositoryMetadata.foreach(__v => __obj.update("repositoryMetadata", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      repositoryMetadata.foreach(__v => __obj.updateDynamic("repositoryMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRepositoryOutput]
     }
   }
@@ -1045,20 +1047,22 @@ package codecommit {
         email: js.UndefOr[Email] = js.undefined,
         keepEmptyFolders: js.UndefOr[KeepEmptyFolders] = js.undefined
     ): CreateUnreferencedMergeCommitInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "destinationCommitSpecifier" -> destinationCommitSpecifier.asInstanceOf[js.Any],
         "mergeOption"                -> mergeOption.asInstanceOf[js.Any],
         "repositoryName"             -> repositoryName.asInstanceOf[js.Any],
         "sourceCommitSpecifier"      -> sourceCommitSpecifier.asInstanceOf[js.Any]
       )
 
-      authorName.foreach(__v => __obj.update("authorName", __v.asInstanceOf[js.Any]))
-      commitMessage.foreach(__v => __obj.update("commitMessage", __v.asInstanceOf[js.Any]))
-      conflictDetailLevel.foreach(__v => __obj.update("conflictDetailLevel", __v.asInstanceOf[js.Any]))
-      conflictResolution.foreach(__v => __obj.update("conflictResolution", __v.asInstanceOf[js.Any]))
-      conflictResolutionStrategy.foreach(__v => __obj.update("conflictResolutionStrategy", __v.asInstanceOf[js.Any]))
-      email.foreach(__v => __obj.update("email", __v.asInstanceOf[js.Any]))
-      keepEmptyFolders.foreach(__v => __obj.update("keepEmptyFolders", __v.asInstanceOf[js.Any]))
+      authorName.foreach(__v => __obj.updateDynamic("authorName")(__v.asInstanceOf[js.Any]))
+      commitMessage.foreach(__v => __obj.updateDynamic("commitMessage")(__v.asInstanceOf[js.Any]))
+      conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
+      conflictResolution.foreach(__v => __obj.updateDynamic("conflictResolution")(__v.asInstanceOf[js.Any]))
+      conflictResolutionStrategy.foreach(
+        __v => __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
+      )
+      email.foreach(__v => __obj.updateDynamic("email")(__v.asInstanceOf[js.Any]))
+      keepEmptyFolders.foreach(__v => __obj.updateDynamic("keepEmptyFolders")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateUnreferencedMergeCommitInput]
     }
   }
@@ -1074,9 +1078,9 @@ package codecommit {
         commitId: js.UndefOr[ObjectId] = js.undefined,
         treeId: js.UndefOr[ObjectId] = js.undefined
     ): CreateUnreferencedMergeCommitOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      commitId.foreach(__v => __obj.update("commitId", __v.asInstanceOf[js.Any]))
-      treeId.foreach(__v => __obj.update("treeId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      commitId.foreach(__v => __obj.updateDynamic("commitId")(__v.asInstanceOf[js.Any]))
+      treeId.foreach(__v => __obj.updateDynamic("treeId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateUnreferencedMergeCommitOutput]
     }
   }
@@ -1095,7 +1099,7 @@ package codecommit {
         branchName: BranchName,
         repositoryName: RepositoryName
     ): DeleteBranchInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "branchName"     -> branchName.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
@@ -1116,8 +1120,8 @@ package codecommit {
     def apply(
         deletedBranch: js.UndefOr[BranchInfo] = js.undefined
     ): DeleteBranchOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deletedBranch.foreach(__v => __obj.update("deletedBranch", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deletedBranch.foreach(__v => __obj.updateDynamic("deletedBranch")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteBranchOutput]
     }
   }
@@ -1131,7 +1135,7 @@ package codecommit {
     def apply(
         commentId: CommentId
     ): DeleteCommentContentInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "commentId" -> commentId.asInstanceOf[js.Any]
       )
 
@@ -1148,8 +1152,8 @@ package codecommit {
     def apply(
         comment: js.UndefOr[Comment] = js.undefined
     ): DeleteCommentContentOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      comment.foreach(__v => __obj.update("comment", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      comment.foreach(__v => __obj.updateDynamic("comment")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteCommentContentOutput]
     }
   }
@@ -1166,7 +1170,7 @@ package codecommit {
     def apply(
         filePath: Path
     ): DeleteFileEntry = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "filePath" -> filePath.asInstanceOf[js.Any]
       )
 
@@ -1197,17 +1201,17 @@ package codecommit {
         keepEmptyFolders: js.UndefOr[KeepEmptyFolders] = js.undefined,
         name: js.UndefOr[Name] = js.undefined
     ): DeleteFileInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "branchName"     -> branchName.asInstanceOf[js.Any],
         "filePath"       -> filePath.asInstanceOf[js.Any],
         "parentCommitId" -> parentCommitId.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      commitMessage.foreach(__v => __obj.update("commitMessage", __v.asInstanceOf[js.Any]))
-      email.foreach(__v => __obj.update("email", __v.asInstanceOf[js.Any]))
-      keepEmptyFolders.foreach(__v => __obj.update("keepEmptyFolders", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      commitMessage.foreach(__v => __obj.updateDynamic("commitMessage")(__v.asInstanceOf[js.Any]))
+      email.foreach(__v => __obj.updateDynamic("email")(__v.asInstanceOf[js.Any]))
+      keepEmptyFolders.foreach(__v => __obj.updateDynamic("keepEmptyFolders")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteFileInput]
     }
   }
@@ -1227,7 +1231,7 @@ package codecommit {
         filePath: Path,
         treeId: ObjectId
     ): DeleteFileOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "blobId"   -> blobId.asInstanceOf[js.Any],
         "commitId" -> commitId.asInstanceOf[js.Any],
         "filePath" -> filePath.asInstanceOf[js.Any],
@@ -1250,7 +1254,7 @@ package codecommit {
     def apply(
         repositoryName: RepositoryName
     ): DeleteRepositoryInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
@@ -1270,8 +1274,8 @@ package codecommit {
     def apply(
         repositoryId: js.UndefOr[RepositoryId] = js.undefined
     ): DeleteRepositoryOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      repositoryId.foreach(__v => __obj.update("repositoryId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      repositoryId.foreach(__v => __obj.updateDynamic("repositoryId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteRepositoryOutput]
     }
   }
@@ -1301,7 +1305,7 @@ package codecommit {
         maxMergeHunks: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeMergeConflictsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "destinationCommitSpecifier" -> destinationCommitSpecifier.asInstanceOf[js.Any],
         "filePath"                   -> filePath.asInstanceOf[js.Any],
         "mergeOption"                -> mergeOption.asInstanceOf[js.Any],
@@ -1309,10 +1313,12 @@ package codecommit {
         "sourceCommitSpecifier"      -> sourceCommitSpecifier.asInstanceOf[js.Any]
       )
 
-      conflictDetailLevel.foreach(__v => __obj.update("conflictDetailLevel", __v.asInstanceOf[js.Any]))
-      conflictResolutionStrategy.foreach(__v => __obj.update("conflictResolutionStrategy", __v.asInstanceOf[js.Any]))
-      maxMergeHunks.foreach(__v => __obj.update("maxMergeHunks", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
+      conflictResolutionStrategy.foreach(
+        __v => __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
+      )
+      maxMergeHunks.foreach(__v => __obj.updateDynamic("maxMergeHunks")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMergeConflictsInput]
     }
   }
@@ -1336,15 +1342,15 @@ package codecommit {
         baseCommitId: js.UndefOr[ObjectId] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeMergeConflictsOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "conflictMetadata"    -> conflictMetadata.asInstanceOf[js.Any],
         "destinationCommitId" -> destinationCommitId.asInstanceOf[js.Any],
         "mergeHunks"          -> mergeHunks.asInstanceOf[js.Any],
         "sourceCommitId"      -> sourceCommitId.asInstanceOf[js.Any]
       )
 
-      baseCommitId.foreach(__v => __obj.update("baseCommitId", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      baseCommitId.foreach(__v => __obj.updateDynamic("baseCommitId")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMergeConflictsOutput]
     }
   }
@@ -1366,14 +1372,14 @@ package codecommit {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         pullRequestEventType: js.UndefOr[PullRequestEventType] = js.undefined
     ): DescribePullRequestEventsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pullRequestId" -> pullRequestId.asInstanceOf[js.Any]
       )
 
-      actorArn.foreach(__v => __obj.update("actorArn", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      pullRequestEventType.foreach(__v => __obj.update("pullRequestEventType", __v.asInstanceOf[js.Any]))
+      actorArn.foreach(__v => __obj.updateDynamic("actorArn")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      pullRequestEventType.foreach(__v => __obj.updateDynamic("pullRequestEventType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePullRequestEventsInput]
     }
   }
@@ -1389,11 +1395,11 @@ package codecommit {
         pullRequestEvents: PullRequestEventList,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribePullRequestEventsOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pullRequestEvents" -> pullRequestEvents.asInstanceOf[js.Any]
       )
 
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePullRequestEventsOutput]
     }
   }
@@ -1414,10 +1420,10 @@ package codecommit {
         beforeBlob: js.UndefOr[BlobMetadata] = js.undefined,
         changeType: js.UndefOr[ChangeTypeEnum] = js.undefined
     ): Difference = {
-      val __obj = js.Dictionary.empty[js.Any]
-      afterBlob.foreach(__v => __obj.update("afterBlob", __v.asInstanceOf[js.Any]))
-      beforeBlob.foreach(__v => __obj.update("beforeBlob", __v.asInstanceOf[js.Any]))
-      changeType.foreach(__v => __obj.update("changeType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      afterBlob.foreach(__v => __obj.updateDynamic("afterBlob")(__v.asInstanceOf[js.Any]))
+      beforeBlob.foreach(__v => __obj.updateDynamic("beforeBlob")(__v.asInstanceOf[js.Any]))
+      changeType.foreach(__v => __obj.updateDynamic("changeType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Difference]
     }
   }
@@ -1440,11 +1446,11 @@ package codecommit {
         fileMode: js.UndefOr[FileModeTypeEnum] = js.undefined,
         relativePath: js.UndefOr[Path] = js.undefined
     ): File = {
-      val __obj = js.Dictionary.empty[js.Any]
-      absolutePath.foreach(__v => __obj.update("absolutePath", __v.asInstanceOf[js.Any]))
-      blobId.foreach(__v => __obj.update("blobId", __v.asInstanceOf[js.Any]))
-      fileMode.foreach(__v => __obj.update("fileMode", __v.asInstanceOf[js.Any]))
-      relativePath.foreach(__v => __obj.update("relativePath", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      absolutePath.foreach(__v => __obj.updateDynamic("absolutePath")(__v.asInstanceOf[js.Any]))
+      blobId.foreach(__v => __obj.updateDynamic("blobId")(__v.asInstanceOf[js.Any]))
+      fileMode.foreach(__v => __obj.updateDynamic("fileMode")(__v.asInstanceOf[js.Any]))
+      relativePath.foreach(__v => __obj.updateDynamic("relativePath")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[File]
     }
   }
@@ -1465,10 +1471,10 @@ package codecommit {
         blobId: js.UndefOr[ObjectId] = js.undefined,
         fileMode: js.UndefOr[FileModeTypeEnum] = js.undefined
     ): FileMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      absolutePath.foreach(__v => __obj.update("absolutePath", __v.asInstanceOf[js.Any]))
-      blobId.foreach(__v => __obj.update("blobId", __v.asInstanceOf[js.Any]))
-      fileMode.foreach(__v => __obj.update("fileMode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      absolutePath.foreach(__v => __obj.updateDynamic("absolutePath")(__v.asInstanceOf[js.Any]))
+      blobId.foreach(__v => __obj.updateDynamic("blobId")(__v.asInstanceOf[js.Any]))
+      fileMode.foreach(__v => __obj.updateDynamic("fileMode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FileMetadata]
     }
   }
@@ -1497,10 +1503,10 @@ package codecommit {
         destination: js.UndefOr[FileModeTypeEnum] = js.undefined,
         source: js.UndefOr[FileModeTypeEnum] = js.undefined
     ): FileModes = {
-      val __obj = js.Dictionary.empty[js.Any]
-      base.foreach(__v => __obj.update("base", __v.asInstanceOf[js.Any]))
-      destination.foreach(__v => __obj.update("destination", __v.asInstanceOf[js.Any]))
-      source.foreach(__v => __obj.update("source", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      base.foreach(__v => __obj.updateDynamic("base")(__v.asInstanceOf[js.Any]))
+      destination.foreach(__v => __obj.updateDynamic("destination")(__v.asInstanceOf[js.Any]))
+      source.foreach(__v => __obj.updateDynamic("source")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FileModes]
     }
   }
@@ -1521,10 +1527,10 @@ package codecommit {
         destination: js.UndefOr[FileSize] = js.undefined,
         source: js.UndefOr[FileSize] = js.undefined
     ): FileSizes = {
-      val __obj = js.Dictionary.empty[js.Any]
-      base.foreach(__v => __obj.update("base", __v.asInstanceOf[js.Any]))
-      destination.foreach(__v => __obj.update("destination", __v.asInstanceOf[js.Any]))
-      source.foreach(__v => __obj.update("source", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      base.foreach(__v => __obj.updateDynamic("base")(__v.asInstanceOf[js.Any]))
+      destination.foreach(__v => __obj.updateDynamic("destination")(__v.asInstanceOf[js.Any]))
+      source.foreach(__v => __obj.updateDynamic("source")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FileSizes]
     }
   }
@@ -1545,10 +1551,10 @@ package codecommit {
         relativePath: js.UndefOr[Path] = js.undefined,
         treeId: js.UndefOr[ObjectId] = js.undefined
     ): Folder = {
-      val __obj = js.Dictionary.empty[js.Any]
-      absolutePath.foreach(__v => __obj.update("absolutePath", __v.asInstanceOf[js.Any]))
-      relativePath.foreach(__v => __obj.update("relativePath", __v.asInstanceOf[js.Any]))
-      treeId.foreach(__v => __obj.update("treeId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      absolutePath.foreach(__v => __obj.updateDynamic("absolutePath")(__v.asInstanceOf[js.Any]))
+      relativePath.foreach(__v => __obj.updateDynamic("relativePath")(__v.asInstanceOf[js.Any]))
+      treeId.foreach(__v => __obj.updateDynamic("treeId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Folder]
     }
   }
@@ -1567,7 +1573,7 @@ package codecommit {
         blobId: ObjectId,
         repositoryName: RepositoryName
     ): GetBlobInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "blobId"         -> blobId.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
@@ -1588,7 +1594,7 @@ package codecommit {
     def apply(
         content: blob
     ): GetBlobOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "content" -> content.asInstanceOf[js.Any]
       )
 
@@ -1610,9 +1616,9 @@ package codecommit {
         branchName: js.UndefOr[BranchName] = js.undefined,
         repositoryName: js.UndefOr[RepositoryName] = js.undefined
     ): GetBranchInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      branchName.foreach(__v => __obj.update("branchName", __v.asInstanceOf[js.Any]))
-      repositoryName.foreach(__v => __obj.update("repositoryName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      branchName.foreach(__v => __obj.updateDynamic("branchName")(__v.asInstanceOf[js.Any]))
+      repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBranchInput]
     }
   }
@@ -1629,8 +1635,8 @@ package codecommit {
     def apply(
         branch: js.UndefOr[BranchInfo] = js.undefined
     ): GetBranchOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      branch.foreach(__v => __obj.update("branch", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      branch.foreach(__v => __obj.updateDynamic("branch")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBranchOutput]
     }
   }
@@ -1644,7 +1650,7 @@ package codecommit {
     def apply(
         commentId: CommentId
     ): GetCommentInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "commentId" -> commentId.asInstanceOf[js.Any]
       )
 
@@ -1661,8 +1667,8 @@ package codecommit {
     def apply(
         comment: js.UndefOr[Comment] = js.undefined
     ): GetCommentOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      comment.foreach(__v => __obj.update("comment", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      comment.foreach(__v => __obj.updateDynamic("comment")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCommentOutput]
     }
   }
@@ -1684,14 +1690,14 @@ package codecommit {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetCommentsForComparedCommitInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "afterCommitId"  -> afterCommitId.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      beforeCommitId.foreach(__v => __obj.update("beforeCommitId", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      beforeCommitId.foreach(__v => __obj.updateDynamic("beforeCommitId")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCommentsForComparedCommitInput]
     }
   }
@@ -1707,11 +1713,11 @@ package codecommit {
         commentsForComparedCommitData: js.UndefOr[CommentsForComparedCommitData] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetCommentsForComparedCommitOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       commentsForComparedCommitData.foreach(
-        __v => __obj.update("commentsForComparedCommitData", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("commentsForComparedCommitData")(__v.asInstanceOf[js.Any])
       )
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCommentsForComparedCommitOutput]
     }
   }
@@ -1735,15 +1741,15 @@ package codecommit {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         repositoryName: js.UndefOr[RepositoryName] = js.undefined
     ): GetCommentsForPullRequestInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pullRequestId" -> pullRequestId.asInstanceOf[js.Any]
       )
 
-      afterCommitId.foreach(__v => __obj.update("afterCommitId", __v.asInstanceOf[js.Any]))
-      beforeCommitId.foreach(__v => __obj.update("beforeCommitId", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      repositoryName.foreach(__v => __obj.update("repositoryName", __v.asInstanceOf[js.Any]))
+      afterCommitId.foreach(__v => __obj.updateDynamic("afterCommitId")(__v.asInstanceOf[js.Any]))
+      beforeCommitId.foreach(__v => __obj.updateDynamic("beforeCommitId")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCommentsForPullRequestInput]
     }
   }
@@ -1759,9 +1765,11 @@ package codecommit {
         commentsForPullRequestData: js.UndefOr[CommentsForPullRequestData] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetCommentsForPullRequestOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      commentsForPullRequestData.foreach(__v => __obj.update("commentsForPullRequestData", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      commentsForPullRequestData.foreach(
+        __v => __obj.updateDynamic("commentsForPullRequestData")(__v.asInstanceOf[js.Any])
+      )
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCommentsForPullRequestOutput]
     }
   }
@@ -1780,7 +1788,7 @@ package codecommit {
         commitId: ObjectId,
         repositoryName: RepositoryName
     ): GetCommitInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "commitId"       -> commitId.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
@@ -1801,7 +1809,7 @@ package codecommit {
     def apply(
         commit: Commit
     ): GetCommitOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "commit" -> commit.asInstanceOf[js.Any]
       )
 
@@ -1830,16 +1838,16 @@ package codecommit {
         beforeCommitSpecifier: js.UndefOr[CommitName] = js.undefined,
         beforePath: js.UndefOr[Path] = js.undefined
     ): GetDifferencesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "afterCommitSpecifier" -> afterCommitSpecifier.asInstanceOf[js.Any],
         "repositoryName"       -> repositoryName.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      afterPath.foreach(__v => __obj.update("afterPath", __v.asInstanceOf[js.Any]))
-      beforeCommitSpecifier.foreach(__v => __obj.update("beforeCommitSpecifier", __v.asInstanceOf[js.Any]))
-      beforePath.foreach(__v => __obj.update("beforePath", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      afterPath.foreach(__v => __obj.updateDynamic("afterPath")(__v.asInstanceOf[js.Any]))
+      beforeCommitSpecifier.foreach(__v => __obj.updateDynamic("beforeCommitSpecifier")(__v.asInstanceOf[js.Any]))
+      beforePath.foreach(__v => __obj.updateDynamic("beforePath")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDifferencesInput]
     }
   }
@@ -1855,9 +1863,9 @@ package codecommit {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         differences: js.UndefOr[DifferenceList] = js.undefined
     ): GetDifferencesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      differences.foreach(__v => __obj.update("differences", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      differences.foreach(__v => __obj.updateDynamic("differences")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDifferencesOutput]
     }
   }
@@ -1875,12 +1883,12 @@ package codecommit {
         repositoryName: RepositoryName,
         commitSpecifier: js.UndefOr[CommitName] = js.undefined
     ): GetFileInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "filePath"       -> filePath.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      commitSpecifier.foreach(__v => __obj.update("commitSpecifier", __v.asInstanceOf[js.Any]))
+      commitSpecifier.foreach(__v => __obj.updateDynamic("commitSpecifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFileInput]
     }
   }
@@ -1904,7 +1912,7 @@ package codecommit {
         filePath: Path,
         fileSize: ObjectSize
     ): GetFileOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "blobId"      -> blobId.asInstanceOf[js.Any],
         "commitId"    -> commitId.asInstanceOf[js.Any],
         "fileContent" -> fileContent.asInstanceOf[js.Any],
@@ -1930,12 +1938,12 @@ package codecommit {
         repositoryName: RepositoryName,
         commitSpecifier: js.UndefOr[CommitName] = js.undefined
     ): GetFolderInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "folderPath"     -> folderPath.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      commitSpecifier.foreach(__v => __obj.update("commitSpecifier", __v.asInstanceOf[js.Any]))
+      commitSpecifier.foreach(__v => __obj.updateDynamic("commitSpecifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFolderInput]
     }
   }
@@ -1961,16 +1969,16 @@ package codecommit {
         symbolicLinks: js.UndefOr[SymbolicLinkList] = js.undefined,
         treeId: js.UndefOr[ObjectId] = js.undefined
     ): GetFolderOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "commitId"   -> commitId.asInstanceOf[js.Any],
         "folderPath" -> folderPath.asInstanceOf[js.Any]
       )
 
-      files.foreach(__v => __obj.update("files", __v.asInstanceOf[js.Any]))
-      subFolders.foreach(__v => __obj.update("subFolders", __v.asInstanceOf[js.Any]))
-      subModules.foreach(__v => __obj.update("subModules", __v.asInstanceOf[js.Any]))
-      symbolicLinks.foreach(__v => __obj.update("symbolicLinks", __v.asInstanceOf[js.Any]))
-      treeId.foreach(__v => __obj.update("treeId", __v.asInstanceOf[js.Any]))
+      files.foreach(__v => __obj.updateDynamic("files")(__v.asInstanceOf[js.Any]))
+      subFolders.foreach(__v => __obj.updateDynamic("subFolders")(__v.asInstanceOf[js.Any]))
+      subModules.foreach(__v => __obj.updateDynamic("subModules")(__v.asInstanceOf[js.Any]))
+      symbolicLinks.foreach(__v => __obj.updateDynamic("symbolicLinks")(__v.asInstanceOf[js.Any]))
+      treeId.foreach(__v => __obj.updateDynamic("treeId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFolderOutput]
     }
   }
@@ -1992,14 +2000,16 @@ package codecommit {
         conflictDetailLevel: js.UndefOr[ConflictDetailLevelTypeEnum] = js.undefined,
         conflictResolutionStrategy: js.UndefOr[ConflictResolutionStrategyTypeEnum] = js.undefined
     ): GetMergeCommitInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "destinationCommitSpecifier" -> destinationCommitSpecifier.asInstanceOf[js.Any],
         "repositoryName"             -> repositoryName.asInstanceOf[js.Any],
         "sourceCommitSpecifier"      -> sourceCommitSpecifier.asInstanceOf[js.Any]
       )
 
-      conflictDetailLevel.foreach(__v => __obj.update("conflictDetailLevel", __v.asInstanceOf[js.Any]))
-      conflictResolutionStrategy.foreach(__v => __obj.update("conflictResolutionStrategy", __v.asInstanceOf[js.Any]))
+      conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
+      conflictResolutionStrategy.foreach(
+        __v => __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[GetMergeCommitInput]
     }
   }
@@ -2019,11 +2029,11 @@ package codecommit {
         mergedCommitId: js.UndefOr[ObjectId] = js.undefined,
         sourceCommitId: js.UndefOr[ObjectId] = js.undefined
     ): GetMergeCommitOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      baseCommitId.foreach(__v => __obj.update("baseCommitId", __v.asInstanceOf[js.Any]))
-      destinationCommitId.foreach(__v => __obj.update("destinationCommitId", __v.asInstanceOf[js.Any]))
-      mergedCommitId.foreach(__v => __obj.update("mergedCommitId", __v.asInstanceOf[js.Any]))
-      sourceCommitId.foreach(__v => __obj.update("sourceCommitId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      baseCommitId.foreach(__v => __obj.updateDynamic("baseCommitId")(__v.asInstanceOf[js.Any]))
+      destinationCommitId.foreach(__v => __obj.updateDynamic("destinationCommitId")(__v.asInstanceOf[js.Any]))
+      mergedCommitId.foreach(__v => __obj.updateDynamic("mergedCommitId")(__v.asInstanceOf[js.Any]))
+      sourceCommitId.foreach(__v => __obj.updateDynamic("sourceCommitId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMergeCommitOutput]
     }
   }
@@ -2051,17 +2061,19 @@ package codecommit {
         maxConflictFiles: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetMergeConflictsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "destinationCommitSpecifier" -> destinationCommitSpecifier.asInstanceOf[js.Any],
         "mergeOption"                -> mergeOption.asInstanceOf[js.Any],
         "repositoryName"             -> repositoryName.asInstanceOf[js.Any],
         "sourceCommitSpecifier"      -> sourceCommitSpecifier.asInstanceOf[js.Any]
       )
 
-      conflictDetailLevel.foreach(__v => __obj.update("conflictDetailLevel", __v.asInstanceOf[js.Any]))
-      conflictResolutionStrategy.foreach(__v => __obj.update("conflictResolutionStrategy", __v.asInstanceOf[js.Any]))
-      maxConflictFiles.foreach(__v => __obj.update("maxConflictFiles", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
+      conflictResolutionStrategy.foreach(
+        __v => __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
+      )
+      maxConflictFiles.foreach(__v => __obj.updateDynamic("maxConflictFiles")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMergeConflictsInput]
     }
   }
@@ -2085,15 +2097,15 @@ package codecommit {
         baseCommitId: js.UndefOr[ObjectId] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): GetMergeConflictsOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "conflictMetadataList" -> conflictMetadataList.asInstanceOf[js.Any],
         "destinationCommitId"  -> destinationCommitId.asInstanceOf[js.Any],
         "mergeable"            -> mergeable.asInstanceOf[js.Any],
         "sourceCommitId"       -> sourceCommitId.asInstanceOf[js.Any]
       )
 
-      baseCommitId.foreach(__v => __obj.update("baseCommitId", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      baseCommitId.foreach(__v => __obj.updateDynamic("baseCommitId")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMergeConflictsOutput]
     }
   }
@@ -2115,14 +2127,16 @@ package codecommit {
         conflictDetailLevel: js.UndefOr[ConflictDetailLevelTypeEnum] = js.undefined,
         conflictResolutionStrategy: js.UndefOr[ConflictResolutionStrategyTypeEnum] = js.undefined
     ): GetMergeOptionsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "destinationCommitSpecifier" -> destinationCommitSpecifier.asInstanceOf[js.Any],
         "repositoryName"             -> repositoryName.asInstanceOf[js.Any],
         "sourceCommitSpecifier"      -> sourceCommitSpecifier.asInstanceOf[js.Any]
       )
 
-      conflictDetailLevel.foreach(__v => __obj.update("conflictDetailLevel", __v.asInstanceOf[js.Any]))
-      conflictResolutionStrategy.foreach(__v => __obj.update("conflictResolutionStrategy", __v.asInstanceOf[js.Any]))
+      conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
+      conflictResolutionStrategy.foreach(
+        __v => __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[GetMergeOptionsInput]
     }
   }
@@ -2142,7 +2156,7 @@ package codecommit {
         mergeOptions: MergeOptions,
         sourceCommitId: ObjectId
     ): GetMergeOptionsOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "baseCommitId"        -> baseCommitId.asInstanceOf[js.Any],
         "destinationCommitId" -> destinationCommitId.asInstanceOf[js.Any],
         "mergeOptions"        -> mergeOptions.asInstanceOf[js.Any],
@@ -2162,7 +2176,7 @@ package codecommit {
     def apply(
         pullRequestId: PullRequestId
     ): GetPullRequestInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pullRequestId" -> pullRequestId.asInstanceOf[js.Any]
       )
 
@@ -2179,7 +2193,7 @@ package codecommit {
     def apply(
         pullRequest: PullRequest
     ): GetPullRequestOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pullRequest" -> pullRequest.asInstanceOf[js.Any]
       )
 
@@ -2199,7 +2213,7 @@ package codecommit {
     def apply(
         repositoryName: RepositoryName
     ): GetRepositoryInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
@@ -2219,8 +2233,8 @@ package codecommit {
     def apply(
         repositoryMetadata: js.UndefOr[RepositoryMetadata] = js.undefined
     ): GetRepositoryOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      repositoryMetadata.foreach(__v => __obj.update("repositoryMetadata", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      repositoryMetadata.foreach(__v => __obj.updateDynamic("repositoryMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRepositoryOutput]
     }
   }
@@ -2237,7 +2251,7 @@ package codecommit {
     def apply(
         repositoryName: RepositoryName
     ): GetRepositoryTriggersInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
@@ -2259,9 +2273,9 @@ package codecommit {
         configurationId: js.UndefOr[RepositoryTriggersConfigurationId] = js.undefined,
         triggers: js.UndefOr[RepositoryTriggersList] = js.undefined
     ): GetRepositoryTriggersOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      configurationId.foreach(__v => __obj.update("configurationId", __v.asInstanceOf[js.Any]))
-      triggers.foreach(__v => __obj.update("triggers", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      configurationId.foreach(__v => __obj.updateDynamic("configurationId")(__v.asInstanceOf[js.Any]))
+      triggers.foreach(__v => __obj.updateDynamic("triggers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRepositoryTriggersOutput]
     }
   }
@@ -2282,10 +2296,10 @@ package codecommit {
         destination: js.UndefOr[CapitalBoolean] = js.undefined,
         source: js.UndefOr[CapitalBoolean] = js.undefined
     ): IsBinaryFile = {
-      val __obj = js.Dictionary.empty[js.Any]
-      base.foreach(__v => __obj.update("base", __v.asInstanceOf[js.Any]))
-      destination.foreach(__v => __obj.update("destination", __v.asInstanceOf[js.Any]))
-      source.foreach(__v => __obj.update("source", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      base.foreach(__v => __obj.updateDynamic("base")(__v.asInstanceOf[js.Any]))
+      destination.foreach(__v => __obj.updateDynamic("destination")(__v.asInstanceOf[js.Any]))
+      source.foreach(__v => __obj.updateDynamic("source")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IsBinaryFile]
     }
   }
@@ -2304,11 +2318,11 @@ package codecommit {
         repositoryName: RepositoryName,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListBranchesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBranchesInput]
     }
   }
@@ -2327,9 +2341,9 @@ package codecommit {
         branches: js.UndefOr[BranchNameList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListBranchesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      branches.foreach(__v => __obj.update("branches", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      branches.foreach(__v => __obj.updateDynamic("branches")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBranchesOutput]
     }
   }
@@ -2351,14 +2365,14 @@ package codecommit {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         pullRequestStatus: js.UndefOr[PullRequestStatusEnum] = js.undefined
     ): ListPullRequestsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      authorArn.foreach(__v => __obj.update("authorArn", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      pullRequestStatus.foreach(__v => __obj.update("pullRequestStatus", __v.asInstanceOf[js.Any]))
+      authorArn.foreach(__v => __obj.updateDynamic("authorArn")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      pullRequestStatus.foreach(__v => __obj.updateDynamic("pullRequestStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPullRequestsInput]
     }
   }
@@ -2374,11 +2388,11 @@ package codecommit {
         pullRequestIds: PullRequestIdList,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListPullRequestsOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pullRequestIds" -> pullRequestIds.asInstanceOf[js.Any]
       )
 
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPullRequestsOutput]
     }
   }
@@ -2399,10 +2413,10 @@ package codecommit {
         order: js.UndefOr[OrderEnum] = js.undefined,
         sortBy: js.UndefOr[SortByEnum] = js.undefined
     ): ListRepositoriesInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      order.foreach(__v => __obj.update("order", __v.asInstanceOf[js.Any]))
-      sortBy.foreach(__v => __obj.update("sortBy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      order.foreach(__v => __obj.updateDynamic("order")(__v.asInstanceOf[js.Any]))
+      sortBy.foreach(__v => __obj.updateDynamic("sortBy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRepositoriesInput]
     }
   }
@@ -2421,9 +2435,9 @@ package codecommit {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         repositories: js.UndefOr[RepositoryNameIdPairList] = js.undefined
     ): ListRepositoriesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      repositories.foreach(__v => __obj.update("repositories", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      repositories.foreach(__v => __obj.updateDynamic("repositories")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRepositoriesOutput]
     }
   }
@@ -2439,11 +2453,11 @@ package codecommit {
         resourceArn: ResourceArn,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListTagsForResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
 
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceInput]
     }
   }
@@ -2459,9 +2473,9 @@ package codecommit {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         tags: js.UndefOr[TagsMap] = js.undefined
     ): ListTagsForResourceOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceOutput]
     }
   }
@@ -2482,10 +2496,10 @@ package codecommit {
         filePosition: js.UndefOr[Position] = js.undefined,
         relativeFileVersion: js.UndefOr[RelativeFileVersionEnum] = js.undefined
     ): Location = {
-      val __obj = js.Dictionary.empty[js.Any]
-      filePath.foreach(__v => __obj.update("filePath", __v.asInstanceOf[js.Any]))
-      filePosition.foreach(__v => __obj.update("filePosition", __v.asInstanceOf[js.Any]))
-      relativeFileVersion.foreach(__v => __obj.update("relativeFileVersion", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      filePath.foreach(__v => __obj.updateDynamic("filePath")(__v.asInstanceOf[js.Any]))
+      filePosition.foreach(__v => __obj.updateDynamic("filePosition")(__v.asInstanceOf[js.Any]))
+      relativeFileVersion.foreach(__v => __obj.updateDynamic("relativeFileVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Location]
     }
   }
@@ -2505,13 +2519,13 @@ package codecommit {
         sourceCommitSpecifier: CommitName,
         targetBranch: js.UndefOr[BranchName] = js.undefined
     ): MergeBranchesByFastForwardInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "destinationCommitSpecifier" -> destinationCommitSpecifier.asInstanceOf[js.Any],
         "repositoryName"             -> repositoryName.asInstanceOf[js.Any],
         "sourceCommitSpecifier"      -> sourceCommitSpecifier.asInstanceOf[js.Any]
       )
 
-      targetBranch.foreach(__v => __obj.update("targetBranch", __v.asInstanceOf[js.Any]))
+      targetBranch.foreach(__v => __obj.updateDynamic("targetBranch")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MergeBranchesByFastForwardInput]
     }
   }
@@ -2527,9 +2541,9 @@ package codecommit {
         commitId: js.UndefOr[ObjectId] = js.undefined,
         treeId: js.UndefOr[ObjectId] = js.undefined
     ): MergeBranchesByFastForwardOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      commitId.foreach(__v => __obj.update("commitId", __v.asInstanceOf[js.Any]))
-      treeId.foreach(__v => __obj.update("treeId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      commitId.foreach(__v => __obj.updateDynamic("commitId")(__v.asInstanceOf[js.Any]))
+      treeId.foreach(__v => __obj.updateDynamic("treeId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MergeBranchesByFastForwardOutput]
     }
   }
@@ -2563,20 +2577,22 @@ package codecommit {
         keepEmptyFolders: js.UndefOr[KeepEmptyFolders] = js.undefined,
         targetBranch: js.UndefOr[BranchName] = js.undefined
     ): MergeBranchesBySquashInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "destinationCommitSpecifier" -> destinationCommitSpecifier.asInstanceOf[js.Any],
         "repositoryName"             -> repositoryName.asInstanceOf[js.Any],
         "sourceCommitSpecifier"      -> sourceCommitSpecifier.asInstanceOf[js.Any]
       )
 
-      authorName.foreach(__v => __obj.update("authorName", __v.asInstanceOf[js.Any]))
-      commitMessage.foreach(__v => __obj.update("commitMessage", __v.asInstanceOf[js.Any]))
-      conflictDetailLevel.foreach(__v => __obj.update("conflictDetailLevel", __v.asInstanceOf[js.Any]))
-      conflictResolution.foreach(__v => __obj.update("conflictResolution", __v.asInstanceOf[js.Any]))
-      conflictResolutionStrategy.foreach(__v => __obj.update("conflictResolutionStrategy", __v.asInstanceOf[js.Any]))
-      email.foreach(__v => __obj.update("email", __v.asInstanceOf[js.Any]))
-      keepEmptyFolders.foreach(__v => __obj.update("keepEmptyFolders", __v.asInstanceOf[js.Any]))
-      targetBranch.foreach(__v => __obj.update("targetBranch", __v.asInstanceOf[js.Any]))
+      authorName.foreach(__v => __obj.updateDynamic("authorName")(__v.asInstanceOf[js.Any]))
+      commitMessage.foreach(__v => __obj.updateDynamic("commitMessage")(__v.asInstanceOf[js.Any]))
+      conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
+      conflictResolution.foreach(__v => __obj.updateDynamic("conflictResolution")(__v.asInstanceOf[js.Any]))
+      conflictResolutionStrategy.foreach(
+        __v => __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
+      )
+      email.foreach(__v => __obj.updateDynamic("email")(__v.asInstanceOf[js.Any]))
+      keepEmptyFolders.foreach(__v => __obj.updateDynamic("keepEmptyFolders")(__v.asInstanceOf[js.Any]))
+      targetBranch.foreach(__v => __obj.updateDynamic("targetBranch")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MergeBranchesBySquashInput]
     }
   }
@@ -2592,9 +2608,9 @@ package codecommit {
         commitId: js.UndefOr[ObjectId] = js.undefined,
         treeId: js.UndefOr[ObjectId] = js.undefined
     ): MergeBranchesBySquashOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      commitId.foreach(__v => __obj.update("commitId", __v.asInstanceOf[js.Any]))
-      treeId.foreach(__v => __obj.update("treeId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      commitId.foreach(__v => __obj.updateDynamic("commitId")(__v.asInstanceOf[js.Any]))
+      treeId.foreach(__v => __obj.updateDynamic("treeId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MergeBranchesBySquashOutput]
     }
   }
@@ -2628,20 +2644,22 @@ package codecommit {
         keepEmptyFolders: js.UndefOr[KeepEmptyFolders] = js.undefined,
         targetBranch: js.UndefOr[BranchName] = js.undefined
     ): MergeBranchesByThreeWayInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "destinationCommitSpecifier" -> destinationCommitSpecifier.asInstanceOf[js.Any],
         "repositoryName"             -> repositoryName.asInstanceOf[js.Any],
         "sourceCommitSpecifier"      -> sourceCommitSpecifier.asInstanceOf[js.Any]
       )
 
-      authorName.foreach(__v => __obj.update("authorName", __v.asInstanceOf[js.Any]))
-      commitMessage.foreach(__v => __obj.update("commitMessage", __v.asInstanceOf[js.Any]))
-      conflictDetailLevel.foreach(__v => __obj.update("conflictDetailLevel", __v.asInstanceOf[js.Any]))
-      conflictResolution.foreach(__v => __obj.update("conflictResolution", __v.asInstanceOf[js.Any]))
-      conflictResolutionStrategy.foreach(__v => __obj.update("conflictResolutionStrategy", __v.asInstanceOf[js.Any]))
-      email.foreach(__v => __obj.update("email", __v.asInstanceOf[js.Any]))
-      keepEmptyFolders.foreach(__v => __obj.update("keepEmptyFolders", __v.asInstanceOf[js.Any]))
-      targetBranch.foreach(__v => __obj.update("targetBranch", __v.asInstanceOf[js.Any]))
+      authorName.foreach(__v => __obj.updateDynamic("authorName")(__v.asInstanceOf[js.Any]))
+      commitMessage.foreach(__v => __obj.updateDynamic("commitMessage")(__v.asInstanceOf[js.Any]))
+      conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
+      conflictResolution.foreach(__v => __obj.updateDynamic("conflictResolution")(__v.asInstanceOf[js.Any]))
+      conflictResolutionStrategy.foreach(
+        __v => __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
+      )
+      email.foreach(__v => __obj.updateDynamic("email")(__v.asInstanceOf[js.Any]))
+      keepEmptyFolders.foreach(__v => __obj.updateDynamic("keepEmptyFolders")(__v.asInstanceOf[js.Any]))
+      targetBranch.foreach(__v => __obj.updateDynamic("targetBranch")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MergeBranchesByThreeWayInput]
     }
   }
@@ -2657,9 +2675,9 @@ package codecommit {
         commitId: js.UndefOr[ObjectId] = js.undefined,
         treeId: js.UndefOr[ObjectId] = js.undefined
     ): MergeBranchesByThreeWayOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      commitId.foreach(__v => __obj.update("commitId", __v.asInstanceOf[js.Any]))
-      treeId.foreach(__v => __obj.update("treeId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      commitId.foreach(__v => __obj.updateDynamic("commitId")(__v.asInstanceOf[js.Any]))
+      treeId.foreach(__v => __obj.updateDynamic("treeId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MergeBranchesByThreeWayOutput]
     }
   }
@@ -2682,11 +2700,11 @@ package codecommit {
         isConflict: js.UndefOr[IsHunkConflict] = js.undefined,
         source: js.UndefOr[MergeHunkDetail] = js.undefined
     ): MergeHunk = {
-      val __obj = js.Dictionary.empty[js.Any]
-      base.foreach(__v => __obj.update("base", __v.asInstanceOf[js.Any]))
-      destination.foreach(__v => __obj.update("destination", __v.asInstanceOf[js.Any]))
-      isConflict.foreach(__v => __obj.update("isConflict", __v.asInstanceOf[js.Any]))
-      source.foreach(__v => __obj.update("source", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      base.foreach(__v => __obj.updateDynamic("base")(__v.asInstanceOf[js.Any]))
+      destination.foreach(__v => __obj.updateDynamic("destination")(__v.asInstanceOf[js.Any]))
+      isConflict.foreach(__v => __obj.updateDynamic("isConflict")(__v.asInstanceOf[js.Any]))
+      source.foreach(__v => __obj.updateDynamic("source")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MergeHunk]
     }
   }
@@ -2707,10 +2725,10 @@ package codecommit {
         hunkContent: js.UndefOr[HunkContent] = js.undefined,
         startLine: js.UndefOr[LineNumber] = js.undefined
     ): MergeHunkDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      endLine.foreach(__v => __obj.update("endLine", __v.asInstanceOf[js.Any]))
-      hunkContent.foreach(__v => __obj.update("hunkContent", __v.asInstanceOf[js.Any]))
-      startLine.foreach(__v => __obj.update("startLine", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      endLine.foreach(__v => __obj.updateDynamic("endLine")(__v.asInstanceOf[js.Any]))
+      hunkContent.foreach(__v => __obj.updateDynamic("hunkContent")(__v.asInstanceOf[js.Any]))
+      startLine.foreach(__v => __obj.updateDynamic("startLine")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MergeHunkDetail]
     }
   }
@@ -2733,11 +2751,11 @@ package codecommit {
         mergeOption: js.UndefOr[MergeOptionTypeEnum] = js.undefined,
         mergedBy: js.UndefOr[Arn] = js.undefined
     ): MergeMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      isMerged.foreach(__v => __obj.update("isMerged", __v.asInstanceOf[js.Any]))
-      mergeCommitId.foreach(__v => __obj.update("mergeCommitId", __v.asInstanceOf[js.Any]))
-      mergeOption.foreach(__v => __obj.update("mergeOption", __v.asInstanceOf[js.Any]))
-      mergedBy.foreach(__v => __obj.update("mergedBy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      isMerged.foreach(__v => __obj.updateDynamic("isMerged")(__v.asInstanceOf[js.Any]))
+      mergeCommitId.foreach(__v => __obj.updateDynamic("mergeCommitId")(__v.asInstanceOf[js.Any]))
+      mergeOption.foreach(__v => __obj.updateDynamic("mergeOption")(__v.asInstanceOf[js.Any]))
+      mergedBy.foreach(__v => __obj.updateDynamic("mergedBy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MergeMetadata]
     }
   }
@@ -2756,9 +2774,9 @@ package codecommit {
         destination: js.UndefOr[ChangeTypeEnum] = js.undefined,
         source: js.UndefOr[ChangeTypeEnum] = js.undefined
     ): MergeOperations = {
-      val __obj = js.Dictionary.empty[js.Any]
-      destination.foreach(__v => __obj.update("destination", __v.asInstanceOf[js.Any]))
-      source.foreach(__v => __obj.update("source", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      destination.foreach(__v => __obj.updateDynamic("destination")(__v.asInstanceOf[js.Any]))
+      source.foreach(__v => __obj.updateDynamic("source")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MergeOperations]
     }
   }
@@ -2784,12 +2802,12 @@ package codecommit {
         repositoryName: RepositoryName,
         sourceCommitId: js.UndefOr[ObjectId] = js.undefined
     ): MergePullRequestByFastForwardInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pullRequestId"  -> pullRequestId.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      sourceCommitId.foreach(__v => __obj.update("sourceCommitId", __v.asInstanceOf[js.Any]))
+      sourceCommitId.foreach(__v => __obj.updateDynamic("sourceCommitId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MergePullRequestByFastForwardInput]
     }
   }
@@ -2803,8 +2821,8 @@ package codecommit {
     def apply(
         pullRequest: js.UndefOr[PullRequest] = js.undefined
     ): MergePullRequestByFastForwardOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      pullRequest.foreach(__v => __obj.update("pullRequest", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      pullRequest.foreach(__v => __obj.updateDynamic("pullRequest")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MergePullRequestByFastForwardOutput]
     }
   }
@@ -2836,19 +2854,21 @@ package codecommit {
         keepEmptyFolders: js.UndefOr[KeepEmptyFolders] = js.undefined,
         sourceCommitId: js.UndefOr[ObjectId] = js.undefined
     ): MergePullRequestBySquashInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pullRequestId"  -> pullRequestId.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      authorName.foreach(__v => __obj.update("authorName", __v.asInstanceOf[js.Any]))
-      commitMessage.foreach(__v => __obj.update("commitMessage", __v.asInstanceOf[js.Any]))
-      conflictDetailLevel.foreach(__v => __obj.update("conflictDetailLevel", __v.asInstanceOf[js.Any]))
-      conflictResolution.foreach(__v => __obj.update("conflictResolution", __v.asInstanceOf[js.Any]))
-      conflictResolutionStrategy.foreach(__v => __obj.update("conflictResolutionStrategy", __v.asInstanceOf[js.Any]))
-      email.foreach(__v => __obj.update("email", __v.asInstanceOf[js.Any]))
-      keepEmptyFolders.foreach(__v => __obj.update("keepEmptyFolders", __v.asInstanceOf[js.Any]))
-      sourceCommitId.foreach(__v => __obj.update("sourceCommitId", __v.asInstanceOf[js.Any]))
+      authorName.foreach(__v => __obj.updateDynamic("authorName")(__v.asInstanceOf[js.Any]))
+      commitMessage.foreach(__v => __obj.updateDynamic("commitMessage")(__v.asInstanceOf[js.Any]))
+      conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
+      conflictResolution.foreach(__v => __obj.updateDynamic("conflictResolution")(__v.asInstanceOf[js.Any]))
+      conflictResolutionStrategy.foreach(
+        __v => __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
+      )
+      email.foreach(__v => __obj.updateDynamic("email")(__v.asInstanceOf[js.Any]))
+      keepEmptyFolders.foreach(__v => __obj.updateDynamic("keepEmptyFolders")(__v.asInstanceOf[js.Any]))
+      sourceCommitId.foreach(__v => __obj.updateDynamic("sourceCommitId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MergePullRequestBySquashInput]
     }
   }
@@ -2862,8 +2882,8 @@ package codecommit {
     def apply(
         pullRequest: js.UndefOr[PullRequest] = js.undefined
     ): MergePullRequestBySquashOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      pullRequest.foreach(__v => __obj.update("pullRequest", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      pullRequest.foreach(__v => __obj.updateDynamic("pullRequest")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MergePullRequestBySquashOutput]
     }
   }
@@ -2895,19 +2915,21 @@ package codecommit {
         keepEmptyFolders: js.UndefOr[KeepEmptyFolders] = js.undefined,
         sourceCommitId: js.UndefOr[ObjectId] = js.undefined
     ): MergePullRequestByThreeWayInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pullRequestId"  -> pullRequestId.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      authorName.foreach(__v => __obj.update("authorName", __v.asInstanceOf[js.Any]))
-      commitMessage.foreach(__v => __obj.update("commitMessage", __v.asInstanceOf[js.Any]))
-      conflictDetailLevel.foreach(__v => __obj.update("conflictDetailLevel", __v.asInstanceOf[js.Any]))
-      conflictResolution.foreach(__v => __obj.update("conflictResolution", __v.asInstanceOf[js.Any]))
-      conflictResolutionStrategy.foreach(__v => __obj.update("conflictResolutionStrategy", __v.asInstanceOf[js.Any]))
-      email.foreach(__v => __obj.update("email", __v.asInstanceOf[js.Any]))
-      keepEmptyFolders.foreach(__v => __obj.update("keepEmptyFolders", __v.asInstanceOf[js.Any]))
-      sourceCommitId.foreach(__v => __obj.update("sourceCommitId", __v.asInstanceOf[js.Any]))
+      authorName.foreach(__v => __obj.updateDynamic("authorName")(__v.asInstanceOf[js.Any]))
+      commitMessage.foreach(__v => __obj.updateDynamic("commitMessage")(__v.asInstanceOf[js.Any]))
+      conflictDetailLevel.foreach(__v => __obj.updateDynamic("conflictDetailLevel")(__v.asInstanceOf[js.Any]))
+      conflictResolution.foreach(__v => __obj.updateDynamic("conflictResolution")(__v.asInstanceOf[js.Any]))
+      conflictResolutionStrategy.foreach(
+        __v => __obj.updateDynamic("conflictResolutionStrategy")(__v.asInstanceOf[js.Any])
+      )
+      email.foreach(__v => __obj.updateDynamic("email")(__v.asInstanceOf[js.Any]))
+      keepEmptyFolders.foreach(__v => __obj.updateDynamic("keepEmptyFolders")(__v.asInstanceOf[js.Any]))
+      sourceCommitId.foreach(__v => __obj.updateDynamic("sourceCommitId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MergePullRequestByThreeWayInput]
     }
   }
@@ -2921,8 +2943,8 @@ package codecommit {
     def apply(
         pullRequest: js.UndefOr[PullRequest] = js.undefined
     ): MergePullRequestByThreeWayOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      pullRequest.foreach(__v => __obj.update("pullRequest", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      pullRequest.foreach(__v => __obj.updateDynamic("pullRequest")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MergePullRequestByThreeWayOutput]
     }
   }
@@ -2952,10 +2974,10 @@ package codecommit {
         destination: js.UndefOr[ObjectTypeEnum] = js.undefined,
         source: js.UndefOr[ObjectTypeEnum] = js.undefined
     ): ObjectTypes = {
-      val __obj = js.Dictionary.empty[js.Any]
-      base.foreach(__v => __obj.update("base", __v.asInstanceOf[js.Any]))
-      destination.foreach(__v => __obj.update("destination", __v.asInstanceOf[js.Any]))
-      source.foreach(__v => __obj.update("source", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      base.foreach(__v => __obj.updateDynamic("base")(__v.asInstanceOf[js.Any]))
+      destination.foreach(__v => __obj.updateDynamic("destination")(__v.asInstanceOf[js.Any]))
+      source.foreach(__v => __obj.updateDynamic("source")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ObjectTypes]
     }
   }
@@ -2986,15 +3008,15 @@ package codecommit {
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
         location: js.UndefOr[Location] = js.undefined
     ): PostCommentForComparedCommitInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "afterCommitId"  -> afterCommitId.asInstanceOf[js.Any],
         "content"        -> content.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      beforeCommitId.foreach(__v => __obj.update("beforeCommitId", __v.asInstanceOf[js.Any]))
-      clientRequestToken.foreach(__v => __obj.update("clientRequestToken", __v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
+      beforeCommitId.foreach(__v => __obj.updateDynamic("beforeCommitId")(__v.asInstanceOf[js.Any]))
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PostCommentForComparedCommitInput]
     }
   }
@@ -3020,14 +3042,14 @@ package codecommit {
         location: js.UndefOr[Location] = js.undefined,
         repositoryName: js.UndefOr[RepositoryName] = js.undefined
     ): PostCommentForComparedCommitOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      afterBlobId.foreach(__v => __obj.update("afterBlobId", __v.asInstanceOf[js.Any]))
-      afterCommitId.foreach(__v => __obj.update("afterCommitId", __v.asInstanceOf[js.Any]))
-      beforeBlobId.foreach(__v => __obj.update("beforeBlobId", __v.asInstanceOf[js.Any]))
-      beforeCommitId.foreach(__v => __obj.update("beforeCommitId", __v.asInstanceOf[js.Any]))
-      comment.foreach(__v => __obj.update("comment", __v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
-      repositoryName.foreach(__v => __obj.update("repositoryName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      afterBlobId.foreach(__v => __obj.updateDynamic("afterBlobId")(__v.asInstanceOf[js.Any]))
+      afterCommitId.foreach(__v => __obj.updateDynamic("afterCommitId")(__v.asInstanceOf[js.Any]))
+      beforeBlobId.foreach(__v => __obj.updateDynamic("beforeBlobId")(__v.asInstanceOf[js.Any]))
+      beforeCommitId.foreach(__v => __obj.updateDynamic("beforeCommitId")(__v.asInstanceOf[js.Any]))
+      comment.foreach(__v => __obj.updateDynamic("comment")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PostCommentForComparedCommitOutput]
     }
   }
@@ -3053,7 +3075,7 @@ package codecommit {
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
         location: js.UndefOr[Location] = js.undefined
     ): PostCommentForPullRequestInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "afterCommitId"  -> afterCommitId.asInstanceOf[js.Any],
         "beforeCommitId" -> beforeCommitId.asInstanceOf[js.Any],
         "content"        -> content.asInstanceOf[js.Any],
@@ -3061,8 +3083,8 @@ package codecommit {
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      clientRequestToken.foreach(__v => __obj.update("clientRequestToken", __v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PostCommentForPullRequestInput]
     }
   }
@@ -3090,15 +3112,15 @@ package codecommit {
         pullRequestId: js.UndefOr[PullRequestId] = js.undefined,
         repositoryName: js.UndefOr[RepositoryName] = js.undefined
     ): PostCommentForPullRequestOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      afterBlobId.foreach(__v => __obj.update("afterBlobId", __v.asInstanceOf[js.Any]))
-      afterCommitId.foreach(__v => __obj.update("afterCommitId", __v.asInstanceOf[js.Any]))
-      beforeBlobId.foreach(__v => __obj.update("beforeBlobId", __v.asInstanceOf[js.Any]))
-      beforeCommitId.foreach(__v => __obj.update("beforeCommitId", __v.asInstanceOf[js.Any]))
-      comment.foreach(__v => __obj.update("comment", __v.asInstanceOf[js.Any]))
-      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
-      pullRequestId.foreach(__v => __obj.update("pullRequestId", __v.asInstanceOf[js.Any]))
-      repositoryName.foreach(__v => __obj.update("repositoryName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      afterBlobId.foreach(__v => __obj.updateDynamic("afterBlobId")(__v.asInstanceOf[js.Any]))
+      afterCommitId.foreach(__v => __obj.updateDynamic("afterCommitId")(__v.asInstanceOf[js.Any]))
+      beforeBlobId.foreach(__v => __obj.updateDynamic("beforeBlobId")(__v.asInstanceOf[js.Any]))
+      beforeCommitId.foreach(__v => __obj.updateDynamic("beforeCommitId")(__v.asInstanceOf[js.Any]))
+      comment.foreach(__v => __obj.updateDynamic("comment")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      pullRequestId.foreach(__v => __obj.updateDynamic("pullRequestId")(__v.asInstanceOf[js.Any]))
+      repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PostCommentForPullRequestOutput]
     }
   }
@@ -3116,12 +3138,12 @@ package codecommit {
         inReplyTo: CommentId,
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined
     ): PostCommentReplyInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "content"   -> content.asInstanceOf[js.Any],
         "inReplyTo" -> inReplyTo.asInstanceOf[js.Any]
       )
 
-      clientRequestToken.foreach(__v => __obj.update("clientRequestToken", __v.asInstanceOf[js.Any]))
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PostCommentReplyInput]
     }
   }
@@ -3135,8 +3157,8 @@ package codecommit {
     def apply(
         comment: js.UndefOr[Comment] = js.undefined
     ): PostCommentReplyOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      comment.foreach(__v => __obj.update("comment", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      comment.foreach(__v => __obj.updateDynamic("comment")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PostCommentReplyOutput]
     }
   }
@@ -3169,16 +3191,16 @@ package codecommit {
         pullRequestTargets: js.UndefOr[PullRequestTargetList] = js.undefined,
         title: js.UndefOr[Title] = js.undefined
     ): PullRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      authorArn.foreach(__v => __obj.update("authorArn", __v.asInstanceOf[js.Any]))
-      clientRequestToken.foreach(__v => __obj.update("clientRequestToken", __v.asInstanceOf[js.Any]))
-      creationDate.foreach(__v => __obj.update("creationDate", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      lastActivityDate.foreach(__v => __obj.update("lastActivityDate", __v.asInstanceOf[js.Any]))
-      pullRequestId.foreach(__v => __obj.update("pullRequestId", __v.asInstanceOf[js.Any]))
-      pullRequestStatus.foreach(__v => __obj.update("pullRequestStatus", __v.asInstanceOf[js.Any]))
-      pullRequestTargets.foreach(__v => __obj.update("pullRequestTargets", __v.asInstanceOf[js.Any]))
-      title.foreach(__v => __obj.update("title", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      authorArn.foreach(__v => __obj.updateDynamic("authorArn")(__v.asInstanceOf[js.Any]))
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      lastActivityDate.foreach(__v => __obj.updateDynamic("lastActivityDate")(__v.asInstanceOf[js.Any]))
+      pullRequestId.foreach(__v => __obj.updateDynamic("pullRequestId")(__v.asInstanceOf[js.Any]))
+      pullRequestStatus.foreach(__v => __obj.updateDynamic("pullRequestStatus")(__v.asInstanceOf[js.Any]))
+      pullRequestTargets.foreach(__v => __obj.updateDynamic("pullRequestTargets")(__v.asInstanceOf[js.Any]))
+      title.foreach(__v => __obj.updateDynamic("title")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PullRequest]
     }
   }
@@ -3201,11 +3223,11 @@ package codecommit {
         repositoryName: js.UndefOr[RepositoryName] = js.undefined,
         sourceCommitId: js.UndefOr[CommitId] = js.undefined
     ): PullRequestCreatedEventMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      destinationCommitId.foreach(__v => __obj.update("destinationCommitId", __v.asInstanceOf[js.Any]))
-      mergeBase.foreach(__v => __obj.update("mergeBase", __v.asInstanceOf[js.Any]))
-      repositoryName.foreach(__v => __obj.update("repositoryName", __v.asInstanceOf[js.Any]))
-      sourceCommitId.foreach(__v => __obj.update("sourceCommitId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      destinationCommitId.foreach(__v => __obj.updateDynamic("destinationCommitId")(__v.asInstanceOf[js.Any]))
+      mergeBase.foreach(__v => __obj.updateDynamic("mergeBase")(__v.asInstanceOf[js.Any]))
+      repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
+      sourceCommitId.foreach(__v => __obj.updateDynamic("sourceCommitId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PullRequestCreatedEventMetadata]
     }
   }
@@ -3238,22 +3260,22 @@ package codecommit {
           js.undefined,
         pullRequestStatusChangedEventMetadata: js.UndefOr[PullRequestStatusChangedEventMetadata] = js.undefined
     ): PullRequestEvent = {
-      val __obj = js.Dictionary.empty[js.Any]
-      actorArn.foreach(__v => __obj.update("actorArn", __v.asInstanceOf[js.Any]))
-      eventDate.foreach(__v => __obj.update("eventDate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      actorArn.foreach(__v => __obj.updateDynamic("actorArn")(__v.asInstanceOf[js.Any]))
+      eventDate.foreach(__v => __obj.updateDynamic("eventDate")(__v.asInstanceOf[js.Any]))
       pullRequestCreatedEventMetadata.foreach(
-        __v => __obj.update("pullRequestCreatedEventMetadata", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("pullRequestCreatedEventMetadata")(__v.asInstanceOf[js.Any])
       )
-      pullRequestEventType.foreach(__v => __obj.update("pullRequestEventType", __v.asInstanceOf[js.Any]))
-      pullRequestId.foreach(__v => __obj.update("pullRequestId", __v.asInstanceOf[js.Any]))
+      pullRequestEventType.foreach(__v => __obj.updateDynamic("pullRequestEventType")(__v.asInstanceOf[js.Any]))
+      pullRequestId.foreach(__v => __obj.updateDynamic("pullRequestId")(__v.asInstanceOf[js.Any]))
       pullRequestMergedStateChangedEventMetadata.foreach(
-        __v => __obj.update("pullRequestMergedStateChangedEventMetadata", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("pullRequestMergedStateChangedEventMetadata")(__v.asInstanceOf[js.Any])
       )
       pullRequestSourceReferenceUpdatedEventMetadata.foreach(
-        __v => __obj.update("pullRequestSourceReferenceUpdatedEventMetadata", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("pullRequestSourceReferenceUpdatedEventMetadata")(__v.asInstanceOf[js.Any])
       )
       pullRequestStatusChangedEventMetadata.foreach(
-        __v => __obj.update("pullRequestStatusChangedEventMetadata", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("pullRequestStatusChangedEventMetadata")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[PullRequestEvent]
     }
@@ -3291,10 +3313,10 @@ package codecommit {
         mergeMetadata: js.UndefOr[MergeMetadata] = js.undefined,
         repositoryName: js.UndefOr[RepositoryName] = js.undefined
     ): PullRequestMergedStateChangedEventMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      destinationReference.foreach(__v => __obj.update("destinationReference", __v.asInstanceOf[js.Any]))
-      mergeMetadata.foreach(__v => __obj.update("mergeMetadata", __v.asInstanceOf[js.Any]))
-      repositoryName.foreach(__v => __obj.update("repositoryName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      destinationReference.foreach(__v => __obj.updateDynamic("destinationReference")(__v.asInstanceOf[js.Any]))
+      mergeMetadata.foreach(__v => __obj.updateDynamic("mergeMetadata")(__v.asInstanceOf[js.Any]))
+      repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PullRequestMergedStateChangedEventMetadata]
     }
   }
@@ -3317,11 +3339,11 @@ package codecommit {
         mergeBase: js.UndefOr[CommitId] = js.undefined,
         repositoryName: js.UndefOr[RepositoryName] = js.undefined
     ): PullRequestSourceReferenceUpdatedEventMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      afterCommitId.foreach(__v => __obj.update("afterCommitId", __v.asInstanceOf[js.Any]))
-      beforeCommitId.foreach(__v => __obj.update("beforeCommitId", __v.asInstanceOf[js.Any]))
-      mergeBase.foreach(__v => __obj.update("mergeBase", __v.asInstanceOf[js.Any]))
-      repositoryName.foreach(__v => __obj.update("repositoryName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      afterCommitId.foreach(__v => __obj.updateDynamic("afterCommitId")(__v.asInstanceOf[js.Any]))
+      beforeCommitId.foreach(__v => __obj.updateDynamic("beforeCommitId")(__v.asInstanceOf[js.Any]))
+      mergeBase.foreach(__v => __obj.updateDynamic("mergeBase")(__v.asInstanceOf[js.Any]))
+      repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PullRequestSourceReferenceUpdatedEventMetadata]
     }
   }
@@ -3338,8 +3360,8 @@ package codecommit {
     def apply(
         pullRequestStatus: js.UndefOr[PullRequestStatusEnum] = js.undefined
     ): PullRequestStatusChangedEventMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      pullRequestStatus.foreach(__v => __obj.update("pullRequestStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      pullRequestStatus.foreach(__v => __obj.updateDynamic("pullRequestStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PullRequestStatusChangedEventMetadata]
     }
   }
@@ -3375,14 +3397,14 @@ package codecommit {
         sourceCommit: js.UndefOr[CommitId] = js.undefined,
         sourceReference: js.UndefOr[ReferenceName] = js.undefined
     ): PullRequestTarget = {
-      val __obj = js.Dictionary.empty[js.Any]
-      destinationCommit.foreach(__v => __obj.update("destinationCommit", __v.asInstanceOf[js.Any]))
-      destinationReference.foreach(__v => __obj.update("destinationReference", __v.asInstanceOf[js.Any]))
-      mergeBase.foreach(__v => __obj.update("mergeBase", __v.asInstanceOf[js.Any]))
-      mergeMetadata.foreach(__v => __obj.update("mergeMetadata", __v.asInstanceOf[js.Any]))
-      repositoryName.foreach(__v => __obj.update("repositoryName", __v.asInstanceOf[js.Any]))
-      sourceCommit.foreach(__v => __obj.update("sourceCommit", __v.asInstanceOf[js.Any]))
-      sourceReference.foreach(__v => __obj.update("sourceReference", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      destinationCommit.foreach(__v => __obj.updateDynamic("destinationCommit")(__v.asInstanceOf[js.Any]))
+      destinationReference.foreach(__v => __obj.updateDynamic("destinationReference")(__v.asInstanceOf[js.Any]))
+      mergeBase.foreach(__v => __obj.updateDynamic("mergeBase")(__v.asInstanceOf[js.Any]))
+      mergeMetadata.foreach(__v => __obj.updateDynamic("mergeMetadata")(__v.asInstanceOf[js.Any]))
+      repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
+      sourceCommit.foreach(__v => __obj.updateDynamic("sourceCommit")(__v.asInstanceOf[js.Any]))
+      sourceReference.foreach(__v => __obj.updateDynamic("sourceReference")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PullRequestTarget]
     }
   }
@@ -3405,13 +3427,13 @@ package codecommit {
         fileMode: js.UndefOr[FileModeTypeEnum] = js.undefined,
         sourceFile: js.UndefOr[SourceFileSpecifier] = js.undefined
     ): PutFileEntry = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "filePath" -> filePath.asInstanceOf[js.Any]
       )
 
-      fileContent.foreach(__v => __obj.update("fileContent", __v.asInstanceOf[js.Any]))
-      fileMode.foreach(__v => __obj.update("fileMode", __v.asInstanceOf[js.Any]))
-      sourceFile.foreach(__v => __obj.update("sourceFile", __v.asInstanceOf[js.Any]))
+      fileContent.foreach(__v => __obj.updateDynamic("fileContent")(__v.asInstanceOf[js.Any]))
+      fileMode.foreach(__v => __obj.updateDynamic("fileMode")(__v.asInstanceOf[js.Any]))
+      sourceFile.foreach(__v => __obj.updateDynamic("sourceFile")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutFileEntry]
     }
   }
@@ -3441,18 +3463,18 @@ package codecommit {
         name: js.UndefOr[Name] = js.undefined,
         parentCommitId: js.UndefOr[CommitId] = js.undefined
     ): PutFileInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "branchName"     -> branchName.asInstanceOf[js.Any],
         "fileContent"    -> fileContent.asInstanceOf[js.Any],
         "filePath"       -> filePath.asInstanceOf[js.Any],
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      commitMessage.foreach(__v => __obj.update("commitMessage", __v.asInstanceOf[js.Any]))
-      email.foreach(__v => __obj.update("email", __v.asInstanceOf[js.Any]))
-      fileMode.foreach(__v => __obj.update("fileMode", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      parentCommitId.foreach(__v => __obj.update("parentCommitId", __v.asInstanceOf[js.Any]))
+      commitMessage.foreach(__v => __obj.updateDynamic("commitMessage")(__v.asInstanceOf[js.Any]))
+      email.foreach(__v => __obj.updateDynamic("email")(__v.asInstanceOf[js.Any]))
+      fileMode.foreach(__v => __obj.updateDynamic("fileMode")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      parentCommitId.foreach(__v => __obj.updateDynamic("parentCommitId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutFileInput]
     }
   }
@@ -3470,7 +3492,7 @@ package codecommit {
         commitId: ObjectId,
         treeId: ObjectId
     ): PutFileOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "blobId"   -> blobId.asInstanceOf[js.Any],
         "commitId" -> commitId.asInstanceOf[js.Any],
         "treeId"   -> treeId.asInstanceOf[js.Any]
@@ -3494,7 +3516,7 @@ package codecommit {
         repositoryName: RepositoryName,
         triggers: RepositoryTriggersList
     ): PutRepositoryTriggersInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
         "triggers"       -> triggers.asInstanceOf[js.Any]
       )
@@ -3515,8 +3537,8 @@ package codecommit {
     def apply(
         configurationId: js.UndefOr[RepositoryTriggersConfigurationId] = js.undefined
     ): PutRepositoryTriggersOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      configurationId.foreach(__v => __obj.update("configurationId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      configurationId.foreach(__v => __obj.updateDynamic("configurationId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutRepositoryTriggersOutput]
     }
   }
@@ -3546,13 +3568,13 @@ package codecommit {
         content: js.UndefOr[FileContent] = js.undefined,
         fileMode: js.UndefOr[FileModeTypeEnum] = js.undefined
     ): ReplaceContentEntry = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "filePath"        -> filePath.asInstanceOf[js.Any],
         "replacementType" -> replacementType.asInstanceOf[js.Any]
       )
 
-      content.foreach(__v => __obj.update("content", __v.asInstanceOf[js.Any]))
-      fileMode.foreach(__v => __obj.update("fileMode", __v.asInstanceOf[js.Any]))
+      content.foreach(__v => __obj.updateDynamic("content")(__v.asInstanceOf[js.Any]))
+      fileMode.foreach(__v => __obj.updateDynamic("fileMode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReplaceContentEntry]
     }
   }
@@ -3596,17 +3618,17 @@ package codecommit {
         repositoryId: js.UndefOr[RepositoryId] = js.undefined,
         repositoryName: js.UndefOr[RepositoryName] = js.undefined
     ): RepositoryMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      accountId.foreach(__v => __obj.update("accountId", __v.asInstanceOf[js.Any]))
-      cloneUrlHttp.foreach(__v => __obj.update("cloneUrlHttp", __v.asInstanceOf[js.Any]))
-      cloneUrlSsh.foreach(__v => __obj.update("cloneUrlSsh", __v.asInstanceOf[js.Any]))
-      creationDate.foreach(__v => __obj.update("creationDate", __v.asInstanceOf[js.Any]))
-      defaultBranch.foreach(__v => __obj.update("defaultBranch", __v.asInstanceOf[js.Any]))
-      lastModifiedDate.foreach(__v => __obj.update("lastModifiedDate", __v.asInstanceOf[js.Any]))
-      repositoryDescription.foreach(__v => __obj.update("repositoryDescription", __v.asInstanceOf[js.Any]))
-      repositoryId.foreach(__v => __obj.update("repositoryId", __v.asInstanceOf[js.Any]))
-      repositoryName.foreach(__v => __obj.update("repositoryName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      accountId.foreach(__v => __obj.updateDynamic("accountId")(__v.asInstanceOf[js.Any]))
+      cloneUrlHttp.foreach(__v => __obj.updateDynamic("cloneUrlHttp")(__v.asInstanceOf[js.Any]))
+      cloneUrlSsh.foreach(__v => __obj.updateDynamic("cloneUrlSsh")(__v.asInstanceOf[js.Any]))
+      creationDate.foreach(__v => __obj.updateDynamic("creationDate")(__v.asInstanceOf[js.Any]))
+      defaultBranch.foreach(__v => __obj.updateDynamic("defaultBranch")(__v.asInstanceOf[js.Any]))
+      lastModifiedDate.foreach(__v => __obj.updateDynamic("lastModifiedDate")(__v.asInstanceOf[js.Any]))
+      repositoryDescription.foreach(__v => __obj.updateDynamic("repositoryDescription")(__v.asInstanceOf[js.Any]))
+      repositoryId.foreach(__v => __obj.updateDynamic("repositoryId")(__v.asInstanceOf[js.Any]))
+      repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RepositoryMetadata]
     }
   }
@@ -3625,9 +3647,9 @@ package codecommit {
         repositoryId: js.UndefOr[RepositoryId] = js.undefined,
         repositoryName: js.UndefOr[RepositoryName] = js.undefined
     ): RepositoryNameIdPair = {
-      val __obj = js.Dictionary.empty[js.Any]
-      repositoryId.foreach(__v => __obj.update("repositoryId", __v.asInstanceOf[js.Any]))
-      repositoryName.foreach(__v => __obj.update("repositoryName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      repositoryId.foreach(__v => __obj.updateDynamic("repositoryId")(__v.asInstanceOf[js.Any]))
+      repositoryName.foreach(__v => __obj.updateDynamic("repositoryName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RepositoryNameIdPair]
     }
   }
@@ -3652,14 +3674,14 @@ package codecommit {
         branches: js.UndefOr[BranchNameList] = js.undefined,
         customData: js.UndefOr[RepositoryTriggerCustomData] = js.undefined
     ): RepositoryTrigger = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "destinationArn" -> destinationArn.asInstanceOf[js.Any],
         "events"         -> events.asInstanceOf[js.Any],
         "name"           -> name.asInstanceOf[js.Any]
       )
 
-      branches.foreach(__v => __obj.update("branches", __v.asInstanceOf[js.Any]))
-      customData.foreach(__v => __obj.update("customData", __v.asInstanceOf[js.Any]))
+      branches.foreach(__v => __obj.updateDynamic("branches")(__v.asInstanceOf[js.Any]))
+      customData.foreach(__v => __obj.updateDynamic("customData")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RepositoryTrigger]
     }
   }
@@ -3687,9 +3709,9 @@ package codecommit {
         failureMessage: js.UndefOr[RepositoryTriggerExecutionFailureMessage] = js.undefined,
         trigger: js.UndefOr[RepositoryTriggerName] = js.undefined
     ): RepositoryTriggerExecutionFailure = {
-      val __obj = js.Dictionary.empty[js.Any]
-      failureMessage.foreach(__v => __obj.update("failureMessage", __v.asInstanceOf[js.Any]))
-      trigger.foreach(__v => __obj.update("trigger", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      failureMessage.foreach(__v => __obj.updateDynamic("failureMessage")(__v.asInstanceOf[js.Any]))
+      trigger.foreach(__v => __obj.updateDynamic("trigger")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RepositoryTriggerExecutionFailure]
     }
   }
@@ -3708,7 +3730,7 @@ package codecommit {
         fileMode: FileModeTypeEnum,
         filePath: Path
     ): SetFileModeEntry = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "fileMode" -> fileMode.asInstanceOf[js.Any],
         "filePath" -> filePath.asInstanceOf[js.Any]
       )
@@ -3738,11 +3760,11 @@ package codecommit {
         filePath: Path,
         isMove: js.UndefOr[IsMove] = js.undefined
     ): SourceFileSpecifier = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "filePath" -> filePath.asInstanceOf[js.Any]
       )
 
-      isMove.foreach(__v => __obj.update("isMove", __v.asInstanceOf[js.Any]))
+      isMove.foreach(__v => __obj.updateDynamic("isMove")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SourceFileSpecifier]
     }
   }
@@ -3763,10 +3785,10 @@ package codecommit {
         commitId: js.UndefOr[ObjectId] = js.undefined,
         relativePath: js.UndefOr[Path] = js.undefined
     ): SubModule = {
-      val __obj = js.Dictionary.empty[js.Any]
-      absolutePath.foreach(__v => __obj.update("absolutePath", __v.asInstanceOf[js.Any]))
-      commitId.foreach(__v => __obj.update("commitId", __v.asInstanceOf[js.Any]))
-      relativePath.foreach(__v => __obj.update("relativePath", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      absolutePath.foreach(__v => __obj.updateDynamic("absolutePath")(__v.asInstanceOf[js.Any]))
+      commitId.foreach(__v => __obj.updateDynamic("commitId")(__v.asInstanceOf[js.Any]))
+      relativePath.foreach(__v => __obj.updateDynamic("relativePath")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SubModule]
     }
   }
@@ -3789,11 +3811,11 @@ package codecommit {
         fileMode: js.UndefOr[FileModeTypeEnum] = js.undefined,
         relativePath: js.UndefOr[Path] = js.undefined
     ): SymbolicLink = {
-      val __obj = js.Dictionary.empty[js.Any]
-      absolutePath.foreach(__v => __obj.update("absolutePath", __v.asInstanceOf[js.Any]))
-      blobId.foreach(__v => __obj.update("blobId", __v.asInstanceOf[js.Any]))
-      fileMode.foreach(__v => __obj.update("fileMode", __v.asInstanceOf[js.Any]))
-      relativePath.foreach(__v => __obj.update("relativePath", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      absolutePath.foreach(__v => __obj.updateDynamic("absolutePath")(__v.asInstanceOf[js.Any]))
+      blobId.foreach(__v => __obj.updateDynamic("blobId")(__v.asInstanceOf[js.Any]))
+      fileMode.foreach(__v => __obj.updateDynamic("fileMode")(__v.asInstanceOf[js.Any]))
+      relativePath.foreach(__v => __obj.updateDynamic("relativePath")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SymbolicLink]
     }
   }
@@ -3809,7 +3831,7 @@ package codecommit {
         resourceArn: ResourceArn,
         tags: TagsMap
     ): TagResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags"        -> tags.asInstanceOf[js.Any]
       )
@@ -3834,12 +3856,12 @@ package codecommit {
         sourceReference: ReferenceName,
         destinationReference: js.UndefOr[ReferenceName] = js.undefined
     ): Target = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "repositoryName"  -> repositoryName.asInstanceOf[js.Any],
         "sourceReference" -> sourceReference.asInstanceOf[js.Any]
       )
 
-      destinationReference.foreach(__v => __obj.update("destinationReference", __v.asInstanceOf[js.Any]))
+      destinationReference.foreach(__v => __obj.updateDynamic("destinationReference")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Target]
     }
   }
@@ -3858,7 +3880,7 @@ package codecommit {
         repositoryName: RepositoryName,
         triggers: RepositoryTriggersList
     ): TestRepositoryTriggersInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "repositoryName" -> repositoryName.asInstanceOf[js.Any],
         "triggers"       -> triggers.asInstanceOf[js.Any]
       )
@@ -3881,9 +3903,9 @@ package codecommit {
         failedExecutions: js.UndefOr[RepositoryTriggerExecutionFailureList] = js.undefined,
         successfulExecutions: js.UndefOr[RepositoryTriggerNameList] = js.undefined
     ): TestRepositoryTriggersOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      failedExecutions.foreach(__v => __obj.update("failedExecutions", __v.asInstanceOf[js.Any]))
-      successfulExecutions.foreach(__v => __obj.update("successfulExecutions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      failedExecutions.foreach(__v => __obj.updateDynamic("failedExecutions")(__v.asInstanceOf[js.Any]))
+      successfulExecutions.foreach(__v => __obj.updateDynamic("successfulExecutions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TestRepositoryTriggersOutput]
     }
   }
@@ -3899,7 +3921,7 @@ package codecommit {
         resourceArn: ResourceArn,
         tagKeys: TagKeysList
     ): UntagResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
       )
@@ -3919,7 +3941,7 @@ package codecommit {
         commentId: CommentId,
         content: Content
     ): UpdateCommentInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "commentId" -> commentId.asInstanceOf[js.Any],
         "content"   -> content.asInstanceOf[js.Any]
       )
@@ -3937,8 +3959,8 @@ package codecommit {
     def apply(
         comment: js.UndefOr[Comment] = js.undefined
     ): UpdateCommentOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      comment.foreach(__v => __obj.update("comment", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      comment.foreach(__v => __obj.updateDynamic("comment")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateCommentOutput]
     }
   }
@@ -3957,7 +3979,7 @@ package codecommit {
         defaultBranchName: BranchName,
         repositoryName: RepositoryName
     ): UpdateDefaultBranchInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "defaultBranchName" -> defaultBranchName.asInstanceOf[js.Any],
         "repositoryName"    -> repositoryName.asInstanceOf[js.Any]
       )
@@ -3977,7 +3999,7 @@ package codecommit {
         description: Description,
         pullRequestId: PullRequestId
     ): UpdatePullRequestDescriptionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "description"   -> description.asInstanceOf[js.Any],
         "pullRequestId" -> pullRequestId.asInstanceOf[js.Any]
       )
@@ -3995,7 +4017,7 @@ package codecommit {
     def apply(
         pullRequest: PullRequest
     ): UpdatePullRequestDescriptionOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pullRequest" -> pullRequest.asInstanceOf[js.Any]
       )
 
@@ -4014,7 +4036,7 @@ package codecommit {
         pullRequestId: PullRequestId,
         pullRequestStatus: PullRequestStatusEnum
     ): UpdatePullRequestStatusInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pullRequestId"     -> pullRequestId.asInstanceOf[js.Any],
         "pullRequestStatus" -> pullRequestStatus.asInstanceOf[js.Any]
       )
@@ -4032,7 +4054,7 @@ package codecommit {
     def apply(
         pullRequest: PullRequest
     ): UpdatePullRequestStatusOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pullRequest" -> pullRequest.asInstanceOf[js.Any]
       )
 
@@ -4051,7 +4073,7 @@ package codecommit {
         pullRequestId: PullRequestId,
         title: Title
     ): UpdatePullRequestTitleInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pullRequestId" -> pullRequestId.asInstanceOf[js.Any],
         "title"         -> title.asInstanceOf[js.Any]
       )
@@ -4069,7 +4091,7 @@ package codecommit {
     def apply(
         pullRequest: PullRequest
     ): UpdatePullRequestTitleOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pullRequest" -> pullRequest.asInstanceOf[js.Any]
       )
 
@@ -4091,11 +4113,11 @@ package codecommit {
         repositoryName: RepositoryName,
         repositoryDescription: js.UndefOr[RepositoryDescription] = js.undefined
     ): UpdateRepositoryDescriptionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "repositoryName" -> repositoryName.asInstanceOf[js.Any]
       )
 
-      repositoryDescription.foreach(__v => __obj.update("repositoryDescription", __v.asInstanceOf[js.Any]))
+      repositoryDescription.foreach(__v => __obj.updateDynamic("repositoryDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRepositoryDescriptionInput]
     }
   }
@@ -4114,7 +4136,7 @@ package codecommit {
         newName: RepositoryName,
         oldName: RepositoryName
     ): UpdateRepositoryNameInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "newName" -> newName.asInstanceOf[js.Any],
         "oldName" -> oldName.asInstanceOf[js.Any]
       )
@@ -4139,10 +4161,10 @@ package codecommit {
         email: js.UndefOr[Email] = js.undefined,
         name: js.UndefOr[Name] = js.undefined
     ): UserInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      date.foreach(__v => __obj.update("date", __v.asInstanceOf[js.Any]))
-      email.foreach(__v => __obj.update("email", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      date.foreach(__v => __obj.updateDynamic("date")(__v.asInstanceOf[js.Any]))
+      email.foreach(__v => __obj.updateDynamic("email")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UserInfo]
     }
   }

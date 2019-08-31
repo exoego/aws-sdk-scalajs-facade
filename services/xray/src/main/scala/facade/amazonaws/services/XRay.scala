@@ -180,10 +180,10 @@ package xray {
         Names: js.UndefOr[AliasNames] = js.undefined,
         Type: js.UndefOr[String] = js.undefined
     ): Alias = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Names.foreach(__v => __obj.update("Names", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Names.foreach(__v => __obj.updateDynamic("Names")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Alias]
     }
   }
@@ -204,10 +204,10 @@ package xray {
         NumberValue: js.UndefOr[NullableDouble] = js.undefined,
         StringValue: js.UndefOr[String] = js.undefined
     ): AnnotationValue = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BooleanValue.foreach(__v => __obj.update("BooleanValue", __v.asInstanceOf[js.Any]))
-      NumberValue.foreach(__v => __obj.update("NumberValue", __v.asInstanceOf[js.Any]))
-      StringValue.foreach(__v => __obj.update("StringValue", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BooleanValue.foreach(__v => __obj.updateDynamic("BooleanValue")(__v.asInstanceOf[js.Any]))
+      NumberValue.foreach(__v => __obj.updateDynamic("NumberValue")(__v.asInstanceOf[js.Any]))
+      StringValue.foreach(__v => __obj.updateDynamic("StringValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AnnotationValue]
     }
   }
@@ -224,8 +224,8 @@ package xray {
     def apply(
         Name: js.UndefOr[String] = js.undefined
     ): AvailabilityZoneDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AvailabilityZoneDetail]
     }
   }
@@ -252,13 +252,13 @@ package xray {
         TimeoutCount: js.UndefOr[NullableInteger] = js.undefined,
         UnknownHostCount: js.UndefOr[NullableInteger] = js.undefined
     ): BackendConnectionErrors = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConnectionRefusedCount.foreach(__v => __obj.update("ConnectionRefusedCount", __v.asInstanceOf[js.Any]))
-      HTTPCode4XXCount.foreach(__v => __obj.update("HTTPCode4XXCount", __v.asInstanceOf[js.Any]))
-      HTTPCode5XXCount.foreach(__v => __obj.update("HTTPCode5XXCount", __v.asInstanceOf[js.Any]))
-      OtherCount.foreach(__v => __obj.update("OtherCount", __v.asInstanceOf[js.Any]))
-      TimeoutCount.foreach(__v => __obj.update("TimeoutCount", __v.asInstanceOf[js.Any]))
-      UnknownHostCount.foreach(__v => __obj.update("UnknownHostCount", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConnectionRefusedCount.foreach(__v => __obj.updateDynamic("ConnectionRefusedCount")(__v.asInstanceOf[js.Any]))
+      HTTPCode4XXCount.foreach(__v => __obj.updateDynamic("HTTPCode4XXCount")(__v.asInstanceOf[js.Any]))
+      HTTPCode5XXCount.foreach(__v => __obj.updateDynamic("HTTPCode5XXCount")(__v.asInstanceOf[js.Any]))
+      OtherCount.foreach(__v => __obj.updateDynamic("OtherCount")(__v.asInstanceOf[js.Any]))
+      TimeoutCount.foreach(__v => __obj.updateDynamic("TimeoutCount")(__v.asInstanceOf[js.Any]))
+      UnknownHostCount.foreach(__v => __obj.updateDynamic("UnknownHostCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BackendConnectionErrors]
     }
   }
@@ -274,11 +274,11 @@ package xray {
         TraceIds: TraceIdList,
         NextToken: js.UndefOr[String] = js.undefined
     ): BatchGetTracesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TraceIds" -> TraceIds.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetTracesRequest]
     }
   }
@@ -296,10 +296,10 @@ package xray {
         Traces: js.UndefOr[TraceList] = js.undefined,
         UnprocessedTraceIds: js.UndefOr[UnprocessedTraceIdList] = js.undefined
     ): BatchGetTracesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Traces.foreach(__v => __obj.update("Traces", __v.asInstanceOf[js.Any]))
-      UnprocessedTraceIds.foreach(__v => __obj.update("UnprocessedTraceIds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Traces.foreach(__v => __obj.updateDynamic("Traces")(__v.asInstanceOf[js.Any]))
+      UnprocessedTraceIds.foreach(__v => __obj.updateDynamic("UnprocessedTraceIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchGetTracesResult]
     }
   }
@@ -315,11 +315,11 @@ package xray {
         GroupName: GroupName,
         FilterExpression: js.UndefOr[FilterExpression] = js.undefined
     ): CreateGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupName" -> GroupName.asInstanceOf[js.Any]
       )
 
-      FilterExpression.foreach(__v => __obj.update("FilterExpression", __v.asInstanceOf[js.Any]))
+      FilterExpression.foreach(__v => __obj.updateDynamic("FilterExpression")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGroupRequest]
     }
   }
@@ -333,8 +333,8 @@ package xray {
     def apply(
         Group: js.UndefOr[Group] = js.undefined
     ): CreateGroupResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Group.foreach(__v => __obj.update("Group", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Group.foreach(__v => __obj.updateDynamic("Group")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGroupResult]
     }
   }
@@ -348,7 +348,7 @@ package xray {
     def apply(
         SamplingRule: SamplingRule
     ): CreateSamplingRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SamplingRule" -> SamplingRule.asInstanceOf[js.Any]
       )
 
@@ -365,8 +365,8 @@ package xray {
     def apply(
         SamplingRuleRecord: js.UndefOr[SamplingRuleRecord] = js.undefined
     ): CreateSamplingRuleResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SamplingRuleRecord.foreach(__v => __obj.update("SamplingRuleRecord", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SamplingRuleRecord.foreach(__v => __obj.updateDynamic("SamplingRuleRecord")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSamplingRuleResult]
     }
   }
@@ -382,9 +382,9 @@ package xray {
         GroupARN: js.UndefOr[GroupARN] = js.undefined,
         GroupName: js.UndefOr[GroupName] = js.undefined
     ): DeleteGroupRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GroupARN.foreach(__v => __obj.update("GroupARN", __v.asInstanceOf[js.Any]))
-      GroupName.foreach(__v => __obj.update("GroupName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GroupARN.foreach(__v => __obj.updateDynamic("GroupARN")(__v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteGroupRequest]
     }
   }
@@ -395,7 +395,7 @@ package xray {
   object DeleteGroupResult {
     def apply(
         ): DeleteGroupResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteGroupResult]
     }
@@ -412,9 +412,9 @@ package xray {
         RuleARN: js.UndefOr[String] = js.undefined,
         RuleName: js.UndefOr[String] = js.undefined
     ): DeleteSamplingRuleRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RuleARN.foreach(__v => __obj.update("RuleARN", __v.asInstanceOf[js.Any]))
-      RuleName.foreach(__v => __obj.update("RuleName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RuleARN.foreach(__v => __obj.updateDynamic("RuleARN")(__v.asInstanceOf[js.Any]))
+      RuleName.foreach(__v => __obj.updateDynamic("RuleName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteSamplingRuleRequest]
     }
   }
@@ -428,8 +428,8 @@ package xray {
     def apply(
         SamplingRuleRecord: js.UndefOr[SamplingRuleRecord] = js.undefined
     ): DeleteSamplingRuleResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SamplingRuleRecord.foreach(__v => __obj.update("SamplingRuleRecord", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SamplingRuleRecord.foreach(__v => __obj.updateDynamic("SamplingRuleRecord")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteSamplingRuleResult]
     }
   }
@@ -456,13 +456,13 @@ package xray {
         StartTime: js.UndefOr[Timestamp] = js.undefined,
         SummaryStatistics: js.UndefOr[EdgeStatistics] = js.undefined
     ): Edge = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Aliases.foreach(__v => __obj.update("Aliases", __v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
-      ReferenceId.foreach(__v => __obj.update("ReferenceId", __v.asInstanceOf[js.Any]))
-      ResponseTimeHistogram.foreach(__v => __obj.update("ResponseTimeHistogram", __v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
-      SummaryStatistics.foreach(__v => __obj.update("SummaryStatistics", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Aliases.foreach(__v => __obj.updateDynamic("Aliases")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      ReferenceId.foreach(__v => __obj.updateDynamic("ReferenceId")(__v.asInstanceOf[js.Any]))
+      ResponseTimeHistogram.foreach(__v => __obj.updateDynamic("ResponseTimeHistogram")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      SummaryStatistics.foreach(__v => __obj.updateDynamic("SummaryStatistics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Edge]
     }
   }
@@ -487,12 +487,12 @@ package xray {
         TotalCount: js.UndefOr[NullableLong] = js.undefined,
         TotalResponseTime: js.UndefOr[NullableDouble] = js.undefined
     ): EdgeStatistics = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ErrorStatistics.foreach(__v => __obj.update("ErrorStatistics", __v.asInstanceOf[js.Any]))
-      FaultStatistics.foreach(__v => __obj.update("FaultStatistics", __v.asInstanceOf[js.Any]))
-      OkCount.foreach(__v => __obj.update("OkCount", __v.asInstanceOf[js.Any]))
-      TotalCount.foreach(__v => __obj.update("TotalCount", __v.asInstanceOf[js.Any]))
-      TotalResponseTime.foreach(__v => __obj.update("TotalResponseTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ErrorStatistics.foreach(__v => __obj.updateDynamic("ErrorStatistics")(__v.asInstanceOf[js.Any]))
+      FaultStatistics.foreach(__v => __obj.updateDynamic("FaultStatistics")(__v.asInstanceOf[js.Any]))
+      OkCount.foreach(__v => __obj.updateDynamic("OkCount")(__v.asInstanceOf[js.Any]))
+      TotalCount.foreach(__v => __obj.updateDynamic("TotalCount")(__v.asInstanceOf[js.Any]))
+      TotalResponseTime.foreach(__v => __obj.updateDynamic("TotalResponseTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EdgeStatistics]
     }
   }
@@ -513,10 +513,10 @@ package xray {
         Status: js.UndefOr[EncryptionStatus] = js.undefined,
         Type: js.UndefOr[EncryptionType] = js.undefined
     ): EncryptionConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      KeyId.foreach(__v => __obj.update("KeyId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      KeyId.foreach(__v => __obj.updateDynamic("KeyId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EncryptionConfig]
     }
   }
@@ -547,8 +547,8 @@ package xray {
     def apply(
         Services: js.UndefOr[ErrorRootCauseServices] = js.undefined
     ): ErrorRootCause = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Services.foreach(__v => __obj.update("Services", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Services.foreach(__v => __obj.updateDynamic("Services")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ErrorRootCause]
     }
   }
@@ -569,10 +569,10 @@ package xray {
         Name: js.UndefOr[String] = js.undefined,
         Remote: js.UndefOr[NullableBoolean] = js.undefined
     ): ErrorRootCauseEntity = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Exceptions.foreach(__v => __obj.update("Exceptions", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Remote.foreach(__v => __obj.update("Remote", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Exceptions.foreach(__v => __obj.updateDynamic("Exceptions")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Remote.foreach(__v => __obj.updateDynamic("Remote")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ErrorRootCauseEntity]
     }
   }
@@ -599,13 +599,13 @@ package xray {
         Names: js.UndefOr[ServiceNames] = js.undefined,
         Type: js.UndefOr[String] = js.undefined
     ): ErrorRootCauseService = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccountId.foreach(__v => __obj.update("AccountId", __v.asInstanceOf[js.Any]))
-      EntityPath.foreach(__v => __obj.update("EntityPath", __v.asInstanceOf[js.Any]))
-      Inferred.foreach(__v => __obj.update("Inferred", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Names.foreach(__v => __obj.update("Names", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      EntityPath.foreach(__v => __obj.updateDynamic("EntityPath")(__v.asInstanceOf[js.Any]))
+      Inferred.foreach(__v => __obj.updateDynamic("Inferred")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Names.foreach(__v => __obj.updateDynamic("Names")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ErrorRootCauseService]
     }
   }
@@ -626,10 +626,10 @@ package xray {
         ThrottleCount: js.UndefOr[NullableLong] = js.undefined,
         TotalCount: js.UndefOr[NullableLong] = js.undefined
     ): ErrorStatistics = {
-      val __obj = js.Dictionary.empty[js.Any]
-      OtherCount.foreach(__v => __obj.update("OtherCount", __v.asInstanceOf[js.Any]))
-      ThrottleCount.foreach(__v => __obj.update("ThrottleCount", __v.asInstanceOf[js.Any]))
-      TotalCount.foreach(__v => __obj.update("TotalCount", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      OtherCount.foreach(__v => __obj.updateDynamic("OtherCount")(__v.asInstanceOf[js.Any]))
+      ThrottleCount.foreach(__v => __obj.updateDynamic("ThrottleCount")(__v.asInstanceOf[js.Any]))
+      TotalCount.foreach(__v => __obj.updateDynamic("TotalCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ErrorStatistics]
     }
   }
@@ -646,8 +646,8 @@ package xray {
     def apply(
         Services: js.UndefOr[FaultRootCauseServices] = js.undefined
     ): FaultRootCause = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Services.foreach(__v => __obj.update("Services", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Services.foreach(__v => __obj.updateDynamic("Services")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FaultRootCause]
     }
   }
@@ -668,10 +668,10 @@ package xray {
         Name: js.UndefOr[String] = js.undefined,
         Remote: js.UndefOr[NullableBoolean] = js.undefined
     ): FaultRootCauseEntity = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Exceptions.foreach(__v => __obj.update("Exceptions", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Remote.foreach(__v => __obj.update("Remote", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Exceptions.foreach(__v => __obj.updateDynamic("Exceptions")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Remote.foreach(__v => __obj.updateDynamic("Remote")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FaultRootCauseEntity]
     }
   }
@@ -698,13 +698,13 @@ package xray {
         Names: js.UndefOr[ServiceNames] = js.undefined,
         Type: js.UndefOr[String] = js.undefined
     ): FaultRootCauseService = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccountId.foreach(__v => __obj.update("AccountId", __v.asInstanceOf[js.Any]))
-      EntityPath.foreach(__v => __obj.update("EntityPath", __v.asInstanceOf[js.Any]))
-      Inferred.foreach(__v => __obj.update("Inferred", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Names.foreach(__v => __obj.update("Names", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      EntityPath.foreach(__v => __obj.updateDynamic("EntityPath")(__v.asInstanceOf[js.Any]))
+      Inferred.foreach(__v => __obj.updateDynamic("Inferred")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Names.foreach(__v => __obj.updateDynamic("Names")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FaultRootCauseService]
     }
   }
@@ -723,9 +723,9 @@ package xray {
         OtherCount: js.UndefOr[NullableLong] = js.undefined,
         TotalCount: js.UndefOr[NullableLong] = js.undefined
     ): FaultStatistics = {
-      val __obj = js.Dictionary.empty[js.Any]
-      OtherCount.foreach(__v => __obj.update("OtherCount", __v.asInstanceOf[js.Any]))
-      TotalCount.foreach(__v => __obj.update("TotalCount", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      OtherCount.foreach(__v => __obj.updateDynamic("OtherCount")(__v.asInstanceOf[js.Any]))
+      TotalCount.foreach(__v => __obj.updateDynamic("TotalCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FaultStatistics]
     }
   }
@@ -736,7 +736,7 @@ package xray {
   object GetEncryptionConfigRequest {
     def apply(
         ): GetEncryptionConfigRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetEncryptionConfigRequest]
     }
@@ -751,8 +751,8 @@ package xray {
     def apply(
         EncryptionConfig: js.UndefOr[EncryptionConfig] = js.undefined
     ): GetEncryptionConfigResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EncryptionConfig.foreach(__v => __obj.update("EncryptionConfig", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EncryptionConfig.foreach(__v => __obj.updateDynamic("EncryptionConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetEncryptionConfigResult]
     }
   }
@@ -768,9 +768,9 @@ package xray {
         GroupARN: js.UndefOr[GroupARN] = js.undefined,
         GroupName: js.UndefOr[GroupName] = js.undefined
     ): GetGroupRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GroupARN.foreach(__v => __obj.update("GroupARN", __v.asInstanceOf[js.Any]))
-      GroupName.foreach(__v => __obj.update("GroupName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GroupARN.foreach(__v => __obj.updateDynamic("GroupARN")(__v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetGroupRequest]
     }
   }
@@ -784,8 +784,8 @@ package xray {
     def apply(
         Group: js.UndefOr[Group] = js.undefined
     ): GetGroupResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Group.foreach(__v => __obj.update("Group", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Group.foreach(__v => __obj.updateDynamic("Group")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetGroupResult]
     }
   }
@@ -799,8 +799,8 @@ package xray {
     def apply(
         NextToken: js.UndefOr[GetGroupsNextToken] = js.undefined
     ): GetGroupsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetGroupsRequest]
     }
   }
@@ -816,9 +816,9 @@ package xray {
         Groups: js.UndefOr[GroupSummaryList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): GetGroupsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Groups.foreach(__v => __obj.update("Groups", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Groups.foreach(__v => __obj.updateDynamic("Groups")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetGroupsResult]
     }
   }
@@ -832,8 +832,8 @@ package xray {
     def apply(
         NextToken: js.UndefOr[String] = js.undefined
     ): GetSamplingRulesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSamplingRulesRequest]
     }
   }
@@ -849,9 +849,9 @@ package xray {
         NextToken: js.UndefOr[String] = js.undefined,
         SamplingRuleRecords: js.UndefOr[SamplingRuleRecordList] = js.undefined
     ): GetSamplingRulesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      SamplingRuleRecords.foreach(__v => __obj.update("SamplingRuleRecords", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SamplingRuleRecords.foreach(__v => __obj.updateDynamic("SamplingRuleRecords")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSamplingRulesResult]
     }
   }
@@ -865,8 +865,8 @@ package xray {
     def apply(
         NextToken: js.UndefOr[String] = js.undefined
     ): GetSamplingStatisticSummariesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSamplingStatisticSummariesRequest]
     }
   }
@@ -882,9 +882,11 @@ package xray {
         NextToken: js.UndefOr[String] = js.undefined,
         SamplingStatisticSummaries: js.UndefOr[SamplingStatisticSummaryList] = js.undefined
     ): GetSamplingStatisticSummariesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      SamplingStatisticSummaries.foreach(__v => __obj.update("SamplingStatisticSummaries", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SamplingStatisticSummaries.foreach(
+        __v => __obj.updateDynamic("SamplingStatisticSummaries")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[GetSamplingStatisticSummariesResult]
     }
   }
@@ -898,7 +900,7 @@ package xray {
     def apply(
         SamplingStatisticsDocuments: SamplingStatisticsDocumentList
     ): GetSamplingTargetsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SamplingStatisticsDocuments" -> SamplingStatisticsDocuments.asInstanceOf[js.Any]
       )
 
@@ -919,10 +921,10 @@ package xray {
         SamplingTargetDocuments: js.UndefOr[SamplingTargetDocumentList] = js.undefined,
         UnprocessedStatistics: js.UndefOr[UnprocessedStatisticsList] = js.undefined
     ): GetSamplingTargetsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LastRuleModification.foreach(__v => __obj.update("LastRuleModification", __v.asInstanceOf[js.Any]))
-      SamplingTargetDocuments.foreach(__v => __obj.update("SamplingTargetDocuments", __v.asInstanceOf[js.Any]))
-      UnprocessedStatistics.foreach(__v => __obj.update("UnprocessedStatistics", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LastRuleModification.foreach(__v => __obj.updateDynamic("LastRuleModification")(__v.asInstanceOf[js.Any]))
+      SamplingTargetDocuments.foreach(__v => __obj.updateDynamic("SamplingTargetDocuments")(__v.asInstanceOf[js.Any]))
+      UnprocessedStatistics.foreach(__v => __obj.updateDynamic("UnprocessedStatistics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSamplingTargetsResult]
     }
   }
@@ -944,14 +946,14 @@ package xray {
         GroupName: js.UndefOr[GroupName] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): GetServiceGraphRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EndTime"   -> EndTime.asInstanceOf[js.Any],
         "StartTime" -> StartTime.asInstanceOf[js.Any]
       )
 
-      GroupARN.foreach(__v => __obj.update("GroupARN", __v.asInstanceOf[js.Any]))
-      GroupName.foreach(__v => __obj.update("GroupName", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      GroupARN.foreach(__v => __obj.updateDynamic("GroupARN")(__v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetServiceGraphRequest]
     }
   }
@@ -973,12 +975,12 @@ package xray {
         Services: js.UndefOr[ServiceList] = js.undefined,
         StartTime: js.UndefOr[Timestamp] = js.undefined
     ): GetServiceGraphResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ContainsOldGroupVersions.foreach(__v => __obj.update("ContainsOldGroupVersions", __v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Services.foreach(__v => __obj.update("Services", __v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ContainsOldGroupVersions.foreach(__v => __obj.updateDynamic("ContainsOldGroupVersions")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Services.foreach(__v => __obj.updateDynamic("Services")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetServiceGraphResult]
     }
   }
@@ -1004,16 +1006,16 @@ package xray {
         NextToken: js.UndefOr[String] = js.undefined,
         Period: js.UndefOr[NullableInteger] = js.undefined
     ): GetTimeSeriesServiceStatisticsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EndTime"   -> EndTime.asInstanceOf[js.Any],
         "StartTime" -> StartTime.asInstanceOf[js.Any]
       )
 
-      EntitySelectorExpression.foreach(__v => __obj.update("EntitySelectorExpression", __v.asInstanceOf[js.Any]))
-      GroupARN.foreach(__v => __obj.update("GroupARN", __v.asInstanceOf[js.Any]))
-      GroupName.foreach(__v => __obj.update("GroupName", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Period.foreach(__v => __obj.update("Period", __v.asInstanceOf[js.Any]))
+      EntitySelectorExpression.foreach(__v => __obj.updateDynamic("EntitySelectorExpression")(__v.asInstanceOf[js.Any]))
+      GroupARN.foreach(__v => __obj.updateDynamic("GroupARN")(__v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Period.foreach(__v => __obj.updateDynamic("Period")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTimeSeriesServiceStatisticsRequest]
     }
   }
@@ -1031,10 +1033,12 @@ package xray {
         NextToken: js.UndefOr[String] = js.undefined,
         TimeSeriesServiceStatistics: js.UndefOr[TimeSeriesServiceStatisticsList] = js.undefined
     ): GetTimeSeriesServiceStatisticsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ContainsOldGroupVersions.foreach(__v => __obj.update("ContainsOldGroupVersions", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      TimeSeriesServiceStatistics.foreach(__v => __obj.update("TimeSeriesServiceStatistics", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ContainsOldGroupVersions.foreach(__v => __obj.updateDynamic("ContainsOldGroupVersions")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TimeSeriesServiceStatistics.foreach(
+        __v => __obj.updateDynamic("TimeSeriesServiceStatistics")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[GetTimeSeriesServiceStatisticsResult]
     }
   }
@@ -1050,11 +1054,11 @@ package xray {
         TraceIds: TraceIdList,
         NextToken: js.UndefOr[String] = js.undefined
     ): GetTraceGraphRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TraceIds" -> TraceIds.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTraceGraphRequest]
     }
   }
@@ -1070,9 +1074,9 @@ package xray {
         NextToken: js.UndefOr[String] = js.undefined,
         Services: js.UndefOr[ServiceList] = js.undefined
     ): GetTraceGraphResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Services.foreach(__v => __obj.update("Services", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Services.foreach(__v => __obj.updateDynamic("Services")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTraceGraphResult]
     }
   }
@@ -1098,16 +1102,16 @@ package xray {
         SamplingStrategy: js.UndefOr[SamplingStrategy] = js.undefined,
         TimeRangeType: js.UndefOr[TimeRangeType] = js.undefined
     ): GetTraceSummariesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EndTime"   -> EndTime.asInstanceOf[js.Any],
         "StartTime" -> StartTime.asInstanceOf[js.Any]
       )
 
-      FilterExpression.foreach(__v => __obj.update("FilterExpression", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Sampling.foreach(__v => __obj.update("Sampling", __v.asInstanceOf[js.Any]))
-      SamplingStrategy.foreach(__v => __obj.update("SamplingStrategy", __v.asInstanceOf[js.Any]))
-      TimeRangeType.foreach(__v => __obj.update("TimeRangeType", __v.asInstanceOf[js.Any]))
+      FilterExpression.foreach(__v => __obj.updateDynamic("FilterExpression")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Sampling.foreach(__v => __obj.updateDynamic("Sampling")(__v.asInstanceOf[js.Any]))
+      SamplingStrategy.foreach(__v => __obj.updateDynamic("SamplingStrategy")(__v.asInstanceOf[js.Any]))
+      TimeRangeType.foreach(__v => __obj.updateDynamic("TimeRangeType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTraceSummariesRequest]
     }
   }
@@ -1127,11 +1131,11 @@ package xray {
         TraceSummaries: js.UndefOr[TraceSummaryList] = js.undefined,
         TracesProcessedCount: js.UndefOr[NullableLong] = js.undefined
     ): GetTraceSummariesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApproximateTime.foreach(__v => __obj.update("ApproximateTime", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      TraceSummaries.foreach(__v => __obj.update("TraceSummaries", __v.asInstanceOf[js.Any]))
-      TracesProcessedCount.foreach(__v => __obj.update("TracesProcessedCount", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApproximateTime.foreach(__v => __obj.updateDynamic("ApproximateTime")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TraceSummaries.foreach(__v => __obj.updateDynamic("TraceSummaries")(__v.asInstanceOf[js.Any]))
+      TracesProcessedCount.foreach(__v => __obj.updateDynamic("TracesProcessedCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTraceSummariesResult]
     }
   }
@@ -1152,10 +1156,10 @@ package xray {
         GroupARN: js.UndefOr[String] = js.undefined,
         GroupName: js.UndefOr[String] = js.undefined
     ): Group = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FilterExpression.foreach(__v => __obj.update("FilterExpression", __v.asInstanceOf[js.Any]))
-      GroupARN.foreach(__v => __obj.update("GroupARN", __v.asInstanceOf[js.Any]))
-      GroupName.foreach(__v => __obj.update("GroupName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FilterExpression.foreach(__v => __obj.updateDynamic("FilterExpression")(__v.asInstanceOf[js.Any]))
+      GroupARN.foreach(__v => __obj.updateDynamic("GroupARN")(__v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Group]
     }
   }
@@ -1176,10 +1180,10 @@ package xray {
         GroupARN: js.UndefOr[String] = js.undefined,
         GroupName: js.UndefOr[String] = js.undefined
     ): GroupSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FilterExpression.foreach(__v => __obj.update("FilterExpression", __v.asInstanceOf[js.Any]))
-      GroupARN.foreach(__v => __obj.update("GroupARN", __v.asInstanceOf[js.Any]))
-      GroupName.foreach(__v => __obj.update("GroupName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FilterExpression.foreach(__v => __obj.updateDynamic("FilterExpression")(__v.asInstanceOf[js.Any]))
+      GroupARN.foreach(__v => __obj.updateDynamic("GroupARN")(__v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GroupSummary]
     }
   }
@@ -1198,9 +1202,9 @@ package xray {
         Count: js.UndefOr[Int] = js.undefined,
         Value: js.UndefOr[Double] = js.undefined
     ): HistogramEntry = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Count.foreach(__v => __obj.update("Count", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HistogramEntry]
     }
   }
@@ -1225,12 +1229,12 @@ package xray {
         HttpURL: js.UndefOr[String] = js.undefined,
         UserAgent: js.UndefOr[String] = js.undefined
     ): Http = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClientIp.foreach(__v => __obj.update("ClientIp", __v.asInstanceOf[js.Any]))
-      HttpMethod.foreach(__v => __obj.update("HttpMethod", __v.asInstanceOf[js.Any]))
-      HttpStatus.foreach(__v => __obj.update("HttpStatus", __v.asInstanceOf[js.Any]))
-      HttpURL.foreach(__v => __obj.update("HttpURL", __v.asInstanceOf[js.Any]))
-      UserAgent.foreach(__v => __obj.update("UserAgent", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClientIp.foreach(__v => __obj.updateDynamic("ClientIp")(__v.asInstanceOf[js.Any]))
+      HttpMethod.foreach(__v => __obj.updateDynamic("HttpMethod")(__v.asInstanceOf[js.Any]))
+      HttpStatus.foreach(__v => __obj.updateDynamic("HttpStatus")(__v.asInstanceOf[js.Any]))
+      HttpURL.foreach(__v => __obj.updateDynamic("HttpURL")(__v.asInstanceOf[js.Any]))
+      UserAgent.foreach(__v => __obj.updateDynamic("UserAgent")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Http]
     }
   }
@@ -1247,8 +1251,8 @@ package xray {
     def apply(
         Id: js.UndefOr[String] = js.undefined
     ): InstanceIdDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceIdDetail]
     }
   }
@@ -1264,11 +1268,11 @@ package xray {
         Type: EncryptionType,
         KeyId: js.UndefOr[EncryptionKeyId] = js.undefined
     ): PutEncryptionConfigRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Type" -> Type.asInstanceOf[js.Any]
       )
 
-      KeyId.foreach(__v => __obj.update("KeyId", __v.asInstanceOf[js.Any]))
+      KeyId.foreach(__v => __obj.updateDynamic("KeyId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutEncryptionConfigRequest]
     }
   }
@@ -1282,8 +1286,8 @@ package xray {
     def apply(
         EncryptionConfig: js.UndefOr[EncryptionConfig] = js.undefined
     ): PutEncryptionConfigResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EncryptionConfig.foreach(__v => __obj.update("EncryptionConfig", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EncryptionConfig.foreach(__v => __obj.updateDynamic("EncryptionConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutEncryptionConfigResult]
     }
   }
@@ -1303,13 +1307,13 @@ package xray {
         Hostname: js.UndefOr[Hostname] = js.undefined,
         ResourceARN: js.UndefOr[ResourceARN] = js.undefined
     ): PutTelemetryRecordsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TelemetryRecords" -> TelemetryRecords.asInstanceOf[js.Any]
       )
 
-      EC2InstanceId.foreach(__v => __obj.update("EC2InstanceId", __v.asInstanceOf[js.Any]))
-      Hostname.foreach(__v => __obj.update("Hostname", __v.asInstanceOf[js.Any]))
-      ResourceARN.foreach(__v => __obj.update("ResourceARN", __v.asInstanceOf[js.Any]))
+      EC2InstanceId.foreach(__v => __obj.updateDynamic("EC2InstanceId")(__v.asInstanceOf[js.Any]))
+      Hostname.foreach(__v => __obj.updateDynamic("Hostname")(__v.asInstanceOf[js.Any]))
+      ResourceARN.foreach(__v => __obj.updateDynamic("ResourceARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutTelemetryRecordsRequest]
     }
   }
@@ -1320,7 +1324,7 @@ package xray {
   object PutTelemetryRecordsResult {
     def apply(
         ): PutTelemetryRecordsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutTelemetryRecordsResult]
     }
@@ -1335,7 +1339,7 @@ package xray {
     def apply(
         TraceSegmentDocuments: TraceSegmentDocumentList
     ): PutTraceSegmentsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TraceSegmentDocuments" -> TraceSegmentDocuments.asInstanceOf[js.Any]
       )
 
@@ -1352,8 +1356,8 @@ package xray {
     def apply(
         UnprocessedTraceSegments: js.UndefOr[UnprocessedTraceSegmentList] = js.undefined
     ): PutTraceSegmentsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      UnprocessedTraceSegments.foreach(__v => __obj.update("UnprocessedTraceSegments", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      UnprocessedTraceSegments.foreach(__v => __obj.updateDynamic("UnprocessedTraceSegments")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutTraceSegmentsResult]
     }
   }
@@ -1370,8 +1374,8 @@ package xray {
     def apply(
         ARN: js.UndefOr[String] = js.undefined
     ): ResourceARNDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ARN.foreach(__v => __obj.update("ARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceARNDetail]
     }
   }
@@ -1388,8 +1392,8 @@ package xray {
     def apply(
         Services: js.UndefOr[ResponseTimeRootCauseServices] = js.undefined
     ): ResponseTimeRootCause = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Services.foreach(__v => __obj.update("Services", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Services.foreach(__v => __obj.updateDynamic("Services")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResponseTimeRootCause]
     }
   }
@@ -1410,10 +1414,10 @@ package xray {
         Name: js.UndefOr[String] = js.undefined,
         Remote: js.UndefOr[NullableBoolean] = js.undefined
     ): ResponseTimeRootCauseEntity = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Coverage.foreach(__v => __obj.update("Coverage", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Remote.foreach(__v => __obj.update("Remote", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Coverage.foreach(__v => __obj.updateDynamic("Coverage")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Remote.foreach(__v => __obj.updateDynamic("Remote")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResponseTimeRootCauseEntity]
     }
   }
@@ -1440,13 +1444,13 @@ package xray {
         Names: js.UndefOr[ServiceNames] = js.undefined,
         Type: js.UndefOr[String] = js.undefined
     ): ResponseTimeRootCauseService = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccountId.foreach(__v => __obj.update("AccountId", __v.asInstanceOf[js.Any]))
-      EntityPath.foreach(__v => __obj.update("EntityPath", __v.asInstanceOf[js.Any]))
-      Inferred.foreach(__v => __obj.update("Inferred", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Names.foreach(__v => __obj.update("Names", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      EntityPath.foreach(__v => __obj.updateDynamic("EntityPath")(__v.asInstanceOf[js.Any]))
+      Inferred.foreach(__v => __obj.updateDynamic("Inferred")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Names.foreach(__v => __obj.updateDynamic("Names")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResponseTimeRootCauseService]
     }
   }
@@ -1465,9 +1469,9 @@ package xray {
         Message: js.UndefOr[String] = js.undefined,
         Name: js.UndefOr[String] = js.undefined
     ): RootCauseException = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RootCauseException]
     }
   }
@@ -1508,7 +1512,7 @@ package xray {
         RuleARN: js.UndefOr[String] = js.undefined,
         RuleName: js.UndefOr[RuleName] = js.undefined
     ): SamplingRule = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FixedRate"     -> FixedRate.asInstanceOf[js.Any],
         "HTTPMethod"    -> HTTPMethod.asInstanceOf[js.Any],
         "Host"          -> Host.asInstanceOf[js.Any],
@@ -1521,9 +1525,9 @@ package xray {
         "Version"       -> Version.asInstanceOf[js.Any]
       )
 
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      RuleARN.foreach(__v => __obj.update("RuleARN", __v.asInstanceOf[js.Any]))
-      RuleName.foreach(__v => __obj.update("RuleName", __v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      RuleARN.foreach(__v => __obj.updateDynamic("RuleARN")(__v.asInstanceOf[js.Any]))
+      RuleName.foreach(__v => __obj.updateDynamic("RuleName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SamplingRule]
     }
   }
@@ -1544,10 +1548,10 @@ package xray {
         ModifiedAt: js.UndefOr[Timestamp] = js.undefined,
         SamplingRule: js.UndefOr[SamplingRule] = js.undefined
     ): SamplingRuleRecord = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedAt.foreach(__v => __obj.update("CreatedAt", __v.asInstanceOf[js.Any]))
-      ModifiedAt.foreach(__v => __obj.update("ModifiedAt", __v.asInstanceOf[js.Any]))
-      SamplingRule.foreach(__v => __obj.update("SamplingRule", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      ModifiedAt.foreach(__v => __obj.updateDynamic("ModifiedAt")(__v.asInstanceOf[js.Any]))
+      SamplingRule.foreach(__v => __obj.updateDynamic("SamplingRule")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SamplingRuleRecord]
     }
   }
@@ -1586,19 +1590,19 @@ package xray {
         ServiceType: js.UndefOr[ServiceType] = js.undefined,
         URLPath: js.UndefOr[URLPath] = js.undefined
     ): SamplingRuleUpdate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      FixedRate.foreach(__v => __obj.update("FixedRate", __v.asInstanceOf[js.Any]))
-      HTTPMethod.foreach(__v => __obj.update("HTTPMethod", __v.asInstanceOf[js.Any]))
-      Host.foreach(__v => __obj.update("Host", __v.asInstanceOf[js.Any]))
-      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
-      ReservoirSize.foreach(__v => __obj.update("ReservoirSize", __v.asInstanceOf[js.Any]))
-      ResourceARN.foreach(__v => __obj.update("ResourceARN", __v.asInstanceOf[js.Any]))
-      RuleARN.foreach(__v => __obj.update("RuleARN", __v.asInstanceOf[js.Any]))
-      RuleName.foreach(__v => __obj.update("RuleName", __v.asInstanceOf[js.Any]))
-      ServiceName.foreach(__v => __obj.update("ServiceName", __v.asInstanceOf[js.Any]))
-      ServiceType.foreach(__v => __obj.update("ServiceType", __v.asInstanceOf[js.Any]))
-      URLPath.foreach(__v => __obj.update("URLPath", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      FixedRate.foreach(__v => __obj.updateDynamic("FixedRate")(__v.asInstanceOf[js.Any]))
+      HTTPMethod.foreach(__v => __obj.updateDynamic("HTTPMethod")(__v.asInstanceOf[js.Any]))
+      Host.foreach(__v => __obj.updateDynamic("Host")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      ReservoirSize.foreach(__v => __obj.updateDynamic("ReservoirSize")(__v.asInstanceOf[js.Any]))
+      ResourceARN.foreach(__v => __obj.updateDynamic("ResourceARN")(__v.asInstanceOf[js.Any]))
+      RuleARN.foreach(__v => __obj.updateDynamic("RuleARN")(__v.asInstanceOf[js.Any]))
+      RuleName.foreach(__v => __obj.updateDynamic("RuleName")(__v.asInstanceOf[js.Any]))
+      ServiceName.foreach(__v => __obj.updateDynamic("ServiceName")(__v.asInstanceOf[js.Any]))
+      ServiceType.foreach(__v => __obj.updateDynamic("ServiceType")(__v.asInstanceOf[js.Any]))
+      URLPath.foreach(__v => __obj.updateDynamic("URLPath")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SamplingRuleUpdate]
     }
   }
@@ -1623,12 +1627,12 @@ package xray {
         SampledCount: js.UndefOr[Int] = js.undefined,
         Timestamp: js.UndefOr[Timestamp] = js.undefined
     ): SamplingStatisticSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BorrowCount.foreach(__v => __obj.update("BorrowCount", __v.asInstanceOf[js.Any]))
-      RequestCount.foreach(__v => __obj.update("RequestCount", __v.asInstanceOf[js.Any]))
-      RuleName.foreach(__v => __obj.update("RuleName", __v.asInstanceOf[js.Any]))
-      SampledCount.foreach(__v => __obj.update("SampledCount", __v.asInstanceOf[js.Any]))
-      Timestamp.foreach(__v => __obj.update("Timestamp", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BorrowCount.foreach(__v => __obj.updateDynamic("BorrowCount")(__v.asInstanceOf[js.Any]))
+      RequestCount.foreach(__v => __obj.updateDynamic("RequestCount")(__v.asInstanceOf[js.Any]))
+      RuleName.foreach(__v => __obj.updateDynamic("RuleName")(__v.asInstanceOf[js.Any]))
+      SampledCount.foreach(__v => __obj.updateDynamic("SampledCount")(__v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SamplingStatisticSummary]
     }
   }
@@ -1655,7 +1659,7 @@ package xray {
         Timestamp: Timestamp,
         BorrowCount: js.UndefOr[BorrowCount] = js.undefined
     ): SamplingStatisticsDocument = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClientID"     -> ClientID.asInstanceOf[js.Any],
         "RequestCount" -> RequestCount.asInstanceOf[js.Any],
         "RuleName"     -> RuleName.asInstanceOf[js.Any],
@@ -1663,7 +1667,7 @@ package xray {
         "Timestamp"    -> Timestamp.asInstanceOf[js.Any]
       )
 
-      BorrowCount.foreach(__v => __obj.update("BorrowCount", __v.asInstanceOf[js.Any]))
+      BorrowCount.foreach(__v => __obj.updateDynamic("BorrowCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SamplingStatisticsDocument]
     }
   }
@@ -1682,9 +1686,9 @@ package xray {
         Name: js.UndefOr[SamplingStrategyName] = js.undefined,
         Value: js.UndefOr[NullableDouble] = js.undefined
     ): SamplingStrategy = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SamplingStrategy]
     }
   }
@@ -1716,12 +1720,12 @@ package xray {
         ReservoirQuotaTTL: js.UndefOr[Timestamp] = js.undefined,
         RuleName: js.UndefOr[String] = js.undefined
     ): SamplingTargetDocument = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FixedRate.foreach(__v => __obj.update("FixedRate", __v.asInstanceOf[js.Any]))
-      Interval.foreach(__v => __obj.update("Interval", __v.asInstanceOf[js.Any]))
-      ReservoirQuota.foreach(__v => __obj.update("ReservoirQuota", __v.asInstanceOf[js.Any]))
-      ReservoirQuotaTTL.foreach(__v => __obj.update("ReservoirQuotaTTL", __v.asInstanceOf[js.Any]))
-      RuleName.foreach(__v => __obj.update("RuleName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FixedRate.foreach(__v => __obj.updateDynamic("FixedRate")(__v.asInstanceOf[js.Any]))
+      Interval.foreach(__v => __obj.updateDynamic("Interval")(__v.asInstanceOf[js.Any]))
+      ReservoirQuota.foreach(__v => __obj.updateDynamic("ReservoirQuota")(__v.asInstanceOf[js.Any]))
+      ReservoirQuotaTTL.foreach(__v => __obj.updateDynamic("ReservoirQuotaTTL")(__v.asInstanceOf[js.Any]))
+      RuleName.foreach(__v => __obj.updateDynamic("RuleName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SamplingTargetDocument]
     }
   }
@@ -1741,9 +1745,9 @@ package xray {
         Document: js.UndefOr[SegmentDocument] = js.undefined,
         Id: js.UndefOr[SegmentId] = js.undefined
     ): Segment = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Document.foreach(__v => __obj.update("Document", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Document.foreach(__v => __obj.updateDynamic("Document")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Segment]
     }
   }
@@ -1784,20 +1788,20 @@ package xray {
         SummaryStatistics: js.UndefOr[ServiceStatistics] = js.undefined,
         Type: js.UndefOr[String] = js.undefined
     ): Service = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccountId.foreach(__v => __obj.update("AccountId", __v.asInstanceOf[js.Any]))
-      DurationHistogram.foreach(__v => __obj.update("DurationHistogram", __v.asInstanceOf[js.Any]))
-      Edges.foreach(__v => __obj.update("Edges", __v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Names.foreach(__v => __obj.update("Names", __v.asInstanceOf[js.Any]))
-      ReferenceId.foreach(__v => __obj.update("ReferenceId", __v.asInstanceOf[js.Any]))
-      ResponseTimeHistogram.foreach(__v => __obj.update("ResponseTimeHistogram", __v.asInstanceOf[js.Any]))
-      Root.foreach(__v => __obj.update("Root", __v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
-      SummaryStatistics.foreach(__v => __obj.update("SummaryStatistics", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      DurationHistogram.foreach(__v => __obj.updateDynamic("DurationHistogram")(__v.asInstanceOf[js.Any]))
+      Edges.foreach(__v => __obj.updateDynamic("Edges")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Names.foreach(__v => __obj.updateDynamic("Names")(__v.asInstanceOf[js.Any]))
+      ReferenceId.foreach(__v => __obj.updateDynamic("ReferenceId")(__v.asInstanceOf[js.Any]))
+      ResponseTimeHistogram.foreach(__v => __obj.updateDynamic("ResponseTimeHistogram")(__v.asInstanceOf[js.Any]))
+      Root.foreach(__v => __obj.updateDynamic("Root")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      SummaryStatistics.foreach(__v => __obj.updateDynamic("SummaryStatistics")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Service]
     }
   }
@@ -1820,11 +1824,11 @@ package xray {
         Names: js.UndefOr[ServiceNames] = js.undefined,
         Type: js.UndefOr[String] = js.undefined
     ): ServiceId = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccountId.foreach(__v => __obj.update("AccountId", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Names.foreach(__v => __obj.update("Names", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Names.foreach(__v => __obj.updateDynamic("Names")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServiceId]
     }
   }
@@ -1849,12 +1853,12 @@ package xray {
         TotalCount: js.UndefOr[NullableLong] = js.undefined,
         TotalResponseTime: js.UndefOr[NullableDouble] = js.undefined
     ): ServiceStatistics = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ErrorStatistics.foreach(__v => __obj.update("ErrorStatistics", __v.asInstanceOf[js.Any]))
-      FaultStatistics.foreach(__v => __obj.update("FaultStatistics", __v.asInstanceOf[js.Any]))
-      OkCount.foreach(__v => __obj.update("OkCount", __v.asInstanceOf[js.Any]))
-      TotalCount.foreach(__v => __obj.update("TotalCount", __v.asInstanceOf[js.Any]))
-      TotalResponseTime.foreach(__v => __obj.update("TotalResponseTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ErrorStatistics.foreach(__v => __obj.updateDynamic("ErrorStatistics")(__v.asInstanceOf[js.Any]))
+      FaultStatistics.foreach(__v => __obj.updateDynamic("FaultStatistics")(__v.asInstanceOf[js.Any]))
+      OkCount.foreach(__v => __obj.updateDynamic("OkCount")(__v.asInstanceOf[js.Any]))
+      TotalCount.foreach(__v => __obj.updateDynamic("TotalCount")(__v.asInstanceOf[js.Any]))
+      TotalResponseTime.foreach(__v => __obj.updateDynamic("TotalResponseTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServiceStatistics]
     }
   }
@@ -1881,15 +1885,15 @@ package xray {
         SegmentsSentCount: js.UndefOr[NullableInteger] = js.undefined,
         SegmentsSpilloverCount: js.UndefOr[NullableInteger] = js.undefined
     ): TelemetryRecord = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Timestamp" -> Timestamp.asInstanceOf[js.Any]
       )
 
-      BackendConnectionErrors.foreach(__v => __obj.update("BackendConnectionErrors", __v.asInstanceOf[js.Any]))
-      SegmentsReceivedCount.foreach(__v => __obj.update("SegmentsReceivedCount", __v.asInstanceOf[js.Any]))
-      SegmentsRejectedCount.foreach(__v => __obj.update("SegmentsRejectedCount", __v.asInstanceOf[js.Any]))
-      SegmentsSentCount.foreach(__v => __obj.update("SegmentsSentCount", __v.asInstanceOf[js.Any]))
-      SegmentsSpilloverCount.foreach(__v => __obj.update("SegmentsSpilloverCount", __v.asInstanceOf[js.Any]))
+      BackendConnectionErrors.foreach(__v => __obj.updateDynamic("BackendConnectionErrors")(__v.asInstanceOf[js.Any]))
+      SegmentsReceivedCount.foreach(__v => __obj.updateDynamic("SegmentsReceivedCount")(__v.asInstanceOf[js.Any]))
+      SegmentsRejectedCount.foreach(__v => __obj.updateDynamic("SegmentsRejectedCount")(__v.asInstanceOf[js.Any]))
+      SegmentsSentCount.foreach(__v => __obj.updateDynamic("SegmentsSentCount")(__v.asInstanceOf[js.Any]))
+      SegmentsSpilloverCount.foreach(__v => __obj.updateDynamic("SegmentsSpilloverCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TelemetryRecord]
     }
   }
@@ -1919,11 +1923,11 @@ package xray {
         ServiceSummaryStatistics: js.UndefOr[ServiceStatistics] = js.undefined,
         Timestamp: js.UndefOr[Timestamp] = js.undefined
     ): TimeSeriesServiceStatistics = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EdgeSummaryStatistics.foreach(__v => __obj.update("EdgeSummaryStatistics", __v.asInstanceOf[js.Any]))
-      ResponseTimeHistogram.foreach(__v => __obj.update("ResponseTimeHistogram", __v.asInstanceOf[js.Any]))
-      ServiceSummaryStatistics.foreach(__v => __obj.update("ServiceSummaryStatistics", __v.asInstanceOf[js.Any]))
-      Timestamp.foreach(__v => __obj.update("Timestamp", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EdgeSummaryStatistics.foreach(__v => __obj.updateDynamic("EdgeSummaryStatistics")(__v.asInstanceOf[js.Any]))
+      ResponseTimeHistogram.foreach(__v => __obj.updateDynamic("ResponseTimeHistogram")(__v.asInstanceOf[js.Any]))
+      ServiceSummaryStatistics.foreach(__v => __obj.updateDynamic("ServiceSummaryStatistics")(__v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TimeSeriesServiceStatistics]
     }
   }
@@ -1944,10 +1948,10 @@ package xray {
         Id: js.UndefOr[TraceId] = js.undefined,
         Segments: js.UndefOr[SegmentList] = js.undefined
     ): Trace = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Segments.foreach(__v => __obj.update("Segments", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Duration.foreach(__v => __obj.updateDynamic("Duration")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Segments.foreach(__v => __obj.updateDynamic("Segments")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Trace]
     }
   }
@@ -2002,27 +2006,27 @@ package xray {
         ServiceIds: js.UndefOr[ServiceIds] = js.undefined,
         Users: js.UndefOr[TraceUsers] = js.undefined
     ): TraceSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Annotations.foreach(__v => __obj.update("Annotations", __v.asInstanceOf[js.Any]))
-      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
-      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
-      EntryPoint.foreach(__v => __obj.update("EntryPoint", __v.asInstanceOf[js.Any]))
-      ErrorRootCauses.foreach(__v => __obj.update("ErrorRootCauses", __v.asInstanceOf[js.Any]))
-      FaultRootCauses.foreach(__v => __obj.update("FaultRootCauses", __v.asInstanceOf[js.Any]))
-      HasError.foreach(__v => __obj.update("HasError", __v.asInstanceOf[js.Any]))
-      HasFault.foreach(__v => __obj.update("HasFault", __v.asInstanceOf[js.Any]))
-      HasThrottle.foreach(__v => __obj.update("HasThrottle", __v.asInstanceOf[js.Any]))
-      Http.foreach(__v => __obj.update("Http", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      InstanceIds.foreach(__v => __obj.update("InstanceIds", __v.asInstanceOf[js.Any]))
-      IsPartial.foreach(__v => __obj.update("IsPartial", __v.asInstanceOf[js.Any]))
-      MatchedEventTime.foreach(__v => __obj.update("MatchedEventTime", __v.asInstanceOf[js.Any]))
-      ResourceARNs.foreach(__v => __obj.update("ResourceARNs", __v.asInstanceOf[js.Any]))
-      ResponseTime.foreach(__v => __obj.update("ResponseTime", __v.asInstanceOf[js.Any]))
-      ResponseTimeRootCauses.foreach(__v => __obj.update("ResponseTimeRootCauses", __v.asInstanceOf[js.Any]))
-      Revision.foreach(__v => __obj.update("Revision", __v.asInstanceOf[js.Any]))
-      ServiceIds.foreach(__v => __obj.update("ServiceIds", __v.asInstanceOf[js.Any]))
-      Users.foreach(__v => __obj.update("Users", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Annotations.foreach(__v => __obj.updateDynamic("Annotations")(__v.asInstanceOf[js.Any]))
+      AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
+      Duration.foreach(__v => __obj.updateDynamic("Duration")(__v.asInstanceOf[js.Any]))
+      EntryPoint.foreach(__v => __obj.updateDynamic("EntryPoint")(__v.asInstanceOf[js.Any]))
+      ErrorRootCauses.foreach(__v => __obj.updateDynamic("ErrorRootCauses")(__v.asInstanceOf[js.Any]))
+      FaultRootCauses.foreach(__v => __obj.updateDynamic("FaultRootCauses")(__v.asInstanceOf[js.Any]))
+      HasError.foreach(__v => __obj.updateDynamic("HasError")(__v.asInstanceOf[js.Any]))
+      HasFault.foreach(__v => __obj.updateDynamic("HasFault")(__v.asInstanceOf[js.Any]))
+      HasThrottle.foreach(__v => __obj.updateDynamic("HasThrottle")(__v.asInstanceOf[js.Any]))
+      Http.foreach(__v => __obj.updateDynamic("Http")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      InstanceIds.foreach(__v => __obj.updateDynamic("InstanceIds")(__v.asInstanceOf[js.Any]))
+      IsPartial.foreach(__v => __obj.updateDynamic("IsPartial")(__v.asInstanceOf[js.Any]))
+      MatchedEventTime.foreach(__v => __obj.updateDynamic("MatchedEventTime")(__v.asInstanceOf[js.Any]))
+      ResourceARNs.foreach(__v => __obj.updateDynamic("ResourceARNs")(__v.asInstanceOf[js.Any]))
+      ResponseTime.foreach(__v => __obj.updateDynamic("ResponseTime")(__v.asInstanceOf[js.Any]))
+      ResponseTimeRootCauses.foreach(__v => __obj.updateDynamic("ResponseTimeRootCauses")(__v.asInstanceOf[js.Any]))
+      Revision.foreach(__v => __obj.updateDynamic("Revision")(__v.asInstanceOf[js.Any]))
+      ServiceIds.foreach(__v => __obj.updateDynamic("ServiceIds")(__v.asInstanceOf[js.Any]))
+      Users.foreach(__v => __obj.updateDynamic("Users")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TraceSummary]
     }
   }
@@ -2041,9 +2045,9 @@ package xray {
         ServiceIds: js.UndefOr[ServiceIds] = js.undefined,
         UserName: js.UndefOr[String] = js.undefined
     ): TraceUser = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ServiceIds.foreach(__v => __obj.update("ServiceIds", __v.asInstanceOf[js.Any]))
-      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ServiceIds.foreach(__v => __obj.updateDynamic("ServiceIds")(__v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TraceUser]
     }
   }
@@ -2064,10 +2068,10 @@ package xray {
         Message: js.UndefOr[String] = js.undefined,
         RuleName: js.UndefOr[String] = js.undefined
     ): UnprocessedStatistics = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
-      RuleName.foreach(__v => __obj.update("RuleName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      RuleName.foreach(__v => __obj.updateDynamic("RuleName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UnprocessedStatistics]
     }
   }
@@ -2088,10 +2092,10 @@ package xray {
         Id: js.UndefOr[String] = js.undefined,
         Message: js.UndefOr[String] = js.undefined
     ): UnprocessedTraceSegment = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UnprocessedTraceSegment]
     }
   }
@@ -2109,10 +2113,10 @@ package xray {
         GroupARN: js.UndefOr[GroupARN] = js.undefined,
         GroupName: js.UndefOr[GroupName] = js.undefined
     ): UpdateGroupRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FilterExpression.foreach(__v => __obj.update("FilterExpression", __v.asInstanceOf[js.Any]))
-      GroupARN.foreach(__v => __obj.update("GroupARN", __v.asInstanceOf[js.Any]))
-      GroupName.foreach(__v => __obj.update("GroupName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FilterExpression.foreach(__v => __obj.updateDynamic("FilterExpression")(__v.asInstanceOf[js.Any]))
+      GroupARN.foreach(__v => __obj.updateDynamic("GroupARN")(__v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGroupRequest]
     }
   }
@@ -2126,8 +2130,8 @@ package xray {
     def apply(
         Group: js.UndefOr[Group] = js.undefined
     ): UpdateGroupResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Group.foreach(__v => __obj.update("Group", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Group.foreach(__v => __obj.updateDynamic("Group")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGroupResult]
     }
   }
@@ -2141,7 +2145,7 @@ package xray {
     def apply(
         SamplingRuleUpdate: SamplingRuleUpdate
     ): UpdateSamplingRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SamplingRuleUpdate" -> SamplingRuleUpdate.asInstanceOf[js.Any]
       )
 
@@ -2158,8 +2162,8 @@ package xray {
     def apply(
         SamplingRuleRecord: js.UndefOr[SamplingRuleRecord] = js.undefined
     ): UpdateSamplingRuleResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SamplingRuleRecord.foreach(__v => __obj.update("SamplingRuleRecord", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SamplingRuleRecord.foreach(__v => __obj.updateDynamic("SamplingRuleRecord")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSamplingRuleResult]
     }
   }
@@ -2178,9 +2182,9 @@ package xray {
         AnnotationValue: js.UndefOr[AnnotationValue] = js.undefined,
         ServiceIds: js.UndefOr[ServiceIds] = js.undefined
     ): ValueWithServiceIds = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AnnotationValue.foreach(__v => __obj.update("AnnotationValue", __v.asInstanceOf[js.Any]))
-      ServiceIds.foreach(__v => __obj.update("ServiceIds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AnnotationValue.foreach(__v => __obj.updateDynamic("AnnotationValue")(__v.asInstanceOf[js.Any]))
+      ServiceIds.foreach(__v => __obj.updateDynamic("ServiceIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ValueWithServiceIds]
     }
   }

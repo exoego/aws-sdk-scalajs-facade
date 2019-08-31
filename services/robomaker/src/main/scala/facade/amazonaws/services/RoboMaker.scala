@@ -251,7 +251,7 @@ package robomaker {
     def apply(
         jobs: Arns
     ): BatchDescribeSimulationJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobs" -> jobs.asInstanceOf[js.Any]
       )
 
@@ -270,9 +270,9 @@ package robomaker {
         jobs: js.UndefOr[SimulationJobs] = js.undefined,
         unprocessedJobs: js.UndefOr[Arns] = js.undefined
     ): BatchDescribeSimulationJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      jobs.foreach(__v => __obj.update("jobs", __v.asInstanceOf[js.Any]))
-      unprocessedJobs.foreach(__v => __obj.update("unprocessedJobs", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      jobs.foreach(__v => __obj.updateDynamic("jobs")(__v.asInstanceOf[js.Any]))
+      unprocessedJobs.foreach(__v => __obj.updateDynamic("unprocessedJobs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDescribeSimulationJobResponse]
     }
   }
@@ -286,7 +286,7 @@ package robomaker {
     def apply(
         job: Arn
     ): CancelDeploymentJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "job" -> job.asInstanceOf[js.Any]
       )
 
@@ -300,7 +300,7 @@ package robomaker {
   object CancelDeploymentJobResponse {
     def apply(
         ): CancelDeploymentJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CancelDeploymentJobResponse]
     }
@@ -315,7 +315,7 @@ package robomaker {
     def apply(
         job: Arn
     ): CancelSimulationJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "job" -> job.asInstanceOf[js.Any]
       )
 
@@ -329,7 +329,7 @@ package robomaker {
   object CancelSimulationJobResponse {
     def apply(
         ): CancelSimulationJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CancelSimulationJobResponse]
     }
@@ -352,14 +352,14 @@ package robomaker {
         deploymentConfig: js.UndefOr[DeploymentConfig] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): CreateDeploymentJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "clientRequestToken"           -> clientRequestToken.asInstanceOf[js.Any],
         "deploymentApplicationConfigs" -> deploymentApplicationConfigs.asInstanceOf[js.Any],
         "fleet"                        -> fleet.asInstanceOf[js.Any]
       )
 
-      deploymentConfig.foreach(__v => __obj.update("deploymentConfig", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      deploymentConfig.foreach(__v => __obj.updateDynamic("deploymentConfig")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDeploymentJobRequest]
     }
   }
@@ -389,18 +389,18 @@ package robomaker {
         status: js.UndefOr[DeploymentStatus] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): CreateDeploymentJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       deploymentApplicationConfigs.foreach(
-        __v => __obj.update("deploymentApplicationConfigs", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("deploymentApplicationConfigs")(__v.asInstanceOf[js.Any])
       )
-      deploymentConfig.foreach(__v => __obj.update("deploymentConfig", __v.asInstanceOf[js.Any]))
-      failureCode.foreach(__v => __obj.update("failureCode", __v.asInstanceOf[js.Any]))
-      failureReason.foreach(__v => __obj.update("failureReason", __v.asInstanceOf[js.Any]))
-      fleet.foreach(__v => __obj.update("fleet", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      deploymentConfig.foreach(__v => __obj.updateDynamic("deploymentConfig")(__v.asInstanceOf[js.Any]))
+      failureCode.foreach(__v => __obj.updateDynamic("failureCode")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      fleet.foreach(__v => __obj.updateDynamic("fleet")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDeploymentJobResponse]
     }
   }
@@ -416,11 +416,11 @@ package robomaker {
         name: Name,
         tags: js.UndefOr[TagMap] = js.undefined
     ): CreateFleetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
 
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFleetRequest]
     }
   }
@@ -440,11 +440,11 @@ package robomaker {
         name: js.UndefOr[Name] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): CreateFleetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFleetResponse]
     }
   }
@@ -464,13 +464,13 @@ package robomaker {
         sources: SourceConfigs,
         tags: js.UndefOr[TagMap] = js.undefined
     ): CreateRobotApplicationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name"               -> name.asInstanceOf[js.Any],
         "robotSoftwareSuite" -> robotSoftwareSuite.asInstanceOf[js.Any],
         "sources"            -> sources.asInstanceOf[js.Any]
       )
 
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRobotApplicationRequest]
     }
   }
@@ -498,15 +498,15 @@ package robomaker {
         tags: js.UndefOr[TagMap] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): CreateRobotApplicationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      revisionId.foreach(__v => __obj.update("revisionId", __v.asInstanceOf[js.Any]))
-      robotSoftwareSuite.foreach(__v => __obj.update("robotSoftwareSuite", __v.asInstanceOf[js.Any]))
-      sources.foreach(__v => __obj.update("sources", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      revisionId.foreach(__v => __obj.updateDynamic("revisionId")(__v.asInstanceOf[js.Any]))
+      robotSoftwareSuite.foreach(__v => __obj.updateDynamic("robotSoftwareSuite")(__v.asInstanceOf[js.Any]))
+      sources.foreach(__v => __obj.updateDynamic("sources")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRobotApplicationResponse]
     }
   }
@@ -522,11 +522,11 @@ package robomaker {
         application: Arn,
         currentRevisionId: js.UndefOr[RevisionId] = js.undefined
     ): CreateRobotApplicationVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "application" -> application.asInstanceOf[js.Any]
       )
 
-      currentRevisionId.foreach(__v => __obj.update("currentRevisionId", __v.asInstanceOf[js.Any]))
+      currentRevisionId.foreach(__v => __obj.updateDynamic("currentRevisionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRobotApplicationVersionRequest]
     }
   }
@@ -552,14 +552,14 @@ package robomaker {
         sources: js.UndefOr[Sources] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): CreateRobotApplicationVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      revisionId.foreach(__v => __obj.update("revisionId", __v.asInstanceOf[js.Any]))
-      robotSoftwareSuite.foreach(__v => __obj.update("robotSoftwareSuite", __v.asInstanceOf[js.Any]))
-      sources.foreach(__v => __obj.update("sources", __v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      revisionId.foreach(__v => __obj.updateDynamic("revisionId")(__v.asInstanceOf[js.Any]))
+      robotSoftwareSuite.foreach(__v => __obj.updateDynamic("robotSoftwareSuite")(__v.asInstanceOf[js.Any]))
+      sources.foreach(__v => __obj.updateDynamic("sources")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRobotApplicationVersionResponse]
     }
   }
@@ -579,13 +579,13 @@ package robomaker {
         name: Name,
         tags: js.UndefOr[TagMap] = js.undefined
     ): CreateRobotRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "architecture"      -> architecture.asInstanceOf[js.Any],
         "greengrassGroupId" -> greengrassGroupId.asInstanceOf[js.Any],
         "name"              -> name.asInstanceOf[js.Any]
       )
 
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRobotRequest]
     }
   }
@@ -609,13 +609,13 @@ package robomaker {
         name: js.UndefOr[Name] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): CreateRobotResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      architecture.foreach(__v => __obj.update("architecture", __v.asInstanceOf[js.Any]))
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      greengrassGroupId.foreach(__v => __obj.update("greengrassGroupId", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      architecture.foreach(__v => __obj.updateDynamic("architecture")(__v.asInstanceOf[js.Any]))
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      greengrassGroupId.foreach(__v => __obj.updateDynamic("greengrassGroupId")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRobotResponse]
     }
   }
@@ -639,15 +639,15 @@ package robomaker {
         renderingEngine: js.UndefOr[RenderingEngine] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): CreateSimulationApplicationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name"                    -> name.asInstanceOf[js.Any],
         "robotSoftwareSuite"      -> robotSoftwareSuite.asInstanceOf[js.Any],
         "simulationSoftwareSuite" -> simulationSoftwareSuite.asInstanceOf[js.Any],
         "sources"                 -> sources.asInstanceOf[js.Any]
       )
 
-      renderingEngine.foreach(__v => __obj.update("renderingEngine", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      renderingEngine.foreach(__v => __obj.updateDynamic("renderingEngine")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSimulationApplicationRequest]
     }
   }
@@ -679,17 +679,17 @@ package robomaker {
         tags: js.UndefOr[TagMap] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): CreateSimulationApplicationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      renderingEngine.foreach(__v => __obj.update("renderingEngine", __v.asInstanceOf[js.Any]))
-      revisionId.foreach(__v => __obj.update("revisionId", __v.asInstanceOf[js.Any]))
-      robotSoftwareSuite.foreach(__v => __obj.update("robotSoftwareSuite", __v.asInstanceOf[js.Any]))
-      simulationSoftwareSuite.foreach(__v => __obj.update("simulationSoftwareSuite", __v.asInstanceOf[js.Any]))
-      sources.foreach(__v => __obj.update("sources", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      renderingEngine.foreach(__v => __obj.updateDynamic("renderingEngine")(__v.asInstanceOf[js.Any]))
+      revisionId.foreach(__v => __obj.updateDynamic("revisionId")(__v.asInstanceOf[js.Any]))
+      robotSoftwareSuite.foreach(__v => __obj.updateDynamic("robotSoftwareSuite")(__v.asInstanceOf[js.Any]))
+      simulationSoftwareSuite.foreach(__v => __obj.updateDynamic("simulationSoftwareSuite")(__v.asInstanceOf[js.Any]))
+      sources.foreach(__v => __obj.updateDynamic("sources")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSimulationApplicationResponse]
     }
   }
@@ -705,11 +705,11 @@ package robomaker {
         application: Arn,
         currentRevisionId: js.UndefOr[RevisionId] = js.undefined
     ): CreateSimulationApplicationVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "application" -> application.asInstanceOf[js.Any]
       )
 
-      currentRevisionId.foreach(__v => __obj.update("currentRevisionId", __v.asInstanceOf[js.Any]))
+      currentRevisionId.foreach(__v => __obj.updateDynamic("currentRevisionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSimulationApplicationVersionRequest]
     }
   }
@@ -739,16 +739,16 @@ package robomaker {
         sources: js.UndefOr[Sources] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): CreateSimulationApplicationVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      renderingEngine.foreach(__v => __obj.update("renderingEngine", __v.asInstanceOf[js.Any]))
-      revisionId.foreach(__v => __obj.update("revisionId", __v.asInstanceOf[js.Any]))
-      robotSoftwareSuite.foreach(__v => __obj.update("robotSoftwareSuite", __v.asInstanceOf[js.Any]))
-      simulationSoftwareSuite.foreach(__v => __obj.update("simulationSoftwareSuite", __v.asInstanceOf[js.Any]))
-      sources.foreach(__v => __obj.update("sources", __v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      renderingEngine.foreach(__v => __obj.updateDynamic("renderingEngine")(__v.asInstanceOf[js.Any]))
+      revisionId.foreach(__v => __obj.updateDynamic("revisionId")(__v.asInstanceOf[js.Any]))
+      robotSoftwareSuite.foreach(__v => __obj.updateDynamic("robotSoftwareSuite")(__v.asInstanceOf[js.Any]))
+      simulationSoftwareSuite.foreach(__v => __obj.updateDynamic("simulationSoftwareSuite")(__v.asInstanceOf[js.Any]))
+      sources.foreach(__v => __obj.updateDynamic("sources")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSimulationApplicationVersionResponse]
     }
   }
@@ -782,20 +782,20 @@ package robomaker {
         tags: js.UndefOr[TagMap] = js.undefined,
         vpcConfig: js.UndefOr[VPCConfig] = js.undefined
     ): CreateSimulationJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "iamRole"                 -> iamRole.asInstanceOf[js.Any],
         "maxJobDurationInSeconds" -> maxJobDurationInSeconds.asInstanceOf[js.Any]
       )
 
-      clientRequestToken.foreach(__v => __obj.update("clientRequestToken", __v.asInstanceOf[js.Any]))
-      dataSources.foreach(__v => __obj.update("dataSources", __v.asInstanceOf[js.Any]))
-      failureBehavior.foreach(__v => __obj.update("failureBehavior", __v.asInstanceOf[js.Any]))
-      loggingConfig.foreach(__v => __obj.update("loggingConfig", __v.asInstanceOf[js.Any]))
-      outputLocation.foreach(__v => __obj.update("outputLocation", __v.asInstanceOf[js.Any]))
-      robotApplications.foreach(__v => __obj.update("robotApplications", __v.asInstanceOf[js.Any]))
-      simulationApplications.foreach(__v => __obj.update("simulationApplications", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
-      vpcConfig.foreach(__v => __obj.update("vpcConfig", __v.asInstanceOf[js.Any]))
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      dataSources.foreach(__v => __obj.updateDynamic("dataSources")(__v.asInstanceOf[js.Any]))
+      failureBehavior.foreach(__v => __obj.updateDynamic("failureBehavior")(__v.asInstanceOf[js.Any]))
+      loggingConfig.foreach(__v => __obj.updateDynamic("loggingConfig")(__v.asInstanceOf[js.Any]))
+      outputLocation.foreach(__v => __obj.updateDynamic("outputLocation")(__v.asInstanceOf[js.Any]))
+      robotApplications.foreach(__v => __obj.updateDynamic("robotApplications")(__v.asInstanceOf[js.Any]))
+      simulationApplications.foreach(__v => __obj.updateDynamic("simulationApplications")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      vpcConfig.foreach(__v => __obj.updateDynamic("vpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSimulationJobRequest]
     }
   }
@@ -841,24 +841,24 @@ package robomaker {
         tags: js.UndefOr[TagMap] = js.undefined,
         vpcConfig: js.UndefOr[VPCConfigResponse] = js.undefined
     ): CreateSimulationJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      clientRequestToken.foreach(__v => __obj.update("clientRequestToken", __v.asInstanceOf[js.Any]))
-      dataSources.foreach(__v => __obj.update("dataSources", __v.asInstanceOf[js.Any]))
-      failureBehavior.foreach(__v => __obj.update("failureBehavior", __v.asInstanceOf[js.Any]))
-      failureCode.foreach(__v => __obj.update("failureCode", __v.asInstanceOf[js.Any]))
-      iamRole.foreach(__v => __obj.update("iamRole", __v.asInstanceOf[js.Any]))
-      lastStartedAt.foreach(__v => __obj.update("lastStartedAt", __v.asInstanceOf[js.Any]))
-      lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
-      loggingConfig.foreach(__v => __obj.update("loggingConfig", __v.asInstanceOf[js.Any]))
-      maxJobDurationInSeconds.foreach(__v => __obj.update("maxJobDurationInSeconds", __v.asInstanceOf[js.Any]))
-      outputLocation.foreach(__v => __obj.update("outputLocation", __v.asInstanceOf[js.Any]))
-      robotApplications.foreach(__v => __obj.update("robotApplications", __v.asInstanceOf[js.Any]))
-      simulationApplications.foreach(__v => __obj.update("simulationApplications", __v.asInstanceOf[js.Any]))
-      simulationTimeMillis.foreach(__v => __obj.update("simulationTimeMillis", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
-      vpcConfig.foreach(__v => __obj.update("vpcConfig", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      dataSources.foreach(__v => __obj.updateDynamic("dataSources")(__v.asInstanceOf[js.Any]))
+      failureBehavior.foreach(__v => __obj.updateDynamic("failureBehavior")(__v.asInstanceOf[js.Any]))
+      failureCode.foreach(__v => __obj.updateDynamic("failureCode")(__v.asInstanceOf[js.Any]))
+      iamRole.foreach(__v => __obj.updateDynamic("iamRole")(__v.asInstanceOf[js.Any]))
+      lastStartedAt.foreach(__v => __obj.updateDynamic("lastStartedAt")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      loggingConfig.foreach(__v => __obj.updateDynamic("loggingConfig")(__v.asInstanceOf[js.Any]))
+      maxJobDurationInSeconds.foreach(__v => __obj.updateDynamic("maxJobDurationInSeconds")(__v.asInstanceOf[js.Any]))
+      outputLocation.foreach(__v => __obj.updateDynamic("outputLocation")(__v.asInstanceOf[js.Any]))
+      robotApplications.foreach(__v => __obj.updateDynamic("robotApplications")(__v.asInstanceOf[js.Any]))
+      simulationApplications.foreach(__v => __obj.updateDynamic("simulationApplications")(__v.asInstanceOf[js.Any]))
+      simulationTimeMillis.foreach(__v => __obj.updateDynamic("simulationTimeMillis")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      vpcConfig.foreach(__v => __obj.updateDynamic("vpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSimulationJobResponse]
     }
   }
@@ -879,10 +879,10 @@ package robomaker {
         s3Bucket: js.UndefOr[S3Bucket] = js.undefined,
         s3Keys: js.UndefOr[S3KeyOutputs] = js.undefined
     ): DataSource = {
-      val __obj = js.Dictionary.empty[js.Any]
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      s3Bucket.foreach(__v => __obj.update("s3Bucket", __v.asInstanceOf[js.Any]))
-      s3Keys.foreach(__v => __obj.update("s3Keys", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      s3Bucket.foreach(__v => __obj.updateDynamic("s3Bucket")(__v.asInstanceOf[js.Any]))
+      s3Keys.foreach(__v => __obj.updateDynamic("s3Keys")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataSource]
     }
   }
@@ -903,7 +903,7 @@ package robomaker {
         s3Bucket: S3Bucket,
         s3Keys: S3Keys
     ): DataSourceConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name"     -> name.asInstanceOf[js.Any],
         "s3Bucket" -> s3Bucket.asInstanceOf[js.Any],
         "s3Keys"   -> s3Keys.asInstanceOf[js.Any]
@@ -922,7 +922,7 @@ package robomaker {
     def apply(
         fleet: Arn
     ): DeleteFleetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "fleet" -> fleet.asInstanceOf[js.Any]
       )
 
@@ -936,7 +936,7 @@ package robomaker {
   object DeleteFleetResponse {
     def apply(
         ): DeleteFleetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteFleetResponse]
     }
@@ -953,11 +953,11 @@ package robomaker {
         application: Arn,
         applicationVersion: js.UndefOr[Version] = js.undefined
     ): DeleteRobotApplicationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "application" -> application.asInstanceOf[js.Any]
       )
 
-      applicationVersion.foreach(__v => __obj.update("applicationVersion", __v.asInstanceOf[js.Any]))
+      applicationVersion.foreach(__v => __obj.updateDynamic("applicationVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteRobotApplicationRequest]
     }
   }
@@ -968,7 +968,7 @@ package robomaker {
   object DeleteRobotApplicationResponse {
     def apply(
         ): DeleteRobotApplicationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteRobotApplicationResponse]
     }
@@ -983,7 +983,7 @@ package robomaker {
     def apply(
         robot: Arn
     ): DeleteRobotRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "robot" -> robot.asInstanceOf[js.Any]
       )
 
@@ -997,7 +997,7 @@ package robomaker {
   object DeleteRobotResponse {
     def apply(
         ): DeleteRobotResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteRobotResponse]
     }
@@ -1014,11 +1014,11 @@ package robomaker {
         application: Arn,
         applicationVersion: js.UndefOr[Version] = js.undefined
     ): DeleteSimulationApplicationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "application" -> application.asInstanceOf[js.Any]
       )
 
-      applicationVersion.foreach(__v => __obj.update("applicationVersion", __v.asInstanceOf[js.Any]))
+      applicationVersion.foreach(__v => __obj.updateDynamic("applicationVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteSimulationApplicationRequest]
     }
   }
@@ -1029,7 +1029,7 @@ package robomaker {
   object DeleteSimulationApplicationResponse {
     def apply(
         ): DeleteSimulationApplicationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteSimulationApplicationResponse]
     }
@@ -1051,7 +1051,7 @@ package robomaker {
         applicationVersion: DeploymentVersion,
         launchConfig: DeploymentLaunchConfig
     ): DeploymentApplicationConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "application"        -> application.asInstanceOf[js.Any],
         "applicationVersion" -> applicationVersion.asInstanceOf[js.Any],
         "launchConfig"       -> launchConfig.asInstanceOf[js.Any]
@@ -1077,13 +1077,15 @@ package robomaker {
         failureThresholdPercentage: js.UndefOr[Percentage] = js.undefined,
         robotDeploymentTimeoutInSeconds: js.UndefOr[DeploymentTimeout] = js.undefined
     ): DeploymentConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       concurrentDeploymentPercentage.foreach(
-        __v => __obj.update("concurrentDeploymentPercentage", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("concurrentDeploymentPercentage")(__v.asInstanceOf[js.Any])
       )
-      failureThresholdPercentage.foreach(__v => __obj.update("failureThresholdPercentage", __v.asInstanceOf[js.Any]))
+      failureThresholdPercentage.foreach(
+        __v => __obj.updateDynamic("failureThresholdPercentage")(__v.asInstanceOf[js.Any])
+      )
       robotDeploymentTimeoutInSeconds.foreach(
-        __v => __obj.update("robotDeploymentTimeoutInSeconds", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("robotDeploymentTimeoutInSeconds")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DeploymentConfig]
     }
@@ -1115,17 +1117,17 @@ package robomaker {
         fleet: js.UndefOr[Arn] = js.undefined,
         status: js.UndefOr[DeploymentStatus] = js.undefined
     ): DeploymentJob = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       deploymentApplicationConfigs.foreach(
-        __v => __obj.update("deploymentApplicationConfigs", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("deploymentApplicationConfigs")(__v.asInstanceOf[js.Any])
       )
-      deploymentConfig.foreach(__v => __obj.update("deploymentConfig", __v.asInstanceOf[js.Any]))
-      failureCode.foreach(__v => __obj.update("failureCode", __v.asInstanceOf[js.Any]))
-      failureReason.foreach(__v => __obj.update("failureReason", __v.asInstanceOf[js.Any]))
-      fleet.foreach(__v => __obj.update("fleet", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      deploymentConfig.foreach(__v => __obj.updateDynamic("deploymentConfig")(__v.asInstanceOf[js.Any]))
+      failureCode.foreach(__v => __obj.updateDynamic("failureCode")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      fleet.foreach(__v => __obj.updateDynamic("fleet")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeploymentJob]
     }
   }
@@ -1192,14 +1194,14 @@ package robomaker {
         postLaunchFile: js.UndefOr[Path] = js.undefined,
         preLaunchFile: js.UndefOr[Path] = js.undefined
     ): DeploymentLaunchConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "launchFile"  -> launchFile.asInstanceOf[js.Any],
         "packageName" -> packageName.asInstanceOf[js.Any]
       )
 
-      environmentVariables.foreach(__v => __obj.update("environmentVariables", __v.asInstanceOf[js.Any]))
-      postLaunchFile.foreach(__v => __obj.update("postLaunchFile", __v.asInstanceOf[js.Any]))
-      preLaunchFile.foreach(__v => __obj.update("preLaunchFile", __v.asInstanceOf[js.Any]))
+      environmentVariables.foreach(__v => __obj.updateDynamic("environmentVariables")(__v.asInstanceOf[js.Any]))
+      postLaunchFile.foreach(__v => __obj.updateDynamic("postLaunchFile")(__v.asInstanceOf[js.Any]))
+      preLaunchFile.foreach(__v => __obj.updateDynamic("preLaunchFile")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeploymentLaunchConfig]
     }
   }
@@ -1226,7 +1228,7 @@ package robomaker {
         fleet: Arn,
         robot: Arn
     ): DeregisterRobotRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "fleet" -> fleet.asInstanceOf[js.Any],
         "robot" -> robot.asInstanceOf[js.Any]
       )
@@ -1246,9 +1248,9 @@ package robomaker {
         fleet: js.UndefOr[Arn] = js.undefined,
         robot: js.UndefOr[Arn] = js.undefined
     ): DeregisterRobotResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      fleet.foreach(__v => __obj.update("fleet", __v.asInstanceOf[js.Any]))
-      robot.foreach(__v => __obj.update("robot", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      fleet.foreach(__v => __obj.updateDynamic("fleet")(__v.asInstanceOf[js.Any]))
+      robot.foreach(__v => __obj.updateDynamic("robot")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeregisterRobotResponse]
     }
   }
@@ -1262,7 +1264,7 @@ package robomaker {
     def apply(
         job: Arn
     ): DescribeDeploymentJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "job" -> job.asInstanceOf[js.Any]
       )
 
@@ -1297,19 +1299,19 @@ package robomaker {
         status: js.UndefOr[DeploymentStatus] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): DescribeDeploymentJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       deploymentApplicationConfigs.foreach(
-        __v => __obj.update("deploymentApplicationConfigs", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("deploymentApplicationConfigs")(__v.asInstanceOf[js.Any])
       )
-      deploymentConfig.foreach(__v => __obj.update("deploymentConfig", __v.asInstanceOf[js.Any]))
-      failureCode.foreach(__v => __obj.update("failureCode", __v.asInstanceOf[js.Any]))
-      failureReason.foreach(__v => __obj.update("failureReason", __v.asInstanceOf[js.Any]))
-      fleet.foreach(__v => __obj.update("fleet", __v.asInstanceOf[js.Any]))
-      robotDeploymentSummary.foreach(__v => __obj.update("robotDeploymentSummary", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      deploymentConfig.foreach(__v => __obj.updateDynamic("deploymentConfig")(__v.asInstanceOf[js.Any]))
+      failureCode.foreach(__v => __obj.updateDynamic("failureCode")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      fleet.foreach(__v => __obj.updateDynamic("fleet")(__v.asInstanceOf[js.Any]))
+      robotDeploymentSummary.foreach(__v => __obj.updateDynamic("robotDeploymentSummary")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDeploymentJobResponse]
     }
   }
@@ -1323,7 +1325,7 @@ package robomaker {
     def apply(
         fleet: Arn
     ): DescribeFleetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "fleet" -> fleet.asInstanceOf[js.Any]
       )
 
@@ -1354,15 +1356,15 @@ package robomaker {
         robots: js.UndefOr[Robots] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): DescribeFleetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      lastDeploymentJob.foreach(__v => __obj.update("lastDeploymentJob", __v.asInstanceOf[js.Any]))
-      lastDeploymentStatus.foreach(__v => __obj.update("lastDeploymentStatus", __v.asInstanceOf[js.Any]))
-      lastDeploymentTime.foreach(__v => __obj.update("lastDeploymentTime", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      robots.foreach(__v => __obj.update("robots", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      lastDeploymentJob.foreach(__v => __obj.updateDynamic("lastDeploymentJob")(__v.asInstanceOf[js.Any]))
+      lastDeploymentStatus.foreach(__v => __obj.updateDynamic("lastDeploymentStatus")(__v.asInstanceOf[js.Any]))
+      lastDeploymentTime.foreach(__v => __obj.updateDynamic("lastDeploymentTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      robots.foreach(__v => __obj.updateDynamic("robots")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeFleetResponse]
     }
   }
@@ -1378,11 +1380,11 @@ package robomaker {
         application: Arn,
         applicationVersion: js.UndefOr[Version] = js.undefined
     ): DescribeRobotApplicationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "application" -> application.asInstanceOf[js.Any]
       )
 
-      applicationVersion.foreach(__v => __obj.update("applicationVersion", __v.asInstanceOf[js.Any]))
+      applicationVersion.foreach(__v => __obj.updateDynamic("applicationVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRobotApplicationRequest]
     }
   }
@@ -1410,15 +1412,15 @@ package robomaker {
         tags: js.UndefOr[TagMap] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): DescribeRobotApplicationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      revisionId.foreach(__v => __obj.update("revisionId", __v.asInstanceOf[js.Any]))
-      robotSoftwareSuite.foreach(__v => __obj.update("robotSoftwareSuite", __v.asInstanceOf[js.Any]))
-      sources.foreach(__v => __obj.update("sources", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      revisionId.foreach(__v => __obj.updateDynamic("revisionId")(__v.asInstanceOf[js.Any]))
+      robotSoftwareSuite.foreach(__v => __obj.updateDynamic("robotSoftwareSuite")(__v.asInstanceOf[js.Any]))
+      sources.foreach(__v => __obj.updateDynamic("sources")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRobotApplicationResponse]
     }
   }
@@ -1432,7 +1434,7 @@ package robomaker {
     def apply(
         robot: Arn
     ): DescribeRobotRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "robot" -> robot.asInstanceOf[js.Any]
       )
 
@@ -1467,17 +1469,17 @@ package robomaker {
         status: js.UndefOr[RobotStatus] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): DescribeRobotResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      architecture.foreach(__v => __obj.update("architecture", __v.asInstanceOf[js.Any]))
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      fleetArn.foreach(__v => __obj.update("fleetArn", __v.asInstanceOf[js.Any]))
-      greengrassGroupId.foreach(__v => __obj.update("greengrassGroupId", __v.asInstanceOf[js.Any]))
-      lastDeploymentJob.foreach(__v => __obj.update("lastDeploymentJob", __v.asInstanceOf[js.Any]))
-      lastDeploymentTime.foreach(__v => __obj.update("lastDeploymentTime", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      architecture.foreach(__v => __obj.updateDynamic("architecture")(__v.asInstanceOf[js.Any]))
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      fleetArn.foreach(__v => __obj.updateDynamic("fleetArn")(__v.asInstanceOf[js.Any]))
+      greengrassGroupId.foreach(__v => __obj.updateDynamic("greengrassGroupId")(__v.asInstanceOf[js.Any]))
+      lastDeploymentJob.foreach(__v => __obj.updateDynamic("lastDeploymentJob")(__v.asInstanceOf[js.Any]))
+      lastDeploymentTime.foreach(__v => __obj.updateDynamic("lastDeploymentTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRobotResponse]
     }
   }
@@ -1493,11 +1495,11 @@ package robomaker {
         application: Arn,
         applicationVersion: js.UndefOr[Version] = js.undefined
     ): DescribeSimulationApplicationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "application" -> application.asInstanceOf[js.Any]
       )
 
-      applicationVersion.foreach(__v => __obj.update("applicationVersion", __v.asInstanceOf[js.Any]))
+      applicationVersion.foreach(__v => __obj.updateDynamic("applicationVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSimulationApplicationRequest]
     }
   }
@@ -1529,17 +1531,17 @@ package robomaker {
         tags: js.UndefOr[TagMap] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): DescribeSimulationApplicationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      renderingEngine.foreach(__v => __obj.update("renderingEngine", __v.asInstanceOf[js.Any]))
-      revisionId.foreach(__v => __obj.update("revisionId", __v.asInstanceOf[js.Any]))
-      robotSoftwareSuite.foreach(__v => __obj.update("robotSoftwareSuite", __v.asInstanceOf[js.Any]))
-      simulationSoftwareSuite.foreach(__v => __obj.update("simulationSoftwareSuite", __v.asInstanceOf[js.Any]))
-      sources.foreach(__v => __obj.update("sources", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      renderingEngine.foreach(__v => __obj.updateDynamic("renderingEngine")(__v.asInstanceOf[js.Any]))
+      revisionId.foreach(__v => __obj.updateDynamic("revisionId")(__v.asInstanceOf[js.Any]))
+      robotSoftwareSuite.foreach(__v => __obj.updateDynamic("robotSoftwareSuite")(__v.asInstanceOf[js.Any]))
+      simulationSoftwareSuite.foreach(__v => __obj.updateDynamic("simulationSoftwareSuite")(__v.asInstanceOf[js.Any]))
+      sources.foreach(__v => __obj.updateDynamic("sources")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSimulationApplicationResponse]
     }
   }
@@ -1553,7 +1555,7 @@ package robomaker {
     def apply(
         job: Arn
     ): DescribeSimulationJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "job" -> job.asInstanceOf[js.Any]
       )
 
@@ -1606,26 +1608,26 @@ package robomaker {
         tags: js.UndefOr[TagMap] = js.undefined,
         vpcConfig: js.UndefOr[VPCConfigResponse] = js.undefined
     ): DescribeSimulationJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      clientRequestToken.foreach(__v => __obj.update("clientRequestToken", __v.asInstanceOf[js.Any]))
-      dataSources.foreach(__v => __obj.update("dataSources", __v.asInstanceOf[js.Any]))
-      failureBehavior.foreach(__v => __obj.update("failureBehavior", __v.asInstanceOf[js.Any]))
-      failureCode.foreach(__v => __obj.update("failureCode", __v.asInstanceOf[js.Any]))
-      failureReason.foreach(__v => __obj.update("failureReason", __v.asInstanceOf[js.Any]))
-      iamRole.foreach(__v => __obj.update("iamRole", __v.asInstanceOf[js.Any]))
-      lastStartedAt.foreach(__v => __obj.update("lastStartedAt", __v.asInstanceOf[js.Any]))
-      lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
-      loggingConfig.foreach(__v => __obj.update("loggingConfig", __v.asInstanceOf[js.Any]))
-      maxJobDurationInSeconds.foreach(__v => __obj.update("maxJobDurationInSeconds", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      outputLocation.foreach(__v => __obj.update("outputLocation", __v.asInstanceOf[js.Any]))
-      robotApplications.foreach(__v => __obj.update("robotApplications", __v.asInstanceOf[js.Any]))
-      simulationApplications.foreach(__v => __obj.update("simulationApplications", __v.asInstanceOf[js.Any]))
-      simulationTimeMillis.foreach(__v => __obj.update("simulationTimeMillis", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
-      vpcConfig.foreach(__v => __obj.update("vpcConfig", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      dataSources.foreach(__v => __obj.updateDynamic("dataSources")(__v.asInstanceOf[js.Any]))
+      failureBehavior.foreach(__v => __obj.updateDynamic("failureBehavior")(__v.asInstanceOf[js.Any]))
+      failureCode.foreach(__v => __obj.updateDynamic("failureCode")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      iamRole.foreach(__v => __obj.updateDynamic("iamRole")(__v.asInstanceOf[js.Any]))
+      lastStartedAt.foreach(__v => __obj.updateDynamic("lastStartedAt")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      loggingConfig.foreach(__v => __obj.updateDynamic("loggingConfig")(__v.asInstanceOf[js.Any]))
+      maxJobDurationInSeconds.foreach(__v => __obj.updateDynamic("maxJobDurationInSeconds")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      outputLocation.foreach(__v => __obj.updateDynamic("outputLocation")(__v.asInstanceOf[js.Any]))
+      robotApplications.foreach(__v => __obj.updateDynamic("robotApplications")(__v.asInstanceOf[js.Any]))
+      simulationApplications.foreach(__v => __obj.updateDynamic("simulationApplications")(__v.asInstanceOf[js.Any]))
+      simulationTimeMillis.foreach(__v => __obj.updateDynamic("simulationTimeMillis")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      vpcConfig.foreach(__v => __obj.updateDynamic("vpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSimulationJobResponse]
     }
   }
@@ -1651,9 +1653,9 @@ package robomaker {
         name: js.UndefOr[Name] = js.undefined,
         values: js.UndefOr[FilterValues] = js.undefined
     ): Filter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      values.foreach(__v => __obj.update("values", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      values.foreach(__v => __obj.updateDynamic("values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Filter]
     }
   }
@@ -1680,13 +1682,13 @@ package robomaker {
         lastDeploymentTime: js.UndefOr[CreatedAt] = js.undefined,
         name: js.UndefOr[Name] = js.undefined
     ): Fleet = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      lastDeploymentJob.foreach(__v => __obj.update("lastDeploymentJob", __v.asInstanceOf[js.Any]))
-      lastDeploymentStatus.foreach(__v => __obj.update("lastDeploymentStatus", __v.asInstanceOf[js.Any]))
-      lastDeploymentTime.foreach(__v => __obj.update("lastDeploymentTime", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      lastDeploymentJob.foreach(__v => __obj.updateDynamic("lastDeploymentJob")(__v.asInstanceOf[js.Any]))
+      lastDeploymentStatus.foreach(__v => __obj.updateDynamic("lastDeploymentStatus")(__v.asInstanceOf[js.Any]))
+      lastDeploymentTime.foreach(__v => __obj.updateDynamic("lastDeploymentTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Fleet]
     }
   }
@@ -1707,12 +1709,12 @@ package robomaker {
         packageName: Command,
         environmentVariables: js.UndefOr[EnvironmentVariableMap] = js.undefined
     ): LaunchConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "launchFile"  -> launchFile.asInstanceOf[js.Any],
         "packageName" -> packageName.asInstanceOf[js.Any]
       )
 
-      environmentVariables.foreach(__v => __obj.update("environmentVariables", __v.asInstanceOf[js.Any]))
+      environmentVariables.foreach(__v => __obj.updateDynamic("environmentVariables")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LaunchConfig]
     }
   }
@@ -1730,10 +1732,10 @@ package robomaker {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListDeploymentJobsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      filters.foreach(__v => __obj.update("filters", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDeploymentJobsRequest]
     }
   }
@@ -1749,9 +1751,9 @@ package robomaker {
         deploymentJobs: js.UndefOr[DeploymentJobs] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListDeploymentJobsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deploymentJobs.foreach(__v => __obj.update("deploymentJobs", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deploymentJobs.foreach(__v => __obj.updateDynamic("deploymentJobs")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDeploymentJobsResponse]
     }
   }
@@ -1769,10 +1771,10 @@ package robomaker {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListFleetsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      filters.foreach(__v => __obj.update("filters", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFleetsRequest]
     }
   }
@@ -1788,9 +1790,9 @@ package robomaker {
         fleetDetails: js.UndefOr[Fleets] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListFleetsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      fleetDetails.foreach(__v => __obj.update("fleetDetails", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      fleetDetails.foreach(__v => __obj.updateDynamic("fleetDetails")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFleetsResponse]
     }
   }
@@ -1810,11 +1812,11 @@ package robomaker {
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         versionQualifier: js.UndefOr[VersionQualifier] = js.undefined
     ): ListRobotApplicationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      filters.foreach(__v => __obj.update("filters", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      versionQualifier.foreach(__v => __obj.update("versionQualifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      versionQualifier.foreach(__v => __obj.updateDynamic("versionQualifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRobotApplicationsRequest]
     }
   }
@@ -1830,9 +1832,11 @@ package robomaker {
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         robotApplicationSummaries: js.UndefOr[RobotApplicationSummaries] = js.undefined
     ): ListRobotApplicationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      robotApplicationSummaries.foreach(__v => __obj.update("robotApplicationSummaries", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      robotApplicationSummaries.foreach(
+        __v => __obj.updateDynamic("robotApplicationSummaries")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[ListRobotApplicationsResponse]
     }
   }
@@ -1850,10 +1854,10 @@ package robomaker {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListRobotsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      filters.foreach(__v => __obj.update("filters", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRobotsRequest]
     }
   }
@@ -1869,9 +1873,9 @@ package robomaker {
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         robots: js.UndefOr[Robots] = js.undefined
     ): ListRobotsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      robots.foreach(__v => __obj.update("robots", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      robots.foreach(__v => __obj.updateDynamic("robots")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRobotsResponse]
     }
   }
@@ -1891,11 +1895,11 @@ package robomaker {
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         versionQualifier: js.UndefOr[VersionQualifier] = js.undefined
     ): ListSimulationApplicationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      filters.foreach(__v => __obj.update("filters", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      versionQualifier.foreach(__v => __obj.update("versionQualifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      versionQualifier.foreach(__v => __obj.updateDynamic("versionQualifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSimulationApplicationsRequest]
     }
   }
@@ -1911,10 +1915,10 @@ package robomaker {
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         simulationApplicationSummaries: js.UndefOr[SimulationApplicationSummaries] = js.undefined
     ): ListSimulationApplicationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       simulationApplicationSummaries.foreach(
-        __v => __obj.update("simulationApplicationSummaries", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("simulationApplicationSummaries")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListSimulationApplicationsResponse]
     }
@@ -1933,10 +1937,10 @@ package robomaker {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListSimulationJobsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      filters.foreach(__v => __obj.update("filters", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSimulationJobsRequest]
     }
   }
@@ -1952,11 +1956,11 @@ package robomaker {
         simulationJobSummaries: SimulationJobSummaries,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListSimulationJobsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "simulationJobSummaries" -> simulationJobSummaries.asInstanceOf[js.Any]
       )
 
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSimulationJobsResponse]
     }
   }
@@ -1970,7 +1974,7 @@ package robomaker {
     def apply(
         resourceArn: Arn
     ): ListTagsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
 
@@ -1987,8 +1991,8 @@ package robomaker {
     def apply(
         tags: js.UndefOr[TagMap] = js.undefined
     ): ListTagsForResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
@@ -2005,7 +2009,7 @@ package robomaker {
     def apply(
         recordAllRosTopics: BoxedBoolean
     ): LoggingConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "recordAllRosTopics" -> recordAllRosTopics.asInstanceOf[js.Any]
       )
 
@@ -2027,9 +2031,9 @@ package robomaker {
         s3Bucket: js.UndefOr[S3Bucket] = js.undefined,
         s3Prefix: js.UndefOr[S3Key] = js.undefined
     ): OutputLocation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      s3Bucket.foreach(__v => __obj.update("s3Bucket", __v.asInstanceOf[js.Any]))
-      s3Prefix.foreach(__v => __obj.update("s3Prefix", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      s3Bucket.foreach(__v => __obj.updateDynamic("s3Bucket")(__v.asInstanceOf[js.Any]))
+      s3Prefix.foreach(__v => __obj.updateDynamic("s3Prefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OutputLocation]
     }
   }
@@ -2052,13 +2056,13 @@ package robomaker {
         percentDone: js.UndefOr[PercentDone] = js.undefined,
         targetResource: js.UndefOr[GenericString] = js.undefined
     ): ProgressDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      currentProgress.foreach(__v => __obj.update("currentProgress", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      currentProgress.foreach(__v => __obj.updateDynamic("currentProgress")(__v.asInstanceOf[js.Any]))
       estimatedTimeRemainingSeconds.foreach(
-        __v => __obj.update("estimatedTimeRemainingSeconds", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("estimatedTimeRemainingSeconds")(__v.asInstanceOf[js.Any])
       )
-      percentDone.foreach(__v => __obj.update("percentDone", __v.asInstanceOf[js.Any]))
-      targetResource.foreach(__v => __obj.update("targetResource", __v.asInstanceOf[js.Any]))
+      percentDone.foreach(__v => __obj.updateDynamic("percentDone")(__v.asInstanceOf[js.Any]))
+      targetResource.foreach(__v => __obj.updateDynamic("targetResource")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProgressDetail]
     }
   }
@@ -2074,7 +2078,7 @@ package robomaker {
         fleet: Arn,
         robot: Arn
     ): RegisterRobotRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "fleet" -> fleet.asInstanceOf[js.Any],
         "robot" -> robot.asInstanceOf[js.Any]
       )
@@ -2094,9 +2098,9 @@ package robomaker {
         fleet: js.UndefOr[Arn] = js.undefined,
         robot: js.UndefOr[Arn] = js.undefined
     ): RegisterRobotResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      fleet.foreach(__v => __obj.update("fleet", __v.asInstanceOf[js.Any]))
-      robot.foreach(__v => __obj.update("robot", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      fleet.foreach(__v => __obj.updateDynamic("fleet")(__v.asInstanceOf[js.Any]))
+      robot.foreach(__v => __obj.updateDynamic("robot")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterRobotResponse]
     }
   }
@@ -2115,9 +2119,9 @@ package robomaker {
         name: js.UndefOr[RenderingEngineType] = js.undefined,
         version: js.UndefOr[RenderingEngineVersionType] = js.undefined
     ): RenderingEngine = {
-      val __obj = js.Dictionary.empty[js.Any]
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RenderingEngine]
     }
   }
@@ -2137,7 +2141,7 @@ package robomaker {
     def apply(
         job: Arn
     ): RestartSimulationJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "job" -> job.asInstanceOf[js.Any]
       )
 
@@ -2151,7 +2155,7 @@ package robomaker {
   object RestartSimulationJobResponse {
     def apply(
         ): RestartSimulationJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RestartSimulationJobResponse]
     }
@@ -2185,16 +2189,16 @@ package robomaker {
         name: js.UndefOr[Name] = js.undefined,
         status: js.UndefOr[RobotStatus] = js.undefined
     ): Robot = {
-      val __obj = js.Dictionary.empty[js.Any]
-      architecture.foreach(__v => __obj.update("architecture", __v.asInstanceOf[js.Any]))
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      fleetArn.foreach(__v => __obj.update("fleetArn", __v.asInstanceOf[js.Any]))
-      greenGrassGroupId.foreach(__v => __obj.update("greenGrassGroupId", __v.asInstanceOf[js.Any]))
-      lastDeploymentJob.foreach(__v => __obj.update("lastDeploymentJob", __v.asInstanceOf[js.Any]))
-      lastDeploymentTime.foreach(__v => __obj.update("lastDeploymentTime", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      architecture.foreach(__v => __obj.updateDynamic("architecture")(__v.asInstanceOf[js.Any]))
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      fleetArn.foreach(__v => __obj.updateDynamic("fleetArn")(__v.asInstanceOf[js.Any]))
+      greenGrassGroupId.foreach(__v => __obj.updateDynamic("greenGrassGroupId")(__v.asInstanceOf[js.Any]))
+      lastDeploymentJob.foreach(__v => __obj.updateDynamic("lastDeploymentJob")(__v.asInstanceOf[js.Any]))
+      lastDeploymentTime.foreach(__v => __obj.updateDynamic("lastDeploymentTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Robot]
     }
   }
@@ -2215,12 +2219,12 @@ package robomaker {
         launchConfig: LaunchConfig,
         applicationVersion: js.UndefOr[Version] = js.undefined
     ): RobotApplicationConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "application"  -> application.asInstanceOf[js.Any],
         "launchConfig" -> launchConfig.asInstanceOf[js.Any]
       )
 
-      applicationVersion.foreach(__v => __obj.update("applicationVersion", __v.asInstanceOf[js.Any]))
+      applicationVersion.foreach(__v => __obj.updateDynamic("applicationVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RobotApplicationConfig]
     }
   }
@@ -2245,12 +2249,12 @@ package robomaker {
         robotSoftwareSuite: js.UndefOr[RobotSoftwareSuite] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): RobotApplicationSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      robotSoftwareSuite.foreach(__v => __obj.update("robotSoftwareSuite", __v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      robotSoftwareSuite.foreach(__v => __obj.updateDynamic("robotSoftwareSuite")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RobotApplicationSummary]
     }
   }
@@ -2279,14 +2283,14 @@ package robomaker {
         progressDetail: js.UndefOr[ProgressDetail] = js.undefined,
         status: js.UndefOr[RobotStatus] = js.undefined
     ): RobotDeployment = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      deploymentFinishTime.foreach(__v => __obj.update("deploymentFinishTime", __v.asInstanceOf[js.Any]))
-      deploymentStartTime.foreach(__v => __obj.update("deploymentStartTime", __v.asInstanceOf[js.Any]))
-      failureCode.foreach(__v => __obj.update("failureCode", __v.asInstanceOf[js.Any]))
-      failureReason.foreach(__v => __obj.update("failureReason", __v.asInstanceOf[js.Any]))
-      progressDetail.foreach(__v => __obj.update("progressDetail", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      deploymentFinishTime.foreach(__v => __obj.updateDynamic("deploymentFinishTime")(__v.asInstanceOf[js.Any]))
+      deploymentStartTime.foreach(__v => __obj.updateDynamic("deploymentStartTime")(__v.asInstanceOf[js.Any]))
+      failureCode.foreach(__v => __obj.updateDynamic("failureCode")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      progressDetail.foreach(__v => __obj.updateDynamic("progressDetail")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RobotDeployment]
     }
   }
@@ -2318,9 +2322,9 @@ package robomaker {
         name: js.UndefOr[RobotSoftwareSuiteType] = js.undefined,
         version: js.UndefOr[RobotSoftwareSuiteVersionType] = js.undefined
     ): RobotSoftwareSuite = {
-      val __obj = js.Dictionary.empty[js.Any]
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RobotSoftwareSuite]
     }
   }
@@ -2365,9 +2369,9 @@ package robomaker {
         etag: js.UndefOr[S3Etag] = js.undefined,
         s3Key: js.UndefOr[S3Key] = js.undefined
     ): S3KeyOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      etag.foreach(__v => __obj.update("etag", __v.asInstanceOf[js.Any]))
-      s3Key.foreach(__v => __obj.update("s3Key", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      etag.foreach(__v => __obj.updateDynamic("etag")(__v.asInstanceOf[js.Any]))
+      s3Key.foreach(__v => __obj.updateDynamic("s3Key")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3KeyOutput]
     }
   }
@@ -2388,12 +2392,12 @@ package robomaker {
         launchConfig: LaunchConfig,
         applicationVersion: js.UndefOr[Version] = js.undefined
     ): SimulationApplicationConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "application"  -> application.asInstanceOf[js.Any],
         "launchConfig" -> launchConfig.asInstanceOf[js.Any]
       )
 
-      applicationVersion.foreach(__v => __obj.update("applicationVersion", __v.asInstanceOf[js.Any]))
+      applicationVersion.foreach(__v => __obj.updateDynamic("applicationVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SimulationApplicationConfig]
     }
   }
@@ -2420,13 +2424,13 @@ package robomaker {
         simulationSoftwareSuite: js.UndefOr[SimulationSoftwareSuite] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): SimulationApplicationSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      robotSoftwareSuite.foreach(__v => __obj.update("robotSoftwareSuite", __v.asInstanceOf[js.Any]))
-      simulationSoftwareSuite.foreach(__v => __obj.update("simulationSoftwareSuite", __v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      robotSoftwareSuite.foreach(__v => __obj.updateDynamic("robotSoftwareSuite")(__v.asInstanceOf[js.Any]))
+      simulationSoftwareSuite.foreach(__v => __obj.updateDynamic("simulationSoftwareSuite")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SimulationApplicationSummary]
     }
   }
@@ -2479,26 +2483,26 @@ package robomaker {
         tags: js.UndefOr[TagMap] = js.undefined,
         vpcConfig: js.UndefOr[VPCConfigResponse] = js.undefined
     ): SimulationJob = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      clientRequestToken.foreach(__v => __obj.update("clientRequestToken", __v.asInstanceOf[js.Any]))
-      dataSources.foreach(__v => __obj.update("dataSources", __v.asInstanceOf[js.Any]))
-      failureBehavior.foreach(__v => __obj.update("failureBehavior", __v.asInstanceOf[js.Any]))
-      failureCode.foreach(__v => __obj.update("failureCode", __v.asInstanceOf[js.Any]))
-      failureReason.foreach(__v => __obj.update("failureReason", __v.asInstanceOf[js.Any]))
-      iamRole.foreach(__v => __obj.update("iamRole", __v.asInstanceOf[js.Any]))
-      lastStartedAt.foreach(__v => __obj.update("lastStartedAt", __v.asInstanceOf[js.Any]))
-      lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
-      loggingConfig.foreach(__v => __obj.update("loggingConfig", __v.asInstanceOf[js.Any]))
-      maxJobDurationInSeconds.foreach(__v => __obj.update("maxJobDurationInSeconds", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      outputLocation.foreach(__v => __obj.update("outputLocation", __v.asInstanceOf[js.Any]))
-      robotApplications.foreach(__v => __obj.update("robotApplications", __v.asInstanceOf[js.Any]))
-      simulationApplications.foreach(__v => __obj.update("simulationApplications", __v.asInstanceOf[js.Any]))
-      simulationTimeMillis.foreach(__v => __obj.update("simulationTimeMillis", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
-      vpcConfig.foreach(__v => __obj.update("vpcConfig", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
+      dataSources.foreach(__v => __obj.updateDynamic("dataSources")(__v.asInstanceOf[js.Any]))
+      failureBehavior.foreach(__v => __obj.updateDynamic("failureBehavior")(__v.asInstanceOf[js.Any]))
+      failureCode.foreach(__v => __obj.updateDynamic("failureCode")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      iamRole.foreach(__v => __obj.updateDynamic("iamRole")(__v.asInstanceOf[js.Any]))
+      lastStartedAt.foreach(__v => __obj.updateDynamic("lastStartedAt")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      loggingConfig.foreach(__v => __obj.updateDynamic("loggingConfig")(__v.asInstanceOf[js.Any]))
+      maxJobDurationInSeconds.foreach(__v => __obj.updateDynamic("maxJobDurationInSeconds")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      outputLocation.foreach(__v => __obj.updateDynamic("outputLocation")(__v.asInstanceOf[js.Any]))
+      robotApplications.foreach(__v => __obj.updateDynamic("robotApplications")(__v.asInstanceOf[js.Any]))
+      simulationApplications.foreach(__v => __obj.updateDynamic("simulationApplications")(__v.asInstanceOf[js.Any]))
+      simulationTimeMillis.foreach(__v => __obj.updateDynamic("simulationTimeMillis")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      vpcConfig.foreach(__v => __obj.updateDynamic("vpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SimulationJob]
     }
   }
@@ -2609,14 +2613,16 @@ package robomaker {
         simulationApplicationNames: js.UndefOr[SimulationApplicationNames] = js.undefined,
         status: js.UndefOr[SimulationJobStatus] = js.undefined
     ): SimulationJobSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      dataSourceNames.foreach(__v => __obj.update("dataSourceNames", __v.asInstanceOf[js.Any]))
-      lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      robotApplicationNames.foreach(__v => __obj.update("robotApplicationNames", __v.asInstanceOf[js.Any]))
-      simulationApplicationNames.foreach(__v => __obj.update("simulationApplicationNames", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      dataSourceNames.foreach(__v => __obj.updateDynamic("dataSourceNames")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      robotApplicationNames.foreach(__v => __obj.updateDynamic("robotApplicationNames")(__v.asInstanceOf[js.Any]))
+      simulationApplicationNames.foreach(
+        __v => __obj.updateDynamic("simulationApplicationNames")(__v.asInstanceOf[js.Any])
+      )
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SimulationJobSummary]
     }
   }
@@ -2635,9 +2641,9 @@ package robomaker {
         name: js.UndefOr[SimulationSoftwareSuiteType] = js.undefined,
         version: js.UndefOr[SimulationSoftwareSuiteVersionType] = js.undefined
     ): SimulationSoftwareSuite = {
-      val __obj = js.Dictionary.empty[js.Any]
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SimulationSoftwareSuite]
     }
   }
@@ -2667,11 +2673,11 @@ package robomaker {
         s3Bucket: js.UndefOr[S3Bucket] = js.undefined,
         s3Key: js.UndefOr[S3Key] = js.undefined
     ): Source = {
-      val __obj = js.Dictionary.empty[js.Any]
-      architecture.foreach(__v => __obj.update("architecture", __v.asInstanceOf[js.Any]))
-      etag.foreach(__v => __obj.update("etag", __v.asInstanceOf[js.Any]))
-      s3Bucket.foreach(__v => __obj.update("s3Bucket", __v.asInstanceOf[js.Any]))
-      s3Key.foreach(__v => __obj.update("s3Key", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      architecture.foreach(__v => __obj.updateDynamic("architecture")(__v.asInstanceOf[js.Any]))
+      etag.foreach(__v => __obj.updateDynamic("etag")(__v.asInstanceOf[js.Any]))
+      s3Bucket.foreach(__v => __obj.updateDynamic("s3Bucket")(__v.asInstanceOf[js.Any]))
+      s3Key.foreach(__v => __obj.updateDynamic("s3Key")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Source]
     }
   }
@@ -2692,10 +2698,10 @@ package robomaker {
         s3Bucket: js.UndefOr[S3Bucket] = js.undefined,
         s3Key: js.UndefOr[S3Key] = js.undefined
     ): SourceConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      architecture.foreach(__v => __obj.update("architecture", __v.asInstanceOf[js.Any]))
-      s3Bucket.foreach(__v => __obj.update("s3Bucket", __v.asInstanceOf[js.Any]))
-      s3Key.foreach(__v => __obj.update("s3Key", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      architecture.foreach(__v => __obj.updateDynamic("architecture")(__v.asInstanceOf[js.Any]))
+      s3Bucket.foreach(__v => __obj.updateDynamic("s3Bucket")(__v.asInstanceOf[js.Any]))
+      s3Key.foreach(__v => __obj.updateDynamic("s3Key")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SourceConfig]
     }
   }
@@ -2711,7 +2717,7 @@ package robomaker {
         clientRequestToken: ClientRequestToken,
         fleet: Arn
     ): SyncDeploymentJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "clientRequestToken" -> clientRequestToken.asInstanceOf[js.Any],
         "fleet"              -> fleet.asInstanceOf[js.Any]
       )
@@ -2743,17 +2749,17 @@ package robomaker {
         fleet: js.UndefOr[Arn] = js.undefined,
         status: js.UndefOr[DeploymentStatus] = js.undefined
     ): SyncDeploymentJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       deploymentApplicationConfigs.foreach(
-        __v => __obj.update("deploymentApplicationConfigs", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("deploymentApplicationConfigs")(__v.asInstanceOf[js.Any])
       )
-      deploymentConfig.foreach(__v => __obj.update("deploymentConfig", __v.asInstanceOf[js.Any]))
-      failureCode.foreach(__v => __obj.update("failureCode", __v.asInstanceOf[js.Any]))
-      failureReason.foreach(__v => __obj.update("failureReason", __v.asInstanceOf[js.Any]))
-      fleet.foreach(__v => __obj.update("fleet", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      deploymentConfig.foreach(__v => __obj.updateDynamic("deploymentConfig")(__v.asInstanceOf[js.Any]))
+      failureCode.foreach(__v => __obj.updateDynamic("failureCode")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      fleet.foreach(__v => __obj.updateDynamic("fleet")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SyncDeploymentJobResponse]
     }
   }
@@ -2769,7 +2775,7 @@ package robomaker {
         resourceArn: Arn,
         tags: TagMap
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags"        -> tags.asInstanceOf[js.Any]
       )
@@ -2784,7 +2790,7 @@ package robomaker {
   object TagResourceResponse {
     def apply(
         ): TagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -2801,7 +2807,7 @@ package robomaker {
         resourceArn: Arn,
         tagKeys: TagKeyList
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
       )
@@ -2816,7 +2822,7 @@ package robomaker {
   object UntagResourceResponse {
     def apply(
         ): UntagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -2837,13 +2843,13 @@ package robomaker {
         sources: SourceConfigs,
         currentRevisionId: js.UndefOr[RevisionId] = js.undefined
     ): UpdateRobotApplicationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "application"        -> application.asInstanceOf[js.Any],
         "robotSoftwareSuite" -> robotSoftwareSuite.asInstanceOf[js.Any],
         "sources"            -> sources.asInstanceOf[js.Any]
       )
 
-      currentRevisionId.foreach(__v => __obj.update("currentRevisionId", __v.asInstanceOf[js.Any]))
+      currentRevisionId.foreach(__v => __obj.updateDynamic("currentRevisionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRobotApplicationRequest]
     }
   }
@@ -2869,14 +2875,14 @@ package robomaker {
         sources: js.UndefOr[Sources] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): UpdateRobotApplicationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      revisionId.foreach(__v => __obj.update("revisionId", __v.asInstanceOf[js.Any]))
-      robotSoftwareSuite.foreach(__v => __obj.update("robotSoftwareSuite", __v.asInstanceOf[js.Any]))
-      sources.foreach(__v => __obj.update("sources", __v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      revisionId.foreach(__v => __obj.updateDynamic("revisionId")(__v.asInstanceOf[js.Any]))
+      robotSoftwareSuite.foreach(__v => __obj.updateDynamic("robotSoftwareSuite")(__v.asInstanceOf[js.Any]))
+      sources.foreach(__v => __obj.updateDynamic("sources")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRobotApplicationResponse]
     }
   }
@@ -2900,15 +2906,15 @@ package robomaker {
         currentRevisionId: js.UndefOr[RevisionId] = js.undefined,
         renderingEngine: js.UndefOr[RenderingEngine] = js.undefined
     ): UpdateSimulationApplicationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "application"             -> application.asInstanceOf[js.Any],
         "robotSoftwareSuite"      -> robotSoftwareSuite.asInstanceOf[js.Any],
         "simulationSoftwareSuite" -> simulationSoftwareSuite.asInstanceOf[js.Any],
         "sources"                 -> sources.asInstanceOf[js.Any]
       )
 
-      currentRevisionId.foreach(__v => __obj.update("currentRevisionId", __v.asInstanceOf[js.Any]))
-      renderingEngine.foreach(__v => __obj.update("renderingEngine", __v.asInstanceOf[js.Any]))
+      currentRevisionId.foreach(__v => __obj.updateDynamic("currentRevisionId")(__v.asInstanceOf[js.Any]))
+      renderingEngine.foreach(__v => __obj.updateDynamic("renderingEngine")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSimulationApplicationRequest]
     }
   }
@@ -2938,16 +2944,16 @@ package robomaker {
         sources: js.UndefOr[Sources] = js.undefined,
         version: js.UndefOr[Version] = js.undefined
     ): UpdateSimulationApplicationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      lastUpdatedAt.foreach(__v => __obj.update("lastUpdatedAt", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      renderingEngine.foreach(__v => __obj.update("renderingEngine", __v.asInstanceOf[js.Any]))
-      revisionId.foreach(__v => __obj.update("revisionId", __v.asInstanceOf[js.Any]))
-      robotSoftwareSuite.foreach(__v => __obj.update("robotSoftwareSuite", __v.asInstanceOf[js.Any]))
-      simulationSoftwareSuite.foreach(__v => __obj.update("simulationSoftwareSuite", __v.asInstanceOf[js.Any]))
-      sources.foreach(__v => __obj.update("sources", __v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      renderingEngine.foreach(__v => __obj.updateDynamic("renderingEngine")(__v.asInstanceOf[js.Any]))
+      revisionId.foreach(__v => __obj.updateDynamic("revisionId")(__v.asInstanceOf[js.Any]))
+      robotSoftwareSuite.foreach(__v => __obj.updateDynamic("robotSoftwareSuite")(__v.asInstanceOf[js.Any]))
+      simulationSoftwareSuite.foreach(__v => __obj.updateDynamic("simulationSoftwareSuite")(__v.asInstanceOf[js.Any]))
+      sources.foreach(__v => __obj.updateDynamic("sources")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSimulationApplicationResponse]
     }
   }
@@ -2968,12 +2974,12 @@ package robomaker {
         assignPublicIp: js.UndefOr[Boolean] = js.undefined,
         securityGroups: js.UndefOr[SecurityGroups] = js.undefined
     ): VPCConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "subnets" -> subnets.asInstanceOf[js.Any]
       )
 
-      assignPublicIp.foreach(__v => __obj.update("assignPublicIp", __v.asInstanceOf[js.Any]))
-      securityGroups.foreach(__v => __obj.update("securityGroups", __v.asInstanceOf[js.Any]))
+      assignPublicIp.foreach(__v => __obj.updateDynamic("assignPublicIp")(__v.asInstanceOf[js.Any]))
+      securityGroups.foreach(__v => __obj.updateDynamic("securityGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VPCConfig]
     }
   }
@@ -2996,11 +3002,11 @@ package robomaker {
         subnets: js.UndefOr[Subnets] = js.undefined,
         vpcId: js.UndefOr[GenericString] = js.undefined
     ): VPCConfigResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      assignPublicIp.foreach(__v => __obj.update("assignPublicIp", __v.asInstanceOf[js.Any]))
-      securityGroups.foreach(__v => __obj.update("securityGroups", __v.asInstanceOf[js.Any]))
-      subnets.foreach(__v => __obj.update("subnets", __v.asInstanceOf[js.Any]))
-      vpcId.foreach(__v => __obj.update("vpcId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      assignPublicIp.foreach(__v => __obj.updateDynamic("assignPublicIp")(__v.asInstanceOf[js.Any]))
+      securityGroups.foreach(__v => __obj.updateDynamic("securityGroups")(__v.asInstanceOf[js.Any]))
+      subnets.foreach(__v => __obj.updateDynamic("subnets")(__v.asInstanceOf[js.Any]))
+      vpcId.foreach(__v => __obj.updateDynamic("vpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VPCConfigResponse]
     }
   }

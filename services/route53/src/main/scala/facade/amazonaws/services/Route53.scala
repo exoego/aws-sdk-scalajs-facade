@@ -401,7 +401,7 @@ package route53 {
         Type: AccountLimitType,
         Value: LimitValue
     ): AccountLimit = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Type"  -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
@@ -442,7 +442,7 @@ package route53 {
         Name: AlarmName,
         Region: CloudWatchRegion
     ): AlarmIdentifier = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"   -> Name.asInstanceOf[js.Any],
         "Region" -> Region.asInstanceOf[js.Any]
       )
@@ -470,7 +470,7 @@ package route53 {
         EvaluateTargetHealth: AliasHealthEnabled,
         HostedZoneId: ResourceId
     ): AliasTarget = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DNSName"              -> DNSName.asInstanceOf[js.Any],
         "EvaluateTargetHealth" -> EvaluateTargetHealth.asInstanceOf[js.Any],
         "HostedZoneId"         -> HostedZoneId.asInstanceOf[js.Any]
@@ -496,12 +496,12 @@ package route53 {
         VPC: VPC,
         Comment: js.UndefOr[AssociateVPCComment] = js.undefined
     ): AssociateVPCWithHostedZoneRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any],
         "VPC"          -> VPC.asInstanceOf[js.Any]
       )
 
-      Comment.foreach(__v => __obj.update("Comment", __v.asInstanceOf[js.Any]))
+      Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateVPCWithHostedZoneRequest]
     }
   }
@@ -518,7 +518,7 @@ package route53 {
     def apply(
         ChangeInfo: ChangeInfo
     ): AssociateVPCWithHostedZoneResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeInfo" -> ChangeInfo.asInstanceOf[js.Any]
       )
 
@@ -540,7 +540,7 @@ package route53 {
         Action: ChangeAction,
         ResourceRecordSet: ResourceRecordSet
     ): Change = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Action"            -> Action.asInstanceOf[js.Any],
         "ResourceRecordSet" -> ResourceRecordSet.asInstanceOf[js.Any]
       )
@@ -571,11 +571,11 @@ package route53 {
         Changes: Changes,
         Comment: js.UndefOr[ResourceDescription] = js.undefined
     ): ChangeBatch = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Changes" -> Changes.asInstanceOf[js.Any]
       )
 
-      Comment.foreach(__v => __obj.update("Comment", __v.asInstanceOf[js.Any]))
+      Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChangeBatch]
     }
   }
@@ -598,13 +598,13 @@ package route53 {
         SubmittedAt: TimeStamp,
         Comment: js.UndefOr[ResourceDescription] = js.undefined
     ): ChangeInfo = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id"          -> Id.asInstanceOf[js.Any],
         "Status"      -> Status.asInstanceOf[js.Any],
         "SubmittedAt" -> SubmittedAt.asInstanceOf[js.Any]
       )
 
-      Comment.foreach(__v => __obj.update("Comment", __v.asInstanceOf[js.Any]))
+      Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChangeInfo]
     }
   }
@@ -623,7 +623,7 @@ package route53 {
         ChangeBatch: ChangeBatch,
         HostedZoneId: ResourceId
     ): ChangeResourceRecordSetsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeBatch"  -> ChangeBatch.asInstanceOf[js.Any],
         "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any]
       )
@@ -644,7 +644,7 @@ package route53 {
     def apply(
         ChangeInfo: ChangeInfo
     ): ChangeResourceRecordSetsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeInfo" -> ChangeInfo.asInstanceOf[js.Any]
       )
 
@@ -677,13 +677,13 @@ package route53 {
         AddTags: js.UndefOr[TagList] = js.undefined,
         RemoveTagKeys: js.UndefOr[TagKeyList] = js.undefined
     ): ChangeTagsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceId"   -> ResourceId.asInstanceOf[js.Any],
         "ResourceType" -> ResourceType.asInstanceOf[js.Any]
       )
 
-      AddTags.foreach(__v => __obj.update("AddTags", __v.asInstanceOf[js.Any]))
-      RemoveTagKeys.foreach(__v => __obj.update("RemoveTagKeys", __v.asInstanceOf[js.Any]))
+      AddTags.foreach(__v => __obj.updateDynamic("AddTags")(__v.asInstanceOf[js.Any]))
+      RemoveTagKeys.foreach(__v => __obj.updateDynamic("RemoveTagKeys")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChangeTagsForResourceRequest]
     }
   }
@@ -697,7 +697,7 @@ package route53 {
   object ChangeTagsForResourceResponse {
     def apply(
         ): ChangeTagsForResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ChangeTagsForResourceResponse]
     }
@@ -729,7 +729,7 @@ package route53 {
         Threshold: Threshold,
         Dimensions: js.UndefOr[DimensionList] = js.undefined
     ): CloudWatchAlarmConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ComparisonOperator" -> ComparisonOperator.asInstanceOf[js.Any],
         "EvaluationPeriods"  -> EvaluationPeriods.asInstanceOf[js.Any],
         "MetricName"         -> MetricName.asInstanceOf[js.Any],
@@ -739,7 +739,7 @@ package route53 {
         "Threshold"          -> Threshold.asInstanceOf[js.Any]
       )
 
-      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
+      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CloudWatchAlarmConfiguration]
     }
   }
@@ -819,7 +819,7 @@ package route53 {
         CallerReference: HealthCheckNonce,
         HealthCheckConfig: HealthCheckConfig
     ): CreateHealthCheckRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CallerReference"   -> CallerReference.asInstanceOf[js.Any],
         "HealthCheckConfig" -> HealthCheckConfig.asInstanceOf[js.Any]
       )
@@ -842,7 +842,7 @@ package route53 {
         HealthCheck: HealthCheck,
         Location: ResourceURI
     ): CreateHealthCheckResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HealthCheck" -> HealthCheck.asInstanceOf[js.Any],
         "Location"    -> Location.asInstanceOf[js.Any]
       )
@@ -871,14 +871,14 @@ package route53 {
         HostedZoneConfig: js.UndefOr[HostedZoneConfig] = js.undefined,
         VPC: js.UndefOr[VPC] = js.undefined
     ): CreateHostedZoneRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CallerReference" -> CallerReference.asInstanceOf[js.Any],
         "Name"            -> Name.asInstanceOf[js.Any]
       )
 
-      DelegationSetId.foreach(__v => __obj.update("DelegationSetId", __v.asInstanceOf[js.Any]))
-      HostedZoneConfig.foreach(__v => __obj.update("HostedZoneConfig", __v.asInstanceOf[js.Any]))
-      VPC.foreach(__v => __obj.update("VPC", __v.asInstanceOf[js.Any]))
+      DelegationSetId.foreach(__v => __obj.updateDynamic("DelegationSetId")(__v.asInstanceOf[js.Any]))
+      HostedZoneConfig.foreach(__v => __obj.updateDynamic("HostedZoneConfig")(__v.asInstanceOf[js.Any]))
+      VPC.foreach(__v => __obj.updateDynamic("VPC")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateHostedZoneRequest]
     }
   }
@@ -903,14 +903,14 @@ package route53 {
         Location: ResourceURI,
         VPC: js.UndefOr[VPC] = js.undefined
     ): CreateHostedZoneResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeInfo"    -> ChangeInfo.asInstanceOf[js.Any],
         "DelegationSet" -> DelegationSet.asInstanceOf[js.Any],
         "HostedZone"    -> HostedZone.asInstanceOf[js.Any],
         "Location"      -> Location.asInstanceOf[js.Any]
       )
 
-      VPC.foreach(__v => __obj.update("VPC", __v.asInstanceOf[js.Any]))
+      VPC.foreach(__v => __obj.updateDynamic("VPC")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateHostedZoneResponse]
     }
   }
@@ -926,7 +926,7 @@ package route53 {
         CloudWatchLogsLogGroupArn: CloudWatchLogsLogGroupArn,
         HostedZoneId: ResourceId
     ): CreateQueryLoggingConfigRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CloudWatchLogsLogGroupArn" -> CloudWatchLogsLogGroupArn.asInstanceOf[js.Any],
         "HostedZoneId"              -> HostedZoneId.asInstanceOf[js.Any]
       )
@@ -946,7 +946,7 @@ package route53 {
         Location: ResourceURI,
         QueryLoggingConfig: QueryLoggingConfig
     ): CreateQueryLoggingConfigResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Location"           -> Location.asInstanceOf[js.Any],
         "QueryLoggingConfig" -> QueryLoggingConfig.asInstanceOf[js.Any]
       )
@@ -966,11 +966,11 @@ package route53 {
         CallerReference: Nonce,
         HostedZoneId: js.UndefOr[ResourceId] = js.undefined
     ): CreateReusableDelegationSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CallerReference" -> CallerReference.asInstanceOf[js.Any]
       )
 
-      HostedZoneId.foreach(__v => __obj.update("HostedZoneId", __v.asInstanceOf[js.Any]))
+      HostedZoneId.foreach(__v => __obj.updateDynamic("HostedZoneId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateReusableDelegationSetRequest]
     }
   }
@@ -986,7 +986,7 @@ package route53 {
         DelegationSet: DelegationSet,
         Location: ResourceURI
     ): CreateReusableDelegationSetResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DelegationSet" -> DelegationSet.asInstanceOf[js.Any],
         "Location"      -> Location.asInstanceOf[js.Any]
       )
@@ -1015,7 +1015,7 @@ package route53 {
         TrafficPolicyId: TrafficPolicyId,
         TrafficPolicyVersion: TrafficPolicyVersion
     ): CreateTrafficPolicyInstanceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HostedZoneId"         -> HostedZoneId.asInstanceOf[js.Any],
         "Name"                 -> Name.asInstanceOf[js.Any],
         "TTL"                  -> TTL.asInstanceOf[js.Any],
@@ -1041,7 +1041,7 @@ package route53 {
         Location: ResourceURI,
         TrafficPolicyInstance: TrafficPolicyInstance
     ): CreateTrafficPolicyInstanceResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Location"              -> Location.asInstanceOf[js.Any],
         "TrafficPolicyInstance" -> TrafficPolicyInstance.asInstanceOf[js.Any]
       )
@@ -1066,12 +1066,12 @@ package route53 {
         Name: TrafficPolicyName,
         Comment: js.UndefOr[TrafficPolicyComment] = js.undefined
     ): CreateTrafficPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Document" -> Document.asInstanceOf[js.Any],
         "Name"     -> Name.asInstanceOf[js.Any]
       )
 
-      Comment.foreach(__v => __obj.update("Comment", __v.asInstanceOf[js.Any]))
+      Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTrafficPolicyRequest]
     }
   }
@@ -1090,7 +1090,7 @@ package route53 {
         Location: ResourceURI,
         TrafficPolicy: TrafficPolicy
     ): CreateTrafficPolicyResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Location"      -> Location.asInstanceOf[js.Any],
         "TrafficPolicy" -> TrafficPolicy.asInstanceOf[js.Any]
       )
@@ -1115,12 +1115,12 @@ package route53 {
         Id: TrafficPolicyId,
         Comment: js.UndefOr[TrafficPolicyComment] = js.undefined
     ): CreateTrafficPolicyVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Document" -> Document.asInstanceOf[js.Any],
         "Id"       -> Id.asInstanceOf[js.Any]
       )
 
-      Comment.foreach(__v => __obj.update("Comment", __v.asInstanceOf[js.Any]))
+      Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTrafficPolicyVersionRequest]
     }
   }
@@ -1139,7 +1139,7 @@ package route53 {
         Location: ResourceURI,
         TrafficPolicy: TrafficPolicy
     ): CreateTrafficPolicyVersionResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Location"      -> Location.asInstanceOf[js.Any],
         "TrafficPolicy" -> TrafficPolicy.asInstanceOf[js.Any]
       )
@@ -1162,7 +1162,7 @@ package route53 {
         HostedZoneId: ResourceId,
         VPC: VPC
     ): CreateVPCAssociationAuthorizationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any],
         "VPC"          -> VPC.asInstanceOf[js.Any]
       )
@@ -1185,7 +1185,7 @@ package route53 {
         HostedZoneId: ResourceId,
         VPC: VPC
     ): CreateVPCAssociationAuthorizationResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any],
         "VPC"          -> VPC.asInstanceOf[js.Any]
       )
@@ -1210,12 +1210,12 @@ package route53 {
         CallerReference: js.UndefOr[Nonce] = js.undefined,
         Id: js.UndefOr[ResourceId] = js.undefined
     ): DelegationSet = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "NameServers" -> NameServers.asInstanceOf[js.Any]
       )
 
-      CallerReference.foreach(__v => __obj.update("CallerReference", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      CallerReference.foreach(__v => __obj.updateDynamic("CallerReference")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DelegationSet]
     }
   }
@@ -1232,7 +1232,7 @@ package route53 {
     def apply(
         HealthCheckId: HealthCheckId
     ): DeleteHealthCheckRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HealthCheckId" -> HealthCheckId.asInstanceOf[js.Any]
       )
 
@@ -1249,7 +1249,7 @@ package route53 {
   object DeleteHealthCheckResponse {
     def apply(
         ): DeleteHealthCheckResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteHealthCheckResponse]
     }
@@ -1267,7 +1267,7 @@ package route53 {
     def apply(
         Id: ResourceId
     ): DeleteHostedZoneRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
@@ -1287,7 +1287,7 @@ package route53 {
     def apply(
         ChangeInfo: ChangeInfo
     ): DeleteHostedZoneResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeInfo" -> ChangeInfo.asInstanceOf[js.Any]
       )
 
@@ -1304,7 +1304,7 @@ package route53 {
     def apply(
         Id: QueryLoggingConfigId
     ): DeleteQueryLoggingConfigRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
@@ -1318,7 +1318,7 @@ package route53 {
   object DeleteQueryLoggingConfigResponse {
     def apply(
         ): DeleteQueryLoggingConfigResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteQueryLoggingConfigResponse]
     }
@@ -1336,7 +1336,7 @@ package route53 {
     def apply(
         Id: ResourceId
     ): DeleteReusableDelegationSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
@@ -1353,7 +1353,7 @@ package route53 {
   object DeleteReusableDelegationSetResponse {
     def apply(
         ): DeleteReusableDelegationSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteReusableDelegationSetResponse]
     }
@@ -1371,7 +1371,7 @@ package route53 {
     def apply(
         Id: TrafficPolicyInstanceId
     ): DeleteTrafficPolicyInstanceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
@@ -1388,7 +1388,7 @@ package route53 {
   object DeleteTrafficPolicyInstanceResponse {
     def apply(
         ): DeleteTrafficPolicyInstanceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteTrafficPolicyInstanceResponse]
     }
@@ -1408,7 +1408,7 @@ package route53 {
         Id: TrafficPolicyId,
         Version: TrafficPolicyVersion
     ): DeleteTrafficPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id"      -> Id.asInstanceOf[js.Any],
         "Version" -> Version.asInstanceOf[js.Any]
       )
@@ -1426,7 +1426,7 @@ package route53 {
   object DeleteTrafficPolicyResponse {
     def apply(
         ): DeleteTrafficPolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteTrafficPolicyResponse]
     }
@@ -1446,7 +1446,7 @@ package route53 {
         HostedZoneId: ResourceId,
         VPC: VPC
     ): DeleteVPCAssociationAuthorizationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any],
         "VPC"          -> VPC.asInstanceOf[js.Any]
       )
@@ -1464,7 +1464,7 @@ package route53 {
   object DeleteVPCAssociationAuthorizationResponse {
     def apply(
         ): DeleteVPCAssociationAuthorizationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteVPCAssociationAuthorizationResponse]
     }
@@ -1484,7 +1484,7 @@ package route53 {
         Name: DimensionField,
         Value: DimensionField
     ): Dimension = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"  -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
@@ -1509,12 +1509,12 @@ package route53 {
         VPC: VPC,
         Comment: js.UndefOr[DisassociateVPCComment] = js.undefined
     ): DisassociateVPCFromHostedZoneRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any],
         "VPC"          -> VPC.asInstanceOf[js.Any]
       )
 
-      Comment.foreach(__v => __obj.update("Comment", __v.asInstanceOf[js.Any]))
+      Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisassociateVPCFromHostedZoneRequest]
     }
   }
@@ -1531,7 +1531,7 @@ package route53 {
     def apply(
         ChangeInfo: ChangeInfo
     ): DisassociateVPCFromHostedZoneResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeInfo" -> ChangeInfo.asInstanceOf[js.Any]
       )
 
@@ -1555,10 +1555,10 @@ package route53 {
         CountryCode: js.UndefOr[GeoLocationCountryCode] = js.undefined,
         SubdivisionCode: js.UndefOr[GeoLocationSubdivisionCode] = js.undefined
     ): GeoLocation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ContinentCode.foreach(__v => __obj.update("ContinentCode", __v.asInstanceOf[js.Any]))
-      CountryCode.foreach(__v => __obj.update("CountryCode", __v.asInstanceOf[js.Any]))
-      SubdivisionCode.foreach(__v => __obj.update("SubdivisionCode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ContinentCode.foreach(__v => __obj.updateDynamic("ContinentCode")(__v.asInstanceOf[js.Any]))
+      CountryCode.foreach(__v => __obj.updateDynamic("CountryCode")(__v.asInstanceOf[js.Any]))
+      SubdivisionCode.foreach(__v => __obj.updateDynamic("SubdivisionCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GeoLocation]
     }
   }
@@ -1585,13 +1585,13 @@ package route53 {
         SubdivisionCode: js.UndefOr[GeoLocationSubdivisionCode] = js.undefined,
         SubdivisionName: js.UndefOr[GeoLocationSubdivisionName] = js.undefined
     ): GeoLocationDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ContinentCode.foreach(__v => __obj.update("ContinentCode", __v.asInstanceOf[js.Any]))
-      ContinentName.foreach(__v => __obj.update("ContinentName", __v.asInstanceOf[js.Any]))
-      CountryCode.foreach(__v => __obj.update("CountryCode", __v.asInstanceOf[js.Any]))
-      CountryName.foreach(__v => __obj.update("CountryName", __v.asInstanceOf[js.Any]))
-      SubdivisionCode.foreach(__v => __obj.update("SubdivisionCode", __v.asInstanceOf[js.Any]))
-      SubdivisionName.foreach(__v => __obj.update("SubdivisionName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ContinentCode.foreach(__v => __obj.updateDynamic("ContinentCode")(__v.asInstanceOf[js.Any]))
+      ContinentName.foreach(__v => __obj.updateDynamic("ContinentName")(__v.asInstanceOf[js.Any]))
+      CountryCode.foreach(__v => __obj.updateDynamic("CountryCode")(__v.asInstanceOf[js.Any]))
+      CountryName.foreach(__v => __obj.updateDynamic("CountryName")(__v.asInstanceOf[js.Any]))
+      SubdivisionCode.foreach(__v => __obj.updateDynamic("SubdivisionCode")(__v.asInstanceOf[js.Any]))
+      SubdivisionName.foreach(__v => __obj.updateDynamic("SubdivisionName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GeoLocationDetails]
     }
   }
@@ -1608,7 +1608,7 @@ package route53 {
     def apply(
         Type: AccountLimitType
     ): GetAccountLimitRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Type" -> Type.asInstanceOf[js.Any]
       )
 
@@ -1630,7 +1630,7 @@ package route53 {
         Count: UsageCount,
         Limit: AccountLimit
     ): GetAccountLimitResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Count" -> Count.asInstanceOf[js.Any],
         "Limit" -> Limit.asInstanceOf[js.Any]
       )
@@ -1651,7 +1651,7 @@ package route53 {
     def apply(
         Id: ResourceId
     ): GetChangeRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
@@ -1671,7 +1671,7 @@ package route53 {
     def apply(
         ChangeInfo: ChangeInfo
     ): GetChangeResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeInfo" -> ChangeInfo.asInstanceOf[js.Any]
       )
 
@@ -1688,7 +1688,7 @@ package route53 {
   object GetCheckerIpRangesRequest {
     def apply(
         ): GetCheckerIpRangesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetCheckerIpRangesRequest]
     }
@@ -1706,7 +1706,7 @@ package route53 {
     def apply(
         CheckerIpRanges: CheckerIpRanges
     ): GetCheckerIpRangesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CheckerIpRanges" -> CheckerIpRanges.asInstanceOf[js.Any]
       )
 
@@ -1730,10 +1730,10 @@ package route53 {
         CountryCode: js.UndefOr[GeoLocationCountryCode] = js.undefined,
         SubdivisionCode: js.UndefOr[GeoLocationSubdivisionCode] = js.undefined
     ): GetGeoLocationRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ContinentCode.foreach(__v => __obj.update("ContinentCode", __v.asInstanceOf[js.Any]))
-      CountryCode.foreach(__v => __obj.update("CountryCode", __v.asInstanceOf[js.Any]))
-      SubdivisionCode.foreach(__v => __obj.update("SubdivisionCode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ContinentCode.foreach(__v => __obj.updateDynamic("ContinentCode")(__v.asInstanceOf[js.Any]))
+      CountryCode.foreach(__v => __obj.updateDynamic("CountryCode")(__v.asInstanceOf[js.Any]))
+      SubdivisionCode.foreach(__v => __obj.updateDynamic("SubdivisionCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetGeoLocationRequest]
     }
   }
@@ -1750,7 +1750,7 @@ package route53 {
     def apply(
         GeoLocationDetails: GeoLocationDetails
     ): GetGeoLocationResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GeoLocationDetails" -> GeoLocationDetails.asInstanceOf[js.Any]
       )
 
@@ -1767,7 +1767,7 @@ package route53 {
   object GetHealthCheckCountRequest {
     def apply(
         ): GetHealthCheckCountRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetHealthCheckCountRequest]
     }
@@ -1785,7 +1785,7 @@ package route53 {
     def apply(
         HealthCheckCount: HealthCheckCount
     ): GetHealthCheckCountResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HealthCheckCount" -> HealthCheckCount.asInstanceOf[js.Any]
       )
 
@@ -1805,7 +1805,7 @@ package route53 {
     def apply(
         HealthCheckId: HealthCheckId
     ): GetHealthCheckLastFailureReasonRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HealthCheckId" -> HealthCheckId.asInstanceOf[js.Any]
       )
 
@@ -1825,7 +1825,7 @@ package route53 {
     def apply(
         HealthCheckObservations: HealthCheckObservations
     ): GetHealthCheckLastFailureReasonResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HealthCheckObservations" -> HealthCheckObservations.asInstanceOf[js.Any]
       )
 
@@ -1845,7 +1845,7 @@ package route53 {
     def apply(
         HealthCheckId: HealthCheckId
     ): GetHealthCheckRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HealthCheckId" -> HealthCheckId.asInstanceOf[js.Any]
       )
 
@@ -1865,7 +1865,7 @@ package route53 {
     def apply(
         HealthCheck: HealthCheck
     ): GetHealthCheckResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HealthCheck" -> HealthCheck.asInstanceOf[js.Any]
       )
 
@@ -1885,7 +1885,7 @@ package route53 {
     def apply(
         HealthCheckId: HealthCheckId
     ): GetHealthCheckStatusRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HealthCheckId" -> HealthCheckId.asInstanceOf[js.Any]
       )
 
@@ -1905,7 +1905,7 @@ package route53 {
     def apply(
         HealthCheckObservations: HealthCheckObservations
     ): GetHealthCheckStatusResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HealthCheckObservations" -> HealthCheckObservations.asInstanceOf[js.Any]
       )
 
@@ -1922,7 +1922,7 @@ package route53 {
   object GetHostedZoneCountRequest {
     def apply(
         ): GetHostedZoneCountRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetHostedZoneCountRequest]
     }
@@ -1940,7 +1940,7 @@ package route53 {
     def apply(
         HostedZoneCount: HostedZoneCount
     ): GetHostedZoneCountResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HostedZoneCount" -> HostedZoneCount.asInstanceOf[js.Any]
       )
 
@@ -1962,7 +1962,7 @@ package route53 {
         HostedZoneId: ResourceId,
         Type: HostedZoneLimitType
     ): GetHostedZoneLimitRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any],
         "Type"         -> Type.asInstanceOf[js.Any]
       )
@@ -1985,7 +1985,7 @@ package route53 {
         Count: UsageCount,
         Limit: HostedZoneLimit
     ): GetHostedZoneLimitResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Count" -> Count.asInstanceOf[js.Any],
         "Limit" -> Limit.asInstanceOf[js.Any]
       )
@@ -2006,7 +2006,7 @@ package route53 {
     def apply(
         Id: ResourceId
     ): GetHostedZoneRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
@@ -2030,12 +2030,12 @@ package route53 {
         DelegationSet: js.UndefOr[DelegationSet] = js.undefined,
         VPCs: js.UndefOr[VPCs] = js.undefined
     ): GetHostedZoneResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HostedZone" -> HostedZone.asInstanceOf[js.Any]
       )
 
-      DelegationSet.foreach(__v => __obj.update("DelegationSet", __v.asInstanceOf[js.Any]))
-      VPCs.foreach(__v => __obj.update("VPCs", __v.asInstanceOf[js.Any]))
+      DelegationSet.foreach(__v => __obj.updateDynamic("DelegationSet")(__v.asInstanceOf[js.Any]))
+      VPCs.foreach(__v => __obj.updateDynamic("VPCs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetHostedZoneResponse]
     }
   }
@@ -2049,7 +2049,7 @@ package route53 {
     def apply(
         Id: QueryLoggingConfigId
     ): GetQueryLoggingConfigRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
@@ -2066,7 +2066,7 @@ package route53 {
     def apply(
         QueryLoggingConfig: QueryLoggingConfig
     ): GetQueryLoggingConfigResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "QueryLoggingConfig" -> QueryLoggingConfig.asInstanceOf[js.Any]
       )
 
@@ -2088,7 +2088,7 @@ package route53 {
         DelegationSetId: ResourceId,
         Type: ReusableDelegationSetLimitType
     ): GetReusableDelegationSetLimitRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DelegationSetId" -> DelegationSetId.asInstanceOf[js.Any],
         "Type"            -> Type.asInstanceOf[js.Any]
       )
@@ -2111,7 +2111,7 @@ package route53 {
         Count: UsageCount,
         Limit: ReusableDelegationSetLimit
     ): GetReusableDelegationSetLimitResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Count" -> Count.asInstanceOf[js.Any],
         "Limit" -> Limit.asInstanceOf[js.Any]
       )
@@ -2132,7 +2132,7 @@ package route53 {
     def apply(
         Id: ResourceId
     ): GetReusableDelegationSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
@@ -2152,7 +2152,7 @@ package route53 {
     def apply(
         DelegationSet: DelegationSet
     ): GetReusableDelegationSetResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DelegationSet" -> DelegationSet.asInstanceOf[js.Any]
       )
 
@@ -2169,7 +2169,7 @@ package route53 {
   object GetTrafficPolicyInstanceCountRequest {
     def apply(
         ): GetTrafficPolicyInstanceCountRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetTrafficPolicyInstanceCountRequest]
     }
@@ -2187,7 +2187,7 @@ package route53 {
     def apply(
         TrafficPolicyInstanceCount: TrafficPolicyInstanceCount
     ): GetTrafficPolicyInstanceCountResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TrafficPolicyInstanceCount" -> TrafficPolicyInstanceCount.asInstanceOf[js.Any]
       )
 
@@ -2207,7 +2207,7 @@ package route53 {
     def apply(
         Id: TrafficPolicyInstanceId
     ): GetTrafficPolicyInstanceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
@@ -2227,7 +2227,7 @@ package route53 {
     def apply(
         TrafficPolicyInstance: TrafficPolicyInstance
     ): GetTrafficPolicyInstanceResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TrafficPolicyInstance" -> TrafficPolicyInstance.asInstanceOf[js.Any]
       )
 
@@ -2249,7 +2249,7 @@ package route53 {
         Id: TrafficPolicyId,
         Version: TrafficPolicyVersion
     ): GetTrafficPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id"      -> Id.asInstanceOf[js.Any],
         "Version" -> Version.asInstanceOf[js.Any]
       )
@@ -2270,7 +2270,7 @@ package route53 {
     def apply(
         TrafficPolicy: TrafficPolicy
     ): GetTrafficPolicyResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TrafficPolicy" -> TrafficPolicy.asInstanceOf[js.Any]
       )
 
@@ -2300,7 +2300,7 @@ package route53 {
         CloudWatchAlarmConfiguration: js.UndefOr[CloudWatchAlarmConfiguration] = js.undefined,
         LinkedService: js.UndefOr[LinkedService] = js.undefined
     ): HealthCheck = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CallerReference"    -> CallerReference.asInstanceOf[js.Any],
         "HealthCheckConfig"  -> HealthCheckConfig.asInstanceOf[js.Any],
         "HealthCheckVersion" -> HealthCheckVersion.asInstanceOf[js.Any],
@@ -2308,9 +2308,9 @@ package route53 {
       )
 
       CloudWatchAlarmConfiguration.foreach(
-        __v => __obj.update("CloudWatchAlarmConfiguration", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("CloudWatchAlarmConfiguration")(__v.asInstanceOf[js.Any])
       )
-      LinkedService.foreach(__v => __obj.update("LinkedService", __v.asInstanceOf[js.Any]))
+      LinkedService.foreach(__v => __obj.updateDynamic("LinkedService")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HealthCheck]
     }
   }
@@ -2359,28 +2359,28 @@ package route53 {
         ResourcePath: js.UndefOr[ResourcePath] = js.undefined,
         SearchString: js.UndefOr[SearchString] = js.undefined
     ): HealthCheckConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Type" -> Type.asInstanceOf[js.Any]
       )
 
-      AlarmIdentifier.foreach(__v => __obj.update("AlarmIdentifier", __v.asInstanceOf[js.Any]))
-      ChildHealthChecks.foreach(__v => __obj.update("ChildHealthChecks", __v.asInstanceOf[js.Any]))
-      Disabled.foreach(__v => __obj.update("Disabled", __v.asInstanceOf[js.Any]))
-      EnableSNI.foreach(__v => __obj.update("EnableSNI", __v.asInstanceOf[js.Any]))
-      FailureThreshold.foreach(__v => __obj.update("FailureThreshold", __v.asInstanceOf[js.Any]))
-      FullyQualifiedDomainName.foreach(__v => __obj.update("FullyQualifiedDomainName", __v.asInstanceOf[js.Any]))
-      HealthThreshold.foreach(__v => __obj.update("HealthThreshold", __v.asInstanceOf[js.Any]))
-      IPAddress.foreach(__v => __obj.update("IPAddress", __v.asInstanceOf[js.Any]))
+      AlarmIdentifier.foreach(__v => __obj.updateDynamic("AlarmIdentifier")(__v.asInstanceOf[js.Any]))
+      ChildHealthChecks.foreach(__v => __obj.updateDynamic("ChildHealthChecks")(__v.asInstanceOf[js.Any]))
+      Disabled.foreach(__v => __obj.updateDynamic("Disabled")(__v.asInstanceOf[js.Any]))
+      EnableSNI.foreach(__v => __obj.updateDynamic("EnableSNI")(__v.asInstanceOf[js.Any]))
+      FailureThreshold.foreach(__v => __obj.updateDynamic("FailureThreshold")(__v.asInstanceOf[js.Any]))
+      FullyQualifiedDomainName.foreach(__v => __obj.updateDynamic("FullyQualifiedDomainName")(__v.asInstanceOf[js.Any]))
+      HealthThreshold.foreach(__v => __obj.updateDynamic("HealthThreshold")(__v.asInstanceOf[js.Any]))
+      IPAddress.foreach(__v => __obj.updateDynamic("IPAddress")(__v.asInstanceOf[js.Any]))
       InsufficientDataHealthStatus.foreach(
-        __v => __obj.update("InsufficientDataHealthStatus", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("InsufficientDataHealthStatus")(__v.asInstanceOf[js.Any])
       )
-      Inverted.foreach(__v => __obj.update("Inverted", __v.asInstanceOf[js.Any]))
-      MeasureLatency.foreach(__v => __obj.update("MeasureLatency", __v.asInstanceOf[js.Any]))
-      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
-      Regions.foreach(__v => __obj.update("Regions", __v.asInstanceOf[js.Any]))
-      RequestInterval.foreach(__v => __obj.update("RequestInterval", __v.asInstanceOf[js.Any]))
-      ResourcePath.foreach(__v => __obj.update("ResourcePath", __v.asInstanceOf[js.Any]))
-      SearchString.foreach(__v => __obj.update("SearchString", __v.asInstanceOf[js.Any]))
+      Inverted.foreach(__v => __obj.updateDynamic("Inverted")(__v.asInstanceOf[js.Any]))
+      MeasureLatency.foreach(__v => __obj.updateDynamic("MeasureLatency")(__v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      Regions.foreach(__v => __obj.updateDynamic("Regions")(__v.asInstanceOf[js.Any]))
+      RequestInterval.foreach(__v => __obj.updateDynamic("RequestInterval")(__v.asInstanceOf[js.Any]))
+      ResourcePath.foreach(__v => __obj.updateDynamic("ResourcePath")(__v.asInstanceOf[js.Any]))
+      SearchString.foreach(__v => __obj.updateDynamic("SearchString")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HealthCheckConfig]
     }
   }
@@ -2401,10 +2401,10 @@ package route53 {
         Region: js.UndefOr[HealthCheckRegion] = js.undefined,
         StatusReport: js.UndefOr[StatusReport] = js.undefined
     ): HealthCheckObservation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IPAddress.foreach(__v => __obj.update("IPAddress", __v.asInstanceOf[js.Any]))
-      Region.foreach(__v => __obj.update("Region", __v.asInstanceOf[js.Any]))
-      StatusReport.foreach(__v => __obj.update("StatusReport", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IPAddress.foreach(__v => __obj.updateDynamic("IPAddress")(__v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
+      StatusReport.foreach(__v => __obj.updateDynamic("StatusReport")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HealthCheckObservation]
     }
   }
@@ -2468,15 +2468,15 @@ package route53 {
         LinkedService: js.UndefOr[LinkedService] = js.undefined,
         ResourceRecordSetCount: js.UndefOr[HostedZoneRRSetCount] = js.undefined
     ): HostedZone = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CallerReference" -> CallerReference.asInstanceOf[js.Any],
         "Id"              -> Id.asInstanceOf[js.Any],
         "Name"            -> Name.asInstanceOf[js.Any]
       )
 
-      Config.foreach(__v => __obj.update("Config", __v.asInstanceOf[js.Any]))
-      LinkedService.foreach(__v => __obj.update("LinkedService", __v.asInstanceOf[js.Any]))
-      ResourceRecordSetCount.foreach(__v => __obj.update("ResourceRecordSetCount", __v.asInstanceOf[js.Any]))
+      Config.foreach(__v => __obj.updateDynamic("Config")(__v.asInstanceOf[js.Any]))
+      LinkedService.foreach(__v => __obj.updateDynamic("LinkedService")(__v.asInstanceOf[js.Any]))
+      ResourceRecordSetCount.foreach(__v => __obj.updateDynamic("ResourceRecordSetCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HostedZone]
     }
   }
@@ -2495,9 +2495,9 @@ package route53 {
         Comment: js.UndefOr[ResourceDescription] = js.undefined,
         PrivateZone: js.UndefOr[IsPrivateZone] = js.undefined
     ): HostedZoneConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Comment.foreach(__v => __obj.update("Comment", __v.asInstanceOf[js.Any]))
-      PrivateZone.foreach(__v => __obj.update("PrivateZone", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
+      PrivateZone.foreach(__v => __obj.updateDynamic("PrivateZone")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HostedZoneConfig]
     }
   }
@@ -2516,7 +2516,7 @@ package route53 {
         Type: HostedZoneLimitType,
         Value: LimitValue
     ): HostedZoneLimit = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Type"  -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
@@ -2554,9 +2554,9 @@ package route53 {
         Description: js.UndefOr[ResourceDescription] = js.undefined,
         ServicePrincipal: js.UndefOr[ServicePrincipal] = js.undefined
     ): LinkedService = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      ServicePrincipal.foreach(__v => __obj.update("ServicePrincipal", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ServicePrincipal.foreach(__v => __obj.updateDynamic("ServicePrincipal")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LinkedService]
     }
   }
@@ -2579,11 +2579,11 @@ package route53 {
         StartCountryCode: js.UndefOr[GeoLocationCountryCode] = js.undefined,
         StartSubdivisionCode: js.UndefOr[GeoLocationSubdivisionCode] = js.undefined
     ): ListGeoLocationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
-      StartContinentCode.foreach(__v => __obj.update("StartContinentCode", __v.asInstanceOf[js.Any]))
-      StartCountryCode.foreach(__v => __obj.update("StartCountryCode", __v.asInstanceOf[js.Any]))
-      StartSubdivisionCode.foreach(__v => __obj.update("StartSubdivisionCode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      StartContinentCode.foreach(__v => __obj.updateDynamic("StartContinentCode")(__v.asInstanceOf[js.Any]))
+      StartCountryCode.foreach(__v => __obj.updateDynamic("StartCountryCode")(__v.asInstanceOf[js.Any]))
+      StartSubdivisionCode.foreach(__v => __obj.updateDynamic("StartSubdivisionCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGeoLocationsRequest]
     }
   }
@@ -2610,15 +2610,15 @@ package route53 {
         NextCountryCode: js.UndefOr[GeoLocationCountryCode] = js.undefined,
         NextSubdivisionCode: js.UndefOr[GeoLocationSubdivisionCode] = js.undefined
     ): ListGeoLocationsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GeoLocationDetailsList" -> GeoLocationDetailsList.asInstanceOf[js.Any],
         "IsTruncated"            -> IsTruncated.asInstanceOf[js.Any],
         "MaxItems"               -> MaxItems.asInstanceOf[js.Any]
       )
 
-      NextContinentCode.foreach(__v => __obj.update("NextContinentCode", __v.asInstanceOf[js.Any]))
-      NextCountryCode.foreach(__v => __obj.update("NextCountryCode", __v.asInstanceOf[js.Any]))
-      NextSubdivisionCode.foreach(__v => __obj.update("NextSubdivisionCode", __v.asInstanceOf[js.Any]))
+      NextContinentCode.foreach(__v => __obj.updateDynamic("NextContinentCode")(__v.asInstanceOf[js.Any]))
+      NextCountryCode.foreach(__v => __obj.updateDynamic("NextCountryCode")(__v.asInstanceOf[js.Any]))
+      NextSubdivisionCode.foreach(__v => __obj.updateDynamic("NextSubdivisionCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGeoLocationsResponse]
     }
   }
@@ -2637,9 +2637,9 @@ package route53 {
         Marker: js.UndefOr[PageMarker] = js.undefined,
         MaxItems: js.UndefOr[PageMaxItems] = js.undefined
     ): ListHealthChecksRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListHealthChecksRequest]
     }
   }
@@ -2664,14 +2664,14 @@ package route53 {
         MaxItems: PageMaxItems,
         NextMarker: js.UndefOr[PageMarker] = js.undefined
     ): ListHealthChecksResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HealthChecks" -> HealthChecks.asInstanceOf[js.Any],
         "IsTruncated"  -> IsTruncated.asInstanceOf[js.Any],
         "Marker"       -> Marker.asInstanceOf[js.Any],
         "MaxItems"     -> MaxItems.asInstanceOf[js.Any]
       )
 
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListHealthChecksResponse]
     }
   }
@@ -2692,10 +2692,10 @@ package route53 {
         HostedZoneId: js.UndefOr[ResourceId] = js.undefined,
         MaxItems: js.UndefOr[PageMaxItems] = js.undefined
     ): ListHostedZonesByNameRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DNSName.foreach(__v => __obj.update("DNSName", __v.asInstanceOf[js.Any]))
-      HostedZoneId.foreach(__v => __obj.update("HostedZoneId", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DNSName.foreach(__v => __obj.updateDynamic("DNSName")(__v.asInstanceOf[js.Any]))
+      HostedZoneId.foreach(__v => __obj.updateDynamic("HostedZoneId")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListHostedZonesByNameRequest]
     }
   }
@@ -2724,16 +2724,16 @@ package route53 {
         NextDNSName: js.UndefOr[DNSName] = js.undefined,
         NextHostedZoneId: js.UndefOr[ResourceId] = js.undefined
     ): ListHostedZonesByNameResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HostedZones" -> HostedZones.asInstanceOf[js.Any],
         "IsTruncated" -> IsTruncated.asInstanceOf[js.Any],
         "MaxItems"    -> MaxItems.asInstanceOf[js.Any]
       )
 
-      DNSName.foreach(__v => __obj.update("DNSName", __v.asInstanceOf[js.Any]))
-      HostedZoneId.foreach(__v => __obj.update("HostedZoneId", __v.asInstanceOf[js.Any]))
-      NextDNSName.foreach(__v => __obj.update("NextDNSName", __v.asInstanceOf[js.Any]))
-      NextHostedZoneId.foreach(__v => __obj.update("NextHostedZoneId", __v.asInstanceOf[js.Any]))
+      DNSName.foreach(__v => __obj.updateDynamic("DNSName")(__v.asInstanceOf[js.Any]))
+      HostedZoneId.foreach(__v => __obj.updateDynamic("HostedZoneId")(__v.asInstanceOf[js.Any]))
+      NextDNSName.foreach(__v => __obj.updateDynamic("NextDNSName")(__v.asInstanceOf[js.Any]))
+      NextHostedZoneId.foreach(__v => __obj.updateDynamic("NextHostedZoneId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListHostedZonesByNameResponse]
     }
   }
@@ -2754,10 +2754,10 @@ package route53 {
         Marker: js.UndefOr[PageMarker] = js.undefined,
         MaxItems: js.UndefOr[PageMaxItems] = js.undefined
     ): ListHostedZonesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DelegationSetId.foreach(__v => __obj.update("DelegationSetId", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DelegationSetId.foreach(__v => __obj.updateDynamic("DelegationSetId")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListHostedZonesRequest]
     }
   }
@@ -2779,14 +2779,14 @@ package route53 {
         MaxItems: PageMaxItems,
         NextMarker: js.UndefOr[PageMarker] = js.undefined
     ): ListHostedZonesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HostedZones" -> HostedZones.asInstanceOf[js.Any],
         "IsTruncated" -> IsTruncated.asInstanceOf[js.Any],
         "Marker"      -> Marker.asInstanceOf[js.Any],
         "MaxItems"    -> MaxItems.asInstanceOf[js.Any]
       )
 
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListHostedZonesResponse]
     }
   }
@@ -2804,10 +2804,10 @@ package route53 {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListQueryLoggingConfigsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      HostedZoneId.foreach(__v => __obj.update("HostedZoneId", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      HostedZoneId.foreach(__v => __obj.updateDynamic("HostedZoneId")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListQueryLoggingConfigsRequest]
     }
   }
@@ -2823,11 +2823,11 @@ package route53 {
         QueryLoggingConfigs: QueryLoggingConfigs,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListQueryLoggingConfigsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "QueryLoggingConfigs" -> QueryLoggingConfigs.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListQueryLoggingConfigsResponse]
     }
   }
@@ -2852,14 +2852,14 @@ package route53 {
         StartRecordName: js.UndefOr[DNSName] = js.undefined,
         StartRecordType: js.UndefOr[RRType] = js.undefined
     ): ListResourceRecordSetsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any]
       )
 
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
-      StartRecordIdentifier.foreach(__v => __obj.update("StartRecordIdentifier", __v.asInstanceOf[js.Any]))
-      StartRecordName.foreach(__v => __obj.update("StartRecordName", __v.asInstanceOf[js.Any]))
-      StartRecordType.foreach(__v => __obj.update("StartRecordType", __v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      StartRecordIdentifier.foreach(__v => __obj.updateDynamic("StartRecordIdentifier")(__v.asInstanceOf[js.Any]))
+      StartRecordName.foreach(__v => __obj.updateDynamic("StartRecordName")(__v.asInstanceOf[js.Any]))
+      StartRecordType.foreach(__v => __obj.updateDynamic("StartRecordType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResourceRecordSetsRequest]
     }
   }
@@ -2886,15 +2886,15 @@ package route53 {
         NextRecordName: js.UndefOr[DNSName] = js.undefined,
         NextRecordType: js.UndefOr[RRType] = js.undefined
     ): ListResourceRecordSetsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IsTruncated"        -> IsTruncated.asInstanceOf[js.Any],
         "MaxItems"           -> MaxItems.asInstanceOf[js.Any],
         "ResourceRecordSets" -> ResourceRecordSets.asInstanceOf[js.Any]
       )
 
-      NextRecordIdentifier.foreach(__v => __obj.update("NextRecordIdentifier", __v.asInstanceOf[js.Any]))
-      NextRecordName.foreach(__v => __obj.update("NextRecordName", __v.asInstanceOf[js.Any]))
-      NextRecordType.foreach(__v => __obj.update("NextRecordType", __v.asInstanceOf[js.Any]))
+      NextRecordIdentifier.foreach(__v => __obj.updateDynamic("NextRecordIdentifier")(__v.asInstanceOf[js.Any]))
+      NextRecordName.foreach(__v => __obj.updateDynamic("NextRecordName")(__v.asInstanceOf[js.Any]))
+      NextRecordType.foreach(__v => __obj.updateDynamic("NextRecordType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResourceRecordSetsResponse]
     }
   }
@@ -2913,9 +2913,9 @@ package route53 {
         Marker: js.UndefOr[PageMarker] = js.undefined,
         MaxItems: js.UndefOr[PageMaxItems] = js.undefined
     ): ListReusableDelegationSetsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListReusableDelegationSetsRequest]
     }
   }
@@ -2940,14 +2940,14 @@ package route53 {
         MaxItems: PageMaxItems,
         NextMarker: js.UndefOr[PageMarker] = js.undefined
     ): ListReusableDelegationSetsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DelegationSets" -> DelegationSets.asInstanceOf[js.Any],
         "IsTruncated"    -> IsTruncated.asInstanceOf[js.Any],
         "Marker"         -> Marker.asInstanceOf[js.Any],
         "MaxItems"       -> MaxItems.asInstanceOf[js.Any]
       )
 
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListReusableDelegationSetsResponse]
     }
   }
@@ -2966,7 +2966,7 @@ package route53 {
         ResourceId: TagResourceId,
         ResourceType: TagResourceType
     ): ListTagsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceId"   -> ResourceId.asInstanceOf[js.Any],
         "ResourceType" -> ResourceType.asInstanceOf[js.Any]
       )
@@ -2987,7 +2987,7 @@ package route53 {
     def apply(
         ResourceTagSet: ResourceTagSet
     ): ListTagsForResourceResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceTagSet" -> ResourceTagSet.asInstanceOf[js.Any]
       )
 
@@ -3009,7 +3009,7 @@ package route53 {
         ResourceIds: TagResourceIdList,
         ResourceType: TagResourceType
     ): ListTagsForResourcesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceIds"  -> ResourceIds.asInstanceOf[js.Any],
         "ResourceType" -> ResourceType.asInstanceOf[js.Any]
       )
@@ -3030,7 +3030,7 @@ package route53 {
     def apply(
         ResourceTagSets: ResourceTagSetList
     ): ListTagsForResourcesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceTagSets" -> ResourceTagSets.asInstanceOf[js.Any]
       )
 
@@ -3052,9 +3052,9 @@ package route53 {
         MaxItems: js.UndefOr[PageMaxItems] = js.undefined,
         TrafficPolicyIdMarker: js.UndefOr[TrafficPolicyId] = js.undefined
     ): ListTrafficPoliciesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
-      TrafficPolicyIdMarker.foreach(__v => __obj.update("TrafficPolicyIdMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      TrafficPolicyIdMarker.foreach(__v => __obj.updateDynamic("TrafficPolicyIdMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTrafficPoliciesRequest]
     }
   }
@@ -3077,7 +3077,7 @@ package route53 {
         TrafficPolicyIdMarker: TrafficPolicyId,
         TrafficPolicySummaries: TrafficPolicySummaries
     ): ListTrafficPoliciesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IsTruncated"            -> IsTruncated.asInstanceOf[js.Any],
         "MaxItems"               -> MaxItems.asInstanceOf[js.Any],
         "TrafficPolicyIdMarker"  -> TrafficPolicyIdMarker.asInstanceOf[js.Any],
@@ -3106,16 +3106,16 @@ package route53 {
         TrafficPolicyInstanceNameMarker: js.UndefOr[DNSName] = js.undefined,
         TrafficPolicyInstanceTypeMarker: js.UndefOr[RRType] = js.undefined
     ): ListTrafficPolicyInstancesByHostedZoneRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any]
       )
 
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
       TrafficPolicyInstanceNameMarker.foreach(
-        __v => __obj.update("TrafficPolicyInstanceNameMarker", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("TrafficPolicyInstanceNameMarker")(__v.asInstanceOf[js.Any])
       )
       TrafficPolicyInstanceTypeMarker.foreach(
-        __v => __obj.update("TrafficPolicyInstanceTypeMarker", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("TrafficPolicyInstanceTypeMarker")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListTrafficPolicyInstancesByHostedZoneRequest]
     }
@@ -3141,17 +3141,17 @@ package route53 {
         TrafficPolicyInstanceNameMarker: js.UndefOr[DNSName] = js.undefined,
         TrafficPolicyInstanceTypeMarker: js.UndefOr[RRType] = js.undefined
     ): ListTrafficPolicyInstancesByHostedZoneResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IsTruncated"            -> IsTruncated.asInstanceOf[js.Any],
         "MaxItems"               -> MaxItems.asInstanceOf[js.Any],
         "TrafficPolicyInstances" -> TrafficPolicyInstances.asInstanceOf[js.Any]
       )
 
       TrafficPolicyInstanceNameMarker.foreach(
-        __v => __obj.update("TrafficPolicyInstanceNameMarker", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("TrafficPolicyInstanceNameMarker")(__v.asInstanceOf[js.Any])
       )
       TrafficPolicyInstanceTypeMarker.foreach(
-        __v => __obj.update("TrafficPolicyInstanceTypeMarker", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("TrafficPolicyInstanceTypeMarker")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListTrafficPolicyInstancesByHostedZoneResponse]
     }
@@ -3179,18 +3179,18 @@ package route53 {
         TrafficPolicyInstanceNameMarker: js.UndefOr[DNSName] = js.undefined,
         TrafficPolicyInstanceTypeMarker: js.UndefOr[RRType] = js.undefined
     ): ListTrafficPolicyInstancesByPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TrafficPolicyId"      -> TrafficPolicyId.asInstanceOf[js.Any],
         "TrafficPolicyVersion" -> TrafficPolicyVersion.asInstanceOf[js.Any]
       )
 
-      HostedZoneIdMarker.foreach(__v => __obj.update("HostedZoneIdMarker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      HostedZoneIdMarker.foreach(__v => __obj.updateDynamic("HostedZoneIdMarker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
       TrafficPolicyInstanceNameMarker.foreach(
-        __v => __obj.update("TrafficPolicyInstanceNameMarker", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("TrafficPolicyInstanceNameMarker")(__v.asInstanceOf[js.Any])
       )
       TrafficPolicyInstanceTypeMarker.foreach(
-        __v => __obj.update("TrafficPolicyInstanceTypeMarker", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("TrafficPolicyInstanceTypeMarker")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListTrafficPolicyInstancesByPolicyRequest]
     }
@@ -3218,18 +3218,18 @@ package route53 {
         TrafficPolicyInstanceNameMarker: js.UndefOr[DNSName] = js.undefined,
         TrafficPolicyInstanceTypeMarker: js.UndefOr[RRType] = js.undefined
     ): ListTrafficPolicyInstancesByPolicyResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IsTruncated"            -> IsTruncated.asInstanceOf[js.Any],
         "MaxItems"               -> MaxItems.asInstanceOf[js.Any],
         "TrafficPolicyInstances" -> TrafficPolicyInstances.asInstanceOf[js.Any]
       )
 
-      HostedZoneIdMarker.foreach(__v => __obj.update("HostedZoneIdMarker", __v.asInstanceOf[js.Any]))
+      HostedZoneIdMarker.foreach(__v => __obj.updateDynamic("HostedZoneIdMarker")(__v.asInstanceOf[js.Any]))
       TrafficPolicyInstanceNameMarker.foreach(
-        __v => __obj.update("TrafficPolicyInstanceNameMarker", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("TrafficPolicyInstanceNameMarker")(__v.asInstanceOf[js.Any])
       )
       TrafficPolicyInstanceTypeMarker.foreach(
-        __v => __obj.update("TrafficPolicyInstanceTypeMarker", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("TrafficPolicyInstanceTypeMarker")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListTrafficPolicyInstancesByPolicyResponse]
     }
@@ -3253,14 +3253,14 @@ package route53 {
         TrafficPolicyInstanceNameMarker: js.UndefOr[DNSName] = js.undefined,
         TrafficPolicyInstanceTypeMarker: js.UndefOr[RRType] = js.undefined
     ): ListTrafficPolicyInstancesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      HostedZoneIdMarker.foreach(__v => __obj.update("HostedZoneIdMarker", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      HostedZoneIdMarker.foreach(__v => __obj.updateDynamic("HostedZoneIdMarker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
       TrafficPolicyInstanceNameMarker.foreach(
-        __v => __obj.update("TrafficPolicyInstanceNameMarker", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("TrafficPolicyInstanceNameMarker")(__v.asInstanceOf[js.Any])
       )
       TrafficPolicyInstanceTypeMarker.foreach(
-        __v => __obj.update("TrafficPolicyInstanceTypeMarker", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("TrafficPolicyInstanceTypeMarker")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListTrafficPolicyInstancesRequest]
     }
@@ -3288,18 +3288,18 @@ package route53 {
         TrafficPolicyInstanceNameMarker: js.UndefOr[DNSName] = js.undefined,
         TrafficPolicyInstanceTypeMarker: js.UndefOr[RRType] = js.undefined
     ): ListTrafficPolicyInstancesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IsTruncated"            -> IsTruncated.asInstanceOf[js.Any],
         "MaxItems"               -> MaxItems.asInstanceOf[js.Any],
         "TrafficPolicyInstances" -> TrafficPolicyInstances.asInstanceOf[js.Any]
       )
 
-      HostedZoneIdMarker.foreach(__v => __obj.update("HostedZoneIdMarker", __v.asInstanceOf[js.Any]))
+      HostedZoneIdMarker.foreach(__v => __obj.updateDynamic("HostedZoneIdMarker")(__v.asInstanceOf[js.Any]))
       TrafficPolicyInstanceNameMarker.foreach(
-        __v => __obj.update("TrafficPolicyInstanceNameMarker", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("TrafficPolicyInstanceNameMarker")(__v.asInstanceOf[js.Any])
       )
       TrafficPolicyInstanceTypeMarker.foreach(
-        __v => __obj.update("TrafficPolicyInstanceTypeMarker", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("TrafficPolicyInstanceTypeMarker")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListTrafficPolicyInstancesResponse]
     }
@@ -3321,12 +3321,14 @@ package route53 {
         MaxItems: js.UndefOr[PageMaxItems] = js.undefined,
         TrafficPolicyVersionMarker: js.UndefOr[TrafficPolicyVersionMarker] = js.undefined
     ): ListTrafficPolicyVersionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
-      TrafficPolicyVersionMarker.foreach(__v => __obj.update("TrafficPolicyVersionMarker", __v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      TrafficPolicyVersionMarker.foreach(
+        __v => __obj.updateDynamic("TrafficPolicyVersionMarker")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[ListTrafficPolicyVersionsRequest]
     }
   }
@@ -3349,7 +3351,7 @@ package route53 {
         TrafficPolicies: TrafficPolicies,
         TrafficPolicyVersionMarker: TrafficPolicyVersionMarker
     ): ListTrafficPolicyVersionsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IsTruncated"                -> IsTruncated.asInstanceOf[js.Any],
         "MaxItems"                   -> MaxItems.asInstanceOf[js.Any],
         "TrafficPolicies"            -> TrafficPolicies.asInstanceOf[js.Any],
@@ -3376,12 +3378,12 @@ package route53 {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListVPCAssociationAuthorizationsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListVPCAssociationAuthorizationsRequest]
     }
   }
@@ -3402,12 +3404,12 @@ package route53 {
         VPCs: VPCs,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListVPCAssociationAuthorizationsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any],
         "VPCs"         -> VPCs.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListVPCAssociationAuthorizationsResponse]
     }
   }
@@ -3428,7 +3430,7 @@ package route53 {
         HostedZoneId: ResourceId,
         Id: QueryLoggingConfigId
     ): QueryLoggingConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CloudWatchLogsLogGroupArn" -> CloudWatchLogsLogGroupArn.asInstanceOf[js.Any],
         "HostedZoneId"              -> HostedZoneId.asInstanceOf[js.Any],
         "Id"                        -> Id.asInstanceOf[js.Any]
@@ -3478,7 +3480,7 @@ package route53 {
     def apply(
         Value: RData
     ): ResourceRecord = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
@@ -3522,22 +3524,22 @@ package route53 {
         TrafficPolicyInstanceId: js.UndefOr[TrafficPolicyInstanceId] = js.undefined,
         Weight: js.UndefOr[ResourceRecordSetWeight] = js.undefined
     ): ResourceRecordSet = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
 
-      AliasTarget.foreach(__v => __obj.update("AliasTarget", __v.asInstanceOf[js.Any]))
-      Failover.foreach(__v => __obj.update("Failover", __v.asInstanceOf[js.Any]))
-      GeoLocation.foreach(__v => __obj.update("GeoLocation", __v.asInstanceOf[js.Any]))
-      HealthCheckId.foreach(__v => __obj.update("HealthCheckId", __v.asInstanceOf[js.Any]))
-      MultiValueAnswer.foreach(__v => __obj.update("MultiValueAnswer", __v.asInstanceOf[js.Any]))
-      Region.foreach(__v => __obj.update("Region", __v.asInstanceOf[js.Any]))
-      ResourceRecords.foreach(__v => __obj.update("ResourceRecords", __v.asInstanceOf[js.Any]))
-      SetIdentifier.foreach(__v => __obj.update("SetIdentifier", __v.asInstanceOf[js.Any]))
-      TTL.foreach(__v => __obj.update("TTL", __v.asInstanceOf[js.Any]))
-      TrafficPolicyInstanceId.foreach(__v => __obj.update("TrafficPolicyInstanceId", __v.asInstanceOf[js.Any]))
-      Weight.foreach(__v => __obj.update("Weight", __v.asInstanceOf[js.Any]))
+      AliasTarget.foreach(__v => __obj.updateDynamic("AliasTarget")(__v.asInstanceOf[js.Any]))
+      Failover.foreach(__v => __obj.updateDynamic("Failover")(__v.asInstanceOf[js.Any]))
+      GeoLocation.foreach(__v => __obj.updateDynamic("GeoLocation")(__v.asInstanceOf[js.Any]))
+      HealthCheckId.foreach(__v => __obj.updateDynamic("HealthCheckId")(__v.asInstanceOf[js.Any]))
+      MultiValueAnswer.foreach(__v => __obj.updateDynamic("MultiValueAnswer")(__v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
+      ResourceRecords.foreach(__v => __obj.updateDynamic("ResourceRecords")(__v.asInstanceOf[js.Any]))
+      SetIdentifier.foreach(__v => __obj.updateDynamic("SetIdentifier")(__v.asInstanceOf[js.Any]))
+      TTL.foreach(__v => __obj.updateDynamic("TTL")(__v.asInstanceOf[js.Any]))
+      TrafficPolicyInstanceId.foreach(__v => __obj.updateDynamic("TrafficPolicyInstanceId")(__v.asInstanceOf[js.Any]))
+      Weight.foreach(__v => __obj.updateDynamic("Weight")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceRecordSet]
     }
   }
@@ -3615,10 +3617,10 @@ package route53 {
         ResourceType: js.UndefOr[TagResourceType] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): ResourceTagSet = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceTagSet]
     }
   }
@@ -3637,7 +3639,7 @@ package route53 {
         Type: ReusableDelegationSetLimitType,
         Value: LimitValue
     ): ReusableDelegationSetLimit = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Type"  -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
@@ -3676,9 +3678,9 @@ package route53 {
         CheckedTime: js.UndefOr[TimeStamp] = js.undefined,
         Status: js.UndefOr[Status] = js.undefined
     ): StatusReport = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CheckedTime.foreach(__v => __obj.update("CheckedTime", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CheckedTime.foreach(__v => __obj.updateDynamic("CheckedTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StatusReport]
     }
   }
@@ -3697,9 +3699,9 @@ package route53 {
         Key: js.UndefOr[TagKey] = js.undefined,
         Value: js.UndefOr[TagValue] = js.undefined
     ): Tag = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tag]
     }
   }
@@ -3733,15 +3735,15 @@ package route53 {
         EDNS0ClientSubnetMask: js.UndefOr[SubnetMask] = js.undefined,
         ResolverIP: js.UndefOr[IPAddress] = js.undefined
     ): TestDNSAnswerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HostedZoneId" -> HostedZoneId.asInstanceOf[js.Any],
         "RecordName"   -> RecordName.asInstanceOf[js.Any],
         "RecordType"   -> RecordType.asInstanceOf[js.Any]
       )
 
-      EDNS0ClientSubnetIP.foreach(__v => __obj.update("EDNS0ClientSubnetIP", __v.asInstanceOf[js.Any]))
-      EDNS0ClientSubnetMask.foreach(__v => __obj.update("EDNS0ClientSubnetMask", __v.asInstanceOf[js.Any]))
-      ResolverIP.foreach(__v => __obj.update("ResolverIP", __v.asInstanceOf[js.Any]))
+      EDNS0ClientSubnetIP.foreach(__v => __obj.updateDynamic("EDNS0ClientSubnetIP")(__v.asInstanceOf[js.Any]))
+      EDNS0ClientSubnetMask.foreach(__v => __obj.updateDynamic("EDNS0ClientSubnetMask")(__v.asInstanceOf[js.Any]))
+      ResolverIP.foreach(__v => __obj.updateDynamic("ResolverIP")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TestDNSAnswerRequest]
     }
   }
@@ -3768,7 +3770,7 @@ package route53 {
         RecordType: RRType,
         ResponseCode: DNSRCode
     ): TestDNSAnswerResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Nameserver"   -> Nameserver.asInstanceOf[js.Any],
         "Protocol"     -> Protocol.asInstanceOf[js.Any],
         "RecordData"   -> RecordData.asInstanceOf[js.Any],
@@ -3803,7 +3805,7 @@ package route53 {
         Version: TrafficPolicyVersion,
         Comment: js.UndefOr[TrafficPolicyComment] = js.undefined
     ): TrafficPolicy = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Document" -> Document.asInstanceOf[js.Any],
         "Id"       -> Id.asInstanceOf[js.Any],
         "Name"     -> Name.asInstanceOf[js.Any],
@@ -3811,7 +3813,7 @@ package route53 {
         "Version"  -> Version.asInstanceOf[js.Any]
       )
 
-      Comment.foreach(__v => __obj.update("Comment", __v.asInstanceOf[js.Any]))
+      Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TrafficPolicy]
     }
   }
@@ -3844,7 +3846,7 @@ package route53 {
         TrafficPolicyType: RRType,
         TrafficPolicyVersion: TrafficPolicyVersion
     ): TrafficPolicyInstance = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HostedZoneId"         -> HostedZoneId.asInstanceOf[js.Any],
         "Id"                   -> Id.asInstanceOf[js.Any],
         "Message"              -> Message.asInstanceOf[js.Any],
@@ -3880,7 +3882,7 @@ package route53 {
         TrafficPolicyCount: TrafficPolicyVersion,
         Type: RRType
     ): TrafficPolicySummary = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id"                 -> Id.asInstanceOf[js.Any],
         "LatestVersion"      -> LatestVersion.asInstanceOf[js.Any],
         "Name"               -> Name.asInstanceOf[js.Any],
@@ -3936,28 +3938,28 @@ package route53 {
         ResourcePath: js.UndefOr[ResourcePath] = js.undefined,
         SearchString: js.UndefOr[SearchString] = js.undefined
     ): UpdateHealthCheckRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HealthCheckId" -> HealthCheckId.asInstanceOf[js.Any]
       )
 
-      AlarmIdentifier.foreach(__v => __obj.update("AlarmIdentifier", __v.asInstanceOf[js.Any]))
-      ChildHealthChecks.foreach(__v => __obj.update("ChildHealthChecks", __v.asInstanceOf[js.Any]))
-      Disabled.foreach(__v => __obj.update("Disabled", __v.asInstanceOf[js.Any]))
-      EnableSNI.foreach(__v => __obj.update("EnableSNI", __v.asInstanceOf[js.Any]))
-      FailureThreshold.foreach(__v => __obj.update("FailureThreshold", __v.asInstanceOf[js.Any]))
-      FullyQualifiedDomainName.foreach(__v => __obj.update("FullyQualifiedDomainName", __v.asInstanceOf[js.Any]))
-      HealthCheckVersion.foreach(__v => __obj.update("HealthCheckVersion", __v.asInstanceOf[js.Any]))
-      HealthThreshold.foreach(__v => __obj.update("HealthThreshold", __v.asInstanceOf[js.Any]))
-      IPAddress.foreach(__v => __obj.update("IPAddress", __v.asInstanceOf[js.Any]))
+      AlarmIdentifier.foreach(__v => __obj.updateDynamic("AlarmIdentifier")(__v.asInstanceOf[js.Any]))
+      ChildHealthChecks.foreach(__v => __obj.updateDynamic("ChildHealthChecks")(__v.asInstanceOf[js.Any]))
+      Disabled.foreach(__v => __obj.updateDynamic("Disabled")(__v.asInstanceOf[js.Any]))
+      EnableSNI.foreach(__v => __obj.updateDynamic("EnableSNI")(__v.asInstanceOf[js.Any]))
+      FailureThreshold.foreach(__v => __obj.updateDynamic("FailureThreshold")(__v.asInstanceOf[js.Any]))
+      FullyQualifiedDomainName.foreach(__v => __obj.updateDynamic("FullyQualifiedDomainName")(__v.asInstanceOf[js.Any]))
+      HealthCheckVersion.foreach(__v => __obj.updateDynamic("HealthCheckVersion")(__v.asInstanceOf[js.Any]))
+      HealthThreshold.foreach(__v => __obj.updateDynamic("HealthThreshold")(__v.asInstanceOf[js.Any]))
+      IPAddress.foreach(__v => __obj.updateDynamic("IPAddress")(__v.asInstanceOf[js.Any]))
       InsufficientDataHealthStatus.foreach(
-        __v => __obj.update("InsufficientDataHealthStatus", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("InsufficientDataHealthStatus")(__v.asInstanceOf[js.Any])
       )
-      Inverted.foreach(__v => __obj.update("Inverted", __v.asInstanceOf[js.Any]))
-      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
-      Regions.foreach(__v => __obj.update("Regions", __v.asInstanceOf[js.Any]))
-      ResetElements.foreach(__v => __obj.update("ResetElements", __v.asInstanceOf[js.Any]))
-      ResourcePath.foreach(__v => __obj.update("ResourcePath", __v.asInstanceOf[js.Any]))
-      SearchString.foreach(__v => __obj.update("SearchString", __v.asInstanceOf[js.Any]))
+      Inverted.foreach(__v => __obj.updateDynamic("Inverted")(__v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      Regions.foreach(__v => __obj.updateDynamic("Regions")(__v.asInstanceOf[js.Any]))
+      ResetElements.foreach(__v => __obj.updateDynamic("ResetElements")(__v.asInstanceOf[js.Any]))
+      ResourcePath.foreach(__v => __obj.updateDynamic("ResourcePath")(__v.asInstanceOf[js.Any]))
+      SearchString.foreach(__v => __obj.updateDynamic("SearchString")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateHealthCheckRequest]
     }
   }
@@ -3974,7 +3976,7 @@ package route53 {
     def apply(
         HealthCheck: HealthCheck
     ): UpdateHealthCheckResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HealthCheck" -> HealthCheck.asInstanceOf[js.Any]
       )
 
@@ -3996,11 +3998,11 @@ package route53 {
         Id: ResourceId,
         Comment: js.UndefOr[ResourceDescription] = js.undefined
     ): UpdateHostedZoneCommentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
-      Comment.foreach(__v => __obj.update("Comment", __v.asInstanceOf[js.Any]))
+      Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateHostedZoneCommentRequest]
     }
   }
@@ -4017,7 +4019,7 @@ package route53 {
     def apply(
         HostedZone: HostedZone
     ): UpdateHostedZoneCommentResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HostedZone" -> HostedZone.asInstanceOf[js.Any]
       )
 
@@ -4041,7 +4043,7 @@ package route53 {
         Id: TrafficPolicyId,
         Version: TrafficPolicyVersion
     ): UpdateTrafficPolicyCommentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Comment" -> Comment.asInstanceOf[js.Any],
         "Id"      -> Id.asInstanceOf[js.Any],
         "Version" -> Version.asInstanceOf[js.Any]
@@ -4063,7 +4065,7 @@ package route53 {
     def apply(
         TrafficPolicy: TrafficPolicy
     ): UpdateTrafficPolicyCommentResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TrafficPolicy" -> TrafficPolicy.asInstanceOf[js.Any]
       )
 
@@ -4089,7 +4091,7 @@ package route53 {
         TrafficPolicyId: TrafficPolicyId,
         TrafficPolicyVersion: TrafficPolicyVersion
     ): UpdateTrafficPolicyInstanceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id"                   -> Id.asInstanceOf[js.Any],
         "TTL"                  -> TTL.asInstanceOf[js.Any],
         "TrafficPolicyId"      -> TrafficPolicyId.asInstanceOf[js.Any],
@@ -4112,7 +4114,7 @@ package route53 {
     def apply(
         TrafficPolicyInstance: TrafficPolicyInstance
     ): UpdateTrafficPolicyInstanceResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TrafficPolicyInstance" -> TrafficPolicyInstance.asInstanceOf[js.Any]
       )
 
@@ -4134,9 +4136,9 @@ package route53 {
         VPCId: js.UndefOr[VPCId] = js.undefined,
         VPCRegion: js.UndefOr[VPCRegion] = js.undefined
     ): VPC = {
-      val __obj = js.Dictionary.empty[js.Any]
-      VPCId.foreach(__v => __obj.update("VPCId", __v.asInstanceOf[js.Any]))
-      VPCRegion.foreach(__v => __obj.update("VPCRegion", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      VPCId.foreach(__v => __obj.updateDynamic("VPCId")(__v.asInstanceOf[js.Any]))
+      VPCRegion.foreach(__v => __obj.updateDynamic("VPCRegion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VPC]
     }
   }

@@ -76,10 +76,10 @@ package ioteventsdata {
         errorMessage: js.UndefOr[ErrorMessage] = js.undefined,
         messageId: js.UndefOr[MessageId] = js.undefined
     ): BatchPutMessageErrorEntry = {
-      val __obj = js.Dictionary.empty[js.Any]
-      errorCode.foreach(__v => __obj.update("errorCode", __v.asInstanceOf[js.Any]))
-      errorMessage.foreach(__v => __obj.update("errorMessage", __v.asInstanceOf[js.Any]))
-      messageId.foreach(__v => __obj.update("messageId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      errorCode.foreach(__v => __obj.updateDynamic("errorCode")(__v.asInstanceOf[js.Any]))
+      errorMessage.foreach(__v => __obj.updateDynamic("errorMessage")(__v.asInstanceOf[js.Any]))
+      messageId.foreach(__v => __obj.updateDynamic("messageId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchPutMessageErrorEntry]
     }
   }
@@ -93,7 +93,7 @@ package ioteventsdata {
     def apply(
         messages: Messages
     ): BatchPutMessageRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "messages" -> messages.asInstanceOf[js.Any]
       )
 
@@ -110,8 +110,10 @@ package ioteventsdata {
     def apply(
         BatchPutMessageErrorEntries: js.UndefOr[BatchPutMessageErrorEntries] = js.undefined
     ): BatchPutMessageResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BatchPutMessageErrorEntries.foreach(__v => __obj.update("BatchPutMessageErrorEntries", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BatchPutMessageErrorEntries.foreach(
+        __v => __obj.updateDynamic("BatchPutMessageErrorEntries")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[BatchPutMessageResponse]
     }
   }
@@ -132,10 +134,10 @@ package ioteventsdata {
         errorMessage: js.UndefOr[ErrorMessage] = js.undefined,
         messageId: js.UndefOr[MessageId] = js.undefined
     ): BatchUpdateDetectorErrorEntry = {
-      val __obj = js.Dictionary.empty[js.Any]
-      errorCode.foreach(__v => __obj.update("errorCode", __v.asInstanceOf[js.Any]))
-      errorMessage.foreach(__v => __obj.update("errorMessage", __v.asInstanceOf[js.Any]))
-      messageId.foreach(__v => __obj.update("messageId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      errorCode.foreach(__v => __obj.updateDynamic("errorCode")(__v.asInstanceOf[js.Any]))
+      errorMessage.foreach(__v => __obj.updateDynamic("errorMessage")(__v.asInstanceOf[js.Any]))
+      messageId.foreach(__v => __obj.updateDynamic("messageId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchUpdateDetectorErrorEntry]
     }
   }
@@ -149,7 +151,7 @@ package ioteventsdata {
     def apply(
         detectors: UpdateDetectorRequests
     ): BatchUpdateDetectorRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "detectors" -> detectors.asInstanceOf[js.Any]
       )
 
@@ -166,9 +168,9 @@ package ioteventsdata {
     def apply(
         batchUpdateDetectorErrorEntries: js.UndefOr[BatchUpdateDetectorErrorEntries] = js.undefined
     ): BatchUpdateDetectorResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       batchUpdateDetectorErrorEntries.foreach(
-        __v => __obj.update("batchUpdateDetectorErrorEntries", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("batchUpdateDetectorErrorEntries")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[BatchUpdateDetectorResponse]
     }
@@ -185,11 +187,11 @@ package ioteventsdata {
         detectorModelName: DetectorModelName,
         keyValue: js.UndefOr[KeyValue] = js.undefined
     ): DescribeDetectorRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "detectorModelName" -> detectorModelName.asInstanceOf[js.Any]
       )
 
-      keyValue.foreach(__v => __obj.update("keyValue", __v.asInstanceOf[js.Any]))
+      keyValue.foreach(__v => __obj.updateDynamic("keyValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDetectorRequest]
     }
   }
@@ -203,8 +205,8 @@ package ioteventsdata {
     def apply(
         detector: js.UndefOr[Detector] = js.undefined
     ): DescribeDetectorResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      detector.foreach(__v => __obj.update("detector", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      detector.foreach(__v => __obj.updateDynamic("detector")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDetectorResponse]
     }
   }
@@ -231,13 +233,13 @@ package ioteventsdata {
         lastUpdateTime: js.UndefOr[Timestamp] = js.undefined,
         state: js.UndefOr[DetectorState] = js.undefined
     ): Detector = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
-      detectorModelName.foreach(__v => __obj.update("detectorModelName", __v.asInstanceOf[js.Any]))
-      detectorModelVersion.foreach(__v => __obj.update("detectorModelVersion", __v.asInstanceOf[js.Any]))
-      keyValue.foreach(__v => __obj.update("keyValue", __v.asInstanceOf[js.Any]))
-      lastUpdateTime.foreach(__v => __obj.update("lastUpdateTime", __v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.update("state", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      detectorModelName.foreach(__v => __obj.updateDynamic("detectorModelName")(__v.asInstanceOf[js.Any]))
+      detectorModelVersion.foreach(__v => __obj.updateDynamic("detectorModelVersion")(__v.asInstanceOf[js.Any]))
+      keyValue.foreach(__v => __obj.updateDynamic("keyValue")(__v.asInstanceOf[js.Any]))
+      lastUpdateTime.foreach(__v => __obj.updateDynamic("lastUpdateTime")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Detector]
     }
   }
@@ -258,7 +260,7 @@ package ioteventsdata {
         timers: Timers,
         variables: Variables
     ): DetectorState = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "stateName" -> stateName.asInstanceOf[js.Any],
         "timers"    -> timers.asInstanceOf[js.Any],
         "variables" -> variables.asInstanceOf[js.Any]
@@ -284,7 +286,7 @@ package ioteventsdata {
         timers: TimerDefinitions,
         variables: VariableDefinitions
     ): DetectorStateDefinition = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "stateName" -> stateName.asInstanceOf[js.Any],
         "timers"    -> timers.asInstanceOf[js.Any],
         "variables" -> variables.asInstanceOf[js.Any]
@@ -306,8 +308,8 @@ package ioteventsdata {
     def apply(
         stateName: js.UndefOr[StateName] = js.undefined
     ): DetectorStateSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      stateName.foreach(__v => __obj.update("stateName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      stateName.foreach(__v => __obj.updateDynamic("stateName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetectorStateSummary]
     }
   }
@@ -334,13 +336,13 @@ package ioteventsdata {
         lastUpdateTime: js.UndefOr[Timestamp] = js.undefined,
         state: js.UndefOr[DetectorStateSummary] = js.undefined
     ): DetectorSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
-      detectorModelName.foreach(__v => __obj.update("detectorModelName", __v.asInstanceOf[js.Any]))
-      detectorModelVersion.foreach(__v => __obj.update("detectorModelVersion", __v.asInstanceOf[js.Any]))
-      keyValue.foreach(__v => __obj.update("keyValue", __v.asInstanceOf[js.Any]))
-      lastUpdateTime.foreach(__v => __obj.update("lastUpdateTime", __v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.update("state", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      detectorModelName.foreach(__v => __obj.updateDynamic("detectorModelName")(__v.asInstanceOf[js.Any]))
+      detectorModelVersion.foreach(__v => __obj.updateDynamic("detectorModelVersion")(__v.asInstanceOf[js.Any]))
+      keyValue.foreach(__v => __obj.updateDynamic("keyValue")(__v.asInstanceOf[js.Any]))
+      lastUpdateTime.foreach(__v => __obj.updateDynamic("lastUpdateTime")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetectorSummary]
     }
   }
@@ -378,13 +380,13 @@ package ioteventsdata {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         stateName: js.UndefOr[StateName] = js.undefined
     ): ListDetectorsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "detectorModelName" -> detectorModelName.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      stateName.foreach(__v => __obj.update("stateName", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      stateName.foreach(__v => __obj.updateDynamic("stateName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDetectorsRequest]
     }
   }
@@ -400,9 +402,9 @@ package ioteventsdata {
         detectorSummaries: js.UndefOr[DetectorSummaries] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDetectorsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      detectorSummaries.foreach(__v => __obj.update("detectorSummaries", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      detectorSummaries.foreach(__v => __obj.updateDynamic("detectorSummaries")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDetectorsResponse]
     }
   }
@@ -423,7 +425,7 @@ package ioteventsdata {
         messageId: MessageId,
         payload: Payload
     ): Message = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "inputName" -> inputName.asInstanceOf[js.Any],
         "messageId" -> messageId.asInstanceOf[js.Any],
         "payload"   -> payload.asInstanceOf[js.Any]
@@ -447,7 +449,7 @@ package ioteventsdata {
         name: TimerName,
         timestamp: Timestamp
     ): Timer = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name"      -> name.asInstanceOf[js.Any],
         "timestamp" -> timestamp.asInstanceOf[js.Any]
       )
@@ -470,7 +472,7 @@ package ioteventsdata {
         name: TimerName,
         seconds: Seconds
     ): TimerDefinition = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name"    -> name.asInstanceOf[js.Any],
         "seconds" -> seconds.asInstanceOf[js.Any]
       )
@@ -497,13 +499,13 @@ package ioteventsdata {
         state: DetectorStateDefinition,
         keyValue: js.UndefOr[KeyValue] = js.undefined
     ): UpdateDetectorRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "detectorModelName" -> detectorModelName.asInstanceOf[js.Any],
         "messageId"         -> messageId.asInstanceOf[js.Any],
         "state"             -> state.asInstanceOf[js.Any]
       )
 
-      keyValue.foreach(__v => __obj.update("keyValue", __v.asInstanceOf[js.Any]))
+      keyValue.foreach(__v => __obj.updateDynamic("keyValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDetectorRequest]
     }
   }
@@ -522,7 +524,7 @@ package ioteventsdata {
         name: VariableName,
         value: VariableValue
     ): Variable = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name"  -> name.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
@@ -545,7 +547,7 @@ package ioteventsdata {
         name: VariableName,
         value: VariableValue
     ): VariableDefinition = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name"  -> name.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )

@@ -49,9 +49,9 @@ package forecastquery {
         Timestamp: js.UndefOr[Timestamp] = js.undefined,
         Value: js.UndefOr[Double] = js.undefined
     ): DataPoint = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Timestamp.foreach(__v => __obj.update("Timestamp", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataPoint]
     }
   }
@@ -68,8 +68,8 @@ package forecastquery {
     def apply(
         Predictions: js.UndefOr[Predictions] = js.undefined
     ): Forecast = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Predictions.foreach(__v => __obj.update("Predictions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Predictions.foreach(__v => __obj.updateDynamic("Predictions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Forecast]
     }
   }
@@ -91,14 +91,14 @@ package forecastquery {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         StartDate: js.UndefOr[DateTime] = js.undefined
     ): QueryForecastRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Filters"     -> Filters.asInstanceOf[js.Any],
         "ForecastArn" -> ForecastArn.asInstanceOf[js.Any]
       )
 
-      EndDate.foreach(__v => __obj.update("EndDate", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      StartDate.foreach(__v => __obj.update("StartDate", __v.asInstanceOf[js.Any]))
+      EndDate.foreach(__v => __obj.updateDynamic("EndDate")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StartDate.foreach(__v => __obj.updateDynamic("StartDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[QueryForecastRequest]
     }
   }
@@ -112,8 +112,8 @@ package forecastquery {
     def apply(
         Forecast: js.UndefOr[Forecast] = js.undefined
     ): QueryForecastResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Forecast.foreach(__v => __obj.update("Forecast", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Forecast.foreach(__v => __obj.updateDynamic("Forecast")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[QueryForecastResponse]
     }
   }

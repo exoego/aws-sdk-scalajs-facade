@@ -339,10 +339,10 @@ package pinpointemail {
         ListingTime: js.UndefOr[Timestamp] = js.undefined,
         RblName: js.UndefOr[RblName] = js.undefined
     ): BlacklistEntry = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      ListingTime.foreach(__v => __obj.update("ListingTime", __v.asInstanceOf[js.Any]))
-      RblName.foreach(__v => __obj.update("RblName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ListingTime.foreach(__v => __obj.updateDynamic("ListingTime")(__v.asInstanceOf[js.Any]))
+      RblName.foreach(__v => __obj.updateDynamic("RblName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BlacklistEntry]
     }
   }
@@ -361,9 +361,9 @@ package pinpointemail {
         Html: js.UndefOr[Content] = js.undefined,
         Text: js.UndefOr[Content] = js.undefined
     ): Body = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Html.foreach(__v => __obj.update("Html", __v.asInstanceOf[js.Any]))
-      Text.foreach(__v => __obj.update("Text", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Html.foreach(__v => __obj.updateDynamic("Html")(__v.asInstanceOf[js.Any]))
+      Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Body]
     }
   }
@@ -380,7 +380,7 @@ package pinpointemail {
     def apply(
         DimensionConfigurations: CloudWatchDimensionConfigurations
     ): CloudWatchDestination = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DimensionConfigurations" -> DimensionConfigurations.asInstanceOf[js.Any]
       )
 
@@ -404,7 +404,7 @@ package pinpointemail {
         DimensionName: DimensionName,
         DimensionValueSource: DimensionValueSource
     ): CloudWatchDimensionConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DefaultDimensionValue" -> DefaultDimensionValue.asInstanceOf[js.Any],
         "DimensionName"         -> DimensionName.asInstanceOf[js.Any],
         "DimensionValueSource"  -> DimensionValueSource.asInstanceOf[js.Any]
@@ -428,11 +428,11 @@ package pinpointemail {
         Data: MessageData,
         Charset: js.UndefOr[Charset] = js.undefined
     ): Content = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Data" -> Data.asInstanceOf[js.Any]
       )
 
-      Charset.foreach(__v => __obj.update("Charset", __v.asInstanceOf[js.Any]))
+      Charset.foreach(__v => __obj.updateDynamic("Charset")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Content]
     }
   }
@@ -453,7 +453,7 @@ package pinpointemail {
         EventDestination: EventDestinationDefinition,
         EventDestinationName: EventDestinationName
     ): CreateConfigurationSetEventDestinationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
         "EventDestination"     -> EventDestination.asInstanceOf[js.Any],
         "EventDestinationName" -> EventDestinationName.asInstanceOf[js.Any]
@@ -472,7 +472,7 @@ package pinpointemail {
   object CreateConfigurationSetEventDestinationResponse {
     def apply(
         ): CreateConfigurationSetEventDestinationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateConfigurationSetEventDestinationResponse]
     }
@@ -500,15 +500,15 @@ package pinpointemail {
         Tags: js.UndefOr[TagList] = js.undefined,
         TrackingOptions: js.UndefOr[TrackingOptions] = js.undefined
     ): CreateConfigurationSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
       )
 
-      DeliveryOptions.foreach(__v => __obj.update("DeliveryOptions", __v.asInstanceOf[js.Any]))
-      ReputationOptions.foreach(__v => __obj.update("ReputationOptions", __v.asInstanceOf[js.Any]))
-      SendingOptions.foreach(__v => __obj.update("SendingOptions", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      TrackingOptions.foreach(__v => __obj.update("TrackingOptions", __v.asInstanceOf[js.Any]))
+      DeliveryOptions.foreach(__v => __obj.updateDynamic("DeliveryOptions")(__v.asInstanceOf[js.Any]))
+      ReputationOptions.foreach(__v => __obj.updateDynamic("ReputationOptions")(__v.asInstanceOf[js.Any]))
+      SendingOptions.foreach(__v => __obj.updateDynamic("SendingOptions")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TrackingOptions.foreach(__v => __obj.updateDynamic("TrackingOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateConfigurationSetRequest]
     }
   }
@@ -522,7 +522,7 @@ package pinpointemail {
   object CreateConfigurationSetResponse {
     def apply(
         ): CreateConfigurationSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateConfigurationSetResponse]
     }
@@ -542,11 +542,11 @@ package pinpointemail {
         PoolName: PoolName,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateDedicatedIpPoolRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PoolName" -> PoolName.asInstanceOf[js.Any]
       )
 
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDedicatedIpPoolRequest]
     }
   }
@@ -560,7 +560,7 @@ package pinpointemail {
   object CreateDedicatedIpPoolResponse {
     def apply(
         ): CreateDedicatedIpPoolResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateDedicatedIpPoolResponse]
     }
@@ -584,13 +584,13 @@ package pinpointemail {
         ReportName: js.UndefOr[ReportName] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateDeliverabilityTestReportRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Content"          -> Content.asInstanceOf[js.Any],
         "FromEmailAddress" -> FromEmailAddress.asInstanceOf[js.Any]
       )
 
-      ReportName.foreach(__v => __obj.update("ReportName", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      ReportName.foreach(__v => __obj.updateDynamic("ReportName")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDeliverabilityTestReportRequest]
     }
   }
@@ -609,7 +609,7 @@ package pinpointemail {
         DeliverabilityTestStatus: DeliverabilityTestStatus,
         ReportId: ReportId
     ): CreateDeliverabilityTestReportResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DeliverabilityTestStatus" -> DeliverabilityTestStatus.asInstanceOf[js.Any],
         "ReportId"                 -> ReportId.asInstanceOf[js.Any]
       )
@@ -632,11 +632,11 @@ package pinpointemail {
         EmailIdentity: Identity,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateEmailIdentityRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any]
       )
 
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateEmailIdentityRequest]
     }
   }
@@ -658,10 +658,10 @@ package pinpointemail {
         IdentityType: js.UndefOr[IdentityType] = js.undefined,
         VerifiedForSendingStatus: js.UndefOr[Enabled] = js.undefined
     ): CreateEmailIdentityResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DkimAttributes.foreach(__v => __obj.update("DkimAttributes", __v.asInstanceOf[js.Any]))
-      IdentityType.foreach(__v => __obj.update("IdentityType", __v.asInstanceOf[js.Any]))
-      VerifiedForSendingStatus.foreach(__v => __obj.update("VerifiedForSendingStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DkimAttributes.foreach(__v => __obj.updateDynamic("DkimAttributes")(__v.asInstanceOf[js.Any]))
+      IdentityType.foreach(__v => __obj.updateDynamic("IdentityType")(__v.asInstanceOf[js.Any]))
+      VerifiedForSendingStatus.foreach(__v => __obj.updateDynamic("VerifiedForSendingStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateEmailIdentityResponse]
     }
   }
@@ -682,10 +682,10 @@ package pinpointemail {
         StartDate: js.UndefOr[Timestamp] = js.undefined,
         VolumeStatistics: js.UndefOr[VolumeStatistics] = js.undefined
     ): DailyVolume = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DomainIspPlacements.foreach(__v => __obj.update("DomainIspPlacements", __v.asInstanceOf[js.Any]))
-      StartDate.foreach(__v => __obj.update("StartDate", __v.asInstanceOf[js.Any]))
-      VolumeStatistics.foreach(__v => __obj.update("VolumeStatistics", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DomainIspPlacements.foreach(__v => __obj.updateDynamic("DomainIspPlacements")(__v.asInstanceOf[js.Any]))
+      StartDate.foreach(__v => __obj.updateDynamic("StartDate")(__v.asInstanceOf[js.Any]))
+      VolumeStatistics.foreach(__v => __obj.updateDynamic("VolumeStatistics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DailyVolume]
     }
   }
@@ -709,13 +709,13 @@ package pinpointemail {
         WarmupStatus: WarmupStatus,
         PoolName: js.UndefOr[PoolName] = js.undefined
     ): DedicatedIp = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Ip"               -> Ip.asInstanceOf[js.Any],
         "WarmupPercentage" -> WarmupPercentage.asInstanceOf[js.Any],
         "WarmupStatus"     -> WarmupStatus.asInstanceOf[js.Any]
       )
 
-      PoolName.foreach(__v => __obj.update("PoolName", __v.asInstanceOf[js.Any]))
+      PoolName.foreach(__v => __obj.updateDynamic("PoolName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DedicatedIp]
     }
   }
@@ -734,7 +734,7 @@ package pinpointemail {
         ConfigurationSetName: ConfigurationSetName,
         EventDestinationName: EventDestinationName
     ): DeleteConfigurationSetEventDestinationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
         "EventDestinationName" -> EventDestinationName.asInstanceOf[js.Any]
       )
@@ -752,7 +752,7 @@ package pinpointemail {
   object DeleteConfigurationSetEventDestinationResponse {
     def apply(
         ): DeleteConfigurationSetEventDestinationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteConfigurationSetEventDestinationResponse]
     }
@@ -770,7 +770,7 @@ package pinpointemail {
     def apply(
         ConfigurationSetName: ConfigurationSetName
     ): DeleteConfigurationSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
       )
 
@@ -787,7 +787,7 @@ package pinpointemail {
   object DeleteConfigurationSetResponse {
     def apply(
         ): DeleteConfigurationSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteConfigurationSetResponse]
     }
@@ -805,7 +805,7 @@ package pinpointemail {
     def apply(
         PoolName: PoolName
     ): DeleteDedicatedIpPoolRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PoolName" -> PoolName.asInstanceOf[js.Any]
       )
 
@@ -822,7 +822,7 @@ package pinpointemail {
   object DeleteDedicatedIpPoolResponse {
     def apply(
         ): DeleteDedicatedIpPoolResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteDedicatedIpPoolResponse]
     }
@@ -840,7 +840,7 @@ package pinpointemail {
     def apply(
         EmailIdentity: Identity
     ): DeleteEmailIdentityRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any]
       )
 
@@ -857,7 +857,7 @@ package pinpointemail {
   object DeleteEmailIdentityResponse {
     def apply(
         ): DeleteEmailIdentityResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteEmailIdentityResponse]
     }
@@ -896,13 +896,13 @@ package pinpointemail {
         ReportName: js.UndefOr[ReportName] = js.undefined,
         Subject: js.UndefOr[DeliverabilityTestSubject] = js.undefined
     ): DeliverabilityTestReport = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreateDate.foreach(__v => __obj.update("CreateDate", __v.asInstanceOf[js.Any]))
-      DeliverabilityTestStatus.foreach(__v => __obj.update("DeliverabilityTestStatus", __v.asInstanceOf[js.Any]))
-      FromEmailAddress.foreach(__v => __obj.update("FromEmailAddress", __v.asInstanceOf[js.Any]))
-      ReportId.foreach(__v => __obj.update("ReportId", __v.asInstanceOf[js.Any]))
-      ReportName.foreach(__v => __obj.update("ReportName", __v.asInstanceOf[js.Any]))
-      Subject.foreach(__v => __obj.update("Subject", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
+      DeliverabilityTestStatus.foreach(__v => __obj.updateDynamic("DeliverabilityTestStatus")(__v.asInstanceOf[js.Any]))
+      FromEmailAddress.foreach(__v => __obj.updateDynamic("FromEmailAddress")(__v.asInstanceOf[js.Any]))
+      ReportId.foreach(__v => __obj.updateDynamic("ReportId")(__v.asInstanceOf[js.Any]))
+      ReportName.foreach(__v => __obj.updateDynamic("ReportName")(__v.asInstanceOf[js.Any]))
+      Subject.foreach(__v => __obj.updateDynamic("Subject")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeliverabilityTestReport]
     }
   }
@@ -931,9 +931,9 @@ package pinpointemail {
         SendingPoolName: js.UndefOr[PoolName] = js.undefined,
         TlsPolicy: js.UndefOr[TlsPolicy] = js.undefined
     ): DeliveryOptions = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SendingPoolName.foreach(__v => __obj.update("SendingPoolName", __v.asInstanceOf[js.Any]))
-      TlsPolicy.foreach(__v => __obj.update("TlsPolicy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SendingPoolName.foreach(__v => __obj.updateDynamic("SendingPoolName")(__v.asInstanceOf[js.Any]))
+      TlsPolicy.foreach(__v => __obj.updateDynamic("TlsPolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeliveryOptions]
     }
   }
@@ -954,10 +954,10 @@ package pinpointemail {
         CcAddresses: js.UndefOr[EmailAddressList] = js.undefined,
         ToAddresses: js.UndefOr[EmailAddressList] = js.undefined
     ): Destination = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BccAddresses.foreach(__v => __obj.update("BccAddresses", __v.asInstanceOf[js.Any]))
-      CcAddresses.foreach(__v => __obj.update("CcAddresses", __v.asInstanceOf[js.Any]))
-      ToAddresses.foreach(__v => __obj.update("ToAddresses", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BccAddresses.foreach(__v => __obj.updateDynamic("BccAddresses")(__v.asInstanceOf[js.Any]))
+      CcAddresses.foreach(__v => __obj.updateDynamic("CcAddresses")(__v.asInstanceOf[js.Any]))
+      ToAddresses.foreach(__v => __obj.updateDynamic("ToAddresses")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Destination]
     }
   }
@@ -989,10 +989,10 @@ package pinpointemail {
         Status: js.UndefOr[DkimStatus] = js.undefined,
         Tokens: js.UndefOr[DnsTokenList] = js.undefined
     ): DkimAttributes = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SigningEnabled.foreach(__v => __obj.update("SigningEnabled", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      Tokens.foreach(__v => __obj.update("Tokens", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SigningEnabled.foreach(__v => __obj.updateDynamic("SigningEnabled")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Tokens.foreach(__v => __obj.updateDynamic("Tokens")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DkimAttributes]
     }
   }
@@ -1053,21 +1053,21 @@ package pinpointemail {
         SpamCount: js.UndefOr[Volume] = js.undefined,
         Subject: js.UndefOr[Subject] = js.undefined
     ): DomainDeliverabilityCampaign = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CampaignId.foreach(__v => __obj.update("CampaignId", __v.asInstanceOf[js.Any]))
-      DeleteRate.foreach(__v => __obj.update("DeleteRate", __v.asInstanceOf[js.Any]))
-      Esps.foreach(__v => __obj.update("Esps", __v.asInstanceOf[js.Any]))
-      FirstSeenDateTime.foreach(__v => __obj.update("FirstSeenDateTime", __v.asInstanceOf[js.Any]))
-      FromAddress.foreach(__v => __obj.update("FromAddress", __v.asInstanceOf[js.Any]))
-      ImageUrl.foreach(__v => __obj.update("ImageUrl", __v.asInstanceOf[js.Any]))
-      InboxCount.foreach(__v => __obj.update("InboxCount", __v.asInstanceOf[js.Any]))
-      LastSeenDateTime.foreach(__v => __obj.update("LastSeenDateTime", __v.asInstanceOf[js.Any]))
-      ProjectedVolume.foreach(__v => __obj.update("ProjectedVolume", __v.asInstanceOf[js.Any]))
-      ReadDeleteRate.foreach(__v => __obj.update("ReadDeleteRate", __v.asInstanceOf[js.Any]))
-      ReadRate.foreach(__v => __obj.update("ReadRate", __v.asInstanceOf[js.Any]))
-      SendingIps.foreach(__v => __obj.update("SendingIps", __v.asInstanceOf[js.Any]))
-      SpamCount.foreach(__v => __obj.update("SpamCount", __v.asInstanceOf[js.Any]))
-      Subject.foreach(__v => __obj.update("Subject", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CampaignId.foreach(__v => __obj.updateDynamic("CampaignId")(__v.asInstanceOf[js.Any]))
+      DeleteRate.foreach(__v => __obj.updateDynamic("DeleteRate")(__v.asInstanceOf[js.Any]))
+      Esps.foreach(__v => __obj.updateDynamic("Esps")(__v.asInstanceOf[js.Any]))
+      FirstSeenDateTime.foreach(__v => __obj.updateDynamic("FirstSeenDateTime")(__v.asInstanceOf[js.Any]))
+      FromAddress.foreach(__v => __obj.updateDynamic("FromAddress")(__v.asInstanceOf[js.Any]))
+      ImageUrl.foreach(__v => __obj.updateDynamic("ImageUrl")(__v.asInstanceOf[js.Any]))
+      InboxCount.foreach(__v => __obj.updateDynamic("InboxCount")(__v.asInstanceOf[js.Any]))
+      LastSeenDateTime.foreach(__v => __obj.updateDynamic("LastSeenDateTime")(__v.asInstanceOf[js.Any]))
+      ProjectedVolume.foreach(__v => __obj.updateDynamic("ProjectedVolume")(__v.asInstanceOf[js.Any]))
+      ReadDeleteRate.foreach(__v => __obj.updateDynamic("ReadDeleteRate")(__v.asInstanceOf[js.Any]))
+      ReadRate.foreach(__v => __obj.updateDynamic("ReadRate")(__v.asInstanceOf[js.Any]))
+      SendingIps.foreach(__v => __obj.updateDynamic("SendingIps")(__v.asInstanceOf[js.Any]))
+      SpamCount.foreach(__v => __obj.updateDynamic("SpamCount")(__v.asInstanceOf[js.Any]))
+      Subject.foreach(__v => __obj.updateDynamic("Subject")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainDeliverabilityCampaign]
     }
   }
@@ -1088,12 +1088,12 @@ package pinpointemail {
         InboxPlacementTrackingOption: js.UndefOr[InboxPlacementTrackingOption] = js.undefined,
         SubscriptionStartDate: js.UndefOr[Timestamp] = js.undefined
     ): DomainDeliverabilityTrackingOption = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Domain.foreach(__v => __obj.update("Domain", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       InboxPlacementTrackingOption.foreach(
-        __v => __obj.update("InboxPlacementTrackingOption", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("InboxPlacementTrackingOption")(__v.asInstanceOf[js.Any])
       )
-      SubscriptionStartDate.foreach(__v => __obj.update("SubscriptionStartDate", __v.asInstanceOf[js.Any]))
+      SubscriptionStartDate.foreach(__v => __obj.updateDynamic("SubscriptionStartDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainDeliverabilityTrackingOption]
     }
   }
@@ -1118,12 +1118,12 @@ package pinpointemail {
         SpamPercentage: js.UndefOr[Percentage] = js.undefined,
         SpamRawCount: js.UndefOr[Volume] = js.undefined
     ): DomainIspPlacement = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InboxPercentage.foreach(__v => __obj.update("InboxPercentage", __v.asInstanceOf[js.Any]))
-      InboxRawCount.foreach(__v => __obj.update("InboxRawCount", __v.asInstanceOf[js.Any]))
-      IspName.foreach(__v => __obj.update("IspName", __v.asInstanceOf[js.Any]))
-      SpamPercentage.foreach(__v => __obj.update("SpamPercentage", __v.asInstanceOf[js.Any]))
-      SpamRawCount.foreach(__v => __obj.update("SpamRawCount", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InboxPercentage.foreach(__v => __obj.updateDynamic("InboxPercentage")(__v.asInstanceOf[js.Any]))
+      InboxRawCount.foreach(__v => __obj.updateDynamic("InboxRawCount")(__v.asInstanceOf[js.Any]))
+      IspName.foreach(__v => __obj.updateDynamic("IspName")(__v.asInstanceOf[js.Any]))
+      SpamPercentage.foreach(__v => __obj.updateDynamic("SpamPercentage")(__v.asInstanceOf[js.Any]))
+      SpamRawCount.foreach(__v => __obj.updateDynamic("SpamRawCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainIspPlacement]
     }
   }
@@ -1142,9 +1142,9 @@ package pinpointemail {
         Raw: js.UndefOr[RawMessage] = js.undefined,
         Simple: js.UndefOr[Message] = js.undefined
     ): EmailContent = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Raw.foreach(__v => __obj.update("Raw", __v.asInstanceOf[js.Any]))
-      Simple.foreach(__v => __obj.update("Simple", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Raw.foreach(__v => __obj.updateDynamic("Raw")(__v.asInstanceOf[js.Any]))
+      Simple.foreach(__v => __obj.updateDynamic("Simple")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EmailContent]
     }
   }
@@ -1173,16 +1173,18 @@ package pinpointemail {
         PinpointDestination: js.UndefOr[PinpointDestination] = js.undefined,
         SnsDestination: js.UndefOr[SnsDestination] = js.undefined
     ): EventDestination = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MatchingEventTypes" -> MatchingEventTypes.asInstanceOf[js.Any],
         "Name"               -> Name.asInstanceOf[js.Any]
       )
 
-      CloudWatchDestination.foreach(__v => __obj.update("CloudWatchDestination", __v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      KinesisFirehoseDestination.foreach(__v => __obj.update("KinesisFirehoseDestination", __v.asInstanceOf[js.Any]))
-      PinpointDestination.foreach(__v => __obj.update("PinpointDestination", __v.asInstanceOf[js.Any]))
-      SnsDestination.foreach(__v => __obj.update("SnsDestination", __v.asInstanceOf[js.Any]))
+      CloudWatchDestination.foreach(__v => __obj.updateDynamic("CloudWatchDestination")(__v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      KinesisFirehoseDestination.foreach(
+        __v => __obj.updateDynamic("KinesisFirehoseDestination")(__v.asInstanceOf[js.Any])
+      )
+      PinpointDestination.foreach(__v => __obj.updateDynamic("PinpointDestination")(__v.asInstanceOf[js.Any]))
+      SnsDestination.foreach(__v => __obj.updateDynamic("SnsDestination")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventDestination]
     }
   }
@@ -1209,13 +1211,15 @@ package pinpointemail {
         PinpointDestination: js.UndefOr[PinpointDestination] = js.undefined,
         SnsDestination: js.UndefOr[SnsDestination] = js.undefined
     ): EventDestinationDefinition = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CloudWatchDestination.foreach(__v => __obj.update("CloudWatchDestination", __v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      KinesisFirehoseDestination.foreach(__v => __obj.update("KinesisFirehoseDestination", __v.asInstanceOf[js.Any]))
-      MatchingEventTypes.foreach(__v => __obj.update("MatchingEventTypes", __v.asInstanceOf[js.Any]))
-      PinpointDestination.foreach(__v => __obj.update("PinpointDestination", __v.asInstanceOf[js.Any]))
-      SnsDestination.foreach(__v => __obj.update("SnsDestination", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CloudWatchDestination.foreach(__v => __obj.updateDynamic("CloudWatchDestination")(__v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      KinesisFirehoseDestination.foreach(
+        __v => __obj.updateDynamic("KinesisFirehoseDestination")(__v.asInstanceOf[js.Any])
+      )
+      MatchingEventTypes.foreach(__v => __obj.updateDynamic("MatchingEventTypes")(__v.asInstanceOf[js.Any]))
+      PinpointDestination.foreach(__v => __obj.updateDynamic("PinpointDestination")(__v.asInstanceOf[js.Any]))
+      SnsDestination.foreach(__v => __obj.updateDynamic("SnsDestination")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventDestinationDefinition]
     }
   }
@@ -1245,7 +1249,7 @@ package pinpointemail {
   object GetAccountRequest {
     def apply(
         ): GetAccountRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetAccountRequest]
     }
@@ -1271,14 +1275,14 @@ package pinpointemail {
         SendQuota: js.UndefOr[SendQuota] = js.undefined,
         SendingEnabled: js.UndefOr[Enabled] = js.undefined
     ): GetAccountResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       DedicatedIpAutoWarmupEnabled.foreach(
-        __v => __obj.update("DedicatedIpAutoWarmupEnabled", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("DedicatedIpAutoWarmupEnabled")(__v.asInstanceOf[js.Any])
       )
-      EnforcementStatus.foreach(__v => __obj.update("EnforcementStatus", __v.asInstanceOf[js.Any]))
-      ProductionAccessEnabled.foreach(__v => __obj.update("ProductionAccessEnabled", __v.asInstanceOf[js.Any]))
-      SendQuota.foreach(__v => __obj.update("SendQuota", __v.asInstanceOf[js.Any]))
-      SendingEnabled.foreach(__v => __obj.update("SendingEnabled", __v.asInstanceOf[js.Any]))
+      EnforcementStatus.foreach(__v => __obj.updateDynamic("EnforcementStatus")(__v.asInstanceOf[js.Any]))
+      ProductionAccessEnabled.foreach(__v => __obj.updateDynamic("ProductionAccessEnabled")(__v.asInstanceOf[js.Any]))
+      SendQuota.foreach(__v => __obj.updateDynamic("SendQuota")(__v.asInstanceOf[js.Any]))
+      SendingEnabled.foreach(__v => __obj.updateDynamic("SendingEnabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAccountResponse]
     }
   }
@@ -1295,7 +1299,7 @@ package pinpointemail {
     def apply(
         BlacklistItemNames: BlacklistItemNames
     ): GetBlacklistReportsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BlacklistItemNames" -> BlacklistItemNames.asInstanceOf[js.Any]
       )
 
@@ -1315,7 +1319,7 @@ package pinpointemail {
     def apply(
         BlacklistReport: BlacklistReport
     ): GetBlacklistReportsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BlacklistReport" -> BlacklistReport.asInstanceOf[js.Any]
       )
 
@@ -1335,7 +1339,7 @@ package pinpointemail {
     def apply(
         ConfigurationSetName: ConfigurationSetName
     ): GetConfigurationSetEventDestinationsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
       )
 
@@ -1355,8 +1359,8 @@ package pinpointemail {
     def apply(
         EventDestinations: js.UndefOr[EventDestinations] = js.undefined
     ): GetConfigurationSetEventDestinationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EventDestinations.foreach(__v => __obj.update("EventDestinations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EventDestinations.foreach(__v => __obj.updateDynamic("EventDestinations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetConfigurationSetEventDestinationsResponse]
     }
   }
@@ -1373,7 +1377,7 @@ package pinpointemail {
     def apply(
         ConfigurationSetName: ConfigurationSetName
     ): GetConfigurationSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
       )
 
@@ -1403,13 +1407,13 @@ package pinpointemail {
         Tags: js.UndefOr[TagList] = js.undefined,
         TrackingOptions: js.UndefOr[TrackingOptions] = js.undefined
     ): GetConfigurationSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConfigurationSetName.foreach(__v => __obj.update("ConfigurationSetName", __v.asInstanceOf[js.Any]))
-      DeliveryOptions.foreach(__v => __obj.update("DeliveryOptions", __v.asInstanceOf[js.Any]))
-      ReputationOptions.foreach(__v => __obj.update("ReputationOptions", __v.asInstanceOf[js.Any]))
-      SendingOptions.foreach(__v => __obj.update("SendingOptions", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      TrackingOptions.foreach(__v => __obj.update("TrackingOptions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConfigurationSetName.foreach(__v => __obj.updateDynamic("ConfigurationSetName")(__v.asInstanceOf[js.Any]))
+      DeliveryOptions.foreach(__v => __obj.updateDynamic("DeliveryOptions")(__v.asInstanceOf[js.Any]))
+      ReputationOptions.foreach(__v => __obj.updateDynamic("ReputationOptions")(__v.asInstanceOf[js.Any]))
+      SendingOptions.foreach(__v => __obj.updateDynamic("SendingOptions")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TrackingOptions.foreach(__v => __obj.updateDynamic("TrackingOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetConfigurationSetResponse]
     }
   }
@@ -1426,7 +1430,7 @@ package pinpointemail {
     def apply(
         Ip: Ip
     ): GetDedicatedIpRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Ip" -> Ip.asInstanceOf[js.Any]
       )
 
@@ -1446,8 +1450,8 @@ package pinpointemail {
     def apply(
         DedicatedIp: js.UndefOr[DedicatedIp] = js.undefined
     ): GetDedicatedIpResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DedicatedIp.foreach(__v => __obj.update("DedicatedIp", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DedicatedIp.foreach(__v => __obj.updateDynamic("DedicatedIp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDedicatedIpResponse]
     }
   }
@@ -1468,10 +1472,10 @@ package pinpointemail {
         PageSize: js.UndefOr[MaxItems] = js.undefined,
         PoolName: js.UndefOr[PoolName] = js.undefined
     ): GetDedicatedIpsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      PoolName.foreach(__v => __obj.update("PoolName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      PoolName.foreach(__v => __obj.updateDynamic("PoolName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDedicatedIpsRequest]
     }
   }
@@ -1490,9 +1494,9 @@ package pinpointemail {
         DedicatedIps: js.UndefOr[DedicatedIpList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetDedicatedIpsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DedicatedIps.foreach(__v => __obj.update("DedicatedIps", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DedicatedIps.foreach(__v => __obj.updateDynamic("DedicatedIps")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDedicatedIpsResponse]
     }
   }
@@ -1507,7 +1511,7 @@ package pinpointemail {
   object GetDeliverabilityDashboardOptionsRequest {
     def apply(
         ): GetDeliverabilityDashboardOptionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetDeliverabilityDashboardOptionsRequest]
     }
@@ -1533,16 +1537,16 @@ package pinpointemail {
         PendingExpirationSubscribedDomains: js.UndefOr[DomainDeliverabilityTrackingOptions] = js.undefined,
         SubscriptionExpiryDate: js.UndefOr[Timestamp] = js.undefined
     ): GetDeliverabilityDashboardOptionsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DashboardEnabled" -> DashboardEnabled.asInstanceOf[js.Any]
       )
 
-      AccountStatus.foreach(__v => __obj.update("AccountStatus", __v.asInstanceOf[js.Any]))
-      ActiveSubscribedDomains.foreach(__v => __obj.update("ActiveSubscribedDomains", __v.asInstanceOf[js.Any]))
+      AccountStatus.foreach(__v => __obj.updateDynamic("AccountStatus")(__v.asInstanceOf[js.Any]))
+      ActiveSubscribedDomains.foreach(__v => __obj.updateDynamic("ActiveSubscribedDomains")(__v.asInstanceOf[js.Any]))
       PendingExpirationSubscribedDomains.foreach(
-        __v => __obj.update("PendingExpirationSubscribedDomains", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("PendingExpirationSubscribedDomains")(__v.asInstanceOf[js.Any])
       )
-      SubscriptionExpiryDate.foreach(__v => __obj.update("SubscriptionExpiryDate", __v.asInstanceOf[js.Any]))
+      SubscriptionExpiryDate.foreach(__v => __obj.updateDynamic("SubscriptionExpiryDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDeliverabilityDashboardOptionsResponse]
     }
   }
@@ -1559,7 +1563,7 @@ package pinpointemail {
     def apply(
         ReportId: ReportId
     ): GetDeliverabilityTestReportRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ReportId" -> ReportId.asInstanceOf[js.Any]
       )
 
@@ -1587,14 +1591,14 @@ package pinpointemail {
         Message: js.UndefOr[MessageContent] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): GetDeliverabilityTestReportResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DeliverabilityTestReport" -> DeliverabilityTestReport.asInstanceOf[js.Any],
         "IspPlacements"            -> IspPlacements.asInstanceOf[js.Any],
         "OverallPlacement"         -> OverallPlacement.asInstanceOf[js.Any]
       )
 
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDeliverabilityTestReportResponse]
     }
   }
@@ -1611,7 +1615,7 @@ package pinpointemail {
     def apply(
         CampaignId: CampaignId
     ): GetDomainDeliverabilityCampaignRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CampaignId" -> CampaignId.asInstanceOf[js.Any]
       )
 
@@ -1631,7 +1635,7 @@ package pinpointemail {
     def apply(
         DomainDeliverabilityCampaign: DomainDeliverabilityCampaign
     ): GetDomainDeliverabilityCampaignResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainDeliverabilityCampaign" -> DomainDeliverabilityCampaign.asInstanceOf[js.Any]
       )
 
@@ -1655,7 +1659,7 @@ package pinpointemail {
         EndDate: Timestamp,
         StartDate: Timestamp
     ): GetDomainStatisticsReportRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Domain"    -> Domain.asInstanceOf[js.Any],
         "EndDate"   -> EndDate.asInstanceOf[js.Any],
         "StartDate" -> StartDate.asInstanceOf[js.Any]
@@ -1679,7 +1683,7 @@ package pinpointemail {
         DailyVolumes: DailyVolumes,
         OverallVolume: OverallVolume
     ): GetDomainStatisticsReportResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DailyVolumes"  -> DailyVolumes.asInstanceOf[js.Any],
         "OverallVolume" -> OverallVolume.asInstanceOf[js.Any]
       )
@@ -1700,7 +1704,7 @@ package pinpointemail {
     def apply(
         EmailIdentity: Identity
     ): GetEmailIdentityRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any]
       )
 
@@ -1730,13 +1734,13 @@ package pinpointemail {
         Tags: js.UndefOr[TagList] = js.undefined,
         VerifiedForSendingStatus: js.UndefOr[Enabled] = js.undefined
     ): GetEmailIdentityResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DkimAttributes.foreach(__v => __obj.update("DkimAttributes", __v.asInstanceOf[js.Any]))
-      FeedbackForwardingStatus.foreach(__v => __obj.update("FeedbackForwardingStatus", __v.asInstanceOf[js.Any]))
-      IdentityType.foreach(__v => __obj.update("IdentityType", __v.asInstanceOf[js.Any]))
-      MailFromAttributes.foreach(__v => __obj.update("MailFromAttributes", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      VerifiedForSendingStatus.foreach(__v => __obj.update("VerifiedForSendingStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DkimAttributes.foreach(__v => __obj.updateDynamic("DkimAttributes")(__v.asInstanceOf[js.Any]))
+      FeedbackForwardingStatus.foreach(__v => __obj.updateDynamic("FeedbackForwardingStatus")(__v.asInstanceOf[js.Any]))
+      IdentityType.foreach(__v => __obj.updateDynamic("IdentityType")(__v.asInstanceOf[js.Any]))
+      MailFromAttributes.foreach(__v => __obj.updateDynamic("MailFromAttributes")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      VerifiedForSendingStatus.foreach(__v => __obj.updateDynamic("VerifiedForSendingStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetEmailIdentityResponse]
     }
   }
@@ -1757,10 +1761,10 @@ package pinpointemail {
         IdentityType: js.UndefOr[IdentityType] = js.undefined,
         SendingEnabled: js.UndefOr[Enabled] = js.undefined
     ): IdentityInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IdentityName.foreach(__v => __obj.update("IdentityName", __v.asInstanceOf[js.Any]))
-      IdentityType.foreach(__v => __obj.update("IdentityType", __v.asInstanceOf[js.Any]))
-      SendingEnabled.foreach(__v => __obj.update("SendingEnabled", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IdentityName.foreach(__v => __obj.updateDynamic("IdentityName")(__v.asInstanceOf[js.Any]))
+      IdentityType.foreach(__v => __obj.updateDynamic("IdentityType")(__v.asInstanceOf[js.Any]))
+      SendingEnabled.foreach(__v => __obj.updateDynamic("SendingEnabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IdentityInfo]
     }
   }
@@ -1792,9 +1796,9 @@ package pinpointemail {
         Global: js.UndefOr[Enabled] = js.undefined,
         TrackedIsps: js.UndefOr[IspNameList] = js.undefined
     ): InboxPlacementTrackingOption = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Global.foreach(__v => __obj.update("Global", __v.asInstanceOf[js.Any]))
-      TrackedIsps.foreach(__v => __obj.update("TrackedIsps", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Global.foreach(__v => __obj.updateDynamic("Global")(__v.asInstanceOf[js.Any]))
+      TrackedIsps.foreach(__v => __obj.updateDynamic("TrackedIsps")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InboxPlacementTrackingOption]
     }
   }
@@ -1813,9 +1817,9 @@ package pinpointemail {
         IspName: js.UndefOr[IspName] = js.undefined,
         PlacementStatistics: js.UndefOr[PlacementStatistics] = js.undefined
     ): IspPlacement = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IspName.foreach(__v => __obj.update("IspName", __v.asInstanceOf[js.Any]))
-      PlacementStatistics.foreach(__v => __obj.update("PlacementStatistics", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IspName.foreach(__v => __obj.updateDynamic("IspName")(__v.asInstanceOf[js.Any]))
+      PlacementStatistics.foreach(__v => __obj.updateDynamic("PlacementStatistics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IspPlacement]
     }
   }
@@ -1834,7 +1838,7 @@ package pinpointemail {
         DeliveryStreamArn: AmazonResourceName,
         IamRoleArn: AmazonResourceName
     ): KinesisFirehoseDestination = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DeliveryStreamArn" -> DeliveryStreamArn.asInstanceOf[js.Any],
         "IamRoleArn"        -> IamRoleArn.asInstanceOf[js.Any]
       )
@@ -1857,9 +1861,9 @@ package pinpointemail {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PageSize: js.UndefOr[MaxItems] = js.undefined
     ): ListConfigurationSetsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListConfigurationSetsRequest]
     }
   }
@@ -1878,9 +1882,9 @@ package pinpointemail {
         ConfigurationSets: js.UndefOr[ConfigurationSetNameList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListConfigurationSetsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConfigurationSets.foreach(__v => __obj.update("ConfigurationSets", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConfigurationSets.foreach(__v => __obj.updateDynamic("ConfigurationSets")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListConfigurationSetsResponse]
     }
   }
@@ -1899,9 +1903,9 @@ package pinpointemail {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PageSize: js.UndefOr[MaxItems] = js.undefined
     ): ListDedicatedIpPoolsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDedicatedIpPoolsRequest]
     }
   }
@@ -1920,9 +1924,9 @@ package pinpointemail {
         DedicatedIpPools: js.UndefOr[ListOfDedicatedIpPools] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDedicatedIpPoolsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DedicatedIpPools.foreach(__v => __obj.update("DedicatedIpPools", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DedicatedIpPools.foreach(__v => __obj.updateDynamic("DedicatedIpPools")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDedicatedIpPoolsResponse]
     }
   }
@@ -1941,9 +1945,9 @@ package pinpointemail {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PageSize: js.UndefOr[MaxItems] = js.undefined
     ): ListDeliverabilityTestReportsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDeliverabilityTestReportsRequest]
     }
   }
@@ -1962,11 +1966,11 @@ package pinpointemail {
         DeliverabilityTestReports: DeliverabilityTestReports,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDeliverabilityTestReportsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DeliverabilityTestReports" -> DeliverabilityTestReports.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDeliverabilityTestReportsResponse]
     }
   }
@@ -1991,14 +1995,14 @@ package pinpointemail {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PageSize: js.UndefOr[MaxItems] = js.undefined
     ): ListDomainDeliverabilityCampaignsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EndDate"          -> EndDate.asInstanceOf[js.Any],
         "StartDate"        -> StartDate.asInstanceOf[js.Any],
         "SubscribedDomain" -> SubscribedDomain.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDomainDeliverabilityCampaignsRequest]
     }
   }
@@ -2017,11 +2021,11 @@ package pinpointemail {
         DomainDeliverabilityCampaigns: DomainDeliverabilityCampaignList,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDomainDeliverabilityCampaignsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainDeliverabilityCampaigns" -> DomainDeliverabilityCampaigns.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDomainDeliverabilityCampaignsResponse]
     }
   }
@@ -2040,9 +2044,9 @@ package pinpointemail {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PageSize: js.UndefOr[MaxItems] = js.undefined
     ): ListEmailIdentitiesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEmailIdentitiesRequest]
     }
   }
@@ -2061,9 +2065,9 @@ package pinpointemail {
         EmailIdentities: js.UndefOr[IdentityInfoList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListEmailIdentitiesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EmailIdentities.foreach(__v => __obj.update("EmailIdentities", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EmailIdentities.foreach(__v => __obj.updateDynamic("EmailIdentities")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEmailIdentitiesResponse]
     }
   }
@@ -2077,7 +2081,7 @@ package pinpointemail {
     def apply(
         ResourceArn: AmazonResourceName
     ): ListTagsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
@@ -2094,7 +2098,7 @@ package pinpointemail {
     def apply(
         Tags: TagList
     ): ListTagsForResourceResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
 
@@ -2118,7 +2122,7 @@ package pinpointemail {
         MailFromDomain: MailFromDomainName,
         MailFromDomainStatus: MailFromDomainStatus
     ): MailFromAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BehaviorOnMxFailure"  -> BehaviorOnMxFailure.asInstanceOf[js.Any],
         "MailFromDomain"       -> MailFromDomain.asInstanceOf[js.Any],
         "MailFromDomainStatus" -> MailFromDomainStatus.asInstanceOf[js.Any]
@@ -2158,7 +2162,7 @@ package pinpointemail {
         Body: Body,
         Subject: Content
     ): Message = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Body"    -> Body.asInstanceOf[js.Any],
         "Subject" -> Subject.asInstanceOf[js.Any]
       )
@@ -2181,7 +2185,7 @@ package pinpointemail {
         Name: MessageTagName,
         Value: MessageTagValue
     ): MessageTag = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"  -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
@@ -2206,10 +2210,10 @@ package pinpointemail {
         ReadRatePercent: js.UndefOr[Percentage] = js.undefined,
         VolumeStatistics: js.UndefOr[VolumeStatistics] = js.undefined
     ): OverallVolume = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DomainIspPlacements.foreach(__v => __obj.update("DomainIspPlacements", __v.asInstanceOf[js.Any]))
-      ReadRatePercent.foreach(__v => __obj.update("ReadRatePercent", __v.asInstanceOf[js.Any]))
-      VolumeStatistics.foreach(__v => __obj.update("VolumeStatistics", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DomainIspPlacements.foreach(__v => __obj.updateDynamic("DomainIspPlacements")(__v.asInstanceOf[js.Any]))
+      ReadRatePercent.foreach(__v => __obj.updateDynamic("ReadRatePercent")(__v.asInstanceOf[js.Any]))
+      VolumeStatistics.foreach(__v => __obj.updateDynamic("VolumeStatistics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OverallVolume]
     }
   }
@@ -2226,8 +2230,8 @@ package pinpointemail {
     def apply(
         ApplicationArn: js.UndefOr[AmazonResourceName] = js.undefined
     ): PinpointDestination = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationArn.foreach(__v => __obj.update("ApplicationArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationArn.foreach(__v => __obj.updateDynamic("ApplicationArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PinpointDestination]
     }
   }
@@ -2252,12 +2256,12 @@ package pinpointemail {
         SpamPercentage: js.UndefOr[Percentage] = js.undefined,
         SpfPercentage: js.UndefOr[Percentage] = js.undefined
     ): PlacementStatistics = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DkimPercentage.foreach(__v => __obj.update("DkimPercentage", __v.asInstanceOf[js.Any]))
-      InboxPercentage.foreach(__v => __obj.update("InboxPercentage", __v.asInstanceOf[js.Any]))
-      MissingPercentage.foreach(__v => __obj.update("MissingPercentage", __v.asInstanceOf[js.Any]))
-      SpamPercentage.foreach(__v => __obj.update("SpamPercentage", __v.asInstanceOf[js.Any]))
-      SpfPercentage.foreach(__v => __obj.update("SpfPercentage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DkimPercentage.foreach(__v => __obj.updateDynamic("DkimPercentage")(__v.asInstanceOf[js.Any]))
+      InboxPercentage.foreach(__v => __obj.updateDynamic("InboxPercentage")(__v.asInstanceOf[js.Any]))
+      MissingPercentage.foreach(__v => __obj.updateDynamic("MissingPercentage")(__v.asInstanceOf[js.Any]))
+      SpamPercentage.foreach(__v => __obj.updateDynamic("SpamPercentage")(__v.asInstanceOf[js.Any]))
+      SpfPercentage.foreach(__v => __obj.updateDynamic("SpfPercentage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PlacementStatistics]
     }
   }
@@ -2274,8 +2278,8 @@ package pinpointemail {
     def apply(
         AutoWarmupEnabled: js.UndefOr[Enabled] = js.undefined
     ): PutAccountDedicatedIpWarmupAttributesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AutoWarmupEnabled.foreach(__v => __obj.update("AutoWarmupEnabled", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AutoWarmupEnabled.foreach(__v => __obj.updateDynamic("AutoWarmupEnabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutAccountDedicatedIpWarmupAttributesRequest]
     }
   }
@@ -2289,7 +2293,7 @@ package pinpointemail {
   object PutAccountDedicatedIpWarmupAttributesResponse {
     def apply(
         ): PutAccountDedicatedIpWarmupAttributesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutAccountDedicatedIpWarmupAttributesResponse]
     }
@@ -2307,8 +2311,8 @@ package pinpointemail {
     def apply(
         SendingEnabled: js.UndefOr[Enabled] = js.undefined
     ): PutAccountSendingAttributesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SendingEnabled.foreach(__v => __obj.update("SendingEnabled", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SendingEnabled.foreach(__v => __obj.updateDynamic("SendingEnabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutAccountSendingAttributesRequest]
     }
   }
@@ -2322,7 +2326,7 @@ package pinpointemail {
   object PutAccountSendingAttributesResponse {
     def apply(
         ): PutAccountSendingAttributesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutAccountSendingAttributesResponse]
     }
@@ -2344,12 +2348,12 @@ package pinpointemail {
         SendingPoolName: js.UndefOr[SendingPoolName] = js.undefined,
         TlsPolicy: js.UndefOr[TlsPolicy] = js.undefined
     ): PutConfigurationSetDeliveryOptionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
       )
 
-      SendingPoolName.foreach(__v => __obj.update("SendingPoolName", __v.asInstanceOf[js.Any]))
-      TlsPolicy.foreach(__v => __obj.update("TlsPolicy", __v.asInstanceOf[js.Any]))
+      SendingPoolName.foreach(__v => __obj.updateDynamic("SendingPoolName")(__v.asInstanceOf[js.Any]))
+      TlsPolicy.foreach(__v => __obj.updateDynamic("TlsPolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutConfigurationSetDeliveryOptionsRequest]
     }
   }
@@ -2363,7 +2367,7 @@ package pinpointemail {
   object PutConfigurationSetDeliveryOptionsResponse {
     def apply(
         ): PutConfigurationSetDeliveryOptionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutConfigurationSetDeliveryOptionsResponse]
     }
@@ -2383,11 +2387,11 @@ package pinpointemail {
         ConfigurationSetName: ConfigurationSetName,
         ReputationMetricsEnabled: js.UndefOr[Enabled] = js.undefined
     ): PutConfigurationSetReputationOptionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
       )
 
-      ReputationMetricsEnabled.foreach(__v => __obj.update("ReputationMetricsEnabled", __v.asInstanceOf[js.Any]))
+      ReputationMetricsEnabled.foreach(__v => __obj.updateDynamic("ReputationMetricsEnabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutConfigurationSetReputationOptionsRequest]
     }
   }
@@ -2401,7 +2405,7 @@ package pinpointemail {
   object PutConfigurationSetReputationOptionsResponse {
     def apply(
         ): PutConfigurationSetReputationOptionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutConfigurationSetReputationOptionsResponse]
     }
@@ -2421,11 +2425,11 @@ package pinpointemail {
         ConfigurationSetName: ConfigurationSetName,
         SendingEnabled: js.UndefOr[Enabled] = js.undefined
     ): PutConfigurationSetSendingOptionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
       )
 
-      SendingEnabled.foreach(__v => __obj.update("SendingEnabled", __v.asInstanceOf[js.Any]))
+      SendingEnabled.foreach(__v => __obj.updateDynamic("SendingEnabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutConfigurationSetSendingOptionsRequest]
     }
   }
@@ -2439,7 +2443,7 @@ package pinpointemail {
   object PutConfigurationSetSendingOptionsResponse {
     def apply(
         ): PutConfigurationSetSendingOptionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutConfigurationSetSendingOptionsResponse]
     }
@@ -2459,11 +2463,11 @@ package pinpointemail {
         ConfigurationSetName: ConfigurationSetName,
         CustomRedirectDomain: js.UndefOr[CustomRedirectDomain] = js.undefined
     ): PutConfigurationSetTrackingOptionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any]
       )
 
-      CustomRedirectDomain.foreach(__v => __obj.update("CustomRedirectDomain", __v.asInstanceOf[js.Any]))
+      CustomRedirectDomain.foreach(__v => __obj.updateDynamic("CustomRedirectDomain")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutConfigurationSetTrackingOptionsRequest]
     }
   }
@@ -2477,7 +2481,7 @@ package pinpointemail {
   object PutConfigurationSetTrackingOptionsResponse {
     def apply(
         ): PutConfigurationSetTrackingOptionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutConfigurationSetTrackingOptionsResponse]
     }
@@ -2497,7 +2501,7 @@ package pinpointemail {
         DestinationPoolName: PoolName,
         Ip: Ip
     ): PutDedicatedIpInPoolRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DestinationPoolName" -> DestinationPoolName.asInstanceOf[js.Any],
         "Ip"                  -> Ip.asInstanceOf[js.Any]
       )
@@ -2515,7 +2519,7 @@ package pinpointemail {
   object PutDedicatedIpInPoolResponse {
     def apply(
         ): PutDedicatedIpInPoolResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutDedicatedIpInPoolResponse]
     }
@@ -2535,7 +2539,7 @@ package pinpointemail {
         Ip: Ip,
         WarmupPercentage: Percentage100Wrapper
     ): PutDedicatedIpWarmupAttributesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Ip"               -> Ip.asInstanceOf[js.Any],
         "WarmupPercentage" -> WarmupPercentage.asInstanceOf[js.Any]
       )
@@ -2553,7 +2557,7 @@ package pinpointemail {
   object PutDedicatedIpWarmupAttributesResponse {
     def apply(
         ): PutDedicatedIpWarmupAttributesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutDedicatedIpWarmupAttributesResponse]
     }
@@ -2574,11 +2578,11 @@ package pinpointemail {
         DashboardEnabled: Enabled,
         SubscribedDomains: js.UndefOr[DomainDeliverabilityTrackingOptions] = js.undefined
     ): PutDeliverabilityDashboardOptionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DashboardEnabled" -> DashboardEnabled.asInstanceOf[js.Any]
       )
 
-      SubscribedDomains.foreach(__v => __obj.update("SubscribedDomains", __v.asInstanceOf[js.Any]))
+      SubscribedDomains.foreach(__v => __obj.updateDynamic("SubscribedDomains")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutDeliverabilityDashboardOptionRequest]
     }
   }
@@ -2592,7 +2596,7 @@ package pinpointemail {
   object PutDeliverabilityDashboardOptionResponse {
     def apply(
         ): PutDeliverabilityDashboardOptionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutDeliverabilityDashboardOptionResponse]
     }
@@ -2612,11 +2616,11 @@ package pinpointemail {
         EmailIdentity: Identity,
         SigningEnabled: js.UndefOr[Enabled] = js.undefined
     ): PutEmailIdentityDkimAttributesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any]
       )
 
-      SigningEnabled.foreach(__v => __obj.update("SigningEnabled", __v.asInstanceOf[js.Any]))
+      SigningEnabled.foreach(__v => __obj.updateDynamic("SigningEnabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutEmailIdentityDkimAttributesRequest]
     }
   }
@@ -2630,7 +2634,7 @@ package pinpointemail {
   object PutEmailIdentityDkimAttributesResponse {
     def apply(
         ): PutEmailIdentityDkimAttributesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutEmailIdentityDkimAttributesResponse]
     }
@@ -2650,11 +2654,11 @@ package pinpointemail {
         EmailIdentity: Identity,
         EmailForwardingEnabled: js.UndefOr[Enabled] = js.undefined
     ): PutEmailIdentityFeedbackAttributesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any]
       )
 
-      EmailForwardingEnabled.foreach(__v => __obj.update("EmailForwardingEnabled", __v.asInstanceOf[js.Any]))
+      EmailForwardingEnabled.foreach(__v => __obj.updateDynamic("EmailForwardingEnabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutEmailIdentityFeedbackAttributesRequest]
     }
   }
@@ -2668,7 +2672,7 @@ package pinpointemail {
   object PutEmailIdentityFeedbackAttributesResponse {
     def apply(
         ): PutEmailIdentityFeedbackAttributesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutEmailIdentityFeedbackAttributesResponse]
     }
@@ -2690,12 +2694,12 @@ package pinpointemail {
         BehaviorOnMxFailure: js.UndefOr[BehaviorOnMxFailure] = js.undefined,
         MailFromDomain: js.UndefOr[MailFromDomainName] = js.undefined
     ): PutEmailIdentityMailFromAttributesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EmailIdentity" -> EmailIdentity.asInstanceOf[js.Any]
       )
 
-      BehaviorOnMxFailure.foreach(__v => __obj.update("BehaviorOnMxFailure", __v.asInstanceOf[js.Any]))
-      MailFromDomain.foreach(__v => __obj.update("MailFromDomain", __v.asInstanceOf[js.Any]))
+      BehaviorOnMxFailure.foreach(__v => __obj.updateDynamic("BehaviorOnMxFailure")(__v.asInstanceOf[js.Any]))
+      MailFromDomain.foreach(__v => __obj.updateDynamic("MailFromDomain")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutEmailIdentityMailFromAttributesRequest]
     }
   }
@@ -2709,7 +2713,7 @@ package pinpointemail {
   object PutEmailIdentityMailFromAttributesResponse {
     def apply(
         ): PutEmailIdentityMailFromAttributesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutEmailIdentityMailFromAttributesResponse]
     }
@@ -2727,7 +2731,7 @@ package pinpointemail {
     def apply(
         Data: RawMessageData
     ): RawMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Data" -> Data.asInstanceOf[js.Any]
       )
 
@@ -2749,9 +2753,9 @@ package pinpointemail {
         LastFreshStart: js.UndefOr[LastFreshStart] = js.undefined,
         ReputationMetricsEnabled: js.UndefOr[Enabled] = js.undefined
     ): ReputationOptions = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LastFreshStart.foreach(__v => __obj.update("LastFreshStart", __v.asInstanceOf[js.Any]))
-      ReputationMetricsEnabled.foreach(__v => __obj.update("ReputationMetricsEnabled", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LastFreshStart.foreach(__v => __obj.updateDynamic("LastFreshStart")(__v.asInstanceOf[js.Any]))
+      ReputationMetricsEnabled.foreach(__v => __obj.updateDynamic("ReputationMetricsEnabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReputationOptions]
     }
   }
@@ -2780,18 +2784,18 @@ package pinpointemail {
         FromEmailAddress: js.UndefOr[EmailAddress] = js.undefined,
         ReplyToAddresses: js.UndefOr[EmailAddressList] = js.undefined
     ): SendEmailRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Content"     -> Content.asInstanceOf[js.Any],
         "Destination" -> Destination.asInstanceOf[js.Any]
       )
 
-      ConfigurationSetName.foreach(__v => __obj.update("ConfigurationSetName", __v.asInstanceOf[js.Any]))
-      EmailTags.foreach(__v => __obj.update("EmailTags", __v.asInstanceOf[js.Any]))
+      ConfigurationSetName.foreach(__v => __obj.updateDynamic("ConfigurationSetName")(__v.asInstanceOf[js.Any]))
+      EmailTags.foreach(__v => __obj.updateDynamic("EmailTags")(__v.asInstanceOf[js.Any]))
       FeedbackForwardingEmailAddress.foreach(
-        __v => __obj.update("FeedbackForwardingEmailAddress", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("FeedbackForwardingEmailAddress")(__v.asInstanceOf[js.Any])
       )
-      FromEmailAddress.foreach(__v => __obj.update("FromEmailAddress", __v.asInstanceOf[js.Any]))
-      ReplyToAddresses.foreach(__v => __obj.update("ReplyToAddresses", __v.asInstanceOf[js.Any]))
+      FromEmailAddress.foreach(__v => __obj.updateDynamic("FromEmailAddress")(__v.asInstanceOf[js.Any]))
+      ReplyToAddresses.foreach(__v => __obj.updateDynamic("ReplyToAddresses")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendEmailRequest]
     }
   }
@@ -2808,8 +2812,8 @@ package pinpointemail {
     def apply(
         MessageId: js.UndefOr[OutboundMessageId] = js.undefined
     ): SendEmailResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MessageId.foreach(__v => __obj.update("MessageId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MessageId.foreach(__v => __obj.updateDynamic("MessageId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendEmailResponse]
     }
   }
@@ -2830,10 +2834,10 @@ package pinpointemail {
         MaxSendRate: js.UndefOr[MaxSendRate] = js.undefined,
         SentLast24Hours: js.UndefOr[SentLast24Hours] = js.undefined
     ): SendQuota = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Max24HourSend.foreach(__v => __obj.update("Max24HourSend", __v.asInstanceOf[js.Any]))
-      MaxSendRate.foreach(__v => __obj.update("MaxSendRate", __v.asInstanceOf[js.Any]))
-      SentLast24Hours.foreach(__v => __obj.update("SentLast24Hours", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Max24HourSend.foreach(__v => __obj.updateDynamic("Max24HourSend")(__v.asInstanceOf[js.Any]))
+      MaxSendRate.foreach(__v => __obj.updateDynamic("MaxSendRate")(__v.asInstanceOf[js.Any]))
+      SentLast24Hours.foreach(__v => __obj.updateDynamic("SentLast24Hours")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendQuota]
     }
   }
@@ -2850,8 +2854,8 @@ package pinpointemail {
     def apply(
         SendingEnabled: js.UndefOr[Enabled] = js.undefined
     ): SendingOptions = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SendingEnabled.foreach(__v => __obj.update("SendingEnabled", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SendingEnabled.foreach(__v => __obj.updateDynamic("SendingEnabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendingOptions]
     }
   }
@@ -2868,7 +2872,7 @@ package pinpointemail {
     def apply(
         TopicArn: AmazonResourceName
     ): SnsDestination = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TopicArn" -> TopicArn.asInstanceOf[js.Any]
       )
 
@@ -2895,7 +2899,7 @@ package pinpointemail {
         Key: TagKey,
         Value: TagValue
     ): Tag = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"   -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
@@ -2915,7 +2919,7 @@ package pinpointemail {
         ResourceArn: AmazonResourceName,
         Tags: TagList
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
       )
@@ -2930,7 +2934,7 @@ package pinpointemail {
   object TagResourceResponse {
     def apply(
         ): TagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -2959,7 +2963,7 @@ package pinpointemail {
     def apply(
         CustomRedirectDomain: CustomRedirectDomain
     ): TrackingOptions = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CustomRedirectDomain" -> CustomRedirectDomain.asInstanceOf[js.Any]
       )
 
@@ -2978,7 +2982,7 @@ package pinpointemail {
         ResourceArn: AmazonResourceName,
         TagKeys: TagKeyList
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
       )
@@ -2993,7 +2997,7 @@ package pinpointemail {
   object UntagResourceResponse {
     def apply(
         ): UntagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -3015,7 +3019,7 @@ package pinpointemail {
         EventDestination: EventDestinationDefinition,
         EventDestinationName: EventDestinationName
     ): UpdateConfigurationSetEventDestinationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationSetName" -> ConfigurationSetName.asInstanceOf[js.Any],
         "EventDestination"     -> EventDestination.asInstanceOf[js.Any],
         "EventDestinationName" -> EventDestinationName.asInstanceOf[js.Any]
@@ -3034,7 +3038,7 @@ package pinpointemail {
   object UpdateConfigurationSetEventDestinationResponse {
     def apply(
         ): UpdateConfigurationSetEventDestinationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateConfigurationSetEventDestinationResponse]
     }
@@ -3058,11 +3062,11 @@ package pinpointemail {
         ProjectedSpam: js.UndefOr[Volume] = js.undefined,
         SpamRawCount: js.UndefOr[Volume] = js.undefined
     ): VolumeStatistics = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InboxRawCount.foreach(__v => __obj.update("InboxRawCount", __v.asInstanceOf[js.Any]))
-      ProjectedInbox.foreach(__v => __obj.update("ProjectedInbox", __v.asInstanceOf[js.Any]))
-      ProjectedSpam.foreach(__v => __obj.update("ProjectedSpam", __v.asInstanceOf[js.Any]))
-      SpamRawCount.foreach(__v => __obj.update("SpamRawCount", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InboxRawCount.foreach(__v => __obj.updateDynamic("InboxRawCount")(__v.asInstanceOf[js.Any]))
+      ProjectedInbox.foreach(__v => __obj.updateDynamic("ProjectedInbox")(__v.asInstanceOf[js.Any]))
+      ProjectedSpam.foreach(__v => __obj.updateDynamic("ProjectedSpam")(__v.asInstanceOf[js.Any]))
+      SpamRawCount.foreach(__v => __obj.updateDynamic("SpamRawCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VolumeStatistics]
     }
   }

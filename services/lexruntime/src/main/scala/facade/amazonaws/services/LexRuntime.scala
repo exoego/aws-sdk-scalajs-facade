@@ -74,7 +74,7 @@ package lexruntime {
         text: ButtonTextStringWithLength,
         value: ButtonValueStringWithLength
     ): Button = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "text"  -> text.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
@@ -110,7 +110,7 @@ package lexruntime {
         botName: BotName,
         userId: UserId
     ): DeleteSessionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "botAlias" -> botAlias.asInstanceOf[js.Any],
         "botName"  -> botName.asInstanceOf[js.Any],
         "userId"   -> userId.asInstanceOf[js.Any]
@@ -135,11 +135,11 @@ package lexruntime {
         sessionId: js.UndefOr[String] = js.undefined,
         userId: js.UndefOr[UserId] = js.undefined
     ): DeleteSessionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      botAlias.foreach(__v => __obj.update("botAlias", __v.asInstanceOf[js.Any]))
-      botName.foreach(__v => __obj.update("botName", __v.asInstanceOf[js.Any]))
-      sessionId.foreach(__v => __obj.update("sessionId", __v.asInstanceOf[js.Any]))
-      userId.foreach(__v => __obj.update("userId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      botAlias.foreach(__v => __obj.updateDynamic("botAlias")(__v.asInstanceOf[js.Any]))
+      botName.foreach(__v => __obj.updateDynamic("botName")(__v.asInstanceOf[js.Any]))
+      sessionId.foreach(__v => __obj.updateDynamic("sessionId")(__v.asInstanceOf[js.Any]))
+      userId.foreach(__v => __obj.updateDynamic("userId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteSessionResponse]
     }
   }
@@ -168,16 +168,16 @@ package lexruntime {
         slotToElicit: js.UndefOr[String] = js.undefined,
         slots: js.UndefOr[StringMap] = js.undefined
     ): DialogAction = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "type" -> `type`.asInstanceOf[js.Any]
       )
 
-      fulfillmentState.foreach(__v => __obj.update("fulfillmentState", __v.asInstanceOf[js.Any]))
-      intentName.foreach(__v => __obj.update("intentName", __v.asInstanceOf[js.Any]))
-      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
-      messageFormat.foreach(__v => __obj.update("messageFormat", __v.asInstanceOf[js.Any]))
-      slotToElicit.foreach(__v => __obj.update("slotToElicit", __v.asInstanceOf[js.Any]))
-      slots.foreach(__v => __obj.update("slots", __v.asInstanceOf[js.Any]))
+      fulfillmentState.foreach(__v => __obj.updateDynamic("fulfillmentState")(__v.asInstanceOf[js.Any]))
+      intentName.foreach(__v => __obj.updateDynamic("intentName")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      messageFormat.foreach(__v => __obj.updateDynamic("messageFormat")(__v.asInstanceOf[js.Any]))
+      slotToElicit.foreach(__v => __obj.updateDynamic("slotToElicit")(__v.asInstanceOf[js.Any]))
+      slots.foreach(__v => __obj.updateDynamic("slots")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DialogAction]
     }
   }
@@ -232,12 +232,12 @@ package lexruntime {
         subTitle: js.UndefOr[StringWithLength] = js.undefined,
         title: js.UndefOr[StringWithLength] = js.undefined
     ): GenericAttachment = {
-      val __obj = js.Dictionary.empty[js.Any]
-      attachmentLinkUrl.foreach(__v => __obj.update("attachmentLinkUrl", __v.asInstanceOf[js.Any]))
-      buttons.foreach(__v => __obj.update("buttons", __v.asInstanceOf[js.Any]))
-      imageUrl.foreach(__v => __obj.update("imageUrl", __v.asInstanceOf[js.Any]))
-      subTitle.foreach(__v => __obj.update("subTitle", __v.asInstanceOf[js.Any]))
-      title.foreach(__v => __obj.update("title", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      attachmentLinkUrl.foreach(__v => __obj.updateDynamic("attachmentLinkUrl")(__v.asInstanceOf[js.Any]))
+      buttons.foreach(__v => __obj.updateDynamic("buttons")(__v.asInstanceOf[js.Any]))
+      imageUrl.foreach(__v => __obj.updateDynamic("imageUrl")(__v.asInstanceOf[js.Any]))
+      subTitle.foreach(__v => __obj.updateDynamic("subTitle")(__v.asInstanceOf[js.Any]))
+      title.foreach(__v => __obj.updateDynamic("title")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GenericAttachment]
     }
   }
@@ -255,7 +255,7 @@ package lexruntime {
         botName: BotName,
         userId: UserId
     ): GetSessionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "botAlias" -> botAlias.asInstanceOf[js.Any],
         "botName"  -> botName.asInstanceOf[js.Any],
         "userId"   -> userId.asInstanceOf[js.Any]
@@ -280,11 +280,11 @@ package lexruntime {
         sessionAttributes: js.UndefOr[StringMap] = js.undefined,
         sessionId: js.UndefOr[String] = js.undefined
     ): GetSessionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      dialogAction.foreach(__v => __obj.update("dialogAction", __v.asInstanceOf[js.Any]))
-      recentIntentSummaryView.foreach(__v => __obj.update("recentIntentSummaryView", __v.asInstanceOf[js.Any]))
-      sessionAttributes.foreach(__v => __obj.update("sessionAttributes", __v.asInstanceOf[js.Any]))
-      sessionId.foreach(__v => __obj.update("sessionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      dialogAction.foreach(__v => __obj.updateDynamic("dialogAction")(__v.asInstanceOf[js.Any]))
+      recentIntentSummaryView.foreach(__v => __obj.updateDynamic("recentIntentSummaryView")(__v.asInstanceOf[js.Any]))
+      sessionAttributes.foreach(__v => __obj.updateDynamic("sessionAttributes")(__v.asInstanceOf[js.Any]))
+      sessionId.foreach(__v => __obj.updateDynamic("sessionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSessionResponse]
     }
   }
@@ -311,15 +311,15 @@ package lexruntime {
         slotToElicit: js.UndefOr[String] = js.undefined,
         slots: js.UndefOr[StringMap] = js.undefined
     ): IntentSummary = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "dialogActionType" -> dialogActionType.asInstanceOf[js.Any]
       )
 
-      confirmationStatus.foreach(__v => __obj.update("confirmationStatus", __v.asInstanceOf[js.Any]))
-      fulfillmentState.foreach(__v => __obj.update("fulfillmentState", __v.asInstanceOf[js.Any]))
-      intentName.foreach(__v => __obj.update("intentName", __v.asInstanceOf[js.Any]))
-      slotToElicit.foreach(__v => __obj.update("slotToElicit", __v.asInstanceOf[js.Any]))
-      slots.foreach(__v => __obj.update("slots", __v.asInstanceOf[js.Any]))
+      confirmationStatus.foreach(__v => __obj.updateDynamic("confirmationStatus")(__v.asInstanceOf[js.Any]))
+      fulfillmentState.foreach(__v => __obj.updateDynamic("fulfillmentState")(__v.asInstanceOf[js.Any]))
+      intentName.foreach(__v => __obj.updateDynamic("intentName")(__v.asInstanceOf[js.Any]))
+      slotToElicit.foreach(__v => __obj.updateDynamic("slotToElicit")(__v.asInstanceOf[js.Any]))
+      slots.foreach(__v => __obj.updateDynamic("slots")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IntentSummary]
     }
   }
@@ -356,7 +356,7 @@ package lexruntime {
         requestAttributes: js.UndefOr[AttributesString] = js.undefined,
         sessionAttributes: js.UndefOr[AttributesString] = js.undefined
     ): PostContentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "botAlias"    -> botAlias.asInstanceOf[js.Any],
         "botName"     -> botName.asInstanceOf[js.Any],
         "contentType" -> contentType.asInstanceOf[js.Any],
@@ -364,9 +364,9 @@ package lexruntime {
         "userId"      -> userId.asInstanceOf[js.Any]
       )
 
-      accept.foreach(__v => __obj.update("accept", __v.asInstanceOf[js.Any]))
-      requestAttributes.foreach(__v => __obj.update("requestAttributes", __v.asInstanceOf[js.Any]))
-      sessionAttributes.foreach(__v => __obj.update("sessionAttributes", __v.asInstanceOf[js.Any]))
+      accept.foreach(__v => __obj.updateDynamic("accept")(__v.asInstanceOf[js.Any]))
+      requestAttributes.foreach(__v => __obj.updateDynamic("requestAttributes")(__v.asInstanceOf[js.Any]))
+      sessionAttributes.foreach(__v => __obj.updateDynamic("sessionAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PostContentRequest]
     }
   }
@@ -398,17 +398,17 @@ package lexruntime {
         slotToElicit: js.UndefOr[String] = js.undefined,
         slots: js.UndefOr[String] = js.undefined
     ): PostContentResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      audioStream.foreach(__v => __obj.update("audioStream", __v.asInstanceOf[js.Any]))
-      contentType.foreach(__v => __obj.update("contentType", __v.asInstanceOf[js.Any]))
-      dialogState.foreach(__v => __obj.update("dialogState", __v.asInstanceOf[js.Any]))
-      inputTranscript.foreach(__v => __obj.update("inputTranscript", __v.asInstanceOf[js.Any]))
-      intentName.foreach(__v => __obj.update("intentName", __v.asInstanceOf[js.Any]))
-      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
-      messageFormat.foreach(__v => __obj.update("messageFormat", __v.asInstanceOf[js.Any]))
-      sessionAttributes.foreach(__v => __obj.update("sessionAttributes", __v.asInstanceOf[js.Any]))
-      slotToElicit.foreach(__v => __obj.update("slotToElicit", __v.asInstanceOf[js.Any]))
-      slots.foreach(__v => __obj.update("slots", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      audioStream.foreach(__v => __obj.updateDynamic("audioStream")(__v.asInstanceOf[js.Any]))
+      contentType.foreach(__v => __obj.updateDynamic("contentType")(__v.asInstanceOf[js.Any]))
+      dialogState.foreach(__v => __obj.updateDynamic("dialogState")(__v.asInstanceOf[js.Any]))
+      inputTranscript.foreach(__v => __obj.updateDynamic("inputTranscript")(__v.asInstanceOf[js.Any]))
+      intentName.foreach(__v => __obj.updateDynamic("intentName")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      messageFormat.foreach(__v => __obj.updateDynamic("messageFormat")(__v.asInstanceOf[js.Any]))
+      sessionAttributes.foreach(__v => __obj.updateDynamic("sessionAttributes")(__v.asInstanceOf[js.Any]))
+      slotToElicit.foreach(__v => __obj.updateDynamic("slotToElicit")(__v.asInstanceOf[js.Any]))
+      slots.foreach(__v => __obj.updateDynamic("slots")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PostContentResponse]
     }
   }
@@ -432,15 +432,15 @@ package lexruntime {
         requestAttributes: js.UndefOr[StringMap] = js.undefined,
         sessionAttributes: js.UndefOr[StringMap] = js.undefined
     ): PostTextRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "botAlias"  -> botAlias.asInstanceOf[js.Any],
         "botName"   -> botName.asInstanceOf[js.Any],
         "inputText" -> inputText.asInstanceOf[js.Any],
         "userId"    -> userId.asInstanceOf[js.Any]
       )
 
-      requestAttributes.foreach(__v => __obj.update("requestAttributes", __v.asInstanceOf[js.Any]))
-      sessionAttributes.foreach(__v => __obj.update("sessionAttributes", __v.asInstanceOf[js.Any]))
+      requestAttributes.foreach(__v => __obj.updateDynamic("requestAttributes")(__v.asInstanceOf[js.Any]))
+      sessionAttributes.foreach(__v => __obj.updateDynamic("sessionAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PostTextRequest]
     }
   }
@@ -468,15 +468,15 @@ package lexruntime {
         slotToElicit: js.UndefOr[String] = js.undefined,
         slots: js.UndefOr[StringMap] = js.undefined
     ): PostTextResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      dialogState.foreach(__v => __obj.update("dialogState", __v.asInstanceOf[js.Any]))
-      intentName.foreach(__v => __obj.update("intentName", __v.asInstanceOf[js.Any]))
-      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
-      messageFormat.foreach(__v => __obj.update("messageFormat", __v.asInstanceOf[js.Any]))
-      responseCard.foreach(__v => __obj.update("responseCard", __v.asInstanceOf[js.Any]))
-      sessionAttributes.foreach(__v => __obj.update("sessionAttributes", __v.asInstanceOf[js.Any]))
-      slotToElicit.foreach(__v => __obj.update("slotToElicit", __v.asInstanceOf[js.Any]))
-      slots.foreach(__v => __obj.update("slots", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      dialogState.foreach(__v => __obj.updateDynamic("dialogState")(__v.asInstanceOf[js.Any]))
+      intentName.foreach(__v => __obj.updateDynamic("intentName")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      messageFormat.foreach(__v => __obj.updateDynamic("messageFormat")(__v.asInstanceOf[js.Any]))
+      responseCard.foreach(__v => __obj.updateDynamic("responseCard")(__v.asInstanceOf[js.Any]))
+      sessionAttributes.foreach(__v => __obj.updateDynamic("sessionAttributes")(__v.asInstanceOf[js.Any]))
+      slotToElicit.foreach(__v => __obj.updateDynamic("slotToElicit")(__v.asInstanceOf[js.Any]))
+      slots.foreach(__v => __obj.updateDynamic("slots")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PostTextResponse]
     }
   }
@@ -500,15 +500,15 @@ package lexruntime {
         dialogAction: js.UndefOr[DialogAction] = js.undefined,
         sessionAttributes: js.UndefOr[StringMap] = js.undefined
     ): PutSessionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "botAlias" -> botAlias.asInstanceOf[js.Any],
         "botName"  -> botName.asInstanceOf[js.Any],
         "userId"   -> userId.asInstanceOf[js.Any]
       )
 
-      accept.foreach(__v => __obj.update("accept", __v.asInstanceOf[js.Any]))
-      dialogAction.foreach(__v => __obj.update("dialogAction", __v.asInstanceOf[js.Any]))
-      sessionAttributes.foreach(__v => __obj.update("sessionAttributes", __v.asInstanceOf[js.Any]))
+      accept.foreach(__v => __obj.updateDynamic("accept")(__v.asInstanceOf[js.Any]))
+      dialogAction.foreach(__v => __obj.updateDynamic("dialogAction")(__v.asInstanceOf[js.Any]))
+      sessionAttributes.foreach(__v => __obj.updateDynamic("sessionAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutSessionRequest]
     }
   }
@@ -540,17 +540,17 @@ package lexruntime {
         slotToElicit: js.UndefOr[String] = js.undefined,
         slots: js.UndefOr[String] = js.undefined
     ): PutSessionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      audioStream.foreach(__v => __obj.update("audioStream", __v.asInstanceOf[js.Any]))
-      contentType.foreach(__v => __obj.update("contentType", __v.asInstanceOf[js.Any]))
-      dialogState.foreach(__v => __obj.update("dialogState", __v.asInstanceOf[js.Any]))
-      intentName.foreach(__v => __obj.update("intentName", __v.asInstanceOf[js.Any]))
-      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
-      messageFormat.foreach(__v => __obj.update("messageFormat", __v.asInstanceOf[js.Any]))
-      sessionAttributes.foreach(__v => __obj.update("sessionAttributes", __v.asInstanceOf[js.Any]))
-      sessionId.foreach(__v => __obj.update("sessionId", __v.asInstanceOf[js.Any]))
-      slotToElicit.foreach(__v => __obj.update("slotToElicit", __v.asInstanceOf[js.Any]))
-      slots.foreach(__v => __obj.update("slots", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      audioStream.foreach(__v => __obj.updateDynamic("audioStream")(__v.asInstanceOf[js.Any]))
+      contentType.foreach(__v => __obj.updateDynamic("contentType")(__v.asInstanceOf[js.Any]))
+      dialogState.foreach(__v => __obj.updateDynamic("dialogState")(__v.asInstanceOf[js.Any]))
+      intentName.foreach(__v => __obj.updateDynamic("intentName")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      messageFormat.foreach(__v => __obj.updateDynamic("messageFormat")(__v.asInstanceOf[js.Any]))
+      sessionAttributes.foreach(__v => __obj.updateDynamic("sessionAttributes")(__v.asInstanceOf[js.Any]))
+      sessionId.foreach(__v => __obj.updateDynamic("sessionId")(__v.asInstanceOf[js.Any]))
+      slotToElicit.foreach(__v => __obj.updateDynamic("slotToElicit")(__v.asInstanceOf[js.Any]))
+      slots.foreach(__v => __obj.updateDynamic("slots")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutSessionResponse]
     }
   }
@@ -571,10 +571,10 @@ package lexruntime {
         genericAttachments: js.UndefOr[genericAttachmentList] = js.undefined,
         version: js.UndefOr[String] = js.undefined
     ): ResponseCard = {
-      val __obj = js.Dictionary.empty[js.Any]
-      contentType.foreach(__v => __obj.update("contentType", __v.asInstanceOf[js.Any]))
-      genericAttachments.foreach(__v => __obj.update("genericAttachments", __v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      contentType.foreach(__v => __obj.updateDynamic("contentType")(__v.asInstanceOf[js.Any]))
+      genericAttachments.foreach(__v => __obj.updateDynamic("genericAttachments")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResponseCard]
     }
   }

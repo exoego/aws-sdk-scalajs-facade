@@ -192,7 +192,7 @@ package cloudwatchevents {
     def apply(
         Name: EventSourceName
     ): ActivateEventSourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -223,12 +223,12 @@ package cloudwatchevents {
         AssignPublicIp: js.UndefOr[AssignPublicIp] = js.undefined,
         SecurityGroups: js.UndefOr[StringList] = js.undefined
     ): AwsVpcConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Subnets" -> Subnets.asInstanceOf[js.Any]
       )
 
-      AssignPublicIp.foreach(__v => __obj.update("AssignPublicIp", __v.asInstanceOf[js.Any]))
-      SecurityGroups.foreach(__v => __obj.update("SecurityGroups", __v.asInstanceOf[js.Any]))
+      AssignPublicIp.foreach(__v => __obj.updateDynamic("AssignPublicIp")(__v.asInstanceOf[js.Any]))
+      SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsVpcConfiguration]
     }
   }
@@ -245,8 +245,8 @@ package cloudwatchevents {
     def apply(
         Size: js.UndefOr[Int] = js.undefined
     ): BatchArrayProperties = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Size.foreach(__v => __obj.update("Size", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Size.foreach(__v => __obj.updateDynamic("Size")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchArrayProperties]
     }
   }
@@ -269,13 +269,13 @@ package cloudwatchevents {
         ArrayProperties: js.UndefOr[BatchArrayProperties] = js.undefined,
         RetryStrategy: js.UndefOr[BatchRetryStrategy] = js.undefined
     ): BatchParameters = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobDefinition" -> JobDefinition.asInstanceOf[js.Any],
         "JobName"       -> JobName.asInstanceOf[js.Any]
       )
 
-      ArrayProperties.foreach(__v => __obj.update("ArrayProperties", __v.asInstanceOf[js.Any]))
-      RetryStrategy.foreach(__v => __obj.update("RetryStrategy", __v.asInstanceOf[js.Any]))
+      ArrayProperties.foreach(__v => __obj.updateDynamic("ArrayProperties")(__v.asInstanceOf[js.Any]))
+      RetryStrategy.foreach(__v => __obj.updateDynamic("RetryStrategy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchParameters]
     }
   }
@@ -292,8 +292,8 @@ package cloudwatchevents {
     def apply(
         Attempts: js.UndefOr[Int] = js.undefined
     ): BatchRetryStrategy = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attempts.foreach(__v => __obj.update("Attempts", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attempts.foreach(__v => __obj.updateDynamic("Attempts")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchRetryStrategy]
     }
   }
@@ -315,7 +315,7 @@ package cloudwatchevents {
         Type: String,
         Value: String
     ): Condition = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"   -> Key.asInstanceOf[js.Any],
         "Type"  -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
@@ -336,11 +336,11 @@ package cloudwatchevents {
         Name: EventBusName,
         EventSourceName: js.UndefOr[EventSourceName] = js.undefined
     ): CreateEventBusRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      EventSourceName.foreach(__v => __obj.update("EventSourceName", __v.asInstanceOf[js.Any]))
+      EventSourceName.foreach(__v => __obj.updateDynamic("EventSourceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateEventBusRequest]
     }
   }
@@ -354,8 +354,8 @@ package cloudwatchevents {
     def apply(
         EventBusArn: js.UndefOr[String] = js.undefined
     ): CreateEventBusResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EventBusArn.foreach(__v => __obj.update("EventBusArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EventBusArn.foreach(__v => __obj.updateDynamic("EventBusArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateEventBusResponse]
     }
   }
@@ -371,7 +371,7 @@ package cloudwatchevents {
         Account: AccountId,
         Name: EventSourceName
     ): CreatePartnerEventSourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Account" -> Account.asInstanceOf[js.Any],
         "Name"    -> Name.asInstanceOf[js.Any]
       )
@@ -389,8 +389,8 @@ package cloudwatchevents {
     def apply(
         EventSourceArn: js.UndefOr[String] = js.undefined
     ): CreatePartnerEventSourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EventSourceArn.foreach(__v => __obj.update("EventSourceArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EventSourceArn.foreach(__v => __obj.updateDynamic("EventSourceArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePartnerEventSourceResponse]
     }
   }
@@ -404,7 +404,7 @@ package cloudwatchevents {
     def apply(
         Name: EventSourceName
     ): DeactivateEventSourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -421,7 +421,7 @@ package cloudwatchevents {
     def apply(
         Name: EventBusName
     ): DeleteEventBusRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -440,7 +440,7 @@ package cloudwatchevents {
         Account: AccountId,
         Name: EventSourceName
     ): DeletePartnerEventSourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Account" -> Account.asInstanceOf[js.Any],
         "Name"    -> Name.asInstanceOf[js.Any]
       )
@@ -462,12 +462,12 @@ package cloudwatchevents {
         EventBusName: js.UndefOr[EventBusName] = js.undefined,
         Force: js.UndefOr[Boolean] = js.undefined
     ): DeleteRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      EventBusName.foreach(__v => __obj.update("EventBusName", __v.asInstanceOf[js.Any]))
-      Force.foreach(__v => __obj.update("Force", __v.asInstanceOf[js.Any]))
+      EventBusName.foreach(__v => __obj.updateDynamic("EventBusName")(__v.asInstanceOf[js.Any]))
+      Force.foreach(__v => __obj.updateDynamic("Force")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteRuleRequest]
     }
   }
@@ -481,8 +481,8 @@ package cloudwatchevents {
     def apply(
         Name: js.UndefOr[EventBusName] = js.undefined
     ): DescribeEventBusRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEventBusRequest]
     }
   }
@@ -500,10 +500,10 @@ package cloudwatchevents {
         Name: js.UndefOr[String] = js.undefined,
         Policy: js.UndefOr[String] = js.undefined
     ): DescribeEventBusResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEventBusResponse]
     }
   }
@@ -517,7 +517,7 @@ package cloudwatchevents {
     def apply(
         Name: EventSourceName
     ): DescribeEventSourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -544,13 +544,13 @@ package cloudwatchevents {
         Name: js.UndefOr[String] = js.undefined,
         State: js.UndefOr[EventSourceState] = js.undefined
     ): DescribeEventSourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreatedBy.foreach(__v => __obj.update("CreatedBy", __v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      ExpirationTime.foreach(__v => __obj.update("ExpirationTime", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      ExpirationTime.foreach(__v => __obj.updateDynamic("ExpirationTime")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEventSourceResponse]
     }
   }
@@ -564,7 +564,7 @@ package cloudwatchevents {
     def apply(
         Name: EventSourceName
     ): DescribePartnerEventSourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -583,9 +583,9 @@ package cloudwatchevents {
         Arn: js.UndefOr[String] = js.undefined,
         Name: js.UndefOr[String] = js.undefined
     ): DescribePartnerEventSourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePartnerEventSourceResponse]
     }
   }
@@ -601,11 +601,11 @@ package cloudwatchevents {
         Name: RuleName,
         EventBusName: js.UndefOr[EventBusName] = js.undefined
     ): DescribeRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      EventBusName.foreach(__v => __obj.update("EventBusName", __v.asInstanceOf[js.Any]))
+      EventBusName.foreach(__v => __obj.updateDynamic("EventBusName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRuleRequest]
     }
   }
@@ -635,16 +635,16 @@ package cloudwatchevents {
         ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
         State: js.UndefOr[RuleState] = js.undefined
     ): DescribeRuleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      EventBusName.foreach(__v => __obj.update("EventBusName", __v.asInstanceOf[js.Any]))
-      EventPattern.foreach(__v => __obj.update("EventPattern", __v.asInstanceOf[js.Any]))
-      ManagedBy.foreach(__v => __obj.update("ManagedBy", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
-      ScheduleExpression.foreach(__v => __obj.update("ScheduleExpression", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EventBusName.foreach(__v => __obj.updateDynamic("EventBusName")(__v.asInstanceOf[js.Any]))
+      EventPattern.foreach(__v => __obj.updateDynamic("EventPattern")(__v.asInstanceOf[js.Any]))
+      ManagedBy.foreach(__v => __obj.updateDynamic("ManagedBy")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRuleResponse]
     }
   }
@@ -660,11 +660,11 @@ package cloudwatchevents {
         Name: RuleName,
         EventBusName: js.UndefOr[EventBusName] = js.undefined
     ): DisableRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      EventBusName.foreach(__v => __obj.update("EventBusName", __v.asInstanceOf[js.Any]))
+      EventBusName.foreach(__v => __obj.updateDynamic("EventBusName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisableRuleRequest]
     }
   }
@@ -691,15 +691,15 @@ package cloudwatchevents {
         PlatformVersion: js.UndefOr[String] = js.undefined,
         TaskCount: js.UndefOr[LimitMin1] = js.undefined
     ): EcsParameters = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TaskDefinitionArn" -> TaskDefinitionArn.asInstanceOf[js.Any]
       )
 
-      Group.foreach(__v => __obj.update("Group", __v.asInstanceOf[js.Any]))
-      LaunchType.foreach(__v => __obj.update("LaunchType", __v.asInstanceOf[js.Any]))
-      NetworkConfiguration.foreach(__v => __obj.update("NetworkConfiguration", __v.asInstanceOf[js.Any]))
-      PlatformVersion.foreach(__v => __obj.update("PlatformVersion", __v.asInstanceOf[js.Any]))
-      TaskCount.foreach(__v => __obj.update("TaskCount", __v.asInstanceOf[js.Any]))
+      Group.foreach(__v => __obj.updateDynamic("Group")(__v.asInstanceOf[js.Any]))
+      LaunchType.foreach(__v => __obj.updateDynamic("LaunchType")(__v.asInstanceOf[js.Any]))
+      NetworkConfiguration.foreach(__v => __obj.updateDynamic("NetworkConfiguration")(__v.asInstanceOf[js.Any]))
+      PlatformVersion.foreach(__v => __obj.updateDynamic("PlatformVersion")(__v.asInstanceOf[js.Any]))
+      TaskCount.foreach(__v => __obj.updateDynamic("TaskCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EcsParameters]
     }
   }
@@ -715,11 +715,11 @@ package cloudwatchevents {
         Name: RuleName,
         EventBusName: js.UndefOr[EventBusName] = js.undefined
     ): EnableRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      EventBusName.foreach(__v => __obj.update("EventBusName", __v.asInstanceOf[js.Any]))
+      EventBusName.foreach(__v => __obj.updateDynamic("EventBusName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnableRuleRequest]
     }
   }
@@ -740,10 +740,10 @@ package cloudwatchevents {
         Name: js.UndefOr[String] = js.undefined,
         Policy: js.UndefOr[String] = js.undefined
     ): EventBus = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventBus]
     }
   }
@@ -770,13 +770,13 @@ package cloudwatchevents {
         Name: js.UndefOr[String] = js.undefined,
         State: js.UndefOr[EventSourceState] = js.undefined
     ): EventSource = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreatedBy.foreach(__v => __obj.update("CreatedBy", __v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      ExpirationTime.foreach(__v => __obj.update("ExpirationTime", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      ExpirationTime.foreach(__v => __obj.updateDynamic("ExpirationTime")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventSource]
     }
   }
@@ -803,11 +803,11 @@ package cloudwatchevents {
         InputTemplate: TransformerInput,
         InputPathsMap: js.UndefOr[TransformerPaths] = js.undefined
     ): InputTransformer = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InputTemplate" -> InputTemplate.asInstanceOf[js.Any]
       )
 
-      InputPathsMap.foreach(__v => __obj.update("InputPathsMap", __v.asInstanceOf[js.Any]))
+      InputPathsMap.foreach(__v => __obj.updateDynamic("InputPathsMap")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InputTransformer]
     }
   }
@@ -824,7 +824,7 @@ package cloudwatchevents {
     def apply(
         PartitionKeyPath: TargetPartitionKeyPath
     ): KinesisParameters = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PartitionKeyPath" -> PartitionKeyPath.asInstanceOf[js.Any]
       )
 
@@ -852,10 +852,10 @@ package cloudwatchevents {
         NamePrefix: js.UndefOr[EventBusName] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListEventBusesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NamePrefix.foreach(__v => __obj.update("NamePrefix", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NamePrefix.foreach(__v => __obj.updateDynamic("NamePrefix")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEventBusesRequest]
     }
   }
@@ -871,9 +871,9 @@ package cloudwatchevents {
         EventBuses: js.UndefOr[EventBusList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListEventBusesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EventBuses.foreach(__v => __obj.update("EventBuses", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EventBuses.foreach(__v => __obj.updateDynamic("EventBuses")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEventBusesResponse]
     }
   }
@@ -891,10 +891,10 @@ package cloudwatchevents {
         NamePrefix: js.UndefOr[EventSourceNamePrefix] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListEventSourcesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NamePrefix.foreach(__v => __obj.update("NamePrefix", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NamePrefix.foreach(__v => __obj.updateDynamic("NamePrefix")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEventSourcesRequest]
     }
   }
@@ -910,9 +910,9 @@ package cloudwatchevents {
         EventSources: js.UndefOr[EventSourceList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListEventSourcesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EventSources.foreach(__v => __obj.update("EventSources", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EventSources.foreach(__v => __obj.updateDynamic("EventSources")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEventSourcesResponse]
     }
   }
@@ -930,12 +930,12 @@ package cloudwatchevents {
         Limit: js.UndefOr[LimitMax100] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListPartnerEventSourceAccountsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EventSourceName" -> EventSourceName.asInstanceOf[js.Any]
       )
 
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPartnerEventSourceAccountsRequest]
     }
   }
@@ -951,9 +951,11 @@ package cloudwatchevents {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PartnerEventSourceAccounts: js.UndefOr[PartnerEventSourceAccountList] = js.undefined
     ): ListPartnerEventSourceAccountsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PartnerEventSourceAccounts.foreach(__v => __obj.update("PartnerEventSourceAccounts", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PartnerEventSourceAccounts.foreach(
+        __v => __obj.updateDynamic("PartnerEventSourceAccounts")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[ListPartnerEventSourceAccountsResponse]
     }
   }
@@ -971,12 +973,12 @@ package cloudwatchevents {
         Limit: js.UndefOr[LimitMax100] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListPartnerEventSourcesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "NamePrefix" -> NamePrefix.asInstanceOf[js.Any]
       )
 
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPartnerEventSourcesRequest]
     }
   }
@@ -992,9 +994,9 @@ package cloudwatchevents {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PartnerEventSources: js.UndefOr[PartnerEventSourceList] = js.undefined
     ): ListPartnerEventSourcesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PartnerEventSources.foreach(__v => __obj.update("PartnerEventSources", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PartnerEventSources.foreach(__v => __obj.updateDynamic("PartnerEventSources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPartnerEventSourcesResponse]
     }
   }
@@ -1014,13 +1016,13 @@ package cloudwatchevents {
         Limit: js.UndefOr[LimitMax100] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListRuleNamesByTargetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TargetArn" -> TargetArn.asInstanceOf[js.Any]
       )
 
-      EventBusName.foreach(__v => __obj.update("EventBusName", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      EventBusName.foreach(__v => __obj.updateDynamic("EventBusName")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRuleNamesByTargetRequest]
     }
   }
@@ -1036,9 +1038,9 @@ package cloudwatchevents {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         RuleNames: js.UndefOr[RuleNameList] = js.undefined
     ): ListRuleNamesByTargetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      RuleNames.foreach(__v => __obj.update("RuleNames", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RuleNames.foreach(__v => __obj.updateDynamic("RuleNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRuleNamesByTargetResponse]
     }
   }
@@ -1058,11 +1060,11 @@ package cloudwatchevents {
         NamePrefix: js.UndefOr[RuleName] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListRulesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EventBusName.foreach(__v => __obj.update("EventBusName", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NamePrefix.foreach(__v => __obj.update("NamePrefix", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EventBusName.foreach(__v => __obj.updateDynamic("EventBusName")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NamePrefix.foreach(__v => __obj.updateDynamic("NamePrefix")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRulesRequest]
     }
   }
@@ -1078,9 +1080,9 @@ package cloudwatchevents {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Rules: js.UndefOr[RuleResponseList] = js.undefined
     ): ListRulesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Rules.foreach(__v => __obj.update("Rules", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRulesResponse]
     }
   }
@@ -1094,7 +1096,7 @@ package cloudwatchevents {
     def apply(
         ResourceARN: Arn
     ): ListTagsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
       )
 
@@ -1111,8 +1113,8 @@ package cloudwatchevents {
     def apply(
         Tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsForResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
@@ -1132,13 +1134,13 @@ package cloudwatchevents {
         Limit: js.UndefOr[LimitMax100] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListTargetsByRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Rule" -> Rule.asInstanceOf[js.Any]
       )
 
-      EventBusName.foreach(__v => __obj.update("EventBusName", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      EventBusName.foreach(__v => __obj.updateDynamic("EventBusName")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTargetsByRuleRequest]
     }
   }
@@ -1154,9 +1156,9 @@ package cloudwatchevents {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Targets: js.UndefOr[TargetList] = js.undefined
     ): ListTargetsByRuleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.update("Targets", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTargetsByRuleResponse]
     }
   }
@@ -1173,8 +1175,8 @@ package cloudwatchevents {
     def apply(
         awsvpcConfiguration: js.UndefOr[AwsVpcConfiguration] = js.undefined
     ): NetworkConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      awsvpcConfiguration.foreach(__v => __obj.update("awsvpcConfiguration", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      awsvpcConfiguration.foreach(__v => __obj.updateDynamic("awsvpcConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NetworkConfiguration]
     }
   }
@@ -1193,9 +1195,9 @@ package cloudwatchevents {
         Arn: js.UndefOr[String] = js.undefined,
         Name: js.UndefOr[String] = js.undefined
     ): PartnerEventSource = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PartnerEventSource]
     }
   }
@@ -1218,11 +1220,11 @@ package cloudwatchevents {
         ExpirationTime: js.UndefOr[Timestamp] = js.undefined,
         State: js.UndefOr[EventSourceState] = js.undefined
     ): PartnerEventSourceAccount = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Account.foreach(__v => __obj.update("Account", __v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      ExpirationTime.foreach(__v => __obj.update("ExpirationTime", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Account.foreach(__v => __obj.updateDynamic("Account")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      ExpirationTime.foreach(__v => __obj.updateDynamic("ExpirationTime")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PartnerEventSourceAccount]
     }
   }
@@ -1236,7 +1238,7 @@ package cloudwatchevents {
     def apply(
         Entries: PutEventsRequestEntryList
     ): PutEventsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Entries" -> Entries.asInstanceOf[js.Any]
       )
 
@@ -1266,13 +1268,13 @@ package cloudwatchevents {
         Source: js.UndefOr[String] = js.undefined,
         Time: js.UndefOr[EventTime] = js.undefined
     ): PutEventsRequestEntry = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Detail.foreach(__v => __obj.update("Detail", __v.asInstanceOf[js.Any]))
-      DetailType.foreach(__v => __obj.update("DetailType", __v.asInstanceOf[js.Any]))
-      EventBusName.foreach(__v => __obj.update("EventBusName", __v.asInstanceOf[js.Any]))
-      Resources.foreach(__v => __obj.update("Resources", __v.asInstanceOf[js.Any]))
-      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
-      Time.foreach(__v => __obj.update("Time", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Detail.foreach(__v => __obj.updateDynamic("Detail")(__v.asInstanceOf[js.Any]))
+      DetailType.foreach(__v => __obj.updateDynamic("DetailType")(__v.asInstanceOf[js.Any]))
+      EventBusName.foreach(__v => __obj.updateDynamic("EventBusName")(__v.asInstanceOf[js.Any]))
+      Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
+      Time.foreach(__v => __obj.updateDynamic("Time")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutEventsRequestEntry]
     }
   }
@@ -1288,9 +1290,9 @@ package cloudwatchevents {
         Entries: js.UndefOr[PutEventsResultEntryList] = js.undefined,
         FailedEntryCount: js.UndefOr[Int] = js.undefined
     ): PutEventsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Entries.foreach(__v => __obj.update("Entries", __v.asInstanceOf[js.Any]))
-      FailedEntryCount.foreach(__v => __obj.update("FailedEntryCount", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Entries.foreach(__v => __obj.updateDynamic("Entries")(__v.asInstanceOf[js.Any]))
+      FailedEntryCount.foreach(__v => __obj.updateDynamic("FailedEntryCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutEventsResponse]
     }
   }
@@ -1311,10 +1313,10 @@ package cloudwatchevents {
         ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
         EventId: js.UndefOr[EventId] = js.undefined
     ): PutEventsResultEntry = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
-      EventId.foreach(__v => __obj.update("EventId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      EventId.foreach(__v => __obj.updateDynamic("EventId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutEventsResultEntry]
     }
   }
@@ -1328,7 +1330,7 @@ package cloudwatchevents {
     def apply(
         Entries: PutPartnerEventsRequestEntryList
     ): PutPartnerEventsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Entries" -> Entries.asInstanceOf[js.Any]
       )
 
@@ -1356,12 +1358,12 @@ package cloudwatchevents {
         Source: js.UndefOr[String] = js.undefined,
         Time: js.UndefOr[EventTime] = js.undefined
     ): PutPartnerEventsRequestEntry = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Detail.foreach(__v => __obj.update("Detail", __v.asInstanceOf[js.Any]))
-      DetailType.foreach(__v => __obj.update("DetailType", __v.asInstanceOf[js.Any]))
-      Resources.foreach(__v => __obj.update("Resources", __v.asInstanceOf[js.Any]))
-      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
-      Time.foreach(__v => __obj.update("Time", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Detail.foreach(__v => __obj.updateDynamic("Detail")(__v.asInstanceOf[js.Any]))
+      DetailType.foreach(__v => __obj.updateDynamic("DetailType")(__v.asInstanceOf[js.Any]))
+      Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
+      Time.foreach(__v => __obj.updateDynamic("Time")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutPartnerEventsRequestEntry]
     }
   }
@@ -1377,9 +1379,9 @@ package cloudwatchevents {
         Entries: js.UndefOr[PutPartnerEventsResultEntryList] = js.undefined,
         FailedEntryCount: js.UndefOr[Int] = js.undefined
     ): PutPartnerEventsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Entries.foreach(__v => __obj.update("Entries", __v.asInstanceOf[js.Any]))
-      FailedEntryCount.foreach(__v => __obj.update("FailedEntryCount", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Entries.foreach(__v => __obj.updateDynamic("Entries")(__v.asInstanceOf[js.Any]))
+      FailedEntryCount.foreach(__v => __obj.updateDynamic("FailedEntryCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutPartnerEventsResponse]
     }
   }
@@ -1400,10 +1402,10 @@ package cloudwatchevents {
         ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
         EventId: js.UndefOr[EventId] = js.undefined
     ): PutPartnerEventsResultEntry = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
-      EventId.foreach(__v => __obj.update("EventId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      EventId.foreach(__v => __obj.updateDynamic("EventId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutPartnerEventsResultEntry]
     }
   }
@@ -1425,14 +1427,14 @@ package cloudwatchevents {
         Condition: js.UndefOr[Condition] = js.undefined,
         EventBusName: js.UndefOr[NonPartnerEventBusName] = js.undefined
     ): PutPermissionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Action"      -> Action.asInstanceOf[js.Any],
         "Principal"   -> Principal.asInstanceOf[js.Any],
         "StatementId" -> StatementId.asInstanceOf[js.Any]
       )
 
-      Condition.foreach(__v => __obj.update("Condition", __v.asInstanceOf[js.Any]))
-      EventBusName.foreach(__v => __obj.update("EventBusName", __v.asInstanceOf[js.Any]))
+      Condition.foreach(__v => __obj.updateDynamic("Condition")(__v.asInstanceOf[js.Any]))
+      EventBusName.foreach(__v => __obj.updateDynamic("EventBusName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutPermissionRequest]
     }
   }
@@ -1460,17 +1462,17 @@ package cloudwatchevents {
         State: js.UndefOr[RuleState] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): PutRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      EventBusName.foreach(__v => __obj.update("EventBusName", __v.asInstanceOf[js.Any]))
-      EventPattern.foreach(__v => __obj.update("EventPattern", __v.asInstanceOf[js.Any]))
-      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
-      ScheduleExpression.foreach(__v => __obj.update("ScheduleExpression", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EventBusName.foreach(__v => __obj.updateDynamic("EventBusName")(__v.asInstanceOf[js.Any]))
+      EventPattern.foreach(__v => __obj.updateDynamic("EventPattern")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutRuleRequest]
     }
   }
@@ -1484,8 +1486,8 @@ package cloudwatchevents {
     def apply(
         RuleArn: js.UndefOr[RuleArn] = js.undefined
     ): PutRuleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RuleArn.foreach(__v => __obj.update("RuleArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RuleArn.foreach(__v => __obj.updateDynamic("RuleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutRuleResponse]
     }
   }
@@ -1503,12 +1505,12 @@ package cloudwatchevents {
         Targets: TargetList,
         EventBusName: js.UndefOr[EventBusName] = js.undefined
     ): PutTargetsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Rule"    -> Rule.asInstanceOf[js.Any],
         "Targets" -> Targets.asInstanceOf[js.Any]
       )
 
-      EventBusName.foreach(__v => __obj.update("EventBusName", __v.asInstanceOf[js.Any]))
+      EventBusName.foreach(__v => __obj.updateDynamic("EventBusName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutTargetsRequest]
     }
   }
@@ -1524,9 +1526,9 @@ package cloudwatchevents {
         FailedEntries: js.UndefOr[PutTargetsResultEntryList] = js.undefined,
         FailedEntryCount: js.UndefOr[Int] = js.undefined
     ): PutTargetsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FailedEntries.foreach(__v => __obj.update("FailedEntries", __v.asInstanceOf[js.Any]))
-      FailedEntryCount.foreach(__v => __obj.update("FailedEntryCount", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FailedEntries.foreach(__v => __obj.updateDynamic("FailedEntries")(__v.asInstanceOf[js.Any]))
+      FailedEntryCount.foreach(__v => __obj.updateDynamic("FailedEntryCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutTargetsResponse]
     }
   }
@@ -1547,10 +1549,10 @@ package cloudwatchevents {
         ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
         TargetId: js.UndefOr[TargetId] = js.undefined
     ): PutTargetsResultEntry = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
-      TargetId.foreach(__v => __obj.update("TargetId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      TargetId.foreach(__v => __obj.updateDynamic("TargetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutTargetsResultEntry]
     }
   }
@@ -1566,11 +1568,11 @@ package cloudwatchevents {
         StatementId: StatementId,
         EventBusName: js.UndefOr[NonPartnerEventBusName] = js.undefined
     ): RemovePermissionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "StatementId" -> StatementId.asInstanceOf[js.Any]
       )
 
-      EventBusName.foreach(__v => __obj.update("EventBusName", __v.asInstanceOf[js.Any]))
+      EventBusName.foreach(__v => __obj.updateDynamic("EventBusName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RemovePermissionRequest]
     }
   }
@@ -1590,13 +1592,13 @@ package cloudwatchevents {
         EventBusName: js.UndefOr[EventBusName] = js.undefined,
         Force: js.UndefOr[Boolean] = js.undefined
     ): RemoveTargetsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Ids"  -> Ids.asInstanceOf[js.Any],
         "Rule" -> Rule.asInstanceOf[js.Any]
       )
 
-      EventBusName.foreach(__v => __obj.update("EventBusName", __v.asInstanceOf[js.Any]))
-      Force.foreach(__v => __obj.update("Force", __v.asInstanceOf[js.Any]))
+      EventBusName.foreach(__v => __obj.updateDynamic("EventBusName")(__v.asInstanceOf[js.Any]))
+      Force.foreach(__v => __obj.updateDynamic("Force")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RemoveTargetsRequest]
     }
   }
@@ -1612,9 +1614,9 @@ package cloudwatchevents {
         FailedEntries: js.UndefOr[RemoveTargetsResultEntryList] = js.undefined,
         FailedEntryCount: js.UndefOr[Int] = js.undefined
     ): RemoveTargetsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FailedEntries.foreach(__v => __obj.update("FailedEntries", __v.asInstanceOf[js.Any]))
-      FailedEntryCount.foreach(__v => __obj.update("FailedEntryCount", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FailedEntries.foreach(__v => __obj.updateDynamic("FailedEntries")(__v.asInstanceOf[js.Any]))
+      FailedEntryCount.foreach(__v => __obj.updateDynamic("FailedEntryCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RemoveTargetsResponse]
     }
   }
@@ -1635,10 +1637,10 @@ package cloudwatchevents {
         ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
         TargetId: js.UndefOr[TargetId] = js.undefined
     ): RemoveTargetsResultEntry = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
-      TargetId.foreach(__v => __obj.update("TargetId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      TargetId.foreach(__v => __obj.updateDynamic("TargetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RemoveTargetsResultEntry]
     }
   }
@@ -1671,16 +1673,16 @@ package cloudwatchevents {
         ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
         State: js.UndefOr[RuleState] = js.undefined
     ): Rule = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      EventBusName.foreach(__v => __obj.update("EventBusName", __v.asInstanceOf[js.Any]))
-      EventPattern.foreach(__v => __obj.update("EventPattern", __v.asInstanceOf[js.Any]))
-      ManagedBy.foreach(__v => __obj.update("ManagedBy", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
-      ScheduleExpression.foreach(__v => __obj.update("ScheduleExpression", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EventBusName.foreach(__v => __obj.updateDynamic("EventBusName")(__v.asInstanceOf[js.Any]))
+      EventPattern.foreach(__v => __obj.updateDynamic("EventPattern")(__v.asInstanceOf[js.Any]))
+      ManagedBy.foreach(__v => __obj.updateDynamic("ManagedBy")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Rule]
     }
   }
@@ -1704,7 +1706,7 @@ package cloudwatchevents {
     def apply(
         RunCommandTargets: RunCommandTargets
     ): RunCommandParameters = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RunCommandTargets" -> RunCommandTargets.asInstanceOf[js.Any]
       )
 
@@ -1726,7 +1728,7 @@ package cloudwatchevents {
         Key: RunCommandTargetKey,
         Values: RunCommandTargetValues
     ): RunCommandTarget = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"    -> Key.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
@@ -1747,8 +1749,8 @@ package cloudwatchevents {
     def apply(
         MessageGroupId: js.UndefOr[MessageGroupId] = js.undefined
     ): SqsParameters = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MessageGroupId.foreach(__v => __obj.update("MessageGroupId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MessageGroupId.foreach(__v => __obj.updateDynamic("MessageGroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SqsParameters]
     }
   }
@@ -1767,7 +1769,7 @@ package cloudwatchevents {
         Key: TagKey,
         Value: TagValue
     ): Tag = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"   -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
@@ -1787,7 +1789,7 @@ package cloudwatchevents {
         ResourceARN: Arn,
         Tags: TagList
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
       )
@@ -1802,7 +1804,7 @@ package cloudwatchevents {
   object TagResourceResponse {
     def apply(
         ): TagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -1841,20 +1843,20 @@ package cloudwatchevents {
         RunCommandParameters: js.UndefOr[RunCommandParameters] = js.undefined,
         SqsParameters: js.UndefOr[SqsParameters] = js.undefined
     ): Target = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any],
         "Id"  -> Id.asInstanceOf[js.Any]
       )
 
-      BatchParameters.foreach(__v => __obj.update("BatchParameters", __v.asInstanceOf[js.Any]))
-      EcsParameters.foreach(__v => __obj.update("EcsParameters", __v.asInstanceOf[js.Any]))
-      Input.foreach(__v => __obj.update("Input", __v.asInstanceOf[js.Any]))
-      InputPath.foreach(__v => __obj.update("InputPath", __v.asInstanceOf[js.Any]))
-      InputTransformer.foreach(__v => __obj.update("InputTransformer", __v.asInstanceOf[js.Any]))
-      KinesisParameters.foreach(__v => __obj.update("KinesisParameters", __v.asInstanceOf[js.Any]))
-      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
-      RunCommandParameters.foreach(__v => __obj.update("RunCommandParameters", __v.asInstanceOf[js.Any]))
-      SqsParameters.foreach(__v => __obj.update("SqsParameters", __v.asInstanceOf[js.Any]))
+      BatchParameters.foreach(__v => __obj.updateDynamic("BatchParameters")(__v.asInstanceOf[js.Any]))
+      EcsParameters.foreach(__v => __obj.updateDynamic("EcsParameters")(__v.asInstanceOf[js.Any]))
+      Input.foreach(__v => __obj.updateDynamic("Input")(__v.asInstanceOf[js.Any]))
+      InputPath.foreach(__v => __obj.updateDynamic("InputPath")(__v.asInstanceOf[js.Any]))
+      InputTransformer.foreach(__v => __obj.updateDynamic("InputTransformer")(__v.asInstanceOf[js.Any]))
+      KinesisParameters.foreach(__v => __obj.updateDynamic("KinesisParameters")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      RunCommandParameters.foreach(__v => __obj.updateDynamic("RunCommandParameters")(__v.asInstanceOf[js.Any]))
+      SqsParameters.foreach(__v => __obj.updateDynamic("SqsParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Target]
     }
   }
@@ -1870,7 +1872,7 @@ package cloudwatchevents {
         Event: String,
         EventPattern: EventPattern
     ): TestEventPatternRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Event"        -> Event.asInstanceOf[js.Any],
         "EventPattern" -> EventPattern.asInstanceOf[js.Any]
       )
@@ -1888,8 +1890,8 @@ package cloudwatchevents {
     def apply(
         Result: js.UndefOr[Boolean] = js.undefined
     ): TestEventPatternResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Result.foreach(__v => __obj.update("Result", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Result.foreach(__v => __obj.updateDynamic("Result")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TestEventPatternResponse]
     }
   }
@@ -1905,7 +1907,7 @@ package cloudwatchevents {
         ResourceARN: Arn,
         TagKeys: TagKeyList
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
       )
@@ -1920,7 +1922,7 @@ package cloudwatchevents {
   object UntagResourceResponse {
     def apply(
         ): UntagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
     }

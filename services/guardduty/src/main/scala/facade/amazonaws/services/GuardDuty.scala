@@ -229,7 +229,7 @@ package guardduty {
         InvitationId: String,
         MasterId: String
     ): AcceptInvitationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DetectorId"   -> DetectorId.asInstanceOf[js.Any],
         "InvitationId" -> InvitationId.asInstanceOf[js.Any],
         "MasterId"     -> MasterId.asInstanceOf[js.Any]
@@ -245,7 +245,7 @@ package guardduty {
   object AcceptInvitationResponse {
     def apply(
         ): AcceptInvitationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AcceptInvitationResponse]
     }
@@ -269,11 +269,11 @@ package guardduty {
         UserName: js.UndefOr[String] = js.undefined,
         UserType: js.UndefOr[String] = js.undefined
     ): AccessKeyDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccessKeyId.foreach(__v => __obj.update("AccessKeyId", __v.asInstanceOf[js.Any]))
-      PrincipalId.foreach(__v => __obj.update("PrincipalId", __v.asInstanceOf[js.Any]))
-      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
-      UserType.foreach(__v => __obj.update("UserType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccessKeyId.foreach(__v => __obj.updateDynamic("AccessKeyId")(__v.asInstanceOf[js.Any]))
+      PrincipalId.foreach(__v => __obj.updateDynamic("PrincipalId")(__v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
+      UserType.foreach(__v => __obj.updateDynamic("UserType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AccessKeyDetails]
     }
   }
@@ -292,7 +292,7 @@ package guardduty {
         AccountId: AccountId,
         Email: Email
     ): AccountDetail = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "Email"     -> Email.asInstanceOf[js.Any]
       )
@@ -321,12 +321,12 @@ package guardduty {
         NetworkConnectionAction: js.UndefOr[NetworkConnectionAction] = js.undefined,
         PortProbeAction: js.UndefOr[PortProbeAction] = js.undefined
     ): Action = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ActionType.foreach(__v => __obj.update("ActionType", __v.asInstanceOf[js.Any]))
-      AwsApiCallAction.foreach(__v => __obj.update("AwsApiCallAction", __v.asInstanceOf[js.Any]))
-      DnsRequestAction.foreach(__v => __obj.update("DnsRequestAction", __v.asInstanceOf[js.Any]))
-      NetworkConnectionAction.foreach(__v => __obj.update("NetworkConnectionAction", __v.asInstanceOf[js.Any]))
-      PortProbeAction.foreach(__v => __obj.update("PortProbeAction", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ActionType.foreach(__v => __obj.updateDynamic("ActionType")(__v.asInstanceOf[js.Any]))
+      AwsApiCallAction.foreach(__v => __obj.updateDynamic("AwsApiCallAction")(__v.asInstanceOf[js.Any]))
+      DnsRequestAction.foreach(__v => __obj.updateDynamic("DnsRequestAction")(__v.asInstanceOf[js.Any]))
+      NetworkConnectionAction.foreach(__v => __obj.updateDynamic("NetworkConnectionAction")(__v.asInstanceOf[js.Any]))
+      PortProbeAction.foreach(__v => __obj.updateDynamic("PortProbeAction")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Action]
     }
   }
@@ -342,7 +342,7 @@ package guardduty {
         DetectorId: DetectorId,
         FindingIds: FindingIds
     ): ArchiveFindingsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "FindingIds" -> FindingIds.asInstanceOf[js.Any]
       )
@@ -357,7 +357,7 @@ package guardduty {
   object ArchiveFindingsResponse {
     def apply(
         ): ArchiveFindingsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ArchiveFindingsResponse]
     }
@@ -383,12 +383,12 @@ package guardduty {
         RemoteIpDetails: js.UndefOr[RemoteIpDetails] = js.undefined,
         ServiceName: js.UndefOr[String] = js.undefined
     ): AwsApiCallAction = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Api.foreach(__v => __obj.update("Api", __v.asInstanceOf[js.Any]))
-      CallerType.foreach(__v => __obj.update("CallerType", __v.asInstanceOf[js.Any]))
-      DomainDetails.foreach(__v => __obj.update("DomainDetails", __v.asInstanceOf[js.Any]))
-      RemoteIpDetails.foreach(__v => __obj.update("RemoteIpDetails", __v.asInstanceOf[js.Any]))
-      ServiceName.foreach(__v => __obj.update("ServiceName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Api.foreach(__v => __obj.updateDynamic("Api")(__v.asInstanceOf[js.Any]))
+      CallerType.foreach(__v => __obj.updateDynamic("CallerType")(__v.asInstanceOf[js.Any]))
+      DomainDetails.foreach(__v => __obj.updateDynamic("DomainDetails")(__v.asInstanceOf[js.Any]))
+      RemoteIpDetails.foreach(__v => __obj.updateDynamic("RemoteIpDetails")(__v.asInstanceOf[js.Any]))
+      ServiceName.foreach(__v => __obj.updateDynamic("ServiceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsApiCallAction]
     }
   }
@@ -405,8 +405,8 @@ package guardduty {
     def apply(
         CityName: js.UndefOr[String] = js.undefined
     ): City = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CityName.foreach(__v => __obj.update("CityName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CityName.foreach(__v => __obj.updateDynamic("CityName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[City]
     }
   }
@@ -445,19 +445,19 @@ package guardduty {
         Neq: js.UndefOr[Neq] = js.undefined,
         NotEquals: js.UndefOr[NotEquals] = js.undefined
     ): Condition = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Eq.foreach(__v => __obj.update("Eq", __v.asInstanceOf[js.Any]))
-      Equals.foreach(__v => __obj.update("Equals", __v.asInstanceOf[js.Any]))
-      GreaterThan.foreach(__v => __obj.update("GreaterThan", __v.asInstanceOf[js.Any]))
-      GreaterThanOrEqual.foreach(__v => __obj.update("GreaterThanOrEqual", __v.asInstanceOf[js.Any]))
-      Gt.foreach(__v => __obj.update("Gt", __v.asInstanceOf[js.Any]))
-      Gte.foreach(__v => __obj.update("Gte", __v.asInstanceOf[js.Any]))
-      LessThan.foreach(__v => __obj.update("LessThan", __v.asInstanceOf[js.Any]))
-      LessThanOrEqual.foreach(__v => __obj.update("LessThanOrEqual", __v.asInstanceOf[js.Any]))
-      Lt.foreach(__v => __obj.update("Lt", __v.asInstanceOf[js.Any]))
-      Lte.foreach(__v => __obj.update("Lte", __v.asInstanceOf[js.Any]))
-      Neq.foreach(__v => __obj.update("Neq", __v.asInstanceOf[js.Any]))
-      NotEquals.foreach(__v => __obj.update("NotEquals", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Eq.foreach(__v => __obj.updateDynamic("Eq")(__v.asInstanceOf[js.Any]))
+      Equals.foreach(__v => __obj.updateDynamic("Equals")(__v.asInstanceOf[js.Any]))
+      GreaterThan.foreach(__v => __obj.updateDynamic("GreaterThan")(__v.asInstanceOf[js.Any]))
+      GreaterThanOrEqual.foreach(__v => __obj.updateDynamic("GreaterThanOrEqual")(__v.asInstanceOf[js.Any]))
+      Gt.foreach(__v => __obj.updateDynamic("Gt")(__v.asInstanceOf[js.Any]))
+      Gte.foreach(__v => __obj.updateDynamic("Gte")(__v.asInstanceOf[js.Any]))
+      LessThan.foreach(__v => __obj.updateDynamic("LessThan")(__v.asInstanceOf[js.Any]))
+      LessThanOrEqual.foreach(__v => __obj.updateDynamic("LessThanOrEqual")(__v.asInstanceOf[js.Any]))
+      Lt.foreach(__v => __obj.updateDynamic("Lt")(__v.asInstanceOf[js.Any]))
+      Lte.foreach(__v => __obj.updateDynamic("Lte")(__v.asInstanceOf[js.Any]))
+      Neq.foreach(__v => __obj.updateDynamic("Neq")(__v.asInstanceOf[js.Any]))
+      NotEquals.foreach(__v => __obj.updateDynamic("NotEquals")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Condition]
     }
   }
@@ -476,9 +476,9 @@ package guardduty {
         CountryCode: js.UndefOr[String] = js.undefined,
         CountryName: js.UndefOr[String] = js.undefined
     ): Country = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CountryCode.foreach(__v => __obj.update("CountryCode", __v.asInstanceOf[js.Any]))
-      CountryName.foreach(__v => __obj.update("CountryName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CountryCode.foreach(__v => __obj.updateDynamic("CountryCode")(__v.asInstanceOf[js.Any]))
+      CountryName.foreach(__v => __obj.updateDynamic("CountryName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Country]
     }
   }
@@ -498,13 +498,15 @@ package guardduty {
         FindingPublishingFrequency: js.UndefOr[FindingPublishingFrequency] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateDetectorRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Enable" -> Enable.asInstanceOf[js.Any]
       )
 
-      ClientToken.foreach(__v => __obj.update("ClientToken", __v.asInstanceOf[js.Any]))
-      FindingPublishingFrequency.foreach(__v => __obj.update("FindingPublishingFrequency", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      FindingPublishingFrequency.foreach(
+        __v => __obj.updateDynamic("FindingPublishingFrequency")(__v.asInstanceOf[js.Any])
+      )
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDetectorRequest]
     }
   }
@@ -518,8 +520,8 @@ package guardduty {
     def apply(
         DetectorId: js.UndefOr[DetectorId] = js.undefined
     ): CreateDetectorResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DetectorId.foreach(__v => __obj.update("DetectorId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DetectorId.foreach(__v => __obj.updateDynamic("DetectorId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDetectorResponse]
     }
   }
@@ -547,17 +549,17 @@ package guardduty {
         Rank: js.UndefOr[FilterRank] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateFilterRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DetectorId"      -> DetectorId.asInstanceOf[js.Any],
         "FindingCriteria" -> FindingCriteria.asInstanceOf[js.Any],
         "Name"            -> Name.asInstanceOf[js.Any]
       )
 
-      Action.foreach(__v => __obj.update("Action", __v.asInstanceOf[js.Any]))
-      ClientToken.foreach(__v => __obj.update("ClientToken", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Rank.foreach(__v => __obj.update("Rank", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Rank.foreach(__v => __obj.updateDynamic("Rank")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFilterRequest]
     }
   }
@@ -571,7 +573,7 @@ package guardduty {
     def apply(
         Name: FilterName
     ): CreateFilterResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -600,7 +602,7 @@ package guardduty {
         ClientToken: js.UndefOr[ClientToken] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateIPSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Activate"   -> Activate.asInstanceOf[js.Any],
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "Format"     -> Format.asInstanceOf[js.Any],
@@ -608,8 +610,8 @@ package guardduty {
         "Name"       -> Name.asInstanceOf[js.Any]
       )
 
-      ClientToken.foreach(__v => __obj.update("ClientToken", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateIPSetRequest]
     }
   }
@@ -623,7 +625,7 @@ package guardduty {
     def apply(
         IpSetId: String
     ): CreateIPSetResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IpSetId" -> IpSetId.asInstanceOf[js.Any]
       )
 
@@ -642,7 +644,7 @@ package guardduty {
         AccountDetails: AccountDetails,
         DetectorId: DetectorId
     ): CreateMembersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountDetails" -> AccountDetails.asInstanceOf[js.Any],
         "DetectorId"     -> DetectorId.asInstanceOf[js.Any]
       )
@@ -660,7 +662,7 @@ package guardduty {
     def apply(
         UnprocessedAccounts: UnprocessedAccounts
     ): CreateMembersResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
       )
 
@@ -679,11 +681,11 @@ package guardduty {
         DetectorId: DetectorId,
         FindingTypes: js.UndefOr[FindingTypes] = js.undefined
     ): CreateSampleFindingsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
 
-      FindingTypes.foreach(__v => __obj.update("FindingTypes", __v.asInstanceOf[js.Any]))
+      FindingTypes.foreach(__v => __obj.updateDynamic("FindingTypes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSampleFindingsRequest]
     }
   }
@@ -694,7 +696,7 @@ package guardduty {
   object CreateSampleFindingsResponse {
     def apply(
         ): CreateSampleFindingsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateSampleFindingsResponse]
     }
@@ -721,7 +723,7 @@ package guardduty {
         ClientToken: js.UndefOr[ClientToken] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateThreatIntelSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Activate"   -> Activate.asInstanceOf[js.Any],
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "Format"     -> Format.asInstanceOf[js.Any],
@@ -729,8 +731,8 @@ package guardduty {
         "Name"       -> Name.asInstanceOf[js.Any]
       )
 
-      ClientToken.foreach(__v => __obj.update("ClientToken", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateThreatIntelSetRequest]
     }
   }
@@ -744,7 +746,7 @@ package guardduty {
     def apply(
         ThreatIntelSetId: String
     ): CreateThreatIntelSetResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ThreatIntelSetId" -> ThreatIntelSetId.asInstanceOf[js.Any]
       )
 
@@ -761,7 +763,7 @@ package guardduty {
     def apply(
         AccountIds: AccountIds
     ): DeclineInvitationsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountIds" -> AccountIds.asInstanceOf[js.Any]
       )
 
@@ -778,7 +780,7 @@ package guardduty {
     def apply(
         UnprocessedAccounts: UnprocessedAccounts
     ): DeclineInvitationsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
       )
 
@@ -795,7 +797,7 @@ package guardduty {
     def apply(
         DetectorId: DetectorId
     ): DeleteDetectorRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
 
@@ -809,7 +811,7 @@ package guardduty {
   object DeleteDetectorResponse {
     def apply(
         ): DeleteDetectorResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteDetectorResponse]
     }
@@ -826,7 +828,7 @@ package guardduty {
         DetectorId: DetectorId,
         FilterName: String
     ): DeleteFilterRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "FilterName" -> FilterName.asInstanceOf[js.Any]
       )
@@ -841,7 +843,7 @@ package guardduty {
   object DeleteFilterResponse {
     def apply(
         ): DeleteFilterResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteFilterResponse]
     }
@@ -858,7 +860,7 @@ package guardduty {
         DetectorId: DetectorId,
         IpSetId: String
     ): DeleteIPSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "IpSetId"    -> IpSetId.asInstanceOf[js.Any]
       )
@@ -873,7 +875,7 @@ package guardduty {
   object DeleteIPSetResponse {
     def apply(
         ): DeleteIPSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteIPSetResponse]
     }
@@ -888,7 +890,7 @@ package guardduty {
     def apply(
         AccountIds: AccountIds
     ): DeleteInvitationsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountIds" -> AccountIds.asInstanceOf[js.Any]
       )
 
@@ -905,7 +907,7 @@ package guardduty {
     def apply(
         UnprocessedAccounts: UnprocessedAccounts
     ): DeleteInvitationsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
       )
 
@@ -924,7 +926,7 @@ package guardduty {
         AccountIds: AccountIds,
         DetectorId: DetectorId
     ): DeleteMembersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountIds" -> AccountIds.asInstanceOf[js.Any],
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
@@ -942,7 +944,7 @@ package guardduty {
     def apply(
         UnprocessedAccounts: UnprocessedAccounts
     ): DeleteMembersResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
       )
 
@@ -961,7 +963,7 @@ package guardduty {
         DetectorId: DetectorId,
         ThreatIntelSetId: String
     ): DeleteThreatIntelSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DetectorId"       -> DetectorId.asInstanceOf[js.Any],
         "ThreatIntelSetId" -> ThreatIntelSetId.asInstanceOf[js.Any]
       )
@@ -976,7 +978,7 @@ package guardduty {
   object DeleteThreatIntelSetResponse {
     def apply(
         ): DeleteThreatIntelSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteThreatIntelSetResponse]
     }
@@ -998,7 +1000,7 @@ package guardduty {
     def apply(
         DetectorId: DetectorId
     ): DisassociateFromMasterAccountRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
 
@@ -1012,7 +1014,7 @@ package guardduty {
   object DisassociateFromMasterAccountResponse {
     def apply(
         ): DisassociateFromMasterAccountResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateFromMasterAccountResponse]
     }
@@ -1029,7 +1031,7 @@ package guardduty {
         AccountIds: AccountIds,
         DetectorId: DetectorId
     ): DisassociateMembersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountIds" -> AccountIds.asInstanceOf[js.Any],
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
@@ -1047,7 +1049,7 @@ package guardduty {
     def apply(
         UnprocessedAccounts: UnprocessedAccounts
     ): DisassociateMembersResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
       )
 
@@ -1067,8 +1069,8 @@ package guardduty {
     def apply(
         Domain: js.UndefOr[String] = js.undefined
     ): DnsRequestAction = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Domain.foreach(__v => __obj.update("Domain", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DnsRequestAction]
     }
   }
@@ -1085,8 +1087,8 @@ package guardduty {
     def apply(
         Domain: js.UndefOr[String] = js.undefined
     ): DomainDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Domain.foreach(__v => __obj.update("Domain", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainDetails]
     }
   }
@@ -1103,8 +1105,10 @@ package guardduty {
     def apply(
         ThreatIntelligenceDetails: js.UndefOr[ThreatIntelligenceDetails] = js.undefined
     ): Evidence = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ThreatIntelligenceDetails.foreach(__v => __obj.update("ThreatIntelligenceDetails", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ThreatIntelligenceDetails.foreach(
+        __v => __obj.updateDynamic("ThreatIntelligenceDetails")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[Evidence]
     }
   }
@@ -1163,7 +1167,7 @@ package guardduty {
         Service: js.UndefOr[Service] = js.undefined,
         Title: js.UndefOr[String] = js.undefined
     ): Finding = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId"     -> AccountId.asInstanceOf[js.Any],
         "Arn"           -> Arn.asInstanceOf[js.Any],
         "CreatedAt"     -> CreatedAt.asInstanceOf[js.Any],
@@ -1176,11 +1180,11 @@ package guardduty {
         "UpdatedAt"     -> UpdatedAt.asInstanceOf[js.Any]
       )
 
-      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Partition.foreach(__v => __obj.update("Partition", __v.asInstanceOf[js.Any]))
-      Service.foreach(__v => __obj.update("Service", __v.asInstanceOf[js.Any]))
-      Title.foreach(__v => __obj.update("Title", __v.asInstanceOf[js.Any]))
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Partition.foreach(__v => __obj.updateDynamic("Partition")(__v.asInstanceOf[js.Any]))
+      Service.foreach(__v => __obj.updateDynamic("Service")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Finding]
     }
   }
@@ -1197,8 +1201,8 @@ package guardduty {
     def apply(
         Criterion: js.UndefOr[Criterion] = js.undefined
     ): FindingCriteria = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Criterion.foreach(__v => __obj.update("Criterion", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Criterion.foreach(__v => __obj.updateDynamic("Criterion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FindingCriteria]
     }
   }
@@ -1229,8 +1233,8 @@ package guardduty {
     def apply(
         CountBySeverity: js.UndefOr[CountBySeverity] = js.undefined
     ): FindingStatistics = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CountBySeverity.foreach(__v => __obj.update("CountBySeverity", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CountBySeverity.foreach(__v => __obj.updateDynamic("CountBySeverity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FindingStatistics]
     }
   }
@@ -1249,9 +1253,9 @@ package guardduty {
         Lat: js.UndefOr[Double] = js.undefined,
         Lon: js.UndefOr[Double] = js.undefined
     ): GeoLocation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Lat.foreach(__v => __obj.update("Lat", __v.asInstanceOf[js.Any]))
-      Lon.foreach(__v => __obj.update("Lon", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Lat.foreach(__v => __obj.updateDynamic("Lat")(__v.asInstanceOf[js.Any]))
+      Lon.foreach(__v => __obj.updateDynamic("Lon")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GeoLocation]
     }
   }
@@ -1265,7 +1269,7 @@ package guardduty {
     def apply(
         DetectorId: DetectorId
     ): GetDetectorRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
 
@@ -1292,15 +1296,17 @@ package guardduty {
         Tags: js.UndefOr[TagMap] = js.undefined,
         UpdatedAt: js.UndefOr[String] = js.undefined
     ): GetDetectorResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServiceRole" -> ServiceRole.asInstanceOf[js.Any],
         "Status"      -> Status.asInstanceOf[js.Any]
       )
 
-      CreatedAt.foreach(__v => __obj.update("CreatedAt", __v.asInstanceOf[js.Any]))
-      FindingPublishingFrequency.foreach(__v => __obj.update("FindingPublishingFrequency", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      UpdatedAt.foreach(__v => __obj.update("UpdatedAt", __v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      FindingPublishingFrequency.foreach(
+        __v => __obj.updateDynamic("FindingPublishingFrequency")(__v.asInstanceOf[js.Any])
+      )
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDetectorResponse]
     }
   }
@@ -1316,7 +1322,7 @@ package guardduty {
         DetectorId: DetectorId,
         FilterName: String
     ): GetFilterRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "FilterName" -> FilterName.asInstanceOf[js.Any]
       )
@@ -1344,15 +1350,15 @@ package guardduty {
         Rank: js.UndefOr[FilterRank] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined
     ): GetFilterResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Action"          -> Action.asInstanceOf[js.Any],
         "FindingCriteria" -> FindingCriteria.asInstanceOf[js.Any],
         "Name"            -> Name.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Rank.foreach(__v => __obj.update("Rank", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Rank.foreach(__v => __obj.updateDynamic("Rank")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFilterResponse]
     }
   }
@@ -1370,12 +1376,12 @@ package guardduty {
         FindingIds: FindingIds,
         SortCriteria: js.UndefOr[SortCriteria] = js.undefined
     ): GetFindingsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "FindingIds" -> FindingIds.asInstanceOf[js.Any]
       )
 
-      SortCriteria.foreach(__v => __obj.update("SortCriteria", __v.asInstanceOf[js.Any]))
+      SortCriteria.foreach(__v => __obj.updateDynamic("SortCriteria")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFindingsRequest]
     }
   }
@@ -1389,7 +1395,7 @@ package guardduty {
     def apply(
         Findings: Findings
     ): GetFindingsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Findings" -> Findings.asInstanceOf[js.Any]
       )
 
@@ -1410,12 +1416,12 @@ package guardduty {
         FindingStatisticTypes: FindingStatisticTypes,
         FindingCriteria: js.UndefOr[FindingCriteria] = js.undefined
     ): GetFindingsStatisticsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DetectorId"            -> DetectorId.asInstanceOf[js.Any],
         "FindingStatisticTypes" -> FindingStatisticTypes.asInstanceOf[js.Any]
       )
 
-      FindingCriteria.foreach(__v => __obj.update("FindingCriteria", __v.asInstanceOf[js.Any]))
+      FindingCriteria.foreach(__v => __obj.updateDynamic("FindingCriteria")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFindingsStatisticsRequest]
     }
   }
@@ -1429,7 +1435,7 @@ package guardduty {
     def apply(
         FindingStatistics: FindingStatistics
     ): GetFindingsStatisticsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FindingStatistics" -> FindingStatistics.asInstanceOf[js.Any]
       )
 
@@ -1448,7 +1454,7 @@ package guardduty {
         DetectorId: DetectorId,
         IpSetId: String
     ): GetIPSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "IpSetId"    -> IpSetId.asInstanceOf[js.Any]
       )
@@ -1474,14 +1480,14 @@ package guardduty {
         Status: IpSetStatus,
         Tags: js.UndefOr[TagMap] = js.undefined
     ): GetIPSetResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Format"   -> Format.asInstanceOf[js.Any],
         "Location" -> Location.asInstanceOf[js.Any],
         "Name"     -> Name.asInstanceOf[js.Any],
         "Status"   -> Status.asInstanceOf[js.Any]
       )
 
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetIPSetResponse]
     }
   }
@@ -1492,7 +1498,7 @@ package guardduty {
   object GetInvitationsCountRequest {
     def apply(
         ): GetInvitationsCountRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetInvitationsCountRequest]
     }
@@ -1507,8 +1513,8 @@ package guardduty {
     def apply(
         InvitationsCount: js.UndefOr[Int] = js.undefined
     ): GetInvitationsCountResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InvitationsCount.foreach(__v => __obj.update("InvitationsCount", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InvitationsCount.foreach(__v => __obj.updateDynamic("InvitationsCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetInvitationsCountResponse]
     }
   }
@@ -1522,7 +1528,7 @@ package guardduty {
     def apply(
         DetectorId: DetectorId
     ): GetMasterAccountRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
 
@@ -1539,7 +1545,7 @@ package guardduty {
     def apply(
         Master: Master
     ): GetMasterAccountResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Master" -> Master.asInstanceOf[js.Any]
       )
 
@@ -1558,7 +1564,7 @@ package guardduty {
         AccountIds: AccountIds,
         DetectorId: DetectorId
     ): GetMembersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountIds" -> AccountIds.asInstanceOf[js.Any],
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
@@ -1578,7 +1584,7 @@ package guardduty {
         Members: Members,
         UnprocessedAccounts: UnprocessedAccounts
     ): GetMembersResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Members"             -> Members.asInstanceOf[js.Any],
         "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
       )
@@ -1598,7 +1604,7 @@ package guardduty {
         DetectorId: DetectorId,
         ThreatIntelSetId: String
     ): GetThreatIntelSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DetectorId"       -> DetectorId.asInstanceOf[js.Any],
         "ThreatIntelSetId" -> ThreatIntelSetId.asInstanceOf[js.Any]
       )
@@ -1624,14 +1630,14 @@ package guardduty {
         Status: ThreatIntelSetStatus,
         Tags: js.UndefOr[TagMap] = js.undefined
     ): GetThreatIntelSetResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Format"   -> Format.asInstanceOf[js.Any],
         "Location" -> Location.asInstanceOf[js.Any],
         "Name"     -> Name.asInstanceOf[js.Any],
         "Status"   -> Status.asInstanceOf[js.Any]
       )
 
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetThreatIntelSetResponse]
     }
   }
@@ -1650,9 +1656,9 @@ package guardduty {
         Arn: js.UndefOr[String] = js.undefined,
         Id: js.UndefOr[String] = js.undefined
     ): IamInstanceProfile = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IamInstanceProfile]
     }
   }
@@ -1691,19 +1697,19 @@ package guardduty {
         ProductCodes: js.UndefOr[ProductCodes] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): InstanceDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
-      IamInstanceProfile.foreach(__v => __obj.update("IamInstanceProfile", __v.asInstanceOf[js.Any]))
-      ImageDescription.foreach(__v => __obj.update("ImageDescription", __v.asInstanceOf[js.Any]))
-      ImageId.foreach(__v => __obj.update("ImageId", __v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      InstanceState.foreach(__v => __obj.update("InstanceState", __v.asInstanceOf[js.Any]))
-      InstanceType.foreach(__v => __obj.update("InstanceType", __v.asInstanceOf[js.Any]))
-      LaunchTime.foreach(__v => __obj.update("LaunchTime", __v.asInstanceOf[js.Any]))
-      NetworkInterfaces.foreach(__v => __obj.update("NetworkInterfaces", __v.asInstanceOf[js.Any]))
-      Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
-      ProductCodes.foreach(__v => __obj.update("ProductCodes", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      IamInstanceProfile.foreach(__v => __obj.updateDynamic("IamInstanceProfile")(__v.asInstanceOf[js.Any]))
+      ImageDescription.foreach(__v => __obj.updateDynamic("ImageDescription")(__v.asInstanceOf[js.Any]))
+      ImageId.foreach(__v => __obj.updateDynamic("ImageId")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      InstanceState.foreach(__v => __obj.updateDynamic("InstanceState")(__v.asInstanceOf[js.Any]))
+      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
+      LaunchTime.foreach(__v => __obj.updateDynamic("LaunchTime")(__v.asInstanceOf[js.Any]))
+      NetworkInterfaces.foreach(__v => __obj.updateDynamic("NetworkInterfaces")(__v.asInstanceOf[js.Any]))
+      Platform.foreach(__v => __obj.updateDynamic("Platform")(__v.asInstanceOf[js.Any]))
+      ProductCodes.foreach(__v => __obj.updateDynamic("ProductCodes")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceDetails]
     }
   }
@@ -1726,11 +1732,11 @@ package guardduty {
         InvitedAt: js.UndefOr[String] = js.undefined,
         RelationshipStatus: js.UndefOr[String] = js.undefined
     ): Invitation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccountId.foreach(__v => __obj.update("AccountId", __v.asInstanceOf[js.Any]))
-      InvitationId.foreach(__v => __obj.update("InvitationId", __v.asInstanceOf[js.Any]))
-      InvitedAt.foreach(__v => __obj.update("InvitedAt", __v.asInstanceOf[js.Any]))
-      RelationshipStatus.foreach(__v => __obj.update("RelationshipStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      InvitationId.foreach(__v => __obj.updateDynamic("InvitationId")(__v.asInstanceOf[js.Any]))
+      InvitedAt.foreach(__v => __obj.updateDynamic("InvitedAt")(__v.asInstanceOf[js.Any]))
+      RelationshipStatus.foreach(__v => __obj.updateDynamic("RelationshipStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Invitation]
     }
   }
@@ -1750,13 +1756,13 @@ package guardduty {
         DisableEmailNotification: js.UndefOr[Boolean] = js.undefined,
         Message: js.UndefOr[String] = js.undefined
     ): InviteMembersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountIds" -> AccountIds.asInstanceOf[js.Any],
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
 
-      DisableEmailNotification.foreach(__v => __obj.update("DisableEmailNotification", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      DisableEmailNotification.foreach(__v => __obj.updateDynamic("DisableEmailNotification")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InviteMembersRequest]
     }
   }
@@ -1770,7 +1776,7 @@ package guardduty {
     def apply(
         UnprocessedAccounts: UnprocessedAccounts
     ): InviteMembersResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
       )
 
@@ -1812,9 +1818,9 @@ package guardduty {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListDetectorsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDetectorsRequest]
     }
   }
@@ -1830,11 +1836,11 @@ package guardduty {
         DetectorIds: DetectorIds,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListDetectorsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DetectorIds" -> DetectorIds.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDetectorsResponse]
     }
   }
@@ -1852,12 +1858,12 @@ package guardduty {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListFiltersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFiltersRequest]
     }
   }
@@ -1873,11 +1879,11 @@ package guardduty {
         FilterNames: FilterNames,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListFiltersResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FilterNames" -> FilterNames.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFiltersResponse]
     }
   }
@@ -1899,14 +1905,14 @@ package guardduty {
         NextToken: js.UndefOr[String] = js.undefined,
         SortCriteria: js.UndefOr[SortCriteria] = js.undefined
     ): ListFindingsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
 
-      FindingCriteria.foreach(__v => __obj.update("FindingCriteria", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      SortCriteria.foreach(__v => __obj.update("SortCriteria", __v.asInstanceOf[js.Any]))
+      FindingCriteria.foreach(__v => __obj.updateDynamic("FindingCriteria")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SortCriteria.foreach(__v => __obj.updateDynamic("SortCriteria")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFindingsRequest]
     }
   }
@@ -1922,11 +1928,11 @@ package guardduty {
         FindingIds: FindingIds,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListFindingsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FindingIds" -> FindingIds.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFindingsResponse]
     }
   }
@@ -1944,12 +1950,12 @@ package guardduty {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListIPSetsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListIPSetsRequest]
     }
   }
@@ -1965,11 +1971,11 @@ package guardduty {
         IpSetIds: IpSetIds,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListIPSetsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IpSetIds" -> IpSetIds.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListIPSetsResponse]
     }
   }
@@ -1985,9 +1991,9 @@ package guardduty {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListInvitationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListInvitationsRequest]
     }
   }
@@ -2003,9 +2009,9 @@ package guardduty {
         Invitations: js.UndefOr[Invitations] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListInvitationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Invitations.foreach(__v => __obj.update("Invitations", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Invitations.foreach(__v => __obj.updateDynamic("Invitations")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListInvitationsResponse]
     }
   }
@@ -2025,13 +2031,13 @@ package guardduty {
         NextToken: js.UndefOr[String] = js.undefined,
         OnlyAssociated: js.UndefOr[String] = js.undefined
     ): ListMembersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      OnlyAssociated.foreach(__v => __obj.update("OnlyAssociated", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      OnlyAssociated.foreach(__v => __obj.updateDynamic("OnlyAssociated")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListMembersRequest]
     }
   }
@@ -2047,9 +2053,9 @@ package guardduty {
         Members: js.UndefOr[Members] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListMembersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Members.foreach(__v => __obj.update("Members", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Members.foreach(__v => __obj.updateDynamic("Members")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListMembersResponse]
     }
   }
@@ -2063,7 +2069,7 @@ package guardduty {
     def apply(
         ResourceArn: GuardDutyArn
     ): ListTagsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
@@ -2080,8 +2086,8 @@ package guardduty {
     def apply(
         Tags: js.UndefOr[TagMap] = js.undefined
     ): ListTagsForResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
@@ -2099,12 +2105,12 @@ package guardduty {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListThreatIntelSetsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListThreatIntelSetsRequest]
     }
   }
@@ -2120,11 +2126,11 @@ package guardduty {
         ThreatIntelSetIds: ThreatIntelSetIds,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListThreatIntelSetsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ThreatIntelSetIds" -> ThreatIntelSetIds.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListThreatIntelSetsResponse]
     }
   }
@@ -2143,9 +2149,9 @@ package guardduty {
         Port: js.UndefOr[Int] = js.undefined,
         PortName: js.UndefOr[String] = js.undefined
     ): LocalPortDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
-      PortName.foreach(__v => __obj.update("PortName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      PortName.foreach(__v => __obj.updateDynamic("PortName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LocalPortDetails]
     }
   }
@@ -2168,11 +2174,11 @@ package guardduty {
         InvitedAt: js.UndefOr[String] = js.undefined,
         RelationshipStatus: js.UndefOr[String] = js.undefined
     ): Master = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccountId.foreach(__v => __obj.update("AccountId", __v.asInstanceOf[js.Any]))
-      InvitationId.foreach(__v => __obj.update("InvitationId", __v.asInstanceOf[js.Any]))
-      InvitedAt.foreach(__v => __obj.update("InvitedAt", __v.asInstanceOf[js.Any]))
-      RelationshipStatus.foreach(__v => __obj.update("RelationshipStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      InvitationId.foreach(__v => __obj.updateDynamic("InvitationId")(__v.asInstanceOf[js.Any]))
+      InvitedAt.foreach(__v => __obj.updateDynamic("InvitedAt")(__v.asInstanceOf[js.Any]))
+      RelationshipStatus.foreach(__v => __obj.updateDynamic("RelationshipStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Master]
     }
   }
@@ -2201,7 +2207,7 @@ package guardduty {
         DetectorId: js.UndefOr[DetectorId] = js.undefined,
         InvitedAt: js.UndefOr[String] = js.undefined
     ): Member = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId"          -> AccountId.asInstanceOf[js.Any],
         "Email"              -> Email.asInstanceOf[js.Any],
         "MasterId"           -> MasterId.asInstanceOf[js.Any],
@@ -2209,8 +2215,8 @@ package guardduty {
         "UpdatedAt"          -> UpdatedAt.asInstanceOf[js.Any]
       )
 
-      DetectorId.foreach(__v => __obj.update("DetectorId", __v.asInstanceOf[js.Any]))
-      InvitedAt.foreach(__v => __obj.update("InvitedAt", __v.asInstanceOf[js.Any]))
+      DetectorId.foreach(__v => __obj.updateDynamic("DetectorId")(__v.asInstanceOf[js.Any]))
+      InvitedAt.foreach(__v => __obj.updateDynamic("InvitedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Member]
     }
   }
@@ -2237,13 +2243,13 @@ package guardduty {
         RemoteIpDetails: js.UndefOr[RemoteIpDetails] = js.undefined,
         RemotePortDetails: js.UndefOr[RemotePortDetails] = js.undefined
     ): NetworkConnectionAction = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Blocked.foreach(__v => __obj.update("Blocked", __v.asInstanceOf[js.Any]))
-      ConnectionDirection.foreach(__v => __obj.update("ConnectionDirection", __v.asInstanceOf[js.Any]))
-      LocalPortDetails.foreach(__v => __obj.update("LocalPortDetails", __v.asInstanceOf[js.Any]))
-      Protocol.foreach(__v => __obj.update("Protocol", __v.asInstanceOf[js.Any]))
-      RemoteIpDetails.foreach(__v => __obj.update("RemoteIpDetails", __v.asInstanceOf[js.Any]))
-      RemotePortDetails.foreach(__v => __obj.update("RemotePortDetails", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Blocked.foreach(__v => __obj.updateDynamic("Blocked")(__v.asInstanceOf[js.Any]))
+      ConnectionDirection.foreach(__v => __obj.updateDynamic("ConnectionDirection")(__v.asInstanceOf[js.Any]))
+      LocalPortDetails.foreach(__v => __obj.updateDynamic("LocalPortDetails")(__v.asInstanceOf[js.Any]))
+      Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
+      RemoteIpDetails.foreach(__v => __obj.updateDynamic("RemoteIpDetails")(__v.asInstanceOf[js.Any]))
+      RemotePortDetails.foreach(__v => __obj.updateDynamic("RemotePortDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NetworkConnectionAction]
     }
   }
@@ -2278,17 +2284,17 @@ package guardduty {
         SubnetId: js.UndefOr[String] = js.undefined,
         VpcId: js.UndefOr[String] = js.undefined
     ): NetworkInterface = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Ipv6Addresses.foreach(__v => __obj.update("Ipv6Addresses", __v.asInstanceOf[js.Any]))
-      NetworkInterfaceId.foreach(__v => __obj.update("NetworkInterfaceId", __v.asInstanceOf[js.Any]))
-      PrivateDnsName.foreach(__v => __obj.update("PrivateDnsName", __v.asInstanceOf[js.Any]))
-      PrivateIpAddress.foreach(__v => __obj.update("PrivateIpAddress", __v.asInstanceOf[js.Any]))
-      PrivateIpAddresses.foreach(__v => __obj.update("PrivateIpAddresses", __v.asInstanceOf[js.Any]))
-      PublicDnsName.foreach(__v => __obj.update("PublicDnsName", __v.asInstanceOf[js.Any]))
-      PublicIp.foreach(__v => __obj.update("PublicIp", __v.asInstanceOf[js.Any]))
-      SecurityGroups.foreach(__v => __obj.update("SecurityGroups", __v.asInstanceOf[js.Any]))
-      SubnetId.foreach(__v => __obj.update("SubnetId", __v.asInstanceOf[js.Any]))
-      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Ipv6Addresses.foreach(__v => __obj.updateDynamic("Ipv6Addresses")(__v.asInstanceOf[js.Any]))
+      NetworkInterfaceId.foreach(__v => __obj.updateDynamic("NetworkInterfaceId")(__v.asInstanceOf[js.Any]))
+      PrivateDnsName.foreach(__v => __obj.updateDynamic("PrivateDnsName")(__v.asInstanceOf[js.Any]))
+      PrivateIpAddress.foreach(__v => __obj.updateDynamic("PrivateIpAddress")(__v.asInstanceOf[js.Any]))
+      PrivateIpAddresses.foreach(__v => __obj.updateDynamic("PrivateIpAddresses")(__v.asInstanceOf[js.Any]))
+      PublicDnsName.foreach(__v => __obj.updateDynamic("PublicDnsName")(__v.asInstanceOf[js.Any]))
+      PublicIp.foreach(__v => __obj.updateDynamic("PublicIp")(__v.asInstanceOf[js.Any]))
+      SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
+      SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NetworkInterface]
     }
   }
@@ -2318,11 +2324,11 @@ package guardduty {
         Isp: js.UndefOr[String] = js.undefined,
         Org: js.UndefOr[String] = js.undefined
     ): Organization = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Asn.foreach(__v => __obj.update("Asn", __v.asInstanceOf[js.Any]))
-      AsnOrg.foreach(__v => __obj.update("AsnOrg", __v.asInstanceOf[js.Any]))
-      Isp.foreach(__v => __obj.update("Isp", __v.asInstanceOf[js.Any]))
-      Org.foreach(__v => __obj.update("Org", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Asn.foreach(__v => __obj.updateDynamic("Asn")(__v.asInstanceOf[js.Any]))
+      AsnOrg.foreach(__v => __obj.updateDynamic("AsnOrg")(__v.asInstanceOf[js.Any]))
+      Isp.foreach(__v => __obj.updateDynamic("Isp")(__v.asInstanceOf[js.Any]))
+      Org.foreach(__v => __obj.updateDynamic("Org")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Organization]
     }
   }
@@ -2341,9 +2347,9 @@ package guardduty {
         Blocked: js.UndefOr[Boolean] = js.undefined,
         PortProbeDetails: js.UndefOr[PortProbeDetails] = js.undefined
     ): PortProbeAction = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Blocked.foreach(__v => __obj.update("Blocked", __v.asInstanceOf[js.Any]))
-      PortProbeDetails.foreach(__v => __obj.update("PortProbeDetails", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Blocked.foreach(__v => __obj.updateDynamic("Blocked")(__v.asInstanceOf[js.Any]))
+      PortProbeDetails.foreach(__v => __obj.updateDynamic("PortProbeDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PortProbeAction]
     }
   }
@@ -2362,9 +2368,9 @@ package guardduty {
         LocalPortDetails: js.UndefOr[LocalPortDetails] = js.undefined,
         RemoteIpDetails: js.UndefOr[RemoteIpDetails] = js.undefined
     ): PortProbeDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LocalPortDetails.foreach(__v => __obj.update("LocalPortDetails", __v.asInstanceOf[js.Any]))
-      RemoteIpDetails.foreach(__v => __obj.update("RemoteIpDetails", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LocalPortDetails.foreach(__v => __obj.updateDynamic("LocalPortDetails")(__v.asInstanceOf[js.Any]))
+      RemoteIpDetails.foreach(__v => __obj.updateDynamic("RemoteIpDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PortProbeDetail]
     }
   }
@@ -2383,9 +2389,9 @@ package guardduty {
         PrivateDnsName: js.UndefOr[String] = js.undefined,
         PrivateIpAddress: js.UndefOr[String] = js.undefined
     ): PrivateIpAddressDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PrivateDnsName.foreach(__v => __obj.update("PrivateDnsName", __v.asInstanceOf[js.Any]))
-      PrivateIpAddress.foreach(__v => __obj.update("PrivateIpAddress", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PrivateDnsName.foreach(__v => __obj.updateDynamic("PrivateDnsName")(__v.asInstanceOf[js.Any]))
+      PrivateIpAddress.foreach(__v => __obj.updateDynamic("PrivateIpAddress")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PrivateIpAddressDetails]
     }
   }
@@ -2404,9 +2410,9 @@ package guardduty {
         Code: js.UndefOr[String] = js.undefined,
         ProductType: js.UndefOr[String] = js.undefined
     ): ProductCode = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Code.foreach(__v => __obj.update("Code", __v.asInstanceOf[js.Any]))
-      ProductType.foreach(__v => __obj.update("ProductType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
+      ProductType.foreach(__v => __obj.updateDynamic("ProductType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProductCode]
     }
   }
@@ -2431,12 +2437,12 @@ package guardduty {
         IpAddressV4: js.UndefOr[String] = js.undefined,
         Organization: js.UndefOr[Organization] = js.undefined
     ): RemoteIpDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      City.foreach(__v => __obj.update("City", __v.asInstanceOf[js.Any]))
-      Country.foreach(__v => __obj.update("Country", __v.asInstanceOf[js.Any]))
-      GeoLocation.foreach(__v => __obj.update("GeoLocation", __v.asInstanceOf[js.Any]))
-      IpAddressV4.foreach(__v => __obj.update("IpAddressV4", __v.asInstanceOf[js.Any]))
-      Organization.foreach(__v => __obj.update("Organization", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      City.foreach(__v => __obj.updateDynamic("City")(__v.asInstanceOf[js.Any]))
+      Country.foreach(__v => __obj.updateDynamic("Country")(__v.asInstanceOf[js.Any]))
+      GeoLocation.foreach(__v => __obj.updateDynamic("GeoLocation")(__v.asInstanceOf[js.Any]))
+      IpAddressV4.foreach(__v => __obj.updateDynamic("IpAddressV4")(__v.asInstanceOf[js.Any]))
+      Organization.foreach(__v => __obj.updateDynamic("Organization")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RemoteIpDetails]
     }
   }
@@ -2455,9 +2461,9 @@ package guardduty {
         Port: js.UndefOr[Int] = js.undefined,
         PortName: js.UndefOr[String] = js.undefined
     ): RemotePortDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
-      PortName.foreach(__v => __obj.update("PortName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      PortName.foreach(__v => __obj.updateDynamic("PortName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RemotePortDetails]
     }
   }
@@ -2478,10 +2484,10 @@ package guardduty {
         InstanceDetails: js.UndefOr[InstanceDetails] = js.undefined,
         ResourceType: js.UndefOr[String] = js.undefined
     ): Resource = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccessKeyDetails.foreach(__v => __obj.update("AccessKeyDetails", __v.asInstanceOf[js.Any]))
-      InstanceDetails.foreach(__v => __obj.update("InstanceDetails", __v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccessKeyDetails.foreach(__v => __obj.updateDynamic("AccessKeyDetails")(__v.asInstanceOf[js.Any]))
+      InstanceDetails.foreach(__v => __obj.updateDynamic("InstanceDetails")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Resource]
     }
   }
@@ -2500,9 +2506,9 @@ package guardduty {
         GroupId: js.UndefOr[String] = js.undefined,
         GroupName: js.UndefOr[String] = js.undefined
     ): SecurityGroup = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GroupId.foreach(__v => __obj.update("GroupId", __v.asInstanceOf[js.Any]))
-      GroupName.foreach(__v => __obj.update("GroupName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GroupId.foreach(__v => __obj.updateDynamic("GroupId")(__v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SecurityGroup]
     }
   }
@@ -2537,17 +2543,17 @@ package guardduty {
         ServiceName: js.UndefOr[String] = js.undefined,
         UserFeedback: js.UndefOr[String] = js.undefined
     ): Service = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Action.foreach(__v => __obj.update("Action", __v.asInstanceOf[js.Any]))
-      Archived.foreach(__v => __obj.update("Archived", __v.asInstanceOf[js.Any]))
-      Count.foreach(__v => __obj.update("Count", __v.asInstanceOf[js.Any]))
-      DetectorId.foreach(__v => __obj.update("DetectorId", __v.asInstanceOf[js.Any]))
-      EventFirstSeen.foreach(__v => __obj.update("EventFirstSeen", __v.asInstanceOf[js.Any]))
-      EventLastSeen.foreach(__v => __obj.update("EventLastSeen", __v.asInstanceOf[js.Any]))
-      Evidence.foreach(__v => __obj.update("Evidence", __v.asInstanceOf[js.Any]))
-      ResourceRole.foreach(__v => __obj.update("ResourceRole", __v.asInstanceOf[js.Any]))
-      ServiceName.foreach(__v => __obj.update("ServiceName", __v.asInstanceOf[js.Any]))
-      UserFeedback.foreach(__v => __obj.update("UserFeedback", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      Archived.foreach(__v => __obj.updateDynamic("Archived")(__v.asInstanceOf[js.Any]))
+      Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
+      DetectorId.foreach(__v => __obj.updateDynamic("DetectorId")(__v.asInstanceOf[js.Any]))
+      EventFirstSeen.foreach(__v => __obj.updateDynamic("EventFirstSeen")(__v.asInstanceOf[js.Any]))
+      EventLastSeen.foreach(__v => __obj.updateDynamic("EventLastSeen")(__v.asInstanceOf[js.Any]))
+      Evidence.foreach(__v => __obj.updateDynamic("Evidence")(__v.asInstanceOf[js.Any]))
+      ResourceRole.foreach(__v => __obj.updateDynamic("ResourceRole")(__v.asInstanceOf[js.Any]))
+      ServiceName.foreach(__v => __obj.updateDynamic("ServiceName")(__v.asInstanceOf[js.Any]))
+      UserFeedback.foreach(__v => __obj.updateDynamic("UserFeedback")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Service]
     }
   }
@@ -2566,9 +2572,9 @@ package guardduty {
         AttributeName: js.UndefOr[String] = js.undefined,
         OrderBy: js.UndefOr[OrderBy] = js.undefined
     ): SortCriteria = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttributeName.foreach(__v => __obj.update("AttributeName", __v.asInstanceOf[js.Any]))
-      OrderBy.foreach(__v => __obj.update("OrderBy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttributeName.foreach(__v => __obj.updateDynamic("AttributeName")(__v.asInstanceOf[js.Any]))
+      OrderBy.foreach(__v => __obj.updateDynamic("OrderBy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SortCriteria]
     }
   }
@@ -2584,7 +2590,7 @@ package guardduty {
         AccountIds: AccountIds,
         DetectorId: DetectorId
     ): StartMonitoringMembersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountIds" -> AccountIds.asInstanceOf[js.Any],
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
@@ -2602,7 +2608,7 @@ package guardduty {
     def apply(
         UnprocessedAccounts: UnprocessedAccounts
     ): StartMonitoringMembersResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
       )
 
@@ -2621,7 +2627,7 @@ package guardduty {
         AccountIds: AccountIds,
         DetectorId: DetectorId
     ): StopMonitoringMembersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountIds" -> AccountIds.asInstanceOf[js.Any],
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
@@ -2639,7 +2645,7 @@ package guardduty {
     def apply(
         UnprocessedAccounts: UnprocessedAccounts
     ): StopMonitoringMembersResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UnprocessedAccounts" -> UnprocessedAccounts.asInstanceOf[js.Any]
       )
 
@@ -2661,9 +2667,9 @@ package guardduty {
         Key: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
     ): Tag = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tag]
     }
   }
@@ -2679,7 +2685,7 @@ package guardduty {
         ResourceArn: GuardDutyArn,
         Tags: TagMap
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
       )
@@ -2694,7 +2700,7 @@ package guardduty {
   object TagResourceResponse {
     def apply(
         ): TagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -2737,9 +2743,9 @@ package guardduty {
         ThreatListName: js.UndefOr[String] = js.undefined,
         ThreatNames: js.UndefOr[ThreatNames] = js.undefined
     ): ThreatIntelligenceDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ThreatListName.foreach(__v => __obj.update("ThreatListName", __v.asInstanceOf[js.Any]))
-      ThreatNames.foreach(__v => __obj.update("ThreatNames", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ThreatListName.foreach(__v => __obj.updateDynamic("ThreatListName")(__v.asInstanceOf[js.Any]))
+      ThreatNames.foreach(__v => __obj.updateDynamic("ThreatNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ThreatIntelligenceDetail]
     }
   }
@@ -2755,7 +2761,7 @@ package guardduty {
         DetectorId: DetectorId,
         FindingIds: FindingIds
     ): UnarchiveFindingsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "FindingIds" -> FindingIds.asInstanceOf[js.Any]
       )
@@ -2770,7 +2776,7 @@ package guardduty {
   object UnarchiveFindingsResponse {
     def apply(
         ): UnarchiveFindingsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UnarchiveFindingsResponse]
     }
@@ -2790,7 +2796,7 @@ package guardduty {
         AccountId: AccountId,
         Result: String
     ): UnprocessedAccount = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountId" -> AccountId.asInstanceOf[js.Any],
         "Result"    -> Result.asInstanceOf[js.Any]
       )
@@ -2810,7 +2816,7 @@ package guardduty {
         ResourceArn: GuardDutyArn,
         TagKeys: TagKeyList
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
       )
@@ -2825,7 +2831,7 @@ package guardduty {
   object UntagResourceResponse {
     def apply(
         ): UntagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -2844,12 +2850,14 @@ package guardduty {
         Enable: js.UndefOr[Boolean] = js.undefined,
         FindingPublishingFrequency: js.UndefOr[FindingPublishingFrequency] = js.undefined
     ): UpdateDetectorRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DetectorId" -> DetectorId.asInstanceOf[js.Any]
       )
 
-      Enable.foreach(__v => __obj.update("Enable", __v.asInstanceOf[js.Any]))
-      FindingPublishingFrequency.foreach(__v => __obj.update("FindingPublishingFrequency", __v.asInstanceOf[js.Any]))
+      Enable.foreach(__v => __obj.updateDynamic("Enable")(__v.asInstanceOf[js.Any]))
+      FindingPublishingFrequency.foreach(
+        __v => __obj.updateDynamic("FindingPublishingFrequency")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[UpdateDetectorRequest]
     }
   }
@@ -2860,7 +2868,7 @@ package guardduty {
   object UpdateDetectorResponse {
     def apply(
         ): UpdateDetectorResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateDetectorResponse]
     }
@@ -2885,15 +2893,15 @@ package guardduty {
         FindingCriteria: js.UndefOr[FindingCriteria] = js.undefined,
         Rank: js.UndefOr[FilterRank] = js.undefined
     ): UpdateFilterRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "FilterName" -> FilterName.asInstanceOf[js.Any]
       )
 
-      Action.foreach(__v => __obj.update("Action", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      FindingCriteria.foreach(__v => __obj.update("FindingCriteria", __v.asInstanceOf[js.Any]))
-      Rank.foreach(__v => __obj.update("Rank", __v.asInstanceOf[js.Any]))
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      FindingCriteria.foreach(__v => __obj.updateDynamic("FindingCriteria")(__v.asInstanceOf[js.Any]))
+      Rank.foreach(__v => __obj.updateDynamic("Rank")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFilterRequest]
     }
   }
@@ -2907,7 +2915,7 @@ package guardduty {
     def apply(
         Name: FilterName
     ): UpdateFilterResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -2930,13 +2938,13 @@ package guardduty {
         FindingIds: FindingIds,
         Comments: js.UndefOr[String] = js.undefined
     ): UpdateFindingsFeedbackRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "Feedback"   -> Feedback.asInstanceOf[js.Any],
         "FindingIds" -> FindingIds.asInstanceOf[js.Any]
       )
 
-      Comments.foreach(__v => __obj.update("Comments", __v.asInstanceOf[js.Any]))
+      Comments.foreach(__v => __obj.updateDynamic("Comments")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFindingsFeedbackRequest]
     }
   }
@@ -2947,7 +2955,7 @@ package guardduty {
   object UpdateFindingsFeedbackResponse {
     def apply(
         ): UpdateFindingsFeedbackResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateFindingsFeedbackResponse]
     }
@@ -2970,14 +2978,14 @@ package guardduty {
         Location: js.UndefOr[Location] = js.undefined,
         Name: js.UndefOr[Name] = js.undefined
     ): UpdateIPSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DetectorId" -> DetectorId.asInstanceOf[js.Any],
         "IpSetId"    -> IpSetId.asInstanceOf[js.Any]
       )
 
-      Activate.foreach(__v => __obj.update("Activate", __v.asInstanceOf[js.Any]))
-      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Activate.foreach(__v => __obj.updateDynamic("Activate")(__v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateIPSetRequest]
     }
   }
@@ -2988,7 +2996,7 @@ package guardduty {
   object UpdateIPSetResponse {
     def apply(
         ): UpdateIPSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateIPSetResponse]
     }
@@ -3011,14 +3019,14 @@ package guardduty {
         Location: js.UndefOr[Location] = js.undefined,
         Name: js.UndefOr[Name] = js.undefined
     ): UpdateThreatIntelSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DetectorId"       -> DetectorId.asInstanceOf[js.Any],
         "ThreatIntelSetId" -> ThreatIntelSetId.asInstanceOf[js.Any]
       )
 
-      Activate.foreach(__v => __obj.update("Activate", __v.asInstanceOf[js.Any]))
-      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Activate.foreach(__v => __obj.updateDynamic("Activate")(__v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateThreatIntelSetRequest]
     }
   }
@@ -3029,7 +3037,7 @@ package guardduty {
   object UpdateThreatIntelSetResponse {
     def apply(
         ): UpdateThreatIntelSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateThreatIntelSetResponse]
     }

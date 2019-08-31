@@ -319,9 +319,9 @@ package opsworks {
         ConfigurationManager: js.UndefOr[StackConfigurationManager] = js.undefined,
         Version: js.UndefOr[String] = js.undefined
     ): AgentVersion = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConfigurationManager.foreach(__v => __obj.update("ConfigurationManager", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConfigurationManager.foreach(__v => __obj.updateDynamic("ConfigurationManager")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AgentVersion]
     }
   }
@@ -364,21 +364,21 @@ package opsworks {
         StackId: js.UndefOr[String] = js.undefined,
         Type: js.UndefOr[AppType] = js.undefined
     ): App = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AppId.foreach(__v => __obj.update("AppId", __v.asInstanceOf[js.Any]))
-      AppSource.foreach(__v => __obj.update("AppSource", __v.asInstanceOf[js.Any]))
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.update("CreatedAt", __v.asInstanceOf[js.Any]))
-      DataSources.foreach(__v => __obj.update("DataSources", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Domains.foreach(__v => __obj.update("Domains", __v.asInstanceOf[js.Any]))
-      EnableSsl.foreach(__v => __obj.update("EnableSsl", __v.asInstanceOf[js.Any]))
-      Environment.foreach(__v => __obj.update("Environment", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Shortname.foreach(__v => __obj.update("Shortname", __v.asInstanceOf[js.Any]))
-      SslConfiguration.foreach(__v => __obj.update("SslConfiguration", __v.asInstanceOf[js.Any]))
-      StackId.foreach(__v => __obj.update("StackId", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AppId.foreach(__v => __obj.updateDynamic("AppId")(__v.asInstanceOf[js.Any]))
+      AppSource.foreach(__v => __obj.updateDynamic("AppSource")(__v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      DataSources.foreach(__v => __obj.updateDynamic("DataSources")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Domains.foreach(__v => __obj.updateDynamic("Domains")(__v.asInstanceOf[js.Any]))
+      EnableSsl.foreach(__v => __obj.updateDynamic("EnableSsl")(__v.asInstanceOf[js.Any]))
+      Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Shortname.foreach(__v => __obj.updateDynamic("Shortname")(__v.asInstanceOf[js.Any]))
+      SslConfiguration.foreach(__v => __obj.updateDynamic("SslConfiguration")(__v.asInstanceOf[js.Any]))
+      StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[App]
     }
   }
@@ -422,7 +422,7 @@ package opsworks {
         InstanceId: String,
         LayerIds: Strings
     ): AssignInstanceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "LayerIds"   -> LayerIds.asInstanceOf[js.Any]
       )
@@ -442,11 +442,11 @@ package opsworks {
         VolumeId: String,
         InstanceId: js.UndefOr[String] = js.undefined
     ): AssignVolumeRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VolumeId" -> VolumeId.asInstanceOf[js.Any]
       )
 
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssignVolumeRequest]
     }
   }
@@ -462,11 +462,11 @@ package opsworks {
         ElasticIp: String,
         InstanceId: js.UndefOr[String] = js.undefined
     ): AssociateElasticIpRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ElasticIp" -> ElasticIp.asInstanceOf[js.Any]
       )
 
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateElasticIpRequest]
     }
   }
@@ -482,7 +482,7 @@ package opsworks {
         ElasticLoadBalancerName: String,
         LayerId: String
     ): AttachElasticLoadBalancerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ElasticLoadBalancerName" -> ElasticLoadBalancerName.asInstanceOf[js.Any],
         "LayerId"                 -> LayerId.asInstanceOf[js.Any]
       )
@@ -515,14 +515,14 @@ package opsworks {
         MemoryThreshold: js.UndefOr[Double] = js.undefined,
         ThresholdsWaitTime: js.UndefOr[Minute] = js.undefined
     ): AutoScalingThresholds = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Alarms.foreach(__v => __obj.update("Alarms", __v.asInstanceOf[js.Any]))
-      CpuThreshold.foreach(__v => __obj.update("CpuThreshold", __v.asInstanceOf[js.Any]))
-      IgnoreMetricsTime.foreach(__v => __obj.update("IgnoreMetricsTime", __v.asInstanceOf[js.Any]))
-      InstanceCount.foreach(__v => __obj.update("InstanceCount", __v.asInstanceOf[js.Any]))
-      LoadThreshold.foreach(__v => __obj.update("LoadThreshold", __v.asInstanceOf[js.Any]))
-      MemoryThreshold.foreach(__v => __obj.update("MemoryThreshold", __v.asInstanceOf[js.Any]))
-      ThresholdsWaitTime.foreach(__v => __obj.update("ThresholdsWaitTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Alarms.foreach(__v => __obj.updateDynamic("Alarms")(__v.asInstanceOf[js.Any]))
+      CpuThreshold.foreach(__v => __obj.updateDynamic("CpuThreshold")(__v.asInstanceOf[js.Any]))
+      IgnoreMetricsTime.foreach(__v => __obj.updateDynamic("IgnoreMetricsTime")(__v.asInstanceOf[js.Any]))
+      InstanceCount.foreach(__v => __obj.updateDynamic("InstanceCount")(__v.asInstanceOf[js.Any]))
+      LoadThreshold.foreach(__v => __obj.updateDynamic("LoadThreshold")(__v.asInstanceOf[js.Any]))
+      MemoryThreshold.foreach(__v => __obj.updateDynamic("MemoryThreshold")(__v.asInstanceOf[js.Any]))
+      ThresholdsWaitTime.foreach(__v => __obj.updateDynamic("ThresholdsWaitTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoScalingThresholds]
     }
   }
@@ -552,11 +552,11 @@ package opsworks {
         NoDevice: js.UndefOr[String] = js.undefined,
         VirtualName: js.UndefOr[String] = js.undefined
     ): BlockDeviceMapping = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DeviceName.foreach(__v => __obj.update("DeviceName", __v.asInstanceOf[js.Any]))
-      Ebs.foreach(__v => __obj.update("Ebs", __v.asInstanceOf[js.Any]))
-      NoDevice.foreach(__v => __obj.update("NoDevice", __v.asInstanceOf[js.Any]))
-      VirtualName.foreach(__v => __obj.update("VirtualName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DeviceName.foreach(__v => __obj.updateDynamic("DeviceName")(__v.asInstanceOf[js.Any]))
+      Ebs.foreach(__v => __obj.updateDynamic("Ebs")(__v.asInstanceOf[js.Any]))
+      NoDevice.foreach(__v => __obj.updateDynamic("NoDevice")(__v.asInstanceOf[js.Any]))
+      VirtualName.foreach(__v => __obj.updateDynamic("VirtualName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BlockDeviceMapping]
     }
   }
@@ -575,9 +575,9 @@ package opsworks {
         BerkshelfVersion: js.UndefOr[String] = js.undefined,
         ManageBerkshelf: js.UndefOr[Boolean] = js.undefined
     ): ChefConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BerkshelfVersion.foreach(__v => __obj.update("BerkshelfVersion", __v.asInstanceOf[js.Any]))
-      ManageBerkshelf.foreach(__v => __obj.update("ManageBerkshelf", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BerkshelfVersion.foreach(__v => __obj.updateDynamic("BerkshelfVersion")(__v.asInstanceOf[js.Any]))
+      ManageBerkshelf.foreach(__v => __obj.updateDynamic("ManageBerkshelf")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChefConfiguration]
     }
   }
@@ -633,31 +633,35 @@ package opsworks {
         UseOpsworksSecurityGroups: js.UndefOr[Boolean] = js.undefined,
         VpcId: js.UndefOr[String] = js.undefined
     ): CloneStackRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServiceRoleArn" -> ServiceRoleArn.asInstanceOf[js.Any],
         "SourceStackId"  -> SourceStackId.asInstanceOf[js.Any]
       )
 
-      AgentVersion.foreach(__v => __obj.update("AgentVersion", __v.asInstanceOf[js.Any]))
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      ChefConfiguration.foreach(__v => __obj.update("ChefConfiguration", __v.asInstanceOf[js.Any]))
-      CloneAppIds.foreach(__v => __obj.update("CloneAppIds", __v.asInstanceOf[js.Any]))
-      ClonePermissions.foreach(__v => __obj.update("ClonePermissions", __v.asInstanceOf[js.Any]))
-      ConfigurationManager.foreach(__v => __obj.update("ConfigurationManager", __v.asInstanceOf[js.Any]))
-      CustomCookbooksSource.foreach(__v => __obj.update("CustomCookbooksSource", __v.asInstanceOf[js.Any]))
-      CustomJson.foreach(__v => __obj.update("CustomJson", __v.asInstanceOf[js.Any]))
-      DefaultAvailabilityZone.foreach(__v => __obj.update("DefaultAvailabilityZone", __v.asInstanceOf[js.Any]))
-      DefaultInstanceProfileArn.foreach(__v => __obj.update("DefaultInstanceProfileArn", __v.asInstanceOf[js.Any]))
-      DefaultOs.foreach(__v => __obj.update("DefaultOs", __v.asInstanceOf[js.Any]))
-      DefaultRootDeviceType.foreach(__v => __obj.update("DefaultRootDeviceType", __v.asInstanceOf[js.Any]))
-      DefaultSshKeyName.foreach(__v => __obj.update("DefaultSshKeyName", __v.asInstanceOf[js.Any]))
-      DefaultSubnetId.foreach(__v => __obj.update("DefaultSubnetId", __v.asInstanceOf[js.Any]))
-      HostnameTheme.foreach(__v => __obj.update("HostnameTheme", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Region.foreach(__v => __obj.update("Region", __v.asInstanceOf[js.Any]))
-      UseCustomCookbooks.foreach(__v => __obj.update("UseCustomCookbooks", __v.asInstanceOf[js.Any]))
-      UseOpsworksSecurityGroups.foreach(__v => __obj.update("UseOpsworksSecurityGroups", __v.asInstanceOf[js.Any]))
-      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
+      AgentVersion.foreach(__v => __obj.updateDynamic("AgentVersion")(__v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      ChefConfiguration.foreach(__v => __obj.updateDynamic("ChefConfiguration")(__v.asInstanceOf[js.Any]))
+      CloneAppIds.foreach(__v => __obj.updateDynamic("CloneAppIds")(__v.asInstanceOf[js.Any]))
+      ClonePermissions.foreach(__v => __obj.updateDynamic("ClonePermissions")(__v.asInstanceOf[js.Any]))
+      ConfigurationManager.foreach(__v => __obj.updateDynamic("ConfigurationManager")(__v.asInstanceOf[js.Any]))
+      CustomCookbooksSource.foreach(__v => __obj.updateDynamic("CustomCookbooksSource")(__v.asInstanceOf[js.Any]))
+      CustomJson.foreach(__v => __obj.updateDynamic("CustomJson")(__v.asInstanceOf[js.Any]))
+      DefaultAvailabilityZone.foreach(__v => __obj.updateDynamic("DefaultAvailabilityZone")(__v.asInstanceOf[js.Any]))
+      DefaultInstanceProfileArn.foreach(
+        __v => __obj.updateDynamic("DefaultInstanceProfileArn")(__v.asInstanceOf[js.Any])
+      )
+      DefaultOs.foreach(__v => __obj.updateDynamic("DefaultOs")(__v.asInstanceOf[js.Any]))
+      DefaultRootDeviceType.foreach(__v => __obj.updateDynamic("DefaultRootDeviceType")(__v.asInstanceOf[js.Any]))
+      DefaultSshKeyName.foreach(__v => __obj.updateDynamic("DefaultSshKeyName")(__v.asInstanceOf[js.Any]))
+      DefaultSubnetId.foreach(__v => __obj.updateDynamic("DefaultSubnetId")(__v.asInstanceOf[js.Any]))
+      HostnameTheme.foreach(__v => __obj.updateDynamic("HostnameTheme")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
+      UseCustomCookbooks.foreach(__v => __obj.updateDynamic("UseCustomCookbooks")(__v.asInstanceOf[js.Any]))
+      UseOpsworksSecurityGroups.foreach(
+        __v => __obj.updateDynamic("UseOpsworksSecurityGroups")(__v.asInstanceOf[js.Any])
+      )
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CloneStackRequest]
     }
   }
@@ -674,8 +678,8 @@ package opsworks {
     def apply(
         StackId: js.UndefOr[String] = js.undefined
     ): CloneStackResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      StackId.foreach(__v => __obj.update("StackId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CloneStackResult]
     }
   }
@@ -694,9 +698,9 @@ package opsworks {
         Enabled: js.UndefOr[Boolean] = js.undefined,
         LogStreams: js.UndefOr[CloudWatchLogsLogStreams] = js.undefined
     ): CloudWatchLogsConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      LogStreams.foreach(__v => __obj.update("LogStreams", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      LogStreams.foreach(__v => __obj.updateDynamic("LogStreams")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CloudWatchLogsConfiguration]
     }
   }
@@ -938,18 +942,18 @@ package opsworks {
         MultiLineStartPattern: js.UndefOr[String] = js.undefined,
         TimeZone: js.UndefOr[CloudWatchLogsTimeZone] = js.undefined
     ): CloudWatchLogsLogStream = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BatchCount.foreach(__v => __obj.update("BatchCount", __v.asInstanceOf[js.Any]))
-      BatchSize.foreach(__v => __obj.update("BatchSize", __v.asInstanceOf[js.Any]))
-      BufferDuration.foreach(__v => __obj.update("BufferDuration", __v.asInstanceOf[js.Any]))
-      DatetimeFormat.foreach(__v => __obj.update("DatetimeFormat", __v.asInstanceOf[js.Any]))
-      Encoding.foreach(__v => __obj.update("Encoding", __v.asInstanceOf[js.Any]))
-      File.foreach(__v => __obj.update("File", __v.asInstanceOf[js.Any]))
-      FileFingerprintLines.foreach(__v => __obj.update("FileFingerprintLines", __v.asInstanceOf[js.Any]))
-      InitialPosition.foreach(__v => __obj.update("InitialPosition", __v.asInstanceOf[js.Any]))
-      LogGroupName.foreach(__v => __obj.update("LogGroupName", __v.asInstanceOf[js.Any]))
-      MultiLineStartPattern.foreach(__v => __obj.update("MultiLineStartPattern", __v.asInstanceOf[js.Any]))
-      TimeZone.foreach(__v => __obj.update("TimeZone", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BatchCount.foreach(__v => __obj.updateDynamic("BatchCount")(__v.asInstanceOf[js.Any]))
+      BatchSize.foreach(__v => __obj.updateDynamic("BatchSize")(__v.asInstanceOf[js.Any]))
+      BufferDuration.foreach(__v => __obj.updateDynamic("BufferDuration")(__v.asInstanceOf[js.Any]))
+      DatetimeFormat.foreach(__v => __obj.updateDynamic("DatetimeFormat")(__v.asInstanceOf[js.Any]))
+      Encoding.foreach(__v => __obj.updateDynamic("Encoding")(__v.asInstanceOf[js.Any]))
+      File.foreach(__v => __obj.updateDynamic("File")(__v.asInstanceOf[js.Any]))
+      FileFingerprintLines.foreach(__v => __obj.updateDynamic("FileFingerprintLines")(__v.asInstanceOf[js.Any]))
+      InitialPosition.foreach(__v => __obj.updateDynamic("InitialPosition")(__v.asInstanceOf[js.Any]))
+      LogGroupName.foreach(__v => __obj.updateDynamic("LogGroupName")(__v.asInstanceOf[js.Any]))
+      MultiLineStartPattern.foreach(__v => __obj.updateDynamic("MultiLineStartPattern")(__v.asInstanceOf[js.Any]))
+      TimeZone.foreach(__v => __obj.updateDynamic("TimeZone")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CloudWatchLogsLogStream]
     }
   }
@@ -994,17 +998,17 @@ package opsworks {
         Status: js.UndefOr[String] = js.undefined,
         Type: js.UndefOr[String] = js.undefined
     ): Command = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AcknowledgedAt.foreach(__v => __obj.update("AcknowledgedAt", __v.asInstanceOf[js.Any]))
-      CommandId.foreach(__v => __obj.update("CommandId", __v.asInstanceOf[js.Any]))
-      CompletedAt.foreach(__v => __obj.update("CompletedAt", __v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.update("CreatedAt", __v.asInstanceOf[js.Any]))
-      DeploymentId.foreach(__v => __obj.update("DeploymentId", __v.asInstanceOf[js.Any]))
-      ExitCode.foreach(__v => __obj.update("ExitCode", __v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      LogUrl.foreach(__v => __obj.update("LogUrl", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AcknowledgedAt.foreach(__v => __obj.updateDynamic("AcknowledgedAt")(__v.asInstanceOf[js.Any]))
+      CommandId.foreach(__v => __obj.updateDynamic("CommandId")(__v.asInstanceOf[js.Any]))
+      CompletedAt.foreach(__v => __obj.updateDynamic("CompletedAt")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      DeploymentId.foreach(__v => __obj.updateDynamic("DeploymentId")(__v.asInstanceOf[js.Any]))
+      ExitCode.foreach(__v => __obj.updateDynamic("ExitCode")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      LogUrl.foreach(__v => __obj.updateDynamic("LogUrl")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Command]
     }
   }
@@ -1040,21 +1044,21 @@ package opsworks {
         Shortname: js.UndefOr[String] = js.undefined,
         SslConfiguration: js.UndefOr[SslConfiguration] = js.undefined
     ): CreateAppRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"    -> Name.asInstanceOf[js.Any],
         "StackId" -> StackId.asInstanceOf[js.Any],
         "Type"    -> Type.asInstanceOf[js.Any]
       )
 
-      AppSource.foreach(__v => __obj.update("AppSource", __v.asInstanceOf[js.Any]))
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      DataSources.foreach(__v => __obj.update("DataSources", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Domains.foreach(__v => __obj.update("Domains", __v.asInstanceOf[js.Any]))
-      EnableSsl.foreach(__v => __obj.update("EnableSsl", __v.asInstanceOf[js.Any]))
-      Environment.foreach(__v => __obj.update("Environment", __v.asInstanceOf[js.Any]))
-      Shortname.foreach(__v => __obj.update("Shortname", __v.asInstanceOf[js.Any]))
-      SslConfiguration.foreach(__v => __obj.update("SslConfiguration", __v.asInstanceOf[js.Any]))
+      AppSource.foreach(__v => __obj.updateDynamic("AppSource")(__v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      DataSources.foreach(__v => __obj.updateDynamic("DataSources")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Domains.foreach(__v => __obj.updateDynamic("Domains")(__v.asInstanceOf[js.Any]))
+      EnableSsl.foreach(__v => __obj.updateDynamic("EnableSsl")(__v.asInstanceOf[js.Any]))
+      Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
+      Shortname.foreach(__v => __obj.updateDynamic("Shortname")(__v.asInstanceOf[js.Any]))
+      SslConfiguration.foreach(__v => __obj.updateDynamic("SslConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAppRequest]
     }
   }
@@ -1071,8 +1075,8 @@ package opsworks {
     def apply(
         AppId: js.UndefOr[String] = js.undefined
     ): CreateAppResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AppId.foreach(__v => __obj.update("AppId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AppId.foreach(__v => __obj.updateDynamic("AppId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAppResult]
     }
   }
@@ -1098,16 +1102,16 @@ package opsworks {
         InstanceIds: js.UndefOr[Strings] = js.undefined,
         LayerIds: js.UndefOr[Strings] = js.undefined
     ): CreateDeploymentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Command" -> Command.asInstanceOf[js.Any],
         "StackId" -> StackId.asInstanceOf[js.Any]
       )
 
-      AppId.foreach(__v => __obj.update("AppId", __v.asInstanceOf[js.Any]))
-      Comment.foreach(__v => __obj.update("Comment", __v.asInstanceOf[js.Any]))
-      CustomJson.foreach(__v => __obj.update("CustomJson", __v.asInstanceOf[js.Any]))
-      InstanceIds.foreach(__v => __obj.update("InstanceIds", __v.asInstanceOf[js.Any]))
-      LayerIds.foreach(__v => __obj.update("LayerIds", __v.asInstanceOf[js.Any]))
+      AppId.foreach(__v => __obj.updateDynamic("AppId")(__v.asInstanceOf[js.Any]))
+      Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
+      CustomJson.foreach(__v => __obj.updateDynamic("CustomJson")(__v.asInstanceOf[js.Any]))
+      InstanceIds.foreach(__v => __obj.updateDynamic("InstanceIds")(__v.asInstanceOf[js.Any]))
+      LayerIds.foreach(__v => __obj.updateDynamic("LayerIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDeploymentRequest]
     }
   }
@@ -1124,8 +1128,8 @@ package opsworks {
     def apply(
         DeploymentId: js.UndefOr[String] = js.undefined
     ): CreateDeploymentResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DeploymentId.foreach(__v => __obj.update("DeploymentId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DeploymentId.foreach(__v => __obj.updateDynamic("DeploymentId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDeploymentResult]
     }
   }
@@ -1173,27 +1177,27 @@ package opsworks {
         Tenancy: js.UndefOr[String] = js.undefined,
         VirtualizationType: js.UndefOr[String] = js.undefined
     ): CreateInstanceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceType" -> InstanceType.asInstanceOf[js.Any],
         "LayerIds"     -> LayerIds.asInstanceOf[js.Any],
         "StackId"      -> StackId.asInstanceOf[js.Any]
       )
 
-      AgentVersion.foreach(__v => __obj.update("AgentVersion", __v.asInstanceOf[js.Any]))
-      AmiId.foreach(__v => __obj.update("AmiId", __v.asInstanceOf[js.Any]))
-      Architecture.foreach(__v => __obj.update("Architecture", __v.asInstanceOf[js.Any]))
-      AutoScalingType.foreach(__v => __obj.update("AutoScalingType", __v.asInstanceOf[js.Any]))
-      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
-      BlockDeviceMappings.foreach(__v => __obj.update("BlockDeviceMappings", __v.asInstanceOf[js.Any]))
-      EbsOptimized.foreach(__v => __obj.update("EbsOptimized", __v.asInstanceOf[js.Any]))
-      Hostname.foreach(__v => __obj.update("Hostname", __v.asInstanceOf[js.Any]))
-      InstallUpdatesOnBoot.foreach(__v => __obj.update("InstallUpdatesOnBoot", __v.asInstanceOf[js.Any]))
-      Os.foreach(__v => __obj.update("Os", __v.asInstanceOf[js.Any]))
-      RootDeviceType.foreach(__v => __obj.update("RootDeviceType", __v.asInstanceOf[js.Any]))
-      SshKeyName.foreach(__v => __obj.update("SshKeyName", __v.asInstanceOf[js.Any]))
-      SubnetId.foreach(__v => __obj.update("SubnetId", __v.asInstanceOf[js.Any]))
-      Tenancy.foreach(__v => __obj.update("Tenancy", __v.asInstanceOf[js.Any]))
-      VirtualizationType.foreach(__v => __obj.update("VirtualizationType", __v.asInstanceOf[js.Any]))
+      AgentVersion.foreach(__v => __obj.updateDynamic("AgentVersion")(__v.asInstanceOf[js.Any]))
+      AmiId.foreach(__v => __obj.updateDynamic("AmiId")(__v.asInstanceOf[js.Any]))
+      Architecture.foreach(__v => __obj.updateDynamic("Architecture")(__v.asInstanceOf[js.Any]))
+      AutoScalingType.foreach(__v => __obj.updateDynamic("AutoScalingType")(__v.asInstanceOf[js.Any]))
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      BlockDeviceMappings.foreach(__v => __obj.updateDynamic("BlockDeviceMappings")(__v.asInstanceOf[js.Any]))
+      EbsOptimized.foreach(__v => __obj.updateDynamic("EbsOptimized")(__v.asInstanceOf[js.Any]))
+      Hostname.foreach(__v => __obj.updateDynamic("Hostname")(__v.asInstanceOf[js.Any]))
+      InstallUpdatesOnBoot.foreach(__v => __obj.updateDynamic("InstallUpdatesOnBoot")(__v.asInstanceOf[js.Any]))
+      Os.foreach(__v => __obj.updateDynamic("Os")(__v.asInstanceOf[js.Any]))
+      RootDeviceType.foreach(__v => __obj.updateDynamic("RootDeviceType")(__v.asInstanceOf[js.Any]))
+      SshKeyName.foreach(__v => __obj.updateDynamic("SshKeyName")(__v.asInstanceOf[js.Any]))
+      SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
+      Tenancy.foreach(__v => __obj.updateDynamic("Tenancy")(__v.asInstanceOf[js.Any]))
+      VirtualizationType.foreach(__v => __obj.updateDynamic("VirtualizationType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateInstanceRequest]
     }
   }
@@ -1210,8 +1214,8 @@ package opsworks {
     def apply(
         InstanceId: js.UndefOr[String] = js.undefined
     ): CreateInstanceResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateInstanceResult]
     }
   }
@@ -1259,27 +1263,31 @@ package opsworks {
         UseEbsOptimizedInstances: js.UndefOr[Boolean] = js.undefined,
         VolumeConfigurations: js.UndefOr[VolumeConfigurations] = js.undefined
     ): CreateLayerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"      -> Name.asInstanceOf[js.Any],
         "Shortname" -> Shortname.asInstanceOf[js.Any],
         "StackId"   -> StackId.asInstanceOf[js.Any],
         "Type"      -> Type.asInstanceOf[js.Any]
       )
 
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      AutoAssignElasticIps.foreach(__v => __obj.update("AutoAssignElasticIps", __v.asInstanceOf[js.Any]))
-      AutoAssignPublicIps.foreach(__v => __obj.update("AutoAssignPublicIps", __v.asInstanceOf[js.Any]))
-      CloudWatchLogsConfiguration.foreach(__v => __obj.update("CloudWatchLogsConfiguration", __v.asInstanceOf[js.Any]))
-      CustomInstanceProfileArn.foreach(__v => __obj.update("CustomInstanceProfileArn", __v.asInstanceOf[js.Any]))
-      CustomJson.foreach(__v => __obj.update("CustomJson", __v.asInstanceOf[js.Any]))
-      CustomRecipes.foreach(__v => __obj.update("CustomRecipes", __v.asInstanceOf[js.Any]))
-      CustomSecurityGroupIds.foreach(__v => __obj.update("CustomSecurityGroupIds", __v.asInstanceOf[js.Any]))
-      EnableAutoHealing.foreach(__v => __obj.update("EnableAutoHealing", __v.asInstanceOf[js.Any]))
-      InstallUpdatesOnBoot.foreach(__v => __obj.update("InstallUpdatesOnBoot", __v.asInstanceOf[js.Any]))
-      LifecycleEventConfiguration.foreach(__v => __obj.update("LifecycleEventConfiguration", __v.asInstanceOf[js.Any]))
-      Packages.foreach(__v => __obj.update("Packages", __v.asInstanceOf[js.Any]))
-      UseEbsOptimizedInstances.foreach(__v => __obj.update("UseEbsOptimizedInstances", __v.asInstanceOf[js.Any]))
-      VolumeConfigurations.foreach(__v => __obj.update("VolumeConfigurations", __v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      AutoAssignElasticIps.foreach(__v => __obj.updateDynamic("AutoAssignElasticIps")(__v.asInstanceOf[js.Any]))
+      AutoAssignPublicIps.foreach(__v => __obj.updateDynamic("AutoAssignPublicIps")(__v.asInstanceOf[js.Any]))
+      CloudWatchLogsConfiguration.foreach(
+        __v => __obj.updateDynamic("CloudWatchLogsConfiguration")(__v.asInstanceOf[js.Any])
+      )
+      CustomInstanceProfileArn.foreach(__v => __obj.updateDynamic("CustomInstanceProfileArn")(__v.asInstanceOf[js.Any]))
+      CustomJson.foreach(__v => __obj.updateDynamic("CustomJson")(__v.asInstanceOf[js.Any]))
+      CustomRecipes.foreach(__v => __obj.updateDynamic("CustomRecipes")(__v.asInstanceOf[js.Any]))
+      CustomSecurityGroupIds.foreach(__v => __obj.updateDynamic("CustomSecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      EnableAutoHealing.foreach(__v => __obj.updateDynamic("EnableAutoHealing")(__v.asInstanceOf[js.Any]))
+      InstallUpdatesOnBoot.foreach(__v => __obj.updateDynamic("InstallUpdatesOnBoot")(__v.asInstanceOf[js.Any]))
+      LifecycleEventConfiguration.foreach(
+        __v => __obj.updateDynamic("LifecycleEventConfiguration")(__v.asInstanceOf[js.Any])
+      )
+      Packages.foreach(__v => __obj.updateDynamic("Packages")(__v.asInstanceOf[js.Any]))
+      UseEbsOptimizedInstances.foreach(__v => __obj.updateDynamic("UseEbsOptimizedInstances")(__v.asInstanceOf[js.Any]))
+      VolumeConfigurations.foreach(__v => __obj.updateDynamic("VolumeConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLayerRequest]
     }
   }
@@ -1296,8 +1304,8 @@ package opsworks {
     def apply(
         LayerId: js.UndefOr[String] = js.undefined
     ): CreateLayerResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LayerId.foreach(__v => __obj.update("LayerId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LayerId.foreach(__v => __obj.updateDynamic("LayerId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLayerResult]
     }
   }
@@ -1347,28 +1355,30 @@ package opsworks {
         UseOpsworksSecurityGroups: js.UndefOr[Boolean] = js.undefined,
         VpcId: js.UndefOr[String] = js.undefined
     ): CreateStackRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DefaultInstanceProfileArn" -> DefaultInstanceProfileArn.asInstanceOf[js.Any],
         "Name"                      -> Name.asInstanceOf[js.Any],
         "Region"                    -> Region.asInstanceOf[js.Any],
         "ServiceRoleArn"            -> ServiceRoleArn.asInstanceOf[js.Any]
       )
 
-      AgentVersion.foreach(__v => __obj.update("AgentVersion", __v.asInstanceOf[js.Any]))
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      ChefConfiguration.foreach(__v => __obj.update("ChefConfiguration", __v.asInstanceOf[js.Any]))
-      ConfigurationManager.foreach(__v => __obj.update("ConfigurationManager", __v.asInstanceOf[js.Any]))
-      CustomCookbooksSource.foreach(__v => __obj.update("CustomCookbooksSource", __v.asInstanceOf[js.Any]))
-      CustomJson.foreach(__v => __obj.update("CustomJson", __v.asInstanceOf[js.Any]))
-      DefaultAvailabilityZone.foreach(__v => __obj.update("DefaultAvailabilityZone", __v.asInstanceOf[js.Any]))
-      DefaultOs.foreach(__v => __obj.update("DefaultOs", __v.asInstanceOf[js.Any]))
-      DefaultRootDeviceType.foreach(__v => __obj.update("DefaultRootDeviceType", __v.asInstanceOf[js.Any]))
-      DefaultSshKeyName.foreach(__v => __obj.update("DefaultSshKeyName", __v.asInstanceOf[js.Any]))
-      DefaultSubnetId.foreach(__v => __obj.update("DefaultSubnetId", __v.asInstanceOf[js.Any]))
-      HostnameTheme.foreach(__v => __obj.update("HostnameTheme", __v.asInstanceOf[js.Any]))
-      UseCustomCookbooks.foreach(__v => __obj.update("UseCustomCookbooks", __v.asInstanceOf[js.Any]))
-      UseOpsworksSecurityGroups.foreach(__v => __obj.update("UseOpsworksSecurityGroups", __v.asInstanceOf[js.Any]))
-      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
+      AgentVersion.foreach(__v => __obj.updateDynamic("AgentVersion")(__v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      ChefConfiguration.foreach(__v => __obj.updateDynamic("ChefConfiguration")(__v.asInstanceOf[js.Any]))
+      ConfigurationManager.foreach(__v => __obj.updateDynamic("ConfigurationManager")(__v.asInstanceOf[js.Any]))
+      CustomCookbooksSource.foreach(__v => __obj.updateDynamic("CustomCookbooksSource")(__v.asInstanceOf[js.Any]))
+      CustomJson.foreach(__v => __obj.updateDynamic("CustomJson")(__v.asInstanceOf[js.Any]))
+      DefaultAvailabilityZone.foreach(__v => __obj.updateDynamic("DefaultAvailabilityZone")(__v.asInstanceOf[js.Any]))
+      DefaultOs.foreach(__v => __obj.updateDynamic("DefaultOs")(__v.asInstanceOf[js.Any]))
+      DefaultRootDeviceType.foreach(__v => __obj.updateDynamic("DefaultRootDeviceType")(__v.asInstanceOf[js.Any]))
+      DefaultSshKeyName.foreach(__v => __obj.updateDynamic("DefaultSshKeyName")(__v.asInstanceOf[js.Any]))
+      DefaultSubnetId.foreach(__v => __obj.updateDynamic("DefaultSubnetId")(__v.asInstanceOf[js.Any]))
+      HostnameTheme.foreach(__v => __obj.updateDynamic("HostnameTheme")(__v.asInstanceOf[js.Any]))
+      UseCustomCookbooks.foreach(__v => __obj.updateDynamic("UseCustomCookbooks")(__v.asInstanceOf[js.Any]))
+      UseOpsworksSecurityGroups.foreach(
+        __v => __obj.updateDynamic("UseOpsworksSecurityGroups")(__v.asInstanceOf[js.Any])
+      )
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateStackRequest]
     }
   }
@@ -1385,8 +1395,8 @@ package opsworks {
     def apply(
         StackId: js.UndefOr[String] = js.undefined
     ): CreateStackResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      StackId.foreach(__v => __obj.update("StackId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateStackResult]
     }
   }
@@ -1406,13 +1416,13 @@ package opsworks {
         SshPublicKey: js.UndefOr[String] = js.undefined,
         SshUsername: js.UndefOr[String] = js.undefined
     ): CreateUserProfileRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IamUserArn" -> IamUserArn.asInstanceOf[js.Any]
       )
 
-      AllowSelfManagement.foreach(__v => __obj.update("AllowSelfManagement", __v.asInstanceOf[js.Any]))
-      SshPublicKey.foreach(__v => __obj.update("SshPublicKey", __v.asInstanceOf[js.Any]))
-      SshUsername.foreach(__v => __obj.update("SshUsername", __v.asInstanceOf[js.Any]))
+      AllowSelfManagement.foreach(__v => __obj.updateDynamic("AllowSelfManagement")(__v.asInstanceOf[js.Any]))
+      SshPublicKey.foreach(__v => __obj.updateDynamic("SshPublicKey")(__v.asInstanceOf[js.Any]))
+      SshUsername.foreach(__v => __obj.updateDynamic("SshUsername")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateUserProfileRequest]
     }
   }
@@ -1429,8 +1439,8 @@ package opsworks {
     def apply(
         IamUserArn: js.UndefOr[String] = js.undefined
     ): CreateUserProfileResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IamUserArn.foreach(__v => __obj.update("IamUserArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IamUserArn.foreach(__v => __obj.updateDynamic("IamUserArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateUserProfileResult]
     }
   }
@@ -1451,10 +1461,10 @@ package opsworks {
         DatabaseName: js.UndefOr[String] = js.undefined,
         Type: js.UndefOr[String] = js.undefined
     ): DataSource = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      DatabaseName.foreach(__v => __obj.update("DatabaseName", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataSource]
     }
   }
@@ -1468,7 +1478,7 @@ package opsworks {
     def apply(
         AppId: String
     ): DeleteAppRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AppId" -> AppId.asInstanceOf[js.Any]
       )
 
@@ -1489,12 +1499,12 @@ package opsworks {
         DeleteElasticIp: js.UndefOr[Boolean] = js.undefined,
         DeleteVolumes: js.UndefOr[Boolean] = js.undefined
     ): DeleteInstanceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
-      DeleteElasticIp.foreach(__v => __obj.update("DeleteElasticIp", __v.asInstanceOf[js.Any]))
-      DeleteVolumes.foreach(__v => __obj.update("DeleteVolumes", __v.asInstanceOf[js.Any]))
+      DeleteElasticIp.foreach(__v => __obj.updateDynamic("DeleteElasticIp")(__v.asInstanceOf[js.Any]))
+      DeleteVolumes.foreach(__v => __obj.updateDynamic("DeleteVolumes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteInstanceRequest]
     }
   }
@@ -1508,7 +1518,7 @@ package opsworks {
     def apply(
         LayerId: String
     ): DeleteLayerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LayerId" -> LayerId.asInstanceOf[js.Any]
       )
 
@@ -1525,7 +1535,7 @@ package opsworks {
     def apply(
         StackId: String
     ): DeleteStackRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "StackId" -> StackId.asInstanceOf[js.Any]
       )
 
@@ -1542,7 +1552,7 @@ package opsworks {
     def apply(
         IamUserArn: String
     ): DeleteUserProfileRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IamUserArn" -> IamUserArn.asInstanceOf[js.Any]
       )
 
@@ -1584,19 +1594,19 @@ package opsworks {
         StackId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): Deployment = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AppId.foreach(__v => __obj.update("AppId", __v.asInstanceOf[js.Any]))
-      Command.foreach(__v => __obj.update("Command", __v.asInstanceOf[js.Any]))
-      Comment.foreach(__v => __obj.update("Comment", __v.asInstanceOf[js.Any]))
-      CompletedAt.foreach(__v => __obj.update("CompletedAt", __v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.update("CreatedAt", __v.asInstanceOf[js.Any]))
-      CustomJson.foreach(__v => __obj.update("CustomJson", __v.asInstanceOf[js.Any]))
-      DeploymentId.foreach(__v => __obj.update("DeploymentId", __v.asInstanceOf[js.Any]))
-      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
-      IamUserArn.foreach(__v => __obj.update("IamUserArn", __v.asInstanceOf[js.Any]))
-      InstanceIds.foreach(__v => __obj.update("InstanceIds", __v.asInstanceOf[js.Any]))
-      StackId.foreach(__v => __obj.update("StackId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AppId.foreach(__v => __obj.updateDynamic("AppId")(__v.asInstanceOf[js.Any]))
+      Command.foreach(__v => __obj.updateDynamic("Command")(__v.asInstanceOf[js.Any]))
+      Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
+      CompletedAt.foreach(__v => __obj.updateDynamic("CompletedAt")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      CustomJson.foreach(__v => __obj.updateDynamic("CustomJson")(__v.asInstanceOf[js.Any]))
+      DeploymentId.foreach(__v => __obj.updateDynamic("DeploymentId")(__v.asInstanceOf[js.Any]))
+      Duration.foreach(__v => __obj.updateDynamic("Duration")(__v.asInstanceOf[js.Any]))
+      IamUserArn.foreach(__v => __obj.updateDynamic("IamUserArn")(__v.asInstanceOf[js.Any]))
+      InstanceIds.foreach(__v => __obj.updateDynamic("InstanceIds")(__v.asInstanceOf[js.Any]))
+      StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Deployment]
     }
   }
@@ -1615,11 +1625,11 @@ package opsworks {
         Name: DeploymentCommandName,
         Args: js.UndefOr[DeploymentCommandArgs] = js.undefined
     ): DeploymentCommand = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      Args.foreach(__v => __obj.update("Args", __v.asInstanceOf[js.Any]))
+      Args.foreach(__v => __obj.updateDynamic("Args")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeploymentCommand]
     }
   }
@@ -1665,7 +1675,7 @@ package opsworks {
     def apply(
         EcsClusterArn: String
     ): DeregisterEcsClusterRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EcsClusterArn" -> EcsClusterArn.asInstanceOf[js.Any]
       )
 
@@ -1682,7 +1692,7 @@ package opsworks {
     def apply(
         ElasticIp: String
     ): DeregisterElasticIpRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ElasticIp" -> ElasticIp.asInstanceOf[js.Any]
       )
 
@@ -1699,7 +1709,7 @@ package opsworks {
     def apply(
         InstanceId: String
     ): DeregisterInstanceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
@@ -1716,7 +1726,7 @@ package opsworks {
     def apply(
         RdsDbInstanceArn: String
     ): DeregisterRdsDbInstanceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RdsDbInstanceArn" -> RdsDbInstanceArn.asInstanceOf[js.Any]
       )
 
@@ -1733,7 +1743,7 @@ package opsworks {
     def apply(
         VolumeId: String
     ): DeregisterVolumeRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VolumeId" -> VolumeId.asInstanceOf[js.Any]
       )
 
@@ -1752,9 +1762,9 @@ package opsworks {
         ConfigurationManager: js.UndefOr[StackConfigurationManager] = js.undefined,
         StackId: js.UndefOr[String] = js.undefined
     ): DescribeAgentVersionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConfigurationManager.foreach(__v => __obj.update("ConfigurationManager", __v.asInstanceOf[js.Any]))
-      StackId.foreach(__v => __obj.update("StackId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConfigurationManager.foreach(__v => __obj.updateDynamic("ConfigurationManager")(__v.asInstanceOf[js.Any]))
+      StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAgentVersionsRequest]
     }
   }
@@ -1771,8 +1781,8 @@ package opsworks {
     def apply(
         AgentVersions: js.UndefOr[AgentVersions] = js.undefined
     ): DescribeAgentVersionsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AgentVersions.foreach(__v => __obj.update("AgentVersions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AgentVersions.foreach(__v => __obj.updateDynamic("AgentVersions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAgentVersionsResult]
     }
   }
@@ -1788,9 +1798,9 @@ package opsworks {
         AppIds: js.UndefOr[Strings] = js.undefined,
         StackId: js.UndefOr[String] = js.undefined
     ): DescribeAppsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AppIds.foreach(__v => __obj.update("AppIds", __v.asInstanceOf[js.Any]))
-      StackId.foreach(__v => __obj.update("StackId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AppIds.foreach(__v => __obj.updateDynamic("AppIds")(__v.asInstanceOf[js.Any]))
+      StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAppsRequest]
     }
   }
@@ -1807,8 +1817,8 @@ package opsworks {
     def apply(
         Apps: js.UndefOr[Apps] = js.undefined
     ): DescribeAppsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Apps.foreach(__v => __obj.update("Apps", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Apps.foreach(__v => __obj.updateDynamic("Apps")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAppsResult]
     }
   }
@@ -1826,10 +1836,10 @@ package opsworks {
         DeploymentId: js.UndefOr[String] = js.undefined,
         InstanceId: js.UndefOr[String] = js.undefined
     ): DescribeCommandsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CommandIds.foreach(__v => __obj.update("CommandIds", __v.asInstanceOf[js.Any]))
-      DeploymentId.foreach(__v => __obj.update("DeploymentId", __v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CommandIds.foreach(__v => __obj.updateDynamic("CommandIds")(__v.asInstanceOf[js.Any]))
+      DeploymentId.foreach(__v => __obj.updateDynamic("DeploymentId")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeCommandsRequest]
     }
   }
@@ -1846,8 +1856,8 @@ package opsworks {
     def apply(
         Commands: js.UndefOr[Commands] = js.undefined
     ): DescribeCommandsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Commands.foreach(__v => __obj.update("Commands", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Commands.foreach(__v => __obj.updateDynamic("Commands")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeCommandsResult]
     }
   }
@@ -1865,10 +1875,10 @@ package opsworks {
         DeploymentIds: js.UndefOr[Strings] = js.undefined,
         StackId: js.UndefOr[String] = js.undefined
     ): DescribeDeploymentsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AppId.foreach(__v => __obj.update("AppId", __v.asInstanceOf[js.Any]))
-      DeploymentIds.foreach(__v => __obj.update("DeploymentIds", __v.asInstanceOf[js.Any]))
-      StackId.foreach(__v => __obj.update("StackId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AppId.foreach(__v => __obj.updateDynamic("AppId")(__v.asInstanceOf[js.Any]))
+      DeploymentIds.foreach(__v => __obj.updateDynamic("DeploymentIds")(__v.asInstanceOf[js.Any]))
+      StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDeploymentsRequest]
     }
   }
@@ -1885,8 +1895,8 @@ package opsworks {
     def apply(
         Deployments: js.UndefOr[Deployments] = js.undefined
     ): DescribeDeploymentsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Deployments.foreach(__v => __obj.update("Deployments", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Deployments.foreach(__v => __obj.updateDynamic("Deployments")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDeploymentsResult]
     }
   }
@@ -1906,11 +1916,11 @@ package opsworks {
         NextToken: js.UndefOr[String] = js.undefined,
         StackId: js.UndefOr[String] = js.undefined
     ): DescribeEcsClustersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EcsClusterArns.foreach(__v => __obj.update("EcsClusterArns", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      StackId.foreach(__v => __obj.update("StackId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EcsClusterArns.foreach(__v => __obj.updateDynamic("EcsClusterArns")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEcsClustersRequest]
     }
   }
@@ -1929,9 +1939,9 @@ package opsworks {
         EcsClusters: js.UndefOr[EcsClusters] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeEcsClustersResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EcsClusters.foreach(__v => __obj.update("EcsClusters", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EcsClusters.foreach(__v => __obj.updateDynamic("EcsClusters")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEcsClustersResult]
     }
   }
@@ -1949,10 +1959,10 @@ package opsworks {
         Ips: js.UndefOr[Strings] = js.undefined,
         StackId: js.UndefOr[String] = js.undefined
     ): DescribeElasticIpsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      Ips.foreach(__v => __obj.update("Ips", __v.asInstanceOf[js.Any]))
-      StackId.foreach(__v => __obj.update("StackId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      Ips.foreach(__v => __obj.updateDynamic("Ips")(__v.asInstanceOf[js.Any]))
+      StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeElasticIpsRequest]
     }
   }
@@ -1969,8 +1979,8 @@ package opsworks {
     def apply(
         ElasticIps: js.UndefOr[ElasticIps] = js.undefined
     ): DescribeElasticIpsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ElasticIps.foreach(__v => __obj.update("ElasticIps", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ElasticIps.foreach(__v => __obj.updateDynamic("ElasticIps")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeElasticIpsResult]
     }
   }
@@ -1986,9 +1996,9 @@ package opsworks {
         LayerIds: js.UndefOr[Strings] = js.undefined,
         StackId: js.UndefOr[String] = js.undefined
     ): DescribeElasticLoadBalancersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LayerIds.foreach(__v => __obj.update("LayerIds", __v.asInstanceOf[js.Any]))
-      StackId.foreach(__v => __obj.update("StackId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LayerIds.foreach(__v => __obj.updateDynamic("LayerIds")(__v.asInstanceOf[js.Any]))
+      StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeElasticLoadBalancersRequest]
     }
   }
@@ -2005,8 +2015,8 @@ package opsworks {
     def apply(
         ElasticLoadBalancers: js.UndefOr[ElasticLoadBalancers] = js.undefined
     ): DescribeElasticLoadBalancersResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ElasticLoadBalancers.foreach(__v => __obj.update("ElasticLoadBalancers", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ElasticLoadBalancers.foreach(__v => __obj.updateDynamic("ElasticLoadBalancers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeElasticLoadBalancersResult]
     }
   }
@@ -2024,10 +2034,10 @@ package opsworks {
         LayerId: js.UndefOr[String] = js.undefined,
         StackId: js.UndefOr[String] = js.undefined
     ): DescribeInstancesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InstanceIds.foreach(__v => __obj.update("InstanceIds", __v.asInstanceOf[js.Any]))
-      LayerId.foreach(__v => __obj.update("LayerId", __v.asInstanceOf[js.Any]))
-      StackId.foreach(__v => __obj.update("StackId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InstanceIds.foreach(__v => __obj.updateDynamic("InstanceIds")(__v.asInstanceOf[js.Any]))
+      LayerId.foreach(__v => __obj.updateDynamic("LayerId")(__v.asInstanceOf[js.Any]))
+      StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeInstancesRequest]
     }
   }
@@ -2044,8 +2054,8 @@ package opsworks {
     def apply(
         Instances: js.UndefOr[Instances] = js.undefined
     ): DescribeInstancesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Instances.foreach(__v => __obj.update("Instances", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Instances.foreach(__v => __obj.updateDynamic("Instances")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeInstancesResult]
     }
   }
@@ -2061,9 +2071,9 @@ package opsworks {
         LayerIds: js.UndefOr[Strings] = js.undefined,
         StackId: js.UndefOr[String] = js.undefined
     ): DescribeLayersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LayerIds.foreach(__v => __obj.update("LayerIds", __v.asInstanceOf[js.Any]))
-      StackId.foreach(__v => __obj.update("StackId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LayerIds.foreach(__v => __obj.updateDynamic("LayerIds")(__v.asInstanceOf[js.Any]))
+      StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLayersRequest]
     }
   }
@@ -2080,8 +2090,8 @@ package opsworks {
     def apply(
         Layers: js.UndefOr[Layers] = js.undefined
     ): DescribeLayersResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Layers.foreach(__v => __obj.update("Layers", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Layers.foreach(__v => __obj.updateDynamic("Layers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLayersResult]
     }
   }
@@ -2095,7 +2105,7 @@ package opsworks {
     def apply(
         LayerIds: Strings
     ): DescribeLoadBasedAutoScalingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LayerIds" -> LayerIds.asInstanceOf[js.Any]
       )
 
@@ -2115,9 +2125,9 @@ package opsworks {
     def apply(
         LoadBasedAutoScalingConfigurations: js.UndefOr[LoadBasedAutoScalingConfigurations] = js.undefined
     ): DescribeLoadBasedAutoScalingResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       LoadBasedAutoScalingConfigurations.foreach(
-        __v => __obj.update("LoadBasedAutoScalingConfigurations", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("LoadBasedAutoScalingConfigurations")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeLoadBasedAutoScalingResult]
     }
@@ -2135,8 +2145,8 @@ package opsworks {
     def apply(
         UserProfile: js.UndefOr[SelfUserProfile] = js.undefined
     ): DescribeMyUserProfileResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      UserProfile.foreach(__v => __obj.update("UserProfile", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      UserProfile.foreach(__v => __obj.updateDynamic("UserProfile")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMyUserProfileResult]
     }
   }
@@ -2153,8 +2163,8 @@ package opsworks {
     def apply(
         OperatingSystems: js.UndefOr[OperatingSystems] = js.undefined
     ): DescribeOperatingSystemsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      OperatingSystems.foreach(__v => __obj.update("OperatingSystems", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      OperatingSystems.foreach(__v => __obj.updateDynamic("OperatingSystems")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeOperatingSystemsResponse]
     }
   }
@@ -2170,9 +2180,9 @@ package opsworks {
         IamUserArn: js.UndefOr[String] = js.undefined,
         StackId: js.UndefOr[String] = js.undefined
     ): DescribePermissionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IamUserArn.foreach(__v => __obj.update("IamUserArn", __v.asInstanceOf[js.Any]))
-      StackId.foreach(__v => __obj.update("StackId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IamUserArn.foreach(__v => __obj.updateDynamic("IamUserArn")(__v.asInstanceOf[js.Any]))
+      StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePermissionsRequest]
     }
   }
@@ -2189,8 +2199,8 @@ package opsworks {
     def apply(
         Permissions: js.UndefOr[Permissions] = js.undefined
     ): DescribePermissionsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Permissions.foreach(__v => __obj.update("Permissions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePermissionsResult]
     }
   }
@@ -2208,10 +2218,10 @@ package opsworks {
         RaidArrayIds: js.UndefOr[Strings] = js.undefined,
         StackId: js.UndefOr[String] = js.undefined
     ): DescribeRaidArraysRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      RaidArrayIds.foreach(__v => __obj.update("RaidArrayIds", __v.asInstanceOf[js.Any]))
-      StackId.foreach(__v => __obj.update("StackId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      RaidArrayIds.foreach(__v => __obj.updateDynamic("RaidArrayIds")(__v.asInstanceOf[js.Any]))
+      StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRaidArraysRequest]
     }
   }
@@ -2228,8 +2238,8 @@ package opsworks {
     def apply(
         RaidArrays: js.UndefOr[RaidArrays] = js.undefined
     ): DescribeRaidArraysResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RaidArrays.foreach(__v => __obj.update("RaidArrays", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RaidArrays.foreach(__v => __obj.updateDynamic("RaidArrays")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRaidArraysResult]
     }
   }
@@ -2245,11 +2255,11 @@ package opsworks {
         StackId: String,
         RdsDbInstanceArns: js.UndefOr[Strings] = js.undefined
     ): DescribeRdsDbInstancesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "StackId" -> StackId.asInstanceOf[js.Any]
       )
 
-      RdsDbInstanceArns.foreach(__v => __obj.update("RdsDbInstanceArns", __v.asInstanceOf[js.Any]))
+      RdsDbInstanceArns.foreach(__v => __obj.updateDynamic("RdsDbInstanceArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRdsDbInstancesRequest]
     }
   }
@@ -2266,8 +2276,8 @@ package opsworks {
     def apply(
         RdsDbInstances: js.UndefOr[RdsDbInstances] = js.undefined
     ): DescribeRdsDbInstancesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RdsDbInstances.foreach(__v => __obj.update("RdsDbInstances", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RdsDbInstances.foreach(__v => __obj.updateDynamic("RdsDbInstances")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRdsDbInstancesResult]
     }
   }
@@ -2285,10 +2295,10 @@ package opsworks {
         ServiceErrorIds: js.UndefOr[Strings] = js.undefined,
         StackId: js.UndefOr[String] = js.undefined
     ): DescribeServiceErrorsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      ServiceErrorIds.foreach(__v => __obj.update("ServiceErrorIds", __v.asInstanceOf[js.Any]))
-      StackId.foreach(__v => __obj.update("StackId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      ServiceErrorIds.foreach(__v => __obj.updateDynamic("ServiceErrorIds")(__v.asInstanceOf[js.Any]))
+      StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeServiceErrorsRequest]
     }
   }
@@ -2305,8 +2315,8 @@ package opsworks {
     def apply(
         ServiceErrors: js.UndefOr[ServiceErrors] = js.undefined
     ): DescribeServiceErrorsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ServiceErrors.foreach(__v => __obj.update("ServiceErrors", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ServiceErrors.foreach(__v => __obj.updateDynamic("ServiceErrors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeServiceErrorsResult]
     }
   }
@@ -2320,7 +2330,7 @@ package opsworks {
     def apply(
         StackId: String
     ): DescribeStackProvisioningParametersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "StackId" -> StackId.asInstanceOf[js.Any]
       )
 
@@ -2342,9 +2352,9 @@ package opsworks {
         AgentInstallerUrl: js.UndefOr[String] = js.undefined,
         Parameters: js.UndefOr[Parameters] = js.undefined
     ): DescribeStackProvisioningParametersResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AgentInstallerUrl.foreach(__v => __obj.update("AgentInstallerUrl", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AgentInstallerUrl.foreach(__v => __obj.updateDynamic("AgentInstallerUrl")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeStackProvisioningParametersResult]
     }
   }
@@ -2358,7 +2368,7 @@ package opsworks {
     def apply(
         StackId: String
     ): DescribeStackSummaryRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "StackId" -> StackId.asInstanceOf[js.Any]
       )
 
@@ -2378,8 +2388,8 @@ package opsworks {
     def apply(
         StackSummary: js.UndefOr[StackSummary] = js.undefined
     ): DescribeStackSummaryResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      StackSummary.foreach(__v => __obj.update("StackSummary", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      StackSummary.foreach(__v => __obj.updateDynamic("StackSummary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeStackSummaryResult]
     }
   }
@@ -2393,8 +2403,8 @@ package opsworks {
     def apply(
         StackIds: js.UndefOr[Strings] = js.undefined
     ): DescribeStacksRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      StackIds.foreach(__v => __obj.update("StackIds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      StackIds.foreach(__v => __obj.updateDynamic("StackIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeStacksRequest]
     }
   }
@@ -2411,8 +2421,8 @@ package opsworks {
     def apply(
         Stacks: js.UndefOr[Stacks] = js.undefined
     ): DescribeStacksResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Stacks.foreach(__v => __obj.update("Stacks", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Stacks.foreach(__v => __obj.updateDynamic("Stacks")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeStacksResult]
     }
   }
@@ -2426,7 +2436,7 @@ package opsworks {
     def apply(
         InstanceIds: Strings
     ): DescribeTimeBasedAutoScalingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceIds" -> InstanceIds.asInstanceOf[js.Any]
       )
 
@@ -2446,9 +2456,9 @@ package opsworks {
     def apply(
         TimeBasedAutoScalingConfigurations: js.UndefOr[TimeBasedAutoScalingConfigurations] = js.undefined
     ): DescribeTimeBasedAutoScalingResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       TimeBasedAutoScalingConfigurations.foreach(
-        __v => __obj.update("TimeBasedAutoScalingConfigurations", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("TimeBasedAutoScalingConfigurations")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeTimeBasedAutoScalingResult]
     }
@@ -2463,8 +2473,8 @@ package opsworks {
     def apply(
         IamUserArns: js.UndefOr[Strings] = js.undefined
     ): DescribeUserProfilesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IamUserArns.foreach(__v => __obj.update("IamUserArns", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IamUserArns.foreach(__v => __obj.updateDynamic("IamUserArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeUserProfilesRequest]
     }
   }
@@ -2481,8 +2491,8 @@ package opsworks {
     def apply(
         UserProfiles: js.UndefOr[UserProfiles] = js.undefined
     ): DescribeUserProfilesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      UserProfiles.foreach(__v => __obj.update("UserProfiles", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      UserProfiles.foreach(__v => __obj.updateDynamic("UserProfiles")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeUserProfilesResult]
     }
   }
@@ -2502,11 +2512,11 @@ package opsworks {
         StackId: js.UndefOr[String] = js.undefined,
         VolumeIds: js.UndefOr[Strings] = js.undefined
     ): DescribeVolumesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      RaidArrayId.foreach(__v => __obj.update("RaidArrayId", __v.asInstanceOf[js.Any]))
-      StackId.foreach(__v => __obj.update("StackId", __v.asInstanceOf[js.Any]))
-      VolumeIds.foreach(__v => __obj.update("VolumeIds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      RaidArrayId.foreach(__v => __obj.updateDynamic("RaidArrayId")(__v.asInstanceOf[js.Any]))
+      StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
+      VolumeIds.foreach(__v => __obj.updateDynamic("VolumeIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeVolumesRequest]
     }
   }
@@ -2523,8 +2533,8 @@ package opsworks {
     def apply(
         Volumes: js.UndefOr[Volumes] = js.undefined
     ): DescribeVolumesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Volumes.foreach(__v => __obj.update("Volumes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Volumes.foreach(__v => __obj.updateDynamic("Volumes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeVolumesResult]
     }
   }
@@ -2540,7 +2550,7 @@ package opsworks {
         ElasticLoadBalancerName: String,
         LayerId: String
     ): DetachElasticLoadBalancerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ElasticLoadBalancerName" -> ElasticLoadBalancerName.asInstanceOf[js.Any],
         "LayerId"                 -> LayerId.asInstanceOf[js.Any]
       )
@@ -2558,7 +2568,7 @@ package opsworks {
     def apply(
         ElasticIp: String
     ): DisassociateElasticIpRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ElasticIp" -> ElasticIp.asInstanceOf[js.Any]
       )
 
@@ -2586,12 +2596,12 @@ package opsworks {
         VolumeSize: js.UndefOr[Int] = js.undefined,
         VolumeType: js.UndefOr[VolumeType] = js.undefined
     ): EbsBlockDevice = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DeleteOnTermination.foreach(__v => __obj.update("DeleteOnTermination", __v.asInstanceOf[js.Any]))
-      Iops.foreach(__v => __obj.update("Iops", __v.asInstanceOf[js.Any]))
-      SnapshotId.foreach(__v => __obj.update("SnapshotId", __v.asInstanceOf[js.Any]))
-      VolumeSize.foreach(__v => __obj.update("VolumeSize", __v.asInstanceOf[js.Any]))
-      VolumeType.foreach(__v => __obj.update("VolumeType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DeleteOnTermination.foreach(__v => __obj.updateDynamic("DeleteOnTermination")(__v.asInstanceOf[js.Any]))
+      Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
+      SnapshotId.foreach(__v => __obj.updateDynamic("SnapshotId")(__v.asInstanceOf[js.Any]))
+      VolumeSize.foreach(__v => __obj.updateDynamic("VolumeSize")(__v.asInstanceOf[js.Any]))
+      VolumeType.foreach(__v => __obj.updateDynamic("VolumeType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EbsBlockDevice]
     }
   }
@@ -2614,11 +2624,11 @@ package opsworks {
         RegisteredAt: js.UndefOr[DateTime] = js.undefined,
         StackId: js.UndefOr[String] = js.undefined
     ): EcsCluster = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EcsClusterArn.foreach(__v => __obj.update("EcsClusterArn", __v.asInstanceOf[js.Any]))
-      EcsClusterName.foreach(__v => __obj.update("EcsClusterName", __v.asInstanceOf[js.Any]))
-      RegisteredAt.foreach(__v => __obj.update("RegisteredAt", __v.asInstanceOf[js.Any]))
-      StackId.foreach(__v => __obj.update("StackId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EcsClusterArn.foreach(__v => __obj.updateDynamic("EcsClusterArn")(__v.asInstanceOf[js.Any]))
+      EcsClusterName.foreach(__v => __obj.updateDynamic("EcsClusterName")(__v.asInstanceOf[js.Any]))
+      RegisteredAt.foreach(__v => __obj.updateDynamic("RegisteredAt")(__v.asInstanceOf[js.Any]))
+      StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EcsCluster]
     }
   }
@@ -2643,12 +2653,12 @@ package opsworks {
         Name: js.UndefOr[String] = js.undefined,
         Region: js.UndefOr[String] = js.undefined
     ): ElasticIp = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Domain.foreach(__v => __obj.update("Domain", __v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      Ip.foreach(__v => __obj.update("Ip", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Region.foreach(__v => __obj.update("Region", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      Ip.foreach(__v => __obj.updateDynamic("Ip")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ElasticIp]
     }
   }
@@ -2681,16 +2691,16 @@ package opsworks {
         SubnetIds: js.UndefOr[Strings] = js.undefined,
         VpcId: js.UndefOr[String] = js.undefined
     ): ElasticLoadBalancer = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
-      DnsName.foreach(__v => __obj.update("DnsName", __v.asInstanceOf[js.Any]))
-      Ec2InstanceIds.foreach(__v => __obj.update("Ec2InstanceIds", __v.asInstanceOf[js.Any]))
-      ElasticLoadBalancerName.foreach(__v => __obj.update("ElasticLoadBalancerName", __v.asInstanceOf[js.Any]))
-      LayerId.foreach(__v => __obj.update("LayerId", __v.asInstanceOf[js.Any]))
-      Region.foreach(__v => __obj.update("Region", __v.asInstanceOf[js.Any]))
-      StackId.foreach(__v => __obj.update("StackId", __v.asInstanceOf[js.Any]))
-      SubnetIds.foreach(__v => __obj.update("SubnetIds", __v.asInstanceOf[js.Any]))
-      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
+      DnsName.foreach(__v => __obj.updateDynamic("DnsName")(__v.asInstanceOf[js.Any]))
+      Ec2InstanceIds.foreach(__v => __obj.updateDynamic("Ec2InstanceIds")(__v.asInstanceOf[js.Any]))
+      ElasticLoadBalancerName.foreach(__v => __obj.updateDynamic("ElasticLoadBalancerName")(__v.asInstanceOf[js.Any]))
+      LayerId.foreach(__v => __obj.updateDynamic("LayerId")(__v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
+      StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ElasticLoadBalancer]
     }
   }
@@ -2711,12 +2721,12 @@ package opsworks {
         Value: String,
         Secure: js.UndefOr[Boolean] = js.undefined
     ): EnvironmentVariable = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"   -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
-      Secure.foreach(__v => __obj.update("Secure", __v.asInstanceOf[js.Any]))
+      Secure.foreach(__v => __obj.updateDynamic("Secure")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnvironmentVariable]
     }
   }
@@ -2730,7 +2740,7 @@ package opsworks {
     def apply(
         LayerId: String
     ): GetHostnameSuggestionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LayerId" -> LayerId.asInstanceOf[js.Any]
       )
 
@@ -2752,9 +2762,9 @@ package opsworks {
         Hostname: js.UndefOr[String] = js.undefined,
         LayerId: js.UndefOr[String] = js.undefined
     ): GetHostnameSuggestionResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Hostname.foreach(__v => __obj.update("Hostname", __v.asInstanceOf[js.Any]))
-      LayerId.foreach(__v => __obj.update("LayerId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Hostname.foreach(__v => __obj.updateDynamic("Hostname")(__v.asInstanceOf[js.Any]))
+      LayerId.foreach(__v => __obj.updateDynamic("LayerId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetHostnameSuggestionResult]
     }
   }
@@ -2770,11 +2780,11 @@ package opsworks {
         InstanceId: String,
         ValidForInMinutes: js.UndefOr[ValidForInMinutes] = js.undefined
     ): GrantAccessRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
-      ValidForInMinutes.foreach(__v => __obj.update("ValidForInMinutes", __v.asInstanceOf[js.Any]))
+      ValidForInMinutes.foreach(__v => __obj.updateDynamic("ValidForInMinutes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GrantAccessRequest]
     }
   }
@@ -2791,8 +2801,8 @@ package opsworks {
     def apply(
         TemporaryCredential: js.UndefOr[TemporaryCredential] = js.undefined
     ): GrantAccessResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TemporaryCredential.foreach(__v => __obj.update("TemporaryCredential", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TemporaryCredential.foreach(__v => __obj.updateDynamic("TemporaryCredential")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GrantAccessResult]
     }
   }
@@ -2889,48 +2899,48 @@ package opsworks {
         Tenancy: js.UndefOr[String] = js.undefined,
         VirtualizationType: js.UndefOr[VirtualizationType] = js.undefined
     ): Instance = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AgentVersion.foreach(__v => __obj.update("AgentVersion", __v.asInstanceOf[js.Any]))
-      AmiId.foreach(__v => __obj.update("AmiId", __v.asInstanceOf[js.Any]))
-      Architecture.foreach(__v => __obj.update("Architecture", __v.asInstanceOf[js.Any]))
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      AutoScalingType.foreach(__v => __obj.update("AutoScalingType", __v.asInstanceOf[js.Any]))
-      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
-      BlockDeviceMappings.foreach(__v => __obj.update("BlockDeviceMappings", __v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.update("CreatedAt", __v.asInstanceOf[js.Any]))
-      EbsOptimized.foreach(__v => __obj.update("EbsOptimized", __v.asInstanceOf[js.Any]))
-      Ec2InstanceId.foreach(__v => __obj.update("Ec2InstanceId", __v.asInstanceOf[js.Any]))
-      EcsClusterArn.foreach(__v => __obj.update("EcsClusterArn", __v.asInstanceOf[js.Any]))
-      EcsContainerInstanceArn.foreach(__v => __obj.update("EcsContainerInstanceArn", __v.asInstanceOf[js.Any]))
-      ElasticIp.foreach(__v => __obj.update("ElasticIp", __v.asInstanceOf[js.Any]))
-      Hostname.foreach(__v => __obj.update("Hostname", __v.asInstanceOf[js.Any]))
-      InfrastructureClass.foreach(__v => __obj.update("InfrastructureClass", __v.asInstanceOf[js.Any]))
-      InstallUpdatesOnBoot.foreach(__v => __obj.update("InstallUpdatesOnBoot", __v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      InstanceProfileArn.foreach(__v => __obj.update("InstanceProfileArn", __v.asInstanceOf[js.Any]))
-      InstanceType.foreach(__v => __obj.update("InstanceType", __v.asInstanceOf[js.Any]))
-      LastServiceErrorId.foreach(__v => __obj.update("LastServiceErrorId", __v.asInstanceOf[js.Any]))
-      LayerIds.foreach(__v => __obj.update("LayerIds", __v.asInstanceOf[js.Any]))
-      Os.foreach(__v => __obj.update("Os", __v.asInstanceOf[js.Any]))
-      Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
-      PrivateDns.foreach(__v => __obj.update("PrivateDns", __v.asInstanceOf[js.Any]))
-      PrivateIp.foreach(__v => __obj.update("PrivateIp", __v.asInstanceOf[js.Any]))
-      PublicDns.foreach(__v => __obj.update("PublicDns", __v.asInstanceOf[js.Any]))
-      PublicIp.foreach(__v => __obj.update("PublicIp", __v.asInstanceOf[js.Any]))
-      RegisteredBy.foreach(__v => __obj.update("RegisteredBy", __v.asInstanceOf[js.Any]))
-      ReportedAgentVersion.foreach(__v => __obj.update("ReportedAgentVersion", __v.asInstanceOf[js.Any]))
-      ReportedOs.foreach(__v => __obj.update("ReportedOs", __v.asInstanceOf[js.Any]))
-      RootDeviceType.foreach(__v => __obj.update("RootDeviceType", __v.asInstanceOf[js.Any]))
-      RootDeviceVolumeId.foreach(__v => __obj.update("RootDeviceVolumeId", __v.asInstanceOf[js.Any]))
-      SecurityGroupIds.foreach(__v => __obj.update("SecurityGroupIds", __v.asInstanceOf[js.Any]))
-      SshHostDsaKeyFingerprint.foreach(__v => __obj.update("SshHostDsaKeyFingerprint", __v.asInstanceOf[js.Any]))
-      SshHostRsaKeyFingerprint.foreach(__v => __obj.update("SshHostRsaKeyFingerprint", __v.asInstanceOf[js.Any]))
-      SshKeyName.foreach(__v => __obj.update("SshKeyName", __v.asInstanceOf[js.Any]))
-      StackId.foreach(__v => __obj.update("StackId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      SubnetId.foreach(__v => __obj.update("SubnetId", __v.asInstanceOf[js.Any]))
-      Tenancy.foreach(__v => __obj.update("Tenancy", __v.asInstanceOf[js.Any]))
-      VirtualizationType.foreach(__v => __obj.update("VirtualizationType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AgentVersion.foreach(__v => __obj.updateDynamic("AgentVersion")(__v.asInstanceOf[js.Any]))
+      AmiId.foreach(__v => __obj.updateDynamic("AmiId")(__v.asInstanceOf[js.Any]))
+      Architecture.foreach(__v => __obj.updateDynamic("Architecture")(__v.asInstanceOf[js.Any]))
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      AutoScalingType.foreach(__v => __obj.updateDynamic("AutoScalingType")(__v.asInstanceOf[js.Any]))
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      BlockDeviceMappings.foreach(__v => __obj.updateDynamic("BlockDeviceMappings")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      EbsOptimized.foreach(__v => __obj.updateDynamic("EbsOptimized")(__v.asInstanceOf[js.Any]))
+      Ec2InstanceId.foreach(__v => __obj.updateDynamic("Ec2InstanceId")(__v.asInstanceOf[js.Any]))
+      EcsClusterArn.foreach(__v => __obj.updateDynamic("EcsClusterArn")(__v.asInstanceOf[js.Any]))
+      EcsContainerInstanceArn.foreach(__v => __obj.updateDynamic("EcsContainerInstanceArn")(__v.asInstanceOf[js.Any]))
+      ElasticIp.foreach(__v => __obj.updateDynamic("ElasticIp")(__v.asInstanceOf[js.Any]))
+      Hostname.foreach(__v => __obj.updateDynamic("Hostname")(__v.asInstanceOf[js.Any]))
+      InfrastructureClass.foreach(__v => __obj.updateDynamic("InfrastructureClass")(__v.asInstanceOf[js.Any]))
+      InstallUpdatesOnBoot.foreach(__v => __obj.updateDynamic("InstallUpdatesOnBoot")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      InstanceProfileArn.foreach(__v => __obj.updateDynamic("InstanceProfileArn")(__v.asInstanceOf[js.Any]))
+      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
+      LastServiceErrorId.foreach(__v => __obj.updateDynamic("LastServiceErrorId")(__v.asInstanceOf[js.Any]))
+      LayerIds.foreach(__v => __obj.updateDynamic("LayerIds")(__v.asInstanceOf[js.Any]))
+      Os.foreach(__v => __obj.updateDynamic("Os")(__v.asInstanceOf[js.Any]))
+      Platform.foreach(__v => __obj.updateDynamic("Platform")(__v.asInstanceOf[js.Any]))
+      PrivateDns.foreach(__v => __obj.updateDynamic("PrivateDns")(__v.asInstanceOf[js.Any]))
+      PrivateIp.foreach(__v => __obj.updateDynamic("PrivateIp")(__v.asInstanceOf[js.Any]))
+      PublicDns.foreach(__v => __obj.updateDynamic("PublicDns")(__v.asInstanceOf[js.Any]))
+      PublicIp.foreach(__v => __obj.updateDynamic("PublicIp")(__v.asInstanceOf[js.Any]))
+      RegisteredBy.foreach(__v => __obj.updateDynamic("RegisteredBy")(__v.asInstanceOf[js.Any]))
+      ReportedAgentVersion.foreach(__v => __obj.updateDynamic("ReportedAgentVersion")(__v.asInstanceOf[js.Any]))
+      ReportedOs.foreach(__v => __obj.updateDynamic("ReportedOs")(__v.asInstanceOf[js.Any]))
+      RootDeviceType.foreach(__v => __obj.updateDynamic("RootDeviceType")(__v.asInstanceOf[js.Any]))
+      RootDeviceVolumeId.foreach(__v => __obj.updateDynamic("RootDeviceVolumeId")(__v.asInstanceOf[js.Any]))
+      SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      SshHostDsaKeyFingerprint.foreach(__v => __obj.updateDynamic("SshHostDsaKeyFingerprint")(__v.asInstanceOf[js.Any]))
+      SshHostRsaKeyFingerprint.foreach(__v => __obj.updateDynamic("SshHostRsaKeyFingerprint")(__v.asInstanceOf[js.Any]))
+      SshKeyName.foreach(__v => __obj.updateDynamic("SshKeyName")(__v.asInstanceOf[js.Any]))
+      StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
+      Tenancy.foreach(__v => __obj.updateDynamic("Tenancy")(__v.asInstanceOf[js.Any]))
+      VirtualizationType.foreach(__v => __obj.updateDynamic("VirtualizationType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Instance]
     }
   }
@@ -2949,9 +2959,9 @@ package opsworks {
         Document: js.UndefOr[String] = js.undefined,
         Signature: js.UndefOr[String] = js.undefined
     ): InstanceIdentity = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Document.foreach(__v => __obj.update("Document", __v.asInstanceOf[js.Any]))
-      Signature.foreach(__v => __obj.update("Signature", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Document.foreach(__v => __obj.updateDynamic("Document")(__v.asInstanceOf[js.Any]))
+      Signature.foreach(__v => __obj.updateDynamic("Signature")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceIdentity]
     }
   }
@@ -3006,27 +3016,27 @@ package opsworks {
         Terminating: js.UndefOr[Int] = js.undefined,
         Unassigning: js.UndefOr[Int] = js.undefined
     ): InstancesCount = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Assigning.foreach(__v => __obj.update("Assigning", __v.asInstanceOf[js.Any]))
-      Booting.foreach(__v => __obj.update("Booting", __v.asInstanceOf[js.Any]))
-      ConnectionLost.foreach(__v => __obj.update("ConnectionLost", __v.asInstanceOf[js.Any]))
-      Deregistering.foreach(__v => __obj.update("Deregistering", __v.asInstanceOf[js.Any]))
-      Online.foreach(__v => __obj.update("Online", __v.asInstanceOf[js.Any]))
-      Pending.foreach(__v => __obj.update("Pending", __v.asInstanceOf[js.Any]))
-      Rebooting.foreach(__v => __obj.update("Rebooting", __v.asInstanceOf[js.Any]))
-      Registered.foreach(__v => __obj.update("Registered", __v.asInstanceOf[js.Any]))
-      Registering.foreach(__v => __obj.update("Registering", __v.asInstanceOf[js.Any]))
-      Requested.foreach(__v => __obj.update("Requested", __v.asInstanceOf[js.Any]))
-      RunningSetup.foreach(__v => __obj.update("RunningSetup", __v.asInstanceOf[js.Any]))
-      SetupFailed.foreach(__v => __obj.update("SetupFailed", __v.asInstanceOf[js.Any]))
-      ShuttingDown.foreach(__v => __obj.update("ShuttingDown", __v.asInstanceOf[js.Any]))
-      StartFailed.foreach(__v => __obj.update("StartFailed", __v.asInstanceOf[js.Any]))
-      StopFailed.foreach(__v => __obj.update("StopFailed", __v.asInstanceOf[js.Any]))
-      Stopped.foreach(__v => __obj.update("Stopped", __v.asInstanceOf[js.Any]))
-      Stopping.foreach(__v => __obj.update("Stopping", __v.asInstanceOf[js.Any]))
-      Terminated.foreach(__v => __obj.update("Terminated", __v.asInstanceOf[js.Any]))
-      Terminating.foreach(__v => __obj.update("Terminating", __v.asInstanceOf[js.Any]))
-      Unassigning.foreach(__v => __obj.update("Unassigning", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Assigning.foreach(__v => __obj.updateDynamic("Assigning")(__v.asInstanceOf[js.Any]))
+      Booting.foreach(__v => __obj.updateDynamic("Booting")(__v.asInstanceOf[js.Any]))
+      ConnectionLost.foreach(__v => __obj.updateDynamic("ConnectionLost")(__v.asInstanceOf[js.Any]))
+      Deregistering.foreach(__v => __obj.updateDynamic("Deregistering")(__v.asInstanceOf[js.Any]))
+      Online.foreach(__v => __obj.updateDynamic("Online")(__v.asInstanceOf[js.Any]))
+      Pending.foreach(__v => __obj.updateDynamic("Pending")(__v.asInstanceOf[js.Any]))
+      Rebooting.foreach(__v => __obj.updateDynamic("Rebooting")(__v.asInstanceOf[js.Any]))
+      Registered.foreach(__v => __obj.updateDynamic("Registered")(__v.asInstanceOf[js.Any]))
+      Registering.foreach(__v => __obj.updateDynamic("Registering")(__v.asInstanceOf[js.Any]))
+      Requested.foreach(__v => __obj.updateDynamic("Requested")(__v.asInstanceOf[js.Any]))
+      RunningSetup.foreach(__v => __obj.updateDynamic("RunningSetup")(__v.asInstanceOf[js.Any]))
+      SetupFailed.foreach(__v => __obj.updateDynamic("SetupFailed")(__v.asInstanceOf[js.Any]))
+      ShuttingDown.foreach(__v => __obj.updateDynamic("ShuttingDown")(__v.asInstanceOf[js.Any]))
+      StartFailed.foreach(__v => __obj.updateDynamic("StartFailed")(__v.asInstanceOf[js.Any]))
+      StopFailed.foreach(__v => __obj.updateDynamic("StopFailed")(__v.asInstanceOf[js.Any]))
+      Stopped.foreach(__v => __obj.updateDynamic("Stopped")(__v.asInstanceOf[js.Any]))
+      Stopping.foreach(__v => __obj.updateDynamic("Stopping")(__v.asInstanceOf[js.Any]))
+      Terminated.foreach(__v => __obj.updateDynamic("Terminated")(__v.asInstanceOf[js.Any]))
+      Terminating.foreach(__v => __obj.updateDynamic("Terminating")(__v.asInstanceOf[js.Any]))
+      Unassigning.foreach(__v => __obj.updateDynamic("Unassigning")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstancesCount]
     }
   }
@@ -3087,30 +3097,36 @@ package opsworks {
         UseEbsOptimizedInstances: js.UndefOr[Boolean] = js.undefined,
         VolumeConfigurations: js.UndefOr[VolumeConfigurations] = js.undefined
     ): Layer = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      AutoAssignElasticIps.foreach(__v => __obj.update("AutoAssignElasticIps", __v.asInstanceOf[js.Any]))
-      AutoAssignPublicIps.foreach(__v => __obj.update("AutoAssignPublicIps", __v.asInstanceOf[js.Any]))
-      CloudWatchLogsConfiguration.foreach(__v => __obj.update("CloudWatchLogsConfiguration", __v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.update("CreatedAt", __v.asInstanceOf[js.Any]))
-      CustomInstanceProfileArn.foreach(__v => __obj.update("CustomInstanceProfileArn", __v.asInstanceOf[js.Any]))
-      CustomJson.foreach(__v => __obj.update("CustomJson", __v.asInstanceOf[js.Any]))
-      CustomRecipes.foreach(__v => __obj.update("CustomRecipes", __v.asInstanceOf[js.Any]))
-      CustomSecurityGroupIds.foreach(__v => __obj.update("CustomSecurityGroupIds", __v.asInstanceOf[js.Any]))
-      DefaultRecipes.foreach(__v => __obj.update("DefaultRecipes", __v.asInstanceOf[js.Any]))
-      DefaultSecurityGroupNames.foreach(__v => __obj.update("DefaultSecurityGroupNames", __v.asInstanceOf[js.Any]))
-      EnableAutoHealing.foreach(__v => __obj.update("EnableAutoHealing", __v.asInstanceOf[js.Any]))
-      InstallUpdatesOnBoot.foreach(__v => __obj.update("InstallUpdatesOnBoot", __v.asInstanceOf[js.Any]))
-      LayerId.foreach(__v => __obj.update("LayerId", __v.asInstanceOf[js.Any]))
-      LifecycleEventConfiguration.foreach(__v => __obj.update("LifecycleEventConfiguration", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Packages.foreach(__v => __obj.update("Packages", __v.asInstanceOf[js.Any]))
-      Shortname.foreach(__v => __obj.update("Shortname", __v.asInstanceOf[js.Any]))
-      StackId.foreach(__v => __obj.update("StackId", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
-      UseEbsOptimizedInstances.foreach(__v => __obj.update("UseEbsOptimizedInstances", __v.asInstanceOf[js.Any]))
-      VolumeConfigurations.foreach(__v => __obj.update("VolumeConfigurations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      AutoAssignElasticIps.foreach(__v => __obj.updateDynamic("AutoAssignElasticIps")(__v.asInstanceOf[js.Any]))
+      AutoAssignPublicIps.foreach(__v => __obj.updateDynamic("AutoAssignPublicIps")(__v.asInstanceOf[js.Any]))
+      CloudWatchLogsConfiguration.foreach(
+        __v => __obj.updateDynamic("CloudWatchLogsConfiguration")(__v.asInstanceOf[js.Any])
+      )
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      CustomInstanceProfileArn.foreach(__v => __obj.updateDynamic("CustomInstanceProfileArn")(__v.asInstanceOf[js.Any]))
+      CustomJson.foreach(__v => __obj.updateDynamic("CustomJson")(__v.asInstanceOf[js.Any]))
+      CustomRecipes.foreach(__v => __obj.updateDynamic("CustomRecipes")(__v.asInstanceOf[js.Any]))
+      CustomSecurityGroupIds.foreach(__v => __obj.updateDynamic("CustomSecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      DefaultRecipes.foreach(__v => __obj.updateDynamic("DefaultRecipes")(__v.asInstanceOf[js.Any]))
+      DefaultSecurityGroupNames.foreach(
+        __v => __obj.updateDynamic("DefaultSecurityGroupNames")(__v.asInstanceOf[js.Any])
+      )
+      EnableAutoHealing.foreach(__v => __obj.updateDynamic("EnableAutoHealing")(__v.asInstanceOf[js.Any]))
+      InstallUpdatesOnBoot.foreach(__v => __obj.updateDynamic("InstallUpdatesOnBoot")(__v.asInstanceOf[js.Any]))
+      LayerId.foreach(__v => __obj.updateDynamic("LayerId")(__v.asInstanceOf[js.Any]))
+      LifecycleEventConfiguration.foreach(
+        __v => __obj.updateDynamic("LifecycleEventConfiguration")(__v.asInstanceOf[js.Any])
+      )
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Packages.foreach(__v => __obj.updateDynamic("Packages")(__v.asInstanceOf[js.Any]))
+      Shortname.foreach(__v => __obj.updateDynamic("Shortname")(__v.asInstanceOf[js.Any]))
+      StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      UseEbsOptimizedInstances.foreach(__v => __obj.updateDynamic("UseEbsOptimizedInstances")(__v.asInstanceOf[js.Any]))
+      VolumeConfigurations.foreach(__v => __obj.updateDynamic("VolumeConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Layer]
     }
   }
@@ -3217,8 +3233,8 @@ package opsworks {
     def apply(
         Shutdown: js.UndefOr[ShutdownEventConfiguration] = js.undefined
     ): LifecycleEventConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Shutdown.foreach(__v => __obj.update("Shutdown", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Shutdown.foreach(__v => __obj.updateDynamic("Shutdown")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LifecycleEventConfiguration]
     }
   }
@@ -3236,12 +3252,12 @@ package opsworks {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListTagsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsRequest]
     }
   }
@@ -3260,9 +3276,9 @@ package opsworks {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): ListTagsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsResult]
     }
   }
@@ -3285,11 +3301,11 @@ package opsworks {
         LayerId: js.UndefOr[String] = js.undefined,
         UpScaling: js.UndefOr[AutoScalingThresholds] = js.undefined
     ): LoadBasedAutoScalingConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DownScaling.foreach(__v => __obj.update("DownScaling", __v.asInstanceOf[js.Any]))
-      Enable.foreach(__v => __obj.update("Enable", __v.asInstanceOf[js.Any]))
-      LayerId.foreach(__v => __obj.update("LayerId", __v.asInstanceOf[js.Any]))
-      UpScaling.foreach(__v => __obj.update("UpScaling", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DownScaling.foreach(__v => __obj.updateDynamic("DownScaling")(__v.asInstanceOf[js.Any]))
+      Enable.foreach(__v => __obj.updateDynamic("Enable")(__v.asInstanceOf[js.Any]))
+      LayerId.foreach(__v => __obj.updateDynamic("LayerId")(__v.asInstanceOf[js.Any]))
+      UpScaling.foreach(__v => __obj.updateDynamic("UpScaling")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoadBasedAutoScalingConfiguration]
     }
   }
@@ -3318,14 +3334,14 @@ package opsworks {
         Supported: js.UndefOr[Boolean] = js.undefined,
         Type: js.UndefOr[String] = js.undefined
     ): OperatingSystem = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConfigurationManagers.foreach(__v => __obj.update("ConfigurationManagers", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      ReportedName.foreach(__v => __obj.update("ReportedName", __v.asInstanceOf[js.Any]))
-      ReportedVersion.foreach(__v => __obj.update("ReportedVersion", __v.asInstanceOf[js.Any]))
-      Supported.foreach(__v => __obj.update("Supported", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConfigurationManagers.foreach(__v => __obj.updateDynamic("ConfigurationManagers")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ReportedName.foreach(__v => __obj.updateDynamic("ReportedName")(__v.asInstanceOf[js.Any]))
+      ReportedVersion.foreach(__v => __obj.updateDynamic("ReportedVersion")(__v.asInstanceOf[js.Any]))
+      Supported.foreach(__v => __obj.updateDynamic("Supported")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OperatingSystem]
     }
   }
@@ -3344,9 +3360,9 @@ package opsworks {
         Name: js.UndefOr[String] = js.undefined,
         Version: js.UndefOr[String] = js.undefined
     ): OperatingSystemConfigurationManager = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OperatingSystemConfigurationManager]
     }
   }
@@ -3371,12 +3387,12 @@ package opsworks {
         Level: js.UndefOr[String] = js.undefined,
         StackId: js.UndefOr[String] = js.undefined
     ): Permission = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AllowSsh.foreach(__v => __obj.update("AllowSsh", __v.asInstanceOf[js.Any]))
-      AllowSudo.foreach(__v => __obj.update("AllowSudo", __v.asInstanceOf[js.Any]))
-      IamUserArn.foreach(__v => __obj.update("IamUserArn", __v.asInstanceOf[js.Any]))
-      Level.foreach(__v => __obj.update("Level", __v.asInstanceOf[js.Any]))
-      StackId.foreach(__v => __obj.update("StackId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AllowSsh.foreach(__v => __obj.updateDynamic("AllowSsh")(__v.asInstanceOf[js.Any]))
+      AllowSudo.foreach(__v => __obj.updateDynamic("AllowSudo")(__v.asInstanceOf[js.Any]))
+      IamUserArn.foreach(__v => __obj.updateDynamic("IamUserArn")(__v.asInstanceOf[js.Any]))
+      Level.foreach(__v => __obj.updateDynamic("Level")(__v.asInstanceOf[js.Any]))
+      StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Permission]
     }
   }
@@ -3417,20 +3433,20 @@ package opsworks {
         StackId: js.UndefOr[String] = js.undefined,
         VolumeType: js.UndefOr[String] = js.undefined
     ): RaidArray = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.update("CreatedAt", __v.asInstanceOf[js.Any]))
-      Device.foreach(__v => __obj.update("Device", __v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      Iops.foreach(__v => __obj.update("Iops", __v.asInstanceOf[js.Any]))
-      MountPoint.foreach(__v => __obj.update("MountPoint", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      NumberOfDisks.foreach(__v => __obj.update("NumberOfDisks", __v.asInstanceOf[js.Any]))
-      RaidArrayId.foreach(__v => __obj.update("RaidArrayId", __v.asInstanceOf[js.Any]))
-      RaidLevel.foreach(__v => __obj.update("RaidLevel", __v.asInstanceOf[js.Any]))
-      Size.foreach(__v => __obj.update("Size", __v.asInstanceOf[js.Any]))
-      StackId.foreach(__v => __obj.update("StackId", __v.asInstanceOf[js.Any]))
-      VolumeType.foreach(__v => __obj.update("VolumeType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      Device.foreach(__v => __obj.updateDynamic("Device")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
+      MountPoint.foreach(__v => __obj.updateDynamic("MountPoint")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NumberOfDisks.foreach(__v => __obj.updateDynamic("NumberOfDisks")(__v.asInstanceOf[js.Any]))
+      RaidArrayId.foreach(__v => __obj.updateDynamic("RaidArrayId")(__v.asInstanceOf[js.Any]))
+      RaidLevel.foreach(__v => __obj.updateDynamic("RaidLevel")(__v.asInstanceOf[js.Any]))
+      Size.foreach(__v => __obj.updateDynamic("Size")(__v.asInstanceOf[js.Any]))
+      StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
+      VolumeType.foreach(__v => __obj.updateDynamic("VolumeType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RaidArray]
     }
   }
@@ -3463,16 +3479,16 @@ package opsworks {
         Region: js.UndefOr[String] = js.undefined,
         StackId: js.UndefOr[String] = js.undefined
     ): RdsDbInstance = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Address.foreach(__v => __obj.update("Address", __v.asInstanceOf[js.Any]))
-      DbInstanceIdentifier.foreach(__v => __obj.update("DbInstanceIdentifier", __v.asInstanceOf[js.Any]))
-      DbPassword.foreach(__v => __obj.update("DbPassword", __v.asInstanceOf[js.Any]))
-      DbUser.foreach(__v => __obj.update("DbUser", __v.asInstanceOf[js.Any]))
-      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
-      MissingOnRds.foreach(__v => __obj.update("MissingOnRds", __v.asInstanceOf[js.Any]))
-      RdsDbInstanceArn.foreach(__v => __obj.update("RdsDbInstanceArn", __v.asInstanceOf[js.Any]))
-      Region.foreach(__v => __obj.update("Region", __v.asInstanceOf[js.Any]))
-      StackId.foreach(__v => __obj.update("StackId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Address.foreach(__v => __obj.updateDynamic("Address")(__v.asInstanceOf[js.Any]))
+      DbInstanceIdentifier.foreach(__v => __obj.updateDynamic("DbInstanceIdentifier")(__v.asInstanceOf[js.Any]))
+      DbPassword.foreach(__v => __obj.updateDynamic("DbPassword")(__v.asInstanceOf[js.Any]))
+      DbUser.foreach(__v => __obj.updateDynamic("DbUser")(__v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
+      MissingOnRds.foreach(__v => __obj.updateDynamic("MissingOnRds")(__v.asInstanceOf[js.Any]))
+      RdsDbInstanceArn.foreach(__v => __obj.updateDynamic("RdsDbInstanceArn")(__v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
+      StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RdsDbInstance]
     }
   }
@@ -3486,7 +3502,7 @@ package opsworks {
     def apply(
         InstanceId: String
     ): RebootInstanceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
@@ -3515,12 +3531,12 @@ package opsworks {
         Shutdown: js.UndefOr[Strings] = js.undefined,
         Undeploy: js.UndefOr[Strings] = js.undefined
     ): Recipes = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Configure.foreach(__v => __obj.update("Configure", __v.asInstanceOf[js.Any]))
-      Deploy.foreach(__v => __obj.update("Deploy", __v.asInstanceOf[js.Any]))
-      Setup.foreach(__v => __obj.update("Setup", __v.asInstanceOf[js.Any]))
-      Shutdown.foreach(__v => __obj.update("Shutdown", __v.asInstanceOf[js.Any]))
-      Undeploy.foreach(__v => __obj.update("Undeploy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Configure.foreach(__v => __obj.updateDynamic("Configure")(__v.asInstanceOf[js.Any]))
+      Deploy.foreach(__v => __obj.updateDynamic("Deploy")(__v.asInstanceOf[js.Any]))
+      Setup.foreach(__v => __obj.updateDynamic("Setup")(__v.asInstanceOf[js.Any]))
+      Shutdown.foreach(__v => __obj.updateDynamic("Shutdown")(__v.asInstanceOf[js.Any]))
+      Undeploy.foreach(__v => __obj.updateDynamic("Undeploy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Recipes]
     }
   }
@@ -3536,7 +3552,7 @@ package opsworks {
         EcsClusterArn: String,
         StackId: String
     ): RegisterEcsClusterRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EcsClusterArn" -> EcsClusterArn.asInstanceOf[js.Any],
         "StackId"       -> StackId.asInstanceOf[js.Any]
       )
@@ -3557,8 +3573,8 @@ package opsworks {
     def apply(
         EcsClusterArn: js.UndefOr[String] = js.undefined
     ): RegisterEcsClusterResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EcsClusterArn.foreach(__v => __obj.update("EcsClusterArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EcsClusterArn.foreach(__v => __obj.updateDynamic("EcsClusterArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterEcsClusterResult]
     }
   }
@@ -3574,7 +3590,7 @@ package opsworks {
         ElasticIp: String,
         StackId: String
     ): RegisterElasticIpRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ElasticIp" -> ElasticIp.asInstanceOf[js.Any],
         "StackId"   -> StackId.asInstanceOf[js.Any]
       )
@@ -3595,8 +3611,8 @@ package opsworks {
     def apply(
         ElasticIp: js.UndefOr[String] = js.undefined
     ): RegisterElasticIpResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ElasticIp.foreach(__v => __obj.update("ElasticIp", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ElasticIp.foreach(__v => __obj.updateDynamic("ElasticIp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterElasticIpResult]
     }
   }
@@ -3622,16 +3638,16 @@ package opsworks {
         RsaPublicKey: js.UndefOr[String] = js.undefined,
         RsaPublicKeyFingerprint: js.UndefOr[String] = js.undefined
     ): RegisterInstanceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "StackId" -> StackId.asInstanceOf[js.Any]
       )
 
-      Hostname.foreach(__v => __obj.update("Hostname", __v.asInstanceOf[js.Any]))
-      InstanceIdentity.foreach(__v => __obj.update("InstanceIdentity", __v.asInstanceOf[js.Any]))
-      PrivateIp.foreach(__v => __obj.update("PrivateIp", __v.asInstanceOf[js.Any]))
-      PublicIp.foreach(__v => __obj.update("PublicIp", __v.asInstanceOf[js.Any]))
-      RsaPublicKey.foreach(__v => __obj.update("RsaPublicKey", __v.asInstanceOf[js.Any]))
-      RsaPublicKeyFingerprint.foreach(__v => __obj.update("RsaPublicKeyFingerprint", __v.asInstanceOf[js.Any]))
+      Hostname.foreach(__v => __obj.updateDynamic("Hostname")(__v.asInstanceOf[js.Any]))
+      InstanceIdentity.foreach(__v => __obj.updateDynamic("InstanceIdentity")(__v.asInstanceOf[js.Any]))
+      PrivateIp.foreach(__v => __obj.updateDynamic("PrivateIp")(__v.asInstanceOf[js.Any]))
+      PublicIp.foreach(__v => __obj.updateDynamic("PublicIp")(__v.asInstanceOf[js.Any]))
+      RsaPublicKey.foreach(__v => __obj.updateDynamic("RsaPublicKey")(__v.asInstanceOf[js.Any]))
+      RsaPublicKeyFingerprint.foreach(__v => __obj.updateDynamic("RsaPublicKeyFingerprint")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterInstanceRequest]
     }
   }
@@ -3648,8 +3664,8 @@ package opsworks {
     def apply(
         InstanceId: js.UndefOr[String] = js.undefined
     ): RegisterInstanceResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterInstanceResult]
     }
   }
@@ -3669,7 +3685,7 @@ package opsworks {
         RdsDbInstanceArn: String,
         StackId: String
     ): RegisterRdsDbInstanceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DbPassword"       -> DbPassword.asInstanceOf[js.Any],
         "DbUser"           -> DbUser.asInstanceOf[js.Any],
         "RdsDbInstanceArn" -> RdsDbInstanceArn.asInstanceOf[js.Any],
@@ -3691,11 +3707,11 @@ package opsworks {
         StackId: String,
         Ec2VolumeId: js.UndefOr[String] = js.undefined
     ): RegisterVolumeRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "StackId" -> StackId.asInstanceOf[js.Any]
       )
 
-      Ec2VolumeId.foreach(__v => __obj.update("Ec2VolumeId", __v.asInstanceOf[js.Any]))
+      Ec2VolumeId.foreach(__v => __obj.updateDynamic("Ec2VolumeId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterVolumeRequest]
     }
   }
@@ -3712,8 +3728,8 @@ package opsworks {
     def apply(
         VolumeId: js.UndefOr[String] = js.undefined
     ): RegisterVolumeResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      VolumeId.foreach(__v => __obj.update("VolumeId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      VolumeId.foreach(__v => __obj.updateDynamic("VolumeId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterVolumeResult]
     }
   }
@@ -3734,10 +3750,10 @@ package opsworks {
         Name: js.UndefOr[String] = js.undefined,
         Version: js.UndefOr[String] = js.undefined
     ): ReportedOs = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Family.foreach(__v => __obj.update("Family", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Family.foreach(__v => __obj.updateDynamic("Family")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReportedOs]
     }
   }
@@ -3767,11 +3783,11 @@ package opsworks {
         SshPublicKey: js.UndefOr[String] = js.undefined,
         SshUsername: js.UndefOr[String] = js.undefined
     ): SelfUserProfile = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IamUserArn.foreach(__v => __obj.update("IamUserArn", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      SshPublicKey.foreach(__v => __obj.update("SshPublicKey", __v.asInstanceOf[js.Any]))
-      SshUsername.foreach(__v => __obj.update("SshUsername", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IamUserArn.foreach(__v => __obj.updateDynamic("IamUserArn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      SshPublicKey.foreach(__v => __obj.updateDynamic("SshPublicKey")(__v.asInstanceOf[js.Any]))
+      SshUsername.foreach(__v => __obj.updateDynamic("SshUsername")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SelfUserProfile]
     }
   }
@@ -3798,13 +3814,13 @@ package opsworks {
         StackId: js.UndefOr[String] = js.undefined,
         Type: js.UndefOr[String] = js.undefined
     ): ServiceError = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedAt.foreach(__v => __obj.update("CreatedAt", __v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
-      ServiceErrorId.foreach(__v => __obj.update("ServiceErrorId", __v.asInstanceOf[js.Any]))
-      StackId.foreach(__v => __obj.update("StackId", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      ServiceErrorId.foreach(__v => __obj.updateDynamic("ServiceErrorId")(__v.asInstanceOf[js.Any]))
+      StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServiceError]
     }
   }
@@ -3824,13 +3840,13 @@ package opsworks {
         Enable: js.UndefOr[Boolean] = js.undefined,
         UpScaling: js.UndefOr[AutoScalingThresholds] = js.undefined
     ): SetLoadBasedAutoScalingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LayerId" -> LayerId.asInstanceOf[js.Any]
       )
 
-      DownScaling.foreach(__v => __obj.update("DownScaling", __v.asInstanceOf[js.Any]))
-      Enable.foreach(__v => __obj.update("Enable", __v.asInstanceOf[js.Any]))
-      UpScaling.foreach(__v => __obj.update("UpScaling", __v.asInstanceOf[js.Any]))
+      DownScaling.foreach(__v => __obj.updateDynamic("DownScaling")(__v.asInstanceOf[js.Any]))
+      Enable.foreach(__v => __obj.updateDynamic("Enable")(__v.asInstanceOf[js.Any]))
+      UpScaling.foreach(__v => __obj.updateDynamic("UpScaling")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetLoadBasedAutoScalingRequest]
     }
   }
@@ -3852,14 +3868,14 @@ package opsworks {
         AllowSudo: js.UndefOr[Boolean] = js.undefined,
         Level: js.UndefOr[String] = js.undefined
     ): SetPermissionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IamUserArn" -> IamUserArn.asInstanceOf[js.Any],
         "StackId"    -> StackId.asInstanceOf[js.Any]
       )
 
-      AllowSsh.foreach(__v => __obj.update("AllowSsh", __v.asInstanceOf[js.Any]))
-      AllowSudo.foreach(__v => __obj.update("AllowSudo", __v.asInstanceOf[js.Any]))
-      Level.foreach(__v => __obj.update("Level", __v.asInstanceOf[js.Any]))
+      AllowSsh.foreach(__v => __obj.updateDynamic("AllowSsh")(__v.asInstanceOf[js.Any]))
+      AllowSudo.foreach(__v => __obj.updateDynamic("AllowSudo")(__v.asInstanceOf[js.Any]))
+      Level.foreach(__v => __obj.updateDynamic("Level")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetPermissionRequest]
     }
   }
@@ -3875,11 +3891,11 @@ package opsworks {
         InstanceId: String,
         AutoScalingSchedule: js.UndefOr[WeeklyAutoScalingSchedule] = js.undefined
     ): SetTimeBasedAutoScalingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
-      AutoScalingSchedule.foreach(__v => __obj.update("AutoScalingSchedule", __v.asInstanceOf[js.Any]))
+      AutoScalingSchedule.foreach(__v => __obj.updateDynamic("AutoScalingSchedule")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetTimeBasedAutoScalingRequest]
     }
   }
@@ -3898,11 +3914,11 @@ package opsworks {
         DelayUntilElbConnectionsDrained: js.UndefOr[Boolean] = js.undefined,
         ExecutionTimeout: js.UndefOr[Int] = js.undefined
     ): ShutdownEventConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       DelayUntilElbConnectionsDrained.foreach(
-        __v => __obj.update("DelayUntilElbConnectionsDrained", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("DelayUntilElbConnectionsDrained")(__v.asInstanceOf[js.Any])
       )
-      ExecutionTimeout.foreach(__v => __obj.update("ExecutionTimeout", __v.asInstanceOf[js.Any]))
+      ExecutionTimeout.foreach(__v => __obj.updateDynamic("ExecutionTimeout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ShutdownEventConfiguration]
     }
   }
@@ -3929,13 +3945,13 @@ package opsworks {
         Url: js.UndefOr[String] = js.undefined,
         Username: js.UndefOr[String] = js.undefined
     ): Source = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Password.foreach(__v => __obj.update("Password", __v.asInstanceOf[js.Any]))
-      Revision.foreach(__v => __obj.update("Revision", __v.asInstanceOf[js.Any]))
-      SshKey.foreach(__v => __obj.update("SshKey", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
-      Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
-      Username.foreach(__v => __obj.update("Username", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Password.foreach(__v => __obj.updateDynamic("Password")(__v.asInstanceOf[js.Any]))
+      Revision.foreach(__v => __obj.updateDynamic("Revision")(__v.asInstanceOf[js.Any]))
+      SshKey.foreach(__v => __obj.updateDynamic("SshKey")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
+      Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Source]
     }
   }
@@ -3965,12 +3981,12 @@ package opsworks {
         PrivateKey: String,
         Chain: js.UndefOr[String] = js.undefined
     ): SslConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Certificate" -> Certificate.asInstanceOf[js.Any],
         "PrivateKey"  -> PrivateKey.asInstanceOf[js.Any]
       )
 
-      Chain.foreach(__v => __obj.update("Chain", __v.asInstanceOf[js.Any]))
+      Chain.foreach(__v => __obj.updateDynamic("Chain")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SslConfiguration]
     }
   }
@@ -4029,29 +4045,33 @@ package opsworks {
         UseOpsworksSecurityGroups: js.UndefOr[Boolean] = js.undefined,
         VpcId: js.UndefOr[String] = js.undefined
     ): Stack = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AgentVersion.foreach(__v => __obj.update("AgentVersion", __v.asInstanceOf[js.Any]))
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      ChefConfiguration.foreach(__v => __obj.update("ChefConfiguration", __v.asInstanceOf[js.Any]))
-      ConfigurationManager.foreach(__v => __obj.update("ConfigurationManager", __v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.update("CreatedAt", __v.asInstanceOf[js.Any]))
-      CustomCookbooksSource.foreach(__v => __obj.update("CustomCookbooksSource", __v.asInstanceOf[js.Any]))
-      CustomJson.foreach(__v => __obj.update("CustomJson", __v.asInstanceOf[js.Any]))
-      DefaultAvailabilityZone.foreach(__v => __obj.update("DefaultAvailabilityZone", __v.asInstanceOf[js.Any]))
-      DefaultInstanceProfileArn.foreach(__v => __obj.update("DefaultInstanceProfileArn", __v.asInstanceOf[js.Any]))
-      DefaultOs.foreach(__v => __obj.update("DefaultOs", __v.asInstanceOf[js.Any]))
-      DefaultRootDeviceType.foreach(__v => __obj.update("DefaultRootDeviceType", __v.asInstanceOf[js.Any]))
-      DefaultSshKeyName.foreach(__v => __obj.update("DefaultSshKeyName", __v.asInstanceOf[js.Any]))
-      DefaultSubnetId.foreach(__v => __obj.update("DefaultSubnetId", __v.asInstanceOf[js.Any]))
-      HostnameTheme.foreach(__v => __obj.update("HostnameTheme", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Region.foreach(__v => __obj.update("Region", __v.asInstanceOf[js.Any]))
-      ServiceRoleArn.foreach(__v => __obj.update("ServiceRoleArn", __v.asInstanceOf[js.Any]))
-      StackId.foreach(__v => __obj.update("StackId", __v.asInstanceOf[js.Any]))
-      UseCustomCookbooks.foreach(__v => __obj.update("UseCustomCookbooks", __v.asInstanceOf[js.Any]))
-      UseOpsworksSecurityGroups.foreach(__v => __obj.update("UseOpsworksSecurityGroups", __v.asInstanceOf[js.Any]))
-      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AgentVersion.foreach(__v => __obj.updateDynamic("AgentVersion")(__v.asInstanceOf[js.Any]))
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      ChefConfiguration.foreach(__v => __obj.updateDynamic("ChefConfiguration")(__v.asInstanceOf[js.Any]))
+      ConfigurationManager.foreach(__v => __obj.updateDynamic("ConfigurationManager")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      CustomCookbooksSource.foreach(__v => __obj.updateDynamic("CustomCookbooksSource")(__v.asInstanceOf[js.Any]))
+      CustomJson.foreach(__v => __obj.updateDynamic("CustomJson")(__v.asInstanceOf[js.Any]))
+      DefaultAvailabilityZone.foreach(__v => __obj.updateDynamic("DefaultAvailabilityZone")(__v.asInstanceOf[js.Any]))
+      DefaultInstanceProfileArn.foreach(
+        __v => __obj.updateDynamic("DefaultInstanceProfileArn")(__v.asInstanceOf[js.Any])
+      )
+      DefaultOs.foreach(__v => __obj.updateDynamic("DefaultOs")(__v.asInstanceOf[js.Any]))
+      DefaultRootDeviceType.foreach(__v => __obj.updateDynamic("DefaultRootDeviceType")(__v.asInstanceOf[js.Any]))
+      DefaultSshKeyName.foreach(__v => __obj.updateDynamic("DefaultSshKeyName")(__v.asInstanceOf[js.Any]))
+      DefaultSubnetId.foreach(__v => __obj.updateDynamic("DefaultSubnetId")(__v.asInstanceOf[js.Any]))
+      HostnameTheme.foreach(__v => __obj.updateDynamic("HostnameTheme")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
+      ServiceRoleArn.foreach(__v => __obj.updateDynamic("ServiceRoleArn")(__v.asInstanceOf[js.Any]))
+      StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
+      UseCustomCookbooks.foreach(__v => __obj.updateDynamic("UseCustomCookbooks")(__v.asInstanceOf[js.Any]))
+      UseOpsworksSecurityGroups.foreach(
+        __v => __obj.updateDynamic("UseOpsworksSecurityGroups")(__v.asInstanceOf[js.Any])
+      )
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Stack]
     }
   }
@@ -4076,9 +4096,9 @@ package opsworks {
         Name: js.UndefOr[String] = js.undefined,
         Version: js.UndefOr[String] = js.undefined
     ): StackConfigurationManager = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StackConfigurationManager]
     }
   }
@@ -4105,13 +4125,13 @@ package opsworks {
         Name: js.UndefOr[String] = js.undefined,
         StackId: js.UndefOr[String] = js.undefined
     ): StackSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AppsCount.foreach(__v => __obj.update("AppsCount", __v.asInstanceOf[js.Any]))
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      InstancesCount.foreach(__v => __obj.update("InstancesCount", __v.asInstanceOf[js.Any]))
-      LayersCount.foreach(__v => __obj.update("LayersCount", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      StackId.foreach(__v => __obj.update("StackId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AppsCount.foreach(__v => __obj.updateDynamic("AppsCount")(__v.asInstanceOf[js.Any]))
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      InstancesCount.foreach(__v => __obj.updateDynamic("InstancesCount")(__v.asInstanceOf[js.Any]))
+      LayersCount.foreach(__v => __obj.updateDynamic("LayersCount")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StackSummary]
     }
   }
@@ -4125,7 +4145,7 @@ package opsworks {
     def apply(
         InstanceId: String
     ): StartInstanceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
@@ -4142,7 +4162,7 @@ package opsworks {
     def apply(
         StackId: String
     ): StartStackRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "StackId" -> StackId.asInstanceOf[js.Any]
       )
 
@@ -4161,11 +4181,11 @@ package opsworks {
         InstanceId: String,
         Force: js.UndefOr[Boolean] = js.undefined
     ): StopInstanceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
-      Force.foreach(__v => __obj.update("Force", __v.asInstanceOf[js.Any]))
+      Force.foreach(__v => __obj.updateDynamic("Force")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopInstanceRequest]
     }
   }
@@ -4179,7 +4199,7 @@ package opsworks {
     def apply(
         StackId: String
     ): StopStackRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "StackId" -> StackId.asInstanceOf[js.Any]
       )
 
@@ -4198,7 +4218,7 @@ package opsworks {
         ResourceArn: ResourceArn,
         Tags: Tags
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
       )
@@ -4225,11 +4245,11 @@ package opsworks {
         Username: js.UndefOr[String] = js.undefined,
         ValidForInMinutes: js.UndefOr[Int] = js.undefined
     ): TemporaryCredential = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      Password.foreach(__v => __obj.update("Password", __v.asInstanceOf[js.Any]))
-      Username.foreach(__v => __obj.update("Username", __v.asInstanceOf[js.Any]))
-      ValidForInMinutes.foreach(__v => __obj.update("ValidForInMinutes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      Password.foreach(__v => __obj.updateDynamic("Password")(__v.asInstanceOf[js.Any]))
+      Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
+      ValidForInMinutes.foreach(__v => __obj.updateDynamic("ValidForInMinutes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TemporaryCredential]
     }
   }
@@ -4248,9 +4268,9 @@ package opsworks {
         AutoScalingSchedule: js.UndefOr[WeeklyAutoScalingSchedule] = js.undefined,
         InstanceId: js.UndefOr[String] = js.undefined
     ): TimeBasedAutoScalingConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AutoScalingSchedule.foreach(__v => __obj.update("AutoScalingSchedule", __v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AutoScalingSchedule.foreach(__v => __obj.updateDynamic("AutoScalingSchedule")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TimeBasedAutoScalingConfiguration]
     }
   }
@@ -4264,7 +4284,7 @@ package opsworks {
     def apply(
         InstanceId: String
     ): UnassignInstanceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
@@ -4281,7 +4301,7 @@ package opsworks {
     def apply(
         VolumeId: String
     ): UnassignVolumeRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VolumeId" -> VolumeId.asInstanceOf[js.Any]
       )
 
@@ -4300,7 +4320,7 @@ package opsworks {
         ResourceArn: ResourceArn,
         TagKeys: TagKeys
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
       )
@@ -4338,20 +4358,20 @@ package opsworks {
         SslConfiguration: js.UndefOr[SslConfiguration] = js.undefined,
         Type: js.UndefOr[AppType] = js.undefined
     ): UpdateAppRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AppId" -> AppId.asInstanceOf[js.Any]
       )
 
-      AppSource.foreach(__v => __obj.update("AppSource", __v.asInstanceOf[js.Any]))
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      DataSources.foreach(__v => __obj.update("DataSources", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Domains.foreach(__v => __obj.update("Domains", __v.asInstanceOf[js.Any]))
-      EnableSsl.foreach(__v => __obj.update("EnableSsl", __v.asInstanceOf[js.Any]))
-      Environment.foreach(__v => __obj.update("Environment", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      SslConfiguration.foreach(__v => __obj.update("SslConfiguration", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      AppSource.foreach(__v => __obj.updateDynamic("AppSource")(__v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      DataSources.foreach(__v => __obj.updateDynamic("DataSources")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Domains.foreach(__v => __obj.updateDynamic("Domains")(__v.asInstanceOf[js.Any]))
+      EnableSsl.foreach(__v => __obj.updateDynamic("EnableSsl")(__v.asInstanceOf[js.Any]))
+      Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      SslConfiguration.foreach(__v => __obj.updateDynamic("SslConfiguration")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAppRequest]
     }
   }
@@ -4367,11 +4387,11 @@ package opsworks {
         ElasticIp: String,
         Name: js.UndefOr[String] = js.undefined
     ): UpdateElasticIpRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ElasticIp" -> ElasticIp.asInstanceOf[js.Any]
       )
 
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateElasticIpRequest]
     }
   }
@@ -4407,21 +4427,21 @@ package opsworks {
         Os: js.UndefOr[String] = js.undefined,
         SshKeyName: js.UndefOr[String] = js.undefined
     ): UpdateInstanceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
-      AgentVersion.foreach(__v => __obj.update("AgentVersion", __v.asInstanceOf[js.Any]))
-      AmiId.foreach(__v => __obj.update("AmiId", __v.asInstanceOf[js.Any]))
-      Architecture.foreach(__v => __obj.update("Architecture", __v.asInstanceOf[js.Any]))
-      AutoScalingType.foreach(__v => __obj.update("AutoScalingType", __v.asInstanceOf[js.Any]))
-      EbsOptimized.foreach(__v => __obj.update("EbsOptimized", __v.asInstanceOf[js.Any]))
-      Hostname.foreach(__v => __obj.update("Hostname", __v.asInstanceOf[js.Any]))
-      InstallUpdatesOnBoot.foreach(__v => __obj.update("InstallUpdatesOnBoot", __v.asInstanceOf[js.Any]))
-      InstanceType.foreach(__v => __obj.update("InstanceType", __v.asInstanceOf[js.Any]))
-      LayerIds.foreach(__v => __obj.update("LayerIds", __v.asInstanceOf[js.Any]))
-      Os.foreach(__v => __obj.update("Os", __v.asInstanceOf[js.Any]))
-      SshKeyName.foreach(__v => __obj.update("SshKeyName", __v.asInstanceOf[js.Any]))
+      AgentVersion.foreach(__v => __obj.updateDynamic("AgentVersion")(__v.asInstanceOf[js.Any]))
+      AmiId.foreach(__v => __obj.updateDynamic("AmiId")(__v.asInstanceOf[js.Any]))
+      Architecture.foreach(__v => __obj.updateDynamic("Architecture")(__v.asInstanceOf[js.Any]))
+      AutoScalingType.foreach(__v => __obj.updateDynamic("AutoScalingType")(__v.asInstanceOf[js.Any]))
+      EbsOptimized.foreach(__v => __obj.updateDynamic("EbsOptimized")(__v.asInstanceOf[js.Any]))
+      Hostname.foreach(__v => __obj.updateDynamic("Hostname")(__v.asInstanceOf[js.Any]))
+      InstallUpdatesOnBoot.foreach(__v => __obj.updateDynamic("InstallUpdatesOnBoot")(__v.asInstanceOf[js.Any]))
+      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
+      LayerIds.foreach(__v => __obj.updateDynamic("LayerIds")(__v.asInstanceOf[js.Any]))
+      Os.foreach(__v => __obj.updateDynamic("Os")(__v.asInstanceOf[js.Any]))
+      SshKeyName.foreach(__v => __obj.updateDynamic("SshKeyName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateInstanceRequest]
     }
   }
@@ -4467,26 +4487,30 @@ package opsworks {
         UseEbsOptimizedInstances: js.UndefOr[Boolean] = js.undefined,
         VolumeConfigurations: js.UndefOr[VolumeConfigurations] = js.undefined
     ): UpdateLayerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LayerId" -> LayerId.asInstanceOf[js.Any]
       )
 
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      AutoAssignElasticIps.foreach(__v => __obj.update("AutoAssignElasticIps", __v.asInstanceOf[js.Any]))
-      AutoAssignPublicIps.foreach(__v => __obj.update("AutoAssignPublicIps", __v.asInstanceOf[js.Any]))
-      CloudWatchLogsConfiguration.foreach(__v => __obj.update("CloudWatchLogsConfiguration", __v.asInstanceOf[js.Any]))
-      CustomInstanceProfileArn.foreach(__v => __obj.update("CustomInstanceProfileArn", __v.asInstanceOf[js.Any]))
-      CustomJson.foreach(__v => __obj.update("CustomJson", __v.asInstanceOf[js.Any]))
-      CustomRecipes.foreach(__v => __obj.update("CustomRecipes", __v.asInstanceOf[js.Any]))
-      CustomSecurityGroupIds.foreach(__v => __obj.update("CustomSecurityGroupIds", __v.asInstanceOf[js.Any]))
-      EnableAutoHealing.foreach(__v => __obj.update("EnableAutoHealing", __v.asInstanceOf[js.Any]))
-      InstallUpdatesOnBoot.foreach(__v => __obj.update("InstallUpdatesOnBoot", __v.asInstanceOf[js.Any]))
-      LifecycleEventConfiguration.foreach(__v => __obj.update("LifecycleEventConfiguration", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Packages.foreach(__v => __obj.update("Packages", __v.asInstanceOf[js.Any]))
-      Shortname.foreach(__v => __obj.update("Shortname", __v.asInstanceOf[js.Any]))
-      UseEbsOptimizedInstances.foreach(__v => __obj.update("UseEbsOptimizedInstances", __v.asInstanceOf[js.Any]))
-      VolumeConfigurations.foreach(__v => __obj.update("VolumeConfigurations", __v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      AutoAssignElasticIps.foreach(__v => __obj.updateDynamic("AutoAssignElasticIps")(__v.asInstanceOf[js.Any]))
+      AutoAssignPublicIps.foreach(__v => __obj.updateDynamic("AutoAssignPublicIps")(__v.asInstanceOf[js.Any]))
+      CloudWatchLogsConfiguration.foreach(
+        __v => __obj.updateDynamic("CloudWatchLogsConfiguration")(__v.asInstanceOf[js.Any])
+      )
+      CustomInstanceProfileArn.foreach(__v => __obj.updateDynamic("CustomInstanceProfileArn")(__v.asInstanceOf[js.Any]))
+      CustomJson.foreach(__v => __obj.updateDynamic("CustomJson")(__v.asInstanceOf[js.Any]))
+      CustomRecipes.foreach(__v => __obj.updateDynamic("CustomRecipes")(__v.asInstanceOf[js.Any]))
+      CustomSecurityGroupIds.foreach(__v => __obj.updateDynamic("CustomSecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      EnableAutoHealing.foreach(__v => __obj.updateDynamic("EnableAutoHealing")(__v.asInstanceOf[js.Any]))
+      InstallUpdatesOnBoot.foreach(__v => __obj.updateDynamic("InstallUpdatesOnBoot")(__v.asInstanceOf[js.Any]))
+      LifecycleEventConfiguration.foreach(
+        __v => __obj.updateDynamic("LifecycleEventConfiguration")(__v.asInstanceOf[js.Any])
+      )
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Packages.foreach(__v => __obj.updateDynamic("Packages")(__v.asInstanceOf[js.Any]))
+      Shortname.foreach(__v => __obj.updateDynamic("Shortname")(__v.asInstanceOf[js.Any]))
+      UseEbsOptimizedInstances.foreach(__v => __obj.updateDynamic("UseEbsOptimizedInstances")(__v.asInstanceOf[js.Any]))
+      VolumeConfigurations.foreach(__v => __obj.updateDynamic("VolumeConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateLayerRequest]
     }
   }
@@ -4500,8 +4524,8 @@ package opsworks {
     def apply(
         SshPublicKey: js.UndefOr[String] = js.undefined
     ): UpdateMyUserProfileRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SshPublicKey.foreach(__v => __obj.update("SshPublicKey", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SshPublicKey.foreach(__v => __obj.updateDynamic("SshPublicKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateMyUserProfileRequest]
     }
   }
@@ -4519,12 +4543,12 @@ package opsworks {
         DbPassword: js.UndefOr[String] = js.undefined,
         DbUser: js.UndefOr[String] = js.undefined
     ): UpdateRdsDbInstanceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RdsDbInstanceArn" -> RdsDbInstanceArn.asInstanceOf[js.Any]
       )
 
-      DbPassword.foreach(__v => __obj.update("DbPassword", __v.asInstanceOf[js.Any]))
-      DbUser.foreach(__v => __obj.update("DbUser", __v.asInstanceOf[js.Any]))
+      DbPassword.foreach(__v => __obj.updateDynamic("DbPassword")(__v.asInstanceOf[js.Any]))
+      DbUser.foreach(__v => __obj.updateDynamic("DbUser")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRdsDbInstanceRequest]
     }
   }
@@ -4572,27 +4596,31 @@ package opsworks {
         UseCustomCookbooks: js.UndefOr[Boolean] = js.undefined,
         UseOpsworksSecurityGroups: js.UndefOr[Boolean] = js.undefined
     ): UpdateStackRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "StackId" -> StackId.asInstanceOf[js.Any]
       )
 
-      AgentVersion.foreach(__v => __obj.update("AgentVersion", __v.asInstanceOf[js.Any]))
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      ChefConfiguration.foreach(__v => __obj.update("ChefConfiguration", __v.asInstanceOf[js.Any]))
-      ConfigurationManager.foreach(__v => __obj.update("ConfigurationManager", __v.asInstanceOf[js.Any]))
-      CustomCookbooksSource.foreach(__v => __obj.update("CustomCookbooksSource", __v.asInstanceOf[js.Any]))
-      CustomJson.foreach(__v => __obj.update("CustomJson", __v.asInstanceOf[js.Any]))
-      DefaultAvailabilityZone.foreach(__v => __obj.update("DefaultAvailabilityZone", __v.asInstanceOf[js.Any]))
-      DefaultInstanceProfileArn.foreach(__v => __obj.update("DefaultInstanceProfileArn", __v.asInstanceOf[js.Any]))
-      DefaultOs.foreach(__v => __obj.update("DefaultOs", __v.asInstanceOf[js.Any]))
-      DefaultRootDeviceType.foreach(__v => __obj.update("DefaultRootDeviceType", __v.asInstanceOf[js.Any]))
-      DefaultSshKeyName.foreach(__v => __obj.update("DefaultSshKeyName", __v.asInstanceOf[js.Any]))
-      DefaultSubnetId.foreach(__v => __obj.update("DefaultSubnetId", __v.asInstanceOf[js.Any]))
-      HostnameTheme.foreach(__v => __obj.update("HostnameTheme", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      ServiceRoleArn.foreach(__v => __obj.update("ServiceRoleArn", __v.asInstanceOf[js.Any]))
-      UseCustomCookbooks.foreach(__v => __obj.update("UseCustomCookbooks", __v.asInstanceOf[js.Any]))
-      UseOpsworksSecurityGroups.foreach(__v => __obj.update("UseOpsworksSecurityGroups", __v.asInstanceOf[js.Any]))
+      AgentVersion.foreach(__v => __obj.updateDynamic("AgentVersion")(__v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      ChefConfiguration.foreach(__v => __obj.updateDynamic("ChefConfiguration")(__v.asInstanceOf[js.Any]))
+      ConfigurationManager.foreach(__v => __obj.updateDynamic("ConfigurationManager")(__v.asInstanceOf[js.Any]))
+      CustomCookbooksSource.foreach(__v => __obj.updateDynamic("CustomCookbooksSource")(__v.asInstanceOf[js.Any]))
+      CustomJson.foreach(__v => __obj.updateDynamic("CustomJson")(__v.asInstanceOf[js.Any]))
+      DefaultAvailabilityZone.foreach(__v => __obj.updateDynamic("DefaultAvailabilityZone")(__v.asInstanceOf[js.Any]))
+      DefaultInstanceProfileArn.foreach(
+        __v => __obj.updateDynamic("DefaultInstanceProfileArn")(__v.asInstanceOf[js.Any])
+      )
+      DefaultOs.foreach(__v => __obj.updateDynamic("DefaultOs")(__v.asInstanceOf[js.Any]))
+      DefaultRootDeviceType.foreach(__v => __obj.updateDynamic("DefaultRootDeviceType")(__v.asInstanceOf[js.Any]))
+      DefaultSshKeyName.foreach(__v => __obj.updateDynamic("DefaultSshKeyName")(__v.asInstanceOf[js.Any]))
+      DefaultSubnetId.foreach(__v => __obj.updateDynamic("DefaultSubnetId")(__v.asInstanceOf[js.Any]))
+      HostnameTheme.foreach(__v => __obj.updateDynamic("HostnameTheme")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ServiceRoleArn.foreach(__v => __obj.updateDynamic("ServiceRoleArn")(__v.asInstanceOf[js.Any]))
+      UseCustomCookbooks.foreach(__v => __obj.updateDynamic("UseCustomCookbooks")(__v.asInstanceOf[js.Any]))
+      UseOpsworksSecurityGroups.foreach(
+        __v => __obj.updateDynamic("UseOpsworksSecurityGroups")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[UpdateStackRequest]
     }
   }
@@ -4612,13 +4640,13 @@ package opsworks {
         SshPublicKey: js.UndefOr[String] = js.undefined,
         SshUsername: js.UndefOr[String] = js.undefined
     ): UpdateUserProfileRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IamUserArn" -> IamUserArn.asInstanceOf[js.Any]
       )
 
-      AllowSelfManagement.foreach(__v => __obj.update("AllowSelfManagement", __v.asInstanceOf[js.Any]))
-      SshPublicKey.foreach(__v => __obj.update("SshPublicKey", __v.asInstanceOf[js.Any]))
-      SshUsername.foreach(__v => __obj.update("SshUsername", __v.asInstanceOf[js.Any]))
+      AllowSelfManagement.foreach(__v => __obj.updateDynamic("AllowSelfManagement")(__v.asInstanceOf[js.Any]))
+      SshPublicKey.foreach(__v => __obj.updateDynamic("SshPublicKey")(__v.asInstanceOf[js.Any]))
+      SshUsername.foreach(__v => __obj.updateDynamic("SshUsername")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateUserProfileRequest]
     }
   }
@@ -4636,12 +4664,12 @@ package opsworks {
         MountPoint: js.UndefOr[String] = js.undefined,
         Name: js.UndefOr[String] = js.undefined
     ): UpdateVolumeRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VolumeId" -> VolumeId.asInstanceOf[js.Any]
       )
 
-      MountPoint.foreach(__v => __obj.update("MountPoint", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      MountPoint.foreach(__v => __obj.updateDynamic("MountPoint")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateVolumeRequest]
     }
   }
@@ -4666,12 +4694,12 @@ package opsworks {
         SshPublicKey: js.UndefOr[String] = js.undefined,
         SshUsername: js.UndefOr[String] = js.undefined
     ): UserProfile = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AllowSelfManagement.foreach(__v => __obj.update("AllowSelfManagement", __v.asInstanceOf[js.Any]))
-      IamUserArn.foreach(__v => __obj.update("IamUserArn", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      SshPublicKey.foreach(__v => __obj.update("SshPublicKey", __v.asInstanceOf[js.Any]))
-      SshUsername.foreach(__v => __obj.update("SshUsername", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AllowSelfManagement.foreach(__v => __obj.updateDynamic("AllowSelfManagement")(__v.asInstanceOf[js.Any]))
+      IamUserArn.foreach(__v => __obj.updateDynamic("IamUserArn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      SshPublicKey.foreach(__v => __obj.updateDynamic("SshPublicKey")(__v.asInstanceOf[js.Any]))
+      SshUsername.foreach(__v => __obj.updateDynamic("SshUsername")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UserProfile]
     }
   }
@@ -4721,21 +4749,21 @@ package opsworks {
         VolumeId: js.UndefOr[String] = js.undefined,
         VolumeType: js.UndefOr[String] = js.undefined
     ): Volume = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
-      Device.foreach(__v => __obj.update("Device", __v.asInstanceOf[js.Any]))
-      Ec2VolumeId.foreach(__v => __obj.update("Ec2VolumeId", __v.asInstanceOf[js.Any]))
-      Encrypted.foreach(__v => __obj.update("Encrypted", __v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      Iops.foreach(__v => __obj.update("Iops", __v.asInstanceOf[js.Any]))
-      MountPoint.foreach(__v => __obj.update("MountPoint", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      RaidArrayId.foreach(__v => __obj.update("RaidArrayId", __v.asInstanceOf[js.Any]))
-      Region.foreach(__v => __obj.update("Region", __v.asInstanceOf[js.Any]))
-      Size.foreach(__v => __obj.update("Size", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      VolumeId.foreach(__v => __obj.update("VolumeId", __v.asInstanceOf[js.Any]))
-      VolumeType.foreach(__v => __obj.update("VolumeType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      Device.foreach(__v => __obj.updateDynamic("Device")(__v.asInstanceOf[js.Any]))
+      Ec2VolumeId.foreach(__v => __obj.updateDynamic("Ec2VolumeId")(__v.asInstanceOf[js.Any]))
+      Encrypted.foreach(__v => __obj.updateDynamic("Encrypted")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
+      MountPoint.foreach(__v => __obj.updateDynamic("MountPoint")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RaidArrayId.foreach(__v => __obj.updateDynamic("RaidArrayId")(__v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
+      Size.foreach(__v => __obj.updateDynamic("Size")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      VolumeId.foreach(__v => __obj.updateDynamic("VolumeId")(__v.asInstanceOf[js.Any]))
+      VolumeType.foreach(__v => __obj.updateDynamic("VolumeType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Volume]
     }
   }
@@ -4764,16 +4792,16 @@ package opsworks {
         RaidLevel: js.UndefOr[Int] = js.undefined,
         VolumeType: js.UndefOr[String] = js.undefined
     ): VolumeConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MountPoint"    -> MountPoint.asInstanceOf[js.Any],
         "NumberOfDisks" -> NumberOfDisks.asInstanceOf[js.Any],
         "Size"          -> Size.asInstanceOf[js.Any]
       )
 
-      Encrypted.foreach(__v => __obj.update("Encrypted", __v.asInstanceOf[js.Any]))
-      Iops.foreach(__v => __obj.update("Iops", __v.asInstanceOf[js.Any]))
-      RaidLevel.foreach(__v => __obj.update("RaidLevel", __v.asInstanceOf[js.Any]))
-      VolumeType.foreach(__v => __obj.update("VolumeType", __v.asInstanceOf[js.Any]))
+      Encrypted.foreach(__v => __obj.updateDynamic("Encrypted")(__v.asInstanceOf[js.Any]))
+      Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
+      RaidLevel.foreach(__v => __obj.updateDynamic("RaidLevel")(__v.asInstanceOf[js.Any]))
+      VolumeType.foreach(__v => __obj.updateDynamic("VolumeType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VolumeConfiguration]
     }
   }
@@ -4815,14 +4843,14 @@ package opsworks {
         Tuesday: js.UndefOr[DailyAutoScalingSchedule] = js.undefined,
         Wednesday: js.UndefOr[DailyAutoScalingSchedule] = js.undefined
     ): WeeklyAutoScalingSchedule = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Friday.foreach(__v => __obj.update("Friday", __v.asInstanceOf[js.Any]))
-      Monday.foreach(__v => __obj.update("Monday", __v.asInstanceOf[js.Any]))
-      Saturday.foreach(__v => __obj.update("Saturday", __v.asInstanceOf[js.Any]))
-      Sunday.foreach(__v => __obj.update("Sunday", __v.asInstanceOf[js.Any]))
-      Thursday.foreach(__v => __obj.update("Thursday", __v.asInstanceOf[js.Any]))
-      Tuesday.foreach(__v => __obj.update("Tuesday", __v.asInstanceOf[js.Any]))
-      Wednesday.foreach(__v => __obj.update("Wednesday", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Friday.foreach(__v => __obj.updateDynamic("Friday")(__v.asInstanceOf[js.Any]))
+      Monday.foreach(__v => __obj.updateDynamic("Monday")(__v.asInstanceOf[js.Any]))
+      Saturday.foreach(__v => __obj.updateDynamic("Saturday")(__v.asInstanceOf[js.Any]))
+      Sunday.foreach(__v => __obj.updateDynamic("Sunday")(__v.asInstanceOf[js.Any]))
+      Thursday.foreach(__v => __obj.updateDynamic("Thursday")(__v.asInstanceOf[js.Any]))
+      Tuesday.foreach(__v => __obj.updateDynamic("Tuesday")(__v.asInstanceOf[js.Any]))
+      Wednesday.foreach(__v => __obj.updateDynamic("Wednesday")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WeeklyAutoScalingSchedule]
     }
   }

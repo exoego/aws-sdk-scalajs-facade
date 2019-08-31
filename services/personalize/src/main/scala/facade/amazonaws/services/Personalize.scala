@@ -226,17 +226,19 @@ package personalize {
         roleArn: js.UndefOr[Arn] = js.undefined,
         trainingInputMode: js.UndefOr[TrainingInputMode] = js.undefined
     ): Algorithm = {
-      val __obj = js.Dictionary.empty[js.Any]
-      algorithmArn.foreach(__v => __obj.update("algorithmArn", __v.asInstanceOf[js.Any]))
-      algorithmImage.foreach(__v => __obj.update("algorithmImage", __v.asInstanceOf[js.Any]))
-      creationDateTime.foreach(__v => __obj.update("creationDateTime", __v.asInstanceOf[js.Any]))
-      defaultHyperParameterRanges.foreach(__v => __obj.update("defaultHyperParameterRanges", __v.asInstanceOf[js.Any]))
-      defaultHyperParameters.foreach(__v => __obj.update("defaultHyperParameters", __v.asInstanceOf[js.Any]))
-      defaultResourceConfig.foreach(__v => __obj.update("defaultResourceConfig", __v.asInstanceOf[js.Any]))
-      lastUpdatedDateTime.foreach(__v => __obj.update("lastUpdatedDateTime", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
-      trainingInputMode.foreach(__v => __obj.update("trainingInputMode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      algorithmArn.foreach(__v => __obj.updateDynamic("algorithmArn")(__v.asInstanceOf[js.Any]))
+      algorithmImage.foreach(__v => __obj.updateDynamic("algorithmImage")(__v.asInstanceOf[js.Any]))
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      defaultHyperParameterRanges.foreach(
+        __v => __obj.updateDynamic("defaultHyperParameterRanges")(__v.asInstanceOf[js.Any])
+      )
+      defaultHyperParameters.foreach(__v => __obj.updateDynamic("defaultHyperParameters")(__v.asInstanceOf[js.Any]))
+      defaultResourceConfig.foreach(__v => __obj.updateDynamic("defaultResourceConfig")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
+      trainingInputMode.foreach(__v => __obj.updateDynamic("trainingInputMode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Algorithm]
     }
   }
@@ -255,11 +257,11 @@ package personalize {
         dockerURI: DockerURI,
         name: js.UndefOr[Name] = js.undefined
     ): AlgorithmImage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "dockerURI" -> dockerURI.asInstanceOf[js.Any]
       )
 
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AlgorithmImage]
     }
   }
@@ -278,9 +280,9 @@ package personalize {
         metricName: js.UndefOr[MetricName] = js.undefined,
         recipeList: js.UndefOr[ArnList] = js.undefined
     ): AutoMLConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      metricName.foreach(__v => __obj.update("metricName", __v.asInstanceOf[js.Any]))
-      recipeList.foreach(__v => __obj.update("recipeList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      metricName.foreach(__v => __obj.updateDynamic("metricName")(__v.asInstanceOf[js.Any]))
+      recipeList.foreach(__v => __obj.updateDynamic("recipeList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoMLConfig]
     }
   }
@@ -297,8 +299,8 @@ package personalize {
     def apply(
         bestRecipeArn: js.UndefOr[Arn] = js.undefined
     ): AutoMLResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      bestRecipeArn.foreach(__v => __obj.update("bestRecipeArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      bestRecipeArn.foreach(__v => __obj.updateDynamic("bestRecipeArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoMLResult]
     }
   }
@@ -331,16 +333,16 @@ package personalize {
         solutionVersionArn: js.UndefOr[Arn] = js.undefined,
         status: js.UndefOr[Status] = js.undefined
     ): Campaign = {
-      val __obj = js.Dictionary.empty[js.Any]
-      campaignArn.foreach(__v => __obj.update("campaignArn", __v.asInstanceOf[js.Any]))
-      creationDateTime.foreach(__v => __obj.update("creationDateTime", __v.asInstanceOf[js.Any]))
-      failureReason.foreach(__v => __obj.update("failureReason", __v.asInstanceOf[js.Any]))
-      lastUpdatedDateTime.foreach(__v => __obj.update("lastUpdatedDateTime", __v.asInstanceOf[js.Any]))
-      latestCampaignUpdate.foreach(__v => __obj.update("latestCampaignUpdate", __v.asInstanceOf[js.Any]))
-      minProvisionedTPS.foreach(__v => __obj.update("minProvisionedTPS", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      solutionVersionArn.foreach(__v => __obj.update("solutionVersionArn", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      campaignArn.foreach(__v => __obj.updateDynamic("campaignArn")(__v.asInstanceOf[js.Any]))
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      latestCampaignUpdate.foreach(__v => __obj.updateDynamic("latestCampaignUpdate")(__v.asInstanceOf[js.Any]))
+      minProvisionedTPS.foreach(__v => __obj.updateDynamic("minProvisionedTPS")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      solutionVersionArn.foreach(__v => __obj.updateDynamic("solutionVersionArn")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Campaign]
     }
   }
@@ -367,13 +369,13 @@ package personalize {
         name: js.UndefOr[Name] = js.undefined,
         status: js.UndefOr[Status] = js.undefined
     ): CampaignSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      campaignArn.foreach(__v => __obj.update("campaignArn", __v.asInstanceOf[js.Any]))
-      creationDateTime.foreach(__v => __obj.update("creationDateTime", __v.asInstanceOf[js.Any]))
-      failureReason.foreach(__v => __obj.update("failureReason", __v.asInstanceOf[js.Any]))
-      lastUpdatedDateTime.foreach(__v => __obj.update("lastUpdatedDateTime", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      campaignArn.foreach(__v => __obj.updateDynamic("campaignArn")(__v.asInstanceOf[js.Any]))
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CampaignSummary]
     }
   }
@@ -400,13 +402,13 @@ package personalize {
         solutionVersionArn: js.UndefOr[Arn] = js.undefined,
         status: js.UndefOr[Status] = js.undefined
     ): CampaignUpdateSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationDateTime.foreach(__v => __obj.update("creationDateTime", __v.asInstanceOf[js.Any]))
-      failureReason.foreach(__v => __obj.update("failureReason", __v.asInstanceOf[js.Any]))
-      lastUpdatedDateTime.foreach(__v => __obj.update("lastUpdatedDateTime", __v.asInstanceOf[js.Any]))
-      minProvisionedTPS.foreach(__v => __obj.update("minProvisionedTPS", __v.asInstanceOf[js.Any]))
-      solutionVersionArn.foreach(__v => __obj.update("solutionVersionArn", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      minProvisionedTPS.foreach(__v => __obj.updateDynamic("minProvisionedTPS")(__v.asInstanceOf[js.Any]))
+      solutionVersionArn.foreach(__v => __obj.updateDynamic("solutionVersionArn")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CampaignUpdateSummary]
     }
   }
@@ -425,9 +427,9 @@ package personalize {
         name: js.UndefOr[ParameterName] = js.undefined,
         values: js.UndefOr[CategoricalValues] = js.undefined
     ): CategoricalHyperParameterRange = {
-      val __obj = js.Dictionary.empty[js.Any]
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      values.foreach(__v => __obj.update("values", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      values.foreach(__v => __obj.updateDynamic("values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CategoricalHyperParameterRange]
     }
   }
@@ -448,10 +450,10 @@ package personalize {
         minValue: js.UndefOr[ContinuousMinValue] = js.undefined,
         name: js.UndefOr[ParameterName] = js.undefined
     ): ContinuousHyperParameterRange = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxValue.foreach(__v => __obj.update("maxValue", __v.asInstanceOf[js.Any]))
-      minValue.foreach(__v => __obj.update("minValue", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxValue.foreach(__v => __obj.updateDynamic("maxValue")(__v.asInstanceOf[js.Any]))
+      minValue.foreach(__v => __obj.updateDynamic("minValue")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContinuousHyperParameterRange]
     }
   }
@@ -469,7 +471,7 @@ package personalize {
         name: Name,
         solutionVersionArn: Arn
     ): CreateCampaignRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "minProvisionedTPS"  -> minProvisionedTPS.asInstanceOf[js.Any],
         "name"               -> name.asInstanceOf[js.Any],
         "solutionVersionArn" -> solutionVersionArn.asInstanceOf[js.Any]
@@ -488,8 +490,8 @@ package personalize {
     def apply(
         campaignArn: js.UndefOr[Arn] = js.undefined
     ): CreateCampaignResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      campaignArn.foreach(__v => __obj.update("campaignArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      campaignArn.foreach(__v => __obj.updateDynamic("campaignArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCampaignResponse]
     }
   }
@@ -507,12 +509,12 @@ package personalize {
         kmsKeyArn: js.UndefOr[KmsKeyArn] = js.undefined,
         roleArn: js.UndefOr[RoleArn] = js.undefined
     ): CreateDatasetGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
 
-      kmsKeyArn.foreach(__v => __obj.update("kmsKeyArn", __v.asInstanceOf[js.Any]))
-      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
+      kmsKeyArn.foreach(__v => __obj.updateDynamic("kmsKeyArn")(__v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatasetGroupRequest]
     }
   }
@@ -526,8 +528,8 @@ package personalize {
     def apply(
         datasetGroupArn: js.UndefOr[Arn] = js.undefined
     ): CreateDatasetGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      datasetGroupArn.foreach(__v => __obj.update("datasetGroupArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      datasetGroupArn.foreach(__v => __obj.updateDynamic("datasetGroupArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatasetGroupResponse]
     }
   }
@@ -547,7 +549,7 @@ package personalize {
         jobName: Name,
         roleArn: RoleArn
     ): CreateDatasetImportJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "dataSource" -> dataSource.asInstanceOf[js.Any],
         "datasetArn" -> datasetArn.asInstanceOf[js.Any],
         "jobName"    -> jobName.asInstanceOf[js.Any],
@@ -567,8 +569,8 @@ package personalize {
     def apply(
         datasetImportJobArn: js.UndefOr[Arn] = js.undefined
     ): CreateDatasetImportJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      datasetImportJobArn.foreach(__v => __obj.update("datasetImportJobArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      datasetImportJobArn.foreach(__v => __obj.updateDynamic("datasetImportJobArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatasetImportJobResponse]
     }
   }
@@ -588,7 +590,7 @@ package personalize {
         name: Name,
         schemaArn: Arn
     ): CreateDatasetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "datasetGroupArn" -> datasetGroupArn.asInstanceOf[js.Any],
         "datasetType"     -> datasetType.asInstanceOf[js.Any],
         "name"            -> name.asInstanceOf[js.Any],
@@ -608,8 +610,8 @@ package personalize {
     def apply(
         datasetArn: js.UndefOr[Arn] = js.undefined
     ): CreateDatasetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      datasetArn.foreach(__v => __obj.update("datasetArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      datasetArn.foreach(__v => __obj.updateDynamic("datasetArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatasetResponse]
     }
   }
@@ -625,7 +627,7 @@ package personalize {
         datasetGroupArn: Arn,
         name: Name
     ): CreateEventTrackerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "datasetGroupArn" -> datasetGroupArn.asInstanceOf[js.Any],
         "name"            -> name.asInstanceOf[js.Any]
       )
@@ -645,9 +647,9 @@ package personalize {
         eventTrackerArn: js.UndefOr[Arn] = js.undefined,
         trackingId: js.UndefOr[TrackingId] = js.undefined
     ): CreateEventTrackerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      eventTrackerArn.foreach(__v => __obj.update("eventTrackerArn", __v.asInstanceOf[js.Any]))
-      trackingId.foreach(__v => __obj.update("trackingId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      eventTrackerArn.foreach(__v => __obj.updateDynamic("eventTrackerArn")(__v.asInstanceOf[js.Any]))
+      trackingId.foreach(__v => __obj.updateDynamic("trackingId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateEventTrackerResponse]
     }
   }
@@ -663,7 +665,7 @@ package personalize {
         name: Name,
         schema: AvroSchema
     ): CreateSchemaRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name"   -> name.asInstanceOf[js.Any],
         "schema" -> schema.asInstanceOf[js.Any]
       )
@@ -681,8 +683,8 @@ package personalize {
     def apply(
         schemaArn: js.UndefOr[Arn] = js.undefined
     ): CreateSchemaResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      schemaArn.foreach(__v => __obj.update("schemaArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      schemaArn.foreach(__v => __obj.updateDynamic("schemaArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSchemaResponse]
     }
   }
@@ -708,16 +710,16 @@ package personalize {
         recipeArn: js.UndefOr[Arn] = js.undefined,
         solutionConfig: js.UndefOr[SolutionConfig] = js.undefined
     ): CreateSolutionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "datasetGroupArn" -> datasetGroupArn.asInstanceOf[js.Any],
         "name"            -> name.asInstanceOf[js.Any]
       )
 
-      eventType.foreach(__v => __obj.update("eventType", __v.asInstanceOf[js.Any]))
-      performAutoML.foreach(__v => __obj.update("performAutoML", __v.asInstanceOf[js.Any]))
-      performHPO.foreach(__v => __obj.update("performHPO", __v.asInstanceOf[js.Any]))
-      recipeArn.foreach(__v => __obj.update("recipeArn", __v.asInstanceOf[js.Any]))
-      solutionConfig.foreach(__v => __obj.update("solutionConfig", __v.asInstanceOf[js.Any]))
+      eventType.foreach(__v => __obj.updateDynamic("eventType")(__v.asInstanceOf[js.Any]))
+      performAutoML.foreach(__v => __obj.updateDynamic("performAutoML")(__v.asInstanceOf[js.Any]))
+      performHPO.foreach(__v => __obj.updateDynamic("performHPO")(__v.asInstanceOf[js.Any]))
+      recipeArn.foreach(__v => __obj.updateDynamic("recipeArn")(__v.asInstanceOf[js.Any]))
+      solutionConfig.foreach(__v => __obj.updateDynamic("solutionConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSolutionRequest]
     }
   }
@@ -731,8 +733,8 @@ package personalize {
     def apply(
         solutionArn: js.UndefOr[Arn] = js.undefined
     ): CreateSolutionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      solutionArn.foreach(__v => __obj.update("solutionArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      solutionArn.foreach(__v => __obj.updateDynamic("solutionArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSolutionResponse]
     }
   }
@@ -746,7 +748,7 @@ package personalize {
     def apply(
         solutionArn: Arn
     ): CreateSolutionVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "solutionArn" -> solutionArn.asInstanceOf[js.Any]
       )
 
@@ -763,8 +765,8 @@ package personalize {
     def apply(
         solutionVersionArn: js.UndefOr[Arn] = js.undefined
     ): CreateSolutionVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      solutionVersionArn.foreach(__v => __obj.update("solutionVersionArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      solutionVersionArn.foreach(__v => __obj.updateDynamic("solutionVersionArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSolutionVersionResponse]
     }
   }
@@ -781,8 +783,8 @@ package personalize {
     def apply(
         dataLocation: js.UndefOr[S3Location] = js.undefined
     ): DataSource = {
-      val __obj = js.Dictionary.empty[js.Any]
-      dataLocation.foreach(__v => __obj.update("dataLocation", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      dataLocation.foreach(__v => __obj.updateDynamic("dataLocation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataSource]
     }
   }
@@ -813,15 +815,15 @@ package personalize {
         schemaArn: js.UndefOr[Arn] = js.undefined,
         status: js.UndefOr[Status] = js.undefined
     ): Dataset = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationDateTime.foreach(__v => __obj.update("creationDateTime", __v.asInstanceOf[js.Any]))
-      datasetArn.foreach(__v => __obj.update("datasetArn", __v.asInstanceOf[js.Any]))
-      datasetGroupArn.foreach(__v => __obj.update("datasetGroupArn", __v.asInstanceOf[js.Any]))
-      datasetType.foreach(__v => __obj.update("datasetType", __v.asInstanceOf[js.Any]))
-      lastUpdatedDateTime.foreach(__v => __obj.update("lastUpdatedDateTime", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      schemaArn.foreach(__v => __obj.update("schemaArn", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      datasetArn.foreach(__v => __obj.updateDynamic("datasetArn")(__v.asInstanceOf[js.Any]))
+      datasetGroupArn.foreach(__v => __obj.updateDynamic("datasetGroupArn")(__v.asInstanceOf[js.Any]))
+      datasetType.foreach(__v => __obj.updateDynamic("datasetType")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      schemaArn.foreach(__v => __obj.updateDynamic("schemaArn")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Dataset]
     }
   }
@@ -853,15 +855,15 @@ package personalize {
         roleArn: js.UndefOr[RoleArn] = js.undefined,
         status: js.UndefOr[Status] = js.undefined
     ): DatasetGroup = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationDateTime.foreach(__v => __obj.update("creationDateTime", __v.asInstanceOf[js.Any]))
-      datasetGroupArn.foreach(__v => __obj.update("datasetGroupArn", __v.asInstanceOf[js.Any]))
-      failureReason.foreach(__v => __obj.update("failureReason", __v.asInstanceOf[js.Any]))
-      kmsKeyArn.foreach(__v => __obj.update("kmsKeyArn", __v.asInstanceOf[js.Any]))
-      lastUpdatedDateTime.foreach(__v => __obj.update("lastUpdatedDateTime", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      datasetGroupArn.foreach(__v => __obj.updateDynamic("datasetGroupArn")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      kmsKeyArn.foreach(__v => __obj.updateDynamic("kmsKeyArn")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatasetGroup]
     }
   }
@@ -888,13 +890,13 @@ package personalize {
         name: js.UndefOr[Name] = js.undefined,
         status: js.UndefOr[Status] = js.undefined
     ): DatasetGroupSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationDateTime.foreach(__v => __obj.update("creationDateTime", __v.asInstanceOf[js.Any]))
-      datasetGroupArn.foreach(__v => __obj.update("datasetGroupArn", __v.asInstanceOf[js.Any]))
-      failureReason.foreach(__v => __obj.update("failureReason", __v.asInstanceOf[js.Any]))
-      lastUpdatedDateTime.foreach(__v => __obj.update("lastUpdatedDateTime", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      datasetGroupArn.foreach(__v => __obj.updateDynamic("datasetGroupArn")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatasetGroupSummary]
     }
   }
@@ -929,16 +931,16 @@ package personalize {
         roleArn: js.UndefOr[Arn] = js.undefined,
         status: js.UndefOr[Status] = js.undefined
     ): DatasetImportJob = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationDateTime.foreach(__v => __obj.update("creationDateTime", __v.asInstanceOf[js.Any]))
-      dataSource.foreach(__v => __obj.update("dataSource", __v.asInstanceOf[js.Any]))
-      datasetArn.foreach(__v => __obj.update("datasetArn", __v.asInstanceOf[js.Any]))
-      datasetImportJobArn.foreach(__v => __obj.update("datasetImportJobArn", __v.asInstanceOf[js.Any]))
-      failureReason.foreach(__v => __obj.update("failureReason", __v.asInstanceOf[js.Any]))
-      jobName.foreach(__v => __obj.update("jobName", __v.asInstanceOf[js.Any]))
-      lastUpdatedDateTime.foreach(__v => __obj.update("lastUpdatedDateTime", __v.asInstanceOf[js.Any]))
-      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      dataSource.foreach(__v => __obj.updateDynamic("dataSource")(__v.asInstanceOf[js.Any]))
+      datasetArn.foreach(__v => __obj.updateDynamic("datasetArn")(__v.asInstanceOf[js.Any]))
+      datasetImportJobArn.foreach(__v => __obj.updateDynamic("datasetImportJobArn")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      jobName.foreach(__v => __obj.updateDynamic("jobName")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatasetImportJob]
     }
   }
@@ -965,13 +967,13 @@ package personalize {
         lastUpdatedDateTime: js.UndefOr[Date] = js.undefined,
         status: js.UndefOr[Status] = js.undefined
     ): DatasetImportJobSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationDateTime.foreach(__v => __obj.update("creationDateTime", __v.asInstanceOf[js.Any]))
-      datasetImportJobArn.foreach(__v => __obj.update("datasetImportJobArn", __v.asInstanceOf[js.Any]))
-      failureReason.foreach(__v => __obj.update("failureReason", __v.asInstanceOf[js.Any]))
-      jobName.foreach(__v => __obj.update("jobName", __v.asInstanceOf[js.Any]))
-      lastUpdatedDateTime.foreach(__v => __obj.update("lastUpdatedDateTime", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      datasetImportJobArn.foreach(__v => __obj.updateDynamic("datasetImportJobArn")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      jobName.foreach(__v => __obj.updateDynamic("jobName")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatasetImportJobSummary]
     }
   }
@@ -996,12 +998,12 @@ package personalize {
         schema: js.UndefOr[AvroSchema] = js.undefined,
         schemaArn: js.UndefOr[Arn] = js.undefined
     ): DatasetSchema = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationDateTime.foreach(__v => __obj.update("creationDateTime", __v.asInstanceOf[js.Any]))
-      lastUpdatedDateTime.foreach(__v => __obj.update("lastUpdatedDateTime", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      schema.foreach(__v => __obj.update("schema", __v.asInstanceOf[js.Any]))
-      schemaArn.foreach(__v => __obj.update("schemaArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      schema.foreach(__v => __obj.updateDynamic("schema")(__v.asInstanceOf[js.Any]))
+      schemaArn.foreach(__v => __obj.updateDynamic("schemaArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatasetSchema]
     }
   }
@@ -1024,11 +1026,11 @@ package personalize {
         name: js.UndefOr[Name] = js.undefined,
         schemaArn: js.UndefOr[Arn] = js.undefined
     ): DatasetSchemaSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationDateTime.foreach(__v => __obj.update("creationDateTime", __v.asInstanceOf[js.Any]))
-      lastUpdatedDateTime.foreach(__v => __obj.update("lastUpdatedDateTime", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      schemaArn.foreach(__v => __obj.update("schemaArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      schemaArn.foreach(__v => __obj.updateDynamic("schemaArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatasetSchemaSummary]
     }
   }
@@ -1055,13 +1057,13 @@ package personalize {
         name: js.UndefOr[Name] = js.undefined,
         status: js.UndefOr[Status] = js.undefined
     ): DatasetSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationDateTime.foreach(__v => __obj.update("creationDateTime", __v.asInstanceOf[js.Any]))
-      datasetArn.foreach(__v => __obj.update("datasetArn", __v.asInstanceOf[js.Any]))
-      datasetType.foreach(__v => __obj.update("datasetType", __v.asInstanceOf[js.Any]))
-      lastUpdatedDateTime.foreach(__v => __obj.update("lastUpdatedDateTime", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      datasetArn.foreach(__v => __obj.updateDynamic("datasetArn")(__v.asInstanceOf[js.Any]))
+      datasetType.foreach(__v => __obj.updateDynamic("datasetType")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatasetSummary]
     }
   }
@@ -1082,10 +1084,10 @@ package personalize {
         name: js.UndefOr[ParameterName] = js.undefined,
         values: js.UndefOr[CategoricalValues] = js.undefined
     ): DefaultCategoricalHyperParameterRange = {
-      val __obj = js.Dictionary.empty[js.Any]
-      isTunable.foreach(__v => __obj.update("isTunable", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      values.foreach(__v => __obj.update("values", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      isTunable.foreach(__v => __obj.updateDynamic("isTunable")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      values.foreach(__v => __obj.updateDynamic("values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DefaultCategoricalHyperParameterRange]
     }
   }
@@ -1108,11 +1110,11 @@ package personalize {
         minValue: js.UndefOr[ContinuousMinValue] = js.undefined,
         name: js.UndefOr[ParameterName] = js.undefined
     ): DefaultContinuousHyperParameterRange = {
-      val __obj = js.Dictionary.empty[js.Any]
-      isTunable.foreach(__v => __obj.update("isTunable", __v.asInstanceOf[js.Any]))
-      maxValue.foreach(__v => __obj.update("maxValue", __v.asInstanceOf[js.Any]))
-      minValue.foreach(__v => __obj.update("minValue", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      isTunable.foreach(__v => __obj.updateDynamic("isTunable")(__v.asInstanceOf[js.Any]))
+      maxValue.foreach(__v => __obj.updateDynamic("maxValue")(__v.asInstanceOf[js.Any]))
+      minValue.foreach(__v => __obj.updateDynamic("minValue")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DefaultContinuousHyperParameterRange]
     }
   }
@@ -1133,14 +1135,16 @@ package personalize {
         continuousHyperParameterRanges: js.UndefOr[DefaultContinuousHyperParameterRanges] = js.undefined,
         integerHyperParameterRanges: js.UndefOr[DefaultIntegerHyperParameterRanges] = js.undefined
     ): DefaultHyperParameterRanges = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       categoricalHyperParameterRanges.foreach(
-        __v => __obj.update("categoricalHyperParameterRanges", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("categoricalHyperParameterRanges")(__v.asInstanceOf[js.Any])
       )
       continuousHyperParameterRanges.foreach(
-        __v => __obj.update("continuousHyperParameterRanges", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("continuousHyperParameterRanges")(__v.asInstanceOf[js.Any])
       )
-      integerHyperParameterRanges.foreach(__v => __obj.update("integerHyperParameterRanges", __v.asInstanceOf[js.Any]))
+      integerHyperParameterRanges.foreach(
+        __v => __obj.updateDynamic("integerHyperParameterRanges")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[DefaultHyperParameterRanges]
     }
   }
@@ -1163,11 +1167,11 @@ package personalize {
         minValue: js.UndefOr[IntegerMinValue] = js.undefined,
         name: js.UndefOr[ParameterName] = js.undefined
     ): DefaultIntegerHyperParameterRange = {
-      val __obj = js.Dictionary.empty[js.Any]
-      isTunable.foreach(__v => __obj.update("isTunable", __v.asInstanceOf[js.Any]))
-      maxValue.foreach(__v => __obj.update("maxValue", __v.asInstanceOf[js.Any]))
-      minValue.foreach(__v => __obj.update("minValue", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      isTunable.foreach(__v => __obj.updateDynamic("isTunable")(__v.asInstanceOf[js.Any]))
+      maxValue.foreach(__v => __obj.updateDynamic("maxValue")(__v.asInstanceOf[js.Any]))
+      minValue.foreach(__v => __obj.updateDynamic("minValue")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DefaultIntegerHyperParameterRange]
     }
   }
@@ -1181,7 +1185,7 @@ package personalize {
     def apply(
         campaignArn: Arn
     ): DeleteCampaignRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "campaignArn" -> campaignArn.asInstanceOf[js.Any]
       )
 
@@ -1198,7 +1202,7 @@ package personalize {
     def apply(
         datasetGroupArn: Arn
     ): DeleteDatasetGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "datasetGroupArn" -> datasetGroupArn.asInstanceOf[js.Any]
       )
 
@@ -1215,7 +1219,7 @@ package personalize {
     def apply(
         datasetArn: Arn
     ): DeleteDatasetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "datasetArn" -> datasetArn.asInstanceOf[js.Any]
       )
 
@@ -1232,7 +1236,7 @@ package personalize {
     def apply(
         eventTrackerArn: Arn
     ): DeleteEventTrackerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "eventTrackerArn" -> eventTrackerArn.asInstanceOf[js.Any]
       )
 
@@ -1249,7 +1253,7 @@ package personalize {
     def apply(
         schemaArn: Arn
     ): DeleteSchemaRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "schemaArn" -> schemaArn.asInstanceOf[js.Any]
       )
 
@@ -1266,7 +1270,7 @@ package personalize {
     def apply(
         solutionArn: Arn
     ): DeleteSolutionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "solutionArn" -> solutionArn.asInstanceOf[js.Any]
       )
 
@@ -1283,7 +1287,7 @@ package personalize {
     def apply(
         algorithmArn: Arn
     ): DescribeAlgorithmRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "algorithmArn" -> algorithmArn.asInstanceOf[js.Any]
       )
 
@@ -1300,8 +1304,8 @@ package personalize {
     def apply(
         algorithm: js.UndefOr[Algorithm] = js.undefined
     ): DescribeAlgorithmResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      algorithm.foreach(__v => __obj.update("algorithm", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      algorithm.foreach(__v => __obj.updateDynamic("algorithm")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAlgorithmResponse]
     }
   }
@@ -1315,7 +1319,7 @@ package personalize {
     def apply(
         campaignArn: Arn
     ): DescribeCampaignRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "campaignArn" -> campaignArn.asInstanceOf[js.Any]
       )
 
@@ -1332,8 +1336,8 @@ package personalize {
     def apply(
         campaign: js.UndefOr[Campaign] = js.undefined
     ): DescribeCampaignResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      campaign.foreach(__v => __obj.update("campaign", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      campaign.foreach(__v => __obj.updateDynamic("campaign")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeCampaignResponse]
     }
   }
@@ -1347,7 +1351,7 @@ package personalize {
     def apply(
         datasetGroupArn: Arn
     ): DescribeDatasetGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "datasetGroupArn" -> datasetGroupArn.asInstanceOf[js.Any]
       )
 
@@ -1364,8 +1368,8 @@ package personalize {
     def apply(
         datasetGroup: js.UndefOr[DatasetGroup] = js.undefined
     ): DescribeDatasetGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      datasetGroup.foreach(__v => __obj.update("datasetGroup", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      datasetGroup.foreach(__v => __obj.updateDynamic("datasetGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDatasetGroupResponse]
     }
   }
@@ -1379,7 +1383,7 @@ package personalize {
     def apply(
         datasetImportJobArn: Arn
     ): DescribeDatasetImportJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "datasetImportJobArn" -> datasetImportJobArn.asInstanceOf[js.Any]
       )
 
@@ -1396,8 +1400,8 @@ package personalize {
     def apply(
         datasetImportJob: js.UndefOr[DatasetImportJob] = js.undefined
     ): DescribeDatasetImportJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      datasetImportJob.foreach(__v => __obj.update("datasetImportJob", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      datasetImportJob.foreach(__v => __obj.updateDynamic("datasetImportJob")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDatasetImportJobResponse]
     }
   }
@@ -1411,7 +1415,7 @@ package personalize {
     def apply(
         datasetArn: Arn
     ): DescribeDatasetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "datasetArn" -> datasetArn.asInstanceOf[js.Any]
       )
 
@@ -1428,8 +1432,8 @@ package personalize {
     def apply(
         dataset: js.UndefOr[Dataset] = js.undefined
     ): DescribeDatasetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      dataset.foreach(__v => __obj.update("dataset", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      dataset.foreach(__v => __obj.updateDynamic("dataset")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDatasetResponse]
     }
   }
@@ -1443,7 +1447,7 @@ package personalize {
     def apply(
         eventTrackerArn: Arn
     ): DescribeEventTrackerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "eventTrackerArn" -> eventTrackerArn.asInstanceOf[js.Any]
       )
 
@@ -1460,8 +1464,8 @@ package personalize {
     def apply(
         eventTracker: js.UndefOr[EventTracker] = js.undefined
     ): DescribeEventTrackerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      eventTracker.foreach(__v => __obj.update("eventTracker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      eventTracker.foreach(__v => __obj.updateDynamic("eventTracker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEventTrackerResponse]
     }
   }
@@ -1475,7 +1479,7 @@ package personalize {
     def apply(
         featureTransformationArn: Arn
     ): DescribeFeatureTransformationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "featureTransformationArn" -> featureTransformationArn.asInstanceOf[js.Any]
       )
 
@@ -1492,8 +1496,8 @@ package personalize {
     def apply(
         featureTransformation: js.UndefOr[FeatureTransformation] = js.undefined
     ): DescribeFeatureTransformationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      featureTransformation.foreach(__v => __obj.update("featureTransformation", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      featureTransformation.foreach(__v => __obj.updateDynamic("featureTransformation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeFeatureTransformationResponse]
     }
   }
@@ -1507,7 +1511,7 @@ package personalize {
     def apply(
         recipeArn: Arn
     ): DescribeRecipeRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "recipeArn" -> recipeArn.asInstanceOf[js.Any]
       )
 
@@ -1524,8 +1528,8 @@ package personalize {
     def apply(
         recipe: js.UndefOr[Recipe] = js.undefined
     ): DescribeRecipeResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      recipe.foreach(__v => __obj.update("recipe", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      recipe.foreach(__v => __obj.updateDynamic("recipe")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRecipeResponse]
     }
   }
@@ -1539,7 +1543,7 @@ package personalize {
     def apply(
         schemaArn: Arn
     ): DescribeSchemaRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "schemaArn" -> schemaArn.asInstanceOf[js.Any]
       )
 
@@ -1556,8 +1560,8 @@ package personalize {
     def apply(
         schema: js.UndefOr[DatasetSchema] = js.undefined
     ): DescribeSchemaResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      schema.foreach(__v => __obj.update("schema", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      schema.foreach(__v => __obj.updateDynamic("schema")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSchemaResponse]
     }
   }
@@ -1571,7 +1575,7 @@ package personalize {
     def apply(
         solutionArn: Arn
     ): DescribeSolutionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "solutionArn" -> solutionArn.asInstanceOf[js.Any]
       )
 
@@ -1588,8 +1592,8 @@ package personalize {
     def apply(
         solution: js.UndefOr[Solution] = js.undefined
     ): DescribeSolutionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      solution.foreach(__v => __obj.update("solution", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      solution.foreach(__v => __obj.updateDynamic("solution")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSolutionResponse]
     }
   }
@@ -1603,7 +1607,7 @@ package personalize {
     def apply(
         solutionVersionArn: Arn
     ): DescribeSolutionVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "solutionVersionArn" -> solutionVersionArn.asInstanceOf[js.Any]
       )
 
@@ -1620,8 +1624,8 @@ package personalize {
     def apply(
         solutionVersion: js.UndefOr[SolutionVersion] = js.undefined
     ): DescribeSolutionVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      solutionVersion.foreach(__v => __obj.update("solutionVersion", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      solutionVersion.foreach(__v => __obj.updateDynamic("solutionVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSolutionVersionResponse]
     }
   }
@@ -1652,15 +1656,15 @@ package personalize {
         status: js.UndefOr[Status] = js.undefined,
         trackingId: js.UndefOr[TrackingId] = js.undefined
     ): EventTracker = {
-      val __obj = js.Dictionary.empty[js.Any]
-      accountId.foreach(__v => __obj.update("accountId", __v.asInstanceOf[js.Any]))
-      creationDateTime.foreach(__v => __obj.update("creationDateTime", __v.asInstanceOf[js.Any]))
-      datasetGroupArn.foreach(__v => __obj.update("datasetGroupArn", __v.asInstanceOf[js.Any]))
-      eventTrackerArn.foreach(__v => __obj.update("eventTrackerArn", __v.asInstanceOf[js.Any]))
-      lastUpdatedDateTime.foreach(__v => __obj.update("lastUpdatedDateTime", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      trackingId.foreach(__v => __obj.update("trackingId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      accountId.foreach(__v => __obj.updateDynamic("accountId")(__v.asInstanceOf[js.Any]))
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      datasetGroupArn.foreach(__v => __obj.updateDynamic("datasetGroupArn")(__v.asInstanceOf[js.Any]))
+      eventTrackerArn.foreach(__v => __obj.updateDynamic("eventTrackerArn")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      trackingId.foreach(__v => __obj.updateDynamic("trackingId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventTracker]
     }
   }
@@ -1685,12 +1689,12 @@ package personalize {
         name: js.UndefOr[Name] = js.undefined,
         status: js.UndefOr[Status] = js.undefined
     ): EventTrackerSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationDateTime.foreach(__v => __obj.update("creationDateTime", __v.asInstanceOf[js.Any]))
-      eventTrackerArn.foreach(__v => __obj.update("eventTrackerArn", __v.asInstanceOf[js.Any]))
-      lastUpdatedDateTime.foreach(__v => __obj.update("lastUpdatedDateTime", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      eventTrackerArn.foreach(__v => __obj.updateDynamic("eventTrackerArn")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventTrackerSummary]
     }
   }
@@ -1717,13 +1721,13 @@ package personalize {
         name: js.UndefOr[Name] = js.undefined,
         status: js.UndefOr[Status] = js.undefined
     ): FeatureTransformation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationDateTime.foreach(__v => __obj.update("creationDateTime", __v.asInstanceOf[js.Any]))
-      defaultParameters.foreach(__v => __obj.update("defaultParameters", __v.asInstanceOf[js.Any]))
-      featureTransformationArn.foreach(__v => __obj.update("featureTransformationArn", __v.asInstanceOf[js.Any]))
-      lastUpdatedDateTime.foreach(__v => __obj.update("lastUpdatedDateTime", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      defaultParameters.foreach(__v => __obj.updateDynamic("defaultParameters")(__v.asInstanceOf[js.Any]))
+      featureTransformationArn.foreach(__v => __obj.updateDynamic("featureTransformationArn")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FeatureTransformation]
     }
   }
@@ -1737,7 +1741,7 @@ package personalize {
     def apply(
         solutionVersionArn: Arn
     ): GetSolutionMetricsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "solutionVersionArn" -> solutionVersionArn.asInstanceOf[js.Any]
       )
 
@@ -1756,9 +1760,9 @@ package personalize {
         metrics: js.UndefOr[Metrics] = js.undefined,
         solutionVersionArn: js.UndefOr[Arn] = js.undefined
     ): GetSolutionMetricsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      metrics.foreach(__v => __obj.update("metrics", __v.asInstanceOf[js.Any]))
-      solutionVersionArn.foreach(__v => __obj.update("solutionVersionArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      metrics.foreach(__v => __obj.updateDynamic("metrics")(__v.asInstanceOf[js.Any]))
+      solutionVersionArn.foreach(__v => __obj.updateDynamic("solutionVersionArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSolutionMetricsResponse]
     }
   }
@@ -1779,12 +1783,12 @@ package personalize {
         hpoObjective: js.UndefOr[HPOObjective] = js.undefined,
         hpoResourceConfig: js.UndefOr[HPOResourceConfig] = js.undefined
     ): HPOConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       algorithmHyperParameterRanges.foreach(
-        __v => __obj.update("algorithmHyperParameterRanges", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("algorithmHyperParameterRanges")(__v.asInstanceOf[js.Any])
       )
-      hpoObjective.foreach(__v => __obj.update("hpoObjective", __v.asInstanceOf[js.Any]))
-      hpoResourceConfig.foreach(__v => __obj.update("hpoResourceConfig", __v.asInstanceOf[js.Any]))
+      hpoObjective.foreach(__v => __obj.updateDynamic("hpoObjective")(__v.asInstanceOf[js.Any]))
+      hpoResourceConfig.foreach(__v => __obj.updateDynamic("hpoResourceConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HPOConfig]
     }
   }
@@ -1805,10 +1809,10 @@ package personalize {
         metricRegex: js.UndefOr[MetricRegex] = js.undefined,
         `type`: js.UndefOr[HPOObjectiveType] = js.undefined
     ): HPOObjective = {
-      val __obj = js.Dictionary.empty[js.Any]
-      metricName.foreach(__v => __obj.update("metricName", __v.asInstanceOf[js.Any]))
-      metricRegex.foreach(__v => __obj.update("metricRegex", __v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      metricName.foreach(__v => __obj.updateDynamic("metricName")(__v.asInstanceOf[js.Any]))
+      metricRegex.foreach(__v => __obj.updateDynamic("metricRegex")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HPOObjective]
     }
   }
@@ -1827,9 +1831,9 @@ package personalize {
         maxNumberOfTrainingJobs: js.UndefOr[HPOResource] = js.undefined,
         maxParallelTrainingJobs: js.UndefOr[HPOResource] = js.undefined
     ): HPOResourceConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxNumberOfTrainingJobs.foreach(__v => __obj.update("maxNumberOfTrainingJobs", __v.asInstanceOf[js.Any]))
-      maxParallelTrainingJobs.foreach(__v => __obj.update("maxParallelTrainingJobs", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxNumberOfTrainingJobs.foreach(__v => __obj.updateDynamic("maxNumberOfTrainingJobs")(__v.asInstanceOf[js.Any]))
+      maxParallelTrainingJobs.foreach(__v => __obj.updateDynamic("maxParallelTrainingJobs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HPOResourceConfig]
     }
   }
@@ -1850,14 +1854,16 @@ package personalize {
         continuousHyperParameterRanges: js.UndefOr[ContinuousHyperParameterRanges] = js.undefined,
         integerHyperParameterRanges: js.UndefOr[IntegerHyperParameterRanges] = js.undefined
     ): HyperParameterRanges = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       categoricalHyperParameterRanges.foreach(
-        __v => __obj.update("categoricalHyperParameterRanges", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("categoricalHyperParameterRanges")(__v.asInstanceOf[js.Any])
       )
       continuousHyperParameterRanges.foreach(
-        __v => __obj.update("continuousHyperParameterRanges", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("continuousHyperParameterRanges")(__v.asInstanceOf[js.Any])
       )
-      integerHyperParameterRanges.foreach(__v => __obj.update("integerHyperParameterRanges", __v.asInstanceOf[js.Any]))
+      integerHyperParameterRanges.foreach(
+        __v => __obj.updateDynamic("integerHyperParameterRanges")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[HyperParameterRanges]
     }
   }
@@ -1878,10 +1884,10 @@ package personalize {
         minValue: js.UndefOr[IntegerMinValue] = js.undefined,
         name: js.UndefOr[ParameterName] = js.undefined
     ): IntegerHyperParameterRange = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxValue.foreach(__v => __obj.update("maxValue", __v.asInstanceOf[js.Any]))
-      minValue.foreach(__v => __obj.update("minValue", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxValue.foreach(__v => __obj.updateDynamic("maxValue")(__v.asInstanceOf[js.Any]))
+      minValue.foreach(__v => __obj.updateDynamic("minValue")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IntegerHyperParameterRange]
     }
   }
@@ -1899,10 +1905,10 @@ package personalize {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         solutionArn: js.UndefOr[Arn] = js.undefined
     ): ListCampaignsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      solutionArn.foreach(__v => __obj.update("solutionArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      solutionArn.foreach(__v => __obj.updateDynamic("solutionArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCampaignsRequest]
     }
   }
@@ -1918,9 +1924,9 @@ package personalize {
         campaigns: js.UndefOr[Campaigns] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListCampaignsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      campaigns.foreach(__v => __obj.update("campaigns", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      campaigns.foreach(__v => __obj.updateDynamic("campaigns")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCampaignsResponse]
     }
   }
@@ -1936,9 +1942,9 @@ package personalize {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDatasetGroupsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDatasetGroupsRequest]
     }
   }
@@ -1954,9 +1960,9 @@ package personalize {
         datasetGroups: js.UndefOr[DatasetGroups] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDatasetGroupsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      datasetGroups.foreach(__v => __obj.update("datasetGroups", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      datasetGroups.foreach(__v => __obj.updateDynamic("datasetGroups")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDatasetGroupsResponse]
     }
   }
@@ -1974,10 +1980,10 @@ package personalize {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDatasetImportJobsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      datasetArn.foreach(__v => __obj.update("datasetArn", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      datasetArn.foreach(__v => __obj.updateDynamic("datasetArn")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDatasetImportJobsRequest]
     }
   }
@@ -1993,9 +1999,9 @@ package personalize {
         datasetImportJobs: js.UndefOr[DatasetImportJobs] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDatasetImportJobsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      datasetImportJobs.foreach(__v => __obj.update("datasetImportJobs", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      datasetImportJobs.foreach(__v => __obj.updateDynamic("datasetImportJobs")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDatasetImportJobsResponse]
     }
   }
@@ -2013,10 +2019,10 @@ package personalize {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDatasetsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      datasetGroupArn.foreach(__v => __obj.update("datasetGroupArn", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      datasetGroupArn.foreach(__v => __obj.updateDynamic("datasetGroupArn")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDatasetsRequest]
     }
   }
@@ -2032,9 +2038,9 @@ package personalize {
         datasets: js.UndefOr[Datasets] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDatasetsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      datasets.foreach(__v => __obj.update("datasets", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      datasets.foreach(__v => __obj.updateDynamic("datasets")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDatasetsResponse]
     }
   }
@@ -2052,10 +2058,10 @@ package personalize {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListEventTrackersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      datasetGroupArn.foreach(__v => __obj.update("datasetGroupArn", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      datasetGroupArn.foreach(__v => __obj.updateDynamic("datasetGroupArn")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEventTrackersRequest]
     }
   }
@@ -2071,9 +2077,9 @@ package personalize {
         eventTrackers: js.UndefOr[EventTrackers] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListEventTrackersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      eventTrackers.foreach(__v => __obj.update("eventTrackers", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      eventTrackers.foreach(__v => __obj.updateDynamic("eventTrackers")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEventTrackersResponse]
     }
   }
@@ -2091,10 +2097,10 @@ package personalize {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         recipeProvider: js.UndefOr[RecipeProvider] = js.undefined
     ): ListRecipesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      recipeProvider.foreach(__v => __obj.update("recipeProvider", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      recipeProvider.foreach(__v => __obj.updateDynamic("recipeProvider")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRecipesRequest]
     }
   }
@@ -2110,9 +2116,9 @@ package personalize {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         recipes: js.UndefOr[Recipes] = js.undefined
     ): ListRecipesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      recipes.foreach(__v => __obj.update("recipes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      recipes.foreach(__v => __obj.updateDynamic("recipes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRecipesResponse]
     }
   }
@@ -2128,9 +2134,9 @@ package personalize {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListSchemasRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSchemasRequest]
     }
   }
@@ -2146,9 +2152,9 @@ package personalize {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         schemas: js.UndefOr[Schemas] = js.undefined
     ): ListSchemasResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      schemas.foreach(__v => __obj.update("schemas", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      schemas.foreach(__v => __obj.updateDynamic("schemas")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSchemasResponse]
     }
   }
@@ -2166,10 +2172,10 @@ package personalize {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         solutionArn: js.UndefOr[Arn] = js.undefined
     ): ListSolutionVersionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      solutionArn.foreach(__v => __obj.update("solutionArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      solutionArn.foreach(__v => __obj.updateDynamic("solutionArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSolutionVersionsRequest]
     }
   }
@@ -2185,9 +2191,9 @@ package personalize {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         solutionVersions: js.UndefOr[SolutionVersions] = js.undefined
     ): ListSolutionVersionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      solutionVersions.foreach(__v => __obj.update("solutionVersions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      solutionVersions.foreach(__v => __obj.updateDynamic("solutionVersions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSolutionVersionsResponse]
     }
   }
@@ -2205,10 +2211,10 @@ package personalize {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListSolutionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      datasetGroupArn.foreach(__v => __obj.update("datasetGroupArn", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      datasetGroupArn.foreach(__v => __obj.updateDynamic("datasetGroupArn")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSolutionsRequest]
     }
   }
@@ -2224,9 +2230,9 @@ package personalize {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         solutions: js.UndefOr[Solutions] = js.undefined
     ): ListSolutionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      solutions.foreach(__v => __obj.update("solutions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      solutions.foreach(__v => __obj.updateDynamic("solutions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSolutionsResponse]
     }
   }
@@ -2259,16 +2265,16 @@ package personalize {
         recipeType: js.UndefOr[RecipeType] = js.undefined,
         status: js.UndefOr[Status] = js.undefined
     ): Recipe = {
-      val __obj = js.Dictionary.empty[js.Any]
-      algorithmArn.foreach(__v => __obj.update("algorithmArn", __v.asInstanceOf[js.Any]))
-      creationDateTime.foreach(__v => __obj.update("creationDateTime", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      featureTransformationArn.foreach(__v => __obj.update("featureTransformationArn", __v.asInstanceOf[js.Any]))
-      lastUpdatedDateTime.foreach(__v => __obj.update("lastUpdatedDateTime", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      recipeArn.foreach(__v => __obj.update("recipeArn", __v.asInstanceOf[js.Any]))
-      recipeType.foreach(__v => __obj.update("recipeType", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      algorithmArn.foreach(__v => __obj.updateDynamic("algorithmArn")(__v.asInstanceOf[js.Any]))
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      featureTransformationArn.foreach(__v => __obj.updateDynamic("featureTransformationArn")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      recipeArn.foreach(__v => __obj.updateDynamic("recipeArn")(__v.asInstanceOf[js.Any]))
+      recipeType.foreach(__v => __obj.updateDynamic("recipeType")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Recipe]
     }
   }
@@ -2299,12 +2305,12 @@ package personalize {
         recipeArn: js.UndefOr[Arn] = js.undefined,
         status: js.UndefOr[Status] = js.undefined
     ): RecipeSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationDateTime.foreach(__v => __obj.update("creationDateTime", __v.asInstanceOf[js.Any]))
-      lastUpdatedDateTime.foreach(__v => __obj.update("lastUpdatedDateTime", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      recipeArn.foreach(__v => __obj.update("recipeArn", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      recipeArn.foreach(__v => __obj.updateDynamic("recipeArn")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecipeSummary]
     }
   }
@@ -2345,20 +2351,20 @@ package personalize {
         solutionConfig: js.UndefOr[SolutionConfig] = js.undefined,
         status: js.UndefOr[Status] = js.undefined
     ): Solution = {
-      val __obj = js.Dictionary.empty[js.Any]
-      autoMLResult.foreach(__v => __obj.update("autoMLResult", __v.asInstanceOf[js.Any]))
-      creationDateTime.foreach(__v => __obj.update("creationDateTime", __v.asInstanceOf[js.Any]))
-      datasetGroupArn.foreach(__v => __obj.update("datasetGroupArn", __v.asInstanceOf[js.Any]))
-      eventType.foreach(__v => __obj.update("eventType", __v.asInstanceOf[js.Any]))
-      lastUpdatedDateTime.foreach(__v => __obj.update("lastUpdatedDateTime", __v.asInstanceOf[js.Any]))
-      latestSolutionVersion.foreach(__v => __obj.update("latestSolutionVersion", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      performAutoML.foreach(__v => __obj.update("performAutoML", __v.asInstanceOf[js.Any]))
-      performHPO.foreach(__v => __obj.update("performHPO", __v.asInstanceOf[js.Any]))
-      recipeArn.foreach(__v => __obj.update("recipeArn", __v.asInstanceOf[js.Any]))
-      solutionArn.foreach(__v => __obj.update("solutionArn", __v.asInstanceOf[js.Any]))
-      solutionConfig.foreach(__v => __obj.update("solutionConfig", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      autoMLResult.foreach(__v => __obj.updateDynamic("autoMLResult")(__v.asInstanceOf[js.Any]))
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      datasetGroupArn.foreach(__v => __obj.updateDynamic("datasetGroupArn")(__v.asInstanceOf[js.Any]))
+      eventType.foreach(__v => __obj.updateDynamic("eventType")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      latestSolutionVersion.foreach(__v => __obj.updateDynamic("latestSolutionVersion")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      performAutoML.foreach(__v => __obj.updateDynamic("performAutoML")(__v.asInstanceOf[js.Any]))
+      performHPO.foreach(__v => __obj.updateDynamic("performHPO")(__v.asInstanceOf[js.Any]))
+      recipeArn.foreach(__v => __obj.updateDynamic("recipeArn")(__v.asInstanceOf[js.Any]))
+      solutionArn.foreach(__v => __obj.updateDynamic("solutionArn")(__v.asInstanceOf[js.Any]))
+      solutionConfig.foreach(__v => __obj.updateDynamic("solutionConfig")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Solution]
     }
   }
@@ -2383,14 +2389,14 @@ package personalize {
         featureTransformationParameters: js.UndefOr[FeatureTransformationParameters] = js.undefined,
         hpoConfig: js.UndefOr[HPOConfig] = js.undefined
     ): SolutionConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      algorithmHyperParameters.foreach(__v => __obj.update("algorithmHyperParameters", __v.asInstanceOf[js.Any]))
-      autoMLConfig.foreach(__v => __obj.update("autoMLConfig", __v.asInstanceOf[js.Any]))
-      eventValueThreshold.foreach(__v => __obj.update("eventValueThreshold", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      algorithmHyperParameters.foreach(__v => __obj.updateDynamic("algorithmHyperParameters")(__v.asInstanceOf[js.Any]))
+      autoMLConfig.foreach(__v => __obj.updateDynamic("autoMLConfig")(__v.asInstanceOf[js.Any]))
+      eventValueThreshold.foreach(__v => __obj.updateDynamic("eventValueThreshold")(__v.asInstanceOf[js.Any]))
       featureTransformationParameters.foreach(
-        __v => __obj.update("featureTransformationParameters", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("featureTransformationParameters")(__v.asInstanceOf[js.Any])
       )
-      hpoConfig.foreach(__v => __obj.update("hpoConfig", __v.asInstanceOf[js.Any]))
+      hpoConfig.foreach(__v => __obj.updateDynamic("hpoConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SolutionConfig]
     }
   }
@@ -2415,12 +2421,12 @@ package personalize {
         solutionArn: js.UndefOr[Arn] = js.undefined,
         status: js.UndefOr[Status] = js.undefined
     ): SolutionSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationDateTime.foreach(__v => __obj.update("creationDateTime", __v.asInstanceOf[js.Any]))
-      lastUpdatedDateTime.foreach(__v => __obj.update("lastUpdatedDateTime", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      solutionArn.foreach(__v => __obj.update("solutionArn", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      solutionArn.foreach(__v => __obj.updateDynamic("solutionArn")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SolutionSummary]
     }
   }
@@ -2459,19 +2465,19 @@ package personalize {
         solutionVersionArn: js.UndefOr[Arn] = js.undefined,
         status: js.UndefOr[Status] = js.undefined
     ): SolutionVersion = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationDateTime.foreach(__v => __obj.update("creationDateTime", __v.asInstanceOf[js.Any]))
-      datasetGroupArn.foreach(__v => __obj.update("datasetGroupArn", __v.asInstanceOf[js.Any]))
-      eventType.foreach(__v => __obj.update("eventType", __v.asInstanceOf[js.Any]))
-      failureReason.foreach(__v => __obj.update("failureReason", __v.asInstanceOf[js.Any]))
-      lastUpdatedDateTime.foreach(__v => __obj.update("lastUpdatedDateTime", __v.asInstanceOf[js.Any]))
-      performAutoML.foreach(__v => __obj.update("performAutoML", __v.asInstanceOf[js.Any]))
-      performHPO.foreach(__v => __obj.update("performHPO", __v.asInstanceOf[js.Any]))
-      recipeArn.foreach(__v => __obj.update("recipeArn", __v.asInstanceOf[js.Any]))
-      solutionArn.foreach(__v => __obj.update("solutionArn", __v.asInstanceOf[js.Any]))
-      solutionConfig.foreach(__v => __obj.update("solutionConfig", __v.asInstanceOf[js.Any]))
-      solutionVersionArn.foreach(__v => __obj.update("solutionVersionArn", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      datasetGroupArn.foreach(__v => __obj.updateDynamic("datasetGroupArn")(__v.asInstanceOf[js.Any]))
+      eventType.foreach(__v => __obj.updateDynamic("eventType")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      performAutoML.foreach(__v => __obj.updateDynamic("performAutoML")(__v.asInstanceOf[js.Any]))
+      performHPO.foreach(__v => __obj.updateDynamic("performHPO")(__v.asInstanceOf[js.Any]))
+      recipeArn.foreach(__v => __obj.updateDynamic("recipeArn")(__v.asInstanceOf[js.Any]))
+      solutionArn.foreach(__v => __obj.updateDynamic("solutionArn")(__v.asInstanceOf[js.Any]))
+      solutionConfig.foreach(__v => __obj.updateDynamic("solutionConfig")(__v.asInstanceOf[js.Any]))
+      solutionVersionArn.foreach(__v => __obj.updateDynamic("solutionVersionArn")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SolutionVersion]
     }
   }
@@ -2496,12 +2502,12 @@ package personalize {
         solutionVersionArn: js.UndefOr[Arn] = js.undefined,
         status: js.UndefOr[Status] = js.undefined
     ): SolutionVersionSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationDateTime.foreach(__v => __obj.update("creationDateTime", __v.asInstanceOf[js.Any]))
-      failureReason.foreach(__v => __obj.update("failureReason", __v.asInstanceOf[js.Any]))
-      lastUpdatedDateTime.foreach(__v => __obj.update("lastUpdatedDateTime", __v.asInstanceOf[js.Any]))
-      solutionVersionArn.foreach(__v => __obj.update("solutionVersionArn", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      solutionVersionArn.foreach(__v => __obj.updateDynamic("solutionVersionArn")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SolutionVersionSummary]
     }
   }
@@ -2519,12 +2525,12 @@ package personalize {
         minProvisionedTPS: js.UndefOr[TransactionsPerSecond] = js.undefined,
         solutionVersionArn: js.UndefOr[Arn] = js.undefined
     ): UpdateCampaignRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "campaignArn" -> campaignArn.asInstanceOf[js.Any]
       )
 
-      minProvisionedTPS.foreach(__v => __obj.update("minProvisionedTPS", __v.asInstanceOf[js.Any]))
-      solutionVersionArn.foreach(__v => __obj.update("solutionVersionArn", __v.asInstanceOf[js.Any]))
+      minProvisionedTPS.foreach(__v => __obj.updateDynamic("minProvisionedTPS")(__v.asInstanceOf[js.Any]))
+      solutionVersionArn.foreach(__v => __obj.updateDynamic("solutionVersionArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateCampaignRequest]
     }
   }
@@ -2538,8 +2544,8 @@ package personalize {
     def apply(
         campaignArn: js.UndefOr[Arn] = js.undefined
     ): UpdateCampaignResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      campaignArn.foreach(__v => __obj.update("campaignArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      campaignArn.foreach(__v => __obj.updateDynamic("campaignArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateCampaignResponse]
     }
   }

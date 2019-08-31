@@ -236,7 +236,7 @@ package emr {
         ClusterId: XmlStringMaxLen256,
         InstanceFleet: InstanceFleetConfig
     ): AddInstanceFleetInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClusterId"     -> ClusterId.asInstanceOf[js.Any],
         "InstanceFleet" -> InstanceFleet.asInstanceOf[js.Any]
       )
@@ -256,9 +256,9 @@ package emr {
         ClusterId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
         InstanceFleetId: js.UndefOr[InstanceFleetId] = js.undefined
     ): AddInstanceFleetOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClusterId.foreach(__v => __obj.update("ClusterId", __v.asInstanceOf[js.Any]))
-      InstanceFleetId.foreach(__v => __obj.update("InstanceFleetId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClusterId.foreach(__v => __obj.updateDynamic("ClusterId")(__v.asInstanceOf[js.Any]))
+      InstanceFleetId.foreach(__v => __obj.updateDynamic("InstanceFleetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddInstanceFleetOutput]
     }
   }
@@ -277,7 +277,7 @@ package emr {
         InstanceGroups: InstanceGroupConfigList,
         JobFlowId: XmlStringMaxLen256
     ): AddInstanceGroupsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceGroups" -> InstanceGroups.asInstanceOf[js.Any],
         "JobFlowId"      -> JobFlowId.asInstanceOf[js.Any]
       )
@@ -300,9 +300,9 @@ package emr {
         InstanceGroupIds: js.UndefOr[InstanceGroupIdsList] = js.undefined,
         JobFlowId: js.UndefOr[XmlStringMaxLen256] = js.undefined
     ): AddInstanceGroupsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InstanceGroupIds.foreach(__v => __obj.update("InstanceGroupIds", __v.asInstanceOf[js.Any]))
-      JobFlowId.foreach(__v => __obj.update("JobFlowId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InstanceGroupIds.foreach(__v => __obj.updateDynamic("InstanceGroupIds")(__v.asInstanceOf[js.Any]))
+      JobFlowId.foreach(__v => __obj.updateDynamic("JobFlowId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddInstanceGroupsOutput]
     }
   }
@@ -321,7 +321,7 @@ package emr {
         JobFlowId: XmlStringMaxLen256,
         Steps: StepConfigList
     ): AddJobFlowStepsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobFlowId" -> JobFlowId.asInstanceOf[js.Any],
         "Steps"     -> Steps.asInstanceOf[js.Any]
       )
@@ -342,8 +342,8 @@ package emr {
     def apply(
         StepIds: js.UndefOr[StepIdsList] = js.undefined
     ): AddJobFlowStepsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      StepIds.foreach(__v => __obj.update("StepIds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      StepIds.foreach(__v => __obj.updateDynamic("StepIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddJobFlowStepsOutput]
     }
   }
@@ -362,7 +362,7 @@ package emr {
         ResourceId: ResourceId,
         Tags: TagList
     ): AddTagsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "Tags"       -> Tags.asInstanceOf[js.Any]
       )
@@ -380,7 +380,7 @@ package emr {
   object AddTagsOutput {
     def apply(
         ): AddTagsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AddTagsOutput]
     }
@@ -413,11 +413,11 @@ package emr {
         Name: js.UndefOr[String] = js.undefined,
         Version: js.UndefOr[String] = js.undefined
     ): Application = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AdditionalInfo.foreach(__v => __obj.update("AdditionalInfo", __v.asInstanceOf[js.Any]))
-      Args.foreach(__v => __obj.update("Args", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AdditionalInfo.foreach(__v => __obj.updateDynamic("AdditionalInfo")(__v.asInstanceOf[js.Any]))
+      Args.foreach(__v => __obj.updateDynamic("Args")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Application]
     }
   }
@@ -436,7 +436,7 @@ package emr {
         Constraints: ScalingConstraints,
         Rules: ScalingRuleList
     ): AutoScalingPolicy = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Constraints" -> Constraints.asInstanceOf[js.Any],
         "Rules"       -> Rules.asInstanceOf[js.Any]
       )
@@ -461,10 +461,10 @@ package emr {
         Rules: js.UndefOr[ScalingRuleList] = js.undefined,
         Status: js.UndefOr[AutoScalingPolicyStatus] = js.undefined
     ): AutoScalingPolicyDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Constraints.foreach(__v => __obj.update("Constraints", __v.asInstanceOf[js.Any]))
-      Rules.foreach(__v => __obj.update("Rules", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Constraints.foreach(__v => __obj.updateDynamic("Constraints")(__v.asInstanceOf[js.Any]))
+      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoScalingPolicyDescription]
     }
   }
@@ -494,9 +494,9 @@ package emr {
         Code: js.UndefOr[AutoScalingPolicyStateChangeReasonCode] = js.undefined,
         Message: js.UndefOr[String] = js.undefined
     ): AutoScalingPolicyStateChangeReason = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Code.foreach(__v => __obj.update("Code", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoScalingPolicyStateChangeReason]
     }
   }
@@ -523,9 +523,9 @@ package emr {
         State: js.UndefOr[AutoScalingPolicyState] = js.undefined,
         StateChangeReason: js.UndefOr[AutoScalingPolicyStateChangeReason] = js.undefined
     ): AutoScalingPolicyStatus = {
-      val __obj = js.Dictionary.empty[js.Any]
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
-      StateChangeReason.foreach(__v => __obj.update("StateChangeReason", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      StateChangeReason.foreach(__v => __obj.updateDynamic("StateChangeReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoScalingPolicyStatus]
     }
   }
@@ -544,12 +544,12 @@ package emr {
         BlockPublicSecurityGroupRules: Boolean,
         PermittedPublicSecurityGroupRuleRanges: js.UndefOr[PortRanges] = js.undefined
     ): BlockPublicAccessConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BlockPublicSecurityGroupRules" -> BlockPublicSecurityGroupRules.asInstanceOf[js.Any]
       )
 
       PermittedPublicSecurityGroupRuleRanges.foreach(
-        __v => __obj.update("PermittedPublicSecurityGroupRuleRanges", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("PermittedPublicSecurityGroupRuleRanges")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[BlockPublicAccessConfiguration]
     }
@@ -569,7 +569,7 @@ package emr {
         CreatedByArn: ArnType,
         CreationDateTime: Date
     ): BlockPublicAccessConfigurationMetadata = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CreatedByArn"     -> CreatedByArn.asInstanceOf[js.Any],
         "CreationDateTime" -> CreationDateTime.asInstanceOf[js.Any]
       )
@@ -592,7 +592,7 @@ package emr {
         Name: XmlStringMaxLen256,
         ScriptBootstrapAction: ScriptBootstrapActionConfig
     ): BootstrapActionConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"                  -> Name.asInstanceOf[js.Any],
         "ScriptBootstrapAction" -> ScriptBootstrapAction.asInstanceOf[js.Any]
       )
@@ -613,8 +613,8 @@ package emr {
     def apply(
         BootstrapActionConfig: js.UndefOr[BootstrapActionConfig] = js.undefined
     ): BootstrapActionDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BootstrapActionConfig.foreach(__v => __obj.update("BootstrapActionConfig", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BootstrapActionConfig.foreach(__v => __obj.updateDynamic("BootstrapActionConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BootstrapActionDetail]
     }
   }
@@ -635,10 +635,10 @@ package emr {
         Status: js.UndefOr[CancelStepsRequestStatus] = js.undefined,
         StepId: js.UndefOr[StepId] = js.undefined
     ): CancelStepsInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Reason.foreach(__v => __obj.update("Reason", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StepId.foreach(__v => __obj.update("StepId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Reason.foreach(__v => __obj.updateDynamic("Reason")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StepId.foreach(__v => __obj.updateDynamic("StepId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CancelStepsInfo]
     }
   }
@@ -657,9 +657,9 @@ package emr {
         ClusterId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
         StepIds: js.UndefOr[StepIdsList] = js.undefined
     ): CancelStepsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClusterId.foreach(__v => __obj.update("ClusterId", __v.asInstanceOf[js.Any]))
-      StepIds.foreach(__v => __obj.update("StepIds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClusterId.foreach(__v => __obj.updateDynamic("ClusterId")(__v.asInstanceOf[js.Any]))
+      StepIds.foreach(__v => __obj.updateDynamic("StepIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CancelStepsInput]
     }
   }
@@ -676,8 +676,8 @@ package emr {
     def apply(
         CancelStepsInfoList: js.UndefOr[CancelStepsInfoList] = js.undefined
     ): CancelStepsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CancelStepsInfoList.foreach(__v => __obj.update("CancelStepsInfoList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CancelStepsInfoList.foreach(__v => __obj.updateDynamic("CancelStepsInfoList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CancelStepsOutput]
     }
   }
@@ -717,18 +717,18 @@ package emr {
         Statistic: js.UndefOr[Statistic] = js.undefined,
         Unit: js.UndefOr[Unit] = js.undefined
     ): CloudWatchAlarmDefinition = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ComparisonOperator" -> ComparisonOperator.asInstanceOf[js.Any],
         "MetricName"         -> MetricName.asInstanceOf[js.Any],
         "Period"             -> Period.asInstanceOf[js.Any],
         "Threshold"          -> Threshold.asInstanceOf[js.Any]
       )
 
-      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
-      EvaluationPeriods.foreach(__v => __obj.update("EvaluationPeriods", __v.asInstanceOf[js.Any]))
-      Namespace.foreach(__v => __obj.update("Namespace", __v.asInstanceOf[js.Any]))
-      Statistic.foreach(__v => __obj.update("Statistic", __v.asInstanceOf[js.Any]))
-      Unit.foreach(__v => __obj.update("Unit", __v.asInstanceOf[js.Any]))
+      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
+      EvaluationPeriods.foreach(__v => __obj.updateDynamic("EvaluationPeriods")(__v.asInstanceOf[js.Any]))
+      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
+      Statistic.foreach(__v => __obj.updateDynamic("Statistic")(__v.asInstanceOf[js.Any]))
+      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CloudWatchAlarmDefinition]
     }
   }
@@ -793,32 +793,32 @@ package emr {
         TerminationProtected: js.UndefOr[Boolean] = js.undefined,
         VisibleToAllUsers: js.UndefOr[Boolean] = js.undefined
     ): Cluster = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Applications.foreach(__v => __obj.update("Applications", __v.asInstanceOf[js.Any]))
-      AutoScalingRole.foreach(__v => __obj.update("AutoScalingRole", __v.asInstanceOf[js.Any]))
-      AutoTerminate.foreach(__v => __obj.update("AutoTerminate", __v.asInstanceOf[js.Any]))
-      Configurations.foreach(__v => __obj.update("Configurations", __v.asInstanceOf[js.Any]))
-      CustomAmiId.foreach(__v => __obj.update("CustomAmiId", __v.asInstanceOf[js.Any]))
-      EbsRootVolumeSize.foreach(__v => __obj.update("EbsRootVolumeSize", __v.asInstanceOf[js.Any]))
-      Ec2InstanceAttributes.foreach(__v => __obj.update("Ec2InstanceAttributes", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      InstanceCollectionType.foreach(__v => __obj.update("InstanceCollectionType", __v.asInstanceOf[js.Any]))
-      KerberosAttributes.foreach(__v => __obj.update("KerberosAttributes", __v.asInstanceOf[js.Any]))
-      LogUri.foreach(__v => __obj.update("LogUri", __v.asInstanceOf[js.Any]))
-      MasterPublicDnsName.foreach(__v => __obj.update("MasterPublicDnsName", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      NormalizedInstanceHours.foreach(__v => __obj.update("NormalizedInstanceHours", __v.asInstanceOf[js.Any]))
-      ReleaseLabel.foreach(__v => __obj.update("ReleaseLabel", __v.asInstanceOf[js.Any]))
-      RepoUpgradeOnBoot.foreach(__v => __obj.update("RepoUpgradeOnBoot", __v.asInstanceOf[js.Any]))
-      RequestedAmiVersion.foreach(__v => __obj.update("RequestedAmiVersion", __v.asInstanceOf[js.Any]))
-      RunningAmiVersion.foreach(__v => __obj.update("RunningAmiVersion", __v.asInstanceOf[js.Any]))
-      ScaleDownBehavior.foreach(__v => __obj.update("ScaleDownBehavior", __v.asInstanceOf[js.Any]))
-      SecurityConfiguration.foreach(__v => __obj.update("SecurityConfiguration", __v.asInstanceOf[js.Any]))
-      ServiceRole.foreach(__v => __obj.update("ServiceRole", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      TerminationProtected.foreach(__v => __obj.update("TerminationProtected", __v.asInstanceOf[js.Any]))
-      VisibleToAllUsers.foreach(__v => __obj.update("VisibleToAllUsers", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Applications.foreach(__v => __obj.updateDynamic("Applications")(__v.asInstanceOf[js.Any]))
+      AutoScalingRole.foreach(__v => __obj.updateDynamic("AutoScalingRole")(__v.asInstanceOf[js.Any]))
+      AutoTerminate.foreach(__v => __obj.updateDynamic("AutoTerminate")(__v.asInstanceOf[js.Any]))
+      Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
+      CustomAmiId.foreach(__v => __obj.updateDynamic("CustomAmiId")(__v.asInstanceOf[js.Any]))
+      EbsRootVolumeSize.foreach(__v => __obj.updateDynamic("EbsRootVolumeSize")(__v.asInstanceOf[js.Any]))
+      Ec2InstanceAttributes.foreach(__v => __obj.updateDynamic("Ec2InstanceAttributes")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      InstanceCollectionType.foreach(__v => __obj.updateDynamic("InstanceCollectionType")(__v.asInstanceOf[js.Any]))
+      KerberosAttributes.foreach(__v => __obj.updateDynamic("KerberosAttributes")(__v.asInstanceOf[js.Any]))
+      LogUri.foreach(__v => __obj.updateDynamic("LogUri")(__v.asInstanceOf[js.Any]))
+      MasterPublicDnsName.foreach(__v => __obj.updateDynamic("MasterPublicDnsName")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NormalizedInstanceHours.foreach(__v => __obj.updateDynamic("NormalizedInstanceHours")(__v.asInstanceOf[js.Any]))
+      ReleaseLabel.foreach(__v => __obj.updateDynamic("ReleaseLabel")(__v.asInstanceOf[js.Any]))
+      RepoUpgradeOnBoot.foreach(__v => __obj.updateDynamic("RepoUpgradeOnBoot")(__v.asInstanceOf[js.Any]))
+      RequestedAmiVersion.foreach(__v => __obj.updateDynamic("RequestedAmiVersion")(__v.asInstanceOf[js.Any]))
+      RunningAmiVersion.foreach(__v => __obj.updateDynamic("RunningAmiVersion")(__v.asInstanceOf[js.Any]))
+      ScaleDownBehavior.foreach(__v => __obj.updateDynamic("ScaleDownBehavior")(__v.asInstanceOf[js.Any]))
+      SecurityConfiguration.foreach(__v => __obj.updateDynamic("SecurityConfiguration")(__v.asInstanceOf[js.Any]))
+      ServiceRole.foreach(__v => __obj.updateDynamic("ServiceRole")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TerminationProtected.foreach(__v => __obj.updateDynamic("TerminationProtected")(__v.asInstanceOf[js.Any]))
+      VisibleToAllUsers.foreach(__v => __obj.updateDynamic("VisibleToAllUsers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Cluster]
     }
   }
@@ -851,9 +851,9 @@ package emr {
         Code: js.UndefOr[ClusterStateChangeReasonCode] = js.undefined,
         Message: js.UndefOr[String] = js.undefined
     ): ClusterStateChangeReason = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Code.foreach(__v => __obj.update("Code", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClusterStateChangeReason]
     }
   }
@@ -898,10 +898,10 @@ package emr {
         StateChangeReason: js.UndefOr[ClusterStateChangeReason] = js.undefined,
         Timeline: js.UndefOr[ClusterTimeline] = js.undefined
     ): ClusterStatus = {
-      val __obj = js.Dictionary.empty[js.Any]
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
-      StateChangeReason.foreach(__v => __obj.update("StateChangeReason", __v.asInstanceOf[js.Any]))
-      Timeline.foreach(__v => __obj.update("Timeline", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      StateChangeReason.foreach(__v => __obj.updateDynamic("StateChangeReason")(__v.asInstanceOf[js.Any]))
+      Timeline.foreach(__v => __obj.updateDynamic("Timeline")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClusterStatus]
     }
   }
@@ -924,11 +924,11 @@ package emr {
         NormalizedInstanceHours: js.UndefOr[Int] = js.undefined,
         Status: js.UndefOr[ClusterStatus] = js.undefined
     ): ClusterSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      NormalizedInstanceHours.foreach(__v => __obj.update("NormalizedInstanceHours", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NormalizedInstanceHours.foreach(__v => __obj.updateDynamic("NormalizedInstanceHours")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClusterSummary]
     }
   }
@@ -949,10 +949,10 @@ package emr {
         EndDateTime: js.UndefOr[Date] = js.undefined,
         ReadyDateTime: js.UndefOr[Date] = js.undefined
     ): ClusterTimeline = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationDateTime.foreach(__v => __obj.update("CreationDateTime", __v.asInstanceOf[js.Any]))
-      EndDateTime.foreach(__v => __obj.update("EndDateTime", __v.asInstanceOf[js.Any]))
-      ReadyDateTime.foreach(__v => __obj.update("ReadyDateTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationDateTime.foreach(__v => __obj.updateDynamic("CreationDateTime")(__v.asInstanceOf[js.Any]))
+      EndDateTime.foreach(__v => __obj.updateDynamic("EndDateTime")(__v.asInstanceOf[js.Any]))
+      ReadyDateTime.foreach(__v => __obj.updateDynamic("ReadyDateTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClusterTimeline]
     }
   }
@@ -973,10 +973,10 @@ package emr {
         Name: js.UndefOr[String] = js.undefined,
         ScriptPath: js.UndefOr[String] = js.undefined
     ): Command = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Args.foreach(__v => __obj.update("Args", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      ScriptPath.foreach(__v => __obj.update("ScriptPath", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Args.foreach(__v => __obj.updateDynamic("Args")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ScriptPath.foreach(__v => __obj.updateDynamic("ScriptPath")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Command]
     }
   }
@@ -1007,10 +1007,10 @@ package emr {
         Configurations: js.UndefOr[ConfigurationList] = js.undefined,
         Properties: js.UndefOr[StringMap] = js.undefined
     ): Configuration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Classification.foreach(__v => __obj.update("Classification", __v.asInstanceOf[js.Any]))
-      Configurations.foreach(__v => __obj.update("Configurations", __v.asInstanceOf[js.Any]))
-      Properties.foreach(__v => __obj.update("Properties", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Classification.foreach(__v => __obj.updateDynamic("Classification")(__v.asInstanceOf[js.Any]))
+      Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
+      Properties.foreach(__v => __obj.updateDynamic("Properties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Configuration]
     }
   }
@@ -1026,7 +1026,7 @@ package emr {
         Name: XmlString,
         SecurityConfiguration: String
     ): CreateSecurityConfigurationInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"                  -> Name.asInstanceOf[js.Any],
         "SecurityConfiguration" -> SecurityConfiguration.asInstanceOf[js.Any]
       )
@@ -1046,7 +1046,7 @@ package emr {
         CreationDateTime: Date,
         Name: XmlString
     ): CreateSecurityConfigurationOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CreationDateTime" -> CreationDateTime.asInstanceOf[js.Any],
         "Name"             -> Name.asInstanceOf[js.Any]
       )
@@ -1064,7 +1064,7 @@ package emr {
     def apply(
         Name: XmlString
     ): DeleteSecurityConfigurationInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -1078,7 +1078,7 @@ package emr {
   object DeleteSecurityConfigurationOutput {
     def apply(
         ): DeleteSecurityConfigurationOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteSecurityConfigurationOutput]
     }
@@ -1096,7 +1096,7 @@ package emr {
     def apply(
         ClusterId: ClusterId
     ): DescribeClusterInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClusterId" -> ClusterId.asInstanceOf[js.Any]
       )
 
@@ -1116,8 +1116,8 @@ package emr {
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): DescribeClusterOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Cluster.foreach(__v => __obj.update("Cluster", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Cluster.foreach(__v => __obj.updateDynamic("Cluster")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeClusterOutput]
     }
   }
@@ -1140,11 +1140,11 @@ package emr {
         JobFlowIds: js.UndefOr[XmlStringList] = js.undefined,
         JobFlowStates: js.UndefOr[JobFlowExecutionStateList] = js.undefined
     ): DescribeJobFlowsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedAfter.foreach(__v => __obj.update("CreatedAfter", __v.asInstanceOf[js.Any]))
-      CreatedBefore.foreach(__v => __obj.update("CreatedBefore", __v.asInstanceOf[js.Any]))
-      JobFlowIds.foreach(__v => __obj.update("JobFlowIds", __v.asInstanceOf[js.Any]))
-      JobFlowStates.foreach(__v => __obj.update("JobFlowStates", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedAfter.foreach(__v => __obj.updateDynamic("CreatedAfter")(__v.asInstanceOf[js.Any]))
+      CreatedBefore.foreach(__v => __obj.updateDynamic("CreatedBefore")(__v.asInstanceOf[js.Any]))
+      JobFlowIds.foreach(__v => __obj.updateDynamic("JobFlowIds")(__v.asInstanceOf[js.Any]))
+      JobFlowStates.foreach(__v => __obj.updateDynamic("JobFlowStates")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeJobFlowsInput]
     }
   }
@@ -1161,8 +1161,8 @@ package emr {
     def apply(
         JobFlows: js.UndefOr[JobFlowDetailList] = js.undefined
     ): DescribeJobFlowsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobFlows.foreach(__v => __obj.update("JobFlows", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobFlows.foreach(__v => __obj.updateDynamic("JobFlows")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeJobFlowsOutput]
     }
   }
@@ -1176,7 +1176,7 @@ package emr {
     def apply(
         Name: XmlString
     ): DescribeSecurityConfigurationInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -1197,10 +1197,10 @@ package emr {
         Name: js.UndefOr[XmlString] = js.undefined,
         SecurityConfiguration: js.UndefOr[String] = js.undefined
     ): DescribeSecurityConfigurationOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationDateTime.foreach(__v => __obj.update("CreationDateTime", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      SecurityConfiguration.foreach(__v => __obj.update("SecurityConfiguration", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationDateTime.foreach(__v => __obj.updateDynamic("CreationDateTime")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      SecurityConfiguration.foreach(__v => __obj.updateDynamic("SecurityConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSecurityConfigurationOutput]
     }
   }
@@ -1219,7 +1219,7 @@ package emr {
         ClusterId: ClusterId,
         StepId: StepId
     ): DescribeStepInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClusterId" -> ClusterId.asInstanceOf[js.Any],
         "StepId"    -> StepId.asInstanceOf[js.Any]
       )
@@ -1240,8 +1240,8 @@ package emr {
     def apply(
         Step: js.UndefOr[Step] = js.undefined
     ): DescribeStepOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Step.foreach(__v => __obj.update("Step", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Step.foreach(__v => __obj.updateDynamic("Step")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeStepOutput]
     }
   }
@@ -1260,9 +1260,9 @@ package emr {
         Device: js.UndefOr[String] = js.undefined,
         VolumeSpecification: js.UndefOr[VolumeSpecification] = js.undefined
     ): EbsBlockDevice = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Device.foreach(__v => __obj.update("Device", __v.asInstanceOf[js.Any]))
-      VolumeSpecification.foreach(__v => __obj.update("VolumeSpecification", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Device.foreach(__v => __obj.updateDynamic("Device")(__v.asInstanceOf[js.Any]))
+      VolumeSpecification.foreach(__v => __obj.updateDynamic("VolumeSpecification")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EbsBlockDevice]
     }
   }
@@ -1281,11 +1281,11 @@ package emr {
         VolumeSpecification: VolumeSpecification,
         VolumesPerInstance: js.UndefOr[Int] = js.undefined
     ): EbsBlockDeviceConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VolumeSpecification" -> VolumeSpecification.asInstanceOf[js.Any]
       )
 
-      VolumesPerInstance.foreach(__v => __obj.update("VolumesPerInstance", __v.asInstanceOf[js.Any]))
+      VolumesPerInstance.foreach(__v => __obj.updateDynamic("VolumesPerInstance")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EbsBlockDeviceConfig]
     }
   }
@@ -1304,9 +1304,9 @@ package emr {
         EbsBlockDeviceConfigs: js.UndefOr[EbsBlockDeviceConfigList] = js.undefined,
         EbsOptimized: js.UndefOr[BooleanObject] = js.undefined
     ): EbsConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EbsBlockDeviceConfigs.foreach(__v => __obj.update("EbsBlockDeviceConfigs", __v.asInstanceOf[js.Any]))
-      EbsOptimized.foreach(__v => __obj.update("EbsOptimized", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EbsBlockDeviceConfigs.foreach(__v => __obj.updateDynamic("EbsBlockDeviceConfigs")(__v.asInstanceOf[js.Any]))
+      EbsOptimized.foreach(__v => __obj.updateDynamic("EbsOptimized")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EbsConfiguration]
     }
   }
@@ -1325,9 +1325,9 @@ package emr {
         Device: js.UndefOr[String] = js.undefined,
         VolumeId: js.UndefOr[String] = js.undefined
     ): EbsVolume = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Device.foreach(__v => __obj.update("Device", __v.asInstanceOf[js.Any]))
-      VolumeId.foreach(__v => __obj.update("VolumeId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Device.foreach(__v => __obj.updateDynamic("Device")(__v.asInstanceOf[js.Any]))
+      VolumeId.foreach(__v => __obj.updateDynamic("VolumeId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EbsVolume]
     }
   }
@@ -1364,28 +1364,30 @@ package emr {
         RequestedEc2SubnetIds: js.UndefOr[XmlStringMaxLen256List] = js.undefined,
         ServiceAccessSecurityGroup: js.UndefOr[String] = js.undefined
     ): Ec2InstanceAttributes = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       AdditionalMasterSecurityGroups.foreach(
-        __v => __obj.update("AdditionalMasterSecurityGroups", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("AdditionalMasterSecurityGroups")(__v.asInstanceOf[js.Any])
       )
       AdditionalSlaveSecurityGroups.foreach(
-        __v => __obj.update("AdditionalSlaveSecurityGroups", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("AdditionalSlaveSecurityGroups")(__v.asInstanceOf[js.Any])
       )
-      Ec2AvailabilityZone.foreach(__v => __obj.update("Ec2AvailabilityZone", __v.asInstanceOf[js.Any]))
-      Ec2KeyName.foreach(__v => __obj.update("Ec2KeyName", __v.asInstanceOf[js.Any]))
-      Ec2SubnetId.foreach(__v => __obj.update("Ec2SubnetId", __v.asInstanceOf[js.Any]))
+      Ec2AvailabilityZone.foreach(__v => __obj.updateDynamic("Ec2AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      Ec2KeyName.foreach(__v => __obj.updateDynamic("Ec2KeyName")(__v.asInstanceOf[js.Any]))
+      Ec2SubnetId.foreach(__v => __obj.updateDynamic("Ec2SubnetId")(__v.asInstanceOf[js.Any]))
       EmrManagedMasterSecurityGroup.foreach(
-        __v => __obj.update("EmrManagedMasterSecurityGroup", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("EmrManagedMasterSecurityGroup")(__v.asInstanceOf[js.Any])
       )
       EmrManagedSlaveSecurityGroup.foreach(
-        __v => __obj.update("EmrManagedSlaveSecurityGroup", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("EmrManagedSlaveSecurityGroup")(__v.asInstanceOf[js.Any])
       )
-      IamInstanceProfile.foreach(__v => __obj.update("IamInstanceProfile", __v.asInstanceOf[js.Any]))
+      IamInstanceProfile.foreach(__v => __obj.updateDynamic("IamInstanceProfile")(__v.asInstanceOf[js.Any]))
       RequestedEc2AvailabilityZones.foreach(
-        __v => __obj.update("RequestedEc2AvailabilityZones", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("RequestedEc2AvailabilityZones")(__v.asInstanceOf[js.Any])
       )
-      RequestedEc2SubnetIds.foreach(__v => __obj.update("RequestedEc2SubnetIds", __v.asInstanceOf[js.Any]))
-      ServiceAccessSecurityGroup.foreach(__v => __obj.update("ServiceAccessSecurityGroup", __v.asInstanceOf[js.Any]))
+      RequestedEc2SubnetIds.foreach(__v => __obj.updateDynamic("RequestedEc2SubnetIds")(__v.asInstanceOf[js.Any]))
+      ServiceAccessSecurityGroup.foreach(
+        __v => __obj.updateDynamic("ServiceAccessSecurityGroup")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[Ec2InstanceAttributes]
     }
   }
@@ -1406,10 +1408,10 @@ package emr {
         Message: js.UndefOr[String] = js.undefined,
         Reason: js.UndefOr[String] = js.undefined
     ): FailureDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LogFile.foreach(__v => __obj.update("LogFile", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
-      Reason.foreach(__v => __obj.update("Reason", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LogFile.foreach(__v => __obj.updateDynamic("LogFile")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Reason.foreach(__v => __obj.updateDynamic("Reason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FailureDetails]
     }
   }
@@ -1420,7 +1422,7 @@ package emr {
   object GetBlockPublicAccessConfigurationInput {
     def apply(
         ): GetBlockPublicAccessConfigurationInput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetBlockPublicAccessConfigurationInput]
     }
@@ -1437,7 +1439,7 @@ package emr {
         BlockPublicAccessConfiguration: BlockPublicAccessConfiguration,
         BlockPublicAccessConfigurationMetadata: BlockPublicAccessConfigurationMetadata
     ): GetBlockPublicAccessConfigurationOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BlockPublicAccessConfiguration"         -> BlockPublicAccessConfiguration.asInstanceOf[js.Any],
         "BlockPublicAccessConfigurationMetadata" -> BlockPublicAccessConfigurationMetadata.asInstanceOf[js.Any]
       )
@@ -1464,13 +1466,13 @@ package emr {
         MainClass: js.UndefOr[XmlString] = js.undefined,
         Properties: js.UndefOr[KeyValueList] = js.undefined
     ): HadoopJarStepConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Jar" -> Jar.asInstanceOf[js.Any]
       )
 
-      Args.foreach(__v => __obj.update("Args", __v.asInstanceOf[js.Any]))
-      MainClass.foreach(__v => __obj.update("MainClass", __v.asInstanceOf[js.Any]))
-      Properties.foreach(__v => __obj.update("Properties", __v.asInstanceOf[js.Any]))
+      Args.foreach(__v => __obj.updateDynamic("Args")(__v.asInstanceOf[js.Any]))
+      MainClass.foreach(__v => __obj.updateDynamic("MainClass")(__v.asInstanceOf[js.Any]))
+      Properties.foreach(__v => __obj.updateDynamic("Properties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HadoopJarStepConfig]
     }
   }
@@ -1493,11 +1495,11 @@ package emr {
         MainClass: js.UndefOr[String] = js.undefined,
         Properties: js.UndefOr[StringMap] = js.undefined
     ): HadoopStepConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Args.foreach(__v => __obj.update("Args", __v.asInstanceOf[js.Any]))
-      Jar.foreach(__v => __obj.update("Jar", __v.asInstanceOf[js.Any]))
-      MainClass.foreach(__v => __obj.update("MainClass", __v.asInstanceOf[js.Any]))
-      Properties.foreach(__v => __obj.update("Properties", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Args.foreach(__v => __obj.updateDynamic("Args")(__v.asInstanceOf[js.Any]))
+      Jar.foreach(__v => __obj.updateDynamic("Jar")(__v.asInstanceOf[js.Any]))
+      MainClass.foreach(__v => __obj.updateDynamic("MainClass")(__v.asInstanceOf[js.Any]))
+      Properties.foreach(__v => __obj.updateDynamic("Properties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HadoopStepConfig]
     }
   }
@@ -1536,19 +1538,19 @@ package emr {
         PublicIpAddress: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[InstanceStatus] = js.undefined
     ): Instance = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EbsVolumes.foreach(__v => __obj.update("EbsVolumes", __v.asInstanceOf[js.Any]))
-      Ec2InstanceId.foreach(__v => __obj.update("Ec2InstanceId", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      InstanceFleetId.foreach(__v => __obj.update("InstanceFleetId", __v.asInstanceOf[js.Any]))
-      InstanceGroupId.foreach(__v => __obj.update("InstanceGroupId", __v.asInstanceOf[js.Any]))
-      InstanceType.foreach(__v => __obj.update("InstanceType", __v.asInstanceOf[js.Any]))
-      Market.foreach(__v => __obj.update("Market", __v.asInstanceOf[js.Any]))
-      PrivateDnsName.foreach(__v => __obj.update("PrivateDnsName", __v.asInstanceOf[js.Any]))
-      PrivateIpAddress.foreach(__v => __obj.update("PrivateIpAddress", __v.asInstanceOf[js.Any]))
-      PublicDnsName.foreach(__v => __obj.update("PublicDnsName", __v.asInstanceOf[js.Any]))
-      PublicIpAddress.foreach(__v => __obj.update("PublicIpAddress", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EbsVolumes.foreach(__v => __obj.updateDynamic("EbsVolumes")(__v.asInstanceOf[js.Any]))
+      Ec2InstanceId.foreach(__v => __obj.updateDynamic("Ec2InstanceId")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      InstanceFleetId.foreach(__v => __obj.updateDynamic("InstanceFleetId")(__v.asInstanceOf[js.Any]))
+      InstanceGroupId.foreach(__v => __obj.updateDynamic("InstanceGroupId")(__v.asInstanceOf[js.Any]))
+      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
+      Market.foreach(__v => __obj.updateDynamic("Market")(__v.asInstanceOf[js.Any]))
+      PrivateDnsName.foreach(__v => __obj.updateDynamic("PrivateDnsName")(__v.asInstanceOf[js.Any]))
+      PrivateIpAddress.foreach(__v => __obj.updateDynamic("PrivateIpAddress")(__v.asInstanceOf[js.Any]))
+      PublicDnsName.foreach(__v => __obj.updateDynamic("PublicDnsName")(__v.asInstanceOf[js.Any]))
+      PublicIpAddress.foreach(__v => __obj.updateDynamic("PublicIpAddress")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Instance]
     }
   }
@@ -1592,17 +1594,21 @@ package emr {
         TargetOnDemandCapacity: js.UndefOr[WholeNumber] = js.undefined,
         TargetSpotCapacity: js.UndefOr[WholeNumber] = js.undefined
     ): InstanceFleet = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      InstanceFleetType.foreach(__v => __obj.update("InstanceFleetType", __v.asInstanceOf[js.Any]))
-      InstanceTypeSpecifications.foreach(__v => __obj.update("InstanceTypeSpecifications", __v.asInstanceOf[js.Any]))
-      LaunchSpecifications.foreach(__v => __obj.update("LaunchSpecifications", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      ProvisionedOnDemandCapacity.foreach(__v => __obj.update("ProvisionedOnDemandCapacity", __v.asInstanceOf[js.Any]))
-      ProvisionedSpotCapacity.foreach(__v => __obj.update("ProvisionedSpotCapacity", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      TargetOnDemandCapacity.foreach(__v => __obj.update("TargetOnDemandCapacity", __v.asInstanceOf[js.Any]))
-      TargetSpotCapacity.foreach(__v => __obj.update("TargetSpotCapacity", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      InstanceFleetType.foreach(__v => __obj.updateDynamic("InstanceFleetType")(__v.asInstanceOf[js.Any]))
+      InstanceTypeSpecifications.foreach(
+        __v => __obj.updateDynamic("InstanceTypeSpecifications")(__v.asInstanceOf[js.Any])
+      )
+      LaunchSpecifications.foreach(__v => __obj.updateDynamic("LaunchSpecifications")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ProvisionedOnDemandCapacity.foreach(
+        __v => __obj.updateDynamic("ProvisionedOnDemandCapacity")(__v.asInstanceOf[js.Any])
+      )
+      ProvisionedSpotCapacity.foreach(__v => __obj.updateDynamic("ProvisionedSpotCapacity")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TargetOnDemandCapacity.foreach(__v => __obj.updateDynamic("TargetOnDemandCapacity")(__v.asInstanceOf[js.Any]))
+      TargetSpotCapacity.foreach(__v => __obj.updateDynamic("TargetSpotCapacity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceFleet]
     }
   }
@@ -1631,15 +1637,15 @@ package emr {
         TargetOnDemandCapacity: js.UndefOr[WholeNumber] = js.undefined,
         TargetSpotCapacity: js.UndefOr[WholeNumber] = js.undefined
     ): InstanceFleetConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceFleetType" -> InstanceFleetType.asInstanceOf[js.Any]
       )
 
-      InstanceTypeConfigs.foreach(__v => __obj.update("InstanceTypeConfigs", __v.asInstanceOf[js.Any]))
-      LaunchSpecifications.foreach(__v => __obj.update("LaunchSpecifications", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      TargetOnDemandCapacity.foreach(__v => __obj.update("TargetOnDemandCapacity", __v.asInstanceOf[js.Any]))
-      TargetSpotCapacity.foreach(__v => __obj.update("TargetSpotCapacity", __v.asInstanceOf[js.Any]))
+      InstanceTypeConfigs.foreach(__v => __obj.updateDynamic("InstanceTypeConfigs")(__v.asInstanceOf[js.Any]))
+      LaunchSpecifications.foreach(__v => __obj.updateDynamic("LaunchSpecifications")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      TargetOnDemandCapacity.foreach(__v => __obj.updateDynamic("TargetOnDemandCapacity")(__v.asInstanceOf[js.Any]))
+      TargetSpotCapacity.foreach(__v => __obj.updateDynamic("TargetSpotCapacity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceFleetConfig]
     }
   }
@@ -1662,12 +1668,12 @@ package emr {
         TargetOnDemandCapacity: js.UndefOr[WholeNumber] = js.undefined,
         TargetSpotCapacity: js.UndefOr[WholeNumber] = js.undefined
     ): InstanceFleetModifyConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceFleetId" -> InstanceFleetId.asInstanceOf[js.Any]
       )
 
-      TargetOnDemandCapacity.foreach(__v => __obj.update("TargetOnDemandCapacity", __v.asInstanceOf[js.Any]))
-      TargetSpotCapacity.foreach(__v => __obj.update("TargetSpotCapacity", __v.asInstanceOf[js.Any]))
+      TargetOnDemandCapacity.foreach(__v => __obj.updateDynamic("TargetOnDemandCapacity")(__v.asInstanceOf[js.Any]))
+      TargetSpotCapacity.foreach(__v => __obj.updateDynamic("TargetSpotCapacity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceFleetModifyConfig]
     }
   }
@@ -1686,7 +1692,7 @@ package emr {
     def apply(
         SpotSpecification: SpotProvisioningSpecification
     ): InstanceFleetProvisioningSpecifications = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SpotSpecification" -> SpotSpecification.asInstanceOf[js.Any]
       )
 
@@ -1723,9 +1729,9 @@ package emr {
         Code: js.UndefOr[InstanceFleetStateChangeReasonCode] = js.undefined,
         Message: js.UndefOr[String] = js.undefined
     ): InstanceFleetStateChangeReason = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Code.foreach(__v => __obj.update("Code", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceFleetStateChangeReason]
     }
   }
@@ -1757,10 +1763,10 @@ package emr {
         StateChangeReason: js.UndefOr[InstanceFleetStateChangeReason] = js.undefined,
         Timeline: js.UndefOr[InstanceFleetTimeline] = js.undefined
     ): InstanceFleetStatus = {
-      val __obj = js.Dictionary.empty[js.Any]
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
-      StateChangeReason.foreach(__v => __obj.update("StateChangeReason", __v.asInstanceOf[js.Any]))
-      Timeline.foreach(__v => __obj.update("Timeline", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      StateChangeReason.foreach(__v => __obj.updateDynamic("StateChangeReason")(__v.asInstanceOf[js.Any]))
+      Timeline.foreach(__v => __obj.updateDynamic("Timeline")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceFleetStatus]
     }
   }
@@ -1783,10 +1789,10 @@ package emr {
         EndDateTime: js.UndefOr[Date] = js.undefined,
         ReadyDateTime: js.UndefOr[Date] = js.undefined
     ): InstanceFleetTimeline = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationDateTime.foreach(__v => __obj.update("CreationDateTime", __v.asInstanceOf[js.Any]))
-      EndDateTime.foreach(__v => __obj.update("EndDateTime", __v.asInstanceOf[js.Any]))
-      ReadyDateTime.foreach(__v => __obj.update("ReadyDateTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationDateTime.foreach(__v => __obj.updateDynamic("CreationDateTime")(__v.asInstanceOf[js.Any]))
+      EndDateTime.foreach(__v => __obj.updateDynamic("EndDateTime")(__v.asInstanceOf[js.Any]))
+      ReadyDateTime.foreach(__v => __obj.updateDynamic("ReadyDateTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceFleetTimeline]
     }
   }
@@ -1843,28 +1849,28 @@ package emr {
         ShrinkPolicy: js.UndefOr[ShrinkPolicy] = js.undefined,
         Status: js.UndefOr[InstanceGroupStatus] = js.undefined
     ): InstanceGroup = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AutoScalingPolicy.foreach(__v => __obj.update("AutoScalingPolicy", __v.asInstanceOf[js.Any]))
-      BidPrice.foreach(__v => __obj.update("BidPrice", __v.asInstanceOf[js.Any]))
-      Configurations.foreach(__v => __obj.update("Configurations", __v.asInstanceOf[js.Any]))
-      ConfigurationsVersion.foreach(__v => __obj.update("ConfigurationsVersion", __v.asInstanceOf[js.Any]))
-      EbsBlockDevices.foreach(__v => __obj.update("EbsBlockDevices", __v.asInstanceOf[js.Any]))
-      EbsOptimized.foreach(__v => __obj.update("EbsOptimized", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      InstanceGroupType.foreach(__v => __obj.update("InstanceGroupType", __v.asInstanceOf[js.Any]))
-      InstanceType.foreach(__v => __obj.update("InstanceType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AutoScalingPolicy.foreach(__v => __obj.updateDynamic("AutoScalingPolicy")(__v.asInstanceOf[js.Any]))
+      BidPrice.foreach(__v => __obj.updateDynamic("BidPrice")(__v.asInstanceOf[js.Any]))
+      Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
+      ConfigurationsVersion.foreach(__v => __obj.updateDynamic("ConfigurationsVersion")(__v.asInstanceOf[js.Any]))
+      EbsBlockDevices.foreach(__v => __obj.updateDynamic("EbsBlockDevices")(__v.asInstanceOf[js.Any]))
+      EbsOptimized.foreach(__v => __obj.updateDynamic("EbsOptimized")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      InstanceGroupType.foreach(__v => __obj.updateDynamic("InstanceGroupType")(__v.asInstanceOf[js.Any]))
+      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
       LastSuccessfullyAppliedConfigurations.foreach(
-        __v => __obj.update("LastSuccessfullyAppliedConfigurations", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("LastSuccessfullyAppliedConfigurations")(__v.asInstanceOf[js.Any])
       )
       LastSuccessfullyAppliedConfigurationsVersion.foreach(
-        __v => __obj.update("LastSuccessfullyAppliedConfigurationsVersion", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("LastSuccessfullyAppliedConfigurationsVersion")(__v.asInstanceOf[js.Any])
       )
-      Market.foreach(__v => __obj.update("Market", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      RequestedInstanceCount.foreach(__v => __obj.update("RequestedInstanceCount", __v.asInstanceOf[js.Any]))
-      RunningInstanceCount.foreach(__v => __obj.update("RunningInstanceCount", __v.asInstanceOf[js.Any]))
-      ShrinkPolicy.foreach(__v => __obj.update("ShrinkPolicy", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      Market.foreach(__v => __obj.updateDynamic("Market")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RequestedInstanceCount.foreach(__v => __obj.updateDynamic("RequestedInstanceCount")(__v.asInstanceOf[js.Any]))
+      RunningInstanceCount.foreach(__v => __obj.updateDynamic("RunningInstanceCount")(__v.asInstanceOf[js.Any]))
+      ShrinkPolicy.foreach(__v => __obj.updateDynamic("ShrinkPolicy")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceGroup]
     }
   }
@@ -1897,18 +1903,18 @@ package emr {
         Market: js.UndefOr[MarketType] = js.undefined,
         Name: js.UndefOr[XmlStringMaxLen256] = js.undefined
     ): InstanceGroupConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceCount" -> InstanceCount.asInstanceOf[js.Any],
         "InstanceRole"  -> InstanceRole.asInstanceOf[js.Any],
         "InstanceType"  -> InstanceType.asInstanceOf[js.Any]
       )
 
-      AutoScalingPolicy.foreach(__v => __obj.update("AutoScalingPolicy", __v.asInstanceOf[js.Any]))
-      BidPrice.foreach(__v => __obj.update("BidPrice", __v.asInstanceOf[js.Any]))
-      Configurations.foreach(__v => __obj.update("Configurations", __v.asInstanceOf[js.Any]))
-      EbsConfiguration.foreach(__v => __obj.update("EbsConfiguration", __v.asInstanceOf[js.Any]))
-      Market.foreach(__v => __obj.update("Market", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      AutoScalingPolicy.foreach(__v => __obj.updateDynamic("AutoScalingPolicy")(__v.asInstanceOf[js.Any]))
+      BidPrice.foreach(__v => __obj.updateDynamic("BidPrice")(__v.asInstanceOf[js.Any]))
+      Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
+      EbsConfiguration.foreach(__v => __obj.updateDynamic("EbsConfiguration")(__v.asInstanceOf[js.Any]))
+      Market.foreach(__v => __obj.updateDynamic("Market")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceGroupConfig]
     }
   }
@@ -1951,7 +1957,7 @@ package emr {
         ReadyDateTime: js.UndefOr[Date] = js.undefined,
         StartDateTime: js.UndefOr[Date] = js.undefined
     ): InstanceGroupDetail = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CreationDateTime"     -> CreationDateTime.asInstanceOf[js.Any],
         "InstanceRequestCount" -> InstanceRequestCount.asInstanceOf[js.Any],
         "InstanceRole"         -> InstanceRole.asInstanceOf[js.Any],
@@ -1961,13 +1967,13 @@ package emr {
         "State"                -> State.asInstanceOf[js.Any]
       )
 
-      BidPrice.foreach(__v => __obj.update("BidPrice", __v.asInstanceOf[js.Any]))
-      EndDateTime.foreach(__v => __obj.update("EndDateTime", __v.asInstanceOf[js.Any]))
-      InstanceGroupId.foreach(__v => __obj.update("InstanceGroupId", __v.asInstanceOf[js.Any]))
-      LastStateChangeReason.foreach(__v => __obj.update("LastStateChangeReason", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      ReadyDateTime.foreach(__v => __obj.update("ReadyDateTime", __v.asInstanceOf[js.Any]))
-      StartDateTime.foreach(__v => __obj.update("StartDateTime", __v.asInstanceOf[js.Any]))
+      BidPrice.foreach(__v => __obj.updateDynamic("BidPrice")(__v.asInstanceOf[js.Any]))
+      EndDateTime.foreach(__v => __obj.updateDynamic("EndDateTime")(__v.asInstanceOf[js.Any]))
+      InstanceGroupId.foreach(__v => __obj.updateDynamic("InstanceGroupId")(__v.asInstanceOf[js.Any]))
+      LastStateChangeReason.foreach(__v => __obj.updateDynamic("LastStateChangeReason")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ReadyDateTime.foreach(__v => __obj.updateDynamic("ReadyDateTime")(__v.asInstanceOf[js.Any]))
+      StartDateTime.foreach(__v => __obj.updateDynamic("StartDateTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceGroupDetail]
     }
   }
@@ -1992,14 +1998,16 @@ package emr {
         InstanceCount: js.UndefOr[Int] = js.undefined,
         ShrinkPolicy: js.UndefOr[ShrinkPolicy] = js.undefined
     ): InstanceGroupModifyConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceGroupId" -> InstanceGroupId.asInstanceOf[js.Any]
       )
 
-      Configurations.foreach(__v => __obj.update("Configurations", __v.asInstanceOf[js.Any]))
-      EC2InstanceIdsToTerminate.foreach(__v => __obj.update("EC2InstanceIdsToTerminate", __v.asInstanceOf[js.Any]))
-      InstanceCount.foreach(__v => __obj.update("InstanceCount", __v.asInstanceOf[js.Any]))
-      ShrinkPolicy.foreach(__v => __obj.update("ShrinkPolicy", __v.asInstanceOf[js.Any]))
+      Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
+      EC2InstanceIdsToTerminate.foreach(
+        __v => __obj.updateDynamic("EC2InstanceIdsToTerminate")(__v.asInstanceOf[js.Any])
+      )
+      InstanceCount.foreach(__v => __obj.updateDynamic("InstanceCount")(__v.asInstanceOf[js.Any]))
+      ShrinkPolicy.foreach(__v => __obj.updateDynamic("ShrinkPolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceGroupModifyConfig]
     }
   }
@@ -2048,9 +2056,9 @@ package emr {
         Code: js.UndefOr[InstanceGroupStateChangeReasonCode] = js.undefined,
         Message: js.UndefOr[String] = js.undefined
     ): InstanceGroupStateChangeReason = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Code.foreach(__v => __obj.update("Code", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceGroupStateChangeReason]
     }
   }
@@ -2080,10 +2088,10 @@ package emr {
         StateChangeReason: js.UndefOr[InstanceGroupStateChangeReason] = js.undefined,
         Timeline: js.UndefOr[InstanceGroupTimeline] = js.undefined
     ): InstanceGroupStatus = {
-      val __obj = js.Dictionary.empty[js.Any]
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
-      StateChangeReason.foreach(__v => __obj.update("StateChangeReason", __v.asInstanceOf[js.Any]))
-      Timeline.foreach(__v => __obj.update("Timeline", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      StateChangeReason.foreach(__v => __obj.updateDynamic("StateChangeReason")(__v.asInstanceOf[js.Any]))
+      Timeline.foreach(__v => __obj.updateDynamic("Timeline")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceGroupStatus]
     }
   }
@@ -2104,10 +2112,10 @@ package emr {
         EndDateTime: js.UndefOr[Date] = js.undefined,
         ReadyDateTime: js.UndefOr[Date] = js.undefined
     ): InstanceGroupTimeline = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationDateTime.foreach(__v => __obj.update("CreationDateTime", __v.asInstanceOf[js.Any]))
-      EndDateTime.foreach(__v => __obj.update("EndDateTime", __v.asInstanceOf[js.Any]))
-      ReadyDateTime.foreach(__v => __obj.update("ReadyDateTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationDateTime.foreach(__v => __obj.updateDynamic("CreationDateTime")(__v.asInstanceOf[js.Any]))
+      EndDateTime.foreach(__v => __obj.updateDynamic("EndDateTime")(__v.asInstanceOf[js.Any]))
+      ReadyDateTime.foreach(__v => __obj.updateDynamic("ReadyDateTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceGroupTimeline]
     }
   }
@@ -2136,10 +2144,12 @@ package emr {
         InstancesToProtect: js.UndefOr[EC2InstanceIdsList] = js.undefined,
         InstancesToTerminate: js.UndefOr[EC2InstanceIdsList] = js.undefined
     ): InstanceResizePolicy = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InstanceTerminationTimeout.foreach(__v => __obj.update("InstanceTerminationTimeout", __v.asInstanceOf[js.Any]))
-      InstancesToProtect.foreach(__v => __obj.update("InstancesToProtect", __v.asInstanceOf[js.Any]))
-      InstancesToTerminate.foreach(__v => __obj.update("InstancesToTerminate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InstanceTerminationTimeout.foreach(
+        __v => __obj.updateDynamic("InstanceTerminationTimeout")(__v.asInstanceOf[js.Any])
+      )
+      InstancesToProtect.foreach(__v => __obj.updateDynamic("InstancesToProtect")(__v.asInstanceOf[js.Any]))
+      InstancesToTerminate.foreach(__v => __obj.updateDynamic("InstancesToTerminate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceResizePolicy]
     }
   }
@@ -2176,9 +2186,9 @@ package emr {
         Code: js.UndefOr[InstanceStateChangeReasonCode] = js.undefined,
         Message: js.UndefOr[String] = js.undefined
     ): InstanceStateChangeReason = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Code.foreach(__v => __obj.update("Code", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceStateChangeReason]
     }
   }
@@ -2211,10 +2221,10 @@ package emr {
         StateChangeReason: js.UndefOr[InstanceStateChangeReason] = js.undefined,
         Timeline: js.UndefOr[InstanceTimeline] = js.undefined
     ): InstanceStatus = {
-      val __obj = js.Dictionary.empty[js.Any]
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
-      StateChangeReason.foreach(__v => __obj.update("StateChangeReason", __v.asInstanceOf[js.Any]))
-      Timeline.foreach(__v => __obj.update("Timeline", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      StateChangeReason.foreach(__v => __obj.updateDynamic("StateChangeReason")(__v.asInstanceOf[js.Any]))
+      Timeline.foreach(__v => __obj.updateDynamic("Timeline")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceStatus]
     }
   }
@@ -2235,10 +2245,10 @@ package emr {
         EndDateTime: js.UndefOr[Date] = js.undefined,
         ReadyDateTime: js.UndefOr[Date] = js.undefined
     ): InstanceTimeline = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationDateTime.foreach(__v => __obj.update("CreationDateTime", __v.asInstanceOf[js.Any]))
-      EndDateTime.foreach(__v => __obj.update("EndDateTime", __v.asInstanceOf[js.Any]))
-      ReadyDateTime.foreach(__v => __obj.update("ReadyDateTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationDateTime.foreach(__v => __obj.updateDynamic("CreationDateTime")(__v.asInstanceOf[js.Any]))
+      EndDateTime.foreach(__v => __obj.updateDynamic("EndDateTime")(__v.asInstanceOf[js.Any]))
+      ReadyDateTime.foreach(__v => __obj.updateDynamic("ReadyDateTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceTimeline]
     }
   }
@@ -2267,17 +2277,17 @@ package emr {
         EbsConfiguration: js.UndefOr[EbsConfiguration] = js.undefined,
         WeightedCapacity: js.UndefOr[WholeNumber] = js.undefined
     ): InstanceTypeConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceType" -> InstanceType.asInstanceOf[js.Any]
       )
 
-      BidPrice.foreach(__v => __obj.update("BidPrice", __v.asInstanceOf[js.Any]))
+      BidPrice.foreach(__v => __obj.updateDynamic("BidPrice")(__v.asInstanceOf[js.Any]))
       BidPriceAsPercentageOfOnDemandPrice.foreach(
-        __v => __obj.update("BidPriceAsPercentageOfOnDemandPrice", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("BidPriceAsPercentageOfOnDemandPrice")(__v.asInstanceOf[js.Any])
       )
-      Configurations.foreach(__v => __obj.update("Configurations", __v.asInstanceOf[js.Any]))
-      EbsConfiguration.foreach(__v => __obj.update("EbsConfiguration", __v.asInstanceOf[js.Any]))
-      WeightedCapacity.foreach(__v => __obj.update("WeightedCapacity", __v.asInstanceOf[js.Any]))
+      Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
+      EbsConfiguration.foreach(__v => __obj.updateDynamic("EbsConfiguration")(__v.asInstanceOf[js.Any]))
+      WeightedCapacity.foreach(__v => __obj.updateDynamic("WeightedCapacity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceTypeConfig]
     }
   }
@@ -2308,16 +2318,16 @@ package emr {
         InstanceType: js.UndefOr[InstanceType] = js.undefined,
         WeightedCapacity: js.UndefOr[WholeNumber] = js.undefined
     ): InstanceTypeSpecification = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BidPrice.foreach(__v => __obj.update("BidPrice", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BidPrice.foreach(__v => __obj.updateDynamic("BidPrice")(__v.asInstanceOf[js.Any]))
       BidPriceAsPercentageOfOnDemandPrice.foreach(
-        __v => __obj.update("BidPriceAsPercentageOfOnDemandPrice", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("BidPriceAsPercentageOfOnDemandPrice")(__v.asInstanceOf[js.Any])
       )
-      Configurations.foreach(__v => __obj.update("Configurations", __v.asInstanceOf[js.Any]))
-      EbsBlockDevices.foreach(__v => __obj.update("EbsBlockDevices", __v.asInstanceOf[js.Any]))
-      EbsOptimized.foreach(__v => __obj.update("EbsOptimized", __v.asInstanceOf[js.Any]))
-      InstanceType.foreach(__v => __obj.update("InstanceType", __v.asInstanceOf[js.Any]))
-      WeightedCapacity.foreach(__v => __obj.update("WeightedCapacity", __v.asInstanceOf[js.Any]))
+      Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
+      EbsBlockDevices.foreach(__v => __obj.updateDynamic("EbsBlockDevices")(__v.asInstanceOf[js.Any]))
+      EbsOptimized.foreach(__v => __obj.updateDynamic("EbsOptimized")(__v.asInstanceOf[js.Any]))
+      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
+      WeightedCapacity.foreach(__v => __obj.updateDynamic("WeightedCapacity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceTypeSpecification]
     }
   }
@@ -2360,23 +2370,23 @@ package emr {
         SupportedProducts: js.UndefOr[SupportedProductsList] = js.undefined,
         VisibleToAllUsers: js.UndefOr[Boolean] = js.undefined
     ): JobFlowDetail = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ExecutionStatusDetail" -> ExecutionStatusDetail.asInstanceOf[js.Any],
         "Instances"             -> Instances.asInstanceOf[js.Any],
         "JobFlowId"             -> JobFlowId.asInstanceOf[js.Any],
         "Name"                  -> Name.asInstanceOf[js.Any]
       )
 
-      AmiVersion.foreach(__v => __obj.update("AmiVersion", __v.asInstanceOf[js.Any]))
-      AutoScalingRole.foreach(__v => __obj.update("AutoScalingRole", __v.asInstanceOf[js.Any]))
-      BootstrapActions.foreach(__v => __obj.update("BootstrapActions", __v.asInstanceOf[js.Any]))
-      JobFlowRole.foreach(__v => __obj.update("JobFlowRole", __v.asInstanceOf[js.Any]))
-      LogUri.foreach(__v => __obj.update("LogUri", __v.asInstanceOf[js.Any]))
-      ScaleDownBehavior.foreach(__v => __obj.update("ScaleDownBehavior", __v.asInstanceOf[js.Any]))
-      ServiceRole.foreach(__v => __obj.update("ServiceRole", __v.asInstanceOf[js.Any]))
-      Steps.foreach(__v => __obj.update("Steps", __v.asInstanceOf[js.Any]))
-      SupportedProducts.foreach(__v => __obj.update("SupportedProducts", __v.asInstanceOf[js.Any]))
-      VisibleToAllUsers.foreach(__v => __obj.update("VisibleToAllUsers", __v.asInstanceOf[js.Any]))
+      AmiVersion.foreach(__v => __obj.updateDynamic("AmiVersion")(__v.asInstanceOf[js.Any]))
+      AutoScalingRole.foreach(__v => __obj.updateDynamic("AutoScalingRole")(__v.asInstanceOf[js.Any]))
+      BootstrapActions.foreach(__v => __obj.updateDynamic("BootstrapActions")(__v.asInstanceOf[js.Any]))
+      JobFlowRole.foreach(__v => __obj.updateDynamic("JobFlowRole")(__v.asInstanceOf[js.Any]))
+      LogUri.foreach(__v => __obj.updateDynamic("LogUri")(__v.asInstanceOf[js.Any]))
+      ScaleDownBehavior.foreach(__v => __obj.updateDynamic("ScaleDownBehavior")(__v.asInstanceOf[js.Any]))
+      ServiceRole.foreach(__v => __obj.updateDynamic("ServiceRole")(__v.asInstanceOf[js.Any]))
+      Steps.foreach(__v => __obj.updateDynamic("Steps")(__v.asInstanceOf[js.Any]))
+      SupportedProducts.foreach(__v => __obj.updateDynamic("SupportedProducts")(__v.asInstanceOf[js.Any]))
+      VisibleToAllUsers.foreach(__v => __obj.updateDynamic("VisibleToAllUsers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobFlowDetail]
     }
   }
@@ -2421,15 +2431,15 @@ package emr {
         ReadyDateTime: js.UndefOr[Date] = js.undefined,
         StartDateTime: js.UndefOr[Date] = js.undefined
     ): JobFlowExecutionStatusDetail = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CreationDateTime" -> CreationDateTime.asInstanceOf[js.Any],
         "State"            -> State.asInstanceOf[js.Any]
       )
 
-      EndDateTime.foreach(__v => __obj.update("EndDateTime", __v.asInstanceOf[js.Any]))
-      LastStateChangeReason.foreach(__v => __obj.update("LastStateChangeReason", __v.asInstanceOf[js.Any]))
-      ReadyDateTime.foreach(__v => __obj.update("ReadyDateTime", __v.asInstanceOf[js.Any]))
-      StartDateTime.foreach(__v => __obj.update("StartDateTime", __v.asInstanceOf[js.Any]))
+      EndDateTime.foreach(__v => __obj.updateDynamic("EndDateTime")(__v.asInstanceOf[js.Any]))
+      LastStateChangeReason.foreach(__v => __obj.updateDynamic("LastStateChangeReason")(__v.asInstanceOf[js.Any]))
+      ReadyDateTime.foreach(__v => __obj.updateDynamic("ReadyDateTime")(__v.asInstanceOf[js.Any]))
+      StartDateTime.foreach(__v => __obj.updateDynamic("StartDateTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobFlowExecutionStatusDetail]
     }
   }
@@ -2478,32 +2488,36 @@ package emr {
         SlaveInstanceType: js.UndefOr[InstanceType] = js.undefined,
         TerminationProtected: js.UndefOr[Boolean] = js.undefined
     ): JobFlowInstancesConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       AdditionalMasterSecurityGroups.foreach(
-        __v => __obj.update("AdditionalMasterSecurityGroups", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("AdditionalMasterSecurityGroups")(__v.asInstanceOf[js.Any])
       )
       AdditionalSlaveSecurityGroups.foreach(
-        __v => __obj.update("AdditionalSlaveSecurityGroups", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("AdditionalSlaveSecurityGroups")(__v.asInstanceOf[js.Any])
       )
-      Ec2KeyName.foreach(__v => __obj.update("Ec2KeyName", __v.asInstanceOf[js.Any]))
-      Ec2SubnetId.foreach(__v => __obj.update("Ec2SubnetId", __v.asInstanceOf[js.Any]))
-      Ec2SubnetIds.foreach(__v => __obj.update("Ec2SubnetIds", __v.asInstanceOf[js.Any]))
+      Ec2KeyName.foreach(__v => __obj.updateDynamic("Ec2KeyName")(__v.asInstanceOf[js.Any]))
+      Ec2SubnetId.foreach(__v => __obj.updateDynamic("Ec2SubnetId")(__v.asInstanceOf[js.Any]))
+      Ec2SubnetIds.foreach(__v => __obj.updateDynamic("Ec2SubnetIds")(__v.asInstanceOf[js.Any]))
       EmrManagedMasterSecurityGroup.foreach(
-        __v => __obj.update("EmrManagedMasterSecurityGroup", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("EmrManagedMasterSecurityGroup")(__v.asInstanceOf[js.Any])
       )
       EmrManagedSlaveSecurityGroup.foreach(
-        __v => __obj.update("EmrManagedSlaveSecurityGroup", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("EmrManagedSlaveSecurityGroup")(__v.asInstanceOf[js.Any])
       )
-      HadoopVersion.foreach(__v => __obj.update("HadoopVersion", __v.asInstanceOf[js.Any]))
-      InstanceCount.foreach(__v => __obj.update("InstanceCount", __v.asInstanceOf[js.Any]))
-      InstanceFleets.foreach(__v => __obj.update("InstanceFleets", __v.asInstanceOf[js.Any]))
-      InstanceGroups.foreach(__v => __obj.update("InstanceGroups", __v.asInstanceOf[js.Any]))
-      KeepJobFlowAliveWhenNoSteps.foreach(__v => __obj.update("KeepJobFlowAliveWhenNoSteps", __v.asInstanceOf[js.Any]))
-      MasterInstanceType.foreach(__v => __obj.update("MasterInstanceType", __v.asInstanceOf[js.Any]))
-      Placement.foreach(__v => __obj.update("Placement", __v.asInstanceOf[js.Any]))
-      ServiceAccessSecurityGroup.foreach(__v => __obj.update("ServiceAccessSecurityGroup", __v.asInstanceOf[js.Any]))
-      SlaveInstanceType.foreach(__v => __obj.update("SlaveInstanceType", __v.asInstanceOf[js.Any]))
-      TerminationProtected.foreach(__v => __obj.update("TerminationProtected", __v.asInstanceOf[js.Any]))
+      HadoopVersion.foreach(__v => __obj.updateDynamic("HadoopVersion")(__v.asInstanceOf[js.Any]))
+      InstanceCount.foreach(__v => __obj.updateDynamic("InstanceCount")(__v.asInstanceOf[js.Any]))
+      InstanceFleets.foreach(__v => __obj.updateDynamic("InstanceFleets")(__v.asInstanceOf[js.Any]))
+      InstanceGroups.foreach(__v => __obj.updateDynamic("InstanceGroups")(__v.asInstanceOf[js.Any]))
+      KeepJobFlowAliveWhenNoSteps.foreach(
+        __v => __obj.updateDynamic("KeepJobFlowAliveWhenNoSteps")(__v.asInstanceOf[js.Any])
+      )
+      MasterInstanceType.foreach(__v => __obj.updateDynamic("MasterInstanceType")(__v.asInstanceOf[js.Any]))
+      Placement.foreach(__v => __obj.updateDynamic("Placement")(__v.asInstanceOf[js.Any]))
+      ServiceAccessSecurityGroup.foreach(
+        __v => __obj.updateDynamic("ServiceAccessSecurityGroup")(__v.asInstanceOf[js.Any])
+      )
+      SlaveInstanceType.foreach(__v => __obj.updateDynamic("SlaveInstanceType")(__v.asInstanceOf[js.Any]))
+      TerminationProtected.foreach(__v => __obj.updateDynamic("TerminationProtected")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobFlowInstancesConfig]
     }
   }
@@ -2544,22 +2558,24 @@ package emr {
         Placement: js.UndefOr[PlacementType] = js.undefined,
         TerminationProtected: js.UndefOr[Boolean] = js.undefined
     ): JobFlowInstancesDetail = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceCount"      -> InstanceCount.asInstanceOf[js.Any],
         "MasterInstanceType" -> MasterInstanceType.asInstanceOf[js.Any],
         "SlaveInstanceType"  -> SlaveInstanceType.asInstanceOf[js.Any]
       )
 
-      Ec2KeyName.foreach(__v => __obj.update("Ec2KeyName", __v.asInstanceOf[js.Any]))
-      Ec2SubnetId.foreach(__v => __obj.update("Ec2SubnetId", __v.asInstanceOf[js.Any]))
-      HadoopVersion.foreach(__v => __obj.update("HadoopVersion", __v.asInstanceOf[js.Any]))
-      InstanceGroups.foreach(__v => __obj.update("InstanceGroups", __v.asInstanceOf[js.Any]))
-      KeepJobFlowAliveWhenNoSteps.foreach(__v => __obj.update("KeepJobFlowAliveWhenNoSteps", __v.asInstanceOf[js.Any]))
-      MasterInstanceId.foreach(__v => __obj.update("MasterInstanceId", __v.asInstanceOf[js.Any]))
-      MasterPublicDnsName.foreach(__v => __obj.update("MasterPublicDnsName", __v.asInstanceOf[js.Any]))
-      NormalizedInstanceHours.foreach(__v => __obj.update("NormalizedInstanceHours", __v.asInstanceOf[js.Any]))
-      Placement.foreach(__v => __obj.update("Placement", __v.asInstanceOf[js.Any]))
-      TerminationProtected.foreach(__v => __obj.update("TerminationProtected", __v.asInstanceOf[js.Any]))
+      Ec2KeyName.foreach(__v => __obj.updateDynamic("Ec2KeyName")(__v.asInstanceOf[js.Any]))
+      Ec2SubnetId.foreach(__v => __obj.updateDynamic("Ec2SubnetId")(__v.asInstanceOf[js.Any]))
+      HadoopVersion.foreach(__v => __obj.updateDynamic("HadoopVersion")(__v.asInstanceOf[js.Any]))
+      InstanceGroups.foreach(__v => __obj.updateDynamic("InstanceGroups")(__v.asInstanceOf[js.Any]))
+      KeepJobFlowAliveWhenNoSteps.foreach(
+        __v => __obj.updateDynamic("KeepJobFlowAliveWhenNoSteps")(__v.asInstanceOf[js.Any])
+      )
+      MasterInstanceId.foreach(__v => __obj.updateDynamic("MasterInstanceId")(__v.asInstanceOf[js.Any]))
+      MasterPublicDnsName.foreach(__v => __obj.updateDynamic("MasterPublicDnsName")(__v.asInstanceOf[js.Any]))
+      NormalizedInstanceHours.foreach(__v => __obj.updateDynamic("NormalizedInstanceHours")(__v.asInstanceOf[js.Any]))
+      Placement.foreach(__v => __obj.updateDynamic("Placement")(__v.asInstanceOf[js.Any]))
+      TerminationProtected.foreach(__v => __obj.updateDynamic("TerminationProtected")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobFlowInstancesDetail]
     }
   }
@@ -2584,15 +2600,15 @@ package emr {
         ADDomainJoinUser: js.UndefOr[XmlStringMaxLen256] = js.undefined,
         CrossRealmTrustPrincipalPassword: js.UndefOr[XmlStringMaxLen256] = js.undefined
     ): KerberosAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "KdcAdminPassword" -> KdcAdminPassword.asInstanceOf[js.Any],
         "Realm"            -> Realm.asInstanceOf[js.Any]
       )
 
-      ADDomainJoinPassword.foreach(__v => __obj.update("ADDomainJoinPassword", __v.asInstanceOf[js.Any]))
-      ADDomainJoinUser.foreach(__v => __obj.update("ADDomainJoinUser", __v.asInstanceOf[js.Any]))
+      ADDomainJoinPassword.foreach(__v => __obj.updateDynamic("ADDomainJoinPassword")(__v.asInstanceOf[js.Any]))
+      ADDomainJoinUser.foreach(__v => __obj.updateDynamic("ADDomainJoinUser")(__v.asInstanceOf[js.Any]))
       CrossRealmTrustPrincipalPassword.foreach(
-        __v => __obj.update("CrossRealmTrustPrincipalPassword", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("CrossRealmTrustPrincipalPassword")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[KerberosAttributes]
     }
@@ -2612,9 +2628,9 @@ package emr {
         Key: js.UndefOr[XmlString] = js.undefined,
         Value: js.UndefOr[XmlString] = js.undefined
     ): KeyValue = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KeyValue]
     }
   }
@@ -2633,11 +2649,11 @@ package emr {
         ClusterId: ClusterId,
         Marker: js.UndefOr[Marker] = js.undefined
     ): ListBootstrapActionsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClusterId" -> ClusterId.asInstanceOf[js.Any]
       )
 
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBootstrapActionsInput]
     }
   }
@@ -2656,9 +2672,9 @@ package emr {
         BootstrapActions: js.UndefOr[CommandList] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined
     ): ListBootstrapActionsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BootstrapActions.foreach(__v => __obj.update("BootstrapActions", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BootstrapActions.foreach(__v => __obj.updateDynamic("BootstrapActions")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBootstrapActionsOutput]
     }
   }
@@ -2681,11 +2697,11 @@ package emr {
         CreatedBefore: js.UndefOr[Date] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined
     ): ListClustersInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClusterStates.foreach(__v => __obj.update("ClusterStates", __v.asInstanceOf[js.Any]))
-      CreatedAfter.foreach(__v => __obj.update("CreatedAfter", __v.asInstanceOf[js.Any]))
-      CreatedBefore.foreach(__v => __obj.update("CreatedBefore", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClusterStates.foreach(__v => __obj.updateDynamic("ClusterStates")(__v.asInstanceOf[js.Any]))
+      CreatedAfter.foreach(__v => __obj.updateDynamic("CreatedAfter")(__v.asInstanceOf[js.Any]))
+      CreatedBefore.foreach(__v => __obj.updateDynamic("CreatedBefore")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListClustersInput]
     }
   }
@@ -2704,9 +2720,9 @@ package emr {
         Clusters: js.UndefOr[ClusterSummaryList] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined
     ): ListClustersOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Clusters.foreach(__v => __obj.update("Clusters", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Clusters.foreach(__v => __obj.updateDynamic("Clusters")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListClustersOutput]
     }
   }
@@ -2722,11 +2738,11 @@ package emr {
         ClusterId: ClusterId,
         Marker: js.UndefOr[Marker] = js.undefined
     ): ListInstanceFleetsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClusterId" -> ClusterId.asInstanceOf[js.Any]
       )
 
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListInstanceFleetsInput]
     }
   }
@@ -2742,9 +2758,9 @@ package emr {
         InstanceFleets: js.UndefOr[InstanceFleetList] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined
     ): ListInstanceFleetsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InstanceFleets.foreach(__v => __obj.update("InstanceFleets", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InstanceFleets.foreach(__v => __obj.updateDynamic("InstanceFleets")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListInstanceFleetsOutput]
     }
   }
@@ -2763,11 +2779,11 @@ package emr {
         ClusterId: ClusterId,
         Marker: js.UndefOr[Marker] = js.undefined
     ): ListInstanceGroupsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClusterId" -> ClusterId.asInstanceOf[js.Any]
       )
 
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListInstanceGroupsInput]
     }
   }
@@ -2786,9 +2802,9 @@ package emr {
         InstanceGroups: js.UndefOr[InstanceGroupList] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined
     ): ListInstanceGroupsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InstanceGroups.foreach(__v => __obj.update("InstanceGroups", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InstanceGroups.foreach(__v => __obj.updateDynamic("InstanceGroups")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListInstanceGroupsOutput]
     }
   }
@@ -2817,16 +2833,16 @@ package emr {
         InstanceStates: js.UndefOr[InstanceStateList] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined
     ): ListInstancesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClusterId" -> ClusterId.asInstanceOf[js.Any]
       )
 
-      InstanceFleetId.foreach(__v => __obj.update("InstanceFleetId", __v.asInstanceOf[js.Any]))
-      InstanceFleetType.foreach(__v => __obj.update("InstanceFleetType", __v.asInstanceOf[js.Any]))
-      InstanceGroupId.foreach(__v => __obj.update("InstanceGroupId", __v.asInstanceOf[js.Any]))
-      InstanceGroupTypes.foreach(__v => __obj.update("InstanceGroupTypes", __v.asInstanceOf[js.Any]))
-      InstanceStates.foreach(__v => __obj.update("InstanceStates", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      InstanceFleetId.foreach(__v => __obj.updateDynamic("InstanceFleetId")(__v.asInstanceOf[js.Any]))
+      InstanceFleetType.foreach(__v => __obj.updateDynamic("InstanceFleetType")(__v.asInstanceOf[js.Any]))
+      InstanceGroupId.foreach(__v => __obj.updateDynamic("InstanceGroupId")(__v.asInstanceOf[js.Any]))
+      InstanceGroupTypes.foreach(__v => __obj.updateDynamic("InstanceGroupTypes")(__v.asInstanceOf[js.Any]))
+      InstanceStates.foreach(__v => __obj.updateDynamic("InstanceStates")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListInstancesInput]
     }
   }
@@ -2845,9 +2861,9 @@ package emr {
         Instances: js.UndefOr[InstanceList] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined
     ): ListInstancesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Instances.foreach(__v => __obj.update("Instances", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Instances.foreach(__v => __obj.updateDynamic("Instances")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListInstancesOutput]
     }
   }
@@ -2861,8 +2877,8 @@ package emr {
     def apply(
         Marker: js.UndefOr[Marker] = js.undefined
     ): ListSecurityConfigurationsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSecurityConfigurationsInput]
     }
   }
@@ -2878,9 +2894,9 @@ package emr {
         Marker: js.UndefOr[Marker] = js.undefined,
         SecurityConfigurations: js.UndefOr[SecurityConfigurationList] = js.undefined
     ): ListSecurityConfigurationsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      SecurityConfigurations.foreach(__v => __obj.update("SecurityConfigurations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      SecurityConfigurations.foreach(__v => __obj.updateDynamic("SecurityConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSecurityConfigurationsOutput]
     }
   }
@@ -2903,13 +2919,13 @@ package emr {
         StepIds: js.UndefOr[XmlStringList] = js.undefined,
         StepStates: js.UndefOr[StepStateList] = js.undefined
     ): ListStepsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClusterId" -> ClusterId.asInstanceOf[js.Any]
       )
 
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      StepIds.foreach(__v => __obj.update("StepIds", __v.asInstanceOf[js.Any]))
-      StepStates.foreach(__v => __obj.update("StepStates", __v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      StepIds.foreach(__v => __obj.updateDynamic("StepIds")(__v.asInstanceOf[js.Any]))
+      StepStates.foreach(__v => __obj.updateDynamic("StepStates")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListStepsInput]
     }
   }
@@ -2928,9 +2944,9 @@ package emr {
         Marker: js.UndefOr[Marker] = js.undefined,
         Steps: js.UndefOr[StepSummaryList] = js.undefined
     ): ListStepsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      Steps.foreach(__v => __obj.update("Steps", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      Steps.foreach(__v => __obj.updateDynamic("Steps")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListStepsOutput]
     }
   }
@@ -2956,9 +2972,9 @@ package emr {
         Key: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
     ): MetricDimension = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MetricDimension]
     }
   }
@@ -2974,7 +2990,7 @@ package emr {
         ClusterId: ClusterId,
         InstanceFleet: InstanceFleetModifyConfig
     ): ModifyInstanceFleetInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClusterId"     -> ClusterId.asInstanceOf[js.Any],
         "InstanceFleet" -> InstanceFleet.asInstanceOf[js.Any]
       )
@@ -2997,9 +3013,9 @@ package emr {
         ClusterId: js.UndefOr[ClusterId] = js.undefined,
         InstanceGroups: js.UndefOr[InstanceGroupModifyConfigList] = js.undefined
     ): ModifyInstanceGroupsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClusterId.foreach(__v => __obj.update("ClusterId", __v.asInstanceOf[js.Any]))
-      InstanceGroups.foreach(__v => __obj.update("InstanceGroups", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClusterId.foreach(__v => __obj.updateDynamic("ClusterId")(__v.asInstanceOf[js.Any]))
+      InstanceGroups.foreach(__v => __obj.updateDynamic("InstanceGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyInstanceGroupsInput]
     }
   }
@@ -3018,9 +3034,9 @@ package emr {
         AvailabilityZone: js.UndefOr[XmlString] = js.undefined,
         AvailabilityZones: js.UndefOr[XmlStringMaxLen256List] = js.undefined
     ): PlacementType = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
-      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PlacementType]
     }
   }
@@ -3039,11 +3055,11 @@ package emr {
         MinRange: Port,
         MaxRange: js.UndefOr[Port] = js.undefined
     ): PortRange = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MinRange" -> MinRange.asInstanceOf[js.Any]
       )
 
-      MaxRange.foreach(__v => __obj.update("MaxRange", __v.asInstanceOf[js.Any]))
+      MaxRange.foreach(__v => __obj.updateDynamic("MaxRange")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PortRange]
     }
   }
@@ -3061,7 +3077,7 @@ package emr {
         ClusterId: ClusterId,
         InstanceGroupId: InstanceGroupId
     ): PutAutoScalingPolicyInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AutoScalingPolicy" -> AutoScalingPolicy.asInstanceOf[js.Any],
         "ClusterId"         -> ClusterId.asInstanceOf[js.Any],
         "InstanceGroupId"   -> InstanceGroupId.asInstanceOf[js.Any]
@@ -3084,10 +3100,10 @@ package emr {
         ClusterId: js.UndefOr[ClusterId] = js.undefined,
         InstanceGroupId: js.UndefOr[InstanceGroupId] = js.undefined
     ): PutAutoScalingPolicyOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AutoScalingPolicy.foreach(__v => __obj.update("AutoScalingPolicy", __v.asInstanceOf[js.Any]))
-      ClusterId.foreach(__v => __obj.update("ClusterId", __v.asInstanceOf[js.Any]))
-      InstanceGroupId.foreach(__v => __obj.update("InstanceGroupId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AutoScalingPolicy.foreach(__v => __obj.updateDynamic("AutoScalingPolicy")(__v.asInstanceOf[js.Any]))
+      ClusterId.foreach(__v => __obj.updateDynamic("ClusterId")(__v.asInstanceOf[js.Any]))
+      InstanceGroupId.foreach(__v => __obj.updateDynamic("InstanceGroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutAutoScalingPolicyOutput]
     }
   }
@@ -3101,7 +3117,7 @@ package emr {
     def apply(
         BlockPublicAccessConfiguration: BlockPublicAccessConfiguration
     ): PutBlockPublicAccessConfigurationInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BlockPublicAccessConfiguration" -> BlockPublicAccessConfiguration.asInstanceOf[js.Any]
       )
 
@@ -3115,7 +3131,7 @@ package emr {
   object PutBlockPublicAccessConfigurationOutput {
     def apply(
         ): PutBlockPublicAccessConfigurationOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutBlockPublicAccessConfigurationOutput]
     }
@@ -3132,7 +3148,7 @@ package emr {
         ClusterId: ClusterId,
         InstanceGroupId: InstanceGroupId
     ): RemoveAutoScalingPolicyInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClusterId"       -> ClusterId.asInstanceOf[js.Any],
         "InstanceGroupId" -> InstanceGroupId.asInstanceOf[js.Any]
       )
@@ -3147,7 +3163,7 @@ package emr {
   object RemoveAutoScalingPolicyOutput {
     def apply(
         ): RemoveAutoScalingPolicyOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RemoveAutoScalingPolicyOutput]
     }
@@ -3167,7 +3183,7 @@ package emr {
         ResourceId: ResourceId,
         TagKeys: StringList
     ): RemoveTagsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "TagKeys"    -> TagKeys.asInstanceOf[js.Any]
       )
@@ -3185,7 +3201,7 @@ package emr {
   object RemoveTagsOutput {
     def apply(
         ): RemoveTagsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RemoveTagsOutput]
     }
@@ -3254,32 +3270,32 @@ package emr {
         Tags: js.UndefOr[TagList] = js.undefined,
         VisibleToAllUsers: js.UndefOr[Boolean] = js.undefined
     ): RunJobFlowInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Instances" -> Instances.asInstanceOf[js.Any],
         "Name"      -> Name.asInstanceOf[js.Any]
       )
 
-      AdditionalInfo.foreach(__v => __obj.update("AdditionalInfo", __v.asInstanceOf[js.Any]))
-      AmiVersion.foreach(__v => __obj.update("AmiVersion", __v.asInstanceOf[js.Any]))
-      Applications.foreach(__v => __obj.update("Applications", __v.asInstanceOf[js.Any]))
-      AutoScalingRole.foreach(__v => __obj.update("AutoScalingRole", __v.asInstanceOf[js.Any]))
-      BootstrapActions.foreach(__v => __obj.update("BootstrapActions", __v.asInstanceOf[js.Any]))
-      Configurations.foreach(__v => __obj.update("Configurations", __v.asInstanceOf[js.Any]))
-      CustomAmiId.foreach(__v => __obj.update("CustomAmiId", __v.asInstanceOf[js.Any]))
-      EbsRootVolumeSize.foreach(__v => __obj.update("EbsRootVolumeSize", __v.asInstanceOf[js.Any]))
-      JobFlowRole.foreach(__v => __obj.update("JobFlowRole", __v.asInstanceOf[js.Any]))
-      KerberosAttributes.foreach(__v => __obj.update("KerberosAttributes", __v.asInstanceOf[js.Any]))
-      LogUri.foreach(__v => __obj.update("LogUri", __v.asInstanceOf[js.Any]))
-      NewSupportedProducts.foreach(__v => __obj.update("NewSupportedProducts", __v.asInstanceOf[js.Any]))
-      ReleaseLabel.foreach(__v => __obj.update("ReleaseLabel", __v.asInstanceOf[js.Any]))
-      RepoUpgradeOnBoot.foreach(__v => __obj.update("RepoUpgradeOnBoot", __v.asInstanceOf[js.Any]))
-      ScaleDownBehavior.foreach(__v => __obj.update("ScaleDownBehavior", __v.asInstanceOf[js.Any]))
-      SecurityConfiguration.foreach(__v => __obj.update("SecurityConfiguration", __v.asInstanceOf[js.Any]))
-      ServiceRole.foreach(__v => __obj.update("ServiceRole", __v.asInstanceOf[js.Any]))
-      Steps.foreach(__v => __obj.update("Steps", __v.asInstanceOf[js.Any]))
-      SupportedProducts.foreach(__v => __obj.update("SupportedProducts", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      VisibleToAllUsers.foreach(__v => __obj.update("VisibleToAllUsers", __v.asInstanceOf[js.Any]))
+      AdditionalInfo.foreach(__v => __obj.updateDynamic("AdditionalInfo")(__v.asInstanceOf[js.Any]))
+      AmiVersion.foreach(__v => __obj.updateDynamic("AmiVersion")(__v.asInstanceOf[js.Any]))
+      Applications.foreach(__v => __obj.updateDynamic("Applications")(__v.asInstanceOf[js.Any]))
+      AutoScalingRole.foreach(__v => __obj.updateDynamic("AutoScalingRole")(__v.asInstanceOf[js.Any]))
+      BootstrapActions.foreach(__v => __obj.updateDynamic("BootstrapActions")(__v.asInstanceOf[js.Any]))
+      Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
+      CustomAmiId.foreach(__v => __obj.updateDynamic("CustomAmiId")(__v.asInstanceOf[js.Any]))
+      EbsRootVolumeSize.foreach(__v => __obj.updateDynamic("EbsRootVolumeSize")(__v.asInstanceOf[js.Any]))
+      JobFlowRole.foreach(__v => __obj.updateDynamic("JobFlowRole")(__v.asInstanceOf[js.Any]))
+      KerberosAttributes.foreach(__v => __obj.updateDynamic("KerberosAttributes")(__v.asInstanceOf[js.Any]))
+      LogUri.foreach(__v => __obj.updateDynamic("LogUri")(__v.asInstanceOf[js.Any]))
+      NewSupportedProducts.foreach(__v => __obj.updateDynamic("NewSupportedProducts")(__v.asInstanceOf[js.Any]))
+      ReleaseLabel.foreach(__v => __obj.updateDynamic("ReleaseLabel")(__v.asInstanceOf[js.Any]))
+      RepoUpgradeOnBoot.foreach(__v => __obj.updateDynamic("RepoUpgradeOnBoot")(__v.asInstanceOf[js.Any]))
+      ScaleDownBehavior.foreach(__v => __obj.updateDynamic("ScaleDownBehavior")(__v.asInstanceOf[js.Any]))
+      SecurityConfiguration.foreach(__v => __obj.updateDynamic("SecurityConfiguration")(__v.asInstanceOf[js.Any]))
+      ServiceRole.foreach(__v => __obj.updateDynamic("ServiceRole")(__v.asInstanceOf[js.Any]))
+      Steps.foreach(__v => __obj.updateDynamic("Steps")(__v.asInstanceOf[js.Any]))
+      SupportedProducts.foreach(__v => __obj.updateDynamic("SupportedProducts")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      VisibleToAllUsers.foreach(__v => __obj.updateDynamic("VisibleToAllUsers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RunJobFlowInput]
     }
   }
@@ -3296,8 +3312,8 @@ package emr {
     def apply(
         JobFlowId: js.UndefOr[XmlStringMaxLen256] = js.undefined
     ): RunJobFlowOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobFlowId.foreach(__v => __obj.update("JobFlowId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobFlowId.foreach(__v => __obj.updateDynamic("JobFlowId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RunJobFlowOutput]
     }
   }
@@ -3323,11 +3339,11 @@ package emr {
         SimpleScalingPolicyConfiguration: SimpleScalingPolicyConfiguration,
         Market: js.UndefOr[MarketType] = js.undefined
     ): ScalingAction = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SimpleScalingPolicyConfiguration" -> SimpleScalingPolicyConfiguration.asInstanceOf[js.Any]
       )
 
-      Market.foreach(__v => __obj.update("Market", __v.asInstanceOf[js.Any]))
+      Market.foreach(__v => __obj.updateDynamic("Market")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScalingAction]
     }
   }
@@ -3346,7 +3362,7 @@ package emr {
         MaxCapacity: Int,
         MinCapacity: Int
     ): ScalingConstraints = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MaxCapacity" -> MaxCapacity.asInstanceOf[js.Any],
         "MinCapacity" -> MinCapacity.asInstanceOf[js.Any]
       )
@@ -3373,13 +3389,13 @@ package emr {
         Trigger: ScalingTrigger,
         Description: js.UndefOr[String] = js.undefined
     ): ScalingRule = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Action"  -> Action.asInstanceOf[js.Any],
         "Name"    -> Name.asInstanceOf[js.Any],
         "Trigger" -> Trigger.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScalingRule]
     }
   }
@@ -3396,7 +3412,7 @@ package emr {
     def apply(
         CloudWatchAlarmDefinition: CloudWatchAlarmDefinition
     ): ScalingTrigger = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CloudWatchAlarmDefinition" -> CloudWatchAlarmDefinition.asInstanceOf[js.Any]
       )
 
@@ -3418,11 +3434,11 @@ package emr {
         Path: XmlString,
         Args: js.UndefOr[XmlStringList] = js.undefined
     ): ScriptBootstrapActionConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Path" -> Path.asInstanceOf[js.Any]
       )
 
-      Args.foreach(__v => __obj.update("Args", __v.asInstanceOf[js.Any]))
+      Args.foreach(__v => __obj.updateDynamic("Args")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScriptBootstrapActionConfig]
     }
   }
@@ -3441,9 +3457,9 @@ package emr {
         CreationDateTime: js.UndefOr[Date] = js.undefined,
         Name: js.UndefOr[XmlString] = js.undefined
     ): SecurityConfigurationSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationDateTime.foreach(__v => __obj.update("CreationDateTime", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationDateTime.foreach(__v => __obj.updateDynamic("CreationDateTime")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SecurityConfigurationSummary]
     }
   }
@@ -3462,7 +3478,7 @@ package emr {
         JobFlowIds: XmlStringList,
         TerminationProtected: Boolean
     ): SetTerminationProtectionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobFlowIds"           -> JobFlowIds.asInstanceOf[js.Any],
         "TerminationProtected" -> TerminationProtected.asInstanceOf[js.Any]
       )
@@ -3486,7 +3502,7 @@ package emr {
         JobFlowIds: XmlStringList,
         VisibleToAllUsers: Boolean
     ): SetVisibleToAllUsersInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobFlowIds"        -> JobFlowIds.asInstanceOf[js.Any],
         "VisibleToAllUsers" -> VisibleToAllUsers.asInstanceOf[js.Any]
       )
@@ -3509,9 +3525,9 @@ package emr {
         DecommissionTimeout: js.UndefOr[Int] = js.undefined,
         InstanceResizePolicy: js.UndefOr[InstanceResizePolicy] = js.undefined
     ): ShrinkPolicy = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DecommissionTimeout.foreach(__v => __obj.update("DecommissionTimeout", __v.asInstanceOf[js.Any]))
-      InstanceResizePolicy.foreach(__v => __obj.update("InstanceResizePolicy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DecommissionTimeout.foreach(__v => __obj.updateDynamic("DecommissionTimeout")(__v.asInstanceOf[js.Any]))
+      InstanceResizePolicy.foreach(__v => __obj.updateDynamic("InstanceResizePolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ShrinkPolicy]
     }
   }
@@ -3532,12 +3548,12 @@ package emr {
         AdjustmentType: js.UndefOr[AdjustmentType] = js.undefined,
         CoolDown: js.UndefOr[Int] = js.undefined
     ): SimpleScalingPolicyConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ScalingAdjustment" -> ScalingAdjustment.asInstanceOf[js.Any]
       )
 
-      AdjustmentType.foreach(__v => __obj.update("AdjustmentType", __v.asInstanceOf[js.Any]))
-      CoolDown.foreach(__v => __obj.update("CoolDown", __v.asInstanceOf[js.Any]))
+      AdjustmentType.foreach(__v => __obj.updateDynamic("AdjustmentType")(__v.asInstanceOf[js.Any]))
+      CoolDown.foreach(__v => __obj.updateDynamic("CoolDown")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SimpleScalingPolicyConfiguration]
     }
   }
@@ -3560,12 +3576,12 @@ package emr {
         TimeoutDurationMinutes: WholeNumber,
         BlockDurationMinutes: js.UndefOr[WholeNumber] = js.undefined
     ): SpotProvisioningSpecification = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TimeoutAction"          -> TimeoutAction.asInstanceOf[js.Any],
         "TimeoutDurationMinutes" -> TimeoutDurationMinutes.asInstanceOf[js.Any]
       )
 
-      BlockDurationMinutes.foreach(__v => __obj.update("BlockDurationMinutes", __v.asInstanceOf[js.Any]))
+      BlockDurationMinutes.foreach(__v => __obj.updateDynamic("BlockDurationMinutes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SpotProvisioningSpecification]
     }
   }
@@ -3607,12 +3623,12 @@ package emr {
         Name: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StepStatus] = js.undefined
     ): Step = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ActionOnFailure.foreach(__v => __obj.update("ActionOnFailure", __v.asInstanceOf[js.Any]))
-      Config.foreach(__v => __obj.update("Config", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ActionOnFailure.foreach(__v => __obj.updateDynamic("ActionOnFailure")(__v.asInstanceOf[js.Any]))
+      Config.foreach(__v => __obj.updateDynamic("Config")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Step]
     }
   }
@@ -3633,12 +3649,12 @@ package emr {
         Name: XmlStringMaxLen256,
         ActionOnFailure: js.UndefOr[ActionOnFailure] = js.undefined
     ): StepConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HadoopJarStep" -> HadoopJarStep.asInstanceOf[js.Any],
         "Name"          -> Name.asInstanceOf[js.Any]
       )
 
-      ActionOnFailure.foreach(__v => __obj.update("ActionOnFailure", __v.asInstanceOf[js.Any]))
+      ActionOnFailure.foreach(__v => __obj.updateDynamic("ActionOnFailure")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StepConfig]
     }
   }
@@ -3657,7 +3673,7 @@ package emr {
         ExecutionStatusDetail: StepExecutionStatusDetail,
         StepConfig: StepConfig
     ): StepDetail = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ExecutionStatusDetail" -> ExecutionStatusDetail.asInstanceOf[js.Any],
         "StepConfig"            -> StepConfig.asInstanceOf[js.Any]
       )
@@ -3698,14 +3714,14 @@ package emr {
         LastStateChangeReason: js.UndefOr[XmlString] = js.undefined,
         StartDateTime: js.UndefOr[Date] = js.undefined
     ): StepExecutionStatusDetail = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CreationDateTime" -> CreationDateTime.asInstanceOf[js.Any],
         "State"            -> State.asInstanceOf[js.Any]
       )
 
-      EndDateTime.foreach(__v => __obj.update("EndDateTime", __v.asInstanceOf[js.Any]))
-      LastStateChangeReason.foreach(__v => __obj.update("LastStateChangeReason", __v.asInstanceOf[js.Any]))
-      StartDateTime.foreach(__v => __obj.update("StartDateTime", __v.asInstanceOf[js.Any]))
+      EndDateTime.foreach(__v => __obj.updateDynamic("EndDateTime")(__v.asInstanceOf[js.Any]))
+      LastStateChangeReason.foreach(__v => __obj.updateDynamic("LastStateChangeReason")(__v.asInstanceOf[js.Any]))
+      StartDateTime.foreach(__v => __obj.updateDynamic("StartDateTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StepExecutionStatusDetail]
     }
   }
@@ -3736,9 +3752,9 @@ package emr {
         Code: js.UndefOr[StepStateChangeReasonCode] = js.undefined,
         Message: js.UndefOr[String] = js.undefined
     ): StepStateChangeReason = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Code.foreach(__v => __obj.update("Code", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StepStateChangeReason]
     }
   }
@@ -3767,11 +3783,11 @@ package emr {
         StateChangeReason: js.UndefOr[StepStateChangeReason] = js.undefined,
         Timeline: js.UndefOr[StepTimeline] = js.undefined
     ): StepStatus = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FailureDetails.foreach(__v => __obj.update("FailureDetails", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
-      StateChangeReason.foreach(__v => __obj.update("StateChangeReason", __v.asInstanceOf[js.Any]))
-      Timeline.foreach(__v => __obj.update("Timeline", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FailureDetails.foreach(__v => __obj.updateDynamic("FailureDetails")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      StateChangeReason.foreach(__v => __obj.updateDynamic("StateChangeReason")(__v.asInstanceOf[js.Any]))
+      Timeline.foreach(__v => __obj.updateDynamic("Timeline")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StepStatus]
     }
   }
@@ -3796,12 +3812,12 @@ package emr {
         Name: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StepStatus] = js.undefined
     ): StepSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ActionOnFailure.foreach(__v => __obj.update("ActionOnFailure", __v.asInstanceOf[js.Any]))
-      Config.foreach(__v => __obj.update("Config", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ActionOnFailure.foreach(__v => __obj.updateDynamic("ActionOnFailure")(__v.asInstanceOf[js.Any]))
+      Config.foreach(__v => __obj.updateDynamic("Config")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StepSummary]
     }
   }
@@ -3822,10 +3838,10 @@ package emr {
         EndDateTime: js.UndefOr[Date] = js.undefined,
         StartDateTime: js.UndefOr[Date] = js.undefined
     ): StepTimeline = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationDateTime.foreach(__v => __obj.update("CreationDateTime", __v.asInstanceOf[js.Any]))
-      EndDateTime.foreach(__v => __obj.update("EndDateTime", __v.asInstanceOf[js.Any]))
-      StartDateTime.foreach(__v => __obj.update("StartDateTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationDateTime.foreach(__v => __obj.updateDynamic("CreationDateTime")(__v.asInstanceOf[js.Any]))
+      EndDateTime.foreach(__v => __obj.updateDynamic("EndDateTime")(__v.asInstanceOf[js.Any]))
+      StartDateTime.foreach(__v => __obj.updateDynamic("StartDateTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StepTimeline]
     }
   }
@@ -3844,9 +3860,9 @@ package emr {
         Args: js.UndefOr[XmlStringList] = js.undefined,
         Name: js.UndefOr[XmlStringMaxLen256] = js.undefined
     ): SupportedProductConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Args.foreach(__v => __obj.update("Args", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Args.foreach(__v => __obj.updateDynamic("Args")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SupportedProductConfig]
     }
   }
@@ -3865,9 +3881,9 @@ package emr {
         Key: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
     ): Tag = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tag]
     }
   }
@@ -3884,7 +3900,7 @@ package emr {
     def apply(
         JobFlowIds: XmlStringList
     ): TerminateJobFlowsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobFlowIds" -> JobFlowIds.asInstanceOf[js.Any]
       )
 
@@ -3970,12 +3986,12 @@ package emr {
         VolumeType: String,
         Iops: js.UndefOr[Int] = js.undefined
     ): VolumeSpecification = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SizeInGB"   -> SizeInGB.asInstanceOf[js.Any],
         "VolumeType" -> VolumeType.asInstanceOf[js.Any]
       )
 
-      Iops.foreach(__v => __obj.update("Iops", __v.asInstanceOf[js.Any]))
+      Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VolumeSpecification]
     }
   }

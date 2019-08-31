@@ -125,7 +125,7 @@ package shield {
     def apply(
         LogBucket: LogBucket
     ): AssociateDRTLogBucketRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LogBucket" -> LogBucket.asInstanceOf[js.Any]
       )
 
@@ -139,7 +139,7 @@ package shield {
   object AssociateDRTLogBucketResponse {
     def apply(
         ): AssociateDRTLogBucketResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateDRTLogBucketResponse]
     }
@@ -154,7 +154,7 @@ package shield {
     def apply(
         RoleArn: RoleArn
     ): AssociateDRTRoleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
@@ -168,7 +168,7 @@ package shield {
   object AssociateDRTRoleResponse {
     def apply(
         ): AssociateDRTRoleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateDRTRoleResponse]
     }
@@ -200,15 +200,15 @@ package shield {
         StartTime: js.UndefOr[AttackTimestamp] = js.undefined,
         SubResources: js.UndefOr[SubResourceSummaryList] = js.undefined
     ): AttackDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttackCounters.foreach(__v => __obj.update("AttackCounters", __v.asInstanceOf[js.Any]))
-      AttackId.foreach(__v => __obj.update("AttackId", __v.asInstanceOf[js.Any]))
-      AttackProperties.foreach(__v => __obj.update("AttackProperties", __v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
-      Mitigations.foreach(__v => __obj.update("Mitigations", __v.asInstanceOf[js.Any]))
-      ResourceArn.foreach(__v => __obj.update("ResourceArn", __v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
-      SubResources.foreach(__v => __obj.update("SubResources", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttackCounters.foreach(__v => __obj.updateDynamic("AttackCounters")(__v.asInstanceOf[js.Any]))
+      AttackId.foreach(__v => __obj.updateDynamic("AttackId")(__v.asInstanceOf[js.Any]))
+      AttackProperties.foreach(__v => __obj.updateDynamic("AttackProperties")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      Mitigations.foreach(__v => __obj.updateDynamic("Mitigations")(__v.asInstanceOf[js.Any]))
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      SubResources.foreach(__v => __obj.updateDynamic("SubResources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttackDetail]
     }
   }
@@ -240,12 +240,12 @@ package shield {
         Total: js.UndefOr[Double] = js.undefined,
         Unit: js.UndefOr[Unit] = js.undefined
     ): AttackProperty = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttackLayer.foreach(__v => __obj.update("AttackLayer", __v.asInstanceOf[js.Any]))
-      AttackPropertyIdentifier.foreach(__v => __obj.update("AttackPropertyIdentifier", __v.asInstanceOf[js.Any]))
-      TopContributors.foreach(__v => __obj.update("TopContributors", __v.asInstanceOf[js.Any]))
-      Total.foreach(__v => __obj.update("Total", __v.asInstanceOf[js.Any]))
-      Unit.foreach(__v => __obj.update("Unit", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttackLayer.foreach(__v => __obj.updateDynamic("AttackLayer")(__v.asInstanceOf[js.Any]))
+      AttackPropertyIdentifier.foreach(__v => __obj.updateDynamic("AttackPropertyIdentifier")(__v.asInstanceOf[js.Any]))
+      TopContributors.foreach(__v => __obj.updateDynamic("TopContributors")(__v.asInstanceOf[js.Any]))
+      Total.foreach(__v => __obj.updateDynamic("Total")(__v.asInstanceOf[js.Any]))
+      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttackProperty]
     }
   }
@@ -294,12 +294,12 @@ package shield {
         ResourceArn: js.UndefOr[String] = js.undefined,
         StartTime: js.UndefOr[AttackTimestamp] = js.undefined
     ): AttackSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttackId.foreach(__v => __obj.update("AttackId", __v.asInstanceOf[js.Any]))
-      AttackVectors.foreach(__v => __obj.update("AttackVectors", __v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
-      ResourceArn.foreach(__v => __obj.update("ResourceArn", __v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttackId.foreach(__v => __obj.updateDynamic("AttackId")(__v.asInstanceOf[js.Any]))
+      AttackVectors.foreach(__v => __obj.updateDynamic("AttackVectors")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttackSummary]
     }
   }
@@ -316,7 +316,7 @@ package shield {
     def apply(
         VectorType: String
     ): AttackVectorDescription = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VectorType" -> VectorType.asInstanceOf[js.Any]
       )
 
@@ -345,9 +345,9 @@ package shield {
         Name: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[Double] = js.undefined
     ): Contributor = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Contributor]
     }
   }
@@ -363,7 +363,7 @@ package shield {
         Name: ProtectionName,
         ResourceArn: ResourceArn
     ): CreateProtectionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"        -> Name.asInstanceOf[js.Any],
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
@@ -381,8 +381,8 @@ package shield {
     def apply(
         ProtectionId: js.UndefOr[ProtectionId] = js.undefined
     ): CreateProtectionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ProtectionId.foreach(__v => __obj.update("ProtectionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ProtectionId.foreach(__v => __obj.updateDynamic("ProtectionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateProtectionResponse]
     }
   }
@@ -393,7 +393,7 @@ package shield {
   object CreateSubscriptionRequest {
     def apply(
         ): CreateSubscriptionRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateSubscriptionRequest]
     }
@@ -405,7 +405,7 @@ package shield {
   object CreateSubscriptionResponse {
     def apply(
         ): CreateSubscriptionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateSubscriptionResponse]
     }
@@ -420,7 +420,7 @@ package shield {
     def apply(
         ProtectionId: ProtectionId
     ): DeleteProtectionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ProtectionId" -> ProtectionId.asInstanceOf[js.Any]
       )
 
@@ -434,7 +434,7 @@ package shield {
   object DeleteProtectionResponse {
     def apply(
         ): DeleteProtectionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteProtectionResponse]
     }
@@ -447,7 +447,7 @@ package shield {
   object DeleteSubscriptionRequest {
     def apply(
         ): DeleteSubscriptionRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteSubscriptionRequest]
     }
@@ -460,7 +460,7 @@ package shield {
   object DeleteSubscriptionResponse {
     def apply(
         ): DeleteSubscriptionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteSubscriptionResponse]
     }
@@ -475,7 +475,7 @@ package shield {
     def apply(
         AttackId: AttackId
     ): DescribeAttackRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AttackId" -> AttackId.asInstanceOf[js.Any]
       )
 
@@ -492,8 +492,8 @@ package shield {
     def apply(
         Attack: js.UndefOr[AttackDetail] = js.undefined
     ): DescribeAttackResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attack.foreach(__v => __obj.update("Attack", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attack.foreach(__v => __obj.updateDynamic("Attack")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAttackResponse]
     }
   }
@@ -504,7 +504,7 @@ package shield {
   object DescribeDRTAccessRequest {
     def apply(
         ): DescribeDRTAccessRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DescribeDRTAccessRequest]
     }
@@ -521,9 +521,9 @@ package shield {
         LogBucketList: js.UndefOr[LogBucketList] = js.undefined,
         RoleArn: js.UndefOr[RoleArn] = js.undefined
     ): DescribeDRTAccessResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LogBucketList.foreach(__v => __obj.update("LogBucketList", __v.asInstanceOf[js.Any]))
-      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LogBucketList.foreach(__v => __obj.updateDynamic("LogBucketList")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDRTAccessResponse]
     }
   }
@@ -534,7 +534,7 @@ package shield {
   object DescribeEmergencyContactSettingsRequest {
     def apply(
         ): DescribeEmergencyContactSettingsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DescribeEmergencyContactSettingsRequest]
     }
@@ -549,8 +549,8 @@ package shield {
     def apply(
         EmergencyContactList: js.UndefOr[EmergencyContactList] = js.undefined
     ): DescribeEmergencyContactSettingsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EmergencyContactList.foreach(__v => __obj.update("EmergencyContactList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EmergencyContactList.foreach(__v => __obj.updateDynamic("EmergencyContactList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEmergencyContactSettingsResponse]
     }
   }
@@ -566,9 +566,9 @@ package shield {
         ProtectionId: js.UndefOr[ProtectionId] = js.undefined,
         ResourceArn: js.UndefOr[ResourceArn] = js.undefined
     ): DescribeProtectionRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ProtectionId.foreach(__v => __obj.update("ProtectionId", __v.asInstanceOf[js.Any]))
-      ResourceArn.foreach(__v => __obj.update("ResourceArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ProtectionId.foreach(__v => __obj.updateDynamic("ProtectionId")(__v.asInstanceOf[js.Any]))
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProtectionRequest]
     }
   }
@@ -582,8 +582,8 @@ package shield {
     def apply(
         Protection: js.UndefOr[Protection] = js.undefined
     ): DescribeProtectionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Protection.foreach(__v => __obj.update("Protection", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Protection.foreach(__v => __obj.updateDynamic("Protection")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProtectionResponse]
     }
   }
@@ -594,7 +594,7 @@ package shield {
   object DescribeSubscriptionRequest {
     def apply(
         ): DescribeSubscriptionRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DescribeSubscriptionRequest]
     }
@@ -609,8 +609,8 @@ package shield {
     def apply(
         Subscription: js.UndefOr[Subscription] = js.undefined
     ): DescribeSubscriptionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Subscription.foreach(__v => __obj.update("Subscription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Subscription.foreach(__v => __obj.updateDynamic("Subscription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSubscriptionResponse]
     }
   }
@@ -624,7 +624,7 @@ package shield {
     def apply(
         LogBucket: LogBucket
     ): DisassociateDRTLogBucketRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LogBucket" -> LogBucket.asInstanceOf[js.Any]
       )
 
@@ -638,7 +638,7 @@ package shield {
   object DisassociateDRTLogBucketResponse {
     def apply(
         ): DisassociateDRTLogBucketResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateDRTLogBucketResponse]
     }
@@ -650,7 +650,7 @@ package shield {
   object DisassociateDRTRoleRequest {
     def apply(
         ): DisassociateDRTRoleRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateDRTRoleRequest]
     }
@@ -662,7 +662,7 @@ package shield {
   object DisassociateDRTRoleResponse {
     def apply(
         ): DisassociateDRTRoleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateDRTRoleResponse]
     }
@@ -680,7 +680,7 @@ package shield {
     def apply(
         EmailAddress: EmailAddress
     ): EmergencyContact = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EmailAddress" -> EmailAddress.asInstanceOf[js.Any]
       )
 
@@ -694,7 +694,7 @@ package shield {
   object GetSubscriptionStateRequest {
     def apply(
         ): GetSubscriptionStateRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetSubscriptionStateRequest]
     }
@@ -709,7 +709,7 @@ package shield {
     def apply(
         SubscriptionState: SubscriptionState
     ): GetSubscriptionStateResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SubscriptionState" -> SubscriptionState.asInstanceOf[js.Any]
       )
 
@@ -731,9 +731,9 @@ package shield {
         Max: js.UndefOr[Double] = js.undefined,
         Type: js.UndefOr[String] = js.undefined
     ): Limit = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Max.foreach(__v => __obj.update("Max", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Max.foreach(__v => __obj.updateDynamic("Max")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Limit]
     }
   }
@@ -755,12 +755,12 @@ package shield {
         ResourceArns: js.UndefOr[ResourceArnFilterList] = js.undefined,
         StartTime: js.UndefOr[TimeRange] = js.undefined
     ): ListAttacksRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ResourceArns.foreach(__v => __obj.update("ResourceArns", __v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ResourceArns.foreach(__v => __obj.updateDynamic("ResourceArns")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAttacksRequest]
     }
   }
@@ -776,9 +776,9 @@ package shield {
         AttackSummaries: js.UndefOr[AttackSummaries] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): ListAttacksResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttackSummaries.foreach(__v => __obj.update("AttackSummaries", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttackSummaries.foreach(__v => __obj.updateDynamic("AttackSummaries")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAttacksResponse]
     }
   }
@@ -794,9 +794,9 @@ package shield {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): ListProtectionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListProtectionsRequest]
     }
   }
@@ -812,9 +812,9 @@ package shield {
         NextToken: js.UndefOr[Token] = js.undefined,
         Protections: js.UndefOr[Protections] = js.undefined
     ): ListProtectionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Protections.foreach(__v => __obj.update("Protections", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Protections.foreach(__v => __obj.updateDynamic("Protections")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListProtectionsResponse]
     }
   }
@@ -831,8 +831,8 @@ package shield {
     def apply(
         MitigationName: js.UndefOr[String] = js.undefined
     ): Mitigation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MitigationName.foreach(__v => __obj.update("MitigationName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MitigationName.foreach(__v => __obj.updateDynamic("MitigationName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Mitigation]
     }
   }
@@ -853,10 +853,10 @@ package shield {
         Name: js.UndefOr[ProtectionName] = js.undefined,
         ResourceArn: js.UndefOr[ResourceArn] = js.undefined
     ): Protection = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      ResourceArn.foreach(__v => __obj.update("ResourceArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Protection]
     }
   }
@@ -879,11 +879,11 @@ package shield {
         Id: js.UndefOr[String] = js.undefined,
         Type: js.UndefOr[SubResourceType] = js.undefined
     ): SubResourceSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttackVectors.foreach(__v => __obj.update("AttackVectors", __v.asInstanceOf[js.Any]))
-      Counters.foreach(__v => __obj.update("Counters", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttackVectors.foreach(__v => __obj.updateDynamic("AttackVectors")(__v.asInstanceOf[js.Any]))
+      Counters.foreach(__v => __obj.updateDynamic("Counters")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SubResourceSummary]
     }
   }
@@ -915,12 +915,12 @@ package shield {
         StartTime: js.UndefOr[Timestamp] = js.undefined,
         TimeCommitmentInSeconds: js.UndefOr[DurationInSeconds] = js.undefined
     ): Subscription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AutoRenew.foreach(__v => __obj.update("AutoRenew", __v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
-      Limits.foreach(__v => __obj.update("Limits", __v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
-      TimeCommitmentInSeconds.foreach(__v => __obj.update("TimeCommitmentInSeconds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AutoRenew.foreach(__v => __obj.updateDynamic("AutoRenew")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      Limits.foreach(__v => __obj.updateDynamic("Limits")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      TimeCommitmentInSeconds.foreach(__v => __obj.updateDynamic("TimeCommitmentInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Subscription]
     }
   }
@@ -946,11 +946,11 @@ package shield {
         VectorType: String,
         VectorCounters: js.UndefOr[SummarizedCounterList] = js.undefined
     ): SummarizedAttackVector = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VectorType" -> VectorType.asInstanceOf[js.Any]
       )
 
-      VectorCounters.foreach(__v => __obj.update("VectorCounters", __v.asInstanceOf[js.Any]))
+      VectorCounters.foreach(__v => __obj.updateDynamic("VectorCounters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SummarizedAttackVector]
     }
   }
@@ -977,13 +977,13 @@ package shield {
         Sum: js.UndefOr[Double] = js.undefined,
         Unit: js.UndefOr[String] = js.undefined
     ): SummarizedCounter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Average.foreach(__v => __obj.update("Average", __v.asInstanceOf[js.Any]))
-      Max.foreach(__v => __obj.update("Max", __v.asInstanceOf[js.Any]))
-      N.foreach(__v => __obj.update("N", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Sum.foreach(__v => __obj.update("Sum", __v.asInstanceOf[js.Any]))
-      Unit.foreach(__v => __obj.update("Unit", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Average.foreach(__v => __obj.updateDynamic("Average")(__v.asInstanceOf[js.Any]))
+      Max.foreach(__v => __obj.updateDynamic("Max")(__v.asInstanceOf[js.Any]))
+      N.foreach(__v => __obj.updateDynamic("N")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Sum.foreach(__v => __obj.updateDynamic("Sum")(__v.asInstanceOf[js.Any]))
+      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SummarizedCounter]
     }
   }
@@ -1002,9 +1002,9 @@ package shield {
         FromInclusive: js.UndefOr[AttackTimestamp] = js.undefined,
         ToExclusive: js.UndefOr[AttackTimestamp] = js.undefined
     ): TimeRange = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FromInclusive.foreach(__v => __obj.update("FromInclusive", __v.asInstanceOf[js.Any]))
-      ToExclusive.foreach(__v => __obj.update("ToExclusive", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FromInclusive.foreach(__v => __obj.updateDynamic("FromInclusive")(__v.asInstanceOf[js.Any]))
+      ToExclusive.foreach(__v => __obj.updateDynamic("ToExclusive")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TimeRange]
     }
   }
@@ -1027,8 +1027,8 @@ package shield {
     def apply(
         EmergencyContactList: js.UndefOr[EmergencyContactList] = js.undefined
     ): UpdateEmergencyContactSettingsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EmergencyContactList.foreach(__v => __obj.update("EmergencyContactList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EmergencyContactList.foreach(__v => __obj.updateDynamic("EmergencyContactList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateEmergencyContactSettingsRequest]
     }
   }
@@ -1039,7 +1039,7 @@ package shield {
   object UpdateEmergencyContactSettingsResponse {
     def apply(
         ): UpdateEmergencyContactSettingsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateEmergencyContactSettingsResponse]
     }
@@ -1054,8 +1054,8 @@ package shield {
     def apply(
         AutoRenew: js.UndefOr[AutoRenew] = js.undefined
     ): UpdateSubscriptionRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AutoRenew.foreach(__v => __obj.update("AutoRenew", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AutoRenew.foreach(__v => __obj.updateDynamic("AutoRenew")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSubscriptionRequest]
     }
   }
@@ -1066,7 +1066,7 @@ package shield {
   object UpdateSubscriptionResponse {
     def apply(
         ): UpdateSubscriptionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateSubscriptionResponse]
     }

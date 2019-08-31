@@ -180,7 +180,7 @@ package workmail {
         OrganizationId: OrganizationId,
         ResourceId: ResourceId
     ): AssociateDelegateToResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EntityId"       -> EntityId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
         "ResourceId"     -> ResourceId.asInstanceOf[js.Any]
@@ -196,7 +196,7 @@ package workmail {
   object AssociateDelegateToResourceResponse {
     def apply(
         ): AssociateDelegateToResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateDelegateToResourceResponse]
     }
@@ -215,7 +215,7 @@ package workmail {
         MemberId: WorkMailIdentifier,
         OrganizationId: OrganizationId
     ): AssociateMemberToGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupId"        -> GroupId.asInstanceOf[js.Any],
         "MemberId"       -> MemberId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
@@ -231,7 +231,7 @@ package workmail {
   object AssociateMemberToGroupResponse {
     def apply(
         ): AssociateMemberToGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateMemberToGroupResponse]
     }
@@ -253,13 +253,13 @@ package workmail {
         AutoDeclineConflictingRequests: js.UndefOr[Boolean] = js.undefined,
         AutoDeclineRecurringRequests: js.UndefOr[Boolean] = js.undefined
     ): BookingOptions = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AutoAcceptRequests.foreach(__v => __obj.update("AutoAcceptRequests", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AutoAcceptRequests.foreach(__v => __obj.updateDynamic("AutoAcceptRequests")(__v.asInstanceOf[js.Any]))
       AutoDeclineConflictingRequests.foreach(
-        __v => __obj.update("AutoDeclineConflictingRequests", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("AutoDeclineConflictingRequests")(__v.asInstanceOf[js.Any])
       )
       AutoDeclineRecurringRequests.foreach(
-        __v => __obj.update("AutoDeclineRecurringRequests", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("AutoDeclineRecurringRequests")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[BookingOptions]
     }
@@ -278,7 +278,7 @@ package workmail {
         EntityId: WorkMailIdentifier,
         OrganizationId: OrganizationId
     ): CreateAliasRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Alias"          -> Alias.asInstanceOf[js.Any],
         "EntityId"       -> EntityId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
@@ -294,7 +294,7 @@ package workmail {
   object CreateAliasResponse {
     def apply(
         ): CreateAliasResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateAliasResponse]
     }
@@ -311,7 +311,7 @@ package workmail {
         Name: GroupName,
         OrganizationId: OrganizationId
     ): CreateGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"           -> Name.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
@@ -329,8 +329,8 @@ package workmail {
     def apply(
         GroupId: js.UndefOr[WorkMailIdentifier] = js.undefined
     ): CreateGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GroupId.foreach(__v => __obj.update("GroupId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GroupId.foreach(__v => __obj.updateDynamic("GroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGroupResponse]
     }
   }
@@ -348,7 +348,7 @@ package workmail {
         OrganizationId: OrganizationId,
         Type: ResourceType
     ): CreateResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"           -> Name.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
         "Type"           -> Type.asInstanceOf[js.Any]
@@ -367,8 +367,8 @@ package workmail {
     def apply(
         ResourceId: js.UndefOr[ResourceId] = js.undefined
     ): CreateResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateResourceResponse]
     }
   }
@@ -388,7 +388,7 @@ package workmail {
         OrganizationId: OrganizationId,
         Password: Password
     ): CreateUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DisplayName"    -> DisplayName.asInstanceOf[js.Any],
         "Name"           -> Name.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
@@ -408,8 +408,8 @@ package workmail {
     def apply(
         UserId: js.UndefOr[WorkMailIdentifier] = js.undefined
     ): CreateUserResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      UserId.foreach(__v => __obj.update("UserId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      UserId.foreach(__v => __obj.updateDynamic("UserId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateUserResponse]
     }
   }
@@ -428,7 +428,7 @@ package workmail {
         Id: String,
         Type: MemberType
     ): Delegate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id"   -> Id.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
@@ -450,7 +450,7 @@ package workmail {
         EntityId: WorkMailIdentifier,
         OrganizationId: OrganizationId
     ): DeleteAliasRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Alias"          -> Alias.asInstanceOf[js.Any],
         "EntityId"       -> EntityId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
@@ -466,7 +466,7 @@ package workmail {
   object DeleteAliasResponse {
     def apply(
         ): DeleteAliasResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteAliasResponse]
     }
@@ -483,7 +483,7 @@ package workmail {
         GroupId: WorkMailIdentifier,
         OrganizationId: OrganizationId
     ): DeleteGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupId"        -> GroupId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
@@ -498,7 +498,7 @@ package workmail {
   object DeleteGroupResponse {
     def apply(
         ): DeleteGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteGroupResponse]
     }
@@ -517,7 +517,7 @@ package workmail {
         GranteeId: WorkMailIdentifier,
         OrganizationId: OrganizationId
     ): DeleteMailboxPermissionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EntityId"       -> EntityId.asInstanceOf[js.Any],
         "GranteeId"      -> GranteeId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
@@ -533,7 +533,7 @@ package workmail {
   object DeleteMailboxPermissionsResponse {
     def apply(
         ): DeleteMailboxPermissionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteMailboxPermissionsResponse]
     }
@@ -550,7 +550,7 @@ package workmail {
         OrganizationId: OrganizationId,
         ResourceId: ResourceId
     ): DeleteResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
         "ResourceId"     -> ResourceId.asInstanceOf[js.Any]
       )
@@ -565,7 +565,7 @@ package workmail {
   object DeleteResourceResponse {
     def apply(
         ): DeleteResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteResourceResponse]
     }
@@ -582,7 +582,7 @@ package workmail {
         OrganizationId: OrganizationId,
         UserId: WorkMailIdentifier
     ): DeleteUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
         "UserId"         -> UserId.asInstanceOf[js.Any]
       )
@@ -597,7 +597,7 @@ package workmail {
   object DeleteUserResponse {
     def apply(
         ): DeleteUserResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteUserResponse]
     }
@@ -614,7 +614,7 @@ package workmail {
         EntityId: WorkMailIdentifier,
         OrganizationId: OrganizationId
     ): DeregisterFromWorkMailRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EntityId"       -> EntityId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
@@ -629,7 +629,7 @@ package workmail {
   object DeregisterFromWorkMailResponse {
     def apply(
         ): DeregisterFromWorkMailResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeregisterFromWorkMailResponse]
     }
@@ -646,7 +646,7 @@ package workmail {
         GroupId: WorkMailIdentifier,
         OrganizationId: OrganizationId
     ): DescribeGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupId"        -> GroupId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
@@ -674,13 +674,13 @@ package workmail {
         Name: js.UndefOr[GroupName] = js.undefined,
         State: js.UndefOr[EntityState] = js.undefined
     ): DescribeGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DisabledDate.foreach(__v => __obj.update("DisabledDate", __v.asInstanceOf[js.Any]))
-      Email.foreach(__v => __obj.update("Email", __v.asInstanceOf[js.Any]))
-      EnabledDate.foreach(__v => __obj.update("EnabledDate", __v.asInstanceOf[js.Any]))
-      GroupId.foreach(__v => __obj.update("GroupId", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DisabledDate.foreach(__v => __obj.updateDynamic("DisabledDate")(__v.asInstanceOf[js.Any]))
+      Email.foreach(__v => __obj.updateDynamic("Email")(__v.asInstanceOf[js.Any]))
+      EnabledDate.foreach(__v => __obj.updateDynamic("EnabledDate")(__v.asInstanceOf[js.Any]))
+      GroupId.foreach(__v => __obj.updateDynamic("GroupId")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeGroupResponse]
     }
   }
@@ -694,7 +694,7 @@ package workmail {
     def apply(
         OrganizationId: OrganizationId
     ): DescribeOrganizationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
 
@@ -725,15 +725,15 @@ package workmail {
         OrganizationId: js.UndefOr[OrganizationId] = js.undefined,
         State: js.UndefOr[String] = js.undefined
     ): DescribeOrganizationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Alias.foreach(__v => __obj.update("Alias", __v.asInstanceOf[js.Any]))
-      CompletedDate.foreach(__v => __obj.update("CompletedDate", __v.asInstanceOf[js.Any]))
-      DefaultMailDomain.foreach(__v => __obj.update("DefaultMailDomain", __v.asInstanceOf[js.Any]))
-      DirectoryId.foreach(__v => __obj.update("DirectoryId", __v.asInstanceOf[js.Any]))
-      DirectoryType.foreach(__v => __obj.update("DirectoryType", __v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
-      OrganizationId.foreach(__v => __obj.update("OrganizationId", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Alias.foreach(__v => __obj.updateDynamic("Alias")(__v.asInstanceOf[js.Any]))
+      CompletedDate.foreach(__v => __obj.updateDynamic("CompletedDate")(__v.asInstanceOf[js.Any]))
+      DefaultMailDomain.foreach(__v => __obj.updateDynamic("DefaultMailDomain")(__v.asInstanceOf[js.Any]))
+      DirectoryId.foreach(__v => __obj.updateDynamic("DirectoryId")(__v.asInstanceOf[js.Any]))
+      DirectoryType.foreach(__v => __obj.updateDynamic("DirectoryType")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      OrganizationId.foreach(__v => __obj.updateDynamic("OrganizationId")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeOrganizationResponse]
     }
   }
@@ -749,7 +749,7 @@ package workmail {
         OrganizationId: OrganizationId,
         ResourceId: ResourceId
     ): DescribeResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
         "ResourceId"     -> ResourceId.asInstanceOf[js.Any]
       )
@@ -781,15 +781,15 @@ package workmail {
         State: js.UndefOr[EntityState] = js.undefined,
         Type: js.UndefOr[ResourceType] = js.undefined
     ): DescribeResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BookingOptions.foreach(__v => __obj.update("BookingOptions", __v.asInstanceOf[js.Any]))
-      DisabledDate.foreach(__v => __obj.update("DisabledDate", __v.asInstanceOf[js.Any]))
-      Email.foreach(__v => __obj.update("Email", __v.asInstanceOf[js.Any]))
-      EnabledDate.foreach(__v => __obj.update("EnabledDate", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BookingOptions.foreach(__v => __obj.updateDynamic("BookingOptions")(__v.asInstanceOf[js.Any]))
+      DisabledDate.foreach(__v => __obj.updateDynamic("DisabledDate")(__v.asInstanceOf[js.Any]))
+      Email.foreach(__v => __obj.updateDynamic("Email")(__v.asInstanceOf[js.Any]))
+      EnabledDate.foreach(__v => __obj.updateDynamic("EnabledDate")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeResourceResponse]
     }
   }
@@ -805,7 +805,7 @@ package workmail {
         OrganizationId: OrganizationId,
         UserId: WorkMailIdentifier
     ): DescribeUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
         "UserId"         -> UserId.asInstanceOf[js.Any]
       )
@@ -837,15 +837,15 @@ package workmail {
         UserId: js.UndefOr[WorkMailIdentifier] = js.undefined,
         UserRole: js.UndefOr[UserRole] = js.undefined
     ): DescribeUserResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DisabledDate.foreach(__v => __obj.update("DisabledDate", __v.asInstanceOf[js.Any]))
-      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
-      Email.foreach(__v => __obj.update("Email", __v.asInstanceOf[js.Any]))
-      EnabledDate.foreach(__v => __obj.update("EnabledDate", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
-      UserId.foreach(__v => __obj.update("UserId", __v.asInstanceOf[js.Any]))
-      UserRole.foreach(__v => __obj.update("UserRole", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DisabledDate.foreach(__v => __obj.updateDynamic("DisabledDate")(__v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
+      Email.foreach(__v => __obj.updateDynamic("Email")(__v.asInstanceOf[js.Any]))
+      EnabledDate.foreach(__v => __obj.updateDynamic("EnabledDate")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      UserId.foreach(__v => __obj.updateDynamic("UserId")(__v.asInstanceOf[js.Any]))
+      UserRole.foreach(__v => __obj.updateDynamic("UserRole")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeUserResponse]
     }
   }
@@ -863,7 +863,7 @@ package workmail {
         OrganizationId: OrganizationId,
         ResourceId: ResourceId
     ): DisassociateDelegateFromResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EntityId"       -> EntityId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
         "ResourceId"     -> ResourceId.asInstanceOf[js.Any]
@@ -879,7 +879,7 @@ package workmail {
   object DisassociateDelegateFromResourceResponse {
     def apply(
         ): DisassociateDelegateFromResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateDelegateFromResourceResponse]
     }
@@ -898,7 +898,7 @@ package workmail {
         MemberId: WorkMailIdentifier,
         OrganizationId: OrganizationId
     ): DisassociateMemberFromGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupId"        -> GroupId.asInstanceOf[js.Any],
         "MemberId"       -> MemberId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
@@ -914,7 +914,7 @@ package workmail {
   object DisassociateMemberFromGroupResponse {
     def apply(
         ): DisassociateMemberFromGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateMemberFromGroupResponse]
     }
@@ -939,7 +939,7 @@ package workmail {
         OrganizationId: OrganizationId,
         UserId: WorkMailIdentifier
     ): GetMailboxDetailsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
         "UserId"         -> UserId.asInstanceOf[js.Any]
       )
@@ -959,9 +959,9 @@ package workmail {
         MailboxQuota: js.UndefOr[MailboxQuota] = js.undefined,
         MailboxSize: js.UndefOr[MailboxSize] = js.undefined
     ): GetMailboxDetailsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MailboxQuota.foreach(__v => __obj.update("MailboxQuota", __v.asInstanceOf[js.Any]))
-      MailboxSize.foreach(__v => __obj.update("MailboxSize", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MailboxQuota.foreach(__v => __obj.updateDynamic("MailboxQuota")(__v.asInstanceOf[js.Any]))
+      MailboxSize.foreach(__v => __obj.updateDynamic("MailboxSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMailboxDetailsResponse]
     }
   }
@@ -988,13 +988,13 @@ package workmail {
         Name: js.UndefOr[GroupName] = js.undefined,
         State: js.UndefOr[EntityState] = js.undefined
     ): Group = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DisabledDate.foreach(__v => __obj.update("DisabledDate", __v.asInstanceOf[js.Any]))
-      Email.foreach(__v => __obj.update("Email", __v.asInstanceOf[js.Any]))
-      EnabledDate.foreach(__v => __obj.update("EnabledDate", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DisabledDate.foreach(__v => __obj.updateDynamic("DisabledDate")(__v.asInstanceOf[js.Any]))
+      Email.foreach(__v => __obj.updateDynamic("Email")(__v.asInstanceOf[js.Any]))
+      EnabledDate.foreach(__v => __obj.updateDynamic("EnabledDate")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Group]
     }
   }
@@ -1014,13 +1014,13 @@ package workmail {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListAliasesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EntityId"       -> EntityId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAliasesRequest]
     }
   }
@@ -1036,9 +1036,9 @@ package workmail {
         Aliases: js.UndefOr[Aliases] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListAliasesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Aliases.foreach(__v => __obj.update("Aliases", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Aliases.foreach(__v => __obj.updateDynamic("Aliases")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAliasesResponse]
     }
   }
@@ -1058,13 +1058,13 @@ package workmail {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListGroupMembersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupId"        -> GroupId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGroupMembersRequest]
     }
   }
@@ -1080,9 +1080,9 @@ package workmail {
         Members: js.UndefOr[Members] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListGroupMembersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Members.foreach(__v => __obj.update("Members", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Members.foreach(__v => __obj.updateDynamic("Members")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGroupMembersResponse]
     }
   }
@@ -1100,12 +1100,12 @@ package workmail {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListGroupsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGroupsRequest]
     }
   }
@@ -1121,9 +1121,9 @@ package workmail {
         Groups: js.UndefOr[Groups] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListGroupsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Groups.foreach(__v => __obj.update("Groups", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Groups.foreach(__v => __obj.updateDynamic("Groups")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGroupsResponse]
     }
   }
@@ -1143,13 +1143,13 @@ package workmail {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListMailboxPermissionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EntityId"       -> EntityId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListMailboxPermissionsRequest]
     }
   }
@@ -1165,9 +1165,9 @@ package workmail {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Permissions: js.UndefOr[Permissions] = js.undefined
     ): ListMailboxPermissionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Permissions.foreach(__v => __obj.update("Permissions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListMailboxPermissionsResponse]
     }
   }
@@ -1183,9 +1183,9 @@ package workmail {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListOrganizationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListOrganizationsRequest]
     }
   }
@@ -1201,9 +1201,9 @@ package workmail {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         OrganizationSummaries: js.UndefOr[OrganizationSummaries] = js.undefined
     ): ListOrganizationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      OrganizationSummaries.foreach(__v => __obj.update("OrganizationSummaries", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      OrganizationSummaries.foreach(__v => __obj.updateDynamic("OrganizationSummaries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListOrganizationsResponse]
     }
   }
@@ -1223,13 +1223,13 @@ package workmail {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListResourceDelegatesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
         "ResourceId"     -> ResourceId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResourceDelegatesRequest]
     }
   }
@@ -1245,9 +1245,9 @@ package workmail {
         Delegates: js.UndefOr[ResourceDelegates] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListResourceDelegatesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Delegates.foreach(__v => __obj.update("Delegates", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Delegates.foreach(__v => __obj.updateDynamic("Delegates")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResourceDelegatesResponse]
     }
   }
@@ -1265,12 +1265,12 @@ package workmail {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListResourcesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResourcesRequest]
     }
   }
@@ -1286,9 +1286,9 @@ package workmail {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Resources: js.UndefOr[Resources] = js.undefined
     ): ListResourcesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Resources.foreach(__v => __obj.update("Resources", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResourcesResponse]
     }
   }
@@ -1306,12 +1306,12 @@ package workmail {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListUsersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListUsersRequest]
     }
   }
@@ -1327,9 +1327,9 @@ package workmail {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Users: js.UndefOr[Users] = js.undefined
     ): ListUsersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Users.foreach(__v => __obj.update("Users", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Users.foreach(__v => __obj.updateDynamic("Users")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListUsersResponse]
     }
   }
@@ -1356,13 +1356,13 @@ package workmail {
         State: js.UndefOr[EntityState] = js.undefined,
         Type: js.UndefOr[MemberType] = js.undefined
     ): Member = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DisabledDate.foreach(__v => __obj.update("DisabledDate", __v.asInstanceOf[js.Any]))
-      EnabledDate.foreach(__v => __obj.update("EnabledDate", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DisabledDate.foreach(__v => __obj.updateDynamic("DisabledDate")(__v.asInstanceOf[js.Any]))
+      EnabledDate.foreach(__v => __obj.updateDynamic("EnabledDate")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Member]
     }
   }
@@ -1392,11 +1392,11 @@ package workmail {
         OrganizationId: js.UndefOr[OrganizationId] = js.undefined,
         State: js.UndefOr[String] = js.undefined
     ): OrganizationSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Alias.foreach(__v => __obj.update("Alias", __v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
-      OrganizationId.foreach(__v => __obj.update("OrganizationId", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Alias.foreach(__v => __obj.updateDynamic("Alias")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      OrganizationId.foreach(__v => __obj.updateDynamic("OrganizationId")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OrganizationSummary]
     }
   }
@@ -1417,7 +1417,7 @@ package workmail {
         GranteeType: MemberType,
         PermissionValues: PermissionValues
     ): Permission = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GranteeId"        -> GranteeId.asInstanceOf[js.Any],
         "GranteeType"      -> GranteeType.asInstanceOf[js.Any],
         "PermissionValues" -> PermissionValues.asInstanceOf[js.Any]
@@ -1450,7 +1450,7 @@ package workmail {
         OrganizationId: OrganizationId,
         PermissionValues: PermissionValues
     ): PutMailboxPermissionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EntityId"         -> EntityId.asInstanceOf[js.Any],
         "GranteeId"        -> GranteeId.asInstanceOf[js.Any],
         "OrganizationId"   -> OrganizationId.asInstanceOf[js.Any],
@@ -1467,7 +1467,7 @@ package workmail {
   object PutMailboxPermissionsResponse {
     def apply(
         ): PutMailboxPermissionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutMailboxPermissionsResponse]
     }
@@ -1486,7 +1486,7 @@ package workmail {
         EntityId: WorkMailIdentifier,
         OrganizationId: OrganizationId
     ): RegisterToWorkMailRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Email"          -> Email.asInstanceOf[js.Any],
         "EntityId"       -> EntityId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
@@ -1502,7 +1502,7 @@ package workmail {
   object RegisterToWorkMailResponse {
     def apply(
         ): RegisterToWorkMailResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RegisterToWorkMailResponse]
     }
@@ -1521,7 +1521,7 @@ package workmail {
         Password: Password,
         UserId: WorkMailIdentifier
     ): ResetPasswordRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
         "Password"       -> Password.asInstanceOf[js.Any],
         "UserId"         -> UserId.asInstanceOf[js.Any]
@@ -1537,7 +1537,7 @@ package workmail {
   object ResetPasswordResponse {
     def apply(
         ): ResetPasswordResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ResetPasswordResponse]
     }
@@ -1567,14 +1567,14 @@ package workmail {
         State: js.UndefOr[EntityState] = js.undefined,
         Type: js.UndefOr[ResourceType] = js.undefined
     ): Resource = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DisabledDate.foreach(__v => __obj.update("DisabledDate", __v.asInstanceOf[js.Any]))
-      Email.foreach(__v => __obj.update("Email", __v.asInstanceOf[js.Any]))
-      EnabledDate.foreach(__v => __obj.update("EnabledDate", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DisabledDate.foreach(__v => __obj.updateDynamic("DisabledDate")(__v.asInstanceOf[js.Any]))
+      Email.foreach(__v => __obj.updateDynamic("Email")(__v.asInstanceOf[js.Any]))
+      EnabledDate.foreach(__v => __obj.updateDynamic("EnabledDate")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Resource]
     }
   }
@@ -1599,7 +1599,7 @@ package workmail {
         OrganizationId: OrganizationId,
         UserId: WorkMailIdentifier
     ): UpdateMailboxQuotaRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MailboxQuota"   -> MailboxQuota.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
         "UserId"         -> UserId.asInstanceOf[js.Any]
@@ -1615,7 +1615,7 @@ package workmail {
   object UpdateMailboxQuotaResponse {
     def apply(
         ): UpdateMailboxQuotaResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateMailboxQuotaResponse]
     }
@@ -1634,7 +1634,7 @@ package workmail {
         EntityId: WorkMailIdentifier,
         OrganizationId: OrganizationId
     ): UpdatePrimaryEmailAddressRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Email"          -> Email.asInstanceOf[js.Any],
         "EntityId"       -> EntityId.asInstanceOf[js.Any],
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
@@ -1650,7 +1650,7 @@ package workmail {
   object UpdatePrimaryEmailAddressResponse {
     def apply(
         ): UpdatePrimaryEmailAddressResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdatePrimaryEmailAddressResponse]
     }
@@ -1671,13 +1671,13 @@ package workmail {
         BookingOptions: js.UndefOr[BookingOptions] = js.undefined,
         Name: js.UndefOr[ResourceName] = js.undefined
     ): UpdateResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
         "ResourceId"     -> ResourceId.asInstanceOf[js.Any]
       )
 
-      BookingOptions.foreach(__v => __obj.update("BookingOptions", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      BookingOptions.foreach(__v => __obj.updateDynamic("BookingOptions")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateResourceRequest]
     }
   }
@@ -1688,7 +1688,7 @@ package workmail {
   object UpdateResourceResponse {
     def apply(
         ): UpdateResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateResourceResponse]
     }
@@ -1720,15 +1720,15 @@ package workmail {
         State: js.UndefOr[EntityState] = js.undefined,
         UserRole: js.UndefOr[UserRole] = js.undefined
     ): User = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DisabledDate.foreach(__v => __obj.update("DisabledDate", __v.asInstanceOf[js.Any]))
-      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
-      Email.foreach(__v => __obj.update("Email", __v.asInstanceOf[js.Any]))
-      EnabledDate.foreach(__v => __obj.update("EnabledDate", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
-      UserRole.foreach(__v => __obj.update("UserRole", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DisabledDate.foreach(__v => __obj.updateDynamic("DisabledDate")(__v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
+      Email.foreach(__v => __obj.updateDynamic("Email")(__v.asInstanceOf[js.Any]))
+      EnabledDate.foreach(__v => __obj.updateDynamic("EnabledDate")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      UserRole.foreach(__v => __obj.updateDynamic("UserRole")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[User]
     }
   }

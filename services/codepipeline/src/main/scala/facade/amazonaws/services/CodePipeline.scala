@@ -270,7 +270,7 @@ package codepipeline {
         secretAccessKey: SecretAccessKey,
         sessionToken: SessionToken
     ): AWSSessionCredentials = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accessKeyId"     -> accessKeyId.asInstanceOf[js.Any],
         "secretAccessKey" -> secretAccessKey.asInstanceOf[js.Any],
         "sessionToken"    -> sessionToken.asInstanceOf[js.Any]
@@ -294,7 +294,7 @@ package codepipeline {
         jobId: JobId,
         nonce: Nonce
     ): AcknowledgeJobInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobId" -> jobId.asInstanceOf[js.Any],
         "nonce" -> nonce.asInstanceOf[js.Any]
       )
@@ -315,8 +315,8 @@ package codepipeline {
     def apply(
         status: js.UndefOr[JobStatus] = js.undefined
     ): AcknowledgeJobOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AcknowledgeJobOutput]
     }
   }
@@ -337,7 +337,7 @@ package codepipeline {
         jobId: ThirdPartyJobId,
         nonce: Nonce
     ): AcknowledgeThirdPartyJobInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "clientToken" -> clientToken.asInstanceOf[js.Any],
         "jobId"       -> jobId.asInstanceOf[js.Any],
         "nonce"       -> nonce.asInstanceOf[js.Any]
@@ -359,8 +359,8 @@ package codepipeline {
     def apply(
         status: js.UndefOr[JobStatus] = js.undefined
     ): AcknowledgeThirdPartyJobOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AcknowledgeThirdPartyJobOutput]
     }
   }
@@ -388,8 +388,8 @@ package codepipeline {
     def apply(
         configuration: js.UndefOr[ActionConfigurationMap] = js.undefined
     ): ActionConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      configuration.foreach(__v => __obj.update("configuration", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActionConfiguration]
     }
   }
@@ -418,16 +418,16 @@ package codepipeline {
         queryable: js.UndefOr[Boolean] = js.undefined,
         `type`: js.UndefOr[ActionConfigurationPropertyType] = js.undefined
     ): ActionConfigurationProperty = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "key"      -> key.asInstanceOf[js.Any],
         "name"     -> name.asInstanceOf[js.Any],
         "required" -> required.asInstanceOf[js.Any],
         "secret"   -> secret.asInstanceOf[js.Any]
       )
 
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      queryable.foreach(__v => __obj.update("queryable", __v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      queryable.foreach(__v => __obj.updateDynamic("queryable")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActionConfigurationProperty]
     }
   }
@@ -454,9 +454,9 @@ package codepipeline {
         actionExecutionId: js.UndefOr[ActionExecutionId] = js.undefined,
         name: js.UndefOr[ActionName] = js.undefined
     ): ActionContext = {
-      val __obj = js.Dictionary.empty[js.Any]
-      actionExecutionId.foreach(__v => __obj.update("actionExecutionId", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      actionExecutionId.foreach(__v => __obj.updateDynamic("actionExecutionId")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActionContext]
     }
   }
@@ -487,17 +487,17 @@ package codepipeline {
         roleArn: js.UndefOr[RoleArn] = js.undefined,
         runOrder: js.UndefOr[ActionRunOrder] = js.undefined
     ): ActionDeclaration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "actionTypeId" -> actionTypeId.asInstanceOf[js.Any],
         "name"         -> name.asInstanceOf[js.Any]
       )
 
-      configuration.foreach(__v => __obj.update("configuration", __v.asInstanceOf[js.Any]))
-      inputArtifacts.foreach(__v => __obj.update("inputArtifacts", __v.asInstanceOf[js.Any]))
-      outputArtifacts.foreach(__v => __obj.update("outputArtifacts", __v.asInstanceOf[js.Any]))
-      region.foreach(__v => __obj.update("region", __v.asInstanceOf[js.Any]))
-      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
-      runOrder.foreach(__v => __obj.update("runOrder", __v.asInstanceOf[js.Any]))
+      configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
+      inputArtifacts.foreach(__v => __obj.updateDynamic("inputArtifacts")(__v.asInstanceOf[js.Any]))
+      outputArtifacts.foreach(__v => __obj.updateDynamic("outputArtifacts")(__v.asInstanceOf[js.Any]))
+      region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
+      runOrder.foreach(__v => __obj.updateDynamic("runOrder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActionDeclaration]
     }
   }
@@ -530,16 +530,16 @@ package codepipeline {
         summary: js.UndefOr[ExecutionSummary] = js.undefined,
         token: js.UndefOr[ActionExecutionToken] = js.undefined
     ): ActionExecution = {
-      val __obj = js.Dictionary.empty[js.Any]
-      errorDetails.foreach(__v => __obj.update("errorDetails", __v.asInstanceOf[js.Any]))
-      externalExecutionId.foreach(__v => __obj.update("externalExecutionId", __v.asInstanceOf[js.Any]))
-      externalExecutionUrl.foreach(__v => __obj.update("externalExecutionUrl", __v.asInstanceOf[js.Any]))
-      lastStatusChange.foreach(__v => __obj.update("lastStatusChange", __v.asInstanceOf[js.Any]))
-      lastUpdatedBy.foreach(__v => __obj.update("lastUpdatedBy", __v.asInstanceOf[js.Any]))
-      percentComplete.foreach(__v => __obj.update("percentComplete", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      summary.foreach(__v => __obj.update("summary", __v.asInstanceOf[js.Any]))
-      token.foreach(__v => __obj.update("token", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      errorDetails.foreach(__v => __obj.updateDynamic("errorDetails")(__v.asInstanceOf[js.Any]))
+      externalExecutionId.foreach(__v => __obj.updateDynamic("externalExecutionId")(__v.asInstanceOf[js.Any]))
+      externalExecutionUrl.foreach(__v => __obj.updateDynamic("externalExecutionUrl")(__v.asInstanceOf[js.Any]))
+      lastStatusChange.foreach(__v => __obj.updateDynamic("lastStatusChange")(__v.asInstanceOf[js.Any]))
+      lastUpdatedBy.foreach(__v => __obj.updateDynamic("lastUpdatedBy")(__v.asInstanceOf[js.Any]))
+      percentComplete.foreach(__v => __obj.updateDynamic("percentComplete")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      summary.foreach(__v => __obj.updateDynamic("summary")(__v.asInstanceOf[js.Any]))
+      token.foreach(__v => __obj.updateDynamic("token")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActionExecution]
     }
   }
@@ -574,17 +574,17 @@ package codepipeline {
         startTime: js.UndefOr[Timestamp] = js.undefined,
         status: js.UndefOr[ActionExecutionStatus] = js.undefined
     ): ActionExecutionDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      actionExecutionId.foreach(__v => __obj.update("actionExecutionId", __v.asInstanceOf[js.Any]))
-      actionName.foreach(__v => __obj.update("actionName", __v.asInstanceOf[js.Any]))
-      input.foreach(__v => __obj.update("input", __v.asInstanceOf[js.Any]))
-      lastUpdateTime.foreach(__v => __obj.update("lastUpdateTime", __v.asInstanceOf[js.Any]))
-      output.foreach(__v => __obj.update("output", __v.asInstanceOf[js.Any]))
-      pipelineExecutionId.foreach(__v => __obj.update("pipelineExecutionId", __v.asInstanceOf[js.Any]))
-      pipelineVersion.foreach(__v => __obj.update("pipelineVersion", __v.asInstanceOf[js.Any]))
-      stageName.foreach(__v => __obj.update("stageName", __v.asInstanceOf[js.Any]))
-      startTime.foreach(__v => __obj.update("startTime", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      actionExecutionId.foreach(__v => __obj.updateDynamic("actionExecutionId")(__v.asInstanceOf[js.Any]))
+      actionName.foreach(__v => __obj.updateDynamic("actionName")(__v.asInstanceOf[js.Any]))
+      input.foreach(__v => __obj.updateDynamic("input")(__v.asInstanceOf[js.Any]))
+      lastUpdateTime.foreach(__v => __obj.updateDynamic("lastUpdateTime")(__v.asInstanceOf[js.Any]))
+      output.foreach(__v => __obj.updateDynamic("output")(__v.asInstanceOf[js.Any]))
+      pipelineExecutionId.foreach(__v => __obj.updateDynamic("pipelineExecutionId")(__v.asInstanceOf[js.Any]))
+      pipelineVersion.foreach(__v => __obj.updateDynamic("pipelineVersion")(__v.asInstanceOf[js.Any]))
+      stageName.foreach(__v => __obj.updateDynamic("stageName")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActionExecutionDetail]
     }
   }
@@ -601,8 +601,8 @@ package codepipeline {
     def apply(
         pipelineExecutionId: js.UndefOr[PipelineExecutionId] = js.undefined
     ): ActionExecutionFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      pipelineExecutionId.foreach(__v => __obj.update("pipelineExecutionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      pipelineExecutionId.foreach(__v => __obj.updateDynamic("pipelineExecutionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActionExecutionFilter]
     }
   }
@@ -627,12 +627,12 @@ package codepipeline {
         region: js.UndefOr[AWSRegionName] = js.undefined,
         roleArn: js.UndefOr[RoleArn] = js.undefined
     ): ActionExecutionInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      actionTypeId.foreach(__v => __obj.update("actionTypeId", __v.asInstanceOf[js.Any]))
-      configuration.foreach(__v => __obj.update("configuration", __v.asInstanceOf[js.Any]))
-      inputArtifacts.foreach(__v => __obj.update("inputArtifacts", __v.asInstanceOf[js.Any]))
-      region.foreach(__v => __obj.update("region", __v.asInstanceOf[js.Any]))
-      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      actionTypeId.foreach(__v => __obj.updateDynamic("actionTypeId")(__v.asInstanceOf[js.Any]))
+      configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
+      inputArtifacts.foreach(__v => __obj.updateDynamic("inputArtifacts")(__v.asInstanceOf[js.Any]))
+      region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActionExecutionInput]
     }
   }
@@ -651,9 +651,9 @@ package codepipeline {
         executionResult: js.UndefOr[ActionExecutionResult] = js.undefined,
         outputArtifacts: js.UndefOr[ArtifactDetailList] = js.undefined
     ): ActionExecutionOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      executionResult.foreach(__v => __obj.update("executionResult", __v.asInstanceOf[js.Any]))
-      outputArtifacts.foreach(__v => __obj.update("outputArtifacts", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      executionResult.foreach(__v => __obj.updateDynamic("executionResult")(__v.asInstanceOf[js.Any]))
+      outputArtifacts.foreach(__v => __obj.updateDynamic("outputArtifacts")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActionExecutionOutput]
     }
   }
@@ -674,10 +674,10 @@ package codepipeline {
         externalExecutionSummary: js.UndefOr[ExternalExecutionSummary] = js.undefined,
         externalExecutionUrl: js.UndefOr[Url] = js.undefined
     ): ActionExecutionResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      externalExecutionId.foreach(__v => __obj.update("externalExecutionId", __v.asInstanceOf[js.Any]))
-      externalExecutionSummary.foreach(__v => __obj.update("externalExecutionSummary", __v.asInstanceOf[js.Any]))
-      externalExecutionUrl.foreach(__v => __obj.update("externalExecutionUrl", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      externalExecutionId.foreach(__v => __obj.updateDynamic("externalExecutionId")(__v.asInstanceOf[js.Any]))
+      externalExecutionSummary.foreach(__v => __obj.updateDynamic("externalExecutionSummary")(__v.asInstanceOf[js.Any]))
+      externalExecutionUrl.foreach(__v => __obj.updateDynamic("externalExecutionUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActionExecutionResult]
     }
   }
@@ -714,7 +714,7 @@ package codepipeline {
         revisionChangeId: RevisionChangeIdentifier,
         revisionId: Revision
     ): ActionRevision = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "created"          -> created.asInstanceOf[js.Any],
         "revisionChangeId" -> revisionChangeId.asInstanceOf[js.Any],
         "revisionId"       -> revisionId.asInstanceOf[js.Any]
@@ -744,12 +744,12 @@ package codepipeline {
         latestExecution: js.UndefOr[ActionExecution] = js.undefined,
         revisionUrl: js.UndefOr[Url] = js.undefined
     ): ActionState = {
-      val __obj = js.Dictionary.empty[js.Any]
-      actionName.foreach(__v => __obj.update("actionName", __v.asInstanceOf[js.Any]))
-      currentRevision.foreach(__v => __obj.update("currentRevision", __v.asInstanceOf[js.Any]))
-      entityUrl.foreach(__v => __obj.update("entityUrl", __v.asInstanceOf[js.Any]))
-      latestExecution.foreach(__v => __obj.update("latestExecution", __v.asInstanceOf[js.Any]))
-      revisionUrl.foreach(__v => __obj.update("revisionUrl", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      actionName.foreach(__v => __obj.updateDynamic("actionName")(__v.asInstanceOf[js.Any]))
+      currentRevision.foreach(__v => __obj.updateDynamic("currentRevision")(__v.asInstanceOf[js.Any]))
+      entityUrl.foreach(__v => __obj.updateDynamic("entityUrl")(__v.asInstanceOf[js.Any]))
+      latestExecution.foreach(__v => __obj.updateDynamic("latestExecution")(__v.asInstanceOf[js.Any]))
+      revisionUrl.foreach(__v => __obj.updateDynamic("revisionUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActionState]
     }
   }
@@ -774,16 +774,16 @@ package codepipeline {
         actionConfigurationProperties: js.UndefOr[ActionConfigurationPropertyList] = js.undefined,
         settings: js.UndefOr[ActionTypeSettings] = js.undefined
     ): ActionType = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "id"                    -> id.asInstanceOf[js.Any],
         "inputArtifactDetails"  -> inputArtifactDetails.asInstanceOf[js.Any],
         "outputArtifactDetails" -> outputArtifactDetails.asInstanceOf[js.Any]
       )
 
       actionConfigurationProperties.foreach(
-        __v => __obj.update("actionConfigurationProperties", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("actionConfigurationProperties")(__v.asInstanceOf[js.Any])
       )
-      settings.foreach(__v => __obj.update("settings", __v.asInstanceOf[js.Any]))
+      settings.foreach(__v => __obj.updateDynamic("settings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActionType]
     }
   }
@@ -806,7 +806,7 @@ package codepipeline {
         provider: ActionProvider,
         version: Version
     ): ActionTypeId = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "category" -> category.asInstanceOf[js.Any],
         "owner"    -> owner.asInstanceOf[js.Any],
         "provider" -> provider.asInstanceOf[js.Any],
@@ -835,11 +835,13 @@ package codepipeline {
         revisionUrlTemplate: js.UndefOr[UrlTemplate] = js.undefined,
         thirdPartyConfigurationUrl: js.UndefOr[Url] = js.undefined
     ): ActionTypeSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      entityUrlTemplate.foreach(__v => __obj.update("entityUrlTemplate", __v.asInstanceOf[js.Any]))
-      executionUrlTemplate.foreach(__v => __obj.update("executionUrlTemplate", __v.asInstanceOf[js.Any]))
-      revisionUrlTemplate.foreach(__v => __obj.update("revisionUrlTemplate", __v.asInstanceOf[js.Any]))
-      thirdPartyConfigurationUrl.foreach(__v => __obj.update("thirdPartyConfigurationUrl", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      entityUrlTemplate.foreach(__v => __obj.updateDynamic("entityUrlTemplate")(__v.asInstanceOf[js.Any]))
+      executionUrlTemplate.foreach(__v => __obj.updateDynamic("executionUrlTemplate")(__v.asInstanceOf[js.Any]))
+      revisionUrlTemplate.foreach(__v => __obj.updateDynamic("revisionUrlTemplate")(__v.asInstanceOf[js.Any]))
+      thirdPartyConfigurationUrl.foreach(
+        __v => __obj.updateDynamic("thirdPartyConfigurationUrl")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[ActionTypeSettings]
     }
   }
@@ -858,7 +860,7 @@ package codepipeline {
         status: ApprovalStatus,
         summary: ApprovalSummary
     ): ApprovalResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "status"  -> status.asInstanceOf[js.Any],
         "summary" -> summary.asInstanceOf[js.Any]
       )
@@ -890,10 +892,10 @@ package codepipeline {
         name: js.UndefOr[ArtifactName] = js.undefined,
         revision: js.UndefOr[Revision] = js.undefined
     ): Artifact = {
-      val __obj = js.Dictionary.empty[js.Any]
-      location.foreach(__v => __obj.update("location", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      revision.foreach(__v => __obj.update("revision", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      revision.foreach(__v => __obj.updateDynamic("revision")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Artifact]
     }
   }
@@ -912,9 +914,9 @@ package codepipeline {
         name: js.UndefOr[ArtifactName] = js.undefined,
         s3location: js.UndefOr[S3Location] = js.undefined
     ): ArtifactDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      s3location.foreach(__v => __obj.update("s3location", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      s3location.foreach(__v => __obj.updateDynamic("s3location")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ArtifactDetail]
     }
   }
@@ -933,7 +935,7 @@ package codepipeline {
         maximumCount: MaximumArtifactCount,
         minimumCount: MinimumArtifactCount
     ): ArtifactDetails = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "maximumCount" -> maximumCount.asInstanceOf[js.Any],
         "minimumCount" -> minimumCount.asInstanceOf[js.Any]
       )
@@ -956,9 +958,9 @@ package codepipeline {
         s3Location: js.UndefOr[S3ArtifactLocation] = js.undefined,
         `type`: js.UndefOr[ArtifactLocationType] = js.undefined
     ): ArtifactLocation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      s3Location.foreach(__v => __obj.update("s3Location", __v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      s3Location.foreach(__v => __obj.updateDynamic("s3Location")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ArtifactLocation]
     }
   }
@@ -991,13 +993,13 @@ package codepipeline {
         revisionSummary: js.UndefOr[RevisionSummary] = js.undefined,
         revisionUrl: js.UndefOr[Url] = js.undefined
     ): ArtifactRevision = {
-      val __obj = js.Dictionary.empty[js.Any]
-      created.foreach(__v => __obj.update("created", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      revisionChangeIdentifier.foreach(__v => __obj.update("revisionChangeIdentifier", __v.asInstanceOf[js.Any]))
-      revisionId.foreach(__v => __obj.update("revisionId", __v.asInstanceOf[js.Any]))
-      revisionSummary.foreach(__v => __obj.update("revisionSummary", __v.asInstanceOf[js.Any]))
-      revisionUrl.foreach(__v => __obj.update("revisionUrl", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      created.foreach(__v => __obj.updateDynamic("created")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      revisionChangeIdentifier.foreach(__v => __obj.updateDynamic("revisionChangeIdentifier")(__v.asInstanceOf[js.Any]))
+      revisionId.foreach(__v => __obj.updateDynamic("revisionId")(__v.asInstanceOf[js.Any]))
+      revisionSummary.foreach(__v => __obj.updateDynamic("revisionSummary")(__v.asInstanceOf[js.Any]))
+      revisionUrl.foreach(__v => __obj.updateDynamic("revisionUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ArtifactRevision]
     }
   }
@@ -1018,12 +1020,12 @@ package codepipeline {
         `type`: ArtifactStoreType,
         encryptionKey: js.UndefOr[EncryptionKey] = js.undefined
     ): ArtifactStore = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "location" -> location.asInstanceOf[js.Any],
         "type"     -> `type`.asInstanceOf[js.Any]
       )
 
-      encryptionKey.foreach(__v => __obj.update("encryptionKey", __v.asInstanceOf[js.Any]))
+      encryptionKey.foreach(__v => __obj.updateDynamic("encryptionKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ArtifactStore]
     }
   }
@@ -1048,7 +1050,7 @@ package codepipeline {
         name: BlockerName,
         `type`: BlockerType
     ): BlockerDeclaration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any],
         "type" -> `type`.asInstanceOf[js.Any]
       )
@@ -1089,7 +1091,7 @@ package codepipeline {
         settings: js.UndefOr[ActionTypeSettings] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateCustomActionTypeInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "category"              -> category.asInstanceOf[js.Any],
         "inputArtifactDetails"  -> inputArtifactDetails.asInstanceOf[js.Any],
         "outputArtifactDetails" -> outputArtifactDetails.asInstanceOf[js.Any],
@@ -1097,9 +1099,9 @@ package codepipeline {
         "version"               -> version.asInstanceOf[js.Any]
       )
 
-      configurationProperties.foreach(__v => __obj.update("configurationProperties", __v.asInstanceOf[js.Any]))
-      settings.foreach(__v => __obj.update("settings", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      configurationProperties.foreach(__v => __obj.updateDynamic("configurationProperties")(__v.asInstanceOf[js.Any]))
+      settings.foreach(__v => __obj.updateDynamic("settings")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCustomActionTypeInput]
     }
   }
@@ -1118,11 +1120,11 @@ package codepipeline {
         actionType: ActionType,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreateCustomActionTypeOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "actionType" -> actionType.asInstanceOf[js.Any]
       )
 
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCustomActionTypeOutput]
     }
   }
@@ -1141,11 +1143,11 @@ package codepipeline {
         pipeline: PipelineDeclaration,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreatePipelineInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pipeline" -> pipeline.asInstanceOf[js.Any]
       )
 
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePipelineInput]
     }
   }
@@ -1164,9 +1166,9 @@ package codepipeline {
         pipeline: js.UndefOr[PipelineDeclaration] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): CreatePipelineOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      pipeline.foreach(__v => __obj.update("pipeline", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      pipeline.foreach(__v => __obj.updateDynamic("pipeline")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePipelineOutput]
     }
   }
@@ -1189,13 +1191,13 @@ package codepipeline {
         created: js.UndefOr[Time] = js.undefined,
         revisionSummary: js.UndefOr[RevisionSummary] = js.undefined
     ): CurrentRevision = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "changeIdentifier" -> changeIdentifier.asInstanceOf[js.Any],
         "revision"         -> revision.asInstanceOf[js.Any]
       )
 
-      created.foreach(__v => __obj.update("created", __v.asInstanceOf[js.Any]))
-      revisionSummary.foreach(__v => __obj.update("revisionSummary", __v.asInstanceOf[js.Any]))
+      created.foreach(__v => __obj.updateDynamic("created")(__v.asInstanceOf[js.Any]))
+      revisionSummary.foreach(__v => __obj.updateDynamic("revisionSummary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CurrentRevision]
     }
   }
@@ -1216,7 +1218,7 @@ package codepipeline {
         provider: ActionProvider,
         version: Version
     ): DeleteCustomActionTypeInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "category" -> category.asInstanceOf[js.Any],
         "provider" -> provider.asInstanceOf[js.Any],
         "version"  -> version.asInstanceOf[js.Any]
@@ -1238,7 +1240,7 @@ package codepipeline {
     def apply(
         name: PipelineName
     ): DeletePipelineInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
 
@@ -1255,7 +1257,7 @@ package codepipeline {
     def apply(
         name: WebhookName
     ): DeleteWebhookInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
 
@@ -1269,7 +1271,7 @@ package codepipeline {
   object DeleteWebhookOutput {
     def apply(
         ): DeleteWebhookOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteWebhookOutput]
     }
@@ -1284,8 +1286,8 @@ package codepipeline {
     def apply(
         webhookName: js.UndefOr[WebhookName] = js.undefined
     ): DeregisterWebhookWithThirdPartyInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      webhookName.foreach(__v => __obj.update("webhookName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      webhookName.foreach(__v => __obj.updateDynamic("webhookName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeregisterWebhookWithThirdPartyInput]
     }
   }
@@ -1296,7 +1298,7 @@ package codepipeline {
   object DeregisterWebhookWithThirdPartyOutput {
     def apply(
         ): DeregisterWebhookWithThirdPartyOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeregisterWebhookWithThirdPartyOutput]
     }
@@ -1320,7 +1322,7 @@ package codepipeline {
         stageName: StageName,
         transitionType: StageTransitionType
     ): DisableStageTransitionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pipelineName"   -> pipelineName.asInstanceOf[js.Any],
         "reason"         -> reason.asInstanceOf[js.Any],
         "stageName"      -> stageName.asInstanceOf[js.Any],
@@ -1347,7 +1349,7 @@ package codepipeline {
         stageName: StageName,
         transitionType: StageTransitionType
     ): EnableStageTransitionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pipelineName"   -> pipelineName.asInstanceOf[js.Any],
         "stageName"      -> stageName.asInstanceOf[js.Any],
         "transitionType" -> transitionType.asInstanceOf[js.Any]
@@ -1371,7 +1373,7 @@ package codepipeline {
         id: EncryptionKeyId,
         `type`: EncryptionKeyType
     ): EncryptionKey = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "id"   -> id.asInstanceOf[js.Any],
         "type" -> `type`.asInstanceOf[js.Any]
       )
@@ -1400,9 +1402,9 @@ package codepipeline {
         code: js.UndefOr[Code] = js.undefined,
         message: js.UndefOr[Message] = js.undefined
     ): ErrorDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      code.foreach(__v => __obj.update("code", __v.asInstanceOf[js.Any]))
-      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ErrorDetails]
     }
   }
@@ -1423,10 +1425,10 @@ package codepipeline {
         percentComplete: js.UndefOr[Percentage] = js.undefined,
         summary: js.UndefOr[ExecutionSummary] = js.undefined
     ): ExecutionDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      externalExecutionId.foreach(__v => __obj.update("externalExecutionId", __v.asInstanceOf[js.Any]))
-      percentComplete.foreach(__v => __obj.update("percentComplete", __v.asInstanceOf[js.Any]))
-      summary.foreach(__v => __obj.update("summary", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      externalExecutionId.foreach(__v => __obj.updateDynamic("externalExecutionId")(__v.asInstanceOf[js.Any]))
+      percentComplete.foreach(__v => __obj.updateDynamic("percentComplete")(__v.asInstanceOf[js.Any]))
+      summary.foreach(__v => __obj.updateDynamic("summary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExecutionDetails]
     }
   }
@@ -1447,12 +1449,12 @@ package codepipeline {
         `type`: FailureType,
         externalExecutionId: js.UndefOr[ExecutionId] = js.undefined
     ): FailureDetails = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "message" -> message.asInstanceOf[js.Any],
         "type"    -> `type`.asInstanceOf[js.Any]
       )
 
-      externalExecutionId.foreach(__v => __obj.update("externalExecutionId", __v.asInstanceOf[js.Any]))
+      externalExecutionId.foreach(__v => __obj.updateDynamic("externalExecutionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FailureDetails]
     }
   }
@@ -1489,7 +1491,7 @@ package codepipeline {
     def apply(
         jobId: JobId
     ): GetJobDetailsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobId" -> jobId.asInstanceOf[js.Any]
       )
 
@@ -1509,8 +1511,8 @@ package codepipeline {
     def apply(
         jobDetails: js.UndefOr[JobDetails] = js.undefined
     ): GetJobDetailsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      jobDetails.foreach(__v => __obj.update("jobDetails", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      jobDetails.foreach(__v => __obj.updateDynamic("jobDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetJobDetailsOutput]
     }
   }
@@ -1529,7 +1531,7 @@ package codepipeline {
         pipelineExecutionId: PipelineExecutionId,
         pipelineName: PipelineName
     ): GetPipelineExecutionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pipelineExecutionId" -> pipelineExecutionId.asInstanceOf[js.Any],
         "pipelineName"        -> pipelineName.asInstanceOf[js.Any]
       )
@@ -1550,8 +1552,8 @@ package codepipeline {
     def apply(
         pipelineExecution: js.UndefOr[PipelineExecution] = js.undefined
     ): GetPipelineExecutionOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      pipelineExecution.foreach(__v => __obj.update("pipelineExecution", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      pipelineExecution.foreach(__v => __obj.updateDynamic("pipelineExecution")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPipelineExecutionOutput]
     }
   }
@@ -1570,11 +1572,11 @@ package codepipeline {
         name: PipelineName,
         version: js.UndefOr[PipelineVersion] = js.undefined
     ): GetPipelineInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
 
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPipelineInput]
     }
   }
@@ -1593,9 +1595,9 @@ package codepipeline {
         metadata: js.UndefOr[PipelineMetadata] = js.undefined,
         pipeline: js.UndefOr[PipelineDeclaration] = js.undefined
     ): GetPipelineOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      metadata.foreach(__v => __obj.update("metadata", __v.asInstanceOf[js.Any]))
-      pipeline.foreach(__v => __obj.update("pipeline", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      metadata.foreach(__v => __obj.updateDynamic("metadata")(__v.asInstanceOf[js.Any]))
+      pipeline.foreach(__v => __obj.updateDynamic("pipeline")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPipelineOutput]
     }
   }
@@ -1612,7 +1614,7 @@ package codepipeline {
     def apply(
         name: PipelineName
     ): GetPipelineStateInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
 
@@ -1640,12 +1642,12 @@ package codepipeline {
         stageStates: js.UndefOr[StageStateList] = js.undefined,
         updated: js.UndefOr[Timestamp] = js.undefined
     ): GetPipelineStateOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      created.foreach(__v => __obj.update("created", __v.asInstanceOf[js.Any]))
-      pipelineName.foreach(__v => __obj.update("pipelineName", __v.asInstanceOf[js.Any]))
-      pipelineVersion.foreach(__v => __obj.update("pipelineVersion", __v.asInstanceOf[js.Any]))
-      stageStates.foreach(__v => __obj.update("stageStates", __v.asInstanceOf[js.Any]))
-      updated.foreach(__v => __obj.update("updated", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      created.foreach(__v => __obj.updateDynamic("created")(__v.asInstanceOf[js.Any]))
+      pipelineName.foreach(__v => __obj.updateDynamic("pipelineName")(__v.asInstanceOf[js.Any]))
+      pipelineVersion.foreach(__v => __obj.updateDynamic("pipelineVersion")(__v.asInstanceOf[js.Any]))
+      stageStates.foreach(__v => __obj.updateDynamic("stageStates")(__v.asInstanceOf[js.Any]))
+      updated.foreach(__v => __obj.updateDynamic("updated")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPipelineStateOutput]
     }
   }
@@ -1664,7 +1666,7 @@ package codepipeline {
         clientToken: ClientToken,
         jobId: ThirdPartyJobId
     ): GetThirdPartyJobDetailsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "clientToken" -> clientToken.asInstanceOf[js.Any],
         "jobId"       -> jobId.asInstanceOf[js.Any]
       )
@@ -1685,8 +1687,8 @@ package codepipeline {
     def apply(
         jobDetails: js.UndefOr[ThirdPartyJobDetails] = js.undefined
     ): GetThirdPartyJobDetailsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      jobDetails.foreach(__v => __obj.update("jobDetails", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      jobDetails.foreach(__v => __obj.updateDynamic("jobDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetThirdPartyJobDetailsOutput]
     }
   }
@@ -1703,7 +1705,7 @@ package codepipeline {
     def apply(
         name: ArtifactName
     ): InputArtifact = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
 
@@ -1729,11 +1731,11 @@ package codepipeline {
         id: js.UndefOr[JobId] = js.undefined,
         nonce: js.UndefOr[Nonce] = js.undefined
     ): Job = {
-      val __obj = js.Dictionary.empty[js.Any]
-      accountId.foreach(__v => __obj.update("accountId", __v.asInstanceOf[js.Any]))
-      data.foreach(__v => __obj.update("data", __v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
-      nonce.foreach(__v => __obj.update("nonce", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      accountId.foreach(__v => __obj.updateDynamic("accountId")(__v.asInstanceOf[js.Any]))
+      data.foreach(__v => __obj.updateDynamic("data")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      nonce.foreach(__v => __obj.updateDynamic("nonce")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Job]
     }
   }
@@ -1764,15 +1766,15 @@ package codepipeline {
         outputArtifacts: js.UndefOr[ArtifactList] = js.undefined,
         pipelineContext: js.UndefOr[PipelineContext] = js.undefined
     ): JobData = {
-      val __obj = js.Dictionary.empty[js.Any]
-      actionConfiguration.foreach(__v => __obj.update("actionConfiguration", __v.asInstanceOf[js.Any]))
-      actionTypeId.foreach(__v => __obj.update("actionTypeId", __v.asInstanceOf[js.Any]))
-      artifactCredentials.foreach(__v => __obj.update("artifactCredentials", __v.asInstanceOf[js.Any]))
-      continuationToken.foreach(__v => __obj.update("continuationToken", __v.asInstanceOf[js.Any]))
-      encryptionKey.foreach(__v => __obj.update("encryptionKey", __v.asInstanceOf[js.Any]))
-      inputArtifacts.foreach(__v => __obj.update("inputArtifacts", __v.asInstanceOf[js.Any]))
-      outputArtifacts.foreach(__v => __obj.update("outputArtifacts", __v.asInstanceOf[js.Any]))
-      pipelineContext.foreach(__v => __obj.update("pipelineContext", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      actionConfiguration.foreach(__v => __obj.updateDynamic("actionConfiguration")(__v.asInstanceOf[js.Any]))
+      actionTypeId.foreach(__v => __obj.updateDynamic("actionTypeId")(__v.asInstanceOf[js.Any]))
+      artifactCredentials.foreach(__v => __obj.updateDynamic("artifactCredentials")(__v.asInstanceOf[js.Any]))
+      continuationToken.foreach(__v => __obj.updateDynamic("continuationToken")(__v.asInstanceOf[js.Any]))
+      encryptionKey.foreach(__v => __obj.updateDynamic("encryptionKey")(__v.asInstanceOf[js.Any]))
+      inputArtifacts.foreach(__v => __obj.updateDynamic("inputArtifacts")(__v.asInstanceOf[js.Any]))
+      outputArtifacts.foreach(__v => __obj.updateDynamic("outputArtifacts")(__v.asInstanceOf[js.Any]))
+      pipelineContext.foreach(__v => __obj.updateDynamic("pipelineContext")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobData]
     }
   }
@@ -1793,10 +1795,10 @@ package codepipeline {
         data: js.UndefOr[JobData] = js.undefined,
         id: js.UndefOr[JobId] = js.undefined
     ): JobDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      accountId.foreach(__v => __obj.update("accountId", __v.asInstanceOf[js.Any]))
-      data.foreach(__v => __obj.update("data", __v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      accountId.foreach(__v => __obj.updateDynamic("accountId")(__v.asInstanceOf[js.Any]))
+      data.foreach(__v => __obj.updateDynamic("data")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobDetails]
     }
   }
@@ -1828,13 +1830,13 @@ package codepipeline {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListActionExecutionsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pipelineName" -> pipelineName.asInstanceOf[js.Any]
       )
 
-      filter.foreach(__v => __obj.update("filter", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      filter.foreach(__v => __obj.updateDynamic("filter")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListActionExecutionsInput]
     }
   }
@@ -1850,9 +1852,9 @@ package codepipeline {
         actionExecutionDetails: js.UndefOr[ActionExecutionDetailList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListActionExecutionsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      actionExecutionDetails.foreach(__v => __obj.update("actionExecutionDetails", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      actionExecutionDetails.foreach(__v => __obj.updateDynamic("actionExecutionDetails")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListActionExecutionsOutput]
     }
   }
@@ -1871,9 +1873,9 @@ package codepipeline {
         actionOwnerFilter: js.UndefOr[ActionOwner] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListActionTypesInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      actionOwnerFilter.foreach(__v => __obj.update("actionOwnerFilter", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      actionOwnerFilter.foreach(__v => __obj.updateDynamic("actionOwnerFilter")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListActionTypesInput]
     }
   }
@@ -1892,11 +1894,11 @@ package codepipeline {
         actionTypes: ActionTypeList,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListActionTypesOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "actionTypes" -> actionTypes.asInstanceOf[js.Any]
       )
 
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListActionTypesOutput]
     }
   }
@@ -1917,12 +1919,12 @@ package codepipeline {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListPipelineExecutionsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pipelineName" -> pipelineName.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPipelineExecutionsInput]
     }
   }
@@ -1941,9 +1943,11 @@ package codepipeline {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         pipelineExecutionSummaries: js.UndefOr[PipelineExecutionSummaryList] = js.undefined
     ): ListPipelineExecutionsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      pipelineExecutionSummaries.foreach(__v => __obj.update("pipelineExecutionSummaries", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      pipelineExecutionSummaries.foreach(
+        __v => __obj.updateDynamic("pipelineExecutionSummaries")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[ListPipelineExecutionsOutput]
     }
   }
@@ -1960,8 +1964,8 @@ package codepipeline {
     def apply(
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListPipelinesInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPipelinesInput]
     }
   }
@@ -1980,9 +1984,9 @@ package codepipeline {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         pipelines: js.UndefOr[PipelineList] = js.undefined
     ): ListPipelinesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      pipelines.foreach(__v => __obj.update("pipelines", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      pipelines.foreach(__v => __obj.updateDynamic("pipelines")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPipelinesOutput]
     }
   }
@@ -2000,12 +2004,12 @@ package codepipeline {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListTagsForResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceInput]
     }
   }
@@ -2021,9 +2025,9 @@ package codepipeline {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsForResourceOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceOutput]
     }
   }
@@ -2052,16 +2056,16 @@ package codepipeline {
         lastTriggered: js.UndefOr[WebhookLastTriggered] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined
     ): ListWebhookItem = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "definition" -> definition.asInstanceOf[js.Any],
         "url"        -> url.asInstanceOf[js.Any]
       )
 
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      errorCode.foreach(__v => __obj.update("errorCode", __v.asInstanceOf[js.Any]))
-      errorMessage.foreach(__v => __obj.update("errorMessage", __v.asInstanceOf[js.Any]))
-      lastTriggered.foreach(__v => __obj.update("lastTriggered", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      errorCode.foreach(__v => __obj.updateDynamic("errorCode")(__v.asInstanceOf[js.Any]))
+      errorMessage.foreach(__v => __obj.updateDynamic("errorMessage")(__v.asInstanceOf[js.Any]))
+      lastTriggered.foreach(__v => __obj.updateDynamic("lastTriggered")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListWebhookItem]
     }
   }
@@ -2077,9 +2081,9 @@ package codepipeline {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListWebhooksInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListWebhooksInput]
     }
   }
@@ -2095,9 +2099,9 @@ package codepipeline {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         webhooks: js.UndefOr[WebhookList] = js.undefined
     ): ListWebhooksOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      webhooks.foreach(__v => __obj.update("webhooks", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      webhooks.foreach(__v => __obj.updateDynamic("webhooks")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListWebhooksOutput]
     }
   }
@@ -2114,7 +2118,7 @@ package codepipeline {
     def apply(
         name: ArtifactName
     ): OutputArtifact = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
 
@@ -2144,12 +2148,12 @@ package codepipeline {
         pipelineName: js.UndefOr[PipelineName] = js.undefined,
         stage: js.UndefOr[StageContext] = js.undefined
     ): PipelineContext = {
-      val __obj = js.Dictionary.empty[js.Any]
-      action.foreach(__v => __obj.update("action", __v.asInstanceOf[js.Any]))
-      pipelineArn.foreach(__v => __obj.update("pipelineArn", __v.asInstanceOf[js.Any]))
-      pipelineExecutionId.foreach(__v => __obj.update("pipelineExecutionId", __v.asInstanceOf[js.Any]))
-      pipelineName.foreach(__v => __obj.update("pipelineName", __v.asInstanceOf[js.Any]))
-      stage.foreach(__v => __obj.update("stage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      action.foreach(__v => __obj.updateDynamic("action")(__v.asInstanceOf[js.Any]))
+      pipelineArn.foreach(__v => __obj.updateDynamic("pipelineArn")(__v.asInstanceOf[js.Any]))
+      pipelineExecutionId.foreach(__v => __obj.updateDynamic("pipelineExecutionId")(__v.asInstanceOf[js.Any]))
+      pipelineName.foreach(__v => __obj.updateDynamic("pipelineName")(__v.asInstanceOf[js.Any]))
+      stage.foreach(__v => __obj.updateDynamic("stage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PipelineContext]
     }
   }
@@ -2176,15 +2180,15 @@ package codepipeline {
         artifactStores: js.UndefOr[ArtifactStoreMap] = js.undefined,
         version: js.UndefOr[PipelineVersion] = js.undefined
     ): PipelineDeclaration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name"    -> name.asInstanceOf[js.Any],
         "roleArn" -> roleArn.asInstanceOf[js.Any],
         "stages"  -> stages.asInstanceOf[js.Any]
       )
 
-      artifactStore.foreach(__v => __obj.update("artifactStore", __v.asInstanceOf[js.Any]))
-      artifactStores.foreach(__v => __obj.update("artifactStores", __v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      artifactStore.foreach(__v => __obj.updateDynamic("artifactStore")(__v.asInstanceOf[js.Any]))
+      artifactStores.foreach(__v => __obj.updateDynamic("artifactStores")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PipelineDeclaration]
     }
   }
@@ -2209,12 +2213,12 @@ package codepipeline {
         pipelineVersion: js.UndefOr[PipelineVersion] = js.undefined,
         status: js.UndefOr[PipelineExecutionStatus] = js.undefined
     ): PipelineExecution = {
-      val __obj = js.Dictionary.empty[js.Any]
-      artifactRevisions.foreach(__v => __obj.update("artifactRevisions", __v.asInstanceOf[js.Any]))
-      pipelineExecutionId.foreach(__v => __obj.update("pipelineExecutionId", __v.asInstanceOf[js.Any]))
-      pipelineName.foreach(__v => __obj.update("pipelineName", __v.asInstanceOf[js.Any]))
-      pipelineVersion.foreach(__v => __obj.update("pipelineVersion", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      artifactRevisions.foreach(__v => __obj.updateDynamic("artifactRevisions")(__v.asInstanceOf[js.Any]))
+      pipelineExecutionId.foreach(__v => __obj.updateDynamic("pipelineExecutionId")(__v.asInstanceOf[js.Any]))
+      pipelineName.foreach(__v => __obj.updateDynamic("pipelineName")(__v.asInstanceOf[js.Any]))
+      pipelineVersion.foreach(__v => __obj.updateDynamic("pipelineVersion")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PipelineExecution]
     }
   }
@@ -2248,12 +2252,12 @@ package codepipeline {
         startTime: js.UndefOr[Timestamp] = js.undefined,
         status: js.UndefOr[PipelineExecutionStatus] = js.undefined
     ): PipelineExecutionSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      lastUpdateTime.foreach(__v => __obj.update("lastUpdateTime", __v.asInstanceOf[js.Any]))
-      pipelineExecutionId.foreach(__v => __obj.update("pipelineExecutionId", __v.asInstanceOf[js.Any]))
-      sourceRevisions.foreach(__v => __obj.update("sourceRevisions", __v.asInstanceOf[js.Any]))
-      startTime.foreach(__v => __obj.update("startTime", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      lastUpdateTime.foreach(__v => __obj.updateDynamic("lastUpdateTime")(__v.asInstanceOf[js.Any]))
+      pipelineExecutionId.foreach(__v => __obj.updateDynamic("pipelineExecutionId")(__v.asInstanceOf[js.Any]))
+      sourceRevisions.foreach(__v => __obj.updateDynamic("sourceRevisions")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PipelineExecutionSummary]
     }
   }
@@ -2274,10 +2278,10 @@ package codepipeline {
         pipelineArn: js.UndefOr[PipelineArn] = js.undefined,
         updated: js.UndefOr[Timestamp] = js.undefined
     ): PipelineMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      created.foreach(__v => __obj.update("created", __v.asInstanceOf[js.Any]))
-      pipelineArn.foreach(__v => __obj.update("pipelineArn", __v.asInstanceOf[js.Any]))
-      updated.foreach(__v => __obj.update("updated", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      created.foreach(__v => __obj.updateDynamic("created")(__v.asInstanceOf[js.Any]))
+      pipelineArn.foreach(__v => __obj.updateDynamic("pipelineArn")(__v.asInstanceOf[js.Any]))
+      updated.foreach(__v => __obj.updateDynamic("updated")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PipelineMetadata]
     }
   }
@@ -2300,11 +2304,11 @@ package codepipeline {
         updated: js.UndefOr[Timestamp] = js.undefined,
         version: js.UndefOr[PipelineVersion] = js.undefined
     ): PipelineSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      created.foreach(__v => __obj.update("created", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      updated.foreach(__v => __obj.update("updated", __v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      created.foreach(__v => __obj.updateDynamic("created")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      updated.foreach(__v => __obj.updateDynamic("updated")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PipelineSummary]
     }
   }
@@ -2325,12 +2329,12 @@ package codepipeline {
         maxBatchSize: js.UndefOr[MaxBatchSize] = js.undefined,
         queryParam: js.UndefOr[QueryParamMap] = js.undefined
     ): PollForJobsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "actionTypeId" -> actionTypeId.asInstanceOf[js.Any]
       )
 
-      maxBatchSize.foreach(__v => __obj.update("maxBatchSize", __v.asInstanceOf[js.Any]))
-      queryParam.foreach(__v => __obj.update("queryParam", __v.asInstanceOf[js.Any]))
+      maxBatchSize.foreach(__v => __obj.updateDynamic("maxBatchSize")(__v.asInstanceOf[js.Any]))
+      queryParam.foreach(__v => __obj.updateDynamic("queryParam")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PollForJobsInput]
     }
   }
@@ -2347,8 +2351,8 @@ package codepipeline {
     def apply(
         jobs: js.UndefOr[JobList] = js.undefined
     ): PollForJobsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      jobs.foreach(__v => __obj.update("jobs", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      jobs.foreach(__v => __obj.updateDynamic("jobs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PollForJobsOutput]
     }
   }
@@ -2367,11 +2371,11 @@ package codepipeline {
         actionTypeId: ActionTypeId,
         maxBatchSize: js.UndefOr[MaxBatchSize] = js.undefined
     ): PollForThirdPartyJobsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "actionTypeId" -> actionTypeId.asInstanceOf[js.Any]
       )
 
-      maxBatchSize.foreach(__v => __obj.update("maxBatchSize", __v.asInstanceOf[js.Any]))
+      maxBatchSize.foreach(__v => __obj.updateDynamic("maxBatchSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PollForThirdPartyJobsInput]
     }
   }
@@ -2388,8 +2392,8 @@ package codepipeline {
     def apply(
         jobs: js.UndefOr[ThirdPartyJobList] = js.undefined
     ): PollForThirdPartyJobsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      jobs.foreach(__v => __obj.update("jobs", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      jobs.foreach(__v => __obj.updateDynamic("jobs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PollForThirdPartyJobsOutput]
     }
   }
@@ -2412,7 +2416,7 @@ package codepipeline {
         pipelineName: PipelineName,
         stageName: StageName
     ): PutActionRevisionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "actionName"     -> actionName.asInstanceOf[js.Any],
         "actionRevision" -> actionRevision.asInstanceOf[js.Any],
         "pipelineName"   -> pipelineName.asInstanceOf[js.Any],
@@ -2437,9 +2441,9 @@ package codepipeline {
         newRevision: js.UndefOr[Boolean] = js.undefined,
         pipelineExecutionId: js.UndefOr[PipelineExecutionId] = js.undefined
     ): PutActionRevisionOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      newRevision.foreach(__v => __obj.update("newRevision", __v.asInstanceOf[js.Any]))
-      pipelineExecutionId.foreach(__v => __obj.update("pipelineExecutionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      newRevision.foreach(__v => __obj.updateDynamic("newRevision")(__v.asInstanceOf[js.Any]))
+      pipelineExecutionId.foreach(__v => __obj.updateDynamic("pipelineExecutionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutActionRevisionOutput]
     }
   }
@@ -2464,7 +2468,7 @@ package codepipeline {
         stageName: StageName,
         token: ApprovalToken
     ): PutApprovalResultInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "actionName"   -> actionName.asInstanceOf[js.Any],
         "pipelineName" -> pipelineName.asInstanceOf[js.Any],
         "result"       -> result.asInstanceOf[js.Any],
@@ -2488,8 +2492,8 @@ package codepipeline {
     def apply(
         approvedAt: js.UndefOr[Timestamp] = js.undefined
     ): PutApprovalResultOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      approvedAt.foreach(__v => __obj.update("approvedAt", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      approvedAt.foreach(__v => __obj.updateDynamic("approvedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutApprovalResultOutput]
     }
   }
@@ -2508,7 +2512,7 @@ package codepipeline {
         failureDetails: FailureDetails,
         jobId: JobId
     ): PutJobFailureResultInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "failureDetails" -> failureDetails.asInstanceOf[js.Any],
         "jobId"          -> jobId.asInstanceOf[js.Any]
       )
@@ -2535,13 +2539,13 @@ package codepipeline {
         currentRevision: js.UndefOr[CurrentRevision] = js.undefined,
         executionDetails: js.UndefOr[ExecutionDetails] = js.undefined
     ): PutJobSuccessResultInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobId" -> jobId.asInstanceOf[js.Any]
       )
 
-      continuationToken.foreach(__v => __obj.update("continuationToken", __v.asInstanceOf[js.Any]))
-      currentRevision.foreach(__v => __obj.update("currentRevision", __v.asInstanceOf[js.Any]))
-      executionDetails.foreach(__v => __obj.update("executionDetails", __v.asInstanceOf[js.Any]))
+      continuationToken.foreach(__v => __obj.updateDynamic("continuationToken")(__v.asInstanceOf[js.Any]))
+      currentRevision.foreach(__v => __obj.updateDynamic("currentRevision")(__v.asInstanceOf[js.Any]))
+      executionDetails.foreach(__v => __obj.updateDynamic("executionDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutJobSuccessResultInput]
     }
   }
@@ -2562,7 +2566,7 @@ package codepipeline {
         failureDetails: FailureDetails,
         jobId: ThirdPartyJobId
     ): PutThirdPartyJobFailureResultInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "clientToken"    -> clientToken.asInstanceOf[js.Any],
         "failureDetails" -> failureDetails.asInstanceOf[js.Any],
         "jobId"          -> jobId.asInstanceOf[js.Any]
@@ -2592,14 +2596,14 @@ package codepipeline {
         currentRevision: js.UndefOr[CurrentRevision] = js.undefined,
         executionDetails: js.UndefOr[ExecutionDetails] = js.undefined
     ): PutThirdPartyJobSuccessResultInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "clientToken" -> clientToken.asInstanceOf[js.Any],
         "jobId"       -> jobId.asInstanceOf[js.Any]
       )
 
-      continuationToken.foreach(__v => __obj.update("continuationToken", __v.asInstanceOf[js.Any]))
-      currentRevision.foreach(__v => __obj.update("currentRevision", __v.asInstanceOf[js.Any]))
-      executionDetails.foreach(__v => __obj.update("executionDetails", __v.asInstanceOf[js.Any]))
+      continuationToken.foreach(__v => __obj.updateDynamic("continuationToken")(__v.asInstanceOf[js.Any]))
+      currentRevision.foreach(__v => __obj.updateDynamic("currentRevision")(__v.asInstanceOf[js.Any]))
+      executionDetails.foreach(__v => __obj.updateDynamic("executionDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutThirdPartyJobSuccessResultInput]
     }
   }
@@ -2615,11 +2619,11 @@ package codepipeline {
         webhook: WebhookDefinition,
         tags: js.UndefOr[TagList] = js.undefined
     ): PutWebhookInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "webhook" -> webhook.asInstanceOf[js.Any]
       )
 
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutWebhookInput]
     }
   }
@@ -2633,8 +2637,8 @@ package codepipeline {
     def apply(
         webhook: js.UndefOr[ListWebhookItem] = js.undefined
     ): PutWebhookOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      webhook.foreach(__v => __obj.update("webhook", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      webhook.foreach(__v => __obj.updateDynamic("webhook")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutWebhookOutput]
     }
   }
@@ -2648,8 +2652,8 @@ package codepipeline {
     def apply(
         webhookName: js.UndefOr[WebhookName] = js.undefined
     ): RegisterWebhookWithThirdPartyInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      webhookName.foreach(__v => __obj.update("webhookName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      webhookName.foreach(__v => __obj.updateDynamic("webhookName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterWebhookWithThirdPartyInput]
     }
   }
@@ -2660,7 +2664,7 @@ package codepipeline {
   object RegisterWebhookWithThirdPartyOutput {
     def apply(
         ): RegisterWebhookWithThirdPartyOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RegisterWebhookWithThirdPartyOutput]
     }
@@ -2684,7 +2688,7 @@ package codepipeline {
         retryMode: StageRetryMode,
         stageName: StageName
     ): RetryStageExecutionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pipelineExecutionId" -> pipelineExecutionId.asInstanceOf[js.Any],
         "pipelineName"        -> pipelineName.asInstanceOf[js.Any],
         "retryMode"           -> retryMode.asInstanceOf[js.Any],
@@ -2707,8 +2711,8 @@ package codepipeline {
     def apply(
         pipelineExecutionId: js.UndefOr[PipelineExecutionId] = js.undefined
     ): RetryStageExecutionOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      pipelineExecutionId.foreach(__v => __obj.update("pipelineExecutionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      pipelineExecutionId.foreach(__v => __obj.updateDynamic("pipelineExecutionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RetryStageExecutionOutput]
     }
   }
@@ -2727,7 +2731,7 @@ package codepipeline {
         bucketName: S3BucketName,
         objectKey: S3ObjectKey
     ): S3ArtifactLocation = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "bucketName" -> bucketName.asInstanceOf[js.Any],
         "objectKey"  -> objectKey.asInstanceOf[js.Any]
       )
@@ -2750,9 +2754,9 @@ package codepipeline {
         bucket: js.UndefOr[S3Bucket] = js.undefined,
         key: js.UndefOr[S3Key] = js.undefined
     ): S3Location = {
-      val __obj = js.Dictionary.empty[js.Any]
-      bucket.foreach(__v => __obj.update("bucket", __v.asInstanceOf[js.Any]))
-      key.foreach(__v => __obj.update("key", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      bucket.foreach(__v => __obj.updateDynamic("bucket")(__v.asInstanceOf[js.Any]))
+      key.foreach(__v => __obj.updateDynamic("key")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Location]
     }
   }
@@ -2775,13 +2779,13 @@ package codepipeline {
         revisionSummary: js.UndefOr[RevisionSummary] = js.undefined,
         revisionUrl: js.UndefOr[Url] = js.undefined
     ): SourceRevision = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "actionName" -> actionName.asInstanceOf[js.Any]
       )
 
-      revisionId.foreach(__v => __obj.update("revisionId", __v.asInstanceOf[js.Any]))
-      revisionSummary.foreach(__v => __obj.update("revisionSummary", __v.asInstanceOf[js.Any]))
-      revisionUrl.foreach(__v => __obj.update("revisionUrl", __v.asInstanceOf[js.Any]))
+      revisionId.foreach(__v => __obj.updateDynamic("revisionId")(__v.asInstanceOf[js.Any]))
+      revisionSummary.foreach(__v => __obj.updateDynamic("revisionSummary")(__v.asInstanceOf[js.Any]))
+      revisionUrl.foreach(__v => __obj.updateDynamic("revisionUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SourceRevision]
     }
   }
@@ -2798,8 +2802,8 @@ package codepipeline {
     def apply(
         name: js.UndefOr[StageName] = js.undefined
     ): StageContext = {
-      val __obj = js.Dictionary.empty[js.Any]
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StageContext]
     }
   }
@@ -2820,12 +2824,12 @@ package codepipeline {
         name: StageName,
         blockers: js.UndefOr[StageBlockerDeclarationList] = js.undefined
     ): StageDeclaration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "actions" -> actions.asInstanceOf[js.Any],
         "name"    -> name.asInstanceOf[js.Any]
       )
 
-      blockers.foreach(__v => __obj.update("blockers", __v.asInstanceOf[js.Any]))
+      blockers.foreach(__v => __obj.updateDynamic("blockers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StageDeclaration]
     }
   }
@@ -2844,7 +2848,7 @@ package codepipeline {
         pipelineExecutionId: PipelineExecutionId,
         status: StageExecutionStatus
     ): StageExecution = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pipelineExecutionId" -> pipelineExecutionId.asInstanceOf[js.Any],
         "status"              -> status.asInstanceOf[js.Any]
       )
@@ -2885,11 +2889,11 @@ package codepipeline {
         latestExecution: js.UndefOr[StageExecution] = js.undefined,
         stageName: js.UndefOr[StageName] = js.undefined
     ): StageState = {
-      val __obj = js.Dictionary.empty[js.Any]
-      actionStates.foreach(__v => __obj.update("actionStates", __v.asInstanceOf[js.Any]))
-      inboundTransitionState.foreach(__v => __obj.update("inboundTransitionState", __v.asInstanceOf[js.Any]))
-      latestExecution.foreach(__v => __obj.update("latestExecution", __v.asInstanceOf[js.Any]))
-      stageName.foreach(__v => __obj.update("stageName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      actionStates.foreach(__v => __obj.updateDynamic("actionStates")(__v.asInstanceOf[js.Any]))
+      inboundTransitionState.foreach(__v => __obj.updateDynamic("inboundTransitionState")(__v.asInstanceOf[js.Any]))
+      latestExecution.foreach(__v => __obj.updateDynamic("latestExecution")(__v.asInstanceOf[js.Any]))
+      stageName.foreach(__v => __obj.updateDynamic("stageName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StageState]
     }
   }
@@ -2915,11 +2919,11 @@ package codepipeline {
         name: PipelineName,
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined
     ): StartPipelineExecutionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
 
-      clientRequestToken.foreach(__v => __obj.update("clientRequestToken", __v.asInstanceOf[js.Any]))
+      clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartPipelineExecutionInput]
     }
   }
@@ -2936,8 +2940,8 @@ package codepipeline {
     def apply(
         pipelineExecutionId: js.UndefOr[PipelineExecutionId] = js.undefined
     ): StartPipelineExecutionOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      pipelineExecutionId.foreach(__v => __obj.update("pipelineExecutionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      pipelineExecutionId.foreach(__v => __obj.updateDynamic("pipelineExecutionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartPipelineExecutionOutput]
     }
   }
@@ -2956,7 +2960,7 @@ package codepipeline {
         key: TagKey,
         value: TagValue
     ): Tag = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "key"   -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
@@ -2976,7 +2980,7 @@ package codepipeline {
         resourceArn: ResourceArn,
         tags: TagList
     ): TagResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tags"        -> tags.asInstanceOf[js.Any]
       )
@@ -2991,7 +2995,7 @@ package codepipeline {
   object TagResourceOutput {
     def apply(
         ): TagResourceOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceOutput]
     }
@@ -3011,9 +3015,9 @@ package codepipeline {
         clientId: js.UndefOr[ClientId] = js.undefined,
         jobId: js.UndefOr[JobId] = js.undefined
     ): ThirdPartyJob = {
-      val __obj = js.Dictionary.empty[js.Any]
-      clientId.foreach(__v => __obj.update("clientId", __v.asInstanceOf[js.Any]))
-      jobId.foreach(__v => __obj.update("jobId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      clientId.foreach(__v => __obj.updateDynamic("clientId")(__v.asInstanceOf[js.Any]))
+      jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ThirdPartyJob]
     }
   }
@@ -3044,15 +3048,15 @@ package codepipeline {
         outputArtifacts: js.UndefOr[ArtifactList] = js.undefined,
         pipelineContext: js.UndefOr[PipelineContext] = js.undefined
     ): ThirdPartyJobData = {
-      val __obj = js.Dictionary.empty[js.Any]
-      actionConfiguration.foreach(__v => __obj.update("actionConfiguration", __v.asInstanceOf[js.Any]))
-      actionTypeId.foreach(__v => __obj.update("actionTypeId", __v.asInstanceOf[js.Any]))
-      artifactCredentials.foreach(__v => __obj.update("artifactCredentials", __v.asInstanceOf[js.Any]))
-      continuationToken.foreach(__v => __obj.update("continuationToken", __v.asInstanceOf[js.Any]))
-      encryptionKey.foreach(__v => __obj.update("encryptionKey", __v.asInstanceOf[js.Any]))
-      inputArtifacts.foreach(__v => __obj.update("inputArtifacts", __v.asInstanceOf[js.Any]))
-      outputArtifacts.foreach(__v => __obj.update("outputArtifacts", __v.asInstanceOf[js.Any]))
-      pipelineContext.foreach(__v => __obj.update("pipelineContext", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      actionConfiguration.foreach(__v => __obj.updateDynamic("actionConfiguration")(__v.asInstanceOf[js.Any]))
+      actionTypeId.foreach(__v => __obj.updateDynamic("actionTypeId")(__v.asInstanceOf[js.Any]))
+      artifactCredentials.foreach(__v => __obj.updateDynamic("artifactCredentials")(__v.asInstanceOf[js.Any]))
+      continuationToken.foreach(__v => __obj.updateDynamic("continuationToken")(__v.asInstanceOf[js.Any]))
+      encryptionKey.foreach(__v => __obj.updateDynamic("encryptionKey")(__v.asInstanceOf[js.Any]))
+      inputArtifacts.foreach(__v => __obj.updateDynamic("inputArtifacts")(__v.asInstanceOf[js.Any]))
+      outputArtifacts.foreach(__v => __obj.updateDynamic("outputArtifacts")(__v.asInstanceOf[js.Any]))
+      pipelineContext.foreach(__v => __obj.updateDynamic("pipelineContext")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ThirdPartyJobData]
     }
   }
@@ -3073,10 +3077,10 @@ package codepipeline {
         id: js.UndefOr[ThirdPartyJobId] = js.undefined,
         nonce: js.UndefOr[Nonce] = js.undefined
     ): ThirdPartyJobDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      data.foreach(__v => __obj.update("data", __v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
-      nonce.foreach(__v => __obj.update("nonce", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      data.foreach(__v => __obj.updateDynamic("data")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      nonce.foreach(__v => __obj.updateDynamic("nonce")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ThirdPartyJobDetails]
     }
   }
@@ -3099,11 +3103,11 @@ package codepipeline {
         lastChangedAt: js.UndefOr[LastChangedAt] = js.undefined,
         lastChangedBy: js.UndefOr[LastChangedBy] = js.undefined
     ): TransitionState = {
-      val __obj = js.Dictionary.empty[js.Any]
-      disabledReason.foreach(__v => __obj.update("disabledReason", __v.asInstanceOf[js.Any]))
-      enabled.foreach(__v => __obj.update("enabled", __v.asInstanceOf[js.Any]))
-      lastChangedAt.foreach(__v => __obj.update("lastChangedAt", __v.asInstanceOf[js.Any]))
-      lastChangedBy.foreach(__v => __obj.update("lastChangedBy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      disabledReason.foreach(__v => __obj.updateDynamic("disabledReason")(__v.asInstanceOf[js.Any]))
+      enabled.foreach(__v => __obj.updateDynamic("enabled")(__v.asInstanceOf[js.Any]))
+      lastChangedAt.foreach(__v => __obj.updateDynamic("lastChangedAt")(__v.asInstanceOf[js.Any]))
+      lastChangedBy.foreach(__v => __obj.updateDynamic("lastChangedBy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TransitionState]
     }
   }
@@ -3119,7 +3123,7 @@ package codepipeline {
         resourceArn: ResourceArn,
         tagKeys: TagKeyList
     ): UntagResourceInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "tagKeys"     -> tagKeys.asInstanceOf[js.Any]
       )
@@ -3134,7 +3138,7 @@ package codepipeline {
   object UntagResourceOutput {
     def apply(
         ): UntagResourceOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceOutput]
     }
@@ -3152,7 +3156,7 @@ package codepipeline {
     def apply(
         pipeline: PipelineDeclaration
     ): UpdatePipelineInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "pipeline" -> pipeline.asInstanceOf[js.Any]
       )
 
@@ -3172,8 +3176,8 @@ package codepipeline {
     def apply(
         pipeline: js.UndefOr[PipelineDeclaration] = js.undefined
     ): UpdatePipelineOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      pipeline.foreach(__v => __obj.update("pipeline", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      pipeline.foreach(__v => __obj.updateDynamic("pipeline")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdatePipelineOutput]
     }
   }
@@ -3192,9 +3196,9 @@ package codepipeline {
         AllowedIPRange: js.UndefOr[WebhookAuthConfigurationAllowedIPRange] = js.undefined,
         SecretToken: js.UndefOr[WebhookAuthConfigurationSecretToken] = js.undefined
     ): WebhookAuthConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AllowedIPRange.foreach(__v => __obj.update("AllowedIPRange", __v.asInstanceOf[js.Any]))
-      SecretToken.foreach(__v => __obj.update("SecretToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AllowedIPRange.foreach(__v => __obj.updateDynamic("AllowedIPRange")(__v.asInstanceOf[js.Any]))
+      SecretToken.foreach(__v => __obj.updateDynamic("SecretToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WebhookAuthConfiguration]
     }
   }
@@ -3229,7 +3233,7 @@ package codepipeline {
         targetAction: ActionName,
         targetPipeline: PipelineName
     ): WebhookDefinition = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "authentication"              -> authentication.asInstanceOf[js.Any],
         "authenticationConfiguration" -> authenticationConfiguration.asInstanceOf[js.Any],
         "filters"                     -> filters.asInstanceOf[js.Any],
@@ -3256,11 +3260,11 @@ package codepipeline {
         jsonPath: JsonPath,
         matchEquals: js.UndefOr[MatchEquals] = js.undefined
     ): WebhookFilterRule = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jsonPath" -> jsonPath.asInstanceOf[js.Any]
       )
 
-      matchEquals.foreach(__v => __obj.update("matchEquals", __v.asInstanceOf[js.Any]))
+      matchEquals.foreach(__v => __obj.updateDynamic("matchEquals")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WebhookFilterRule]
     }
   }

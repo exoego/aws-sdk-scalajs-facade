@@ -408,15 +408,15 @@ package wafregional {
         OverrideAction: js.UndefOr[WafOverrideAction] = js.undefined,
         Type: js.UndefOr[WafRuleType] = js.undefined
     ): ActivatedRule = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Priority" -> Priority.asInstanceOf[js.Any],
         "RuleId"   -> RuleId.asInstanceOf[js.Any]
       )
 
-      Action.foreach(__v => __obj.update("Action", __v.asInstanceOf[js.Any]))
-      ExcludedRules.foreach(__v => __obj.update("ExcludedRules", __v.asInstanceOf[js.Any]))
-      OverrideAction.foreach(__v => __obj.update("OverrideAction", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      ExcludedRules.foreach(__v => __obj.updateDynamic("ExcludedRules")(__v.asInstanceOf[js.Any]))
+      OverrideAction.foreach(__v => __obj.updateDynamic("OverrideAction")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActivatedRule]
     }
   }
@@ -432,7 +432,7 @@ package wafregional {
         ResourceArn: ResourceArn,
         WebACLId: ResourceId
     ): AssociateWebACLRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "WebACLId"    -> WebACLId.asInstanceOf[js.Any]
       )
@@ -447,7 +447,7 @@ package wafregional {
   object AssociateWebACLResponse {
     def apply(
         ): AssociateWebACLResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateWebACLResponse]
     }
@@ -470,12 +470,12 @@ package wafregional {
         ByteMatchTuples: ByteMatchTuples,
         Name: js.UndefOr[ResourceName] = js.undefined
     ): ByteMatchSet = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ByteMatchSetId"  -> ByteMatchSetId.asInstanceOf[js.Any],
         "ByteMatchTuples" -> ByteMatchTuples.asInstanceOf[js.Any]
       )
 
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ByteMatchSet]
     }
   }
@@ -494,7 +494,7 @@ package wafregional {
         ByteMatchSetId: ResourceId,
         Name: ResourceName
     ): ByteMatchSetSummary = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ByteMatchSetId" -> ByteMatchSetId.asInstanceOf[js.Any],
         "Name"           -> Name.asInstanceOf[js.Any]
       )
@@ -517,7 +517,7 @@ package wafregional {
         Action: ChangeAction,
         ByteMatchTuple: ByteMatchTuple
     ): ByteMatchSetUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Action"         -> Action.asInstanceOf[js.Any],
         "ByteMatchTuple" -> ByteMatchTuple.asInstanceOf[js.Any]
       )
@@ -544,7 +544,7 @@ package wafregional {
         TargetString: ByteMatchTargetString,
         TextTransformation: TextTransformation
     ): ByteMatchTuple = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FieldToMatch"         -> FieldToMatch.asInstanceOf[js.Any],
         "PositionalConstraint" -> PositionalConstraint.asInstanceOf[js.Any],
         "TargetString"         -> TargetString.asInstanceOf[js.Any],
@@ -592,7 +592,7 @@ package wafregional {
         ChangeToken: ChangeToken,
         Name: ResourceName
     ): CreateByteMatchSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any]
       )
@@ -612,9 +612,9 @@ package wafregional {
         ByteMatchSet: js.UndefOr[ByteMatchSet] = js.undefined,
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): CreateByteMatchSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ByteMatchSet.foreach(__v => __obj.update("ByteMatchSet", __v.asInstanceOf[js.Any]))
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ByteMatchSet.foreach(__v => __obj.updateDynamic("ByteMatchSet")(__v.asInstanceOf[js.Any]))
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateByteMatchSetResponse]
     }
   }
@@ -630,7 +630,7 @@ package wafregional {
         ChangeToken: ChangeToken,
         Name: ResourceName
     ): CreateGeoMatchSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any]
       )
@@ -650,9 +650,9 @@ package wafregional {
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         GeoMatchSet: js.UndefOr[GeoMatchSet] = js.undefined
     ): CreateGeoMatchSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
-      GeoMatchSet.foreach(__v => __obj.update("GeoMatchSet", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
+      GeoMatchSet.foreach(__v => __obj.updateDynamic("GeoMatchSet")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGeoMatchSetResponse]
     }
   }
@@ -668,7 +668,7 @@ package wafregional {
         ChangeToken: ChangeToken,
         Name: ResourceName
     ): CreateIPSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any]
       )
@@ -688,9 +688,9 @@ package wafregional {
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         IPSet: js.UndefOr[IPSet] = js.undefined
     ): CreateIPSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
-      IPSet.foreach(__v => __obj.update("IPSet", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
+      IPSet.foreach(__v => __obj.updateDynamic("IPSet")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateIPSetResponse]
     }
   }
@@ -714,7 +714,7 @@ package wafregional {
         RateLimit: RateLimit,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateRateBasedRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "MetricName"  -> MetricName.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any],
@@ -722,7 +722,7 @@ package wafregional {
         "RateLimit"   -> RateLimit.asInstanceOf[js.Any]
       )
 
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRateBasedRuleRequest]
     }
   }
@@ -738,9 +738,9 @@ package wafregional {
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         Rule: js.UndefOr[RateBasedRule] = js.undefined
     ): CreateRateBasedRuleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
-      Rule.foreach(__v => __obj.update("Rule", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
+      Rule.foreach(__v => __obj.updateDynamic("Rule")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRateBasedRuleResponse]
     }
   }
@@ -756,7 +756,7 @@ package wafregional {
         ChangeToken: ChangeToken,
         Name: ResourceName
     ): CreateRegexMatchSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any]
       )
@@ -776,9 +776,9 @@ package wafregional {
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         RegexMatchSet: js.UndefOr[RegexMatchSet] = js.undefined
     ): CreateRegexMatchSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
-      RegexMatchSet.foreach(__v => __obj.update("RegexMatchSet", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
+      RegexMatchSet.foreach(__v => __obj.updateDynamic("RegexMatchSet")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRegexMatchSetResponse]
     }
   }
@@ -794,7 +794,7 @@ package wafregional {
         ChangeToken: ChangeToken,
         Name: ResourceName
     ): CreateRegexPatternSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any]
       )
@@ -814,9 +814,9 @@ package wafregional {
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         RegexPatternSet: js.UndefOr[RegexPatternSet] = js.undefined
     ): CreateRegexPatternSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
-      RegexPatternSet.foreach(__v => __obj.update("RegexPatternSet", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
+      RegexPatternSet.foreach(__v => __obj.updateDynamic("RegexPatternSet")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRegexPatternSetResponse]
     }
   }
@@ -836,13 +836,13 @@ package wafregional {
         Name: ResourceName,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateRuleGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "MetricName"  -> MetricName.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any]
       )
 
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRuleGroupRequest]
     }
   }
@@ -858,9 +858,9 @@ package wafregional {
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         RuleGroup: js.UndefOr[RuleGroup] = js.undefined
     ): CreateRuleGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
-      RuleGroup.foreach(__v => __obj.update("RuleGroup", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
+      RuleGroup.foreach(__v => __obj.updateDynamic("RuleGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRuleGroupResponse]
     }
   }
@@ -880,13 +880,13 @@ package wafregional {
         Name: ResourceName,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "MetricName"  -> MetricName.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any]
       )
 
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRuleRequest]
     }
   }
@@ -902,9 +902,9 @@ package wafregional {
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         Rule: js.UndefOr[Rule] = js.undefined
     ): CreateRuleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
-      Rule.foreach(__v => __obj.update("Rule", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
+      Rule.foreach(__v => __obj.updateDynamic("Rule")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRuleResponse]
     }
   }
@@ -920,7 +920,7 @@ package wafregional {
         ChangeToken: ChangeToken,
         Name: ResourceName
     ): CreateSizeConstraintSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any]
       )
@@ -940,9 +940,9 @@ package wafregional {
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         SizeConstraintSet: js.UndefOr[SizeConstraintSet] = js.undefined
     ): CreateSizeConstraintSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
-      SizeConstraintSet.foreach(__v => __obj.update("SizeConstraintSet", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
+      SizeConstraintSet.foreach(__v => __obj.updateDynamic("SizeConstraintSet")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSizeConstraintSetResponse]
     }
   }
@@ -961,7 +961,7 @@ package wafregional {
         ChangeToken: ChangeToken,
         Name: ResourceName
     ): CreateSqlInjectionMatchSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any]
       )
@@ -984,9 +984,9 @@ package wafregional {
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         SqlInjectionMatchSet: js.UndefOr[SqlInjectionMatchSet] = js.undefined
     ): CreateSqlInjectionMatchSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
-      SqlInjectionMatchSet.foreach(__v => __obj.update("SqlInjectionMatchSet", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
+      SqlInjectionMatchSet.foreach(__v => __obj.updateDynamic("SqlInjectionMatchSet")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSqlInjectionMatchSetResponse]
     }
   }
@@ -1008,14 +1008,14 @@ package wafregional {
         Name: ResourceName,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateWebACLRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken"   -> ChangeToken.asInstanceOf[js.Any],
         "DefaultAction" -> DefaultAction.asInstanceOf[js.Any],
         "MetricName"    -> MetricName.asInstanceOf[js.Any],
         "Name"          -> Name.asInstanceOf[js.Any]
       )
 
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateWebACLRequest]
     }
   }
@@ -1031,9 +1031,9 @@ package wafregional {
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         WebACL: js.UndefOr[WebACL] = js.undefined
     ): CreateWebACLResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
-      WebACL.foreach(__v => __obj.update("WebACL", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
+      WebACL.foreach(__v => __obj.updateDynamic("WebACL")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateWebACLResponse]
     }
   }
@@ -1052,7 +1052,7 @@ package wafregional {
         ChangeToken: ChangeToken,
         Name: ResourceName
     ): CreateXssMatchSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any]
       )
@@ -1075,9 +1075,9 @@ package wafregional {
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined,
         XssMatchSet: js.UndefOr[XssMatchSet] = js.undefined
     ): CreateXssMatchSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
-      XssMatchSet.foreach(__v => __obj.update("XssMatchSet", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
+      XssMatchSet.foreach(__v => __obj.updateDynamic("XssMatchSet")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateXssMatchSetResponse]
     }
   }
@@ -1093,7 +1093,7 @@ package wafregional {
         ByteMatchSetId: ResourceId,
         ChangeToken: ChangeToken
     ): DeleteByteMatchSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ByteMatchSetId" -> ByteMatchSetId.asInstanceOf[js.Any],
         "ChangeToken"    -> ChangeToken.asInstanceOf[js.Any]
       )
@@ -1111,8 +1111,8 @@ package wafregional {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteByteMatchSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteByteMatchSetResponse]
     }
   }
@@ -1128,7 +1128,7 @@ package wafregional {
         ChangeToken: ChangeToken,
         GeoMatchSetId: ResourceId
     ): DeleteGeoMatchSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken"   -> ChangeToken.asInstanceOf[js.Any],
         "GeoMatchSetId" -> GeoMatchSetId.asInstanceOf[js.Any]
       )
@@ -1146,8 +1146,8 @@ package wafregional {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteGeoMatchSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteGeoMatchSetResponse]
     }
   }
@@ -1163,7 +1163,7 @@ package wafregional {
         ChangeToken: ChangeToken,
         IPSetId: ResourceId
     ): DeleteIPSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "IPSetId"     -> IPSetId.asInstanceOf[js.Any]
       )
@@ -1181,8 +1181,8 @@ package wafregional {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteIPSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteIPSetResponse]
     }
   }
@@ -1196,7 +1196,7 @@ package wafregional {
     def apply(
         ResourceArn: ResourceArn
     ): DeleteLoggingConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
@@ -1210,7 +1210,7 @@ package wafregional {
   object DeleteLoggingConfigurationResponse {
     def apply(
         ): DeleteLoggingConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteLoggingConfigurationResponse]
     }
@@ -1225,7 +1225,7 @@ package wafregional {
     def apply(
         ResourceArn: ResourceArn
     ): DeletePermissionPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
@@ -1239,7 +1239,7 @@ package wafregional {
   object DeletePermissionPolicyResponse {
     def apply(
         ): DeletePermissionPolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeletePermissionPolicyResponse]
     }
@@ -1256,7 +1256,7 @@ package wafregional {
         ChangeToken: ChangeToken,
         RuleId: ResourceId
     ): DeleteRateBasedRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "RuleId"      -> RuleId.asInstanceOf[js.Any]
       )
@@ -1274,8 +1274,8 @@ package wafregional {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteRateBasedRuleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteRateBasedRuleResponse]
     }
   }
@@ -1291,7 +1291,7 @@ package wafregional {
         ChangeToken: ChangeToken,
         RegexMatchSetId: ResourceId
     ): DeleteRegexMatchSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken"     -> ChangeToken.asInstanceOf[js.Any],
         "RegexMatchSetId" -> RegexMatchSetId.asInstanceOf[js.Any]
       )
@@ -1309,8 +1309,8 @@ package wafregional {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteRegexMatchSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteRegexMatchSetResponse]
     }
   }
@@ -1326,7 +1326,7 @@ package wafregional {
         ChangeToken: ChangeToken,
         RegexPatternSetId: ResourceId
     ): DeleteRegexPatternSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken"       -> ChangeToken.asInstanceOf[js.Any],
         "RegexPatternSetId" -> RegexPatternSetId.asInstanceOf[js.Any]
       )
@@ -1344,8 +1344,8 @@ package wafregional {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteRegexPatternSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteRegexPatternSetResponse]
     }
   }
@@ -1361,7 +1361,7 @@ package wafregional {
         ChangeToken: ChangeToken,
         RuleGroupId: ResourceId
     ): DeleteRuleGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "RuleGroupId" -> RuleGroupId.asInstanceOf[js.Any]
       )
@@ -1379,8 +1379,8 @@ package wafregional {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteRuleGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteRuleGroupResponse]
     }
   }
@@ -1396,7 +1396,7 @@ package wafregional {
         ChangeToken: ChangeToken,
         RuleId: ResourceId
     ): DeleteRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "RuleId"      -> RuleId.asInstanceOf[js.Any]
       )
@@ -1414,8 +1414,8 @@ package wafregional {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteRuleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteRuleResponse]
     }
   }
@@ -1431,7 +1431,7 @@ package wafregional {
         ChangeToken: ChangeToken,
         SizeConstraintSetId: ResourceId
     ): DeleteSizeConstraintSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken"         -> ChangeToken.asInstanceOf[js.Any],
         "SizeConstraintSetId" -> SizeConstraintSetId.asInstanceOf[js.Any]
       )
@@ -1449,8 +1449,8 @@ package wafregional {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteSizeConstraintSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteSizeConstraintSetResponse]
     }
   }
@@ -1469,7 +1469,7 @@ package wafregional {
         ChangeToken: ChangeToken,
         SqlInjectionMatchSetId: ResourceId
     ): DeleteSqlInjectionMatchSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken"            -> ChangeToken.asInstanceOf[js.Any],
         "SqlInjectionMatchSetId" -> SqlInjectionMatchSetId.asInstanceOf[js.Any]
       )
@@ -1490,8 +1490,8 @@ package wafregional {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteSqlInjectionMatchSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteSqlInjectionMatchSetResponse]
     }
   }
@@ -1507,7 +1507,7 @@ package wafregional {
         ChangeToken: ChangeToken,
         WebACLId: ResourceId
     ): DeleteWebACLRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "WebACLId"    -> WebACLId.asInstanceOf[js.Any]
       )
@@ -1525,8 +1525,8 @@ package wafregional {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteWebACLResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteWebACLResponse]
     }
   }
@@ -1545,7 +1545,7 @@ package wafregional {
         ChangeToken: ChangeToken,
         XssMatchSetId: ResourceId
     ): DeleteXssMatchSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken"   -> ChangeToken.asInstanceOf[js.Any],
         "XssMatchSetId" -> XssMatchSetId.asInstanceOf[js.Any]
       )
@@ -1566,8 +1566,8 @@ package wafregional {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): DeleteXssMatchSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteXssMatchSetResponse]
     }
   }
@@ -1581,7 +1581,7 @@ package wafregional {
     def apply(
         ResourceArn: ResourceArn
     ): DisassociateWebACLRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
@@ -1595,7 +1595,7 @@ package wafregional {
   object DisassociateWebACLResponse {
     def apply(
         ): DisassociateWebACLResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateWebACLResponse]
     }
@@ -1613,7 +1613,7 @@ package wafregional {
     def apply(
         RuleId: ResourceId
     ): ExcludedRule = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RuleId" -> RuleId.asInstanceOf[js.Any]
       )
 
@@ -1635,11 +1635,11 @@ package wafregional {
         Type: MatchFieldType,
         Data: js.UndefOr[MatchFieldData] = js.undefined
     ): FieldToMatch = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Type" -> Type.asInstanceOf[js.Any]
       )
 
-      Data.foreach(__v => __obj.update("Data", __v.asInstanceOf[js.Any]))
+      Data.foreach(__v => __obj.updateDynamic("Data")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FieldToMatch]
     }
   }
@@ -1658,7 +1658,7 @@ package wafregional {
         Type: GeoMatchConstraintType,
         Value: GeoMatchConstraintValue
     ): GeoMatchConstraint = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Type"  -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
@@ -2195,12 +2195,12 @@ package wafregional {
         GeoMatchSetId: ResourceId,
         Name: js.UndefOr[ResourceName] = js.undefined
     ): GeoMatchSet = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GeoMatchConstraints" -> GeoMatchConstraints.asInstanceOf[js.Any],
         "GeoMatchSetId"       -> GeoMatchSetId.asInstanceOf[js.Any]
       )
 
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GeoMatchSet]
     }
   }
@@ -2219,7 +2219,7 @@ package wafregional {
         GeoMatchSetId: ResourceId,
         Name: ResourceName
     ): GeoMatchSetSummary = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GeoMatchSetId" -> GeoMatchSetId.asInstanceOf[js.Any],
         "Name"          -> Name.asInstanceOf[js.Any]
       )
@@ -2242,7 +2242,7 @@ package wafregional {
         Action: ChangeAction,
         GeoMatchConstraint: GeoMatchConstraint
     ): GeoMatchSetUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Action"             -> Action.asInstanceOf[js.Any],
         "GeoMatchConstraint" -> GeoMatchConstraint.asInstanceOf[js.Any]
       )
@@ -2260,7 +2260,7 @@ package wafregional {
     def apply(
         ByteMatchSetId: ResourceId
     ): GetByteMatchSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ByteMatchSetId" -> ByteMatchSetId.asInstanceOf[js.Any]
       )
 
@@ -2277,8 +2277,8 @@ package wafregional {
     def apply(
         ByteMatchSet: js.UndefOr[ByteMatchSet] = js.undefined
     ): GetByteMatchSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ByteMatchSet.foreach(__v => __obj.update("ByteMatchSet", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ByteMatchSet.foreach(__v => __obj.updateDynamic("ByteMatchSet")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetByteMatchSetResponse]
     }
   }
@@ -2289,7 +2289,7 @@ package wafregional {
   object GetChangeTokenRequest {
     def apply(
         ): GetChangeTokenRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetChangeTokenRequest]
     }
@@ -2304,8 +2304,8 @@ package wafregional {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): GetChangeTokenResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetChangeTokenResponse]
     }
   }
@@ -2319,7 +2319,7 @@ package wafregional {
     def apply(
         ChangeToken: ChangeToken
     ): GetChangeTokenStatusRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any]
       )
 
@@ -2336,8 +2336,8 @@ package wafregional {
     def apply(
         ChangeTokenStatus: js.UndefOr[ChangeTokenStatus] = js.undefined
     ): GetChangeTokenStatusResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeTokenStatus.foreach(__v => __obj.update("ChangeTokenStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeTokenStatus.foreach(__v => __obj.updateDynamic("ChangeTokenStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetChangeTokenStatusResponse]
     }
   }
@@ -2351,7 +2351,7 @@ package wafregional {
     def apply(
         GeoMatchSetId: ResourceId
     ): GetGeoMatchSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GeoMatchSetId" -> GeoMatchSetId.asInstanceOf[js.Any]
       )
 
@@ -2368,8 +2368,8 @@ package wafregional {
     def apply(
         GeoMatchSet: js.UndefOr[GeoMatchSet] = js.undefined
     ): GetGeoMatchSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GeoMatchSet.foreach(__v => __obj.update("GeoMatchSet", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GeoMatchSet.foreach(__v => __obj.updateDynamic("GeoMatchSet")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetGeoMatchSetResponse]
     }
   }
@@ -2383,7 +2383,7 @@ package wafregional {
     def apply(
         IPSetId: ResourceId
     ): GetIPSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IPSetId" -> IPSetId.asInstanceOf[js.Any]
       )
 
@@ -2400,8 +2400,8 @@ package wafregional {
     def apply(
         IPSet: js.UndefOr[IPSet] = js.undefined
     ): GetIPSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IPSet.foreach(__v => __obj.update("IPSet", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IPSet.foreach(__v => __obj.updateDynamic("IPSet")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetIPSetResponse]
     }
   }
@@ -2415,7 +2415,7 @@ package wafregional {
     def apply(
         ResourceArn: ResourceArn
     ): GetLoggingConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
@@ -2432,8 +2432,8 @@ package wafregional {
     def apply(
         LoggingConfiguration: js.UndefOr[LoggingConfiguration] = js.undefined
     ): GetLoggingConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LoggingConfiguration.foreach(__v => __obj.update("LoggingConfiguration", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LoggingConfiguration.foreach(__v => __obj.updateDynamic("LoggingConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLoggingConfigurationResponse]
     }
   }
@@ -2447,7 +2447,7 @@ package wafregional {
     def apply(
         ResourceArn: ResourceArn
     ): GetPermissionPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
@@ -2464,8 +2464,8 @@ package wafregional {
     def apply(
         Policy: js.UndefOr[PolicyString] = js.undefined
     ): GetPermissionPolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPermissionPolicyResponse]
     }
   }
@@ -2481,11 +2481,11 @@ package wafregional {
         RuleId: ResourceId,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): GetRateBasedRuleManagedKeysRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RuleId" -> RuleId.asInstanceOf[js.Any]
       )
 
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRateBasedRuleManagedKeysRequest]
     }
   }
@@ -2501,9 +2501,9 @@ package wafregional {
         ManagedKeys: js.UndefOr[ManagedKeys] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): GetRateBasedRuleManagedKeysResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ManagedKeys.foreach(__v => __obj.update("ManagedKeys", __v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ManagedKeys.foreach(__v => __obj.updateDynamic("ManagedKeys")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRateBasedRuleManagedKeysResponse]
     }
   }
@@ -2517,7 +2517,7 @@ package wafregional {
     def apply(
         RuleId: ResourceId
     ): GetRateBasedRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RuleId" -> RuleId.asInstanceOf[js.Any]
       )
 
@@ -2534,8 +2534,8 @@ package wafregional {
     def apply(
         Rule: js.UndefOr[RateBasedRule] = js.undefined
     ): GetRateBasedRuleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Rule.foreach(__v => __obj.update("Rule", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Rule.foreach(__v => __obj.updateDynamic("Rule")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRateBasedRuleResponse]
     }
   }
@@ -2549,7 +2549,7 @@ package wafregional {
     def apply(
         RegexMatchSetId: ResourceId
     ): GetRegexMatchSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RegexMatchSetId" -> RegexMatchSetId.asInstanceOf[js.Any]
       )
 
@@ -2566,8 +2566,8 @@ package wafregional {
     def apply(
         RegexMatchSet: js.UndefOr[RegexMatchSet] = js.undefined
     ): GetRegexMatchSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RegexMatchSet.foreach(__v => __obj.update("RegexMatchSet", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RegexMatchSet.foreach(__v => __obj.updateDynamic("RegexMatchSet")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRegexMatchSetResponse]
     }
   }
@@ -2581,7 +2581,7 @@ package wafregional {
     def apply(
         RegexPatternSetId: ResourceId
     ): GetRegexPatternSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RegexPatternSetId" -> RegexPatternSetId.asInstanceOf[js.Any]
       )
 
@@ -2598,8 +2598,8 @@ package wafregional {
     def apply(
         RegexPatternSet: js.UndefOr[RegexPatternSet] = js.undefined
     ): GetRegexPatternSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RegexPatternSet.foreach(__v => __obj.update("RegexPatternSet", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RegexPatternSet.foreach(__v => __obj.updateDynamic("RegexPatternSet")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRegexPatternSetResponse]
     }
   }
@@ -2613,7 +2613,7 @@ package wafregional {
     def apply(
         RuleGroupId: ResourceId
     ): GetRuleGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RuleGroupId" -> RuleGroupId.asInstanceOf[js.Any]
       )
 
@@ -2630,8 +2630,8 @@ package wafregional {
     def apply(
         RuleGroup: js.UndefOr[RuleGroup] = js.undefined
     ): GetRuleGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RuleGroup.foreach(__v => __obj.update("RuleGroup", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RuleGroup.foreach(__v => __obj.updateDynamic("RuleGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRuleGroupResponse]
     }
   }
@@ -2645,7 +2645,7 @@ package wafregional {
     def apply(
         RuleId: ResourceId
     ): GetRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RuleId" -> RuleId.asInstanceOf[js.Any]
       )
 
@@ -2662,8 +2662,8 @@ package wafregional {
     def apply(
         Rule: js.UndefOr[Rule] = js.undefined
     ): GetRuleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Rule.foreach(__v => __obj.update("Rule", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Rule.foreach(__v => __obj.updateDynamic("Rule")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRuleResponse]
     }
   }
@@ -2683,7 +2683,7 @@ package wafregional {
         TimeWindow: TimeWindow,
         WebAclId: ResourceId
     ): GetSampledRequestsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MaxItems"   -> MaxItems.asInstanceOf[js.Any],
         "RuleId"     -> RuleId.asInstanceOf[js.Any],
         "TimeWindow" -> TimeWindow.asInstanceOf[js.Any],
@@ -2707,10 +2707,10 @@ package wafregional {
         SampledRequests: js.UndefOr[SampledHTTPRequests] = js.undefined,
         TimeWindow: js.UndefOr[TimeWindow] = js.undefined
     ): GetSampledRequestsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PopulationSize.foreach(__v => __obj.update("PopulationSize", __v.asInstanceOf[js.Any]))
-      SampledRequests.foreach(__v => __obj.update("SampledRequests", __v.asInstanceOf[js.Any]))
-      TimeWindow.foreach(__v => __obj.update("TimeWindow", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PopulationSize.foreach(__v => __obj.updateDynamic("PopulationSize")(__v.asInstanceOf[js.Any]))
+      SampledRequests.foreach(__v => __obj.updateDynamic("SampledRequests")(__v.asInstanceOf[js.Any]))
+      TimeWindow.foreach(__v => __obj.updateDynamic("TimeWindow")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSampledRequestsResponse]
     }
   }
@@ -2724,7 +2724,7 @@ package wafregional {
     def apply(
         SizeConstraintSetId: ResourceId
     ): GetSizeConstraintSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SizeConstraintSetId" -> SizeConstraintSetId.asInstanceOf[js.Any]
       )
 
@@ -2741,8 +2741,8 @@ package wafregional {
     def apply(
         SizeConstraintSet: js.UndefOr[SizeConstraintSet] = js.undefined
     ): GetSizeConstraintSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SizeConstraintSet.foreach(__v => __obj.update("SizeConstraintSet", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SizeConstraintSet.foreach(__v => __obj.updateDynamic("SizeConstraintSet")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSizeConstraintSetResponse]
     }
   }
@@ -2759,7 +2759,7 @@ package wafregional {
     def apply(
         SqlInjectionMatchSetId: ResourceId
     ): GetSqlInjectionMatchSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SqlInjectionMatchSetId" -> SqlInjectionMatchSetId.asInstanceOf[js.Any]
       )
 
@@ -2779,8 +2779,8 @@ package wafregional {
     def apply(
         SqlInjectionMatchSet: js.UndefOr[SqlInjectionMatchSet] = js.undefined
     ): GetSqlInjectionMatchSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SqlInjectionMatchSet.foreach(__v => __obj.update("SqlInjectionMatchSet", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SqlInjectionMatchSet.foreach(__v => __obj.updateDynamic("SqlInjectionMatchSet")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSqlInjectionMatchSetResponse]
     }
   }
@@ -2794,7 +2794,7 @@ package wafregional {
     def apply(
         ResourceArn: ResourceArn
     ): GetWebACLForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
@@ -2811,8 +2811,8 @@ package wafregional {
     def apply(
         WebACLSummary: js.UndefOr[WebACLSummary] = js.undefined
     ): GetWebACLForResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      WebACLSummary.foreach(__v => __obj.update("WebACLSummary", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      WebACLSummary.foreach(__v => __obj.updateDynamic("WebACLSummary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetWebACLForResourceResponse]
     }
   }
@@ -2826,7 +2826,7 @@ package wafregional {
     def apply(
         WebACLId: ResourceId
     ): GetWebACLRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "WebACLId" -> WebACLId.asInstanceOf[js.Any]
       )
 
@@ -2843,8 +2843,8 @@ package wafregional {
     def apply(
         WebACL: js.UndefOr[WebACL] = js.undefined
     ): GetWebACLResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      WebACL.foreach(__v => __obj.update("WebACL", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      WebACL.foreach(__v => __obj.updateDynamic("WebACL")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetWebACLResponse]
     }
   }
@@ -2861,7 +2861,7 @@ package wafregional {
     def apply(
         XssMatchSetId: ResourceId
     ): GetXssMatchSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "XssMatchSetId" -> XssMatchSetId.asInstanceOf[js.Any]
       )
 
@@ -2881,8 +2881,8 @@ package wafregional {
     def apply(
         XssMatchSet: js.UndefOr[XssMatchSet] = js.undefined
     ): GetXssMatchSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      XssMatchSet.foreach(__v => __obj.update("XssMatchSet", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      XssMatchSet.foreach(__v => __obj.updateDynamic("XssMatchSet")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetXssMatchSetResponse]
     }
   }
@@ -2901,9 +2901,9 @@ package wafregional {
         Name: js.UndefOr[HeaderName] = js.undefined,
         Value: js.UndefOr[HeaderValue] = js.undefined
     ): HTTPHeader = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HTTPHeader]
     }
   }
@@ -2930,13 +2930,13 @@ package wafregional {
         Method: js.UndefOr[HTTPMethod] = js.undefined,
         URI: js.UndefOr[URIString] = js.undefined
     ): HTTPRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClientIP.foreach(__v => __obj.update("ClientIP", __v.asInstanceOf[js.Any]))
-      Country.foreach(__v => __obj.update("Country", __v.asInstanceOf[js.Any]))
-      HTTPVersion.foreach(__v => __obj.update("HTTPVersion", __v.asInstanceOf[js.Any]))
-      Headers.foreach(__v => __obj.update("Headers", __v.asInstanceOf[js.Any]))
-      Method.foreach(__v => __obj.update("Method", __v.asInstanceOf[js.Any]))
-      URI.foreach(__v => __obj.update("URI", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClientIP.foreach(__v => __obj.updateDynamic("ClientIP")(__v.asInstanceOf[js.Any]))
+      Country.foreach(__v => __obj.updateDynamic("Country")(__v.asInstanceOf[js.Any]))
+      HTTPVersion.foreach(__v => __obj.updateDynamic("HTTPVersion")(__v.asInstanceOf[js.Any]))
+      Headers.foreach(__v => __obj.updateDynamic("Headers")(__v.asInstanceOf[js.Any]))
+      Method.foreach(__v => __obj.updateDynamic("Method")(__v.asInstanceOf[js.Any]))
+      URI.foreach(__v => __obj.updateDynamic("URI")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HTTPRequest]
     }
   }
@@ -2958,12 +2958,12 @@ package wafregional {
         IPSetId: ResourceId,
         Name: js.UndefOr[ResourceName] = js.undefined
     ): IPSet = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IPSetDescriptors" -> IPSetDescriptors.asInstanceOf[js.Any],
         "IPSetId"          -> IPSetId.asInstanceOf[js.Any]
       )
 
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IPSet]
     }
   }
@@ -2982,7 +2982,7 @@ package wafregional {
         Type: IPSetDescriptorType,
         Value: IPSetDescriptorValue
     ): IPSetDescriptor = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Type"  -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
@@ -3012,7 +3012,7 @@ package wafregional {
         IPSetId: ResourceId,
         Name: ResourceName
     ): IPSetSummary = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IPSetId" -> IPSetId.asInstanceOf[js.Any],
         "Name"    -> Name.asInstanceOf[js.Any]
       )
@@ -3035,7 +3035,7 @@ package wafregional {
         Action: ChangeAction,
         IPSetDescriptor: IPSetDescriptor
     ): IPSetUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Action"          -> Action.asInstanceOf[js.Any],
         "IPSetDescriptor" -> IPSetDescriptor.asInstanceOf[js.Any]
       )
@@ -3057,10 +3057,10 @@ package wafregional {
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         RuleGroupId: js.UndefOr[ResourceId] = js.undefined
     ): ListActivatedRulesInRuleGroupRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
-      RuleGroupId.foreach(__v => __obj.update("RuleGroupId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
+      RuleGroupId.foreach(__v => __obj.updateDynamic("RuleGroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListActivatedRulesInRuleGroupRequest]
     }
   }
@@ -3076,9 +3076,9 @@ package wafregional {
         ActivatedRules: js.UndefOr[ActivatedRules] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListActivatedRulesInRuleGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ActivatedRules.foreach(__v => __obj.update("ActivatedRules", __v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ActivatedRules.foreach(__v => __obj.updateDynamic("ActivatedRules")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListActivatedRulesInRuleGroupResponse]
     }
   }
@@ -3094,9 +3094,9 @@ package wafregional {
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListByteMatchSetsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListByteMatchSetsRequest]
     }
   }
@@ -3112,9 +3112,9 @@ package wafregional {
         ByteMatchSets: js.UndefOr[ByteMatchSetSummaries] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListByteMatchSetsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ByteMatchSets.foreach(__v => __obj.update("ByteMatchSets", __v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ByteMatchSets.foreach(__v => __obj.updateDynamic("ByteMatchSets")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListByteMatchSetsResponse]
     }
   }
@@ -3130,9 +3130,9 @@ package wafregional {
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListGeoMatchSetsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGeoMatchSetsRequest]
     }
   }
@@ -3148,9 +3148,9 @@ package wafregional {
         GeoMatchSets: js.UndefOr[GeoMatchSetSummaries] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListGeoMatchSetsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GeoMatchSets.foreach(__v => __obj.update("GeoMatchSets", __v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GeoMatchSets.foreach(__v => __obj.updateDynamic("GeoMatchSets")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGeoMatchSetsResponse]
     }
   }
@@ -3166,9 +3166,9 @@ package wafregional {
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListIPSetsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListIPSetsRequest]
     }
   }
@@ -3184,9 +3184,9 @@ package wafregional {
         IPSets: js.UndefOr[IPSetSummaries] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListIPSetsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IPSets.foreach(__v => __obj.update("IPSets", __v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IPSets.foreach(__v => __obj.updateDynamic("IPSets")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListIPSetsResponse]
     }
   }
@@ -3202,9 +3202,9 @@ package wafregional {
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListLoggingConfigurationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListLoggingConfigurationsRequest]
     }
   }
@@ -3220,9 +3220,9 @@ package wafregional {
         LoggingConfigurations: js.UndefOr[LoggingConfigurations] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListLoggingConfigurationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LoggingConfigurations.foreach(__v => __obj.update("LoggingConfigurations", __v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LoggingConfigurations.foreach(__v => __obj.updateDynamic("LoggingConfigurations")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListLoggingConfigurationsResponse]
     }
   }
@@ -3238,9 +3238,9 @@ package wafregional {
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListRateBasedRulesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRateBasedRulesRequest]
     }
   }
@@ -3256,9 +3256,9 @@ package wafregional {
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         Rules: js.UndefOr[RuleSummaries] = js.undefined
     ): ListRateBasedRulesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
-      Rules.foreach(__v => __obj.update("Rules", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
+      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRateBasedRulesResponse]
     }
   }
@@ -3274,9 +3274,9 @@ package wafregional {
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListRegexMatchSetsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRegexMatchSetsRequest]
     }
   }
@@ -3292,9 +3292,9 @@ package wafregional {
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         RegexMatchSets: js.UndefOr[RegexMatchSetSummaries] = js.undefined
     ): ListRegexMatchSetsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
-      RegexMatchSets.foreach(__v => __obj.update("RegexMatchSets", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
+      RegexMatchSets.foreach(__v => __obj.updateDynamic("RegexMatchSets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRegexMatchSetsResponse]
     }
   }
@@ -3310,9 +3310,9 @@ package wafregional {
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListRegexPatternSetsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRegexPatternSetsRequest]
     }
   }
@@ -3328,9 +3328,9 @@ package wafregional {
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         RegexPatternSets: js.UndefOr[RegexPatternSetSummaries] = js.undefined
     ): ListRegexPatternSetsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
-      RegexPatternSets.foreach(__v => __obj.update("RegexPatternSets", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
+      RegexPatternSets.foreach(__v => __obj.updateDynamic("RegexPatternSets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRegexPatternSetsResponse]
     }
   }
@@ -3346,11 +3346,11 @@ package wafregional {
         WebACLId: ResourceId,
         ResourceType: js.UndefOr[ResourceType] = js.undefined
     ): ListResourcesForWebACLRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "WebACLId" -> WebACLId.asInstanceOf[js.Any]
       )
 
-      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResourcesForWebACLRequest]
     }
   }
@@ -3364,8 +3364,8 @@ package wafregional {
     def apply(
         ResourceArns: js.UndefOr[ResourceArns] = js.undefined
     ): ListResourcesForWebACLResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ResourceArns.foreach(__v => __obj.update("ResourceArns", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ResourceArns.foreach(__v => __obj.updateDynamic("ResourceArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResourcesForWebACLResponse]
     }
   }
@@ -3381,9 +3381,9 @@ package wafregional {
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListRuleGroupsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRuleGroupsRequest]
     }
   }
@@ -3399,9 +3399,9 @@ package wafregional {
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         RuleGroups: js.UndefOr[RuleGroupSummaries] = js.undefined
     ): ListRuleGroupsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
-      RuleGroups.foreach(__v => __obj.update("RuleGroups", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
+      RuleGroups.foreach(__v => __obj.updateDynamic("RuleGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRuleGroupsResponse]
     }
   }
@@ -3417,9 +3417,9 @@ package wafregional {
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListRulesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRulesRequest]
     }
   }
@@ -3435,9 +3435,9 @@ package wafregional {
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         Rules: js.UndefOr[RuleSummaries] = js.undefined
     ): ListRulesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
-      Rules.foreach(__v => __obj.update("Rules", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
+      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRulesResponse]
     }
   }
@@ -3453,9 +3453,9 @@ package wafregional {
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListSizeConstraintSetsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSizeConstraintSetsRequest]
     }
   }
@@ -3471,9 +3471,9 @@ package wafregional {
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         SizeConstraintSets: js.UndefOr[SizeConstraintSetSummaries] = js.undefined
     ): ListSizeConstraintSetsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
-      SizeConstraintSets.foreach(__v => __obj.update("SizeConstraintSets", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
+      SizeConstraintSets.foreach(__v => __obj.updateDynamic("SizeConstraintSets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSizeConstraintSetsResponse]
     }
   }
@@ -3492,9 +3492,9 @@ package wafregional {
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListSqlInjectionMatchSetsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSqlInjectionMatchSetsRequest]
     }
   }
@@ -3513,9 +3513,9 @@ package wafregional {
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         SqlInjectionMatchSets: js.UndefOr[SqlInjectionMatchSetSummaries] = js.undefined
     ): ListSqlInjectionMatchSetsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
-      SqlInjectionMatchSets.foreach(__v => __obj.update("SqlInjectionMatchSets", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
+      SqlInjectionMatchSets.foreach(__v => __obj.updateDynamic("SqlInjectionMatchSets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSqlInjectionMatchSetsResponse]
     }
   }
@@ -3531,9 +3531,9 @@ package wafregional {
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListSubscribedRuleGroupsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSubscribedRuleGroupsRequest]
     }
   }
@@ -3549,9 +3549,9 @@ package wafregional {
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         RuleGroups: js.UndefOr[SubscribedRuleGroupSummaries] = js.undefined
     ): ListSubscribedRuleGroupsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
-      RuleGroups.foreach(__v => __obj.update("RuleGroups", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
+      RuleGroups.foreach(__v => __obj.updateDynamic("RuleGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSubscribedRuleGroupsResponse]
     }
   }
@@ -3569,12 +3569,12 @@ package wafregional {
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListTagsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
       )
 
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -3590,9 +3590,9 @@ package wafregional {
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         TagInfoForResource: js.UndefOr[TagInfoForResource] = js.undefined
     ): ListTagsForResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
-      TagInfoForResource.foreach(__v => __obj.update("TagInfoForResource", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
+      TagInfoForResource.foreach(__v => __obj.updateDynamic("TagInfoForResource")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
@@ -3608,9 +3608,9 @@ package wafregional {
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListWebACLsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListWebACLsRequest]
     }
   }
@@ -3626,9 +3626,9 @@ package wafregional {
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         WebACLs: js.UndefOr[WebACLSummaries] = js.undefined
     ): ListWebACLsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
-      WebACLs.foreach(__v => __obj.update("WebACLs", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
+      WebACLs.foreach(__v => __obj.updateDynamic("WebACLs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListWebACLsResponse]
     }
   }
@@ -3647,9 +3647,9 @@ package wafregional {
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
         NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListXssMatchSetsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListXssMatchSetsRequest]
     }
   }
@@ -3668,9 +3668,9 @@ package wafregional {
         NextMarker: js.UndefOr[NextMarker] = js.undefined,
         XssMatchSets: js.UndefOr[XssMatchSetSummaries] = js.undefined
     ): ListXssMatchSetsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
-      XssMatchSets.foreach(__v => __obj.update("XssMatchSets", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
+      XssMatchSets.foreach(__v => __obj.updateDynamic("XssMatchSets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListXssMatchSetsResponse]
     }
   }
@@ -3691,12 +3691,12 @@ package wafregional {
         ResourceArn: ResourceArn,
         RedactedFields: js.UndefOr[RedactedFields] = js.undefined
     ): LoggingConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LogDestinationConfigs" -> LogDestinationConfigs.asInstanceOf[js.Any],
         "ResourceArn"           -> ResourceArn.asInstanceOf[js.Any]
       )
 
-      RedactedFields.foreach(__v => __obj.update("RedactedFields", __v.asInstanceOf[js.Any]))
+      RedactedFields.foreach(__v => __obj.updateDynamic("RedactedFields")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoggingConfiguration]
     }
   }
@@ -3739,7 +3739,7 @@ package wafregional {
         Negated: Negated,
         Type: PredicateType
     ): Predicate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DataId"  -> DataId.asInstanceOf[js.Any],
         "Negated" -> Negated.asInstanceOf[js.Any],
         "Type"    -> Type.asInstanceOf[js.Any]
@@ -3771,7 +3771,7 @@ package wafregional {
     def apply(
         LoggingConfiguration: LoggingConfiguration
     ): PutLoggingConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LoggingConfiguration" -> LoggingConfiguration.asInstanceOf[js.Any]
       )
 
@@ -3788,8 +3788,8 @@ package wafregional {
     def apply(
         LoggingConfiguration: js.UndefOr[LoggingConfiguration] = js.undefined
     ): PutLoggingConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LoggingConfiguration.foreach(__v => __obj.update("LoggingConfiguration", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LoggingConfiguration.foreach(__v => __obj.updateDynamic("LoggingConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutLoggingConfigurationResponse]
     }
   }
@@ -3805,7 +3805,7 @@ package wafregional {
         Policy: PolicyString,
         ResourceArn: ResourceArn
     ): PutPermissionPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Policy"      -> Policy.asInstanceOf[js.Any],
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
@@ -3820,7 +3820,7 @@ package wafregional {
   object PutPermissionPolicyResponse {
     def apply(
         ): PutPermissionPolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutPermissionPolicyResponse]
     }
@@ -3852,15 +3852,15 @@ package wafregional {
         MetricName: js.UndefOr[MetricName] = js.undefined,
         Name: js.UndefOr[ResourceName] = js.undefined
     ): RateBasedRule = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MatchPredicates" -> MatchPredicates.asInstanceOf[js.Any],
         "RateKey"         -> RateKey.asInstanceOf[js.Any],
         "RateLimit"       -> RateLimit.asInstanceOf[js.Any],
         "RuleId"          -> RuleId.asInstanceOf[js.Any]
       )
 
-      MetricName.foreach(__v => __obj.update("MetricName", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RateBasedRule]
     }
   }
@@ -3888,10 +3888,10 @@ package wafregional {
         RegexMatchSetId: js.UndefOr[ResourceId] = js.undefined,
         RegexMatchTuples: js.UndefOr[RegexMatchTuples] = js.undefined
     ): RegexMatchSet = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      RegexMatchSetId.foreach(__v => __obj.update("RegexMatchSetId", __v.asInstanceOf[js.Any]))
-      RegexMatchTuples.foreach(__v => __obj.update("RegexMatchTuples", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RegexMatchSetId.foreach(__v => __obj.updateDynamic("RegexMatchSetId")(__v.asInstanceOf[js.Any]))
+      RegexMatchTuples.foreach(__v => __obj.updateDynamic("RegexMatchTuples")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegexMatchSet]
     }
   }
@@ -3910,7 +3910,7 @@ package wafregional {
         Name: ResourceName,
         RegexMatchSetId: ResourceId
     ): RegexMatchSetSummary = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"            -> Name.asInstanceOf[js.Any],
         "RegexMatchSetId" -> RegexMatchSetId.asInstanceOf[js.Any]
       )
@@ -3933,7 +3933,7 @@ package wafregional {
         Action: ChangeAction,
         RegexMatchTuple: RegexMatchTuple
     ): RegexMatchSetUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Action"          -> Action.asInstanceOf[js.Any],
         "RegexMatchTuple" -> RegexMatchTuple.asInstanceOf[js.Any]
       )
@@ -3961,7 +3961,7 @@ package wafregional {
         RegexPatternSetId: ResourceId,
         TextTransformation: TextTransformation
     ): RegexMatchTuple = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FieldToMatch"       -> FieldToMatch.asInstanceOf[js.Any],
         "RegexPatternSetId"  -> RegexPatternSetId.asInstanceOf[js.Any],
         "TextTransformation" -> TextTransformation.asInstanceOf[js.Any]
@@ -3987,12 +3987,12 @@ package wafregional {
         RegexPatternStrings: RegexPatternStrings,
         Name: js.UndefOr[ResourceName] = js.undefined
     ): RegexPatternSet = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RegexPatternSetId"   -> RegexPatternSetId.asInstanceOf[js.Any],
         "RegexPatternStrings" -> RegexPatternStrings.asInstanceOf[js.Any]
       )
 
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegexPatternSet]
     }
   }
@@ -4011,7 +4011,7 @@ package wafregional {
         Name: ResourceName,
         RegexPatternSetId: ResourceId
     ): RegexPatternSetSummary = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"              -> Name.asInstanceOf[js.Any],
         "RegexPatternSetId" -> RegexPatternSetId.asInstanceOf[js.Any]
       )
@@ -4034,7 +4034,7 @@ package wafregional {
         Action: ChangeAction,
         RegexPatternString: RegexPatternString
     ): RegexPatternSetUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Action"             -> Action.asInstanceOf[js.Any],
         "RegexPatternString" -> RegexPatternString.asInstanceOf[js.Any]
       )
@@ -4071,13 +4071,13 @@ package wafregional {
         MetricName: js.UndefOr[MetricName] = js.undefined,
         Name: js.UndefOr[ResourceName] = js.undefined
     ): Rule = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Predicates" -> Predicates.asInstanceOf[js.Any],
         "RuleId"     -> RuleId.asInstanceOf[js.Any]
       )
 
-      MetricName.foreach(__v => __obj.update("MetricName", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Rule]
     }
   }
@@ -4102,12 +4102,12 @@ package wafregional {
         MetricName: js.UndefOr[MetricName] = js.undefined,
         Name: js.UndefOr[ResourceName] = js.undefined
     ): RuleGroup = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RuleGroupId" -> RuleGroupId.asInstanceOf[js.Any]
       )
 
-      MetricName.foreach(__v => __obj.update("MetricName", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RuleGroup]
     }
   }
@@ -4126,7 +4126,7 @@ package wafregional {
         Name: ResourceName,
         RuleGroupId: ResourceId
     ): RuleGroupSummary = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"        -> Name.asInstanceOf[js.Any],
         "RuleGroupId" -> RuleGroupId.asInstanceOf[js.Any]
       )
@@ -4149,7 +4149,7 @@ package wafregional {
         Action: ChangeAction,
         ActivatedRule: ActivatedRule
     ): RuleGroupUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Action"        -> Action.asInstanceOf[js.Any],
         "ActivatedRule" -> ActivatedRule.asInstanceOf[js.Any]
       )
@@ -4172,7 +4172,7 @@ package wafregional {
         Name: ResourceName,
         RuleId: ResourceId
     ): RuleSummary = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"   -> Name.asInstanceOf[js.Any],
         "RuleId" -> RuleId.asInstanceOf[js.Any]
       )
@@ -4195,7 +4195,7 @@ package wafregional {
         Action: ChangeAction,
         Predicate: Predicate
     ): RuleUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Action"    -> Action.asInstanceOf[js.Any],
         "Predicate" -> Predicate.asInstanceOf[js.Any]
       )
@@ -4224,14 +4224,14 @@ package wafregional {
         RuleWithinRuleGroup: js.UndefOr[ResourceId] = js.undefined,
         Timestamp: js.UndefOr[Timestamp] = js.undefined
     ): SampledHTTPRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Request" -> Request.asInstanceOf[js.Any],
         "Weight"  -> Weight.asInstanceOf[js.Any]
       )
 
-      Action.foreach(__v => __obj.update("Action", __v.asInstanceOf[js.Any]))
-      RuleWithinRuleGroup.foreach(__v => __obj.update("RuleWithinRuleGroup", __v.asInstanceOf[js.Any]))
-      Timestamp.foreach(__v => __obj.update("Timestamp", __v.asInstanceOf[js.Any]))
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      RuleWithinRuleGroup.foreach(__v => __obj.updateDynamic("RuleWithinRuleGroup")(__v.asInstanceOf[js.Any]))
+      Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SampledHTTPRequest]
     }
   }
@@ -4254,7 +4254,7 @@ package wafregional {
         Size: Size,
         TextTransformation: TextTransformation
     ): SizeConstraint = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ComparisonOperator" -> ComparisonOperator.asInstanceOf[js.Any],
         "FieldToMatch"       -> FieldToMatch.asInstanceOf[js.Any],
         "Size"               -> Size.asInstanceOf[js.Any],
@@ -4281,12 +4281,12 @@ package wafregional {
         SizeConstraints: SizeConstraints,
         Name: js.UndefOr[ResourceName] = js.undefined
     ): SizeConstraintSet = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SizeConstraintSetId" -> SizeConstraintSetId.asInstanceOf[js.Any],
         "SizeConstraints"     -> SizeConstraints.asInstanceOf[js.Any]
       )
 
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SizeConstraintSet]
     }
   }
@@ -4305,7 +4305,7 @@ package wafregional {
         Name: ResourceName,
         SizeConstraintSetId: ResourceId
     ): SizeConstraintSetSummary = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"                -> Name.asInstanceOf[js.Any],
         "SizeConstraintSetId" -> SizeConstraintSetId.asInstanceOf[js.Any]
       )
@@ -4328,7 +4328,7 @@ package wafregional {
         Action: ChangeAction,
         SizeConstraint: SizeConstraint
     ): SizeConstraintSetUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Action"         -> Action.asInstanceOf[js.Any],
         "SizeConstraint" -> SizeConstraint.asInstanceOf[js.Any]
       )
@@ -4353,12 +4353,12 @@ package wafregional {
         SqlInjectionMatchTuples: SqlInjectionMatchTuples,
         Name: js.UndefOr[ResourceName] = js.undefined
     ): SqlInjectionMatchSet = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SqlInjectionMatchSetId"  -> SqlInjectionMatchSetId.asInstanceOf[js.Any],
         "SqlInjectionMatchTuples" -> SqlInjectionMatchTuples.asInstanceOf[js.Any]
       )
 
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SqlInjectionMatchSet]
     }
   }
@@ -4377,7 +4377,7 @@ package wafregional {
         Name: ResourceName,
         SqlInjectionMatchSetId: ResourceId
     ): SqlInjectionMatchSetSummary = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"                   -> Name.asInstanceOf[js.Any],
         "SqlInjectionMatchSetId" -> SqlInjectionMatchSetId.asInstanceOf[js.Any]
       )
@@ -4400,7 +4400,7 @@ package wafregional {
         Action: ChangeAction,
         SqlInjectionMatchTuple: SqlInjectionMatchTuple
     ): SqlInjectionMatchSetUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Action"                 -> Action.asInstanceOf[js.Any],
         "SqlInjectionMatchTuple" -> SqlInjectionMatchTuple.asInstanceOf[js.Any]
       )
@@ -4423,7 +4423,7 @@ package wafregional {
         FieldToMatch: FieldToMatch,
         TextTransformation: TextTransformation
     ): SqlInjectionMatchTuple = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FieldToMatch"       -> FieldToMatch.asInstanceOf[js.Any],
         "TextTransformation" -> TextTransformation.asInstanceOf[js.Any]
       )
@@ -4448,7 +4448,7 @@ package wafregional {
         Name: ResourceName,
         RuleGroupId: ResourceId
     ): SubscribedRuleGroupSummary = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MetricName"  -> MetricName.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any],
         "RuleGroupId" -> RuleGroupId.asInstanceOf[js.Any]
@@ -4469,9 +4469,9 @@ package wafregional {
         Key: js.UndefOr[TagKey] = js.undefined,
         Value: js.UndefOr[TagValue] = js.undefined
     ): Tag = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tag]
     }
   }
@@ -4487,9 +4487,9 @@ package wafregional {
         ResourceARN: js.UndefOr[ResourceArn] = js.undefined,
         TagList: js.UndefOr[TagList] = js.undefined
     ): TagInfoForResource = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ResourceARN.foreach(__v => __obj.update("ResourceARN", __v.asInstanceOf[js.Any]))
-      TagList.foreach(__v => __obj.update("TagList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ResourceARN.foreach(__v => __obj.updateDynamic("ResourceARN")(__v.asInstanceOf[js.Any]))
+      TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TagInfoForResource]
     }
   }
@@ -4505,7 +4505,7 @@ package wafregional {
         ResourceARN: ResourceArn,
         Tags: TagList
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
       )
@@ -4520,7 +4520,7 @@ package wafregional {
   object TagResourceResponse {
     def apply(
         ): TagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -4553,7 +4553,7 @@ package wafregional {
         EndTime: Timestamp,
         StartTime: Timestamp
     ): TimeWindow = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EndTime"   -> EndTime.asInstanceOf[js.Any],
         "StartTime" -> StartTime.asInstanceOf[js.Any]
       )
@@ -4573,7 +4573,7 @@ package wafregional {
         ResourceARN: ResourceArn,
         TagKeys: TagKeyList
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
       )
@@ -4588,7 +4588,7 @@ package wafregional {
   object UntagResourceResponse {
     def apply(
         ): UntagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -4607,7 +4607,7 @@ package wafregional {
         ChangeToken: ChangeToken,
         Updates: ByteMatchSetUpdates
     ): UpdateByteMatchSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ByteMatchSetId" -> ByteMatchSetId.asInstanceOf[js.Any],
         "ChangeToken"    -> ChangeToken.asInstanceOf[js.Any],
         "Updates"        -> Updates.asInstanceOf[js.Any]
@@ -4626,8 +4626,8 @@ package wafregional {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateByteMatchSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateByteMatchSetResponse]
     }
   }
@@ -4645,7 +4645,7 @@ package wafregional {
         GeoMatchSetId: ResourceId,
         Updates: GeoMatchSetUpdates
     ): UpdateGeoMatchSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken"   -> ChangeToken.asInstanceOf[js.Any],
         "GeoMatchSetId" -> GeoMatchSetId.asInstanceOf[js.Any],
         "Updates"       -> Updates.asInstanceOf[js.Any]
@@ -4664,8 +4664,8 @@ package wafregional {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateGeoMatchSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGeoMatchSetResponse]
     }
   }
@@ -4683,7 +4683,7 @@ package wafregional {
         IPSetId: ResourceId,
         Updates: IPSetUpdates
     ): UpdateIPSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "IPSetId"     -> IPSetId.asInstanceOf[js.Any],
         "Updates"     -> Updates.asInstanceOf[js.Any]
@@ -4702,8 +4702,8 @@ package wafregional {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateIPSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateIPSetResponse]
     }
   }
@@ -4723,7 +4723,7 @@ package wafregional {
         RuleId: ResourceId,
         Updates: RuleUpdates
     ): UpdateRateBasedRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "RateLimit"   -> RateLimit.asInstanceOf[js.Any],
         "RuleId"      -> RuleId.asInstanceOf[js.Any],
@@ -4743,8 +4743,8 @@ package wafregional {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateRateBasedRuleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRateBasedRuleResponse]
     }
   }
@@ -4762,7 +4762,7 @@ package wafregional {
         RegexMatchSetId: ResourceId,
         Updates: RegexMatchSetUpdates
     ): UpdateRegexMatchSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken"     -> ChangeToken.asInstanceOf[js.Any],
         "RegexMatchSetId" -> RegexMatchSetId.asInstanceOf[js.Any],
         "Updates"         -> Updates.asInstanceOf[js.Any]
@@ -4781,8 +4781,8 @@ package wafregional {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateRegexMatchSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRegexMatchSetResponse]
     }
   }
@@ -4800,7 +4800,7 @@ package wafregional {
         RegexPatternSetId: ResourceId,
         Updates: RegexPatternSetUpdates
     ): UpdateRegexPatternSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken"       -> ChangeToken.asInstanceOf[js.Any],
         "RegexPatternSetId" -> RegexPatternSetId.asInstanceOf[js.Any],
         "Updates"           -> Updates.asInstanceOf[js.Any]
@@ -4819,8 +4819,8 @@ package wafregional {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateRegexPatternSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRegexPatternSetResponse]
     }
   }
@@ -4838,7 +4838,7 @@ package wafregional {
         RuleGroupId: ResourceId,
         Updates: RuleGroupUpdates
     ): UpdateRuleGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "RuleGroupId" -> RuleGroupId.asInstanceOf[js.Any],
         "Updates"     -> Updates.asInstanceOf[js.Any]
@@ -4857,8 +4857,8 @@ package wafregional {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateRuleGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRuleGroupResponse]
     }
   }
@@ -4876,7 +4876,7 @@ package wafregional {
         RuleId: ResourceId,
         Updates: RuleUpdates
     ): UpdateRuleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "RuleId"      -> RuleId.asInstanceOf[js.Any],
         "Updates"     -> Updates.asInstanceOf[js.Any]
@@ -4895,8 +4895,8 @@ package wafregional {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateRuleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRuleResponse]
     }
   }
@@ -4914,7 +4914,7 @@ package wafregional {
         SizeConstraintSetId: ResourceId,
         Updates: SizeConstraintSetUpdates
     ): UpdateSizeConstraintSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken"         -> ChangeToken.asInstanceOf[js.Any],
         "SizeConstraintSetId" -> SizeConstraintSetId.asInstanceOf[js.Any],
         "Updates"             -> Updates.asInstanceOf[js.Any]
@@ -4933,8 +4933,8 @@ package wafregional {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateSizeConstraintSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSizeConstraintSetResponse]
     }
   }
@@ -4955,7 +4955,7 @@ package wafregional {
         SqlInjectionMatchSetId: ResourceId,
         Updates: SqlInjectionMatchSetUpdates
     ): UpdateSqlInjectionMatchSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken"            -> ChangeToken.asInstanceOf[js.Any],
         "SqlInjectionMatchSetId" -> SqlInjectionMatchSetId.asInstanceOf[js.Any],
         "Updates"                -> Updates.asInstanceOf[js.Any]
@@ -4977,8 +4977,8 @@ package wafregional {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateSqlInjectionMatchSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSqlInjectionMatchSetResponse]
     }
   }
@@ -4998,13 +4998,13 @@ package wafregional {
         DefaultAction: js.UndefOr[WafAction] = js.undefined,
         Updates: js.UndefOr[WebACLUpdates] = js.undefined
     ): UpdateWebACLRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken" -> ChangeToken.asInstanceOf[js.Any],
         "WebACLId"    -> WebACLId.asInstanceOf[js.Any]
       )
 
-      DefaultAction.foreach(__v => __obj.update("DefaultAction", __v.asInstanceOf[js.Any]))
-      Updates.foreach(__v => __obj.update("Updates", __v.asInstanceOf[js.Any]))
+      DefaultAction.foreach(__v => __obj.updateDynamic("DefaultAction")(__v.asInstanceOf[js.Any]))
+      Updates.foreach(__v => __obj.updateDynamic("Updates")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateWebACLRequest]
     }
   }
@@ -5018,8 +5018,8 @@ package wafregional {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateWebACLResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateWebACLResponse]
     }
   }
@@ -5040,7 +5040,7 @@ package wafregional {
         Updates: XssMatchSetUpdates,
         XssMatchSetId: ResourceId
     ): UpdateXssMatchSetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChangeToken"   -> ChangeToken.asInstanceOf[js.Any],
         "Updates"       -> Updates.asInstanceOf[js.Any],
         "XssMatchSetId" -> XssMatchSetId.asInstanceOf[js.Any]
@@ -5062,8 +5062,8 @@ package wafregional {
     def apply(
         ChangeToken: js.UndefOr[ChangeToken] = js.undefined
     ): UpdateXssMatchSetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeToken.foreach(__v => __obj.update("ChangeToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeToken.foreach(__v => __obj.updateDynamic("ChangeToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateXssMatchSetResponse]
     }
   }
@@ -5080,7 +5080,7 @@ package wafregional {
     def apply(
         Type: WafActionType
     ): WafAction = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Type" -> Type.asInstanceOf[js.Any]
       )
 
@@ -5108,7 +5108,7 @@ package wafregional {
     def apply(
         Type: WafOverrideActionType
     ): WafOverrideAction = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Type" -> Type.asInstanceOf[js.Any]
       )
 
@@ -5153,15 +5153,15 @@ package wafregional {
         Name: js.UndefOr[ResourceName] = js.undefined,
         WebACLArn: js.UndefOr[ResourceArn] = js.undefined
     ): WebACL = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DefaultAction" -> DefaultAction.asInstanceOf[js.Any],
         "Rules"         -> Rules.asInstanceOf[js.Any],
         "WebACLId"      -> WebACLId.asInstanceOf[js.Any]
       )
 
-      MetricName.foreach(__v => __obj.update("MetricName", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      WebACLArn.foreach(__v => __obj.update("WebACLArn", __v.asInstanceOf[js.Any]))
+      MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      WebACLArn.foreach(__v => __obj.updateDynamic("WebACLArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WebACL]
     }
   }
@@ -5180,7 +5180,7 @@ package wafregional {
         Name: ResourceName,
         WebACLId: ResourceId
     ): WebACLSummary = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"     -> Name.asInstanceOf[js.Any],
         "WebACLId" -> WebACLId.asInstanceOf[js.Any]
       )
@@ -5203,7 +5203,7 @@ package wafregional {
         Action: ChangeAction,
         ActivatedRule: ActivatedRule
     ): WebACLUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Action"        -> Action.asInstanceOf[js.Any],
         "ActivatedRule" -> ActivatedRule.asInstanceOf[js.Any]
       )
@@ -5228,12 +5228,12 @@ package wafregional {
         XssMatchTuples: XssMatchTuples,
         Name: js.UndefOr[ResourceName] = js.undefined
     ): XssMatchSet = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "XssMatchSetId"  -> XssMatchSetId.asInstanceOf[js.Any],
         "XssMatchTuples" -> XssMatchTuples.asInstanceOf[js.Any]
       )
 
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[XssMatchSet]
     }
   }
@@ -5252,7 +5252,7 @@ package wafregional {
         Name: ResourceName,
         XssMatchSetId: ResourceId
     ): XssMatchSetSummary = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"          -> Name.asInstanceOf[js.Any],
         "XssMatchSetId" -> XssMatchSetId.asInstanceOf[js.Any]
       )
@@ -5275,7 +5275,7 @@ package wafregional {
         Action: ChangeAction,
         XssMatchTuple: XssMatchTuple
     ): XssMatchSetUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Action"        -> Action.asInstanceOf[js.Any],
         "XssMatchTuple" -> XssMatchTuple.asInstanceOf[js.Any]
       )
@@ -5298,7 +5298,7 @@ package wafregional {
         FieldToMatch: FieldToMatch,
         TextTransformation: TextTransformation
     ): XssMatchTuple = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FieldToMatch"       -> FieldToMatch.asInstanceOf[js.Any],
         "TextTransformation" -> TextTransformation.asInstanceOf[js.Any]
       )

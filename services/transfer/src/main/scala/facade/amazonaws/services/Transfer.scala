@@ -125,14 +125,14 @@ package transfer {
         LoggingRole: js.UndefOr[Role] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateServerRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EndpointDetails.foreach(__v => __obj.update("EndpointDetails", __v.asInstanceOf[js.Any]))
-      EndpointType.foreach(__v => __obj.update("EndpointType", __v.asInstanceOf[js.Any]))
-      HostKey.foreach(__v => __obj.update("HostKey", __v.asInstanceOf[js.Any]))
-      IdentityProviderDetails.foreach(__v => __obj.update("IdentityProviderDetails", __v.asInstanceOf[js.Any]))
-      IdentityProviderType.foreach(__v => __obj.update("IdentityProviderType", __v.asInstanceOf[js.Any]))
-      LoggingRole.foreach(__v => __obj.update("LoggingRole", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EndpointDetails.foreach(__v => __obj.updateDynamic("EndpointDetails")(__v.asInstanceOf[js.Any]))
+      EndpointType.foreach(__v => __obj.updateDynamic("EndpointType")(__v.asInstanceOf[js.Any]))
+      HostKey.foreach(__v => __obj.updateDynamic("HostKey")(__v.asInstanceOf[js.Any]))
+      IdentityProviderDetails.foreach(__v => __obj.updateDynamic("IdentityProviderDetails")(__v.asInstanceOf[js.Any]))
+      IdentityProviderType.foreach(__v => __obj.updateDynamic("IdentityProviderType")(__v.asInstanceOf[js.Any]))
+      LoggingRole.foreach(__v => __obj.updateDynamic("LoggingRole")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateServerRequest]
     }
   }
@@ -146,7 +146,7 @@ package transfer {
     def apply(
         ServerId: ServerId
     ): CreateServerResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServerId" -> ServerId.asInstanceOf[js.Any]
       )
 
@@ -175,16 +175,16 @@ package transfer {
         SshPublicKeyBody: js.UndefOr[SshPublicKeyBody] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Role"     -> Role.asInstanceOf[js.Any],
         "ServerId" -> ServerId.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
-      HomeDirectory.foreach(__v => __obj.update("HomeDirectory", __v.asInstanceOf[js.Any]))
-      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
-      SshPublicKeyBody.foreach(__v => __obj.update("SshPublicKeyBody", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      HomeDirectory.foreach(__v => __obj.updateDynamic("HomeDirectory")(__v.asInstanceOf[js.Any]))
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
+      SshPublicKeyBody.foreach(__v => __obj.updateDynamic("SshPublicKeyBody")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateUserRequest]
     }
   }
@@ -200,7 +200,7 @@ package transfer {
         ServerId: ServerId,
         UserName: UserName
     ): CreateUserResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServerId" -> ServerId.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
@@ -218,7 +218,7 @@ package transfer {
     def apply(
         ServerId: ServerId
     ): DeleteServerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServerId" -> ServerId.asInstanceOf[js.Any]
       )
 
@@ -239,7 +239,7 @@ package transfer {
         SshPublicKeyId: SshPublicKeyId,
         UserName: UserName
     ): DeleteSshPublicKeyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServerId"       -> ServerId.asInstanceOf[js.Any],
         "SshPublicKeyId" -> SshPublicKeyId.asInstanceOf[js.Any],
         "UserName"       -> UserName.asInstanceOf[js.Any]
@@ -260,7 +260,7 @@ package transfer {
         ServerId: ServerId,
         UserName: UserName
     ): DeleteUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServerId" -> ServerId.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
@@ -278,7 +278,7 @@ package transfer {
     def apply(
         ServerId: ServerId
     ): DescribeServerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServerId" -> ServerId.asInstanceOf[js.Any]
       )
 
@@ -295,7 +295,7 @@ package transfer {
     def apply(
         Server: DescribedServer
     ): DescribeServerResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Server" -> Server.asInstanceOf[js.Any]
       )
 
@@ -314,7 +314,7 @@ package transfer {
         ServerId: ServerId,
         UserName: UserName
     ): DescribeUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServerId" -> ServerId.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
@@ -334,7 +334,7 @@ package transfer {
         ServerId: ServerId,
         User: DescribedUser
     ): DescribeUserResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServerId" -> ServerId.asInstanceOf[js.Any],
         "User"     -> User.asInstanceOf[js.Any]
       )
@@ -375,20 +375,20 @@ package transfer {
         Tags: js.UndefOr[Tags] = js.undefined,
         UserCount: js.UndefOr[UserCount] = js.undefined
     ): DescribedServer = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
 
-      EndpointDetails.foreach(__v => __obj.update("EndpointDetails", __v.asInstanceOf[js.Any]))
-      EndpointType.foreach(__v => __obj.update("EndpointType", __v.asInstanceOf[js.Any]))
-      HostKeyFingerprint.foreach(__v => __obj.update("HostKeyFingerprint", __v.asInstanceOf[js.Any]))
-      IdentityProviderDetails.foreach(__v => __obj.update("IdentityProviderDetails", __v.asInstanceOf[js.Any]))
-      IdentityProviderType.foreach(__v => __obj.update("IdentityProviderType", __v.asInstanceOf[js.Any]))
-      LoggingRole.foreach(__v => __obj.update("LoggingRole", __v.asInstanceOf[js.Any]))
-      ServerId.foreach(__v => __obj.update("ServerId", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      UserCount.foreach(__v => __obj.update("UserCount", __v.asInstanceOf[js.Any]))
+      EndpointDetails.foreach(__v => __obj.updateDynamic("EndpointDetails")(__v.asInstanceOf[js.Any]))
+      EndpointType.foreach(__v => __obj.updateDynamic("EndpointType")(__v.asInstanceOf[js.Any]))
+      HostKeyFingerprint.foreach(__v => __obj.updateDynamic("HostKeyFingerprint")(__v.asInstanceOf[js.Any]))
+      IdentityProviderDetails.foreach(__v => __obj.updateDynamic("IdentityProviderDetails")(__v.asInstanceOf[js.Any]))
+      IdentityProviderType.foreach(__v => __obj.updateDynamic("IdentityProviderType")(__v.asInstanceOf[js.Any]))
+      LoggingRole.foreach(__v => __obj.updateDynamic("LoggingRole")(__v.asInstanceOf[js.Any]))
+      ServerId.foreach(__v => __obj.updateDynamic("ServerId")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      UserCount.foreach(__v => __obj.updateDynamic("UserCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribedServer]
     }
   }
@@ -417,16 +417,16 @@ package transfer {
         Tags: js.UndefOr[Tags] = js.undefined,
         UserName: js.UndefOr[UserName] = js.undefined
     ): DescribedUser = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
 
-      HomeDirectory.foreach(__v => __obj.update("HomeDirectory", __v.asInstanceOf[js.Any]))
-      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
-      Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
-      SshPublicKeys.foreach(__v => __obj.update("SshPublicKeys", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      HomeDirectory.foreach(__v => __obj.updateDynamic("HomeDirectory")(__v.asInstanceOf[js.Any]))
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
+      SshPublicKeys.foreach(__v => __obj.updateDynamic("SshPublicKeys")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribedUser]
     }
   }
@@ -443,8 +443,8 @@ package transfer {
     def apply(
         VpcEndpointId: js.UndefOr[VpcEndpointId] = js.undefined
     ): EndpointDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      VpcEndpointId.foreach(__v => __obj.update("VpcEndpointId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      VpcEndpointId.foreach(__v => __obj.updateDynamic("VpcEndpointId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EndpointDetails]
     }
   }
@@ -470,9 +470,9 @@ package transfer {
         InvocationRole: js.UndefOr[Role] = js.undefined,
         Url: js.UndefOr[Url] = js.undefined
     ): IdentityProviderDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InvocationRole.foreach(__v => __obj.update("InvocationRole", __v.asInstanceOf[js.Any]))
-      Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InvocationRole.foreach(__v => __obj.updateDynamic("InvocationRole")(__v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IdentityProviderDetails]
     }
   }
@@ -500,7 +500,7 @@ package transfer {
         SshPublicKeyBody: SshPublicKeyBody,
         UserName: UserName
     ): ImportSshPublicKeyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServerId"         -> ServerId.asInstanceOf[js.Any],
         "SshPublicKeyBody" -> SshPublicKeyBody.asInstanceOf[js.Any],
         "UserName"         -> UserName.asInstanceOf[js.Any]
@@ -526,7 +526,7 @@ package transfer {
         SshPublicKeyId: SshPublicKeyId,
         UserName: UserName
     ): ImportSshPublicKeyResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServerId"       -> ServerId.asInstanceOf[js.Any],
         "SshPublicKeyId" -> SshPublicKeyId.asInstanceOf[js.Any],
         "UserName"       -> UserName.asInstanceOf[js.Any]
@@ -547,9 +547,9 @@ package transfer {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListServersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListServersRequest]
     }
   }
@@ -565,11 +565,11 @@ package transfer {
         Servers: ListedServers,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListServersResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Servers" -> Servers.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListServersResponse]
     }
   }
@@ -587,12 +587,12 @@ package transfer {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListTagsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -610,10 +610,10 @@ package transfer {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): ListTagsForResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
@@ -631,12 +631,12 @@ package transfer {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListUsersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServerId" -> ServerId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListUsersRequest]
     }
   }
@@ -654,12 +654,12 @@ package transfer {
         Users: ListedUsers,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListUsersResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServerId" -> ServerId.asInstanceOf[js.Any],
         "Users"    -> Users.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListUsersResponse]
     }
   }
@@ -688,16 +688,16 @@ package transfer {
         State: js.UndefOr[State] = js.undefined,
         UserCount: js.UndefOr[UserCount] = js.undefined
     ): ListedServer = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
 
-      EndpointType.foreach(__v => __obj.update("EndpointType", __v.asInstanceOf[js.Any]))
-      IdentityProviderType.foreach(__v => __obj.update("IdentityProviderType", __v.asInstanceOf[js.Any]))
-      LoggingRole.foreach(__v => __obj.update("LoggingRole", __v.asInstanceOf[js.Any]))
-      ServerId.foreach(__v => __obj.update("ServerId", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
-      UserCount.foreach(__v => __obj.update("UserCount", __v.asInstanceOf[js.Any]))
+      EndpointType.foreach(__v => __obj.updateDynamic("EndpointType")(__v.asInstanceOf[js.Any]))
+      IdentityProviderType.foreach(__v => __obj.updateDynamic("IdentityProviderType")(__v.asInstanceOf[js.Any]))
+      LoggingRole.foreach(__v => __obj.updateDynamic("LoggingRole")(__v.asInstanceOf[js.Any]))
+      ServerId.foreach(__v => __obj.updateDynamic("ServerId")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      UserCount.foreach(__v => __obj.updateDynamic("UserCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListedServer]
     }
   }
@@ -722,14 +722,14 @@ package transfer {
         SshPublicKeyCount: js.UndefOr[SshPublicKeyCount] = js.undefined,
         UserName: js.UndefOr[UserName] = js.undefined
     ): ListedUser = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
 
-      HomeDirectory.foreach(__v => __obj.update("HomeDirectory", __v.asInstanceOf[js.Any]))
-      Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
-      SshPublicKeyCount.foreach(__v => __obj.update("SshPublicKeyCount", __v.asInstanceOf[js.Any]))
-      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      HomeDirectory.foreach(__v => __obj.updateDynamic("HomeDirectory")(__v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
+      SshPublicKeyCount.foreach(__v => __obj.updateDynamic("SshPublicKeyCount")(__v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListedUser]
     }
   }
@@ -750,7 +750,7 @@ package transfer {
         SshPublicKeyBody: SshPublicKeyBody,
         SshPublicKeyId: SshPublicKeyId
     ): SshPublicKey = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DateImported"     -> DateImported.asInstanceOf[js.Any],
         "SshPublicKeyBody" -> SshPublicKeyBody.asInstanceOf[js.Any],
         "SshPublicKeyId"   -> SshPublicKeyId.asInstanceOf[js.Any]
@@ -769,7 +769,7 @@ package transfer {
     def apply(
         ServerId: ServerId
     ): StartServerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServerId" -> ServerId.asInstanceOf[js.Any]
       )
 
@@ -801,7 +801,7 @@ package transfer {
     def apply(
         ServerId: ServerId
     ): StopServerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServerId" -> ServerId.asInstanceOf[js.Any]
       )
 
@@ -823,7 +823,7 @@ package transfer {
         Key: TagKey,
         Value: TagValue
     ): Tag = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"   -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
@@ -843,7 +843,7 @@ package transfer {
         Arn: Arn,
         Tags: Tags
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn"  -> Arn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
@@ -865,12 +865,12 @@ package transfer {
         UserName: UserName,
         UserPassword: js.UndefOr[UserPassword] = js.undefined
     ): TestIdentityProviderRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServerId" -> ServerId.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
-      UserPassword.foreach(__v => __obj.update("UserPassword", __v.asInstanceOf[js.Any]))
+      UserPassword.foreach(__v => __obj.updateDynamic("UserPassword")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TestIdentityProviderRequest]
     }
   }
@@ -890,13 +890,13 @@ package transfer {
         Message: js.UndefOr[Message] = js.undefined,
         Response: js.UndefOr[Response] = js.undefined
     ): TestIdentityProviderResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "StatusCode" -> StatusCode.asInstanceOf[js.Any],
         "Url"        -> Url.asInstanceOf[js.Any]
       )
 
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
-      Response.foreach(__v => __obj.update("Response", __v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Response.foreach(__v => __obj.updateDynamic("Response")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TestIdentityProviderResponse]
     }
   }
@@ -912,7 +912,7 @@ package transfer {
         Arn: Arn,
         TagKeys: TagKeys
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn"     -> Arn.asInstanceOf[js.Any],
         "TagKeys" -> TagKeys.asInstanceOf[js.Any]
       )
@@ -940,15 +940,15 @@ package transfer {
         IdentityProviderDetails: js.UndefOr[IdentityProviderDetails] = js.undefined,
         LoggingRole: js.UndefOr[NullableRole] = js.undefined
     ): UpdateServerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServerId" -> ServerId.asInstanceOf[js.Any]
       )
 
-      EndpointDetails.foreach(__v => __obj.update("EndpointDetails", __v.asInstanceOf[js.Any]))
-      EndpointType.foreach(__v => __obj.update("EndpointType", __v.asInstanceOf[js.Any]))
-      HostKey.foreach(__v => __obj.update("HostKey", __v.asInstanceOf[js.Any]))
-      IdentityProviderDetails.foreach(__v => __obj.update("IdentityProviderDetails", __v.asInstanceOf[js.Any]))
-      LoggingRole.foreach(__v => __obj.update("LoggingRole", __v.asInstanceOf[js.Any]))
+      EndpointDetails.foreach(__v => __obj.updateDynamic("EndpointDetails")(__v.asInstanceOf[js.Any]))
+      EndpointType.foreach(__v => __obj.updateDynamic("EndpointType")(__v.asInstanceOf[js.Any]))
+      HostKey.foreach(__v => __obj.updateDynamic("HostKey")(__v.asInstanceOf[js.Any]))
+      IdentityProviderDetails.foreach(__v => __obj.updateDynamic("IdentityProviderDetails")(__v.asInstanceOf[js.Any]))
+      LoggingRole.foreach(__v => __obj.updateDynamic("LoggingRole")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateServerRequest]
     }
   }
@@ -962,7 +962,7 @@ package transfer {
     def apply(
         ServerId: ServerId
     ): UpdateServerResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServerId" -> ServerId.asInstanceOf[js.Any]
       )
 
@@ -987,14 +987,14 @@ package transfer {
         Policy: js.UndefOr[Policy] = js.undefined,
         Role: js.UndefOr[Role] = js.undefined
     ): UpdateUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServerId" -> ServerId.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
-      HomeDirectory.foreach(__v => __obj.update("HomeDirectory", __v.asInstanceOf[js.Any]))
-      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
-      Role.foreach(__v => __obj.update("Role", __v.asInstanceOf[js.Any]))
+      HomeDirectory.foreach(__v => __obj.updateDynamic("HomeDirectory")(__v.asInstanceOf[js.Any]))
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
+      Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateUserRequest]
     }
   }
@@ -1013,7 +1013,7 @@ package transfer {
         ServerId: ServerId,
         UserName: UserName
     ): UpdateUserResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServerId" -> ServerId.asInstanceOf[js.Any],
         "UserName" -> UserName.asInstanceOf[js.Any]
       )

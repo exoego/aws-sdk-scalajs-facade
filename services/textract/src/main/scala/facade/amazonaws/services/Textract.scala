@@ -87,7 +87,7 @@ package textract {
         Document: Document,
         FeatureTypes: FeatureTypes
     ): AnalyzeDocumentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Document"     -> Document.asInstanceOf[js.Any],
         "FeatureTypes" -> FeatureTypes.asInstanceOf[js.Any]
       )
@@ -107,9 +107,9 @@ package textract {
         Blocks: js.UndefOr[BlockList] = js.undefined,
         DocumentMetadata: js.UndefOr[DocumentMetadata] = js.undefined
     ): AnalyzeDocumentResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Blocks.foreach(__v => __obj.update("Blocks", __v.asInstanceOf[js.Any]))
-      DocumentMetadata.foreach(__v => __obj.update("DocumentMetadata", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Blocks.foreach(__v => __obj.updateDynamic("Blocks")(__v.asInstanceOf[js.Any]))
+      DocumentMetadata.foreach(__v => __obj.updateDynamic("DocumentMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AnalyzeDocumentResponse]
     }
   }
@@ -152,20 +152,20 @@ package textract {
         SelectionStatus: js.UndefOr[SelectionStatus] = js.undefined,
         Text: js.UndefOr[String] = js.undefined
     ): Block = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BlockType.foreach(__v => __obj.update("BlockType", __v.asInstanceOf[js.Any]))
-      ColumnIndex.foreach(__v => __obj.update("ColumnIndex", __v.asInstanceOf[js.Any]))
-      ColumnSpan.foreach(__v => __obj.update("ColumnSpan", __v.asInstanceOf[js.Any]))
-      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
-      EntityTypes.foreach(__v => __obj.update("EntityTypes", __v.asInstanceOf[js.Any]))
-      Geometry.foreach(__v => __obj.update("Geometry", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Page.foreach(__v => __obj.update("Page", __v.asInstanceOf[js.Any]))
-      Relationships.foreach(__v => __obj.update("Relationships", __v.asInstanceOf[js.Any]))
-      RowIndex.foreach(__v => __obj.update("RowIndex", __v.asInstanceOf[js.Any]))
-      RowSpan.foreach(__v => __obj.update("RowSpan", __v.asInstanceOf[js.Any]))
-      SelectionStatus.foreach(__v => __obj.update("SelectionStatus", __v.asInstanceOf[js.Any]))
-      Text.foreach(__v => __obj.update("Text", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BlockType.foreach(__v => __obj.updateDynamic("BlockType")(__v.asInstanceOf[js.Any]))
+      ColumnIndex.foreach(__v => __obj.updateDynamic("ColumnIndex")(__v.asInstanceOf[js.Any]))
+      ColumnSpan.foreach(__v => __obj.updateDynamic("ColumnSpan")(__v.asInstanceOf[js.Any]))
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      EntityTypes.foreach(__v => __obj.updateDynamic("EntityTypes")(__v.asInstanceOf[js.Any]))
+      Geometry.foreach(__v => __obj.updateDynamic("Geometry")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Page.foreach(__v => __obj.updateDynamic("Page")(__v.asInstanceOf[js.Any]))
+      Relationships.foreach(__v => __obj.updateDynamic("Relationships")(__v.asInstanceOf[js.Any]))
+      RowIndex.foreach(__v => __obj.updateDynamic("RowIndex")(__v.asInstanceOf[js.Any]))
+      RowSpan.foreach(__v => __obj.updateDynamic("RowSpan")(__v.asInstanceOf[js.Any]))
+      SelectionStatus.foreach(__v => __obj.updateDynamic("SelectionStatus")(__v.asInstanceOf[js.Any]))
+      Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Block]
     }
   }
@@ -202,11 +202,11 @@ package textract {
         Top: js.UndefOr[Float] = js.undefined,
         Width: js.UndefOr[Float] = js.undefined
     ): BoundingBox = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Height.foreach(__v => __obj.update("Height", __v.asInstanceOf[js.Any]))
-      Left.foreach(__v => __obj.update("Left", __v.asInstanceOf[js.Any]))
-      Top.foreach(__v => __obj.update("Top", __v.asInstanceOf[js.Any]))
-      Width.foreach(__v => __obj.update("Width", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Height.foreach(__v => __obj.updateDynamic("Height")(__v.asInstanceOf[js.Any]))
+      Left.foreach(__v => __obj.updateDynamic("Left")(__v.asInstanceOf[js.Any]))
+      Top.foreach(__v => __obj.updateDynamic("Top")(__v.asInstanceOf[js.Any]))
+      Width.foreach(__v => __obj.updateDynamic("Width")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BoundingBox]
     }
   }
@@ -220,7 +220,7 @@ package textract {
     def apply(
         Document: Document
     ): DetectDocumentTextRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Document" -> Document.asInstanceOf[js.Any]
       )
 
@@ -239,9 +239,9 @@ package textract {
         Blocks: js.UndefOr[BlockList] = js.undefined,
         DocumentMetadata: js.UndefOr[DocumentMetadata] = js.undefined
     ): DetectDocumentTextResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Blocks.foreach(__v => __obj.update("Blocks", __v.asInstanceOf[js.Any]))
-      DocumentMetadata.foreach(__v => __obj.update("DocumentMetadata", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Blocks.foreach(__v => __obj.updateDynamic("Blocks")(__v.asInstanceOf[js.Any]))
+      DocumentMetadata.foreach(__v => __obj.updateDynamic("DocumentMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetectDocumentTextResponse]
     }
   }
@@ -265,9 +265,9 @@ package textract {
         Bytes: js.UndefOr[ImageBlob] = js.undefined,
         S3Object: js.UndefOr[S3Object] = js.undefined
     ): Document = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Bytes.foreach(__v => __obj.update("Bytes", __v.asInstanceOf[js.Any]))
-      S3Object.foreach(__v => __obj.update("S3Object", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Bytes.foreach(__v => __obj.updateDynamic("Bytes")(__v.asInstanceOf[js.Any]))
+      S3Object.foreach(__v => __obj.updateDynamic("S3Object")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Document]
     }
   }
@@ -285,8 +285,8 @@ package textract {
     def apply(
         S3Object: js.UndefOr[S3Object] = js.undefined
     ): DocumentLocation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      S3Object.foreach(__v => __obj.update("S3Object", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      S3Object.foreach(__v => __obj.updateDynamic("S3Object")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DocumentLocation]
     }
   }
@@ -303,8 +303,8 @@ package textract {
     def apply(
         Pages: js.UndefOr[UInteger] = js.undefined
     ): DocumentMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Pages.foreach(__v => __obj.update("Pages", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Pages.foreach(__v => __obj.updateDynamic("Pages")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DocumentMetadata]
     }
   }
@@ -337,9 +337,9 @@ package textract {
         BoundingBox: js.UndefOr[BoundingBox] = js.undefined,
         Polygon: js.UndefOr[Polygon] = js.undefined
     ): Geometry = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BoundingBox.foreach(__v => __obj.update("BoundingBox", __v.asInstanceOf[js.Any]))
-      Polygon.foreach(__v => __obj.update("Polygon", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BoundingBox.foreach(__v => __obj.updateDynamic("BoundingBox")(__v.asInstanceOf[js.Any]))
+      Polygon.foreach(__v => __obj.updateDynamic("Polygon")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Geometry]
     }
   }
@@ -357,12 +357,12 @@ package textract {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): GetDocumentAnalysisRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDocumentAnalysisRequest]
     }
   }
@@ -386,13 +386,13 @@ package textract {
         StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
         Warnings: js.UndefOr[Warnings] = js.undefined
     ): GetDocumentAnalysisResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Blocks.foreach(__v => __obj.update("Blocks", __v.asInstanceOf[js.Any]))
-      DocumentMetadata.foreach(__v => __obj.update("DocumentMetadata", __v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.update("JobStatus", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
-      Warnings.foreach(__v => __obj.update("Warnings", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Blocks.foreach(__v => __obj.updateDynamic("Blocks")(__v.asInstanceOf[js.Any]))
+      DocumentMetadata.foreach(__v => __obj.updateDynamic("DocumentMetadata")(__v.asInstanceOf[js.Any]))
+      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      Warnings.foreach(__v => __obj.updateDynamic("Warnings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDocumentAnalysisResponse]
     }
   }
@@ -410,12 +410,12 @@ package textract {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): GetDocumentTextDetectionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDocumentTextDetectionRequest]
     }
   }
@@ -439,13 +439,13 @@ package textract {
         StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
         Warnings: js.UndefOr[Warnings] = js.undefined
     ): GetDocumentTextDetectionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Blocks.foreach(__v => __obj.update("Blocks", __v.asInstanceOf[js.Any]))
-      DocumentMetadata.foreach(__v => __obj.update("DocumentMetadata", __v.asInstanceOf[js.Any]))
-      JobStatus.foreach(__v => __obj.update("JobStatus", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
-      Warnings.foreach(__v => __obj.update("Warnings", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Blocks.foreach(__v => __obj.updateDynamic("Blocks")(__v.asInstanceOf[js.Any]))
+      DocumentMetadata.foreach(__v => __obj.updateDynamic("DocumentMetadata")(__v.asInstanceOf[js.Any]))
+      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      Warnings.foreach(__v => __obj.updateDynamic("Warnings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDocumentTextDetectionResponse]
     }
   }
@@ -473,7 +473,7 @@ package textract {
         RoleArn: RoleArn,
         SNSTopicArn: SNSTopicArn
     ): NotificationChannel = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RoleArn"     -> RoleArn.asInstanceOf[js.Any],
         "SNSTopicArn" -> SNSTopicArn.asInstanceOf[js.Any]
       )
@@ -497,9 +497,9 @@ package textract {
         X: js.UndefOr[Float] = js.undefined,
         Y: js.UndefOr[Float] = js.undefined
     ): Point = {
-      val __obj = js.Dictionary.empty[js.Any]
-      X.foreach(__v => __obj.update("X", __v.asInstanceOf[js.Any]))
-      Y.foreach(__v => __obj.update("Y", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      X.foreach(__v => __obj.updateDynamic("X")(__v.asInstanceOf[js.Any]))
+      Y.foreach(__v => __obj.updateDynamic("Y")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Point]
     }
   }
@@ -519,9 +519,9 @@ package textract {
         Ids: js.UndefOr[IdList] = js.undefined,
         Type: js.UndefOr[RelationshipType] = js.undefined
     ): Relationship = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Ids.foreach(__v => __obj.update("Ids", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Ids.foreach(__v => __obj.updateDynamic("Ids")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Relationship]
     }
   }
@@ -551,10 +551,10 @@ package textract {
         Name: js.UndefOr[S3ObjectName] = js.undefined,
         Version: js.UndefOr[S3ObjectVersion] = js.undefined
     ): S3Object = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Bucket.foreach(__v => __obj.update("Bucket", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Bucket.foreach(__v => __obj.updateDynamic("Bucket")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Object]
     }
   }
@@ -583,14 +583,14 @@ package textract {
         JobTag: js.UndefOr[JobTag] = js.undefined,
         NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined
     ): StartDocumentAnalysisRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DocumentLocation" -> DocumentLocation.asInstanceOf[js.Any],
         "FeatureTypes"     -> FeatureTypes.asInstanceOf[js.Any]
       )
 
-      ClientRequestToken.foreach(__v => __obj.update("ClientRequestToken", __v.asInstanceOf[js.Any]))
-      JobTag.foreach(__v => __obj.update("JobTag", __v.asInstanceOf[js.Any]))
-      NotificationChannel.foreach(__v => __obj.update("NotificationChannel", __v.asInstanceOf[js.Any]))
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      JobTag.foreach(__v => __obj.updateDynamic("JobTag")(__v.asInstanceOf[js.Any]))
+      NotificationChannel.foreach(__v => __obj.updateDynamic("NotificationChannel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartDocumentAnalysisRequest]
     }
   }
@@ -604,8 +604,8 @@ package textract {
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined
     ): StartDocumentAnalysisResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobId.foreach(__v => __obj.update("JobId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartDocumentAnalysisResponse]
     }
   }
@@ -625,13 +625,13 @@ package textract {
         JobTag: js.UndefOr[JobTag] = js.undefined,
         NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined
     ): StartDocumentTextDetectionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DocumentLocation" -> DocumentLocation.asInstanceOf[js.Any]
       )
 
-      ClientRequestToken.foreach(__v => __obj.update("ClientRequestToken", __v.asInstanceOf[js.Any]))
-      JobTag.foreach(__v => __obj.update("JobTag", __v.asInstanceOf[js.Any]))
-      NotificationChannel.foreach(__v => __obj.update("NotificationChannel", __v.asInstanceOf[js.Any]))
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      JobTag.foreach(__v => __obj.updateDynamic("JobTag")(__v.asInstanceOf[js.Any]))
+      NotificationChannel.foreach(__v => __obj.updateDynamic("NotificationChannel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartDocumentTextDetectionRequest]
     }
   }
@@ -645,8 +645,8 @@ package textract {
     def apply(
         JobId: js.UndefOr[JobId] = js.undefined
     ): StartDocumentTextDetectionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobId.foreach(__v => __obj.update("JobId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartDocumentTextDetectionResponse]
     }
   }
@@ -665,9 +665,9 @@ package textract {
         ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
         Pages: js.UndefOr[Pages] = js.undefined
     ): Warning = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
-      Pages.foreach(__v => __obj.update("Pages", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      Pages.foreach(__v => __obj.updateDynamic("Pages")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Warning]
     }
   }

@@ -257,15 +257,15 @@ package workspaces {
         ModificationState: js.UndefOr[DedicatedTenancyModificationStateEnum] = js.undefined,
         StartTime: js.UndefOr[Timestamp] = js.undefined
     ): AccountModification = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       DedicatedTenancyManagementCidrRange.foreach(
-        __v => __obj.update("DedicatedTenancyManagementCidrRange", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("DedicatedTenancyManagementCidrRange")(__v.asInstanceOf[js.Any])
       )
-      DedicatedTenancySupport.foreach(__v => __obj.update("DedicatedTenancySupport", __v.asInstanceOf[js.Any]))
-      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
-      ModificationState.foreach(__v => __obj.update("ModificationState", __v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      DedicatedTenancySupport.foreach(__v => __obj.updateDynamic("DedicatedTenancySupport")(__v.asInstanceOf[js.Any]))
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      ModificationState.foreach(__v => __obj.updateDynamic("ModificationState")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AccountModification]
     }
   }
@@ -281,7 +281,7 @@ package workspaces {
         DirectoryId: DirectoryId,
         GroupIds: IpGroupIdList
     ): AssociateIpGroupsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "GroupIds"    -> GroupIds.asInstanceOf[js.Any]
       )
@@ -296,7 +296,7 @@ package workspaces {
   object AssociateIpGroupsResult {
     def apply(
         ): AssociateIpGroupsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateIpGroupsResult]
     }
@@ -313,7 +313,7 @@ package workspaces {
         GroupId: IpGroupId,
         UserRules: IpRuleList
     ): AuthorizeIpRulesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupId"   -> GroupId.asInstanceOf[js.Any],
         "UserRules" -> UserRules.asInstanceOf[js.Any]
       )
@@ -328,7 +328,7 @@ package workspaces {
   object AuthorizeIpRulesResult {
     def apply(
         ): AuthorizeIpRulesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AuthorizeIpRulesResult]
     }
@@ -346,8 +346,8 @@ package workspaces {
     def apply(
         ReconnectEnabled: js.UndefOr[ReconnectEnum] = js.undefined
     ): ClientProperties = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ReconnectEnabled.foreach(__v => __obj.update("ReconnectEnabled", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ReconnectEnabled.foreach(__v => __obj.updateDynamic("ReconnectEnabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClientProperties]
     }
   }
@@ -366,9 +366,9 @@ package workspaces {
         ClientProperties: js.UndefOr[ClientProperties] = js.undefined,
         ResourceId: js.UndefOr[NonEmptyString] = js.undefined
     ): ClientPropertiesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClientProperties.foreach(__v => __obj.update("ClientProperties", __v.asInstanceOf[js.Any]))
-      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClientProperties.foreach(__v => __obj.updateDynamic("ClientProperties")(__v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ClientPropertiesResult]
     }
   }
@@ -397,8 +397,8 @@ package workspaces {
     def apply(
         Name: js.UndefOr[Compute] = js.undefined
     ): ComputeType = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ComputeType]
     }
   }
@@ -428,14 +428,14 @@ package workspaces {
         Description: js.UndefOr[WorkspaceImageDescription] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CopyWorkspaceImageRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"          -> Name.asInstanceOf[js.Any],
         "SourceImageId" -> SourceImageId.asInstanceOf[js.Any],
         "SourceRegion"  -> SourceRegion.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CopyWorkspaceImageRequest]
     }
   }
@@ -449,8 +449,8 @@ package workspaces {
     def apply(
         ImageId: js.UndefOr[WorkspaceImageId] = js.undefined
     ): CopyWorkspaceImageResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ImageId.foreach(__v => __obj.update("ImageId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ImageId.foreach(__v => __obj.updateDynamic("ImageId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CopyWorkspaceImageResult]
     }
   }
@@ -470,13 +470,13 @@ package workspaces {
         Tags: js.UndefOr[TagList] = js.undefined,
         UserRules: js.UndefOr[IpRuleList] = js.undefined
     ): CreateIpGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupName" -> GroupName.asInstanceOf[js.Any]
       )
 
-      GroupDesc.foreach(__v => __obj.update("GroupDesc", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      UserRules.foreach(__v => __obj.update("UserRules", __v.asInstanceOf[js.Any]))
+      GroupDesc.foreach(__v => __obj.updateDynamic("GroupDesc")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      UserRules.foreach(__v => __obj.updateDynamic("UserRules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateIpGroupRequest]
     }
   }
@@ -490,8 +490,8 @@ package workspaces {
     def apply(
         GroupId: js.UndefOr[IpGroupId] = js.undefined
     ): CreateIpGroupResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GroupId.foreach(__v => __obj.update("GroupId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GroupId.foreach(__v => __obj.updateDynamic("GroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateIpGroupResult]
     }
   }
@@ -507,7 +507,7 @@ package workspaces {
         ResourceId: NonEmptyString,
         Tags: TagList
     ): CreateTagsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "Tags"       -> Tags.asInstanceOf[js.Any]
       )
@@ -522,7 +522,7 @@ package workspaces {
   object CreateTagsResult {
     def apply(
         ): CreateTagsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateTagsResult]
     }
@@ -537,7 +537,7 @@ package workspaces {
     def apply(
         Workspaces: WorkspaceRequestList
     ): CreateWorkspacesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Workspaces" -> Workspaces.asInstanceOf[js.Any]
       )
 
@@ -556,9 +556,9 @@ package workspaces {
         FailedRequests: js.UndefOr[FailedCreateWorkspaceRequests] = js.undefined,
         PendingRequests: js.UndefOr[WorkspaceList] = js.undefined
     ): CreateWorkspacesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FailedRequests.foreach(__v => __obj.update("FailedRequests", __v.asInstanceOf[js.Any]))
-      PendingRequests.foreach(__v => __obj.update("PendingRequests", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FailedRequests.foreach(__v => __obj.updateDynamic("FailedRequests")(__v.asInstanceOf[js.Any]))
+      PendingRequests.foreach(__v => __obj.updateDynamic("PendingRequests")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateWorkspacesResult]
     }
   }
@@ -604,13 +604,13 @@ package workspaces {
         EnableWorkDocs: js.UndefOr[BooleanObject] = js.undefined,
         UserEnabledAsLocalAdministrator: js.UndefOr[BooleanObject] = js.undefined
     ): DefaultWorkspaceCreationProperties = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CustomSecurityGroupId.foreach(__v => __obj.update("CustomSecurityGroupId", __v.asInstanceOf[js.Any]))
-      DefaultOu.foreach(__v => __obj.update("DefaultOu", __v.asInstanceOf[js.Any]))
-      EnableInternetAccess.foreach(__v => __obj.update("EnableInternetAccess", __v.asInstanceOf[js.Any]))
-      EnableWorkDocs.foreach(__v => __obj.update("EnableWorkDocs", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CustomSecurityGroupId.foreach(__v => __obj.updateDynamic("CustomSecurityGroupId")(__v.asInstanceOf[js.Any]))
+      DefaultOu.foreach(__v => __obj.updateDynamic("DefaultOu")(__v.asInstanceOf[js.Any]))
+      EnableInternetAccess.foreach(__v => __obj.updateDynamic("EnableInternetAccess")(__v.asInstanceOf[js.Any]))
+      EnableWorkDocs.foreach(__v => __obj.updateDynamic("EnableWorkDocs")(__v.asInstanceOf[js.Any]))
       UserEnabledAsLocalAdministrator.foreach(
-        __v => __obj.update("UserEnabledAsLocalAdministrator", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("UserEnabledAsLocalAdministrator")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DefaultWorkspaceCreationProperties]
     }
@@ -625,7 +625,7 @@ package workspaces {
     def apply(
         GroupId: IpGroupId
     ): DeleteIpGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupId" -> GroupId.asInstanceOf[js.Any]
       )
 
@@ -639,7 +639,7 @@ package workspaces {
   object DeleteIpGroupResult {
     def apply(
         ): DeleteIpGroupResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteIpGroupResult]
     }
@@ -656,7 +656,7 @@ package workspaces {
         ResourceId: NonEmptyString,
         TagKeys: TagKeyList
     ): DeleteTagsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceId" -> ResourceId.asInstanceOf[js.Any],
         "TagKeys"    -> TagKeys.asInstanceOf[js.Any]
       )
@@ -671,7 +671,7 @@ package workspaces {
   object DeleteTagsResult {
     def apply(
         ): DeleteTagsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteTagsResult]
     }
@@ -686,7 +686,7 @@ package workspaces {
     def apply(
         ImageId: WorkspaceImageId
     ): DeleteWorkspaceImageRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ImageId" -> ImageId.asInstanceOf[js.Any]
       )
 
@@ -700,7 +700,7 @@ package workspaces {
   object DeleteWorkspaceImageResult {
     def apply(
         ): DeleteWorkspaceImageResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteWorkspaceImageResult]
     }
@@ -715,8 +715,8 @@ package workspaces {
     def apply(
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): DescribeAccountModificationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAccountModificationsRequest]
     }
   }
@@ -732,9 +732,9 @@ package workspaces {
         AccountModifications: js.UndefOr[AccountModificationList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): DescribeAccountModificationsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccountModifications.foreach(__v => __obj.update("AccountModifications", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccountModifications.foreach(__v => __obj.updateDynamic("AccountModifications")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAccountModificationsResult]
     }
   }
@@ -745,7 +745,7 @@ package workspaces {
   object DescribeAccountRequest {
     def apply(
         ): DescribeAccountRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DescribeAccountRequest]
     }
@@ -762,11 +762,11 @@ package workspaces {
         DedicatedTenancyManagementCidrRange: js.UndefOr[DedicatedTenancyManagementCidrRange] = js.undefined,
         DedicatedTenancySupport: js.UndefOr[DedicatedTenancySupportResultEnum] = js.undefined
     ): DescribeAccountResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       DedicatedTenancyManagementCidrRange.foreach(
-        __v => __obj.update("DedicatedTenancyManagementCidrRange", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("DedicatedTenancyManagementCidrRange")(__v.asInstanceOf[js.Any])
       )
-      DedicatedTenancySupport.foreach(__v => __obj.update("DedicatedTenancySupport", __v.asInstanceOf[js.Any]))
+      DedicatedTenancySupport.foreach(__v => __obj.updateDynamic("DedicatedTenancySupport")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAccountResult]
     }
   }
@@ -780,7 +780,7 @@ package workspaces {
     def apply(
         ResourceIds: ResourceIdList
     ): DescribeClientPropertiesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceIds" -> ResourceIds.asInstanceOf[js.Any]
       )
 
@@ -797,8 +797,8 @@ package workspaces {
     def apply(
         ClientPropertiesList: js.UndefOr[ClientPropertiesList] = js.undefined
     ): DescribeClientPropertiesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClientPropertiesList.foreach(__v => __obj.update("ClientPropertiesList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClientPropertiesList.foreach(__v => __obj.updateDynamic("ClientPropertiesList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeClientPropertiesResult]
     }
   }
@@ -816,10 +816,10 @@ package workspaces {
         MaxResults: js.UndefOr[Limit] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): DescribeIpGroupsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GroupIds.foreach(__v => __obj.update("GroupIds", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GroupIds.foreach(__v => __obj.updateDynamic("GroupIds")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeIpGroupsRequest]
     }
   }
@@ -835,9 +835,9 @@ package workspaces {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         Result: js.UndefOr[WorkspacesIpGroupsList] = js.undefined
     ): DescribeIpGroupsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Result.foreach(__v => __obj.update("Result", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Result.foreach(__v => __obj.updateDynamic("Result")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeIpGroupsResult]
     }
   }
@@ -851,7 +851,7 @@ package workspaces {
     def apply(
         ResourceId: NonEmptyString
     ): DescribeTagsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceId" -> ResourceId.asInstanceOf[js.Any]
       )
 
@@ -868,8 +868,8 @@ package workspaces {
     def apply(
         TagList: js.UndefOr[TagList] = js.undefined
     ): DescribeTagsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TagList.foreach(__v => __obj.update("TagList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTagsResult]
     }
   }
@@ -887,10 +887,10 @@ package workspaces {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         Owner: js.UndefOr[BundleOwner] = js.undefined
     ): DescribeWorkspaceBundlesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BundleIds.foreach(__v => __obj.update("BundleIds", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Owner.foreach(__v => __obj.update("Owner", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BundleIds.foreach(__v => __obj.updateDynamic("BundleIds")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeWorkspaceBundlesRequest]
     }
   }
@@ -906,9 +906,9 @@ package workspaces {
         Bundles: js.UndefOr[BundleList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): DescribeWorkspaceBundlesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Bundles.foreach(__v => __obj.update("Bundles", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Bundles.foreach(__v => __obj.updateDynamic("Bundles")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeWorkspaceBundlesResult]
     }
   }
@@ -924,9 +924,9 @@ package workspaces {
         DirectoryIds: js.UndefOr[DirectoryIdList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): DescribeWorkspaceDirectoriesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DirectoryIds.foreach(__v => __obj.update("DirectoryIds", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DirectoryIds.foreach(__v => __obj.updateDynamic("DirectoryIds")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeWorkspaceDirectoriesRequest]
     }
   }
@@ -942,9 +942,9 @@ package workspaces {
         Directories: js.UndefOr[DirectoryList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): DescribeWorkspaceDirectoriesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Directories.foreach(__v => __obj.update("Directories", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Directories.foreach(__v => __obj.updateDynamic("Directories")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeWorkspaceDirectoriesResult]
     }
   }
@@ -962,10 +962,10 @@ package workspaces {
         MaxResults: js.UndefOr[Limit] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): DescribeWorkspaceImagesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ImageIds.foreach(__v => __obj.update("ImageIds", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ImageIds.foreach(__v => __obj.updateDynamic("ImageIds")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeWorkspaceImagesRequest]
     }
   }
@@ -981,9 +981,9 @@ package workspaces {
         Images: js.UndefOr[WorkspaceImageList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): DescribeWorkspaceImagesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Images.foreach(__v => __obj.update("Images", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Images.foreach(__v => __obj.updateDynamic("Images")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeWorkspaceImagesResult]
     }
   }
@@ -999,9 +999,9 @@ package workspaces {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         WorkspaceIds: js.UndefOr[WorkspaceIdList] = js.undefined
     ): DescribeWorkspacesConnectionStatusRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      WorkspaceIds.foreach(__v => __obj.update("WorkspaceIds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      WorkspaceIds.foreach(__v => __obj.updateDynamic("WorkspaceIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeWorkspacesConnectionStatusRequest]
     }
   }
@@ -1017,9 +1017,11 @@ package workspaces {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         WorkspacesConnectionStatus: js.UndefOr[WorkspaceConnectionStatusList] = js.undefined
     ): DescribeWorkspacesConnectionStatusResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      WorkspacesConnectionStatus.foreach(__v => __obj.update("WorkspacesConnectionStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      WorkspacesConnectionStatus.foreach(
+        __v => __obj.updateDynamic("WorkspacesConnectionStatus")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[DescribeWorkspacesConnectionStatusResult]
     }
   }
@@ -1043,13 +1045,13 @@ package workspaces {
         UserName: js.UndefOr[UserName] = js.undefined,
         WorkspaceIds: js.UndefOr[WorkspaceIdList] = js.undefined
     ): DescribeWorkspacesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BundleId.foreach(__v => __obj.update("BundleId", __v.asInstanceOf[js.Any]))
-      DirectoryId.foreach(__v => __obj.update("DirectoryId", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
-      WorkspaceIds.foreach(__v => __obj.update("WorkspaceIds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BundleId.foreach(__v => __obj.updateDynamic("BundleId")(__v.asInstanceOf[js.Any]))
+      DirectoryId.foreach(__v => __obj.updateDynamic("DirectoryId")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
+      WorkspaceIds.foreach(__v => __obj.updateDynamic("WorkspaceIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeWorkspacesRequest]
     }
   }
@@ -1065,9 +1067,9 @@ package workspaces {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         Workspaces: js.UndefOr[WorkspaceList] = js.undefined
     ): DescribeWorkspacesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Workspaces.foreach(__v => __obj.update("Workspaces", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Workspaces.foreach(__v => __obj.updateDynamic("Workspaces")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeWorkspacesResult]
     }
   }
@@ -1083,7 +1085,7 @@ package workspaces {
         DirectoryId: DirectoryId,
         GroupIds: IpGroupIdList
     ): DisassociateIpGroupsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "GroupIds"    -> GroupIds.asInstanceOf[js.Any]
       )
@@ -1098,7 +1100,7 @@ package workspaces {
   object DisassociateIpGroupsResult {
     def apply(
         ): DisassociateIpGroupsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateIpGroupsResult]
     }
@@ -1120,10 +1122,10 @@ package workspaces {
         ErrorMessage: js.UndefOr[Description] = js.undefined,
         WorkspaceRequest: js.UndefOr[WorkspaceRequest] = js.undefined
     ): FailedCreateWorkspaceRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
-      WorkspaceRequest.foreach(__v => __obj.update("WorkspaceRequest", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      WorkspaceRequest.foreach(__v => __obj.updateDynamic("WorkspaceRequest")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FailedCreateWorkspaceRequest]
     }
   }
@@ -1144,10 +1146,10 @@ package workspaces {
         ErrorMessage: js.UndefOr[Description] = js.undefined,
         WorkspaceId: js.UndefOr[WorkspaceId] = js.undefined
     ): FailedWorkspaceChangeRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
-      WorkspaceId.foreach(__v => __obj.update("WorkspaceId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      WorkspaceId.foreach(__v => __obj.updateDynamic("WorkspaceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FailedWorkspaceChangeRequest]
     }
   }
@@ -1169,14 +1171,14 @@ package workspaces {
         IngestionProcess: WorkspaceImageIngestionProcess,
         Tags: js.UndefOr[TagList] = js.undefined
     ): ImportWorkspaceImageRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Ec2ImageId"       -> Ec2ImageId.asInstanceOf[js.Any],
         "ImageDescription" -> ImageDescription.asInstanceOf[js.Any],
         "ImageName"        -> ImageName.asInstanceOf[js.Any],
         "IngestionProcess" -> IngestionProcess.asInstanceOf[js.Any]
       )
 
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportWorkspaceImageRequest]
     }
   }
@@ -1190,8 +1192,8 @@ package workspaces {
     def apply(
         ImageId: js.UndefOr[WorkspaceImageId] = js.undefined
     ): ImportWorkspaceImageResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ImageId.foreach(__v => __obj.update("ImageId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ImageId.foreach(__v => __obj.updateDynamic("ImageId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportWorkspaceImageResult]
     }
   }
@@ -1210,9 +1212,9 @@ package workspaces {
         ipRule: js.UndefOr[IpRule] = js.undefined,
         ruleDesc: js.UndefOr[IpRuleDesc] = js.undefined
     ): IpRuleItem = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ipRule.foreach(__v => __obj.update("ipRule", __v.asInstanceOf[js.Any]))
-      ruleDesc.foreach(__v => __obj.update("ruleDesc", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ipRule.foreach(__v => __obj.updateDynamic("ipRule")(__v.asInstanceOf[js.Any]))
+      ruleDesc.foreach(__v => __obj.updateDynamic("ruleDesc")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IpRuleItem]
     }
   }
@@ -1230,12 +1232,12 @@ package workspaces {
         MaxResults: js.UndefOr[ManagementCidrRangeMaxResults] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListAvailableManagementCidrRangesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ManagementCidrRangeConstraint" -> ManagementCidrRangeConstraint.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAvailableManagementCidrRangesRequest]
     }
   }
@@ -1251,9 +1253,9 @@ package workspaces {
         ManagementCidrRanges: js.UndefOr[DedicatedTenancyCidrRangeList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListAvailableManagementCidrRangesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ManagementCidrRanges.foreach(__v => __obj.update("ManagementCidrRanges", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ManagementCidrRanges.foreach(__v => __obj.updateDynamic("ManagementCidrRanges")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAvailableManagementCidrRangesResult]
     }
   }
@@ -1280,9 +1282,9 @@ package workspaces {
         Resource: js.UndefOr[ModificationResourceEnum] = js.undefined,
         State: js.UndefOr[ModificationStateEnum] = js.undefined
     ): ModificationState = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Resource.foreach(__v => __obj.update("Resource", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Resource.foreach(__v => __obj.updateDynamic("Resource")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModificationState]
     }
   }
@@ -1305,11 +1307,11 @@ package workspaces {
         DedicatedTenancyManagementCidrRange: js.UndefOr[DedicatedTenancyManagementCidrRange] = js.undefined,
         DedicatedTenancySupport: js.UndefOr[DedicatedTenancySupportEnum] = js.undefined
     ): ModifyAccountRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       DedicatedTenancyManagementCidrRange.foreach(
-        __v => __obj.update("DedicatedTenancyManagementCidrRange", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("DedicatedTenancyManagementCidrRange")(__v.asInstanceOf[js.Any])
       )
-      DedicatedTenancySupport.foreach(__v => __obj.update("DedicatedTenancySupport", __v.asInstanceOf[js.Any]))
+      DedicatedTenancySupport.foreach(__v => __obj.updateDynamic("DedicatedTenancySupport")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyAccountRequest]
     }
   }
@@ -1320,7 +1322,7 @@ package workspaces {
   object ModifyAccountResult {
     def apply(
         ): ModifyAccountResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ModifyAccountResult]
     }
@@ -1337,7 +1339,7 @@ package workspaces {
         ClientProperties: ClientProperties,
         ResourceId: NonEmptyString
     ): ModifyClientPropertiesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClientProperties" -> ClientProperties.asInstanceOf[js.Any],
         "ResourceId"       -> ResourceId.asInstanceOf[js.Any]
       )
@@ -1352,7 +1354,7 @@ package workspaces {
   object ModifyClientPropertiesResult {
     def apply(
         ): ModifyClientPropertiesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ModifyClientPropertiesResult]
     }
@@ -1369,7 +1371,7 @@ package workspaces {
         WorkspaceId: WorkspaceId,
         WorkspaceProperties: WorkspaceProperties
     ): ModifyWorkspacePropertiesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "WorkspaceId"         -> WorkspaceId.asInstanceOf[js.Any],
         "WorkspaceProperties" -> WorkspaceProperties.asInstanceOf[js.Any]
       )
@@ -1384,7 +1386,7 @@ package workspaces {
   object ModifyWorkspacePropertiesResult {
     def apply(
         ): ModifyWorkspacePropertiesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ModifyWorkspacePropertiesResult]
     }
@@ -1401,7 +1403,7 @@ package workspaces {
         WorkspaceId: WorkspaceId,
         WorkspaceState: TargetWorkspaceState
     ): ModifyWorkspaceStateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "WorkspaceId"    -> WorkspaceId.asInstanceOf[js.Any],
         "WorkspaceState" -> WorkspaceState.asInstanceOf[js.Any]
       )
@@ -1416,7 +1418,7 @@ package workspaces {
   object ModifyWorkspaceStateResult {
     def apply(
         ): ModifyWorkspaceStateResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ModifyWorkspaceStateResult]
     }
@@ -1434,8 +1436,8 @@ package workspaces {
     def apply(
         Type: js.UndefOr[OperatingSystemType] = js.undefined
     ): OperatingSystem = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OperatingSystem]
     }
   }
@@ -1459,7 +1461,7 @@ package workspaces {
     def apply(
         WorkspaceId: WorkspaceId
     ): RebootRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "WorkspaceId" -> WorkspaceId.asInstanceOf[js.Any]
       )
 
@@ -1476,7 +1478,7 @@ package workspaces {
     def apply(
         RebootWorkspaceRequests: RebootWorkspaceRequests
     ): RebootWorkspacesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RebootWorkspaceRequests" -> RebootWorkspaceRequests.asInstanceOf[js.Any]
       )
 
@@ -1493,8 +1495,8 @@ package workspaces {
     def apply(
         FailedRequests: js.UndefOr[FailedRebootWorkspaceRequests] = js.undefined
     ): RebootWorkspacesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FailedRequests.foreach(__v => __obj.update("FailedRequests", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FailedRequests.foreach(__v => __obj.updateDynamic("FailedRequests")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RebootWorkspacesResult]
     }
   }
@@ -1511,7 +1513,7 @@ package workspaces {
     def apply(
         WorkspaceId: WorkspaceId
     ): RebuildRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "WorkspaceId" -> WorkspaceId.asInstanceOf[js.Any]
       )
 
@@ -1528,7 +1530,7 @@ package workspaces {
     def apply(
         RebuildWorkspaceRequests: RebuildWorkspaceRequests
     ): RebuildWorkspacesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RebuildWorkspaceRequests" -> RebuildWorkspaceRequests.asInstanceOf[js.Any]
       )
 
@@ -1545,8 +1547,8 @@ package workspaces {
     def apply(
         FailedRequests: js.UndefOr[FailedRebuildWorkspaceRequests] = js.undefined
     ): RebuildWorkspacesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FailedRequests.foreach(__v => __obj.update("FailedRequests", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FailedRequests.foreach(__v => __obj.updateDynamic("FailedRequests")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RebuildWorkspacesResult]
     }
   }
@@ -1569,7 +1571,7 @@ package workspaces {
         GroupId: IpGroupId,
         UserRules: IpRevokedRuleList
     ): RevokeIpRulesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupId"   -> GroupId.asInstanceOf[js.Any],
         "UserRules" -> UserRules.asInstanceOf[js.Any]
       )
@@ -1584,7 +1586,7 @@ package workspaces {
   object RevokeIpRulesResult {
     def apply(
         ): RevokeIpRulesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RevokeIpRulesResult]
     }
@@ -1602,8 +1604,8 @@ package workspaces {
     def apply(
         Capacity: js.UndefOr[NonEmptyString] = js.undefined
     ): RootStorage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Capacity.foreach(__v => __obj.update("Capacity", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Capacity.foreach(__v => __obj.updateDynamic("Capacity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RootStorage]
     }
   }
@@ -1627,8 +1629,8 @@ package workspaces {
     def apply(
         WorkspaceId: js.UndefOr[WorkspaceId] = js.undefined
     ): StartRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      WorkspaceId.foreach(__v => __obj.update("WorkspaceId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      WorkspaceId.foreach(__v => __obj.updateDynamic("WorkspaceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartRequest]
     }
   }
@@ -1642,7 +1644,7 @@ package workspaces {
     def apply(
         StartWorkspaceRequests: StartWorkspaceRequests
     ): StartWorkspacesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "StartWorkspaceRequests" -> StartWorkspaceRequests.asInstanceOf[js.Any]
       )
 
@@ -1659,8 +1661,8 @@ package workspaces {
     def apply(
         FailedRequests: js.UndefOr[FailedStartWorkspaceRequests] = js.undefined
     ): StartWorkspacesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FailedRequests.foreach(__v => __obj.update("FailedRequests", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FailedRequests.foreach(__v => __obj.updateDynamic("FailedRequests")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartWorkspacesResult]
     }
   }
@@ -1677,8 +1679,8 @@ package workspaces {
     def apply(
         WorkspaceId: js.UndefOr[WorkspaceId] = js.undefined
     ): StopRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      WorkspaceId.foreach(__v => __obj.update("WorkspaceId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      WorkspaceId.foreach(__v => __obj.updateDynamic("WorkspaceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopRequest]
     }
   }
@@ -1692,7 +1694,7 @@ package workspaces {
     def apply(
         StopWorkspaceRequests: StopWorkspaceRequests
     ): StopWorkspacesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "StopWorkspaceRequests" -> StopWorkspaceRequests.asInstanceOf[js.Any]
       )
 
@@ -1709,8 +1711,8 @@ package workspaces {
     def apply(
         FailedRequests: js.UndefOr[FailedStopWorkspaceRequests] = js.undefined
     ): StopWorkspacesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FailedRequests.foreach(__v => __obj.update("FailedRequests", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FailedRequests.foreach(__v => __obj.updateDynamic("FailedRequests")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopWorkspacesResult]
     }
   }
@@ -1729,11 +1731,11 @@ package workspaces {
         Key: TagKey,
         Value: js.UndefOr[TagValue] = js.undefined
     ): Tag = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key" -> Key.asInstanceOf[js.Any]
       )
 
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tag]
     }
   }
@@ -1757,7 +1759,7 @@ package workspaces {
     def apply(
         WorkspaceId: WorkspaceId
     ): TerminateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "WorkspaceId" -> WorkspaceId.asInstanceOf[js.Any]
       )
 
@@ -1774,7 +1776,7 @@ package workspaces {
     def apply(
         TerminateWorkspaceRequests: TerminateWorkspaceRequests
     ): TerminateWorkspacesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TerminateWorkspaceRequests" -> TerminateWorkspaceRequests.asInstanceOf[js.Any]
       )
 
@@ -1791,8 +1793,8 @@ package workspaces {
     def apply(
         FailedRequests: js.UndefOr[FailedTerminateWorkspaceRequests] = js.undefined
     ): TerminateWorkspacesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FailedRequests.foreach(__v => __obj.update("FailedRequests", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FailedRequests.foreach(__v => __obj.updateDynamic("FailedRequests")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TerminateWorkspacesResult]
     }
   }
@@ -1808,7 +1810,7 @@ package workspaces {
         GroupId: IpGroupId,
         UserRules: IpRuleList
     ): UpdateRulesOfIpGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupId"   -> GroupId.asInstanceOf[js.Any],
         "UserRules" -> UserRules.asInstanceOf[js.Any]
       )
@@ -1823,7 +1825,7 @@ package workspaces {
   object UpdateRulesOfIpGroupResult {
     def apply(
         ): UpdateRulesOfIpGroupResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateRulesOfIpGroupResult]
     }
@@ -1841,8 +1843,8 @@ package workspaces {
     def apply(
         Capacity: js.UndefOr[NonEmptyString] = js.undefined
     ): UserStorage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Capacity.foreach(__v => __obj.update("Capacity", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Capacity.foreach(__v => __obj.updateDynamic("Capacity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UserStorage]
     }
   }
@@ -1887,22 +1889,26 @@ package workspaces {
         WorkspaceId: js.UndefOr[WorkspaceId] = js.undefined,
         WorkspaceProperties: js.UndefOr[WorkspaceProperties] = js.undefined
     ): Workspace = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BundleId.foreach(__v => __obj.update("BundleId", __v.asInstanceOf[js.Any]))
-      ComputerName.foreach(__v => __obj.update("ComputerName", __v.asInstanceOf[js.Any]))
-      DirectoryId.foreach(__v => __obj.update("DirectoryId", __v.asInstanceOf[js.Any]))
-      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
-      IpAddress.foreach(__v => __obj.update("IpAddress", __v.asInstanceOf[js.Any]))
-      ModificationStates.foreach(__v => __obj.update("ModificationStates", __v.asInstanceOf[js.Any]))
-      RootVolumeEncryptionEnabled.foreach(__v => __obj.update("RootVolumeEncryptionEnabled", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
-      SubnetId.foreach(__v => __obj.update("SubnetId", __v.asInstanceOf[js.Any]))
-      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
-      UserVolumeEncryptionEnabled.foreach(__v => __obj.update("UserVolumeEncryptionEnabled", __v.asInstanceOf[js.Any]))
-      VolumeEncryptionKey.foreach(__v => __obj.update("VolumeEncryptionKey", __v.asInstanceOf[js.Any]))
-      WorkspaceId.foreach(__v => __obj.update("WorkspaceId", __v.asInstanceOf[js.Any]))
-      WorkspaceProperties.foreach(__v => __obj.update("WorkspaceProperties", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BundleId.foreach(__v => __obj.updateDynamic("BundleId")(__v.asInstanceOf[js.Any]))
+      ComputerName.foreach(__v => __obj.updateDynamic("ComputerName")(__v.asInstanceOf[js.Any]))
+      DirectoryId.foreach(__v => __obj.updateDynamic("DirectoryId")(__v.asInstanceOf[js.Any]))
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
+      ModificationStates.foreach(__v => __obj.updateDynamic("ModificationStates")(__v.asInstanceOf[js.Any]))
+      RootVolumeEncryptionEnabled.foreach(
+        __v => __obj.updateDynamic("RootVolumeEncryptionEnabled")(__v.asInstanceOf[js.Any])
+      )
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
+      UserVolumeEncryptionEnabled.foreach(
+        __v => __obj.updateDynamic("UserVolumeEncryptionEnabled")(__v.asInstanceOf[js.Any])
+      )
+      VolumeEncryptionKey.foreach(__v => __obj.updateDynamic("VolumeEncryptionKey")(__v.asInstanceOf[js.Any]))
+      WorkspaceId.foreach(__v => __obj.updateDynamic("WorkspaceId")(__v.asInstanceOf[js.Any]))
+      WorkspaceProperties.foreach(__v => __obj.updateDynamic("WorkspaceProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Workspace]
     }
   }
@@ -1931,14 +1937,14 @@ package workspaces {
         RootStorage: js.UndefOr[RootStorage] = js.undefined,
         UserStorage: js.UndefOr[UserStorage] = js.undefined
     ): WorkspaceBundle = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BundleId.foreach(__v => __obj.update("BundleId", __v.asInstanceOf[js.Any]))
-      ComputeType.foreach(__v => __obj.update("ComputeType", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Owner.foreach(__v => __obj.update("Owner", __v.asInstanceOf[js.Any]))
-      RootStorage.foreach(__v => __obj.update("RootStorage", __v.asInstanceOf[js.Any]))
-      UserStorage.foreach(__v => __obj.update("UserStorage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BundleId.foreach(__v => __obj.updateDynamic("BundleId")(__v.asInstanceOf[js.Any]))
+      ComputeType.foreach(__v => __obj.updateDynamic("ComputeType")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
+      RootStorage.foreach(__v => __obj.updateDynamic("RootStorage")(__v.asInstanceOf[js.Any]))
+      UserStorage.foreach(__v => __obj.updateDynamic("UserStorage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkspaceBundle]
     }
   }
@@ -1961,15 +1967,15 @@ package workspaces {
         LastKnownUserConnectionTimestamp: js.UndefOr[Timestamp] = js.undefined,
         WorkspaceId: js.UndefOr[WorkspaceId] = js.undefined
     ): WorkspaceConnectionStatus = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConnectionState.foreach(__v => __obj.update("ConnectionState", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConnectionState.foreach(__v => __obj.updateDynamic("ConnectionState")(__v.asInstanceOf[js.Any]))
       ConnectionStateCheckTimestamp.foreach(
-        __v => __obj.update("ConnectionStateCheckTimestamp", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ConnectionStateCheckTimestamp")(__v.asInstanceOf[js.Any])
       )
       LastKnownUserConnectionTimestamp.foreach(
-        __v => __obj.update("LastKnownUserConnectionTimestamp", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("LastKnownUserConnectionTimestamp")(__v.asInstanceOf[js.Any])
       )
-      WorkspaceId.foreach(__v => __obj.update("WorkspaceId", __v.asInstanceOf[js.Any]))
+      WorkspaceId.foreach(__v => __obj.updateDynamic("WorkspaceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkspaceConnectionStatus]
     }
   }
@@ -2010,20 +2016,22 @@ package workspaces {
         WorkspaceSecurityGroupId: js.UndefOr[SecurityGroupId] = js.undefined,
         ipGroupIds: js.UndefOr[IpGroupIdList] = js.undefined
     ): WorkspaceDirectory = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Alias.foreach(__v => __obj.update("Alias", __v.asInstanceOf[js.Any]))
-      CustomerUserName.foreach(__v => __obj.update("CustomerUserName", __v.asInstanceOf[js.Any]))
-      DirectoryId.foreach(__v => __obj.update("DirectoryId", __v.asInstanceOf[js.Any]))
-      DirectoryName.foreach(__v => __obj.update("DirectoryName", __v.asInstanceOf[js.Any]))
-      DirectoryType.foreach(__v => __obj.update("DirectoryType", __v.asInstanceOf[js.Any]))
-      DnsIpAddresses.foreach(__v => __obj.update("DnsIpAddresses", __v.asInstanceOf[js.Any]))
-      IamRoleId.foreach(__v => __obj.update("IamRoleId", __v.asInstanceOf[js.Any]))
-      RegistrationCode.foreach(__v => __obj.update("RegistrationCode", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
-      SubnetIds.foreach(__v => __obj.update("SubnetIds", __v.asInstanceOf[js.Any]))
-      WorkspaceCreationProperties.foreach(__v => __obj.update("WorkspaceCreationProperties", __v.asInstanceOf[js.Any]))
-      WorkspaceSecurityGroupId.foreach(__v => __obj.update("WorkspaceSecurityGroupId", __v.asInstanceOf[js.Any]))
-      ipGroupIds.foreach(__v => __obj.update("ipGroupIds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Alias.foreach(__v => __obj.updateDynamic("Alias")(__v.asInstanceOf[js.Any]))
+      CustomerUserName.foreach(__v => __obj.updateDynamic("CustomerUserName")(__v.asInstanceOf[js.Any]))
+      DirectoryId.foreach(__v => __obj.updateDynamic("DirectoryId")(__v.asInstanceOf[js.Any]))
+      DirectoryName.foreach(__v => __obj.updateDynamic("DirectoryName")(__v.asInstanceOf[js.Any]))
+      DirectoryType.foreach(__v => __obj.updateDynamic("DirectoryType")(__v.asInstanceOf[js.Any]))
+      DnsIpAddresses.foreach(__v => __obj.updateDynamic("DnsIpAddresses")(__v.asInstanceOf[js.Any]))
+      IamRoleId.foreach(__v => __obj.updateDynamic("IamRoleId")(__v.asInstanceOf[js.Any]))
+      RegistrationCode.foreach(__v => __obj.updateDynamic("RegistrationCode")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
+      WorkspaceCreationProperties.foreach(
+        __v => __obj.updateDynamic("WorkspaceCreationProperties")(__v.asInstanceOf[js.Any])
+      )
+      WorkspaceSecurityGroupId.foreach(__v => __obj.updateDynamic("WorkspaceSecurityGroupId")(__v.asInstanceOf[js.Any]))
+      ipGroupIds.foreach(__v => __obj.updateDynamic("ipGroupIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkspaceDirectory]
     }
   }
@@ -2071,15 +2079,15 @@ package workspaces {
         RequiredTenancy: js.UndefOr[WorkspaceImageRequiredTenancy] = js.undefined,
         State: js.UndefOr[WorkspaceImageState] = js.undefined
     ): WorkspaceImage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
-      ImageId.foreach(__v => __obj.update("ImageId", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      OperatingSystem.foreach(__v => __obj.update("OperatingSystem", __v.asInstanceOf[js.Any]))
-      RequiredTenancy.foreach(__v => __obj.update("RequiredTenancy", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      ImageId.foreach(__v => __obj.updateDynamic("ImageId")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      OperatingSystem.foreach(__v => __obj.updateDynamic("OperatingSystem")(__v.asInstanceOf[js.Any]))
+      RequiredTenancy.foreach(__v => __obj.updateDynamic("RequiredTenancy")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkspaceImage]
     }
   }
@@ -2127,14 +2135,14 @@ package workspaces {
         RunningModeAutoStopTimeoutInMinutes: js.UndefOr[RunningModeAutoStopTimeoutInMinutes] = js.undefined,
         UserVolumeSizeGib: js.UndefOr[UserVolumeSizeGib] = js.undefined
     ): WorkspaceProperties = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ComputeTypeName.foreach(__v => __obj.update("ComputeTypeName", __v.asInstanceOf[js.Any]))
-      RootVolumeSizeGib.foreach(__v => __obj.update("RootVolumeSizeGib", __v.asInstanceOf[js.Any]))
-      RunningMode.foreach(__v => __obj.update("RunningMode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ComputeTypeName.foreach(__v => __obj.updateDynamic("ComputeTypeName")(__v.asInstanceOf[js.Any]))
+      RootVolumeSizeGib.foreach(__v => __obj.updateDynamic("RootVolumeSizeGib")(__v.asInstanceOf[js.Any]))
+      RunningMode.foreach(__v => __obj.updateDynamic("RunningMode")(__v.asInstanceOf[js.Any]))
       RunningModeAutoStopTimeoutInMinutes.foreach(
-        __v => __obj.update("RunningModeAutoStopTimeoutInMinutes", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("RunningModeAutoStopTimeoutInMinutes")(__v.asInstanceOf[js.Any])
       )
-      UserVolumeSizeGib.foreach(__v => __obj.update("UserVolumeSizeGib", __v.asInstanceOf[js.Any]))
+      UserVolumeSizeGib.foreach(__v => __obj.updateDynamic("UserVolumeSizeGib")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkspaceProperties]
     }
   }
@@ -2165,17 +2173,21 @@ package workspaces {
         VolumeEncryptionKey: js.UndefOr[VolumeEncryptionKey] = js.undefined,
         WorkspaceProperties: js.UndefOr[WorkspaceProperties] = js.undefined
     ): WorkspaceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BundleId"    -> BundleId.asInstanceOf[js.Any],
         "DirectoryId" -> DirectoryId.asInstanceOf[js.Any],
         "UserName"    -> UserName.asInstanceOf[js.Any]
       )
 
-      RootVolumeEncryptionEnabled.foreach(__v => __obj.update("RootVolumeEncryptionEnabled", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      UserVolumeEncryptionEnabled.foreach(__v => __obj.update("UserVolumeEncryptionEnabled", __v.asInstanceOf[js.Any]))
-      VolumeEncryptionKey.foreach(__v => __obj.update("VolumeEncryptionKey", __v.asInstanceOf[js.Any]))
-      WorkspaceProperties.foreach(__v => __obj.update("WorkspaceProperties", __v.asInstanceOf[js.Any]))
+      RootVolumeEncryptionEnabled.foreach(
+        __v => __obj.updateDynamic("RootVolumeEncryptionEnabled")(__v.asInstanceOf[js.Any])
+      )
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      UserVolumeEncryptionEnabled.foreach(
+        __v => __obj.updateDynamic("UserVolumeEncryptionEnabled")(__v.asInstanceOf[js.Any])
+      )
+      VolumeEncryptionKey.foreach(__v => __obj.updateDynamic("VolumeEncryptionKey")(__v.asInstanceOf[js.Any]))
+      WorkspaceProperties.foreach(__v => __obj.updateDynamic("WorkspaceProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkspaceRequest]
     }
   }
@@ -2238,11 +2250,11 @@ package workspaces {
         groupName: js.UndefOr[IpGroupName] = js.undefined,
         userRules: js.UndefOr[IpRuleList] = js.undefined
     ): WorkspacesIpGroup = {
-      val __obj = js.Dictionary.empty[js.Any]
-      groupDesc.foreach(__v => __obj.update("groupDesc", __v.asInstanceOf[js.Any]))
-      groupId.foreach(__v => __obj.update("groupId", __v.asInstanceOf[js.Any]))
-      groupName.foreach(__v => __obj.update("groupName", __v.asInstanceOf[js.Any]))
-      userRules.foreach(__v => __obj.update("userRules", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      groupDesc.foreach(__v => __obj.updateDynamic("groupDesc")(__v.asInstanceOf[js.Any]))
+      groupId.foreach(__v => __obj.updateDynamic("groupId")(__v.asInstanceOf[js.Any]))
+      groupName.foreach(__v => __obj.updateDynamic("groupName")(__v.asInstanceOf[js.Any]))
+      userRules.foreach(__v => __obj.updateDynamic("userRules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkspacesIpGroup]
     }
   }

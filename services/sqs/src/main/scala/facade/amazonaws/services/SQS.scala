@@ -128,7 +128,7 @@ package sqs {
         Label: String,
         QueueUrl: String
     ): AddPermissionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AWSAccountIds" -> AWSAccountIds.asInstanceOf[js.Any],
         "Actions"       -> Actions.asInstanceOf[js.Any],
         "Label"         -> Label.asInstanceOf[js.Any],
@@ -157,13 +157,13 @@ package sqs {
         SenderFault: Boolean,
         Message: js.UndefOr[String] = js.undefined
     ): BatchResultErrorEntry = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Code"        -> Code.asInstanceOf[js.Any],
         "Id"          -> Id.asInstanceOf[js.Any],
         "SenderFault" -> SenderFault.asInstanceOf[js.Any]
       )
 
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchResultErrorEntry]
     }
   }
@@ -182,7 +182,7 @@ package sqs {
         Entries: ChangeMessageVisibilityBatchRequestEntryList,
         QueueUrl: String
     ): ChangeMessageVisibilityBatchRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Entries"  -> Entries.asInstanceOf[js.Any],
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
       )
@@ -211,12 +211,12 @@ package sqs {
         ReceiptHandle: String,
         VisibilityTimeout: js.UndefOr[Int] = js.undefined
     ): ChangeMessageVisibilityBatchRequestEntry = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id"            -> Id.asInstanceOf[js.Any],
         "ReceiptHandle" -> ReceiptHandle.asInstanceOf[js.Any]
       )
 
-      VisibilityTimeout.foreach(__v => __obj.update("VisibilityTimeout", __v.asInstanceOf[js.Any]))
+      VisibilityTimeout.foreach(__v => __obj.updateDynamic("VisibilityTimeout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChangeMessageVisibilityBatchRequestEntry]
     }
   }
@@ -235,7 +235,7 @@ package sqs {
         Failed: BatchResultErrorEntryList,
         Successful: ChangeMessageVisibilityBatchResultEntryList
     ): ChangeMessageVisibilityBatchResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Failed"     -> Failed.asInstanceOf[js.Any],
         "Successful" -> Successful.asInstanceOf[js.Any]
       )
@@ -256,7 +256,7 @@ package sqs {
     def apply(
         Id: String
     ): ChangeMessageVisibilityBatchResultEntry = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
@@ -277,7 +277,7 @@ package sqs {
         ReceiptHandle: String,
         VisibilityTimeout: Int
     ): ChangeMessageVisibilityRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "QueueUrl"          -> QueueUrl.asInstanceOf[js.Any],
         "ReceiptHandle"     -> ReceiptHandle.asInstanceOf[js.Any],
         "VisibilityTimeout" -> VisibilityTimeout.asInstanceOf[js.Any]
@@ -303,12 +303,12 @@ package sqs {
         Attributes: js.UndefOr[QueueAttributeMap] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): CreateQueueRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "QueueName" -> QueueName.asInstanceOf[js.Any]
       )
 
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateQueueRequest]
     }
   }
@@ -325,8 +325,8 @@ package sqs {
     def apply(
         QueueUrl: js.UndefOr[String] = js.undefined
     ): CreateQueueResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      QueueUrl.foreach(__v => __obj.update("QueueUrl", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      QueueUrl.foreach(__v => __obj.updateDynamic("QueueUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateQueueResult]
     }
   }
@@ -345,7 +345,7 @@ package sqs {
         Entries: DeleteMessageBatchRequestEntryList,
         QueueUrl: String
     ): DeleteMessageBatchRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Entries"  -> Entries.asInstanceOf[js.Any],
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
       )
@@ -368,7 +368,7 @@ package sqs {
         Id: String,
         ReceiptHandle: String
     ): DeleteMessageBatchRequestEntry = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id"            -> Id.asInstanceOf[js.Any],
         "ReceiptHandle" -> ReceiptHandle.asInstanceOf[js.Any]
       )
@@ -391,7 +391,7 @@ package sqs {
         Failed: BatchResultErrorEntryList,
         Successful: DeleteMessageBatchResultEntryList
     ): DeleteMessageBatchResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Failed"     -> Failed.asInstanceOf[js.Any],
         "Successful" -> Successful.asInstanceOf[js.Any]
       )
@@ -412,7 +412,7 @@ package sqs {
     def apply(
         Id: String
     ): DeleteMessageBatchResultEntry = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
@@ -434,7 +434,7 @@ package sqs {
         QueueUrl: String,
         ReceiptHandle: String
     ): DeleteMessageRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "QueueUrl"      -> QueueUrl.asInstanceOf[js.Any],
         "ReceiptHandle" -> ReceiptHandle.asInstanceOf[js.Any]
       )
@@ -455,7 +455,7 @@ package sqs {
     def apply(
         QueueUrl: String
     ): DeleteQueueRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
       )
 
@@ -477,11 +477,11 @@ package sqs {
         QueueUrl: String,
         AttributeNames: js.UndefOr[AttributeNameList] = js.undefined
     ): GetQueueAttributesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
       )
 
-      AttributeNames.foreach(__v => __obj.update("AttributeNames", __v.asInstanceOf[js.Any]))
+      AttributeNames.foreach(__v => __obj.updateDynamic("AttributeNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetQueueAttributesRequest]
     }
   }
@@ -498,8 +498,8 @@ package sqs {
     def apply(
         Attributes: js.UndefOr[QueueAttributeMap] = js.undefined
     ): GetQueueAttributesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetQueueAttributesResult]
     }
   }
@@ -518,11 +518,11 @@ package sqs {
         QueueName: String,
         QueueOwnerAWSAccountId: js.UndefOr[String] = js.undefined
     ): GetQueueUrlRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "QueueName" -> QueueName.asInstanceOf[js.Any]
       )
 
-      QueueOwnerAWSAccountId.foreach(__v => __obj.update("QueueOwnerAWSAccountId", __v.asInstanceOf[js.Any]))
+      QueueOwnerAWSAccountId.foreach(__v => __obj.updateDynamic("QueueOwnerAWSAccountId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetQueueUrlRequest]
     }
   }
@@ -539,8 +539,8 @@ package sqs {
     def apply(
         QueueUrl: js.UndefOr[String] = js.undefined
     ): GetQueueUrlResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      QueueUrl.foreach(__v => __obj.update("QueueUrl", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      QueueUrl.foreach(__v => __obj.updateDynamic("QueueUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetQueueUrlResult]
     }
   }
@@ -557,7 +557,7 @@ package sqs {
     def apply(
         QueueUrl: String
     ): ListDeadLetterSourceQueuesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
       )
 
@@ -577,7 +577,7 @@ package sqs {
     def apply(
         queueUrls: QueueUrlList
     ): ListDeadLetterSourceQueuesResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "queueUrls" -> queueUrls.asInstanceOf[js.Any]
       )
 
@@ -594,7 +594,7 @@ package sqs {
     def apply(
         QueueUrl: String
     ): ListQueueTagsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
       )
 
@@ -611,8 +611,8 @@ package sqs {
     def apply(
         Tags: js.UndefOr[TagMap] = js.undefined
     ): ListQueueTagsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListQueueTagsResult]
     }
   }
@@ -629,8 +629,8 @@ package sqs {
     def apply(
         QueueNamePrefix: js.UndefOr[String] = js.undefined
     ): ListQueuesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      QueueNamePrefix.foreach(__v => __obj.update("QueueNamePrefix", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      QueueNamePrefix.foreach(__v => __obj.updateDynamic("QueueNamePrefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListQueuesRequest]
     }
   }
@@ -647,8 +647,8 @@ package sqs {
     def apply(
         QueueUrls: js.UndefOr[QueueUrlList] = js.undefined
     ): ListQueuesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      QueueUrls.foreach(__v => __obj.update("QueueUrls", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      QueueUrls.foreach(__v => __obj.updateDynamic("QueueUrls")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListQueuesResult]
     }
   }
@@ -677,14 +677,14 @@ package sqs {
         MessageId: js.UndefOr[String] = js.undefined,
         ReceiptHandle: js.UndefOr[String] = js.undefined
     ): Message = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
-      MD5OfBody.foreach(__v => __obj.update("MD5OfBody", __v.asInstanceOf[js.Any]))
-      MD5OfMessageAttributes.foreach(__v => __obj.update("MD5OfMessageAttributes", __v.asInstanceOf[js.Any]))
-      MessageAttributes.foreach(__v => __obj.update("MessageAttributes", __v.asInstanceOf[js.Any]))
-      MessageId.foreach(__v => __obj.update("MessageId", __v.asInstanceOf[js.Any]))
-      ReceiptHandle.foreach(__v => __obj.update("ReceiptHandle", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
+      MD5OfBody.foreach(__v => __obj.updateDynamic("MD5OfBody")(__v.asInstanceOf[js.Any]))
+      MD5OfMessageAttributes.foreach(__v => __obj.updateDynamic("MD5OfMessageAttributes")(__v.asInstanceOf[js.Any]))
+      MessageAttributes.foreach(__v => __obj.updateDynamic("MessageAttributes")(__v.asInstanceOf[js.Any]))
+      MessageId.foreach(__v => __obj.updateDynamic("MessageId")(__v.asInstanceOf[js.Any]))
+      ReceiptHandle.foreach(__v => __obj.updateDynamic("ReceiptHandle")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Message]
     }
   }
@@ -710,14 +710,14 @@ package sqs {
         StringListValues: js.UndefOr[StringList] = js.undefined,
         StringValue: js.UndefOr[String] = js.undefined
     ): MessageAttributeValue = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DataType" -> DataType.asInstanceOf[js.Any]
       )
 
-      BinaryListValues.foreach(__v => __obj.update("BinaryListValues", __v.asInstanceOf[js.Any]))
-      BinaryValue.foreach(__v => __obj.update("BinaryValue", __v.asInstanceOf[js.Any]))
-      StringListValues.foreach(__v => __obj.update("StringListValues", __v.asInstanceOf[js.Any]))
-      StringValue.foreach(__v => __obj.update("StringValue", __v.asInstanceOf[js.Any]))
+      BinaryListValues.foreach(__v => __obj.updateDynamic("BinaryListValues")(__v.asInstanceOf[js.Any]))
+      BinaryValue.foreach(__v => __obj.updateDynamic("BinaryValue")(__v.asInstanceOf[js.Any]))
+      StringListValues.foreach(__v => __obj.updateDynamic("StringListValues")(__v.asInstanceOf[js.Any]))
+      StringValue.foreach(__v => __obj.updateDynamic("StringValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MessageAttributeValue]
     }
   }
@@ -756,7 +756,7 @@ package sqs {
     def apply(
         QueueUrl: String
     ): PurgeQueueRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
       )
 
@@ -832,16 +832,16 @@ package sqs {
         VisibilityTimeout: js.UndefOr[Int] = js.undefined,
         WaitTimeSeconds: js.UndefOr[Int] = js.undefined
     ): ReceiveMessageRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
       )
 
-      AttributeNames.foreach(__v => __obj.update("AttributeNames", __v.asInstanceOf[js.Any]))
-      MaxNumberOfMessages.foreach(__v => __obj.update("MaxNumberOfMessages", __v.asInstanceOf[js.Any]))
-      MessageAttributeNames.foreach(__v => __obj.update("MessageAttributeNames", __v.asInstanceOf[js.Any]))
-      ReceiveRequestAttemptId.foreach(__v => __obj.update("ReceiveRequestAttemptId", __v.asInstanceOf[js.Any]))
-      VisibilityTimeout.foreach(__v => __obj.update("VisibilityTimeout", __v.asInstanceOf[js.Any]))
-      WaitTimeSeconds.foreach(__v => __obj.update("WaitTimeSeconds", __v.asInstanceOf[js.Any]))
+      AttributeNames.foreach(__v => __obj.updateDynamic("AttributeNames")(__v.asInstanceOf[js.Any]))
+      MaxNumberOfMessages.foreach(__v => __obj.updateDynamic("MaxNumberOfMessages")(__v.asInstanceOf[js.Any]))
+      MessageAttributeNames.foreach(__v => __obj.updateDynamic("MessageAttributeNames")(__v.asInstanceOf[js.Any]))
+      ReceiveRequestAttemptId.foreach(__v => __obj.updateDynamic("ReceiveRequestAttemptId")(__v.asInstanceOf[js.Any]))
+      VisibilityTimeout.foreach(__v => __obj.updateDynamic("VisibilityTimeout")(__v.asInstanceOf[js.Any]))
+      WaitTimeSeconds.foreach(__v => __obj.updateDynamic("WaitTimeSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReceiveMessageRequest]
     }
   }
@@ -858,8 +858,8 @@ package sqs {
     def apply(
         Messages: js.UndefOr[MessageList] = js.undefined
     ): ReceiveMessageResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Messages.foreach(__v => __obj.update("Messages", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Messages.foreach(__v => __obj.updateDynamic("Messages")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReceiveMessageResult]
     }
   }
@@ -878,7 +878,7 @@ package sqs {
         Label: String,
         QueueUrl: String
     ): RemovePermissionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Label"    -> Label.asInstanceOf[js.Any],
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
       )
@@ -901,7 +901,7 @@ package sqs {
         Entries: SendMessageBatchRequestEntryList,
         QueueUrl: String
     ): SendMessageBatchRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Entries"  -> Entries.asInstanceOf[js.Any],
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any]
       )
@@ -932,15 +932,15 @@ package sqs {
         MessageDeduplicationId: js.UndefOr[String] = js.undefined,
         MessageGroupId: js.UndefOr[String] = js.undefined
     ): SendMessageBatchRequestEntry = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id"          -> Id.asInstanceOf[js.Any],
         "MessageBody" -> MessageBody.asInstanceOf[js.Any]
       )
 
-      DelaySeconds.foreach(__v => __obj.update("DelaySeconds", __v.asInstanceOf[js.Any]))
-      MessageAttributes.foreach(__v => __obj.update("MessageAttributes", __v.asInstanceOf[js.Any]))
-      MessageDeduplicationId.foreach(__v => __obj.update("MessageDeduplicationId", __v.asInstanceOf[js.Any]))
-      MessageGroupId.foreach(__v => __obj.update("MessageGroupId", __v.asInstanceOf[js.Any]))
+      DelaySeconds.foreach(__v => __obj.updateDynamic("DelaySeconds")(__v.asInstanceOf[js.Any]))
+      MessageAttributes.foreach(__v => __obj.updateDynamic("MessageAttributes")(__v.asInstanceOf[js.Any]))
+      MessageDeduplicationId.foreach(__v => __obj.updateDynamic("MessageDeduplicationId")(__v.asInstanceOf[js.Any]))
+      MessageGroupId.foreach(__v => __obj.updateDynamic("MessageGroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendMessageBatchRequestEntry]
     }
   }
@@ -959,7 +959,7 @@ package sqs {
         Failed: BatchResultErrorEntryList,
         Successful: SendMessageBatchResultEntryList
     ): SendMessageBatchResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Failed"     -> Failed.asInstanceOf[js.Any],
         "Successful" -> Successful.asInstanceOf[js.Any]
       )
@@ -988,14 +988,14 @@ package sqs {
         MD5OfMessageAttributes: js.UndefOr[String] = js.undefined,
         SequenceNumber: js.UndefOr[String] = js.undefined
     ): SendMessageBatchResultEntry = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id"               -> Id.asInstanceOf[js.Any],
         "MD5OfMessageBody" -> MD5OfMessageBody.asInstanceOf[js.Any],
         "MessageId"        -> MessageId.asInstanceOf[js.Any]
       )
 
-      MD5OfMessageAttributes.foreach(__v => __obj.update("MD5OfMessageAttributes", __v.asInstanceOf[js.Any]))
-      SequenceNumber.foreach(__v => __obj.update("SequenceNumber", __v.asInstanceOf[js.Any]))
+      MD5OfMessageAttributes.foreach(__v => __obj.updateDynamic("MD5OfMessageAttributes")(__v.asInstanceOf[js.Any]))
+      SequenceNumber.foreach(__v => __obj.updateDynamic("SequenceNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendMessageBatchResultEntry]
     }
   }
@@ -1022,15 +1022,15 @@ package sqs {
         MessageDeduplicationId: js.UndefOr[String] = js.undefined,
         MessageGroupId: js.UndefOr[String] = js.undefined
     ): SendMessageRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MessageBody" -> MessageBody.asInstanceOf[js.Any],
         "QueueUrl"    -> QueueUrl.asInstanceOf[js.Any]
       )
 
-      DelaySeconds.foreach(__v => __obj.update("DelaySeconds", __v.asInstanceOf[js.Any]))
-      MessageAttributes.foreach(__v => __obj.update("MessageAttributes", __v.asInstanceOf[js.Any]))
-      MessageDeduplicationId.foreach(__v => __obj.update("MessageDeduplicationId", __v.asInstanceOf[js.Any]))
-      MessageGroupId.foreach(__v => __obj.update("MessageGroupId", __v.asInstanceOf[js.Any]))
+      DelaySeconds.foreach(__v => __obj.updateDynamic("DelaySeconds")(__v.asInstanceOf[js.Any]))
+      MessageAttributes.foreach(__v => __obj.updateDynamic("MessageAttributes")(__v.asInstanceOf[js.Any]))
+      MessageDeduplicationId.foreach(__v => __obj.updateDynamic("MessageDeduplicationId")(__v.asInstanceOf[js.Any]))
+      MessageGroupId.foreach(__v => __obj.updateDynamic("MessageGroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendMessageRequest]
     }
   }
@@ -1053,11 +1053,11 @@ package sqs {
         MessageId: js.UndefOr[String] = js.undefined,
         SequenceNumber: js.UndefOr[String] = js.undefined
     ): SendMessageResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MD5OfMessageAttributes.foreach(__v => __obj.update("MD5OfMessageAttributes", __v.asInstanceOf[js.Any]))
-      MD5OfMessageBody.foreach(__v => __obj.update("MD5OfMessageBody", __v.asInstanceOf[js.Any]))
-      MessageId.foreach(__v => __obj.update("MessageId", __v.asInstanceOf[js.Any]))
-      SequenceNumber.foreach(__v => __obj.update("SequenceNumber", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MD5OfMessageAttributes.foreach(__v => __obj.updateDynamic("MD5OfMessageAttributes")(__v.asInstanceOf[js.Any]))
+      MD5OfMessageBody.foreach(__v => __obj.updateDynamic("MD5OfMessageBody")(__v.asInstanceOf[js.Any]))
+      MessageId.foreach(__v => __obj.updateDynamic("MessageId")(__v.asInstanceOf[js.Any]))
+      SequenceNumber.foreach(__v => __obj.updateDynamic("SequenceNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendMessageResult]
     }
   }
@@ -1076,7 +1076,7 @@ package sqs {
         Attributes: QueueAttributeMap,
         QueueUrl: String
     ): SetQueueAttributesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Attributes" -> Attributes.asInstanceOf[js.Any],
         "QueueUrl"   -> QueueUrl.asInstanceOf[js.Any]
       )
@@ -1096,7 +1096,7 @@ package sqs {
         QueueUrl: String,
         Tags: TagMap
     ): TagQueueRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any],
         "Tags"     -> Tags.asInstanceOf[js.Any]
       )
@@ -1116,7 +1116,7 @@ package sqs {
         QueueUrl: String,
         TagKeys: TagKeyList
     ): UntagQueueRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "QueueUrl" -> QueueUrl.asInstanceOf[js.Any],
         "TagKeys"  -> TagKeys.asInstanceOf[js.Any]
       )

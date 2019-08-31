@@ -91,9 +91,9 @@ package importexport {
         Description: js.UndefOr[Description] = js.undefined,
         URL: js.UndefOr[URL] = js.undefined
     ): Artifact = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      URL.foreach(__v => __obj.update("URL", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      URL.foreach(__v => __obj.updateDynamic("URL")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Artifact]
     }
   }
@@ -120,11 +120,11 @@ package importexport {
         JobId: JobId,
         APIVersion: js.UndefOr[APIVersion] = js.undefined
     ): CancelJobInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
 
-      APIVersion.foreach(__v => __obj.update("APIVersion", __v.asInstanceOf[js.Any]))
+      APIVersion.foreach(__v => __obj.updateDynamic("APIVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CancelJobInput]
     }
   }
@@ -141,8 +141,8 @@ package importexport {
     def apply(
         Success: js.UndefOr[Success] = js.undefined
     ): CancelJobOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Success.foreach(__v => __obj.update("Success", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Success.foreach(__v => __obj.updateDynamic("Success")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CancelJobOutput]
     }
   }
@@ -175,14 +175,14 @@ package importexport {
         APIVersion: js.UndefOr[APIVersion] = js.undefined,
         ManifestAddendum: js.UndefOr[ManifestAddendum] = js.undefined
     ): CreateJobInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobType"      -> JobType.asInstanceOf[js.Any],
         "Manifest"     -> Manifest.asInstanceOf[js.Any],
         "ValidateOnly" -> ValidateOnly.asInstanceOf[js.Any]
       )
 
-      APIVersion.foreach(__v => __obj.update("APIVersion", __v.asInstanceOf[js.Any]))
-      ManifestAddendum.foreach(__v => __obj.update("ManifestAddendum", __v.asInstanceOf[js.Any]))
+      APIVersion.foreach(__v => __obj.updateDynamic("APIVersion")(__v.asInstanceOf[js.Any]))
+      ManifestAddendum.foreach(__v => __obj.updateDynamic("ManifestAddendum")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateJobInput]
     }
   }
@@ -209,13 +209,13 @@ package importexport {
         SignatureFileContents: js.UndefOr[SignatureFileContents] = js.undefined,
         WarningMessage: js.UndefOr[WarningMessage] = js.undefined
     ): CreateJobOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ArtifactList.foreach(__v => __obj.update("ArtifactList", __v.asInstanceOf[js.Any]))
-      JobId.foreach(__v => __obj.update("JobId", __v.asInstanceOf[js.Any]))
-      JobType.foreach(__v => __obj.update("JobType", __v.asInstanceOf[js.Any]))
-      Signature.foreach(__v => __obj.update("Signature", __v.asInstanceOf[js.Any]))
-      SignatureFileContents.foreach(__v => __obj.update("SignatureFileContents", __v.asInstanceOf[js.Any]))
-      WarningMessage.foreach(__v => __obj.update("WarningMessage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ArtifactList.foreach(__v => __obj.updateDynamic("ArtifactList")(__v.asInstanceOf[js.Any]))
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      JobType.foreach(__v => __obj.updateDynamic("JobType")(__v.asInstanceOf[js.Any]))
+      Signature.foreach(__v => __obj.updateDynamic("Signature")(__v.asInstanceOf[js.Any]))
+      SignatureFileContents.foreach(__v => __obj.updateDynamic("SignatureFileContents")(__v.asInstanceOf[js.Any]))
+      WarningMessage.foreach(__v => __obj.updateDynamic("WarningMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateJobOutput]
     }
   }
@@ -267,21 +267,21 @@ package importexport {
         street2: js.UndefOr[street2] = js.undefined,
         street3: js.UndefOr[street3] = js.undefined
     ): GetShippingLabelInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobIds" -> jobIds.asInstanceOf[js.Any]
       )
 
-      APIVersion.foreach(__v => __obj.update("APIVersion", __v.asInstanceOf[js.Any]))
-      city.foreach(__v => __obj.update("city", __v.asInstanceOf[js.Any]))
-      company.foreach(__v => __obj.update("company", __v.asInstanceOf[js.Any]))
-      country.foreach(__v => __obj.update("country", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      phoneNumber.foreach(__v => __obj.update("phoneNumber", __v.asInstanceOf[js.Any]))
-      postalCode.foreach(__v => __obj.update("postalCode", __v.asInstanceOf[js.Any]))
-      stateOrProvince.foreach(__v => __obj.update("stateOrProvince", __v.asInstanceOf[js.Any]))
-      street1.foreach(__v => __obj.update("street1", __v.asInstanceOf[js.Any]))
-      street2.foreach(__v => __obj.update("street2", __v.asInstanceOf[js.Any]))
-      street3.foreach(__v => __obj.update("street3", __v.asInstanceOf[js.Any]))
+      APIVersion.foreach(__v => __obj.updateDynamic("APIVersion")(__v.asInstanceOf[js.Any]))
+      city.foreach(__v => __obj.updateDynamic("city")(__v.asInstanceOf[js.Any]))
+      company.foreach(__v => __obj.updateDynamic("company")(__v.asInstanceOf[js.Any]))
+      country.foreach(__v => __obj.updateDynamic("country")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      phoneNumber.foreach(__v => __obj.updateDynamic("phoneNumber")(__v.asInstanceOf[js.Any]))
+      postalCode.foreach(__v => __obj.updateDynamic("postalCode")(__v.asInstanceOf[js.Any]))
+      stateOrProvince.foreach(__v => __obj.updateDynamic("stateOrProvince")(__v.asInstanceOf[js.Any]))
+      street1.foreach(__v => __obj.updateDynamic("street1")(__v.asInstanceOf[js.Any]))
+      street2.foreach(__v => __obj.updateDynamic("street2")(__v.asInstanceOf[js.Any]))
+      street3.foreach(__v => __obj.updateDynamic("street3")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetShippingLabelInput]
     }
   }
@@ -297,9 +297,9 @@ package importexport {
         ShippingLabelURL: js.UndefOr[GenericString] = js.undefined,
         Warning: js.UndefOr[GenericString] = js.undefined
     ): GetShippingLabelOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ShippingLabelURL.foreach(__v => __obj.update("ShippingLabelURL", __v.asInstanceOf[js.Any]))
-      Warning.foreach(__v => __obj.update("Warning", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ShippingLabelURL.foreach(__v => __obj.updateDynamic("ShippingLabelURL")(__v.asInstanceOf[js.Any]))
+      Warning.foreach(__v => __obj.updateDynamic("Warning")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetShippingLabelOutput]
     }
   }
@@ -318,11 +318,11 @@ package importexport {
         JobId: JobId,
         APIVersion: js.UndefOr[APIVersion] = js.undefined
     ): GetStatusInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobId" -> JobId.asInstanceOf[js.Any]
       )
 
-      APIVersion.foreach(__v => __obj.update("APIVersion", __v.asInstanceOf[js.Any]))
+      APIVersion.foreach(__v => __obj.updateDynamic("APIVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetStatusInput]
     }
   }
@@ -369,23 +369,23 @@ package importexport {
         SignatureFileContents: js.UndefOr[Signature] = js.undefined,
         TrackingNumber: js.UndefOr[TrackingNumber] = js.undefined
     ): GetStatusOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ArtifactList.foreach(__v => __obj.update("ArtifactList", __v.asInstanceOf[js.Any]))
-      Carrier.foreach(__v => __obj.update("Carrier", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      CurrentManifest.foreach(__v => __obj.update("CurrentManifest", __v.asInstanceOf[js.Any]))
-      ErrorCount.foreach(__v => __obj.update("ErrorCount", __v.asInstanceOf[js.Any]))
-      JobId.foreach(__v => __obj.update("JobId", __v.asInstanceOf[js.Any]))
-      JobType.foreach(__v => __obj.update("JobType", __v.asInstanceOf[js.Any]))
-      LocationCode.foreach(__v => __obj.update("LocationCode", __v.asInstanceOf[js.Any]))
-      LocationMessage.foreach(__v => __obj.update("LocationMessage", __v.asInstanceOf[js.Any]))
-      LogBucket.foreach(__v => __obj.update("LogBucket", __v.asInstanceOf[js.Any]))
-      LogKey.foreach(__v => __obj.update("LogKey", __v.asInstanceOf[js.Any]))
-      ProgressCode.foreach(__v => __obj.update("ProgressCode", __v.asInstanceOf[js.Any]))
-      ProgressMessage.foreach(__v => __obj.update("ProgressMessage", __v.asInstanceOf[js.Any]))
-      Signature.foreach(__v => __obj.update("Signature", __v.asInstanceOf[js.Any]))
-      SignatureFileContents.foreach(__v => __obj.update("SignatureFileContents", __v.asInstanceOf[js.Any]))
-      TrackingNumber.foreach(__v => __obj.update("TrackingNumber", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ArtifactList.foreach(__v => __obj.updateDynamic("ArtifactList")(__v.asInstanceOf[js.Any]))
+      Carrier.foreach(__v => __obj.updateDynamic("Carrier")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      CurrentManifest.foreach(__v => __obj.updateDynamic("CurrentManifest")(__v.asInstanceOf[js.Any]))
+      ErrorCount.foreach(__v => __obj.updateDynamic("ErrorCount")(__v.asInstanceOf[js.Any]))
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      JobType.foreach(__v => __obj.updateDynamic("JobType")(__v.asInstanceOf[js.Any]))
+      LocationCode.foreach(__v => __obj.updateDynamic("LocationCode")(__v.asInstanceOf[js.Any]))
+      LocationMessage.foreach(__v => __obj.updateDynamic("LocationMessage")(__v.asInstanceOf[js.Any]))
+      LogBucket.foreach(__v => __obj.updateDynamic("LogBucket")(__v.asInstanceOf[js.Any]))
+      LogKey.foreach(__v => __obj.updateDynamic("LogKey")(__v.asInstanceOf[js.Any]))
+      ProgressCode.foreach(__v => __obj.updateDynamic("ProgressCode")(__v.asInstanceOf[js.Any]))
+      ProgressMessage.foreach(__v => __obj.updateDynamic("ProgressMessage")(__v.asInstanceOf[js.Any]))
+      Signature.foreach(__v => __obj.updateDynamic("Signature")(__v.asInstanceOf[js.Any]))
+      SignatureFileContents.foreach(__v => __obj.updateDynamic("SignatureFileContents")(__v.asInstanceOf[js.Any]))
+      TrackingNumber.foreach(__v => __obj.updateDynamic("TrackingNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetStatusOutput]
     }
   }
@@ -472,11 +472,11 @@ package importexport {
         JobId: js.UndefOr[JobId] = js.undefined,
         JobType: js.UndefOr[JobType] = js.undefined
     ): Job = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      IsCanceled.foreach(__v => __obj.update("IsCanceled", __v.asInstanceOf[js.Any]))
-      JobId.foreach(__v => __obj.update("JobId", __v.asInstanceOf[js.Any]))
-      JobType.foreach(__v => __obj.update("JobType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      IsCanceled.foreach(__v => __obj.updateDynamic("IsCanceled")(__v.asInstanceOf[js.Any]))
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      JobType.foreach(__v => __obj.updateDynamic("JobType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Job]
     }
   }
@@ -507,10 +507,10 @@ package importexport {
         Marker: js.UndefOr[Marker] = js.undefined,
         MaxJobs: js.UndefOr[MaxJobs] = js.undefined
     ): ListJobsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      APIVersion.foreach(__v => __obj.update("APIVersion", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      MaxJobs.foreach(__v => __obj.update("MaxJobs", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      APIVersion.foreach(__v => __obj.updateDynamic("APIVersion")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxJobs.foreach(__v => __obj.updateDynamic("MaxJobs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListJobsInput]
     }
   }
@@ -529,9 +529,9 @@ package importexport {
         IsTruncated: js.UndefOr[IsTruncated] = js.undefined,
         Jobs: js.UndefOr[JobsList] = js.undefined
     ): ListJobsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IsTruncated.foreach(__v => __obj.update("IsTruncated", __v.asInstanceOf[js.Any]))
-      Jobs.foreach(__v => __obj.update("Jobs", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IsTruncated.foreach(__v => __obj.updateDynamic("IsTruncated")(__v.asInstanceOf[js.Any]))
+      Jobs.foreach(__v => __obj.updateDynamic("Jobs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListJobsOutput]
     }
   }
@@ -620,14 +620,14 @@ package importexport {
         ValidateOnly: ValidateOnly,
         APIVersion: js.UndefOr[APIVersion] = js.undefined
     ): UpdateJobInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "JobId"        -> JobId.asInstanceOf[js.Any],
         "JobType"      -> JobType.asInstanceOf[js.Any],
         "Manifest"     -> Manifest.asInstanceOf[js.Any],
         "ValidateOnly" -> ValidateOnly.asInstanceOf[js.Any]
       )
 
-      APIVersion.foreach(__v => __obj.update("APIVersion", __v.asInstanceOf[js.Any]))
+      APIVersion.foreach(__v => __obj.updateDynamic("APIVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateJobInput]
     }
   }
@@ -648,10 +648,10 @@ package importexport {
         Success: js.UndefOr[Success] = js.undefined,
         WarningMessage: js.UndefOr[WarningMessage] = js.undefined
     ): UpdateJobOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ArtifactList.foreach(__v => __obj.update("ArtifactList", __v.asInstanceOf[js.Any]))
-      Success.foreach(__v => __obj.update("Success", __v.asInstanceOf[js.Any]))
-      WarningMessage.foreach(__v => __obj.update("WarningMessage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ArtifactList.foreach(__v => __obj.updateDynamic("ArtifactList")(__v.asInstanceOf[js.Any]))
+      Success.foreach(__v => __obj.updateDynamic("Success")(__v.asInstanceOf[js.Any]))
+      WarningMessage.foreach(__v => __obj.updateDynamic("WarningMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateJobOutput]
     }
   }

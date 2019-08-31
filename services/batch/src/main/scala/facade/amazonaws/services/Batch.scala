@@ -132,8 +132,8 @@ package batch {
     def apply(
         size: js.UndefOr[Int] = js.undefined
     ): ArrayProperties = {
-      val __obj = js.Dictionary.empty[js.Any]
-      size.foreach(__v => __obj.update("size", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      size.foreach(__v => __obj.updateDynamic("size")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ArrayProperties]
     }
   }
@@ -154,10 +154,10 @@ package batch {
         size: js.UndefOr[Int] = js.undefined,
         statusSummary: js.UndefOr[ArrayJobStatusSummary] = js.undefined
     ): ArrayPropertiesDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      index.foreach(__v => __obj.update("index", __v.asInstanceOf[js.Any]))
-      size.foreach(__v => __obj.update("size", __v.asInstanceOf[js.Any]))
-      statusSummary.foreach(__v => __obj.update("statusSummary", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      index.foreach(__v => __obj.updateDynamic("index")(__v.asInstanceOf[js.Any]))
+      size.foreach(__v => __obj.updateDynamic("size")(__v.asInstanceOf[js.Any]))
+      statusSummary.foreach(__v => __obj.updateDynamic("statusSummary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ArrayPropertiesDetail]
     }
   }
@@ -176,9 +176,9 @@ package batch {
         index: js.UndefOr[Int] = js.undefined,
         size: js.UndefOr[Int] = js.undefined
     ): ArrayPropertiesSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      index.foreach(__v => __obj.update("index", __v.asInstanceOf[js.Any]))
-      size.foreach(__v => __obj.update("size", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      index.foreach(__v => __obj.updateDynamic("index")(__v.asInstanceOf[js.Any]))
+      size.foreach(__v => __obj.updateDynamic("size")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ArrayPropertiesSummary]
     }
   }
@@ -205,13 +205,13 @@ package batch {
         reason: js.UndefOr[String] = js.undefined,
         taskArn: js.UndefOr[String] = js.undefined
     ): AttemptContainerDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      containerInstanceArn.foreach(__v => __obj.update("containerInstanceArn", __v.asInstanceOf[js.Any]))
-      exitCode.foreach(__v => __obj.update("exitCode", __v.asInstanceOf[js.Any]))
-      logStreamName.foreach(__v => __obj.update("logStreamName", __v.asInstanceOf[js.Any]))
-      networkInterfaces.foreach(__v => __obj.update("networkInterfaces", __v.asInstanceOf[js.Any]))
-      reason.foreach(__v => __obj.update("reason", __v.asInstanceOf[js.Any]))
-      taskArn.foreach(__v => __obj.update("taskArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      containerInstanceArn.foreach(__v => __obj.updateDynamic("containerInstanceArn")(__v.asInstanceOf[js.Any]))
+      exitCode.foreach(__v => __obj.updateDynamic("exitCode")(__v.asInstanceOf[js.Any]))
+      logStreamName.foreach(__v => __obj.updateDynamic("logStreamName")(__v.asInstanceOf[js.Any]))
+      networkInterfaces.foreach(__v => __obj.updateDynamic("networkInterfaces")(__v.asInstanceOf[js.Any]))
+      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
+      taskArn.foreach(__v => __obj.updateDynamic("taskArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttemptContainerDetail]
     }
   }
@@ -234,11 +234,11 @@ package batch {
         statusReason: js.UndefOr[String] = js.undefined,
         stoppedAt: js.UndefOr[Double] = js.undefined
     ): AttemptDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      container.foreach(__v => __obj.update("container", __v.asInstanceOf[js.Any]))
-      startedAt.foreach(__v => __obj.update("startedAt", __v.asInstanceOf[js.Any]))
-      statusReason.foreach(__v => __obj.update("statusReason", __v.asInstanceOf[js.Any]))
-      stoppedAt.foreach(__v => __obj.update("stoppedAt", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      container.foreach(__v => __obj.updateDynamic("container")(__v.asInstanceOf[js.Any]))
+      startedAt.foreach(__v => __obj.updateDynamic("startedAt")(__v.asInstanceOf[js.Any]))
+      statusReason.foreach(__v => __obj.updateDynamic("statusReason")(__v.asInstanceOf[js.Any]))
+      stoppedAt.foreach(__v => __obj.updateDynamic("stoppedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttemptDetail]
     }
   }
@@ -286,7 +286,7 @@ package batch {
         jobId: String,
         reason: String
     ): CancelJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobId"  -> jobId.asInstanceOf[js.Any],
         "reason" -> reason.asInstanceOf[js.Any]
       )
@@ -301,7 +301,7 @@ package batch {
   object CancelJobResponse {
     def apply(
         ): CancelJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CancelJobResponse]
     }
@@ -335,18 +335,18 @@ package batch {
         statusReason: js.UndefOr[String] = js.undefined,
         `type`: js.UndefOr[CEType] = js.undefined
     ): ComputeEnvironmentDetail = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "computeEnvironmentArn"  -> computeEnvironmentArn.asInstanceOf[js.Any],
         "computeEnvironmentName" -> computeEnvironmentName.asInstanceOf[js.Any],
         "ecsClusterArn"          -> ecsClusterArn.asInstanceOf[js.Any]
       )
 
-      computeResources.foreach(__v => __obj.update("computeResources", __v.asInstanceOf[js.Any]))
-      serviceRole.foreach(__v => __obj.update("serviceRole", __v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.update("state", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      statusReason.foreach(__v => __obj.update("statusReason", __v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      computeResources.foreach(__v => __obj.updateDynamic("computeResources")(__v.asInstanceOf[js.Any]))
+      serviceRole.foreach(__v => __obj.updateDynamic("serviceRole")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      statusReason.foreach(__v => __obj.updateDynamic("statusReason")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ComputeEnvironmentDetail]
     }
   }
@@ -365,7 +365,7 @@ package batch {
         computeEnvironment: String,
         order: Int
     ): ComputeEnvironmentOrder = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "computeEnvironment" -> computeEnvironment.asInstanceOf[js.Any],
         "order"              -> order.asInstanceOf[js.Any]
       )
@@ -414,7 +414,7 @@ package batch {
         spotIamFleetRole: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[TagsMap] = js.undefined
     ): ComputeResource = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "instanceRole"  -> instanceRole.asInstanceOf[js.Any],
         "instanceTypes" -> instanceTypes.asInstanceOf[js.Any],
         "maxvCpus"      -> maxvCpus.asInstanceOf[js.Any],
@@ -423,15 +423,15 @@ package batch {
         "type"          -> `type`.asInstanceOf[js.Any]
       )
 
-      bidPercentage.foreach(__v => __obj.update("bidPercentage", __v.asInstanceOf[js.Any]))
-      desiredvCpus.foreach(__v => __obj.update("desiredvCpus", __v.asInstanceOf[js.Any]))
-      ec2KeyPair.foreach(__v => __obj.update("ec2KeyPair", __v.asInstanceOf[js.Any]))
-      imageId.foreach(__v => __obj.update("imageId", __v.asInstanceOf[js.Any]))
-      launchTemplate.foreach(__v => __obj.update("launchTemplate", __v.asInstanceOf[js.Any]))
-      placementGroup.foreach(__v => __obj.update("placementGroup", __v.asInstanceOf[js.Any]))
-      securityGroupIds.foreach(__v => __obj.update("securityGroupIds", __v.asInstanceOf[js.Any]))
-      spotIamFleetRole.foreach(__v => __obj.update("spotIamFleetRole", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      bidPercentage.foreach(__v => __obj.updateDynamic("bidPercentage")(__v.asInstanceOf[js.Any]))
+      desiredvCpus.foreach(__v => __obj.updateDynamic("desiredvCpus")(__v.asInstanceOf[js.Any]))
+      ec2KeyPair.foreach(__v => __obj.updateDynamic("ec2KeyPair")(__v.asInstanceOf[js.Any]))
+      imageId.foreach(__v => __obj.updateDynamic("imageId")(__v.asInstanceOf[js.Any]))
+      launchTemplate.foreach(__v => __obj.updateDynamic("launchTemplate")(__v.asInstanceOf[js.Any]))
+      placementGroup.foreach(__v => __obj.updateDynamic("placementGroup")(__v.asInstanceOf[js.Any]))
+      securityGroupIds.foreach(__v => __obj.updateDynamic("securityGroupIds")(__v.asInstanceOf[js.Any]))
+      spotIamFleetRole.foreach(__v => __obj.updateDynamic("spotIamFleetRole")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ComputeResource]
     }
   }
@@ -452,10 +452,10 @@ package batch {
         maxvCpus: js.UndefOr[Int] = js.undefined,
         minvCpus: js.UndefOr[Int] = js.undefined
     ): ComputeResourceUpdate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      desiredvCpus.foreach(__v => __obj.update("desiredvCpus", __v.asInstanceOf[js.Any]))
-      maxvCpus.foreach(__v => __obj.update("maxvCpus", __v.asInstanceOf[js.Any]))
-      minvCpus.foreach(__v => __obj.update("minvCpus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      desiredvCpus.foreach(__v => __obj.updateDynamic("desiredvCpus")(__v.asInstanceOf[js.Any]))
+      maxvCpus.foreach(__v => __obj.updateDynamic("maxvCpus")(__v.asInstanceOf[js.Any]))
+      minvCpus.foreach(__v => __obj.updateDynamic("minvCpus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ComputeResourceUpdate]
     }
   }
@@ -512,28 +512,28 @@ package batch {
         vcpus: js.UndefOr[Int] = js.undefined,
         volumes: js.UndefOr[Volumes] = js.undefined
     ): ContainerDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      command.foreach(__v => __obj.update("command", __v.asInstanceOf[js.Any]))
-      containerInstanceArn.foreach(__v => __obj.update("containerInstanceArn", __v.asInstanceOf[js.Any]))
-      environment.foreach(__v => __obj.update("environment", __v.asInstanceOf[js.Any]))
-      exitCode.foreach(__v => __obj.update("exitCode", __v.asInstanceOf[js.Any]))
-      image.foreach(__v => __obj.update("image", __v.asInstanceOf[js.Any]))
-      instanceType.foreach(__v => __obj.update("instanceType", __v.asInstanceOf[js.Any]))
-      jobRoleArn.foreach(__v => __obj.update("jobRoleArn", __v.asInstanceOf[js.Any]))
-      linuxParameters.foreach(__v => __obj.update("linuxParameters", __v.asInstanceOf[js.Any]))
-      logStreamName.foreach(__v => __obj.update("logStreamName", __v.asInstanceOf[js.Any]))
-      memory.foreach(__v => __obj.update("memory", __v.asInstanceOf[js.Any]))
-      mountPoints.foreach(__v => __obj.update("mountPoints", __v.asInstanceOf[js.Any]))
-      networkInterfaces.foreach(__v => __obj.update("networkInterfaces", __v.asInstanceOf[js.Any]))
-      privileged.foreach(__v => __obj.update("privileged", __v.asInstanceOf[js.Any]))
-      readonlyRootFilesystem.foreach(__v => __obj.update("readonlyRootFilesystem", __v.asInstanceOf[js.Any]))
-      reason.foreach(__v => __obj.update("reason", __v.asInstanceOf[js.Any]))
-      resourceRequirements.foreach(__v => __obj.update("resourceRequirements", __v.asInstanceOf[js.Any]))
-      taskArn.foreach(__v => __obj.update("taskArn", __v.asInstanceOf[js.Any]))
-      ulimits.foreach(__v => __obj.update("ulimits", __v.asInstanceOf[js.Any]))
-      user.foreach(__v => __obj.update("user", __v.asInstanceOf[js.Any]))
-      vcpus.foreach(__v => __obj.update("vcpus", __v.asInstanceOf[js.Any]))
-      volumes.foreach(__v => __obj.update("volumes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      command.foreach(__v => __obj.updateDynamic("command")(__v.asInstanceOf[js.Any]))
+      containerInstanceArn.foreach(__v => __obj.updateDynamic("containerInstanceArn")(__v.asInstanceOf[js.Any]))
+      environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
+      exitCode.foreach(__v => __obj.updateDynamic("exitCode")(__v.asInstanceOf[js.Any]))
+      image.foreach(__v => __obj.updateDynamic("image")(__v.asInstanceOf[js.Any]))
+      instanceType.foreach(__v => __obj.updateDynamic("instanceType")(__v.asInstanceOf[js.Any]))
+      jobRoleArn.foreach(__v => __obj.updateDynamic("jobRoleArn")(__v.asInstanceOf[js.Any]))
+      linuxParameters.foreach(__v => __obj.updateDynamic("linuxParameters")(__v.asInstanceOf[js.Any]))
+      logStreamName.foreach(__v => __obj.updateDynamic("logStreamName")(__v.asInstanceOf[js.Any]))
+      memory.foreach(__v => __obj.updateDynamic("memory")(__v.asInstanceOf[js.Any]))
+      mountPoints.foreach(__v => __obj.updateDynamic("mountPoints")(__v.asInstanceOf[js.Any]))
+      networkInterfaces.foreach(__v => __obj.updateDynamic("networkInterfaces")(__v.asInstanceOf[js.Any]))
+      privileged.foreach(__v => __obj.updateDynamic("privileged")(__v.asInstanceOf[js.Any]))
+      readonlyRootFilesystem.foreach(__v => __obj.updateDynamic("readonlyRootFilesystem")(__v.asInstanceOf[js.Any]))
+      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
+      resourceRequirements.foreach(__v => __obj.updateDynamic("resourceRequirements")(__v.asInstanceOf[js.Any]))
+      taskArn.foreach(__v => __obj.updateDynamic("taskArn")(__v.asInstanceOf[js.Any]))
+      ulimits.foreach(__v => __obj.updateDynamic("ulimits")(__v.asInstanceOf[js.Any]))
+      user.foreach(__v => __obj.updateDynamic("user")(__v.asInstanceOf[js.Any]))
+      vcpus.foreach(__v => __obj.updateDynamic("vcpus")(__v.asInstanceOf[js.Any]))
+      volumes.foreach(__v => __obj.updateDynamic("volumes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContainerDetail]
     }
   }
@@ -560,13 +560,13 @@ package batch {
         resourceRequirements: js.UndefOr[ResourceRequirements] = js.undefined,
         vcpus: js.UndefOr[Int] = js.undefined
     ): ContainerOverrides = {
-      val __obj = js.Dictionary.empty[js.Any]
-      command.foreach(__v => __obj.update("command", __v.asInstanceOf[js.Any]))
-      environment.foreach(__v => __obj.update("environment", __v.asInstanceOf[js.Any]))
-      instanceType.foreach(__v => __obj.update("instanceType", __v.asInstanceOf[js.Any]))
-      memory.foreach(__v => __obj.update("memory", __v.asInstanceOf[js.Any]))
-      resourceRequirements.foreach(__v => __obj.update("resourceRequirements", __v.asInstanceOf[js.Any]))
-      vcpus.foreach(__v => __obj.update("vcpus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      command.foreach(__v => __obj.updateDynamic("command")(__v.asInstanceOf[js.Any]))
+      environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
+      instanceType.foreach(__v => __obj.updateDynamic("instanceType")(__v.asInstanceOf[js.Any]))
+      memory.foreach(__v => __obj.updateDynamic("memory")(__v.asInstanceOf[js.Any]))
+      resourceRequirements.foreach(__v => __obj.updateDynamic("resourceRequirements")(__v.asInstanceOf[js.Any]))
+      vcpus.foreach(__v => __obj.updateDynamic("vcpus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContainerOverrides]
     }
   }
@@ -611,22 +611,22 @@ package batch {
         vcpus: js.UndefOr[Int] = js.undefined,
         volumes: js.UndefOr[Volumes] = js.undefined
     ): ContainerProperties = {
-      val __obj = js.Dictionary.empty[js.Any]
-      command.foreach(__v => __obj.update("command", __v.asInstanceOf[js.Any]))
-      environment.foreach(__v => __obj.update("environment", __v.asInstanceOf[js.Any]))
-      image.foreach(__v => __obj.update("image", __v.asInstanceOf[js.Any]))
-      instanceType.foreach(__v => __obj.update("instanceType", __v.asInstanceOf[js.Any]))
-      jobRoleArn.foreach(__v => __obj.update("jobRoleArn", __v.asInstanceOf[js.Any]))
-      linuxParameters.foreach(__v => __obj.update("linuxParameters", __v.asInstanceOf[js.Any]))
-      memory.foreach(__v => __obj.update("memory", __v.asInstanceOf[js.Any]))
-      mountPoints.foreach(__v => __obj.update("mountPoints", __v.asInstanceOf[js.Any]))
-      privileged.foreach(__v => __obj.update("privileged", __v.asInstanceOf[js.Any]))
-      readonlyRootFilesystem.foreach(__v => __obj.update("readonlyRootFilesystem", __v.asInstanceOf[js.Any]))
-      resourceRequirements.foreach(__v => __obj.update("resourceRequirements", __v.asInstanceOf[js.Any]))
-      ulimits.foreach(__v => __obj.update("ulimits", __v.asInstanceOf[js.Any]))
-      user.foreach(__v => __obj.update("user", __v.asInstanceOf[js.Any]))
-      vcpus.foreach(__v => __obj.update("vcpus", __v.asInstanceOf[js.Any]))
-      volumes.foreach(__v => __obj.update("volumes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      command.foreach(__v => __obj.updateDynamic("command")(__v.asInstanceOf[js.Any]))
+      environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
+      image.foreach(__v => __obj.updateDynamic("image")(__v.asInstanceOf[js.Any]))
+      instanceType.foreach(__v => __obj.updateDynamic("instanceType")(__v.asInstanceOf[js.Any]))
+      jobRoleArn.foreach(__v => __obj.updateDynamic("jobRoleArn")(__v.asInstanceOf[js.Any]))
+      linuxParameters.foreach(__v => __obj.updateDynamic("linuxParameters")(__v.asInstanceOf[js.Any]))
+      memory.foreach(__v => __obj.updateDynamic("memory")(__v.asInstanceOf[js.Any]))
+      mountPoints.foreach(__v => __obj.updateDynamic("mountPoints")(__v.asInstanceOf[js.Any]))
+      privileged.foreach(__v => __obj.updateDynamic("privileged")(__v.asInstanceOf[js.Any]))
+      readonlyRootFilesystem.foreach(__v => __obj.updateDynamic("readonlyRootFilesystem")(__v.asInstanceOf[js.Any]))
+      resourceRequirements.foreach(__v => __obj.updateDynamic("resourceRequirements")(__v.asInstanceOf[js.Any]))
+      ulimits.foreach(__v => __obj.updateDynamic("ulimits")(__v.asInstanceOf[js.Any]))
+      user.foreach(__v => __obj.updateDynamic("user")(__v.asInstanceOf[js.Any]))
+      vcpus.foreach(__v => __obj.updateDynamic("vcpus")(__v.asInstanceOf[js.Any]))
+      volumes.foreach(__v => __obj.updateDynamic("volumes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContainerProperties]
     }
   }
@@ -645,9 +645,9 @@ package batch {
         exitCode: js.UndefOr[Int] = js.undefined,
         reason: js.UndefOr[String] = js.undefined
     ): ContainerSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      exitCode.foreach(__v => __obj.update("exitCode", __v.asInstanceOf[js.Any]))
-      reason.foreach(__v => __obj.update("reason", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      exitCode.foreach(__v => __obj.updateDynamic("exitCode")(__v.asInstanceOf[js.Any]))
+      reason.foreach(__v => __obj.updateDynamic("reason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContainerSummary]
     }
   }
@@ -669,14 +669,14 @@ package batch {
         computeResources: js.UndefOr[ComputeResource] = js.undefined,
         state: js.UndefOr[CEState] = js.undefined
     ): CreateComputeEnvironmentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "computeEnvironmentName" -> computeEnvironmentName.asInstanceOf[js.Any],
         "serviceRole"            -> serviceRole.asInstanceOf[js.Any],
         "type"                   -> `type`.asInstanceOf[js.Any]
       )
 
-      computeResources.foreach(__v => __obj.update("computeResources", __v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.update("state", __v.asInstanceOf[js.Any]))
+      computeResources.foreach(__v => __obj.updateDynamic("computeResources")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateComputeEnvironmentRequest]
     }
   }
@@ -692,9 +692,9 @@ package batch {
         computeEnvironmentArn: js.UndefOr[String] = js.undefined,
         computeEnvironmentName: js.UndefOr[String] = js.undefined
     ): CreateComputeEnvironmentResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      computeEnvironmentArn.foreach(__v => __obj.update("computeEnvironmentArn", __v.asInstanceOf[js.Any]))
-      computeEnvironmentName.foreach(__v => __obj.update("computeEnvironmentName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      computeEnvironmentArn.foreach(__v => __obj.updateDynamic("computeEnvironmentArn")(__v.asInstanceOf[js.Any]))
+      computeEnvironmentName.foreach(__v => __obj.updateDynamic("computeEnvironmentName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateComputeEnvironmentResponse]
     }
   }
@@ -714,13 +714,13 @@ package batch {
         priority: Int,
         state: js.UndefOr[JQState] = js.undefined
     ): CreateJobQueueRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "computeEnvironmentOrder" -> computeEnvironmentOrder.asInstanceOf[js.Any],
         "jobQueueName"            -> jobQueueName.asInstanceOf[js.Any],
         "priority"                -> priority.asInstanceOf[js.Any]
       )
 
-      state.foreach(__v => __obj.update("state", __v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateJobQueueRequest]
     }
   }
@@ -736,7 +736,7 @@ package batch {
         jobQueueArn: String,
         jobQueueName: String
     ): CreateJobQueueResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobQueueArn"  -> jobQueueArn.asInstanceOf[js.Any],
         "jobQueueName" -> jobQueueName.asInstanceOf[js.Any]
       )
@@ -754,7 +754,7 @@ package batch {
     def apply(
         computeEnvironment: String
     ): DeleteComputeEnvironmentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "computeEnvironment" -> computeEnvironment.asInstanceOf[js.Any]
       )
 
@@ -768,7 +768,7 @@ package batch {
   object DeleteComputeEnvironmentResponse {
     def apply(
         ): DeleteComputeEnvironmentResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteComputeEnvironmentResponse]
     }
@@ -783,7 +783,7 @@ package batch {
     def apply(
         jobQueue: String
     ): DeleteJobQueueRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobQueue" -> jobQueue.asInstanceOf[js.Any]
       )
 
@@ -797,7 +797,7 @@ package batch {
   object DeleteJobQueueResponse {
     def apply(
         ): DeleteJobQueueResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteJobQueueResponse]
     }
@@ -812,7 +812,7 @@ package batch {
     def apply(
         jobDefinition: String
     ): DeregisterJobDefinitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobDefinition" -> jobDefinition.asInstanceOf[js.Any]
       )
 
@@ -826,7 +826,7 @@ package batch {
   object DeregisterJobDefinitionResponse {
     def apply(
         ): DeregisterJobDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeregisterJobDefinitionResponse]
     }
@@ -845,10 +845,10 @@ package batch {
         maxResults: js.UndefOr[Int] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): DescribeComputeEnvironmentsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      computeEnvironments.foreach(__v => __obj.update("computeEnvironments", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      computeEnvironments.foreach(__v => __obj.updateDynamic("computeEnvironments")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeComputeEnvironmentsRequest]
     }
   }
@@ -864,9 +864,9 @@ package batch {
         computeEnvironments: js.UndefOr[ComputeEnvironmentDetailList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): DescribeComputeEnvironmentsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      computeEnvironments.foreach(__v => __obj.update("computeEnvironments", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      computeEnvironments.foreach(__v => __obj.updateDynamic("computeEnvironments")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeComputeEnvironmentsResponse]
     }
   }
@@ -888,12 +888,12 @@ package batch {
         nextToken: js.UndefOr[String] = js.undefined,
         status: js.UndefOr[String] = js.undefined
     ): DescribeJobDefinitionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      jobDefinitionName.foreach(__v => __obj.update("jobDefinitionName", __v.asInstanceOf[js.Any]))
-      jobDefinitions.foreach(__v => __obj.update("jobDefinitions", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      jobDefinitionName.foreach(__v => __obj.updateDynamic("jobDefinitionName")(__v.asInstanceOf[js.Any]))
+      jobDefinitions.foreach(__v => __obj.updateDynamic("jobDefinitions")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeJobDefinitionsRequest]
     }
   }
@@ -909,9 +909,9 @@ package batch {
         jobDefinitions: js.UndefOr[JobDefinitionList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): DescribeJobDefinitionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      jobDefinitions.foreach(__v => __obj.update("jobDefinitions", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      jobDefinitions.foreach(__v => __obj.updateDynamic("jobDefinitions")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeJobDefinitionsResponse]
     }
   }
@@ -929,10 +929,10 @@ package batch {
         maxResults: js.UndefOr[Int] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): DescribeJobQueuesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      jobQueues.foreach(__v => __obj.update("jobQueues", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      jobQueues.foreach(__v => __obj.updateDynamic("jobQueues")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeJobQueuesRequest]
     }
   }
@@ -948,9 +948,9 @@ package batch {
         jobQueues: js.UndefOr[JobQueueDetailList] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): DescribeJobQueuesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      jobQueues.foreach(__v => __obj.update("jobQueues", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      jobQueues.foreach(__v => __obj.updateDynamic("jobQueues")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeJobQueuesResponse]
     }
   }
@@ -964,7 +964,7 @@ package batch {
     def apply(
         jobs: StringList
     ): DescribeJobsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobs" -> jobs.asInstanceOf[js.Any]
       )
 
@@ -981,8 +981,8 @@ package batch {
     def apply(
         jobs: js.UndefOr[JobDetailList] = js.undefined
     ): DescribeJobsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      jobs.foreach(__v => __obj.update("jobs", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      jobs.foreach(__v => __obj.updateDynamic("jobs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeJobsResponse]
     }
   }
@@ -1003,12 +1003,12 @@ package batch {
         containerPath: js.UndefOr[String] = js.undefined,
         permissions: js.UndefOr[DeviceCgroupPermissions] = js.undefined
     ): Device = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "hostPath" -> hostPath.asInstanceOf[js.Any]
       )
 
-      containerPath.foreach(__v => __obj.update("containerPath", __v.asInstanceOf[js.Any]))
-      permissions.foreach(__v => __obj.update("permissions", __v.asInstanceOf[js.Any]))
+      containerPath.foreach(__v => __obj.updateDynamic("containerPath")(__v.asInstanceOf[js.Any]))
+      permissions.foreach(__v => __obj.updateDynamic("permissions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Device]
     }
   }
@@ -1033,8 +1033,8 @@ package batch {
     def apply(
         sourcePath: js.UndefOr[String] = js.undefined
     ): Host = {
-      val __obj = js.Dictionary.empty[js.Any]
-      sourcePath.foreach(__v => __obj.update("sourcePath", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      sourcePath.foreach(__v => __obj.updateDynamic("sourcePath")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Host]
     }
   }
@@ -1087,19 +1087,19 @@ package batch {
         status: js.UndefOr[String] = js.undefined,
         timeout: js.UndefOr[JobTimeout] = js.undefined
     ): JobDefinition = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobDefinitionArn"  -> jobDefinitionArn.asInstanceOf[js.Any],
         "jobDefinitionName" -> jobDefinitionName.asInstanceOf[js.Any],
         "revision"          -> revision.asInstanceOf[js.Any],
         "type"              -> `type`.asInstanceOf[js.Any]
       )
 
-      containerProperties.foreach(__v => __obj.update("containerProperties", __v.asInstanceOf[js.Any]))
-      nodeProperties.foreach(__v => __obj.update("nodeProperties", __v.asInstanceOf[js.Any]))
-      parameters.foreach(__v => __obj.update("parameters", __v.asInstanceOf[js.Any]))
-      retryStrategy.foreach(__v => __obj.update("retryStrategy", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      timeout.foreach(__v => __obj.update("timeout", __v.asInstanceOf[js.Any]))
+      containerProperties.foreach(__v => __obj.updateDynamic("containerProperties")(__v.asInstanceOf[js.Any]))
+      nodeProperties.foreach(__v => __obj.updateDynamic("nodeProperties")(__v.asInstanceOf[js.Any]))
+      parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
+      retryStrategy.foreach(__v => __obj.updateDynamic("retryStrategy")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      timeout.foreach(__v => __obj.updateDynamic("timeout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobDefinition]
     }
   }
@@ -1125,9 +1125,9 @@ package batch {
         jobId: js.UndefOr[String] = js.undefined,
         `type`: js.UndefOr[ArrayJobDependency] = js.undefined
     ): JobDependency = {
-      val __obj = js.Dictionary.empty[js.Any]
-      jobId.foreach(__v => __obj.update("jobId", __v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobDependency]
     }
   }
@@ -1178,7 +1178,7 @@ package batch {
         stoppedAt: js.UndefOr[Double] = js.undefined,
         timeout: js.UndefOr[JobTimeout] = js.undefined
     ): JobDetail = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobDefinition" -> jobDefinition.asInstanceOf[js.Any],
         "jobId"         -> jobId.asInstanceOf[js.Any],
         "jobName"       -> jobName.asInstanceOf[js.Any],
@@ -1187,18 +1187,18 @@ package batch {
         "status"        -> status.asInstanceOf[js.Any]
       )
 
-      arrayProperties.foreach(__v => __obj.update("arrayProperties", __v.asInstanceOf[js.Any]))
-      attempts.foreach(__v => __obj.update("attempts", __v.asInstanceOf[js.Any]))
-      container.foreach(__v => __obj.update("container", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      dependsOn.foreach(__v => __obj.update("dependsOn", __v.asInstanceOf[js.Any]))
-      nodeDetails.foreach(__v => __obj.update("nodeDetails", __v.asInstanceOf[js.Any]))
-      nodeProperties.foreach(__v => __obj.update("nodeProperties", __v.asInstanceOf[js.Any]))
-      parameters.foreach(__v => __obj.update("parameters", __v.asInstanceOf[js.Any]))
-      retryStrategy.foreach(__v => __obj.update("retryStrategy", __v.asInstanceOf[js.Any]))
-      statusReason.foreach(__v => __obj.update("statusReason", __v.asInstanceOf[js.Any]))
-      stoppedAt.foreach(__v => __obj.update("stoppedAt", __v.asInstanceOf[js.Any]))
-      timeout.foreach(__v => __obj.update("timeout", __v.asInstanceOf[js.Any]))
+      arrayProperties.foreach(__v => __obj.updateDynamic("arrayProperties")(__v.asInstanceOf[js.Any]))
+      attempts.foreach(__v => __obj.updateDynamic("attempts")(__v.asInstanceOf[js.Any]))
+      container.foreach(__v => __obj.updateDynamic("container")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      dependsOn.foreach(__v => __obj.updateDynamic("dependsOn")(__v.asInstanceOf[js.Any]))
+      nodeDetails.foreach(__v => __obj.updateDynamic("nodeDetails")(__v.asInstanceOf[js.Any]))
+      nodeProperties.foreach(__v => __obj.updateDynamic("nodeProperties")(__v.asInstanceOf[js.Any]))
+      parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
+      retryStrategy.foreach(__v => __obj.updateDynamic("retryStrategy")(__v.asInstanceOf[js.Any]))
+      statusReason.foreach(__v => __obj.updateDynamic("statusReason")(__v.asInstanceOf[js.Any]))
+      stoppedAt.foreach(__v => __obj.updateDynamic("stoppedAt")(__v.asInstanceOf[js.Any]))
+      timeout.foreach(__v => __obj.updateDynamic("timeout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobDetail]
     }
   }
@@ -1227,7 +1227,7 @@ package batch {
         status: js.UndefOr[JQStatus] = js.undefined,
         statusReason: js.UndefOr[String] = js.undefined
     ): JobQueueDetail = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "computeEnvironmentOrder" -> computeEnvironmentOrder.asInstanceOf[js.Any],
         "jobQueueArn"             -> jobQueueArn.asInstanceOf[js.Any],
         "jobQueueName"            -> jobQueueName.asInstanceOf[js.Any],
@@ -1235,8 +1235,8 @@ package batch {
         "state"                   -> state.asInstanceOf[js.Any]
       )
 
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      statusReason.foreach(__v => __obj.update("statusReason", __v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      statusReason.foreach(__v => __obj.updateDynamic("statusReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobQueueDetail]
     }
   }
@@ -1283,19 +1283,19 @@ package batch {
         statusReason: js.UndefOr[String] = js.undefined,
         stoppedAt: js.UndefOr[Double] = js.undefined
     ): JobSummary = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobId"   -> jobId.asInstanceOf[js.Any],
         "jobName" -> jobName.asInstanceOf[js.Any]
       )
 
-      arrayProperties.foreach(__v => __obj.update("arrayProperties", __v.asInstanceOf[js.Any]))
-      container.foreach(__v => __obj.update("container", __v.asInstanceOf[js.Any]))
-      createdAt.foreach(__v => __obj.update("createdAt", __v.asInstanceOf[js.Any]))
-      nodeProperties.foreach(__v => __obj.update("nodeProperties", __v.asInstanceOf[js.Any]))
-      startedAt.foreach(__v => __obj.update("startedAt", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      statusReason.foreach(__v => __obj.update("statusReason", __v.asInstanceOf[js.Any]))
-      stoppedAt.foreach(__v => __obj.update("stoppedAt", __v.asInstanceOf[js.Any]))
+      arrayProperties.foreach(__v => __obj.updateDynamic("arrayProperties")(__v.asInstanceOf[js.Any]))
+      container.foreach(__v => __obj.updateDynamic("container")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      nodeProperties.foreach(__v => __obj.updateDynamic("nodeProperties")(__v.asInstanceOf[js.Any]))
+      startedAt.foreach(__v => __obj.updateDynamic("startedAt")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      statusReason.foreach(__v => __obj.updateDynamic("statusReason")(__v.asInstanceOf[js.Any]))
+      stoppedAt.foreach(__v => __obj.updateDynamic("stoppedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobSummary]
     }
   }
@@ -1312,8 +1312,8 @@ package batch {
     def apply(
         attemptDurationSeconds: js.UndefOr[Int] = js.undefined
     ): JobTimeout = {
-      val __obj = js.Dictionary.empty[js.Any]
-      attemptDurationSeconds.foreach(__v => __obj.update("attemptDurationSeconds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      attemptDurationSeconds.foreach(__v => __obj.updateDynamic("attemptDurationSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobTimeout]
     }
   }
@@ -1332,9 +1332,9 @@ package batch {
         name: js.UndefOr[String] = js.undefined,
         value: js.UndefOr[String] = js.undefined
     ): KeyValuePair = {
-      val __obj = js.Dictionary.empty[js.Any]
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KeyValuePair]
     }
   }
@@ -1355,10 +1355,10 @@ package batch {
         launchTemplateName: js.UndefOr[String] = js.undefined,
         version: js.UndefOr[String] = js.undefined
     ): LaunchTemplateSpecification = {
-      val __obj = js.Dictionary.empty[js.Any]
-      launchTemplateId.foreach(__v => __obj.update("launchTemplateId", __v.asInstanceOf[js.Any]))
-      launchTemplateName.foreach(__v => __obj.update("launchTemplateName", __v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      launchTemplateId.foreach(__v => __obj.updateDynamic("launchTemplateId")(__v.asInstanceOf[js.Any]))
+      launchTemplateName.foreach(__v => __obj.updateDynamic("launchTemplateName")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LaunchTemplateSpecification]
     }
   }
@@ -1375,8 +1375,8 @@ package batch {
     def apply(
         devices: js.UndefOr[DevicesList] = js.undefined
     ): LinuxParameters = {
-      val __obj = js.Dictionary.empty[js.Any]
-      devices.foreach(__v => __obj.update("devices", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      devices.foreach(__v => __obj.updateDynamic("devices")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LinuxParameters]
     }
   }
@@ -1400,13 +1400,13 @@ package batch {
         multiNodeJobId: js.UndefOr[String] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined
     ): ListJobsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arrayJobId.foreach(__v => __obj.update("arrayJobId", __v.asInstanceOf[js.Any]))
-      jobQueue.foreach(__v => __obj.update("jobQueue", __v.asInstanceOf[js.Any]))
-      jobStatus.foreach(__v => __obj.update("jobStatus", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      multiNodeJobId.foreach(__v => __obj.update("multiNodeJobId", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arrayJobId.foreach(__v => __obj.updateDynamic("arrayJobId")(__v.asInstanceOf[js.Any]))
+      jobQueue.foreach(__v => __obj.updateDynamic("jobQueue")(__v.asInstanceOf[js.Any]))
+      jobStatus.foreach(__v => __obj.updateDynamic("jobStatus")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      multiNodeJobId.foreach(__v => __obj.updateDynamic("multiNodeJobId")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListJobsRequest]
     }
   }
@@ -1422,11 +1422,11 @@ package batch {
         jobSummaryList: JobSummaryList,
         nextToken: js.UndefOr[String] = js.undefined
     ): ListJobsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobSummaryList" -> jobSummaryList.asInstanceOf[js.Any]
       )
 
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListJobsResponse]
     }
   }
@@ -1447,10 +1447,10 @@ package batch {
         readOnly: js.UndefOr[Boolean] = js.undefined,
         sourceVolume: js.UndefOr[String] = js.undefined
     ): MountPoint = {
-      val __obj = js.Dictionary.empty[js.Any]
-      containerPath.foreach(__v => __obj.update("containerPath", __v.asInstanceOf[js.Any]))
-      readOnly.foreach(__v => __obj.update("readOnly", __v.asInstanceOf[js.Any]))
-      sourceVolume.foreach(__v => __obj.update("sourceVolume", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      containerPath.foreach(__v => __obj.updateDynamic("containerPath")(__v.asInstanceOf[js.Any]))
+      readOnly.foreach(__v => __obj.updateDynamic("readOnly")(__v.asInstanceOf[js.Any]))
+      sourceVolume.foreach(__v => __obj.updateDynamic("sourceVolume")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MountPoint]
     }
   }
@@ -1471,10 +1471,10 @@ package batch {
         ipv6Address: js.UndefOr[String] = js.undefined,
         privateIpv4Address: js.UndefOr[String] = js.undefined
     ): NetworkInterface = {
-      val __obj = js.Dictionary.empty[js.Any]
-      attachmentId.foreach(__v => __obj.update("attachmentId", __v.asInstanceOf[js.Any]))
-      ipv6Address.foreach(__v => __obj.update("ipv6Address", __v.asInstanceOf[js.Any]))
-      privateIpv4Address.foreach(__v => __obj.update("privateIpv4Address", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      attachmentId.foreach(__v => __obj.updateDynamic("attachmentId")(__v.asInstanceOf[js.Any]))
+      ipv6Address.foreach(__v => __obj.updateDynamic("ipv6Address")(__v.asInstanceOf[js.Any]))
+      privateIpv4Address.foreach(__v => __obj.updateDynamic("privateIpv4Address")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NetworkInterface]
     }
   }
@@ -1493,9 +1493,9 @@ package batch {
         isMainNode: js.UndefOr[Boolean] = js.undefined,
         nodeIndex: js.UndefOr[Int] = js.undefined
     ): NodeDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      isMainNode.foreach(__v => __obj.update("isMainNode", __v.asInstanceOf[js.Any]))
-      nodeIndex.foreach(__v => __obj.update("nodeIndex", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      isMainNode.foreach(__v => __obj.updateDynamic("isMainNode")(__v.asInstanceOf[js.Any]))
+      nodeIndex.foreach(__v => __obj.updateDynamic("nodeIndex")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NodeDetails]
     }
   }
@@ -1514,9 +1514,9 @@ package batch {
         nodePropertyOverrides: js.UndefOr[NodePropertyOverrides] = js.undefined,
         numNodes: js.UndefOr[Int] = js.undefined
     ): NodeOverrides = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nodePropertyOverrides.foreach(__v => __obj.update("nodePropertyOverrides", __v.asInstanceOf[js.Any]))
-      numNodes.foreach(__v => __obj.update("numNodes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nodePropertyOverrides.foreach(__v => __obj.updateDynamic("nodePropertyOverrides")(__v.asInstanceOf[js.Any]))
+      numNodes.foreach(__v => __obj.updateDynamic("numNodes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NodeOverrides]
     }
   }
@@ -1537,7 +1537,7 @@ package batch {
         nodeRangeProperties: NodeRangeProperties,
         numNodes: Int
     ): NodeProperties = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "mainNode"            -> mainNode.asInstanceOf[js.Any],
         "nodeRangeProperties" -> nodeRangeProperties.asInstanceOf[js.Any],
         "numNodes"            -> numNodes.asInstanceOf[js.Any]
@@ -1563,10 +1563,10 @@ package batch {
         nodeIndex: js.UndefOr[Int] = js.undefined,
         numNodes: js.UndefOr[Int] = js.undefined
     ): NodePropertiesSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      isMainNode.foreach(__v => __obj.update("isMainNode", __v.asInstanceOf[js.Any]))
-      nodeIndex.foreach(__v => __obj.update("nodeIndex", __v.asInstanceOf[js.Any]))
-      numNodes.foreach(__v => __obj.update("numNodes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      isMainNode.foreach(__v => __obj.updateDynamic("isMainNode")(__v.asInstanceOf[js.Any]))
+      nodeIndex.foreach(__v => __obj.updateDynamic("nodeIndex")(__v.asInstanceOf[js.Any]))
+      numNodes.foreach(__v => __obj.updateDynamic("numNodes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NodePropertiesSummary]
     }
   }
@@ -1585,11 +1585,11 @@ package batch {
         targetNodes: String,
         containerOverrides: js.UndefOr[ContainerOverrides] = js.undefined
     ): NodePropertyOverride = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "targetNodes" -> targetNodes.asInstanceOf[js.Any]
       )
 
-      containerOverrides.foreach(__v => __obj.update("containerOverrides", __v.asInstanceOf[js.Any]))
+      containerOverrides.foreach(__v => __obj.updateDynamic("containerOverrides")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NodePropertyOverride]
     }
   }
@@ -1608,11 +1608,11 @@ package batch {
         targetNodes: String,
         container: js.UndefOr[ContainerProperties] = js.undefined
     ): NodeRangeProperty = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "targetNodes" -> targetNodes.asInstanceOf[js.Any]
       )
 
-      container.foreach(__v => __obj.update("container", __v.asInstanceOf[js.Any]))
+      container.foreach(__v => __obj.updateDynamic("container")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NodeRangeProperty]
     }
   }
@@ -1638,16 +1638,16 @@ package batch {
         retryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
         timeout: js.UndefOr[JobTimeout] = js.undefined
     ): RegisterJobDefinitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobDefinitionName" -> jobDefinitionName.asInstanceOf[js.Any],
         "type"              -> `type`.asInstanceOf[js.Any]
       )
 
-      containerProperties.foreach(__v => __obj.update("containerProperties", __v.asInstanceOf[js.Any]))
-      nodeProperties.foreach(__v => __obj.update("nodeProperties", __v.asInstanceOf[js.Any]))
-      parameters.foreach(__v => __obj.update("parameters", __v.asInstanceOf[js.Any]))
-      retryStrategy.foreach(__v => __obj.update("retryStrategy", __v.asInstanceOf[js.Any]))
-      timeout.foreach(__v => __obj.update("timeout", __v.asInstanceOf[js.Any]))
+      containerProperties.foreach(__v => __obj.updateDynamic("containerProperties")(__v.asInstanceOf[js.Any]))
+      nodeProperties.foreach(__v => __obj.updateDynamic("nodeProperties")(__v.asInstanceOf[js.Any]))
+      parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
+      retryStrategy.foreach(__v => __obj.updateDynamic("retryStrategy")(__v.asInstanceOf[js.Any]))
+      timeout.foreach(__v => __obj.updateDynamic("timeout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterJobDefinitionRequest]
     }
   }
@@ -1665,7 +1665,7 @@ package batch {
         jobDefinitionName: String,
         revision: Int
     ): RegisterJobDefinitionResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobDefinitionArn"  -> jobDefinitionArn.asInstanceOf[js.Any],
         "jobDefinitionName" -> jobDefinitionName.asInstanceOf[js.Any],
         "revision"          -> revision.asInstanceOf[js.Any]
@@ -1689,7 +1689,7 @@ package batch {
         `type`: ResourceType,
         value: String
     ): ResourceRequirement = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "type"  -> `type`.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
@@ -1716,8 +1716,8 @@ package batch {
     def apply(
         attempts: js.UndefOr[Int] = js.undefined
     ): RetryStrategy = {
-      val __obj = js.Dictionary.empty[js.Any]
-      attempts.foreach(__v => __obj.update("attempts", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      attempts.foreach(__v => __obj.updateDynamic("attempts")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RetryStrategy]
     }
   }
@@ -1749,19 +1749,19 @@ package batch {
         retryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
         timeout: js.UndefOr[JobTimeout] = js.undefined
     ): SubmitJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobDefinition" -> jobDefinition.asInstanceOf[js.Any],
         "jobName"       -> jobName.asInstanceOf[js.Any],
         "jobQueue"      -> jobQueue.asInstanceOf[js.Any]
       )
 
-      arrayProperties.foreach(__v => __obj.update("arrayProperties", __v.asInstanceOf[js.Any]))
-      containerOverrides.foreach(__v => __obj.update("containerOverrides", __v.asInstanceOf[js.Any]))
-      dependsOn.foreach(__v => __obj.update("dependsOn", __v.asInstanceOf[js.Any]))
-      nodeOverrides.foreach(__v => __obj.update("nodeOverrides", __v.asInstanceOf[js.Any]))
-      parameters.foreach(__v => __obj.update("parameters", __v.asInstanceOf[js.Any]))
-      retryStrategy.foreach(__v => __obj.update("retryStrategy", __v.asInstanceOf[js.Any]))
-      timeout.foreach(__v => __obj.update("timeout", __v.asInstanceOf[js.Any]))
+      arrayProperties.foreach(__v => __obj.updateDynamic("arrayProperties")(__v.asInstanceOf[js.Any]))
+      containerOverrides.foreach(__v => __obj.updateDynamic("containerOverrides")(__v.asInstanceOf[js.Any]))
+      dependsOn.foreach(__v => __obj.updateDynamic("dependsOn")(__v.asInstanceOf[js.Any]))
+      nodeOverrides.foreach(__v => __obj.updateDynamic("nodeOverrides")(__v.asInstanceOf[js.Any]))
+      parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
+      retryStrategy.foreach(__v => __obj.updateDynamic("retryStrategy")(__v.asInstanceOf[js.Any]))
+      timeout.foreach(__v => __obj.updateDynamic("timeout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SubmitJobRequest]
     }
   }
@@ -1777,7 +1777,7 @@ package batch {
         jobId: String,
         jobName: String
     ): SubmitJobResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobId"   -> jobId.asInstanceOf[js.Any],
         "jobName" -> jobName.asInstanceOf[js.Any]
       )
@@ -1797,7 +1797,7 @@ package batch {
         jobId: String,
         reason: String
     ): TerminateJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobId"  -> jobId.asInstanceOf[js.Any],
         "reason" -> reason.asInstanceOf[js.Any]
       )
@@ -1812,7 +1812,7 @@ package batch {
   object TerminateJobResponse {
     def apply(
         ): TerminateJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TerminateJobResponse]
     }
@@ -1834,7 +1834,7 @@ package batch {
         name: String,
         softLimit: Int
     ): Ulimit = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "hardLimit" -> hardLimit.asInstanceOf[js.Any],
         "name"      -> name.asInstanceOf[js.Any],
         "softLimit" -> softLimit.asInstanceOf[js.Any]
@@ -1859,13 +1859,13 @@ package batch {
         serviceRole: js.UndefOr[String] = js.undefined,
         state: js.UndefOr[CEState] = js.undefined
     ): UpdateComputeEnvironmentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "computeEnvironment" -> computeEnvironment.asInstanceOf[js.Any]
       )
 
-      computeResources.foreach(__v => __obj.update("computeResources", __v.asInstanceOf[js.Any]))
-      serviceRole.foreach(__v => __obj.update("serviceRole", __v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.update("state", __v.asInstanceOf[js.Any]))
+      computeResources.foreach(__v => __obj.updateDynamic("computeResources")(__v.asInstanceOf[js.Any]))
+      serviceRole.foreach(__v => __obj.updateDynamic("serviceRole")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateComputeEnvironmentRequest]
     }
   }
@@ -1881,9 +1881,9 @@ package batch {
         computeEnvironmentArn: js.UndefOr[String] = js.undefined,
         computeEnvironmentName: js.UndefOr[String] = js.undefined
     ): UpdateComputeEnvironmentResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      computeEnvironmentArn.foreach(__v => __obj.update("computeEnvironmentArn", __v.asInstanceOf[js.Any]))
-      computeEnvironmentName.foreach(__v => __obj.update("computeEnvironmentName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      computeEnvironmentArn.foreach(__v => __obj.updateDynamic("computeEnvironmentArn")(__v.asInstanceOf[js.Any]))
+      computeEnvironmentName.foreach(__v => __obj.updateDynamic("computeEnvironmentName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateComputeEnvironmentResponse]
     }
   }
@@ -1903,13 +1903,13 @@ package batch {
         priority: js.UndefOr[Int] = js.undefined,
         state: js.UndefOr[JQState] = js.undefined
     ): UpdateJobQueueRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "jobQueue" -> jobQueue.asInstanceOf[js.Any]
       )
 
-      computeEnvironmentOrder.foreach(__v => __obj.update("computeEnvironmentOrder", __v.asInstanceOf[js.Any]))
-      priority.foreach(__v => __obj.update("priority", __v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.update("state", __v.asInstanceOf[js.Any]))
+      computeEnvironmentOrder.foreach(__v => __obj.updateDynamic("computeEnvironmentOrder")(__v.asInstanceOf[js.Any]))
+      priority.foreach(__v => __obj.updateDynamic("priority")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateJobQueueRequest]
     }
   }
@@ -1925,9 +1925,9 @@ package batch {
         jobQueueArn: js.UndefOr[String] = js.undefined,
         jobQueueName: js.UndefOr[String] = js.undefined
     ): UpdateJobQueueResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      jobQueueArn.foreach(__v => __obj.update("jobQueueArn", __v.asInstanceOf[js.Any]))
-      jobQueueName.foreach(__v => __obj.update("jobQueueName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      jobQueueArn.foreach(__v => __obj.updateDynamic("jobQueueArn")(__v.asInstanceOf[js.Any]))
+      jobQueueName.foreach(__v => __obj.updateDynamic("jobQueueName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateJobQueueResponse]
     }
   }
@@ -1946,9 +1946,9 @@ package batch {
         host: js.UndefOr[Host] = js.undefined,
         name: js.UndefOr[String] = js.undefined
     ): Volume = {
-      val __obj = js.Dictionary.empty[js.Any]
-      host.foreach(__v => __obj.update("host", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      host.foreach(__v => __obj.updateDynamic("host")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Volume]
     }
   }

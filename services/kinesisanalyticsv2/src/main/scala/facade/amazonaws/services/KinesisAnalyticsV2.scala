@@ -222,7 +222,7 @@ package kinesisanalyticsv2 {
         CloudWatchLoggingOption: CloudWatchLoggingOption,
         CurrentApplicationVersionId: ApplicationVersionId
     ): AddApplicationCloudWatchLoggingOptionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName"             -> ApplicationName.asInstanceOf[js.Any],
         "CloudWatchLoggingOption"     -> CloudWatchLoggingOption.asInstanceOf[js.Any],
         "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any]
@@ -245,11 +245,11 @@ package kinesisanalyticsv2 {
         ApplicationVersionId: js.UndefOr[ApplicationVersionId] = js.undefined,
         CloudWatchLoggingOptionDescriptions: js.UndefOr[CloudWatchLoggingOptionDescriptions] = js.undefined
     ): AddApplicationCloudWatchLoggingOptionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationARN.foreach(__v => __obj.update("ApplicationARN", __v.asInstanceOf[js.Any]))
-      ApplicationVersionId.foreach(__v => __obj.update("ApplicationVersionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationARN.foreach(__v => __obj.updateDynamic("ApplicationARN")(__v.asInstanceOf[js.Any]))
+      ApplicationVersionId.foreach(__v => __obj.updateDynamic("ApplicationVersionId")(__v.asInstanceOf[js.Any]))
       CloudWatchLoggingOptionDescriptions.foreach(
-        __v => __obj.update("CloudWatchLoggingOptionDescriptions", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("CloudWatchLoggingOptionDescriptions")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[AddApplicationCloudWatchLoggingOptionResponse]
     }
@@ -270,7 +270,7 @@ package kinesisanalyticsv2 {
         InputId: Id,
         InputProcessingConfiguration: InputProcessingConfiguration
     ): AddApplicationInputProcessingConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName"              -> ApplicationName.asInstanceOf[js.Any],
         "CurrentApplicationVersionId"  -> CurrentApplicationVersionId.asInstanceOf[js.Any],
         "InputId"                      -> InputId.asInstanceOf[js.Any],
@@ -296,12 +296,12 @@ package kinesisanalyticsv2 {
         InputId: js.UndefOr[Id] = js.undefined,
         InputProcessingConfigurationDescription: js.UndefOr[InputProcessingConfigurationDescription] = js.undefined
     ): AddApplicationInputProcessingConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationARN.foreach(__v => __obj.update("ApplicationARN", __v.asInstanceOf[js.Any]))
-      ApplicationVersionId.foreach(__v => __obj.update("ApplicationVersionId", __v.asInstanceOf[js.Any]))
-      InputId.foreach(__v => __obj.update("InputId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationARN.foreach(__v => __obj.updateDynamic("ApplicationARN")(__v.asInstanceOf[js.Any]))
+      ApplicationVersionId.foreach(__v => __obj.updateDynamic("ApplicationVersionId")(__v.asInstanceOf[js.Any]))
+      InputId.foreach(__v => __obj.updateDynamic("InputId")(__v.asInstanceOf[js.Any]))
       InputProcessingConfigurationDescription.foreach(
-        __v => __obj.update("InputProcessingConfigurationDescription", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("InputProcessingConfigurationDescription")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[AddApplicationInputProcessingConfigurationResponse]
     }
@@ -320,7 +320,7 @@ package kinesisanalyticsv2 {
         CurrentApplicationVersionId: ApplicationVersionId,
         Input: Input
     ): AddApplicationInputRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName"             -> ApplicationName.asInstanceOf[js.Any],
         "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any],
         "Input"                       -> Input.asInstanceOf[js.Any]
@@ -343,10 +343,10 @@ package kinesisanalyticsv2 {
         ApplicationVersionId: js.UndefOr[ApplicationVersionId] = js.undefined,
         InputDescriptions: js.UndefOr[InputDescriptions] = js.undefined
     ): AddApplicationInputResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationARN.foreach(__v => __obj.update("ApplicationARN", __v.asInstanceOf[js.Any]))
-      ApplicationVersionId.foreach(__v => __obj.update("ApplicationVersionId", __v.asInstanceOf[js.Any]))
-      InputDescriptions.foreach(__v => __obj.update("InputDescriptions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationARN.foreach(__v => __obj.updateDynamic("ApplicationARN")(__v.asInstanceOf[js.Any]))
+      ApplicationVersionId.foreach(__v => __obj.updateDynamic("ApplicationVersionId")(__v.asInstanceOf[js.Any]))
+      InputDescriptions.foreach(__v => __obj.updateDynamic("InputDescriptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddApplicationInputResponse]
     }
   }
@@ -364,7 +364,7 @@ package kinesisanalyticsv2 {
         CurrentApplicationVersionId: ApplicationVersionId,
         Output: Output
     ): AddApplicationOutputRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName"             -> ApplicationName.asInstanceOf[js.Any],
         "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any],
         "Output"                      -> Output.asInstanceOf[js.Any]
@@ -387,10 +387,10 @@ package kinesisanalyticsv2 {
         ApplicationVersionId: js.UndefOr[ApplicationVersionId] = js.undefined,
         OutputDescriptions: js.UndefOr[OutputDescriptions] = js.undefined
     ): AddApplicationOutputResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationARN.foreach(__v => __obj.update("ApplicationARN", __v.asInstanceOf[js.Any]))
-      ApplicationVersionId.foreach(__v => __obj.update("ApplicationVersionId", __v.asInstanceOf[js.Any]))
-      OutputDescriptions.foreach(__v => __obj.update("OutputDescriptions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationARN.foreach(__v => __obj.updateDynamic("ApplicationARN")(__v.asInstanceOf[js.Any]))
+      ApplicationVersionId.foreach(__v => __obj.updateDynamic("ApplicationVersionId")(__v.asInstanceOf[js.Any]))
+      OutputDescriptions.foreach(__v => __obj.updateDynamic("OutputDescriptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddApplicationOutputResponse]
     }
   }
@@ -408,7 +408,7 @@ package kinesisanalyticsv2 {
         CurrentApplicationVersionId: ApplicationVersionId,
         ReferenceDataSource: ReferenceDataSource
     ): AddApplicationReferenceDataSourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName"             -> ApplicationName.asInstanceOf[js.Any],
         "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any],
         "ReferenceDataSource"         -> ReferenceDataSource.asInstanceOf[js.Any]
@@ -431,11 +431,11 @@ package kinesisanalyticsv2 {
         ApplicationVersionId: js.UndefOr[ApplicationVersionId] = js.undefined,
         ReferenceDataSourceDescriptions: js.UndefOr[ReferenceDataSourceDescriptions] = js.undefined
     ): AddApplicationReferenceDataSourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationARN.foreach(__v => __obj.update("ApplicationARN", __v.asInstanceOf[js.Any]))
-      ApplicationVersionId.foreach(__v => __obj.update("ApplicationVersionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationARN.foreach(__v => __obj.updateDynamic("ApplicationARN")(__v.asInstanceOf[js.Any]))
+      ApplicationVersionId.foreach(__v => __obj.updateDynamic("ApplicationVersionId")(__v.asInstanceOf[js.Any]))
       ReferenceDataSourceDescriptions.foreach(
-        __v => __obj.update("ReferenceDataSourceDescriptions", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ReferenceDataSourceDescriptions")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[AddApplicationReferenceDataSourceResponse]
     }
@@ -455,11 +455,11 @@ package kinesisanalyticsv2 {
         CodeContentType: CodeContentType,
         CodeContent: js.UndefOr[CodeContent] = js.undefined
     ): ApplicationCodeConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CodeContentType" -> CodeContentType.asInstanceOf[js.Any]
       )
 
-      CodeContent.foreach(__v => __obj.update("CodeContent", __v.asInstanceOf[js.Any]))
+      CodeContent.foreach(__v => __obj.updateDynamic("CodeContent")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationCodeConfiguration]
     }
   }
@@ -478,11 +478,11 @@ package kinesisanalyticsv2 {
         CodeContentType: CodeContentType,
         CodeContentDescription: js.UndefOr[CodeContentDescription] = js.undefined
     ): ApplicationCodeConfigurationDescription = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CodeContentType" -> CodeContentType.asInstanceOf[js.Any]
       )
 
-      CodeContentDescription.foreach(__v => __obj.update("CodeContentDescription", __v.asInstanceOf[js.Any]))
+      CodeContentDescription.foreach(__v => __obj.updateDynamic("CodeContentDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationCodeConfigurationDescription]
     }
   }
@@ -501,9 +501,9 @@ package kinesisanalyticsv2 {
         CodeContentTypeUpdate: js.UndefOr[CodeContentType] = js.undefined,
         CodeContentUpdate: js.UndefOr[CodeContentUpdate] = js.undefined
     ): ApplicationCodeConfigurationUpdate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CodeContentTypeUpdate.foreach(__v => __obj.update("CodeContentTypeUpdate", __v.asInstanceOf[js.Any]))
-      CodeContentUpdate.foreach(__v => __obj.update("CodeContentUpdate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CodeContentTypeUpdate.foreach(__v => __obj.updateDynamic("CodeContentTypeUpdate")(__v.asInstanceOf[js.Any]))
+      CodeContentUpdate.foreach(__v => __obj.updateDynamic("CodeContentUpdate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationCodeConfigurationUpdate]
     }
   }
@@ -528,18 +528,20 @@ package kinesisanalyticsv2 {
         FlinkApplicationConfiguration: js.UndefOr[FlinkApplicationConfiguration] = js.undefined,
         SqlApplicationConfiguration: js.UndefOr[SqlApplicationConfiguration] = js.undefined
     ): ApplicationConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationCodeConfiguration" -> ApplicationCodeConfiguration.asInstanceOf[js.Any]
       )
 
       ApplicationSnapshotConfiguration.foreach(
-        __v => __obj.update("ApplicationSnapshotConfiguration", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ApplicationSnapshotConfiguration")(__v.asInstanceOf[js.Any])
       )
-      EnvironmentProperties.foreach(__v => __obj.update("EnvironmentProperties", __v.asInstanceOf[js.Any]))
+      EnvironmentProperties.foreach(__v => __obj.updateDynamic("EnvironmentProperties")(__v.asInstanceOf[js.Any]))
       FlinkApplicationConfiguration.foreach(
-        __v => __obj.update("FlinkApplicationConfiguration", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("FlinkApplicationConfiguration")(__v.asInstanceOf[js.Any])
       )
-      SqlApplicationConfiguration.foreach(__v => __obj.update("SqlApplicationConfiguration", __v.asInstanceOf[js.Any]))
+      SqlApplicationConfiguration.foreach(
+        __v => __obj.updateDynamic("SqlApplicationConfiguration")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[ApplicationConfiguration]
     }
   }
@@ -567,22 +569,24 @@ package kinesisanalyticsv2 {
         RunConfigurationDescription: js.UndefOr[RunConfigurationDescription] = js.undefined,
         SqlApplicationConfigurationDescription: js.UndefOr[SqlApplicationConfigurationDescription] = js.undefined
     ): ApplicationConfigurationDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       ApplicationCodeConfigurationDescription.foreach(
-        __v => __obj.update("ApplicationCodeConfigurationDescription", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ApplicationCodeConfigurationDescription")(__v.asInstanceOf[js.Any])
       )
       ApplicationSnapshotConfigurationDescription.foreach(
-        __v => __obj.update("ApplicationSnapshotConfigurationDescription", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ApplicationSnapshotConfigurationDescription")(__v.asInstanceOf[js.Any])
       )
       EnvironmentPropertyDescriptions.foreach(
-        __v => __obj.update("EnvironmentPropertyDescriptions", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("EnvironmentPropertyDescriptions")(__v.asInstanceOf[js.Any])
       )
       FlinkApplicationConfigurationDescription.foreach(
-        __v => __obj.update("FlinkApplicationConfigurationDescription", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("FlinkApplicationConfigurationDescription")(__v.asInstanceOf[js.Any])
       )
-      RunConfigurationDescription.foreach(__v => __obj.update("RunConfigurationDescription", __v.asInstanceOf[js.Any]))
+      RunConfigurationDescription.foreach(
+        __v => __obj.updateDynamic("RunConfigurationDescription")(__v.asInstanceOf[js.Any])
+      )
       SqlApplicationConfigurationDescription.foreach(
-        __v => __obj.update("SqlApplicationConfigurationDescription", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("SqlApplicationConfigurationDescription")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ApplicationConfigurationDescription]
     }
@@ -608,19 +612,21 @@ package kinesisanalyticsv2 {
         FlinkApplicationConfigurationUpdate: js.UndefOr[FlinkApplicationConfigurationUpdate] = js.undefined,
         SqlApplicationConfigurationUpdate: js.UndefOr[SqlApplicationConfigurationUpdate] = js.undefined
     ): ApplicationConfigurationUpdate = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       ApplicationCodeConfigurationUpdate.foreach(
-        __v => __obj.update("ApplicationCodeConfigurationUpdate", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ApplicationCodeConfigurationUpdate")(__v.asInstanceOf[js.Any])
       )
       ApplicationSnapshotConfigurationUpdate.foreach(
-        __v => __obj.update("ApplicationSnapshotConfigurationUpdate", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ApplicationSnapshotConfigurationUpdate")(__v.asInstanceOf[js.Any])
       )
-      EnvironmentPropertyUpdates.foreach(__v => __obj.update("EnvironmentPropertyUpdates", __v.asInstanceOf[js.Any]))
+      EnvironmentPropertyUpdates.foreach(
+        __v => __obj.updateDynamic("EnvironmentPropertyUpdates")(__v.asInstanceOf[js.Any])
+      )
       FlinkApplicationConfigurationUpdate.foreach(
-        __v => __obj.update("FlinkApplicationConfigurationUpdate", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("FlinkApplicationConfigurationUpdate")(__v.asInstanceOf[js.Any])
       )
       SqlApplicationConfigurationUpdate.foreach(
-        __v => __obj.update("SqlApplicationConfigurationUpdate", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("SqlApplicationConfigurationUpdate")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ApplicationConfigurationUpdate]
     }
@@ -658,7 +664,7 @@ package kinesisanalyticsv2 {
         LastUpdateTimestamp: js.UndefOr[Timestamp] = js.undefined,
         ServiceExecutionRole: js.UndefOr[RoleARN] = js.undefined
     ): ApplicationDetail = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationARN"       -> ApplicationARN.asInstanceOf[js.Any],
         "ApplicationName"      -> ApplicationName.asInstanceOf[js.Any],
         "ApplicationStatus"    -> ApplicationStatus.asInstanceOf[js.Any],
@@ -667,15 +673,15 @@ package kinesisanalyticsv2 {
       )
 
       ApplicationConfigurationDescription.foreach(
-        __v => __obj.update("ApplicationConfigurationDescription", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ApplicationConfigurationDescription")(__v.asInstanceOf[js.Any])
       )
-      ApplicationDescription.foreach(__v => __obj.update("ApplicationDescription", __v.asInstanceOf[js.Any]))
+      ApplicationDescription.foreach(__v => __obj.updateDynamic("ApplicationDescription")(__v.asInstanceOf[js.Any]))
       CloudWatchLoggingOptionDescriptions.foreach(
-        __v => __obj.update("CloudWatchLoggingOptionDescriptions", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("CloudWatchLoggingOptionDescriptions")(__v.asInstanceOf[js.Any])
       )
-      CreateTimestamp.foreach(__v => __obj.update("CreateTimestamp", __v.asInstanceOf[js.Any]))
-      LastUpdateTimestamp.foreach(__v => __obj.update("LastUpdateTimestamp", __v.asInstanceOf[js.Any]))
-      ServiceExecutionRole.foreach(__v => __obj.update("ServiceExecutionRole", __v.asInstanceOf[js.Any]))
+      CreateTimestamp.foreach(__v => __obj.updateDynamic("CreateTimestamp")(__v.asInstanceOf[js.Any]))
+      LastUpdateTimestamp.foreach(__v => __obj.updateDynamic("LastUpdateTimestamp")(__v.asInstanceOf[js.Any]))
+      ServiceExecutionRole.foreach(__v => __obj.updateDynamic("ServiceExecutionRole")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationDetail]
     }
   }
@@ -694,11 +700,11 @@ package kinesisanalyticsv2 {
         ApplicationRestoreType: ApplicationRestoreType,
         SnapshotName: js.UndefOr[SnapshotName] = js.undefined
     ): ApplicationRestoreConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationRestoreType" -> ApplicationRestoreType.asInstanceOf[js.Any]
       )
 
-      SnapshotName.foreach(__v => __obj.update("SnapshotName", __v.asInstanceOf[js.Any]))
+      SnapshotName.foreach(__v => __obj.updateDynamic("SnapshotName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationRestoreConfiguration]
     }
   }
@@ -724,7 +730,7 @@ package kinesisanalyticsv2 {
     def apply(
         SnapshotsEnabled: BooleanObject
     ): ApplicationSnapshotConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SnapshotsEnabled" -> SnapshotsEnabled.asInstanceOf[js.Any]
       )
 
@@ -744,7 +750,7 @@ package kinesisanalyticsv2 {
     def apply(
         SnapshotsEnabled: BooleanObject
     ): ApplicationSnapshotConfigurationDescription = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SnapshotsEnabled" -> SnapshotsEnabled.asInstanceOf[js.Any]
       )
 
@@ -764,7 +770,7 @@ package kinesisanalyticsv2 {
     def apply(
         SnapshotsEnabledUpdate: BooleanObject
     ): ApplicationSnapshotConfigurationUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SnapshotsEnabledUpdate" -> SnapshotsEnabledUpdate.asInstanceOf[js.Any]
       )
 
@@ -803,7 +809,7 @@ package kinesisanalyticsv2 {
         ApplicationVersionId: ApplicationVersionId,
         RuntimeEnvironment: RuntimeEnvironment
     ): ApplicationSummary = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationARN"       -> ApplicationARN.asInstanceOf[js.Any],
         "ApplicationName"      -> ApplicationName.asInstanceOf[js.Any],
         "ApplicationStatus"    -> ApplicationStatus.asInstanceOf[js.Any],
@@ -831,7 +837,7 @@ package kinesisanalyticsv2 {
         RecordColumnDelimiter: RecordColumnDelimiter,
         RecordRowDelimiter: RecordRowDelimiter
     ): CSVMappingParameters = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RecordColumnDelimiter" -> RecordColumnDelimiter.asInstanceOf[js.Any],
         "RecordRowDelimiter"    -> RecordRowDelimiter.asInstanceOf[js.Any]
       )
@@ -858,13 +864,15 @@ package kinesisanalyticsv2 {
         CheckpointingEnabled: js.UndefOr[BooleanObject] = js.undefined,
         MinPauseBetweenCheckpoints: js.UndefOr[MinPauseBetweenCheckpoints] = js.undefined
     ): CheckpointConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationType" -> ConfigurationType.asInstanceOf[js.Any]
       )
 
-      CheckpointInterval.foreach(__v => __obj.update("CheckpointInterval", __v.asInstanceOf[js.Any]))
-      CheckpointingEnabled.foreach(__v => __obj.update("CheckpointingEnabled", __v.asInstanceOf[js.Any]))
-      MinPauseBetweenCheckpoints.foreach(__v => __obj.update("MinPauseBetweenCheckpoints", __v.asInstanceOf[js.Any]))
+      CheckpointInterval.foreach(__v => __obj.updateDynamic("CheckpointInterval")(__v.asInstanceOf[js.Any]))
+      CheckpointingEnabled.foreach(__v => __obj.updateDynamic("CheckpointingEnabled")(__v.asInstanceOf[js.Any]))
+      MinPauseBetweenCheckpoints.foreach(
+        __v => __obj.updateDynamic("MinPauseBetweenCheckpoints")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[CheckpointConfiguration]
     }
   }
@@ -887,11 +895,13 @@ package kinesisanalyticsv2 {
         ConfigurationType: js.UndefOr[ConfigurationType] = js.undefined,
         MinPauseBetweenCheckpoints: js.UndefOr[MinPauseBetweenCheckpoints] = js.undefined
     ): CheckpointConfigurationDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CheckpointInterval.foreach(__v => __obj.update("CheckpointInterval", __v.asInstanceOf[js.Any]))
-      CheckpointingEnabled.foreach(__v => __obj.update("CheckpointingEnabled", __v.asInstanceOf[js.Any]))
-      ConfigurationType.foreach(__v => __obj.update("ConfigurationType", __v.asInstanceOf[js.Any]))
-      MinPauseBetweenCheckpoints.foreach(__v => __obj.update("MinPauseBetweenCheckpoints", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CheckpointInterval.foreach(__v => __obj.updateDynamic("CheckpointInterval")(__v.asInstanceOf[js.Any]))
+      CheckpointingEnabled.foreach(__v => __obj.updateDynamic("CheckpointingEnabled")(__v.asInstanceOf[js.Any]))
+      ConfigurationType.foreach(__v => __obj.updateDynamic("ConfigurationType")(__v.asInstanceOf[js.Any]))
+      MinPauseBetweenCheckpoints.foreach(
+        __v => __obj.updateDynamic("MinPauseBetweenCheckpoints")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[CheckpointConfigurationDescription]
     }
   }
@@ -914,12 +924,14 @@ package kinesisanalyticsv2 {
         ConfigurationTypeUpdate: js.UndefOr[ConfigurationType] = js.undefined,
         MinPauseBetweenCheckpointsUpdate: js.UndefOr[MinPauseBetweenCheckpoints] = js.undefined
     ): CheckpointConfigurationUpdate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CheckpointIntervalUpdate.foreach(__v => __obj.update("CheckpointIntervalUpdate", __v.asInstanceOf[js.Any]))
-      CheckpointingEnabledUpdate.foreach(__v => __obj.update("CheckpointingEnabledUpdate", __v.asInstanceOf[js.Any]))
-      ConfigurationTypeUpdate.foreach(__v => __obj.update("ConfigurationTypeUpdate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CheckpointIntervalUpdate.foreach(__v => __obj.updateDynamic("CheckpointIntervalUpdate")(__v.asInstanceOf[js.Any]))
+      CheckpointingEnabledUpdate.foreach(
+        __v => __obj.updateDynamic("CheckpointingEnabledUpdate")(__v.asInstanceOf[js.Any])
+      )
+      ConfigurationTypeUpdate.foreach(__v => __obj.updateDynamic("ConfigurationTypeUpdate")(__v.asInstanceOf[js.Any]))
       MinPauseBetweenCheckpointsUpdate.foreach(
-        __v => __obj.update("MinPauseBetweenCheckpointsUpdate", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("MinPauseBetweenCheckpointsUpdate")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CheckpointConfigurationUpdate]
     }
@@ -937,7 +949,7 @@ package kinesisanalyticsv2 {
     def apply(
         LogStreamARN: LogStreamARN
     ): CloudWatchLoggingOption = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LogStreamARN" -> LogStreamARN.asInstanceOf[js.Any]
       )
 
@@ -961,12 +973,14 @@ package kinesisanalyticsv2 {
         CloudWatchLoggingOptionId: js.UndefOr[Id] = js.undefined,
         RoleARN: js.UndefOr[RoleARN] = js.undefined
     ): CloudWatchLoggingOptionDescription = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LogStreamARN" -> LogStreamARN.asInstanceOf[js.Any]
       )
 
-      CloudWatchLoggingOptionId.foreach(__v => __obj.update("CloudWatchLoggingOptionId", __v.asInstanceOf[js.Any]))
-      RoleARN.foreach(__v => __obj.update("RoleARN", __v.asInstanceOf[js.Any]))
+      CloudWatchLoggingOptionId.foreach(
+        __v => __obj.updateDynamic("CloudWatchLoggingOptionId")(__v.asInstanceOf[js.Any])
+      )
+      RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CloudWatchLoggingOptionDescription]
     }
   }
@@ -985,11 +999,11 @@ package kinesisanalyticsv2 {
         CloudWatchLoggingOptionId: Id,
         LogStreamARNUpdate: js.UndefOr[LogStreamARN] = js.undefined
     ): CloudWatchLoggingOptionUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CloudWatchLoggingOptionId" -> CloudWatchLoggingOptionId.asInstanceOf[js.Any]
       )
 
-      LogStreamARNUpdate.foreach(__v => __obj.update("LogStreamARNUpdate", __v.asInstanceOf[js.Any]))
+      LogStreamARNUpdate.foreach(__v => __obj.updateDynamic("LogStreamARNUpdate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CloudWatchLoggingOptionUpdate]
     }
   }
@@ -1010,10 +1024,10 @@ package kinesisanalyticsv2 {
         TextContent: js.UndefOr[TextContent] = js.undefined,
         ZipFileContent: js.UndefOr[ZipFileContent] = js.undefined
     ): CodeContent = {
-      val __obj = js.Dictionary.empty[js.Any]
-      S3ContentLocation.foreach(__v => __obj.update("S3ContentLocation", __v.asInstanceOf[js.Any]))
-      TextContent.foreach(__v => __obj.update("TextContent", __v.asInstanceOf[js.Any]))
-      ZipFileContent.foreach(__v => __obj.update("ZipFileContent", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      S3ContentLocation.foreach(__v => __obj.updateDynamic("S3ContentLocation")(__v.asInstanceOf[js.Any]))
+      TextContent.foreach(__v => __obj.updateDynamic("TextContent")(__v.asInstanceOf[js.Any]))
+      ZipFileContent.foreach(__v => __obj.updateDynamic("ZipFileContent")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CodeContent]
     }
   }
@@ -1036,13 +1050,13 @@ package kinesisanalyticsv2 {
         S3ApplicationCodeLocationDescription: js.UndefOr[S3ApplicationCodeLocationDescription] = js.undefined,
         TextContent: js.UndefOr[TextContent] = js.undefined
     ): CodeContentDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CodeMD5.foreach(__v => __obj.update("CodeMD5", __v.asInstanceOf[js.Any]))
-      CodeSize.foreach(__v => __obj.update("CodeSize", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CodeMD5.foreach(__v => __obj.updateDynamic("CodeMD5")(__v.asInstanceOf[js.Any]))
+      CodeSize.foreach(__v => __obj.updateDynamic("CodeSize")(__v.asInstanceOf[js.Any]))
       S3ApplicationCodeLocationDescription.foreach(
-        __v => __obj.update("S3ApplicationCodeLocationDescription", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("S3ApplicationCodeLocationDescription")(__v.asInstanceOf[js.Any])
       )
-      TextContent.foreach(__v => __obj.update("TextContent", __v.asInstanceOf[js.Any]))
+      TextContent.foreach(__v => __obj.updateDynamic("TextContent")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CodeContentDescription]
     }
   }
@@ -1070,10 +1084,10 @@ package kinesisanalyticsv2 {
         TextContentUpdate: js.UndefOr[TextContent] = js.undefined,
         ZipFileContentUpdate: js.UndefOr[ZipFileContent] = js.undefined
     ): CodeContentUpdate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      S3ContentLocationUpdate.foreach(__v => __obj.update("S3ContentLocationUpdate", __v.asInstanceOf[js.Any]))
-      TextContentUpdate.foreach(__v => __obj.update("TextContentUpdate", __v.asInstanceOf[js.Any]))
-      ZipFileContentUpdate.foreach(__v => __obj.update("ZipFileContentUpdate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      S3ContentLocationUpdate.foreach(__v => __obj.updateDynamic("S3ContentLocationUpdate")(__v.asInstanceOf[js.Any]))
+      TextContentUpdate.foreach(__v => __obj.updateDynamic("TextContentUpdate")(__v.asInstanceOf[js.Any]))
+      ZipFileContentUpdate.foreach(__v => __obj.updateDynamic("ZipFileContentUpdate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CodeContentUpdate]
     }
   }
@@ -1106,16 +1120,16 @@ package kinesisanalyticsv2 {
         CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateApplicationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName"      -> ApplicationName.asInstanceOf[js.Any],
         "RuntimeEnvironment"   -> RuntimeEnvironment.asInstanceOf[js.Any],
         "ServiceExecutionRole" -> ServiceExecutionRole.asInstanceOf[js.Any]
       )
 
-      ApplicationConfiguration.foreach(__v => __obj.update("ApplicationConfiguration", __v.asInstanceOf[js.Any]))
-      ApplicationDescription.foreach(__v => __obj.update("ApplicationDescription", __v.asInstanceOf[js.Any]))
-      CloudWatchLoggingOptions.foreach(__v => __obj.update("CloudWatchLoggingOptions", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      ApplicationConfiguration.foreach(__v => __obj.updateDynamic("ApplicationConfiguration")(__v.asInstanceOf[js.Any]))
+      ApplicationDescription.foreach(__v => __obj.updateDynamic("ApplicationDescription")(__v.asInstanceOf[js.Any]))
+      CloudWatchLoggingOptions.foreach(__v => __obj.updateDynamic("CloudWatchLoggingOptions")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateApplicationRequest]
     }
   }
@@ -1129,7 +1143,7 @@ package kinesisanalyticsv2 {
     def apply(
         ApplicationDetail: ApplicationDetail
     ): CreateApplicationResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationDetail" -> ApplicationDetail.asInstanceOf[js.Any]
       )
 
@@ -1148,7 +1162,7 @@ package kinesisanalyticsv2 {
         ApplicationName: ApplicationName,
         SnapshotName: SnapshotName
     ): CreateApplicationSnapshotRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "SnapshotName"    -> SnapshotName.asInstanceOf[js.Any]
       )
@@ -1163,7 +1177,7 @@ package kinesisanalyticsv2 {
   object CreateApplicationSnapshotResponse {
     def apply(
         ): CreateApplicationSnapshotResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateApplicationSnapshotResponse]
     }
@@ -1182,7 +1196,7 @@ package kinesisanalyticsv2 {
         CloudWatchLoggingOptionId: Id,
         CurrentApplicationVersionId: ApplicationVersionId
     ): DeleteApplicationCloudWatchLoggingOptionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName"             -> ApplicationName.asInstanceOf[js.Any],
         "CloudWatchLoggingOptionId"   -> CloudWatchLoggingOptionId.asInstanceOf[js.Any],
         "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any]
@@ -1205,11 +1219,11 @@ package kinesisanalyticsv2 {
         ApplicationVersionId: js.UndefOr[ApplicationVersionId] = js.undefined,
         CloudWatchLoggingOptionDescriptions: js.UndefOr[CloudWatchLoggingOptionDescriptions] = js.undefined
     ): DeleteApplicationCloudWatchLoggingOptionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationARN.foreach(__v => __obj.update("ApplicationARN", __v.asInstanceOf[js.Any]))
-      ApplicationVersionId.foreach(__v => __obj.update("ApplicationVersionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationARN.foreach(__v => __obj.updateDynamic("ApplicationARN")(__v.asInstanceOf[js.Any]))
+      ApplicationVersionId.foreach(__v => __obj.updateDynamic("ApplicationVersionId")(__v.asInstanceOf[js.Any]))
       CloudWatchLoggingOptionDescriptions.foreach(
-        __v => __obj.update("CloudWatchLoggingOptionDescriptions", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("CloudWatchLoggingOptionDescriptions")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DeleteApplicationCloudWatchLoggingOptionResponse]
     }
@@ -1228,7 +1242,7 @@ package kinesisanalyticsv2 {
         CurrentApplicationVersionId: ApplicationVersionId,
         InputId: Id
     ): DeleteApplicationInputProcessingConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName"             -> ApplicationName.asInstanceOf[js.Any],
         "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any],
         "InputId"                     -> InputId.asInstanceOf[js.Any]
@@ -1249,9 +1263,9 @@ package kinesisanalyticsv2 {
         ApplicationARN: js.UndefOr[ResourceARN] = js.undefined,
         ApplicationVersionId: js.UndefOr[ApplicationVersionId] = js.undefined
     ): DeleteApplicationInputProcessingConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationARN.foreach(__v => __obj.update("ApplicationARN", __v.asInstanceOf[js.Any]))
-      ApplicationVersionId.foreach(__v => __obj.update("ApplicationVersionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationARN.foreach(__v => __obj.updateDynamic("ApplicationARN")(__v.asInstanceOf[js.Any]))
+      ApplicationVersionId.foreach(__v => __obj.updateDynamic("ApplicationVersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteApplicationInputProcessingConfigurationResponse]
     }
   }
@@ -1269,7 +1283,7 @@ package kinesisanalyticsv2 {
         CurrentApplicationVersionId: ApplicationVersionId,
         OutputId: Id
     ): DeleteApplicationOutputRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName"             -> ApplicationName.asInstanceOf[js.Any],
         "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any],
         "OutputId"                    -> OutputId.asInstanceOf[js.Any]
@@ -1290,9 +1304,9 @@ package kinesisanalyticsv2 {
         ApplicationARN: js.UndefOr[ResourceARN] = js.undefined,
         ApplicationVersionId: js.UndefOr[ApplicationVersionId] = js.undefined
     ): DeleteApplicationOutputResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationARN.foreach(__v => __obj.update("ApplicationARN", __v.asInstanceOf[js.Any]))
-      ApplicationVersionId.foreach(__v => __obj.update("ApplicationVersionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationARN.foreach(__v => __obj.updateDynamic("ApplicationARN")(__v.asInstanceOf[js.Any]))
+      ApplicationVersionId.foreach(__v => __obj.updateDynamic("ApplicationVersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteApplicationOutputResponse]
     }
   }
@@ -1310,7 +1324,7 @@ package kinesisanalyticsv2 {
         CurrentApplicationVersionId: ApplicationVersionId,
         ReferenceId: Id
     ): DeleteApplicationReferenceDataSourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName"             -> ApplicationName.asInstanceOf[js.Any],
         "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any],
         "ReferenceId"                 -> ReferenceId.asInstanceOf[js.Any]
@@ -1331,9 +1345,9 @@ package kinesisanalyticsv2 {
         ApplicationARN: js.UndefOr[ResourceARN] = js.undefined,
         ApplicationVersionId: js.UndefOr[ApplicationVersionId] = js.undefined
     ): DeleteApplicationReferenceDataSourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationARN.foreach(__v => __obj.update("ApplicationARN", __v.asInstanceOf[js.Any]))
-      ApplicationVersionId.foreach(__v => __obj.update("ApplicationVersionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationARN.foreach(__v => __obj.updateDynamic("ApplicationARN")(__v.asInstanceOf[js.Any]))
+      ApplicationVersionId.foreach(__v => __obj.updateDynamic("ApplicationVersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteApplicationReferenceDataSourceResponse]
     }
   }
@@ -1349,7 +1363,7 @@ package kinesisanalyticsv2 {
         ApplicationName: ApplicationName,
         CreateTimestamp: Timestamp
     ): DeleteApplicationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "CreateTimestamp" -> CreateTimestamp.asInstanceOf[js.Any]
       )
@@ -1364,7 +1378,7 @@ package kinesisanalyticsv2 {
   object DeleteApplicationResponse {
     def apply(
         ): DeleteApplicationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteApplicationResponse]
     }
@@ -1383,7 +1397,7 @@ package kinesisanalyticsv2 {
         SnapshotCreationTimestamp: Timestamp,
         SnapshotName: SnapshotName
     ): DeleteApplicationSnapshotRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName"           -> ApplicationName.asInstanceOf[js.Any],
         "SnapshotCreationTimestamp" -> SnapshotCreationTimestamp.asInstanceOf[js.Any],
         "SnapshotName"              -> SnapshotName.asInstanceOf[js.Any]
@@ -1399,7 +1413,7 @@ package kinesisanalyticsv2 {
   object DeleteApplicationSnapshotResponse {
     def apply(
         ): DeleteApplicationSnapshotResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteApplicationSnapshotResponse]
     }
@@ -1416,11 +1430,11 @@ package kinesisanalyticsv2 {
         ApplicationName: ApplicationName,
         IncludeAdditionalDetails: js.UndefOr[BooleanObject] = js.undefined
     ): DescribeApplicationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any]
       )
 
-      IncludeAdditionalDetails.foreach(__v => __obj.update("IncludeAdditionalDetails", __v.asInstanceOf[js.Any]))
+      IncludeAdditionalDetails.foreach(__v => __obj.updateDynamic("IncludeAdditionalDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeApplicationRequest]
     }
   }
@@ -1434,7 +1448,7 @@ package kinesisanalyticsv2 {
     def apply(
         ApplicationDetail: ApplicationDetail
     ): DescribeApplicationResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationDetail" -> ApplicationDetail.asInstanceOf[js.Any]
       )
 
@@ -1453,7 +1467,7 @@ package kinesisanalyticsv2 {
         ApplicationName: ApplicationName,
         SnapshotName: SnapshotName
     ): DescribeApplicationSnapshotRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "SnapshotName"    -> SnapshotName.asInstanceOf[js.Any]
       )
@@ -1471,7 +1485,7 @@ package kinesisanalyticsv2 {
     def apply(
         SnapshotDetails: SnapshotDetails
     ): DescribeApplicationSnapshotResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SnapshotDetails" -> SnapshotDetails.asInstanceOf[js.Any]
       )
 
@@ -1491,7 +1505,7 @@ package kinesisanalyticsv2 {
     def apply(
         RecordFormatType: RecordFormatType
     ): DestinationSchema = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RecordFormatType" -> RecordFormatType.asInstanceOf[js.Any]
       )
 
@@ -1516,18 +1530,18 @@ package kinesisanalyticsv2 {
         ResourceARN: js.UndefOr[ResourceARN] = js.undefined,
         S3Configuration: js.UndefOr[S3Configuration] = js.undefined
     ): DiscoverInputSchemaRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServiceExecutionRole" -> ServiceExecutionRole.asInstanceOf[js.Any]
       )
 
       InputProcessingConfiguration.foreach(
-        __v => __obj.update("InputProcessingConfiguration", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("InputProcessingConfiguration")(__v.asInstanceOf[js.Any])
       )
       InputStartingPositionConfiguration.foreach(
-        __v => __obj.update("InputStartingPositionConfiguration", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("InputStartingPositionConfiguration")(__v.asInstanceOf[js.Any])
       )
-      ResourceARN.foreach(__v => __obj.update("ResourceARN", __v.asInstanceOf[js.Any]))
-      S3Configuration.foreach(__v => __obj.update("S3Configuration", __v.asInstanceOf[js.Any]))
+      ResourceARN.foreach(__v => __obj.updateDynamic("ResourceARN")(__v.asInstanceOf[js.Any]))
+      S3Configuration.foreach(__v => __obj.updateDynamic("S3Configuration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DiscoverInputSchemaRequest]
     }
   }
@@ -1547,11 +1561,11 @@ package kinesisanalyticsv2 {
         ProcessedInputRecords: js.UndefOr[ProcessedInputRecords] = js.undefined,
         RawInputRecords: js.UndefOr[RawInputRecords] = js.undefined
     ): DiscoverInputSchemaResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InputSchema.foreach(__v => __obj.update("InputSchema", __v.asInstanceOf[js.Any]))
-      ParsedInputRecords.foreach(__v => __obj.update("ParsedInputRecords", __v.asInstanceOf[js.Any]))
-      ProcessedInputRecords.foreach(__v => __obj.update("ProcessedInputRecords", __v.asInstanceOf[js.Any]))
-      RawInputRecords.foreach(__v => __obj.update("RawInputRecords", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InputSchema.foreach(__v => __obj.updateDynamic("InputSchema")(__v.asInstanceOf[js.Any]))
+      ParsedInputRecords.foreach(__v => __obj.updateDynamic("ParsedInputRecords")(__v.asInstanceOf[js.Any]))
+      ProcessedInputRecords.foreach(__v => __obj.updateDynamic("ProcessedInputRecords")(__v.asInstanceOf[js.Any]))
+      RawInputRecords.foreach(__v => __obj.updateDynamic("RawInputRecords")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DiscoverInputSchemaResponse]
     }
   }
@@ -1568,7 +1582,7 @@ package kinesisanalyticsv2 {
     def apply(
         PropertyGroups: PropertyGroups
     ): EnvironmentProperties = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PropertyGroups" -> PropertyGroups.asInstanceOf[js.Any]
       )
 
@@ -1588,8 +1602,10 @@ package kinesisanalyticsv2 {
     def apply(
         PropertyGroupDescriptions: js.UndefOr[PropertyGroups] = js.undefined
     ): EnvironmentPropertyDescriptions = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PropertyGroupDescriptions.foreach(__v => __obj.update("PropertyGroupDescriptions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PropertyGroupDescriptions.foreach(
+        __v => __obj.updateDynamic("PropertyGroupDescriptions")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[EnvironmentPropertyDescriptions]
     }
   }
@@ -1606,7 +1622,7 @@ package kinesisanalyticsv2 {
     def apply(
         PropertyGroups: PropertyGroups
     ): EnvironmentPropertyUpdates = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PropertyGroups" -> PropertyGroups.asInstanceOf[js.Any]
       )
 
@@ -1630,10 +1646,10 @@ package kinesisanalyticsv2 {
         MonitoringConfiguration: js.UndefOr[MonitoringConfiguration] = js.undefined,
         ParallelismConfiguration: js.UndefOr[ParallelismConfiguration] = js.undefined
     ): FlinkApplicationConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CheckpointConfiguration.foreach(__v => __obj.update("CheckpointConfiguration", __v.asInstanceOf[js.Any]))
-      MonitoringConfiguration.foreach(__v => __obj.update("MonitoringConfiguration", __v.asInstanceOf[js.Any]))
-      ParallelismConfiguration.foreach(__v => __obj.update("ParallelismConfiguration", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CheckpointConfiguration.foreach(__v => __obj.updateDynamic("CheckpointConfiguration")(__v.asInstanceOf[js.Any]))
+      MonitoringConfiguration.foreach(__v => __obj.updateDynamic("MonitoringConfiguration")(__v.asInstanceOf[js.Any]))
+      ParallelismConfiguration.foreach(__v => __obj.updateDynamic("ParallelismConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FlinkApplicationConfiguration]
     }
   }
@@ -1656,16 +1672,16 @@ package kinesisanalyticsv2 {
         MonitoringConfigurationDescription: js.UndefOr[MonitoringConfigurationDescription] = js.undefined,
         ParallelismConfigurationDescription: js.UndefOr[ParallelismConfigurationDescription] = js.undefined
     ): FlinkApplicationConfigurationDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       CheckpointConfigurationDescription.foreach(
-        __v => __obj.update("CheckpointConfigurationDescription", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("CheckpointConfigurationDescription")(__v.asInstanceOf[js.Any])
       )
-      JobPlanDescription.foreach(__v => __obj.update("JobPlanDescription", __v.asInstanceOf[js.Any]))
+      JobPlanDescription.foreach(__v => __obj.updateDynamic("JobPlanDescription")(__v.asInstanceOf[js.Any]))
       MonitoringConfigurationDescription.foreach(
-        __v => __obj.update("MonitoringConfigurationDescription", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("MonitoringConfigurationDescription")(__v.asInstanceOf[js.Any])
       )
       ParallelismConfigurationDescription.foreach(
-        __v => __obj.update("ParallelismConfigurationDescription", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ParallelismConfigurationDescription")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[FlinkApplicationConfigurationDescription]
     }
@@ -1687,15 +1703,15 @@ package kinesisanalyticsv2 {
         MonitoringConfigurationUpdate: js.UndefOr[MonitoringConfigurationUpdate] = js.undefined,
         ParallelismConfigurationUpdate: js.UndefOr[ParallelismConfigurationUpdate] = js.undefined
     ): FlinkApplicationConfigurationUpdate = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       CheckpointConfigurationUpdate.foreach(
-        __v => __obj.update("CheckpointConfigurationUpdate", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("CheckpointConfigurationUpdate")(__v.asInstanceOf[js.Any])
       )
       MonitoringConfigurationUpdate.foreach(
-        __v => __obj.update("MonitoringConfigurationUpdate", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("MonitoringConfigurationUpdate")(__v.asInstanceOf[js.Any])
       )
       ParallelismConfigurationUpdate.foreach(
-        __v => __obj.update("ParallelismConfigurationUpdate", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ParallelismConfigurationUpdate")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[FlinkApplicationConfigurationUpdate]
     }
@@ -1723,17 +1739,17 @@ package kinesisanalyticsv2 {
         KinesisFirehoseInput: js.UndefOr[KinesisFirehoseInput] = js.undefined,
         KinesisStreamsInput: js.UndefOr[KinesisStreamsInput] = js.undefined
     ): Input = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InputSchema" -> InputSchema.asInstanceOf[js.Any],
         "NamePrefix"  -> NamePrefix.asInstanceOf[js.Any]
       )
 
-      InputParallelism.foreach(__v => __obj.update("InputParallelism", __v.asInstanceOf[js.Any]))
+      InputParallelism.foreach(__v => __obj.updateDynamic("InputParallelism")(__v.asInstanceOf[js.Any]))
       InputProcessingConfiguration.foreach(
-        __v => __obj.update("InputProcessingConfiguration", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("InputProcessingConfiguration")(__v.asInstanceOf[js.Any])
       )
-      KinesisFirehoseInput.foreach(__v => __obj.update("KinesisFirehoseInput", __v.asInstanceOf[js.Any]))
-      KinesisStreamsInput.foreach(__v => __obj.update("KinesisStreamsInput", __v.asInstanceOf[js.Any]))
+      KinesisFirehoseInput.foreach(__v => __obj.updateDynamic("KinesisFirehoseInput")(__v.asInstanceOf[js.Any]))
+      KinesisStreamsInput.foreach(__v => __obj.updateDynamic("KinesisStreamsInput")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Input]
     }
   }
@@ -1766,24 +1782,24 @@ package kinesisanalyticsv2 {
         KinesisStreamsInputDescription: js.UndefOr[KinesisStreamsInputDescription] = js.undefined,
         NamePrefix: js.UndefOr[InAppStreamName] = js.undefined
     ): InputDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InAppStreamNames.foreach(__v => __obj.update("InAppStreamNames", __v.asInstanceOf[js.Any]))
-      InputId.foreach(__v => __obj.update("InputId", __v.asInstanceOf[js.Any]))
-      InputParallelism.foreach(__v => __obj.update("InputParallelism", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InAppStreamNames.foreach(__v => __obj.updateDynamic("InAppStreamNames")(__v.asInstanceOf[js.Any]))
+      InputId.foreach(__v => __obj.updateDynamic("InputId")(__v.asInstanceOf[js.Any]))
+      InputParallelism.foreach(__v => __obj.updateDynamic("InputParallelism")(__v.asInstanceOf[js.Any]))
       InputProcessingConfigurationDescription.foreach(
-        __v => __obj.update("InputProcessingConfigurationDescription", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("InputProcessingConfigurationDescription")(__v.asInstanceOf[js.Any])
       )
-      InputSchema.foreach(__v => __obj.update("InputSchema", __v.asInstanceOf[js.Any]))
+      InputSchema.foreach(__v => __obj.updateDynamic("InputSchema")(__v.asInstanceOf[js.Any]))
       InputStartingPositionConfiguration.foreach(
-        __v => __obj.update("InputStartingPositionConfiguration", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("InputStartingPositionConfiguration")(__v.asInstanceOf[js.Any])
       )
       KinesisFirehoseInputDescription.foreach(
-        __v => __obj.update("KinesisFirehoseInputDescription", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("KinesisFirehoseInputDescription")(__v.asInstanceOf[js.Any])
       )
       KinesisStreamsInputDescription.foreach(
-        __v => __obj.update("KinesisStreamsInputDescription", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("KinesisStreamsInputDescription")(__v.asInstanceOf[js.Any])
       )
-      NamePrefix.foreach(__v => __obj.update("NamePrefix", __v.asInstanceOf[js.Any]))
+      NamePrefix.foreach(__v => __obj.updateDynamic("NamePrefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InputDescription]
     }
   }
@@ -1800,7 +1816,7 @@ package kinesisanalyticsv2 {
     def apply(
         ResourceARN: ResourceARN
     ): InputLambdaProcessor = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
       )
 
@@ -1822,11 +1838,11 @@ package kinesisanalyticsv2 {
         ResourceARN: ResourceARN,
         RoleARN: js.UndefOr[RoleARN] = js.undefined
     ): InputLambdaProcessorDescription = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
       )
 
-      RoleARN.foreach(__v => __obj.update("RoleARN", __v.asInstanceOf[js.Any]))
+      RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InputLambdaProcessorDescription]
     }
   }
@@ -1843,7 +1859,7 @@ package kinesisanalyticsv2 {
     def apply(
         ResourceARNUpdate: ResourceARN
     ): InputLambdaProcessorUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARNUpdate" -> ResourceARNUpdate.asInstanceOf[js.Any]
       )
 
@@ -1863,8 +1879,8 @@ package kinesisanalyticsv2 {
     def apply(
         Count: js.UndefOr[InputParallelismCount] = js.undefined
     ): InputParallelism = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Count.foreach(__v => __obj.update("Count", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InputParallelism]
     }
   }
@@ -1881,7 +1897,7 @@ package kinesisanalyticsv2 {
     def apply(
         CountUpdate: InputParallelismCount
     ): InputParallelismUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CountUpdate" -> CountUpdate.asInstanceOf[js.Any]
       )
 
@@ -1901,7 +1917,7 @@ package kinesisanalyticsv2 {
     def apply(
         InputLambdaProcessor: InputLambdaProcessor
     ): InputProcessingConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InputLambdaProcessor" -> InputLambdaProcessor.asInstanceOf[js.Any]
       )
 
@@ -1921,9 +1937,9 @@ package kinesisanalyticsv2 {
     def apply(
         InputLambdaProcessorDescription: js.UndefOr[InputLambdaProcessorDescription] = js.undefined
     ): InputProcessingConfigurationDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       InputLambdaProcessorDescription.foreach(
-        __v => __obj.update("InputLambdaProcessorDescription", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("InputLambdaProcessorDescription")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[InputProcessingConfigurationDescription]
     }
@@ -1941,7 +1957,7 @@ package kinesisanalyticsv2 {
     def apply(
         InputLambdaProcessorUpdate: InputLambdaProcessorUpdate
     ): InputProcessingConfigurationUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InputLambdaProcessorUpdate" -> InputLambdaProcessorUpdate.asInstanceOf[js.Any]
       )
 
@@ -1965,10 +1981,10 @@ package kinesisanalyticsv2 {
         RecordEncodingUpdate: js.UndefOr[RecordEncoding] = js.undefined,
         RecordFormatUpdate: js.UndefOr[RecordFormat] = js.undefined
     ): InputSchemaUpdate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RecordColumnUpdates.foreach(__v => __obj.update("RecordColumnUpdates", __v.asInstanceOf[js.Any]))
-      RecordEncodingUpdate.foreach(__v => __obj.update("RecordEncodingUpdate", __v.asInstanceOf[js.Any]))
-      RecordFormatUpdate.foreach(__v => __obj.update("RecordFormatUpdate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RecordColumnUpdates.foreach(__v => __obj.updateDynamic("RecordColumnUpdates")(__v.asInstanceOf[js.Any]))
+      RecordEncodingUpdate.foreach(__v => __obj.updateDynamic("RecordEncodingUpdate")(__v.asInstanceOf[js.Any]))
+      RecordFormatUpdate.foreach(__v => __obj.updateDynamic("RecordFormatUpdate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InputSchemaUpdate]
     }
   }
@@ -1993,8 +2009,8 @@ package kinesisanalyticsv2 {
     def apply(
         InputStartingPosition: js.UndefOr[InputStartingPosition] = js.undefined
     ): InputStartingPositionConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InputStartingPosition.foreach(__v => __obj.update("InputStartingPosition", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InputStartingPosition.foreach(__v => __obj.updateDynamic("InputStartingPosition")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InputStartingPositionConfiguration]
     }
   }
@@ -2023,18 +2039,22 @@ package kinesisanalyticsv2 {
         KinesisStreamsInputUpdate: js.UndefOr[KinesisStreamsInputUpdate] = js.undefined,
         NamePrefixUpdate: js.UndefOr[InAppStreamName] = js.undefined
     ): InputUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InputId" -> InputId.asInstanceOf[js.Any]
       )
 
-      InputParallelismUpdate.foreach(__v => __obj.update("InputParallelismUpdate", __v.asInstanceOf[js.Any]))
+      InputParallelismUpdate.foreach(__v => __obj.updateDynamic("InputParallelismUpdate")(__v.asInstanceOf[js.Any]))
       InputProcessingConfigurationUpdate.foreach(
-        __v => __obj.update("InputProcessingConfigurationUpdate", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("InputProcessingConfigurationUpdate")(__v.asInstanceOf[js.Any])
       )
-      InputSchemaUpdate.foreach(__v => __obj.update("InputSchemaUpdate", __v.asInstanceOf[js.Any]))
-      KinesisFirehoseInputUpdate.foreach(__v => __obj.update("KinesisFirehoseInputUpdate", __v.asInstanceOf[js.Any]))
-      KinesisStreamsInputUpdate.foreach(__v => __obj.update("KinesisStreamsInputUpdate", __v.asInstanceOf[js.Any]))
-      NamePrefixUpdate.foreach(__v => __obj.update("NamePrefixUpdate", __v.asInstanceOf[js.Any]))
+      InputSchemaUpdate.foreach(__v => __obj.updateDynamic("InputSchemaUpdate")(__v.asInstanceOf[js.Any]))
+      KinesisFirehoseInputUpdate.foreach(
+        __v => __obj.updateDynamic("KinesisFirehoseInputUpdate")(__v.asInstanceOf[js.Any])
+      )
+      KinesisStreamsInputUpdate.foreach(
+        __v => __obj.updateDynamic("KinesisStreamsInputUpdate")(__v.asInstanceOf[js.Any])
+      )
+      NamePrefixUpdate.foreach(__v => __obj.updateDynamic("NamePrefixUpdate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InputUpdate]
     }
   }
@@ -2051,7 +2071,7 @@ package kinesisanalyticsv2 {
     def apply(
         RecordRowPath: RecordRowPath
     ): JSONMappingParameters = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RecordRowPath" -> RecordRowPath.asInstanceOf[js.Any]
       )
 
@@ -2071,7 +2091,7 @@ package kinesisanalyticsv2 {
     def apply(
         ResourceARN: ResourceARN
     ): KinesisFirehoseInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
       )
 
@@ -2093,11 +2113,11 @@ package kinesisanalyticsv2 {
         ResourceARN: ResourceARN,
         RoleARN: js.UndefOr[RoleARN] = js.undefined
     ): KinesisFirehoseInputDescription = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
       )
 
-      RoleARN.foreach(__v => __obj.update("RoleARN", __v.asInstanceOf[js.Any]))
+      RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KinesisFirehoseInputDescription]
     }
   }
@@ -2114,7 +2134,7 @@ package kinesisanalyticsv2 {
     def apply(
         ResourceARNUpdate: ResourceARN
     ): KinesisFirehoseInputUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARNUpdate" -> ResourceARNUpdate.asInstanceOf[js.Any]
       )
 
@@ -2134,7 +2154,7 @@ package kinesisanalyticsv2 {
     def apply(
         ResourceARN: ResourceARN
     ): KinesisFirehoseOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
       )
 
@@ -2156,11 +2176,11 @@ package kinesisanalyticsv2 {
         ResourceARN: ResourceARN,
         RoleARN: js.UndefOr[RoleARN] = js.undefined
     ): KinesisFirehoseOutputDescription = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
       )
 
-      RoleARN.foreach(__v => __obj.update("RoleARN", __v.asInstanceOf[js.Any]))
+      RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KinesisFirehoseOutputDescription]
     }
   }
@@ -2177,7 +2197,7 @@ package kinesisanalyticsv2 {
     def apply(
         ResourceARNUpdate: ResourceARN
     ): KinesisFirehoseOutputUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARNUpdate" -> ResourceARNUpdate.asInstanceOf[js.Any]
       )
 
@@ -2197,7 +2217,7 @@ package kinesisanalyticsv2 {
     def apply(
         ResourceARN: ResourceARN
     ): KinesisStreamsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
       )
 
@@ -2219,11 +2239,11 @@ package kinesisanalyticsv2 {
         ResourceARN: ResourceARN,
         RoleARN: js.UndefOr[RoleARN] = js.undefined
     ): KinesisStreamsInputDescription = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
       )
 
-      RoleARN.foreach(__v => __obj.update("RoleARN", __v.asInstanceOf[js.Any]))
+      RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KinesisStreamsInputDescription]
     }
   }
@@ -2240,7 +2260,7 @@ package kinesisanalyticsv2 {
     def apply(
         ResourceARNUpdate: ResourceARN
     ): KinesisStreamsInputUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARNUpdate" -> ResourceARNUpdate.asInstanceOf[js.Any]
       )
 
@@ -2260,7 +2280,7 @@ package kinesisanalyticsv2 {
     def apply(
         ResourceARN: ResourceARN
     ): KinesisStreamsOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
       )
 
@@ -2282,11 +2302,11 @@ package kinesisanalyticsv2 {
         ResourceARN: ResourceARN,
         RoleARN: js.UndefOr[RoleARN] = js.undefined
     ): KinesisStreamsOutputDescription = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
       )
 
-      RoleARN.foreach(__v => __obj.update("RoleARN", __v.asInstanceOf[js.Any]))
+      RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KinesisStreamsOutputDescription]
     }
   }
@@ -2303,7 +2323,7 @@ package kinesisanalyticsv2 {
     def apply(
         ResourceARNUpdate: ResourceARN
     ): KinesisStreamsOutputUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARNUpdate" -> ResourceARNUpdate.asInstanceOf[js.Any]
       )
 
@@ -2323,7 +2343,7 @@ package kinesisanalyticsv2 {
     def apply(
         ResourceARN: ResourceARN
     ): LambdaOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
       )
 
@@ -2345,11 +2365,11 @@ package kinesisanalyticsv2 {
         ResourceARN: ResourceARN,
         RoleARN: js.UndefOr[RoleARN] = js.undefined
     ): LambdaOutputDescription = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
       )
 
-      RoleARN.foreach(__v => __obj.update("RoleARN", __v.asInstanceOf[js.Any]))
+      RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LambdaOutputDescription]
     }
   }
@@ -2366,7 +2386,7 @@ package kinesisanalyticsv2 {
     def apply(
         ResourceARNUpdate: ResourceARN
     ): LambdaOutputUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARNUpdate" -> ResourceARNUpdate.asInstanceOf[js.Any]
       )
 
@@ -2387,12 +2407,12 @@ package kinesisanalyticsv2 {
         Limit: js.UndefOr[ListSnapshotsInputLimit] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListApplicationSnapshotsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any]
       )
 
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListApplicationSnapshotsRequest]
     }
   }
@@ -2408,9 +2428,9 @@ package kinesisanalyticsv2 {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         SnapshotSummaries: js.UndefOr[SnapshotSummaries] = js.undefined
     ): ListApplicationSnapshotsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      SnapshotSummaries.foreach(__v => __obj.update("SnapshotSummaries", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SnapshotSummaries.foreach(__v => __obj.updateDynamic("SnapshotSummaries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListApplicationSnapshotsResponse]
     }
   }
@@ -2426,9 +2446,9 @@ package kinesisanalyticsv2 {
         Limit: js.UndefOr[ListApplicationsInputLimit] = js.undefined,
         NextToken: js.UndefOr[ApplicationName] = js.undefined
     ): ListApplicationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListApplicationsRequest]
     }
   }
@@ -2444,11 +2464,11 @@ package kinesisanalyticsv2 {
         ApplicationSummaries: ApplicationSummaries,
         NextToken: js.UndefOr[ApplicationName] = js.undefined
     ): ListApplicationsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationSummaries" -> ApplicationSummaries.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListApplicationsResponse]
     }
   }
@@ -2462,7 +2482,7 @@ package kinesisanalyticsv2 {
     def apply(
         ResourceARN: KinesisAnalyticsARN
     ): ListTagsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
       )
 
@@ -2479,8 +2499,8 @@ package kinesisanalyticsv2 {
     def apply(
         Tags: js.UndefOr[Tags] = js.undefined
     ): ListTagsForResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
@@ -2508,9 +2528,9 @@ package kinesisanalyticsv2 {
         CSVMappingParameters: js.UndefOr[CSVMappingParameters] = js.undefined,
         JSONMappingParameters: js.UndefOr[JSONMappingParameters] = js.undefined
     ): MappingParameters = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CSVMappingParameters.foreach(__v => __obj.update("CSVMappingParameters", __v.asInstanceOf[js.Any]))
-      JSONMappingParameters.foreach(__v => __obj.update("JSONMappingParameters", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CSVMappingParameters.foreach(__v => __obj.updateDynamic("CSVMappingParameters")(__v.asInstanceOf[js.Any]))
+      JSONMappingParameters.foreach(__v => __obj.updateDynamic("JSONMappingParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MappingParameters]
     }
   }
@@ -2540,12 +2560,12 @@ package kinesisanalyticsv2 {
         LogLevel: js.UndefOr[LogLevel] = js.undefined,
         MetricsLevel: js.UndefOr[MetricsLevel] = js.undefined
     ): MonitoringConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationType" -> ConfigurationType.asInstanceOf[js.Any]
       )
 
-      LogLevel.foreach(__v => __obj.update("LogLevel", __v.asInstanceOf[js.Any]))
-      MetricsLevel.foreach(__v => __obj.update("MetricsLevel", __v.asInstanceOf[js.Any]))
+      LogLevel.foreach(__v => __obj.updateDynamic("LogLevel")(__v.asInstanceOf[js.Any]))
+      MetricsLevel.foreach(__v => __obj.updateDynamic("MetricsLevel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MonitoringConfiguration]
     }
   }
@@ -2566,10 +2586,10 @@ package kinesisanalyticsv2 {
         LogLevel: js.UndefOr[LogLevel] = js.undefined,
         MetricsLevel: js.UndefOr[MetricsLevel] = js.undefined
     ): MonitoringConfigurationDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConfigurationType.foreach(__v => __obj.update("ConfigurationType", __v.asInstanceOf[js.Any]))
-      LogLevel.foreach(__v => __obj.update("LogLevel", __v.asInstanceOf[js.Any]))
-      MetricsLevel.foreach(__v => __obj.update("MetricsLevel", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConfigurationType.foreach(__v => __obj.updateDynamic("ConfigurationType")(__v.asInstanceOf[js.Any]))
+      LogLevel.foreach(__v => __obj.updateDynamic("LogLevel")(__v.asInstanceOf[js.Any]))
+      MetricsLevel.foreach(__v => __obj.updateDynamic("MetricsLevel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MonitoringConfigurationDescription]
     }
   }
@@ -2590,10 +2610,10 @@ package kinesisanalyticsv2 {
         LogLevelUpdate: js.UndefOr[LogLevel] = js.undefined,
         MetricsLevelUpdate: js.UndefOr[MetricsLevel] = js.undefined
     ): MonitoringConfigurationUpdate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConfigurationTypeUpdate.foreach(__v => __obj.update("ConfigurationTypeUpdate", __v.asInstanceOf[js.Any]))
-      LogLevelUpdate.foreach(__v => __obj.update("LogLevelUpdate", __v.asInstanceOf[js.Any]))
-      MetricsLevelUpdate.foreach(__v => __obj.update("MetricsLevelUpdate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConfigurationTypeUpdate.foreach(__v => __obj.updateDynamic("ConfigurationTypeUpdate")(__v.asInstanceOf[js.Any]))
+      LogLevelUpdate.foreach(__v => __obj.updateDynamic("LogLevelUpdate")(__v.asInstanceOf[js.Any]))
+      MetricsLevelUpdate.foreach(__v => __obj.updateDynamic("MetricsLevelUpdate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MonitoringConfigurationUpdate]
     }
   }
@@ -2619,14 +2639,14 @@ package kinesisanalyticsv2 {
         KinesisStreamsOutput: js.UndefOr[KinesisStreamsOutput] = js.undefined,
         LambdaOutput: js.UndefOr[LambdaOutput] = js.undefined
     ): Output = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DestinationSchema" -> DestinationSchema.asInstanceOf[js.Any],
         "Name"              -> Name.asInstanceOf[js.Any]
       )
 
-      KinesisFirehoseOutput.foreach(__v => __obj.update("KinesisFirehoseOutput", __v.asInstanceOf[js.Any]))
-      KinesisStreamsOutput.foreach(__v => __obj.update("KinesisStreamsOutput", __v.asInstanceOf[js.Any]))
-      LambdaOutput.foreach(__v => __obj.update("LambdaOutput", __v.asInstanceOf[js.Any]))
+      KinesisFirehoseOutput.foreach(__v => __obj.updateDynamic("KinesisFirehoseOutput")(__v.asInstanceOf[js.Any]))
+      KinesisStreamsOutput.foreach(__v => __obj.updateDynamic("KinesisStreamsOutput")(__v.asInstanceOf[js.Any]))
+      LambdaOutput.foreach(__v => __obj.updateDynamic("LambdaOutput")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Output]
     }
   }
@@ -2653,17 +2673,17 @@ package kinesisanalyticsv2 {
         Name: js.UndefOr[InAppStreamName] = js.undefined,
         OutputId: js.UndefOr[Id] = js.undefined
     ): OutputDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DestinationSchema.foreach(__v => __obj.update("DestinationSchema", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DestinationSchema.foreach(__v => __obj.updateDynamic("DestinationSchema")(__v.asInstanceOf[js.Any]))
       KinesisFirehoseOutputDescription.foreach(
-        __v => __obj.update("KinesisFirehoseOutputDescription", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("KinesisFirehoseOutputDescription")(__v.asInstanceOf[js.Any])
       )
       KinesisStreamsOutputDescription.foreach(
-        __v => __obj.update("KinesisStreamsOutputDescription", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("KinesisStreamsOutputDescription")(__v.asInstanceOf[js.Any])
       )
-      LambdaOutputDescription.foreach(__v => __obj.update("LambdaOutputDescription", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      OutputId.foreach(__v => __obj.update("OutputId", __v.asInstanceOf[js.Any]))
+      LambdaOutputDescription.foreach(__v => __obj.updateDynamic("LambdaOutputDescription")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      OutputId.foreach(__v => __obj.updateDynamic("OutputId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OutputDescription]
     }
   }
@@ -2690,15 +2710,19 @@ package kinesisanalyticsv2 {
         LambdaOutputUpdate: js.UndefOr[LambdaOutputUpdate] = js.undefined,
         NameUpdate: js.UndefOr[InAppStreamName] = js.undefined
     ): OutputUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OutputId" -> OutputId.asInstanceOf[js.Any]
       )
 
-      DestinationSchemaUpdate.foreach(__v => __obj.update("DestinationSchemaUpdate", __v.asInstanceOf[js.Any]))
-      KinesisFirehoseOutputUpdate.foreach(__v => __obj.update("KinesisFirehoseOutputUpdate", __v.asInstanceOf[js.Any]))
-      KinesisStreamsOutputUpdate.foreach(__v => __obj.update("KinesisStreamsOutputUpdate", __v.asInstanceOf[js.Any]))
-      LambdaOutputUpdate.foreach(__v => __obj.update("LambdaOutputUpdate", __v.asInstanceOf[js.Any]))
-      NameUpdate.foreach(__v => __obj.update("NameUpdate", __v.asInstanceOf[js.Any]))
+      DestinationSchemaUpdate.foreach(__v => __obj.updateDynamic("DestinationSchemaUpdate")(__v.asInstanceOf[js.Any]))
+      KinesisFirehoseOutputUpdate.foreach(
+        __v => __obj.updateDynamic("KinesisFirehoseOutputUpdate")(__v.asInstanceOf[js.Any])
+      )
+      KinesisStreamsOutputUpdate.foreach(
+        __v => __obj.updateDynamic("KinesisStreamsOutputUpdate")(__v.asInstanceOf[js.Any])
+      )
+      LambdaOutputUpdate.foreach(__v => __obj.updateDynamic("LambdaOutputUpdate")(__v.asInstanceOf[js.Any]))
+      NameUpdate.foreach(__v => __obj.updateDynamic("NameUpdate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OutputUpdate]
     }
   }
@@ -2721,13 +2745,13 @@ package kinesisanalyticsv2 {
         Parallelism: js.UndefOr[Parallelism] = js.undefined,
         ParallelismPerKPU: js.UndefOr[ParallelismPerKPU] = js.undefined
     ): ParallelismConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationType" -> ConfigurationType.asInstanceOf[js.Any]
       )
 
-      AutoScalingEnabled.foreach(__v => __obj.update("AutoScalingEnabled", __v.asInstanceOf[js.Any]))
-      Parallelism.foreach(__v => __obj.update("Parallelism", __v.asInstanceOf[js.Any]))
-      ParallelismPerKPU.foreach(__v => __obj.update("ParallelismPerKPU", __v.asInstanceOf[js.Any]))
+      AutoScalingEnabled.foreach(__v => __obj.updateDynamic("AutoScalingEnabled")(__v.asInstanceOf[js.Any]))
+      Parallelism.foreach(__v => __obj.updateDynamic("Parallelism")(__v.asInstanceOf[js.Any]))
+      ParallelismPerKPU.foreach(__v => __obj.updateDynamic("ParallelismPerKPU")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ParallelismConfiguration]
     }
   }
@@ -2752,12 +2776,12 @@ package kinesisanalyticsv2 {
         Parallelism: js.UndefOr[Parallelism] = js.undefined,
         ParallelismPerKPU: js.UndefOr[ParallelismPerKPU] = js.undefined
     ): ParallelismConfigurationDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AutoScalingEnabled.foreach(__v => __obj.update("AutoScalingEnabled", __v.asInstanceOf[js.Any]))
-      ConfigurationType.foreach(__v => __obj.update("ConfigurationType", __v.asInstanceOf[js.Any]))
-      CurrentParallelism.foreach(__v => __obj.update("CurrentParallelism", __v.asInstanceOf[js.Any]))
-      Parallelism.foreach(__v => __obj.update("Parallelism", __v.asInstanceOf[js.Any]))
-      ParallelismPerKPU.foreach(__v => __obj.update("ParallelismPerKPU", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AutoScalingEnabled.foreach(__v => __obj.updateDynamic("AutoScalingEnabled")(__v.asInstanceOf[js.Any]))
+      ConfigurationType.foreach(__v => __obj.updateDynamic("ConfigurationType")(__v.asInstanceOf[js.Any]))
+      CurrentParallelism.foreach(__v => __obj.updateDynamic("CurrentParallelism")(__v.asInstanceOf[js.Any]))
+      Parallelism.foreach(__v => __obj.updateDynamic("Parallelism")(__v.asInstanceOf[js.Any]))
+      ParallelismPerKPU.foreach(__v => __obj.updateDynamic("ParallelismPerKPU")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ParallelismConfigurationDescription]
     }
   }
@@ -2780,11 +2804,11 @@ package kinesisanalyticsv2 {
         ParallelismPerKPUUpdate: js.UndefOr[ParallelismPerKPU] = js.undefined,
         ParallelismUpdate: js.UndefOr[Parallelism] = js.undefined
     ): ParallelismConfigurationUpdate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AutoScalingEnabledUpdate.foreach(__v => __obj.update("AutoScalingEnabledUpdate", __v.asInstanceOf[js.Any]))
-      ConfigurationTypeUpdate.foreach(__v => __obj.update("ConfigurationTypeUpdate", __v.asInstanceOf[js.Any]))
-      ParallelismPerKPUUpdate.foreach(__v => __obj.update("ParallelismPerKPUUpdate", __v.asInstanceOf[js.Any]))
-      ParallelismUpdate.foreach(__v => __obj.update("ParallelismUpdate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AutoScalingEnabledUpdate.foreach(__v => __obj.updateDynamic("AutoScalingEnabledUpdate")(__v.asInstanceOf[js.Any]))
+      ConfigurationTypeUpdate.foreach(__v => __obj.updateDynamic("ConfigurationTypeUpdate")(__v.asInstanceOf[js.Any]))
+      ParallelismPerKPUUpdate.foreach(__v => __obj.updateDynamic("ParallelismPerKPUUpdate")(__v.asInstanceOf[js.Any]))
+      ParallelismUpdate.foreach(__v => __obj.updateDynamic("ParallelismUpdate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ParallelismConfigurationUpdate]
     }
   }
@@ -2803,7 +2827,7 @@ package kinesisanalyticsv2 {
         PropertyGroupId: Id,
         PropertyMap: PropertyMap
     ): PropertyGroup = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PropertyGroupId" -> PropertyGroupId.asInstanceOf[js.Any],
         "PropertyMap"     -> PropertyMap.asInstanceOf[js.Any]
       )
@@ -2829,12 +2853,12 @@ package kinesisanalyticsv2 {
         SqlType: RecordColumnSqlType,
         Mapping: js.UndefOr[RecordColumnMapping] = js.undefined
     ): RecordColumn = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"    -> Name.asInstanceOf[js.Any],
         "SqlType" -> SqlType.asInstanceOf[js.Any]
       )
 
-      Mapping.foreach(__v => __obj.update("Mapping", __v.asInstanceOf[js.Any]))
+      Mapping.foreach(__v => __obj.updateDynamic("Mapping")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecordColumn]
     }
   }
@@ -2853,11 +2877,11 @@ package kinesisanalyticsv2 {
         RecordFormatType: RecordFormatType,
         MappingParameters: js.UndefOr[MappingParameters] = js.undefined
     ): RecordFormat = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RecordFormatType" -> RecordFormatType.asInstanceOf[js.Any]
       )
 
-      MappingParameters.foreach(__v => __obj.update("MappingParameters", __v.asInstanceOf[js.Any]))
+      MappingParameters.foreach(__v => __obj.updateDynamic("MappingParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecordFormat]
     }
   }
@@ -2885,12 +2909,12 @@ package kinesisanalyticsv2 {
         TableName: InAppTableName,
         S3ReferenceDataSource: js.UndefOr[S3ReferenceDataSource] = js.undefined
     ): ReferenceDataSource = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ReferenceSchema" -> ReferenceSchema.asInstanceOf[js.Any],
         "TableName"       -> TableName.asInstanceOf[js.Any]
       )
 
-      S3ReferenceDataSource.foreach(__v => __obj.update("S3ReferenceDataSource", __v.asInstanceOf[js.Any]))
+      S3ReferenceDataSource.foreach(__v => __obj.updateDynamic("S3ReferenceDataSource")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReferenceDataSource]
     }
   }
@@ -2913,13 +2937,13 @@ package kinesisanalyticsv2 {
         TableName: InAppTableName,
         ReferenceSchema: js.UndefOr[SourceSchema] = js.undefined
     ): ReferenceDataSourceDescription = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ReferenceId"                      -> ReferenceId.asInstanceOf[js.Any],
         "S3ReferenceDataSourceDescription" -> S3ReferenceDataSourceDescription.asInstanceOf[js.Any],
         "TableName"                        -> TableName.asInstanceOf[js.Any]
       )
 
-      ReferenceSchema.foreach(__v => __obj.update("ReferenceSchema", __v.asInstanceOf[js.Any]))
+      ReferenceSchema.foreach(__v => __obj.updateDynamic("ReferenceSchema")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReferenceDataSourceDescription]
     }
   }
@@ -2942,13 +2966,15 @@ package kinesisanalyticsv2 {
         S3ReferenceDataSourceUpdate: js.UndefOr[S3ReferenceDataSourceUpdate] = js.undefined,
         TableNameUpdate: js.UndefOr[InAppTableName] = js.undefined
     ): ReferenceDataSourceUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ReferenceId" -> ReferenceId.asInstanceOf[js.Any]
       )
 
-      ReferenceSchemaUpdate.foreach(__v => __obj.update("ReferenceSchemaUpdate", __v.asInstanceOf[js.Any]))
-      S3ReferenceDataSourceUpdate.foreach(__v => __obj.update("S3ReferenceDataSourceUpdate", __v.asInstanceOf[js.Any]))
-      TableNameUpdate.foreach(__v => __obj.update("TableNameUpdate", __v.asInstanceOf[js.Any]))
+      ReferenceSchemaUpdate.foreach(__v => __obj.updateDynamic("ReferenceSchemaUpdate")(__v.asInstanceOf[js.Any]))
+      S3ReferenceDataSourceUpdate.foreach(
+        __v => __obj.updateDynamic("S3ReferenceDataSourceUpdate")(__v.asInstanceOf[js.Any])
+      )
+      TableNameUpdate.foreach(__v => __obj.updateDynamic("TableNameUpdate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReferenceDataSourceUpdate]
     }
   }
@@ -2967,11 +2993,11 @@ package kinesisanalyticsv2 {
         ApplicationRestoreConfiguration: js.UndefOr[ApplicationRestoreConfiguration] = js.undefined,
         SqlRunConfigurations: js.UndefOr[SqlRunConfigurations] = js.undefined
     ): RunConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       ApplicationRestoreConfiguration.foreach(
-        __v => __obj.update("ApplicationRestoreConfiguration", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ApplicationRestoreConfiguration")(__v.asInstanceOf[js.Any])
       )
-      SqlRunConfigurations.foreach(__v => __obj.update("SqlRunConfigurations", __v.asInstanceOf[js.Any]))
+      SqlRunConfigurations.foreach(__v => __obj.updateDynamic("SqlRunConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RunConfiguration]
     }
   }
@@ -2988,9 +3014,9 @@ package kinesisanalyticsv2 {
     def apply(
         ApplicationRestoreConfigurationDescription: js.UndefOr[ApplicationRestoreConfiguration] = js.undefined
     ): RunConfigurationDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       ApplicationRestoreConfigurationDescription.foreach(
-        __v => __obj.update("ApplicationRestoreConfigurationDescription", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ApplicationRestoreConfigurationDescription")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[RunConfigurationDescription]
     }
@@ -3008,9 +3034,9 @@ package kinesisanalyticsv2 {
     def apply(
         ApplicationRestoreConfiguration: js.UndefOr[ApplicationRestoreConfiguration] = js.undefined
     ): RunConfigurationUpdate = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       ApplicationRestoreConfiguration.foreach(
-        __v => __obj.update("ApplicationRestoreConfiguration", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ApplicationRestoreConfiguration")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[RunConfigurationUpdate]
     }
@@ -3039,12 +3065,12 @@ package kinesisanalyticsv2 {
         FileKey: FileKey,
         ObjectVersion: js.UndefOr[ObjectVersion] = js.undefined
     ): S3ApplicationCodeLocationDescription = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BucketARN" -> BucketARN.asInstanceOf[js.Any],
         "FileKey"   -> FileKey.asInstanceOf[js.Any]
       )
 
-      ObjectVersion.foreach(__v => __obj.update("ObjectVersion", __v.asInstanceOf[js.Any]))
+      ObjectVersion.foreach(__v => __obj.updateDynamic("ObjectVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3ApplicationCodeLocationDescription]
     }
   }
@@ -3063,7 +3089,7 @@ package kinesisanalyticsv2 {
         BucketARN: BucketARN,
         FileKey: FileKey
     ): S3Configuration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BucketARN" -> BucketARN.asInstanceOf[js.Any],
         "FileKey"   -> FileKey.asInstanceOf[js.Any]
       )
@@ -3088,12 +3114,12 @@ package kinesisanalyticsv2 {
         FileKey: FileKey,
         ObjectVersion: js.UndefOr[ObjectVersion] = js.undefined
     ): S3ContentLocation = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BucketARN" -> BucketARN.asInstanceOf[js.Any],
         "FileKey"   -> FileKey.asInstanceOf[js.Any]
       )
 
-      ObjectVersion.foreach(__v => __obj.update("ObjectVersion", __v.asInstanceOf[js.Any]))
+      ObjectVersion.foreach(__v => __obj.updateDynamic("ObjectVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3ContentLocation]
     }
   }
@@ -3114,10 +3140,10 @@ package kinesisanalyticsv2 {
         FileKeyUpdate: js.UndefOr[FileKey] = js.undefined,
         ObjectVersionUpdate: js.UndefOr[ObjectVersion] = js.undefined
     ): S3ContentLocationUpdate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BucketARNUpdate.foreach(__v => __obj.update("BucketARNUpdate", __v.asInstanceOf[js.Any]))
-      FileKeyUpdate.foreach(__v => __obj.update("FileKeyUpdate", __v.asInstanceOf[js.Any]))
-      ObjectVersionUpdate.foreach(__v => __obj.update("ObjectVersionUpdate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BucketARNUpdate.foreach(__v => __obj.updateDynamic("BucketARNUpdate")(__v.asInstanceOf[js.Any]))
+      FileKeyUpdate.foreach(__v => __obj.updateDynamic("FileKeyUpdate")(__v.asInstanceOf[js.Any]))
+      ObjectVersionUpdate.foreach(__v => __obj.updateDynamic("ObjectVersionUpdate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3ContentLocationUpdate]
     }
   }
@@ -3137,9 +3163,9 @@ package kinesisanalyticsv2 {
         BucketARN: js.UndefOr[BucketARN] = js.undefined,
         FileKey: js.UndefOr[FileKey] = js.undefined
     ): S3ReferenceDataSource = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BucketARN.foreach(__v => __obj.update("BucketARN", __v.asInstanceOf[js.Any]))
-      FileKey.foreach(__v => __obj.update("FileKey", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BucketARN.foreach(__v => __obj.updateDynamic("BucketARN")(__v.asInstanceOf[js.Any]))
+      FileKey.foreach(__v => __obj.updateDynamic("FileKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3ReferenceDataSource]
     }
   }
@@ -3160,12 +3186,12 @@ package kinesisanalyticsv2 {
         FileKey: FileKey,
         ReferenceRoleARN: js.UndefOr[RoleARN] = js.undefined
     ): S3ReferenceDataSourceDescription = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BucketARN" -> BucketARN.asInstanceOf[js.Any],
         "FileKey"   -> FileKey.asInstanceOf[js.Any]
       )
 
-      ReferenceRoleARN.foreach(__v => __obj.update("ReferenceRoleARN", __v.asInstanceOf[js.Any]))
+      ReferenceRoleARN.foreach(__v => __obj.updateDynamic("ReferenceRoleARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3ReferenceDataSourceDescription]
     }
   }
@@ -3184,9 +3210,9 @@ package kinesisanalyticsv2 {
         BucketARNUpdate: js.UndefOr[BucketARN] = js.undefined,
         FileKeyUpdate: js.UndefOr[FileKey] = js.undefined
     ): S3ReferenceDataSourceUpdate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BucketARNUpdate.foreach(__v => __obj.update("BucketARNUpdate", __v.asInstanceOf[js.Any]))
-      FileKeyUpdate.foreach(__v => __obj.update("FileKeyUpdate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BucketARNUpdate.foreach(__v => __obj.updateDynamic("BucketARNUpdate")(__v.asInstanceOf[js.Any]))
+      FileKeyUpdate.foreach(__v => __obj.updateDynamic("FileKeyUpdate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3ReferenceDataSourceUpdate]
     }
   }
@@ -3209,13 +3235,15 @@ package kinesisanalyticsv2 {
         SnapshotStatus: SnapshotStatus,
         SnapshotCreationTimestamp: js.UndefOr[Timestamp] = js.undefined
     ): SnapshotDetails = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationVersionId" -> ApplicationVersionId.asInstanceOf[js.Any],
         "SnapshotName"         -> SnapshotName.asInstanceOf[js.Any],
         "SnapshotStatus"       -> SnapshotStatus.asInstanceOf[js.Any]
       )
 
-      SnapshotCreationTimestamp.foreach(__v => __obj.update("SnapshotCreationTimestamp", __v.asInstanceOf[js.Any]))
+      SnapshotCreationTimestamp.foreach(
+        __v => __obj.updateDynamic("SnapshotCreationTimestamp")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[SnapshotDetails]
     }
   }
@@ -3245,12 +3273,12 @@ package kinesisanalyticsv2 {
         RecordFormat: RecordFormat,
         RecordEncoding: js.UndefOr[RecordEncoding] = js.undefined
     ): SourceSchema = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RecordColumns" -> RecordColumns.asInstanceOf[js.Any],
         "RecordFormat"  -> RecordFormat.asInstanceOf[js.Any]
       )
 
-      RecordEncoding.foreach(__v => __obj.update("RecordEncoding", __v.asInstanceOf[js.Any]))
+      RecordEncoding.foreach(__v => __obj.updateDynamic("RecordEncoding")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SourceSchema]
     }
   }
@@ -3271,10 +3299,10 @@ package kinesisanalyticsv2 {
         Outputs: js.UndefOr[Outputs] = js.undefined,
         ReferenceDataSources: js.UndefOr[ReferenceDataSources] = js.undefined
     ): SqlApplicationConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Inputs.foreach(__v => __obj.update("Inputs", __v.asInstanceOf[js.Any]))
-      Outputs.foreach(__v => __obj.update("Outputs", __v.asInstanceOf[js.Any]))
-      ReferenceDataSources.foreach(__v => __obj.update("ReferenceDataSources", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Inputs.foreach(__v => __obj.updateDynamic("Inputs")(__v.asInstanceOf[js.Any]))
+      Outputs.foreach(__v => __obj.updateDynamic("Outputs")(__v.asInstanceOf[js.Any]))
+      ReferenceDataSources.foreach(__v => __obj.updateDynamic("ReferenceDataSources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SqlApplicationConfiguration]
     }
   }
@@ -3295,11 +3323,11 @@ package kinesisanalyticsv2 {
         OutputDescriptions: js.UndefOr[OutputDescriptions] = js.undefined,
         ReferenceDataSourceDescriptions: js.UndefOr[ReferenceDataSourceDescriptions] = js.undefined
     ): SqlApplicationConfigurationDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InputDescriptions.foreach(__v => __obj.update("InputDescriptions", __v.asInstanceOf[js.Any]))
-      OutputDescriptions.foreach(__v => __obj.update("OutputDescriptions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InputDescriptions.foreach(__v => __obj.updateDynamic("InputDescriptions")(__v.asInstanceOf[js.Any]))
+      OutputDescriptions.foreach(__v => __obj.updateDynamic("OutputDescriptions")(__v.asInstanceOf[js.Any]))
       ReferenceDataSourceDescriptions.foreach(
-        __v => __obj.update("ReferenceDataSourceDescriptions", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ReferenceDataSourceDescriptions")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[SqlApplicationConfigurationDescription]
     }
@@ -3321,10 +3349,12 @@ package kinesisanalyticsv2 {
         OutputUpdates: js.UndefOr[OutputUpdates] = js.undefined,
         ReferenceDataSourceUpdates: js.UndefOr[ReferenceDataSourceUpdates] = js.undefined
     ): SqlApplicationConfigurationUpdate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InputUpdates.foreach(__v => __obj.update("InputUpdates", __v.asInstanceOf[js.Any]))
-      OutputUpdates.foreach(__v => __obj.update("OutputUpdates", __v.asInstanceOf[js.Any]))
-      ReferenceDataSourceUpdates.foreach(__v => __obj.update("ReferenceDataSourceUpdates", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InputUpdates.foreach(__v => __obj.updateDynamic("InputUpdates")(__v.asInstanceOf[js.Any]))
+      OutputUpdates.foreach(__v => __obj.updateDynamic("OutputUpdates")(__v.asInstanceOf[js.Any]))
+      ReferenceDataSourceUpdates.foreach(
+        __v => __obj.updateDynamic("ReferenceDataSourceUpdates")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[SqlApplicationConfigurationUpdate]
     }
   }
@@ -3343,7 +3373,7 @@ package kinesisanalyticsv2 {
         InputId: Id,
         InputStartingPositionConfiguration: InputStartingPositionConfiguration
     ): SqlRunConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InputId"                            -> InputId.asInstanceOf[js.Any],
         "InputStartingPositionConfiguration" -> InputStartingPositionConfiguration.asInstanceOf[js.Any]
       )
@@ -3363,7 +3393,7 @@ package kinesisanalyticsv2 {
         ApplicationName: ApplicationName,
         RunConfiguration: RunConfiguration
     ): StartApplicationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName"  -> ApplicationName.asInstanceOf[js.Any],
         "RunConfiguration" -> RunConfiguration.asInstanceOf[js.Any]
       )
@@ -3378,7 +3408,7 @@ package kinesisanalyticsv2 {
   object StartApplicationResponse {
     def apply(
         ): StartApplicationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartApplicationResponse]
     }
@@ -3393,7 +3423,7 @@ package kinesisanalyticsv2 {
     def apply(
         ApplicationName: ApplicationName
     ): StopApplicationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any]
       )
 
@@ -3407,7 +3437,7 @@ package kinesisanalyticsv2 {
   object StopApplicationResponse {
     def apply(
         ): StopApplicationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopApplicationResponse]
     }
@@ -3427,11 +3457,11 @@ package kinesisanalyticsv2 {
         Key: TagKey,
         Value: js.UndefOr[TagValue] = js.undefined
     ): Tag = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key" -> Key.asInstanceOf[js.Any]
       )
 
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tag]
     }
   }
@@ -3447,7 +3477,7 @@ package kinesisanalyticsv2 {
         ResourceARN: KinesisAnalyticsARN,
         Tags: Tags
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
       )
@@ -3462,7 +3492,7 @@ package kinesisanalyticsv2 {
   object TagResourceResponse {
     def apply(
         ): TagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -3479,7 +3509,7 @@ package kinesisanalyticsv2 {
         ResourceARN: KinesisAnalyticsARN,
         TagKeys: TagKeys
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
       )
@@ -3494,7 +3524,7 @@ package kinesisanalyticsv2 {
   object UntagResourceResponse {
     def apply(
         ): UntagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -3519,19 +3549,21 @@ package kinesisanalyticsv2 {
         RunConfigurationUpdate: js.UndefOr[RunConfigurationUpdate] = js.undefined,
         ServiceExecutionRoleUpdate: js.UndefOr[RoleARN] = js.undefined
     ): UpdateApplicationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName"             -> ApplicationName.asInstanceOf[js.Any],
         "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any]
       )
 
       ApplicationConfigurationUpdate.foreach(
-        __v => __obj.update("ApplicationConfigurationUpdate", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ApplicationConfigurationUpdate")(__v.asInstanceOf[js.Any])
       )
       CloudWatchLoggingOptionUpdates.foreach(
-        __v => __obj.update("CloudWatchLoggingOptionUpdates", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("CloudWatchLoggingOptionUpdates")(__v.asInstanceOf[js.Any])
       )
-      RunConfigurationUpdate.foreach(__v => __obj.update("RunConfigurationUpdate", __v.asInstanceOf[js.Any]))
-      ServiceExecutionRoleUpdate.foreach(__v => __obj.update("ServiceExecutionRoleUpdate", __v.asInstanceOf[js.Any]))
+      RunConfigurationUpdate.foreach(__v => __obj.updateDynamic("RunConfigurationUpdate")(__v.asInstanceOf[js.Any]))
+      ServiceExecutionRoleUpdate.foreach(
+        __v => __obj.updateDynamic("ServiceExecutionRoleUpdate")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[UpdateApplicationRequest]
     }
   }
@@ -3545,7 +3577,7 @@ package kinesisanalyticsv2 {
     def apply(
         ApplicationDetail: ApplicationDetail
     ): UpdateApplicationResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationDetail" -> ApplicationDetail.asInstanceOf[js.Any]
       )
 

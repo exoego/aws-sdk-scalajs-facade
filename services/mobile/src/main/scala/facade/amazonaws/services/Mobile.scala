@@ -118,13 +118,13 @@ package mobile {
         title: js.UndefOr[BundleTitle] = js.undefined,
         version: js.UndefOr[BundleVersion] = js.undefined
     ): BundleDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      availablePlatforms.foreach(__v => __obj.update("availablePlatforms", __v.asInstanceOf[js.Any]))
-      bundleId.foreach(__v => __obj.update("bundleId", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      iconUrl.foreach(__v => __obj.update("iconUrl", __v.asInstanceOf[js.Any]))
-      title.foreach(__v => __obj.update("title", __v.asInstanceOf[js.Any]))
-      version.foreach(__v => __obj.update("version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      availablePlatforms.foreach(__v => __obj.updateDynamic("availablePlatforms")(__v.asInstanceOf[js.Any]))
+      bundleId.foreach(__v => __obj.updateDynamic("bundleId")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      iconUrl.foreach(__v => __obj.updateDynamic("iconUrl")(__v.asInstanceOf[js.Any]))
+      title.foreach(__v => __obj.updateDynamic("title")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BundleDetails]
     }
   }
@@ -147,11 +147,11 @@ package mobile {
         region: js.UndefOr[ProjectRegion] = js.undefined,
         snapshotId: js.UndefOr[SnapshotId] = js.undefined
     ): CreateProjectRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      contents.foreach(__v => __obj.update("contents", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      region.foreach(__v => __obj.update("region", __v.asInstanceOf[js.Any]))
-      snapshotId.foreach(__v => __obj.update("snapshotId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      contents.foreach(__v => __obj.updateDynamic("contents")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
+      snapshotId.foreach(__v => __obj.updateDynamic("snapshotId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateProjectRequest]
     }
   }
@@ -168,8 +168,8 @@ package mobile {
     def apply(
         details: js.UndefOr[ProjectDetails] = js.undefined
     ): CreateProjectResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      details.foreach(__v => __obj.update("details", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateProjectResult]
     }
   }
@@ -186,7 +186,7 @@ package mobile {
     def apply(
         projectId: ProjectId
     ): DeleteProjectRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "projectId" -> projectId.asInstanceOf[js.Any]
       )
 
@@ -208,9 +208,9 @@ package mobile {
         deletedResources: js.UndefOr[Resources] = js.undefined,
         orphanedResources: js.UndefOr[Resources] = js.undefined
     ): DeleteProjectResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      deletedResources.foreach(__v => __obj.update("deletedResources", __v.asInstanceOf[js.Any]))
-      orphanedResources.foreach(__v => __obj.update("orphanedResources", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      deletedResources.foreach(__v => __obj.updateDynamic("deletedResources")(__v.asInstanceOf[js.Any]))
+      orphanedResources.foreach(__v => __obj.updateDynamic("orphanedResources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteProjectResult]
     }
   }
@@ -227,7 +227,7 @@ package mobile {
     def apply(
         bundleId: BundleId
     ): DescribeBundleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "bundleId" -> bundleId.asInstanceOf[js.Any]
       )
 
@@ -247,8 +247,8 @@ package mobile {
     def apply(
         details: js.UndefOr[BundleDetails] = js.undefined
     ): DescribeBundleResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      details.foreach(__v => __obj.update("details", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeBundleResult]
     }
   }
@@ -267,11 +267,11 @@ package mobile {
         projectId: ProjectId,
         syncFromResources: js.UndefOr[Boolean] = js.undefined
     ): DescribeProjectRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "projectId" -> projectId.asInstanceOf[js.Any]
       )
 
-      syncFromResources.foreach(__v => __obj.update("syncFromResources", __v.asInstanceOf[js.Any]))
+      syncFromResources.foreach(__v => __obj.updateDynamic("syncFromResources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProjectRequest]
     }
   }
@@ -288,8 +288,8 @@ package mobile {
     def apply(
         details: js.UndefOr[ProjectDetails] = js.undefined
     ): DescribeProjectResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      details.foreach(__v => __obj.update("details", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProjectResult]
     }
   }
@@ -310,12 +310,12 @@ package mobile {
         platform: js.UndefOr[Platform] = js.undefined,
         projectId: js.UndefOr[ProjectId] = js.undefined
     ): ExportBundleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "bundleId" -> bundleId.asInstanceOf[js.Any]
       )
 
-      platform.foreach(__v => __obj.update("platform", __v.asInstanceOf[js.Any]))
-      projectId.foreach(__v => __obj.update("projectId", __v.asInstanceOf[js.Any]))
+      platform.foreach(__v => __obj.updateDynamic("platform")(__v.asInstanceOf[js.Any]))
+      projectId.foreach(__v => __obj.updateDynamic("projectId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportBundleRequest]
     }
   }
@@ -332,8 +332,8 @@ package mobile {
     def apply(
         downloadUrl: js.UndefOr[DownloadUrl] = js.undefined
     ): ExportBundleResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      downloadUrl.foreach(__v => __obj.update("downloadUrl", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      downloadUrl.foreach(__v => __obj.updateDynamic("downloadUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportBundleResult]
     }
   }
@@ -350,7 +350,7 @@ package mobile {
     def apply(
         projectId: ProjectId
     ): ExportProjectRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "projectId" -> projectId.asInstanceOf[js.Any]
       )
 
@@ -374,10 +374,10 @@ package mobile {
         shareUrl: js.UndefOr[ShareUrl] = js.undefined,
         snapshotId: js.UndefOr[SnapshotId] = js.undefined
     ): ExportProjectResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      downloadUrl.foreach(__v => __obj.update("downloadUrl", __v.asInstanceOf[js.Any]))
-      shareUrl.foreach(__v => __obj.update("shareUrl", __v.asInstanceOf[js.Any]))
-      snapshotId.foreach(__v => __obj.update("snapshotId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      downloadUrl.foreach(__v => __obj.updateDynamic("downloadUrl")(__v.asInstanceOf[js.Any]))
+      shareUrl.foreach(__v => __obj.updateDynamic("shareUrl")(__v.asInstanceOf[js.Any]))
+      snapshotId.foreach(__v => __obj.updateDynamic("snapshotId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportProjectResult]
     }
   }
@@ -413,9 +413,9 @@ package mobile {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListBundlesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBundlesRequest]
     }
   }
@@ -434,9 +434,9 @@ package mobile {
         bundleList: js.UndefOr[BundleList] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListBundlesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      bundleList.foreach(__v => __obj.update("bundleList", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      bundleList.foreach(__v => __obj.updateDynamic("bundleList")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBundlesResult]
     }
   }
@@ -455,9 +455,9 @@ package mobile {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): ListProjectsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListProjectsRequest]
     }
   }
@@ -476,9 +476,9 @@ package mobile {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         projects: js.UndefOr[ProjectSummaries] = js.undefined
     ): ListProjectsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      projects.foreach(__v => __obj.update("projects", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      projects.foreach(__v => __obj.updateDynamic("projects")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListProjectsResult]
     }
   }
@@ -532,15 +532,15 @@ package mobile {
         resources: js.UndefOr[Resources] = js.undefined,
         state: js.UndefOr[ProjectState] = js.undefined
     ): ProjectDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      consoleUrl.foreach(__v => __obj.update("consoleUrl", __v.asInstanceOf[js.Any]))
-      createdDate.foreach(__v => __obj.update("createdDate", __v.asInstanceOf[js.Any]))
-      lastUpdatedDate.foreach(__v => __obj.update("lastUpdatedDate", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      projectId.foreach(__v => __obj.update("projectId", __v.asInstanceOf[js.Any]))
-      region.foreach(__v => __obj.update("region", __v.asInstanceOf[js.Any]))
-      resources.foreach(__v => __obj.update("resources", __v.asInstanceOf[js.Any]))
-      state.foreach(__v => __obj.update("state", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      consoleUrl.foreach(__v => __obj.updateDynamic("consoleUrl")(__v.asInstanceOf[js.Any]))
+      createdDate.foreach(__v => __obj.updateDynamic("createdDate")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDate.foreach(__v => __obj.updateDynamic("lastUpdatedDate")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      projectId.foreach(__v => __obj.updateDynamic("projectId")(__v.asInstanceOf[js.Any]))
+      region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
+      resources.foreach(__v => __obj.updateDynamic("resources")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProjectDetails]
     }
   }
@@ -570,9 +570,9 @@ package mobile {
         name: js.UndefOr[ProjectName] = js.undefined,
         projectId: js.UndefOr[ProjectId] = js.undefined
     ): ProjectSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      projectId.foreach(__v => __obj.update("projectId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      projectId.foreach(__v => __obj.updateDynamic("projectId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProjectSummary]
     }
   }
@@ -597,12 +597,12 @@ package mobile {
         name: js.UndefOr[ResourceName] = js.undefined,
         `type`: js.UndefOr[ResourceType] = js.undefined
     ): Resource = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      attributes.foreach(__v => __obj.update("attributes", __v.asInstanceOf[js.Any]))
-      feature.foreach(__v => __obj.update("feature", __v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      `type`.foreach(__v => __obj.update("type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
+      feature.foreach(__v => __obj.updateDynamic("feature")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Resource]
     }
   }
@@ -647,11 +647,11 @@ package mobile {
         projectId: ProjectId,
         contents: js.UndefOr[Contents] = js.undefined
     ): UpdateProjectRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "projectId" -> projectId.asInstanceOf[js.Any]
       )
 
-      contents.foreach(__v => __obj.update("contents", __v.asInstanceOf[js.Any]))
+      contents.foreach(__v => __obj.updateDynamic("contents")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateProjectRequest]
     }
   }
@@ -668,8 +668,8 @@ package mobile {
     def apply(
         details: js.UndefOr[ProjectDetails] = js.undefined
     ): UpdateProjectResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      details.foreach(__v => __obj.update("details", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateProjectResult]
     }
   }

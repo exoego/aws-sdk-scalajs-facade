@@ -255,13 +255,13 @@ package elb {
         S3BucketName: js.UndefOr[S3BucketName] = js.undefined,
         S3BucketPrefix: js.UndefOr[AccessLogPrefix] = js.undefined
     ): AccessLog = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Enabled" -> Enabled.asInstanceOf[js.Any]
       )
 
-      EmitInterval.foreach(__v => __obj.update("EmitInterval", __v.asInstanceOf[js.Any]))
-      S3BucketName.foreach(__v => __obj.update("S3BucketName", __v.asInstanceOf[js.Any]))
-      S3BucketPrefix.foreach(__v => __obj.update("S3BucketPrefix", __v.asInstanceOf[js.Any]))
+      EmitInterval.foreach(__v => __obj.updateDynamic("EmitInterval")(__v.asInstanceOf[js.Any]))
+      S3BucketName.foreach(__v => __obj.updateDynamic("S3BucketName")(__v.asInstanceOf[js.Any]))
+      S3BucketPrefix.foreach(__v => __obj.updateDynamic("S3BucketPrefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AccessLog]
     }
   }
@@ -280,7 +280,7 @@ package elb {
         AvailabilityZones: AvailabilityZones,
         LoadBalancerName: AccessPointName
     ): AddAvailabilityZonesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AvailabilityZones" -> AvailabilityZones.asInstanceOf[js.Any],
         "LoadBalancerName"  -> LoadBalancerName.asInstanceOf[js.Any]
       )
@@ -301,8 +301,8 @@ package elb {
     def apply(
         AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined
     ): AddAvailabilityZonesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddAvailabilityZonesOutput]
     }
   }
@@ -321,7 +321,7 @@ package elb {
         LoadBalancerNames: LoadBalancerNames,
         Tags: TagList
     ): AddTagsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LoadBalancerNames" -> LoadBalancerNames.asInstanceOf[js.Any],
         "Tags"              -> Tags.asInstanceOf[js.Any]
       )
@@ -339,7 +339,7 @@ package elb {
   object AddTagsOutput {
     def apply(
         ): AddTagsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AddTagsOutput]
     }
@@ -359,9 +359,9 @@ package elb {
         Key: js.UndefOr[AdditionalAttributeKey] = js.undefined,
         Value: js.UndefOr[AdditionalAttributeValue] = js.undefined
     ): AdditionalAttribute = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AdditionalAttribute]
     }
   }
@@ -380,9 +380,9 @@ package elb {
         CookieName: js.UndefOr[CookieName] = js.undefined,
         PolicyName: js.UndefOr[PolicyName] = js.undefined
     ): AppCookieStickinessPolicy = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CookieName.foreach(__v => __obj.update("CookieName", __v.asInstanceOf[js.Any]))
-      PolicyName.foreach(__v => __obj.update("PolicyName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CookieName.foreach(__v => __obj.updateDynamic("CookieName")(__v.asInstanceOf[js.Any]))
+      PolicyName.foreach(__v => __obj.updateDynamic("PolicyName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AppCookieStickinessPolicy]
     }
   }
@@ -401,7 +401,7 @@ package elb {
         LoadBalancerName: AccessPointName,
         SecurityGroups: SecurityGroups
     ): ApplySecurityGroupsToLoadBalancerInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
         "SecurityGroups"   -> SecurityGroups.asInstanceOf[js.Any]
       )
@@ -422,8 +422,8 @@ package elb {
     def apply(
         SecurityGroups: js.UndefOr[SecurityGroups] = js.undefined
     ): ApplySecurityGroupsToLoadBalancerOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SecurityGroups.foreach(__v => __obj.update("SecurityGroups", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplySecurityGroupsToLoadBalancerOutput]
     }
   }
@@ -442,7 +442,7 @@ package elb {
         LoadBalancerName: AccessPointName,
         Subnets: Subnets
     ): AttachLoadBalancerToSubnetsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
         "Subnets"          -> Subnets.asInstanceOf[js.Any]
       )
@@ -463,8 +463,8 @@ package elb {
     def apply(
         Subnets: js.UndefOr[Subnets] = js.undefined
     ): AttachLoadBalancerToSubnetsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Subnets.foreach(__v => __obj.update("Subnets", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Subnets.foreach(__v => __obj.updateDynamic("Subnets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttachLoadBalancerToSubnetsOutput]
     }
   }
@@ -483,9 +483,9 @@ package elb {
         InstancePort: js.UndefOr[InstancePort] = js.undefined,
         PolicyNames: js.UndefOr[PolicyNames] = js.undefined
     ): BackendServerDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InstancePort.foreach(__v => __obj.update("InstancePort", __v.asInstanceOf[js.Any]))
-      PolicyNames.foreach(__v => __obj.update("PolicyNames", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InstancePort.foreach(__v => __obj.updateDynamic("InstancePort")(__v.asInstanceOf[js.Any]))
+      PolicyNames.foreach(__v => __obj.updateDynamic("PolicyNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BackendServerDescription]
     }
   }
@@ -504,7 +504,7 @@ package elb {
         HealthCheck: HealthCheck,
         LoadBalancerName: AccessPointName
     ): ConfigureHealthCheckInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HealthCheck"      -> HealthCheck.asInstanceOf[js.Any],
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
       )
@@ -525,8 +525,8 @@ package elb {
     def apply(
         HealthCheck: js.UndefOr[HealthCheck] = js.undefined
     ): ConfigureHealthCheckOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      HealthCheck.foreach(__v => __obj.update("HealthCheck", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      HealthCheck.foreach(__v => __obj.updateDynamic("HealthCheck")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfigureHealthCheckOutput]
     }
   }
@@ -545,11 +545,11 @@ package elb {
         Enabled: ConnectionDrainingEnabled,
         Timeout: js.UndefOr[ConnectionDrainingTimeout] = js.undefined
     ): ConnectionDraining = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Enabled" -> Enabled.asInstanceOf[js.Any]
       )
 
-      Timeout.foreach(__v => __obj.update("Timeout", __v.asInstanceOf[js.Any]))
+      Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConnectionDraining]
     }
   }
@@ -566,7 +566,7 @@ package elb {
     def apply(
         IdleTimeout: IdleTimeout
     ): ConnectionSettings = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IdleTimeout" -> IdleTimeout.asInstanceOf[js.Any]
       )
 
@@ -598,16 +598,16 @@ package elb {
         Subnets: js.UndefOr[Subnets] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateAccessPointInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Listeners"        -> Listeners.asInstanceOf[js.Any],
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
       )
 
-      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
-      Scheme.foreach(__v => __obj.update("Scheme", __v.asInstanceOf[js.Any]))
-      SecurityGroups.foreach(__v => __obj.update("SecurityGroups", __v.asInstanceOf[js.Any]))
-      Subnets.foreach(__v => __obj.update("Subnets", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
+      Scheme.foreach(__v => __obj.updateDynamic("Scheme")(__v.asInstanceOf[js.Any]))
+      SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
+      Subnets.foreach(__v => __obj.updateDynamic("Subnets")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAccessPointInput]
     }
   }
@@ -624,8 +624,8 @@ package elb {
     def apply(
         DNSName: js.UndefOr[DNSName] = js.undefined
     ): CreateAccessPointOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DNSName.foreach(__v => __obj.update("DNSName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DNSName.foreach(__v => __obj.updateDynamic("DNSName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAccessPointOutput]
     }
   }
@@ -646,7 +646,7 @@ package elb {
         LoadBalancerName: AccessPointName,
         PolicyName: PolicyName
     ): CreateAppCookieStickinessPolicyInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CookieName"       -> CookieName.asInstanceOf[js.Any],
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
         "PolicyName"       -> PolicyName.asInstanceOf[js.Any]
@@ -665,7 +665,7 @@ package elb {
   object CreateAppCookieStickinessPolicyOutput {
     def apply(
         ): CreateAppCookieStickinessPolicyOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateAppCookieStickinessPolicyOutput]
     }
@@ -687,12 +687,12 @@ package elb {
         PolicyName: PolicyName,
         CookieExpirationPeriod: js.UndefOr[CookieExpirationPeriod] = js.undefined
     ): CreateLBCookieStickinessPolicyInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
         "PolicyName"       -> PolicyName.asInstanceOf[js.Any]
       )
 
-      CookieExpirationPeriod.foreach(__v => __obj.update("CookieExpirationPeriod", __v.asInstanceOf[js.Any]))
+      CookieExpirationPeriod.foreach(__v => __obj.updateDynamic("CookieExpirationPeriod")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLBCookieStickinessPolicyInput]
     }
   }
@@ -706,7 +706,7 @@ package elb {
   object CreateLBCookieStickinessPolicyOutput {
     def apply(
         ): CreateLBCookieStickinessPolicyOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateLBCookieStickinessPolicyOutput]
     }
@@ -726,7 +726,7 @@ package elb {
         Listeners: Listeners,
         LoadBalancerName: AccessPointName
     ): CreateLoadBalancerListenerInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Listeners"        -> Listeners.asInstanceOf[js.Any],
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
       )
@@ -744,7 +744,7 @@ package elb {
   object CreateLoadBalancerListenerOutput {
     def apply(
         ): CreateLoadBalancerListenerOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateLoadBalancerListenerOutput]
     }
@@ -768,13 +768,13 @@ package elb {
         PolicyTypeName: PolicyTypeName,
         PolicyAttributes: js.UndefOr[PolicyAttributes] = js.undefined
     ): CreateLoadBalancerPolicyInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
         "PolicyName"       -> PolicyName.asInstanceOf[js.Any],
         "PolicyTypeName"   -> PolicyTypeName.asInstanceOf[js.Any]
       )
 
-      PolicyAttributes.foreach(__v => __obj.update("PolicyAttributes", __v.asInstanceOf[js.Any]))
+      PolicyAttributes.foreach(__v => __obj.updateDynamic("PolicyAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLoadBalancerPolicyInput]
     }
   }
@@ -788,7 +788,7 @@ package elb {
   object CreateLoadBalancerPolicyOutput {
     def apply(
         ): CreateLoadBalancerPolicyOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateLoadBalancerPolicyOutput]
     }
@@ -806,7 +806,7 @@ package elb {
     def apply(
         Enabled: CrossZoneLoadBalancingEnabled
     ): CrossZoneLoadBalancing = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Enabled" -> Enabled.asInstanceOf[js.Any]
       )
 
@@ -826,7 +826,7 @@ package elb {
     def apply(
         LoadBalancerName: AccessPointName
     ): DeleteAccessPointInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
       )
 
@@ -843,7 +843,7 @@ package elb {
   object DeleteAccessPointOutput {
     def apply(
         ): DeleteAccessPointOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteAccessPointOutput]
     }
@@ -863,7 +863,7 @@ package elb {
         LoadBalancerName: AccessPointName,
         LoadBalancerPorts: Ports
     ): DeleteLoadBalancerListenerInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LoadBalancerName"  -> LoadBalancerName.asInstanceOf[js.Any],
         "LoadBalancerPorts" -> LoadBalancerPorts.asInstanceOf[js.Any]
       )
@@ -881,7 +881,7 @@ package elb {
   object DeleteLoadBalancerListenerOutput {
     def apply(
         ): DeleteLoadBalancerListenerOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteLoadBalancerListenerOutput]
     }
@@ -901,7 +901,7 @@ package elb {
         LoadBalancerName: AccessPointName,
         PolicyName: PolicyName
     ): DeleteLoadBalancerPolicyInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
         "PolicyName"       -> PolicyName.asInstanceOf[js.Any]
       )
@@ -919,7 +919,7 @@ package elb {
   object DeleteLoadBalancerPolicyOutput {
     def apply(
         ): DeleteLoadBalancerPolicyOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteLoadBalancerPolicyOutput]
     }
@@ -939,7 +939,7 @@ package elb {
         Instances: Instances,
         LoadBalancerName: AccessPointName
     ): DeregisterEndPointsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Instances"        -> Instances.asInstanceOf[js.Any],
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
       )
@@ -960,8 +960,8 @@ package elb {
     def apply(
         Instances: js.UndefOr[Instances] = js.undefined
     ): DeregisterEndPointsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Instances.foreach(__v => __obj.update("Instances", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Instances.foreach(__v => __obj.updateDynamic("Instances")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeregisterEndPointsOutput]
     }
   }
@@ -982,10 +982,10 @@ package elb {
         Marker: js.UndefOr[Marker] = js.undefined,
         PageSize: js.UndefOr[PageSize] = js.undefined
     ): DescribeAccessPointsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LoadBalancerNames.foreach(__v => __obj.update("LoadBalancerNames", __v.asInstanceOf[js.Any]))
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LoadBalancerNames.foreach(__v => __obj.updateDynamic("LoadBalancerNames")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAccessPointsInput]
     }
   }
@@ -1004,9 +1004,9 @@ package elb {
         LoadBalancerDescriptions: js.UndefOr[LoadBalancerDescriptions] = js.undefined,
         NextMarker: js.UndefOr[Marker] = js.undefined
     ): DescribeAccessPointsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LoadBalancerDescriptions.foreach(__v => __obj.update("LoadBalancerDescriptions", __v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LoadBalancerDescriptions.foreach(__v => __obj.updateDynamic("LoadBalancerDescriptions")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAccessPointsOutput]
     }
   }
@@ -1022,9 +1022,9 @@ package elb {
         Marker: js.UndefOr[Marker] = js.undefined,
         PageSize: js.UndefOr[PageSize] = js.undefined
     ): DescribeAccountLimitsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Marker.foreach(__v => __obj.update("Marker", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAccountLimitsInput]
     }
   }
@@ -1040,9 +1040,9 @@ package elb {
         Limits: js.UndefOr[Limits] = js.undefined,
         NextMarker: js.UndefOr[Marker] = js.undefined
     ): DescribeAccountLimitsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Limits.foreach(__v => __obj.update("Limits", __v.asInstanceOf[js.Any]))
-      NextMarker.foreach(__v => __obj.update("NextMarker", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Limits.foreach(__v => __obj.updateDynamic("Limits")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAccountLimitsOutput]
     }
   }
@@ -1061,11 +1061,11 @@ package elb {
         LoadBalancerName: AccessPointName,
         Instances: js.UndefOr[Instances] = js.undefined
     ): DescribeEndPointStateInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
       )
 
-      Instances.foreach(__v => __obj.update("Instances", __v.asInstanceOf[js.Any]))
+      Instances.foreach(__v => __obj.updateDynamic("Instances")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEndPointStateInput]
     }
   }
@@ -1082,8 +1082,8 @@ package elb {
     def apply(
         InstanceStates: js.UndefOr[InstanceStates] = js.undefined
     ): DescribeEndPointStateOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InstanceStates.foreach(__v => __obj.update("InstanceStates", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InstanceStates.foreach(__v => __obj.updateDynamic("InstanceStates")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEndPointStateOutput]
     }
   }
@@ -1100,7 +1100,7 @@ package elb {
     def apply(
         LoadBalancerName: AccessPointName
     ): DescribeLoadBalancerAttributesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
       )
 
@@ -1120,8 +1120,8 @@ package elb {
     def apply(
         LoadBalancerAttributes: js.UndefOr[LoadBalancerAttributes] = js.undefined
     ): DescribeLoadBalancerAttributesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LoadBalancerAttributes.foreach(__v => __obj.update("LoadBalancerAttributes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LoadBalancerAttributes.foreach(__v => __obj.updateDynamic("LoadBalancerAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLoadBalancerAttributesOutput]
     }
   }
@@ -1140,9 +1140,9 @@ package elb {
         LoadBalancerName: js.UndefOr[AccessPointName] = js.undefined,
         PolicyNames: js.UndefOr[PolicyNames] = js.undefined
     ): DescribeLoadBalancerPoliciesInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LoadBalancerName.foreach(__v => __obj.update("LoadBalancerName", __v.asInstanceOf[js.Any]))
-      PolicyNames.foreach(__v => __obj.update("PolicyNames", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LoadBalancerName.foreach(__v => __obj.updateDynamic("LoadBalancerName")(__v.asInstanceOf[js.Any]))
+      PolicyNames.foreach(__v => __obj.updateDynamic("PolicyNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLoadBalancerPoliciesInput]
     }
   }
@@ -1159,8 +1159,8 @@ package elb {
     def apply(
         PolicyDescriptions: js.UndefOr[PolicyDescriptions] = js.undefined
     ): DescribeLoadBalancerPoliciesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PolicyDescriptions.foreach(__v => __obj.update("PolicyDescriptions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PolicyDescriptions.foreach(__v => __obj.updateDynamic("PolicyDescriptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLoadBalancerPoliciesOutput]
     }
   }
@@ -1177,8 +1177,8 @@ package elb {
     def apply(
         PolicyTypeNames: js.UndefOr[PolicyTypeNames] = js.undefined
     ): DescribeLoadBalancerPolicyTypesInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PolicyTypeNames.foreach(__v => __obj.update("PolicyTypeNames", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PolicyTypeNames.foreach(__v => __obj.updateDynamic("PolicyTypeNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLoadBalancerPolicyTypesInput]
     }
   }
@@ -1195,8 +1195,8 @@ package elb {
     def apply(
         PolicyTypeDescriptions: js.UndefOr[PolicyTypeDescriptions] = js.undefined
     ): DescribeLoadBalancerPolicyTypesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PolicyTypeDescriptions.foreach(__v => __obj.update("PolicyTypeDescriptions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PolicyTypeDescriptions.foreach(__v => __obj.updateDynamic("PolicyTypeDescriptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLoadBalancerPolicyTypesOutput]
     }
   }
@@ -1213,7 +1213,7 @@ package elb {
     def apply(
         LoadBalancerNames: LoadBalancerNamesMax20
     ): DescribeTagsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LoadBalancerNames" -> LoadBalancerNames.asInstanceOf[js.Any]
       )
 
@@ -1233,8 +1233,8 @@ package elb {
     def apply(
         TagDescriptions: js.UndefOr[TagDescriptions] = js.undefined
     ): DescribeTagsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TagDescriptions.foreach(__v => __obj.update("TagDescriptions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TagDescriptions.foreach(__v => __obj.updateDynamic("TagDescriptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTagsOutput]
     }
   }
@@ -1253,7 +1253,7 @@ package elb {
         LoadBalancerName: AccessPointName,
         Subnets: Subnets
     ): DetachLoadBalancerFromSubnetsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
         "Subnets"          -> Subnets.asInstanceOf[js.Any]
       )
@@ -1274,8 +1274,8 @@ package elb {
     def apply(
         Subnets: js.UndefOr[Subnets] = js.undefined
     ): DetachLoadBalancerFromSubnetsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Subnets.foreach(__v => __obj.update("Subnets", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Subnets.foreach(__v => __obj.updateDynamic("Subnets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DetachLoadBalancerFromSubnetsOutput]
     }
   }
@@ -1300,7 +1300,7 @@ package elb {
         Timeout: HealthCheckTimeout,
         UnhealthyThreshold: UnhealthyThreshold
     ): HealthCheck = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HealthyThreshold"   -> HealthyThreshold.asInstanceOf[js.Any],
         "Interval"           -> Interval.asInstanceOf[js.Any],
         "Target"             -> Target.asInstanceOf[js.Any],
@@ -1324,8 +1324,8 @@ package elb {
     def apply(
         InstanceId: js.UndefOr[InstanceId] = js.undefined
     ): Instance = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Instance]
     }
   }
@@ -1348,11 +1348,11 @@ package elb {
         ReasonCode: js.UndefOr[ReasonCode] = js.undefined,
         State: js.UndefOr[State] = js.undefined
     ): InstanceState = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      ReasonCode.foreach(__v => __obj.update("ReasonCode", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      ReasonCode.foreach(__v => __obj.updateDynamic("ReasonCode")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceState]
     }
   }
@@ -1371,9 +1371,9 @@ package elb {
         CookieExpirationPeriod: js.UndefOr[CookieExpirationPeriod] = js.undefined,
         PolicyName: js.UndefOr[PolicyName] = js.undefined
     ): LBCookieStickinessPolicy = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CookieExpirationPeriod.foreach(__v => __obj.update("CookieExpirationPeriod", __v.asInstanceOf[js.Any]))
-      PolicyName.foreach(__v => __obj.update("PolicyName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CookieExpirationPeriod.foreach(__v => __obj.updateDynamic("CookieExpirationPeriod")(__v.asInstanceOf[js.Any]))
+      PolicyName.foreach(__v => __obj.updateDynamic("PolicyName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LBCookieStickinessPolicy]
     }
   }
@@ -1392,9 +1392,9 @@ package elb {
         Max: js.UndefOr[Max] = js.undefined,
         Name: js.UndefOr[Name] = js.undefined
     ): Limit = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Max.foreach(__v => __obj.update("Max", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Max.foreach(__v => __obj.updateDynamic("Max")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Limit]
     }
   }
@@ -1420,14 +1420,14 @@ package elb {
         InstanceProtocol: js.UndefOr[Protocol] = js.undefined,
         SSLCertificateId: js.UndefOr[SSLCertificateId] = js.undefined
     ): Listener = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstancePort"     -> InstancePort.asInstanceOf[js.Any],
         "LoadBalancerPort" -> LoadBalancerPort.asInstanceOf[js.Any],
         "Protocol"         -> Protocol.asInstanceOf[js.Any]
       )
 
-      InstanceProtocol.foreach(__v => __obj.update("InstanceProtocol", __v.asInstanceOf[js.Any]))
-      SSLCertificateId.foreach(__v => __obj.update("SSLCertificateId", __v.asInstanceOf[js.Any]))
+      InstanceProtocol.foreach(__v => __obj.updateDynamic("InstanceProtocol")(__v.asInstanceOf[js.Any]))
+      SSLCertificateId.foreach(__v => __obj.updateDynamic("SSLCertificateId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Listener]
     }
   }
@@ -1446,9 +1446,9 @@ package elb {
         Listener: js.UndefOr[Listener] = js.undefined,
         PolicyNames: js.UndefOr[PolicyNames] = js.undefined
     ): ListenerDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Listener.foreach(__v => __obj.update("Listener", __v.asInstanceOf[js.Any]))
-      PolicyNames.foreach(__v => __obj.update("PolicyNames", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Listener.foreach(__v => __obj.updateDynamic("Listener")(__v.asInstanceOf[js.Any]))
+      PolicyNames.foreach(__v => __obj.updateDynamic("PolicyNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListenerDescription]
     }
   }
@@ -1473,12 +1473,12 @@ package elb {
         ConnectionSettings: js.UndefOr[ConnectionSettings] = js.undefined,
         CrossZoneLoadBalancing: js.UndefOr[CrossZoneLoadBalancing] = js.undefined
     ): LoadBalancerAttributes = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccessLog.foreach(__v => __obj.update("AccessLog", __v.asInstanceOf[js.Any]))
-      AdditionalAttributes.foreach(__v => __obj.update("AdditionalAttributes", __v.asInstanceOf[js.Any]))
-      ConnectionDraining.foreach(__v => __obj.update("ConnectionDraining", __v.asInstanceOf[js.Any]))
-      ConnectionSettings.foreach(__v => __obj.update("ConnectionSettings", __v.asInstanceOf[js.Any]))
-      CrossZoneLoadBalancing.foreach(__v => __obj.update("CrossZoneLoadBalancing", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccessLog.foreach(__v => __obj.updateDynamic("AccessLog")(__v.asInstanceOf[js.Any]))
+      AdditionalAttributes.foreach(__v => __obj.updateDynamic("AdditionalAttributes")(__v.asInstanceOf[js.Any]))
+      ConnectionDraining.foreach(__v => __obj.updateDynamic("ConnectionDraining")(__v.asInstanceOf[js.Any]))
+      ConnectionSettings.foreach(__v => __obj.updateDynamic("ConnectionSettings")(__v.asInstanceOf[js.Any]))
+      CrossZoneLoadBalancing.foreach(__v => __obj.updateDynamic("CrossZoneLoadBalancing")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoadBalancerAttributes]
     }
   }
@@ -1525,23 +1525,27 @@ package elb {
         Subnets: js.UndefOr[Subnets] = js.undefined,
         VPCId: js.UndefOr[VPCId] = js.undefined
     ): LoadBalancerDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
-      BackendServerDescriptions.foreach(__v => __obj.update("BackendServerDescriptions", __v.asInstanceOf[js.Any]))
-      CanonicalHostedZoneName.foreach(__v => __obj.update("CanonicalHostedZoneName", __v.asInstanceOf[js.Any]))
-      CanonicalHostedZoneNameID.foreach(__v => __obj.update("CanonicalHostedZoneNameID", __v.asInstanceOf[js.Any]))
-      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
-      DNSName.foreach(__v => __obj.update("DNSName", __v.asInstanceOf[js.Any]))
-      HealthCheck.foreach(__v => __obj.update("HealthCheck", __v.asInstanceOf[js.Any]))
-      Instances.foreach(__v => __obj.update("Instances", __v.asInstanceOf[js.Any]))
-      ListenerDescriptions.foreach(__v => __obj.update("ListenerDescriptions", __v.asInstanceOf[js.Any]))
-      LoadBalancerName.foreach(__v => __obj.update("LoadBalancerName", __v.asInstanceOf[js.Any]))
-      Policies.foreach(__v => __obj.update("Policies", __v.asInstanceOf[js.Any]))
-      Scheme.foreach(__v => __obj.update("Scheme", __v.asInstanceOf[js.Any]))
-      SecurityGroups.foreach(__v => __obj.update("SecurityGroups", __v.asInstanceOf[js.Any]))
-      SourceSecurityGroup.foreach(__v => __obj.update("SourceSecurityGroup", __v.asInstanceOf[js.Any]))
-      Subnets.foreach(__v => __obj.update("Subnets", __v.asInstanceOf[js.Any]))
-      VPCId.foreach(__v => __obj.update("VPCId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
+      BackendServerDescriptions.foreach(
+        __v => __obj.updateDynamic("BackendServerDescriptions")(__v.asInstanceOf[js.Any])
+      )
+      CanonicalHostedZoneName.foreach(__v => __obj.updateDynamic("CanonicalHostedZoneName")(__v.asInstanceOf[js.Any]))
+      CanonicalHostedZoneNameID.foreach(
+        __v => __obj.updateDynamic("CanonicalHostedZoneNameID")(__v.asInstanceOf[js.Any])
+      )
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      DNSName.foreach(__v => __obj.updateDynamic("DNSName")(__v.asInstanceOf[js.Any]))
+      HealthCheck.foreach(__v => __obj.updateDynamic("HealthCheck")(__v.asInstanceOf[js.Any]))
+      Instances.foreach(__v => __obj.updateDynamic("Instances")(__v.asInstanceOf[js.Any]))
+      ListenerDescriptions.foreach(__v => __obj.updateDynamic("ListenerDescriptions")(__v.asInstanceOf[js.Any]))
+      LoadBalancerName.foreach(__v => __obj.updateDynamic("LoadBalancerName")(__v.asInstanceOf[js.Any]))
+      Policies.foreach(__v => __obj.updateDynamic("Policies")(__v.asInstanceOf[js.Any]))
+      Scheme.foreach(__v => __obj.updateDynamic("Scheme")(__v.asInstanceOf[js.Any]))
+      SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
+      SourceSecurityGroup.foreach(__v => __obj.updateDynamic("SourceSecurityGroup")(__v.asInstanceOf[js.Any]))
+      Subnets.foreach(__v => __obj.updateDynamic("Subnets")(__v.asInstanceOf[js.Any]))
+      VPCId.foreach(__v => __obj.updateDynamic("VPCId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoadBalancerDescription]
     }
   }
@@ -1560,7 +1564,7 @@ package elb {
         LoadBalancerAttributes: LoadBalancerAttributes,
         LoadBalancerName: AccessPointName
     ): ModifyLoadBalancerAttributesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LoadBalancerAttributes" -> LoadBalancerAttributes.asInstanceOf[js.Any],
         "LoadBalancerName"       -> LoadBalancerName.asInstanceOf[js.Any]
       )
@@ -1583,9 +1587,9 @@ package elb {
         LoadBalancerAttributes: js.UndefOr[LoadBalancerAttributes] = js.undefined,
         LoadBalancerName: js.UndefOr[AccessPointName] = js.undefined
     ): ModifyLoadBalancerAttributesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LoadBalancerAttributes.foreach(__v => __obj.update("LoadBalancerAttributes", __v.asInstanceOf[js.Any]))
-      LoadBalancerName.foreach(__v => __obj.update("LoadBalancerName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LoadBalancerAttributes.foreach(__v => __obj.updateDynamic("LoadBalancerAttributes")(__v.asInstanceOf[js.Any]))
+      LoadBalancerName.foreach(__v => __obj.updateDynamic("LoadBalancerName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyLoadBalancerAttributesOutput]
     }
   }
@@ -1606,10 +1610,14 @@ package elb {
         LBCookieStickinessPolicies: js.UndefOr[LBCookieStickinessPolicies] = js.undefined,
         OtherPolicies: js.UndefOr[PolicyNames] = js.undefined
     ): Policies = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AppCookieStickinessPolicies.foreach(__v => __obj.update("AppCookieStickinessPolicies", __v.asInstanceOf[js.Any]))
-      LBCookieStickinessPolicies.foreach(__v => __obj.update("LBCookieStickinessPolicies", __v.asInstanceOf[js.Any]))
-      OtherPolicies.foreach(__v => __obj.update("OtherPolicies", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AppCookieStickinessPolicies.foreach(
+        __v => __obj.updateDynamic("AppCookieStickinessPolicies")(__v.asInstanceOf[js.Any])
+      )
+      LBCookieStickinessPolicies.foreach(
+        __v => __obj.updateDynamic("LBCookieStickinessPolicies")(__v.asInstanceOf[js.Any])
+      )
+      OtherPolicies.foreach(__v => __obj.updateDynamic("OtherPolicies")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Policies]
     }
   }
@@ -1628,9 +1636,9 @@ package elb {
         AttributeName: js.UndefOr[AttributeName] = js.undefined,
         AttributeValue: js.UndefOr[AttributeValue] = js.undefined
     ): PolicyAttribute = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttributeName.foreach(__v => __obj.update("AttributeName", __v.asInstanceOf[js.Any]))
-      AttributeValue.foreach(__v => __obj.update("AttributeValue", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttributeName.foreach(__v => __obj.updateDynamic("AttributeName")(__v.asInstanceOf[js.Any]))
+      AttributeValue.foreach(__v => __obj.updateDynamic("AttributeValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PolicyAttribute]
     }
   }
@@ -1649,9 +1657,9 @@ package elb {
         AttributeName: js.UndefOr[AttributeName] = js.undefined,
         AttributeValue: js.UndefOr[AttributeValue] = js.undefined
     ): PolicyAttributeDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttributeName.foreach(__v => __obj.update("AttributeName", __v.asInstanceOf[js.Any]))
-      AttributeValue.foreach(__v => __obj.update("AttributeValue", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttributeName.foreach(__v => __obj.updateDynamic("AttributeName")(__v.asInstanceOf[js.Any]))
+      AttributeValue.foreach(__v => __obj.updateDynamic("AttributeValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PolicyAttributeDescription]
     }
   }
@@ -1676,12 +1684,12 @@ package elb {
         DefaultValue: js.UndefOr[DefaultValue] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined
     ): PolicyAttributeTypeDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttributeName.foreach(__v => __obj.update("AttributeName", __v.asInstanceOf[js.Any]))
-      AttributeType.foreach(__v => __obj.update("AttributeType", __v.asInstanceOf[js.Any]))
-      Cardinality.foreach(__v => __obj.update("Cardinality", __v.asInstanceOf[js.Any]))
-      DefaultValue.foreach(__v => __obj.update("DefaultValue", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttributeName.foreach(__v => __obj.updateDynamic("AttributeName")(__v.asInstanceOf[js.Any]))
+      AttributeType.foreach(__v => __obj.updateDynamic("AttributeType")(__v.asInstanceOf[js.Any]))
+      Cardinality.foreach(__v => __obj.updateDynamic("Cardinality")(__v.asInstanceOf[js.Any]))
+      DefaultValue.foreach(__v => __obj.updateDynamic("DefaultValue")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PolicyAttributeTypeDescription]
     }
   }
@@ -1702,10 +1710,12 @@ package elb {
         PolicyName: js.UndefOr[PolicyName] = js.undefined,
         PolicyTypeName: js.UndefOr[PolicyTypeName] = js.undefined
     ): PolicyDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PolicyAttributeDescriptions.foreach(__v => __obj.update("PolicyAttributeDescriptions", __v.asInstanceOf[js.Any]))
-      PolicyName.foreach(__v => __obj.update("PolicyName", __v.asInstanceOf[js.Any]))
-      PolicyTypeName.foreach(__v => __obj.update("PolicyTypeName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PolicyAttributeDescriptions.foreach(
+        __v => __obj.updateDynamic("PolicyAttributeDescriptions")(__v.asInstanceOf[js.Any])
+      )
+      PolicyName.foreach(__v => __obj.updateDynamic("PolicyName")(__v.asInstanceOf[js.Any]))
+      PolicyTypeName.foreach(__v => __obj.updateDynamic("PolicyTypeName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PolicyDescription]
     }
   }
@@ -1726,12 +1736,12 @@ package elb {
         PolicyAttributeTypeDescriptions: js.UndefOr[PolicyAttributeTypeDescriptions] = js.undefined,
         PolicyTypeName: js.UndefOr[PolicyTypeName] = js.undefined
     ): PolicyTypeDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       PolicyAttributeTypeDescriptions.foreach(
-        __v => __obj.update("PolicyAttributeTypeDescriptions", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("PolicyAttributeTypeDescriptions")(__v.asInstanceOf[js.Any])
       )
-      PolicyTypeName.foreach(__v => __obj.update("PolicyTypeName", __v.asInstanceOf[js.Any]))
+      PolicyTypeName.foreach(__v => __obj.updateDynamic("PolicyTypeName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PolicyTypeDescription]
     }
   }
@@ -1750,7 +1760,7 @@ package elb {
         Instances: Instances,
         LoadBalancerName: AccessPointName
     ): RegisterEndPointsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Instances"        -> Instances.asInstanceOf[js.Any],
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any]
       )
@@ -1771,8 +1781,8 @@ package elb {
     def apply(
         Instances: js.UndefOr[Instances] = js.undefined
     ): RegisterEndPointsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Instances.foreach(__v => __obj.update("Instances", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Instances.foreach(__v => __obj.updateDynamic("Instances")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterEndPointsOutput]
     }
   }
@@ -1791,7 +1801,7 @@ package elb {
         AvailabilityZones: AvailabilityZones,
         LoadBalancerName: AccessPointName
     ): RemoveAvailabilityZonesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AvailabilityZones" -> AvailabilityZones.asInstanceOf[js.Any],
         "LoadBalancerName"  -> LoadBalancerName.asInstanceOf[js.Any]
       )
@@ -1812,8 +1822,8 @@ package elb {
     def apply(
         AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined
     ): RemoveAvailabilityZonesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RemoveAvailabilityZonesOutput]
     }
   }
@@ -1832,7 +1842,7 @@ package elb {
         LoadBalancerNames: LoadBalancerNames,
         Tags: TagKeyList
     ): RemoveTagsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LoadBalancerNames" -> LoadBalancerNames.asInstanceOf[js.Any],
         "Tags"              -> Tags.asInstanceOf[js.Any]
       )
@@ -1850,7 +1860,7 @@ package elb {
   object RemoveTagsOutput {
     def apply(
         ): RemoveTagsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RemoveTagsOutput]
     }
@@ -1872,7 +1882,7 @@ package elb {
         LoadBalancerPort: AccessPointPort,
         SSLCertificateId: SSLCertificateId
     ): SetLoadBalancerListenerSSLCertificateInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
         "LoadBalancerPort" -> LoadBalancerPort.asInstanceOf[js.Any],
         "SSLCertificateId" -> SSLCertificateId.asInstanceOf[js.Any]
@@ -1891,7 +1901,7 @@ package elb {
   object SetLoadBalancerListenerSSLCertificateOutput {
     def apply(
         ): SetLoadBalancerListenerSSLCertificateOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SetLoadBalancerListenerSSLCertificateOutput]
     }
@@ -1913,7 +1923,7 @@ package elb {
         LoadBalancerName: AccessPointName,
         PolicyNames: PolicyNames
     ): SetLoadBalancerPoliciesForBackendServerInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstancePort"     -> InstancePort.asInstanceOf[js.Any],
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
         "PolicyNames"      -> PolicyNames.asInstanceOf[js.Any]
@@ -1932,7 +1942,7 @@ package elb {
   object SetLoadBalancerPoliciesForBackendServerOutput {
     def apply(
         ): SetLoadBalancerPoliciesForBackendServerOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SetLoadBalancerPoliciesForBackendServerOutput]
     }
@@ -1954,7 +1964,7 @@ package elb {
         LoadBalancerPort: AccessPointPort,
         PolicyNames: PolicyNames
     ): SetLoadBalancerPoliciesOfListenerInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LoadBalancerName" -> LoadBalancerName.asInstanceOf[js.Any],
         "LoadBalancerPort" -> LoadBalancerPort.asInstanceOf[js.Any],
         "PolicyNames"      -> PolicyNames.asInstanceOf[js.Any]
@@ -1973,7 +1983,7 @@ package elb {
   object SetLoadBalancerPoliciesOfListenerOutput {
     def apply(
         ): SetLoadBalancerPoliciesOfListenerOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SetLoadBalancerPoliciesOfListenerOutput]
     }
@@ -1993,9 +2003,9 @@ package elb {
         GroupName: js.UndefOr[SecurityGroupName] = js.undefined,
         OwnerAlias: js.UndefOr[SecurityGroupOwnerAlias] = js.undefined
     ): SourceSecurityGroup = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GroupName.foreach(__v => __obj.update("GroupName", __v.asInstanceOf[js.Any]))
-      OwnerAlias.foreach(__v => __obj.update("OwnerAlias", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
+      OwnerAlias.foreach(__v => __obj.updateDynamic("OwnerAlias")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SourceSecurityGroup]
     }
   }
@@ -2014,11 +2024,11 @@ package elb {
         Key: TagKey,
         Value: js.UndefOr[TagValue] = js.undefined
     ): Tag = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key" -> Key.asInstanceOf[js.Any]
       )
 
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tag]
     }
   }
@@ -2037,9 +2047,9 @@ package elb {
         LoadBalancerName: js.UndefOr[AccessPointName] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): TagDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LoadBalancerName.foreach(__v => __obj.update("LoadBalancerName", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LoadBalancerName.foreach(__v => __obj.updateDynamic("LoadBalancerName")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TagDescription]
     }
   }
@@ -2056,8 +2066,8 @@ package elb {
     def apply(
         Key: js.UndefOr[TagKey] = js.undefined
     ): TagKeyOnly = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TagKeyOnly]
     }
   }

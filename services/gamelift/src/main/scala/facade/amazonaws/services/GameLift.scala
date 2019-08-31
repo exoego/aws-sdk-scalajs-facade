@@ -420,7 +420,7 @@ package gamelift {
         PlayerIds: StringList,
         TicketId: MatchmakingIdStringModel
     ): AcceptMatchInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AcceptanceType" -> AcceptanceType.asInstanceOf[js.Any],
         "PlayerIds"      -> PlayerIds.asInstanceOf[js.Any],
         "TicketId"       -> TicketId.asInstanceOf[js.Any]
@@ -436,7 +436,7 @@ package gamelift {
   object AcceptMatchOutput {
     def apply(
         ): AcceptMatchOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AcceptMatchOutput]
     }
@@ -479,14 +479,14 @@ package gamelift {
         Name: js.UndefOr[NonBlankAndLengthConstraintString] = js.undefined,
         RoutingStrategy: js.UndefOr[RoutingStrategy] = js.undefined
     ): Alias = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AliasArn.foreach(__v => __obj.update("AliasArn", __v.asInstanceOf[js.Any]))
-      AliasId.foreach(__v => __obj.update("AliasId", __v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      LastUpdatedTime.foreach(__v => __obj.update("LastUpdatedTime", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      RoutingStrategy.foreach(__v => __obj.update("RoutingStrategy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AliasArn.foreach(__v => __obj.updateDynamic("AliasArn")(__v.asInstanceOf[js.Any]))
+      AliasId.foreach(__v => __obj.updateDynamic("AliasId")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RoutingStrategy.foreach(__v => __obj.updateDynamic("RoutingStrategy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Alias]
     }
   }
@@ -509,11 +509,11 @@ package gamelift {
         SDM: js.UndefOr[StringDoubleMap] = js.undefined,
         SL: js.UndefOr[StringList] = js.undefined
     ): AttributeValue = {
-      val __obj = js.Dictionary.empty[js.Any]
-      N.foreach(__v => __obj.update("N", __v.asInstanceOf[js.Any]))
-      S.foreach(__v => __obj.update("S", __v.asInstanceOf[js.Any]))
-      SDM.foreach(__v => __obj.update("SDM", __v.asInstanceOf[js.Any]))
-      SL.foreach(__v => __obj.update("SL", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      N.foreach(__v => __obj.updateDynamic("N")(__v.asInstanceOf[js.Any]))
+      S.foreach(__v => __obj.updateDynamic("S")(__v.asInstanceOf[js.Any]))
+      SDM.foreach(__v => __obj.updateDynamic("SDM")(__v.asInstanceOf[js.Any]))
+      SL.foreach(__v => __obj.updateDynamic("SL")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttributeValue]
     }
   }
@@ -534,10 +534,10 @@ package gamelift {
         SecretAccessKey: js.UndefOr[NonEmptyString] = js.undefined,
         SessionToken: js.UndefOr[NonEmptyString] = js.undefined
     ): AwsCredentials = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccessKeyId.foreach(__v => __obj.update("AccessKeyId", __v.asInstanceOf[js.Any]))
-      SecretAccessKey.foreach(__v => __obj.update("SecretAccessKey", __v.asInstanceOf[js.Any]))
-      SessionToken.foreach(__v => __obj.update("SessionToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccessKeyId.foreach(__v => __obj.updateDynamic("AccessKeyId")(__v.asInstanceOf[js.Any]))
+      SecretAccessKey.foreach(__v => __obj.updateDynamic("SecretAccessKey")(__v.asInstanceOf[js.Any]))
+      SessionToken.foreach(__v => __obj.updateDynamic("SessionToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsCredentials]
     }
   }
@@ -579,14 +579,14 @@ package gamelift {
         Status: js.UndefOr[BuildStatus] = js.undefined,
         Version: js.UndefOr[FreeText] = js.undefined
     ): Build = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BuildId.foreach(__v => __obj.update("BuildId", __v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      OperatingSystem.foreach(__v => __obj.update("OperatingSystem", __v.asInstanceOf[js.Any]))
-      SizeOnDisk.foreach(__v => __obj.update("SizeOnDisk", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BuildId.foreach(__v => __obj.updateDynamic("BuildId")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      OperatingSystem.foreach(__v => __obj.updateDynamic("OperatingSystem")(__v.asInstanceOf[js.Any]))
+      SizeOnDisk.foreach(__v => __obj.updateDynamic("SizeOnDisk")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Build]
     }
   }
@@ -626,12 +626,12 @@ package gamelift {
         RoutingStrategy: RoutingStrategy,
         Description: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): CreateAliasInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"            -> Name.asInstanceOf[js.Any],
         "RoutingStrategy" -> RoutingStrategy.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAliasInput]
     }
   }
@@ -648,8 +648,8 @@ package gamelift {
     def apply(
         Alias: js.UndefOr[Alias] = js.undefined
     ): CreateAliasOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Alias.foreach(__v => __obj.update("Alias", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Alias.foreach(__v => __obj.updateDynamic("Alias")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAliasOutput]
     }
   }
@@ -672,11 +672,11 @@ package gamelift {
         StorageLocation: js.UndefOr[S3Location] = js.undefined,
         Version: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): CreateBuildInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      OperatingSystem.foreach(__v => __obj.update("OperatingSystem", __v.asInstanceOf[js.Any]))
-      StorageLocation.foreach(__v => __obj.update("StorageLocation", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      OperatingSystem.foreach(__v => __obj.updateDynamic("OperatingSystem")(__v.asInstanceOf[js.Any]))
+      StorageLocation.foreach(__v => __obj.updateDynamic("StorageLocation")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateBuildInput]
     }
   }
@@ -697,10 +697,10 @@ package gamelift {
         StorageLocation: js.UndefOr[S3Location] = js.undefined,
         UploadCredentials: js.UndefOr[AwsCredentials] = js.undefined
     ): CreateBuildOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Build.foreach(__v => __obj.update("Build", __v.asInstanceOf[js.Any]))
-      StorageLocation.foreach(__v => __obj.update("StorageLocation", __v.asInstanceOf[js.Any]))
-      UploadCredentials.foreach(__v => __obj.update("UploadCredentials", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Build.foreach(__v => __obj.updateDynamic("Build")(__v.asInstanceOf[js.Any]))
+      StorageLocation.foreach(__v => __obj.updateDynamic("StorageLocation")(__v.asInstanceOf[js.Any]))
+      UploadCredentials.foreach(__v => __obj.updateDynamic("UploadCredentials")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateBuildOutput]
     }
   }
@@ -749,28 +749,30 @@ package gamelift {
         ServerLaunchParameters: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         ServerLaunchPath: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): CreateFleetInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EC2InstanceType" -> EC2InstanceType.asInstanceOf[js.Any],
         "Name"            -> Name.asInstanceOf[js.Any]
       )
 
-      BuildId.foreach(__v => __obj.update("BuildId", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      EC2InboundPermissions.foreach(__v => __obj.update("EC2InboundPermissions", __v.asInstanceOf[js.Any]))
-      FleetType.foreach(__v => __obj.update("FleetType", __v.asInstanceOf[js.Any]))
-      InstanceRoleArn.foreach(__v => __obj.update("InstanceRoleArn", __v.asInstanceOf[js.Any]))
-      LogPaths.foreach(__v => __obj.update("LogPaths", __v.asInstanceOf[js.Any]))
-      MetricGroups.foreach(__v => __obj.update("MetricGroups", __v.asInstanceOf[js.Any]))
+      BuildId.foreach(__v => __obj.updateDynamic("BuildId")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EC2InboundPermissions.foreach(__v => __obj.updateDynamic("EC2InboundPermissions")(__v.asInstanceOf[js.Any]))
+      FleetType.foreach(__v => __obj.updateDynamic("FleetType")(__v.asInstanceOf[js.Any]))
+      InstanceRoleArn.foreach(__v => __obj.updateDynamic("InstanceRoleArn")(__v.asInstanceOf[js.Any]))
+      LogPaths.foreach(__v => __obj.updateDynamic("LogPaths")(__v.asInstanceOf[js.Any]))
+      MetricGroups.foreach(__v => __obj.updateDynamic("MetricGroups")(__v.asInstanceOf[js.Any]))
       NewGameSessionProtectionPolicy.foreach(
-        __v => __obj.update("NewGameSessionProtectionPolicy", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("NewGameSessionProtectionPolicy")(__v.asInstanceOf[js.Any])
       )
-      PeerVpcAwsAccountId.foreach(__v => __obj.update("PeerVpcAwsAccountId", __v.asInstanceOf[js.Any]))
-      PeerVpcId.foreach(__v => __obj.update("PeerVpcId", __v.asInstanceOf[js.Any]))
-      ResourceCreationLimitPolicy.foreach(__v => __obj.update("ResourceCreationLimitPolicy", __v.asInstanceOf[js.Any]))
-      RuntimeConfiguration.foreach(__v => __obj.update("RuntimeConfiguration", __v.asInstanceOf[js.Any]))
-      ScriptId.foreach(__v => __obj.update("ScriptId", __v.asInstanceOf[js.Any]))
-      ServerLaunchParameters.foreach(__v => __obj.update("ServerLaunchParameters", __v.asInstanceOf[js.Any]))
-      ServerLaunchPath.foreach(__v => __obj.update("ServerLaunchPath", __v.asInstanceOf[js.Any]))
+      PeerVpcAwsAccountId.foreach(__v => __obj.updateDynamic("PeerVpcAwsAccountId")(__v.asInstanceOf[js.Any]))
+      PeerVpcId.foreach(__v => __obj.updateDynamic("PeerVpcId")(__v.asInstanceOf[js.Any]))
+      ResourceCreationLimitPolicy.foreach(
+        __v => __obj.updateDynamic("ResourceCreationLimitPolicy")(__v.asInstanceOf[js.Any])
+      )
+      RuntimeConfiguration.foreach(__v => __obj.updateDynamic("RuntimeConfiguration")(__v.asInstanceOf[js.Any]))
+      ScriptId.foreach(__v => __obj.updateDynamic("ScriptId")(__v.asInstanceOf[js.Any]))
+      ServerLaunchParameters.foreach(__v => __obj.updateDynamic("ServerLaunchParameters")(__v.asInstanceOf[js.Any]))
+      ServerLaunchPath.foreach(__v => __obj.updateDynamic("ServerLaunchPath")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFleetInput]
     }
   }
@@ -787,8 +789,8 @@ package gamelift {
     def apply(
         FleetAttributes: js.UndefOr[FleetAttributes] = js.undefined
     ): CreateFleetOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FleetAttributes.foreach(__v => __obj.update("FleetAttributes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FleetAttributes.foreach(__v => __obj.updateDynamic("FleetAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFleetOutput]
     }
   }
@@ -821,18 +823,18 @@ package gamelift {
         IdempotencyToken: js.UndefOr[IdStringModel] = js.undefined,
         Name: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): CreateGameSessionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MaximumPlayerSessionCount" -> MaximumPlayerSessionCount.asInstanceOf[js.Any]
       )
 
-      AliasId.foreach(__v => __obj.update("AliasId", __v.asInstanceOf[js.Any]))
-      CreatorId.foreach(__v => __obj.update("CreatorId", __v.asInstanceOf[js.Any]))
-      FleetId.foreach(__v => __obj.update("FleetId", __v.asInstanceOf[js.Any]))
-      GameProperties.foreach(__v => __obj.update("GameProperties", __v.asInstanceOf[js.Any]))
-      GameSessionData.foreach(__v => __obj.update("GameSessionData", __v.asInstanceOf[js.Any]))
-      GameSessionId.foreach(__v => __obj.update("GameSessionId", __v.asInstanceOf[js.Any]))
-      IdempotencyToken.foreach(__v => __obj.update("IdempotencyToken", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      AliasId.foreach(__v => __obj.updateDynamic("AliasId")(__v.asInstanceOf[js.Any]))
+      CreatorId.foreach(__v => __obj.updateDynamic("CreatorId")(__v.asInstanceOf[js.Any]))
+      FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
+      GameProperties.foreach(__v => __obj.updateDynamic("GameProperties")(__v.asInstanceOf[js.Any]))
+      GameSessionData.foreach(__v => __obj.updateDynamic("GameSessionData")(__v.asInstanceOf[js.Any]))
+      GameSessionId.foreach(__v => __obj.updateDynamic("GameSessionId")(__v.asInstanceOf[js.Any]))
+      IdempotencyToken.foreach(__v => __obj.updateDynamic("IdempotencyToken")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGameSessionInput]
     }
   }
@@ -849,8 +851,8 @@ package gamelift {
     def apply(
         GameSession: js.UndefOr[GameSession] = js.undefined
     ): CreateGameSessionOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GameSession.foreach(__v => __obj.update("GameSession", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GameSession.foreach(__v => __obj.updateDynamic("GameSession")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGameSessionOutput]
     }
   }
@@ -873,13 +875,13 @@ package gamelift {
         PlayerLatencyPolicies: js.UndefOr[PlayerLatencyPolicyList] = js.undefined,
         TimeoutInSeconds: js.UndefOr[WholeNumber] = js.undefined
     ): CreateGameSessionQueueInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      Destinations.foreach(__v => __obj.update("Destinations", __v.asInstanceOf[js.Any]))
-      PlayerLatencyPolicies.foreach(__v => __obj.update("PlayerLatencyPolicies", __v.asInstanceOf[js.Any]))
-      TimeoutInSeconds.foreach(__v => __obj.update("TimeoutInSeconds", __v.asInstanceOf[js.Any]))
+      Destinations.foreach(__v => __obj.updateDynamic("Destinations")(__v.asInstanceOf[js.Any]))
+      PlayerLatencyPolicies.foreach(__v => __obj.updateDynamic("PlayerLatencyPolicies")(__v.asInstanceOf[js.Any]))
+      TimeoutInSeconds.foreach(__v => __obj.updateDynamic("TimeoutInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGameSessionQueueInput]
     }
   }
@@ -896,8 +898,8 @@ package gamelift {
     def apply(
         GameSessionQueue: js.UndefOr[GameSessionQueue] = js.undefined
     ): CreateGameSessionQueueOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GameSessionQueue.foreach(__v => __obj.update("GameSessionQueue", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GameSessionQueue.foreach(__v => __obj.updateDynamic("GameSessionQueue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGameSessionQueueOutput]
     }
   }
@@ -938,7 +940,7 @@ package gamelift {
         GameSessionData: js.UndefOr[GameSessionData] = js.undefined,
         NotificationTarget: js.UndefOr[SnsArnStringModel] = js.undefined
     ): CreateMatchmakingConfigurationInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AcceptanceRequired"    -> AcceptanceRequired.asInstanceOf[js.Any],
         "GameSessionQueueArns"  -> GameSessionQueueArns.asInstanceOf[js.Any],
         "Name"                  -> Name.asInstanceOf[js.Any],
@@ -946,14 +948,14 @@ package gamelift {
         "RuleSetName"           -> RuleSetName.asInstanceOf[js.Any]
       )
 
-      AcceptanceTimeoutSeconds.foreach(__v => __obj.update("AcceptanceTimeoutSeconds", __v.asInstanceOf[js.Any]))
-      AdditionalPlayerCount.foreach(__v => __obj.update("AdditionalPlayerCount", __v.asInstanceOf[js.Any]))
-      BackfillMode.foreach(__v => __obj.update("BackfillMode", __v.asInstanceOf[js.Any]))
-      CustomEventData.foreach(__v => __obj.update("CustomEventData", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      GameProperties.foreach(__v => __obj.update("GameProperties", __v.asInstanceOf[js.Any]))
-      GameSessionData.foreach(__v => __obj.update("GameSessionData", __v.asInstanceOf[js.Any]))
-      NotificationTarget.foreach(__v => __obj.update("NotificationTarget", __v.asInstanceOf[js.Any]))
+      AcceptanceTimeoutSeconds.foreach(__v => __obj.updateDynamic("AcceptanceTimeoutSeconds")(__v.asInstanceOf[js.Any]))
+      AdditionalPlayerCount.foreach(__v => __obj.updateDynamic("AdditionalPlayerCount")(__v.asInstanceOf[js.Any]))
+      BackfillMode.foreach(__v => __obj.updateDynamic("BackfillMode")(__v.asInstanceOf[js.Any]))
+      CustomEventData.foreach(__v => __obj.updateDynamic("CustomEventData")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      GameProperties.foreach(__v => __obj.updateDynamic("GameProperties")(__v.asInstanceOf[js.Any]))
+      GameSessionData.foreach(__v => __obj.updateDynamic("GameSessionData")(__v.asInstanceOf[js.Any]))
+      NotificationTarget.foreach(__v => __obj.updateDynamic("NotificationTarget")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateMatchmakingConfigurationInput]
     }
   }
@@ -970,8 +972,8 @@ package gamelift {
     def apply(
         Configuration: js.UndefOr[MatchmakingConfiguration] = js.undefined
     ): CreateMatchmakingConfigurationOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Configuration.foreach(__v => __obj.update("Configuration", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateMatchmakingConfigurationOutput]
     }
   }
@@ -990,7 +992,7 @@ package gamelift {
         Name: MatchmakingIdStringModel,
         RuleSetBody: RuleSetBody
     ): CreateMatchmakingRuleSetInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"        -> Name.asInstanceOf[js.Any],
         "RuleSetBody" -> RuleSetBody.asInstanceOf[js.Any]
       )
@@ -1011,7 +1013,7 @@ package gamelift {
     def apply(
         RuleSet: MatchmakingRuleSet
     ): CreateMatchmakingRuleSetOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RuleSet" -> RuleSet.asInstanceOf[js.Any]
       )
 
@@ -1035,12 +1037,12 @@ package gamelift {
         PlayerId: NonZeroAndMaxString,
         PlayerData: js.UndefOr[PlayerData] = js.undefined
     ): CreatePlayerSessionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GameSessionId" -> GameSessionId.asInstanceOf[js.Any],
         "PlayerId"      -> PlayerId.asInstanceOf[js.Any]
       )
 
-      PlayerData.foreach(__v => __obj.update("PlayerData", __v.asInstanceOf[js.Any]))
+      PlayerData.foreach(__v => __obj.updateDynamic("PlayerData")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePlayerSessionInput]
     }
   }
@@ -1057,8 +1059,8 @@ package gamelift {
     def apply(
         PlayerSession: js.UndefOr[PlayerSession] = js.undefined
     ): CreatePlayerSessionOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PlayerSession.foreach(__v => __obj.update("PlayerSession", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PlayerSession.foreach(__v => __obj.updateDynamic("PlayerSession")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePlayerSessionOutput]
     }
   }
@@ -1079,12 +1081,12 @@ package gamelift {
         PlayerIds: PlayerIdList,
         PlayerDataMap: js.UndefOr[PlayerDataMap] = js.undefined
     ): CreatePlayerSessionsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GameSessionId" -> GameSessionId.asInstanceOf[js.Any],
         "PlayerIds"     -> PlayerIds.asInstanceOf[js.Any]
       )
 
-      PlayerDataMap.foreach(__v => __obj.update("PlayerDataMap", __v.asInstanceOf[js.Any]))
+      PlayerDataMap.foreach(__v => __obj.updateDynamic("PlayerDataMap")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePlayerSessionsInput]
     }
   }
@@ -1101,8 +1103,8 @@ package gamelift {
     def apply(
         PlayerSessions: js.UndefOr[PlayerSessionList] = js.undefined
     ): CreatePlayerSessionsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PlayerSessions.foreach(__v => __obj.update("PlayerSessions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PlayerSessions.foreach(__v => __obj.updateDynamic("PlayerSessions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePlayerSessionsOutput]
     }
   }
@@ -1122,11 +1124,11 @@ package gamelift {
         Version: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         ZipFile: js.UndefOr[ZipBlob] = js.undefined
     ): CreateScriptInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      StorageLocation.foreach(__v => __obj.update("StorageLocation", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
-      ZipFile.foreach(__v => __obj.update("ZipFile", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      StorageLocation.foreach(__v => __obj.updateDynamic("StorageLocation")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      ZipFile.foreach(__v => __obj.updateDynamic("ZipFile")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateScriptInput]
     }
   }
@@ -1140,8 +1142,8 @@ package gamelift {
     def apply(
         Script: js.UndefOr[Script] = js.undefined
     ): CreateScriptOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Script.foreach(__v => __obj.update("Script", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Script.foreach(__v => __obj.updateDynamic("Script")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateScriptOutput]
     }
   }
@@ -1160,7 +1162,7 @@ package gamelift {
         GameLiftAwsAccountId: NonZeroAndMaxString,
         PeerVpcId: NonZeroAndMaxString
     ): CreateVpcPeeringAuthorizationInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GameLiftAwsAccountId" -> GameLiftAwsAccountId.asInstanceOf[js.Any],
         "PeerVpcId"            -> PeerVpcId.asInstanceOf[js.Any]
       )
@@ -1181,8 +1183,8 @@ package gamelift {
     def apply(
         VpcPeeringAuthorization: js.UndefOr[VpcPeeringAuthorization] = js.undefined
     ): CreateVpcPeeringAuthorizationOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      VpcPeeringAuthorization.foreach(__v => __obj.update("VpcPeeringAuthorization", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      VpcPeeringAuthorization.foreach(__v => __obj.updateDynamic("VpcPeeringAuthorization")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateVpcPeeringAuthorizationOutput]
     }
   }
@@ -1203,7 +1205,7 @@ package gamelift {
         PeerVpcAwsAccountId: NonZeroAndMaxString,
         PeerVpcId: NonZeroAndMaxString
     ): CreateVpcPeeringConnectionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetId"             -> FleetId.asInstanceOf[js.Any],
         "PeerVpcAwsAccountId" -> PeerVpcAwsAccountId.asInstanceOf[js.Any],
         "PeerVpcId"           -> PeerVpcId.asInstanceOf[js.Any]
@@ -1219,7 +1221,7 @@ package gamelift {
   object CreateVpcPeeringConnectionOutput {
     def apply(
         ): CreateVpcPeeringConnectionOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateVpcPeeringConnectionOutput]
     }
@@ -1237,7 +1239,7 @@ package gamelift {
     def apply(
         AliasId: AliasId
     ): DeleteAliasInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AliasId" -> AliasId.asInstanceOf[js.Any]
       )
 
@@ -1257,7 +1259,7 @@ package gamelift {
     def apply(
         BuildId: BuildId
     ): DeleteBuildInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BuildId" -> BuildId.asInstanceOf[js.Any]
       )
 
@@ -1277,7 +1279,7 @@ package gamelift {
     def apply(
         FleetId: FleetId
     ): DeleteFleetInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetId" -> FleetId.asInstanceOf[js.Any]
       )
 
@@ -1297,7 +1299,7 @@ package gamelift {
     def apply(
         Name: GameSessionQueueName
     ): DeleteGameSessionQueueInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -1311,7 +1313,7 @@ package gamelift {
   object DeleteGameSessionQueueOutput {
     def apply(
         ): DeleteGameSessionQueueOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteGameSessionQueueOutput]
     }
@@ -1329,7 +1331,7 @@ package gamelift {
     def apply(
         Name: MatchmakingIdStringModel
     ): DeleteMatchmakingConfigurationInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -1343,7 +1345,7 @@ package gamelift {
   object DeleteMatchmakingConfigurationOutput {
     def apply(
         ): DeleteMatchmakingConfigurationOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteMatchmakingConfigurationOutput]
     }
@@ -1361,7 +1363,7 @@ package gamelift {
     def apply(
         Name: MatchmakingIdStringModel
     ): DeleteMatchmakingRuleSetInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -1378,7 +1380,7 @@ package gamelift {
   object DeleteMatchmakingRuleSetOutput {
     def apply(
         ): DeleteMatchmakingRuleSetOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteMatchmakingRuleSetOutput]
     }
@@ -1398,7 +1400,7 @@ package gamelift {
         FleetId: FleetId,
         Name: NonZeroAndMaxString
     ): DeleteScalingPolicyInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetId" -> FleetId.asInstanceOf[js.Any],
         "Name"    -> Name.asInstanceOf[js.Any]
       )
@@ -1416,7 +1418,7 @@ package gamelift {
     def apply(
         ScriptId: ScriptId
     ): DeleteScriptInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ScriptId" -> ScriptId.asInstanceOf[js.Any]
       )
 
@@ -1438,7 +1440,7 @@ package gamelift {
         GameLiftAwsAccountId: NonZeroAndMaxString,
         PeerVpcId: NonZeroAndMaxString
     ): DeleteVpcPeeringAuthorizationInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GameLiftAwsAccountId" -> GameLiftAwsAccountId.asInstanceOf[js.Any],
         "PeerVpcId"            -> PeerVpcId.asInstanceOf[js.Any]
       )
@@ -1453,7 +1455,7 @@ package gamelift {
   object DeleteVpcPeeringAuthorizationOutput {
     def apply(
         ): DeleteVpcPeeringAuthorizationOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteVpcPeeringAuthorizationOutput]
     }
@@ -1473,7 +1475,7 @@ package gamelift {
         FleetId: FleetId,
         VpcPeeringConnectionId: NonZeroAndMaxString
     ): DeleteVpcPeeringConnectionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetId"                -> FleetId.asInstanceOf[js.Any],
         "VpcPeeringConnectionId" -> VpcPeeringConnectionId.asInstanceOf[js.Any]
       )
@@ -1488,7 +1490,7 @@ package gamelift {
   object DeleteVpcPeeringConnectionOutput {
     def apply(
         ): DeleteVpcPeeringConnectionOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteVpcPeeringConnectionOutput]
     }
@@ -1506,7 +1508,7 @@ package gamelift {
     def apply(
         AliasId: AliasId
     ): DescribeAliasInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AliasId" -> AliasId.asInstanceOf[js.Any]
       )
 
@@ -1526,8 +1528,8 @@ package gamelift {
     def apply(
         Alias: js.UndefOr[Alias] = js.undefined
     ): DescribeAliasOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Alias.foreach(__v => __obj.update("Alias", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Alias.foreach(__v => __obj.updateDynamic("Alias")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAliasOutput]
     }
   }
@@ -1544,7 +1546,7 @@ package gamelift {
     def apply(
         BuildId: BuildId
     ): DescribeBuildInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BuildId" -> BuildId.asInstanceOf[js.Any]
       )
 
@@ -1564,8 +1566,8 @@ package gamelift {
     def apply(
         Build: js.UndefOr[Build] = js.undefined
     ): DescribeBuildOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Build.foreach(__v => __obj.update("Build", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Build.foreach(__v => __obj.updateDynamic("Build")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeBuildOutput]
     }
   }
@@ -1582,8 +1584,8 @@ package gamelift {
     def apply(
         EC2InstanceType: js.UndefOr[EC2InstanceType] = js.undefined
     ): DescribeEC2InstanceLimitsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EC2InstanceType.foreach(__v => __obj.update("EC2InstanceType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EC2InstanceType.foreach(__v => __obj.updateDynamic("EC2InstanceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEC2InstanceLimitsInput]
     }
   }
@@ -1600,8 +1602,8 @@ package gamelift {
     def apply(
         EC2InstanceLimits: js.UndefOr[EC2InstanceLimitList] = js.undefined
     ): DescribeEC2InstanceLimitsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EC2InstanceLimits.foreach(__v => __obj.update("EC2InstanceLimits", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EC2InstanceLimits.foreach(__v => __obj.updateDynamic("EC2InstanceLimits")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEC2InstanceLimitsOutput]
     }
   }
@@ -1622,10 +1624,10 @@ package gamelift {
         Limit: js.UndefOr[PositiveInteger] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): DescribeFleetAttributesInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FleetIds.foreach(__v => __obj.update("FleetIds", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FleetIds.foreach(__v => __obj.updateDynamic("FleetIds")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeFleetAttributesInput]
     }
   }
@@ -1644,9 +1646,9 @@ package gamelift {
         FleetAttributes: js.UndefOr[FleetAttributesList] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): DescribeFleetAttributesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FleetAttributes.foreach(__v => __obj.update("FleetAttributes", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FleetAttributes.foreach(__v => __obj.updateDynamic("FleetAttributes")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeFleetAttributesOutput]
     }
   }
@@ -1667,10 +1669,10 @@ package gamelift {
         Limit: js.UndefOr[PositiveInteger] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): DescribeFleetCapacityInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FleetIds.foreach(__v => __obj.update("FleetIds", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FleetIds.foreach(__v => __obj.updateDynamic("FleetIds")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeFleetCapacityInput]
     }
   }
@@ -1689,9 +1691,9 @@ package gamelift {
         FleetCapacity: js.UndefOr[FleetCapacityList] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): DescribeFleetCapacityOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FleetCapacity.foreach(__v => __obj.update("FleetCapacity", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FleetCapacity.foreach(__v => __obj.updateDynamic("FleetCapacity")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeFleetCapacityOutput]
     }
   }
@@ -1716,14 +1718,14 @@ package gamelift {
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         StartTime: js.UndefOr[Timestamp] = js.undefined
     ): DescribeFleetEventsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetId" -> FleetId.asInstanceOf[js.Any]
       )
 
-      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeFleetEventsInput]
     }
   }
@@ -1742,9 +1744,9 @@ package gamelift {
         Events: js.UndefOr[EventList] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): DescribeFleetEventsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Events.foreach(__v => __obj.update("Events", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Events.foreach(__v => __obj.updateDynamic("Events")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeFleetEventsOutput]
     }
   }
@@ -1761,7 +1763,7 @@ package gamelift {
     def apply(
         FleetId: FleetId
     ): DescribeFleetPortSettingsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetId" -> FleetId.asInstanceOf[js.Any]
       )
 
@@ -1781,8 +1783,8 @@ package gamelift {
     def apply(
         InboundPermissions: js.UndefOr[IpPermissionsList] = js.undefined
     ): DescribeFleetPortSettingsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InboundPermissions.foreach(__v => __obj.update("InboundPermissions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InboundPermissions.foreach(__v => __obj.updateDynamic("InboundPermissions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeFleetPortSettingsOutput]
     }
   }
@@ -1803,10 +1805,10 @@ package gamelift {
         Limit: js.UndefOr[PositiveInteger] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): DescribeFleetUtilizationInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FleetIds.foreach(__v => __obj.update("FleetIds", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FleetIds.foreach(__v => __obj.updateDynamic("FleetIds")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeFleetUtilizationInput]
     }
   }
@@ -1825,9 +1827,9 @@ package gamelift {
         FleetUtilization: js.UndefOr[FleetUtilizationList] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): DescribeFleetUtilizationOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FleetUtilization.foreach(__v => __obj.update("FleetUtilization", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FleetUtilization.foreach(__v => __obj.updateDynamic("FleetUtilization")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeFleetUtilizationOutput]
     }
   }
@@ -1854,13 +1856,13 @@ package gamelift {
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         StatusFilter: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): DescribeGameSessionDetailsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AliasId.foreach(__v => __obj.update("AliasId", __v.asInstanceOf[js.Any]))
-      FleetId.foreach(__v => __obj.update("FleetId", __v.asInstanceOf[js.Any]))
-      GameSessionId.foreach(__v => __obj.update("GameSessionId", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      StatusFilter.foreach(__v => __obj.update("StatusFilter", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AliasId.foreach(__v => __obj.updateDynamic("AliasId")(__v.asInstanceOf[js.Any]))
+      FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
+      GameSessionId.foreach(__v => __obj.updateDynamic("GameSessionId")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StatusFilter.foreach(__v => __obj.updateDynamic("StatusFilter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeGameSessionDetailsInput]
     }
   }
@@ -1879,9 +1881,9 @@ package gamelift {
         GameSessionDetails: js.UndefOr[GameSessionDetailList] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): DescribeGameSessionDetailsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GameSessionDetails.foreach(__v => __obj.update("GameSessionDetails", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GameSessionDetails.foreach(__v => __obj.updateDynamic("GameSessionDetails")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeGameSessionDetailsOutput]
     }
   }
@@ -1898,7 +1900,7 @@ package gamelift {
     def apply(
         PlacementId: IdStringModel
     ): DescribeGameSessionPlacementInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PlacementId" -> PlacementId.asInstanceOf[js.Any]
       )
 
@@ -1918,8 +1920,8 @@ package gamelift {
     def apply(
         GameSessionPlacement: js.UndefOr[GameSessionPlacement] = js.undefined
     ): DescribeGameSessionPlacementOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GameSessionPlacement.foreach(__v => __obj.update("GameSessionPlacement", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GameSessionPlacement.foreach(__v => __obj.updateDynamic("GameSessionPlacement")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeGameSessionPlacementOutput]
     }
   }
@@ -1940,10 +1942,10 @@ package gamelift {
         Names: js.UndefOr[GameSessionQueueNameList] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): DescribeGameSessionQueuesInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      Names.foreach(__v => __obj.update("Names", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      Names.foreach(__v => __obj.updateDynamic("Names")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeGameSessionQueuesInput]
     }
   }
@@ -1962,9 +1964,9 @@ package gamelift {
         GameSessionQueues: js.UndefOr[GameSessionQueueList] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): DescribeGameSessionQueuesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GameSessionQueues.foreach(__v => __obj.update("GameSessionQueues", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GameSessionQueues.foreach(__v => __obj.updateDynamic("GameSessionQueues")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeGameSessionQueuesOutput]
     }
   }
@@ -1991,13 +1993,13 @@ package gamelift {
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         StatusFilter: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): DescribeGameSessionsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AliasId.foreach(__v => __obj.update("AliasId", __v.asInstanceOf[js.Any]))
-      FleetId.foreach(__v => __obj.update("FleetId", __v.asInstanceOf[js.Any]))
-      GameSessionId.foreach(__v => __obj.update("GameSessionId", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      StatusFilter.foreach(__v => __obj.update("StatusFilter", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AliasId.foreach(__v => __obj.updateDynamic("AliasId")(__v.asInstanceOf[js.Any]))
+      FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
+      GameSessionId.foreach(__v => __obj.updateDynamic("GameSessionId")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StatusFilter.foreach(__v => __obj.updateDynamic("StatusFilter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeGameSessionsInput]
     }
   }
@@ -2016,9 +2018,9 @@ package gamelift {
         GameSessions: js.UndefOr[GameSessionList] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): DescribeGameSessionsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GameSessions.foreach(__v => __obj.update("GameSessions", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GameSessions.foreach(__v => __obj.updateDynamic("GameSessions")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeGameSessionsOutput]
     }
   }
@@ -2041,13 +2043,13 @@ package gamelift {
         Limit: js.UndefOr[PositiveInteger] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): DescribeInstancesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetId" -> FleetId.asInstanceOf[js.Any]
       )
 
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeInstancesInput]
     }
   }
@@ -2066,9 +2068,9 @@ package gamelift {
         Instances: js.UndefOr[InstanceList] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): DescribeInstancesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Instances.foreach(__v => __obj.update("Instances", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Instances.foreach(__v => __obj.updateDynamic("Instances")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeInstancesOutput]
     }
   }
@@ -2091,11 +2093,11 @@ package gamelift {
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         RuleSetName: js.UndefOr[MatchmakingIdStringModel] = js.undefined
     ): DescribeMatchmakingConfigurationsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      Names.foreach(__v => __obj.update("Names", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      RuleSetName.foreach(__v => __obj.update("RuleSetName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      Names.foreach(__v => __obj.updateDynamic("Names")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RuleSetName.foreach(__v => __obj.updateDynamic("RuleSetName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMatchmakingConfigurationsInput]
     }
   }
@@ -2114,9 +2116,9 @@ package gamelift {
         Configurations: js.UndefOr[MatchmakingConfigurationList] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): DescribeMatchmakingConfigurationsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Configurations.foreach(__v => __obj.update("Configurations", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMatchmakingConfigurationsOutput]
     }
   }
@@ -2133,7 +2135,7 @@ package gamelift {
     def apply(
         TicketIds: MatchmakingIdList
     ): DescribeMatchmakingInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TicketIds" -> TicketIds.asInstanceOf[js.Any]
       )
 
@@ -2153,8 +2155,8 @@ package gamelift {
     def apply(
         TicketList: js.UndefOr[MatchmakingTicketList] = js.undefined
     ): DescribeMatchmakingOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TicketList.foreach(__v => __obj.update("TicketList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TicketList.foreach(__v => __obj.updateDynamic("TicketList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMatchmakingOutput]
     }
   }
@@ -2175,10 +2177,10 @@ package gamelift {
         Names: js.UndefOr[MatchmakingRuleSetNameList] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): DescribeMatchmakingRuleSetsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      Names.foreach(__v => __obj.update("Names", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      Names.foreach(__v => __obj.updateDynamic("Names")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMatchmakingRuleSetsInput]
     }
   }
@@ -2197,11 +2199,11 @@ package gamelift {
         RuleSets: MatchmakingRuleSetList,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): DescribeMatchmakingRuleSetsOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RuleSets" -> RuleSets.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMatchmakingRuleSetsOutput]
     }
   }
@@ -2228,13 +2230,15 @@ package gamelift {
         PlayerSessionId: js.UndefOr[PlayerSessionId] = js.undefined,
         PlayerSessionStatusFilter: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): DescribePlayerSessionsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GameSessionId.foreach(__v => __obj.update("GameSessionId", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PlayerId.foreach(__v => __obj.update("PlayerId", __v.asInstanceOf[js.Any]))
-      PlayerSessionId.foreach(__v => __obj.update("PlayerSessionId", __v.asInstanceOf[js.Any]))
-      PlayerSessionStatusFilter.foreach(__v => __obj.update("PlayerSessionStatusFilter", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GameSessionId.foreach(__v => __obj.updateDynamic("GameSessionId")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PlayerId.foreach(__v => __obj.updateDynamic("PlayerId")(__v.asInstanceOf[js.Any]))
+      PlayerSessionId.foreach(__v => __obj.updateDynamic("PlayerSessionId")(__v.asInstanceOf[js.Any]))
+      PlayerSessionStatusFilter.foreach(
+        __v => __obj.updateDynamic("PlayerSessionStatusFilter")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[DescribePlayerSessionsInput]
     }
   }
@@ -2253,9 +2257,9 @@ package gamelift {
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         PlayerSessions: js.UndefOr[PlayerSessionList] = js.undefined
     ): DescribePlayerSessionsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PlayerSessions.foreach(__v => __obj.update("PlayerSessions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PlayerSessions.foreach(__v => __obj.updateDynamic("PlayerSessions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePlayerSessionsOutput]
     }
   }
@@ -2272,7 +2276,7 @@ package gamelift {
     def apply(
         FleetId: FleetId
     ): DescribeRuntimeConfigurationInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetId" -> FleetId.asInstanceOf[js.Any]
       )
 
@@ -2292,8 +2296,8 @@ package gamelift {
     def apply(
         RuntimeConfiguration: js.UndefOr[RuntimeConfiguration] = js.undefined
     ): DescribeRuntimeConfigurationOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RuntimeConfiguration.foreach(__v => __obj.update("RuntimeConfiguration", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RuntimeConfiguration.foreach(__v => __obj.updateDynamic("RuntimeConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRuntimeConfigurationOutput]
     }
   }
@@ -2316,13 +2320,13 @@ package gamelift {
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         StatusFilter: js.UndefOr[ScalingStatusType] = js.undefined
     ): DescribeScalingPoliciesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetId" -> FleetId.asInstanceOf[js.Any]
       )
 
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      StatusFilter.foreach(__v => __obj.update("StatusFilter", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StatusFilter.foreach(__v => __obj.updateDynamic("StatusFilter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeScalingPoliciesInput]
     }
   }
@@ -2341,9 +2345,9 @@ package gamelift {
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         ScalingPolicies: js.UndefOr[ScalingPolicyList] = js.undefined
     ): DescribeScalingPoliciesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ScalingPolicies.foreach(__v => __obj.update("ScalingPolicies", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ScalingPolicies.foreach(__v => __obj.updateDynamic("ScalingPolicies")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeScalingPoliciesOutput]
     }
   }
@@ -2357,7 +2361,7 @@ package gamelift {
     def apply(
         ScriptId: ScriptId
     ): DescribeScriptInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ScriptId" -> ScriptId.asInstanceOf[js.Any]
       )
 
@@ -2374,8 +2378,8 @@ package gamelift {
     def apply(
         Script: js.UndefOr[Script] = js.undefined
     ): DescribeScriptOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Script.foreach(__v => __obj.update("Script", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Script.foreach(__v => __obj.updateDynamic("Script")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeScriptOutput]
     }
   }
@@ -2386,7 +2390,7 @@ package gamelift {
   object DescribeVpcPeeringAuthorizationsInput {
     def apply(
         ): DescribeVpcPeeringAuthorizationsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DescribeVpcPeeringAuthorizationsInput]
     }
@@ -2401,8 +2405,8 @@ package gamelift {
     def apply(
         VpcPeeringAuthorizations: js.UndefOr[VpcPeeringAuthorizationList] = js.undefined
     ): DescribeVpcPeeringAuthorizationsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      VpcPeeringAuthorizations.foreach(__v => __obj.update("VpcPeeringAuthorizations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      VpcPeeringAuthorizations.foreach(__v => __obj.updateDynamic("VpcPeeringAuthorizations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeVpcPeeringAuthorizationsOutput]
     }
   }
@@ -2419,8 +2423,8 @@ package gamelift {
     def apply(
         FleetId: js.UndefOr[FleetId] = js.undefined
     ): DescribeVpcPeeringConnectionsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FleetId.foreach(__v => __obj.update("FleetId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeVpcPeeringConnectionsInput]
     }
   }
@@ -2437,8 +2441,8 @@ package gamelift {
     def apply(
         VpcPeeringConnections: js.UndefOr[VpcPeeringConnectionList] = js.undefined
     ): DescribeVpcPeeringConnectionsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      VpcPeeringConnections.foreach(__v => __obj.update("VpcPeeringConnections", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      VpcPeeringConnections.foreach(__v => __obj.updateDynamic("VpcPeeringConnections")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeVpcPeeringConnectionsOutput]
     }
   }
@@ -2457,9 +2461,9 @@ package gamelift {
         PlayerData: js.UndefOr[PlayerData] = js.undefined,
         PlayerId: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): DesiredPlayerSession = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PlayerData.foreach(__v => __obj.update("PlayerData", __v.asInstanceOf[js.Any]))
-      PlayerId.foreach(__v => __obj.update("PlayerId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PlayerData.foreach(__v => __obj.updateDynamic("PlayerData")(__v.asInstanceOf[js.Any]))
+      PlayerId.foreach(__v => __obj.updateDynamic("PlayerId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DesiredPlayerSession]
     }
   }
@@ -2508,14 +2512,14 @@ package gamelift {
         PENDING: js.UndefOr[WholeNumber] = js.undefined,
         TERMINATING: js.UndefOr[WholeNumber] = js.undefined
     ): EC2InstanceCounts = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ACTIVE.foreach(__v => __obj.update("ACTIVE", __v.asInstanceOf[js.Any]))
-      DESIRED.foreach(__v => __obj.update("DESIRED", __v.asInstanceOf[js.Any]))
-      IDLE.foreach(__v => __obj.update("IDLE", __v.asInstanceOf[js.Any]))
-      MAXIMUM.foreach(__v => __obj.update("MAXIMUM", __v.asInstanceOf[js.Any]))
-      MINIMUM.foreach(__v => __obj.update("MINIMUM", __v.asInstanceOf[js.Any]))
-      PENDING.foreach(__v => __obj.update("PENDING", __v.asInstanceOf[js.Any]))
-      TERMINATING.foreach(__v => __obj.update("TERMINATING", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ACTIVE.foreach(__v => __obj.updateDynamic("ACTIVE")(__v.asInstanceOf[js.Any]))
+      DESIRED.foreach(__v => __obj.updateDynamic("DESIRED")(__v.asInstanceOf[js.Any]))
+      IDLE.foreach(__v => __obj.updateDynamic("IDLE")(__v.asInstanceOf[js.Any]))
+      MAXIMUM.foreach(__v => __obj.updateDynamic("MAXIMUM")(__v.asInstanceOf[js.Any]))
+      MINIMUM.foreach(__v => __obj.updateDynamic("MINIMUM")(__v.asInstanceOf[js.Any]))
+      PENDING.foreach(__v => __obj.updateDynamic("PENDING")(__v.asInstanceOf[js.Any]))
+      TERMINATING.foreach(__v => __obj.updateDynamic("TERMINATING")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EC2InstanceCounts]
     }
   }
@@ -2536,10 +2540,10 @@ package gamelift {
         EC2InstanceType: js.UndefOr[EC2InstanceType] = js.undefined,
         InstanceLimit: js.UndefOr[WholeNumber] = js.undefined
     ): EC2InstanceLimit = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CurrentInstances.foreach(__v => __obj.update("CurrentInstances", __v.asInstanceOf[js.Any]))
-      EC2InstanceType.foreach(__v => __obj.update("EC2InstanceType", __v.asInstanceOf[js.Any]))
-      InstanceLimit.foreach(__v => __obj.update("InstanceLimit", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CurrentInstances.foreach(__v => __obj.updateDynamic("CurrentInstances")(__v.asInstanceOf[js.Any]))
+      EC2InstanceType.foreach(__v => __obj.updateDynamic("EC2InstanceType")(__v.asInstanceOf[js.Any]))
+      InstanceLimit.foreach(__v => __obj.updateDynamic("InstanceLimit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EC2InstanceLimit]
     }
   }
@@ -2642,13 +2646,13 @@ package gamelift {
         PreSignedLogUrl: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         ResourceId: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): Event = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EventCode.foreach(__v => __obj.update("EventCode", __v.asInstanceOf[js.Any]))
-      EventId.foreach(__v => __obj.update("EventId", __v.asInstanceOf[js.Any]))
-      EventTime.foreach(__v => __obj.update("EventTime", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
-      PreSignedLogUrl.foreach(__v => __obj.update("PreSignedLogUrl", __v.asInstanceOf[js.Any]))
-      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EventCode.foreach(__v => __obj.updateDynamic("EventCode")(__v.asInstanceOf[js.Any]))
+      EventId.foreach(__v => __obj.updateDynamic("EventId")(__v.asInstanceOf[js.Any]))
+      EventTime.foreach(__v => __obj.updateDynamic("EventTime")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      PreSignedLogUrl.foreach(__v => __obj.updateDynamic("PreSignedLogUrl")(__v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Event]
     }
   }
@@ -2803,29 +2807,31 @@ package gamelift {
         StoppedActions: js.UndefOr[FleetActionList] = js.undefined,
         TerminationTime: js.UndefOr[Timestamp] = js.undefined
     ): FleetAttributes = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BuildId.foreach(__v => __obj.update("BuildId", __v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      FleetArn.foreach(__v => __obj.update("FleetArn", __v.asInstanceOf[js.Any]))
-      FleetId.foreach(__v => __obj.update("FleetId", __v.asInstanceOf[js.Any]))
-      FleetType.foreach(__v => __obj.update("FleetType", __v.asInstanceOf[js.Any]))
-      InstanceRoleArn.foreach(__v => __obj.update("InstanceRoleArn", __v.asInstanceOf[js.Any]))
-      InstanceType.foreach(__v => __obj.update("InstanceType", __v.asInstanceOf[js.Any]))
-      LogPaths.foreach(__v => __obj.update("LogPaths", __v.asInstanceOf[js.Any]))
-      MetricGroups.foreach(__v => __obj.update("MetricGroups", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BuildId.foreach(__v => __obj.updateDynamic("BuildId")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      FleetArn.foreach(__v => __obj.updateDynamic("FleetArn")(__v.asInstanceOf[js.Any]))
+      FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
+      FleetType.foreach(__v => __obj.updateDynamic("FleetType")(__v.asInstanceOf[js.Any]))
+      InstanceRoleArn.foreach(__v => __obj.updateDynamic("InstanceRoleArn")(__v.asInstanceOf[js.Any]))
+      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
+      LogPaths.foreach(__v => __obj.updateDynamic("LogPaths")(__v.asInstanceOf[js.Any]))
+      MetricGroups.foreach(__v => __obj.updateDynamic("MetricGroups")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       NewGameSessionProtectionPolicy.foreach(
-        __v => __obj.update("NewGameSessionProtectionPolicy", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("NewGameSessionProtectionPolicy")(__v.asInstanceOf[js.Any])
       )
-      OperatingSystem.foreach(__v => __obj.update("OperatingSystem", __v.asInstanceOf[js.Any]))
-      ResourceCreationLimitPolicy.foreach(__v => __obj.update("ResourceCreationLimitPolicy", __v.asInstanceOf[js.Any]))
-      ScriptId.foreach(__v => __obj.update("ScriptId", __v.asInstanceOf[js.Any]))
-      ServerLaunchParameters.foreach(__v => __obj.update("ServerLaunchParameters", __v.asInstanceOf[js.Any]))
-      ServerLaunchPath.foreach(__v => __obj.update("ServerLaunchPath", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StoppedActions.foreach(__v => __obj.update("StoppedActions", __v.asInstanceOf[js.Any]))
-      TerminationTime.foreach(__v => __obj.update("TerminationTime", __v.asInstanceOf[js.Any]))
+      OperatingSystem.foreach(__v => __obj.updateDynamic("OperatingSystem")(__v.asInstanceOf[js.Any]))
+      ResourceCreationLimitPolicy.foreach(
+        __v => __obj.updateDynamic("ResourceCreationLimitPolicy")(__v.asInstanceOf[js.Any])
+      )
+      ScriptId.foreach(__v => __obj.updateDynamic("ScriptId")(__v.asInstanceOf[js.Any]))
+      ServerLaunchParameters.foreach(__v => __obj.updateDynamic("ServerLaunchParameters")(__v.asInstanceOf[js.Any]))
+      ServerLaunchPath.foreach(__v => __obj.updateDynamic("ServerLaunchPath")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StoppedActions.foreach(__v => __obj.updateDynamic("StoppedActions")(__v.asInstanceOf[js.Any]))
+      TerminationTime.foreach(__v => __obj.updateDynamic("TerminationTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FleetAttributes]
     }
   }
@@ -2866,10 +2872,10 @@ package gamelift {
         InstanceCounts: js.UndefOr[EC2InstanceCounts] = js.undefined,
         InstanceType: js.UndefOr[EC2InstanceType] = js.undefined
     ): FleetCapacity = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FleetId.foreach(__v => __obj.update("FleetId", __v.asInstanceOf[js.Any]))
-      InstanceCounts.foreach(__v => __obj.update("InstanceCounts", __v.asInstanceOf[js.Any]))
-      InstanceType.foreach(__v => __obj.update("InstanceType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
+      InstanceCounts.foreach(__v => __obj.updateDynamic("InstanceCounts")(__v.asInstanceOf[js.Any]))
+      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FleetCapacity]
     }
   }
@@ -2937,12 +2943,16 @@ package gamelift {
         FleetId: js.UndefOr[FleetId] = js.undefined,
         MaximumPlayerSessionCount: js.UndefOr[WholeNumber] = js.undefined
     ): FleetUtilization = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ActiveGameSessionCount.foreach(__v => __obj.update("ActiveGameSessionCount", __v.asInstanceOf[js.Any]))
-      ActiveServerProcessCount.foreach(__v => __obj.update("ActiveServerProcessCount", __v.asInstanceOf[js.Any]))
-      CurrentPlayerSessionCount.foreach(__v => __obj.update("CurrentPlayerSessionCount", __v.asInstanceOf[js.Any]))
-      FleetId.foreach(__v => __obj.update("FleetId", __v.asInstanceOf[js.Any]))
-      MaximumPlayerSessionCount.foreach(__v => __obj.update("MaximumPlayerSessionCount", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ActiveGameSessionCount.foreach(__v => __obj.updateDynamic("ActiveGameSessionCount")(__v.asInstanceOf[js.Any]))
+      ActiveServerProcessCount.foreach(__v => __obj.updateDynamic("ActiveServerProcessCount")(__v.asInstanceOf[js.Any]))
+      CurrentPlayerSessionCount.foreach(
+        __v => __obj.updateDynamic("CurrentPlayerSessionCount")(__v.asInstanceOf[js.Any])
+      )
+      FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
+      MaximumPlayerSessionCount.foreach(
+        __v => __obj.updateDynamic("MaximumPlayerSessionCount")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[FleetUtilization]
     }
   }
@@ -2961,7 +2971,7 @@ package gamelift {
         Key: GamePropertyKey,
         Value: GamePropertyValue
     ): GameProperty = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"   -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
@@ -3025,23 +3035,29 @@ package gamelift {
         StatusReason: js.UndefOr[GameSessionStatusReason] = js.undefined,
         TerminationTime: js.UndefOr[Timestamp] = js.undefined
     ): GameSession = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      CreatorId.foreach(__v => __obj.update("CreatorId", __v.asInstanceOf[js.Any]))
-      CurrentPlayerSessionCount.foreach(__v => __obj.update("CurrentPlayerSessionCount", __v.asInstanceOf[js.Any]))
-      FleetId.foreach(__v => __obj.update("FleetId", __v.asInstanceOf[js.Any]))
-      GameProperties.foreach(__v => __obj.update("GameProperties", __v.asInstanceOf[js.Any]))
-      GameSessionData.foreach(__v => __obj.update("GameSessionData", __v.asInstanceOf[js.Any]))
-      GameSessionId.foreach(__v => __obj.update("GameSessionId", __v.asInstanceOf[js.Any]))
-      IpAddress.foreach(__v => __obj.update("IpAddress", __v.asInstanceOf[js.Any]))
-      MatchmakerData.foreach(__v => __obj.update("MatchmakerData", __v.asInstanceOf[js.Any]))
-      MaximumPlayerSessionCount.foreach(__v => __obj.update("MaximumPlayerSessionCount", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      PlayerSessionCreationPolicy.foreach(__v => __obj.update("PlayerSessionCreationPolicy", __v.asInstanceOf[js.Any]))
-      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusReason.foreach(__v => __obj.update("StatusReason", __v.asInstanceOf[js.Any]))
-      TerminationTime.foreach(__v => __obj.update("TerminationTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      CreatorId.foreach(__v => __obj.updateDynamic("CreatorId")(__v.asInstanceOf[js.Any]))
+      CurrentPlayerSessionCount.foreach(
+        __v => __obj.updateDynamic("CurrentPlayerSessionCount")(__v.asInstanceOf[js.Any])
+      )
+      FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
+      GameProperties.foreach(__v => __obj.updateDynamic("GameProperties")(__v.asInstanceOf[js.Any]))
+      GameSessionData.foreach(__v => __obj.updateDynamic("GameSessionData")(__v.asInstanceOf[js.Any]))
+      GameSessionId.foreach(__v => __obj.updateDynamic("GameSessionId")(__v.asInstanceOf[js.Any]))
+      IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
+      MatchmakerData.foreach(__v => __obj.updateDynamic("MatchmakerData")(__v.asInstanceOf[js.Any]))
+      MaximumPlayerSessionCount.foreach(
+        __v => __obj.updateDynamic("MaximumPlayerSessionCount")(__v.asInstanceOf[js.Any])
+      )
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PlayerSessionCreationPolicy.foreach(
+        __v => __obj.updateDynamic("PlayerSessionCreationPolicy")(__v.asInstanceOf[js.Any])
+      )
+      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusReason.foreach(__v => __obj.updateDynamic("StatusReason")(__v.asInstanceOf[js.Any]))
+      TerminationTime.foreach(__v => __obj.updateDynamic("TerminationTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GameSession]
     }
   }
@@ -3064,11 +3080,11 @@ package gamelift {
         MatchedPlayerSessions: js.UndefOr[MatchedPlayerSessionList] = js.undefined,
         Port: js.UndefOr[PositiveInteger] = js.undefined
     ): GameSessionConnectionInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GameSessionArn.foreach(__v => __obj.update("GameSessionArn", __v.asInstanceOf[js.Any]))
-      IpAddress.foreach(__v => __obj.update("IpAddress", __v.asInstanceOf[js.Any]))
-      MatchedPlayerSessions.foreach(__v => __obj.update("MatchedPlayerSessions", __v.asInstanceOf[js.Any]))
-      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GameSessionArn.foreach(__v => __obj.updateDynamic("GameSessionArn")(__v.asInstanceOf[js.Any]))
+      IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
+      MatchedPlayerSessions.foreach(__v => __obj.updateDynamic("MatchedPlayerSessions")(__v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GameSessionConnectionInfo]
     }
   }
@@ -3087,9 +3103,9 @@ package gamelift {
         GameSession: js.UndefOr[GameSession] = js.undefined,
         ProtectionPolicy: js.UndefOr[ProtectionPolicy] = js.undefined
     ): GameSessionDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GameSession.foreach(__v => __obj.update("GameSession", __v.asInstanceOf[js.Any]))
-      ProtectionPolicy.foreach(__v => __obj.update("ProtectionPolicy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GameSession.foreach(__v => __obj.updateDynamic("GameSession")(__v.asInstanceOf[js.Any]))
+      ProtectionPolicy.foreach(__v => __obj.updateDynamic("ProtectionPolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GameSessionDetail]
     }
   }
@@ -3142,24 +3158,26 @@ package gamelift {
         StartTime: js.UndefOr[Timestamp] = js.undefined,
         Status: js.UndefOr[GameSessionPlacementState] = js.undefined
     ): GameSessionPlacement = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
-      GameProperties.foreach(__v => __obj.update("GameProperties", __v.asInstanceOf[js.Any]))
-      GameSessionArn.foreach(__v => __obj.update("GameSessionArn", __v.asInstanceOf[js.Any]))
-      GameSessionData.foreach(__v => __obj.update("GameSessionData", __v.asInstanceOf[js.Any]))
-      GameSessionId.foreach(__v => __obj.update("GameSessionId", __v.asInstanceOf[js.Any]))
-      GameSessionName.foreach(__v => __obj.update("GameSessionName", __v.asInstanceOf[js.Any]))
-      GameSessionQueueName.foreach(__v => __obj.update("GameSessionQueueName", __v.asInstanceOf[js.Any]))
-      GameSessionRegion.foreach(__v => __obj.update("GameSessionRegion", __v.asInstanceOf[js.Any]))
-      IpAddress.foreach(__v => __obj.update("IpAddress", __v.asInstanceOf[js.Any]))
-      MatchmakerData.foreach(__v => __obj.update("MatchmakerData", __v.asInstanceOf[js.Any]))
-      MaximumPlayerSessionCount.foreach(__v => __obj.update("MaximumPlayerSessionCount", __v.asInstanceOf[js.Any]))
-      PlacedPlayerSessions.foreach(__v => __obj.update("PlacedPlayerSessions", __v.asInstanceOf[js.Any]))
-      PlacementId.foreach(__v => __obj.update("PlacementId", __v.asInstanceOf[js.Any]))
-      PlayerLatencies.foreach(__v => __obj.update("PlayerLatencies", __v.asInstanceOf[js.Any]))
-      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      GameProperties.foreach(__v => __obj.updateDynamic("GameProperties")(__v.asInstanceOf[js.Any]))
+      GameSessionArn.foreach(__v => __obj.updateDynamic("GameSessionArn")(__v.asInstanceOf[js.Any]))
+      GameSessionData.foreach(__v => __obj.updateDynamic("GameSessionData")(__v.asInstanceOf[js.Any]))
+      GameSessionId.foreach(__v => __obj.updateDynamic("GameSessionId")(__v.asInstanceOf[js.Any]))
+      GameSessionName.foreach(__v => __obj.updateDynamic("GameSessionName")(__v.asInstanceOf[js.Any]))
+      GameSessionQueueName.foreach(__v => __obj.updateDynamic("GameSessionQueueName")(__v.asInstanceOf[js.Any]))
+      GameSessionRegion.foreach(__v => __obj.updateDynamic("GameSessionRegion")(__v.asInstanceOf[js.Any]))
+      IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
+      MatchmakerData.foreach(__v => __obj.updateDynamic("MatchmakerData")(__v.asInstanceOf[js.Any]))
+      MaximumPlayerSessionCount.foreach(
+        __v => __obj.updateDynamic("MaximumPlayerSessionCount")(__v.asInstanceOf[js.Any])
+      )
+      PlacedPlayerSessions.foreach(__v => __obj.updateDynamic("PlacedPlayerSessions")(__v.asInstanceOf[js.Any]))
+      PlacementId.foreach(__v => __obj.updateDynamic("PlacementId")(__v.asInstanceOf[js.Any]))
+      PlayerLatencies.foreach(__v => __obj.updateDynamic("PlayerLatencies")(__v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GameSessionPlacement]
     }
   }
@@ -3200,12 +3218,12 @@ package gamelift {
         PlayerLatencyPolicies: js.UndefOr[PlayerLatencyPolicyList] = js.undefined,
         TimeoutInSeconds: js.UndefOr[WholeNumber] = js.undefined
     ): GameSessionQueue = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Destinations.foreach(__v => __obj.update("Destinations", __v.asInstanceOf[js.Any]))
-      GameSessionQueueArn.foreach(__v => __obj.update("GameSessionQueueArn", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      PlayerLatencyPolicies.foreach(__v => __obj.update("PlayerLatencyPolicies", __v.asInstanceOf[js.Any]))
-      TimeoutInSeconds.foreach(__v => __obj.update("TimeoutInSeconds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Destinations.foreach(__v => __obj.updateDynamic("Destinations")(__v.asInstanceOf[js.Any]))
+      GameSessionQueueArn.foreach(__v => __obj.updateDynamic("GameSessionQueueArn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PlayerLatencyPolicies.foreach(__v => __obj.updateDynamic("PlayerLatencyPolicies")(__v.asInstanceOf[js.Any]))
+      TimeoutInSeconds.foreach(__v => __obj.updateDynamic("TimeoutInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GameSessionQueue]
     }
   }
@@ -3226,8 +3244,8 @@ package gamelift {
     def apply(
         DestinationArn: js.UndefOr[ArnStringModel] = js.undefined
     ): GameSessionQueueDestination = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DestinationArn.foreach(__v => __obj.update("DestinationArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DestinationArn.foreach(__v => __obj.updateDynamic("DestinationArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GameSessionQueueDestination]
     }
   }
@@ -3260,7 +3278,7 @@ package gamelift {
     def apply(
         GameSessionId: ArnStringModel
     ): GetGameSessionLogUrlInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GameSessionId" -> GameSessionId.asInstanceOf[js.Any]
       )
 
@@ -3280,8 +3298,8 @@ package gamelift {
     def apply(
         PreSignedUrl: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): GetGameSessionLogUrlOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PreSignedUrl.foreach(__v => __obj.update("PreSignedUrl", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PreSignedUrl.foreach(__v => __obj.updateDynamic("PreSignedUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetGameSessionLogUrlOutput]
     }
   }
@@ -3300,7 +3318,7 @@ package gamelift {
         FleetId: FleetId,
         InstanceId: InstanceId
     ): GetInstanceAccessInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetId"    -> FleetId.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
@@ -3321,8 +3339,8 @@ package gamelift {
     def apply(
         InstanceAccess: js.UndefOr[InstanceAccess] = js.undefined
     ): GetInstanceAccessOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InstanceAccess.foreach(__v => __obj.update("InstanceAccess", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InstanceAccess.foreach(__v => __obj.updateDynamic("InstanceAccess")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetInstanceAccessOutput]
     }
   }
@@ -3351,14 +3369,14 @@ package gamelift {
         Status: js.UndefOr[InstanceStatus] = js.undefined,
         Type: js.UndefOr[EC2InstanceType] = js.undefined
     ): Instance = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      FleetId.foreach(__v => __obj.update("FleetId", __v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      IpAddress.foreach(__v => __obj.update("IpAddress", __v.asInstanceOf[js.Any]))
-      OperatingSystem.foreach(__v => __obj.update("OperatingSystem", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
+      OperatingSystem.foreach(__v => __obj.updateDynamic("OperatingSystem")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Instance]
     }
   }
@@ -3383,12 +3401,12 @@ package gamelift {
         IpAddress: js.UndefOr[IpAddress] = js.undefined,
         OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined
     ): InstanceAccess = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Credentials.foreach(__v => __obj.update("Credentials", __v.asInstanceOf[js.Any]))
-      FleetId.foreach(__v => __obj.update("FleetId", __v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      IpAddress.foreach(__v => __obj.update("IpAddress", __v.asInstanceOf[js.Any]))
-      OperatingSystem.foreach(__v => __obj.update("OperatingSystem", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Credentials.foreach(__v => __obj.updateDynamic("Credentials")(__v.asInstanceOf[js.Any]))
+      FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
+      OperatingSystem.foreach(__v => __obj.updateDynamic("OperatingSystem")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceAccess]
     }
   }
@@ -3407,9 +3425,9 @@ package gamelift {
         Secret: js.UndefOr[NonEmptyString] = js.undefined,
         UserName: js.UndefOr[NonEmptyString] = js.undefined
     ): InstanceCredentials = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Secret.foreach(__v => __obj.update("Secret", __v.asInstanceOf[js.Any]))
-      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Secret.foreach(__v => __obj.updateDynamic("Secret")(__v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceCredentials]
     }
   }
@@ -3440,7 +3458,7 @@ package gamelift {
         Protocol: IpProtocol,
         ToPort: PortNumber
     ): IpPermission = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FromPort" -> FromPort.asInstanceOf[js.Any],
         "IpRange"  -> IpRange.asInstanceOf[js.Any],
         "Protocol" -> Protocol.asInstanceOf[js.Any],
@@ -3476,11 +3494,11 @@ package gamelift {
         NextToken: js.UndefOr[NonEmptyString] = js.undefined,
         RoutingStrategyType: js.UndefOr[RoutingStrategyType] = js.undefined
     ): ListAliasesInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      RoutingStrategyType.foreach(__v => __obj.update("RoutingStrategyType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RoutingStrategyType.foreach(__v => __obj.updateDynamic("RoutingStrategyType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAliasesInput]
     }
   }
@@ -3499,9 +3517,9 @@ package gamelift {
         Aliases: js.UndefOr[AliasList] = js.undefined,
         NextToken: js.UndefOr[NonEmptyString] = js.undefined
     ): ListAliasesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Aliases.foreach(__v => __obj.update("Aliases", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Aliases.foreach(__v => __obj.updateDynamic("Aliases")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAliasesOutput]
     }
   }
@@ -3522,10 +3540,10 @@ package gamelift {
         NextToken: js.UndefOr[NonEmptyString] = js.undefined,
         Status: js.UndefOr[BuildStatus] = js.undefined
     ): ListBuildsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBuildsInput]
     }
   }
@@ -3544,9 +3562,9 @@ package gamelift {
         Builds: js.UndefOr[BuildList] = js.undefined,
         NextToken: js.UndefOr[NonEmptyString] = js.undefined
     ): ListBuildsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Builds.foreach(__v => __obj.update("Builds", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Builds.foreach(__v => __obj.updateDynamic("Builds")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBuildsOutput]
     }
   }
@@ -3569,11 +3587,11 @@ package gamelift {
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         ScriptId: js.UndefOr[ScriptId] = js.undefined
     ): ListFleetsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BuildId.foreach(__v => __obj.update("BuildId", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ScriptId.foreach(__v => __obj.update("ScriptId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BuildId.foreach(__v => __obj.updateDynamic("BuildId")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ScriptId.foreach(__v => __obj.updateDynamic("ScriptId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFleetsInput]
     }
   }
@@ -3592,9 +3610,9 @@ package gamelift {
         FleetIds: js.UndefOr[FleetIdList] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): ListFleetsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FleetIds.foreach(__v => __obj.update("FleetIds", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FleetIds.foreach(__v => __obj.updateDynamic("FleetIds")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFleetsOutput]
     }
   }
@@ -3610,9 +3628,9 @@ package gamelift {
         Limit: js.UndefOr[PositiveInteger] = js.undefined,
         NextToken: js.UndefOr[NonEmptyString] = js.undefined
     ): ListScriptsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListScriptsInput]
     }
   }
@@ -3628,9 +3646,9 @@ package gamelift {
         NextToken: js.UndefOr[NonEmptyString] = js.undefined,
         Scripts: js.UndefOr[ScriptList] = js.undefined
     ): ListScriptsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Scripts.foreach(__v => __obj.update("Scripts", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Scripts.foreach(__v => __obj.updateDynamic("Scripts")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListScriptsOutput]
     }
   }
@@ -3650,9 +3668,9 @@ package gamelift {
         PlayerId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         PlayerSessionId: js.UndefOr[PlayerSessionId] = js.undefined
     ): MatchedPlayerSession = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PlayerId.foreach(__v => __obj.update("PlayerId", __v.asInstanceOf[js.Any]))
-      PlayerSessionId.foreach(__v => __obj.update("PlayerSessionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PlayerId.foreach(__v => __obj.updateDynamic("PlayerId")(__v.asInstanceOf[js.Any]))
+      PlayerSessionId.foreach(__v => __obj.updateDynamic("PlayerSessionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MatchedPlayerSession]
     }
   }
@@ -3695,21 +3713,21 @@ package gamelift {
         RequestTimeoutSeconds: js.UndefOr[MatchmakingRequestTimeoutInteger] = js.undefined,
         RuleSetName: js.UndefOr[MatchmakingIdStringModel] = js.undefined
     ): MatchmakingConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AcceptanceRequired.foreach(__v => __obj.update("AcceptanceRequired", __v.asInstanceOf[js.Any]))
-      AcceptanceTimeoutSeconds.foreach(__v => __obj.update("AcceptanceTimeoutSeconds", __v.asInstanceOf[js.Any]))
-      AdditionalPlayerCount.foreach(__v => __obj.update("AdditionalPlayerCount", __v.asInstanceOf[js.Any]))
-      BackfillMode.foreach(__v => __obj.update("BackfillMode", __v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      CustomEventData.foreach(__v => __obj.update("CustomEventData", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      GameProperties.foreach(__v => __obj.update("GameProperties", __v.asInstanceOf[js.Any]))
-      GameSessionData.foreach(__v => __obj.update("GameSessionData", __v.asInstanceOf[js.Any]))
-      GameSessionQueueArns.foreach(__v => __obj.update("GameSessionQueueArns", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      NotificationTarget.foreach(__v => __obj.update("NotificationTarget", __v.asInstanceOf[js.Any]))
-      RequestTimeoutSeconds.foreach(__v => __obj.update("RequestTimeoutSeconds", __v.asInstanceOf[js.Any]))
-      RuleSetName.foreach(__v => __obj.update("RuleSetName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AcceptanceRequired.foreach(__v => __obj.updateDynamic("AcceptanceRequired")(__v.asInstanceOf[js.Any]))
+      AcceptanceTimeoutSeconds.foreach(__v => __obj.updateDynamic("AcceptanceTimeoutSeconds")(__v.asInstanceOf[js.Any]))
+      AdditionalPlayerCount.foreach(__v => __obj.updateDynamic("AdditionalPlayerCount")(__v.asInstanceOf[js.Any]))
+      BackfillMode.foreach(__v => __obj.updateDynamic("BackfillMode")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      CustomEventData.foreach(__v => __obj.updateDynamic("CustomEventData")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      GameProperties.foreach(__v => __obj.updateDynamic("GameProperties")(__v.asInstanceOf[js.Any]))
+      GameSessionData.foreach(__v => __obj.updateDynamic("GameSessionData")(__v.asInstanceOf[js.Any]))
+      GameSessionQueueArns.foreach(__v => __obj.updateDynamic("GameSessionQueueArns")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NotificationTarget.foreach(__v => __obj.updateDynamic("NotificationTarget")(__v.asInstanceOf[js.Any]))
+      RequestTimeoutSeconds.foreach(__v => __obj.updateDynamic("RequestTimeoutSeconds")(__v.asInstanceOf[js.Any]))
+      RuleSetName.foreach(__v => __obj.updateDynamic("RuleSetName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MatchmakingConfiguration]
     }
   }
@@ -3750,12 +3768,12 @@ package gamelift {
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         RuleSetName: js.UndefOr[MatchmakingIdStringModel] = js.undefined
     ): MatchmakingRuleSet = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RuleSetBody" -> RuleSetBody.asInstanceOf[js.Any]
       )
 
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      RuleSetName.foreach(__v => __obj.update("RuleSetName", __v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      RuleSetName.foreach(__v => __obj.updateDynamic("RuleSetName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MatchmakingRuleSet]
     }
   }
@@ -3790,17 +3808,19 @@ package gamelift {
         StatusReason: js.UndefOr[StringModel] = js.undefined,
         TicketId: js.UndefOr[MatchmakingIdStringModel] = js.undefined
     ): MatchmakingTicket = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConfigurationName.foreach(__v => __obj.update("ConfigurationName", __v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
-      EstimatedWaitTime.foreach(__v => __obj.update("EstimatedWaitTime", __v.asInstanceOf[js.Any]))
-      GameSessionConnectionInfo.foreach(__v => __obj.update("GameSessionConnectionInfo", __v.asInstanceOf[js.Any]))
-      Players.foreach(__v => __obj.update("Players", __v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
-      StatusReason.foreach(__v => __obj.update("StatusReason", __v.asInstanceOf[js.Any]))
-      TicketId.foreach(__v => __obj.update("TicketId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConfigurationName.foreach(__v => __obj.updateDynamic("ConfigurationName")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      EstimatedWaitTime.foreach(__v => __obj.updateDynamic("EstimatedWaitTime")(__v.asInstanceOf[js.Any]))
+      GameSessionConnectionInfo.foreach(
+        __v => __obj.updateDynamic("GameSessionConnectionInfo")(__v.asInstanceOf[js.Any])
+      )
+      Players.foreach(__v => __obj.updateDynamic("Players")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      StatusReason.foreach(__v => __obj.updateDynamic("StatusReason")(__v.asInstanceOf[js.Any]))
+      TicketId.foreach(__v => __obj.updateDynamic("TicketId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MatchmakingTicket]
     }
   }
@@ -3864,9 +3884,9 @@ package gamelift {
         PlayerId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         PlayerSessionId: js.UndefOr[PlayerSessionId] = js.undefined
     ): PlacedPlayerSession = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PlayerId.foreach(__v => __obj.update("PlayerId", __v.asInstanceOf[js.Any]))
-      PlayerSessionId.foreach(__v => __obj.update("PlayerSessionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PlayerId.foreach(__v => __obj.updateDynamic("PlayerId")(__v.asInstanceOf[js.Any]))
+      PlayerSessionId.foreach(__v => __obj.updateDynamic("PlayerSessionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PlacedPlayerSession]
     }
   }
@@ -3889,11 +3909,11 @@ package gamelift {
         PlayerId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         Team: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): Player = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LatencyInMs.foreach(__v => __obj.update("LatencyInMs", __v.asInstanceOf[js.Any]))
-      PlayerAttributes.foreach(__v => __obj.update("PlayerAttributes", __v.asInstanceOf[js.Any]))
-      PlayerId.foreach(__v => __obj.update("PlayerId", __v.asInstanceOf[js.Any]))
-      Team.foreach(__v => __obj.update("Team", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LatencyInMs.foreach(__v => __obj.updateDynamic("LatencyInMs")(__v.asInstanceOf[js.Any]))
+      PlayerAttributes.foreach(__v => __obj.updateDynamic("PlayerAttributes")(__v.asInstanceOf[js.Any]))
+      PlayerId.foreach(__v => __obj.updateDynamic("PlayerId")(__v.asInstanceOf[js.Any]))
+      Team.foreach(__v => __obj.updateDynamic("Team")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Player]
     }
   }
@@ -3914,10 +3934,10 @@ package gamelift {
         PlayerId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         RegionIdentifier: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): PlayerLatency = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LatencyInMilliseconds.foreach(__v => __obj.update("LatencyInMilliseconds", __v.asInstanceOf[js.Any]))
-      PlayerId.foreach(__v => __obj.update("PlayerId", __v.asInstanceOf[js.Any]))
-      RegionIdentifier.foreach(__v => __obj.update("RegionIdentifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LatencyInMilliseconds.foreach(__v => __obj.updateDynamic("LatencyInMilliseconds")(__v.asInstanceOf[js.Any]))
+      PlayerId.foreach(__v => __obj.updateDynamic("PlayerId")(__v.asInstanceOf[js.Any]))
+      RegionIdentifier.foreach(__v => __obj.updateDynamic("RegionIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PlayerLatency]
     }
   }
@@ -3940,11 +3960,11 @@ package gamelift {
         MaximumIndividualPlayerLatencyMilliseconds: js.UndefOr[WholeNumber] = js.undefined,
         PolicyDurationSeconds: js.UndefOr[WholeNumber] = js.undefined
     ): PlayerLatencyPolicy = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       MaximumIndividualPlayerLatencyMilliseconds.foreach(
-        __v => __obj.update("MaximumIndividualPlayerLatencyMilliseconds", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("MaximumIndividualPlayerLatencyMilliseconds")(__v.asInstanceOf[js.Any])
       )
-      PolicyDurationSeconds.foreach(__v => __obj.update("PolicyDurationSeconds", __v.asInstanceOf[js.Any]))
+      PolicyDurationSeconds.foreach(__v => __obj.updateDynamic("PolicyDurationSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PlayerLatencyPolicy]
     }
   }
@@ -3988,17 +4008,17 @@ package gamelift {
         Status: js.UndefOr[PlayerSessionStatus] = js.undefined,
         TerminationTime: js.UndefOr[Timestamp] = js.undefined
     ): PlayerSession = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      FleetId.foreach(__v => __obj.update("FleetId", __v.asInstanceOf[js.Any]))
-      GameSessionId.foreach(__v => __obj.update("GameSessionId", __v.asInstanceOf[js.Any]))
-      IpAddress.foreach(__v => __obj.update("IpAddress", __v.asInstanceOf[js.Any]))
-      PlayerData.foreach(__v => __obj.update("PlayerData", __v.asInstanceOf[js.Any]))
-      PlayerId.foreach(__v => __obj.update("PlayerId", __v.asInstanceOf[js.Any]))
-      PlayerSessionId.foreach(__v => __obj.update("PlayerSessionId", __v.asInstanceOf[js.Any]))
-      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      TerminationTime.foreach(__v => __obj.update("TerminationTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
+      GameSessionId.foreach(__v => __obj.updateDynamic("GameSessionId")(__v.asInstanceOf[js.Any]))
+      IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
+      PlayerData.foreach(__v => __obj.updateDynamic("PlayerData")(__v.asInstanceOf[js.Any]))
+      PlayerId.foreach(__v => __obj.updateDynamic("PlayerId")(__v.asInstanceOf[js.Any]))
+      PlayerSessionId.foreach(__v => __obj.updateDynamic("PlayerSessionId")(__v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TerminationTime.foreach(__v => __obj.updateDynamic("TerminationTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PlayerSession]
     }
   }
@@ -4063,19 +4083,19 @@ package gamelift {
         TargetConfiguration: js.UndefOr[TargetConfiguration] = js.undefined,
         Threshold: js.UndefOr[Double] = js.undefined
     ): PutScalingPolicyInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetId"    -> FleetId.asInstanceOf[js.Any],
         "MetricName" -> MetricName.asInstanceOf[js.Any],
         "Name"       -> Name.asInstanceOf[js.Any]
       )
 
-      ComparisonOperator.foreach(__v => __obj.update("ComparisonOperator", __v.asInstanceOf[js.Any]))
-      EvaluationPeriods.foreach(__v => __obj.update("EvaluationPeriods", __v.asInstanceOf[js.Any]))
-      PolicyType.foreach(__v => __obj.update("PolicyType", __v.asInstanceOf[js.Any]))
-      ScalingAdjustment.foreach(__v => __obj.update("ScalingAdjustment", __v.asInstanceOf[js.Any]))
-      ScalingAdjustmentType.foreach(__v => __obj.update("ScalingAdjustmentType", __v.asInstanceOf[js.Any]))
-      TargetConfiguration.foreach(__v => __obj.update("TargetConfiguration", __v.asInstanceOf[js.Any]))
-      Threshold.foreach(__v => __obj.update("Threshold", __v.asInstanceOf[js.Any]))
+      ComparisonOperator.foreach(__v => __obj.updateDynamic("ComparisonOperator")(__v.asInstanceOf[js.Any]))
+      EvaluationPeriods.foreach(__v => __obj.updateDynamic("EvaluationPeriods")(__v.asInstanceOf[js.Any]))
+      PolicyType.foreach(__v => __obj.updateDynamic("PolicyType")(__v.asInstanceOf[js.Any]))
+      ScalingAdjustment.foreach(__v => __obj.updateDynamic("ScalingAdjustment")(__v.asInstanceOf[js.Any]))
+      ScalingAdjustmentType.foreach(__v => __obj.updateDynamic("ScalingAdjustmentType")(__v.asInstanceOf[js.Any]))
+      TargetConfiguration.foreach(__v => __obj.updateDynamic("TargetConfiguration")(__v.asInstanceOf[js.Any]))
+      Threshold.foreach(__v => __obj.updateDynamic("Threshold")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutScalingPolicyInput]
     }
   }
@@ -4092,8 +4112,8 @@ package gamelift {
     def apply(
         Name: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): PutScalingPolicyOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutScalingPolicyOutput]
     }
   }
@@ -4110,7 +4130,7 @@ package gamelift {
     def apply(
         BuildId: BuildId
     ): RequestUploadCredentialsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BuildId" -> BuildId.asInstanceOf[js.Any]
       )
 
@@ -4132,9 +4152,9 @@ package gamelift {
         StorageLocation: js.UndefOr[S3Location] = js.undefined,
         UploadCredentials: js.UndefOr[AwsCredentials] = js.undefined
     ): RequestUploadCredentialsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      StorageLocation.foreach(__v => __obj.update("StorageLocation", __v.asInstanceOf[js.Any]))
-      UploadCredentials.foreach(__v => __obj.update("UploadCredentials", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      StorageLocation.foreach(__v => __obj.updateDynamic("StorageLocation")(__v.asInstanceOf[js.Any]))
+      UploadCredentials.foreach(__v => __obj.updateDynamic("UploadCredentials")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RequestUploadCredentialsOutput]
     }
   }
@@ -4151,7 +4171,7 @@ package gamelift {
     def apply(
         AliasId: AliasId
     ): ResolveAliasInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AliasId" -> AliasId.asInstanceOf[js.Any]
       )
 
@@ -4171,8 +4191,8 @@ package gamelift {
     def apply(
         FleetId: js.UndefOr[FleetId] = js.undefined
     ): ResolveAliasOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FleetId.foreach(__v => __obj.update("FleetId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResolveAliasOutput]
     }
   }
@@ -4192,9 +4212,11 @@ package gamelift {
         NewGameSessionsPerCreator: js.UndefOr[WholeNumber] = js.undefined,
         PolicyPeriodInMinutes: js.UndefOr[WholeNumber] = js.undefined
     ): ResourceCreationLimitPolicy = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NewGameSessionsPerCreator.foreach(__v => __obj.update("NewGameSessionsPerCreator", __v.asInstanceOf[js.Any]))
-      PolicyPeriodInMinutes.foreach(__v => __obj.update("PolicyPeriodInMinutes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NewGameSessionsPerCreator.foreach(
+        __v => __obj.updateDynamic("NewGameSessionsPerCreator")(__v.asInstanceOf[js.Any])
+      )
+      PolicyPeriodInMinutes.foreach(__v => __obj.updateDynamic("PolicyPeriodInMinutes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceCreationLimitPolicy]
     }
   }
@@ -4221,10 +4243,10 @@ package gamelift {
         Message: js.UndefOr[FreeText] = js.undefined,
         Type: js.UndefOr[RoutingStrategyType] = js.undefined
     ): RoutingStrategy = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FleetId.foreach(__v => __obj.update("FleetId", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RoutingStrategy]
     }
   }
@@ -4274,14 +4296,14 @@ package gamelift {
         MaxConcurrentGameSessionActivations: js.UndefOr[MaxConcurrentGameSessionActivations] = js.undefined,
         ServerProcesses: js.UndefOr[ServerProcessList] = js.undefined
     ): RuntimeConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       GameSessionActivationTimeoutSeconds.foreach(
-        __v => __obj.update("GameSessionActivationTimeoutSeconds", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("GameSessionActivationTimeoutSeconds")(__v.asInstanceOf[js.Any])
       )
       MaxConcurrentGameSessionActivations.foreach(
-        __v => __obj.update("MaxConcurrentGameSessionActivations", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("MaxConcurrentGameSessionActivations")(__v.asInstanceOf[js.Any])
       )
-      ServerProcesses.foreach(__v => __obj.update("ServerProcesses", __v.asInstanceOf[js.Any]))
+      ServerProcesses.foreach(__v => __obj.updateDynamic("ServerProcesses")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RuntimeConfiguration]
     }
   }
@@ -4304,11 +4326,11 @@ package gamelift {
         ObjectVersion: js.UndefOr[NonEmptyString] = js.undefined,
         RoleArn: js.UndefOr[NonEmptyString] = js.undefined
     ): S3Location = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Bucket.foreach(__v => __obj.update("Bucket", __v.asInstanceOf[js.Any]))
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      ObjectVersion.foreach(__v => __obj.update("ObjectVersion", __v.asInstanceOf[js.Any]))
-      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Bucket.foreach(__v => __obj.updateDynamic("Bucket")(__v.asInstanceOf[js.Any]))
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      ObjectVersion.foreach(__v => __obj.updateDynamic("ObjectVersion")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Location]
     }
   }
@@ -4364,18 +4386,18 @@ package gamelift {
         TargetConfiguration: js.UndefOr[TargetConfiguration] = js.undefined,
         Threshold: js.UndefOr[Double] = js.undefined
     ): ScalingPolicy = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ComparisonOperator.foreach(__v => __obj.update("ComparisonOperator", __v.asInstanceOf[js.Any]))
-      EvaluationPeriods.foreach(__v => __obj.update("EvaluationPeriods", __v.asInstanceOf[js.Any]))
-      FleetId.foreach(__v => __obj.update("FleetId", __v.asInstanceOf[js.Any]))
-      MetricName.foreach(__v => __obj.update("MetricName", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      PolicyType.foreach(__v => __obj.update("PolicyType", __v.asInstanceOf[js.Any]))
-      ScalingAdjustment.foreach(__v => __obj.update("ScalingAdjustment", __v.asInstanceOf[js.Any]))
-      ScalingAdjustmentType.foreach(__v => __obj.update("ScalingAdjustmentType", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      TargetConfiguration.foreach(__v => __obj.update("TargetConfiguration", __v.asInstanceOf[js.Any]))
-      Threshold.foreach(__v => __obj.update("Threshold", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ComparisonOperator.foreach(__v => __obj.updateDynamic("ComparisonOperator")(__v.asInstanceOf[js.Any]))
+      EvaluationPeriods.foreach(__v => __obj.updateDynamic("EvaluationPeriods")(__v.asInstanceOf[js.Any]))
+      FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
+      MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PolicyType.foreach(__v => __obj.updateDynamic("PolicyType")(__v.asInstanceOf[js.Any]))
+      ScalingAdjustment.foreach(__v => __obj.updateDynamic("ScalingAdjustment")(__v.asInstanceOf[js.Any]))
+      ScalingAdjustmentType.foreach(__v => __obj.updateDynamic("ScalingAdjustmentType")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TargetConfiguration.foreach(__v => __obj.updateDynamic("TargetConfiguration")(__v.asInstanceOf[js.Any]))
+      Threshold.foreach(__v => __obj.updateDynamic("Threshold")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScalingPolicy]
     }
   }
@@ -4421,13 +4443,13 @@ package gamelift {
         StorageLocation: js.UndefOr[S3Location] = js.undefined,
         Version: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): Script = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      ScriptId.foreach(__v => __obj.update("ScriptId", __v.asInstanceOf[js.Any]))
-      SizeOnDisk.foreach(__v => __obj.update("SizeOnDisk", __v.asInstanceOf[js.Any]))
-      StorageLocation.foreach(__v => __obj.update("StorageLocation", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ScriptId.foreach(__v => __obj.updateDynamic("ScriptId")(__v.asInstanceOf[js.Any]))
+      SizeOnDisk.foreach(__v => __obj.updateDynamic("SizeOnDisk")(__v.asInstanceOf[js.Any]))
+      StorageLocation.foreach(__v => __obj.updateDynamic("StorageLocation")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Script]
     }
   }
@@ -4454,13 +4476,13 @@ package gamelift {
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         SortExpression: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): SearchGameSessionsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AliasId.foreach(__v => __obj.update("AliasId", __v.asInstanceOf[js.Any]))
-      FilterExpression.foreach(__v => __obj.update("FilterExpression", __v.asInstanceOf[js.Any]))
-      FleetId.foreach(__v => __obj.update("FleetId", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      SortExpression.foreach(__v => __obj.update("SortExpression", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AliasId.foreach(__v => __obj.updateDynamic("AliasId")(__v.asInstanceOf[js.Any]))
+      FilterExpression.foreach(__v => __obj.updateDynamic("FilterExpression")(__v.asInstanceOf[js.Any]))
+      FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SortExpression.foreach(__v => __obj.updateDynamic("SortExpression")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchGameSessionsInput]
     }
   }
@@ -4479,9 +4501,9 @@ package gamelift {
         GameSessions: js.UndefOr[GameSessionList] = js.undefined,
         NextToken: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): SearchGameSessionsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GameSessions.foreach(__v => __obj.update("GameSessions", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GameSessions.foreach(__v => __obj.updateDynamic("GameSessions")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchGameSessionsOutput]
     }
   }
@@ -4502,12 +4524,12 @@ package gamelift {
         LaunchPath: NonZeroAndMaxString,
         Parameters: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): ServerProcess = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConcurrentExecutions" -> ConcurrentExecutions.asInstanceOf[js.Any],
         "LaunchPath"           -> LaunchPath.asInstanceOf[js.Any]
       )
 
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServerProcess]
     }
   }
@@ -4523,7 +4545,7 @@ package gamelift {
         Actions: FleetActionList,
         FleetId: FleetId
     ): StartFleetActionsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Actions" -> Actions.asInstanceOf[js.Any],
         "FleetId" -> FleetId.asInstanceOf[js.Any]
       )
@@ -4538,7 +4560,7 @@ package gamelift {
   object StartFleetActionsOutput {
     def apply(
         ): StartFleetActionsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartFleetActionsOutput]
     }
@@ -4570,17 +4592,17 @@ package gamelift {
         GameSessionName: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         PlayerLatencies: js.UndefOr[PlayerLatencyList] = js.undefined
     ): StartGameSessionPlacementInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GameSessionQueueName"      -> GameSessionQueueName.asInstanceOf[js.Any],
         "MaximumPlayerSessionCount" -> MaximumPlayerSessionCount.asInstanceOf[js.Any],
         "PlacementId"               -> PlacementId.asInstanceOf[js.Any]
       )
 
-      DesiredPlayerSessions.foreach(__v => __obj.update("DesiredPlayerSessions", __v.asInstanceOf[js.Any]))
-      GameProperties.foreach(__v => __obj.update("GameProperties", __v.asInstanceOf[js.Any]))
-      GameSessionData.foreach(__v => __obj.update("GameSessionData", __v.asInstanceOf[js.Any]))
-      GameSessionName.foreach(__v => __obj.update("GameSessionName", __v.asInstanceOf[js.Any]))
-      PlayerLatencies.foreach(__v => __obj.update("PlayerLatencies", __v.asInstanceOf[js.Any]))
+      DesiredPlayerSessions.foreach(__v => __obj.updateDynamic("DesiredPlayerSessions")(__v.asInstanceOf[js.Any]))
+      GameProperties.foreach(__v => __obj.updateDynamic("GameProperties")(__v.asInstanceOf[js.Any]))
+      GameSessionData.foreach(__v => __obj.updateDynamic("GameSessionData")(__v.asInstanceOf[js.Any]))
+      GameSessionName.foreach(__v => __obj.updateDynamic("GameSessionName")(__v.asInstanceOf[js.Any]))
+      PlayerLatencies.foreach(__v => __obj.updateDynamic("PlayerLatencies")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartGameSessionPlacementInput]
     }
   }
@@ -4597,8 +4619,8 @@ package gamelift {
     def apply(
         GameSessionPlacement: js.UndefOr[GameSessionPlacement] = js.undefined
     ): StartGameSessionPlacementOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GameSessionPlacement.foreach(__v => __obj.update("GameSessionPlacement", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GameSessionPlacement.foreach(__v => __obj.updateDynamic("GameSessionPlacement")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartGameSessionPlacementOutput]
     }
   }
@@ -4621,13 +4643,13 @@ package gamelift {
         Players: PlayerList,
         TicketId: js.UndefOr[MatchmakingIdStringModel] = js.undefined
     ): StartMatchBackfillInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationName" -> ConfigurationName.asInstanceOf[js.Any],
         "GameSessionArn"    -> GameSessionArn.asInstanceOf[js.Any],
         "Players"           -> Players.asInstanceOf[js.Any]
       )
 
-      TicketId.foreach(__v => __obj.update("TicketId", __v.asInstanceOf[js.Any]))
+      TicketId.foreach(__v => __obj.updateDynamic("TicketId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartMatchBackfillInput]
     }
   }
@@ -4644,8 +4666,8 @@ package gamelift {
     def apply(
         MatchmakingTicket: js.UndefOr[MatchmakingTicket] = js.undefined
     ): StartMatchBackfillOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MatchmakingTicket.foreach(__v => __obj.update("MatchmakingTicket", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MatchmakingTicket.foreach(__v => __obj.updateDynamic("MatchmakingTicket")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartMatchBackfillOutput]
     }
   }
@@ -4666,12 +4688,12 @@ package gamelift {
         Players: PlayerList,
         TicketId: js.UndefOr[MatchmakingIdStringModel] = js.undefined
     ): StartMatchmakingInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationName" -> ConfigurationName.asInstanceOf[js.Any],
         "Players"           -> Players.asInstanceOf[js.Any]
       )
 
-      TicketId.foreach(__v => __obj.update("TicketId", __v.asInstanceOf[js.Any]))
+      TicketId.foreach(__v => __obj.updateDynamic("TicketId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartMatchmakingInput]
     }
   }
@@ -4688,8 +4710,8 @@ package gamelift {
     def apply(
         MatchmakingTicket: js.UndefOr[MatchmakingTicket] = js.undefined
     ): StartMatchmakingOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MatchmakingTicket.foreach(__v => __obj.update("MatchmakingTicket", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MatchmakingTicket.foreach(__v => __obj.updateDynamic("MatchmakingTicket")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartMatchmakingOutput]
     }
   }
@@ -4705,7 +4727,7 @@ package gamelift {
         Actions: FleetActionList,
         FleetId: FleetId
     ): StopFleetActionsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Actions" -> Actions.asInstanceOf[js.Any],
         "FleetId" -> FleetId.asInstanceOf[js.Any]
       )
@@ -4720,7 +4742,7 @@ package gamelift {
   object StopFleetActionsOutput {
     def apply(
         ): StopFleetActionsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopFleetActionsOutput]
     }
@@ -4738,7 +4760,7 @@ package gamelift {
     def apply(
         PlacementId: IdStringModel
     ): StopGameSessionPlacementInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PlacementId" -> PlacementId.asInstanceOf[js.Any]
       )
 
@@ -4758,8 +4780,8 @@ package gamelift {
     def apply(
         GameSessionPlacement: js.UndefOr[GameSessionPlacement] = js.undefined
     ): StopGameSessionPlacementOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GameSessionPlacement.foreach(__v => __obj.update("GameSessionPlacement", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GameSessionPlacement.foreach(__v => __obj.updateDynamic("GameSessionPlacement")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopGameSessionPlacementOutput]
     }
   }
@@ -4776,7 +4798,7 @@ package gamelift {
     def apply(
         TicketId: MatchmakingIdStringModel
     ): StopMatchmakingInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TicketId" -> TicketId.asInstanceOf[js.Any]
       )
 
@@ -4790,7 +4812,7 @@ package gamelift {
   object StopMatchmakingOutput {
     def apply(
         ): StopMatchmakingOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopMatchmakingOutput]
     }
@@ -4819,7 +4841,7 @@ package gamelift {
     def apply(
         TargetValue: Double
     ): TargetConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TargetValue" -> TargetValue.asInstanceOf[js.Any]
       )
 
@@ -4845,13 +4867,13 @@ package gamelift {
         Name: js.UndefOr[NonBlankAndLengthConstraintString] = js.undefined,
         RoutingStrategy: js.UndefOr[RoutingStrategy] = js.undefined
     ): UpdateAliasInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AliasId" -> AliasId.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      RoutingStrategy.foreach(__v => __obj.update("RoutingStrategy", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RoutingStrategy.foreach(__v => __obj.updateDynamic("RoutingStrategy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAliasInput]
     }
   }
@@ -4868,8 +4890,8 @@ package gamelift {
     def apply(
         Alias: js.UndefOr[Alias] = js.undefined
     ): UpdateAliasOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Alias.foreach(__v => __obj.update("Alias", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Alias.foreach(__v => __obj.updateDynamic("Alias")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAliasOutput]
     }
   }
@@ -4890,12 +4912,12 @@ package gamelift {
         Name: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         Version: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): UpdateBuildInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BuildId" -> BuildId.asInstanceOf[js.Any]
       )
 
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateBuildInput]
     }
   }
@@ -4912,8 +4934,8 @@ package gamelift {
     def apply(
         Build: js.UndefOr[Build] = js.undefined
     ): UpdateBuildOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Build.foreach(__v => __obj.update("Build", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Build.foreach(__v => __obj.updateDynamic("Build")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateBuildOutput]
     }
   }
@@ -4940,17 +4962,19 @@ package gamelift {
         NewGameSessionProtectionPolicy: js.UndefOr[ProtectionPolicy] = js.undefined,
         ResourceCreationLimitPolicy: js.UndefOr[ResourceCreationLimitPolicy] = js.undefined
     ): UpdateFleetAttributesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetId" -> FleetId.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      MetricGroups.foreach(__v => __obj.update("MetricGroups", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      MetricGroups.foreach(__v => __obj.updateDynamic("MetricGroups")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       NewGameSessionProtectionPolicy.foreach(
-        __v => __obj.update("NewGameSessionProtectionPolicy", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("NewGameSessionProtectionPolicy")(__v.asInstanceOf[js.Any])
       )
-      ResourceCreationLimitPolicy.foreach(__v => __obj.update("ResourceCreationLimitPolicy", __v.asInstanceOf[js.Any]))
+      ResourceCreationLimitPolicy.foreach(
+        __v => __obj.updateDynamic("ResourceCreationLimitPolicy")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[UpdateFleetAttributesInput]
     }
   }
@@ -4967,8 +4991,8 @@ package gamelift {
     def apply(
         FleetId: js.UndefOr[FleetId] = js.undefined
     ): UpdateFleetAttributesOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FleetId.foreach(__v => __obj.update("FleetId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFleetAttributesOutput]
     }
   }
@@ -4991,13 +5015,13 @@ package gamelift {
         MaxSize: js.UndefOr[WholeNumber] = js.undefined,
         MinSize: js.UndefOr[WholeNumber] = js.undefined
     ): UpdateFleetCapacityInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetId" -> FleetId.asInstanceOf[js.Any]
       )
 
-      DesiredInstances.foreach(__v => __obj.update("DesiredInstances", __v.asInstanceOf[js.Any]))
-      MaxSize.foreach(__v => __obj.update("MaxSize", __v.asInstanceOf[js.Any]))
-      MinSize.foreach(__v => __obj.update("MinSize", __v.asInstanceOf[js.Any]))
+      DesiredInstances.foreach(__v => __obj.updateDynamic("DesiredInstances")(__v.asInstanceOf[js.Any]))
+      MaxSize.foreach(__v => __obj.updateDynamic("MaxSize")(__v.asInstanceOf[js.Any]))
+      MinSize.foreach(__v => __obj.updateDynamic("MinSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFleetCapacityInput]
     }
   }
@@ -5014,8 +5038,8 @@ package gamelift {
     def apply(
         FleetId: js.UndefOr[FleetId] = js.undefined
     ): UpdateFleetCapacityOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FleetId.foreach(__v => __obj.update("FleetId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFleetCapacityOutput]
     }
   }
@@ -5036,15 +5060,15 @@ package gamelift {
         InboundPermissionAuthorizations: js.UndefOr[IpPermissionsList] = js.undefined,
         InboundPermissionRevocations: js.UndefOr[IpPermissionsList] = js.undefined
     ): UpdateFleetPortSettingsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetId" -> FleetId.asInstanceOf[js.Any]
       )
 
       InboundPermissionAuthorizations.foreach(
-        __v => __obj.update("InboundPermissionAuthorizations", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("InboundPermissionAuthorizations")(__v.asInstanceOf[js.Any])
       )
       InboundPermissionRevocations.foreach(
-        __v => __obj.update("InboundPermissionRevocations", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("InboundPermissionRevocations")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateFleetPortSettingsInput]
     }
@@ -5062,8 +5086,8 @@ package gamelift {
     def apply(
         FleetId: js.UndefOr[FleetId] = js.undefined
     ): UpdateFleetPortSettingsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FleetId.foreach(__v => __obj.update("FleetId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFleetPortSettingsOutput]
     }
   }
@@ -5088,14 +5112,18 @@ package gamelift {
         PlayerSessionCreationPolicy: js.UndefOr[PlayerSessionCreationPolicy] = js.undefined,
         ProtectionPolicy: js.UndefOr[ProtectionPolicy] = js.undefined
     ): UpdateGameSessionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GameSessionId" -> GameSessionId.asInstanceOf[js.Any]
       )
 
-      MaximumPlayerSessionCount.foreach(__v => __obj.update("MaximumPlayerSessionCount", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      PlayerSessionCreationPolicy.foreach(__v => __obj.update("PlayerSessionCreationPolicy", __v.asInstanceOf[js.Any]))
-      ProtectionPolicy.foreach(__v => __obj.update("ProtectionPolicy", __v.asInstanceOf[js.Any]))
+      MaximumPlayerSessionCount.foreach(
+        __v => __obj.updateDynamic("MaximumPlayerSessionCount")(__v.asInstanceOf[js.Any])
+      )
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PlayerSessionCreationPolicy.foreach(
+        __v => __obj.updateDynamic("PlayerSessionCreationPolicy")(__v.asInstanceOf[js.Any])
+      )
+      ProtectionPolicy.foreach(__v => __obj.updateDynamic("ProtectionPolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGameSessionInput]
     }
   }
@@ -5112,8 +5140,8 @@ package gamelift {
     def apply(
         GameSession: js.UndefOr[GameSession] = js.undefined
     ): UpdateGameSessionOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GameSession.foreach(__v => __obj.update("GameSession", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GameSession.foreach(__v => __obj.updateDynamic("GameSession")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGameSessionOutput]
     }
   }
@@ -5136,13 +5164,13 @@ package gamelift {
         PlayerLatencyPolicies: js.UndefOr[PlayerLatencyPolicyList] = js.undefined,
         TimeoutInSeconds: js.UndefOr[WholeNumber] = js.undefined
     ): UpdateGameSessionQueueInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      Destinations.foreach(__v => __obj.update("Destinations", __v.asInstanceOf[js.Any]))
-      PlayerLatencyPolicies.foreach(__v => __obj.update("PlayerLatencyPolicies", __v.asInstanceOf[js.Any]))
-      TimeoutInSeconds.foreach(__v => __obj.update("TimeoutInSeconds", __v.asInstanceOf[js.Any]))
+      Destinations.foreach(__v => __obj.updateDynamic("Destinations")(__v.asInstanceOf[js.Any]))
+      PlayerLatencyPolicies.foreach(__v => __obj.updateDynamic("PlayerLatencyPolicies")(__v.asInstanceOf[js.Any]))
+      TimeoutInSeconds.foreach(__v => __obj.updateDynamic("TimeoutInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGameSessionQueueInput]
     }
   }
@@ -5159,8 +5187,8 @@ package gamelift {
     def apply(
         GameSessionQueue: js.UndefOr[GameSessionQueue] = js.undefined
     ): UpdateGameSessionQueueOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GameSessionQueue.foreach(__v => __obj.update("GameSessionQueue", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GameSessionQueue.foreach(__v => __obj.updateDynamic("GameSessionQueue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGameSessionQueueOutput]
     }
   }
@@ -5201,22 +5229,22 @@ package gamelift {
         RequestTimeoutSeconds: js.UndefOr[MatchmakingRequestTimeoutInteger] = js.undefined,
         RuleSetName: js.UndefOr[MatchmakingIdStringModel] = js.undefined
     ): UpdateMatchmakingConfigurationInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      AcceptanceRequired.foreach(__v => __obj.update("AcceptanceRequired", __v.asInstanceOf[js.Any]))
-      AcceptanceTimeoutSeconds.foreach(__v => __obj.update("AcceptanceTimeoutSeconds", __v.asInstanceOf[js.Any]))
-      AdditionalPlayerCount.foreach(__v => __obj.update("AdditionalPlayerCount", __v.asInstanceOf[js.Any]))
-      BackfillMode.foreach(__v => __obj.update("BackfillMode", __v.asInstanceOf[js.Any]))
-      CustomEventData.foreach(__v => __obj.update("CustomEventData", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      GameProperties.foreach(__v => __obj.update("GameProperties", __v.asInstanceOf[js.Any]))
-      GameSessionData.foreach(__v => __obj.update("GameSessionData", __v.asInstanceOf[js.Any]))
-      GameSessionQueueArns.foreach(__v => __obj.update("GameSessionQueueArns", __v.asInstanceOf[js.Any]))
-      NotificationTarget.foreach(__v => __obj.update("NotificationTarget", __v.asInstanceOf[js.Any]))
-      RequestTimeoutSeconds.foreach(__v => __obj.update("RequestTimeoutSeconds", __v.asInstanceOf[js.Any]))
-      RuleSetName.foreach(__v => __obj.update("RuleSetName", __v.asInstanceOf[js.Any]))
+      AcceptanceRequired.foreach(__v => __obj.updateDynamic("AcceptanceRequired")(__v.asInstanceOf[js.Any]))
+      AcceptanceTimeoutSeconds.foreach(__v => __obj.updateDynamic("AcceptanceTimeoutSeconds")(__v.asInstanceOf[js.Any]))
+      AdditionalPlayerCount.foreach(__v => __obj.updateDynamic("AdditionalPlayerCount")(__v.asInstanceOf[js.Any]))
+      BackfillMode.foreach(__v => __obj.updateDynamic("BackfillMode")(__v.asInstanceOf[js.Any]))
+      CustomEventData.foreach(__v => __obj.updateDynamic("CustomEventData")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      GameProperties.foreach(__v => __obj.updateDynamic("GameProperties")(__v.asInstanceOf[js.Any]))
+      GameSessionData.foreach(__v => __obj.updateDynamic("GameSessionData")(__v.asInstanceOf[js.Any]))
+      GameSessionQueueArns.foreach(__v => __obj.updateDynamic("GameSessionQueueArns")(__v.asInstanceOf[js.Any]))
+      NotificationTarget.foreach(__v => __obj.updateDynamic("NotificationTarget")(__v.asInstanceOf[js.Any]))
+      RequestTimeoutSeconds.foreach(__v => __obj.updateDynamic("RequestTimeoutSeconds")(__v.asInstanceOf[js.Any]))
+      RuleSetName.foreach(__v => __obj.updateDynamic("RuleSetName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateMatchmakingConfigurationInput]
     }
   }
@@ -5233,8 +5261,8 @@ package gamelift {
     def apply(
         Configuration: js.UndefOr[MatchmakingConfiguration] = js.undefined
     ): UpdateMatchmakingConfigurationOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Configuration.foreach(__v => __obj.update("Configuration", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateMatchmakingConfigurationOutput]
     }
   }
@@ -5253,7 +5281,7 @@ package gamelift {
         FleetId: FleetId,
         RuntimeConfiguration: RuntimeConfiguration
     ): UpdateRuntimeConfigurationInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetId"              -> FleetId.asInstanceOf[js.Any],
         "RuntimeConfiguration" -> RuntimeConfiguration.asInstanceOf[js.Any]
       )
@@ -5274,8 +5302,8 @@ package gamelift {
     def apply(
         RuntimeConfiguration: js.UndefOr[RuntimeConfiguration] = js.undefined
     ): UpdateRuntimeConfigurationOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RuntimeConfiguration.foreach(__v => __obj.update("RuntimeConfiguration", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RuntimeConfiguration.foreach(__v => __obj.updateDynamic("RuntimeConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRuntimeConfigurationOutput]
     }
   }
@@ -5297,14 +5325,14 @@ package gamelift {
         Version: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         ZipFile: js.UndefOr[ZipBlob] = js.undefined
     ): UpdateScriptInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ScriptId" -> ScriptId.asInstanceOf[js.Any]
       )
 
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      StorageLocation.foreach(__v => __obj.update("StorageLocation", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
-      ZipFile.foreach(__v => __obj.update("ZipFile", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      StorageLocation.foreach(__v => __obj.updateDynamic("StorageLocation")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      ZipFile.foreach(__v => __obj.updateDynamic("ZipFile")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateScriptInput]
     }
   }
@@ -5318,8 +5346,8 @@ package gamelift {
     def apply(
         Script: js.UndefOr[Script] = js.undefined
     ): UpdateScriptOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Script.foreach(__v => __obj.update("Script", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Script.foreach(__v => __obj.updateDynamic("Script")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateScriptOutput]
     }
   }
@@ -5336,7 +5364,7 @@ package gamelift {
     def apply(
         RuleSetBody: RuleSetBody
     ): ValidateMatchmakingRuleSetInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RuleSetBody" -> RuleSetBody.asInstanceOf[js.Any]
       )
 
@@ -5356,8 +5384,8 @@ package gamelift {
     def apply(
         Valid: js.UndefOr[BooleanModel] = js.undefined
     ): ValidateMatchmakingRuleSetOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Valid.foreach(__v => __obj.update("Valid", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Valid.foreach(__v => __obj.updateDynamic("Valid")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ValidateMatchmakingRuleSetOutput]
     }
   }
@@ -5388,12 +5416,12 @@ package gamelift {
         PeerVpcAwsAccountId: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         PeerVpcId: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): VpcPeeringAuthorization = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      ExpirationTime.foreach(__v => __obj.update("ExpirationTime", __v.asInstanceOf[js.Any]))
-      GameLiftAwsAccountId.foreach(__v => __obj.update("GameLiftAwsAccountId", __v.asInstanceOf[js.Any]))
-      PeerVpcAwsAccountId.foreach(__v => __obj.update("PeerVpcAwsAccountId", __v.asInstanceOf[js.Any]))
-      PeerVpcId.foreach(__v => __obj.update("PeerVpcId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      ExpirationTime.foreach(__v => __obj.updateDynamic("ExpirationTime")(__v.asInstanceOf[js.Any]))
+      GameLiftAwsAccountId.foreach(__v => __obj.updateDynamic("GameLiftAwsAccountId")(__v.asInstanceOf[js.Any]))
+      PeerVpcAwsAccountId.foreach(__v => __obj.updateDynamic("PeerVpcAwsAccountId")(__v.asInstanceOf[js.Any]))
+      PeerVpcId.foreach(__v => __obj.updateDynamic("PeerVpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VpcPeeringAuthorization]
     }
   }
@@ -5426,13 +5454,13 @@ package gamelift {
         Status: js.UndefOr[VpcPeeringConnectionStatus] = js.undefined,
         VpcPeeringConnectionId: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): VpcPeeringConnection = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FleetId.foreach(__v => __obj.update("FleetId", __v.asInstanceOf[js.Any]))
-      GameLiftVpcId.foreach(__v => __obj.update("GameLiftVpcId", __v.asInstanceOf[js.Any]))
-      IpV4CidrBlock.foreach(__v => __obj.update("IpV4CidrBlock", __v.asInstanceOf[js.Any]))
-      PeerVpcId.foreach(__v => __obj.update("PeerVpcId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      VpcPeeringConnectionId.foreach(__v => __obj.update("VpcPeeringConnectionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FleetId.foreach(__v => __obj.updateDynamic("FleetId")(__v.asInstanceOf[js.Any]))
+      GameLiftVpcId.foreach(__v => __obj.updateDynamic("GameLiftVpcId")(__v.asInstanceOf[js.Any]))
+      IpV4CidrBlock.foreach(__v => __obj.updateDynamic("IpV4CidrBlock")(__v.asInstanceOf[js.Any]))
+      PeerVpcId.foreach(__v => __obj.updateDynamic("PeerVpcId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      VpcPeeringConnectionId.foreach(__v => __obj.updateDynamic("VpcPeeringConnectionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VpcPeeringConnection]
     }
   }
@@ -5451,9 +5479,9 @@ package gamelift {
         Code: js.UndefOr[NonZeroAndMaxString] = js.undefined,
         Message: js.UndefOr[NonZeroAndMaxString] = js.undefined
     ): VpcPeeringConnectionStatus = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Code.foreach(__v => __obj.update("Code", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VpcPeeringConnectionStatus]
     }
   }

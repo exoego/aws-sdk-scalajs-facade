@@ -349,12 +349,12 @@ package pinpoint {
         ClientSecret: __string,
         Enabled: js.UndefOr[__boolean] = js.undefined
     ): ADMChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClientId"     -> ClientId.asInstanceOf[js.Any],
         "ClientSecret" -> ClientSecret.asInstanceOf[js.Any]
       )
 
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ADMChannelRequest]
     }
   }
@@ -389,19 +389,19 @@ package pinpoint {
         LastModifiedDate: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): ADMChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Platform" -> Platform.asInstanceOf[js.Any]
       )
 
-      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      HasCredential.foreach(__v => __obj.update("HasCredential", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
-      LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
-      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      ApplicationId.foreach(__v => __obj.updateDynamic("ApplicationId")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      HasCredential.foreach(__v => __obj.updateDynamic("HasCredential")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      IsArchived.foreach(__v => __obj.updateDynamic("IsArchived")(__v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ADMChannelResponse]
     }
   }
@@ -448,23 +448,23 @@ package pinpoint {
         Title: js.UndefOr[__string] = js.undefined,
         Url: js.UndefOr[__string] = js.undefined
     ): ADMMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Action.foreach(__v => __obj.update("Action", __v.asInstanceOf[js.Any]))
-      Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
-      ConsolidationKey.foreach(__v => __obj.update("ConsolidationKey", __v.asInstanceOf[js.Any]))
-      Data.foreach(__v => __obj.update("Data", __v.asInstanceOf[js.Any]))
-      ExpiresAfter.foreach(__v => __obj.update("ExpiresAfter", __v.asInstanceOf[js.Any]))
-      IconReference.foreach(__v => __obj.update("IconReference", __v.asInstanceOf[js.Any]))
-      ImageIconUrl.foreach(__v => __obj.update("ImageIconUrl", __v.asInstanceOf[js.Any]))
-      ImageUrl.foreach(__v => __obj.update("ImageUrl", __v.asInstanceOf[js.Any]))
-      MD5.foreach(__v => __obj.update("MD5", __v.asInstanceOf[js.Any]))
-      RawContent.foreach(__v => __obj.update("RawContent", __v.asInstanceOf[js.Any]))
-      SilentPush.foreach(__v => __obj.update("SilentPush", __v.asInstanceOf[js.Any]))
-      SmallImageIconUrl.foreach(__v => __obj.update("SmallImageIconUrl", __v.asInstanceOf[js.Any]))
-      Sound.foreach(__v => __obj.update("Sound", __v.asInstanceOf[js.Any]))
-      Substitutions.foreach(__v => __obj.update("Substitutions", __v.asInstanceOf[js.Any]))
-      Title.foreach(__v => __obj.update("Title", __v.asInstanceOf[js.Any]))
-      Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
+      ConsolidationKey.foreach(__v => __obj.updateDynamic("ConsolidationKey")(__v.asInstanceOf[js.Any]))
+      Data.foreach(__v => __obj.updateDynamic("Data")(__v.asInstanceOf[js.Any]))
+      ExpiresAfter.foreach(__v => __obj.updateDynamic("ExpiresAfter")(__v.asInstanceOf[js.Any]))
+      IconReference.foreach(__v => __obj.updateDynamic("IconReference")(__v.asInstanceOf[js.Any]))
+      ImageIconUrl.foreach(__v => __obj.updateDynamic("ImageIconUrl")(__v.asInstanceOf[js.Any]))
+      ImageUrl.foreach(__v => __obj.updateDynamic("ImageUrl")(__v.asInstanceOf[js.Any]))
+      MD5.foreach(__v => __obj.updateDynamic("MD5")(__v.asInstanceOf[js.Any]))
+      RawContent.foreach(__v => __obj.updateDynamic("RawContent")(__v.asInstanceOf[js.Any]))
+      SilentPush.foreach(__v => __obj.updateDynamic("SilentPush")(__v.asInstanceOf[js.Any]))
+      SmallImageIconUrl.foreach(__v => __obj.updateDynamic("SmallImageIconUrl")(__v.asInstanceOf[js.Any]))
+      Sound.foreach(__v => __obj.updateDynamic("Sound")(__v.asInstanceOf[js.Any]))
+      Substitutions.foreach(__v => __obj.updateDynamic("Substitutions")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ADMMessage]
     }
   }
@@ -495,15 +495,17 @@ package pinpoint {
         TokenKey: js.UndefOr[__string] = js.undefined,
         TokenKeyId: js.UndefOr[__string] = js.undefined
     ): APNSChannelRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BundleId.foreach(__v => __obj.update("BundleId", __v.asInstanceOf[js.Any]))
-      Certificate.foreach(__v => __obj.update("Certificate", __v.asInstanceOf[js.Any]))
-      DefaultAuthenticationMethod.foreach(__v => __obj.update("DefaultAuthenticationMethod", __v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      PrivateKey.foreach(__v => __obj.update("PrivateKey", __v.asInstanceOf[js.Any]))
-      TeamId.foreach(__v => __obj.update("TeamId", __v.asInstanceOf[js.Any]))
-      TokenKey.foreach(__v => __obj.update("TokenKey", __v.asInstanceOf[js.Any]))
-      TokenKeyId.foreach(__v => __obj.update("TokenKeyId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BundleId.foreach(__v => __obj.updateDynamic("BundleId")(__v.asInstanceOf[js.Any]))
+      Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
+      DefaultAuthenticationMethod.foreach(
+        __v => __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
+      )
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      PrivateKey.foreach(__v => __obj.updateDynamic("PrivateKey")(__v.asInstanceOf[js.Any]))
+      TeamId.foreach(__v => __obj.updateDynamic("TeamId")(__v.asInstanceOf[js.Any]))
+      TokenKey.foreach(__v => __obj.updateDynamic("TokenKey")(__v.asInstanceOf[js.Any]))
+      TokenKeyId.foreach(__v => __obj.updateDynamic("TokenKeyId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[APNSChannelRequest]
     }
   }
@@ -542,21 +544,23 @@ package pinpoint {
         LastModifiedDate: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): APNSChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Platform" -> Platform.asInstanceOf[js.Any]
       )
 
-      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      DefaultAuthenticationMethod.foreach(__v => __obj.update("DefaultAuthenticationMethod", __v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      HasCredential.foreach(__v => __obj.update("HasCredential", __v.asInstanceOf[js.Any]))
-      HasTokenKey.foreach(__v => __obj.update("HasTokenKey", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
-      LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
-      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      ApplicationId.foreach(__v => __obj.updateDynamic("ApplicationId")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      DefaultAuthenticationMethod.foreach(
+        __v => __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
+      )
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      HasCredential.foreach(__v => __obj.updateDynamic("HasCredential")(__v.asInstanceOf[js.Any]))
+      HasTokenKey.foreach(__v => __obj.updateDynamic("HasTokenKey")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      IsArchived.foreach(__v => __obj.updateDynamic("IsArchived")(__v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[APNSChannelResponse]
     }
   }
@@ -605,26 +609,26 @@ package pinpoint {
         Title: js.UndefOr[__string] = js.undefined,
         Url: js.UndefOr[__string] = js.undefined
     ): APNSMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Action.foreach(__v => __obj.update("Action", __v.asInstanceOf[js.Any]))
-      Badge.foreach(__v => __obj.update("Badge", __v.asInstanceOf[js.Any]))
-      Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
-      Category.foreach(__v => __obj.update("Category", __v.asInstanceOf[js.Any]))
-      CollapseId.foreach(__v => __obj.update("CollapseId", __v.asInstanceOf[js.Any]))
-      Data.foreach(__v => __obj.update("Data", __v.asInstanceOf[js.Any]))
-      MediaUrl.foreach(__v => __obj.update("MediaUrl", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      Badge.foreach(__v => __obj.updateDynamic("Badge")(__v.asInstanceOf[js.Any]))
+      Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
+      Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
+      CollapseId.foreach(__v => __obj.updateDynamic("CollapseId")(__v.asInstanceOf[js.Any]))
+      Data.foreach(__v => __obj.updateDynamic("Data")(__v.asInstanceOf[js.Any]))
+      MediaUrl.foreach(__v => __obj.updateDynamic("MediaUrl")(__v.asInstanceOf[js.Any]))
       PreferredAuthenticationMethod.foreach(
-        __v => __obj.update("PreferredAuthenticationMethod", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("PreferredAuthenticationMethod")(__v.asInstanceOf[js.Any])
       )
-      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
-      RawContent.foreach(__v => __obj.update("RawContent", __v.asInstanceOf[js.Any]))
-      SilentPush.foreach(__v => __obj.update("SilentPush", __v.asInstanceOf[js.Any]))
-      Sound.foreach(__v => __obj.update("Sound", __v.asInstanceOf[js.Any]))
-      Substitutions.foreach(__v => __obj.update("Substitutions", __v.asInstanceOf[js.Any]))
-      ThreadId.foreach(__v => __obj.update("ThreadId", __v.asInstanceOf[js.Any]))
-      TimeToLive.foreach(__v => __obj.update("TimeToLive", __v.asInstanceOf[js.Any]))
-      Title.foreach(__v => __obj.update("Title", __v.asInstanceOf[js.Any]))
-      Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      RawContent.foreach(__v => __obj.updateDynamic("RawContent")(__v.asInstanceOf[js.Any]))
+      SilentPush.foreach(__v => __obj.updateDynamic("SilentPush")(__v.asInstanceOf[js.Any]))
+      Sound.foreach(__v => __obj.updateDynamic("Sound")(__v.asInstanceOf[js.Any]))
+      Substitutions.foreach(__v => __obj.updateDynamic("Substitutions")(__v.asInstanceOf[js.Any]))
+      ThreadId.foreach(__v => __obj.updateDynamic("ThreadId")(__v.asInstanceOf[js.Any]))
+      TimeToLive.foreach(__v => __obj.updateDynamic("TimeToLive")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[APNSMessage]
     }
   }
@@ -655,15 +659,17 @@ package pinpoint {
         TokenKey: js.UndefOr[__string] = js.undefined,
         TokenKeyId: js.UndefOr[__string] = js.undefined
     ): APNSSandboxChannelRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BundleId.foreach(__v => __obj.update("BundleId", __v.asInstanceOf[js.Any]))
-      Certificate.foreach(__v => __obj.update("Certificate", __v.asInstanceOf[js.Any]))
-      DefaultAuthenticationMethod.foreach(__v => __obj.update("DefaultAuthenticationMethod", __v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      PrivateKey.foreach(__v => __obj.update("PrivateKey", __v.asInstanceOf[js.Any]))
-      TeamId.foreach(__v => __obj.update("TeamId", __v.asInstanceOf[js.Any]))
-      TokenKey.foreach(__v => __obj.update("TokenKey", __v.asInstanceOf[js.Any]))
-      TokenKeyId.foreach(__v => __obj.update("TokenKeyId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BundleId.foreach(__v => __obj.updateDynamic("BundleId")(__v.asInstanceOf[js.Any]))
+      Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
+      DefaultAuthenticationMethod.foreach(
+        __v => __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
+      )
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      PrivateKey.foreach(__v => __obj.updateDynamic("PrivateKey")(__v.asInstanceOf[js.Any]))
+      TeamId.foreach(__v => __obj.updateDynamic("TeamId")(__v.asInstanceOf[js.Any]))
+      TokenKey.foreach(__v => __obj.updateDynamic("TokenKey")(__v.asInstanceOf[js.Any]))
+      TokenKeyId.foreach(__v => __obj.updateDynamic("TokenKeyId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[APNSSandboxChannelRequest]
     }
   }
@@ -702,21 +708,23 @@ package pinpoint {
         LastModifiedDate: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): APNSSandboxChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Platform" -> Platform.asInstanceOf[js.Any]
       )
 
-      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      DefaultAuthenticationMethod.foreach(__v => __obj.update("DefaultAuthenticationMethod", __v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      HasCredential.foreach(__v => __obj.update("HasCredential", __v.asInstanceOf[js.Any]))
-      HasTokenKey.foreach(__v => __obj.update("HasTokenKey", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
-      LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
-      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      ApplicationId.foreach(__v => __obj.updateDynamic("ApplicationId")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      DefaultAuthenticationMethod.foreach(
+        __v => __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
+      )
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      HasCredential.foreach(__v => __obj.updateDynamic("HasCredential")(__v.asInstanceOf[js.Any]))
+      HasTokenKey.foreach(__v => __obj.updateDynamic("HasTokenKey")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      IsArchived.foreach(__v => __obj.updateDynamic("IsArchived")(__v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[APNSSandboxChannelResponse]
     }
   }
@@ -747,15 +755,17 @@ package pinpoint {
         TokenKey: js.UndefOr[__string] = js.undefined,
         TokenKeyId: js.UndefOr[__string] = js.undefined
     ): APNSVoipChannelRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BundleId.foreach(__v => __obj.update("BundleId", __v.asInstanceOf[js.Any]))
-      Certificate.foreach(__v => __obj.update("Certificate", __v.asInstanceOf[js.Any]))
-      DefaultAuthenticationMethod.foreach(__v => __obj.update("DefaultAuthenticationMethod", __v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      PrivateKey.foreach(__v => __obj.update("PrivateKey", __v.asInstanceOf[js.Any]))
-      TeamId.foreach(__v => __obj.update("TeamId", __v.asInstanceOf[js.Any]))
-      TokenKey.foreach(__v => __obj.update("TokenKey", __v.asInstanceOf[js.Any]))
-      TokenKeyId.foreach(__v => __obj.update("TokenKeyId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BundleId.foreach(__v => __obj.updateDynamic("BundleId")(__v.asInstanceOf[js.Any]))
+      Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
+      DefaultAuthenticationMethod.foreach(
+        __v => __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
+      )
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      PrivateKey.foreach(__v => __obj.updateDynamic("PrivateKey")(__v.asInstanceOf[js.Any]))
+      TeamId.foreach(__v => __obj.updateDynamic("TeamId")(__v.asInstanceOf[js.Any]))
+      TokenKey.foreach(__v => __obj.updateDynamic("TokenKey")(__v.asInstanceOf[js.Any]))
+      TokenKeyId.foreach(__v => __obj.updateDynamic("TokenKeyId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[APNSVoipChannelRequest]
     }
   }
@@ -794,21 +804,23 @@ package pinpoint {
         LastModifiedDate: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): APNSVoipChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Platform" -> Platform.asInstanceOf[js.Any]
       )
 
-      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      DefaultAuthenticationMethod.foreach(__v => __obj.update("DefaultAuthenticationMethod", __v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      HasCredential.foreach(__v => __obj.update("HasCredential", __v.asInstanceOf[js.Any]))
-      HasTokenKey.foreach(__v => __obj.update("HasTokenKey", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
-      LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
-      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      ApplicationId.foreach(__v => __obj.updateDynamic("ApplicationId")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      DefaultAuthenticationMethod.foreach(
+        __v => __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
+      )
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      HasCredential.foreach(__v => __obj.updateDynamic("HasCredential")(__v.asInstanceOf[js.Any]))
+      HasTokenKey.foreach(__v => __obj.updateDynamic("HasTokenKey")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      IsArchived.foreach(__v => __obj.updateDynamic("IsArchived")(__v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[APNSVoipChannelResponse]
     }
   }
@@ -839,15 +851,17 @@ package pinpoint {
         TokenKey: js.UndefOr[__string] = js.undefined,
         TokenKeyId: js.UndefOr[__string] = js.undefined
     ): APNSVoipSandboxChannelRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BundleId.foreach(__v => __obj.update("BundleId", __v.asInstanceOf[js.Any]))
-      Certificate.foreach(__v => __obj.update("Certificate", __v.asInstanceOf[js.Any]))
-      DefaultAuthenticationMethod.foreach(__v => __obj.update("DefaultAuthenticationMethod", __v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      PrivateKey.foreach(__v => __obj.update("PrivateKey", __v.asInstanceOf[js.Any]))
-      TeamId.foreach(__v => __obj.update("TeamId", __v.asInstanceOf[js.Any]))
-      TokenKey.foreach(__v => __obj.update("TokenKey", __v.asInstanceOf[js.Any]))
-      TokenKeyId.foreach(__v => __obj.update("TokenKeyId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BundleId.foreach(__v => __obj.updateDynamic("BundleId")(__v.asInstanceOf[js.Any]))
+      Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
+      DefaultAuthenticationMethod.foreach(
+        __v => __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
+      )
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      PrivateKey.foreach(__v => __obj.updateDynamic("PrivateKey")(__v.asInstanceOf[js.Any]))
+      TeamId.foreach(__v => __obj.updateDynamic("TeamId")(__v.asInstanceOf[js.Any]))
+      TokenKey.foreach(__v => __obj.updateDynamic("TokenKey")(__v.asInstanceOf[js.Any]))
+      TokenKeyId.foreach(__v => __obj.updateDynamic("TokenKeyId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[APNSVoipSandboxChannelRequest]
     }
   }
@@ -886,21 +900,23 @@ package pinpoint {
         LastModifiedDate: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): APNSVoipSandboxChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Platform" -> Platform.asInstanceOf[js.Any]
       )
 
-      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      DefaultAuthenticationMethod.foreach(__v => __obj.update("DefaultAuthenticationMethod", __v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      HasCredential.foreach(__v => __obj.update("HasCredential", __v.asInstanceOf[js.Any]))
-      HasTokenKey.foreach(__v => __obj.update("HasTokenKey", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
-      LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
-      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      ApplicationId.foreach(__v => __obj.updateDynamic("ApplicationId")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      DefaultAuthenticationMethod.foreach(
+        __v => __obj.updateDynamic("DefaultAuthenticationMethod")(__v.asInstanceOf[js.Any])
+      )
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      HasCredential.foreach(__v => __obj.updateDynamic("HasCredential")(__v.asInstanceOf[js.Any]))
+      HasTokenKey.foreach(__v => __obj.updateDynamic("HasTokenKey")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      IsArchived.foreach(__v => __obj.updateDynamic("IsArchived")(__v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[APNSVoipSandboxChannelResponse]
     }
   }
@@ -927,11 +943,11 @@ package pinpoint {
         Item: ListOfActivityResponse,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ActivitiesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Item" -> Item.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActivitiesResponse]
     }
   }
@@ -972,22 +988,22 @@ package pinpoint {
         TotalEndpointCount: js.UndefOr[__integer] = js.undefined,
         TreatmentId: js.UndefOr[__string] = js.undefined
     ): ActivityResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "CampaignId"    -> CampaignId.asInstanceOf[js.Any],
         "Id"            -> Id.asInstanceOf[js.Any]
       )
 
-      End.foreach(__v => __obj.update("End", __v.asInstanceOf[js.Any]))
-      Result.foreach(__v => __obj.update("Result", __v.asInstanceOf[js.Any]))
-      ScheduledStart.foreach(__v => __obj.update("ScheduledStart", __v.asInstanceOf[js.Any]))
-      Start.foreach(__v => __obj.update("Start", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
-      SuccessfulEndpointCount.foreach(__v => __obj.update("SuccessfulEndpointCount", __v.asInstanceOf[js.Any]))
-      TimezonesCompletedCount.foreach(__v => __obj.update("TimezonesCompletedCount", __v.asInstanceOf[js.Any]))
-      TimezonesTotalCount.foreach(__v => __obj.update("TimezonesTotalCount", __v.asInstanceOf[js.Any]))
-      TotalEndpointCount.foreach(__v => __obj.update("TotalEndpointCount", __v.asInstanceOf[js.Any]))
-      TreatmentId.foreach(__v => __obj.update("TreatmentId", __v.asInstanceOf[js.Any]))
+      End.foreach(__v => __obj.updateDynamic("End")(__v.asInstanceOf[js.Any]))
+      Result.foreach(__v => __obj.updateDynamic("Result")(__v.asInstanceOf[js.Any]))
+      ScheduledStart.foreach(__v => __obj.updateDynamic("ScheduledStart")(__v.asInstanceOf[js.Any]))
+      Start.foreach(__v => __obj.updateDynamic("Start")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      SuccessfulEndpointCount.foreach(__v => __obj.updateDynamic("SuccessfulEndpointCount")(__v.asInstanceOf[js.Any]))
+      TimezonesCompletedCount.foreach(__v => __obj.updateDynamic("TimezonesCompletedCount")(__v.asInstanceOf[js.Any]))
+      TimezonesTotalCount.foreach(__v => __obj.updateDynamic("TimezonesTotalCount")(__v.asInstanceOf[js.Any]))
+      TotalEndpointCount.foreach(__v => __obj.updateDynamic("TotalEndpointCount")(__v.asInstanceOf[js.Any]))
+      TreatmentId.foreach(__v => __obj.updateDynamic("TreatmentId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActivityResponse]
     }
   }
@@ -1014,13 +1030,13 @@ package pinpoint {
         Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined,
         TitleOverride: js.UndefOr[__string] = js.undefined
     ): AddressConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BodyOverride.foreach(__v => __obj.update("BodyOverride", __v.asInstanceOf[js.Any]))
-      ChannelType.foreach(__v => __obj.update("ChannelType", __v.asInstanceOf[js.Any]))
-      Context.foreach(__v => __obj.update("Context", __v.asInstanceOf[js.Any]))
-      RawContent.foreach(__v => __obj.update("RawContent", __v.asInstanceOf[js.Any]))
-      Substitutions.foreach(__v => __obj.update("Substitutions", __v.asInstanceOf[js.Any]))
-      TitleOverride.foreach(__v => __obj.update("TitleOverride", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BodyOverride.foreach(__v => __obj.updateDynamic("BodyOverride")(__v.asInstanceOf[js.Any]))
+      ChannelType.foreach(__v => __obj.updateDynamic("ChannelType")(__v.asInstanceOf[js.Any]))
+      Context.foreach(__v => __obj.updateDynamic("Context")(__v.asInstanceOf[js.Any]))
+      RawContent.foreach(__v => __obj.updateDynamic("RawContent")(__v.asInstanceOf[js.Any]))
+      Substitutions.foreach(__v => __obj.updateDynamic("Substitutions")(__v.asInstanceOf[js.Any]))
+      TitleOverride.foreach(__v => __obj.updateDynamic("TitleOverride")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddressConfiguration]
     }
   }
@@ -1047,7 +1063,7 @@ package pinpoint {
         StartTime: __timestampIso8601,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ApplicationDateRangeKpiResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "EndTime"       -> EndTime.asInstanceOf[js.Any],
         "KpiName"       -> KpiName.asInstanceOf[js.Any],
@@ -1055,7 +1071,7 @@ package pinpoint {
         "StartTime"     -> StartTime.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationDateRangeKpiResponse]
     }
   }
@@ -1078,13 +1094,13 @@ package pinpoint {
         Name: __string,
         tags: js.UndefOr[MapOf__string] = js.undefined
     ): ApplicationResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn"  -> Arn.asInstanceOf[js.Any],
         "Id"   -> Id.asInstanceOf[js.Any],
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationResponse]
     }
   }
@@ -1109,14 +1125,14 @@ package pinpoint {
         Limits: js.UndefOr[CampaignLimits] = js.undefined,
         QuietTime: js.UndefOr[QuietTime] = js.undefined
     ): ApplicationSettingsResource = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
-      CampaignHook.foreach(__v => __obj.update("CampaignHook", __v.asInstanceOf[js.Any]))
-      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
-      Limits.foreach(__v => __obj.update("Limits", __v.asInstanceOf[js.Any]))
-      QuietTime.foreach(__v => __obj.update("QuietTime", __v.asInstanceOf[js.Any]))
+      CampaignHook.foreach(__v => __obj.updateDynamic("CampaignHook")(__v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
+      Limits.foreach(__v => __obj.updateDynamic("Limits")(__v.asInstanceOf[js.Any]))
+      QuietTime.foreach(__v => __obj.updateDynamic("QuietTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationSettingsResource]
     }
   }
@@ -1135,9 +1151,9 @@ package pinpoint {
         Item: js.UndefOr[ListOfApplicationResponse] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ApplicationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Item.foreach(__v => __obj.update("Item", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Item.foreach(__v => __obj.updateDynamic("Item")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationsResponse]
     }
   }
@@ -1156,11 +1172,11 @@ package pinpoint {
         Values: ListOf__string,
         AttributeType: js.UndefOr[AttributeType] = js.undefined
     ): AttributeDimension = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
-      AttributeType.foreach(__v => __obj.update("AttributeType", __v.asInstanceOf[js.Any]))
+      AttributeType.foreach(__v => __obj.updateDynamic("AttributeType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttributeDimension]
     }
   }
@@ -1188,12 +1204,12 @@ package pinpoint {
         AttributeType: __string,
         Attributes: js.UndefOr[ListOf__string] = js.undefined
     ): AttributesResource = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "AttributeType" -> AttributeType.asInstanceOf[js.Any]
       )
 
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttributesResource]
     }
   }
@@ -1214,12 +1230,12 @@ package pinpoint {
         SecretKey: __string,
         Enabled: js.UndefOr[__boolean] = js.undefined
     ): BaiduChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiKey"    -> ApiKey.asInstanceOf[js.Any],
         "SecretKey" -> SecretKey.asInstanceOf[js.Any]
       )
 
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BaiduChannelRequest]
     }
   }
@@ -1256,20 +1272,20 @@ package pinpoint {
         LastModifiedDate: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): BaiduChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Credential" -> Credential.asInstanceOf[js.Any],
         "Platform"   -> Platform.asInstanceOf[js.Any]
       )
 
-      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      HasCredential.foreach(__v => __obj.update("HasCredential", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
-      LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
-      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      ApplicationId.foreach(__v => __obj.updateDynamic("ApplicationId")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      HasCredential.foreach(__v => __obj.updateDynamic("HasCredential")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      IsArchived.foreach(__v => __obj.updateDynamic("IsArchived")(__v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BaiduChannelResponse]
     }
   }
@@ -1312,21 +1328,21 @@ package pinpoint {
         Title: js.UndefOr[__string] = js.undefined,
         Url: js.UndefOr[__string] = js.undefined
     ): BaiduMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Action.foreach(__v => __obj.update("Action", __v.asInstanceOf[js.Any]))
-      Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
-      Data.foreach(__v => __obj.update("Data", __v.asInstanceOf[js.Any]))
-      IconReference.foreach(__v => __obj.update("IconReference", __v.asInstanceOf[js.Any]))
-      ImageIconUrl.foreach(__v => __obj.update("ImageIconUrl", __v.asInstanceOf[js.Any]))
-      ImageUrl.foreach(__v => __obj.update("ImageUrl", __v.asInstanceOf[js.Any]))
-      RawContent.foreach(__v => __obj.update("RawContent", __v.asInstanceOf[js.Any]))
-      SilentPush.foreach(__v => __obj.update("SilentPush", __v.asInstanceOf[js.Any]))
-      SmallImageIconUrl.foreach(__v => __obj.update("SmallImageIconUrl", __v.asInstanceOf[js.Any]))
-      Sound.foreach(__v => __obj.update("Sound", __v.asInstanceOf[js.Any]))
-      Substitutions.foreach(__v => __obj.update("Substitutions", __v.asInstanceOf[js.Any]))
-      TimeToLive.foreach(__v => __obj.update("TimeToLive", __v.asInstanceOf[js.Any]))
-      Title.foreach(__v => __obj.update("Title", __v.asInstanceOf[js.Any]))
-      Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
+      Data.foreach(__v => __obj.updateDynamic("Data")(__v.asInstanceOf[js.Any]))
+      IconReference.foreach(__v => __obj.updateDynamic("IconReference")(__v.asInstanceOf[js.Any]))
+      ImageIconUrl.foreach(__v => __obj.updateDynamic("ImageIconUrl")(__v.asInstanceOf[js.Any]))
+      ImageUrl.foreach(__v => __obj.updateDynamic("ImageUrl")(__v.asInstanceOf[js.Any]))
+      RawContent.foreach(__v => __obj.updateDynamic("RawContent")(__v.asInstanceOf[js.Any]))
+      SilentPush.foreach(__v => __obj.updateDynamic("SilentPush")(__v.asInstanceOf[js.Any]))
+      SmallImageIconUrl.foreach(__v => __obj.updateDynamic("SmallImageIconUrl")(__v.asInstanceOf[js.Any]))
+      Sound.foreach(__v => __obj.updateDynamic("Sound")(__v.asInstanceOf[js.Any]))
+      Substitutions.foreach(__v => __obj.updateDynamic("Substitutions")(__v.asInstanceOf[js.Any]))
+      TimeToLive.foreach(__v => __obj.updateDynamic("TimeToLive")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BaiduMessage]
     }
   }
@@ -1343,7 +1359,7 @@ package pinpoint {
     def apply(
         Rows: ListOfResultRow
     ): BaseKpiResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Rows" -> Rows.asInstanceOf[js.Any]
       )
 
@@ -1375,7 +1391,7 @@ package pinpoint {
         StartTime: __timestampIso8601,
         NextToken: js.UndefOr[__string] = js.undefined
     ): CampaignDateRangeKpiResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "CampaignId"    -> CampaignId.asInstanceOf[js.Any],
         "EndTime"       -> EndTime.asInstanceOf[js.Any],
@@ -1384,7 +1400,7 @@ package pinpoint {
         "StartTime"     -> StartTime.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CampaignDateRangeKpiResponse]
     }
   }
@@ -1407,13 +1423,13 @@ package pinpoint {
         FromAddress: js.UndefOr[__string] = js.undefined,
         HtmlBody: js.UndefOr[__string] = js.undefined
     ): CampaignEmailMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Title" -> Title.asInstanceOf[js.Any]
       )
 
-      Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
-      FromAddress.foreach(__v => __obj.update("FromAddress", __v.asInstanceOf[js.Any]))
-      HtmlBody.foreach(__v => __obj.update("HtmlBody", __v.asInstanceOf[js.Any]))
+      Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
+      FromAddress.foreach(__v => __obj.updateDynamic("FromAddress")(__v.asInstanceOf[js.Any]))
+      HtmlBody.foreach(__v => __obj.updateDynamic("HtmlBody")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CampaignEmailMessage]
     }
   }
@@ -1432,7 +1448,7 @@ package pinpoint {
         Dimensions: EventDimensions,
         FilterType: FilterType
     ): CampaignEventFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Dimensions" -> Dimensions.asInstanceOf[js.Any],
         "FilterType" -> FilterType.asInstanceOf[js.Any]
       )
@@ -1457,10 +1473,10 @@ package pinpoint {
         Mode: js.UndefOr[Mode] = js.undefined,
         WebUrl: js.UndefOr[__string] = js.undefined
     ): CampaignHook = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LambdaFunctionName.foreach(__v => __obj.update("LambdaFunctionName", __v.asInstanceOf[js.Any]))
-      Mode.foreach(__v => __obj.update("Mode", __v.asInstanceOf[js.Any]))
-      WebUrl.foreach(__v => __obj.update("WebUrl", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LambdaFunctionName.foreach(__v => __obj.updateDynamic("LambdaFunctionName")(__v.asInstanceOf[js.Any]))
+      Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
+      WebUrl.foreach(__v => __obj.updateDynamic("WebUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CampaignHook]
     }
   }
@@ -1483,11 +1499,11 @@ package pinpoint {
         MessagesPerSecond: js.UndefOr[__integer] = js.undefined,
         Total: js.UndefOr[__integer] = js.undefined
     ): CampaignLimits = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Daily.foreach(__v => __obj.update("Daily", __v.asInstanceOf[js.Any]))
-      MaximumDuration.foreach(__v => __obj.update("MaximumDuration", __v.asInstanceOf[js.Any]))
-      MessagesPerSecond.foreach(__v => __obj.update("MessagesPerSecond", __v.asInstanceOf[js.Any]))
-      Total.foreach(__v => __obj.update("Total", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Daily.foreach(__v => __obj.updateDynamic("Daily")(__v.asInstanceOf[js.Any]))
+      MaximumDuration.foreach(__v => __obj.updateDynamic("MaximumDuration")(__v.asInstanceOf[js.Any]))
+      MessagesPerSecond.foreach(__v => __obj.updateDynamic("MessagesPerSecond")(__v.asInstanceOf[js.Any]))
+      Total.foreach(__v => __obj.updateDynamic("Total")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CampaignLimits]
     }
   }
@@ -1546,7 +1562,7 @@ package pinpoint {
         Version: js.UndefOr[__integer] = js.undefined,
         tags: js.UndefOr[MapOf__string] = js.undefined
     ): CampaignResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId"    -> ApplicationId.asInstanceOf[js.Any],
         "Arn"              -> Arn.asInstanceOf[js.Any],
         "CreationDate"     -> CreationDate.asInstanceOf[js.Any],
@@ -1556,21 +1572,21 @@ package pinpoint {
         "SegmentVersion"   -> SegmentVersion.asInstanceOf[js.Any]
       )
 
-      AdditionalTreatments.foreach(__v => __obj.update("AdditionalTreatments", __v.asInstanceOf[js.Any]))
-      DefaultState.foreach(__v => __obj.update("DefaultState", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      HoldoutPercent.foreach(__v => __obj.update("HoldoutPercent", __v.asInstanceOf[js.Any]))
-      Hook.foreach(__v => __obj.update("Hook", __v.asInstanceOf[js.Any]))
-      IsPaused.foreach(__v => __obj.update("IsPaused", __v.asInstanceOf[js.Any]))
-      Limits.foreach(__v => __obj.update("Limits", __v.asInstanceOf[js.Any]))
-      MessageConfiguration.foreach(__v => __obj.update("MessageConfiguration", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
-      TreatmentDescription.foreach(__v => __obj.update("TreatmentDescription", __v.asInstanceOf[js.Any]))
-      TreatmentName.foreach(__v => __obj.update("TreatmentName", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      AdditionalTreatments.foreach(__v => __obj.updateDynamic("AdditionalTreatments")(__v.asInstanceOf[js.Any]))
+      DefaultState.foreach(__v => __obj.updateDynamic("DefaultState")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      HoldoutPercent.foreach(__v => __obj.updateDynamic("HoldoutPercent")(__v.asInstanceOf[js.Any]))
+      Hook.foreach(__v => __obj.updateDynamic("Hook")(__v.asInstanceOf[js.Any]))
+      IsPaused.foreach(__v => __obj.updateDynamic("IsPaused")(__v.asInstanceOf[js.Any]))
+      Limits.foreach(__v => __obj.updateDynamic("Limits")(__v.asInstanceOf[js.Any]))
+      MessageConfiguration.foreach(__v => __obj.updateDynamic("MessageConfiguration")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      TreatmentDescription.foreach(__v => __obj.updateDynamic("TreatmentDescription")(__v.asInstanceOf[js.Any]))
+      TreatmentName.foreach(__v => __obj.updateDynamic("TreatmentName")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CampaignResponse]
     }
   }
@@ -1591,10 +1607,10 @@ package pinpoint {
         MessageType: js.UndefOr[MessageType] = js.undefined,
         SenderId: js.UndefOr[__string] = js.undefined
     ): CampaignSmsMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
-      MessageType.foreach(__v => __obj.update("MessageType", __v.asInstanceOf[js.Any]))
-      SenderId.foreach(__v => __obj.update("SenderId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
+      MessageType.foreach(__v => __obj.updateDynamic("MessageType")(__v.asInstanceOf[js.Any]))
+      SenderId.foreach(__v => __obj.updateDynamic("SenderId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CampaignSmsMessage]
     }
   }
@@ -1611,8 +1627,8 @@ package pinpoint {
     def apply(
         CampaignStatus: js.UndefOr[CampaignStatus] = js.undefined
     ): CampaignState = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CampaignStatus.foreach(__v => __obj.update("CampaignStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CampaignStatus.foreach(__v => __obj.updateDynamic("CampaignStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CampaignState]
     }
   }
@@ -1642,11 +1658,11 @@ package pinpoint {
         Item: ListOfCampaignResponse,
         NextToken: js.UndefOr[__string] = js.undefined
     ): CampaignsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Item" -> Item.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CampaignsResponse]
     }
   }
@@ -1679,16 +1695,16 @@ package pinpoint {
         LastModifiedDate: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): ChannelResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      HasCredential.foreach(__v => __obj.update("HasCredential", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
-      LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
-      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationId.foreach(__v => __obj.updateDynamic("ApplicationId")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      HasCredential.foreach(__v => __obj.updateDynamic("HasCredential")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      IsArchived.foreach(__v => __obj.updateDynamic("IsArchived")(__v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChannelResponse]
     }
   }
@@ -1723,7 +1739,7 @@ package pinpoint {
     def apply(
         Channels: MapOfChannelResponse
     ): ChannelsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Channels" -> Channels.asInstanceOf[js.Any]
       )
 
@@ -1740,7 +1756,7 @@ package pinpoint {
     def apply(
         CreateApplicationRequest: CreateApplicationRequest
     ): CreateAppRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CreateApplicationRequest" -> CreateApplicationRequest.asInstanceOf[js.Any]
       )
 
@@ -1757,7 +1773,7 @@ package pinpoint {
     def apply(
         ApplicationResponse: ApplicationResponse
     ): CreateAppResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationResponse" -> ApplicationResponse.asInstanceOf[js.Any]
       )
 
@@ -1779,11 +1795,11 @@ package pinpoint {
         Name: __string,
         tags: js.UndefOr[MapOf__string] = js.undefined
     ): CreateApplicationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateApplicationRequest]
     }
   }
@@ -1799,7 +1815,7 @@ package pinpoint {
         ApplicationId: __string,
         WriteCampaignRequest: WriteCampaignRequest
     ): CreateCampaignRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId"        -> ApplicationId.asInstanceOf[js.Any],
         "WriteCampaignRequest" -> WriteCampaignRequest.asInstanceOf[js.Any]
       )
@@ -1817,7 +1833,7 @@ package pinpoint {
     def apply(
         CampaignResponse: CampaignResponse
     ): CreateCampaignResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CampaignResponse" -> CampaignResponse.asInstanceOf[js.Any]
       )
 
@@ -1836,7 +1852,7 @@ package pinpoint {
         ApplicationId: __string,
         ExportJobRequest: ExportJobRequest
     ): CreateExportJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId"    -> ApplicationId.asInstanceOf[js.Any],
         "ExportJobRequest" -> ExportJobRequest.asInstanceOf[js.Any]
       )
@@ -1854,7 +1870,7 @@ package pinpoint {
     def apply(
         ExportJobResponse: ExportJobResponse
     ): CreateExportJobResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ExportJobResponse" -> ExportJobResponse.asInstanceOf[js.Any]
       )
 
@@ -1873,7 +1889,7 @@ package pinpoint {
         ApplicationId: __string,
         ImportJobRequest: ImportJobRequest
     ): CreateImportJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId"    -> ApplicationId.asInstanceOf[js.Any],
         "ImportJobRequest" -> ImportJobRequest.asInstanceOf[js.Any]
       )
@@ -1891,7 +1907,7 @@ package pinpoint {
     def apply(
         ImportJobResponse: ImportJobResponse
     ): CreateImportJobResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ImportJobResponse" -> ImportJobResponse.asInstanceOf[js.Any]
       )
 
@@ -1910,7 +1926,7 @@ package pinpoint {
         ApplicationId: __string,
         WriteSegmentRequest: WriteSegmentRequest
     ): CreateSegmentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId"       -> ApplicationId.asInstanceOf[js.Any],
         "WriteSegmentRequest" -> WriteSegmentRequest.asInstanceOf[js.Any]
       )
@@ -1928,7 +1944,7 @@ package pinpoint {
     def apply(
         SegmentResponse: SegmentResponse
     ): CreateSegmentResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SegmentResponse" -> SegmentResponse.asInstanceOf[js.Any]
       )
 
@@ -1950,9 +1966,9 @@ package pinpoint {
         Body: js.UndefOr[__string] = js.undefined,
         Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined
     ): DefaultMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
-      Substitutions.foreach(__v => __obj.update("Substitutions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
+      Substitutions.foreach(__v => __obj.updateDynamic("Substitutions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DefaultMessage]
     }
   }
@@ -1981,14 +1997,14 @@ package pinpoint {
         Title: js.UndefOr[__string] = js.undefined,
         Url: js.UndefOr[__string] = js.undefined
     ): DefaultPushNotificationMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Action.foreach(__v => __obj.update("Action", __v.asInstanceOf[js.Any]))
-      Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
-      Data.foreach(__v => __obj.update("Data", __v.asInstanceOf[js.Any]))
-      SilentPush.foreach(__v => __obj.update("SilentPush", __v.asInstanceOf[js.Any]))
-      Substitutions.foreach(__v => __obj.update("Substitutions", __v.asInstanceOf[js.Any]))
-      Title.foreach(__v => __obj.update("Title", __v.asInstanceOf[js.Any]))
-      Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
+      Data.foreach(__v => __obj.updateDynamic("Data")(__v.asInstanceOf[js.Any]))
+      SilentPush.foreach(__v => __obj.updateDynamic("SilentPush")(__v.asInstanceOf[js.Any]))
+      Substitutions.foreach(__v => __obj.updateDynamic("Substitutions")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DefaultPushNotificationMessage]
     }
   }
@@ -2002,7 +2018,7 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): DeleteAdmChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
@@ -2019,7 +2035,7 @@ package pinpoint {
     def apply(
         ADMChannelResponse: ADMChannelResponse
     ): DeleteAdmChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ADMChannelResponse" -> ADMChannelResponse.asInstanceOf[js.Any]
       )
 
@@ -2036,7 +2052,7 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): DeleteApnsChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
@@ -2053,7 +2069,7 @@ package pinpoint {
     def apply(
         APNSChannelResponse: APNSChannelResponse
     ): DeleteApnsChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "APNSChannelResponse" -> APNSChannelResponse.asInstanceOf[js.Any]
       )
 
@@ -2070,7 +2086,7 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): DeleteApnsSandboxChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
@@ -2087,7 +2103,7 @@ package pinpoint {
     def apply(
         APNSSandboxChannelResponse: APNSSandboxChannelResponse
     ): DeleteApnsSandboxChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "APNSSandboxChannelResponse" -> APNSSandboxChannelResponse.asInstanceOf[js.Any]
       )
 
@@ -2104,7 +2120,7 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): DeleteApnsVoipChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
@@ -2121,7 +2137,7 @@ package pinpoint {
     def apply(
         APNSVoipChannelResponse: APNSVoipChannelResponse
     ): DeleteApnsVoipChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "APNSVoipChannelResponse" -> APNSVoipChannelResponse.asInstanceOf[js.Any]
       )
 
@@ -2138,7 +2154,7 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): DeleteApnsVoipSandboxChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
@@ -2155,7 +2171,7 @@ package pinpoint {
     def apply(
         APNSVoipSandboxChannelResponse: APNSVoipSandboxChannelResponse
     ): DeleteApnsVoipSandboxChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "APNSVoipSandboxChannelResponse" -> APNSVoipSandboxChannelResponse.asInstanceOf[js.Any]
       )
 
@@ -2172,7 +2188,7 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): DeleteAppRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
@@ -2189,7 +2205,7 @@ package pinpoint {
     def apply(
         ApplicationResponse: ApplicationResponse
     ): DeleteAppResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationResponse" -> ApplicationResponse.asInstanceOf[js.Any]
       )
 
@@ -2206,7 +2222,7 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): DeleteBaiduChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
@@ -2223,7 +2239,7 @@ package pinpoint {
     def apply(
         BaiduChannelResponse: BaiduChannelResponse
     ): DeleteBaiduChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BaiduChannelResponse" -> BaiduChannelResponse.asInstanceOf[js.Any]
       )
 
@@ -2242,7 +2258,7 @@ package pinpoint {
         ApplicationId: __string,
         CampaignId: __string
     ): DeleteCampaignRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "CampaignId"    -> CampaignId.asInstanceOf[js.Any]
       )
@@ -2260,7 +2276,7 @@ package pinpoint {
     def apply(
         CampaignResponse: CampaignResponse
     ): DeleteCampaignResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CampaignResponse" -> CampaignResponse.asInstanceOf[js.Any]
       )
 
@@ -2277,7 +2293,7 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): DeleteEmailChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
@@ -2294,7 +2310,7 @@ package pinpoint {
     def apply(
         EmailChannelResponse: EmailChannelResponse
     ): DeleteEmailChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EmailChannelResponse" -> EmailChannelResponse.asInstanceOf[js.Any]
       )
 
@@ -2313,7 +2329,7 @@ package pinpoint {
         ApplicationId: __string,
         EndpointId: __string
     ): DeleteEndpointRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "EndpointId"    -> EndpointId.asInstanceOf[js.Any]
       )
@@ -2331,7 +2347,7 @@ package pinpoint {
     def apply(
         EndpointResponse: EndpointResponse
     ): DeleteEndpointResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EndpointResponse" -> EndpointResponse.asInstanceOf[js.Any]
       )
 
@@ -2348,7 +2364,7 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): DeleteEventStreamRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
@@ -2365,7 +2381,7 @@ package pinpoint {
     def apply(
         EventStream: EventStream
     ): DeleteEventStreamResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EventStream" -> EventStream.asInstanceOf[js.Any]
       )
 
@@ -2382,7 +2398,7 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): DeleteGcmChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
@@ -2399,7 +2415,7 @@ package pinpoint {
     def apply(
         GCMChannelResponse: GCMChannelResponse
     ): DeleteGcmChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GCMChannelResponse" -> GCMChannelResponse.asInstanceOf[js.Any]
       )
 
@@ -2418,7 +2434,7 @@ package pinpoint {
         ApplicationId: __string,
         SegmentId: __string
     ): DeleteSegmentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "SegmentId"     -> SegmentId.asInstanceOf[js.Any]
       )
@@ -2436,7 +2452,7 @@ package pinpoint {
     def apply(
         SegmentResponse: SegmentResponse
     ): DeleteSegmentResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SegmentResponse" -> SegmentResponse.asInstanceOf[js.Any]
       )
 
@@ -2453,7 +2469,7 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): DeleteSmsChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
@@ -2470,7 +2486,7 @@ package pinpoint {
     def apply(
         SMSChannelResponse: SMSChannelResponse
     ): DeleteSmsChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SMSChannelResponse" -> SMSChannelResponse.asInstanceOf[js.Any]
       )
 
@@ -2489,7 +2505,7 @@ package pinpoint {
         ApplicationId: __string,
         UserId: __string
     ): DeleteUserEndpointsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "UserId"        -> UserId.asInstanceOf[js.Any]
       )
@@ -2507,7 +2523,7 @@ package pinpoint {
     def apply(
         EndpointsResponse: EndpointsResponse
     ): DeleteUserEndpointsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EndpointsResponse" -> EndpointsResponse.asInstanceOf[js.Any]
       )
 
@@ -2524,7 +2540,7 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): DeleteVoiceChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
@@ -2541,7 +2557,7 @@ package pinpoint {
     def apply(
         VoiceChannelResponse: VoiceChannelResponse
     ): DeleteVoiceChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VoiceChannelResponse" -> VoiceChannelResponse.asInstanceOf[js.Any]
       )
 
@@ -2598,18 +2614,18 @@ package pinpoint {
         SMSMessage: js.UndefOr[SMSMessage] = js.undefined,
         VoiceMessage: js.UndefOr[VoiceMessage] = js.undefined
     ): DirectMessageConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ADMMessage.foreach(__v => __obj.update("ADMMessage", __v.asInstanceOf[js.Any]))
-      APNSMessage.foreach(__v => __obj.update("APNSMessage", __v.asInstanceOf[js.Any]))
-      BaiduMessage.foreach(__v => __obj.update("BaiduMessage", __v.asInstanceOf[js.Any]))
-      DefaultMessage.foreach(__v => __obj.update("DefaultMessage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ADMMessage.foreach(__v => __obj.updateDynamic("ADMMessage")(__v.asInstanceOf[js.Any]))
+      APNSMessage.foreach(__v => __obj.updateDynamic("APNSMessage")(__v.asInstanceOf[js.Any]))
+      BaiduMessage.foreach(__v => __obj.updateDynamic("BaiduMessage")(__v.asInstanceOf[js.Any]))
+      DefaultMessage.foreach(__v => __obj.updateDynamic("DefaultMessage")(__v.asInstanceOf[js.Any]))
       DefaultPushNotificationMessage.foreach(
-        __v => __obj.update("DefaultPushNotificationMessage", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("DefaultPushNotificationMessage")(__v.asInstanceOf[js.Any])
       )
-      EmailMessage.foreach(__v => __obj.update("EmailMessage", __v.asInstanceOf[js.Any]))
-      GCMMessage.foreach(__v => __obj.update("GCMMessage", __v.asInstanceOf[js.Any]))
-      SMSMessage.foreach(__v => __obj.update("SMSMessage", __v.asInstanceOf[js.Any]))
-      VoiceMessage.foreach(__v => __obj.update("VoiceMessage", __v.asInstanceOf[js.Any]))
+      EmailMessage.foreach(__v => __obj.updateDynamic("EmailMessage")(__v.asInstanceOf[js.Any]))
+      GCMMessage.foreach(__v => __obj.updateDynamic("GCMMessage")(__v.asInstanceOf[js.Any]))
+      SMSMessage.foreach(__v => __obj.updateDynamic("SMSMessage")(__v.asInstanceOf[js.Any]))
+      VoiceMessage.foreach(__v => __obj.updateDynamic("VoiceMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DirectMessageConfiguration]
     }
   }
@@ -2643,14 +2659,14 @@ package pinpoint {
         Enabled: js.UndefOr[__boolean] = js.undefined,
         RoleArn: js.UndefOr[__string] = js.undefined
     ): EmailChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FromAddress" -> FromAddress.asInstanceOf[js.Any],
         "Identity"    -> Identity.asInstanceOf[js.Any]
       )
 
-      ConfigurationSet.foreach(__v => __obj.update("ConfigurationSet", __v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      ConfigurationSet.foreach(__v => __obj.updateDynamic("ConfigurationSet")(__v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EmailChannelRequest]
     }
   }
@@ -2695,24 +2711,24 @@ package pinpoint {
         RoleArn: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): EmailChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Platform" -> Platform.asInstanceOf[js.Any]
       )
 
-      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
-      ConfigurationSet.foreach(__v => __obj.update("ConfigurationSet", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      FromAddress.foreach(__v => __obj.update("FromAddress", __v.asInstanceOf[js.Any]))
-      HasCredential.foreach(__v => __obj.update("HasCredential", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Identity.foreach(__v => __obj.update("Identity", __v.asInstanceOf[js.Any]))
-      IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
-      LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
-      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
-      MessagesPerSecond.foreach(__v => __obj.update("MessagesPerSecond", __v.asInstanceOf[js.Any]))
-      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      ApplicationId.foreach(__v => __obj.updateDynamic("ApplicationId")(__v.asInstanceOf[js.Any]))
+      ConfigurationSet.foreach(__v => __obj.updateDynamic("ConfigurationSet")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      FromAddress.foreach(__v => __obj.updateDynamic("FromAddress")(__v.asInstanceOf[js.Any]))
+      HasCredential.foreach(__v => __obj.updateDynamic("HasCredential")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Identity.foreach(__v => __obj.updateDynamic("Identity")(__v.asInstanceOf[js.Any]))
+      IsArchived.foreach(__v => __obj.updateDynamic("IsArchived")(__v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
+      MessagesPerSecond.foreach(__v => __obj.updateDynamic("MessagesPerSecond")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EmailChannelResponse]
     }
   }
@@ -2741,14 +2757,16 @@ package pinpoint {
         SimpleEmail: js.UndefOr[SimpleEmail] = js.undefined,
         Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined
     ): EmailMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
-      FeedbackForwardingAddress.foreach(__v => __obj.update("FeedbackForwardingAddress", __v.asInstanceOf[js.Any]))
-      FromAddress.foreach(__v => __obj.update("FromAddress", __v.asInstanceOf[js.Any]))
-      RawEmail.foreach(__v => __obj.update("RawEmail", __v.asInstanceOf[js.Any]))
-      ReplyToAddresses.foreach(__v => __obj.update("ReplyToAddresses", __v.asInstanceOf[js.Any]))
-      SimpleEmail.foreach(__v => __obj.update("SimpleEmail", __v.asInstanceOf[js.Any]))
-      Substitutions.foreach(__v => __obj.update("Substitutions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
+      FeedbackForwardingAddress.foreach(
+        __v => __obj.updateDynamic("FeedbackForwardingAddress")(__v.asInstanceOf[js.Any])
+      )
+      FromAddress.foreach(__v => __obj.updateDynamic("FromAddress")(__v.asInstanceOf[js.Any]))
+      RawEmail.foreach(__v => __obj.updateDynamic("RawEmail")(__v.asInstanceOf[js.Any]))
+      ReplyToAddresses.foreach(__v => __obj.updateDynamic("ReplyToAddresses")(__v.asInstanceOf[js.Any]))
+      SimpleEmail.foreach(__v => __obj.updateDynamic("SimpleEmail")(__v.asInstanceOf[js.Any]))
+      Substitutions.foreach(__v => __obj.updateDynamic("Substitutions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EmailMessage]
     }
   }
@@ -2787,19 +2805,19 @@ package pinpoint {
         RequestId: js.UndefOr[__string] = js.undefined,
         User: js.UndefOr[EndpointUser] = js.undefined
     ): EndpointBatchItem = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Address.foreach(__v => __obj.update("Address", __v.asInstanceOf[js.Any]))
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      ChannelType.foreach(__v => __obj.update("ChannelType", __v.asInstanceOf[js.Any]))
-      Demographic.foreach(__v => __obj.update("Demographic", __v.asInstanceOf[js.Any]))
-      EffectiveDate.foreach(__v => __obj.update("EffectiveDate", __v.asInstanceOf[js.Any]))
-      EndpointStatus.foreach(__v => __obj.update("EndpointStatus", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
-      Metrics.foreach(__v => __obj.update("Metrics", __v.asInstanceOf[js.Any]))
-      OptOut.foreach(__v => __obj.update("OptOut", __v.asInstanceOf[js.Any]))
-      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
-      User.foreach(__v => __obj.update("User", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Address.foreach(__v => __obj.updateDynamic("Address")(__v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      ChannelType.foreach(__v => __obj.updateDynamic("ChannelType")(__v.asInstanceOf[js.Any]))
+      Demographic.foreach(__v => __obj.updateDynamic("Demographic")(__v.asInstanceOf[js.Any]))
+      EffectiveDate.foreach(__v => __obj.updateDynamic("EffectiveDate")(__v.asInstanceOf[js.Any]))
+      EndpointStatus.foreach(__v => __obj.updateDynamic("EndpointStatus")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
+      Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
+      OptOut.foreach(__v => __obj.updateDynamic("OptOut")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EndpointBatchItem]
     }
   }
@@ -2816,7 +2834,7 @@ package pinpoint {
     def apply(
         Item: ListOfEndpointBatchItem
     ): EndpointBatchRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Item" -> Item.asInstanceOf[js.Any]
       )
 
@@ -2850,15 +2868,15 @@ package pinpoint {
         PlatformVersion: js.UndefOr[__string] = js.undefined,
         Timezone: js.UndefOr[__string] = js.undefined
     ): EndpointDemographic = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AppVersion.foreach(__v => __obj.update("AppVersion", __v.asInstanceOf[js.Any]))
-      Locale.foreach(__v => __obj.update("Locale", __v.asInstanceOf[js.Any]))
-      Make.foreach(__v => __obj.update("Make", __v.asInstanceOf[js.Any]))
-      Model.foreach(__v => __obj.update("Model", __v.asInstanceOf[js.Any]))
-      ModelVersion.foreach(__v => __obj.update("ModelVersion", __v.asInstanceOf[js.Any]))
-      Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
-      PlatformVersion.foreach(__v => __obj.update("PlatformVersion", __v.asInstanceOf[js.Any]))
-      Timezone.foreach(__v => __obj.update("Timezone", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AppVersion.foreach(__v => __obj.updateDynamic("AppVersion")(__v.asInstanceOf[js.Any]))
+      Locale.foreach(__v => __obj.updateDynamic("Locale")(__v.asInstanceOf[js.Any]))
+      Make.foreach(__v => __obj.updateDynamic("Make")(__v.asInstanceOf[js.Any]))
+      Model.foreach(__v => __obj.updateDynamic("Model")(__v.asInstanceOf[js.Any]))
+      ModelVersion.foreach(__v => __obj.updateDynamic("ModelVersion")(__v.asInstanceOf[js.Any]))
+      Platform.foreach(__v => __obj.updateDynamic("Platform")(__v.asInstanceOf[js.Any]))
+      PlatformVersion.foreach(__v => __obj.updateDynamic("PlatformVersion")(__v.asInstanceOf[js.Any]))
+      Timezone.foreach(__v => __obj.updateDynamic("Timezone")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EndpointDemographic]
     }
   }
@@ -2877,9 +2895,9 @@ package pinpoint {
         Message: js.UndefOr[__string] = js.undefined,
         StatusCode: js.UndefOr[__integer] = js.undefined
     ): EndpointItemResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
-      StatusCode.foreach(__v => __obj.update("StatusCode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      StatusCode.foreach(__v => __obj.updateDynamic("StatusCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EndpointItemResponse]
     }
   }
@@ -2906,13 +2924,13 @@ package pinpoint {
         PostalCode: js.UndefOr[__string] = js.undefined,
         Region: js.UndefOr[__string] = js.undefined
     ): EndpointLocation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      City.foreach(__v => __obj.update("City", __v.asInstanceOf[js.Any]))
-      Country.foreach(__v => __obj.update("Country", __v.asInstanceOf[js.Any]))
-      Latitude.foreach(__v => __obj.update("Latitude", __v.asInstanceOf[js.Any]))
-      Longitude.foreach(__v => __obj.update("Longitude", __v.asInstanceOf[js.Any]))
-      PostalCode.foreach(__v => __obj.update("PostalCode", __v.asInstanceOf[js.Any]))
-      Region.foreach(__v => __obj.update("Region", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      City.foreach(__v => __obj.updateDynamic("City")(__v.asInstanceOf[js.Any]))
+      Country.foreach(__v => __obj.updateDynamic("Country")(__v.asInstanceOf[js.Any]))
+      Latitude.foreach(__v => __obj.updateDynamic("Latitude")(__v.asInstanceOf[js.Any]))
+      Longitude.foreach(__v => __obj.updateDynamic("Longitude")(__v.asInstanceOf[js.Any]))
+      PostalCode.foreach(__v => __obj.updateDynamic("PostalCode")(__v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EndpointLocation]
     }
   }
@@ -2939,15 +2957,15 @@ package pinpoint {
         StatusMessage: js.UndefOr[__string] = js.undefined,
         UpdatedToken: js.UndefOr[__string] = js.undefined
     ): EndpointMessageResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DeliveryStatus" -> DeliveryStatus.asInstanceOf[js.Any],
         "StatusCode"     -> StatusCode.asInstanceOf[js.Any]
       )
 
-      Address.foreach(__v => __obj.update("Address", __v.asInstanceOf[js.Any]))
-      MessageId.foreach(__v => __obj.update("MessageId", __v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
-      UpdatedToken.foreach(__v => __obj.update("UpdatedToken", __v.asInstanceOf[js.Any]))
+      Address.foreach(__v => __obj.updateDynamic("Address")(__v.asInstanceOf[js.Any]))
+      MessageId.foreach(__v => __obj.updateDynamic("MessageId")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      UpdatedToken.foreach(__v => __obj.updateDynamic("UpdatedToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EndpointMessageResult]
     }
   }
@@ -2984,18 +3002,18 @@ package pinpoint {
         RequestId: js.UndefOr[__string] = js.undefined,
         User: js.UndefOr[EndpointUser] = js.undefined
     ): EndpointRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Address.foreach(__v => __obj.update("Address", __v.asInstanceOf[js.Any]))
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      ChannelType.foreach(__v => __obj.update("ChannelType", __v.asInstanceOf[js.Any]))
-      Demographic.foreach(__v => __obj.update("Demographic", __v.asInstanceOf[js.Any]))
-      EffectiveDate.foreach(__v => __obj.update("EffectiveDate", __v.asInstanceOf[js.Any]))
-      EndpointStatus.foreach(__v => __obj.update("EndpointStatus", __v.asInstanceOf[js.Any]))
-      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
-      Metrics.foreach(__v => __obj.update("Metrics", __v.asInstanceOf[js.Any]))
-      OptOut.foreach(__v => __obj.update("OptOut", __v.asInstanceOf[js.Any]))
-      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
-      User.foreach(__v => __obj.update("User", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Address.foreach(__v => __obj.updateDynamic("Address")(__v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      ChannelType.foreach(__v => __obj.updateDynamic("ChannelType")(__v.asInstanceOf[js.Any]))
+      Demographic.foreach(__v => __obj.updateDynamic("Demographic")(__v.asInstanceOf[js.Any]))
+      EffectiveDate.foreach(__v => __obj.updateDynamic("EffectiveDate")(__v.asInstanceOf[js.Any]))
+      EndpointStatus.foreach(__v => __obj.updateDynamic("EndpointStatus")(__v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
+      Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
+      OptOut.foreach(__v => __obj.updateDynamic("OptOut")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EndpointRequest]
     }
   }
@@ -3040,22 +3058,22 @@ package pinpoint {
         RequestId: js.UndefOr[__string] = js.undefined,
         User: js.UndefOr[EndpointUser] = js.undefined
     ): EndpointResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Address.foreach(__v => __obj.update("Address", __v.asInstanceOf[js.Any]))
-      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      ChannelType.foreach(__v => __obj.update("ChannelType", __v.asInstanceOf[js.Any]))
-      CohortId.foreach(__v => __obj.update("CohortId", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      Demographic.foreach(__v => __obj.update("Demographic", __v.asInstanceOf[js.Any]))
-      EffectiveDate.foreach(__v => __obj.update("EffectiveDate", __v.asInstanceOf[js.Any]))
-      EndpointStatus.foreach(__v => __obj.update("EndpointStatus", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
-      Metrics.foreach(__v => __obj.update("Metrics", __v.asInstanceOf[js.Any]))
-      OptOut.foreach(__v => __obj.update("OptOut", __v.asInstanceOf[js.Any]))
-      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
-      User.foreach(__v => __obj.update("User", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Address.foreach(__v => __obj.updateDynamic("Address")(__v.asInstanceOf[js.Any]))
+      ApplicationId.foreach(__v => __obj.updateDynamic("ApplicationId")(__v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      ChannelType.foreach(__v => __obj.updateDynamic("ChannelType")(__v.asInstanceOf[js.Any]))
+      CohortId.foreach(__v => __obj.updateDynamic("CohortId")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      Demographic.foreach(__v => __obj.updateDynamic("Demographic")(__v.asInstanceOf[js.Any]))
+      EffectiveDate.foreach(__v => __obj.updateDynamic("EffectiveDate")(__v.asInstanceOf[js.Any]))
+      EndpointStatus.foreach(__v => __obj.updateDynamic("EndpointStatus")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
+      Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
+      OptOut.foreach(__v => __obj.updateDynamic("OptOut")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EndpointResponse]
     }
   }
@@ -3080,12 +3098,12 @@ package pinpoint {
         Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined,
         TitleOverride: js.UndefOr[__string] = js.undefined
     ): EndpointSendConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BodyOverride.foreach(__v => __obj.update("BodyOverride", __v.asInstanceOf[js.Any]))
-      Context.foreach(__v => __obj.update("Context", __v.asInstanceOf[js.Any]))
-      RawContent.foreach(__v => __obj.update("RawContent", __v.asInstanceOf[js.Any]))
-      Substitutions.foreach(__v => __obj.update("Substitutions", __v.asInstanceOf[js.Any]))
-      TitleOverride.foreach(__v => __obj.update("TitleOverride", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BodyOverride.foreach(__v => __obj.updateDynamic("BodyOverride")(__v.asInstanceOf[js.Any]))
+      Context.foreach(__v => __obj.updateDynamic("Context")(__v.asInstanceOf[js.Any]))
+      RawContent.foreach(__v => __obj.updateDynamic("RawContent")(__v.asInstanceOf[js.Any]))
+      Substitutions.foreach(__v => __obj.updateDynamic("Substitutions")(__v.asInstanceOf[js.Any]))
+      TitleOverride.foreach(__v => __obj.updateDynamic("TitleOverride")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EndpointSendConfiguration]
     }
   }
@@ -3104,9 +3122,9 @@ package pinpoint {
         UserAttributes: js.UndefOr[MapOfListOf__string] = js.undefined,
         UserId: js.UndefOr[__string] = js.undefined
     ): EndpointUser = {
-      val __obj = js.Dictionary.empty[js.Any]
-      UserAttributes.foreach(__v => __obj.update("UserAttributes", __v.asInstanceOf[js.Any]))
-      UserId.foreach(__v => __obj.update("UserId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      UserAttributes.foreach(__v => __obj.updateDynamic("UserAttributes")(__v.asInstanceOf[js.Any]))
+      UserId.foreach(__v => __obj.updateDynamic("UserId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EndpointUser]
     }
   }
@@ -3123,7 +3141,7 @@ package pinpoint {
     def apply(
         Item: ListOfEndpointResponse
     ): EndpointsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Item" -> Item.asInstanceOf[js.Any]
       )
 
@@ -3161,19 +3179,19 @@ package pinpoint {
         SdkName: js.UndefOr[__string] = js.undefined,
         Session: js.UndefOr[Session] = js.undefined
     ): Event = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EventType" -> EventType.asInstanceOf[js.Any],
         "Timestamp" -> Timestamp.asInstanceOf[js.Any]
       )
 
-      AppPackageName.foreach(__v => __obj.update("AppPackageName", __v.asInstanceOf[js.Any]))
-      AppTitle.foreach(__v => __obj.update("AppTitle", __v.asInstanceOf[js.Any]))
-      AppVersionCode.foreach(__v => __obj.update("AppVersionCode", __v.asInstanceOf[js.Any]))
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      ClientSdkVersion.foreach(__v => __obj.update("ClientSdkVersion", __v.asInstanceOf[js.Any]))
-      Metrics.foreach(__v => __obj.update("Metrics", __v.asInstanceOf[js.Any]))
-      SdkName.foreach(__v => __obj.update("SdkName", __v.asInstanceOf[js.Any]))
-      Session.foreach(__v => __obj.update("Session", __v.asInstanceOf[js.Any]))
+      AppPackageName.foreach(__v => __obj.updateDynamic("AppPackageName")(__v.asInstanceOf[js.Any]))
+      AppTitle.foreach(__v => __obj.updateDynamic("AppTitle")(__v.asInstanceOf[js.Any]))
+      AppVersionCode.foreach(__v => __obj.updateDynamic("AppVersionCode")(__v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      ClientSdkVersion.foreach(__v => __obj.updateDynamic("ClientSdkVersion")(__v.asInstanceOf[js.Any]))
+      Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
+      SdkName.foreach(__v => __obj.updateDynamic("SdkName")(__v.asInstanceOf[js.Any]))
+      Session.foreach(__v => __obj.updateDynamic("Session")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Event]
     }
   }
@@ -3194,10 +3212,10 @@ package pinpoint {
         EventType: js.UndefOr[SetDimension] = js.undefined,
         Metrics: js.UndefOr[MapOfMetricDimension] = js.undefined
     ): EventDimensions = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      EventType.foreach(__v => __obj.update("EventType", __v.asInstanceOf[js.Any]))
-      Metrics.foreach(__v => __obj.update("Metrics", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      EventType.foreach(__v => __obj.updateDynamic("EventType")(__v.asInstanceOf[js.Any]))
+      Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventDimensions]
     }
   }
@@ -3216,9 +3234,9 @@ package pinpoint {
         Message: js.UndefOr[__string] = js.undefined,
         StatusCode: js.UndefOr[__integer] = js.undefined
     ): EventItemResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
-      StatusCode.foreach(__v => __obj.update("StatusCode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      StatusCode.foreach(__v => __obj.updateDynamic("StatusCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventItemResponse]
     }
   }
@@ -3245,15 +3263,15 @@ package pinpoint {
         LastModifiedDate: js.UndefOr[__string] = js.undefined,
         LastUpdatedBy: js.UndefOr[__string] = js.undefined
     ): EventStream = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId"        -> ApplicationId.asInstanceOf[js.Any],
         "DestinationStreamArn" -> DestinationStreamArn.asInstanceOf[js.Any],
         "RoleArn"              -> RoleArn.asInstanceOf[js.Any]
       )
 
-      ExternalId.foreach(__v => __obj.update("ExternalId", __v.asInstanceOf[js.Any]))
-      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
-      LastUpdatedBy.foreach(__v => __obj.update("LastUpdatedBy", __v.asInstanceOf[js.Any]))
+      ExternalId.foreach(__v => __obj.updateDynamic("ExternalId")(__v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
+      LastUpdatedBy.foreach(__v => __obj.updateDynamic("LastUpdatedBy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventStream]
     }
   }
@@ -3272,7 +3290,7 @@ package pinpoint {
         Endpoint: PublicEndpoint,
         Events: MapOfEvent
     ): EventsBatch = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Endpoint" -> Endpoint.asInstanceOf[js.Any],
         "Events"   -> Events.asInstanceOf[js.Any]
       )
@@ -3293,7 +3311,7 @@ package pinpoint {
     def apply(
         BatchItem: MapOfEventsBatch
     ): EventsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BatchItem" -> BatchItem.asInstanceOf[js.Any]
       )
 
@@ -3313,8 +3331,8 @@ package pinpoint {
     def apply(
         Results: js.UndefOr[MapOfItemResponse] = js.undefined
     ): EventsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Results.foreach(__v => __obj.update("Results", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Results.foreach(__v => __obj.updateDynamic("Results")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventsResponse]
     }
   }
@@ -3337,13 +3355,13 @@ package pinpoint {
         SegmentId: js.UndefOr[__string] = js.undefined,
         SegmentVersion: js.UndefOr[__integer] = js.undefined
     ): ExportJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RoleArn"     -> RoleArn.asInstanceOf[js.Any],
         "S3UrlPrefix" -> S3UrlPrefix.asInstanceOf[js.Any]
       )
 
-      SegmentId.foreach(__v => __obj.update("SegmentId", __v.asInstanceOf[js.Any]))
-      SegmentVersion.foreach(__v => __obj.update("SegmentVersion", __v.asInstanceOf[js.Any]))
+      SegmentId.foreach(__v => __obj.updateDynamic("SegmentId")(__v.asInstanceOf[js.Any]))
+      SegmentVersion.foreach(__v => __obj.updateDynamic("SegmentVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportJobRequest]
     }
   }
@@ -3366,13 +3384,13 @@ package pinpoint {
         SegmentId: js.UndefOr[__string] = js.undefined,
         SegmentVersion: js.UndefOr[__integer] = js.undefined
     ): ExportJobResource = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RoleArn"     -> RoleArn.asInstanceOf[js.Any],
         "S3UrlPrefix" -> S3UrlPrefix.asInstanceOf[js.Any]
       )
 
-      SegmentId.foreach(__v => __obj.update("SegmentId", __v.asInstanceOf[js.Any]))
-      SegmentVersion.foreach(__v => __obj.update("SegmentVersion", __v.asInstanceOf[js.Any]))
+      SegmentId.foreach(__v => __obj.updateDynamic("SegmentId")(__v.asInstanceOf[js.Any]))
+      SegmentVersion.foreach(__v => __obj.updateDynamic("SegmentVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportJobResource]
     }
   }
@@ -3413,7 +3431,7 @@ package pinpoint {
         TotalPieces: js.UndefOr[__integer] = js.undefined,
         TotalProcessed: js.UndefOr[__integer] = js.undefined
     ): ExportJobResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "CreationDate"  -> CreationDate.asInstanceOf[js.Any],
         "Definition"    -> Definition.asInstanceOf[js.Any],
@@ -3422,13 +3440,13 @@ package pinpoint {
         "Type"          -> Type.asInstanceOf[js.Any]
       )
 
-      CompletedPieces.foreach(__v => __obj.update("CompletedPieces", __v.asInstanceOf[js.Any]))
-      CompletionDate.foreach(__v => __obj.update("CompletionDate", __v.asInstanceOf[js.Any]))
-      FailedPieces.foreach(__v => __obj.update("FailedPieces", __v.asInstanceOf[js.Any]))
-      Failures.foreach(__v => __obj.update("Failures", __v.asInstanceOf[js.Any]))
-      TotalFailures.foreach(__v => __obj.update("TotalFailures", __v.asInstanceOf[js.Any]))
-      TotalPieces.foreach(__v => __obj.update("TotalPieces", __v.asInstanceOf[js.Any]))
-      TotalProcessed.foreach(__v => __obj.update("TotalProcessed", __v.asInstanceOf[js.Any]))
+      CompletedPieces.foreach(__v => __obj.updateDynamic("CompletedPieces")(__v.asInstanceOf[js.Any]))
+      CompletionDate.foreach(__v => __obj.updateDynamic("CompletionDate")(__v.asInstanceOf[js.Any]))
+      FailedPieces.foreach(__v => __obj.updateDynamic("FailedPieces")(__v.asInstanceOf[js.Any]))
+      Failures.foreach(__v => __obj.updateDynamic("Failures")(__v.asInstanceOf[js.Any]))
+      TotalFailures.foreach(__v => __obj.updateDynamic("TotalFailures")(__v.asInstanceOf[js.Any]))
+      TotalPieces.foreach(__v => __obj.updateDynamic("TotalPieces")(__v.asInstanceOf[js.Any]))
+      TotalProcessed.foreach(__v => __obj.updateDynamic("TotalProcessed")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportJobResponse]
     }
   }
@@ -3447,11 +3465,11 @@ package pinpoint {
         Item: ListOfExportJobResponse,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ExportJobsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Item" -> Item.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportJobsResponse]
     }
   }
@@ -3495,11 +3513,11 @@ package pinpoint {
         ApiKey: __string,
         Enabled: js.UndefOr[__boolean] = js.undefined
     ): GCMChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiKey" -> ApiKey.asInstanceOf[js.Any]
       )
 
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GCMChannelRequest]
     }
   }
@@ -3536,20 +3554,20 @@ package pinpoint {
         LastModifiedDate: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): GCMChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Credential" -> Credential.asInstanceOf[js.Any],
         "Platform"   -> Platform.asInstanceOf[js.Any]
       )
 
-      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      HasCredential.foreach(__v => __obj.update("HasCredential", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
-      LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
-      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      ApplicationId.foreach(__v => __obj.updateDynamic("ApplicationId")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      HasCredential.foreach(__v => __obj.updateDynamic("HasCredential")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      IsArchived.foreach(__v => __obj.updateDynamic("IsArchived")(__v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GCMChannelResponse]
     }
   }
@@ -3598,24 +3616,24 @@ package pinpoint {
         Title: js.UndefOr[__string] = js.undefined,
         Url: js.UndefOr[__string] = js.undefined
     ): GCMMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Action.foreach(__v => __obj.update("Action", __v.asInstanceOf[js.Any]))
-      Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
-      CollapseKey.foreach(__v => __obj.update("CollapseKey", __v.asInstanceOf[js.Any]))
-      Data.foreach(__v => __obj.update("Data", __v.asInstanceOf[js.Any]))
-      IconReference.foreach(__v => __obj.update("IconReference", __v.asInstanceOf[js.Any]))
-      ImageIconUrl.foreach(__v => __obj.update("ImageIconUrl", __v.asInstanceOf[js.Any]))
-      ImageUrl.foreach(__v => __obj.update("ImageUrl", __v.asInstanceOf[js.Any]))
-      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
-      RawContent.foreach(__v => __obj.update("RawContent", __v.asInstanceOf[js.Any]))
-      RestrictedPackageName.foreach(__v => __obj.update("RestrictedPackageName", __v.asInstanceOf[js.Any]))
-      SilentPush.foreach(__v => __obj.update("SilentPush", __v.asInstanceOf[js.Any]))
-      SmallImageIconUrl.foreach(__v => __obj.update("SmallImageIconUrl", __v.asInstanceOf[js.Any]))
-      Sound.foreach(__v => __obj.update("Sound", __v.asInstanceOf[js.Any]))
-      Substitutions.foreach(__v => __obj.update("Substitutions", __v.asInstanceOf[js.Any]))
-      TimeToLive.foreach(__v => __obj.update("TimeToLive", __v.asInstanceOf[js.Any]))
-      Title.foreach(__v => __obj.update("Title", __v.asInstanceOf[js.Any]))
-      Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
+      CollapseKey.foreach(__v => __obj.updateDynamic("CollapseKey")(__v.asInstanceOf[js.Any]))
+      Data.foreach(__v => __obj.updateDynamic("Data")(__v.asInstanceOf[js.Any]))
+      IconReference.foreach(__v => __obj.updateDynamic("IconReference")(__v.asInstanceOf[js.Any]))
+      ImageIconUrl.foreach(__v => __obj.updateDynamic("ImageIconUrl")(__v.asInstanceOf[js.Any]))
+      ImageUrl.foreach(__v => __obj.updateDynamic("ImageUrl")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      RawContent.foreach(__v => __obj.updateDynamic("RawContent")(__v.asInstanceOf[js.Any]))
+      RestrictedPackageName.foreach(__v => __obj.updateDynamic("RestrictedPackageName")(__v.asInstanceOf[js.Any]))
+      SilentPush.foreach(__v => __obj.updateDynamic("SilentPush")(__v.asInstanceOf[js.Any]))
+      SmallImageIconUrl.foreach(__v => __obj.updateDynamic("SmallImageIconUrl")(__v.asInstanceOf[js.Any]))
+      Sound.foreach(__v => __obj.updateDynamic("Sound")(__v.asInstanceOf[js.Any]))
+      Substitutions.foreach(__v => __obj.updateDynamic("Substitutions")(__v.asInstanceOf[js.Any]))
+      TimeToLive.foreach(__v => __obj.updateDynamic("TimeToLive")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GCMMessage]
     }
   }
@@ -3634,7 +3652,7 @@ package pinpoint {
         Latitude: __double,
         Longitude: __double
     ): GPSCoordinates = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Latitude"  -> Latitude.asInstanceOf[js.Any],
         "Longitude" -> Longitude.asInstanceOf[js.Any]
       )
@@ -3657,11 +3675,11 @@ package pinpoint {
         Coordinates: GPSCoordinates,
         RangeInKilometers: js.UndefOr[__double] = js.undefined
     ): GPSPointDimension = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Coordinates" -> Coordinates.asInstanceOf[js.Any]
       )
 
-      RangeInKilometers.foreach(__v => __obj.update("RangeInKilometers", __v.asInstanceOf[js.Any]))
+      RangeInKilometers.foreach(__v => __obj.updateDynamic("RangeInKilometers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GPSPointDimension]
     }
   }
@@ -3675,7 +3693,7 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): GetAdmChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
@@ -3692,7 +3710,7 @@ package pinpoint {
     def apply(
         ADMChannelResponse: ADMChannelResponse
     ): GetAdmChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ADMChannelResponse" -> ADMChannelResponse.asInstanceOf[js.Any]
       )
 
@@ -3709,7 +3727,7 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): GetApnsChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
@@ -3726,7 +3744,7 @@ package pinpoint {
     def apply(
         APNSChannelResponse: APNSChannelResponse
     ): GetApnsChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "APNSChannelResponse" -> APNSChannelResponse.asInstanceOf[js.Any]
       )
 
@@ -3743,7 +3761,7 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): GetApnsSandboxChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
@@ -3760,7 +3778,7 @@ package pinpoint {
     def apply(
         APNSSandboxChannelResponse: APNSSandboxChannelResponse
     ): GetApnsSandboxChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "APNSSandboxChannelResponse" -> APNSSandboxChannelResponse.asInstanceOf[js.Any]
       )
 
@@ -3777,7 +3795,7 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): GetApnsVoipChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
@@ -3794,7 +3812,7 @@ package pinpoint {
     def apply(
         APNSVoipChannelResponse: APNSVoipChannelResponse
     ): GetApnsVoipChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "APNSVoipChannelResponse" -> APNSVoipChannelResponse.asInstanceOf[js.Any]
       )
 
@@ -3811,7 +3829,7 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): GetApnsVoipSandboxChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
@@ -3828,7 +3846,7 @@ package pinpoint {
     def apply(
         APNSVoipSandboxChannelResponse: APNSVoipSandboxChannelResponse
     ): GetApnsVoipSandboxChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "APNSVoipSandboxChannelResponse" -> APNSVoipSandboxChannelResponse.asInstanceOf[js.Any]
       )
 
@@ -3845,7 +3863,7 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): GetAppRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
@@ -3862,7 +3880,7 @@ package pinpoint {
     def apply(
         ApplicationResponse: ApplicationResponse
     ): GetAppResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationResponse" -> ApplicationResponse.asInstanceOf[js.Any]
       )
 
@@ -3889,15 +3907,15 @@ package pinpoint {
         PageSize: js.UndefOr[__string] = js.undefined,
         StartTime: js.UndefOr[__timestampIso8601] = js.undefined
     ): GetApplicationDateRangeKpiRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "KpiName"       -> KpiName.asInstanceOf[js.Any]
       )
 
-      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetApplicationDateRangeKpiRequest]
     }
   }
@@ -3911,7 +3929,7 @@ package pinpoint {
     def apply(
         ApplicationDateRangeKpiResponse: ApplicationDateRangeKpiResponse
     ): GetApplicationDateRangeKpiResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationDateRangeKpiResponse" -> ApplicationDateRangeKpiResponse.asInstanceOf[js.Any]
       )
 
@@ -3928,7 +3946,7 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): GetApplicationSettingsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
@@ -3945,7 +3963,7 @@ package pinpoint {
     def apply(
         ApplicationSettingsResource: ApplicationSettingsResource
     ): GetApplicationSettingsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationSettingsResource" -> ApplicationSettingsResource.asInstanceOf[js.Any]
       )
 
@@ -3964,9 +3982,9 @@ package pinpoint {
         PageSize: js.UndefOr[__string] = js.undefined,
         Token: js.UndefOr[__string] = js.undefined
     ): GetAppsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      Token.foreach(__v => __obj.update("Token", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      Token.foreach(__v => __obj.updateDynamic("Token")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAppsRequest]
     }
   }
@@ -3980,7 +3998,7 @@ package pinpoint {
     def apply(
         ApplicationsResponse: ApplicationsResponse
     ): GetAppsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationsResponse" -> ApplicationsResponse.asInstanceOf[js.Any]
       )
 
@@ -3997,7 +4015,7 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): GetBaiduChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
@@ -4014,7 +4032,7 @@ package pinpoint {
     def apply(
         BaiduChannelResponse: BaiduChannelResponse
     ): GetBaiduChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BaiduChannelResponse" -> BaiduChannelResponse.asInstanceOf[js.Any]
       )
 
@@ -4037,13 +4055,13 @@ package pinpoint {
         PageSize: js.UndefOr[__string] = js.undefined,
         Token: js.UndefOr[__string] = js.undefined
     ): GetCampaignActivitiesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "CampaignId"    -> CampaignId.asInstanceOf[js.Any]
       )
 
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      Token.foreach(__v => __obj.update("Token", __v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      Token.foreach(__v => __obj.updateDynamic("Token")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCampaignActivitiesRequest]
     }
   }
@@ -4057,7 +4075,7 @@ package pinpoint {
     def apply(
         ActivitiesResponse: ActivitiesResponse
     ): GetCampaignActivitiesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ActivitiesResponse" -> ActivitiesResponse.asInstanceOf[js.Any]
       )
 
@@ -4086,16 +4104,16 @@ package pinpoint {
         PageSize: js.UndefOr[__string] = js.undefined,
         StartTime: js.UndefOr[__timestampIso8601] = js.undefined
     ): GetCampaignDateRangeKpiRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "CampaignId"    -> CampaignId.asInstanceOf[js.Any],
         "KpiName"       -> KpiName.asInstanceOf[js.Any]
       )
 
-      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCampaignDateRangeKpiRequest]
     }
   }
@@ -4109,7 +4127,7 @@ package pinpoint {
     def apply(
         CampaignDateRangeKpiResponse: CampaignDateRangeKpiResponse
     ): GetCampaignDateRangeKpiResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CampaignDateRangeKpiResponse" -> CampaignDateRangeKpiResponse.asInstanceOf[js.Any]
       )
 
@@ -4128,7 +4146,7 @@ package pinpoint {
         ApplicationId: __string,
         CampaignId: __string
     ): GetCampaignRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "CampaignId"    -> CampaignId.asInstanceOf[js.Any]
       )
@@ -4146,7 +4164,7 @@ package pinpoint {
     def apply(
         CampaignResponse: CampaignResponse
     ): GetCampaignResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CampaignResponse" -> CampaignResponse.asInstanceOf[js.Any]
       )
 
@@ -4167,7 +4185,7 @@ package pinpoint {
         CampaignId: __string,
         Version: __string
     ): GetCampaignVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "CampaignId"    -> CampaignId.asInstanceOf[js.Any],
         "Version"       -> Version.asInstanceOf[js.Any]
@@ -4186,7 +4204,7 @@ package pinpoint {
     def apply(
         CampaignResponse: CampaignResponse
     ): GetCampaignVersionResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CampaignResponse" -> CampaignResponse.asInstanceOf[js.Any]
       )
 
@@ -4209,13 +4227,13 @@ package pinpoint {
         PageSize: js.UndefOr[__string] = js.undefined,
         Token: js.UndefOr[__string] = js.undefined
     ): GetCampaignVersionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "CampaignId"    -> CampaignId.asInstanceOf[js.Any]
       )
 
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      Token.foreach(__v => __obj.update("Token", __v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      Token.foreach(__v => __obj.updateDynamic("Token")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCampaignVersionsRequest]
     }
   }
@@ -4229,7 +4247,7 @@ package pinpoint {
     def apply(
         CampaignsResponse: CampaignsResponse
     ): GetCampaignVersionsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CampaignsResponse" -> CampaignsResponse.asInstanceOf[js.Any]
       )
 
@@ -4250,12 +4268,12 @@ package pinpoint {
         PageSize: js.UndefOr[__string] = js.undefined,
         Token: js.UndefOr[__string] = js.undefined
     ): GetCampaignsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      Token.foreach(__v => __obj.update("Token", __v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      Token.foreach(__v => __obj.updateDynamic("Token")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCampaignsRequest]
     }
   }
@@ -4269,7 +4287,7 @@ package pinpoint {
     def apply(
         CampaignsResponse: CampaignsResponse
     ): GetCampaignsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CampaignsResponse" -> CampaignsResponse.asInstanceOf[js.Any]
       )
 
@@ -4286,7 +4304,7 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): GetChannelsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
@@ -4303,7 +4321,7 @@ package pinpoint {
     def apply(
         ChannelsResponse: ChannelsResponse
     ): GetChannelsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ChannelsResponse" -> ChannelsResponse.asInstanceOf[js.Any]
       )
 
@@ -4320,7 +4338,7 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): GetEmailChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
@@ -4337,7 +4355,7 @@ package pinpoint {
     def apply(
         EmailChannelResponse: EmailChannelResponse
     ): GetEmailChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EmailChannelResponse" -> EmailChannelResponse.asInstanceOf[js.Any]
       )
 
@@ -4356,7 +4374,7 @@ package pinpoint {
         ApplicationId: __string,
         EndpointId: __string
     ): GetEndpointRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "EndpointId"    -> EndpointId.asInstanceOf[js.Any]
       )
@@ -4374,7 +4392,7 @@ package pinpoint {
     def apply(
         EndpointResponse: EndpointResponse
     ): GetEndpointResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EndpointResponse" -> EndpointResponse.asInstanceOf[js.Any]
       )
 
@@ -4391,7 +4409,7 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): GetEventStreamRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
@@ -4408,7 +4426,7 @@ package pinpoint {
     def apply(
         EventStream: EventStream
     ): GetEventStreamResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EventStream" -> EventStream.asInstanceOf[js.Any]
       )
 
@@ -4427,7 +4445,7 @@ package pinpoint {
         ApplicationId: __string,
         JobId: __string
     ): GetExportJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "JobId"         -> JobId.asInstanceOf[js.Any]
       )
@@ -4445,7 +4463,7 @@ package pinpoint {
     def apply(
         ExportJobResponse: ExportJobResponse
     ): GetExportJobResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ExportJobResponse" -> ExportJobResponse.asInstanceOf[js.Any]
       )
 
@@ -4466,12 +4484,12 @@ package pinpoint {
         PageSize: js.UndefOr[__string] = js.undefined,
         Token: js.UndefOr[__string] = js.undefined
     ): GetExportJobsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      Token.foreach(__v => __obj.update("Token", __v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      Token.foreach(__v => __obj.updateDynamic("Token")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetExportJobsRequest]
     }
   }
@@ -4485,7 +4503,7 @@ package pinpoint {
     def apply(
         ExportJobsResponse: ExportJobsResponse
     ): GetExportJobsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ExportJobsResponse" -> ExportJobsResponse.asInstanceOf[js.Any]
       )
 
@@ -4502,7 +4520,7 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): GetGcmChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
@@ -4519,7 +4537,7 @@ package pinpoint {
     def apply(
         GCMChannelResponse: GCMChannelResponse
     ): GetGcmChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GCMChannelResponse" -> GCMChannelResponse.asInstanceOf[js.Any]
       )
 
@@ -4538,7 +4556,7 @@ package pinpoint {
         ApplicationId: __string,
         JobId: __string
     ): GetImportJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "JobId"         -> JobId.asInstanceOf[js.Any]
       )
@@ -4556,7 +4574,7 @@ package pinpoint {
     def apply(
         ImportJobResponse: ImportJobResponse
     ): GetImportJobResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ImportJobResponse" -> ImportJobResponse.asInstanceOf[js.Any]
       )
 
@@ -4577,12 +4595,12 @@ package pinpoint {
         PageSize: js.UndefOr[__string] = js.undefined,
         Token: js.UndefOr[__string] = js.undefined
     ): GetImportJobsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      Token.foreach(__v => __obj.update("Token", __v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      Token.foreach(__v => __obj.updateDynamic("Token")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetImportJobsRequest]
     }
   }
@@ -4596,7 +4614,7 @@ package pinpoint {
     def apply(
         ImportJobsResponse: ImportJobsResponse
     ): GetImportJobsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ImportJobsResponse" -> ImportJobsResponse.asInstanceOf[js.Any]
       )
 
@@ -4619,13 +4637,13 @@ package pinpoint {
         PageSize: js.UndefOr[__string] = js.undefined,
         Token: js.UndefOr[__string] = js.undefined
     ): GetSegmentExportJobsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "SegmentId"     -> SegmentId.asInstanceOf[js.Any]
       )
 
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      Token.foreach(__v => __obj.update("Token", __v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      Token.foreach(__v => __obj.updateDynamic("Token")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSegmentExportJobsRequest]
     }
   }
@@ -4639,7 +4657,7 @@ package pinpoint {
     def apply(
         ExportJobsResponse: ExportJobsResponse
     ): GetSegmentExportJobsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ExportJobsResponse" -> ExportJobsResponse.asInstanceOf[js.Any]
       )
 
@@ -4662,13 +4680,13 @@ package pinpoint {
         PageSize: js.UndefOr[__string] = js.undefined,
         Token: js.UndefOr[__string] = js.undefined
     ): GetSegmentImportJobsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "SegmentId"     -> SegmentId.asInstanceOf[js.Any]
       )
 
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      Token.foreach(__v => __obj.update("Token", __v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      Token.foreach(__v => __obj.updateDynamic("Token")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSegmentImportJobsRequest]
     }
   }
@@ -4682,7 +4700,7 @@ package pinpoint {
     def apply(
         ImportJobsResponse: ImportJobsResponse
     ): GetSegmentImportJobsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ImportJobsResponse" -> ImportJobsResponse.asInstanceOf[js.Any]
       )
 
@@ -4701,7 +4719,7 @@ package pinpoint {
         ApplicationId: __string,
         SegmentId: __string
     ): GetSegmentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "SegmentId"     -> SegmentId.asInstanceOf[js.Any]
       )
@@ -4719,7 +4737,7 @@ package pinpoint {
     def apply(
         SegmentResponse: SegmentResponse
     ): GetSegmentResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SegmentResponse" -> SegmentResponse.asInstanceOf[js.Any]
       )
 
@@ -4740,7 +4758,7 @@ package pinpoint {
         SegmentId: __string,
         Version: __string
     ): GetSegmentVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "SegmentId"     -> SegmentId.asInstanceOf[js.Any],
         "Version"       -> Version.asInstanceOf[js.Any]
@@ -4759,7 +4777,7 @@ package pinpoint {
     def apply(
         SegmentResponse: SegmentResponse
     ): GetSegmentVersionResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SegmentResponse" -> SegmentResponse.asInstanceOf[js.Any]
       )
 
@@ -4782,13 +4800,13 @@ package pinpoint {
         PageSize: js.UndefOr[__string] = js.undefined,
         Token: js.UndefOr[__string] = js.undefined
     ): GetSegmentVersionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "SegmentId"     -> SegmentId.asInstanceOf[js.Any]
       )
 
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      Token.foreach(__v => __obj.update("Token", __v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      Token.foreach(__v => __obj.updateDynamic("Token")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSegmentVersionsRequest]
     }
   }
@@ -4802,7 +4820,7 @@ package pinpoint {
     def apply(
         SegmentsResponse: SegmentsResponse
     ): GetSegmentVersionsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SegmentsResponse" -> SegmentsResponse.asInstanceOf[js.Any]
       )
 
@@ -4823,12 +4841,12 @@ package pinpoint {
         PageSize: js.UndefOr[__string] = js.undefined,
         Token: js.UndefOr[__string] = js.undefined
     ): GetSegmentsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
-      PageSize.foreach(__v => __obj.update("PageSize", __v.asInstanceOf[js.Any]))
-      Token.foreach(__v => __obj.update("Token", __v.asInstanceOf[js.Any]))
+      PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
+      Token.foreach(__v => __obj.updateDynamic("Token")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSegmentsRequest]
     }
   }
@@ -4842,7 +4860,7 @@ package pinpoint {
     def apply(
         SegmentsResponse: SegmentsResponse
     ): GetSegmentsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SegmentsResponse" -> SegmentsResponse.asInstanceOf[js.Any]
       )
 
@@ -4859,7 +4877,7 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): GetSmsChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
@@ -4876,7 +4894,7 @@ package pinpoint {
     def apply(
         SMSChannelResponse: SMSChannelResponse
     ): GetSmsChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SMSChannelResponse" -> SMSChannelResponse.asInstanceOf[js.Any]
       )
 
@@ -4895,7 +4913,7 @@ package pinpoint {
         ApplicationId: __string,
         UserId: __string
     ): GetUserEndpointsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "UserId"        -> UserId.asInstanceOf[js.Any]
       )
@@ -4913,7 +4931,7 @@ package pinpoint {
     def apply(
         EndpointsResponse: EndpointsResponse
     ): GetUserEndpointsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EndpointsResponse" -> EndpointsResponse.asInstanceOf[js.Any]
       )
 
@@ -4930,7 +4948,7 @@ package pinpoint {
     def apply(
         ApplicationId: __string
     ): GetVoiceChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
@@ -4947,7 +4965,7 @@ package pinpoint {
     def apply(
         VoiceChannelResponse: VoiceChannelResponse
     ): GetVoiceChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VoiceChannelResponse" -> VoiceChannelResponse.asInstanceOf[js.Any]
       )
 
@@ -4981,17 +4999,17 @@ package pinpoint {
         SegmentId: js.UndefOr[__string] = js.undefined,
         SegmentName: js.UndefOr[__string] = js.undefined
     ): ImportJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Format"  -> Format.asInstanceOf[js.Any],
         "RoleArn" -> RoleArn.asInstanceOf[js.Any],
         "S3Url"   -> S3Url.asInstanceOf[js.Any]
       )
 
-      DefineSegment.foreach(__v => __obj.update("DefineSegment", __v.asInstanceOf[js.Any]))
-      ExternalId.foreach(__v => __obj.update("ExternalId", __v.asInstanceOf[js.Any]))
-      RegisterEndpoints.foreach(__v => __obj.update("RegisterEndpoints", __v.asInstanceOf[js.Any]))
-      SegmentId.foreach(__v => __obj.update("SegmentId", __v.asInstanceOf[js.Any]))
-      SegmentName.foreach(__v => __obj.update("SegmentName", __v.asInstanceOf[js.Any]))
+      DefineSegment.foreach(__v => __obj.updateDynamic("DefineSegment")(__v.asInstanceOf[js.Any]))
+      ExternalId.foreach(__v => __obj.updateDynamic("ExternalId")(__v.asInstanceOf[js.Any]))
+      RegisterEndpoints.foreach(__v => __obj.updateDynamic("RegisterEndpoints")(__v.asInstanceOf[js.Any]))
+      SegmentId.foreach(__v => __obj.updateDynamic("SegmentId")(__v.asInstanceOf[js.Any]))
+      SegmentName.foreach(__v => __obj.updateDynamic("SegmentName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportJobRequest]
     }
   }
@@ -5022,17 +5040,17 @@ package pinpoint {
         SegmentId: js.UndefOr[__string] = js.undefined,
         SegmentName: js.UndefOr[__string] = js.undefined
     ): ImportJobResource = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Format"  -> Format.asInstanceOf[js.Any],
         "RoleArn" -> RoleArn.asInstanceOf[js.Any],
         "S3Url"   -> S3Url.asInstanceOf[js.Any]
       )
 
-      DefineSegment.foreach(__v => __obj.update("DefineSegment", __v.asInstanceOf[js.Any]))
-      ExternalId.foreach(__v => __obj.update("ExternalId", __v.asInstanceOf[js.Any]))
-      RegisterEndpoints.foreach(__v => __obj.update("RegisterEndpoints", __v.asInstanceOf[js.Any]))
-      SegmentId.foreach(__v => __obj.update("SegmentId", __v.asInstanceOf[js.Any]))
-      SegmentName.foreach(__v => __obj.update("SegmentName", __v.asInstanceOf[js.Any]))
+      DefineSegment.foreach(__v => __obj.updateDynamic("DefineSegment")(__v.asInstanceOf[js.Any]))
+      ExternalId.foreach(__v => __obj.updateDynamic("ExternalId")(__v.asInstanceOf[js.Any]))
+      RegisterEndpoints.foreach(__v => __obj.updateDynamic("RegisterEndpoints")(__v.asInstanceOf[js.Any]))
+      SegmentId.foreach(__v => __obj.updateDynamic("SegmentId")(__v.asInstanceOf[js.Any]))
+      SegmentName.foreach(__v => __obj.updateDynamic("SegmentName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportJobResource]
     }
   }
@@ -5073,7 +5091,7 @@ package pinpoint {
         TotalPieces: js.UndefOr[__integer] = js.undefined,
         TotalProcessed: js.UndefOr[__integer] = js.undefined
     ): ImportJobResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "CreationDate"  -> CreationDate.asInstanceOf[js.Any],
         "Definition"    -> Definition.asInstanceOf[js.Any],
@@ -5082,13 +5100,13 @@ package pinpoint {
         "Type"          -> Type.asInstanceOf[js.Any]
       )
 
-      CompletedPieces.foreach(__v => __obj.update("CompletedPieces", __v.asInstanceOf[js.Any]))
-      CompletionDate.foreach(__v => __obj.update("CompletionDate", __v.asInstanceOf[js.Any]))
-      FailedPieces.foreach(__v => __obj.update("FailedPieces", __v.asInstanceOf[js.Any]))
-      Failures.foreach(__v => __obj.update("Failures", __v.asInstanceOf[js.Any]))
-      TotalFailures.foreach(__v => __obj.update("TotalFailures", __v.asInstanceOf[js.Any]))
-      TotalPieces.foreach(__v => __obj.update("TotalPieces", __v.asInstanceOf[js.Any]))
-      TotalProcessed.foreach(__v => __obj.update("TotalProcessed", __v.asInstanceOf[js.Any]))
+      CompletedPieces.foreach(__v => __obj.updateDynamic("CompletedPieces")(__v.asInstanceOf[js.Any]))
+      CompletionDate.foreach(__v => __obj.updateDynamic("CompletionDate")(__v.asInstanceOf[js.Any]))
+      FailedPieces.foreach(__v => __obj.updateDynamic("FailedPieces")(__v.asInstanceOf[js.Any]))
+      Failures.foreach(__v => __obj.updateDynamic("Failures")(__v.asInstanceOf[js.Any]))
+      TotalFailures.foreach(__v => __obj.updateDynamic("TotalFailures")(__v.asInstanceOf[js.Any]))
+      TotalPieces.foreach(__v => __obj.updateDynamic("TotalPieces")(__v.asInstanceOf[js.Any]))
+      TotalProcessed.foreach(__v => __obj.updateDynamic("TotalProcessed")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportJobResponse]
     }
   }
@@ -5107,11 +5125,11 @@ package pinpoint {
         Item: ListOfImportJobResponse,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ImportJobsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Item" -> Item.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportJobsResponse]
     }
   }
@@ -5138,9 +5156,9 @@ package pinpoint {
         EndpointItemResponse: js.UndefOr[EndpointItemResponse] = js.undefined,
         EventsItemResponse: js.UndefOr[MapOfEventItemResponse] = js.undefined
     ): ItemResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EndpointItemResponse.foreach(__v => __obj.update("EndpointItemResponse", __v.asInstanceOf[js.Any]))
-      EventsItemResponse.foreach(__v => __obj.update("EventsItemResponse", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EndpointItemResponse.foreach(__v => __obj.updateDynamic("EndpointItemResponse")(__v.asInstanceOf[js.Any]))
+      EventsItemResponse.foreach(__v => __obj.updateDynamic("EventsItemResponse")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ItemResponse]
     }
   }
@@ -5166,7 +5184,7 @@ package pinpoint {
     def apply(
         ResourceArn: __string
     ): ListTagsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
@@ -5183,7 +5201,7 @@ package pinpoint {
     def apply(
         TagsModel: TagsModel
     ): ListTagsForResourceResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TagsModel" -> TagsModel.asInstanceOf[js.Any]
       )
 
@@ -5225,19 +5243,19 @@ package pinpoint {
         Title: js.UndefOr[__string] = js.undefined,
         Url: js.UndefOr[__string] = js.undefined
     ): Message = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Action.foreach(__v => __obj.update("Action", __v.asInstanceOf[js.Any]))
-      Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
-      ImageIconUrl.foreach(__v => __obj.update("ImageIconUrl", __v.asInstanceOf[js.Any]))
-      ImageSmallIconUrl.foreach(__v => __obj.update("ImageSmallIconUrl", __v.asInstanceOf[js.Any]))
-      ImageUrl.foreach(__v => __obj.update("ImageUrl", __v.asInstanceOf[js.Any]))
-      JsonBody.foreach(__v => __obj.update("JsonBody", __v.asInstanceOf[js.Any]))
-      MediaUrl.foreach(__v => __obj.update("MediaUrl", __v.asInstanceOf[js.Any]))
-      RawContent.foreach(__v => __obj.update("RawContent", __v.asInstanceOf[js.Any]))
-      SilentPush.foreach(__v => __obj.update("SilentPush", __v.asInstanceOf[js.Any]))
-      TimeToLive.foreach(__v => __obj.update("TimeToLive", __v.asInstanceOf[js.Any]))
-      Title.foreach(__v => __obj.update("Title", __v.asInstanceOf[js.Any]))
-      Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
+      ImageIconUrl.foreach(__v => __obj.updateDynamic("ImageIconUrl")(__v.asInstanceOf[js.Any]))
+      ImageSmallIconUrl.foreach(__v => __obj.updateDynamic("ImageSmallIconUrl")(__v.asInstanceOf[js.Any]))
+      ImageUrl.foreach(__v => __obj.updateDynamic("ImageUrl")(__v.asInstanceOf[js.Any]))
+      JsonBody.foreach(__v => __obj.updateDynamic("JsonBody")(__v.asInstanceOf[js.Any]))
+      MediaUrl.foreach(__v => __obj.updateDynamic("MediaUrl")(__v.asInstanceOf[js.Any]))
+      RawContent.foreach(__v => __obj.updateDynamic("RawContent")(__v.asInstanceOf[js.Any]))
+      SilentPush.foreach(__v => __obj.updateDynamic("SilentPush")(__v.asInstanceOf[js.Any]))
+      TimeToLive.foreach(__v => __obj.updateDynamic("TimeToLive")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Message]
     }
   }
@@ -5256,9 +5274,9 @@ package pinpoint {
         Message: js.UndefOr[__string] = js.undefined,
         RequestID: js.UndefOr[__string] = js.undefined
     ): MessageBody = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
-      RequestID.foreach(__v => __obj.update("RequestID", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      RequestID.foreach(__v => __obj.updateDynamic("RequestID")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MessageBody]
     }
   }
@@ -5287,14 +5305,14 @@ package pinpoint {
         GCMMessage: js.UndefOr[Message] = js.undefined,
         SMSMessage: js.UndefOr[CampaignSmsMessage] = js.undefined
     ): MessageConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ADMMessage.foreach(__v => __obj.update("ADMMessage", __v.asInstanceOf[js.Any]))
-      APNSMessage.foreach(__v => __obj.update("APNSMessage", __v.asInstanceOf[js.Any]))
-      BaiduMessage.foreach(__v => __obj.update("BaiduMessage", __v.asInstanceOf[js.Any]))
-      DefaultMessage.foreach(__v => __obj.update("DefaultMessage", __v.asInstanceOf[js.Any]))
-      EmailMessage.foreach(__v => __obj.update("EmailMessage", __v.asInstanceOf[js.Any]))
-      GCMMessage.foreach(__v => __obj.update("GCMMessage", __v.asInstanceOf[js.Any]))
-      SMSMessage.foreach(__v => __obj.update("SMSMessage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ADMMessage.foreach(__v => __obj.updateDynamic("ADMMessage")(__v.asInstanceOf[js.Any]))
+      APNSMessage.foreach(__v => __obj.updateDynamic("APNSMessage")(__v.asInstanceOf[js.Any]))
+      BaiduMessage.foreach(__v => __obj.updateDynamic("BaiduMessage")(__v.asInstanceOf[js.Any]))
+      DefaultMessage.foreach(__v => __obj.updateDynamic("DefaultMessage")(__v.asInstanceOf[js.Any]))
+      EmailMessage.foreach(__v => __obj.updateDynamic("EmailMessage")(__v.asInstanceOf[js.Any]))
+      GCMMessage.foreach(__v => __obj.updateDynamic("GCMMessage")(__v.asInstanceOf[js.Any]))
+      SMSMessage.foreach(__v => __obj.updateDynamic("SMSMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MessageConfiguration]
     }
   }
@@ -5319,14 +5337,14 @@ package pinpoint {
         Endpoints: js.UndefOr[MapOfEndpointSendConfiguration] = js.undefined,
         TraceId: js.UndefOr[__string] = js.undefined
     ): MessageRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MessageConfiguration" -> MessageConfiguration.asInstanceOf[js.Any]
       )
 
-      Addresses.foreach(__v => __obj.update("Addresses", __v.asInstanceOf[js.Any]))
-      Context.foreach(__v => __obj.update("Context", __v.asInstanceOf[js.Any]))
-      Endpoints.foreach(__v => __obj.update("Endpoints", __v.asInstanceOf[js.Any]))
-      TraceId.foreach(__v => __obj.update("TraceId", __v.asInstanceOf[js.Any]))
+      Addresses.foreach(__v => __obj.updateDynamic("Addresses")(__v.asInstanceOf[js.Any]))
+      Context.foreach(__v => __obj.updateDynamic("Context")(__v.asInstanceOf[js.Any]))
+      Endpoints.foreach(__v => __obj.updateDynamic("Endpoints")(__v.asInstanceOf[js.Any]))
+      TraceId.foreach(__v => __obj.updateDynamic("TraceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MessageRequest]
     }
   }
@@ -5349,13 +5367,13 @@ package pinpoint {
         RequestId: js.UndefOr[__string] = js.undefined,
         Result: js.UndefOr[MapOfMessageResult] = js.undefined
     ): MessageResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
-      EndpointResult.foreach(__v => __obj.update("EndpointResult", __v.asInstanceOf[js.Any]))
-      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
-      Result.foreach(__v => __obj.update("Result", __v.asInstanceOf[js.Any]))
+      EndpointResult.foreach(__v => __obj.updateDynamic("EndpointResult")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Result.foreach(__v => __obj.updateDynamic("Result")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MessageResponse]
     }
   }
@@ -5380,14 +5398,14 @@ package pinpoint {
         StatusMessage: js.UndefOr[__string] = js.undefined,
         UpdatedToken: js.UndefOr[__string] = js.undefined
     ): MessageResult = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DeliveryStatus" -> DeliveryStatus.asInstanceOf[js.Any],
         "StatusCode"     -> StatusCode.asInstanceOf[js.Any]
       )
 
-      MessageId.foreach(__v => __obj.update("MessageId", __v.asInstanceOf[js.Any]))
-      StatusMessage.foreach(__v => __obj.update("StatusMessage", __v.asInstanceOf[js.Any]))
-      UpdatedToken.foreach(__v => __obj.update("UpdatedToken", __v.asInstanceOf[js.Any]))
+      MessageId.foreach(__v => __obj.updateDynamic("MessageId")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      UpdatedToken.foreach(__v => __obj.updateDynamic("UpdatedToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MessageResult]
     }
   }
@@ -5413,7 +5431,7 @@ package pinpoint {
         ComparisonOperator: __string,
         Value: __double
     ): MetricDimension = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ComparisonOperator" -> ComparisonOperator.asInstanceOf[js.Any],
         "Value"              -> Value.asInstanceOf[js.Any]
       )
@@ -5443,9 +5461,9 @@ package pinpoint {
         IsoCountryCode: js.UndefOr[__string] = js.undefined,
         PhoneNumber: js.UndefOr[__string] = js.undefined
     ): NumberValidateRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IsoCountryCode.foreach(__v => __obj.update("IsoCountryCode", __v.asInstanceOf[js.Any]))
-      PhoneNumber.foreach(__v => __obj.update("PhoneNumber", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IsoCountryCode.foreach(__v => __obj.updateDynamic("IsoCountryCode")(__v.asInstanceOf[js.Any]))
+      PhoneNumber.foreach(__v => __obj.updateDynamic("PhoneNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NumberValidateRequest]
     }
   }
@@ -5488,21 +5506,23 @@ package pinpoint {
         Timezone: js.UndefOr[__string] = js.undefined,
         ZipCode: js.UndefOr[__string] = js.undefined
     ): NumberValidateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Carrier.foreach(__v => __obj.update("Carrier", __v.asInstanceOf[js.Any]))
-      City.foreach(__v => __obj.update("City", __v.asInstanceOf[js.Any]))
-      CleansedPhoneNumberE164.foreach(__v => __obj.update("CleansedPhoneNumberE164", __v.asInstanceOf[js.Any]))
-      CleansedPhoneNumberNational.foreach(__v => __obj.update("CleansedPhoneNumberNational", __v.asInstanceOf[js.Any]))
-      Country.foreach(__v => __obj.update("Country", __v.asInstanceOf[js.Any]))
-      CountryCodeIso2.foreach(__v => __obj.update("CountryCodeIso2", __v.asInstanceOf[js.Any]))
-      CountryCodeNumeric.foreach(__v => __obj.update("CountryCodeNumeric", __v.asInstanceOf[js.Any]))
-      County.foreach(__v => __obj.update("County", __v.asInstanceOf[js.Any]))
-      OriginalCountryCodeIso2.foreach(__v => __obj.update("OriginalCountryCodeIso2", __v.asInstanceOf[js.Any]))
-      OriginalPhoneNumber.foreach(__v => __obj.update("OriginalPhoneNumber", __v.asInstanceOf[js.Any]))
-      PhoneType.foreach(__v => __obj.update("PhoneType", __v.asInstanceOf[js.Any]))
-      PhoneTypeCode.foreach(__v => __obj.update("PhoneTypeCode", __v.asInstanceOf[js.Any]))
-      Timezone.foreach(__v => __obj.update("Timezone", __v.asInstanceOf[js.Any]))
-      ZipCode.foreach(__v => __obj.update("ZipCode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Carrier.foreach(__v => __obj.updateDynamic("Carrier")(__v.asInstanceOf[js.Any]))
+      City.foreach(__v => __obj.updateDynamic("City")(__v.asInstanceOf[js.Any]))
+      CleansedPhoneNumberE164.foreach(__v => __obj.updateDynamic("CleansedPhoneNumberE164")(__v.asInstanceOf[js.Any]))
+      CleansedPhoneNumberNational.foreach(
+        __v => __obj.updateDynamic("CleansedPhoneNumberNational")(__v.asInstanceOf[js.Any])
+      )
+      Country.foreach(__v => __obj.updateDynamic("Country")(__v.asInstanceOf[js.Any]))
+      CountryCodeIso2.foreach(__v => __obj.updateDynamic("CountryCodeIso2")(__v.asInstanceOf[js.Any]))
+      CountryCodeNumeric.foreach(__v => __obj.updateDynamic("CountryCodeNumeric")(__v.asInstanceOf[js.Any]))
+      County.foreach(__v => __obj.updateDynamic("County")(__v.asInstanceOf[js.Any]))
+      OriginalCountryCodeIso2.foreach(__v => __obj.updateDynamic("OriginalCountryCodeIso2")(__v.asInstanceOf[js.Any]))
+      OriginalPhoneNumber.foreach(__v => __obj.updateDynamic("OriginalPhoneNumber")(__v.asInstanceOf[js.Any]))
+      PhoneType.foreach(__v => __obj.updateDynamic("PhoneType")(__v.asInstanceOf[js.Any]))
+      PhoneTypeCode.foreach(__v => __obj.updateDynamic("PhoneTypeCode")(__v.asInstanceOf[js.Any]))
+      Timezone.foreach(__v => __obj.updateDynamic("Timezone")(__v.asInstanceOf[js.Any]))
+      ZipCode.foreach(__v => __obj.updateDynamic("ZipCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NumberValidateResponse]
     }
   }
@@ -5516,7 +5536,7 @@ package pinpoint {
     def apply(
         NumberValidateRequest: NumberValidateRequest
     ): PhoneNumberValidateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "NumberValidateRequest" -> NumberValidateRequest.asInstanceOf[js.Any]
       )
 
@@ -5533,7 +5553,7 @@ package pinpoint {
     def apply(
         NumberValidateResponse: NumberValidateResponse
     ): PhoneNumberValidateResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "NumberValidateResponse" -> NumberValidateResponse.asInstanceOf[js.Any]
       )
 
@@ -5573,18 +5593,18 @@ package pinpoint {
         RequestId: js.UndefOr[__string] = js.undefined,
         User: js.UndefOr[EndpointUser] = js.undefined
     ): PublicEndpoint = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Address.foreach(__v => __obj.update("Address", __v.asInstanceOf[js.Any]))
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      ChannelType.foreach(__v => __obj.update("ChannelType", __v.asInstanceOf[js.Any]))
-      Demographic.foreach(__v => __obj.update("Demographic", __v.asInstanceOf[js.Any]))
-      EffectiveDate.foreach(__v => __obj.update("EffectiveDate", __v.asInstanceOf[js.Any]))
-      EndpointStatus.foreach(__v => __obj.update("EndpointStatus", __v.asInstanceOf[js.Any]))
-      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
-      Metrics.foreach(__v => __obj.update("Metrics", __v.asInstanceOf[js.Any]))
-      OptOut.foreach(__v => __obj.update("OptOut", __v.asInstanceOf[js.Any]))
-      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
-      User.foreach(__v => __obj.update("User", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Address.foreach(__v => __obj.updateDynamic("Address")(__v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      ChannelType.foreach(__v => __obj.updateDynamic("ChannelType")(__v.asInstanceOf[js.Any]))
+      Demographic.foreach(__v => __obj.updateDynamic("Demographic")(__v.asInstanceOf[js.Any]))
+      EffectiveDate.foreach(__v => __obj.updateDynamic("EffectiveDate")(__v.asInstanceOf[js.Any]))
+      EndpointStatus.foreach(__v => __obj.updateDynamic("EndpointStatus")(__v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
+      Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
+      OptOut.foreach(__v => __obj.updateDynamic("OptOut")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PublicEndpoint]
     }
   }
@@ -5600,7 +5620,7 @@ package pinpoint {
         ApplicationId: __string,
         WriteEventStream: WriteEventStream
     ): PutEventStreamRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId"    -> ApplicationId.asInstanceOf[js.Any],
         "WriteEventStream" -> WriteEventStream.asInstanceOf[js.Any]
       )
@@ -5618,7 +5638,7 @@ package pinpoint {
     def apply(
         EventStream: EventStream
     ): PutEventStreamResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EventStream" -> EventStream.asInstanceOf[js.Any]
       )
 
@@ -5637,7 +5657,7 @@ package pinpoint {
         ApplicationId: __string,
         EventsRequest: EventsRequest
     ): PutEventsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "EventsRequest" -> EventsRequest.asInstanceOf[js.Any]
       )
@@ -5655,7 +5675,7 @@ package pinpoint {
     def apply(
         EventsResponse: EventsResponse
     ): PutEventsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EventsResponse" -> EventsResponse.asInstanceOf[js.Any]
       )
 
@@ -5677,9 +5697,9 @@ package pinpoint {
         End: js.UndefOr[__string] = js.undefined,
         Start: js.UndefOr[__string] = js.undefined
     ): QuietTime = {
-      val __obj = js.Dictionary.empty[js.Any]
-      End.foreach(__v => __obj.update("End", __v.asInstanceOf[js.Any]))
-      Start.foreach(__v => __obj.update("Start", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      End.foreach(__v => __obj.updateDynamic("End")(__v.asInstanceOf[js.Any]))
+      Start.foreach(__v => __obj.updateDynamic("Start")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[QuietTime]
     }
   }
@@ -5696,8 +5716,8 @@ package pinpoint {
     def apply(
         Data: js.UndefOr[__blob] = js.undefined
     ): RawEmail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Data.foreach(__v => __obj.update("Data", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Data.foreach(__v => __obj.updateDynamic("Data")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RawEmail]
     }
   }
@@ -5716,7 +5736,7 @@ package pinpoint {
         Duration: Duration,
         RecencyType: RecencyType
     ): RecencyDimension = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Duration"    -> Duration.asInstanceOf[js.Any],
         "RecencyType" -> RecencyType.asInstanceOf[js.Any]
       )
@@ -5745,7 +5765,7 @@ package pinpoint {
         AttributeType: __string,
         UpdateAttributesRequest: UpdateAttributesRequest
     ): RemoveAttributesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId"           -> ApplicationId.asInstanceOf[js.Any],
         "AttributeType"           -> AttributeType.asInstanceOf[js.Any],
         "UpdateAttributesRequest" -> UpdateAttributesRequest.asInstanceOf[js.Any]
@@ -5764,7 +5784,7 @@ package pinpoint {
     def apply(
         AttributesResource: AttributesResource
     ): RemoveAttributesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AttributesResource" -> AttributesResource.asInstanceOf[js.Any]
       )
 
@@ -5786,7 +5806,7 @@ package pinpoint {
         GroupedBys: ListOfResultRowValue,
         Values: ListOfResultRowValue
     ): ResultRow = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupedBys" -> GroupedBys.asInstanceOf[js.Any],
         "Values"     -> Values.asInstanceOf[js.Any]
       )
@@ -5811,7 +5831,7 @@ package pinpoint {
         Type: __string,
         Value: __string
     ): ResultRowValue = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"   -> Key.asInstanceOf[js.Any],
         "Type"  -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
@@ -5837,10 +5857,10 @@ package pinpoint {
         SenderId: js.UndefOr[__string] = js.undefined,
         ShortCode: js.UndefOr[__string] = js.undefined
     ): SMSChannelRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      SenderId.foreach(__v => __obj.update("SenderId", __v.asInstanceOf[js.Any]))
-      ShortCode.foreach(__v => __obj.update("ShortCode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      SenderId.foreach(__v => __obj.updateDynamic("SenderId")(__v.asInstanceOf[js.Any]))
+      ShortCode.foreach(__v => __obj.updateDynamic("ShortCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SMSChannelRequest]
     }
   }
@@ -5883,27 +5903,27 @@ package pinpoint {
         TransactionalMessagesPerSecond: js.UndefOr[__integer] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): SMSChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Platform" -> Platform.asInstanceOf[js.Any]
       )
 
-      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      HasCredential.foreach(__v => __obj.update("HasCredential", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
-      LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
-      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
+      ApplicationId.foreach(__v => __obj.updateDynamic("ApplicationId")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      HasCredential.foreach(__v => __obj.updateDynamic("HasCredential")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      IsArchived.foreach(__v => __obj.updateDynamic("IsArchived")(__v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
       PromotionalMessagesPerSecond.foreach(
-        __v => __obj.update("PromotionalMessagesPerSecond", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("PromotionalMessagesPerSecond")(__v.asInstanceOf[js.Any])
       )
-      SenderId.foreach(__v => __obj.update("SenderId", __v.asInstanceOf[js.Any]))
-      ShortCode.foreach(__v => __obj.update("ShortCode", __v.asInstanceOf[js.Any]))
+      SenderId.foreach(__v => __obj.updateDynamic("SenderId")(__v.asInstanceOf[js.Any]))
+      ShortCode.foreach(__v => __obj.updateDynamic("ShortCode")(__v.asInstanceOf[js.Any]))
       TransactionalMessagesPerSecond.foreach(
-        __v => __obj.update("TransactionalMessagesPerSecond", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("TransactionalMessagesPerSecond")(__v.asInstanceOf[js.Any])
       )
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SMSChannelResponse]
     }
   }
@@ -5930,13 +5950,13 @@ package pinpoint {
         SenderId: js.UndefOr[__string] = js.undefined,
         Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined
     ): SMSMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
-      Keyword.foreach(__v => __obj.update("Keyword", __v.asInstanceOf[js.Any]))
-      MessageType.foreach(__v => __obj.update("MessageType", __v.asInstanceOf[js.Any]))
-      OriginationNumber.foreach(__v => __obj.update("OriginationNumber", __v.asInstanceOf[js.Any]))
-      SenderId.foreach(__v => __obj.update("SenderId", __v.asInstanceOf[js.Any]))
-      Substitutions.foreach(__v => __obj.update("Substitutions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
+      Keyword.foreach(__v => __obj.updateDynamic("Keyword")(__v.asInstanceOf[js.Any]))
+      MessageType.foreach(__v => __obj.updateDynamic("MessageType")(__v.asInstanceOf[js.Any]))
+      OriginationNumber.foreach(__v => __obj.updateDynamic("OriginationNumber")(__v.asInstanceOf[js.Any]))
+      SenderId.foreach(__v => __obj.updateDynamic("SenderId")(__v.asInstanceOf[js.Any]))
+      Substitutions.foreach(__v => __obj.updateDynamic("Substitutions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SMSMessage]
     }
   }
@@ -5965,16 +5985,16 @@ package pinpoint {
         QuietTime: js.UndefOr[QuietTime] = js.undefined,
         Timezone: js.UndefOr[__string] = js.undefined
     ): Schedule = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "StartTime" -> StartTime.asInstanceOf[js.Any]
       )
 
-      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
-      EventFilter.foreach(__v => __obj.update("EventFilter", __v.asInstanceOf[js.Any]))
-      Frequency.foreach(__v => __obj.update("Frequency", __v.asInstanceOf[js.Any]))
-      IsLocalTime.foreach(__v => __obj.update("IsLocalTime", __v.asInstanceOf[js.Any]))
-      QuietTime.foreach(__v => __obj.update("QuietTime", __v.asInstanceOf[js.Any]))
-      Timezone.foreach(__v => __obj.update("Timezone", __v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      EventFilter.foreach(__v => __obj.updateDynamic("EventFilter")(__v.asInstanceOf[js.Any]))
+      Frequency.foreach(__v => __obj.updateDynamic("Frequency")(__v.asInstanceOf[js.Any]))
+      IsLocalTime.foreach(__v => __obj.updateDynamic("IsLocalTime")(__v.asInstanceOf[js.Any]))
+      QuietTime.foreach(__v => __obj.updateDynamic("QuietTime")(__v.asInstanceOf[js.Any]))
+      Timezone.foreach(__v => __obj.updateDynamic("Timezone")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Schedule]
     }
   }
@@ -5991,8 +6011,8 @@ package pinpoint {
     def apply(
         Recency: js.UndefOr[RecencyDimension] = js.undefined
     ): SegmentBehaviors = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Recency.foreach(__v => __obj.update("Recency", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Recency.foreach(__v => __obj.updateDynamic("Recency")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SegmentBehaviors]
     }
   }
@@ -6019,13 +6039,13 @@ package pinpoint {
         Model: js.UndefOr[SetDimension] = js.undefined,
         Platform: js.UndefOr[SetDimension] = js.undefined
     ): SegmentDemographics = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AppVersion.foreach(__v => __obj.update("AppVersion", __v.asInstanceOf[js.Any]))
-      Channel.foreach(__v => __obj.update("Channel", __v.asInstanceOf[js.Any]))
-      DeviceType.foreach(__v => __obj.update("DeviceType", __v.asInstanceOf[js.Any]))
-      Make.foreach(__v => __obj.update("Make", __v.asInstanceOf[js.Any]))
-      Model.foreach(__v => __obj.update("Model", __v.asInstanceOf[js.Any]))
-      Platform.foreach(__v => __obj.update("Platform", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AppVersion.foreach(__v => __obj.updateDynamic("AppVersion")(__v.asInstanceOf[js.Any]))
+      Channel.foreach(__v => __obj.updateDynamic("Channel")(__v.asInstanceOf[js.Any]))
+      DeviceType.foreach(__v => __obj.updateDynamic("DeviceType")(__v.asInstanceOf[js.Any]))
+      Make.foreach(__v => __obj.updateDynamic("Make")(__v.asInstanceOf[js.Any]))
+      Model.foreach(__v => __obj.updateDynamic("Model")(__v.asInstanceOf[js.Any]))
+      Platform.foreach(__v => __obj.updateDynamic("Platform")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SegmentDemographics]
     }
   }
@@ -6052,13 +6072,13 @@ package pinpoint {
         Metrics: js.UndefOr[MapOfMetricDimension] = js.undefined,
         UserAttributes: js.UndefOr[MapOfAttributeDimension] = js.undefined
     ): SegmentDimensions = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      Behavior.foreach(__v => __obj.update("Behavior", __v.asInstanceOf[js.Any]))
-      Demographic.foreach(__v => __obj.update("Demographic", __v.asInstanceOf[js.Any]))
-      Location.foreach(__v => __obj.update("Location", __v.asInstanceOf[js.Any]))
-      Metrics.foreach(__v => __obj.update("Metrics", __v.asInstanceOf[js.Any]))
-      UserAttributes.foreach(__v => __obj.update("UserAttributes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      Behavior.foreach(__v => __obj.updateDynamic("Behavior")(__v.asInstanceOf[js.Any]))
+      Demographic.foreach(__v => __obj.updateDynamic("Demographic")(__v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
+      Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
+      UserAttributes.foreach(__v => __obj.updateDynamic("UserAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SegmentDimensions]
     }
   }
@@ -6081,11 +6101,11 @@ package pinpoint {
         SourceType: js.UndefOr[SourceType] = js.undefined,
         Type: js.UndefOr[Type] = js.undefined
     ): SegmentGroup = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
-      SourceSegments.foreach(__v => __obj.update("SourceSegments", __v.asInstanceOf[js.Any]))
-      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
+      SourceSegments.foreach(__v => __obj.updateDynamic("SourceSegments")(__v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.updateDynamic("SourceType")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SegmentGroup]
     }
   }
@@ -6104,9 +6124,9 @@ package pinpoint {
         Groups: js.UndefOr[ListOfSegmentGroup] = js.undefined,
         Include: js.UndefOr[Include] = js.undefined
     ): SegmentGroupList = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Groups.foreach(__v => __obj.update("Groups", __v.asInstanceOf[js.Any]))
-      Include.foreach(__v => __obj.update("Include", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Groups.foreach(__v => __obj.updateDynamic("Groups")(__v.asInstanceOf[js.Any]))
+      Include.foreach(__v => __obj.updateDynamic("Include")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SegmentGroupList]
     }
   }
@@ -6133,7 +6153,7 @@ package pinpoint {
         Size: __integer,
         ChannelCounts: js.UndefOr[MapOf__integer] = js.undefined
     ): SegmentImportResource = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ExternalId" -> ExternalId.asInstanceOf[js.Any],
         "Format"     -> Format.asInstanceOf[js.Any],
         "RoleArn"    -> RoleArn.asInstanceOf[js.Any],
@@ -6141,7 +6161,7 @@ package pinpoint {
         "Size"       -> Size.asInstanceOf[js.Any]
       )
 
-      ChannelCounts.foreach(__v => __obj.update("ChannelCounts", __v.asInstanceOf[js.Any]))
+      ChannelCounts.foreach(__v => __obj.updateDynamic("ChannelCounts")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SegmentImportResource]
     }
   }
@@ -6160,9 +6180,9 @@ package pinpoint {
         Country: js.UndefOr[SetDimension] = js.undefined,
         GPSPoint: js.UndefOr[GPSPointDimension] = js.undefined
     ): SegmentLocation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Country.foreach(__v => __obj.update("Country", __v.asInstanceOf[js.Any]))
-      GPSPoint.foreach(__v => __obj.update("GPSPoint", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Country.foreach(__v => __obj.updateDynamic("Country")(__v.asInstanceOf[js.Any]))
+      GPSPoint.foreach(__v => __obj.updateDynamic("GPSPoint")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SegmentLocation]
     }
   }
@@ -6181,11 +6201,11 @@ package pinpoint {
         Id: __string,
         Version: js.UndefOr[__integer] = js.undefined
     ): SegmentReference = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SegmentReference]
     }
   }
@@ -6224,7 +6244,7 @@ package pinpoint {
         Version: js.UndefOr[__integer] = js.undefined,
         tags: js.UndefOr[MapOf__string] = js.undefined
     ): SegmentResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
         "Arn"           -> Arn.asInstanceOf[js.Any],
         "CreationDate"  -> CreationDate.asInstanceOf[js.Any],
@@ -6232,13 +6252,13 @@ package pinpoint {
         "SegmentType"   -> SegmentType.asInstanceOf[js.Any]
       )
 
-      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
-      ImportDefinition.foreach(__v => __obj.update("ImportDefinition", __v.asInstanceOf[js.Any]))
-      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      SegmentGroups.foreach(__v => __obj.update("SegmentGroups", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
+      ImportDefinition.foreach(__v => __obj.updateDynamic("ImportDefinition")(__v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      SegmentGroups.foreach(__v => __obj.updateDynamic("SegmentGroups")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SegmentResponse]
     }
   }
@@ -6264,11 +6284,11 @@ package pinpoint {
         Item: ListOfSegmentResponse,
         NextToken: js.UndefOr[__string] = js.undefined
     ): SegmentsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Item" -> Item.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SegmentsResponse]
     }
   }
@@ -6284,7 +6304,7 @@ package pinpoint {
         ApplicationId: __string,
         MessageRequest: MessageRequest
     ): SendMessagesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId"  -> ApplicationId.asInstanceOf[js.Any],
         "MessageRequest" -> MessageRequest.asInstanceOf[js.Any]
       )
@@ -6302,7 +6322,7 @@ package pinpoint {
     def apply(
         MessageResponse: MessageResponse
     ): SendMessagesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MessageResponse" -> MessageResponse.asInstanceOf[js.Any]
       )
 
@@ -6328,13 +6348,13 @@ package pinpoint {
         Context: js.UndefOr[MapOf__string] = js.undefined,
         TraceId: js.UndefOr[__string] = js.undefined
     ): SendUsersMessageRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MessageConfiguration" -> MessageConfiguration.asInstanceOf[js.Any],
         "Users"                -> Users.asInstanceOf[js.Any]
       )
 
-      Context.foreach(__v => __obj.update("Context", __v.asInstanceOf[js.Any]))
-      TraceId.foreach(__v => __obj.update("TraceId", __v.asInstanceOf[js.Any]))
+      Context.foreach(__v => __obj.updateDynamic("Context")(__v.asInstanceOf[js.Any]))
+      TraceId.foreach(__v => __obj.updateDynamic("TraceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendUsersMessageRequest]
     }
   }
@@ -6355,12 +6375,12 @@ package pinpoint {
         RequestId: js.UndefOr[__string] = js.undefined,
         Result: js.UndefOr[MapOfMapOfEndpointMessageResult] = js.undefined
     ): SendUsersMessageResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
       )
 
-      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
-      Result.foreach(__v => __obj.update("Result", __v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Result.foreach(__v => __obj.updateDynamic("Result")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendUsersMessageResponse]
     }
   }
@@ -6376,7 +6396,7 @@ package pinpoint {
         ApplicationId: __string,
         SendUsersMessageRequest: SendUsersMessageRequest
     ): SendUsersMessagesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId"           -> ApplicationId.asInstanceOf[js.Any],
         "SendUsersMessageRequest" -> SendUsersMessageRequest.asInstanceOf[js.Any]
       )
@@ -6394,7 +6414,7 @@ package pinpoint {
     def apply(
         SendUsersMessageResponse: SendUsersMessageResponse
     ): SendUsersMessagesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SendUsersMessageResponse" -> SendUsersMessageResponse.asInstanceOf[js.Any]
       )
 
@@ -6420,13 +6440,13 @@ package pinpoint {
         Duration: js.UndefOr[__integer] = js.undefined,
         StopTimestamp: js.UndefOr[__string] = js.undefined
     ): Session = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id"             -> Id.asInstanceOf[js.Any],
         "StartTimestamp" -> StartTimestamp.asInstanceOf[js.Any]
       )
 
-      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
-      StopTimestamp.foreach(__v => __obj.update("StopTimestamp", __v.asInstanceOf[js.Any]))
+      Duration.foreach(__v => __obj.updateDynamic("Duration")(__v.asInstanceOf[js.Any]))
+      StopTimestamp.foreach(__v => __obj.updateDynamic("StopTimestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Session]
     }
   }
@@ -6445,11 +6465,11 @@ package pinpoint {
         Values: ListOf__string,
         DimensionType: js.UndefOr[DimensionType] = js.undefined
     ): SetDimension = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
-      DimensionType.foreach(__v => __obj.update("DimensionType", __v.asInstanceOf[js.Any]))
+      DimensionType.foreach(__v => __obj.updateDynamic("DimensionType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetDimension]
     }
   }
@@ -6470,10 +6490,10 @@ package pinpoint {
         Subject: js.UndefOr[SimpleEmailPart] = js.undefined,
         TextPart: js.UndefOr[SimpleEmailPart] = js.undefined
     ): SimpleEmail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      HtmlPart.foreach(__v => __obj.update("HtmlPart", __v.asInstanceOf[js.Any]))
-      Subject.foreach(__v => __obj.update("Subject", __v.asInstanceOf[js.Any]))
-      TextPart.foreach(__v => __obj.update("TextPart", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      HtmlPart.foreach(__v => __obj.updateDynamic("HtmlPart")(__v.asInstanceOf[js.Any]))
+      Subject.foreach(__v => __obj.updateDynamic("Subject")(__v.asInstanceOf[js.Any]))
+      TextPart.foreach(__v => __obj.updateDynamic("TextPart")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SimpleEmail]
     }
   }
@@ -6492,9 +6512,9 @@ package pinpoint {
         Charset: js.UndefOr[__string] = js.undefined,
         Data: js.UndefOr[__string] = js.undefined
     ): SimpleEmailPart = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Charset.foreach(__v => __obj.update("Charset", __v.asInstanceOf[js.Any]))
-      Data.foreach(__v => __obj.update("Data", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Charset.foreach(__v => __obj.updateDynamic("Charset")(__v.asInstanceOf[js.Any]))
+      Data.foreach(__v => __obj.updateDynamic("Data")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SimpleEmailPart]
     }
   }
@@ -6518,7 +6538,7 @@ package pinpoint {
         ResourceArn: __string,
         TagsModel: TagsModel
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagsModel"   -> TagsModel.asInstanceOf[js.Any]
       )
@@ -6539,7 +6559,7 @@ package pinpoint {
     def apply(
         tags: MapOf__string
     ): TagsModel = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "tags" -> tags.asInstanceOf[js.Any]
       )
 
@@ -6571,16 +6591,16 @@ package pinpoint {
         TreatmentDescription: js.UndefOr[__string] = js.undefined,
         TreatmentName: js.UndefOr[__string] = js.undefined
     ): TreatmentResource = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id"          -> Id.asInstanceOf[js.Any],
         "SizePercent" -> SizePercent.asInstanceOf[js.Any]
       )
 
-      MessageConfiguration.foreach(__v => __obj.update("MessageConfiguration", __v.asInstanceOf[js.Any]))
-      Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
-      TreatmentDescription.foreach(__v => __obj.update("TreatmentDescription", __v.asInstanceOf[js.Any]))
-      TreatmentName.foreach(__v => __obj.update("TreatmentName", __v.asInstanceOf[js.Any]))
+      MessageConfiguration.foreach(__v => __obj.updateDynamic("MessageConfiguration")(__v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      TreatmentDescription.foreach(__v => __obj.updateDynamic("TreatmentDescription")(__v.asInstanceOf[js.Any]))
+      TreatmentName.foreach(__v => __obj.updateDynamic("TreatmentName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TreatmentResource]
     }
   }
@@ -6604,7 +6624,7 @@ package pinpoint {
         ResourceArn: __string,
         TagKeys: ListOf__string
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
       )
@@ -6624,7 +6644,7 @@ package pinpoint {
         ADMChannelRequest: ADMChannelRequest,
         ApplicationId: __string
     ): UpdateAdmChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ADMChannelRequest" -> ADMChannelRequest.asInstanceOf[js.Any],
         "ApplicationId"     -> ApplicationId.asInstanceOf[js.Any]
       )
@@ -6642,7 +6662,7 @@ package pinpoint {
     def apply(
         ADMChannelResponse: ADMChannelResponse
     ): UpdateAdmChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ADMChannelResponse" -> ADMChannelResponse.asInstanceOf[js.Any]
       )
 
@@ -6661,7 +6681,7 @@ package pinpoint {
         APNSChannelRequest: APNSChannelRequest,
         ApplicationId: __string
     ): UpdateApnsChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "APNSChannelRequest" -> APNSChannelRequest.asInstanceOf[js.Any],
         "ApplicationId"      -> ApplicationId.asInstanceOf[js.Any]
       )
@@ -6679,7 +6699,7 @@ package pinpoint {
     def apply(
         APNSChannelResponse: APNSChannelResponse
     ): UpdateApnsChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "APNSChannelResponse" -> APNSChannelResponse.asInstanceOf[js.Any]
       )
 
@@ -6698,7 +6718,7 @@ package pinpoint {
         APNSSandboxChannelRequest: APNSSandboxChannelRequest,
         ApplicationId: __string
     ): UpdateApnsSandboxChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "APNSSandboxChannelRequest" -> APNSSandboxChannelRequest.asInstanceOf[js.Any],
         "ApplicationId"             -> ApplicationId.asInstanceOf[js.Any]
       )
@@ -6716,7 +6736,7 @@ package pinpoint {
     def apply(
         APNSSandboxChannelResponse: APNSSandboxChannelResponse
     ): UpdateApnsSandboxChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "APNSSandboxChannelResponse" -> APNSSandboxChannelResponse.asInstanceOf[js.Any]
       )
 
@@ -6735,7 +6755,7 @@ package pinpoint {
         APNSVoipChannelRequest: APNSVoipChannelRequest,
         ApplicationId: __string
     ): UpdateApnsVoipChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "APNSVoipChannelRequest" -> APNSVoipChannelRequest.asInstanceOf[js.Any],
         "ApplicationId"          -> ApplicationId.asInstanceOf[js.Any]
       )
@@ -6753,7 +6773,7 @@ package pinpoint {
     def apply(
         APNSVoipChannelResponse: APNSVoipChannelResponse
     ): UpdateApnsVoipChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "APNSVoipChannelResponse" -> APNSVoipChannelResponse.asInstanceOf[js.Any]
       )
 
@@ -6772,7 +6792,7 @@ package pinpoint {
         APNSVoipSandboxChannelRequest: APNSVoipSandboxChannelRequest,
         ApplicationId: __string
     ): UpdateApnsVoipSandboxChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "APNSVoipSandboxChannelRequest" -> APNSVoipSandboxChannelRequest.asInstanceOf[js.Any],
         "ApplicationId"                 -> ApplicationId.asInstanceOf[js.Any]
       )
@@ -6790,7 +6810,7 @@ package pinpoint {
     def apply(
         APNSVoipSandboxChannelResponse: APNSVoipSandboxChannelResponse
     ): UpdateApnsVoipSandboxChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "APNSVoipSandboxChannelResponse" -> APNSVoipSandboxChannelResponse.asInstanceOf[js.Any]
       )
 
@@ -6809,7 +6829,7 @@ package pinpoint {
         ApplicationId: __string,
         WriteApplicationSettingsRequest: WriteApplicationSettingsRequest
     ): UpdateApplicationSettingsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId"                   -> ApplicationId.asInstanceOf[js.Any],
         "WriteApplicationSettingsRequest" -> WriteApplicationSettingsRequest.asInstanceOf[js.Any]
       )
@@ -6827,7 +6847,7 @@ package pinpoint {
     def apply(
         ApplicationSettingsResource: ApplicationSettingsResource
     ): UpdateApplicationSettingsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationSettingsResource" -> ApplicationSettingsResource.asInstanceOf[js.Any]
       )
 
@@ -6847,8 +6867,8 @@ package pinpoint {
     def apply(
         Blacklist: js.UndefOr[ListOf__string] = js.undefined
     ): UpdateAttributesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Blacklist.foreach(__v => __obj.update("Blacklist", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Blacklist.foreach(__v => __obj.updateDynamic("Blacklist")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAttributesRequest]
     }
   }
@@ -6864,7 +6884,7 @@ package pinpoint {
         ApplicationId: __string,
         BaiduChannelRequest: BaiduChannelRequest
     ): UpdateBaiduChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId"       -> ApplicationId.asInstanceOf[js.Any],
         "BaiduChannelRequest" -> BaiduChannelRequest.asInstanceOf[js.Any]
       )
@@ -6882,7 +6902,7 @@ package pinpoint {
     def apply(
         BaiduChannelResponse: BaiduChannelResponse
     ): UpdateBaiduChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BaiduChannelResponse" -> BaiduChannelResponse.asInstanceOf[js.Any]
       )
 
@@ -6903,7 +6923,7 @@ package pinpoint {
         CampaignId: __string,
         WriteCampaignRequest: WriteCampaignRequest
     ): UpdateCampaignRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId"        -> ApplicationId.asInstanceOf[js.Any],
         "CampaignId"           -> CampaignId.asInstanceOf[js.Any],
         "WriteCampaignRequest" -> WriteCampaignRequest.asInstanceOf[js.Any]
@@ -6922,7 +6942,7 @@ package pinpoint {
     def apply(
         CampaignResponse: CampaignResponse
     ): UpdateCampaignResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CampaignResponse" -> CampaignResponse.asInstanceOf[js.Any]
       )
 
@@ -6941,7 +6961,7 @@ package pinpoint {
         ApplicationId: __string,
         EmailChannelRequest: EmailChannelRequest
     ): UpdateEmailChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId"       -> ApplicationId.asInstanceOf[js.Any],
         "EmailChannelRequest" -> EmailChannelRequest.asInstanceOf[js.Any]
       )
@@ -6959,7 +6979,7 @@ package pinpoint {
     def apply(
         EmailChannelResponse: EmailChannelResponse
     ): UpdateEmailChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EmailChannelResponse" -> EmailChannelResponse.asInstanceOf[js.Any]
       )
 
@@ -6980,7 +7000,7 @@ package pinpoint {
         EndpointId: __string,
         EndpointRequest: EndpointRequest
     ): UpdateEndpointRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId"   -> ApplicationId.asInstanceOf[js.Any],
         "EndpointId"      -> EndpointId.asInstanceOf[js.Any],
         "EndpointRequest" -> EndpointRequest.asInstanceOf[js.Any]
@@ -6999,7 +7019,7 @@ package pinpoint {
     def apply(
         MessageBody: MessageBody
     ): UpdateEndpointResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MessageBody" -> MessageBody.asInstanceOf[js.Any]
       )
 
@@ -7018,7 +7038,7 @@ package pinpoint {
         ApplicationId: __string,
         EndpointBatchRequest: EndpointBatchRequest
     ): UpdateEndpointsBatchRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId"        -> ApplicationId.asInstanceOf[js.Any],
         "EndpointBatchRequest" -> EndpointBatchRequest.asInstanceOf[js.Any]
       )
@@ -7036,7 +7056,7 @@ package pinpoint {
     def apply(
         MessageBody: MessageBody
     ): UpdateEndpointsBatchResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MessageBody" -> MessageBody.asInstanceOf[js.Any]
       )
 
@@ -7055,7 +7075,7 @@ package pinpoint {
         ApplicationId: __string,
         GCMChannelRequest: GCMChannelRequest
     ): UpdateGcmChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId"     -> ApplicationId.asInstanceOf[js.Any],
         "GCMChannelRequest" -> GCMChannelRequest.asInstanceOf[js.Any]
       )
@@ -7073,7 +7093,7 @@ package pinpoint {
     def apply(
         GCMChannelResponse: GCMChannelResponse
     ): UpdateGcmChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GCMChannelResponse" -> GCMChannelResponse.asInstanceOf[js.Any]
       )
 
@@ -7094,7 +7114,7 @@ package pinpoint {
         SegmentId: __string,
         WriteSegmentRequest: WriteSegmentRequest
     ): UpdateSegmentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId"       -> ApplicationId.asInstanceOf[js.Any],
         "SegmentId"           -> SegmentId.asInstanceOf[js.Any],
         "WriteSegmentRequest" -> WriteSegmentRequest.asInstanceOf[js.Any]
@@ -7113,7 +7133,7 @@ package pinpoint {
     def apply(
         SegmentResponse: SegmentResponse
     ): UpdateSegmentResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SegmentResponse" -> SegmentResponse.asInstanceOf[js.Any]
       )
 
@@ -7132,7 +7152,7 @@ package pinpoint {
         ApplicationId: __string,
         SMSChannelRequest: SMSChannelRequest
     ): UpdateSmsChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId"     -> ApplicationId.asInstanceOf[js.Any],
         "SMSChannelRequest" -> SMSChannelRequest.asInstanceOf[js.Any]
       )
@@ -7150,7 +7170,7 @@ package pinpoint {
     def apply(
         SMSChannelResponse: SMSChannelResponse
     ): UpdateSmsChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SMSChannelResponse" -> SMSChannelResponse.asInstanceOf[js.Any]
       )
 
@@ -7169,7 +7189,7 @@ package pinpoint {
         ApplicationId: __string,
         VoiceChannelRequest: VoiceChannelRequest
     ): UpdateVoiceChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationId"       -> ApplicationId.asInstanceOf[js.Any],
         "VoiceChannelRequest" -> VoiceChannelRequest.asInstanceOf[js.Any]
       )
@@ -7187,7 +7207,7 @@ package pinpoint {
     def apply(
         VoiceChannelResponse: VoiceChannelResponse
     ): UpdateVoiceChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "VoiceChannelResponse" -> VoiceChannelResponse.asInstanceOf[js.Any]
       )
 
@@ -7207,8 +7227,8 @@ package pinpoint {
     def apply(
         Enabled: js.UndefOr[__boolean] = js.undefined
     ): VoiceChannelRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VoiceChannelRequest]
     }
   }
@@ -7243,19 +7263,19 @@ package pinpoint {
         LastModifiedDate: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__integer] = js.undefined
     ): VoiceChannelResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Platform" -> Platform.asInstanceOf[js.Any]
       )
 
-      ApplicationId.foreach(__v => __obj.update("ApplicationId", __v.asInstanceOf[js.Any]))
-      CreationDate.foreach(__v => __obj.update("CreationDate", __v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      HasCredential.foreach(__v => __obj.update("HasCredential", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      IsArchived.foreach(__v => __obj.update("IsArchived", __v.asInstanceOf[js.Any]))
-      LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
-      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      ApplicationId.foreach(__v => __obj.updateDynamic("ApplicationId")(__v.asInstanceOf[js.Any]))
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      HasCredential.foreach(__v => __obj.updateDynamic("HasCredential")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      IsArchived.foreach(__v => __obj.updateDynamic("IsArchived")(__v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VoiceChannelResponse]
     }
   }
@@ -7280,12 +7300,12 @@ package pinpoint {
         Substitutions: js.UndefOr[MapOfListOf__string] = js.undefined,
         VoiceId: js.UndefOr[__string] = js.undefined
     ): VoiceMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Body.foreach(__v => __obj.update("Body", __v.asInstanceOf[js.Any]))
-      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
-      OriginationNumber.foreach(__v => __obj.update("OriginationNumber", __v.asInstanceOf[js.Any]))
-      Substitutions.foreach(__v => __obj.update("Substitutions", __v.asInstanceOf[js.Any]))
-      VoiceId.foreach(__v => __obj.update("VoiceId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      OriginationNumber.foreach(__v => __obj.updateDynamic("OriginationNumber")(__v.asInstanceOf[js.Any]))
+      Substitutions.foreach(__v => __obj.updateDynamic("Substitutions")(__v.asInstanceOf[js.Any]))
+      VoiceId.foreach(__v => __obj.updateDynamic("VoiceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VoiceMessage]
     }
   }
@@ -7308,11 +7328,11 @@ package pinpoint {
         Limits: js.UndefOr[CampaignLimits] = js.undefined,
         QuietTime: js.UndefOr[QuietTime] = js.undefined
     ): WriteApplicationSettingsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CampaignHook.foreach(__v => __obj.update("CampaignHook", __v.asInstanceOf[js.Any]))
-      CloudWatchMetricsEnabled.foreach(__v => __obj.update("CloudWatchMetricsEnabled", __v.asInstanceOf[js.Any]))
-      Limits.foreach(__v => __obj.update("Limits", __v.asInstanceOf[js.Any]))
-      QuietTime.foreach(__v => __obj.update("QuietTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CampaignHook.foreach(__v => __obj.updateDynamic("CampaignHook")(__v.asInstanceOf[js.Any]))
+      CloudWatchMetricsEnabled.foreach(__v => __obj.updateDynamic("CloudWatchMetricsEnabled")(__v.asInstanceOf[js.Any]))
+      Limits.foreach(__v => __obj.updateDynamic("Limits")(__v.asInstanceOf[js.Any]))
+      QuietTime.foreach(__v => __obj.updateDynamic("QuietTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WriteApplicationSettingsRequest]
     }
   }
@@ -7355,21 +7375,21 @@ package pinpoint {
         TreatmentName: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[MapOf__string] = js.undefined
     ): WriteCampaignRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AdditionalTreatments.foreach(__v => __obj.update("AdditionalTreatments", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      HoldoutPercent.foreach(__v => __obj.update("HoldoutPercent", __v.asInstanceOf[js.Any]))
-      Hook.foreach(__v => __obj.update("Hook", __v.asInstanceOf[js.Any]))
-      IsPaused.foreach(__v => __obj.update("IsPaused", __v.asInstanceOf[js.Any]))
-      Limits.foreach(__v => __obj.update("Limits", __v.asInstanceOf[js.Any]))
-      MessageConfiguration.foreach(__v => __obj.update("MessageConfiguration", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
-      SegmentId.foreach(__v => __obj.update("SegmentId", __v.asInstanceOf[js.Any]))
-      SegmentVersion.foreach(__v => __obj.update("SegmentVersion", __v.asInstanceOf[js.Any]))
-      TreatmentDescription.foreach(__v => __obj.update("TreatmentDescription", __v.asInstanceOf[js.Any]))
-      TreatmentName.foreach(__v => __obj.update("TreatmentName", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AdditionalTreatments.foreach(__v => __obj.updateDynamic("AdditionalTreatments")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      HoldoutPercent.foreach(__v => __obj.updateDynamic("HoldoutPercent")(__v.asInstanceOf[js.Any]))
+      Hook.foreach(__v => __obj.updateDynamic("Hook")(__v.asInstanceOf[js.Any]))
+      IsPaused.foreach(__v => __obj.updateDynamic("IsPaused")(__v.asInstanceOf[js.Any]))
+      Limits.foreach(__v => __obj.updateDynamic("Limits")(__v.asInstanceOf[js.Any]))
+      MessageConfiguration.foreach(__v => __obj.updateDynamic("MessageConfiguration")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
+      SegmentId.foreach(__v => __obj.updateDynamic("SegmentId")(__v.asInstanceOf[js.Any]))
+      SegmentVersion.foreach(__v => __obj.updateDynamic("SegmentVersion")(__v.asInstanceOf[js.Any]))
+      TreatmentDescription.foreach(__v => __obj.updateDynamic("TreatmentDescription")(__v.asInstanceOf[js.Any]))
+      TreatmentName.foreach(__v => __obj.updateDynamic("TreatmentName")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WriteCampaignRequest]
     }
   }
@@ -7388,7 +7408,7 @@ package pinpoint {
         DestinationStreamArn: __string,
         RoleArn: __string
     ): WriteEventStream = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DestinationStreamArn" -> DestinationStreamArn.asInstanceOf[js.Any],
         "RoleArn"              -> RoleArn.asInstanceOf[js.Any]
       )
@@ -7415,11 +7435,11 @@ package pinpoint {
         SegmentGroups: js.UndefOr[SegmentGroupList] = js.undefined,
         tags: js.UndefOr[MapOf__string] = js.undefined
     ): WriteSegmentRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      SegmentGroups.foreach(__v => __obj.update("SegmentGroups", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      SegmentGroups.foreach(__v => __obj.updateDynamic("SegmentGroups")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WriteSegmentRequest]
     }
   }
@@ -7444,14 +7464,14 @@ package pinpoint {
         TreatmentDescription: js.UndefOr[__string] = js.undefined,
         TreatmentName: js.UndefOr[__string] = js.undefined
     ): WriteTreatmentResource = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SizePercent" -> SizePercent.asInstanceOf[js.Any]
       )
 
-      MessageConfiguration.foreach(__v => __obj.update("MessageConfiguration", __v.asInstanceOf[js.Any]))
-      Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
-      TreatmentDescription.foreach(__v => __obj.update("TreatmentDescription", __v.asInstanceOf[js.Any]))
-      TreatmentName.foreach(__v => __obj.update("TreatmentName", __v.asInstanceOf[js.Any]))
+      MessageConfiguration.foreach(__v => __obj.updateDynamic("MessageConfiguration")(__v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
+      TreatmentDescription.foreach(__v => __obj.updateDynamic("TreatmentDescription")(__v.asInstanceOf[js.Any]))
+      TreatmentName.foreach(__v => __obj.updateDynamic("TreatmentName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WriteTreatmentResource]
     }
   }

@@ -172,24 +172,28 @@ package dax {
         SubnetGroup: js.UndefOr[String] = js.undefined,
         TotalNodes: js.UndefOr[IntegerOptional] = js.undefined
     ): Cluster = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ActiveNodes.foreach(__v => __obj.update("ActiveNodes", __v.asInstanceOf[js.Any]))
-      ClusterArn.foreach(__v => __obj.update("ClusterArn", __v.asInstanceOf[js.Any]))
-      ClusterDiscoveryEndpoint.foreach(__v => __obj.update("ClusterDiscoveryEndpoint", __v.asInstanceOf[js.Any]))
-      ClusterName.foreach(__v => __obj.update("ClusterName", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      IamRoleArn.foreach(__v => __obj.update("IamRoleArn", __v.asInstanceOf[js.Any]))
-      NodeIdsToRemove.foreach(__v => __obj.update("NodeIdsToRemove", __v.asInstanceOf[js.Any]))
-      NodeType.foreach(__v => __obj.update("NodeType", __v.asInstanceOf[js.Any]))
-      Nodes.foreach(__v => __obj.update("Nodes", __v.asInstanceOf[js.Any]))
-      NotificationConfiguration.foreach(__v => __obj.update("NotificationConfiguration", __v.asInstanceOf[js.Any]))
-      ParameterGroup.foreach(__v => __obj.update("ParameterGroup", __v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
-      SSEDescription.foreach(__v => __obj.update("SSEDescription", __v.asInstanceOf[js.Any]))
-      SecurityGroups.foreach(__v => __obj.update("SecurityGroups", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      SubnetGroup.foreach(__v => __obj.update("SubnetGroup", __v.asInstanceOf[js.Any]))
-      TotalNodes.foreach(__v => __obj.update("TotalNodes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ActiveNodes.foreach(__v => __obj.updateDynamic("ActiveNodes")(__v.asInstanceOf[js.Any]))
+      ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
+      ClusterDiscoveryEndpoint.foreach(__v => __obj.updateDynamic("ClusterDiscoveryEndpoint")(__v.asInstanceOf[js.Any]))
+      ClusterName.foreach(__v => __obj.updateDynamic("ClusterName")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
+      NodeIdsToRemove.foreach(__v => __obj.updateDynamic("NodeIdsToRemove")(__v.asInstanceOf[js.Any]))
+      NodeType.foreach(__v => __obj.updateDynamic("NodeType")(__v.asInstanceOf[js.Any]))
+      Nodes.foreach(__v => __obj.updateDynamic("Nodes")(__v.asInstanceOf[js.Any]))
+      NotificationConfiguration.foreach(
+        __v => __obj.updateDynamic("NotificationConfiguration")(__v.asInstanceOf[js.Any])
+      )
+      ParameterGroup.foreach(__v => __obj.updateDynamic("ParameterGroup")(__v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(
+        __v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      )
+      SSEDescription.foreach(__v => __obj.updateDynamic("SSEDescription")(__v.asInstanceOf[js.Any]))
+      SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      SubnetGroup.foreach(__v => __obj.updateDynamic("SubnetGroup")(__v.asInstanceOf[js.Any]))
+      TotalNodes.foreach(__v => __obj.updateDynamic("TotalNodes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Cluster]
     }
   }
@@ -227,22 +231,24 @@ package dax {
         SubnetGroupName: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateClusterRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClusterName"       -> ClusterName.asInstanceOf[js.Any],
         "IamRoleArn"        -> IamRoleArn.asInstanceOf[js.Any],
         "NodeType"          -> NodeType.asInstanceOf[js.Any],
         "ReplicationFactor" -> ReplicationFactor.asInstanceOf[js.Any]
       )
 
-      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      NotificationTopicArn.foreach(__v => __obj.update("NotificationTopicArn", __v.asInstanceOf[js.Any]))
-      ParameterGroupName.foreach(__v => __obj.update("ParameterGroupName", __v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
-      SSESpecification.foreach(__v => __obj.update("SSESpecification", __v.asInstanceOf[js.Any]))
-      SecurityGroupIds.foreach(__v => __obj.update("SecurityGroupIds", __v.asInstanceOf[js.Any]))
-      SubnetGroupName.foreach(__v => __obj.update("SubnetGroupName", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      NotificationTopicArn.foreach(__v => __obj.updateDynamic("NotificationTopicArn")(__v.asInstanceOf[js.Any]))
+      ParameterGroupName.foreach(__v => __obj.updateDynamic("ParameterGroupName")(__v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(
+        __v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      )
+      SSESpecification.foreach(__v => __obj.updateDynamic("SSESpecification")(__v.asInstanceOf[js.Any]))
+      SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      SubnetGroupName.foreach(__v => __obj.updateDynamic("SubnetGroupName")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateClusterRequest]
     }
   }
@@ -256,8 +262,8 @@ package dax {
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): CreateClusterResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Cluster.foreach(__v => __obj.update("Cluster", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Cluster.foreach(__v => __obj.updateDynamic("Cluster")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateClusterResponse]
     }
   }
@@ -273,11 +279,11 @@ package dax {
         ParameterGroupName: String,
         Description: js.UndefOr[String] = js.undefined
     ): CreateParameterGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ParameterGroupName" -> ParameterGroupName.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateParameterGroupRequest]
     }
   }
@@ -291,8 +297,8 @@ package dax {
     def apply(
         ParameterGroup: js.UndefOr[ParameterGroup] = js.undefined
     ): CreateParameterGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ParameterGroup.foreach(__v => __obj.update("ParameterGroup", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ParameterGroup.foreach(__v => __obj.updateDynamic("ParameterGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateParameterGroupResponse]
     }
   }
@@ -310,12 +316,12 @@ package dax {
         SubnetIds: SubnetIdentifierList,
         Description: js.UndefOr[String] = js.undefined
     ): CreateSubnetGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SubnetGroupName" -> SubnetGroupName.asInstanceOf[js.Any],
         "SubnetIds"       -> SubnetIds.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSubnetGroupRequest]
     }
   }
@@ -329,8 +335,8 @@ package dax {
     def apply(
         SubnetGroup: js.UndefOr[SubnetGroup] = js.undefined
     ): CreateSubnetGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SubnetGroup.foreach(__v => __obj.update("SubnetGroup", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SubnetGroup.foreach(__v => __obj.updateDynamic("SubnetGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSubnetGroupResponse]
     }
   }
@@ -350,13 +356,13 @@ package dax {
         AvailabilityZones: js.UndefOr[AvailabilityZoneList] = js.undefined,
         NodeIdsToRemove: js.UndefOr[NodeIdentifierList] = js.undefined
     ): DecreaseReplicationFactorRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClusterName"          -> ClusterName.asInstanceOf[js.Any],
         "NewReplicationFactor" -> NewReplicationFactor.asInstanceOf[js.Any]
       )
 
-      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
-      NodeIdsToRemove.foreach(__v => __obj.update("NodeIdsToRemove", __v.asInstanceOf[js.Any]))
+      AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
+      NodeIdsToRemove.foreach(__v => __obj.updateDynamic("NodeIdsToRemove")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DecreaseReplicationFactorRequest]
     }
   }
@@ -370,8 +376,8 @@ package dax {
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): DecreaseReplicationFactorResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Cluster.foreach(__v => __obj.update("Cluster", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Cluster.foreach(__v => __obj.updateDynamic("Cluster")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DecreaseReplicationFactorResponse]
     }
   }
@@ -385,7 +391,7 @@ package dax {
     def apply(
         ClusterName: String
     ): DeleteClusterRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClusterName" -> ClusterName.asInstanceOf[js.Any]
       )
 
@@ -402,8 +408,8 @@ package dax {
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): DeleteClusterResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Cluster.foreach(__v => __obj.update("Cluster", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Cluster.foreach(__v => __obj.updateDynamic("Cluster")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteClusterResponse]
     }
   }
@@ -417,7 +423,7 @@ package dax {
     def apply(
         ParameterGroupName: String
     ): DeleteParameterGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ParameterGroupName" -> ParameterGroupName.asInstanceOf[js.Any]
       )
 
@@ -434,8 +440,8 @@ package dax {
     def apply(
         DeletionMessage: js.UndefOr[String] = js.undefined
     ): DeleteParameterGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DeletionMessage.foreach(__v => __obj.update("DeletionMessage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DeletionMessage.foreach(__v => __obj.updateDynamic("DeletionMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteParameterGroupResponse]
     }
   }
@@ -449,7 +455,7 @@ package dax {
     def apply(
         SubnetGroupName: String
     ): DeleteSubnetGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SubnetGroupName" -> SubnetGroupName.asInstanceOf[js.Any]
       )
 
@@ -466,8 +472,8 @@ package dax {
     def apply(
         DeletionMessage: js.UndefOr[String] = js.undefined
     ): DeleteSubnetGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DeletionMessage.foreach(__v => __obj.update("DeletionMessage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DeletionMessage.foreach(__v => __obj.updateDynamic("DeletionMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteSubnetGroupResponse]
     }
   }
@@ -485,10 +491,10 @@ package dax {
         MaxResults: js.UndefOr[IntegerOptional] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeClustersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClusterNames.foreach(__v => __obj.update("ClusterNames", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClusterNames.foreach(__v => __obj.updateDynamic("ClusterNames")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeClustersRequest]
     }
   }
@@ -504,9 +510,9 @@ package dax {
         Clusters: js.UndefOr[ClusterList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeClustersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Clusters.foreach(__v => __obj.update("Clusters", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Clusters.foreach(__v => __obj.updateDynamic("Clusters")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeClustersResponse]
     }
   }
@@ -522,9 +528,9 @@ package dax {
         MaxResults: js.UndefOr[IntegerOptional] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeDefaultParametersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDefaultParametersRequest]
     }
   }
@@ -540,9 +546,9 @@ package dax {
         NextToken: js.UndefOr[String] = js.undefined,
         Parameters: js.UndefOr[ParameterList] = js.undefined
     ): DescribeDefaultParametersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDefaultParametersResponse]
     }
   }
@@ -568,14 +574,14 @@ package dax {
         SourceType: js.UndefOr[SourceType] = js.undefined,
         StartTime: js.UndefOr[TStamp] = js.undefined
     ): DescribeEventsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      SourceName.foreach(__v => __obj.update("SourceName", __v.asInstanceOf[js.Any]))
-      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Duration.foreach(__v => __obj.updateDynamic("Duration")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SourceName.foreach(__v => __obj.updateDynamic("SourceName")(__v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.updateDynamic("SourceType")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEventsRequest]
     }
   }
@@ -591,9 +597,9 @@ package dax {
         Events: js.UndefOr[EventList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeEventsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Events.foreach(__v => __obj.update("Events", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Events.foreach(__v => __obj.updateDynamic("Events")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEventsResponse]
     }
   }
@@ -611,10 +617,10 @@ package dax {
         NextToken: js.UndefOr[String] = js.undefined,
         ParameterGroupNames: js.UndefOr[ParameterGroupNameList] = js.undefined
     ): DescribeParameterGroupsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ParameterGroupNames.foreach(__v => __obj.update("ParameterGroupNames", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ParameterGroupNames.foreach(__v => __obj.updateDynamic("ParameterGroupNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeParameterGroupsRequest]
     }
   }
@@ -630,9 +636,9 @@ package dax {
         NextToken: js.UndefOr[String] = js.undefined,
         ParameterGroups: js.UndefOr[ParameterGroupList] = js.undefined
     ): DescribeParameterGroupsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ParameterGroups.foreach(__v => __obj.update("ParameterGroups", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ParameterGroups.foreach(__v => __obj.updateDynamic("ParameterGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeParameterGroupsResponse]
     }
   }
@@ -652,13 +658,13 @@ package dax {
         NextToken: js.UndefOr[String] = js.undefined,
         Source: js.UndefOr[String] = js.undefined
     ): DescribeParametersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ParameterGroupName" -> ParameterGroupName.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeParametersRequest]
     }
   }
@@ -674,9 +680,9 @@ package dax {
         NextToken: js.UndefOr[String] = js.undefined,
         Parameters: js.UndefOr[ParameterList] = js.undefined
     ): DescribeParametersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeParametersResponse]
     }
   }
@@ -694,10 +700,10 @@ package dax {
         NextToken: js.UndefOr[String] = js.undefined,
         SubnetGroupNames: js.UndefOr[SubnetGroupNameList] = js.undefined
     ): DescribeSubnetGroupsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      SubnetGroupNames.foreach(__v => __obj.update("SubnetGroupNames", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SubnetGroupNames.foreach(__v => __obj.updateDynamic("SubnetGroupNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSubnetGroupsRequest]
     }
   }
@@ -713,9 +719,9 @@ package dax {
         NextToken: js.UndefOr[String] = js.undefined,
         SubnetGroups: js.UndefOr[SubnetGroupList] = js.undefined
     ): DescribeSubnetGroupsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      SubnetGroups.foreach(__v => __obj.update("SubnetGroups", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SubnetGroups.foreach(__v => __obj.updateDynamic("SubnetGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSubnetGroupsResponse]
     }
   }
@@ -734,9 +740,9 @@ package dax {
         Address: js.UndefOr[String] = js.undefined,
         Port: js.UndefOr[Int] = js.undefined
     ): Endpoint = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Address.foreach(__v => __obj.update("Address", __v.asInstanceOf[js.Any]))
-      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Address.foreach(__v => __obj.updateDynamic("Address")(__v.asInstanceOf[js.Any]))
+      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Endpoint]
     }
   }
@@ -759,11 +765,11 @@ package dax {
         SourceName: js.UndefOr[String] = js.undefined,
         SourceType: js.UndefOr[SourceType] = js.undefined
     ): Event = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Date.foreach(__v => __obj.update("Date", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
-      SourceName.foreach(__v => __obj.update("SourceName", __v.asInstanceOf[js.Any]))
-      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Date.foreach(__v => __obj.updateDynamic("Date")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      SourceName.foreach(__v => __obj.updateDynamic("SourceName")(__v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.updateDynamic("SourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Event]
     }
   }
@@ -781,12 +787,12 @@ package dax {
         NewReplicationFactor: Int,
         AvailabilityZones: js.UndefOr[AvailabilityZoneList] = js.undefined
     ): IncreaseReplicationFactorRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClusterName"          -> ClusterName.asInstanceOf[js.Any],
         "NewReplicationFactor" -> NewReplicationFactor.asInstanceOf[js.Any]
       )
 
-      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
+      AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IncreaseReplicationFactorRequest]
     }
   }
@@ -800,8 +806,8 @@ package dax {
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): IncreaseReplicationFactorResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Cluster.foreach(__v => __obj.update("Cluster", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Cluster.foreach(__v => __obj.updateDynamic("Cluster")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IncreaseReplicationFactorResponse]
     }
   }
@@ -825,11 +831,11 @@ package dax {
         ResourceName: String,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListTagsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceName" -> ResourceName.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsRequest]
     }
   }
@@ -845,9 +851,9 @@ package dax {
         NextToken: js.UndefOr[String] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsResponse]
     }
   }
@@ -874,13 +880,13 @@ package dax {
         NodeStatus: js.UndefOr[String] = js.undefined,
         ParameterGroupStatus: js.UndefOr[String] = js.undefined
     ): Node = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
-      Endpoint.foreach(__v => __obj.update("Endpoint", __v.asInstanceOf[js.Any]))
-      NodeCreateTime.foreach(__v => __obj.update("NodeCreateTime", __v.asInstanceOf[js.Any]))
-      NodeId.foreach(__v => __obj.update("NodeId", __v.asInstanceOf[js.Any]))
-      NodeStatus.foreach(__v => __obj.update("NodeStatus", __v.asInstanceOf[js.Any]))
-      ParameterGroupStatus.foreach(__v => __obj.update("ParameterGroupStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
+      NodeCreateTime.foreach(__v => __obj.updateDynamic("NodeCreateTime")(__v.asInstanceOf[js.Any]))
+      NodeId.foreach(__v => __obj.updateDynamic("NodeId")(__v.asInstanceOf[js.Any]))
+      NodeStatus.foreach(__v => __obj.updateDynamic("NodeStatus")(__v.asInstanceOf[js.Any]))
+      ParameterGroupStatus.foreach(__v => __obj.updateDynamic("ParameterGroupStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Node]
     }
   }
@@ -899,9 +905,9 @@ package dax {
         NodeType: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
     ): NodeTypeSpecificValue = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NodeType.foreach(__v => __obj.update("NodeType", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NodeType.foreach(__v => __obj.updateDynamic("NodeType")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NodeTypeSpecificValue]
     }
   }
@@ -920,9 +926,9 @@ package dax {
         TopicArn: js.UndefOr[String] = js.undefined,
         TopicStatus: js.UndefOr[String] = js.undefined
     ): NotificationConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TopicArn.foreach(__v => __obj.update("TopicArn", __v.asInstanceOf[js.Any]))
-      TopicStatus.foreach(__v => __obj.update("TopicStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TopicArn.foreach(__v => __obj.updateDynamic("TopicArn")(__v.asInstanceOf[js.Any]))
+      TopicStatus.foreach(__v => __obj.updateDynamic("TopicStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NotificationConfiguration]
     }
   }
@@ -957,17 +963,17 @@ package dax {
         ParameterValue: js.UndefOr[String] = js.undefined,
         Source: js.UndefOr[String] = js.undefined
     ): Parameter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AllowedValues.foreach(__v => __obj.update("AllowedValues", __v.asInstanceOf[js.Any]))
-      ChangeType.foreach(__v => __obj.update("ChangeType", __v.asInstanceOf[js.Any]))
-      DataType.foreach(__v => __obj.update("DataType", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      IsModifiable.foreach(__v => __obj.update("IsModifiable", __v.asInstanceOf[js.Any]))
-      NodeTypeSpecificValues.foreach(__v => __obj.update("NodeTypeSpecificValues", __v.asInstanceOf[js.Any]))
-      ParameterName.foreach(__v => __obj.update("ParameterName", __v.asInstanceOf[js.Any]))
-      ParameterType.foreach(__v => __obj.update("ParameterType", __v.asInstanceOf[js.Any]))
-      ParameterValue.foreach(__v => __obj.update("ParameterValue", __v.asInstanceOf[js.Any]))
-      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AllowedValues.foreach(__v => __obj.updateDynamic("AllowedValues")(__v.asInstanceOf[js.Any]))
+      ChangeType.foreach(__v => __obj.updateDynamic("ChangeType")(__v.asInstanceOf[js.Any]))
+      DataType.foreach(__v => __obj.updateDynamic("DataType")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      IsModifiable.foreach(__v => __obj.updateDynamic("IsModifiable")(__v.asInstanceOf[js.Any]))
+      NodeTypeSpecificValues.foreach(__v => __obj.updateDynamic("NodeTypeSpecificValues")(__v.asInstanceOf[js.Any]))
+      ParameterName.foreach(__v => __obj.updateDynamic("ParameterName")(__v.asInstanceOf[js.Any]))
+      ParameterType.foreach(__v => __obj.updateDynamic("ParameterType")(__v.asInstanceOf[js.Any]))
+      ParameterValue.foreach(__v => __obj.updateDynamic("ParameterValue")(__v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Parameter]
     }
   }
@@ -986,9 +992,9 @@ package dax {
         Description: js.UndefOr[String] = js.undefined,
         ParameterGroupName: js.UndefOr[String] = js.undefined
     ): ParameterGroup = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      ParameterGroupName.foreach(__v => __obj.update("ParameterGroupName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ParameterGroupName.foreach(__v => __obj.updateDynamic("ParameterGroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ParameterGroup]
     }
   }
@@ -1009,10 +1015,10 @@ package dax {
         ParameterApplyStatus: js.UndefOr[String] = js.undefined,
         ParameterGroupName: js.UndefOr[String] = js.undefined
     ): ParameterGroupStatus = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NodeIdsToReboot.foreach(__v => __obj.update("NodeIdsToReboot", __v.asInstanceOf[js.Any]))
-      ParameterApplyStatus.foreach(__v => __obj.update("ParameterApplyStatus", __v.asInstanceOf[js.Any]))
-      ParameterGroupName.foreach(__v => __obj.update("ParameterGroupName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NodeIdsToReboot.foreach(__v => __obj.updateDynamic("NodeIdsToReboot")(__v.asInstanceOf[js.Any]))
+      ParameterApplyStatus.foreach(__v => __obj.updateDynamic("ParameterApplyStatus")(__v.asInstanceOf[js.Any]))
+      ParameterGroupName.foreach(__v => __obj.updateDynamic("ParameterGroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ParameterGroupStatus]
     }
   }
@@ -1031,9 +1037,9 @@ package dax {
         ParameterName: js.UndefOr[String] = js.undefined,
         ParameterValue: js.UndefOr[String] = js.undefined
     ): ParameterNameValue = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ParameterName.foreach(__v => __obj.update("ParameterName", __v.asInstanceOf[js.Any]))
-      ParameterValue.foreach(__v => __obj.update("ParameterValue", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ParameterName.foreach(__v => __obj.updateDynamic("ParameterName")(__v.asInstanceOf[js.Any]))
+      ParameterValue.foreach(__v => __obj.updateDynamic("ParameterValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ParameterNameValue]
     }
   }
@@ -1056,7 +1062,7 @@ package dax {
         ClusterName: String,
         NodeId: String
     ): RebootNodeRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClusterName" -> ClusterName.asInstanceOf[js.Any],
         "NodeId"      -> NodeId.asInstanceOf[js.Any]
       )
@@ -1074,8 +1080,8 @@ package dax {
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): RebootNodeResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Cluster.foreach(__v => __obj.update("Cluster", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Cluster.foreach(__v => __obj.updateDynamic("Cluster")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RebootNodeResponse]
     }
   }
@@ -1092,8 +1098,8 @@ package dax {
     def apply(
         Status: js.UndefOr[SSEStatus] = js.undefined
     ): SSEDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SSEDescription]
     }
   }
@@ -1110,7 +1116,7 @@ package dax {
     def apply(
         Enabled: SSEEnabled
     ): SSESpecification = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Enabled" -> Enabled.asInstanceOf[js.Any]
       )
 
@@ -1141,9 +1147,9 @@ package dax {
         SecurityGroupIdentifier: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): SecurityGroupMembership = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SecurityGroupIdentifier.foreach(__v => __obj.update("SecurityGroupIdentifier", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SecurityGroupIdentifier.foreach(__v => __obj.updateDynamic("SecurityGroupIdentifier")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SecurityGroupMembership]
     }
   }
@@ -1170,9 +1176,9 @@ package dax {
         SubnetAvailabilityZone: js.UndefOr[String] = js.undefined,
         SubnetIdentifier: js.UndefOr[String] = js.undefined
     ): Subnet = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SubnetAvailabilityZone.foreach(__v => __obj.update("SubnetAvailabilityZone", __v.asInstanceOf[js.Any]))
-      SubnetIdentifier.foreach(__v => __obj.update("SubnetIdentifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SubnetAvailabilityZone.foreach(__v => __obj.updateDynamic("SubnetAvailabilityZone")(__v.asInstanceOf[js.Any]))
+      SubnetIdentifier.foreach(__v => __obj.updateDynamic("SubnetIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Subnet]
     }
   }
@@ -1197,11 +1203,11 @@ package dax {
         Subnets: js.UndefOr[SubnetList] = js.undefined,
         VpcId: js.UndefOr[String] = js.undefined
     ): SubnetGroup = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      SubnetGroupName.foreach(__v => __obj.update("SubnetGroupName", __v.asInstanceOf[js.Any]))
-      Subnets.foreach(__v => __obj.update("Subnets", __v.asInstanceOf[js.Any]))
-      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      SubnetGroupName.foreach(__v => __obj.updateDynamic("SubnetGroupName")(__v.asInstanceOf[js.Any]))
+      Subnets.foreach(__v => __obj.updateDynamic("Subnets")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SubnetGroup]
     }
   }
@@ -1222,9 +1228,9 @@ package dax {
         Key: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
     ): Tag = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tag]
     }
   }
@@ -1240,7 +1246,7 @@ package dax {
         ResourceName: String,
         Tags: TagList
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
         "Tags"         -> Tags.asInstanceOf[js.Any]
       )
@@ -1258,8 +1264,8 @@ package dax {
     def apply(
         Tags: js.UndefOr[TagList] = js.undefined
     ): TagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TagResourceResponse]
     }
   }
@@ -1275,7 +1281,7 @@ package dax {
         ResourceName: String,
         TagKeys: KeyList
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceName" -> ResourceName.asInstanceOf[js.Any],
         "TagKeys"      -> TagKeys.asInstanceOf[js.Any]
       )
@@ -1293,8 +1299,8 @@ package dax {
     def apply(
         Tags: js.UndefOr[TagList] = js.undefined
     ): UntagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UntagResourceResponse]
     }
   }
@@ -1320,16 +1326,18 @@ package dax {
         PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
         SecurityGroupIds: js.UndefOr[SecurityGroupIdentifierList] = js.undefined
     ): UpdateClusterRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClusterName" -> ClusterName.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      NotificationTopicArn.foreach(__v => __obj.update("NotificationTopicArn", __v.asInstanceOf[js.Any]))
-      NotificationTopicStatus.foreach(__v => __obj.update("NotificationTopicStatus", __v.asInstanceOf[js.Any]))
-      ParameterGroupName.foreach(__v => __obj.update("ParameterGroupName", __v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
-      SecurityGroupIds.foreach(__v => __obj.update("SecurityGroupIds", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      NotificationTopicArn.foreach(__v => __obj.updateDynamic("NotificationTopicArn")(__v.asInstanceOf[js.Any]))
+      NotificationTopicStatus.foreach(__v => __obj.updateDynamic("NotificationTopicStatus")(__v.asInstanceOf[js.Any]))
+      ParameterGroupName.foreach(__v => __obj.updateDynamic("ParameterGroupName")(__v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(
+        __v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      )
+      SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateClusterRequest]
     }
   }
@@ -1343,8 +1351,8 @@ package dax {
     def apply(
         Cluster: js.UndefOr[Cluster] = js.undefined
     ): UpdateClusterResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Cluster.foreach(__v => __obj.update("Cluster", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Cluster.foreach(__v => __obj.updateDynamic("Cluster")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateClusterResponse]
     }
   }
@@ -1360,7 +1368,7 @@ package dax {
         ParameterGroupName: String,
         ParameterNameValues: ParameterNameValueList
     ): UpdateParameterGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ParameterGroupName"  -> ParameterGroupName.asInstanceOf[js.Any],
         "ParameterNameValues" -> ParameterNameValues.asInstanceOf[js.Any]
       )
@@ -1378,8 +1386,8 @@ package dax {
     def apply(
         ParameterGroup: js.UndefOr[ParameterGroup] = js.undefined
     ): UpdateParameterGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ParameterGroup.foreach(__v => __obj.update("ParameterGroup", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ParameterGroup.foreach(__v => __obj.updateDynamic("ParameterGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateParameterGroupResponse]
     }
   }
@@ -1397,12 +1405,12 @@ package dax {
         Description: js.UndefOr[String] = js.undefined,
         SubnetIds: js.UndefOr[SubnetIdentifierList] = js.undefined
     ): UpdateSubnetGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SubnetGroupName" -> SubnetGroupName.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      SubnetIds.foreach(__v => __obj.update("SubnetIds", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSubnetGroupRequest]
     }
   }
@@ -1416,8 +1424,8 @@ package dax {
     def apply(
         SubnetGroup: js.UndefOr[SubnetGroup] = js.undefined
     ): UpdateSubnetGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SubnetGroup.foreach(__v => __obj.update("SubnetGroup", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SubnetGroup.foreach(__v => __obj.updateDynamic("SubnetGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSubnetGroupResponse]
     }
   }

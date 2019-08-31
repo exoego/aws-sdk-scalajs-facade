@@ -105,17 +105,17 @@ package sts {
         SerialNumber: js.UndefOr[serialNumberType] = js.undefined,
         TokenCode: js.UndefOr[tokenCodeType] = js.undefined
     ): AssumeRoleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RoleArn"         -> RoleArn.asInstanceOf[js.Any],
         "RoleSessionName" -> RoleSessionName.asInstanceOf[js.Any]
       )
 
-      DurationSeconds.foreach(__v => __obj.update("DurationSeconds", __v.asInstanceOf[js.Any]))
-      ExternalId.foreach(__v => __obj.update("ExternalId", __v.asInstanceOf[js.Any]))
-      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
-      PolicyArns.foreach(__v => __obj.update("PolicyArns", __v.asInstanceOf[js.Any]))
-      SerialNumber.foreach(__v => __obj.update("SerialNumber", __v.asInstanceOf[js.Any]))
-      TokenCode.foreach(__v => __obj.update("TokenCode", __v.asInstanceOf[js.Any]))
+      DurationSeconds.foreach(__v => __obj.updateDynamic("DurationSeconds")(__v.asInstanceOf[js.Any]))
+      ExternalId.foreach(__v => __obj.updateDynamic("ExternalId")(__v.asInstanceOf[js.Any]))
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
+      PolicyArns.foreach(__v => __obj.updateDynamic("PolicyArns")(__v.asInstanceOf[js.Any]))
+      SerialNumber.foreach(__v => __obj.updateDynamic("SerialNumber")(__v.asInstanceOf[js.Any]))
+      TokenCode.foreach(__v => __obj.updateDynamic("TokenCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssumeRoleRequest]
     }
   }
@@ -136,10 +136,10 @@ package sts {
         Credentials: js.UndefOr[Credentials] = js.undefined,
         PackedPolicySize: js.UndefOr[nonNegativeIntegerType] = js.undefined
     ): AssumeRoleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssumedRoleUser.foreach(__v => __obj.update("AssumedRoleUser", __v.asInstanceOf[js.Any]))
-      Credentials.foreach(__v => __obj.update("Credentials", __v.asInstanceOf[js.Any]))
-      PackedPolicySize.foreach(__v => __obj.update("PackedPolicySize", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssumedRoleUser.foreach(__v => __obj.updateDynamic("AssumedRoleUser")(__v.asInstanceOf[js.Any]))
+      Credentials.foreach(__v => __obj.updateDynamic("Credentials")(__v.asInstanceOf[js.Any]))
+      PackedPolicySize.foreach(__v => __obj.updateDynamic("PackedPolicySize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssumeRoleResponse]
     }
   }
@@ -163,15 +163,15 @@ package sts {
         Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined,
         PolicyArns: js.UndefOr[policyDescriptorListType] = js.undefined
     ): AssumeRoleWithSAMLRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PrincipalArn"  -> PrincipalArn.asInstanceOf[js.Any],
         "RoleArn"       -> RoleArn.asInstanceOf[js.Any],
         "SAMLAssertion" -> SAMLAssertion.asInstanceOf[js.Any]
       )
 
-      DurationSeconds.foreach(__v => __obj.update("DurationSeconds", __v.asInstanceOf[js.Any]))
-      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
-      PolicyArns.foreach(__v => __obj.update("PolicyArns", __v.asInstanceOf[js.Any]))
+      DurationSeconds.foreach(__v => __obj.updateDynamic("DurationSeconds")(__v.asInstanceOf[js.Any]))
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
+      PolicyArns.foreach(__v => __obj.updateDynamic("PolicyArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssumeRoleWithSAMLRequest]
     }
   }
@@ -202,15 +202,15 @@ package sts {
         Subject: js.UndefOr[Subject] = js.undefined,
         SubjectType: js.UndefOr[SubjectType] = js.undefined
     ): AssumeRoleWithSAMLResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssumedRoleUser.foreach(__v => __obj.update("AssumedRoleUser", __v.asInstanceOf[js.Any]))
-      Audience.foreach(__v => __obj.update("Audience", __v.asInstanceOf[js.Any]))
-      Credentials.foreach(__v => __obj.update("Credentials", __v.asInstanceOf[js.Any]))
-      Issuer.foreach(__v => __obj.update("Issuer", __v.asInstanceOf[js.Any]))
-      NameQualifier.foreach(__v => __obj.update("NameQualifier", __v.asInstanceOf[js.Any]))
-      PackedPolicySize.foreach(__v => __obj.update("PackedPolicySize", __v.asInstanceOf[js.Any]))
-      Subject.foreach(__v => __obj.update("Subject", __v.asInstanceOf[js.Any]))
-      SubjectType.foreach(__v => __obj.update("SubjectType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssumedRoleUser.foreach(__v => __obj.updateDynamic("AssumedRoleUser")(__v.asInstanceOf[js.Any]))
+      Audience.foreach(__v => __obj.updateDynamic("Audience")(__v.asInstanceOf[js.Any]))
+      Credentials.foreach(__v => __obj.updateDynamic("Credentials")(__v.asInstanceOf[js.Any]))
+      Issuer.foreach(__v => __obj.updateDynamic("Issuer")(__v.asInstanceOf[js.Any]))
+      NameQualifier.foreach(__v => __obj.updateDynamic("NameQualifier")(__v.asInstanceOf[js.Any]))
+      PackedPolicySize.foreach(__v => __obj.updateDynamic("PackedPolicySize")(__v.asInstanceOf[js.Any]))
+      Subject.foreach(__v => __obj.updateDynamic("Subject")(__v.asInstanceOf[js.Any]))
+      SubjectType.foreach(__v => __obj.updateDynamic("SubjectType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssumeRoleWithSAMLResponse]
     }
   }
@@ -236,16 +236,16 @@ package sts {
         PolicyArns: js.UndefOr[policyDescriptorListType] = js.undefined,
         ProviderId: js.UndefOr[urlType] = js.undefined
     ): AssumeRoleWithWebIdentityRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RoleArn"          -> RoleArn.asInstanceOf[js.Any],
         "RoleSessionName"  -> RoleSessionName.asInstanceOf[js.Any],
         "WebIdentityToken" -> WebIdentityToken.asInstanceOf[js.Any]
       )
 
-      DurationSeconds.foreach(__v => __obj.update("DurationSeconds", __v.asInstanceOf[js.Any]))
-      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
-      PolicyArns.foreach(__v => __obj.update("PolicyArns", __v.asInstanceOf[js.Any]))
-      ProviderId.foreach(__v => __obj.update("ProviderId", __v.asInstanceOf[js.Any]))
+      DurationSeconds.foreach(__v => __obj.updateDynamic("DurationSeconds")(__v.asInstanceOf[js.Any]))
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
+      PolicyArns.foreach(__v => __obj.updateDynamic("PolicyArns")(__v.asInstanceOf[js.Any]))
+      ProviderId.foreach(__v => __obj.updateDynamic("ProviderId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssumeRoleWithWebIdentityRequest]
     }
   }
@@ -272,13 +272,15 @@ package sts {
         Provider: js.UndefOr[Issuer] = js.undefined,
         SubjectFromWebIdentityToken: js.UndefOr[webIdentitySubjectType] = js.undefined
     ): AssumeRoleWithWebIdentityResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssumedRoleUser.foreach(__v => __obj.update("AssumedRoleUser", __v.asInstanceOf[js.Any]))
-      Audience.foreach(__v => __obj.update("Audience", __v.asInstanceOf[js.Any]))
-      Credentials.foreach(__v => __obj.update("Credentials", __v.asInstanceOf[js.Any]))
-      PackedPolicySize.foreach(__v => __obj.update("PackedPolicySize", __v.asInstanceOf[js.Any]))
-      Provider.foreach(__v => __obj.update("Provider", __v.asInstanceOf[js.Any]))
-      SubjectFromWebIdentityToken.foreach(__v => __obj.update("SubjectFromWebIdentityToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssumedRoleUser.foreach(__v => __obj.updateDynamic("AssumedRoleUser")(__v.asInstanceOf[js.Any]))
+      Audience.foreach(__v => __obj.updateDynamic("Audience")(__v.asInstanceOf[js.Any]))
+      Credentials.foreach(__v => __obj.updateDynamic("Credentials")(__v.asInstanceOf[js.Any]))
+      PackedPolicySize.foreach(__v => __obj.updateDynamic("PackedPolicySize")(__v.asInstanceOf[js.Any]))
+      Provider.foreach(__v => __obj.updateDynamic("Provider")(__v.asInstanceOf[js.Any]))
+      SubjectFromWebIdentityToken.foreach(
+        __v => __obj.updateDynamic("SubjectFromWebIdentityToken")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[AssumeRoleWithWebIdentityResponse]
     }
   }
@@ -297,7 +299,7 @@ package sts {
         Arn: arnType,
         AssumedRoleId: assumedRoleIdType
     ): AssumedRoleUser = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn"           -> Arn.asInstanceOf[js.Any],
         "AssumedRoleId" -> AssumedRoleId.asInstanceOf[js.Any]
       )
@@ -324,7 +326,7 @@ package sts {
         SecretAccessKey: accessKeySecretType,
         SessionToken: tokenType
     ): Credentials = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccessKeyId"     -> AccessKeyId.asInstanceOf[js.Any],
         "Expiration"      -> Expiration.asInstanceOf[js.Any],
         "SecretAccessKey" -> SecretAccessKey.asInstanceOf[js.Any],
@@ -344,7 +346,7 @@ package sts {
     def apply(
         EncodedMessage: encodedMessageType
     ): DecodeAuthorizationMessageRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EncodedMessage" -> EncodedMessage.asInstanceOf[js.Any]
       )
 
@@ -364,8 +366,8 @@ package sts {
     def apply(
         DecodedMessage: js.UndefOr[decodedMessageType] = js.undefined
     ): DecodeAuthorizationMessageResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DecodedMessage.foreach(__v => __obj.update("DecodedMessage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DecodedMessage.foreach(__v => __obj.updateDynamic("DecodedMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DecodeAuthorizationMessageResponse]
     }
   }
@@ -384,7 +386,7 @@ package sts {
         Arn: arnType,
         FederatedUserId: federatedIdType
     ): FederatedUser = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn"             -> Arn.asInstanceOf[js.Any],
         "FederatedUserId" -> FederatedUserId.asInstanceOf[js.Any]
       )
@@ -402,7 +404,7 @@ package sts {
     def apply(
         AccessKeyId: accessKeyIdType
     ): GetAccessKeyInfoRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccessKeyId" -> AccessKeyId.asInstanceOf[js.Any]
       )
 
@@ -419,8 +421,8 @@ package sts {
     def apply(
         Account: js.UndefOr[accountType] = js.undefined
     ): GetAccessKeyInfoResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Account.foreach(__v => __obj.update("Account", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Account.foreach(__v => __obj.updateDynamic("Account")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAccessKeyInfoResponse]
     }
   }
@@ -431,7 +433,7 @@ package sts {
   object GetCallerIdentityRequest {
     def apply(
         ): GetCallerIdentityRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetCallerIdentityRequest]
     }
@@ -453,10 +455,10 @@ package sts {
         Arn: js.UndefOr[arnType] = js.undefined,
         UserId: js.UndefOr[userIdType] = js.undefined
     ): GetCallerIdentityResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Account.foreach(__v => __obj.update("Account", __v.asInstanceOf[js.Any]))
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      UserId.foreach(__v => __obj.update("UserId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Account.foreach(__v => __obj.updateDynamic("Account")(__v.asInstanceOf[js.Any]))
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      UserId.foreach(__v => __obj.updateDynamic("UserId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCallerIdentityResponse]
     }
   }
@@ -476,13 +478,13 @@ package sts {
         Policy: js.UndefOr[sessionPolicyDocumentType] = js.undefined,
         PolicyArns: js.UndefOr[policyDescriptorListType] = js.undefined
     ): GetFederationTokenRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      DurationSeconds.foreach(__v => __obj.update("DurationSeconds", __v.asInstanceOf[js.Any]))
-      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
-      PolicyArns.foreach(__v => __obj.update("PolicyArns", __v.asInstanceOf[js.Any]))
+      DurationSeconds.foreach(__v => __obj.updateDynamic("DurationSeconds")(__v.asInstanceOf[js.Any]))
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
+      PolicyArns.foreach(__v => __obj.updateDynamic("PolicyArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFederationTokenRequest]
     }
   }
@@ -503,10 +505,10 @@ package sts {
         FederatedUser: js.UndefOr[FederatedUser] = js.undefined,
         PackedPolicySize: js.UndefOr[nonNegativeIntegerType] = js.undefined
     ): GetFederationTokenResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Credentials.foreach(__v => __obj.update("Credentials", __v.asInstanceOf[js.Any]))
-      FederatedUser.foreach(__v => __obj.update("FederatedUser", __v.asInstanceOf[js.Any]))
-      PackedPolicySize.foreach(__v => __obj.update("PackedPolicySize", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Credentials.foreach(__v => __obj.updateDynamic("Credentials")(__v.asInstanceOf[js.Any]))
+      FederatedUser.foreach(__v => __obj.updateDynamic("FederatedUser")(__v.asInstanceOf[js.Any]))
+      PackedPolicySize.foreach(__v => __obj.updateDynamic("PackedPolicySize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFederationTokenResponse]
     }
   }
@@ -524,10 +526,10 @@ package sts {
         SerialNumber: js.UndefOr[serialNumberType] = js.undefined,
         TokenCode: js.UndefOr[tokenCodeType] = js.undefined
     ): GetSessionTokenRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DurationSeconds.foreach(__v => __obj.update("DurationSeconds", __v.asInstanceOf[js.Any]))
-      SerialNumber.foreach(__v => __obj.update("SerialNumber", __v.asInstanceOf[js.Any]))
-      TokenCode.foreach(__v => __obj.update("TokenCode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DurationSeconds.foreach(__v => __obj.updateDynamic("DurationSeconds")(__v.asInstanceOf[js.Any]))
+      SerialNumber.foreach(__v => __obj.updateDynamic("SerialNumber")(__v.asInstanceOf[js.Any]))
+      TokenCode.foreach(__v => __obj.updateDynamic("TokenCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSessionTokenRequest]
     }
   }
@@ -544,8 +546,8 @@ package sts {
     def apply(
         Credentials: js.UndefOr[Credentials] = js.undefined
     ): GetSessionTokenResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Credentials.foreach(__v => __obj.update("Credentials", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Credentials.foreach(__v => __obj.updateDynamic("Credentials")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSessionTokenResponse]
     }
   }
@@ -562,8 +564,8 @@ package sts {
     def apply(
         arn: js.UndefOr[arnType] = js.undefined
     ): PolicyDescriptorType = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PolicyDescriptorType]
     }
   }

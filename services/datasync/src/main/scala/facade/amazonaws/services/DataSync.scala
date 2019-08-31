@@ -178,10 +178,10 @@ package datasync {
         Name: js.UndefOr[TagValue] = js.undefined,
         Status: js.UndefOr[AgentStatus] = js.undefined
     ): AgentListEntry = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AgentArn.foreach(__v => __obj.update("AgentArn", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AgentArn.foreach(__v => __obj.updateDynamic("AgentArn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AgentListEntry]
     }
   }
@@ -209,7 +209,7 @@ package datasync {
     def apply(
         TaskExecutionArn: TaskExecutionArn
     ): CancelTaskExecutionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TaskExecutionArn" -> TaskExecutionArn.asInstanceOf[js.Any]
       )
 
@@ -223,7 +223,7 @@ package datasync {
   object CancelTaskExecutionResponse {
     def apply(
         ): CancelTaskExecutionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CancelTaskExecutionResponse]
     }
@@ -248,15 +248,15 @@ package datasync {
         Tags: js.UndefOr[TagList] = js.undefined,
         VpcEndpointId: js.UndefOr[VpcEndpointId] = js.undefined
     ): CreateAgentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ActivationKey" -> ActivationKey.asInstanceOf[js.Any]
       )
 
-      AgentName.foreach(__v => __obj.update("AgentName", __v.asInstanceOf[js.Any]))
-      SecurityGroupArns.foreach(__v => __obj.update("SecurityGroupArns", __v.asInstanceOf[js.Any]))
-      SubnetArns.foreach(__v => __obj.update("SubnetArns", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      VpcEndpointId.foreach(__v => __obj.update("VpcEndpointId", __v.asInstanceOf[js.Any]))
+      AgentName.foreach(__v => __obj.updateDynamic("AgentName")(__v.asInstanceOf[js.Any]))
+      SecurityGroupArns.foreach(__v => __obj.updateDynamic("SecurityGroupArns")(__v.asInstanceOf[js.Any]))
+      SubnetArns.foreach(__v => __obj.updateDynamic("SubnetArns")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      VpcEndpointId.foreach(__v => __obj.updateDynamic("VpcEndpointId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAgentRequest]
     }
   }
@@ -270,8 +270,8 @@ package datasync {
     def apply(
         AgentArn: js.UndefOr[AgentArn] = js.undefined
     ): CreateAgentResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AgentArn.foreach(__v => __obj.update("AgentArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AgentArn.foreach(__v => __obj.updateDynamic("AgentArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAgentResponse]
     }
   }
@@ -291,13 +291,13 @@ package datasync {
         Subdirectory: js.UndefOr[Subdirectory] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateLocationEfsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Ec2Config"        -> Ec2Config.asInstanceOf[js.Any],
         "EfsFilesystemArn" -> EfsFilesystemArn.asInstanceOf[js.Any]
       )
 
-      Subdirectory.foreach(__v => __obj.update("Subdirectory", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Subdirectory.foreach(__v => __obj.updateDynamic("Subdirectory")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLocationEfsRequest]
     }
   }
@@ -314,8 +314,8 @@ package datasync {
     def apply(
         LocationArn: js.UndefOr[LocationArn] = js.undefined
     ): CreateLocationEfsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LocationArn.foreach(__v => __obj.update("LocationArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLocationEfsResponse]
     }
   }
@@ -337,14 +337,14 @@ package datasync {
         MountOptions: js.UndefOr[NfsMountOptions] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateLocationNfsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OnPremConfig"   -> OnPremConfig.asInstanceOf[js.Any],
         "ServerHostname" -> ServerHostname.asInstanceOf[js.Any],
         "Subdirectory"   -> Subdirectory.asInstanceOf[js.Any]
       )
 
-      MountOptions.foreach(__v => __obj.update("MountOptions", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      MountOptions.foreach(__v => __obj.updateDynamic("MountOptions")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLocationNfsRequest]
     }
   }
@@ -358,8 +358,8 @@ package datasync {
     def apply(
         LocationArn: js.UndefOr[LocationArn] = js.undefined
     ): CreateLocationNfsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LocationArn.foreach(__v => __obj.update("LocationArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLocationNfsResponse]
     }
   }
@@ -379,13 +379,13 @@ package datasync {
         Subdirectory: js.UndefOr[Subdirectory] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateLocationS3Request = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "S3BucketArn" -> S3BucketArn.asInstanceOf[js.Any],
         "S3Config"    -> S3Config.asInstanceOf[js.Any]
       )
 
-      Subdirectory.foreach(__v => __obj.update("Subdirectory", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Subdirectory.foreach(__v => __obj.updateDynamic("Subdirectory")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLocationS3Request]
     }
   }
@@ -399,8 +399,8 @@ package datasync {
     def apply(
         LocationArn: js.UndefOr[LocationArn] = js.undefined
     ): CreateLocationS3Response = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LocationArn.foreach(__v => __obj.update("LocationArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLocationS3Response]
     }
   }
@@ -428,7 +428,7 @@ package datasync {
         MountOptions: js.UndefOr[SmbMountOptions] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateLocationSmbRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AgentArns"      -> AgentArns.asInstanceOf[js.Any],
         "Password"       -> Password.asInstanceOf[js.Any],
         "ServerHostname" -> ServerHostname.asInstanceOf[js.Any],
@@ -436,9 +436,9 @@ package datasync {
         "User"           -> User.asInstanceOf[js.Any]
       )
 
-      Domain.foreach(__v => __obj.update("Domain", __v.asInstanceOf[js.Any]))
-      MountOptions.foreach(__v => __obj.update("MountOptions", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
+      MountOptions.foreach(__v => __obj.updateDynamic("MountOptions")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLocationSmbRequest]
     }
   }
@@ -452,8 +452,8 @@ package datasync {
     def apply(
         LocationArn: js.UndefOr[LocationArn] = js.undefined
     ): CreateLocationSmbResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LocationArn.foreach(__v => __obj.update("LocationArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLocationSmbResponse]
     }
   }
@@ -479,16 +479,16 @@ package datasync {
         Options: js.UndefOr[Options] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateTaskRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DestinationLocationArn" -> DestinationLocationArn.asInstanceOf[js.Any],
         "SourceLocationArn"      -> SourceLocationArn.asInstanceOf[js.Any]
       )
 
-      CloudWatchLogGroupArn.foreach(__v => __obj.update("CloudWatchLogGroupArn", __v.asInstanceOf[js.Any]))
-      Excludes.foreach(__v => __obj.update("Excludes", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Options.foreach(__v => __obj.update("Options", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      CloudWatchLogGroupArn.foreach(__v => __obj.updateDynamic("CloudWatchLogGroupArn")(__v.asInstanceOf[js.Any]))
+      Excludes.foreach(__v => __obj.updateDynamic("Excludes")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Options.foreach(__v => __obj.updateDynamic("Options")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTaskRequest]
     }
   }
@@ -502,8 +502,8 @@ package datasync {
     def apply(
         TaskArn: js.UndefOr[TaskArn] = js.undefined
     ): CreateTaskResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TaskArn.foreach(__v => __obj.update("TaskArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TaskArn.foreach(__v => __obj.updateDynamic("TaskArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTaskResponse]
     }
   }
@@ -517,7 +517,7 @@ package datasync {
     def apply(
         AgentArn: AgentArn
     ): DeleteAgentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AgentArn" -> AgentArn.asInstanceOf[js.Any]
       )
 
@@ -531,7 +531,7 @@ package datasync {
   object DeleteAgentResponse {
     def apply(
         ): DeleteAgentResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteAgentResponse]
     }
@@ -549,7 +549,7 @@ package datasync {
     def apply(
         LocationArn: LocationArn
     ): DeleteLocationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LocationArn" -> LocationArn.asInstanceOf[js.Any]
       )
 
@@ -563,7 +563,7 @@ package datasync {
   object DeleteLocationResponse {
     def apply(
         ): DeleteLocationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteLocationResponse]
     }
@@ -581,7 +581,7 @@ package datasync {
     def apply(
         TaskArn: TaskArn
     ): DeleteTaskRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TaskArn" -> TaskArn.asInstanceOf[js.Any]
       )
 
@@ -595,7 +595,7 @@ package datasync {
   object DeleteTaskResponse {
     def apply(
         ): DeleteTaskResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteTaskResponse]
     }
@@ -613,7 +613,7 @@ package datasync {
     def apply(
         AgentArn: AgentArn
     ): DescribeAgentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AgentArn" -> AgentArn.asInstanceOf[js.Any]
       )
 
@@ -642,14 +642,14 @@ package datasync {
         PrivateLinkConfig: js.UndefOr[PrivateLinkConfig] = js.undefined,
         Status: js.UndefOr[AgentStatus] = js.undefined
     ): DescribeAgentResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AgentArn.foreach(__v => __obj.update("AgentArn", __v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      EndpointType.foreach(__v => __obj.update("EndpointType", __v.asInstanceOf[js.Any]))
-      LastConnectionTime.foreach(__v => __obj.update("LastConnectionTime", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      PrivateLinkConfig.foreach(__v => __obj.update("PrivateLinkConfig", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AgentArn.foreach(__v => __obj.updateDynamic("AgentArn")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      EndpointType.foreach(__v => __obj.updateDynamic("EndpointType")(__v.asInstanceOf[js.Any]))
+      LastConnectionTime.foreach(__v => __obj.updateDynamic("LastConnectionTime")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PrivateLinkConfig.foreach(__v => __obj.updateDynamic("PrivateLinkConfig")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAgentResponse]
     }
   }
@@ -663,7 +663,7 @@ package datasync {
     def apply(
         LocationArn: LocationArn
     ): DescribeLocationEfsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LocationArn" -> LocationArn.asInstanceOf[js.Any]
       )
 
@@ -686,11 +686,11 @@ package datasync {
         LocationArn: js.UndefOr[LocationArn] = js.undefined,
         LocationUri: js.UndefOr[LocationUri] = js.undefined
     ): DescribeLocationEfsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      Ec2Config.foreach(__v => __obj.update("Ec2Config", __v.asInstanceOf[js.Any]))
-      LocationArn.foreach(__v => __obj.update("LocationArn", __v.asInstanceOf[js.Any]))
-      LocationUri.foreach(__v => __obj.update("LocationUri", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Ec2Config.foreach(__v => __obj.updateDynamic("Ec2Config")(__v.asInstanceOf[js.Any]))
+      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
+      LocationUri.foreach(__v => __obj.updateDynamic("LocationUri")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLocationEfsResponse]
     }
   }
@@ -704,7 +704,7 @@ package datasync {
     def apply(
         LocationArn: LocationArn
     ): DescribeLocationNfsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LocationArn" -> LocationArn.asInstanceOf[js.Any]
       )
 
@@ -729,12 +729,12 @@ package datasync {
         MountOptions: js.UndefOr[NfsMountOptions] = js.undefined,
         OnPremConfig: js.UndefOr[OnPremConfig] = js.undefined
     ): DescribeLocationNfsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      LocationArn.foreach(__v => __obj.update("LocationArn", __v.asInstanceOf[js.Any]))
-      LocationUri.foreach(__v => __obj.update("LocationUri", __v.asInstanceOf[js.Any]))
-      MountOptions.foreach(__v => __obj.update("MountOptions", __v.asInstanceOf[js.Any]))
-      OnPremConfig.foreach(__v => __obj.update("OnPremConfig", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
+      LocationUri.foreach(__v => __obj.updateDynamic("LocationUri")(__v.asInstanceOf[js.Any]))
+      MountOptions.foreach(__v => __obj.updateDynamic("MountOptions")(__v.asInstanceOf[js.Any]))
+      OnPremConfig.foreach(__v => __obj.updateDynamic("OnPremConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLocationNfsResponse]
     }
   }
@@ -748,7 +748,7 @@ package datasync {
     def apply(
         LocationArn: LocationArn
     ): DescribeLocationS3Request = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LocationArn" -> LocationArn.asInstanceOf[js.Any]
       )
 
@@ -771,11 +771,11 @@ package datasync {
         LocationUri: js.UndefOr[LocationUri] = js.undefined,
         S3Config: js.UndefOr[S3Config] = js.undefined
     ): DescribeLocationS3Response = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      LocationArn.foreach(__v => __obj.update("LocationArn", __v.asInstanceOf[js.Any]))
-      LocationUri.foreach(__v => __obj.update("LocationUri", __v.asInstanceOf[js.Any]))
-      S3Config.foreach(__v => __obj.update("S3Config", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
+      LocationUri.foreach(__v => __obj.updateDynamic("LocationUri")(__v.asInstanceOf[js.Any]))
+      S3Config.foreach(__v => __obj.updateDynamic("S3Config")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLocationS3Response]
     }
   }
@@ -789,7 +789,7 @@ package datasync {
     def apply(
         LocationArn: LocationArn
     ): DescribeLocationSmbRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LocationArn" -> LocationArn.asInstanceOf[js.Any]
       )
 
@@ -818,14 +818,14 @@ package datasync {
         MountOptions: js.UndefOr[SmbMountOptions] = js.undefined,
         User: js.UndefOr[SmbUser] = js.undefined
     ): DescribeLocationSmbResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AgentArns.foreach(__v => __obj.update("AgentArns", __v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      Domain.foreach(__v => __obj.update("Domain", __v.asInstanceOf[js.Any]))
-      LocationArn.foreach(__v => __obj.update("LocationArn", __v.asInstanceOf[js.Any]))
-      LocationUri.foreach(__v => __obj.update("LocationUri", __v.asInstanceOf[js.Any]))
-      MountOptions.foreach(__v => __obj.update("MountOptions", __v.asInstanceOf[js.Any]))
-      User.foreach(__v => __obj.update("User", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AgentArns.foreach(__v => __obj.updateDynamic("AgentArns")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
+      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
+      LocationUri.foreach(__v => __obj.updateDynamic("LocationUri")(__v.asInstanceOf[js.Any]))
+      MountOptions.foreach(__v => __obj.updateDynamic("MountOptions")(__v.asInstanceOf[js.Any]))
+      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLocationSmbResponse]
     }
   }
@@ -839,7 +839,7 @@ package datasync {
     def apply(
         TaskExecutionArn: TaskExecutionArn
     ): DescribeTaskExecutionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TaskExecutionArn" -> TaskExecutionArn.asInstanceOf[js.Any]
       )
 
@@ -878,19 +878,19 @@ package datasync {
         Status: js.UndefOr[TaskExecutionStatus] = js.undefined,
         TaskExecutionArn: js.UndefOr[TaskExecutionArn] = js.undefined
     ): DescribeTaskExecutionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BytesTransferred.foreach(__v => __obj.update("BytesTransferred", __v.asInstanceOf[js.Any]))
-      BytesWritten.foreach(__v => __obj.update("BytesWritten", __v.asInstanceOf[js.Any]))
-      EstimatedBytesToTransfer.foreach(__v => __obj.update("EstimatedBytesToTransfer", __v.asInstanceOf[js.Any]))
-      EstimatedFilesToTransfer.foreach(__v => __obj.update("EstimatedFilesToTransfer", __v.asInstanceOf[js.Any]))
-      Excludes.foreach(__v => __obj.update("Excludes", __v.asInstanceOf[js.Any]))
-      FilesTransferred.foreach(__v => __obj.update("FilesTransferred", __v.asInstanceOf[js.Any]))
-      Includes.foreach(__v => __obj.update("Includes", __v.asInstanceOf[js.Any]))
-      Options.foreach(__v => __obj.update("Options", __v.asInstanceOf[js.Any]))
-      Result.foreach(__v => __obj.update("Result", __v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      TaskExecutionArn.foreach(__v => __obj.update("TaskExecutionArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BytesTransferred.foreach(__v => __obj.updateDynamic("BytesTransferred")(__v.asInstanceOf[js.Any]))
+      BytesWritten.foreach(__v => __obj.updateDynamic("BytesWritten")(__v.asInstanceOf[js.Any]))
+      EstimatedBytesToTransfer.foreach(__v => __obj.updateDynamic("EstimatedBytesToTransfer")(__v.asInstanceOf[js.Any]))
+      EstimatedFilesToTransfer.foreach(__v => __obj.updateDynamic("EstimatedFilesToTransfer")(__v.asInstanceOf[js.Any]))
+      Excludes.foreach(__v => __obj.updateDynamic("Excludes")(__v.asInstanceOf[js.Any]))
+      FilesTransferred.foreach(__v => __obj.updateDynamic("FilesTransferred")(__v.asInstanceOf[js.Any]))
+      Includes.foreach(__v => __obj.updateDynamic("Includes")(__v.asInstanceOf[js.Any]))
+      Options.foreach(__v => __obj.updateDynamic("Options")(__v.asInstanceOf[js.Any]))
+      Result.foreach(__v => __obj.updateDynamic("Result")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TaskExecutionArn.foreach(__v => __obj.updateDynamic("TaskExecutionArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTaskExecutionResponse]
     }
   }
@@ -904,7 +904,7 @@ package datasync {
     def apply(
         TaskArn: TaskArn
     ): DescribeTaskRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TaskArn" -> TaskArn.asInstanceOf[js.Any]
       )
 
@@ -947,23 +947,25 @@ package datasync {
         Status: js.UndefOr[TaskStatus] = js.undefined,
         TaskArn: js.UndefOr[TaskArn] = js.undefined
     ): DescribeTaskResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CloudWatchLogGroupArn.foreach(__v => __obj.update("CloudWatchLogGroupArn", __v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      CurrentTaskExecutionArn.foreach(__v => __obj.update("CurrentTaskExecutionArn", __v.asInstanceOf[js.Any]))
-      DestinationLocationArn.foreach(__v => __obj.update("DestinationLocationArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CloudWatchLogGroupArn.foreach(__v => __obj.updateDynamic("CloudWatchLogGroupArn")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      CurrentTaskExecutionArn.foreach(__v => __obj.updateDynamic("CurrentTaskExecutionArn")(__v.asInstanceOf[js.Any]))
+      DestinationLocationArn.foreach(__v => __obj.updateDynamic("DestinationLocationArn")(__v.asInstanceOf[js.Any]))
       DestinationNetworkInterfaceArns.foreach(
-        __v => __obj.update("DestinationNetworkInterfaceArns", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("DestinationNetworkInterfaceArns")(__v.asInstanceOf[js.Any])
       )
-      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
-      ErrorDetail.foreach(__v => __obj.update("ErrorDetail", __v.asInstanceOf[js.Any]))
-      Excludes.foreach(__v => __obj.update("Excludes", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Options.foreach(__v => __obj.update("Options", __v.asInstanceOf[js.Any]))
-      SourceLocationArn.foreach(__v => __obj.update("SourceLocationArn", __v.asInstanceOf[js.Any]))
-      SourceNetworkInterfaceArns.foreach(__v => __obj.update("SourceNetworkInterfaceArns", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      TaskArn.foreach(__v => __obj.update("TaskArn", __v.asInstanceOf[js.Any]))
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ErrorDetail.foreach(__v => __obj.updateDynamic("ErrorDetail")(__v.asInstanceOf[js.Any]))
+      Excludes.foreach(__v => __obj.updateDynamic("Excludes")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Options.foreach(__v => __obj.updateDynamic("Options")(__v.asInstanceOf[js.Any]))
+      SourceLocationArn.foreach(__v => __obj.updateDynamic("SourceLocationArn")(__v.asInstanceOf[js.Any]))
+      SourceNetworkInterfaceArns.foreach(
+        __v => __obj.updateDynamic("SourceNetworkInterfaceArns")(__v.asInstanceOf[js.Any])
+      )
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TaskArn.foreach(__v => __obj.updateDynamic("TaskArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTaskResponse]
     }
   }
@@ -982,7 +984,7 @@ package datasync {
         SecurityGroupArns: Ec2SecurityGroupArnList,
         SubnetArn: Ec2SubnetArn
     ): Ec2Config = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SecurityGroupArns" -> SecurityGroupArns.asInstanceOf[js.Any],
         "SubnetArn"         -> SubnetArn.asInstanceOf[js.Any]
       )
@@ -1012,9 +1014,9 @@ package datasync {
         FilterType: js.UndefOr[FilterType] = js.undefined,
         Value: js.UndefOr[FilterValue] = js.undefined
     ): FilterRule = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FilterType.foreach(__v => __obj.update("FilterType", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FilterType.foreach(__v => __obj.updateDynamic("FilterType")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FilterRule]
     }
   }
@@ -1045,9 +1047,9 @@ package datasync {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListAgentsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAgentsRequest]
     }
   }
@@ -1063,9 +1065,9 @@ package datasync {
         Agents: js.UndefOr[AgentList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListAgentsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Agents.foreach(__v => __obj.update("Agents", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Agents.foreach(__v => __obj.updateDynamic("Agents")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAgentsResponse]
     }
   }
@@ -1081,9 +1083,9 @@ package datasync {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListLocationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListLocationsRequest]
     }
   }
@@ -1099,9 +1101,9 @@ package datasync {
         Locations: js.UndefOr[LocationList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListLocationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Locations.foreach(__v => __obj.update("Locations", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Locations.foreach(__v => __obj.updateDynamic("Locations")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListLocationsResponse]
     }
   }
@@ -1119,12 +1121,12 @@ package datasync {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListTagsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -1140,9 +1142,9 @@ package datasync {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsForResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
@@ -1163,10 +1165,10 @@ package datasync {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         TaskArn: js.UndefOr[TaskArn] = js.undefined
     ): ListTaskExecutionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      TaskArn.foreach(__v => __obj.update("TaskArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TaskArn.foreach(__v => __obj.updateDynamic("TaskArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTaskExecutionsRequest]
     }
   }
@@ -1182,9 +1184,9 @@ package datasync {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         TaskExecutions: js.UndefOr[TaskExecutionList] = js.undefined
     ): ListTaskExecutionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      TaskExecutions.foreach(__v => __obj.update("TaskExecutions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TaskExecutions.foreach(__v => __obj.updateDynamic("TaskExecutions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTaskExecutionsResponse]
     }
   }
@@ -1200,9 +1202,9 @@ package datasync {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListTasksRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTasksRequest]
     }
   }
@@ -1218,9 +1220,9 @@ package datasync {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Tasks: js.UndefOr[TaskList] = js.undefined
     ): ListTasksResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Tasks.foreach(__v => __obj.update("Tasks", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Tasks.foreach(__v => __obj.updateDynamic("Tasks")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTasksResponse]
     }
   }
@@ -1239,9 +1241,9 @@ package datasync {
         LocationArn: js.UndefOr[LocationArn] = js.undefined,
         LocationUri: js.UndefOr[LocationUri] = js.undefined
     ): LocationListEntry = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LocationArn.foreach(__v => __obj.update("LocationArn", __v.asInstanceOf[js.Any]))
-      LocationUri.foreach(__v => __obj.update("LocationUri", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
+      LocationUri.foreach(__v => __obj.updateDynamic("LocationUri")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LocationListEntry]
     }
   }
@@ -1265,8 +1267,8 @@ package datasync {
     def apply(
         Version: js.UndefOr[NfsVersion] = js.undefined
     ): NfsMountOptions = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NfsMountOptions]
     }
   }
@@ -1292,7 +1294,7 @@ package datasync {
     def apply(
         AgentArns: AgentArnList
     ): OnPremConfig = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AgentArns" -> AgentArns.asInstanceOf[js.Any]
       )
 
@@ -1329,16 +1331,16 @@ package datasync {
         Uid: js.UndefOr[Uid] = js.undefined,
         VerifyMode: js.UndefOr[VerifyMode] = js.undefined
     ): Options = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Atime.foreach(__v => __obj.update("Atime", __v.asInstanceOf[js.Any]))
-      BytesPerSecond.foreach(__v => __obj.update("BytesPerSecond", __v.asInstanceOf[js.Any]))
-      Gid.foreach(__v => __obj.update("Gid", __v.asInstanceOf[js.Any]))
-      Mtime.foreach(__v => __obj.update("Mtime", __v.asInstanceOf[js.Any]))
-      PosixPermissions.foreach(__v => __obj.update("PosixPermissions", __v.asInstanceOf[js.Any]))
-      PreserveDeletedFiles.foreach(__v => __obj.update("PreserveDeletedFiles", __v.asInstanceOf[js.Any]))
-      PreserveDevices.foreach(__v => __obj.update("PreserveDevices", __v.asInstanceOf[js.Any]))
-      Uid.foreach(__v => __obj.update("Uid", __v.asInstanceOf[js.Any]))
-      VerifyMode.foreach(__v => __obj.update("VerifyMode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Atime.foreach(__v => __obj.updateDynamic("Atime")(__v.asInstanceOf[js.Any]))
+      BytesPerSecond.foreach(__v => __obj.updateDynamic("BytesPerSecond")(__v.asInstanceOf[js.Any]))
+      Gid.foreach(__v => __obj.updateDynamic("Gid")(__v.asInstanceOf[js.Any]))
+      Mtime.foreach(__v => __obj.updateDynamic("Mtime")(__v.asInstanceOf[js.Any]))
+      PosixPermissions.foreach(__v => __obj.updateDynamic("PosixPermissions")(__v.asInstanceOf[js.Any]))
+      PreserveDeletedFiles.foreach(__v => __obj.updateDynamic("PreserveDeletedFiles")(__v.asInstanceOf[js.Any]))
+      PreserveDevices.foreach(__v => __obj.updateDynamic("PreserveDevices")(__v.asInstanceOf[js.Any]))
+      Uid.foreach(__v => __obj.updateDynamic("Uid")(__v.asInstanceOf[js.Any]))
+      VerifyMode.foreach(__v => __obj.updateDynamic("VerifyMode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Options]
     }
   }
@@ -1391,11 +1393,11 @@ package datasync {
         SubnetArns: js.UndefOr[PLSubnetArnList] = js.undefined,
         VpcEndpointId: js.UndefOr[VpcEndpointId] = js.undefined
     ): PrivateLinkConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PrivateLinkEndpoint.foreach(__v => __obj.update("PrivateLinkEndpoint", __v.asInstanceOf[js.Any]))
-      SecurityGroupArns.foreach(__v => __obj.update("SecurityGroupArns", __v.asInstanceOf[js.Any]))
-      SubnetArns.foreach(__v => __obj.update("SubnetArns", __v.asInstanceOf[js.Any]))
-      VpcEndpointId.foreach(__v => __obj.update("VpcEndpointId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PrivateLinkEndpoint.foreach(__v => __obj.updateDynamic("PrivateLinkEndpoint")(__v.asInstanceOf[js.Any]))
+      SecurityGroupArns.foreach(__v => __obj.updateDynamic("SecurityGroupArns")(__v.asInstanceOf[js.Any]))
+      SubnetArns.foreach(__v => __obj.updateDynamic("SubnetArns")(__v.asInstanceOf[js.Any]))
+      VpcEndpointId.foreach(__v => __obj.updateDynamic("VpcEndpointId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PrivateLinkConfig]
     }
   }
@@ -1413,7 +1415,7 @@ package datasync {
     def apply(
         BucketAccessRoleArn: IamRoleArn
     ): S3Config = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BucketAccessRoleArn" -> BucketAccessRoleArn.asInstanceOf[js.Any]
       )
 
@@ -1433,8 +1435,8 @@ package datasync {
     def apply(
         Version: js.UndefOr[SmbVersion] = js.undefined
     ): SmbMountOptions = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SmbMountOptions]
     }
   }
@@ -1460,12 +1462,12 @@ package datasync {
         Includes: js.UndefOr[FilterList] = js.undefined,
         OverrideOptions: js.UndefOr[Options] = js.undefined
     ): StartTaskExecutionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TaskArn" -> TaskArn.asInstanceOf[js.Any]
       )
 
-      Includes.foreach(__v => __obj.update("Includes", __v.asInstanceOf[js.Any]))
-      OverrideOptions.foreach(__v => __obj.update("OverrideOptions", __v.asInstanceOf[js.Any]))
+      Includes.foreach(__v => __obj.updateDynamic("Includes")(__v.asInstanceOf[js.Any]))
+      OverrideOptions.foreach(__v => __obj.updateDynamic("OverrideOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartTaskExecutionRequest]
     }
   }
@@ -1479,8 +1481,8 @@ package datasync {
     def apply(
         TaskExecutionArn: js.UndefOr[TaskExecutionArn] = js.undefined
     ): StartTaskExecutionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TaskExecutionArn.foreach(__v => __obj.update("TaskExecutionArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TaskExecutionArn.foreach(__v => __obj.updateDynamic("TaskExecutionArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartTaskExecutionResponse]
     }
   }
@@ -1499,11 +1501,11 @@ package datasync {
         Key: TagKey,
         Value: js.UndefOr[TagValue] = js.undefined
     ): TagListEntry = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key" -> Key.asInstanceOf[js.Any]
       )
 
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TagListEntry]
     }
   }
@@ -1519,7 +1521,7 @@ package datasync {
         ResourceArn: TaggableResourceArn,
         Tags: TagList
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
       )
@@ -1534,7 +1536,7 @@ package datasync {
   object TagResourceResponse {
     def apply(
         ): TagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -1554,9 +1556,9 @@ package datasync {
         Status: js.UndefOr[TaskExecutionStatus] = js.undefined,
         TaskExecutionArn: js.UndefOr[TaskExecutionArn] = js.undefined
     ): TaskExecutionListEntry = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      TaskExecutionArn.foreach(__v => __obj.update("TaskExecutionArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TaskExecutionArn.foreach(__v => __obj.updateDynamic("TaskExecutionArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TaskExecutionListEntry]
     }
   }
@@ -1587,15 +1589,15 @@ package datasync {
         VerifyDuration: js.UndefOr[Duration] = js.undefined,
         VerifyStatus: js.UndefOr[PhaseStatus] = js.undefined
     ): TaskExecutionResultDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
-      ErrorDetail.foreach(__v => __obj.update("ErrorDetail", __v.asInstanceOf[js.Any]))
-      PrepareDuration.foreach(__v => __obj.update("PrepareDuration", __v.asInstanceOf[js.Any]))
-      PrepareStatus.foreach(__v => __obj.update("PrepareStatus", __v.asInstanceOf[js.Any]))
-      TransferDuration.foreach(__v => __obj.update("TransferDuration", __v.asInstanceOf[js.Any]))
-      TransferStatus.foreach(__v => __obj.update("TransferStatus", __v.asInstanceOf[js.Any]))
-      VerifyDuration.foreach(__v => __obj.update("VerifyDuration", __v.asInstanceOf[js.Any]))
-      VerifyStatus.foreach(__v => __obj.update("VerifyStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ErrorDetail.foreach(__v => __obj.updateDynamic("ErrorDetail")(__v.asInstanceOf[js.Any]))
+      PrepareDuration.foreach(__v => __obj.updateDynamic("PrepareDuration")(__v.asInstanceOf[js.Any]))
+      PrepareStatus.foreach(__v => __obj.updateDynamic("PrepareStatus")(__v.asInstanceOf[js.Any]))
+      TransferDuration.foreach(__v => __obj.updateDynamic("TransferDuration")(__v.asInstanceOf[js.Any]))
+      TransferStatus.foreach(__v => __obj.updateDynamic("TransferStatus")(__v.asInstanceOf[js.Any]))
+      VerifyDuration.foreach(__v => __obj.updateDynamic("VerifyDuration")(__v.asInstanceOf[js.Any]))
+      VerifyStatus.foreach(__v => __obj.updateDynamic("VerifyStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TaskExecutionResultDetail]
     }
   }
@@ -1627,10 +1629,10 @@ package datasync {
         Status: js.UndefOr[TaskStatus] = js.undefined,
         TaskArn: js.UndefOr[TaskArn] = js.undefined
     ): TaskListEntry = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      TaskArn.foreach(__v => __obj.update("TaskArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TaskArn.foreach(__v => __obj.updateDynamic("TaskArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TaskListEntry]
     }
   }
@@ -1664,7 +1666,7 @@ package datasync {
         Keys: TagKeyList,
         ResourceArn: TaggableResourceArn
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Keys"        -> Keys.asInstanceOf[js.Any],
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
@@ -1679,7 +1681,7 @@ package datasync {
   object UntagResourceResponse {
     def apply(
         ): UntagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -1696,11 +1698,11 @@ package datasync {
         AgentArn: AgentArn,
         Name: js.UndefOr[TagValue] = js.undefined
     ): UpdateAgentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AgentArn" -> AgentArn.asInstanceOf[js.Any]
       )
 
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAgentRequest]
     }
   }
@@ -1711,7 +1713,7 @@ package datasync {
   object UpdateAgentResponse {
     def apply(
         ): UpdateAgentResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateAgentResponse]
     }
@@ -1737,14 +1739,14 @@ package datasync {
         Name: js.UndefOr[TagValue] = js.undefined,
         Options: js.UndefOr[Options] = js.undefined
     ): UpdateTaskRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TaskArn" -> TaskArn.asInstanceOf[js.Any]
       )
 
-      CloudWatchLogGroupArn.foreach(__v => __obj.update("CloudWatchLogGroupArn", __v.asInstanceOf[js.Any]))
-      Excludes.foreach(__v => __obj.update("Excludes", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Options.foreach(__v => __obj.update("Options", __v.asInstanceOf[js.Any]))
+      CloudWatchLogGroupArn.foreach(__v => __obj.updateDynamic("CloudWatchLogGroupArn")(__v.asInstanceOf[js.Any]))
+      Excludes.foreach(__v => __obj.updateDynamic("Excludes")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Options.foreach(__v => __obj.updateDynamic("Options")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateTaskRequest]
     }
   }
@@ -1755,7 +1757,7 @@ package datasync {
   object UpdateTaskResponse {
     def apply(
         ): UpdateTaskResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateTaskResponse]
     }

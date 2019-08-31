@@ -221,13 +221,13 @@ package worklink {
         FleetArn: FleetArn,
         DisplayName: js.UndefOr[DisplayName] = js.undefined
     ): AssociateDomainRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AcmCertificateArn" -> AcmCertificateArn.asInstanceOf[js.Any],
         "DomainName"        -> DomainName.asInstanceOf[js.Any],
         "FleetArn"          -> FleetArn.asInstanceOf[js.Any]
       )
 
-      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateDomainRequest]
     }
   }
@@ -238,7 +238,7 @@ package worklink {
   object AssociateDomainResponse {
     def apply(
         ): AssociateDomainResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateDomainResponse]
     }
@@ -257,12 +257,12 @@ package worklink {
         FleetArn: FleetArn,
         DomainName: js.UndefOr[DomainName] = js.undefined
     ): AssociateWebsiteAuthorizationProviderRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AuthorizationProviderType" -> AuthorizationProviderType.asInstanceOf[js.Any],
         "FleetArn"                  -> FleetArn.asInstanceOf[js.Any]
       )
 
-      DomainName.foreach(__v => __obj.update("DomainName", __v.asInstanceOf[js.Any]))
+      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateWebsiteAuthorizationProviderRequest]
     }
   }
@@ -276,8 +276,8 @@ package worklink {
     def apply(
         AuthorizationProviderId: js.UndefOr[Id] = js.undefined
     ): AssociateWebsiteAuthorizationProviderResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AuthorizationProviderId.foreach(__v => __obj.update("AuthorizationProviderId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AuthorizationProviderId.foreach(__v => __obj.updateDynamic("AuthorizationProviderId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateWebsiteAuthorizationProviderResponse]
     }
   }
@@ -295,12 +295,12 @@ package worklink {
         FleetArn: FleetArn,
         DisplayName: js.UndefOr[DisplayName] = js.undefined
     ): AssociateWebsiteCertificateAuthorityRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Certificate" -> Certificate.asInstanceOf[js.Any],
         "FleetArn"    -> FleetArn.asInstanceOf[js.Any]
       )
 
-      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateWebsiteCertificateAuthorityRequest]
     }
   }
@@ -314,8 +314,8 @@ package worklink {
     def apply(
         WebsiteCaId: js.UndefOr[Id] = js.undefined
     ): AssociateWebsiteCertificateAuthorityResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      WebsiteCaId.foreach(__v => __obj.update("WebsiteCaId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      WebsiteCaId.foreach(__v => __obj.updateDynamic("WebsiteCaId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateWebsiteCertificateAuthorityResponse]
     }
   }
@@ -339,12 +339,14 @@ package worklink {
         DisplayName: js.UndefOr[DisplayName] = js.undefined,
         OptimizeForEndUserLocation: js.UndefOr[Boolean] = js.undefined
     ): CreateFleetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetName" -> FleetName.asInstanceOf[js.Any]
       )
 
-      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
-      OptimizeForEndUserLocation.foreach(__v => __obj.update("OptimizeForEndUserLocation", __v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
+      OptimizeForEndUserLocation.foreach(
+        __v => __obj.updateDynamic("OptimizeForEndUserLocation")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[CreateFleetRequest]
     }
   }
@@ -358,8 +360,8 @@ package worklink {
     def apply(
         FleetArn: js.UndefOr[FleetArn] = js.undefined
     ): CreateFleetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FleetArn.foreach(__v => __obj.update("FleetArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FleetArn.foreach(__v => __obj.updateDynamic("FleetArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFleetResponse]
     }
   }
@@ -373,7 +375,7 @@ package worklink {
     def apply(
         FleetArn: FleetArn
     ): DeleteFleetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
 
@@ -387,7 +389,7 @@ package worklink {
   object DeleteFleetResponse {
     def apply(
         ): DeleteFleetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteFleetResponse]
     }
@@ -402,7 +404,7 @@ package worklink {
     def apply(
         FleetArn: FleetArn
     ): DescribeAuditStreamConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
 
@@ -419,8 +421,8 @@ package worklink {
     def apply(
         AuditStreamArn: js.UndefOr[AuditStreamArn] = js.undefined
     ): DescribeAuditStreamConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AuditStreamArn.foreach(__v => __obj.update("AuditStreamArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AuditStreamArn.foreach(__v => __obj.updateDynamic("AuditStreamArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAuditStreamConfigurationResponse]
     }
   }
@@ -434,7 +436,7 @@ package worklink {
     def apply(
         FleetArn: FleetArn
     ): DescribeCompanyNetworkConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
 
@@ -455,10 +457,10 @@ package worklink {
         SubnetIds: js.UndefOr[SubnetIds] = js.undefined,
         VpcId: js.UndefOr[VpcId] = js.undefined
     ): DescribeCompanyNetworkConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SecurityGroupIds.foreach(__v => __obj.update("SecurityGroupIds", __v.asInstanceOf[js.Any]))
-      SubnetIds.foreach(__v => __obj.update("SubnetIds", __v.asInstanceOf[js.Any]))
-      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeCompanyNetworkConfigurationResponse]
     }
   }
@@ -472,7 +474,7 @@ package worklink {
     def apply(
         FleetArn: FleetArn
     ): DescribeDevicePolicyConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
 
@@ -489,8 +491,8 @@ package worklink {
     def apply(
         DeviceCaCertificate: js.UndefOr[Certificate] = js.undefined
     ): DescribeDevicePolicyConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DeviceCaCertificate.foreach(__v => __obj.update("DeviceCaCertificate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DeviceCaCertificate.foreach(__v => __obj.updateDynamic("DeviceCaCertificate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDevicePolicyConfigurationResponse]
     }
   }
@@ -506,7 +508,7 @@ package worklink {
         DeviceId: Id,
         FleetArn: FleetArn
     ): DescribeDeviceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DeviceId" -> DeviceId.asInstanceOf[js.Any],
         "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
@@ -540,16 +542,16 @@ package worklink {
         Status: js.UndefOr[DeviceStatus] = js.undefined,
         Username: js.UndefOr[Username] = js.undefined
     ): DescribeDeviceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FirstAccessedTime.foreach(__v => __obj.update("FirstAccessedTime", __v.asInstanceOf[js.Any]))
-      LastAccessedTime.foreach(__v => __obj.update("LastAccessedTime", __v.asInstanceOf[js.Any]))
-      Manufacturer.foreach(__v => __obj.update("Manufacturer", __v.asInstanceOf[js.Any]))
-      Model.foreach(__v => __obj.update("Model", __v.asInstanceOf[js.Any]))
-      OperatingSystem.foreach(__v => __obj.update("OperatingSystem", __v.asInstanceOf[js.Any]))
-      OperatingSystemVersion.foreach(__v => __obj.update("OperatingSystemVersion", __v.asInstanceOf[js.Any]))
-      PatchLevel.foreach(__v => __obj.update("PatchLevel", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      Username.foreach(__v => __obj.update("Username", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FirstAccessedTime.foreach(__v => __obj.updateDynamic("FirstAccessedTime")(__v.asInstanceOf[js.Any]))
+      LastAccessedTime.foreach(__v => __obj.updateDynamic("LastAccessedTime")(__v.asInstanceOf[js.Any]))
+      Manufacturer.foreach(__v => __obj.updateDynamic("Manufacturer")(__v.asInstanceOf[js.Any]))
+      Model.foreach(__v => __obj.updateDynamic("Model")(__v.asInstanceOf[js.Any]))
+      OperatingSystem.foreach(__v => __obj.updateDynamic("OperatingSystem")(__v.asInstanceOf[js.Any]))
+      OperatingSystemVersion.foreach(__v => __obj.updateDynamic("OperatingSystemVersion")(__v.asInstanceOf[js.Any]))
+      PatchLevel.foreach(__v => __obj.updateDynamic("PatchLevel")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDeviceResponse]
     }
   }
@@ -565,7 +567,7 @@ package worklink {
         DomainName: DomainName,
         FleetArn: FleetArn
     ): DescribeDomainRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "FleetArn"   -> FleetArn.asInstanceOf[js.Any]
       )
@@ -591,12 +593,12 @@ package worklink {
         DomainName: js.UndefOr[DomainName] = js.undefined,
         DomainStatus: js.UndefOr[DomainStatus] = js.undefined
     ): DescribeDomainResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AcmCertificateArn.foreach(__v => __obj.update("AcmCertificateArn", __v.asInstanceOf[js.Any]))
-      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
-      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
-      DomainName.foreach(__v => __obj.update("DomainName", __v.asInstanceOf[js.Any]))
-      DomainStatus.foreach(__v => __obj.update("DomainStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AcmCertificateArn.foreach(__v => __obj.updateDynamic("AcmCertificateArn")(__v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
+      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
+      DomainStatus.foreach(__v => __obj.updateDynamic("DomainStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDomainResponse]
     }
   }
@@ -610,7 +612,7 @@ package worklink {
     def apply(
         FleetArn: FleetArn
     ): DescribeFleetMetadataRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
 
@@ -639,14 +641,16 @@ package worklink {
         LastUpdatedTime: js.UndefOr[DateTime] = js.undefined,
         OptimizeForEndUserLocation: js.UndefOr[Boolean] = js.undefined
     ): DescribeFleetMetadataResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CompanyCode.foreach(__v => __obj.update("CompanyCode", __v.asInstanceOf[js.Any]))
-      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
-      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
-      FleetName.foreach(__v => __obj.update("FleetName", __v.asInstanceOf[js.Any]))
-      FleetStatus.foreach(__v => __obj.update("FleetStatus", __v.asInstanceOf[js.Any]))
-      LastUpdatedTime.foreach(__v => __obj.update("LastUpdatedTime", __v.asInstanceOf[js.Any]))
-      OptimizeForEndUserLocation.foreach(__v => __obj.update("OptimizeForEndUserLocation", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CompanyCode.foreach(__v => __obj.updateDynamic("CompanyCode")(__v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
+      FleetName.foreach(__v => __obj.updateDynamic("FleetName")(__v.asInstanceOf[js.Any]))
+      FleetStatus.foreach(__v => __obj.updateDynamic("FleetStatus")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      OptimizeForEndUserLocation.foreach(
+        __v => __obj.updateDynamic("OptimizeForEndUserLocation")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[DescribeFleetMetadataResponse]
     }
   }
@@ -660,7 +664,7 @@ package worklink {
     def apply(
         FleetArn: FleetArn
     ): DescribeIdentityProviderConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
 
@@ -681,12 +685,14 @@ package worklink {
         IdentityProviderType: js.UndefOr[IdentityProviderType] = js.undefined,
         ServiceProviderSamlMetadata: js.UndefOr[SamlMetadata] = js.undefined
     ): DescribeIdentityProviderConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       IdentityProviderSamlMetadata.foreach(
-        __v => __obj.update("IdentityProviderSamlMetadata", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("IdentityProviderSamlMetadata")(__v.asInstanceOf[js.Any])
       )
-      IdentityProviderType.foreach(__v => __obj.update("IdentityProviderType", __v.asInstanceOf[js.Any]))
-      ServiceProviderSamlMetadata.foreach(__v => __obj.update("ServiceProviderSamlMetadata", __v.asInstanceOf[js.Any]))
+      IdentityProviderType.foreach(__v => __obj.updateDynamic("IdentityProviderType")(__v.asInstanceOf[js.Any]))
+      ServiceProviderSamlMetadata.foreach(
+        __v => __obj.updateDynamic("ServiceProviderSamlMetadata")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[DescribeIdentityProviderConfigurationResponse]
     }
   }
@@ -702,7 +708,7 @@ package worklink {
         FleetArn: FleetArn,
         WebsiteCaId: Id
     ): DescribeWebsiteCertificateAuthorityRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetArn"    -> FleetArn.asInstanceOf[js.Any],
         "WebsiteCaId" -> WebsiteCaId.asInstanceOf[js.Any]
       )
@@ -724,10 +730,10 @@ package worklink {
         CreatedTime: js.UndefOr[DateTime] = js.undefined,
         DisplayName: js.UndefOr[DisplayName] = js.undefined
     ): DescribeWebsiteCertificateAuthorityResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Certificate.foreach(__v => __obj.update("Certificate", __v.asInstanceOf[js.Any]))
-      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
-      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeWebsiteCertificateAuthorityResponse]
     }
   }
@@ -753,9 +759,9 @@ package worklink {
         DeviceId: js.UndefOr[Id] = js.undefined,
         DeviceStatus: js.UndefOr[DeviceStatus] = js.undefined
     ): DeviceSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DeviceId.foreach(__v => __obj.update("DeviceId", __v.asInstanceOf[js.Any]))
-      DeviceStatus.foreach(__v => __obj.update("DeviceStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DeviceId.foreach(__v => __obj.updateDynamic("DeviceId")(__v.asInstanceOf[js.Any]))
+      DeviceStatus.foreach(__v => __obj.updateDynamic("DeviceStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeviceSummary]
     }
   }
@@ -771,7 +777,7 @@ package worklink {
         DomainName: DomainName,
         FleetArn: FleetArn
     ): DisassociateDomainRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "FleetArn"   -> FleetArn.asInstanceOf[js.Any]
       )
@@ -786,7 +792,7 @@ package worklink {
   object DisassociateDomainResponse {
     def apply(
         ): DisassociateDomainResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateDomainResponse]
     }
@@ -803,7 +809,7 @@ package worklink {
         AuthorizationProviderId: Id,
         FleetArn: FleetArn
     ): DisassociateWebsiteAuthorizationProviderRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AuthorizationProviderId" -> AuthorizationProviderId.asInstanceOf[js.Any],
         "FleetArn"                -> FleetArn.asInstanceOf[js.Any]
       )
@@ -818,7 +824,7 @@ package worklink {
   object DisassociateWebsiteAuthorizationProviderResponse {
     def apply(
         ): DisassociateWebsiteAuthorizationProviderResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateWebsiteAuthorizationProviderResponse]
     }
@@ -835,7 +841,7 @@ package worklink {
         FleetArn: FleetArn,
         WebsiteCaId: Id
     ): DisassociateWebsiteCertificateAuthorityRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetArn"    -> FleetArn.asInstanceOf[js.Any],
         "WebsiteCaId" -> WebsiteCaId.asInstanceOf[js.Any]
       )
@@ -850,7 +856,7 @@ package worklink {
   object DisassociateWebsiteCertificateAuthorityResponse {
     def apply(
         ): DisassociateWebsiteCertificateAuthorityResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateWebsiteCertificateAuthorityResponse]
     }
@@ -898,13 +904,13 @@ package worklink {
         DomainStatus: DomainStatus,
         DisplayName: js.UndefOr[DisplayName] = js.undefined
     ): DomainSummary = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CreatedTime"  -> CreatedTime.asInstanceOf[js.Any],
         "DomainName"   -> DomainName.asInstanceOf[js.Any],
         "DomainStatus" -> DomainStatus.asInstanceOf[js.Any]
       )
 
-      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainSummary]
     }
   }
@@ -944,14 +950,14 @@ package worklink {
         FleetStatus: js.UndefOr[FleetStatus] = js.undefined,
         LastUpdatedTime: js.UndefOr[DateTime] = js.undefined
     ): FleetSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CompanyCode.foreach(__v => __obj.update("CompanyCode", __v.asInstanceOf[js.Any]))
-      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
-      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
-      FleetArn.foreach(__v => __obj.update("FleetArn", __v.asInstanceOf[js.Any]))
-      FleetName.foreach(__v => __obj.update("FleetName", __v.asInstanceOf[js.Any]))
-      FleetStatus.foreach(__v => __obj.update("FleetStatus", __v.asInstanceOf[js.Any]))
-      LastUpdatedTime.foreach(__v => __obj.update("LastUpdatedTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CompanyCode.foreach(__v => __obj.updateDynamic("CompanyCode")(__v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
+      FleetArn.foreach(__v => __obj.updateDynamic("FleetArn")(__v.asInstanceOf[js.Any]))
+      FleetName.foreach(__v => __obj.updateDynamic("FleetName")(__v.asInstanceOf[js.Any]))
+      FleetStatus.foreach(__v => __obj.updateDynamic("FleetStatus")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FleetSummary]
     }
   }
@@ -975,12 +981,12 @@ package worklink {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDevicesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDevicesRequest]
     }
   }
@@ -996,9 +1002,9 @@ package worklink {
         Devices: js.UndefOr[DeviceSummaryList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDevicesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Devices.foreach(__v => __obj.update("Devices", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Devices.foreach(__v => __obj.updateDynamic("Devices")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDevicesResponse]
     }
   }
@@ -1016,12 +1022,12 @@ package worklink {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDomainsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDomainsRequest]
     }
   }
@@ -1037,9 +1043,9 @@ package worklink {
         Domains: js.UndefOr[DomainSummaryList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDomainsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Domains.foreach(__v => __obj.update("Domains", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Domains.foreach(__v => __obj.updateDynamic("Domains")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDomainsResponse]
     }
   }
@@ -1055,9 +1061,9 @@ package worklink {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListFleetsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFleetsRequest]
     }
   }
@@ -1073,9 +1079,9 @@ package worklink {
         FleetSummaryList: js.UndefOr[FleetSummaryList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListFleetsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FleetSummaryList.foreach(__v => __obj.update("FleetSummaryList", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FleetSummaryList.foreach(__v => __obj.updateDynamic("FleetSummaryList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFleetsResponse]
     }
   }
@@ -1093,12 +1099,12 @@ package worklink {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListWebsiteAuthorizationProvidersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListWebsiteAuthorizationProvidersRequest]
     }
   }
@@ -1114,10 +1120,10 @@ package worklink {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         WebsiteAuthorizationProviders: js.UndefOr[WebsiteAuthorizationProvidersSummaryList] = js.undefined
     ): ListWebsiteAuthorizationProvidersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       WebsiteAuthorizationProviders.foreach(
-        __v => __obj.update("WebsiteAuthorizationProviders", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("WebsiteAuthorizationProviders")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListWebsiteAuthorizationProvidersResponse]
     }
@@ -1136,12 +1142,12 @@ package worklink {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListWebsiteCertificateAuthoritiesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListWebsiteCertificateAuthoritiesRequest]
     }
   }
@@ -1157,10 +1163,10 @@ package worklink {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         WebsiteCertificateAuthorities: js.UndefOr[WebsiteCaSummaryList] = js.undefined
     ): ListWebsiteCertificateAuthoritiesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       WebsiteCertificateAuthorities.foreach(
-        __v => __obj.update("WebsiteCertificateAuthorities", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("WebsiteCertificateAuthorities")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListWebsiteCertificateAuthoritiesResponse]
     }
@@ -1177,7 +1183,7 @@ package worklink {
         DomainName: DomainName,
         FleetArn: FleetArn
     ): RestoreDomainAccessRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "FleetArn"   -> FleetArn.asInstanceOf[js.Any]
       )
@@ -1192,7 +1198,7 @@ package worklink {
   object RestoreDomainAccessResponse {
     def apply(
         ): RestoreDomainAccessResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RestoreDomainAccessResponse]
     }
@@ -1209,7 +1215,7 @@ package worklink {
         DomainName: DomainName,
         FleetArn: FleetArn
     ): RevokeDomainAccessRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "FleetArn"   -> FleetArn.asInstanceOf[js.Any]
       )
@@ -1224,7 +1230,7 @@ package worklink {
   object RevokeDomainAccessResponse {
     def apply(
         ): RevokeDomainAccessResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RevokeDomainAccessResponse]
     }
@@ -1241,7 +1247,7 @@ package worklink {
         FleetArn: FleetArn,
         Username: Username
     ): SignOutUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetArn" -> FleetArn.asInstanceOf[js.Any],
         "Username" -> Username.asInstanceOf[js.Any]
       )
@@ -1256,7 +1262,7 @@ package worklink {
   object SignOutUserResponse {
     def apply(
         ): SignOutUserResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SignOutUserResponse]
     }
@@ -1273,11 +1279,11 @@ package worklink {
         FleetArn: FleetArn,
         AuditStreamArn: js.UndefOr[AuditStreamArn] = js.undefined
     ): UpdateAuditStreamConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
 
-      AuditStreamArn.foreach(__v => __obj.update("AuditStreamArn", __v.asInstanceOf[js.Any]))
+      AuditStreamArn.foreach(__v => __obj.updateDynamic("AuditStreamArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAuditStreamConfigurationRequest]
     }
   }
@@ -1288,7 +1294,7 @@ package worklink {
   object UpdateAuditStreamConfigurationResponse {
     def apply(
         ): UpdateAuditStreamConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateAuditStreamConfigurationResponse]
     }
@@ -1309,7 +1315,7 @@ package worklink {
         SubnetIds: SubnetIds,
         VpcId: VpcId
     ): UpdateCompanyNetworkConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetArn"         -> FleetArn.asInstanceOf[js.Any],
         "SecurityGroupIds" -> SecurityGroupIds.asInstanceOf[js.Any],
         "SubnetIds"        -> SubnetIds.asInstanceOf[js.Any],
@@ -1326,7 +1332,7 @@ package worklink {
   object UpdateCompanyNetworkConfigurationResponse {
     def apply(
         ): UpdateCompanyNetworkConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateCompanyNetworkConfigurationResponse]
     }
@@ -1343,11 +1349,11 @@ package worklink {
         FleetArn: FleetArn,
         DeviceCaCertificate: js.UndefOr[CertificateChain] = js.undefined
     ): UpdateDevicePolicyConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
 
-      DeviceCaCertificate.foreach(__v => __obj.update("DeviceCaCertificate", __v.asInstanceOf[js.Any]))
+      DeviceCaCertificate.foreach(__v => __obj.updateDynamic("DeviceCaCertificate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDevicePolicyConfigurationRequest]
     }
   }
@@ -1358,7 +1364,7 @@ package worklink {
   object UpdateDevicePolicyConfigurationResponse {
     def apply(
         ): UpdateDevicePolicyConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateDevicePolicyConfigurationResponse]
     }
@@ -1377,12 +1383,12 @@ package worklink {
         FleetArn: FleetArn,
         DisplayName: js.UndefOr[DisplayName] = js.undefined
     ): UpdateDomainMetadataRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "FleetArn"   -> FleetArn.asInstanceOf[js.Any]
       )
 
-      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDomainMetadataRequest]
     }
   }
@@ -1393,7 +1399,7 @@ package worklink {
   object UpdateDomainMetadataResponse {
     def apply(
         ): UpdateDomainMetadataResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateDomainMetadataResponse]
     }
@@ -1412,12 +1418,14 @@ package worklink {
         DisplayName: js.UndefOr[DisplayName] = js.undefined,
         OptimizeForEndUserLocation: js.UndefOr[Boolean] = js.undefined
     ): UpdateFleetMetadataRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetArn" -> FleetArn.asInstanceOf[js.Any]
       )
 
-      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
-      OptimizeForEndUserLocation.foreach(__v => __obj.update("OptimizeForEndUserLocation", __v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
+      OptimizeForEndUserLocation.foreach(
+        __v => __obj.updateDynamic("OptimizeForEndUserLocation")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[UpdateFleetMetadataRequest]
     }
   }
@@ -1428,7 +1436,7 @@ package worklink {
   object UpdateFleetMetadataResponse {
     def apply(
         ): UpdateFleetMetadataResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateFleetMetadataResponse]
     }
@@ -1447,13 +1455,13 @@ package worklink {
         IdentityProviderType: IdentityProviderType,
         IdentityProviderSamlMetadata: js.UndefOr[SamlMetadata] = js.undefined
     ): UpdateIdentityProviderConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FleetArn"             -> FleetArn.asInstanceOf[js.Any],
         "IdentityProviderType" -> IdentityProviderType.asInstanceOf[js.Any]
       )
 
       IdentityProviderSamlMetadata.foreach(
-        __v => __obj.update("IdentityProviderSamlMetadata", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("IdentityProviderSamlMetadata")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateIdentityProviderConfigurationRequest]
     }
@@ -1465,7 +1473,7 @@ package worklink {
   object UpdateIdentityProviderConfigurationResponse {
     def apply(
         ): UpdateIdentityProviderConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateIdentityProviderConfigurationResponse]
     }
@@ -1489,13 +1497,13 @@ package worklink {
         CreatedTime: js.UndefOr[DateTime] = js.undefined,
         DomainName: js.UndefOr[DomainName] = js.undefined
     ): WebsiteAuthorizationProviderSummary = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AuthorizationProviderType" -> AuthorizationProviderType.asInstanceOf[js.Any]
       )
 
-      AuthorizationProviderId.foreach(__v => __obj.update("AuthorizationProviderId", __v.asInstanceOf[js.Any]))
-      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
-      DomainName.foreach(__v => __obj.update("DomainName", __v.asInstanceOf[js.Any]))
+      AuthorizationProviderId.foreach(__v => __obj.updateDynamic("AuthorizationProviderId")(__v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WebsiteAuthorizationProviderSummary]
     }
   }
@@ -1516,10 +1524,10 @@ package worklink {
         DisplayName: js.UndefOr[DisplayName] = js.undefined,
         WebsiteCaId: js.UndefOr[Id] = js.undefined
     ): WebsiteCaSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
-      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
-      WebsiteCaId.foreach(__v => __obj.update("WebsiteCaId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
+      WebsiteCaId.foreach(__v => __obj.updateDynamic("WebsiteCaId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WebsiteCaSummary]
     }
   }

@@ -117,13 +117,13 @@ package mediapackagevod {
         SourceArn: js.UndefOr[__string] = js.undefined,
         SourceRoleArn: js.UndefOr[__string] = js.undefined
     ): AssetShallow = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      PackagingGroupId.foreach(__v => __obj.update("PackagingGroupId", __v.asInstanceOf[js.Any]))
-      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
-      SourceArn.foreach(__v => __obj.update("SourceArn", __v.asInstanceOf[js.Any]))
-      SourceRoleArn.foreach(__v => __obj.update("SourceRoleArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      PackagingGroupId.foreach(__v => __obj.updateDynamic("PackagingGroupId")(__v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
+      SourceArn.foreach(__v => __obj.updateDynamic("SourceArn")(__v.asInstanceOf[js.Any]))
+      SourceRoleArn.foreach(__v => __obj.updateDynamic("SourceRoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssetShallow]
     }
   }
@@ -140,7 +140,7 @@ package mediapackagevod {
     def apply(
         SpekeKeyProvider: SpekeKeyProvider
     ): CmafEncryption = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SpekeKeyProvider" -> SpekeKeyProvider.asInstanceOf[js.Any]
       )
 
@@ -164,12 +164,12 @@ package mediapackagevod {
         Encryption: js.UndefOr[CmafEncryption] = js.undefined,
         SegmentDurationSeconds: js.UndefOr[__integer] = js.undefined
     ): CmafPackage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HlsManifests" -> HlsManifests.asInstanceOf[js.Any]
       )
 
-      Encryption.foreach(__v => __obj.update("Encryption", __v.asInstanceOf[js.Any]))
-      SegmentDurationSeconds.foreach(__v => __obj.update("SegmentDurationSeconds", __v.asInstanceOf[js.Any]))
+      Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
+      SegmentDurationSeconds.foreach(__v => __obj.updateDynamic("SegmentDurationSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CmafPackage]
     }
   }
@@ -194,14 +194,14 @@ package mediapackagevod {
         SourceRoleArn: __string,
         ResourceId: js.UndefOr[__string] = js.undefined
     ): CreateAssetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id"               -> Id.asInstanceOf[js.Any],
         "PackagingGroupId" -> PackagingGroupId.asInstanceOf[js.Any],
         "SourceArn"        -> SourceArn.asInstanceOf[js.Any],
         "SourceRoleArn"    -> SourceRoleArn.asInstanceOf[js.Any]
       )
 
-      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAssetRequest]
     }
   }
@@ -227,14 +227,14 @@ package mediapackagevod {
         SourceArn: js.UndefOr[__string] = js.undefined,
         SourceRoleArn: js.UndefOr[__string] = js.undefined
     ): CreateAssetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      EgressEndpoints.foreach(__v => __obj.update("EgressEndpoints", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      PackagingGroupId.foreach(__v => __obj.update("PackagingGroupId", __v.asInstanceOf[js.Any]))
-      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
-      SourceArn.foreach(__v => __obj.update("SourceArn", __v.asInstanceOf[js.Any]))
-      SourceRoleArn.foreach(__v => __obj.update("SourceRoleArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      EgressEndpoints.foreach(__v => __obj.updateDynamic("EgressEndpoints")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      PackagingGroupId.foreach(__v => __obj.updateDynamic("PackagingGroupId")(__v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
+      SourceArn.foreach(__v => __obj.updateDynamic("SourceArn")(__v.asInstanceOf[js.Any]))
+      SourceRoleArn.foreach(__v => __obj.updateDynamic("SourceRoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAssetResponse]
     }
   }
@@ -261,15 +261,15 @@ package mediapackagevod {
         HlsPackage: js.UndefOr[HlsPackage] = js.undefined,
         MssPackage: js.UndefOr[MssPackage] = js.undefined
     ): CreatePackagingConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id"               -> Id.asInstanceOf[js.Any],
         "PackagingGroupId" -> PackagingGroupId.asInstanceOf[js.Any]
       )
 
-      CmafPackage.foreach(__v => __obj.update("CmafPackage", __v.asInstanceOf[js.Any]))
-      DashPackage.foreach(__v => __obj.update("DashPackage", __v.asInstanceOf[js.Any]))
-      HlsPackage.foreach(__v => __obj.update("HlsPackage", __v.asInstanceOf[js.Any]))
-      MssPackage.foreach(__v => __obj.update("MssPackage", __v.asInstanceOf[js.Any]))
+      CmafPackage.foreach(__v => __obj.updateDynamic("CmafPackage")(__v.asInstanceOf[js.Any]))
+      DashPackage.foreach(__v => __obj.updateDynamic("DashPackage")(__v.asInstanceOf[js.Any]))
+      HlsPackage.foreach(__v => __obj.updateDynamic("HlsPackage")(__v.asInstanceOf[js.Any]))
+      MssPackage.foreach(__v => __obj.updateDynamic("MssPackage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePackagingConfigurationRequest]
     }
   }
@@ -295,14 +295,14 @@ package mediapackagevod {
         MssPackage: js.UndefOr[MssPackage] = js.undefined,
         PackagingGroupId: js.UndefOr[__string] = js.undefined
     ): CreatePackagingConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CmafPackage.foreach(__v => __obj.update("CmafPackage", __v.asInstanceOf[js.Any]))
-      DashPackage.foreach(__v => __obj.update("DashPackage", __v.asInstanceOf[js.Any]))
-      HlsPackage.foreach(__v => __obj.update("HlsPackage", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      MssPackage.foreach(__v => __obj.update("MssPackage", __v.asInstanceOf[js.Any]))
-      PackagingGroupId.foreach(__v => __obj.update("PackagingGroupId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CmafPackage.foreach(__v => __obj.updateDynamic("CmafPackage")(__v.asInstanceOf[js.Any]))
+      DashPackage.foreach(__v => __obj.updateDynamic("DashPackage")(__v.asInstanceOf[js.Any]))
+      HlsPackage.foreach(__v => __obj.updateDynamic("HlsPackage")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      MssPackage.foreach(__v => __obj.updateDynamic("MssPackage")(__v.asInstanceOf[js.Any]))
+      PackagingGroupId.foreach(__v => __obj.updateDynamic("PackagingGroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePackagingConfigurationResponse]
     }
   }
@@ -319,7 +319,7 @@ package mediapackagevod {
     def apply(
         Id: __string
     ): CreatePackagingGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
@@ -338,9 +338,9 @@ package mediapackagevod {
         Arn: js.UndefOr[__string] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined
     ): CreatePackagingGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePackagingGroupResponse]
     }
   }
@@ -357,7 +357,7 @@ package mediapackagevod {
     def apply(
         SpekeKeyProvider: SpekeKeyProvider
     ): DashEncryption = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SpekeKeyProvider" -> SpekeKeyProvider.asInstanceOf[js.Any]
       )
 
@@ -383,11 +383,11 @@ package mediapackagevod {
         Profile: js.UndefOr[Profile] = js.undefined,
         StreamSelection: js.UndefOr[StreamSelection] = js.undefined
     ): DashManifest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ManifestName.foreach(__v => __obj.update("ManifestName", __v.asInstanceOf[js.Any]))
-      MinBufferTimeSeconds.foreach(__v => __obj.update("MinBufferTimeSeconds", __v.asInstanceOf[js.Any]))
-      Profile.foreach(__v => __obj.update("Profile", __v.asInstanceOf[js.Any]))
-      StreamSelection.foreach(__v => __obj.update("StreamSelection", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ManifestName.foreach(__v => __obj.updateDynamic("ManifestName")(__v.asInstanceOf[js.Any]))
+      MinBufferTimeSeconds.foreach(__v => __obj.updateDynamic("MinBufferTimeSeconds")(__v.asInstanceOf[js.Any]))
+      Profile.foreach(__v => __obj.updateDynamic("Profile")(__v.asInstanceOf[js.Any]))
+      StreamSelection.foreach(__v => __obj.updateDynamic("StreamSelection")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DashManifest]
     }
   }
@@ -408,12 +408,12 @@ package mediapackagevod {
         Encryption: js.UndefOr[DashEncryption] = js.undefined,
         SegmentDurationSeconds: js.UndefOr[__integer] = js.undefined
     ): DashPackage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DashManifests" -> DashManifests.asInstanceOf[js.Any]
       )
 
-      Encryption.foreach(__v => __obj.update("Encryption", __v.asInstanceOf[js.Any]))
-      SegmentDurationSeconds.foreach(__v => __obj.update("SegmentDurationSeconds", __v.asInstanceOf[js.Any]))
+      Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
+      SegmentDurationSeconds.foreach(__v => __obj.updateDynamic("SegmentDurationSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DashPackage]
     }
   }
@@ -427,7 +427,7 @@ package mediapackagevod {
     def apply(
         Id: __string
     ): DeleteAssetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
@@ -441,7 +441,7 @@ package mediapackagevod {
   object DeleteAssetResponse {
     def apply(
         ): DeleteAssetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteAssetResponse]
     }
@@ -456,7 +456,7 @@ package mediapackagevod {
     def apply(
         Id: __string
     ): DeletePackagingConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
@@ -470,7 +470,7 @@ package mediapackagevod {
   object DeletePackagingConfigurationResponse {
     def apply(
         ): DeletePackagingConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeletePackagingConfigurationResponse]
     }
@@ -485,7 +485,7 @@ package mediapackagevod {
     def apply(
         Id: __string
     ): DeletePackagingGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
@@ -499,7 +499,7 @@ package mediapackagevod {
   object DeletePackagingGroupResponse {
     def apply(
         ): DeletePackagingGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeletePackagingGroupResponse]
     }
@@ -514,7 +514,7 @@ package mediapackagevod {
     def apply(
         Id: __string
     ): DescribeAssetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
@@ -543,14 +543,14 @@ package mediapackagevod {
         SourceArn: js.UndefOr[__string] = js.undefined,
         SourceRoleArn: js.UndefOr[__string] = js.undefined
     ): DescribeAssetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      EgressEndpoints.foreach(__v => __obj.update("EgressEndpoints", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      PackagingGroupId.foreach(__v => __obj.update("PackagingGroupId", __v.asInstanceOf[js.Any]))
-      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
-      SourceArn.foreach(__v => __obj.update("SourceArn", __v.asInstanceOf[js.Any]))
-      SourceRoleArn.foreach(__v => __obj.update("SourceRoleArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      EgressEndpoints.foreach(__v => __obj.updateDynamic("EgressEndpoints")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      PackagingGroupId.foreach(__v => __obj.updateDynamic("PackagingGroupId")(__v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
+      SourceArn.foreach(__v => __obj.updateDynamic("SourceArn")(__v.asInstanceOf[js.Any]))
+      SourceRoleArn.foreach(__v => __obj.updateDynamic("SourceRoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAssetResponse]
     }
   }
@@ -564,7 +564,7 @@ package mediapackagevod {
     def apply(
         Id: __string
     ): DescribePackagingConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
@@ -593,14 +593,14 @@ package mediapackagevod {
         MssPackage: js.UndefOr[MssPackage] = js.undefined,
         PackagingGroupId: js.UndefOr[__string] = js.undefined
     ): DescribePackagingConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CmafPackage.foreach(__v => __obj.update("CmafPackage", __v.asInstanceOf[js.Any]))
-      DashPackage.foreach(__v => __obj.update("DashPackage", __v.asInstanceOf[js.Any]))
-      HlsPackage.foreach(__v => __obj.update("HlsPackage", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      MssPackage.foreach(__v => __obj.update("MssPackage", __v.asInstanceOf[js.Any]))
-      PackagingGroupId.foreach(__v => __obj.update("PackagingGroupId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CmafPackage.foreach(__v => __obj.updateDynamic("CmafPackage")(__v.asInstanceOf[js.Any]))
+      DashPackage.foreach(__v => __obj.updateDynamic("DashPackage")(__v.asInstanceOf[js.Any]))
+      HlsPackage.foreach(__v => __obj.updateDynamic("HlsPackage")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      MssPackage.foreach(__v => __obj.updateDynamic("MssPackage")(__v.asInstanceOf[js.Any]))
+      PackagingGroupId.foreach(__v => __obj.updateDynamic("PackagingGroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePackagingConfigurationResponse]
     }
   }
@@ -614,7 +614,7 @@ package mediapackagevod {
     def apply(
         Id: __string
     ): DescribePackagingGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
@@ -633,9 +633,9 @@ package mediapackagevod {
         Arn: js.UndefOr[__string] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined
     ): DescribePackagingGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePackagingGroupResponse]
     }
   }
@@ -654,9 +654,9 @@ package mediapackagevod {
         PackagingConfigurationId: js.UndefOr[__string] = js.undefined,
         Url: js.UndefOr[__string] = js.undefined
     ): EgressEndpoint = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PackagingConfigurationId.foreach(__v => __obj.update("PackagingConfigurationId", __v.asInstanceOf[js.Any]))
-      Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PackagingConfigurationId.foreach(__v => __obj.updateDynamic("PackagingConfigurationId")(__v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EgressEndpoint]
     }
   }
@@ -684,14 +684,14 @@ package mediapackagevod {
         ConstantInitializationVector: js.UndefOr[__string] = js.undefined,
         EncryptionMethod: js.UndefOr[EncryptionMethod] = js.undefined
     ): HlsEncryption = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SpekeKeyProvider" -> SpekeKeyProvider.asInstanceOf[js.Any]
       )
 
       ConstantInitializationVector.foreach(
-        __v => __obj.update("ConstantInitializationVector", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ConstantInitializationVector")(__v.asInstanceOf[js.Any])
       )
-      EncryptionMethod.foreach(__v => __obj.update("EncryptionMethod", __v.asInstanceOf[js.Any]))
+      EncryptionMethod.foreach(__v => __obj.updateDynamic("EncryptionMethod")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HlsEncryption]
     }
   }
@@ -718,15 +718,15 @@ package mediapackagevod {
         RepeatExtXKey: js.UndefOr[__boolean] = js.undefined,
         StreamSelection: js.UndefOr[StreamSelection] = js.undefined
     ): HlsManifest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AdMarkers.foreach(__v => __obj.update("AdMarkers", __v.asInstanceOf[js.Any]))
-      IncludeIframeOnlyStream.foreach(__v => __obj.update("IncludeIframeOnlyStream", __v.asInstanceOf[js.Any]))
-      ManifestName.foreach(__v => __obj.update("ManifestName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AdMarkers.foreach(__v => __obj.updateDynamic("AdMarkers")(__v.asInstanceOf[js.Any]))
+      IncludeIframeOnlyStream.foreach(__v => __obj.updateDynamic("IncludeIframeOnlyStream")(__v.asInstanceOf[js.Any]))
+      ManifestName.foreach(__v => __obj.updateDynamic("ManifestName")(__v.asInstanceOf[js.Any]))
       ProgramDateTimeIntervalSeconds.foreach(
-        __v => __obj.update("ProgramDateTimeIntervalSeconds", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ProgramDateTimeIntervalSeconds")(__v.asInstanceOf[js.Any])
       )
-      RepeatExtXKey.foreach(__v => __obj.update("RepeatExtXKey", __v.asInstanceOf[js.Any]))
-      StreamSelection.foreach(__v => __obj.update("StreamSelection", __v.asInstanceOf[js.Any]))
+      RepeatExtXKey.foreach(__v => __obj.updateDynamic("RepeatExtXKey")(__v.asInstanceOf[js.Any]))
+      StreamSelection.foreach(__v => __obj.updateDynamic("StreamSelection")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HlsManifest]
     }
   }
@@ -749,13 +749,13 @@ package mediapackagevod {
         SegmentDurationSeconds: js.UndefOr[__integer] = js.undefined,
         UseAudioRenditionGroup: js.UndefOr[__boolean] = js.undefined
     ): HlsPackage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HlsManifests" -> HlsManifests.asInstanceOf[js.Any]
       )
 
-      Encryption.foreach(__v => __obj.update("Encryption", __v.asInstanceOf[js.Any]))
-      SegmentDurationSeconds.foreach(__v => __obj.update("SegmentDurationSeconds", __v.asInstanceOf[js.Any]))
-      UseAudioRenditionGroup.foreach(__v => __obj.update("UseAudioRenditionGroup", __v.asInstanceOf[js.Any]))
+      Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
+      SegmentDurationSeconds.foreach(__v => __obj.updateDynamic("SegmentDurationSeconds")(__v.asInstanceOf[js.Any]))
+      UseAudioRenditionGroup.foreach(__v => __obj.updateDynamic("UseAudioRenditionGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HlsPackage]
     }
   }
@@ -773,10 +773,10 @@ package mediapackagevod {
         NextToken: js.UndefOr[__string] = js.undefined,
         PackagingGroupId: js.UndefOr[__string] = js.undefined
     ): ListAssetsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PackagingGroupId.foreach(__v => __obj.update("PackagingGroupId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PackagingGroupId.foreach(__v => __obj.updateDynamic("PackagingGroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAssetsRequest]
     }
   }
@@ -792,9 +792,9 @@ package mediapackagevod {
         Assets: js.UndefOr[__listOfAssetShallow] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListAssetsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Assets.foreach(__v => __obj.update("Assets", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Assets.foreach(__v => __obj.updateDynamic("Assets")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAssetsResponse]
     }
   }
@@ -812,10 +812,10 @@ package mediapackagevod {
         NextToken: js.UndefOr[__string] = js.undefined,
         PackagingGroupId: js.UndefOr[__string] = js.undefined
     ): ListPackagingConfigurationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PackagingGroupId.foreach(__v => __obj.update("PackagingGroupId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PackagingGroupId.foreach(__v => __obj.updateDynamic("PackagingGroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPackagingConfigurationsRequest]
     }
   }
@@ -831,9 +831,9 @@ package mediapackagevod {
         NextToken: js.UndefOr[__string] = js.undefined,
         PackagingConfigurations: js.UndefOr[__listOfPackagingConfiguration] = js.undefined
     ): ListPackagingConfigurationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PackagingConfigurations.foreach(__v => __obj.update("PackagingConfigurations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PackagingConfigurations.foreach(__v => __obj.updateDynamic("PackagingConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPackagingConfigurationsResponse]
     }
   }
@@ -849,9 +849,9 @@ package mediapackagevod {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListPackagingGroupsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPackagingGroupsRequest]
     }
   }
@@ -867,9 +867,9 @@ package mediapackagevod {
         NextToken: js.UndefOr[__string] = js.undefined,
         PackagingGroups: js.UndefOr[__listOfPackagingGroup] = js.undefined
     ): ListPackagingGroupsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PackagingGroups.foreach(__v => __obj.update("PackagingGroups", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PackagingGroups.foreach(__v => __obj.updateDynamic("PackagingGroups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPackagingGroupsResponse]
     }
   }
@@ -886,7 +886,7 @@ package mediapackagevod {
     def apply(
         SpekeKeyProvider: SpekeKeyProvider
     ): MssEncryption = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SpekeKeyProvider" -> SpekeKeyProvider.asInstanceOf[js.Any]
       )
 
@@ -908,9 +908,9 @@ package mediapackagevod {
         ManifestName: js.UndefOr[__string] = js.undefined,
         StreamSelection: js.UndefOr[StreamSelection] = js.undefined
     ): MssManifest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ManifestName.foreach(__v => __obj.update("ManifestName", __v.asInstanceOf[js.Any]))
-      StreamSelection.foreach(__v => __obj.update("StreamSelection", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ManifestName.foreach(__v => __obj.updateDynamic("ManifestName")(__v.asInstanceOf[js.Any]))
+      StreamSelection.foreach(__v => __obj.updateDynamic("StreamSelection")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MssManifest]
     }
   }
@@ -931,12 +931,12 @@ package mediapackagevod {
         Encryption: js.UndefOr[MssEncryption] = js.undefined,
         SegmentDurationSeconds: js.UndefOr[__integer] = js.undefined
     ): MssPackage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MssManifests" -> MssManifests.asInstanceOf[js.Any]
       )
 
-      Encryption.foreach(__v => __obj.update("Encryption", __v.asInstanceOf[js.Any]))
-      SegmentDurationSeconds.foreach(__v => __obj.update("SegmentDurationSeconds", __v.asInstanceOf[js.Any]))
+      Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
+      SegmentDurationSeconds.foreach(__v => __obj.updateDynamic("SegmentDurationSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MssPackage]
     }
   }
@@ -965,14 +965,14 @@ package mediapackagevod {
         MssPackage: js.UndefOr[MssPackage] = js.undefined,
         PackagingGroupId: js.UndefOr[__string] = js.undefined
     ): PackagingConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CmafPackage.foreach(__v => __obj.update("CmafPackage", __v.asInstanceOf[js.Any]))
-      DashPackage.foreach(__v => __obj.update("DashPackage", __v.asInstanceOf[js.Any]))
-      HlsPackage.foreach(__v => __obj.update("HlsPackage", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      MssPackage.foreach(__v => __obj.update("MssPackage", __v.asInstanceOf[js.Any]))
-      PackagingGroupId.foreach(__v => __obj.update("PackagingGroupId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CmafPackage.foreach(__v => __obj.updateDynamic("CmafPackage")(__v.asInstanceOf[js.Any]))
+      DashPackage.foreach(__v => __obj.updateDynamic("DashPackage")(__v.asInstanceOf[js.Any]))
+      HlsPackage.foreach(__v => __obj.updateDynamic("HlsPackage")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      MssPackage.foreach(__v => __obj.updateDynamic("MssPackage")(__v.asInstanceOf[js.Any]))
+      PackagingGroupId.foreach(__v => __obj.updateDynamic("PackagingGroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PackagingConfiguration]
     }
   }
@@ -991,9 +991,9 @@ package mediapackagevod {
         Arn: js.UndefOr[__string] = js.undefined,
         Id: js.UndefOr[__string] = js.undefined
     ): PackagingGroup = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PackagingGroup]
     }
   }
@@ -1021,7 +1021,7 @@ package mediapackagevod {
         SystemIds: __listOf__string,
         Url: __string
     ): SpekeKeyProvider = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RoleArn"   -> RoleArn.asInstanceOf[js.Any],
         "SystemIds" -> SystemIds.asInstanceOf[js.Any],
         "Url"       -> Url.asInstanceOf[js.Any]
@@ -1055,10 +1055,10 @@ package mediapackagevod {
         MinVideoBitsPerSecond: js.UndefOr[__integer] = js.undefined,
         StreamOrder: js.UndefOr[StreamOrder] = js.undefined
     ): StreamSelection = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxVideoBitsPerSecond.foreach(__v => __obj.update("MaxVideoBitsPerSecond", __v.asInstanceOf[js.Any]))
-      MinVideoBitsPerSecond.foreach(__v => __obj.update("MinVideoBitsPerSecond", __v.asInstanceOf[js.Any]))
-      StreamOrder.foreach(__v => __obj.update("StreamOrder", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxVideoBitsPerSecond.foreach(__v => __obj.updateDynamic("MaxVideoBitsPerSecond")(__v.asInstanceOf[js.Any]))
+      MinVideoBitsPerSecond.foreach(__v => __obj.updateDynamic("MinVideoBitsPerSecond")(__v.asInstanceOf[js.Any]))
+      StreamOrder.foreach(__v => __obj.updateDynamic("StreamOrder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StreamSelection]
     }
   }

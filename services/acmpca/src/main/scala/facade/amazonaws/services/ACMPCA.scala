@@ -192,21 +192,23 @@ package acmpca {
         Surname: js.UndefOr[String40] = js.undefined,
         Title: js.UndefOr[String64] = js.undefined
     ): ASN1Subject = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CommonName.foreach(__v => __obj.update("CommonName", __v.asInstanceOf[js.Any]))
-      Country.foreach(__v => __obj.update("Country", __v.asInstanceOf[js.Any]))
-      DistinguishedNameQualifier.foreach(__v => __obj.update("DistinguishedNameQualifier", __v.asInstanceOf[js.Any]))
-      GenerationQualifier.foreach(__v => __obj.update("GenerationQualifier", __v.asInstanceOf[js.Any]))
-      GivenName.foreach(__v => __obj.update("GivenName", __v.asInstanceOf[js.Any]))
-      Initials.foreach(__v => __obj.update("Initials", __v.asInstanceOf[js.Any]))
-      Locality.foreach(__v => __obj.update("Locality", __v.asInstanceOf[js.Any]))
-      Organization.foreach(__v => __obj.update("Organization", __v.asInstanceOf[js.Any]))
-      OrganizationalUnit.foreach(__v => __obj.update("OrganizationalUnit", __v.asInstanceOf[js.Any]))
-      Pseudonym.foreach(__v => __obj.update("Pseudonym", __v.asInstanceOf[js.Any]))
-      SerialNumber.foreach(__v => __obj.update("SerialNumber", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
-      Surname.foreach(__v => __obj.update("Surname", __v.asInstanceOf[js.Any]))
-      Title.foreach(__v => __obj.update("Title", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CommonName.foreach(__v => __obj.updateDynamic("CommonName")(__v.asInstanceOf[js.Any]))
+      Country.foreach(__v => __obj.updateDynamic("Country")(__v.asInstanceOf[js.Any]))
+      DistinguishedNameQualifier.foreach(
+        __v => __obj.updateDynamic("DistinguishedNameQualifier")(__v.asInstanceOf[js.Any])
+      )
+      GenerationQualifier.foreach(__v => __obj.updateDynamic("GenerationQualifier")(__v.asInstanceOf[js.Any]))
+      GivenName.foreach(__v => __obj.updateDynamic("GivenName")(__v.asInstanceOf[js.Any]))
+      Initials.foreach(__v => __obj.updateDynamic("Initials")(__v.asInstanceOf[js.Any]))
+      Locality.foreach(__v => __obj.updateDynamic("Locality")(__v.asInstanceOf[js.Any]))
+      Organization.foreach(__v => __obj.updateDynamic("Organization")(__v.asInstanceOf[js.Any]))
+      OrganizationalUnit.foreach(__v => __obj.updateDynamic("OrganizationalUnit")(__v.asInstanceOf[js.Any]))
+      Pseudonym.foreach(__v => __obj.updateDynamic("Pseudonym")(__v.asInstanceOf[js.Any]))
+      SerialNumber.foreach(__v => __obj.updateDynamic("SerialNumber")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      Surname.foreach(__v => __obj.updateDynamic("Surname")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ASN1Subject]
     }
   }
@@ -268,21 +270,21 @@ package acmpca {
         Status: js.UndefOr[CertificateAuthorityStatus] = js.undefined,
         Type: js.UndefOr[CertificateAuthorityType] = js.undefined
     ): CertificateAuthority = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       CertificateAuthorityConfiguration.foreach(
-        __v => __obj.update("CertificateAuthorityConfiguration", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("CertificateAuthorityConfiguration")(__v.asInstanceOf[js.Any])
       )
-      CreatedAt.foreach(__v => __obj.update("CreatedAt", __v.asInstanceOf[js.Any]))
-      FailureReason.foreach(__v => __obj.update("FailureReason", __v.asInstanceOf[js.Any]))
-      LastStateChangeAt.foreach(__v => __obj.update("LastStateChangeAt", __v.asInstanceOf[js.Any]))
-      NotAfter.foreach(__v => __obj.update("NotAfter", __v.asInstanceOf[js.Any]))
-      NotBefore.foreach(__v => __obj.update("NotBefore", __v.asInstanceOf[js.Any]))
-      RestorableUntil.foreach(__v => __obj.update("RestorableUntil", __v.asInstanceOf[js.Any]))
-      RevocationConfiguration.foreach(__v => __obj.update("RevocationConfiguration", __v.asInstanceOf[js.Any]))
-      Serial.foreach(__v => __obj.update("Serial", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
+      LastStateChangeAt.foreach(__v => __obj.updateDynamic("LastStateChangeAt")(__v.asInstanceOf[js.Any]))
+      NotAfter.foreach(__v => __obj.updateDynamic("NotAfter")(__v.asInstanceOf[js.Any]))
+      NotBefore.foreach(__v => __obj.updateDynamic("NotBefore")(__v.asInstanceOf[js.Any]))
+      RestorableUntil.foreach(__v => __obj.updateDynamic("RestorableUntil")(__v.asInstanceOf[js.Any]))
+      RevocationConfiguration.foreach(__v => __obj.updateDynamic("RevocationConfiguration")(__v.asInstanceOf[js.Any]))
+      Serial.foreach(__v => __obj.updateDynamic("Serial")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CertificateAuthority]
     }
   }
@@ -303,7 +305,7 @@ package acmpca {
         SigningAlgorithm: SigningAlgorithm,
         Subject: ASN1Subject
     ): CertificateAuthorityConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "KeyAlgorithm"     -> KeyAlgorithm.asInstanceOf[js.Any],
         "SigningAlgorithm" -> SigningAlgorithm.asInstanceOf[js.Any],
         "Subject"          -> Subject.asInstanceOf[js.Any]
@@ -345,7 +347,7 @@ package acmpca {
         CertificateAuthorityArn: Arn,
         S3BucketName: String
     ): CreateCertificateAuthorityAuditReportRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AuditReportResponseFormat" -> AuditReportResponseFormat.asInstanceOf[js.Any],
         "CertificateAuthorityArn"   -> CertificateAuthorityArn.asInstanceOf[js.Any],
         "S3BucketName"              -> S3BucketName.asInstanceOf[js.Any]
@@ -366,9 +368,9 @@ package acmpca {
         AuditReportId: js.UndefOr[AuditReportId] = js.undefined,
         S3Key: js.UndefOr[String] = js.undefined
     ): CreateCertificateAuthorityAuditReportResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AuditReportId.foreach(__v => __obj.update("AuditReportId", __v.asInstanceOf[js.Any]))
-      S3Key.foreach(__v => __obj.update("S3Key", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AuditReportId.foreach(__v => __obj.updateDynamic("AuditReportId")(__v.asInstanceOf[js.Any]))
+      S3Key.foreach(__v => __obj.updateDynamic("S3Key")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCertificateAuthorityAuditReportResponse]
     }
   }
@@ -390,14 +392,14 @@ package acmpca {
         RevocationConfiguration: js.UndefOr[RevocationConfiguration] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateCertificateAuthorityRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CertificateAuthorityConfiguration" -> CertificateAuthorityConfiguration.asInstanceOf[js.Any],
         "CertificateAuthorityType"          -> CertificateAuthorityType.asInstanceOf[js.Any]
       )
 
-      IdempotencyToken.foreach(__v => __obj.update("IdempotencyToken", __v.asInstanceOf[js.Any]))
-      RevocationConfiguration.foreach(__v => __obj.update("RevocationConfiguration", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      IdempotencyToken.foreach(__v => __obj.updateDynamic("IdempotencyToken")(__v.asInstanceOf[js.Any]))
+      RevocationConfiguration.foreach(__v => __obj.updateDynamic("RevocationConfiguration")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCertificateAuthorityRequest]
     }
   }
@@ -411,8 +413,8 @@ package acmpca {
     def apply(
         CertificateAuthorityArn: js.UndefOr[Arn] = js.undefined
     ): CreateCertificateAuthorityResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CertificateAuthorityArn.foreach(__v => __obj.update("CertificateAuthorityArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CertificateAuthorityArn.foreach(__v => __obj.updateDynamic("CertificateAuthorityArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCertificateAuthorityResponse]
     }
   }
@@ -432,13 +434,13 @@ package acmpca {
         Principal: Principal,
         SourceAccount: js.UndefOr[AccountId] = js.undefined
     ): CreatePermissionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Actions"                 -> Actions.asInstanceOf[js.Any],
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any],
         "Principal"               -> Principal.asInstanceOf[js.Any]
       )
 
-      SourceAccount.foreach(__v => __obj.update("SourceAccount", __v.asInstanceOf[js.Any]))
+      SourceAccount.foreach(__v => __obj.updateDynamic("SourceAccount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePermissionRequest]
     }
   }
@@ -480,13 +482,13 @@ package acmpca {
         ExpirationInDays: js.UndefOr[Integer1To5000] = js.undefined,
         S3BucketName: js.UndefOr[String3To255] = js.undefined
     ): CrlConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Enabled" -> Enabled.asInstanceOf[js.Any]
       )
 
-      CustomCname.foreach(__v => __obj.update("CustomCname", __v.asInstanceOf[js.Any]))
-      ExpirationInDays.foreach(__v => __obj.update("ExpirationInDays", __v.asInstanceOf[js.Any]))
-      S3BucketName.foreach(__v => __obj.update("S3BucketName", __v.asInstanceOf[js.Any]))
+      CustomCname.foreach(__v => __obj.updateDynamic("CustomCname")(__v.asInstanceOf[js.Any]))
+      ExpirationInDays.foreach(__v => __obj.updateDynamic("ExpirationInDays")(__v.asInstanceOf[js.Any]))
+      S3BucketName.foreach(__v => __obj.updateDynamic("S3BucketName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CrlConfiguration]
     }
   }
@@ -502,11 +504,13 @@ package acmpca {
         CertificateAuthorityArn: Arn,
         PermanentDeletionTimeInDays: js.UndefOr[PermanentDeletionTimeInDays] = js.undefined
     ): DeleteCertificateAuthorityRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any]
       )
 
-      PermanentDeletionTimeInDays.foreach(__v => __obj.update("PermanentDeletionTimeInDays", __v.asInstanceOf[js.Any]))
+      PermanentDeletionTimeInDays.foreach(
+        __v => __obj.updateDynamic("PermanentDeletionTimeInDays")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[DeleteCertificateAuthorityRequest]
     }
   }
@@ -524,12 +528,12 @@ package acmpca {
         Principal: Principal,
         SourceAccount: js.UndefOr[AccountId] = js.undefined
     ): DeletePermissionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any],
         "Principal"               -> Principal.asInstanceOf[js.Any]
       )
 
-      SourceAccount.foreach(__v => __obj.update("SourceAccount", __v.asInstanceOf[js.Any]))
+      SourceAccount.foreach(__v => __obj.updateDynamic("SourceAccount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeletePermissionRequest]
     }
   }
@@ -545,7 +549,7 @@ package acmpca {
         AuditReportId: AuditReportId,
         CertificateAuthorityArn: Arn
     ): DescribeCertificateAuthorityAuditReportRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AuditReportId"           -> AuditReportId.asInstanceOf[js.Any],
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any]
       )
@@ -569,11 +573,11 @@ package acmpca {
         S3BucketName: js.UndefOr[String] = js.undefined,
         S3Key: js.UndefOr[String] = js.undefined
     ): DescribeCertificateAuthorityAuditReportResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AuditReportStatus.foreach(__v => __obj.update("AuditReportStatus", __v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.update("CreatedAt", __v.asInstanceOf[js.Any]))
-      S3BucketName.foreach(__v => __obj.update("S3BucketName", __v.asInstanceOf[js.Any]))
-      S3Key.foreach(__v => __obj.update("S3Key", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AuditReportStatus.foreach(__v => __obj.updateDynamic("AuditReportStatus")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      S3BucketName.foreach(__v => __obj.updateDynamic("S3BucketName")(__v.asInstanceOf[js.Any]))
+      S3Key.foreach(__v => __obj.updateDynamic("S3Key")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeCertificateAuthorityAuditReportResponse]
     }
   }
@@ -587,7 +591,7 @@ package acmpca {
     def apply(
         CertificateAuthorityArn: Arn
     ): DescribeCertificateAuthorityRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any]
       )
 
@@ -604,8 +608,8 @@ package acmpca {
     def apply(
         CertificateAuthority: js.UndefOr[CertificateAuthority] = js.undefined
     ): DescribeCertificateAuthorityResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CertificateAuthority.foreach(__v => __obj.update("CertificateAuthority", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CertificateAuthority.foreach(__v => __obj.updateDynamic("CertificateAuthority")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeCertificateAuthorityResponse]
     }
   }
@@ -627,7 +631,7 @@ package acmpca {
     def apply(
         CertificateAuthorityArn: Arn
     ): GetCertificateAuthorityCertificateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any]
       )
 
@@ -646,9 +650,9 @@ package acmpca {
         Certificate: js.UndefOr[CertificateBody] = js.undefined,
         CertificateChain: js.UndefOr[CertificateChain] = js.undefined
     ): GetCertificateAuthorityCertificateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Certificate.foreach(__v => __obj.update("Certificate", __v.asInstanceOf[js.Any]))
-      CertificateChain.foreach(__v => __obj.update("CertificateChain", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
+      CertificateChain.foreach(__v => __obj.updateDynamic("CertificateChain")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCertificateAuthorityCertificateResponse]
     }
   }
@@ -662,7 +666,7 @@ package acmpca {
     def apply(
         CertificateAuthorityArn: Arn
     ): GetCertificateAuthorityCsrRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any]
       )
 
@@ -679,8 +683,8 @@ package acmpca {
     def apply(
         Csr: js.UndefOr[CsrBody] = js.undefined
     ): GetCertificateAuthorityCsrResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Csr.foreach(__v => __obj.update("Csr", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Csr.foreach(__v => __obj.updateDynamic("Csr")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCertificateAuthorityCsrResponse]
     }
   }
@@ -696,7 +700,7 @@ package acmpca {
         CertificateArn: Arn,
         CertificateAuthorityArn: Arn
     ): GetCertificateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CertificateArn"          -> CertificateArn.asInstanceOf[js.Any],
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any]
       )
@@ -716,9 +720,9 @@ package acmpca {
         Certificate: js.UndefOr[CertificateBody] = js.undefined,
         CertificateChain: js.UndefOr[CertificateChain] = js.undefined
     ): GetCertificateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Certificate.foreach(__v => __obj.update("Certificate", __v.asInstanceOf[js.Any]))
-      CertificateChain.foreach(__v => __obj.update("CertificateChain", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
+      CertificateChain.foreach(__v => __obj.updateDynamic("CertificateChain")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCertificateResponse]
     }
   }
@@ -736,12 +740,12 @@ package acmpca {
         CertificateAuthorityArn: Arn,
         CertificateChain: js.UndefOr[CertificateChainBlob] = js.undefined
     ): ImportCertificateAuthorityCertificateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Certificate"             -> Certificate.asInstanceOf[js.Any],
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any]
       )
 
-      CertificateChain.foreach(__v => __obj.update("CertificateChain", __v.asInstanceOf[js.Any]))
+      CertificateChain.foreach(__v => __obj.updateDynamic("CertificateChain")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportCertificateAuthorityCertificateRequest]
     }
   }
@@ -765,15 +769,15 @@ package acmpca {
         IdempotencyToken: js.UndefOr[IdempotencyToken] = js.undefined,
         TemplateArn: js.UndefOr[Arn] = js.undefined
     ): IssueCertificateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any],
         "Csr"                     -> Csr.asInstanceOf[js.Any],
         "SigningAlgorithm"        -> SigningAlgorithm.asInstanceOf[js.Any],
         "Validity"                -> Validity.asInstanceOf[js.Any]
       )
 
-      IdempotencyToken.foreach(__v => __obj.update("IdempotencyToken", __v.asInstanceOf[js.Any]))
-      TemplateArn.foreach(__v => __obj.update("TemplateArn", __v.asInstanceOf[js.Any]))
+      IdempotencyToken.foreach(__v => __obj.updateDynamic("IdempotencyToken")(__v.asInstanceOf[js.Any]))
+      TemplateArn.foreach(__v => __obj.updateDynamic("TemplateArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IssueCertificateRequest]
     }
   }
@@ -787,8 +791,8 @@ package acmpca {
     def apply(
         CertificateArn: js.UndefOr[Arn] = js.undefined
     ): IssueCertificateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CertificateArn.foreach(__v => __obj.update("CertificateArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CertificateArn.foreach(__v => __obj.updateDynamic("CertificateArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IssueCertificateResponse]
     }
   }
@@ -813,9 +817,9 @@ package acmpca {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListCertificateAuthoritiesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCertificateAuthoritiesRequest]
     }
   }
@@ -831,9 +835,9 @@ package acmpca {
         CertificateAuthorities: js.UndefOr[CertificateAuthorities] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListCertificateAuthoritiesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CertificateAuthorities.foreach(__v => __obj.update("CertificateAuthorities", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CertificateAuthorities.foreach(__v => __obj.updateDynamic("CertificateAuthorities")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCertificateAuthoritiesResponse]
     }
   }
@@ -851,12 +855,12 @@ package acmpca {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListPermissionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPermissionsRequest]
     }
   }
@@ -872,9 +876,9 @@ package acmpca {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Permissions: js.UndefOr[PermissionList] = js.undefined
     ): ListPermissionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Permissions.foreach(__v => __obj.update("Permissions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPermissionsResponse]
     }
   }
@@ -892,12 +896,12 @@ package acmpca {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListTagsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsRequest]
     }
   }
@@ -913,9 +917,9 @@ package acmpca {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsResponse]
     }
   }
@@ -942,13 +946,13 @@ package acmpca {
         Principal: js.UndefOr[String] = js.undefined,
         SourceAccount: js.UndefOr[String] = js.undefined
     ): Permission = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Actions.foreach(__v => __obj.update("Actions", __v.asInstanceOf[js.Any]))
-      CertificateAuthorityArn.foreach(__v => __obj.update("CertificateAuthorityArn", __v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.update("CreatedAt", __v.asInstanceOf[js.Any]))
-      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
-      Principal.foreach(__v => __obj.update("Principal", __v.asInstanceOf[js.Any]))
-      SourceAccount.foreach(__v => __obj.update("SourceAccount", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      CertificateAuthorityArn.foreach(__v => __obj.updateDynamic("CertificateAuthorityArn")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
+      Principal.foreach(__v => __obj.updateDynamic("Principal")(__v.asInstanceOf[js.Any]))
+      SourceAccount.foreach(__v => __obj.updateDynamic("SourceAccount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Permission]
     }
   }
@@ -962,7 +966,7 @@ package acmpca {
     def apply(
         CertificateAuthorityArn: Arn
     ): RestoreCertificateAuthorityRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any]
       )
 
@@ -982,8 +986,8 @@ package acmpca {
     def apply(
         CrlConfiguration: js.UndefOr[CrlConfiguration] = js.undefined
     ): RevocationConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CrlConfiguration.foreach(__v => __obj.update("CrlConfiguration", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CrlConfiguration.foreach(__v => __obj.updateDynamic("CrlConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RevocationConfiguration]
     }
   }
@@ -1025,7 +1029,7 @@ package acmpca {
         CertificateSerial: String128,
         RevocationReason: RevocationReason
     ): RevokeCertificateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any],
         "CertificateSerial"       -> CertificateSerial.asInstanceOf[js.Any],
         "RevocationReason"        -> RevocationReason.asInstanceOf[js.Any]
@@ -1062,11 +1066,11 @@ package acmpca {
         Key: TagKey,
         Value: js.UndefOr[TagValue] = js.undefined
     ): Tag = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key" -> Key.asInstanceOf[js.Any]
       )
 
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tag]
     }
   }
@@ -1082,7 +1086,7 @@ package acmpca {
         CertificateAuthorityArn: Arn,
         Tags: TagList
     ): TagCertificateAuthorityRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any],
         "Tags"                    -> Tags.asInstanceOf[js.Any]
       )
@@ -1102,7 +1106,7 @@ package acmpca {
         CertificateAuthorityArn: Arn,
         Tags: TagList
     ): UntagCertificateAuthorityRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any],
         "Tags"                    -> Tags.asInstanceOf[js.Any]
       )
@@ -1124,12 +1128,12 @@ package acmpca {
         RevocationConfiguration: js.UndefOr[RevocationConfiguration] = js.undefined,
         Status: js.UndefOr[CertificateAuthorityStatus] = js.undefined
     ): UpdateCertificateAuthorityRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CertificateAuthorityArn" -> CertificateAuthorityArn.asInstanceOf[js.Any]
       )
 
-      RevocationConfiguration.foreach(__v => __obj.update("RevocationConfiguration", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      RevocationConfiguration.foreach(__v => __obj.updateDynamic("RevocationConfiguration")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateCertificateAuthorityRequest]
     }
   }
@@ -1148,7 +1152,7 @@ package acmpca {
         Type: ValidityPeriodType,
         Value: PositiveLong
     ): Validity = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Type"  -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )

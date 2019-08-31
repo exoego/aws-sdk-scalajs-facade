@@ -55,7 +55,7 @@ package pi {
         Timestamp: ISOTimestamp,
         Value: Double
     ): DataPoint = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Timestamp" -> Timestamp.asInstanceOf[js.Any],
         "Value"     -> Value.asInstanceOf[js.Any]
       )
@@ -93,7 +93,7 @@ package pi {
         PartitionBy: js.UndefOr[DimensionGroup] = js.undefined,
         PeriodInSeconds: js.UndefOr[Int] = js.undefined
     ): DescribeDimensionKeysRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EndTime"     -> EndTime.asInstanceOf[js.Any],
         "GroupBy"     -> GroupBy.asInstanceOf[js.Any],
         "Identifier"  -> Identifier.asInstanceOf[js.Any],
@@ -102,11 +102,11 @@ package pi {
         "StartTime"   -> StartTime.asInstanceOf[js.Any]
       )
 
-      Filter.foreach(__v => __obj.update("Filter", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PartitionBy.foreach(__v => __obj.update("PartitionBy", __v.asInstanceOf[js.Any]))
-      PeriodInSeconds.foreach(__v => __obj.update("PeriodInSeconds", __v.asInstanceOf[js.Any]))
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PartitionBy.foreach(__v => __obj.updateDynamic("PartitionBy")(__v.asInstanceOf[js.Any]))
+      PeriodInSeconds.foreach(__v => __obj.updateDynamic("PeriodInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDimensionKeysRequest]
     }
   }
@@ -128,12 +128,12 @@ package pi {
         NextToken: js.UndefOr[String] = js.undefined,
         PartitionKeys: js.UndefOr[ResponsePartitionKeyList] = js.undefined
     ): DescribeDimensionKeysResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AlignedEndTime.foreach(__v => __obj.update("AlignedEndTime", __v.asInstanceOf[js.Any]))
-      AlignedStartTime.foreach(__v => __obj.update("AlignedStartTime", __v.asInstanceOf[js.Any]))
-      Keys.foreach(__v => __obj.update("Keys", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PartitionKeys.foreach(__v => __obj.update("PartitionKeys", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AlignedEndTime.foreach(__v => __obj.updateDynamic("AlignedEndTime")(__v.asInstanceOf[js.Any]))
+      AlignedStartTime.foreach(__v => __obj.updateDynamic("AlignedStartTime")(__v.asInstanceOf[js.Any]))
+      Keys.foreach(__v => __obj.updateDynamic("Keys")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PartitionKeys.foreach(__v => __obj.updateDynamic("PartitionKeys")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDimensionKeysResponse]
     }
   }
@@ -154,12 +154,12 @@ package pi {
         Dimensions: js.UndefOr[StringList] = js.undefined,
         Limit: js.UndefOr[Limit] = js.undefined
     ): DimensionGroup = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Group" -> Group.asInstanceOf[js.Any]
       )
 
-      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DimensionGroup]
     }
   }
@@ -180,10 +180,10 @@ package pi {
         Partitions: js.UndefOr[MetricValuesList] = js.undefined,
         Total: js.UndefOr[Double] = js.undefined
     ): DimensionKeyDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
-      Partitions.foreach(__v => __obj.update("Partitions", __v.asInstanceOf[js.Any]))
-      Total.foreach(__v => __obj.update("Total", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
+      Partitions.foreach(__v => __obj.updateDynamic("Partitions")(__v.asInstanceOf[js.Any]))
+      Total.foreach(__v => __obj.updateDynamic("Total")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DimensionKeyDescription]
     }
   }
@@ -211,7 +211,7 @@ package pi {
         NextToken: js.UndefOr[String] = js.undefined,
         PeriodInSeconds: js.UndefOr[Int] = js.undefined
     ): GetResourceMetricsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EndTime"       -> EndTime.asInstanceOf[js.Any],
         "Identifier"    -> Identifier.asInstanceOf[js.Any],
         "MetricQueries" -> MetricQueries.asInstanceOf[js.Any],
@@ -219,9 +219,9 @@ package pi {
         "StartTime"     -> StartTime.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PeriodInSeconds.foreach(__v => __obj.update("PeriodInSeconds", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PeriodInSeconds.foreach(__v => __obj.updateDynamic("PeriodInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetResourceMetricsRequest]
     }
   }
@@ -243,12 +243,12 @@ package pi {
         MetricList: js.UndefOr[MetricKeyDataPointsList] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): GetResourceMetricsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AlignedEndTime.foreach(__v => __obj.update("AlignedEndTime", __v.asInstanceOf[js.Any]))
-      AlignedStartTime.foreach(__v => __obj.update("AlignedStartTime", __v.asInstanceOf[js.Any]))
-      Identifier.foreach(__v => __obj.update("Identifier", __v.asInstanceOf[js.Any]))
-      MetricList.foreach(__v => __obj.update("MetricList", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AlignedEndTime.foreach(__v => __obj.updateDynamic("AlignedEndTime")(__v.asInstanceOf[js.Any]))
+      AlignedStartTime.foreach(__v => __obj.updateDynamic("AlignedStartTime")(__v.asInstanceOf[js.Any]))
+      Identifier.foreach(__v => __obj.updateDynamic("Identifier")(__v.asInstanceOf[js.Any]))
+      MetricList.foreach(__v => __obj.updateDynamic("MetricList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetResourceMetricsResponse]
     }
   }
@@ -283,9 +283,9 @@ package pi {
         DataPoints: js.UndefOr[DataPointsList] = js.undefined,
         Key: js.UndefOr[ResponseResourceMetricKey] = js.undefined
     ): MetricKeyDataPoints = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DataPoints.foreach(__v => __obj.update("DataPoints", __v.asInstanceOf[js.Any]))
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DataPoints.foreach(__v => __obj.updateDynamic("DataPoints")(__v.asInstanceOf[js.Any]))
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MetricKeyDataPoints]
     }
   }
@@ -306,12 +306,12 @@ package pi {
         Filter: js.UndefOr[MetricQueryFilterMap] = js.undefined,
         GroupBy: js.UndefOr[DimensionGroup] = js.undefined
     ): MetricQuery = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Metric" -> Metric.asInstanceOf[js.Any]
       )
 
-      Filter.foreach(__v => __obj.update("Filter", __v.asInstanceOf[js.Any]))
-      GroupBy.foreach(__v => __obj.update("GroupBy", __v.asInstanceOf[js.Any]))
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
+      GroupBy.foreach(__v => __obj.updateDynamic("GroupBy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MetricQuery]
     }
   }
@@ -336,7 +336,7 @@ package pi {
     def apply(
         Dimensions: DimensionMap
     ): ResponsePartitionKey = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Dimensions" -> Dimensions.asInstanceOf[js.Any]
       )
 
@@ -358,11 +358,11 @@ package pi {
         Metric: String,
         Dimensions: js.UndefOr[DimensionMap] = js.undefined
     ): ResponseResourceMetricKey = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Metric" -> Metric.asInstanceOf[js.Any]
       )
 
-      Dimensions.foreach(__v => __obj.update("Dimensions", __v.asInstanceOf[js.Any]))
+      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResponseResourceMetricKey]
     }
   }

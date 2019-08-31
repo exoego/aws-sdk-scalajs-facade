@@ -234,11 +234,11 @@ package mturk {
         QualificationRequestId: String,
         IntegerValue: js.UndefOr[Int] = js.undefined
     ): AcceptQualificationRequestRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "QualificationRequestId" -> QualificationRequestId.asInstanceOf[js.Any]
       )
 
-      IntegerValue.foreach(__v => __obj.update("IntegerValue", __v.asInstanceOf[js.Any]))
+      IntegerValue.foreach(__v => __obj.updateDynamic("IntegerValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AcceptQualificationRequestRequest]
     }
   }
@@ -249,7 +249,7 @@ package mturk {
   object AcceptQualificationRequestResponse {
     def apply(
         ): AcceptQualificationRequestResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AcceptQualificationRequestResponse]
     }
@@ -268,12 +268,12 @@ package mturk {
         OverrideRejection: js.UndefOr[Boolean] = js.undefined,
         RequesterFeedback: js.UndefOr[String] = js.undefined
     ): ApproveAssignmentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AssignmentId" -> AssignmentId.asInstanceOf[js.Any]
       )
 
-      OverrideRejection.foreach(__v => __obj.update("OverrideRejection", __v.asInstanceOf[js.Any]))
-      RequesterFeedback.foreach(__v => __obj.update("RequesterFeedback", __v.asInstanceOf[js.Any]))
+      OverrideRejection.foreach(__v => __obj.updateDynamic("OverrideRejection")(__v.asInstanceOf[js.Any]))
+      RequesterFeedback.foreach(__v => __obj.updateDynamic("RequesterFeedback")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApproveAssignmentRequest]
     }
   }
@@ -284,7 +284,7 @@ package mturk {
   object ApproveAssignmentResponse {
     def apply(
         ): ApproveAssignmentResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ApproveAssignmentResponse]
     }
@@ -324,19 +324,19 @@ package mturk {
         SubmitTime: js.UndefOr[Timestamp] = js.undefined,
         WorkerId: js.UndefOr[CustomerId] = js.undefined
     ): Assignment = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AcceptTime.foreach(__v => __obj.update("AcceptTime", __v.asInstanceOf[js.Any]))
-      Answer.foreach(__v => __obj.update("Answer", __v.asInstanceOf[js.Any]))
-      ApprovalTime.foreach(__v => __obj.update("ApprovalTime", __v.asInstanceOf[js.Any]))
-      AssignmentId.foreach(__v => __obj.update("AssignmentId", __v.asInstanceOf[js.Any]))
-      AssignmentStatus.foreach(__v => __obj.update("AssignmentStatus", __v.asInstanceOf[js.Any]))
-      AutoApprovalTime.foreach(__v => __obj.update("AutoApprovalTime", __v.asInstanceOf[js.Any]))
-      Deadline.foreach(__v => __obj.update("Deadline", __v.asInstanceOf[js.Any]))
-      HITId.foreach(__v => __obj.update("HITId", __v.asInstanceOf[js.Any]))
-      RejectionTime.foreach(__v => __obj.update("RejectionTime", __v.asInstanceOf[js.Any]))
-      RequesterFeedback.foreach(__v => __obj.update("RequesterFeedback", __v.asInstanceOf[js.Any]))
-      SubmitTime.foreach(__v => __obj.update("SubmitTime", __v.asInstanceOf[js.Any]))
-      WorkerId.foreach(__v => __obj.update("WorkerId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AcceptTime.foreach(__v => __obj.updateDynamic("AcceptTime")(__v.asInstanceOf[js.Any]))
+      Answer.foreach(__v => __obj.updateDynamic("Answer")(__v.asInstanceOf[js.Any]))
+      ApprovalTime.foreach(__v => __obj.updateDynamic("ApprovalTime")(__v.asInstanceOf[js.Any]))
+      AssignmentId.foreach(__v => __obj.updateDynamic("AssignmentId")(__v.asInstanceOf[js.Any]))
+      AssignmentStatus.foreach(__v => __obj.updateDynamic("AssignmentStatus")(__v.asInstanceOf[js.Any]))
+      AutoApprovalTime.foreach(__v => __obj.updateDynamic("AutoApprovalTime")(__v.asInstanceOf[js.Any]))
+      Deadline.foreach(__v => __obj.updateDynamic("Deadline")(__v.asInstanceOf[js.Any]))
+      HITId.foreach(__v => __obj.updateDynamic("HITId")(__v.asInstanceOf[js.Any]))
+      RejectionTime.foreach(__v => __obj.updateDynamic("RejectionTime")(__v.asInstanceOf[js.Any]))
+      RequesterFeedback.foreach(__v => __obj.updateDynamic("RequesterFeedback")(__v.asInstanceOf[js.Any]))
+      SubmitTime.foreach(__v => __obj.updateDynamic("SubmitTime")(__v.asInstanceOf[js.Any]))
+      WorkerId.foreach(__v => __obj.updateDynamic("WorkerId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Assignment]
     }
   }
@@ -364,13 +364,13 @@ package mturk {
         IntegerValue: js.UndefOr[Int] = js.undefined,
         SendNotification: js.UndefOr[Boolean] = js.undefined
     ): AssociateQualificationWithWorkerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any],
         "WorkerId"            -> WorkerId.asInstanceOf[js.Any]
       )
 
-      IntegerValue.foreach(__v => __obj.update("IntegerValue", __v.asInstanceOf[js.Any]))
-      SendNotification.foreach(__v => __obj.update("SendNotification", __v.asInstanceOf[js.Any]))
+      IntegerValue.foreach(__v => __obj.updateDynamic("IntegerValue")(__v.asInstanceOf[js.Any]))
+      SendNotification.foreach(__v => __obj.updateDynamic("SendNotification")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateQualificationWithWorkerRequest]
     }
   }
@@ -381,7 +381,7 @@ package mturk {
   object AssociateQualificationWithWorkerResponse {
     def apply(
         ): AssociateQualificationWithWorkerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateQualificationWithWorkerResponse]
     }
@@ -407,12 +407,12 @@ package mturk {
         Reason: js.UndefOr[String] = js.undefined,
         WorkerId: js.UndefOr[CustomerId] = js.undefined
     ): BonusPayment = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssignmentId.foreach(__v => __obj.update("AssignmentId", __v.asInstanceOf[js.Any]))
-      BonusAmount.foreach(__v => __obj.update("BonusAmount", __v.asInstanceOf[js.Any]))
-      GrantTime.foreach(__v => __obj.update("GrantTime", __v.asInstanceOf[js.Any]))
-      Reason.foreach(__v => __obj.update("Reason", __v.asInstanceOf[js.Any]))
-      WorkerId.foreach(__v => __obj.update("WorkerId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssignmentId.foreach(__v => __obj.updateDynamic("AssignmentId")(__v.asInstanceOf[js.Any]))
+      BonusAmount.foreach(__v => __obj.updateDynamic("BonusAmount")(__v.asInstanceOf[js.Any]))
+      GrantTime.foreach(__v => __obj.updateDynamic("GrantTime")(__v.asInstanceOf[js.Any]))
+      Reason.foreach(__v => __obj.updateDynamic("Reason")(__v.asInstanceOf[js.Any]))
+      WorkerId.foreach(__v => __obj.updateDynamic("WorkerId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BonusPayment]
     }
   }
@@ -458,12 +458,12 @@ package mturk {
         NumberOfAdditionalAssignments: Int,
         UniqueRequestToken: js.UndefOr[IdempotencyToken] = js.undefined
     ): CreateAdditionalAssignmentsForHITRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HITId"                         -> HITId.asInstanceOf[js.Any],
         "NumberOfAdditionalAssignments" -> NumberOfAdditionalAssignments.asInstanceOf[js.Any]
       )
 
-      UniqueRequestToken.foreach(__v => __obj.update("UniqueRequestToken", __v.asInstanceOf[js.Any]))
+      UniqueRequestToken.foreach(__v => __obj.updateDynamic("UniqueRequestToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAdditionalAssignmentsForHITRequest]
     }
   }
@@ -474,7 +474,7 @@ package mturk {
   object CreateAdditionalAssignmentsForHITResponse {
     def apply(
         ): CreateAdditionalAssignmentsForHITResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateAdditionalAssignmentsForHITResponse]
     }
@@ -519,7 +519,7 @@ package mturk {
         RequesterAnnotation: js.UndefOr[String] = js.undefined,
         UniqueRequestToken: js.UndefOr[IdempotencyToken] = js.undefined
     ): CreateHITRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AssignmentDurationInSeconds" -> AssignmentDurationInSeconds.asInstanceOf[js.Any],
         "Description"                 -> Description.asInstanceOf[js.Any],
         "LifetimeInSeconds"           -> LifetimeInSeconds.asInstanceOf[js.Any],
@@ -527,17 +527,21 @@ package mturk {
         "Title"                       -> Title.asInstanceOf[js.Any]
       )
 
-      AssignmentReviewPolicy.foreach(__v => __obj.update("AssignmentReviewPolicy", __v.asInstanceOf[js.Any]))
-      AutoApprovalDelayInSeconds.foreach(__v => __obj.update("AutoApprovalDelayInSeconds", __v.asInstanceOf[js.Any]))
-      HITLayoutId.foreach(__v => __obj.update("HITLayoutId", __v.asInstanceOf[js.Any]))
-      HITLayoutParameters.foreach(__v => __obj.update("HITLayoutParameters", __v.asInstanceOf[js.Any]))
-      HITReviewPolicy.foreach(__v => __obj.update("HITReviewPolicy", __v.asInstanceOf[js.Any]))
-      Keywords.foreach(__v => __obj.update("Keywords", __v.asInstanceOf[js.Any]))
-      MaxAssignments.foreach(__v => __obj.update("MaxAssignments", __v.asInstanceOf[js.Any]))
-      QualificationRequirements.foreach(__v => __obj.update("QualificationRequirements", __v.asInstanceOf[js.Any]))
-      Question.foreach(__v => __obj.update("Question", __v.asInstanceOf[js.Any]))
-      RequesterAnnotation.foreach(__v => __obj.update("RequesterAnnotation", __v.asInstanceOf[js.Any]))
-      UniqueRequestToken.foreach(__v => __obj.update("UniqueRequestToken", __v.asInstanceOf[js.Any]))
+      AssignmentReviewPolicy.foreach(__v => __obj.updateDynamic("AssignmentReviewPolicy")(__v.asInstanceOf[js.Any]))
+      AutoApprovalDelayInSeconds.foreach(
+        __v => __obj.updateDynamic("AutoApprovalDelayInSeconds")(__v.asInstanceOf[js.Any])
+      )
+      HITLayoutId.foreach(__v => __obj.updateDynamic("HITLayoutId")(__v.asInstanceOf[js.Any]))
+      HITLayoutParameters.foreach(__v => __obj.updateDynamic("HITLayoutParameters")(__v.asInstanceOf[js.Any]))
+      HITReviewPolicy.foreach(__v => __obj.updateDynamic("HITReviewPolicy")(__v.asInstanceOf[js.Any]))
+      Keywords.foreach(__v => __obj.updateDynamic("Keywords")(__v.asInstanceOf[js.Any]))
+      MaxAssignments.foreach(__v => __obj.updateDynamic("MaxAssignments")(__v.asInstanceOf[js.Any]))
+      QualificationRequirements.foreach(
+        __v => __obj.updateDynamic("QualificationRequirements")(__v.asInstanceOf[js.Any])
+      )
+      Question.foreach(__v => __obj.updateDynamic("Question")(__v.asInstanceOf[js.Any]))
+      RequesterAnnotation.foreach(__v => __obj.updateDynamic("RequesterAnnotation")(__v.asInstanceOf[js.Any]))
+      UniqueRequestToken.foreach(__v => __obj.updateDynamic("UniqueRequestToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateHITRequest]
     }
   }
@@ -551,8 +555,8 @@ package mturk {
     def apply(
         HIT: js.UndefOr[HIT] = js.undefined
     ): CreateHITResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      HIT.foreach(__v => __obj.update("HIT", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      HIT.foreach(__v => __obj.updateDynamic("HIT")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateHITResponse]
     }
   }
@@ -578,16 +582,20 @@ package mturk {
         Keywords: js.UndefOr[String] = js.undefined,
         QualificationRequirements: js.UndefOr[QualificationRequirementList] = js.undefined
     ): CreateHITTypeRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AssignmentDurationInSeconds" -> AssignmentDurationInSeconds.asInstanceOf[js.Any],
         "Description"                 -> Description.asInstanceOf[js.Any],
         "Reward"                      -> Reward.asInstanceOf[js.Any],
         "Title"                       -> Title.asInstanceOf[js.Any]
       )
 
-      AutoApprovalDelayInSeconds.foreach(__v => __obj.update("AutoApprovalDelayInSeconds", __v.asInstanceOf[js.Any]))
-      Keywords.foreach(__v => __obj.update("Keywords", __v.asInstanceOf[js.Any]))
-      QualificationRequirements.foreach(__v => __obj.update("QualificationRequirements", __v.asInstanceOf[js.Any]))
+      AutoApprovalDelayInSeconds.foreach(
+        __v => __obj.updateDynamic("AutoApprovalDelayInSeconds")(__v.asInstanceOf[js.Any])
+      )
+      Keywords.foreach(__v => __obj.updateDynamic("Keywords")(__v.asInstanceOf[js.Any]))
+      QualificationRequirements.foreach(
+        __v => __obj.updateDynamic("QualificationRequirements")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[CreateHITTypeRequest]
     }
   }
@@ -601,8 +609,8 @@ package mturk {
     def apply(
         HITTypeId: js.UndefOr[EntityId] = js.undefined
     ): CreateHITTypeResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      HITTypeId.foreach(__v => __obj.update("HITTypeId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      HITTypeId.foreach(__v => __obj.updateDynamic("HITTypeId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateHITTypeResponse]
     }
   }
@@ -634,19 +642,19 @@ package mturk {
         RequesterAnnotation: js.UndefOr[String] = js.undefined,
         UniqueRequestToken: js.UndefOr[IdempotencyToken] = js.undefined
     ): CreateHITWithHITTypeRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HITTypeId"         -> HITTypeId.asInstanceOf[js.Any],
         "LifetimeInSeconds" -> LifetimeInSeconds.asInstanceOf[js.Any]
       )
 
-      AssignmentReviewPolicy.foreach(__v => __obj.update("AssignmentReviewPolicy", __v.asInstanceOf[js.Any]))
-      HITLayoutId.foreach(__v => __obj.update("HITLayoutId", __v.asInstanceOf[js.Any]))
-      HITLayoutParameters.foreach(__v => __obj.update("HITLayoutParameters", __v.asInstanceOf[js.Any]))
-      HITReviewPolicy.foreach(__v => __obj.update("HITReviewPolicy", __v.asInstanceOf[js.Any]))
-      MaxAssignments.foreach(__v => __obj.update("MaxAssignments", __v.asInstanceOf[js.Any]))
-      Question.foreach(__v => __obj.update("Question", __v.asInstanceOf[js.Any]))
-      RequesterAnnotation.foreach(__v => __obj.update("RequesterAnnotation", __v.asInstanceOf[js.Any]))
-      UniqueRequestToken.foreach(__v => __obj.update("UniqueRequestToken", __v.asInstanceOf[js.Any]))
+      AssignmentReviewPolicy.foreach(__v => __obj.updateDynamic("AssignmentReviewPolicy")(__v.asInstanceOf[js.Any]))
+      HITLayoutId.foreach(__v => __obj.updateDynamic("HITLayoutId")(__v.asInstanceOf[js.Any]))
+      HITLayoutParameters.foreach(__v => __obj.updateDynamic("HITLayoutParameters")(__v.asInstanceOf[js.Any]))
+      HITReviewPolicy.foreach(__v => __obj.updateDynamic("HITReviewPolicy")(__v.asInstanceOf[js.Any]))
+      MaxAssignments.foreach(__v => __obj.updateDynamic("MaxAssignments")(__v.asInstanceOf[js.Any]))
+      Question.foreach(__v => __obj.updateDynamic("Question")(__v.asInstanceOf[js.Any]))
+      RequesterAnnotation.foreach(__v => __obj.updateDynamic("RequesterAnnotation")(__v.asInstanceOf[js.Any]))
+      UniqueRequestToken.foreach(__v => __obj.updateDynamic("UniqueRequestToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateHITWithHITTypeRequest]
     }
   }
@@ -660,8 +668,8 @@ package mturk {
     def apply(
         HIT: js.UndefOr[HIT] = js.undefined
     ): CreateHITWithHITTypeResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      HIT.foreach(__v => __obj.update("HIT", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      HIT.foreach(__v => __obj.updateDynamic("HIT")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateHITWithHITTypeResponse]
     }
   }
@@ -693,19 +701,19 @@ package mturk {
         Test: js.UndefOr[String] = js.undefined,
         TestDurationInSeconds: js.UndefOr[Double] = js.undefined
     ): CreateQualificationTypeRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Description"             -> Description.asInstanceOf[js.Any],
         "Name"                    -> Name.asInstanceOf[js.Any],
         "QualificationTypeStatus" -> QualificationTypeStatus.asInstanceOf[js.Any]
       )
 
-      AnswerKey.foreach(__v => __obj.update("AnswerKey", __v.asInstanceOf[js.Any]))
-      AutoGranted.foreach(__v => __obj.update("AutoGranted", __v.asInstanceOf[js.Any]))
-      AutoGrantedValue.foreach(__v => __obj.update("AutoGrantedValue", __v.asInstanceOf[js.Any]))
-      Keywords.foreach(__v => __obj.update("Keywords", __v.asInstanceOf[js.Any]))
-      RetryDelayInSeconds.foreach(__v => __obj.update("RetryDelayInSeconds", __v.asInstanceOf[js.Any]))
-      Test.foreach(__v => __obj.update("Test", __v.asInstanceOf[js.Any]))
-      TestDurationInSeconds.foreach(__v => __obj.update("TestDurationInSeconds", __v.asInstanceOf[js.Any]))
+      AnswerKey.foreach(__v => __obj.updateDynamic("AnswerKey")(__v.asInstanceOf[js.Any]))
+      AutoGranted.foreach(__v => __obj.updateDynamic("AutoGranted")(__v.asInstanceOf[js.Any]))
+      AutoGrantedValue.foreach(__v => __obj.updateDynamic("AutoGrantedValue")(__v.asInstanceOf[js.Any]))
+      Keywords.foreach(__v => __obj.updateDynamic("Keywords")(__v.asInstanceOf[js.Any]))
+      RetryDelayInSeconds.foreach(__v => __obj.updateDynamic("RetryDelayInSeconds")(__v.asInstanceOf[js.Any]))
+      Test.foreach(__v => __obj.updateDynamic("Test")(__v.asInstanceOf[js.Any]))
+      TestDurationInSeconds.foreach(__v => __obj.updateDynamic("TestDurationInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateQualificationTypeRequest]
     }
   }
@@ -719,8 +727,8 @@ package mturk {
     def apply(
         QualificationType: js.UndefOr[QualificationType] = js.undefined
     ): CreateQualificationTypeResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      QualificationType.foreach(__v => __obj.update("QualificationType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      QualificationType.foreach(__v => __obj.updateDynamic("QualificationType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateQualificationTypeResponse]
     }
   }
@@ -736,7 +744,7 @@ package mturk {
         Reason: String,
         WorkerId: CustomerId
     ): CreateWorkerBlockRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Reason"   -> Reason.asInstanceOf[js.Any],
         "WorkerId" -> WorkerId.asInstanceOf[js.Any]
       )
@@ -751,7 +759,7 @@ package mturk {
   object CreateWorkerBlockResponse {
     def apply(
         ): CreateWorkerBlockResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateWorkerBlockResponse]
     }
@@ -766,7 +774,7 @@ package mturk {
     def apply(
         HITId: EntityId
     ): DeleteHITRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HITId" -> HITId.asInstanceOf[js.Any]
       )
 
@@ -780,7 +788,7 @@ package mturk {
   object DeleteHITResponse {
     def apply(
         ): DeleteHITResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteHITResponse]
     }
@@ -795,7 +803,7 @@ package mturk {
     def apply(
         QualificationTypeId: EntityId
     ): DeleteQualificationTypeRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any]
       )
 
@@ -809,7 +817,7 @@ package mturk {
   object DeleteQualificationTypeResponse {
     def apply(
         ): DeleteQualificationTypeResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteQualificationTypeResponse]
     }
@@ -826,11 +834,11 @@ package mturk {
         WorkerId: CustomerId,
         Reason: js.UndefOr[String] = js.undefined
     ): DeleteWorkerBlockRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "WorkerId" -> WorkerId.asInstanceOf[js.Any]
       )
 
-      Reason.foreach(__v => __obj.update("Reason", __v.asInstanceOf[js.Any]))
+      Reason.foreach(__v => __obj.updateDynamic("Reason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteWorkerBlockRequest]
     }
   }
@@ -841,7 +849,7 @@ package mturk {
   object DeleteWorkerBlockResponse {
     def apply(
         ): DeleteWorkerBlockResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteWorkerBlockResponse]
     }
@@ -860,12 +868,12 @@ package mturk {
         WorkerId: CustomerId,
         Reason: js.UndefOr[String] = js.undefined
     ): DisassociateQualificationFromWorkerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any],
         "WorkerId"            -> WorkerId.asInstanceOf[js.Any]
       )
 
-      Reason.foreach(__v => __obj.update("Reason", __v.asInstanceOf[js.Any]))
+      Reason.foreach(__v => __obj.updateDynamic("Reason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisassociateQualificationFromWorkerRequest]
     }
   }
@@ -876,7 +884,7 @@ package mturk {
   object DisassociateQualificationFromWorkerResponse {
     def apply(
         ): DisassociateQualificationFromWorkerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateQualificationFromWorkerResponse]
     }
@@ -920,7 +928,7 @@ package mturk {
   object GetAccountBalanceRequest {
     def apply(
         ): GetAccountBalanceRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetAccountBalanceRequest]
     }
@@ -937,9 +945,9 @@ package mturk {
         AvailableBalance: js.UndefOr[CurrencyAmount] = js.undefined,
         OnHoldBalance: js.UndefOr[CurrencyAmount] = js.undefined
     ): GetAccountBalanceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AvailableBalance.foreach(__v => __obj.update("AvailableBalance", __v.asInstanceOf[js.Any]))
-      OnHoldBalance.foreach(__v => __obj.update("OnHoldBalance", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AvailableBalance.foreach(__v => __obj.updateDynamic("AvailableBalance")(__v.asInstanceOf[js.Any]))
+      OnHoldBalance.foreach(__v => __obj.updateDynamic("OnHoldBalance")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAccountBalanceResponse]
     }
   }
@@ -953,7 +961,7 @@ package mturk {
     def apply(
         AssignmentId: EntityId
     ): GetAssignmentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AssignmentId" -> AssignmentId.asInstanceOf[js.Any]
       )
 
@@ -972,9 +980,9 @@ package mturk {
         Assignment: js.UndefOr[Assignment] = js.undefined,
         HIT: js.UndefOr[HIT] = js.undefined
     ): GetAssignmentResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Assignment.foreach(__v => __obj.update("Assignment", __v.asInstanceOf[js.Any]))
-      HIT.foreach(__v => __obj.update("HIT", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Assignment.foreach(__v => __obj.updateDynamic("Assignment")(__v.asInstanceOf[js.Any]))
+      HIT.foreach(__v => __obj.updateDynamic("HIT")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAssignmentResponse]
     }
   }
@@ -990,7 +998,7 @@ package mturk {
         AssignmentId: EntityId,
         QuestionIdentifier: String
     ): GetFileUploadURLRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AssignmentId"       -> AssignmentId.asInstanceOf[js.Any],
         "QuestionIdentifier" -> QuestionIdentifier.asInstanceOf[js.Any]
       )
@@ -1008,8 +1016,8 @@ package mturk {
     def apply(
         FileUploadURL: js.UndefOr[String] = js.undefined
     ): GetFileUploadURLResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FileUploadURL.foreach(__v => __obj.update("FileUploadURL", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FileUploadURL.foreach(__v => __obj.updateDynamic("FileUploadURL")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFileUploadURLResponse]
     }
   }
@@ -1023,7 +1031,7 @@ package mturk {
     def apply(
         HITId: EntityId
     ): GetHITRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HITId" -> HITId.asInstanceOf[js.Any]
       )
 
@@ -1040,8 +1048,8 @@ package mturk {
     def apply(
         HIT: js.UndefOr[HIT] = js.undefined
     ): GetHITResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      HIT.foreach(__v => __obj.update("HIT", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      HIT.foreach(__v => __obj.updateDynamic("HIT")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetHITResponse]
     }
   }
@@ -1057,7 +1065,7 @@ package mturk {
         QualificationTypeId: EntityId,
         WorkerId: CustomerId
     ): GetQualificationScoreRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any],
         "WorkerId"            -> WorkerId.asInstanceOf[js.Any]
       )
@@ -1075,8 +1083,8 @@ package mturk {
     def apply(
         Qualification: js.UndefOr[Qualification] = js.undefined
     ): GetQualificationScoreResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Qualification.foreach(__v => __obj.update("Qualification", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Qualification.foreach(__v => __obj.updateDynamic("Qualification")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetQualificationScoreResponse]
     }
   }
@@ -1090,7 +1098,7 @@ package mturk {
     def apply(
         QualificationTypeId: EntityId
     ): GetQualificationTypeRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any]
       )
 
@@ -1107,8 +1115,8 @@ package mturk {
     def apply(
         QualificationType: js.UndefOr[QualificationType] = js.undefined
     ): GetQualificationTypeResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      QualificationType.foreach(__v => __obj.update("QualificationType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      QualificationType.foreach(__v => __obj.updateDynamic("QualificationType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetQualificationTypeResponse]
     }
   }
@@ -1165,32 +1173,40 @@ package mturk {
         Reward: js.UndefOr[CurrencyAmount] = js.undefined,
         Title: js.UndefOr[String] = js.undefined
     ): HIT = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssignmentDurationInSeconds.foreach(__v => __obj.update("AssignmentDurationInSeconds", __v.asInstanceOf[js.Any]))
-      AutoApprovalDelayInSeconds.foreach(__v => __obj.update("AutoApprovalDelayInSeconds", __v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Expiration.foreach(__v => __obj.update("Expiration", __v.asInstanceOf[js.Any]))
-      HITGroupId.foreach(__v => __obj.update("HITGroupId", __v.asInstanceOf[js.Any]))
-      HITId.foreach(__v => __obj.update("HITId", __v.asInstanceOf[js.Any]))
-      HITLayoutId.foreach(__v => __obj.update("HITLayoutId", __v.asInstanceOf[js.Any]))
-      HITReviewStatus.foreach(__v => __obj.update("HITReviewStatus", __v.asInstanceOf[js.Any]))
-      HITStatus.foreach(__v => __obj.update("HITStatus", __v.asInstanceOf[js.Any]))
-      HITTypeId.foreach(__v => __obj.update("HITTypeId", __v.asInstanceOf[js.Any]))
-      Keywords.foreach(__v => __obj.update("Keywords", __v.asInstanceOf[js.Any]))
-      MaxAssignments.foreach(__v => __obj.update("MaxAssignments", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssignmentDurationInSeconds.foreach(
+        __v => __obj.updateDynamic("AssignmentDurationInSeconds")(__v.asInstanceOf[js.Any])
+      )
+      AutoApprovalDelayInSeconds.foreach(
+        __v => __obj.updateDynamic("AutoApprovalDelayInSeconds")(__v.asInstanceOf[js.Any])
+      )
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Expiration.foreach(__v => __obj.updateDynamic("Expiration")(__v.asInstanceOf[js.Any]))
+      HITGroupId.foreach(__v => __obj.updateDynamic("HITGroupId")(__v.asInstanceOf[js.Any]))
+      HITId.foreach(__v => __obj.updateDynamic("HITId")(__v.asInstanceOf[js.Any]))
+      HITLayoutId.foreach(__v => __obj.updateDynamic("HITLayoutId")(__v.asInstanceOf[js.Any]))
+      HITReviewStatus.foreach(__v => __obj.updateDynamic("HITReviewStatus")(__v.asInstanceOf[js.Any]))
+      HITStatus.foreach(__v => __obj.updateDynamic("HITStatus")(__v.asInstanceOf[js.Any]))
+      HITTypeId.foreach(__v => __obj.updateDynamic("HITTypeId")(__v.asInstanceOf[js.Any]))
+      Keywords.foreach(__v => __obj.updateDynamic("Keywords")(__v.asInstanceOf[js.Any]))
+      MaxAssignments.foreach(__v => __obj.updateDynamic("MaxAssignments")(__v.asInstanceOf[js.Any]))
       NumberOfAssignmentsAvailable.foreach(
-        __v => __obj.update("NumberOfAssignmentsAvailable", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("NumberOfAssignmentsAvailable")(__v.asInstanceOf[js.Any])
       )
       NumberOfAssignmentsCompleted.foreach(
-        __v => __obj.update("NumberOfAssignmentsCompleted", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("NumberOfAssignmentsCompleted")(__v.asInstanceOf[js.Any])
       )
-      NumberOfAssignmentsPending.foreach(__v => __obj.update("NumberOfAssignmentsPending", __v.asInstanceOf[js.Any]))
-      QualificationRequirements.foreach(__v => __obj.update("QualificationRequirements", __v.asInstanceOf[js.Any]))
-      Question.foreach(__v => __obj.update("Question", __v.asInstanceOf[js.Any]))
-      RequesterAnnotation.foreach(__v => __obj.update("RequesterAnnotation", __v.asInstanceOf[js.Any]))
-      Reward.foreach(__v => __obj.update("Reward", __v.asInstanceOf[js.Any]))
-      Title.foreach(__v => __obj.update("Title", __v.asInstanceOf[js.Any]))
+      NumberOfAssignmentsPending.foreach(
+        __v => __obj.updateDynamic("NumberOfAssignmentsPending")(__v.asInstanceOf[js.Any])
+      )
+      QualificationRequirements.foreach(
+        __v => __obj.updateDynamic("QualificationRequirements")(__v.asInstanceOf[js.Any])
+      )
+      Question.foreach(__v => __obj.updateDynamic("Question")(__v.asInstanceOf[js.Any]))
+      RequesterAnnotation.foreach(__v => __obj.updateDynamic("RequesterAnnotation")(__v.asInstanceOf[js.Any]))
+      Reward.foreach(__v => __obj.updateDynamic("Reward")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HIT]
     }
   }
@@ -1217,7 +1233,7 @@ package mturk {
         Name: String,
         Value: String
     ): HITLayoutParameter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"  -> Name.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
@@ -1260,13 +1276,13 @@ package mturk {
         MaxResults: js.UndefOr[ResultSize] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListAssignmentsForHITRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HITId" -> HITId.asInstanceOf[js.Any]
       )
 
-      AssignmentStatuses.foreach(__v => __obj.update("AssignmentStatuses", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      AssignmentStatuses.foreach(__v => __obj.updateDynamic("AssignmentStatuses")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAssignmentsForHITRequest]
     }
   }
@@ -1284,10 +1300,10 @@ package mturk {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         NumResults: js.UndefOr[Int] = js.undefined
     ): ListAssignmentsForHITResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Assignments.foreach(__v => __obj.update("Assignments", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      NumResults.foreach(__v => __obj.update("NumResults", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Assignments.foreach(__v => __obj.updateDynamic("Assignments")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      NumResults.foreach(__v => __obj.updateDynamic("NumResults")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAssignmentsForHITResponse]
     }
   }
@@ -1307,11 +1323,11 @@ package mturk {
         MaxResults: js.UndefOr[ResultSize] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListBonusPaymentsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssignmentId.foreach(__v => __obj.update("AssignmentId", __v.asInstanceOf[js.Any]))
-      HITId.foreach(__v => __obj.update("HITId", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssignmentId.foreach(__v => __obj.updateDynamic("AssignmentId")(__v.asInstanceOf[js.Any]))
+      HITId.foreach(__v => __obj.updateDynamic("HITId")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBonusPaymentsRequest]
     }
   }
@@ -1329,10 +1345,10 @@ package mturk {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         NumResults: js.UndefOr[Int] = js.undefined
     ): ListBonusPaymentsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BonusPayments.foreach(__v => __obj.update("BonusPayments", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      NumResults.foreach(__v => __obj.update("NumResults", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BonusPayments.foreach(__v => __obj.updateDynamic("BonusPayments")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      NumResults.foreach(__v => __obj.updateDynamic("NumResults")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBonusPaymentsResponse]
     }
   }
@@ -1350,12 +1366,12 @@ package mturk {
         MaxResults: js.UndefOr[ResultSize] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListHITsForQualificationTypeRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListHITsForQualificationTypeRequest]
     }
   }
@@ -1373,10 +1389,10 @@ package mturk {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         NumResults: js.UndefOr[Int] = js.undefined
     ): ListHITsForQualificationTypeResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      HITs.foreach(__v => __obj.update("HITs", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      NumResults.foreach(__v => __obj.update("NumResults", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      HITs.foreach(__v => __obj.updateDynamic("HITs")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      NumResults.foreach(__v => __obj.updateDynamic("NumResults")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListHITsForQualificationTypeResponse]
     }
   }
@@ -1392,9 +1408,9 @@ package mturk {
         MaxResults: js.UndefOr[ResultSize] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListHITsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListHITsRequest]
     }
   }
@@ -1412,10 +1428,10 @@ package mturk {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         NumResults: js.UndefOr[Int] = js.undefined
     ): ListHITsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      HITs.foreach(__v => __obj.update("HITs", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      NumResults.foreach(__v => __obj.update("NumResults", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      HITs.foreach(__v => __obj.updateDynamic("HITs")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      NumResults.foreach(__v => __obj.updateDynamic("NumResults")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListHITsResponse]
     }
   }
@@ -1433,10 +1449,10 @@ package mturk {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         QualificationTypeId: js.UndefOr[EntityId] = js.undefined
     ): ListQualificationRequestsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      QualificationTypeId.foreach(__v => __obj.update("QualificationTypeId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      QualificationTypeId.foreach(__v => __obj.updateDynamic("QualificationTypeId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListQualificationRequestsRequest]
     }
   }
@@ -1454,10 +1470,10 @@ package mturk {
         NumResults: js.UndefOr[Int] = js.undefined,
         QualificationRequests: js.UndefOr[QualificationRequestList] = js.undefined
     ): ListQualificationRequestsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      NumResults.foreach(__v => __obj.update("NumResults", __v.asInstanceOf[js.Any]))
-      QualificationRequests.foreach(__v => __obj.update("QualificationRequests", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      NumResults.foreach(__v => __obj.updateDynamic("NumResults")(__v.asInstanceOf[js.Any]))
+      QualificationRequests.foreach(__v => __obj.updateDynamic("QualificationRequests")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListQualificationRequestsResponse]
     }
   }
@@ -1479,14 +1495,14 @@ package mturk {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         Query: js.UndefOr[String] = js.undefined
     ): ListQualificationTypesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MustBeRequestable" -> MustBeRequestable.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      MustBeOwnedByCaller.foreach(__v => __obj.update("MustBeOwnedByCaller", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Query.foreach(__v => __obj.update("Query", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      MustBeOwnedByCaller.foreach(__v => __obj.updateDynamic("MustBeOwnedByCaller")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Query.foreach(__v => __obj.updateDynamic("Query")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListQualificationTypesRequest]
     }
   }
@@ -1504,10 +1520,10 @@ package mturk {
         NumResults: js.UndefOr[Int] = js.undefined,
         QualificationTypes: js.UndefOr[QualificationTypeList] = js.undefined
     ): ListQualificationTypesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      NumResults.foreach(__v => __obj.update("NumResults", __v.asInstanceOf[js.Any]))
-      QualificationTypes.foreach(__v => __obj.update("QualificationTypes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      NumResults.foreach(__v => __obj.updateDynamic("NumResults")(__v.asInstanceOf[js.Any]))
+      QualificationTypes.foreach(__v => __obj.updateDynamic("QualificationTypes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListQualificationTypesResponse]
     }
   }
@@ -1531,15 +1547,15 @@ package mturk {
         RetrieveActions: js.UndefOr[Boolean] = js.undefined,
         RetrieveResults: js.UndefOr[Boolean] = js.undefined
     ): ListReviewPolicyResultsForHITRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HITId" -> HITId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PolicyLevels.foreach(__v => __obj.update("PolicyLevels", __v.asInstanceOf[js.Any]))
-      RetrieveActions.foreach(__v => __obj.update("RetrieveActions", __v.asInstanceOf[js.Any]))
-      RetrieveResults.foreach(__v => __obj.update("RetrieveResults", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PolicyLevels.foreach(__v => __obj.updateDynamic("PolicyLevels")(__v.asInstanceOf[js.Any]))
+      RetrieveActions.foreach(__v => __obj.updateDynamic("RetrieveActions")(__v.asInstanceOf[js.Any]))
+      RetrieveResults.foreach(__v => __obj.updateDynamic("RetrieveResults")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListReviewPolicyResultsForHITRequest]
     }
   }
@@ -1563,13 +1579,13 @@ package mturk {
         HITReviewReport: js.UndefOr[ReviewReport] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListReviewPolicyResultsForHITResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssignmentReviewPolicy.foreach(__v => __obj.update("AssignmentReviewPolicy", __v.asInstanceOf[js.Any]))
-      AssignmentReviewReport.foreach(__v => __obj.update("AssignmentReviewReport", __v.asInstanceOf[js.Any]))
-      HITId.foreach(__v => __obj.update("HITId", __v.asInstanceOf[js.Any]))
-      HITReviewPolicy.foreach(__v => __obj.update("HITReviewPolicy", __v.asInstanceOf[js.Any]))
-      HITReviewReport.foreach(__v => __obj.update("HITReviewReport", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssignmentReviewPolicy.foreach(__v => __obj.updateDynamic("AssignmentReviewPolicy")(__v.asInstanceOf[js.Any]))
+      AssignmentReviewReport.foreach(__v => __obj.updateDynamic("AssignmentReviewReport")(__v.asInstanceOf[js.Any]))
+      HITId.foreach(__v => __obj.updateDynamic("HITId")(__v.asInstanceOf[js.Any]))
+      HITReviewPolicy.foreach(__v => __obj.updateDynamic("HITReviewPolicy")(__v.asInstanceOf[js.Any]))
+      HITReviewReport.foreach(__v => __obj.updateDynamic("HITReviewReport")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListReviewPolicyResultsForHITResponse]
     }
   }
@@ -1589,11 +1605,11 @@ package mturk {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         Status: js.UndefOr[ReviewableHITStatus] = js.undefined
     ): ListReviewableHITsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      HITTypeId.foreach(__v => __obj.update("HITTypeId", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      HITTypeId.foreach(__v => __obj.updateDynamic("HITTypeId")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListReviewableHITsRequest]
     }
   }
@@ -1611,10 +1627,10 @@ package mturk {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         NumResults: js.UndefOr[Int] = js.undefined
     ): ListReviewableHITsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      HITs.foreach(__v => __obj.update("HITs", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      NumResults.foreach(__v => __obj.update("NumResults", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      HITs.foreach(__v => __obj.updateDynamic("HITs")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      NumResults.foreach(__v => __obj.updateDynamic("NumResults")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListReviewableHITsResponse]
     }
   }
@@ -1630,9 +1646,9 @@ package mturk {
         MaxResults: js.UndefOr[ResultSize] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListWorkerBlocksRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListWorkerBlocksRequest]
     }
   }
@@ -1650,10 +1666,10 @@ package mturk {
         NumResults: js.UndefOr[Int] = js.undefined,
         WorkerBlocks: js.UndefOr[WorkerBlockList] = js.undefined
     ): ListWorkerBlocksResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      NumResults.foreach(__v => __obj.update("NumResults", __v.asInstanceOf[js.Any]))
-      WorkerBlocks.foreach(__v => __obj.update("WorkerBlocks", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      NumResults.foreach(__v => __obj.updateDynamic("NumResults")(__v.asInstanceOf[js.Any]))
+      WorkerBlocks.foreach(__v => __obj.updateDynamic("WorkerBlocks")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListWorkerBlocksResponse]
     }
   }
@@ -1673,13 +1689,13 @@ package mturk {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         Status: js.UndefOr[QualificationStatus] = js.undefined
     ): ListWorkersWithQualificationTypeRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListWorkersWithQualificationTypeRequest]
     }
   }
@@ -1697,10 +1713,10 @@ package mturk {
         NumResults: js.UndefOr[Int] = js.undefined,
         Qualifications: js.UndefOr[QualificationList] = js.undefined
     ): ListWorkersWithQualificationTypeResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      NumResults.foreach(__v => __obj.update("NumResults", __v.asInstanceOf[js.Any]))
-      Qualifications.foreach(__v => __obj.update("Qualifications", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      NumResults.foreach(__v => __obj.updateDynamic("NumResults")(__v.asInstanceOf[js.Any]))
+      Qualifications.foreach(__v => __obj.updateDynamic("Qualifications")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListWorkersWithQualificationTypeResponse]
     }
   }
@@ -1719,11 +1735,11 @@ package mturk {
         Country: CountryParameters,
         Subdivision: js.UndefOr[CountryParameters] = js.undefined
     ): Locale = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Country" -> Country.asInstanceOf[js.Any]
       )
 
-      Subdivision.foreach(__v => __obj.update("Subdivision", __v.asInstanceOf[js.Any]))
+      Subdivision.foreach(__v => __obj.updateDynamic("Subdivision")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Locale]
     }
   }
@@ -1746,7 +1762,7 @@ package mturk {
         Transport: NotificationTransport,
         Version: String
     ): NotificationSpecification = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Destination" -> Destination.asInstanceOf[js.Any],
         "EventTypes"  -> EventTypes.asInstanceOf[js.Any],
         "Transport"   -> Transport.asInstanceOf[js.Any],
@@ -1788,10 +1804,12 @@ package mturk {
         NotifyWorkersFailureMessage: js.UndefOr[String] = js.undefined,
         WorkerId: js.UndefOr[CustomerId] = js.undefined
     ): NotifyWorkersFailureStatus = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NotifyWorkersFailureCode.foreach(__v => __obj.update("NotifyWorkersFailureCode", __v.asInstanceOf[js.Any]))
-      NotifyWorkersFailureMessage.foreach(__v => __obj.update("NotifyWorkersFailureMessage", __v.asInstanceOf[js.Any]))
-      WorkerId.foreach(__v => __obj.update("WorkerId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NotifyWorkersFailureCode.foreach(__v => __obj.updateDynamic("NotifyWorkersFailureCode")(__v.asInstanceOf[js.Any]))
+      NotifyWorkersFailureMessage.foreach(
+        __v => __obj.updateDynamic("NotifyWorkersFailureMessage")(__v.asInstanceOf[js.Any])
+      )
+      WorkerId.foreach(__v => __obj.updateDynamic("WorkerId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NotifyWorkersFailureStatus]
     }
   }
@@ -1809,7 +1827,7 @@ package mturk {
         Subject: String,
         WorkerIds: CustomerIdList
     ): NotifyWorkersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MessageText" -> MessageText.asInstanceOf[js.Any],
         "Subject"     -> Subject.asInstanceOf[js.Any],
         "WorkerIds"   -> WorkerIds.asInstanceOf[js.Any]
@@ -1828,9 +1846,9 @@ package mturk {
     def apply(
         NotifyWorkersFailureStatuses: js.UndefOr[NotifyWorkersFailureStatusList] = js.undefined
     ): NotifyWorkersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       NotifyWorkersFailureStatuses.foreach(
-        __v => __obj.update("NotifyWorkersFailureStatuses", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("NotifyWorkersFailureStatuses")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[NotifyWorkersResponse]
     }
@@ -1850,9 +1868,9 @@ package mturk {
         Key: js.UndefOr[String] = js.undefined,
         Values: js.UndefOr[StringList] = js.undefined
     ): ParameterMapEntry = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ParameterMapEntry]
     }
   }
@@ -1873,10 +1891,10 @@ package mturk {
         MapEntries: js.UndefOr[ParameterMapEntryList] = js.undefined,
         Values: js.UndefOr[StringList] = js.undefined
     ): PolicyParameter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      MapEntries.foreach(__v => __obj.update("MapEntries", __v.asInstanceOf[js.Any]))
-      Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      MapEntries.foreach(__v => __obj.updateDynamic("MapEntries")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PolicyParameter]
     }
   }
@@ -1903,13 +1921,13 @@ package mturk {
         Status: js.UndefOr[QualificationStatus] = js.undefined,
         WorkerId: js.UndefOr[CustomerId] = js.undefined
     ): Qualification = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GrantTime.foreach(__v => __obj.update("GrantTime", __v.asInstanceOf[js.Any]))
-      IntegerValue.foreach(__v => __obj.update("IntegerValue", __v.asInstanceOf[js.Any]))
-      LocaleValue.foreach(__v => __obj.update("LocaleValue", __v.asInstanceOf[js.Any]))
-      QualificationTypeId.foreach(__v => __obj.update("QualificationTypeId", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      WorkerId.foreach(__v => __obj.update("WorkerId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GrantTime.foreach(__v => __obj.updateDynamic("GrantTime")(__v.asInstanceOf[js.Any]))
+      IntegerValue.foreach(__v => __obj.updateDynamic("IntegerValue")(__v.asInstanceOf[js.Any]))
+      LocaleValue.foreach(__v => __obj.updateDynamic("LocaleValue")(__v.asInstanceOf[js.Any]))
+      QualificationTypeId.foreach(__v => __obj.updateDynamic("QualificationTypeId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      WorkerId.foreach(__v => __obj.updateDynamic("WorkerId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Qualification]
     }
   }
@@ -1936,13 +1954,13 @@ package mturk {
         Test: js.UndefOr[String] = js.undefined,
         WorkerId: js.UndefOr[CustomerId] = js.undefined
     ): QualificationRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Answer.foreach(__v => __obj.update("Answer", __v.asInstanceOf[js.Any]))
-      QualificationRequestId.foreach(__v => __obj.update("QualificationRequestId", __v.asInstanceOf[js.Any]))
-      QualificationTypeId.foreach(__v => __obj.update("QualificationTypeId", __v.asInstanceOf[js.Any]))
-      SubmitTime.foreach(__v => __obj.update("SubmitTime", __v.asInstanceOf[js.Any]))
-      Test.foreach(__v => __obj.update("Test", __v.asInstanceOf[js.Any]))
-      WorkerId.foreach(__v => __obj.update("WorkerId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Answer.foreach(__v => __obj.updateDynamic("Answer")(__v.asInstanceOf[js.Any]))
+      QualificationRequestId.foreach(__v => __obj.updateDynamic("QualificationRequestId")(__v.asInstanceOf[js.Any]))
+      QualificationTypeId.foreach(__v => __obj.updateDynamic("QualificationTypeId")(__v.asInstanceOf[js.Any]))
+      SubmitTime.foreach(__v => __obj.updateDynamic("SubmitTime")(__v.asInstanceOf[js.Any]))
+      Test.foreach(__v => __obj.updateDynamic("Test")(__v.asInstanceOf[js.Any]))
+      WorkerId.foreach(__v => __obj.updateDynamic("WorkerId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[QualificationRequest]
     }
   }
@@ -1969,15 +1987,15 @@ package mturk {
         LocaleValues: js.UndefOr[LocaleList] = js.undefined,
         RequiredToPreview: js.UndefOr[Boolean] = js.undefined
     ): QualificationRequirement = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Comparator"          -> Comparator.asInstanceOf[js.Any],
         "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any]
       )
 
-      ActionsGuarded.foreach(__v => __obj.update("ActionsGuarded", __v.asInstanceOf[js.Any]))
-      IntegerValues.foreach(__v => __obj.update("IntegerValues", __v.asInstanceOf[js.Any]))
-      LocaleValues.foreach(__v => __obj.update("LocaleValues", __v.asInstanceOf[js.Any]))
-      RequiredToPreview.foreach(__v => __obj.update("RequiredToPreview", __v.asInstanceOf[js.Any]))
+      ActionsGuarded.foreach(__v => __obj.updateDynamic("ActionsGuarded")(__v.asInstanceOf[js.Any]))
+      IntegerValues.foreach(__v => __obj.updateDynamic("IntegerValues")(__v.asInstanceOf[js.Any]))
+      LocaleValues.foreach(__v => __obj.updateDynamic("LocaleValues")(__v.asInstanceOf[js.Any]))
+      RequiredToPreview.foreach(__v => __obj.updateDynamic("RequiredToPreview")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[QualificationRequirement]
     }
   }
@@ -2025,20 +2043,20 @@ package mturk {
         Test: js.UndefOr[String] = js.undefined,
         TestDurationInSeconds: js.UndefOr[Double] = js.undefined
     ): QualificationType = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AnswerKey.foreach(__v => __obj.update("AnswerKey", __v.asInstanceOf[js.Any]))
-      AutoGranted.foreach(__v => __obj.update("AutoGranted", __v.asInstanceOf[js.Any]))
-      AutoGrantedValue.foreach(__v => __obj.update("AutoGrantedValue", __v.asInstanceOf[js.Any]))
-      CreationTime.foreach(__v => __obj.update("CreationTime", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      IsRequestable.foreach(__v => __obj.update("IsRequestable", __v.asInstanceOf[js.Any]))
-      Keywords.foreach(__v => __obj.update("Keywords", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      QualificationTypeId.foreach(__v => __obj.update("QualificationTypeId", __v.asInstanceOf[js.Any]))
-      QualificationTypeStatus.foreach(__v => __obj.update("QualificationTypeStatus", __v.asInstanceOf[js.Any]))
-      RetryDelayInSeconds.foreach(__v => __obj.update("RetryDelayInSeconds", __v.asInstanceOf[js.Any]))
-      Test.foreach(__v => __obj.update("Test", __v.asInstanceOf[js.Any]))
-      TestDurationInSeconds.foreach(__v => __obj.update("TestDurationInSeconds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AnswerKey.foreach(__v => __obj.updateDynamic("AnswerKey")(__v.asInstanceOf[js.Any]))
+      AutoGranted.foreach(__v => __obj.updateDynamic("AutoGranted")(__v.asInstanceOf[js.Any]))
+      AutoGrantedValue.foreach(__v => __obj.updateDynamic("AutoGrantedValue")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      IsRequestable.foreach(__v => __obj.updateDynamic("IsRequestable")(__v.asInstanceOf[js.Any]))
+      Keywords.foreach(__v => __obj.updateDynamic("Keywords")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      QualificationTypeId.foreach(__v => __obj.updateDynamic("QualificationTypeId")(__v.asInstanceOf[js.Any]))
+      QualificationTypeStatus.foreach(__v => __obj.updateDynamic("QualificationTypeStatus")(__v.asInstanceOf[js.Any]))
+      RetryDelayInSeconds.foreach(__v => __obj.updateDynamic("RetryDelayInSeconds")(__v.asInstanceOf[js.Any]))
+      Test.foreach(__v => __obj.updateDynamic("Test")(__v.asInstanceOf[js.Any]))
+      TestDurationInSeconds.foreach(__v => __obj.updateDynamic("TestDurationInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[QualificationType]
     }
   }
@@ -2061,7 +2079,7 @@ package mturk {
         AssignmentId: EntityId,
         RequesterFeedback: String
     ): RejectAssignmentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AssignmentId"      -> AssignmentId.asInstanceOf[js.Any],
         "RequesterFeedback" -> RequesterFeedback.asInstanceOf[js.Any]
       )
@@ -2076,7 +2094,7 @@ package mturk {
   object RejectAssignmentResponse {
     def apply(
         ): RejectAssignmentResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RejectAssignmentResponse]
     }
@@ -2093,11 +2111,11 @@ package mturk {
         QualificationRequestId: String,
         Reason: js.UndefOr[String] = js.undefined
     ): RejectQualificationRequestRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "QualificationRequestId" -> QualificationRequestId.asInstanceOf[js.Any]
       )
 
-      Reason.foreach(__v => __obj.update("Reason", __v.asInstanceOf[js.Any]))
+      Reason.foreach(__v => __obj.updateDynamic("Reason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RejectQualificationRequestRequest]
     }
   }
@@ -2108,7 +2126,7 @@ package mturk {
   object RejectQualificationRequestResponse {
     def apply(
         ): RejectQualificationRequestResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RejectQualificationRequestResponse]
     }
@@ -2149,15 +2167,15 @@ package mturk {
         TargetId: js.UndefOr[EntityId] = js.undefined,
         TargetType: js.UndefOr[String] = js.undefined
     ): ReviewActionDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ActionId.foreach(__v => __obj.update("ActionId", __v.asInstanceOf[js.Any]))
-      ActionName.foreach(__v => __obj.update("ActionName", __v.asInstanceOf[js.Any]))
-      CompleteTime.foreach(__v => __obj.update("CompleteTime", __v.asInstanceOf[js.Any]))
-      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
-      Result.foreach(__v => __obj.update("Result", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      TargetId.foreach(__v => __obj.update("TargetId", __v.asInstanceOf[js.Any]))
-      TargetType.foreach(__v => __obj.update("TargetType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ActionId.foreach(__v => __obj.updateDynamic("ActionId")(__v.asInstanceOf[js.Any]))
+      ActionName.foreach(__v => __obj.updateDynamic("ActionName")(__v.asInstanceOf[js.Any]))
+      CompleteTime.foreach(__v => __obj.updateDynamic("CompleteTime")(__v.asInstanceOf[js.Any]))
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      Result.foreach(__v => __obj.updateDynamic("Result")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TargetId.foreach(__v => __obj.updateDynamic("TargetId")(__v.asInstanceOf[js.Any]))
+      TargetType.foreach(__v => __obj.updateDynamic("TargetType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReviewActionDetail]
     }
   }
@@ -2185,11 +2203,11 @@ package mturk {
         PolicyName: String,
         Parameters: js.UndefOr[PolicyParameterList] = js.undefined
     ): ReviewPolicy = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyName" -> PolicyName.asInstanceOf[js.Any]
       )
 
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReviewPolicy]
     }
   }
@@ -2215,9 +2233,9 @@ package mturk {
         ReviewActions: js.UndefOr[ReviewActionDetailList] = js.undefined,
         ReviewResults: js.UndefOr[ReviewResultDetailList] = js.undefined
     ): ReviewReport = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ReviewActions.foreach(__v => __obj.update("ReviewActions", __v.asInstanceOf[js.Any]))
-      ReviewResults.foreach(__v => __obj.update("ReviewResults", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ReviewActions.foreach(__v => __obj.updateDynamic("ReviewActions")(__v.asInstanceOf[js.Any]))
+      ReviewResults.foreach(__v => __obj.updateDynamic("ReviewResults")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReviewReport]
     }
   }
@@ -2244,13 +2262,13 @@ package mturk {
         SubjectType: js.UndefOr[String] = js.undefined,
         Value: js.UndefOr[String] = js.undefined
     ): ReviewResultDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ActionId.foreach(__v => __obj.update("ActionId", __v.asInstanceOf[js.Any]))
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      QuestionId.foreach(__v => __obj.update("QuestionId", __v.asInstanceOf[js.Any]))
-      SubjectId.foreach(__v => __obj.update("SubjectId", __v.asInstanceOf[js.Any]))
-      SubjectType.foreach(__v => __obj.update("SubjectType", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ActionId.foreach(__v => __obj.updateDynamic("ActionId")(__v.asInstanceOf[js.Any]))
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      QuestionId.foreach(__v => __obj.updateDynamic("QuestionId")(__v.asInstanceOf[js.Any]))
+      SubjectId.foreach(__v => __obj.updateDynamic("SubjectId")(__v.asInstanceOf[js.Any]))
+      SubjectType.foreach(__v => __obj.updateDynamic("SubjectType")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReviewResultDetail]
     }
   }
@@ -2279,14 +2297,14 @@ package mturk {
         WorkerId: CustomerId,
         UniqueRequestToken: js.UndefOr[IdempotencyToken] = js.undefined
     ): SendBonusRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AssignmentId" -> AssignmentId.asInstanceOf[js.Any],
         "BonusAmount"  -> BonusAmount.asInstanceOf[js.Any],
         "Reason"       -> Reason.asInstanceOf[js.Any],
         "WorkerId"     -> WorkerId.asInstanceOf[js.Any]
       )
 
-      UniqueRequestToken.foreach(__v => __obj.update("UniqueRequestToken", __v.asInstanceOf[js.Any]))
+      UniqueRequestToken.foreach(__v => __obj.updateDynamic("UniqueRequestToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendBonusRequest]
     }
   }
@@ -2297,7 +2315,7 @@ package mturk {
   object SendBonusResponse {
     def apply(
         ): SendBonusResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SendBonusResponse]
     }
@@ -2314,7 +2332,7 @@ package mturk {
         Notification: NotificationSpecification,
         TestEventType: EventType
     ): SendTestEventNotificationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Notification"  -> Notification.asInstanceOf[js.Any],
         "TestEventType" -> TestEventType.asInstanceOf[js.Any]
       )
@@ -2329,7 +2347,7 @@ package mturk {
   object SendTestEventNotificationResponse {
     def apply(
         ): SendTestEventNotificationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SendTestEventNotificationResponse]
     }
@@ -2355,7 +2373,7 @@ package mturk {
         ExpireAt: Timestamp,
         HITId: EntityId
     ): UpdateExpirationForHITRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ExpireAt" -> ExpireAt.asInstanceOf[js.Any],
         "HITId"    -> HITId.asInstanceOf[js.Any]
       )
@@ -2370,7 +2388,7 @@ package mturk {
   object UpdateExpirationForHITResponse {
     def apply(
         ): UpdateExpirationForHITResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateExpirationForHITResponse]
     }
@@ -2387,11 +2405,11 @@ package mturk {
         HITId: EntityId,
         Revert: js.UndefOr[Boolean] = js.undefined
     ): UpdateHITReviewStatusRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HITId" -> HITId.asInstanceOf[js.Any]
       )
 
-      Revert.foreach(__v => __obj.update("Revert", __v.asInstanceOf[js.Any]))
+      Revert.foreach(__v => __obj.updateDynamic("Revert")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateHITReviewStatusRequest]
     }
   }
@@ -2402,7 +2420,7 @@ package mturk {
   object UpdateHITReviewStatusResponse {
     def apply(
         ): UpdateHITReviewStatusResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateHITReviewStatusResponse]
     }
@@ -2419,7 +2437,7 @@ package mturk {
         HITId: EntityId,
         HITTypeId: EntityId
     ): UpdateHITTypeOfHITRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HITId"     -> HITId.asInstanceOf[js.Any],
         "HITTypeId" -> HITTypeId.asInstanceOf[js.Any]
       )
@@ -2434,7 +2452,7 @@ package mturk {
   object UpdateHITTypeOfHITResponse {
     def apply(
         ): UpdateHITTypeOfHITResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateHITTypeOfHITResponse]
     }
@@ -2453,12 +2471,12 @@ package mturk {
         Active: js.UndefOr[Boolean] = js.undefined,
         Notification: js.UndefOr[NotificationSpecification] = js.undefined
     ): UpdateNotificationSettingsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HITTypeId" -> HITTypeId.asInstanceOf[js.Any]
       )
 
-      Active.foreach(__v => __obj.update("Active", __v.asInstanceOf[js.Any]))
-      Notification.foreach(__v => __obj.update("Notification", __v.asInstanceOf[js.Any]))
+      Active.foreach(__v => __obj.updateDynamic("Active")(__v.asInstanceOf[js.Any]))
+      Notification.foreach(__v => __obj.updateDynamic("Notification")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateNotificationSettingsRequest]
     }
   }
@@ -2469,7 +2487,7 @@ package mturk {
   object UpdateNotificationSettingsResponse {
     def apply(
         ): UpdateNotificationSettingsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateNotificationSettingsResponse]
     }
@@ -2500,18 +2518,18 @@ package mturk {
         Test: js.UndefOr[String] = js.undefined,
         TestDurationInSeconds: js.UndefOr[Double] = js.undefined
     ): UpdateQualificationTypeRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "QualificationTypeId" -> QualificationTypeId.asInstanceOf[js.Any]
       )
 
-      AnswerKey.foreach(__v => __obj.update("AnswerKey", __v.asInstanceOf[js.Any]))
-      AutoGranted.foreach(__v => __obj.update("AutoGranted", __v.asInstanceOf[js.Any]))
-      AutoGrantedValue.foreach(__v => __obj.update("AutoGrantedValue", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      QualificationTypeStatus.foreach(__v => __obj.update("QualificationTypeStatus", __v.asInstanceOf[js.Any]))
-      RetryDelayInSeconds.foreach(__v => __obj.update("RetryDelayInSeconds", __v.asInstanceOf[js.Any]))
-      Test.foreach(__v => __obj.update("Test", __v.asInstanceOf[js.Any]))
-      TestDurationInSeconds.foreach(__v => __obj.update("TestDurationInSeconds", __v.asInstanceOf[js.Any]))
+      AnswerKey.foreach(__v => __obj.updateDynamic("AnswerKey")(__v.asInstanceOf[js.Any]))
+      AutoGranted.foreach(__v => __obj.updateDynamic("AutoGranted")(__v.asInstanceOf[js.Any]))
+      AutoGrantedValue.foreach(__v => __obj.updateDynamic("AutoGrantedValue")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      QualificationTypeStatus.foreach(__v => __obj.updateDynamic("QualificationTypeStatus")(__v.asInstanceOf[js.Any]))
+      RetryDelayInSeconds.foreach(__v => __obj.updateDynamic("RetryDelayInSeconds")(__v.asInstanceOf[js.Any]))
+      Test.foreach(__v => __obj.updateDynamic("Test")(__v.asInstanceOf[js.Any]))
+      TestDurationInSeconds.foreach(__v => __obj.updateDynamic("TestDurationInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateQualificationTypeRequest]
     }
   }
@@ -2525,8 +2543,8 @@ package mturk {
     def apply(
         QualificationType: js.UndefOr[QualificationType] = js.undefined
     ): UpdateQualificationTypeResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      QualificationType.foreach(__v => __obj.update("QualificationType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      QualificationType.foreach(__v => __obj.updateDynamic("QualificationType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateQualificationTypeResponse]
     }
   }
@@ -2545,9 +2563,9 @@ package mturk {
         Reason: js.UndefOr[String] = js.undefined,
         WorkerId: js.UndefOr[CustomerId] = js.undefined
     ): WorkerBlock = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Reason.foreach(__v => __obj.update("Reason", __v.asInstanceOf[js.Any]))
-      WorkerId.foreach(__v => __obj.update("WorkerId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Reason.foreach(__v => __obj.updateDynamic("Reason")(__v.asInstanceOf[js.Any]))
+      WorkerId.foreach(__v => __obj.updateDynamic("WorkerId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkerBlock]
     }
   }

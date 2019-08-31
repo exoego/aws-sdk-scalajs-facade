@@ -117,7 +117,7 @@ package fms {
     def apply(
         AdminAccount: AWSAccountId
     ): AssociateAdminAccountRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AdminAccount" -> AdminAccount.asInstanceOf[js.Any]
       )
 
@@ -141,10 +141,10 @@ package fms {
         ResourceType: js.UndefOr[ResourceType] = js.undefined,
         ViolationReason: js.UndefOr[ViolationReason] = js.undefined
     ): ComplianceViolator = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
-      ViolationReason.foreach(__v => __obj.update("ViolationReason", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      ViolationReason.foreach(__v => __obj.updateDynamic("ViolationReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ComplianceViolator]
     }
   }
@@ -161,7 +161,7 @@ package fms {
   object DeleteNotificationChannelRequest {
     def apply(
         ): DeleteNotificationChannelRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteNotificationChannelRequest]
     }
@@ -178,11 +178,11 @@ package fms {
         PolicyId: PolicyId,
         DeleteAllPolicyResources: js.UndefOr[Boolean] = js.undefined
     ): DeletePolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyId" -> PolicyId.asInstanceOf[js.Any]
       )
 
-      DeleteAllPolicyResources.foreach(__v => __obj.update("DeleteAllPolicyResources", __v.asInstanceOf[js.Any]))
+      DeleteAllPolicyResources.foreach(__v => __obj.updateDynamic("DeleteAllPolicyResources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeletePolicyRequest]
     }
   }
@@ -201,7 +201,7 @@ package fms {
   object DisassociateAdminAccountRequest {
     def apply(
         ): DisassociateAdminAccountRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateAdminAccountRequest]
     }
@@ -223,10 +223,10 @@ package fms {
         EvaluationLimitExceeded: js.UndefOr[Boolean] = js.undefined,
         ViolatorCount: js.UndefOr[ResourceCount] = js.undefined
     ): EvaluationResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ComplianceStatus.foreach(__v => __obj.update("ComplianceStatus", __v.asInstanceOf[js.Any]))
-      EvaluationLimitExceeded.foreach(__v => __obj.update("EvaluationLimitExceeded", __v.asInstanceOf[js.Any]))
-      ViolatorCount.foreach(__v => __obj.update("ViolatorCount", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ComplianceStatus.foreach(__v => __obj.updateDynamic("ComplianceStatus")(__v.asInstanceOf[js.Any]))
+      EvaluationLimitExceeded.foreach(__v => __obj.updateDynamic("EvaluationLimitExceeded")(__v.asInstanceOf[js.Any]))
+      ViolatorCount.foreach(__v => __obj.updateDynamic("ViolatorCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EvaluationResult]
     }
   }
@@ -237,7 +237,7 @@ package fms {
   object GetAdminAccountRequest {
     def apply(
         ): GetAdminAccountRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetAdminAccountRequest]
     }
@@ -254,9 +254,9 @@ package fms {
         AdminAccount: js.UndefOr[AWSAccountId] = js.undefined,
         RoleStatus: js.UndefOr[AccountRoleStatus] = js.undefined
     ): GetAdminAccountResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AdminAccount.foreach(__v => __obj.update("AdminAccount", __v.asInstanceOf[js.Any]))
-      RoleStatus.foreach(__v => __obj.update("RoleStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AdminAccount.foreach(__v => __obj.updateDynamic("AdminAccount")(__v.asInstanceOf[js.Any]))
+      RoleStatus.foreach(__v => __obj.updateDynamic("RoleStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAdminAccountResponse]
     }
   }
@@ -272,7 +272,7 @@ package fms {
         MemberAccount: AWSAccountId,
         PolicyId: PolicyId
     ): GetComplianceDetailRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MemberAccount" -> MemberAccount.asInstanceOf[js.Any],
         "PolicyId"      -> PolicyId.asInstanceOf[js.Any]
       )
@@ -290,8 +290,8 @@ package fms {
     def apply(
         PolicyComplianceDetail: js.UndefOr[PolicyComplianceDetail] = js.undefined
     ): GetComplianceDetailResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PolicyComplianceDetail.foreach(__v => __obj.update("PolicyComplianceDetail", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PolicyComplianceDetail.foreach(__v => __obj.updateDynamic("PolicyComplianceDetail")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetComplianceDetailResponse]
     }
   }
@@ -302,7 +302,7 @@ package fms {
   object GetNotificationChannelRequest {
     def apply(
         ): GetNotificationChannelRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetNotificationChannelRequest]
     }
@@ -319,9 +319,9 @@ package fms {
         SnsRoleName: js.UndefOr[ResourceArn] = js.undefined,
         SnsTopicArn: js.UndefOr[ResourceArn] = js.undefined
     ): GetNotificationChannelResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SnsRoleName.foreach(__v => __obj.update("SnsRoleName", __v.asInstanceOf[js.Any]))
-      SnsTopicArn.foreach(__v => __obj.update("SnsTopicArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SnsRoleName.foreach(__v => __obj.updateDynamic("SnsRoleName")(__v.asInstanceOf[js.Any]))
+      SnsTopicArn.foreach(__v => __obj.updateDynamic("SnsTopicArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetNotificationChannelResponse]
     }
   }
@@ -335,7 +335,7 @@ package fms {
     def apply(
         PolicyId: PolicyId
     ): GetPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyId" -> PolicyId.asInstanceOf[js.Any]
       )
 
@@ -354,9 +354,9 @@ package fms {
         Policy: js.UndefOr[Policy] = js.undefined,
         PolicyArn: js.UndefOr[ResourceArn] = js.undefined
     ): GetPolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
-      PolicyArn.foreach(__v => __obj.update("PolicyArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
+      PolicyArn.foreach(__v => __obj.updateDynamic("PolicyArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPolicyResponse]
     }
   }
@@ -380,15 +380,15 @@ package fms {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         StartTime: js.UndefOr[TimeStamp] = js.undefined
     ): GetProtectionStatusRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyId" -> PolicyId.asInstanceOf[js.Any]
       )
 
-      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      MemberAccountId.foreach(__v => __obj.update("MemberAccountId", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      MemberAccountId.foreach(__v => __obj.updateDynamic("MemberAccountId")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetProtectionStatusRequest]
     }
   }
@@ -408,11 +408,11 @@ package fms {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         ServiceType: js.UndefOr[SecurityServiceType] = js.undefined
     ): GetProtectionStatusResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AdminAccountId.foreach(__v => __obj.update("AdminAccountId", __v.asInstanceOf[js.Any]))
-      Data.foreach(__v => __obj.update("Data", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ServiceType.foreach(__v => __obj.update("ServiceType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AdminAccountId.foreach(__v => __obj.updateDynamic("AdminAccountId")(__v.asInstanceOf[js.Any]))
+      Data.foreach(__v => __obj.updateDynamic("Data")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ServiceType.foreach(__v => __obj.updateDynamic("ServiceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetProtectionStatusResponse]
     }
   }
@@ -430,12 +430,12 @@ package fms {
         MaxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListComplianceStatusRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PolicyId" -> PolicyId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListComplianceStatusRequest]
     }
   }
@@ -451,9 +451,11 @@ package fms {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         PolicyComplianceStatusList: js.UndefOr[PolicyComplianceStatusList] = js.undefined
     ): ListComplianceStatusResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PolicyComplianceStatusList.foreach(__v => __obj.update("PolicyComplianceStatusList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PolicyComplianceStatusList.foreach(
+        __v => __obj.updateDynamic("PolicyComplianceStatusList")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[ListComplianceStatusResponse]
     }
   }
@@ -469,9 +471,9 @@ package fms {
         MaxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListMemberAccountsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListMemberAccountsRequest]
     }
   }
@@ -487,9 +489,9 @@ package fms {
         MemberAccounts: js.UndefOr[MemberAccounts] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListMemberAccountsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MemberAccounts.foreach(__v => __obj.update("MemberAccounts", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MemberAccounts.foreach(__v => __obj.updateDynamic("MemberAccounts")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListMemberAccountsResponse]
     }
   }
@@ -505,9 +507,9 @@ package fms {
         MaxResults: js.UndefOr[PaginationMaxResults] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListPoliciesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPoliciesRequest]
     }
   }
@@ -523,9 +525,9 @@ package fms {
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
         PolicyList: js.UndefOr[PolicySummaryList] = js.undefined
     ): ListPoliciesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PolicyList.foreach(__v => __obj.update("PolicyList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PolicyList.foreach(__v => __obj.updateDynamic("PolicyList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPoliciesResponse]
     }
   }
@@ -562,7 +564,7 @@ package fms {
         ResourceTags: js.UndefOr[ResourceTags] = js.undefined,
         ResourceTypeList: js.UndefOr[ResourceTypeList] = js.undefined
     ): Policy = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ExcludeResourceTags"       -> ExcludeResourceTags.asInstanceOf[js.Any],
         "PolicyName"                -> PolicyName.asInstanceOf[js.Any],
         "RemediationEnabled"        -> RemediationEnabled.asInstanceOf[js.Any],
@@ -570,12 +572,12 @@ package fms {
         "SecurityServicePolicyData" -> SecurityServicePolicyData.asInstanceOf[js.Any]
       )
 
-      ExcludeMap.foreach(__v => __obj.update("ExcludeMap", __v.asInstanceOf[js.Any]))
-      IncludeMap.foreach(__v => __obj.update("IncludeMap", __v.asInstanceOf[js.Any]))
-      PolicyId.foreach(__v => __obj.update("PolicyId", __v.asInstanceOf[js.Any]))
-      PolicyUpdateToken.foreach(__v => __obj.update("PolicyUpdateToken", __v.asInstanceOf[js.Any]))
-      ResourceTags.foreach(__v => __obj.update("ResourceTags", __v.asInstanceOf[js.Any]))
-      ResourceTypeList.foreach(__v => __obj.update("ResourceTypeList", __v.asInstanceOf[js.Any]))
+      ExcludeMap.foreach(__v => __obj.updateDynamic("ExcludeMap")(__v.asInstanceOf[js.Any]))
+      IncludeMap.foreach(__v => __obj.updateDynamic("IncludeMap")(__v.asInstanceOf[js.Any]))
+      PolicyId.foreach(__v => __obj.updateDynamic("PolicyId")(__v.asInstanceOf[js.Any]))
+      PolicyUpdateToken.foreach(__v => __obj.updateDynamic("PolicyUpdateToken")(__v.asInstanceOf[js.Any]))
+      ResourceTags.foreach(__v => __obj.updateDynamic("ResourceTags")(__v.asInstanceOf[js.Any]))
+      ResourceTypeList.foreach(__v => __obj.updateDynamic("ResourceTypeList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Policy]
     }
   }
@@ -604,14 +606,14 @@ package fms {
         PolicyOwner: js.UndefOr[AWSAccountId] = js.undefined,
         Violators: js.UndefOr[ComplianceViolators] = js.undefined
     ): PolicyComplianceDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EvaluationLimitExceeded.foreach(__v => __obj.update("EvaluationLimitExceeded", __v.asInstanceOf[js.Any]))
-      ExpiredAt.foreach(__v => __obj.update("ExpiredAt", __v.asInstanceOf[js.Any]))
-      IssueInfoMap.foreach(__v => __obj.update("IssueInfoMap", __v.asInstanceOf[js.Any]))
-      MemberAccount.foreach(__v => __obj.update("MemberAccount", __v.asInstanceOf[js.Any]))
-      PolicyId.foreach(__v => __obj.update("PolicyId", __v.asInstanceOf[js.Any]))
-      PolicyOwner.foreach(__v => __obj.update("PolicyOwner", __v.asInstanceOf[js.Any]))
-      Violators.foreach(__v => __obj.update("Violators", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EvaluationLimitExceeded.foreach(__v => __obj.updateDynamic("EvaluationLimitExceeded")(__v.asInstanceOf[js.Any]))
+      ExpiredAt.foreach(__v => __obj.updateDynamic("ExpiredAt")(__v.asInstanceOf[js.Any]))
+      IssueInfoMap.foreach(__v => __obj.updateDynamic("IssueInfoMap")(__v.asInstanceOf[js.Any]))
+      MemberAccount.foreach(__v => __obj.updateDynamic("MemberAccount")(__v.asInstanceOf[js.Any]))
+      PolicyId.foreach(__v => __obj.updateDynamic("PolicyId")(__v.asInstanceOf[js.Any]))
+      PolicyOwner.foreach(__v => __obj.updateDynamic("PolicyOwner")(__v.asInstanceOf[js.Any]))
+      Violators.foreach(__v => __obj.updateDynamic("Violators")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PolicyComplianceDetail]
     }
   }
@@ -640,14 +642,14 @@ package fms {
         PolicyName: js.UndefOr[ResourceName] = js.undefined,
         PolicyOwner: js.UndefOr[AWSAccountId] = js.undefined
     ): PolicyComplianceStatus = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EvaluationResults.foreach(__v => __obj.update("EvaluationResults", __v.asInstanceOf[js.Any]))
-      IssueInfoMap.foreach(__v => __obj.update("IssueInfoMap", __v.asInstanceOf[js.Any]))
-      LastUpdated.foreach(__v => __obj.update("LastUpdated", __v.asInstanceOf[js.Any]))
-      MemberAccount.foreach(__v => __obj.update("MemberAccount", __v.asInstanceOf[js.Any]))
-      PolicyId.foreach(__v => __obj.update("PolicyId", __v.asInstanceOf[js.Any]))
-      PolicyName.foreach(__v => __obj.update("PolicyName", __v.asInstanceOf[js.Any]))
-      PolicyOwner.foreach(__v => __obj.update("PolicyOwner", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EvaluationResults.foreach(__v => __obj.updateDynamic("EvaluationResults")(__v.asInstanceOf[js.Any]))
+      IssueInfoMap.foreach(__v => __obj.updateDynamic("IssueInfoMap")(__v.asInstanceOf[js.Any]))
+      LastUpdated.foreach(__v => __obj.updateDynamic("LastUpdated")(__v.asInstanceOf[js.Any]))
+      MemberAccount.foreach(__v => __obj.updateDynamic("MemberAccount")(__v.asInstanceOf[js.Any]))
+      PolicyId.foreach(__v => __obj.updateDynamic("PolicyId")(__v.asInstanceOf[js.Any]))
+      PolicyName.foreach(__v => __obj.updateDynamic("PolicyName")(__v.asInstanceOf[js.Any]))
+      PolicyOwner.foreach(__v => __obj.updateDynamic("PolicyOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PolicyComplianceStatus]
     }
   }
@@ -681,13 +683,13 @@ package fms {
         ResourceType: js.UndefOr[ResourceType] = js.undefined,
         SecurityServiceType: js.UndefOr[SecurityServiceType] = js.undefined
     ): PolicySummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PolicyArn.foreach(__v => __obj.update("PolicyArn", __v.asInstanceOf[js.Any]))
-      PolicyId.foreach(__v => __obj.update("PolicyId", __v.asInstanceOf[js.Any]))
-      PolicyName.foreach(__v => __obj.update("PolicyName", __v.asInstanceOf[js.Any]))
-      RemediationEnabled.foreach(__v => __obj.update("RemediationEnabled", __v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
-      SecurityServiceType.foreach(__v => __obj.update("SecurityServiceType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PolicyArn.foreach(__v => __obj.updateDynamic("PolicyArn")(__v.asInstanceOf[js.Any]))
+      PolicyId.foreach(__v => __obj.updateDynamic("PolicyId")(__v.asInstanceOf[js.Any]))
+      PolicyName.foreach(__v => __obj.updateDynamic("PolicyName")(__v.asInstanceOf[js.Any]))
+      RemediationEnabled.foreach(__v => __obj.updateDynamic("RemediationEnabled")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      SecurityServiceType.foreach(__v => __obj.updateDynamic("SecurityServiceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PolicySummary]
     }
   }
@@ -703,7 +705,7 @@ package fms {
         SnsRoleName: ResourceArn,
         SnsTopicArn: ResourceArn
     ): PutNotificationChannelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SnsRoleName" -> SnsRoleName.asInstanceOf[js.Any],
         "SnsTopicArn" -> SnsTopicArn.asInstanceOf[js.Any]
       )
@@ -721,7 +723,7 @@ package fms {
     def apply(
         Policy: Policy
     ): PutPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Policy" -> Policy.asInstanceOf[js.Any]
       )
 
@@ -740,9 +742,9 @@ package fms {
         Policy: js.UndefOr[Policy] = js.undefined,
         PolicyArn: js.UndefOr[ResourceArn] = js.undefined
     ): PutPolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Policy.foreach(__v => __obj.update("Policy", __v.asInstanceOf[js.Any]))
-      PolicyArn.foreach(__v => __obj.update("PolicyArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
+      PolicyArn.foreach(__v => __obj.updateDynamic("PolicyArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutPolicyResponse]
     }
   }
@@ -761,11 +763,11 @@ package fms {
         Key: TagKey,
         Value: js.UndefOr[TagValue] = js.undefined
     ): ResourceTag = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key" -> Key.asInstanceOf[js.Any]
       )
 
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceTag]
     }
   }
@@ -784,11 +786,11 @@ package fms {
         Type: SecurityServiceType,
         ManagedServiceData: js.UndefOr[ManagedServiceData] = js.undefined
     ): SecurityServicePolicyData = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Type" -> Type.asInstanceOf[js.Any]
       )
 
-      ManagedServiceData.foreach(__v => __obj.update("ManagedServiceData", __v.asInstanceOf[js.Any]))
+      ManagedServiceData.foreach(__v => __obj.updateDynamic("ManagedServiceData")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SecurityServicePolicyData]
     }
   }

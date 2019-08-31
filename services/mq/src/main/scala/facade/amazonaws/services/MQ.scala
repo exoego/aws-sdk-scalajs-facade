@@ -135,8 +135,8 @@ package mq {
     def apply(
         Name: js.UndefOr[__string] = js.undefined
     ): AvailabilityZone = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AvailabilityZone]
     }
   }
@@ -155,9 +155,9 @@ package mq {
         EngineType: js.UndefOr[EngineType] = js.undefined,
         EngineVersions: js.UndefOr[__listOfEngineVersion] = js.undefined
     ): BrokerEngineType = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EngineType.foreach(__v => __obj.update("EngineType", __v.asInstanceOf[js.Any]))
-      EngineVersions.foreach(__v => __obj.update("EngineVersions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EngineType.foreach(__v => __obj.updateDynamic("EngineType")(__v.asInstanceOf[js.Any]))
+      EngineVersions.foreach(__v => __obj.updateDynamic("EngineVersions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BrokerEngineType]
     }
   }
@@ -178,10 +178,10 @@ package mq {
         Endpoints: js.UndefOr[__listOf__string] = js.undefined,
         IpAddress: js.UndefOr[__string] = js.undefined
     ): BrokerInstance = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConsoleURL.foreach(__v => __obj.update("ConsoleURL", __v.asInstanceOf[js.Any]))
-      Endpoints.foreach(__v => __obj.update("Endpoints", __v.asInstanceOf[js.Any]))
-      IpAddress.foreach(__v => __obj.update("IpAddress", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConsoleURL.foreach(__v => __obj.updateDynamic("ConsoleURL")(__v.asInstanceOf[js.Any]))
+      Endpoints.foreach(__v => __obj.updateDynamic("Endpoints")(__v.asInstanceOf[js.Any]))
+      IpAddress.foreach(__v => __obj.updateDynamic("IpAddress")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BrokerInstance]
     }
   }
@@ -204,11 +204,11 @@ package mq {
         HostInstanceType: js.UndefOr[__string] = js.undefined,
         SupportedEngineVersions: js.UndefOr[__listOf__string] = js.undefined
     ): BrokerInstanceOption = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AvailabilityZones.foreach(__v => __obj.update("AvailabilityZones", __v.asInstanceOf[js.Any]))
-      EngineType.foreach(__v => __obj.update("EngineType", __v.asInstanceOf[js.Any]))
-      HostInstanceType.foreach(__v => __obj.update("HostInstanceType", __v.asInstanceOf[js.Any]))
-      SupportedEngineVersions.foreach(__v => __obj.update("SupportedEngineVersions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
+      EngineType.foreach(__v => __obj.updateDynamic("EngineType")(__v.asInstanceOf[js.Any]))
+      HostInstanceType.foreach(__v => __obj.updateDynamic("HostInstanceType")(__v.asInstanceOf[js.Any]))
+      SupportedEngineVersions.foreach(__v => __obj.updateDynamic("SupportedEngineVersions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BrokerInstanceOption]
     }
   }
@@ -252,14 +252,14 @@ package mq {
         DeploymentMode: js.UndefOr[DeploymentMode] = js.undefined,
         HostInstanceType: js.UndefOr[__string] = js.undefined
     ): BrokerSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BrokerArn.foreach(__v => __obj.update("BrokerArn", __v.asInstanceOf[js.Any]))
-      BrokerId.foreach(__v => __obj.update("BrokerId", __v.asInstanceOf[js.Any]))
-      BrokerName.foreach(__v => __obj.update("BrokerName", __v.asInstanceOf[js.Any]))
-      BrokerState.foreach(__v => __obj.update("BrokerState", __v.asInstanceOf[js.Any]))
-      Created.foreach(__v => __obj.update("Created", __v.asInstanceOf[js.Any]))
-      DeploymentMode.foreach(__v => __obj.update("DeploymentMode", __v.asInstanceOf[js.Any]))
-      HostInstanceType.foreach(__v => __obj.update("HostInstanceType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BrokerArn.foreach(__v => __obj.updateDynamic("BrokerArn")(__v.asInstanceOf[js.Any]))
+      BrokerId.foreach(__v => __obj.updateDynamic("BrokerId")(__v.asInstanceOf[js.Any]))
+      BrokerName.foreach(__v => __obj.updateDynamic("BrokerName")(__v.asInstanceOf[js.Any]))
+      BrokerState.foreach(__v => __obj.updateDynamic("BrokerState")(__v.asInstanceOf[js.Any]))
+      Created.foreach(__v => __obj.updateDynamic("Created")(__v.asInstanceOf[js.Any]))
+      DeploymentMode.foreach(__v => __obj.updateDynamic("DeploymentMode")(__v.asInstanceOf[js.Any]))
+      HostInstanceType.foreach(__v => __obj.updateDynamic("HostInstanceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BrokerSummary]
     }
   }
@@ -303,16 +303,16 @@ package mq {
         Name: js.UndefOr[__string] = js.undefined,
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): Configuration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Created.foreach(__v => __obj.update("Created", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      EngineType.foreach(__v => __obj.update("EngineType", __v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      LatestRevision.foreach(__v => __obj.update("LatestRevision", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Created.foreach(__v => __obj.updateDynamic("Created")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EngineType.foreach(__v => __obj.updateDynamic("EngineType")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LatestRevision.foreach(__v => __obj.updateDynamic("LatestRevision")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Configuration]
     }
   }
@@ -331,9 +331,9 @@ package mq {
         Id: js.UndefOr[__string] = js.undefined,
         Revision: js.UndefOr[__integer] = js.undefined
     ): ConfigurationId = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Revision.foreach(__v => __obj.update("Revision", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Revision.foreach(__v => __obj.updateDynamic("Revision")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfigurationId]
     }
   }
@@ -354,10 +354,10 @@ package mq {
         Description: js.UndefOr[__string] = js.undefined,
         Revision: js.UndefOr[__integer] = js.undefined
     ): ConfigurationRevision = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Created.foreach(__v => __obj.update("Created", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Revision.foreach(__v => __obj.update("Revision", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Created.foreach(__v => __obj.updateDynamic("Created")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Revision.foreach(__v => __obj.updateDynamic("Revision")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfigurationRevision]
     }
   }
@@ -378,10 +378,10 @@ package mq {
         History: js.UndefOr[__listOfConfigurationId] = js.undefined,
         Pending: js.UndefOr[ConfigurationId] = js.undefined
     ): Configurations = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Current.foreach(__v => __obj.update("Current", __v.asInstanceOf[js.Any]))
-      History.foreach(__v => __obj.update("History", __v.asInstanceOf[js.Any]))
-      Pending.foreach(__v => __obj.update("Pending", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Current.foreach(__v => __obj.updateDynamic("Current")(__v.asInstanceOf[js.Any]))
+      History.foreach(__v => __obj.updateDynamic("History")(__v.asInstanceOf[js.Any]))
+      Pending.foreach(__v => __obj.updateDynamic("Pending")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Configurations]
     }
   }
@@ -428,23 +428,25 @@ package mq {
         Tags: js.UndefOr[__mapOf__string] = js.undefined,
         Users: js.UndefOr[__listOfUser] = js.undefined
     ): CreateBrokerRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AutoMinorVersionUpgrade.foreach(__v => __obj.update("AutoMinorVersionUpgrade", __v.asInstanceOf[js.Any]))
-      BrokerName.foreach(__v => __obj.update("BrokerName", __v.asInstanceOf[js.Any]))
-      Configuration.foreach(__v => __obj.update("Configuration", __v.asInstanceOf[js.Any]))
-      CreatorRequestId.foreach(__v => __obj.update("CreatorRequestId", __v.asInstanceOf[js.Any]))
-      DeploymentMode.foreach(__v => __obj.update("DeploymentMode", __v.asInstanceOf[js.Any]))
-      EncryptionOptions.foreach(__v => __obj.update("EncryptionOptions", __v.asInstanceOf[js.Any]))
-      EngineType.foreach(__v => __obj.update("EngineType", __v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
-      HostInstanceType.foreach(__v => __obj.update("HostInstanceType", __v.asInstanceOf[js.Any]))
-      Logs.foreach(__v => __obj.update("Logs", __v.asInstanceOf[js.Any]))
-      MaintenanceWindowStartTime.foreach(__v => __obj.update("MaintenanceWindowStartTime", __v.asInstanceOf[js.Any]))
-      PubliclyAccessible.foreach(__v => __obj.update("PubliclyAccessible", __v.asInstanceOf[js.Any]))
-      SecurityGroups.foreach(__v => __obj.update("SecurityGroups", __v.asInstanceOf[js.Any]))
-      SubnetIds.foreach(__v => __obj.update("SubnetIds", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      Users.foreach(__v => __obj.update("Users", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
+      BrokerName.foreach(__v => __obj.updateDynamic("BrokerName")(__v.asInstanceOf[js.Any]))
+      Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
+      CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
+      DeploymentMode.foreach(__v => __obj.updateDynamic("DeploymentMode")(__v.asInstanceOf[js.Any]))
+      EncryptionOptions.foreach(__v => __obj.updateDynamic("EncryptionOptions")(__v.asInstanceOf[js.Any]))
+      EngineType.foreach(__v => __obj.updateDynamic("EngineType")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      HostInstanceType.foreach(__v => __obj.updateDynamic("HostInstanceType")(__v.asInstanceOf[js.Any]))
+      Logs.foreach(__v => __obj.updateDynamic("Logs")(__v.asInstanceOf[js.Any]))
+      MaintenanceWindowStartTime.foreach(
+        __v => __obj.updateDynamic("MaintenanceWindowStartTime")(__v.asInstanceOf[js.Any])
+      )
+      PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
+      SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      Users.foreach(__v => __obj.updateDynamic("Users")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateBrokerRequest]
     }
   }
@@ -460,9 +462,9 @@ package mq {
         BrokerArn: js.UndefOr[__string] = js.undefined,
         BrokerId: js.UndefOr[__string] = js.undefined
     ): CreateBrokerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BrokerArn.foreach(__v => __obj.update("BrokerArn", __v.asInstanceOf[js.Any]))
-      BrokerId.foreach(__v => __obj.update("BrokerId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BrokerArn.foreach(__v => __obj.updateDynamic("BrokerArn")(__v.asInstanceOf[js.Any]))
+      BrokerId.foreach(__v => __obj.updateDynamic("BrokerId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateBrokerResponse]
     }
   }
@@ -485,11 +487,11 @@ package mq {
         Name: js.UndefOr[__string] = js.undefined,
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): CreateConfigurationRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EngineType.foreach(__v => __obj.update("EngineType", __v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EngineType.foreach(__v => __obj.updateDynamic("EngineType")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateConfigurationRequest]
     }
   }
@@ -511,12 +513,12 @@ package mq {
         LatestRevision: js.UndefOr[ConfigurationRevision] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined
     ): CreateConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Created.foreach(__v => __obj.update("Created", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      LatestRevision.foreach(__v => __obj.update("LatestRevision", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Created.foreach(__v => __obj.updateDynamic("Created")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LatestRevision.foreach(__v => __obj.updateDynamic("LatestRevision")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateConfigurationResponse]
     }
   }
@@ -535,11 +537,11 @@ package mq {
         ResourceArn: __string,
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): CreateTagsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTagsRequest]
     }
   }
@@ -564,14 +566,14 @@ package mq {
         Groups: js.UndefOr[__listOf__string] = js.undefined,
         Password: js.UndefOr[__string] = js.undefined
     ): CreateUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BrokerId" -> BrokerId.asInstanceOf[js.Any],
         "Username" -> Username.asInstanceOf[js.Any]
       )
 
-      ConsoleAccess.foreach(__v => __obj.update("ConsoleAccess", __v.asInstanceOf[js.Any]))
-      Groups.foreach(__v => __obj.update("Groups", __v.asInstanceOf[js.Any]))
-      Password.foreach(__v => __obj.update("Password", __v.asInstanceOf[js.Any]))
+      ConsoleAccess.foreach(__v => __obj.updateDynamic("ConsoleAccess")(__v.asInstanceOf[js.Any]))
+      Groups.foreach(__v => __obj.updateDynamic("Groups")(__v.asInstanceOf[js.Any]))
+      Password.foreach(__v => __obj.updateDynamic("Password")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateUserRequest]
     }
   }
@@ -582,7 +584,7 @@ package mq {
   object CreateUserResponse {
     def apply(
         ): CreateUserResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateUserResponse]
     }
@@ -609,7 +611,7 @@ package mq {
     def apply(
         BrokerId: __string
     ): DeleteBrokerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BrokerId" -> BrokerId.asInstanceOf[js.Any]
       )
 
@@ -626,8 +628,8 @@ package mq {
     def apply(
         BrokerId: js.UndefOr[__string] = js.undefined
     ): DeleteBrokerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BrokerId.foreach(__v => __obj.update("BrokerId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BrokerId.foreach(__v => __obj.updateDynamic("BrokerId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteBrokerResponse]
     }
   }
@@ -643,7 +645,7 @@ package mq {
         ResourceArn: __string,
         TagKeys: __listOf__string
     ): DeleteTagsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
       )
@@ -663,7 +665,7 @@ package mq {
         BrokerId: __string,
         Username: __string
     ): DeleteUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BrokerId" -> BrokerId.asInstanceOf[js.Any],
         "Username" -> Username.asInstanceOf[js.Any]
       )
@@ -678,7 +680,7 @@ package mq {
   object DeleteUserResponse {
     def apply(
         ): DeleteUserResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteUserResponse]
     }
@@ -707,10 +709,10 @@ package mq {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): DescribeBrokerEngineTypesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EngineType.foreach(__v => __obj.update("EngineType", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EngineType.foreach(__v => __obj.updateDynamic("EngineType")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeBrokerEngineTypesRequest]
     }
   }
@@ -728,10 +730,10 @@ package mq {
         MaxResults: js.UndefOr[__integerMin5Max100] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): DescribeBrokerEngineTypesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BrokerEngineTypes.foreach(__v => __obj.update("BrokerEngineTypes", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BrokerEngineTypes.foreach(__v => __obj.updateDynamic("BrokerEngineTypes")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeBrokerEngineTypesResponse]
     }
   }
@@ -751,11 +753,11 @@ package mq {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): DescribeBrokerInstanceOptionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EngineType.foreach(__v => __obj.update("EngineType", __v.asInstanceOf[js.Any]))
-      HostInstanceType.foreach(__v => __obj.update("HostInstanceType", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EngineType.foreach(__v => __obj.updateDynamic("EngineType")(__v.asInstanceOf[js.Any]))
+      HostInstanceType.foreach(__v => __obj.updateDynamic("HostInstanceType")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeBrokerInstanceOptionsRequest]
     }
   }
@@ -773,10 +775,10 @@ package mq {
         MaxResults: js.UndefOr[__integerMin5Max100] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): DescribeBrokerInstanceOptionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BrokerInstanceOptions.foreach(__v => __obj.update("BrokerInstanceOptions", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BrokerInstanceOptions.foreach(__v => __obj.updateDynamic("BrokerInstanceOptions")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeBrokerInstanceOptionsResponse]
     }
   }
@@ -790,7 +792,7 @@ package mq {
     def apply(
         BrokerId: __string
     ): DescribeBrokerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BrokerId" -> BrokerId.asInstanceOf[js.Any]
       )
 
@@ -847,28 +849,30 @@ package mq {
         Tags: js.UndefOr[__mapOf__string] = js.undefined,
         Users: js.UndefOr[__listOfUserSummary] = js.undefined
     ): DescribeBrokerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AutoMinorVersionUpgrade.foreach(__v => __obj.update("AutoMinorVersionUpgrade", __v.asInstanceOf[js.Any]))
-      BrokerArn.foreach(__v => __obj.update("BrokerArn", __v.asInstanceOf[js.Any]))
-      BrokerId.foreach(__v => __obj.update("BrokerId", __v.asInstanceOf[js.Any]))
-      BrokerInstances.foreach(__v => __obj.update("BrokerInstances", __v.asInstanceOf[js.Any]))
-      BrokerName.foreach(__v => __obj.update("BrokerName", __v.asInstanceOf[js.Any]))
-      BrokerState.foreach(__v => __obj.update("BrokerState", __v.asInstanceOf[js.Any]))
-      Configurations.foreach(__v => __obj.update("Configurations", __v.asInstanceOf[js.Any]))
-      Created.foreach(__v => __obj.update("Created", __v.asInstanceOf[js.Any]))
-      DeploymentMode.foreach(__v => __obj.update("DeploymentMode", __v.asInstanceOf[js.Any]))
-      EncryptionOptions.foreach(__v => __obj.update("EncryptionOptions", __v.asInstanceOf[js.Any]))
-      EngineType.foreach(__v => __obj.update("EngineType", __v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
-      HostInstanceType.foreach(__v => __obj.update("HostInstanceType", __v.asInstanceOf[js.Any]))
-      Logs.foreach(__v => __obj.update("Logs", __v.asInstanceOf[js.Any]))
-      MaintenanceWindowStartTime.foreach(__v => __obj.update("MaintenanceWindowStartTime", __v.asInstanceOf[js.Any]))
-      PendingEngineVersion.foreach(__v => __obj.update("PendingEngineVersion", __v.asInstanceOf[js.Any]))
-      PubliclyAccessible.foreach(__v => __obj.update("PubliclyAccessible", __v.asInstanceOf[js.Any]))
-      SecurityGroups.foreach(__v => __obj.update("SecurityGroups", __v.asInstanceOf[js.Any]))
-      SubnetIds.foreach(__v => __obj.update("SubnetIds", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      Users.foreach(__v => __obj.update("Users", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
+      BrokerArn.foreach(__v => __obj.updateDynamic("BrokerArn")(__v.asInstanceOf[js.Any]))
+      BrokerId.foreach(__v => __obj.updateDynamic("BrokerId")(__v.asInstanceOf[js.Any]))
+      BrokerInstances.foreach(__v => __obj.updateDynamic("BrokerInstances")(__v.asInstanceOf[js.Any]))
+      BrokerName.foreach(__v => __obj.updateDynamic("BrokerName")(__v.asInstanceOf[js.Any]))
+      BrokerState.foreach(__v => __obj.updateDynamic("BrokerState")(__v.asInstanceOf[js.Any]))
+      Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
+      Created.foreach(__v => __obj.updateDynamic("Created")(__v.asInstanceOf[js.Any]))
+      DeploymentMode.foreach(__v => __obj.updateDynamic("DeploymentMode")(__v.asInstanceOf[js.Any]))
+      EncryptionOptions.foreach(__v => __obj.updateDynamic("EncryptionOptions")(__v.asInstanceOf[js.Any]))
+      EngineType.foreach(__v => __obj.updateDynamic("EngineType")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      HostInstanceType.foreach(__v => __obj.updateDynamic("HostInstanceType")(__v.asInstanceOf[js.Any]))
+      Logs.foreach(__v => __obj.updateDynamic("Logs")(__v.asInstanceOf[js.Any]))
+      MaintenanceWindowStartTime.foreach(
+        __v => __obj.updateDynamic("MaintenanceWindowStartTime")(__v.asInstanceOf[js.Any])
+      )
+      PendingEngineVersion.foreach(__v => __obj.updateDynamic("PendingEngineVersion")(__v.asInstanceOf[js.Any]))
+      PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
+      SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      Users.foreach(__v => __obj.updateDynamic("Users")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeBrokerResponse]
     }
   }
@@ -882,7 +886,7 @@ package mq {
     def apply(
         ConfigurationId: __string
     ): DescribeConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationId" -> ConfigurationId.asInstanceOf[js.Any]
       )
 
@@ -915,16 +919,16 @@ package mq {
         Name: js.UndefOr[__string] = js.undefined,
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): DescribeConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Created.foreach(__v => __obj.update("Created", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      EngineType.foreach(__v => __obj.update("EngineType", __v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      LatestRevision.foreach(__v => __obj.update("LatestRevision", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Created.foreach(__v => __obj.updateDynamic("Created")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EngineType.foreach(__v => __obj.updateDynamic("EngineType")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LatestRevision.foreach(__v => __obj.updateDynamic("LatestRevision")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeConfigurationResponse]
     }
   }
@@ -940,7 +944,7 @@ package mq {
         ConfigurationId: __string,
         ConfigurationRevision: __string
     ): DescribeConfigurationRevisionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationId"       -> ConfigurationId.asInstanceOf[js.Any],
         "ConfigurationRevision" -> ConfigurationRevision.asInstanceOf[js.Any]
       )
@@ -964,11 +968,11 @@ package mq {
         Data: js.UndefOr[__string] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined
     ): DescribeConfigurationRevisionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConfigurationId.foreach(__v => __obj.update("ConfigurationId", __v.asInstanceOf[js.Any]))
-      Created.foreach(__v => __obj.update("Created", __v.asInstanceOf[js.Any]))
-      Data.foreach(__v => __obj.update("Data", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConfigurationId.foreach(__v => __obj.updateDynamic("ConfigurationId")(__v.asInstanceOf[js.Any]))
+      Created.foreach(__v => __obj.updateDynamic("Created")(__v.asInstanceOf[js.Any]))
+      Data.foreach(__v => __obj.updateDynamic("Data")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeConfigurationRevisionResponse]
     }
   }
@@ -984,7 +988,7 @@ package mq {
         BrokerId: __string,
         Username: __string
     ): DescribeUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BrokerId" -> BrokerId.asInstanceOf[js.Any],
         "Username" -> Username.asInstanceOf[js.Any]
       )
@@ -1010,12 +1014,12 @@ package mq {
         Pending: js.UndefOr[UserPendingChanges] = js.undefined,
         Username: js.UndefOr[__string] = js.undefined
     ): DescribeUserResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BrokerId.foreach(__v => __obj.update("BrokerId", __v.asInstanceOf[js.Any]))
-      ConsoleAccess.foreach(__v => __obj.update("ConsoleAccess", __v.asInstanceOf[js.Any]))
-      Groups.foreach(__v => __obj.update("Groups", __v.asInstanceOf[js.Any]))
-      Pending.foreach(__v => __obj.update("Pending", __v.asInstanceOf[js.Any]))
-      Username.foreach(__v => __obj.update("Username", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BrokerId.foreach(__v => __obj.updateDynamic("BrokerId")(__v.asInstanceOf[js.Any]))
+      ConsoleAccess.foreach(__v => __obj.updateDynamic("ConsoleAccess")(__v.asInstanceOf[js.Any]))
+      Groups.foreach(__v => __obj.updateDynamic("Groups")(__v.asInstanceOf[js.Any]))
+      Pending.foreach(__v => __obj.updateDynamic("Pending")(__v.asInstanceOf[js.Any]))
+      Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeUserResponse]
     }
   }
@@ -1034,11 +1038,11 @@ package mq {
         UseAwsOwnedKey: __boolean,
         KmsKeyId: js.UndefOr[__string] = js.undefined
     ): EncryptionOptions = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "UseAwsOwnedKey" -> UseAwsOwnedKey.asInstanceOf[js.Any]
       )
 
-      KmsKeyId.foreach(__v => __obj.update("KmsKeyId", __v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EncryptionOptions]
     }
   }
@@ -1064,8 +1068,8 @@ package mq {
     def apply(
         Name: js.UndefOr[__string] = js.undefined
     ): EngineVersion = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EngineVersion]
     }
   }
@@ -1081,9 +1085,9 @@ package mq {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListBrokersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBrokersRequest]
     }
   }
@@ -1099,9 +1103,9 @@ package mq {
         BrokerSummaries: js.UndefOr[__listOfBrokerSummary] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListBrokersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BrokerSummaries.foreach(__v => __obj.update("BrokerSummaries", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BrokerSummaries.foreach(__v => __obj.updateDynamic("BrokerSummaries")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBrokersResponse]
     }
   }
@@ -1119,12 +1123,12 @@ package mq {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListConfigurationRevisionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationId" -> ConfigurationId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListConfigurationRevisionsRequest]
     }
   }
@@ -1144,11 +1148,11 @@ package mq {
         NextToken: js.UndefOr[__string] = js.undefined,
         Revisions: js.UndefOr[__listOfConfigurationRevision] = js.undefined
     ): ListConfigurationRevisionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConfigurationId.foreach(__v => __obj.update("ConfigurationId", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Revisions.foreach(__v => __obj.update("Revisions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConfigurationId.foreach(__v => __obj.updateDynamic("ConfigurationId")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Revisions.foreach(__v => __obj.updateDynamic("Revisions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListConfigurationRevisionsResponse]
     }
   }
@@ -1164,9 +1168,9 @@ package mq {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListConfigurationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListConfigurationsRequest]
     }
   }
@@ -1184,10 +1188,10 @@ package mq {
         MaxResults: js.UndefOr[__integer] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListConfigurationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Configurations.foreach(__v => __obj.update("Configurations", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListConfigurationsResponse]
     }
   }
@@ -1201,7 +1205,7 @@ package mq {
     def apply(
         ResourceArn: __string
     ): ListTagsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
@@ -1218,8 +1222,8 @@ package mq {
     def apply(
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): ListTagsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsResponse]
     }
   }
@@ -1237,12 +1241,12 @@ package mq {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListUsersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BrokerId" -> BrokerId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListUsersRequest]
     }
   }
@@ -1262,11 +1266,11 @@ package mq {
         NextToken: js.UndefOr[__string] = js.undefined,
         Users: js.UndefOr[__listOfUserSummary] = js.undefined
     ): ListUsersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BrokerId.foreach(__v => __obj.update("BrokerId", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Users.foreach(__v => __obj.update("Users", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BrokerId.foreach(__v => __obj.updateDynamic("BrokerId")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Users.foreach(__v => __obj.updateDynamic("Users")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListUsersResponse]
     }
   }
@@ -1285,9 +1289,9 @@ package mq {
         Audit: js.UndefOr[__boolean] = js.undefined,
         General: js.UndefOr[__boolean] = js.undefined
     ): Logs = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Audit.foreach(__v => __obj.update("Audit", __v.asInstanceOf[js.Any]))
-      General.foreach(__v => __obj.update("General", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Audit.foreach(__v => __obj.updateDynamic("Audit")(__v.asInstanceOf[js.Any]))
+      General.foreach(__v => __obj.updateDynamic("General")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Logs]
     }
   }
@@ -1312,12 +1316,12 @@ package mq {
         GeneralLogGroup: js.UndefOr[__string] = js.undefined,
         Pending: js.UndefOr[PendingLogs] = js.undefined
     ): LogsSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Audit.foreach(__v => __obj.update("Audit", __v.asInstanceOf[js.Any]))
-      AuditLogGroup.foreach(__v => __obj.update("AuditLogGroup", __v.asInstanceOf[js.Any]))
-      General.foreach(__v => __obj.update("General", __v.asInstanceOf[js.Any]))
-      GeneralLogGroup.foreach(__v => __obj.update("GeneralLogGroup", __v.asInstanceOf[js.Any]))
-      Pending.foreach(__v => __obj.update("Pending", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Audit.foreach(__v => __obj.updateDynamic("Audit")(__v.asInstanceOf[js.Any]))
+      AuditLogGroup.foreach(__v => __obj.updateDynamic("AuditLogGroup")(__v.asInstanceOf[js.Any]))
+      General.foreach(__v => __obj.updateDynamic("General")(__v.asInstanceOf[js.Any]))
+      GeneralLogGroup.foreach(__v => __obj.updateDynamic("GeneralLogGroup")(__v.asInstanceOf[js.Any]))
+      Pending.foreach(__v => __obj.updateDynamic("Pending")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LogsSummary]
     }
   }
@@ -1336,9 +1340,9 @@ package mq {
         Audit: js.UndefOr[__boolean] = js.undefined,
         General: js.UndefOr[__boolean] = js.undefined
     ): PendingLogs = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Audit.foreach(__v => __obj.update("Audit", __v.asInstanceOf[js.Any]))
-      General.foreach(__v => __obj.update("General", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Audit.foreach(__v => __obj.updateDynamic("Audit")(__v.asInstanceOf[js.Any]))
+      General.foreach(__v => __obj.updateDynamic("General")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PendingLogs]
     }
   }
@@ -1352,7 +1356,7 @@ package mq {
     def apply(
         BrokerId: __string
     ): RebootBrokerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BrokerId" -> BrokerId.asInstanceOf[js.Any]
       )
 
@@ -1366,7 +1370,7 @@ package mq {
   object RebootBrokerResponse {
     def apply(
         ): RebootBrokerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RebootBrokerResponse]
     }
@@ -1388,10 +1392,10 @@ package mq {
         ElementName: js.UndefOr[__string] = js.undefined,
         Reason: js.UndefOr[SanitizationWarningReason] = js.undefined
     ): SanitizationWarning = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttributeName.foreach(__v => __obj.update("AttributeName", __v.asInstanceOf[js.Any]))
-      ElementName.foreach(__v => __obj.update("ElementName", __v.asInstanceOf[js.Any]))
-      Reason.foreach(__v => __obj.update("Reason", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttributeName.foreach(__v => __obj.updateDynamic("AttributeName")(__v.asInstanceOf[js.Any]))
+      ElementName.foreach(__v => __obj.updateDynamic("ElementName")(__v.asInstanceOf[js.Any]))
+      Reason.foreach(__v => __obj.updateDynamic("Reason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SanitizationWarning]
     }
   }
@@ -1429,14 +1433,14 @@ package mq {
         EngineVersion: js.UndefOr[__string] = js.undefined,
         Logs: js.UndefOr[Logs] = js.undefined
     ): UpdateBrokerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BrokerId" -> BrokerId.asInstanceOf[js.Any]
       )
 
-      AutoMinorVersionUpgrade.foreach(__v => __obj.update("AutoMinorVersionUpgrade", __v.asInstanceOf[js.Any]))
-      Configuration.foreach(__v => __obj.update("Configuration", __v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
-      Logs.foreach(__v => __obj.update("Logs", __v.asInstanceOf[js.Any]))
+      AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
+      Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      Logs.foreach(__v => __obj.updateDynamic("Logs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateBrokerRequest]
     }
   }
@@ -1458,12 +1462,12 @@ package mq {
         EngineVersion: js.UndefOr[__string] = js.undefined,
         Logs: js.UndefOr[Logs] = js.undefined
     ): UpdateBrokerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AutoMinorVersionUpgrade.foreach(__v => __obj.update("AutoMinorVersionUpgrade", __v.asInstanceOf[js.Any]))
-      BrokerId.foreach(__v => __obj.update("BrokerId", __v.asInstanceOf[js.Any]))
-      Configuration.foreach(__v => __obj.update("Configuration", __v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
-      Logs.foreach(__v => __obj.update("Logs", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AutoMinorVersionUpgrade.foreach(__v => __obj.updateDynamic("AutoMinorVersionUpgrade")(__v.asInstanceOf[js.Any]))
+      BrokerId.foreach(__v => __obj.updateDynamic("BrokerId")(__v.asInstanceOf[js.Any]))
+      Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      Logs.foreach(__v => __obj.updateDynamic("Logs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateBrokerResponse]
     }
   }
@@ -1484,12 +1488,12 @@ package mq {
         Data: js.UndefOr[__string] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined
     ): UpdateConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConfigurationId" -> ConfigurationId.asInstanceOf[js.Any]
       )
 
-      Data.foreach(__v => __obj.update("Data", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Data.foreach(__v => __obj.updateDynamic("Data")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateConfigurationRequest]
     }
   }
@@ -1513,13 +1517,13 @@ package mq {
         Name: js.UndefOr[__string] = js.undefined,
         Warnings: js.UndefOr[__listOfSanitizationWarning] = js.undefined
     ): UpdateConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Created.foreach(__v => __obj.update("Created", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      LatestRevision.foreach(__v => __obj.update("LatestRevision", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Warnings.foreach(__v => __obj.update("Warnings", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Created.foreach(__v => __obj.updateDynamic("Created")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LatestRevision.foreach(__v => __obj.updateDynamic("LatestRevision")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Warnings.foreach(__v => __obj.updateDynamic("Warnings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateConfigurationResponse]
     }
   }
@@ -1544,14 +1548,14 @@ package mq {
         Groups: js.UndefOr[__listOf__string] = js.undefined,
         Password: js.UndefOr[__string] = js.undefined
     ): UpdateUserRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BrokerId" -> BrokerId.asInstanceOf[js.Any],
         "Username" -> Username.asInstanceOf[js.Any]
       )
 
-      ConsoleAccess.foreach(__v => __obj.update("ConsoleAccess", __v.asInstanceOf[js.Any]))
-      Groups.foreach(__v => __obj.update("Groups", __v.asInstanceOf[js.Any]))
-      Password.foreach(__v => __obj.update("Password", __v.asInstanceOf[js.Any]))
+      ConsoleAccess.foreach(__v => __obj.updateDynamic("ConsoleAccess")(__v.asInstanceOf[js.Any]))
+      Groups.foreach(__v => __obj.updateDynamic("Groups")(__v.asInstanceOf[js.Any]))
+      Password.foreach(__v => __obj.updateDynamic("Password")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateUserRequest]
     }
   }
@@ -1562,7 +1566,7 @@ package mq {
   object UpdateUserResponse {
     def apply(
         ): UpdateUserResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateUserResponse]
     }
@@ -1586,11 +1590,11 @@ package mq {
         Password: js.UndefOr[__string] = js.undefined,
         Username: js.UndefOr[__string] = js.undefined
     ): User = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConsoleAccess.foreach(__v => __obj.update("ConsoleAccess", __v.asInstanceOf[js.Any]))
-      Groups.foreach(__v => __obj.update("Groups", __v.asInstanceOf[js.Any]))
-      Password.foreach(__v => __obj.update("Password", __v.asInstanceOf[js.Any]))
-      Username.foreach(__v => __obj.update("Username", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConsoleAccess.foreach(__v => __obj.updateDynamic("ConsoleAccess")(__v.asInstanceOf[js.Any]))
+      Groups.foreach(__v => __obj.updateDynamic("Groups")(__v.asInstanceOf[js.Any]))
+      Password.foreach(__v => __obj.updateDynamic("Password")(__v.asInstanceOf[js.Any]))
+      Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[User]
     }
   }
@@ -1611,10 +1615,10 @@ package mq {
         Groups: js.UndefOr[__listOf__string] = js.undefined,
         PendingChange: js.UndefOr[ChangeType] = js.undefined
     ): UserPendingChanges = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConsoleAccess.foreach(__v => __obj.update("ConsoleAccess", __v.asInstanceOf[js.Any]))
-      Groups.foreach(__v => __obj.update("Groups", __v.asInstanceOf[js.Any]))
-      PendingChange.foreach(__v => __obj.update("PendingChange", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConsoleAccess.foreach(__v => __obj.updateDynamic("ConsoleAccess")(__v.asInstanceOf[js.Any]))
+      Groups.foreach(__v => __obj.updateDynamic("Groups")(__v.asInstanceOf[js.Any]))
+      PendingChange.foreach(__v => __obj.updateDynamic("PendingChange")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UserPendingChanges]
     }
   }
@@ -1633,9 +1637,9 @@ package mq {
         PendingChange: js.UndefOr[ChangeType] = js.undefined,
         Username: js.UndefOr[__string] = js.undefined
     ): UserSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PendingChange.foreach(__v => __obj.update("PendingChange", __v.asInstanceOf[js.Any]))
-      Username.foreach(__v => __obj.update("Username", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PendingChange.foreach(__v => __obj.updateDynamic("PendingChange")(__v.asInstanceOf[js.Any]))
+      Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UserSummary]
     }
   }
@@ -1656,10 +1660,10 @@ package mq {
         TimeOfDay: js.UndefOr[__string] = js.undefined,
         TimeZone: js.UndefOr[__string] = js.undefined
     ): WeeklyStartTime = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DayOfWeek.foreach(__v => __obj.update("DayOfWeek", __v.asInstanceOf[js.Any]))
-      TimeOfDay.foreach(__v => __obj.update("TimeOfDay", __v.asInstanceOf[js.Any]))
-      TimeZone.foreach(__v => __obj.update("TimeZone", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DayOfWeek.foreach(__v => __obj.updateDynamic("DayOfWeek")(__v.asInstanceOf[js.Any]))
+      TimeOfDay.foreach(__v => __obj.updateDynamic("TimeOfDay")(__v.asInstanceOf[js.Any]))
+      TimeZone.foreach(__v => __obj.updateDynamic("TimeZone")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WeeklyStartTime]
     }
   }

@@ -269,9 +269,9 @@ package apigatewayv2 {
         DestinationArn: js.UndefOr[Arn] = js.undefined,
         Format: js.UndefOr[StringWithLengthBetween1And1024] = js.undefined
     ): AccessLogSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DestinationArn.foreach(__v => __obj.update("DestinationArn", __v.asInstanceOf[js.Any]))
-      Format.foreach(__v => __obj.update("Format", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DestinationArn.foreach(__v => __obj.updateDynamic("DestinationArn")(__v.asInstanceOf[js.Any]))
+      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AccessLogSettings]
     }
   }
@@ -310,21 +310,23 @@ package apigatewayv2 {
         Version: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
         Warnings: js.UndefOr[__listOf__string] = js.undefined
     ): Api = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"                     -> Name.asInstanceOf[js.Any],
         "ProtocolType"             -> ProtocolType.asInstanceOf[js.Any],
         "RouteSelectionExpression" -> RouteSelectionExpression.asInstanceOf[js.Any]
       )
 
-      ApiEndpoint.foreach(__v => __obj.update("ApiEndpoint", __v.asInstanceOf[js.Any]))
-      ApiId.foreach(__v => __obj.update("ApiId", __v.asInstanceOf[js.Any]))
-      ApiKeySelectionExpression.foreach(__v => __obj.update("ApiKeySelectionExpression", __v.asInstanceOf[js.Any]))
-      CreatedDate.foreach(__v => __obj.update("CreatedDate", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      DisableSchemaValidation.foreach(__v => __obj.update("DisableSchemaValidation", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
-      Warnings.foreach(__v => __obj.update("Warnings", __v.asInstanceOf[js.Any]))
+      ApiEndpoint.foreach(__v => __obj.updateDynamic("ApiEndpoint")(__v.asInstanceOf[js.Any]))
+      ApiId.foreach(__v => __obj.updateDynamic("ApiId")(__v.asInstanceOf[js.Any]))
+      ApiKeySelectionExpression.foreach(
+        __v => __obj.updateDynamic("ApiKeySelectionExpression")(__v.asInstanceOf[js.Any])
+      )
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DisableSchemaValidation.foreach(__v => __obj.updateDynamic("DisableSchemaValidation")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      Warnings.foreach(__v => __obj.updateDynamic("Warnings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Api]
     }
   }
@@ -347,13 +349,13 @@ package apigatewayv2 {
         ApiMappingId: js.UndefOr[Id] = js.undefined,
         ApiMappingKey: js.UndefOr[SelectionKey] = js.undefined
     ): ApiMapping = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId" -> ApiId.asInstanceOf[js.Any],
         "Stage" -> Stage.asInstanceOf[js.Any]
       )
 
-      ApiMappingId.foreach(__v => __obj.update("ApiMappingId", __v.asInstanceOf[js.Any]))
-      ApiMappingKey.foreach(__v => __obj.update("ApiMappingKey", __v.asInstanceOf[js.Any]))
+      ApiMappingId.foreach(__v => __obj.updateDynamic("ApiMappingId")(__v.asInstanceOf[js.Any]))
+      ApiMappingKey.foreach(__v => __obj.updateDynamic("ApiMappingKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApiMapping]
     }
   }
@@ -399,22 +401,22 @@ package apigatewayv2 {
         IdentityValidationExpression: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
         ProviderArns: js.UndefOr[ProviderArnList] = js.undefined
     ): Authorizer = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      AuthorizerCredentialsArn.foreach(__v => __obj.update("AuthorizerCredentialsArn", __v.asInstanceOf[js.Any]))
-      AuthorizerId.foreach(__v => __obj.update("AuthorizerId", __v.asInstanceOf[js.Any]))
+      AuthorizerCredentialsArn.foreach(__v => __obj.updateDynamic("AuthorizerCredentialsArn")(__v.asInstanceOf[js.Any]))
+      AuthorizerId.foreach(__v => __obj.updateDynamic("AuthorizerId")(__v.asInstanceOf[js.Any]))
       AuthorizerResultTtlInSeconds.foreach(
-        __v => __obj.update("AuthorizerResultTtlInSeconds", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("AuthorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any])
       )
-      AuthorizerType.foreach(__v => __obj.update("AuthorizerType", __v.asInstanceOf[js.Any]))
-      AuthorizerUri.foreach(__v => __obj.update("AuthorizerUri", __v.asInstanceOf[js.Any]))
-      IdentitySource.foreach(__v => __obj.update("IdentitySource", __v.asInstanceOf[js.Any]))
+      AuthorizerType.foreach(__v => __obj.updateDynamic("AuthorizerType")(__v.asInstanceOf[js.Any]))
+      AuthorizerUri.foreach(__v => __obj.updateDynamic("AuthorizerUri")(__v.asInstanceOf[js.Any]))
+      IdentitySource.foreach(__v => __obj.updateDynamic("IdentitySource")(__v.asInstanceOf[js.Any]))
       IdentityValidationExpression.foreach(
-        __v => __obj.update("IdentityValidationExpression", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("IdentityValidationExpression")(__v.asInstanceOf[js.Any])
       )
-      ProviderArns.foreach(__v => __obj.update("ProviderArns", __v.asInstanceOf[js.Any]))
+      ProviderArns.foreach(__v => __obj.updateDynamic("ProviderArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Authorizer]
     }
   }
@@ -464,13 +466,13 @@ package apigatewayv2 {
         Stage: StringWithLengthBetween1And128,
         ApiMappingKey: js.UndefOr[SelectionKey] = js.undefined
     ): CreateApiMappingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"      -> ApiId.asInstanceOf[js.Any],
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "Stage"      -> Stage.asInstanceOf[js.Any]
       )
 
-      ApiMappingKey.foreach(__v => __obj.update("ApiMappingKey", __v.asInstanceOf[js.Any]))
+      ApiMappingKey.foreach(__v => __obj.updateDynamic("ApiMappingKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateApiMappingRequest]
     }
   }
@@ -490,11 +492,11 @@ package apigatewayv2 {
         ApiMappingKey: js.UndefOr[SelectionKey] = js.undefined,
         Stage: js.UndefOr[StringWithLengthBetween1And128] = js.undefined
     ): CreateApiMappingResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApiId.foreach(__v => __obj.update("ApiId", __v.asInstanceOf[js.Any]))
-      ApiMappingId.foreach(__v => __obj.update("ApiMappingId", __v.asInstanceOf[js.Any]))
-      ApiMappingKey.foreach(__v => __obj.update("ApiMappingKey", __v.asInstanceOf[js.Any]))
-      Stage.foreach(__v => __obj.update("Stage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApiId.foreach(__v => __obj.updateDynamic("ApiId")(__v.asInstanceOf[js.Any]))
+      ApiMappingId.foreach(__v => __obj.updateDynamic("ApiMappingId")(__v.asInstanceOf[js.Any]))
+      ApiMappingKey.foreach(__v => __obj.updateDynamic("ApiMappingKey")(__v.asInstanceOf[js.Any]))
+      Stage.foreach(__v => __obj.updateDynamic("Stage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateApiMappingResponse]
     }
   }
@@ -522,17 +524,19 @@ package apigatewayv2 {
         Tags: js.UndefOr[Tags] = js.undefined,
         Version: js.UndefOr[StringWithLengthBetween1And64] = js.undefined
     ): CreateApiRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"                     -> Name.asInstanceOf[js.Any],
         "ProtocolType"             -> ProtocolType.asInstanceOf[js.Any],
         "RouteSelectionExpression" -> RouteSelectionExpression.asInstanceOf[js.Any]
       )
 
-      ApiKeySelectionExpression.foreach(__v => __obj.update("ApiKeySelectionExpression", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      DisableSchemaValidation.foreach(__v => __obj.update("DisableSchemaValidation", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      ApiKeySelectionExpression.foreach(
+        __v => __obj.updateDynamic("ApiKeySelectionExpression")(__v.asInstanceOf[js.Any])
+      )
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DisableSchemaValidation.foreach(__v => __obj.updateDynamic("DisableSchemaValidation")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateApiRequest]
     }
   }
@@ -568,19 +572,21 @@ package apigatewayv2 {
         Version: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
         Warnings: js.UndefOr[__listOf__string] = js.undefined
     ): CreateApiResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApiEndpoint.foreach(__v => __obj.update("ApiEndpoint", __v.asInstanceOf[js.Any]))
-      ApiId.foreach(__v => __obj.update("ApiId", __v.asInstanceOf[js.Any]))
-      ApiKeySelectionExpression.foreach(__v => __obj.update("ApiKeySelectionExpression", __v.asInstanceOf[js.Any]))
-      CreatedDate.foreach(__v => __obj.update("CreatedDate", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      DisableSchemaValidation.foreach(__v => __obj.update("DisableSchemaValidation", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      ProtocolType.foreach(__v => __obj.update("ProtocolType", __v.asInstanceOf[js.Any]))
-      RouteSelectionExpression.foreach(__v => __obj.update("RouteSelectionExpression", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
-      Warnings.foreach(__v => __obj.update("Warnings", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApiEndpoint.foreach(__v => __obj.updateDynamic("ApiEndpoint")(__v.asInstanceOf[js.Any]))
+      ApiId.foreach(__v => __obj.updateDynamic("ApiId")(__v.asInstanceOf[js.Any]))
+      ApiKeySelectionExpression.foreach(
+        __v => __obj.updateDynamic("ApiKeySelectionExpression")(__v.asInstanceOf[js.Any])
+      )
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DisableSchemaValidation.foreach(__v => __obj.updateDynamic("DisableSchemaValidation")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ProtocolType.foreach(__v => __obj.updateDynamic("ProtocolType")(__v.asInstanceOf[js.Any]))
+      RouteSelectionExpression.foreach(__v => __obj.updateDynamic("RouteSelectionExpression")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      Warnings.foreach(__v => __obj.updateDynamic("Warnings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateApiResponse]
     }
   }
@@ -610,7 +616,7 @@ package apigatewayv2 {
         IdentityValidationExpression: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
         ProviderArns: js.UndefOr[ProviderArnList] = js.undefined
     ): CreateAuthorizerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"          -> ApiId.asInstanceOf[js.Any],
         "AuthorizerType" -> AuthorizerType.asInstanceOf[js.Any],
         "AuthorizerUri"  -> AuthorizerUri.asInstanceOf[js.Any],
@@ -618,14 +624,14 @@ package apigatewayv2 {
         "Name"           -> Name.asInstanceOf[js.Any]
       )
 
-      AuthorizerCredentialsArn.foreach(__v => __obj.update("AuthorizerCredentialsArn", __v.asInstanceOf[js.Any]))
+      AuthorizerCredentialsArn.foreach(__v => __obj.updateDynamic("AuthorizerCredentialsArn")(__v.asInstanceOf[js.Any]))
       AuthorizerResultTtlInSeconds.foreach(
-        __v => __obj.update("AuthorizerResultTtlInSeconds", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("AuthorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any])
       )
       IdentityValidationExpression.foreach(
-        __v => __obj.update("IdentityValidationExpression", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("IdentityValidationExpression")(__v.asInstanceOf[js.Any])
       )
-      ProviderArns.foreach(__v => __obj.update("ProviderArns", __v.asInstanceOf[js.Any]))
+      ProviderArns.foreach(__v => __obj.updateDynamic("ProviderArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAuthorizerRequest]
     }
   }
@@ -655,20 +661,20 @@ package apigatewayv2 {
         Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
         ProviderArns: js.UndefOr[ProviderArnList] = js.undefined
     ): CreateAuthorizerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AuthorizerCredentialsArn.foreach(__v => __obj.update("AuthorizerCredentialsArn", __v.asInstanceOf[js.Any]))
-      AuthorizerId.foreach(__v => __obj.update("AuthorizerId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AuthorizerCredentialsArn.foreach(__v => __obj.updateDynamic("AuthorizerCredentialsArn")(__v.asInstanceOf[js.Any]))
+      AuthorizerId.foreach(__v => __obj.updateDynamic("AuthorizerId")(__v.asInstanceOf[js.Any]))
       AuthorizerResultTtlInSeconds.foreach(
-        __v => __obj.update("AuthorizerResultTtlInSeconds", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("AuthorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any])
       )
-      AuthorizerType.foreach(__v => __obj.update("AuthorizerType", __v.asInstanceOf[js.Any]))
-      AuthorizerUri.foreach(__v => __obj.update("AuthorizerUri", __v.asInstanceOf[js.Any]))
-      IdentitySource.foreach(__v => __obj.update("IdentitySource", __v.asInstanceOf[js.Any]))
+      AuthorizerType.foreach(__v => __obj.updateDynamic("AuthorizerType")(__v.asInstanceOf[js.Any]))
+      AuthorizerUri.foreach(__v => __obj.updateDynamic("AuthorizerUri")(__v.asInstanceOf[js.Any]))
+      IdentitySource.foreach(__v => __obj.updateDynamic("IdentitySource")(__v.asInstanceOf[js.Any]))
       IdentityValidationExpression.foreach(
-        __v => __obj.update("IdentityValidationExpression", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("IdentityValidationExpression")(__v.asInstanceOf[js.Any])
       )
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      ProviderArns.foreach(__v => __obj.update("ProviderArns", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ProviderArns.foreach(__v => __obj.updateDynamic("ProviderArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAuthorizerResponse]
     }
   }
@@ -686,12 +692,12 @@ package apigatewayv2 {
         Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined,
         StageName: js.UndefOr[StringWithLengthBetween1And128] = js.undefined
     ): CreateDeploymentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId" -> ApiId.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      StageName.foreach(__v => __obj.update("StageName", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      StageName.foreach(__v => __obj.updateDynamic("StageName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDeploymentRequest]
     }
   }
@@ -713,12 +719,12 @@ package apigatewayv2 {
         DeploymentStatusMessage: js.UndefOr[__string] = js.undefined,
         Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined
     ): CreateDeploymentResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedDate.foreach(__v => __obj.update("CreatedDate", __v.asInstanceOf[js.Any]))
-      DeploymentId.foreach(__v => __obj.update("DeploymentId", __v.asInstanceOf[js.Any]))
-      DeploymentStatus.foreach(__v => __obj.update("DeploymentStatus", __v.asInstanceOf[js.Any]))
-      DeploymentStatusMessage.foreach(__v => __obj.update("DeploymentStatusMessage", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      DeploymentId.foreach(__v => __obj.updateDynamic("DeploymentId")(__v.asInstanceOf[js.Any]))
+      DeploymentStatus.foreach(__v => __obj.updateDynamic("DeploymentStatus")(__v.asInstanceOf[js.Any]))
+      DeploymentStatusMessage.foreach(__v => __obj.updateDynamic("DeploymentStatusMessage")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDeploymentResponse]
     }
   }
@@ -736,12 +742,12 @@ package apigatewayv2 {
         DomainNameConfigurations: js.UndefOr[DomainNameConfigurations] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateDomainNameRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
-      DomainNameConfigurations.foreach(__v => __obj.update("DomainNameConfigurations", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      DomainNameConfigurations.foreach(__v => __obj.updateDynamic("DomainNameConfigurations")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDomainNameRequest]
     }
   }
@@ -761,13 +767,13 @@ package apigatewayv2 {
         DomainNameConfigurations: js.UndefOr[DomainNameConfigurations] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateDomainNameResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       ApiMappingSelectionExpression.foreach(
-        __v => __obj.update("ApiMappingSelectionExpression", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ApiMappingSelectionExpression")(__v.asInstanceOf[js.Any])
       )
-      DomainName.foreach(__v => __obj.update("DomainName", __v.asInstanceOf[js.Any]))
-      DomainNameConfigurations.foreach(__v => __obj.update("DomainNameConfigurations", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
+      DomainNameConfigurations.foreach(__v => __obj.updateDynamic("DomainNameConfigurations")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDomainNameResponse]
     }
   }
@@ -807,23 +813,25 @@ package apigatewayv2 {
         TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000] = js.undefined
     ): CreateIntegrationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"           -> ApiId.asInstanceOf[js.Any],
         "IntegrationType" -> IntegrationType.asInstanceOf[js.Any]
       )
 
-      ConnectionId.foreach(__v => __obj.update("ConnectionId", __v.asInstanceOf[js.Any]))
-      ConnectionType.foreach(__v => __obj.update("ConnectionType", __v.asInstanceOf[js.Any]))
-      ContentHandlingStrategy.foreach(__v => __obj.update("ContentHandlingStrategy", __v.asInstanceOf[js.Any]))
-      CredentialsArn.foreach(__v => __obj.update("CredentialsArn", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      IntegrationMethod.foreach(__v => __obj.update("IntegrationMethod", __v.asInstanceOf[js.Any]))
-      IntegrationUri.foreach(__v => __obj.update("IntegrationUri", __v.asInstanceOf[js.Any]))
-      PassthroughBehavior.foreach(__v => __obj.update("PassthroughBehavior", __v.asInstanceOf[js.Any]))
-      RequestParameters.foreach(__v => __obj.update("RequestParameters", __v.asInstanceOf[js.Any]))
-      RequestTemplates.foreach(__v => __obj.update("RequestTemplates", __v.asInstanceOf[js.Any]))
-      TemplateSelectionExpression.foreach(__v => __obj.update("TemplateSelectionExpression", __v.asInstanceOf[js.Any]))
-      TimeoutInMillis.foreach(__v => __obj.update("TimeoutInMillis", __v.asInstanceOf[js.Any]))
+      ConnectionId.foreach(__v => __obj.updateDynamic("ConnectionId")(__v.asInstanceOf[js.Any]))
+      ConnectionType.foreach(__v => __obj.updateDynamic("ConnectionType")(__v.asInstanceOf[js.Any]))
+      ContentHandlingStrategy.foreach(__v => __obj.updateDynamic("ContentHandlingStrategy")(__v.asInstanceOf[js.Any]))
+      CredentialsArn.foreach(__v => __obj.updateDynamic("CredentialsArn")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      IntegrationMethod.foreach(__v => __obj.updateDynamic("IntegrationMethod")(__v.asInstanceOf[js.Any]))
+      IntegrationUri.foreach(__v => __obj.updateDynamic("IntegrationUri")(__v.asInstanceOf[js.Any]))
+      PassthroughBehavior.foreach(__v => __obj.updateDynamic("PassthroughBehavior")(__v.asInstanceOf[js.Any]))
+      RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
+      RequestTemplates.foreach(__v => __obj.updateDynamic("RequestTemplates")(__v.asInstanceOf[js.Any]))
+      TemplateSelectionExpression.foreach(
+        __v => __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any])
+      )
+      TimeoutInMillis.foreach(__v => __obj.updateDynamic("TimeoutInMillis")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateIntegrationRequest]
     }
   }
@@ -865,24 +873,26 @@ package apigatewayv2 {
         TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000] = js.undefined
     ): CreateIntegrationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConnectionId.foreach(__v => __obj.update("ConnectionId", __v.asInstanceOf[js.Any]))
-      ConnectionType.foreach(__v => __obj.update("ConnectionType", __v.asInstanceOf[js.Any]))
-      ContentHandlingStrategy.foreach(__v => __obj.update("ContentHandlingStrategy", __v.asInstanceOf[js.Any]))
-      CredentialsArn.foreach(__v => __obj.update("CredentialsArn", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      IntegrationId.foreach(__v => __obj.update("IntegrationId", __v.asInstanceOf[js.Any]))
-      IntegrationMethod.foreach(__v => __obj.update("IntegrationMethod", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConnectionId.foreach(__v => __obj.updateDynamic("ConnectionId")(__v.asInstanceOf[js.Any]))
+      ConnectionType.foreach(__v => __obj.updateDynamic("ConnectionType")(__v.asInstanceOf[js.Any]))
+      ContentHandlingStrategy.foreach(__v => __obj.updateDynamic("ContentHandlingStrategy")(__v.asInstanceOf[js.Any]))
+      CredentialsArn.foreach(__v => __obj.updateDynamic("CredentialsArn")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      IntegrationId.foreach(__v => __obj.updateDynamic("IntegrationId")(__v.asInstanceOf[js.Any]))
+      IntegrationMethod.foreach(__v => __obj.updateDynamic("IntegrationMethod")(__v.asInstanceOf[js.Any]))
       IntegrationResponseSelectionExpression.foreach(
-        __v => __obj.update("IntegrationResponseSelectionExpression", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("IntegrationResponseSelectionExpression")(__v.asInstanceOf[js.Any])
       )
-      IntegrationType.foreach(__v => __obj.update("IntegrationType", __v.asInstanceOf[js.Any]))
-      IntegrationUri.foreach(__v => __obj.update("IntegrationUri", __v.asInstanceOf[js.Any]))
-      PassthroughBehavior.foreach(__v => __obj.update("PassthroughBehavior", __v.asInstanceOf[js.Any]))
-      RequestParameters.foreach(__v => __obj.update("RequestParameters", __v.asInstanceOf[js.Any]))
-      RequestTemplates.foreach(__v => __obj.update("RequestTemplates", __v.asInstanceOf[js.Any]))
-      TemplateSelectionExpression.foreach(__v => __obj.update("TemplateSelectionExpression", __v.asInstanceOf[js.Any]))
-      TimeoutInMillis.foreach(__v => __obj.update("TimeoutInMillis", __v.asInstanceOf[js.Any]))
+      IntegrationType.foreach(__v => __obj.updateDynamic("IntegrationType")(__v.asInstanceOf[js.Any]))
+      IntegrationUri.foreach(__v => __obj.updateDynamic("IntegrationUri")(__v.asInstanceOf[js.Any]))
+      PassthroughBehavior.foreach(__v => __obj.updateDynamic("PassthroughBehavior")(__v.asInstanceOf[js.Any]))
+      RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
+      RequestTemplates.foreach(__v => __obj.updateDynamic("RequestTemplates")(__v.asInstanceOf[js.Any]))
+      TemplateSelectionExpression.foreach(
+        __v => __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any])
+      )
+      TimeoutInMillis.foreach(__v => __obj.updateDynamic("TimeoutInMillis")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateIntegrationResponse]
     }
   }
@@ -908,16 +918,18 @@ package apigatewayv2 {
         ResponseTemplates: js.UndefOr[TemplateMap] = js.undefined,
         TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined
     ): CreateIntegrationResponseRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"                  -> ApiId.asInstanceOf[js.Any],
         "IntegrationId"          -> IntegrationId.asInstanceOf[js.Any],
         "IntegrationResponseKey" -> IntegrationResponseKey.asInstanceOf[js.Any]
       )
 
-      ContentHandlingStrategy.foreach(__v => __obj.update("ContentHandlingStrategy", __v.asInstanceOf[js.Any]))
-      ResponseParameters.foreach(__v => __obj.update("ResponseParameters", __v.asInstanceOf[js.Any]))
-      ResponseTemplates.foreach(__v => __obj.update("ResponseTemplates", __v.asInstanceOf[js.Any]))
-      TemplateSelectionExpression.foreach(__v => __obj.update("TemplateSelectionExpression", __v.asInstanceOf[js.Any]))
+      ContentHandlingStrategy.foreach(__v => __obj.updateDynamic("ContentHandlingStrategy")(__v.asInstanceOf[js.Any]))
+      ResponseParameters.foreach(__v => __obj.updateDynamic("ResponseParameters")(__v.asInstanceOf[js.Any]))
+      ResponseTemplates.foreach(__v => __obj.updateDynamic("ResponseTemplates")(__v.asInstanceOf[js.Any]))
+      TemplateSelectionExpression.foreach(
+        __v => __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[CreateIntegrationResponseRequest]
     }
   }
@@ -941,13 +953,15 @@ package apigatewayv2 {
         ResponseTemplates: js.UndefOr[TemplateMap] = js.undefined,
         TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined
     ): CreateIntegrationResponseResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ContentHandlingStrategy.foreach(__v => __obj.update("ContentHandlingStrategy", __v.asInstanceOf[js.Any]))
-      IntegrationResponseId.foreach(__v => __obj.update("IntegrationResponseId", __v.asInstanceOf[js.Any]))
-      IntegrationResponseKey.foreach(__v => __obj.update("IntegrationResponseKey", __v.asInstanceOf[js.Any]))
-      ResponseParameters.foreach(__v => __obj.update("ResponseParameters", __v.asInstanceOf[js.Any]))
-      ResponseTemplates.foreach(__v => __obj.update("ResponseTemplates", __v.asInstanceOf[js.Any]))
-      TemplateSelectionExpression.foreach(__v => __obj.update("TemplateSelectionExpression", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ContentHandlingStrategy.foreach(__v => __obj.updateDynamic("ContentHandlingStrategy")(__v.asInstanceOf[js.Any]))
+      IntegrationResponseId.foreach(__v => __obj.updateDynamic("IntegrationResponseId")(__v.asInstanceOf[js.Any]))
+      IntegrationResponseKey.foreach(__v => __obj.updateDynamic("IntegrationResponseKey")(__v.asInstanceOf[js.Any]))
+      ResponseParameters.foreach(__v => __obj.updateDynamic("ResponseParameters")(__v.asInstanceOf[js.Any]))
+      ResponseTemplates.foreach(__v => __obj.updateDynamic("ResponseTemplates")(__v.asInstanceOf[js.Any]))
+      TemplateSelectionExpression.foreach(
+        __v => __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[CreateIntegrationResponseResponse]
     }
   }
@@ -969,14 +983,14 @@ package apigatewayv2 {
         ContentType: js.UndefOr[StringWithLengthBetween1And256] = js.undefined,
         Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined
     ): CreateModelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"  -> ApiId.asInstanceOf[js.Any],
         "Name"   -> Name.asInstanceOf[js.Any],
         "Schema" -> Schema.asInstanceOf[js.Any]
       )
 
-      ContentType.foreach(__v => __obj.update("ContentType", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateModelRequest]
     }
   }
@@ -998,12 +1012,12 @@ package apigatewayv2 {
         Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
         Schema: js.UndefOr[StringWithLengthBetween0And32K] = js.undefined
     ): CreateModelResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ContentType.foreach(__v => __obj.update("ContentType", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      ModelId.foreach(__v => __obj.update("ModelId", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Schema.foreach(__v => __obj.update("Schema", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ModelId.foreach(__v => __obj.updateDynamic("ModelId")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Schema.foreach(__v => __obj.updateDynamic("Schema")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateModelResponse]
     }
   }
@@ -1039,23 +1053,23 @@ package apigatewayv2 {
         RouteResponseSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         Target: js.UndefOr[StringWithLengthBetween1And128] = js.undefined
     ): CreateRouteRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"    -> ApiId.asInstanceOf[js.Any],
         "RouteKey" -> RouteKey.asInstanceOf[js.Any]
       )
 
-      ApiKeyRequired.foreach(__v => __obj.update("ApiKeyRequired", __v.asInstanceOf[js.Any]))
-      AuthorizationScopes.foreach(__v => __obj.update("AuthorizationScopes", __v.asInstanceOf[js.Any]))
-      AuthorizationType.foreach(__v => __obj.update("AuthorizationType", __v.asInstanceOf[js.Any]))
-      AuthorizerId.foreach(__v => __obj.update("AuthorizerId", __v.asInstanceOf[js.Any]))
-      ModelSelectionExpression.foreach(__v => __obj.update("ModelSelectionExpression", __v.asInstanceOf[js.Any]))
-      OperationName.foreach(__v => __obj.update("OperationName", __v.asInstanceOf[js.Any]))
-      RequestModels.foreach(__v => __obj.update("RequestModels", __v.asInstanceOf[js.Any]))
-      RequestParameters.foreach(__v => __obj.update("RequestParameters", __v.asInstanceOf[js.Any]))
+      ApiKeyRequired.foreach(__v => __obj.updateDynamic("ApiKeyRequired")(__v.asInstanceOf[js.Any]))
+      AuthorizationScopes.foreach(__v => __obj.updateDynamic("AuthorizationScopes")(__v.asInstanceOf[js.Any]))
+      AuthorizationType.foreach(__v => __obj.updateDynamic("AuthorizationType")(__v.asInstanceOf[js.Any]))
+      AuthorizerId.foreach(__v => __obj.updateDynamic("AuthorizerId")(__v.asInstanceOf[js.Any]))
+      ModelSelectionExpression.foreach(__v => __obj.updateDynamic("ModelSelectionExpression")(__v.asInstanceOf[js.Any]))
+      OperationName.foreach(__v => __obj.updateDynamic("OperationName")(__v.asInstanceOf[js.Any]))
+      RequestModels.foreach(__v => __obj.updateDynamic("RequestModels")(__v.asInstanceOf[js.Any]))
+      RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
       RouteResponseSelectionExpression.foreach(
-        __v => __obj.update("RouteResponseSelectionExpression", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("RouteResponseSelectionExpression")(__v.asInstanceOf[js.Any])
       )
-      Target.foreach(__v => __obj.update("Target", __v.asInstanceOf[js.Any]))
+      Target.foreach(__v => __obj.updateDynamic("Target")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRouteRequest]
     }
   }
@@ -1091,21 +1105,21 @@ package apigatewayv2 {
         RouteResponseSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         Target: js.UndefOr[StringWithLengthBetween1And128] = js.undefined
     ): CreateRouteResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApiKeyRequired.foreach(__v => __obj.update("ApiKeyRequired", __v.asInstanceOf[js.Any]))
-      AuthorizationScopes.foreach(__v => __obj.update("AuthorizationScopes", __v.asInstanceOf[js.Any]))
-      AuthorizationType.foreach(__v => __obj.update("AuthorizationType", __v.asInstanceOf[js.Any]))
-      AuthorizerId.foreach(__v => __obj.update("AuthorizerId", __v.asInstanceOf[js.Any]))
-      ModelSelectionExpression.foreach(__v => __obj.update("ModelSelectionExpression", __v.asInstanceOf[js.Any]))
-      OperationName.foreach(__v => __obj.update("OperationName", __v.asInstanceOf[js.Any]))
-      RequestModels.foreach(__v => __obj.update("RequestModels", __v.asInstanceOf[js.Any]))
-      RequestParameters.foreach(__v => __obj.update("RequestParameters", __v.asInstanceOf[js.Any]))
-      RouteId.foreach(__v => __obj.update("RouteId", __v.asInstanceOf[js.Any]))
-      RouteKey.foreach(__v => __obj.update("RouteKey", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApiKeyRequired.foreach(__v => __obj.updateDynamic("ApiKeyRequired")(__v.asInstanceOf[js.Any]))
+      AuthorizationScopes.foreach(__v => __obj.updateDynamic("AuthorizationScopes")(__v.asInstanceOf[js.Any]))
+      AuthorizationType.foreach(__v => __obj.updateDynamic("AuthorizationType")(__v.asInstanceOf[js.Any]))
+      AuthorizerId.foreach(__v => __obj.updateDynamic("AuthorizerId")(__v.asInstanceOf[js.Any]))
+      ModelSelectionExpression.foreach(__v => __obj.updateDynamic("ModelSelectionExpression")(__v.asInstanceOf[js.Any]))
+      OperationName.foreach(__v => __obj.updateDynamic("OperationName")(__v.asInstanceOf[js.Any]))
+      RequestModels.foreach(__v => __obj.updateDynamic("RequestModels")(__v.asInstanceOf[js.Any]))
+      RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
+      RouteId.foreach(__v => __obj.updateDynamic("RouteId")(__v.asInstanceOf[js.Any]))
+      RouteKey.foreach(__v => __obj.updateDynamic("RouteKey")(__v.asInstanceOf[js.Any]))
       RouteResponseSelectionExpression.foreach(
-        __v => __obj.update("RouteResponseSelectionExpression", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("RouteResponseSelectionExpression")(__v.asInstanceOf[js.Any])
       )
-      Target.foreach(__v => __obj.update("Target", __v.asInstanceOf[js.Any]))
+      Target.foreach(__v => __obj.updateDynamic("Target")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRouteResponse]
     }
   }
@@ -1129,15 +1143,15 @@ package apigatewayv2 {
         ResponseModels: js.UndefOr[RouteModels] = js.undefined,
         ResponseParameters: js.UndefOr[RouteParameters] = js.undefined
     ): CreateRouteResponseRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"            -> ApiId.asInstanceOf[js.Any],
         "RouteId"          -> RouteId.asInstanceOf[js.Any],
         "RouteResponseKey" -> RouteResponseKey.asInstanceOf[js.Any]
       )
 
-      ModelSelectionExpression.foreach(__v => __obj.update("ModelSelectionExpression", __v.asInstanceOf[js.Any]))
-      ResponseModels.foreach(__v => __obj.update("ResponseModels", __v.asInstanceOf[js.Any]))
-      ResponseParameters.foreach(__v => __obj.update("ResponseParameters", __v.asInstanceOf[js.Any]))
+      ModelSelectionExpression.foreach(__v => __obj.updateDynamic("ModelSelectionExpression")(__v.asInstanceOf[js.Any]))
+      ResponseModels.foreach(__v => __obj.updateDynamic("ResponseModels")(__v.asInstanceOf[js.Any]))
+      ResponseParameters.foreach(__v => __obj.updateDynamic("ResponseParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRouteResponseRequest]
     }
   }
@@ -1159,12 +1173,12 @@ package apigatewayv2 {
         RouteResponseId: js.UndefOr[Id] = js.undefined,
         RouteResponseKey: js.UndefOr[SelectionKey] = js.undefined
     ): CreateRouteResponseResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ModelSelectionExpression.foreach(__v => __obj.update("ModelSelectionExpression", __v.asInstanceOf[js.Any]))
-      ResponseModels.foreach(__v => __obj.update("ResponseModels", __v.asInstanceOf[js.Any]))
-      ResponseParameters.foreach(__v => __obj.update("ResponseParameters", __v.asInstanceOf[js.Any]))
-      RouteResponseId.foreach(__v => __obj.update("RouteResponseId", __v.asInstanceOf[js.Any]))
-      RouteResponseKey.foreach(__v => __obj.update("RouteResponseKey", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ModelSelectionExpression.foreach(__v => __obj.updateDynamic("ModelSelectionExpression")(__v.asInstanceOf[js.Any]))
+      ResponseModels.foreach(__v => __obj.updateDynamic("ResponseModels")(__v.asInstanceOf[js.Any]))
+      ResponseParameters.foreach(__v => __obj.updateDynamic("ResponseParameters")(__v.asInstanceOf[js.Any]))
+      RouteResponseId.foreach(__v => __obj.updateDynamic("RouteResponseId")(__v.asInstanceOf[js.Any]))
+      RouteResponseKey.foreach(__v => __obj.updateDynamic("RouteResponseKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRouteResponseResponse]
     }
   }
@@ -1196,19 +1210,19 @@ package apigatewayv2 {
         StageVariables: js.UndefOr[StageVariablesMap] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateStageRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"     -> ApiId.asInstanceOf[js.Any],
         "StageName" -> StageName.asInstanceOf[js.Any]
       )
 
-      AccessLogSettings.foreach(__v => __obj.update("AccessLogSettings", __v.asInstanceOf[js.Any]))
-      ClientCertificateId.foreach(__v => __obj.update("ClientCertificateId", __v.asInstanceOf[js.Any]))
-      DefaultRouteSettings.foreach(__v => __obj.update("DefaultRouteSettings", __v.asInstanceOf[js.Any]))
-      DeploymentId.foreach(__v => __obj.update("DeploymentId", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      RouteSettings.foreach(__v => __obj.update("RouteSettings", __v.asInstanceOf[js.Any]))
-      StageVariables.foreach(__v => __obj.update("StageVariables", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      AccessLogSettings.foreach(__v => __obj.updateDynamic("AccessLogSettings")(__v.asInstanceOf[js.Any]))
+      ClientCertificateId.foreach(__v => __obj.updateDynamic("ClientCertificateId")(__v.asInstanceOf[js.Any]))
+      DefaultRouteSettings.foreach(__v => __obj.updateDynamic("DefaultRouteSettings")(__v.asInstanceOf[js.Any]))
+      DeploymentId.foreach(__v => __obj.updateDynamic("DeploymentId")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      RouteSettings.foreach(__v => __obj.updateDynamic("RouteSettings")(__v.asInstanceOf[js.Any]))
+      StageVariables.foreach(__v => __obj.updateDynamic("StageVariables")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateStageRequest]
     }
   }
@@ -1242,18 +1256,18 @@ package apigatewayv2 {
         StageVariables: js.UndefOr[StageVariablesMap] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateStageResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccessLogSettings.foreach(__v => __obj.update("AccessLogSettings", __v.asInstanceOf[js.Any]))
-      ClientCertificateId.foreach(__v => __obj.update("ClientCertificateId", __v.asInstanceOf[js.Any]))
-      CreatedDate.foreach(__v => __obj.update("CreatedDate", __v.asInstanceOf[js.Any]))
-      DefaultRouteSettings.foreach(__v => __obj.update("DefaultRouteSettings", __v.asInstanceOf[js.Any]))
-      DeploymentId.foreach(__v => __obj.update("DeploymentId", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      LastUpdatedDate.foreach(__v => __obj.update("LastUpdatedDate", __v.asInstanceOf[js.Any]))
-      RouteSettings.foreach(__v => __obj.update("RouteSettings", __v.asInstanceOf[js.Any]))
-      StageName.foreach(__v => __obj.update("StageName", __v.asInstanceOf[js.Any]))
-      StageVariables.foreach(__v => __obj.update("StageVariables", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccessLogSettings.foreach(__v => __obj.updateDynamic("AccessLogSettings")(__v.asInstanceOf[js.Any]))
+      ClientCertificateId.foreach(__v => __obj.updateDynamic("ClientCertificateId")(__v.asInstanceOf[js.Any]))
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      DefaultRouteSettings.foreach(__v => __obj.updateDynamic("DefaultRouteSettings")(__v.asInstanceOf[js.Any]))
+      DeploymentId.foreach(__v => __obj.updateDynamic("DeploymentId")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LastUpdatedDate.foreach(__v => __obj.updateDynamic("LastUpdatedDate")(__v.asInstanceOf[js.Any]))
+      RouteSettings.foreach(__v => __obj.updateDynamic("RouteSettings")(__v.asInstanceOf[js.Any]))
+      StageName.foreach(__v => __obj.updateDynamic("StageName")(__v.asInstanceOf[js.Any]))
+      StageVariables.foreach(__v => __obj.updateDynamic("StageVariables")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateStageResponse]
     }
   }
@@ -1269,7 +1283,7 @@ package apigatewayv2 {
         ApiMappingId: __string,
         DomainName: __string
     ): DeleteApiMappingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiMappingId" -> ApiMappingId.asInstanceOf[js.Any],
         "DomainName"   -> DomainName.asInstanceOf[js.Any]
       )
@@ -1287,7 +1301,7 @@ package apigatewayv2 {
     def apply(
         ApiId: __string
     ): DeleteApiRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId" -> ApiId.asInstanceOf[js.Any]
       )
 
@@ -1306,7 +1320,7 @@ package apigatewayv2 {
         ApiId: __string,
         AuthorizerId: __string
     ): DeleteAuthorizerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"        -> ApiId.asInstanceOf[js.Any],
         "AuthorizerId" -> AuthorizerId.asInstanceOf[js.Any]
       )
@@ -1326,7 +1340,7 @@ package apigatewayv2 {
         ApiId: __string,
         DeploymentId: __string
     ): DeleteDeploymentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"        -> ApiId.asInstanceOf[js.Any],
         "DeploymentId" -> DeploymentId.asInstanceOf[js.Any]
       )
@@ -1344,7 +1358,7 @@ package apigatewayv2 {
     def apply(
         DomainName: __string
     ): DeleteDomainNameRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
@@ -1363,7 +1377,7 @@ package apigatewayv2 {
         ApiId: __string,
         IntegrationId: __string
     ): DeleteIntegrationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"         -> ApiId.asInstanceOf[js.Any],
         "IntegrationId" -> IntegrationId.asInstanceOf[js.Any]
       )
@@ -1385,7 +1399,7 @@ package apigatewayv2 {
         IntegrationId: __string,
         IntegrationResponseId: __string
     ): DeleteIntegrationResponseRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"                 -> ApiId.asInstanceOf[js.Any],
         "IntegrationId"         -> IntegrationId.asInstanceOf[js.Any],
         "IntegrationResponseId" -> IntegrationResponseId.asInstanceOf[js.Any]
@@ -1406,7 +1420,7 @@ package apigatewayv2 {
         ApiId: __string,
         ModelId: __string
     ): DeleteModelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"   -> ApiId.asInstanceOf[js.Any],
         "ModelId" -> ModelId.asInstanceOf[js.Any]
       )
@@ -1426,7 +1440,7 @@ package apigatewayv2 {
         ApiId: __string,
         RouteId: __string
     ): DeleteRouteRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"   -> ApiId.asInstanceOf[js.Any],
         "RouteId" -> RouteId.asInstanceOf[js.Any]
       )
@@ -1448,7 +1462,7 @@ package apigatewayv2 {
         RouteId: __string,
         RouteResponseId: __string
     ): DeleteRouteResponseRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"           -> ApiId.asInstanceOf[js.Any],
         "RouteId"         -> RouteId.asInstanceOf[js.Any],
         "RouteResponseId" -> RouteResponseId.asInstanceOf[js.Any]
@@ -1469,7 +1483,7 @@ package apigatewayv2 {
         ApiId: __string,
         StageName: __string
     ): DeleteStageRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"     -> ApiId.asInstanceOf[js.Any],
         "StageName" -> StageName.asInstanceOf[js.Any]
       )
@@ -1500,12 +1514,12 @@ package apigatewayv2 {
         DeploymentStatusMessage: js.UndefOr[__string] = js.undefined,
         Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined
     ): Deployment = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedDate.foreach(__v => __obj.update("CreatedDate", __v.asInstanceOf[js.Any]))
-      DeploymentId.foreach(__v => __obj.update("DeploymentId", __v.asInstanceOf[js.Any]))
-      DeploymentStatus.foreach(__v => __obj.update("DeploymentStatus", __v.asInstanceOf[js.Any]))
-      DeploymentStatusMessage.foreach(__v => __obj.update("DeploymentStatusMessage", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      DeploymentId.foreach(__v => __obj.updateDynamic("DeploymentId")(__v.asInstanceOf[js.Any]))
+      DeploymentStatus.foreach(__v => __obj.updateDynamic("DeploymentStatus")(__v.asInstanceOf[js.Any]))
+      DeploymentStatusMessage.foreach(__v => __obj.updateDynamic("DeploymentStatusMessage")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Deployment]
     }
   }
@@ -1539,15 +1553,15 @@ package apigatewayv2 {
         DomainNameConfigurations: js.UndefOr[DomainNameConfigurations] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): DomainName = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
       ApiMappingSelectionExpression.foreach(
-        __v => __obj.update("ApiMappingSelectionExpression", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ApiMappingSelectionExpression")(__v.asInstanceOf[js.Any])
       )
-      DomainNameConfigurations.foreach(__v => __obj.update("DomainNameConfigurations", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      DomainNameConfigurations.foreach(__v => __obj.updateDynamic("DomainNameConfigurations")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainName]
     }
   }
@@ -1580,16 +1594,16 @@ package apigatewayv2 {
         HostedZoneId: js.UndefOr[__string] = js.undefined,
         SecurityPolicy: js.UndefOr[SecurityPolicy] = js.undefined
     ): DomainNameConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApiGatewayDomainName.foreach(__v => __obj.update("ApiGatewayDomainName", __v.asInstanceOf[js.Any]))
-      CertificateArn.foreach(__v => __obj.update("CertificateArn", __v.asInstanceOf[js.Any]))
-      CertificateName.foreach(__v => __obj.update("CertificateName", __v.asInstanceOf[js.Any]))
-      CertificateUploadDate.foreach(__v => __obj.update("CertificateUploadDate", __v.asInstanceOf[js.Any]))
-      DomainNameStatus.foreach(__v => __obj.update("DomainNameStatus", __v.asInstanceOf[js.Any]))
-      DomainNameStatusMessage.foreach(__v => __obj.update("DomainNameStatusMessage", __v.asInstanceOf[js.Any]))
-      EndpointType.foreach(__v => __obj.update("EndpointType", __v.asInstanceOf[js.Any]))
-      HostedZoneId.foreach(__v => __obj.update("HostedZoneId", __v.asInstanceOf[js.Any]))
-      SecurityPolicy.foreach(__v => __obj.update("SecurityPolicy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApiGatewayDomainName.foreach(__v => __obj.updateDynamic("ApiGatewayDomainName")(__v.asInstanceOf[js.Any]))
+      CertificateArn.foreach(__v => __obj.updateDynamic("CertificateArn")(__v.asInstanceOf[js.Any]))
+      CertificateName.foreach(__v => __obj.updateDynamic("CertificateName")(__v.asInstanceOf[js.Any]))
+      CertificateUploadDate.foreach(__v => __obj.updateDynamic("CertificateUploadDate")(__v.asInstanceOf[js.Any]))
+      DomainNameStatus.foreach(__v => __obj.updateDynamic("DomainNameStatus")(__v.asInstanceOf[js.Any]))
+      DomainNameStatusMessage.foreach(__v => __obj.updateDynamic("DomainNameStatusMessage")(__v.asInstanceOf[js.Any]))
+      EndpointType.foreach(__v => __obj.updateDynamic("EndpointType")(__v.asInstanceOf[js.Any]))
+      HostedZoneId.foreach(__v => __obj.updateDynamic("HostedZoneId")(__v.asInstanceOf[js.Any]))
+      SecurityPolicy.foreach(__v => __obj.updateDynamic("SecurityPolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainNameConfiguration]
     }
   }
@@ -1625,7 +1639,7 @@ package apigatewayv2 {
         ApiMappingId: __string,
         DomainName: __string
     ): GetApiMappingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiMappingId" -> ApiMappingId.asInstanceOf[js.Any],
         "DomainName"   -> DomainName.asInstanceOf[js.Any]
       )
@@ -1649,11 +1663,11 @@ package apigatewayv2 {
         ApiMappingKey: js.UndefOr[SelectionKey] = js.undefined,
         Stage: js.UndefOr[StringWithLengthBetween1And128] = js.undefined
     ): GetApiMappingResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApiId.foreach(__v => __obj.update("ApiId", __v.asInstanceOf[js.Any]))
-      ApiMappingId.foreach(__v => __obj.update("ApiMappingId", __v.asInstanceOf[js.Any]))
-      ApiMappingKey.foreach(__v => __obj.update("ApiMappingKey", __v.asInstanceOf[js.Any]))
-      Stage.foreach(__v => __obj.update("Stage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApiId.foreach(__v => __obj.updateDynamic("ApiId")(__v.asInstanceOf[js.Any]))
+      ApiMappingId.foreach(__v => __obj.updateDynamic("ApiMappingId")(__v.asInstanceOf[js.Any]))
+      ApiMappingKey.foreach(__v => __obj.updateDynamic("ApiMappingKey")(__v.asInstanceOf[js.Any]))
+      Stage.foreach(__v => __obj.updateDynamic("Stage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetApiMappingResponse]
     }
   }
@@ -1671,12 +1685,12 @@ package apigatewayv2 {
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): GetApiMappingsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetApiMappingsRequest]
     }
   }
@@ -1692,9 +1706,9 @@ package apigatewayv2 {
         Items: js.UndefOr[__listOfApiMapping] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetApiMappingsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetApiMappingsResponse]
     }
   }
@@ -1708,7 +1722,7 @@ package apigatewayv2 {
     def apply(
         ApiId: __string
     ): GetApiRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId" -> ApiId.asInstanceOf[js.Any]
       )
 
@@ -1747,19 +1761,21 @@ package apigatewayv2 {
         Version: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
         Warnings: js.UndefOr[__listOf__string] = js.undefined
     ): GetApiResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApiEndpoint.foreach(__v => __obj.update("ApiEndpoint", __v.asInstanceOf[js.Any]))
-      ApiId.foreach(__v => __obj.update("ApiId", __v.asInstanceOf[js.Any]))
-      ApiKeySelectionExpression.foreach(__v => __obj.update("ApiKeySelectionExpression", __v.asInstanceOf[js.Any]))
-      CreatedDate.foreach(__v => __obj.update("CreatedDate", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      DisableSchemaValidation.foreach(__v => __obj.update("DisableSchemaValidation", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      ProtocolType.foreach(__v => __obj.update("ProtocolType", __v.asInstanceOf[js.Any]))
-      RouteSelectionExpression.foreach(__v => __obj.update("RouteSelectionExpression", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
-      Warnings.foreach(__v => __obj.update("Warnings", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApiEndpoint.foreach(__v => __obj.updateDynamic("ApiEndpoint")(__v.asInstanceOf[js.Any]))
+      ApiId.foreach(__v => __obj.updateDynamic("ApiId")(__v.asInstanceOf[js.Any]))
+      ApiKeySelectionExpression.foreach(
+        __v => __obj.updateDynamic("ApiKeySelectionExpression")(__v.asInstanceOf[js.Any])
+      )
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DisableSchemaValidation.foreach(__v => __obj.updateDynamic("DisableSchemaValidation")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ProtocolType.foreach(__v => __obj.updateDynamic("ProtocolType")(__v.asInstanceOf[js.Any]))
+      RouteSelectionExpression.foreach(__v => __obj.updateDynamic("RouteSelectionExpression")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      Warnings.foreach(__v => __obj.updateDynamic("Warnings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetApiResponse]
     }
   }
@@ -1775,9 +1791,9 @@ package apigatewayv2 {
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): GetApisRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetApisRequest]
     }
   }
@@ -1793,9 +1809,9 @@ package apigatewayv2 {
         Items: js.UndefOr[__listOfApi] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetApisResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetApisResponse]
     }
   }
@@ -1811,7 +1827,7 @@ package apigatewayv2 {
         ApiId: __string,
         AuthorizerId: __string
     ): GetAuthorizerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"        -> ApiId.asInstanceOf[js.Any],
         "AuthorizerId" -> AuthorizerId.asInstanceOf[js.Any]
       )
@@ -1845,20 +1861,20 @@ package apigatewayv2 {
         Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
         ProviderArns: js.UndefOr[ProviderArnList] = js.undefined
     ): GetAuthorizerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AuthorizerCredentialsArn.foreach(__v => __obj.update("AuthorizerCredentialsArn", __v.asInstanceOf[js.Any]))
-      AuthorizerId.foreach(__v => __obj.update("AuthorizerId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AuthorizerCredentialsArn.foreach(__v => __obj.updateDynamic("AuthorizerCredentialsArn")(__v.asInstanceOf[js.Any]))
+      AuthorizerId.foreach(__v => __obj.updateDynamic("AuthorizerId")(__v.asInstanceOf[js.Any]))
       AuthorizerResultTtlInSeconds.foreach(
-        __v => __obj.update("AuthorizerResultTtlInSeconds", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("AuthorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any])
       )
-      AuthorizerType.foreach(__v => __obj.update("AuthorizerType", __v.asInstanceOf[js.Any]))
-      AuthorizerUri.foreach(__v => __obj.update("AuthorizerUri", __v.asInstanceOf[js.Any]))
-      IdentitySource.foreach(__v => __obj.update("IdentitySource", __v.asInstanceOf[js.Any]))
+      AuthorizerType.foreach(__v => __obj.updateDynamic("AuthorizerType")(__v.asInstanceOf[js.Any]))
+      AuthorizerUri.foreach(__v => __obj.updateDynamic("AuthorizerUri")(__v.asInstanceOf[js.Any]))
+      IdentitySource.foreach(__v => __obj.updateDynamic("IdentitySource")(__v.asInstanceOf[js.Any]))
       IdentityValidationExpression.foreach(
-        __v => __obj.update("IdentityValidationExpression", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("IdentityValidationExpression")(__v.asInstanceOf[js.Any])
       )
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      ProviderArns.foreach(__v => __obj.update("ProviderArns", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ProviderArns.foreach(__v => __obj.updateDynamic("ProviderArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAuthorizerResponse]
     }
   }
@@ -1876,12 +1892,12 @@ package apigatewayv2 {
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): GetAuthorizersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId" -> ApiId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAuthorizersRequest]
     }
   }
@@ -1897,9 +1913,9 @@ package apigatewayv2 {
         Items: js.UndefOr[__listOfAuthorizer] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetAuthorizersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAuthorizersResponse]
     }
   }
@@ -1915,7 +1931,7 @@ package apigatewayv2 {
         ApiId: __string,
         DeploymentId: __string
     ): GetDeploymentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"        -> ApiId.asInstanceOf[js.Any],
         "DeploymentId" -> DeploymentId.asInstanceOf[js.Any]
       )
@@ -1941,12 +1957,12 @@ package apigatewayv2 {
         DeploymentStatusMessage: js.UndefOr[__string] = js.undefined,
         Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined
     ): GetDeploymentResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedDate.foreach(__v => __obj.update("CreatedDate", __v.asInstanceOf[js.Any]))
-      DeploymentId.foreach(__v => __obj.update("DeploymentId", __v.asInstanceOf[js.Any]))
-      DeploymentStatus.foreach(__v => __obj.update("DeploymentStatus", __v.asInstanceOf[js.Any]))
-      DeploymentStatusMessage.foreach(__v => __obj.update("DeploymentStatusMessage", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      DeploymentId.foreach(__v => __obj.updateDynamic("DeploymentId")(__v.asInstanceOf[js.Any]))
+      DeploymentStatus.foreach(__v => __obj.updateDynamic("DeploymentStatus")(__v.asInstanceOf[js.Any]))
+      DeploymentStatusMessage.foreach(__v => __obj.updateDynamic("DeploymentStatusMessage")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDeploymentResponse]
     }
   }
@@ -1964,12 +1980,12 @@ package apigatewayv2 {
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): GetDeploymentsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId" -> ApiId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDeploymentsRequest]
     }
   }
@@ -1985,9 +2001,9 @@ package apigatewayv2 {
         Items: js.UndefOr[__listOfDeployment] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetDeploymentsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDeploymentsResponse]
     }
   }
@@ -2001,7 +2017,7 @@ package apigatewayv2 {
     def apply(
         DomainName: __string
     ): GetDomainNameRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
@@ -2024,13 +2040,13 @@ package apigatewayv2 {
         DomainNameConfigurations: js.UndefOr[DomainNameConfigurations] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): GetDomainNameResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       ApiMappingSelectionExpression.foreach(
-        __v => __obj.update("ApiMappingSelectionExpression", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ApiMappingSelectionExpression")(__v.asInstanceOf[js.Any])
       )
-      DomainName.foreach(__v => __obj.update("DomainName", __v.asInstanceOf[js.Any]))
-      DomainNameConfigurations.foreach(__v => __obj.update("DomainNameConfigurations", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
+      DomainNameConfigurations.foreach(__v => __obj.updateDynamic("DomainNameConfigurations")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDomainNameResponse]
     }
   }
@@ -2046,9 +2062,9 @@ package apigatewayv2 {
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): GetDomainNamesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDomainNamesRequest]
     }
   }
@@ -2064,9 +2080,9 @@ package apigatewayv2 {
         Items: js.UndefOr[__listOfDomainName] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetDomainNamesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDomainNamesResponse]
     }
   }
@@ -2082,7 +2098,7 @@ package apigatewayv2 {
         ApiId: __string,
         IntegrationId: __string
     ): GetIntegrationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"         -> ApiId.asInstanceOf[js.Any],
         "IntegrationId" -> IntegrationId.asInstanceOf[js.Any]
       )
@@ -2128,24 +2144,26 @@ package apigatewayv2 {
         TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000] = js.undefined
     ): GetIntegrationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConnectionId.foreach(__v => __obj.update("ConnectionId", __v.asInstanceOf[js.Any]))
-      ConnectionType.foreach(__v => __obj.update("ConnectionType", __v.asInstanceOf[js.Any]))
-      ContentHandlingStrategy.foreach(__v => __obj.update("ContentHandlingStrategy", __v.asInstanceOf[js.Any]))
-      CredentialsArn.foreach(__v => __obj.update("CredentialsArn", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      IntegrationId.foreach(__v => __obj.update("IntegrationId", __v.asInstanceOf[js.Any]))
-      IntegrationMethod.foreach(__v => __obj.update("IntegrationMethod", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConnectionId.foreach(__v => __obj.updateDynamic("ConnectionId")(__v.asInstanceOf[js.Any]))
+      ConnectionType.foreach(__v => __obj.updateDynamic("ConnectionType")(__v.asInstanceOf[js.Any]))
+      ContentHandlingStrategy.foreach(__v => __obj.updateDynamic("ContentHandlingStrategy")(__v.asInstanceOf[js.Any]))
+      CredentialsArn.foreach(__v => __obj.updateDynamic("CredentialsArn")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      IntegrationId.foreach(__v => __obj.updateDynamic("IntegrationId")(__v.asInstanceOf[js.Any]))
+      IntegrationMethod.foreach(__v => __obj.updateDynamic("IntegrationMethod")(__v.asInstanceOf[js.Any]))
       IntegrationResponseSelectionExpression.foreach(
-        __v => __obj.update("IntegrationResponseSelectionExpression", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("IntegrationResponseSelectionExpression")(__v.asInstanceOf[js.Any])
       )
-      IntegrationType.foreach(__v => __obj.update("IntegrationType", __v.asInstanceOf[js.Any]))
-      IntegrationUri.foreach(__v => __obj.update("IntegrationUri", __v.asInstanceOf[js.Any]))
-      PassthroughBehavior.foreach(__v => __obj.update("PassthroughBehavior", __v.asInstanceOf[js.Any]))
-      RequestParameters.foreach(__v => __obj.update("RequestParameters", __v.asInstanceOf[js.Any]))
-      RequestTemplates.foreach(__v => __obj.update("RequestTemplates", __v.asInstanceOf[js.Any]))
-      TemplateSelectionExpression.foreach(__v => __obj.update("TemplateSelectionExpression", __v.asInstanceOf[js.Any]))
-      TimeoutInMillis.foreach(__v => __obj.update("TimeoutInMillis", __v.asInstanceOf[js.Any]))
+      IntegrationType.foreach(__v => __obj.updateDynamic("IntegrationType")(__v.asInstanceOf[js.Any]))
+      IntegrationUri.foreach(__v => __obj.updateDynamic("IntegrationUri")(__v.asInstanceOf[js.Any]))
+      PassthroughBehavior.foreach(__v => __obj.updateDynamic("PassthroughBehavior")(__v.asInstanceOf[js.Any]))
+      RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
+      RequestTemplates.foreach(__v => __obj.updateDynamic("RequestTemplates")(__v.asInstanceOf[js.Any]))
+      TemplateSelectionExpression.foreach(
+        __v => __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any])
+      )
+      TimeoutInMillis.foreach(__v => __obj.updateDynamic("TimeoutInMillis")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetIntegrationResponse]
     }
   }
@@ -2163,7 +2181,7 @@ package apigatewayv2 {
         IntegrationId: __string,
         IntegrationResponseId: __string
     ): GetIntegrationResponseRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"                 -> ApiId.asInstanceOf[js.Any],
         "IntegrationId"         -> IntegrationId.asInstanceOf[js.Any],
         "IntegrationResponseId" -> IntegrationResponseId.asInstanceOf[js.Any]
@@ -2192,13 +2210,15 @@ package apigatewayv2 {
         ResponseTemplates: js.UndefOr[TemplateMap] = js.undefined,
         TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined
     ): GetIntegrationResponseResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ContentHandlingStrategy.foreach(__v => __obj.update("ContentHandlingStrategy", __v.asInstanceOf[js.Any]))
-      IntegrationResponseId.foreach(__v => __obj.update("IntegrationResponseId", __v.asInstanceOf[js.Any]))
-      IntegrationResponseKey.foreach(__v => __obj.update("IntegrationResponseKey", __v.asInstanceOf[js.Any]))
-      ResponseParameters.foreach(__v => __obj.update("ResponseParameters", __v.asInstanceOf[js.Any]))
-      ResponseTemplates.foreach(__v => __obj.update("ResponseTemplates", __v.asInstanceOf[js.Any]))
-      TemplateSelectionExpression.foreach(__v => __obj.update("TemplateSelectionExpression", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ContentHandlingStrategy.foreach(__v => __obj.updateDynamic("ContentHandlingStrategy")(__v.asInstanceOf[js.Any]))
+      IntegrationResponseId.foreach(__v => __obj.updateDynamic("IntegrationResponseId")(__v.asInstanceOf[js.Any]))
+      IntegrationResponseKey.foreach(__v => __obj.updateDynamic("IntegrationResponseKey")(__v.asInstanceOf[js.Any]))
+      ResponseParameters.foreach(__v => __obj.updateDynamic("ResponseParameters")(__v.asInstanceOf[js.Any]))
+      ResponseTemplates.foreach(__v => __obj.updateDynamic("ResponseTemplates")(__v.asInstanceOf[js.Any]))
+      TemplateSelectionExpression.foreach(
+        __v => __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[GetIntegrationResponseResponse]
     }
   }
@@ -2218,13 +2238,13 @@ package apigatewayv2 {
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): GetIntegrationResponsesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"         -> ApiId.asInstanceOf[js.Any],
         "IntegrationId" -> IntegrationId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetIntegrationResponsesRequest]
     }
   }
@@ -2240,9 +2260,9 @@ package apigatewayv2 {
         Items: js.UndefOr[__listOfIntegrationResponse] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetIntegrationResponsesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetIntegrationResponsesResponse]
     }
   }
@@ -2260,12 +2280,12 @@ package apigatewayv2 {
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): GetIntegrationsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId" -> ApiId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetIntegrationsRequest]
     }
   }
@@ -2281,9 +2301,9 @@ package apigatewayv2 {
         Items: js.UndefOr[__listOfIntegration] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetIntegrationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetIntegrationsResponse]
     }
   }
@@ -2299,7 +2319,7 @@ package apigatewayv2 {
         ApiId: __string,
         ModelId: __string
     ): GetModelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"   -> ApiId.asInstanceOf[js.Any],
         "ModelId" -> ModelId.asInstanceOf[js.Any]
       )
@@ -2325,12 +2345,12 @@ package apigatewayv2 {
         Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
         Schema: js.UndefOr[StringWithLengthBetween0And32K] = js.undefined
     ): GetModelResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ContentType.foreach(__v => __obj.update("ContentType", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      ModelId.foreach(__v => __obj.update("ModelId", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Schema.foreach(__v => __obj.update("Schema", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ModelId.foreach(__v => __obj.updateDynamic("ModelId")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Schema.foreach(__v => __obj.updateDynamic("Schema")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetModelResponse]
     }
   }
@@ -2346,7 +2366,7 @@ package apigatewayv2 {
         ApiId: __string,
         ModelId: __string
     ): GetModelTemplateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"   -> ApiId.asInstanceOf[js.Any],
         "ModelId" -> ModelId.asInstanceOf[js.Any]
       )
@@ -2364,8 +2384,8 @@ package apigatewayv2 {
     def apply(
         Value: js.UndefOr[__string] = js.undefined
     ): GetModelTemplateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetModelTemplateResponse]
     }
   }
@@ -2383,12 +2403,12 @@ package apigatewayv2 {
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): GetModelsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId" -> ApiId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetModelsRequest]
     }
   }
@@ -2404,9 +2424,9 @@ package apigatewayv2 {
         Items: js.UndefOr[__listOfModel] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetModelsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetModelsResponse]
     }
   }
@@ -2422,7 +2442,7 @@ package apigatewayv2 {
         ApiId: __string,
         RouteId: __string
     ): GetRouteRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"   -> ApiId.asInstanceOf[js.Any],
         "RouteId" -> RouteId.asInstanceOf[js.Any]
       )
@@ -2462,21 +2482,21 @@ package apigatewayv2 {
         RouteResponseSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         Target: js.UndefOr[StringWithLengthBetween1And128] = js.undefined
     ): GetRouteResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApiKeyRequired.foreach(__v => __obj.update("ApiKeyRequired", __v.asInstanceOf[js.Any]))
-      AuthorizationScopes.foreach(__v => __obj.update("AuthorizationScopes", __v.asInstanceOf[js.Any]))
-      AuthorizationType.foreach(__v => __obj.update("AuthorizationType", __v.asInstanceOf[js.Any]))
-      AuthorizerId.foreach(__v => __obj.update("AuthorizerId", __v.asInstanceOf[js.Any]))
-      ModelSelectionExpression.foreach(__v => __obj.update("ModelSelectionExpression", __v.asInstanceOf[js.Any]))
-      OperationName.foreach(__v => __obj.update("OperationName", __v.asInstanceOf[js.Any]))
-      RequestModels.foreach(__v => __obj.update("RequestModels", __v.asInstanceOf[js.Any]))
-      RequestParameters.foreach(__v => __obj.update("RequestParameters", __v.asInstanceOf[js.Any]))
-      RouteId.foreach(__v => __obj.update("RouteId", __v.asInstanceOf[js.Any]))
-      RouteKey.foreach(__v => __obj.update("RouteKey", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApiKeyRequired.foreach(__v => __obj.updateDynamic("ApiKeyRequired")(__v.asInstanceOf[js.Any]))
+      AuthorizationScopes.foreach(__v => __obj.updateDynamic("AuthorizationScopes")(__v.asInstanceOf[js.Any]))
+      AuthorizationType.foreach(__v => __obj.updateDynamic("AuthorizationType")(__v.asInstanceOf[js.Any]))
+      AuthorizerId.foreach(__v => __obj.updateDynamic("AuthorizerId")(__v.asInstanceOf[js.Any]))
+      ModelSelectionExpression.foreach(__v => __obj.updateDynamic("ModelSelectionExpression")(__v.asInstanceOf[js.Any]))
+      OperationName.foreach(__v => __obj.updateDynamic("OperationName")(__v.asInstanceOf[js.Any]))
+      RequestModels.foreach(__v => __obj.updateDynamic("RequestModels")(__v.asInstanceOf[js.Any]))
+      RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
+      RouteId.foreach(__v => __obj.updateDynamic("RouteId")(__v.asInstanceOf[js.Any]))
+      RouteKey.foreach(__v => __obj.updateDynamic("RouteKey")(__v.asInstanceOf[js.Any]))
       RouteResponseSelectionExpression.foreach(
-        __v => __obj.update("RouteResponseSelectionExpression", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("RouteResponseSelectionExpression")(__v.asInstanceOf[js.Any])
       )
-      Target.foreach(__v => __obj.update("Target", __v.asInstanceOf[js.Any]))
+      Target.foreach(__v => __obj.updateDynamic("Target")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRouteResponse]
     }
   }
@@ -2494,7 +2514,7 @@ package apigatewayv2 {
         RouteId: __string,
         RouteResponseId: __string
     ): GetRouteResponseRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"           -> ApiId.asInstanceOf[js.Any],
         "RouteId"         -> RouteId.asInstanceOf[js.Any],
         "RouteResponseId" -> RouteResponseId.asInstanceOf[js.Any]
@@ -2521,12 +2541,12 @@ package apigatewayv2 {
         RouteResponseId: js.UndefOr[Id] = js.undefined,
         RouteResponseKey: js.UndefOr[SelectionKey] = js.undefined
     ): GetRouteResponseResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ModelSelectionExpression.foreach(__v => __obj.update("ModelSelectionExpression", __v.asInstanceOf[js.Any]))
-      ResponseModels.foreach(__v => __obj.update("ResponseModels", __v.asInstanceOf[js.Any]))
-      ResponseParameters.foreach(__v => __obj.update("ResponseParameters", __v.asInstanceOf[js.Any]))
-      RouteResponseId.foreach(__v => __obj.update("RouteResponseId", __v.asInstanceOf[js.Any]))
-      RouteResponseKey.foreach(__v => __obj.update("RouteResponseKey", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ModelSelectionExpression.foreach(__v => __obj.updateDynamic("ModelSelectionExpression")(__v.asInstanceOf[js.Any]))
+      ResponseModels.foreach(__v => __obj.updateDynamic("ResponseModels")(__v.asInstanceOf[js.Any]))
+      ResponseParameters.foreach(__v => __obj.updateDynamic("ResponseParameters")(__v.asInstanceOf[js.Any]))
+      RouteResponseId.foreach(__v => __obj.updateDynamic("RouteResponseId")(__v.asInstanceOf[js.Any]))
+      RouteResponseKey.foreach(__v => __obj.updateDynamic("RouteResponseKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRouteResponseResponse]
     }
   }
@@ -2546,13 +2566,13 @@ package apigatewayv2 {
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): GetRouteResponsesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"   -> ApiId.asInstanceOf[js.Any],
         "RouteId" -> RouteId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRouteResponsesRequest]
     }
   }
@@ -2568,9 +2588,9 @@ package apigatewayv2 {
         Items: js.UndefOr[__listOfRouteResponse] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetRouteResponsesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRouteResponsesResponse]
     }
   }
@@ -2588,12 +2608,12 @@ package apigatewayv2 {
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): GetRoutesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId" -> ApiId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRoutesRequest]
     }
   }
@@ -2609,9 +2629,9 @@ package apigatewayv2 {
         Items: js.UndefOr[__listOfRoute] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetRoutesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRoutesResponse]
     }
   }
@@ -2627,7 +2647,7 @@ package apigatewayv2 {
         ApiId: __string,
         StageName: __string
     ): GetStageRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"     -> ApiId.asInstanceOf[js.Any],
         "StageName" -> StageName.asInstanceOf[js.Any]
       )
@@ -2665,18 +2685,18 @@ package apigatewayv2 {
         StageVariables: js.UndefOr[StageVariablesMap] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): GetStageResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccessLogSettings.foreach(__v => __obj.update("AccessLogSettings", __v.asInstanceOf[js.Any]))
-      ClientCertificateId.foreach(__v => __obj.update("ClientCertificateId", __v.asInstanceOf[js.Any]))
-      CreatedDate.foreach(__v => __obj.update("CreatedDate", __v.asInstanceOf[js.Any]))
-      DefaultRouteSettings.foreach(__v => __obj.update("DefaultRouteSettings", __v.asInstanceOf[js.Any]))
-      DeploymentId.foreach(__v => __obj.update("DeploymentId", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      LastUpdatedDate.foreach(__v => __obj.update("LastUpdatedDate", __v.asInstanceOf[js.Any]))
-      RouteSettings.foreach(__v => __obj.update("RouteSettings", __v.asInstanceOf[js.Any]))
-      StageName.foreach(__v => __obj.update("StageName", __v.asInstanceOf[js.Any]))
-      StageVariables.foreach(__v => __obj.update("StageVariables", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccessLogSettings.foreach(__v => __obj.updateDynamic("AccessLogSettings")(__v.asInstanceOf[js.Any]))
+      ClientCertificateId.foreach(__v => __obj.updateDynamic("ClientCertificateId")(__v.asInstanceOf[js.Any]))
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      DefaultRouteSettings.foreach(__v => __obj.updateDynamic("DefaultRouteSettings")(__v.asInstanceOf[js.Any]))
+      DeploymentId.foreach(__v => __obj.updateDynamic("DeploymentId")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LastUpdatedDate.foreach(__v => __obj.updateDynamic("LastUpdatedDate")(__v.asInstanceOf[js.Any]))
+      RouteSettings.foreach(__v => __obj.updateDynamic("RouteSettings")(__v.asInstanceOf[js.Any]))
+      StageName.foreach(__v => __obj.updateDynamic("StageName")(__v.asInstanceOf[js.Any]))
+      StageVariables.foreach(__v => __obj.updateDynamic("StageVariables")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetStageResponse]
     }
   }
@@ -2694,12 +2714,12 @@ package apigatewayv2 {
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): GetStagesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId" -> ApiId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetStagesRequest]
     }
   }
@@ -2715,9 +2735,9 @@ package apigatewayv2 {
         Items: js.UndefOr[__listOfStage] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetStagesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Items.foreach(__v => __obj.update("Items", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetStagesResponse]
     }
   }
@@ -2731,7 +2751,7 @@ package apigatewayv2 {
     def apply(
         ResourceArn: __string
     ): GetTagsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
@@ -2748,8 +2768,8 @@ package apigatewayv2 {
     def apply(
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): GetTagsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTagsResponse]
     }
   }
@@ -2794,24 +2814,26 @@ package apigatewayv2 {
         TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000] = js.undefined
     ): Integration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConnectionId.foreach(__v => __obj.update("ConnectionId", __v.asInstanceOf[js.Any]))
-      ConnectionType.foreach(__v => __obj.update("ConnectionType", __v.asInstanceOf[js.Any]))
-      ContentHandlingStrategy.foreach(__v => __obj.update("ContentHandlingStrategy", __v.asInstanceOf[js.Any]))
-      CredentialsArn.foreach(__v => __obj.update("CredentialsArn", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      IntegrationId.foreach(__v => __obj.update("IntegrationId", __v.asInstanceOf[js.Any]))
-      IntegrationMethod.foreach(__v => __obj.update("IntegrationMethod", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConnectionId.foreach(__v => __obj.updateDynamic("ConnectionId")(__v.asInstanceOf[js.Any]))
+      ConnectionType.foreach(__v => __obj.updateDynamic("ConnectionType")(__v.asInstanceOf[js.Any]))
+      ContentHandlingStrategy.foreach(__v => __obj.updateDynamic("ContentHandlingStrategy")(__v.asInstanceOf[js.Any]))
+      CredentialsArn.foreach(__v => __obj.updateDynamic("CredentialsArn")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      IntegrationId.foreach(__v => __obj.updateDynamic("IntegrationId")(__v.asInstanceOf[js.Any]))
+      IntegrationMethod.foreach(__v => __obj.updateDynamic("IntegrationMethod")(__v.asInstanceOf[js.Any]))
       IntegrationResponseSelectionExpression.foreach(
-        __v => __obj.update("IntegrationResponseSelectionExpression", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("IntegrationResponseSelectionExpression")(__v.asInstanceOf[js.Any])
       )
-      IntegrationType.foreach(__v => __obj.update("IntegrationType", __v.asInstanceOf[js.Any]))
-      IntegrationUri.foreach(__v => __obj.update("IntegrationUri", __v.asInstanceOf[js.Any]))
-      PassthroughBehavior.foreach(__v => __obj.update("PassthroughBehavior", __v.asInstanceOf[js.Any]))
-      RequestParameters.foreach(__v => __obj.update("RequestParameters", __v.asInstanceOf[js.Any]))
-      RequestTemplates.foreach(__v => __obj.update("RequestTemplates", __v.asInstanceOf[js.Any]))
-      TemplateSelectionExpression.foreach(__v => __obj.update("TemplateSelectionExpression", __v.asInstanceOf[js.Any]))
-      TimeoutInMillis.foreach(__v => __obj.update("TimeoutInMillis", __v.asInstanceOf[js.Any]))
+      IntegrationType.foreach(__v => __obj.updateDynamic("IntegrationType")(__v.asInstanceOf[js.Any]))
+      IntegrationUri.foreach(__v => __obj.updateDynamic("IntegrationUri")(__v.asInstanceOf[js.Any]))
+      PassthroughBehavior.foreach(__v => __obj.updateDynamic("PassthroughBehavior")(__v.asInstanceOf[js.Any]))
+      RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
+      RequestTemplates.foreach(__v => __obj.updateDynamic("RequestTemplates")(__v.asInstanceOf[js.Any]))
+      TemplateSelectionExpression.foreach(
+        __v => __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any])
+      )
+      TimeoutInMillis.foreach(__v => __obj.updateDynamic("TimeoutInMillis")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Integration]
     }
   }
@@ -2838,15 +2860,17 @@ package apigatewayv2 {
         ResponseTemplates: js.UndefOr[TemplateMap] = js.undefined,
         TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined
     ): IntegrationResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IntegrationResponseKey" -> IntegrationResponseKey.asInstanceOf[js.Any]
       )
 
-      ContentHandlingStrategy.foreach(__v => __obj.update("ContentHandlingStrategy", __v.asInstanceOf[js.Any]))
-      IntegrationResponseId.foreach(__v => __obj.update("IntegrationResponseId", __v.asInstanceOf[js.Any]))
-      ResponseParameters.foreach(__v => __obj.update("ResponseParameters", __v.asInstanceOf[js.Any]))
-      ResponseTemplates.foreach(__v => __obj.update("ResponseTemplates", __v.asInstanceOf[js.Any]))
-      TemplateSelectionExpression.foreach(__v => __obj.update("TemplateSelectionExpression", __v.asInstanceOf[js.Any]))
+      ContentHandlingStrategy.foreach(__v => __obj.updateDynamic("ContentHandlingStrategy")(__v.asInstanceOf[js.Any]))
+      IntegrationResponseId.foreach(__v => __obj.updateDynamic("IntegrationResponseId")(__v.asInstanceOf[js.Any]))
+      ResponseParameters.foreach(__v => __obj.updateDynamic("ResponseParameters")(__v.asInstanceOf[js.Any]))
+      ResponseTemplates.foreach(__v => __obj.updateDynamic("ResponseTemplates")(__v.asInstanceOf[js.Any]))
+      TemplateSelectionExpression.foreach(
+        __v => __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[IntegrationResponse]
     }
   }
@@ -2896,14 +2920,14 @@ package apigatewayv2 {
         ModelId: js.UndefOr[Id] = js.undefined,
         Schema: js.UndefOr[StringWithLengthBetween0And32K] = js.undefined
     ): Model = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      ContentType.foreach(__v => __obj.update("ContentType", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      ModelId.foreach(__v => __obj.update("ModelId", __v.asInstanceOf[js.Any]))
-      Schema.foreach(__v => __obj.update("Schema", __v.asInstanceOf[js.Any]))
+      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ModelId.foreach(__v => __obj.updateDynamic("ModelId")(__v.asInstanceOf[js.Any]))
+      Schema.foreach(__v => __obj.updateDynamic("Schema")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Model]
     }
   }
@@ -2921,8 +2945,8 @@ package apigatewayv2 {
     def apply(
         Required: js.UndefOr[__boolean] = js.undefined
     ): ParameterConstraints = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Required.foreach(__v => __obj.update("Required", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Required.foreach(__v => __obj.updateDynamic("Required")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ParameterConstraints]
     }
   }
@@ -2981,23 +3005,23 @@ package apigatewayv2 {
         RouteResponseSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         Target: js.UndefOr[StringWithLengthBetween1And128] = js.undefined
     ): Route = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RouteKey" -> RouteKey.asInstanceOf[js.Any]
       )
 
-      ApiKeyRequired.foreach(__v => __obj.update("ApiKeyRequired", __v.asInstanceOf[js.Any]))
-      AuthorizationScopes.foreach(__v => __obj.update("AuthorizationScopes", __v.asInstanceOf[js.Any]))
-      AuthorizationType.foreach(__v => __obj.update("AuthorizationType", __v.asInstanceOf[js.Any]))
-      AuthorizerId.foreach(__v => __obj.update("AuthorizerId", __v.asInstanceOf[js.Any]))
-      ModelSelectionExpression.foreach(__v => __obj.update("ModelSelectionExpression", __v.asInstanceOf[js.Any]))
-      OperationName.foreach(__v => __obj.update("OperationName", __v.asInstanceOf[js.Any]))
-      RequestModels.foreach(__v => __obj.update("RequestModels", __v.asInstanceOf[js.Any]))
-      RequestParameters.foreach(__v => __obj.update("RequestParameters", __v.asInstanceOf[js.Any]))
-      RouteId.foreach(__v => __obj.update("RouteId", __v.asInstanceOf[js.Any]))
+      ApiKeyRequired.foreach(__v => __obj.updateDynamic("ApiKeyRequired")(__v.asInstanceOf[js.Any]))
+      AuthorizationScopes.foreach(__v => __obj.updateDynamic("AuthorizationScopes")(__v.asInstanceOf[js.Any]))
+      AuthorizationType.foreach(__v => __obj.updateDynamic("AuthorizationType")(__v.asInstanceOf[js.Any]))
+      AuthorizerId.foreach(__v => __obj.updateDynamic("AuthorizerId")(__v.asInstanceOf[js.Any]))
+      ModelSelectionExpression.foreach(__v => __obj.updateDynamic("ModelSelectionExpression")(__v.asInstanceOf[js.Any]))
+      OperationName.foreach(__v => __obj.updateDynamic("OperationName")(__v.asInstanceOf[js.Any]))
+      RequestModels.foreach(__v => __obj.updateDynamic("RequestModels")(__v.asInstanceOf[js.Any]))
+      RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
+      RouteId.foreach(__v => __obj.updateDynamic("RouteId")(__v.asInstanceOf[js.Any]))
       RouteResponseSelectionExpression.foreach(
-        __v => __obj.update("RouteResponseSelectionExpression", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("RouteResponseSelectionExpression")(__v.asInstanceOf[js.Any])
       )
-      Target.foreach(__v => __obj.update("Target", __v.asInstanceOf[js.Any]))
+      Target.foreach(__v => __obj.updateDynamic("Target")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Route]
     }
   }
@@ -3022,14 +3046,14 @@ package apigatewayv2 {
         ResponseParameters: js.UndefOr[RouteParameters] = js.undefined,
         RouteResponseId: js.UndefOr[Id] = js.undefined
     ): RouteResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RouteResponseKey" -> RouteResponseKey.asInstanceOf[js.Any]
       )
 
-      ModelSelectionExpression.foreach(__v => __obj.update("ModelSelectionExpression", __v.asInstanceOf[js.Any]))
-      ResponseModels.foreach(__v => __obj.update("ResponseModels", __v.asInstanceOf[js.Any]))
-      ResponseParameters.foreach(__v => __obj.update("ResponseParameters", __v.asInstanceOf[js.Any]))
-      RouteResponseId.foreach(__v => __obj.update("RouteResponseId", __v.asInstanceOf[js.Any]))
+      ModelSelectionExpression.foreach(__v => __obj.updateDynamic("ModelSelectionExpression")(__v.asInstanceOf[js.Any]))
+      ResponseModels.foreach(__v => __obj.updateDynamic("ResponseModels")(__v.asInstanceOf[js.Any]))
+      ResponseParameters.foreach(__v => __obj.updateDynamic("ResponseParameters")(__v.asInstanceOf[js.Any]))
+      RouteResponseId.foreach(__v => __obj.updateDynamic("RouteResponseId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RouteResponse]
     }
   }
@@ -3054,12 +3078,12 @@ package apigatewayv2 {
         ThrottlingBurstLimit: js.UndefOr[__integer] = js.undefined,
         ThrottlingRateLimit: js.UndefOr[__double] = js.undefined
     ): RouteSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DataTraceEnabled.foreach(__v => __obj.update("DataTraceEnabled", __v.asInstanceOf[js.Any]))
-      DetailedMetricsEnabled.foreach(__v => __obj.update("DetailedMetricsEnabled", __v.asInstanceOf[js.Any]))
-      LoggingLevel.foreach(__v => __obj.update("LoggingLevel", __v.asInstanceOf[js.Any]))
-      ThrottlingBurstLimit.foreach(__v => __obj.update("ThrottlingBurstLimit", __v.asInstanceOf[js.Any]))
-      ThrottlingRateLimit.foreach(__v => __obj.update("ThrottlingRateLimit", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DataTraceEnabled.foreach(__v => __obj.updateDynamic("DataTraceEnabled")(__v.asInstanceOf[js.Any]))
+      DetailedMetricsEnabled.foreach(__v => __obj.updateDynamic("DetailedMetricsEnabled")(__v.asInstanceOf[js.Any]))
+      LoggingLevel.foreach(__v => __obj.updateDynamic("LoggingLevel")(__v.asInstanceOf[js.Any]))
+      ThrottlingBurstLimit.foreach(__v => __obj.updateDynamic("ThrottlingBurstLimit")(__v.asInstanceOf[js.Any]))
+      ThrottlingRateLimit.foreach(__v => __obj.updateDynamic("ThrottlingRateLimit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RouteSettings]
     }
   }
@@ -3106,20 +3130,20 @@ package apigatewayv2 {
         StageVariables: js.UndefOr[StageVariablesMap] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): Stage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "StageName" -> StageName.asInstanceOf[js.Any]
       )
 
-      AccessLogSettings.foreach(__v => __obj.update("AccessLogSettings", __v.asInstanceOf[js.Any]))
-      ClientCertificateId.foreach(__v => __obj.update("ClientCertificateId", __v.asInstanceOf[js.Any]))
-      CreatedDate.foreach(__v => __obj.update("CreatedDate", __v.asInstanceOf[js.Any]))
-      DefaultRouteSettings.foreach(__v => __obj.update("DefaultRouteSettings", __v.asInstanceOf[js.Any]))
-      DeploymentId.foreach(__v => __obj.update("DeploymentId", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      LastUpdatedDate.foreach(__v => __obj.update("LastUpdatedDate", __v.asInstanceOf[js.Any]))
-      RouteSettings.foreach(__v => __obj.update("RouteSettings", __v.asInstanceOf[js.Any]))
-      StageVariables.foreach(__v => __obj.update("StageVariables", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      AccessLogSettings.foreach(__v => __obj.updateDynamic("AccessLogSettings")(__v.asInstanceOf[js.Any]))
+      ClientCertificateId.foreach(__v => __obj.updateDynamic("ClientCertificateId")(__v.asInstanceOf[js.Any]))
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      DefaultRouteSettings.foreach(__v => __obj.updateDynamic("DefaultRouteSettings")(__v.asInstanceOf[js.Any]))
+      DeploymentId.foreach(__v => __obj.updateDynamic("DeploymentId")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LastUpdatedDate.foreach(__v => __obj.updateDynamic("LastUpdatedDate")(__v.asInstanceOf[js.Any]))
+      RouteSettings.foreach(__v => __obj.updateDynamic("RouteSettings")(__v.asInstanceOf[js.Any]))
+      StageVariables.foreach(__v => __obj.updateDynamic("StageVariables")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Stage]
     }
   }
@@ -3135,11 +3159,11 @@ package apigatewayv2 {
         ResourceArn: __string,
         Tags: js.UndefOr[Tags] = js.undefined
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -3150,7 +3174,7 @@ package apigatewayv2 {
   object TagResourceResponse {
     def apply(
         ): TagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -3167,7 +3191,7 @@ package apigatewayv2 {
         ResourceArn: __string,
         TagKeys: __listOf__string
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
       )
@@ -3193,14 +3217,14 @@ package apigatewayv2 {
         ApiMappingKey: js.UndefOr[SelectionKey] = js.undefined,
         Stage: js.UndefOr[StringWithLengthBetween1And128] = js.undefined
     ): UpdateApiMappingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"        -> ApiId.asInstanceOf[js.Any],
         "ApiMappingId" -> ApiMappingId.asInstanceOf[js.Any],
         "DomainName"   -> DomainName.asInstanceOf[js.Any]
       )
 
-      ApiMappingKey.foreach(__v => __obj.update("ApiMappingKey", __v.asInstanceOf[js.Any]))
-      Stage.foreach(__v => __obj.update("Stage", __v.asInstanceOf[js.Any]))
+      ApiMappingKey.foreach(__v => __obj.updateDynamic("ApiMappingKey")(__v.asInstanceOf[js.Any]))
+      Stage.foreach(__v => __obj.updateDynamic("Stage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateApiMappingRequest]
     }
   }
@@ -3220,11 +3244,11 @@ package apigatewayv2 {
         ApiMappingKey: js.UndefOr[SelectionKey] = js.undefined,
         Stage: js.UndefOr[StringWithLengthBetween1And128] = js.undefined
     ): UpdateApiMappingResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApiId.foreach(__v => __obj.update("ApiId", __v.asInstanceOf[js.Any]))
-      ApiMappingId.foreach(__v => __obj.update("ApiMappingId", __v.asInstanceOf[js.Any]))
-      ApiMappingKey.foreach(__v => __obj.update("ApiMappingKey", __v.asInstanceOf[js.Any]))
-      Stage.foreach(__v => __obj.update("Stage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApiId.foreach(__v => __obj.updateDynamic("ApiId")(__v.asInstanceOf[js.Any]))
+      ApiMappingId.foreach(__v => __obj.updateDynamic("ApiMappingId")(__v.asInstanceOf[js.Any]))
+      ApiMappingKey.foreach(__v => __obj.updateDynamic("ApiMappingKey")(__v.asInstanceOf[js.Any]))
+      Stage.foreach(__v => __obj.updateDynamic("Stage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateApiMappingResponse]
     }
   }
@@ -3250,16 +3274,18 @@ package apigatewayv2 {
         RouteSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         Version: js.UndefOr[StringWithLengthBetween1And64] = js.undefined
     ): UpdateApiRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId" -> ApiId.asInstanceOf[js.Any]
       )
 
-      ApiKeySelectionExpression.foreach(__v => __obj.update("ApiKeySelectionExpression", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      DisableSchemaValidation.foreach(__v => __obj.update("DisableSchemaValidation", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      RouteSelectionExpression.foreach(__v => __obj.update("RouteSelectionExpression", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      ApiKeySelectionExpression.foreach(
+        __v => __obj.updateDynamic("ApiKeySelectionExpression")(__v.asInstanceOf[js.Any])
+      )
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DisableSchemaValidation.foreach(__v => __obj.updateDynamic("DisableSchemaValidation")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RouteSelectionExpression.foreach(__v => __obj.updateDynamic("RouteSelectionExpression")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateApiRequest]
     }
   }
@@ -3295,19 +3321,21 @@ package apigatewayv2 {
         Version: js.UndefOr[StringWithLengthBetween1And64] = js.undefined,
         Warnings: js.UndefOr[__listOf__string] = js.undefined
     ): UpdateApiResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApiEndpoint.foreach(__v => __obj.update("ApiEndpoint", __v.asInstanceOf[js.Any]))
-      ApiId.foreach(__v => __obj.update("ApiId", __v.asInstanceOf[js.Any]))
-      ApiKeySelectionExpression.foreach(__v => __obj.update("ApiKeySelectionExpression", __v.asInstanceOf[js.Any]))
-      CreatedDate.foreach(__v => __obj.update("CreatedDate", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      DisableSchemaValidation.foreach(__v => __obj.update("DisableSchemaValidation", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      ProtocolType.foreach(__v => __obj.update("ProtocolType", __v.asInstanceOf[js.Any]))
-      RouteSelectionExpression.foreach(__v => __obj.update("RouteSelectionExpression", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
-      Warnings.foreach(__v => __obj.update("Warnings", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApiEndpoint.foreach(__v => __obj.updateDynamic("ApiEndpoint")(__v.asInstanceOf[js.Any]))
+      ApiId.foreach(__v => __obj.updateDynamic("ApiId")(__v.asInstanceOf[js.Any]))
+      ApiKeySelectionExpression.foreach(
+        __v => __obj.updateDynamic("ApiKeySelectionExpression")(__v.asInstanceOf[js.Any])
+      )
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DisableSchemaValidation.foreach(__v => __obj.updateDynamic("DisableSchemaValidation")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ProtocolType.foreach(__v => __obj.updateDynamic("ProtocolType")(__v.asInstanceOf[js.Any]))
+      RouteSelectionExpression.foreach(__v => __obj.updateDynamic("RouteSelectionExpression")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      Warnings.foreach(__v => __obj.updateDynamic("Warnings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateApiResponse]
     }
   }
@@ -3339,23 +3367,23 @@ package apigatewayv2 {
         Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
         ProviderArns: js.UndefOr[ProviderArnList] = js.undefined
     ): UpdateAuthorizerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"        -> ApiId.asInstanceOf[js.Any],
         "AuthorizerId" -> AuthorizerId.asInstanceOf[js.Any]
       )
 
-      AuthorizerCredentialsArn.foreach(__v => __obj.update("AuthorizerCredentialsArn", __v.asInstanceOf[js.Any]))
+      AuthorizerCredentialsArn.foreach(__v => __obj.updateDynamic("AuthorizerCredentialsArn")(__v.asInstanceOf[js.Any]))
       AuthorizerResultTtlInSeconds.foreach(
-        __v => __obj.update("AuthorizerResultTtlInSeconds", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("AuthorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any])
       )
-      AuthorizerType.foreach(__v => __obj.update("AuthorizerType", __v.asInstanceOf[js.Any]))
-      AuthorizerUri.foreach(__v => __obj.update("AuthorizerUri", __v.asInstanceOf[js.Any]))
-      IdentitySource.foreach(__v => __obj.update("IdentitySource", __v.asInstanceOf[js.Any]))
+      AuthorizerType.foreach(__v => __obj.updateDynamic("AuthorizerType")(__v.asInstanceOf[js.Any]))
+      AuthorizerUri.foreach(__v => __obj.updateDynamic("AuthorizerUri")(__v.asInstanceOf[js.Any]))
+      IdentitySource.foreach(__v => __obj.updateDynamic("IdentitySource")(__v.asInstanceOf[js.Any]))
       IdentityValidationExpression.foreach(
-        __v => __obj.update("IdentityValidationExpression", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("IdentityValidationExpression")(__v.asInstanceOf[js.Any])
       )
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      ProviderArns.foreach(__v => __obj.update("ProviderArns", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ProviderArns.foreach(__v => __obj.updateDynamic("ProviderArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAuthorizerRequest]
     }
   }
@@ -3385,20 +3413,20 @@ package apigatewayv2 {
         Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
         ProviderArns: js.UndefOr[ProviderArnList] = js.undefined
     ): UpdateAuthorizerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AuthorizerCredentialsArn.foreach(__v => __obj.update("AuthorizerCredentialsArn", __v.asInstanceOf[js.Any]))
-      AuthorizerId.foreach(__v => __obj.update("AuthorizerId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AuthorizerCredentialsArn.foreach(__v => __obj.updateDynamic("AuthorizerCredentialsArn")(__v.asInstanceOf[js.Any]))
+      AuthorizerId.foreach(__v => __obj.updateDynamic("AuthorizerId")(__v.asInstanceOf[js.Any]))
       AuthorizerResultTtlInSeconds.foreach(
-        __v => __obj.update("AuthorizerResultTtlInSeconds", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("AuthorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any])
       )
-      AuthorizerType.foreach(__v => __obj.update("AuthorizerType", __v.asInstanceOf[js.Any]))
-      AuthorizerUri.foreach(__v => __obj.update("AuthorizerUri", __v.asInstanceOf[js.Any]))
-      IdentitySource.foreach(__v => __obj.update("IdentitySource", __v.asInstanceOf[js.Any]))
+      AuthorizerType.foreach(__v => __obj.updateDynamic("AuthorizerType")(__v.asInstanceOf[js.Any]))
+      AuthorizerUri.foreach(__v => __obj.updateDynamic("AuthorizerUri")(__v.asInstanceOf[js.Any]))
+      IdentitySource.foreach(__v => __obj.updateDynamic("IdentitySource")(__v.asInstanceOf[js.Any]))
       IdentityValidationExpression.foreach(
-        __v => __obj.update("IdentityValidationExpression", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("IdentityValidationExpression")(__v.asInstanceOf[js.Any])
       )
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      ProviderArns.foreach(__v => __obj.update("ProviderArns", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ProviderArns.foreach(__v => __obj.updateDynamic("ProviderArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAuthorizerResponse]
     }
   }
@@ -3416,12 +3444,12 @@ package apigatewayv2 {
         DeploymentId: __string,
         Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined
     ): UpdateDeploymentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"        -> ApiId.asInstanceOf[js.Any],
         "DeploymentId" -> DeploymentId.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDeploymentRequest]
     }
   }
@@ -3443,12 +3471,12 @@ package apigatewayv2 {
         DeploymentStatusMessage: js.UndefOr[__string] = js.undefined,
         Description: js.UndefOr[StringWithLengthBetween0And1024] = js.undefined
     ): UpdateDeploymentResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedDate.foreach(__v => __obj.update("CreatedDate", __v.asInstanceOf[js.Any]))
-      DeploymentId.foreach(__v => __obj.update("DeploymentId", __v.asInstanceOf[js.Any]))
-      DeploymentStatus.foreach(__v => __obj.update("DeploymentStatus", __v.asInstanceOf[js.Any]))
-      DeploymentStatusMessage.foreach(__v => __obj.update("DeploymentStatusMessage", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      DeploymentId.foreach(__v => __obj.updateDynamic("DeploymentId")(__v.asInstanceOf[js.Any]))
+      DeploymentStatus.foreach(__v => __obj.updateDynamic("DeploymentStatus")(__v.asInstanceOf[js.Any]))
+      DeploymentStatusMessage.foreach(__v => __obj.updateDynamic("DeploymentStatusMessage")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDeploymentResponse]
     }
   }
@@ -3464,11 +3492,11 @@ package apigatewayv2 {
         DomainName: __string,
         DomainNameConfigurations: js.UndefOr[DomainNameConfigurations] = js.undefined
     ): UpdateDomainNameRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
-      DomainNameConfigurations.foreach(__v => __obj.update("DomainNameConfigurations", __v.asInstanceOf[js.Any]))
+      DomainNameConfigurations.foreach(__v => __obj.updateDynamic("DomainNameConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDomainNameRequest]
     }
   }
@@ -3488,13 +3516,13 @@ package apigatewayv2 {
         DomainNameConfigurations: js.UndefOr[DomainNameConfigurations] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): UpdateDomainNameResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       ApiMappingSelectionExpression.foreach(
-        __v => __obj.update("ApiMappingSelectionExpression", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ApiMappingSelectionExpression")(__v.asInstanceOf[js.Any])
       )
-      DomainName.foreach(__v => __obj.update("DomainName", __v.asInstanceOf[js.Any]))
-      DomainNameConfigurations.foreach(__v => __obj.update("DomainNameConfigurations", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
+      DomainNameConfigurations.foreach(__v => __obj.updateDynamic("DomainNameConfigurations")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDomainNameResponse]
     }
   }
@@ -3536,24 +3564,26 @@ package apigatewayv2 {
         TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000] = js.undefined
     ): UpdateIntegrationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"         -> ApiId.asInstanceOf[js.Any],
         "IntegrationId" -> IntegrationId.asInstanceOf[js.Any]
       )
 
-      ConnectionId.foreach(__v => __obj.update("ConnectionId", __v.asInstanceOf[js.Any]))
-      ConnectionType.foreach(__v => __obj.update("ConnectionType", __v.asInstanceOf[js.Any]))
-      ContentHandlingStrategy.foreach(__v => __obj.update("ContentHandlingStrategy", __v.asInstanceOf[js.Any]))
-      CredentialsArn.foreach(__v => __obj.update("CredentialsArn", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      IntegrationMethod.foreach(__v => __obj.update("IntegrationMethod", __v.asInstanceOf[js.Any]))
-      IntegrationType.foreach(__v => __obj.update("IntegrationType", __v.asInstanceOf[js.Any]))
-      IntegrationUri.foreach(__v => __obj.update("IntegrationUri", __v.asInstanceOf[js.Any]))
-      PassthroughBehavior.foreach(__v => __obj.update("PassthroughBehavior", __v.asInstanceOf[js.Any]))
-      RequestParameters.foreach(__v => __obj.update("RequestParameters", __v.asInstanceOf[js.Any]))
-      RequestTemplates.foreach(__v => __obj.update("RequestTemplates", __v.asInstanceOf[js.Any]))
-      TemplateSelectionExpression.foreach(__v => __obj.update("TemplateSelectionExpression", __v.asInstanceOf[js.Any]))
-      TimeoutInMillis.foreach(__v => __obj.update("TimeoutInMillis", __v.asInstanceOf[js.Any]))
+      ConnectionId.foreach(__v => __obj.updateDynamic("ConnectionId")(__v.asInstanceOf[js.Any]))
+      ConnectionType.foreach(__v => __obj.updateDynamic("ConnectionType")(__v.asInstanceOf[js.Any]))
+      ContentHandlingStrategy.foreach(__v => __obj.updateDynamic("ContentHandlingStrategy")(__v.asInstanceOf[js.Any]))
+      CredentialsArn.foreach(__v => __obj.updateDynamic("CredentialsArn")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      IntegrationMethod.foreach(__v => __obj.updateDynamic("IntegrationMethod")(__v.asInstanceOf[js.Any]))
+      IntegrationType.foreach(__v => __obj.updateDynamic("IntegrationType")(__v.asInstanceOf[js.Any]))
+      IntegrationUri.foreach(__v => __obj.updateDynamic("IntegrationUri")(__v.asInstanceOf[js.Any]))
+      PassthroughBehavior.foreach(__v => __obj.updateDynamic("PassthroughBehavior")(__v.asInstanceOf[js.Any]))
+      RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
+      RequestTemplates.foreach(__v => __obj.updateDynamic("RequestTemplates")(__v.asInstanceOf[js.Any]))
+      TemplateSelectionExpression.foreach(
+        __v => __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any])
+      )
+      TimeoutInMillis.foreach(__v => __obj.updateDynamic("TimeoutInMillis")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateIntegrationRequest]
     }
   }
@@ -3595,24 +3625,26 @@ package apigatewayv2 {
         TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         TimeoutInMillis: js.UndefOr[IntegerWithLengthBetween50And29000] = js.undefined
     ): UpdateIntegrationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConnectionId.foreach(__v => __obj.update("ConnectionId", __v.asInstanceOf[js.Any]))
-      ConnectionType.foreach(__v => __obj.update("ConnectionType", __v.asInstanceOf[js.Any]))
-      ContentHandlingStrategy.foreach(__v => __obj.update("ContentHandlingStrategy", __v.asInstanceOf[js.Any]))
-      CredentialsArn.foreach(__v => __obj.update("CredentialsArn", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      IntegrationId.foreach(__v => __obj.update("IntegrationId", __v.asInstanceOf[js.Any]))
-      IntegrationMethod.foreach(__v => __obj.update("IntegrationMethod", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConnectionId.foreach(__v => __obj.updateDynamic("ConnectionId")(__v.asInstanceOf[js.Any]))
+      ConnectionType.foreach(__v => __obj.updateDynamic("ConnectionType")(__v.asInstanceOf[js.Any]))
+      ContentHandlingStrategy.foreach(__v => __obj.updateDynamic("ContentHandlingStrategy")(__v.asInstanceOf[js.Any]))
+      CredentialsArn.foreach(__v => __obj.updateDynamic("CredentialsArn")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      IntegrationId.foreach(__v => __obj.updateDynamic("IntegrationId")(__v.asInstanceOf[js.Any]))
+      IntegrationMethod.foreach(__v => __obj.updateDynamic("IntegrationMethod")(__v.asInstanceOf[js.Any]))
       IntegrationResponseSelectionExpression.foreach(
-        __v => __obj.update("IntegrationResponseSelectionExpression", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("IntegrationResponseSelectionExpression")(__v.asInstanceOf[js.Any])
       )
-      IntegrationType.foreach(__v => __obj.update("IntegrationType", __v.asInstanceOf[js.Any]))
-      IntegrationUri.foreach(__v => __obj.update("IntegrationUri", __v.asInstanceOf[js.Any]))
-      PassthroughBehavior.foreach(__v => __obj.update("PassthroughBehavior", __v.asInstanceOf[js.Any]))
-      RequestParameters.foreach(__v => __obj.update("RequestParameters", __v.asInstanceOf[js.Any]))
-      RequestTemplates.foreach(__v => __obj.update("RequestTemplates", __v.asInstanceOf[js.Any]))
-      TemplateSelectionExpression.foreach(__v => __obj.update("TemplateSelectionExpression", __v.asInstanceOf[js.Any]))
-      TimeoutInMillis.foreach(__v => __obj.update("TimeoutInMillis", __v.asInstanceOf[js.Any]))
+      IntegrationType.foreach(__v => __obj.updateDynamic("IntegrationType")(__v.asInstanceOf[js.Any]))
+      IntegrationUri.foreach(__v => __obj.updateDynamic("IntegrationUri")(__v.asInstanceOf[js.Any]))
+      PassthroughBehavior.foreach(__v => __obj.updateDynamic("PassthroughBehavior")(__v.asInstanceOf[js.Any]))
+      RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
+      RequestTemplates.foreach(__v => __obj.updateDynamic("RequestTemplates")(__v.asInstanceOf[js.Any]))
+      TemplateSelectionExpression.foreach(
+        __v => __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any])
+      )
+      TimeoutInMillis.foreach(__v => __obj.updateDynamic("TimeoutInMillis")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateIntegrationResponse]
     }
   }
@@ -3640,17 +3672,19 @@ package apigatewayv2 {
         ResponseTemplates: js.UndefOr[TemplateMap] = js.undefined,
         TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined
     ): UpdateIntegrationResponseRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"                 -> ApiId.asInstanceOf[js.Any],
         "IntegrationId"         -> IntegrationId.asInstanceOf[js.Any],
         "IntegrationResponseId" -> IntegrationResponseId.asInstanceOf[js.Any]
       )
 
-      ContentHandlingStrategy.foreach(__v => __obj.update("ContentHandlingStrategy", __v.asInstanceOf[js.Any]))
-      IntegrationResponseKey.foreach(__v => __obj.update("IntegrationResponseKey", __v.asInstanceOf[js.Any]))
-      ResponseParameters.foreach(__v => __obj.update("ResponseParameters", __v.asInstanceOf[js.Any]))
-      ResponseTemplates.foreach(__v => __obj.update("ResponseTemplates", __v.asInstanceOf[js.Any]))
-      TemplateSelectionExpression.foreach(__v => __obj.update("TemplateSelectionExpression", __v.asInstanceOf[js.Any]))
+      ContentHandlingStrategy.foreach(__v => __obj.updateDynamic("ContentHandlingStrategy")(__v.asInstanceOf[js.Any]))
+      IntegrationResponseKey.foreach(__v => __obj.updateDynamic("IntegrationResponseKey")(__v.asInstanceOf[js.Any]))
+      ResponseParameters.foreach(__v => __obj.updateDynamic("ResponseParameters")(__v.asInstanceOf[js.Any]))
+      ResponseTemplates.foreach(__v => __obj.updateDynamic("ResponseTemplates")(__v.asInstanceOf[js.Any]))
+      TemplateSelectionExpression.foreach(
+        __v => __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[UpdateIntegrationResponseRequest]
     }
   }
@@ -3674,13 +3708,15 @@ package apigatewayv2 {
         ResponseTemplates: js.UndefOr[TemplateMap] = js.undefined,
         TemplateSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined
     ): UpdateIntegrationResponseResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ContentHandlingStrategy.foreach(__v => __obj.update("ContentHandlingStrategy", __v.asInstanceOf[js.Any]))
-      IntegrationResponseId.foreach(__v => __obj.update("IntegrationResponseId", __v.asInstanceOf[js.Any]))
-      IntegrationResponseKey.foreach(__v => __obj.update("IntegrationResponseKey", __v.asInstanceOf[js.Any]))
-      ResponseParameters.foreach(__v => __obj.update("ResponseParameters", __v.asInstanceOf[js.Any]))
-      ResponseTemplates.foreach(__v => __obj.update("ResponseTemplates", __v.asInstanceOf[js.Any]))
-      TemplateSelectionExpression.foreach(__v => __obj.update("TemplateSelectionExpression", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ContentHandlingStrategy.foreach(__v => __obj.updateDynamic("ContentHandlingStrategy")(__v.asInstanceOf[js.Any]))
+      IntegrationResponseId.foreach(__v => __obj.updateDynamic("IntegrationResponseId")(__v.asInstanceOf[js.Any]))
+      IntegrationResponseKey.foreach(__v => __obj.updateDynamic("IntegrationResponseKey")(__v.asInstanceOf[js.Any]))
+      ResponseParameters.foreach(__v => __obj.updateDynamic("ResponseParameters")(__v.asInstanceOf[js.Any]))
+      ResponseTemplates.foreach(__v => __obj.updateDynamic("ResponseTemplates")(__v.asInstanceOf[js.Any]))
+      TemplateSelectionExpression.foreach(
+        __v => __obj.updateDynamic("TemplateSelectionExpression")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[UpdateIntegrationResponseResponse]
     }
   }
@@ -3704,15 +3740,15 @@ package apigatewayv2 {
         Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
         Schema: js.UndefOr[StringWithLengthBetween0And32K] = js.undefined
     ): UpdateModelRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"   -> ApiId.asInstanceOf[js.Any],
         "ModelId" -> ModelId.asInstanceOf[js.Any]
       )
 
-      ContentType.foreach(__v => __obj.update("ContentType", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Schema.foreach(__v => __obj.update("Schema", __v.asInstanceOf[js.Any]))
+      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Schema.foreach(__v => __obj.updateDynamic("Schema")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateModelRequest]
     }
   }
@@ -3734,12 +3770,12 @@ package apigatewayv2 {
         Name: js.UndefOr[StringWithLengthBetween1And128] = js.undefined,
         Schema: js.UndefOr[StringWithLengthBetween0And32K] = js.undefined
     ): UpdateModelResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ContentType.foreach(__v => __obj.update("ContentType", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      ModelId.foreach(__v => __obj.update("ModelId", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Schema.foreach(__v => __obj.update("Schema", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ModelId.foreach(__v => __obj.updateDynamic("ModelId")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Schema.foreach(__v => __obj.updateDynamic("Schema")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateModelResponse]
     }
   }
@@ -3777,24 +3813,24 @@ package apigatewayv2 {
         RouteResponseSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         Target: js.UndefOr[StringWithLengthBetween1And128] = js.undefined
     ): UpdateRouteRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"   -> ApiId.asInstanceOf[js.Any],
         "RouteId" -> RouteId.asInstanceOf[js.Any]
       )
 
-      ApiKeyRequired.foreach(__v => __obj.update("ApiKeyRequired", __v.asInstanceOf[js.Any]))
-      AuthorizationScopes.foreach(__v => __obj.update("AuthorizationScopes", __v.asInstanceOf[js.Any]))
-      AuthorizationType.foreach(__v => __obj.update("AuthorizationType", __v.asInstanceOf[js.Any]))
-      AuthorizerId.foreach(__v => __obj.update("AuthorizerId", __v.asInstanceOf[js.Any]))
-      ModelSelectionExpression.foreach(__v => __obj.update("ModelSelectionExpression", __v.asInstanceOf[js.Any]))
-      OperationName.foreach(__v => __obj.update("OperationName", __v.asInstanceOf[js.Any]))
-      RequestModels.foreach(__v => __obj.update("RequestModels", __v.asInstanceOf[js.Any]))
-      RequestParameters.foreach(__v => __obj.update("RequestParameters", __v.asInstanceOf[js.Any]))
-      RouteKey.foreach(__v => __obj.update("RouteKey", __v.asInstanceOf[js.Any]))
+      ApiKeyRequired.foreach(__v => __obj.updateDynamic("ApiKeyRequired")(__v.asInstanceOf[js.Any]))
+      AuthorizationScopes.foreach(__v => __obj.updateDynamic("AuthorizationScopes")(__v.asInstanceOf[js.Any]))
+      AuthorizationType.foreach(__v => __obj.updateDynamic("AuthorizationType")(__v.asInstanceOf[js.Any]))
+      AuthorizerId.foreach(__v => __obj.updateDynamic("AuthorizerId")(__v.asInstanceOf[js.Any]))
+      ModelSelectionExpression.foreach(__v => __obj.updateDynamic("ModelSelectionExpression")(__v.asInstanceOf[js.Any]))
+      OperationName.foreach(__v => __obj.updateDynamic("OperationName")(__v.asInstanceOf[js.Any]))
+      RequestModels.foreach(__v => __obj.updateDynamic("RequestModels")(__v.asInstanceOf[js.Any]))
+      RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
+      RouteKey.foreach(__v => __obj.updateDynamic("RouteKey")(__v.asInstanceOf[js.Any]))
       RouteResponseSelectionExpression.foreach(
-        __v => __obj.update("RouteResponseSelectionExpression", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("RouteResponseSelectionExpression")(__v.asInstanceOf[js.Any])
       )
-      Target.foreach(__v => __obj.update("Target", __v.asInstanceOf[js.Any]))
+      Target.foreach(__v => __obj.updateDynamic("Target")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRouteRequest]
     }
   }
@@ -3830,21 +3866,21 @@ package apigatewayv2 {
         RouteResponseSelectionExpression: js.UndefOr[SelectionExpression] = js.undefined,
         Target: js.UndefOr[StringWithLengthBetween1And128] = js.undefined
     ): UpdateRouteResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApiKeyRequired.foreach(__v => __obj.update("ApiKeyRequired", __v.asInstanceOf[js.Any]))
-      AuthorizationScopes.foreach(__v => __obj.update("AuthorizationScopes", __v.asInstanceOf[js.Any]))
-      AuthorizationType.foreach(__v => __obj.update("AuthorizationType", __v.asInstanceOf[js.Any]))
-      AuthorizerId.foreach(__v => __obj.update("AuthorizerId", __v.asInstanceOf[js.Any]))
-      ModelSelectionExpression.foreach(__v => __obj.update("ModelSelectionExpression", __v.asInstanceOf[js.Any]))
-      OperationName.foreach(__v => __obj.update("OperationName", __v.asInstanceOf[js.Any]))
-      RequestModels.foreach(__v => __obj.update("RequestModels", __v.asInstanceOf[js.Any]))
-      RequestParameters.foreach(__v => __obj.update("RequestParameters", __v.asInstanceOf[js.Any]))
-      RouteId.foreach(__v => __obj.update("RouteId", __v.asInstanceOf[js.Any]))
-      RouteKey.foreach(__v => __obj.update("RouteKey", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApiKeyRequired.foreach(__v => __obj.updateDynamic("ApiKeyRequired")(__v.asInstanceOf[js.Any]))
+      AuthorizationScopes.foreach(__v => __obj.updateDynamic("AuthorizationScopes")(__v.asInstanceOf[js.Any]))
+      AuthorizationType.foreach(__v => __obj.updateDynamic("AuthorizationType")(__v.asInstanceOf[js.Any]))
+      AuthorizerId.foreach(__v => __obj.updateDynamic("AuthorizerId")(__v.asInstanceOf[js.Any]))
+      ModelSelectionExpression.foreach(__v => __obj.updateDynamic("ModelSelectionExpression")(__v.asInstanceOf[js.Any]))
+      OperationName.foreach(__v => __obj.updateDynamic("OperationName")(__v.asInstanceOf[js.Any]))
+      RequestModels.foreach(__v => __obj.updateDynamic("RequestModels")(__v.asInstanceOf[js.Any]))
+      RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
+      RouteId.foreach(__v => __obj.updateDynamic("RouteId")(__v.asInstanceOf[js.Any]))
+      RouteKey.foreach(__v => __obj.updateDynamic("RouteKey")(__v.asInstanceOf[js.Any]))
       RouteResponseSelectionExpression.foreach(
-        __v => __obj.update("RouteResponseSelectionExpression", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("RouteResponseSelectionExpression")(__v.asInstanceOf[js.Any])
       )
-      Target.foreach(__v => __obj.update("Target", __v.asInstanceOf[js.Any]))
+      Target.foreach(__v => __obj.updateDynamic("Target")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRouteResponse]
     }
   }
@@ -3870,16 +3906,16 @@ package apigatewayv2 {
         ResponseParameters: js.UndefOr[RouteParameters] = js.undefined,
         RouteResponseKey: js.UndefOr[SelectionKey] = js.undefined
     ): UpdateRouteResponseRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"           -> ApiId.asInstanceOf[js.Any],
         "RouteId"         -> RouteId.asInstanceOf[js.Any],
         "RouteResponseId" -> RouteResponseId.asInstanceOf[js.Any]
       )
 
-      ModelSelectionExpression.foreach(__v => __obj.update("ModelSelectionExpression", __v.asInstanceOf[js.Any]))
-      ResponseModels.foreach(__v => __obj.update("ResponseModels", __v.asInstanceOf[js.Any]))
-      ResponseParameters.foreach(__v => __obj.update("ResponseParameters", __v.asInstanceOf[js.Any]))
-      RouteResponseKey.foreach(__v => __obj.update("RouteResponseKey", __v.asInstanceOf[js.Any]))
+      ModelSelectionExpression.foreach(__v => __obj.updateDynamic("ModelSelectionExpression")(__v.asInstanceOf[js.Any]))
+      ResponseModels.foreach(__v => __obj.updateDynamic("ResponseModels")(__v.asInstanceOf[js.Any]))
+      ResponseParameters.foreach(__v => __obj.updateDynamic("ResponseParameters")(__v.asInstanceOf[js.Any]))
+      RouteResponseKey.foreach(__v => __obj.updateDynamic("RouteResponseKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRouteResponseRequest]
     }
   }
@@ -3901,12 +3937,12 @@ package apigatewayv2 {
         RouteResponseId: js.UndefOr[Id] = js.undefined,
         RouteResponseKey: js.UndefOr[SelectionKey] = js.undefined
     ): UpdateRouteResponseResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ModelSelectionExpression.foreach(__v => __obj.update("ModelSelectionExpression", __v.asInstanceOf[js.Any]))
-      ResponseModels.foreach(__v => __obj.update("ResponseModels", __v.asInstanceOf[js.Any]))
-      ResponseParameters.foreach(__v => __obj.update("ResponseParameters", __v.asInstanceOf[js.Any]))
-      RouteResponseId.foreach(__v => __obj.update("RouteResponseId", __v.asInstanceOf[js.Any]))
-      RouteResponseKey.foreach(__v => __obj.update("RouteResponseKey", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ModelSelectionExpression.foreach(__v => __obj.updateDynamic("ModelSelectionExpression")(__v.asInstanceOf[js.Any]))
+      ResponseModels.foreach(__v => __obj.updateDynamic("ResponseModels")(__v.asInstanceOf[js.Any]))
+      ResponseParameters.foreach(__v => __obj.updateDynamic("ResponseParameters")(__v.asInstanceOf[js.Any]))
+      RouteResponseId.foreach(__v => __obj.updateDynamic("RouteResponseId")(__v.asInstanceOf[js.Any]))
+      RouteResponseKey.foreach(__v => __obj.updateDynamic("RouteResponseKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRouteResponseResponse]
     }
   }
@@ -3936,18 +3972,18 @@ package apigatewayv2 {
         RouteSettings: js.UndefOr[RouteSettingsMap] = js.undefined,
         StageVariables: js.UndefOr[StageVariablesMap] = js.undefined
     ): UpdateStageRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApiId"     -> ApiId.asInstanceOf[js.Any],
         "StageName" -> StageName.asInstanceOf[js.Any]
       )
 
-      AccessLogSettings.foreach(__v => __obj.update("AccessLogSettings", __v.asInstanceOf[js.Any]))
-      ClientCertificateId.foreach(__v => __obj.update("ClientCertificateId", __v.asInstanceOf[js.Any]))
-      DefaultRouteSettings.foreach(__v => __obj.update("DefaultRouteSettings", __v.asInstanceOf[js.Any]))
-      DeploymentId.foreach(__v => __obj.update("DeploymentId", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      RouteSettings.foreach(__v => __obj.update("RouteSettings", __v.asInstanceOf[js.Any]))
-      StageVariables.foreach(__v => __obj.update("StageVariables", __v.asInstanceOf[js.Any]))
+      AccessLogSettings.foreach(__v => __obj.updateDynamic("AccessLogSettings")(__v.asInstanceOf[js.Any]))
+      ClientCertificateId.foreach(__v => __obj.updateDynamic("ClientCertificateId")(__v.asInstanceOf[js.Any]))
+      DefaultRouteSettings.foreach(__v => __obj.updateDynamic("DefaultRouteSettings")(__v.asInstanceOf[js.Any]))
+      DeploymentId.foreach(__v => __obj.updateDynamic("DeploymentId")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      RouteSettings.foreach(__v => __obj.updateDynamic("RouteSettings")(__v.asInstanceOf[js.Any]))
+      StageVariables.foreach(__v => __obj.updateDynamic("StageVariables")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateStageRequest]
     }
   }
@@ -3981,18 +4017,18 @@ package apigatewayv2 {
         StageVariables: js.UndefOr[StageVariablesMap] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): UpdateStageResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccessLogSettings.foreach(__v => __obj.update("AccessLogSettings", __v.asInstanceOf[js.Any]))
-      ClientCertificateId.foreach(__v => __obj.update("ClientCertificateId", __v.asInstanceOf[js.Any]))
-      CreatedDate.foreach(__v => __obj.update("CreatedDate", __v.asInstanceOf[js.Any]))
-      DefaultRouteSettings.foreach(__v => __obj.update("DefaultRouteSettings", __v.asInstanceOf[js.Any]))
-      DeploymentId.foreach(__v => __obj.update("DeploymentId", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      LastUpdatedDate.foreach(__v => __obj.update("LastUpdatedDate", __v.asInstanceOf[js.Any]))
-      RouteSettings.foreach(__v => __obj.update("RouteSettings", __v.asInstanceOf[js.Any]))
-      StageName.foreach(__v => __obj.update("StageName", __v.asInstanceOf[js.Any]))
-      StageVariables.foreach(__v => __obj.update("StageVariables", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccessLogSettings.foreach(__v => __obj.updateDynamic("AccessLogSettings")(__v.asInstanceOf[js.Any]))
+      ClientCertificateId.foreach(__v => __obj.updateDynamic("ClientCertificateId")(__v.asInstanceOf[js.Any]))
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      DefaultRouteSettings.foreach(__v => __obj.updateDynamic("DefaultRouteSettings")(__v.asInstanceOf[js.Any]))
+      DeploymentId.foreach(__v => __obj.updateDynamic("DeploymentId")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LastUpdatedDate.foreach(__v => __obj.updateDynamic("LastUpdatedDate")(__v.asInstanceOf[js.Any]))
+      RouteSettings.foreach(__v => __obj.updateDynamic("RouteSettings")(__v.asInstanceOf[js.Any]))
+      StageName.foreach(__v => __obj.updateDynamic("StageName")(__v.asInstanceOf[js.Any]))
+      StageVariables.foreach(__v => __obj.updateDynamic("StageVariables")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateStageResponse]
     }
   }

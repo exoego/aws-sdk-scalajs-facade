@@ -128,7 +128,7 @@ package cloudhsm {
         ResourceArn: String,
         TagList: TagList
     ): AddTagsToResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagList"     -> TagList.asInstanceOf[js.Any]
       )
@@ -146,7 +146,7 @@ package cloudhsm {
     def apply(
         Status: String
     ): AddTagsToResourceResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Status" -> Status.asInstanceOf[js.Any]
       )
 
@@ -196,7 +196,7 @@ package cloudhsm {
     def apply(
         Label: Label
     ): CreateHapgRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Label" -> Label.asInstanceOf[js.Any]
       )
 
@@ -216,8 +216,8 @@ package cloudhsm {
     def apply(
         HapgArn: js.UndefOr[HapgArn] = js.undefined
     ): CreateHapgResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      HapgArn.foreach(__v => __obj.update("HapgArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      HapgArn.foreach(__v => __obj.updateDynamic("HapgArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateHapgResponse]
     }
   }
@@ -248,17 +248,17 @@ package cloudhsm {
         ExternalId: js.UndefOr[ExternalId] = js.undefined,
         SyslogIp: js.UndefOr[IpAddress] = js.undefined
     ): CreateHsmRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IamRoleArn"       -> IamRoleArn.asInstanceOf[js.Any],
         "SshKey"           -> SshKey.asInstanceOf[js.Any],
         "SubnetId"         -> SubnetId.asInstanceOf[js.Any],
         "SubscriptionType" -> SubscriptionType.asInstanceOf[js.Any]
       )
 
-      ClientToken.foreach(__v => __obj.update("ClientToken", __v.asInstanceOf[js.Any]))
-      EniIp.foreach(__v => __obj.update("EniIp", __v.asInstanceOf[js.Any]))
-      ExternalId.foreach(__v => __obj.update("ExternalId", __v.asInstanceOf[js.Any]))
-      SyslogIp.foreach(__v => __obj.update("SyslogIp", __v.asInstanceOf[js.Any]))
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      EniIp.foreach(__v => __obj.updateDynamic("EniIp")(__v.asInstanceOf[js.Any]))
+      ExternalId.foreach(__v => __obj.updateDynamic("ExternalId")(__v.asInstanceOf[js.Any]))
+      SyslogIp.foreach(__v => __obj.updateDynamic("SyslogIp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateHsmRequest]
     }
   }
@@ -275,8 +275,8 @@ package cloudhsm {
     def apply(
         HsmArn: js.UndefOr[HsmArn] = js.undefined
     ): CreateHsmResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      HsmArn.foreach(__v => __obj.update("HsmArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      HsmArn.foreach(__v => __obj.updateDynamic("HsmArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateHsmResponse]
     }
   }
@@ -295,11 +295,11 @@ package cloudhsm {
         Certificate: Certificate,
         Label: js.UndefOr[ClientLabel] = js.undefined
     ): CreateLunaClientRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Certificate" -> Certificate.asInstanceOf[js.Any]
       )
 
-      Label.foreach(__v => __obj.update("Label", __v.asInstanceOf[js.Any]))
+      Label.foreach(__v => __obj.updateDynamic("Label")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLunaClientRequest]
     }
   }
@@ -316,8 +316,8 @@ package cloudhsm {
     def apply(
         ClientArn: js.UndefOr[ClientArn] = js.undefined
     ): CreateLunaClientResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClientArn.foreach(__v => __obj.update("ClientArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClientArn.foreach(__v => __obj.updateDynamic("ClientArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLunaClientResponse]
     }
   }
@@ -334,7 +334,7 @@ package cloudhsm {
     def apply(
         HapgArn: HapgArn
     ): DeleteHapgRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HapgArn" -> HapgArn.asInstanceOf[js.Any]
       )
 
@@ -354,7 +354,7 @@ package cloudhsm {
     def apply(
         Status: String
     ): DeleteHapgResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Status" -> Status.asInstanceOf[js.Any]
       )
 
@@ -374,7 +374,7 @@ package cloudhsm {
     def apply(
         HsmArn: HsmArn
     ): DeleteHsmRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HsmArn" -> HsmArn.asInstanceOf[js.Any]
       )
 
@@ -394,7 +394,7 @@ package cloudhsm {
     def apply(
         Status: String
     ): DeleteHsmResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Status" -> Status.asInstanceOf[js.Any]
       )
 
@@ -411,7 +411,7 @@ package cloudhsm {
     def apply(
         ClientArn: ClientArn
     ): DeleteLunaClientRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClientArn" -> ClientArn.asInstanceOf[js.Any]
       )
 
@@ -428,7 +428,7 @@ package cloudhsm {
     def apply(
         Status: String
     ): DeleteLunaClientResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Status" -> Status.asInstanceOf[js.Any]
       )
 
@@ -448,7 +448,7 @@ package cloudhsm {
     def apply(
         HapgArn: HapgArn
     ): DescribeHapgRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HapgArn" -> HapgArn.asInstanceOf[js.Any]
       )
 
@@ -484,16 +484,16 @@ package cloudhsm {
         PartitionSerialList: js.UndefOr[PartitionSerialList] = js.undefined,
         State: js.UndefOr[CloudHsmObjectState] = js.undefined
     ): DescribeHapgResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      HapgArn.foreach(__v => __obj.update("HapgArn", __v.asInstanceOf[js.Any]))
-      HapgSerial.foreach(__v => __obj.update("HapgSerial", __v.asInstanceOf[js.Any]))
-      HsmsLastActionFailed.foreach(__v => __obj.update("HsmsLastActionFailed", __v.asInstanceOf[js.Any]))
-      HsmsPendingDeletion.foreach(__v => __obj.update("HsmsPendingDeletion", __v.asInstanceOf[js.Any]))
-      HsmsPendingRegistration.foreach(__v => __obj.update("HsmsPendingRegistration", __v.asInstanceOf[js.Any]))
-      Label.foreach(__v => __obj.update("Label", __v.asInstanceOf[js.Any]))
-      LastModifiedTimestamp.foreach(__v => __obj.update("LastModifiedTimestamp", __v.asInstanceOf[js.Any]))
-      PartitionSerialList.foreach(__v => __obj.update("PartitionSerialList", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      HapgArn.foreach(__v => __obj.updateDynamic("HapgArn")(__v.asInstanceOf[js.Any]))
+      HapgSerial.foreach(__v => __obj.updateDynamic("HapgSerial")(__v.asInstanceOf[js.Any]))
+      HsmsLastActionFailed.foreach(__v => __obj.updateDynamic("HsmsLastActionFailed")(__v.asInstanceOf[js.Any]))
+      HsmsPendingDeletion.foreach(__v => __obj.updateDynamic("HsmsPendingDeletion")(__v.asInstanceOf[js.Any]))
+      HsmsPendingRegistration.foreach(__v => __obj.updateDynamic("HsmsPendingRegistration")(__v.asInstanceOf[js.Any]))
+      Label.foreach(__v => __obj.updateDynamic("Label")(__v.asInstanceOf[js.Any]))
+      LastModifiedTimestamp.foreach(__v => __obj.updateDynamic("LastModifiedTimestamp")(__v.asInstanceOf[js.Any]))
+      PartitionSerialList.foreach(__v => __obj.updateDynamic("PartitionSerialList")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeHapgResponse]
     }
   }
@@ -512,9 +512,9 @@ package cloudhsm {
         HsmArn: js.UndefOr[HsmArn] = js.undefined,
         HsmSerialNumber: js.UndefOr[HsmSerialNumber] = js.undefined
     ): DescribeHsmRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      HsmArn.foreach(__v => __obj.update("HsmArn", __v.asInstanceOf[js.Any]))
-      HsmSerialNumber.foreach(__v => __obj.update("HsmSerialNumber", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      HsmArn.foreach(__v => __obj.updateDynamic("HsmArn")(__v.asInstanceOf[js.Any]))
+      HsmSerialNumber.foreach(__v => __obj.updateDynamic("HsmSerialNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeHsmRequest]
     }
   }
@@ -571,28 +571,28 @@ package cloudhsm {
         VendorName: js.UndefOr[String] = js.undefined,
         VpcId: js.UndefOr[VpcId] = js.undefined
     ): DescribeHsmResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
-      EniId.foreach(__v => __obj.update("EniId", __v.asInstanceOf[js.Any]))
-      EniIp.foreach(__v => __obj.update("EniIp", __v.asInstanceOf[js.Any]))
-      HsmArn.foreach(__v => __obj.update("HsmArn", __v.asInstanceOf[js.Any]))
-      HsmType.foreach(__v => __obj.update("HsmType", __v.asInstanceOf[js.Any]))
-      IamRoleArn.foreach(__v => __obj.update("IamRoleArn", __v.asInstanceOf[js.Any]))
-      Partitions.foreach(__v => __obj.update("Partitions", __v.asInstanceOf[js.Any]))
-      SerialNumber.foreach(__v => __obj.update("SerialNumber", __v.asInstanceOf[js.Any]))
-      ServerCertLastUpdated.foreach(__v => __obj.update("ServerCertLastUpdated", __v.asInstanceOf[js.Any]))
-      ServerCertUri.foreach(__v => __obj.update("ServerCertUri", __v.asInstanceOf[js.Any]))
-      SoftwareVersion.foreach(__v => __obj.update("SoftwareVersion", __v.asInstanceOf[js.Any]))
-      SshKeyLastUpdated.foreach(__v => __obj.update("SshKeyLastUpdated", __v.asInstanceOf[js.Any]))
-      SshPublicKey.foreach(__v => __obj.update("SshPublicKey", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusDetails.foreach(__v => __obj.update("StatusDetails", __v.asInstanceOf[js.Any]))
-      SubnetId.foreach(__v => __obj.update("SubnetId", __v.asInstanceOf[js.Any]))
-      SubscriptionEndDate.foreach(__v => __obj.update("SubscriptionEndDate", __v.asInstanceOf[js.Any]))
-      SubscriptionStartDate.foreach(__v => __obj.update("SubscriptionStartDate", __v.asInstanceOf[js.Any]))
-      SubscriptionType.foreach(__v => __obj.update("SubscriptionType", __v.asInstanceOf[js.Any]))
-      VendorName.foreach(__v => __obj.update("VendorName", __v.asInstanceOf[js.Any]))
-      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      EniId.foreach(__v => __obj.updateDynamic("EniId")(__v.asInstanceOf[js.Any]))
+      EniIp.foreach(__v => __obj.updateDynamic("EniIp")(__v.asInstanceOf[js.Any]))
+      HsmArn.foreach(__v => __obj.updateDynamic("HsmArn")(__v.asInstanceOf[js.Any]))
+      HsmType.foreach(__v => __obj.updateDynamic("HsmType")(__v.asInstanceOf[js.Any]))
+      IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
+      Partitions.foreach(__v => __obj.updateDynamic("Partitions")(__v.asInstanceOf[js.Any]))
+      SerialNumber.foreach(__v => __obj.updateDynamic("SerialNumber")(__v.asInstanceOf[js.Any]))
+      ServerCertLastUpdated.foreach(__v => __obj.updateDynamic("ServerCertLastUpdated")(__v.asInstanceOf[js.Any]))
+      ServerCertUri.foreach(__v => __obj.updateDynamic("ServerCertUri")(__v.asInstanceOf[js.Any]))
+      SoftwareVersion.foreach(__v => __obj.updateDynamic("SoftwareVersion")(__v.asInstanceOf[js.Any]))
+      SshKeyLastUpdated.foreach(__v => __obj.updateDynamic("SshKeyLastUpdated")(__v.asInstanceOf[js.Any]))
+      SshPublicKey.foreach(__v => __obj.updateDynamic("SshPublicKey")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusDetails.foreach(__v => __obj.updateDynamic("StatusDetails")(__v.asInstanceOf[js.Any]))
+      SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
+      SubscriptionEndDate.foreach(__v => __obj.updateDynamic("SubscriptionEndDate")(__v.asInstanceOf[js.Any]))
+      SubscriptionStartDate.foreach(__v => __obj.updateDynamic("SubscriptionStartDate")(__v.asInstanceOf[js.Any]))
+      SubscriptionType.foreach(__v => __obj.updateDynamic("SubscriptionType")(__v.asInstanceOf[js.Any]))
+      VendorName.foreach(__v => __obj.updateDynamic("VendorName")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeHsmResponse]
     }
   }
@@ -608,9 +608,9 @@ package cloudhsm {
         CertificateFingerprint: js.UndefOr[CertificateFingerprint] = js.undefined,
         ClientArn: js.UndefOr[ClientArn] = js.undefined
     ): DescribeLunaClientRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CertificateFingerprint.foreach(__v => __obj.update("CertificateFingerprint", __v.asInstanceOf[js.Any]))
-      ClientArn.foreach(__v => __obj.update("ClientArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CertificateFingerprint.foreach(__v => __obj.updateDynamic("CertificateFingerprint")(__v.asInstanceOf[js.Any]))
+      ClientArn.foreach(__v => __obj.updateDynamic("ClientArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLunaClientRequest]
     }
   }
@@ -632,12 +632,12 @@ package cloudhsm {
         Label: js.UndefOr[Label] = js.undefined,
         LastModifiedTimestamp: js.UndefOr[Timestamp] = js.undefined
     ): DescribeLunaClientResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Certificate.foreach(__v => __obj.update("Certificate", __v.asInstanceOf[js.Any]))
-      CertificateFingerprint.foreach(__v => __obj.update("CertificateFingerprint", __v.asInstanceOf[js.Any]))
-      ClientArn.foreach(__v => __obj.update("ClientArn", __v.asInstanceOf[js.Any]))
-      Label.foreach(__v => __obj.update("Label", __v.asInstanceOf[js.Any]))
-      LastModifiedTimestamp.foreach(__v => __obj.update("LastModifiedTimestamp", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
+      CertificateFingerprint.foreach(__v => __obj.updateDynamic("CertificateFingerprint")(__v.asInstanceOf[js.Any]))
+      ClientArn.foreach(__v => __obj.updateDynamic("ClientArn")(__v.asInstanceOf[js.Any]))
+      Label.foreach(__v => __obj.updateDynamic("Label")(__v.asInstanceOf[js.Any]))
+      LastModifiedTimestamp.foreach(__v => __obj.updateDynamic("LastModifiedTimestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLunaClientResponse]
     }
   }
@@ -655,7 +655,7 @@ package cloudhsm {
         ClientVersion: ClientVersion,
         HapgList: HapgList
     ): GetConfigRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClientArn"     -> ClientArn.asInstanceOf[js.Any],
         "ClientVersion" -> ClientVersion.asInstanceOf[js.Any],
         "HapgList"      -> HapgList.asInstanceOf[js.Any]
@@ -678,10 +678,10 @@ package cloudhsm {
         ConfigFile: js.UndefOr[String] = js.undefined,
         ConfigType: js.UndefOr[String] = js.undefined
     ): GetConfigResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConfigCred.foreach(__v => __obj.update("ConfigCred", __v.asInstanceOf[js.Any]))
-      ConfigFile.foreach(__v => __obj.update("ConfigFile", __v.asInstanceOf[js.Any]))
-      ConfigType.foreach(__v => __obj.update("ConfigType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConfigCred.foreach(__v => __obj.updateDynamic("ConfigCred")(__v.asInstanceOf[js.Any]))
+      ConfigFile.foreach(__v => __obj.updateDynamic("ConfigFile")(__v.asInstanceOf[js.Any]))
+      ConfigType.foreach(__v => __obj.updateDynamic("ConfigType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetConfigResponse]
     }
   }
@@ -713,7 +713,7 @@ package cloudhsm {
   object ListAvailableZonesRequest {
     def apply(
         ): ListAvailableZonesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ListAvailableZonesRequest]
     }
@@ -728,8 +728,8 @@ package cloudhsm {
     def apply(
         AZList: js.UndefOr[AZList] = js.undefined
     ): ListAvailableZonesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AZList.foreach(__v => __obj.update("AZList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AZList.foreach(__v => __obj.updateDynamic("AZList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAvailableZonesResponse]
     }
   }
@@ -743,8 +743,8 @@ package cloudhsm {
     def apply(
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListHapgsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListHapgsRequest]
     }
   }
@@ -760,11 +760,11 @@ package cloudhsm {
         HapgList: HapgList,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListHapgsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HapgList" -> HapgList.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListHapgsResponse]
     }
   }
@@ -778,8 +778,8 @@ package cloudhsm {
     def apply(
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListHsmsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListHsmsRequest]
     }
   }
@@ -798,9 +798,9 @@ package cloudhsm {
         HsmList: js.UndefOr[HsmList] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListHsmsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      HsmList.foreach(__v => __obj.update("HsmList", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      HsmList.foreach(__v => __obj.updateDynamic("HsmList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListHsmsResponse]
     }
   }
@@ -814,8 +814,8 @@ package cloudhsm {
     def apply(
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListLunaClientsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListLunaClientsRequest]
     }
   }
@@ -831,11 +831,11 @@ package cloudhsm {
         ClientList: ClientList,
         NextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListLunaClientsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ClientList" -> ClientList.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListLunaClientsResponse]
     }
   }
@@ -849,7 +849,7 @@ package cloudhsm {
     def apply(
         ResourceArn: String
     ): ListTagsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
@@ -866,7 +866,7 @@ package cloudhsm {
     def apply(
         TagList: TagList
     ): ListTagsForResourceResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TagList" -> TagList.asInstanceOf[js.Any]
       )
 
@@ -887,12 +887,12 @@ package cloudhsm {
         Label: js.UndefOr[Label] = js.undefined,
         PartitionSerialList: js.UndefOr[PartitionSerialList] = js.undefined
     ): ModifyHapgRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HapgArn" -> HapgArn.asInstanceOf[js.Any]
       )
 
-      Label.foreach(__v => __obj.update("Label", __v.asInstanceOf[js.Any]))
-      PartitionSerialList.foreach(__v => __obj.update("PartitionSerialList", __v.asInstanceOf[js.Any]))
+      Label.foreach(__v => __obj.updateDynamic("Label")(__v.asInstanceOf[js.Any]))
+      PartitionSerialList.foreach(__v => __obj.updateDynamic("PartitionSerialList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyHapgRequest]
     }
   }
@@ -906,8 +906,8 @@ package cloudhsm {
     def apply(
         HapgArn: js.UndefOr[HapgArn] = js.undefined
     ): ModifyHapgResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      HapgArn.foreach(__v => __obj.update("HapgArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      HapgArn.foreach(__v => __obj.updateDynamic("HapgArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyHapgResponse]
     }
   }
@@ -934,15 +934,15 @@ package cloudhsm {
         SubnetId: js.UndefOr[SubnetId] = js.undefined,
         SyslogIp: js.UndefOr[IpAddress] = js.undefined
     ): ModifyHsmRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "HsmArn" -> HsmArn.asInstanceOf[js.Any]
       )
 
-      EniIp.foreach(__v => __obj.update("EniIp", __v.asInstanceOf[js.Any]))
-      ExternalId.foreach(__v => __obj.update("ExternalId", __v.asInstanceOf[js.Any]))
-      IamRoleArn.foreach(__v => __obj.update("IamRoleArn", __v.asInstanceOf[js.Any]))
-      SubnetId.foreach(__v => __obj.update("SubnetId", __v.asInstanceOf[js.Any]))
-      SyslogIp.foreach(__v => __obj.update("SyslogIp", __v.asInstanceOf[js.Any]))
+      EniIp.foreach(__v => __obj.updateDynamic("EniIp")(__v.asInstanceOf[js.Any]))
+      ExternalId.foreach(__v => __obj.updateDynamic("ExternalId")(__v.asInstanceOf[js.Any]))
+      IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
+      SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
+      SyslogIp.foreach(__v => __obj.updateDynamic("SyslogIp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyHsmRequest]
     }
   }
@@ -959,8 +959,8 @@ package cloudhsm {
     def apply(
         HsmArn: js.UndefOr[HsmArn] = js.undefined
     ): ModifyHsmResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      HsmArn.foreach(__v => __obj.update("HsmArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      HsmArn.foreach(__v => __obj.updateDynamic("HsmArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyHsmResponse]
     }
   }
@@ -976,7 +976,7 @@ package cloudhsm {
         Certificate: Certificate,
         ClientArn: ClientArn
     ): ModifyLunaClientRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Certificate" -> Certificate.asInstanceOf[js.Any],
         "ClientArn"   -> ClientArn.asInstanceOf[js.Any]
       )
@@ -994,8 +994,8 @@ package cloudhsm {
     def apply(
         ClientArn: js.UndefOr[ClientArn] = js.undefined
     ): ModifyLunaClientResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClientArn.foreach(__v => __obj.update("ClientArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClientArn.foreach(__v => __obj.updateDynamic("ClientArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyLunaClientResponse]
     }
   }
@@ -1011,7 +1011,7 @@ package cloudhsm {
         ResourceArn: String,
         TagKeyList: TagKeyList
     ): RemoveTagsFromResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeyList"  -> TagKeyList.asInstanceOf[js.Any]
       )
@@ -1029,7 +1029,7 @@ package cloudhsm {
     def apply(
         Status: String
     ): RemoveTagsFromResourceResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Status" -> Status.asInstanceOf[js.Any]
       )
 
@@ -1062,7 +1062,7 @@ package cloudhsm {
         Key: TagKey,
         Value: TagValue
     ): Tag = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"   -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )

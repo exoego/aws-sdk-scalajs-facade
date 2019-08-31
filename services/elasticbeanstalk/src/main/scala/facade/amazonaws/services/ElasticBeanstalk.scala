@@ -373,9 +373,9 @@ package elasticbeanstalk {
         EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined
     ): AbortEnvironmentUpdateMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
-      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EnvironmentId.foreach(__v => __obj.updateDynamic("EnvironmentId")(__v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.updateDynamic("EnvironmentName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AbortEnvironmentUpdateMessage]
     }
   }
@@ -431,15 +431,15 @@ package elasticbeanstalk {
         ResourceLifecycleConfig: js.UndefOr[ApplicationResourceLifecycleConfig] = js.undefined,
         Versions: js.UndefOr[VersionLabelsList] = js.undefined
     ): ApplicationDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationArn.foreach(__v => __obj.update("ApplicationArn", __v.asInstanceOf[js.Any]))
-      ApplicationName.foreach(__v => __obj.update("ApplicationName", __v.asInstanceOf[js.Any]))
-      ConfigurationTemplates.foreach(__v => __obj.update("ConfigurationTemplates", __v.asInstanceOf[js.Any]))
-      DateCreated.foreach(__v => __obj.update("DateCreated", __v.asInstanceOf[js.Any]))
-      DateUpdated.foreach(__v => __obj.update("DateUpdated", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      ResourceLifecycleConfig.foreach(__v => __obj.update("ResourceLifecycleConfig", __v.asInstanceOf[js.Any]))
-      Versions.foreach(__v => __obj.update("Versions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationArn.foreach(__v => __obj.updateDynamic("ApplicationArn")(__v.asInstanceOf[js.Any]))
+      ApplicationName.foreach(__v => __obj.updateDynamic("ApplicationName")(__v.asInstanceOf[js.Any]))
+      ConfigurationTemplates.foreach(__v => __obj.updateDynamic("ConfigurationTemplates")(__v.asInstanceOf[js.Any]))
+      DateCreated.foreach(__v => __obj.updateDynamic("DateCreated")(__v.asInstanceOf[js.Any]))
+      DateUpdated.foreach(__v => __obj.updateDynamic("DateUpdated")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ResourceLifecycleConfig.foreach(__v => __obj.updateDynamic("ResourceLifecycleConfig")(__v.asInstanceOf[js.Any]))
+      Versions.foreach(__v => __obj.updateDynamic("Versions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationDescription]
     }
   }
@@ -456,8 +456,8 @@ package elasticbeanstalk {
     def apply(
         Application: js.UndefOr[ApplicationDescription] = js.undefined
     ): ApplicationDescriptionMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Application.foreach(__v => __obj.update("Application", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Application.foreach(__v => __obj.updateDynamic("Application")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationDescriptionMessage]
     }
   }
@@ -474,8 +474,8 @@ package elasticbeanstalk {
     def apply(
         Applications: js.UndefOr[ApplicationDescriptionList] = js.undefined
     ): ApplicationDescriptionsMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Applications.foreach(__v => __obj.update("Applications", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Applications.foreach(__v => __obj.updateDynamic("Applications")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationDescriptionsMessage]
     }
   }
@@ -498,11 +498,11 @@ package elasticbeanstalk {
         RequestCount: js.UndefOr[RequestCount] = js.undefined,
         StatusCodes: js.UndefOr[StatusCodes] = js.undefined
     ): ApplicationMetrics = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
-      Latency.foreach(__v => __obj.update("Latency", __v.asInstanceOf[js.Any]))
-      RequestCount.foreach(__v => __obj.update("RequestCount", __v.asInstanceOf[js.Any]))
-      StatusCodes.foreach(__v => __obj.update("StatusCodes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Duration.foreach(__v => __obj.updateDynamic("Duration")(__v.asInstanceOf[js.Any]))
+      Latency.foreach(__v => __obj.updateDynamic("Latency")(__v.asInstanceOf[js.Any]))
+      RequestCount.foreach(__v => __obj.updateDynamic("RequestCount")(__v.asInstanceOf[js.Any]))
+      StatusCodes.foreach(__v => __obj.updateDynamic("StatusCodes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationMetrics]
     }
   }
@@ -521,9 +521,9 @@ package elasticbeanstalk {
         ServiceRole: js.UndefOr[String] = js.undefined,
         VersionLifecycleConfig: js.UndefOr[ApplicationVersionLifecycleConfig] = js.undefined
     ): ApplicationResourceLifecycleConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ServiceRole.foreach(__v => __obj.update("ServiceRole", __v.asInstanceOf[js.Any]))
-      VersionLifecycleConfig.foreach(__v => __obj.update("VersionLifecycleConfig", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ServiceRole.foreach(__v => __obj.updateDynamic("ServiceRole")(__v.asInstanceOf[js.Any]))
+      VersionLifecycleConfig.foreach(__v => __obj.updateDynamic("VersionLifecycleConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationResourceLifecycleConfig]
     }
   }
@@ -539,9 +539,9 @@ package elasticbeanstalk {
         ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
         ResourceLifecycleConfig: js.UndefOr[ApplicationResourceLifecycleConfig] = js.undefined
     ): ApplicationResourceLifecycleDescriptionMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationName.foreach(__v => __obj.update("ApplicationName", __v.asInstanceOf[js.Any]))
-      ResourceLifecycleConfig.foreach(__v => __obj.update("ResourceLifecycleConfig", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationName.foreach(__v => __obj.updateDynamic("ApplicationName")(__v.asInstanceOf[js.Any]))
+      ResourceLifecycleConfig.foreach(__v => __obj.updateDynamic("ResourceLifecycleConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationResourceLifecycleDescriptionMessage]
     }
   }
@@ -576,17 +576,17 @@ package elasticbeanstalk {
         Status: js.UndefOr[ApplicationVersionStatus] = js.undefined,
         VersionLabel: js.UndefOr[VersionLabel] = js.undefined
     ): ApplicationVersionDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationName.foreach(__v => __obj.update("ApplicationName", __v.asInstanceOf[js.Any]))
-      ApplicationVersionArn.foreach(__v => __obj.update("ApplicationVersionArn", __v.asInstanceOf[js.Any]))
-      BuildArn.foreach(__v => __obj.update("BuildArn", __v.asInstanceOf[js.Any]))
-      DateCreated.foreach(__v => __obj.update("DateCreated", __v.asInstanceOf[js.Any]))
-      DateUpdated.foreach(__v => __obj.update("DateUpdated", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      SourceBuildInformation.foreach(__v => __obj.update("SourceBuildInformation", __v.asInstanceOf[js.Any]))
-      SourceBundle.foreach(__v => __obj.update("SourceBundle", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      VersionLabel.foreach(__v => __obj.update("VersionLabel", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationName.foreach(__v => __obj.updateDynamic("ApplicationName")(__v.asInstanceOf[js.Any]))
+      ApplicationVersionArn.foreach(__v => __obj.updateDynamic("ApplicationVersionArn")(__v.asInstanceOf[js.Any]))
+      BuildArn.foreach(__v => __obj.updateDynamic("BuildArn")(__v.asInstanceOf[js.Any]))
+      DateCreated.foreach(__v => __obj.updateDynamic("DateCreated")(__v.asInstanceOf[js.Any]))
+      DateUpdated.foreach(__v => __obj.updateDynamic("DateUpdated")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      SourceBuildInformation.foreach(__v => __obj.updateDynamic("SourceBuildInformation")(__v.asInstanceOf[js.Any]))
+      SourceBundle.foreach(__v => __obj.updateDynamic("SourceBundle")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      VersionLabel.foreach(__v => __obj.updateDynamic("VersionLabel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationVersionDescription]
     }
   }
@@ -603,8 +603,8 @@ package elasticbeanstalk {
     def apply(
         ApplicationVersion: js.UndefOr[ApplicationVersionDescription] = js.undefined
     ): ApplicationVersionDescriptionMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationVersion.foreach(__v => __obj.update("ApplicationVersion", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationVersion.foreach(__v => __obj.updateDynamic("ApplicationVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationVersionDescriptionMessage]
     }
   }
@@ -623,9 +623,9 @@ package elasticbeanstalk {
         ApplicationVersions: js.UndefOr[ApplicationVersionDescriptionList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): ApplicationVersionDescriptionsMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationVersions.foreach(__v => __obj.update("ApplicationVersions", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationVersions.foreach(__v => __obj.updateDynamic("ApplicationVersions")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationVersionDescriptionsMessage]
     }
   }
@@ -645,9 +645,9 @@ package elasticbeanstalk {
         MaxAgeRule: js.UndefOr[MaxAgeRule] = js.undefined,
         MaxCountRule: js.UndefOr[MaxCountRule] = js.undefined
     ): ApplicationVersionLifecycleConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxAgeRule.foreach(__v => __obj.update("MaxAgeRule", __v.asInstanceOf[js.Any]))
-      MaxCountRule.foreach(__v => __obj.update("MaxCountRule", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxAgeRule.foreach(__v => __obj.updateDynamic("MaxAgeRule")(__v.asInstanceOf[js.Any]))
+      MaxCountRule.foreach(__v => __obj.updateDynamic("MaxCountRule")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationVersionLifecycleConfig]
     }
   }
@@ -678,12 +678,12 @@ package elasticbeanstalk {
         EnvironmentId: js.UndefOr[String] = js.undefined,
         EnvironmentName: js.UndefOr[String] = js.undefined
     ): ApplyEnvironmentManagedActionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ActionId" -> ActionId.asInstanceOf[js.Any]
       )
 
-      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
-      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      EnvironmentId.foreach(__v => __obj.updateDynamic("EnvironmentId")(__v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.updateDynamic("EnvironmentName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplyEnvironmentManagedActionRequest]
     }
   }
@@ -706,11 +706,11 @@ package elasticbeanstalk {
         ActionType: js.UndefOr[ActionType] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): ApplyEnvironmentManagedActionResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ActionDescription.foreach(__v => __obj.update("ActionDescription", __v.asInstanceOf[js.Any]))
-      ActionId.foreach(__v => __obj.update("ActionId", __v.asInstanceOf[js.Any]))
-      ActionType.foreach(__v => __obj.update("ActionType", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ActionDescription.foreach(__v => __obj.updateDynamic("ActionDescription")(__v.asInstanceOf[js.Any]))
+      ActionId.foreach(__v => __obj.updateDynamic("ActionId")(__v.asInstanceOf[js.Any]))
+      ActionType.foreach(__v => __obj.updateDynamic("ActionType")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplyEnvironmentManagedActionResult]
     }
   }
@@ -727,8 +727,8 @@ package elasticbeanstalk {
     def apply(
         Name: js.UndefOr[ResourceId] = js.undefined
     ): AutoScalingGroup = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoScalingGroup]
     }
   }
@@ -753,14 +753,14 @@ package elasticbeanstalk {
         ComputeType: js.UndefOr[ComputeType] = js.undefined,
         TimeoutInMinutes: js.UndefOr[BoxedInt] = js.undefined
     ): BuildConfiguration = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CodeBuildServiceRole" -> CodeBuildServiceRole.asInstanceOf[js.Any],
         "Image"                -> Image.asInstanceOf[js.Any]
       )
 
-      ArtifactName.foreach(__v => __obj.update("ArtifactName", __v.asInstanceOf[js.Any]))
-      ComputeType.foreach(__v => __obj.update("ComputeType", __v.asInstanceOf[js.Any]))
-      TimeoutInMinutes.foreach(__v => __obj.update("TimeoutInMinutes", __v.asInstanceOf[js.Any]))
+      ArtifactName.foreach(__v => __obj.updateDynamic("ArtifactName")(__v.asInstanceOf[js.Any]))
+      ComputeType.foreach(__v => __obj.updateDynamic("ComputeType")(__v.asInstanceOf[js.Any]))
+      TimeoutInMinutes.foreach(__v => __obj.updateDynamic("TimeoutInMinutes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BuildConfiguration]
     }
   }
@@ -777,8 +777,8 @@ package elasticbeanstalk {
     def apply(
         ARN: js.UndefOr[ARN] = js.undefined
     ): Builder = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ARN.foreach(__v => __obj.update("ARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Builder]
     }
   }
@@ -809,15 +809,15 @@ package elasticbeanstalk {
         System: js.UndefOr[NullableDouble] = js.undefined,
         User: js.UndefOr[NullableDouble] = js.undefined
     ): CPUUtilization = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IOWait.foreach(__v => __obj.update("IOWait", __v.asInstanceOf[js.Any]))
-      IRQ.foreach(__v => __obj.update("IRQ", __v.asInstanceOf[js.Any]))
-      Idle.foreach(__v => __obj.update("Idle", __v.asInstanceOf[js.Any]))
-      Nice.foreach(__v => __obj.update("Nice", __v.asInstanceOf[js.Any]))
-      Privileged.foreach(__v => __obj.update("Privileged", __v.asInstanceOf[js.Any]))
-      SoftIRQ.foreach(__v => __obj.update("SoftIRQ", __v.asInstanceOf[js.Any]))
-      System.foreach(__v => __obj.update("System", __v.asInstanceOf[js.Any]))
-      User.foreach(__v => __obj.update("User", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IOWait.foreach(__v => __obj.updateDynamic("IOWait")(__v.asInstanceOf[js.Any]))
+      IRQ.foreach(__v => __obj.updateDynamic("IRQ")(__v.asInstanceOf[js.Any]))
+      Idle.foreach(__v => __obj.updateDynamic("Idle")(__v.asInstanceOf[js.Any]))
+      Nice.foreach(__v => __obj.updateDynamic("Nice")(__v.asInstanceOf[js.Any]))
+      Privileged.foreach(__v => __obj.updateDynamic("Privileged")(__v.asInstanceOf[js.Any]))
+      SoftIRQ.foreach(__v => __obj.updateDynamic("SoftIRQ")(__v.asInstanceOf[js.Any]))
+      System.foreach(__v => __obj.updateDynamic("System")(__v.asInstanceOf[js.Any]))
+      User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CPUUtilization]
     }
   }
@@ -834,7 +834,7 @@ package elasticbeanstalk {
     def apply(
         CNAMEPrefix: DNSCnamePrefix
     ): CheckDNSAvailabilityMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CNAMEPrefix" -> CNAMEPrefix.asInstanceOf[js.Any]
       )
 
@@ -856,9 +856,9 @@ package elasticbeanstalk {
         Available: js.UndefOr[CnameAvailability] = js.undefined,
         FullyQualifiedCNAME: js.UndefOr[DNSCname] = js.undefined
     ): CheckDNSAvailabilityResultMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Available.foreach(__v => __obj.update("Available", __v.asInstanceOf[js.Any]))
-      FullyQualifiedCNAME.foreach(__v => __obj.update("FullyQualifiedCNAME", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Available.foreach(__v => __obj.updateDynamic("Available")(__v.asInstanceOf[js.Any]))
+      FullyQualifiedCNAME.foreach(__v => __obj.updateDynamic("FullyQualifiedCNAME")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CheckDNSAvailabilityResultMessage]
     }
   }
@@ -879,10 +879,10 @@ package elasticbeanstalk {
         GroupName: js.UndefOr[GroupName] = js.undefined,
         VersionLabels: js.UndefOr[VersionLabels] = js.undefined
     ): ComposeEnvironmentsMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationName.foreach(__v => __obj.update("ApplicationName", __v.asInstanceOf[js.Any]))
-      GroupName.foreach(__v => __obj.update("GroupName", __v.asInstanceOf[js.Any]))
-      VersionLabels.foreach(__v => __obj.update("VersionLabels", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationName.foreach(__v => __obj.updateDynamic("ApplicationName")(__v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
+      VersionLabels.foreach(__v => __obj.updateDynamic("VersionLabels")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ComposeEnvironmentsMessage]
     }
   }
@@ -935,18 +935,18 @@ package elasticbeanstalk {
         ValueOptions: js.UndefOr[ConfigurationOptionPossibleValues] = js.undefined,
         ValueType: js.UndefOr[ConfigurationOptionValueType] = js.undefined
     ): ConfigurationOptionDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChangeSeverity.foreach(__v => __obj.update("ChangeSeverity", __v.asInstanceOf[js.Any]))
-      DefaultValue.foreach(__v => __obj.update("DefaultValue", __v.asInstanceOf[js.Any]))
-      MaxLength.foreach(__v => __obj.update("MaxLength", __v.asInstanceOf[js.Any]))
-      MaxValue.foreach(__v => __obj.update("MaxValue", __v.asInstanceOf[js.Any]))
-      MinValue.foreach(__v => __obj.update("MinValue", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Namespace.foreach(__v => __obj.update("Namespace", __v.asInstanceOf[js.Any]))
-      Regex.foreach(__v => __obj.update("Regex", __v.asInstanceOf[js.Any]))
-      UserDefined.foreach(__v => __obj.update("UserDefined", __v.asInstanceOf[js.Any]))
-      ValueOptions.foreach(__v => __obj.update("ValueOptions", __v.asInstanceOf[js.Any]))
-      ValueType.foreach(__v => __obj.update("ValueType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChangeSeverity.foreach(__v => __obj.updateDynamic("ChangeSeverity")(__v.asInstanceOf[js.Any]))
+      DefaultValue.foreach(__v => __obj.updateDynamic("DefaultValue")(__v.asInstanceOf[js.Any]))
+      MaxLength.foreach(__v => __obj.updateDynamic("MaxLength")(__v.asInstanceOf[js.Any]))
+      MaxValue.foreach(__v => __obj.updateDynamic("MaxValue")(__v.asInstanceOf[js.Any]))
+      MinValue.foreach(__v => __obj.updateDynamic("MinValue")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
+      Regex.foreach(__v => __obj.updateDynamic("Regex")(__v.asInstanceOf[js.Any]))
+      UserDefined.foreach(__v => __obj.updateDynamic("UserDefined")(__v.asInstanceOf[js.Any]))
+      ValueOptions.foreach(__v => __obj.updateDynamic("ValueOptions")(__v.asInstanceOf[js.Any]))
+      ValueType.foreach(__v => __obj.updateDynamic("ValueType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfigurationOptionDescription]
     }
   }
@@ -969,11 +969,11 @@ package elasticbeanstalk {
         ResourceName: js.UndefOr[ResourceName] = js.undefined,
         Value: js.UndefOr[ConfigurationOptionValue] = js.undefined
     ): ConfigurationOptionSetting = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Namespace.foreach(__v => __obj.update("Namespace", __v.asInstanceOf[js.Any]))
-      OptionName.foreach(__v => __obj.update("OptionName", __v.asInstanceOf[js.Any]))
-      ResourceName.foreach(__v => __obj.update("ResourceName", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
+      OptionName.foreach(__v => __obj.updateDynamic("OptionName")(__v.asInstanceOf[js.Any]))
+      ResourceName.foreach(__v => __obj.updateDynamic("ResourceName")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfigurationOptionSetting]
     }
   }
@@ -1001,10 +1001,10 @@ package elasticbeanstalk {
         PlatformArn: js.UndefOr[PlatformArn] = js.undefined,
         SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined
     ): ConfigurationOptionsDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Options.foreach(__v => __obj.update("Options", __v.asInstanceOf[js.Any]))
-      PlatformArn.foreach(__v => __obj.update("PlatformArn", __v.asInstanceOf[js.Any]))
-      SolutionStackName.foreach(__v => __obj.update("SolutionStackName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Options.foreach(__v => __obj.updateDynamic("Options")(__v.asInstanceOf[js.Any]))
+      PlatformArn.foreach(__v => __obj.updateDynamic("PlatformArn")(__v.asInstanceOf[js.Any]))
+      SolutionStackName.foreach(__v => __obj.updateDynamic("SolutionStackName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfigurationOptionsDescription]
     }
   }
@@ -1039,17 +1039,17 @@ package elasticbeanstalk {
         SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined,
         TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined
     ): ConfigurationSettingsDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationName.foreach(__v => __obj.update("ApplicationName", __v.asInstanceOf[js.Any]))
-      DateCreated.foreach(__v => __obj.update("DateCreated", __v.asInstanceOf[js.Any]))
-      DateUpdated.foreach(__v => __obj.update("DateUpdated", __v.asInstanceOf[js.Any]))
-      DeploymentStatus.foreach(__v => __obj.update("DeploymentStatus", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
-      OptionSettings.foreach(__v => __obj.update("OptionSettings", __v.asInstanceOf[js.Any]))
-      PlatformArn.foreach(__v => __obj.update("PlatformArn", __v.asInstanceOf[js.Any]))
-      SolutionStackName.foreach(__v => __obj.update("SolutionStackName", __v.asInstanceOf[js.Any]))
-      TemplateName.foreach(__v => __obj.update("TemplateName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationName.foreach(__v => __obj.updateDynamic("ApplicationName")(__v.asInstanceOf[js.Any]))
+      DateCreated.foreach(__v => __obj.updateDynamic("DateCreated")(__v.asInstanceOf[js.Any]))
+      DateUpdated.foreach(__v => __obj.updateDynamic("DateUpdated")(__v.asInstanceOf[js.Any]))
+      DeploymentStatus.foreach(__v => __obj.updateDynamic("DeploymentStatus")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.updateDynamic("EnvironmentName")(__v.asInstanceOf[js.Any]))
+      OptionSettings.foreach(__v => __obj.updateDynamic("OptionSettings")(__v.asInstanceOf[js.Any]))
+      PlatformArn.foreach(__v => __obj.updateDynamic("PlatformArn")(__v.asInstanceOf[js.Any]))
+      SolutionStackName.foreach(__v => __obj.updateDynamic("SolutionStackName")(__v.asInstanceOf[js.Any]))
+      TemplateName.foreach(__v => __obj.updateDynamic("TemplateName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfigurationSettingsDescription]
     }
   }
@@ -1066,8 +1066,8 @@ package elasticbeanstalk {
     def apply(
         ConfigurationSettings: js.UndefOr[ConfigurationSettingsDescriptionList] = js.undefined
     ): ConfigurationSettingsDescriptions = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConfigurationSettings.foreach(__v => __obj.update("ConfigurationSettings", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConfigurationSettings.foreach(__v => __obj.updateDynamic("ConfigurationSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfigurationSettingsDescriptions]
     }
   }
@@ -1084,8 +1084,8 @@ package elasticbeanstalk {
     def apply(
         Messages: js.UndefOr[ValidationMessagesList] = js.undefined
     ): ConfigurationSettingsValidationMessages = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Messages.foreach(__v => __obj.update("Messages", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Messages.foreach(__v => __obj.updateDynamic("Messages")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfigurationSettingsValidationMessages]
     }
   }
@@ -1108,13 +1108,13 @@ package elasticbeanstalk {
         ResourceLifecycleConfig: js.UndefOr[ApplicationResourceLifecycleConfig] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateApplicationMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      ResourceLifecycleConfig.foreach(__v => __obj.update("ResourceLifecycleConfig", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ResourceLifecycleConfig.foreach(__v => __obj.updateDynamic("ResourceLifecycleConfig")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateApplicationMessage]
     }
   }
@@ -1147,18 +1147,18 @@ package elasticbeanstalk {
         SourceBundle: js.UndefOr[S3Location] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateApplicationVersionMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "VersionLabel"    -> VersionLabel.asInstanceOf[js.Any]
       )
 
-      AutoCreateApplication.foreach(__v => __obj.update("AutoCreateApplication", __v.asInstanceOf[js.Any]))
-      BuildConfiguration.foreach(__v => __obj.update("BuildConfiguration", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Process.foreach(__v => __obj.update("Process", __v.asInstanceOf[js.Any]))
-      SourceBuildInformation.foreach(__v => __obj.update("SourceBuildInformation", __v.asInstanceOf[js.Any]))
-      SourceBundle.foreach(__v => __obj.update("SourceBundle", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      AutoCreateApplication.foreach(__v => __obj.updateDynamic("AutoCreateApplication")(__v.asInstanceOf[js.Any]))
+      BuildConfiguration.foreach(__v => __obj.updateDynamic("BuildConfiguration")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Process.foreach(__v => __obj.updateDynamic("Process")(__v.asInstanceOf[js.Any]))
+      SourceBuildInformation.foreach(__v => __obj.updateDynamic("SourceBuildInformation")(__v.asInstanceOf[js.Any]))
+      SourceBundle.foreach(__v => __obj.updateDynamic("SourceBundle")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateApplicationVersionMessage]
     }
   }
@@ -1191,18 +1191,18 @@ package elasticbeanstalk {
         SourceConfiguration: js.UndefOr[SourceConfiguration] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateConfigurationTemplateMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "TemplateName"    -> TemplateName.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
-      OptionSettings.foreach(__v => __obj.update("OptionSettings", __v.asInstanceOf[js.Any]))
-      PlatformArn.foreach(__v => __obj.update("PlatformArn", __v.asInstanceOf[js.Any]))
-      SolutionStackName.foreach(__v => __obj.update("SolutionStackName", __v.asInstanceOf[js.Any]))
-      SourceConfiguration.foreach(__v => __obj.update("SourceConfiguration", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EnvironmentId.foreach(__v => __obj.updateDynamic("EnvironmentId")(__v.asInstanceOf[js.Any]))
+      OptionSettings.foreach(__v => __obj.updateDynamic("OptionSettings")(__v.asInstanceOf[js.Any]))
+      PlatformArn.foreach(__v => __obj.updateDynamic("PlatformArn")(__v.asInstanceOf[js.Any]))
+      SolutionStackName.foreach(__v => __obj.updateDynamic("SolutionStackName")(__v.asInstanceOf[js.Any]))
+      SourceConfiguration.foreach(__v => __obj.updateDynamic("SourceConfiguration")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateConfigurationTemplateMessage]
     }
   }
@@ -1243,22 +1243,22 @@ package elasticbeanstalk {
         Tier: js.UndefOr[EnvironmentTier] = js.undefined,
         VersionLabel: js.UndefOr[VersionLabel] = js.undefined
     ): CreateEnvironmentMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any]
       )
 
-      CNAMEPrefix.foreach(__v => __obj.update("CNAMEPrefix", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
-      GroupName.foreach(__v => __obj.update("GroupName", __v.asInstanceOf[js.Any]))
-      OptionSettings.foreach(__v => __obj.update("OptionSettings", __v.asInstanceOf[js.Any]))
-      OptionsToRemove.foreach(__v => __obj.update("OptionsToRemove", __v.asInstanceOf[js.Any]))
-      PlatformArn.foreach(__v => __obj.update("PlatformArn", __v.asInstanceOf[js.Any]))
-      SolutionStackName.foreach(__v => __obj.update("SolutionStackName", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      TemplateName.foreach(__v => __obj.update("TemplateName", __v.asInstanceOf[js.Any]))
-      Tier.foreach(__v => __obj.update("Tier", __v.asInstanceOf[js.Any]))
-      VersionLabel.foreach(__v => __obj.update("VersionLabel", __v.asInstanceOf[js.Any]))
+      CNAMEPrefix.foreach(__v => __obj.updateDynamic("CNAMEPrefix")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.updateDynamic("EnvironmentName")(__v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
+      OptionSettings.foreach(__v => __obj.updateDynamic("OptionSettings")(__v.asInstanceOf[js.Any]))
+      OptionsToRemove.foreach(__v => __obj.updateDynamic("OptionsToRemove")(__v.asInstanceOf[js.Any]))
+      PlatformArn.foreach(__v => __obj.updateDynamic("PlatformArn")(__v.asInstanceOf[js.Any]))
+      SolutionStackName.foreach(__v => __obj.updateDynamic("SolutionStackName")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TemplateName.foreach(__v => __obj.updateDynamic("TemplateName")(__v.asInstanceOf[js.Any]))
+      Tier.foreach(__v => __obj.updateDynamic("Tier")(__v.asInstanceOf[js.Any]))
+      VersionLabel.foreach(__v => __obj.updateDynamic("VersionLabel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateEnvironmentMessage]
     }
   }
@@ -1285,15 +1285,15 @@ package elasticbeanstalk {
         OptionSettings: js.UndefOr[ConfigurationOptionSettingsList] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreatePlatformVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PlatformDefinitionBundle" -> PlatformDefinitionBundle.asInstanceOf[js.Any],
         "PlatformName"             -> PlatformName.asInstanceOf[js.Any],
         "PlatformVersion"          -> PlatformVersion.asInstanceOf[js.Any]
       )
 
-      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
-      OptionSettings.foreach(__v => __obj.update("OptionSettings", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.updateDynamic("EnvironmentName")(__v.asInstanceOf[js.Any]))
+      OptionSettings.foreach(__v => __obj.updateDynamic("OptionSettings")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePlatformVersionRequest]
     }
   }
@@ -1309,9 +1309,9 @@ package elasticbeanstalk {
         Builder: js.UndefOr[Builder] = js.undefined,
         PlatformSummary: js.UndefOr[PlatformSummary] = js.undefined
     ): CreatePlatformVersionResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Builder.foreach(__v => __obj.update("Builder", __v.asInstanceOf[js.Any]))
-      PlatformSummary.foreach(__v => __obj.update("PlatformSummary", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Builder.foreach(__v => __obj.updateDynamic("Builder")(__v.asInstanceOf[js.Any]))
+      PlatformSummary.foreach(__v => __obj.updateDynamic("PlatformSummary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePlatformVersionResult]
     }
   }
@@ -1328,8 +1328,8 @@ package elasticbeanstalk {
     def apply(
         S3Bucket: js.UndefOr[S3Bucket] = js.undefined
     ): CreateStorageLocationResultMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      S3Bucket.foreach(__v => __obj.update("S3Bucket", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      S3Bucket.foreach(__v => __obj.updateDynamic("S3Bucket")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateStorageLocationResultMessage]
     }
   }
@@ -1348,9 +1348,9 @@ package elasticbeanstalk {
         ImageId: js.UndefOr[ImageId] = js.undefined,
         VirtualizationType: js.UndefOr[VirtualizationType] = js.undefined
     ): CustomAmi = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ImageId.foreach(__v => __obj.update("ImageId", __v.asInstanceOf[js.Any]))
-      VirtualizationType.foreach(__v => __obj.update("VirtualizationType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ImageId.foreach(__v => __obj.updateDynamic("ImageId")(__v.asInstanceOf[js.Any]))
+      VirtualizationType.foreach(__v => __obj.updateDynamic("VirtualizationType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CustomAmi]
     }
   }
@@ -1369,11 +1369,11 @@ package elasticbeanstalk {
         ApplicationName: ApplicationName,
         TerminateEnvByForce: js.UndefOr[TerminateEnvForce] = js.undefined
     ): DeleteApplicationMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any]
       )
 
-      TerminateEnvByForce.foreach(__v => __obj.update("TerminateEnvByForce", __v.asInstanceOf[js.Any]))
+      TerminateEnvByForce.foreach(__v => __obj.updateDynamic("TerminateEnvByForce")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteApplicationMessage]
     }
   }
@@ -1394,12 +1394,12 @@ package elasticbeanstalk {
         VersionLabel: VersionLabel,
         DeleteSourceBundle: js.UndefOr[DeleteSourceBundle] = js.undefined
     ): DeleteApplicationVersionMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "VersionLabel"    -> VersionLabel.asInstanceOf[js.Any]
       )
 
-      DeleteSourceBundle.foreach(__v => __obj.update("DeleteSourceBundle", __v.asInstanceOf[js.Any]))
+      DeleteSourceBundle.foreach(__v => __obj.updateDynamic("DeleteSourceBundle")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteApplicationVersionMessage]
     }
   }
@@ -1418,7 +1418,7 @@ package elasticbeanstalk {
         ApplicationName: ApplicationName,
         TemplateName: ConfigurationTemplateName
     ): DeleteConfigurationTemplateMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "TemplateName"    -> TemplateName.asInstanceOf[js.Any]
       )
@@ -1441,7 +1441,7 @@ package elasticbeanstalk {
         ApplicationName: ApplicationName,
         EnvironmentName: EnvironmentName
     ): DeleteEnvironmentConfigurationMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "EnvironmentName" -> EnvironmentName.asInstanceOf[js.Any]
       )
@@ -1459,8 +1459,8 @@ package elasticbeanstalk {
     def apply(
         PlatformArn: js.UndefOr[PlatformArn] = js.undefined
     ): DeletePlatformVersionRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PlatformArn.foreach(__v => __obj.update("PlatformArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PlatformArn.foreach(__v => __obj.updateDynamic("PlatformArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeletePlatformVersionRequest]
     }
   }
@@ -1474,8 +1474,8 @@ package elasticbeanstalk {
     def apply(
         PlatformSummary: js.UndefOr[PlatformSummary] = js.undefined
     ): DeletePlatformVersionResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PlatformSummary.foreach(__v => __obj.update("PlatformSummary", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PlatformSummary.foreach(__v => __obj.updateDynamic("PlatformSummary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeletePlatformVersionResult]
     }
   }
@@ -1498,11 +1498,11 @@ package elasticbeanstalk {
         Status: js.UndefOr[String] = js.undefined,
         VersionLabel: js.UndefOr[String] = js.undefined
     ): Deployment = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DeploymentId.foreach(__v => __obj.update("DeploymentId", __v.asInstanceOf[js.Any]))
-      DeploymentTime.foreach(__v => __obj.update("DeploymentTime", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      VersionLabel.foreach(__v => __obj.update("VersionLabel", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DeploymentId.foreach(__v => __obj.updateDynamic("DeploymentId")(__v.asInstanceOf[js.Any]))
+      DeploymentTime.foreach(__v => __obj.updateDynamic("DeploymentTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      VersionLabel.foreach(__v => __obj.updateDynamic("VersionLabel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Deployment]
     }
   }
@@ -1516,8 +1516,8 @@ package elasticbeanstalk {
     def apply(
         ResourceQuotas: js.UndefOr[ResourceQuotas] = js.undefined
     ): DescribeAccountAttributesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ResourceQuotas.foreach(__v => __obj.update("ResourceQuotas", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ResourceQuotas.foreach(__v => __obj.updateDynamic("ResourceQuotas")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAccountAttributesResult]
     }
   }
@@ -1540,11 +1540,11 @@ package elasticbeanstalk {
         NextToken: js.UndefOr[Token] = js.undefined,
         VersionLabels: js.UndefOr[VersionLabelsList] = js.undefined
     ): DescribeApplicationVersionsMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationName.foreach(__v => __obj.update("ApplicationName", __v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      VersionLabels.foreach(__v => __obj.update("VersionLabels", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationName.foreach(__v => __obj.updateDynamic("ApplicationName")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      VersionLabels.foreach(__v => __obj.updateDynamic("VersionLabels")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeApplicationVersionsMessage]
     }
   }
@@ -1561,8 +1561,8 @@ package elasticbeanstalk {
     def apply(
         ApplicationNames: js.UndefOr[ApplicationNamesList] = js.undefined
     ): DescribeApplicationsMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationNames.foreach(__v => __obj.update("ApplicationNames", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationNames.foreach(__v => __obj.updateDynamic("ApplicationNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeApplicationsMessage]
     }
   }
@@ -1589,13 +1589,13 @@ package elasticbeanstalk {
         SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined,
         TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined
     ): DescribeConfigurationOptionsMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationName.foreach(__v => __obj.update("ApplicationName", __v.asInstanceOf[js.Any]))
-      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
-      Options.foreach(__v => __obj.update("Options", __v.asInstanceOf[js.Any]))
-      PlatformArn.foreach(__v => __obj.update("PlatformArn", __v.asInstanceOf[js.Any]))
-      SolutionStackName.foreach(__v => __obj.update("SolutionStackName", __v.asInstanceOf[js.Any]))
-      TemplateName.foreach(__v => __obj.update("TemplateName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationName.foreach(__v => __obj.updateDynamic("ApplicationName")(__v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.updateDynamic("EnvironmentName")(__v.asInstanceOf[js.Any]))
+      Options.foreach(__v => __obj.updateDynamic("Options")(__v.asInstanceOf[js.Any]))
+      PlatformArn.foreach(__v => __obj.updateDynamic("PlatformArn")(__v.asInstanceOf[js.Any]))
+      SolutionStackName.foreach(__v => __obj.updateDynamic("SolutionStackName")(__v.asInstanceOf[js.Any]))
+      TemplateName.foreach(__v => __obj.updateDynamic("TemplateName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeConfigurationOptionsMessage]
     }
   }
@@ -1616,12 +1616,12 @@ package elasticbeanstalk {
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
         TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined
     ): DescribeConfigurationSettingsMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any]
       )
 
-      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
-      TemplateName.foreach(__v => __obj.update("TemplateName", __v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.updateDynamic("EnvironmentName")(__v.asInstanceOf[js.Any]))
+      TemplateName.foreach(__v => __obj.updateDynamic("TemplateName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeConfigurationSettingsMessage]
     }
   }
@@ -1642,10 +1642,10 @@ package elasticbeanstalk {
         EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined
     ): DescribeEnvironmentHealthRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttributeNames.foreach(__v => __obj.update("AttributeNames", __v.asInstanceOf[js.Any]))
-      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
-      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttributeNames.foreach(__v => __obj.updateDynamic("AttributeNames")(__v.asInstanceOf[js.Any]))
+      EnvironmentId.foreach(__v => __obj.updateDynamic("EnvironmentId")(__v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.updateDynamic("EnvironmentName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEnvironmentHealthRequest]
     }
   }
@@ -1676,15 +1676,15 @@ package elasticbeanstalk {
         RefreshedAt: js.UndefOr[RefreshedAt] = js.undefined,
         Status: js.UndefOr[EnvironmentHealth] = js.undefined
     ): DescribeEnvironmentHealthResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationMetrics.foreach(__v => __obj.update("ApplicationMetrics", __v.asInstanceOf[js.Any]))
-      Causes.foreach(__v => __obj.update("Causes", __v.asInstanceOf[js.Any]))
-      Color.foreach(__v => __obj.update("Color", __v.asInstanceOf[js.Any]))
-      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
-      HealthStatus.foreach(__v => __obj.update("HealthStatus", __v.asInstanceOf[js.Any]))
-      InstancesHealth.foreach(__v => __obj.update("InstancesHealth", __v.asInstanceOf[js.Any]))
-      RefreshedAt.foreach(__v => __obj.update("RefreshedAt", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationMetrics.foreach(__v => __obj.updateDynamic("ApplicationMetrics")(__v.asInstanceOf[js.Any]))
+      Causes.foreach(__v => __obj.updateDynamic("Causes")(__v.asInstanceOf[js.Any]))
+      Color.foreach(__v => __obj.updateDynamic("Color")(__v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.updateDynamic("EnvironmentName")(__v.asInstanceOf[js.Any]))
+      HealthStatus.foreach(__v => __obj.updateDynamic("HealthStatus")(__v.asInstanceOf[js.Any]))
+      InstancesHealth.foreach(__v => __obj.updateDynamic("InstancesHealth")(__v.asInstanceOf[js.Any]))
+      RefreshedAt.foreach(__v => __obj.updateDynamic("RefreshedAt")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEnvironmentHealthResult]
     }
   }
@@ -1707,11 +1707,11 @@ package elasticbeanstalk {
         MaxItems: js.UndefOr[Int] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeEnvironmentManagedActionHistoryRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
-      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
-      MaxItems.foreach(__v => __obj.update("MaxItems", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EnvironmentId.foreach(__v => __obj.updateDynamic("EnvironmentId")(__v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.updateDynamic("EnvironmentName")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEnvironmentManagedActionHistoryRequest]
     }
   }
@@ -1730,9 +1730,11 @@ package elasticbeanstalk {
         ManagedActionHistoryItems: js.UndefOr[ManagedActionHistoryItems] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeEnvironmentManagedActionHistoryResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ManagedActionHistoryItems.foreach(__v => __obj.update("ManagedActionHistoryItems", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ManagedActionHistoryItems.foreach(
+        __v => __obj.updateDynamic("ManagedActionHistoryItems")(__v.asInstanceOf[js.Any])
+      )
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEnvironmentManagedActionHistoryResult]
     }
   }
@@ -1753,10 +1755,10 @@ package elasticbeanstalk {
         EnvironmentName: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[ActionStatus] = js.undefined
     ): DescribeEnvironmentManagedActionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
-      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EnvironmentId.foreach(__v => __obj.updateDynamic("EnvironmentId")(__v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.updateDynamic("EnvironmentName")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEnvironmentManagedActionsRequest]
     }
   }
@@ -1773,8 +1775,8 @@ package elasticbeanstalk {
     def apply(
         ManagedActions: js.UndefOr[ManagedActions] = js.undefined
     ): DescribeEnvironmentManagedActionsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ManagedActions.foreach(__v => __obj.update("ManagedActions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ManagedActions.foreach(__v => __obj.updateDynamic("ManagedActions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEnvironmentManagedActionsResult]
     }
   }
@@ -1793,9 +1795,9 @@ package elasticbeanstalk {
         EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined
     ): DescribeEnvironmentResourcesMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
-      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EnvironmentId.foreach(__v => __obj.updateDynamic("EnvironmentId")(__v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.updateDynamic("EnvironmentName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEnvironmentResourcesMessage]
     }
   }
@@ -1826,15 +1828,15 @@ package elasticbeanstalk {
         NextToken: js.UndefOr[Token] = js.undefined,
         VersionLabel: js.UndefOr[VersionLabel] = js.undefined
     ): DescribeEnvironmentsMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationName.foreach(__v => __obj.update("ApplicationName", __v.asInstanceOf[js.Any]))
-      EnvironmentIds.foreach(__v => __obj.update("EnvironmentIds", __v.asInstanceOf[js.Any]))
-      EnvironmentNames.foreach(__v => __obj.update("EnvironmentNames", __v.asInstanceOf[js.Any]))
-      IncludeDeleted.foreach(__v => __obj.update("IncludeDeleted", __v.asInstanceOf[js.Any]))
-      IncludedDeletedBackTo.foreach(__v => __obj.update("IncludedDeletedBackTo", __v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      VersionLabel.foreach(__v => __obj.update("VersionLabel", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationName.foreach(__v => __obj.updateDynamic("ApplicationName")(__v.asInstanceOf[js.Any]))
+      EnvironmentIds.foreach(__v => __obj.updateDynamic("EnvironmentIds")(__v.asInstanceOf[js.Any]))
+      EnvironmentNames.foreach(__v => __obj.updateDynamic("EnvironmentNames")(__v.asInstanceOf[js.Any]))
+      IncludeDeleted.foreach(__v => __obj.updateDynamic("IncludeDeleted")(__v.asInstanceOf[js.Any]))
+      IncludedDeletedBackTo.foreach(__v => __obj.updateDynamic("IncludedDeletedBackTo")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      VersionLabel.foreach(__v => __obj.updateDynamic("VersionLabel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEnvironmentsMessage]
     }
   }
@@ -1873,19 +1875,19 @@ package elasticbeanstalk {
         TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined,
         VersionLabel: js.UndefOr[VersionLabel] = js.undefined
     ): DescribeEventsMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationName.foreach(__v => __obj.update("ApplicationName", __v.asInstanceOf[js.Any]))
-      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
-      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
-      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PlatformArn.foreach(__v => __obj.update("PlatformArn", __v.asInstanceOf[js.Any]))
-      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
-      Severity.foreach(__v => __obj.update("Severity", __v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
-      TemplateName.foreach(__v => __obj.update("TemplateName", __v.asInstanceOf[js.Any]))
-      VersionLabel.foreach(__v => __obj.update("VersionLabel", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationName.foreach(__v => __obj.updateDynamic("ApplicationName")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      EnvironmentId.foreach(__v => __obj.updateDynamic("EnvironmentId")(__v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.updateDynamic("EnvironmentName")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PlatformArn.foreach(__v => __obj.updateDynamic("PlatformArn")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Severity.foreach(__v => __obj.updateDynamic("Severity")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      TemplateName.foreach(__v => __obj.updateDynamic("TemplateName")(__v.asInstanceOf[js.Any]))
+      VersionLabel.foreach(__v => __obj.updateDynamic("VersionLabel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEventsMessage]
     }
   }
@@ -1908,11 +1910,11 @@ package elasticbeanstalk {
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeInstancesHealthRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttributeNames.foreach(__v => __obj.update("AttributeNames", __v.asInstanceOf[js.Any]))
-      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
-      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttributeNames.foreach(__v => __obj.updateDynamic("AttributeNames")(__v.asInstanceOf[js.Any]))
+      EnvironmentId.foreach(__v => __obj.updateDynamic("EnvironmentId")(__v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.updateDynamic("EnvironmentName")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeInstancesHealthRequest]
     }
   }
@@ -1933,10 +1935,10 @@ package elasticbeanstalk {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         RefreshedAt: js.UndefOr[RefreshedAt] = js.undefined
     ): DescribeInstancesHealthResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InstanceHealthList.foreach(__v => __obj.update("InstanceHealthList", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      RefreshedAt.foreach(__v => __obj.update("RefreshedAt", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InstanceHealthList.foreach(__v => __obj.updateDynamic("InstanceHealthList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RefreshedAt.foreach(__v => __obj.updateDynamic("RefreshedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeInstancesHealthResult]
     }
   }
@@ -1950,8 +1952,8 @@ package elasticbeanstalk {
     def apply(
         PlatformArn: js.UndefOr[PlatformArn] = js.undefined
     ): DescribePlatformVersionRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PlatformArn.foreach(__v => __obj.update("PlatformArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PlatformArn.foreach(__v => __obj.updateDynamic("PlatformArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePlatformVersionRequest]
     }
   }
@@ -1965,8 +1967,8 @@ package elasticbeanstalk {
     def apply(
         PlatformDescription: js.UndefOr[PlatformDescription] = js.undefined
     ): DescribePlatformVersionResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PlatformDescription.foreach(__v => __obj.update("PlatformDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PlatformDescription.foreach(__v => __obj.updateDynamic("PlatformDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePlatformVersionResult]
     }
   }
@@ -2021,29 +2023,29 @@ package elasticbeanstalk {
         Tier: js.UndefOr[EnvironmentTier] = js.undefined,
         VersionLabel: js.UndefOr[VersionLabel] = js.undefined
     ): EnvironmentDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       AbortableOperationInProgress.foreach(
-        __v => __obj.update("AbortableOperationInProgress", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("AbortableOperationInProgress")(__v.asInstanceOf[js.Any])
       )
-      ApplicationName.foreach(__v => __obj.update("ApplicationName", __v.asInstanceOf[js.Any]))
-      CNAME.foreach(__v => __obj.update("CNAME", __v.asInstanceOf[js.Any]))
-      DateCreated.foreach(__v => __obj.update("DateCreated", __v.asInstanceOf[js.Any]))
-      DateUpdated.foreach(__v => __obj.update("DateUpdated", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      EndpointURL.foreach(__v => __obj.update("EndpointURL", __v.asInstanceOf[js.Any]))
-      EnvironmentArn.foreach(__v => __obj.update("EnvironmentArn", __v.asInstanceOf[js.Any]))
-      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
-      EnvironmentLinks.foreach(__v => __obj.update("EnvironmentLinks", __v.asInstanceOf[js.Any]))
-      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
-      Health.foreach(__v => __obj.update("Health", __v.asInstanceOf[js.Any]))
-      HealthStatus.foreach(__v => __obj.update("HealthStatus", __v.asInstanceOf[js.Any]))
-      PlatformArn.foreach(__v => __obj.update("PlatformArn", __v.asInstanceOf[js.Any]))
-      Resources.foreach(__v => __obj.update("Resources", __v.asInstanceOf[js.Any]))
-      SolutionStackName.foreach(__v => __obj.update("SolutionStackName", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      TemplateName.foreach(__v => __obj.update("TemplateName", __v.asInstanceOf[js.Any]))
-      Tier.foreach(__v => __obj.update("Tier", __v.asInstanceOf[js.Any]))
-      VersionLabel.foreach(__v => __obj.update("VersionLabel", __v.asInstanceOf[js.Any]))
+      ApplicationName.foreach(__v => __obj.updateDynamic("ApplicationName")(__v.asInstanceOf[js.Any]))
+      CNAME.foreach(__v => __obj.updateDynamic("CNAME")(__v.asInstanceOf[js.Any]))
+      DateCreated.foreach(__v => __obj.updateDynamic("DateCreated")(__v.asInstanceOf[js.Any]))
+      DateUpdated.foreach(__v => __obj.updateDynamic("DateUpdated")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EndpointURL.foreach(__v => __obj.updateDynamic("EndpointURL")(__v.asInstanceOf[js.Any]))
+      EnvironmentArn.foreach(__v => __obj.updateDynamic("EnvironmentArn")(__v.asInstanceOf[js.Any]))
+      EnvironmentId.foreach(__v => __obj.updateDynamic("EnvironmentId")(__v.asInstanceOf[js.Any]))
+      EnvironmentLinks.foreach(__v => __obj.updateDynamic("EnvironmentLinks")(__v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.updateDynamic("EnvironmentName")(__v.asInstanceOf[js.Any]))
+      Health.foreach(__v => __obj.updateDynamic("Health")(__v.asInstanceOf[js.Any]))
+      HealthStatus.foreach(__v => __obj.updateDynamic("HealthStatus")(__v.asInstanceOf[js.Any]))
+      PlatformArn.foreach(__v => __obj.updateDynamic("PlatformArn")(__v.asInstanceOf[js.Any]))
+      Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
+      SolutionStackName.foreach(__v => __obj.updateDynamic("SolutionStackName")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TemplateName.foreach(__v => __obj.updateDynamic("TemplateName")(__v.asInstanceOf[js.Any]))
+      Tier.foreach(__v => __obj.updateDynamic("Tier")(__v.asInstanceOf[js.Any]))
+      VersionLabel.foreach(__v => __obj.updateDynamic("VersionLabel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnvironmentDescription]
     }
   }
@@ -2062,9 +2064,9 @@ package elasticbeanstalk {
         Environments: js.UndefOr[EnvironmentDescriptionsList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): EnvironmentDescriptionsMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Environments.foreach(__v => __obj.update("Environments", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Environments.foreach(__v => __obj.updateDynamic("Environments")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnvironmentDescriptionsMessage]
     }
   }
@@ -2125,11 +2127,11 @@ package elasticbeanstalk {
         Message: js.UndefOr[Message] = js.undefined,
         SampleTimestamp: js.UndefOr[SampleTimestamp] = js.undefined
     ): EnvironmentInfoDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Ec2InstanceId.foreach(__v => __obj.update("Ec2InstanceId", __v.asInstanceOf[js.Any]))
-      InfoType.foreach(__v => __obj.update("InfoType", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
-      SampleTimestamp.foreach(__v => __obj.update("SampleTimestamp", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Ec2InstanceId.foreach(__v => __obj.updateDynamic("Ec2InstanceId")(__v.asInstanceOf[js.Any]))
+      InfoType.foreach(__v => __obj.updateDynamic("InfoType")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      SampleTimestamp.foreach(__v => __obj.updateDynamic("SampleTimestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnvironmentInfoDescription]
     }
   }
@@ -2155,9 +2157,9 @@ package elasticbeanstalk {
         EnvironmentName: js.UndefOr[String] = js.undefined,
         LinkName: js.UndefOr[String] = js.undefined
     ): EnvironmentLink = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
-      LinkName.foreach(__v => __obj.update("LinkName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EnvironmentName.foreach(__v => __obj.updateDynamic("EnvironmentName")(__v.asInstanceOf[js.Any]))
+      LinkName.foreach(__v => __obj.updateDynamic("LinkName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnvironmentLink]
     }
   }
@@ -2188,15 +2190,15 @@ package elasticbeanstalk {
         Queues: js.UndefOr[QueueList] = js.undefined,
         Triggers: js.UndefOr[TriggerList] = js.undefined
     ): EnvironmentResourceDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AutoScalingGroups.foreach(__v => __obj.update("AutoScalingGroups", __v.asInstanceOf[js.Any]))
-      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
-      Instances.foreach(__v => __obj.update("Instances", __v.asInstanceOf[js.Any]))
-      LaunchConfigurations.foreach(__v => __obj.update("LaunchConfigurations", __v.asInstanceOf[js.Any]))
-      LaunchTemplates.foreach(__v => __obj.update("LaunchTemplates", __v.asInstanceOf[js.Any]))
-      LoadBalancers.foreach(__v => __obj.update("LoadBalancers", __v.asInstanceOf[js.Any]))
-      Queues.foreach(__v => __obj.update("Queues", __v.asInstanceOf[js.Any]))
-      Triggers.foreach(__v => __obj.update("Triggers", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AutoScalingGroups.foreach(__v => __obj.updateDynamic("AutoScalingGroups")(__v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.updateDynamic("EnvironmentName")(__v.asInstanceOf[js.Any]))
+      Instances.foreach(__v => __obj.updateDynamic("Instances")(__v.asInstanceOf[js.Any]))
+      LaunchConfigurations.foreach(__v => __obj.updateDynamic("LaunchConfigurations")(__v.asInstanceOf[js.Any]))
+      LaunchTemplates.foreach(__v => __obj.updateDynamic("LaunchTemplates")(__v.asInstanceOf[js.Any]))
+      LoadBalancers.foreach(__v => __obj.updateDynamic("LoadBalancers")(__v.asInstanceOf[js.Any]))
+      Queues.foreach(__v => __obj.updateDynamic("Queues")(__v.asInstanceOf[js.Any]))
+      Triggers.foreach(__v => __obj.updateDynamic("Triggers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnvironmentResourceDescription]
     }
   }
@@ -2213,8 +2215,8 @@ package elasticbeanstalk {
     def apply(
         EnvironmentResources: js.UndefOr[EnvironmentResourceDescription] = js.undefined
     ): EnvironmentResourceDescriptionsMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EnvironmentResources.foreach(__v => __obj.update("EnvironmentResources", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EnvironmentResources.foreach(__v => __obj.updateDynamic("EnvironmentResources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnvironmentResourceDescriptionsMessage]
     }
   }
@@ -2231,8 +2233,8 @@ package elasticbeanstalk {
     def apply(
         LoadBalancer: js.UndefOr[LoadBalancerDescription] = js.undefined
     ): EnvironmentResourcesDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LoadBalancer.foreach(__v => __obj.update("LoadBalancer", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LoadBalancer.foreach(__v => __obj.updateDynamic("LoadBalancer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnvironmentResourcesDescription]
     }
   }
@@ -2263,10 +2265,10 @@ package elasticbeanstalk {
         Type: js.UndefOr[String] = js.undefined,
         Version: js.UndefOr[String] = js.undefined
     ): EnvironmentTier = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnvironmentTier]
     }
   }
@@ -2299,16 +2301,16 @@ package elasticbeanstalk {
         TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined,
         VersionLabel: js.UndefOr[VersionLabel] = js.undefined
     ): EventDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationName.foreach(__v => __obj.update("ApplicationName", __v.asInstanceOf[js.Any]))
-      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
-      EventDate.foreach(__v => __obj.update("EventDate", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
-      PlatformArn.foreach(__v => __obj.update("PlatformArn", __v.asInstanceOf[js.Any]))
-      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
-      Severity.foreach(__v => __obj.update("Severity", __v.asInstanceOf[js.Any]))
-      TemplateName.foreach(__v => __obj.update("TemplateName", __v.asInstanceOf[js.Any]))
-      VersionLabel.foreach(__v => __obj.update("VersionLabel", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationName.foreach(__v => __obj.updateDynamic("ApplicationName")(__v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.updateDynamic("EnvironmentName")(__v.asInstanceOf[js.Any]))
+      EventDate.foreach(__v => __obj.updateDynamic("EventDate")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      PlatformArn.foreach(__v => __obj.updateDynamic("PlatformArn")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Severity.foreach(__v => __obj.updateDynamic("Severity")(__v.asInstanceOf[js.Any]))
+      TemplateName.foreach(__v => __obj.updateDynamic("TemplateName")(__v.asInstanceOf[js.Any]))
+      VersionLabel.foreach(__v => __obj.updateDynamic("VersionLabel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventDescription]
     }
   }
@@ -2327,9 +2329,9 @@ package elasticbeanstalk {
         Events: js.UndefOr[EventDescriptionList] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): EventDescriptionsMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Events.foreach(__v => __obj.update("Events", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Events.foreach(__v => __obj.updateDynamic("Events")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventDescriptionsMessage]
     }
   }
@@ -2379,8 +2381,8 @@ package elasticbeanstalk {
     def apply(
         Id: js.UndefOr[ResourceId] = js.undefined
     ): Instance = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Instance]
     }
   }
@@ -2411,15 +2413,15 @@ package elasticbeanstalk {
         Unknown: js.UndefOr[NullableInteger] = js.undefined,
         Warning: js.UndefOr[NullableInteger] = js.undefined
     ): InstanceHealthSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Degraded.foreach(__v => __obj.update("Degraded", __v.asInstanceOf[js.Any]))
-      Info.foreach(__v => __obj.update("Info", __v.asInstanceOf[js.Any]))
-      NoData.foreach(__v => __obj.update("NoData", __v.asInstanceOf[js.Any]))
-      Ok.foreach(__v => __obj.update("Ok", __v.asInstanceOf[js.Any]))
-      Pending.foreach(__v => __obj.update("Pending", __v.asInstanceOf[js.Any]))
-      Severe.foreach(__v => __obj.update("Severe", __v.asInstanceOf[js.Any]))
-      Unknown.foreach(__v => __obj.update("Unknown", __v.asInstanceOf[js.Any]))
-      Warning.foreach(__v => __obj.update("Warning", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Degraded.foreach(__v => __obj.updateDynamic("Degraded")(__v.asInstanceOf[js.Any]))
+      Info.foreach(__v => __obj.updateDynamic("Info")(__v.asInstanceOf[js.Any]))
+      NoData.foreach(__v => __obj.updateDynamic("NoData")(__v.asInstanceOf[js.Any]))
+      Ok.foreach(__v => __obj.updateDynamic("Ok")(__v.asInstanceOf[js.Any]))
+      Pending.foreach(__v => __obj.updateDynamic("Pending")(__v.asInstanceOf[js.Any]))
+      Severe.foreach(__v => __obj.updateDynamic("Severe")(__v.asInstanceOf[js.Any]))
+      Unknown.foreach(__v => __obj.updateDynamic("Unknown")(__v.asInstanceOf[js.Any]))
+      Warning.foreach(__v => __obj.updateDynamic("Warning")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceHealthSummary]
     }
   }
@@ -2480,15 +2482,15 @@ package elasticbeanstalk {
         P99: js.UndefOr[NullableDouble] = js.undefined,
         P999: js.UndefOr[NullableDouble] = js.undefined
     ): Latency = {
-      val __obj = js.Dictionary.empty[js.Any]
-      P10.foreach(__v => __obj.update("P10", __v.asInstanceOf[js.Any]))
-      P50.foreach(__v => __obj.update("P50", __v.asInstanceOf[js.Any]))
-      P75.foreach(__v => __obj.update("P75", __v.asInstanceOf[js.Any]))
-      P85.foreach(__v => __obj.update("P85", __v.asInstanceOf[js.Any]))
-      P90.foreach(__v => __obj.update("P90", __v.asInstanceOf[js.Any]))
-      P95.foreach(__v => __obj.update("P95", __v.asInstanceOf[js.Any]))
-      P99.foreach(__v => __obj.update("P99", __v.asInstanceOf[js.Any]))
-      P999.foreach(__v => __obj.update("P999", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      P10.foreach(__v => __obj.updateDynamic("P10")(__v.asInstanceOf[js.Any]))
+      P50.foreach(__v => __obj.updateDynamic("P50")(__v.asInstanceOf[js.Any]))
+      P75.foreach(__v => __obj.updateDynamic("P75")(__v.asInstanceOf[js.Any]))
+      P85.foreach(__v => __obj.updateDynamic("P85")(__v.asInstanceOf[js.Any]))
+      P90.foreach(__v => __obj.updateDynamic("P90")(__v.asInstanceOf[js.Any]))
+      P95.foreach(__v => __obj.updateDynamic("P95")(__v.asInstanceOf[js.Any]))
+      P99.foreach(__v => __obj.updateDynamic("P99")(__v.asInstanceOf[js.Any]))
+      P999.foreach(__v => __obj.updateDynamic("P999")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Latency]
     }
   }
@@ -2505,8 +2507,8 @@ package elasticbeanstalk {
     def apply(
         Name: js.UndefOr[ResourceId] = js.undefined
     ): LaunchConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LaunchConfiguration]
     }
   }
@@ -2523,8 +2525,8 @@ package elasticbeanstalk {
     def apply(
         Id: js.UndefOr[ResourceId] = js.undefined
     ): LaunchTemplate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LaunchTemplate]
     }
   }
@@ -2543,9 +2545,9 @@ package elasticbeanstalk {
         SolutionStackDetails: js.UndefOr[AvailableSolutionStackDetailsList] = js.undefined,
         SolutionStacks: js.UndefOr[AvailableSolutionStackNamesList] = js.undefined
     ): ListAvailableSolutionStacksResultMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SolutionStackDetails.foreach(__v => __obj.update("SolutionStackDetails", __v.asInstanceOf[js.Any]))
-      SolutionStacks.foreach(__v => __obj.update("SolutionStacks", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SolutionStackDetails.foreach(__v => __obj.updateDynamic("SolutionStackDetails")(__v.asInstanceOf[js.Any]))
+      SolutionStacks.foreach(__v => __obj.updateDynamic("SolutionStacks")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAvailableSolutionStacksResultMessage]
     }
   }
@@ -2563,10 +2565,10 @@ package elasticbeanstalk {
         MaxRecords: js.UndefOr[PlatformMaxRecords] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined
     ): ListPlatformVersionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxRecords.foreach(__v => __obj.update("MaxRecords", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPlatformVersionsRequest]
     }
   }
@@ -2582,9 +2584,9 @@ package elasticbeanstalk {
         NextToken: js.UndefOr[Token] = js.undefined,
         PlatformSummaryList: js.UndefOr[PlatformSummaryList] = js.undefined
     ): ListPlatformVersionsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PlatformSummaryList.foreach(__v => __obj.update("PlatformSummaryList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PlatformSummaryList.foreach(__v => __obj.updateDynamic("PlatformSummaryList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPlatformVersionsResult]
     }
   }
@@ -2598,7 +2600,7 @@ package elasticbeanstalk {
     def apply(
         ResourceArn: ResourceArn
     ): ListTagsForResourceMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
@@ -2620,9 +2622,9 @@ package elasticbeanstalk {
         Port: js.UndefOr[Int] = js.undefined,
         Protocol: js.UndefOr[String] = js.undefined
     ): Listener = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Port.foreach(__v => __obj.update("Port", __v.asInstanceOf[js.Any]))
-      Protocol.foreach(__v => __obj.update("Protocol", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Listener]
     }
   }
@@ -2639,8 +2641,8 @@ package elasticbeanstalk {
     def apply(
         Name: js.UndefOr[ResourceId] = js.undefined
     ): LoadBalancer = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoadBalancer]
     }
   }
@@ -2661,10 +2663,10 @@ package elasticbeanstalk {
         Listeners: js.UndefOr[LoadBalancerListenersDescription] = js.undefined,
         LoadBalancerName: js.UndefOr[String] = js.undefined
     ): LoadBalancerDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Domain.foreach(__v => __obj.update("Domain", __v.asInstanceOf[js.Any]))
-      Listeners.foreach(__v => __obj.update("Listeners", __v.asInstanceOf[js.Any]))
-      LoadBalancerName.foreach(__v => __obj.update("LoadBalancerName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
+      Listeners.foreach(__v => __obj.updateDynamic("Listeners")(__v.asInstanceOf[js.Any]))
+      LoadBalancerName.foreach(__v => __obj.updateDynamic("LoadBalancerName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoadBalancerDescription]
     }
   }
@@ -2689,12 +2691,12 @@ package elasticbeanstalk {
         Status: js.UndefOr[ActionStatus] = js.undefined,
         WindowStartTime: js.UndefOr[Timestamp] = js.undefined
     ): ManagedAction = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ActionDescription.foreach(__v => __obj.update("ActionDescription", __v.asInstanceOf[js.Any]))
-      ActionId.foreach(__v => __obj.update("ActionId", __v.asInstanceOf[js.Any]))
-      ActionType.foreach(__v => __obj.update("ActionType", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      WindowStartTime.foreach(__v => __obj.update("WindowStartTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ActionDescription.foreach(__v => __obj.updateDynamic("ActionDescription")(__v.asInstanceOf[js.Any]))
+      ActionId.foreach(__v => __obj.updateDynamic("ActionId")(__v.asInstanceOf[js.Any]))
+      ActionType.foreach(__v => __obj.updateDynamic("ActionType")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      WindowStartTime.foreach(__v => __obj.updateDynamic("WindowStartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ManagedAction]
     }
   }
@@ -2725,15 +2727,15 @@ package elasticbeanstalk {
         FinishedTime: js.UndefOr[Timestamp] = js.undefined,
         Status: js.UndefOr[ActionHistoryStatus] = js.undefined
     ): ManagedActionHistoryItem = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ActionDescription.foreach(__v => __obj.update("ActionDescription", __v.asInstanceOf[js.Any]))
-      ActionId.foreach(__v => __obj.update("ActionId", __v.asInstanceOf[js.Any]))
-      ActionType.foreach(__v => __obj.update("ActionType", __v.asInstanceOf[js.Any]))
-      ExecutedTime.foreach(__v => __obj.update("ExecutedTime", __v.asInstanceOf[js.Any]))
-      FailureDescription.foreach(__v => __obj.update("FailureDescription", __v.asInstanceOf[js.Any]))
-      FailureType.foreach(__v => __obj.update("FailureType", __v.asInstanceOf[js.Any]))
-      FinishedTime.foreach(__v => __obj.update("FinishedTime", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ActionDescription.foreach(__v => __obj.updateDynamic("ActionDescription")(__v.asInstanceOf[js.Any]))
+      ActionId.foreach(__v => __obj.updateDynamic("ActionId")(__v.asInstanceOf[js.Any]))
+      ActionType.foreach(__v => __obj.updateDynamic("ActionType")(__v.asInstanceOf[js.Any]))
+      ExecutedTime.foreach(__v => __obj.updateDynamic("ExecutedTime")(__v.asInstanceOf[js.Any]))
+      FailureDescription.foreach(__v => __obj.updateDynamic("FailureDescription")(__v.asInstanceOf[js.Any]))
+      FailureType.foreach(__v => __obj.updateDynamic("FailureType")(__v.asInstanceOf[js.Any]))
+      FinishedTime.foreach(__v => __obj.updateDynamic("FinishedTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ManagedActionHistoryItem]
     }
   }
@@ -2754,12 +2756,12 @@ package elasticbeanstalk {
         DeleteSourceFromS3: js.UndefOr[BoxedBoolean] = js.undefined,
         MaxAgeInDays: js.UndefOr[BoxedInt] = js.undefined
     ): MaxAgeRule = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Enabled" -> Enabled.asInstanceOf[js.Any]
       )
 
-      DeleteSourceFromS3.foreach(__v => __obj.update("DeleteSourceFromS3", __v.asInstanceOf[js.Any]))
-      MaxAgeInDays.foreach(__v => __obj.update("MaxAgeInDays", __v.asInstanceOf[js.Any]))
+      DeleteSourceFromS3.foreach(__v => __obj.updateDynamic("DeleteSourceFromS3")(__v.asInstanceOf[js.Any]))
+      MaxAgeInDays.foreach(__v => __obj.updateDynamic("MaxAgeInDays")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MaxAgeRule]
     }
   }
@@ -2780,12 +2782,12 @@ package elasticbeanstalk {
         DeleteSourceFromS3: js.UndefOr[BoxedBoolean] = js.undefined,
         MaxCount: js.UndefOr[BoxedInt] = js.undefined
     ): MaxCountRule = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Enabled" -> Enabled.asInstanceOf[js.Any]
       )
 
-      DeleteSourceFromS3.foreach(__v => __obj.update("DeleteSourceFromS3", __v.asInstanceOf[js.Any]))
-      MaxCount.foreach(__v => __obj.update("MaxCount", __v.asInstanceOf[js.Any]))
+      DeleteSourceFromS3.foreach(__v => __obj.updateDynamic("DeleteSourceFromS3")(__v.asInstanceOf[js.Any]))
+      MaxCount.foreach(__v => __obj.updateDynamic("MaxCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MaxCountRule]
     }
   }
@@ -2804,9 +2806,9 @@ package elasticbeanstalk {
         Label: js.UndefOr[RegexLabel] = js.undefined,
         Pattern: js.UndefOr[RegexPattern] = js.undefined
     ): OptionRestrictionRegex = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Label.foreach(__v => __obj.update("Label", __v.asInstanceOf[js.Any]))
-      Pattern.foreach(__v => __obj.update("Pattern", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Label.foreach(__v => __obj.updateDynamic("Label")(__v.asInstanceOf[js.Any]))
+      Pattern.foreach(__v => __obj.updateDynamic("Pattern")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OptionRestrictionRegex]
     }
   }
@@ -2827,10 +2829,10 @@ package elasticbeanstalk {
         OptionName: js.UndefOr[ConfigurationOptionName] = js.undefined,
         ResourceName: js.UndefOr[ResourceName] = js.undefined
     ): OptionSpecification = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Namespace.foreach(__v => __obj.update("Namespace", __v.asInstanceOf[js.Any]))
-      OptionName.foreach(__v => __obj.update("OptionName", __v.asInstanceOf[js.Any]))
-      ResourceName.foreach(__v => __obj.update("ResourceName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
+      OptionName.foreach(__v => __obj.updateDynamic("OptionName")(__v.asInstanceOf[js.Any]))
+      ResourceName.foreach(__v => __obj.updateDynamic("ResourceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OptionSpecification]
     }
   }
@@ -2881,25 +2883,25 @@ package elasticbeanstalk {
         SupportedAddonList: js.UndefOr[SupportedAddonList] = js.undefined,
         SupportedTierList: js.UndefOr[SupportedTierList] = js.undefined
     ): PlatformDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CustomAmiList.foreach(__v => __obj.update("CustomAmiList", __v.asInstanceOf[js.Any]))
-      DateCreated.foreach(__v => __obj.update("DateCreated", __v.asInstanceOf[js.Any]))
-      DateUpdated.foreach(__v => __obj.update("DateUpdated", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Frameworks.foreach(__v => __obj.update("Frameworks", __v.asInstanceOf[js.Any]))
-      Maintainer.foreach(__v => __obj.update("Maintainer", __v.asInstanceOf[js.Any]))
-      OperatingSystemName.foreach(__v => __obj.update("OperatingSystemName", __v.asInstanceOf[js.Any]))
-      OperatingSystemVersion.foreach(__v => __obj.update("OperatingSystemVersion", __v.asInstanceOf[js.Any]))
-      PlatformArn.foreach(__v => __obj.update("PlatformArn", __v.asInstanceOf[js.Any]))
-      PlatformCategory.foreach(__v => __obj.update("PlatformCategory", __v.asInstanceOf[js.Any]))
-      PlatformName.foreach(__v => __obj.update("PlatformName", __v.asInstanceOf[js.Any]))
-      PlatformOwner.foreach(__v => __obj.update("PlatformOwner", __v.asInstanceOf[js.Any]))
-      PlatformStatus.foreach(__v => __obj.update("PlatformStatus", __v.asInstanceOf[js.Any]))
-      PlatformVersion.foreach(__v => __obj.update("PlatformVersion", __v.asInstanceOf[js.Any]))
-      ProgrammingLanguages.foreach(__v => __obj.update("ProgrammingLanguages", __v.asInstanceOf[js.Any]))
-      SolutionStackName.foreach(__v => __obj.update("SolutionStackName", __v.asInstanceOf[js.Any]))
-      SupportedAddonList.foreach(__v => __obj.update("SupportedAddonList", __v.asInstanceOf[js.Any]))
-      SupportedTierList.foreach(__v => __obj.update("SupportedTierList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CustomAmiList.foreach(__v => __obj.updateDynamic("CustomAmiList")(__v.asInstanceOf[js.Any]))
+      DateCreated.foreach(__v => __obj.updateDynamic("DateCreated")(__v.asInstanceOf[js.Any]))
+      DateUpdated.foreach(__v => __obj.updateDynamic("DateUpdated")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Frameworks.foreach(__v => __obj.updateDynamic("Frameworks")(__v.asInstanceOf[js.Any]))
+      Maintainer.foreach(__v => __obj.updateDynamic("Maintainer")(__v.asInstanceOf[js.Any]))
+      OperatingSystemName.foreach(__v => __obj.updateDynamic("OperatingSystemName")(__v.asInstanceOf[js.Any]))
+      OperatingSystemVersion.foreach(__v => __obj.updateDynamic("OperatingSystemVersion")(__v.asInstanceOf[js.Any]))
+      PlatformArn.foreach(__v => __obj.updateDynamic("PlatformArn")(__v.asInstanceOf[js.Any]))
+      PlatformCategory.foreach(__v => __obj.updateDynamic("PlatformCategory")(__v.asInstanceOf[js.Any]))
+      PlatformName.foreach(__v => __obj.updateDynamic("PlatformName")(__v.asInstanceOf[js.Any]))
+      PlatformOwner.foreach(__v => __obj.updateDynamic("PlatformOwner")(__v.asInstanceOf[js.Any]))
+      PlatformStatus.foreach(__v => __obj.updateDynamic("PlatformStatus")(__v.asInstanceOf[js.Any]))
+      PlatformVersion.foreach(__v => __obj.updateDynamic("PlatformVersion")(__v.asInstanceOf[js.Any]))
+      ProgrammingLanguages.foreach(__v => __obj.updateDynamic("ProgrammingLanguages")(__v.asInstanceOf[js.Any]))
+      SolutionStackName.foreach(__v => __obj.updateDynamic("SolutionStackName")(__v.asInstanceOf[js.Any]))
+      SupportedAddonList.foreach(__v => __obj.updateDynamic("SupportedAddonList")(__v.asInstanceOf[js.Any]))
+      SupportedTierList.foreach(__v => __obj.updateDynamic("SupportedTierList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PlatformDescription]
     }
   }
@@ -2922,10 +2924,10 @@ package elasticbeanstalk {
         Type: js.UndefOr[PlatformFilterType] = js.undefined,
         Values: js.UndefOr[PlatformFilterValueList] = js.undefined
     ): PlatformFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Operator.foreach(__v => __obj.update("Operator", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
-      Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Operator.foreach(__v => __obj.updateDynamic("Operator")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PlatformFilter]
     }
   }
@@ -2944,9 +2946,9 @@ package elasticbeanstalk {
         Name: js.UndefOr[String] = js.undefined,
         Version: js.UndefOr[String] = js.undefined
     ): PlatformFramework = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PlatformFramework]
     }
   }
@@ -2965,9 +2967,9 @@ package elasticbeanstalk {
         Name: js.UndefOr[String] = js.undefined,
         Version: js.UndefOr[String] = js.undefined
     ): PlatformProgrammingLanguage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PlatformProgrammingLanguage]
     }
   }
@@ -3008,15 +3010,15 @@ package elasticbeanstalk {
         SupportedAddonList: js.UndefOr[SupportedAddonList] = js.undefined,
         SupportedTierList: js.UndefOr[SupportedTierList] = js.undefined
     ): PlatformSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      OperatingSystemName.foreach(__v => __obj.update("OperatingSystemName", __v.asInstanceOf[js.Any]))
-      OperatingSystemVersion.foreach(__v => __obj.update("OperatingSystemVersion", __v.asInstanceOf[js.Any]))
-      PlatformArn.foreach(__v => __obj.update("PlatformArn", __v.asInstanceOf[js.Any]))
-      PlatformCategory.foreach(__v => __obj.update("PlatformCategory", __v.asInstanceOf[js.Any]))
-      PlatformOwner.foreach(__v => __obj.update("PlatformOwner", __v.asInstanceOf[js.Any]))
-      PlatformStatus.foreach(__v => __obj.update("PlatformStatus", __v.asInstanceOf[js.Any]))
-      SupportedAddonList.foreach(__v => __obj.update("SupportedAddonList", __v.asInstanceOf[js.Any]))
-      SupportedTierList.foreach(__v => __obj.update("SupportedTierList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      OperatingSystemName.foreach(__v => __obj.updateDynamic("OperatingSystemName")(__v.asInstanceOf[js.Any]))
+      OperatingSystemVersion.foreach(__v => __obj.updateDynamic("OperatingSystemVersion")(__v.asInstanceOf[js.Any]))
+      PlatformArn.foreach(__v => __obj.updateDynamic("PlatformArn")(__v.asInstanceOf[js.Any]))
+      PlatformCategory.foreach(__v => __obj.updateDynamic("PlatformCategory")(__v.asInstanceOf[js.Any]))
+      PlatformOwner.foreach(__v => __obj.updateDynamic("PlatformOwner")(__v.asInstanceOf[js.Any]))
+      PlatformStatus.foreach(__v => __obj.updateDynamic("PlatformStatus")(__v.asInstanceOf[js.Any]))
+      SupportedAddonList.foreach(__v => __obj.updateDynamic("SupportedAddonList")(__v.asInstanceOf[js.Any]))
+      SupportedTierList.foreach(__v => __obj.updateDynamic("SupportedTierList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PlatformSummary]
     }
   }
@@ -3035,9 +3037,9 @@ package elasticbeanstalk {
         Name: js.UndefOr[String] = js.undefined,
         URL: js.UndefOr[String] = js.undefined
     ): Queue = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      URL.foreach(__v => __obj.update("URL", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      URL.foreach(__v => __obj.updateDynamic("URL")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Queue]
     }
   }
@@ -3056,9 +3058,9 @@ package elasticbeanstalk {
         EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined
     ): RebuildEnvironmentMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
-      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EnvironmentId.foreach(__v => __obj.updateDynamic("EnvironmentId")(__v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.updateDynamic("EnvironmentName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RebuildEnvironmentMessage]
     }
   }
@@ -3079,12 +3081,12 @@ package elasticbeanstalk {
         EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined
     ): RequestEnvironmentInfoMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InfoType" -> InfoType.asInstanceOf[js.Any]
       )
 
-      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
-      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      EnvironmentId.foreach(__v => __obj.updateDynamic("EnvironmentId")(__v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.updateDynamic("EnvironmentName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RequestEnvironmentInfoMessage]
     }
   }
@@ -3101,8 +3103,8 @@ package elasticbeanstalk {
     def apply(
         Maximum: js.UndefOr[BoxedInt] = js.undefined
     ): ResourceQuota = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Maximum.foreach(__v => __obj.update("Maximum", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Maximum.foreach(__v => __obj.updateDynamic("Maximum")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceQuota]
     }
   }
@@ -3127,12 +3129,14 @@ package elasticbeanstalk {
         CustomPlatformQuota: js.UndefOr[ResourceQuota] = js.undefined,
         EnvironmentQuota: js.UndefOr[ResourceQuota] = js.undefined
     ): ResourceQuotas = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationQuota.foreach(__v => __obj.update("ApplicationQuota", __v.asInstanceOf[js.Any]))
-      ApplicationVersionQuota.foreach(__v => __obj.update("ApplicationVersionQuota", __v.asInstanceOf[js.Any]))
-      ConfigurationTemplateQuota.foreach(__v => __obj.update("ConfigurationTemplateQuota", __v.asInstanceOf[js.Any]))
-      CustomPlatformQuota.foreach(__v => __obj.update("CustomPlatformQuota", __v.asInstanceOf[js.Any]))
-      EnvironmentQuota.foreach(__v => __obj.update("EnvironmentQuota", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationQuota.foreach(__v => __obj.updateDynamic("ApplicationQuota")(__v.asInstanceOf[js.Any]))
+      ApplicationVersionQuota.foreach(__v => __obj.updateDynamic("ApplicationVersionQuota")(__v.asInstanceOf[js.Any]))
+      ConfigurationTemplateQuota.foreach(
+        __v => __obj.updateDynamic("ConfigurationTemplateQuota")(__v.asInstanceOf[js.Any])
+      )
+      CustomPlatformQuota.foreach(__v => __obj.updateDynamic("CustomPlatformQuota")(__v.asInstanceOf[js.Any]))
+      EnvironmentQuota.foreach(__v => __obj.updateDynamic("EnvironmentQuota")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceQuotas]
     }
   }
@@ -3148,9 +3152,9 @@ package elasticbeanstalk {
         ResourceArn: js.UndefOr[ResourceArn] = js.undefined,
         ResourceTags: js.UndefOr[TagList] = js.undefined
     ): ResourceTagsDescriptionMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ResourceArn.foreach(__v => __obj.update("ResourceArn", __v.asInstanceOf[js.Any]))
-      ResourceTags.foreach(__v => __obj.update("ResourceTags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
+      ResourceTags.foreach(__v => __obj.updateDynamic("ResourceTags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceTagsDescriptionMessage]
     }
   }
@@ -3169,9 +3173,9 @@ package elasticbeanstalk {
         EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined
     ): RestartAppServerMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
-      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EnvironmentId.foreach(__v => __obj.updateDynamic("EnvironmentId")(__v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.updateDynamic("EnvironmentName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RestartAppServerMessage]
     }
   }
@@ -3192,12 +3196,12 @@ package elasticbeanstalk {
         EnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined
     ): RetrieveEnvironmentInfoMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InfoType" -> InfoType.asInstanceOf[js.Any]
       )
 
-      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
-      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
+      EnvironmentId.foreach(__v => __obj.updateDynamic("EnvironmentId")(__v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.updateDynamic("EnvironmentName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RetrieveEnvironmentInfoMessage]
     }
   }
@@ -3214,8 +3218,8 @@ package elasticbeanstalk {
     def apply(
         EnvironmentInfo: js.UndefOr[EnvironmentInfoDescriptionList] = js.undefined
     ): RetrieveEnvironmentInfoResultMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EnvironmentInfo.foreach(__v => __obj.update("EnvironmentInfo", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EnvironmentInfo.foreach(__v => __obj.updateDynamic("EnvironmentInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RetrieveEnvironmentInfoResultMessage]
     }
   }
@@ -3234,9 +3238,9 @@ package elasticbeanstalk {
         S3Bucket: js.UndefOr[S3Bucket] = js.undefined,
         S3Key: js.UndefOr[S3Key] = js.undefined
     ): S3Location = {
-      val __obj = js.Dictionary.empty[js.Any]
-      S3Bucket.foreach(__v => __obj.update("S3Bucket", __v.asInstanceOf[js.Any]))
-      S3Key.foreach(__v => __obj.update("S3Key", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      S3Bucket.foreach(__v => __obj.updateDynamic("S3Bucket")(__v.asInstanceOf[js.Any]))
+      S3Key.foreach(__v => __obj.updateDynamic("S3Key")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Location]
     }
   }
@@ -3271,17 +3275,17 @@ package elasticbeanstalk {
         LaunchedAt: js.UndefOr[LaunchedAt] = js.undefined,
         System: js.UndefOr[SystemStatus] = js.undefined
     ): SingleInstanceHealth = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationMetrics.foreach(__v => __obj.update("ApplicationMetrics", __v.asInstanceOf[js.Any]))
-      AvailabilityZone.foreach(__v => __obj.update("AvailabilityZone", __v.asInstanceOf[js.Any]))
-      Causes.foreach(__v => __obj.update("Causes", __v.asInstanceOf[js.Any]))
-      Color.foreach(__v => __obj.update("Color", __v.asInstanceOf[js.Any]))
-      Deployment.foreach(__v => __obj.update("Deployment", __v.asInstanceOf[js.Any]))
-      HealthStatus.foreach(__v => __obj.update("HealthStatus", __v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      InstanceType.foreach(__v => __obj.update("InstanceType", __v.asInstanceOf[js.Any]))
-      LaunchedAt.foreach(__v => __obj.update("LaunchedAt", __v.asInstanceOf[js.Any]))
-      System.foreach(__v => __obj.update("System", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationMetrics.foreach(__v => __obj.updateDynamic("ApplicationMetrics")(__v.asInstanceOf[js.Any]))
+      AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
+      Causes.foreach(__v => __obj.updateDynamic("Causes")(__v.asInstanceOf[js.Any]))
+      Color.foreach(__v => __obj.updateDynamic("Color")(__v.asInstanceOf[js.Any]))
+      Deployment.foreach(__v => __obj.updateDynamic("Deployment")(__v.asInstanceOf[js.Any]))
+      HealthStatus.foreach(__v => __obj.updateDynamic("HealthStatus")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
+      LaunchedAt.foreach(__v => __obj.updateDynamic("LaunchedAt")(__v.asInstanceOf[js.Any]))
+      System.foreach(__v => __obj.updateDynamic("System")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SingleInstanceHealth]
     }
   }
@@ -3300,9 +3304,9 @@ package elasticbeanstalk {
         PermittedFileTypes: js.UndefOr[SolutionStackFileTypeList] = js.undefined,
         SolutionStackName: js.UndefOr[SolutionStackName] = js.undefined
     ): SolutionStackDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PermittedFileTypes.foreach(__v => __obj.update("PermittedFileTypes", __v.asInstanceOf[js.Any]))
-      SolutionStackName.foreach(__v => __obj.update("SolutionStackName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PermittedFileTypes.foreach(__v => __obj.updateDynamic("PermittedFileTypes")(__v.asInstanceOf[js.Any]))
+      SolutionStackName.foreach(__v => __obj.updateDynamic("SolutionStackName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SolutionStackDescription]
     }
   }
@@ -3323,7 +3327,7 @@ package elasticbeanstalk {
         SourceRepository: SourceRepository,
         SourceType: SourceType
     ): SourceBuildInformation = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SourceLocation"   -> SourceLocation.asInstanceOf[js.Any],
         "SourceRepository" -> SourceRepository.asInstanceOf[js.Any],
         "SourceType"       -> SourceType.asInstanceOf[js.Any]
@@ -3347,9 +3351,9 @@ package elasticbeanstalk {
         ApplicationName: js.UndefOr[ApplicationName] = js.undefined,
         TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined
     ): SourceConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationName.foreach(__v => __obj.update("ApplicationName", __v.asInstanceOf[js.Any]))
-      TemplateName.foreach(__v => __obj.update("TemplateName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationName.foreach(__v => __obj.updateDynamic("ApplicationName")(__v.asInstanceOf[js.Any]))
+      TemplateName.foreach(__v => __obj.updateDynamic("TemplateName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SourceConfiguration]
     }
   }
@@ -3386,11 +3390,11 @@ package elasticbeanstalk {
         Status4xx: js.UndefOr[NullableInteger] = js.undefined,
         Status5xx: js.UndefOr[NullableInteger] = js.undefined
     ): StatusCodes = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Status2xx.foreach(__v => __obj.update("Status2xx", __v.asInstanceOf[js.Any]))
-      Status3xx.foreach(__v => __obj.update("Status3xx", __v.asInstanceOf[js.Any]))
-      Status4xx.foreach(__v => __obj.update("Status4xx", __v.asInstanceOf[js.Any]))
-      Status5xx.foreach(__v => __obj.update("Status5xx", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Status2xx.foreach(__v => __obj.updateDynamic("Status2xx")(__v.asInstanceOf[js.Any]))
+      Status3xx.foreach(__v => __obj.updateDynamic("Status3xx")(__v.asInstanceOf[js.Any]))
+      Status4xx.foreach(__v => __obj.updateDynamic("Status4xx")(__v.asInstanceOf[js.Any]))
+      Status5xx.foreach(__v => __obj.updateDynamic("Status5xx")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StatusCodes]
     }
   }
@@ -3413,11 +3417,13 @@ package elasticbeanstalk {
         SourceEnvironmentId: js.UndefOr[EnvironmentId] = js.undefined,
         SourceEnvironmentName: js.UndefOr[EnvironmentName] = js.undefined
     ): SwapEnvironmentCNAMEsMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DestinationEnvironmentId.foreach(__v => __obj.update("DestinationEnvironmentId", __v.asInstanceOf[js.Any]))
-      DestinationEnvironmentName.foreach(__v => __obj.update("DestinationEnvironmentName", __v.asInstanceOf[js.Any]))
-      SourceEnvironmentId.foreach(__v => __obj.update("SourceEnvironmentId", __v.asInstanceOf[js.Any]))
-      SourceEnvironmentName.foreach(__v => __obj.update("SourceEnvironmentName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DestinationEnvironmentId.foreach(__v => __obj.updateDynamic("DestinationEnvironmentId")(__v.asInstanceOf[js.Any]))
+      DestinationEnvironmentName.foreach(
+        __v => __obj.updateDynamic("DestinationEnvironmentName")(__v.asInstanceOf[js.Any])
+      )
+      SourceEnvironmentId.foreach(__v => __obj.updateDynamic("SourceEnvironmentId")(__v.asInstanceOf[js.Any]))
+      SourceEnvironmentName.foreach(__v => __obj.updateDynamic("SourceEnvironmentName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SwapEnvironmentCNAMEsMessage]
     }
   }
@@ -3436,9 +3442,9 @@ package elasticbeanstalk {
         CPUUtilization: js.UndefOr[CPUUtilization] = js.undefined,
         LoadAverage: js.UndefOr[LoadAverage] = js.undefined
     ): SystemStatus = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CPUUtilization.foreach(__v => __obj.update("CPUUtilization", __v.asInstanceOf[js.Any]))
-      LoadAverage.foreach(__v => __obj.update("LoadAverage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CPUUtilization.foreach(__v => __obj.updateDynamic("CPUUtilization")(__v.asInstanceOf[js.Any]))
+      LoadAverage.foreach(__v => __obj.updateDynamic("LoadAverage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SystemStatus]
     }
   }
@@ -3457,9 +3463,9 @@ package elasticbeanstalk {
         Key: js.UndefOr[TagKey] = js.undefined,
         Value: js.UndefOr[TagValue] = js.undefined
     ): Tag = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tag]
     }
   }
@@ -3482,11 +3488,11 @@ package elasticbeanstalk {
         ForceTerminate: js.UndefOr[ForceTerminate] = js.undefined,
         TerminateResources: js.UndefOr[TerminateEnvironmentResources] = js.undefined
     ): TerminateEnvironmentMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
-      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
-      ForceTerminate.foreach(__v => __obj.update("ForceTerminate", __v.asInstanceOf[js.Any]))
-      TerminateResources.foreach(__v => __obj.update("TerminateResources", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EnvironmentId.foreach(__v => __obj.updateDynamic("EnvironmentId")(__v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.updateDynamic("EnvironmentName")(__v.asInstanceOf[js.Any]))
+      ForceTerminate.foreach(__v => __obj.updateDynamic("ForceTerminate")(__v.asInstanceOf[js.Any]))
+      TerminateResources.foreach(__v => __obj.updateDynamic("TerminateResources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TerminateEnvironmentMessage]
     }
   }
@@ -3503,8 +3509,8 @@ package elasticbeanstalk {
     def apply(
         Name: js.UndefOr[ResourceId] = js.undefined
     ): Trigger = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Trigger]
     }
   }
@@ -3523,11 +3529,11 @@ package elasticbeanstalk {
         ApplicationName: ApplicationName,
         Description: js.UndefOr[Description] = js.undefined
     ): UpdateApplicationMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateApplicationMessage]
     }
   }
@@ -3543,7 +3549,7 @@ package elasticbeanstalk {
         ApplicationName: ApplicationName,
         ResourceLifecycleConfig: ApplicationResourceLifecycleConfig
     ): UpdateApplicationResourceLifecycleMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName"         -> ApplicationName.asInstanceOf[js.Any],
         "ResourceLifecycleConfig" -> ResourceLifecycleConfig.asInstanceOf[js.Any]
       )
@@ -3568,12 +3574,12 @@ package elasticbeanstalk {
         VersionLabel: VersionLabel,
         Description: js.UndefOr[Description] = js.undefined
     ): UpdateApplicationVersionMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "VersionLabel"    -> VersionLabel.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateApplicationVersionMessage]
     }
   }
@@ -3598,14 +3604,14 @@ package elasticbeanstalk {
         OptionSettings: js.UndefOr[ConfigurationOptionSettingsList] = js.undefined,
         OptionsToRemove: js.UndefOr[OptionsSpecifierList] = js.undefined
     ): UpdateConfigurationTemplateMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "TemplateName"    -> TemplateName.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      OptionSettings.foreach(__v => __obj.update("OptionSettings", __v.asInstanceOf[js.Any]))
-      OptionsToRemove.foreach(__v => __obj.update("OptionsToRemove", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      OptionSettings.foreach(__v => __obj.updateDynamic("OptionSettings")(__v.asInstanceOf[js.Any]))
+      OptionsToRemove.foreach(__v => __obj.updateDynamic("OptionsToRemove")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateConfigurationTemplateMessage]
     }
   }
@@ -3644,19 +3650,19 @@ package elasticbeanstalk {
         Tier: js.UndefOr[EnvironmentTier] = js.undefined,
         VersionLabel: js.UndefOr[VersionLabel] = js.undefined
     ): UpdateEnvironmentMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApplicationName.foreach(__v => __obj.update("ApplicationName", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      EnvironmentId.foreach(__v => __obj.update("EnvironmentId", __v.asInstanceOf[js.Any]))
-      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
-      GroupName.foreach(__v => __obj.update("GroupName", __v.asInstanceOf[js.Any]))
-      OptionSettings.foreach(__v => __obj.update("OptionSettings", __v.asInstanceOf[js.Any]))
-      OptionsToRemove.foreach(__v => __obj.update("OptionsToRemove", __v.asInstanceOf[js.Any]))
-      PlatformArn.foreach(__v => __obj.update("PlatformArn", __v.asInstanceOf[js.Any]))
-      SolutionStackName.foreach(__v => __obj.update("SolutionStackName", __v.asInstanceOf[js.Any]))
-      TemplateName.foreach(__v => __obj.update("TemplateName", __v.asInstanceOf[js.Any]))
-      Tier.foreach(__v => __obj.update("Tier", __v.asInstanceOf[js.Any]))
-      VersionLabel.foreach(__v => __obj.update("VersionLabel", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApplicationName.foreach(__v => __obj.updateDynamic("ApplicationName")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EnvironmentId.foreach(__v => __obj.updateDynamic("EnvironmentId")(__v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.updateDynamic("EnvironmentName")(__v.asInstanceOf[js.Any]))
+      GroupName.foreach(__v => __obj.updateDynamic("GroupName")(__v.asInstanceOf[js.Any]))
+      OptionSettings.foreach(__v => __obj.updateDynamic("OptionSettings")(__v.asInstanceOf[js.Any]))
+      OptionsToRemove.foreach(__v => __obj.updateDynamic("OptionsToRemove")(__v.asInstanceOf[js.Any]))
+      PlatformArn.foreach(__v => __obj.updateDynamic("PlatformArn")(__v.asInstanceOf[js.Any]))
+      SolutionStackName.foreach(__v => __obj.updateDynamic("SolutionStackName")(__v.asInstanceOf[js.Any]))
+      TemplateName.foreach(__v => __obj.updateDynamic("TemplateName")(__v.asInstanceOf[js.Any]))
+      Tier.foreach(__v => __obj.updateDynamic("Tier")(__v.asInstanceOf[js.Any]))
+      VersionLabel.foreach(__v => __obj.updateDynamic("VersionLabel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateEnvironmentMessage]
     }
   }
@@ -3674,12 +3680,12 @@ package elasticbeanstalk {
         TagsToAdd: js.UndefOr[TagList] = js.undefined,
         TagsToRemove: js.UndefOr[TagKeyList] = js.undefined
     ): UpdateTagsForResourceMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
-      TagsToAdd.foreach(__v => __obj.update("TagsToAdd", __v.asInstanceOf[js.Any]))
-      TagsToRemove.foreach(__v => __obj.update("TagsToRemove", __v.asInstanceOf[js.Any]))
+      TagsToAdd.foreach(__v => __obj.updateDynamic("TagsToAdd")(__v.asInstanceOf[js.Any]))
+      TagsToRemove.foreach(__v => __obj.updateDynamic("TagsToRemove")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateTagsForResourceMessage]
     }
   }
@@ -3702,13 +3708,13 @@ package elasticbeanstalk {
         EnvironmentName: js.UndefOr[EnvironmentName] = js.undefined,
         TemplateName: js.UndefOr[ConfigurationTemplateName] = js.undefined
     ): ValidateConfigurationSettingsMessage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
         "OptionSettings"  -> OptionSettings.asInstanceOf[js.Any]
       )
 
-      EnvironmentName.foreach(__v => __obj.update("EnvironmentName", __v.asInstanceOf[js.Any]))
-      TemplateName.foreach(__v => __obj.update("TemplateName", __v.asInstanceOf[js.Any]))
+      EnvironmentName.foreach(__v => __obj.updateDynamic("EnvironmentName")(__v.asInstanceOf[js.Any]))
+      TemplateName.foreach(__v => __obj.updateDynamic("TemplateName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ValidateConfigurationSettingsMessage]
     }
   }
@@ -3731,11 +3737,11 @@ package elasticbeanstalk {
         OptionName: js.UndefOr[ConfigurationOptionName] = js.undefined,
         Severity: js.UndefOr[ValidationSeverity] = js.undefined
     ): ValidationMessage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
-      Namespace.foreach(__v => __obj.update("Namespace", __v.asInstanceOf[js.Any]))
-      OptionName.foreach(__v => __obj.update("OptionName", __v.asInstanceOf[js.Any]))
-      Severity.foreach(__v => __obj.update("Severity", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
+      OptionName.foreach(__v => __obj.updateDynamic("OptionName")(__v.asInstanceOf[js.Any]))
+      Severity.foreach(__v => __obj.updateDynamic("Severity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ValidationMessage]
     }
   }

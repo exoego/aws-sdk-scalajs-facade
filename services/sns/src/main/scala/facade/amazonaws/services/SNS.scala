@@ -190,7 +190,7 @@ package sns {
         Label: label,
         TopicArn: topicARN
     ): AddPermissionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AWSAccountId" -> AWSAccountId.asInstanceOf[js.Any],
         "ActionName"   -> ActionName.asInstanceOf[js.Any],
         "Label"        -> Label.asInstanceOf[js.Any],
@@ -213,7 +213,7 @@ package sns {
     def apply(
         phoneNumber: PhoneNumber
     ): CheckIfPhoneNumberIsOptedOutInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "phoneNumber" -> phoneNumber.asInstanceOf[js.Any]
       )
 
@@ -233,8 +233,8 @@ package sns {
     def apply(
         isOptedOut: js.UndefOr[Boolean] = js.undefined
     ): CheckIfPhoneNumberIsOptedOutResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      isOptedOut.foreach(__v => __obj.update("isOptedOut", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      isOptedOut.foreach(__v => __obj.updateDynamic("isOptedOut")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CheckIfPhoneNumberIsOptedOutResponse]
     }
   }
@@ -255,12 +255,14 @@ package sns {
         TopicArn: topicARN,
         AuthenticateOnUnsubscribe: js.UndefOr[authenticateOnUnsubscribe] = js.undefined
     ): ConfirmSubscriptionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Token"    -> Token.asInstanceOf[js.Any],
         "TopicArn" -> TopicArn.asInstanceOf[js.Any]
       )
 
-      AuthenticateOnUnsubscribe.foreach(__v => __obj.update("AuthenticateOnUnsubscribe", __v.asInstanceOf[js.Any]))
+      AuthenticateOnUnsubscribe.foreach(
+        __v => __obj.updateDynamic("AuthenticateOnUnsubscribe")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[ConfirmSubscriptionInput]
     }
   }
@@ -277,8 +279,8 @@ package sns {
     def apply(
         SubscriptionArn: js.UndefOr[subscriptionARN] = js.undefined
     ): ConfirmSubscriptionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SubscriptionArn.foreach(__v => __obj.update("SubscriptionArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SubscriptionArn.foreach(__v => __obj.updateDynamic("SubscriptionArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfirmSubscriptionResponse]
     }
   }
@@ -295,8 +297,8 @@ package sns {
     def apply(
         EndpointArn: js.UndefOr[String] = js.undefined
     ): CreateEndpointResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EndpointArn.foreach(__v => __obj.update("EndpointArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EndpointArn.foreach(__v => __obj.updateDynamic("EndpointArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateEndpointResponse]
     }
   }
@@ -317,7 +319,7 @@ package sns {
         Name: String,
         Platform: String
     ): CreatePlatformApplicationInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Attributes" -> Attributes.asInstanceOf[js.Any],
         "Name"       -> Name.asInstanceOf[js.Any],
         "Platform"   -> Platform.asInstanceOf[js.Any]
@@ -339,8 +341,8 @@ package sns {
     def apply(
         PlatformApplicationArn: js.UndefOr[String] = js.undefined
     ): CreatePlatformApplicationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PlatformApplicationArn.foreach(__v => __obj.update("PlatformApplicationArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PlatformApplicationArn.foreach(__v => __obj.updateDynamic("PlatformApplicationArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePlatformApplicationResponse]
     }
   }
@@ -363,13 +365,13 @@ package sns {
         Attributes: js.UndefOr[MapStringToString] = js.undefined,
         CustomUserData: js.UndefOr[String] = js.undefined
     ): CreatePlatformEndpointInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PlatformApplicationArn" -> PlatformApplicationArn.asInstanceOf[js.Any],
         "Token"                  -> Token.asInstanceOf[js.Any]
       )
 
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      CustomUserData.foreach(__v => __obj.update("CustomUserData", __v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      CustomUserData.foreach(__v => __obj.updateDynamic("CustomUserData")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePlatformEndpointInput]
     }
   }
@@ -390,12 +392,12 @@ package sns {
         Attributes: js.UndefOr[TopicAttributesMap] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateTopicInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTopicInput]
     }
   }
@@ -412,8 +414,8 @@ package sns {
     def apply(
         TopicArn: js.UndefOr[topicARN] = js.undefined
     ): CreateTopicResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TopicArn.foreach(__v => __obj.update("TopicArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TopicArn.foreach(__v => __obj.updateDynamic("TopicArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTopicResponse]
     }
   }
@@ -430,7 +432,7 @@ package sns {
     def apply(
         EndpointArn: String
     ): DeleteEndpointInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]
       )
 
@@ -450,7 +452,7 @@ package sns {
     def apply(
         PlatformApplicationArn: String
     ): DeletePlatformApplicationInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PlatformApplicationArn" -> PlatformApplicationArn.asInstanceOf[js.Any]
       )
 
@@ -467,7 +469,7 @@ package sns {
     def apply(
         TopicArn: topicARN
     ): DeleteTopicInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TopicArn" -> TopicArn.asInstanceOf[js.Any]
       )
 
@@ -489,9 +491,9 @@ package sns {
         Attributes: js.UndefOr[MapStringToString] = js.undefined,
         EndpointArn: js.UndefOr[String] = js.undefined
     ): Endpoint = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      EndpointArn.foreach(__v => __obj.update("EndpointArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      EndpointArn.foreach(__v => __obj.updateDynamic("EndpointArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Endpoint]
     }
   }
@@ -508,7 +510,7 @@ package sns {
     def apply(
         EndpointArn: String
     ): GetEndpointAttributesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]
       )
 
@@ -528,8 +530,8 @@ package sns {
     def apply(
         Attributes: js.UndefOr[MapStringToString] = js.undefined
     ): GetEndpointAttributesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetEndpointAttributesResponse]
     }
   }
@@ -546,7 +548,7 @@ package sns {
     def apply(
         PlatformApplicationArn: String
     ): GetPlatformApplicationAttributesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PlatformApplicationArn" -> PlatformApplicationArn.asInstanceOf[js.Any]
       )
 
@@ -566,8 +568,8 @@ package sns {
     def apply(
         Attributes: js.UndefOr[MapStringToString] = js.undefined
     ): GetPlatformApplicationAttributesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPlatformApplicationAttributesResponse]
     }
   }
@@ -584,8 +586,8 @@ package sns {
     def apply(
         attributes: js.UndefOr[ListString] = js.undefined
     ): GetSMSAttributesInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      attributes.foreach(__v => __obj.update("attributes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSMSAttributesInput]
     }
   }
@@ -602,8 +604,8 @@ package sns {
     def apply(
         attributes: js.UndefOr[MapStringToString] = js.undefined
     ): GetSMSAttributesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      attributes.foreach(__v => __obj.update("attributes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSMSAttributesResponse]
     }
   }
@@ -620,7 +622,7 @@ package sns {
     def apply(
         SubscriptionArn: subscriptionARN
     ): GetSubscriptionAttributesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SubscriptionArn" -> SubscriptionArn.asInstanceOf[js.Any]
       )
 
@@ -640,8 +642,8 @@ package sns {
     def apply(
         Attributes: js.UndefOr[SubscriptionAttributesMap] = js.undefined
     ): GetSubscriptionAttributesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSubscriptionAttributesResponse]
     }
   }
@@ -658,7 +660,7 @@ package sns {
     def apply(
         TopicArn: topicARN
     ): GetTopicAttributesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TopicArn" -> TopicArn.asInstanceOf[js.Any]
       )
 
@@ -678,8 +680,8 @@ package sns {
     def apply(
         Attributes: js.UndefOr[TopicAttributesMap] = js.undefined
     ): GetTopicAttributesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTopicAttributesResponse]
     }
   }
@@ -698,11 +700,11 @@ package sns {
         PlatformApplicationArn: String,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListEndpointsByPlatformApplicationInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PlatformApplicationArn" -> PlatformApplicationArn.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEndpointsByPlatformApplicationInput]
     }
   }
@@ -721,9 +723,9 @@ package sns {
         Endpoints: js.UndefOr[ListOfEndpoints] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): ListEndpointsByPlatformApplicationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Endpoints.foreach(__v => __obj.update("Endpoints", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Endpoints.foreach(__v => __obj.updateDynamic("Endpoints")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEndpointsByPlatformApplicationResponse]
     }
   }
@@ -740,8 +742,8 @@ package sns {
     def apply(
         nextToken: js.UndefOr[String] = js.undefined
     ): ListPhoneNumbersOptedOutInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPhoneNumbersOptedOutInput]
     }
   }
@@ -760,9 +762,9 @@ package sns {
         nextToken: js.UndefOr[String] = js.undefined,
         phoneNumbers: js.UndefOr[PhoneNumberList] = js.undefined
     ): ListPhoneNumbersOptedOutResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      phoneNumbers.foreach(__v => __obj.update("phoneNumbers", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      phoneNumbers.foreach(__v => __obj.updateDynamic("phoneNumbers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPhoneNumbersOptedOutResponse]
     }
   }
@@ -779,8 +781,8 @@ package sns {
     def apply(
         NextToken: js.UndefOr[String] = js.undefined
     ): ListPlatformApplicationsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPlatformApplicationsInput]
     }
   }
@@ -799,9 +801,9 @@ package sns {
         NextToken: js.UndefOr[String] = js.undefined,
         PlatformApplications: js.UndefOr[ListOfPlatformApplications] = js.undefined
     ): ListPlatformApplicationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PlatformApplications.foreach(__v => __obj.update("PlatformApplications", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PlatformApplications.foreach(__v => __obj.updateDynamic("PlatformApplications")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPlatformApplicationsResponse]
     }
   }
@@ -820,11 +822,11 @@ package sns {
         TopicArn: topicARN,
         NextToken: js.UndefOr[nextToken] = js.undefined
     ): ListSubscriptionsByTopicInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TopicArn" -> TopicArn.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSubscriptionsByTopicInput]
     }
   }
@@ -843,9 +845,9 @@ package sns {
         NextToken: js.UndefOr[nextToken] = js.undefined,
         Subscriptions: js.UndefOr[SubscriptionsList] = js.undefined
     ): ListSubscriptionsByTopicResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Subscriptions.foreach(__v => __obj.update("Subscriptions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Subscriptions.foreach(__v => __obj.updateDynamic("Subscriptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSubscriptionsByTopicResponse]
     }
   }
@@ -862,8 +864,8 @@ package sns {
     def apply(
         NextToken: js.UndefOr[nextToken] = js.undefined
     ): ListSubscriptionsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSubscriptionsInput]
     }
   }
@@ -882,9 +884,9 @@ package sns {
         NextToken: js.UndefOr[nextToken] = js.undefined,
         Subscriptions: js.UndefOr[SubscriptionsList] = js.undefined
     ): ListSubscriptionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Subscriptions.foreach(__v => __obj.update("Subscriptions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Subscriptions.foreach(__v => __obj.updateDynamic("Subscriptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSubscriptionsResponse]
     }
   }
@@ -898,7 +900,7 @@ package sns {
     def apply(
         ResourceArn: AmazonResourceName
     ): ListTagsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
@@ -915,8 +917,8 @@ package sns {
     def apply(
         Tags: js.UndefOr[TagList] = js.undefined
     ): ListTagsForResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
@@ -930,8 +932,8 @@ package sns {
     def apply(
         NextToken: js.UndefOr[nextToken] = js.undefined
     ): ListTopicsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTopicsInput]
     }
   }
@@ -950,9 +952,9 @@ package sns {
         NextToken: js.UndefOr[nextToken] = js.undefined,
         Topics: js.UndefOr[TopicsList] = js.undefined
     ): ListTopicsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Topics.foreach(__v => __obj.update("Topics", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Topics.foreach(__v => __obj.updateDynamic("Topics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTopicsResponse]
     }
   }
@@ -974,12 +976,12 @@ package sns {
         BinaryValue: js.UndefOr[Binary] = js.undefined,
         StringValue: js.UndefOr[String] = js.undefined
     ): MessageAttributeValue = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DataType" -> DataType.asInstanceOf[js.Any]
       )
 
-      BinaryValue.foreach(__v => __obj.update("BinaryValue", __v.asInstanceOf[js.Any]))
-      StringValue.foreach(__v => __obj.update("StringValue", __v.asInstanceOf[js.Any]))
+      BinaryValue.foreach(__v => __obj.updateDynamic("BinaryValue")(__v.asInstanceOf[js.Any]))
+      StringValue.foreach(__v => __obj.updateDynamic("StringValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MessageAttributeValue]
     }
   }
@@ -996,7 +998,7 @@ package sns {
     def apply(
         phoneNumber: PhoneNumber
     ): OptInPhoneNumberInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "phoneNumber" -> phoneNumber.asInstanceOf[js.Any]
       )
 
@@ -1013,7 +1015,7 @@ package sns {
   object OptInPhoneNumberResponse {
     def apply(
         ): OptInPhoneNumberResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[OptInPhoneNumberResponse]
     }
@@ -1033,9 +1035,9 @@ package sns {
         Attributes: js.UndefOr[MapStringToString] = js.undefined,
         PlatformApplicationArn: js.UndefOr[String] = js.undefined
     ): PlatformApplication = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      PlatformApplicationArn.foreach(__v => __obj.update("PlatformApplicationArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      PlatformApplicationArn.foreach(__v => __obj.updateDynamic("PlatformApplicationArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PlatformApplication]
     }
   }
@@ -1064,16 +1066,16 @@ package sns {
         TargetArn: js.UndefOr[String] = js.undefined,
         TopicArn: js.UndefOr[topicARN] = js.undefined
     ): PublishInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Message" -> Message.asInstanceOf[js.Any]
       )
 
-      MessageAttributes.foreach(__v => __obj.update("MessageAttributes", __v.asInstanceOf[js.Any]))
-      MessageStructure.foreach(__v => __obj.update("MessageStructure", __v.asInstanceOf[js.Any]))
-      PhoneNumber.foreach(__v => __obj.update("PhoneNumber", __v.asInstanceOf[js.Any]))
-      Subject.foreach(__v => __obj.update("Subject", __v.asInstanceOf[js.Any]))
-      TargetArn.foreach(__v => __obj.update("TargetArn", __v.asInstanceOf[js.Any]))
-      TopicArn.foreach(__v => __obj.update("TopicArn", __v.asInstanceOf[js.Any]))
+      MessageAttributes.foreach(__v => __obj.updateDynamic("MessageAttributes")(__v.asInstanceOf[js.Any]))
+      MessageStructure.foreach(__v => __obj.updateDynamic("MessageStructure")(__v.asInstanceOf[js.Any]))
+      PhoneNumber.foreach(__v => __obj.updateDynamic("PhoneNumber")(__v.asInstanceOf[js.Any]))
+      Subject.foreach(__v => __obj.updateDynamic("Subject")(__v.asInstanceOf[js.Any]))
+      TargetArn.foreach(__v => __obj.updateDynamic("TargetArn")(__v.asInstanceOf[js.Any]))
+      TopicArn.foreach(__v => __obj.updateDynamic("TopicArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PublishInput]
     }
   }
@@ -1090,8 +1092,8 @@ package sns {
     def apply(
         MessageId: js.UndefOr[messageId] = js.undefined
     ): PublishResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MessageId.foreach(__v => __obj.update("MessageId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MessageId.foreach(__v => __obj.updateDynamic("MessageId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PublishResponse]
     }
   }
@@ -1110,7 +1112,7 @@ package sns {
         Label: label,
         TopicArn: topicARN
     ): RemovePermissionInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Label"    -> Label.asInstanceOf[js.Any],
         "TopicArn" -> TopicArn.asInstanceOf[js.Any]
       )
@@ -1133,7 +1135,7 @@ package sns {
         Attributes: MapStringToString,
         EndpointArn: String
     ): SetEndpointAttributesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Attributes"  -> Attributes.asInstanceOf[js.Any],
         "EndpointArn" -> EndpointArn.asInstanceOf[js.Any]
       )
@@ -1156,7 +1158,7 @@ package sns {
         Attributes: MapStringToString,
         PlatformApplicationArn: String
     ): SetPlatformApplicationAttributesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Attributes"             -> Attributes.asInstanceOf[js.Any],
         "PlatformApplicationArn" -> PlatformApplicationArn.asInstanceOf[js.Any]
       )
@@ -1177,7 +1179,7 @@ package sns {
     def apply(
         attributes: MapStringToString
     ): SetSMSAttributesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "attributes" -> attributes.asInstanceOf[js.Any]
       )
 
@@ -1194,7 +1196,7 @@ package sns {
   object SetSMSAttributesResponse {
     def apply(
         ): SetSMSAttributesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SetSMSAttributesResponse]
     }
@@ -1216,12 +1218,12 @@ package sns {
         SubscriptionArn: subscriptionARN,
         AttributeValue: js.UndefOr[attributeValue] = js.undefined
     ): SetSubscriptionAttributesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AttributeName"   -> AttributeName.asInstanceOf[js.Any],
         "SubscriptionArn" -> SubscriptionArn.asInstanceOf[js.Any]
       )
 
-      AttributeValue.foreach(__v => __obj.update("AttributeValue", __v.asInstanceOf[js.Any]))
+      AttributeValue.foreach(__v => __obj.updateDynamic("AttributeValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetSubscriptionAttributesInput]
     }
   }
@@ -1242,12 +1244,12 @@ package sns {
         TopicArn: topicARN,
         AttributeValue: js.UndefOr[attributeValue] = js.undefined
     ): SetTopicAttributesInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AttributeName" -> AttributeName.asInstanceOf[js.Any],
         "TopicArn"      -> TopicArn.asInstanceOf[js.Any]
       )
 
-      AttributeValue.foreach(__v => __obj.update("AttributeValue", __v.asInstanceOf[js.Any]))
+      AttributeValue.foreach(__v => __obj.updateDynamic("AttributeValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetTopicAttributesInput]
     }
   }
@@ -1272,14 +1274,14 @@ package sns {
         Endpoint: js.UndefOr[endpoint] = js.undefined,
         ReturnSubscriptionArn: js.UndefOr[Boolean] = js.undefined
     ): SubscribeInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Protocol" -> Protocol.asInstanceOf[js.Any],
         "TopicArn" -> TopicArn.asInstanceOf[js.Any]
       )
 
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
-      Endpoint.foreach(__v => __obj.update("Endpoint", __v.asInstanceOf[js.Any]))
-      ReturnSubscriptionArn.foreach(__v => __obj.update("ReturnSubscriptionArn", __v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
+      ReturnSubscriptionArn.foreach(__v => __obj.updateDynamic("ReturnSubscriptionArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SubscribeInput]
     }
   }
@@ -1296,8 +1298,8 @@ package sns {
     def apply(
         SubscriptionArn: js.UndefOr[subscriptionARN] = js.undefined
     ): SubscribeResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SubscriptionArn.foreach(__v => __obj.update("SubscriptionArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SubscriptionArn.foreach(__v => __obj.updateDynamic("SubscriptionArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SubscribeResponse]
     }
   }
@@ -1322,12 +1324,12 @@ package sns {
         SubscriptionArn: js.UndefOr[subscriptionARN] = js.undefined,
         TopicArn: js.UndefOr[topicARN] = js.undefined
     ): Subscription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Endpoint.foreach(__v => __obj.update("Endpoint", __v.asInstanceOf[js.Any]))
-      Owner.foreach(__v => __obj.update("Owner", __v.asInstanceOf[js.Any]))
-      Protocol.foreach(__v => __obj.update("Protocol", __v.asInstanceOf[js.Any]))
-      SubscriptionArn.foreach(__v => __obj.update("SubscriptionArn", __v.asInstanceOf[js.Any]))
-      TopicArn.foreach(__v => __obj.update("TopicArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
+      Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
+      SubscriptionArn.foreach(__v => __obj.updateDynamic("SubscriptionArn")(__v.asInstanceOf[js.Any]))
+      TopicArn.foreach(__v => __obj.updateDynamic("TopicArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Subscription]
     }
   }
@@ -1346,7 +1348,7 @@ package sns {
         Key: TagKey,
         Value: TagValue
     ): Tag = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"   -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
@@ -1366,7 +1368,7 @@ package sns {
         ResourceArn: AmazonResourceName,
         Tags: TagList
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
       )
@@ -1381,7 +1383,7 @@ package sns {
   object TagResourceResponse {
     def apply(
         ): TagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -1399,8 +1401,8 @@ package sns {
     def apply(
         TopicArn: js.UndefOr[topicARN] = js.undefined
     ): Topic = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TopicArn.foreach(__v => __obj.update("TopicArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TopicArn.foreach(__v => __obj.updateDynamic("TopicArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Topic]
     }
   }
@@ -1417,7 +1419,7 @@ package sns {
     def apply(
         SubscriptionArn: subscriptionARN
     ): UnsubscribeInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SubscriptionArn" -> SubscriptionArn.asInstanceOf[js.Any]
       )
 
@@ -1436,7 +1438,7 @@ package sns {
         ResourceArn: AmazonResourceName,
         TagKeys: TagKeyList
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
       )
@@ -1451,7 +1453,7 @@ package sns {
   object UntagResourceResponse {
     def apply(
         ): UntagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
     }

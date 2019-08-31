@@ -125,10 +125,10 @@ package opsworkscm {
         Name: js.UndefOr[String] = js.undefined,
         Used: js.UndefOr[Int] = js.undefined
     ): AccountAttribute = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Maximum.foreach(__v => __obj.update("Maximum", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Used.foreach(__v => __obj.update("Used", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Maximum.foreach(__v => __obj.updateDynamic("Maximum")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Used.foreach(__v => __obj.updateDynamic("Used")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AccountAttribute]
     }
   }
@@ -146,7 +146,7 @@ package opsworkscm {
         NodeName: NodeName,
         ServerName: ServerName
     ): AssociateNodeRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "EngineAttributes" -> EngineAttributes.asInstanceOf[js.Any],
         "NodeName"         -> NodeName.asInstanceOf[js.Any],
         "ServerName"       -> ServerName.asInstanceOf[js.Any]
@@ -165,8 +165,10 @@ package opsworkscm {
     def apply(
         NodeAssociationStatusToken: js.UndefOr[NodeAssociationStatusToken] = js.undefined
     ): AssociateNodeResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NodeAssociationStatusToken.foreach(__v => __obj.update("NodeAssociationStatusToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NodeAssociationStatusToken.foreach(
+        __v => __obj.updateDynamic("NodeAssociationStatusToken")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[AssociateNodeResponse]
     }
   }
@@ -229,31 +231,33 @@ package opsworkscm {
         ToolsVersion: js.UndefOr[String] = js.undefined,
         UserArn: js.UndefOr[String] = js.undefined
     ): Backup = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupArn.foreach(__v => __obj.update("BackupArn", __v.asInstanceOf[js.Any]))
-      BackupId.foreach(__v => __obj.update("BackupId", __v.asInstanceOf[js.Any]))
-      BackupType.foreach(__v => __obj.update("BackupType", __v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.update("CreatedAt", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
-      EngineModel.foreach(__v => __obj.update("EngineModel", __v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
-      InstanceProfileArn.foreach(__v => __obj.update("InstanceProfileArn", __v.asInstanceOf[js.Any]))
-      InstanceType.foreach(__v => __obj.update("InstanceType", __v.asInstanceOf[js.Any]))
-      KeyPair.foreach(__v => __obj.update("KeyPair", __v.asInstanceOf[js.Any]))
-      PreferredBackupWindow.foreach(__v => __obj.update("PreferredBackupWindow", __v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
-      S3DataSize.foreach(__v => __obj.update("S3DataSize", __v.asInstanceOf[js.Any]))
-      S3DataUrl.foreach(__v => __obj.update("S3DataUrl", __v.asInstanceOf[js.Any]))
-      S3LogUrl.foreach(__v => __obj.update("S3LogUrl", __v.asInstanceOf[js.Any]))
-      SecurityGroupIds.foreach(__v => __obj.update("SecurityGroupIds", __v.asInstanceOf[js.Any]))
-      ServerName.foreach(__v => __obj.update("ServerName", __v.asInstanceOf[js.Any]))
-      ServiceRoleArn.foreach(__v => __obj.update("ServiceRoleArn", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusDescription.foreach(__v => __obj.update("StatusDescription", __v.asInstanceOf[js.Any]))
-      SubnetIds.foreach(__v => __obj.update("SubnetIds", __v.asInstanceOf[js.Any]))
-      ToolsVersion.foreach(__v => __obj.update("ToolsVersion", __v.asInstanceOf[js.Any]))
-      UserArn.foreach(__v => __obj.update("UserArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupArn.foreach(__v => __obj.updateDynamic("BackupArn")(__v.asInstanceOf[js.Any]))
+      BackupId.foreach(__v => __obj.updateDynamic("BackupId")(__v.asInstanceOf[js.Any]))
+      BackupType.foreach(__v => __obj.updateDynamic("BackupType")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
+      EngineModel.foreach(__v => __obj.updateDynamic("EngineModel")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      InstanceProfileArn.foreach(__v => __obj.updateDynamic("InstanceProfileArn")(__v.asInstanceOf[js.Any]))
+      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
+      KeyPair.foreach(__v => __obj.updateDynamic("KeyPair")(__v.asInstanceOf[js.Any]))
+      PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(
+        __v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      )
+      S3DataSize.foreach(__v => __obj.updateDynamic("S3DataSize")(__v.asInstanceOf[js.Any]))
+      S3DataUrl.foreach(__v => __obj.updateDynamic("S3DataUrl")(__v.asInstanceOf[js.Any]))
+      S3LogUrl.foreach(__v => __obj.updateDynamic("S3LogUrl")(__v.asInstanceOf[js.Any]))
+      SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
+      ServiceRoleArn.foreach(__v => __obj.updateDynamic("ServiceRoleArn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusDescription.foreach(__v => __obj.updateDynamic("StatusDescription")(__v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
+      ToolsVersion.foreach(__v => __obj.updateDynamic("ToolsVersion")(__v.asInstanceOf[js.Any]))
+      UserArn.foreach(__v => __obj.updateDynamic("UserArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Backup]
     }
   }
@@ -285,11 +289,11 @@ package opsworkscm {
         ServerName: ServerName,
         Description: js.UndefOr[String] = js.undefined
     ): CreateBackupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServerName" -> ServerName.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateBackupRequest]
     }
   }
@@ -303,8 +307,8 @@ package opsworkscm {
     def apply(
         Backup: js.UndefOr[Backup] = js.undefined
     ): CreateBackupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Backup.foreach(__v => __obj.update("Backup", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Backup.foreach(__v => __obj.updateDynamic("Backup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateBackupResponse]
     }
   }
@@ -350,26 +354,28 @@ package opsworkscm {
         SecurityGroupIds: js.UndefOr[Strings] = js.undefined,
         SubnetIds: js.UndefOr[Strings] = js.undefined
     ): CreateServerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceProfileArn" -> InstanceProfileArn.asInstanceOf[js.Any],
         "InstanceType"       -> InstanceType.asInstanceOf[js.Any],
         "ServerName"         -> ServerName.asInstanceOf[js.Any],
         "ServiceRoleArn"     -> ServiceRoleArn.asInstanceOf[js.Any]
       )
 
-      AssociatePublicIpAddress.foreach(__v => __obj.update("AssociatePublicIpAddress", __v.asInstanceOf[js.Any]))
-      BackupId.foreach(__v => __obj.update("BackupId", __v.asInstanceOf[js.Any]))
-      BackupRetentionCount.foreach(__v => __obj.update("BackupRetentionCount", __v.asInstanceOf[js.Any]))
-      DisableAutomatedBackup.foreach(__v => __obj.update("DisableAutomatedBackup", __v.asInstanceOf[js.Any]))
-      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
-      EngineAttributes.foreach(__v => __obj.update("EngineAttributes", __v.asInstanceOf[js.Any]))
-      EngineModel.foreach(__v => __obj.update("EngineModel", __v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
-      KeyPair.foreach(__v => __obj.update("KeyPair", __v.asInstanceOf[js.Any]))
-      PreferredBackupWindow.foreach(__v => __obj.update("PreferredBackupWindow", __v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
-      SecurityGroupIds.foreach(__v => __obj.update("SecurityGroupIds", __v.asInstanceOf[js.Any]))
-      SubnetIds.foreach(__v => __obj.update("SubnetIds", __v.asInstanceOf[js.Any]))
+      AssociatePublicIpAddress.foreach(__v => __obj.updateDynamic("AssociatePublicIpAddress")(__v.asInstanceOf[js.Any]))
+      BackupId.foreach(__v => __obj.updateDynamic("BackupId")(__v.asInstanceOf[js.Any]))
+      BackupRetentionCount.foreach(__v => __obj.updateDynamic("BackupRetentionCount")(__v.asInstanceOf[js.Any]))
+      DisableAutomatedBackup.foreach(__v => __obj.updateDynamic("DisableAutomatedBackup")(__v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
+      EngineAttributes.foreach(__v => __obj.updateDynamic("EngineAttributes")(__v.asInstanceOf[js.Any]))
+      EngineModel.foreach(__v => __obj.updateDynamic("EngineModel")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      KeyPair.foreach(__v => __obj.updateDynamic("KeyPair")(__v.asInstanceOf[js.Any]))
+      PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(
+        __v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      )
+      SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateServerRequest]
     }
   }
@@ -383,8 +389,8 @@ package opsworkscm {
     def apply(
         Server: js.UndefOr[Server] = js.undefined
     ): CreateServerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Server.foreach(__v => __obj.update("Server", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Server.foreach(__v => __obj.updateDynamic("Server")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateServerResponse]
     }
   }
@@ -398,7 +404,7 @@ package opsworkscm {
     def apply(
         BackupId: BackupId
     ): DeleteBackupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupId" -> BackupId.asInstanceOf[js.Any]
       )
 
@@ -412,7 +418,7 @@ package opsworkscm {
   object DeleteBackupResponse {
     def apply(
         ): DeleteBackupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteBackupResponse]
     }
@@ -427,7 +433,7 @@ package opsworkscm {
     def apply(
         ServerName: ServerName
     ): DeleteServerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServerName" -> ServerName.asInstanceOf[js.Any]
       )
 
@@ -441,7 +447,7 @@ package opsworkscm {
   object DeleteServerResponse {
     def apply(
         ): DeleteServerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteServerResponse]
     }
@@ -453,7 +459,7 @@ package opsworkscm {
   object DescribeAccountAttributesRequest {
     def apply(
         ): DescribeAccountAttributesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DescribeAccountAttributesRequest]
     }
@@ -468,8 +474,8 @@ package opsworkscm {
     def apply(
         Attributes: js.UndefOr[AccountAttributes] = js.undefined
     ): DescribeAccountAttributesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Attributes.foreach(__v => __obj.update("Attributes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAccountAttributesResponse]
     }
   }
@@ -489,11 +495,11 @@ package opsworkscm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ServerName: js.UndefOr[ServerName] = js.undefined
     ): DescribeBackupsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BackupId.foreach(__v => __obj.update("BackupId", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ServerName.foreach(__v => __obj.update("ServerName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BackupId.foreach(__v => __obj.updateDynamic("BackupId")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeBackupsRequest]
     }
   }
@@ -509,9 +515,9 @@ package opsworkscm {
         Backups: js.UndefOr[Backups] = js.undefined,
         NextToken: js.UndefOr[String] = js.undefined
     ): DescribeBackupsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Backups.foreach(__v => __obj.update("Backups", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Backups.foreach(__v => __obj.updateDynamic("Backups")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeBackupsResponse]
     }
   }
@@ -529,12 +535,12 @@ package opsworkscm {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeEventsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServerName" -> ServerName.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEventsRequest]
     }
   }
@@ -550,9 +556,9 @@ package opsworkscm {
         NextToken: js.UndefOr[String] = js.undefined,
         ServerEvents: js.UndefOr[ServerEvents] = js.undefined
     ): DescribeEventsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ServerEvents.foreach(__v => __obj.update("ServerEvents", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ServerEvents.foreach(__v => __obj.updateDynamic("ServerEvents")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEventsResponse]
     }
   }
@@ -568,7 +574,7 @@ package opsworkscm {
         NodeAssociationStatusToken: NodeAssociationStatusToken,
         ServerName: ServerName
     ): DescribeNodeAssociationStatusRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "NodeAssociationStatusToken" -> NodeAssociationStatusToken.asInstanceOf[js.Any],
         "ServerName"                 -> ServerName.asInstanceOf[js.Any]
       )
@@ -588,9 +594,9 @@ package opsworkscm {
         EngineAttributes: js.UndefOr[EngineAttributes] = js.undefined,
         NodeAssociationStatus: js.UndefOr[NodeAssociationStatus] = js.undefined
     ): DescribeNodeAssociationStatusResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EngineAttributes.foreach(__v => __obj.update("EngineAttributes", __v.asInstanceOf[js.Any]))
-      NodeAssociationStatus.foreach(__v => __obj.update("NodeAssociationStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EngineAttributes.foreach(__v => __obj.updateDynamic("EngineAttributes")(__v.asInstanceOf[js.Any]))
+      NodeAssociationStatus.foreach(__v => __obj.updateDynamic("NodeAssociationStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeNodeAssociationStatusResponse]
     }
   }
@@ -608,10 +614,10 @@ package opsworkscm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ServerName: js.UndefOr[ServerName] = js.undefined
     ): DescribeServersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ServerName.foreach(__v => __obj.update("ServerName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeServersRequest]
     }
   }
@@ -627,9 +633,9 @@ package opsworkscm {
         NextToken: js.UndefOr[String] = js.undefined,
         Servers: js.UndefOr[Servers] = js.undefined
     ): DescribeServersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Servers.foreach(__v => __obj.update("Servers", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Servers.foreach(__v => __obj.updateDynamic("Servers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeServersResponse]
     }
   }
@@ -647,12 +653,12 @@ package opsworkscm {
         ServerName: ServerName,
         EngineAttributes: js.UndefOr[EngineAttributes] = js.undefined
     ): DisassociateNodeRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "NodeName"   -> NodeName.asInstanceOf[js.Any],
         "ServerName" -> ServerName.asInstanceOf[js.Any]
       )
 
-      EngineAttributes.foreach(__v => __obj.update("EngineAttributes", __v.asInstanceOf[js.Any]))
+      EngineAttributes.foreach(__v => __obj.updateDynamic("EngineAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisassociateNodeRequest]
     }
   }
@@ -666,8 +672,10 @@ package opsworkscm {
     def apply(
         NodeAssociationStatusToken: js.UndefOr[NodeAssociationStatusToken] = js.undefined
     ): DisassociateNodeResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NodeAssociationStatusToken.foreach(__v => __obj.update("NodeAssociationStatusToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NodeAssociationStatusToken.foreach(
+        __v => __obj.updateDynamic("NodeAssociationStatusToken")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[DisassociateNodeResponse]
     }
   }
@@ -686,9 +694,9 @@ package opsworkscm {
         Name: js.UndefOr[EngineAttributeName] = js.undefined,
         Value: js.UndefOr[EngineAttributeValue] = js.undefined
     ): EngineAttribute = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EngineAttribute]
     }
   }
@@ -706,12 +714,12 @@ package opsworkscm {
         ServerName: ServerName,
         InputAttributes: js.UndefOr[EngineAttributes] = js.undefined
     ): ExportServerEngineAttributeRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ExportAttributeName" -> ExportAttributeName.asInstanceOf[js.Any],
         "ServerName"          -> ServerName.asInstanceOf[js.Any]
       )
 
-      InputAttributes.foreach(__v => __obj.update("InputAttributes", __v.asInstanceOf[js.Any]))
+      InputAttributes.foreach(__v => __obj.updateDynamic("InputAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportServerEngineAttributeRequest]
     }
   }
@@ -727,9 +735,9 @@ package opsworkscm {
         EngineAttribute: js.UndefOr[EngineAttribute] = js.undefined,
         ServerName: js.UndefOr[ServerName] = js.undefined
     ): ExportServerEngineAttributeResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EngineAttribute.foreach(__v => __obj.update("EngineAttribute", __v.asInstanceOf[js.Any]))
-      ServerName.foreach(__v => __obj.update("ServerName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EngineAttribute.foreach(__v => __obj.updateDynamic("EngineAttribute")(__v.asInstanceOf[js.Any]))
+      ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportServerEngineAttributeResponse]
     }
   }
@@ -770,13 +778,13 @@ package opsworkscm {
         InstanceType: js.UndefOr[String] = js.undefined,
         KeyPair: js.UndefOr[KeyPair] = js.undefined
     ): RestoreServerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BackupId"   -> BackupId.asInstanceOf[js.Any],
         "ServerName" -> ServerName.asInstanceOf[js.Any]
       )
 
-      InstanceType.foreach(__v => __obj.update("InstanceType", __v.asInstanceOf[js.Any]))
-      KeyPair.foreach(__v => __obj.update("KeyPair", __v.asInstanceOf[js.Any]))
+      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
+      KeyPair.foreach(__v => __obj.updateDynamic("KeyPair")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RestoreServerRequest]
     }
   }
@@ -787,7 +795,7 @@ package opsworkscm {
   object RestoreServerResponse {
     def apply(
         ): RestoreServerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RestoreServerResponse]
     }
@@ -849,30 +857,32 @@ package opsworkscm {
         StatusReason: js.UndefOr[String] = js.undefined,
         SubnetIds: js.UndefOr[Strings] = js.undefined
     ): Server = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssociatePublicIpAddress.foreach(__v => __obj.update("AssociatePublicIpAddress", __v.asInstanceOf[js.Any]))
-      BackupRetentionCount.foreach(__v => __obj.update("BackupRetentionCount", __v.asInstanceOf[js.Any]))
-      CloudFormationStackArn.foreach(__v => __obj.update("CloudFormationStackArn", __v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.update("CreatedAt", __v.asInstanceOf[js.Any]))
-      DisableAutomatedBackup.foreach(__v => __obj.update("DisableAutomatedBackup", __v.asInstanceOf[js.Any]))
-      Endpoint.foreach(__v => __obj.update("Endpoint", __v.asInstanceOf[js.Any]))
-      Engine.foreach(__v => __obj.update("Engine", __v.asInstanceOf[js.Any]))
-      EngineAttributes.foreach(__v => __obj.update("EngineAttributes", __v.asInstanceOf[js.Any]))
-      EngineModel.foreach(__v => __obj.update("EngineModel", __v.asInstanceOf[js.Any]))
-      EngineVersion.foreach(__v => __obj.update("EngineVersion", __v.asInstanceOf[js.Any]))
-      InstanceProfileArn.foreach(__v => __obj.update("InstanceProfileArn", __v.asInstanceOf[js.Any]))
-      InstanceType.foreach(__v => __obj.update("InstanceType", __v.asInstanceOf[js.Any]))
-      KeyPair.foreach(__v => __obj.update("KeyPair", __v.asInstanceOf[js.Any]))
-      MaintenanceStatus.foreach(__v => __obj.update("MaintenanceStatus", __v.asInstanceOf[js.Any]))
-      PreferredBackupWindow.foreach(__v => __obj.update("PreferredBackupWindow", __v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
-      SecurityGroupIds.foreach(__v => __obj.update("SecurityGroupIds", __v.asInstanceOf[js.Any]))
-      ServerArn.foreach(__v => __obj.update("ServerArn", __v.asInstanceOf[js.Any]))
-      ServerName.foreach(__v => __obj.update("ServerName", __v.asInstanceOf[js.Any]))
-      ServiceRoleArn.foreach(__v => __obj.update("ServiceRoleArn", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusReason.foreach(__v => __obj.update("StatusReason", __v.asInstanceOf[js.Any]))
-      SubnetIds.foreach(__v => __obj.update("SubnetIds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssociatePublicIpAddress.foreach(__v => __obj.updateDynamic("AssociatePublicIpAddress")(__v.asInstanceOf[js.Any]))
+      BackupRetentionCount.foreach(__v => __obj.updateDynamic("BackupRetentionCount")(__v.asInstanceOf[js.Any]))
+      CloudFormationStackArn.foreach(__v => __obj.updateDynamic("CloudFormationStackArn")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      DisableAutomatedBackup.foreach(__v => __obj.updateDynamic("DisableAutomatedBackup")(__v.asInstanceOf[js.Any]))
+      Endpoint.foreach(__v => __obj.updateDynamic("Endpoint")(__v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
+      EngineAttributes.foreach(__v => __obj.updateDynamic("EngineAttributes")(__v.asInstanceOf[js.Any]))
+      EngineModel.foreach(__v => __obj.updateDynamic("EngineModel")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      InstanceProfileArn.foreach(__v => __obj.updateDynamic("InstanceProfileArn")(__v.asInstanceOf[js.Any]))
+      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
+      KeyPair.foreach(__v => __obj.updateDynamic("KeyPair")(__v.asInstanceOf[js.Any]))
+      MaintenanceStatus.foreach(__v => __obj.updateDynamic("MaintenanceStatus")(__v.asInstanceOf[js.Any]))
+      PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(
+        __v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      )
+      SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      ServerArn.foreach(__v => __obj.updateDynamic("ServerArn")(__v.asInstanceOf[js.Any]))
+      ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
+      ServiceRoleArn.foreach(__v => __obj.updateDynamic("ServiceRoleArn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusReason.foreach(__v => __obj.updateDynamic("StatusReason")(__v.asInstanceOf[js.Any]))
+      SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Server]
     }
   }
@@ -895,11 +905,11 @@ package opsworkscm {
         Message: js.UndefOr[String] = js.undefined,
         ServerName: js.UndefOr[String] = js.undefined
     ): ServerEvent = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedAt.foreach(__v => __obj.update("CreatedAt", __v.asInstanceOf[js.Any]))
-      LogUrl.foreach(__v => __obj.update("LogUrl", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
-      ServerName.foreach(__v => __obj.update("ServerName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      LogUrl.foreach(__v => __obj.updateDynamic("LogUrl")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      ServerName.foreach(__v => __obj.updateDynamic("ServerName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServerEvent]
     }
   }
@@ -949,11 +959,11 @@ package opsworkscm {
         ServerName: ServerName,
         EngineAttributes: js.UndefOr[EngineAttributes] = js.undefined
     ): StartMaintenanceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServerName" -> ServerName.asInstanceOf[js.Any]
       )
 
-      EngineAttributes.foreach(__v => __obj.update("EngineAttributes", __v.asInstanceOf[js.Any]))
+      EngineAttributes.foreach(__v => __obj.updateDynamic("EngineAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartMaintenanceRequest]
     }
   }
@@ -967,8 +977,8 @@ package opsworkscm {
     def apply(
         Server: js.UndefOr[Server] = js.undefined
     ): StartMaintenanceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Server.foreach(__v => __obj.update("Server", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Server.foreach(__v => __obj.updateDynamic("Server")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartMaintenanceResponse]
     }
   }
@@ -986,12 +996,12 @@ package opsworkscm {
         ServerName: ServerName,
         AttributeValue: js.UndefOr[AttributeValue] = js.undefined
     ): UpdateServerEngineAttributesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AttributeName" -> AttributeName.asInstanceOf[js.Any],
         "ServerName"    -> ServerName.asInstanceOf[js.Any]
       )
 
-      AttributeValue.foreach(__v => __obj.update("AttributeValue", __v.asInstanceOf[js.Any]))
+      AttributeValue.foreach(__v => __obj.updateDynamic("AttributeValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateServerEngineAttributesRequest]
     }
   }
@@ -1005,8 +1015,8 @@ package opsworkscm {
     def apply(
         Server: js.UndefOr[Server] = js.undefined
     ): UpdateServerEngineAttributesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Server.foreach(__v => __obj.update("Server", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Server.foreach(__v => __obj.updateDynamic("Server")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateServerEngineAttributesResponse]
     }
   }
@@ -1028,14 +1038,16 @@ package opsworkscm {
         PreferredBackupWindow: js.UndefOr[TimeWindowDefinition] = js.undefined,
         PreferredMaintenanceWindow: js.UndefOr[TimeWindowDefinition] = js.undefined
     ): UpdateServerRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ServerName" -> ServerName.asInstanceOf[js.Any]
       )
 
-      BackupRetentionCount.foreach(__v => __obj.update("BackupRetentionCount", __v.asInstanceOf[js.Any]))
-      DisableAutomatedBackup.foreach(__v => __obj.update("DisableAutomatedBackup", __v.asInstanceOf[js.Any]))
-      PreferredBackupWindow.foreach(__v => __obj.update("PreferredBackupWindow", __v.asInstanceOf[js.Any]))
-      PreferredMaintenanceWindow.foreach(__v => __obj.update("PreferredMaintenanceWindow", __v.asInstanceOf[js.Any]))
+      BackupRetentionCount.foreach(__v => __obj.updateDynamic("BackupRetentionCount")(__v.asInstanceOf[js.Any]))
+      DisableAutomatedBackup.foreach(__v => __obj.updateDynamic("DisableAutomatedBackup")(__v.asInstanceOf[js.Any]))
+      PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
+      PreferredMaintenanceWindow.foreach(
+        __v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[UpdateServerRequest]
     }
   }
@@ -1049,8 +1061,8 @@ package opsworkscm {
     def apply(
         Server: js.UndefOr[Server] = js.undefined
     ): UpdateServerResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Server.foreach(__v => __obj.update("Server", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Server.foreach(__v => __obj.updateDynamic("Server")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateServerResponse]
     }
   }

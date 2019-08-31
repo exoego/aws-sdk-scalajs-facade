@@ -577,18 +577,18 @@ package mediaconvert {
         Specification: js.UndefOr[AacSpecification] = js.undefined,
         VbrQuality: js.UndefOr[AacVbrQuality] = js.undefined
     ): AacSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       AudioDescriptionBroadcasterMix.foreach(
-        __v => __obj.update("AudioDescriptionBroadcasterMix", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("AudioDescriptionBroadcasterMix")(__v.asInstanceOf[js.Any])
       )
-      Bitrate.foreach(__v => __obj.update("Bitrate", __v.asInstanceOf[js.Any]))
-      CodecProfile.foreach(__v => __obj.update("CodecProfile", __v.asInstanceOf[js.Any]))
-      CodingMode.foreach(__v => __obj.update("CodingMode", __v.asInstanceOf[js.Any]))
-      RateControlMode.foreach(__v => __obj.update("RateControlMode", __v.asInstanceOf[js.Any]))
-      RawFormat.foreach(__v => __obj.update("RawFormat", __v.asInstanceOf[js.Any]))
-      SampleRate.foreach(__v => __obj.update("SampleRate", __v.asInstanceOf[js.Any]))
-      Specification.foreach(__v => __obj.update("Specification", __v.asInstanceOf[js.Any]))
-      VbrQuality.foreach(__v => __obj.update("VbrQuality", __v.asInstanceOf[js.Any]))
+      Bitrate.foreach(__v => __obj.updateDynamic("Bitrate")(__v.asInstanceOf[js.Any]))
+      CodecProfile.foreach(__v => __obj.updateDynamic("CodecProfile")(__v.asInstanceOf[js.Any]))
+      CodingMode.foreach(__v => __obj.updateDynamic("CodingMode")(__v.asInstanceOf[js.Any]))
+      RateControlMode.foreach(__v => __obj.updateDynamic("RateControlMode")(__v.asInstanceOf[js.Any]))
+      RawFormat.foreach(__v => __obj.updateDynamic("RawFormat")(__v.asInstanceOf[js.Any]))
+      SampleRate.foreach(__v => __obj.updateDynamic("SampleRate")(__v.asInstanceOf[js.Any]))
+      Specification.foreach(__v => __obj.updateDynamic("Specification")(__v.asInstanceOf[js.Any]))
+      VbrQuality.foreach(__v => __obj.updateDynamic("VbrQuality")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AacSettings]
     }
   }
@@ -710,17 +710,17 @@ package mediaconvert {
         MetadataControl: js.UndefOr[Ac3MetadataControl] = js.undefined,
         SampleRate: js.UndefOr[__integerMin48000Max48000] = js.undefined
     ): Ac3Settings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Bitrate.foreach(__v => __obj.update("Bitrate", __v.asInstanceOf[js.Any]))
-      BitstreamMode.foreach(__v => __obj.update("BitstreamMode", __v.asInstanceOf[js.Any]))
-      CodingMode.foreach(__v => __obj.update("CodingMode", __v.asInstanceOf[js.Any]))
-      Dialnorm.foreach(__v => __obj.update("Dialnorm", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Bitrate.foreach(__v => __obj.updateDynamic("Bitrate")(__v.asInstanceOf[js.Any]))
+      BitstreamMode.foreach(__v => __obj.updateDynamic("BitstreamMode")(__v.asInstanceOf[js.Any]))
+      CodingMode.foreach(__v => __obj.updateDynamic("CodingMode")(__v.asInstanceOf[js.Any]))
+      Dialnorm.foreach(__v => __obj.updateDynamic("Dialnorm")(__v.asInstanceOf[js.Any]))
       DynamicRangeCompressionProfile.foreach(
-        __v => __obj.update("DynamicRangeCompressionProfile", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("DynamicRangeCompressionProfile")(__v.asInstanceOf[js.Any])
       )
-      LfeFilter.foreach(__v => __obj.update("LfeFilter", __v.asInstanceOf[js.Any]))
-      MetadataControl.foreach(__v => __obj.update("MetadataControl", __v.asInstanceOf[js.Any]))
-      SampleRate.foreach(__v => __obj.update("SampleRate", __v.asInstanceOf[js.Any]))
+      LfeFilter.foreach(__v => __obj.updateDynamic("LfeFilter")(__v.asInstanceOf[js.Any]))
+      MetadataControl.foreach(__v => __obj.updateDynamic("MetadataControl")(__v.asInstanceOf[js.Any]))
+      SampleRate.foreach(__v => __obj.updateDynamic("SampleRate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Ac3Settings]
     }
   }
@@ -747,7 +747,7 @@ package mediaconvert {
     def apply(
         Mode: AccelerationMode
     ): AccelerationSettings = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Mode" -> Mode.asInstanceOf[js.Any]
       )
 
@@ -782,10 +782,10 @@ package mediaconvert {
         Channels: js.UndefOr[__integerMin1Max2] = js.undefined,
         SampleRate: js.UndefOr[__integerMin8000Max192000] = js.undefined
     ): AiffSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BitDepth.foreach(__v => __obj.update("BitDepth", __v.asInstanceOf[js.Any]))
-      Channels.foreach(__v => __obj.update("Channels", __v.asInstanceOf[js.Any]))
-      SampleRate.foreach(__v => __obj.update("SampleRate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BitDepth.foreach(__v => __obj.updateDynamic("BitDepth")(__v.asInstanceOf[js.Any]))
+      Channels.foreach(__v => __obj.updateDynamic("Channels")(__v.asInstanceOf[js.Any]))
+      SampleRate.foreach(__v => __obj.updateDynamic("SampleRate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AiffSettings]
     }
   }
@@ -802,9 +802,9 @@ package mediaconvert {
     def apply(
         SourceAncillaryChannelNumber: js.UndefOr[__integerMin1Max4] = js.undefined
     ): AncillarySourceSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       SourceAncillaryChannelNumber.foreach(
-        __v => __obj.update("SourceAncillaryChannelNumber", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("SourceAncillaryChannelNumber")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[AncillarySourceSettings]
     }
@@ -829,7 +829,7 @@ package mediaconvert {
     def apply(
         Arn: __string
     ): AssociateCertificateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
 
@@ -843,7 +843,7 @@ package mediaconvert {
   object AssociateCertificateResponse {
     def apply(
         ): AssociateCertificateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AssociateCertificateResponse]
     }
@@ -891,15 +891,15 @@ package mediaconvert {
         Mp2Settings: js.UndefOr[Mp2Settings] = js.undefined,
         WavSettings: js.UndefOr[WavSettings] = js.undefined
     ): AudioCodecSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AacSettings.foreach(__v => __obj.update("AacSettings", __v.asInstanceOf[js.Any]))
-      Ac3Settings.foreach(__v => __obj.update("Ac3Settings", __v.asInstanceOf[js.Any]))
-      AiffSettings.foreach(__v => __obj.update("AiffSettings", __v.asInstanceOf[js.Any]))
-      Codec.foreach(__v => __obj.update("Codec", __v.asInstanceOf[js.Any]))
-      Eac3AtmosSettings.foreach(__v => __obj.update("Eac3AtmosSettings", __v.asInstanceOf[js.Any]))
-      Eac3Settings.foreach(__v => __obj.update("Eac3Settings", __v.asInstanceOf[js.Any]))
-      Mp2Settings.foreach(__v => __obj.update("Mp2Settings", __v.asInstanceOf[js.Any]))
-      WavSettings.foreach(__v => __obj.update("WavSettings", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AacSettings.foreach(__v => __obj.updateDynamic("AacSettings")(__v.asInstanceOf[js.Any]))
+      Ac3Settings.foreach(__v => __obj.updateDynamic("Ac3Settings")(__v.asInstanceOf[js.Any]))
+      AiffSettings.foreach(__v => __obj.updateDynamic("AiffSettings")(__v.asInstanceOf[js.Any]))
+      Codec.foreach(__v => __obj.updateDynamic("Codec")(__v.asInstanceOf[js.Any]))
+      Eac3AtmosSettings.foreach(__v => __obj.updateDynamic("Eac3AtmosSettings")(__v.asInstanceOf[js.Any]))
+      Eac3Settings.foreach(__v => __obj.updateDynamic("Eac3Settings")(__v.asInstanceOf[js.Any]))
+      Mp2Settings.foreach(__v => __obj.updateDynamic("Mp2Settings")(__v.asInstanceOf[js.Any]))
+      WavSettings.foreach(__v => __obj.updateDynamic("WavSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AudioCodecSettings]
     }
   }
@@ -944,17 +944,19 @@ package mediaconvert {
         RemixSettings: js.UndefOr[RemixSettings] = js.undefined,
         StreamName: js.UndefOr[__stringPatternWS] = js.undefined
     ): AudioDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AudioNormalizationSettings.foreach(__v => __obj.update("AudioNormalizationSettings", __v.asInstanceOf[js.Any]))
-      AudioSourceName.foreach(__v => __obj.update("AudioSourceName", __v.asInstanceOf[js.Any]))
-      AudioType.foreach(__v => __obj.update("AudioType", __v.asInstanceOf[js.Any]))
-      AudioTypeControl.foreach(__v => __obj.update("AudioTypeControl", __v.asInstanceOf[js.Any]))
-      CodecSettings.foreach(__v => __obj.update("CodecSettings", __v.asInstanceOf[js.Any]))
-      CustomLanguageCode.foreach(__v => __obj.update("CustomLanguageCode", __v.asInstanceOf[js.Any]))
-      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
-      LanguageCodeControl.foreach(__v => __obj.update("LanguageCodeControl", __v.asInstanceOf[js.Any]))
-      RemixSettings.foreach(__v => __obj.update("RemixSettings", __v.asInstanceOf[js.Any]))
-      StreamName.foreach(__v => __obj.update("StreamName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AudioNormalizationSettings.foreach(
+        __v => __obj.updateDynamic("AudioNormalizationSettings")(__v.asInstanceOf[js.Any])
+      )
+      AudioSourceName.foreach(__v => __obj.updateDynamic("AudioSourceName")(__v.asInstanceOf[js.Any]))
+      AudioType.foreach(__v => __obj.updateDynamic("AudioType")(__v.asInstanceOf[js.Any]))
+      AudioTypeControl.foreach(__v => __obj.updateDynamic("AudioTypeControl")(__v.asInstanceOf[js.Any]))
+      CodecSettings.foreach(__v => __obj.updateDynamic("CodecSettings")(__v.asInstanceOf[js.Any]))
+      CustomLanguageCode.foreach(__v => __obj.updateDynamic("CustomLanguageCode")(__v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      LanguageCodeControl.foreach(__v => __obj.updateDynamic("LanguageCodeControl")(__v.asInstanceOf[js.Any]))
+      RemixSettings.foreach(__v => __obj.updateDynamic("RemixSettings")(__v.asInstanceOf[js.Any]))
+      StreamName.foreach(__v => __obj.updateDynamic("StreamName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AudioDescription]
     }
   }
@@ -1033,13 +1035,13 @@ package mediaconvert {
         PeakCalculation: js.UndefOr[AudioNormalizationPeakCalculation] = js.undefined,
         TargetLkfs: js.UndefOr[__doubleMinNegative59Max0] = js.undefined
     ): AudioNormalizationSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Algorithm.foreach(__v => __obj.update("Algorithm", __v.asInstanceOf[js.Any]))
-      AlgorithmControl.foreach(__v => __obj.update("AlgorithmControl", __v.asInstanceOf[js.Any]))
-      CorrectionGateLevel.foreach(__v => __obj.update("CorrectionGateLevel", __v.asInstanceOf[js.Any]))
-      LoudnessLogging.foreach(__v => __obj.update("LoudnessLogging", __v.asInstanceOf[js.Any]))
-      PeakCalculation.foreach(__v => __obj.update("PeakCalculation", __v.asInstanceOf[js.Any]))
-      TargetLkfs.foreach(__v => __obj.update("TargetLkfs", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Algorithm.foreach(__v => __obj.updateDynamic("Algorithm")(__v.asInstanceOf[js.Any]))
+      AlgorithmControl.foreach(__v => __obj.updateDynamic("AlgorithmControl")(__v.asInstanceOf[js.Any]))
+      CorrectionGateLevel.foreach(__v => __obj.updateDynamic("CorrectionGateLevel")(__v.asInstanceOf[js.Any]))
+      LoudnessLogging.foreach(__v => __obj.updateDynamic("LoudnessLogging")(__v.asInstanceOf[js.Any]))
+      PeakCalculation.foreach(__v => __obj.updateDynamic("PeakCalculation")(__v.asInstanceOf[js.Any]))
+      TargetLkfs.foreach(__v => __obj.updateDynamic("TargetLkfs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AudioNormalizationSettings]
     }
   }
@@ -1078,17 +1080,17 @@ package mediaconvert {
         SelectorType: js.UndefOr[AudioSelectorType] = js.undefined,
         Tracks: js.UndefOr[__listOf__integerMin1Max2147483647] = js.undefined
     ): AudioSelector = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CustomLanguageCode.foreach(__v => __obj.update("CustomLanguageCode", __v.asInstanceOf[js.Any]))
-      DefaultSelection.foreach(__v => __obj.update("DefaultSelection", __v.asInstanceOf[js.Any]))
-      ExternalAudioFileInput.foreach(__v => __obj.update("ExternalAudioFileInput", __v.asInstanceOf[js.Any]))
-      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
-      Offset.foreach(__v => __obj.update("Offset", __v.asInstanceOf[js.Any]))
-      Pids.foreach(__v => __obj.update("Pids", __v.asInstanceOf[js.Any]))
-      ProgramSelection.foreach(__v => __obj.update("ProgramSelection", __v.asInstanceOf[js.Any]))
-      RemixSettings.foreach(__v => __obj.update("RemixSettings", __v.asInstanceOf[js.Any]))
-      SelectorType.foreach(__v => __obj.update("SelectorType", __v.asInstanceOf[js.Any]))
-      Tracks.foreach(__v => __obj.update("Tracks", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CustomLanguageCode.foreach(__v => __obj.updateDynamic("CustomLanguageCode")(__v.asInstanceOf[js.Any]))
+      DefaultSelection.foreach(__v => __obj.updateDynamic("DefaultSelection")(__v.asInstanceOf[js.Any]))
+      ExternalAudioFileInput.foreach(__v => __obj.updateDynamic("ExternalAudioFileInput")(__v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      Offset.foreach(__v => __obj.updateDynamic("Offset")(__v.asInstanceOf[js.Any]))
+      Pids.foreach(__v => __obj.updateDynamic("Pids")(__v.asInstanceOf[js.Any]))
+      ProgramSelection.foreach(__v => __obj.updateDynamic("ProgramSelection")(__v.asInstanceOf[js.Any]))
+      RemixSettings.foreach(__v => __obj.updateDynamic("RemixSettings")(__v.asInstanceOf[js.Any]))
+      SelectorType.foreach(__v => __obj.updateDynamic("SelectorType")(__v.asInstanceOf[js.Any]))
+      Tracks.foreach(__v => __obj.updateDynamic("Tracks")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AudioSelector]
     }
   }
@@ -1105,8 +1107,8 @@ package mediaconvert {
     def apply(
         AudioSelectorNames: js.UndefOr[__listOf__stringMin1] = js.undefined
     ): AudioSelectorGroup = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AudioSelectorNames.foreach(__v => __obj.update("AudioSelectorNames", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AudioSelectorNames.foreach(__v => __obj.updateDynamic("AudioSelectorNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AudioSelectorGroup]
     }
   }
@@ -1144,8 +1146,8 @@ package mediaconvert {
     def apply(
         AvailBlankingImage: js.UndefOr[__stringMin14PatternS3BmpBMPPngPNG] = js.undefined
     ): AvailBlanking = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AvailBlankingImage.foreach(__v => __obj.update("AvailBlankingImage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AvailBlankingImage.foreach(__v => __obj.updateDynamic("AvailBlankingImage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AvailBlanking]
     }
   }
@@ -1205,24 +1207,24 @@ package mediaconvert {
         XPosition: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
         YPosition: js.UndefOr[__integerMin0Max2147483647] = js.undefined
     ): BurninDestinationSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Alignment.foreach(__v => __obj.update("Alignment", __v.asInstanceOf[js.Any]))
-      BackgroundColor.foreach(__v => __obj.update("BackgroundColor", __v.asInstanceOf[js.Any]))
-      BackgroundOpacity.foreach(__v => __obj.update("BackgroundOpacity", __v.asInstanceOf[js.Any]))
-      FontColor.foreach(__v => __obj.update("FontColor", __v.asInstanceOf[js.Any]))
-      FontOpacity.foreach(__v => __obj.update("FontOpacity", __v.asInstanceOf[js.Any]))
-      FontResolution.foreach(__v => __obj.update("FontResolution", __v.asInstanceOf[js.Any]))
-      FontScript.foreach(__v => __obj.update("FontScript", __v.asInstanceOf[js.Any]))
-      FontSize.foreach(__v => __obj.update("FontSize", __v.asInstanceOf[js.Any]))
-      OutlineColor.foreach(__v => __obj.update("OutlineColor", __v.asInstanceOf[js.Any]))
-      OutlineSize.foreach(__v => __obj.update("OutlineSize", __v.asInstanceOf[js.Any]))
-      ShadowColor.foreach(__v => __obj.update("ShadowColor", __v.asInstanceOf[js.Any]))
-      ShadowOpacity.foreach(__v => __obj.update("ShadowOpacity", __v.asInstanceOf[js.Any]))
-      ShadowXOffset.foreach(__v => __obj.update("ShadowXOffset", __v.asInstanceOf[js.Any]))
-      ShadowYOffset.foreach(__v => __obj.update("ShadowYOffset", __v.asInstanceOf[js.Any]))
-      TeletextSpacing.foreach(__v => __obj.update("TeletextSpacing", __v.asInstanceOf[js.Any]))
-      XPosition.foreach(__v => __obj.update("XPosition", __v.asInstanceOf[js.Any]))
-      YPosition.foreach(__v => __obj.update("YPosition", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Alignment.foreach(__v => __obj.updateDynamic("Alignment")(__v.asInstanceOf[js.Any]))
+      BackgroundColor.foreach(__v => __obj.updateDynamic("BackgroundColor")(__v.asInstanceOf[js.Any]))
+      BackgroundOpacity.foreach(__v => __obj.updateDynamic("BackgroundOpacity")(__v.asInstanceOf[js.Any]))
+      FontColor.foreach(__v => __obj.updateDynamic("FontColor")(__v.asInstanceOf[js.Any]))
+      FontOpacity.foreach(__v => __obj.updateDynamic("FontOpacity")(__v.asInstanceOf[js.Any]))
+      FontResolution.foreach(__v => __obj.updateDynamic("FontResolution")(__v.asInstanceOf[js.Any]))
+      FontScript.foreach(__v => __obj.updateDynamic("FontScript")(__v.asInstanceOf[js.Any]))
+      FontSize.foreach(__v => __obj.updateDynamic("FontSize")(__v.asInstanceOf[js.Any]))
+      OutlineColor.foreach(__v => __obj.updateDynamic("OutlineColor")(__v.asInstanceOf[js.Any]))
+      OutlineSize.foreach(__v => __obj.updateDynamic("OutlineSize")(__v.asInstanceOf[js.Any]))
+      ShadowColor.foreach(__v => __obj.updateDynamic("ShadowColor")(__v.asInstanceOf[js.Any]))
+      ShadowOpacity.foreach(__v => __obj.updateDynamic("ShadowOpacity")(__v.asInstanceOf[js.Any]))
+      ShadowXOffset.foreach(__v => __obj.updateDynamic("ShadowXOffset")(__v.asInstanceOf[js.Any]))
+      ShadowYOffset.foreach(__v => __obj.updateDynamic("ShadowYOffset")(__v.asInstanceOf[js.Any]))
+      TeletextSpacing.foreach(__v => __obj.updateDynamic("TeletextSpacing")(__v.asInstanceOf[js.Any]))
+      XPosition.foreach(__v => __obj.updateDynamic("XPosition")(__v.asInstanceOf[js.Any]))
+      YPosition.foreach(__v => __obj.updateDynamic("YPosition")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BurninDestinationSettings]
     }
   }
@@ -1308,7 +1310,7 @@ package mediaconvert {
     def apply(
         Id: __string
     ): CancelJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
@@ -1322,7 +1324,7 @@ package mediaconvert {
   object CancelJobResponse {
     def apply(
         ): CancelJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CancelJobResponse]
     }
@@ -1348,12 +1350,12 @@ package mediaconvert {
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         LanguageDescription: js.UndefOr[__string] = js.undefined
     ): CaptionDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CaptionSelectorName.foreach(__v => __obj.update("CaptionSelectorName", __v.asInstanceOf[js.Any]))
-      CustomLanguageCode.foreach(__v => __obj.update("CustomLanguageCode", __v.asInstanceOf[js.Any]))
-      DestinationSettings.foreach(__v => __obj.update("DestinationSettings", __v.asInstanceOf[js.Any]))
-      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
-      LanguageDescription.foreach(__v => __obj.update("LanguageDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CaptionSelectorName.foreach(__v => __obj.updateDynamic("CaptionSelectorName")(__v.asInstanceOf[js.Any]))
+      CustomLanguageCode.foreach(__v => __obj.updateDynamic("CustomLanguageCode")(__v.asInstanceOf[js.Any]))
+      DestinationSettings.foreach(__v => __obj.updateDynamic("DestinationSettings")(__v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      LanguageDescription.foreach(__v => __obj.updateDynamic("LanguageDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CaptionDescription]
     }
   }
@@ -1376,11 +1378,11 @@ package mediaconvert {
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         LanguageDescription: js.UndefOr[__string] = js.undefined
     ): CaptionDescriptionPreset = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CustomLanguageCode.foreach(__v => __obj.update("CustomLanguageCode", __v.asInstanceOf[js.Any]))
-      DestinationSettings.foreach(__v => __obj.update("DestinationSettings", __v.asInstanceOf[js.Any]))
-      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
-      LanguageDescription.foreach(__v => __obj.update("LanguageDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CustomLanguageCode.foreach(__v => __obj.updateDynamic("CustomLanguageCode")(__v.asInstanceOf[js.Any]))
+      DestinationSettings.foreach(__v => __obj.updateDynamic("DestinationSettings")(__v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      LanguageDescription.foreach(__v => __obj.updateDynamic("LanguageDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CaptionDescriptionPreset]
     }
   }
@@ -1409,14 +1411,22 @@ package mediaconvert {
         TeletextDestinationSettings: js.UndefOr[TeletextDestinationSettings] = js.undefined,
         TtmlDestinationSettings: js.UndefOr[TtmlDestinationSettings] = js.undefined
     ): CaptionDestinationSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BurninDestinationSettings.foreach(__v => __obj.update("BurninDestinationSettings", __v.asInstanceOf[js.Any]))
-      DestinationType.foreach(__v => __obj.update("DestinationType", __v.asInstanceOf[js.Any]))
-      DvbSubDestinationSettings.foreach(__v => __obj.update("DvbSubDestinationSettings", __v.asInstanceOf[js.Any]))
-      EmbeddedDestinationSettings.foreach(__v => __obj.update("EmbeddedDestinationSettings", __v.asInstanceOf[js.Any]))
-      SccDestinationSettings.foreach(__v => __obj.update("SccDestinationSettings", __v.asInstanceOf[js.Any]))
-      TeletextDestinationSettings.foreach(__v => __obj.update("TeletextDestinationSettings", __v.asInstanceOf[js.Any]))
-      TtmlDestinationSettings.foreach(__v => __obj.update("TtmlDestinationSettings", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BurninDestinationSettings.foreach(
+        __v => __obj.updateDynamic("BurninDestinationSettings")(__v.asInstanceOf[js.Any])
+      )
+      DestinationType.foreach(__v => __obj.updateDynamic("DestinationType")(__v.asInstanceOf[js.Any]))
+      DvbSubDestinationSettings.foreach(
+        __v => __obj.updateDynamic("DvbSubDestinationSettings")(__v.asInstanceOf[js.Any])
+      )
+      EmbeddedDestinationSettings.foreach(
+        __v => __obj.updateDynamic("EmbeddedDestinationSettings")(__v.asInstanceOf[js.Any])
+      )
+      SccDestinationSettings.foreach(__v => __obj.updateDynamic("SccDestinationSettings")(__v.asInstanceOf[js.Any]))
+      TeletextDestinationSettings.foreach(
+        __v => __obj.updateDynamic("TeletextDestinationSettings")(__v.asInstanceOf[js.Any])
+      )
+      TtmlDestinationSettings.foreach(__v => __obj.updateDynamic("TtmlDestinationSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CaptionDestinationSettings]
     }
   }
@@ -1470,10 +1480,10 @@ package mediaconvert {
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         SourceSettings: js.UndefOr[CaptionSourceSettings] = js.undefined
     ): CaptionSelector = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CustomLanguageCode.foreach(__v => __obj.update("CustomLanguageCode", __v.asInstanceOf[js.Any]))
-      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
-      SourceSettings.foreach(__v => __obj.update("SourceSettings", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CustomLanguageCode.foreach(__v => __obj.updateDynamic("CustomLanguageCode")(__v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      SourceSettings.foreach(__v => __obj.updateDynamic("SourceSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CaptionSelector]
     }
   }
@@ -1502,14 +1512,14 @@ package mediaconvert {
         TeletextSourceSettings: js.UndefOr[TeletextSourceSettings] = js.undefined,
         TrackSourceSettings: js.UndefOr[TrackSourceSettings] = js.undefined
     ): CaptionSourceSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AncillarySourceSettings.foreach(__v => __obj.update("AncillarySourceSettings", __v.asInstanceOf[js.Any]))
-      DvbSubSourceSettings.foreach(__v => __obj.update("DvbSubSourceSettings", __v.asInstanceOf[js.Any]))
-      EmbeddedSourceSettings.foreach(__v => __obj.update("EmbeddedSourceSettings", __v.asInstanceOf[js.Any]))
-      FileSourceSettings.foreach(__v => __obj.update("FileSourceSettings", __v.asInstanceOf[js.Any]))
-      SourceType.foreach(__v => __obj.update("SourceType", __v.asInstanceOf[js.Any]))
-      TeletextSourceSettings.foreach(__v => __obj.update("TeletextSourceSettings", __v.asInstanceOf[js.Any]))
-      TrackSourceSettings.foreach(__v => __obj.update("TrackSourceSettings", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AncillarySourceSettings.foreach(__v => __obj.updateDynamic("AncillarySourceSettings")(__v.asInstanceOf[js.Any]))
+      DvbSubSourceSettings.foreach(__v => __obj.updateDynamic("DvbSubSourceSettings")(__v.asInstanceOf[js.Any]))
+      EmbeddedSourceSettings.foreach(__v => __obj.updateDynamic("EmbeddedSourceSettings")(__v.asInstanceOf[js.Any]))
+      FileSourceSettings.foreach(__v => __obj.updateDynamic("FileSourceSettings")(__v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.updateDynamic("SourceType")(__v.asInstanceOf[js.Any]))
+      TeletextSourceSettings.foreach(__v => __obj.updateDynamic("TeletextSourceSettings")(__v.asInstanceOf[js.Any]))
+      TrackSourceSettings.foreach(__v => __obj.updateDynamic("TrackSourceSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CaptionSourceSettings]
     }
   }
@@ -1548,8 +1558,8 @@ package mediaconvert {
     def apply(
         OutputChannels: js.UndefOr[__listOfOutputChannelMapping] = js.undefined
     ): ChannelMapping = {
-      val __obj = js.Dictionary.empty[js.Any]
-      OutputChannels.foreach(__v => __obj.update("OutputChannels", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      OutputChannels.foreach(__v => __obj.updateDynamic("OutputChannels")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChannelMapping]
     }
   }
@@ -1596,17 +1606,17 @@ package mediaconvert {
         StaticKeyProvider: js.UndefOr[StaticKeyProvider] = js.undefined,
         Type: js.UndefOr[CmafKeyProviderType] = js.undefined
     ): CmafEncryptionSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       ConstantInitializationVector.foreach(
-        __v => __obj.update("ConstantInitializationVector", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ConstantInitializationVector")(__v.asInstanceOf[js.Any])
       )
-      EncryptionMethod.foreach(__v => __obj.update("EncryptionMethod", __v.asInstanceOf[js.Any]))
+      EncryptionMethod.foreach(__v => __obj.updateDynamic("EncryptionMethod")(__v.asInstanceOf[js.Any]))
       InitializationVectorInManifest.foreach(
-        __v => __obj.update("InitializationVectorInManifest", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("InitializationVectorInManifest")(__v.asInstanceOf[js.Any])
       )
-      SpekeKeyProvider.foreach(__v => __obj.update("SpekeKeyProvider", __v.asInstanceOf[js.Any]))
-      StaticKeyProvider.foreach(__v => __obj.update("StaticKeyProvider", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      SpekeKeyProvider.foreach(__v => __obj.updateDynamic("SpekeKeyProvider")(__v.asInstanceOf[js.Any]))
+      StaticKeyProvider.foreach(__v => __obj.updateDynamic("StaticKeyProvider")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CmafEncryptionSettings]
     }
   }
@@ -1662,23 +1672,23 @@ package mediaconvert {
         WriteDashManifest: js.UndefOr[CmafWriteDASHManifest] = js.undefined,
         WriteHlsManifest: js.UndefOr[CmafWriteHLSManifest] = js.undefined
     ): CmafGroupSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BaseUrl.foreach(__v => __obj.update("BaseUrl", __v.asInstanceOf[js.Any]))
-      ClientCache.foreach(__v => __obj.update("ClientCache", __v.asInstanceOf[js.Any]))
-      CodecSpecification.foreach(__v => __obj.update("CodecSpecification", __v.asInstanceOf[js.Any]))
-      Destination.foreach(__v => __obj.update("Destination", __v.asInstanceOf[js.Any]))
-      DestinationSettings.foreach(__v => __obj.update("DestinationSettings", __v.asInstanceOf[js.Any]))
-      Encryption.foreach(__v => __obj.update("Encryption", __v.asInstanceOf[js.Any]))
-      FragmentLength.foreach(__v => __obj.update("FragmentLength", __v.asInstanceOf[js.Any]))
-      ManifestCompression.foreach(__v => __obj.update("ManifestCompression", __v.asInstanceOf[js.Any]))
-      ManifestDurationFormat.foreach(__v => __obj.update("ManifestDurationFormat", __v.asInstanceOf[js.Any]))
-      MinBufferTime.foreach(__v => __obj.update("MinBufferTime", __v.asInstanceOf[js.Any]))
-      MinFinalSegmentLength.foreach(__v => __obj.update("MinFinalSegmentLength", __v.asInstanceOf[js.Any]))
-      SegmentControl.foreach(__v => __obj.update("SegmentControl", __v.asInstanceOf[js.Any]))
-      SegmentLength.foreach(__v => __obj.update("SegmentLength", __v.asInstanceOf[js.Any]))
-      StreamInfResolution.foreach(__v => __obj.update("StreamInfResolution", __v.asInstanceOf[js.Any]))
-      WriteDashManifest.foreach(__v => __obj.update("WriteDashManifest", __v.asInstanceOf[js.Any]))
-      WriteHlsManifest.foreach(__v => __obj.update("WriteHlsManifest", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BaseUrl.foreach(__v => __obj.updateDynamic("BaseUrl")(__v.asInstanceOf[js.Any]))
+      ClientCache.foreach(__v => __obj.updateDynamic("ClientCache")(__v.asInstanceOf[js.Any]))
+      CodecSpecification.foreach(__v => __obj.updateDynamic("CodecSpecification")(__v.asInstanceOf[js.Any]))
+      Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
+      DestinationSettings.foreach(__v => __obj.updateDynamic("DestinationSettings")(__v.asInstanceOf[js.Any]))
+      Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
+      FragmentLength.foreach(__v => __obj.updateDynamic("FragmentLength")(__v.asInstanceOf[js.Any]))
+      ManifestCompression.foreach(__v => __obj.updateDynamic("ManifestCompression")(__v.asInstanceOf[js.Any]))
+      ManifestDurationFormat.foreach(__v => __obj.updateDynamic("ManifestDurationFormat")(__v.asInstanceOf[js.Any]))
+      MinBufferTime.foreach(__v => __obj.updateDynamic("MinBufferTime")(__v.asInstanceOf[js.Any]))
+      MinFinalSegmentLength.foreach(__v => __obj.updateDynamic("MinFinalSegmentLength")(__v.asInstanceOf[js.Any]))
+      SegmentControl.foreach(__v => __obj.updateDynamic("SegmentControl")(__v.asInstanceOf[js.Any]))
+      SegmentLength.foreach(__v => __obj.updateDynamic("SegmentLength")(__v.asInstanceOf[js.Any]))
+      StreamInfResolution.foreach(__v => __obj.updateDynamic("StreamInfResolution")(__v.asInstanceOf[js.Any]))
+      WriteDashManifest.foreach(__v => __obj.updateDynamic("WriteDashManifest")(__v.asInstanceOf[js.Any]))
+      WriteHlsManifest.foreach(__v => __obj.updateDynamic("WriteHlsManifest")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CmafGroupSettings]
     }
   }
@@ -1785,13 +1795,13 @@ package mediaconvert {
         Hue: js.UndefOr[__integerMinNegative180Max180] = js.undefined,
         Saturation: js.UndefOr[__integerMin1Max100] = js.undefined
     ): ColorCorrector = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Brightness.foreach(__v => __obj.update("Brightness", __v.asInstanceOf[js.Any]))
-      ColorSpaceConversion.foreach(__v => __obj.update("ColorSpaceConversion", __v.asInstanceOf[js.Any]))
-      Contrast.foreach(__v => __obj.update("Contrast", __v.asInstanceOf[js.Any]))
-      Hdr10Metadata.foreach(__v => __obj.update("Hdr10Metadata", __v.asInstanceOf[js.Any]))
-      Hue.foreach(__v => __obj.update("Hue", __v.asInstanceOf[js.Any]))
-      Saturation.foreach(__v => __obj.update("Saturation", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Brightness.foreach(__v => __obj.updateDynamic("Brightness")(__v.asInstanceOf[js.Any]))
+      ColorSpaceConversion.foreach(__v => __obj.updateDynamic("ColorSpaceConversion")(__v.asInstanceOf[js.Any]))
+      Contrast.foreach(__v => __obj.updateDynamic("Contrast")(__v.asInstanceOf[js.Any]))
+      Hdr10Metadata.foreach(__v => __obj.updateDynamic("Hdr10Metadata")(__v.asInstanceOf[js.Any]))
+      Hue.foreach(__v => __obj.updateDynamic("Hue")(__v.asInstanceOf[js.Any]))
+      Saturation.foreach(__v => __obj.updateDynamic("Saturation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ColorCorrector]
     }
   }
@@ -1873,13 +1883,13 @@ package mediaconvert {
         MovSettings: js.UndefOr[MovSettings] = js.undefined,
         Mp4Settings: js.UndefOr[Mp4Settings] = js.undefined
     ): ContainerSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Container.foreach(__v => __obj.update("Container", __v.asInstanceOf[js.Any]))
-      F4vSettings.foreach(__v => __obj.update("F4vSettings", __v.asInstanceOf[js.Any]))
-      M2tsSettings.foreach(__v => __obj.update("M2tsSettings", __v.asInstanceOf[js.Any]))
-      M3u8Settings.foreach(__v => __obj.update("M3u8Settings", __v.asInstanceOf[js.Any]))
-      MovSettings.foreach(__v => __obj.update("MovSettings", __v.asInstanceOf[js.Any]))
-      Mp4Settings.foreach(__v => __obj.update("Mp4Settings", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Container.foreach(__v => __obj.updateDynamic("Container")(__v.asInstanceOf[js.Any]))
+      F4vSettings.foreach(__v => __obj.updateDynamic("F4vSettings")(__v.asInstanceOf[js.Any]))
+      M2tsSettings.foreach(__v => __obj.updateDynamic("M2tsSettings")(__v.asInstanceOf[js.Any]))
+      M3u8Settings.foreach(__v => __obj.updateDynamic("M3u8Settings")(__v.asInstanceOf[js.Any]))
+      MovSettings.foreach(__v => __obj.updateDynamic("MovSettings")(__v.asInstanceOf[js.Any]))
+      Mp4Settings.foreach(__v => __obj.updateDynamic("Mp4Settings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContainerSettings]
     }
   }
@@ -1929,19 +1939,19 @@ package mediaconvert {
         StatusUpdateInterval: js.UndefOr[StatusUpdateInterval] = js.undefined,
         UserMetadata: js.UndefOr[__mapOf__string] = js.undefined
     ): CreateJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Role"     -> Role.asInstanceOf[js.Any],
         "Settings" -> Settings.asInstanceOf[js.Any]
       )
 
-      AccelerationSettings.foreach(__v => __obj.update("AccelerationSettings", __v.asInstanceOf[js.Any]))
-      BillingTagsSource.foreach(__v => __obj.update("BillingTagsSource", __v.asInstanceOf[js.Any]))
-      ClientRequestToken.foreach(__v => __obj.update("ClientRequestToken", __v.asInstanceOf[js.Any]))
-      JobTemplate.foreach(__v => __obj.update("JobTemplate", __v.asInstanceOf[js.Any]))
-      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
-      Queue.foreach(__v => __obj.update("Queue", __v.asInstanceOf[js.Any]))
-      StatusUpdateInterval.foreach(__v => __obj.update("StatusUpdateInterval", __v.asInstanceOf[js.Any]))
-      UserMetadata.foreach(__v => __obj.update("UserMetadata", __v.asInstanceOf[js.Any]))
+      AccelerationSettings.foreach(__v => __obj.updateDynamic("AccelerationSettings")(__v.asInstanceOf[js.Any]))
+      BillingTagsSource.foreach(__v => __obj.updateDynamic("BillingTagsSource")(__v.asInstanceOf[js.Any]))
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      JobTemplate.foreach(__v => __obj.updateDynamic("JobTemplate")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      Queue.foreach(__v => __obj.updateDynamic("Queue")(__v.asInstanceOf[js.Any]))
+      StatusUpdateInterval.foreach(__v => __obj.updateDynamic("StatusUpdateInterval")(__v.asInstanceOf[js.Any]))
+      UserMetadata.foreach(__v => __obj.updateDynamic("UserMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateJobRequest]
     }
   }
@@ -1955,8 +1965,8 @@ package mediaconvert {
     def apply(
         Job: js.UndefOr[Job] = js.undefined
     ): CreateJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Job.foreach(__v => __obj.update("Job", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Job.foreach(__v => __obj.updateDynamic("Job")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateJobResponse]
     }
   }
@@ -1986,18 +1996,18 @@ package mediaconvert {
         StatusUpdateInterval: js.UndefOr[StatusUpdateInterval] = js.undefined,
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): CreateJobTemplateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"     -> Name.asInstanceOf[js.Any],
         "Settings" -> Settings.asInstanceOf[js.Any]
       )
 
-      AccelerationSettings.foreach(__v => __obj.update("AccelerationSettings", __v.asInstanceOf[js.Any]))
-      Category.foreach(__v => __obj.update("Category", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
-      Queue.foreach(__v => __obj.update("Queue", __v.asInstanceOf[js.Any]))
-      StatusUpdateInterval.foreach(__v => __obj.update("StatusUpdateInterval", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      AccelerationSettings.foreach(__v => __obj.updateDynamic("AccelerationSettings")(__v.asInstanceOf[js.Any]))
+      Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      Queue.foreach(__v => __obj.updateDynamic("Queue")(__v.asInstanceOf[js.Any]))
+      StatusUpdateInterval.foreach(__v => __obj.updateDynamic("StatusUpdateInterval")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateJobTemplateRequest]
     }
   }
@@ -2011,8 +2021,8 @@ package mediaconvert {
     def apply(
         JobTemplate: js.UndefOr[JobTemplate] = js.undefined
     ): CreateJobTemplateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobTemplate.foreach(__v => __obj.update("JobTemplate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobTemplate.foreach(__v => __obj.updateDynamic("JobTemplate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateJobTemplateResponse]
     }
   }
@@ -2034,14 +2044,14 @@ package mediaconvert {
         Description: js.UndefOr[__string] = js.undefined,
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): CreatePresetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"     -> Name.asInstanceOf[js.Any],
         "Settings" -> Settings.asInstanceOf[js.Any]
       )
 
-      Category.foreach(__v => __obj.update("Category", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePresetRequest]
     }
   }
@@ -2055,8 +2065,8 @@ package mediaconvert {
     def apply(
         Preset: js.UndefOr[Preset] = js.undefined
     ): CreatePresetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Preset.foreach(__v => __obj.update("Preset", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Preset.foreach(__v => __obj.updateDynamic("Preset")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePresetResponse]
     }
   }
@@ -2080,15 +2090,15 @@ package mediaconvert {
         Status: js.UndefOr[QueueStatus] = js.undefined,
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): CreateQueueRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      PricingPlan.foreach(__v => __obj.update("PricingPlan", __v.asInstanceOf[js.Any]))
-      ReservationPlanSettings.foreach(__v => __obj.update("ReservationPlanSettings", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      PricingPlan.foreach(__v => __obj.updateDynamic("PricingPlan")(__v.asInstanceOf[js.Any]))
+      ReservationPlanSettings.foreach(__v => __obj.updateDynamic("ReservationPlanSettings")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateQueueRequest]
     }
   }
@@ -2102,8 +2112,8 @@ package mediaconvert {
     def apply(
         Queue: js.UndefOr[Queue] = js.undefined
     ): CreateQueueResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Queue.foreach(__v => __obj.update("Queue", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Queue.foreach(__v => __obj.updateDynamic("Queue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateQueueResponse]
     }
   }
@@ -2122,9 +2132,11 @@ package mediaconvert {
         PlaybackDeviceCompatibility: js.UndefOr[DashIsoPlaybackDeviceCompatibility] = js.undefined,
         SpekeKeyProvider: js.UndefOr[SpekeKeyProvider] = js.undefined
     ): DashIsoEncryptionSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PlaybackDeviceCompatibility.foreach(__v => __obj.update("PlaybackDeviceCompatibility", __v.asInstanceOf[js.Any]))
-      SpekeKeyProvider.foreach(__v => __obj.update("SpekeKeyProvider", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PlaybackDeviceCompatibility.foreach(
+        __v => __obj.updateDynamic("PlaybackDeviceCompatibility")(__v.asInstanceOf[js.Any])
+      )
+      SpekeKeyProvider.foreach(__v => __obj.updateDynamic("SpekeKeyProvider")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DashIsoEncryptionSettings]
     }
   }
@@ -2159,18 +2171,18 @@ package mediaconvert {
         SegmentLength: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
         WriteSegmentTimelineInRepresentation: js.UndefOr[DashIsoWriteSegmentTimelineInRepresentation] = js.undefined
     ): DashIsoGroupSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BaseUrl.foreach(__v => __obj.update("BaseUrl", __v.asInstanceOf[js.Any]))
-      Destination.foreach(__v => __obj.update("Destination", __v.asInstanceOf[js.Any]))
-      DestinationSettings.foreach(__v => __obj.update("DestinationSettings", __v.asInstanceOf[js.Any]))
-      Encryption.foreach(__v => __obj.update("Encryption", __v.asInstanceOf[js.Any]))
-      FragmentLength.foreach(__v => __obj.update("FragmentLength", __v.asInstanceOf[js.Any]))
-      HbbtvCompliance.foreach(__v => __obj.update("HbbtvCompliance", __v.asInstanceOf[js.Any]))
-      MinBufferTime.foreach(__v => __obj.update("MinBufferTime", __v.asInstanceOf[js.Any]))
-      SegmentControl.foreach(__v => __obj.update("SegmentControl", __v.asInstanceOf[js.Any]))
-      SegmentLength.foreach(__v => __obj.update("SegmentLength", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BaseUrl.foreach(__v => __obj.updateDynamic("BaseUrl")(__v.asInstanceOf[js.Any]))
+      Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
+      DestinationSettings.foreach(__v => __obj.updateDynamic("DestinationSettings")(__v.asInstanceOf[js.Any]))
+      Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
+      FragmentLength.foreach(__v => __obj.updateDynamic("FragmentLength")(__v.asInstanceOf[js.Any]))
+      HbbtvCompliance.foreach(__v => __obj.updateDynamic("HbbtvCompliance")(__v.asInstanceOf[js.Any]))
+      MinBufferTime.foreach(__v => __obj.updateDynamic("MinBufferTime")(__v.asInstanceOf[js.Any]))
+      SegmentControl.foreach(__v => __obj.updateDynamic("SegmentControl")(__v.asInstanceOf[js.Any]))
+      SegmentLength.foreach(__v => __obj.updateDynamic("SegmentLength")(__v.asInstanceOf[js.Any]))
       WriteSegmentTimelineInRepresentation.foreach(
-        __v => __obj.update("WriteSegmentTimelineInRepresentation", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("WriteSegmentTimelineInRepresentation")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DashIsoGroupSettings]
     }
@@ -2255,10 +2267,10 @@ package mediaconvert {
         Control: js.UndefOr[DeinterlacerControl] = js.undefined,
         Mode: js.UndefOr[DeinterlacerMode] = js.undefined
     ): Deinterlacer = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Algorithm.foreach(__v => __obj.update("Algorithm", __v.asInstanceOf[js.Any]))
-      Control.foreach(__v => __obj.update("Control", __v.asInstanceOf[js.Any]))
-      Mode.foreach(__v => __obj.update("Mode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Algorithm.foreach(__v => __obj.updateDynamic("Algorithm")(__v.asInstanceOf[js.Any]))
+      Control.foreach(__v => __obj.updateDynamic("Control")(__v.asInstanceOf[js.Any]))
+      Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Deinterlacer]
     }
   }
@@ -2293,7 +2305,7 @@ package mediaconvert {
     def apply(
         Name: __string
     ): DeleteJobTemplateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -2307,7 +2319,7 @@ package mediaconvert {
   object DeleteJobTemplateResponse {
     def apply(
         ): DeleteJobTemplateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteJobTemplateResponse]
     }
@@ -2322,7 +2334,7 @@ package mediaconvert {
     def apply(
         Name: __string
     ): DeletePresetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -2336,7 +2348,7 @@ package mediaconvert {
   object DeletePresetResponse {
     def apply(
         ): DeletePresetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeletePresetResponse]
     }
@@ -2351,7 +2363,7 @@ package mediaconvert {
     def apply(
         Name: __string
     ): DeleteQueueRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -2365,7 +2377,7 @@ package mediaconvert {
   object DeleteQueueResponse {
     def apply(
         ): DeleteQueueResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteQueueResponse]
     }
@@ -2397,10 +2409,10 @@ package mediaconvert {
         Mode: js.UndefOr[DescribeEndpointsMode] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): DescribeEndpointsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      Mode.foreach(__v => __obj.update("Mode", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEndpointsRequest]
     }
   }
@@ -2416,9 +2428,9 @@ package mediaconvert {
         Endpoints: js.UndefOr[__listOfEndpoint] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): DescribeEndpointsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Endpoints.foreach(__v => __obj.update("Endpoints", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Endpoints.foreach(__v => __obj.updateDynamic("Endpoints")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEndpointsResponse]
     }
   }
@@ -2435,8 +2447,8 @@ package mediaconvert {
     def apply(
         S3Settings: js.UndefOr[S3DestinationSettings] = js.undefined
     ): DestinationSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      S3Settings.foreach(__v => __obj.update("S3Settings", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      S3Settings.foreach(__v => __obj.updateDynamic("S3Settings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DestinationSettings]
     }
   }
@@ -2450,7 +2462,7 @@ package mediaconvert {
     def apply(
         Arn: __string
     ): DisassociateCertificateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
 
@@ -2464,7 +2476,7 @@ package mediaconvert {
   object DisassociateCertificateResponse {
     def apply(
         ): DisassociateCertificateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateCertificateResponse]
     }
@@ -2496,10 +2508,10 @@ package mediaconvert {
         NetworkName: js.UndefOr[__stringMin1Max256] = js.undefined,
         NitInterval: js.UndefOr[__integerMin25Max10000] = js.undefined
     ): DvbNitSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NetworkId.foreach(__v => __obj.update("NetworkId", __v.asInstanceOf[js.Any]))
-      NetworkName.foreach(__v => __obj.update("NetworkName", __v.asInstanceOf[js.Any]))
-      NitInterval.foreach(__v => __obj.update("NitInterval", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NetworkId.foreach(__v => __obj.updateDynamic("NetworkId")(__v.asInstanceOf[js.Any]))
+      NetworkName.foreach(__v => __obj.updateDynamic("NetworkName")(__v.asInstanceOf[js.Any]))
+      NitInterval.foreach(__v => __obj.updateDynamic("NitInterval")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DvbNitSettings]
     }
   }
@@ -2522,11 +2534,11 @@ package mediaconvert {
         ServiceName: js.UndefOr[__stringMin1Max256] = js.undefined,
         ServiceProviderName: js.UndefOr[__stringMin1Max256] = js.undefined
     ): DvbSdtSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      OutputSdt.foreach(__v => __obj.update("OutputSdt", __v.asInstanceOf[js.Any]))
-      SdtInterval.foreach(__v => __obj.update("SdtInterval", __v.asInstanceOf[js.Any]))
-      ServiceName.foreach(__v => __obj.update("ServiceName", __v.asInstanceOf[js.Any]))
-      ServiceProviderName.foreach(__v => __obj.update("ServiceProviderName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      OutputSdt.foreach(__v => __obj.updateDynamic("OutputSdt")(__v.asInstanceOf[js.Any]))
+      SdtInterval.foreach(__v => __obj.updateDynamic("SdtInterval")(__v.asInstanceOf[js.Any]))
+      ServiceName.foreach(__v => __obj.updateDynamic("ServiceName")(__v.asInstanceOf[js.Any]))
+      ServiceProviderName.foreach(__v => __obj.updateDynamic("ServiceProviderName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DvbSdtSettings]
     }
   }
@@ -2575,24 +2587,24 @@ package mediaconvert {
         XPosition: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
         YPosition: js.UndefOr[__integerMin0Max2147483647] = js.undefined
     ): DvbSubDestinationSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Alignment.foreach(__v => __obj.update("Alignment", __v.asInstanceOf[js.Any]))
-      BackgroundColor.foreach(__v => __obj.update("BackgroundColor", __v.asInstanceOf[js.Any]))
-      BackgroundOpacity.foreach(__v => __obj.update("BackgroundOpacity", __v.asInstanceOf[js.Any]))
-      FontColor.foreach(__v => __obj.update("FontColor", __v.asInstanceOf[js.Any]))
-      FontOpacity.foreach(__v => __obj.update("FontOpacity", __v.asInstanceOf[js.Any]))
-      FontResolution.foreach(__v => __obj.update("FontResolution", __v.asInstanceOf[js.Any]))
-      FontScript.foreach(__v => __obj.update("FontScript", __v.asInstanceOf[js.Any]))
-      FontSize.foreach(__v => __obj.update("FontSize", __v.asInstanceOf[js.Any]))
-      OutlineColor.foreach(__v => __obj.update("OutlineColor", __v.asInstanceOf[js.Any]))
-      OutlineSize.foreach(__v => __obj.update("OutlineSize", __v.asInstanceOf[js.Any]))
-      ShadowColor.foreach(__v => __obj.update("ShadowColor", __v.asInstanceOf[js.Any]))
-      ShadowOpacity.foreach(__v => __obj.update("ShadowOpacity", __v.asInstanceOf[js.Any]))
-      ShadowXOffset.foreach(__v => __obj.update("ShadowXOffset", __v.asInstanceOf[js.Any]))
-      ShadowYOffset.foreach(__v => __obj.update("ShadowYOffset", __v.asInstanceOf[js.Any]))
-      TeletextSpacing.foreach(__v => __obj.update("TeletextSpacing", __v.asInstanceOf[js.Any]))
-      XPosition.foreach(__v => __obj.update("XPosition", __v.asInstanceOf[js.Any]))
-      YPosition.foreach(__v => __obj.update("YPosition", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Alignment.foreach(__v => __obj.updateDynamic("Alignment")(__v.asInstanceOf[js.Any]))
+      BackgroundColor.foreach(__v => __obj.updateDynamic("BackgroundColor")(__v.asInstanceOf[js.Any]))
+      BackgroundOpacity.foreach(__v => __obj.updateDynamic("BackgroundOpacity")(__v.asInstanceOf[js.Any]))
+      FontColor.foreach(__v => __obj.updateDynamic("FontColor")(__v.asInstanceOf[js.Any]))
+      FontOpacity.foreach(__v => __obj.updateDynamic("FontOpacity")(__v.asInstanceOf[js.Any]))
+      FontResolution.foreach(__v => __obj.updateDynamic("FontResolution")(__v.asInstanceOf[js.Any]))
+      FontScript.foreach(__v => __obj.updateDynamic("FontScript")(__v.asInstanceOf[js.Any]))
+      FontSize.foreach(__v => __obj.updateDynamic("FontSize")(__v.asInstanceOf[js.Any]))
+      OutlineColor.foreach(__v => __obj.updateDynamic("OutlineColor")(__v.asInstanceOf[js.Any]))
+      OutlineSize.foreach(__v => __obj.updateDynamic("OutlineSize")(__v.asInstanceOf[js.Any]))
+      ShadowColor.foreach(__v => __obj.updateDynamic("ShadowColor")(__v.asInstanceOf[js.Any]))
+      ShadowOpacity.foreach(__v => __obj.updateDynamic("ShadowOpacity")(__v.asInstanceOf[js.Any]))
+      ShadowXOffset.foreach(__v => __obj.updateDynamic("ShadowXOffset")(__v.asInstanceOf[js.Any]))
+      ShadowYOffset.foreach(__v => __obj.updateDynamic("ShadowYOffset")(__v.asInstanceOf[js.Any]))
+      TeletextSpacing.foreach(__v => __obj.updateDynamic("TeletextSpacing")(__v.asInstanceOf[js.Any]))
+      XPosition.foreach(__v => __obj.updateDynamic("XPosition")(__v.asInstanceOf[js.Any]))
+      YPosition.foreach(__v => __obj.updateDynamic("YPosition")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DvbSubDestinationSettings]
     }
   }
@@ -2609,8 +2621,8 @@ package mediaconvert {
     def apply(
         Pid: js.UndefOr[__integerMin1Max2147483647] = js.undefined
     ): DvbSubSourceSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Pid.foreach(__v => __obj.update("Pid", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Pid.foreach(__v => __obj.updateDynamic("Pid")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DvbSubSourceSettings]
     }
   }
@@ -2699,8 +2711,8 @@ package mediaconvert {
     def apply(
         TdtInterval: js.UndefOr[__integerMin1000Max30000] = js.undefined
     ): DvbTdtSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TdtInterval.foreach(__v => __obj.update("TdtInterval", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TdtInterval.foreach(__v => __obj.updateDynamic("TdtInterval")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DvbTdtSettings]
     }
   }
@@ -2814,22 +2826,26 @@ package mediaconvert {
         StereoDownmix: js.UndefOr[Eac3AtmosStereoDownmix] = js.undefined,
         SurroundExMode: js.UndefOr[Eac3AtmosSurroundExMode] = js.undefined
     ): Eac3AtmosSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Bitrate.foreach(__v => __obj.update("Bitrate", __v.asInstanceOf[js.Any]))
-      BitstreamMode.foreach(__v => __obj.update("BitstreamMode", __v.asInstanceOf[js.Any]))
-      CodingMode.foreach(__v => __obj.update("CodingMode", __v.asInstanceOf[js.Any]))
-      DialogueIntelligence.foreach(__v => __obj.update("DialogueIntelligence", __v.asInstanceOf[js.Any]))
-      DynamicRangeCompressionLine.foreach(__v => __obj.update("DynamicRangeCompressionLine", __v.asInstanceOf[js.Any]))
-      DynamicRangeCompressionRf.foreach(__v => __obj.update("DynamicRangeCompressionRf", __v.asInstanceOf[js.Any]))
-      LoRoCenterMixLevel.foreach(__v => __obj.update("LoRoCenterMixLevel", __v.asInstanceOf[js.Any]))
-      LoRoSurroundMixLevel.foreach(__v => __obj.update("LoRoSurroundMixLevel", __v.asInstanceOf[js.Any]))
-      LtRtCenterMixLevel.foreach(__v => __obj.update("LtRtCenterMixLevel", __v.asInstanceOf[js.Any]))
-      LtRtSurroundMixLevel.foreach(__v => __obj.update("LtRtSurroundMixLevel", __v.asInstanceOf[js.Any]))
-      MeteringMode.foreach(__v => __obj.update("MeteringMode", __v.asInstanceOf[js.Any]))
-      SampleRate.foreach(__v => __obj.update("SampleRate", __v.asInstanceOf[js.Any]))
-      SpeechThreshold.foreach(__v => __obj.update("SpeechThreshold", __v.asInstanceOf[js.Any]))
-      StereoDownmix.foreach(__v => __obj.update("StereoDownmix", __v.asInstanceOf[js.Any]))
-      SurroundExMode.foreach(__v => __obj.update("SurroundExMode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Bitrate.foreach(__v => __obj.updateDynamic("Bitrate")(__v.asInstanceOf[js.Any]))
+      BitstreamMode.foreach(__v => __obj.updateDynamic("BitstreamMode")(__v.asInstanceOf[js.Any]))
+      CodingMode.foreach(__v => __obj.updateDynamic("CodingMode")(__v.asInstanceOf[js.Any]))
+      DialogueIntelligence.foreach(__v => __obj.updateDynamic("DialogueIntelligence")(__v.asInstanceOf[js.Any]))
+      DynamicRangeCompressionLine.foreach(
+        __v => __obj.updateDynamic("DynamicRangeCompressionLine")(__v.asInstanceOf[js.Any])
+      )
+      DynamicRangeCompressionRf.foreach(
+        __v => __obj.updateDynamic("DynamicRangeCompressionRf")(__v.asInstanceOf[js.Any])
+      )
+      LoRoCenterMixLevel.foreach(__v => __obj.updateDynamic("LoRoCenterMixLevel")(__v.asInstanceOf[js.Any]))
+      LoRoSurroundMixLevel.foreach(__v => __obj.updateDynamic("LoRoSurroundMixLevel")(__v.asInstanceOf[js.Any]))
+      LtRtCenterMixLevel.foreach(__v => __obj.updateDynamic("LtRtCenterMixLevel")(__v.asInstanceOf[js.Any]))
+      LtRtSurroundMixLevel.foreach(__v => __obj.updateDynamic("LtRtSurroundMixLevel")(__v.asInstanceOf[js.Any]))
+      MeteringMode.foreach(__v => __obj.updateDynamic("MeteringMode")(__v.asInstanceOf[js.Any]))
+      SampleRate.foreach(__v => __obj.updateDynamic("SampleRate")(__v.asInstanceOf[js.Any]))
+      SpeechThreshold.foreach(__v => __obj.updateDynamic("SpeechThreshold")(__v.asInstanceOf[js.Any]))
+      StereoDownmix.foreach(__v => __obj.updateDynamic("StereoDownmix")(__v.asInstanceOf[js.Any]))
+      SurroundExMode.foreach(__v => __obj.updateDynamic("SurroundExMode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Eac3AtmosSettings]
     }
   }
@@ -3031,28 +3047,32 @@ package mediaconvert {
         SurroundExMode: js.UndefOr[Eac3SurroundExMode] = js.undefined,
         SurroundMode: js.UndefOr[Eac3SurroundMode] = js.undefined
     ): Eac3Settings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttenuationControl.foreach(__v => __obj.update("AttenuationControl", __v.asInstanceOf[js.Any]))
-      Bitrate.foreach(__v => __obj.update("Bitrate", __v.asInstanceOf[js.Any]))
-      BitstreamMode.foreach(__v => __obj.update("BitstreamMode", __v.asInstanceOf[js.Any]))
-      CodingMode.foreach(__v => __obj.update("CodingMode", __v.asInstanceOf[js.Any]))
-      DcFilter.foreach(__v => __obj.update("DcFilter", __v.asInstanceOf[js.Any]))
-      Dialnorm.foreach(__v => __obj.update("Dialnorm", __v.asInstanceOf[js.Any]))
-      DynamicRangeCompressionLine.foreach(__v => __obj.update("DynamicRangeCompressionLine", __v.asInstanceOf[js.Any]))
-      DynamicRangeCompressionRf.foreach(__v => __obj.update("DynamicRangeCompressionRf", __v.asInstanceOf[js.Any]))
-      LfeControl.foreach(__v => __obj.update("LfeControl", __v.asInstanceOf[js.Any]))
-      LfeFilter.foreach(__v => __obj.update("LfeFilter", __v.asInstanceOf[js.Any]))
-      LoRoCenterMixLevel.foreach(__v => __obj.update("LoRoCenterMixLevel", __v.asInstanceOf[js.Any]))
-      LoRoSurroundMixLevel.foreach(__v => __obj.update("LoRoSurroundMixLevel", __v.asInstanceOf[js.Any]))
-      LtRtCenterMixLevel.foreach(__v => __obj.update("LtRtCenterMixLevel", __v.asInstanceOf[js.Any]))
-      LtRtSurroundMixLevel.foreach(__v => __obj.update("LtRtSurroundMixLevel", __v.asInstanceOf[js.Any]))
-      MetadataControl.foreach(__v => __obj.update("MetadataControl", __v.asInstanceOf[js.Any]))
-      PassthroughControl.foreach(__v => __obj.update("PassthroughControl", __v.asInstanceOf[js.Any]))
-      PhaseControl.foreach(__v => __obj.update("PhaseControl", __v.asInstanceOf[js.Any]))
-      SampleRate.foreach(__v => __obj.update("SampleRate", __v.asInstanceOf[js.Any]))
-      StereoDownmix.foreach(__v => __obj.update("StereoDownmix", __v.asInstanceOf[js.Any]))
-      SurroundExMode.foreach(__v => __obj.update("SurroundExMode", __v.asInstanceOf[js.Any]))
-      SurroundMode.foreach(__v => __obj.update("SurroundMode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttenuationControl.foreach(__v => __obj.updateDynamic("AttenuationControl")(__v.asInstanceOf[js.Any]))
+      Bitrate.foreach(__v => __obj.updateDynamic("Bitrate")(__v.asInstanceOf[js.Any]))
+      BitstreamMode.foreach(__v => __obj.updateDynamic("BitstreamMode")(__v.asInstanceOf[js.Any]))
+      CodingMode.foreach(__v => __obj.updateDynamic("CodingMode")(__v.asInstanceOf[js.Any]))
+      DcFilter.foreach(__v => __obj.updateDynamic("DcFilter")(__v.asInstanceOf[js.Any]))
+      Dialnorm.foreach(__v => __obj.updateDynamic("Dialnorm")(__v.asInstanceOf[js.Any]))
+      DynamicRangeCompressionLine.foreach(
+        __v => __obj.updateDynamic("DynamicRangeCompressionLine")(__v.asInstanceOf[js.Any])
+      )
+      DynamicRangeCompressionRf.foreach(
+        __v => __obj.updateDynamic("DynamicRangeCompressionRf")(__v.asInstanceOf[js.Any])
+      )
+      LfeControl.foreach(__v => __obj.updateDynamic("LfeControl")(__v.asInstanceOf[js.Any]))
+      LfeFilter.foreach(__v => __obj.updateDynamic("LfeFilter")(__v.asInstanceOf[js.Any]))
+      LoRoCenterMixLevel.foreach(__v => __obj.updateDynamic("LoRoCenterMixLevel")(__v.asInstanceOf[js.Any]))
+      LoRoSurroundMixLevel.foreach(__v => __obj.updateDynamic("LoRoSurroundMixLevel")(__v.asInstanceOf[js.Any]))
+      LtRtCenterMixLevel.foreach(__v => __obj.updateDynamic("LtRtCenterMixLevel")(__v.asInstanceOf[js.Any]))
+      LtRtSurroundMixLevel.foreach(__v => __obj.updateDynamic("LtRtSurroundMixLevel")(__v.asInstanceOf[js.Any]))
+      MetadataControl.foreach(__v => __obj.updateDynamic("MetadataControl")(__v.asInstanceOf[js.Any]))
+      PassthroughControl.foreach(__v => __obj.updateDynamic("PassthroughControl")(__v.asInstanceOf[js.Any]))
+      PhaseControl.foreach(__v => __obj.updateDynamic("PhaseControl")(__v.asInstanceOf[js.Any]))
+      SampleRate.foreach(__v => __obj.updateDynamic("SampleRate")(__v.asInstanceOf[js.Any]))
+      StereoDownmix.foreach(__v => __obj.updateDynamic("StereoDownmix")(__v.asInstanceOf[js.Any]))
+      SurroundExMode.foreach(__v => __obj.updateDynamic("SurroundExMode")(__v.asInstanceOf[js.Any]))
+      SurroundMode.foreach(__v => __obj.updateDynamic("SurroundMode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Eac3Settings]
     }
   }
@@ -3115,9 +3135,13 @@ package mediaconvert {
         Destination608ChannelNumber: js.UndefOr[__integerMin1Max4] = js.undefined,
         Destination708ServiceNumber: js.UndefOr[__integerMin1Max6] = js.undefined
     ): EmbeddedDestinationSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Destination608ChannelNumber.foreach(__v => __obj.update("Destination608ChannelNumber", __v.asInstanceOf[js.Any]))
-      Destination708ServiceNumber.foreach(__v => __obj.update("Destination708ServiceNumber", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Destination608ChannelNumber.foreach(
+        __v => __obj.updateDynamic("Destination608ChannelNumber")(__v.asInstanceOf[js.Any])
+      )
+      Destination708ServiceNumber.foreach(
+        __v => __obj.updateDynamic("Destination708ServiceNumber")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[EmbeddedDestinationSettings]
     }
   }
@@ -3138,10 +3162,10 @@ package mediaconvert {
         Source608ChannelNumber: js.UndefOr[__integerMin1Max4] = js.undefined,
         Source608TrackNumber: js.UndefOr[__integerMin1Max1] = js.undefined
     ): EmbeddedSourceSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Convert608To708.foreach(__v => __obj.update("Convert608To708", __v.asInstanceOf[js.Any]))
-      Source608ChannelNumber.foreach(__v => __obj.update("Source608ChannelNumber", __v.asInstanceOf[js.Any]))
-      Source608TrackNumber.foreach(__v => __obj.update("Source608TrackNumber", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Convert608To708.foreach(__v => __obj.updateDynamic("Convert608To708")(__v.asInstanceOf[js.Any]))
+      Source608ChannelNumber.foreach(__v => __obj.updateDynamic("Source608ChannelNumber")(__v.asInstanceOf[js.Any]))
+      Source608TrackNumber.foreach(__v => __obj.updateDynamic("Source608TrackNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EmbeddedSourceSettings]
     }
   }
@@ -3158,8 +3182,8 @@ package mediaconvert {
     def apply(
         Url: js.UndefOr[__string] = js.undefined
     ): Endpoint = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Endpoint]
     }
   }
@@ -3176,8 +3200,8 @@ package mediaconvert {
     def apply(
         MccXml: js.UndefOr[__stringPatternSNManifestConfirmConditionNotificationNS] = js.undefined
     ): EsamManifestConfirmConditionNotification = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MccXml.foreach(__v => __obj.update("MccXml", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MccXml.foreach(__v => __obj.updateDynamic("MccXml")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EsamManifestConfirmConditionNotification]
     }
   }
@@ -3198,13 +3222,13 @@ package mediaconvert {
         ResponseSignalPreroll: js.UndefOr[__integerMin0Max30000] = js.undefined,
         SignalProcessingNotification: js.UndefOr[EsamSignalProcessingNotification] = js.undefined
     ): EsamSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       ManifestConfirmConditionNotification.foreach(
-        __v => __obj.update("ManifestConfirmConditionNotification", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ManifestConfirmConditionNotification")(__v.asInstanceOf[js.Any])
       )
-      ResponseSignalPreroll.foreach(__v => __obj.update("ResponseSignalPreroll", __v.asInstanceOf[js.Any]))
+      ResponseSignalPreroll.foreach(__v => __obj.updateDynamic("ResponseSignalPreroll")(__v.asInstanceOf[js.Any]))
       SignalProcessingNotification.foreach(
-        __v => __obj.update("SignalProcessingNotification", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("SignalProcessingNotification")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[EsamSettings]
     }
@@ -3222,8 +3246,8 @@ package mediaconvert {
     def apply(
         SccXml: js.UndefOr[__stringPatternSNSignalProcessingNotificationNS] = js.undefined
     ): EsamSignalProcessingNotification = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SccXml.foreach(__v => __obj.update("SccXml", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SccXml.foreach(__v => __obj.updateDynamic("SccXml")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EsamSignalProcessingNotification]
     }
   }
@@ -3250,8 +3274,8 @@ package mediaconvert {
     def apply(
         MoovPlacement: js.UndefOr[F4vMoovPlacement] = js.undefined
     ): F4vSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MoovPlacement.foreach(__v => __obj.update("MoovPlacement", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MoovPlacement.foreach(__v => __obj.updateDynamic("MoovPlacement")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[F4vSettings]
     }
   }
@@ -3270,9 +3294,9 @@ package mediaconvert {
         Destination: js.UndefOr[__stringPatternS3] = js.undefined,
         DestinationSettings: js.UndefOr[DestinationSettings] = js.undefined
     ): FileGroupSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Destination.foreach(__v => __obj.update("Destination", __v.asInstanceOf[js.Any]))
-      DestinationSettings.foreach(__v => __obj.update("DestinationSettings", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
+      DestinationSettings.foreach(__v => __obj.updateDynamic("DestinationSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FileGroupSettings]
     }
   }
@@ -3303,10 +3327,10 @@ package mediaconvert {
         SourceFile: js.UndefOr[__stringMin14PatternS3SccSCCTtmlTTMLDfxpDFXPStlSTLSrtSRTSmiSMI] = js.undefined,
         TimeDelta: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined
     ): FileSourceSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Convert608To708.foreach(__v => __obj.update("Convert608To708", __v.asInstanceOf[js.Any]))
-      SourceFile.foreach(__v => __obj.update("SourceFile", __v.asInstanceOf[js.Any]))
-      TimeDelta.foreach(__v => __obj.update("TimeDelta", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Convert608To708.foreach(__v => __obj.updateDynamic("Convert608To708")(__v.asInstanceOf[js.Any]))
+      SourceFile.foreach(__v => __obj.updateDynamic("SourceFile")(__v.asInstanceOf[js.Any]))
+      TimeDelta.foreach(__v => __obj.updateDynamic("TimeDelta")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FileSourceSettings]
     }
   }
@@ -3340,11 +3364,11 @@ package mediaconvert {
         MaxCaptures: js.UndefOr[__integerMin1Max10000000] = js.undefined,
         Quality: js.UndefOr[__integerMin1Max100] = js.undefined
     ): FrameCaptureSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FramerateDenominator.foreach(__v => __obj.update("FramerateDenominator", __v.asInstanceOf[js.Any]))
-      FramerateNumerator.foreach(__v => __obj.update("FramerateNumerator", __v.asInstanceOf[js.Any]))
-      MaxCaptures.foreach(__v => __obj.update("MaxCaptures", __v.asInstanceOf[js.Any]))
-      Quality.foreach(__v => __obj.update("Quality", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FramerateDenominator.foreach(__v => __obj.updateDynamic("FramerateDenominator")(__v.asInstanceOf[js.Any]))
+      FramerateNumerator.foreach(__v => __obj.updateDynamic("FramerateNumerator")(__v.asInstanceOf[js.Any]))
+      MaxCaptures.foreach(__v => __obj.updateDynamic("MaxCaptures")(__v.asInstanceOf[js.Any]))
+      Quality.foreach(__v => __obj.updateDynamic("Quality")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FrameCaptureSettings]
     }
   }
@@ -3358,7 +3382,7 @@ package mediaconvert {
     def apply(
         Id: __string
     ): GetJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
@@ -3375,8 +3399,8 @@ package mediaconvert {
     def apply(
         Job: js.UndefOr[Job] = js.undefined
     ): GetJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Job.foreach(__v => __obj.update("Job", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Job.foreach(__v => __obj.updateDynamic("Job")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetJobResponse]
     }
   }
@@ -3390,7 +3414,7 @@ package mediaconvert {
     def apply(
         Name: __string
     ): GetJobTemplateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -3407,8 +3431,8 @@ package mediaconvert {
     def apply(
         JobTemplate: js.UndefOr[JobTemplate] = js.undefined
     ): GetJobTemplateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobTemplate.foreach(__v => __obj.update("JobTemplate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobTemplate.foreach(__v => __obj.updateDynamic("JobTemplate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetJobTemplateResponse]
     }
   }
@@ -3422,7 +3446,7 @@ package mediaconvert {
     def apply(
         Name: __string
     ): GetPresetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -3439,8 +3463,8 @@ package mediaconvert {
     def apply(
         Preset: js.UndefOr[Preset] = js.undefined
     ): GetPresetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Preset.foreach(__v => __obj.update("Preset", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Preset.foreach(__v => __obj.updateDynamic("Preset")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPresetResponse]
     }
   }
@@ -3454,7 +3478,7 @@ package mediaconvert {
     def apply(
         Name: __string
     ): GetQueueRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -3471,8 +3495,8 @@ package mediaconvert {
     def apply(
         Queue: js.UndefOr[Queue] = js.undefined
     ): GetQueueResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Queue.foreach(__v => __obj.update("Queue", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Queue.foreach(__v => __obj.updateDynamic("Queue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetQueueResponse]
     }
   }
@@ -3680,9 +3704,9 @@ package mediaconvert {
         MaxAverageBitrate: js.UndefOr[__integerMin1000Max1152000000] = js.undefined,
         QvbrQualityLevel: js.UndefOr[__integerMin1Max10] = js.undefined
     ): H264QvbrSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxAverageBitrate.foreach(__v => __obj.update("MaxAverageBitrate", __v.asInstanceOf[js.Any]))
-      QvbrQualityLevel.foreach(__v => __obj.update("QvbrQualityLevel", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxAverageBitrate.foreach(__v => __obj.updateDynamic("MaxAverageBitrate")(__v.asInstanceOf[js.Any]))
+      QvbrQualityLevel.foreach(__v => __obj.updateDynamic("QvbrQualityLevel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[H264QvbrSettings]
     }
   }
@@ -3807,54 +3831,58 @@ package mediaconvert {
         TemporalAdaptiveQuantization: js.UndefOr[H264TemporalAdaptiveQuantization] = js.undefined,
         UnregisteredSeiTimecode: js.UndefOr[H264UnregisteredSeiTimecode] = js.undefined
     ): H264Settings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AdaptiveQuantization.foreach(__v => __obj.update("AdaptiveQuantization", __v.asInstanceOf[js.Any]))
-      Bitrate.foreach(__v => __obj.update("Bitrate", __v.asInstanceOf[js.Any]))
-      CodecLevel.foreach(__v => __obj.update("CodecLevel", __v.asInstanceOf[js.Any]))
-      CodecProfile.foreach(__v => __obj.update("CodecProfile", __v.asInstanceOf[js.Any]))
-      DynamicSubGop.foreach(__v => __obj.update("DynamicSubGop", __v.asInstanceOf[js.Any]))
-      EntropyEncoding.foreach(__v => __obj.update("EntropyEncoding", __v.asInstanceOf[js.Any]))
-      FieldEncoding.foreach(__v => __obj.update("FieldEncoding", __v.asInstanceOf[js.Any]))
-      FlickerAdaptiveQuantization.foreach(__v => __obj.update("FlickerAdaptiveQuantization", __v.asInstanceOf[js.Any]))
-      FramerateControl.foreach(__v => __obj.update("FramerateControl", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AdaptiveQuantization.foreach(__v => __obj.updateDynamic("AdaptiveQuantization")(__v.asInstanceOf[js.Any]))
+      Bitrate.foreach(__v => __obj.updateDynamic("Bitrate")(__v.asInstanceOf[js.Any]))
+      CodecLevel.foreach(__v => __obj.updateDynamic("CodecLevel")(__v.asInstanceOf[js.Any]))
+      CodecProfile.foreach(__v => __obj.updateDynamic("CodecProfile")(__v.asInstanceOf[js.Any]))
+      DynamicSubGop.foreach(__v => __obj.updateDynamic("DynamicSubGop")(__v.asInstanceOf[js.Any]))
+      EntropyEncoding.foreach(__v => __obj.updateDynamic("EntropyEncoding")(__v.asInstanceOf[js.Any]))
+      FieldEncoding.foreach(__v => __obj.updateDynamic("FieldEncoding")(__v.asInstanceOf[js.Any]))
+      FlickerAdaptiveQuantization.foreach(
+        __v => __obj.updateDynamic("FlickerAdaptiveQuantization")(__v.asInstanceOf[js.Any])
+      )
+      FramerateControl.foreach(__v => __obj.updateDynamic("FramerateControl")(__v.asInstanceOf[js.Any]))
       FramerateConversionAlgorithm.foreach(
-        __v => __obj.update("FramerateConversionAlgorithm", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("FramerateConversionAlgorithm")(__v.asInstanceOf[js.Any])
       )
-      FramerateDenominator.foreach(__v => __obj.update("FramerateDenominator", __v.asInstanceOf[js.Any]))
-      FramerateNumerator.foreach(__v => __obj.update("FramerateNumerator", __v.asInstanceOf[js.Any]))
-      GopBReference.foreach(__v => __obj.update("GopBReference", __v.asInstanceOf[js.Any]))
-      GopClosedCadence.foreach(__v => __obj.update("GopClosedCadence", __v.asInstanceOf[js.Any]))
-      GopSize.foreach(__v => __obj.update("GopSize", __v.asInstanceOf[js.Any]))
-      GopSizeUnits.foreach(__v => __obj.update("GopSizeUnits", __v.asInstanceOf[js.Any]))
+      FramerateDenominator.foreach(__v => __obj.updateDynamic("FramerateDenominator")(__v.asInstanceOf[js.Any]))
+      FramerateNumerator.foreach(__v => __obj.updateDynamic("FramerateNumerator")(__v.asInstanceOf[js.Any]))
+      GopBReference.foreach(__v => __obj.updateDynamic("GopBReference")(__v.asInstanceOf[js.Any]))
+      GopClosedCadence.foreach(__v => __obj.updateDynamic("GopClosedCadence")(__v.asInstanceOf[js.Any]))
+      GopSize.foreach(__v => __obj.updateDynamic("GopSize")(__v.asInstanceOf[js.Any]))
+      GopSizeUnits.foreach(__v => __obj.updateDynamic("GopSizeUnits")(__v.asInstanceOf[js.Any]))
       HrdBufferInitialFillPercentage.foreach(
-        __v => __obj.update("HrdBufferInitialFillPercentage", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("HrdBufferInitialFillPercentage")(__v.asInstanceOf[js.Any])
       )
-      HrdBufferSize.foreach(__v => __obj.update("HrdBufferSize", __v.asInstanceOf[js.Any]))
-      InterlaceMode.foreach(__v => __obj.update("InterlaceMode", __v.asInstanceOf[js.Any]))
-      MaxBitrate.foreach(__v => __obj.update("MaxBitrate", __v.asInstanceOf[js.Any]))
-      MinIInterval.foreach(__v => __obj.update("MinIInterval", __v.asInstanceOf[js.Any]))
+      HrdBufferSize.foreach(__v => __obj.updateDynamic("HrdBufferSize")(__v.asInstanceOf[js.Any]))
+      InterlaceMode.foreach(__v => __obj.updateDynamic("InterlaceMode")(__v.asInstanceOf[js.Any]))
+      MaxBitrate.foreach(__v => __obj.updateDynamic("MaxBitrate")(__v.asInstanceOf[js.Any]))
+      MinIInterval.foreach(__v => __obj.updateDynamic("MinIInterval")(__v.asInstanceOf[js.Any]))
       NumberBFramesBetweenReferenceFrames.foreach(
-        __v => __obj.update("NumberBFramesBetweenReferenceFrames", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("NumberBFramesBetweenReferenceFrames")(__v.asInstanceOf[js.Any])
       )
-      NumberReferenceFrames.foreach(__v => __obj.update("NumberReferenceFrames", __v.asInstanceOf[js.Any]))
-      ParControl.foreach(__v => __obj.update("ParControl", __v.asInstanceOf[js.Any]))
-      ParDenominator.foreach(__v => __obj.update("ParDenominator", __v.asInstanceOf[js.Any]))
-      ParNumerator.foreach(__v => __obj.update("ParNumerator", __v.asInstanceOf[js.Any]))
-      QualityTuningLevel.foreach(__v => __obj.update("QualityTuningLevel", __v.asInstanceOf[js.Any]))
-      QvbrSettings.foreach(__v => __obj.update("QvbrSettings", __v.asInstanceOf[js.Any]))
-      RateControlMode.foreach(__v => __obj.update("RateControlMode", __v.asInstanceOf[js.Any]))
-      RepeatPps.foreach(__v => __obj.update("RepeatPps", __v.asInstanceOf[js.Any]))
-      SceneChangeDetect.foreach(__v => __obj.update("SceneChangeDetect", __v.asInstanceOf[js.Any]))
-      Slices.foreach(__v => __obj.update("Slices", __v.asInstanceOf[js.Any]))
-      SlowPal.foreach(__v => __obj.update("SlowPal", __v.asInstanceOf[js.Any]))
-      Softness.foreach(__v => __obj.update("Softness", __v.asInstanceOf[js.Any]))
-      SpatialAdaptiveQuantization.foreach(__v => __obj.update("SpatialAdaptiveQuantization", __v.asInstanceOf[js.Any]))
-      Syntax.foreach(__v => __obj.update("Syntax", __v.asInstanceOf[js.Any]))
-      Telecine.foreach(__v => __obj.update("Telecine", __v.asInstanceOf[js.Any]))
+      NumberReferenceFrames.foreach(__v => __obj.updateDynamic("NumberReferenceFrames")(__v.asInstanceOf[js.Any]))
+      ParControl.foreach(__v => __obj.updateDynamic("ParControl")(__v.asInstanceOf[js.Any]))
+      ParDenominator.foreach(__v => __obj.updateDynamic("ParDenominator")(__v.asInstanceOf[js.Any]))
+      ParNumerator.foreach(__v => __obj.updateDynamic("ParNumerator")(__v.asInstanceOf[js.Any]))
+      QualityTuningLevel.foreach(__v => __obj.updateDynamic("QualityTuningLevel")(__v.asInstanceOf[js.Any]))
+      QvbrSettings.foreach(__v => __obj.updateDynamic("QvbrSettings")(__v.asInstanceOf[js.Any]))
+      RateControlMode.foreach(__v => __obj.updateDynamic("RateControlMode")(__v.asInstanceOf[js.Any]))
+      RepeatPps.foreach(__v => __obj.updateDynamic("RepeatPps")(__v.asInstanceOf[js.Any]))
+      SceneChangeDetect.foreach(__v => __obj.updateDynamic("SceneChangeDetect")(__v.asInstanceOf[js.Any]))
+      Slices.foreach(__v => __obj.updateDynamic("Slices")(__v.asInstanceOf[js.Any]))
+      SlowPal.foreach(__v => __obj.updateDynamic("SlowPal")(__v.asInstanceOf[js.Any]))
+      Softness.foreach(__v => __obj.updateDynamic("Softness")(__v.asInstanceOf[js.Any]))
+      SpatialAdaptiveQuantization.foreach(
+        __v => __obj.updateDynamic("SpatialAdaptiveQuantization")(__v.asInstanceOf[js.Any])
+      )
+      Syntax.foreach(__v => __obj.updateDynamic("Syntax")(__v.asInstanceOf[js.Any]))
+      Telecine.foreach(__v => __obj.updateDynamic("Telecine")(__v.asInstanceOf[js.Any]))
       TemporalAdaptiveQuantization.foreach(
-        __v => __obj.update("TemporalAdaptiveQuantization", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("TemporalAdaptiveQuantization")(__v.asInstanceOf[js.Any])
       )
-      UnregisteredSeiTimecode.foreach(__v => __obj.update("UnregisteredSeiTimecode", __v.asInstanceOf[js.Any]))
+      UnregisteredSeiTimecode.foreach(__v => __obj.updateDynamic("UnregisteredSeiTimecode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[H264Settings]
     }
   }
@@ -4118,9 +4146,9 @@ package mediaconvert {
         MaxAverageBitrate: js.UndefOr[__integerMin1000Max1466400000] = js.undefined,
         QvbrQualityLevel: js.UndefOr[__integerMin1Max10] = js.undefined
     ): H265QvbrSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxAverageBitrate.foreach(__v => __obj.update("MaxAverageBitrate", __v.asInstanceOf[js.Any]))
-      QvbrQualityLevel.foreach(__v => __obj.update("QvbrQualityLevel", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxAverageBitrate.foreach(__v => __obj.updateDynamic("MaxAverageBitrate")(__v.asInstanceOf[js.Any]))
+      QvbrQualityLevel.foreach(__v => __obj.updateDynamic("QvbrQualityLevel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[H265QvbrSettings]
     }
   }
@@ -4246,58 +4274,62 @@ package mediaconvert {
         UnregisteredSeiTimecode: js.UndefOr[H265UnregisteredSeiTimecode] = js.undefined,
         WriteMp4PackagingType: js.UndefOr[H265WriteMp4PackagingType] = js.undefined
     ): H265Settings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AdaptiveQuantization.foreach(__v => __obj.update("AdaptiveQuantization", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AdaptiveQuantization.foreach(__v => __obj.updateDynamic("AdaptiveQuantization")(__v.asInstanceOf[js.Any]))
       AlternateTransferFunctionSei.foreach(
-        __v => __obj.update("AlternateTransferFunctionSei", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("AlternateTransferFunctionSei")(__v.asInstanceOf[js.Any])
       )
-      Bitrate.foreach(__v => __obj.update("Bitrate", __v.asInstanceOf[js.Any]))
-      CodecLevel.foreach(__v => __obj.update("CodecLevel", __v.asInstanceOf[js.Any]))
-      CodecProfile.foreach(__v => __obj.update("CodecProfile", __v.asInstanceOf[js.Any]))
-      DynamicSubGop.foreach(__v => __obj.update("DynamicSubGop", __v.asInstanceOf[js.Any]))
-      FlickerAdaptiveQuantization.foreach(__v => __obj.update("FlickerAdaptiveQuantization", __v.asInstanceOf[js.Any]))
-      FramerateControl.foreach(__v => __obj.update("FramerateControl", __v.asInstanceOf[js.Any]))
+      Bitrate.foreach(__v => __obj.updateDynamic("Bitrate")(__v.asInstanceOf[js.Any]))
+      CodecLevel.foreach(__v => __obj.updateDynamic("CodecLevel")(__v.asInstanceOf[js.Any]))
+      CodecProfile.foreach(__v => __obj.updateDynamic("CodecProfile")(__v.asInstanceOf[js.Any]))
+      DynamicSubGop.foreach(__v => __obj.updateDynamic("DynamicSubGop")(__v.asInstanceOf[js.Any]))
+      FlickerAdaptiveQuantization.foreach(
+        __v => __obj.updateDynamic("FlickerAdaptiveQuantization")(__v.asInstanceOf[js.Any])
+      )
+      FramerateControl.foreach(__v => __obj.updateDynamic("FramerateControl")(__v.asInstanceOf[js.Any]))
       FramerateConversionAlgorithm.foreach(
-        __v => __obj.update("FramerateConversionAlgorithm", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("FramerateConversionAlgorithm")(__v.asInstanceOf[js.Any])
       )
-      FramerateDenominator.foreach(__v => __obj.update("FramerateDenominator", __v.asInstanceOf[js.Any]))
-      FramerateNumerator.foreach(__v => __obj.update("FramerateNumerator", __v.asInstanceOf[js.Any]))
-      GopBReference.foreach(__v => __obj.update("GopBReference", __v.asInstanceOf[js.Any]))
-      GopClosedCadence.foreach(__v => __obj.update("GopClosedCadence", __v.asInstanceOf[js.Any]))
-      GopSize.foreach(__v => __obj.update("GopSize", __v.asInstanceOf[js.Any]))
-      GopSizeUnits.foreach(__v => __obj.update("GopSizeUnits", __v.asInstanceOf[js.Any]))
+      FramerateDenominator.foreach(__v => __obj.updateDynamic("FramerateDenominator")(__v.asInstanceOf[js.Any]))
+      FramerateNumerator.foreach(__v => __obj.updateDynamic("FramerateNumerator")(__v.asInstanceOf[js.Any]))
+      GopBReference.foreach(__v => __obj.updateDynamic("GopBReference")(__v.asInstanceOf[js.Any]))
+      GopClosedCadence.foreach(__v => __obj.updateDynamic("GopClosedCadence")(__v.asInstanceOf[js.Any]))
+      GopSize.foreach(__v => __obj.updateDynamic("GopSize")(__v.asInstanceOf[js.Any]))
+      GopSizeUnits.foreach(__v => __obj.updateDynamic("GopSizeUnits")(__v.asInstanceOf[js.Any]))
       HrdBufferInitialFillPercentage.foreach(
-        __v => __obj.update("HrdBufferInitialFillPercentage", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("HrdBufferInitialFillPercentage")(__v.asInstanceOf[js.Any])
       )
-      HrdBufferSize.foreach(__v => __obj.update("HrdBufferSize", __v.asInstanceOf[js.Any]))
-      InterlaceMode.foreach(__v => __obj.update("InterlaceMode", __v.asInstanceOf[js.Any]))
-      MaxBitrate.foreach(__v => __obj.update("MaxBitrate", __v.asInstanceOf[js.Any]))
-      MinIInterval.foreach(__v => __obj.update("MinIInterval", __v.asInstanceOf[js.Any]))
+      HrdBufferSize.foreach(__v => __obj.updateDynamic("HrdBufferSize")(__v.asInstanceOf[js.Any]))
+      InterlaceMode.foreach(__v => __obj.updateDynamic("InterlaceMode")(__v.asInstanceOf[js.Any]))
+      MaxBitrate.foreach(__v => __obj.updateDynamic("MaxBitrate")(__v.asInstanceOf[js.Any]))
+      MinIInterval.foreach(__v => __obj.updateDynamic("MinIInterval")(__v.asInstanceOf[js.Any]))
       NumberBFramesBetweenReferenceFrames.foreach(
-        __v => __obj.update("NumberBFramesBetweenReferenceFrames", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("NumberBFramesBetweenReferenceFrames")(__v.asInstanceOf[js.Any])
       )
-      NumberReferenceFrames.foreach(__v => __obj.update("NumberReferenceFrames", __v.asInstanceOf[js.Any]))
-      ParControl.foreach(__v => __obj.update("ParControl", __v.asInstanceOf[js.Any]))
-      ParDenominator.foreach(__v => __obj.update("ParDenominator", __v.asInstanceOf[js.Any]))
-      ParNumerator.foreach(__v => __obj.update("ParNumerator", __v.asInstanceOf[js.Any]))
-      QualityTuningLevel.foreach(__v => __obj.update("QualityTuningLevel", __v.asInstanceOf[js.Any]))
-      QvbrSettings.foreach(__v => __obj.update("QvbrSettings", __v.asInstanceOf[js.Any]))
-      RateControlMode.foreach(__v => __obj.update("RateControlMode", __v.asInstanceOf[js.Any]))
+      NumberReferenceFrames.foreach(__v => __obj.updateDynamic("NumberReferenceFrames")(__v.asInstanceOf[js.Any]))
+      ParControl.foreach(__v => __obj.updateDynamic("ParControl")(__v.asInstanceOf[js.Any]))
+      ParDenominator.foreach(__v => __obj.updateDynamic("ParDenominator")(__v.asInstanceOf[js.Any]))
+      ParNumerator.foreach(__v => __obj.updateDynamic("ParNumerator")(__v.asInstanceOf[js.Any]))
+      QualityTuningLevel.foreach(__v => __obj.updateDynamic("QualityTuningLevel")(__v.asInstanceOf[js.Any]))
+      QvbrSettings.foreach(__v => __obj.updateDynamic("QvbrSettings")(__v.asInstanceOf[js.Any]))
+      RateControlMode.foreach(__v => __obj.updateDynamic("RateControlMode")(__v.asInstanceOf[js.Any]))
       SampleAdaptiveOffsetFilterMode.foreach(
-        __v => __obj.update("SampleAdaptiveOffsetFilterMode", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("SampleAdaptiveOffsetFilterMode")(__v.asInstanceOf[js.Any])
       )
-      SceneChangeDetect.foreach(__v => __obj.update("SceneChangeDetect", __v.asInstanceOf[js.Any]))
-      Slices.foreach(__v => __obj.update("Slices", __v.asInstanceOf[js.Any]))
-      SlowPal.foreach(__v => __obj.update("SlowPal", __v.asInstanceOf[js.Any]))
-      SpatialAdaptiveQuantization.foreach(__v => __obj.update("SpatialAdaptiveQuantization", __v.asInstanceOf[js.Any]))
-      Telecine.foreach(__v => __obj.update("Telecine", __v.asInstanceOf[js.Any]))
+      SceneChangeDetect.foreach(__v => __obj.updateDynamic("SceneChangeDetect")(__v.asInstanceOf[js.Any]))
+      Slices.foreach(__v => __obj.updateDynamic("Slices")(__v.asInstanceOf[js.Any]))
+      SlowPal.foreach(__v => __obj.updateDynamic("SlowPal")(__v.asInstanceOf[js.Any]))
+      SpatialAdaptiveQuantization.foreach(
+        __v => __obj.updateDynamic("SpatialAdaptiveQuantization")(__v.asInstanceOf[js.Any])
+      )
+      Telecine.foreach(__v => __obj.updateDynamic("Telecine")(__v.asInstanceOf[js.Any]))
       TemporalAdaptiveQuantization.foreach(
-        __v => __obj.update("TemporalAdaptiveQuantization", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("TemporalAdaptiveQuantization")(__v.asInstanceOf[js.Any])
       )
-      TemporalIds.foreach(__v => __obj.update("TemporalIds", __v.asInstanceOf[js.Any]))
-      Tiles.foreach(__v => __obj.update("Tiles", __v.asInstanceOf[js.Any]))
-      UnregisteredSeiTimecode.foreach(__v => __obj.update("UnregisteredSeiTimecode", __v.asInstanceOf[js.Any]))
-      WriteMp4PackagingType.foreach(__v => __obj.update("WriteMp4PackagingType", __v.asInstanceOf[js.Any]))
+      TemporalIds.foreach(__v => __obj.updateDynamic("TemporalIds")(__v.asInstanceOf[js.Any]))
+      Tiles.foreach(__v => __obj.updateDynamic("Tiles")(__v.asInstanceOf[js.Any]))
+      UnregisteredSeiTimecode.foreach(__v => __obj.updateDynamic("UnregisteredSeiTimecode")(__v.asInstanceOf[js.Any]))
+      WriteMp4PackagingType.foreach(__v => __obj.updateDynamic("WriteMp4PackagingType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[H265Settings]
     }
   }
@@ -4417,19 +4449,21 @@ package mediaconvert {
         WhitePointX: js.UndefOr[__integerMin0Max50000] = js.undefined,
         WhitePointY: js.UndefOr[__integerMin0Max50000] = js.undefined
     ): Hdr10Metadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BluePrimaryX.foreach(__v => __obj.update("BluePrimaryX", __v.asInstanceOf[js.Any]))
-      BluePrimaryY.foreach(__v => __obj.update("BluePrimaryY", __v.asInstanceOf[js.Any]))
-      GreenPrimaryX.foreach(__v => __obj.update("GreenPrimaryX", __v.asInstanceOf[js.Any]))
-      GreenPrimaryY.foreach(__v => __obj.update("GreenPrimaryY", __v.asInstanceOf[js.Any]))
-      MaxContentLightLevel.foreach(__v => __obj.update("MaxContentLightLevel", __v.asInstanceOf[js.Any]))
-      MaxFrameAverageLightLevel.foreach(__v => __obj.update("MaxFrameAverageLightLevel", __v.asInstanceOf[js.Any]))
-      MaxLuminance.foreach(__v => __obj.update("MaxLuminance", __v.asInstanceOf[js.Any]))
-      MinLuminance.foreach(__v => __obj.update("MinLuminance", __v.asInstanceOf[js.Any]))
-      RedPrimaryX.foreach(__v => __obj.update("RedPrimaryX", __v.asInstanceOf[js.Any]))
-      RedPrimaryY.foreach(__v => __obj.update("RedPrimaryY", __v.asInstanceOf[js.Any]))
-      WhitePointX.foreach(__v => __obj.update("WhitePointX", __v.asInstanceOf[js.Any]))
-      WhitePointY.foreach(__v => __obj.update("WhitePointY", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BluePrimaryX.foreach(__v => __obj.updateDynamic("BluePrimaryX")(__v.asInstanceOf[js.Any]))
+      BluePrimaryY.foreach(__v => __obj.updateDynamic("BluePrimaryY")(__v.asInstanceOf[js.Any]))
+      GreenPrimaryX.foreach(__v => __obj.updateDynamic("GreenPrimaryX")(__v.asInstanceOf[js.Any]))
+      GreenPrimaryY.foreach(__v => __obj.updateDynamic("GreenPrimaryY")(__v.asInstanceOf[js.Any]))
+      MaxContentLightLevel.foreach(__v => __obj.updateDynamic("MaxContentLightLevel")(__v.asInstanceOf[js.Any]))
+      MaxFrameAverageLightLevel.foreach(
+        __v => __obj.updateDynamic("MaxFrameAverageLightLevel")(__v.asInstanceOf[js.Any])
+      )
+      MaxLuminance.foreach(__v => __obj.updateDynamic("MaxLuminance")(__v.asInstanceOf[js.Any]))
+      MinLuminance.foreach(__v => __obj.updateDynamic("MinLuminance")(__v.asInstanceOf[js.Any]))
+      RedPrimaryX.foreach(__v => __obj.updateDynamic("RedPrimaryX")(__v.asInstanceOf[js.Any]))
+      RedPrimaryY.foreach(__v => __obj.updateDynamic("RedPrimaryY")(__v.asInstanceOf[js.Any]))
+      WhitePointX.foreach(__v => __obj.updateDynamic("WhitePointX")(__v.asInstanceOf[js.Any]))
+      WhitePointY.foreach(__v => __obj.updateDynamic("WhitePointY")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Hdr10Metadata]
     }
   }
@@ -4488,11 +4522,11 @@ package mediaconvert {
         LanguageCode: js.UndefOr[LanguageCode] = js.undefined,
         LanguageDescription: js.UndefOr[__string] = js.undefined
     ): HlsCaptionLanguageMapping = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CaptionChannel.foreach(__v => __obj.update("CaptionChannel", __v.asInstanceOf[js.Any]))
-      CustomLanguageCode.foreach(__v => __obj.update("CustomLanguageCode", __v.asInstanceOf[js.Any]))
-      LanguageCode.foreach(__v => __obj.update("LanguageCode", __v.asInstanceOf[js.Any]))
-      LanguageDescription.foreach(__v => __obj.update("LanguageDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CaptionChannel.foreach(__v => __obj.updateDynamic("CaptionChannel")(__v.asInstanceOf[js.Any]))
+      CustomLanguageCode.foreach(__v => __obj.updateDynamic("CustomLanguageCode")(__v.asInstanceOf[js.Any]))
+      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      LanguageDescription.foreach(__v => __obj.updateDynamic("LanguageDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HlsCaptionLanguageMapping]
     }
   }
@@ -4562,18 +4596,18 @@ package mediaconvert {
         StaticKeyProvider: js.UndefOr[StaticKeyProvider] = js.undefined,
         Type: js.UndefOr[HlsKeyProviderType] = js.undefined
     ): HlsEncryptionSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       ConstantInitializationVector.foreach(
-        __v => __obj.update("ConstantInitializationVector", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ConstantInitializationVector")(__v.asInstanceOf[js.Any])
       )
-      EncryptionMethod.foreach(__v => __obj.update("EncryptionMethod", __v.asInstanceOf[js.Any]))
+      EncryptionMethod.foreach(__v => __obj.updateDynamic("EncryptionMethod")(__v.asInstanceOf[js.Any]))
       InitializationVectorInManifest.foreach(
-        __v => __obj.update("InitializationVectorInManifest", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("InitializationVectorInManifest")(__v.asInstanceOf[js.Any])
       )
-      OfflineEncrypted.foreach(__v => __obj.update("OfflineEncrypted", __v.asInstanceOf[js.Any]))
-      SpekeKeyProvider.foreach(__v => __obj.update("SpekeKeyProvider", __v.asInstanceOf[js.Any]))
-      StaticKeyProvider.foreach(__v => __obj.update("StaticKeyProvider", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      OfflineEncrypted.foreach(__v => __obj.updateDynamic("OfflineEncrypted")(__v.asInstanceOf[js.Any]))
+      SpekeKeyProvider.foreach(__v => __obj.updateDynamic("SpekeKeyProvider")(__v.asInstanceOf[js.Any]))
+      StaticKeyProvider.foreach(__v => __obj.updateDynamic("StaticKeyProvider")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HlsEncryptionSettings]
     }
   }
@@ -4646,31 +4680,33 @@ package mediaconvert {
         TimedMetadataId3Period: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
         TimestampDeltaMilliseconds: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined
     ): HlsGroupSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AdMarkers.foreach(__v => __obj.update("AdMarkers", __v.asInstanceOf[js.Any]))
-      BaseUrl.foreach(__v => __obj.update("BaseUrl", __v.asInstanceOf[js.Any]))
-      CaptionLanguageMappings.foreach(__v => __obj.update("CaptionLanguageMappings", __v.asInstanceOf[js.Any]))
-      CaptionLanguageSetting.foreach(__v => __obj.update("CaptionLanguageSetting", __v.asInstanceOf[js.Any]))
-      ClientCache.foreach(__v => __obj.update("ClientCache", __v.asInstanceOf[js.Any]))
-      CodecSpecification.foreach(__v => __obj.update("CodecSpecification", __v.asInstanceOf[js.Any]))
-      Destination.foreach(__v => __obj.update("Destination", __v.asInstanceOf[js.Any]))
-      DestinationSettings.foreach(__v => __obj.update("DestinationSettings", __v.asInstanceOf[js.Any]))
-      DirectoryStructure.foreach(__v => __obj.update("DirectoryStructure", __v.asInstanceOf[js.Any]))
-      Encryption.foreach(__v => __obj.update("Encryption", __v.asInstanceOf[js.Any]))
-      ManifestCompression.foreach(__v => __obj.update("ManifestCompression", __v.asInstanceOf[js.Any]))
-      ManifestDurationFormat.foreach(__v => __obj.update("ManifestDurationFormat", __v.asInstanceOf[js.Any]))
-      MinFinalSegmentLength.foreach(__v => __obj.update("MinFinalSegmentLength", __v.asInstanceOf[js.Any]))
-      MinSegmentLength.foreach(__v => __obj.update("MinSegmentLength", __v.asInstanceOf[js.Any]))
-      OutputSelection.foreach(__v => __obj.update("OutputSelection", __v.asInstanceOf[js.Any]))
-      ProgramDateTime.foreach(__v => __obj.update("ProgramDateTime", __v.asInstanceOf[js.Any]))
-      ProgramDateTimePeriod.foreach(__v => __obj.update("ProgramDateTimePeriod", __v.asInstanceOf[js.Any]))
-      SegmentControl.foreach(__v => __obj.update("SegmentControl", __v.asInstanceOf[js.Any]))
-      SegmentLength.foreach(__v => __obj.update("SegmentLength", __v.asInstanceOf[js.Any]))
-      SegmentsPerSubdirectory.foreach(__v => __obj.update("SegmentsPerSubdirectory", __v.asInstanceOf[js.Any]))
-      StreamInfResolution.foreach(__v => __obj.update("StreamInfResolution", __v.asInstanceOf[js.Any]))
-      TimedMetadataId3Frame.foreach(__v => __obj.update("TimedMetadataId3Frame", __v.asInstanceOf[js.Any]))
-      TimedMetadataId3Period.foreach(__v => __obj.update("TimedMetadataId3Period", __v.asInstanceOf[js.Any]))
-      TimestampDeltaMilliseconds.foreach(__v => __obj.update("TimestampDeltaMilliseconds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AdMarkers.foreach(__v => __obj.updateDynamic("AdMarkers")(__v.asInstanceOf[js.Any]))
+      BaseUrl.foreach(__v => __obj.updateDynamic("BaseUrl")(__v.asInstanceOf[js.Any]))
+      CaptionLanguageMappings.foreach(__v => __obj.updateDynamic("CaptionLanguageMappings")(__v.asInstanceOf[js.Any]))
+      CaptionLanguageSetting.foreach(__v => __obj.updateDynamic("CaptionLanguageSetting")(__v.asInstanceOf[js.Any]))
+      ClientCache.foreach(__v => __obj.updateDynamic("ClientCache")(__v.asInstanceOf[js.Any]))
+      CodecSpecification.foreach(__v => __obj.updateDynamic("CodecSpecification")(__v.asInstanceOf[js.Any]))
+      Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
+      DestinationSettings.foreach(__v => __obj.updateDynamic("DestinationSettings")(__v.asInstanceOf[js.Any]))
+      DirectoryStructure.foreach(__v => __obj.updateDynamic("DirectoryStructure")(__v.asInstanceOf[js.Any]))
+      Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
+      ManifestCompression.foreach(__v => __obj.updateDynamic("ManifestCompression")(__v.asInstanceOf[js.Any]))
+      ManifestDurationFormat.foreach(__v => __obj.updateDynamic("ManifestDurationFormat")(__v.asInstanceOf[js.Any]))
+      MinFinalSegmentLength.foreach(__v => __obj.updateDynamic("MinFinalSegmentLength")(__v.asInstanceOf[js.Any]))
+      MinSegmentLength.foreach(__v => __obj.updateDynamic("MinSegmentLength")(__v.asInstanceOf[js.Any]))
+      OutputSelection.foreach(__v => __obj.updateDynamic("OutputSelection")(__v.asInstanceOf[js.Any]))
+      ProgramDateTime.foreach(__v => __obj.updateDynamic("ProgramDateTime")(__v.asInstanceOf[js.Any]))
+      ProgramDateTimePeriod.foreach(__v => __obj.updateDynamic("ProgramDateTimePeriod")(__v.asInstanceOf[js.Any]))
+      SegmentControl.foreach(__v => __obj.updateDynamic("SegmentControl")(__v.asInstanceOf[js.Any]))
+      SegmentLength.foreach(__v => __obj.updateDynamic("SegmentLength")(__v.asInstanceOf[js.Any]))
+      SegmentsPerSubdirectory.foreach(__v => __obj.updateDynamic("SegmentsPerSubdirectory")(__v.asInstanceOf[js.Any]))
+      StreamInfResolution.foreach(__v => __obj.updateDynamic("StreamInfResolution")(__v.asInstanceOf[js.Any]))
+      TimedMetadataId3Frame.foreach(__v => __obj.updateDynamic("TimedMetadataId3Frame")(__v.asInstanceOf[js.Any]))
+      TimedMetadataId3Period.foreach(__v => __obj.updateDynamic("TimedMetadataId3Period")(__v.asInstanceOf[js.Any]))
+      TimestampDeltaMilliseconds.foreach(
+        __v => __obj.updateDynamic("TimestampDeltaMilliseconds")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[HlsGroupSettings]
     }
   }
@@ -4787,13 +4823,13 @@ package mediaconvert {
         IFrameOnlyManifest: js.UndefOr[HlsIFrameOnlyManifest] = js.undefined,
         SegmentModifier: js.UndefOr[__string] = js.undefined
     ): HlsSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AudioGroupId.foreach(__v => __obj.update("AudioGroupId", __v.asInstanceOf[js.Any]))
-      AudioOnlyContainer.foreach(__v => __obj.update("AudioOnlyContainer", __v.asInstanceOf[js.Any]))
-      AudioRenditionSets.foreach(__v => __obj.update("AudioRenditionSets", __v.asInstanceOf[js.Any]))
-      AudioTrackType.foreach(__v => __obj.update("AudioTrackType", __v.asInstanceOf[js.Any]))
-      IFrameOnlyManifest.foreach(__v => __obj.update("IFrameOnlyManifest", __v.asInstanceOf[js.Any]))
-      SegmentModifier.foreach(__v => __obj.update("SegmentModifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AudioGroupId.foreach(__v => __obj.updateDynamic("AudioGroupId")(__v.asInstanceOf[js.Any]))
+      AudioOnlyContainer.foreach(__v => __obj.updateDynamic("AudioOnlyContainer")(__v.asInstanceOf[js.Any]))
+      AudioRenditionSets.foreach(__v => __obj.updateDynamic("AudioRenditionSets")(__v.asInstanceOf[js.Any]))
+      AudioTrackType.foreach(__v => __obj.updateDynamic("AudioTrackType")(__v.asInstanceOf[js.Any]))
+      IFrameOnlyManifest.foreach(__v => __obj.updateDynamic("IFrameOnlyManifest")(__v.asInstanceOf[js.Any]))
+      SegmentModifier.foreach(__v => __obj.updateDynamic("SegmentModifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HlsSettings]
     }
   }
@@ -4833,9 +4869,9 @@ package mediaconvert {
         Id3: js.UndefOr[__stringPatternAZaZ0902] = js.undefined,
         Timecode: js.UndefOr[__stringPattern010920405090509092] = js.undefined
     ): Id3Insertion = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Id3.foreach(__v => __obj.update("Id3", __v.asInstanceOf[js.Any]))
-      Timecode.foreach(__v => __obj.update("Timecode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Id3.foreach(__v => __obj.updateDynamic("Id3")(__v.asInstanceOf[js.Any]))
+      Timecode.foreach(__v => __obj.updateDynamic("Timecode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Id3Insertion]
     }
   }
@@ -4852,8 +4888,8 @@ package mediaconvert {
     def apply(
         InsertableImages: js.UndefOr[__listOfInsertableImage] = js.undefined
     ): ImageInserter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InsertableImages.foreach(__v => __obj.update("InsertableImages", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InsertableImages.foreach(__v => __obj.updateDynamic("InsertableImages")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImageInserter]
     }
   }
@@ -4908,25 +4944,25 @@ package mediaconvert {
         TimecodeSource: js.UndefOr[InputTimecodeSource] = js.undefined,
         VideoSelector: js.UndefOr[VideoSelector] = js.undefined
     ): Input = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AudioSelectorGroups.foreach(__v => __obj.update("AudioSelectorGroups", __v.asInstanceOf[js.Any]))
-      AudioSelectors.foreach(__v => __obj.update("AudioSelectors", __v.asInstanceOf[js.Any]))
-      CaptionSelectors.foreach(__v => __obj.update("CaptionSelectors", __v.asInstanceOf[js.Any]))
-      Crop.foreach(__v => __obj.update("Crop", __v.asInstanceOf[js.Any]))
-      DeblockFilter.foreach(__v => __obj.update("DeblockFilter", __v.asInstanceOf[js.Any]))
-      DecryptionSettings.foreach(__v => __obj.update("DecryptionSettings", __v.asInstanceOf[js.Any]))
-      DenoiseFilter.foreach(__v => __obj.update("DenoiseFilter", __v.asInstanceOf[js.Any]))
-      FileInput.foreach(__v => __obj.update("FileInput", __v.asInstanceOf[js.Any]))
-      FilterEnable.foreach(__v => __obj.update("FilterEnable", __v.asInstanceOf[js.Any]))
-      FilterStrength.foreach(__v => __obj.update("FilterStrength", __v.asInstanceOf[js.Any]))
-      ImageInserter.foreach(__v => __obj.update("ImageInserter", __v.asInstanceOf[js.Any]))
-      InputClippings.foreach(__v => __obj.update("InputClippings", __v.asInstanceOf[js.Any]))
-      Position.foreach(__v => __obj.update("Position", __v.asInstanceOf[js.Any]))
-      ProgramNumber.foreach(__v => __obj.update("ProgramNumber", __v.asInstanceOf[js.Any]))
-      PsiControl.foreach(__v => __obj.update("PsiControl", __v.asInstanceOf[js.Any]))
-      SupplementalImps.foreach(__v => __obj.update("SupplementalImps", __v.asInstanceOf[js.Any]))
-      TimecodeSource.foreach(__v => __obj.update("TimecodeSource", __v.asInstanceOf[js.Any]))
-      VideoSelector.foreach(__v => __obj.update("VideoSelector", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AudioSelectorGroups.foreach(__v => __obj.updateDynamic("AudioSelectorGroups")(__v.asInstanceOf[js.Any]))
+      AudioSelectors.foreach(__v => __obj.updateDynamic("AudioSelectors")(__v.asInstanceOf[js.Any]))
+      CaptionSelectors.foreach(__v => __obj.updateDynamic("CaptionSelectors")(__v.asInstanceOf[js.Any]))
+      Crop.foreach(__v => __obj.updateDynamic("Crop")(__v.asInstanceOf[js.Any]))
+      DeblockFilter.foreach(__v => __obj.updateDynamic("DeblockFilter")(__v.asInstanceOf[js.Any]))
+      DecryptionSettings.foreach(__v => __obj.updateDynamic("DecryptionSettings")(__v.asInstanceOf[js.Any]))
+      DenoiseFilter.foreach(__v => __obj.updateDynamic("DenoiseFilter")(__v.asInstanceOf[js.Any]))
+      FileInput.foreach(__v => __obj.updateDynamic("FileInput")(__v.asInstanceOf[js.Any]))
+      FilterEnable.foreach(__v => __obj.updateDynamic("FilterEnable")(__v.asInstanceOf[js.Any]))
+      FilterStrength.foreach(__v => __obj.updateDynamic("FilterStrength")(__v.asInstanceOf[js.Any]))
+      ImageInserter.foreach(__v => __obj.updateDynamic("ImageInserter")(__v.asInstanceOf[js.Any]))
+      InputClippings.foreach(__v => __obj.updateDynamic("InputClippings")(__v.asInstanceOf[js.Any]))
+      Position.foreach(__v => __obj.updateDynamic("Position")(__v.asInstanceOf[js.Any]))
+      ProgramNumber.foreach(__v => __obj.updateDynamic("ProgramNumber")(__v.asInstanceOf[js.Any]))
+      PsiControl.foreach(__v => __obj.updateDynamic("PsiControl")(__v.asInstanceOf[js.Any]))
+      SupplementalImps.foreach(__v => __obj.updateDynamic("SupplementalImps")(__v.asInstanceOf[js.Any]))
+      TimecodeSource.foreach(__v => __obj.updateDynamic("TimecodeSource")(__v.asInstanceOf[js.Any]))
+      VideoSelector.foreach(__v => __obj.updateDynamic("VideoSelector")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Input]
     }
   }
@@ -4945,9 +4981,9 @@ package mediaconvert {
         EndTimecode: js.UndefOr[__stringPattern010920405090509092] = js.undefined,
         StartTimecode: js.UndefOr[__stringPattern010920405090509092] = js.undefined
     ): InputClipping = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EndTimecode.foreach(__v => __obj.update("EndTimecode", __v.asInstanceOf[js.Any]))
-      StartTimecode.foreach(__v => __obj.update("StartTimecode", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EndTimecode.foreach(__v => __obj.updateDynamic("EndTimecode")(__v.asInstanceOf[js.Any]))
+      StartTimecode.foreach(__v => __obj.updateDynamic("StartTimecode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InputClipping]
     }
   }
@@ -4980,11 +5016,11 @@ package mediaconvert {
         InitializationVector: js.UndefOr[__stringMin16Max24PatternAZaZ0922AZaZ0916] = js.undefined,
         KmsKeyRegion: js.UndefOr[__stringMin9Max19PatternAZ26EastWestCentralNorthSouthEastWest1912] = js.undefined
     ): InputDecryptionSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DecryptionMode.foreach(__v => __obj.update("DecryptionMode", __v.asInstanceOf[js.Any]))
-      EncryptedDecryptionKey.foreach(__v => __obj.update("EncryptedDecryptionKey", __v.asInstanceOf[js.Any]))
-      InitializationVector.foreach(__v => __obj.update("InitializationVector", __v.asInstanceOf[js.Any]))
-      KmsKeyRegion.foreach(__v => __obj.update("KmsKeyRegion", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DecryptionMode.foreach(__v => __obj.updateDynamic("DecryptionMode")(__v.asInstanceOf[js.Any]))
+      EncryptedDecryptionKey.foreach(__v => __obj.updateDynamic("EncryptedDecryptionKey")(__v.asInstanceOf[js.Any]))
+      InitializationVector.foreach(__v => __obj.updateDynamic("InitializationVector")(__v.asInstanceOf[js.Any]))
+      KmsKeyRegion.foreach(__v => __obj.updateDynamic("KmsKeyRegion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InputDecryptionSettings]
     }
   }
@@ -5073,22 +5109,22 @@ package mediaconvert {
         TimecodeSource: js.UndefOr[InputTimecodeSource] = js.undefined,
         VideoSelector: js.UndefOr[VideoSelector] = js.undefined
     ): InputTemplate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AudioSelectorGroups.foreach(__v => __obj.update("AudioSelectorGroups", __v.asInstanceOf[js.Any]))
-      AudioSelectors.foreach(__v => __obj.update("AudioSelectors", __v.asInstanceOf[js.Any]))
-      CaptionSelectors.foreach(__v => __obj.update("CaptionSelectors", __v.asInstanceOf[js.Any]))
-      Crop.foreach(__v => __obj.update("Crop", __v.asInstanceOf[js.Any]))
-      DeblockFilter.foreach(__v => __obj.update("DeblockFilter", __v.asInstanceOf[js.Any]))
-      DenoiseFilter.foreach(__v => __obj.update("DenoiseFilter", __v.asInstanceOf[js.Any]))
-      FilterEnable.foreach(__v => __obj.update("FilterEnable", __v.asInstanceOf[js.Any]))
-      FilterStrength.foreach(__v => __obj.update("FilterStrength", __v.asInstanceOf[js.Any]))
-      ImageInserter.foreach(__v => __obj.update("ImageInserter", __v.asInstanceOf[js.Any]))
-      InputClippings.foreach(__v => __obj.update("InputClippings", __v.asInstanceOf[js.Any]))
-      Position.foreach(__v => __obj.update("Position", __v.asInstanceOf[js.Any]))
-      ProgramNumber.foreach(__v => __obj.update("ProgramNumber", __v.asInstanceOf[js.Any]))
-      PsiControl.foreach(__v => __obj.update("PsiControl", __v.asInstanceOf[js.Any]))
-      TimecodeSource.foreach(__v => __obj.update("TimecodeSource", __v.asInstanceOf[js.Any]))
-      VideoSelector.foreach(__v => __obj.update("VideoSelector", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AudioSelectorGroups.foreach(__v => __obj.updateDynamic("AudioSelectorGroups")(__v.asInstanceOf[js.Any]))
+      AudioSelectors.foreach(__v => __obj.updateDynamic("AudioSelectors")(__v.asInstanceOf[js.Any]))
+      CaptionSelectors.foreach(__v => __obj.updateDynamic("CaptionSelectors")(__v.asInstanceOf[js.Any]))
+      Crop.foreach(__v => __obj.updateDynamic("Crop")(__v.asInstanceOf[js.Any]))
+      DeblockFilter.foreach(__v => __obj.updateDynamic("DeblockFilter")(__v.asInstanceOf[js.Any]))
+      DenoiseFilter.foreach(__v => __obj.updateDynamic("DenoiseFilter")(__v.asInstanceOf[js.Any]))
+      FilterEnable.foreach(__v => __obj.updateDynamic("FilterEnable")(__v.asInstanceOf[js.Any]))
+      FilterStrength.foreach(__v => __obj.updateDynamic("FilterStrength")(__v.asInstanceOf[js.Any]))
+      ImageInserter.foreach(__v => __obj.updateDynamic("ImageInserter")(__v.asInstanceOf[js.Any]))
+      InputClippings.foreach(__v => __obj.updateDynamic("InputClippings")(__v.asInstanceOf[js.Any]))
+      Position.foreach(__v => __obj.updateDynamic("Position")(__v.asInstanceOf[js.Any]))
+      ProgramNumber.foreach(__v => __obj.updateDynamic("ProgramNumber")(__v.asInstanceOf[js.Any]))
+      PsiControl.foreach(__v => __obj.updateDynamic("PsiControl")(__v.asInstanceOf[js.Any]))
+      TimecodeSource.foreach(__v => __obj.updateDynamic("TimecodeSource")(__v.asInstanceOf[js.Any]))
+      VideoSelector.foreach(__v => __obj.updateDynamic("VideoSelector")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InputTemplate]
     }
   }
@@ -5136,18 +5172,18 @@ package mediaconvert {
         StartTime: js.UndefOr[__stringPattern01D20305D205D] = js.undefined,
         Width: js.UndefOr[__integerMin0Max2147483647] = js.undefined
     ): InsertableImage = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
-      FadeIn.foreach(__v => __obj.update("FadeIn", __v.asInstanceOf[js.Any]))
-      FadeOut.foreach(__v => __obj.update("FadeOut", __v.asInstanceOf[js.Any]))
-      Height.foreach(__v => __obj.update("Height", __v.asInstanceOf[js.Any]))
-      ImageInserterInput.foreach(__v => __obj.update("ImageInserterInput", __v.asInstanceOf[js.Any]))
-      ImageX.foreach(__v => __obj.update("ImageX", __v.asInstanceOf[js.Any]))
-      ImageY.foreach(__v => __obj.update("ImageY", __v.asInstanceOf[js.Any]))
-      Layer.foreach(__v => __obj.update("Layer", __v.asInstanceOf[js.Any]))
-      Opacity.foreach(__v => __obj.update("Opacity", __v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
-      Width.foreach(__v => __obj.update("Width", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Duration.foreach(__v => __obj.updateDynamic("Duration")(__v.asInstanceOf[js.Any]))
+      FadeIn.foreach(__v => __obj.updateDynamic("FadeIn")(__v.asInstanceOf[js.Any]))
+      FadeOut.foreach(__v => __obj.updateDynamic("FadeOut")(__v.asInstanceOf[js.Any]))
+      Height.foreach(__v => __obj.updateDynamic("Height")(__v.asInstanceOf[js.Any]))
+      ImageInserterInput.foreach(__v => __obj.updateDynamic("ImageInserterInput")(__v.asInstanceOf[js.Any]))
+      ImageX.foreach(__v => __obj.updateDynamic("ImageX")(__v.asInstanceOf[js.Any]))
+      ImageY.foreach(__v => __obj.updateDynamic("ImageY")(__v.asInstanceOf[js.Any]))
+      Layer.foreach(__v => __obj.updateDynamic("Layer")(__v.asInstanceOf[js.Any]))
+      Opacity.foreach(__v => __obj.updateDynamic("Opacity")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      Width.foreach(__v => __obj.updateDynamic("Width")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InsertableImage]
     }
   }
@@ -5202,29 +5238,29 @@ package mediaconvert {
         Timing: js.UndefOr[Timing] = js.undefined,
         UserMetadata: js.UndefOr[__mapOf__string] = js.undefined
     ): Job = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Role"     -> Role.asInstanceOf[js.Any],
         "Settings" -> Settings.asInstanceOf[js.Any]
       )
 
-      AccelerationSettings.foreach(__v => __obj.update("AccelerationSettings", __v.asInstanceOf[js.Any]))
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      BillingTagsSource.foreach(__v => __obj.update("BillingTagsSource", __v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.update("CreatedAt", __v.asInstanceOf[js.Any]))
-      CurrentPhase.foreach(__v => __obj.update("CurrentPhase", __v.asInstanceOf[js.Any]))
-      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      JobPercentComplete.foreach(__v => __obj.update("JobPercentComplete", __v.asInstanceOf[js.Any]))
-      JobTemplate.foreach(__v => __obj.update("JobTemplate", __v.asInstanceOf[js.Any]))
-      OutputGroupDetails.foreach(__v => __obj.update("OutputGroupDetails", __v.asInstanceOf[js.Any]))
-      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
-      Queue.foreach(__v => __obj.update("Queue", __v.asInstanceOf[js.Any]))
-      RetryCount.foreach(__v => __obj.update("RetryCount", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusUpdateInterval.foreach(__v => __obj.update("StatusUpdateInterval", __v.asInstanceOf[js.Any]))
-      Timing.foreach(__v => __obj.update("Timing", __v.asInstanceOf[js.Any]))
-      UserMetadata.foreach(__v => __obj.update("UserMetadata", __v.asInstanceOf[js.Any]))
+      AccelerationSettings.foreach(__v => __obj.updateDynamic("AccelerationSettings")(__v.asInstanceOf[js.Any]))
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      BillingTagsSource.foreach(__v => __obj.updateDynamic("BillingTagsSource")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      CurrentPhase.foreach(__v => __obj.updateDynamic("CurrentPhase")(__v.asInstanceOf[js.Any]))
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      JobPercentComplete.foreach(__v => __obj.updateDynamic("JobPercentComplete")(__v.asInstanceOf[js.Any]))
+      JobTemplate.foreach(__v => __obj.updateDynamic("JobTemplate")(__v.asInstanceOf[js.Any]))
+      OutputGroupDetails.foreach(__v => __obj.updateDynamic("OutputGroupDetails")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      Queue.foreach(__v => __obj.updateDynamic("Queue")(__v.asInstanceOf[js.Any]))
+      RetryCount.foreach(__v => __obj.updateDynamic("RetryCount")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusUpdateInterval.foreach(__v => __obj.updateDynamic("StatusUpdateInterval")(__v.asInstanceOf[js.Any]))
+      Timing.foreach(__v => __obj.updateDynamic("Timing")(__v.asInstanceOf[js.Any]))
+      UserMetadata.foreach(__v => __obj.updateDynamic("UserMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Job]
     }
   }
@@ -5268,16 +5304,16 @@ package mediaconvert {
         TimecodeConfig: js.UndefOr[TimecodeConfig] = js.undefined,
         TimedMetadataInsertion: js.UndefOr[TimedMetadataInsertion] = js.undefined
     ): JobSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AdAvailOffset.foreach(__v => __obj.update("AdAvailOffset", __v.asInstanceOf[js.Any]))
-      AvailBlanking.foreach(__v => __obj.update("AvailBlanking", __v.asInstanceOf[js.Any]))
-      Esam.foreach(__v => __obj.update("Esam", __v.asInstanceOf[js.Any]))
-      Inputs.foreach(__v => __obj.update("Inputs", __v.asInstanceOf[js.Any]))
-      MotionImageInserter.foreach(__v => __obj.update("MotionImageInserter", __v.asInstanceOf[js.Any]))
-      NielsenConfiguration.foreach(__v => __obj.update("NielsenConfiguration", __v.asInstanceOf[js.Any]))
-      OutputGroups.foreach(__v => __obj.update("OutputGroups", __v.asInstanceOf[js.Any]))
-      TimecodeConfig.foreach(__v => __obj.update("TimecodeConfig", __v.asInstanceOf[js.Any]))
-      TimedMetadataInsertion.foreach(__v => __obj.update("TimedMetadataInsertion", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AdAvailOffset.foreach(__v => __obj.updateDynamic("AdAvailOffset")(__v.asInstanceOf[js.Any]))
+      AvailBlanking.foreach(__v => __obj.updateDynamic("AvailBlanking")(__v.asInstanceOf[js.Any]))
+      Esam.foreach(__v => __obj.updateDynamic("Esam")(__v.asInstanceOf[js.Any]))
+      Inputs.foreach(__v => __obj.updateDynamic("Inputs")(__v.asInstanceOf[js.Any]))
+      MotionImageInserter.foreach(__v => __obj.updateDynamic("MotionImageInserter")(__v.asInstanceOf[js.Any]))
+      NielsenConfiguration.foreach(__v => __obj.updateDynamic("NielsenConfiguration")(__v.asInstanceOf[js.Any]))
+      OutputGroups.foreach(__v => __obj.updateDynamic("OutputGroups")(__v.asInstanceOf[js.Any]))
+      TimecodeConfig.foreach(__v => __obj.updateDynamic("TimecodeConfig")(__v.asInstanceOf[js.Any]))
+      TimedMetadataInsertion.foreach(__v => __obj.updateDynamic("TimedMetadataInsertion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobSettings]
     }
   }
@@ -5329,21 +5365,21 @@ package mediaconvert {
         StatusUpdateInterval: js.UndefOr[StatusUpdateInterval] = js.undefined,
         Type: js.UndefOr[Type] = js.undefined
     ): JobTemplate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"     -> Name.asInstanceOf[js.Any],
         "Settings" -> Settings.asInstanceOf[js.Any]
       )
 
-      AccelerationSettings.foreach(__v => __obj.update("AccelerationSettings", __v.asInstanceOf[js.Any]))
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Category.foreach(__v => __obj.update("Category", __v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.update("CreatedAt", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      LastUpdated.foreach(__v => __obj.update("LastUpdated", __v.asInstanceOf[js.Any]))
-      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
-      Queue.foreach(__v => __obj.update("Queue", __v.asInstanceOf[js.Any]))
-      StatusUpdateInterval.foreach(__v => __obj.update("StatusUpdateInterval", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      AccelerationSettings.foreach(__v => __obj.updateDynamic("AccelerationSettings")(__v.asInstanceOf[js.Any]))
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LastUpdated.foreach(__v => __obj.updateDynamic("LastUpdated")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      Queue.foreach(__v => __obj.updateDynamic("Queue")(__v.asInstanceOf[js.Any]))
+      StatusUpdateInterval.foreach(__v => __obj.updateDynamic("StatusUpdateInterval")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobTemplate]
     }
   }
@@ -5387,16 +5423,16 @@ package mediaconvert {
         TimecodeConfig: js.UndefOr[TimecodeConfig] = js.undefined,
         TimedMetadataInsertion: js.UndefOr[TimedMetadataInsertion] = js.undefined
     ): JobTemplateSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AdAvailOffset.foreach(__v => __obj.update("AdAvailOffset", __v.asInstanceOf[js.Any]))
-      AvailBlanking.foreach(__v => __obj.update("AvailBlanking", __v.asInstanceOf[js.Any]))
-      Esam.foreach(__v => __obj.update("Esam", __v.asInstanceOf[js.Any]))
-      Inputs.foreach(__v => __obj.update("Inputs", __v.asInstanceOf[js.Any]))
-      MotionImageInserter.foreach(__v => __obj.update("MotionImageInserter", __v.asInstanceOf[js.Any]))
-      NielsenConfiguration.foreach(__v => __obj.update("NielsenConfiguration", __v.asInstanceOf[js.Any]))
-      OutputGroups.foreach(__v => __obj.update("OutputGroups", __v.asInstanceOf[js.Any]))
-      TimecodeConfig.foreach(__v => __obj.update("TimecodeConfig", __v.asInstanceOf[js.Any]))
-      TimedMetadataInsertion.foreach(__v => __obj.update("TimedMetadataInsertion", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AdAvailOffset.foreach(__v => __obj.updateDynamic("AdAvailOffset")(__v.asInstanceOf[js.Any]))
+      AvailBlanking.foreach(__v => __obj.updateDynamic("AvailBlanking")(__v.asInstanceOf[js.Any]))
+      Esam.foreach(__v => __obj.updateDynamic("Esam")(__v.asInstanceOf[js.Any]))
+      Inputs.foreach(__v => __obj.updateDynamic("Inputs")(__v.asInstanceOf[js.Any]))
+      MotionImageInserter.foreach(__v => __obj.updateDynamic("MotionImageInserter")(__v.asInstanceOf[js.Any]))
+      NielsenConfiguration.foreach(__v => __obj.updateDynamic("NielsenConfiguration")(__v.asInstanceOf[js.Any]))
+      OutputGroups.foreach(__v => __obj.updateDynamic("OutputGroups")(__v.asInstanceOf[js.Any]))
+      TimecodeConfig.foreach(__v => __obj.updateDynamic("TimecodeConfig")(__v.asInstanceOf[js.Any]))
+      TimedMetadataInsertion.foreach(__v => __obj.updateDynamic("TimedMetadataInsertion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobTemplateSettings]
     }
   }
@@ -5811,12 +5847,12 @@ package mediaconvert {
         NextToken: js.UndefOr[__string] = js.undefined,
         Order: js.UndefOr[Order] = js.undefined
     ): ListJobTemplatesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Category.foreach(__v => __obj.update("Category", __v.asInstanceOf[js.Any]))
-      ListBy.foreach(__v => __obj.update("ListBy", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Order.foreach(__v => __obj.update("Order", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
+      ListBy.foreach(__v => __obj.updateDynamic("ListBy")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Order.foreach(__v => __obj.updateDynamic("Order")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListJobTemplatesRequest]
     }
   }
@@ -5832,9 +5868,9 @@ package mediaconvert {
         JobTemplates: js.UndefOr[__listOfJobTemplate] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListJobTemplatesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobTemplates.foreach(__v => __obj.update("JobTemplates", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobTemplates.foreach(__v => __obj.updateDynamic("JobTemplates")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListJobTemplatesResponse]
     }
   }
@@ -5856,12 +5892,12 @@ package mediaconvert {
         Queue: js.UndefOr[__string] = js.undefined,
         Status: js.UndefOr[JobStatus] = js.undefined
     ): ListJobsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Order.foreach(__v => __obj.update("Order", __v.asInstanceOf[js.Any]))
-      Queue.foreach(__v => __obj.update("Queue", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Order.foreach(__v => __obj.updateDynamic("Order")(__v.asInstanceOf[js.Any]))
+      Queue.foreach(__v => __obj.updateDynamic("Queue")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListJobsRequest]
     }
   }
@@ -5877,9 +5913,9 @@ package mediaconvert {
         Jobs: js.UndefOr[__listOfJob] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListJobsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Jobs.foreach(__v => __obj.update("Jobs", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Jobs.foreach(__v => __obj.updateDynamic("Jobs")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListJobsResponse]
     }
   }
@@ -5901,12 +5937,12 @@ package mediaconvert {
         NextToken: js.UndefOr[__string] = js.undefined,
         Order: js.UndefOr[Order] = js.undefined
     ): ListPresetsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Category.foreach(__v => __obj.update("Category", __v.asInstanceOf[js.Any]))
-      ListBy.foreach(__v => __obj.update("ListBy", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Order.foreach(__v => __obj.update("Order", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
+      ListBy.foreach(__v => __obj.updateDynamic("ListBy")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Order.foreach(__v => __obj.updateDynamic("Order")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPresetsRequest]
     }
   }
@@ -5922,9 +5958,9 @@ package mediaconvert {
         NextToken: js.UndefOr[__string] = js.undefined,
         Presets: js.UndefOr[__listOfPreset] = js.undefined
     ): ListPresetsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Presets.foreach(__v => __obj.update("Presets", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Presets.foreach(__v => __obj.updateDynamic("Presets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPresetsResponse]
     }
   }
@@ -5944,11 +5980,11 @@ package mediaconvert {
         NextToken: js.UndefOr[__string] = js.undefined,
         Order: js.UndefOr[Order] = js.undefined
     ): ListQueuesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ListBy.foreach(__v => __obj.update("ListBy", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Order.foreach(__v => __obj.update("Order", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ListBy.foreach(__v => __obj.updateDynamic("ListBy")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Order.foreach(__v => __obj.updateDynamic("Order")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListQueuesRequest]
     }
   }
@@ -5964,9 +6000,9 @@ package mediaconvert {
         NextToken: js.UndefOr[__string] = js.undefined,
         Queues: js.UndefOr[__listOfQueue] = js.undefined
     ): ListQueuesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Queues.foreach(__v => __obj.update("Queues", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Queues.foreach(__v => __obj.updateDynamic("Queues")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListQueuesResponse]
     }
   }
@@ -5980,7 +6016,7 @@ package mediaconvert {
     def apply(
         Arn: __string
     ): ListTagsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
 
@@ -5997,8 +6033,8 @@ package mediaconvert {
     def apply(
         ResourceTags: js.UndefOr[ResourceTags] = js.undefined
     ): ListTagsForResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ResourceTags.foreach(__v => __obj.update("ResourceTags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ResourceTags.foreach(__v => __obj.updateDynamic("ResourceTags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
@@ -6105,8 +6141,8 @@ package mediaconvert {
     def apply(
         Scte35EsamPid: js.UndefOr[__integerMin32Max8182] = js.undefined
     ): M2tsScte35Esam = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Scte35EsamPid.foreach(__v => __obj.update("Scte35EsamPid", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Scte35EsamPid.foreach(__v => __obj.updateDynamic("Scte35EsamPid")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[M2tsScte35Esam]
     }
   }
@@ -6227,43 +6263,43 @@ package mediaconvert {
         TransportStreamId: js.UndefOr[__integerMin0Max65535] = js.undefined,
         VideoPid: js.UndefOr[__integerMin32Max8182] = js.undefined
     ): M2tsSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AudioBufferModel.foreach(__v => __obj.update("AudioBufferModel", __v.asInstanceOf[js.Any]))
-      AudioFramesPerPes.foreach(__v => __obj.update("AudioFramesPerPes", __v.asInstanceOf[js.Any]))
-      AudioPids.foreach(__v => __obj.update("AudioPids", __v.asInstanceOf[js.Any]))
-      Bitrate.foreach(__v => __obj.update("Bitrate", __v.asInstanceOf[js.Any]))
-      BufferModel.foreach(__v => __obj.update("BufferModel", __v.asInstanceOf[js.Any]))
-      DvbNitSettings.foreach(__v => __obj.update("DvbNitSettings", __v.asInstanceOf[js.Any]))
-      DvbSdtSettings.foreach(__v => __obj.update("DvbSdtSettings", __v.asInstanceOf[js.Any]))
-      DvbSubPids.foreach(__v => __obj.update("DvbSubPids", __v.asInstanceOf[js.Any]))
-      DvbTdtSettings.foreach(__v => __obj.update("DvbTdtSettings", __v.asInstanceOf[js.Any]))
-      DvbTeletextPid.foreach(__v => __obj.update("DvbTeletextPid", __v.asInstanceOf[js.Any]))
-      EbpAudioInterval.foreach(__v => __obj.update("EbpAudioInterval", __v.asInstanceOf[js.Any]))
-      EbpPlacement.foreach(__v => __obj.update("EbpPlacement", __v.asInstanceOf[js.Any]))
-      EsRateInPes.foreach(__v => __obj.update("EsRateInPes", __v.asInstanceOf[js.Any]))
-      ForceTsVideoEbpOrder.foreach(__v => __obj.update("ForceTsVideoEbpOrder", __v.asInstanceOf[js.Any]))
-      FragmentTime.foreach(__v => __obj.update("FragmentTime", __v.asInstanceOf[js.Any]))
-      MaxPcrInterval.foreach(__v => __obj.update("MaxPcrInterval", __v.asInstanceOf[js.Any]))
-      MinEbpInterval.foreach(__v => __obj.update("MinEbpInterval", __v.asInstanceOf[js.Any]))
-      NielsenId3.foreach(__v => __obj.update("NielsenId3", __v.asInstanceOf[js.Any]))
-      NullPacketBitrate.foreach(__v => __obj.update("NullPacketBitrate", __v.asInstanceOf[js.Any]))
-      PatInterval.foreach(__v => __obj.update("PatInterval", __v.asInstanceOf[js.Any]))
-      PcrControl.foreach(__v => __obj.update("PcrControl", __v.asInstanceOf[js.Any]))
-      PcrPid.foreach(__v => __obj.update("PcrPid", __v.asInstanceOf[js.Any]))
-      PmtInterval.foreach(__v => __obj.update("PmtInterval", __v.asInstanceOf[js.Any]))
-      PmtPid.foreach(__v => __obj.update("PmtPid", __v.asInstanceOf[js.Any]))
-      PrivateMetadataPid.foreach(__v => __obj.update("PrivateMetadataPid", __v.asInstanceOf[js.Any]))
-      ProgramNumber.foreach(__v => __obj.update("ProgramNumber", __v.asInstanceOf[js.Any]))
-      RateMode.foreach(__v => __obj.update("RateMode", __v.asInstanceOf[js.Any]))
-      Scte35Esam.foreach(__v => __obj.update("Scte35Esam", __v.asInstanceOf[js.Any]))
-      Scte35Pid.foreach(__v => __obj.update("Scte35Pid", __v.asInstanceOf[js.Any]))
-      Scte35Source.foreach(__v => __obj.update("Scte35Source", __v.asInstanceOf[js.Any]))
-      SegmentationMarkers.foreach(__v => __obj.update("SegmentationMarkers", __v.asInstanceOf[js.Any]))
-      SegmentationStyle.foreach(__v => __obj.update("SegmentationStyle", __v.asInstanceOf[js.Any]))
-      SegmentationTime.foreach(__v => __obj.update("SegmentationTime", __v.asInstanceOf[js.Any]))
-      TimedMetadataPid.foreach(__v => __obj.update("TimedMetadataPid", __v.asInstanceOf[js.Any]))
-      TransportStreamId.foreach(__v => __obj.update("TransportStreamId", __v.asInstanceOf[js.Any]))
-      VideoPid.foreach(__v => __obj.update("VideoPid", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AudioBufferModel.foreach(__v => __obj.updateDynamic("AudioBufferModel")(__v.asInstanceOf[js.Any]))
+      AudioFramesPerPes.foreach(__v => __obj.updateDynamic("AudioFramesPerPes")(__v.asInstanceOf[js.Any]))
+      AudioPids.foreach(__v => __obj.updateDynamic("AudioPids")(__v.asInstanceOf[js.Any]))
+      Bitrate.foreach(__v => __obj.updateDynamic("Bitrate")(__v.asInstanceOf[js.Any]))
+      BufferModel.foreach(__v => __obj.updateDynamic("BufferModel")(__v.asInstanceOf[js.Any]))
+      DvbNitSettings.foreach(__v => __obj.updateDynamic("DvbNitSettings")(__v.asInstanceOf[js.Any]))
+      DvbSdtSettings.foreach(__v => __obj.updateDynamic("DvbSdtSettings")(__v.asInstanceOf[js.Any]))
+      DvbSubPids.foreach(__v => __obj.updateDynamic("DvbSubPids")(__v.asInstanceOf[js.Any]))
+      DvbTdtSettings.foreach(__v => __obj.updateDynamic("DvbTdtSettings")(__v.asInstanceOf[js.Any]))
+      DvbTeletextPid.foreach(__v => __obj.updateDynamic("DvbTeletextPid")(__v.asInstanceOf[js.Any]))
+      EbpAudioInterval.foreach(__v => __obj.updateDynamic("EbpAudioInterval")(__v.asInstanceOf[js.Any]))
+      EbpPlacement.foreach(__v => __obj.updateDynamic("EbpPlacement")(__v.asInstanceOf[js.Any]))
+      EsRateInPes.foreach(__v => __obj.updateDynamic("EsRateInPes")(__v.asInstanceOf[js.Any]))
+      ForceTsVideoEbpOrder.foreach(__v => __obj.updateDynamic("ForceTsVideoEbpOrder")(__v.asInstanceOf[js.Any]))
+      FragmentTime.foreach(__v => __obj.updateDynamic("FragmentTime")(__v.asInstanceOf[js.Any]))
+      MaxPcrInterval.foreach(__v => __obj.updateDynamic("MaxPcrInterval")(__v.asInstanceOf[js.Any]))
+      MinEbpInterval.foreach(__v => __obj.updateDynamic("MinEbpInterval")(__v.asInstanceOf[js.Any]))
+      NielsenId3.foreach(__v => __obj.updateDynamic("NielsenId3")(__v.asInstanceOf[js.Any]))
+      NullPacketBitrate.foreach(__v => __obj.updateDynamic("NullPacketBitrate")(__v.asInstanceOf[js.Any]))
+      PatInterval.foreach(__v => __obj.updateDynamic("PatInterval")(__v.asInstanceOf[js.Any]))
+      PcrControl.foreach(__v => __obj.updateDynamic("PcrControl")(__v.asInstanceOf[js.Any]))
+      PcrPid.foreach(__v => __obj.updateDynamic("PcrPid")(__v.asInstanceOf[js.Any]))
+      PmtInterval.foreach(__v => __obj.updateDynamic("PmtInterval")(__v.asInstanceOf[js.Any]))
+      PmtPid.foreach(__v => __obj.updateDynamic("PmtPid")(__v.asInstanceOf[js.Any]))
+      PrivateMetadataPid.foreach(__v => __obj.updateDynamic("PrivateMetadataPid")(__v.asInstanceOf[js.Any]))
+      ProgramNumber.foreach(__v => __obj.updateDynamic("ProgramNumber")(__v.asInstanceOf[js.Any]))
+      RateMode.foreach(__v => __obj.updateDynamic("RateMode")(__v.asInstanceOf[js.Any]))
+      Scte35Esam.foreach(__v => __obj.updateDynamic("Scte35Esam")(__v.asInstanceOf[js.Any]))
+      Scte35Pid.foreach(__v => __obj.updateDynamic("Scte35Pid")(__v.asInstanceOf[js.Any]))
+      Scte35Source.foreach(__v => __obj.updateDynamic("Scte35Source")(__v.asInstanceOf[js.Any]))
+      SegmentationMarkers.foreach(__v => __obj.updateDynamic("SegmentationMarkers")(__v.asInstanceOf[js.Any]))
+      SegmentationStyle.foreach(__v => __obj.updateDynamic("SegmentationStyle")(__v.asInstanceOf[js.Any]))
+      SegmentationTime.foreach(__v => __obj.updateDynamic("SegmentationTime")(__v.asInstanceOf[js.Any]))
+      TimedMetadataPid.foreach(__v => __obj.updateDynamic("TimedMetadataPid")(__v.asInstanceOf[js.Any]))
+      TransportStreamId.foreach(__v => __obj.updateDynamic("TransportStreamId")(__v.asInstanceOf[js.Any]))
+      VideoPid.foreach(__v => __obj.updateDynamic("VideoPid")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[M2tsSettings]
     }
   }
@@ -6340,23 +6376,23 @@ package mediaconvert {
         TransportStreamId: js.UndefOr[__integerMin0Max65535] = js.undefined,
         VideoPid: js.UndefOr[__integerMin32Max8182] = js.undefined
     ): M3u8Settings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AudioFramesPerPes.foreach(__v => __obj.update("AudioFramesPerPes", __v.asInstanceOf[js.Any]))
-      AudioPids.foreach(__v => __obj.update("AudioPids", __v.asInstanceOf[js.Any]))
-      NielsenId3.foreach(__v => __obj.update("NielsenId3", __v.asInstanceOf[js.Any]))
-      PatInterval.foreach(__v => __obj.update("PatInterval", __v.asInstanceOf[js.Any]))
-      PcrControl.foreach(__v => __obj.update("PcrControl", __v.asInstanceOf[js.Any]))
-      PcrPid.foreach(__v => __obj.update("PcrPid", __v.asInstanceOf[js.Any]))
-      PmtInterval.foreach(__v => __obj.update("PmtInterval", __v.asInstanceOf[js.Any]))
-      PmtPid.foreach(__v => __obj.update("PmtPid", __v.asInstanceOf[js.Any]))
-      PrivateMetadataPid.foreach(__v => __obj.update("PrivateMetadataPid", __v.asInstanceOf[js.Any]))
-      ProgramNumber.foreach(__v => __obj.update("ProgramNumber", __v.asInstanceOf[js.Any]))
-      Scte35Pid.foreach(__v => __obj.update("Scte35Pid", __v.asInstanceOf[js.Any]))
-      Scte35Source.foreach(__v => __obj.update("Scte35Source", __v.asInstanceOf[js.Any]))
-      TimedMetadata.foreach(__v => __obj.update("TimedMetadata", __v.asInstanceOf[js.Any]))
-      TimedMetadataPid.foreach(__v => __obj.update("TimedMetadataPid", __v.asInstanceOf[js.Any]))
-      TransportStreamId.foreach(__v => __obj.update("TransportStreamId", __v.asInstanceOf[js.Any]))
-      VideoPid.foreach(__v => __obj.update("VideoPid", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AudioFramesPerPes.foreach(__v => __obj.updateDynamic("AudioFramesPerPes")(__v.asInstanceOf[js.Any]))
+      AudioPids.foreach(__v => __obj.updateDynamic("AudioPids")(__v.asInstanceOf[js.Any]))
+      NielsenId3.foreach(__v => __obj.updateDynamic("NielsenId3")(__v.asInstanceOf[js.Any]))
+      PatInterval.foreach(__v => __obj.updateDynamic("PatInterval")(__v.asInstanceOf[js.Any]))
+      PcrControl.foreach(__v => __obj.updateDynamic("PcrControl")(__v.asInstanceOf[js.Any]))
+      PcrPid.foreach(__v => __obj.updateDynamic("PcrPid")(__v.asInstanceOf[js.Any]))
+      PmtInterval.foreach(__v => __obj.updateDynamic("PmtInterval")(__v.asInstanceOf[js.Any]))
+      PmtPid.foreach(__v => __obj.updateDynamic("PmtPid")(__v.asInstanceOf[js.Any]))
+      PrivateMetadataPid.foreach(__v => __obj.updateDynamic("PrivateMetadataPid")(__v.asInstanceOf[js.Any]))
+      ProgramNumber.foreach(__v => __obj.updateDynamic("ProgramNumber")(__v.asInstanceOf[js.Any]))
+      Scte35Pid.foreach(__v => __obj.updateDynamic("Scte35Pid")(__v.asInstanceOf[js.Any]))
+      Scte35Source.foreach(__v => __obj.updateDynamic("Scte35Source")(__v.asInstanceOf[js.Any]))
+      TimedMetadata.foreach(__v => __obj.updateDynamic("TimedMetadata")(__v.asInstanceOf[js.Any]))
+      TimedMetadataPid.foreach(__v => __obj.updateDynamic("TimedMetadataPid")(__v.asInstanceOf[js.Any]))
+      TransportStreamId.foreach(__v => __obj.updateDynamic("TransportStreamId")(__v.asInstanceOf[js.Any]))
+      VideoPid.foreach(__v => __obj.updateDynamic("VideoPid")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[M3u8Settings]
     }
   }
@@ -6383,13 +6419,13 @@ package mediaconvert {
         Playback: js.UndefOr[MotionImagePlayback] = js.undefined,
         StartTime: js.UndefOr[__stringMin11Max11Pattern01D20305D205D] = js.undefined
     ): MotionImageInserter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Framerate.foreach(__v => __obj.update("Framerate", __v.asInstanceOf[js.Any]))
-      Input.foreach(__v => __obj.update("Input", __v.asInstanceOf[js.Any]))
-      InsertionMode.foreach(__v => __obj.update("InsertionMode", __v.asInstanceOf[js.Any]))
-      Offset.foreach(__v => __obj.update("Offset", __v.asInstanceOf[js.Any]))
-      Playback.foreach(__v => __obj.update("Playback", __v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Framerate.foreach(__v => __obj.updateDynamic("Framerate")(__v.asInstanceOf[js.Any]))
+      Input.foreach(__v => __obj.updateDynamic("Input")(__v.asInstanceOf[js.Any]))
+      InsertionMode.foreach(__v => __obj.updateDynamic("InsertionMode")(__v.asInstanceOf[js.Any]))
+      Offset.foreach(__v => __obj.updateDynamic("Offset")(__v.asInstanceOf[js.Any]))
+      Playback.foreach(__v => __obj.updateDynamic("Playback")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MotionImageInserter]
     }
   }
@@ -6408,9 +6444,9 @@ package mediaconvert {
         FramerateDenominator: js.UndefOr[__integerMin1Max17895697] = js.undefined,
         FramerateNumerator: js.UndefOr[__integerMin1Max2147483640] = js.undefined
     ): MotionImageInsertionFramerate = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FramerateDenominator.foreach(__v => __obj.update("FramerateDenominator", __v.asInstanceOf[js.Any]))
-      FramerateNumerator.foreach(__v => __obj.update("FramerateNumerator", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FramerateDenominator.foreach(__v => __obj.updateDynamic("FramerateDenominator")(__v.asInstanceOf[js.Any]))
+      FramerateNumerator.foreach(__v => __obj.updateDynamic("FramerateNumerator")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MotionImageInsertionFramerate]
     }
   }
@@ -6439,9 +6475,9 @@ package mediaconvert {
         ImageX: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
         ImageY: js.UndefOr[__integerMin0Max2147483647] = js.undefined
     ): MotionImageInsertionOffset = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ImageX.foreach(__v => __obj.update("ImageX", __v.asInstanceOf[js.Any]))
-      ImageY.foreach(__v => __obj.update("ImageY", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ImageX.foreach(__v => __obj.updateDynamic("ImageX")(__v.asInstanceOf[js.Any]))
+      ImageY.foreach(__v => __obj.updateDynamic("ImageY")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MotionImageInsertionOffset]
     }
   }
@@ -6526,12 +6562,12 @@ package mediaconvert {
         PaddingControl: js.UndefOr[MovPaddingControl] = js.undefined,
         Reference: js.UndefOr[MovReference] = js.undefined
     ): MovSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClapAtom.foreach(__v => __obj.update("ClapAtom", __v.asInstanceOf[js.Any]))
-      CslgAtom.foreach(__v => __obj.update("CslgAtom", __v.asInstanceOf[js.Any]))
-      Mpeg2FourCCControl.foreach(__v => __obj.update("Mpeg2FourCCControl", __v.asInstanceOf[js.Any]))
-      PaddingControl.foreach(__v => __obj.update("PaddingControl", __v.asInstanceOf[js.Any]))
-      Reference.foreach(__v => __obj.update("Reference", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClapAtom.foreach(__v => __obj.updateDynamic("ClapAtom")(__v.asInstanceOf[js.Any]))
+      CslgAtom.foreach(__v => __obj.updateDynamic("CslgAtom")(__v.asInstanceOf[js.Any]))
+      Mpeg2FourCCControl.foreach(__v => __obj.updateDynamic("Mpeg2FourCCControl")(__v.asInstanceOf[js.Any]))
+      PaddingControl.foreach(__v => __obj.updateDynamic("PaddingControl")(__v.asInstanceOf[js.Any]))
+      Reference.foreach(__v => __obj.updateDynamic("Reference")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MovSettings]
     }
   }
@@ -6552,10 +6588,10 @@ package mediaconvert {
         Channels: js.UndefOr[__integerMin1Max2] = js.undefined,
         SampleRate: js.UndefOr[__integerMin32000Max48000] = js.undefined
     ): Mp2Settings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Bitrate.foreach(__v => __obj.update("Bitrate", __v.asInstanceOf[js.Any]))
-      Channels.foreach(__v => __obj.update("Channels", __v.asInstanceOf[js.Any]))
-      SampleRate.foreach(__v => __obj.update("SampleRate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Bitrate.foreach(__v => __obj.updateDynamic("Bitrate")(__v.asInstanceOf[js.Any]))
+      Channels.foreach(__v => __obj.updateDynamic("Channels")(__v.asInstanceOf[js.Any]))
+      SampleRate.foreach(__v => __obj.updateDynamic("SampleRate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Mp2Settings]
     }
   }
@@ -6608,11 +6644,11 @@ package mediaconvert {
         MoovPlacement: js.UndefOr[Mp4MoovPlacement] = js.undefined,
         Mp4MajorBrand: js.UndefOr[__string] = js.undefined
     ): Mp4Settings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CslgAtom.foreach(__v => __obj.update("CslgAtom", __v.asInstanceOf[js.Any]))
-      FreeSpaceBox.foreach(__v => __obj.update("FreeSpaceBox", __v.asInstanceOf[js.Any]))
-      MoovPlacement.foreach(__v => __obj.update("MoovPlacement", __v.asInstanceOf[js.Any]))
-      Mp4MajorBrand.foreach(__v => __obj.update("Mp4MajorBrand", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CslgAtom.foreach(__v => __obj.updateDynamic("CslgAtom")(__v.asInstanceOf[js.Any]))
+      FreeSpaceBox.foreach(__v => __obj.updateDynamic("FreeSpaceBox")(__v.asInstanceOf[js.Any]))
+      MoovPlacement.foreach(__v => __obj.updateDynamic("MoovPlacement")(__v.asInstanceOf[js.Any]))
+      Mp4MajorBrand.foreach(__v => __obj.updateDynamic("Mp4MajorBrand")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Mp4Settings]
     }
   }
@@ -6834,45 +6870,47 @@ package mediaconvert {
         Telecine: js.UndefOr[Mpeg2Telecine] = js.undefined,
         TemporalAdaptiveQuantization: js.UndefOr[Mpeg2TemporalAdaptiveQuantization] = js.undefined
     ): Mpeg2Settings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AdaptiveQuantization.foreach(__v => __obj.update("AdaptiveQuantization", __v.asInstanceOf[js.Any]))
-      Bitrate.foreach(__v => __obj.update("Bitrate", __v.asInstanceOf[js.Any]))
-      CodecLevel.foreach(__v => __obj.update("CodecLevel", __v.asInstanceOf[js.Any]))
-      CodecProfile.foreach(__v => __obj.update("CodecProfile", __v.asInstanceOf[js.Any]))
-      DynamicSubGop.foreach(__v => __obj.update("DynamicSubGop", __v.asInstanceOf[js.Any]))
-      FramerateControl.foreach(__v => __obj.update("FramerateControl", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AdaptiveQuantization.foreach(__v => __obj.updateDynamic("AdaptiveQuantization")(__v.asInstanceOf[js.Any]))
+      Bitrate.foreach(__v => __obj.updateDynamic("Bitrate")(__v.asInstanceOf[js.Any]))
+      CodecLevel.foreach(__v => __obj.updateDynamic("CodecLevel")(__v.asInstanceOf[js.Any]))
+      CodecProfile.foreach(__v => __obj.updateDynamic("CodecProfile")(__v.asInstanceOf[js.Any]))
+      DynamicSubGop.foreach(__v => __obj.updateDynamic("DynamicSubGop")(__v.asInstanceOf[js.Any]))
+      FramerateControl.foreach(__v => __obj.updateDynamic("FramerateControl")(__v.asInstanceOf[js.Any]))
       FramerateConversionAlgorithm.foreach(
-        __v => __obj.update("FramerateConversionAlgorithm", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("FramerateConversionAlgorithm")(__v.asInstanceOf[js.Any])
       )
-      FramerateDenominator.foreach(__v => __obj.update("FramerateDenominator", __v.asInstanceOf[js.Any]))
-      FramerateNumerator.foreach(__v => __obj.update("FramerateNumerator", __v.asInstanceOf[js.Any]))
-      GopClosedCadence.foreach(__v => __obj.update("GopClosedCadence", __v.asInstanceOf[js.Any]))
-      GopSize.foreach(__v => __obj.update("GopSize", __v.asInstanceOf[js.Any]))
-      GopSizeUnits.foreach(__v => __obj.update("GopSizeUnits", __v.asInstanceOf[js.Any]))
+      FramerateDenominator.foreach(__v => __obj.updateDynamic("FramerateDenominator")(__v.asInstanceOf[js.Any]))
+      FramerateNumerator.foreach(__v => __obj.updateDynamic("FramerateNumerator")(__v.asInstanceOf[js.Any]))
+      GopClosedCadence.foreach(__v => __obj.updateDynamic("GopClosedCadence")(__v.asInstanceOf[js.Any]))
+      GopSize.foreach(__v => __obj.updateDynamic("GopSize")(__v.asInstanceOf[js.Any]))
+      GopSizeUnits.foreach(__v => __obj.updateDynamic("GopSizeUnits")(__v.asInstanceOf[js.Any]))
       HrdBufferInitialFillPercentage.foreach(
-        __v => __obj.update("HrdBufferInitialFillPercentage", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("HrdBufferInitialFillPercentage")(__v.asInstanceOf[js.Any])
       )
-      HrdBufferSize.foreach(__v => __obj.update("HrdBufferSize", __v.asInstanceOf[js.Any]))
-      InterlaceMode.foreach(__v => __obj.update("InterlaceMode", __v.asInstanceOf[js.Any]))
-      IntraDcPrecision.foreach(__v => __obj.update("IntraDcPrecision", __v.asInstanceOf[js.Any]))
-      MaxBitrate.foreach(__v => __obj.update("MaxBitrate", __v.asInstanceOf[js.Any]))
-      MinIInterval.foreach(__v => __obj.update("MinIInterval", __v.asInstanceOf[js.Any]))
+      HrdBufferSize.foreach(__v => __obj.updateDynamic("HrdBufferSize")(__v.asInstanceOf[js.Any]))
+      InterlaceMode.foreach(__v => __obj.updateDynamic("InterlaceMode")(__v.asInstanceOf[js.Any]))
+      IntraDcPrecision.foreach(__v => __obj.updateDynamic("IntraDcPrecision")(__v.asInstanceOf[js.Any]))
+      MaxBitrate.foreach(__v => __obj.updateDynamic("MaxBitrate")(__v.asInstanceOf[js.Any]))
+      MinIInterval.foreach(__v => __obj.updateDynamic("MinIInterval")(__v.asInstanceOf[js.Any]))
       NumberBFramesBetweenReferenceFrames.foreach(
-        __v => __obj.update("NumberBFramesBetweenReferenceFrames", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("NumberBFramesBetweenReferenceFrames")(__v.asInstanceOf[js.Any])
       )
-      ParControl.foreach(__v => __obj.update("ParControl", __v.asInstanceOf[js.Any]))
-      ParDenominator.foreach(__v => __obj.update("ParDenominator", __v.asInstanceOf[js.Any]))
-      ParNumerator.foreach(__v => __obj.update("ParNumerator", __v.asInstanceOf[js.Any]))
-      QualityTuningLevel.foreach(__v => __obj.update("QualityTuningLevel", __v.asInstanceOf[js.Any]))
-      RateControlMode.foreach(__v => __obj.update("RateControlMode", __v.asInstanceOf[js.Any]))
-      SceneChangeDetect.foreach(__v => __obj.update("SceneChangeDetect", __v.asInstanceOf[js.Any]))
-      SlowPal.foreach(__v => __obj.update("SlowPal", __v.asInstanceOf[js.Any]))
-      Softness.foreach(__v => __obj.update("Softness", __v.asInstanceOf[js.Any]))
-      SpatialAdaptiveQuantization.foreach(__v => __obj.update("SpatialAdaptiveQuantization", __v.asInstanceOf[js.Any]))
-      Syntax.foreach(__v => __obj.update("Syntax", __v.asInstanceOf[js.Any]))
-      Telecine.foreach(__v => __obj.update("Telecine", __v.asInstanceOf[js.Any]))
+      ParControl.foreach(__v => __obj.updateDynamic("ParControl")(__v.asInstanceOf[js.Any]))
+      ParDenominator.foreach(__v => __obj.updateDynamic("ParDenominator")(__v.asInstanceOf[js.Any]))
+      ParNumerator.foreach(__v => __obj.updateDynamic("ParNumerator")(__v.asInstanceOf[js.Any]))
+      QualityTuningLevel.foreach(__v => __obj.updateDynamic("QualityTuningLevel")(__v.asInstanceOf[js.Any]))
+      RateControlMode.foreach(__v => __obj.updateDynamic("RateControlMode")(__v.asInstanceOf[js.Any]))
+      SceneChangeDetect.foreach(__v => __obj.updateDynamic("SceneChangeDetect")(__v.asInstanceOf[js.Any]))
+      SlowPal.foreach(__v => __obj.updateDynamic("SlowPal")(__v.asInstanceOf[js.Any]))
+      Softness.foreach(__v => __obj.updateDynamic("Softness")(__v.asInstanceOf[js.Any]))
+      SpatialAdaptiveQuantization.foreach(
+        __v => __obj.updateDynamic("SpatialAdaptiveQuantization")(__v.asInstanceOf[js.Any])
+      )
+      Syntax.foreach(__v => __obj.updateDynamic("Syntax")(__v.asInstanceOf[js.Any]))
+      Telecine.foreach(__v => __obj.updateDynamic("Telecine")(__v.asInstanceOf[js.Any]))
       TemporalAdaptiveQuantization.foreach(
-        __v => __obj.update("TemporalAdaptiveQuantization", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("TemporalAdaptiveQuantization")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[Mpeg2Settings]
     }
@@ -6951,8 +6989,8 @@ package mediaconvert {
     def apply(
         SpekeKeyProvider: js.UndefOr[SpekeKeyProvider] = js.undefined
     ): MsSmoothEncryptionSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SpekeKeyProvider.foreach(__v => __obj.update("SpekeKeyProvider", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SpekeKeyProvider.foreach(__v => __obj.updateDynamic("SpekeKeyProvider")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MsSmoothEncryptionSettings]
     }
   }
@@ -6979,13 +7017,13 @@ package mediaconvert {
         FragmentLength: js.UndefOr[__integerMin1Max2147483647] = js.undefined,
         ManifestEncoding: js.UndefOr[MsSmoothManifestEncoding] = js.undefined
     ): MsSmoothGroupSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AudioDeduplication.foreach(__v => __obj.update("AudioDeduplication", __v.asInstanceOf[js.Any]))
-      Destination.foreach(__v => __obj.update("Destination", __v.asInstanceOf[js.Any]))
-      DestinationSettings.foreach(__v => __obj.update("DestinationSettings", __v.asInstanceOf[js.Any]))
-      Encryption.foreach(__v => __obj.update("Encryption", __v.asInstanceOf[js.Any]))
-      FragmentLength.foreach(__v => __obj.update("FragmentLength", __v.asInstanceOf[js.Any]))
-      ManifestEncoding.foreach(__v => __obj.update("ManifestEncoding", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AudioDeduplication.foreach(__v => __obj.updateDynamic("AudioDeduplication")(__v.asInstanceOf[js.Any]))
+      Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
+      DestinationSettings.foreach(__v => __obj.updateDynamic("DestinationSettings")(__v.asInstanceOf[js.Any]))
+      Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
+      FragmentLength.foreach(__v => __obj.updateDynamic("FragmentLength")(__v.asInstanceOf[js.Any]))
+      ManifestEncoding.foreach(__v => __obj.updateDynamic("ManifestEncoding")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MsSmoothGroupSettings]
     }
   }
@@ -7014,9 +7052,9 @@ package mediaconvert {
         BreakoutCode: js.UndefOr[__integerMin0Max0] = js.undefined,
         DistributorId: js.UndefOr[__string] = js.undefined
     ): NielsenConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BreakoutCode.foreach(__v => __obj.update("BreakoutCode", __v.asInstanceOf[js.Any]))
-      DistributorId.foreach(__v => __obj.update("DistributorId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BreakoutCode.foreach(__v => __obj.updateDynamic("BreakoutCode")(__v.asInstanceOf[js.Any]))
+      DistributorId.foreach(__v => __obj.updateDynamic("DistributorId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NielsenConfiguration]
     }
   }
@@ -7039,11 +7077,11 @@ package mediaconvert {
         SpatialFilterSettings: js.UndefOr[NoiseReducerSpatialFilterSettings] = js.undefined,
         TemporalFilterSettings: js.UndefOr[NoiseReducerTemporalFilterSettings] = js.undefined
     ): NoiseReducer = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filter.foreach(__v => __obj.update("Filter", __v.asInstanceOf[js.Any]))
-      FilterSettings.foreach(__v => __obj.update("FilterSettings", __v.asInstanceOf[js.Any]))
-      SpatialFilterSettings.foreach(__v => __obj.update("SpatialFilterSettings", __v.asInstanceOf[js.Any]))
-      TemporalFilterSettings.foreach(__v => __obj.update("TemporalFilterSettings", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filter.foreach(__v => __obj.updateDynamic("Filter")(__v.asInstanceOf[js.Any]))
+      FilterSettings.foreach(__v => __obj.updateDynamic("FilterSettings")(__v.asInstanceOf[js.Any]))
+      SpatialFilterSettings.foreach(__v => __obj.updateDynamic("SpatialFilterSettings")(__v.asInstanceOf[js.Any]))
+      TemporalFilterSettings.foreach(__v => __obj.updateDynamic("TemporalFilterSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NoiseReducer]
     }
   }
@@ -7076,8 +7114,8 @@ package mediaconvert {
     def apply(
         Strength: js.UndefOr[__integerMin0Max3] = js.undefined
     ): NoiseReducerFilterSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Strength.foreach(__v => __obj.update("Strength", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Strength.foreach(__v => __obj.updateDynamic("Strength")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NoiseReducerFilterSettings]
     }
   }
@@ -7098,10 +7136,12 @@ package mediaconvert {
         Speed: js.UndefOr[__integerMinNegative2Max3] = js.undefined,
         Strength: js.UndefOr[__integerMin0Max16] = js.undefined
     ): NoiseReducerSpatialFilterSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PostFilterSharpenStrength.foreach(__v => __obj.update("PostFilterSharpenStrength", __v.asInstanceOf[js.Any]))
-      Speed.foreach(__v => __obj.update("Speed", __v.asInstanceOf[js.Any]))
-      Strength.foreach(__v => __obj.update("Strength", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PostFilterSharpenStrength.foreach(
+        __v => __obj.updateDynamic("PostFilterSharpenStrength")(__v.asInstanceOf[js.Any])
+      )
+      Speed.foreach(__v => __obj.updateDynamic("Speed")(__v.asInstanceOf[js.Any]))
+      Strength.foreach(__v => __obj.updateDynamic("Strength")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NoiseReducerSpatialFilterSettings]
     }
   }
@@ -7122,10 +7162,10 @@ package mediaconvert {
         Speed: js.UndefOr[__integerMinNegative1Max3] = js.undefined,
         Strength: js.UndefOr[__integerMin0Max16] = js.undefined
     ): NoiseReducerTemporalFilterSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AggressiveMode.foreach(__v => __obj.update("AggressiveMode", __v.asInstanceOf[js.Any]))
-      Speed.foreach(__v => __obj.update("Speed", __v.asInstanceOf[js.Any]))
-      Strength.foreach(__v => __obj.update("Strength", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AggressiveMode.foreach(__v => __obj.updateDynamic("AggressiveMode")(__v.asInstanceOf[js.Any]))
+      Speed.foreach(__v => __obj.updateDynamic("Speed")(__v.asInstanceOf[js.Any]))
+      Strength.foreach(__v => __obj.updateDynamic("Strength")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NoiseReducerTemporalFilterSettings]
     }
   }
@@ -7166,15 +7206,15 @@ package mediaconvert {
         Preset: js.UndefOr[__stringMin0] = js.undefined,
         VideoDescription: js.UndefOr[VideoDescription] = js.undefined
     ): Output = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AudioDescriptions.foreach(__v => __obj.update("AudioDescriptions", __v.asInstanceOf[js.Any]))
-      CaptionDescriptions.foreach(__v => __obj.update("CaptionDescriptions", __v.asInstanceOf[js.Any]))
-      ContainerSettings.foreach(__v => __obj.update("ContainerSettings", __v.asInstanceOf[js.Any]))
-      Extension.foreach(__v => __obj.update("Extension", __v.asInstanceOf[js.Any]))
-      NameModifier.foreach(__v => __obj.update("NameModifier", __v.asInstanceOf[js.Any]))
-      OutputSettings.foreach(__v => __obj.update("OutputSettings", __v.asInstanceOf[js.Any]))
-      Preset.foreach(__v => __obj.update("Preset", __v.asInstanceOf[js.Any]))
-      VideoDescription.foreach(__v => __obj.update("VideoDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AudioDescriptions.foreach(__v => __obj.updateDynamic("AudioDescriptions")(__v.asInstanceOf[js.Any]))
+      CaptionDescriptions.foreach(__v => __obj.updateDynamic("CaptionDescriptions")(__v.asInstanceOf[js.Any]))
+      ContainerSettings.foreach(__v => __obj.updateDynamic("ContainerSettings")(__v.asInstanceOf[js.Any]))
+      Extension.foreach(__v => __obj.updateDynamic("Extension")(__v.asInstanceOf[js.Any]))
+      NameModifier.foreach(__v => __obj.updateDynamic("NameModifier")(__v.asInstanceOf[js.Any]))
+      OutputSettings.foreach(__v => __obj.updateDynamic("OutputSettings")(__v.asInstanceOf[js.Any]))
+      Preset.foreach(__v => __obj.updateDynamic("Preset")(__v.asInstanceOf[js.Any]))
+      VideoDescription.foreach(__v => __obj.updateDynamic("VideoDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Output]
     }
   }
@@ -7191,8 +7231,8 @@ package mediaconvert {
     def apply(
         InputChannels: js.UndefOr[__listOf__integerMinNegative60Max6] = js.undefined
     ): OutputChannelMapping = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InputChannels.foreach(__v => __obj.update("InputChannels", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InputChannels.foreach(__v => __obj.updateDynamic("InputChannels")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OutputChannelMapping]
     }
   }
@@ -7211,9 +7251,9 @@ package mediaconvert {
         DurationInMs: js.UndefOr[__integer] = js.undefined,
         VideoDetails: js.UndefOr[VideoDetail] = js.undefined
     ): OutputDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DurationInMs.foreach(__v => __obj.update("DurationInMs", __v.asInstanceOf[js.Any]))
-      VideoDetails.foreach(__v => __obj.update("VideoDetails", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DurationInMs.foreach(__v => __obj.updateDynamic("DurationInMs")(__v.asInstanceOf[js.Any]))
+      VideoDetails.foreach(__v => __obj.updateDynamic("VideoDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OutputDetail]
     }
   }
@@ -7236,11 +7276,11 @@ package mediaconvert {
         OutputGroupSettings: js.UndefOr[OutputGroupSettings] = js.undefined,
         Outputs: js.UndefOr[__listOfOutput] = js.undefined
     ): OutputGroup = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CustomName.foreach(__v => __obj.update("CustomName", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      OutputGroupSettings.foreach(__v => __obj.update("OutputGroupSettings", __v.asInstanceOf[js.Any]))
-      Outputs.foreach(__v => __obj.update("Outputs", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CustomName.foreach(__v => __obj.updateDynamic("CustomName")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      OutputGroupSettings.foreach(__v => __obj.updateDynamic("OutputGroupSettings")(__v.asInstanceOf[js.Any]))
+      Outputs.foreach(__v => __obj.updateDynamic("Outputs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OutputGroup]
     }
   }
@@ -7257,8 +7297,8 @@ package mediaconvert {
     def apply(
         OutputDetails: js.UndefOr[__listOfOutputDetail] = js.undefined
     ): OutputGroupDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      OutputDetails.foreach(__v => __obj.update("OutputDetails", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      OutputDetails.foreach(__v => __obj.updateDynamic("OutputDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OutputGroupDetail]
     }
   }
@@ -7285,13 +7325,13 @@ package mediaconvert {
         MsSmoothGroupSettings: js.UndefOr[MsSmoothGroupSettings] = js.undefined,
         Type: js.UndefOr[OutputGroupType] = js.undefined
     ): OutputGroupSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CmafGroupSettings.foreach(__v => __obj.update("CmafGroupSettings", __v.asInstanceOf[js.Any]))
-      DashIsoGroupSettings.foreach(__v => __obj.update("DashIsoGroupSettings", __v.asInstanceOf[js.Any]))
-      FileGroupSettings.foreach(__v => __obj.update("FileGroupSettings", __v.asInstanceOf[js.Any]))
-      HlsGroupSettings.foreach(__v => __obj.update("HlsGroupSettings", __v.asInstanceOf[js.Any]))
-      MsSmoothGroupSettings.foreach(__v => __obj.update("MsSmoothGroupSettings", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CmafGroupSettings.foreach(__v => __obj.updateDynamic("CmafGroupSettings")(__v.asInstanceOf[js.Any]))
+      DashIsoGroupSettings.foreach(__v => __obj.updateDynamic("DashIsoGroupSettings")(__v.asInstanceOf[js.Any]))
+      FileGroupSettings.foreach(__v => __obj.updateDynamic("FileGroupSettings")(__v.asInstanceOf[js.Any]))
+      HlsGroupSettings.foreach(__v => __obj.updateDynamic("HlsGroupSettings")(__v.asInstanceOf[js.Any]))
+      MsSmoothGroupSettings.foreach(__v => __obj.updateDynamic("MsSmoothGroupSettings")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OutputGroupSettings]
     }
   }
@@ -7341,8 +7381,8 @@ package mediaconvert {
     def apply(
         HlsSettings: js.UndefOr[HlsSettings] = js.undefined
     ): OutputSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      HlsSettings.foreach(__v => __obj.update("HlsSettings", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      HlsSettings.foreach(__v => __obj.updateDynamic("HlsSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OutputSettings]
     }
   }
@@ -7373,17 +7413,17 @@ package mediaconvert {
         LastUpdated: js.UndefOr[__timestampUnix] = js.undefined,
         Type: js.UndefOr[Type] = js.undefined
     ): Preset = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"     -> Name.asInstanceOf[js.Any],
         "Settings" -> Settings.asInstanceOf[js.Any]
       )
 
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Category.foreach(__v => __obj.update("Category", __v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.update("CreatedAt", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      LastUpdated.foreach(__v => __obj.update("LastUpdated", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LastUpdated.foreach(__v => __obj.updateDynamic("LastUpdated")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Preset]
     }
   }
@@ -7417,11 +7457,11 @@ package mediaconvert {
         ContainerSettings: js.UndefOr[ContainerSettings] = js.undefined,
         VideoDescription: js.UndefOr[VideoDescription] = js.undefined
     ): PresetSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AudioDescriptions.foreach(__v => __obj.update("AudioDescriptions", __v.asInstanceOf[js.Any]))
-      CaptionDescriptions.foreach(__v => __obj.update("CaptionDescriptions", __v.asInstanceOf[js.Any]))
-      ContainerSettings.foreach(__v => __obj.update("ContainerSettings", __v.asInstanceOf[js.Any]))
-      VideoDescription.foreach(__v => __obj.update("VideoDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AudioDescriptions.foreach(__v => __obj.updateDynamic("AudioDescriptions")(__v.asInstanceOf[js.Any]))
+      CaptionDescriptions.foreach(__v => __obj.updateDynamic("CaptionDescriptions")(__v.asInstanceOf[js.Any]))
+      ContainerSettings.foreach(__v => __obj.updateDynamic("ContainerSettings")(__v.asInstanceOf[js.Any]))
+      VideoDescription.foreach(__v => __obj.updateDynamic("VideoDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PresetSettings]
     }
   }
@@ -7526,20 +7566,20 @@ package mediaconvert {
         SlowPal: js.UndefOr[ProresSlowPal] = js.undefined,
         Telecine: js.UndefOr[ProresTelecine] = js.undefined
     ): ProresSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CodecProfile.foreach(__v => __obj.update("CodecProfile", __v.asInstanceOf[js.Any]))
-      FramerateControl.foreach(__v => __obj.update("FramerateControl", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CodecProfile.foreach(__v => __obj.updateDynamic("CodecProfile")(__v.asInstanceOf[js.Any]))
+      FramerateControl.foreach(__v => __obj.updateDynamic("FramerateControl")(__v.asInstanceOf[js.Any]))
       FramerateConversionAlgorithm.foreach(
-        __v => __obj.update("FramerateConversionAlgorithm", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("FramerateConversionAlgorithm")(__v.asInstanceOf[js.Any])
       )
-      FramerateDenominator.foreach(__v => __obj.update("FramerateDenominator", __v.asInstanceOf[js.Any]))
-      FramerateNumerator.foreach(__v => __obj.update("FramerateNumerator", __v.asInstanceOf[js.Any]))
-      InterlaceMode.foreach(__v => __obj.update("InterlaceMode", __v.asInstanceOf[js.Any]))
-      ParControl.foreach(__v => __obj.update("ParControl", __v.asInstanceOf[js.Any]))
-      ParDenominator.foreach(__v => __obj.update("ParDenominator", __v.asInstanceOf[js.Any]))
-      ParNumerator.foreach(__v => __obj.update("ParNumerator", __v.asInstanceOf[js.Any]))
-      SlowPal.foreach(__v => __obj.update("SlowPal", __v.asInstanceOf[js.Any]))
-      Telecine.foreach(__v => __obj.update("Telecine", __v.asInstanceOf[js.Any]))
+      FramerateDenominator.foreach(__v => __obj.updateDynamic("FramerateDenominator")(__v.asInstanceOf[js.Any]))
+      FramerateNumerator.foreach(__v => __obj.updateDynamic("FramerateNumerator")(__v.asInstanceOf[js.Any]))
+      InterlaceMode.foreach(__v => __obj.updateDynamic("InterlaceMode")(__v.asInstanceOf[js.Any]))
+      ParControl.foreach(__v => __obj.updateDynamic("ParControl")(__v.asInstanceOf[js.Any]))
+      ParDenominator.foreach(__v => __obj.updateDynamic("ParDenominator")(__v.asInstanceOf[js.Any]))
+      ParNumerator.foreach(__v => __obj.updateDynamic("ParNumerator")(__v.asInstanceOf[js.Any]))
+      SlowPal.foreach(__v => __obj.updateDynamic("SlowPal")(__v.asInstanceOf[js.Any]))
+      Telecine.foreach(__v => __obj.updateDynamic("Telecine")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProresSettings]
     }
   }
@@ -7596,20 +7636,20 @@ package mediaconvert {
         SubmittedJobsCount: js.UndefOr[__integer] = js.undefined,
         Type: js.UndefOr[Type] = js.undefined
     ): Queue = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.update("CreatedAt", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      LastUpdated.foreach(__v => __obj.update("LastUpdated", __v.asInstanceOf[js.Any]))
-      PricingPlan.foreach(__v => __obj.update("PricingPlan", __v.asInstanceOf[js.Any]))
-      ProgressingJobsCount.foreach(__v => __obj.update("ProgressingJobsCount", __v.asInstanceOf[js.Any]))
-      ReservationPlan.foreach(__v => __obj.update("ReservationPlan", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      SubmittedJobsCount.foreach(__v => __obj.update("SubmittedJobsCount", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LastUpdated.foreach(__v => __obj.updateDynamic("LastUpdated")(__v.asInstanceOf[js.Any]))
+      PricingPlan.foreach(__v => __obj.updateDynamic("PricingPlan")(__v.asInstanceOf[js.Any]))
+      ProgressingJobsCount.foreach(__v => __obj.updateDynamic("ProgressingJobsCount")(__v.asInstanceOf[js.Any]))
+      ReservationPlan.foreach(__v => __obj.updateDynamic("ReservationPlan")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      SubmittedJobsCount.foreach(__v => __obj.updateDynamic("SubmittedJobsCount")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Queue]
     }
   }
@@ -7652,11 +7692,11 @@ package mediaconvert {
         X: js.UndefOr[__integerMin0Max2147483647] = js.undefined,
         Y: js.UndefOr[__integerMin0Max2147483647] = js.undefined
     ): Rectangle = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Height.foreach(__v => __obj.update("Height", __v.asInstanceOf[js.Any]))
-      Width.foreach(__v => __obj.update("Width", __v.asInstanceOf[js.Any]))
-      X.foreach(__v => __obj.update("X", __v.asInstanceOf[js.Any]))
-      Y.foreach(__v => __obj.update("Y", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Height.foreach(__v => __obj.updateDynamic("Height")(__v.asInstanceOf[js.Any]))
+      Width.foreach(__v => __obj.updateDynamic("Width")(__v.asInstanceOf[js.Any]))
+      X.foreach(__v => __obj.updateDynamic("X")(__v.asInstanceOf[js.Any]))
+      Y.foreach(__v => __obj.updateDynamic("Y")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Rectangle]
     }
   }
@@ -7677,10 +7717,10 @@ package mediaconvert {
         ChannelsIn: js.UndefOr[__integerMin1Max16] = js.undefined,
         ChannelsOut: js.UndefOr[__integerMin1Max8] = js.undefined
     ): RemixSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ChannelMapping.foreach(__v => __obj.update("ChannelMapping", __v.asInstanceOf[js.Any]))
-      ChannelsIn.foreach(__v => __obj.update("ChannelsIn", __v.asInstanceOf[js.Any]))
-      ChannelsOut.foreach(__v => __obj.update("ChannelsOut", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ChannelMapping.foreach(__v => __obj.updateDynamic("ChannelMapping")(__v.asInstanceOf[js.Any]))
+      ChannelsIn.foreach(__v => __obj.updateDynamic("ChannelsIn")(__v.asInstanceOf[js.Any]))
+      ChannelsOut.foreach(__v => __obj.updateDynamic("ChannelsOut")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RemixSettings]
     }
   }
@@ -7717,13 +7757,13 @@ package mediaconvert {
         ReservedSlots: js.UndefOr[__integer] = js.undefined,
         Status: js.UndefOr[ReservationPlanStatus] = js.undefined
     ): ReservationPlan = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Commitment.foreach(__v => __obj.update("Commitment", __v.asInstanceOf[js.Any]))
-      ExpiresAt.foreach(__v => __obj.update("ExpiresAt", __v.asInstanceOf[js.Any]))
-      PurchasedAt.foreach(__v => __obj.update("PurchasedAt", __v.asInstanceOf[js.Any]))
-      RenewalType.foreach(__v => __obj.update("RenewalType", __v.asInstanceOf[js.Any]))
-      ReservedSlots.foreach(__v => __obj.update("ReservedSlots", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Commitment.foreach(__v => __obj.updateDynamic("Commitment")(__v.asInstanceOf[js.Any]))
+      ExpiresAt.foreach(__v => __obj.updateDynamic("ExpiresAt")(__v.asInstanceOf[js.Any]))
+      PurchasedAt.foreach(__v => __obj.updateDynamic("PurchasedAt")(__v.asInstanceOf[js.Any]))
+      RenewalType.foreach(__v => __obj.updateDynamic("RenewalType")(__v.asInstanceOf[js.Any]))
+      ReservedSlots.foreach(__v => __obj.updateDynamic("ReservedSlots")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReservationPlan]
     }
   }
@@ -7744,7 +7784,7 @@ package mediaconvert {
         RenewalType: RenewalType,
         ReservedSlots: __integer
     ): ReservationPlanSettings = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Commitment"    -> Commitment.asInstanceOf[js.Any],
         "RenewalType"   -> RenewalType.asInstanceOf[js.Any],
         "ReservedSlots" -> ReservedSlots.asInstanceOf[js.Any]
@@ -7778,9 +7818,9 @@ package mediaconvert {
         Arn: js.UndefOr[__string] = js.undefined,
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): ResourceTags = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceTags]
     }
   }
@@ -7808,8 +7848,8 @@ package mediaconvert {
     def apply(
         Encryption: js.UndefOr[S3EncryptionSettings] = js.undefined
     ): S3DestinationSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Encryption.foreach(__v => __obj.update("Encryption", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3DestinationSettings]
     }
   }
@@ -7832,9 +7872,9 @@ package mediaconvert {
           __stringPatternArnAwsUsGovCnKmsAZ26EastWestCentralNorthSouthEastWest1912D12KeyAFAF098AFAF094AFAF094AFAF094AFAF0912
         ] = js.undefined
     ): S3EncryptionSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EncryptionType.foreach(__v => __obj.update("EncryptionType", __v.asInstanceOf[js.Any]))
-      KmsKeyArn.foreach(__v => __obj.update("KmsKeyArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EncryptionType.foreach(__v => __obj.updateDynamic("EncryptionType")(__v.asInstanceOf[js.Any]))
+      KmsKeyArn.foreach(__v => __obj.updateDynamic("KmsKeyArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3EncryptionSettings]
     }
   }
@@ -7885,8 +7925,8 @@ package mediaconvert {
     def apply(
         Framerate: js.UndefOr[SccDestinationFramerate] = js.undefined
     ): SccDestinationSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Framerate.foreach(__v => __obj.update("Framerate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Framerate.foreach(__v => __obj.updateDynamic("Framerate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SccDestinationSettings]
     }
   }
@@ -7909,11 +7949,11 @@ package mediaconvert {
         SystemIds: js.UndefOr[__listOf__stringPattern09aFAF809aFAF409aFAF409aFAF409aFAF12] = js.undefined,
         Url: js.UndefOr[__stringPatternHttps] = js.undefined
     ): SpekeKeyProvider = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CertificateArn.foreach(__v => __obj.update("CertificateArn", __v.asInstanceOf[js.Any]))
-      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
-      SystemIds.foreach(__v => __obj.update("SystemIds", __v.asInstanceOf[js.Any]))
-      Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CertificateArn.foreach(__v => __obj.updateDynamic("CertificateArn")(__v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
+      SystemIds.foreach(__v => __obj.updateDynamic("SystemIds")(__v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SpekeKeyProvider]
     }
   }
@@ -7940,12 +7980,12 @@ package mediaconvert {
         ResourceId: js.UndefOr[__stringPatternW] = js.undefined,
         Url: js.UndefOr[__stringPatternHttps] = js.undefined
     ): SpekeKeyProviderCmaf = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CertificateArn.foreach(__v => __obj.update("CertificateArn", __v.asInstanceOf[js.Any]))
-      DashSignaledSystemIds.foreach(__v => __obj.update("DashSignaledSystemIds", __v.asInstanceOf[js.Any]))
-      HlsSignaledSystemIds.foreach(__v => __obj.update("HlsSignaledSystemIds", __v.asInstanceOf[js.Any]))
-      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
-      Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CertificateArn.foreach(__v => __obj.updateDynamic("CertificateArn")(__v.asInstanceOf[js.Any]))
+      DashSignaledSystemIds.foreach(__v => __obj.updateDynamic("DashSignaledSystemIds")(__v.asInstanceOf[js.Any]))
+      HlsSignaledSystemIds.foreach(__v => __obj.updateDynamic("HlsSignaledSystemIds")(__v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SpekeKeyProviderCmaf]
     }
   }
@@ -7968,11 +8008,11 @@ package mediaconvert {
         StaticKeyValue: js.UndefOr[__stringPatternAZaZ0932] = js.undefined,
         Url: js.UndefOr[__string] = js.undefined
     ): StaticKeyProvider = {
-      val __obj = js.Dictionary.empty[js.Any]
-      KeyFormat.foreach(__v => __obj.update("KeyFormat", __v.asInstanceOf[js.Any]))
-      KeyFormatVersions.foreach(__v => __obj.update("KeyFormatVersions", __v.asInstanceOf[js.Any]))
-      StaticKeyValue.foreach(__v => __obj.update("StaticKeyValue", __v.asInstanceOf[js.Any]))
-      Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      KeyFormat.foreach(__v => __obj.updateDynamic("KeyFormat")(__v.asInstanceOf[js.Any]))
+      KeyFormatVersions.foreach(__v => __obj.updateDynamic("KeyFormatVersions")(__v.asInstanceOf[js.Any]))
+      StaticKeyValue.foreach(__v => __obj.updateDynamic("StaticKeyValue")(__v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StaticKeyProvider]
     }
   }
@@ -8029,7 +8069,7 @@ package mediaconvert {
         Arn: __string,
         Tags: __mapOf__string
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn"  -> Arn.asInstanceOf[js.Any],
         "Tags" -> Tags.asInstanceOf[js.Any]
       )
@@ -8044,7 +8084,7 @@ package mediaconvert {
   object TagResourceResponse {
     def apply(
         ): TagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -8064,9 +8104,9 @@ package mediaconvert {
         PageNumber: js.UndefOr[__stringMin3Max3Pattern1809aFAF09aEAE] = js.undefined,
         PageTypes: js.UndefOr[__listOfTeletextPageType] = js.undefined
     ): TeletextDestinationSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PageNumber.foreach(__v => __obj.update("PageNumber", __v.asInstanceOf[js.Any]))
-      PageTypes.foreach(__v => __obj.update("PageTypes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PageNumber.foreach(__v => __obj.updateDynamic("PageNumber")(__v.asInstanceOf[js.Any]))
+      PageTypes.foreach(__v => __obj.updateDynamic("PageTypes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TeletextDestinationSettings]
     }
   }
@@ -8104,8 +8144,8 @@ package mediaconvert {
     def apply(
         PageNumber: js.UndefOr[__stringMin3Max3Pattern1809aFAF09aEAE] = js.undefined
     ): TeletextSourceSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PageNumber.foreach(__v => __obj.update("PageNumber", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PageNumber.foreach(__v => __obj.updateDynamic("PageNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TeletextSourceSettings]
     }
   }
@@ -8126,10 +8166,10 @@ package mediaconvert {
         Position: js.UndefOr[TimecodeBurninPosition] = js.undefined,
         Prefix: js.UndefOr[__stringPattern] = js.undefined
     ): TimecodeBurnin = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FontSize.foreach(__v => __obj.update("FontSize", __v.asInstanceOf[js.Any]))
-      Position.foreach(__v => __obj.update("Position", __v.asInstanceOf[js.Any]))
-      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FontSize.foreach(__v => __obj.updateDynamic("FontSize")(__v.asInstanceOf[js.Any]))
+      Position.foreach(__v => __obj.updateDynamic("Position")(__v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TimecodeBurnin]
     }
   }
@@ -8181,11 +8221,11 @@ package mediaconvert {
         Start: js.UndefOr[__stringPattern010920405090509092] = js.undefined,
         TimestampOffset: js.UndefOr[__stringPattern0940191020191209301] = js.undefined
     ): TimecodeConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Anchor.foreach(__v => __obj.update("Anchor", __v.asInstanceOf[js.Any]))
-      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
-      Start.foreach(__v => __obj.update("Start", __v.asInstanceOf[js.Any]))
-      TimestampOffset.foreach(__v => __obj.update("TimestampOffset", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Anchor.foreach(__v => __obj.updateDynamic("Anchor")(__v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
+      Start.foreach(__v => __obj.updateDynamic("Start")(__v.asInstanceOf[js.Any]))
+      TimestampOffset.foreach(__v => __obj.updateDynamic("TimestampOffset")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TimecodeConfig]
     }
   }
@@ -8223,8 +8263,8 @@ package mediaconvert {
     def apply(
         Id3Insertions: js.UndefOr[__listOfId3Insertion] = js.undefined
     ): TimedMetadataInsertion = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Id3Insertions.foreach(__v => __obj.update("Id3Insertions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Id3Insertions.foreach(__v => __obj.updateDynamic("Id3Insertions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TimedMetadataInsertion]
     }
   }
@@ -8245,10 +8285,10 @@ package mediaconvert {
         StartTime: js.UndefOr[__timestampUnix] = js.undefined,
         SubmitTime: js.UndefOr[__timestampUnix] = js.undefined
     ): Timing = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FinishTime.foreach(__v => __obj.update("FinishTime", __v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
-      SubmitTime.foreach(__v => __obj.update("SubmitTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FinishTime.foreach(__v => __obj.updateDynamic("FinishTime")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      SubmitTime.foreach(__v => __obj.updateDynamic("SubmitTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Timing]
     }
   }
@@ -8265,8 +8305,8 @@ package mediaconvert {
     def apply(
         TrackNumber: js.UndefOr[__integerMin1Max2147483647] = js.undefined
     ): TrackSourceSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TrackNumber.foreach(__v => __obj.update("TrackNumber", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TrackNumber.foreach(__v => __obj.updateDynamic("TrackNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TrackSourceSettings]
     }
   }
@@ -8283,8 +8323,8 @@ package mediaconvert {
     def apply(
         StylePassthrough: js.UndefOr[TtmlStylePassthrough] = js.undefined
     ): TtmlDestinationSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      StylePassthrough.foreach(__v => __obj.update("StylePassthrough", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      StylePassthrough.foreach(__v => __obj.updateDynamic("StylePassthrough")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TtmlDestinationSettings]
     }
   }
@@ -8317,11 +8357,11 @@ package mediaconvert {
         Arn: __string,
         TagKeys: js.UndefOr[__listOf__string] = js.undefined
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any]
       )
 
-      TagKeys.foreach(__v => __obj.update("TagKeys", __v.asInstanceOf[js.Any]))
+      TagKeys.foreach(__v => __obj.updateDynamic("TagKeys")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UntagResourceRequest]
     }
   }
@@ -8332,7 +8372,7 @@ package mediaconvert {
   object UntagResourceResponse {
     def apply(
         ): UntagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -8361,17 +8401,17 @@ package mediaconvert {
         Settings: js.UndefOr[JobTemplateSettings] = js.undefined,
         StatusUpdateInterval: js.UndefOr[StatusUpdateInterval] = js.undefined
     ): UpdateJobTemplateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      AccelerationSettings.foreach(__v => __obj.update("AccelerationSettings", __v.asInstanceOf[js.Any]))
-      Category.foreach(__v => __obj.update("Category", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
-      Queue.foreach(__v => __obj.update("Queue", __v.asInstanceOf[js.Any]))
-      Settings.foreach(__v => __obj.update("Settings", __v.asInstanceOf[js.Any]))
-      StatusUpdateInterval.foreach(__v => __obj.update("StatusUpdateInterval", __v.asInstanceOf[js.Any]))
+      AccelerationSettings.foreach(__v => __obj.updateDynamic("AccelerationSettings")(__v.asInstanceOf[js.Any]))
+      Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      Queue.foreach(__v => __obj.updateDynamic("Queue")(__v.asInstanceOf[js.Any]))
+      Settings.foreach(__v => __obj.updateDynamic("Settings")(__v.asInstanceOf[js.Any]))
+      StatusUpdateInterval.foreach(__v => __obj.updateDynamic("StatusUpdateInterval")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateJobTemplateRequest]
     }
   }
@@ -8385,8 +8425,8 @@ package mediaconvert {
     def apply(
         JobTemplate: js.UndefOr[JobTemplate] = js.undefined
     ): UpdateJobTemplateResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      JobTemplate.foreach(__v => __obj.update("JobTemplate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      JobTemplate.foreach(__v => __obj.updateDynamic("JobTemplate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateJobTemplateResponse]
     }
   }
@@ -8406,13 +8446,13 @@ package mediaconvert {
         Description: js.UndefOr[__string] = js.undefined,
         Settings: js.UndefOr[PresetSettings] = js.undefined
     ): UpdatePresetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      Category.foreach(__v => __obj.update("Category", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Settings.foreach(__v => __obj.update("Settings", __v.asInstanceOf[js.Any]))
+      Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Settings.foreach(__v => __obj.updateDynamic("Settings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdatePresetRequest]
     }
   }
@@ -8426,8 +8466,8 @@ package mediaconvert {
     def apply(
         Preset: js.UndefOr[Preset] = js.undefined
     ): UpdatePresetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Preset.foreach(__v => __obj.update("Preset", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Preset.foreach(__v => __obj.updateDynamic("Preset")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdatePresetResponse]
     }
   }
@@ -8447,13 +8487,13 @@ package mediaconvert {
         ReservationPlanSettings: js.UndefOr[ReservationPlanSettings] = js.undefined,
         Status: js.UndefOr[QueueStatus] = js.undefined
     ): UpdateQueueRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      ReservationPlanSettings.foreach(__v => __obj.update("ReservationPlanSettings", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ReservationPlanSettings.foreach(__v => __obj.updateDynamic("ReservationPlanSettings")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateQueueRequest]
     }
   }
@@ -8467,8 +8507,8 @@ package mediaconvert {
     def apply(
         Queue: js.UndefOr[Queue] = js.undefined
     ): UpdateQueueResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Queue.foreach(__v => __obj.update("Queue", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Queue.foreach(__v => __obj.updateDynamic("Queue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateQueueResponse]
     }
   }
@@ -8508,13 +8548,13 @@ package mediaconvert {
         Mpeg2Settings: js.UndefOr[Mpeg2Settings] = js.undefined,
         ProresSettings: js.UndefOr[ProresSettings] = js.undefined
     ): VideoCodecSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Codec.foreach(__v => __obj.update("Codec", __v.asInstanceOf[js.Any]))
-      FrameCaptureSettings.foreach(__v => __obj.update("FrameCaptureSettings", __v.asInstanceOf[js.Any]))
-      H264Settings.foreach(__v => __obj.update("H264Settings", __v.asInstanceOf[js.Any]))
-      H265Settings.foreach(__v => __obj.update("H265Settings", __v.asInstanceOf[js.Any]))
-      Mpeg2Settings.foreach(__v => __obj.update("Mpeg2Settings", __v.asInstanceOf[js.Any]))
-      ProresSettings.foreach(__v => __obj.update("ProresSettings", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Codec.foreach(__v => __obj.updateDynamic("Codec")(__v.asInstanceOf[js.Any]))
+      FrameCaptureSettings.foreach(__v => __obj.updateDynamic("FrameCaptureSettings")(__v.asInstanceOf[js.Any]))
+      H264Settings.foreach(__v => __obj.updateDynamic("H264Settings")(__v.asInstanceOf[js.Any]))
+      H265Settings.foreach(__v => __obj.updateDynamic("H265Settings")(__v.asInstanceOf[js.Any]))
+      Mpeg2Settings.foreach(__v => __obj.updateDynamic("Mpeg2Settings")(__v.asInstanceOf[js.Any]))
+      ProresSettings.foreach(__v => __obj.updateDynamic("ProresSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VideoCodecSettings]
     }
   }
@@ -8559,22 +8599,22 @@ package mediaconvert {
         VideoPreprocessors: js.UndefOr[VideoPreprocessor] = js.undefined,
         Width: js.UndefOr[__integerMin32Max4096] = js.undefined
     ): VideoDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AfdSignaling.foreach(__v => __obj.update("AfdSignaling", __v.asInstanceOf[js.Any]))
-      AntiAlias.foreach(__v => __obj.update("AntiAlias", __v.asInstanceOf[js.Any]))
-      CodecSettings.foreach(__v => __obj.update("CodecSettings", __v.asInstanceOf[js.Any]))
-      ColorMetadata.foreach(__v => __obj.update("ColorMetadata", __v.asInstanceOf[js.Any]))
-      Crop.foreach(__v => __obj.update("Crop", __v.asInstanceOf[js.Any]))
-      DropFrameTimecode.foreach(__v => __obj.update("DropFrameTimecode", __v.asInstanceOf[js.Any]))
-      FixedAfd.foreach(__v => __obj.update("FixedAfd", __v.asInstanceOf[js.Any]))
-      Height.foreach(__v => __obj.update("Height", __v.asInstanceOf[js.Any]))
-      Position.foreach(__v => __obj.update("Position", __v.asInstanceOf[js.Any]))
-      RespondToAfd.foreach(__v => __obj.update("RespondToAfd", __v.asInstanceOf[js.Any]))
-      ScalingBehavior.foreach(__v => __obj.update("ScalingBehavior", __v.asInstanceOf[js.Any]))
-      Sharpness.foreach(__v => __obj.update("Sharpness", __v.asInstanceOf[js.Any]))
-      TimecodeInsertion.foreach(__v => __obj.update("TimecodeInsertion", __v.asInstanceOf[js.Any]))
-      VideoPreprocessors.foreach(__v => __obj.update("VideoPreprocessors", __v.asInstanceOf[js.Any]))
-      Width.foreach(__v => __obj.update("Width", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AfdSignaling.foreach(__v => __obj.updateDynamic("AfdSignaling")(__v.asInstanceOf[js.Any]))
+      AntiAlias.foreach(__v => __obj.updateDynamic("AntiAlias")(__v.asInstanceOf[js.Any]))
+      CodecSettings.foreach(__v => __obj.updateDynamic("CodecSettings")(__v.asInstanceOf[js.Any]))
+      ColorMetadata.foreach(__v => __obj.updateDynamic("ColorMetadata")(__v.asInstanceOf[js.Any]))
+      Crop.foreach(__v => __obj.updateDynamic("Crop")(__v.asInstanceOf[js.Any]))
+      DropFrameTimecode.foreach(__v => __obj.updateDynamic("DropFrameTimecode")(__v.asInstanceOf[js.Any]))
+      FixedAfd.foreach(__v => __obj.updateDynamic("FixedAfd")(__v.asInstanceOf[js.Any]))
+      Height.foreach(__v => __obj.updateDynamic("Height")(__v.asInstanceOf[js.Any]))
+      Position.foreach(__v => __obj.updateDynamic("Position")(__v.asInstanceOf[js.Any]))
+      RespondToAfd.foreach(__v => __obj.updateDynamic("RespondToAfd")(__v.asInstanceOf[js.Any]))
+      ScalingBehavior.foreach(__v => __obj.updateDynamic("ScalingBehavior")(__v.asInstanceOf[js.Any]))
+      Sharpness.foreach(__v => __obj.updateDynamic("Sharpness")(__v.asInstanceOf[js.Any]))
+      TimecodeInsertion.foreach(__v => __obj.updateDynamic("TimecodeInsertion")(__v.asInstanceOf[js.Any]))
+      VideoPreprocessors.foreach(__v => __obj.updateDynamic("VideoPreprocessors")(__v.asInstanceOf[js.Any]))
+      Width.foreach(__v => __obj.updateDynamic("Width")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VideoDescription]
     }
   }
@@ -8593,9 +8633,9 @@ package mediaconvert {
         HeightInPx: js.UndefOr[__integer] = js.undefined,
         WidthInPx: js.UndefOr[__integer] = js.undefined
     ): VideoDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      HeightInPx.foreach(__v => __obj.update("HeightInPx", __v.asInstanceOf[js.Any]))
-      WidthInPx.foreach(__v => __obj.update("WidthInPx", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      HeightInPx.foreach(__v => __obj.updateDynamic("HeightInPx")(__v.asInstanceOf[js.Any]))
+      WidthInPx.foreach(__v => __obj.updateDynamic("WidthInPx")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VideoDetail]
     }
   }
@@ -8620,12 +8660,12 @@ package mediaconvert {
         NoiseReducer: js.UndefOr[NoiseReducer] = js.undefined,
         TimecodeBurnin: js.UndefOr[TimecodeBurnin] = js.undefined
     ): VideoPreprocessor = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ColorCorrector.foreach(__v => __obj.update("ColorCorrector", __v.asInstanceOf[js.Any]))
-      Deinterlacer.foreach(__v => __obj.update("Deinterlacer", __v.asInstanceOf[js.Any]))
-      ImageInserter.foreach(__v => __obj.update("ImageInserter", __v.asInstanceOf[js.Any]))
-      NoiseReducer.foreach(__v => __obj.update("NoiseReducer", __v.asInstanceOf[js.Any]))
-      TimecodeBurnin.foreach(__v => __obj.update("TimecodeBurnin", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ColorCorrector.foreach(__v => __obj.updateDynamic("ColorCorrector")(__v.asInstanceOf[js.Any]))
+      Deinterlacer.foreach(__v => __obj.updateDynamic("Deinterlacer")(__v.asInstanceOf[js.Any]))
+      ImageInserter.foreach(__v => __obj.updateDynamic("ImageInserter")(__v.asInstanceOf[js.Any]))
+      NoiseReducer.foreach(__v => __obj.updateDynamic("NoiseReducer")(__v.asInstanceOf[js.Any]))
+      TimecodeBurnin.foreach(__v => __obj.updateDynamic("TimecodeBurnin")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VideoPreprocessor]
     }
   }
@@ -8652,13 +8692,13 @@ package mediaconvert {
         ProgramNumber: js.UndefOr[__integerMinNegative2147483648Max2147483647] = js.undefined,
         Rotate: js.UndefOr[InputRotate] = js.undefined
     ): VideoSelector = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ColorSpace.foreach(__v => __obj.update("ColorSpace", __v.asInstanceOf[js.Any]))
-      ColorSpaceUsage.foreach(__v => __obj.update("ColorSpaceUsage", __v.asInstanceOf[js.Any]))
-      Hdr10Metadata.foreach(__v => __obj.update("Hdr10Metadata", __v.asInstanceOf[js.Any]))
-      Pid.foreach(__v => __obj.update("Pid", __v.asInstanceOf[js.Any]))
-      ProgramNumber.foreach(__v => __obj.update("ProgramNumber", __v.asInstanceOf[js.Any]))
-      Rotate.foreach(__v => __obj.update("Rotate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ColorSpace.foreach(__v => __obj.updateDynamic("ColorSpace")(__v.asInstanceOf[js.Any]))
+      ColorSpaceUsage.foreach(__v => __obj.updateDynamic("ColorSpaceUsage")(__v.asInstanceOf[js.Any]))
+      Hdr10Metadata.foreach(__v => __obj.updateDynamic("Hdr10Metadata")(__v.asInstanceOf[js.Any]))
+      Pid.foreach(__v => __obj.updateDynamic("Pid")(__v.asInstanceOf[js.Any]))
+      ProgramNumber.foreach(__v => __obj.updateDynamic("ProgramNumber")(__v.asInstanceOf[js.Any]))
+      Rotate.foreach(__v => __obj.updateDynamic("Rotate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VideoSelector]
     }
   }
@@ -8701,11 +8741,11 @@ package mediaconvert {
         Format: js.UndefOr[WavFormat] = js.undefined,
         SampleRate: js.UndefOr[__integerMin8000Max192000] = js.undefined
     ): WavSettings = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BitDepth.foreach(__v => __obj.update("BitDepth", __v.asInstanceOf[js.Any]))
-      Channels.foreach(__v => __obj.update("Channels", __v.asInstanceOf[js.Any]))
-      Format.foreach(__v => __obj.update("Format", __v.asInstanceOf[js.Any]))
-      SampleRate.foreach(__v => __obj.update("SampleRate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BitDepth.foreach(__v => __obj.updateDynamic("BitDepth")(__v.asInstanceOf[js.Any]))
+      Channels.foreach(__v => __obj.updateDynamic("Channels")(__v.asInstanceOf[js.Any]))
+      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
+      SampleRate.foreach(__v => __obj.updateDynamic("SampleRate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WavSettings]
     }
   }

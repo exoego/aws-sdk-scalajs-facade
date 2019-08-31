@@ -1072,17 +1072,17 @@ package ssm {
         RegistrationsCount: js.UndefOr[RegistrationsCount] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): Activation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ActivationId.foreach(__v => __obj.update("ActivationId", __v.asInstanceOf[js.Any]))
-      CreatedDate.foreach(__v => __obj.update("CreatedDate", __v.asInstanceOf[js.Any]))
-      DefaultInstanceName.foreach(__v => __obj.update("DefaultInstanceName", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      ExpirationDate.foreach(__v => __obj.update("ExpirationDate", __v.asInstanceOf[js.Any]))
-      Expired.foreach(__v => __obj.update("Expired", __v.asInstanceOf[js.Any]))
-      IamRole.foreach(__v => __obj.update("IamRole", __v.asInstanceOf[js.Any]))
-      RegistrationLimit.foreach(__v => __obj.update("RegistrationLimit", __v.asInstanceOf[js.Any]))
-      RegistrationsCount.foreach(__v => __obj.update("RegistrationsCount", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ActivationId.foreach(__v => __obj.updateDynamic("ActivationId")(__v.asInstanceOf[js.Any]))
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      DefaultInstanceName.foreach(__v => __obj.updateDynamic("DefaultInstanceName")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ExpirationDate.foreach(__v => __obj.updateDynamic("ExpirationDate")(__v.asInstanceOf[js.Any]))
+      Expired.foreach(__v => __obj.updateDynamic("Expired")(__v.asInstanceOf[js.Any]))
+      IamRole.foreach(__v => __obj.updateDynamic("IamRole")(__v.asInstanceOf[js.Any]))
+      RegistrationLimit.foreach(__v => __obj.updateDynamic("RegistrationLimit")(__v.asInstanceOf[js.Any]))
+      RegistrationsCount.foreach(__v => __obj.updateDynamic("RegistrationsCount")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Activation]
     }
   }
@@ -1100,7 +1100,7 @@ package ssm {
         ResourceType: ResourceTypeForTagging,
         Tags: TagList
     ): AddTagsToResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceId"   -> ResourceId.asInstanceOf[js.Any],
         "ResourceType" -> ResourceType.asInstanceOf[js.Any],
         "Tags"         -> Tags.asInstanceOf[js.Any]
@@ -1116,7 +1116,7 @@ package ssm {
   object AddTagsToResourceResult {
     def apply(
         ): AddTagsToResourceResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AddTagsToResourceResult]
     }
@@ -1152,17 +1152,17 @@ package ssm {
         ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
         Targets: js.UndefOr[Targets] = js.undefined
     ): Association = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssociationId.foreach(__v => __obj.update("AssociationId", __v.asInstanceOf[js.Any]))
-      AssociationName.foreach(__v => __obj.update("AssociationName", __v.asInstanceOf[js.Any]))
-      AssociationVersion.foreach(__v => __obj.update("AssociationVersion", __v.asInstanceOf[js.Any]))
-      DocumentVersion.foreach(__v => __obj.update("DocumentVersion", __v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      LastExecutionDate.foreach(__v => __obj.update("LastExecutionDate", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Overview.foreach(__v => __obj.update("Overview", __v.asInstanceOf[js.Any]))
-      ScheduleExpression.foreach(__v => __obj.update("ScheduleExpression", __v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.update("Targets", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
+      AssociationName.foreach(__v => __obj.updateDynamic("AssociationName")(__v.asInstanceOf[js.Any]))
+      AssociationVersion.foreach(__v => __obj.updateDynamic("AssociationVersion")(__v.asInstanceOf[js.Any]))
+      DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      LastExecutionDate.foreach(__v => __obj.updateDynamic("LastExecutionDate")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Overview.foreach(__v => __obj.updateDynamic("Overview")(__v.asInstanceOf[js.Any]))
+      ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
+      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Association]
     }
   }
@@ -1227,29 +1227,33 @@ package ssm {
         Status: js.UndefOr[AssociationStatus] = js.undefined,
         Targets: js.UndefOr[Targets] = js.undefined
     ): AssociationDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssociationId.foreach(__v => __obj.update("AssociationId", __v.asInstanceOf[js.Any]))
-      AssociationName.foreach(__v => __obj.update("AssociationName", __v.asInstanceOf[js.Any]))
-      AssociationVersion.foreach(__v => __obj.update("AssociationVersion", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
+      AssociationName.foreach(__v => __obj.updateDynamic("AssociationName")(__v.asInstanceOf[js.Any]))
+      AssociationVersion.foreach(__v => __obj.updateDynamic("AssociationVersion")(__v.asInstanceOf[js.Any]))
       AutomationTargetParameterName.foreach(
-        __v => __obj.update("AutomationTargetParameterName", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("AutomationTargetParameterName")(__v.asInstanceOf[js.Any])
       )
-      ComplianceSeverity.foreach(__v => __obj.update("ComplianceSeverity", __v.asInstanceOf[js.Any]))
-      Date.foreach(__v => __obj.update("Date", __v.asInstanceOf[js.Any]))
-      DocumentVersion.foreach(__v => __obj.update("DocumentVersion", __v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      LastExecutionDate.foreach(__v => __obj.update("LastExecutionDate", __v.asInstanceOf[js.Any]))
-      LastSuccessfulExecutionDate.foreach(__v => __obj.update("LastSuccessfulExecutionDate", __v.asInstanceOf[js.Any]))
-      LastUpdateAssociationDate.foreach(__v => __obj.update("LastUpdateAssociationDate", __v.asInstanceOf[js.Any]))
-      MaxConcurrency.foreach(__v => __obj.update("MaxConcurrency", __v.asInstanceOf[js.Any]))
-      MaxErrors.foreach(__v => __obj.update("MaxErrors", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      OutputLocation.foreach(__v => __obj.update("OutputLocation", __v.asInstanceOf[js.Any]))
-      Overview.foreach(__v => __obj.update("Overview", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
-      ScheduleExpression.foreach(__v => __obj.update("ScheduleExpression", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.update("Targets", __v.asInstanceOf[js.Any]))
+      ComplianceSeverity.foreach(__v => __obj.updateDynamic("ComplianceSeverity")(__v.asInstanceOf[js.Any]))
+      Date.foreach(__v => __obj.updateDynamic("Date")(__v.asInstanceOf[js.Any]))
+      DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      LastExecutionDate.foreach(__v => __obj.updateDynamic("LastExecutionDate")(__v.asInstanceOf[js.Any]))
+      LastSuccessfulExecutionDate.foreach(
+        __v => __obj.updateDynamic("LastSuccessfulExecutionDate")(__v.asInstanceOf[js.Any])
+      )
+      LastUpdateAssociationDate.foreach(
+        __v => __obj.updateDynamic("LastUpdateAssociationDate")(__v.asInstanceOf[js.Any])
+      )
+      MaxConcurrency.foreach(__v => __obj.updateDynamic("MaxConcurrency")(__v.asInstanceOf[js.Any]))
+      MaxErrors.foreach(__v => __obj.updateDynamic("MaxErrors")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      OutputLocation.foreach(__v => __obj.updateDynamic("OutputLocation")(__v.asInstanceOf[js.Any]))
+      Overview.foreach(__v => __obj.updateDynamic("Overview")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociationDescription]
     }
   }
@@ -1280,15 +1284,15 @@ package ssm {
         ResourceCountByStatus: js.UndefOr[ResourceCountByStatus] = js.undefined,
         Status: js.UndefOr[StatusName] = js.undefined
     ): AssociationExecution = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssociationId.foreach(__v => __obj.update("AssociationId", __v.asInstanceOf[js.Any]))
-      AssociationVersion.foreach(__v => __obj.update("AssociationVersion", __v.asInstanceOf[js.Any]))
-      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
-      DetailedStatus.foreach(__v => __obj.update("DetailedStatus", __v.asInstanceOf[js.Any]))
-      ExecutionId.foreach(__v => __obj.update("ExecutionId", __v.asInstanceOf[js.Any]))
-      LastExecutionDate.foreach(__v => __obj.update("LastExecutionDate", __v.asInstanceOf[js.Any]))
-      ResourceCountByStatus.foreach(__v => __obj.update("ResourceCountByStatus", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
+      AssociationVersion.foreach(__v => __obj.updateDynamic("AssociationVersion")(__v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      DetailedStatus.foreach(__v => __obj.updateDynamic("DetailedStatus")(__v.asInstanceOf[js.Any]))
+      ExecutionId.foreach(__v => __obj.updateDynamic("ExecutionId")(__v.asInstanceOf[js.Any]))
+      LastExecutionDate.foreach(__v => __obj.updateDynamic("LastExecutionDate")(__v.asInstanceOf[js.Any]))
+      ResourceCountByStatus.foreach(__v => __obj.updateDynamic("ResourceCountByStatus")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociationExecution]
     }
   }
@@ -1309,7 +1313,7 @@ package ssm {
         Type: AssociationFilterOperatorType,
         Value: AssociationExecutionFilterValue
     ): AssociationExecutionFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"   -> Key.asInstanceOf[js.Any],
         "Type"  -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
@@ -1355,16 +1359,16 @@ package ssm {
         ResourceType: js.UndefOr[AssociationResourceType] = js.undefined,
         Status: js.UndefOr[StatusName] = js.undefined
     ): AssociationExecutionTarget = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssociationId.foreach(__v => __obj.update("AssociationId", __v.asInstanceOf[js.Any]))
-      AssociationVersion.foreach(__v => __obj.update("AssociationVersion", __v.asInstanceOf[js.Any]))
-      DetailedStatus.foreach(__v => __obj.update("DetailedStatus", __v.asInstanceOf[js.Any]))
-      ExecutionId.foreach(__v => __obj.update("ExecutionId", __v.asInstanceOf[js.Any]))
-      LastExecutionDate.foreach(__v => __obj.update("LastExecutionDate", __v.asInstanceOf[js.Any]))
-      OutputSource.foreach(__v => __obj.update("OutputSource", __v.asInstanceOf[js.Any]))
-      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
+      AssociationVersion.foreach(__v => __obj.updateDynamic("AssociationVersion")(__v.asInstanceOf[js.Any]))
+      DetailedStatus.foreach(__v => __obj.updateDynamic("DetailedStatus")(__v.asInstanceOf[js.Any]))
+      ExecutionId.foreach(__v => __obj.updateDynamic("ExecutionId")(__v.asInstanceOf[js.Any]))
+      LastExecutionDate.foreach(__v => __obj.updateDynamic("LastExecutionDate")(__v.asInstanceOf[js.Any]))
+      OutputSource.foreach(__v => __obj.updateDynamic("OutputSource")(__v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociationExecutionTarget]
     }
   }
@@ -1383,7 +1387,7 @@ package ssm {
         Key: AssociationExecutionTargetsFilterKey,
         Value: AssociationExecutionTargetsFilterValue
     ): AssociationExecutionTargetsFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"   -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
@@ -1414,7 +1418,7 @@ package ssm {
         key: AssociationFilterKey,
         value: AssociationFilterValue
     ): AssociationFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "key"   -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
@@ -1469,12 +1473,12 @@ package ssm {
         DetailedStatus: js.UndefOr[StatusName] = js.undefined,
         Status: js.UndefOr[StatusName] = js.undefined
     ): AssociationOverview = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       AssociationStatusAggregatedCount.foreach(
-        __v => __obj.update("AssociationStatusAggregatedCount", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("AssociationStatusAggregatedCount")(__v.asInstanceOf[js.Any])
       )
-      DetailedStatus.foreach(__v => __obj.update("DetailedStatus", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      DetailedStatus.foreach(__v => __obj.updateDynamic("DetailedStatus")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociationOverview]
     }
   }
@@ -1497,13 +1501,13 @@ package ssm {
         Name: AssociationStatusName,
         AdditionalInfo: js.UndefOr[StatusAdditionalInfo] = js.undefined
     ): AssociationStatus = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Date"    -> Date.asInstanceOf[js.Any],
         "Message" -> Message.asInstanceOf[js.Any],
         "Name"    -> Name.asInstanceOf[js.Any]
       )
 
-      AdditionalInfo.foreach(__v => __obj.update("AdditionalInfo", __v.asInstanceOf[js.Any]))
+      AdditionalInfo.foreach(__v => __obj.updateDynamic("AdditionalInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociationStatus]
     }
   }
@@ -1552,20 +1556,20 @@ package ssm {
         ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
         Targets: js.UndefOr[Targets] = js.undefined
     ): AssociationVersionInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssociationId.foreach(__v => __obj.update("AssociationId", __v.asInstanceOf[js.Any]))
-      AssociationName.foreach(__v => __obj.update("AssociationName", __v.asInstanceOf[js.Any]))
-      AssociationVersion.foreach(__v => __obj.update("AssociationVersion", __v.asInstanceOf[js.Any]))
-      ComplianceSeverity.foreach(__v => __obj.update("ComplianceSeverity", __v.asInstanceOf[js.Any]))
-      CreatedDate.foreach(__v => __obj.update("CreatedDate", __v.asInstanceOf[js.Any]))
-      DocumentVersion.foreach(__v => __obj.update("DocumentVersion", __v.asInstanceOf[js.Any]))
-      MaxConcurrency.foreach(__v => __obj.update("MaxConcurrency", __v.asInstanceOf[js.Any]))
-      MaxErrors.foreach(__v => __obj.update("MaxErrors", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      OutputLocation.foreach(__v => __obj.update("OutputLocation", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
-      ScheduleExpression.foreach(__v => __obj.update("ScheduleExpression", __v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.update("Targets", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
+      AssociationName.foreach(__v => __obj.updateDynamic("AssociationName")(__v.asInstanceOf[js.Any]))
+      AssociationVersion.foreach(__v => __obj.updateDynamic("AssociationVersion")(__v.asInstanceOf[js.Any]))
+      ComplianceSeverity.foreach(__v => __obj.updateDynamic("ComplianceSeverity")(__v.asInstanceOf[js.Any]))
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
+      MaxConcurrency.foreach(__v => __obj.updateDynamic("MaxConcurrency")(__v.asInstanceOf[js.Any]))
+      MaxErrors.foreach(__v => __obj.updateDynamic("MaxErrors")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      OutputLocation.foreach(__v => __obj.updateDynamic("OutputLocation")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
+      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociationVersionInfo]
     }
   }
@@ -1590,12 +1594,12 @@ package ssm {
         Size: js.UndefOr[ContentLength] = js.undefined,
         Url: js.UndefOr[AttachmentUrl] = js.undefined
     ): AttachmentContent = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Hash.foreach(__v => __obj.update("Hash", __v.asInstanceOf[js.Any]))
-      HashType.foreach(__v => __obj.update("HashType", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Size.foreach(__v => __obj.update("Size", __v.asInstanceOf[js.Any]))
-      Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Hash.foreach(__v => __obj.updateDynamic("Hash")(__v.asInstanceOf[js.Any]))
+      HashType.foreach(__v => __obj.updateDynamic("HashType")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Size.foreach(__v => __obj.updateDynamic("Size")(__v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttachmentContent]
     }
   }
@@ -1618,8 +1622,8 @@ package ssm {
     def apply(
         Name: js.UndefOr[AttachmentName] = js.undefined
     ): AttachmentInformation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttachmentInformation]
     }
   }
@@ -1638,9 +1642,9 @@ package ssm {
         Key: js.UndefOr[AttachmentsSourceKey] = js.undefined,
         Values: js.UndefOr[AttachmentsSourceValues] = js.undefined
     ): AttachmentsSource = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttachmentsSource]
     }
   }
@@ -1711,32 +1715,36 @@ package ssm {
         TargetParameterName: js.UndefOr[AutomationParameterKey] = js.undefined,
         Targets: js.UndefOr[Targets] = js.undefined
     ): AutomationExecution = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AutomationExecutionId.foreach(__v => __obj.update("AutomationExecutionId", __v.asInstanceOf[js.Any]))
-      AutomationExecutionStatus.foreach(__v => __obj.update("AutomationExecutionStatus", __v.asInstanceOf[js.Any]))
-      CurrentAction.foreach(__v => __obj.update("CurrentAction", __v.asInstanceOf[js.Any]))
-      CurrentStepName.foreach(__v => __obj.update("CurrentStepName", __v.asInstanceOf[js.Any]))
-      DocumentName.foreach(__v => __obj.update("DocumentName", __v.asInstanceOf[js.Any]))
-      DocumentVersion.foreach(__v => __obj.update("DocumentVersion", __v.asInstanceOf[js.Any]))
-      ExecutedBy.foreach(__v => __obj.update("ExecutedBy", __v.asInstanceOf[js.Any]))
-      ExecutionEndTime.foreach(__v => __obj.update("ExecutionEndTime", __v.asInstanceOf[js.Any]))
-      ExecutionStartTime.foreach(__v => __obj.update("ExecutionStartTime", __v.asInstanceOf[js.Any]))
-      FailureMessage.foreach(__v => __obj.update("FailureMessage", __v.asInstanceOf[js.Any]))
-      MaxConcurrency.foreach(__v => __obj.update("MaxConcurrency", __v.asInstanceOf[js.Any]))
-      MaxErrors.foreach(__v => __obj.update("MaxErrors", __v.asInstanceOf[js.Any]))
-      Mode.foreach(__v => __obj.update("Mode", __v.asInstanceOf[js.Any]))
-      Outputs.foreach(__v => __obj.update("Outputs", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
-      ParentAutomationExecutionId.foreach(__v => __obj.update("ParentAutomationExecutionId", __v.asInstanceOf[js.Any]))
-      ProgressCounters.foreach(__v => __obj.update("ProgressCounters", __v.asInstanceOf[js.Any]))
-      ResolvedTargets.foreach(__v => __obj.update("ResolvedTargets", __v.asInstanceOf[js.Any]))
-      StepExecutions.foreach(__v => __obj.update("StepExecutions", __v.asInstanceOf[js.Any]))
-      StepExecutionsTruncated.foreach(__v => __obj.update("StepExecutionsTruncated", __v.asInstanceOf[js.Any]))
-      Target.foreach(__v => __obj.update("Target", __v.asInstanceOf[js.Any]))
-      TargetLocations.foreach(__v => __obj.update("TargetLocations", __v.asInstanceOf[js.Any]))
-      TargetMaps.foreach(__v => __obj.update("TargetMaps", __v.asInstanceOf[js.Any]))
-      TargetParameterName.foreach(__v => __obj.update("TargetParameterName", __v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.update("Targets", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AutomationExecutionId.foreach(__v => __obj.updateDynamic("AutomationExecutionId")(__v.asInstanceOf[js.Any]))
+      AutomationExecutionStatus.foreach(
+        __v => __obj.updateDynamic("AutomationExecutionStatus")(__v.asInstanceOf[js.Any])
+      )
+      CurrentAction.foreach(__v => __obj.updateDynamic("CurrentAction")(__v.asInstanceOf[js.Any]))
+      CurrentStepName.foreach(__v => __obj.updateDynamic("CurrentStepName")(__v.asInstanceOf[js.Any]))
+      DocumentName.foreach(__v => __obj.updateDynamic("DocumentName")(__v.asInstanceOf[js.Any]))
+      DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
+      ExecutedBy.foreach(__v => __obj.updateDynamic("ExecutedBy")(__v.asInstanceOf[js.Any]))
+      ExecutionEndTime.foreach(__v => __obj.updateDynamic("ExecutionEndTime")(__v.asInstanceOf[js.Any]))
+      ExecutionStartTime.foreach(__v => __obj.updateDynamic("ExecutionStartTime")(__v.asInstanceOf[js.Any]))
+      FailureMessage.foreach(__v => __obj.updateDynamic("FailureMessage")(__v.asInstanceOf[js.Any]))
+      MaxConcurrency.foreach(__v => __obj.updateDynamic("MaxConcurrency")(__v.asInstanceOf[js.Any]))
+      MaxErrors.foreach(__v => __obj.updateDynamic("MaxErrors")(__v.asInstanceOf[js.Any]))
+      Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
+      Outputs.foreach(__v => __obj.updateDynamic("Outputs")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      ParentAutomationExecutionId.foreach(
+        __v => __obj.updateDynamic("ParentAutomationExecutionId")(__v.asInstanceOf[js.Any])
+      )
+      ProgressCounters.foreach(__v => __obj.updateDynamic("ProgressCounters")(__v.asInstanceOf[js.Any]))
+      ResolvedTargets.foreach(__v => __obj.updateDynamic("ResolvedTargets")(__v.asInstanceOf[js.Any]))
+      StepExecutions.foreach(__v => __obj.updateDynamic("StepExecutions")(__v.asInstanceOf[js.Any]))
+      StepExecutionsTruncated.foreach(__v => __obj.updateDynamic("StepExecutionsTruncated")(__v.asInstanceOf[js.Any]))
+      Target.foreach(__v => __obj.updateDynamic("Target")(__v.asInstanceOf[js.Any]))
+      TargetLocations.foreach(__v => __obj.updateDynamic("TargetLocations")(__v.asInstanceOf[js.Any]))
+      TargetMaps.foreach(__v => __obj.updateDynamic("TargetMaps")(__v.asInstanceOf[js.Any]))
+      TargetParameterName.foreach(__v => __obj.updateDynamic("TargetParameterName")(__v.asInstanceOf[js.Any]))
+      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutomationExecution]
     }
   }
@@ -1755,7 +1763,7 @@ package ssm {
         Key: AutomationExecutionFilterKey,
         Values: AutomationExecutionFilterValueList
     ): AutomationExecutionFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"    -> Key.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
@@ -1842,29 +1850,33 @@ package ssm {
         TargetParameterName: js.UndefOr[AutomationParameterKey] = js.undefined,
         Targets: js.UndefOr[Targets] = js.undefined
     ): AutomationExecutionMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AutomationExecutionId.foreach(__v => __obj.update("AutomationExecutionId", __v.asInstanceOf[js.Any]))
-      AutomationExecutionStatus.foreach(__v => __obj.update("AutomationExecutionStatus", __v.asInstanceOf[js.Any]))
-      AutomationType.foreach(__v => __obj.update("AutomationType", __v.asInstanceOf[js.Any]))
-      CurrentAction.foreach(__v => __obj.update("CurrentAction", __v.asInstanceOf[js.Any]))
-      CurrentStepName.foreach(__v => __obj.update("CurrentStepName", __v.asInstanceOf[js.Any]))
-      DocumentName.foreach(__v => __obj.update("DocumentName", __v.asInstanceOf[js.Any]))
-      DocumentVersion.foreach(__v => __obj.update("DocumentVersion", __v.asInstanceOf[js.Any]))
-      ExecutedBy.foreach(__v => __obj.update("ExecutedBy", __v.asInstanceOf[js.Any]))
-      ExecutionEndTime.foreach(__v => __obj.update("ExecutionEndTime", __v.asInstanceOf[js.Any]))
-      ExecutionStartTime.foreach(__v => __obj.update("ExecutionStartTime", __v.asInstanceOf[js.Any]))
-      FailureMessage.foreach(__v => __obj.update("FailureMessage", __v.asInstanceOf[js.Any]))
-      LogFile.foreach(__v => __obj.update("LogFile", __v.asInstanceOf[js.Any]))
-      MaxConcurrency.foreach(__v => __obj.update("MaxConcurrency", __v.asInstanceOf[js.Any]))
-      MaxErrors.foreach(__v => __obj.update("MaxErrors", __v.asInstanceOf[js.Any]))
-      Mode.foreach(__v => __obj.update("Mode", __v.asInstanceOf[js.Any]))
-      Outputs.foreach(__v => __obj.update("Outputs", __v.asInstanceOf[js.Any]))
-      ParentAutomationExecutionId.foreach(__v => __obj.update("ParentAutomationExecutionId", __v.asInstanceOf[js.Any]))
-      ResolvedTargets.foreach(__v => __obj.update("ResolvedTargets", __v.asInstanceOf[js.Any]))
-      Target.foreach(__v => __obj.update("Target", __v.asInstanceOf[js.Any]))
-      TargetMaps.foreach(__v => __obj.update("TargetMaps", __v.asInstanceOf[js.Any]))
-      TargetParameterName.foreach(__v => __obj.update("TargetParameterName", __v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.update("Targets", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AutomationExecutionId.foreach(__v => __obj.updateDynamic("AutomationExecutionId")(__v.asInstanceOf[js.Any]))
+      AutomationExecutionStatus.foreach(
+        __v => __obj.updateDynamic("AutomationExecutionStatus")(__v.asInstanceOf[js.Any])
+      )
+      AutomationType.foreach(__v => __obj.updateDynamic("AutomationType")(__v.asInstanceOf[js.Any]))
+      CurrentAction.foreach(__v => __obj.updateDynamic("CurrentAction")(__v.asInstanceOf[js.Any]))
+      CurrentStepName.foreach(__v => __obj.updateDynamic("CurrentStepName")(__v.asInstanceOf[js.Any]))
+      DocumentName.foreach(__v => __obj.updateDynamic("DocumentName")(__v.asInstanceOf[js.Any]))
+      DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
+      ExecutedBy.foreach(__v => __obj.updateDynamic("ExecutedBy")(__v.asInstanceOf[js.Any]))
+      ExecutionEndTime.foreach(__v => __obj.updateDynamic("ExecutionEndTime")(__v.asInstanceOf[js.Any]))
+      ExecutionStartTime.foreach(__v => __obj.updateDynamic("ExecutionStartTime")(__v.asInstanceOf[js.Any]))
+      FailureMessage.foreach(__v => __obj.updateDynamic("FailureMessage")(__v.asInstanceOf[js.Any]))
+      LogFile.foreach(__v => __obj.updateDynamic("LogFile")(__v.asInstanceOf[js.Any]))
+      MaxConcurrency.foreach(__v => __obj.updateDynamic("MaxConcurrency")(__v.asInstanceOf[js.Any]))
+      MaxErrors.foreach(__v => __obj.updateDynamic("MaxErrors")(__v.asInstanceOf[js.Any]))
+      Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
+      Outputs.foreach(__v => __obj.updateDynamic("Outputs")(__v.asInstanceOf[js.Any]))
+      ParentAutomationExecutionId.foreach(
+        __v => __obj.updateDynamic("ParentAutomationExecutionId")(__v.asInstanceOf[js.Any])
+      )
+      ResolvedTargets.foreach(__v => __obj.updateDynamic("ResolvedTargets")(__v.asInstanceOf[js.Any]))
+      Target.foreach(__v => __obj.updateDynamic("Target")(__v.asInstanceOf[js.Any]))
+      TargetMaps.foreach(__v => __obj.updateDynamic("TargetMaps")(__v.asInstanceOf[js.Any]))
+      TargetParameterName.foreach(__v => __obj.updateDynamic("TargetParameterName")(__v.asInstanceOf[js.Any]))
+      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutomationExecutionMetadata]
     }
   }
@@ -1904,11 +1916,11 @@ package ssm {
         CommandId: CommandId,
         InstanceIds: js.UndefOr[InstanceIdList] = js.undefined
     ): CancelCommandRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CommandId" -> CommandId.asInstanceOf[js.Any]
       )
 
-      InstanceIds.foreach(__v => __obj.update("InstanceIds", __v.asInstanceOf[js.Any]))
+      InstanceIds.foreach(__v => __obj.updateDynamic("InstanceIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CancelCommandRequest]
     }
   }
@@ -1922,7 +1934,7 @@ package ssm {
   object CancelCommandResult {
     def apply(
         ): CancelCommandResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CancelCommandResult]
     }
@@ -1937,7 +1949,7 @@ package ssm {
     def apply(
         WindowExecutionId: MaintenanceWindowExecutionId
     ): CancelMaintenanceWindowExecutionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "WindowExecutionId" -> WindowExecutionId.asInstanceOf[js.Any]
       )
 
@@ -1954,8 +1966,8 @@ package ssm {
     def apply(
         WindowExecutionId: js.UndefOr[MaintenanceWindowExecutionId] = js.undefined
     ): CancelMaintenanceWindowExecutionResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      WindowExecutionId.foreach(__v => __obj.update("WindowExecutionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      WindowExecutionId.foreach(__v => __obj.updateDynamic("WindowExecutionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CancelMaintenanceWindowExecutionResult]
     }
   }
@@ -1974,9 +1986,9 @@ package ssm {
         CloudWatchLogGroupName: js.UndefOr[CloudWatchLogGroupName] = js.undefined,
         CloudWatchOutputEnabled: js.UndefOr[CloudWatchOutputEnabled] = js.undefined
     ): CloudWatchOutputConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CloudWatchLogGroupName.foreach(__v => __obj.update("CloudWatchLogGroupName", __v.asInstanceOf[js.Any]))
-      CloudWatchOutputEnabled.foreach(__v => __obj.update("CloudWatchOutputEnabled", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CloudWatchLogGroupName.foreach(__v => __obj.updateDynamic("CloudWatchLogGroupName")(__v.asInstanceOf[js.Any]))
+      CloudWatchOutputEnabled.foreach(__v => __obj.updateDynamic("CloudWatchOutputEnabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CloudWatchOutputConfig]
     }
   }
@@ -2037,30 +2049,30 @@ package ssm {
         TargetCount: js.UndefOr[TargetCount] = js.undefined,
         Targets: js.UndefOr[Targets] = js.undefined
     ): Command = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CloudWatchOutputConfig.foreach(__v => __obj.update("CloudWatchOutputConfig", __v.asInstanceOf[js.Any]))
-      CommandId.foreach(__v => __obj.update("CommandId", __v.asInstanceOf[js.Any]))
-      Comment.foreach(__v => __obj.update("Comment", __v.asInstanceOf[js.Any]))
-      CompletedCount.foreach(__v => __obj.update("CompletedCount", __v.asInstanceOf[js.Any]))
-      DeliveryTimedOutCount.foreach(__v => __obj.update("DeliveryTimedOutCount", __v.asInstanceOf[js.Any]))
-      DocumentName.foreach(__v => __obj.update("DocumentName", __v.asInstanceOf[js.Any]))
-      DocumentVersion.foreach(__v => __obj.update("DocumentVersion", __v.asInstanceOf[js.Any]))
-      ErrorCount.foreach(__v => __obj.update("ErrorCount", __v.asInstanceOf[js.Any]))
-      ExpiresAfter.foreach(__v => __obj.update("ExpiresAfter", __v.asInstanceOf[js.Any]))
-      InstanceIds.foreach(__v => __obj.update("InstanceIds", __v.asInstanceOf[js.Any]))
-      MaxConcurrency.foreach(__v => __obj.update("MaxConcurrency", __v.asInstanceOf[js.Any]))
-      MaxErrors.foreach(__v => __obj.update("MaxErrors", __v.asInstanceOf[js.Any]))
-      NotificationConfig.foreach(__v => __obj.update("NotificationConfig", __v.asInstanceOf[js.Any]))
-      OutputS3BucketName.foreach(__v => __obj.update("OutputS3BucketName", __v.asInstanceOf[js.Any]))
-      OutputS3KeyPrefix.foreach(__v => __obj.update("OutputS3KeyPrefix", __v.asInstanceOf[js.Any]))
-      OutputS3Region.foreach(__v => __obj.update("OutputS3Region", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
-      RequestedDateTime.foreach(__v => __obj.update("RequestedDateTime", __v.asInstanceOf[js.Any]))
-      ServiceRole.foreach(__v => __obj.update("ServiceRole", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusDetails.foreach(__v => __obj.update("StatusDetails", __v.asInstanceOf[js.Any]))
-      TargetCount.foreach(__v => __obj.update("TargetCount", __v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.update("Targets", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CloudWatchOutputConfig.foreach(__v => __obj.updateDynamic("CloudWatchOutputConfig")(__v.asInstanceOf[js.Any]))
+      CommandId.foreach(__v => __obj.updateDynamic("CommandId")(__v.asInstanceOf[js.Any]))
+      Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
+      CompletedCount.foreach(__v => __obj.updateDynamic("CompletedCount")(__v.asInstanceOf[js.Any]))
+      DeliveryTimedOutCount.foreach(__v => __obj.updateDynamic("DeliveryTimedOutCount")(__v.asInstanceOf[js.Any]))
+      DocumentName.foreach(__v => __obj.updateDynamic("DocumentName")(__v.asInstanceOf[js.Any]))
+      DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
+      ErrorCount.foreach(__v => __obj.updateDynamic("ErrorCount")(__v.asInstanceOf[js.Any]))
+      ExpiresAfter.foreach(__v => __obj.updateDynamic("ExpiresAfter")(__v.asInstanceOf[js.Any]))
+      InstanceIds.foreach(__v => __obj.updateDynamic("InstanceIds")(__v.asInstanceOf[js.Any]))
+      MaxConcurrency.foreach(__v => __obj.updateDynamic("MaxConcurrency")(__v.asInstanceOf[js.Any]))
+      MaxErrors.foreach(__v => __obj.updateDynamic("MaxErrors")(__v.asInstanceOf[js.Any]))
+      NotificationConfig.foreach(__v => __obj.updateDynamic("NotificationConfig")(__v.asInstanceOf[js.Any]))
+      OutputS3BucketName.foreach(__v => __obj.updateDynamic("OutputS3BucketName")(__v.asInstanceOf[js.Any]))
+      OutputS3KeyPrefix.foreach(__v => __obj.updateDynamic("OutputS3KeyPrefix")(__v.asInstanceOf[js.Any]))
+      OutputS3Region.foreach(__v => __obj.updateDynamic("OutputS3Region")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      RequestedDateTime.foreach(__v => __obj.updateDynamic("RequestedDateTime")(__v.asInstanceOf[js.Any]))
+      ServiceRole.foreach(__v => __obj.updateDynamic("ServiceRole")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusDetails.foreach(__v => __obj.updateDynamic("StatusDetails")(__v.asInstanceOf[js.Any]))
+      TargetCount.foreach(__v => __obj.updateDynamic("TargetCount")(__v.asInstanceOf[js.Any]))
+      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Command]
     }
   }
@@ -2079,7 +2091,7 @@ package ssm {
         key: CommandFilterKey,
         value: CommandFilterValue
     ): CommandFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "key"   -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
@@ -2140,23 +2152,23 @@ package ssm {
         StatusDetails: js.UndefOr[StatusDetails] = js.undefined,
         TraceOutput: js.UndefOr[InvocationTraceOutput] = js.undefined
     ): CommandInvocation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CloudWatchOutputConfig.foreach(__v => __obj.update("CloudWatchOutputConfig", __v.asInstanceOf[js.Any]))
-      CommandId.foreach(__v => __obj.update("CommandId", __v.asInstanceOf[js.Any]))
-      CommandPlugins.foreach(__v => __obj.update("CommandPlugins", __v.asInstanceOf[js.Any]))
-      Comment.foreach(__v => __obj.update("Comment", __v.asInstanceOf[js.Any]))
-      DocumentName.foreach(__v => __obj.update("DocumentName", __v.asInstanceOf[js.Any]))
-      DocumentVersion.foreach(__v => __obj.update("DocumentVersion", __v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      InstanceName.foreach(__v => __obj.update("InstanceName", __v.asInstanceOf[js.Any]))
-      NotificationConfig.foreach(__v => __obj.update("NotificationConfig", __v.asInstanceOf[js.Any]))
-      RequestedDateTime.foreach(__v => __obj.update("RequestedDateTime", __v.asInstanceOf[js.Any]))
-      ServiceRole.foreach(__v => __obj.update("ServiceRole", __v.asInstanceOf[js.Any]))
-      StandardErrorUrl.foreach(__v => __obj.update("StandardErrorUrl", __v.asInstanceOf[js.Any]))
-      StandardOutputUrl.foreach(__v => __obj.update("StandardOutputUrl", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusDetails.foreach(__v => __obj.update("StatusDetails", __v.asInstanceOf[js.Any]))
-      TraceOutput.foreach(__v => __obj.update("TraceOutput", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CloudWatchOutputConfig.foreach(__v => __obj.updateDynamic("CloudWatchOutputConfig")(__v.asInstanceOf[js.Any]))
+      CommandId.foreach(__v => __obj.updateDynamic("CommandId")(__v.asInstanceOf[js.Any]))
+      CommandPlugins.foreach(__v => __obj.updateDynamic("CommandPlugins")(__v.asInstanceOf[js.Any]))
+      Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
+      DocumentName.foreach(__v => __obj.updateDynamic("DocumentName")(__v.asInstanceOf[js.Any]))
+      DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      InstanceName.foreach(__v => __obj.updateDynamic("InstanceName")(__v.asInstanceOf[js.Any]))
+      NotificationConfig.foreach(__v => __obj.updateDynamic("NotificationConfig")(__v.asInstanceOf[js.Any]))
+      RequestedDateTime.foreach(__v => __obj.updateDynamic("RequestedDateTime")(__v.asInstanceOf[js.Any]))
+      ServiceRole.foreach(__v => __obj.updateDynamic("ServiceRole")(__v.asInstanceOf[js.Any]))
+      StandardErrorUrl.foreach(__v => __obj.updateDynamic("StandardErrorUrl")(__v.asInstanceOf[js.Any]))
+      StandardOutputUrl.foreach(__v => __obj.updateDynamic("StandardOutputUrl")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusDetails.foreach(__v => __obj.updateDynamic("StatusDetails")(__v.asInstanceOf[js.Any]))
+      TraceOutput.foreach(__v => __obj.updateDynamic("TraceOutput")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CommandInvocation]
     }
   }
@@ -2209,19 +2221,19 @@ package ssm {
         Status: js.UndefOr[CommandPluginStatus] = js.undefined,
         StatusDetails: js.UndefOr[StatusDetails] = js.undefined
     ): CommandPlugin = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Output.foreach(__v => __obj.update("Output", __v.asInstanceOf[js.Any]))
-      OutputS3BucketName.foreach(__v => __obj.update("OutputS3BucketName", __v.asInstanceOf[js.Any]))
-      OutputS3KeyPrefix.foreach(__v => __obj.update("OutputS3KeyPrefix", __v.asInstanceOf[js.Any]))
-      OutputS3Region.foreach(__v => __obj.update("OutputS3Region", __v.asInstanceOf[js.Any]))
-      ResponseCode.foreach(__v => __obj.update("ResponseCode", __v.asInstanceOf[js.Any]))
-      ResponseFinishDateTime.foreach(__v => __obj.update("ResponseFinishDateTime", __v.asInstanceOf[js.Any]))
-      ResponseStartDateTime.foreach(__v => __obj.update("ResponseStartDateTime", __v.asInstanceOf[js.Any]))
-      StandardErrorUrl.foreach(__v => __obj.update("StandardErrorUrl", __v.asInstanceOf[js.Any]))
-      StandardOutputUrl.foreach(__v => __obj.update("StandardOutputUrl", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusDetails.foreach(__v => __obj.update("StatusDetails", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Output.foreach(__v => __obj.updateDynamic("Output")(__v.asInstanceOf[js.Any]))
+      OutputS3BucketName.foreach(__v => __obj.updateDynamic("OutputS3BucketName")(__v.asInstanceOf[js.Any]))
+      OutputS3KeyPrefix.foreach(__v => __obj.updateDynamic("OutputS3KeyPrefix")(__v.asInstanceOf[js.Any]))
+      OutputS3Region.foreach(__v => __obj.updateDynamic("OutputS3Region")(__v.asInstanceOf[js.Any]))
+      ResponseCode.foreach(__v => __obj.updateDynamic("ResponseCode")(__v.asInstanceOf[js.Any]))
+      ResponseFinishDateTime.foreach(__v => __obj.updateDynamic("ResponseFinishDateTime")(__v.asInstanceOf[js.Any]))
+      ResponseStartDateTime.foreach(__v => __obj.updateDynamic("ResponseStartDateTime")(__v.asInstanceOf[js.Any]))
+      StandardErrorUrl.foreach(__v => __obj.updateDynamic("StandardErrorUrl")(__v.asInstanceOf[js.Any]))
+      StandardOutputUrl.foreach(__v => __obj.updateDynamic("StandardOutputUrl")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusDetails.foreach(__v => __obj.updateDynamic("StatusDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CommandPlugin]
     }
   }
@@ -2265,12 +2277,12 @@ package ssm {
         ExecutionId: js.UndefOr[ComplianceExecutionId] = js.undefined,
         ExecutionType: js.UndefOr[ComplianceExecutionType] = js.undefined
     ): ComplianceExecutionSummary = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ExecutionTime" -> ExecutionTime.asInstanceOf[js.Any]
       )
 
-      ExecutionId.foreach(__v => __obj.update("ExecutionId", __v.asInstanceOf[js.Any]))
-      ExecutionType.foreach(__v => __obj.update("ExecutionType", __v.asInstanceOf[js.Any]))
+      ExecutionId.foreach(__v => __obj.updateDynamic("ExecutionId")(__v.asInstanceOf[js.Any]))
+      ExecutionType.foreach(__v => __obj.updateDynamic("ExecutionType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ComplianceExecutionSummary]
     }
   }
@@ -2303,16 +2315,16 @@ package ssm {
         Status: js.UndefOr[ComplianceStatus] = js.undefined,
         Title: js.UndefOr[ComplianceItemTitle] = js.undefined
     ): ComplianceItem = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ComplianceType.foreach(__v => __obj.update("ComplianceType", __v.asInstanceOf[js.Any]))
-      Details.foreach(__v => __obj.update("Details", __v.asInstanceOf[js.Any]))
-      ExecutionSummary.foreach(__v => __obj.update("ExecutionSummary", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
-      Severity.foreach(__v => __obj.update("Severity", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      Title.foreach(__v => __obj.update("Title", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ComplianceType.foreach(__v => __obj.updateDynamic("ComplianceType")(__v.asInstanceOf[js.Any]))
+      Details.foreach(__v => __obj.updateDynamic("Details")(__v.asInstanceOf[js.Any]))
+      ExecutionSummary.foreach(__v => __obj.updateDynamic("ExecutionSummary")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      Severity.foreach(__v => __obj.updateDynamic("Severity")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ComplianceItem]
     }
   }
@@ -2337,14 +2349,14 @@ package ssm {
         Id: js.UndefOr[ComplianceItemId] = js.undefined,
         Title: js.UndefOr[ComplianceItemTitle] = js.undefined
     ): ComplianceItemEntry = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Severity" -> Severity.asInstanceOf[js.Any],
         "Status"   -> Status.asInstanceOf[js.Any]
       )
 
-      Details.foreach(__v => __obj.update("Details", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Title.foreach(__v => __obj.update("Title", __v.asInstanceOf[js.Any]))
+      Details.foreach(__v => __obj.updateDynamic("Details")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ComplianceItemEntry]
     }
   }
@@ -2393,10 +2405,10 @@ package ssm {
         Type: js.UndefOr[ComplianceQueryOperatorType] = js.undefined,
         Values: js.UndefOr[ComplianceStringFilterValueList] = js.undefined
     ): ComplianceStringFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
-      Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ComplianceStringFilter]
     }
   }
@@ -2417,10 +2429,10 @@ package ssm {
         CompliantSummary: js.UndefOr[CompliantSummary] = js.undefined,
         NonCompliantSummary: js.UndefOr[NonCompliantSummary] = js.undefined
     ): ComplianceSummaryItem = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ComplianceType.foreach(__v => __obj.update("ComplianceType", __v.asInstanceOf[js.Any]))
-      CompliantSummary.foreach(__v => __obj.update("CompliantSummary", __v.asInstanceOf[js.Any]))
-      NonCompliantSummary.foreach(__v => __obj.update("NonCompliantSummary", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ComplianceType.foreach(__v => __obj.updateDynamic("ComplianceType")(__v.asInstanceOf[js.Any]))
+      CompliantSummary.foreach(__v => __obj.updateDynamic("CompliantSummary")(__v.asInstanceOf[js.Any]))
+      NonCompliantSummary.foreach(__v => __obj.updateDynamic("NonCompliantSummary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ComplianceSummaryItem]
     }
   }
@@ -2439,9 +2451,9 @@ package ssm {
         CompliantCount: js.UndefOr[ComplianceSummaryCount] = js.undefined,
         SeveritySummary: js.UndefOr[SeveritySummary] = js.undefined
     ): CompliantSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CompliantCount.foreach(__v => __obj.update("CompliantCount", __v.asInstanceOf[js.Any]))
-      SeveritySummary.foreach(__v => __obj.update("SeveritySummary", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CompliantCount.foreach(__v => __obj.updateDynamic("CompliantCount")(__v.asInstanceOf[js.Any]))
+      SeveritySummary.foreach(__v => __obj.updateDynamic("SeveritySummary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CompliantSummary]
     }
   }
@@ -2472,15 +2484,15 @@ package ssm {
         RegistrationLimit: js.UndefOr[RegistrationLimit] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateActivationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IamRole" -> IamRole.asInstanceOf[js.Any]
       )
 
-      DefaultInstanceName.foreach(__v => __obj.update("DefaultInstanceName", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      ExpirationDate.foreach(__v => __obj.update("ExpirationDate", __v.asInstanceOf[js.Any]))
-      RegistrationLimit.foreach(__v => __obj.update("RegistrationLimit", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      DefaultInstanceName.foreach(__v => __obj.updateDynamic("DefaultInstanceName")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ExpirationDate.foreach(__v => __obj.updateDynamic("ExpirationDate")(__v.asInstanceOf[js.Any]))
+      RegistrationLimit.foreach(__v => __obj.updateDynamic("RegistrationLimit")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateActivationRequest]
     }
   }
@@ -2496,9 +2508,9 @@ package ssm {
         ActivationCode: js.UndefOr[ActivationCode] = js.undefined,
         ActivationId: js.UndefOr[ActivationId] = js.undefined
     ): CreateActivationResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ActivationCode.foreach(__v => __obj.update("ActivationCode", __v.asInstanceOf[js.Any]))
-      ActivationId.foreach(__v => __obj.update("ActivationId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ActivationCode.foreach(__v => __obj.updateDynamic("ActivationCode")(__v.asInstanceOf[js.Any]))
+      ActivationId.foreach(__v => __obj.updateDynamic("ActivationId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateActivationResult]
     }
   }
@@ -2512,7 +2524,7 @@ package ssm {
     def apply(
         Entries: CreateAssociationBatchRequestEntries
     ): CreateAssociationBatchRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Entries" -> Entries.asInstanceOf[js.Any]
       )
 
@@ -2554,23 +2566,23 @@ package ssm {
         ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
         Targets: js.UndefOr[Targets] = js.undefined
     ): CreateAssociationBatchRequestEntry = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      AssociationName.foreach(__v => __obj.update("AssociationName", __v.asInstanceOf[js.Any]))
+      AssociationName.foreach(__v => __obj.updateDynamic("AssociationName")(__v.asInstanceOf[js.Any]))
       AutomationTargetParameterName.foreach(
-        __v => __obj.update("AutomationTargetParameterName", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("AutomationTargetParameterName")(__v.asInstanceOf[js.Any])
       )
-      ComplianceSeverity.foreach(__v => __obj.update("ComplianceSeverity", __v.asInstanceOf[js.Any]))
-      DocumentVersion.foreach(__v => __obj.update("DocumentVersion", __v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      MaxConcurrency.foreach(__v => __obj.update("MaxConcurrency", __v.asInstanceOf[js.Any]))
-      MaxErrors.foreach(__v => __obj.update("MaxErrors", __v.asInstanceOf[js.Any]))
-      OutputLocation.foreach(__v => __obj.update("OutputLocation", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
-      ScheduleExpression.foreach(__v => __obj.update("ScheduleExpression", __v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.update("Targets", __v.asInstanceOf[js.Any]))
+      ComplianceSeverity.foreach(__v => __obj.updateDynamic("ComplianceSeverity")(__v.asInstanceOf[js.Any]))
+      DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      MaxConcurrency.foreach(__v => __obj.updateDynamic("MaxConcurrency")(__v.asInstanceOf[js.Any]))
+      MaxErrors.foreach(__v => __obj.updateDynamic("MaxErrors")(__v.asInstanceOf[js.Any]))
+      OutputLocation.foreach(__v => __obj.updateDynamic("OutputLocation")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
+      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAssociationBatchRequestEntry]
     }
   }
@@ -2586,9 +2598,9 @@ package ssm {
         Failed: js.UndefOr[FailedCreateAssociationList] = js.undefined,
         Successful: js.UndefOr[AssociationDescriptionList] = js.undefined
     ): CreateAssociationBatchResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Failed.foreach(__v => __obj.update("Failed", __v.asInstanceOf[js.Any]))
-      Successful.foreach(__v => __obj.update("Successful", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Failed.foreach(__v => __obj.updateDynamic("Failed")(__v.asInstanceOf[js.Any]))
+      Successful.foreach(__v => __obj.updateDynamic("Successful")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAssociationBatchResult]
     }
   }
@@ -2624,23 +2636,23 @@ package ssm {
         ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
         Targets: js.UndefOr[Targets] = js.undefined
     ): CreateAssociationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      AssociationName.foreach(__v => __obj.update("AssociationName", __v.asInstanceOf[js.Any]))
+      AssociationName.foreach(__v => __obj.updateDynamic("AssociationName")(__v.asInstanceOf[js.Any]))
       AutomationTargetParameterName.foreach(
-        __v => __obj.update("AutomationTargetParameterName", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("AutomationTargetParameterName")(__v.asInstanceOf[js.Any])
       )
-      ComplianceSeverity.foreach(__v => __obj.update("ComplianceSeverity", __v.asInstanceOf[js.Any]))
-      DocumentVersion.foreach(__v => __obj.update("DocumentVersion", __v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      MaxConcurrency.foreach(__v => __obj.update("MaxConcurrency", __v.asInstanceOf[js.Any]))
-      MaxErrors.foreach(__v => __obj.update("MaxErrors", __v.asInstanceOf[js.Any]))
-      OutputLocation.foreach(__v => __obj.update("OutputLocation", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
-      ScheduleExpression.foreach(__v => __obj.update("ScheduleExpression", __v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.update("Targets", __v.asInstanceOf[js.Any]))
+      ComplianceSeverity.foreach(__v => __obj.updateDynamic("ComplianceSeverity")(__v.asInstanceOf[js.Any]))
+      DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      MaxConcurrency.foreach(__v => __obj.updateDynamic("MaxConcurrency")(__v.asInstanceOf[js.Any]))
+      MaxErrors.foreach(__v => __obj.updateDynamic("MaxErrors")(__v.asInstanceOf[js.Any]))
+      OutputLocation.foreach(__v => __obj.updateDynamic("OutputLocation")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
+      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAssociationRequest]
     }
   }
@@ -2654,8 +2666,8 @@ package ssm {
     def apply(
         AssociationDescription: js.UndefOr[AssociationDescription] = js.undefined
     ): CreateAssociationResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssociationDescription.foreach(__v => __obj.update("AssociationDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssociationDescription.foreach(__v => __obj.updateDynamic("AssociationDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAssociationResult]
     }
   }
@@ -2683,17 +2695,17 @@ package ssm {
         TargetType: js.UndefOr[TargetType] = js.undefined,
         VersionName: js.UndefOr[DocumentVersionName] = js.undefined
     ): CreateDocumentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Content" -> Content.asInstanceOf[js.Any],
         "Name"    -> Name.asInstanceOf[js.Any]
       )
 
-      Attachments.foreach(__v => __obj.update("Attachments", __v.asInstanceOf[js.Any]))
-      DocumentFormat.foreach(__v => __obj.update("DocumentFormat", __v.asInstanceOf[js.Any]))
-      DocumentType.foreach(__v => __obj.update("DocumentType", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      TargetType.foreach(__v => __obj.update("TargetType", __v.asInstanceOf[js.Any]))
-      VersionName.foreach(__v => __obj.update("VersionName", __v.asInstanceOf[js.Any]))
+      Attachments.foreach(__v => __obj.updateDynamic("Attachments")(__v.asInstanceOf[js.Any]))
+      DocumentFormat.foreach(__v => __obj.updateDynamic("DocumentFormat")(__v.asInstanceOf[js.Any]))
+      DocumentType.foreach(__v => __obj.updateDynamic("DocumentType")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TargetType.foreach(__v => __obj.updateDynamic("TargetType")(__v.asInstanceOf[js.Any]))
+      VersionName.foreach(__v => __obj.updateDynamic("VersionName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDocumentRequest]
     }
   }
@@ -2707,8 +2719,8 @@ package ssm {
     def apply(
         DocumentDescription: js.UndefOr[DocumentDescription] = js.undefined
     ): CreateDocumentResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DocumentDescription.foreach(__v => __obj.update("DocumentDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DocumentDescription.foreach(__v => __obj.updateDynamic("DocumentDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDocumentResult]
     }
   }
@@ -2742,7 +2754,7 @@ package ssm {
         StartDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateMaintenanceWindowRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AllowUnassociatedTargets" -> AllowUnassociatedTargets.asInstanceOf[js.Any],
         "Cutoff"                   -> Cutoff.asInstanceOf[js.Any],
         "Duration"                 -> Duration.asInstanceOf[js.Any],
@@ -2750,12 +2762,12 @@ package ssm {
         "Schedule"                 -> Schedule.asInstanceOf[js.Any]
       )
 
-      ClientToken.foreach(__v => __obj.update("ClientToken", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      EndDate.foreach(__v => __obj.update("EndDate", __v.asInstanceOf[js.Any]))
-      ScheduleTimezone.foreach(__v => __obj.update("ScheduleTimezone", __v.asInstanceOf[js.Any]))
-      StartDate.foreach(__v => __obj.update("StartDate", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EndDate.foreach(__v => __obj.updateDynamic("EndDate")(__v.asInstanceOf[js.Any]))
+      ScheduleTimezone.foreach(__v => __obj.updateDynamic("ScheduleTimezone")(__v.asInstanceOf[js.Any]))
+      StartDate.foreach(__v => __obj.updateDynamic("StartDate")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateMaintenanceWindowRequest]
     }
   }
@@ -2769,8 +2781,8 @@ package ssm {
     def apply(
         WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined
     ): CreateMaintenanceWindowResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      WindowId.foreach(__v => __obj.update("WindowId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      WindowId.foreach(__v => __obj.updateDynamic("WindowId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateMaintenanceWindowResult]
     }
   }
@@ -2798,17 +2810,17 @@ package ssm {
         RelatedOpsItems: js.UndefOr[RelatedOpsItems] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateOpsItemRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Description" -> Description.asInstanceOf[js.Any],
         "Source"      -> Source.asInstanceOf[js.Any],
         "Title"       -> Title.asInstanceOf[js.Any]
       )
 
-      Notifications.foreach(__v => __obj.update("Notifications", __v.asInstanceOf[js.Any]))
-      OperationalData.foreach(__v => __obj.update("OperationalData", __v.asInstanceOf[js.Any]))
-      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
-      RelatedOpsItems.foreach(__v => __obj.update("RelatedOpsItems", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Notifications.foreach(__v => __obj.updateDynamic("Notifications")(__v.asInstanceOf[js.Any]))
+      OperationalData.foreach(__v => __obj.updateDynamic("OperationalData")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      RelatedOpsItems.foreach(__v => __obj.updateDynamic("RelatedOpsItems")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateOpsItemRequest]
     }
   }
@@ -2822,8 +2834,8 @@ package ssm {
     def apply(
         OpsItemId: js.UndefOr[String] = js.undefined
     ): CreateOpsItemResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      OpsItemId.foreach(__v => __obj.update("OpsItemId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      OpsItemId.foreach(__v => __obj.updateDynamic("OpsItemId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateOpsItemResponse]
     }
   }
@@ -2861,26 +2873,26 @@ package ssm {
         Sources: js.UndefOr[PatchSourceList] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreatePatchBaselineRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      ApprovalRules.foreach(__v => __obj.update("ApprovalRules", __v.asInstanceOf[js.Any]))
-      ApprovedPatches.foreach(__v => __obj.update("ApprovedPatches", __v.asInstanceOf[js.Any]))
+      ApprovalRules.foreach(__v => __obj.updateDynamic("ApprovalRules")(__v.asInstanceOf[js.Any]))
+      ApprovedPatches.foreach(__v => __obj.updateDynamic("ApprovedPatches")(__v.asInstanceOf[js.Any]))
       ApprovedPatchesComplianceLevel.foreach(
-        __v => __obj.update("ApprovedPatchesComplianceLevel", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ApprovedPatchesComplianceLevel")(__v.asInstanceOf[js.Any])
       )
       ApprovedPatchesEnableNonSecurity.foreach(
-        __v => __obj.update("ApprovedPatchesEnableNonSecurity", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ApprovedPatchesEnableNonSecurity")(__v.asInstanceOf[js.Any])
       )
-      ClientToken.foreach(__v => __obj.update("ClientToken", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      GlobalFilters.foreach(__v => __obj.update("GlobalFilters", __v.asInstanceOf[js.Any]))
-      OperatingSystem.foreach(__v => __obj.update("OperatingSystem", __v.asInstanceOf[js.Any]))
-      RejectedPatches.foreach(__v => __obj.update("RejectedPatches", __v.asInstanceOf[js.Any]))
-      RejectedPatchesAction.foreach(__v => __obj.update("RejectedPatchesAction", __v.asInstanceOf[js.Any]))
-      Sources.foreach(__v => __obj.update("Sources", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      GlobalFilters.foreach(__v => __obj.updateDynamic("GlobalFilters")(__v.asInstanceOf[js.Any]))
+      OperatingSystem.foreach(__v => __obj.updateDynamic("OperatingSystem")(__v.asInstanceOf[js.Any]))
+      RejectedPatches.foreach(__v => __obj.updateDynamic("RejectedPatches")(__v.asInstanceOf[js.Any]))
+      RejectedPatchesAction.foreach(__v => __obj.updateDynamic("RejectedPatchesAction")(__v.asInstanceOf[js.Any]))
+      Sources.foreach(__v => __obj.updateDynamic("Sources")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePatchBaselineRequest]
     }
   }
@@ -2894,8 +2906,8 @@ package ssm {
     def apply(
         BaselineId: js.UndefOr[BaselineId] = js.undefined
     ): CreatePatchBaselineResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BaselineId.foreach(__v => __obj.update("BaselineId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BaselineId.foreach(__v => __obj.updateDynamic("BaselineId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePatchBaselineResult]
     }
   }
@@ -2911,7 +2923,7 @@ package ssm {
         S3Destination: ResourceDataSyncS3Destination,
         SyncName: ResourceDataSyncName
     ): CreateResourceDataSyncRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "S3Destination" -> S3Destination.asInstanceOf[js.Any],
         "SyncName"      -> SyncName.asInstanceOf[js.Any]
       )
@@ -2926,7 +2938,7 @@ package ssm {
   object CreateResourceDataSyncResult {
     def apply(
         ): CreateResourceDataSyncResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[CreateResourceDataSyncResult]
     }
@@ -2941,7 +2953,7 @@ package ssm {
     def apply(
         ActivationId: ActivationId
     ): DeleteActivationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ActivationId" -> ActivationId.asInstanceOf[js.Any]
       )
 
@@ -2955,7 +2967,7 @@ package ssm {
   object DeleteActivationResult {
     def apply(
         ): DeleteActivationResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteActivationResult]
     }
@@ -2974,10 +2986,10 @@ package ssm {
         InstanceId: js.UndefOr[InstanceId] = js.undefined,
         Name: js.UndefOr[DocumentARN] = js.undefined
     ): DeleteAssociationRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssociationId.foreach(__v => __obj.update("AssociationId", __v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteAssociationRequest]
     }
   }
@@ -2988,7 +3000,7 @@ package ssm {
   object DeleteAssociationResult {
     def apply(
         ): DeleteAssociationResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteAssociationResult]
     }
@@ -3007,12 +3019,12 @@ package ssm {
         DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
         VersionName: js.UndefOr[DocumentVersionName] = js.undefined
     ): DeleteDocumentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      DocumentVersion.foreach(__v => __obj.update("DocumentVersion", __v.asInstanceOf[js.Any]))
-      VersionName.foreach(__v => __obj.update("VersionName", __v.asInstanceOf[js.Any]))
+      DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
+      VersionName.foreach(__v => __obj.updateDynamic("VersionName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDocumentRequest]
     }
   }
@@ -3023,7 +3035,7 @@ package ssm {
   object DeleteDocumentResult {
     def apply(
         ): DeleteDocumentResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteDocumentResult]
     }
@@ -3044,13 +3056,13 @@ package ssm {
         DryRun: js.UndefOr[DryRun] = js.undefined,
         SchemaDeleteOption: js.UndefOr[InventorySchemaDeleteOption] = js.undefined
     ): DeleteInventoryRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TypeName" -> TypeName.asInstanceOf[js.Any]
       )
 
-      ClientToken.foreach(__v => __obj.update("ClientToken", __v.asInstanceOf[js.Any]))
-      DryRun.foreach(__v => __obj.update("DryRun", __v.asInstanceOf[js.Any]))
-      SchemaDeleteOption.foreach(__v => __obj.update("SchemaDeleteOption", __v.asInstanceOf[js.Any]))
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
+      SchemaDeleteOption.foreach(__v => __obj.updateDynamic("SchemaDeleteOption")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteInventoryRequest]
     }
   }
@@ -3068,10 +3080,10 @@ package ssm {
         DeletionSummary: js.UndefOr[InventoryDeletionSummary] = js.undefined,
         TypeName: js.UndefOr[InventoryItemTypeName] = js.undefined
     ): DeleteInventoryResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DeletionId.foreach(__v => __obj.update("DeletionId", __v.asInstanceOf[js.Any]))
-      DeletionSummary.foreach(__v => __obj.update("DeletionSummary", __v.asInstanceOf[js.Any]))
-      TypeName.foreach(__v => __obj.update("TypeName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DeletionId.foreach(__v => __obj.updateDynamic("DeletionId")(__v.asInstanceOf[js.Any]))
+      DeletionSummary.foreach(__v => __obj.updateDynamic("DeletionSummary")(__v.asInstanceOf[js.Any]))
+      TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteInventoryResult]
     }
   }
@@ -3085,7 +3097,7 @@ package ssm {
     def apply(
         WindowId: MaintenanceWindowId
     ): DeleteMaintenanceWindowRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "WindowId" -> WindowId.asInstanceOf[js.Any]
       )
 
@@ -3102,8 +3114,8 @@ package ssm {
     def apply(
         WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined
     ): DeleteMaintenanceWindowResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      WindowId.foreach(__v => __obj.update("WindowId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      WindowId.foreach(__v => __obj.updateDynamic("WindowId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteMaintenanceWindowResult]
     }
   }
@@ -3117,7 +3129,7 @@ package ssm {
     def apply(
         Name: PSParameterName
     ): DeleteParameterRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
@@ -3131,7 +3143,7 @@ package ssm {
   object DeleteParameterResult {
     def apply(
         ): DeleteParameterResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteParameterResult]
     }
@@ -3146,7 +3158,7 @@ package ssm {
     def apply(
         Names: ParameterNameList
     ): DeleteParametersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Names" -> Names.asInstanceOf[js.Any]
       )
 
@@ -3165,9 +3177,9 @@ package ssm {
         DeletedParameters: js.UndefOr[ParameterNameList] = js.undefined,
         InvalidParameters: js.UndefOr[ParameterNameList] = js.undefined
     ): DeleteParametersResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DeletedParameters.foreach(__v => __obj.update("DeletedParameters", __v.asInstanceOf[js.Any]))
-      InvalidParameters.foreach(__v => __obj.update("InvalidParameters", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DeletedParameters.foreach(__v => __obj.updateDynamic("DeletedParameters")(__v.asInstanceOf[js.Any]))
+      InvalidParameters.foreach(__v => __obj.updateDynamic("InvalidParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteParametersResult]
     }
   }
@@ -3181,7 +3193,7 @@ package ssm {
     def apply(
         BaselineId: BaselineId
     ): DeletePatchBaselineRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BaselineId" -> BaselineId.asInstanceOf[js.Any]
       )
 
@@ -3198,8 +3210,8 @@ package ssm {
     def apply(
         BaselineId: js.UndefOr[BaselineId] = js.undefined
     ): DeletePatchBaselineResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BaselineId.foreach(__v => __obj.update("BaselineId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BaselineId.foreach(__v => __obj.updateDynamic("BaselineId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeletePatchBaselineResult]
     }
   }
@@ -3213,7 +3225,7 @@ package ssm {
     def apply(
         SyncName: ResourceDataSyncName
     ): DeleteResourceDataSyncRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SyncName" -> SyncName.asInstanceOf[js.Any]
       )
 
@@ -3227,7 +3239,7 @@ package ssm {
   object DeleteResourceDataSyncResult {
     def apply(
         ): DeleteResourceDataSyncResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteResourceDataSyncResult]
     }
@@ -3242,7 +3254,7 @@ package ssm {
     def apply(
         InstanceId: ManagedInstanceId
     ): DeregisterManagedInstanceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
@@ -3256,7 +3268,7 @@ package ssm {
   object DeregisterManagedInstanceResult {
     def apply(
         ): DeregisterManagedInstanceResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeregisterManagedInstanceResult]
     }
@@ -3273,7 +3285,7 @@ package ssm {
         BaselineId: BaselineId,
         PatchGroup: PatchGroup
     ): DeregisterPatchBaselineForPatchGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BaselineId" -> BaselineId.asInstanceOf[js.Any],
         "PatchGroup" -> PatchGroup.asInstanceOf[js.Any]
       )
@@ -3293,9 +3305,9 @@ package ssm {
         BaselineId: js.UndefOr[BaselineId] = js.undefined,
         PatchGroup: js.UndefOr[PatchGroup] = js.undefined
     ): DeregisterPatchBaselineForPatchGroupResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BaselineId.foreach(__v => __obj.update("BaselineId", __v.asInstanceOf[js.Any]))
-      PatchGroup.foreach(__v => __obj.update("PatchGroup", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BaselineId.foreach(__v => __obj.updateDynamic("BaselineId")(__v.asInstanceOf[js.Any]))
+      PatchGroup.foreach(__v => __obj.updateDynamic("PatchGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeregisterPatchBaselineForPatchGroupResult]
     }
   }
@@ -3313,12 +3325,12 @@ package ssm {
         WindowTargetId: MaintenanceWindowTargetId,
         Safe: js.UndefOr[Boolean] = js.undefined
     ): DeregisterTargetFromMaintenanceWindowRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "WindowId"       -> WindowId.asInstanceOf[js.Any],
         "WindowTargetId" -> WindowTargetId.asInstanceOf[js.Any]
       )
 
-      Safe.foreach(__v => __obj.update("Safe", __v.asInstanceOf[js.Any]))
+      Safe.foreach(__v => __obj.updateDynamic("Safe")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeregisterTargetFromMaintenanceWindowRequest]
     }
   }
@@ -3334,9 +3346,9 @@ package ssm {
         WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined,
         WindowTargetId: js.UndefOr[MaintenanceWindowTargetId] = js.undefined
     ): DeregisterTargetFromMaintenanceWindowResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      WindowId.foreach(__v => __obj.update("WindowId", __v.asInstanceOf[js.Any]))
-      WindowTargetId.foreach(__v => __obj.update("WindowTargetId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      WindowId.foreach(__v => __obj.updateDynamic("WindowId")(__v.asInstanceOf[js.Any]))
+      WindowTargetId.foreach(__v => __obj.updateDynamic("WindowTargetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeregisterTargetFromMaintenanceWindowResult]
     }
   }
@@ -3352,7 +3364,7 @@ package ssm {
         WindowId: MaintenanceWindowId,
         WindowTaskId: MaintenanceWindowTaskId
     ): DeregisterTaskFromMaintenanceWindowRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "WindowId"     -> WindowId.asInstanceOf[js.Any],
         "WindowTaskId" -> WindowTaskId.asInstanceOf[js.Any]
       )
@@ -3372,9 +3384,9 @@ package ssm {
         WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined,
         WindowTaskId: js.UndefOr[MaintenanceWindowTaskId] = js.undefined
     ): DeregisterTaskFromMaintenanceWindowResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      WindowId.foreach(__v => __obj.update("WindowId", __v.asInstanceOf[js.Any]))
-      WindowTaskId.foreach(__v => __obj.update("WindowTaskId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      WindowId.foreach(__v => __obj.updateDynamic("WindowId")(__v.asInstanceOf[js.Any]))
+      WindowTaskId.foreach(__v => __obj.updateDynamic("WindowTaskId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeregisterTaskFromMaintenanceWindowResult]
     }
   }
@@ -3393,9 +3405,9 @@ package ssm {
         FilterKey: js.UndefOr[DescribeActivationsFilterKeys] = js.undefined,
         FilterValues: js.UndefOr[StringList] = js.undefined
     ): DescribeActivationsFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      FilterKey.foreach(__v => __obj.update("FilterKey", __v.asInstanceOf[js.Any]))
-      FilterValues.foreach(__v => __obj.update("FilterValues", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      FilterKey.foreach(__v => __obj.updateDynamic("FilterKey")(__v.asInstanceOf[js.Any]))
+      FilterValues.foreach(__v => __obj.updateDynamic("FilterValues")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeActivationsFilter]
     }
   }
@@ -3421,10 +3433,10 @@ package ssm {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeActivationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeActivationsRequest]
     }
   }
@@ -3440,9 +3452,9 @@ package ssm {
         ActivationList: js.UndefOr[ActivationList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeActivationsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ActivationList.foreach(__v => __obj.update("ActivationList", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ActivationList.foreach(__v => __obj.updateDynamic("ActivationList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeActivationsResult]
     }
   }
@@ -3464,14 +3476,14 @@ package ssm {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeAssociationExecutionTargetsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AssociationId" -> AssociationId.asInstanceOf[js.Any],
         "ExecutionId"   -> ExecutionId.asInstanceOf[js.Any]
       )
 
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAssociationExecutionTargetsRequest]
     }
   }
@@ -3487,9 +3499,11 @@ package ssm {
         AssociationExecutionTargets: js.UndefOr[AssociationExecutionTargetsList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeAssociationExecutionTargetsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssociationExecutionTargets.foreach(__v => __obj.update("AssociationExecutionTargets", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssociationExecutionTargets.foreach(
+        __v => __obj.updateDynamic("AssociationExecutionTargets")(__v.asInstanceOf[js.Any])
+      )
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAssociationExecutionTargetsResult]
     }
   }
@@ -3509,13 +3523,13 @@ package ssm {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeAssociationExecutionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AssociationId" -> AssociationId.asInstanceOf[js.Any]
       )
 
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAssociationExecutionsRequest]
     }
   }
@@ -3531,9 +3545,9 @@ package ssm {
         AssociationExecutions: js.UndefOr[AssociationExecutionsList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeAssociationExecutionsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssociationExecutions.foreach(__v => __obj.update("AssociationExecutions", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssociationExecutions.foreach(__v => __obj.updateDynamic("AssociationExecutions")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAssociationExecutionsResult]
     }
   }
@@ -3553,11 +3567,11 @@ package ssm {
         InstanceId: js.UndefOr[InstanceId] = js.undefined,
         Name: js.UndefOr[DocumentARN] = js.undefined
     ): DescribeAssociationRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssociationId.foreach(__v => __obj.update("AssociationId", __v.asInstanceOf[js.Any]))
-      AssociationVersion.foreach(__v => __obj.update("AssociationVersion", __v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
+      AssociationVersion.foreach(__v => __obj.updateDynamic("AssociationVersion")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAssociationRequest]
     }
   }
@@ -3571,8 +3585,8 @@ package ssm {
     def apply(
         AssociationDescription: js.UndefOr[AssociationDescription] = js.undefined
     ): DescribeAssociationResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssociationDescription.foreach(__v => __obj.update("AssociationDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssociationDescription.foreach(__v => __obj.updateDynamic("AssociationDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAssociationResult]
     }
   }
@@ -3590,10 +3604,10 @@ package ssm {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeAutomationExecutionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAutomationExecutionsRequest]
     }
   }
@@ -3609,11 +3623,11 @@ package ssm {
         AutomationExecutionMetadataList: js.UndefOr[AutomationExecutionMetadataList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeAutomationExecutionsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       AutomationExecutionMetadataList.foreach(
-        __v => __obj.update("AutomationExecutionMetadataList", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("AutomationExecutionMetadataList")(__v.asInstanceOf[js.Any])
       )
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAutomationExecutionsResult]
     }
   }
@@ -3635,14 +3649,14 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ReverseOrder: js.UndefOr[Boolean] = js.undefined
     ): DescribeAutomationStepExecutionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AutomationExecutionId" -> AutomationExecutionId.asInstanceOf[js.Any]
       )
 
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ReverseOrder.foreach(__v => __obj.update("ReverseOrder", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ReverseOrder.foreach(__v => __obj.updateDynamic("ReverseOrder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAutomationStepExecutionsRequest]
     }
   }
@@ -3658,9 +3672,9 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         StepExecutions: js.UndefOr[StepExecutionList] = js.undefined
     ): DescribeAutomationStepExecutionsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      StepExecutions.foreach(__v => __obj.update("StepExecutions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StepExecutions.foreach(__v => __obj.updateDynamic("StepExecutions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAutomationStepExecutionsResult]
     }
   }
@@ -3678,10 +3692,10 @@ package ssm {
         MaxResults: js.UndefOr[PatchBaselineMaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeAvailablePatchesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAvailablePatchesRequest]
     }
   }
@@ -3697,9 +3711,9 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Patches: js.UndefOr[PatchList] = js.undefined
     ): DescribeAvailablePatchesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Patches.foreach(__v => __obj.update("Patches", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Patches.foreach(__v => __obj.updateDynamic("Patches")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeAvailablePatchesResult]
     }
   }
@@ -3715,7 +3729,7 @@ package ssm {
         Name: DocumentName,
         PermissionType: DocumentPermissionType
     ): DescribeDocumentPermissionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"           -> Name.asInstanceOf[js.Any],
         "PermissionType" -> PermissionType.asInstanceOf[js.Any]
       )
@@ -3733,8 +3747,8 @@ package ssm {
     def apply(
         AccountIds: js.UndefOr[AccountIdList] = js.undefined
     ): DescribeDocumentPermissionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccountIds.foreach(__v => __obj.update("AccountIds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccountIds.foreach(__v => __obj.updateDynamic("AccountIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDocumentPermissionResponse]
     }
   }
@@ -3752,12 +3766,12 @@ package ssm {
         DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
         VersionName: js.UndefOr[DocumentVersionName] = js.undefined
     ): DescribeDocumentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      DocumentVersion.foreach(__v => __obj.update("DocumentVersion", __v.asInstanceOf[js.Any]))
-      VersionName.foreach(__v => __obj.update("VersionName", __v.asInstanceOf[js.Any]))
+      DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
+      VersionName.foreach(__v => __obj.updateDynamic("VersionName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDocumentRequest]
     }
   }
@@ -3771,8 +3785,8 @@ package ssm {
     def apply(
         Document: js.UndefOr[DocumentDescription] = js.undefined
     ): DescribeDocumentResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Document.foreach(__v => __obj.update("Document", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Document.foreach(__v => __obj.updateDynamic("Document")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDocumentResult]
     }
   }
@@ -3790,12 +3804,12 @@ package ssm {
         MaxResults: js.UndefOr[EffectiveInstanceAssociationMaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeEffectiveInstanceAssociationsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEffectiveInstanceAssociationsRequest]
     }
   }
@@ -3811,9 +3825,9 @@ package ssm {
         Associations: js.UndefOr[InstanceAssociationList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeEffectiveInstanceAssociationsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Associations.foreach(__v => __obj.update("Associations", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Associations.foreach(__v => __obj.updateDynamic("Associations")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEffectiveInstanceAssociationsResult]
     }
   }
@@ -3831,12 +3845,12 @@ package ssm {
         MaxResults: js.UndefOr[PatchBaselineMaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeEffectivePatchesForPatchBaselineRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BaselineId" -> BaselineId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEffectivePatchesForPatchBaselineRequest]
     }
   }
@@ -3852,9 +3866,9 @@ package ssm {
         EffectivePatches: js.UndefOr[EffectivePatchList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeEffectivePatchesForPatchBaselineResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EffectivePatches.foreach(__v => __obj.update("EffectivePatches", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EffectivePatches.foreach(__v => __obj.updateDynamic("EffectivePatches")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEffectivePatchesForPatchBaselineResult]
     }
   }
@@ -3872,12 +3886,12 @@ package ssm {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeInstanceAssociationsStatusRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeInstanceAssociationsStatusRequest]
     }
   }
@@ -3893,11 +3907,11 @@ package ssm {
         InstanceAssociationStatusInfos: js.UndefOr[InstanceAssociationStatusInfos] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeInstanceAssociationsStatusResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       InstanceAssociationStatusInfos.foreach(
-        __v => __obj.update("InstanceAssociationStatusInfos", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("InstanceAssociationStatusInfos")(__v.asInstanceOf[js.Any])
       )
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeInstanceAssociationsStatusResult]
     }
   }
@@ -3917,13 +3931,13 @@ package ssm {
         MaxResults: js.UndefOr[MaxResultsEC2Compatible] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeInstanceInformationRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       InstanceInformationFilterList.foreach(
-        __v => __obj.update("InstanceInformationFilterList", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("InstanceInformationFilterList")(__v.asInstanceOf[js.Any])
       )
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeInstanceInformationRequest]
     }
   }
@@ -3939,9 +3953,9 @@ package ssm {
         InstanceInformationList: js.UndefOr[InstanceInformationList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeInstanceInformationResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InstanceInformationList.foreach(__v => __obj.update("InstanceInformationList", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InstanceInformationList.foreach(__v => __obj.updateDynamic("InstanceInformationList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeInstanceInformationResult]
     }
   }
@@ -3961,13 +3975,13 @@ package ssm {
         MaxResults: js.UndefOr[PatchComplianceMaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeInstancePatchStatesForPatchGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PatchGroup" -> PatchGroup.asInstanceOf[js.Any]
       )
 
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeInstancePatchStatesForPatchGroupRequest]
     }
   }
@@ -3983,9 +3997,9 @@ package ssm {
         InstancePatchStates: js.UndefOr[InstancePatchStatesList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeInstancePatchStatesForPatchGroupResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InstancePatchStates.foreach(__v => __obj.update("InstancePatchStates", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InstancePatchStates.foreach(__v => __obj.updateDynamic("InstancePatchStates")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeInstancePatchStatesForPatchGroupResult]
     }
   }
@@ -4003,12 +4017,12 @@ package ssm {
         MaxResults: js.UndefOr[PatchComplianceMaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeInstancePatchStatesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceIds" -> InstanceIds.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeInstancePatchStatesRequest]
     }
   }
@@ -4024,9 +4038,9 @@ package ssm {
         InstancePatchStates: js.UndefOr[InstancePatchStateList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeInstancePatchStatesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InstancePatchStates.foreach(__v => __obj.update("InstancePatchStates", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InstancePatchStates.foreach(__v => __obj.updateDynamic("InstancePatchStates")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeInstancePatchStatesResult]
     }
   }
@@ -4046,13 +4060,13 @@ package ssm {
         MaxResults: js.UndefOr[PatchComplianceMaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeInstancePatchesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeInstancePatchesRequest]
     }
   }
@@ -4068,9 +4082,9 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Patches: js.UndefOr[PatchComplianceDataList] = js.undefined
     ): DescribeInstancePatchesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Patches.foreach(__v => __obj.update("Patches", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Patches.foreach(__v => __obj.updateDynamic("Patches")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeInstancePatchesResult]
     }
   }
@@ -4088,10 +4102,10 @@ package ssm {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeInventoryDeletionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DeletionId.foreach(__v => __obj.update("DeletionId", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DeletionId.foreach(__v => __obj.updateDynamic("DeletionId")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeInventoryDeletionsRequest]
     }
   }
@@ -4107,9 +4121,9 @@ package ssm {
         InventoryDeletions: js.UndefOr[InventoryDeletionsList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeInventoryDeletionsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InventoryDeletions.foreach(__v => __obj.update("InventoryDeletions", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InventoryDeletions.foreach(__v => __obj.updateDynamic("InventoryDeletions")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeInventoryDeletionsResult]
     }
   }
@@ -4131,14 +4145,14 @@ package ssm {
         MaxResults: js.UndefOr[MaintenanceWindowMaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeMaintenanceWindowExecutionTaskInvocationsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TaskId"            -> TaskId.asInstanceOf[js.Any],
         "WindowExecutionId" -> WindowExecutionId.asInstanceOf[js.Any]
       )
 
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMaintenanceWindowExecutionTaskInvocationsRequest]
     }
   }
@@ -4155,10 +4169,10 @@ package ssm {
         WindowExecutionTaskInvocationIdentities: js.UndefOr[MaintenanceWindowExecutionTaskInvocationIdentityList] =
           js.undefined
     ): DescribeMaintenanceWindowExecutionTaskInvocationsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       WindowExecutionTaskInvocationIdentities.foreach(
-        __v => __obj.update("WindowExecutionTaskInvocationIdentities", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("WindowExecutionTaskInvocationIdentities")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeMaintenanceWindowExecutionTaskInvocationsResult]
     }
@@ -4179,13 +4193,13 @@ package ssm {
         MaxResults: js.UndefOr[MaintenanceWindowMaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeMaintenanceWindowExecutionTasksRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "WindowExecutionId" -> WindowExecutionId.asInstanceOf[js.Any]
       )
 
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMaintenanceWindowExecutionTasksRequest]
     }
   }
@@ -4201,10 +4215,10 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         WindowExecutionTaskIdentities: js.UndefOr[MaintenanceWindowExecutionTaskIdentityList] = js.undefined
     ): DescribeMaintenanceWindowExecutionTasksResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       WindowExecutionTaskIdentities.foreach(
-        __v => __obj.update("WindowExecutionTaskIdentities", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("WindowExecutionTaskIdentities")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribeMaintenanceWindowExecutionTasksResult]
     }
@@ -4225,13 +4239,13 @@ package ssm {
         MaxResults: js.UndefOr[MaintenanceWindowMaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeMaintenanceWindowExecutionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "WindowId" -> WindowId.asInstanceOf[js.Any]
       )
 
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMaintenanceWindowExecutionsRequest]
     }
   }
@@ -4247,9 +4261,9 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         WindowExecutions: js.UndefOr[MaintenanceWindowExecutionList] = js.undefined
     ): DescribeMaintenanceWindowExecutionsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      WindowExecutions.foreach(__v => __obj.update("WindowExecutions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      WindowExecutions.foreach(__v => __obj.updateDynamic("WindowExecutions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMaintenanceWindowExecutionsResult]
     }
   }
@@ -4273,13 +4287,13 @@ package ssm {
         Targets: js.UndefOr[Targets] = js.undefined,
         WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined
     ): DescribeMaintenanceWindowScheduleRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.update("Targets", __v.asInstanceOf[js.Any]))
-      WindowId.foreach(__v => __obj.update("WindowId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
+      WindowId.foreach(__v => __obj.updateDynamic("WindowId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMaintenanceWindowScheduleRequest]
     }
   }
@@ -4295,9 +4309,11 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ScheduledWindowExecutions: js.UndefOr[ScheduledWindowExecutionList] = js.undefined
     ): DescribeMaintenanceWindowScheduleResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ScheduledWindowExecutions.foreach(__v => __obj.update("ScheduledWindowExecutions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ScheduledWindowExecutions.foreach(
+        __v => __obj.updateDynamic("ScheduledWindowExecutions")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[DescribeMaintenanceWindowScheduleResult]
     }
   }
@@ -4317,13 +4333,13 @@ package ssm {
         MaxResults: js.UndefOr[MaintenanceWindowMaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeMaintenanceWindowTargetsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "WindowId" -> WindowId.asInstanceOf[js.Any]
       )
 
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMaintenanceWindowTargetsRequest]
     }
   }
@@ -4339,9 +4355,9 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Targets: js.UndefOr[MaintenanceWindowTargetList] = js.undefined
     ): DescribeMaintenanceWindowTargetsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.update("Targets", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMaintenanceWindowTargetsResult]
     }
   }
@@ -4361,13 +4377,13 @@ package ssm {
         MaxResults: js.UndefOr[MaintenanceWindowMaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeMaintenanceWindowTasksRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "WindowId" -> WindowId.asInstanceOf[js.Any]
       )
 
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMaintenanceWindowTasksRequest]
     }
   }
@@ -4383,9 +4399,9 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Tasks: js.UndefOr[MaintenanceWindowTaskList] = js.undefined
     ): DescribeMaintenanceWindowTasksResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Tasks.foreach(__v => __obj.update("Tasks", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Tasks.foreach(__v => __obj.updateDynamic("Tasks")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMaintenanceWindowTasksResult]
     }
   }
@@ -4405,13 +4421,13 @@ package ssm {
         MaxResults: js.UndefOr[MaintenanceWindowSearchMaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeMaintenanceWindowsForTargetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceType" -> ResourceType.asInstanceOf[js.Any],
         "Targets"      -> Targets.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMaintenanceWindowsForTargetRequest]
     }
   }
@@ -4427,9 +4443,9 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         WindowIdentities: js.UndefOr[MaintenanceWindowsForTargetList] = js.undefined
     ): DescribeMaintenanceWindowsForTargetResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      WindowIdentities.foreach(__v => __obj.update("WindowIdentities", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      WindowIdentities.foreach(__v => __obj.updateDynamic("WindowIdentities")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMaintenanceWindowsForTargetResult]
     }
   }
@@ -4447,10 +4463,10 @@ package ssm {
         MaxResults: js.UndefOr[MaintenanceWindowMaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeMaintenanceWindowsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMaintenanceWindowsRequest]
     }
   }
@@ -4466,9 +4482,9 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         WindowIdentities: js.UndefOr[MaintenanceWindowIdentityList] = js.undefined
     ): DescribeMaintenanceWindowsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      WindowIdentities.foreach(__v => __obj.update("WindowIdentities", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      WindowIdentities.foreach(__v => __obj.updateDynamic("WindowIdentities")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMaintenanceWindowsResult]
     }
   }
@@ -4486,10 +4502,10 @@ package ssm {
         NextToken: js.UndefOr[String] = js.undefined,
         OpsItemFilters: js.UndefOr[OpsItemFilters] = js.undefined
     ): DescribeOpsItemsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      OpsItemFilters.foreach(__v => __obj.update("OpsItemFilters", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      OpsItemFilters.foreach(__v => __obj.updateDynamic("OpsItemFilters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeOpsItemsRequest]
     }
   }
@@ -4505,9 +4521,9 @@ package ssm {
         NextToken: js.UndefOr[String] = js.undefined,
         OpsItemSummaries: js.UndefOr[OpsItemSummaries] = js.undefined
     ): DescribeOpsItemsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      OpsItemSummaries.foreach(__v => __obj.update("OpsItemSummaries", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      OpsItemSummaries.foreach(__v => __obj.updateDynamic("OpsItemSummaries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeOpsItemsResponse]
     }
   }
@@ -4527,11 +4543,11 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ParameterFilters: js.UndefOr[ParameterStringFilterList] = js.undefined
     ): DescribeParametersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ParameterFilters.foreach(__v => __obj.update("ParameterFilters", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ParameterFilters.foreach(__v => __obj.updateDynamic("ParameterFilters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeParametersRequest]
     }
   }
@@ -4547,9 +4563,9 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Parameters: js.UndefOr[ParameterMetadataList] = js.undefined
     ): DescribeParametersResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeParametersResult]
     }
   }
@@ -4567,10 +4583,10 @@ package ssm {
         MaxResults: js.UndefOr[PatchBaselineMaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribePatchBaselinesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePatchBaselinesRequest]
     }
   }
@@ -4586,9 +4602,9 @@ package ssm {
         BaselineIdentities: js.UndefOr[PatchBaselineIdentityList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribePatchBaselinesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BaselineIdentities.foreach(__v => __obj.update("BaselineIdentities", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BaselineIdentities.foreach(__v => __obj.updateDynamic("BaselineIdentities")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePatchBaselinesResult]
     }
   }
@@ -4602,7 +4618,7 @@ package ssm {
     def apply(
         PatchGroup: PatchGroup
     ): DescribePatchGroupStateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PatchGroup" -> PatchGroup.asInstanceOf[js.Any]
       )
 
@@ -4633,24 +4649,28 @@ package ssm {
         InstancesWithNotApplicablePatches: js.UndefOr[Int] = js.undefined,
         InstancesWithUnreportedNotApplicablePatches: js.UndefOr[Int] = js.undefined
     ): DescribePatchGroupStateResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Instances.foreach(__v => __obj.update("Instances", __v.asInstanceOf[js.Any]))
-      InstancesWithFailedPatches.foreach(__v => __obj.update("InstancesWithFailedPatches", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Instances.foreach(__v => __obj.updateDynamic("Instances")(__v.asInstanceOf[js.Any]))
+      InstancesWithFailedPatches.foreach(
+        __v => __obj.updateDynamic("InstancesWithFailedPatches")(__v.asInstanceOf[js.Any])
+      )
       InstancesWithInstalledOtherPatches.foreach(
-        __v => __obj.update("InstancesWithInstalledOtherPatches", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("InstancesWithInstalledOtherPatches")(__v.asInstanceOf[js.Any])
       )
       InstancesWithInstalledPatches.foreach(
-        __v => __obj.update("InstancesWithInstalledPatches", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("InstancesWithInstalledPatches")(__v.asInstanceOf[js.Any])
       )
       InstancesWithInstalledRejectedPatches.foreach(
-        __v => __obj.update("InstancesWithInstalledRejectedPatches", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("InstancesWithInstalledRejectedPatches")(__v.asInstanceOf[js.Any])
       )
-      InstancesWithMissingPatches.foreach(__v => __obj.update("InstancesWithMissingPatches", __v.asInstanceOf[js.Any]))
+      InstancesWithMissingPatches.foreach(
+        __v => __obj.updateDynamic("InstancesWithMissingPatches")(__v.asInstanceOf[js.Any])
+      )
       InstancesWithNotApplicablePatches.foreach(
-        __v => __obj.update("InstancesWithNotApplicablePatches", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("InstancesWithNotApplicablePatches")(__v.asInstanceOf[js.Any])
       )
       InstancesWithUnreportedNotApplicablePatches.foreach(
-        __v => __obj.update("InstancesWithUnreportedNotApplicablePatches", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("InstancesWithUnreportedNotApplicablePatches")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[DescribePatchGroupStateResult]
     }
@@ -4669,10 +4689,10 @@ package ssm {
         MaxResults: js.UndefOr[PatchBaselineMaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribePatchGroupsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePatchGroupsRequest]
     }
   }
@@ -4688,9 +4708,9 @@ package ssm {
         Mappings: js.UndefOr[PatchGroupPatchBaselineMappingList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribePatchGroupsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Mappings.foreach(__v => __obj.update("Mappings", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Mappings.foreach(__v => __obj.updateDynamic("Mappings")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePatchGroupsResult]
     }
   }
@@ -4712,14 +4732,14 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         PatchSet: js.UndefOr[PatchSet] = js.undefined
     ): DescribePatchPropertiesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OperatingSystem" -> OperatingSystem.asInstanceOf[js.Any],
         "Property"        -> Property.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      PatchSet.foreach(__v => __obj.update("PatchSet", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PatchSet.foreach(__v => __obj.updateDynamic("PatchSet")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePatchPropertiesRequest]
     }
   }
@@ -4735,9 +4755,9 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Properties: js.UndefOr[PatchPropertiesList] = js.undefined
     ): DescribePatchPropertiesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Properties.foreach(__v => __obj.update("Properties", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Properties.foreach(__v => __obj.updateDynamic("Properties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePatchPropertiesResult]
     }
   }
@@ -4757,13 +4777,13 @@ package ssm {
         MaxResults: js.UndefOr[SessionMaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeSessionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "State" -> State.asInstanceOf[js.Any]
       )
 
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSessionsRequest]
     }
   }
@@ -4779,9 +4799,9 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Sessions: js.UndefOr[SessionList] = js.undefined
     ): DescribeSessionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Sessions.foreach(__v => __obj.update("Sessions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Sessions.foreach(__v => __obj.updateDynamic("Sessions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSessionsResponse]
     }
   }
@@ -4802,10 +4822,10 @@ package ssm {
         DefaultVersionName: js.UndefOr[DocumentVersionName] = js.undefined,
         Name: js.UndefOr[DocumentName] = js.undefined
     ): DocumentDefaultVersionDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DefaultVersion.foreach(__v => __obj.update("DefaultVersion", __v.asInstanceOf[js.Any]))
-      DefaultVersionName.foreach(__v => __obj.update("DefaultVersionName", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DefaultVersion.foreach(__v => __obj.updateDynamic("DefaultVersion")(__v.asInstanceOf[js.Any]))
+      DefaultVersionName.foreach(__v => __obj.updateDynamic("DefaultVersionName")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DocumentDefaultVersionDescription]
     }
   }
@@ -4862,28 +4882,28 @@ package ssm {
         TargetType: js.UndefOr[TargetType] = js.undefined,
         VersionName: js.UndefOr[DocumentVersionName] = js.undefined
     ): DocumentDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttachmentsInformation.foreach(__v => __obj.update("AttachmentsInformation", __v.asInstanceOf[js.Any]))
-      CreatedDate.foreach(__v => __obj.update("CreatedDate", __v.asInstanceOf[js.Any]))
-      DefaultVersion.foreach(__v => __obj.update("DefaultVersion", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      DocumentFormat.foreach(__v => __obj.update("DocumentFormat", __v.asInstanceOf[js.Any]))
-      DocumentType.foreach(__v => __obj.update("DocumentType", __v.asInstanceOf[js.Any]))
-      DocumentVersion.foreach(__v => __obj.update("DocumentVersion", __v.asInstanceOf[js.Any]))
-      Hash.foreach(__v => __obj.update("Hash", __v.asInstanceOf[js.Any]))
-      HashType.foreach(__v => __obj.update("HashType", __v.asInstanceOf[js.Any]))
-      LatestVersion.foreach(__v => __obj.update("LatestVersion", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Owner.foreach(__v => __obj.update("Owner", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
-      PlatformTypes.foreach(__v => __obj.update("PlatformTypes", __v.asInstanceOf[js.Any]))
-      SchemaVersion.foreach(__v => __obj.update("SchemaVersion", __v.asInstanceOf[js.Any]))
-      Sha1.foreach(__v => __obj.update("Sha1", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusInformation.foreach(__v => __obj.update("StatusInformation", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      TargetType.foreach(__v => __obj.update("TargetType", __v.asInstanceOf[js.Any]))
-      VersionName.foreach(__v => __obj.update("VersionName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttachmentsInformation.foreach(__v => __obj.updateDynamic("AttachmentsInformation")(__v.asInstanceOf[js.Any]))
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      DefaultVersion.foreach(__v => __obj.updateDynamic("DefaultVersion")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DocumentFormat.foreach(__v => __obj.updateDynamic("DocumentFormat")(__v.asInstanceOf[js.Any]))
+      DocumentType.foreach(__v => __obj.updateDynamic("DocumentType")(__v.asInstanceOf[js.Any]))
+      DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
+      Hash.foreach(__v => __obj.updateDynamic("Hash")(__v.asInstanceOf[js.Any]))
+      HashType.foreach(__v => __obj.updateDynamic("HashType")(__v.asInstanceOf[js.Any]))
+      LatestVersion.foreach(__v => __obj.updateDynamic("LatestVersion")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      PlatformTypes.foreach(__v => __obj.updateDynamic("PlatformTypes")(__v.asInstanceOf[js.Any]))
+      SchemaVersion.foreach(__v => __obj.updateDynamic("SchemaVersion")(__v.asInstanceOf[js.Any]))
+      Sha1.foreach(__v => __obj.updateDynamic("Sha1")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusInformation.foreach(__v => __obj.updateDynamic("StatusInformation")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TargetType.foreach(__v => __obj.updateDynamic("TargetType")(__v.asInstanceOf[js.Any]))
+      VersionName.foreach(__v => __obj.updateDynamic("VersionName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DocumentDescription]
     }
   }
@@ -4902,7 +4922,7 @@ package ssm {
         key: DocumentFilterKey,
         value: DocumentFilterValue
     ): DocumentFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "key"   -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
@@ -4964,17 +4984,17 @@ package ssm {
         TargetType: js.UndefOr[TargetType] = js.undefined,
         VersionName: js.UndefOr[DocumentVersionName] = js.undefined
     ): DocumentIdentifier = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DocumentFormat.foreach(__v => __obj.update("DocumentFormat", __v.asInstanceOf[js.Any]))
-      DocumentType.foreach(__v => __obj.update("DocumentType", __v.asInstanceOf[js.Any]))
-      DocumentVersion.foreach(__v => __obj.update("DocumentVersion", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Owner.foreach(__v => __obj.update("Owner", __v.asInstanceOf[js.Any]))
-      PlatformTypes.foreach(__v => __obj.update("PlatformTypes", __v.asInstanceOf[js.Any]))
-      SchemaVersion.foreach(__v => __obj.update("SchemaVersion", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      TargetType.foreach(__v => __obj.update("TargetType", __v.asInstanceOf[js.Any]))
-      VersionName.foreach(__v => __obj.update("VersionName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DocumentFormat.foreach(__v => __obj.updateDynamic("DocumentFormat")(__v.asInstanceOf[js.Any]))
+      DocumentType.foreach(__v => __obj.updateDynamic("DocumentType")(__v.asInstanceOf[js.Any]))
+      DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
+      PlatformTypes.foreach(__v => __obj.updateDynamic("PlatformTypes")(__v.asInstanceOf[js.Any]))
+      SchemaVersion.foreach(__v => __obj.updateDynamic("SchemaVersion")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TargetType.foreach(__v => __obj.updateDynamic("TargetType")(__v.asInstanceOf[js.Any]))
+      VersionName.foreach(__v => __obj.updateDynamic("VersionName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DocumentIdentifier]
     }
   }
@@ -5002,9 +5022,9 @@ package ssm {
         Key: js.UndefOr[DocumentKeyValuesFilterKey] = js.undefined,
         Values: js.UndefOr[DocumentKeyValuesFilterValues] = js.undefined
     ): DocumentKeyValuesFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DocumentKeyValuesFilter]
     }
   }
@@ -5027,11 +5047,11 @@ package ssm {
         Name: js.UndefOr[DocumentParameterName] = js.undefined,
         Type: js.UndefOr[DocumentParameterType] = js.undefined
     ): DocumentParameter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DefaultValue.foreach(__v => __obj.update("DefaultValue", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DefaultValue.foreach(__v => __obj.updateDynamic("DefaultValue")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DocumentParameter]
     }
   }
@@ -5098,15 +5118,15 @@ package ssm {
         StatusInformation: js.UndefOr[DocumentStatusInformation] = js.undefined,
         VersionName: js.UndefOr[DocumentVersionName] = js.undefined
     ): DocumentVersionInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedDate.foreach(__v => __obj.update("CreatedDate", __v.asInstanceOf[js.Any]))
-      DocumentFormat.foreach(__v => __obj.update("DocumentFormat", __v.asInstanceOf[js.Any]))
-      DocumentVersion.foreach(__v => __obj.update("DocumentVersion", __v.asInstanceOf[js.Any]))
-      IsDefaultVersion.foreach(__v => __obj.update("IsDefaultVersion", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusInformation.foreach(__v => __obj.update("StatusInformation", __v.asInstanceOf[js.Any]))
-      VersionName.foreach(__v => __obj.update("VersionName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      DocumentFormat.foreach(__v => __obj.updateDynamic("DocumentFormat")(__v.asInstanceOf[js.Any]))
+      DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
+      IsDefaultVersion.foreach(__v => __obj.updateDynamic("IsDefaultVersion")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusInformation.foreach(__v => __obj.updateDynamic("StatusInformation")(__v.asInstanceOf[js.Any]))
+      VersionName.foreach(__v => __obj.updateDynamic("VersionName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DocumentVersionInfo]
     }
   }
@@ -5125,9 +5145,9 @@ package ssm {
         Patch: js.UndefOr[Patch] = js.undefined,
         PatchStatus: js.UndefOr[PatchStatus] = js.undefined
     ): EffectivePatch = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Patch.foreach(__v => __obj.update("Patch", __v.asInstanceOf[js.Any]))
-      PatchStatus.foreach(__v => __obj.update("PatchStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Patch.foreach(__v => __obj.updateDynamic("Patch")(__v.asInstanceOf[js.Any]))
+      PatchStatus.foreach(__v => __obj.updateDynamic("PatchStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EffectivePatch]
     }
   }
@@ -5155,10 +5175,10 @@ package ssm {
         Fault: js.UndefOr[Fault] = js.undefined,
         Message: js.UndefOr[BatchErrorMessage] = js.undefined
     ): FailedCreateAssociation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Entry.foreach(__v => __obj.update("Entry", __v.asInstanceOf[js.Any]))
-      Fault.foreach(__v => __obj.update("Fault", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Entry.foreach(__v => __obj.updateDynamic("Entry")(__v.asInstanceOf[js.Any]))
+      Fault.foreach(__v => __obj.updateDynamic("Fault")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FailedCreateAssociation]
     }
   }
@@ -5179,10 +5199,10 @@ package ssm {
         FailureStage: js.UndefOr[String] = js.undefined,
         FailureType: js.UndefOr[String] = js.undefined
     ): FailureDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Details.foreach(__v => __obj.update("Details", __v.asInstanceOf[js.Any]))
-      FailureStage.foreach(__v => __obj.update("FailureStage", __v.asInstanceOf[js.Any]))
-      FailureType.foreach(__v => __obj.update("FailureType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Details.foreach(__v => __obj.updateDynamic("Details")(__v.asInstanceOf[js.Any]))
+      FailureStage.foreach(__v => __obj.updateDynamic("FailureStage")(__v.asInstanceOf[js.Any]))
+      FailureType.foreach(__v => __obj.updateDynamic("FailureType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FailureDetails]
     }
   }
@@ -5204,7 +5224,7 @@ package ssm {
     def apply(
         AutomationExecutionId: AutomationExecutionId
     ): GetAutomationExecutionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AutomationExecutionId" -> AutomationExecutionId.asInstanceOf[js.Any]
       )
 
@@ -5221,8 +5241,8 @@ package ssm {
     def apply(
         AutomationExecution: js.UndefOr[AutomationExecution] = js.undefined
     ): GetAutomationExecutionResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AutomationExecution.foreach(__v => __obj.update("AutomationExecution", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AutomationExecution.foreach(__v => __obj.updateDynamic("AutomationExecution")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAutomationExecutionResult]
     }
   }
@@ -5240,12 +5260,12 @@ package ssm {
         InstanceId: InstanceId,
         PluginName: js.UndefOr[CommandPluginName] = js.undefined
     ): GetCommandInvocationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CommandId"  -> CommandId.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
 
-      PluginName.foreach(__v => __obj.update("PluginName", __v.asInstanceOf[js.Any]))
+      PluginName.foreach(__v => __obj.updateDynamic("PluginName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCommandInvocationRequest]
     }
   }
@@ -5291,24 +5311,24 @@ package ssm {
         Status: js.UndefOr[CommandInvocationStatus] = js.undefined,
         StatusDetails: js.UndefOr[StatusDetails] = js.undefined
     ): GetCommandInvocationResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CloudWatchOutputConfig.foreach(__v => __obj.update("CloudWatchOutputConfig", __v.asInstanceOf[js.Any]))
-      CommandId.foreach(__v => __obj.update("CommandId", __v.asInstanceOf[js.Any]))
-      Comment.foreach(__v => __obj.update("Comment", __v.asInstanceOf[js.Any]))
-      DocumentName.foreach(__v => __obj.update("DocumentName", __v.asInstanceOf[js.Any]))
-      DocumentVersion.foreach(__v => __obj.update("DocumentVersion", __v.asInstanceOf[js.Any]))
-      ExecutionElapsedTime.foreach(__v => __obj.update("ExecutionElapsedTime", __v.asInstanceOf[js.Any]))
-      ExecutionEndDateTime.foreach(__v => __obj.update("ExecutionEndDateTime", __v.asInstanceOf[js.Any]))
-      ExecutionStartDateTime.foreach(__v => __obj.update("ExecutionStartDateTime", __v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      PluginName.foreach(__v => __obj.update("PluginName", __v.asInstanceOf[js.Any]))
-      ResponseCode.foreach(__v => __obj.update("ResponseCode", __v.asInstanceOf[js.Any]))
-      StandardErrorContent.foreach(__v => __obj.update("StandardErrorContent", __v.asInstanceOf[js.Any]))
-      StandardErrorUrl.foreach(__v => __obj.update("StandardErrorUrl", __v.asInstanceOf[js.Any]))
-      StandardOutputContent.foreach(__v => __obj.update("StandardOutputContent", __v.asInstanceOf[js.Any]))
-      StandardOutputUrl.foreach(__v => __obj.update("StandardOutputUrl", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusDetails.foreach(__v => __obj.update("StatusDetails", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CloudWatchOutputConfig.foreach(__v => __obj.updateDynamic("CloudWatchOutputConfig")(__v.asInstanceOf[js.Any]))
+      CommandId.foreach(__v => __obj.updateDynamic("CommandId")(__v.asInstanceOf[js.Any]))
+      Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
+      DocumentName.foreach(__v => __obj.updateDynamic("DocumentName")(__v.asInstanceOf[js.Any]))
+      DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
+      ExecutionElapsedTime.foreach(__v => __obj.updateDynamic("ExecutionElapsedTime")(__v.asInstanceOf[js.Any]))
+      ExecutionEndDateTime.foreach(__v => __obj.updateDynamic("ExecutionEndDateTime")(__v.asInstanceOf[js.Any]))
+      ExecutionStartDateTime.foreach(__v => __obj.updateDynamic("ExecutionStartDateTime")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      PluginName.foreach(__v => __obj.updateDynamic("PluginName")(__v.asInstanceOf[js.Any]))
+      ResponseCode.foreach(__v => __obj.updateDynamic("ResponseCode")(__v.asInstanceOf[js.Any]))
+      StandardErrorContent.foreach(__v => __obj.updateDynamic("StandardErrorContent")(__v.asInstanceOf[js.Any]))
+      StandardErrorUrl.foreach(__v => __obj.updateDynamic("StandardErrorUrl")(__v.asInstanceOf[js.Any]))
+      StandardOutputContent.foreach(__v => __obj.updateDynamic("StandardOutputContent")(__v.asInstanceOf[js.Any]))
+      StandardOutputUrl.foreach(__v => __obj.updateDynamic("StandardOutputUrl")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusDetails.foreach(__v => __obj.updateDynamic("StatusDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCommandInvocationResult]
     }
   }
@@ -5322,7 +5342,7 @@ package ssm {
     def apply(
         Target: SessionTarget
     ): GetConnectionStatusRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Target" -> Target.asInstanceOf[js.Any]
       )
 
@@ -5341,9 +5361,9 @@ package ssm {
         Status: js.UndefOr[ConnectionStatus] = js.undefined,
         Target: js.UndefOr[SessionTarget] = js.undefined
     ): GetConnectionStatusResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      Target.foreach(__v => __obj.update("Target", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Target.foreach(__v => __obj.updateDynamic("Target")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetConnectionStatusResponse]
     }
   }
@@ -5357,8 +5377,8 @@ package ssm {
     def apply(
         OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined
     ): GetDefaultPatchBaselineRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      OperatingSystem.foreach(__v => __obj.update("OperatingSystem", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      OperatingSystem.foreach(__v => __obj.updateDynamic("OperatingSystem")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDefaultPatchBaselineRequest]
     }
   }
@@ -5374,9 +5394,9 @@ package ssm {
         BaselineId: js.UndefOr[BaselineId] = js.undefined,
         OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined
     ): GetDefaultPatchBaselineResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BaselineId.foreach(__v => __obj.update("BaselineId", __v.asInstanceOf[js.Any]))
-      OperatingSystem.foreach(__v => __obj.update("OperatingSystem", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BaselineId.foreach(__v => __obj.updateDynamic("BaselineId")(__v.asInstanceOf[js.Any]))
+      OperatingSystem.foreach(__v => __obj.updateDynamic("OperatingSystem")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDefaultPatchBaselineResult]
     }
   }
@@ -5392,7 +5412,7 @@ package ssm {
         InstanceId: InstanceId,
         SnapshotId: SnapshotId
     ): GetDeployablePatchSnapshotForInstanceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "SnapshotId" -> SnapshotId.asInstanceOf[js.Any]
       )
@@ -5416,11 +5436,11 @@ package ssm {
         SnapshotDownloadUrl: js.UndefOr[SnapshotDownloadUrl] = js.undefined,
         SnapshotId: js.UndefOr[SnapshotId] = js.undefined
     ): GetDeployablePatchSnapshotForInstanceResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      Product.foreach(__v => __obj.update("Product", __v.asInstanceOf[js.Any]))
-      SnapshotDownloadUrl.foreach(__v => __obj.update("SnapshotDownloadUrl", __v.asInstanceOf[js.Any]))
-      SnapshotId.foreach(__v => __obj.update("SnapshotId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      Product.foreach(__v => __obj.updateDynamic("Product")(__v.asInstanceOf[js.Any]))
+      SnapshotDownloadUrl.foreach(__v => __obj.updateDynamic("SnapshotDownloadUrl")(__v.asInstanceOf[js.Any]))
+      SnapshotId.foreach(__v => __obj.updateDynamic("SnapshotId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDeployablePatchSnapshotForInstanceResult]
     }
   }
@@ -5440,13 +5460,13 @@ package ssm {
         DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
         VersionName: js.UndefOr[DocumentVersionName] = js.undefined
     ): GetDocumentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      DocumentFormat.foreach(__v => __obj.update("DocumentFormat", __v.asInstanceOf[js.Any]))
-      DocumentVersion.foreach(__v => __obj.update("DocumentVersion", __v.asInstanceOf[js.Any]))
-      VersionName.foreach(__v => __obj.update("VersionName", __v.asInstanceOf[js.Any]))
+      DocumentFormat.foreach(__v => __obj.updateDynamic("DocumentFormat")(__v.asInstanceOf[js.Any]))
+      DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
+      VersionName.foreach(__v => __obj.updateDynamic("VersionName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDocumentRequest]
     }
   }
@@ -5476,16 +5496,16 @@ package ssm {
         StatusInformation: js.UndefOr[DocumentStatusInformation] = js.undefined,
         VersionName: js.UndefOr[DocumentVersionName] = js.undefined
     ): GetDocumentResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AttachmentsContent.foreach(__v => __obj.update("AttachmentsContent", __v.asInstanceOf[js.Any]))
-      Content.foreach(__v => __obj.update("Content", __v.asInstanceOf[js.Any]))
-      DocumentFormat.foreach(__v => __obj.update("DocumentFormat", __v.asInstanceOf[js.Any]))
-      DocumentType.foreach(__v => __obj.update("DocumentType", __v.asInstanceOf[js.Any]))
-      DocumentVersion.foreach(__v => __obj.update("DocumentVersion", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusInformation.foreach(__v => __obj.update("StatusInformation", __v.asInstanceOf[js.Any]))
-      VersionName.foreach(__v => __obj.update("VersionName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AttachmentsContent.foreach(__v => __obj.updateDynamic("AttachmentsContent")(__v.asInstanceOf[js.Any]))
+      Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
+      DocumentFormat.foreach(__v => __obj.updateDynamic("DocumentFormat")(__v.asInstanceOf[js.Any]))
+      DocumentType.foreach(__v => __obj.updateDynamic("DocumentType")(__v.asInstanceOf[js.Any]))
+      DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusInformation.foreach(__v => __obj.updateDynamic("StatusInformation")(__v.asInstanceOf[js.Any]))
+      VersionName.foreach(__v => __obj.updateDynamic("VersionName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDocumentResult]
     }
   }
@@ -5507,12 +5527,12 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ResultAttributes: js.UndefOr[ResultAttributeList] = js.undefined
     ): GetInventoryRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Aggregators.foreach(__v => __obj.update("Aggregators", __v.asInstanceOf[js.Any]))
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ResultAttributes.foreach(__v => __obj.update("ResultAttributes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Aggregators.foreach(__v => __obj.updateDynamic("Aggregators")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ResultAttributes.foreach(__v => __obj.updateDynamic("ResultAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetInventoryRequest]
     }
   }
@@ -5528,9 +5548,9 @@ package ssm {
         Entities: js.UndefOr[InventoryResultEntityList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetInventoryResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Entities.foreach(__v => __obj.update("Entities", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Entities.foreach(__v => __obj.updateDynamic("Entities")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetInventoryResult]
     }
   }
@@ -5552,12 +5572,12 @@ package ssm {
         SubType: js.UndefOr[IsSubTypeSchema] = js.undefined,
         TypeName: js.UndefOr[InventoryItemTypeNameFilter] = js.undefined
     ): GetInventorySchemaRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Aggregator.foreach(__v => __obj.update("Aggregator", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      SubType.foreach(__v => __obj.update("SubType", __v.asInstanceOf[js.Any]))
-      TypeName.foreach(__v => __obj.update("TypeName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Aggregator.foreach(__v => __obj.updateDynamic("Aggregator")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SubType.foreach(__v => __obj.updateDynamic("SubType")(__v.asInstanceOf[js.Any]))
+      TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetInventorySchemaRequest]
     }
   }
@@ -5573,9 +5593,9 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Schemas: js.UndefOr[InventoryItemSchemaResultList] = js.undefined
     ): GetInventorySchemaResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Schemas.foreach(__v => __obj.update("Schemas", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Schemas.foreach(__v => __obj.updateDynamic("Schemas")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetInventorySchemaResult]
     }
   }
@@ -5589,7 +5609,7 @@ package ssm {
     def apply(
         WindowExecutionId: MaintenanceWindowExecutionId
     ): GetMaintenanceWindowExecutionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "WindowExecutionId" -> WindowExecutionId.asInstanceOf[js.Any]
       )
 
@@ -5616,13 +5636,13 @@ package ssm {
         TaskIds: js.UndefOr[MaintenanceWindowExecutionTaskIdList] = js.undefined,
         WindowExecutionId: js.UndefOr[MaintenanceWindowExecutionId] = js.undefined
     ): GetMaintenanceWindowExecutionResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusDetails.foreach(__v => __obj.update("StatusDetails", __v.asInstanceOf[js.Any]))
-      TaskIds.foreach(__v => __obj.update("TaskIds", __v.asInstanceOf[js.Any]))
-      WindowExecutionId.foreach(__v => __obj.update("WindowExecutionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusDetails.foreach(__v => __obj.updateDynamic("StatusDetails")(__v.asInstanceOf[js.Any]))
+      TaskIds.foreach(__v => __obj.updateDynamic("TaskIds")(__v.asInstanceOf[js.Any]))
+      WindowExecutionId.foreach(__v => __obj.updateDynamic("WindowExecutionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMaintenanceWindowExecutionResult]
     }
   }
@@ -5640,7 +5660,7 @@ package ssm {
         TaskId: MaintenanceWindowExecutionTaskId,
         WindowExecutionId: MaintenanceWindowExecutionId
     ): GetMaintenanceWindowExecutionTaskInvocationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InvocationId"      -> InvocationId.asInstanceOf[js.Any],
         "TaskId"            -> TaskId.asInstanceOf[js.Any],
         "WindowExecutionId" -> WindowExecutionId.asInstanceOf[js.Any]
@@ -5681,19 +5701,19 @@ package ssm {
         WindowExecutionId: js.UndefOr[MaintenanceWindowExecutionId] = js.undefined,
         WindowTargetId: js.UndefOr[MaintenanceWindowTaskTargetId] = js.undefined
     ): GetMaintenanceWindowExecutionTaskInvocationResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
-      ExecutionId.foreach(__v => __obj.update("ExecutionId", __v.asInstanceOf[js.Any]))
-      InvocationId.foreach(__v => __obj.update("InvocationId", __v.asInstanceOf[js.Any]))
-      OwnerInformation.foreach(__v => __obj.update("OwnerInformation", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusDetails.foreach(__v => __obj.update("StatusDetails", __v.asInstanceOf[js.Any]))
-      TaskExecutionId.foreach(__v => __obj.update("TaskExecutionId", __v.asInstanceOf[js.Any]))
-      TaskType.foreach(__v => __obj.update("TaskType", __v.asInstanceOf[js.Any]))
-      WindowExecutionId.foreach(__v => __obj.update("WindowExecutionId", __v.asInstanceOf[js.Any]))
-      WindowTargetId.foreach(__v => __obj.update("WindowTargetId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      ExecutionId.foreach(__v => __obj.updateDynamic("ExecutionId")(__v.asInstanceOf[js.Any]))
+      InvocationId.foreach(__v => __obj.updateDynamic("InvocationId")(__v.asInstanceOf[js.Any]))
+      OwnerInformation.foreach(__v => __obj.updateDynamic("OwnerInformation")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusDetails.foreach(__v => __obj.updateDynamic("StatusDetails")(__v.asInstanceOf[js.Any]))
+      TaskExecutionId.foreach(__v => __obj.updateDynamic("TaskExecutionId")(__v.asInstanceOf[js.Any]))
+      TaskType.foreach(__v => __obj.updateDynamic("TaskType")(__v.asInstanceOf[js.Any]))
+      WindowExecutionId.foreach(__v => __obj.updateDynamic("WindowExecutionId")(__v.asInstanceOf[js.Any]))
+      WindowTargetId.foreach(__v => __obj.updateDynamic("WindowTargetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMaintenanceWindowExecutionTaskInvocationResult]
     }
   }
@@ -5709,7 +5729,7 @@ package ssm {
         TaskId: MaintenanceWindowExecutionTaskId,
         WindowExecutionId: MaintenanceWindowExecutionId
     ): GetMaintenanceWindowExecutionTaskRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TaskId"            -> TaskId.asInstanceOf[js.Any],
         "WindowExecutionId" -> WindowExecutionId.asInstanceOf[js.Any]
       )
@@ -5751,20 +5771,20 @@ package ssm {
         Type: js.UndefOr[MaintenanceWindowTaskType] = js.undefined,
         WindowExecutionId: js.UndefOr[MaintenanceWindowExecutionId] = js.undefined
     ): GetMaintenanceWindowExecutionTaskResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
-      MaxConcurrency.foreach(__v => __obj.update("MaxConcurrency", __v.asInstanceOf[js.Any]))
-      MaxErrors.foreach(__v => __obj.update("MaxErrors", __v.asInstanceOf[js.Any]))
-      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
-      ServiceRole.foreach(__v => __obj.update("ServiceRole", __v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusDetails.foreach(__v => __obj.update("StatusDetails", __v.asInstanceOf[js.Any]))
-      TaskArn.foreach(__v => __obj.update("TaskArn", __v.asInstanceOf[js.Any]))
-      TaskExecutionId.foreach(__v => __obj.update("TaskExecutionId", __v.asInstanceOf[js.Any]))
-      TaskParameters.foreach(__v => __obj.update("TaskParameters", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
-      WindowExecutionId.foreach(__v => __obj.update("WindowExecutionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      MaxConcurrency.foreach(__v => __obj.updateDynamic("MaxConcurrency")(__v.asInstanceOf[js.Any]))
+      MaxErrors.foreach(__v => __obj.updateDynamic("MaxErrors")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      ServiceRole.foreach(__v => __obj.updateDynamic("ServiceRole")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusDetails.foreach(__v => __obj.updateDynamic("StatusDetails")(__v.asInstanceOf[js.Any]))
+      TaskArn.foreach(__v => __obj.updateDynamic("TaskArn")(__v.asInstanceOf[js.Any]))
+      TaskExecutionId.foreach(__v => __obj.updateDynamic("TaskExecutionId")(__v.asInstanceOf[js.Any]))
+      TaskParameters.foreach(__v => __obj.updateDynamic("TaskParameters")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      WindowExecutionId.foreach(__v => __obj.updateDynamic("WindowExecutionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMaintenanceWindowExecutionTaskResult]
     }
   }
@@ -5778,7 +5798,7 @@ package ssm {
     def apply(
         WindowId: MaintenanceWindowId
     ): GetMaintenanceWindowRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "WindowId" -> WindowId.asInstanceOf[js.Any]
       )
 
@@ -5821,21 +5841,21 @@ package ssm {
         StartDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
         WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined
     ): GetMaintenanceWindowResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AllowUnassociatedTargets.foreach(__v => __obj.update("AllowUnassociatedTargets", __v.asInstanceOf[js.Any]))
-      CreatedDate.foreach(__v => __obj.update("CreatedDate", __v.asInstanceOf[js.Any]))
-      Cutoff.foreach(__v => __obj.update("Cutoff", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      EndDate.foreach(__v => __obj.update("EndDate", __v.asInstanceOf[js.Any]))
-      ModifiedDate.foreach(__v => __obj.update("ModifiedDate", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      NextExecutionTime.foreach(__v => __obj.update("NextExecutionTime", __v.asInstanceOf[js.Any]))
-      Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
-      ScheduleTimezone.foreach(__v => __obj.update("ScheduleTimezone", __v.asInstanceOf[js.Any]))
-      StartDate.foreach(__v => __obj.update("StartDate", __v.asInstanceOf[js.Any]))
-      WindowId.foreach(__v => __obj.update("WindowId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AllowUnassociatedTargets.foreach(__v => __obj.updateDynamic("AllowUnassociatedTargets")(__v.asInstanceOf[js.Any]))
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      Cutoff.foreach(__v => __obj.updateDynamic("Cutoff")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Duration.foreach(__v => __obj.updateDynamic("Duration")(__v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      EndDate.foreach(__v => __obj.updateDynamic("EndDate")(__v.asInstanceOf[js.Any]))
+      ModifiedDate.foreach(__v => __obj.updateDynamic("ModifiedDate")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NextExecutionTime.foreach(__v => __obj.updateDynamic("NextExecutionTime")(__v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
+      ScheduleTimezone.foreach(__v => __obj.updateDynamic("ScheduleTimezone")(__v.asInstanceOf[js.Any]))
+      StartDate.foreach(__v => __obj.updateDynamic("StartDate")(__v.asInstanceOf[js.Any]))
+      WindowId.foreach(__v => __obj.updateDynamic("WindowId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMaintenanceWindowResult]
     }
   }
@@ -5851,7 +5871,7 @@ package ssm {
         WindowId: MaintenanceWindowId,
         WindowTaskId: MaintenanceWindowTaskId
     ): GetMaintenanceWindowTaskRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "WindowId"     -> WindowId.asInstanceOf[js.Any],
         "WindowTaskId" -> WindowTaskId.asInstanceOf[js.Any]
       )
@@ -5895,21 +5915,21 @@ package ssm {
         WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined,
         WindowTaskId: js.UndefOr[MaintenanceWindowTaskId] = js.undefined
     ): GetMaintenanceWindowTaskResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      LoggingInfo.foreach(__v => __obj.update("LoggingInfo", __v.asInstanceOf[js.Any]))
-      MaxConcurrency.foreach(__v => __obj.update("MaxConcurrency", __v.asInstanceOf[js.Any]))
-      MaxErrors.foreach(__v => __obj.update("MaxErrors", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
-      ServiceRoleArn.foreach(__v => __obj.update("ServiceRoleArn", __v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.update("Targets", __v.asInstanceOf[js.Any]))
-      TaskArn.foreach(__v => __obj.update("TaskArn", __v.asInstanceOf[js.Any]))
-      TaskInvocationParameters.foreach(__v => __obj.update("TaskInvocationParameters", __v.asInstanceOf[js.Any]))
-      TaskParameters.foreach(__v => __obj.update("TaskParameters", __v.asInstanceOf[js.Any]))
-      TaskType.foreach(__v => __obj.update("TaskType", __v.asInstanceOf[js.Any]))
-      WindowId.foreach(__v => __obj.update("WindowId", __v.asInstanceOf[js.Any]))
-      WindowTaskId.foreach(__v => __obj.update("WindowTaskId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LoggingInfo.foreach(__v => __obj.updateDynamic("LoggingInfo")(__v.asInstanceOf[js.Any]))
+      MaxConcurrency.foreach(__v => __obj.updateDynamic("MaxConcurrency")(__v.asInstanceOf[js.Any]))
+      MaxErrors.foreach(__v => __obj.updateDynamic("MaxErrors")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      ServiceRoleArn.foreach(__v => __obj.updateDynamic("ServiceRoleArn")(__v.asInstanceOf[js.Any]))
+      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
+      TaskArn.foreach(__v => __obj.updateDynamic("TaskArn")(__v.asInstanceOf[js.Any]))
+      TaskInvocationParameters.foreach(__v => __obj.updateDynamic("TaskInvocationParameters")(__v.asInstanceOf[js.Any]))
+      TaskParameters.foreach(__v => __obj.updateDynamic("TaskParameters")(__v.asInstanceOf[js.Any]))
+      TaskType.foreach(__v => __obj.updateDynamic("TaskType")(__v.asInstanceOf[js.Any]))
+      WindowId.foreach(__v => __obj.updateDynamic("WindowId")(__v.asInstanceOf[js.Any]))
+      WindowTaskId.foreach(__v => __obj.updateDynamic("WindowTaskId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMaintenanceWindowTaskResult]
     }
   }
@@ -5923,7 +5943,7 @@ package ssm {
     def apply(
         OpsItemId: OpsItemId
     ): GetOpsItemRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OpsItemId" -> OpsItemId.asInstanceOf[js.Any]
       )
 
@@ -5940,8 +5960,8 @@ package ssm {
     def apply(
         OpsItem: js.UndefOr[OpsItem] = js.undefined
     ): GetOpsItemResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      OpsItem.foreach(__v => __obj.update("OpsItem", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      OpsItem.foreach(__v => __obj.updateDynamic("OpsItem")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetOpsItemResponse]
     }
   }
@@ -5961,13 +5981,13 @@ package ssm {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetOpsSummaryRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Aggregators" -> Aggregators.asInstanceOf[js.Any]
       )
 
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetOpsSummaryRequest]
     }
   }
@@ -5983,9 +6003,9 @@ package ssm {
         Entities: js.UndefOr[OpsEntityList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetOpsSummaryResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Entities.foreach(__v => __obj.update("Entities", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Entities.foreach(__v => __obj.updateDynamic("Entities")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetOpsSummaryResult]
     }
   }
@@ -6005,13 +6025,13 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         WithDecryption: js.UndefOr[Boolean] = js.undefined
     ): GetParameterHistoryRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      WithDecryption.foreach(__v => __obj.update("WithDecryption", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      WithDecryption.foreach(__v => __obj.updateDynamic("WithDecryption")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetParameterHistoryRequest]
     }
   }
@@ -6027,9 +6047,9 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Parameters: js.UndefOr[ParameterHistoryList] = js.undefined
     ): GetParameterHistoryResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetParameterHistoryResult]
     }
   }
@@ -6045,11 +6065,11 @@ package ssm {
         Name: PSParameterName,
         WithDecryption: js.UndefOr[Boolean] = js.undefined
     ): GetParameterRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      WithDecryption.foreach(__v => __obj.update("WithDecryption", __v.asInstanceOf[js.Any]))
+      WithDecryption.foreach(__v => __obj.updateDynamic("WithDecryption")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetParameterRequest]
     }
   }
@@ -6063,8 +6083,8 @@ package ssm {
     def apply(
         Parameter: js.UndefOr[Parameter] = js.undefined
     ): GetParameterResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Parameter.foreach(__v => __obj.update("Parameter", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Parameter.foreach(__v => __obj.updateDynamic("Parameter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetParameterResult]
     }
   }
@@ -6088,15 +6108,15 @@ package ssm {
         Recursive: js.UndefOr[Boolean] = js.undefined,
         WithDecryption: js.UndefOr[Boolean] = js.undefined
     ): GetParametersByPathRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Path" -> Path.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ParameterFilters.foreach(__v => __obj.update("ParameterFilters", __v.asInstanceOf[js.Any]))
-      Recursive.foreach(__v => __obj.update("Recursive", __v.asInstanceOf[js.Any]))
-      WithDecryption.foreach(__v => __obj.update("WithDecryption", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ParameterFilters.foreach(__v => __obj.updateDynamic("ParameterFilters")(__v.asInstanceOf[js.Any]))
+      Recursive.foreach(__v => __obj.updateDynamic("Recursive")(__v.asInstanceOf[js.Any]))
+      WithDecryption.foreach(__v => __obj.updateDynamic("WithDecryption")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetParametersByPathRequest]
     }
   }
@@ -6112,9 +6132,9 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         Parameters: js.UndefOr[ParameterList] = js.undefined
     ): GetParametersByPathResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetParametersByPathResult]
     }
   }
@@ -6130,11 +6150,11 @@ package ssm {
         Names: ParameterNameList,
         WithDecryption: js.UndefOr[Boolean] = js.undefined
     ): GetParametersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Names" -> Names.asInstanceOf[js.Any]
       )
 
-      WithDecryption.foreach(__v => __obj.update("WithDecryption", __v.asInstanceOf[js.Any]))
+      WithDecryption.foreach(__v => __obj.updateDynamic("WithDecryption")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetParametersRequest]
     }
   }
@@ -6150,9 +6170,9 @@ package ssm {
         InvalidParameters: js.UndefOr[ParameterNameList] = js.undefined,
         Parameters: js.UndefOr[ParameterList] = js.undefined
     ): GetParametersResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InvalidParameters.foreach(__v => __obj.update("InvalidParameters", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InvalidParameters.foreach(__v => __obj.updateDynamic("InvalidParameters")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetParametersResult]
     }
   }
@@ -6168,11 +6188,11 @@ package ssm {
         PatchGroup: PatchGroup,
         OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined
     ): GetPatchBaselineForPatchGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PatchGroup" -> PatchGroup.asInstanceOf[js.Any]
       )
 
-      OperatingSystem.foreach(__v => __obj.update("OperatingSystem", __v.asInstanceOf[js.Any]))
+      OperatingSystem.foreach(__v => __obj.updateDynamic("OperatingSystem")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPatchBaselineForPatchGroupRequest]
     }
   }
@@ -6190,10 +6210,10 @@ package ssm {
         OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined,
         PatchGroup: js.UndefOr[PatchGroup] = js.undefined
     ): GetPatchBaselineForPatchGroupResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BaselineId.foreach(__v => __obj.update("BaselineId", __v.asInstanceOf[js.Any]))
-      OperatingSystem.foreach(__v => __obj.update("OperatingSystem", __v.asInstanceOf[js.Any]))
-      PatchGroup.foreach(__v => __obj.update("PatchGroup", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BaselineId.foreach(__v => __obj.updateDynamic("BaselineId")(__v.asInstanceOf[js.Any]))
+      OperatingSystem.foreach(__v => __obj.updateDynamic("OperatingSystem")(__v.asInstanceOf[js.Any]))
+      PatchGroup.foreach(__v => __obj.updateDynamic("PatchGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPatchBaselineForPatchGroupResult]
     }
   }
@@ -6207,7 +6227,7 @@ package ssm {
     def apply(
         BaselineId: BaselineId
     ): GetPatchBaselineRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BaselineId" -> BaselineId.asInstanceOf[js.Any]
       )
 
@@ -6252,26 +6272,26 @@ package ssm {
         RejectedPatchesAction: js.UndefOr[PatchAction] = js.undefined,
         Sources: js.UndefOr[PatchSourceList] = js.undefined
     ): GetPatchBaselineResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApprovalRules.foreach(__v => __obj.update("ApprovalRules", __v.asInstanceOf[js.Any]))
-      ApprovedPatches.foreach(__v => __obj.update("ApprovedPatches", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApprovalRules.foreach(__v => __obj.updateDynamic("ApprovalRules")(__v.asInstanceOf[js.Any]))
+      ApprovedPatches.foreach(__v => __obj.updateDynamic("ApprovedPatches")(__v.asInstanceOf[js.Any]))
       ApprovedPatchesComplianceLevel.foreach(
-        __v => __obj.update("ApprovedPatchesComplianceLevel", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ApprovedPatchesComplianceLevel")(__v.asInstanceOf[js.Any])
       )
       ApprovedPatchesEnableNonSecurity.foreach(
-        __v => __obj.update("ApprovedPatchesEnableNonSecurity", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ApprovedPatchesEnableNonSecurity")(__v.asInstanceOf[js.Any])
       )
-      BaselineId.foreach(__v => __obj.update("BaselineId", __v.asInstanceOf[js.Any]))
-      CreatedDate.foreach(__v => __obj.update("CreatedDate", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      GlobalFilters.foreach(__v => __obj.update("GlobalFilters", __v.asInstanceOf[js.Any]))
-      ModifiedDate.foreach(__v => __obj.update("ModifiedDate", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      OperatingSystem.foreach(__v => __obj.update("OperatingSystem", __v.asInstanceOf[js.Any]))
-      PatchGroups.foreach(__v => __obj.update("PatchGroups", __v.asInstanceOf[js.Any]))
-      RejectedPatches.foreach(__v => __obj.update("RejectedPatches", __v.asInstanceOf[js.Any]))
-      RejectedPatchesAction.foreach(__v => __obj.update("RejectedPatchesAction", __v.asInstanceOf[js.Any]))
-      Sources.foreach(__v => __obj.update("Sources", __v.asInstanceOf[js.Any]))
+      BaselineId.foreach(__v => __obj.updateDynamic("BaselineId")(__v.asInstanceOf[js.Any]))
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      GlobalFilters.foreach(__v => __obj.updateDynamic("GlobalFilters")(__v.asInstanceOf[js.Any]))
+      ModifiedDate.foreach(__v => __obj.updateDynamic("ModifiedDate")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      OperatingSystem.foreach(__v => __obj.updateDynamic("OperatingSystem")(__v.asInstanceOf[js.Any]))
+      PatchGroups.foreach(__v => __obj.updateDynamic("PatchGroups")(__v.asInstanceOf[js.Any]))
+      RejectedPatches.foreach(__v => __obj.updateDynamic("RejectedPatches")(__v.asInstanceOf[js.Any]))
+      RejectedPatchesAction.foreach(__v => __obj.updateDynamic("RejectedPatchesAction")(__v.asInstanceOf[js.Any]))
+      Sources.foreach(__v => __obj.updateDynamic("Sources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPatchBaselineResult]
     }
   }
@@ -6288,7 +6308,7 @@ package ssm {
     def apply(
         SettingId: ServiceSettingId
     ): GetServiceSettingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SettingId" -> SettingId.asInstanceOf[js.Any]
       )
 
@@ -6308,8 +6328,8 @@ package ssm {
     def apply(
         ServiceSetting: js.UndefOr[ServiceSetting] = js.undefined
     ): GetServiceSettingResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ServiceSetting.foreach(__v => __obj.update("ServiceSetting", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ServiceSetting.foreach(__v => __obj.updateDynamic("ServiceSetting")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetServiceSettingResult]
     }
   }
@@ -6328,10 +6348,10 @@ package ssm {
         DetailedStatus: js.UndefOr[StatusName] = js.undefined,
         InstanceAssociationStatusAggregatedCount: js.UndefOr[InstanceAssociationStatusAggregatedCount] = js.undefined
     ): InstanceAggregatedAssociationOverview = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DetailedStatus.foreach(__v => __obj.update("DetailedStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DetailedStatus.foreach(__v => __obj.updateDynamic("DetailedStatus")(__v.asInstanceOf[js.Any]))
       InstanceAssociationStatusAggregatedCount.foreach(
-        __v => __obj.update("InstanceAssociationStatusAggregatedCount", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("InstanceAssociationStatusAggregatedCount")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[InstanceAggregatedAssociationOverview]
     }
@@ -6355,11 +6375,11 @@ package ssm {
         Content: js.UndefOr[DocumentContent] = js.undefined,
         InstanceId: js.UndefOr[InstanceId] = js.undefined
     ): InstanceAssociation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssociationId.foreach(__v => __obj.update("AssociationId", __v.asInstanceOf[js.Any]))
-      AssociationVersion.foreach(__v => __obj.update("AssociationVersion", __v.asInstanceOf[js.Any]))
-      Content.foreach(__v => __obj.update("Content", __v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
+      AssociationVersion.foreach(__v => __obj.updateDynamic("AssociationVersion")(__v.asInstanceOf[js.Any]))
+      Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceAssociation]
     }
   }
@@ -6376,8 +6396,8 @@ package ssm {
     def apply(
         S3Location: js.UndefOr[S3OutputLocation] = js.undefined
     ): InstanceAssociationOutputLocation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      S3Location.foreach(__v => __obj.update("S3Location", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      S3Location.foreach(__v => __obj.updateDynamic("S3Location")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceAssociationOutputLocation]
     }
   }
@@ -6394,8 +6414,8 @@ package ssm {
     def apply(
         S3OutputUrl: js.UndefOr[S3OutputUrl] = js.undefined
     ): InstanceAssociationOutputUrl = {
-      val __obj = js.Dictionary.empty[js.Any]
-      S3OutputUrl.foreach(__v => __obj.update("S3OutputUrl", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      S3OutputUrl.foreach(__v => __obj.updateDynamic("S3OutputUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceAssociationOutputUrl]
     }
   }
@@ -6434,19 +6454,19 @@ package ssm {
         OutputUrl: js.UndefOr[InstanceAssociationOutputUrl] = js.undefined,
         Status: js.UndefOr[StatusName] = js.undefined
     ): InstanceAssociationStatusInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssociationId.foreach(__v => __obj.update("AssociationId", __v.asInstanceOf[js.Any]))
-      AssociationName.foreach(__v => __obj.update("AssociationName", __v.asInstanceOf[js.Any]))
-      AssociationVersion.foreach(__v => __obj.update("AssociationVersion", __v.asInstanceOf[js.Any]))
-      DetailedStatus.foreach(__v => __obj.update("DetailedStatus", __v.asInstanceOf[js.Any]))
-      DocumentVersion.foreach(__v => __obj.update("DocumentVersion", __v.asInstanceOf[js.Any]))
-      ErrorCode.foreach(__v => __obj.update("ErrorCode", __v.asInstanceOf[js.Any]))
-      ExecutionDate.foreach(__v => __obj.update("ExecutionDate", __v.asInstanceOf[js.Any]))
-      ExecutionSummary.foreach(__v => __obj.update("ExecutionSummary", __v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      OutputUrl.foreach(__v => __obj.update("OutputUrl", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
+      AssociationName.foreach(__v => __obj.updateDynamic("AssociationName")(__v.asInstanceOf[js.Any]))
+      AssociationVersion.foreach(__v => __obj.updateDynamic("AssociationVersion")(__v.asInstanceOf[js.Any]))
+      DetailedStatus.foreach(__v => __obj.updateDynamic("DetailedStatus")(__v.asInstanceOf[js.Any]))
+      DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ExecutionDate.foreach(__v => __obj.updateDynamic("ExecutionDate")(__v.asInstanceOf[js.Any]))
+      ExecutionSummary.foreach(__v => __obj.updateDynamic("ExecutionSummary")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      OutputUrl.foreach(__v => __obj.updateDynamic("OutputUrl")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceAssociationStatusInfo]
     }
   }
@@ -6499,30 +6519,30 @@ package ssm {
         RegistrationDate: js.UndefOr[DateTime] = js.undefined,
         ResourceType: js.UndefOr[ResourceType] = js.undefined
     ): InstanceInformation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ActivationId.foreach(__v => __obj.update("ActivationId", __v.asInstanceOf[js.Any]))
-      AgentVersion.foreach(__v => __obj.update("AgentVersion", __v.asInstanceOf[js.Any]))
-      AssociationOverview.foreach(__v => __obj.update("AssociationOverview", __v.asInstanceOf[js.Any]))
-      AssociationStatus.foreach(__v => __obj.update("AssociationStatus", __v.asInstanceOf[js.Any]))
-      ComputerName.foreach(__v => __obj.update("ComputerName", __v.asInstanceOf[js.Any]))
-      IPAddress.foreach(__v => __obj.update("IPAddress", __v.asInstanceOf[js.Any]))
-      IamRole.foreach(__v => __obj.update("IamRole", __v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      IsLatestVersion.foreach(__v => __obj.update("IsLatestVersion", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ActivationId.foreach(__v => __obj.updateDynamic("ActivationId")(__v.asInstanceOf[js.Any]))
+      AgentVersion.foreach(__v => __obj.updateDynamic("AgentVersion")(__v.asInstanceOf[js.Any]))
+      AssociationOverview.foreach(__v => __obj.updateDynamic("AssociationOverview")(__v.asInstanceOf[js.Any]))
+      AssociationStatus.foreach(__v => __obj.updateDynamic("AssociationStatus")(__v.asInstanceOf[js.Any]))
+      ComputerName.foreach(__v => __obj.updateDynamic("ComputerName")(__v.asInstanceOf[js.Any]))
+      IPAddress.foreach(__v => __obj.updateDynamic("IPAddress")(__v.asInstanceOf[js.Any]))
+      IamRole.foreach(__v => __obj.updateDynamic("IamRole")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      IsLatestVersion.foreach(__v => __obj.updateDynamic("IsLatestVersion")(__v.asInstanceOf[js.Any]))
       LastAssociationExecutionDate.foreach(
-        __v => __obj.update("LastAssociationExecutionDate", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("LastAssociationExecutionDate")(__v.asInstanceOf[js.Any])
       )
-      LastPingDateTime.foreach(__v => __obj.update("LastPingDateTime", __v.asInstanceOf[js.Any]))
+      LastPingDateTime.foreach(__v => __obj.updateDynamic("LastPingDateTime")(__v.asInstanceOf[js.Any]))
       LastSuccessfulAssociationExecutionDate.foreach(
-        __v => __obj.update("LastSuccessfulAssociationExecutionDate", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("LastSuccessfulAssociationExecutionDate")(__v.asInstanceOf[js.Any])
       )
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      PingStatus.foreach(__v => __obj.update("PingStatus", __v.asInstanceOf[js.Any]))
-      PlatformName.foreach(__v => __obj.update("PlatformName", __v.asInstanceOf[js.Any]))
-      PlatformType.foreach(__v => __obj.update("PlatformType", __v.asInstanceOf[js.Any]))
-      PlatformVersion.foreach(__v => __obj.update("PlatformVersion", __v.asInstanceOf[js.Any]))
-      RegistrationDate.foreach(__v => __obj.update("RegistrationDate", __v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PingStatus.foreach(__v => __obj.updateDynamic("PingStatus")(__v.asInstanceOf[js.Any]))
+      PlatformName.foreach(__v => __obj.updateDynamic("PlatformName")(__v.asInstanceOf[js.Any]))
+      PlatformType.foreach(__v => __obj.updateDynamic("PlatformType")(__v.asInstanceOf[js.Any]))
+      PlatformVersion.foreach(__v => __obj.updateDynamic("PlatformVersion")(__v.asInstanceOf[js.Any]))
+      RegistrationDate.foreach(__v => __obj.updateDynamic("RegistrationDate")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceInformation]
     }
   }
@@ -6542,7 +6562,7 @@ package ssm {
         key: InstanceInformationFilterKey,
         valueSet: InstanceInformationFilterValueSet
     ): InstanceInformationFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "key"      -> key.asInstanceOf[js.Any],
         "valueSet" -> valueSet.asInstanceOf[js.Any]
       )
@@ -6589,7 +6609,7 @@ package ssm {
         Key: InstanceInformationStringFilterKey,
         Values: InstanceInformationFilterValueSet
     ): InstanceInformationStringFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"    -> Key.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
@@ -6640,7 +6660,7 @@ package ssm {
         SnapshotId: js.UndefOr[SnapshotId] = js.undefined,
         UnreportedNotApplicableCount: js.UndefOr[PatchUnreportedNotApplicableCount] = js.undefined
     ): InstancePatchState = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BaselineId"         -> BaselineId.asInstanceOf[js.Any],
         "InstanceId"         -> InstanceId.asInstanceOf[js.Any],
         "Operation"          -> Operation.asInstanceOf[js.Any],
@@ -6649,17 +6669,17 @@ package ssm {
         "PatchGroup"         -> PatchGroup.asInstanceOf[js.Any]
       )
 
-      FailedCount.foreach(__v => __obj.update("FailedCount", __v.asInstanceOf[js.Any]))
-      InstallOverrideList.foreach(__v => __obj.update("InstallOverrideList", __v.asInstanceOf[js.Any]))
-      InstalledCount.foreach(__v => __obj.update("InstalledCount", __v.asInstanceOf[js.Any]))
-      InstalledOtherCount.foreach(__v => __obj.update("InstalledOtherCount", __v.asInstanceOf[js.Any]))
-      InstalledRejectedCount.foreach(__v => __obj.update("InstalledRejectedCount", __v.asInstanceOf[js.Any]))
-      MissingCount.foreach(__v => __obj.update("MissingCount", __v.asInstanceOf[js.Any]))
-      NotApplicableCount.foreach(__v => __obj.update("NotApplicableCount", __v.asInstanceOf[js.Any]))
-      OwnerInformation.foreach(__v => __obj.update("OwnerInformation", __v.asInstanceOf[js.Any]))
-      SnapshotId.foreach(__v => __obj.update("SnapshotId", __v.asInstanceOf[js.Any]))
+      FailedCount.foreach(__v => __obj.updateDynamic("FailedCount")(__v.asInstanceOf[js.Any]))
+      InstallOverrideList.foreach(__v => __obj.updateDynamic("InstallOverrideList")(__v.asInstanceOf[js.Any]))
+      InstalledCount.foreach(__v => __obj.updateDynamic("InstalledCount")(__v.asInstanceOf[js.Any]))
+      InstalledOtherCount.foreach(__v => __obj.updateDynamic("InstalledOtherCount")(__v.asInstanceOf[js.Any]))
+      InstalledRejectedCount.foreach(__v => __obj.updateDynamic("InstalledRejectedCount")(__v.asInstanceOf[js.Any]))
+      MissingCount.foreach(__v => __obj.updateDynamic("MissingCount")(__v.asInstanceOf[js.Any]))
+      NotApplicableCount.foreach(__v => __obj.updateDynamic("NotApplicableCount")(__v.asInstanceOf[js.Any]))
+      OwnerInformation.foreach(__v => __obj.updateDynamic("OwnerInformation")(__v.asInstanceOf[js.Any]))
+      SnapshotId.foreach(__v => __obj.updateDynamic("SnapshotId")(__v.asInstanceOf[js.Any]))
       UnreportedNotApplicableCount.foreach(
-        __v => __obj.update("UnreportedNotApplicableCount", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("UnreportedNotApplicableCount")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[InstancePatchState]
     }
@@ -6681,7 +6701,7 @@ package ssm {
         Type: InstancePatchStateOperatorType,
         Values: InstancePatchStateFilterValues
     ): InstancePatchStateFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"    -> Key.asInstanceOf[js.Any],
         "Type"   -> Type.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
@@ -6716,10 +6736,10 @@ package ssm {
         Expression: js.UndefOr[InventoryAggregatorExpression] = js.undefined,
         Groups: js.UndefOr[InventoryGroupList] = js.undefined
     ): InventoryAggregator = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Aggregators.foreach(__v => __obj.update("Aggregators", __v.asInstanceOf[js.Any]))
-      Expression.foreach(__v => __obj.update("Expression", __v.asInstanceOf[js.Any]))
-      Groups.foreach(__v => __obj.update("Groups", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Aggregators.foreach(__v => __obj.updateDynamic("Aggregators")(__v.asInstanceOf[js.Any]))
+      Expression.foreach(__v => __obj.updateDynamic("Expression")(__v.asInstanceOf[js.Any]))
+      Groups.foreach(__v => __obj.updateDynamic("Groups")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InventoryAggregator]
     }
   }
@@ -6762,14 +6782,14 @@ package ssm {
         LastStatusUpdateTime: js.UndefOr[InventoryDeletionLastStatusUpdateTime] = js.undefined,
         TypeName: js.UndefOr[InventoryItemTypeName] = js.undefined
     ): InventoryDeletionStatusItem = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DeletionId.foreach(__v => __obj.update("DeletionId", __v.asInstanceOf[js.Any]))
-      DeletionStartTime.foreach(__v => __obj.update("DeletionStartTime", __v.asInstanceOf[js.Any]))
-      DeletionSummary.foreach(__v => __obj.update("DeletionSummary", __v.asInstanceOf[js.Any]))
-      LastStatus.foreach(__v => __obj.update("LastStatus", __v.asInstanceOf[js.Any]))
-      LastStatusMessage.foreach(__v => __obj.update("LastStatusMessage", __v.asInstanceOf[js.Any]))
-      LastStatusUpdateTime.foreach(__v => __obj.update("LastStatusUpdateTime", __v.asInstanceOf[js.Any]))
-      TypeName.foreach(__v => __obj.update("TypeName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DeletionId.foreach(__v => __obj.updateDynamic("DeletionId")(__v.asInstanceOf[js.Any]))
+      DeletionStartTime.foreach(__v => __obj.updateDynamic("DeletionStartTime")(__v.asInstanceOf[js.Any]))
+      DeletionSummary.foreach(__v => __obj.updateDynamic("DeletionSummary")(__v.asInstanceOf[js.Any]))
+      LastStatus.foreach(__v => __obj.updateDynamic("LastStatus")(__v.asInstanceOf[js.Any]))
+      LastStatusMessage.foreach(__v => __obj.updateDynamic("LastStatusMessage")(__v.asInstanceOf[js.Any]))
+      LastStatusUpdateTime.foreach(__v => __obj.updateDynamic("LastStatusUpdateTime")(__v.asInstanceOf[js.Any]))
+      TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InventoryDeletionStatusItem]
     }
   }
@@ -6790,10 +6810,10 @@ package ssm {
         SummaryItems: js.UndefOr[InventoryDeletionSummaryItems] = js.undefined,
         TotalCount: js.UndefOr[TotalCount] = js.undefined
     ): InventoryDeletionSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RemainingCount.foreach(__v => __obj.update("RemainingCount", __v.asInstanceOf[js.Any]))
-      SummaryItems.foreach(__v => __obj.update("SummaryItems", __v.asInstanceOf[js.Any]))
-      TotalCount.foreach(__v => __obj.update("TotalCount", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RemainingCount.foreach(__v => __obj.updateDynamic("RemainingCount")(__v.asInstanceOf[js.Any]))
+      SummaryItems.foreach(__v => __obj.updateDynamic("SummaryItems")(__v.asInstanceOf[js.Any]))
+      TotalCount.foreach(__v => __obj.updateDynamic("TotalCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InventoryDeletionSummary]
     }
   }
@@ -6814,10 +6834,10 @@ package ssm {
         RemainingCount: js.UndefOr[RemainingCount] = js.undefined,
         Version: js.UndefOr[InventoryItemSchemaVersion] = js.undefined
     ): InventoryDeletionSummaryItem = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Count.foreach(__v => __obj.update("Count", __v.asInstanceOf[js.Any]))
-      RemainingCount.foreach(__v => __obj.update("RemainingCount", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
+      RemainingCount.foreach(__v => __obj.updateDynamic("RemainingCount")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InventoryDeletionSummaryItem]
     }
   }
@@ -6838,12 +6858,12 @@ package ssm {
         Values: InventoryFilterValueList,
         Type: js.UndefOr[InventoryQueryOperatorType] = js.undefined
     ): InventoryFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"    -> Key.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InventoryFilter]
     }
   }
@@ -6862,7 +6882,7 @@ package ssm {
         Filters: InventoryFilterList,
         Name: InventoryGroupName
     ): InventoryGroup = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Filters" -> Filters.asInstanceOf[js.Any],
         "Name"    -> Name.asInstanceOf[js.Any]
       )
@@ -6893,15 +6913,15 @@ package ssm {
         ContentHash: js.UndefOr[InventoryItemContentHash] = js.undefined,
         Context: js.UndefOr[InventoryItemContentContext] = js.undefined
     ): InventoryItem = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CaptureTime"   -> CaptureTime.asInstanceOf[js.Any],
         "SchemaVersion" -> SchemaVersion.asInstanceOf[js.Any],
         "TypeName"      -> TypeName.asInstanceOf[js.Any]
       )
 
-      Content.foreach(__v => __obj.update("Content", __v.asInstanceOf[js.Any]))
-      ContentHash.foreach(__v => __obj.update("ContentHash", __v.asInstanceOf[js.Any]))
-      Context.foreach(__v => __obj.update("Context", __v.asInstanceOf[js.Any]))
+      Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
+      ContentHash.foreach(__v => __obj.updateDynamic("ContentHash")(__v.asInstanceOf[js.Any]))
+      Context.foreach(__v => __obj.updateDynamic("Context")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InventoryItem]
     }
   }
@@ -6920,7 +6940,7 @@ package ssm {
         DataType: InventoryAttributeDataType,
         Name: InventoryItemAttributeName
     ): InventoryItemAttribute = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DataType" -> DataType.asInstanceOf[js.Any],
         "Name"     -> Name.asInstanceOf[js.Any]
       )
@@ -6947,13 +6967,13 @@ package ssm {
         DisplayName: js.UndefOr[InventoryTypeDisplayName] = js.undefined,
         Version: js.UndefOr[InventoryItemSchemaVersion] = js.undefined
     ): InventoryItemSchema = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Attributes" -> Attributes.asInstanceOf[js.Any],
         "TypeName"   -> TypeName.asInstanceOf[js.Any]
       )
 
-      DisplayName.foreach(__v => __obj.update("DisplayName", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InventoryItemSchema]
     }
   }
@@ -6983,9 +7003,9 @@ package ssm {
         Data: js.UndefOr[InventoryResultItemMap] = js.undefined,
         Id: js.UndefOr[InventoryResultEntityId] = js.undefined
     ): InventoryResultEntity = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Data.foreach(__v => __obj.update("Data", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Data.foreach(__v => __obj.updateDynamic("Data")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InventoryResultEntity]
     }
   }
@@ -7010,14 +7030,14 @@ package ssm {
         CaptureTime: js.UndefOr[InventoryItemCaptureTime] = js.undefined,
         ContentHash: js.UndefOr[InventoryItemContentHash] = js.undefined
     ): InventoryResultItem = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Content"       -> Content.asInstanceOf[js.Any],
         "SchemaVersion" -> SchemaVersion.asInstanceOf[js.Any],
         "TypeName"      -> TypeName.asInstanceOf[js.Any]
       )
 
-      CaptureTime.foreach(__v => __obj.update("CaptureTime", __v.asInstanceOf[js.Any]))
-      ContentHash.foreach(__v => __obj.update("ContentHash", __v.asInstanceOf[js.Any]))
+      CaptureTime.foreach(__v => __obj.updateDynamic("CaptureTime")(__v.asInstanceOf[js.Any]))
+      ContentHash.foreach(__v => __obj.updateDynamic("ContentHash")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InventoryResultItem]
     }
   }
@@ -7042,12 +7062,12 @@ package ssm {
         Name: PSParameterName,
         ParameterVersion: js.UndefOr[PSParameterVersion] = js.undefined
     ): LabelParameterVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Labels" -> Labels.asInstanceOf[js.Any],
         "Name"   -> Name.asInstanceOf[js.Any]
       )
 
-      ParameterVersion.foreach(__v => __obj.update("ParameterVersion", __v.asInstanceOf[js.Any]))
+      ParameterVersion.foreach(__v => __obj.updateDynamic("ParameterVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LabelParameterVersionRequest]
     }
   }
@@ -7061,8 +7081,8 @@ package ssm {
     def apply(
         InvalidLabels: js.UndefOr[ParameterLabelList] = js.undefined
     ): LabelParameterVersionResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InvalidLabels.foreach(__v => __obj.update("InvalidLabels", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InvalidLabels.foreach(__v => __obj.updateDynamic("InvalidLabels")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LabelParameterVersionResult]
     }
   }
@@ -7088,12 +7108,12 @@ package ssm {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListAssociationVersionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AssociationId" -> AssociationId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAssociationVersionsRequest]
     }
   }
@@ -7109,9 +7129,9 @@ package ssm {
         AssociationVersions: js.UndefOr[AssociationVersionList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListAssociationVersionsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssociationVersions.foreach(__v => __obj.update("AssociationVersions", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssociationVersions.foreach(__v => __obj.updateDynamic("AssociationVersions")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAssociationVersionsResult]
     }
   }
@@ -7129,10 +7149,10 @@ package ssm {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListAssociationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssociationFilterList.foreach(__v => __obj.update("AssociationFilterList", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssociationFilterList.foreach(__v => __obj.updateDynamic("AssociationFilterList")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAssociationsRequest]
     }
   }
@@ -7148,9 +7168,9 @@ package ssm {
         Associations: js.UndefOr[AssociationList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListAssociationsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Associations.foreach(__v => __obj.update("Associations", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Associations.foreach(__v => __obj.updateDynamic("Associations")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAssociationsResult]
     }
   }
@@ -7174,13 +7194,13 @@ package ssm {
         MaxResults: js.UndefOr[CommandMaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListCommandInvocationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CommandId.foreach(__v => __obj.update("CommandId", __v.asInstanceOf[js.Any]))
-      Details.foreach(__v => __obj.update("Details", __v.asInstanceOf[js.Any]))
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CommandId.foreach(__v => __obj.updateDynamic("CommandId")(__v.asInstanceOf[js.Any]))
+      Details.foreach(__v => __obj.updateDynamic("Details")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCommandInvocationsRequest]
     }
   }
@@ -7196,9 +7216,9 @@ package ssm {
         CommandInvocations: js.UndefOr[CommandInvocationList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListCommandInvocationsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CommandInvocations.foreach(__v => __obj.update("CommandInvocations", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CommandInvocations.foreach(__v => __obj.updateDynamic("CommandInvocations")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCommandInvocationsResult]
     }
   }
@@ -7220,12 +7240,12 @@ package ssm {
         MaxResults: js.UndefOr[CommandMaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListCommandsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CommandId.foreach(__v => __obj.update("CommandId", __v.asInstanceOf[js.Any]))
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CommandId.foreach(__v => __obj.updateDynamic("CommandId")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCommandsRequest]
     }
   }
@@ -7241,9 +7261,9 @@ package ssm {
         Commands: js.UndefOr[CommandList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListCommandsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Commands.foreach(__v => __obj.update("Commands", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Commands.foreach(__v => __obj.updateDynamic("Commands")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCommandsResult]
     }
   }
@@ -7265,12 +7285,12 @@ package ssm {
         ResourceIds: js.UndefOr[ComplianceResourceIdList] = js.undefined,
         ResourceTypes: js.UndefOr[ComplianceResourceTypeList] = js.undefined
     ): ListComplianceItemsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ResourceIds.foreach(__v => __obj.update("ResourceIds", __v.asInstanceOf[js.Any]))
-      ResourceTypes.foreach(__v => __obj.update("ResourceTypes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ResourceIds.foreach(__v => __obj.updateDynamic("ResourceIds")(__v.asInstanceOf[js.Any]))
+      ResourceTypes.foreach(__v => __obj.updateDynamic("ResourceTypes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListComplianceItemsRequest]
     }
   }
@@ -7286,9 +7306,9 @@ package ssm {
         ComplianceItems: js.UndefOr[ComplianceItemList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListComplianceItemsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ComplianceItems.foreach(__v => __obj.update("ComplianceItems", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ComplianceItems.foreach(__v => __obj.updateDynamic("ComplianceItems")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListComplianceItemsResult]
     }
   }
@@ -7306,10 +7326,10 @@ package ssm {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListComplianceSummariesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListComplianceSummariesRequest]
     }
   }
@@ -7325,9 +7345,9 @@ package ssm {
         ComplianceSummaryItems: js.UndefOr[ComplianceSummaryItemList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListComplianceSummariesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ComplianceSummaryItems.foreach(__v => __obj.update("ComplianceSummaryItems", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ComplianceSummaryItems.foreach(__v => __obj.updateDynamic("ComplianceSummaryItems")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListComplianceSummariesResult]
     }
   }
@@ -7345,12 +7365,12 @@ package ssm {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDocumentVersionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDocumentVersionsRequest]
     }
   }
@@ -7366,9 +7386,9 @@ package ssm {
         DocumentVersions: js.UndefOr[DocumentVersionList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDocumentVersionsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DocumentVersions.foreach(__v => __obj.update("DocumentVersions", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DocumentVersions.foreach(__v => __obj.updateDynamic("DocumentVersions")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDocumentVersionsResult]
     }
   }
@@ -7388,11 +7408,11 @@ package ssm {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDocumentsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DocumentFilterList.foreach(__v => __obj.update("DocumentFilterList", __v.asInstanceOf[js.Any]))
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DocumentFilterList.foreach(__v => __obj.updateDynamic("DocumentFilterList")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDocumentsRequest]
     }
   }
@@ -7408,9 +7428,9 @@ package ssm {
         DocumentIdentifiers: js.UndefOr[DocumentIdentifierList] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListDocumentsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DocumentIdentifiers.foreach(__v => __obj.update("DocumentIdentifiers", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DocumentIdentifiers.foreach(__v => __obj.updateDynamic("DocumentIdentifiers")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDocumentsResult]
     }
   }
@@ -7432,14 +7452,14 @@ package ssm {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListInventoryEntriesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "TypeName"   -> TypeName.asInstanceOf[js.Any]
       )
 
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListInventoryEntriesRequest]
     }
   }
@@ -7463,13 +7483,13 @@ package ssm {
         SchemaVersion: js.UndefOr[InventoryItemSchemaVersion] = js.undefined,
         TypeName: js.UndefOr[InventoryItemTypeName] = js.undefined
     ): ListInventoryEntriesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CaptureTime.foreach(__v => __obj.update("CaptureTime", __v.asInstanceOf[js.Any]))
-      Entries.foreach(__v => __obj.update("Entries", __v.asInstanceOf[js.Any]))
-      InstanceId.foreach(__v => __obj.update("InstanceId", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      SchemaVersion.foreach(__v => __obj.update("SchemaVersion", __v.asInstanceOf[js.Any]))
-      TypeName.foreach(__v => __obj.update("TypeName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CaptureTime.foreach(__v => __obj.updateDynamic("CaptureTime")(__v.asInstanceOf[js.Any]))
+      Entries.foreach(__v => __obj.updateDynamic("Entries")(__v.asInstanceOf[js.Any]))
+      InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SchemaVersion.foreach(__v => __obj.updateDynamic("SchemaVersion")(__v.asInstanceOf[js.Any]))
+      TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListInventoryEntriesResult]
     }
   }
@@ -7487,10 +7507,10 @@ package ssm {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListResourceComplianceSummariesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResourceComplianceSummariesRequest]
     }
   }
@@ -7506,10 +7526,10 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ResourceComplianceSummaryItems: js.UndefOr[ResourceComplianceSummaryItemList] = js.undefined
     ): ListResourceComplianceSummariesResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       ResourceComplianceSummaryItems.foreach(
-        __v => __obj.update("ResourceComplianceSummaryItems", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ResourceComplianceSummaryItems")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ListResourceComplianceSummariesResult]
     }
@@ -7526,9 +7546,9 @@ package ssm {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListResourceDataSyncRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResourceDataSyncRequest]
     }
   }
@@ -7544,9 +7564,9 @@ package ssm {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ResourceDataSyncItems: js.UndefOr[ResourceDataSyncItemList] = js.undefined
     ): ListResourceDataSyncResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ResourceDataSyncItems.foreach(__v => __obj.update("ResourceDataSyncItems", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ResourceDataSyncItems.foreach(__v => __obj.updateDynamic("ResourceDataSyncItems")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResourceDataSyncResult]
     }
   }
@@ -7562,7 +7582,7 @@ package ssm {
         ResourceId: ResourceId,
         ResourceType: ResourceTypeForTagging
     ): ListTagsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceId"   -> ResourceId.asInstanceOf[js.Any],
         "ResourceType" -> ResourceType.asInstanceOf[js.Any]
       )
@@ -7580,8 +7600,8 @@ package ssm {
     def apply(
         TagList: js.UndefOr[TagList] = js.undefined
     ): ListTagsForResourceResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      TagList.foreach(__v => __obj.update("TagList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      TagList.foreach(__v => __obj.updateDynamic("TagList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResult]
     }
   }
@@ -7604,12 +7624,12 @@ package ssm {
         S3Region: S3Region,
         S3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined
     ): LoggingInfo = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "S3BucketName" -> S3BucketName.asInstanceOf[js.Any],
         "S3Region"     -> S3Region.asInstanceOf[js.Any]
       )
 
-      S3KeyPrefix.foreach(__v => __obj.update("S3KeyPrefix", __v.asInstanceOf[js.Any]))
+      S3KeyPrefix.foreach(__v => __obj.updateDynamic("S3KeyPrefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoggingInfo]
     }
   }
@@ -7628,9 +7648,9 @@ package ssm {
         DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
         Parameters: js.UndefOr[AutomationParameterMap] = js.undefined
     ): MaintenanceWindowAutomationParameters = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DocumentVersion.foreach(__v => __obj.update("DocumentVersion", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MaintenanceWindowAutomationParameters]
     }
   }
@@ -7657,13 +7677,13 @@ package ssm {
         WindowExecutionId: js.UndefOr[MaintenanceWindowExecutionId] = js.undefined,
         WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined
     ): MaintenanceWindowExecution = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusDetails.foreach(__v => __obj.update("StatusDetails", __v.asInstanceOf[js.Any]))
-      WindowExecutionId.foreach(__v => __obj.update("WindowExecutionId", __v.asInstanceOf[js.Any]))
-      WindowId.foreach(__v => __obj.update("WindowId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusDetails.foreach(__v => __obj.updateDynamic("StatusDetails")(__v.asInstanceOf[js.Any]))
+      WindowExecutionId.foreach(__v => __obj.updateDynamic("WindowExecutionId")(__v.asInstanceOf[js.Any]))
+      WindowId.foreach(__v => __obj.updateDynamic("WindowId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MaintenanceWindowExecution]
     }
   }
@@ -7709,15 +7729,15 @@ package ssm {
         TaskType: js.UndefOr[MaintenanceWindowTaskType] = js.undefined,
         WindowExecutionId: js.UndefOr[MaintenanceWindowExecutionId] = js.undefined
     ): MaintenanceWindowExecutionTaskIdentity = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusDetails.foreach(__v => __obj.update("StatusDetails", __v.asInstanceOf[js.Any]))
-      TaskArn.foreach(__v => __obj.update("TaskArn", __v.asInstanceOf[js.Any]))
-      TaskExecutionId.foreach(__v => __obj.update("TaskExecutionId", __v.asInstanceOf[js.Any]))
-      TaskType.foreach(__v => __obj.update("TaskType", __v.asInstanceOf[js.Any]))
-      WindowExecutionId.foreach(__v => __obj.update("WindowExecutionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusDetails.foreach(__v => __obj.updateDynamic("StatusDetails")(__v.asInstanceOf[js.Any]))
+      TaskArn.foreach(__v => __obj.updateDynamic("TaskArn")(__v.asInstanceOf[js.Any]))
+      TaskExecutionId.foreach(__v => __obj.updateDynamic("TaskExecutionId")(__v.asInstanceOf[js.Any]))
+      TaskType.foreach(__v => __obj.updateDynamic("TaskType")(__v.asInstanceOf[js.Any]))
+      WindowExecutionId.foreach(__v => __obj.updateDynamic("WindowExecutionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MaintenanceWindowExecutionTaskIdentity]
     }
   }
@@ -7756,19 +7776,19 @@ package ssm {
         WindowExecutionId: js.UndefOr[MaintenanceWindowExecutionId] = js.undefined,
         WindowTargetId: js.UndefOr[MaintenanceWindowTaskTargetId] = js.undefined
     ): MaintenanceWindowExecutionTaskInvocationIdentity = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EndTime.foreach(__v => __obj.update("EndTime", __v.asInstanceOf[js.Any]))
-      ExecutionId.foreach(__v => __obj.update("ExecutionId", __v.asInstanceOf[js.Any]))
-      InvocationId.foreach(__v => __obj.update("InvocationId", __v.asInstanceOf[js.Any]))
-      OwnerInformation.foreach(__v => __obj.update("OwnerInformation", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
-      StartTime.foreach(__v => __obj.update("StartTime", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      StatusDetails.foreach(__v => __obj.update("StatusDetails", __v.asInstanceOf[js.Any]))
-      TaskExecutionId.foreach(__v => __obj.update("TaskExecutionId", __v.asInstanceOf[js.Any]))
-      TaskType.foreach(__v => __obj.update("TaskType", __v.asInstanceOf[js.Any]))
-      WindowExecutionId.foreach(__v => __obj.update("WindowExecutionId", __v.asInstanceOf[js.Any]))
-      WindowTargetId.foreach(__v => __obj.update("WindowTargetId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      ExecutionId.foreach(__v => __obj.updateDynamic("ExecutionId")(__v.asInstanceOf[js.Any]))
+      InvocationId.foreach(__v => __obj.updateDynamic("InvocationId")(__v.asInstanceOf[js.Any]))
+      OwnerInformation.foreach(__v => __obj.updateDynamic("OwnerInformation")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusDetails.foreach(__v => __obj.updateDynamic("StatusDetails")(__v.asInstanceOf[js.Any]))
+      TaskExecutionId.foreach(__v => __obj.updateDynamic("TaskExecutionId")(__v.asInstanceOf[js.Any]))
+      TaskType.foreach(__v => __obj.updateDynamic("TaskType")(__v.asInstanceOf[js.Any]))
+      WindowExecutionId.foreach(__v => __obj.updateDynamic("WindowExecutionId")(__v.asInstanceOf[js.Any]))
+      WindowTargetId.foreach(__v => __obj.updateDynamic("WindowTargetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MaintenanceWindowExecutionTaskInvocationIdentity]
     }
   }
@@ -7787,9 +7807,9 @@ package ssm {
         Key: js.UndefOr[MaintenanceWindowFilterKey] = js.undefined,
         Values: js.UndefOr[MaintenanceWindowFilterValues] = js.undefined
     ): MaintenanceWindowFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MaintenanceWindowFilter]
     }
   }
@@ -7826,18 +7846,18 @@ package ssm {
         StartDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
         WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined
     ): MaintenanceWindowIdentity = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Cutoff.foreach(__v => __obj.update("Cutoff", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      EndDate.foreach(__v => __obj.update("EndDate", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      NextExecutionTime.foreach(__v => __obj.update("NextExecutionTime", __v.asInstanceOf[js.Any]))
-      Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
-      ScheduleTimezone.foreach(__v => __obj.update("ScheduleTimezone", __v.asInstanceOf[js.Any]))
-      StartDate.foreach(__v => __obj.update("StartDate", __v.asInstanceOf[js.Any]))
-      WindowId.foreach(__v => __obj.update("WindowId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Cutoff.foreach(__v => __obj.updateDynamic("Cutoff")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Duration.foreach(__v => __obj.updateDynamic("Duration")(__v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      EndDate.foreach(__v => __obj.updateDynamic("EndDate")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NextExecutionTime.foreach(__v => __obj.updateDynamic("NextExecutionTime")(__v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
+      ScheduleTimezone.foreach(__v => __obj.updateDynamic("ScheduleTimezone")(__v.asInstanceOf[js.Any]))
+      StartDate.foreach(__v => __obj.updateDynamic("StartDate")(__v.asInstanceOf[js.Any]))
+      WindowId.foreach(__v => __obj.updateDynamic("WindowId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MaintenanceWindowIdentity]
     }
   }
@@ -7856,9 +7876,9 @@ package ssm {
         Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
         WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined
     ): MaintenanceWindowIdentityForTarget = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      WindowId.foreach(__v => __obj.update("WindowId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      WindowId.foreach(__v => __obj.updateDynamic("WindowId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MaintenanceWindowIdentityForTarget]
     }
   }
@@ -7884,10 +7904,10 @@ package ssm {
         Payload: js.UndefOr[MaintenanceWindowLambdaPayload] = js.undefined,
         Qualifier: js.UndefOr[MaintenanceWindowLambdaQualifier] = js.undefined
     ): MaintenanceWindowLambdaParameters = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ClientContext.foreach(__v => __obj.update("ClientContext", __v.asInstanceOf[js.Any]))
-      Payload.foreach(__v => __obj.update("Payload", __v.asInstanceOf[js.Any]))
-      Qualifier.foreach(__v => __obj.update("Qualifier", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ClientContext.foreach(__v => __obj.updateDynamic("ClientContext")(__v.asInstanceOf[js.Any]))
+      Payload.foreach(__v => __obj.updateDynamic("Payload")(__v.asInstanceOf[js.Any]))
+      Qualifier.foreach(__v => __obj.updateDynamic("Qualifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MaintenanceWindowLambdaParameters]
     }
   }
@@ -7932,16 +7952,16 @@ package ssm {
         ServiceRoleArn: js.UndefOr[ServiceRole] = js.undefined,
         TimeoutSeconds: js.UndefOr[TimeoutSeconds] = js.undefined
     ): MaintenanceWindowRunCommandParameters = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Comment.foreach(__v => __obj.update("Comment", __v.asInstanceOf[js.Any]))
-      DocumentHash.foreach(__v => __obj.update("DocumentHash", __v.asInstanceOf[js.Any]))
-      DocumentHashType.foreach(__v => __obj.update("DocumentHashType", __v.asInstanceOf[js.Any]))
-      NotificationConfig.foreach(__v => __obj.update("NotificationConfig", __v.asInstanceOf[js.Any]))
-      OutputS3BucketName.foreach(__v => __obj.update("OutputS3BucketName", __v.asInstanceOf[js.Any]))
-      OutputS3KeyPrefix.foreach(__v => __obj.update("OutputS3KeyPrefix", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
-      ServiceRoleArn.foreach(__v => __obj.update("ServiceRoleArn", __v.asInstanceOf[js.Any]))
-      TimeoutSeconds.foreach(__v => __obj.update("TimeoutSeconds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
+      DocumentHash.foreach(__v => __obj.updateDynamic("DocumentHash")(__v.asInstanceOf[js.Any]))
+      DocumentHashType.foreach(__v => __obj.updateDynamic("DocumentHashType")(__v.asInstanceOf[js.Any]))
+      NotificationConfig.foreach(__v => __obj.updateDynamic("NotificationConfig")(__v.asInstanceOf[js.Any]))
+      OutputS3BucketName.foreach(__v => __obj.updateDynamic("OutputS3BucketName")(__v.asInstanceOf[js.Any]))
+      OutputS3KeyPrefix.foreach(__v => __obj.updateDynamic("OutputS3KeyPrefix")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      ServiceRoleArn.foreach(__v => __obj.updateDynamic("ServiceRoleArn")(__v.asInstanceOf[js.Any]))
+      TimeoutSeconds.foreach(__v => __obj.updateDynamic("TimeoutSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MaintenanceWindowRunCommandParameters]
     }
   }
@@ -7965,9 +7985,9 @@ package ssm {
         Input: js.UndefOr[MaintenanceWindowStepFunctionsInput] = js.undefined,
         Name: js.UndefOr[MaintenanceWindowStepFunctionsName] = js.undefined
     ): MaintenanceWindowStepFunctionsParameters = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Input.foreach(__v => __obj.update("Input", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Input.foreach(__v => __obj.updateDynamic("Input")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MaintenanceWindowStepFunctionsParameters]
     }
   }
@@ -7996,14 +8016,14 @@ package ssm {
         WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined,
         WindowTargetId: js.UndefOr[MaintenanceWindowTargetId] = js.undefined
     ): MaintenanceWindowTarget = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      OwnerInformation.foreach(__v => __obj.update("OwnerInformation", __v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.update("Targets", __v.asInstanceOf[js.Any]))
-      WindowId.foreach(__v => __obj.update("WindowId", __v.asInstanceOf[js.Any]))
-      WindowTargetId.foreach(__v => __obj.update("WindowTargetId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      OwnerInformation.foreach(__v => __obj.updateDynamic("OwnerInformation")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
+      WindowId.foreach(__v => __obj.updateDynamic("WindowId")(__v.asInstanceOf[js.Any]))
+      WindowTargetId.foreach(__v => __obj.updateDynamic("WindowTargetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MaintenanceWindowTarget]
     }
   }
@@ -8044,20 +8064,20 @@ package ssm {
         WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined,
         WindowTaskId: js.UndefOr[MaintenanceWindowTaskId] = js.undefined
     ): MaintenanceWindowTask = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      LoggingInfo.foreach(__v => __obj.update("LoggingInfo", __v.asInstanceOf[js.Any]))
-      MaxConcurrency.foreach(__v => __obj.update("MaxConcurrency", __v.asInstanceOf[js.Any]))
-      MaxErrors.foreach(__v => __obj.update("MaxErrors", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
-      ServiceRoleArn.foreach(__v => __obj.update("ServiceRoleArn", __v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.update("Targets", __v.asInstanceOf[js.Any]))
-      TaskArn.foreach(__v => __obj.update("TaskArn", __v.asInstanceOf[js.Any]))
-      TaskParameters.foreach(__v => __obj.update("TaskParameters", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
-      WindowId.foreach(__v => __obj.update("WindowId", __v.asInstanceOf[js.Any]))
-      WindowTaskId.foreach(__v => __obj.update("WindowTaskId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LoggingInfo.foreach(__v => __obj.updateDynamic("LoggingInfo")(__v.asInstanceOf[js.Any]))
+      MaxConcurrency.foreach(__v => __obj.updateDynamic("MaxConcurrency")(__v.asInstanceOf[js.Any]))
+      MaxErrors.foreach(__v => __obj.updateDynamic("MaxErrors")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      ServiceRoleArn.foreach(__v => __obj.updateDynamic("ServiceRoleArn")(__v.asInstanceOf[js.Any]))
+      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
+      TaskArn.foreach(__v => __obj.updateDynamic("TaskArn")(__v.asInstanceOf[js.Any]))
+      TaskParameters.foreach(__v => __obj.updateDynamic("TaskParameters")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      WindowId.foreach(__v => __obj.updateDynamic("WindowId")(__v.asInstanceOf[js.Any]))
+      WindowTaskId.foreach(__v => __obj.updateDynamic("WindowTaskId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MaintenanceWindowTask]
     }
   }
@@ -8080,11 +8100,11 @@ package ssm {
         RunCommand: js.UndefOr[MaintenanceWindowRunCommandParameters] = js.undefined,
         StepFunctions: js.UndefOr[MaintenanceWindowStepFunctionsParameters] = js.undefined
     ): MaintenanceWindowTaskInvocationParameters = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Automation.foreach(__v => __obj.update("Automation", __v.asInstanceOf[js.Any]))
-      Lambda.foreach(__v => __obj.update("Lambda", __v.asInstanceOf[js.Any]))
-      RunCommand.foreach(__v => __obj.update("RunCommand", __v.asInstanceOf[js.Any]))
-      StepFunctions.foreach(__v => __obj.update("StepFunctions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Automation.foreach(__v => __obj.updateDynamic("Automation")(__v.asInstanceOf[js.Any]))
+      Lambda.foreach(__v => __obj.updateDynamic("Lambda")(__v.asInstanceOf[js.Any]))
+      RunCommand.foreach(__v => __obj.updateDynamic("RunCommand")(__v.asInstanceOf[js.Any]))
+      StepFunctions.foreach(__v => __obj.updateDynamic("StepFunctions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MaintenanceWindowTaskInvocationParameters]
     }
   }
@@ -8101,8 +8121,8 @@ package ssm {
     def apply(
         Values: js.UndefOr[MaintenanceWindowTaskParameterValueList] = js.undefined
     ): MaintenanceWindowTaskParameterValueExpression = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MaintenanceWindowTaskParameterValueExpression]
     }
   }
@@ -8131,13 +8151,13 @@ package ssm {
         AccountIdsToAdd: js.UndefOr[AccountIdList] = js.undefined,
         AccountIdsToRemove: js.UndefOr[AccountIdList] = js.undefined
     ): ModifyDocumentPermissionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"           -> Name.asInstanceOf[js.Any],
         "PermissionType" -> PermissionType.asInstanceOf[js.Any]
       )
 
-      AccountIdsToAdd.foreach(__v => __obj.update("AccountIdsToAdd", __v.asInstanceOf[js.Any]))
-      AccountIdsToRemove.foreach(__v => __obj.update("AccountIdsToRemove", __v.asInstanceOf[js.Any]))
+      AccountIdsToAdd.foreach(__v => __obj.updateDynamic("AccountIdsToAdd")(__v.asInstanceOf[js.Any]))
+      AccountIdsToRemove.foreach(__v => __obj.updateDynamic("AccountIdsToRemove")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyDocumentPermissionRequest]
     }
   }
@@ -8148,7 +8168,7 @@ package ssm {
   object ModifyDocumentPermissionResponse {
     def apply(
         ): ModifyDocumentPermissionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[ModifyDocumentPermissionResponse]
     }
@@ -8168,9 +8188,9 @@ package ssm {
         NonCompliantCount: js.UndefOr[ComplianceSummaryCount] = js.undefined,
         SeveritySummary: js.UndefOr[SeveritySummary] = js.undefined
     ): NonCompliantSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NonCompliantCount.foreach(__v => __obj.update("NonCompliantCount", __v.asInstanceOf[js.Any]))
-      SeveritySummary.foreach(__v => __obj.update("SeveritySummary", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NonCompliantCount.foreach(__v => __obj.updateDynamic("NonCompliantCount")(__v.asInstanceOf[js.Any]))
+      SeveritySummary.foreach(__v => __obj.updateDynamic("SeveritySummary")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NonCompliantSummary]
     }
   }
@@ -8191,10 +8211,10 @@ package ssm {
         NotificationEvents: js.UndefOr[NotificationEventList] = js.undefined,
         NotificationType: js.UndefOr[NotificationType] = js.undefined
     ): NotificationConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NotificationArn.foreach(__v => __obj.update("NotificationArn", __v.asInstanceOf[js.Any]))
-      NotificationEvents.foreach(__v => __obj.update("NotificationEvents", __v.asInstanceOf[js.Any]))
-      NotificationType.foreach(__v => __obj.update("NotificationType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NotificationArn.foreach(__v => __obj.updateDynamic("NotificationArn")(__v.asInstanceOf[js.Any]))
+      NotificationEvents.foreach(__v => __obj.updateDynamic("NotificationEvents")(__v.asInstanceOf[js.Any]))
+      NotificationType.foreach(__v => __obj.updateDynamic("NotificationType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NotificationConfig]
     }
   }
@@ -8252,13 +8272,13 @@ package ssm {
         TypeName: js.UndefOr[OpsDataTypeName] = js.undefined,
         Values: js.UndefOr[OpsAggregatorValueMap] = js.undefined
     ): OpsAggregator = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AggregatorType.foreach(__v => __obj.update("AggregatorType", __v.asInstanceOf[js.Any]))
-      Aggregators.foreach(__v => __obj.update("Aggregators", __v.asInstanceOf[js.Any]))
-      AttributeName.foreach(__v => __obj.update("AttributeName", __v.asInstanceOf[js.Any]))
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      TypeName.foreach(__v => __obj.update("TypeName", __v.asInstanceOf[js.Any]))
-      Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AggregatorType.foreach(__v => __obj.updateDynamic("AggregatorType")(__v.asInstanceOf[js.Any]))
+      Aggregators.foreach(__v => __obj.updateDynamic("Aggregators")(__v.asInstanceOf[js.Any]))
+      AttributeName.foreach(__v => __obj.updateDynamic("AttributeName")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OpsAggregator]
     }
   }
@@ -8277,9 +8297,9 @@ package ssm {
         Data: js.UndefOr[OpsEntityItemMap] = js.undefined,
         Id: js.UndefOr[OpsEntityId] = js.undefined
     ): OpsEntity = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Data.foreach(__v => __obj.update("Data", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Data.foreach(__v => __obj.updateDynamic("Data")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OpsEntity]
     }
   }
@@ -8296,8 +8316,8 @@ package ssm {
     def apply(
         Content: js.UndefOr[OpsEntityItemEntryList] = js.undefined
     ): OpsEntityItem = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Content.foreach(__v => __obj.update("Content", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OpsEntityItem]
     }
   }
@@ -8318,12 +8338,12 @@ package ssm {
         Values: OpsFilterValueList,
         Type: js.UndefOr[OpsFilterOperatorType] = js.undefined
     ): OpsFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"    -> Key.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
 
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OpsFilter]
     }
   }
@@ -8377,21 +8397,21 @@ package ssm {
         Title: js.UndefOr[OpsItemTitle] = js.undefined,
         Version: js.UndefOr[String] = js.undefined
     ): OpsItem = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedBy.foreach(__v => __obj.update("CreatedBy", __v.asInstanceOf[js.Any]))
-      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
-      LastModifiedTime.foreach(__v => __obj.update("LastModifiedTime", __v.asInstanceOf[js.Any]))
-      Notifications.foreach(__v => __obj.update("Notifications", __v.asInstanceOf[js.Any]))
-      OperationalData.foreach(__v => __obj.update("OperationalData", __v.asInstanceOf[js.Any]))
-      OpsItemId.foreach(__v => __obj.update("OpsItemId", __v.asInstanceOf[js.Any]))
-      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
-      RelatedOpsItems.foreach(__v => __obj.update("RelatedOpsItems", __v.asInstanceOf[js.Any]))
-      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      Title.foreach(__v => __obj.update("Title", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      Notifications.foreach(__v => __obj.updateDynamic("Notifications")(__v.asInstanceOf[js.Any]))
+      OperationalData.foreach(__v => __obj.updateDynamic("OperationalData")(__v.asInstanceOf[js.Any]))
+      OpsItemId.foreach(__v => __obj.updateDynamic("OpsItemId")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      RelatedOpsItems.foreach(__v => __obj.updateDynamic("RelatedOpsItems")(__v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OpsItem]
     }
   }
@@ -8417,9 +8437,9 @@ package ssm {
         Type: js.UndefOr[OpsItemDataType] = js.undefined,
         Value: js.UndefOr[OpsItemDataValueString] = js.undefined
     ): OpsItemDataValue = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OpsItemDataValue]
     }
   }
@@ -8440,7 +8460,7 @@ package ssm {
         Operator: OpsItemFilterOperator,
         Values: OpsItemFilterValues
     ): OpsItemFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"      -> Key.asInstanceOf[js.Any],
         "Operator" -> Operator.asInstanceOf[js.Any],
         "Values"   -> Values.asInstanceOf[js.Any]
@@ -8505,8 +8525,8 @@ package ssm {
     def apply(
         Arn: js.UndefOr[String] = js.undefined
     ): OpsItemNotification = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OpsItemNotification]
     }
   }
@@ -8549,17 +8569,17 @@ package ssm {
         Status: js.UndefOr[OpsItemStatus] = js.undefined,
         Title: js.UndefOr[OpsItemTitle] = js.undefined
     ): OpsItemSummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedBy.foreach(__v => __obj.update("CreatedBy", __v.asInstanceOf[js.Any]))
-      CreatedTime.foreach(__v => __obj.update("CreatedTime", __v.asInstanceOf[js.Any]))
-      LastModifiedBy.foreach(__v => __obj.update("LastModifiedBy", __v.asInstanceOf[js.Any]))
-      LastModifiedTime.foreach(__v => __obj.update("LastModifiedTime", __v.asInstanceOf[js.Any]))
-      OperationalData.foreach(__v => __obj.update("OperationalData", __v.asInstanceOf[js.Any]))
-      OpsItemId.foreach(__v => __obj.update("OpsItemId", __v.asInstanceOf[js.Any]))
-      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
-      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      Title.foreach(__v => __obj.update("Title", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      OperationalData.foreach(__v => __obj.updateDynamic("OperationalData")(__v.asInstanceOf[js.Any]))
+      OpsItemId.foreach(__v => __obj.updateDynamic("OpsItemId")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OpsItemSummary]
     }
   }
@@ -8578,9 +8598,9 @@ package ssm {
         OutputSourceId: js.UndefOr[OutputSourceId] = js.undefined,
         OutputSourceType: js.UndefOr[OutputSourceType] = js.undefined
     ): OutputSource = {
-      val __obj = js.Dictionary.empty[js.Any]
-      OutputSourceId.foreach(__v => __obj.update("OutputSourceId", __v.asInstanceOf[js.Any]))
-      OutputSourceType.foreach(__v => __obj.update("OutputSourceType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      OutputSourceId.foreach(__v => __obj.updateDynamic("OutputSourceId")(__v.asInstanceOf[js.Any]))
+      OutputSourceType.foreach(__v => __obj.updateDynamic("OutputSourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OutputSource]
     }
   }
@@ -8611,15 +8631,15 @@ package ssm {
         Value: js.UndefOr[PSParameterValue] = js.undefined,
         Version: js.UndefOr[PSParameterVersion] = js.undefined
     ): Parameter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ARN.foreach(__v => __obj.update("ARN", __v.asInstanceOf[js.Any]))
-      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Selector.foreach(__v => __obj.update("Selector", __v.asInstanceOf[js.Any]))
-      SourceResult.foreach(__v => __obj.update("SourceResult", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Selector.foreach(__v => __obj.updateDynamic("Selector")(__v.asInstanceOf[js.Any]))
+      SourceResult.foreach(__v => __obj.updateDynamic("SourceResult")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Parameter]
     }
   }
@@ -8658,19 +8678,19 @@ package ssm {
         Value: js.UndefOr[PSParameterValue] = js.undefined,
         Version: js.UndefOr[PSParameterVersion] = js.undefined
     ): ParameterHistory = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AllowedPattern.foreach(__v => __obj.update("AllowedPattern", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      KeyId.foreach(__v => __obj.update("KeyId", __v.asInstanceOf[js.Any]))
-      Labels.foreach(__v => __obj.update("Labels", __v.asInstanceOf[js.Any]))
-      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
-      LastModifiedUser.foreach(__v => __obj.update("LastModifiedUser", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Policies.foreach(__v => __obj.update("Policies", __v.asInstanceOf[js.Any]))
-      Tier.foreach(__v => __obj.update("Tier", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AllowedPattern.foreach(__v => __obj.updateDynamic("AllowedPattern")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      KeyId.foreach(__v => __obj.updateDynamic("KeyId")(__v.asInstanceOf[js.Any]))
+      Labels.foreach(__v => __obj.updateDynamic("Labels")(__v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
+      LastModifiedUser.foreach(__v => __obj.updateDynamic("LastModifiedUser")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Policies.foreach(__v => __obj.updateDynamic("Policies")(__v.asInstanceOf[js.Any]))
+      Tier.foreach(__v => __obj.updateDynamic("Tier")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ParameterHistory]
     }
   }
@@ -8691,10 +8711,10 @@ package ssm {
         PolicyText: js.UndefOr[String] = js.undefined,
         PolicyType: js.UndefOr[String] = js.undefined
     ): ParameterInlinePolicy = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PolicyStatus.foreach(__v => __obj.update("PolicyStatus", __v.asInstanceOf[js.Any]))
-      PolicyText.foreach(__v => __obj.update("PolicyText", __v.asInstanceOf[js.Any]))
-      PolicyType.foreach(__v => __obj.update("PolicyType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PolicyStatus.foreach(__v => __obj.updateDynamic("PolicyStatus")(__v.asInstanceOf[js.Any]))
+      PolicyText.foreach(__v => __obj.updateDynamic("PolicyText")(__v.asInstanceOf[js.Any]))
+      PolicyType.foreach(__v => __obj.updateDynamic("PolicyType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ParameterInlinePolicy]
     }
   }
@@ -8729,17 +8749,17 @@ package ssm {
         Type: js.UndefOr[ParameterType] = js.undefined,
         Version: js.UndefOr[PSParameterVersion] = js.undefined
     ): ParameterMetadata = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AllowedPattern.foreach(__v => __obj.update("AllowedPattern", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      KeyId.foreach(__v => __obj.update("KeyId", __v.asInstanceOf[js.Any]))
-      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
-      LastModifiedUser.foreach(__v => __obj.update("LastModifiedUser", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Policies.foreach(__v => __obj.update("Policies", __v.asInstanceOf[js.Any]))
-      Tier.foreach(__v => __obj.update("Tier", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AllowedPattern.foreach(__v => __obj.updateDynamic("AllowedPattern")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      KeyId.foreach(__v => __obj.updateDynamic("KeyId")(__v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
+      LastModifiedUser.foreach(__v => __obj.updateDynamic("LastModifiedUser")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Policies.foreach(__v => __obj.updateDynamic("Policies")(__v.asInstanceOf[js.Any]))
+      Tier.foreach(__v => __obj.updateDynamic("Tier")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ParameterMetadata]
     }
   }
@@ -8762,12 +8782,12 @@ package ssm {
         Option: js.UndefOr[ParameterStringQueryOption] = js.undefined,
         Values: js.UndefOr[ParameterStringFilterValueList] = js.undefined
     ): ParameterStringFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key" -> Key.asInstanceOf[js.Any]
       )
 
-      Option.foreach(__v => __obj.update("Option", __v.asInstanceOf[js.Any]))
-      Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
+      Option.foreach(__v => __obj.updateDynamic("Option")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ParameterStringFilter]
     }
   }
@@ -8802,7 +8822,7 @@ package ssm {
         Key: ParametersFilterKey,
         Values: ParametersFilterValueList
     ): ParametersFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"    -> Key.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
@@ -8855,20 +8875,20 @@ package ssm {
         Title: js.UndefOr[PatchTitle] = js.undefined,
         Vendor: js.UndefOr[PatchVendor] = js.undefined
     ): Patch = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Classification.foreach(__v => __obj.update("Classification", __v.asInstanceOf[js.Any]))
-      ContentUrl.foreach(__v => __obj.update("ContentUrl", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      KbNumber.foreach(__v => __obj.update("KbNumber", __v.asInstanceOf[js.Any]))
-      Language.foreach(__v => __obj.update("Language", __v.asInstanceOf[js.Any]))
-      MsrcNumber.foreach(__v => __obj.update("MsrcNumber", __v.asInstanceOf[js.Any]))
-      MsrcSeverity.foreach(__v => __obj.update("MsrcSeverity", __v.asInstanceOf[js.Any]))
-      Product.foreach(__v => __obj.update("Product", __v.asInstanceOf[js.Any]))
-      ProductFamily.foreach(__v => __obj.update("ProductFamily", __v.asInstanceOf[js.Any]))
-      ReleaseDate.foreach(__v => __obj.update("ReleaseDate", __v.asInstanceOf[js.Any]))
-      Title.foreach(__v => __obj.update("Title", __v.asInstanceOf[js.Any]))
-      Vendor.foreach(__v => __obj.update("Vendor", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Classification.foreach(__v => __obj.updateDynamic("Classification")(__v.asInstanceOf[js.Any]))
+      ContentUrl.foreach(__v => __obj.updateDynamic("ContentUrl")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      KbNumber.foreach(__v => __obj.updateDynamic("KbNumber")(__v.asInstanceOf[js.Any]))
+      Language.foreach(__v => __obj.updateDynamic("Language")(__v.asInstanceOf[js.Any]))
+      MsrcNumber.foreach(__v => __obj.updateDynamic("MsrcNumber")(__v.asInstanceOf[js.Any]))
+      MsrcSeverity.foreach(__v => __obj.updateDynamic("MsrcSeverity")(__v.asInstanceOf[js.Any]))
+      Product.foreach(__v => __obj.updateDynamic("Product")(__v.asInstanceOf[js.Any]))
+      ProductFamily.foreach(__v => __obj.updateDynamic("ProductFamily")(__v.asInstanceOf[js.Any]))
+      ReleaseDate.foreach(__v => __obj.updateDynamic("ReleaseDate")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      Vendor.foreach(__v => __obj.updateDynamic("Vendor")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Patch]
     }
   }
@@ -8900,12 +8920,12 @@ package ssm {
         DefaultBaseline: js.UndefOr[DefaultBaseline] = js.undefined,
         OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined
     ): PatchBaselineIdentity = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BaselineDescription.foreach(__v => __obj.update("BaselineDescription", __v.asInstanceOf[js.Any]))
-      BaselineId.foreach(__v => __obj.update("BaselineId", __v.asInstanceOf[js.Any]))
-      BaselineName.foreach(__v => __obj.update("BaselineName", __v.asInstanceOf[js.Any]))
-      DefaultBaseline.foreach(__v => __obj.update("DefaultBaseline", __v.asInstanceOf[js.Any]))
-      OperatingSystem.foreach(__v => __obj.update("OperatingSystem", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BaselineDescription.foreach(__v => __obj.updateDynamic("BaselineDescription")(__v.asInstanceOf[js.Any]))
+      BaselineId.foreach(__v => __obj.updateDynamic("BaselineId")(__v.asInstanceOf[js.Any]))
+      BaselineName.foreach(__v => __obj.updateDynamic("BaselineName")(__v.asInstanceOf[js.Any]))
+      DefaultBaseline.foreach(__v => __obj.updateDynamic("DefaultBaseline")(__v.asInstanceOf[js.Any]))
+      OperatingSystem.foreach(__v => __obj.updateDynamic("OperatingSystem")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PatchBaselineIdentity]
     }
   }
@@ -8932,7 +8952,7 @@ package ssm {
         State: PatchComplianceDataState,
         Title: PatchTitle
     ): PatchComplianceData = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Classification" -> Classification.asInstanceOf[js.Any],
         "InstalledTime"  -> InstalledTime.asInstanceOf[js.Any],
         "KBId"           -> KBId.asInstanceOf[js.Any],
@@ -8993,7 +9013,7 @@ package ssm {
         Key: PatchFilterKey,
         Values: PatchFilterValueList
     ): PatchFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"    -> Key.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
@@ -9014,7 +9034,7 @@ package ssm {
     def apply(
         PatchFilters: PatchFilterList
     ): PatchFilterGroup = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PatchFilters" -> PatchFilters.asInstanceOf[js.Any]
       )
 
@@ -9052,9 +9072,9 @@ package ssm {
         BaselineIdentity: js.UndefOr[PatchBaselineIdentity] = js.undefined,
         PatchGroup: js.UndefOr[PatchGroup] = js.undefined
     ): PatchGroupPatchBaselineMapping = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BaselineIdentity.foreach(__v => __obj.update("BaselineIdentity", __v.asInstanceOf[js.Any]))
-      PatchGroup.foreach(__v => __obj.update("PatchGroup", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BaselineIdentity.foreach(__v => __obj.updateDynamic("BaselineIdentity")(__v.asInstanceOf[js.Any]))
+      PatchGroup.foreach(__v => __obj.updateDynamic("PatchGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PatchGroupPatchBaselineMapping]
     }
   }
@@ -9080,9 +9100,9 @@ package ssm {
         Key: js.UndefOr[PatchOrchestratorFilterKey] = js.undefined,
         Values: js.UndefOr[PatchOrchestratorFilterValues] = js.undefined
     ): PatchOrchestratorFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PatchOrchestratorFilter]
     }
   }
@@ -9116,13 +9136,13 @@ package ssm {
         ComplianceLevel: js.UndefOr[PatchComplianceLevel] = js.undefined,
         EnableNonSecurity: js.UndefOr[Boolean] = js.undefined
     ): PatchRule = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ApproveAfterDays" -> ApproveAfterDays.asInstanceOf[js.Any],
         "PatchFilterGroup" -> PatchFilterGroup.asInstanceOf[js.Any]
       )
 
-      ComplianceLevel.foreach(__v => __obj.update("ComplianceLevel", __v.asInstanceOf[js.Any]))
-      EnableNonSecurity.foreach(__v => __obj.update("EnableNonSecurity", __v.asInstanceOf[js.Any]))
+      ComplianceLevel.foreach(__v => __obj.updateDynamic("ComplianceLevel")(__v.asInstanceOf[js.Any]))
+      EnableNonSecurity.foreach(__v => __obj.updateDynamic("EnableNonSecurity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PatchRule]
     }
   }
@@ -9139,7 +9159,7 @@ package ssm {
     def apply(
         PatchRules: PatchRuleList
     ): PatchRuleGroup = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "PatchRules" -> PatchRules.asInstanceOf[js.Any]
       )
 
@@ -9170,7 +9190,7 @@ package ssm {
         Name: PatchSourceName,
         Products: PatchSourceProductList
     ): PatchSource = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Configuration" -> Configuration.asInstanceOf[js.Any],
         "Name"          -> Name.asInstanceOf[js.Any],
         "Products"      -> Products.asInstanceOf[js.Any]
@@ -9196,10 +9216,10 @@ package ssm {
         ComplianceLevel: js.UndefOr[PatchComplianceLevel] = js.undefined,
         DeploymentStatus: js.UndefOr[PatchDeploymentStatus] = js.undefined
     ): PatchStatus = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApprovalDate.foreach(__v => __obj.update("ApprovalDate", __v.asInstanceOf[js.Any]))
-      ComplianceLevel.foreach(__v => __obj.update("ComplianceLevel", __v.asInstanceOf[js.Any]))
-      DeploymentStatus.foreach(__v => __obj.update("DeploymentStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApprovalDate.foreach(__v => __obj.updateDynamic("ApprovalDate")(__v.asInstanceOf[js.Any]))
+      ComplianceLevel.foreach(__v => __obj.updateDynamic("ComplianceLevel")(__v.asInstanceOf[js.Any]))
+      DeploymentStatus.foreach(__v => __obj.updateDynamic("DeploymentStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PatchStatus]
     }
   }
@@ -9239,12 +9259,12 @@ package ssm {
         TimedOutSteps: js.UndefOr[Int] = js.undefined,
         TotalSteps: js.UndefOr[Int] = js.undefined
     ): ProgressCounters = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CancelledSteps.foreach(__v => __obj.update("CancelledSteps", __v.asInstanceOf[js.Any]))
-      FailedSteps.foreach(__v => __obj.update("FailedSteps", __v.asInstanceOf[js.Any]))
-      SuccessSteps.foreach(__v => __obj.update("SuccessSteps", __v.asInstanceOf[js.Any]))
-      TimedOutSteps.foreach(__v => __obj.update("TimedOutSteps", __v.asInstanceOf[js.Any]))
-      TotalSteps.foreach(__v => __obj.update("TotalSteps", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CancelledSteps.foreach(__v => __obj.updateDynamic("CancelledSteps")(__v.asInstanceOf[js.Any]))
+      FailedSteps.foreach(__v => __obj.updateDynamic("FailedSteps")(__v.asInstanceOf[js.Any]))
+      SuccessSteps.foreach(__v => __obj.updateDynamic("SuccessSteps")(__v.asInstanceOf[js.Any]))
+      TimedOutSteps.foreach(__v => __obj.updateDynamic("TimedOutSteps")(__v.asInstanceOf[js.Any]))
+      TotalSteps.foreach(__v => __obj.updateDynamic("TotalSteps")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProgressCounters]
     }
   }
@@ -9268,7 +9288,7 @@ package ssm {
         ResourceType: ComplianceResourceType,
         ItemContentHash: js.UndefOr[ComplianceItemContentHash] = js.undefined
     ): PutComplianceItemsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ComplianceType"   -> ComplianceType.asInstanceOf[js.Any],
         "ExecutionSummary" -> ExecutionSummary.asInstanceOf[js.Any],
         "Items"            -> Items.asInstanceOf[js.Any],
@@ -9276,7 +9296,7 @@ package ssm {
         "ResourceType"     -> ResourceType.asInstanceOf[js.Any]
       )
 
-      ItemContentHash.foreach(__v => __obj.update("ItemContentHash", __v.asInstanceOf[js.Any]))
+      ItemContentHash.foreach(__v => __obj.updateDynamic("ItemContentHash")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutComplianceItemsRequest]
     }
   }
@@ -9287,7 +9307,7 @@ package ssm {
   object PutComplianceItemsResult {
     def apply(
         ): PutComplianceItemsResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[PutComplianceItemsResult]
     }
@@ -9304,7 +9324,7 @@ package ssm {
         InstanceId: InstanceId,
         Items: InventoryItemList
     ): PutInventoryRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InstanceId" -> InstanceId.asInstanceOf[js.Any],
         "Items"      -> Items.asInstanceOf[js.Any]
       )
@@ -9322,8 +9342,8 @@ package ssm {
     def apply(
         Message: js.UndefOr[PutInventoryMessage] = js.undefined
     ): PutInventoryResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutInventoryResult]
     }
   }
@@ -9355,19 +9375,19 @@ package ssm {
         Tags: js.UndefOr[TagList] = js.undefined,
         Tier: js.UndefOr[ParameterTier] = js.undefined
     ): PutParameterRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name"  -> Name.asInstanceOf[js.Any],
         "Type"  -> Type.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
 
-      AllowedPattern.foreach(__v => __obj.update("AllowedPattern", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      KeyId.foreach(__v => __obj.update("KeyId", __v.asInstanceOf[js.Any]))
-      Overwrite.foreach(__v => __obj.update("Overwrite", __v.asInstanceOf[js.Any]))
-      Policies.foreach(__v => __obj.update("Policies", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
-      Tier.foreach(__v => __obj.update("Tier", __v.asInstanceOf[js.Any]))
+      AllowedPattern.foreach(__v => __obj.updateDynamic("AllowedPattern")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      KeyId.foreach(__v => __obj.updateDynamic("KeyId")(__v.asInstanceOf[js.Any]))
+      Overwrite.foreach(__v => __obj.updateDynamic("Overwrite")(__v.asInstanceOf[js.Any]))
+      Policies.foreach(__v => __obj.updateDynamic("Policies")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      Tier.foreach(__v => __obj.updateDynamic("Tier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutParameterRequest]
     }
   }
@@ -9381,8 +9401,8 @@ package ssm {
     def apply(
         Version: js.UndefOr[PSParameterVersion] = js.undefined
     ): PutParameterResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutParameterResult]
     }
   }
@@ -9396,7 +9416,7 @@ package ssm {
     def apply(
         BaselineId: BaselineId
     ): RegisterDefaultPatchBaselineRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BaselineId" -> BaselineId.asInstanceOf[js.Any]
       )
 
@@ -9413,8 +9433,8 @@ package ssm {
     def apply(
         BaselineId: js.UndefOr[BaselineId] = js.undefined
     ): RegisterDefaultPatchBaselineResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BaselineId.foreach(__v => __obj.update("BaselineId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BaselineId.foreach(__v => __obj.updateDynamic("BaselineId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterDefaultPatchBaselineResult]
     }
   }
@@ -9430,7 +9450,7 @@ package ssm {
         BaselineId: BaselineId,
         PatchGroup: PatchGroup
     ): RegisterPatchBaselineForPatchGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BaselineId" -> BaselineId.asInstanceOf[js.Any],
         "PatchGroup" -> PatchGroup.asInstanceOf[js.Any]
       )
@@ -9450,9 +9470,9 @@ package ssm {
         BaselineId: js.UndefOr[BaselineId] = js.undefined,
         PatchGroup: js.UndefOr[PatchGroup] = js.undefined
     ): RegisterPatchBaselineForPatchGroupResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BaselineId.foreach(__v => __obj.update("BaselineId", __v.asInstanceOf[js.Any]))
-      PatchGroup.foreach(__v => __obj.update("PatchGroup", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BaselineId.foreach(__v => __obj.updateDynamic("BaselineId")(__v.asInstanceOf[js.Any]))
+      PatchGroup.foreach(__v => __obj.updateDynamic("PatchGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterPatchBaselineForPatchGroupResult]
     }
   }
@@ -9478,16 +9498,16 @@ package ssm {
         Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
         OwnerInformation: js.UndefOr[OwnerInformation] = js.undefined
     ): RegisterTargetWithMaintenanceWindowRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceType" -> ResourceType.asInstanceOf[js.Any],
         "Targets"      -> Targets.asInstanceOf[js.Any],
         "WindowId"     -> WindowId.asInstanceOf[js.Any]
       )
 
-      ClientToken.foreach(__v => __obj.update("ClientToken", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      OwnerInformation.foreach(__v => __obj.update("OwnerInformation", __v.asInstanceOf[js.Any]))
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      OwnerInformation.foreach(__v => __obj.updateDynamic("OwnerInformation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterTargetWithMaintenanceWindowRequest]
     }
   }
@@ -9501,8 +9521,8 @@ package ssm {
     def apply(
         WindowTargetId: js.UndefOr[MaintenanceWindowTargetId] = js.undefined
     ): RegisterTargetWithMaintenanceWindowResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      WindowTargetId.foreach(__v => __obj.update("WindowTargetId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      WindowTargetId.foreach(__v => __obj.updateDynamic("WindowTargetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterTargetWithMaintenanceWindowResult]
     }
   }
@@ -9542,7 +9562,7 @@ package ssm {
         TaskInvocationParameters: js.UndefOr[MaintenanceWindowTaskInvocationParameters] = js.undefined,
         TaskParameters: js.UndefOr[MaintenanceWindowTaskParameters] = js.undefined
     ): RegisterTaskWithMaintenanceWindowRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "MaxConcurrency" -> MaxConcurrency.asInstanceOf[js.Any],
         "MaxErrors"      -> MaxErrors.asInstanceOf[js.Any],
         "Targets"        -> Targets.asInstanceOf[js.Any],
@@ -9551,14 +9571,14 @@ package ssm {
         "WindowId"       -> WindowId.asInstanceOf[js.Any]
       )
 
-      ClientToken.foreach(__v => __obj.update("ClientToken", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      LoggingInfo.foreach(__v => __obj.update("LoggingInfo", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
-      ServiceRoleArn.foreach(__v => __obj.update("ServiceRoleArn", __v.asInstanceOf[js.Any]))
-      TaskInvocationParameters.foreach(__v => __obj.update("TaskInvocationParameters", __v.asInstanceOf[js.Any]))
-      TaskParameters.foreach(__v => __obj.update("TaskParameters", __v.asInstanceOf[js.Any]))
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LoggingInfo.foreach(__v => __obj.updateDynamic("LoggingInfo")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      ServiceRoleArn.foreach(__v => __obj.updateDynamic("ServiceRoleArn")(__v.asInstanceOf[js.Any]))
+      TaskInvocationParameters.foreach(__v => __obj.updateDynamic("TaskInvocationParameters")(__v.asInstanceOf[js.Any]))
+      TaskParameters.foreach(__v => __obj.updateDynamic("TaskParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterTaskWithMaintenanceWindowRequest]
     }
   }
@@ -9572,8 +9592,8 @@ package ssm {
     def apply(
         WindowTaskId: js.UndefOr[MaintenanceWindowTaskId] = js.undefined
     ): RegisterTaskWithMaintenanceWindowResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      WindowTaskId.foreach(__v => __obj.update("WindowTaskId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      WindowTaskId.foreach(__v => __obj.updateDynamic("WindowTaskId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterTaskWithMaintenanceWindowResult]
     }
   }
@@ -9590,7 +9610,7 @@ package ssm {
     def apply(
         OpsItemId: String
     ): RelatedOpsItem = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OpsItemId" -> OpsItemId.asInstanceOf[js.Any]
       )
 
@@ -9611,7 +9631,7 @@ package ssm {
         ResourceType: ResourceTypeForTagging,
         TagKeys: KeyList
     ): RemoveTagsFromResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceId"   -> ResourceId.asInstanceOf[js.Any],
         "ResourceType" -> ResourceType.asInstanceOf[js.Any],
         "TagKeys"      -> TagKeys.asInstanceOf[js.Any]
@@ -9627,7 +9647,7 @@ package ssm {
   object RemoveTagsFromResourceResult {
     def apply(
         ): RemoveTagsFromResourceResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[RemoveTagsFromResourceResult]
     }
@@ -9645,7 +9665,7 @@ package ssm {
     def apply(
         SettingId: ServiceSettingId
     ): ResetServiceSettingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SettingId" -> SettingId.asInstanceOf[js.Any]
       )
 
@@ -9665,8 +9685,8 @@ package ssm {
     def apply(
         ServiceSetting: js.UndefOr[ServiceSetting] = js.undefined
     ): ResetServiceSettingResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ServiceSetting.foreach(__v => __obj.update("ServiceSetting", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ServiceSetting.foreach(__v => __obj.updateDynamic("ServiceSetting")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResetServiceSettingResult]
     }
   }
@@ -9685,9 +9705,9 @@ package ssm {
         ParameterValues: js.UndefOr[TargetParameterList] = js.undefined,
         Truncated: js.UndefOr[Boolean] = js.undefined
     ): ResolvedTargets = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ParameterValues.foreach(__v => __obj.update("ParameterValues", __v.asInstanceOf[js.Any]))
-      Truncated.foreach(__v => __obj.update("Truncated", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ParameterValues.foreach(__v => __obj.updateDynamic("ParameterValues")(__v.asInstanceOf[js.Any]))
+      Truncated.foreach(__v => __obj.updateDynamic("Truncated")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResolvedTargets]
     }
   }
@@ -9718,15 +9738,15 @@ package ssm {
         ResourceType: js.UndefOr[ComplianceResourceType] = js.undefined,
         Status: js.UndefOr[ComplianceStatus] = js.undefined
     ): ResourceComplianceSummaryItem = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ComplianceType.foreach(__v => __obj.update("ComplianceType", __v.asInstanceOf[js.Any]))
-      CompliantSummary.foreach(__v => __obj.update("CompliantSummary", __v.asInstanceOf[js.Any]))
-      ExecutionSummary.foreach(__v => __obj.update("ExecutionSummary", __v.asInstanceOf[js.Any]))
-      NonCompliantSummary.foreach(__v => __obj.update("NonCompliantSummary", __v.asInstanceOf[js.Any]))
-      OverallSeverity.foreach(__v => __obj.update("OverallSeverity", __v.asInstanceOf[js.Any]))
-      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ComplianceType.foreach(__v => __obj.updateDynamic("ComplianceType")(__v.asInstanceOf[js.Any]))
+      CompliantSummary.foreach(__v => __obj.updateDynamic("CompliantSummary")(__v.asInstanceOf[js.Any]))
+      ExecutionSummary.foreach(__v => __obj.updateDynamic("ExecutionSummary")(__v.asInstanceOf[js.Any]))
+      NonCompliantSummary.foreach(__v => __obj.updateDynamic("NonCompliantSummary")(__v.asInstanceOf[js.Any]))
+      OverallSeverity.foreach(__v => __obj.updateDynamic("OverallSeverity")(__v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceComplianceSummaryItem]
     }
   }
@@ -9755,14 +9775,14 @@ package ssm {
         SyncCreatedTime: js.UndefOr[ResourceDataSyncCreatedTime] = js.undefined,
         SyncName: js.UndefOr[ResourceDataSyncName] = js.undefined
     ): ResourceDataSyncItem = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LastStatus.foreach(__v => __obj.update("LastStatus", __v.asInstanceOf[js.Any]))
-      LastSuccessfulSyncTime.foreach(__v => __obj.update("LastSuccessfulSyncTime", __v.asInstanceOf[js.Any]))
-      LastSyncStatusMessage.foreach(__v => __obj.update("LastSyncStatusMessage", __v.asInstanceOf[js.Any]))
-      LastSyncTime.foreach(__v => __obj.update("LastSyncTime", __v.asInstanceOf[js.Any]))
-      S3Destination.foreach(__v => __obj.update("S3Destination", __v.asInstanceOf[js.Any]))
-      SyncCreatedTime.foreach(__v => __obj.update("SyncCreatedTime", __v.asInstanceOf[js.Any]))
-      SyncName.foreach(__v => __obj.update("SyncName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LastStatus.foreach(__v => __obj.updateDynamic("LastStatus")(__v.asInstanceOf[js.Any]))
+      LastSuccessfulSyncTime.foreach(__v => __obj.updateDynamic("LastSuccessfulSyncTime")(__v.asInstanceOf[js.Any]))
+      LastSyncStatusMessage.foreach(__v => __obj.updateDynamic("LastSyncStatusMessage")(__v.asInstanceOf[js.Any]))
+      LastSyncTime.foreach(__v => __obj.updateDynamic("LastSyncTime")(__v.asInstanceOf[js.Any]))
+      S3Destination.foreach(__v => __obj.updateDynamic("S3Destination")(__v.asInstanceOf[js.Any]))
+      SyncCreatedTime.foreach(__v => __obj.updateDynamic("SyncCreatedTime")(__v.asInstanceOf[js.Any]))
+      SyncName.foreach(__v => __obj.updateDynamic("SyncName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceDataSyncItem]
     }
   }
@@ -9787,14 +9807,14 @@ package ssm {
         AWSKMSKeyARN: js.UndefOr[ResourceDataSyncAWSKMSKeyARN] = js.undefined,
         Prefix: js.UndefOr[ResourceDataSyncS3Prefix] = js.undefined
     ): ResourceDataSyncS3Destination = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BucketName" -> BucketName.asInstanceOf[js.Any],
         "Region"     -> Region.asInstanceOf[js.Any],
         "SyncFormat" -> SyncFormat.asInstanceOf[js.Any]
       )
 
-      AWSKMSKeyARN.foreach(__v => __obj.update("AWSKMSKeyARN", __v.asInstanceOf[js.Any]))
-      Prefix.foreach(__v => __obj.update("Prefix", __v.asInstanceOf[js.Any]))
+      AWSKMSKeyARN.foreach(__v => __obj.updateDynamic("AWSKMSKeyARN")(__v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceDataSyncS3Destination]
     }
   }
@@ -9837,7 +9857,7 @@ package ssm {
     def apply(
         TypeName: InventoryItemTypeName
     ): ResultAttribute = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "TypeName" -> TypeName.asInstanceOf[js.Any]
       )
 
@@ -9854,7 +9874,7 @@ package ssm {
     def apply(
         SessionId: SessionId
     ): ResumeSessionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SessionId" -> SessionId.asInstanceOf[js.Any]
       )
 
@@ -9875,10 +9895,10 @@ package ssm {
         StreamUrl: js.UndefOr[StreamUrl] = js.undefined,
         TokenValue: js.UndefOr[TokenValue] = js.undefined
     ): ResumeSessionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SessionId.foreach(__v => __obj.update("SessionId", __v.asInstanceOf[js.Any]))
-      StreamUrl.foreach(__v => __obj.update("StreamUrl", __v.asInstanceOf[js.Any]))
-      TokenValue.foreach(__v => __obj.update("TokenValue", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SessionId.foreach(__v => __obj.updateDynamic("SessionId")(__v.asInstanceOf[js.Any]))
+      StreamUrl.foreach(__v => __obj.updateDynamic("StreamUrl")(__v.asInstanceOf[js.Any]))
+      TokenValue.foreach(__v => __obj.updateDynamic("TokenValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResumeSessionResponse]
     }
   }
@@ -9899,10 +9919,10 @@ package ssm {
         OutputS3KeyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined,
         OutputS3Region: js.UndefOr[S3Region] = js.undefined
     ): S3OutputLocation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      OutputS3BucketName.foreach(__v => __obj.update("OutputS3BucketName", __v.asInstanceOf[js.Any]))
-      OutputS3KeyPrefix.foreach(__v => __obj.update("OutputS3KeyPrefix", __v.asInstanceOf[js.Any]))
-      OutputS3Region.foreach(__v => __obj.update("OutputS3Region", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      OutputS3BucketName.foreach(__v => __obj.updateDynamic("OutputS3BucketName")(__v.asInstanceOf[js.Any]))
+      OutputS3KeyPrefix.foreach(__v => __obj.updateDynamic("OutputS3KeyPrefix")(__v.asInstanceOf[js.Any]))
+      OutputS3Region.foreach(__v => __obj.updateDynamic("OutputS3Region")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3OutputLocation]
     }
   }
@@ -9919,8 +9939,8 @@ package ssm {
     def apply(
         OutputUrl: js.UndefOr[Url] = js.undefined
     ): S3OutputUrl = {
-      val __obj = js.Dictionary.empty[js.Any]
-      OutputUrl.foreach(__v => __obj.update("OutputUrl", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      OutputUrl.foreach(__v => __obj.updateDynamic("OutputUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3OutputUrl]
     }
   }
@@ -9941,10 +9961,10 @@ package ssm {
         Name: js.UndefOr[MaintenanceWindowName] = js.undefined,
         WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined
     ): ScheduledWindowExecution = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ExecutionTime.foreach(__v => __obj.update("ExecutionTime", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      WindowId.foreach(__v => __obj.update("WindowId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ExecutionTime.foreach(__v => __obj.updateDynamic("ExecutionTime")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      WindowId.foreach(__v => __obj.updateDynamic("WindowId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScheduledWindowExecution]
     }
   }
@@ -9962,12 +9982,12 @@ package ssm {
         SignalType: SignalType,
         Payload: js.UndefOr[AutomationParameterMap] = js.undefined
     ): SendAutomationSignalRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AutomationExecutionId" -> AutomationExecutionId.asInstanceOf[js.Any],
         "SignalType"            -> SignalType.asInstanceOf[js.Any]
       )
 
-      Payload.foreach(__v => __obj.update("Payload", __v.asInstanceOf[js.Any]))
+      Payload.foreach(__v => __obj.updateDynamic("Payload")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendAutomationSignalRequest]
     }
   }
@@ -9978,7 +9998,7 @@ package ssm {
   object SendAutomationSignalResult {
     def apply(
         ): SendAutomationSignalResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[SendAutomationSignalResult]
     }
@@ -10025,26 +10045,26 @@ package ssm {
         Targets: js.UndefOr[Targets] = js.undefined,
         TimeoutSeconds: js.UndefOr[TimeoutSeconds] = js.undefined
     ): SendCommandRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DocumentName" -> DocumentName.asInstanceOf[js.Any]
       )
 
-      CloudWatchOutputConfig.foreach(__v => __obj.update("CloudWatchOutputConfig", __v.asInstanceOf[js.Any]))
-      Comment.foreach(__v => __obj.update("Comment", __v.asInstanceOf[js.Any]))
-      DocumentHash.foreach(__v => __obj.update("DocumentHash", __v.asInstanceOf[js.Any]))
-      DocumentHashType.foreach(__v => __obj.update("DocumentHashType", __v.asInstanceOf[js.Any]))
-      DocumentVersion.foreach(__v => __obj.update("DocumentVersion", __v.asInstanceOf[js.Any]))
-      InstanceIds.foreach(__v => __obj.update("InstanceIds", __v.asInstanceOf[js.Any]))
-      MaxConcurrency.foreach(__v => __obj.update("MaxConcurrency", __v.asInstanceOf[js.Any]))
-      MaxErrors.foreach(__v => __obj.update("MaxErrors", __v.asInstanceOf[js.Any]))
-      NotificationConfig.foreach(__v => __obj.update("NotificationConfig", __v.asInstanceOf[js.Any]))
-      OutputS3BucketName.foreach(__v => __obj.update("OutputS3BucketName", __v.asInstanceOf[js.Any]))
-      OutputS3KeyPrefix.foreach(__v => __obj.update("OutputS3KeyPrefix", __v.asInstanceOf[js.Any]))
-      OutputS3Region.foreach(__v => __obj.update("OutputS3Region", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
-      ServiceRoleArn.foreach(__v => __obj.update("ServiceRoleArn", __v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.update("Targets", __v.asInstanceOf[js.Any]))
-      TimeoutSeconds.foreach(__v => __obj.update("TimeoutSeconds", __v.asInstanceOf[js.Any]))
+      CloudWatchOutputConfig.foreach(__v => __obj.updateDynamic("CloudWatchOutputConfig")(__v.asInstanceOf[js.Any]))
+      Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
+      DocumentHash.foreach(__v => __obj.updateDynamic("DocumentHash")(__v.asInstanceOf[js.Any]))
+      DocumentHashType.foreach(__v => __obj.updateDynamic("DocumentHashType")(__v.asInstanceOf[js.Any]))
+      DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
+      InstanceIds.foreach(__v => __obj.updateDynamic("InstanceIds")(__v.asInstanceOf[js.Any]))
+      MaxConcurrency.foreach(__v => __obj.updateDynamic("MaxConcurrency")(__v.asInstanceOf[js.Any]))
+      MaxErrors.foreach(__v => __obj.updateDynamic("MaxErrors")(__v.asInstanceOf[js.Any]))
+      NotificationConfig.foreach(__v => __obj.updateDynamic("NotificationConfig")(__v.asInstanceOf[js.Any]))
+      OutputS3BucketName.foreach(__v => __obj.updateDynamic("OutputS3BucketName")(__v.asInstanceOf[js.Any]))
+      OutputS3KeyPrefix.foreach(__v => __obj.updateDynamic("OutputS3KeyPrefix")(__v.asInstanceOf[js.Any]))
+      OutputS3Region.foreach(__v => __obj.updateDynamic("OutputS3Region")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      ServiceRoleArn.foreach(__v => __obj.updateDynamic("ServiceRoleArn")(__v.asInstanceOf[js.Any]))
+      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
+      TimeoutSeconds.foreach(__v => __obj.updateDynamic("TimeoutSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendCommandRequest]
     }
   }
@@ -10058,8 +10078,8 @@ package ssm {
     def apply(
         Command: js.UndefOr[Command] = js.undefined
     ): SendCommandResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Command.foreach(__v => __obj.update("Command", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Command.foreach(__v => __obj.updateDynamic("Command")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendCommandResult]
     }
   }
@@ -10088,13 +10108,13 @@ package ssm {
         SettingValue: js.UndefOr[ServiceSettingValue] = js.undefined,
         Status: js.UndefOr[String] = js.undefined
     ): ServiceSetting = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ARN.foreach(__v => __obj.update("ARN", __v.asInstanceOf[js.Any]))
-      LastModifiedDate.foreach(__v => __obj.update("LastModifiedDate", __v.asInstanceOf[js.Any]))
-      LastModifiedUser.foreach(__v => __obj.update("LastModifiedUser", __v.asInstanceOf[js.Any]))
-      SettingId.foreach(__v => __obj.update("SettingId", __v.asInstanceOf[js.Any]))
-      SettingValue.foreach(__v => __obj.update("SettingValue", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
+      LastModifiedUser.foreach(__v => __obj.updateDynamic("LastModifiedUser")(__v.asInstanceOf[js.Any]))
+      SettingId.foreach(__v => __obj.updateDynamic("SettingId")(__v.asInstanceOf[js.Any]))
+      SettingValue.foreach(__v => __obj.updateDynamic("SettingValue")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServiceSetting]
     }
   }
@@ -10127,16 +10147,16 @@ package ssm {
         Status: js.UndefOr[SessionStatus] = js.undefined,
         Target: js.UndefOr[SessionTarget] = js.undefined
     ): Session = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Details.foreach(__v => __obj.update("Details", __v.asInstanceOf[js.Any]))
-      DocumentName.foreach(__v => __obj.update("DocumentName", __v.asInstanceOf[js.Any]))
-      EndDate.foreach(__v => __obj.update("EndDate", __v.asInstanceOf[js.Any]))
-      OutputUrl.foreach(__v => __obj.update("OutputUrl", __v.asInstanceOf[js.Any]))
-      Owner.foreach(__v => __obj.update("Owner", __v.asInstanceOf[js.Any]))
-      SessionId.foreach(__v => __obj.update("SessionId", __v.asInstanceOf[js.Any]))
-      StartDate.foreach(__v => __obj.update("StartDate", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      Target.foreach(__v => __obj.update("Target", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Details.foreach(__v => __obj.updateDynamic("Details")(__v.asInstanceOf[js.Any]))
+      DocumentName.foreach(__v => __obj.updateDynamic("DocumentName")(__v.asInstanceOf[js.Any]))
+      EndDate.foreach(__v => __obj.updateDynamic("EndDate")(__v.asInstanceOf[js.Any]))
+      OutputUrl.foreach(__v => __obj.updateDynamic("OutputUrl")(__v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
+      SessionId.foreach(__v => __obj.updateDynamic("SessionId")(__v.asInstanceOf[js.Any]))
+      StartDate.foreach(__v => __obj.updateDynamic("StartDate")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Target.foreach(__v => __obj.updateDynamic("Target")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Session]
     }
   }
@@ -10155,7 +10175,7 @@ package ssm {
         key: SessionFilterKey,
         value: SessionFilterValue
     ): SessionFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "key"   -> key.asInstanceOf[js.Any],
         "value" -> value.asInstanceOf[js.Any]
       )
@@ -10188,9 +10208,9 @@ package ssm {
         CloudWatchOutputUrl: js.UndefOr[SessionManagerCloudWatchOutputUrl] = js.undefined,
         S3OutputUrl: js.UndefOr[SessionManagerS3OutputUrl] = js.undefined
     ): SessionManagerOutputUrl = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CloudWatchOutputUrl.foreach(__v => __obj.update("CloudWatchOutputUrl", __v.asInstanceOf[js.Any]))
-      S3OutputUrl.foreach(__v => __obj.update("S3OutputUrl", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CloudWatchOutputUrl.foreach(__v => __obj.updateDynamic("CloudWatchOutputUrl")(__v.asInstanceOf[js.Any]))
+      S3OutputUrl.foreach(__v => __obj.updateDynamic("S3OutputUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SessionManagerOutputUrl]
     }
   }
@@ -10235,13 +10255,13 @@ package ssm {
         MediumCount: js.UndefOr[ComplianceSummaryCount] = js.undefined,
         UnspecifiedCount: js.UndefOr[ComplianceSummaryCount] = js.undefined
     ): SeveritySummary = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CriticalCount.foreach(__v => __obj.update("CriticalCount", __v.asInstanceOf[js.Any]))
-      HighCount.foreach(__v => __obj.update("HighCount", __v.asInstanceOf[js.Any]))
-      InformationalCount.foreach(__v => __obj.update("InformationalCount", __v.asInstanceOf[js.Any]))
-      LowCount.foreach(__v => __obj.update("LowCount", __v.asInstanceOf[js.Any]))
-      MediumCount.foreach(__v => __obj.update("MediumCount", __v.asInstanceOf[js.Any]))
-      UnspecifiedCount.foreach(__v => __obj.update("UnspecifiedCount", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CriticalCount.foreach(__v => __obj.updateDynamic("CriticalCount")(__v.asInstanceOf[js.Any]))
+      HighCount.foreach(__v => __obj.updateDynamic("HighCount")(__v.asInstanceOf[js.Any]))
+      InformationalCount.foreach(__v => __obj.updateDynamic("InformationalCount")(__v.asInstanceOf[js.Any]))
+      LowCount.foreach(__v => __obj.updateDynamic("LowCount")(__v.asInstanceOf[js.Any]))
+      MediumCount.foreach(__v => __obj.updateDynamic("MediumCount")(__v.asInstanceOf[js.Any]))
+      UnspecifiedCount.foreach(__v => __obj.updateDynamic("UnspecifiedCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SeveritySummary]
     }
   }
@@ -10265,7 +10285,7 @@ package ssm {
     def apply(
         AssociationIds: AssociationIdList
     ): StartAssociationsOnceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AssociationIds" -> AssociationIds.asInstanceOf[js.Any]
       )
 
@@ -10279,7 +10299,7 @@ package ssm {
   object StartAssociationsOnceResult {
     def apply(
         ): StartAssociationsOnceResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StartAssociationsOnceResult]
     }
@@ -10314,20 +10334,20 @@ package ssm {
         TargetParameterName: js.UndefOr[AutomationParameterKey] = js.undefined,
         Targets: js.UndefOr[Targets] = js.undefined
     ): StartAutomationExecutionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DocumentName" -> DocumentName.asInstanceOf[js.Any]
       )
 
-      ClientToken.foreach(__v => __obj.update("ClientToken", __v.asInstanceOf[js.Any]))
-      DocumentVersion.foreach(__v => __obj.update("DocumentVersion", __v.asInstanceOf[js.Any]))
-      MaxConcurrency.foreach(__v => __obj.update("MaxConcurrency", __v.asInstanceOf[js.Any]))
-      MaxErrors.foreach(__v => __obj.update("MaxErrors", __v.asInstanceOf[js.Any]))
-      Mode.foreach(__v => __obj.update("Mode", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
-      TargetLocations.foreach(__v => __obj.update("TargetLocations", __v.asInstanceOf[js.Any]))
-      TargetMaps.foreach(__v => __obj.update("TargetMaps", __v.asInstanceOf[js.Any]))
-      TargetParameterName.foreach(__v => __obj.update("TargetParameterName", __v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.update("Targets", __v.asInstanceOf[js.Any]))
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
+      MaxConcurrency.foreach(__v => __obj.updateDynamic("MaxConcurrency")(__v.asInstanceOf[js.Any]))
+      MaxErrors.foreach(__v => __obj.updateDynamic("MaxErrors")(__v.asInstanceOf[js.Any]))
+      Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      TargetLocations.foreach(__v => __obj.updateDynamic("TargetLocations")(__v.asInstanceOf[js.Any]))
+      TargetMaps.foreach(__v => __obj.updateDynamic("TargetMaps")(__v.asInstanceOf[js.Any]))
+      TargetParameterName.foreach(__v => __obj.updateDynamic("TargetParameterName")(__v.asInstanceOf[js.Any]))
+      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartAutomationExecutionRequest]
     }
   }
@@ -10341,8 +10361,8 @@ package ssm {
     def apply(
         AutomationExecutionId: js.UndefOr[AutomationExecutionId] = js.undefined
     ): StartAutomationExecutionResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AutomationExecutionId.foreach(__v => __obj.update("AutomationExecutionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AutomationExecutionId.foreach(__v => __obj.updateDynamic("AutomationExecutionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartAutomationExecutionResult]
     }
   }
@@ -10360,12 +10380,12 @@ package ssm {
         DocumentName: js.UndefOr[DocumentARN] = js.undefined,
         Parameters: js.UndefOr[SessionManagerParameters] = js.undefined
     ): StartSessionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Target" -> Target.asInstanceOf[js.Any]
       )
 
-      DocumentName.foreach(__v => __obj.update("DocumentName", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      DocumentName.foreach(__v => __obj.updateDynamic("DocumentName")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartSessionRequest]
     }
   }
@@ -10383,10 +10403,10 @@ package ssm {
         StreamUrl: js.UndefOr[StreamUrl] = js.undefined,
         TokenValue: js.UndefOr[TokenValue] = js.undefined
     ): StartSessionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SessionId.foreach(__v => __obj.update("SessionId", __v.asInstanceOf[js.Any]))
-      StreamUrl.foreach(__v => __obj.update("StreamUrl", __v.asInstanceOf[js.Any]))
-      TokenValue.foreach(__v => __obj.update("TokenValue", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SessionId.foreach(__v => __obj.updateDynamic("SessionId")(__v.asInstanceOf[js.Any]))
+      StreamUrl.foreach(__v => __obj.updateDynamic("StreamUrl")(__v.asInstanceOf[js.Any]))
+      TokenValue.foreach(__v => __obj.updateDynamic("TokenValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartSessionResponse]
     }
   }
@@ -10445,29 +10465,29 @@ package ssm {
         TimeoutSeconds: js.UndefOr[Double] = js.undefined,
         ValidNextSteps: js.UndefOr[ValidNextStepList] = js.undefined
     ): StepExecution = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Action.foreach(__v => __obj.update("Action", __v.asInstanceOf[js.Any]))
-      ExecutionEndTime.foreach(__v => __obj.update("ExecutionEndTime", __v.asInstanceOf[js.Any]))
-      ExecutionStartTime.foreach(__v => __obj.update("ExecutionStartTime", __v.asInstanceOf[js.Any]))
-      FailureDetails.foreach(__v => __obj.update("FailureDetails", __v.asInstanceOf[js.Any]))
-      FailureMessage.foreach(__v => __obj.update("FailureMessage", __v.asInstanceOf[js.Any]))
-      Inputs.foreach(__v => __obj.update("Inputs", __v.asInstanceOf[js.Any]))
-      IsCritical.foreach(__v => __obj.update("IsCritical", __v.asInstanceOf[js.Any]))
-      IsEnd.foreach(__v => __obj.update("IsEnd", __v.asInstanceOf[js.Any]))
-      MaxAttempts.foreach(__v => __obj.update("MaxAttempts", __v.asInstanceOf[js.Any]))
-      NextStep.foreach(__v => __obj.update("NextStep", __v.asInstanceOf[js.Any]))
-      OnFailure.foreach(__v => __obj.update("OnFailure", __v.asInstanceOf[js.Any]))
-      Outputs.foreach(__v => __obj.update("Outputs", __v.asInstanceOf[js.Any]))
-      OverriddenParameters.foreach(__v => __obj.update("OverriddenParameters", __v.asInstanceOf[js.Any]))
-      Response.foreach(__v => __obj.update("Response", __v.asInstanceOf[js.Any]))
-      ResponseCode.foreach(__v => __obj.update("ResponseCode", __v.asInstanceOf[js.Any]))
-      StepExecutionId.foreach(__v => __obj.update("StepExecutionId", __v.asInstanceOf[js.Any]))
-      StepName.foreach(__v => __obj.update("StepName", __v.asInstanceOf[js.Any]))
-      StepStatus.foreach(__v => __obj.update("StepStatus", __v.asInstanceOf[js.Any]))
-      TargetLocation.foreach(__v => __obj.update("TargetLocation", __v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.update("Targets", __v.asInstanceOf[js.Any]))
-      TimeoutSeconds.foreach(__v => __obj.update("TimeoutSeconds", __v.asInstanceOf[js.Any]))
-      ValidNextSteps.foreach(__v => __obj.update("ValidNextSteps", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      ExecutionEndTime.foreach(__v => __obj.updateDynamic("ExecutionEndTime")(__v.asInstanceOf[js.Any]))
+      ExecutionStartTime.foreach(__v => __obj.updateDynamic("ExecutionStartTime")(__v.asInstanceOf[js.Any]))
+      FailureDetails.foreach(__v => __obj.updateDynamic("FailureDetails")(__v.asInstanceOf[js.Any]))
+      FailureMessage.foreach(__v => __obj.updateDynamic("FailureMessage")(__v.asInstanceOf[js.Any]))
+      Inputs.foreach(__v => __obj.updateDynamic("Inputs")(__v.asInstanceOf[js.Any]))
+      IsCritical.foreach(__v => __obj.updateDynamic("IsCritical")(__v.asInstanceOf[js.Any]))
+      IsEnd.foreach(__v => __obj.updateDynamic("IsEnd")(__v.asInstanceOf[js.Any]))
+      MaxAttempts.foreach(__v => __obj.updateDynamic("MaxAttempts")(__v.asInstanceOf[js.Any]))
+      NextStep.foreach(__v => __obj.updateDynamic("NextStep")(__v.asInstanceOf[js.Any]))
+      OnFailure.foreach(__v => __obj.updateDynamic("OnFailure")(__v.asInstanceOf[js.Any]))
+      Outputs.foreach(__v => __obj.updateDynamic("Outputs")(__v.asInstanceOf[js.Any]))
+      OverriddenParameters.foreach(__v => __obj.updateDynamic("OverriddenParameters")(__v.asInstanceOf[js.Any]))
+      Response.foreach(__v => __obj.updateDynamic("Response")(__v.asInstanceOf[js.Any]))
+      ResponseCode.foreach(__v => __obj.updateDynamic("ResponseCode")(__v.asInstanceOf[js.Any]))
+      StepExecutionId.foreach(__v => __obj.updateDynamic("StepExecutionId")(__v.asInstanceOf[js.Any]))
+      StepName.foreach(__v => __obj.updateDynamic("StepName")(__v.asInstanceOf[js.Any]))
+      StepStatus.foreach(__v => __obj.updateDynamic("StepStatus")(__v.asInstanceOf[js.Any]))
+      TargetLocation.foreach(__v => __obj.updateDynamic("TargetLocation")(__v.asInstanceOf[js.Any]))
+      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
+      TimeoutSeconds.foreach(__v => __obj.updateDynamic("TimeoutSeconds")(__v.asInstanceOf[js.Any]))
+      ValidNextSteps.foreach(__v => __obj.updateDynamic("ValidNextSteps")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StepExecution]
     }
   }
@@ -10486,7 +10506,7 @@ package ssm {
         Key: StepExecutionFilterKey,
         Values: StepExecutionFilterValueList
     ): StepExecutionFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"    -> Key.asInstanceOf[js.Any],
         "Values" -> Values.asInstanceOf[js.Any]
       )
@@ -10519,11 +10539,11 @@ package ssm {
         AutomationExecutionId: AutomationExecutionId,
         Type: js.UndefOr[StopType] = js.undefined
     ): StopAutomationExecutionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AutomationExecutionId" -> AutomationExecutionId.asInstanceOf[js.Any]
       )
 
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopAutomationExecutionRequest]
     }
   }
@@ -10534,7 +10554,7 @@ package ssm {
   object StopAutomationExecutionResult {
     def apply(
         ): StopAutomationExecutionResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopAutomationExecutionResult]
     }
@@ -10561,7 +10581,7 @@ package ssm {
         Key: TagKey,
         Value: TagValue
     ): Tag = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Key"   -> Key.asInstanceOf[js.Any],
         "Value" -> Value.asInstanceOf[js.Any]
       )
@@ -10597,9 +10617,9 @@ package ssm {
         Key: js.UndefOr[TargetKey] = js.undefined,
         Values: js.UndefOr[TargetValues] = js.undefined
     ): Target = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Values.foreach(__v => __obj.update("Values", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Target]
     }
   }
@@ -10624,14 +10644,14 @@ package ssm {
         TargetLocationMaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
         TargetLocationMaxErrors: js.UndefOr[MaxErrors] = js.undefined
     ): TargetLocation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Accounts.foreach(__v => __obj.update("Accounts", __v.asInstanceOf[js.Any]))
-      ExecutionRoleName.foreach(__v => __obj.update("ExecutionRoleName", __v.asInstanceOf[js.Any]))
-      Regions.foreach(__v => __obj.update("Regions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Accounts.foreach(__v => __obj.updateDynamic("Accounts")(__v.asInstanceOf[js.Any]))
+      ExecutionRoleName.foreach(__v => __obj.updateDynamic("ExecutionRoleName")(__v.asInstanceOf[js.Any]))
+      Regions.foreach(__v => __obj.updateDynamic("Regions")(__v.asInstanceOf[js.Any]))
       TargetLocationMaxConcurrency.foreach(
-        __v => __obj.update("TargetLocationMaxConcurrency", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("TargetLocationMaxConcurrency")(__v.asInstanceOf[js.Any])
       )
-      TargetLocationMaxErrors.foreach(__v => __obj.update("TargetLocationMaxErrors", __v.asInstanceOf[js.Any]))
+      TargetLocationMaxErrors.foreach(__v => __obj.updateDynamic("TargetLocationMaxErrors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TargetLocation]
     }
   }
@@ -10645,7 +10665,7 @@ package ssm {
     def apply(
         SessionId: SessionId
     ): TerminateSessionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SessionId" -> SessionId.asInstanceOf[js.Any]
       )
 
@@ -10662,8 +10682,8 @@ package ssm {
     def apply(
         SessionId: js.UndefOr[SessionId] = js.undefined
     ): TerminateSessionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      SessionId.foreach(__v => __obj.update("SessionId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      SessionId.foreach(__v => __obj.updateDynamic("SessionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TerminateSessionResponse]
     }
   }
@@ -10701,24 +10721,24 @@ package ssm {
         ScheduleExpression: js.UndefOr[ScheduleExpression] = js.undefined,
         Targets: js.UndefOr[Targets] = js.undefined
     ): UpdateAssociationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AssociationId" -> AssociationId.asInstanceOf[js.Any]
       )
 
-      AssociationName.foreach(__v => __obj.update("AssociationName", __v.asInstanceOf[js.Any]))
-      AssociationVersion.foreach(__v => __obj.update("AssociationVersion", __v.asInstanceOf[js.Any]))
+      AssociationName.foreach(__v => __obj.updateDynamic("AssociationName")(__v.asInstanceOf[js.Any]))
+      AssociationVersion.foreach(__v => __obj.updateDynamic("AssociationVersion")(__v.asInstanceOf[js.Any]))
       AutomationTargetParameterName.foreach(
-        __v => __obj.update("AutomationTargetParameterName", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("AutomationTargetParameterName")(__v.asInstanceOf[js.Any])
       )
-      ComplianceSeverity.foreach(__v => __obj.update("ComplianceSeverity", __v.asInstanceOf[js.Any]))
-      DocumentVersion.foreach(__v => __obj.update("DocumentVersion", __v.asInstanceOf[js.Any]))
-      MaxConcurrency.foreach(__v => __obj.update("MaxConcurrency", __v.asInstanceOf[js.Any]))
-      MaxErrors.foreach(__v => __obj.update("MaxErrors", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      OutputLocation.foreach(__v => __obj.update("OutputLocation", __v.asInstanceOf[js.Any]))
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
-      ScheduleExpression.foreach(__v => __obj.update("ScheduleExpression", __v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.update("Targets", __v.asInstanceOf[js.Any]))
+      ComplianceSeverity.foreach(__v => __obj.updateDynamic("ComplianceSeverity")(__v.asInstanceOf[js.Any]))
+      DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
+      MaxConcurrency.foreach(__v => __obj.updateDynamic("MaxConcurrency")(__v.asInstanceOf[js.Any]))
+      MaxErrors.foreach(__v => __obj.updateDynamic("MaxErrors")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      OutputLocation.foreach(__v => __obj.updateDynamic("OutputLocation")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      ScheduleExpression.foreach(__v => __obj.updateDynamic("ScheduleExpression")(__v.asInstanceOf[js.Any]))
+      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAssociationRequest]
     }
   }
@@ -10732,8 +10752,8 @@ package ssm {
     def apply(
         AssociationDescription: js.UndefOr[AssociationDescription] = js.undefined
     ): UpdateAssociationResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssociationDescription.foreach(__v => __obj.update("AssociationDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssociationDescription.foreach(__v => __obj.updateDynamic("AssociationDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAssociationResult]
     }
   }
@@ -10751,7 +10771,7 @@ package ssm {
         InstanceId: InstanceId,
         Name: DocumentARN
     ): UpdateAssociationStatusRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AssociationStatus" -> AssociationStatus.asInstanceOf[js.Any],
         "InstanceId"        -> InstanceId.asInstanceOf[js.Any],
         "Name"              -> Name.asInstanceOf[js.Any]
@@ -10770,8 +10790,8 @@ package ssm {
     def apply(
         AssociationDescription: js.UndefOr[AssociationDescription] = js.undefined
     ): UpdateAssociationStatusResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssociationDescription.foreach(__v => __obj.update("AssociationDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssociationDescription.foreach(__v => __obj.updateDynamic("AssociationDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAssociationStatusResult]
     }
   }
@@ -10787,7 +10807,7 @@ package ssm {
         DocumentVersion: DocumentVersionNumber,
         Name: DocumentName
     ): UpdateDocumentDefaultVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DocumentVersion" -> DocumentVersion.asInstanceOf[js.Any],
         "Name"            -> Name.asInstanceOf[js.Any]
       )
@@ -10805,8 +10825,8 @@ package ssm {
     def apply(
         Description: js.UndefOr[DocumentDefaultVersionDescription] = js.undefined
     ): UpdateDocumentDefaultVersionResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDocumentDefaultVersionResult]
     }
   }
@@ -10832,16 +10852,16 @@ package ssm {
         TargetType: js.UndefOr[TargetType] = js.undefined,
         VersionName: js.UndefOr[DocumentVersionName] = js.undefined
     ): UpdateDocumentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Content" -> Content.asInstanceOf[js.Any],
         "Name"    -> Name.asInstanceOf[js.Any]
       )
 
-      Attachments.foreach(__v => __obj.update("Attachments", __v.asInstanceOf[js.Any]))
-      DocumentFormat.foreach(__v => __obj.update("DocumentFormat", __v.asInstanceOf[js.Any]))
-      DocumentVersion.foreach(__v => __obj.update("DocumentVersion", __v.asInstanceOf[js.Any]))
-      TargetType.foreach(__v => __obj.update("TargetType", __v.asInstanceOf[js.Any]))
-      VersionName.foreach(__v => __obj.update("VersionName", __v.asInstanceOf[js.Any]))
+      Attachments.foreach(__v => __obj.updateDynamic("Attachments")(__v.asInstanceOf[js.Any]))
+      DocumentFormat.foreach(__v => __obj.updateDynamic("DocumentFormat")(__v.asInstanceOf[js.Any]))
+      DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
+      TargetType.foreach(__v => __obj.updateDynamic("TargetType")(__v.asInstanceOf[js.Any]))
+      VersionName.foreach(__v => __obj.updateDynamic("VersionName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDocumentRequest]
     }
   }
@@ -10855,8 +10875,8 @@ package ssm {
     def apply(
         DocumentDescription: js.UndefOr[DocumentDescription] = js.undefined
     ): UpdateDocumentResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DocumentDescription.foreach(__v => __obj.update("DocumentDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DocumentDescription.foreach(__v => __obj.updateDynamic("DocumentDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDocumentResult]
     }
   }
@@ -10892,21 +10912,21 @@ package ssm {
         ScheduleTimezone: js.UndefOr[MaintenanceWindowTimezone] = js.undefined,
         StartDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined
     ): UpdateMaintenanceWindowRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "WindowId" -> WindowId.asInstanceOf[js.Any]
       )
 
-      AllowUnassociatedTargets.foreach(__v => __obj.update("AllowUnassociatedTargets", __v.asInstanceOf[js.Any]))
-      Cutoff.foreach(__v => __obj.update("Cutoff", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      EndDate.foreach(__v => __obj.update("EndDate", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Replace.foreach(__v => __obj.update("Replace", __v.asInstanceOf[js.Any]))
-      Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
-      ScheduleTimezone.foreach(__v => __obj.update("ScheduleTimezone", __v.asInstanceOf[js.Any]))
-      StartDate.foreach(__v => __obj.update("StartDate", __v.asInstanceOf[js.Any]))
+      AllowUnassociatedTargets.foreach(__v => __obj.updateDynamic("AllowUnassociatedTargets")(__v.asInstanceOf[js.Any]))
+      Cutoff.foreach(__v => __obj.updateDynamic("Cutoff")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Duration.foreach(__v => __obj.updateDynamic("Duration")(__v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      EndDate.foreach(__v => __obj.updateDynamic("EndDate")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Replace.foreach(__v => __obj.updateDynamic("Replace")(__v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
+      ScheduleTimezone.foreach(__v => __obj.updateDynamic("ScheduleTimezone")(__v.asInstanceOf[js.Any]))
+      StartDate.foreach(__v => __obj.updateDynamic("StartDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateMaintenanceWindowRequest]
     }
   }
@@ -10940,18 +10960,18 @@ package ssm {
         StartDate: js.UndefOr[MaintenanceWindowStringDateTime] = js.undefined,
         WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined
     ): UpdateMaintenanceWindowResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AllowUnassociatedTargets.foreach(__v => __obj.update("AllowUnassociatedTargets", __v.asInstanceOf[js.Any]))
-      Cutoff.foreach(__v => __obj.update("Cutoff", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Duration.foreach(__v => __obj.update("Duration", __v.asInstanceOf[js.Any]))
-      Enabled.foreach(__v => __obj.update("Enabled", __v.asInstanceOf[js.Any]))
-      EndDate.foreach(__v => __obj.update("EndDate", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Schedule.foreach(__v => __obj.update("Schedule", __v.asInstanceOf[js.Any]))
-      ScheduleTimezone.foreach(__v => __obj.update("ScheduleTimezone", __v.asInstanceOf[js.Any]))
-      StartDate.foreach(__v => __obj.update("StartDate", __v.asInstanceOf[js.Any]))
-      WindowId.foreach(__v => __obj.update("WindowId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AllowUnassociatedTargets.foreach(__v => __obj.updateDynamic("AllowUnassociatedTargets")(__v.asInstanceOf[js.Any]))
+      Cutoff.foreach(__v => __obj.updateDynamic("Cutoff")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Duration.foreach(__v => __obj.updateDynamic("Duration")(__v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      EndDate.foreach(__v => __obj.updateDynamic("EndDate")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
+      ScheduleTimezone.foreach(__v => __obj.updateDynamic("ScheduleTimezone")(__v.asInstanceOf[js.Any]))
+      StartDate.foreach(__v => __obj.updateDynamic("StartDate")(__v.asInstanceOf[js.Any]))
+      WindowId.foreach(__v => __obj.updateDynamic("WindowId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateMaintenanceWindowResult]
     }
   }
@@ -10977,16 +10997,16 @@ package ssm {
         Replace: js.UndefOr[Boolean] = js.undefined,
         Targets: js.UndefOr[Targets] = js.undefined
     ): UpdateMaintenanceWindowTargetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "WindowId"       -> WindowId.asInstanceOf[js.Any],
         "WindowTargetId" -> WindowTargetId.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      OwnerInformation.foreach(__v => __obj.update("OwnerInformation", __v.asInstanceOf[js.Any]))
-      Replace.foreach(__v => __obj.update("Replace", __v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.update("Targets", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      OwnerInformation.foreach(__v => __obj.updateDynamic("OwnerInformation")(__v.asInstanceOf[js.Any]))
+      Replace.foreach(__v => __obj.updateDynamic("Replace")(__v.asInstanceOf[js.Any]))
+      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateMaintenanceWindowTargetRequest]
     }
   }
@@ -11010,13 +11030,13 @@ package ssm {
         WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined,
         WindowTargetId: js.UndefOr[MaintenanceWindowTargetId] = js.undefined
     ): UpdateMaintenanceWindowTargetResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      OwnerInformation.foreach(__v => __obj.update("OwnerInformation", __v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.update("Targets", __v.asInstanceOf[js.Any]))
-      WindowId.foreach(__v => __obj.update("WindowId", __v.asInstanceOf[js.Any]))
-      WindowTargetId.foreach(__v => __obj.update("WindowTargetId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      OwnerInformation.foreach(__v => __obj.updateDynamic("OwnerInformation")(__v.asInstanceOf[js.Any]))
+      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
+      WindowId.foreach(__v => __obj.updateDynamic("WindowId")(__v.asInstanceOf[js.Any]))
+      WindowTargetId.foreach(__v => __obj.updateDynamic("WindowTargetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateMaintenanceWindowTargetResult]
     }
   }
@@ -11056,23 +11076,23 @@ package ssm {
         TaskInvocationParameters: js.UndefOr[MaintenanceWindowTaskInvocationParameters] = js.undefined,
         TaskParameters: js.UndefOr[MaintenanceWindowTaskParameters] = js.undefined
     ): UpdateMaintenanceWindowTaskRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "WindowId"     -> WindowId.asInstanceOf[js.Any],
         "WindowTaskId" -> WindowTaskId.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      LoggingInfo.foreach(__v => __obj.update("LoggingInfo", __v.asInstanceOf[js.Any]))
-      MaxConcurrency.foreach(__v => __obj.update("MaxConcurrency", __v.asInstanceOf[js.Any]))
-      MaxErrors.foreach(__v => __obj.update("MaxErrors", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
-      Replace.foreach(__v => __obj.update("Replace", __v.asInstanceOf[js.Any]))
-      ServiceRoleArn.foreach(__v => __obj.update("ServiceRoleArn", __v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.update("Targets", __v.asInstanceOf[js.Any]))
-      TaskArn.foreach(__v => __obj.update("TaskArn", __v.asInstanceOf[js.Any]))
-      TaskInvocationParameters.foreach(__v => __obj.update("TaskInvocationParameters", __v.asInstanceOf[js.Any]))
-      TaskParameters.foreach(__v => __obj.update("TaskParameters", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LoggingInfo.foreach(__v => __obj.updateDynamic("LoggingInfo")(__v.asInstanceOf[js.Any]))
+      MaxConcurrency.foreach(__v => __obj.updateDynamic("MaxConcurrency")(__v.asInstanceOf[js.Any]))
+      MaxErrors.foreach(__v => __obj.updateDynamic("MaxErrors")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      Replace.foreach(__v => __obj.updateDynamic("Replace")(__v.asInstanceOf[js.Any]))
+      ServiceRoleArn.foreach(__v => __obj.updateDynamic("ServiceRoleArn")(__v.asInstanceOf[js.Any]))
+      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
+      TaskArn.foreach(__v => __obj.updateDynamic("TaskArn")(__v.asInstanceOf[js.Any]))
+      TaskInvocationParameters.foreach(__v => __obj.updateDynamic("TaskInvocationParameters")(__v.asInstanceOf[js.Any]))
+      TaskParameters.foreach(__v => __obj.updateDynamic("TaskParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateMaintenanceWindowTaskRequest]
     }
   }
@@ -11110,20 +11130,20 @@ package ssm {
         WindowId: js.UndefOr[MaintenanceWindowId] = js.undefined,
         WindowTaskId: js.UndefOr[MaintenanceWindowTaskId] = js.undefined
     ): UpdateMaintenanceWindowTaskResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      LoggingInfo.foreach(__v => __obj.update("LoggingInfo", __v.asInstanceOf[js.Any]))
-      MaxConcurrency.foreach(__v => __obj.update("MaxConcurrency", __v.asInstanceOf[js.Any]))
-      MaxErrors.foreach(__v => __obj.update("MaxErrors", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
-      ServiceRoleArn.foreach(__v => __obj.update("ServiceRoleArn", __v.asInstanceOf[js.Any]))
-      Targets.foreach(__v => __obj.update("Targets", __v.asInstanceOf[js.Any]))
-      TaskArn.foreach(__v => __obj.update("TaskArn", __v.asInstanceOf[js.Any]))
-      TaskInvocationParameters.foreach(__v => __obj.update("TaskInvocationParameters", __v.asInstanceOf[js.Any]))
-      TaskParameters.foreach(__v => __obj.update("TaskParameters", __v.asInstanceOf[js.Any]))
-      WindowId.foreach(__v => __obj.update("WindowId", __v.asInstanceOf[js.Any]))
-      WindowTaskId.foreach(__v => __obj.update("WindowTaskId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LoggingInfo.foreach(__v => __obj.updateDynamic("LoggingInfo")(__v.asInstanceOf[js.Any]))
+      MaxConcurrency.foreach(__v => __obj.updateDynamic("MaxConcurrency")(__v.asInstanceOf[js.Any]))
+      MaxErrors.foreach(__v => __obj.updateDynamic("MaxErrors")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      ServiceRoleArn.foreach(__v => __obj.updateDynamic("ServiceRoleArn")(__v.asInstanceOf[js.Any]))
+      Targets.foreach(__v => __obj.updateDynamic("Targets")(__v.asInstanceOf[js.Any]))
+      TaskArn.foreach(__v => __obj.updateDynamic("TaskArn")(__v.asInstanceOf[js.Any]))
+      TaskInvocationParameters.foreach(__v => __obj.updateDynamic("TaskInvocationParameters")(__v.asInstanceOf[js.Any]))
+      TaskParameters.foreach(__v => __obj.updateDynamic("TaskParameters")(__v.asInstanceOf[js.Any]))
+      WindowId.foreach(__v => __obj.updateDynamic("WindowId")(__v.asInstanceOf[js.Any]))
+      WindowTaskId.foreach(__v => __obj.updateDynamic("WindowTaskId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateMaintenanceWindowTaskResult]
     }
   }
@@ -11139,7 +11159,7 @@ package ssm {
         IamRole: IamRole,
         InstanceId: ManagedInstanceId
     ): UpdateManagedInstanceRoleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "IamRole"    -> IamRole.asInstanceOf[js.Any],
         "InstanceId" -> InstanceId.asInstanceOf[js.Any]
       )
@@ -11154,7 +11174,7 @@ package ssm {
   object UpdateManagedInstanceRoleResult {
     def apply(
         ): UpdateManagedInstanceRoleResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateManagedInstanceRoleResult]
     }
@@ -11185,18 +11205,18 @@ package ssm {
         Status: js.UndefOr[OpsItemStatus] = js.undefined,
         Title: js.UndefOr[OpsItemTitle] = js.undefined
     ): UpdateOpsItemRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "OpsItemId" -> OpsItemId.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Notifications.foreach(__v => __obj.update("Notifications", __v.asInstanceOf[js.Any]))
-      OperationalData.foreach(__v => __obj.update("OperationalData", __v.asInstanceOf[js.Any]))
-      OperationalDataToDelete.foreach(__v => __obj.update("OperationalDataToDelete", __v.asInstanceOf[js.Any]))
-      Priority.foreach(__v => __obj.update("Priority", __v.asInstanceOf[js.Any]))
-      RelatedOpsItems.foreach(__v => __obj.update("RelatedOpsItems", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      Title.foreach(__v => __obj.update("Title", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Notifications.foreach(__v => __obj.updateDynamic("Notifications")(__v.asInstanceOf[js.Any]))
+      OperationalData.foreach(__v => __obj.updateDynamic("OperationalData")(__v.asInstanceOf[js.Any]))
+      OperationalDataToDelete.foreach(__v => __obj.updateDynamic("OperationalDataToDelete")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      RelatedOpsItems.foreach(__v => __obj.updateDynamic("RelatedOpsItems")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateOpsItemRequest]
     }
   }
@@ -11207,7 +11227,7 @@ package ssm {
   object UpdateOpsItemResponse {
     def apply(
         ): UpdateOpsItemResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateOpsItemResponse]
     }
@@ -11244,25 +11264,25 @@ package ssm {
         Replace: js.UndefOr[Boolean] = js.undefined,
         Sources: js.UndefOr[PatchSourceList] = js.undefined
     ): UpdatePatchBaselineRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BaselineId" -> BaselineId.asInstanceOf[js.Any]
       )
 
-      ApprovalRules.foreach(__v => __obj.update("ApprovalRules", __v.asInstanceOf[js.Any]))
-      ApprovedPatches.foreach(__v => __obj.update("ApprovedPatches", __v.asInstanceOf[js.Any]))
+      ApprovalRules.foreach(__v => __obj.updateDynamic("ApprovalRules")(__v.asInstanceOf[js.Any]))
+      ApprovedPatches.foreach(__v => __obj.updateDynamic("ApprovedPatches")(__v.asInstanceOf[js.Any]))
       ApprovedPatchesComplianceLevel.foreach(
-        __v => __obj.update("ApprovedPatchesComplianceLevel", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ApprovedPatchesComplianceLevel")(__v.asInstanceOf[js.Any])
       )
       ApprovedPatchesEnableNonSecurity.foreach(
-        __v => __obj.update("ApprovedPatchesEnableNonSecurity", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ApprovedPatchesEnableNonSecurity")(__v.asInstanceOf[js.Any])
       )
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      GlobalFilters.foreach(__v => __obj.update("GlobalFilters", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      RejectedPatches.foreach(__v => __obj.update("RejectedPatches", __v.asInstanceOf[js.Any]))
-      RejectedPatchesAction.foreach(__v => __obj.update("RejectedPatchesAction", __v.asInstanceOf[js.Any]))
-      Replace.foreach(__v => __obj.update("Replace", __v.asInstanceOf[js.Any]))
-      Sources.foreach(__v => __obj.update("Sources", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      GlobalFilters.foreach(__v => __obj.updateDynamic("GlobalFilters")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RejectedPatches.foreach(__v => __obj.updateDynamic("RejectedPatches")(__v.asInstanceOf[js.Any]))
+      RejectedPatchesAction.foreach(__v => __obj.updateDynamic("RejectedPatchesAction")(__v.asInstanceOf[js.Any]))
+      Replace.foreach(__v => __obj.updateDynamic("Replace")(__v.asInstanceOf[js.Any]))
+      Sources.foreach(__v => __obj.updateDynamic("Sources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdatePatchBaselineRequest]
     }
   }
@@ -11302,25 +11322,25 @@ package ssm {
         RejectedPatchesAction: js.UndefOr[PatchAction] = js.undefined,
         Sources: js.UndefOr[PatchSourceList] = js.undefined
     ): UpdatePatchBaselineResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApprovalRules.foreach(__v => __obj.update("ApprovalRules", __v.asInstanceOf[js.Any]))
-      ApprovedPatches.foreach(__v => __obj.update("ApprovedPatches", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApprovalRules.foreach(__v => __obj.updateDynamic("ApprovalRules")(__v.asInstanceOf[js.Any]))
+      ApprovedPatches.foreach(__v => __obj.updateDynamic("ApprovedPatches")(__v.asInstanceOf[js.Any]))
       ApprovedPatchesComplianceLevel.foreach(
-        __v => __obj.update("ApprovedPatchesComplianceLevel", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ApprovedPatchesComplianceLevel")(__v.asInstanceOf[js.Any])
       )
       ApprovedPatchesEnableNonSecurity.foreach(
-        __v => __obj.update("ApprovedPatchesEnableNonSecurity", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ApprovedPatchesEnableNonSecurity")(__v.asInstanceOf[js.Any])
       )
-      BaselineId.foreach(__v => __obj.update("BaselineId", __v.asInstanceOf[js.Any]))
-      CreatedDate.foreach(__v => __obj.update("CreatedDate", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      GlobalFilters.foreach(__v => __obj.update("GlobalFilters", __v.asInstanceOf[js.Any]))
-      ModifiedDate.foreach(__v => __obj.update("ModifiedDate", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      OperatingSystem.foreach(__v => __obj.update("OperatingSystem", __v.asInstanceOf[js.Any]))
-      RejectedPatches.foreach(__v => __obj.update("RejectedPatches", __v.asInstanceOf[js.Any]))
-      RejectedPatchesAction.foreach(__v => __obj.update("RejectedPatchesAction", __v.asInstanceOf[js.Any]))
-      Sources.foreach(__v => __obj.update("Sources", __v.asInstanceOf[js.Any]))
+      BaselineId.foreach(__v => __obj.updateDynamic("BaselineId")(__v.asInstanceOf[js.Any]))
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      GlobalFilters.foreach(__v => __obj.updateDynamic("GlobalFilters")(__v.asInstanceOf[js.Any]))
+      ModifiedDate.foreach(__v => __obj.updateDynamic("ModifiedDate")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      OperatingSystem.foreach(__v => __obj.updateDynamic("OperatingSystem")(__v.asInstanceOf[js.Any]))
+      RejectedPatches.foreach(__v => __obj.updateDynamic("RejectedPatches")(__v.asInstanceOf[js.Any]))
+      RejectedPatchesAction.foreach(__v => __obj.updateDynamic("RejectedPatchesAction")(__v.asInstanceOf[js.Any]))
+      Sources.foreach(__v => __obj.updateDynamic("Sources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdatePatchBaselineResult]
     }
   }
@@ -11339,7 +11359,7 @@ package ssm {
         SettingId: ServiceSettingId,
         SettingValue: ServiceSettingValue
     ): UpdateServiceSettingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SettingId"    -> SettingId.asInstanceOf[js.Any],
         "SettingValue" -> SettingValue.asInstanceOf[js.Any]
       )
@@ -11357,7 +11377,7 @@ package ssm {
   object UpdateServiceSettingResult {
     def apply(
         ): UpdateServiceSettingResult = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateServiceSettingResult]
     }

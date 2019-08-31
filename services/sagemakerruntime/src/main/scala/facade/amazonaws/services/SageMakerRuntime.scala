@@ -47,14 +47,14 @@ package sagemakerruntime {
         ContentType: js.UndefOr[Header] = js.undefined,
         CustomAttributes: js.UndefOr[CustomAttributesHeader] = js.undefined
     ): InvokeEndpointInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Body"         -> Body.asInstanceOf[js.Any],
         "EndpointName" -> EndpointName.asInstanceOf[js.Any]
       )
 
-      Accept.foreach(__v => __obj.update("Accept", __v.asInstanceOf[js.Any]))
-      ContentType.foreach(__v => __obj.update("ContentType", __v.asInstanceOf[js.Any]))
-      CustomAttributes.foreach(__v => __obj.update("CustomAttributes", __v.asInstanceOf[js.Any]))
+      Accept.foreach(__v => __obj.updateDynamic("Accept")(__v.asInstanceOf[js.Any]))
+      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
+      CustomAttributes.foreach(__v => __obj.updateDynamic("CustomAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InvokeEndpointInput]
     }
   }
@@ -74,13 +74,13 @@ package sagemakerruntime {
         CustomAttributes: js.UndefOr[CustomAttributesHeader] = js.undefined,
         InvokedProductionVariant: js.UndefOr[Header] = js.undefined
     ): InvokeEndpointOutput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Body" -> Body.asInstanceOf[js.Any]
       )
 
-      ContentType.foreach(__v => __obj.update("ContentType", __v.asInstanceOf[js.Any]))
-      CustomAttributes.foreach(__v => __obj.update("CustomAttributes", __v.asInstanceOf[js.Any]))
-      InvokedProductionVariant.foreach(__v => __obj.update("InvokedProductionVariant", __v.asInstanceOf[js.Any]))
+      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
+      CustomAttributes.foreach(__v => __obj.updateDynamic("CustomAttributes")(__v.asInstanceOf[js.Any]))
+      InvokedProductionVariant.foreach(__v => __obj.updateDynamic("InvokedProductionVariant")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InvokeEndpointOutput]
     }
   }

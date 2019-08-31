@@ -492,7 +492,7 @@ package greengrass {
         GroupId: __string,
         RoleArn: __string
     ): AssociateRoleToGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupId" -> GroupId.asInstanceOf[js.Any],
         "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
@@ -510,8 +510,8 @@ package greengrass {
     def apply(
         AssociatedAt: js.UndefOr[__string] = js.undefined
     ): AssociateRoleToGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssociatedAt.foreach(__v => __obj.update("AssociatedAt", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssociatedAt.foreach(__v => __obj.updateDynamic("AssociatedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateRoleToGroupResponse]
     }
   }
@@ -525,7 +525,7 @@ package greengrass {
     def apply(
         RoleArn: __string
     ): AssociateServiceRoleToAccountRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
@@ -542,8 +542,8 @@ package greengrass {
     def apply(
         AssociatedAt: js.UndefOr[__string] = js.undefined
     ): AssociateServiceRoleToAccountResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssociatedAt.foreach(__v => __obj.update("AssociatedAt", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssociatedAt.foreach(__v => __obj.updateDynamic("AssociatedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateServiceRoleToAccountResponse]
     }
   }
@@ -564,10 +564,10 @@ package greengrass {
         BulkDeploymentId: js.UndefOr[__string] = js.undefined,
         CreatedAt: js.UndefOr[__string] = js.undefined
     ): BulkDeployment = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BulkDeploymentArn.foreach(__v => __obj.update("BulkDeploymentArn", __v.asInstanceOf[js.Any]))
-      BulkDeploymentId.foreach(__v => __obj.update("BulkDeploymentId", __v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.update("CreatedAt", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BulkDeploymentArn.foreach(__v => __obj.updateDynamic("BulkDeploymentArn")(__v.asInstanceOf[js.Any]))
+      BulkDeploymentId.foreach(__v => __obj.updateDynamic("BulkDeploymentId")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BulkDeployment]
     }
   }
@@ -588,10 +588,10 @@ package greengrass {
         RecordsProcessed: js.UndefOr[__integer] = js.undefined,
         RetryAttempts: js.UndefOr[__integer] = js.undefined
     ): BulkDeploymentMetrics = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InvalidInputRecords.foreach(__v => __obj.update("InvalidInputRecords", __v.asInstanceOf[js.Any]))
-      RecordsProcessed.foreach(__v => __obj.update("RecordsProcessed", __v.asInstanceOf[js.Any]))
-      RetryAttempts.foreach(__v => __obj.update("RetryAttempts", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InvalidInputRecords.foreach(__v => __obj.updateDynamic("InvalidInputRecords")(__v.asInstanceOf[js.Any]))
+      RecordsProcessed.foreach(__v => __obj.updateDynamic("RecordsProcessed")(__v.asInstanceOf[js.Any]))
+      RetryAttempts.foreach(__v => __obj.updateDynamic("RetryAttempts")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BulkDeploymentMetrics]
     }
   }
@@ -622,15 +622,15 @@ package greengrass {
         ErrorMessage: js.UndefOr[__string] = js.undefined,
         GroupArn: js.UndefOr[__string] = js.undefined
     ): BulkDeploymentResult = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedAt.foreach(__v => __obj.update("CreatedAt", __v.asInstanceOf[js.Any]))
-      DeploymentArn.foreach(__v => __obj.update("DeploymentArn", __v.asInstanceOf[js.Any]))
-      DeploymentId.foreach(__v => __obj.update("DeploymentId", __v.asInstanceOf[js.Any]))
-      DeploymentStatus.foreach(__v => __obj.update("DeploymentStatus", __v.asInstanceOf[js.Any]))
-      DeploymentType.foreach(__v => __obj.update("DeploymentType", __v.asInstanceOf[js.Any]))
-      ErrorDetails.foreach(__v => __obj.update("ErrorDetails", __v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
-      GroupArn.foreach(__v => __obj.update("GroupArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      DeploymentArn.foreach(__v => __obj.updateDynamic("DeploymentArn")(__v.asInstanceOf[js.Any]))
+      DeploymentId.foreach(__v => __obj.updateDynamic("DeploymentId")(__v.asInstanceOf[js.Any]))
+      DeploymentStatus.foreach(__v => __obj.updateDynamic("DeploymentStatus")(__v.asInstanceOf[js.Any]))
+      DeploymentType.foreach(__v => __obj.updateDynamic("DeploymentType")(__v.asInstanceOf[js.Any]))
+      ErrorDetails.foreach(__v => __obj.updateDynamic("ErrorDetails")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      GroupArn.foreach(__v => __obj.updateDynamic("GroupArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BulkDeploymentResult]
     }
   }
@@ -667,11 +667,11 @@ package greengrass {
         Metadata: js.UndefOr[__string] = js.undefined,
         PortNumber: js.UndefOr[__integer] = js.undefined
     ): ConnectivityInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      HostAddress.foreach(__v => __obj.update("HostAddress", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Metadata.foreach(__v => __obj.update("Metadata", __v.asInstanceOf[js.Any]))
-      PortNumber.foreach(__v => __obj.update("PortNumber", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      HostAddress.foreach(__v => __obj.updateDynamic("HostAddress")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
+      PortNumber.foreach(__v => __obj.updateDynamic("PortNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConnectivityInfo]
     }
   }
@@ -692,12 +692,12 @@ package greengrass {
         Id: __string,
         Parameters: js.UndefOr[__mapOf__string] = js.undefined
     ): Connector = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConnectorArn" -> ConnectorArn.asInstanceOf[js.Any],
         "Id"           -> Id.asInstanceOf[js.Any]
       )
 
-      Parameters.foreach(__v => __obj.update("Parameters", __v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Connector]
     }
   }
@@ -714,8 +714,8 @@ package greengrass {
     def apply(
         Connectors: js.UndefOr[__listOfConnector] = js.undefined
     ): ConnectorDefinitionVersion = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Connectors.foreach(__v => __obj.update("Connectors", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Connectors.foreach(__v => __obj.updateDynamic("Connectors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConnectorDefinitionVersion]
     }
   }
@@ -738,13 +738,13 @@ package greengrass {
         ThingArn: __string,
         SyncShadow: js.UndefOr[__boolean] = js.undefined
     ): Core = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CertificateArn" -> CertificateArn.asInstanceOf[js.Any],
         "Id"             -> Id.asInstanceOf[js.Any],
         "ThingArn"       -> ThingArn.asInstanceOf[js.Any]
       )
 
-      SyncShadow.foreach(__v => __obj.update("SyncShadow", __v.asInstanceOf[js.Any]))
+      SyncShadow.foreach(__v => __obj.updateDynamic("SyncShadow")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Core]
     }
   }
@@ -761,8 +761,8 @@ package greengrass {
     def apply(
         Cores: js.UndefOr[__listOfCore] = js.undefined
     ): CoreDefinitionVersion = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Cores.foreach(__v => __obj.update("Cores", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Cores.foreach(__v => __obj.updateDynamic("Cores")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CoreDefinitionVersion]
     }
   }
@@ -782,11 +782,11 @@ package greengrass {
         Name: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): CreateConnectorDefinitionRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AmznClientToken.foreach(__v => __obj.update("AmznClientToken", __v.asInstanceOf[js.Any]))
-      InitialVersion.foreach(__v => __obj.update("InitialVersion", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AmznClientToken.foreach(__v => __obj.updateDynamic("AmznClientToken")(__v.asInstanceOf[js.Any]))
+      InitialVersion.foreach(__v => __obj.updateDynamic("InitialVersion")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateConnectorDefinitionRequest]
     }
   }
@@ -812,14 +812,14 @@ package greengrass {
         LatestVersionArn: js.UndefOr[__string] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined
     ): CreateConnectorDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      LastUpdatedTimestamp.foreach(__v => __obj.update("LastUpdatedTimestamp", __v.asInstanceOf[js.Any]))
-      LatestVersion.foreach(__v => __obj.update("LatestVersion", __v.asInstanceOf[js.Any]))
-      LatestVersionArn.foreach(__v => __obj.update("LatestVersionArn", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      LatestVersion.foreach(__v => __obj.updateDynamic("LatestVersion")(__v.asInstanceOf[js.Any]))
+      LatestVersionArn.foreach(__v => __obj.updateDynamic("LatestVersionArn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateConnectorDefinitionResponse]
     }
   }
@@ -837,12 +837,12 @@ package greengrass {
         AmznClientToken: js.UndefOr[__string] = js.undefined,
         Connectors: js.UndefOr[__listOfConnector] = js.undefined
     ): CreateConnectorDefinitionVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConnectorDefinitionId" -> ConnectorDefinitionId.asInstanceOf[js.Any]
       )
 
-      AmznClientToken.foreach(__v => __obj.update("AmznClientToken", __v.asInstanceOf[js.Any]))
-      Connectors.foreach(__v => __obj.update("Connectors", __v.asInstanceOf[js.Any]))
+      AmznClientToken.foreach(__v => __obj.updateDynamic("AmznClientToken")(__v.asInstanceOf[js.Any]))
+      Connectors.foreach(__v => __obj.updateDynamic("Connectors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateConnectorDefinitionVersionRequest]
     }
   }
@@ -862,11 +862,11 @@ package greengrass {
         Id: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__string] = js.undefined
     ): CreateConnectorDefinitionVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateConnectorDefinitionVersionResponse]
     }
   }
@@ -889,11 +889,11 @@ package greengrass {
         Name: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): CreateCoreDefinitionRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AmznClientToken.foreach(__v => __obj.update("AmznClientToken", __v.asInstanceOf[js.Any]))
-      InitialVersion.foreach(__v => __obj.update("InitialVersion", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AmznClientToken.foreach(__v => __obj.updateDynamic("AmznClientToken")(__v.asInstanceOf[js.Any]))
+      InitialVersion.foreach(__v => __obj.updateDynamic("InitialVersion")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCoreDefinitionRequest]
     }
   }
@@ -919,14 +919,14 @@ package greengrass {
         LatestVersionArn: js.UndefOr[__string] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined
     ): CreateCoreDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      LastUpdatedTimestamp.foreach(__v => __obj.update("LastUpdatedTimestamp", __v.asInstanceOf[js.Any]))
-      LatestVersion.foreach(__v => __obj.update("LatestVersion", __v.asInstanceOf[js.Any]))
-      LatestVersionArn.foreach(__v => __obj.update("LatestVersionArn", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      LatestVersion.foreach(__v => __obj.updateDynamic("LatestVersion")(__v.asInstanceOf[js.Any]))
+      LatestVersionArn.foreach(__v => __obj.updateDynamic("LatestVersionArn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCoreDefinitionResponse]
     }
   }
@@ -944,12 +944,12 @@ package greengrass {
         AmznClientToken: js.UndefOr[__string] = js.undefined,
         Cores: js.UndefOr[__listOfCore] = js.undefined
     ): CreateCoreDefinitionVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CoreDefinitionId" -> CoreDefinitionId.asInstanceOf[js.Any]
       )
 
-      AmznClientToken.foreach(__v => __obj.update("AmznClientToken", __v.asInstanceOf[js.Any]))
-      Cores.foreach(__v => __obj.update("Cores", __v.asInstanceOf[js.Any]))
+      AmznClientToken.foreach(__v => __obj.updateDynamic("AmznClientToken")(__v.asInstanceOf[js.Any]))
+      Cores.foreach(__v => __obj.updateDynamic("Cores")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCoreDefinitionVersionRequest]
     }
   }
@@ -969,11 +969,11 @@ package greengrass {
         Id: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__string] = js.undefined
     ): CreateCoreDefinitionVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCoreDefinitionVersionResponse]
     }
   }
@@ -995,14 +995,14 @@ package greengrass {
         DeploymentId: js.UndefOr[__string] = js.undefined,
         GroupVersionId: js.UndefOr[__string] = js.undefined
     ): CreateDeploymentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DeploymentType" -> DeploymentType.asInstanceOf[js.Any],
         "GroupId"        -> GroupId.asInstanceOf[js.Any]
       )
 
-      AmznClientToken.foreach(__v => __obj.update("AmznClientToken", __v.asInstanceOf[js.Any]))
-      DeploymentId.foreach(__v => __obj.update("DeploymentId", __v.asInstanceOf[js.Any]))
-      GroupVersionId.foreach(__v => __obj.update("GroupVersionId", __v.asInstanceOf[js.Any]))
+      AmznClientToken.foreach(__v => __obj.updateDynamic("AmznClientToken")(__v.asInstanceOf[js.Any]))
+      DeploymentId.foreach(__v => __obj.updateDynamic("DeploymentId")(__v.asInstanceOf[js.Any]))
+      GroupVersionId.foreach(__v => __obj.updateDynamic("GroupVersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDeploymentRequest]
     }
   }
@@ -1018,9 +1018,9 @@ package greengrass {
         DeploymentArn: js.UndefOr[__string] = js.undefined,
         DeploymentId: js.UndefOr[__string] = js.undefined
     ): CreateDeploymentResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DeploymentArn.foreach(__v => __obj.update("DeploymentArn", __v.asInstanceOf[js.Any]))
-      DeploymentId.foreach(__v => __obj.update("DeploymentId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DeploymentArn.foreach(__v => __obj.updateDynamic("DeploymentArn")(__v.asInstanceOf[js.Any]))
+      DeploymentId.foreach(__v => __obj.updateDynamic("DeploymentId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDeploymentResponse]
     }
   }
@@ -1040,11 +1040,11 @@ package greengrass {
         Name: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): CreateDeviceDefinitionRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AmznClientToken.foreach(__v => __obj.update("AmznClientToken", __v.asInstanceOf[js.Any]))
-      InitialVersion.foreach(__v => __obj.update("InitialVersion", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AmznClientToken.foreach(__v => __obj.updateDynamic("AmznClientToken")(__v.asInstanceOf[js.Any]))
+      InitialVersion.foreach(__v => __obj.updateDynamic("InitialVersion")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDeviceDefinitionRequest]
     }
   }
@@ -1070,14 +1070,14 @@ package greengrass {
         LatestVersionArn: js.UndefOr[__string] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined
     ): CreateDeviceDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      LastUpdatedTimestamp.foreach(__v => __obj.update("LastUpdatedTimestamp", __v.asInstanceOf[js.Any]))
-      LatestVersion.foreach(__v => __obj.update("LatestVersion", __v.asInstanceOf[js.Any]))
-      LatestVersionArn.foreach(__v => __obj.update("LatestVersionArn", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      LatestVersion.foreach(__v => __obj.updateDynamic("LatestVersion")(__v.asInstanceOf[js.Any]))
+      LatestVersionArn.foreach(__v => __obj.updateDynamic("LatestVersionArn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDeviceDefinitionResponse]
     }
   }
@@ -1095,12 +1095,12 @@ package greengrass {
         AmznClientToken: js.UndefOr[__string] = js.undefined,
         Devices: js.UndefOr[__listOfDevice] = js.undefined
     ): CreateDeviceDefinitionVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DeviceDefinitionId" -> DeviceDefinitionId.asInstanceOf[js.Any]
       )
 
-      AmznClientToken.foreach(__v => __obj.update("AmznClientToken", __v.asInstanceOf[js.Any]))
-      Devices.foreach(__v => __obj.update("Devices", __v.asInstanceOf[js.Any]))
+      AmznClientToken.foreach(__v => __obj.updateDynamic("AmznClientToken")(__v.asInstanceOf[js.Any]))
+      Devices.foreach(__v => __obj.updateDynamic("Devices")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDeviceDefinitionVersionRequest]
     }
   }
@@ -1120,11 +1120,11 @@ package greengrass {
         Id: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__string] = js.undefined
     ): CreateDeviceDefinitionVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDeviceDefinitionVersionResponse]
     }
   }
@@ -1144,11 +1144,11 @@ package greengrass {
         Name: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): CreateFunctionDefinitionRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AmznClientToken.foreach(__v => __obj.update("AmznClientToken", __v.asInstanceOf[js.Any]))
-      InitialVersion.foreach(__v => __obj.update("InitialVersion", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AmznClientToken.foreach(__v => __obj.updateDynamic("AmznClientToken")(__v.asInstanceOf[js.Any]))
+      InitialVersion.foreach(__v => __obj.updateDynamic("InitialVersion")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFunctionDefinitionRequest]
     }
   }
@@ -1174,14 +1174,14 @@ package greengrass {
         LatestVersionArn: js.UndefOr[__string] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined
     ): CreateFunctionDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      LastUpdatedTimestamp.foreach(__v => __obj.update("LastUpdatedTimestamp", __v.asInstanceOf[js.Any]))
-      LatestVersion.foreach(__v => __obj.update("LatestVersion", __v.asInstanceOf[js.Any]))
-      LatestVersionArn.foreach(__v => __obj.update("LatestVersionArn", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      LatestVersion.foreach(__v => __obj.updateDynamic("LatestVersion")(__v.asInstanceOf[js.Any]))
+      LatestVersionArn.foreach(__v => __obj.updateDynamic("LatestVersionArn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFunctionDefinitionResponse]
     }
   }
@@ -1204,13 +1204,13 @@ package greengrass {
         DefaultConfig: js.UndefOr[FunctionDefaultConfig] = js.undefined,
         Functions: js.UndefOr[__listOfFunction] = js.undefined
     ): CreateFunctionDefinitionVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FunctionDefinitionId" -> FunctionDefinitionId.asInstanceOf[js.Any]
       )
 
-      AmznClientToken.foreach(__v => __obj.update("AmznClientToken", __v.asInstanceOf[js.Any]))
-      DefaultConfig.foreach(__v => __obj.update("DefaultConfig", __v.asInstanceOf[js.Any]))
-      Functions.foreach(__v => __obj.update("Functions", __v.asInstanceOf[js.Any]))
+      AmznClientToken.foreach(__v => __obj.updateDynamic("AmznClientToken")(__v.asInstanceOf[js.Any]))
+      DefaultConfig.foreach(__v => __obj.updateDynamic("DefaultConfig")(__v.asInstanceOf[js.Any]))
+      Functions.foreach(__v => __obj.updateDynamic("Functions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFunctionDefinitionVersionRequest]
     }
   }
@@ -1230,11 +1230,11 @@ package greengrass {
         Id: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__string] = js.undefined
     ): CreateFunctionDefinitionVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFunctionDefinitionVersionResponse]
     }
   }
@@ -1250,11 +1250,11 @@ package greengrass {
         GroupId: __string,
         AmznClientToken: js.UndefOr[__string] = js.undefined
     ): CreateGroupCertificateAuthorityRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupId" -> GroupId.asInstanceOf[js.Any]
       )
 
-      AmznClientToken.foreach(__v => __obj.update("AmznClientToken", __v.asInstanceOf[js.Any]))
+      AmznClientToken.foreach(__v => __obj.updateDynamic("AmznClientToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGroupCertificateAuthorityRequest]
     }
   }
@@ -1268,9 +1268,9 @@ package greengrass {
     def apply(
         GroupCertificateAuthorityArn: js.UndefOr[__string] = js.undefined
     ): CreateGroupCertificateAuthorityResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       GroupCertificateAuthorityArn.foreach(
-        __v => __obj.update("GroupCertificateAuthorityArn", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("GroupCertificateAuthorityArn")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateGroupCertificateAuthorityResponse]
     }
@@ -1291,11 +1291,11 @@ package greengrass {
         Name: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): CreateGroupRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AmznClientToken.foreach(__v => __obj.update("AmznClientToken", __v.asInstanceOf[js.Any]))
-      InitialVersion.foreach(__v => __obj.update("InitialVersion", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AmznClientToken.foreach(__v => __obj.updateDynamic("AmznClientToken")(__v.asInstanceOf[js.Any]))
+      InitialVersion.foreach(__v => __obj.updateDynamic("InitialVersion")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGroupRequest]
     }
   }
@@ -1321,14 +1321,14 @@ package greengrass {
         LatestVersionArn: js.UndefOr[__string] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined
     ): CreateGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      LastUpdatedTimestamp.foreach(__v => __obj.update("LastUpdatedTimestamp", __v.asInstanceOf[js.Any]))
-      LatestVersion.foreach(__v => __obj.update("LatestVersion", __v.asInstanceOf[js.Any]))
-      LatestVersionArn.foreach(__v => __obj.update("LatestVersionArn", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      LatestVersion.foreach(__v => __obj.updateDynamic("LatestVersion")(__v.asInstanceOf[js.Any]))
+      LatestVersionArn.foreach(__v => __obj.updateDynamic("LatestVersionArn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGroupResponse]
     }
   }
@@ -1358,25 +1358,29 @@ package greengrass {
         ResourceDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
         SubscriptionDefinitionVersionArn: js.UndefOr[__string] = js.undefined
     ): CreateGroupVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupId" -> GroupId.asInstanceOf[js.Any]
       )
 
-      AmznClientToken.foreach(__v => __obj.update("AmznClientToken", __v.asInstanceOf[js.Any]))
+      AmznClientToken.foreach(__v => __obj.updateDynamic("AmznClientToken")(__v.asInstanceOf[js.Any]))
       ConnectorDefinitionVersionArn.foreach(
-        __v => __obj.update("ConnectorDefinitionVersionArn", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ConnectorDefinitionVersionArn")(__v.asInstanceOf[js.Any])
       )
-      CoreDefinitionVersionArn.foreach(__v => __obj.update("CoreDefinitionVersionArn", __v.asInstanceOf[js.Any]))
-      DeviceDefinitionVersionArn.foreach(__v => __obj.update("DeviceDefinitionVersionArn", __v.asInstanceOf[js.Any]))
+      CoreDefinitionVersionArn.foreach(__v => __obj.updateDynamic("CoreDefinitionVersionArn")(__v.asInstanceOf[js.Any]))
+      DeviceDefinitionVersionArn.foreach(
+        __v => __obj.updateDynamic("DeviceDefinitionVersionArn")(__v.asInstanceOf[js.Any])
+      )
       FunctionDefinitionVersionArn.foreach(
-        __v => __obj.update("FunctionDefinitionVersionArn", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("FunctionDefinitionVersionArn")(__v.asInstanceOf[js.Any])
       )
-      LoggerDefinitionVersionArn.foreach(__v => __obj.update("LoggerDefinitionVersionArn", __v.asInstanceOf[js.Any]))
+      LoggerDefinitionVersionArn.foreach(
+        __v => __obj.updateDynamic("LoggerDefinitionVersionArn")(__v.asInstanceOf[js.Any])
+      )
       ResourceDefinitionVersionArn.foreach(
-        __v => __obj.update("ResourceDefinitionVersionArn", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ResourceDefinitionVersionArn")(__v.asInstanceOf[js.Any])
       )
       SubscriptionDefinitionVersionArn.foreach(
-        __v => __obj.update("SubscriptionDefinitionVersionArn", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("SubscriptionDefinitionVersionArn")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[CreateGroupVersionRequest]
     }
@@ -1397,11 +1401,11 @@ package greengrass {
         Id: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__string] = js.undefined
     ): CreateGroupVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGroupVersionResponse]
     }
   }
@@ -1421,11 +1425,11 @@ package greengrass {
         Name: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): CreateLoggerDefinitionRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AmznClientToken.foreach(__v => __obj.update("AmznClientToken", __v.asInstanceOf[js.Any]))
-      InitialVersion.foreach(__v => __obj.update("InitialVersion", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AmznClientToken.foreach(__v => __obj.updateDynamic("AmznClientToken")(__v.asInstanceOf[js.Any]))
+      InitialVersion.foreach(__v => __obj.updateDynamic("InitialVersion")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLoggerDefinitionRequest]
     }
   }
@@ -1451,14 +1455,14 @@ package greengrass {
         LatestVersionArn: js.UndefOr[__string] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined
     ): CreateLoggerDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      LastUpdatedTimestamp.foreach(__v => __obj.update("LastUpdatedTimestamp", __v.asInstanceOf[js.Any]))
-      LatestVersion.foreach(__v => __obj.update("LatestVersion", __v.asInstanceOf[js.Any]))
-      LatestVersionArn.foreach(__v => __obj.update("LatestVersionArn", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      LatestVersion.foreach(__v => __obj.updateDynamic("LatestVersion")(__v.asInstanceOf[js.Any]))
+      LatestVersionArn.foreach(__v => __obj.updateDynamic("LatestVersionArn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLoggerDefinitionResponse]
     }
   }
@@ -1476,12 +1480,12 @@ package greengrass {
         AmznClientToken: js.UndefOr[__string] = js.undefined,
         Loggers: js.UndefOr[__listOfLogger] = js.undefined
     ): CreateLoggerDefinitionVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LoggerDefinitionId" -> LoggerDefinitionId.asInstanceOf[js.Any]
       )
 
-      AmznClientToken.foreach(__v => __obj.update("AmznClientToken", __v.asInstanceOf[js.Any]))
-      Loggers.foreach(__v => __obj.update("Loggers", __v.asInstanceOf[js.Any]))
+      AmznClientToken.foreach(__v => __obj.updateDynamic("AmznClientToken")(__v.asInstanceOf[js.Any]))
+      Loggers.foreach(__v => __obj.updateDynamic("Loggers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLoggerDefinitionVersionRequest]
     }
   }
@@ -1501,11 +1505,11 @@ package greengrass {
         Id: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__string] = js.undefined
     ): CreateLoggerDefinitionVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLoggerDefinitionVersionResponse]
     }
   }
@@ -1525,11 +1529,11 @@ package greengrass {
         Name: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): CreateResourceDefinitionRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AmznClientToken.foreach(__v => __obj.update("AmznClientToken", __v.asInstanceOf[js.Any]))
-      InitialVersion.foreach(__v => __obj.update("InitialVersion", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AmznClientToken.foreach(__v => __obj.updateDynamic("AmznClientToken")(__v.asInstanceOf[js.Any]))
+      InitialVersion.foreach(__v => __obj.updateDynamic("InitialVersion")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateResourceDefinitionRequest]
     }
   }
@@ -1555,14 +1559,14 @@ package greengrass {
         LatestVersionArn: js.UndefOr[__string] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined
     ): CreateResourceDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      LastUpdatedTimestamp.foreach(__v => __obj.update("LastUpdatedTimestamp", __v.asInstanceOf[js.Any]))
-      LatestVersion.foreach(__v => __obj.update("LatestVersion", __v.asInstanceOf[js.Any]))
-      LatestVersionArn.foreach(__v => __obj.update("LatestVersionArn", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      LatestVersion.foreach(__v => __obj.updateDynamic("LatestVersion")(__v.asInstanceOf[js.Any]))
+      LatestVersionArn.foreach(__v => __obj.updateDynamic("LatestVersionArn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateResourceDefinitionResponse]
     }
   }
@@ -1580,12 +1584,12 @@ package greengrass {
         AmznClientToken: js.UndefOr[__string] = js.undefined,
         Resources: js.UndefOr[__listOfResource] = js.undefined
     ): CreateResourceDefinitionVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceDefinitionId" -> ResourceDefinitionId.asInstanceOf[js.Any]
       )
 
-      AmznClientToken.foreach(__v => __obj.update("AmznClientToken", __v.asInstanceOf[js.Any]))
-      Resources.foreach(__v => __obj.update("Resources", __v.asInstanceOf[js.Any]))
+      AmznClientToken.foreach(__v => __obj.updateDynamic("AmznClientToken")(__v.asInstanceOf[js.Any]))
+      Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateResourceDefinitionVersionRequest]
     }
   }
@@ -1605,11 +1609,11 @@ package greengrass {
         Id: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__string] = js.undefined
     ): CreateResourceDefinitionVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateResourceDefinitionVersionResponse]
     }
   }
@@ -1635,7 +1639,7 @@ package greengrass {
         AmznClientToken: js.UndefOr[__string] = js.undefined,
         UpdateAgentLogLevel: js.UndefOr[UpdateAgentLogLevel] = js.undefined
     ): CreateSoftwareUpdateJobRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "S3UrlSignerRole"              -> S3UrlSignerRole.asInstanceOf[js.Any],
         "SoftwareToUpdate"             -> SoftwareToUpdate.asInstanceOf[js.Any],
         "UpdateTargets"                -> UpdateTargets.asInstanceOf[js.Any],
@@ -1643,8 +1647,8 @@ package greengrass {
         "UpdateTargetsOperatingSystem" -> UpdateTargetsOperatingSystem.asInstanceOf[js.Any]
       )
 
-      AmznClientToken.foreach(__v => __obj.update("AmznClientToken", __v.asInstanceOf[js.Any]))
-      UpdateAgentLogLevel.foreach(__v => __obj.update("UpdateAgentLogLevel", __v.asInstanceOf[js.Any]))
+      AmznClientToken.foreach(__v => __obj.updateDynamic("AmznClientToken")(__v.asInstanceOf[js.Any]))
+      UpdateAgentLogLevel.foreach(__v => __obj.updateDynamic("UpdateAgentLogLevel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSoftwareUpdateJobRequest]
     }
   }
@@ -1660,9 +1664,9 @@ package greengrass {
         IotJobArn: js.UndefOr[__string] = js.undefined,
         IotJobId: js.UndefOr[__string] = js.undefined
     ): CreateSoftwareUpdateJobResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IotJobArn.foreach(__v => __obj.update("IotJobArn", __v.asInstanceOf[js.Any]))
-      IotJobId.foreach(__v => __obj.update("IotJobId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IotJobArn.foreach(__v => __obj.updateDynamic("IotJobArn")(__v.asInstanceOf[js.Any]))
+      IotJobId.foreach(__v => __obj.updateDynamic("IotJobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSoftwareUpdateJobResponse]
     }
   }
@@ -1682,11 +1686,11 @@ package greengrass {
         Name: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): CreateSubscriptionDefinitionRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AmznClientToken.foreach(__v => __obj.update("AmznClientToken", __v.asInstanceOf[js.Any]))
-      InitialVersion.foreach(__v => __obj.update("InitialVersion", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AmznClientToken.foreach(__v => __obj.updateDynamic("AmznClientToken")(__v.asInstanceOf[js.Any]))
+      InitialVersion.foreach(__v => __obj.updateDynamic("InitialVersion")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSubscriptionDefinitionRequest]
     }
   }
@@ -1712,14 +1716,14 @@ package greengrass {
         LatestVersionArn: js.UndefOr[__string] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined
     ): CreateSubscriptionDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      LastUpdatedTimestamp.foreach(__v => __obj.update("LastUpdatedTimestamp", __v.asInstanceOf[js.Any]))
-      LatestVersion.foreach(__v => __obj.update("LatestVersion", __v.asInstanceOf[js.Any]))
-      LatestVersionArn.foreach(__v => __obj.update("LatestVersionArn", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      LatestVersion.foreach(__v => __obj.updateDynamic("LatestVersion")(__v.asInstanceOf[js.Any]))
+      LatestVersionArn.foreach(__v => __obj.updateDynamic("LatestVersionArn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSubscriptionDefinitionResponse]
     }
   }
@@ -1737,12 +1741,12 @@ package greengrass {
         AmznClientToken: js.UndefOr[__string] = js.undefined,
         Subscriptions: js.UndefOr[__listOfSubscription] = js.undefined
     ): CreateSubscriptionDefinitionVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SubscriptionDefinitionId" -> SubscriptionDefinitionId.asInstanceOf[js.Any]
       )
 
-      AmznClientToken.foreach(__v => __obj.update("AmznClientToken", __v.asInstanceOf[js.Any]))
-      Subscriptions.foreach(__v => __obj.update("Subscriptions", __v.asInstanceOf[js.Any]))
+      AmznClientToken.foreach(__v => __obj.updateDynamic("AmznClientToken")(__v.asInstanceOf[js.Any]))
+      Subscriptions.foreach(__v => __obj.updateDynamic("Subscriptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSubscriptionDefinitionVersionRequest]
     }
   }
@@ -1762,11 +1766,11 @@ package greengrass {
         Id: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__string] = js.undefined
     ): CreateSubscriptionDefinitionVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSubscriptionDefinitionVersionResponse]
     }
   }
@@ -1797,15 +1801,15 @@ package greengrass {
         Name: js.UndefOr[__string] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): DefinitionInformation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      LastUpdatedTimestamp.foreach(__v => __obj.update("LastUpdatedTimestamp", __v.asInstanceOf[js.Any]))
-      LatestVersion.foreach(__v => __obj.update("LatestVersion", __v.asInstanceOf[js.Any]))
-      LatestVersionArn.foreach(__v => __obj.update("LatestVersionArn", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      LatestVersion.foreach(__v => __obj.updateDynamic("LatestVersion")(__v.asInstanceOf[js.Any]))
+      LatestVersionArn.foreach(__v => __obj.updateDynamic("LatestVersionArn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DefinitionInformation]
     }
   }
@@ -1819,7 +1823,7 @@ package greengrass {
     def apply(
         ConnectorDefinitionId: __string
     ): DeleteConnectorDefinitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConnectorDefinitionId" -> ConnectorDefinitionId.asInstanceOf[js.Any]
       )
 
@@ -1833,7 +1837,7 @@ package greengrass {
   object DeleteConnectorDefinitionResponse {
     def apply(
         ): DeleteConnectorDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteConnectorDefinitionResponse]
     }
@@ -1848,7 +1852,7 @@ package greengrass {
     def apply(
         CoreDefinitionId: __string
     ): DeleteCoreDefinitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CoreDefinitionId" -> CoreDefinitionId.asInstanceOf[js.Any]
       )
 
@@ -1862,7 +1866,7 @@ package greengrass {
   object DeleteCoreDefinitionResponse {
     def apply(
         ): DeleteCoreDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteCoreDefinitionResponse]
     }
@@ -1877,7 +1881,7 @@ package greengrass {
     def apply(
         DeviceDefinitionId: __string
     ): DeleteDeviceDefinitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DeviceDefinitionId" -> DeviceDefinitionId.asInstanceOf[js.Any]
       )
 
@@ -1891,7 +1895,7 @@ package greengrass {
   object DeleteDeviceDefinitionResponse {
     def apply(
         ): DeleteDeviceDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteDeviceDefinitionResponse]
     }
@@ -1906,7 +1910,7 @@ package greengrass {
     def apply(
         FunctionDefinitionId: __string
     ): DeleteFunctionDefinitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FunctionDefinitionId" -> FunctionDefinitionId.asInstanceOf[js.Any]
       )
 
@@ -1920,7 +1924,7 @@ package greengrass {
   object DeleteFunctionDefinitionResponse {
     def apply(
         ): DeleteFunctionDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteFunctionDefinitionResponse]
     }
@@ -1935,7 +1939,7 @@ package greengrass {
     def apply(
         GroupId: __string
     ): DeleteGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupId" -> GroupId.asInstanceOf[js.Any]
       )
 
@@ -1949,7 +1953,7 @@ package greengrass {
   object DeleteGroupResponse {
     def apply(
         ): DeleteGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteGroupResponse]
     }
@@ -1964,7 +1968,7 @@ package greengrass {
     def apply(
         LoggerDefinitionId: __string
     ): DeleteLoggerDefinitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LoggerDefinitionId" -> LoggerDefinitionId.asInstanceOf[js.Any]
       )
 
@@ -1978,7 +1982,7 @@ package greengrass {
   object DeleteLoggerDefinitionResponse {
     def apply(
         ): DeleteLoggerDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteLoggerDefinitionResponse]
     }
@@ -1993,7 +1997,7 @@ package greengrass {
     def apply(
         ResourceDefinitionId: __string
     ): DeleteResourceDefinitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceDefinitionId" -> ResourceDefinitionId.asInstanceOf[js.Any]
       )
 
@@ -2007,7 +2011,7 @@ package greengrass {
   object DeleteResourceDefinitionResponse {
     def apply(
         ): DeleteResourceDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteResourceDefinitionResponse]
     }
@@ -2022,7 +2026,7 @@ package greengrass {
     def apply(
         SubscriptionDefinitionId: __string
     ): DeleteSubscriptionDefinitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SubscriptionDefinitionId" -> SubscriptionDefinitionId.asInstanceOf[js.Any]
       )
 
@@ -2036,7 +2040,7 @@ package greengrass {
   object DeleteSubscriptionDefinitionResponse {
     def apply(
         ): DeleteSubscriptionDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DeleteSubscriptionDefinitionResponse]
     }
@@ -2062,12 +2066,12 @@ package greengrass {
         DeploymentType: js.UndefOr[DeploymentType] = js.undefined,
         GroupArn: js.UndefOr[__string] = js.undefined
     ): Deployment = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedAt.foreach(__v => __obj.update("CreatedAt", __v.asInstanceOf[js.Any]))
-      DeploymentArn.foreach(__v => __obj.update("DeploymentArn", __v.asInstanceOf[js.Any]))
-      DeploymentId.foreach(__v => __obj.update("DeploymentId", __v.asInstanceOf[js.Any]))
-      DeploymentType.foreach(__v => __obj.update("DeploymentType", __v.asInstanceOf[js.Any]))
-      GroupArn.foreach(__v => __obj.update("GroupArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      DeploymentArn.foreach(__v => __obj.updateDynamic("DeploymentArn")(__v.asInstanceOf[js.Any]))
+      DeploymentId.foreach(__v => __obj.updateDynamic("DeploymentId")(__v.asInstanceOf[js.Any]))
+      DeploymentType.foreach(__v => __obj.updateDynamic("DeploymentType")(__v.asInstanceOf[js.Any]))
+      GroupArn.foreach(__v => __obj.updateDynamic("GroupArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Deployment]
     }
   }
@@ -2102,13 +2106,13 @@ package greengrass {
         ThingArn: __string,
         SyncShadow: js.UndefOr[__boolean] = js.undefined
     ): Device = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CertificateArn" -> CertificateArn.asInstanceOf[js.Any],
         "Id"             -> Id.asInstanceOf[js.Any],
         "ThingArn"       -> ThingArn.asInstanceOf[js.Any]
       )
 
-      SyncShadow.foreach(__v => __obj.update("SyncShadow", __v.asInstanceOf[js.Any]))
+      SyncShadow.foreach(__v => __obj.updateDynamic("SyncShadow")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Device]
     }
   }
@@ -2125,8 +2129,8 @@ package greengrass {
     def apply(
         Devices: js.UndefOr[__listOfDevice] = js.undefined
     ): DeviceDefinitionVersion = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Devices.foreach(__v => __obj.update("Devices", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Devices.foreach(__v => __obj.updateDynamic("Devices")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeviceDefinitionVersion]
     }
   }
@@ -2140,7 +2144,7 @@ package greengrass {
     def apply(
         GroupId: __string
     ): DisassociateRoleFromGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupId" -> GroupId.asInstanceOf[js.Any]
       )
 
@@ -2157,8 +2161,8 @@ package greengrass {
     def apply(
         DisassociatedAt: js.UndefOr[__string] = js.undefined
     ): DisassociateRoleFromGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DisassociatedAt.foreach(__v => __obj.update("DisassociatedAt", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DisassociatedAt.foreach(__v => __obj.updateDynamic("DisassociatedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisassociateRoleFromGroupResponse]
     }
   }
@@ -2169,7 +2173,7 @@ package greengrass {
   object DisassociateServiceRoleFromAccountRequest {
     def apply(
         ): DisassociateServiceRoleFromAccountRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateServiceRoleFromAccountRequest]
     }
@@ -2184,8 +2188,8 @@ package greengrass {
     def apply(
         DisassociatedAt: js.UndefOr[__string] = js.undefined
     ): DisassociateServiceRoleFromAccountResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DisassociatedAt.foreach(__v => __obj.update("DisassociatedAt", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DisassociatedAt.foreach(__v => __obj.updateDynamic("DisassociatedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisassociateServiceRoleFromAccountResponse]
     }
   }
@@ -2211,9 +2215,9 @@ package greengrass {
         DetailedErrorCode: js.UndefOr[__string] = js.undefined,
         DetailedErrorMessage: js.UndefOr[__string] = js.undefined
     ): ErrorDetail = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DetailedErrorCode.foreach(__v => __obj.update("DetailedErrorCode", __v.asInstanceOf[js.Any]))
-      DetailedErrorMessage.foreach(__v => __obj.update("DetailedErrorMessage", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DetailedErrorCode.foreach(__v => __obj.updateDynamic("DetailedErrorCode")(__v.asInstanceOf[js.Any]))
+      DetailedErrorMessage.foreach(__v => __obj.updateDynamic("DetailedErrorMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ErrorDetail]
     }
   }
@@ -2234,12 +2238,12 @@ package greengrass {
         FunctionArn: js.UndefOr[__string] = js.undefined,
         FunctionConfiguration: js.UndefOr[FunctionConfiguration] = js.undefined
     ): Function = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
-      FunctionArn.foreach(__v => __obj.update("FunctionArn", __v.asInstanceOf[js.Any]))
-      FunctionConfiguration.foreach(__v => __obj.update("FunctionConfiguration", __v.asInstanceOf[js.Any]))
+      FunctionArn.foreach(__v => __obj.updateDynamic("FunctionArn")(__v.asInstanceOf[js.Any]))
+      FunctionConfiguration.foreach(__v => __obj.updateDynamic("FunctionConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Function]
     }
   }
@@ -2268,14 +2272,14 @@ package greengrass {
         Pinned: js.UndefOr[__boolean] = js.undefined,
         Timeout: js.UndefOr[__integer] = js.undefined
     ): FunctionConfiguration = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EncodingType.foreach(__v => __obj.update("EncodingType", __v.asInstanceOf[js.Any]))
-      Environment.foreach(__v => __obj.update("Environment", __v.asInstanceOf[js.Any]))
-      ExecArgs.foreach(__v => __obj.update("ExecArgs", __v.asInstanceOf[js.Any]))
-      Executable.foreach(__v => __obj.update("Executable", __v.asInstanceOf[js.Any]))
-      MemorySize.foreach(__v => __obj.update("MemorySize", __v.asInstanceOf[js.Any]))
-      Pinned.foreach(__v => __obj.update("Pinned", __v.asInstanceOf[js.Any]))
-      Timeout.foreach(__v => __obj.update("Timeout", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EncodingType.foreach(__v => __obj.updateDynamic("EncodingType")(__v.asInstanceOf[js.Any]))
+      Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
+      ExecArgs.foreach(__v => __obj.updateDynamic("ExecArgs")(__v.asInstanceOf[js.Any]))
+      Executable.foreach(__v => __obj.updateDynamic("Executable")(__v.asInstanceOf[js.Any]))
+      MemorySize.foreach(__v => __obj.updateDynamic("MemorySize")(__v.asInstanceOf[js.Any]))
+      Pinned.foreach(__v => __obj.updateDynamic("Pinned")(__v.asInstanceOf[js.Any]))
+      Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FunctionConfiguration]
     }
   }
@@ -2298,11 +2302,11 @@ package greengrass {
         ResourceAccessPolicies: js.UndefOr[__listOfResourceAccessPolicy] = js.undefined,
         Variables: js.UndefOr[__mapOf__string] = js.undefined
     ): FunctionConfigurationEnvironment = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccessSysfs.foreach(__v => __obj.update("AccessSysfs", __v.asInstanceOf[js.Any]))
-      Execution.foreach(__v => __obj.update("Execution", __v.asInstanceOf[js.Any]))
-      ResourceAccessPolicies.foreach(__v => __obj.update("ResourceAccessPolicies", __v.asInstanceOf[js.Any]))
-      Variables.foreach(__v => __obj.update("Variables", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccessSysfs.foreach(__v => __obj.updateDynamic("AccessSysfs")(__v.asInstanceOf[js.Any]))
+      Execution.foreach(__v => __obj.updateDynamic("Execution")(__v.asInstanceOf[js.Any]))
+      ResourceAccessPolicies.foreach(__v => __obj.updateDynamic("ResourceAccessPolicies")(__v.asInstanceOf[js.Any]))
+      Variables.foreach(__v => __obj.updateDynamic("Variables")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FunctionConfigurationEnvironment]
     }
   }
@@ -2319,8 +2323,8 @@ package greengrass {
     def apply(
         Execution: js.UndefOr[FunctionDefaultExecutionConfig] = js.undefined
     ): FunctionDefaultConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Execution.foreach(__v => __obj.update("Execution", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Execution.foreach(__v => __obj.updateDynamic("Execution")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FunctionDefaultConfig]
     }
   }
@@ -2339,9 +2343,9 @@ package greengrass {
         IsolationMode: js.UndefOr[FunctionIsolationMode] = js.undefined,
         RunAs: js.UndefOr[FunctionRunAsConfig] = js.undefined
     ): FunctionDefaultExecutionConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IsolationMode.foreach(__v => __obj.update("IsolationMode", __v.asInstanceOf[js.Any]))
-      RunAs.foreach(__v => __obj.update("RunAs", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IsolationMode.foreach(__v => __obj.updateDynamic("IsolationMode")(__v.asInstanceOf[js.Any]))
+      RunAs.foreach(__v => __obj.updateDynamic("RunAs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FunctionDefaultExecutionConfig]
     }
   }
@@ -2360,9 +2364,9 @@ package greengrass {
         DefaultConfig: js.UndefOr[FunctionDefaultConfig] = js.undefined,
         Functions: js.UndefOr[__listOfFunction] = js.undefined
     ): FunctionDefinitionVersion = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DefaultConfig.foreach(__v => __obj.update("DefaultConfig", __v.asInstanceOf[js.Any]))
-      Functions.foreach(__v => __obj.update("Functions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DefaultConfig.foreach(__v => __obj.updateDynamic("DefaultConfig")(__v.asInstanceOf[js.Any]))
+      Functions.foreach(__v => __obj.updateDynamic("Functions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FunctionDefinitionVersion]
     }
   }
@@ -2381,9 +2385,9 @@ package greengrass {
         IsolationMode: js.UndefOr[FunctionIsolationMode] = js.undefined,
         RunAs: js.UndefOr[FunctionRunAsConfig] = js.undefined
     ): FunctionExecutionConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IsolationMode.foreach(__v => __obj.update("IsolationMode", __v.asInstanceOf[js.Any]))
-      RunAs.foreach(__v => __obj.update("RunAs", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IsolationMode.foreach(__v => __obj.updateDynamic("IsolationMode")(__v.asInstanceOf[js.Any]))
+      RunAs.foreach(__v => __obj.updateDynamic("RunAs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FunctionExecutionConfig]
     }
   }
@@ -2412,9 +2416,9 @@ package greengrass {
         Gid: js.UndefOr[__integer] = js.undefined,
         Uid: js.UndefOr[__integer] = js.undefined
     ): FunctionRunAsConfig = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Gid.foreach(__v => __obj.update("Gid", __v.asInstanceOf[js.Any]))
-      Uid.foreach(__v => __obj.update("Uid", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Gid.foreach(__v => __obj.updateDynamic("Gid")(__v.asInstanceOf[js.Any]))
+      Uid.foreach(__v => __obj.updateDynamic("Uid")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FunctionRunAsConfig]
     }
   }
@@ -2428,7 +2432,7 @@ package greengrass {
     def apply(
         GroupId: __string
     ): GetAssociatedRoleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupId" -> GroupId.asInstanceOf[js.Any]
       )
 
@@ -2447,9 +2451,9 @@ package greengrass {
         AssociatedAt: js.UndefOr[__string] = js.undefined,
         RoleArn: js.UndefOr[__string] = js.undefined
     ): GetAssociatedRoleResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssociatedAt.foreach(__v => __obj.update("AssociatedAt", __v.asInstanceOf[js.Any]))
-      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssociatedAt.foreach(__v => __obj.updateDynamic("AssociatedAt")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAssociatedRoleResponse]
     }
   }
@@ -2463,7 +2467,7 @@ package greengrass {
     def apply(
         BulkDeploymentId: __string
     ): GetBulkDeploymentStatusRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BulkDeploymentId" -> BulkDeploymentId.asInstanceOf[js.Any]
       )
 
@@ -2490,13 +2494,13 @@ package greengrass {
         ErrorMessage: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): GetBulkDeploymentStatusResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BulkDeploymentMetrics.foreach(__v => __obj.update("BulkDeploymentMetrics", __v.asInstanceOf[js.Any]))
-      BulkDeploymentStatus.foreach(__v => __obj.update("BulkDeploymentStatus", __v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.update("CreatedAt", __v.asInstanceOf[js.Any]))
-      ErrorDetails.foreach(__v => __obj.update("ErrorDetails", __v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BulkDeploymentMetrics.foreach(__v => __obj.updateDynamic("BulkDeploymentMetrics")(__v.asInstanceOf[js.Any]))
+      BulkDeploymentStatus.foreach(__v => __obj.updateDynamic("BulkDeploymentStatus")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      ErrorDetails.foreach(__v => __obj.updateDynamic("ErrorDetails")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBulkDeploymentStatusResponse]
     }
   }
@@ -2510,7 +2514,7 @@ package greengrass {
     def apply(
         ThingName: __string
     ): GetConnectivityInfoRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ThingName" -> ThingName.asInstanceOf[js.Any]
       )
 
@@ -2529,9 +2533,9 @@ package greengrass {
         ConnectivityInfo: js.UndefOr[__listOfConnectivityInfo] = js.undefined,
         Message: js.UndefOr[__string] = js.undefined
     ): GetConnectivityInfoResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ConnectivityInfo.foreach(__v => __obj.update("ConnectivityInfo", __v.asInstanceOf[js.Any]))
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ConnectivityInfo.foreach(__v => __obj.updateDynamic("ConnectivityInfo")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetConnectivityInfoResponse]
     }
   }
@@ -2545,7 +2549,7 @@ package greengrass {
     def apply(
         ConnectorDefinitionId: __string
     ): GetConnectorDefinitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConnectorDefinitionId" -> ConnectorDefinitionId.asInstanceOf[js.Any]
       )
 
@@ -2576,15 +2580,15 @@ package greengrass {
         Name: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): GetConnectorDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      LastUpdatedTimestamp.foreach(__v => __obj.update("LastUpdatedTimestamp", __v.asInstanceOf[js.Any]))
-      LatestVersion.foreach(__v => __obj.update("LatestVersion", __v.asInstanceOf[js.Any]))
-      LatestVersionArn.foreach(__v => __obj.update("LatestVersionArn", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      LatestVersion.foreach(__v => __obj.updateDynamic("LatestVersion")(__v.asInstanceOf[js.Any]))
+      LatestVersionArn.foreach(__v => __obj.updateDynamic("LatestVersionArn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetConnectorDefinitionResponse]
     }
   }
@@ -2602,12 +2606,12 @@ package greengrass {
         ConnectorDefinitionVersionId: __string,
         NextToken: js.UndefOr[__string] = js.undefined
     ): GetConnectorDefinitionVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConnectorDefinitionId"        -> ConnectorDefinitionId.asInstanceOf[js.Any],
         "ConnectorDefinitionVersionId" -> ConnectorDefinitionVersionId.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetConnectorDefinitionVersionRequest]
     }
   }
@@ -2631,13 +2635,13 @@ package greengrass {
         NextToken: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__string] = js.undefined
     ): GetConnectorDefinitionVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Definition.foreach(__v => __obj.update("Definition", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Definition.foreach(__v => __obj.updateDynamic("Definition")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetConnectorDefinitionVersionResponse]
     }
   }
@@ -2651,7 +2655,7 @@ package greengrass {
     def apply(
         CoreDefinitionId: __string
     ): GetCoreDefinitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CoreDefinitionId" -> CoreDefinitionId.asInstanceOf[js.Any]
       )
 
@@ -2682,15 +2686,15 @@ package greengrass {
         Name: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): GetCoreDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      LastUpdatedTimestamp.foreach(__v => __obj.update("LastUpdatedTimestamp", __v.asInstanceOf[js.Any]))
-      LatestVersion.foreach(__v => __obj.update("LatestVersion", __v.asInstanceOf[js.Any]))
-      LatestVersionArn.foreach(__v => __obj.update("LatestVersionArn", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      LatestVersion.foreach(__v => __obj.updateDynamic("LatestVersion")(__v.asInstanceOf[js.Any]))
+      LatestVersionArn.foreach(__v => __obj.updateDynamic("LatestVersionArn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCoreDefinitionResponse]
     }
   }
@@ -2706,7 +2710,7 @@ package greengrass {
         CoreDefinitionId: __string,
         CoreDefinitionVersionId: __string
     ): GetCoreDefinitionVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CoreDefinitionId"        -> CoreDefinitionId.asInstanceOf[js.Any],
         "CoreDefinitionVersionId" -> CoreDefinitionVersionId.asInstanceOf[js.Any]
       )
@@ -2734,13 +2738,13 @@ package greengrass {
         NextToken: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__string] = js.undefined
     ): GetCoreDefinitionVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Definition.foreach(__v => __obj.update("Definition", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Definition.foreach(__v => __obj.updateDynamic("Definition")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCoreDefinitionVersionResponse]
     }
   }
@@ -2756,7 +2760,7 @@ package greengrass {
         DeploymentId: __string,
         GroupId: __string
     ): GetDeploymentStatusRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DeploymentId" -> DeploymentId.asInstanceOf[js.Any],
         "GroupId"      -> GroupId.asInstanceOf[js.Any]
       )
@@ -2782,12 +2786,12 @@ package greengrass {
         ErrorMessage: js.UndefOr[__string] = js.undefined,
         UpdatedAt: js.UndefOr[__string] = js.undefined
     ): GetDeploymentStatusResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DeploymentStatus.foreach(__v => __obj.update("DeploymentStatus", __v.asInstanceOf[js.Any]))
-      DeploymentType.foreach(__v => __obj.update("DeploymentType", __v.asInstanceOf[js.Any]))
-      ErrorDetails.foreach(__v => __obj.update("ErrorDetails", __v.asInstanceOf[js.Any]))
-      ErrorMessage.foreach(__v => __obj.update("ErrorMessage", __v.asInstanceOf[js.Any]))
-      UpdatedAt.foreach(__v => __obj.update("UpdatedAt", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DeploymentStatus.foreach(__v => __obj.updateDynamic("DeploymentStatus")(__v.asInstanceOf[js.Any]))
+      DeploymentType.foreach(__v => __obj.updateDynamic("DeploymentType")(__v.asInstanceOf[js.Any]))
+      ErrorDetails.foreach(__v => __obj.updateDynamic("ErrorDetails")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDeploymentStatusResponse]
     }
   }
@@ -2801,7 +2805,7 @@ package greengrass {
     def apply(
         DeviceDefinitionId: __string
     ): GetDeviceDefinitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DeviceDefinitionId" -> DeviceDefinitionId.asInstanceOf[js.Any]
       )
 
@@ -2832,15 +2836,15 @@ package greengrass {
         Name: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): GetDeviceDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      LastUpdatedTimestamp.foreach(__v => __obj.update("LastUpdatedTimestamp", __v.asInstanceOf[js.Any]))
-      LatestVersion.foreach(__v => __obj.update("LatestVersion", __v.asInstanceOf[js.Any]))
-      LatestVersionArn.foreach(__v => __obj.update("LatestVersionArn", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      LatestVersion.foreach(__v => __obj.updateDynamic("LatestVersion")(__v.asInstanceOf[js.Any]))
+      LatestVersionArn.foreach(__v => __obj.updateDynamic("LatestVersionArn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDeviceDefinitionResponse]
     }
   }
@@ -2858,12 +2862,12 @@ package greengrass {
         DeviceDefinitionVersionId: __string,
         NextToken: js.UndefOr[__string] = js.undefined
     ): GetDeviceDefinitionVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DeviceDefinitionId"        -> DeviceDefinitionId.asInstanceOf[js.Any],
         "DeviceDefinitionVersionId" -> DeviceDefinitionVersionId.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDeviceDefinitionVersionRequest]
     }
   }
@@ -2887,13 +2891,13 @@ package greengrass {
         NextToken: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__string] = js.undefined
     ): GetDeviceDefinitionVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Definition.foreach(__v => __obj.update("Definition", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Definition.foreach(__v => __obj.updateDynamic("Definition")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDeviceDefinitionVersionResponse]
     }
   }
@@ -2907,7 +2911,7 @@ package greengrass {
     def apply(
         FunctionDefinitionId: __string
     ): GetFunctionDefinitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FunctionDefinitionId" -> FunctionDefinitionId.asInstanceOf[js.Any]
       )
 
@@ -2938,15 +2942,15 @@ package greengrass {
         Name: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): GetFunctionDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      LastUpdatedTimestamp.foreach(__v => __obj.update("LastUpdatedTimestamp", __v.asInstanceOf[js.Any]))
-      LatestVersion.foreach(__v => __obj.update("LatestVersion", __v.asInstanceOf[js.Any]))
-      LatestVersionArn.foreach(__v => __obj.update("LatestVersionArn", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      LatestVersion.foreach(__v => __obj.updateDynamic("LatestVersion")(__v.asInstanceOf[js.Any]))
+      LatestVersionArn.foreach(__v => __obj.updateDynamic("LatestVersionArn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFunctionDefinitionResponse]
     }
   }
@@ -2964,12 +2968,12 @@ package greengrass {
         FunctionDefinitionVersionId: __string,
         NextToken: js.UndefOr[__string] = js.undefined
     ): GetFunctionDefinitionVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FunctionDefinitionId"        -> FunctionDefinitionId.asInstanceOf[js.Any],
         "FunctionDefinitionVersionId" -> FunctionDefinitionVersionId.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFunctionDefinitionVersionRequest]
     }
   }
@@ -2993,13 +2997,13 @@ package greengrass {
         NextToken: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__string] = js.undefined
     ): GetFunctionDefinitionVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Definition.foreach(__v => __obj.update("Definition", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Definition.foreach(__v => __obj.updateDynamic("Definition")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFunctionDefinitionVersionResponse]
     }
   }
@@ -3015,7 +3019,7 @@ package greengrass {
         CertificateAuthorityId: __string,
         GroupId: __string
     ): GetGroupCertificateAuthorityRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CertificateAuthorityId" -> CertificateAuthorityId.asInstanceOf[js.Any],
         "GroupId"                -> GroupId.asInstanceOf[js.Any]
       )
@@ -3037,12 +3041,14 @@ package greengrass {
         GroupCertificateAuthorityId: js.UndefOr[__string] = js.undefined,
         PemEncodedCertificate: js.UndefOr[__string] = js.undefined
     ): GetGroupCertificateAuthorityResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       GroupCertificateAuthorityArn.foreach(
-        __v => __obj.update("GroupCertificateAuthorityArn", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("GroupCertificateAuthorityArn")(__v.asInstanceOf[js.Any])
       )
-      GroupCertificateAuthorityId.foreach(__v => __obj.update("GroupCertificateAuthorityId", __v.asInstanceOf[js.Any]))
-      PemEncodedCertificate.foreach(__v => __obj.update("PemEncodedCertificate", __v.asInstanceOf[js.Any]))
+      GroupCertificateAuthorityId.foreach(
+        __v => __obj.updateDynamic("GroupCertificateAuthorityId")(__v.asInstanceOf[js.Any])
+      )
+      PemEncodedCertificate.foreach(__v => __obj.updateDynamic("PemEncodedCertificate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetGroupCertificateAuthorityResponse]
     }
   }
@@ -3056,7 +3062,7 @@ package greengrass {
     def apply(
         GroupId: __string
     ): GetGroupCertificateConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupId" -> GroupId.asInstanceOf[js.Any]
       )
 
@@ -3077,14 +3083,14 @@ package greengrass {
         CertificateExpiryInMilliseconds: js.UndefOr[__string] = js.undefined,
         GroupId: js.UndefOr[__string] = js.undefined
     ): GetGroupCertificateConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       CertificateAuthorityExpiryInMilliseconds.foreach(
-        __v => __obj.update("CertificateAuthorityExpiryInMilliseconds", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("CertificateAuthorityExpiryInMilliseconds")(__v.asInstanceOf[js.Any])
       )
       CertificateExpiryInMilliseconds.foreach(
-        __v => __obj.update("CertificateExpiryInMilliseconds", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("CertificateExpiryInMilliseconds")(__v.asInstanceOf[js.Any])
       )
-      GroupId.foreach(__v => __obj.update("GroupId", __v.asInstanceOf[js.Any]))
+      GroupId.foreach(__v => __obj.updateDynamic("GroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetGroupCertificateConfigurationResponse]
     }
   }
@@ -3098,7 +3104,7 @@ package greengrass {
     def apply(
         GroupId: __string
     ): GetGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupId" -> GroupId.asInstanceOf[js.Any]
       )
 
@@ -3129,15 +3135,15 @@ package greengrass {
         Name: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): GetGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      LastUpdatedTimestamp.foreach(__v => __obj.update("LastUpdatedTimestamp", __v.asInstanceOf[js.Any]))
-      LatestVersion.foreach(__v => __obj.update("LatestVersion", __v.asInstanceOf[js.Any]))
-      LatestVersionArn.foreach(__v => __obj.update("LatestVersionArn", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      LatestVersion.foreach(__v => __obj.updateDynamic("LatestVersion")(__v.asInstanceOf[js.Any]))
+      LatestVersionArn.foreach(__v => __obj.updateDynamic("LatestVersionArn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetGroupResponse]
     }
   }
@@ -3153,7 +3159,7 @@ package greengrass {
         GroupId: __string,
         GroupVersionId: __string
     ): GetGroupVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupId"        -> GroupId.asInstanceOf[js.Any],
         "GroupVersionId" -> GroupVersionId.asInstanceOf[js.Any]
       )
@@ -3179,12 +3185,12 @@ package greengrass {
         Id: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__string] = js.undefined
     ): GetGroupVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Definition.foreach(__v => __obj.update("Definition", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Definition.foreach(__v => __obj.updateDynamic("Definition")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetGroupVersionResponse]
     }
   }
@@ -3198,7 +3204,7 @@ package greengrass {
     def apply(
         LoggerDefinitionId: __string
     ): GetLoggerDefinitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LoggerDefinitionId" -> LoggerDefinitionId.asInstanceOf[js.Any]
       )
 
@@ -3229,15 +3235,15 @@ package greengrass {
         Name: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): GetLoggerDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      LastUpdatedTimestamp.foreach(__v => __obj.update("LastUpdatedTimestamp", __v.asInstanceOf[js.Any]))
-      LatestVersion.foreach(__v => __obj.update("LatestVersion", __v.asInstanceOf[js.Any]))
-      LatestVersionArn.foreach(__v => __obj.update("LatestVersionArn", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      LatestVersion.foreach(__v => __obj.updateDynamic("LatestVersion")(__v.asInstanceOf[js.Any]))
+      LatestVersionArn.foreach(__v => __obj.updateDynamic("LatestVersionArn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLoggerDefinitionResponse]
     }
   }
@@ -3255,12 +3261,12 @@ package greengrass {
         LoggerDefinitionVersionId: __string,
         NextToken: js.UndefOr[__string] = js.undefined
     ): GetLoggerDefinitionVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LoggerDefinitionId"        -> LoggerDefinitionId.asInstanceOf[js.Any],
         "LoggerDefinitionVersionId" -> LoggerDefinitionVersionId.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLoggerDefinitionVersionRequest]
     }
   }
@@ -3282,12 +3288,12 @@ package greengrass {
         Id: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__string] = js.undefined
     ): GetLoggerDefinitionVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Definition.foreach(__v => __obj.update("Definition", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Definition.foreach(__v => __obj.updateDynamic("Definition")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLoggerDefinitionVersionResponse]
     }
   }
@@ -3301,7 +3307,7 @@ package greengrass {
     def apply(
         ResourceDefinitionId: __string
     ): GetResourceDefinitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceDefinitionId" -> ResourceDefinitionId.asInstanceOf[js.Any]
       )
 
@@ -3332,15 +3338,15 @@ package greengrass {
         Name: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): GetResourceDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      LastUpdatedTimestamp.foreach(__v => __obj.update("LastUpdatedTimestamp", __v.asInstanceOf[js.Any]))
-      LatestVersion.foreach(__v => __obj.update("LatestVersion", __v.asInstanceOf[js.Any]))
-      LatestVersionArn.foreach(__v => __obj.update("LatestVersionArn", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      LatestVersion.foreach(__v => __obj.updateDynamic("LatestVersion")(__v.asInstanceOf[js.Any]))
+      LatestVersionArn.foreach(__v => __obj.updateDynamic("LatestVersionArn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetResourceDefinitionResponse]
     }
   }
@@ -3356,7 +3362,7 @@ package greengrass {
         ResourceDefinitionId: __string,
         ResourceDefinitionVersionId: __string
     ): GetResourceDefinitionVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceDefinitionId"        -> ResourceDefinitionId.asInstanceOf[js.Any],
         "ResourceDefinitionVersionId" -> ResourceDefinitionVersionId.asInstanceOf[js.Any]
       )
@@ -3382,12 +3388,12 @@ package greengrass {
         Id: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__string] = js.undefined
     ): GetResourceDefinitionVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Definition.foreach(__v => __obj.update("Definition", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Definition.foreach(__v => __obj.updateDynamic("Definition")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetResourceDefinitionVersionResponse]
     }
   }
@@ -3398,7 +3404,7 @@ package greengrass {
   object GetServiceRoleForAccountRequest {
     def apply(
         ): GetServiceRoleForAccountRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetServiceRoleForAccountRequest]
     }
@@ -3415,9 +3421,9 @@ package greengrass {
         AssociatedAt: js.UndefOr[__string] = js.undefined,
         RoleArn: js.UndefOr[__string] = js.undefined
     ): GetServiceRoleForAccountResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AssociatedAt.foreach(__v => __obj.update("AssociatedAt", __v.asInstanceOf[js.Any]))
-      RoleArn.foreach(__v => __obj.update("RoleArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AssociatedAt.foreach(__v => __obj.updateDynamic("AssociatedAt")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetServiceRoleForAccountResponse]
     }
   }
@@ -3431,7 +3437,7 @@ package greengrass {
     def apply(
         SubscriptionDefinitionId: __string
     ): GetSubscriptionDefinitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SubscriptionDefinitionId" -> SubscriptionDefinitionId.asInstanceOf[js.Any]
       )
 
@@ -3462,15 +3468,15 @@ package greengrass {
         Name: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): GetSubscriptionDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      LastUpdatedTimestamp.foreach(__v => __obj.update("LastUpdatedTimestamp", __v.asInstanceOf[js.Any]))
-      LatestVersion.foreach(__v => __obj.update("LatestVersion", __v.asInstanceOf[js.Any]))
-      LatestVersionArn.foreach(__v => __obj.update("LatestVersionArn", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      LatestVersion.foreach(__v => __obj.updateDynamic("LatestVersion")(__v.asInstanceOf[js.Any]))
+      LatestVersionArn.foreach(__v => __obj.updateDynamic("LatestVersionArn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSubscriptionDefinitionResponse]
     }
   }
@@ -3488,12 +3494,12 @@ package greengrass {
         SubscriptionDefinitionVersionId: __string,
         NextToken: js.UndefOr[__string] = js.undefined
     ): GetSubscriptionDefinitionVersionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SubscriptionDefinitionId"        -> SubscriptionDefinitionId.asInstanceOf[js.Any],
         "SubscriptionDefinitionVersionId" -> SubscriptionDefinitionVersionId.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSubscriptionDefinitionVersionRequest]
     }
   }
@@ -3517,13 +3523,13 @@ package greengrass {
         NextToken: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__string] = js.undefined
     ): GetSubscriptionDefinitionVersionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Definition.foreach(__v => __obj.update("Definition", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Definition.foreach(__v => __obj.updateDynamic("Definition")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetSubscriptionDefinitionVersionResponse]
     }
   }
@@ -3542,11 +3548,13 @@ package greengrass {
         GroupCertificateAuthorityArn: js.UndefOr[__string] = js.undefined,
         GroupCertificateAuthorityId: js.UndefOr[__string] = js.undefined
     ): GroupCertificateAuthorityProperties = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       GroupCertificateAuthorityArn.foreach(
-        __v => __obj.update("GroupCertificateAuthorityArn", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("GroupCertificateAuthorityArn")(__v.asInstanceOf[js.Any])
       )
-      GroupCertificateAuthorityId.foreach(__v => __obj.update("GroupCertificateAuthorityId", __v.asInstanceOf[js.Any]))
+      GroupCertificateAuthorityId.foreach(
+        __v => __obj.updateDynamic("GroupCertificateAuthorityId")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[GroupCertificateAuthorityProperties]
     }
   }
@@ -3575,14 +3583,14 @@ package greengrass {
         LatestVersionArn: js.UndefOr[__string] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined
     ): GroupInformation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      LastUpdatedTimestamp.foreach(__v => __obj.update("LastUpdatedTimestamp", __v.asInstanceOf[js.Any]))
-      LatestVersion.foreach(__v => __obj.update("LatestVersion", __v.asInstanceOf[js.Any]))
-      LatestVersionArn.foreach(__v => __obj.update("LatestVersionArn", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      LatestVersion.foreach(__v => __obj.updateDynamic("LatestVersion")(__v.asInstanceOf[js.Any]))
+      LatestVersionArn.foreach(__v => __obj.updateDynamic("LatestVersionArn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GroupInformation]
     }
   }
@@ -3601,9 +3609,9 @@ package greengrass {
         AutoAddGroupOwner: js.UndefOr[__boolean] = js.undefined,
         GroupOwner: js.UndefOr[__string] = js.undefined
     ): GroupOwnerSetting = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AutoAddGroupOwner.foreach(__v => __obj.update("AutoAddGroupOwner", __v.asInstanceOf[js.Any]))
-      GroupOwner.foreach(__v => __obj.update("GroupOwner", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AutoAddGroupOwner.foreach(__v => __obj.updateDynamic("AutoAddGroupOwner")(__v.asInstanceOf[js.Any]))
+      GroupOwner.foreach(__v => __obj.updateDynamic("GroupOwner")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GroupOwnerSetting]
     }
   }
@@ -3632,21 +3640,25 @@ package greengrass {
         ResourceDefinitionVersionArn: js.UndefOr[__string] = js.undefined,
         SubscriptionDefinitionVersionArn: js.UndefOr[__string] = js.undefined
     ): GroupVersion = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       ConnectorDefinitionVersionArn.foreach(
-        __v => __obj.update("ConnectorDefinitionVersionArn", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ConnectorDefinitionVersionArn")(__v.asInstanceOf[js.Any])
       )
-      CoreDefinitionVersionArn.foreach(__v => __obj.update("CoreDefinitionVersionArn", __v.asInstanceOf[js.Any]))
-      DeviceDefinitionVersionArn.foreach(__v => __obj.update("DeviceDefinitionVersionArn", __v.asInstanceOf[js.Any]))
+      CoreDefinitionVersionArn.foreach(__v => __obj.updateDynamic("CoreDefinitionVersionArn")(__v.asInstanceOf[js.Any]))
+      DeviceDefinitionVersionArn.foreach(
+        __v => __obj.updateDynamic("DeviceDefinitionVersionArn")(__v.asInstanceOf[js.Any])
+      )
       FunctionDefinitionVersionArn.foreach(
-        __v => __obj.update("FunctionDefinitionVersionArn", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("FunctionDefinitionVersionArn")(__v.asInstanceOf[js.Any])
       )
-      LoggerDefinitionVersionArn.foreach(__v => __obj.update("LoggerDefinitionVersionArn", __v.asInstanceOf[js.Any]))
+      LoggerDefinitionVersionArn.foreach(
+        __v => __obj.updateDynamic("LoggerDefinitionVersionArn")(__v.asInstanceOf[js.Any])
+      )
       ResourceDefinitionVersionArn.foreach(
-        __v => __obj.update("ResourceDefinitionVersionArn", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ResourceDefinitionVersionArn")(__v.asInstanceOf[js.Any])
       )
       SubscriptionDefinitionVersionArn.foreach(
-        __v => __obj.update("SubscriptionDefinitionVersionArn", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("SubscriptionDefinitionVersionArn")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[GroupVersion]
     }
@@ -3665,12 +3677,12 @@ package greengrass {
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListBulkDeploymentDetailedReportsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BulkDeploymentId" -> BulkDeploymentId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBulkDeploymentDetailedReportsRequest]
     }
   }
@@ -3686,9 +3698,9 @@ package greengrass {
         Deployments: js.UndefOr[BulkDeploymentResults] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListBulkDeploymentDetailedReportsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Deployments.foreach(__v => __obj.update("Deployments", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Deployments.foreach(__v => __obj.updateDynamic("Deployments")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBulkDeploymentDetailedReportsResponse]
     }
   }
@@ -3704,9 +3716,9 @@ package greengrass {
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListBulkDeploymentsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBulkDeploymentsRequest]
     }
   }
@@ -3722,9 +3734,9 @@ package greengrass {
         BulkDeployments: js.UndefOr[BulkDeployments] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListBulkDeploymentsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BulkDeployments.foreach(__v => __obj.update("BulkDeployments", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BulkDeployments.foreach(__v => __obj.updateDynamic("BulkDeployments")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBulkDeploymentsResponse]
     }
   }
@@ -3742,12 +3754,12 @@ package greengrass {
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListConnectorDefinitionVersionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConnectorDefinitionId" -> ConnectorDefinitionId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListConnectorDefinitionVersionsRequest]
     }
   }
@@ -3763,9 +3775,9 @@ package greengrass {
         NextToken: js.UndefOr[__string] = js.undefined,
         Versions: js.UndefOr[__listOfVersionInformation] = js.undefined
     ): ListConnectorDefinitionVersionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Versions.foreach(__v => __obj.update("Versions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Versions.foreach(__v => __obj.updateDynamic("Versions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListConnectorDefinitionVersionsResponse]
     }
   }
@@ -3781,9 +3793,9 @@ package greengrass {
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListConnectorDefinitionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListConnectorDefinitionsRequest]
     }
   }
@@ -3799,9 +3811,9 @@ package greengrass {
         Definitions: js.UndefOr[__listOfDefinitionInformation] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListConnectorDefinitionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Definitions.foreach(__v => __obj.update("Definitions", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Definitions.foreach(__v => __obj.updateDynamic("Definitions")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListConnectorDefinitionsResponse]
     }
   }
@@ -3819,12 +3831,12 @@ package greengrass {
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListCoreDefinitionVersionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CoreDefinitionId" -> CoreDefinitionId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCoreDefinitionVersionsRequest]
     }
   }
@@ -3840,9 +3852,9 @@ package greengrass {
         NextToken: js.UndefOr[__string] = js.undefined,
         Versions: js.UndefOr[__listOfVersionInformation] = js.undefined
     ): ListCoreDefinitionVersionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Versions.foreach(__v => __obj.update("Versions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Versions.foreach(__v => __obj.updateDynamic("Versions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCoreDefinitionVersionsResponse]
     }
   }
@@ -3858,9 +3870,9 @@ package greengrass {
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListCoreDefinitionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCoreDefinitionsRequest]
     }
   }
@@ -3876,9 +3888,9 @@ package greengrass {
         Definitions: js.UndefOr[__listOfDefinitionInformation] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListCoreDefinitionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Definitions.foreach(__v => __obj.update("Definitions", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Definitions.foreach(__v => __obj.updateDynamic("Definitions")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCoreDefinitionsResponse]
     }
   }
@@ -3896,12 +3908,12 @@ package greengrass {
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListDeploymentsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupId" -> GroupId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDeploymentsRequest]
     }
   }
@@ -3917,9 +3929,9 @@ package greengrass {
         Deployments: js.UndefOr[Deployments] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListDeploymentsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Deployments.foreach(__v => __obj.update("Deployments", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Deployments.foreach(__v => __obj.updateDynamic("Deployments")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDeploymentsResponse]
     }
   }
@@ -3937,12 +3949,12 @@ package greengrass {
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListDeviceDefinitionVersionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DeviceDefinitionId" -> DeviceDefinitionId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDeviceDefinitionVersionsRequest]
     }
   }
@@ -3958,9 +3970,9 @@ package greengrass {
         NextToken: js.UndefOr[__string] = js.undefined,
         Versions: js.UndefOr[__listOfVersionInformation] = js.undefined
     ): ListDeviceDefinitionVersionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Versions.foreach(__v => __obj.update("Versions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Versions.foreach(__v => __obj.updateDynamic("Versions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDeviceDefinitionVersionsResponse]
     }
   }
@@ -3976,9 +3988,9 @@ package greengrass {
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListDeviceDefinitionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDeviceDefinitionsRequest]
     }
   }
@@ -3994,9 +4006,9 @@ package greengrass {
         Definitions: js.UndefOr[__listOfDefinitionInformation] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListDeviceDefinitionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Definitions.foreach(__v => __obj.update("Definitions", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Definitions.foreach(__v => __obj.updateDynamic("Definitions")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDeviceDefinitionsResponse]
     }
   }
@@ -4014,12 +4026,12 @@ package greengrass {
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListFunctionDefinitionVersionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FunctionDefinitionId" -> FunctionDefinitionId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFunctionDefinitionVersionsRequest]
     }
   }
@@ -4035,9 +4047,9 @@ package greengrass {
         NextToken: js.UndefOr[__string] = js.undefined,
         Versions: js.UndefOr[__listOfVersionInformation] = js.undefined
     ): ListFunctionDefinitionVersionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Versions.foreach(__v => __obj.update("Versions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Versions.foreach(__v => __obj.updateDynamic("Versions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFunctionDefinitionVersionsResponse]
     }
   }
@@ -4053,9 +4065,9 @@ package greengrass {
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListFunctionDefinitionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFunctionDefinitionsRequest]
     }
   }
@@ -4071,9 +4083,9 @@ package greengrass {
         Definitions: js.UndefOr[__listOfDefinitionInformation] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListFunctionDefinitionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Definitions.foreach(__v => __obj.update("Definitions", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Definitions.foreach(__v => __obj.updateDynamic("Definitions")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFunctionDefinitionsResponse]
     }
   }
@@ -4087,7 +4099,7 @@ package greengrass {
     def apply(
         GroupId: __string
     ): ListGroupCertificateAuthoritiesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupId" -> GroupId.asInstanceOf[js.Any]
       )
 
@@ -4104,8 +4116,10 @@ package greengrass {
     def apply(
         GroupCertificateAuthorities: js.UndefOr[__listOfGroupCertificateAuthorityProperties] = js.undefined
     ): ListGroupCertificateAuthoritiesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GroupCertificateAuthorities.foreach(__v => __obj.update("GroupCertificateAuthorities", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GroupCertificateAuthorities.foreach(
+        __v => __obj.updateDynamic("GroupCertificateAuthorities")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[ListGroupCertificateAuthoritiesResponse]
     }
   }
@@ -4123,12 +4137,12 @@ package greengrass {
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListGroupVersionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupId" -> GroupId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGroupVersionsRequest]
     }
   }
@@ -4144,9 +4158,9 @@ package greengrass {
         NextToken: js.UndefOr[__string] = js.undefined,
         Versions: js.UndefOr[__listOfVersionInformation] = js.undefined
     ): ListGroupVersionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Versions.foreach(__v => __obj.update("Versions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Versions.foreach(__v => __obj.updateDynamic("Versions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGroupVersionsResponse]
     }
   }
@@ -4162,9 +4176,9 @@ package greengrass {
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListGroupsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGroupsRequest]
     }
   }
@@ -4180,9 +4194,9 @@ package greengrass {
         Groups: js.UndefOr[__listOfGroupInformation] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListGroupsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Groups.foreach(__v => __obj.update("Groups", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Groups.foreach(__v => __obj.updateDynamic("Groups")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListGroupsResponse]
     }
   }
@@ -4200,12 +4214,12 @@ package greengrass {
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListLoggerDefinitionVersionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LoggerDefinitionId" -> LoggerDefinitionId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListLoggerDefinitionVersionsRequest]
     }
   }
@@ -4221,9 +4235,9 @@ package greengrass {
         NextToken: js.UndefOr[__string] = js.undefined,
         Versions: js.UndefOr[__listOfVersionInformation] = js.undefined
     ): ListLoggerDefinitionVersionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Versions.foreach(__v => __obj.update("Versions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Versions.foreach(__v => __obj.updateDynamic("Versions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListLoggerDefinitionVersionsResponse]
     }
   }
@@ -4239,9 +4253,9 @@ package greengrass {
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListLoggerDefinitionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListLoggerDefinitionsRequest]
     }
   }
@@ -4257,9 +4271,9 @@ package greengrass {
         Definitions: js.UndefOr[__listOfDefinitionInformation] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListLoggerDefinitionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Definitions.foreach(__v => __obj.update("Definitions", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Definitions.foreach(__v => __obj.updateDynamic("Definitions")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListLoggerDefinitionsResponse]
     }
   }
@@ -4277,12 +4291,12 @@ package greengrass {
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListResourceDefinitionVersionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceDefinitionId" -> ResourceDefinitionId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResourceDefinitionVersionsRequest]
     }
   }
@@ -4298,9 +4312,9 @@ package greengrass {
         NextToken: js.UndefOr[__string] = js.undefined,
         Versions: js.UndefOr[__listOfVersionInformation] = js.undefined
     ): ListResourceDefinitionVersionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Versions.foreach(__v => __obj.update("Versions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Versions.foreach(__v => __obj.updateDynamic("Versions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResourceDefinitionVersionsResponse]
     }
   }
@@ -4316,9 +4330,9 @@ package greengrass {
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListResourceDefinitionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResourceDefinitionsRequest]
     }
   }
@@ -4334,9 +4348,9 @@ package greengrass {
         Definitions: js.UndefOr[__listOfDefinitionInformation] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListResourceDefinitionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Definitions.foreach(__v => __obj.update("Definitions", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Definitions.foreach(__v => __obj.updateDynamic("Definitions")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResourceDefinitionsResponse]
     }
   }
@@ -4354,12 +4368,12 @@ package greengrass {
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListSubscriptionDefinitionVersionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SubscriptionDefinitionId" -> SubscriptionDefinitionId.asInstanceOf[js.Any]
       )
 
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSubscriptionDefinitionVersionsRequest]
     }
   }
@@ -4375,9 +4389,9 @@ package greengrass {
         NextToken: js.UndefOr[__string] = js.undefined,
         Versions: js.UndefOr[__listOfVersionInformation] = js.undefined
     ): ListSubscriptionDefinitionVersionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      Versions.foreach(__v => __obj.update("Versions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Versions.foreach(__v => __obj.updateDynamic("Versions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSubscriptionDefinitionVersionsResponse]
     }
   }
@@ -4393,9 +4407,9 @@ package greengrass {
         MaxResults: js.UndefOr[__string] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListSubscriptionDefinitionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSubscriptionDefinitionsRequest]
     }
   }
@@ -4411,9 +4425,9 @@ package greengrass {
         Definitions: js.UndefOr[__listOfDefinitionInformation] = js.undefined,
         NextToken: js.UndefOr[__string] = js.undefined
     ): ListSubscriptionDefinitionsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Definitions.foreach(__v => __obj.update("Definitions", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Definitions.foreach(__v => __obj.updateDynamic("Definitions")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListSubscriptionDefinitionsResponse]
     }
   }
@@ -4427,7 +4441,7 @@ package greengrass {
     def apply(
         ResourceArn: __string
     ): ListTagsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
@@ -4444,8 +4458,8 @@ package greengrass {
     def apply(
         tags: js.UndefOr[Tags] = js.undefined
     ): ListTagsForResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
@@ -4464,9 +4478,9 @@ package greengrass {
         GroupOwnerSetting: js.UndefOr[GroupOwnerSetting] = js.undefined,
         SourcePath: js.UndefOr[__string] = js.undefined
     ): LocalDeviceResourceData = {
-      val __obj = js.Dictionary.empty[js.Any]
-      GroupOwnerSetting.foreach(__v => __obj.update("GroupOwnerSetting", __v.asInstanceOf[js.Any]))
-      SourcePath.foreach(__v => __obj.update("SourcePath", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      GroupOwnerSetting.foreach(__v => __obj.updateDynamic("GroupOwnerSetting")(__v.asInstanceOf[js.Any]))
+      SourcePath.foreach(__v => __obj.updateDynamic("SourcePath")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LocalDeviceResourceData]
     }
   }
@@ -4487,10 +4501,10 @@ package greengrass {
         GroupOwnerSetting: js.UndefOr[GroupOwnerSetting] = js.undefined,
         SourcePath: js.UndefOr[__string] = js.undefined
     ): LocalVolumeResourceData = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DestinationPath.foreach(__v => __obj.update("DestinationPath", __v.asInstanceOf[js.Any]))
-      GroupOwnerSetting.foreach(__v => __obj.update("GroupOwnerSetting", __v.asInstanceOf[js.Any]))
-      SourcePath.foreach(__v => __obj.update("SourcePath", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DestinationPath.foreach(__v => __obj.updateDynamic("DestinationPath")(__v.asInstanceOf[js.Any]))
+      GroupOwnerSetting.foreach(__v => __obj.updateDynamic("GroupOwnerSetting")(__v.asInstanceOf[js.Any]))
+      SourcePath.foreach(__v => __obj.updateDynamic("SourcePath")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LocalVolumeResourceData]
     }
   }
@@ -4515,14 +4529,14 @@ package greengrass {
         Type: LoggerType,
         Space: js.UndefOr[__integer] = js.undefined
     ): Logger = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Component" -> Component.asInstanceOf[js.Any],
         "Id"        -> Id.asInstanceOf[js.Any],
         "Level"     -> Level.asInstanceOf[js.Any],
         "Type"      -> Type.asInstanceOf[js.Any]
       )
 
-      Space.foreach(__v => __obj.update("Space", __v.asInstanceOf[js.Any]))
+      Space.foreach(__v => __obj.updateDynamic("Space")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Logger]
     }
   }
@@ -4546,8 +4560,8 @@ package greengrass {
     def apply(
         Loggers: js.UndefOr[__listOfLogger] = js.undefined
     ): LoggerDefinitionVersion = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Loggers.foreach(__v => __obj.update("Loggers", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Loggers.foreach(__v => __obj.updateDynamic("Loggers")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoggerDefinitionVersion]
     }
   }
@@ -4595,12 +4609,12 @@ package greengrass {
         AmznClientToken: js.UndefOr[__string] = js.undefined,
         Force: js.UndefOr[__boolean] = js.undefined
     ): ResetDeploymentsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupId" -> GroupId.asInstanceOf[js.Any]
       )
 
-      AmznClientToken.foreach(__v => __obj.update("AmznClientToken", __v.asInstanceOf[js.Any]))
-      Force.foreach(__v => __obj.update("Force", __v.asInstanceOf[js.Any]))
+      AmznClientToken.foreach(__v => __obj.updateDynamic("AmznClientToken")(__v.asInstanceOf[js.Any]))
+      Force.foreach(__v => __obj.updateDynamic("Force")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResetDeploymentsRequest]
     }
   }
@@ -4616,9 +4630,9 @@ package greengrass {
         DeploymentArn: js.UndefOr[__string] = js.undefined,
         DeploymentId: js.UndefOr[__string] = js.undefined
     ): ResetDeploymentsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DeploymentArn.foreach(__v => __obj.update("DeploymentArn", __v.asInstanceOf[js.Any]))
-      DeploymentId.foreach(__v => __obj.update("DeploymentId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DeploymentArn.foreach(__v => __obj.updateDynamic("DeploymentArn")(__v.asInstanceOf[js.Any]))
+      DeploymentId.foreach(__v => __obj.updateDynamic("DeploymentId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResetDeploymentsResponse]
     }
   }
@@ -4639,7 +4653,7 @@ package greengrass {
         Name: __string,
         ResourceDataContainer: ResourceDataContainer
     ): Resource = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id"                    -> Id.asInstanceOf[js.Any],
         "Name"                  -> Name.asInstanceOf[js.Any],
         "ResourceDataContainer" -> ResourceDataContainer.asInstanceOf[js.Any]
@@ -4663,11 +4677,11 @@ package greengrass {
         ResourceId: __string,
         Permission: js.UndefOr[Permission] = js.undefined
     ): ResourceAccessPolicy = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceId" -> ResourceId.asInstanceOf[js.Any]
       )
 
-      Permission.foreach(__v => __obj.update("Permission", __v.asInstanceOf[js.Any]))
+      Permission.foreach(__v => __obj.updateDynamic("Permission")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceAccessPolicy]
     }
   }
@@ -4692,17 +4706,17 @@ package greengrass {
         SageMakerMachineLearningModelResourceData: js.UndefOr[SageMakerMachineLearningModelResourceData] = js.undefined,
         SecretsManagerSecretResourceData: js.UndefOr[SecretsManagerSecretResourceData] = js.undefined
     ): ResourceDataContainer = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LocalDeviceResourceData.foreach(__v => __obj.update("LocalDeviceResourceData", __v.asInstanceOf[js.Any]))
-      LocalVolumeResourceData.foreach(__v => __obj.update("LocalVolumeResourceData", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LocalDeviceResourceData.foreach(__v => __obj.updateDynamic("LocalDeviceResourceData")(__v.asInstanceOf[js.Any]))
+      LocalVolumeResourceData.foreach(__v => __obj.updateDynamic("LocalVolumeResourceData")(__v.asInstanceOf[js.Any]))
       S3MachineLearningModelResourceData.foreach(
-        __v => __obj.update("S3MachineLearningModelResourceData", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("S3MachineLearningModelResourceData")(__v.asInstanceOf[js.Any])
       )
       SageMakerMachineLearningModelResourceData.foreach(
-        __v => __obj.update("SageMakerMachineLearningModelResourceData", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("SageMakerMachineLearningModelResourceData")(__v.asInstanceOf[js.Any])
       )
       SecretsManagerSecretResourceData.foreach(
-        __v => __obj.update("SecretsManagerSecretResourceData", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("SecretsManagerSecretResourceData")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[ResourceDataContainer]
     }
@@ -4720,8 +4734,8 @@ package greengrass {
     def apply(
         Resources: js.UndefOr[__listOfResource] = js.undefined
     ): ResourceDefinitionVersion = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Resources.foreach(__v => __obj.update("Resources", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceDefinitionVersion]
     }
   }
@@ -4740,9 +4754,9 @@ package greengrass {
         DestinationPath: js.UndefOr[__string] = js.undefined,
         S3Uri: js.UndefOr[__string] = js.undefined
     ): S3MachineLearningModelResourceData = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DestinationPath.foreach(__v => __obj.update("DestinationPath", __v.asInstanceOf[js.Any]))
-      S3Uri.foreach(__v => __obj.update("S3Uri", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DestinationPath.foreach(__v => __obj.updateDynamic("DestinationPath")(__v.asInstanceOf[js.Any]))
+      S3Uri.foreach(__v => __obj.updateDynamic("S3Uri")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3MachineLearningModelResourceData]
     }
   }
@@ -4761,9 +4775,9 @@ package greengrass {
         DestinationPath: js.UndefOr[__string] = js.undefined,
         SageMakerJobArn: js.UndefOr[__string] = js.undefined
     ): SageMakerMachineLearningModelResourceData = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DestinationPath.foreach(__v => __obj.update("DestinationPath", __v.asInstanceOf[js.Any]))
-      SageMakerJobArn.foreach(__v => __obj.update("SageMakerJobArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DestinationPath.foreach(__v => __obj.updateDynamic("DestinationPath")(__v.asInstanceOf[js.Any]))
+      SageMakerJobArn.foreach(__v => __obj.updateDynamic("SageMakerJobArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SageMakerMachineLearningModelResourceData]
     }
   }
@@ -4782,10 +4796,10 @@ package greengrass {
         ARN: js.UndefOr[__string] = js.undefined,
         AdditionalStagingLabelsToDownload: js.UndefOr[__listOf__string] = js.undefined
     ): SecretsManagerSecretResourceData = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ARN.foreach(__v => __obj.update("ARN", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
       AdditionalStagingLabelsToDownload.foreach(
-        __v => __obj.update("AdditionalStagingLabelsToDownload", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("AdditionalStagingLabelsToDownload")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[SecretsManagerSecretResourceData]
     }
@@ -4816,13 +4830,13 @@ package greengrass {
         AmznClientToken: js.UndefOr[__string] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): StartBulkDeploymentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ExecutionRoleArn" -> ExecutionRoleArn.asInstanceOf[js.Any],
         "InputFileUri"     -> InputFileUri.asInstanceOf[js.Any]
       )
 
-      AmznClientToken.foreach(__v => __obj.update("AmznClientToken", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      AmznClientToken.foreach(__v => __obj.updateDynamic("AmznClientToken")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartBulkDeploymentRequest]
     }
   }
@@ -4838,9 +4852,9 @@ package greengrass {
         BulkDeploymentArn: js.UndefOr[__string] = js.undefined,
         BulkDeploymentId: js.UndefOr[__string] = js.undefined
     ): StartBulkDeploymentResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      BulkDeploymentArn.foreach(__v => __obj.update("BulkDeploymentArn", __v.asInstanceOf[js.Any]))
-      BulkDeploymentId.foreach(__v => __obj.update("BulkDeploymentId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      BulkDeploymentArn.foreach(__v => __obj.updateDynamic("BulkDeploymentArn")(__v.asInstanceOf[js.Any]))
+      BulkDeploymentId.foreach(__v => __obj.updateDynamic("BulkDeploymentId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartBulkDeploymentResponse]
     }
   }
@@ -4854,7 +4868,7 @@ package greengrass {
     def apply(
         BulkDeploymentId: __string
     ): StopBulkDeploymentRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "BulkDeploymentId" -> BulkDeploymentId.asInstanceOf[js.Any]
       )
 
@@ -4868,7 +4882,7 @@ package greengrass {
   object StopBulkDeploymentResponse {
     def apply(
         ): StopBulkDeploymentResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[StopBulkDeploymentResponse]
     }
@@ -4892,7 +4906,7 @@ package greengrass {
         Subject: __string,
         Target: __string
     ): Subscription = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id"      -> Id.asInstanceOf[js.Any],
         "Source"  -> Source.asInstanceOf[js.Any],
         "Subject" -> Subject.asInstanceOf[js.Any],
@@ -4915,8 +4929,8 @@ package greengrass {
     def apply(
         Subscriptions: js.UndefOr[__listOfSubscription] = js.undefined
     ): SubscriptionDefinitionVersion = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Subscriptions.foreach(__v => __obj.update("Subscriptions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Subscriptions.foreach(__v => __obj.updateDynamic("Subscriptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SubscriptionDefinitionVersion]
     }
   }
@@ -4935,11 +4949,11 @@ package greengrass {
         ResourceArn: __string,
         tags: js.UndefOr[Tags] = js.undefined
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TagResourceRequest]
     }
   }
@@ -4955,7 +4969,7 @@ package greengrass {
         ResourceArn: __string,
         TagKeys: __listOf__string
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
       )
@@ -4994,11 +5008,11 @@ package greengrass {
         ThingName: __string,
         ConnectivityInfo: js.UndefOr[__listOfConnectivityInfo] = js.undefined
     ): UpdateConnectivityInfoRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ThingName" -> ThingName.asInstanceOf[js.Any]
       )
 
-      ConnectivityInfo.foreach(__v => __obj.update("ConnectivityInfo", __v.asInstanceOf[js.Any]))
+      ConnectivityInfo.foreach(__v => __obj.updateDynamic("ConnectivityInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateConnectivityInfoRequest]
     }
   }
@@ -5014,9 +5028,9 @@ package greengrass {
         Message: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__string] = js.undefined
     ): UpdateConnectivityInfoResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Message.foreach(__v => __obj.update("Message", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateConnectivityInfoResponse]
     }
   }
@@ -5032,11 +5046,11 @@ package greengrass {
         ConnectorDefinitionId: __string,
         Name: js.UndefOr[__string] = js.undefined
     ): UpdateConnectorDefinitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ConnectorDefinitionId" -> ConnectorDefinitionId.asInstanceOf[js.Any]
       )
 
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateConnectorDefinitionRequest]
     }
   }
@@ -5047,7 +5061,7 @@ package greengrass {
   object UpdateConnectorDefinitionResponse {
     def apply(
         ): UpdateConnectorDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateConnectorDefinitionResponse]
     }
@@ -5064,11 +5078,11 @@ package greengrass {
         CoreDefinitionId: __string,
         Name: js.UndefOr[__string] = js.undefined
     ): UpdateCoreDefinitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "CoreDefinitionId" -> CoreDefinitionId.asInstanceOf[js.Any]
       )
 
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateCoreDefinitionRequest]
     }
   }
@@ -5079,7 +5093,7 @@ package greengrass {
   object UpdateCoreDefinitionResponse {
     def apply(
         ): UpdateCoreDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateCoreDefinitionResponse]
     }
@@ -5096,11 +5110,11 @@ package greengrass {
         DeviceDefinitionId: __string,
         Name: js.UndefOr[__string] = js.undefined
     ): UpdateDeviceDefinitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "DeviceDefinitionId" -> DeviceDefinitionId.asInstanceOf[js.Any]
       )
 
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDeviceDefinitionRequest]
     }
   }
@@ -5111,7 +5125,7 @@ package greengrass {
   object UpdateDeviceDefinitionResponse {
     def apply(
         ): UpdateDeviceDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateDeviceDefinitionResponse]
     }
@@ -5128,11 +5142,11 @@ package greengrass {
         FunctionDefinitionId: __string,
         Name: js.UndefOr[__string] = js.undefined
     ): UpdateFunctionDefinitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FunctionDefinitionId" -> FunctionDefinitionId.asInstanceOf[js.Any]
       )
 
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFunctionDefinitionRequest]
     }
   }
@@ -5143,7 +5157,7 @@ package greengrass {
   object UpdateFunctionDefinitionResponse {
     def apply(
         ): UpdateFunctionDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateFunctionDefinitionResponse]
     }
@@ -5160,12 +5174,12 @@ package greengrass {
         GroupId: __string,
         CertificateExpiryInMilliseconds: js.UndefOr[__string] = js.undefined
     ): UpdateGroupCertificateConfigurationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupId" -> GroupId.asInstanceOf[js.Any]
       )
 
       CertificateExpiryInMilliseconds.foreach(
-        __v => __obj.update("CertificateExpiryInMilliseconds", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("CertificateExpiryInMilliseconds")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[UpdateGroupCertificateConfigurationRequest]
     }
@@ -5184,14 +5198,14 @@ package greengrass {
         CertificateExpiryInMilliseconds: js.UndefOr[__string] = js.undefined,
         GroupId: js.UndefOr[__string] = js.undefined
     ): UpdateGroupCertificateConfigurationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
       CertificateAuthorityExpiryInMilliseconds.foreach(
-        __v => __obj.update("CertificateAuthorityExpiryInMilliseconds", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("CertificateAuthorityExpiryInMilliseconds")(__v.asInstanceOf[js.Any])
       )
       CertificateExpiryInMilliseconds.foreach(
-        __v => __obj.update("CertificateExpiryInMilliseconds", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("CertificateExpiryInMilliseconds")(__v.asInstanceOf[js.Any])
       )
-      GroupId.foreach(__v => __obj.update("GroupId", __v.asInstanceOf[js.Any]))
+      GroupId.foreach(__v => __obj.updateDynamic("GroupId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGroupCertificateConfigurationResponse]
     }
   }
@@ -5207,11 +5221,11 @@ package greengrass {
         GroupId: __string,
         Name: js.UndefOr[__string] = js.undefined
     ): UpdateGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupId" -> GroupId.asInstanceOf[js.Any]
       )
 
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGroupRequest]
     }
   }
@@ -5222,7 +5236,7 @@ package greengrass {
   object UpdateGroupResponse {
     def apply(
         ): UpdateGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateGroupResponse]
     }
@@ -5239,11 +5253,11 @@ package greengrass {
         LoggerDefinitionId: __string,
         Name: js.UndefOr[__string] = js.undefined
     ): UpdateLoggerDefinitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "LoggerDefinitionId" -> LoggerDefinitionId.asInstanceOf[js.Any]
       )
 
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateLoggerDefinitionRequest]
     }
   }
@@ -5254,7 +5268,7 @@ package greengrass {
   object UpdateLoggerDefinitionResponse {
     def apply(
         ): UpdateLoggerDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateLoggerDefinitionResponse]
     }
@@ -5271,11 +5285,11 @@ package greengrass {
         ResourceDefinitionId: __string,
         Name: js.UndefOr[__string] = js.undefined
     ): UpdateResourceDefinitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceDefinitionId" -> ResourceDefinitionId.asInstanceOf[js.Any]
       )
 
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateResourceDefinitionRequest]
     }
   }
@@ -5286,7 +5300,7 @@ package greengrass {
   object UpdateResourceDefinitionResponse {
     def apply(
         ): UpdateResourceDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateResourceDefinitionResponse]
     }
@@ -5303,11 +5317,11 @@ package greengrass {
         SubscriptionDefinitionId: __string,
         Name: js.UndefOr[__string] = js.undefined
     ): UpdateSubscriptionDefinitionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "SubscriptionDefinitionId" -> SubscriptionDefinitionId.asInstanceOf[js.Any]
       )
 
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSubscriptionDefinitionRequest]
     }
   }
@@ -5318,7 +5332,7 @@ package greengrass {
   object UpdateSubscriptionDefinitionResponse {
     def apply(
         ): UpdateSubscriptionDefinitionResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateSubscriptionDefinitionResponse]
     }
@@ -5365,11 +5379,11 @@ package greengrass {
         Id: js.UndefOr[__string] = js.undefined,
         Version: js.UndefOr[__string] = js.undefined
     ): VersionInformation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Arn.foreach(__v => __obj.update("Arn", __v.asInstanceOf[js.Any]))
-      CreationTimestamp.foreach(__v => __obj.update("CreationTimestamp", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Version.foreach(__v => __obj.update("Version", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VersionInformation]
     }
   }

@@ -218,7 +218,7 @@ package securityhub {
         InvitationId: NonEmptyString,
         MasterId: NonEmptyString
     ): AcceptInvitationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InvitationId" -> InvitationId.asInstanceOf[js.Any],
         "MasterId"     -> MasterId.asInstanceOf[js.Any]
       )
@@ -233,7 +233,7 @@ package securityhub {
   object AcceptInvitationResponse {
     def apply(
         ): AcceptInvitationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[AcceptInvitationResponse]
     }
@@ -253,9 +253,9 @@ package securityhub {
         AccountId: js.UndefOr[AccountId] = js.undefined,
         Email: js.UndefOr[NonEmptyString] = js.undefined
     ): AccountDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccountId.foreach(__v => __obj.update("AccountId", __v.asInstanceOf[js.Any]))
-      Email.foreach(__v => __obj.update("Email", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      Email.foreach(__v => __obj.updateDynamic("Email")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AccountDetails]
     }
   }
@@ -276,7 +276,7 @@ package securityhub {
         Description: NonEmptyString,
         Name: NonEmptyString
     ): ActionTarget = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ActionTargetArn" -> ActionTargetArn.asInstanceOf[js.Any],
         "Description"     -> Description.asInstanceOf[js.Any],
         "Name"            -> Name.asInstanceOf[js.Any]
@@ -314,16 +314,16 @@ package securityhub {
         Type: js.UndefOr[NonEmptyString] = js.undefined,
         VpcId: js.UndefOr[NonEmptyString] = js.undefined
     ): AwsEc2InstanceDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      IamInstanceProfileArn.foreach(__v => __obj.update("IamInstanceProfileArn", __v.asInstanceOf[js.Any]))
-      ImageId.foreach(__v => __obj.update("ImageId", __v.asInstanceOf[js.Any]))
-      IpV4Addresses.foreach(__v => __obj.update("IpV4Addresses", __v.asInstanceOf[js.Any]))
-      IpV6Addresses.foreach(__v => __obj.update("IpV6Addresses", __v.asInstanceOf[js.Any]))
-      KeyName.foreach(__v => __obj.update("KeyName", __v.asInstanceOf[js.Any]))
-      LaunchedAt.foreach(__v => __obj.update("LaunchedAt", __v.asInstanceOf[js.Any]))
-      SubnetId.foreach(__v => __obj.update("SubnetId", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
-      VpcId.foreach(__v => __obj.update("VpcId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      IamInstanceProfileArn.foreach(__v => __obj.updateDynamic("IamInstanceProfileArn")(__v.asInstanceOf[js.Any]))
+      ImageId.foreach(__v => __obj.updateDynamic("ImageId")(__v.asInstanceOf[js.Any]))
+      IpV4Addresses.foreach(__v => __obj.updateDynamic("IpV4Addresses")(__v.asInstanceOf[js.Any]))
+      IpV6Addresses.foreach(__v => __obj.updateDynamic("IpV6Addresses")(__v.asInstanceOf[js.Any]))
+      KeyName.foreach(__v => __obj.updateDynamic("KeyName")(__v.asInstanceOf[js.Any]))
+      LaunchedAt.foreach(__v => __obj.updateDynamic("LaunchedAt")(__v.asInstanceOf[js.Any]))
+      SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsEc2InstanceDetails]
     }
   }
@@ -344,10 +344,10 @@ package securityhub {
         Status: js.UndefOr[AwsIamAccessKeyStatus] = js.undefined,
         UserName: js.UndefOr[NonEmptyString] = js.undefined
     ): AwsIamAccessKeyDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreatedAt.foreach(__v => __obj.update("CreatedAt", __v.asInstanceOf[js.Any]))
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
-      UserName.foreach(__v => __obj.update("UserName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsIamAccessKeyDetails]
     }
   }
@@ -373,9 +373,9 @@ package securityhub {
         OwnerId: js.UndefOr[NonEmptyString] = js.undefined,
         OwnerName: js.UndefOr[NonEmptyString] = js.undefined
     ): AwsS3BucketDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      OwnerId.foreach(__v => __obj.update("OwnerId", __v.asInstanceOf[js.Any]))
-      OwnerName.foreach(__v => __obj.update("OwnerName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
+      OwnerName.foreach(__v => __obj.updateDynamic("OwnerName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsS3BucketDetails]
     }
   }
@@ -452,7 +452,7 @@ package securityhub {
         VerificationState: js.UndefOr[VerificationState] = js.undefined,
         WorkflowState: js.UndefOr[WorkflowState] = js.undefined
     ): AwsSecurityFinding = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AwsAccountId"  -> AwsAccountId.asInstanceOf[js.Any],
         "CreatedAt"     -> CreatedAt.asInstanceOf[js.Any],
         "Description"   -> Description.asInstanceOf[js.Any],
@@ -467,24 +467,24 @@ package securityhub {
         "UpdatedAt"     -> UpdatedAt.asInstanceOf[js.Any]
       )
 
-      Compliance.foreach(__v => __obj.update("Compliance", __v.asInstanceOf[js.Any]))
-      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
-      Criticality.foreach(__v => __obj.update("Criticality", __v.asInstanceOf[js.Any]))
-      FirstObservedAt.foreach(__v => __obj.update("FirstObservedAt", __v.asInstanceOf[js.Any]))
-      LastObservedAt.foreach(__v => __obj.update("LastObservedAt", __v.asInstanceOf[js.Any]))
-      Malware.foreach(__v => __obj.update("Malware", __v.asInstanceOf[js.Any]))
-      Network.foreach(__v => __obj.update("Network", __v.asInstanceOf[js.Any]))
-      Note.foreach(__v => __obj.update("Note", __v.asInstanceOf[js.Any]))
-      Process.foreach(__v => __obj.update("Process", __v.asInstanceOf[js.Any]))
-      ProductFields.foreach(__v => __obj.update("ProductFields", __v.asInstanceOf[js.Any]))
-      RecordState.foreach(__v => __obj.update("RecordState", __v.asInstanceOf[js.Any]))
-      RelatedFindings.foreach(__v => __obj.update("RelatedFindings", __v.asInstanceOf[js.Any]))
-      Remediation.foreach(__v => __obj.update("Remediation", __v.asInstanceOf[js.Any]))
-      SourceUrl.foreach(__v => __obj.update("SourceUrl", __v.asInstanceOf[js.Any]))
-      ThreatIntelIndicators.foreach(__v => __obj.update("ThreatIntelIndicators", __v.asInstanceOf[js.Any]))
-      UserDefinedFields.foreach(__v => __obj.update("UserDefinedFields", __v.asInstanceOf[js.Any]))
-      VerificationState.foreach(__v => __obj.update("VerificationState", __v.asInstanceOf[js.Any]))
-      WorkflowState.foreach(__v => __obj.update("WorkflowState", __v.asInstanceOf[js.Any]))
+      Compliance.foreach(__v => __obj.updateDynamic("Compliance")(__v.asInstanceOf[js.Any]))
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      Criticality.foreach(__v => __obj.updateDynamic("Criticality")(__v.asInstanceOf[js.Any]))
+      FirstObservedAt.foreach(__v => __obj.updateDynamic("FirstObservedAt")(__v.asInstanceOf[js.Any]))
+      LastObservedAt.foreach(__v => __obj.updateDynamic("LastObservedAt")(__v.asInstanceOf[js.Any]))
+      Malware.foreach(__v => __obj.updateDynamic("Malware")(__v.asInstanceOf[js.Any]))
+      Network.foreach(__v => __obj.updateDynamic("Network")(__v.asInstanceOf[js.Any]))
+      Note.foreach(__v => __obj.updateDynamic("Note")(__v.asInstanceOf[js.Any]))
+      Process.foreach(__v => __obj.updateDynamic("Process")(__v.asInstanceOf[js.Any]))
+      ProductFields.foreach(__v => __obj.updateDynamic("ProductFields")(__v.asInstanceOf[js.Any]))
+      RecordState.foreach(__v => __obj.updateDynamic("RecordState")(__v.asInstanceOf[js.Any]))
+      RelatedFindings.foreach(__v => __obj.updateDynamic("RelatedFindings")(__v.asInstanceOf[js.Any]))
+      Remediation.foreach(__v => __obj.updateDynamic("Remediation")(__v.asInstanceOf[js.Any]))
+      SourceUrl.foreach(__v => __obj.updateDynamic("SourceUrl")(__v.asInstanceOf[js.Any]))
+      ThreatIntelIndicators.foreach(__v => __obj.updateDynamic("ThreatIntelIndicators")(__v.asInstanceOf[js.Any]))
+      UserDefinedFields.foreach(__v => __obj.updateDynamic("UserDefinedFields")(__v.asInstanceOf[js.Any]))
+      VerificationState.foreach(__v => __obj.updateDynamic("VerificationState")(__v.asInstanceOf[js.Any]))
+      WorkflowState.foreach(__v => __obj.updateDynamic("WorkflowState")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsSecurityFinding]
     }
   }
@@ -665,118 +665,134 @@ package securityhub {
         VerificationState: js.UndefOr[StringFilterList] = js.undefined,
         WorkflowState: js.UndefOr[StringFilterList] = js.undefined
     ): AwsSecurityFindingFilters = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AwsAccountId.foreach(__v => __obj.update("AwsAccountId", __v.asInstanceOf[js.Any]))
-      CompanyName.foreach(__v => __obj.update("CompanyName", __v.asInstanceOf[js.Any]))
-      ComplianceStatus.foreach(__v => __obj.update("ComplianceStatus", __v.asInstanceOf[js.Any]))
-      Confidence.foreach(__v => __obj.update("Confidence", __v.asInstanceOf[js.Any]))
-      CreatedAt.foreach(__v => __obj.update("CreatedAt", __v.asInstanceOf[js.Any]))
-      Criticality.foreach(__v => __obj.update("Criticality", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      FirstObservedAt.foreach(__v => __obj.update("FirstObservedAt", __v.asInstanceOf[js.Any]))
-      GeneratorId.foreach(__v => __obj.update("GeneratorId", __v.asInstanceOf[js.Any]))
-      Id.foreach(__v => __obj.update("Id", __v.asInstanceOf[js.Any]))
-      Keyword.foreach(__v => __obj.update("Keyword", __v.asInstanceOf[js.Any]))
-      LastObservedAt.foreach(__v => __obj.update("LastObservedAt", __v.asInstanceOf[js.Any]))
-      MalwareName.foreach(__v => __obj.update("MalwareName", __v.asInstanceOf[js.Any]))
-      MalwarePath.foreach(__v => __obj.update("MalwarePath", __v.asInstanceOf[js.Any]))
-      MalwareState.foreach(__v => __obj.update("MalwareState", __v.asInstanceOf[js.Any]))
-      MalwareType.foreach(__v => __obj.update("MalwareType", __v.asInstanceOf[js.Any]))
-      NetworkDestinationDomain.foreach(__v => __obj.update("NetworkDestinationDomain", __v.asInstanceOf[js.Any]))
-      NetworkDestinationIpV4.foreach(__v => __obj.update("NetworkDestinationIpV4", __v.asInstanceOf[js.Any]))
-      NetworkDestinationIpV6.foreach(__v => __obj.update("NetworkDestinationIpV6", __v.asInstanceOf[js.Any]))
-      NetworkDestinationPort.foreach(__v => __obj.update("NetworkDestinationPort", __v.asInstanceOf[js.Any]))
-      NetworkDirection.foreach(__v => __obj.update("NetworkDirection", __v.asInstanceOf[js.Any]))
-      NetworkProtocol.foreach(__v => __obj.update("NetworkProtocol", __v.asInstanceOf[js.Any]))
-      NetworkSourceDomain.foreach(__v => __obj.update("NetworkSourceDomain", __v.asInstanceOf[js.Any]))
-      NetworkSourceIpV4.foreach(__v => __obj.update("NetworkSourceIpV4", __v.asInstanceOf[js.Any]))
-      NetworkSourceIpV6.foreach(__v => __obj.update("NetworkSourceIpV6", __v.asInstanceOf[js.Any]))
-      NetworkSourceMac.foreach(__v => __obj.update("NetworkSourceMac", __v.asInstanceOf[js.Any]))
-      NetworkSourcePort.foreach(__v => __obj.update("NetworkSourcePort", __v.asInstanceOf[js.Any]))
-      NoteText.foreach(__v => __obj.update("NoteText", __v.asInstanceOf[js.Any]))
-      NoteUpdatedAt.foreach(__v => __obj.update("NoteUpdatedAt", __v.asInstanceOf[js.Any]))
-      NoteUpdatedBy.foreach(__v => __obj.update("NoteUpdatedBy", __v.asInstanceOf[js.Any]))
-      ProcessLaunchedAt.foreach(__v => __obj.update("ProcessLaunchedAt", __v.asInstanceOf[js.Any]))
-      ProcessName.foreach(__v => __obj.update("ProcessName", __v.asInstanceOf[js.Any]))
-      ProcessParentPid.foreach(__v => __obj.update("ProcessParentPid", __v.asInstanceOf[js.Any]))
-      ProcessPath.foreach(__v => __obj.update("ProcessPath", __v.asInstanceOf[js.Any]))
-      ProcessPid.foreach(__v => __obj.update("ProcessPid", __v.asInstanceOf[js.Any]))
-      ProcessTerminatedAt.foreach(__v => __obj.update("ProcessTerminatedAt", __v.asInstanceOf[js.Any]))
-      ProductArn.foreach(__v => __obj.update("ProductArn", __v.asInstanceOf[js.Any]))
-      ProductFields.foreach(__v => __obj.update("ProductFields", __v.asInstanceOf[js.Any]))
-      ProductName.foreach(__v => __obj.update("ProductName", __v.asInstanceOf[js.Any]))
-      RecommendationText.foreach(__v => __obj.update("RecommendationText", __v.asInstanceOf[js.Any]))
-      RecordState.foreach(__v => __obj.update("RecordState", __v.asInstanceOf[js.Any]))
-      RelatedFindingsId.foreach(__v => __obj.update("RelatedFindingsId", __v.asInstanceOf[js.Any]))
-      RelatedFindingsProductArn.foreach(__v => __obj.update("RelatedFindingsProductArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AwsAccountId.foreach(__v => __obj.updateDynamic("AwsAccountId")(__v.asInstanceOf[js.Any]))
+      CompanyName.foreach(__v => __obj.updateDynamic("CompanyName")(__v.asInstanceOf[js.Any]))
+      ComplianceStatus.foreach(__v => __obj.updateDynamic("ComplianceStatus")(__v.asInstanceOf[js.Any]))
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      Criticality.foreach(__v => __obj.updateDynamic("Criticality")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      FirstObservedAt.foreach(__v => __obj.updateDynamic("FirstObservedAt")(__v.asInstanceOf[js.Any]))
+      GeneratorId.foreach(__v => __obj.updateDynamic("GeneratorId")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Keyword.foreach(__v => __obj.updateDynamic("Keyword")(__v.asInstanceOf[js.Any]))
+      LastObservedAt.foreach(__v => __obj.updateDynamic("LastObservedAt")(__v.asInstanceOf[js.Any]))
+      MalwareName.foreach(__v => __obj.updateDynamic("MalwareName")(__v.asInstanceOf[js.Any]))
+      MalwarePath.foreach(__v => __obj.updateDynamic("MalwarePath")(__v.asInstanceOf[js.Any]))
+      MalwareState.foreach(__v => __obj.updateDynamic("MalwareState")(__v.asInstanceOf[js.Any]))
+      MalwareType.foreach(__v => __obj.updateDynamic("MalwareType")(__v.asInstanceOf[js.Any]))
+      NetworkDestinationDomain.foreach(__v => __obj.updateDynamic("NetworkDestinationDomain")(__v.asInstanceOf[js.Any]))
+      NetworkDestinationIpV4.foreach(__v => __obj.updateDynamic("NetworkDestinationIpV4")(__v.asInstanceOf[js.Any]))
+      NetworkDestinationIpV6.foreach(__v => __obj.updateDynamic("NetworkDestinationIpV6")(__v.asInstanceOf[js.Any]))
+      NetworkDestinationPort.foreach(__v => __obj.updateDynamic("NetworkDestinationPort")(__v.asInstanceOf[js.Any]))
+      NetworkDirection.foreach(__v => __obj.updateDynamic("NetworkDirection")(__v.asInstanceOf[js.Any]))
+      NetworkProtocol.foreach(__v => __obj.updateDynamic("NetworkProtocol")(__v.asInstanceOf[js.Any]))
+      NetworkSourceDomain.foreach(__v => __obj.updateDynamic("NetworkSourceDomain")(__v.asInstanceOf[js.Any]))
+      NetworkSourceIpV4.foreach(__v => __obj.updateDynamic("NetworkSourceIpV4")(__v.asInstanceOf[js.Any]))
+      NetworkSourceIpV6.foreach(__v => __obj.updateDynamic("NetworkSourceIpV6")(__v.asInstanceOf[js.Any]))
+      NetworkSourceMac.foreach(__v => __obj.updateDynamic("NetworkSourceMac")(__v.asInstanceOf[js.Any]))
+      NetworkSourcePort.foreach(__v => __obj.updateDynamic("NetworkSourcePort")(__v.asInstanceOf[js.Any]))
+      NoteText.foreach(__v => __obj.updateDynamic("NoteText")(__v.asInstanceOf[js.Any]))
+      NoteUpdatedAt.foreach(__v => __obj.updateDynamic("NoteUpdatedAt")(__v.asInstanceOf[js.Any]))
+      NoteUpdatedBy.foreach(__v => __obj.updateDynamic("NoteUpdatedBy")(__v.asInstanceOf[js.Any]))
+      ProcessLaunchedAt.foreach(__v => __obj.updateDynamic("ProcessLaunchedAt")(__v.asInstanceOf[js.Any]))
+      ProcessName.foreach(__v => __obj.updateDynamic("ProcessName")(__v.asInstanceOf[js.Any]))
+      ProcessParentPid.foreach(__v => __obj.updateDynamic("ProcessParentPid")(__v.asInstanceOf[js.Any]))
+      ProcessPath.foreach(__v => __obj.updateDynamic("ProcessPath")(__v.asInstanceOf[js.Any]))
+      ProcessPid.foreach(__v => __obj.updateDynamic("ProcessPid")(__v.asInstanceOf[js.Any]))
+      ProcessTerminatedAt.foreach(__v => __obj.updateDynamic("ProcessTerminatedAt")(__v.asInstanceOf[js.Any]))
+      ProductArn.foreach(__v => __obj.updateDynamic("ProductArn")(__v.asInstanceOf[js.Any]))
+      ProductFields.foreach(__v => __obj.updateDynamic("ProductFields")(__v.asInstanceOf[js.Any]))
+      ProductName.foreach(__v => __obj.updateDynamic("ProductName")(__v.asInstanceOf[js.Any]))
+      RecommendationText.foreach(__v => __obj.updateDynamic("RecommendationText")(__v.asInstanceOf[js.Any]))
+      RecordState.foreach(__v => __obj.updateDynamic("RecordState")(__v.asInstanceOf[js.Any]))
+      RelatedFindingsId.foreach(__v => __obj.updateDynamic("RelatedFindingsId")(__v.asInstanceOf[js.Any]))
+      RelatedFindingsProductArn.foreach(
+        __v => __obj.updateDynamic("RelatedFindingsProductArn")(__v.asInstanceOf[js.Any])
+      )
       ResourceAwsEc2InstanceIamInstanceProfileArn.foreach(
-        __v => __obj.update("ResourceAwsEc2InstanceIamInstanceProfileArn", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ResourceAwsEc2InstanceIamInstanceProfileArn")(__v.asInstanceOf[js.Any])
       )
       ResourceAwsEc2InstanceImageId.foreach(
-        __v => __obj.update("ResourceAwsEc2InstanceImageId", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ResourceAwsEc2InstanceImageId")(__v.asInstanceOf[js.Any])
       )
       ResourceAwsEc2InstanceIpV4Addresses.foreach(
-        __v => __obj.update("ResourceAwsEc2InstanceIpV4Addresses", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ResourceAwsEc2InstanceIpV4Addresses")(__v.asInstanceOf[js.Any])
       )
       ResourceAwsEc2InstanceIpV6Addresses.foreach(
-        __v => __obj.update("ResourceAwsEc2InstanceIpV6Addresses", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ResourceAwsEc2InstanceIpV6Addresses")(__v.asInstanceOf[js.Any])
       )
       ResourceAwsEc2InstanceKeyName.foreach(
-        __v => __obj.update("ResourceAwsEc2InstanceKeyName", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ResourceAwsEc2InstanceKeyName")(__v.asInstanceOf[js.Any])
       )
       ResourceAwsEc2InstanceLaunchedAt.foreach(
-        __v => __obj.update("ResourceAwsEc2InstanceLaunchedAt", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ResourceAwsEc2InstanceLaunchedAt")(__v.asInstanceOf[js.Any])
       )
       ResourceAwsEc2InstanceSubnetId.foreach(
-        __v => __obj.update("ResourceAwsEc2InstanceSubnetId", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ResourceAwsEc2InstanceSubnetId")(__v.asInstanceOf[js.Any])
       )
-      ResourceAwsEc2InstanceType.foreach(__v => __obj.update("ResourceAwsEc2InstanceType", __v.asInstanceOf[js.Any]))
-      ResourceAwsEc2InstanceVpcId.foreach(__v => __obj.update("ResourceAwsEc2InstanceVpcId", __v.asInstanceOf[js.Any]))
+      ResourceAwsEc2InstanceType.foreach(
+        __v => __obj.updateDynamic("ResourceAwsEc2InstanceType")(__v.asInstanceOf[js.Any])
+      )
+      ResourceAwsEc2InstanceVpcId.foreach(
+        __v => __obj.updateDynamic("ResourceAwsEc2InstanceVpcId")(__v.asInstanceOf[js.Any])
+      )
       ResourceAwsIamAccessKeyCreatedAt.foreach(
-        __v => __obj.update("ResourceAwsIamAccessKeyCreatedAt", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ResourceAwsIamAccessKeyCreatedAt")(__v.asInstanceOf[js.Any])
       )
       ResourceAwsIamAccessKeyStatus.foreach(
-        __v => __obj.update("ResourceAwsIamAccessKeyStatus", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ResourceAwsIamAccessKeyStatus")(__v.asInstanceOf[js.Any])
       )
       ResourceAwsIamAccessKeyUserName.foreach(
-        __v => __obj.update("ResourceAwsIamAccessKeyUserName", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ResourceAwsIamAccessKeyUserName")(__v.asInstanceOf[js.Any])
       )
-      ResourceAwsS3BucketOwnerId.foreach(__v => __obj.update("ResourceAwsS3BucketOwnerId", __v.asInstanceOf[js.Any]))
+      ResourceAwsS3BucketOwnerId.foreach(
+        __v => __obj.updateDynamic("ResourceAwsS3BucketOwnerId")(__v.asInstanceOf[js.Any])
+      )
       ResourceAwsS3BucketOwnerName.foreach(
-        __v => __obj.update("ResourceAwsS3BucketOwnerName", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ResourceAwsS3BucketOwnerName")(__v.asInstanceOf[js.Any])
       )
-      ResourceContainerImageId.foreach(__v => __obj.update("ResourceContainerImageId", __v.asInstanceOf[js.Any]))
-      ResourceContainerImageName.foreach(__v => __obj.update("ResourceContainerImageName", __v.asInstanceOf[js.Any]))
-      ResourceContainerLaunchedAt.foreach(__v => __obj.update("ResourceContainerLaunchedAt", __v.asInstanceOf[js.Any]))
-      ResourceContainerName.foreach(__v => __obj.update("ResourceContainerName", __v.asInstanceOf[js.Any]))
-      ResourceDetailsOther.foreach(__v => __obj.update("ResourceDetailsOther", __v.asInstanceOf[js.Any]))
-      ResourceId.foreach(__v => __obj.update("ResourceId", __v.asInstanceOf[js.Any]))
-      ResourcePartition.foreach(__v => __obj.update("ResourcePartition", __v.asInstanceOf[js.Any]))
-      ResourceRegion.foreach(__v => __obj.update("ResourceRegion", __v.asInstanceOf[js.Any]))
-      ResourceTags.foreach(__v => __obj.update("ResourceTags", __v.asInstanceOf[js.Any]))
-      ResourceType.foreach(__v => __obj.update("ResourceType", __v.asInstanceOf[js.Any]))
-      SeverityLabel.foreach(__v => __obj.update("SeverityLabel", __v.asInstanceOf[js.Any]))
-      SeverityNormalized.foreach(__v => __obj.update("SeverityNormalized", __v.asInstanceOf[js.Any]))
-      SeverityProduct.foreach(__v => __obj.update("SeverityProduct", __v.asInstanceOf[js.Any]))
-      SourceUrl.foreach(__v => __obj.update("SourceUrl", __v.asInstanceOf[js.Any]))
+      ResourceContainerImageId.foreach(__v => __obj.updateDynamic("ResourceContainerImageId")(__v.asInstanceOf[js.Any]))
+      ResourceContainerImageName.foreach(
+        __v => __obj.updateDynamic("ResourceContainerImageName")(__v.asInstanceOf[js.Any])
+      )
+      ResourceContainerLaunchedAt.foreach(
+        __v => __obj.updateDynamic("ResourceContainerLaunchedAt")(__v.asInstanceOf[js.Any])
+      )
+      ResourceContainerName.foreach(__v => __obj.updateDynamic("ResourceContainerName")(__v.asInstanceOf[js.Any]))
+      ResourceDetailsOther.foreach(__v => __obj.updateDynamic("ResourceDetailsOther")(__v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
+      ResourcePartition.foreach(__v => __obj.updateDynamic("ResourcePartition")(__v.asInstanceOf[js.Any]))
+      ResourceRegion.foreach(__v => __obj.updateDynamic("ResourceRegion")(__v.asInstanceOf[js.Any]))
+      ResourceTags.foreach(__v => __obj.updateDynamic("ResourceTags")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      SeverityLabel.foreach(__v => __obj.updateDynamic("SeverityLabel")(__v.asInstanceOf[js.Any]))
+      SeverityNormalized.foreach(__v => __obj.updateDynamic("SeverityNormalized")(__v.asInstanceOf[js.Any]))
+      SeverityProduct.foreach(__v => __obj.updateDynamic("SeverityProduct")(__v.asInstanceOf[js.Any]))
+      SourceUrl.foreach(__v => __obj.updateDynamic("SourceUrl")(__v.asInstanceOf[js.Any]))
       ThreatIntelIndicatorCategory.foreach(
-        __v => __obj.update("ThreatIntelIndicatorCategory", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ThreatIntelIndicatorCategory")(__v.asInstanceOf[js.Any])
       )
       ThreatIntelIndicatorLastObservedAt.foreach(
-        __v => __obj.update("ThreatIntelIndicatorLastObservedAt", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ThreatIntelIndicatorLastObservedAt")(__v.asInstanceOf[js.Any])
       )
-      ThreatIntelIndicatorSource.foreach(__v => __obj.update("ThreatIntelIndicatorSource", __v.asInstanceOf[js.Any]))
+      ThreatIntelIndicatorSource.foreach(
+        __v => __obj.updateDynamic("ThreatIntelIndicatorSource")(__v.asInstanceOf[js.Any])
+      )
       ThreatIntelIndicatorSourceUrl.foreach(
-        __v => __obj.update("ThreatIntelIndicatorSourceUrl", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ThreatIntelIndicatorSourceUrl")(__v.asInstanceOf[js.Any])
       )
-      ThreatIntelIndicatorType.foreach(__v => __obj.update("ThreatIntelIndicatorType", __v.asInstanceOf[js.Any]))
-      ThreatIntelIndicatorValue.foreach(__v => __obj.update("ThreatIntelIndicatorValue", __v.asInstanceOf[js.Any]))
-      Title.foreach(__v => __obj.update("Title", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
-      UpdatedAt.foreach(__v => __obj.update("UpdatedAt", __v.asInstanceOf[js.Any]))
-      UserDefinedFields.foreach(__v => __obj.update("UserDefinedFields", __v.asInstanceOf[js.Any]))
-      VerificationState.foreach(__v => __obj.update("VerificationState", __v.asInstanceOf[js.Any]))
-      WorkflowState.foreach(__v => __obj.update("WorkflowState", __v.asInstanceOf[js.Any]))
+      ThreatIntelIndicatorType.foreach(__v => __obj.updateDynamic("ThreatIntelIndicatorType")(__v.asInstanceOf[js.Any]))
+      ThreatIntelIndicatorValue.foreach(
+        __v => __obj.updateDynamic("ThreatIntelIndicatorValue")(__v.asInstanceOf[js.Any])
+      )
+      Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
+      UserDefinedFields.foreach(__v => __obj.updateDynamic("UserDefinedFields")(__v.asInstanceOf[js.Any]))
+      VerificationState.foreach(__v => __obj.updateDynamic("VerificationState")(__v.asInstanceOf[js.Any]))
+      WorkflowState.foreach(__v => __obj.updateDynamic("WorkflowState")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AwsSecurityFindingFilters]
     }
   }
@@ -790,7 +806,7 @@ package securityhub {
     def apply(
         StandardsSubscriptionArns: StandardsSubscriptionArns
     ): BatchDisableStandardsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "StandardsSubscriptionArns" -> StandardsSubscriptionArns.asInstanceOf[js.Any]
       )
 
@@ -807,8 +823,8 @@ package securityhub {
     def apply(
         StandardsSubscriptions: js.UndefOr[StandardsSubscriptions] = js.undefined
     ): BatchDisableStandardsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      StandardsSubscriptions.foreach(__v => __obj.update("StandardsSubscriptions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      StandardsSubscriptions.foreach(__v => __obj.updateDynamic("StandardsSubscriptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDisableStandardsResponse]
     }
   }
@@ -822,7 +838,7 @@ package securityhub {
     def apply(
         StandardsSubscriptionRequests: StandardsSubscriptionRequests
     ): BatchEnableStandardsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "StandardsSubscriptionRequests" -> StandardsSubscriptionRequests.asInstanceOf[js.Any]
       )
 
@@ -839,8 +855,8 @@ package securityhub {
     def apply(
         StandardsSubscriptions: js.UndefOr[StandardsSubscriptions] = js.undefined
     ): BatchEnableStandardsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      StandardsSubscriptions.foreach(__v => __obj.update("StandardsSubscriptions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      StandardsSubscriptions.foreach(__v => __obj.updateDynamic("StandardsSubscriptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchEnableStandardsResponse]
     }
   }
@@ -854,7 +870,7 @@ package securityhub {
     def apply(
         Findings: AwsSecurityFindingList
     ): BatchImportFindingsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Findings" -> Findings.asInstanceOf[js.Any]
       )
 
@@ -875,12 +891,12 @@ package securityhub {
         SuccessCount: Int,
         FailedFindings: js.UndefOr[ImportFindingsErrorList] = js.undefined
     ): BatchImportFindingsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "FailedCount"  -> FailedCount.asInstanceOf[js.Any],
         "SuccessCount" -> SuccessCount.asInstanceOf[js.Any]
       )
 
-      FailedFindings.foreach(__v => __obj.update("FailedFindings", __v.asInstanceOf[js.Any]))
+      FailedFindings.foreach(__v => __obj.updateDynamic("FailedFindings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchImportFindingsResponse]
     }
   }
@@ -897,8 +913,8 @@ package securityhub {
     def apply(
         Status: js.UndefOr[ComplianceStatus] = js.undefined
     ): Compliance = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Status.foreach(__v => __obj.update("Status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Compliance]
     }
   }
@@ -930,11 +946,11 @@ package securityhub {
         LaunchedAt: js.UndefOr[NonEmptyString] = js.undefined,
         Name: js.UndefOr[NonEmptyString] = js.undefined
     ): ContainerDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ImageId.foreach(__v => __obj.update("ImageId", __v.asInstanceOf[js.Any]))
-      ImageName.foreach(__v => __obj.update("ImageName", __v.asInstanceOf[js.Any]))
-      LaunchedAt.foreach(__v => __obj.update("LaunchedAt", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ImageId.foreach(__v => __obj.updateDynamic("ImageId")(__v.asInstanceOf[js.Any]))
+      ImageName.foreach(__v => __obj.updateDynamic("ImageName")(__v.asInstanceOf[js.Any]))
+      LaunchedAt.foreach(__v => __obj.updateDynamic("LaunchedAt")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContainerDetails]
     }
   }
@@ -952,7 +968,7 @@ package securityhub {
         Id: NonEmptyString,
         Name: NonEmptyString
     ): CreateActionTargetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Description" -> Description.asInstanceOf[js.Any],
         "Id"          -> Id.asInstanceOf[js.Any],
         "Name"        -> Name.asInstanceOf[js.Any]
@@ -971,7 +987,7 @@ package securityhub {
     def apply(
         ActionTargetArn: NonEmptyString
     ): CreateActionTargetResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ActionTargetArn" -> ActionTargetArn.asInstanceOf[js.Any]
       )
 
@@ -992,7 +1008,7 @@ package securityhub {
         GroupByAttribute: NonEmptyString,
         Name: NonEmptyString
     ): CreateInsightRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Filters"          -> Filters.asInstanceOf[js.Any],
         "GroupByAttribute" -> GroupByAttribute.asInstanceOf[js.Any],
         "Name"             -> Name.asInstanceOf[js.Any]
@@ -1011,7 +1027,7 @@ package securityhub {
     def apply(
         InsightArn: NonEmptyString
     ): CreateInsightResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InsightArn" -> InsightArn.asInstanceOf[js.Any]
       )
 
@@ -1028,8 +1044,8 @@ package securityhub {
     def apply(
         AccountDetails: js.UndefOr[AccountDetailsList] = js.undefined
     ): CreateMembersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccountDetails.foreach(__v => __obj.update("AccountDetails", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccountDetails.foreach(__v => __obj.updateDynamic("AccountDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateMembersRequest]
     }
   }
@@ -1043,8 +1059,8 @@ package securityhub {
     def apply(
         UnprocessedAccounts: js.UndefOr[ResultList] = js.undefined
     ): CreateMembersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      UnprocessedAccounts.foreach(__v => __obj.update("UnprocessedAccounts", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      UnprocessedAccounts.foreach(__v => __obj.updateDynamic("UnprocessedAccounts")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateMembersResponse]
     }
   }
@@ -1065,10 +1081,10 @@ package securityhub {
         End: js.UndefOr[NonEmptyString] = js.undefined,
         Start: js.UndefOr[NonEmptyString] = js.undefined
     ): DateFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DateRange.foreach(__v => __obj.update("DateRange", __v.asInstanceOf[js.Any]))
-      End.foreach(__v => __obj.update("End", __v.asInstanceOf[js.Any]))
-      Start.foreach(__v => __obj.update("Start", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DateRange.foreach(__v => __obj.updateDynamic("DateRange")(__v.asInstanceOf[js.Any]))
+      End.foreach(__v => __obj.updateDynamic("End")(__v.asInstanceOf[js.Any]))
+      Start.foreach(__v => __obj.updateDynamic("Start")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DateFilter]
     }
   }
@@ -1087,9 +1103,9 @@ package securityhub {
         Unit: js.UndefOr[DateRangeUnit] = js.undefined,
         Value: js.UndefOr[Int] = js.undefined
     ): DateRange = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Unit.foreach(__v => __obj.update("Unit", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DateRange]
     }
   }
@@ -1109,7 +1125,7 @@ package securityhub {
     def apply(
         AccountIds: AccountIdList
     ): DeclineInvitationsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountIds" -> AccountIds.asInstanceOf[js.Any]
       )
 
@@ -1126,8 +1142,8 @@ package securityhub {
     def apply(
         UnprocessedAccounts: js.UndefOr[ResultList] = js.undefined
     ): DeclineInvitationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      UnprocessedAccounts.foreach(__v => __obj.update("UnprocessedAccounts", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      UnprocessedAccounts.foreach(__v => __obj.updateDynamic("UnprocessedAccounts")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeclineInvitationsResponse]
     }
   }
@@ -1141,7 +1157,7 @@ package securityhub {
     def apply(
         ActionTargetArn: NonEmptyString
     ): DeleteActionTargetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ActionTargetArn" -> ActionTargetArn.asInstanceOf[js.Any]
       )
 
@@ -1158,7 +1174,7 @@ package securityhub {
     def apply(
         ActionTargetArn: NonEmptyString
     ): DeleteActionTargetResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ActionTargetArn" -> ActionTargetArn.asInstanceOf[js.Any]
       )
 
@@ -1175,7 +1191,7 @@ package securityhub {
     def apply(
         InsightArn: NonEmptyString
     ): DeleteInsightRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InsightArn" -> InsightArn.asInstanceOf[js.Any]
       )
 
@@ -1192,7 +1208,7 @@ package securityhub {
     def apply(
         InsightArn: NonEmptyString
     ): DeleteInsightResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InsightArn" -> InsightArn.asInstanceOf[js.Any]
       )
 
@@ -1209,7 +1225,7 @@ package securityhub {
     def apply(
         AccountIds: AccountIdList
     ): DeleteInvitationsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountIds" -> AccountIds.asInstanceOf[js.Any]
       )
 
@@ -1226,8 +1242,8 @@ package securityhub {
     def apply(
         UnprocessedAccounts: js.UndefOr[ResultList] = js.undefined
     ): DeleteInvitationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      UnprocessedAccounts.foreach(__v => __obj.update("UnprocessedAccounts", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      UnprocessedAccounts.foreach(__v => __obj.updateDynamic("UnprocessedAccounts")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteInvitationsResponse]
     }
   }
@@ -1241,8 +1257,8 @@ package securityhub {
     def apply(
         AccountIds: js.UndefOr[AccountIdList] = js.undefined
     ): DeleteMembersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccountIds.foreach(__v => __obj.update("AccountIds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccountIds.foreach(__v => __obj.updateDynamic("AccountIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteMembersRequest]
     }
   }
@@ -1256,8 +1272,8 @@ package securityhub {
     def apply(
         UnprocessedAccounts: js.UndefOr[ResultList] = js.undefined
     ): DeleteMembersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      UnprocessedAccounts.foreach(__v => __obj.update("UnprocessedAccounts", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      UnprocessedAccounts.foreach(__v => __obj.updateDynamic("UnprocessedAccounts")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteMembersResponse]
     }
   }
@@ -1275,10 +1291,10 @@ package securityhub {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeActionTargetsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ActionTargetArns.foreach(__v => __obj.update("ActionTargetArns", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ActionTargetArns.foreach(__v => __obj.updateDynamic("ActionTargetArns")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeActionTargetsRequest]
     }
   }
@@ -1294,11 +1310,11 @@ package securityhub {
         ActionTargets: ActionTargetList,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeActionTargetsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ActionTargets" -> ActionTargets.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeActionTargetsResponse]
     }
   }
@@ -1312,8 +1328,8 @@ package securityhub {
     def apply(
         HubArn: js.UndefOr[NonEmptyString] = js.undefined
     ): DescribeHubRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      HubArn.foreach(__v => __obj.update("HubArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      HubArn.foreach(__v => __obj.updateDynamic("HubArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeHubRequest]
     }
   }
@@ -1329,9 +1345,9 @@ package securityhub {
         HubArn: js.UndefOr[NonEmptyString] = js.undefined,
         SubscribedAt: js.UndefOr[NonEmptyString] = js.undefined
     ): DescribeHubResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      HubArn.foreach(__v => __obj.update("HubArn", __v.asInstanceOf[js.Any]))
-      SubscribedAt.foreach(__v => __obj.update("SubscribedAt", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      HubArn.foreach(__v => __obj.updateDynamic("HubArn")(__v.asInstanceOf[js.Any]))
+      SubscribedAt.foreach(__v => __obj.updateDynamic("SubscribedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeHubResponse]
     }
   }
@@ -1347,9 +1363,9 @@ package securityhub {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeProductsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProductsRequest]
     }
   }
@@ -1365,11 +1381,11 @@ package securityhub {
         Products: ProductsList,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeProductsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Products" -> Products.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProductsResponse]
     }
   }
@@ -1383,7 +1399,7 @@ package securityhub {
     def apply(
         ProductSubscriptionArn: NonEmptyString
     ): DisableImportFindingsForProductRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ProductSubscriptionArn" -> ProductSubscriptionArn.asInstanceOf[js.Any]
       )
 
@@ -1397,7 +1413,7 @@ package securityhub {
   object DisableImportFindingsForProductResponse {
     def apply(
         ): DisableImportFindingsForProductResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisableImportFindingsForProductResponse]
     }
@@ -1409,7 +1425,7 @@ package securityhub {
   object DisableSecurityHubRequest {
     def apply(
         ): DisableSecurityHubRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisableSecurityHubRequest]
     }
@@ -1421,7 +1437,7 @@ package securityhub {
   object DisableSecurityHubResponse {
     def apply(
         ): DisableSecurityHubResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisableSecurityHubResponse]
     }
@@ -1433,7 +1449,7 @@ package securityhub {
   object DisassociateFromMasterAccountRequest {
     def apply(
         ): DisassociateFromMasterAccountRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateFromMasterAccountRequest]
     }
@@ -1445,7 +1461,7 @@ package securityhub {
   object DisassociateFromMasterAccountResponse {
     def apply(
         ): DisassociateFromMasterAccountResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateFromMasterAccountResponse]
     }
@@ -1460,8 +1476,8 @@ package securityhub {
     def apply(
         AccountIds: js.UndefOr[AccountIdList] = js.undefined
     ): DisassociateMembersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccountIds.foreach(__v => __obj.update("AccountIds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccountIds.foreach(__v => __obj.updateDynamic("AccountIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisassociateMembersRequest]
     }
   }
@@ -1472,7 +1488,7 @@ package securityhub {
   object DisassociateMembersResponse {
     def apply(
         ): DisassociateMembersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[DisassociateMembersResponse]
     }
@@ -1487,7 +1503,7 @@ package securityhub {
     def apply(
         ProductArn: NonEmptyString
     ): EnableImportFindingsForProductRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ProductArn" -> ProductArn.asInstanceOf[js.Any]
       )
 
@@ -1504,8 +1520,8 @@ package securityhub {
     def apply(
         ProductSubscriptionArn: js.UndefOr[NonEmptyString] = js.undefined
     ): EnableImportFindingsForProductResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ProductSubscriptionArn.foreach(__v => __obj.update("ProductSubscriptionArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ProductSubscriptionArn.foreach(__v => __obj.updateDynamic("ProductSubscriptionArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnableImportFindingsForProductResponse]
     }
   }
@@ -1519,8 +1535,8 @@ package securityhub {
     def apply(
         Tags: js.UndefOr[TagMap] = js.undefined
     ): EnableSecurityHubRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EnableSecurityHubRequest]
     }
   }
@@ -1531,7 +1547,7 @@ package securityhub {
   object EnableSecurityHubResponse {
     def apply(
         ): EnableSecurityHubResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[EnableSecurityHubResponse]
     }
@@ -1550,10 +1566,12 @@ package securityhub {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         StandardsSubscriptionArns: js.UndefOr[StandardsSubscriptionArns] = js.undefined
     ): GetEnabledStandardsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      StandardsSubscriptionArns.foreach(__v => __obj.update("StandardsSubscriptionArns", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StandardsSubscriptionArns.foreach(
+        __v => __obj.updateDynamic("StandardsSubscriptionArns")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[GetEnabledStandardsRequest]
     }
   }
@@ -1569,9 +1587,9 @@ package securityhub {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         StandardsSubscriptions: js.UndefOr[StandardsSubscriptions] = js.undefined
     ): GetEnabledStandardsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      StandardsSubscriptions.foreach(__v => __obj.update("StandardsSubscriptions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StandardsSubscriptions.foreach(__v => __obj.updateDynamic("StandardsSubscriptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetEnabledStandardsResponse]
     }
   }
@@ -1591,11 +1609,11 @@ package securityhub {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         SortCriteria: js.UndefOr[SortCriteria] = js.undefined
     ): GetFindingsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      SortCriteria.foreach(__v => __obj.update("SortCriteria", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SortCriteria.foreach(__v => __obj.updateDynamic("SortCriteria")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFindingsRequest]
     }
   }
@@ -1611,11 +1629,11 @@ package securityhub {
         Findings: AwsSecurityFindingList,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetFindingsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Findings" -> Findings.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFindingsResponse]
     }
   }
@@ -1629,7 +1647,7 @@ package securityhub {
     def apply(
         InsightArn: NonEmptyString
     ): GetInsightResultsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InsightArn" -> InsightArn.asInstanceOf[js.Any]
       )
 
@@ -1646,7 +1664,7 @@ package securityhub {
     def apply(
         InsightResults: InsightResults
     ): GetInsightResultsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InsightResults" -> InsightResults.asInstanceOf[js.Any]
       )
 
@@ -1667,10 +1685,10 @@ package securityhub {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetInsightsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InsightArns.foreach(__v => __obj.update("InsightArns", __v.asInstanceOf[js.Any]))
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InsightArns.foreach(__v => __obj.updateDynamic("InsightArns")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetInsightsRequest]
     }
   }
@@ -1686,11 +1704,11 @@ package securityhub {
         Insights: InsightList,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetInsightsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Insights" -> Insights.asInstanceOf[js.Any]
       )
 
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetInsightsResponse]
     }
   }
@@ -1701,7 +1719,7 @@ package securityhub {
   object GetInvitationsCountRequest {
     def apply(
         ): GetInvitationsCountRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetInvitationsCountRequest]
     }
@@ -1716,8 +1734,8 @@ package securityhub {
     def apply(
         InvitationsCount: js.UndefOr[Int] = js.undefined
     ): GetInvitationsCountResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      InvitationsCount.foreach(__v => __obj.update("InvitationsCount", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      InvitationsCount.foreach(__v => __obj.updateDynamic("InvitationsCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetInvitationsCountResponse]
     }
   }
@@ -1728,7 +1746,7 @@ package securityhub {
   object GetMasterAccountRequest {
     def apply(
         ): GetMasterAccountRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[GetMasterAccountRequest]
     }
@@ -1743,8 +1761,8 @@ package securityhub {
     def apply(
         Master: js.UndefOr[Invitation] = js.undefined
     ): GetMasterAccountResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Master.foreach(__v => __obj.update("Master", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Master.foreach(__v => __obj.updateDynamic("Master")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMasterAccountResponse]
     }
   }
@@ -1758,7 +1776,7 @@ package securityhub {
     def apply(
         AccountIds: AccountIdList
     ): GetMembersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AccountIds" -> AccountIds.asInstanceOf[js.Any]
       )
 
@@ -1777,9 +1795,9 @@ package securityhub {
         Members: js.UndefOr[MemberList] = js.undefined,
         UnprocessedAccounts: js.UndefOr[ResultList] = js.undefined
     ): GetMembersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Members.foreach(__v => __obj.update("Members", __v.asInstanceOf[js.Any]))
-      UnprocessedAccounts.foreach(__v => __obj.update("UnprocessedAccounts", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Members.foreach(__v => __obj.updateDynamic("Members")(__v.asInstanceOf[js.Any]))
+      UnprocessedAccounts.foreach(__v => __obj.updateDynamic("UnprocessedAccounts")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMembersResponse]
     }
   }
@@ -1800,7 +1818,7 @@ package securityhub {
         ErrorMessage: NonEmptyString,
         Id: NonEmptyString
     ): ImportFindingsError = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ErrorCode"    -> ErrorCode.asInstanceOf[js.Any],
         "ErrorMessage" -> ErrorMessage.asInstanceOf[js.Any],
         "Id"           -> Id.asInstanceOf[js.Any]
@@ -1828,7 +1846,7 @@ package securityhub {
         InsightArn: NonEmptyString,
         Name: NonEmptyString
     ): Insight = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Filters"          -> Filters.asInstanceOf[js.Any],
         "GroupByAttribute" -> GroupByAttribute.asInstanceOf[js.Any],
         "InsightArn"       -> InsightArn.asInstanceOf[js.Any],
@@ -1853,7 +1871,7 @@ package securityhub {
         Count: Int,
         GroupByAttributeValue: NonEmptyString
     ): InsightResultValue = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Count"                 -> Count.asInstanceOf[js.Any],
         "GroupByAttributeValue" -> GroupByAttributeValue.asInstanceOf[js.Any]
       )
@@ -1878,7 +1896,7 @@ package securityhub {
         InsightArn: NonEmptyString,
         ResultValues: InsightResultValueList
     ): InsightResults = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "GroupByAttribute" -> GroupByAttribute.asInstanceOf[js.Any],
         "InsightArn"       -> InsightArn.asInstanceOf[js.Any],
         "ResultValues"     -> ResultValues.asInstanceOf[js.Any]
@@ -1906,11 +1924,11 @@ package securityhub {
         InvitedAt: js.UndefOr[Timestamp] = js.undefined,
         MemberStatus: js.UndefOr[NonEmptyString] = js.undefined
     ): Invitation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccountId.foreach(__v => __obj.update("AccountId", __v.asInstanceOf[js.Any]))
-      InvitationId.foreach(__v => __obj.update("InvitationId", __v.asInstanceOf[js.Any]))
-      InvitedAt.foreach(__v => __obj.update("InvitedAt", __v.asInstanceOf[js.Any]))
-      MemberStatus.foreach(__v => __obj.update("MemberStatus", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      InvitationId.foreach(__v => __obj.updateDynamic("InvitationId")(__v.asInstanceOf[js.Any]))
+      InvitedAt.foreach(__v => __obj.updateDynamic("InvitedAt")(__v.asInstanceOf[js.Any]))
+      MemberStatus.foreach(__v => __obj.updateDynamic("MemberStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Invitation]
     }
   }
@@ -1924,8 +1942,8 @@ package securityhub {
     def apply(
         AccountIds: js.UndefOr[AccountIdList] = js.undefined
     ): InviteMembersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccountIds.foreach(__v => __obj.update("AccountIds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccountIds.foreach(__v => __obj.updateDynamic("AccountIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InviteMembersRequest]
     }
   }
@@ -1939,8 +1957,8 @@ package securityhub {
     def apply(
         UnprocessedAccounts: js.UndefOr[ResultList] = js.undefined
     ): InviteMembersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      UnprocessedAccounts.foreach(__v => __obj.update("UnprocessedAccounts", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      UnprocessedAccounts.foreach(__v => __obj.updateDynamic("UnprocessedAccounts")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InviteMembersResponse]
     }
   }
@@ -1957,8 +1975,8 @@ package securityhub {
     def apply(
         Cidr: js.UndefOr[NonEmptyString] = js.undefined
     ): IpFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Cidr.foreach(__v => __obj.update("Cidr", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Cidr.foreach(__v => __obj.updateDynamic("Cidr")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IpFilter]
     }
   }
@@ -1975,8 +1993,8 @@ package securityhub {
     def apply(
         Value: js.UndefOr[NonEmptyString] = js.undefined
     ): KeywordFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KeywordFilter]
     }
   }
@@ -1992,9 +2010,9 @@ package securityhub {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListEnabledProductsForImportRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEnabledProductsForImportRequest]
     }
   }
@@ -2010,9 +2028,9 @@ package securityhub {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ProductSubscriptions: js.UndefOr[ProductSubscriptionArnList] = js.undefined
     ): ListEnabledProductsForImportResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      ProductSubscriptions.foreach(__v => __obj.update("ProductSubscriptions", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ProductSubscriptions.foreach(__v => __obj.updateDynamic("ProductSubscriptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEnabledProductsForImportResponse]
     }
   }
@@ -2028,9 +2046,9 @@ package securityhub {
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListInvitationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListInvitationsRequest]
     }
   }
@@ -2046,9 +2064,9 @@ package securityhub {
         Invitations: js.UndefOr[InvitationList] = js.undefined,
         NextToken: js.UndefOr[NonEmptyString] = js.undefined
     ): ListInvitationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Invitations.foreach(__v => __obj.update("Invitations", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Invitations.foreach(__v => __obj.updateDynamic("Invitations")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListInvitationsResponse]
     }
   }
@@ -2066,10 +2084,10 @@ package securityhub {
         NextToken: js.UndefOr[NextToken] = js.undefined,
         OnlyAssociated: js.UndefOr[Boolean] = js.undefined
     ): ListMembersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      MaxResults.foreach(__v => __obj.update("MaxResults", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
-      OnlyAssociated.foreach(__v => __obj.update("OnlyAssociated", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      OnlyAssociated.foreach(__v => __obj.updateDynamic("OnlyAssociated")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListMembersRequest]
     }
   }
@@ -2085,9 +2103,9 @@ package securityhub {
         Members: js.UndefOr[MemberList] = js.undefined,
         NextToken: js.UndefOr[NonEmptyString] = js.undefined
     ): ListMembersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Members.foreach(__v => __obj.update("Members", __v.asInstanceOf[js.Any]))
-      NextToken.foreach(__v => __obj.update("NextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Members.foreach(__v => __obj.updateDynamic("Members")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListMembersResponse]
     }
   }
@@ -2101,7 +2119,7 @@ package securityhub {
     def apply(
         ResourceArn: ResourceArn
     ): ListTagsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
       )
 
@@ -2118,8 +2136,8 @@ package securityhub {
     def apply(
         Tags: js.UndefOr[TagMap] = js.undefined
     ): ListTagsForResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
@@ -2142,13 +2160,13 @@ package securityhub {
         State: js.UndefOr[MalwareState] = js.undefined,
         Type: js.UndefOr[MalwareType] = js.undefined
     ): Malware = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
-      Path.foreach(__v => __obj.update("Path", __v.asInstanceOf[js.Any]))
-      State.foreach(__v => __obj.update("State", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Malware]
     }
   }
@@ -2215,10 +2233,10 @@ package securityhub {
         Key: js.UndefOr[NonEmptyString] = js.undefined,
         Value: js.UndefOr[NonEmptyString] = js.undefined
     ): MapFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Comparison.foreach(__v => __obj.update("Comparison", __v.asInstanceOf[js.Any]))
-      Key.foreach(__v => __obj.update("Key", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Comparison.foreach(__v => __obj.updateDynamic("Comparison")(__v.asInstanceOf[js.Any]))
+      Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MapFilter]
     }
   }
@@ -2251,13 +2269,13 @@ package securityhub {
         MemberStatus: js.UndefOr[NonEmptyString] = js.undefined,
         UpdatedAt: js.UndefOr[Timestamp] = js.undefined
     ): Member = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccountId.foreach(__v => __obj.update("AccountId", __v.asInstanceOf[js.Any]))
-      Email.foreach(__v => __obj.update("Email", __v.asInstanceOf[js.Any]))
-      InvitedAt.foreach(__v => __obj.update("InvitedAt", __v.asInstanceOf[js.Any]))
-      MasterId.foreach(__v => __obj.update("MasterId", __v.asInstanceOf[js.Any]))
-      MemberStatus.foreach(__v => __obj.update("MemberStatus", __v.asInstanceOf[js.Any]))
-      UpdatedAt.foreach(__v => __obj.update("UpdatedAt", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      Email.foreach(__v => __obj.updateDynamic("Email")(__v.asInstanceOf[js.Any]))
+      InvitedAt.foreach(__v => __obj.updateDynamic("InvitedAt")(__v.asInstanceOf[js.Any]))
+      MasterId.foreach(__v => __obj.updateDynamic("MasterId")(__v.asInstanceOf[js.Any]))
+      MemberStatus.foreach(__v => __obj.updateDynamic("MemberStatus")(__v.asInstanceOf[js.Any]))
+      UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Member]
     }
   }
@@ -2294,18 +2312,18 @@ package securityhub {
         SourceMac: js.UndefOr[NonEmptyString] = js.undefined,
         SourcePort: js.UndefOr[Int] = js.undefined
     ): Network = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DestinationDomain.foreach(__v => __obj.update("DestinationDomain", __v.asInstanceOf[js.Any]))
-      DestinationIpV4.foreach(__v => __obj.update("DestinationIpV4", __v.asInstanceOf[js.Any]))
-      DestinationIpV6.foreach(__v => __obj.update("DestinationIpV6", __v.asInstanceOf[js.Any]))
-      DestinationPort.foreach(__v => __obj.update("DestinationPort", __v.asInstanceOf[js.Any]))
-      Direction.foreach(__v => __obj.update("Direction", __v.asInstanceOf[js.Any]))
-      Protocol.foreach(__v => __obj.update("Protocol", __v.asInstanceOf[js.Any]))
-      SourceDomain.foreach(__v => __obj.update("SourceDomain", __v.asInstanceOf[js.Any]))
-      SourceIpV4.foreach(__v => __obj.update("SourceIpV4", __v.asInstanceOf[js.Any]))
-      SourceIpV6.foreach(__v => __obj.update("SourceIpV6", __v.asInstanceOf[js.Any]))
-      SourceMac.foreach(__v => __obj.update("SourceMac", __v.asInstanceOf[js.Any]))
-      SourcePort.foreach(__v => __obj.update("SourcePort", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DestinationDomain.foreach(__v => __obj.updateDynamic("DestinationDomain")(__v.asInstanceOf[js.Any]))
+      DestinationIpV4.foreach(__v => __obj.updateDynamic("DestinationIpV4")(__v.asInstanceOf[js.Any]))
+      DestinationIpV6.foreach(__v => __obj.updateDynamic("DestinationIpV6")(__v.asInstanceOf[js.Any]))
+      DestinationPort.foreach(__v => __obj.updateDynamic("DestinationPort")(__v.asInstanceOf[js.Any]))
+      Direction.foreach(__v => __obj.updateDynamic("Direction")(__v.asInstanceOf[js.Any]))
+      Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
+      SourceDomain.foreach(__v => __obj.updateDynamic("SourceDomain")(__v.asInstanceOf[js.Any]))
+      SourceIpV4.foreach(__v => __obj.updateDynamic("SourceIpV4")(__v.asInstanceOf[js.Any]))
+      SourceIpV6.foreach(__v => __obj.updateDynamic("SourceIpV6")(__v.asInstanceOf[js.Any]))
+      SourceMac.foreach(__v => __obj.updateDynamic("SourceMac")(__v.asInstanceOf[js.Any]))
+      SourcePort.foreach(__v => __obj.updateDynamic("SourcePort")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Network]
     }
   }
@@ -2333,7 +2351,7 @@ package securityhub {
         UpdatedAt: NonEmptyString,
         UpdatedBy: NonEmptyString
     ): Note = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Text"      -> Text.asInstanceOf[js.Any],
         "UpdatedAt" -> UpdatedAt.asInstanceOf[js.Any],
         "UpdatedBy" -> UpdatedBy.asInstanceOf[js.Any]
@@ -2357,7 +2375,7 @@ package securityhub {
         Text: NonEmptyString,
         UpdatedBy: NonEmptyString
     ): NoteUpdate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Text"      -> Text.asInstanceOf[js.Any],
         "UpdatedBy" -> UpdatedBy.asInstanceOf[js.Any]
       )
@@ -2382,10 +2400,10 @@ package securityhub {
         Gte: js.UndefOr[Double] = js.undefined,
         Lte: js.UndefOr[Double] = js.undefined
     ): NumberFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Eq.foreach(__v => __obj.update("Eq", __v.asInstanceOf[js.Any]))
-      Gte.foreach(__v => __obj.update("Gte", __v.asInstanceOf[js.Any]))
-      Lte.foreach(__v => __obj.update("Lte", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Eq.foreach(__v => __obj.updateDynamic("Eq")(__v.asInstanceOf[js.Any]))
+      Gte.foreach(__v => __obj.updateDynamic("Gte")(__v.asInstanceOf[js.Any]))
+      Lte.foreach(__v => __obj.updateDynamic("Lte")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NumberFilter]
     }
   }
@@ -2420,13 +2438,13 @@ package securityhub {
         Pid: js.UndefOr[Int] = js.undefined,
         TerminatedAt: js.UndefOr[NonEmptyString] = js.undefined
     ): ProcessDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LaunchedAt.foreach(__v => __obj.update("LaunchedAt", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
-      ParentPid.foreach(__v => __obj.update("ParentPid", __v.asInstanceOf[js.Any]))
-      Path.foreach(__v => __obj.update("Path", __v.asInstanceOf[js.Any]))
-      Pid.foreach(__v => __obj.update("Pid", __v.asInstanceOf[js.Any]))
-      TerminatedAt.foreach(__v => __obj.update("TerminatedAt", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LaunchedAt.foreach(__v => __obj.updateDynamic("LaunchedAt")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ParentPid.foreach(__v => __obj.updateDynamic("ParentPid")(__v.asInstanceOf[js.Any]))
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
+      Pid.foreach(__v => __obj.updateDynamic("Pid")(__v.asInstanceOf[js.Any]))
+      TerminatedAt.foreach(__v => __obj.updateDynamic("TerminatedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProcessDetails]
     }
   }
@@ -2457,18 +2475,18 @@ package securityhub {
         ProductName: js.UndefOr[NonEmptyString] = js.undefined,
         ProductSubscriptionResourcePolicy: js.UndefOr[NonEmptyString] = js.undefined
     ): Product = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ProductArn" -> ProductArn.asInstanceOf[js.Any]
       )
 
-      ActivationUrl.foreach(__v => __obj.update("ActivationUrl", __v.asInstanceOf[js.Any]))
-      Categories.foreach(__v => __obj.update("Categories", __v.asInstanceOf[js.Any]))
-      CompanyName.foreach(__v => __obj.update("CompanyName", __v.asInstanceOf[js.Any]))
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      MarketplaceUrl.foreach(__v => __obj.update("MarketplaceUrl", __v.asInstanceOf[js.Any]))
-      ProductName.foreach(__v => __obj.update("ProductName", __v.asInstanceOf[js.Any]))
+      ActivationUrl.foreach(__v => __obj.updateDynamic("ActivationUrl")(__v.asInstanceOf[js.Any]))
+      Categories.foreach(__v => __obj.updateDynamic("Categories")(__v.asInstanceOf[js.Any]))
+      CompanyName.foreach(__v => __obj.updateDynamic("CompanyName")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      MarketplaceUrl.foreach(__v => __obj.updateDynamic("MarketplaceUrl")(__v.asInstanceOf[js.Any]))
+      ProductName.foreach(__v => __obj.updateDynamic("ProductName")(__v.asInstanceOf[js.Any]))
       ProductSubscriptionResourcePolicy.foreach(
-        __v => __obj.update("ProductSubscriptionResourcePolicy", __v.asInstanceOf[js.Any])
+        __v => __obj.updateDynamic("ProductSubscriptionResourcePolicy")(__v.asInstanceOf[js.Any])
       )
       __obj.asInstanceOf[Product]
     }
@@ -2488,9 +2506,9 @@ package securityhub {
         Text: js.UndefOr[NonEmptyString] = js.undefined,
         Url: js.UndefOr[NonEmptyString] = js.undefined
     ): Recommendation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Text.foreach(__v => __obj.update("Text", __v.asInstanceOf[js.Any]))
-      Url.foreach(__v => __obj.update("Url", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Recommendation]
     }
   }
@@ -2516,7 +2534,7 @@ package securityhub {
         Id: NonEmptyString,
         ProductArn: NonEmptyString
     ): RelatedFinding = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id"         -> Id.asInstanceOf[js.Any],
         "ProductArn" -> ProductArn.asInstanceOf[js.Any]
       )
@@ -2537,8 +2555,8 @@ package securityhub {
     def apply(
         Recommendation: js.UndefOr[Recommendation] = js.undefined
     ): Remediation = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Recommendation.foreach(__v => __obj.update("Recommendation", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Recommendation.foreach(__v => __obj.updateDynamic("Recommendation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Remediation]
     }
   }
@@ -2565,15 +2583,15 @@ package securityhub {
         Region: js.UndefOr[NonEmptyString] = js.undefined,
         Tags: js.UndefOr[FieldMap] = js.undefined
     ): Resource = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Id"   -> Id.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
 
-      Details.foreach(__v => __obj.update("Details", __v.asInstanceOf[js.Any]))
-      Partition.foreach(__v => __obj.update("Partition", __v.asInstanceOf[js.Any]))
-      Region.foreach(__v => __obj.update("Region", __v.asInstanceOf[js.Any]))
-      Tags.foreach(__v => __obj.update("Tags", __v.asInstanceOf[js.Any]))
+      Details.foreach(__v => __obj.updateDynamic("Details")(__v.asInstanceOf[js.Any]))
+      Partition.foreach(__v => __obj.updateDynamic("Partition")(__v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Resource]
     }
   }
@@ -2598,12 +2616,12 @@ package securityhub {
         Container: js.UndefOr[ContainerDetails] = js.undefined,
         Other: js.UndefOr[FieldMap] = js.undefined
     ): ResourceDetails = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AwsEc2Instance.foreach(__v => __obj.update("AwsEc2Instance", __v.asInstanceOf[js.Any]))
-      AwsIamAccessKey.foreach(__v => __obj.update("AwsIamAccessKey", __v.asInstanceOf[js.Any]))
-      AwsS3Bucket.foreach(__v => __obj.update("AwsS3Bucket", __v.asInstanceOf[js.Any]))
-      Container.foreach(__v => __obj.update("Container", __v.asInstanceOf[js.Any]))
-      Other.foreach(__v => __obj.update("Other", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AwsEc2Instance.foreach(__v => __obj.updateDynamic("AwsEc2Instance")(__v.asInstanceOf[js.Any]))
+      AwsIamAccessKey.foreach(__v => __obj.updateDynamic("AwsIamAccessKey")(__v.asInstanceOf[js.Any]))
+      AwsS3Bucket.foreach(__v => __obj.updateDynamic("AwsS3Bucket")(__v.asInstanceOf[js.Any]))
+      Container.foreach(__v => __obj.updateDynamic("Container")(__v.asInstanceOf[js.Any]))
+      Other.foreach(__v => __obj.updateDynamic("Other")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceDetails]
     }
   }
@@ -2622,9 +2640,9 @@ package securityhub {
         AccountId: js.UndefOr[AccountId] = js.undefined,
         ProcessingResult: js.UndefOr[NonEmptyString] = js.undefined
     ): Result = {
-      val __obj = js.Dictionary.empty[js.Any]
-      AccountId.foreach(__v => __obj.update("AccountId", __v.asInstanceOf[js.Any]))
-      ProcessingResult.foreach(__v => __obj.update("ProcessingResult", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      ProcessingResult.foreach(__v => __obj.updateDynamic("ProcessingResult")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Result]
     }
   }
@@ -2643,11 +2661,11 @@ package securityhub {
         Normalized: Int,
         Product: js.UndefOr[Double] = js.undefined
     ): Severity = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Normalized" -> Normalized.asInstanceOf[js.Any]
       )
 
-      Product.foreach(__v => __obj.update("Product", __v.asInstanceOf[js.Any]))
+      Product.foreach(__v => __obj.updateDynamic("Product")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Severity]
     }
   }
@@ -2666,9 +2684,9 @@ package securityhub {
         Field: js.UndefOr[NonEmptyString] = js.undefined,
         SortOrder: js.UndefOr[SortOrder] = js.undefined
     ): SortCriterion = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Field.foreach(__v => __obj.update("Field", __v.asInstanceOf[js.Any]))
-      SortOrder.foreach(__v => __obj.update("SortOrder", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Field.foreach(__v => __obj.updateDynamic("Field")(__v.asInstanceOf[js.Any]))
+      SortOrder.foreach(__v => __obj.updateDynamic("SortOrder")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SortCriterion]
     }
   }
@@ -2708,7 +2726,7 @@ package securityhub {
         StandardsStatus: StandardsStatus,
         StandardsSubscriptionArn: NonEmptyString
     ): StandardsSubscription = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "StandardsArn"             -> StandardsArn.asInstanceOf[js.Any],
         "StandardsInput"           -> StandardsInput.asInstanceOf[js.Any],
         "StandardsStatus"          -> StandardsStatus.asInstanceOf[js.Any],
@@ -2733,11 +2751,11 @@ package securityhub {
         StandardsArn: NonEmptyString,
         StandardsInput: js.UndefOr[StandardsInputParameterMap] = js.undefined
     ): StandardsSubscriptionRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "StandardsArn" -> StandardsArn.asInstanceOf[js.Any]
       )
 
-      StandardsInput.foreach(__v => __obj.update("StandardsInput", __v.asInstanceOf[js.Any]))
+      StandardsInput.foreach(__v => __obj.updateDynamic("StandardsInput")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StandardsSubscriptionRequest]
     }
   }
@@ -2756,9 +2774,9 @@ package securityhub {
         Comparison: js.UndefOr[StringFilterComparison] = js.undefined,
         Value: js.UndefOr[NonEmptyString] = js.undefined
     ): StringFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Comparison.foreach(__v => __obj.update("Comparison", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Comparison.foreach(__v => __obj.updateDynamic("Comparison")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StringFilter]
     }
   }
@@ -2781,7 +2799,7 @@ package securityhub {
         ResourceArn: ResourceArn,
         Tags: TagMap
     ): TagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "Tags"        -> Tags.asInstanceOf[js.Any]
       )
@@ -2796,7 +2814,7 @@ package securityhub {
   object TagResourceResponse {
     def apply(
         ): TagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[TagResourceResponse]
     }
@@ -2824,13 +2842,13 @@ package securityhub {
         Type: js.UndefOr[ThreatIntelIndicatorType] = js.undefined,
         Value: js.UndefOr[NonEmptyString] = js.undefined
     ): ThreatIntelIndicator = {
-      val __obj = js.Dictionary.empty[js.Any]
-      Category.foreach(__v => __obj.update("Category", __v.asInstanceOf[js.Any]))
-      LastObservedAt.foreach(__v => __obj.update("LastObservedAt", __v.asInstanceOf[js.Any]))
-      Source.foreach(__v => __obj.update("Source", __v.asInstanceOf[js.Any]))
-      SourceUrl.foreach(__v => __obj.update("SourceUrl", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
-      Value.foreach(__v => __obj.update("Value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
+      LastObservedAt.foreach(__v => __obj.updateDynamic("LastObservedAt")(__v.asInstanceOf[js.Any]))
+      Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
+      SourceUrl.foreach(__v => __obj.updateDynamic("SourceUrl")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ThreatIntelIndicator]
     }
   }
@@ -2888,7 +2906,7 @@ package securityhub {
         ResourceArn: ResourceArn,
         TagKeys: TagKeyList
     ): UntagResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
         "TagKeys"     -> TagKeys.asInstanceOf[js.Any]
       )
@@ -2903,7 +2921,7 @@ package securityhub {
   object UntagResourceResponse {
     def apply(
         ): UntagResourceResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UntagResourceResponse]
     }
@@ -2922,12 +2940,12 @@ package securityhub {
         Description: js.UndefOr[NonEmptyString] = js.undefined,
         Name: js.UndefOr[NonEmptyString] = js.undefined
     ): UpdateActionTargetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ActionTargetArn" -> ActionTargetArn.asInstanceOf[js.Any]
       )
 
-      Description.foreach(__v => __obj.update("Description", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateActionTargetRequest]
     }
   }
@@ -2938,7 +2956,7 @@ package securityhub {
   object UpdateActionTargetResponse {
     def apply(
         ): UpdateActionTargetResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateActionTargetResponse]
     }
@@ -2957,12 +2975,12 @@ package securityhub {
         Note: js.UndefOr[NoteUpdate] = js.undefined,
         RecordState: js.UndefOr[RecordState] = js.undefined
     ): UpdateFindingsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "Filters" -> Filters.asInstanceOf[js.Any]
       )
 
-      Note.foreach(__v => __obj.update("Note", __v.asInstanceOf[js.Any]))
-      RecordState.foreach(__v => __obj.update("RecordState", __v.asInstanceOf[js.Any]))
+      Note.foreach(__v => __obj.updateDynamic("Note")(__v.asInstanceOf[js.Any]))
+      RecordState.foreach(__v => __obj.updateDynamic("RecordState")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFindingsRequest]
     }
   }
@@ -2973,7 +2991,7 @@ package securityhub {
   object UpdateFindingsResponse {
     def apply(
         ): UpdateFindingsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateFindingsResponse]
     }
@@ -2994,13 +3012,13 @@ package securityhub {
         GroupByAttribute: js.UndefOr[NonEmptyString] = js.undefined,
         Name: js.UndefOr[NonEmptyString] = js.undefined
     ): UpdateInsightRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "InsightArn" -> InsightArn.asInstanceOf[js.Any]
       )
 
-      Filters.foreach(__v => __obj.update("Filters", __v.asInstanceOf[js.Any]))
-      GroupByAttribute.foreach(__v => __obj.update("GroupByAttribute", __v.asInstanceOf[js.Any]))
-      Name.foreach(__v => __obj.update("Name", __v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      GroupByAttribute.foreach(__v => __obj.updateDynamic("GroupByAttribute")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateInsightRequest]
     }
   }
@@ -3011,7 +3029,7 @@ package securityhub {
   object UpdateInsightResponse {
     def apply(
         ): UpdateInsightResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
+      val __obj = js.Dynamic.literal()
 
       __obj.asInstanceOf[UpdateInsightResponse]
     }

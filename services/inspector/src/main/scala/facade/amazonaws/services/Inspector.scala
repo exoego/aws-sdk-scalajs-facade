@@ -262,7 +262,7 @@ package inspector {
         attributes: UserAttributeList,
         findingArns: AddRemoveAttributesFindingArnList
     ): AddAttributesToFindingsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "attributes"  -> attributes.asInstanceOf[js.Any],
         "findingArns" -> findingArns.asInstanceOf[js.Any]
       )
@@ -280,7 +280,7 @@ package inspector {
     def apply(
         failedItems: FailedItems
     ): AddAttributesToFindingsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "failedItems" -> failedItems.asInstanceOf[js.Any]
       )
 
@@ -302,7 +302,7 @@ package inspector {
         agentHealthCodes: AgentHealthCodeList,
         agentHealths: AgentHealthList
     ): AgentFilter = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "agentHealthCodes" -> agentHealthCodes.asInstanceOf[js.Any],
         "agentHealths"     -> agentHealths.asInstanceOf[js.Any]
       )
@@ -356,17 +356,17 @@ package inspector {
         kernelVersion: js.UndefOr[KernelVersion] = js.undefined,
         operatingSystem: js.UndefOr[OperatingSystem] = js.undefined
     ): AgentPreview = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "agentId" -> agentId.asInstanceOf[js.Any]
       )
 
-      agentHealth.foreach(__v => __obj.update("agentHealth", __v.asInstanceOf[js.Any]))
-      agentVersion.foreach(__v => __obj.update("agentVersion", __v.asInstanceOf[js.Any]))
-      autoScalingGroup.foreach(__v => __obj.update("autoScalingGroup", __v.asInstanceOf[js.Any]))
-      hostname.foreach(__v => __obj.update("hostname", __v.asInstanceOf[js.Any]))
-      ipv4Address.foreach(__v => __obj.update("ipv4Address", __v.asInstanceOf[js.Any]))
-      kernelVersion.foreach(__v => __obj.update("kernelVersion", __v.asInstanceOf[js.Any]))
-      operatingSystem.foreach(__v => __obj.update("operatingSystem", __v.asInstanceOf[js.Any]))
+      agentHealth.foreach(__v => __obj.updateDynamic("agentHealth")(__v.asInstanceOf[js.Any]))
+      agentVersion.foreach(__v => __obj.updateDynamic("agentVersion")(__v.asInstanceOf[js.Any]))
+      autoScalingGroup.foreach(__v => __obj.updateDynamic("autoScalingGroup")(__v.asInstanceOf[js.Any]))
+      hostname.foreach(__v => __obj.updateDynamic("hostname")(__v.asInstanceOf[js.Any]))
+      ipv4Address.foreach(__v => __obj.updateDynamic("ipv4Address")(__v.asInstanceOf[js.Any]))
+      kernelVersion.foreach(__v => __obj.updateDynamic("kernelVersion")(__v.asInstanceOf[js.Any]))
+      operatingSystem.foreach(__v => __obj.updateDynamic("operatingSystem")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AgentPreview]
     }
   }
@@ -412,7 +412,7 @@ package inspector {
         completedAt: js.UndefOr[Timestamp] = js.undefined,
         startedAt: js.UndefOr[Timestamp] = js.undefined
     ): AssessmentRun = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "arn"                       -> arn.asInstanceOf[js.Any],
         "assessmentTemplateArn"     -> assessmentTemplateArn.asInstanceOf[js.Any],
         "createdAt"                 -> createdAt.asInstanceOf[js.Any],
@@ -428,8 +428,8 @@ package inspector {
         "userAttributesForFindings" -> userAttributesForFindings.asInstanceOf[js.Any]
       )
 
-      completedAt.foreach(__v => __obj.update("completedAt", __v.asInstanceOf[js.Any]))
-      startedAt.foreach(__v => __obj.update("startedAt", __v.asInstanceOf[js.Any]))
+      completedAt.foreach(__v => __obj.updateDynamic("completedAt")(__v.asInstanceOf[js.Any]))
+      startedAt.foreach(__v => __obj.updateDynamic("startedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssessmentRun]
     }
   }
@@ -458,7 +458,7 @@ package inspector {
         agentHealthDetails: js.UndefOr[Message] = js.undefined,
         autoScalingGroup: js.UndefOr[AutoScalingGroup] = js.undefined
     ): AssessmentRunAgent = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "agentHealth"       -> agentHealth.asInstanceOf[js.Any],
         "agentHealthCode"   -> agentHealthCode.asInstanceOf[js.Any],
         "agentId"           -> agentId.asInstanceOf[js.Any],
@@ -466,8 +466,8 @@ package inspector {
         "telemetryMetadata" -> telemetryMetadata.asInstanceOf[js.Any]
       )
 
-      agentHealthDetails.foreach(__v => __obj.update("agentHealthDetails", __v.asInstanceOf[js.Any]))
-      autoScalingGroup.foreach(__v => __obj.update("autoScalingGroup", __v.asInstanceOf[js.Any]))
+      agentHealthDetails.foreach(__v => __obj.updateDynamic("agentHealthDetails")(__v.asInstanceOf[js.Any]))
+      autoScalingGroup.foreach(__v => __obj.updateDynamic("autoScalingGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssessmentRunAgent]
     }
   }
@@ -496,14 +496,14 @@ package inspector {
         stateChangeTimeRange: js.UndefOr[TimestampRange] = js.undefined,
         states: js.UndefOr[AssessmentRunStateList] = js.undefined
     ): AssessmentRunFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      completionTimeRange.foreach(__v => __obj.update("completionTimeRange", __v.asInstanceOf[js.Any]))
-      durationRange.foreach(__v => __obj.update("durationRange", __v.asInstanceOf[js.Any]))
-      namePattern.foreach(__v => __obj.update("namePattern", __v.asInstanceOf[js.Any]))
-      rulesPackageArns.foreach(__v => __obj.update("rulesPackageArns", __v.asInstanceOf[js.Any]))
-      startTimeRange.foreach(__v => __obj.update("startTimeRange", __v.asInstanceOf[js.Any]))
-      stateChangeTimeRange.foreach(__v => __obj.update("stateChangeTimeRange", __v.asInstanceOf[js.Any]))
-      states.foreach(__v => __obj.update("states", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      completionTimeRange.foreach(__v => __obj.updateDynamic("completionTimeRange")(__v.asInstanceOf[js.Any]))
+      durationRange.foreach(__v => __obj.updateDynamic("durationRange")(__v.asInstanceOf[js.Any]))
+      namePattern.foreach(__v => __obj.updateDynamic("namePattern")(__v.asInstanceOf[js.Any]))
+      rulesPackageArns.foreach(__v => __obj.updateDynamic("rulesPackageArns")(__v.asInstanceOf[js.Any]))
+      startTimeRange.foreach(__v => __obj.updateDynamic("startTimeRange")(__v.asInstanceOf[js.Any]))
+      stateChangeTimeRange.foreach(__v => __obj.updateDynamic("stateChangeTimeRange")(__v.asInstanceOf[js.Any]))
+      states.foreach(__v => __obj.updateDynamic("states")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssessmentRunFilter]
     }
   }
@@ -530,15 +530,15 @@ package inspector {
         snsPublishStatusCode: js.UndefOr[AssessmentRunNotificationSnsStatusCode] = js.undefined,
         snsTopicArn: js.UndefOr[Arn] = js.undefined
     ): AssessmentRunNotification = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "date"  -> date.asInstanceOf[js.Any],
         "error" -> error.asInstanceOf[js.Any],
         "event" -> event.asInstanceOf[js.Any]
       )
 
-      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
-      snsPublishStatusCode.foreach(__v => __obj.update("snsPublishStatusCode", __v.asInstanceOf[js.Any]))
-      snsTopicArn.foreach(__v => __obj.update("snsTopicArn", __v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      snsPublishStatusCode.foreach(__v => __obj.updateDynamic("snsPublishStatusCode")(__v.asInstanceOf[js.Any]))
+      snsTopicArn.foreach(__v => __obj.updateDynamic("snsTopicArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssessmentRunNotification]
     }
   }
@@ -600,7 +600,7 @@ package inspector {
         state: AssessmentRunState,
         stateChangedAt: Timestamp
     ): AssessmentRunStateChange = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "state"          -> state.asInstanceOf[js.Any],
         "stateChangedAt" -> stateChangedAt.asInstanceOf[js.Any]
       )
@@ -629,14 +629,14 @@ package inspector {
         updatedAt: Timestamp,
         resourceGroupArn: js.UndefOr[Arn] = js.undefined
     ): AssessmentTarget = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "arn"       -> arn.asInstanceOf[js.Any],
         "createdAt" -> createdAt.asInstanceOf[js.Any],
         "name"      -> name.asInstanceOf[js.Any],
         "updatedAt" -> updatedAt.asInstanceOf[js.Any]
       )
 
-      resourceGroupArn.foreach(__v => __obj.update("resourceGroupArn", __v.asInstanceOf[js.Any]))
+      resourceGroupArn.foreach(__v => __obj.updateDynamic("resourceGroupArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssessmentTarget]
     }
   }
@@ -653,8 +653,10 @@ package inspector {
     def apply(
         assessmentTargetNamePattern: js.UndefOr[NamePattern] = js.undefined
     ): AssessmentTargetFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      assessmentTargetNamePattern.foreach(__v => __obj.update("assessmentTargetNamePattern", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      assessmentTargetNamePattern.foreach(
+        __v => __obj.updateDynamic("assessmentTargetNamePattern")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[AssessmentTargetFilter]
     }
   }
@@ -687,7 +689,7 @@ package inspector {
         userAttributesForFindings: UserAttributeList,
         lastAssessmentRunArn: js.UndefOr[Arn] = js.undefined
     ): AssessmentTemplate = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "arn"                       -> arn.asInstanceOf[js.Any],
         "assessmentRunCount"        -> assessmentRunCount.asInstanceOf[js.Any],
         "assessmentTargetArn"       -> assessmentTargetArn.asInstanceOf[js.Any],
@@ -698,7 +700,7 @@ package inspector {
         "userAttributesForFindings" -> userAttributesForFindings.asInstanceOf[js.Any]
       )
 
-      lastAssessmentRunArn.foreach(__v => __obj.update("lastAssessmentRunArn", __v.asInstanceOf[js.Any]))
+      lastAssessmentRunArn.foreach(__v => __obj.updateDynamic("lastAssessmentRunArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssessmentTemplate]
     }
   }
@@ -719,10 +721,10 @@ package inspector {
         namePattern: js.UndefOr[NamePattern] = js.undefined,
         rulesPackageArns: js.UndefOr[FilterRulesPackageArnList] = js.undefined
     ): AssessmentTemplateFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      durationRange.foreach(__v => __obj.update("durationRange", __v.asInstanceOf[js.Any]))
-      namePattern.foreach(__v => __obj.update("namePattern", __v.asInstanceOf[js.Any]))
-      rulesPackageArns.foreach(__v => __obj.update("rulesPackageArns", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      durationRange.foreach(__v => __obj.updateDynamic("durationRange")(__v.asInstanceOf[js.Any]))
+      namePattern.foreach(__v => __obj.updateDynamic("namePattern")(__v.asInstanceOf[js.Any]))
+      rulesPackageArns.foreach(__v => __obj.updateDynamic("rulesPackageArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssessmentTemplateFilter]
     }
   }
@@ -753,17 +755,17 @@ package inspector {
         networkInterfaces: js.UndefOr[NetworkInterfaces] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): AssetAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "schemaVersion" -> schemaVersion.asInstanceOf[js.Any]
       )
 
-      agentId.foreach(__v => __obj.update("agentId", __v.asInstanceOf[js.Any]))
-      amiId.foreach(__v => __obj.update("amiId", __v.asInstanceOf[js.Any]))
-      autoScalingGroup.foreach(__v => __obj.update("autoScalingGroup", __v.asInstanceOf[js.Any]))
-      hostname.foreach(__v => __obj.update("hostname", __v.asInstanceOf[js.Any]))
-      ipv4Addresses.foreach(__v => __obj.update("ipv4Addresses", __v.asInstanceOf[js.Any]))
-      networkInterfaces.foreach(__v => __obj.update("networkInterfaces", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      agentId.foreach(__v => __obj.updateDynamic("agentId")(__v.asInstanceOf[js.Any]))
+      amiId.foreach(__v => __obj.updateDynamic("amiId")(__v.asInstanceOf[js.Any]))
+      autoScalingGroup.foreach(__v => __obj.updateDynamic("autoScalingGroup")(__v.asInstanceOf[js.Any]))
+      hostname.foreach(__v => __obj.updateDynamic("hostname")(__v.asInstanceOf[js.Any]))
+      ipv4Addresses.foreach(__v => __obj.updateDynamic("ipv4Addresses")(__v.asInstanceOf[js.Any]))
+      networkInterfaces.foreach(__v => __obj.updateDynamic("networkInterfaces")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssetAttributes]
     }
   }
@@ -788,11 +790,11 @@ package inspector {
         key: AttributeKey,
         value: js.UndefOr[AttributeValue] = js.undefined
     ): Attribute = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "key" -> key.asInstanceOf[js.Any]
       )
 
-      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Attribute]
     }
   }
@@ -808,11 +810,11 @@ package inspector {
         assessmentTargetName: AssessmentTargetName,
         resourceGroupArn: js.UndefOr[Arn] = js.undefined
     ): CreateAssessmentTargetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "assessmentTargetName" -> assessmentTargetName.asInstanceOf[js.Any]
       )
 
-      resourceGroupArn.foreach(__v => __obj.update("resourceGroupArn", __v.asInstanceOf[js.Any]))
+      resourceGroupArn.foreach(__v => __obj.updateDynamic("resourceGroupArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAssessmentTargetRequest]
     }
   }
@@ -826,7 +828,7 @@ package inspector {
     def apply(
         assessmentTargetArn: Arn
     ): CreateAssessmentTargetResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "assessmentTargetArn" -> assessmentTargetArn.asInstanceOf[js.Any]
       )
 
@@ -851,14 +853,16 @@ package inspector {
         rulesPackageArns: AssessmentTemplateRulesPackageArnList,
         userAttributesForFindings: js.UndefOr[UserAttributeList] = js.undefined
     ): CreateAssessmentTemplateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "assessmentTargetArn"    -> assessmentTargetArn.asInstanceOf[js.Any],
         "assessmentTemplateName" -> assessmentTemplateName.asInstanceOf[js.Any],
         "durationInSeconds"      -> durationInSeconds.asInstanceOf[js.Any],
         "rulesPackageArns"       -> rulesPackageArns.asInstanceOf[js.Any]
       )
 
-      userAttributesForFindings.foreach(__v => __obj.update("userAttributesForFindings", __v.asInstanceOf[js.Any]))
+      userAttributesForFindings.foreach(
+        __v => __obj.updateDynamic("userAttributesForFindings")(__v.asInstanceOf[js.Any])
+      )
       __obj.asInstanceOf[CreateAssessmentTemplateRequest]
     }
   }
@@ -872,7 +876,7 @@ package inspector {
     def apply(
         assessmentTemplateArn: Arn
     ): CreateAssessmentTemplateResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "assessmentTemplateArn" -> assessmentTemplateArn.asInstanceOf[js.Any]
       )
 
@@ -889,7 +893,7 @@ package inspector {
     def apply(
         assessmentTemplateArn: Arn
     ): CreateExclusionsPreviewRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "assessmentTemplateArn" -> assessmentTemplateArn.asInstanceOf[js.Any]
       )
 
@@ -906,7 +910,7 @@ package inspector {
     def apply(
         previewToken: UUID
     ): CreateExclusionsPreviewResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "previewToken" -> previewToken.asInstanceOf[js.Any]
       )
 
@@ -923,7 +927,7 @@ package inspector {
     def apply(
         resourceGroupTags: ResourceGroupTags
     ): CreateResourceGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceGroupTags" -> resourceGroupTags.asInstanceOf[js.Any]
       )
 
@@ -940,7 +944,7 @@ package inspector {
     def apply(
         resourceGroupArn: Arn
     ): CreateResourceGroupResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceGroupArn" -> resourceGroupArn.asInstanceOf[js.Any]
       )
 
@@ -957,7 +961,7 @@ package inspector {
     def apply(
         assessmentRunArn: Arn
     ): DeleteAssessmentRunRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "assessmentRunArn" -> assessmentRunArn.asInstanceOf[js.Any]
       )
 
@@ -974,7 +978,7 @@ package inspector {
     def apply(
         assessmentTargetArn: Arn
     ): DeleteAssessmentTargetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "assessmentTargetArn" -> assessmentTargetArn.asInstanceOf[js.Any]
       )
 
@@ -991,7 +995,7 @@ package inspector {
     def apply(
         assessmentTemplateArn: Arn
     ): DeleteAssessmentTemplateRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "assessmentTemplateArn" -> assessmentTemplateArn.asInstanceOf[js.Any]
       )
 
@@ -1008,7 +1012,7 @@ package inspector {
     def apply(
         assessmentRunArns: BatchDescribeArnList
     ): DescribeAssessmentRunsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "assessmentRunArns" -> assessmentRunArns.asInstanceOf[js.Any]
       )
 
@@ -1027,7 +1031,7 @@ package inspector {
         assessmentRuns: AssessmentRunList,
         failedItems: FailedItems
     ): DescribeAssessmentRunsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "assessmentRuns" -> assessmentRuns.asInstanceOf[js.Any],
         "failedItems"    -> failedItems.asInstanceOf[js.Any]
       )
@@ -1045,7 +1049,7 @@ package inspector {
     def apply(
         assessmentTargetArns: BatchDescribeArnList
     ): DescribeAssessmentTargetsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "assessmentTargetArns" -> assessmentTargetArns.asInstanceOf[js.Any]
       )
 
@@ -1064,7 +1068,7 @@ package inspector {
         assessmentTargets: AssessmentTargetList,
         failedItems: FailedItems
     ): DescribeAssessmentTargetsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "assessmentTargets" -> assessmentTargets.asInstanceOf[js.Any],
         "failedItems"       -> failedItems.asInstanceOf[js.Any]
       )
@@ -1082,7 +1086,7 @@ package inspector {
     def apply(
         assessmentTemplateArns: BatchDescribeArnList
     ): DescribeAssessmentTemplatesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "assessmentTemplateArns" -> assessmentTemplateArns.asInstanceOf[js.Any]
       )
 
@@ -1101,7 +1105,7 @@ package inspector {
         assessmentTemplates: AssessmentTemplateList,
         failedItems: FailedItems
     ): DescribeAssessmentTemplatesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "assessmentTemplates" -> assessmentTemplates.asInstanceOf[js.Any],
         "failedItems"         -> failedItems.asInstanceOf[js.Any]
       )
@@ -1123,7 +1127,7 @@ package inspector {
         roleArn: Arn,
         valid: Boolean
     ): DescribeCrossAccountAccessRoleResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "registeredAt" -> registeredAt.asInstanceOf[js.Any],
         "roleArn"      -> roleArn.asInstanceOf[js.Any],
         "valid"        -> valid.asInstanceOf[js.Any]
@@ -1144,11 +1148,11 @@ package inspector {
         exclusionArns: BatchDescribeExclusionsArnList,
         locale: js.UndefOr[Locale] = js.undefined
     ): DescribeExclusionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "exclusionArns" -> exclusionArns.asInstanceOf[js.Any]
       )
 
-      locale.foreach(__v => __obj.update("locale", __v.asInstanceOf[js.Any]))
+      locale.foreach(__v => __obj.updateDynamic("locale")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeExclusionsRequest]
     }
   }
@@ -1164,7 +1168,7 @@ package inspector {
         exclusions: ExclusionMap,
         failedItems: FailedItems
     ): DescribeExclusionsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "exclusions"  -> exclusions.asInstanceOf[js.Any],
         "failedItems" -> failedItems.asInstanceOf[js.Any]
       )
@@ -1184,11 +1188,11 @@ package inspector {
         findingArns: BatchDescribeArnList,
         locale: js.UndefOr[Locale] = js.undefined
     ): DescribeFindingsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "findingArns" -> findingArns.asInstanceOf[js.Any]
       )
 
-      locale.foreach(__v => __obj.update("locale", __v.asInstanceOf[js.Any]))
+      locale.foreach(__v => __obj.updateDynamic("locale")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeFindingsRequest]
     }
   }
@@ -1204,7 +1208,7 @@ package inspector {
         failedItems: FailedItems,
         findings: FindingList
     ): DescribeFindingsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "failedItems" -> failedItems.asInstanceOf[js.Any],
         "findings"    -> findings.asInstanceOf[js.Any]
       )
@@ -1222,7 +1226,7 @@ package inspector {
     def apply(
         resourceGroupArns: BatchDescribeArnList
     ): DescribeResourceGroupsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceGroupArns" -> resourceGroupArns.asInstanceOf[js.Any]
       )
 
@@ -1241,7 +1245,7 @@ package inspector {
         failedItems: FailedItems,
         resourceGroups: ResourceGroupList
     ): DescribeResourceGroupsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "failedItems"    -> failedItems.asInstanceOf[js.Any],
         "resourceGroups" -> resourceGroups.asInstanceOf[js.Any]
       )
@@ -1261,11 +1265,11 @@ package inspector {
         rulesPackageArns: BatchDescribeArnList,
         locale: js.UndefOr[Locale] = js.undefined
     ): DescribeRulesPackagesRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "rulesPackageArns" -> rulesPackageArns.asInstanceOf[js.Any]
       )
 
-      locale.foreach(__v => __obj.update("locale", __v.asInstanceOf[js.Any]))
+      locale.foreach(__v => __obj.updateDynamic("locale")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRulesPackagesRequest]
     }
   }
@@ -1281,7 +1285,7 @@ package inspector {
         failedItems: FailedItems,
         rulesPackages: RulesPackageList
     ): DescribeRulesPackagesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "failedItems"   -> failedItems.asInstanceOf[js.Any],
         "rulesPackages" -> rulesPackages.asInstanceOf[js.Any]
       )
@@ -1304,9 +1308,9 @@ package inspector {
         maxSeconds: js.UndefOr[AssessmentRunDuration] = js.undefined,
         minSeconds: js.UndefOr[AssessmentRunDuration] = js.undefined
     ): DurationRange = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxSeconds.foreach(__v => __obj.update("maxSeconds", __v.asInstanceOf[js.Any]))
-      minSeconds.foreach(__v => __obj.update("minSeconds", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxSeconds.foreach(__v => __obj.updateDynamic("maxSeconds")(__v.asInstanceOf[js.Any]))
+      minSeconds.foreach(__v => __obj.updateDynamic("minSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DurationRange]
     }
   }
@@ -1325,7 +1329,7 @@ package inspector {
         event: InspectorEvent,
         subscribedAt: Timestamp
     ): EventSubscription = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "event"        -> event.asInstanceOf[js.Any],
         "subscribedAt" -> subscribedAt.asInstanceOf[js.Any]
       )
@@ -1356,7 +1360,7 @@ package inspector {
         title: Text,
         attributes: js.UndefOr[AttributeList] = js.undefined
     ): Exclusion = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "arn"            -> arn.asInstanceOf[js.Any],
         "description"    -> description.asInstanceOf[js.Any],
         "recommendation" -> recommendation.asInstanceOf[js.Any],
@@ -1364,7 +1368,7 @@ package inspector {
         "title"          -> title.asInstanceOf[js.Any]
       )
 
-      attributes.foreach(__v => __obj.update("attributes", __v.asInstanceOf[js.Any]))
+      attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Exclusion]
     }
   }
@@ -1389,14 +1393,14 @@ package inspector {
         title: Text,
         attributes: js.UndefOr[AttributeList] = js.undefined
     ): ExclusionPreview = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "description"    -> description.asInstanceOf[js.Any],
         "recommendation" -> recommendation.asInstanceOf[js.Any],
         "scopes"         -> scopes.asInstanceOf[js.Any],
         "title"          -> title.asInstanceOf[js.Any]
       )
 
-      attributes.foreach(__v => __obj.update("attributes", __v.asInstanceOf[js.Any]))
+      attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExclusionPreview]
     }
   }
@@ -1415,7 +1419,7 @@ package inspector {
         failureCode: FailedItemErrorCode,
         retryable: Boolean
     ): FailedItemDetails = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "failureCode" -> failureCode.asInstanceOf[js.Any],
         "retryable"   -> retryable.asInstanceOf[js.Any]
       )
@@ -1483,7 +1487,7 @@ package inspector {
         severity: js.UndefOr[Severity] = js.undefined,
         title: js.UndefOr[Text] = js.undefined
     ): Finding = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "arn"            -> arn.asInstanceOf[js.Any],
         "attributes"     -> attributes.asInstanceOf[js.Any],
         "createdAt"      -> createdAt.asInstanceOf[js.Any],
@@ -1491,19 +1495,19 @@ package inspector {
         "userAttributes" -> userAttributes.asInstanceOf[js.Any]
       )
 
-      assetAttributes.foreach(__v => __obj.update("assetAttributes", __v.asInstanceOf[js.Any]))
-      assetType.foreach(__v => __obj.update("assetType", __v.asInstanceOf[js.Any]))
-      confidence.foreach(__v => __obj.update("confidence", __v.asInstanceOf[js.Any]))
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
-      id.foreach(__v => __obj.update("id", __v.asInstanceOf[js.Any]))
-      indicatorOfCompromise.foreach(__v => __obj.update("indicatorOfCompromise", __v.asInstanceOf[js.Any]))
-      numericSeverity.foreach(__v => __obj.update("numericSeverity", __v.asInstanceOf[js.Any]))
-      recommendation.foreach(__v => __obj.update("recommendation", __v.asInstanceOf[js.Any]))
-      schemaVersion.foreach(__v => __obj.update("schemaVersion", __v.asInstanceOf[js.Any]))
-      service.foreach(__v => __obj.update("service", __v.asInstanceOf[js.Any]))
-      serviceAttributes.foreach(__v => __obj.update("serviceAttributes", __v.asInstanceOf[js.Any]))
-      severity.foreach(__v => __obj.update("severity", __v.asInstanceOf[js.Any]))
-      title.foreach(__v => __obj.update("title", __v.asInstanceOf[js.Any]))
+      assetAttributes.foreach(__v => __obj.updateDynamic("assetAttributes")(__v.asInstanceOf[js.Any]))
+      assetType.foreach(__v => __obj.updateDynamic("assetType")(__v.asInstanceOf[js.Any]))
+      confidence.foreach(__v => __obj.updateDynamic("confidence")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      indicatorOfCompromise.foreach(__v => __obj.updateDynamic("indicatorOfCompromise")(__v.asInstanceOf[js.Any]))
+      numericSeverity.foreach(__v => __obj.updateDynamic("numericSeverity")(__v.asInstanceOf[js.Any]))
+      recommendation.foreach(__v => __obj.updateDynamic("recommendation")(__v.asInstanceOf[js.Any]))
+      schemaVersion.foreach(__v => __obj.updateDynamic("schemaVersion")(__v.asInstanceOf[js.Any]))
+      service.foreach(__v => __obj.updateDynamic("service")(__v.asInstanceOf[js.Any]))
+      serviceAttributes.foreach(__v => __obj.updateDynamic("serviceAttributes")(__v.asInstanceOf[js.Any]))
+      severity.foreach(__v => __obj.updateDynamic("severity")(__v.asInstanceOf[js.Any]))
+      title.foreach(__v => __obj.updateDynamic("title")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Finding]
     }
   }
@@ -1534,15 +1538,15 @@ package inspector {
         severities: js.UndefOr[SeverityList] = js.undefined,
         userAttributes: js.UndefOr[AttributeList] = js.undefined
     ): FindingFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      agentIds.foreach(__v => __obj.update("agentIds", __v.asInstanceOf[js.Any]))
-      attributes.foreach(__v => __obj.update("attributes", __v.asInstanceOf[js.Any]))
-      autoScalingGroups.foreach(__v => __obj.update("autoScalingGroups", __v.asInstanceOf[js.Any]))
-      creationTimeRange.foreach(__v => __obj.update("creationTimeRange", __v.asInstanceOf[js.Any]))
-      ruleNames.foreach(__v => __obj.update("ruleNames", __v.asInstanceOf[js.Any]))
-      rulesPackageArns.foreach(__v => __obj.update("rulesPackageArns", __v.asInstanceOf[js.Any]))
-      severities.foreach(__v => __obj.update("severities", __v.asInstanceOf[js.Any]))
-      userAttributes.foreach(__v => __obj.update("userAttributes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      agentIds.foreach(__v => __obj.updateDynamic("agentIds")(__v.asInstanceOf[js.Any]))
+      attributes.foreach(__v => __obj.updateDynamic("attributes")(__v.asInstanceOf[js.Any]))
+      autoScalingGroups.foreach(__v => __obj.updateDynamic("autoScalingGroups")(__v.asInstanceOf[js.Any]))
+      creationTimeRange.foreach(__v => __obj.updateDynamic("creationTimeRange")(__v.asInstanceOf[js.Any]))
+      ruleNames.foreach(__v => __obj.updateDynamic("ruleNames")(__v.asInstanceOf[js.Any]))
+      rulesPackageArns.foreach(__v => __obj.updateDynamic("rulesPackageArns")(__v.asInstanceOf[js.Any]))
+      severities.foreach(__v => __obj.updateDynamic("severities")(__v.asInstanceOf[js.Any]))
+      userAttributes.foreach(__v => __obj.updateDynamic("userAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FindingFilter]
     }
   }
@@ -1560,7 +1564,7 @@ package inspector {
         reportFileFormat: ReportFileFormat,
         reportType: ReportType
     ): GetAssessmentReportRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "assessmentRunArn" -> assessmentRunArn.asInstanceOf[js.Any],
         "reportFileFormat" -> reportFileFormat.asInstanceOf[js.Any],
         "reportType"       -> reportType.asInstanceOf[js.Any]
@@ -1581,11 +1585,11 @@ package inspector {
         status: ReportStatus,
         url: js.UndefOr[Url] = js.undefined
     ): GetAssessmentReportResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "status" -> status.asInstanceOf[js.Any]
       )
 
-      url.foreach(__v => __obj.update("url", __v.asInstanceOf[js.Any]))
+      url.foreach(__v => __obj.updateDynamic("url")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAssessmentReportResponse]
     }
   }
@@ -1607,14 +1611,14 @@ package inspector {
         maxResults: js.UndefOr[ListMaxResults] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): GetExclusionsPreviewRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "assessmentTemplateArn" -> assessmentTemplateArn.asInstanceOf[js.Any],
         "previewToken"          -> previewToken.asInstanceOf[js.Any]
       )
 
-      locale.foreach(__v => __obj.update("locale", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      locale.foreach(__v => __obj.updateDynamic("locale")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetExclusionsPreviewRequest]
     }
   }
@@ -1632,12 +1636,12 @@ package inspector {
         exclusionPreviews: js.UndefOr[ExclusionPreviewList] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): GetExclusionsPreviewResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "previewStatus" -> previewStatus.asInstanceOf[js.Any]
       )
 
-      exclusionPreviews.foreach(__v => __obj.update("exclusionPreviews", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      exclusionPreviews.foreach(__v => __obj.updateDynamic("exclusionPreviews")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetExclusionsPreviewResponse]
     }
   }
@@ -1651,7 +1655,7 @@ package inspector {
     def apply(
         assessmentRunArn: Arn
     ): GetTelemetryMetadataRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "assessmentRunArn" -> assessmentRunArn.asInstanceOf[js.Any]
       )
 
@@ -1668,7 +1672,7 @@ package inspector {
     def apply(
         telemetryMetadata: TelemetryMetadataList
     ): GetTelemetryMetadataResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "telemetryMetadata" -> telemetryMetadata.asInstanceOf[js.Any]
       )
 
@@ -1704,12 +1708,12 @@ package inspector {
         assessmentRunArn: js.UndefOr[Arn] = js.undefined,
         rulesPackageArn: js.UndefOr[Arn] = js.undefined
     ): InspectorServiceAttributes = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "schemaVersion" -> schemaVersion.asInstanceOf[js.Any]
       )
 
-      assessmentRunArn.foreach(__v => __obj.update("assessmentRunArn", __v.asInstanceOf[js.Any]))
-      rulesPackageArn.foreach(__v => __obj.update("rulesPackageArn", __v.asInstanceOf[js.Any]))
+      assessmentRunArn.foreach(__v => __obj.updateDynamic("assessmentRunArn")(__v.asInstanceOf[js.Any]))
+      rulesPackageArn.foreach(__v => __obj.updateDynamic("rulesPackageArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InspectorServiceAttributes]
     }
   }
@@ -1729,13 +1733,13 @@ package inspector {
         maxResults: js.UndefOr[ListMaxResults] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListAssessmentRunAgentsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "assessmentRunArn" -> assessmentRunArn.asInstanceOf[js.Any]
       )
 
-      filter.foreach(__v => __obj.update("filter", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      filter.foreach(__v => __obj.updateDynamic("filter")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAssessmentRunAgentsRequest]
     }
   }
@@ -1751,11 +1755,11 @@ package inspector {
         assessmentRunAgents: AssessmentRunAgentList,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListAssessmentRunAgentsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "assessmentRunAgents" -> assessmentRunAgents.asInstanceOf[js.Any]
       )
 
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAssessmentRunAgentsResponse]
     }
   }
@@ -1775,11 +1779,11 @@ package inspector {
         maxResults: js.UndefOr[ListMaxResults] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListAssessmentRunsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      assessmentTemplateArns.foreach(__v => __obj.update("assessmentTemplateArns", __v.asInstanceOf[js.Any]))
-      filter.foreach(__v => __obj.update("filter", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      assessmentTemplateArns.foreach(__v => __obj.updateDynamic("assessmentTemplateArns")(__v.asInstanceOf[js.Any]))
+      filter.foreach(__v => __obj.updateDynamic("filter")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAssessmentRunsRequest]
     }
   }
@@ -1795,11 +1799,11 @@ package inspector {
         assessmentRunArns: ListReturnedArnList,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListAssessmentRunsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "assessmentRunArns" -> assessmentRunArns.asInstanceOf[js.Any]
       )
 
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAssessmentRunsResponse]
     }
   }
@@ -1817,10 +1821,10 @@ package inspector {
         maxResults: js.UndefOr[ListMaxResults] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListAssessmentTargetsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      filter.foreach(__v => __obj.update("filter", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      filter.foreach(__v => __obj.updateDynamic("filter")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAssessmentTargetsRequest]
     }
   }
@@ -1836,11 +1840,11 @@ package inspector {
         assessmentTargetArns: ListReturnedArnList,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListAssessmentTargetsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "assessmentTargetArns" -> assessmentTargetArns.asInstanceOf[js.Any]
       )
 
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAssessmentTargetsResponse]
     }
   }
@@ -1860,11 +1864,11 @@ package inspector {
         maxResults: js.UndefOr[ListMaxResults] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListAssessmentTemplatesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      assessmentTargetArns.foreach(__v => __obj.update("assessmentTargetArns", __v.asInstanceOf[js.Any]))
-      filter.foreach(__v => __obj.update("filter", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      assessmentTargetArns.foreach(__v => __obj.updateDynamic("assessmentTargetArns")(__v.asInstanceOf[js.Any]))
+      filter.foreach(__v => __obj.updateDynamic("filter")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAssessmentTemplatesRequest]
     }
   }
@@ -1880,11 +1884,11 @@ package inspector {
         assessmentTemplateArns: ListReturnedArnList,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListAssessmentTemplatesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "assessmentTemplateArns" -> assessmentTemplateArns.asInstanceOf[js.Any]
       )
 
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAssessmentTemplatesResponse]
     }
   }
@@ -1902,10 +1906,10 @@ package inspector {
         nextToken: js.UndefOr[PaginationToken] = js.undefined,
         resourceArn: js.UndefOr[Arn] = js.undefined
     ): ListEventSubscriptionsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      resourceArn.foreach(__v => __obj.update("resourceArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      resourceArn.foreach(__v => __obj.updateDynamic("resourceArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEventSubscriptionsRequest]
     }
   }
@@ -1921,11 +1925,11 @@ package inspector {
         subscriptions: SubscriptionList,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListEventSubscriptionsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "subscriptions" -> subscriptions.asInstanceOf[js.Any]
       )
 
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListEventSubscriptionsResponse]
     }
   }
@@ -1943,12 +1947,12 @@ package inspector {
         maxResults: js.UndefOr[ListMaxResults] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListExclusionsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "assessmentRunArn" -> assessmentRunArn.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListExclusionsRequest]
     }
   }
@@ -1964,11 +1968,11 @@ package inspector {
         exclusionArns: ListReturnedArnList,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListExclusionsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "exclusionArns" -> exclusionArns.asInstanceOf[js.Any]
       )
 
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListExclusionsResponse]
     }
   }
@@ -1988,11 +1992,11 @@ package inspector {
         maxResults: js.UndefOr[ListMaxResults] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListFindingsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      assessmentRunArns.foreach(__v => __obj.update("assessmentRunArns", __v.asInstanceOf[js.Any]))
-      filter.foreach(__v => __obj.update("filter", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      assessmentRunArns.foreach(__v => __obj.updateDynamic("assessmentRunArns")(__v.asInstanceOf[js.Any]))
+      filter.foreach(__v => __obj.updateDynamic("filter")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFindingsRequest]
     }
   }
@@ -2008,11 +2012,11 @@ package inspector {
         findingArns: ListReturnedArnList,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListFindingsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "findingArns" -> findingArns.asInstanceOf[js.Any]
       )
 
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFindingsResponse]
     }
   }
@@ -2028,9 +2032,9 @@ package inspector {
         maxResults: js.UndefOr[ListMaxResults] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListRulesPackagesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRulesPackagesRequest]
     }
   }
@@ -2046,11 +2050,11 @@ package inspector {
         rulesPackageArns: ListReturnedArnList,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListRulesPackagesResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "rulesPackageArns" -> rulesPackageArns.asInstanceOf[js.Any]
       )
 
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRulesPackagesResponse]
     }
   }
@@ -2064,7 +2068,7 @@ package inspector {
     def apply(
         resourceArn: Arn
     ): ListTagsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
 
@@ -2081,7 +2085,7 @@ package inspector {
     def apply(
         tags: TagList
     ): ListTagsForResourceResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "tags" -> tags.asInstanceOf[js.Any]
       )
 
@@ -2125,17 +2129,17 @@ package inspector {
         subnetId: js.UndefOr[Text] = js.undefined,
         vpcId: js.UndefOr[Text] = js.undefined
     ): NetworkInterface = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ipv6Addresses.foreach(__v => __obj.update("ipv6Addresses", __v.asInstanceOf[js.Any]))
-      networkInterfaceId.foreach(__v => __obj.update("networkInterfaceId", __v.asInstanceOf[js.Any]))
-      privateDnsName.foreach(__v => __obj.update("privateDnsName", __v.asInstanceOf[js.Any]))
-      privateIpAddress.foreach(__v => __obj.update("privateIpAddress", __v.asInstanceOf[js.Any]))
-      privateIpAddresses.foreach(__v => __obj.update("privateIpAddresses", __v.asInstanceOf[js.Any]))
-      publicDnsName.foreach(__v => __obj.update("publicDnsName", __v.asInstanceOf[js.Any]))
-      publicIp.foreach(__v => __obj.update("publicIp", __v.asInstanceOf[js.Any]))
-      securityGroups.foreach(__v => __obj.update("securityGroups", __v.asInstanceOf[js.Any]))
-      subnetId.foreach(__v => __obj.update("subnetId", __v.asInstanceOf[js.Any]))
-      vpcId.foreach(__v => __obj.update("vpcId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ipv6Addresses.foreach(__v => __obj.updateDynamic("ipv6Addresses")(__v.asInstanceOf[js.Any]))
+      networkInterfaceId.foreach(__v => __obj.updateDynamic("networkInterfaceId")(__v.asInstanceOf[js.Any]))
+      privateDnsName.foreach(__v => __obj.updateDynamic("privateDnsName")(__v.asInstanceOf[js.Any]))
+      privateIpAddress.foreach(__v => __obj.updateDynamic("privateIpAddress")(__v.asInstanceOf[js.Any]))
+      privateIpAddresses.foreach(__v => __obj.updateDynamic("privateIpAddresses")(__v.asInstanceOf[js.Any]))
+      publicDnsName.foreach(__v => __obj.updateDynamic("publicDnsName")(__v.asInstanceOf[js.Any]))
+      publicIp.foreach(__v => __obj.updateDynamic("publicIp")(__v.asInstanceOf[js.Any]))
+      securityGroups.foreach(__v => __obj.updateDynamic("securityGroups")(__v.asInstanceOf[js.Any]))
+      subnetId.foreach(__v => __obj.updateDynamic("subnetId")(__v.asInstanceOf[js.Any]))
+      vpcId.foreach(__v => __obj.updateDynamic("vpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NetworkInterface]
     }
   }
@@ -2153,12 +2157,12 @@ package inspector {
         maxResults: js.UndefOr[PreviewAgentsMaxResults] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): PreviewAgentsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "previewAgentsArn" -> previewAgentsArn.asInstanceOf[js.Any]
       )
 
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PreviewAgentsRequest]
     }
   }
@@ -2174,11 +2178,11 @@ package inspector {
         agentPreviews: AgentPreviewList,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): PreviewAgentsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "agentPreviews" -> agentPreviews.asInstanceOf[js.Any]
       )
 
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PreviewAgentsResponse]
     }
   }
@@ -2204,9 +2208,9 @@ package inspector {
         privateDnsName: js.UndefOr[Text] = js.undefined,
         privateIpAddress: js.UndefOr[Text] = js.undefined
     ): PrivateIp = {
-      val __obj = js.Dictionary.empty[js.Any]
-      privateDnsName.foreach(__v => __obj.update("privateDnsName", __v.asInstanceOf[js.Any]))
-      privateIpAddress.foreach(__v => __obj.update("privateIpAddress", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      privateDnsName.foreach(__v => __obj.updateDynamic("privateDnsName")(__v.asInstanceOf[js.Any]))
+      privateIpAddress.foreach(__v => __obj.updateDynamic("privateIpAddress")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PrivateIp]
     }
   }
@@ -2220,7 +2224,7 @@ package inspector {
     def apply(
         roleArn: Arn
     ): RegisterCrossAccountAccessRoleRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
@@ -2239,7 +2243,7 @@ package inspector {
         attributeKeys: UserAttributeKeyList,
         findingArns: AddRemoveAttributesFindingArnList
     ): RemoveAttributesFromFindingsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "attributeKeys" -> attributeKeys.asInstanceOf[js.Any],
         "findingArns"   -> findingArns.asInstanceOf[js.Any]
       )
@@ -2257,7 +2261,7 @@ package inspector {
     def apply(
         failedItems: FailedItems
     ): RemoveAttributesFromFindingsResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "failedItems" -> failedItems.asInstanceOf[js.Any]
       )
 
@@ -2303,7 +2307,7 @@ package inspector {
         createdAt: Timestamp,
         tags: ResourceGroupTags
     ): ResourceGroup = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "arn"       -> arn.asInstanceOf[js.Any],
         "createdAt" -> createdAt.asInstanceOf[js.Any],
         "tags"      -> tags.asInstanceOf[js.Any]
@@ -2327,11 +2331,11 @@ package inspector {
         key: TagKey,
         value: js.UndefOr[TagValue] = js.undefined
     ): ResourceGroupTag = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "key" -> key.asInstanceOf[js.Any]
       )
 
-      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceGroupTag]
     }
   }
@@ -2356,14 +2360,14 @@ package inspector {
         version: Version,
         description: js.UndefOr[Text] = js.undefined
     ): RulesPackage = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "arn"      -> arn.asInstanceOf[js.Any],
         "name"     -> name.asInstanceOf[js.Any],
         "provider" -> provider.asInstanceOf[js.Any],
         "version"  -> version.asInstanceOf[js.Any]
       )
 
-      description.foreach(__v => __obj.update("description", __v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RulesPackage]
     }
   }
@@ -2382,9 +2386,9 @@ package inspector {
         key: js.UndefOr[ScopeType] = js.undefined,
         value: js.UndefOr[ScopeValue] = js.undefined
     ): Scope = {
-      val __obj = js.Dictionary.empty[js.Any]
-      key.foreach(__v => __obj.update("key", __v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      key.foreach(__v => __obj.updateDynamic("key")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Scope]
     }
   }
@@ -2410,9 +2414,9 @@ package inspector {
         groupId: js.UndefOr[Text] = js.undefined,
         groupName: js.UndefOr[Text] = js.undefined
     ): SecurityGroup = {
-      val __obj = js.Dictionary.empty[js.Any]
-      groupId.foreach(__v => __obj.update("groupId", __v.asInstanceOf[js.Any]))
-      groupName.foreach(__v => __obj.update("groupName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      groupId.foreach(__v => __obj.updateDynamic("groupId")(__v.asInstanceOf[js.Any]))
+      groupName.foreach(__v => __obj.updateDynamic("groupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SecurityGroup]
     }
   }
@@ -2428,11 +2432,11 @@ package inspector {
         resourceArn: Arn,
         tags: js.UndefOr[TagList] = js.undefined
     ): SetTagsForResourceRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
 
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetTagsForResourceRequest]
     }
   }
@@ -2458,11 +2462,11 @@ package inspector {
         assessmentTemplateArn: Arn,
         assessmentRunName: js.UndefOr[AssessmentRunName] = js.undefined
     ): StartAssessmentRunRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "assessmentTemplateArn" -> assessmentTemplateArn.asInstanceOf[js.Any]
       )
 
-      assessmentRunName.foreach(__v => __obj.update("assessmentRunName", __v.asInstanceOf[js.Any]))
+      assessmentRunName.foreach(__v => __obj.updateDynamic("assessmentRunName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartAssessmentRunRequest]
     }
   }
@@ -2476,7 +2480,7 @@ package inspector {
     def apply(
         assessmentRunArn: Arn
     ): StartAssessmentRunResponse = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "assessmentRunArn" -> assessmentRunArn.asInstanceOf[js.Any]
       )
 
@@ -2502,11 +2506,11 @@ package inspector {
         assessmentRunArn: Arn,
         stopAction: js.UndefOr[StopAction] = js.undefined
     ): StopAssessmentRunRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "assessmentRunArn" -> assessmentRunArn.asInstanceOf[js.Any]
       )
 
-      stopAction.foreach(__v => __obj.update("stopAction", __v.asInstanceOf[js.Any]))
+      stopAction.foreach(__v => __obj.updateDynamic("stopAction")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopAssessmentRunRequest]
     }
   }
@@ -2524,7 +2528,7 @@ package inspector {
         resourceArn: Arn,
         topicArn: Arn
     ): SubscribeToEventRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "event"       -> event.asInstanceOf[js.Any],
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "topicArn"    -> topicArn.asInstanceOf[js.Any]
@@ -2550,7 +2554,7 @@ package inspector {
         resourceArn: Arn,
         topicArn: Arn
     ): Subscription = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "eventSubscriptions" -> eventSubscriptions.asInstanceOf[js.Any],
         "resourceArn"        -> resourceArn.asInstanceOf[js.Any],
         "topicArn"           -> topicArn.asInstanceOf[js.Any]
@@ -2574,11 +2578,11 @@ package inspector {
         key: TagKey,
         value: js.UndefOr[TagValue] = js.undefined
     ): Tag = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "key" -> key.asInstanceOf[js.Any]
       )
 
-      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tag]
     }
   }
@@ -2599,12 +2603,12 @@ package inspector {
         messageType: MessageType,
         dataSize: js.UndefOr[Double] = js.undefined
     ): TelemetryMetadata = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "count"       -> count.asInstanceOf[js.Any],
         "messageType" -> messageType.asInstanceOf[js.Any]
       )
 
-      dataSize.foreach(__v => __obj.update("dataSize", __v.asInstanceOf[js.Any]))
+      dataSize.foreach(__v => __obj.updateDynamic("dataSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TelemetryMetadata]
     }
   }
@@ -2623,9 +2627,9 @@ package inspector {
         beginDate: js.UndefOr[Timestamp] = js.undefined,
         endDate: js.UndefOr[Timestamp] = js.undefined
     ): TimestampRange = {
-      val __obj = js.Dictionary.empty[js.Any]
-      beginDate.foreach(__v => __obj.update("beginDate", __v.asInstanceOf[js.Any]))
-      endDate.foreach(__v => __obj.update("endDate", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      beginDate.foreach(__v => __obj.updateDynamic("beginDate")(__v.asInstanceOf[js.Any]))
+      endDate.foreach(__v => __obj.updateDynamic("endDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TimestampRange]
     }
   }
@@ -2643,7 +2647,7 @@ package inspector {
         resourceArn: Arn,
         topicArn: Arn
     ): UnsubscribeFromEventRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "event"       -> event.asInstanceOf[js.Any],
         "resourceArn" -> resourceArn.asInstanceOf[js.Any],
         "topicArn"    -> topicArn.asInstanceOf[js.Any]
@@ -2666,12 +2670,12 @@ package inspector {
         assessmentTargetName: AssessmentTargetName,
         resourceGroupArn: js.UndefOr[Arn] = js.undefined
     ): UpdateAssessmentTargetRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "assessmentTargetArn"  -> assessmentTargetArn.asInstanceOf[js.Any],
         "assessmentTargetName" -> assessmentTargetName.asInstanceOf[js.Any]
       )
 
-      resourceGroupArn.foreach(__v => __obj.update("resourceGroupArn", __v.asInstanceOf[js.Any]))
+      resourceGroupArn.foreach(__v => __obj.updateDynamic("resourceGroupArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAssessmentTargetRequest]
     }
   }

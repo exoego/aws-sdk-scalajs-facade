@@ -48,7 +48,7 @@ package personalizeruntime {
         inputList: InputList,
         userId: UserID
     ): GetPersonalizedRankingRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "campaignArn" -> campaignArn.asInstanceOf[js.Any],
         "inputList"   -> inputList.asInstanceOf[js.Any],
         "userId"      -> userId.asInstanceOf[js.Any]
@@ -67,8 +67,8 @@ package personalizeruntime {
     def apply(
         personalizedRanking: js.UndefOr[ItemList] = js.undefined
     ): GetPersonalizedRankingResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      personalizedRanking.foreach(__v => __obj.update("personalizedRanking", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      personalizedRanking.foreach(__v => __obj.updateDynamic("personalizedRanking")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPersonalizedRankingResponse]
     }
   }
@@ -88,13 +88,13 @@ package personalizeruntime {
         numResults: js.UndefOr[NumResults] = js.undefined,
         userId: js.UndefOr[UserID] = js.undefined
     ): GetRecommendationsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "campaignArn" -> campaignArn.asInstanceOf[js.Any]
       )
 
-      itemId.foreach(__v => __obj.update("itemId", __v.asInstanceOf[js.Any]))
-      numResults.foreach(__v => __obj.update("numResults", __v.asInstanceOf[js.Any]))
-      userId.foreach(__v => __obj.update("userId", __v.asInstanceOf[js.Any]))
+      itemId.foreach(__v => __obj.updateDynamic("itemId")(__v.asInstanceOf[js.Any]))
+      numResults.foreach(__v => __obj.updateDynamic("numResults")(__v.asInstanceOf[js.Any]))
+      userId.foreach(__v => __obj.updateDynamic("userId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRecommendationsRequest]
     }
   }
@@ -108,8 +108,8 @@ package personalizeruntime {
     def apply(
         itemList: js.UndefOr[ItemList] = js.undefined
     ): GetRecommendationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      itemList.foreach(__v => __obj.update("itemList", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      itemList.foreach(__v => __obj.updateDynamic("itemList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRecommendationsResponse]
     }
   }
@@ -127,8 +127,8 @@ package personalizeruntime {
     def apply(
         itemId: js.UndefOr[ItemID] = js.undefined
     ): PredictedItem = {
-      val __obj = js.Dictionary.empty[js.Any]
-      itemId.foreach(__v => __obj.update("itemId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      itemId.foreach(__v => __obj.updateDynamic("itemId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PredictedItem]
     }
   }

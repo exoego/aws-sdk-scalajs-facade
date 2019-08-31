@@ -46,7 +46,7 @@ package ec2instanceconnect {
         InstanceOSUser: InstanceOSUser,
         SSHPublicKey: SSHPublicKey
     ): SendSSHPublicKeyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AvailabilityZone" -> AvailabilityZone.asInstanceOf[js.Any],
         "InstanceId"       -> InstanceId.asInstanceOf[js.Any],
         "InstanceOSUser"   -> InstanceOSUser.asInstanceOf[js.Any],
@@ -68,9 +68,9 @@ package ec2instanceconnect {
         RequestId: js.UndefOr[RequestId] = js.undefined,
         Success: js.UndefOr[Success] = js.undefined
     ): SendSSHPublicKeyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      RequestId.foreach(__v => __obj.update("RequestId", __v.asInstanceOf[js.Any]))
-      Success.foreach(__v => __obj.update("Success", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Success.foreach(__v => __obj.updateDynamic("Success")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SendSSHPublicKeyResponse]
     }
   }

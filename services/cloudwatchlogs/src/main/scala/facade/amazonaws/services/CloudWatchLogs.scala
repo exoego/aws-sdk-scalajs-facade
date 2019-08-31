@@ -232,7 +232,7 @@ package cloudwatchlogs {
         kmsKeyId: KmsKeyId,
         logGroupName: LogGroupName
     ): AssociateKmsKeyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "kmsKeyId"     -> kmsKeyId.asInstanceOf[js.Any],
         "logGroupName" -> logGroupName.asInstanceOf[js.Any]
       )
@@ -250,7 +250,7 @@ package cloudwatchlogs {
     def apply(
         taskId: ExportTaskId
     ): CancelExportTaskRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "taskId" -> taskId.asInstanceOf[js.Any]
       )
 
@@ -279,16 +279,16 @@ package cloudwatchlogs {
         logStreamNamePrefix: js.UndefOr[LogStreamName] = js.undefined,
         taskName: js.UndefOr[ExportTaskName] = js.undefined
     ): CreateExportTaskRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "destination"  -> destination.asInstanceOf[js.Any],
         "from"         -> from.asInstanceOf[js.Any],
         "logGroupName" -> logGroupName.asInstanceOf[js.Any],
         "to"           -> to.asInstanceOf[js.Any]
       )
 
-      destinationPrefix.foreach(__v => __obj.update("destinationPrefix", __v.asInstanceOf[js.Any]))
-      logStreamNamePrefix.foreach(__v => __obj.update("logStreamNamePrefix", __v.asInstanceOf[js.Any]))
-      taskName.foreach(__v => __obj.update("taskName", __v.asInstanceOf[js.Any]))
+      destinationPrefix.foreach(__v => __obj.updateDynamic("destinationPrefix")(__v.asInstanceOf[js.Any]))
+      logStreamNamePrefix.foreach(__v => __obj.updateDynamic("logStreamNamePrefix")(__v.asInstanceOf[js.Any]))
+      taskName.foreach(__v => __obj.updateDynamic("taskName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateExportTaskRequest]
     }
   }
@@ -302,8 +302,8 @@ package cloudwatchlogs {
     def apply(
         taskId: js.UndefOr[ExportTaskId] = js.undefined
     ): CreateExportTaskResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      taskId.foreach(__v => __obj.update("taskId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      taskId.foreach(__v => __obj.updateDynamic("taskId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateExportTaskResponse]
     }
   }
@@ -321,12 +321,12 @@ package cloudwatchlogs {
         kmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
     ): CreateLogGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "logGroupName" -> logGroupName.asInstanceOf[js.Any]
       )
 
-      kmsKeyId.foreach(__v => __obj.update("kmsKeyId", __v.asInstanceOf[js.Any]))
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      kmsKeyId.foreach(__v => __obj.updateDynamic("kmsKeyId")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLogGroupRequest]
     }
   }
@@ -342,7 +342,7 @@ package cloudwatchlogs {
         logGroupName: LogGroupName,
         logStreamName: LogStreamName
     ): CreateLogStreamRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "logGroupName"  -> logGroupName.asInstanceOf[js.Any],
         "logStreamName" -> logStreamName.asInstanceOf[js.Any]
       )
@@ -360,7 +360,7 @@ package cloudwatchlogs {
     def apply(
         destinationName: DestinationName
     ): DeleteDestinationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "destinationName" -> destinationName.asInstanceOf[js.Any]
       )
 
@@ -377,7 +377,7 @@ package cloudwatchlogs {
     def apply(
         logGroupName: LogGroupName
     ): DeleteLogGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "logGroupName" -> logGroupName.asInstanceOf[js.Any]
       )
 
@@ -396,7 +396,7 @@ package cloudwatchlogs {
         logGroupName: LogGroupName,
         logStreamName: LogStreamName
     ): DeleteLogStreamRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "logGroupName"  -> logGroupName.asInstanceOf[js.Any],
         "logStreamName" -> logStreamName.asInstanceOf[js.Any]
       )
@@ -416,7 +416,7 @@ package cloudwatchlogs {
         filterName: FilterName,
         logGroupName: LogGroupName
     ): DeleteMetricFilterRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "filterName"   -> filterName.asInstanceOf[js.Any],
         "logGroupName" -> logGroupName.asInstanceOf[js.Any]
       )
@@ -434,8 +434,8 @@ package cloudwatchlogs {
     def apply(
         policyName: js.UndefOr[PolicyName] = js.undefined
     ): DeleteResourcePolicyRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      policyName.foreach(__v => __obj.update("policyName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      policyName.foreach(__v => __obj.updateDynamic("policyName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteResourcePolicyRequest]
     }
   }
@@ -449,7 +449,7 @@ package cloudwatchlogs {
     def apply(
         logGroupName: LogGroupName
     ): DeleteRetentionPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "logGroupName" -> logGroupName.asInstanceOf[js.Any]
       )
 
@@ -468,7 +468,7 @@ package cloudwatchlogs {
         filterName: FilterName,
         logGroupName: LogGroupName
     ): DeleteSubscriptionFilterRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "filterName"   -> filterName.asInstanceOf[js.Any],
         "logGroupName" -> logGroupName.asInstanceOf[js.Any]
       )
@@ -490,10 +490,10 @@ package cloudwatchlogs {
         limit: js.UndefOr[DescribeLimit] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeDestinationsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      DestinationNamePrefix.foreach(__v => __obj.update("DestinationNamePrefix", __v.asInstanceOf[js.Any]))
-      limit.foreach(__v => __obj.update("limit", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      DestinationNamePrefix.foreach(__v => __obj.updateDynamic("DestinationNamePrefix")(__v.asInstanceOf[js.Any]))
+      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDestinationsRequest]
     }
   }
@@ -509,9 +509,9 @@ package cloudwatchlogs {
         destinations: js.UndefOr[Destinations] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeDestinationsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      destinations.foreach(__v => __obj.update("destinations", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      destinations.foreach(__v => __obj.updateDynamic("destinations")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDestinationsResponse]
     }
   }
@@ -531,11 +531,11 @@ package cloudwatchlogs {
         statusCode: js.UndefOr[ExportTaskStatusCode] = js.undefined,
         taskId: js.UndefOr[ExportTaskId] = js.undefined
     ): DescribeExportTasksRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      limit.foreach(__v => __obj.update("limit", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      statusCode.foreach(__v => __obj.update("statusCode", __v.asInstanceOf[js.Any]))
-      taskId.foreach(__v => __obj.update("taskId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      statusCode.foreach(__v => __obj.updateDynamic("statusCode")(__v.asInstanceOf[js.Any]))
+      taskId.foreach(__v => __obj.updateDynamic("taskId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeExportTasksRequest]
     }
   }
@@ -551,9 +551,9 @@ package cloudwatchlogs {
         exportTasks: js.UndefOr[ExportTasks] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeExportTasksResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      exportTasks.foreach(__v => __obj.update("exportTasks", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      exportTasks.foreach(__v => __obj.updateDynamic("exportTasks")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeExportTasksResponse]
     }
   }
@@ -571,10 +571,10 @@ package cloudwatchlogs {
         logGroupNamePrefix: js.UndefOr[LogGroupName] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeLogGroupsRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      limit.foreach(__v => __obj.update("limit", __v.asInstanceOf[js.Any]))
-      logGroupNamePrefix.foreach(__v => __obj.update("logGroupNamePrefix", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
+      logGroupNamePrefix.foreach(__v => __obj.updateDynamic("logGroupNamePrefix")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLogGroupsRequest]
     }
   }
@@ -590,9 +590,9 @@ package cloudwatchlogs {
         logGroups: js.UndefOr[LogGroups] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeLogGroupsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      logGroups.foreach(__v => __obj.update("logGroups", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      logGroups.foreach(__v => __obj.updateDynamic("logGroups")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLogGroupsResponse]
     }
   }
@@ -616,15 +616,15 @@ package cloudwatchlogs {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         orderBy: js.UndefOr[OrderBy] = js.undefined
     ): DescribeLogStreamsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "logGroupName" -> logGroupName.asInstanceOf[js.Any]
       )
 
-      descending.foreach(__v => __obj.update("descending", __v.asInstanceOf[js.Any]))
-      limit.foreach(__v => __obj.update("limit", __v.asInstanceOf[js.Any]))
-      logStreamNamePrefix.foreach(__v => __obj.update("logStreamNamePrefix", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      orderBy.foreach(__v => __obj.update("orderBy", __v.asInstanceOf[js.Any]))
+      descending.foreach(__v => __obj.updateDynamic("descending")(__v.asInstanceOf[js.Any]))
+      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
+      logStreamNamePrefix.foreach(__v => __obj.updateDynamic("logStreamNamePrefix")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      orderBy.foreach(__v => __obj.updateDynamic("orderBy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLogStreamsRequest]
     }
   }
@@ -640,9 +640,9 @@ package cloudwatchlogs {
         logStreams: js.UndefOr[LogStreams] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeLogStreamsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      logStreams.foreach(__v => __obj.update("logStreams", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      logStreams.foreach(__v => __obj.updateDynamic("logStreams")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLogStreamsResponse]
     }
   }
@@ -666,13 +666,13 @@ package cloudwatchlogs {
         metricNamespace: js.UndefOr[MetricNamespace] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeMetricFiltersRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      filterNamePrefix.foreach(__v => __obj.update("filterNamePrefix", __v.asInstanceOf[js.Any]))
-      limit.foreach(__v => __obj.update("limit", __v.asInstanceOf[js.Any]))
-      logGroupName.foreach(__v => __obj.update("logGroupName", __v.asInstanceOf[js.Any]))
-      metricName.foreach(__v => __obj.update("metricName", __v.asInstanceOf[js.Any]))
-      metricNamespace.foreach(__v => __obj.update("metricNamespace", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      filterNamePrefix.foreach(__v => __obj.updateDynamic("filterNamePrefix")(__v.asInstanceOf[js.Any]))
+      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
+      logGroupName.foreach(__v => __obj.updateDynamic("logGroupName")(__v.asInstanceOf[js.Any]))
+      metricName.foreach(__v => __obj.updateDynamic("metricName")(__v.asInstanceOf[js.Any]))
+      metricNamespace.foreach(__v => __obj.updateDynamic("metricNamespace")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMetricFiltersRequest]
     }
   }
@@ -688,9 +688,9 @@ package cloudwatchlogs {
         metricFilters: js.UndefOr[MetricFilters] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeMetricFiltersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      metricFilters.foreach(__v => __obj.update("metricFilters", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      metricFilters.foreach(__v => __obj.updateDynamic("metricFilters")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMetricFiltersResponse]
     }
   }
@@ -710,11 +710,11 @@ package cloudwatchlogs {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         status: js.UndefOr[QueryStatus] = js.undefined
     ): DescribeQueriesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      logGroupName.foreach(__v => __obj.update("logGroupName", __v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.update("maxResults", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      logGroupName.foreach(__v => __obj.updateDynamic("logGroupName")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeQueriesRequest]
     }
   }
@@ -730,9 +730,9 @@ package cloudwatchlogs {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         queries: js.UndefOr[QueryInfoList] = js.undefined
     ): DescribeQueriesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      queries.foreach(__v => __obj.update("queries", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      queries.foreach(__v => __obj.updateDynamic("queries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeQueriesResponse]
     }
   }
@@ -748,9 +748,9 @@ package cloudwatchlogs {
         limit: js.UndefOr[DescribeLimit] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeResourcePoliciesRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      limit.foreach(__v => __obj.update("limit", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeResourcePoliciesRequest]
     }
   }
@@ -766,9 +766,9 @@ package cloudwatchlogs {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         resourcePolicies: js.UndefOr[ResourcePolicies] = js.undefined
     ): DescribeResourcePoliciesResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      resourcePolicies.foreach(__v => __obj.update("resourcePolicies", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      resourcePolicies.foreach(__v => __obj.updateDynamic("resourcePolicies")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeResourcePoliciesResponse]
     }
   }
@@ -788,13 +788,13 @@ package cloudwatchlogs {
         limit: js.UndefOr[DescribeLimit] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeSubscriptionFiltersRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "logGroupName" -> logGroupName.asInstanceOf[js.Any]
       )
 
-      filterNamePrefix.foreach(__v => __obj.update("filterNamePrefix", __v.asInstanceOf[js.Any]))
-      limit.foreach(__v => __obj.update("limit", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
+      filterNamePrefix.foreach(__v => __obj.updateDynamic("filterNamePrefix")(__v.asInstanceOf[js.Any]))
+      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSubscriptionFiltersRequest]
     }
   }
@@ -810,9 +810,9 @@ package cloudwatchlogs {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         subscriptionFilters: js.UndefOr[SubscriptionFilters] = js.undefined
     ): DescribeSubscriptionFiltersResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      subscriptionFilters.foreach(__v => __obj.update("subscriptionFilters", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      subscriptionFilters.foreach(__v => __obj.updateDynamic("subscriptionFilters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSubscriptionFiltersResponse]
     }
   }
@@ -839,13 +839,13 @@ package cloudwatchlogs {
         roleArn: js.UndefOr[RoleArn] = js.undefined,
         targetArn: js.UndefOr[TargetArn] = js.undefined
     ): Destination = {
-      val __obj = js.Dictionary.empty[js.Any]
-      accessPolicy.foreach(__v => __obj.update("accessPolicy", __v.asInstanceOf[js.Any]))
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
-      destinationName.foreach(__v => __obj.update("destinationName", __v.asInstanceOf[js.Any]))
-      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
-      targetArn.foreach(__v => __obj.update("targetArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      accessPolicy.foreach(__v => __obj.updateDynamic("accessPolicy")(__v.asInstanceOf[js.Any]))
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      destinationName.foreach(__v => __obj.updateDynamic("destinationName")(__v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
+      targetArn.foreach(__v => __obj.updateDynamic("targetArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Destination]
     }
   }
@@ -859,7 +859,7 @@ package cloudwatchlogs {
     def apply(
         logGroupName: LogGroupName
     ): DisassociateKmsKeyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "logGroupName" -> logGroupName.asInstanceOf[js.Any]
       )
 
@@ -905,16 +905,16 @@ package cloudwatchlogs {
         taskName: js.UndefOr[ExportTaskName] = js.undefined,
         to: js.UndefOr[Timestamp] = js.undefined
     ): ExportTask = {
-      val __obj = js.Dictionary.empty[js.Any]
-      destination.foreach(__v => __obj.update("destination", __v.asInstanceOf[js.Any]))
-      destinationPrefix.foreach(__v => __obj.update("destinationPrefix", __v.asInstanceOf[js.Any]))
-      executionInfo.foreach(__v => __obj.update("executionInfo", __v.asInstanceOf[js.Any]))
-      from.foreach(__v => __obj.update("from", __v.asInstanceOf[js.Any]))
-      logGroupName.foreach(__v => __obj.update("logGroupName", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
-      taskId.foreach(__v => __obj.update("taskId", __v.asInstanceOf[js.Any]))
-      taskName.foreach(__v => __obj.update("taskName", __v.asInstanceOf[js.Any]))
-      to.foreach(__v => __obj.update("to", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      destination.foreach(__v => __obj.updateDynamic("destination")(__v.asInstanceOf[js.Any]))
+      destinationPrefix.foreach(__v => __obj.updateDynamic("destinationPrefix")(__v.asInstanceOf[js.Any]))
+      executionInfo.foreach(__v => __obj.updateDynamic("executionInfo")(__v.asInstanceOf[js.Any]))
+      from.foreach(__v => __obj.updateDynamic("from")(__v.asInstanceOf[js.Any]))
+      logGroupName.foreach(__v => __obj.updateDynamic("logGroupName")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      taskId.foreach(__v => __obj.updateDynamic("taskId")(__v.asInstanceOf[js.Any]))
+      taskName.foreach(__v => __obj.updateDynamic("taskName")(__v.asInstanceOf[js.Any]))
+      to.foreach(__v => __obj.updateDynamic("to")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportTask]
     }
   }
@@ -933,9 +933,9 @@ package cloudwatchlogs {
         completionTime: js.UndefOr[Timestamp] = js.undefined,
         creationTime: js.UndefOr[Timestamp] = js.undefined
     ): ExportTaskExecutionInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      completionTime.foreach(__v => __obj.update("completionTime", __v.asInstanceOf[js.Any]))
-      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      completionTime.foreach(__v => __obj.updateDynamic("completionTime")(__v.asInstanceOf[js.Any]))
+      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportTaskExecutionInfo]
     }
   }
@@ -954,9 +954,9 @@ package cloudwatchlogs {
         code: js.UndefOr[ExportTaskStatusCode] = js.undefined,
         message: js.UndefOr[ExportTaskStatusMessage] = js.undefined
     ): ExportTaskStatus = {
-      val __obj = js.Dictionary.empty[js.Any]
-      code.foreach(__v => __obj.update("code", __v.asInstanceOf[js.Any]))
-      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportTaskStatus]
     }
   }
@@ -997,18 +997,18 @@ package cloudwatchlogs {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         startTime: js.UndefOr[Timestamp] = js.undefined
     ): FilterLogEventsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "logGroupName" -> logGroupName.asInstanceOf[js.Any]
       )
 
-      endTime.foreach(__v => __obj.update("endTime", __v.asInstanceOf[js.Any]))
-      filterPattern.foreach(__v => __obj.update("filterPattern", __v.asInstanceOf[js.Any]))
-      interleaved.foreach(__v => __obj.update("interleaved", __v.asInstanceOf[js.Any]))
-      limit.foreach(__v => __obj.update("limit", __v.asInstanceOf[js.Any]))
-      logStreamNamePrefix.foreach(__v => __obj.update("logStreamNamePrefix", __v.asInstanceOf[js.Any]))
-      logStreamNames.foreach(__v => __obj.update("logStreamNames", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      startTime.foreach(__v => __obj.update("startTime", __v.asInstanceOf[js.Any]))
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      filterPattern.foreach(__v => __obj.updateDynamic("filterPattern")(__v.asInstanceOf[js.Any]))
+      interleaved.foreach(__v => __obj.updateDynamic("interleaved")(__v.asInstanceOf[js.Any]))
+      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
+      logStreamNamePrefix.foreach(__v => __obj.updateDynamic("logStreamNamePrefix")(__v.asInstanceOf[js.Any]))
+      logStreamNames.foreach(__v => __obj.updateDynamic("logStreamNames")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FilterLogEventsRequest]
     }
   }
@@ -1026,10 +1026,10 @@ package cloudwatchlogs {
         nextToken: js.UndefOr[NextToken] = js.undefined,
         searchedLogStreams: js.UndefOr[SearchedLogStreams] = js.undefined
     ): FilterLogEventsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      events.foreach(__v => __obj.update("events", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      searchedLogStreams.foreach(__v => __obj.update("searchedLogStreams", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      events.foreach(__v => __obj.updateDynamic("events")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      searchedLogStreams.foreach(__v => __obj.updateDynamic("searchedLogStreams")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FilterLogEventsResponse]
     }
   }
@@ -1054,12 +1054,12 @@ package cloudwatchlogs {
         message: js.UndefOr[EventMessage] = js.undefined,
         timestamp: js.UndefOr[Timestamp] = js.undefined
     ): FilteredLogEvent = {
-      val __obj = js.Dictionary.empty[js.Any]
-      eventId.foreach(__v => __obj.update("eventId", __v.asInstanceOf[js.Any]))
-      ingestionTime.foreach(__v => __obj.update("ingestionTime", __v.asInstanceOf[js.Any]))
-      logStreamName.foreach(__v => __obj.update("logStreamName", __v.asInstanceOf[js.Any]))
-      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
-      timestamp.foreach(__v => __obj.update("timestamp", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      eventId.foreach(__v => __obj.updateDynamic("eventId")(__v.asInstanceOf[js.Any]))
+      ingestionTime.foreach(__v => __obj.updateDynamic("ingestionTime")(__v.asInstanceOf[js.Any]))
+      logStreamName.foreach(__v => __obj.updateDynamic("logStreamName")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      timestamp.foreach(__v => __obj.updateDynamic("timestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FilteredLogEvent]
     }
   }
@@ -1085,16 +1085,16 @@ package cloudwatchlogs {
         startFromHead: js.UndefOr[StartFromHead] = js.undefined,
         startTime: js.UndefOr[Timestamp] = js.undefined
     ): GetLogEventsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "logGroupName"  -> logGroupName.asInstanceOf[js.Any],
         "logStreamName" -> logStreamName.asInstanceOf[js.Any]
       )
 
-      endTime.foreach(__v => __obj.update("endTime", __v.asInstanceOf[js.Any]))
-      limit.foreach(__v => __obj.update("limit", __v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.update("nextToken", __v.asInstanceOf[js.Any]))
-      startFromHead.foreach(__v => __obj.update("startFromHead", __v.asInstanceOf[js.Any]))
-      startTime.foreach(__v => __obj.update("startTime", __v.asInstanceOf[js.Any]))
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      startFromHead.foreach(__v => __obj.updateDynamic("startFromHead")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLogEventsRequest]
     }
   }
@@ -1112,10 +1112,10 @@ package cloudwatchlogs {
         nextBackwardToken: js.UndefOr[NextToken] = js.undefined,
         nextForwardToken: js.UndefOr[NextToken] = js.undefined
     ): GetLogEventsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      events.foreach(__v => __obj.update("events", __v.asInstanceOf[js.Any]))
-      nextBackwardToken.foreach(__v => __obj.update("nextBackwardToken", __v.asInstanceOf[js.Any]))
-      nextForwardToken.foreach(__v => __obj.update("nextForwardToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      events.foreach(__v => __obj.updateDynamic("events")(__v.asInstanceOf[js.Any]))
+      nextBackwardToken.foreach(__v => __obj.updateDynamic("nextBackwardToken")(__v.asInstanceOf[js.Any]))
+      nextForwardToken.foreach(__v => __obj.updateDynamic("nextForwardToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLogEventsResponse]
     }
   }
@@ -1131,11 +1131,11 @@ package cloudwatchlogs {
         logGroupName: LogGroupName,
         time: js.UndefOr[Timestamp] = js.undefined
     ): GetLogGroupFieldsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "logGroupName" -> logGroupName.asInstanceOf[js.Any]
       )
 
-      time.foreach(__v => __obj.update("time", __v.asInstanceOf[js.Any]))
+      time.foreach(__v => __obj.updateDynamic("time")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLogGroupFieldsRequest]
     }
   }
@@ -1149,8 +1149,8 @@ package cloudwatchlogs {
     def apply(
         logGroupFields: js.UndefOr[LogGroupFieldList] = js.undefined
     ): GetLogGroupFieldsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      logGroupFields.foreach(__v => __obj.update("logGroupFields", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      logGroupFields.foreach(__v => __obj.updateDynamic("logGroupFields")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLogGroupFieldsResponse]
     }
   }
@@ -1164,7 +1164,7 @@ package cloudwatchlogs {
     def apply(
         logRecordPointer: LogRecordPointer
     ): GetLogRecordRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "logRecordPointer" -> logRecordPointer.asInstanceOf[js.Any]
       )
 
@@ -1181,8 +1181,8 @@ package cloudwatchlogs {
     def apply(
         logRecord: js.UndefOr[LogRecord] = js.undefined
     ): GetLogRecordResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      logRecord.foreach(__v => __obj.update("logRecord", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      logRecord.foreach(__v => __obj.updateDynamic("logRecord")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLogRecordResponse]
     }
   }
@@ -1196,7 +1196,7 @@ package cloudwatchlogs {
     def apply(
         queryId: QueryId
     ): GetQueryResultsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "queryId" -> queryId.asInstanceOf[js.Any]
       )
 
@@ -1217,10 +1217,10 @@ package cloudwatchlogs {
         statistics: js.UndefOr[QueryStatistics] = js.undefined,
         status: js.UndefOr[QueryStatus] = js.undefined
     ): GetQueryResultsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      results.foreach(__v => __obj.update("results", __v.asInstanceOf[js.Any]))
-      statistics.foreach(__v => __obj.update("statistics", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      results.foreach(__v => __obj.updateDynamic("results")(__v.asInstanceOf[js.Any]))
+      statistics.foreach(__v => __obj.updateDynamic("statistics")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetQueryResultsResponse]
     }
   }
@@ -1239,7 +1239,7 @@ package cloudwatchlogs {
         message: EventMessage,
         timestamp: Timestamp
     ): InputLogEvent = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "message"   -> message.asInstanceOf[js.Any],
         "timestamp" -> timestamp.asInstanceOf[js.Any]
       )
@@ -1257,7 +1257,7 @@ package cloudwatchlogs {
     def apply(
         logGroupName: LogGroupName
     ): ListTagsLogGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "logGroupName" -> logGroupName.asInstanceOf[js.Any]
       )
 
@@ -1274,8 +1274,8 @@ package cloudwatchlogs {
     def apply(
         tags: js.UndefOr[Tags] = js.undefined
     ): ListTagsLogGroupResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      tags.foreach(__v => __obj.update("tags", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsLogGroupResponse]
     }
   }
@@ -1304,14 +1304,14 @@ package cloudwatchlogs {
         retentionInDays: js.UndefOr[Days] = js.undefined,
         storedBytes: js.UndefOr[StoredBytes] = js.undefined
     ): LogGroup = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
-      kmsKeyId.foreach(__v => __obj.update("kmsKeyId", __v.asInstanceOf[js.Any]))
-      logGroupName.foreach(__v => __obj.update("logGroupName", __v.asInstanceOf[js.Any]))
-      metricFilterCount.foreach(__v => __obj.update("metricFilterCount", __v.asInstanceOf[js.Any]))
-      retentionInDays.foreach(__v => __obj.update("retentionInDays", __v.asInstanceOf[js.Any]))
-      storedBytes.foreach(__v => __obj.update("storedBytes", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      kmsKeyId.foreach(__v => __obj.updateDynamic("kmsKeyId")(__v.asInstanceOf[js.Any]))
+      logGroupName.foreach(__v => __obj.updateDynamic("logGroupName")(__v.asInstanceOf[js.Any]))
+      metricFilterCount.foreach(__v => __obj.updateDynamic("metricFilterCount")(__v.asInstanceOf[js.Any]))
+      retentionInDays.foreach(__v => __obj.updateDynamic("retentionInDays")(__v.asInstanceOf[js.Any]))
+      storedBytes.foreach(__v => __obj.updateDynamic("storedBytes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LogGroup]
     }
   }
@@ -1330,9 +1330,9 @@ package cloudwatchlogs {
         name: js.UndefOr[Field] = js.undefined,
         percent: js.UndefOr[Percentage] = js.undefined
     ): LogGroupField = {
-      val __obj = js.Dictionary.empty[js.Any]
-      name.foreach(__v => __obj.update("name", __v.asInstanceOf[js.Any]))
-      percent.foreach(__v => __obj.update("percent", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      percent.foreach(__v => __obj.updateDynamic("percent")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LogGroupField]
     }
   }
@@ -1363,15 +1363,15 @@ package cloudwatchlogs {
         storedBytes: js.UndefOr[StoredBytes] = js.undefined,
         uploadSequenceToken: js.UndefOr[SequenceToken] = js.undefined
     ): LogStream = {
-      val __obj = js.Dictionary.empty[js.Any]
-      arn.foreach(__v => __obj.update("arn", __v.asInstanceOf[js.Any]))
-      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
-      firstEventTimestamp.foreach(__v => __obj.update("firstEventTimestamp", __v.asInstanceOf[js.Any]))
-      lastEventTimestamp.foreach(__v => __obj.update("lastEventTimestamp", __v.asInstanceOf[js.Any]))
-      lastIngestionTime.foreach(__v => __obj.update("lastIngestionTime", __v.asInstanceOf[js.Any]))
-      logStreamName.foreach(__v => __obj.update("logStreamName", __v.asInstanceOf[js.Any]))
-      storedBytes.foreach(__v => __obj.update("storedBytes", __v.asInstanceOf[js.Any]))
-      uploadSequenceToken.foreach(__v => __obj.update("uploadSequenceToken", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      firstEventTimestamp.foreach(__v => __obj.updateDynamic("firstEventTimestamp")(__v.asInstanceOf[js.Any]))
+      lastEventTimestamp.foreach(__v => __obj.updateDynamic("lastEventTimestamp")(__v.asInstanceOf[js.Any]))
+      lastIngestionTime.foreach(__v => __obj.updateDynamic("lastIngestionTime")(__v.asInstanceOf[js.Any]))
+      logStreamName.foreach(__v => __obj.updateDynamic("logStreamName")(__v.asInstanceOf[js.Any]))
+      storedBytes.foreach(__v => __obj.updateDynamic("storedBytes")(__v.asInstanceOf[js.Any]))
+      uploadSequenceToken.foreach(__v => __obj.updateDynamic("uploadSequenceToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LogStream]
     }
   }
@@ -1396,12 +1396,12 @@ package cloudwatchlogs {
         logGroupName: js.UndefOr[LogGroupName] = js.undefined,
         metricTransformations: js.UndefOr[MetricTransformations] = js.undefined
     ): MetricFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
-      filterName.foreach(__v => __obj.update("filterName", __v.asInstanceOf[js.Any]))
-      filterPattern.foreach(__v => __obj.update("filterPattern", __v.asInstanceOf[js.Any]))
-      logGroupName.foreach(__v => __obj.update("logGroupName", __v.asInstanceOf[js.Any]))
-      metricTransformations.foreach(__v => __obj.update("metricTransformations", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      filterName.foreach(__v => __obj.updateDynamic("filterName")(__v.asInstanceOf[js.Any]))
+      filterPattern.foreach(__v => __obj.updateDynamic("filterPattern")(__v.asInstanceOf[js.Any]))
+      logGroupName.foreach(__v => __obj.updateDynamic("logGroupName")(__v.asInstanceOf[js.Any]))
+      metricTransformations.foreach(__v => __obj.updateDynamic("metricTransformations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MetricFilter]
     }
   }
@@ -1422,10 +1422,10 @@ package cloudwatchlogs {
         eventNumber: js.UndefOr[EventNumber] = js.undefined,
         extractedValues: js.UndefOr[ExtractedValues] = js.undefined
     ): MetricFilterMatchRecord = {
-      val __obj = js.Dictionary.empty[js.Any]
-      eventMessage.foreach(__v => __obj.update("eventMessage", __v.asInstanceOf[js.Any]))
-      eventNumber.foreach(__v => __obj.update("eventNumber", __v.asInstanceOf[js.Any]))
-      extractedValues.foreach(__v => __obj.update("extractedValues", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      eventMessage.foreach(__v => __obj.updateDynamic("eventMessage")(__v.asInstanceOf[js.Any]))
+      eventNumber.foreach(__v => __obj.updateDynamic("eventNumber")(__v.asInstanceOf[js.Any]))
+      extractedValues.foreach(__v => __obj.updateDynamic("extractedValues")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MetricFilterMatchRecord]
     }
   }
@@ -1448,13 +1448,13 @@ package cloudwatchlogs {
         metricValue: MetricValue,
         defaultValue: js.UndefOr[DefaultValue] = js.undefined
     ): MetricTransformation = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "metricName"      -> metricName.asInstanceOf[js.Any],
         "metricNamespace" -> metricNamespace.asInstanceOf[js.Any],
         "metricValue"     -> metricValue.asInstanceOf[js.Any]
       )
 
-      defaultValue.foreach(__v => __obj.update("defaultValue", __v.asInstanceOf[js.Any]))
+      defaultValue.foreach(__v => __obj.updateDynamic("defaultValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MetricTransformation]
     }
   }
@@ -1482,10 +1482,10 @@ package cloudwatchlogs {
         message: js.UndefOr[EventMessage] = js.undefined,
         timestamp: js.UndefOr[Timestamp] = js.undefined
     ): OutputLogEvent = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ingestionTime.foreach(__v => __obj.update("ingestionTime", __v.asInstanceOf[js.Any]))
-      message.foreach(__v => __obj.update("message", __v.asInstanceOf[js.Any]))
-      timestamp.foreach(__v => __obj.update("timestamp", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ingestionTime.foreach(__v => __obj.updateDynamic("ingestionTime")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      timestamp.foreach(__v => __obj.updateDynamic("timestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OutputLogEvent]
     }
   }
@@ -1501,7 +1501,7 @@ package cloudwatchlogs {
         accessPolicy: AccessPolicy,
         destinationName: DestinationName
     ): PutDestinationPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "accessPolicy"    -> accessPolicy.asInstanceOf[js.Any],
         "destinationName" -> destinationName.asInstanceOf[js.Any]
       )
@@ -1523,7 +1523,7 @@ package cloudwatchlogs {
         roleArn: RoleArn,
         targetArn: TargetArn
     ): PutDestinationRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "destinationName" -> destinationName.asInstanceOf[js.Any],
         "roleArn"         -> roleArn.asInstanceOf[js.Any],
         "targetArn"       -> targetArn.asInstanceOf[js.Any]
@@ -1542,8 +1542,8 @@ package cloudwatchlogs {
     def apply(
         destination: js.UndefOr[Destination] = js.undefined
     ): PutDestinationResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      destination.foreach(__v => __obj.update("destination", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      destination.foreach(__v => __obj.updateDynamic("destination")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutDestinationResponse]
     }
   }
@@ -1563,13 +1563,13 @@ package cloudwatchlogs {
         logStreamName: LogStreamName,
         sequenceToken: js.UndefOr[SequenceToken] = js.undefined
     ): PutLogEventsRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "logEvents"     -> logEvents.asInstanceOf[js.Any],
         "logGroupName"  -> logGroupName.asInstanceOf[js.Any],
         "logStreamName" -> logStreamName.asInstanceOf[js.Any]
       )
 
-      sequenceToken.foreach(__v => __obj.update("sequenceToken", __v.asInstanceOf[js.Any]))
+      sequenceToken.foreach(__v => __obj.updateDynamic("sequenceToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutLogEventsRequest]
     }
   }
@@ -1585,9 +1585,9 @@ package cloudwatchlogs {
         nextSequenceToken: js.UndefOr[SequenceToken] = js.undefined,
         rejectedLogEventsInfo: js.UndefOr[RejectedLogEventsInfo] = js.undefined
     ): PutLogEventsResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      nextSequenceToken.foreach(__v => __obj.update("nextSequenceToken", __v.asInstanceOf[js.Any]))
-      rejectedLogEventsInfo.foreach(__v => __obj.update("rejectedLogEventsInfo", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      nextSequenceToken.foreach(__v => __obj.updateDynamic("nextSequenceToken")(__v.asInstanceOf[js.Any]))
+      rejectedLogEventsInfo.foreach(__v => __obj.updateDynamic("rejectedLogEventsInfo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutLogEventsResponse]
     }
   }
@@ -1607,7 +1607,7 @@ package cloudwatchlogs {
         logGroupName: LogGroupName,
         metricTransformations: MetricTransformations
     ): PutMetricFilterRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "filterName"            -> filterName.asInstanceOf[js.Any],
         "filterPattern"         -> filterPattern.asInstanceOf[js.Any],
         "logGroupName"          -> logGroupName.asInstanceOf[js.Any],
@@ -1629,9 +1629,9 @@ package cloudwatchlogs {
         policyDocument: js.UndefOr[PolicyDocument] = js.undefined,
         policyName: js.UndefOr[PolicyName] = js.undefined
     ): PutResourcePolicyRequest = {
-      val __obj = js.Dictionary.empty[js.Any]
-      policyDocument.foreach(__v => __obj.update("policyDocument", __v.asInstanceOf[js.Any]))
-      policyName.foreach(__v => __obj.update("policyName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      policyDocument.foreach(__v => __obj.updateDynamic("policyDocument")(__v.asInstanceOf[js.Any]))
+      policyName.foreach(__v => __obj.updateDynamic("policyName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutResourcePolicyRequest]
     }
   }
@@ -1645,8 +1645,8 @@ package cloudwatchlogs {
     def apply(
         resourcePolicy: js.UndefOr[ResourcePolicy] = js.undefined
     ): PutResourcePolicyResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      resourcePolicy.foreach(__v => __obj.update("resourcePolicy", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      resourcePolicy.foreach(__v => __obj.updateDynamic("resourcePolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutResourcePolicyResponse]
     }
   }
@@ -1662,7 +1662,7 @@ package cloudwatchlogs {
         logGroupName: LogGroupName,
         retentionInDays: Days
     ): PutRetentionPolicyRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "logGroupName"    -> logGroupName.asInstanceOf[js.Any],
         "retentionInDays" -> retentionInDays.asInstanceOf[js.Any]
       )
@@ -1690,15 +1690,15 @@ package cloudwatchlogs {
         distribution: js.UndefOr[Distribution] = js.undefined,
         roleArn: js.UndefOr[RoleArn] = js.undefined
     ): PutSubscriptionFilterRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "destinationArn" -> destinationArn.asInstanceOf[js.Any],
         "filterName"     -> filterName.asInstanceOf[js.Any],
         "filterPattern"  -> filterPattern.asInstanceOf[js.Any],
         "logGroupName"   -> logGroupName.asInstanceOf[js.Any]
       )
 
-      distribution.foreach(__v => __obj.update("distribution", __v.asInstanceOf[js.Any]))
-      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
+      distribution.foreach(__v => __obj.updateDynamic("distribution")(__v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutSubscriptionFilterRequest]
     }
   }
@@ -1723,12 +1723,12 @@ package cloudwatchlogs {
         queryString: js.UndefOr[QueryString] = js.undefined,
         status: js.UndefOr[QueryStatus] = js.undefined
     ): QueryInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      createTime.foreach(__v => __obj.update("createTime", __v.asInstanceOf[js.Any]))
-      logGroupName.foreach(__v => __obj.update("logGroupName", __v.asInstanceOf[js.Any]))
-      queryId.foreach(__v => __obj.update("queryId", __v.asInstanceOf[js.Any]))
-      queryString.foreach(__v => __obj.update("queryString", __v.asInstanceOf[js.Any]))
-      status.foreach(__v => __obj.update("status", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      createTime.foreach(__v => __obj.updateDynamic("createTime")(__v.asInstanceOf[js.Any]))
+      logGroupName.foreach(__v => __obj.updateDynamic("logGroupName")(__v.asInstanceOf[js.Any]))
+      queryId.foreach(__v => __obj.updateDynamic("queryId")(__v.asInstanceOf[js.Any]))
+      queryString.foreach(__v => __obj.updateDynamic("queryString")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[QueryInfo]
     }
   }
@@ -1749,10 +1749,10 @@ package cloudwatchlogs {
         recordsMatched: js.UndefOr[StatsValue] = js.undefined,
         recordsScanned: js.UndefOr[StatsValue] = js.undefined
     ): QueryStatistics = {
-      val __obj = js.Dictionary.empty[js.Any]
-      bytesScanned.foreach(__v => __obj.update("bytesScanned", __v.asInstanceOf[js.Any]))
-      recordsMatched.foreach(__v => __obj.update("recordsMatched", __v.asInstanceOf[js.Any]))
-      recordsScanned.foreach(__v => __obj.update("recordsScanned", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      bytesScanned.foreach(__v => __obj.updateDynamic("bytesScanned")(__v.asInstanceOf[js.Any]))
+      recordsMatched.foreach(__v => __obj.updateDynamic("recordsMatched")(__v.asInstanceOf[js.Any]))
+      recordsScanned.foreach(__v => __obj.updateDynamic("recordsScanned")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[QueryStatistics]
     }
   }
@@ -1783,10 +1783,10 @@ package cloudwatchlogs {
         tooNewLogEventStartIndex: js.UndefOr[LogEventIndex] = js.undefined,
         tooOldLogEventEndIndex: js.UndefOr[LogEventIndex] = js.undefined
     ): RejectedLogEventsInfo = {
-      val __obj = js.Dictionary.empty[js.Any]
-      expiredLogEventEndIndex.foreach(__v => __obj.update("expiredLogEventEndIndex", __v.asInstanceOf[js.Any]))
-      tooNewLogEventStartIndex.foreach(__v => __obj.update("tooNewLogEventStartIndex", __v.asInstanceOf[js.Any]))
-      tooOldLogEventEndIndex.foreach(__v => __obj.update("tooOldLogEventEndIndex", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      expiredLogEventEndIndex.foreach(__v => __obj.updateDynamic("expiredLogEventEndIndex")(__v.asInstanceOf[js.Any]))
+      tooNewLogEventStartIndex.foreach(__v => __obj.updateDynamic("tooNewLogEventStartIndex")(__v.asInstanceOf[js.Any]))
+      tooOldLogEventEndIndex.foreach(__v => __obj.updateDynamic("tooOldLogEventEndIndex")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RejectedLogEventsInfo]
     }
   }
@@ -1807,10 +1807,10 @@ package cloudwatchlogs {
         policyDocument: js.UndefOr[PolicyDocument] = js.undefined,
         policyName: js.UndefOr[PolicyName] = js.undefined
     ): ResourcePolicy = {
-      val __obj = js.Dictionary.empty[js.Any]
-      lastUpdatedTime.foreach(__v => __obj.update("lastUpdatedTime", __v.asInstanceOf[js.Any]))
-      policyDocument.foreach(__v => __obj.update("policyDocument", __v.asInstanceOf[js.Any]))
-      policyName.foreach(__v => __obj.update("policyName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      policyDocument.foreach(__v => __obj.updateDynamic("policyDocument")(__v.asInstanceOf[js.Any]))
+      policyName.foreach(__v => __obj.updateDynamic("policyName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourcePolicy]
     }
   }
@@ -1829,9 +1829,9 @@ package cloudwatchlogs {
         field: js.UndefOr[Field] = js.undefined,
         value: js.UndefOr[Value] = js.undefined
     ): ResultField = {
-      val __obj = js.Dictionary.empty[js.Any]
-      field.foreach(__v => __obj.update("field", __v.asInstanceOf[js.Any]))
-      value.foreach(__v => __obj.update("value", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      field.foreach(__v => __obj.updateDynamic("field")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResultField]
     }
   }
@@ -1850,9 +1850,9 @@ package cloudwatchlogs {
         logStreamName: js.UndefOr[LogStreamName] = js.undefined,
         searchedCompletely: js.UndefOr[LogStreamSearchedCompletely] = js.undefined
     ): SearchedLogStream = {
-      val __obj = js.Dictionary.empty[js.Any]
-      logStreamName.foreach(__v => __obj.update("logStreamName", __v.asInstanceOf[js.Any]))
-      searchedCompletely.foreach(__v => __obj.update("searchedCompletely", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      logStreamName.foreach(__v => __obj.updateDynamic("logStreamName")(__v.asInstanceOf[js.Any]))
+      searchedCompletely.foreach(__v => __obj.updateDynamic("searchedCompletely")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchedLogStream]
     }
   }
@@ -1876,15 +1876,15 @@ package cloudwatchlogs {
         logGroupName: js.UndefOr[LogGroupName] = js.undefined,
         logGroupNames: js.UndefOr[LogGroupNames] = js.undefined
     ): StartQueryRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "endTime"     -> endTime.asInstanceOf[js.Any],
         "queryString" -> queryString.asInstanceOf[js.Any],
         "startTime"   -> startTime.asInstanceOf[js.Any]
       )
 
-      limit.foreach(__v => __obj.update("limit", __v.asInstanceOf[js.Any]))
-      logGroupName.foreach(__v => __obj.update("logGroupName", __v.asInstanceOf[js.Any]))
-      logGroupNames.foreach(__v => __obj.update("logGroupNames", __v.asInstanceOf[js.Any]))
+      limit.foreach(__v => __obj.updateDynamic("limit")(__v.asInstanceOf[js.Any]))
+      logGroupName.foreach(__v => __obj.updateDynamic("logGroupName")(__v.asInstanceOf[js.Any]))
+      logGroupNames.foreach(__v => __obj.updateDynamic("logGroupNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartQueryRequest]
     }
   }
@@ -1898,8 +1898,8 @@ package cloudwatchlogs {
     def apply(
         queryId: js.UndefOr[QueryId] = js.undefined
     ): StartQueryResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      queryId.foreach(__v => __obj.update("queryId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      queryId.foreach(__v => __obj.updateDynamic("queryId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartQueryResponse]
     }
   }
@@ -1913,7 +1913,7 @@ package cloudwatchlogs {
     def apply(
         queryId: QueryId
     ): StopQueryRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "queryId" -> queryId.asInstanceOf[js.Any]
       )
 
@@ -1930,8 +1930,8 @@ package cloudwatchlogs {
     def apply(
         success: js.UndefOr[Success] = js.undefined
     ): StopQueryResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      success.foreach(__v => __obj.update("success", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      success.foreach(__v => __obj.updateDynamic("success")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StopQueryResponse]
     }
   }
@@ -1960,14 +1960,14 @@ package cloudwatchlogs {
         logGroupName: js.UndefOr[LogGroupName] = js.undefined,
         roleArn: js.UndefOr[RoleArn] = js.undefined
     ): SubscriptionFilter = {
-      val __obj = js.Dictionary.empty[js.Any]
-      creationTime.foreach(__v => __obj.update("creationTime", __v.asInstanceOf[js.Any]))
-      destinationArn.foreach(__v => __obj.update("destinationArn", __v.asInstanceOf[js.Any]))
-      distribution.foreach(__v => __obj.update("distribution", __v.asInstanceOf[js.Any]))
-      filterName.foreach(__v => __obj.update("filterName", __v.asInstanceOf[js.Any]))
-      filterPattern.foreach(__v => __obj.update("filterPattern", __v.asInstanceOf[js.Any]))
-      logGroupName.foreach(__v => __obj.update("logGroupName", __v.asInstanceOf[js.Any]))
-      roleArn.foreach(__v => __obj.update("roleArn", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      destinationArn.foreach(__v => __obj.updateDynamic("destinationArn")(__v.asInstanceOf[js.Any]))
+      distribution.foreach(__v => __obj.updateDynamic("distribution")(__v.asInstanceOf[js.Any]))
+      filterName.foreach(__v => __obj.updateDynamic("filterName")(__v.asInstanceOf[js.Any]))
+      filterPattern.foreach(__v => __obj.updateDynamic("filterPattern")(__v.asInstanceOf[js.Any]))
+      logGroupName.foreach(__v => __obj.updateDynamic("logGroupName")(__v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SubscriptionFilter]
     }
   }
@@ -1983,7 +1983,7 @@ package cloudwatchlogs {
         logGroupName: LogGroupName,
         tags: Tags
     ): TagLogGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "logGroupName" -> logGroupName.asInstanceOf[js.Any],
         "tags"         -> tags.asInstanceOf[js.Any]
       )
@@ -2003,7 +2003,7 @@ package cloudwatchlogs {
         filterPattern: FilterPattern,
         logEventMessages: TestEventMessages
     ): TestMetricFilterRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "filterPattern"    -> filterPattern.asInstanceOf[js.Any],
         "logEventMessages" -> logEventMessages.asInstanceOf[js.Any]
       )
@@ -2021,8 +2021,8 @@ package cloudwatchlogs {
     def apply(
         matches: js.UndefOr[MetricFilterMatches] = js.undefined
     ): TestMetricFilterResponse = {
-      val __obj = js.Dictionary.empty[js.Any]
-      matches.foreach(__v => __obj.update("matches", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      matches.foreach(__v => __obj.updateDynamic("matches")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TestMetricFilterResponse]
     }
   }
@@ -2038,7 +2038,7 @@ package cloudwatchlogs {
         logGroupName: LogGroupName,
         tags: TagList
     ): UntagLogGroupRequest = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "logGroupName" -> logGroupName.asInstanceOf[js.Any],
         "tags"         -> tags.asInstanceOf[js.Any]
       )

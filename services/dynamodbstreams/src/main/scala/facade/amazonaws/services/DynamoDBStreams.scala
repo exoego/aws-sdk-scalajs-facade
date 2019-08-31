@@ -97,17 +97,17 @@ package dynamodbstreams {
         S: js.UndefOr[StringAttributeValue] = js.undefined,
         SS: js.UndefOr[StringSetAttributeValue] = js.undefined
     ): AttributeValue = {
-      val __obj = js.Dictionary.empty[js.Any]
-      B.foreach(__v => __obj.update("B", __v.asInstanceOf[js.Any]))
-      BOOL.foreach(__v => __obj.update("BOOL", __v.asInstanceOf[js.Any]))
-      BS.foreach(__v => __obj.update("BS", __v.asInstanceOf[js.Any]))
-      L.foreach(__v => __obj.update("L", __v.asInstanceOf[js.Any]))
-      M.foreach(__v => __obj.update("M", __v.asInstanceOf[js.Any]))
-      N.foreach(__v => __obj.update("N", __v.asInstanceOf[js.Any]))
-      NS.foreach(__v => __obj.update("NS", __v.asInstanceOf[js.Any]))
-      NULL.foreach(__v => __obj.update("NULL", __v.asInstanceOf[js.Any]))
-      S.foreach(__v => __obj.update("S", __v.asInstanceOf[js.Any]))
-      SS.foreach(__v => __obj.update("SS", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      B.foreach(__v => __obj.updateDynamic("B")(__v.asInstanceOf[js.Any]))
+      BOOL.foreach(__v => __obj.updateDynamic("BOOL")(__v.asInstanceOf[js.Any]))
+      BS.foreach(__v => __obj.updateDynamic("BS")(__v.asInstanceOf[js.Any]))
+      L.foreach(__v => __obj.updateDynamic("L")(__v.asInstanceOf[js.Any]))
+      M.foreach(__v => __obj.updateDynamic("M")(__v.asInstanceOf[js.Any]))
+      N.foreach(__v => __obj.updateDynamic("N")(__v.asInstanceOf[js.Any]))
+      NS.foreach(__v => __obj.updateDynamic("NS")(__v.asInstanceOf[js.Any]))
+      NULL.foreach(__v => __obj.updateDynamic("NULL")(__v.asInstanceOf[js.Any]))
+      S.foreach(__v => __obj.updateDynamic("S")(__v.asInstanceOf[js.Any]))
+      SS.foreach(__v => __obj.updateDynamic("SS")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttributeValue]
     }
   }
@@ -128,12 +128,12 @@ package dynamodbstreams {
         ExclusiveStartShardId: js.UndefOr[ShardId] = js.undefined,
         Limit: js.UndefOr[PositiveIntegerObject] = js.undefined
     ): DescribeStreamInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "StreamArn" -> StreamArn.asInstanceOf[js.Any]
       )
 
-      ExclusiveStartShardId.foreach(__v => __obj.update("ExclusiveStartShardId", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      ExclusiveStartShardId.foreach(__v => __obj.updateDynamic("ExclusiveStartShardId")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeStreamInput]
     }
   }
@@ -150,8 +150,8 @@ package dynamodbstreams {
     def apply(
         StreamDescription: js.UndefOr[StreamDescription] = js.undefined
     ): DescribeStreamOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      StreamDescription.foreach(__v => __obj.update("StreamDescription", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      StreamDescription.foreach(__v => __obj.updateDynamic("StreamDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeStreamOutput]
     }
   }
@@ -178,11 +178,11 @@ package dynamodbstreams {
         ShardIterator: ShardIterator,
         Limit: js.UndefOr[PositiveIntegerObject] = js.undefined
     ): GetRecordsInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ShardIterator" -> ShardIterator.asInstanceOf[js.Any]
       )
 
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRecordsInput]
     }
   }
@@ -201,9 +201,9 @@ package dynamodbstreams {
         NextShardIterator: js.UndefOr[ShardIterator] = js.undefined,
         Records: js.UndefOr[RecordList] = js.undefined
     ): GetRecordsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      NextShardIterator.foreach(__v => __obj.update("NextShardIterator", __v.asInstanceOf[js.Any]))
-      Records.foreach(__v => __obj.update("Records", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      NextShardIterator.foreach(__v => __obj.updateDynamic("NextShardIterator")(__v.asInstanceOf[js.Any]))
+      Records.foreach(__v => __obj.updateDynamic("Records")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRecordsOutput]
     }
   }
@@ -226,13 +226,13 @@ package dynamodbstreams {
         StreamArn: StreamArn,
         SequenceNumber: js.UndefOr[SequenceNumber] = js.undefined
     ): GetShardIteratorInput = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "ShardId"           -> ShardId.asInstanceOf[js.Any],
         "ShardIteratorType" -> ShardIteratorType.asInstanceOf[js.Any],
         "StreamArn"         -> StreamArn.asInstanceOf[js.Any]
       )
 
-      SequenceNumber.foreach(__v => __obj.update("SequenceNumber", __v.asInstanceOf[js.Any]))
+      SequenceNumber.foreach(__v => __obj.updateDynamic("SequenceNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetShardIteratorInput]
     }
   }
@@ -249,8 +249,8 @@ package dynamodbstreams {
     def apply(
         ShardIterator: js.UndefOr[ShardIterator] = js.undefined
     ): GetShardIteratorOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ShardIterator.foreach(__v => __obj.update("ShardIterator", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ShardIterator.foreach(__v => __obj.updateDynamic("ShardIterator")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetShardIteratorOutput]
     }
   }
@@ -269,9 +269,9 @@ package dynamodbstreams {
         PrincipalId: js.UndefOr[String] = js.undefined,
         Type: js.UndefOr[String] = js.undefined
     ): Identity = {
-      val __obj = js.Dictionary.empty[js.Any]
-      PrincipalId.foreach(__v => __obj.update("PrincipalId", __v.asInstanceOf[js.Any]))
-      Type.foreach(__v => __obj.update("Type", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      PrincipalId.foreach(__v => __obj.updateDynamic("PrincipalId")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Identity]
     }
   }
@@ -302,7 +302,7 @@ package dynamodbstreams {
         AttributeName: KeySchemaAttributeName,
         KeyType: KeyType
     ): KeySchemaElement = {
-      val __obj = js.Dictionary[js.Any](
+      val __obj = js.Dynamic.literal(
         "AttributeName" -> AttributeName.asInstanceOf[js.Any],
         "KeyType"       -> KeyType.asInstanceOf[js.Any]
       )
@@ -342,10 +342,10 @@ package dynamodbstreams {
         Limit: js.UndefOr[PositiveIntegerObject] = js.undefined,
         TableName: js.UndefOr[TableName] = js.undefined
     ): ListStreamsInput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ExclusiveStartStreamArn.foreach(__v => __obj.update("ExclusiveStartStreamArn", __v.asInstanceOf[js.Any]))
-      Limit.foreach(__v => __obj.update("Limit", __v.asInstanceOf[js.Any]))
-      TableName.foreach(__v => __obj.update("TableName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ExclusiveStartStreamArn.foreach(__v => __obj.updateDynamic("ExclusiveStartStreamArn")(__v.asInstanceOf[js.Any]))
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      TableName.foreach(__v => __obj.updateDynamic("TableName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListStreamsInput]
     }
   }
@@ -364,9 +364,9 @@ package dynamodbstreams {
         LastEvaluatedStreamArn: js.UndefOr[StreamArn] = js.undefined,
         Streams: js.UndefOr[StreamList] = js.undefined
     ): ListStreamsOutput = {
-      val __obj = js.Dictionary.empty[js.Any]
-      LastEvaluatedStreamArn.foreach(__v => __obj.update("LastEvaluatedStreamArn", __v.asInstanceOf[js.Any]))
-      Streams.foreach(__v => __obj.update("Streams", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      LastEvaluatedStreamArn.foreach(__v => __obj.updateDynamic("LastEvaluatedStreamArn")(__v.asInstanceOf[js.Any]))
+      Streams.foreach(__v => __obj.updateDynamic("Streams")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListStreamsOutput]
     }
   }
@@ -403,14 +403,14 @@ package dynamodbstreams {
         eventVersion: js.UndefOr[String] = js.undefined,
         userIdentity: js.UndefOr[Identity] = js.undefined
     ): Record = {
-      val __obj = js.Dictionary.empty[js.Any]
-      awsRegion.foreach(__v => __obj.update("awsRegion", __v.asInstanceOf[js.Any]))
-      dynamodb.foreach(__v => __obj.update("dynamodb", __v.asInstanceOf[js.Any]))
-      eventID.foreach(__v => __obj.update("eventID", __v.asInstanceOf[js.Any]))
-      eventName.foreach(__v => __obj.update("eventName", __v.asInstanceOf[js.Any]))
-      eventSource.foreach(__v => __obj.update("eventSource", __v.asInstanceOf[js.Any]))
-      eventVersion.foreach(__v => __obj.update("eventVersion", __v.asInstanceOf[js.Any]))
-      userIdentity.foreach(__v => __obj.update("userIdentity", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      awsRegion.foreach(__v => __obj.updateDynamic("awsRegion")(__v.asInstanceOf[js.Any]))
+      dynamodb.foreach(__v => __obj.updateDynamic("dynamodb")(__v.asInstanceOf[js.Any]))
+      eventID.foreach(__v => __obj.updateDynamic("eventID")(__v.asInstanceOf[js.Any]))
+      eventName.foreach(__v => __obj.updateDynamic("eventName")(__v.asInstanceOf[js.Any]))
+      eventSource.foreach(__v => __obj.updateDynamic("eventSource")(__v.asInstanceOf[js.Any]))
+      eventVersion.foreach(__v => __obj.updateDynamic("eventVersion")(__v.asInstanceOf[js.Any]))
+      userIdentity.foreach(__v => __obj.updateDynamic("userIdentity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Record]
     }
   }
@@ -437,9 +437,9 @@ package dynamodbstreams {
         EndingSequenceNumber: js.UndefOr[SequenceNumber] = js.undefined,
         StartingSequenceNumber: js.UndefOr[SequenceNumber] = js.undefined
     ): SequenceNumberRange = {
-      val __obj = js.Dictionary.empty[js.Any]
-      EndingSequenceNumber.foreach(__v => __obj.update("EndingSequenceNumber", __v.asInstanceOf[js.Any]))
-      StartingSequenceNumber.foreach(__v => __obj.update("StartingSequenceNumber", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      EndingSequenceNumber.foreach(__v => __obj.updateDynamic("EndingSequenceNumber")(__v.asInstanceOf[js.Any]))
+      StartingSequenceNumber.foreach(__v => __obj.updateDynamic("StartingSequenceNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SequenceNumberRange]
     }
   }
@@ -460,10 +460,10 @@ package dynamodbstreams {
         SequenceNumberRange: js.UndefOr[SequenceNumberRange] = js.undefined,
         ShardId: js.UndefOr[ShardId] = js.undefined
     ): Shard = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ParentShardId.foreach(__v => __obj.update("ParentShardId", __v.asInstanceOf[js.Any]))
-      SequenceNumberRange.foreach(__v => __obj.update("SequenceNumberRange", __v.asInstanceOf[js.Any]))
-      ShardId.foreach(__v => __obj.update("ShardId", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ParentShardId.foreach(__v => __obj.updateDynamic("ParentShardId")(__v.asInstanceOf[js.Any]))
+      SequenceNumberRange.foreach(__v => __obj.updateDynamic("SequenceNumberRange")(__v.asInstanceOf[js.Any]))
+      ShardId.foreach(__v => __obj.updateDynamic("ShardId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Shard]
     }
   }
@@ -493,10 +493,10 @@ package dynamodbstreams {
         StreamLabel: js.UndefOr[String] = js.undefined,
         TableName: js.UndefOr[TableName] = js.undefined
     ): Stream = {
-      val __obj = js.Dictionary.empty[js.Any]
-      StreamArn.foreach(__v => __obj.update("StreamArn", __v.asInstanceOf[js.Any]))
-      StreamLabel.foreach(__v => __obj.update("StreamLabel", __v.asInstanceOf[js.Any]))
-      TableName.foreach(__v => __obj.update("TableName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      StreamArn.foreach(__v => __obj.updateDynamic("StreamArn")(__v.asInstanceOf[js.Any]))
+      StreamLabel.foreach(__v => __obj.updateDynamic("StreamLabel")(__v.asInstanceOf[js.Any]))
+      TableName.foreach(__v => __obj.updateDynamic("TableName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Stream]
     }
   }
@@ -529,16 +529,16 @@ package dynamodbstreams {
         StreamViewType: js.UndefOr[StreamViewType] = js.undefined,
         TableName: js.UndefOr[TableName] = js.undefined
     ): StreamDescription = {
-      val __obj = js.Dictionary.empty[js.Any]
-      CreationRequestDateTime.foreach(__v => __obj.update("CreationRequestDateTime", __v.asInstanceOf[js.Any]))
-      KeySchema.foreach(__v => __obj.update("KeySchema", __v.asInstanceOf[js.Any]))
-      LastEvaluatedShardId.foreach(__v => __obj.update("LastEvaluatedShardId", __v.asInstanceOf[js.Any]))
-      Shards.foreach(__v => __obj.update("Shards", __v.asInstanceOf[js.Any]))
-      StreamArn.foreach(__v => __obj.update("StreamArn", __v.asInstanceOf[js.Any]))
-      StreamLabel.foreach(__v => __obj.update("StreamLabel", __v.asInstanceOf[js.Any]))
-      StreamStatus.foreach(__v => __obj.update("StreamStatus", __v.asInstanceOf[js.Any]))
-      StreamViewType.foreach(__v => __obj.update("StreamViewType", __v.asInstanceOf[js.Any]))
-      TableName.foreach(__v => __obj.update("TableName", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      CreationRequestDateTime.foreach(__v => __obj.updateDynamic("CreationRequestDateTime")(__v.asInstanceOf[js.Any]))
+      KeySchema.foreach(__v => __obj.updateDynamic("KeySchema")(__v.asInstanceOf[js.Any]))
+      LastEvaluatedShardId.foreach(__v => __obj.updateDynamic("LastEvaluatedShardId")(__v.asInstanceOf[js.Any]))
+      Shards.foreach(__v => __obj.updateDynamic("Shards")(__v.asInstanceOf[js.Any]))
+      StreamArn.foreach(__v => __obj.updateDynamic("StreamArn")(__v.asInstanceOf[js.Any]))
+      StreamLabel.foreach(__v => __obj.updateDynamic("StreamLabel")(__v.asInstanceOf[js.Any]))
+      StreamStatus.foreach(__v => __obj.updateDynamic("StreamStatus")(__v.asInstanceOf[js.Any]))
+      StreamViewType.foreach(__v => __obj.updateDynamic("StreamViewType")(__v.asInstanceOf[js.Any]))
+      TableName.foreach(__v => __obj.updateDynamic("TableName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StreamDescription]
     }
   }
@@ -567,14 +567,16 @@ package dynamodbstreams {
         SizeBytes: js.UndefOr[PositiveLongObject] = js.undefined,
         StreamViewType: js.UndefOr[StreamViewType] = js.undefined
     ): StreamRecord = {
-      val __obj = js.Dictionary.empty[js.Any]
-      ApproximateCreationDateTime.foreach(__v => __obj.update("ApproximateCreationDateTime", __v.asInstanceOf[js.Any]))
-      Keys.foreach(__v => __obj.update("Keys", __v.asInstanceOf[js.Any]))
-      NewImage.foreach(__v => __obj.update("NewImage", __v.asInstanceOf[js.Any]))
-      OldImage.foreach(__v => __obj.update("OldImage", __v.asInstanceOf[js.Any]))
-      SequenceNumber.foreach(__v => __obj.update("SequenceNumber", __v.asInstanceOf[js.Any]))
-      SizeBytes.foreach(__v => __obj.update("SizeBytes", __v.asInstanceOf[js.Any]))
-      StreamViewType.foreach(__v => __obj.update("StreamViewType", __v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal()
+      ApproximateCreationDateTime.foreach(
+        __v => __obj.updateDynamic("ApproximateCreationDateTime")(__v.asInstanceOf[js.Any])
+      )
+      Keys.foreach(__v => __obj.updateDynamic("Keys")(__v.asInstanceOf[js.Any]))
+      NewImage.foreach(__v => __obj.updateDynamic("NewImage")(__v.asInstanceOf[js.Any]))
+      OldImage.foreach(__v => __obj.updateDynamic("OldImage")(__v.asInstanceOf[js.Any]))
+      SequenceNumber.foreach(__v => __obj.updateDynamic("SequenceNumber")(__v.asInstanceOf[js.Any]))
+      SizeBytes.foreach(__v => __obj.updateDynamic("SizeBytes")(__v.asInstanceOf[js.Any]))
+      StreamViewType.foreach(__v => __obj.updateDynamic("StreamViewType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StreamRecord]
     }
   }
