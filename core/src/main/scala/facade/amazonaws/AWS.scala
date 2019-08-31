@@ -33,11 +33,11 @@ object S3ParamsWithEndpoint {
       params: js.UndefOr[AWSConfig] = js.undefined,
       endpoint: js.UndefOr[String] = js.undefined,
       useDualstack: js.UndefOr[Boolean] = js.undefined
-  ): ParamsWithEndpoint = {
+  ): S3ParamsWithEndpoint = {
     val __obj = js.Dynamic.literal()
     params.foreach(v => __obj.updateDynamic("params")(v))
     endpoint.foreach(v => __obj.updateDynamic("endpoint")(v))
     useDualstack.foreach(v => __obj.updateDynamic("useDualstack")(v))
-    __obj.asInstanceOf[ParamsWithEndpoint]
+    __obj.asInstanceOf[S3ParamsWithEndpoint]
   }
 }
