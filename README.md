@@ -4,6 +4,9 @@ A complete set of [Scala.js](https://www.scala-js.org/) type facade for [aws/aws
 
 **188 AWS** from popular ones to obscure ones, as of 2019-08-27 and keep updating.
 
+* [exoego/aws-lambda-scalajs-facade](https://github.com/exoego/scala-js-nodejs) offers type definition and utilities for AWS Lambda events.
+* [exoego/scala-js-nodejs](https://github.com/exoego/scala-js-nodejs) offers type definition and utilities for Node.js API.
+
 
 ## Getting Started
 
